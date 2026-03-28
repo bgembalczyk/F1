@@ -5,6 +5,8 @@ from typing import Any
 
 from models.services.helpers import prune_empty
 from scrapers.base.helpers.constants import LANG_CODES
+from scrapers.base.helpers.constants import NON_ALPHANUM_PATTERN
+from scrapers.base.helpers.constants import UNDERSCORE_PATTERN
 from scrapers.base.helpers.text import clean_wiki_text
 from validation.validator_base import ExportRecord
 
@@ -112,9 +114,6 @@ def match_vehicle_prefix(a: Any, b: Any, *, min_len: int = 10) -> bool:
 # Text Parsing
 # ============================================================================
 
-_NON_ALPHANUM_PATTERN = re.compile(r"[^0-9a-zA-Z]+")
-_UNDERSCORE_PATTERN = re.compile(r"_+")
-
 
 def split_delimited_text(
     text: str | None,
@@ -194,6 +193,6 @@ def drop_empty_fields(record: ExportRecord) -> ExportRecord:
 
 
 def to_snake_case(value: str) -> str:
-    cleaned = _NON_ALPHANUM_PATTERN.sub("_", value)
-    cleaned = _UNDERSCORE_PATTERN.sub("_", cleaned).strip("_")
+    cleaned = NON_ALPHANUM_PATTERN.sub("_", value)
+    cleaned = UNDERSCORE_PATTERN.sub("_", cleaned).strip("_")
     return cleaned.lower()

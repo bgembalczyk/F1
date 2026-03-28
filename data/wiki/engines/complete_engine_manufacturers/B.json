@@ -584,14 +584,8 @@
           ],
           "rows": [
             {
-              "Entrant": {
-                "text": "Frazer Nash",
-                "url": "https://en.wikipedia.org/wiki/Frazer_Nash"
-              },
-              "Season(s)": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Entrant": "Frazer Nash",
+              "Season(s)": "1952",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -600,10 +594,7 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Ernst Klodwig",
-                "url": "https://en.wikipedia.org/wiki/Ernst_Klodwig"
-              },
+              "Entrant": "Ernst Klodwig",
               "Season(s)": "1952-1953",
               "Total wins": "0",
               "First win": "-",
@@ -613,14 +604,8 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Rudolf Krause",
-                "url": "https://en.wikipedia.org/wiki/Rudolf_Krause"
-              },
-              "Season(s)": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Entrant": "Rudolf Krause",
+              "Season(s)": "1952",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -629,14 +614,8 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "\"Bernhard Nacke\"",
-                "url": "https://en.wikipedia.org/wiki/G%C3%BCnther_Bechem"
-              },
-              "Season(s)": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Entrant": "\"Bernhard Nacke\"",
+              "Season(s)": "1952",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -645,14 +624,8 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Willi Krakau",
-                "url": "https://en.wikipedia.org/wiki/Willi_Krakau"
-              },
-              "Season(s)": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Entrant": "Willi Krakau",
+              "Season(s)": "1952",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -661,14 +634,8 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Marcel Balsa",
-                "url": "https://en.wikipedia.org/wiki/Marcel_Balsa"
-              },
-              "Season(s)": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Entrant": "Marcel Balsa",
+              "Season(s)": "1952",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -677,14 +644,8 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Dora Greifzu",
-                "url": "https://en.wikipedia.org/wiki/Paul_Greifzu"
-              },
-              "Season(s)": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Entrant": "Dora Greifzu",
+              "Season(s)": "1953",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -693,14 +654,8 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Hans Klenk",
-                "url": "https://en.wikipedia.org/wiki/Hans_Klenk"
-              },
-              "Season(s)": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
+              "Entrant": "Hans Klenk",
+              "Season(s)": "1954",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -709,10 +664,7 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Bayerische Motoren Werke",
-                "url": "https://en.wikipedia.org/wiki/BMW"
-              },
+              "Entrant": "Bayerische Motoren Werke",
               "Season(s)": "1967-1968",
               "Total wins": "0",
               "First win": "-",
@@ -722,14 +674,8 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Lola Racing Ltd",
-                "url": "https://en.wikipedia.org/wiki/Lola_Cars"
-              },
-              "Season(s)": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
+              "Entrant": "Lola Racing Ltd",
+              "Season(s)": "1967",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -738,35 +684,17 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Brabham",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Entrant": "Brabham",
               "Season(s)": "1981-1987",
               "Total wins": "8",
-              "First win": {
-                "text": "1982 Canadian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1985 French Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1985_French_Grand_Prix"
-              },
+              "First win": "1982 Canadian Grand Prix",
+              "Last win": "1985 French Grand Prix",
               "Pole positions": "13",
-              "First pole": {
-                "text": "1982 Austrian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1985 Dutch Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1985_Dutch_Grand_Prix"
-              }
+              "First pole": "1982 Austrian Grand Prix",
+              "Last pole": "1985 Dutch Grand Prix"
             },
             {
-              "Entrant": {
-                "text": "ATS",
-                "url": "https://en.wikipedia.org/wiki/ATS_(wheels)"
-              },
+              "Entrant": "ATS",
               "Season(s)": "1983-1984",
               "Total wins": "0",
               "First win": "-",
@@ -776,10 +704,7 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
+              "Entrant": "Arrows",
               "Season(s)": "1984-1988 †",
               "Total wins": "0",
               "First win": "-",
@@ -789,38 +714,17 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Benetton",
-                "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-              },
-              "Season(s)": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
+              "Entrant": "Benetton",
+              "Season(s)": "1986",
               "Total wins": "1",
-              "First win": {
-                "text": "1986 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1986 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
-              },
+              "First win": "1986 Mexican Grand Prix",
+              "Last win": "1986 Mexican Grand Prix",
               "Pole positions": "2",
-              "First pole": {
-                "text": "1986 Austrian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1986 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
-              }
+              "First pole": "1986 Austrian Grand Prix",
+              "Last pole": "1986 Italian Grand Prix"
             },
             {
-              "Entrant": {
-                "text": "Ligier",
-                "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
-              },
+              "Entrant": "Ligier",
               "Season(s)": "1987 †",
               "Total wins": "0",
               "First win": "-",
@@ -830,53 +734,27 @@
               "Last pole": "-"
             },
             {
-              "Entrant": {
-                "text": "Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_F1"
-              },
+              "Entrant": "Williams",
               "Season(s)": "2000-2005",
               "Total wins": "10",
-              "First win": {
-                "text": "2001 San Marino Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2001_San_Marino_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2004 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2004_Brazilian_Grand_Prix"
-              },
+              "First win": "2001 San Marino Grand Prix",
+              "Last win": "2004 Brazilian Grand Prix",
               "Pole positions": "17",
-              "First pole": {
-                "text": "2001 French Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2001_French_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2005 European Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2005_European_Grand_Prix"
-              }
+              "First pole": "2001 French Grand Prix",
+              "Last pole": "2005 European Grand Prix"
             },
             {
               "Entrant": "Total",
               "Season(s)": "1952-2005",
               "Total wins": "19",
-              "First win": {
-                "text": "1982 Canadian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2004 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2004_Brazilian_Grand_Prix"
-              },
+              "First win": "1982 Canadian Grand Prix",
+              "Last win": "2004 Brazilian Grand Prix",
               "Pole positions": "32",
-              "First pole": {
-                "text": "1982 Austrian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2005 European Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2005_European_Grand_Prix"
-              }
+              "First pole": "1982 Austrian Grand Prix",
+              "Last pole": "2005 European Grand Prix"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -1629,185 +1507,71 @@
           ],
           "rows": [
             {
-              "Date": {
-                "text": "31 May 1959",
-                "url": "https://en.wikipedia.org/wiki/1959_Dutch_Grand_Prix"
-              },
-              "Race": {
-                "text": "Dutch Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
-              },
-              "Venue": {
-                "text": "Zandvoort",
-                "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
-              },
-              "Driver": {
-                "text": "Jo Bonnier",
-                "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
-              },
-              "Chassis": {
-                "text": "P25",
-                "url": "https://en.wikipedia.org/wiki/BRM_P25"
-              },
+              "Date": "31 May 1959",
+              "Race": "Dutch Grand Prix",
+              "Venue": "Zandvoort",
+              "Driver": "Jo Bonnier",
+              "Chassis": "P25",
               "Engine": "2.5L I4"
             },
             {
-              "Date": {
-                "text": "20 May 1962",
-                "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
-              },
+              "Date": "20 May 1962",
               "Race": "Dutch Grand Prix",
               "Venue": "Zandvoort",
-              "Driver": {
-                "text": "Graham Hill",
-                "url": "https://en.wikipedia.org/wiki/Graham_Hill"
-              },
-              "Chassis": {
-                "text": "P57",
-                "url": "https://en.wikipedia.org/wiki/BRM_P57"
-              },
-              "Engine": "1.5L V8"
-            },
-            {
-              "Date": {
-                "text": "5 August 1962",
-                "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
-              },
-              "Race": {
-                "text": "German Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
-              },
-              "Venue": {
-                "text": "Nürburgring",
-                "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
-              },
               "Driver": "Graham Hill",
               "Chassis": "P57",
               "Engine": "1.5L V8"
             },
             {
-              "Date": {
-                "text": "16 September 1962",
-                "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
-              },
-              "Race": {
-                "text": "Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
-              },
-              "Venue": {
-                "text": "Monza",
-                "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza"
-              },
+              "Date": "5 August 1962",
+              "Race": "German Grand Prix",
+              "Venue": "Nürburgring",
               "Driver": "Graham Hill",
               "Chassis": "P57",
               "Engine": "1.5L V8"
             },
             {
-              "Date": {
-                "text": "29 December 1962",
-                "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
-              },
-              "Race": {
-                "text": "South African Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
-              },
-              "Venue": {
-                "text": "Prince George",
-                "url": "https://en.wikipedia.org/wiki/Prince_George_Circuit"
-              },
-              "Driver": "Graham Hill",
-              "Chassis": "P57",
-              "Engine": "1.5L V8"
-            },
-            {
-              "Date": {
-                "text": "26 May 1963",
-                "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
-              },
-              "Race": {
-                "text": "Monaco Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
-              },
-              "Venue": {
-                "text": "Monaco",
-                "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
-              },
-              "Driver": "Graham Hill",
-              "Chassis": "P57",
-              "Engine": "1.5L V8"
-            },
-            {
-              "Date": {
-                "text": "6 October 1963",
-                "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
-              },
-              "Race": {
-                "text": "United States Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
-              },
-              "Venue": {
-                "text": "Watkins Glen",
-                "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
-              },
-              "Driver": "Graham Hill",
-              "Chassis": "P57",
-              "Engine": "1.5L V8"
-            },
-            {
-              "Date": {
-                "text": "10 May 1964",
-                "url": "https://en.wikipedia.org/wiki/1964_Monaco_Grand_Prix"
-              },
-              "Race": "Monaco Grand Prix",
-              "Venue": "Monaco",
-              "Driver": "Graham Hill",
-              "Chassis": {
-                "text": "P261",
-                "url": "https://en.wikipedia.org/wiki/BRM_P261"
-              },
-              "Engine": "1.5L V8"
-            },
-            {
-              "Date": {
-                "text": "4 October 1964",
-                "url": "https://en.wikipedia.org/wiki/1964_United_States_Grand_Prix"
-              },
-              "Race": "United States Grand Prix",
-              "Venue": "Watkins Glen",
-              "Driver": "Graham Hill",
-              "Chassis": "P261",
-              "Engine": "1.5L V8"
-            },
-            {
-              "Date": {
-                "text": "30 May 1965",
-                "url": "https://en.wikipedia.org/wiki/1965_Monaco_Grand_Prix"
-              },
-              "Race": "Monaco Grand Prix",
-              "Venue": "Monaco",
-              "Driver": "Graham Hill",
-              "Chassis": "P261",
-              "Engine": "1.5L V8"
-            },
-            {
-              "Date": {
-                "text": "12 September 1965",
-                "url": "https://en.wikipedia.org/wiki/1965_Italian_Grand_Prix"
-              },
+              "Date": "16 September 1962",
               "Race": "Italian Grand Prix",
               "Venue": "Monza",
-              "Driver": {
-                "text": "Jackie Stewart",
-                "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-              },
+              "Driver": "Graham Hill",
+              "Chassis": "P57",
+              "Engine": "1.5L V8"
+            },
+            {
+              "Date": "29 December 1962",
+              "Race": "South African Grand Prix",
+              "Venue": "Prince George",
+              "Driver": "Graham Hill",
+              "Chassis": "P57",
+              "Engine": "1.5L V8"
+            },
+            {
+              "Date": "26 May 1963",
+              "Race": "Monaco Grand Prix",
+              "Venue": "Monaco",
+              "Driver": "Graham Hill",
+              "Chassis": "P57",
+              "Engine": "1.5L V8"
+            },
+            {
+              "Date": "6 October 1963",
+              "Race": "United States Grand Prix",
+              "Venue": "Watkins Glen",
+              "Driver": "Graham Hill",
+              "Chassis": "P57",
+              "Engine": "1.5L V8"
+            },
+            {
+              "Date": "10 May 1964",
+              "Race": "Monaco Grand Prix",
+              "Venue": "Monaco",
+              "Driver": "Graham Hill",
               "Chassis": "P261",
               "Engine": "1.5L V8"
             },
             {
-              "Date": {
-                "text": "3 October 1965",
-                "url": "https://en.wikipedia.org/wiki/1965_United_States_Grand_Prix"
-              },
+              "Date": "4 October 1964",
               "Race": "United States Grand Prix",
               "Venue": "Watkins Glen",
               "Driver": "Graham Hill",
@@ -1815,10 +1579,31 @@
               "Engine": "1.5L V8"
             },
             {
-              "Date": {
-                "text": "22 May 1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Monaco_Grand_Prix"
-              },
+              "Date": "30 May 1965",
+              "Race": "Monaco Grand Prix",
+              "Venue": "Monaco",
+              "Driver": "Graham Hill",
+              "Chassis": "P261",
+              "Engine": "1.5L V8"
+            },
+            {
+              "Date": "12 September 1965",
+              "Race": "Italian Grand Prix",
+              "Venue": "Monza",
+              "Driver": "Jackie Stewart",
+              "Chassis": "P261",
+              "Engine": "1.5L V8"
+            },
+            {
+              "Date": "3 October 1965",
+              "Race": "United States Grand Prix",
+              "Venue": "Watkins Glen",
+              "Driver": "Graham Hill",
+              "Chassis": "P261",
+              "Engine": "1.5L V8"
+            },
+            {
+              "Date": "22 May 1966",
               "Race": "Monaco Grand Prix",
               "Venue": "Monaco",
               "Driver": "Jackie Stewart",
@@ -1826,83 +1611,39 @@
               "Engine": "1.9L V8"
             },
             {
-              "Date": {
-                "text": "7 June 1970",
-                "url": "https://en.wikipedia.org/wiki/1970_Belgian_Grand_Prix"
-              },
-              "Race": {
-                "text": "Belgian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
-              },
-              "Venue": {
-                "text": "Spa",
-                "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
-              },
-              "Driver": {
-                "text": "Pedro Rodríguez",
-                "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
-              },
-              "Chassis": {
-                "text": "P153",
-                "url": "https://en.wikipedia.org/wiki/BRM_P153"
-              },
+              "Date": "7 June 1970",
+              "Race": "Belgian Grand Prix",
+              "Venue": "Spa",
+              "Driver": "Pedro Rodríguez",
+              "Chassis": "P153",
               "Engine": "3.0L V12"
             },
             {
-              "Date": {
-                "text": "15 August 1971",
-                "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
-              },
-              "Race": {
-                "text": "Austrian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
-              },
-              "Venue": {
-                "text": "Österreichring",
-                "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
-              },
-              "Driver": {
-                "text": "Jo Siffert",
-                "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-              },
-              "Chassis": {
-                "text": "P160",
-                "url": "https://en.wikipedia.org/wiki/BRM_P160"
-              },
-              "Engine": "3.0L V12"
-            },
-            {
-              "Date": {
-                "text": "5 September 1971",
-                "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
-              },
-              "Race": "Italian Grand Prix",
-              "Venue": "Monza",
-              "Driver": {
-                "text": "Peter Gethin",
-                "url": "https://en.wikipedia.org/wiki/Peter_Gethin"
-              },
+              "Date": "15 August 1971",
+              "Race": "Austrian Grand Prix",
+              "Venue": "Österreichring",
+              "Driver": "Jo Siffert",
               "Chassis": "P160",
               "Engine": "3.0L V12"
             },
             {
-              "Date": {
-                "text": "14 May 1972",
-                "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
-              },
+              "Date": "5 September 1971",
+              "Race": "Italian Grand Prix",
+              "Venue": "Monza",
+              "Driver": "Peter Gethin",
+              "Chassis": "P160",
+              "Engine": "3.0L V12"
+            },
+            {
+              "Date": "14 May 1972",
               "Race": "Monaco Grand Prix",
               "Venue": "Monaco",
-              "Driver": {
-                "text": "Jean-Pierre Beltoise",
-                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
-              },
-              "Chassis": {
-                "text": "P160B",
-                "url": "https://en.wikipedia.org/wiki/BRM_P160"
-              },
+              "Driver": "Jean-Pierre Beltoise",
+              "Chassis": "P160B",
               "Engine": "3.0L V12"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1912,7 +1653,8 @@
             {
               "Sporting positions": "Preceded by Ferrari"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -2037,7 +1779,8 @@
               "Racing cars": "1910-1914 Type 13 / Type 15 / 17 / 22 1912 Type 16 \" Bébé \" 1922-1926 Type 29 \" Cigare \" 1923 Type 32 \"Tank\" 1924-1930 Type 35 / 35A / 35B / 35T / 35C / 37 / 39 \"Grand Prix\" 1927-1930 Type 52 ( electric racer for children) 1936-1939 Type 57G \"Tank\" 1937-1939 Type 50B 1931-1936 Type 53 1931-1936 Type 51/51A / 54GP / 59 1955-1956 Type 251",
               "Road cars": "1910 Type 13 1912-1914 Type 18 1913-1914 Type 23 / Brescia Tourer (roadster) 1922-1934 Type 30 / 38 / 40 / 43 / 44 / 49 (touring car) 1927-1933 Type 41 \"Royale\" 1929-1939 Type 46 / 50 / 50T (touring car) 1932-1935 Type 55 (roadster) 1934-1940 Type 57 / 57S / Type 57SC (touring car) 1951-1956 Type 101 (coupe)"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -2165,99 +1908,52 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Chassis": "Aston NB42",
               "Engine": "Butterworth F4",
-              "Tyres": {
-                "text": "Dunlop",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
-              },
-              "Driver": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1952_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1952_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1952_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1952_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1952_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-              },
-              "7": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1952_Dutch_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1952_Italian_Grand_Prix"
-              }
+              "Tyres": "Dunlop",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA"
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Chassis": "Aston NB42",
               "Engine": "Butterworth F4",
-              "Tyres": {
-                "text": "Dunlop",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
-              },
-              "Driver": {
-                "text": "Robin Montgomerie-Charrington",
-                "url": "https://en.wikipedia.org/wiki/Robin_Montgomerie-Charrington"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "Dunlop",
+              "Driver": "Robin Montgomerie-Charrington",
+              "1": "",
+              "2": "",
               "3": "Ret",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Chassis": "Aston NB41",
               "Engine": "Butterworth F4",
-              "Tyres": {
-                "text": "Dunlop",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
-              },
-              "Driver": {
-                "text": "Bill Aston",
-                "url": "https://en.wikipedia.org/wiki/Bill_Aston"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "Dunlop",
+              "Driver": "Bill Aston",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "DNS",
               "6": "Ret",
-              "7": null,
+              "7": "",
               "8": "DNQ"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -2380,188 +2076,110 @@
           ],
           "rows": [
             {
-              "Constructor": {
-                "text": "Sauber",
-                "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-              },
-              "Season(s)": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
+              "Constructor": "Sauber",
+              "Season(s)": "1994",
               "Total wins": "0",
-              "WCC": null,
-              "WDC": null,
+              "WCC": "",
+              "WDC": "",
               "First win": "-",
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "McLaren",
-                "url": "https://en.wikipedia.org/wiki/McLaren"
-              },
+              "Constructor": "McLaren",
               "Season(s)": "1995-2014 , 2021-2026",
               "Total wins": "99",
               "WCC": "3 ( 1998 , 2024 ‍-‍ 2025 )",
               "WDC": "4 ( 1998 ‍-‍ 1999 , 2008 , 2025 )",
-              "First win": {
-                "text": "1997 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1997_Australian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2025 São Paulo Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-              }
+              "First win": "1997 Australian Grand Prix",
+              "Last win": "2025 São Paulo Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Brawn",
-                "url": "https://en.wikipedia.org/wiki/Brawn_GP"
-              },
-              "Season(s)": {
-                "text": "2009",
-                "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-              },
+              "Constructor": "Brawn",
+              "Season(s)": "2009",
               "Total wins": "8",
               "WCC": "1 ( 2009 )",
               "WDC": "1 ( 2009 )",
-              "First win": {
-                "text": "2009 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2009_Australian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2009 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2009_Italian_Grand_Prix"
-              }
+              "First win": "2009 Australian Grand Prix",
+              "Last win": "2009 Italian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Force India",
-                "url": "https://en.wikipedia.org/wiki/Force_India"
-              },
+              "Constructor": "Force India",
               "Season(s)": "2009-2018",
               "Total wins": "0",
-              "WCC": null,
-              "WDC": null,
+              "WCC": "",
+              "WDC": "",
               "First win": "-",
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Mercedes",
-                "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-              },
+              "Constructor": "Mercedes",
               "Season(s)": "2010-2026",
               "Total wins": "123",
               "WCC": "8 ( 2014-2021 )",
               "WDC": "7 ( 2014-2020 )",
-              "First win": {
-                "text": "2012 Chinese Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2012_Chinese_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2026 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
-              }
+              "First win": "2012 Chinese Grand Prix",
+              "Last win": "2026 Australian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Atlassian Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-              },
+              "Constructor": "Atlassian Williams",
               "Season(s)": "2014-2026",
               "Total wins": "0",
-              "WCC": null,
-              "WDC": null,
+              "WCC": "",
+              "WDC": "",
               "First win": "-",
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Lotus",
-                "url": "https://en.wikipedia.org/wiki/Lotus_F1"
-              },
-              "Season(s)": {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-              },
+              "Constructor": "Lotus",
+              "Season(s)": "2015",
               "Total wins": "0",
-              "WCC": null,
-              "WDC": null,
+              "WCC": "",
+              "WDC": "",
               "First win": "-",
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "MRT",
-                "url": "https://en.wikipedia.org/wiki/Manor_Racing"
-              },
-              "Season(s)": {
-                "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-              },
+              "Constructor": "MRT",
+              "Season(s)": "2016",
               "Total wins": "0",
-              "WCC": null,
-              "WDC": null,
+              "WCC": "",
+              "WDC": "",
               "First win": "-",
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Racing Point Force India",
-                "url": "https://en.wikipedia.org/wiki/Racing_Point_Force_India"
-              },
-              "Season(s)": {
-                "text": "2018",
-                "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-              },
+              "Constructor": "Racing Point Force India",
+              "Season(s)": "2018",
               "Total wins": "0",
-              "WCC": null,
-              "WDC": null,
+              "WCC": "",
+              "WDC": "",
               "First win": "-",
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Racing Point",
-                "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
-              },
+              "Constructor": "Racing Point",
               "Season(s)": "2019-2020",
               "Total wins": "1",
-              "WCC": null,
-              "WDC": null,
-              "First win": {
-                "text": "2020 Sakhir Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2020 Sakhir Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-              }
+              "WCC": "",
+              "WDC": "",
+              "First win": "2020 Sakhir Grand Prix",
+              "Last win": "2020 Sakhir Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Aston Martin",
-                "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-              },
+              "Constructor": "Aston Martin",
               "Season(s)": "2021-2025",
               "Total wins": "0",
-              "WCC": null,
-              "WDC": null,
+              "WCC": "",
+              "WDC": "",
               "First win": "-",
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Alpine",
-                "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
-              },
-              "Season(s)": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
+              "Constructor": "Alpine",
+              "Season(s)": "2026",
               "Total wins": "0",
-              "WCC": null,
-              "WDC": null,
+              "WCC": "",
+              "WDC": "",
               "First win": "-",
               "Last win": "-"
             },
@@ -2571,16 +2189,11 @@
               "Total wins": "231",
               "WCC": "12",
               "WDC": "12",
-              "First win": {
-                "text": "1997 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1997_Australian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2026 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
-              }
+              "First win": "1997 Australian Grand Prix",
+              "Last win": "2026 Australian Grand Prix"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -2592,326 +2205,231 @@
           ],
           "rows": [
             {
-              "Season": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
+              "Season": "1994",
               "Name": "Mercedes-Benz 2175B",
               "Format": "3.496 L V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "537-563 kW (720-755 hp ) @ 14,000 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
+              "Season": "1995",
               "Name": "Mercedes-Benz FO 110",
               "Format": "2.997 L 75° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "510 kW (690 hp) @ 15,600 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
+              "Season": "1996",
               "Name": "Mercedes-Benz FO 110D",
               "Format": "2.997 L 75° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "540 kW (720 hp) @ 15,700 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
+              "Season": "1997",
               "Name": "Mercedes-Benz FO 110E",
               "Format": "2.997 L 75° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "550-570 kW (740-760 hp) @ 15,800 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "1998",
-                "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-              },
+              "Season": "1998",
               "Name": "Mercedes-Benz FO 110G",
               "Format": "2.998 L 72° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "600 kW (800 hp) @ 16,100 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
+              "Season": "1999",
               "Name": "Mercedes-Benz FO 110H",
               "Format": "2.998 L 72° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "600 kW (810 hp) @ 16,200 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
+              "Season": "2000",
               "Name": "Mercedes-Benz FO 110J",
               "Format": "2.998 L 72° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "608 kW (815 hp) @ 17,800 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-              },
+              "Season": "2001",
               "Name": "Mercedes-Benz FO 110K",
               "Format": "2.998 L 72° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "620 kW (830 hp) @ 17,800 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "2002",
-                "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-              },
+              "Season": "2002",
               "Name": "Mercedes-Benz FO 110M",
               "Format": "2.998 L 90° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "630 kW (845 hp) @ 18,300 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "2003",
-                "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-              },
+              "Season": "2003",
               "Name": "Mercedes-Benz FO 110P",
               "Format": "2.998 L 90° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "630 kW (850 hp) @ 18,500 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "2004",
-                "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-              },
+              "Season": "2004",
               "Name": "Mercedes-Benz FO 110Q",
               "Format": "2.998 L 90° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "650 kW (870 hp) @ 18,500 rpm",
               "Notes": "Built by Ilmor"
             },
             {
-              "Season": {
-                "text": "2005",
-                "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-              },
+              "Season": "2005",
               "Name": "Mercedes-Benz FO 110R",
               "Format": "2.998 L 90° V10",
               "Approximate peak power @ rpm Including hybrid system where applicable": "690 kW (930 hp) @ 19,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-              },
+              "Season": "2006",
               "Name": "Mercedes-Benz FO 108S",
               "Format": "2.398 L 90° V8",
               "Approximate peak power @ rpm Including hybrid system where applicable": "560 kW (750 hp) @ 19,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-              },
+              "Season": "2007",
               "Name": "Mercedes-Benz FO 108T",
               "Format": "2.398 L 90° V8",
               "Approximate peak power @ rpm Including hybrid system where applicable": "600 kW (810 hp) @ 19,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2008",
-                "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-              },
+              "Season": "2008",
               "Name": "Mercedes-Benz FO 108V",
               "Format": "2.398 L 90° V8",
               "Approximate peak power @ rpm Including hybrid system where applicable": "560-600 kW (750-800 hp) @ 19,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2009",
-                "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-              },
+              "Season": "2009",
               "Name": "Mercedes-Benz FO 108W",
               "Format": "2.398 L 90° V8",
               "Approximate peak power @ rpm Including hybrid system where applicable": "560 kW (750 hp) + KERS @ 18,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2010",
-                "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-              },
+              "Season": "2010",
               "Name": "Mercedes-Benz FO 108X",
               "Format": "2.398 L 90° V8",
               "Approximate peak power @ rpm Including hybrid system where applicable": "560 kW (750 hp) @ 18,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2011",
-                "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-              },
+              "Season": "2011",
               "Name": "Mercedes-Benz FO 108Y",
               "Format": "2.398 L 90° V8",
               "Approximate peak power @ rpm Including hybrid system where applicable": "560 kW (750 hp) + KERS @ 18,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2012",
-                "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
-              },
+              "Season": "2012",
               "Name": "Mercedes-Benz FO 108Z",
               "Format": "2.398 L 90° V8",
               "Approximate peak power @ rpm Including hybrid system where applicable": "560 kW (750 hp) + KERS @ 18,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2013",
-                "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
-              },
+              "Season": "2013",
               "Name": "Mercedes-Benz FO 108F",
               "Format": "2.398 L 90° V8",
               "Approximate peak power @ rpm Including hybrid system where applicable": "560 kW (750 hp) + KERS @ 18,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2014",
-                "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
-              },
+              "Season": "2014",
               "Name": "Mercedes-Benz PU106A",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "630 kW (840 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-              },
+              "Season": "2015",
               "Name": "Mercedes-Benz PU106B",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "649 kW (870 hp) @ 15,000 rpm",
               "Notes": "Adapted for use in the Mercedes-AMG ONE"
             },
             {
-              "Season": {
-                "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-              },
+              "Season": "2016",
               "Name": "Mercedes-Benz PU106C",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "670 kW (900 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2017",
-                "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-              },
+              "Season": "2017",
               "Name": "Mercedes-AMG M08 EQ Power+",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "708 kW (949 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2018",
-                "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-              },
+              "Season": "2018",
               "Name": "Mercedes-AMG M09 EQ Power+",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "750 kW (1,000 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2019",
-                "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-              },
+              "Season": "2019",
               "Name": "Mercedes-AMG M10 EQ Power+",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "750 kW (1,000 hp) @ 15,000 rpm",
               "Notes": "Badged as \" BWT Mercedes\" for Racing Point"
             },
             {
-              "Season": {
-                "text": "2020",
-                "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-              },
+              "Season": "2020",
               "Name": "Mercedes-AMG M11 EQ Performance",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "764 kW (1,025 hp) @ 15,000 rpm",
               "Notes": "Badged as \" BWT Mercedes\" for Racing Point"
             },
             {
-              "Season": {
-                "text": "2021",
-                "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-              },
+              "Season": "2021",
               "Name": "Mercedes-AMG M12 E Performance",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "780 kW (1,050 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
+              "Season": "2022",
               "Name": "Mercedes-AMG M13 E Performance",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "800 kW (1,070 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2023",
-                "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
-              },
+              "Season": "2023",
               "Name": "Mercedes-AMG M14 E Performance",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "810 kW (1,080 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2024",
-                "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
-              },
+              "Season": "2024",
               "Name": "Mercedes-AMG M15 E Performance",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "810 kW (1,080 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             },
             {
-              "Season": {
-                "text": "2025",
-                "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
-              },
+              "Season": "2025",
               "Name": "Mercedes-AMG M16 E Performance",
               "Format": "1.600 L 90° V6 turbo hybrid",
               "Approximate peak power @ rpm Including hybrid system where applicable": "810 kW (1,080 hp) @ 15,000 rpm",
-              "Notes": null
+              "Notes": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

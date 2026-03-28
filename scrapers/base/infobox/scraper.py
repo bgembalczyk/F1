@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
+from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.html_fetcher import HtmlFetcher
@@ -47,8 +48,9 @@ class WikipediaInfoboxScraper:
         if fetcher is not None:
             options.fetcher = fetcher
 
-        self.fetcher = options.with_fetcher()
-        self.timeout = options.to_http_policy().timeout
+        runtime = ScraperRuntimeFactory().build(options=options)
+        self.fetcher = runtime.fetcher
+        self.timeout = runtime.policy.timeout
         self.logger = get_logger(self.__class__.__name__)
         self.parser = parser or InfoboxHtmlParser()
         self.mapper = mapper or InfoboxFieldMapper(logger=self.logger)
@@ -95,9 +97,7 @@ class WikipediaInfoboxScraper:
         if self.record_factory is None:
             return record
         try:
-            if isinstance(self.record_factory, type):
-                return self.record_factory(**record)
-            return self.record_factory(record)
+            return self.record_factory.create(record)
         except (AttributeError, KeyError, TypeError, ValueError):
             self.logger.warning(
                 "Infobox record_factory failed. Falling back to raw record: %s",

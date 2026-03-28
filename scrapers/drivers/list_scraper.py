@@ -1,22 +1,21 @@
-from pathlib import Path
+"""DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
-from models.records.factories import build_driver_record
-from scrapers.base.helpers.config_factory import ScraperCommonConfig
-from scrapers.base.helpers.config_factory import build_table_config
-from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.source_catalog import DRIVERS_LIST
+from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_metric_columns
+from scrapers.base.table.builders import build_name_status_fragment
+from scrapers.base.table.builders import metric_column
+from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
 )
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
+from scrapers.drivers.columns.seasons import SeasonsColumn
 from scrapers.drivers.constants import DRIVER_CHAMPIONSHIPS_HEADER
 from scrapers.drivers.constants import DRIVER_FASTEST_LAPS_HEADER
 from scrapers.drivers.constants import DRIVER_NAME_HEADER
@@ -29,10 +28,11 @@ from scrapers.drivers.constants import DRIVER_RACE_STARTS_HEADER
 from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
 from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
-from scrapers.drivers.validator import DriversRecordValidator
 
 
-class F1DriversListScraper(F1TableScraper):
+class F1DriversListScraper(SeedListTableScraper):
+    domain = "drivers"
+
     """
     Scraper listy kierowców F1 z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_drivers
@@ -43,84 +43,76 @@ class F1DriversListScraper(F1TableScraper):
     - drivers_championships: parsowane do dict {count, seasons}
     """
 
-    default_validator = DriversRecordValidator()
+    options_profile = "seed_strict"
 
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
-        section_id="Drivers",
-        expected_headers=DRIVERS_LIST_HEADERS,
-        schema=TableSchemaDSL(
-            columns=[
-                column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn()),
-                column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn()),
-                column(
-                    DRIVER_SEASONS_COMPETED_HEADER,
-                    "seasons_competed",
-                    SeasonsColumn(),
-                ),
-                column(
-                    DRIVER_CHAMPIONSHIPS_HEADER,
-                    "drivers_championships",
-                    TextColumn(),  # zparsujemy ręcznie w fetch()
-                ),
-                column(DRIVER_RACE_ENTRIES_HEADER, "race_entries", IntColumn()),
-                column(DRIVER_RACE_STARTS_HEADER, "race_starts", IntColumn()),
-                column(DRIVER_POLE_POSITIONS_HEADER, "pole_positions", IntColumn()),
-                column(DRIVER_RACE_WINS_HEADER, "race_wins", IntColumn()),
-                column(DRIVER_PODIUMS_HEADER, "podiums", IntColumn()),
-                column(DRIVER_FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
-                column(DRIVER_POINTS_HEADER, "points", TextColumn()),
-            ],
+    schema_columns = build_columns(
+        build_name_status_fragment(
+            header=DRIVER_NAME_HEADER,
+            output_key="driver",
+            column_type=DriverNameStatusColumn(),
         ),
-        record_factory=build_driver_record,
+        [column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn())],
+        [
+            column(
+                DRIVER_SEASONS_COMPETED_HEADER,
+                "seasons_competed",
+                SeasonsColumn(),
+            ),
+        ],
+        [
+            column(
+                DRIVER_CHAMPIONSHIPS_HEADER,
+                "drivers_championships",
+                TextColumn(),  # zparsujemy ręcznie w fetch()
+            ),
+        ],
+        build_metric_columns(
+            [
+                metric_column(
+                    DRIVER_RACE_ENTRIES_HEADER,
+                    "race_entries",
+                    "races_entered",
+                ),
+                metric_column(
+                    DRIVER_RACE_STARTS_HEADER,
+                    "race_starts",
+                    "races_started",
+                ),
+                metric_column(
+                    DRIVER_POLE_POSITIONS_HEADER,
+                    "pole_positions",
+                    "poles",
+                ),
+                metric_column(DRIVER_RACE_WINS_HEADER, "race_wins", "wins"),
+                metric_column(DRIVER_PODIUMS_HEADER, "podiums", "podiums"),
+                metric_column(
+                    DRIVER_FASTEST_LAPS_HEADER,
+                    "fastest_laps",
+                    "fastest_laps",
+                ),
+                metric_column(DRIVER_POINTS_HEADER, "points", "points"),
+            ],
+            column_overrides={"points": TextColumn()},
+        ),
     )
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        options = build_table_config(
-            options,
-            config=ScraperCommonConfig(
-                include_urls=True,
-                normalize_empty_values=False,
-                validation_mode="hard",
-            ),
-        )
+    CONFIG = build_scraper_config(
+        url=DRIVERS_LIST.base_url,
+        section_id=DRIVERS_LIST.section_id,
+        expected_headers=DRIVERS_LIST_HEADERS,
+        columns=schema_columns,
+        record_factory=RECORD_FACTORIES.builders("driver"),
+    )
+
+    def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         options.transformers = [
             *list(options.transformers or []),
             DriversChampionshipsTransformer(),
         ]
-        super().__init__(options=options, config=config)
+        return options
 
 
 if __name__ == "__main__":
-    import argparse
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--quality-report",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="Zapisz raport jakości do debug_dir/quality_report.json.",
-    )
-    parser.add_argument(
-        "--error-report",
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
-    )
-    args = parser.parse_args()
-    run_and_export(
-        F1DriversListScraper,
-        "drivers/f1_drivers.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-            quality_report=args.quality_report,
-            error_report=args.error_report,
-        ),
-    )
+    run_deprecated_entrypoint()

@@ -24,8 +24,12 @@ class CircuitContract(DataContract):
     grands_prix_held: int | None = None
 
     @classmethod
+    def can_handle(cls, record: Mapping[str, Any]) -> bool:
+        return "circuit" in record and "circuit_status" in record
+
+    @classmethod
     def from_record(cls, record: Mapping[str, Any]) -> "CircuitContract":
         payload = dict(record)
         payload.setdefault("grands_prix", [])
         payload.setdefault("seasons", [])
-        return super(CircuitContract, cls).from_record(payload)
+        return DataContract.from_record.__func__(cls, payload)

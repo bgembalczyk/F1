@@ -1,32 +1,13 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
-from typing import Any
 
-from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.links import normalize_single_link
 from scrapers.base.normalization import EmptyValuePolicy
+from scrapers.base.normalization_pipeline import normalize_value
 from scrapers.base.transformers.record_transformer import RecordTransformer
 
 if TYPE_CHECKING:
-    from collections.abc import Iterable
-
     from validation.validator_base import ExportRecord
-
-LINK_KEYS = {"text", "url"}
-
-
-def is_link_record(value: dict[str, Any]) -> bool:
-    if not value:
-        return False
-    keys = set(value.keys())
-    if not keys.issubset(LINK_KEYS):
-        return False
-    return bool(keys & LINK_KEYS)
-
-
-def is_link_list(value: Iterable[Any]) -> bool:
-    return all(isinstance(item, dict) and is_link_record(item) for item in value)
 
 
 class NormalizeLinksTransformer(RecordTransformer):
@@ -51,20 +32,13 @@ class NormalizeLinksTransformer(RecordTransformer):
                 continue
             updated: ExportRecord = dict(record)
             for key, value in record.items():
-                if isinstance(value, dict) and is_link_record(value):
-                    updated[key] = normalize_single_link(
-                        value,
-                        strip_marks_text=self.strip_marks,
-                        drop_empty=self.drop_empty,
-                        strip_lang_suffix=self.strip_lang_suffix,
-                    )
-                    continue
-                if isinstance(value, list) and is_link_list(value):
-                    updated[key] = normalize_links(
-                        value,
-                        strip_marks=self.strip_marks,
-                        drop_empty=self.drop_empty,
-                        strip_lang_suffix=self.strip_lang_suffix,
-                    )
+                updated[key] = normalize_value(
+                    value,
+                    strip_marks=self.strip_marks,
+                    drop_empty=self.drop_empty,
+                    strip_lang_suffix=self.strip_lang_suffix,
+                    empty_value_policy=self.empty_value_policy,
+                    drop_empty_text=False,
+                )
             normalized_records.append(updated)
         return normalized_records

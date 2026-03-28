@@ -1,12 +1,12 @@
 from pathlib import Path
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 
 
 def run_and_export(
-    scraper_cls: type[F1Scraper],
+    scraper_cls: type[ABCScraper],
     json_rel: str | Path,
     csv_rel: str | Path | None = None,
     *,

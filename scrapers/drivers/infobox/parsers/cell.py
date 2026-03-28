@@ -3,21 +3,19 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.drivers.infobox.parsers.active_years_parser import ActiveYearsParser
-from scrapers.drivers.infobox.parsers.best_finish_parser import BestFinishParser
-from scrapers.drivers.infobox.parsers.car_numbers_parser import CarNumbersParser
-from scrapers.drivers.infobox.parsers.championships_parser import ChampionshipsParser
-from scrapers.drivers.infobox.parsers.collapsible_table_parser import (
-    CollapsibleTableParser,
-)
-from scrapers.drivers.infobox.parsers.finished_season_parser import FinishedSeasonParser
-from scrapers.drivers.infobox.parsers.licence_parser import LicenceParser
+from scrapers.drivers.infobox.parsers.active_years import ActiveYearsParser
+from scrapers.drivers.infobox.parsers.best_finish import BestFinishParser
+from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
+from scrapers.drivers.infobox.parsers.championships import ChampionshipsParser
+from scrapers.drivers.infobox.parsers.collapsible_table import CollapsibleTableParser
+from scrapers.drivers.infobox.parsers.finished_season import FinishedSeasonParser
+from scrapers.drivers.infobox.parsers.licence import LicenceParser
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
-from scrapers.drivers.infobox.parsers.nationality_parser import NationalityParser
-from scrapers.drivers.infobox.parsers.numeric_parser import NumericParser
-from scrapers.drivers.infobox.parsers.race_event_parser import RaceEventParser
-from scrapers.drivers.infobox.parsers.table_parser import TableParser
-from scrapers.drivers.infobox.parsers.teams_parser import TeamsParser
+from scrapers.drivers.infobox.parsers.nationality import NationalityParser
+from scrapers.drivers.infobox.parsers.numeric import NumericParser
+from scrapers.drivers.infobox.parsers.race_event import RaceEventParser
+from scrapers.drivers.infobox.parsers.table import TableParser
+from scrapers.drivers.infobox.parsers.teams import TeamsParser
 
 
 class InfoboxCellParser:

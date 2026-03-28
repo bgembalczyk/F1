@@ -1,8 +1,7 @@
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import SkipColumn
+from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.points.constants import HISTORICAL_POSITIONS
@@ -11,6 +10,7 @@ from scrapers.points.constants import POINTS_NOTES_HEADER
 from scrapers.points.constants import POINTS_RACE_LENGTH_COMPLETED_HEADER
 from scrapers.points.constants import POINTS_SEASONS_HEADER
 from scrapers.points.constants import SPRINT_POSITIONS
+from scrapers.base.table.columns.types import SeasonsColumn
 
 
 def build_shortened_race_points_schema() -> TableSchemaDSL:

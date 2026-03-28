@@ -1,9 +1,15 @@
+# ruff: noqa: E501, RUF002
 """Test refactored base classes to ensure they maintain functionality."""
 
-from scrapers.base.abc import F1Scraper
-from scrapers.base.composite_scraper import CompositeScraper
+from scrapers.base.abc import ABCScraper
+from scrapers.base.composite_scraper import CompositeDataExtractor
+from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
-from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
+from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.table.scraper import F1TableScraper
+from scrapers.circuits.complete_scraper import F1CompleteCircuitDataExtractor
+from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
@@ -14,20 +20,30 @@ from scrapers.constructors.former_constructors_list import FormerConstructorsLis
 from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
-from scrapers.drivers.complete_scraper import CompleteDriverScraper
-from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerScraper
+from scrapers.constructors.single_scraper import SingleConstructorScraper
+from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor
+from scrapers.drivers.single_scraper import SingleDriverScraper
+from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerDataExtractor
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
 from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
-from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
+from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
+from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.points_scoring_systems_history import (
     PointsScoringSystemsHistoryScraper,
 )
 from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
 from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
+from scrapers.seasons.single_scraper import SingleSeasonScraper
+from scrapers.seasons.standings_scraper import F1StandingsScraper
+from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
+from scrapers.wiki.parsers.elements.table import TableParser
+from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
+from scrapers.wiki.scraper import WikiScraper
 
 
 class TestIndianapolisOnlyScrapers:
@@ -73,38 +89,49 @@ class TestIndianapolisOnlyScrapers:
 
 
 class TestCompleteScrapers:
-    """Test complete scrapers use CompositeScraper base class correctly."""
+    """Test complete data extractors use CompositeDataExtractor / BaseDataExtractor correctly."""
 
     def test_circuit_complete_inherits_from_composite(self):
-        """Verify F1CompleteCircuitScraper inherits from CompositeScraper."""
-        assert issubclass(F1CompleteCircuitScraper, CompositeScraper)
+        """Verify F1CompleteCircuitDataExtractor inherits from CompositeDataExtractor."""
+        assert issubclass(F1CompleteCircuitDataExtractor, CompositeDataExtractor)
 
     def test_grand_prix_complete_inherits_from_composite(self):
-        """Verify F1CompleteGrandPrixScraper inherits from CompositeScraper."""
-        assert issubclass(F1CompleteGrandPrixScraper, CompositeScraper)
+        """Verify F1CompleteGrandPrixDataExtractor inherits from CompositeDataExtractor."""
+        assert issubclass(F1CompleteGrandPrixDataExtractor, CompositeDataExtractor)
 
     def test_driver_complete_inherits_from_composite(self):
-        """Verify CompleteDriverScraper inherits from CompositeScraper."""
-        assert issubclass(CompleteDriverScraper, CompositeScraper)
+        """Verify CompleteDriverDataExtractor inherits from CompositeDataExtractor."""
+        assert issubclass(CompleteDriverDataExtractor, CompositeDataExtractor)
 
     def test_engine_manufacturer_complete_inherits_from_composite(self):
-        """Verify F1CompleteEngineManufacturerScraper inherits from CompositeScraper."""
-        assert issubclass(F1CompleteEngineManufacturerScraper, CompositeScraper)
+        """Verify F1CompleteEngineManufacturerDataExtractor inherits from CompositeDataExtractor."""
+        assert issubclass(
+            F1CompleteEngineManufacturerDataExtractor,
+            CompositeDataExtractor,
+        )
 
     def test_engine_manufacturer_complete_url(self):
-        """Verify F1CompleteEngineManufacturerScraper uses correct URL."""
+        """Verify F1CompleteEngineManufacturerDataExtractor uses correct URL."""
         assert (
-            F1CompleteEngineManufacturerScraper.url
+            F1CompleteEngineManufacturerDataExtractor.url
             == EngineManufacturersListScraper.CONFIG.url
         )
+
+    def test_composite_data_extractor_inherits_base_data_extractor(self):
+        """Verify CompositeDataExtractor inherits from BaseDataExtractor."""
+        assert issubclass(CompositeDataExtractor, BaseDataExtractor)
+
+    def test_composite_data_extractor_does_not_inherit_abc_scraper(self):
+        """Verify CompositeDataExtractor does NOT inherit from ABCScraper."""
+        assert not issubclass(CompositeDataExtractor, ABCScraper)
 
 
 class TestSingleEngineManufacturerScraper:
     """Test SingleEngineManufacturerScraper structure."""
 
     def test_inherits_from_f1_scraper(self):
-        """Verify SingleEngineManufacturerScraper inherits from F1Scraper."""
-        assert issubclass(SingleEngineManufacturerScraper, F1Scraper)
+        """Verify SingleEngineManufacturerScraper inherits from ABCScraper."""
+        assert issubclass(SingleEngineManufacturerScraper, ABCScraper)
 
     def test_has_fetch_by_url_method(self):
         """Verify SingleEngineManufacturerScraper has fetch_by_url method."""
@@ -173,3 +200,136 @@ class TestPointsScrapers:
             PointsScoringSystemsHistoryScraper,
         ]:
             assert scraper_class.CONFIG.url == BasePointsScraper.BASE_URL
+
+
+class TestWikiScraperHierarchy:
+    """Test WikiScraper hierarchy – WikiScraper inherits ABCScraper,
+    ListScrapers and SingleScrapers inherit WikiScraper."""
+
+    def test_wiki_scraper_inherits_from_f1_scraper(self):
+        """Verify WikiScraper inherits from ABCScraper."""
+        assert issubclass(WikiScraper, ABCScraper)
+
+    # ---------- F1ListScraper ----------
+
+    def test_f1_list_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1ListScraper inherits from WikiScraper."""
+        assert issubclass(F1ListScraper, WikiScraper)
+
+    # ---------- F1TableScraper ----------
+
+    def test_f1_table_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1TableScraper inherits from WikiScraper."""
+        assert issubclass(F1TableScraper, WikiScraper)
+
+    # ---------- Single scrapers ----------
+
+    def test_single_circuit_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1SingleCircuitScraper inherits from WikiScraper."""
+        assert issubclass(F1SingleCircuitScraper, WikiScraper)
+
+    def test_single_constructor_scraper_inherits_from_wiki_scraper(self):
+        """Verify SingleConstructorScraper inherits from WikiScraper."""
+        assert issubclass(SingleConstructorScraper, WikiScraper)
+
+    def test_single_driver_scraper_inherits_from_wiki_scraper(self):
+        """Verify SingleDriverScraper inherits from WikiScraper."""
+        assert issubclass(SingleDriverScraper, WikiScraper)
+
+    def test_single_season_scraper_inherits_from_wiki_scraper(self):
+        """Verify SingleSeasonScraper inherits from WikiScraper."""
+        assert issubclass(SingleSeasonScraper, WikiScraper)
+
+    def test_single_engine_manufacturer_inherits_from_wiki_scraper(self):
+        """Verify SingleEngineManufacturerScraper inherits from WikiScraper."""
+        assert issubclass(SingleEngineManufacturerScraper, WikiScraper)
+
+    def test_single_grand_prix_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1SingleGrandPrixScraper inherits from WikiScraper."""
+        assert issubclass(F1SingleGrandPrixScraper, WikiScraper)
+
+    def test_circuit_infobox_parser_is_not_wiki_scraper(self):
+        """Verify F1CircuitInfoboxParser is a pure parser, not a WikiScraper."""
+        assert not issubclass(F1CircuitInfoboxParser, WikiScraper)
+
+    def test_circuit_infobox_parser_inherits_from_infobox_parser(self):
+        """Verify F1CircuitInfoboxParser inherits from InfoboxParser."""
+        assert issubclass(F1CircuitInfoboxParser, WikiInfoboxParser)
+
+    def test_sponsorship_liveries_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1SponsorshipLiveriesScraper inherits from WikiScraper."""
+        assert issubclass(F1SponsorshipLiveriesScraper, WikiScraper)
+
+    # ---------- Transitivity through WikiScraper ----------
+
+    def test_list_scraper_still_inherits_f1_scraper(self):
+        """Verify F1ListScraper (transitively) inherits from ABCScraper."""
+        assert issubclass(F1ListScraper, ABCScraper)
+
+    def test_table_scraper_still_inherits_f1_scraper(self):
+        """Verify F1TableScraper (transitively) inherits from ABCScraper."""
+        assert issubclass(F1TableScraper, ABCScraper)
+
+    def test_single_scrapers_still_inherit_f1_scraper(self):
+        """Verify all single scrapers (transitively) inherit from ABCScraper."""
+        for cls in [
+            F1SingleCircuitScraper,
+            SingleConstructorScraper,
+            SingleDriverScraper,
+            SingleSeasonScraper,
+            SingleEngineManufacturerScraper,
+            F1SingleGrandPrixScraper,
+        ]:
+            assert issubclass(
+                cls,
+                ABCScraper,
+            ), f"{cls.__name__} should (transitively) inherit ABCScraper"
+
+    def test_wiki_scraper_has_wiki_parsers(self):
+        """Verify WikiScraper exposes HeaderParser, BodyContentParser and SectionParser as attributes."""
+        scraper = WikiScraper()
+        assert hasattr(scraper, "header_parser")
+        assert hasattr(scraper, "body_content_parser")
+        assert hasattr(scraper, "section_parser")
+
+    def test_wiki_scraper_has_element_parsers_from_mixin(self):
+        """Verify WikiScraper exposes WikiElementParserMixin parsers (table_parser, infobox_parser, list_parser, ...)."""
+        assert issubclass(WikiScraper, WikiElementParserMixin)
+        scraper = WikiScraper()
+        assert hasattr(scraper, "table_parser")
+        assert hasattr(scraper, "infobox_parser")
+        assert hasattr(scraper, "list_parser")
+        assert hasattr(scraper, "paragraph_parser")
+
+    def test_wiki_element_parser_mixin_has_find_infobox(self):
+        """Verify WikiElementParserMixin exposes find_infobox and find_infoboxes helpers."""
+        assert hasattr(WikiElementParserMixin, "find_infobox")
+        assert hasattr(WikiElementParserMixin, "find_infoboxes")
+        assert callable(WikiElementParserMixin.find_infobox)
+        assert callable(WikiElementParserMixin.find_infoboxes)
+
+    def test_wiki_scraper_has_scrape_method(self):
+        """Verify WikiScraper has a scrape(url) convenience method."""
+        assert hasattr(WikiScraper, "scrape")
+        assert callable(WikiScraper.scrape)
+
+
+class TestF1StandingsScraper:
+    """Test that F1StandingsScraper is a TableParser, not a WikiScraper."""
+
+    def test_standings_scraper_is_not_wiki_scraper(self):
+        """Verify F1StandingsScraper does not inherit from WikiScraper."""
+        assert not issubclass(F1StandingsScraper, WikiScraper)
+
+    def test_standings_scraper_is_not_f1_table_scraper(self):
+        """Verify F1StandingsScraper does not inherit from F1TableScraper."""
+        assert not issubclass(F1StandingsScraper, F1TableScraper)
+
+    def test_standings_scraper_is_table_parser(self):
+        """Verify F1StandingsScraper inherits from TableParser."""
+        assert issubclass(F1StandingsScraper, TableParser)
+
+    def test_standings_scraper_has_parse_method(self):
+        """Verify F1StandingsScraper exposes a parse(element) method."""
+        assert hasattr(F1StandingsScraper, "parse")
+        assert callable(F1StandingsScraper.parse)

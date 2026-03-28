@@ -351,261 +351,111 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "841",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_841"
-              },
+              "Year": "1985",
+              "Chassis": "841",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1985_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1985_Portuguese_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1985_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1985_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1985_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1985_Detroit_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1985_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1985_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1985_German_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1985_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1985_Dutch_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1985_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1985_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1985_European_Grand_Prix"
-              },
-              "15": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1985_South_African_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1985_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "POR",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "AUT",
+              "11": "NED",
+              "12": "ITA",
+              "13": "BEL",
+              "14": "EUR",
+              "15": "RSA",
+              "16": "AUS",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "841",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_841"
-              },
+              "Year": "1985",
+              "Chassis": "841",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jonathan Palmer",
-                "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
-              },
-              "1": null,
+              "Tyres": "G",
+              "Drivers": "Jonathan Palmer",
+              "1": "",
               "2": "Ret",
               "3": "DNS",
               "4": "11",
-              "5": null,
-              "6": null,
+              "5": "",
+              "6": "",
               "7": "Ret",
               "8": "Ret",
               "9": "Ret",
               "10": "Ret",
               "11": "Ret",
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "841",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_841"
-              },
+              "Year": "1985",
+              "Chassis": "841",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Christian Danner",
-                "url": "https://en.wikipedia.org/wiki/Christian_Danner"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "Tyres": "G",
+              "Drivers": "Christian Danner",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "13": "Ret",
               "14": "Ret",
-              "15": null,
-              "16": null,
+              "15": "",
+              "16": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "861",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_861"
-              },
+              "Year": "1986",
+              "Chassis": "861",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "ESP",
+              "3": "SMR",
+              "4": "MON",
+              "5": "BEL",
+              "6": "CAN",
+              "7": "DET",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "AUT",
+              "13": "ITA",
+              "14": "POR",
+              "15": "MEX",
+              "16": "AUS",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "861",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_861"
-              },
+              "Year": "1986",
+              "Chassis": "861",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jonathan Palmer",
-                "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
-              },
+              "Tyres": "G",
+              "Drivers": "Jonathan Palmer",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -626,25 +476,13 @@
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "861",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_861"
-              },
+              "Year": "1986",
+              "Chassis": "861",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Huub Rothengatter",
-                "url": "https://en.wikipedia.org/wiki/Huub_Rothengatter"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "G",
+              "Drivers": "Huub Rothengatter",
+              "1": "",
+              "2": "",
               "3": "Ret",
               "4": "DNQ",
               "5": "Ret",
@@ -663,99 +501,36 @@
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-              },
+              "Year": "1987",
               "Chassis": "861 871",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-              },
-              "7": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-              },
-              "8": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-              },
-              "9": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-              },
-              "12": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-              },
-              "13": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-              },
-              "14": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "BEL",
+              "4": "MON",
+              "5": "DET",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "HUN",
+              "10": "AUT",
+              "11": "ITA",
+              "12": "POR",
+              "13": "ESP",
+              "14": "MEX",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "2*",
               "WCC": "10th"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-              },
+              "Year": "1987",
               "Chassis": "861 871",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Martin Brundle",
-                "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
-              },
+              "Tyres": "G",
+              "Drivers": "Martin Brundle",
               "1": "Ret",
               "2": "5",
               "3": "Ret",
@@ -776,20 +551,11 @@
               "WCC": "10th"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-              },
+              "Year": "1987",
               "Chassis": "861 871",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Christian Danner",
-                "url": "https://en.wikipedia.org/wiki/Christian_Danner"
-              },
+              "Tyres": "G",
+              "Drivers": "Christian Danner",
               "1": "9",
               "2": "7",
               "3": "Ret",
@@ -810,105 +576,36 @@
               "WCC": "10th"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "881",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_881"
-              },
+              "Year": "1988",
+              "Chassis": "881",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1988_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1988_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1988_Mexican_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1988_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1988_Detroit_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1988_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1988_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1988_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1988_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1988_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1988_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1988_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1988_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1988_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1988_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "881",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_881"
-              },
+              "Year": "1988",
+              "Chassis": "881",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Bernd Schneider",
-                "url": "https://en.wikipedia.org/wiki/Bernd_Schneider_(racing_driver)"
-              },
+              "Tyres": "G",
+              "Drivers": "Bernd Schneider",
               "1": "DNQ",
               "2": "DNQ",
               "3": "DNQ",
@@ -929,23 +626,11 @@
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "881",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_881"
-              },
+              "Year": "1988",
+              "Chassis": "881",
               "Engine": "Zakspeed 1500/4 1.5 L4 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
+              "Tyres": "G",
+              "Drivers": "Piercarlo Ghinzani",
               "1": "DNQ",
               "2": "Ret",
               "3": "Ret",
@@ -966,105 +651,36 @@
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "891",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_891"
-              },
+              "Year": "1989",
+              "Chassis": "891",
               "Engine": "Yamaha OX88 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1989_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1989_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1989_Mexican_Grand_Prix"
-              },
-              "5": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1989_United_States_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1989_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1989_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1989_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1989_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1989_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1989_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1989_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1989_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1989_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1989_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1989_Australian_Grand_Prix"
-              },
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "891",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_891"
-              },
+              "Year": "1989",
+              "Chassis": "891",
               "Engine": "Yamaha OX88 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Bernd Schneider",
-                "url": "https://en.wikipedia.org/wiki/Bernd_Schneider_(racing_driver)"
-              },
+              "Tyres": "P",
+              "Drivers": "Bernd Schneider",
               "1": "Ret",
               "2": "DNPQ",
               "3": "DNPQ",
@@ -1085,23 +701,11 @@
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "891",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_891"
-              },
+              "Year": "1989",
+              "Chassis": "891",
               "Engine": "Yamaha OX88 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Aguri Suzuki",
-                "url": "https://en.wikipedia.org/wiki/Aguri_Suzuki"
-              },
+              "Tyres": "P",
+              "Drivers": "Aguri Suzuki",
               "1": "DNPQ",
               "2": "DNPQ",
               "3": "DNPQ",
@@ -1121,7 +725,8 @@
               "Points": "0",
               "WCC": "NC"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

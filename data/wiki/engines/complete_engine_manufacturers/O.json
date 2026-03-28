@@ -284,417 +284,217 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
+              "Year": "1951",
               "Entrant": "OSCA Automobili",
               "Chassis": "4500G",
               "Engine": "4500 4.5 V12",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
-              },
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "P",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP",
+              "9": "",
+              "10": "",
+              "11": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
+              "Year": "1951",
               "Entrant": "OSCA Automobili",
               "Chassis": "4500G",
               "Engine": "4500 4.5 V12",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Franco Rol",
-                "url": "https://en.wikipedia.org/wiki/Franco_Rol"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "P",
+              "Driver": "Franco Rol",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "9",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Élie Bayol",
-                "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
-              },
+              "Year": "1952",
+              "Entrant": "Élie Bayol",
               "Chassis": "20",
               "Engine": "2000 2.0 L6",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1952_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1952_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1952_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1952_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1952_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-              },
-              "7": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1952_Dutch_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1952_Italian_Grand_Prix"
-              },
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "P",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "11": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Élie Bayol",
-                "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
-              },
+              "Year": "1952",
+              "Entrant": "Élie Bayol",
               "Chassis": "20",
               "Engine": "2000 2.0 L6",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Élie Bayol",
-                "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
+              "Tyres": "P",
+              "Driver": "Élie Bayol",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
               "8": "Ret",
-              "9": null,
-              "10": null,
-              "11": null,
+              "9": "",
+              "10": "",
+              "11": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Louis Chiron",
-                "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
-              },
+              "Year": "1953",
+              "Entrant": "Louis Chiron",
               "Chassis": "20",
               "Engine": "2000 2.0 L6",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
-              },
-              "7": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
-              },
-              "8": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
-              },
-              "10": null,
-              "11": null,
+              "Tyres": "P",
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA",
+              "10": "",
+              "11": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Louis Chiron",
-                "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
-              },
+              "Year": "1953",
+              "Entrant": "Louis Chiron",
               "Chassis": "20",
               "Engine": "2000 2.0 L6",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Louis Chiron",
-                "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "P",
+              "Driver": "Louis Chiron",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "15",
               "6": "DNS",
-              "7": null,
+              "7": "",
               "8": "DNS",
               "9": "10",
-              "10": null,
-              "11": null,
+              "10": "",
+              "11": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Élie Bayol",
-                "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
-              },
+              "Year": "1953",
+              "Entrant": "Élie Bayol",
               "Chassis": "20",
               "Engine": "2000 2.0 L6",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Élie Bayol",
-                "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "P",
+              "Driver": "Élie Bayol",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "Ret",
-              "6": null,
-              "7": null,
+              "6": "",
+              "7": "",
               "8": "DNS",
               "9": "Ret",
-              "10": null,
-              "11": null,
+              "10": "",
+              "11": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1958",
-                "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-              },
+              "Year": "1958",
               "Entrant": "OSCA Automobili",
               "Chassis": "F2/S",
               "Engine": "372 1.5 L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
-              },
-              "7": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
-              },
-              "8": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
-              },
-              "9": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
-              },
-              "10": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
-              },
-              "11": {
-                "text": "MOR",
-                "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
-              },
+              "Tyres": "P",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "NED",
+              "4": "500",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "POR",
+              "10": "ITA",
+              "11": "MOR",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1958",
-                "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-              },
+              "Year": "1958",
               "Entrant": "OSCA Automobili",
               "Chassis": "F2/S",
               "Engine": "372 1.5 L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Giulio Cabianca",
-                "url": "https://en.wikipedia.org/wiki/Giulio_Cabianca"
-              },
-              "1": null,
+              "Tyres": "P",
+              "Driver": "Giulio Cabianca",
+              "1": "",
               "2": "DNQ",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1958",
-                "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-              },
+              "Year": "1958",
               "Entrant": "OSCA Automobili",
               "Chassis": "F2/S",
               "Engine": "372 1.5 L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Luigi Piotti",
-                "url": "https://en.wikipedia.org/wiki/Luigi_Piotti"
-              },
-              "1": null,
+              "Tyres": "P",
+              "Driver": "Luigi Piotti",
+              "1": "",
               "2": "DNQ",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "WCC": "NC",
               "Points": "0"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -718,360 +518,178 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Prince Bira",
-                "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
-              },
+              "Year": "1951",
+              "Entrant": "Prince Bira",
               "Chassis": "Maserati 4CLT/48",
               "Engine": "4500 4.5 V12",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
-              },
-              "9": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP",
+              "9": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Prince Bira",
-                "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
-              },
+              "Year": "1951",
+              "Entrant": "Prince Bira",
               "Chassis": "Maserati 4CLT/48",
               "Engine": "4500 4.5 V12",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "B. Bira",
-                "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
+              "Tyres": "P",
+              "Drivers": "B. Bira",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
               "8": "Ret",
-              "9": null,
+              "9": "",
               "WCC": "- N/a 1",
               "Points": "- N/a 1"
             },
             {
-              "Year": {
-                "text": "1959",
-                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-              },
+              "Year": "1959",
               "Entrant": "OSCA Automobili",
               "Chassis": "Cooper T43",
               "Engine": "2.0 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1959_Monaco_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1959_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1959_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1959_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1959_German_Grand_Prix"
-              },
-              "7": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1959_Portuguese_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1959_Italian_Grand_Prix"
-              },
-              "9": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1959_United_States_Grand_Prix"
-              },
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "500",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "POR",
+              "8": "ITA",
+              "9": "USA",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1959",
-                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-              },
+              "Year": "1959",
               "Entrant": "OSCA Automobili",
               "Chassis": "Cooper T43",
               "Engine": "2.0 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Alejandro de Tomaso",
-                "url": "https://en.wikipedia.org/wiki/Alejandro_de_Tomaso"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
+              "Tyres": "D",
+              "Drivers": "Alejandro de Tomaso",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
               "9": "Ret",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1961",
-                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Scuderia Serenissima",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
-              },
+              "Year": "1961",
+              "Entrant": "Scuderia Serenissima",
               "Chassis": "De Tomaso F1",
               "Engine": "372 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1961_Monaco_Grand_Prix"
-              },
-              "2": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1961_Dutch_Grand_Prix"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1961_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1961_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1961_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1961_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1961_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1961_United_States_Grand_Prix"
-              },
-              "9": null,
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "NED",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1961",
-                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Scuderia Serenissima",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
-              },
+              "Year": "1961",
+              "Entrant": "Scuderia Serenissima",
               "Chassis": "De Tomaso F1",
               "Engine": "372 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Giorgio Scarlatti",
-                "url": "https://en.wikipedia.org/wiki/Giorgio_Scarlatti"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "D",
+              "Drivers": "Giorgio Scarlatti",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1961",
-                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-              },
+              "Year": "1961",
               "Entrant": "Scuderia Settecolli",
               "Chassis": "De Tomaso F1",
               "Engine": "372 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Roberto Lippi",
-                "url": "https://en.wikipedia.org/wiki/Roberto_Lippi"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null,
+              "8": "",
+              "9": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1962",
-                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
-              },
+              "Year": "1962",
               "Entrant": "Scuderia Settecolli",
               "Chassis": "De Tomaso F1",
               "Engine": "372 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
-              },
-              "9": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
-              },
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "NED",
+              "2": "MON",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "RSA",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1962",
-                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
-              },
+              "Year": "1962",
               "Entrant": "Scuderia Settecolli",
               "Chassis": "De Tomaso F1",
               "Engine": "372 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Roberto Lippi",
-                "url": "https://en.wikipedia.org/wiki/Roberto_Lippi"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "DNQ",
-              "8": null,
-              "9": null,
+              "8": "",
+              "9": "",
               "WCC": "NC",
               "Points": "0"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -1315,178 +933,70 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1974",
-                "url": "https://en.wikipedia.org/wiki/1974_European_Formula_Two_Championship"
-              },
-              "Chassis": {
-                "text": "Osella PA2",
-                "url": "https://en.wikipedia.org/wiki/Osella_PA2"
-              },
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BAR",
-                "url": "https://en.wikipedia.org/wiki/Montju%C3%AFc_circuit"
-              },
-              "2": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "3": {
-                "text": "PAU",
-                "url": "https://en.wikipedia.org/wiki/Pau_Grand_Prix"
-              },
-              "4": {
-                "text": "SAL",
-                "url": "https://en.wikipedia.org/wiki/Salzburgring"
-              },
-              "5": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "6": {
-                "text": "MUG",
-                "url": "https://en.wikipedia.org/wiki/Mugello_Circuit"
-              },
-              "7": {
-                "text": "KAR",
-                "url": "https://en.wikipedia.org/wiki/Karlskoga_Motorstadion"
-              },
-              "8": {
-                "text": "PER",
-                "url": "https://en.wikipedia.org/wiki/Autodromo_di_Pergusa"
-              },
-              "9": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "10": {
-                "text": "VAL",
-                "url": "https://en.wikipedia.org/wiki/ACI_Vallelunga_Circuit"
-              },
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null
+              "Year": "1974",
+              "Chassis": "Osella PA2",
+              "Engine": "BMW",
+              "Drivers": "",
+              "1": "BAR",
+              "2": "HOC",
+              "3": "PAU",
+              "4": "SAL",
+              "5": "HOC",
+              "6": "MUG",
+              "7": "KAR",
+              "8": "PER",
+              "9": "HOC",
+              "10": "VAL",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
             },
             {
-              "Year": {
-                "text": "1974",
-                "url": "https://en.wikipedia.org/wiki/1974_European_Formula_Two_Championship"
-              },
-              "Chassis": {
-                "text": "Osella PA2",
-                "url": "https://en.wikipedia.org/wiki/Osella_PA2"
-              },
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": {
-                "text": "Arturo Merzario",
-                "url": "https://en.wikipedia.org/wiki/Arturo_Merzario"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
+              "Year": "1974",
+              "Chassis": "Osella PA2",
+              "Engine": "BMW",
+              "Drivers": "Arturo Merzario",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
               "10": "Ret",
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
             },
             {
-              "Year": {
-                "text": "1975",
-                "url": "https://en.wikipedia.org/wiki/1975_European_Formula_Two_Championship"
-              },
+              "Year": "1975",
               "Chassis": "Osella FA2 March 742",
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "EST",
-                "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril"
-              },
-              "2": {
-                "text": "THR",
-                "url": "https://en.wikipedia.org/wiki/Thruxton_Circuit"
-              },
-              "3": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "4": {
-                "text": "NÜR",
-                "url": "https://en.wikipedia.org/wiki/Eifelrennen"
-              },
-              "5": {
-                "text": "PAU",
-                "url": "https://en.wikipedia.org/wiki/Pau_Grand_Prix"
-              },
-              "6": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "7": {
-                "text": "SAL",
-                "url": "https://en.wikipedia.org/wiki/Salzburgring"
-              },
-              "8": {
-                "text": "ROU",
-                "url": "https://en.wikipedia.org/wiki/Rouen-Les-Essarts"
-              },
-              "9": {
-                "text": "MUG",
-                "url": "https://en.wikipedia.org/wiki/Mugello_Circuit"
-              },
-              "10": {
-                "text": "PER",
-                "url": "https://en.wikipedia.org/wiki/Autodromo_di_Pergusa"
-              },
-              "11": {
-                "text": "SIL",
-                "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
-              },
-              "12": {
-                "text": "ZOL",
-                "url": "https://en.wikipedia.org/wiki/Circuit_Zolder"
-              },
-              "13": {
-                "text": "NOG",
-                "url": "https://en.wikipedia.org/wiki/Circuit_Paul_Armagnac"
-              },
-              "14": {
-                "text": "VAL",
-                "url": "https://en.wikipedia.org/wiki/ACI_Vallelunga_Circuit"
-              }
+              "Engine": "BMW",
+              "Drivers": "",
+              "1": "EST",
+              "2": "THR",
+              "3": "HOC",
+              "4": "NÜR",
+              "5": "PAU",
+              "6": "HOC",
+              "7": "SAL",
+              "8": "ROU",
+              "9": "MUG",
+              "10": "PER",
+              "11": "SIL",
+              "12": "ZOL",
+              "13": "NOG",
+              "14": "VAL"
             },
             {
-              "Year": {
-                "text": "1975",
-                "url": "https://en.wikipedia.org/wiki/1975_European_Formula_Two_Championship"
-              },
+              "Year": "1975",
               "Chassis": "Osella FA2 March 742",
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": {
-                "text": "Giorgio Francia",
-                "url": "https://en.wikipedia.org/wiki/Giorgio_Francia"
-              },
+              "Engine": "BMW",
+              "Drivers": "Giorgio Francia",
               "1": "4",
               "2": "10",
               "3": "5",
@@ -1495,7 +1005,7 @@
               "6": "5",
               "7": "5",
               "8": "DNS",
-              "9": null,
+              "9": "",
               "10": "4",
               "11": "9",
               "12": "5",
@@ -1503,15 +1013,9 @@
               "14": "Ret"
             },
             {
-              "Year": {
-                "text": "1975",
-                "url": "https://en.wikipedia.org/wiki/1975_European_Formula_Two_Championship"
-              },
+              "Year": "1975",
               "Chassis": "Osella FA2 March 742",
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
+              "Engine": "BMW",
               "Drivers": "Diulio Truffo",
               "1": "5",
               "2": "6",
@@ -1520,309 +1024,159 @@
               "5": "6",
               "6": "6",
               "7": "Ret",
-              "8": null,
+              "8": "",
               "9": "5",
               "10": "5",
               "11": "Ret",
-              "12": null,
-              "13": null,
-              "14": null
+              "12": "",
+              "13": "",
+              "14": ""
             },
             {
-              "Year": {
-                "text": "1975",
-                "url": "https://en.wikipedia.org/wiki/1975_European_Formula_Two_Championship"
-              },
+              "Year": "1975",
               "Chassis": "Osella FA2 March 742",
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
+              "Engine": "BMW",
               "Drivers": "Roberto Filannino",
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "12": "15",
               "13": "Ret",
               "14": "DNQ"
             },
             {
-              "Year": {
-                "text": "1975",
-                "url": "https://en.wikipedia.org/wiki/1975_European_Formula_Two_Championship"
-              },
+              "Year": "1975",
               "Chassis": "Osella FA2 March 742",
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": {
-                "text": "Arturo Merzario",
-                "url": "https://en.wikipedia.org/wiki/Arturo_Merzario"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
+              "Engine": "BMW",
+              "Drivers": "Arturo Merzario",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
               "11": "Ret",
-              "12": null,
-              "13": null,
+              "12": "",
+              "13": "",
               "14": "Ret"
             },
             {
-              "Year": {
-                "text": "1976",
-                "url": "https://en.wikipedia.org/wiki/1976_European_Formula_Two_Championship"
-              },
-              "Chassis": {
-                "text": "Osella FA2",
-                "url": null
-              },
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "2": {
-                "text": "THR",
-                "url": "https://en.wikipedia.org/wiki/Thruxton_Circuit"
-              },
-              "3": {
-                "text": "VAL",
-                "url": "https://en.wikipedia.org/wiki/ACI_Vallelunga_Circuit"
-              },
-              "4": {
-                "text": "SAL",
-                "url": "https://en.wikipedia.org/wiki/Salzburgring"
-              },
-              "5": {
-                "text": "PAU",
-                "url": "https://en.wikipedia.org/wiki/Pau_Grand_Prix"
-              },
-              "6": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "7": {
-                "text": "ROU",
-                "url": "https://en.wikipedia.org/wiki/Rouen-Les-Essarts"
-              },
-              "8": {
-                "text": "MUG",
-                "url": "https://en.wikipedia.org/wiki/Mugello_Circuit"
-              },
-              "9": {
-                "text": "PER",
-                "url": "https://en.wikipedia.org/wiki/Autodromo_di_Pergusa"
-              },
-              "10": {
-                "text": "EST",
-                "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril"
-              },
-              "11": {
-                "text": "NOG",
-                "url": "https://en.wikipedia.org/wiki/Circuit_Paul_Armagnac"
-              },
-              "12": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "13": null,
-              "14": null
+              "Year": "1976",
+              "Chassis": "Osella FA2",
+              "Engine": "BMW",
+              "Drivers": "",
+              "1": "HOC",
+              "2": "THR",
+              "3": "VAL",
+              "4": "SAL",
+              "5": "PAU",
+              "6": "HOC",
+              "7": "ROU",
+              "8": "MUG",
+              "9": "PER",
+              "10": "EST",
+              "11": "NOG",
+              "12": "HOC",
+              "13": "",
+              "14": ""
             },
             {
-              "Year": {
-                "text": "1976",
-                "url": "https://en.wikipedia.org/wiki/1976_European_Formula_Two_Championship"
-              },
-              "Chassis": {
-                "text": "Osella FA2",
-                "url": null
-              },
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": {
-                "text": "Giorgio Francia",
-                "url": "https://en.wikipedia.org/wiki/Giorgio_Francia"
-              },
+              "Year": "1976",
+              "Chassis": "Osella FA2",
+              "Engine": "BMW",
+              "Drivers": "Giorgio Francia",
               "1": "DNQ",
               "2": "Ret",
               "3": "11",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
             },
             {
-              "Year": {
-                "text": "1976",
-                "url": "https://en.wikipedia.org/wiki/1976_European_Formula_Two_Championship"
-              },
-              "Chassis": {
-                "text": "Osella FA2",
-                "url": null
-              },
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
+              "Year": "1976",
+              "Chassis": "Osella FA2",
+              "Engine": "BMW",
               "Drivers": "Gianfranco Trombetti",
               "1": "Ret",
               "2": "Ret",
               "3": "DNQ",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
             },
             {
-              "Year": {
-                "text": "1976",
-                "url": "https://en.wikipedia.org/wiki/1976_European_Formula_Two_Championship"
-              },
-              "Chassis": {
-                "text": "Osella FA2",
-                "url": null
-              },
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": {
-                "text": "Arturo Merzario",
-                "url": "https://en.wikipedia.org/wiki/Arturo_Merzario"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "Year": "1976",
+              "Chassis": "Osella FA2",
+              "Engine": "BMW",
+              "Drivers": "Arturo Merzario",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "12": "DNQ",
-              "13": null,
-              "14": null
+              "13": "",
+              "14": ""
             },
             {
-              "Year": {
-                "text": "1979",
-                "url": "https://en.wikipedia.org/wiki/1979_European_Formula_Two_Championship"
-              },
-              "Chassis": {
-                "text": "Osella FA2/79",
-                "url": null
-              },
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "SIL",
-                "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
-              },
-              "2": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "3": {
-                "text": "THR",
-                "url": "https://en.wikipedia.org/wiki/Thruxton_Circuit"
-              },
-              "4": {
-                "text": "NÜR",
-                "url": "https://en.wikipedia.org/wiki/Eifelrennen"
-              },
-              "5": {
-                "text": "VAL",
-                "url": "https://en.wikipedia.org/wiki/ACI_Vallelunga_Circuit"
-              },
-              "6": {
-                "text": "MUG",
-                "url": "https://en.wikipedia.org/wiki/Mugello_Circuit"
-              },
-              "7": {
-                "text": "PAU",
-                "url": "https://en.wikipedia.org/wiki/Pau_Grand_Prix"
-              },
-              "8": {
-                "text": "HOC",
-                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
-              },
-              "9": {
-                "text": "ZAN",
-                "url": "https://en.wikipedia.org/wiki/Circuit_Park_Zandvoort"
-              },
-              "10": {
-                "text": "PER",
-                "url": "https://en.wikipedia.org/wiki/Autodromo_di_Pergusa"
-              },
-              "11": {
-                "text": "MIS",
-                "url": "https://en.wikipedia.org/wiki/Misano_Circuit"
-              },
-              "12": {
-                "text": "DON",
-                "url": "https://en.wikipedia.org/wiki/Donington_Park"
-              },
-              "13": null,
-              "14": null
+              "Year": "1979",
+              "Chassis": "Osella FA2/79",
+              "Engine": "BMW",
+              "Drivers": "",
+              "1": "SIL",
+              "2": "HOC",
+              "3": "THR",
+              "4": "NÜR",
+              "5": "VAL",
+              "6": "MUG",
+              "7": "PAU",
+              "8": "HOC",
+              "9": "ZAN",
+              "10": "PER",
+              "11": "MIS",
+              "12": "DON",
+              "13": "",
+              "14": ""
             },
             {
-              "Year": {
-                "text": "1979",
-                "url": "https://en.wikipedia.org/wiki/1979_European_Formula_Two_Championship"
-              },
-              "Chassis": {
-                "text": "Osella FA2/79",
-                "url": null
-              },
-              "Engine": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-              },
-              "Drivers": {
-                "text": "Eddie Cheever",
-                "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
-              },
+              "Year": "1979",
+              "Chassis": "Osella FA2/79",
+              "Engine": "BMW",
+              "Drivers": "Eddie Cheever",
               "1": "1",
               "2": "5",
               "3": "Ret",
@@ -1835,10 +1189,11 @@
               "10": "5",
               "11": "6",
               "12": "7",
-              "13": null,
-              "14": null
+              "13": "",
+              "14": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1868,99 +1223,36 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1980",
-                "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "FA1",
-                "url": null
-              },
+              "Year": "1980",
+              "Chassis": "FA1",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1980_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1980_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1980_South_African_Grand_Prix"
-              },
-              "4": {
-                "text": "USW",
-                "url": "https://en.wikipedia.org/wiki/1980_United_States_Grand_Prix_West"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1980_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1980_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1980_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1980_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1980_German_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1980_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1980_Dutch_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1980_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1980_Canadian_Grand_Prix"
-              },
-              "14": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1980_United_States_Grand_Prix"
-              },
-              "15": null,
-              "16": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "BRA",
+              "3": "RSA",
+              "4": "USW",
+              "5": "BEL",
+              "6": "MON",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "AUT",
+              "11": "NED",
+              "12": "ITA",
+              "13": "CAN",
+              "14": "USA",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1980",
-                "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "FA1",
-                "url": null
-              },
+              "Year": "1980",
+              "Chassis": "FA1",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Eddie Cheever",
-                "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
-              },
+              "Tyres": "G",
+              "Drivers": "Eddie Cheever",
               "1": "DNQ",
               "2": "DNQ",
               "3": "Ret",
@@ -1975,212 +1267,125 @@
               "12": "12",
               "13": "Ret",
               "14": "Ret",
-              "15": null,
-              "16": null,
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
+              "Year": "1981",
               "Chassis": "FA1B FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "USW",
-                "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-              },
-              "11": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-              },
-              "12": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-              },
-              "15": {
-                "text": "CPL",
-                "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-              },
-              "16": null,
+              "Tyres": "M",
+              "Drivers": "",
+              "1": "USW",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "SMR",
+              "5": "BEL",
+              "6": "MON",
+              "7": "ESP",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "AUT",
+              "12": "NED",
+              "13": "ITA",
+              "14": "CAN",
+              "15": "CPL",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
+              "Year": "1981",
               "Chassis": "FA1B FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Miguel Ángel Guerra",
-                "url": "https://en.wikipedia.org/wiki/Miguel_%C3%81ngel_Guerra"
-              },
+              "Tyres": "M",
+              "Drivers": "Miguel Ángel Guerra",
               "1": "DNQ",
               "2": "DNQ",
               "3": "DNQ",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
+              "Year": "1981",
               "Chassis": "FA1B FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "M",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "13",
               "6": "DNQ",
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
+              "Year": "1981",
               "Chassis": "FA1B FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Giorgio Francia",
-                "url": "https://en.wikipedia.org/wiki/Giorgio_Francia"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "M",
+              "Drivers": "Giorgio Francia",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "DNQ",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
+              "Year": "1981",
               "Chassis": "FA1B FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Jean-Pierre Jarier",
-                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
+              "Tyres": "M",
+              "Drivers": "Jean-Pierre Jarier",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
               "9": "8",
               "10": "8",
               "11": "10",
@@ -2188,25 +1393,16 @@
               "13": "9",
               "14": "Ret",
               "15": "Ret",
-              "16": null,
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
+              "Year": "1981",
               "Chassis": "FA1B FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Beppe Gabbiani",
-                "url": "https://en.wikipedia.org/wiki/Beppe_Gabbiani"
-              },
+              "Tyres": "M",
+              "Drivers": "Beppe Gabbiani",
               "1": "Ret",
               "2": "DNQ",
               "3": "DNQ",
@@ -2222,110 +1418,41 @@
               "13": "DNQ",
               "14": "DNQ",
               "15": "DNQ",
-              "16": null,
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1C",
-                "url": null
-              },
+              "Year": "1982",
+              "Chassis": "FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "USW",
-                "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-              },
-              "10": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-              },
-              "11": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-              },
-              "12": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-              },
-              "13": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-              },
-              "14": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-              },
-              "15": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-              },
-              "16": {
-                "text": "CPL",
-                "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-              },
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "USW",
+              "4": "SMR",
+              "5": "BEL",
+              "6": "MON",
+              "7": "DET",
+              "8": "CAN",
+              "9": "NED",
+              "10": "GBR",
+              "11": "FRA",
+              "12": "GER",
+              "13": "AUT",
+              "14": "SUI",
+              "15": "ITA",
+              "16": "CPL",
               "WCC": "13th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1C",
-                "url": null
-              },
+              "Year": "1982",
+              "Chassis": "FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Jean-Pierre Jarier",
-                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
-              },
+              "Tyres": "P",
+              "Drivers": "Jean-Pierre Jarier",
               "1": "Ret",
               "2": "9",
               "3": "Ret",
@@ -2346,23 +1473,11 @@
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1C",
-                "url": null
-              },
+              "Year": "1982",
+              "Chassis": "FA1C",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Riccardo Paletti",
-                "url": "https://en.wikipedia.org/wiki/Riccardo_Paletti"
-              },
+              "Tyres": "P",
+              "Drivers": "Riccardo Paletti",
               "1": "DNQ",
               "2": "DNPQ",
               "3": "DNQ",
@@ -2371,114 +1486,48 @@
               "6": "DNPQ",
               "7": "DNS",
               "8": "Ret",
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "13th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1D",
-                "url": null
-              },
+              "Year": "1983",
+              "Chassis": "FA1D",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1983_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "USW",
-                "url": "https://en.wikipedia.org/wiki/1983_United_States_Grand_Prix_West"
-              },
-              "3": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1983_French_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1983_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1983_Monaco_Grand_Prix"
-              },
-              "6": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1983_Belgian_Grand_Prix"
-              },
-              "7": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1983_Detroit_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1983_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1983_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1983_German_Grand_Prix"
-              },
-              "11": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1983_Austrian_Grand_Prix"
-              },
-              "12": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1983_Dutch_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1983_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1983_European_Grand_Prix"
-              },
-              "15": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1983_South_African_Grand_Prix"
-              },
-              "16": null,
+              "Tyres": "M",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "USW",
+              "3": "FRA",
+              "4": "SMR",
+              "5": "MON",
+              "6": "BEL",
+              "7": "DET",
+              "8": "CAN",
+              "9": "GBR",
+              "10": "GER",
+              "11": "AUT",
+              "12": "NED",
+              "13": "ITA",
+              "14": "EUR",
+              "15": "RSA",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1D",
-                "url": null
-              },
+              "Year": "1983",
+              "Chassis": "FA1D",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Corrado Fabi",
-                "url": "https://en.wikipedia.org/wiki/Corrado_Fabi"
-              },
+              "Tyres": "M",
+              "Drivers": "Corrado Fabi",
               "1": "Ret",
               "2": "DNQ",
               "3": "Ret",
@@ -2487,80 +1536,56 @@
               "6": "Ret",
               "7": "DNQ",
               "8": "Ret",
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1D",
-                "url": null
-              },
+              "Year": "1983",
+              "Chassis": "FA1D",
               "Engines": "Cosworth DFV 3.0 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
+              "Tyres": "M",
+              "Drivers": "Piercarlo Ghinzani",
               "1": "DNQ",
               "2": "DNQ",
               "3": "DNQ",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1E",
-                "url": null
-              },
+              "Year": "1983",
+              "Chassis": "FA1E",
               "Engines": "Alfa Romeo 1260 3.0 V12",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Corrado Fabi",
-                "url": "https://en.wikipedia.org/wiki/Corrado_Fabi"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
+              "Tyres": "M",
+              "Drivers": "Corrado Fabi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
               "9": "DNQ",
               "10": "DNQ",
               "11": "10",
@@ -2568,31 +1593,19 @@
               "13": "Ret",
               "14": "DNQ",
               "15": "Ret",
-              "16": null,
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1E",
-                "url": null
-              },
+              "Year": "1983",
+              "Chassis": "FA1E",
               "Engines": "Alfa Romeo 1260 3.0 V12",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "M",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "DNQ",
               "5": "DNQ",
               "6": "DNQ",
@@ -2605,110 +1618,41 @@
               "13": "Ret",
               "14": "Ret",
               "15": "Ret",
-              "16": null,
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1F",
-                "url": null
-              },
+              "Year": "1984",
+              "Chassis": "FA1F",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1984_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1984_South_African_Grand_Prix"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1984_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1984_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1984_French_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1984_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1984_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1984_Detroit_Grand_Prix"
-              },
-              "9": {
-                "text": "DAL",
-                "url": "https://en.wikipedia.org/wiki/1984_Dallas_Grand_Prix"
-              },
-              "10": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1984_British_Grand_Prix"
-              },
-              "11": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1984_German_Grand_Prix"
-              },
-              "12": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1984_Austrian_Grand_Prix"
-              },
-              "13": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1984_Dutch_Grand_Prix"
-              },
-              "14": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1984_Italian_Grand_Prix"
-              },
-              "15": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1984_European_Grand_Prix"
-              },
-              "16": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1984_Portuguese_Grand_Prix"
-              },
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "RSA",
+              "3": "BEL",
+              "4": "SMR",
+              "5": "FRA",
+              "6": "MON",
+              "7": "CAN",
+              "8": "DET",
+              "9": "DAL",
+              "10": "GBR",
+              "11": "GER",
+              "12": "AUT",
+              "13": "NED",
+              "14": "ITA",
+              "15": "EUR",
+              "16": "POR",
               "WCC": "12th",
               "Points": "2"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1F",
-                "url": null
-              },
+              "Year": "1984",
+              "Chassis": "FA1F",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
               "1": "Ret",
               "2": "DNS",
               "3": "Ret",
@@ -2729,32 +1673,20 @@
               "Points": "2"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1F",
-                "url": null
-              },
+              "Year": "1984",
+              "Chassis": "FA1F",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Jo Gartner",
-                "url": "https://en.wikipedia.org/wiki/Jo_Gartner"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
+              "Tyres": "P",
+              "Drivers": "Jo Gartner",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
               "10": "Ret",
               "11": "Ret",
               "12": "Ret",
@@ -2766,136 +1698,61 @@
               "Points": "2"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1E",
-                "url": null
-              },
+              "Year": "1984",
+              "Chassis": "FA1E",
               "Engines": "Alfa Romeo 1260 3.0 V12",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Jo Gartner",
-                "url": "https://en.wikipedia.org/wiki/Jo_Gartner"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "P",
+              "Drivers": "Jo Gartner",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "12th",
               "Points": "2"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
+              "Year": "1985",
               "Chassis": "FA1F FA1G",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1985_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1985_Portuguese_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1985_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1985_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1985_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1985_Detroit_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1985_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1985_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1985_German_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1985_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1985_Dutch_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1985_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1985_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1985_European_Grand_Prix"
-              },
-              "15": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1985_South_African_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1985_Australian_Grand_Prix"
-              },
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "POR",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "AUT",
+              "11": "NED",
+              "12": "ITA",
+              "13": "BEL",
+              "14": "EUR",
+              "15": "RSA",
+              "16": "AUS",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
+              "Year": "1985",
               "Chassis": "FA1F FA1G",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
               "1": "12",
               "2": "9",
               "3": "NC",
@@ -2904,40 +1761,31 @@
               "6": "Ret",
               "7": "15",
               "8": "Ret",
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
+              "Year": "1985",
               "Chassis": "FA1F FA1G",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Huub Rothengatter",
-                "url": "https://en.wikipedia.org/wiki/Huub_Rothengatter"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
+              "Tyres": "P",
+              "Drivers": "Huub Rothengatter",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
               "9": "Ret",
               "10": "9",
               "11": "NC",
@@ -2950,99 +1798,36 @@
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
+              "Year": "1986",
               "Chassis": "FA1G FA1F FA1H",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
-              },
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "ESP",
+              "3": "SMR",
+              "4": "MON",
+              "5": "BEL",
+              "6": "CAN",
+              "7": "DET",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "AUT",
+              "13": "ITA",
+              "14": "POR",
+              "15": "MEX",
+              "16": "AUS",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
+              "Year": "1986",
               "Chassis": "FA1G FA1F FA1H",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -3063,67 +1848,49 @@
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
+              "Year": "1986",
               "Chassis": "FA1G FA1F FA1H",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Christian Danner",
-                "url": "https://en.wikipedia.org/wiki/Christian_Danner"
-              },
+              "Tyres": "P",
+              "Drivers": "Christian Danner",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
               "4": "DNQ",
               "5": "Ret",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
+              "Year": "1986",
               "Chassis": "FA1G FA1F FA1H",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Allen Berg",
-                "url": "https://en.wikipedia.org/wiki/Allen_Berg"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "P",
+              "Drivers": "Allen Berg",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
               "8": "Ret",
               "9": "Ret",
               "10": "12",
               "11": "Ret",
               "12": "Ret",
-              "13": null,
+              "13": "",
               "14": "13",
               "15": "16",
               "16": "NC",
@@ -3131,133 +1898,61 @@
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
+              "Year": "1986",
               "Chassis": "FA1G FA1F FA1H",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Alex Caffi",
-                "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "Tyres": "P",
+              "Drivers": "Alex Caffi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "13": "NC",
-              "14": null,
-              "15": null,
-              "16": null,
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-              },
+              "Year": "1987",
               "Chassis": "FA1I FA1G",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-              },
-              "7": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-              },
-              "8": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-              },
-              "9": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-              },
-              "12": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-              },
-              "13": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-              },
-              "14": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "BEL",
+              "4": "MON",
+              "5": "DET",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "HUN",
+              "10": "AUT",
+              "11": "ITA",
+              "12": "POR",
+              "13": "ESP",
+              "14": "MEX",
+              "15": "JPN",
+              "16": "AUS",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-              },
+              "Year": "1987",
               "Chassis": "FA1I FA1G",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Alex Caffi",
-                "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
-              },
+              "Tyres": "G",
+              "Drivers": "Alex Caffi",
               "1": "Ret",
               "2": "12",
               "3": "Ret",
@@ -3278,167 +1973,86 @@
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-              },
+              "Year": "1987",
               "Chassis": "FA1I FA1G",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Gabriele Tarquini",
-                "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
-              },
-              "1": null,
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-              },
+              "Year": "1987",
               "Chassis": "FA1I FA1G",
               "Engines": "Alfa Romeo 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Franco Forini",
-                "url": "https://en.wikipedia.org/wiki/Franco_Forini"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
+              "Tyres": "G",
+              "Drivers": "Franco Forini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
               "11": "Ret",
               "12": "Ret",
               "13": "DNQ",
-              "14": null,
-              "15": null,
-              "16": null,
+              "14": "",
+              "15": "",
+              "16": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Chassis": "FA1I FA1L",
               "Engines": "Osella 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1988_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1988_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1988_Mexican_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1988_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1988_Detroit_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1988_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1988_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1988_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1988_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1988_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1988_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1988_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1988_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1988_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1988_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Chassis": "FA1I FA1L",
               "Engines": "Osella 890T 1.5 V8 t",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Nicola Larini",
-                "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
-              },
+              "Tyres": "G",
+              "Drivers": "Nicola Larini",
               "1": "DNQ",
               "2": "EX",
               "3": "9",
@@ -3459,105 +2073,36 @@
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1M",
-                "url": null
-              },
+              "Year": "1989",
+              "Chassis": "FA1M",
               "Engines": "Cosworth DFR 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1989_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1989_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1989_Mexican_Grand_Prix"
-              },
-              "5": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1989_United_States_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1989_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1989_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1989_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1989_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1989_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1989_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1989_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1989_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1989_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1989_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1989_Australian_Grand_Prix"
-              },
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1M",
-                "url": null
-              },
+              "Year": "1989",
+              "Chassis": "FA1M",
               "Engines": "Cosworth DFR 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Nicola Larini",
-                "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
-              },
+              "Tyres": "P",
+              "Drivers": "Nicola Larini",
               "1": "DSQ",
               "2": "12",
               "3": "DNPQ",
@@ -3578,23 +2123,11 @@
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1M",
-                "url": null
-              },
+              "Year": "1989",
+              "Chassis": "FA1M",
               "Engines": "Cosworth DFR 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
               "1": "DNPQ",
               "2": "DNPQ",
               "3": "DNPQ",
@@ -3615,105 +2148,36 @@
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1M-E",
-                "url": null
-              },
+              "Year": "1990",
+              "Chassis": "FA1M-E",
               "Engines": "Cosworth DFR 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1990_United_States_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1990_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1990_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1990_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1990_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1990_Mexican_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1990_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1990_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1990_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1990_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1990_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1990_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1990_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1990_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1990_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1990_Australian_Grand_Prix"
-              },
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Chassis": {
-                "text": "FA1M-E",
-                "url": null
-              },
+              "Year": "1990",
+              "Chassis": "FA1M-E",
               "Engines": "Cosworth DFR 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Olivier Grouillard",
-                "url": "https://en.wikipedia.org/wiki/Olivier_Grouillard"
-              },
+              "Tyres": "P",
+              "Drivers": "Olivier Grouillard",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -3733,7 +2197,8 @@
               "WCC": "NC",
               "Points": "0"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -3807,300 +2272,106 @@
           ],
           "rows": [
             {
-              "Season": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
+              "Season": "1950",
               "Cars entered": "31",
-              "Winning driver": {
-                "text": "Johnnie Parsons",
-                "url": "https://en.wikipedia.org/wiki/Johnnie_Parsons"
-              },
-              "Second driver": {
-                "text": "Bill Holland",
-                "url": "https://en.wikipedia.org/wiki/Bill_Holland"
-              },
-              "Third driver": {
-                "text": "Mauri Rose",
-                "url": "https://en.wikipedia.org/wiki/Mauri_Rose"
-              },
-              "Pole sitter": {
-                "text": "Walt Faulkner",
-                "url": "https://en.wikipedia.org/wiki/Walt_Faulkner"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1950_Indianapolis_500"
-              }
+              "Winning driver": "Johnnie Parsons",
+              "Second driver": "Bill Holland",
+              "Third driver": "Mauri Rose",
+              "Pole sitter": "Walt Faulkner",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
+              "Season": "1951",
               "Cars entered": "32",
-              "Winning driver": {
-                "text": "Lee Wallard",
-                "url": "https://en.wikipedia.org/wiki/Lee_Wallard"
-              },
-              "Second driver": {
-                "text": "Mike Nazaruk",
-                "url": "https://en.wikipedia.org/wiki/Mike_Nazaruk"
-              },
-              "Third driver": {
-                "text": "Manny Ayulo",
-                "url": "https://en.wikipedia.org/wiki/Manny_Ayulo"
-              },
-              "Pole sitter": null,
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-              }
+              "Winning driver": "Lee Wallard",
+              "Second driver": "Mike Nazaruk",
+              "Third driver": "Manny Ayulo",
+              "Pole sitter": "",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Season": "1952",
               "Cars entered": "30",
-              "Winning driver": {
-                "text": "Troy Ruttman",
-                "url": "https://en.wikipedia.org/wiki/Troy_Ruttman"
-              },
-              "Second driver": {
-                "text": "Jim Rathmann",
-                "url": "https://en.wikipedia.org/wiki/Jim_Rathmann_(race_car_driver)"
-              },
-              "Third driver": {
-                "text": "Sam Hanks",
-                "url": "https://en.wikipedia.org/wiki/Sam_Hanks"
-              },
-              "Pole sitter": {
-                "text": "Fred Agabashian",
-                "url": "https://en.wikipedia.org/wiki/Fred_Agabashian"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1952_Indianapolis_500"
-              }
+              "Winning driver": "Troy Ruttman",
+              "Second driver": "Jim Rathmann",
+              "Third driver": "Sam Hanks",
+              "Pole sitter": "Fred Agabashian",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Season": "1953",
               "Cars entered": "32",
-              "Winning driver": {
-                "text": "Bill Vukovich",
-                "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
-              },
-              "Second driver": {
-                "text": "Art Cross",
-                "url": "https://en.wikipedia.org/wiki/Art_Cross"
-              },
-              "Third driver": {
-                "text": "Sam Hanks",
-                "url": "https://en.wikipedia.org/wiki/Sam_Hanks"
-              },
-              "Pole sitter": {
-                "text": "Bill Vukovich",
-                "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
-              }
+              "Winning driver": "Bill Vukovich",
+              "Second driver": "Art Cross",
+              "Third driver": "Sam Hanks",
+              "Pole sitter": "Bill Vukovich",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
+              "Season": "1954",
               "Cars entered": "34",
-              "Winning driver": {
-                "text": "Bill Vukovich",
-                "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
-              },
-              "Second driver": {
-                "text": "Jimmy Bryan",
-                "url": "https://en.wikipedia.org/wiki/Jimmy_Bryan"
-              },
-              "Third driver": {
-                "text": "Jack McGrath",
-                "url": "https://en.wikipedia.org/wiki/Jack_McGrath_(racing_driver)"
-              },
-              "Pole sitter": {
-                "text": "Jack McGrath",
-                "url": "https://en.wikipedia.org/wiki/Jack_McGrath_(racing_driver)"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1954_Indianapolis_500"
-              }
+              "Winning driver": "Bill Vukovich",
+              "Second driver": "Jimmy Bryan",
+              "Third driver": "Jack McGrath",
+              "Pole sitter": "Jack McGrath",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
+              "Season": "1955",
               "Cars entered": "35",
-              "Winning driver": {
-                "text": "Bob Sweikert",
-                "url": "https://en.wikipedia.org/wiki/Bob_Sweikert"
-              },
-              "Second driver": {
-                "text": "Tony Bettenhausen",
-                "url": "https://en.wikipedia.org/wiki/Tony_Bettenhausen"
-              },
-              "Third driver": {
-                "text": "Jimmy Davies",
-                "url": "https://en.wikipedia.org/wiki/Jimmy_Davies_(racing_driver)"
-              },
-              "Pole sitter": {
-                "text": "Jerry Hoyt",
-                "url": "https://en.wikipedia.org/wiki/Jerry_Hoyt"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
-              }
+              "Winning driver": "Bob Sweikert",
+              "Second driver": "Tony Bettenhausen",
+              "Third driver": "Jimmy Davies",
+              "Pole sitter": "Jerry Hoyt",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
+              "Season": "1956",
               "Cars entered": "32",
-              "Winning driver": {
-                "text": "Pat Flaherty",
-                "url": "https://en.wikipedia.org/wiki/Pat_Flaherty_(racing_driver)"
-              },
-              "Second driver": {
-                "text": "Sam Hanks",
-                "url": "https://en.wikipedia.org/wiki/Sam_Hanks"
-              },
-              "Third driver": {
-                "text": "Don Freeland",
-                "url": "https://en.wikipedia.org/wiki/Don_Freeland"
-              },
-              "Pole sitter": {
-                "text": "Pat Flaherty",
-                "url": "https://en.wikipedia.org/wiki/Pat_Flaherty_(racing_driver)"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
-              }
+              "Winning driver": "Pat Flaherty",
+              "Second driver": "Sam Hanks",
+              "Third driver": "Don Freeland",
+              "Pole sitter": "Pat Flaherty",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
+              "Season": "1957",
               "Cars entered": "31",
-              "Winning driver": {
-                "text": "Sam Hanks",
-                "url": "https://en.wikipedia.org/wiki/Sam_Hanks"
-              },
-              "Second driver": {
-                "text": "Jim Rathmann",
-                "url": "https://en.wikipedia.org/wiki/Jim_Rathmann_(race_car_driver)"
-              },
-              "Third driver": {
-                "text": "Jimmy Bryan",
-                "url": "https://en.wikipedia.org/wiki/Jimmy_Bryan"
-              },
-              "Pole sitter": {
-                "text": "Pat O'Connor",
-                "url": "https://en.wikipedia.org/wiki/Pat_O%27Connor_(racing_driver)"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
-              }
+              "Winning driver": "Sam Hanks",
+              "Second driver": "Jim Rathmann",
+              "Third driver": "Jimmy Bryan",
+              "Pole sitter": "Pat O'Connor",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1958",
-                "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-              },
+              "Season": "1958",
               "Cars entered": "31",
-              "Winning driver": {
-                "text": "Jimmy Bryan",
-                "url": "https://en.wikipedia.org/wiki/Jimmy_Bryan"
-              },
-              "Second driver": {
-                "text": "George Amick",
-                "url": "https://en.wikipedia.org/wiki/George_Amick"
-              },
-              "Third driver": {
-                "text": "Johnny Boyd",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Boyd"
-              },
-              "Pole sitter": {
-                "text": "Dick Rathmann",
-                "url": "https://en.wikipedia.org/wiki/Dick_Rathmann"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
-              }
+              "Winning driver": "Jimmy Bryan",
+              "Second driver": "George Amick",
+              "Third driver": "Johnny Boyd",
+              "Pole sitter": "Dick Rathmann",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1959",
-                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-              },
+              "Season": "1959",
               "Cars entered": "33",
-              "Winning driver": {
-                "text": "Rodger Ward",
-                "url": "https://en.wikipedia.org/wiki/Rodger_Ward"
-              },
-              "Second driver": {
-                "text": "Jim Rathmann",
-                "url": "https://en.wikipedia.org/wiki/Jim_Rathmann_(race_car_driver)"
-              },
-              "Third driver": {
-                "text": "Johnny Thomson",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Thomson"
-              },
-              "Pole sitter": {
-                "text": "Johnny Thomson",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Thomson"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
-              }
+              "Winning driver": "Rodger Ward",
+              "Second driver": "Jim Rathmann",
+              "Third driver": "Johnny Thomson",
+              "Pole sitter": "Johnny Thomson",
+              "Race report": "Report"
             },
             {
-              "Season": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
+              "Season": "1960",
               "Cars entered": "33",
-              "Winning driver": {
-                "text": "Jim Rathmann",
-                "url": "https://en.wikipedia.org/wiki/Jim_Rathmann_(race_car_driver)"
-              },
-              "Second driver": {
-                "text": "Rodger Ward",
-                "url": "https://en.wikipedia.org/wiki/Rodger_Ward"
-              },
-              "Third driver": {
-                "text": "Paul Goldsmith",
-                "url": "https://en.wikipedia.org/wiki/Paul_Goldsmith_(racing_driver)"
-              },
-              "Pole sitter": {
-                "text": "Eddie Sachs",
-                "url": "https://en.wikipedia.org/wiki/Eddie_Sachs"
-              },
-              "Race report": {
-                "text": "Report",
-                "url": "https://en.wikipedia.org/wiki/1960_Indianapolis_500"
-              }
+              "Winning driver": "Jim Rathmann",
+              "Second driver": "Rodger Ward",
+              "Third driver": "Paul Goldsmith",
+              "Pole sitter": "Eddie Sachs",
+              "Race report": "Report"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -4125,267 +2396,127 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1959",
-                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-              },
+              "Year": "1959",
               "Entrant": "Leader Cards Inc.",
               "Chassis": "Kurtis Kraft Midget",
-              "Engine": {
-                "text": "L4",
-                "url": "https://en.wikipedia.org/wiki/Straight-4"
-              },
+              "Engine": "L4",
               "Tyres": "?",
-              "Drivers": null,
-              "1": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1959_Monaco_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1959_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1959_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1959_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1959_German_Grand_Prix"
-              },
-              "7": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1959_Portuguese_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1959_Italian_Grand_Prix"
-              },
-              "9": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1959_United_States_Grand_Prix"
-              },
-              "10": null,
+              "Drivers": "",
+              "1": "MON",
+              "2": "500",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "POR",
+              "8": "ITA",
+              "9": "USA",
+              "10": "",
               "Points": "0",
               "WCC": "-"
             },
             {
-              "Year": {
-                "text": "1959",
-                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-              },
+              "Year": "1959",
               "Entrant": "Leader Cards Inc.",
               "Chassis": "Kurtis Kraft Midget",
-              "Engine": {
-                "text": "L4",
-                "url": "https://en.wikipedia.org/wiki/Straight-4"
-              },
+              "Engine": "L4",
               "Tyres": "?",
-              "Drivers": {
-                "text": "Rodger Ward",
-                "url": "https://en.wikipedia.org/wiki/Rodger_Ward"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
+              "Drivers": "Rodger Ward",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
               "9": "Ret",
-              "10": null,
+              "10": "",
               "Points": "0",
               "WCC": "-"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Reventlow Automobiles Inc",
-                "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
-              },
-              "Chassis": {
-                "text": "Scarab F1",
-                "url": "https://en.wikipedia.org/wiki/Scarab_F1"
-              },
-              "Engine": {
-                "text": "L4",
-                "url": "https://en.wikipedia.org/wiki/Straight-4"
-              },
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1960_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1960_Indianapolis_500"
-              },
-              "4": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1960_Dutch_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1960_French_Grand_Prix"
-              },
-              "7": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1960_British_Grand_Prix"
-              },
-              "8": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1960_Portuguese_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1960_Italian_Grand_Prix"
-              },
-              "10": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix"
-              },
+              "Year": "1960",
+              "Entrant": "Reventlow Automobiles Inc",
+              "Chassis": "Scarab F1",
+              "Engine": "L4",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "NED",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "POR",
+              "9": "ITA",
+              "10": "USA",
               "Points": "0",
               "WCC": "-"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Reventlow Automobiles Inc",
-                "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
-              },
-              "Chassis": {
-                "text": "Scarab F1",
-                "url": "https://en.wikipedia.org/wiki/Scarab_F1"
-              },
-              "Engine": {
-                "text": "L4",
-                "url": "https://en.wikipedia.org/wiki/Straight-4"
-              },
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Chuck Daigh",
-                "url": "https://en.wikipedia.org/wiki/Chuck_Daigh"
-              },
+              "Year": "1960",
+              "Entrant": "Reventlow Automobiles Inc",
+              "Chassis": "Scarab F1",
+              "Engine": "L4",
+              "Tyres": "D",
+              "Drivers": "Chuck Daigh",
               "1": "DNA",
               "2": "DNQ",
-              "3": null,
+              "3": "",
               "4": "DNS",
               "5": "Ret",
               "6": "DNS",
-              "7": null,
-              "8": null,
-              "9": null,
+              "7": "",
+              "8": "",
+              "9": "",
               "10": "10",
               "Points": "0",
               "WCC": "-"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Reventlow Automobiles Inc",
-                "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
-              },
-              "Chassis": {
-                "text": "Scarab F1",
-                "url": "https://en.wikipedia.org/wiki/Scarab_F1"
-              },
-              "Engine": {
-                "text": "L4",
-                "url": "https://en.wikipedia.org/wiki/Straight-4"
-              },
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Lance Reventlow",
-                "url": "https://en.wikipedia.org/wiki/Lance_Reventlow"
-              },
-              "1": null,
+              "Year": "1960",
+              "Entrant": "Reventlow Automobiles Inc",
+              "Chassis": "Scarab F1",
+              "Engine": "L4",
+              "Tyres": "D",
+              "Drivers": "Lance Reventlow",
+              "1": "",
               "2": "DNQ",
-              "3": null,
+              "3": "",
               "4": "DNS",
               "5": "Ret",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
               "Points": "0",
               "WCC": "-"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Reventlow Automobiles Inc",
-                "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
-              },
-              "Chassis": {
-                "text": "Scarab F1",
-                "url": "https://en.wikipedia.org/wiki/Scarab_F1"
-              },
-              "Engine": {
-                "text": "L4",
-                "url": "https://en.wikipedia.org/wiki/Straight-4"
-              },
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Richie Ginther",
-                "url": "https://en.wikipedia.org/wiki/Richie_Ginther"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Year": "1960",
+              "Entrant": "Reventlow Automobiles Inc",
+              "Chassis": "Scarab F1",
+              "Engine": "L4",
+              "Tyres": "D",
+              "Drivers": "Richie Ginther",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "DNS",
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
               "Points": "0",
               "WCC": "-"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

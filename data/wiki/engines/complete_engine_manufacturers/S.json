@@ -576,1326 +576,718 @@
       "tables": [
         {
           "headers": [
-            "Overview of Sauber race cars"
+            "Year",
+            "Car",
+            "Image",
+            "Category"
           ],
           "rows": [
             {
-              "year": "1970",
-              "car": {
-                "text": "Sauber C1",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C1"
-              },
-              "image": null,
-              "category": {
-                "text": "Group 6",
-                "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)"
-              }
+              "Year": "1970",
+              "Car": "Sauber C1",
+              "Image": "",
+              "Category": "Group 6"
             },
             {
-              "year": "1971",
-              "car": {
-                "text": "Sauber C2",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C2"
-              },
-              "image": null,
-              "category": {
-                "text": "Group 6",
-                "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)"
-              }
+              "Year": "1971",
+              "Car": "Sauber C2",
+              "Image": "",
+              "Category": "Group 6"
             },
             {
-              "year": "1973",
-              "car": {
-                "text": "Sauber C3",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C3"
-              },
-              "image": null,
-              "category": {
-                "text": "Group 5",
-                "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)"
-              }
+              "Year": "1973",
+              "Car": "Sauber C3",
+              "Image": "",
+              "Category": "Group 5"
             },
             {
-              "year": "1973",
-              "car": {
-                "text": "Sauber C4",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C4"
-              },
-              "image": null,
-              "category": {
-                "text": "Group 5",
-                "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)"
-              }
+              "Year": "1973",
+              "Car": "Sauber C4",
+              "Image": "",
+              "Category": "Group 5"
             },
             {
-              "year": "1975",
-              "car": {
-                "text": "Sauber C5",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C5"
-              },
-              "image": null,
-              "category": {
-                "text": "Group 6",
-                "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)"
-              }
+              "Year": "1975",
+              "Car": "Sauber C5",
+              "Image": "",
+              "Category": "Group 6"
             },
             {
-              "year": "1982",
-              "car": {
-                "text": "Sauber SHS C6",
-                "url": "https://en.wikipedia.org/wiki/Sauber_SHS_C6"
-              },
-              "image": null,
-              "category": {
-                "text": "Group C",
-                "url": "https://en.wikipedia.org/wiki/Group_C"
-              }
+              "Year": "1982",
+              "Car": "Sauber SHS C6",
+              "Image": "",
+              "Category": "Group C"
             },
             {
-              "year": "1983",
-              "car": {
-                "text": "Sauber C7",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C7"
-              },
-              "image": null,
-              "category": {
-                "text": "Group C",
-                "url": "https://en.wikipedia.org/wiki/Group_C"
-              }
+              "Year": "1983",
+              "Car": "Sauber C7",
+              "Image": "",
+              "Category": "Group C"
             },
             {
-              "year": "1985",
-              "car": {
-                "text": "Sauber C8",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C8"
-              },
-              "image": null,
-              "category": {
-                "text": "Group C1",
-                "url": "https://en.wikipedia.org/wiki/Group_C"
-              }
+              "Year": "1985",
+              "Car": "Sauber C8",
+              "Image": "",
+              "Category": "Group C1"
             },
             {
-              "year": "1987",
-              "car": {
-                "text": "Sauber C9",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C9"
-              },
-              "image": null,
-              "category": {
-                "text": "Group C1",
-                "url": "https://en.wikipedia.org/wiki/Group_C"
-              }
+              "Year": "1987",
+              "Car": "Sauber C9",
+              "Image": "",
+              "Category": "Group C1"
             },
             {
-              "year": "1991",
-              "car": {
-                "text": "Mercedes-Benz C11",
-                "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_C11"
-              },
-              "image": null,
-              "category": {
-                "text": "Group C2",
-                "url": "https://en.wikipedia.org/wiki/Group_C"
-              }
+              "Year": "1991",
+              "Car": "Mercedes-Benz C11",
+              "Image": "",
+              "Category": "Group C2"
             },
             {
-              "year": "1991",
-              "car": {
-                "text": "Mercedes-Benz C291",
-                "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_C291"
-              },
-              "image": null,
-              "category": {
-                "text": "Group C1",
-                "url": "https://en.wikipedia.org/wiki/Group_C"
-              }
+              "Year": "1991",
+              "Car": "Mercedes-Benz C291",
+              "Image": "",
+              "Category": "Group C1"
             },
             {
-              "year": "1991",
-              "car": {
-                "text": "Mercedes-Benz C292",
-                "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_C292"
-              },
-              "image": null,
-              "category": {
-                "text": "Group C1",
-                "url": "https://en.wikipedia.org/wiki/Group_C"
-              }
+              "Year": "1991",
+              "Car": "Mercedes-Benz C292",
+              "Image": "",
+              "Category": "Group C1"
             },
             {
-              "year": "1993",
-              "car": {
-                "text": "Sauber C12",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C12"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "1993",
+              "Car": "Sauber C12",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "1994",
-              "car": {
-                "text": "Sauber C13",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C13"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "1994",
+              "Car": "Sauber C13",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "1995",
-              "car": {
-                "text": "Sauber C14",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C14"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "1995",
+              "Car": "Sauber C14",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "1996",
-              "car": {
-                "text": "Sauber C15",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C15"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "1996",
+              "Car": "Sauber C15",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "1997",
-              "car": {
-                "text": "Sauber C16",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C16"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "1997",
+              "Car": "Sauber C16",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "1998",
-              "car": {
-                "text": "Sauber C17",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C17"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "1998",
+              "Car": "Sauber C17",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "1999",
-              "car": {
-                "text": "Sauber C18",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C18"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "1999",
+              "Car": "Sauber C18",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2000",
-              "car": {
-                "text": "Sauber C19",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C19"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2000",
+              "Car": "Sauber C19",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2001",
-              "car": {
-                "text": "Sauber C20",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C20"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2001",
+              "Car": "Sauber C20",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2002",
-              "car": {
-                "text": "Sauber C21",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C21"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2002",
+              "Car": "Sauber C21",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2003",
-              "car": {
-                "text": "Sauber C22",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C22"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2003",
+              "Car": "Sauber C22",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2004",
-              "car": {
-                "text": "Sauber C23",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C23"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2004",
+              "Car": "Sauber C23",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2005",
-              "car": {
-                "text": "Sauber C24",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C24"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2005",
+              "Car": "Sauber C24",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2006",
-              "car": {
-                "text": "BMW Sauber F1.06",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.06"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2006",
+              "Car": "BMW Sauber F1.06",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2007",
-              "car": {
-                "text": "BMW Sauber F1.07",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.07"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2007",
+              "Car": "BMW Sauber F1.07",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2008",
-              "car": {
-                "text": "BMW Sauber F1.08",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.08"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2008",
+              "Car": "BMW Sauber F1.08",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2009",
-              "car": {
-                "text": "BMW Sauber F1.09",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.09"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2009",
+              "Car": "BMW Sauber F1.09",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2010",
-              "car": {
-                "text": "Sauber C29",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C29"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2010",
+              "Car": "Sauber C29",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2011",
-              "car": {
-                "text": "Sauber C30",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C30"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2011",
+              "Car": "Sauber C30",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2012",
-              "car": {
-                "text": "Sauber C31",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C31"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2012",
+              "Car": "Sauber C31",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2013",
-              "car": {
-                "text": "Sauber C32",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C32"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2013",
+              "Car": "Sauber C32",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2014",
-              "car": {
-                "text": "Sauber C33",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C33"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2014",
+              "Car": "Sauber C33",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2015",
-              "car": {
-                "text": "Sauber C34",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C34"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2015",
+              "Car": "Sauber C34",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2016",
-              "car": {
-                "text": "Sauber C35",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C35"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2016",
+              "Car": "Sauber C35",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2017",
-              "car": {
-                "text": "Sauber C36",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C36"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2017",
+              "Car": "Sauber C36",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2018",
-              "car": {
-                "text": "Sauber C37",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C37"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2018",
+              "Car": "Sauber C37",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2019",
-              "car": {
-                "text": "Alfa Romeo Racing C38",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_Racing_C38"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2019",
+              "Car": "Alfa Romeo Racing C38",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2020",
-              "car": {
-                "text": "Alfa Romeo Racing C39",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_Racing_C39"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2020",
+              "Car": "Alfa Romeo Racing C39",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2021",
-              "car": {
-                "text": "Alfa Romeo Racing C41",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_Racing_C41"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2021",
+              "Car": "Alfa Romeo Racing C41",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2022",
-              "car": {
-                "text": "Alfa Romeo C42",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_C42"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2022",
+              "Car": "Alfa Romeo C42",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2023",
-              "car": {
-                "text": "Alfa Romeo C43",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_C43"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2023",
+              "Car": "Alfa Romeo C43",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2024",
-              "car": {
-                "text": "Kick Sauber C44",
-                "url": "https://en.wikipedia.org/wiki/Kick_Sauber_C44"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2024",
+              "Car": "Kick Sauber C44",
+              "Image": "",
+              "Category": "Formula One"
             },
             {
-              "year": "2025",
-              "car": {
-                "text": "Kick Sauber C45",
-                "url": "https://en.wikipedia.org/wiki/Kick_Sauber_C45"
-              },
-              "image": null,
-              "category": {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              }
+              "Year": "2025",
+              "Car": "Kick Sauber C45",
+              "Image": "",
+              "Category": "Formula One"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
-            "Formula One results"
+            "Year",
+            "Name",
+            "Car",
+            "Engine",
+            "Tyres",
+            "No.",
+            "Drivers",
+            "Points",
+            "WCC"
           ],
           "rows": [
             {
-              "year": "Sauber",
-              "name": "Sauber",
-              "car": "Sauber",
-              "engine": "Sauber",
-              "tyres": "Sauber",
-              "no.": "Sauber",
-              "drivers": "Sauber",
-              "points": "Sauber",
-              "wcc": "Sauber"
+              "Year": "Sauber",
+              "Name": "Sauber",
+              "Car": "Sauber",
+              "Engine": "Sauber",
+              "Tyres": "Sauber",
+              "No.": "Sauber",
+              "Drivers": "Sauber",
+              "Points": "Sauber",
+              "WCC": "Sauber"
             },
             {
-              "year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "name": "Team Sauber Formula 1",
-              "car": {
-                "text": "C12",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C12"
-              },
-              "engine": "Sauber 2175A 3.5 V10",
-              "tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "no.": "29. 30.",
-              "drivers": "Karl Wendlinger JJ Lehto",
-              "points": "12",
-              "wcc": "7th"
+              "Year": "1993",
+              "Name": "Team Sauber Formula 1",
+              "Car": "C12",
+              "Engine": "Sauber 2175A 3.5 V10",
+              "Tyres": "G",
+              "No.": "29. 30.",
+              "Drivers": "Karl Wendlinger JJ Lehto",
+              "Points": "12",
+              "WCC": "7th"
             },
             {
-              "year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "name": "Broker Sauber Mercedes Sauber Mercedes",
-              "car": {
-                "text": "C13",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C13"
-              },
-              "engine": "Mercedes 2175B 3.5 V10",
-              "tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "no.": "29. 29. 29. 30.",
-              "drivers": "Karl Wendlinger Andrea de Cesaris JJ Lehto Heinz-Harald Frentzen",
-              "points": "12",
-              "wcc": "8th"
+              "Year": "1994",
+              "Name": "Broker Sauber Mercedes Sauber Mercedes",
+              "Car": "C13",
+              "Engine": "Mercedes 2175B 3.5 V10",
+              "Tyres": "G",
+              "No.": "29. 29. 29. 30.",
+              "Drivers": "Karl Wendlinger Andrea de Cesaris JJ Lehto Heinz-Harald Frentzen",
+              "Points": "12",
+              "WCC": "8th"
             },
             {
-              "year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "name": "Red Bull Sauber Ford",
-              "car": {
-                "text": "C14",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C14"
-              },
-              "engine": "Ford ECA Zetec-R 3.0 V8",
-              "tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "no.": "29. 29. 30.",
-              "drivers": "Karl Wendlinger Jean-Christophe Boullion Heinz-Harald Frentzen",
-              "points": "18",
-              "wcc": "7th"
+              "Year": "1995",
+              "Name": "Red Bull Sauber Ford",
+              "Car": "C14",
+              "Engine": "Ford ECA Zetec-R 3.0 V8",
+              "Tyres": "G",
+              "No.": "29. 29. 30.",
+              "Drivers": "Karl Wendlinger Jean-Christophe Boullion Heinz-Harald Frentzen",
+              "Points": "18",
+              "WCC": "7th"
             },
             {
-              "year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "name": "Red Bull Sauber Ford",
-              "car": {
-                "text": "C15",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C15"
-              },
-              "engine": "Ford JD Zetec-R 3.0 V10",
-              "tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "no.": "14. 15.",
-              "drivers": "Johnny Herbert Heinz-Harald Frentzen",
-              "points": "11",
-              "wcc": "7th"
+              "Year": "1996",
+              "Name": "Red Bull Sauber Ford",
+              "Car": "C15",
+              "Engine": "Ford JD Zetec-R 3.0 V10",
+              "Tyres": "G",
+              "No.": "14. 15.",
+              "Drivers": "Johnny Herbert Heinz-Harald Frentzen",
+              "Points": "11",
+              "WCC": "7th"
             },
             {
-              "year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "name": "Red Bull Sauber Petronas",
-              "car": {
-                "text": "C16",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C16"
-              },
-              "engine": "Petronas SPE-01 3.0 V10",
-              "tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "no.": "16. 17. 17. 17.",
-              "drivers": "Johnny Herbert Nicola Larini Gianni Morbidelli Norberto Fontana",
-              "points": "16",
-              "wcc": "7th"
+              "Year": "1997",
+              "Name": "Red Bull Sauber Petronas",
+              "Car": "C16",
+              "Engine": "Petronas SPE-01 3.0 V10",
+              "Tyres": "G",
+              "No.": "16. 17. 17. 17.",
+              "Drivers": "Johnny Herbert Nicola Larini Gianni Morbidelli Norberto Fontana",
+              "Points": "16",
+              "WCC": "7th"
             },
             {
-              "year": {
-                "text": "1998",
-                "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-              },
-              "name": "Red Bull Sauber Petronas",
-              "car": {
-                "text": "C17",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C17"
-              },
-              "engine": "Petronas SPE-01D 3.0 V10",
-              "tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "no.": "14. 15.",
-              "drivers": "Jean Alesi Johnny Herbert",
-              "points": "10",
-              "wcc": "6th"
+              "Year": "1998",
+              "Name": "Red Bull Sauber Petronas",
+              "Car": "C17",
+              "Engine": "Petronas SPE-01D 3.0 V10",
+              "Tyres": "G",
+              "No.": "14. 15.",
+              "Drivers": "Jean Alesi Johnny Herbert",
+              "Points": "10",
+              "WCC": "6th"
             },
             {
-              "year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "name": "Red Bull Sauber Petronas",
-              "car": {
-                "text": "C18",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C18"
-              },
-              "engine": "Petronas SPE-03A 3.0 V10",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "11. 12.",
-              "drivers": "Jean Alesi Pedro Diniz",
-              "points": "5",
-              "wcc": "8th"
+              "Year": "1999",
+              "Name": "Red Bull Sauber Petronas",
+              "Car": "C18",
+              "Engine": "Petronas SPE-03A 3.0 V10",
+              "Tyres": "B",
+              "No.": "11. 12.",
+              "Drivers": "Jean Alesi Pedro Diniz",
+              "Points": "5",
+              "WCC": "8th"
             },
             {
-              "year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "name": "Red Bull Sauber Petronas",
-              "car": {
-                "text": "C19",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C19"
-              },
-              "engine": "Petronas SPE-04A 3.0 V10",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "16. 17.",
-              "drivers": "Pedro Diniz Mika Salo",
-              "points": "6",
-              "wcc": "8th"
+              "Year": "2000",
+              "Name": "Red Bull Sauber Petronas",
+              "Car": "C19",
+              "Engine": "Petronas SPE-04A 3.0 V10",
+              "Tyres": "B",
+              "No.": "16. 17.",
+              "Drivers": "Pedro Diniz Mika Salo",
+              "Points": "6",
+              "WCC": "8th"
             },
             {
-              "year": {
-                "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-              },
-              "name": "Red Bull Sauber Petronas",
-              "car": {
-                "text": "C20",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C20"
-              },
-              "engine": "Petronas 01A 3.0 V10",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "16. 17.",
-              "drivers": "Nick Heidfeld Kimi Räikkönen",
-              "points": "21",
-              "wcc": "4th"
+              "Year": "2001",
+              "Name": "Red Bull Sauber Petronas",
+              "Car": "C20",
+              "Engine": "Petronas 01A 3.0 V10",
+              "Tyres": "B",
+              "No.": "16. 17.",
+              "Drivers": "Nick Heidfeld Kimi Räikkönen",
+              "Points": "21",
+              "WCC": "4th"
             },
             {
-              "year": {
-                "text": "2002",
-                "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-              },
-              "name": "Sauber Petronas",
-              "car": {
-                "text": "C21",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C21"
-              },
-              "engine": "Petronas 02A 3.0 V10",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "7. 8. 8.",
-              "drivers": "Nick Heidfeld Felipe Massa Heinz-Harald Frentzen",
-              "points": "11",
-              "wcc": "5th"
+              "Year": "2002",
+              "Name": "Sauber Petronas",
+              "Car": "C21",
+              "Engine": "Petronas 02A 3.0 V10",
+              "Tyres": "B",
+              "No.": "7. 8. 8.",
+              "Drivers": "Nick Heidfeld Felipe Massa Heinz-Harald Frentzen",
+              "Points": "11",
+              "WCC": "5th"
             },
             {
-              "year": {
-                "text": "2003",
-                "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-              },
-              "name": "Sauber Petronas",
-              "car": {
-                "text": "C22",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C22"
-              },
-              "engine": "Petronas 03A 3.0 V10",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "9. 10.",
-              "drivers": "Nick Heidfeld Heinz-Harald Frentzen",
-              "points": "19",
-              "wcc": "6th"
+              "Year": "2003",
+              "Name": "Sauber Petronas",
+              "Car": "C22",
+              "Engine": "Petronas 03A 3.0 V10",
+              "Tyres": "B",
+              "No.": "9. 10.",
+              "Drivers": "Nick Heidfeld Heinz-Harald Frentzen",
+              "Points": "19",
+              "WCC": "6th"
             },
             {
-              "year": {
-                "text": "2004",
-                "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-              },
-              "name": "Sauber Petronas",
-              "car": {
-                "text": "C23",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C23"
-              },
-              "engine": "Petronas 04A 3.0 V10",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "11. 12.",
-              "drivers": "Giancarlo Fisichella Felipe Massa",
-              "points": "34",
-              "wcc": "6th"
+              "Year": "2004",
+              "Name": "Sauber Petronas",
+              "Car": "C23",
+              "Engine": "Petronas 04A 3.0 V10",
+              "Tyres": "B",
+              "No.": "11. 12.",
+              "Drivers": "Giancarlo Fisichella Felipe Massa",
+              "Points": "34",
+              "WCC": "6th"
             },
             {
-              "year": {
-                "text": "2005",
-                "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-              },
-              "name": "Sauber Petronas",
-              "car": {
-                "text": "C24",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C24"
-              },
-              "engine": "Petronas 05A 3.0 V10",
-              "tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "no.": "11. 12.",
-              "drivers": "Jacques Villeneuve Felipe Massa",
-              "points": "20",
-              "wcc": "8th"
+              "Year": "2005",
+              "Name": "Sauber Petronas",
+              "Car": "C24",
+              "Engine": "Petronas 05A 3.0 V10",
+              "Tyres": "M",
+              "No.": "11. 12.",
+              "Drivers": "Jacques Villeneuve Felipe Massa",
+              "Points": "20",
+              "WCC": "8th"
             },
             {
-              "year": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              },
-              "name": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              },
-              "car": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              },
-              "engine": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              },
-              "tyres": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              },
-              "no.": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              },
-              "drivers": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              },
-              "points": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              },
-              "wcc": {
-                "text": "BMW Sauber",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber"
-              }
+              "Year": "BMW Sauber",
+              "Name": "BMW Sauber",
+              "Car": "BMW Sauber",
+              "Engine": "BMW Sauber",
+              "Tyres": "BMW Sauber",
+              "No.": "BMW Sauber",
+              "Drivers": "BMW Sauber",
+              "Points": "BMW Sauber",
+              "WCC": "BMW Sauber"
             },
             {
-              "year": {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-              },
-              "name": "BMW Sauber F1 Team",
-              "car": {
-                "text": "F1.06",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.06"
-              },
-              "engine": "BMW P86/6 2.4 V8",
-              "tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "no.": "16. 17. 17.",
-              "drivers": "Nick Heidfeld Jacques Villeneuve Robert Kubica",
-              "points": "36",
-              "wcc": "5th"
+              "Year": "2006",
+              "Name": "BMW Sauber F1 Team",
+              "Car": "F1.06",
+              "Engine": "BMW P86/6 2.4 V8",
+              "Tyres": "M",
+              "No.": "16. 17. 17.",
+              "Drivers": "Nick Heidfeld Jacques Villeneuve Robert Kubica",
+              "Points": "36",
+              "WCC": "5th"
             },
             {
-              "year": {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-              },
-              "name": "BMW Sauber F1 Team",
-              "car": {
-                "text": "F1.07",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.07"
-              },
-              "engine": "BMW P86/7 2.4 V8",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "9. 10. 10.",
-              "drivers": "Nick Heidfeld Robert Kubica Sebastian Vettel",
-              "points": "101",
-              "wcc": "2nd"
+              "Year": "2007",
+              "Name": "BMW Sauber F1 Team",
+              "Car": "F1.07",
+              "Engine": "BMW P86/7 2.4 V8",
+              "Tyres": "B",
+              "No.": "9. 10. 10.",
+              "Drivers": "Nick Heidfeld Robert Kubica Sebastian Vettel",
+              "Points": "101",
+              "WCC": "2nd"
             },
             {
-              "year": {
-                "text": "2008",
-                "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-              },
-              "name": "BMW Sauber F1 Team",
-              "car": {
-                "text": "F1.08",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.08"
-              },
-              "engine": "BMW P86/8 2.4 V8",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "3. 4.",
-              "drivers": "Nick Heidfeld Robert Kubica",
-              "points": "135",
-              "wcc": "3rd"
+              "Year": "2008",
+              "Name": "BMW Sauber F1 Team",
+              "Car": "F1.08",
+              "Engine": "BMW P86/8 2.4 V8",
+              "Tyres": "B",
+              "No.": "3. 4.",
+              "Drivers": "Nick Heidfeld Robert Kubica",
+              "Points": "135",
+              "WCC": "3rd"
             },
             {
-              "year": {
-                "text": "2009",
-                "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-              },
-              "name": "BMW Sauber F1 Team",
-              "car": {
-                "text": "F1.09",
-                "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.09"
-              },
-              "engine": "BMW P86/9 2.4 V8",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "5. 6.",
-              "drivers": "Robert Kubica Nick Heidfeld",
-              "points": "36",
-              "wcc": "6th"
+              "Year": "2009",
+              "Name": "BMW Sauber F1 Team",
+              "Car": "F1.09",
+              "Engine": "BMW P86/9 2.4 V8",
+              "Tyres": "B",
+              "No.": "5. 6.",
+              "Drivers": "Robert Kubica Nick Heidfeld",
+              "Points": "36",
+              "WCC": "6th"
             },
             {
-              "year": {
-                "text": "2010",
-                "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-              },
-              "name": "BMW Sauber F1 Team",
-              "car": {
-                "text": "C29",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C29"
-              },
-              "engine": "Ferrari 056 2.4 V8",
-              "tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "no.": "22. 22. 23.",
-              "drivers": "Pedro de la Rosa Nick Heidfeld Kamui Kobayashi",
-              "points": "44",
-              "wcc": "8th"
+              "Year": "2010",
+              "Name": "BMW Sauber F1 Team",
+              "Car": "C29",
+              "Engine": "Ferrari 056 2.4 V8",
+              "Tyres": "B",
+              "No.": "22. 22. 23.",
+              "Drivers": "Pedro de la Rosa Nick Heidfeld Kamui Kobayashi",
+              "Points": "44",
+              "WCC": "8th"
             },
             {
-              "year": "Sauber",
-              "name": "Sauber",
-              "car": "Sauber",
-              "engine": "Sauber",
-              "tyres": "Sauber",
-              "no.": "Sauber",
-              "drivers": "Sauber",
-              "points": "Sauber",
-              "wcc": "Sauber"
+              "Year": "Sauber",
+              "Name": "Sauber",
+              "Car": "Sauber",
+              "Engine": "Sauber",
+              "Tyres": "Sauber",
+              "No.": "Sauber",
+              "Drivers": "Sauber",
+              "Points": "Sauber",
+              "WCC": "Sauber"
             },
             {
-              "year": {
-                "text": "2011",
-                "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-              },
-              "name": "Sauber F1 Team",
-              "car": {
-                "text": "C30",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C30"
-              },
-              "engine": "Ferrari 056 2.4 V8",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "16. 17. 17.",
-              "drivers": "Kamui Kobayashi Sergio Pérez Pedro de la Rosa",
-              "points": "44",
-              "wcc": "7th"
+              "Year": "2011",
+              "Name": "Sauber F1 Team",
+              "Car": "C30",
+              "Engine": "Ferrari 056 2.4 V8",
+              "Tyres": "P",
+              "No.": "16. 17. 17.",
+              "Drivers": "Kamui Kobayashi Sergio Pérez Pedro de la Rosa",
+              "Points": "44",
+              "WCC": "7th"
             },
             {
-              "year": {
-                "text": "2012",
-                "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
-              },
-              "name": "Sauber F1 Team",
-              "car": {
-                "text": "C31",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C31"
-              },
-              "engine": "Ferrari 056 2.4 V8",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "14. 15.",
-              "drivers": "Kamui Kobayashi Sergio Pérez",
-              "points": "126",
-              "wcc": "6th"
+              "Year": "2012",
+              "Name": "Sauber F1 Team",
+              "Car": "C31",
+              "Engine": "Ferrari 056 2.4 V8",
+              "Tyres": "P",
+              "No.": "14. 15.",
+              "Drivers": "Kamui Kobayashi Sergio Pérez",
+              "Points": "126",
+              "WCC": "6th"
             },
             {
-              "year": {
-                "text": "2013",
-                "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
-              },
-              "name": "Sauber F1 Team",
-              "car": {
-                "text": "C32",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C32"
-              },
-              "engine": "Ferrari 056 2.4 V8",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "11. 12.",
-              "drivers": "Nico Hülkenberg Esteban Gutiérrez",
-              "points": "57",
-              "wcc": "7th"
+              "Year": "2013",
+              "Name": "Sauber F1 Team",
+              "Car": "C32",
+              "Engine": "Ferrari 056 2.4 V8",
+              "Tyres": "P",
+              "No.": "11. 12.",
+              "Drivers": "Nico Hülkenberg Esteban Gutiérrez",
+              "Points": "57",
+              "WCC": "7th"
             },
             {
-              "year": {
-                "text": "2014",
-                "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
-              },
-              "name": "Sauber F1 Team",
-              "car": {
-                "text": "C33",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C33"
-              },
-              "engine": "Ferrari 059/3 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "21. 99.",
-              "drivers": "Esteban Gutiérrez Adrian Sutil",
-              "points": "0",
-              "wcc": "10th"
+              "Year": "2014",
+              "Name": "Sauber F1 Team",
+              "Car": "C33",
+              "Engine": "Ferrari 059/3 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "21. 99.",
+              "Drivers": "Esteban Gutiérrez Adrian Sutil",
+              "Points": "0",
+              "WCC": "10th"
             },
             {
-              "year": {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-              },
-              "name": "Sauber F1 Team",
-              "car": {
-                "text": "C34",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C34"
-              },
-              "engine": "Ferrari 060 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "9. 12.",
-              "drivers": "Marcus Ericsson Felipe Nasr",
-              "points": "36",
-              "wcc": "8th"
+              "Year": "2015",
+              "Name": "Sauber F1 Team",
+              "Car": "C34",
+              "Engine": "Ferrari 060 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "9. 12.",
+              "Drivers": "Marcus Ericsson Felipe Nasr",
+              "Points": "36",
+              "WCC": "8th"
             },
             {
-              "year": {
-                "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-              },
-              "name": "Sauber F1 Team",
-              "car": {
-                "text": "C35",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C35"
-              },
-              "engine": "Ferrari 061 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "9. 12.",
-              "drivers": "Marcus Ericsson Felipe Nasr",
-              "points": "2",
-              "wcc": "10th"
+              "Year": "2016",
+              "Name": "Sauber F1 Team",
+              "Car": "C35",
+              "Engine": "Ferrari 061 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "9. 12.",
+              "Drivers": "Marcus Ericsson Felipe Nasr",
+              "Points": "2",
+              "WCC": "10th"
             },
             {
-              "year": {
-                "text": "2017",
-                "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-              },
-              "name": "Sauber F1 Team",
-              "car": {
-                "text": "C36",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C36"
-              },
-              "engine": "Ferrari 061 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "9. 36. 94.",
-              "drivers": "Marcus Ericsson Antonio Giovinazzi Pascal Wehrlein",
-              "points": "5",
-              "wcc": "10th"
+              "Year": "2017",
+              "Name": "Sauber F1 Team",
+              "Car": "C36",
+              "Engine": "Ferrari 061 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "9. 36. 94.",
+              "Drivers": "Marcus Ericsson Antonio Giovinazzi Pascal Wehrlein",
+              "Points": "5",
+              "WCC": "10th"
             },
             {
-              "year": {
-                "text": "2018",
-                "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-              },
-              "name": "Alfa Romeo Sauber F1 Team",
-              "car": {
-                "text": "C37",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C37"
-              },
-              "engine": "Ferrari 063 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "9. 16.",
-              "drivers": "Marcus Ericsson Charles Leclerc",
-              "points": "48",
-              "wcc": "8th"
+              "Year": "2018",
+              "Name": "Alfa Romeo Sauber F1 Team",
+              "Car": "C37",
+              "Engine": "Ferrari 063 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "9. 16.",
+              "Drivers": "Marcus Ericsson Charles Leclerc",
+              "Points": "48",
+              "WCC": "8th"
             },
             {
-              "year": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "name": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "car": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "engine": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "tyres": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "no.": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "drivers": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "points": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "wcc": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              }
+              "Year": "Alfa Romeo",
+              "Name": "Alfa Romeo",
+              "Car": "Alfa Romeo",
+              "Engine": "Alfa Romeo",
+              "Tyres": "Alfa Romeo",
+              "No.": "Alfa Romeo",
+              "Drivers": "Alfa Romeo",
+              "Points": "Alfa Romeo",
+              "WCC": "Alfa Romeo"
             },
             {
-              "year": {
-                "text": "2019",
-                "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-              },
-              "name": "Alfa Romeo Racing",
-              "car": {
-                "text": "C38",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_Racing_C38"
-              },
-              "engine": "Ferrari 064 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "7. 99.",
-              "drivers": "Kimi Räikkönen Antonio Giovinazzi",
-              "points": "57",
-              "wcc": "8th"
+              "Year": "2019",
+              "Name": "Alfa Romeo Racing",
+              "Car": "C38",
+              "Engine": "Ferrari 064 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "7. 99.",
+              "Drivers": "Kimi Räikkönen Antonio Giovinazzi",
+              "Points": "57",
+              "WCC": "8th"
             },
             {
-              "year": {
-                "text": "2020",
-                "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-              },
-              "name": "Alfa Romeo Racing Orlen",
-              "car": {
-                "text": "C39",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_Racing_C39"
-              },
-              "engine": "Ferrari 065 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "7. 99.",
-              "drivers": "Kimi Räikkönen Antonio Giovinazzi",
-              "points": "8",
-              "wcc": "8th"
+              "Year": "2020",
+              "Name": "Alfa Romeo Racing Orlen",
+              "Car": "C39",
+              "Engine": "Ferrari 065 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "7. 99.",
+              "Drivers": "Kimi Räikkönen Antonio Giovinazzi",
+              "Points": "8",
+              "WCC": "8th"
             },
             {
-              "year": {
-                "text": "2021",
-                "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-              },
-              "name": "Alfa Romeo Racing Orlen",
-              "car": {
-                "text": "C41",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_Racing_C41"
-              },
-              "engine": "Ferrari 065/6 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "7. 88. 99.",
-              "drivers": "Kimi Räikkönen Robert Kubica Antonio Giovinazzi",
-              "points": "13",
-              "wcc": "9th"
+              "Year": "2021",
+              "Name": "Alfa Romeo Racing Orlen",
+              "Car": "C41",
+              "Engine": "Ferrari 065/6 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "7. 88. 99.",
+              "Drivers": "Kimi Räikkönen Robert Kubica Antonio Giovinazzi",
+              "Points": "13",
+              "WCC": "9th"
             },
             {
-              "year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "name": "Alfa Romeo F1 Team Orlen",
-              "car": {
-                "text": "C42",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_C42"
-              },
-              "engine": "Ferrari 066/7 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "24. 77.",
-              "drivers": "Zhou Guanyu Valtteri Bottas",
-              "points": "55",
-              "wcc": "6th"
+              "Year": "2022",
+              "Name": "Alfa Romeo F1 Team Orlen",
+              "Car": "C42",
+              "Engine": "Ferrari 066/7 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "24. 77.",
+              "Drivers": "Zhou Guanyu Valtteri Bottas",
+              "Points": "55",
+              "WCC": "6th"
             },
             {
-              "year": {
-                "text": "2023",
-                "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
-              },
-              "name": "Alfa Romeo F1 Team Stake",
-              "car": {
-                "text": "C43",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_C43"
-              },
-              "engine": "Ferrari 066/10 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "24. 77.",
-              "drivers": "Zhou Guanyu Valtteri Bottas",
-              "points": "16",
-              "wcc": "9th"
+              "Year": "2023",
+              "Name": "Alfa Romeo F1 Team Stake",
+              "Car": "C43",
+              "Engine": "Ferrari 066/10 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "24. 77.",
+              "Drivers": "Zhou Guanyu Valtteri Bottas",
+              "Points": "16",
+              "WCC": "9th"
             },
             {
-              "year": "Sauber",
-              "name": "Sauber",
-              "car": "Sauber",
-              "engine": "Sauber",
-              "tyres": "Sauber",
-              "no.": "Sauber",
-              "drivers": "Sauber",
-              "points": "Sauber",
-              "wcc": "Sauber"
+              "Year": "Sauber",
+              "Name": "Sauber",
+              "Car": "Sauber",
+              "Engine": "Sauber",
+              "Tyres": "Sauber",
+              "No.": "Sauber",
+              "Drivers": "Sauber",
+              "Points": "Sauber",
+              "WCC": "Sauber"
             },
             {
-              "year": {
-                "text": "2024",
-                "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
-              },
-              "name": "Stake F1 Team Kick Sauber",
-              "car": {
-                "text": "C44",
-                "url": "https://en.wikipedia.org/wiki/Kick_Sauber_C44"
-              },
-              "engine": "Ferrari 066/12 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "24. 77.",
-              "drivers": "Zhou Guanyu Valtteri Bottas",
-              "points": "4",
-              "wcc": "10th"
+              "Year": "2024",
+              "Name": "Stake F1 Team Kick Sauber",
+              "Car": "C44",
+              "Engine": "Ferrari 066/12 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "24. 77.",
+              "Drivers": "Zhou Guanyu Valtteri Bottas",
+              "Points": "4",
+              "WCC": "10th"
             },
             {
-              "year": {
-                "text": "2025",
-                "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
-              },
-              "name": "Stake F1 Team Kick Sauber",
-              "car": {
-                "text": "C45",
-                "url": "https://en.wikipedia.org/wiki/Kick_Sauber_C45"
-              },
-              "engine": "Ferrari 066/12 1.6 V6 t",
-              "tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "no.": "5. 27.",
-              "drivers": "Gabriel Bortoleto Nico Hülkenberg",
-              "points": "70",
-              "wcc": "9th"
+              "Year": "2025",
+              "Name": "Stake F1 Team Kick Sauber",
+              "Car": "C45",
+              "Engine": "Ferrari 066/12 1.6 V6 t",
+              "Tyres": "P",
+              "No.": "5. 27.",
+              "Drivers": "Gabriel Bortoleto Nico Hülkenberg",
+              "Points": "70",
+              "WCC": "9th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1912,20 +1304,11 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1977",
-                "url": "https://en.wikipedia.org/wiki/1977_24_Hours_of_Le_Mans"
-              },
+              "Year": "1977",
               "Entrant": "P. Sauber AG Francy Racing",
               "No.": "21",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Car": {
-                "text": "Sauber C5",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C5"
-              },
+              "Tyres": "G",
+              "Car": "Sauber C5",
               "Drivers": "Eugen Strähl Peter Bernhard",
               "Class": "Gr.6 S 2.0",
               "Laps": "161",
@@ -1933,20 +1316,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1978",
-                "url": "https://en.wikipedia.org/wiki/1978_24_Hours_of_Le_Mans"
-              },
+              "Year": "1978",
               "Entrant": "Francy Sauber PP AG",
               "No.": "23",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Car": {
-                "text": "Sauber C5 B",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C5"
-              },
+              "Tyres": "P",
+              "Car": "Sauber C5 B",
               "Drivers": "Marc Surer Eugen Strähl Harry Blumer",
               "Class": "Gr.6 S 2.0",
               "Laps": "257",
@@ -1954,20 +1328,11 @@
               "Class Pos.": "NC"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
-              },
+              "Year": "1981",
               "Entrant": "BASF Cassetten Team GS Sport",
               "No.": "50",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Car": {
-                "text": "BMW M1",
-                "url": "https://en.wikipedia.org/wiki/BMW_M1"
-              },
+              "Tyres": "D",
+              "Car": "BMW M1",
               "Drivers": "Hans-Joachim Stuck Jean-Pierre Jarier Helmut Henzler",
               "Class": "IMSA GTX",
               "Laps": "57",
@@ -1975,20 +1340,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
-              },
+              "Year": "1981",
               "Entrant": "Würth-Lubrifilm Team Sauber",
               "No.": "52",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Car": {
-                "text": "BMW M1",
-                "url": "https://en.wikipedia.org/wiki/BMW_M1"
-              },
+              "Tyres": "D",
+              "Car": "BMW M1",
               "Drivers": "Marc Surer David Deacon Dieter Quester",
               "Class": "Gr.5 S +2.0",
               "Laps": "207",
@@ -1996,20 +1352,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_24_Hours_of_Le_Mans"
-              },
+              "Year": "1982",
               "Entrant": "BASF Cassetten Team GS Sport",
               "No.": "19",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Car": {
-                "text": "Sauber SHS C6",
-                "url": "https://en.wikipedia.org/wiki/Sauber_SHS_C6"
-              },
+              "Tyres": "D",
+              "Car": "Sauber SHS C6",
               "Drivers": "Walter Brun Siegfried Müller Jr.",
               "Class": "Gr.C",
               "Laps": "55",
@@ -2017,20 +1364,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_24_Hours_of_Le_Mans"
-              },
+              "Year": "1982",
               "Entrant": "BASF Cassetten Team GS Sport",
               "No.": "20",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Car": {
-                "text": "Sauber SHS C6",
-                "url": "https://en.wikipedia.org/wiki/Sauber_SHS_C6"
-              },
+              "Tyres": "D",
+              "Car": "Sauber SHS C6",
               "Drivers": "Hans-Joachim Stuck Jean-Louis Schlesser Dieter Quester",
               "Class": "Gr.C",
               "Laps": "76",
@@ -2038,20 +1376,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
-              },
+              "Year": "1983",
               "Entrant": "Sauber Team Switzerland",
               "No.": "46",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Car": {
-                "text": "Sauber C7",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C7"
-              },
+              "Tyres": "D",
+              "Car": "Sauber C7",
               "Drivers": "Diego Montoya Tony Garcia Albert Naon",
               "Class": "Gr.C",
               "Laps": "339",
@@ -2059,20 +1388,11 @@
               "Class Pos.": "9th"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_24_Hours_of_Le_Mans"
-              },
+              "Year": "1985",
               "Entrant": "Sauber",
               "No.": "61",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Car": {
-                "text": "Sauber C8",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C8"
-              },
+              "Tyres": "D",
+              "Car": "Sauber C8",
               "Drivers": "John Nielsen Dieter Quester Max Welti",
               "Class": "C1",
               "Laps": "0",
@@ -2080,20 +1400,11 @@
               "Class Pos.": "DNS"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_24_Hours_of_Le_Mans"
-              },
+              "Year": "1986",
               "Entrant": "Kouros Racing",
               "No.": "61",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Car": {
-                "text": "Sauber C8",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C8"
-              },
+              "Tyres": "G",
+              "Car": "Sauber C8",
               "Drivers": "John Nielsen Mike Thackwell",
               "Class": "C1",
               "Laps": "61",
@@ -2101,20 +1412,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_24_Hours_of_Le_Mans"
-              },
+              "Year": "1986",
               "Entrant": "Kouros Racing",
               "No.": "62",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Car": {
-                "text": "Sauber C8",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C8"
-              },
+              "Tyres": "G",
+              "Car": "Sauber C8",
               "Drivers": "Henri Pescarolo Christian Danner Dieter Quester",
               "Class": "C1",
               "Laps": "86",
@@ -2122,20 +1424,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_24_Hours_of_Le_Mans"
-              },
+              "Year": "1987",
               "Entrant": "Kouros Racing",
               "No.": "61",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Car": {
-                "text": "Sauber C9",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C9"
-              },
+              "Tyres": "M",
+              "Car": "Sauber C9",
               "Drivers": "Henri Pescarolo Mike Thackwell Hideki Okada",
               "Class": "C1",
               "Laps": "123",
@@ -2143,20 +1436,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1987",
-                "url": "https://en.wikipedia.org/wiki/1987_24_Hours_of_Le_Mans"
-              },
+              "Year": "1987",
               "Entrant": "Kouros Racing",
               "No.": "62",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Car": {
-                "text": "Sauber C9",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C9"
-              },
+              "Tyres": "M",
+              "Car": "Sauber C9",
               "Drivers": "Johnny Dumfries Mike Thackwell Chip Ganassi",
               "Class": "C1",
               "Laps": "37",
@@ -2164,20 +1448,11 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
-              },
+              "Year": "1988",
               "Entrant": "Team Sauber Mercedes",
               "No.": "61",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Car": {
-                "text": "Sauber C9",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C9"
-              },
+              "Tyres": "M",
+              "Car": "Sauber C9",
               "Drivers": "Jochen Mass Mauro Baldi James Weaver",
               "Class": "C1",
               "Laps": "0",
@@ -2185,20 +1460,11 @@
               "Class Pos.": "DNS"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
-              },
+              "Year": "1988",
               "Entrant": "Team Sauber Mercedes",
               "No.": "62",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Car": {
-                "text": "Sauber C9",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C9"
-              },
+              "Tyres": "M",
+              "Car": "Sauber C9",
               "Drivers": "Klaus Niedzwiedz Kenny Acheson Jochen Mass",
               "Class": "C1",
               "Laps": "0",
@@ -2206,20 +1472,11 @@
               "Class Pos.": "DNS"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_24_Hours_of_Le_Mans"
-              },
+              "Year": "1989",
               "Entrant": "Team Sauber Mercedes",
               "No.": "61",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Car": {
-                "text": "Sauber C9",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C9"
-              },
+              "Tyres": "M",
+              "Car": "Sauber C9",
               "Drivers": "Mauro Baldi Kenny Acheson Gianfranco Brancatelli",
               "Class": "C1",
               "Laps": "385",
@@ -2227,20 +1484,11 @@
               "Class Pos.": "2nd"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_24_Hours_of_Le_Mans"
-              },
+              "Year": "1989",
               "Entrant": "Team Sauber Mercedes",
               "No.": "62",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Car": {
-                "text": "Sauber C9",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C9"
-              },
+              "Tyres": "M",
+              "Car": "Sauber C9",
               "Drivers": "Jean-Louis Schlesser Jean-Pierre Jabouille Alain Cudini",
               "Class": "C1",
               "Laps": "379",
@@ -2248,20 +1496,11 @@
               "Class Pos.": "5th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_24_Hours_of_Le_Mans"
-              },
+              "Year": "1989",
               "Entrant": "Team Sauber Mercedes",
               "No.": "63",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Car": {
-                "text": "Sauber C9",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C9"
-              },
+              "Tyres": "M",
+              "Car": "Sauber C9",
               "Drivers": "Jochen Mass Manuel Reuter Stanley Dickens",
               "Class": "C1",
               "Laps": "390",
@@ -2269,20 +1508,11 @@
               "Class Pos.": "1st"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_24_Hours_of_Le_Mans"
-              },
+              "Year": "1991",
               "Entrant": "Team Sauber Mercedes",
               "No.": "1",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Car": {
-                "text": "Mercedes-Benz C11",
-                "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_C11"
-              },
+              "Tyres": "G",
+              "Car": "Mercedes-Benz C11",
               "Drivers": "Jean-Louis Schlesser Jochen Mass Alain Ferté",
               "Class": "C2",
               "Laps": "319",
@@ -2290,44 +1520,23 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_24_Hours_of_Le_Mans"
-              },
+              "Year": "1991",
               "Entrant": "Team Sauber Mercedes",
               "No.": "2",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Car": {
-                "text": "Mercedes-Benz C291",
-                "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_C291"
-              },
-              "Drivers": {
-                "text": "Fritz Kreutzpointner",
-                "url": "https://en.wikipedia.org/wiki/Fritz_Kreutzpointner"
-              },
+              "Tyres": "G",
+              "Car": "Mercedes-Benz C291",
+              "Drivers": "Fritz Kreutzpointner",
               "Class": "C1",
               "Laps": "0",
               "Pos.": "DNQ",
               "Class Pos.": "DNQ"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_24_Hours_of_Le_Mans"
-              },
+              "Year": "1991",
               "Entrant": "Team Sauber Mercedes",
               "No.": "31",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Car": {
-                "text": "Mercedes-Benz C11",
-                "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_C11"
-              },
+              "Tyres": "G",
+              "Car": "Mercedes-Benz C11",
               "Drivers": "Michael Schumacher Karl Wendlinger Fritz Kreutzpointner",
               "Class": "C2",
               "Laps": "355",
@@ -2335,27 +1544,19 @@
               "Class Pos.": "DNF"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_24_Hours_of_Le_Mans"
-              },
+              "Year": "1991",
               "Entrant": "Team Sauber Mercedes",
               "No.": "32",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Car": {
-                "text": "Mercedes-Benz C11",
-                "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_C11"
-              },
+              "Tyres": "G",
+              "Car": "Mercedes-Benz C11",
               "Drivers": "Jonathan Palmer Stanley Dickens Kurt Thiim",
               "Class": "C2",
               "Laps": "223",
               "Pos.": "DNF",
               "Class Pos.": "DNF"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -2413,145 +1614,83 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
+              "Year": "1960",
               "Chassis": "Scarab F1",
               "Engine": "Scarab L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1960_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1960_Indianapolis_500"
-              },
-              "4": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1960_Dutch_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1960_French_Grand_Prix"
-              },
-              "7": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1960_British_Grand_Prix"
-              },
-              "8": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1960_Portuguese_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1960_Italian_Grand_Prix"
-              },
-              "10": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix"
-              },
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "NED",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "POR",
+              "9": "ITA",
+              "10": "USA",
               "Points": "0",
               "WCC": "-"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
+              "Year": "1960",
               "Chassis": "Scarab F1",
               "Engine": "Scarab L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Chuck Daigh",
-                "url": "https://en.wikipedia.org/wiki/Chuck_Daigh"
-              },
+              "Tyres": "D",
+              "Drivers": "Chuck Daigh",
               "1": "DNA",
               "2": "DNQ",
-              "3": null,
+              "3": "",
               "4": "DNS",
               "5": "Ret",
               "6": "DNS",
-              "7": null,
-              "8": null,
-              "9": null,
+              "7": "",
+              "8": "",
+              "9": "",
               "10": "10",
               "Points": "0",
               "WCC": "-"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
+              "Year": "1960",
               "Chassis": "Scarab F1",
               "Engine": "Scarab L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Lance Reventlow",
-                "url": "https://en.wikipedia.org/wiki/Lance_Reventlow"
-              },
-              "1": null,
+              "Tyres": "D",
+              "Drivers": "Lance Reventlow",
+              "1": "",
               "2": "DNQ",
-              "3": null,
+              "3": "",
               "4": "DNS",
               "5": "Ret",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
               "Points": "0",
               "WCC": "-"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
+              "Year": "1960",
               "Chassis": "Scarab F1",
               "Engine": "Scarab L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Richie Ginther",
-                "url": "https://en.wikipedia.org/wiki/Richie_Ginther"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Tyres": "D",
+              "Drivers": "Richie Ginther",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "DNS",
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
               "Points": "0",
               "WCC": "-"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -2760,251 +1899,135 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1961",
-                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-              },
+              "Year": "1961",
               "Chassis": "Cooper T51",
               "Engine": "Maserati 6-1500 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver/s": null,
-              "1": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1961_Monaco_Grand_Prix"
-              },
-              "2": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1961_Dutch_Grand_Prix"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1961_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1961_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1961_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1961_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1961_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1961_United_States_Grand_Prix"
-              },
-              "9": null
+              "Tyres": "D",
+              "Driver/s": "",
+              "1": "MON",
+              "2": "NED",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1961",
-                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-              },
+              "Year": "1961",
               "Chassis": "Cooper T51",
               "Engine": "Maserati 6-1500 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver/s": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-              },
+              "Tyres": "D",
+              "Driver/s": "Maurice Trintignant",
               "1": "7",
-              "2": null,
+              "2": "",
               "3": "Ret",
               "4": "13",
-              "5": null,
+              "5": "",
               "6": "Ret",
               "7": "9",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1961",
-                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-              },
+              "Year": "1961",
               "Chassis": "De Tomaso F1/001",
               "Engine": "OSCA 372 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver/s": {
-                "text": "Giorgio Scarlatti",
-                "url": "https://en.wikipedia.org/wiki/Giorgio_Scarlatti"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "D",
+              "Driver/s": "Giorgio Scarlatti",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1961",
-                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-              },
+              "Year": "1961",
               "Chassis": "De Tomaso F1/003",
               "Engine": "Alfa Romeo Giulietta 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver/s": {
-                "text": "Nino Vaccarella",
-                "url": "https://en.wikipedia.org/wiki/Nino_Vaccarella"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "D",
+              "Driver/s": "Nino Vaccarella",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1962",
-                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
-              },
+              "Year": "1962",
               "Chassis": "Lotus 18/21",
               "Engine": "Climax FPF 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver/s": null,
-              "1": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
-              },
-              "9": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
-              }
+              "Tyres": "D",
+              "Driver/s": "",
+              "1": "NED",
+              "2": "MON",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "RSA"
             },
             {
-              "Year": {
-                "text": "1962",
-                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
-              },
+              "Year": "1962",
               "Chassis": "Lotus 18/21",
               "Engine": "Climax FPF 1.5 L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver/s": {
-                "text": "Nino Vaccarella",
-                "url": "https://en.wikipedia.org/wiki/Nino_Vaccarella"
-              },
-              "1": null,
+              "Tyres": "D",
+              "Driver/s": "Nino Vaccarella",
+              "1": "",
               "2": "DNQ",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1962",
-                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
-              },
+              "Year": "1962",
               "Chassis": "Porsche 718",
               "Engine": "Porsche 547/3 1.5 F4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver/s": {
-                "text": "Nino Vaccarella",
-                "url": "https://en.wikipedia.org/wiki/Nino_Vaccarella"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Tyres": "D",
+              "Driver/s": "Nino Vaccarella",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "15",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1962",
-                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
-              },
+              "Year": "1962",
               "Chassis": "Lotus 24",
               "Engine": "Climax FWMV 1.5 V8",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver/s": {
-                "text": "Nino Vaccarella",
-                "url": "https://en.wikipedia.org/wiki/Nino_Vaccarella"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "D",
+              "Driver/s": "Nino Vaccarella",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "9",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -3028,92 +2051,45 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Bruce McLaren Motor Racing",
-                "url": "https://en.wikipedia.org/wiki/Bruce_McLaren_Motor_Racing"
-              },
+              "Year": "1966",
+              "Entrant": "Bruce McLaren Motor Racing",
               "Chassis": "McLaren M2B",
               "Engine": "Serenissima M166 3.0 V8",
-              "Tyres": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1966_Monaco_Grand_Prix"
-              },
-              "2": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1966_Belgian_Grand_Prix"
-              },
-              "3": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1966_French_Grand_Prix"
-              },
-              "4": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1966_British_Grand_Prix"
-              },
-              "5": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1966_Dutch_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1966_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1966_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1966_United_States_Grand_Prix"
-              },
-              "9": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1966_Mexican_Grand_Prix"
-              },
+              "Tyres": "F",
+              "Drivers": "",
+              "1": "MON",
+              "2": "BEL",
+              "3": "FRA",
+              "4": "GBR",
+              "5": "NED",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "MEX",
               "WCC": "12th",
               "Points": "1"
             },
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Bruce McLaren Motor Racing",
-                "url": "https://en.wikipedia.org/wiki/Bruce_McLaren_Motor_Racing"
-              },
+              "Year": "1966",
+              "Entrant": "Bruce McLaren Motor Racing",
               "Chassis": "McLaren M2B",
               "Engine": "Serenissima M166 3.0 V8",
-              "Tyres": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Bruce McLaren",
-                "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
-              },
-              "1": null,
+              "Tyres": "F",
+              "Drivers": "Bruce McLaren",
+              "1": "",
               "2": "DNS",
-              "3": null,
+              "3": "",
               "4": "6",
               "5": "DNS",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
               "WCC": "12th",
               "Points": "1"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -3381,19 +2357,19 @@
               "Version": "Future version: Eyesight X",
               "Launch Date": "No North America Release (2020 Japan / Europe-only on Levorg)",
               "Technology Changes & Notes": "Based on Gen 4 Platform Adds front-facing 77 GHz MW wave radar Adds front corner radars",
-              "Adaptive Cruise": null,
-              "Lane Departure Systems": null,
-              "Pre-collision Braking": null,
-              "Rear Radar Features": null
+              "Adaptive Cruise": "",
+              "Lane Departure Systems": "",
+              "Pre-collision Braking": "",
+              "Rear Radar Features": ""
             },
             {
               "Version": "Future version: Eyesight Gen 5",
               "Launch Date": "2026+",
               "Technology Changes & Notes": "AMD Versal AI Edge Series (Gen 2) SOC, onsemi Hyperlux AR0823AT Sensors",
-              "Adaptive Cruise": null,
-              "Lane Departure Systems": null,
-              "Pre-collision Braking": null,
-              "Rear Radar Features": null
+              "Adaptive Cruise": "",
+              "Lane Departure Systems": "",
+              "Pre-collision Braking": "",
+              "Rear Radar Features": ""
             },
             {
               "Version": "Legend: Unsupported Supported Latest version Preview version Future version",
@@ -3404,7 +2380,8 @@
               "Pre-collision Braking": "Legend: Unsupported Supported Latest version Preview version Future version",
               "Rear Radar Features": "Legend: Unsupported Supported Latest version Preview version Future version"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -3647,114 +2624,39 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "British American Racing",
-                "url": "https://en.wikipedia.org/wiki/British_American_Racing"
-              },
-              "Chassis": {
-                "text": "BAR 01",
-                "url": "https://en.wikipedia.org/wiki/BAR_01"
-              },
+              "Year": "1999",
+              "Entrant": "British American Racing",
+              "Chassis": "BAR 01",
               "Engine": "FB01 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1999_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1999_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1999_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1999_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1999_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1999_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1999_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1999_British_Grand_Prix"
-              },
-              "9": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1999_Austrian_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1999_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1999_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1999_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1999_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1999_European_Grand_Prix"
-              },
-              "15": {
-                "text": "MAL",
-                "url": "https://en.wikipedia.org/wiki/1999_Malaysian_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1999_Japanese_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "ESP",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "AUT",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "EUR",
+              "15": "MAL",
+              "16": "JPN",
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "British American Racing",
-                "url": "https://en.wikipedia.org/wiki/British_American_Racing"
-              },
-              "Chassis": {
-                "text": "BAR 01",
-                "url": "https://en.wikipedia.org/wiki/BAR_01"
-              },
+              "Year": "1999",
+              "Entrant": "British American Racing",
+              "Chassis": "BAR 01",
               "Engine": "FB01 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Jacques Villeneuve",
-                "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
-              },
+              "Tyres": "B",
+              "Drivers": "Jacques Villeneuve",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -3771,37 +2673,22 @@
               "14": "10",
               "15": "Ret",
               "16": "9",
-              "17": null,
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "British American Racing",
-                "url": "https://en.wikipedia.org/wiki/British_American_Racing"
-              },
-              "Chassis": {
-                "text": "BAR 01",
-                "url": "https://en.wikipedia.org/wiki/BAR_01"
-              },
+              "Year": "1999",
+              "Entrant": "British American Racing",
+              "Chassis": "BAR 01",
               "Engine": "FB01 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Ricardo Zonta",
-                "url": "https://en.wikipedia.org/wiki/Ricardo_Zonta"
-              },
+              "Tyres": "B",
+              "Drivers": "Ricardo Zonta",
               "1": "Ret",
               "2": "DNQ",
-              "3": null,
-              "4": null,
-              "5": null,
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "Ret",
               "7": "9",
               "8": "Ret",
@@ -3813,74 +2700,44 @@
               "14": "8",
               "15": "Ret",
               "16": "12",
-              "17": null,
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "British American Racing",
-                "url": "https://en.wikipedia.org/wiki/British_American_Racing"
-              },
-              "Chassis": {
-                "text": "BAR 01",
-                "url": "https://en.wikipedia.org/wiki/BAR_01"
-              },
+              "Year": "1999",
+              "Entrant": "British American Racing",
+              "Chassis": "BAR 01",
               "Engine": "FB01 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Mika Salo",
-                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "B",
+              "Drivers": "Mika Salo",
+              "1": "",
+              "2": "",
               "3": "7",
               "4": "Ret",
               "5": "8",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Mild Seven Benetton Playlife",
-                "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-              },
-              "Chassis": {
-                "text": "Benetton B199",
-                "url": "https://en.wikipedia.org/wiki/Benetton_B199"
-              },
+              "Year": "1999",
+              "Entrant": "Mild Seven Benetton Playlife",
+              "Chassis": "Benetton B199",
               "Engine": "Playlife FB01 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Giancarlo Fisichella",
-                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-              },
+              "Tyres": "B",
+              "Drivers": "Giancarlo Fisichella",
               "1": "4",
               "2": "Ret",
               "3": "5",
@@ -3897,32 +2754,17 @@
               "14": "Ret",
               "15": "11",
               "16": "14",
-              "17": null,
+              "17": "",
               "Points": "16",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Mild Seven Benetton Playlife",
-                "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-              },
-              "Chassis": {
-                "text": "Benetton B199",
-                "url": "https://en.wikipedia.org/wiki/Benetton_B199"
-              },
+              "Year": "1999",
+              "Entrant": "Mild Seven Benetton Playlife",
+              "Chassis": "Benetton B199",
               "Engine": "Playlife FB01 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Alexander Wurz",
-                "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
-              },
+              "Tyres": "B",
+              "Drivers": "Alexander Wurz",
               "1": "Ret",
               "2": "7",
               "3": "Ret",
@@ -3939,32 +2781,17 @@
               "14": "Ret",
               "15": "8",
               "16": "10",
-              "17": null,
+              "17": "",
               "Points": "16",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Winfield Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-              },
-              "Chassis": {
-                "text": "Williams FW21",
-                "url": "https://en.wikipedia.org/wiki/Williams_FW21"
-              },
+              "Year": "1999",
+              "Entrant": "Winfield Williams",
+              "Chassis": "Williams FW21",
               "Engine": "FB01 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Ralf Schumacher",
-                "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-              },
+              "Tyres": "B",
+              "Drivers": "Ralf Schumacher",
               "1": "3",
               "2": "4",
               "3": "Ret",
@@ -3981,32 +2808,17 @@
               "14": "4",
               "15": "Ret",
               "16": "5",
-              "17": null,
+              "17": "",
               "Points": "35",
               "WCC": "5th"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Winfield Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-              },
-              "Chassis": {
-                "text": "Williams FW21",
-                "url": "https://en.wikipedia.org/wiki/Williams_FW21"
-              },
+              "Year": "1999",
+              "Entrant": "Winfield Williams",
+              "Chassis": "Williams FW21",
               "Engine": "FB01 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Alessandro Zanardi",
-                "url": "https://en.wikipedia.org/wiki/Alex_Zanardi"
-              },
+              "Tyres": "B",
+              "Drivers": "Alessandro Zanardi",
               "1": "Ret",
               "2": "Ret",
               "3": "11",
@@ -4023,122 +2835,44 @@
               "14": "Ret",
               "15": "10",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Points": "35",
               "WCC": "5th"
             },
             {
-              "Year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Arrows F1 Team",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A21",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A21"
-              },
+              "Year": "2000",
+              "Entrant": "Arrows F1 Team",
+              "Chassis": "Arrows A21",
               "Engine": "FB02 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/2000_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/2000_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/2000_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/2000_British_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/2000_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/2000_European_Grand_Prix"
-              },
-              "7": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/2000_Monaco_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/2000_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/2000_French_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/2000_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/2000_German_Grand_Prix"
-              },
-              "12": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/2000_Hungarian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/2000_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/2000_Italian_Grand_Prix"
-              },
-              "15": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/2000_United_States_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/2000_Japanese_Grand_Prix"
-              },
-              "17": {
-                "text": "MAL",
-                "url": "https://en.wikipedia.org/wiki/2000_Malaysian_Grand_Prix"
-              },
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "GBR",
+              "5": "ESP",
+              "6": "EUR",
+              "7": "MON",
+              "8": "CAN",
+              "9": "FRA",
+              "10": "AUT",
+              "11": "GER",
+              "12": "HUN",
+              "13": "BEL",
+              "14": "ITA",
+              "15": "USA",
+              "16": "JPN",
+              "17": "MAL",
               "Points": "7",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Arrows F1 Team",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A21",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A21"
-              },
+              "Year": "2000",
+              "Entrant": "Arrows F1 Team",
+              "Chassis": "Arrows A21",
               "Engine": "FB02 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Pedro de la Rosa",
-                "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
-              },
+              "Tyres": "B",
+              "Drivers": "Pedro de la Rosa",
               "1": "Ret",
               "2": "8",
               "3": "Ret",
@@ -4160,27 +2894,12 @@
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Arrows F1 Team",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A21",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A21"
-              },
+              "Year": "2000",
+              "Entrant": "Arrows F1 Team",
+              "Chassis": "Arrows A21",
               "Engine": "FB02 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Jos Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-              },
+              "Tyres": "B",
+              "Drivers": "Jos Verstappen",
               "1": "Ret",
               "2": "7",
               "3": "14",
@@ -4202,27 +2921,12 @@
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Mild Seven Benetton Playlife",
-                "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-              },
-              "Chassis": {
-                "text": "Benetton B200",
-                "url": "https://en.wikipedia.org/wiki/Benetton_B200"
-              },
+              "Year": "2000",
+              "Entrant": "Mild Seven Benetton Playlife",
+              "Chassis": "Benetton B200",
               "Engine": "Playlife FB02 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Giancarlo Fisichella",
-                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-              },
+              "Tyres": "B",
+              "Drivers": "Giancarlo Fisichella",
               "1": "5",
               "2": "2",
               "3": "11",
@@ -4244,27 +2948,12 @@
               "WCC": "4th"
             },
             {
-              "Year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Mild Seven Benetton Playlife",
-                "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-              },
-              "Chassis": {
-                "text": "Benetton B200",
-                "url": "https://en.wikipedia.org/wiki/Benetton_B200"
-              },
+              "Year": "2000",
+              "Entrant": "Mild Seven Benetton Playlife",
+              "Chassis": "Benetton B200",
               "Engine": "Playlife FB02 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Alexander Wurz",
-                "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
-              },
+              "Tyres": "B",
+              "Drivers": "Alexander Wurz",
               "1": "7",
               "2": "Ret",
               "3": "9",
@@ -4285,7 +2974,8 @@
               "Points": "20",
               "WCC": "4th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

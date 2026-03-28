@@ -3,10 +3,10 @@ from typing import TypedDict
 
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.domain_validator import BaseDomainRecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 DRIVERS_CHAMPIONSHIPS_SCHEMA = RecordSchema(
     required=("count", "seasons"),
@@ -23,7 +23,7 @@ class DriversChampionshipsRecord(TypedDict):
 def validate_drivers_championships_record(
     record: dict[str, Any],
 ) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(
+    return RecordValidator.validate_schema(
         record,
         DRIVERS_CHAMPIONSHIPS_SCHEMA,
     )

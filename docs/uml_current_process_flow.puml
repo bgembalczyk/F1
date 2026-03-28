@@ -25,7 +25,7 @@ database "JSON/CSV\nFiles" as Files
 
 == Initialization ==
 User -> Main: run main()
-Main -> Main: run_list_scrapers()
+Main -> Main: run_layer_zero()
 
 == List Scraper Execution ==
 loop For each list scraper
@@ -119,7 +119,7 @@ loop For each list scraper
 end
 
 == Complete Scraper Execution ==
-Main -> Main: run_complete_scrapers()
+Main -> Main: run_layer_one() [currently disabled in main]
 
 loop For each complete scraper
     Main -> Runner: run_and_export(scraper_cls)

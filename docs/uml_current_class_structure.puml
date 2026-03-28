@@ -7,6 +7,177 @@ skinparam classAttributeIconSize 0
 
 title F1 Wikipedia Scraper - Current Class Structure and Hierarchy
 
+package "Wiki Scraper" {
+    class WikiScraper {
+        - http_client: Any
+        - header_parser: HeaderParser
+        - body_content_parser: BodyContentParser
+        --
+        + scrape(url: str): dict
+        # _fetch(url: str): str
+        # _parse(url: str, soup: BeautifulSoup): dict
+    }
+
+    note right of WikiScraper
+        Pobiera HTML strony za pomocą http_client.
+        Klient decyduje o pobieraniu bezpośrednim lub z cache.
+        Klasa obsługująca kilka scraperów = DataExtractor.
+    end note
+}
+
+package "Wiki Parsers - Page Level" {
+    abstract class WikiParser {
+        + {abstract} parse(element: Tag): Any
+    }
+
+    class HeaderParser {
+        --
+        + parse(element: Tag): dict
+        + {static} find_header(soup: BeautifulSoup): Tag | None
+    }
+
+    class BodyContentParser {
+        - category_links_parser: CategoryLinksParser
+        - content_text_parser: ContentTextParser
+        --
+        + parse(element: Tag): dict
+        + {static} find_body_content(soup: BeautifulSoup): Tag | None
+    }
+
+    class CategoryLinksParser {
+        --
+        + parse(element: Tag): dict
+    }
+
+    class ContentTextParser {
+        - section_parser: SectionParser
+        --
+        + parse(element: Tag): dict
+    }
+}
+
+package "Wiki Parsers - Sections" {
+    class SectionParser {
+        - sub_section_parser: SubSectionParser
+        --
+        + parse(element: Tag): dict
+        # _parse_group(elements: list): dict
+    }
+
+    class SubSectionParser {
+        - sub_sub_section_parser: SubSubSectionParser
+        --
+        + parse(element: Tag): dict
+        # _parse_group(elements: list): dict
+    }
+
+    class SubSubSectionParser {
+        - sub_sub_sub_section_parser: SubSubSubSectionParser
+        --
+        + parse(element: Tag): dict
+        # _parse_group(elements: list): dict
+    }
+
+    class SubSubSubSectionParser {
+        --
+        + parse(element: Tag): dict
+        # _parse_group(elements: list): dict
+    }
+
+    abstract class WikiElementParserMixin {
+        + infobox_parser: InfoboxParser
+        + paragraph_parser: ParagraphParser
+        + figure_parser: FigureParser
+        + list_parser: ListParser
+        + table_parser: TableParser
+        + navbox_parser: NavBoxParser
+        + references_wrap_parser: ReferencesWrapParser
+        --
+        + parse_elements(elements: list): list
+        # _parse_element(el: Tag): dict | None
+    }
+}
+
+package "Wiki Parsers - Elements" {
+    class InfoboxParser {
+        + parse(element: Tag): dict
+    }
+
+    class ParagraphParser {
+        + parse(element: Tag): dict
+    }
+
+    class FigureParser {
+        + parse(element: Tag): dict
+    }
+
+    class ListParser {
+        + parse(element: Tag): dict
+    }
+
+    class TableParser {
+        + parse(element: Tag): dict
+    }
+
+    class NavBoxParser {
+        + parse(element: Tag): dict
+    }
+
+    class ReferencesWrapParser {
+        + parse(element: Tag): dict
+    }
+}
+
+' Wiki Scraper relationships
+WikiScraper --> HeaderParser: uses
+WikiScraper --> BodyContentParser: uses
+
+' Page level parser hierarchy
+WikiParser <|-- HeaderParser
+WikiParser <|-- BodyContentParser
+WikiParser <|-- CategoryLinksParser
+WikiParser <|-- ContentTextParser
+
+' BodyContentParser uses
+BodyContentParser --> CategoryLinksParser: uses
+BodyContentParser --> ContentTextParser: uses
+
+' ContentTextParser uses
+ContentTextParser --> SectionParser: uses
+
+' Section parser hierarchy
+WikiParser <|-- SectionParser
+WikiParser <|-- SubSectionParser
+WikiParser <|-- SubSubSectionParser
+WikiParser <|-- SubSubSubSectionParser
+
+WikiElementParserMixin <|-- SectionParser
+WikiElementParserMixin <|-- SubSectionParser
+WikiElementParserMixin <|-- SubSubSectionParser
+WikiElementParserMixin <|-- SubSubSubSectionParser
+
+SectionParser --> SubSectionParser: uses
+SubSectionParser --> SubSubSectionParser: uses
+SubSubSectionParser --> SubSubSubSectionParser: uses
+
+' Element parser hierarchy
+WikiParser <|-- InfoboxParser
+WikiParser <|-- ParagraphParser
+WikiParser <|-- FigureParser
+WikiParser <|-- ListParser
+WikiParser <|-- TableParser
+WikiParser <|-- NavBoxParser
+WikiParser <|-- ReferencesWrapParser
+
+' WikiElementParserMixin uses element parsers
+WikiElementParserMixin --> InfoboxParser: uses
+WikiElementParserMixin --> ParagraphParser: uses
+WikiElementParserMixin --> FigureParser: uses
+WikiElementParserMixin --> ListParser: uses
+WikiElementParserMixin --> TableParser: uses
+WikiElementParserMixin --> NavBoxParser: uses
+WikiElementParserMixin --> ReferencesWrapParser: uses
+
 package "Base Scrapers" {
     abstract class F1Scraper {
         # url: str

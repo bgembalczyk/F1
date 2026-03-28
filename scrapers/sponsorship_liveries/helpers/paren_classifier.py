@@ -19,42 +19,9 @@ import logging
 from typing import Any
 
 from infrastructure.gemini.client import GeminiClient
+from scrapers.sponsorship_liveries.helpers.constants import PROMPT_TEMPLATE
 
 logger = logging.getLogger(__name__)
-
-_PROMPT_TEMPLATE = """
-Analizujesz tabelę Wikipedii o historycznych malowaniach sponsorów w Formule 1.
-
-Określ, czego dotyczy ta adnotacja.
-Odpowiedz wyłącznie w formacie JSON z następującymi kluczami
-(każdy zawiera listę elementów lub pustą listę []):
-- "driver": lista kierowców F1, których dotyczy adnotacja (imię i nazwisko)
-- "car_model": lista modeli bolidów/samochodów wyścigowych
-- "engine_constructor": lista konstruktorów/dostawców silników
-- "grand_prix": lista konkretnych wyścigów Grand Prix
-  (pełna nazwa, np. "Monaco Grand Prix")
-
-Przykład odpowiedzi:
-{{
-  "driver": [],
-  "car_model": ["Dallara F188"],
-  "engine_constructor": [],
-  "grand_prix": []
-}}
-
-Odpowiedz tylko poprawnym JSON, bez dodatkowego tekstu.
-
-Nie uzupełniaj za pomocą własnej wiedzy; odpowiedz tylko na podstawie
-poniższych informacji. Jeśli danej informacji nie da się wywnioskować
-wyłącznie z tych danych, pozostaw odpowiednią kategorię pustą.
-Jeśli treść ewidentnie sugeruje przeczenie, to znaczy,
-że nie dotyczy tego o czym wspomina, więc nie należy tego wpisywać do kategorii.
-
-Zespół F1: {team_name}
-
-W kolumnie "Year" (rok) przy wpisie roku {year_text!r}
-pojawia się adnotacja w nawiasie: {paren_content!r}
-"""
 
 
 class ParenClassifier:
@@ -134,7 +101,7 @@ class ParenClassifier:
         headers: list[str],
     ) -> str:
         headers_str = ", ".join(headers) if headers else "(brak)"
-        return _PROMPT_TEMPLATE.format(
+        return PROMPT_TEMPLATE.format(
             team_name=team_name,
             headers=headers_str,
             year_text=year_text,

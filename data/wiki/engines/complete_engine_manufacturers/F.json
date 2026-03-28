@@ -1154,15 +1154,16 @@
             },
             {
               "Record": "Most Constructors' Championship points",
-              "As a team": null,
+              "As a team": "",
               "As a constructor": "10762"
             },
             {
               "Record": "Most Drivers' Championship points",
-              "As a team": null,
+              "As a team": "",
               "As a constructor": "11663.77"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1173,114 +1174,61 @@
           ],
           "rows": [
             {
-              "Driver": {
-                "text": "Alberto Ascari",
-                "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
-              },
-              "Nationality": {
-                "text": "Italy",
-                "url": "https://en.wikipedia.org/wiki/Italy"
-              },
+              "Driver": "Alberto Ascari",
+              "Nationality": "Italy",
               "Place of birth": "Milan , Italy",
               "Championships with Ferrari": "2 ( 1952 , 1953 )"
             },
             {
-              "Driver": {
-                "text": "Juan Manuel Fangio",
-                "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-              },
-              "Nationality": {
-                "text": "Argentina",
-                "url": "https://en.wikipedia.org/wiki/Argentina"
-              },
+              "Driver": "Juan Manuel Fangio",
+              "Nationality": "Argentina",
               "Place of birth": "Balcarce , Buenos Aires, Argentina",
               "Championships with Ferrari": "1 ( 1956 )"
             },
             {
-              "Driver": {
-                "text": "Mike Hawthorn",
-                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-              },
-              "Nationality": {
-                "text": "United Kingdom",
-                "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-              },
+              "Driver": "Mike Hawthorn",
+              "Nationality": "United Kingdom",
               "Place of birth": "Doncaster , Yorkshire , England",
               "Championships with Ferrari": "1 ( 1958 )"
             },
             {
-              "Driver": {
-                "text": "Phil Hill",
-                "url": "https://en.wikipedia.org/wiki/Phil_Hill"
-              },
-              "Nationality": {
-                "text": "United States",
-                "url": "https://en.wikipedia.org/wiki/United_States"
-              },
+              "Driver": "Phil Hill",
+              "Nationality": "United States",
               "Place of birth": "Miami , Florida, U.S.",
               "Championships with Ferrari": "1 ( 1961 )"
             },
             {
-              "Driver": {
-                "text": "John Surtees",
-                "url": "https://en.wikipedia.org/wiki/John_Surtees"
-              },
-              "Nationality": {
-                "text": "United Kingdom",
-                "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-              },
+              "Driver": "John Surtees",
+              "Nationality": "United Kingdom",
               "Place of birth": "Tatsfield , England",
               "Championships with Ferrari": "1 ( 1964 )"
             },
             {
-              "Driver": {
-                "text": "Niki Lauda",
-                "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-              },
-              "Nationality": {
-                "text": "Austria",
-                "url": "https://en.wikipedia.org/wiki/Austria"
-              },
+              "Driver": "Niki Lauda",
+              "Nationality": "Austria",
               "Place of birth": "Vienna , Austria",
               "Championships with Ferrari": "2 ( 1975 , 1977 )"
             },
             {
-              "Driver": {
-                "text": "Jody Scheckter",
-                "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
-              },
-              "Nationality": {
-                "text": "South Africa",
-                "url": "https://en.wikipedia.org/wiki/South_Africa"
-              },
+              "Driver": "Jody Scheckter",
+              "Nationality": "South Africa",
               "Place of birth": "East London, Eastern Cape , South Africa",
               "Championships with Ferrari": "1 ( 1979 )"
             },
             {
-              "Driver": {
-                "text": "Michael Schumacher",
-                "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-              },
-              "Nationality": {
-                "text": "Germany",
-                "url": "https://en.wikipedia.org/wiki/Germany"
-              },
+              "Driver": "Michael Schumacher",
+              "Nationality": "Germany",
               "Place of birth": "Hürth , North Rhine-Westphalia, Germany",
               "Championships with Ferrari": "5 ( 2000 , 2001 , 2002 , 2003 , 2004 )"
             },
             {
-              "Driver": {
-                "text": "Kimi Räikkönen",
-                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
-              },
-              "Nationality": {
-                "text": "Finland",
-                "url": "https://en.wikipedia.org/wiki/Finland"
-              },
+              "Driver": "Kimi Räikkönen",
+              "Nationality": "Finland",
               "Place of birth": "Espoo , Finland",
               "Championships with Ferrari": "1 ( 2007 )"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1299,24 +1247,12 @@
               "Win(s)": "248",
               "Pole position(s)": "254",
               "Fastest lap(s)": "265",
-              "First win": {
-                "text": "1951 British Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2024 Mexico City Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-              }
+              "First win": "1951 British Grand Prix",
+              "Last win": "2024 Mexico City Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Kurtis Kraft",
-                "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-              },
-              "Season(s)": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
+              "Constructor": "Kurtis Kraft",
+              "Season(s)": "1956",
               "Win(s)": "0",
               "Pole position(s)": "0",
               "Fastest lap(s)": "0",
@@ -1324,20 +1260,8 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Cooper",
-                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-              },
-              "Season(s)": [
-                {
-                  "text": "1960",
-                  "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-                },
-                {
-                  "text": "1966",
-                  "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-                }
-              ],
+              "Constructor": "Cooper",
+              "Season(s)": "1960 , 1966",
               "Win(s)": "0",
               "Pole position(s)": "0",
               "Fastest lap(s)": "0",
@@ -1345,14 +1269,8 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "De Tomaso",
-                "url": "https://en.wikipedia.org/wiki/De_Tomaso"
-              },
-              "Season(s)": {
-                "text": "1963",
-                "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
-              },
+              "Constructor": "De Tomaso",
+              "Season(s)": "1963",
               "Win(s)": "0",
               "Pole position(s)": "0",
               "Fastest lap(s)": "0",
@@ -1360,14 +1278,8 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Minardi",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Season(s)": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
+              "Constructor": "Minardi",
+              "Season(s)": "1991",
               "Win(s)": "0",
               "Pole position(s)": "0",
               "Fastest lap(s)": "0",
@@ -1375,10 +1287,7 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Scuderia Italia",
-                "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
-              },
+              "Constructor": "Scuderia Italia",
               "Season(s)": "1992-1993",
               "Win(s)": "0",
               "Pole position(s)": "0",
@@ -1387,14 +1296,8 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Season(s)": {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-              },
+              "Constructor": "Red Bull Racing",
+              "Season(s)": "2006",
               "Win(s)": "0",
               "Pole position(s)": "0",
               "Fastest lap(s)": "0",
@@ -1402,14 +1305,8 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Spyker",
-                "url": "https://en.wikipedia.org/wiki/Spyker_F1"
-              },
-              "Season(s)": {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-              },
+              "Constructor": "Spyker",
+              "Season(s)": "2007",
               "Win(s)": "0",
               "Pole position(s)": "0",
               "Fastest lap(s)": "0",
@@ -1417,32 +1314,17 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Toro Rosso",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-              },
+              "Constructor": "Toro Rosso",
               "Season(s)": "2007-2013 , 2016",
               "Win(s)": "1",
               "Pole position(s)": "1",
               "Fastest lap(s)": "1",
-              "First win": {
-                "text": "2008 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2008_Italian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2008 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2008_Italian_Grand_Prix"
-              }
+              "First win": "2008 Italian Grand Prix",
+              "Last win": "2008 Italian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Force India",
-                "url": "https://en.wikipedia.org/wiki/Force_India"
-              },
-              "Season(s)": {
-                "text": "2008",
-                "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-              },
+              "Constructor": "Force India",
+              "Season(s)": "2008",
               "Win(s)": "0",
               "Pole position(s)": "0",
               "Fastest lap(s)": "0",
@@ -1450,10 +1332,7 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Sauber",
-                "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-              },
+              "Constructor": "Sauber",
               "Season(s)": "2010-2018 , 2024-2025",
               "Win(s)": "0",
               "Pole position(s)": "0",
@@ -1462,10 +1341,7 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Marussia",
-                "url": "https://en.wikipedia.org/wiki/Marussia_F1"
-              },
+              "Constructor": "Marussia",
               "Season(s)": "2014-2015",
               "Win(s)": "0",
               "Pole position(s)": "0",
@@ -1474,10 +1350,7 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Haas",
-                "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-              },
+              "Constructor": "Haas",
               "Season(s)": "2016-present",
               "Win(s)": "0",
               "Pole position(s)": "1",
@@ -1486,10 +1359,7 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One#Commercial_partnership_with_Sauber_(2019–2023)"
-              },
+              "Constructor": "Alfa Romeo",
               "Season(s)": "2019-2023",
               "Win(s)": "0",
               "Pole position(s)": "0",
@@ -1498,10 +1368,7 @@
               "Last win": "-"
             },
             {
-              "Constructor": {
-                "text": "Cadillac",
-                "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"
-              },
+              "Constructor": "Cadillac",
               "Season(s)": "2026-present",
               "Win(s)": "0",
               "Pole position(s)": "0",
@@ -1515,10 +1382,11 @@
               "Win(s)": "249",
               "Pole position(s)": "256",
               "Fastest lap(s)": "274",
-              "First win": null,
-              "Last win": null
+              "First win": "",
+              "Last win": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1552,7 +1420,8 @@
             {
               "Achievements": "Preceded by Max Verstappen"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -1710,69 +1579,43 @@
           ],
           "rows": [
             {
-              "Model": {
-                "text": "Fiat Punto",
-                "url": "https://en.wikipedia.org/wiki/Fiat_Punto"
-              },
+              "Model": "Fiat Punto",
               "2011 sales": "220,343"
             },
             {
-              "Model": {
-                "text": "Fiat Panda",
-                "url": "https://en.wikipedia.org/wiki/Fiat_Panda"
-              },
+              "Model": "Fiat Panda",
               "2011 sales": "189,527"
             },
             {
-              "Model": {
-                "text": "Fiat 500",
-                "url": "https://en.wikipedia.org/wiki/Fiat_500"
-              },
+              "Model": "Fiat 500",
               "2011 sales": "156,301"
             },
             {
-              "Model": {
-                "text": "Fiat Linea",
-                "url": "https://en.wikipedia.org/wiki/Fiat_Linea"
-              },
+              "Model": "Fiat Linea",
               "2011 sales": "35,499"
             },
             {
-              "Model": {
-                "text": "Fiat Bravo",
-                "url": "https://en.wikipedia.org/wiki/Fiat_Bravo_and_Brava"
-              },
+              "Model": "Fiat Bravo",
               "2011 sales": "31,673"
             },
             {
-              "Model": {
-                "text": "Fiat Sedici",
-                "url": "https://en.wikipedia.org/wiki/Fiat_Sedici"
-              },
+              "Model": "Fiat Sedici",
               "2011 sales": "14,777"
             },
             {
-              "Model": {
-                "text": "Fiat Freemont",
-                "url": "https://en.wikipedia.org/wiki/Dodge_Journey#Fiat_Freemont"
-              },
+              "Model": "Fiat Freemont",
               "2011 sales": "13,651"
             },
             {
-              "Model": {
-                "text": "Fiat Albea",
-                "url": "https://en.wikipedia.org/wiki/Fiat_Albea"
-              },
+              "Model": "Fiat Albea",
               "2011 sales": "8,951"
             },
             {
-              "Model": {
-                "text": "Fiat Idea",
-                "url": "https://en.wikipedia.org/wiki/Fiat_Idea"
-              },
+              "Model": "Fiat Idea",
               "2011 sales": "5,982"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -1978,99 +1821,36 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
+              "Year": "1991",
               "Chassis": "Fondmetal FA1M-E Fomet-1",
               "Engine": "Ford Cosworth DFR 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1991_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1991_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1991_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1991_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1991_Mexican_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1991_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1991_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1991_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1991_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1991_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1991_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1991_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1991_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1991_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
+              "Year": "1991",
               "Chassis": "Fondmetal FA1M-E Fomet-1",
               "Engine": "Ford Cosworth DFR 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Olivier Grouillard",
-                "url": "https://en.wikipedia.org/wiki/Olivier_Grouillard"
-              },
+              "Tyres": "G",
+              "Drivers": "Olivier Grouillard",
               "1": "DNPQ",
               "2": "DNPQ",
               "3": "DNPQ",
@@ -2084,40 +1864,31 @@
               "11": "10",
               "12": "Ret",
               "13": "DNPQ",
-              "14": null,
-              "15": null,
-              "16": null,
+              "14": "",
+              "15": "",
+              "16": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
+              "Year": "1991",
               "Chassis": "Fondmetal FA1M-E Fomet-1",
               "Engine": "Ford Cosworth DFR 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Gabriele Tarquini",
-                "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
               "14": "12",
               "15": "11",
               "16": "DNPQ",
@@ -2125,99 +1896,36 @@
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
+              "Year": "1992",
               "Chassis": "Fondmetal GR01 Fondmetal GR02",
               "Engine": "Ford HBA5 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1992_Mexican_Grand_Prix"
-              },
-              "3": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1992_Brazilian_Grand_Prix"
-              },
-              "4": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1992_Spanish_Grand_Prix"
-              },
-              "5": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1992_San_Marino_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1992_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1992_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1992_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1992_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1992_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1992_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1992_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1992_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1992_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1992_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
+              "Year": "1992",
               "Chassis": "Fondmetal GR01 Fondmetal GR02",
               "Engine": "Ford HBA5 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Gabriele Tarquini",
-                "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
-              },
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -2231,27 +1939,18 @@
               "11": "Ret",
               "12": "Ret",
               "13": "Ret",
-              "14": null,
-              "15": null,
-              "16": null,
+              "14": "",
+              "15": "",
+              "16": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
+              "Year": "1992",
               "Chassis": "Fondmetal GR01 Fondmetal GR02",
               "Engine": "Ford HBA5 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Andrea Chiesa",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Chiesa"
-              },
+              "Tyres": "G",
+              "Drivers": "Andrea Chiesa",
               "1": "DNQ",
               "2": "Ret",
               "3": "DNQ",
@@ -2262,50 +1961,42 @@
               "8": "Ret",
               "9": "DNQ",
               "10": "DNQ",
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
+              "Year": "1992",
               "Chassis": "Fondmetal GR01 Fondmetal GR02",
               "Engine": "Ford HBA5 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Eric van de Poele",
-                "url": "https://en.wikipedia.org/wiki/Eric_van_de_Poele"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
+              "Tyres": "G",
+              "Drivers": "Eric van de Poele",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
               "11": "Ret",
               "12": "10",
               "13": "Ret",
-              "14": null,
-              "15": null,
-              "16": null,
+              "14": "",
+              "15": "",
+              "16": "",
               "Points": "0",
               "WCC": "NC"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -2337,117 +2028,39 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Telefónica Minardi Fondmetal",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi M02",
-                "url": "https://en.wikipedia.org/wiki/Minardi_M02"
-              },
+              "Year": "2000",
+              "Entrant": "Telefónica Minardi Fondmetal",
+              "Chassis": "Minardi M02",
               "Engine": "Fondmetal RV10 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/2000_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/2000_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/2000_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/2000_British_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/2000_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/2000_European_Grand_Prix"
-              },
-              "7": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/2000_Monaco_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/2000_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/2000_French_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/2000_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/2000_German_Grand_Prix"
-              },
-              "12": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/2000_Hungarian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/2000_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/2000_Italian_Grand_Prix"
-              },
-              "15": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/2000_United_States_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/2000_Japanese_Grand_Prix"
-              },
-              "17": {
-                "text": "MAL",
-                "url": "https://en.wikipedia.org/wiki/2000_Malaysian_Grand_Prix"
-              },
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "GBR",
+              "5": "ESP",
+              "6": "EUR",
+              "7": "MON",
+              "8": "CAN",
+              "9": "FRA",
+              "10": "AUT",
+              "11": "GER",
+              "12": "HUN",
+              "13": "BEL",
+              "14": "ITA",
+              "15": "USA",
+              "16": "JPN",
+              "17": "MAL",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Telefónica Minardi Fondmetal",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi M02",
-                "url": "https://en.wikipedia.org/wiki/Minardi_M02"
-              },
+              "Year": "2000",
+              "Entrant": "Telefónica Minardi Fondmetal",
+              "Chassis": "Minardi M02",
               "Engine": "Fondmetal RV10 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Marc Gené",
-                "url": "https://en.wikipedia.org/wiki/Marc_Gen%C3%A9"
-              },
+              "Tyres": "B",
+              "Drivers": "Marc Gené",
               "1": "8",
               "2": "Ret",
               "3": "Ret",
@@ -2469,27 +2082,12 @@
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Telefónica Minardi Fondmetal",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi M02",
-                "url": "https://en.wikipedia.org/wiki/Minardi_M02"
-              },
+              "Year": "2000",
+              "Entrant": "Telefónica Minardi Fondmetal",
+              "Chassis": "Minardi M02",
               "Engine": "Fondmetal RV10 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Gastón Mazzacane",
-                "url": "https://en.wikipedia.org/wiki/Gast%C3%B3n_Mazzacane"
-              },
+              "Tyres": "B",
+              "Drivers": "Gastón Mazzacane",
               "1": "Ret",
               "2": "10",
               "3": "13",
@@ -2510,7 +2108,8 @@
               "Points": "0",
               "WCC": "NC"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

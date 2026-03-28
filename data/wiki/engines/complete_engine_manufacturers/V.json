@@ -299,749 +299,395 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall Special",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_Special"
-              },
+              "Year": "1954",
+              "Chassis": "Vanwall Special",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1954_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1954_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1954_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1954_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1954_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1954_German_Grand_Prix"
-              },
-              "7": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1954_Swiss_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1954_Italian_Grand_Prix"
-              },
-              "9": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1954_Spanish_Grand_Prix"
-              },
-              "10": null,
-              "11": null,
+              "Tyres": "P",
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "SUI",
+              "8": "ITA",
+              "9": "ESP",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall Special",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_Special"
-              },
+              "Year": "1954",
+              "Chassis": "Vanwall Special",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Peter Collins",
-                "url": "https://en.wikipedia.org/wiki/Peter_Collins_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "P",
+              "Driver": "Peter Collins",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "Ret",
-              "6": null,
-              "7": null,
+              "6": "",
+              "7": "",
               "8": "7",
               "9": "DNS",
-              "10": null,
-              "11": null,
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 55",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_55"
-              },
+              "Year": "1955",
+              "Chassis": "Vanwall VW 55",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
-              },
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "P",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "NED",
+              "6": "GBR",
+              "7": "ITA",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 55",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_55"
-              },
+              "Year": "1955",
+              "Chassis": "Vanwall VW 55",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Mike Hawthorn",
-                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-              },
-              "1": null,
+              "Tyres": "P",
+              "Driver": "Mike Hawthorn",
+              "1": "",
               "2": "Ret",
-              "3": null,
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 55",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_55"
-              },
+              "Year": "1955",
+              "Chassis": "Vanwall VW 55",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Ken Wharton",
-                "url": "https://en.wikipedia.org/wiki/Ken_Wharton"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Tyres": "P",
+              "Driver": "Ken Wharton",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "9",
               "7": "Ret",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 55",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_55"
-              },
+              "Year": "1955",
+              "Chassis": "Vanwall VW 55",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Harry Schell",
-                "url": "https://en.wikipedia.org/wiki/Harry_Schell"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Tyres": "P",
+              "Driver": "Harry Schell",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "9",
               "7": "Ret",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 2",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_2"
-              },
+              "Year": "1956",
+              "Chassis": "Vanwall VW 2",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
-              },
-              "7": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
-              },
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "P",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 2",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_2"
-              },
+              "Year": "1956",
+              "Chassis": "Vanwall VW 2",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-              },
-              "1": null,
+              "Tyres": "P",
+              "Driver": "Maurice Trintignant",
+              "1": "",
               "2": "Ret",
-              "3": null,
+              "3": "",
               "4": "Ret",
-              "5": null,
+              "5": "",
               "6": "Ret",
-              "7": null,
+              "7": "",
               "8": "Ret",
-              "9": null,
-              "10": null,
-              "11": null,
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 2",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_2"
-              },
+              "Year": "1956",
+              "Chassis": "Vanwall VW 2",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Harry Schell",
-                "url": "https://en.wikipedia.org/wiki/Harry_Schell"
-              },
-              "1": null,
+              "Tyres": "P",
+              "Driver": "Harry Schell",
+              "1": "",
               "2": "Ret",
-              "3": null,
+              "3": "",
               "4": "4",
               "5": "10",
               "6": "Ret",
-              "7": null,
+              "7": "",
               "8": "Ret",
-              "9": null,
-              "10": null,
-              "11": null,
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 2",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_2"
-              },
+              "Year": "1956",
+              "Chassis": "Vanwall VW 2",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Mike Hawthorn",
-                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "P",
+              "Driver": "Mike Hawthorn",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "10",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 2",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_2"
-              },
+              "Year": "1956",
+              "Chassis": "Vanwall VW 2",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Colin Chapman",
-                "url": "https://en.wikipedia.org/wiki/Colin_Chapman"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "P",
+              "Driver": "Colin Chapman",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "DNS",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 2",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_2"
-              },
+              "Year": "1956",
+              "Chassis": "Vanwall VW 2",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "José Froilán González",
-                "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Tyres": "P",
+              "Driver": "José Froilán González",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 2",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_2"
-              },
+              "Year": "1956",
+              "Chassis": "Vanwall VW 2",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Piero Taruffi",
-                "url": "https://en.wikipedia.org/wiki/Piero_Taruffi"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
+              "Tyres": "P",
+              "Driver": "Piero Taruffi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
               "8": "Ret",
-              "9": null,
-              "10": null,
-              "11": null,
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1957",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
-              },
-              "7": {
-                "text": "PES",
-                "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
-              },
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "P",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "PES",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1957",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Stirling Moss",
-                "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-              },
-              "1": null,
+              "Tyres": "P",
+              "Driver": "Stirling Moss",
+              "1": "",
               "2": "Ret",
-              "3": null,
-              "4": null,
+              "3": "",
+              "4": "",
               "5": "1 P F",
               "6": "5",
               "7": "1 F",
               "8": "1",
-              "9": null,
-              "10": null,
-              "11": null,
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1957",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Tony Brooks",
-                "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
-              },
-              "1": null,
+              "Tyres": "P",
+              "Driver": "Tony Brooks",
+              "1": "",
               "2": "2",
-              "3": null,
-              "4": null,
+              "3": "",
+              "4": "",
               "5": "1",
               "6": "9",
               "7": "Ret",
               "8": "7 F",
-              "9": null,
-              "10": null,
-              "11": null,
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1957",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Stuart Lewis-Evans",
-                "url": "https://en.wikipedia.org/wiki/Stuart_Lewis-Evans"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "P",
+              "Driver": "Stuart Lewis-Evans",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
               "5": "7",
               "6": "Ret",
               "7": "5",
               "8": "Ret P",
-              "9": null,
-              "10": null,
-              "11": null,
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1957",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Driver": {
-                "text": "Roy Salvadori",
-                "url": "https://en.wikipedia.org/wiki/Roy_Salvadori"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "P",
+              "Driver": "Roy Salvadori",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "n/a",
               "WCC": "n/a"
             },
             {
-              "Year": {
-                "text": "1958",
-                "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1958",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
-              },
-              "7": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
-              },
-              "8": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
-              },
-              "9": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
-              },
-              "10": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
-              },
-              "11": {
-                "text": "MOR",
-                "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
-              },
+              "Tyres": "D",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "NED",
+              "4": "500",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "POR",
+              "10": "ITA",
+              "11": "MOR",
               "Points": "48 (57)",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1958",
-                "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1958",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Stirling Moss",
-                "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-              },
-              "1": null,
+              "Tyres": "D",
+              "Driver": "Stirling Moss",
+              "1": "",
               "2": "Ret",
               "3": "1 F",
-              "4": null,
+              "4": "",
               "5": "Ret",
               "6": "2",
               "7": "Ret P",
@@ -1053,27 +699,15 @@
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1958",
-                "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1958",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Tony Brooks",
-                "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
-              },
-              "1": null,
+              "Tyres": "D",
+              "Driver": "Tony Brooks",
+              "1": "",
               "2": "Ret P",
               "3": "Ret",
-              "4": null,
+              "4": "",
               "5": "1",
               "6": "Ret",
               "7": "7",
@@ -1085,31 +719,19 @@
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1958",
-                "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1958",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Stuart Lewis-Evans",
-                "url": "https://en.wikipedia.org/wiki/Stuart_Lewis-Evans"
-              },
-              "1": null,
+              "Tyres": "D",
+              "Driver": "Stuart Lewis-Evans",
+              "1": "",
               "2": "Ret",
               "3": "Ret P",
-              "4": null,
+              "4": "",
               "5": "3",
               "6": "Ret",
               "7": "4",
-              "8": null,
+              "8": "",
               "9": "3",
               "10": "Ret",
               "11": "Ret",
@@ -1117,185 +739,87 @@
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1959",
-                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 59",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_59"
-              },
+              "Year": "1959",
+              "Chassis": "Vanwall VW 59",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": null,
-              "1": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1959_Monaco_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1959_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1959_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1959_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1959_German_Grand_Prix"
-              },
-              "7": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1959_Portuguese_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1959_Italian_Grand_Prix"
-              },
-              "9": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1959_United_States_Grand_Prix"
-              },
-              "10": null,
-              "11": null,
+              "Tyres": "D",
+              "Driver": "",
+              "1": "MON",
+              "2": "500",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "POR",
+              "8": "ITA",
+              "9": "USA",
+              "10": "",
+              "11": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1959",
-                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 59",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_59"
-              },
+              "Year": "1959",
+              "Chassis": "Vanwall VW 59",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Tony Brooks",
-                "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "D",
+              "Driver": "Tony Brooks",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "Ret",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 11",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_11"
-              },
+              "Year": "1960",
+              "Chassis": "Vanwall VW 11",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1960_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1960_Indianapolis_500"
-              },
-              "4": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1960_Dutch_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1960_French_Grand_Prix"
-              },
-              "7": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1960_British_Grand_Prix"
-              },
-              "8": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1960_Portuguese_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1960_Italian_Grand_Prix"
-              },
-              "10": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix"
-              },
-              "11": null,
+              "Tyres": "D",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "NED",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "POR",
+              "9": "ITA",
+              "10": "USA",
+              "11": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 11",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_11"
-              },
+              "Year": "1960",
+              "Chassis": "Vanwall VW 11",
               "Engine": "Vanwall L4",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Tony Brooks",
-                "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Tyres": "D",
+              "Driver": "Tony Brooks",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "Points": "0",
               "WCC": "NC"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1330,969 +854,637 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall Special",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_Special"
-              },
+              "Year": "1954",
+              "Chassis": "Vanwall Special",
               "Engine": "Vanwall L4",
-              "Driver": null,
-              "1": {
-                "text": "SYR",
-                "url": "https://en.wikipedia.org/wiki/1954_Syracuse_Grand_Prix"
-              },
-              "2": {
-                "text": "PAU",
-                "url": "https://en.wikipedia.org/wiki/1954_Pau_Grand_Prix"
-              },
-              "3": {
-                "text": "LAV",
-                "url": "https://en.wikipedia.org/wiki/1954_Lavant_Cup"
-              },
-              "4": {
-                "text": "BOR",
-                "url": "https://en.wikipedia.org/wiki/1954_Bordeaux_Grand_Prix"
-              },
-              "5": {
-                "text": "INT",
-                "url": "https://en.wikipedia.org/wiki/1954_BRDC_International_Trophy"
-              },
-              "6": {
-                "text": "BAR",
-                "url": "https://en.wikipedia.org/wiki/1954_Bari_Grand_Prix"
-              },
-              "7": {
-                "text": "CUR",
-                "url": "https://en.wikipedia.org/wiki/1954_Curtis_Trophy"
-              },
-              "8": {
-                "text": "ROM",
-                "url": "https://en.wikipedia.org/wiki/1954_Rome_Grand_Prix"
-              },
-              "9": {
-                "text": "FRO",
-                "url": "https://en.wikipedia.org/wiki/1954_Grand_Prix_des_Fronti%C3%A8res"
-              },
-              "10": {
-                "text": "COR",
-                "url": "https://en.wikipedia.org/wiki/1954_I_Cornwall_MRC_Formula_1_Race"
-              },
-              "11": {
-                "text": "BRC",
-                "url": "https://en.wikipedia.org/wiki/1954_BARC_Formula_1_Race"
-              },
-              "12": {
-                "text": "CRY",
-                "url": "https://en.wikipedia.org/wiki/1954_Crystal_Palace_Trophy"
-              },
-              "13": {
-                "text": "ROU",
-                "url": "https://en.wikipedia.org/wiki/1954_Rouen_Grand_Prix"
-              },
-              "14": {
-                "text": "CAE",
-                "url": "https://en.wikipedia.org/wiki/1954_Caen_Grand_Prix"
-              },
-              "15": {
-                "text": "AUG",
-                "url": "https://en.wikipedia.org/wiki/1954_August_Cup"
-              },
-              "16": {
-                "text": "COR",
-                "url": "https://en.wikipedia.org/wiki/1954_II_Cornwall_MRC_Formula_1_Race"
-              },
-              "17": {
-                "text": "OUL",
-                "url": "https://en.wikipedia.org/wiki/1954_International_Gold_Cup"
-              },
-              "18": {
-                "text": "RED",
-                "url": "https://en.wikipedia.org/wiki/1954_RedeX_Trophy"
-              },
-              "19": {
-                "text": "PES",
-                "url": "https://en.wikipedia.org/wiki/1954_Pescara_Grand_Prix"
-              },
-              "20": {
-                "text": "JOE",
-                "url": "https://en.wikipedia.org/wiki/1954_Joe_Fry_Memorial_Trophy"
-              },
-              "21": {
-                "text": "CAD",
-                "url": "https://en.wikipedia.org/wiki/1954_Circuit_de_Cadours"
-              },
-              "22": {
-                "text": "BER",
-                "url": "https://en.wikipedia.org/wiki/1954_Berlin_Grand_Prix"
-              },
-              "23": {
-                "text": "GOO",
-                "url": "https://en.wikipedia.org/wiki/1954_Goodwood_Trophy"
-              },
-              "24": {
-                "text": "DTT",
-                "url": "https://en.wikipedia.org/wiki/1954_Daily_Telegraph_Trophy"
-              }
+              "Driver": "",
+              "1": "SYR",
+              "2": "PAU",
+              "3": "LAV",
+              "4": "BOR",
+              "5": "INT",
+              "6": "BAR",
+              "7": "CUR",
+              "8": "ROM",
+              "9": "FRO",
+              "10": "COR",
+              "11": "BRC",
+              "12": "CRY",
+              "13": "ROU",
+              "14": "CAE",
+              "15": "AUG",
+              "16": "COR",
+              "17": "OUL",
+              "18": "RED",
+              "19": "PES",
+              "20": "JOE",
+              "21": "CAD",
+              "22": "BER",
+              "23": "GOO",
+              "24": "DTT"
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall Special",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_Special"
-              },
+              "Year": "1954",
+              "Chassis": "Vanwall Special",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Alberto Ascari",
-                "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
-              },
-              "1": null,
-              "2": null,
+              "Driver": "Alberto Ascari",
+              "1": "",
+              "2": "",
               "3": "DNA",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall Special",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_Special"
-              },
+              "Year": "1954",
+              "Chassis": "Vanwall Special",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Alan Brown",
-                "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Driver": "Alan Brown",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "Ret",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall Special",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_Special"
-              },
+              "Year": "1954",
+              "Chassis": "Vanwall Special",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Peter Collins",
-                "url": "https://en.wikipedia.org/wiki/Peter_Collins_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "Driver": "Peter Collins",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "18": "DNA",
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
               "23": "2",
-              "24": null
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall Special",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_Special"
-              },
+              "Year": "1954",
+              "Chassis": "Vanwall Special",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Mike Hawthorn",
-                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
+              "Driver": "Mike Hawthorn",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
               "24": "2"
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
+              "Year": "1955",
               "Chassis": "Vanwall VW 1 / VW2 / VW3",
               "Engine": "Vanwall L4",
-              "Driver": null,
-              "1": {
-                "text": "NZL",
-                "url": "https://en.wikipedia.org/wiki/1955_New_Zealand_Grand_Prix"
-              },
-              "2": {
-                "text": "BUE",
-                "url": "https://en.wikipedia.org/wiki/1955_Buenos_Aires_Grand_Prix"
-              },
-              "3": {
-                "text": "VAL",
-                "url": "https://en.wikipedia.org/wiki/1955_Valentino_Grand_Prix"
-              },
-              "4": {
-                "text": "PAU",
-                "url": "https://en.wikipedia.org/wiki/1955_Pau_Grand_Prix"
-              },
-              "5": {
-                "text": "GLO",
-                "url": "https://en.wikipedia.org/wiki/1955_Glover_Trophy"
-              },
-              "6": {
-                "text": "BOR",
-                "url": "https://en.wikipedia.org/wiki/1955_Bordeaux_Grand_Prix"
-              },
-              "7": {
-                "text": "INT",
-                "url": "https://en.wikipedia.org/wiki/1955_BRDC_International_Trophy"
-              },
-              "8": {
-                "text": "NAP",
-                "url": "https://en.wikipedia.org/wiki/1955_Naples_Grand_Prix"
-              },
-              "9": {
-                "text": "ALB",
-                "url": "https://en.wikipedia.org/wiki/1955_Albi_Grand_Prix"
-              },
-              "10": {
-                "text": "CUR",
-                "url": "https://en.wikipedia.org/wiki/1955_Curtis_Trophy"
-              },
-              "11": {
-                "text": "COR",
-                "url": "https://en.wikipedia.org/wiki/1955_Cornwall_MRC_Formula_1_Race"
-              },
-              "12": {
-                "text": "LON",
-                "url": "https://en.wikipedia.org/wiki/1955_London_Trophy"
-              },
-              "13": {
-                "text": "DRT",
-                "url": "https://en.wikipedia.org/wiki/1955_Daily_Record_Trophy"
-              },
-              "14": {
-                "text": "RED",
-                "url": "https://en.wikipedia.org/wiki/1955_RedeX_Trophy"
-              },
-              "15": {
-                "text": "DTT",
-                "url": "https://en.wikipedia.org/wiki/1955_Daily_Telegraph_Trophy"
-              },
-              "16": {
-                "text": "OUL",
-                "url": "https://en.wikipedia.org/wiki/1955_International_Gold_Cup"
-              },
-              "17": {
-                "text": "AVO",
-                "url": "https://en.wikipedia.org/wiki/1955_Avon_Trophy"
-              },
-              "18": {
-                "text": "SYR",
-                "url": "https://en.wikipedia.org/wiki/1955_Syracuse_Grand_Prix"
-              },
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "Driver": "",
+              "1": "NZL",
+              "2": "BUE",
+              "3": "VAL",
+              "4": "PAU",
+              "5": "GLO",
+              "6": "BOR",
+              "7": "INT",
+              "8": "NAP",
+              "9": "ALB",
+              "10": "CUR",
+              "11": "COR",
+              "12": "LON",
+              "13": "DRT",
+              "14": "RED",
+              "15": "DTT",
+              "16": "OUL",
+              "17": "AVO",
+              "18": "SYR",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
+              "Year": "1955",
               "Chassis": "Vanwall VW 1 / VW2 / VW3",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Mike Hawthorn",
-                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Driver": "Mike Hawthorn",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "DNA",
-              "6": null,
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
+              "Year": "1955",
               "Chassis": "Vanwall VW 1 / VW2 / VW3",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Ken Wharton",
-                "url": "https://en.wikipedia.org/wiki/Ken_Wharton"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver": "Ken Wharton",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
               "14": "2",
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
+              "Year": "1955",
               "Chassis": "Vanwall VW 1 / VW2 / VW3",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Harry Schell",
-                "url": "https://en.wikipedia.org/wiki/Harry_Schell"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "Driver": "Harry Schell",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "12": "2",
-              "13": null,
+              "13": "",
               "14": "1",
-              "15": null,
+              "15": "",
               "16": "Ret",
               "17": "1 P F",
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
+              "Year": "1955",
               "Chassis": "Vanwall VW 1 / VW2 / VW3",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Desmond Titterington",
-                "url": "https://en.wikipedia.org/wiki/Desmond_Titterington"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
+              "Driver": "Desmond Titterington",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
               "16": "3",
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
+              "Year": "1956",
               "Chassis": "Vanwall VW 1 / VW2",
               "Engine": "Vanwall L4",
-              "Driver": null,
-              "1": {
-                "text": "BUE",
-                "url": "https://en.wikipedia.org/wiki/1956_Buenos_Aires_Grand_Prix"
-              },
-              "2": {
-                "text": "GLV",
-                "url": "https://en.wikipedia.org/wiki/1956_Glover_Trophy"
-              },
-              "3": {
-                "text": "SYR",
-                "url": "https://en.wikipedia.org/wiki/1956_Syracuse_Grand_Prix"
-              },
-              "4": {
-                "text": "AIN",
-                "url": "https://en.wikipedia.org/wiki/1956_BARC_Aintree_200"
-              },
-              "5": {
-                "text": "INT",
-                "url": "https://en.wikipedia.org/wiki/1956_BRDC_International_Trophy"
-              },
-              "6": {
-                "text": "NAP",
-                "url": "https://en.wikipedia.org/wiki/1956_Naples_Grand_Prix"
-              },
-              "7": {
-                "text": "100",
-                "url": "https://en.wikipedia.org/wiki/1956_Aintree_100"
-              },
-              "8": {
-                "text": "VNW",
-                "url": "https://en.wikipedia.org/wiki/1956_Vanwall_Trophy"
-              },
-              "9": {
-                "text": "CAE",
-                "url": "https://en.wikipedia.org/wiki/1956_Caen_Grand_Prix"
-              },
-              "10": {
-                "text": "BRH",
-                "url": "https://en.wikipedia.org/wiki/1956_BRSCC_Formula_1_Race"
-              },
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "Driver": "",
+              "1": "BUE",
+              "2": "GLV",
+              "3": "SYR",
+              "4": "AIN",
+              "5": "INT",
+              "6": "NAP",
+              "7": "100",
+              "8": "VNW",
+              "9": "CAE",
+              "10": "BRH",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
+              "Year": "1956",
               "Chassis": "Vanwall VW 1 / VW2",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Harry Schell",
-                "url": "https://en.wikipedia.org/wiki/Harry_Schell"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Harry Schell",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "DNA",
               "5": "Ret",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
+              "Year": "1956",
               "Chassis": "Vanwall VW 1 / VW2",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Stirling Moss",
-                "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Stirling Moss",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "DNA",
               "5": "1 P F",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
+              "Year": "1957",
               "Chassis": "Vanwall VW 1 / VW3 / VW7 / VW8 / VW10",
               "Engine": "Vanwall L4",
-              "Driver": null,
-              "1": {
-                "text": "BUE",
-                "url": "https://en.wikipedia.org/wiki/1957_Buenos_Aires_Grand_Prix"
-              },
-              "2": {
-                "text": "SYR",
-                "url": "https://en.wikipedia.org/wiki/1957_Syracuse_Grand_Prix"
-              },
-              "3": {
-                "text": "PAU",
-                "url": "https://en.wikipedia.org/wiki/1957_Pau_Grand_Prix"
-              },
-              "4": {
-                "text": "GLV",
-                "url": "https://en.wikipedia.org/wiki/1957_Glover_Trophy"
-              },
-              "5": {
-                "text": "NAP",
-                "url": "https://en.wikipedia.org/wiki/1957_Naples_Grand_Prix"
-              },
-              "6": {
-                "text": "RMS",
-                "url": "https://en.wikipedia.org/wiki/1957_Reims_Grand_Prix"
-              },
-              "7": {
-                "text": "CAE",
-                "url": "https://en.wikipedia.org/wiki/1957_Caen_Grand_Prix"
-              },
-              "8": {
-                "text": "INT",
-                "url": "https://en.wikipedia.org/wiki/1957_BRDC_International_Trophy"
-              },
-              "9": {
-                "text": "MOD",
-                "url": "https://en.wikipedia.org/wiki/1957_Modena_Grand_Prix"
-              },
-              "10": {
-                "text": "MOR",
-                "url": "https://en.wikipedia.org/wiki/1957_Moroccan_Grand_Prix"
-              },
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "Driver": "",
+              "1": "BUE",
+              "2": "SYR",
+              "3": "PAU",
+              "4": "GLV",
+              "5": "NAP",
+              "6": "RMS",
+              "7": "CAE",
+              "8": "INT",
+              "9": "MOD",
+              "10": "MOR",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
+              "Year": "1957",
               "Chassis": "Vanwall VW 1 / VW3 / VW7 / VW8 / VW10",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Stirling Moss",
-                "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-              },
-              "1": null,
+              "Driver": "Stirling Moss",
+              "1": "",
               "2": "3 F",
-              "3": null,
+              "3": "",
               "4": "Ret P",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
               "10": "DNS",
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
+              "Year": "1957",
               "Chassis": "Vanwall VW 1 / VW3 / VW7 / VW8 / VW10",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Tony Brooks",
-                "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
-              },
-              "1": null,
+              "Driver": "Tony Brooks",
+              "1": "",
               "2": "Ret",
-              "3": null,
+              "3": "",
               "4": "6 F",
-              "5": null,
-              "6": null,
-              "7": null,
+              "5": "",
+              "6": "",
+              "7": "",
               "8": "DNA",
-              "9": null,
+              "9": "",
               "10": "Ret",
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
+              "Year": "1957",
               "Chassis": "Vanwall VW 1 / VW3 / VW7 / VW8 / VW10",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Stuart Lewis-Evans",
-                "url": "https://en.wikipedia.org/wiki/Stuart_Lewis-Evans"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver": "Stuart Lewis-Evans",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "3",
-              "7": null,
-              "8": null,
-              "9": null,
+              "7": "",
+              "8": "",
+              "9": "",
               "10": "2",
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1957",
-                "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-              },
+              "Year": "1957",
               "Chassis": "Vanwall VW 1 / VW3 / VW7 / VW8 / VW10",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Roy Salvadori",
-                "url": "https://en.wikipedia.org/wiki/Roy_Salvadori"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver": "Roy Salvadori",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "5",
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1960",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Driver": null,
-              "1": {
-                "text": "GLV",
-                "url": "https://en.wikipedia.org/wiki/1960_Glover_Trophy"
-              },
-              "2": {
-                "text": "INT",
-                "url": "https://en.wikipedia.org/wiki/1960_BRDC_International_Trophy"
-              },
-              "3": {
-                "text": "SIL",
-                "url": "https://en.wikipedia.org/wiki/1960_Silver_City_Trophy"
-              },
-              "4": {
-                "text": "LOM",
-                "url": "https://en.wikipedia.org/wiki/1960_Lombank_Trophy"
-              },
-              "5": {
-                "text": "OUL",
-                "url": "https://en.wikipedia.org/wiki/1960_International_Gold_Cup"
-              },
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "Driver": "",
+              "1": "GLV",
+              "2": "INT",
+              "3": "SIL",
+              "4": "LOM",
+              "5": "OUL",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Vanwall VW 5",
-                "url": "https://en.wikipedia.org/wiki/Vanwall_VW_5"
-              },
+              "Year": "1960",
+              "Chassis": "Vanwall VW 5",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Tony Brooks",
-                "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
-              },
+              "Driver": "Tony Brooks",
               "1": "7",
               "2": "DNA",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             },
             {
-              "Year": {
-                "text": "1960",
-                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-              },
+              "Year": "1960",
               "Chassis": "Lotus 18",
               "Engine": "Vanwall L4",
-              "Driver": {
-                "text": "Tony Brooks",
-                "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Tony Brooks",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "DNS",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
-              "18": null,
-              "19": null,
-              "20": null,
-              "21": null,
-              "22": null,
-              "23": null,
-              "24": null
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -2302,7 +1494,8 @@
             {
               "Sporting positions": "Preceded by None (inaugural champion)"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -2495,521 +1688,327 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Entrant/s": null,
-              "Chassis": null,
-              "Engine": null,
-              "Driver/s": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
-              },
-              "9": null
+              "Year": "1951",
+              "Entrant/s": "",
+              "Chassis": "",
+              "Engine": "",
+              "Driver/s": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
+              "Year": "1951",
               "Entrant/s": "Privateer",
-              "Chassis": {
-                "text": "Meteor",
-                "url": "https://en.wikipedia.org/wiki/Veritas_Meteor"
-              },
+              "Chassis": "Meteor",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Peter Hirt",
-                "url": "https://en.wikipedia.org/wiki/Peter_Hirt"
-              },
+              "Driver/s": "Peter Hirt",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Entrant/s": null,
-              "Chassis": null,
-              "Engine": null,
-              "Driver/s": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1952_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1952_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1952_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1952_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1952_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-              },
-              "7": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1952_Dutch_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1952_Italian_Grand_Prix"
-              },
-              "9": null
+              "Year": "1952",
+              "Entrant/s": "",
+              "Chassis": "",
+              "Engine": "",
+              "Driver/s": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "BMW Straight-6 Veritas Straight-6",
-              "Driver/s": {
-                "text": "Toni Ulmen",
-                "url": "https://en.wikipedia.org/wiki/Toni_Ulmen"
-              },
+              "Driver/s": "Toni Ulmen",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "8",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "BMW Straight-6 Veritas Straight-6",
-              "Driver/s": {
-                "text": "Arthur Legat",
-                "url": "https://en.wikipedia.org/wiki/Arthur_Legat"
-              },
-              "1": null,
-              "2": null,
+              "Driver/s": "Arthur Legat",
+              "1": "",
+              "2": "",
               "3": "NC",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "BMW Straight-6 Veritas Straight-6",
-              "Driver/s": {
-                "text": "Josef Peters",
-                "url": "https://en.wikipedia.org/wiki/Josef_Peters_(auto_racing)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver/s": "Josef Peters",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "BMW Straight-6 Veritas Straight-6",
-              "Driver/s": {
-                "text": "Hans Klenk",
-                "url": "https://en.wikipedia.org/wiki/Hans_Klenk"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver/s": "Hans Klenk",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "11",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "BMW Straight-6 Veritas Straight-6",
-              "Driver/s": {
-                "text": "Adolf Brudes",
-                "url": "https://en.wikipedia.org/wiki/Adolf_Brudes"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver/s": "Adolf Brudes",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "BMW Straight-6 Veritas Straight-6",
-              "Driver/s": {
-                "text": "Theo Helfrich",
-                "url": "https://en.wikipedia.org/wiki/Theo_Helfrich"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver/s": "Theo Helfrich",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "BMW Straight-6 Veritas Straight-6",
-              "Driver/s": {
-                "text": "Fritz Rieß",
-                "url": "https://en.wikipedia.org/wiki/Fritz_Reiss"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver/s": "Fritz Rieß",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "7",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
+              "Year": "1952",
               "Entrant/s": "Motor-Presse-Verlag",
-              "Chassis": {
-                "text": "Meteor",
-                "url": "https://en.wikipedia.org/wiki/Veritas_Meteor"
-              },
+              "Chassis": "Meteor",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Paul Pietsch",
-                "url": "https://en.wikipedia.org/wiki/Paul_Pietsch"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver/s": "Paul Pietsch",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Entrant/s": null,
-              "Chassis": null,
-              "Engine": null,
-              "Driver/s": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
-              },
-              "7": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
-              },
-              "8": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
-              }
+              "Year": "1953",
+              "Entrant/s": "",
+              "Chassis": "",
+              "Engine": "",
+              "Driver/s": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Arthur Legat",
-                "url": "https://en.wikipedia.org/wiki/Arthur_Legat"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver/s": "Arthur Legat",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Erwin Bauer",
-                "url": "https://en.wikipedia.org/wiki/Erwin_Bauer"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver/s": "Erwin Bauer",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Ernst Loof",
-                "url": "https://en.wikipedia.org/wiki/Ernst_Loof"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver/s": "Ernst Loof",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Oswald Karch",
-                "url": "https://en.wikipedia.org/wiki/Oswald_Karch"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver/s": "Oswald Karch",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Willi Heeks",
-                "url": "https://en.wikipedia.org/wiki/Willi_Heeks"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver/s": "Willi Heeks",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Theo Helfrich",
-                "url": "https://en.wikipedia.org/wiki/Theo_Helfrich"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver/s": "Theo Helfrich",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "12",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Entrant/s": "Privateers",
               "Chassis": "Meteor RS",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Wolfgang Seidel",
-                "url": "https://en.wikipedia.org/wiki/Wolfgang_Seidel"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver/s": "Wolfgang Seidel",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "16",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Entrant/s": "Hans Klenk",
-              "Chassis": {
-                "text": "Meteor",
-                "url": "https://en.wikipedia.org/wiki/Veritas_Meteor"
-              },
+              "Chassis": "Meteor",
               "Engine": "Veritas Straight-6",
-              "Driver/s": {
-                "text": "Hans Herrmann",
-                "url": "https://en.wikipedia.org/wiki/Hans_Herrmann"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver/s": "Hans Herrmann",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "9",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

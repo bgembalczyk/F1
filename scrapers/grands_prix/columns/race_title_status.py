@@ -1,6 +1,6 @@
-from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types import EnumMarksColumn
+from scrapers.base.table.columns.types import MultiColumn
+from scrapers.base.table.columns.types import UrlColumn
 
 
 class RaceTitleStatusColumn(MultiColumn):

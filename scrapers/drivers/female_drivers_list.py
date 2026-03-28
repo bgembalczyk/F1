@@ -1,19 +1,15 @@
-from pathlib import Path
-
-from models.records.factories import build_special_driver_record
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.points import PointsColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types import SkipColumn
+from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
+from scrapers.drivers.columns.points import PointsColumn
+from scrapers.drivers.columns.seasons import SeasonsColumn
 from scrapers.drivers.constants import FEMALE_DRIVER_ENTRIES_STARTS_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVER_NAME_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVER_POINTS_HEADER
@@ -22,7 +18,6 @@ from scrapers.drivers.constants import FEMALE_DRIVER_TEAMS_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVERS_HEADERS
 from scrapers.drivers.constants import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVERS_SECTION_ID
-from scrapers.drivers.post_processors import EntriesStartsPointsPostProcessor
 
 
 class FemaleDriversListScraper(F1TableScraper):
@@ -44,36 +39,16 @@ class FemaleDriversListScraper(F1TableScraper):
         column(FEMALE_DRIVER_POINTS_HEADER, "points", PointsColumn()),
     ]
 
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_female_Formula_One_drivers",
+    CONFIG = build_scraper_config(
+        url=FEMALE_DRIVERS_LIST.base_url,
         section_id=FEMALE_DRIVERS_SECTION_ID,
         expected_headers=FEMALE_DRIVERS_HEADERS,
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=build_special_driver_record,
+        record_factory=RECORD_FACTORIES.builders("special_driver"),
     )
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        resolved_options = options or ScraperOptions()
-        if not any(
-            isinstance(post_processor, EntriesStartsPointsPostProcessor)
-            for post_processor in resolved_options.post_processors or []
-        ):
-            resolved_options.post_processors.append(EntriesStartsPointsPostProcessor())
-        super().__init__(options=resolved_options, config=config)
 
 
 if __name__ == "__main__":
-    run_and_export(
-        FemaleDriversListScraper,
-        "drivers/female_drivers.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

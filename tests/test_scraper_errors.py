@@ -4,8 +4,9 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperNotFoundError
 from scrapers.base.errors import ScraperParseError
@@ -111,14 +112,14 @@ class DummyFetcher:
         return self.get_text(_url)
 
 
-class DummyScraper(F1Scraper):
+class DummyScraper(ABCScraper):
     url = "https://example.com"
 
     def _parse_soup(self, _soup):
         return []
 
 
-class DummyParseScraper(F1Scraper):
+class DummyParseScraper(ABCScraper):
     url = "https://example.com"
 
     def _parse_soup(self, _soup):
@@ -145,6 +146,22 @@ class DummySingleCircuitScraper(F1SingleCircuitScraper):
     def _parse_details(self, _soup):
         msg = "Brak danych"
         raise ScraperNotFoundError(msg)
+
+
+def test_scraper_error_contract_is_consistent() -> None:
+    cause = ValueError("boom")
+
+    error = DomainParseError(
+        "Brak sekcji",
+        url="https://example.com/wiki/Test",
+        cause=cause,
+    )
+
+    assert error.message == "Brak sekcji"
+    assert error.url == "https://example.com/wiki/Test"
+    assert error.cause is cause
+    assert error.critical is False
+    assert error.args == ("Brak sekcji",)
 
 
 def test_fetch_maps_network_errors_to_domain_exception():

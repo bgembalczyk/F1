@@ -1,6 +1,7 @@
 import re
 from collections.abc import Callable
 from collections.abc import Iterable
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import TypeVar
 
@@ -8,7 +9,9 @@ from scrapers.base.constants import ANGLE_RE
 from scrapers.base.constants import CONFIG_TYPE_RE
 from scrapers.base.constants import MAX_CYLINDERS_RE
 from scrapers.base.constants import RANGE_RE
-from scrapers.base.table.columns.context import ColumnContext
+
+if TYPE_CHECKING:
+    from scrapers.base.table.columns.context import ColumnContext
 
 T = TypeVar("T")
 
@@ -93,7 +96,7 @@ def parse_number_with_unit(text: str | None, *, unit: str) -> float | None:
     )
 
 
-def parse_configuration(ctx: ColumnContext) -> dict[str, Any] | None:
+def parse_configuration(ctx: "ColumnContext") -> dict[str, Any] | None:
     text = ctx.clean_text or ""
     if not text:
         return None

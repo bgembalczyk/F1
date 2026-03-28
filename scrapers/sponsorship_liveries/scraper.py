@@ -1,27 +1,22 @@
-from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
-from scrapers.sponsorship_liveries.parsers.record_splitter import (
+from scrapers.sponsorship_liveries.parsers.section import SponsorshipSectionParser
+from scrapers.sponsorship_liveries.parsers.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
-from scrapers.sponsorship_liveries.parsers.section_parser import (
-    SponsorshipSectionParser,
-)
+from scrapers.wiki.scraper import WikiScraper
 
 if TYPE_CHECKING:
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
-class F1SponsorshipLiveriesScraper(F1Scraper):
+class F1SponsorshipLiveriesScraper(WikiScraper):
     """
     Scraper tabel sponsorskich malowań F1:
     https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries
@@ -46,8 +41,6 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         classifier: Optional["ParenClassifier"] = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
         super().__init__(options=options)
         self._splitter = SponsorshipRecordSplitter()
         self._section_parser = SponsorshipSectionParser(
@@ -63,26 +56,6 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
 
 
 if __name__ == "__main__":
-    from infrastructure.gemini.client import GeminiClient
-    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    try:
-        _gemini_client = GeminiClient.from_key_file()
-        _classifier: ParenClassifier | None = ParenClassifier(_gemini_client)
-        print(
-            "[scraper] Gemini ParenClassifier załadowany - "
-            "adnotacje w nawiasach będą klasyfikowane.",
-        )
-    except FileNotFoundError as _e:
-        _classifier = None
-        print("[scraper] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")
-
-    run_and_export(
-        F1SponsorshipLiveriesScraper,
-        "sponsorship_liveries/f1_sponsorship_liveries.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            scraper_kwargs={"classifier": _classifier},
-        ),
-    )
+    run_deprecated_entrypoint()

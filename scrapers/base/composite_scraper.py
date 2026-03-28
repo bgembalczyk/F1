@@ -3,18 +3,22 @@ from typing import Any
 
 from tqdm import tqdm
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.source_adapter import IterableSourceAdapter
+from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
 
 @dataclass(frozen=True)
-class CompositeScraperChildren:
-    list_scraper: F1Scraper
+class CompositeDataExtractorChildren:
+    list_scraper: Any
     single_scraper: Any
-    records_adapter: IterableSourceAdapter[dict[str, Any]]
+    records_adapter: (
+        IterableSourceAdapter[dict[str, Any]]
+        | MultiIterableSourceAdapter[dict[str, Any]]
+    )
 
 
-class CompositeScraper(F1Scraper):
+class CompositeDataExtractor(BaseDataExtractor):
     def __init__(self, *, options) -> None:
         super().__init__(options=options)
         self.options = options
@@ -23,8 +27,8 @@ class CompositeScraper(F1Scraper):
         self.single_scraper = children.single_scraper
         self.records_adapter = children.records_adapter
 
-    def build_children(self) -> CompositeScraperChildren:
-        msg = "CompositeScraper requires build_children()."
+    def build_children(self) -> CompositeDataExtractorChildren:
+        msg = "CompositeDataExtractor requires build_children()."
         raise NotImplementedError(msg)
 
     def get_detail_url(self, _record: dict[str, Any]) -> str | None:
@@ -43,16 +47,14 @@ class CompositeScraper(F1Scraper):
         records = self.records_adapter.get()
         complete: list[dict[str, Any]] = []
 
-        scraper_name = self.__class__.__name__
-        for record in tqdm(records, desc=scraper_name, unit="item"):
+        extractor_name = self.__class__.__name__
+        for record in tqdm(records, desc=extractor_name, unit="item"):
             if not isinstance(record, dict):
                 msg = (
-                    f"{self.list_scraper.__class__.__name__} musi zwracać dict, "
+                    "Records adapter musi zwracać dict, "
                     f"otrzymano: {type(record).__name__}"
                 )
-                raise TypeError(
-                    msg,
-                )
+                raise TypeError(msg)
 
             detail_url = self.get_detail_url(record)
             details: dict[str, Any] | None = None

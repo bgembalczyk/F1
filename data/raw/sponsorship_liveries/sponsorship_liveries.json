@@ -1,0 +1,597 @@
+[
+  {
+    "schema_version": "1.0",
+    "name": "AGS",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Alfa Romeo",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "AlphaTauri",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Alpine",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Andrea Moda",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Arrows",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Aston Martin",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "ATS",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Audi",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Benetton",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "BMS Scuderia Italia",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "BMW Sauber",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Brabham",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Brawn GP",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "British American Racing",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "British Racing Motors",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Cadillac",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Caterham",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Coloni",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Ensign",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Eifelland",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "EuroBrun",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Ferrari",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Fittipaldi",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Fondmetal",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Force India",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Forti",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Frank Williams Racing Cars",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Haas",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Haas Lola",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Hesketh",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Honda",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "HRT",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Jaguar",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Jordan",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Larrousse",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "LEC",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Life",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Ligier",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Lotus (1958–1994)",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Lotus (2010–2011)",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Lotus (2012–2015)",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Maki",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Manor",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "March Engineering",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Marussia",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "MasterCard Lola",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Matra",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "McLaren",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Mercedes-Benz",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Merzario",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Midland",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Minardi",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Modena",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Onyx",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Osella",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Pacific",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Penske",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Prost",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "RAM",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Racing Bulls",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Racing Point",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Rebaque",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Red Bull Racing",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Renault",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Rial",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Sauber",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Shadow",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Simtek",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Spirit",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Spyker",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Stewart",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Super Aguri",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Surtees",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Tecno",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Toleman",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Toro Rosso",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Toyota",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Theodore Racing",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Trojan",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Tyrrell",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Virgin",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Williams",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Wolf",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Zakspeed",
+    "link": null,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries",
+    "scraped_at": "2026-03-16T15:13:13.837511+00:00"
+  }
+]

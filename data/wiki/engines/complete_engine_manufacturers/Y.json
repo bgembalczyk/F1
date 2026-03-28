@@ -453,19 +453,45 @@
             "Tyres",
             "No.",
             "Riders",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
             "Points",
             "RC",
             "Points",
@@ -475,492 +501,277 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "2019",
-                "url": "https://en.wikipedia.org/wiki/2019_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2019",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha WorldSBK Team",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "22",
-              "Riders": {
-                "text": "Alex Lowes",
-                "url": "https://en.wikipedia.org/wiki/Alex_Lowes"
-              },
-              "r1": "QAT 3",
-              "sr": "QAT 3",
-              "r2": "QAT 4",
+              "Riders": "Alex Lowes",
+              "R1": "QAT 3",
+              "SR": "QAT 3",
+              "R2": "QAT 4",
               "Points": "451",
               "RC": "3rd",
               "TC": "3rd",
               "MC": "3rd"
             },
             {
-              "Year": {
-                "text": "2019",
-                "url": "https://en.wikipedia.org/wiki/2019_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2019",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha WorldSBK Team",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "60",
-              "Riders": {
-                "text": "Michael van der Mark",
-                "url": "https://en.wikipedia.org/wiki/Michael_van_der_Mark"
-              },
-              "r1": "QAT 6",
-              "sr": "QAT 6",
-              "r2": "QAT 7",
+              "Riders": "Michael van der Mark",
+              "R1": "QAT 6",
+              "SR": "QAT 6",
+              "R2": "QAT 7",
               "Points": "451",
               "RC": "4th",
               "TC": "3rd",
               "MC": "3rd"
             },
             {
-              "Year": {
-                "text": "2020",
-                "url": "https://en.wikipedia.org/wiki/2020_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2020",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha WorldSBK Official Team",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "54",
-              "Riders": {
-                "text": "Toprak Razgatlıoğlu",
-                "url": "https://en.wikipedia.org/wiki/Toprak_Razgatl%C4%B1o%C4%9Flu"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Toprak Razgatlıoğlu",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "330",
               "RC": "4th",
               "TC": "3rd",
               "MC": "3rd"
             },
             {
-              "Year": {
-                "text": "2020",
-                "url": "https://en.wikipedia.org/wiki/2020_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2020",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha WorldSBK Official Team",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "60",
-              "Riders": {
-                "text": "Michael van der Mark",
-                "url": "https://en.wikipedia.org/wiki/Michael_van_der_Mark"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Michael van der Mark",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "330",
               "RC": "5th",
               "TC": "3rd",
               "MC": "3rd"
             },
             {
-              "Year": {
-                "text": "2021",
-                "url": "https://en.wikipedia.org/wiki/2021_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2021",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha with Brixx WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "54",
-              "Riders": {
-                "text": "Toprak Razgatlıoğlu",
-                "url": "https://en.wikipedia.org/wiki/Toprak_Razgatl%C4%B1o%C4%9Flu"
-              },
-              "r1": "INA 2",
-              "sr": "INA C",
-              "r2": "INA 4",
+              "Riders": "Toprak Razgatlıoğlu",
+              "R1": "INA 2",
+              "SR": "INA C",
+              "R2": "INA 4",
               "Points": "607",
               "RC": "1st",
               "TC": "1st",
               "MC": "1st"
             },
             {
-              "Year": {
-                "text": "2021",
-                "url": "https://en.wikipedia.org/wiki/2021_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2021",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha with Brixx WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "55",
-              "Riders": {
-                "text": "Andrea Locatelli",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Locatelli_(motorcyclist)"
-              },
-              "r1": "INA 4",
-              "sr": "INA C",
-              "r2": "INA 8",
+              "Riders": "Andrea Locatelli",
+              "R1": "INA 4",
+              "SR": "INA C",
+              "R2": "INA 8",
               "Points": "607",
               "RC": "4th",
               "TC": "1st",
               "MC": "1st"
             },
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2022",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha with Brixx WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "1",
-              "Riders": {
-                "text": "Toprak Razgatlıoğlu",
-                "url": "https://en.wikipedia.org/wiki/Toprak_Razgatl%C4%B1o%C4%9Flu"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Toprak Razgatlıoğlu",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "577",
               "RC": "2nd",
               "TC": "2nd",
               "MC": "2nd"
             },
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2022",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha with Brixx WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "55",
-              "Riders": {
-                "text": "Andrea Locatelli",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Locatelli_(motorcyclist)"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "577",
               "RC": "5th",
               "TC": "2nd",
               "MC": "2nd"
             },
             {
-              "Year": {
-                "text": "2023",
-                "url": "https://en.wikipedia.org/wiki/2023_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2023",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha Prometeon WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "54",
-              "Riders": {
-                "text": "Toprak Razgatlıoğlu",
-                "url": "https://en.wikipedia.org/wiki/Toprak_Razgatl%C4%B1o%C4%9Flu"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Toprak Razgatlıoğlu",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "581",
               "RC": "2nd",
               "TC": "2nd",
               "MC": "2nd"
             },
             {
-              "Year": {
-                "text": "2023",
-                "url": "https://en.wikipedia.org/wiki/2023_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2023",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha Prometeon WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "55",
-              "Riders": {
-                "text": "Andrea Locatelli",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Locatelli_(motorcyclist)"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "581",
               "RC": "4th",
               "TC": "2nd",
               "MC": "2nd"
             },
             {
-              "Year": {
-                "text": "2024",
-                "url": "https://en.wikipedia.org/wiki/2024_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2024",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha Prometeon WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "55",
-              "Riders": {
-                "text": "Andrea Locatelli",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Locatelli_(motorcyclist)"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "307",
               "RC": "7th",
               "TC": "4th",
               "MC": "4th"
             },
             {
-              "Year": {
-                "text": "2024",
-                "url": "https://en.wikipedia.org/wiki/2024_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2024",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha Prometeon WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "59",
-              "Riders": {
-                "text": "Niccolò Canepa",
-                "url": "https://en.wikipedia.org/wiki/Niccol%C3%B2_Canepa"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Niccolò Canepa",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "307",
               "RC": "33rd",
               "TC": "4th",
               "MC": "4th"
             },
             {
-              "Year": {
-                "text": "2024",
-                "url": "https://en.wikipedia.org/wiki/2024_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2024",
+              "Bike": "Yamaha YZF-R1",
               "Team": "Pata Yamaha Prometeon WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "65",
-              "Riders": {
-                "text": "Jonathan Rea",
-                "url": "https://en.wikipedia.org/wiki/Jonathan_Rea"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Jonathan Rea",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "307",
               "RC": "13th",
               "TC": "4th",
               "MC": "4th"
             },
             {
-              "Year": {
-                "text": "2025",
-                "url": "https://en.wikipedia.org/wiki/2025_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2025",
+              "Bike": "Yamaha YZF-R1",
               "Team": "PATA Maxus Yamaha WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "20",
-              "Riders": {
-                "text": "Jason O'Halloran",
-                "url": "https://en.wikipedia.org/wiki/Jason_O%27Halloran_(motorcyclist)"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Jason O'Halloran",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "340",
               "RC": "28th",
               "TC": "3rd",
               "MC": "3rd"
             },
             {
-              "Year": {
-                "text": "2025",
-                "url": "https://en.wikipedia.org/wiki/2025_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2025",
+              "Bike": "Yamaha YZF-R1",
               "Team": "PATA Maxus Yamaha WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "55",
-              "Riders": {
-                "text": "Andrea Locatelli",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Locatelli_(motorcyclist)"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "340",
               "RC": "4th",
               "TC": "3rd",
               "MC": "3rd"
             },
             {
-              "Year": {
-                "text": "2025",
-                "url": "https://en.wikipedia.org/wiki/2025_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2025",
+              "Bike": "Yamaha YZF-R1",
               "Team": "PATA Maxus Yamaha WorldSBK",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "65",
-              "Riders": {
-                "text": "Jonathan Rea",
-                "url": "https://en.wikipedia.org/wiki/Jonathan_Rea"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
+              "Riders": "Jonathan Rea",
+              "R1": "",
+              "SR": "",
+              "R2": "",
               "Points": "340",
               "RC": "16th",
               "TC": "3rd",
               "MC": "3rd"
             },
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2026",
+              "Bike": "Yamaha YZF-R1",
               "Team": "PATA Maxus Yamaha",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "55",
-              "Riders": {
-                "text": "Andrea Locatelli",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Locatelli_(motorcyclist)"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
-              "Points": null,
-              "RC": null,
-              "TC": null,
-              "MC": null
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "",
+              "RC": "",
+              "TC": "",
+              "MC": ""
             },
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Superbike_World_Championship"
-              },
-              "Bike": {
-                "text": "Yamaha YZF-R1",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
-              },
+              "Year": "2026",
+              "Bike": "Yamaha YZF-R1",
               "Team": "PATA Maxus Yamaha",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
+              "Tyres": "P",
               "No.": "97",
-              "Riders": {
-                "text": "Xavi Vierge",
-                "url": "https://en.wikipedia.org/wiki/Xavi_Vierge"
-              },
-              "r1": null,
-              "sr": null,
-              "r2": null,
-              "Points": null,
-              "RC": null,
-              "TC": null,
-              "MC": null
+              "Riders": "Xavi Vierge",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "",
+              "RC": "",
+              "TC": "",
+              "MC": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -992,114 +803,39 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "West Zakspeed Racing",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed"
-              },
-              "Chassis": {
-                "text": "Zakspeed 891",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_891"
-              },
+              "Year": "1989",
+              "Entrant": "West Zakspeed Racing",
+              "Chassis": "Zakspeed 891",
               "Engine": "Yamaha OX88 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1989_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1989_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1989_Mexican_Grand_Prix"
-              },
-              "5": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1989_United_States_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1989_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1989_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1989_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1989_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1989_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1989_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1989_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1989_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1989_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1989_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1989_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "West Zakspeed Racing",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed"
-              },
-              "Chassis": {
-                "text": "Zakspeed 891",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_891"
-              },
+              "Year": "1989",
+              "Entrant": "West Zakspeed Racing",
+              "Chassis": "Zakspeed 891",
               "Engine": "Yamaha OX88 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Bernd Schneider",
-                "url": "https://en.wikipedia.org/wiki/Bernd_Schneider_(racing_driver)"
-              },
+              "Tyres": "P",
+              "Drivers": "Bernd Schneider",
               "1": "Ret",
               "2": "DNPQ",
               "3": "DNPQ",
@@ -1116,32 +852,17 @@
               "14": "DNPQ",
               "15": "Ret",
               "16": "DNPQ",
-              "17": null,
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "West Zakspeed Racing",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed"
-              },
-              "Chassis": {
-                "text": "Zakspeed 891",
-                "url": "https://en.wikipedia.org/wiki/Zakspeed_891"
-              },
+              "Year": "1989",
+              "Entrant": "West Zakspeed Racing",
+              "Chassis": "Zakspeed 891",
               "Engine": "Yamaha OX88 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Aguri Suzuki",
-                "url": "https://en.wikipedia.org/wiki/Aguri_Suzuki"
-              },
+              "Tyres": "P",
+              "Drivers": "Aguri Suzuki",
               "1": "DNPQ",
               "2": "DNPQ",
               "3": "DNPQ",
@@ -1158,113 +879,44 @@
               "14": "DNPQ",
               "15": "DNPQ",
               "16": "DNPQ",
-              "17": null,
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Brabham",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1991",
+              "Entrant": "Brabham",
               "Chassis": "Brabham BT59Y Brabham BT60Y",
               "Engine": "Yamaha OX99 3.5 V12",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1991_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1991_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1991_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1991_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1991_Mexican_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1991_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1991_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1991_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1991_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1991_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1991_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1991_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1991_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1991_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Points": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Brabham",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1991",
+              "Entrant": "Brabham",
               "Chassis": "Brabham BT59Y Brabham BT60Y",
               "Engine": "Yamaha OX99 3.5 V12",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Martin Brundle",
-                "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
-              },
+              "Tyres": "P",
+              "Drivers": "Martin Brundle",
               "1": "11",
               "2": "12",
               "3": "11",
@@ -1281,29 +933,17 @@
               "14": "10",
               "15": "5",
               "16": "DNQ",
-              "17": null,
+              "17": "",
               "Points": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Brabham",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1991",
+              "Entrant": "Brabham",
               "Chassis": "Brabham BT59Y Brabham BT60Y",
               "Engine": "Yamaha OX99 3.5 V12",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Mark Blundell",
-                "url": "https://en.wikipedia.org/wiki/Mark_Blundell"
-              },
+              "Tyres": "P",
+              "Drivers": "Mark Blundell",
               "1": "Ret",
               "2": "Ret",
               "3": "8",
@@ -1320,119 +960,44 @@
               "14": "Ret",
               "15": "DNPQ",
               "16": "17",
-              "17": null,
+              "17": "",
               "Points": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 192",
-                "url": "https://en.wikipedia.org/wiki/Jordan_192"
-              },
+              "Year": "1992",
+              "Entrant": "Sasol Jordan Yamaha",
+              "Chassis": "Jordan 192",
               "Engine": "Yamaha OX99 3.5 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1992_Mexican_Grand_Prix"
-              },
-              "3": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1992_Brazilian_Grand_Prix"
-              },
-              "4": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1992_Spanish_Grand_Prix"
-              },
-              "5": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1992_San_Marino_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1992_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1992_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1992_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1992_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1992_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1992_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1992_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1992_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1992_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1992_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Points": "1",
               "WCC": "11th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 192",
-                "url": "https://en.wikipedia.org/wiki/Jordan_192"
-              },
+              "Year": "1992",
+              "Entrant": "Sasol Jordan Yamaha",
+              "Chassis": "Jordan 192",
               "Engine": "Yamaha OX99 3.5 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Stefano Modena",
-                "url": "https://en.wikipedia.org/wiki/Stefano_Modena"
-              },
+              "Tyres": "G",
+              "Drivers": "Stefano Modena",
               "1": "DNQ",
               "2": "Ret",
               "3": "Ret",
@@ -1449,32 +1014,17 @@
               "14": "13",
               "15": "7",
               "16": "6",
-              "17": null,
+              "17": "",
               "Points": "1",
               "WCC": "11th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 192",
-                "url": "https://en.wikipedia.org/wiki/Jordan_192"
-              },
+              "Year": "1992",
+              "Entrant": "Sasol Jordan Yamaha",
+              "Chassis": "Jordan 192",
               "Engine": "Yamaha OX99 3.5 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Maurício Gugelmin",
-                "url": "https://en.wikipedia.org/wiki/Maur%C3%ADcio_Gugelmin"
-              },
+              "Tyres": "G",
+              "Drivers": "Maurício Gugelmin",
               "1": "11",
               "2": "Ret",
               "3": "Ret",
@@ -1491,113 +1041,44 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Points": "1",
               "WCC": "11th"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Year": "1993",
+              "Entrant": "Tyrrell",
               "Chassis": "Tyrrell 020C Tyrrell 021",
               "Engine": "Yamaha OX10A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1993_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1993_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1993_European_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1993_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1993_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1993_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1993_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1993_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1993_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1993_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1993_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1993_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1993_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1993_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1993_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1993_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "EUR",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Year": "1993",
+              "Entrant": "Tyrrell",
               "Chassis": "Tyrrell 020C Tyrrell 021",
               "Engine": "Yamaha OX10A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -1614,29 +1095,17 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Year": "1993",
+              "Entrant": "Tyrrell",
               "Chassis": "Tyrrell 020C Tyrrell 021",
               "Engine": "Yamaha OX10A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Andrea de Cesaris",
-                "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
-              },
+              "Tyres": "G",
+              "Drivers": "Andrea de Cesaris",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -1653,119 +1122,44 @@
               "14": "12",
               "15": "Ret",
               "16": "13",
-              "17": null,
+              "17": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 022",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_022"
-              },
+              "Year": "1994",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 022",
               "Engine": "Yamaha OX10B 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1994_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "PAC",
-                "url": "https://en.wikipedia.org/wiki/1994_Pacific_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1994_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1994_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1994_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1994_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1994_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1994_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1994_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1994_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1994_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1994_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1994_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1994_European_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1994_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1994_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "PAC",
+              "3": "SMR",
+              "4": "MON",
+              "5": "ESP",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Points": "13",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 022",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_022"
-              },
+              "Year": "1994",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 022",
               "Engine": "Yamaha OX10B 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
               "1": "5",
               "2": "Ret",
               "3": "5",
@@ -1782,32 +1176,17 @@
               "14": "7",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Points": "13",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 022",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_022"
-              },
+              "Year": "1994",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 022",
               "Engine": "Yamaha OX10B 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Mark Blundell",
-                "url": "https://en.wikipedia.org/wiki/Mark_Blundell"
-              },
+              "Tyres": "G",
+              "Drivers": "Mark Blundell",
               "1": "Ret",
               "2": "Ret",
               "3": "9",
@@ -1824,122 +1203,44 @@
               "14": "13",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Points": "13",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Nokia Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 023",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_023"
-              },
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
               "Engine": "Yamaha OX10C 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1995_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1995_Argentine_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1995_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1995_Spanish_Grand_Prix"
-              },
-              "5": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1995_Monaco_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1995_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1995_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1995_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1995_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1995_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1995_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1995_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1995_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1995_European_Grand_Prix"
-              },
-              "15": {
-                "text": "PAC",
-                "url": "https://en.wikipedia.org/wiki/1995_Pacific_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1995_Japanese_Grand_Prix"
-              },
-              "17": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1995_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "ARG",
+              "3": "SMR",
+              "4": "ESP",
+              "5": "MON",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "PAC",
+              "16": "JPN",
+              "17": "AUS",
               "Points": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Nokia Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 023",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_023"
-              },
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
               "Engine": "Yamaha OX10C 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
               "1": "Ret",
               "2": "8",
               "3": "Ret",
@@ -1953,7 +1254,7 @@
               "11": "Ret",
               "12": "10",
               "13": "Ret",
-              "14": null,
+              "14": "",
               "15": "14",
               "16": "Ret",
               "17": "Ret",
@@ -1961,69 +1262,39 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Nokia Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 023",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_023"
-              },
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
               "Engine": "Yamaha OX10C 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Gabriele Tarquini",
-                "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
               "14": "14",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "Points": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Nokia Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 023",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_023"
-              },
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
               "Engine": "Yamaha OX10C 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Mika Salo",
-                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-              },
+              "Tyres": "G",
+              "Drivers": "Mika Salo",
               "1": "7",
               "2": "Ret",
               "3": "Ret",
@@ -2045,114 +1316,39 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 024",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_024"
-              },
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
               "Engine": "Yamaha OX11A 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1996_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1996_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1996_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1996_European_Grand_Prix"
-              },
-              "5": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1996_San_Marino_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1996_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1996_Spanish_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1996_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1996_French_Grand_Prix"
-              },
-              "10": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1996_British_Grand_Prix"
-              },
-              "11": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1996_German_Grand_Prix"
-              },
-              "12": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1996_Hungarian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1996_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1996_Italian_Grand_Prix"
-              },
-              "15": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1996_Portuguese_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1996_Japanese_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "EUR",
+              "5": "SMR",
+              "6": "MON",
+              "7": "ESP",
+              "8": "CAN",
+              "9": "FRA",
+              "10": "GBR",
+              "11": "GER",
+              "12": "HUN",
+              "13": "BEL",
+              "14": "ITA",
+              "15": "POR",
+              "16": "JPN",
+              "17": "",
               "Points": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 024",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_024"
-              },
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
               "Engine": "Yamaha OX11A 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
               "1": "11",
               "2": "9",
               "3": "Ret",
@@ -2169,32 +1365,17 @@
               "14": "10",
               "15": "12",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Points": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 024",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_024"
-              },
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
               "Engine": "Yamaha OX11A 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Mika Salo",
-                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-              },
+              "Tyres": "G",
+              "Drivers": "Mika Salo",
               "1": "6",
               "2": "5",
               "3": "Ret",
@@ -2211,122 +1392,44 @@
               "14": "Ret",
               "15": "11",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Points": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Danka Arrows Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A18",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A18"
-              },
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
               "Engine": "Yamaha OX11C/D 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1997_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1997_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1997_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1997_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1997_Monaco_Grand_Prix"
-              },
-              "6": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1997_Spanish_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1997_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1997_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1997_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1997_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1997_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1997_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1997_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1997_Austrian_Grand_Prix"
-              },
-              "15": {
-                "text": "LUX",
-                "url": "https://en.wikipedia.org/wiki/1997_Luxembourg_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1997_Japanese_Grand_Prix"
-              },
-              "17": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
-              },
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "SMR",
+              "5": "MON",
+              "6": "ESP",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "AUT",
+              "15": "LUX",
+              "16": "JPN",
+              "17": "EUR",
               "Points": "9",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Danka Arrows Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A18",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A18"
-              },
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
               "Engine": "Yamaha OX11C/D 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Damon Hill",
-                "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-              },
+              "Tyres": "B",
+              "Drivers": "Damon Hill",
               "1": "DNS",
               "2": "17",
               "3": "Ret",
@@ -2348,27 +1451,12 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Danka Arrows Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A18",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A18"
-              },
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
               "Engine": "Yamaha OX11C/D 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Pedro Diniz",
-                "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-              },
+              "Tyres": "B",
+              "Drivers": "Pedro Diniz",
               "1": "10",
               "2": "Ret",
               "3": "Ret",
@@ -2389,7 +1477,8 @@
               "Points": "9",
               "WCC": "8th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -2397,24 +1486,16 @@
           ],
           "rows": [
             {
-              "Lola Yamaha Abt Formula E Team": {
-                "text": "2024-25",
-                "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Formula_E_World_Championship"
-              }
+              "Lola Yamaha Abt Formula E Team": "2024-25"
             },
             {
-              "Lola Yamaha Abt Formula E Team": {
-                "text": "2024-25",
-                "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Formula_E_World_Championship"
-              }
+              "Lola Yamaha Abt Formula E Team": "2024-25"
             },
             {
-              "Lola Yamaha Abt Formula E Team": {
-                "text": "2024-25",
-                "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Formula_E_World_Championship"
-              }
+              "Lola Yamaha Abt Formula E Team": "2024-25"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

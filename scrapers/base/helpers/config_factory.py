@@ -1,13 +1,11 @@
-from dataclasses import dataclass
+from typing import Any
 
+from scrapers.base.helpers.common_config import ScraperCommonConfig
 from scrapers.base.options import ScraperOptions
+from scrapers.base.pipeline_profiles import apply_scraper_pipeline_bindings
+from scrapers.base.pipeline_profiles import resolve_profile_config
 
-
-@dataclass(frozen=True)
-class ScraperCommonConfig:
-    include_urls: bool = True
-    normalize_empty_values: bool = True
-    validation_mode: str = "soft"
+DEFAULT_CONFIG_PROFILE = "seed_soft"
 
 
 def apply_common_config(
@@ -20,21 +18,26 @@ def apply_common_config(
     return options
 
 
-def build_table_config(
+def build_config(
     options: ScraperOptions | None = None,
     *,
     config: ScraperCommonConfig | None = None,
+    domain: str | None = None,
+    profile: str = DEFAULT_CONFIG_PROFILE,
 ) -> ScraperOptions:
     resolved = options or ScraperOptions()
-    resolved_config = config or ScraperCommonConfig()
+    resolved_config = config or resolve_profile_config(domain=domain, profile=profile)
     return apply_common_config(resolved, resolved_config)
 
 
-def build_list_config(
-    options: ScraperOptions | None = None,
+def build_scraper_options(
     *,
-    config: ScraperCommonConfig | None = None,
+    domain: str | None,
+    profile: str,
+    options: ScraperOptions | None = None,
+    scraper_cls: type[Any] | None = None,
 ) -> ScraperOptions:
-    resolved = options or ScraperOptions()
-    resolved_config = config or ScraperCommonConfig()
-    return apply_common_config(resolved, resolved_config)
+    resolved = build_config(options=options, domain=domain, profile=profile)
+    if scraper_cls is None:
+        return resolved
+    return apply_scraper_pipeline_bindings(resolved, scraper_cls=scraper_cls)

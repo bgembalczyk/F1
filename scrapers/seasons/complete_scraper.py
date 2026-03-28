@@ -1,60 +1,30 @@
-from pathlib import Path
-from typing import Any
-
-from bs4 import BeautifulSoup
-from tqdm import tqdm
-
-from scrapers.base.abc import F1Scraper
-from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.options import ScraperOptions
+from complete_extractor.base import CompleteExtractorBase
+from complete_extractor.domain_config import BundleRecordWithDetailsStrategy
+from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
+from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
+from scrapers.wiki.component_metadata import build_component_metadata
 
 
-class CompleteSeasonScraper(F1Scraper):
-    def __init__(self, *, options: ScraperOptions | None = None) -> None:
-        options = init_scraper_options(options, include_urls=True)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
-        super().__init__(options=options)
-        self.url = SeasonsListScraper.CONFIG.url
-        self._options = options
-
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        list_scraper = SeasonsListScraper(options=self._options)
-        seasons = list_scraper.parse(soup)
-
-        results: list[dict[str, Any]] = []
-        season_scraper = SingleSeasonScraper(options=self._options)
-
-        for season in tqdm(seasons, desc="CompleteSeasonScraper", unit="season"):
-            season_info = season.get("season")
-            if not isinstance(season_info, dict):
-                continue
-            url = season_info.get("url")
-            if not isinstance(url, str) or not url:
-                continue
-            year_text = season_info.get("text")
-            year = (
-                int(year_text)
-                if isinstance(year_text, str) and year_text.isdigit()
-                else None
-            )
-            data = season_scraper.fetch_by_url(url, season_year=year)
-            results.append(
-                {
-                    "season": season_info,
-                    "tables": data[0] if data else {},
-                },
-            )
-
-        return results
+class CompleteSeasonDataExtractor(CompleteExtractorBase):
+    COMPONENT_METADATA = build_component_metadata(
+        domain="seasons",
+        kind=COMPLETE_SCRAPER_KIND,
+    )
+    url = SeasonsListScraper.CONFIG.url
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_cls=SeasonsListScraper,
+        single_scraper_cls=SingleSeasonScraper,
+        detail_url_field_path="season.url",
+        record_assembly_strategy=BundleRecordWithDetailsStrategy(
+            record_field="season",
+            details_key="tables",
+        ),
+    )
 
 
 if __name__ == "__main__":
-    from scrapers.seasons.helpers import export_complete_seasons
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    export_complete_seasons(
-        output_dir=Path("../../data/wiki/seasons/complete_seasons"),
-        include_urls=True,
-    )
+    run_deprecated_entrypoint()

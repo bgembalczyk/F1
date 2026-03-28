@@ -1,18 +1,13 @@
-from pathlib import Path
-from typing import Any
-
-from bs4 import BeautifulSoup
-
-from scrapers.base.composite_scraper import CompositeScraper
-from scrapers.base.composite_scraper import CompositeScraperChildren
-from scrapers.base.options import ScraperOptions
-from scrapers.base.source_adapter import IterableSourceAdapter
+from complete_extractor.base import CompleteExtractorBase
+from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.models.services.circuit_service import CircuitService
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
+from scrapers.wiki.component_metadata import build_component_metadata
 
 
-class F1CompleteCircuitScraper(CompositeScraper):
+class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
     """
     Pobiera listę torów, a następnie zaciąga szczegóły każdego toru (infobox + tabele),
     po czym normalizuje rekord do docelowej struktury.
@@ -22,68 +17,20 @@ class F1CompleteCircuitScraper(CompositeScraper):
     mogą być puste.
     """
 
+    COMPONENT_METADATA = build_component_metadata(
+        domain="circuits",
+        kind=COMPLETE_SCRAPER_KIND,
+    )
     url = CircuitsListScraper.CONFIG.url
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-    ) -> None:
-        options = options or ScraperOptions()
-        # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
-        options.include_urls = True
-
-        super().__init__(options=options)
-
-    def build_children(self) -> CompositeScraperChildren:
-        list_scraper = CircuitsListScraper(
-            options=ScraperOptions(
-                include_urls=True,
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-                debug_dir=self.debug_dir,
-            ),
-        )
-        single_scraper = F1SingleCircuitScraper(
-            options=ScraperOptions(
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-                debug_dir=self.debug_dir,
-            ),
-        )
-        circuits_adapter = IterableSourceAdapter(list_scraper.fetch)
-
-        return CompositeScraperChildren(
-            list_scraper=list_scraper,
-            single_scraper=single_scraper,
-            records_adapter=circuits_adapter,
-        )
-
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
-        circuit_data = record.get("circuit")
-        if isinstance(circuit_data, dict):
-            return circuit_data.get("url")
-        return None
-
-    def assemble_record(
-        self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
-        full_record = dict(record)
-        full_record["details"] = details
-        return CircuitService.normalize_record(full_record)
-
-    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
-        """Metoda wymagana przez bazę - nie używana w tym scraperze."""
-        msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
-        raise NotImplementedError(msg)
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_cls=CircuitsListScraper,
+        single_scraper_cls=F1SingleCircuitScraper,
+        detail_url_field_path="circuit.url",
+        record_postprocessor=CircuitService.normalize_record,
+    )
 
 
 if __name__ == "__main__":
-    from scrapers.circuits.helpers.export import export_complete_circuits
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    export_complete_circuits(
-        output_dir=Path("../../data/wiki/circuits/complete_circuits"),
-        include_urls=True,
-    )
+    run_deprecated_entrypoint()

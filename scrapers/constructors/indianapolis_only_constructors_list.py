@@ -1,29 +1,24 @@
-from pathlib import Path
+from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListConfig
+from scrapers.base.list.indianapolis_only_scraper import (
+    build_indianapolis_only_list_scraper,
+)
+from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
-from scrapers.base.run_config import RunConfig
+CONFIG = IndianapolisOnlyListConfig(
+    url=CONSTRUCTORS_LIST.base_url,
+    record_key="constructor",
+    url_key="constructor_url",
+    domain_name="constructors",
+    record_type="constructor",
+)
 
-
-class IndianapolisOnlyConstructorsListScraper(IndianapolisOnlyListScraper):
-    """
-    Lista konstruktorów 'Indianapolis 500 only'
-    ze strony List_of_Formula_One_constructors.
-    """
-
-    url = "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
-    record_key = "constructor"
-    url_key = "constructor_url"
+IndianapolisOnlyConstructorsListScraper = build_indianapolis_only_list_scraper(
+    class_name="IndianapolisOnlyConstructorsListScraper",
+    config=CONFIG,
+)
 
 
 if __name__ == "__main__":
-    run_and_export(
-        IndianapolisOnlyConstructorsListScraper,
-        "constructors/f1_indianapolis_only_constructors.json",
-        "constructors/f1_indianapolis_only_constructors.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

@@ -5,18 +5,19 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.extractors.table import TableExtractor
+from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
+from scrapers.wiki.scraper import WikiScraper
 
 
-class F1TableScraper(F1Scraper, ABC):
+class F1TableScraper(WikiScraper, ABC):
     """
     Scraper oparty o pojedynczą tabelę 'wikitable'.
 
@@ -31,6 +32,8 @@ class F1TableScraper(F1Scraper, ABC):
     """
 
     CONFIG: ScraperConfig | None = None
+    options_domain: str | None = None
+    options_profile: str | None = None
 
     # domyślna kolumna dla pól, które nie mają przypisanej logiki
     default_column: BaseColumn = AutoColumn()
@@ -41,7 +44,23 @@ class F1TableScraper(F1Scraper, ABC):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = options or ScraperOptions()
+        if options is None:
+            if self.options_profile is None:
+                options = ScraperOptions()
+            else:
+                options = build_scraper_options(
+                    domain=self.options_domain,
+                    profile=self.options_profile,
+                    scraper_cls=type(self),
+                )
+        elif self.options_profile is not None:
+            options = build_scraper_options(
+                domain=self.options_domain,
+                profile=self.options_profile,
+                options=options,
+                scraper_cls=type(self),
+            )
+        options = self.extend_options(options)
 
         super().__init__(options=options)
 
@@ -69,6 +88,9 @@ class F1TableScraper(F1Scraper, ABC):
         )
         if self.validator is not None and self.validator.record_factory is None:
             self.validator.set_record_factory(self.record_factory)
+
+    def extend_options(self, options: ScraperOptions) -> ScraperOptions:
+        return options
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         """

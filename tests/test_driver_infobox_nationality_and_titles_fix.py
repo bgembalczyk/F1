@@ -1,11 +1,11 @@
 """Tests for nationality link extraction and championship titles order preservation."""
-# ruff: noqa: E501
+# ruff: noqa: E501, PT001
 
 import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
+from scrapers.drivers.infobox.scraper import DriverInfoboxParser
 
 EXPECTED_NATIONALITY_COUNT = 1
 EXPECTED_TITLES_IN_LIST = 3
@@ -18,7 +18,7 @@ YEAR_2007 = 2007
 def scraper():
     """Create a scraper instance with URL extraction enabled."""
     options = ScraperOptions(include_urls=True)
-    return DriverInfoboxScraper(options=options)
+    return DriverInfoboxParser(options=options)
 
 
 def test_nationality_with_link(scraper):
@@ -57,7 +57,8 @@ def test_nationality_with_link(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]
@@ -105,7 +106,8 @@ def test_nationality_without_link(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]
@@ -171,7 +173,8 @@ def test_championship_titles_document_order(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "championship_titles" in result[0]
@@ -223,7 +226,8 @@ def test_championship_titles_sorted_for_non_list(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "championship_titles" in result[0]

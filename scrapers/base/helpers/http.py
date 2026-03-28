@@ -1,3 +1,4 @@
+from dataclasses import replace
 from typing import TYPE_CHECKING
 
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
@@ -36,9 +37,16 @@ def resolve_http_policy(
     *,
     policy: HttpPolicy | None = None,
 ) -> HttpPolicy:
-    if policy is not None:
-        options.policy = policy
-    return options.to_http_policy()
+    base_policy = policy or options.http.policy
+    timeout = options.http.timeout
+    retries = options.http.retries
+    if timeout is None and retries is None:
+        return base_policy
+    return replace(
+        base_policy,
+        timeout=timeout if timeout is not None else base_policy.timeout,
+        retries=retries if retries is not None else base_policy.retries,
+    )
 
 
 def init_scraper_options(

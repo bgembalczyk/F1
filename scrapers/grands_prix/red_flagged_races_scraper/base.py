@@ -6,18 +6,20 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.sections.resolve_candidates import resolve_section_candidates
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import SkipColumn
+from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.failed_to_make_restart import (
     FailedToMakeRestartTransformer,
 )
+from scrapers.grands_prix.columns.driver import DriverColumn
+from scrapers.grands_prix.columns.driver_list import DriverListColumn
 from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 
 logger = logging.getLogger(__name__)
@@ -40,6 +42,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
 
     # Subclasses can override to provide fallback section IDs
     alternative_section_ids: list[str] = []
+    section_domain: str = "grands_prix"
 
     @staticmethod
     def build_common_red_flag_columns(race_name_header: str = "Grand Prix"):
@@ -82,12 +85,20 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config=None,
     ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            FailedToMakeRestartTransformer(),
-        ]
-        super().__init__(options=options, config=config)
+        super().__init__(
+            options=append_transformer(options, FailedToMakeRestartTransformer()),
+            config=config,
+        )
+
+    def _resolved_alternative_section_ids(self) -> list[str]:
+        if self.section_id is None:
+            return []
+        candidates = resolve_section_candidates(
+            domain=self.section_domain,
+            section_id=self.section_id,
+            alternative_section_ids=tuple(self.alternative_section_ids),
+        )
+        return [candidate for candidate in candidates[1:] if candidate is not None]
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         table, parser = self._find_table_with_fallbacks(soup)
@@ -119,7 +130,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         """
         section_ids_to_try = (
             ([self.section_id] if self.section_id is not None else [])
-            + self.alternative_section_ids
+            + self._resolved_alternative_section_ids()
             + [None]
         )
 
@@ -180,7 +191,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         """
         section_ids_to_try = (
             ([self.section_id] if self.section_id is not None else [])
-            + self.alternative_section_ids
+            + self._resolved_alternative_section_ids()
             + [None]
         )
 

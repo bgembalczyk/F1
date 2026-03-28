@@ -5,19 +5,19 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
-from scrapers.base.records import record_from_mapping
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.date import DateColumn
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.time import TimeColumn
-from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import DateColumn
+from scrapers.base.table.columns.types import TimeColumn
+from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.drivers.columns.driver import DriverColumn
 
 
 class LapRecordsTableScraper(F1TableScraper):
@@ -39,12 +39,12 @@ class LapRecordsTableScraper(F1TableScraper):
         column("Date", "date", DateColumn()),
     ]
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org",
         section_id=None,
         expected_headers=["Time"],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
     def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:

@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from models.services.helpers import split_delimited_text
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import LOCATION_STOPWORDS
 from scrapers.circuits.infobox.services.constants import MIN_COORD_PARTS
@@ -101,31 +101,32 @@ class CircuitGeoParser(InfoboxTextUtils):
     def _parse_position(text: str) -> dict[str, float] | None:
         if not text:
             return None
-        try:
-            decimal_match = re.search(r"(-?\d+(?:\.\d+)?);\s*(-?\d+(?:\.\d+)?)", text)
-            if decimal_match:
-                return {
-                    "lat": float(decimal_match.group(1)),
-                    "lon": float(decimal_match.group(2)),
-                }
+        return ErrorHandler.run_domain_parse(
+            lambda: CircuitGeoParser._parse_position_payload(text),
+            message=f"Nie udało się sparsować współrzędnych: {text!r}.",
+            parser_name=CircuitGeoParser.__name__,
+        )
 
-            parts = re.findall(r"([NSWE]?)(-?\d+(?:\.\d+)?)", text)
-            if len(parts) >= MIN_COORD_PARTS:
-                lat_dir, lat_val = parts[0]
-                lon_dir, lon_val = parts[1]
-                lat = float(lat_val)
-                lon = float(lon_val)
-                if lat_dir.upper() == "S":
-                    lat = -lat
-                if lon_dir.upper() == "W":
-                    lon = -lon
-                return {"lat": lat, "lon": lon}
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować współrzędnych: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+    @staticmethod
+    def _parse_position_payload(text: str) -> dict[str, float] | None:
+        decimal_match = re.search(r"(-?\d+(?:\.\d+)?);\s*(-?\d+(?:\.\d+)?)", text)
+        if decimal_match:
+            return {
+                "lat": float(decimal_match.group(1)),
+                "lon": float(decimal_match.group(2)),
+            }
+
+        parts = re.findall(r"([NSWE]?)(-?\d+(?:\.\d+)?)", text)
+        if len(parts) >= MIN_COORD_PARTS:
+            lat_dir, lat_val = parts[0]
+            lon_dir, lon_val = parts[1]
+            lat = float(lat_val)
+            lon = float(lon_val)
+            if lat_dir.upper() == "S":
+                lat = -lat
+            if lon_dir.upper() == "W":
+                lon = -lon
+            return {"lat": lat, "lon": lon}
 
         return None
 
@@ -145,16 +146,28 @@ class CircuitGeoParser(InfoboxTextUtils):
             return float(s.replace(",", "."))
 
         result: dict[str, float] = {}
-        try:
-            if acres_match:
-                result["acres"] = _to_float(acres_match.group(1))
-            if ha_match:
-                result["hectares"] = _to_float(ha_match.group(1))
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować powierzchni: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+        ErrorHandler.run_domain_parse(
+            lambda: CircuitGeoParser._populate_area_result(
+                result=result,
+                acres_match=acres_match,
+                ha_match=ha_match,
+                to_float=_to_float,
+            ),
+            message=f"Nie udało się sparsować powierzchni: {text!r}.",
+            parser_name=CircuitGeoParser.__name__,
+        )
 
         return result or None
+
+    @staticmethod
+    def _populate_area_result(
+        *,
+        result: dict[str, float],
+        acres_match: re.Match[str] | None,
+        ha_match: re.Match[str] | None,
+        to_float,
+    ) -> None:
+        if acres_match:
+            result["acres"] = to_float(acres_match.group(1))
+        if ha_match:
+            result["hectares"] = to_float(ha_match.group(1))

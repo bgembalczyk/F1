@@ -81,3 +81,41 @@ MODIFIER_ONLY_URLS: frozenset[str] = frozenset(
 # Compiled pattern for detecting a 3-digit CSS hex colour (after lower-casing).
 CSS_3DIGIT_HEX_RE = re.compile(r"^#[0-9a-f]{3}$")
 CC_TO_L_THRESHOLD = 100
+
+# F1 and F2 designate Formula racing classes, not Flat-1 / Flat-2 engine layouts.
+FORMULA_CLASS_TYPE_CODES: frozenset[str] = frozenset({"F1", "F2"})
+
+ENGINE_CONSTRUCTOR_INDEX = 1
+
+# Dash variants that separate chassis from engine constructor in a cell.
+HYPHEN_CHARS: frozenset[str] = frozenset({"-", "\u2013", "\u2014", "\u2212"})
+
+RE_COLON = re.compile(r"^\s*(?P<min>\d+)\s*:\s*(?P<sec>\d+(?:\.\d+)?)\s*$")
+RE_MINSEC = re.compile(
+    r"^\s*(?:(?P<min>\d+)\s*(?:m|min|minutes?)\s*)?"
+    r"(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|seconds?)\s*$",
+    re.IGNORECASE,
+)
+RE_SECONDS = re.compile(
+    r"^\s*(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|seconds?)?\s*$",
+    re.IGNORECASE,
+)
+
+FRACTION_RE = re.compile(
+    r"(?:(?P<whole>\d+)\s+)?(?P<numerator>\d+)\s*[/\u2044]\s*(?P<denominator>\d+)",
+)
+POINTS_WITH_TOTAL_RE = re.compile(r"^(.*?)\(([^)]+)\)")
+MARKS_RE = re.compile(r"[†‡✝✚*~^]")
+SPLIT_RESULTS_RE = re.compile(r"\s*/\s*")
+
+TYRE_NAME_BY_CODE = {
+    "A": "Avon",
+    "B": "Bridgestone",
+    "C": "Continental",
+    "D": "Dunlop",
+    "E": "Englebert",
+    "F": "Firestone",
+    "G": "Goodyear",
+    "M": "Michelin",
+    "P": "Pirelli",
+}

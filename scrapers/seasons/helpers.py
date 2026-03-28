@@ -4,7 +4,7 @@ from typing import Any
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.results import ScrapeResult
-from scrapers.seasons.complete_scraper import CompleteSeasonScraper
+from scrapers.seasons.complete_scraper import CompleteSeasonDataExtractor
 
 
 def season_filename(season_info: dict[str, Any]) -> str:
@@ -25,7 +25,7 @@ def export_complete_seasons(
     include_urls: bool = True,
 ) -> None:
     options = init_scraper_options(None, include_urls=include_urls)
-    scraper = CompleteSeasonScraper(options=options)
+    scraper = CompleteSeasonDataExtractor(options=options)
     data = scraper.fetch()
     scraper.logger.info("Pobrano rekordów: %s", len(data))
 

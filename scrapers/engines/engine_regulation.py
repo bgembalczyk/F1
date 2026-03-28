@@ -1,18 +1,16 @@
-from pathlib import Path
 from typing import Any
 
 from bs4 import BeautifulSoup
 
 from models.validation.engine_regulation import EngineRegulation
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.records import record_from_mapping
-from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.unit import UnitColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.source_catalog import ENGINE_PROGRESS
+from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types import UnitColumn
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
@@ -55,13 +53,13 @@ class EngineRegulationScraper(BaseEngineTableScraper):
         ),
     ]
 
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/Formula_One_engines#Engine_regulation_progression_by_era",
-        section_id="Engine_regulation_progression_by_era",
+    CONFIG = build_scraper_config(
+        url=ENGINE_PROGRESS.url(),
+        section_id=ENGINE_PROGRESS.section_id,
         expected_headers=["Years", "Operating principle"],
         model_class=EngineRegulation,
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
@@ -100,11 +98,6 @@ class EngineRegulationScraper(BaseEngineTableScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        EngineRegulationScraper,
-        "engines/f1_engine_regulations.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

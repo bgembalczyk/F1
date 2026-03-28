@@ -2,8 +2,8 @@ import re
 from typing import Any
 
 from scrapers.base.constants import UNIT_RE
+from scrapers.base.helpers.parsing import parse_numeric_value
 from scrapers.base.parsers.helpers import normalize_unit
-from scrapers.base.parsers.helpers import parse_number
 from scrapers.base.parsers.helpers import parse_unit_list
 from scrapers.base.parsers.unit_value import UnitValue
 from scrapers.base.table.columns.context import ColumnContext
@@ -22,7 +22,7 @@ class NestedUnitListColumn(BaseColumn):
         min_value = None
         max_value = None
         for match in UNIT_RE.finditer(text):
-            value = parse_number(match.group("value"))
+            value = parse_numeric_value(match.group("value"))
             unit = normalize_unit(match.group("unit"))
             suffix = text[match.end() : match.end() + 12].lower()
             if "min" in suffix:

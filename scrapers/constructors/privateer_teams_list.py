@@ -1,17 +1,14 @@
 import re
-from pathlib import Path
 from typing import Any
 
 from bs4 import Tag
 
 from infrastructure.http_client.policies.http import HttpPolicy
-from models.services.season_service import SeasonService
+from models.services.season_service import parse_seasons
 from scrapers.base.helpers.http import build_http_policy
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 
 
 class PrivateerTeamsListScraper(F1ListScraper):
@@ -64,21 +61,14 @@ class PrivateerTeamsListScraper(F1ListScraper):
         m = re.search(r"\((.+?)\)", full_text)
         if m:
             seasons_raw = clean_wiki_text(m.group(1))
-            seasons = SeasonService.parse_seasons(seasons_raw)
+            seasons = parse_seasons(seasons_raw)
             if seasons:
-                record["seasons"] = seasons
+                record["seasons"] = [season.to_dict() for season in seasons]
 
         return record
 
 
 if __name__ == "__main__":
-    run_and_export(
-        PrivateerTeamsListScraper,
-        "constructors/f1_privateer_teams.json",
-        "constructors/f1_privateer_teams.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

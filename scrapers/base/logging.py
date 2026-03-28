@@ -1,6 +1,6 @@
 import logging
 
-LOGGER_NAME = "f1.scrapers"
+from scrapers.base.constants import LOGGER_NAME
 
 logger = logging.getLogger(LOGGER_NAME)
 

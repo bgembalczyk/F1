@@ -1,27 +1,24 @@
-from pathlib import Path
+from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListConfig
+from scrapers.base.list.indianapolis_only_scraper import (
+    build_indianapolis_only_list_scraper,
+)
+from scrapers.base.source_catalog import ENGINES_LIST
 
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
-from scrapers.base.run_config import RunConfig
+CONFIG = IndianapolisOnlyListConfig(
+    url=ENGINES_LIST.base_url,
+    record_key="manufacturer",
+    url_key="manufacturer_url",
+    domain_name="engines",
+    record_type="manufacturer",
+)
 
-
-class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper):
-    """
-    Lista 'Indianapolis 500 only' dla producentów silników.
-    """
-
-    url = "https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers"
-    record_key = "manufacturer"
-    url_key = "manufacturer_url"
+IndianapolisOnlyEngineManufacturersListScraper = build_indianapolis_only_list_scraper(
+    class_name="IndianapolisOnlyEngineManufacturersListScraper",
+    config=CONFIG,
+)
 
 
 if __name__ == "__main__":
-    run_and_export(
-        IndianapolisOnlyEngineManufacturersListScraper,
-        "engines/f1_indianapolis_only_engine_manufacturers.json",
-        "engines/f1_indianapolis_only_engine_manufacturers.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

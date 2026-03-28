@@ -37,7 +37,7 @@ class ColourListColumn(BaseColumn):
         return result
 
     @staticmethod
-    def _extract_segments(cell: Tag) -> list[str]:  # noqa: C901
+    def _extract_segments(cell: Tag) -> list[str]:
         """Return text segments from *cell*.
 
         Treat ``<br>`` and ``<p>`` as separators.
@@ -55,34 +55,52 @@ class ColourListColumn(BaseColumn):
         segments: list[str] = []
         current_parts: list[str] = []
 
-        def _flush() -> None:
-            text = " ".join(current_parts).strip()
-            current_parts.clear()
-            if text:
-                cleaned = clean_wiki_text(text)
-                if cleaned:
-                    segments.append(cleaned)
-
         for child in cell.children:
             if isinstance(child, Tag):
-                if child.name == "br":
-                    _flush()
-                elif child.name == "p":
-                    _flush()
-                    p_text = child.get_text(" ", strip=True)
-                    p_cleaned = clean_wiki_text(p_text)
-                    # Skip <p> that is purely a parenthetical annotation
-                    # (e.g. an image description).
-                    if p_cleaned and not re.fullmatch(r"\(.*\)", p_cleaned.strip()):
-                        segments.append(p_cleaned)
-                else:
-                    t = child.get_text(" ", strip=True)
-                    if t:
-                        current_parts.append(t)
+                ColourListColumn._handle_tag_child(child, segments, current_parts)
             elif isinstance(child, NavigableString):
-                t = str(child).strip()
-                if t:
-                    current_parts.append(t)
+                ColourListColumn._append_text_part(str(child), current_parts)
 
-        _flush()
+        ColourListColumn._flush_current_parts(segments, current_parts)
         return segments
+
+    @staticmethod
+    def _handle_tag_child(
+        child: Tag,
+        segments: list[str],
+        current_parts: list[str],
+    ) -> None:
+        if child.name == "br":
+            ColourListColumn._flush_current_parts(segments, current_parts)
+            return
+        if child.name == "p":
+            ColourListColumn._flush_current_parts(segments, current_parts)
+            ColourListColumn._append_paragraph_segment(child, segments)
+            return
+        ColourListColumn._append_text_part(
+            child.get_text(" ", strip=True),
+            current_parts,
+        )
+
+    @staticmethod
+    def _append_paragraph_segment(child: Tag, segments: list[str]) -> None:
+        p_text = child.get_text(" ", strip=True)
+        p_cleaned = clean_wiki_text(p_text)
+        if p_cleaned and not re.fullmatch(r"\(.*\)", p_cleaned.strip()):
+            segments.append(p_cleaned)
+
+    @staticmethod
+    def _append_text_part(text: str, current_parts: list[str]) -> None:
+        stripped = text.strip()
+        if stripped:
+            current_parts.append(stripped)
+
+    @staticmethod
+    def _flush_current_parts(segments: list[str], current_parts: list[str]) -> None:
+        text = " ".join(current_parts).strip()
+        current_parts.clear()
+        if not text:
+            return
+        cleaned = clean_wiki_text(text)
+        if cleaned:
+            segments.append(cleaned)

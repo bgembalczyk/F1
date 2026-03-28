@@ -3,9 +3,9 @@ from dataclasses import field
 from typing import Any
 
 from models.validation.base import ValidatedModel
-from models.validation.core import validate_int
 from models.validation.helpers import normalize_unit_list
 from models.validation.helpers import normalize_unit_value
+from models.validation.helpers import validate_int
 from models.validation.validators import normalize_season_list
 from models.value_objects.helpers import normalize_text
 from models.value_objects.season_ref import SeasonRef
@@ -20,9 +20,6 @@ class EngineRegulation(ValidatedModel):
     rpm_limit: dict[str, Any] | None = None
     fuel_flow_limit: str | None = None
     fuel_composition: dict[str, Any] | None = None
-
-    def __post_init__(self) -> None:
-        self.validate()
 
     def validate(self) -> None:
         self.seasons = normalize_season_list(self.seasons)

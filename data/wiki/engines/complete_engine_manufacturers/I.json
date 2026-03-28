@@ -248,113 +248,38 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Leyton House Racing",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
-              },
-              "Chassis": {
-                "text": "Leyton House CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1991",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1991_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1991_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1991_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1991_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1991_Mexican_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1991_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1991_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1991_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1991_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1991_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1991_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1991_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1991_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1991_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "1",
               "WCC": "12th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Leyton House Racing",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
-              },
-              "Chassis": {
-                "text": "Leyton House CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1991",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Maurício Gugelmin",
-                "url": "https://en.wikipedia.org/wiki/Maur%C3%ADcio_Gugelmin"
-              },
+              "Tyres": "G",
+              "Drivers": "Maurício Gugelmin",
               "1": "Ret",
               "2": "Ret",
               "3": "12",
@@ -375,27 +300,12 @@
               "WCC": "12th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Leyton House Racing",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
-              },
-              "Chassis": {
-                "text": "Leyton House CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1991",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ivan Capelli",
-                "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
-              },
+              "Tyres": "G",
+              "Drivers": "Ivan Capelli",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -410,160 +320,70 @@
               "12": "8",
               "13": "17",
               "14": "Ret",
-              "15": null,
-              "16": null,
+              "15": "",
+              "16": "",
               "Points": "1",
               "WCC": "12th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Leyton House Racing",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
-              },
-              "Chassis": {
-                "text": "Leyton House CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1991",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Karl Wendlinger",
-                "url": "https://en.wikipedia.org/wiki/Karl_Wendlinger"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
+              "Tyres": "G",
+              "Drivers": "Karl Wendlinger",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
               "15": "Ret",
               "16": "20",
               "Points": "1",
               "WCC": "12th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "March F1",
-                "url": "https://en.wikipedia.org/wiki/March_Engineering"
-              },
-              "Chassis": {
-                "text": "March CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1992_Mexican_Grand_Prix"
-              },
-              "3": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1992_Brazilian_Grand_Prix"
-              },
-              "4": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1992_Spanish_Grand_Prix"
-              },
-              "5": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1992_San_Marino_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1992_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1992_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1992_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1992_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1992_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1992_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1992_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1992_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1992_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1992_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "March F1",
-                "url": "https://en.wikipedia.org/wiki/March_Engineering"
-              },
-              "Chassis": {
-                "text": "March CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Paul Belmondo",
-                "url": "https://en.wikipedia.org/wiki/Paul_Belmondo"
-              },
+              "Tyres": "G",
+              "Drivers": "Paul Belmondo",
               "1": "DNQ",
               "2": "DNQ",
               "3": "DNQ",
@@ -575,47 +395,32 @@
               "9": "DNQ",
               "10": "13",
               "11": "9",
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "Points": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "March F1",
-                "url": "https://en.wikipedia.org/wiki/March_Engineering"
-              },
-              "Chassis": {
-                "text": "March CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Emanuele Naspetti",
-                "url": "https://en.wikipedia.org/wiki/Emanuele_Naspetti"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "G",
+              "Drivers": "Emanuele Naspetti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "12": "12",
               "13": "Ret",
               "14": "11",
@@ -625,27 +430,12 @@
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "March F1",
-                "url": "https://en.wikipedia.org/wiki/March_Engineering"
-              },
-              "Chassis": {
-                "text": "March CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Karl Wendlinger",
-                "url": "https://en.wikipedia.org/wiki/Karl_Wendlinger"
-              },
+              "Tyres": "G",
+              "Drivers": "Karl Wendlinger",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -660,71 +450,44 @@
               "12": "11",
               "13": "10",
               "14": "Ret",
-              "15": null,
-              "16": null,
+              "15": "",
+              "16": "",
               "Points": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "March F1",
-                "url": "https://en.wikipedia.org/wiki/March_Engineering"
-              },
-              "Chassis": {
-                "text": "March CG911",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG911"
-              },
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jan Lammers",
-                "url": "https://en.wikipedia.org/wiki/Jan_Lammers"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
+              "Tyres": "G",
+              "Drivers": "Jan Lammers",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
               "15": "Ret",
               "16": "12",
               "Points": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Year": "1992",
+              "Entrant": "Tyrrell Racing Organisation",
               "Chassis": "Tyrrell 020 B",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Olivier Grouillard",
-                "url": "https://en.wikipedia.org/wiki/Olivier_Grouillard"
-              },
+              "Tyres": "G",
+              "Drivers": "Olivier Grouillard",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -745,24 +508,12 @@
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Year": "1992",
+              "Entrant": "Tyrrell Racing Organisation",
               "Chassis": "Tyrrell 020 B",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Andrea de Cesaris",
-                "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
-              },
+              "Tyres": "G",
+              "Drivers": "Andrea de Cesaris",
               "1": "Ret",
               "2": "5",
               "3": "Ret",
@@ -783,113 +534,38 @@
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Sauber Formula 1",
-                "url": "https://en.wikipedia.org/wiki/Sauber"
-              },
-              "Chassis": {
-                "text": "Sauber C12",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C12"
-              },
+              "Year": "1993",
+              "Entrant": "Team Sauber Formula 1",
+              "Chassis": "Sauber C12",
               "Engine": "Sauber (Ilmor) 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1993_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1993_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1993_European_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1993_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1993_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1993_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1993_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1993_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1993_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1993_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1993_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1993_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1993_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1993_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1993_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1993_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "EUR",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "12",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Sauber Formula 1",
-                "url": "https://en.wikipedia.org/wiki/Sauber"
-              },
-              "Chassis": {
-                "text": "Sauber C12",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C12"
-              },
+              "Year": "1993",
+              "Entrant": "Team Sauber Formula 1",
+              "Chassis": "Sauber C12",
               "Engine": "Sauber (Ilmor) 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Karl Wendlinger",
-                "url": "https://en.wikipedia.org/wiki/Karl_Wendlinger"
-              },
+              "Tyres": "G",
+              "Drivers": "Karl Wendlinger",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -910,27 +586,12 @@
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Sauber Formula 1",
-                "url": "https://en.wikipedia.org/wiki/Sauber"
-              },
-              "Chassis": {
-                "text": "Sauber C12",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C12"
-              },
+              "Year": "1993",
+              "Entrant": "Team Sauber Formula 1",
+              "Chassis": "Sauber C12",
               "Engine": "Sauber (Ilmor) 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "JJ Lehto",
-                "url": "https://en.wikipedia.org/wiki/JJ_Lehto"
-              },
+              "Tyres": "G",
+              "Drivers": "JJ Lehto",
               "1": "5",
               "2": "Ret",
               "3": "Ret",
@@ -951,159 +612,69 @@
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Broker Sauber Mercedes",
-                "url": "https://en.wikipedia.org/wiki/Sauber"
-              },
-              "Chassis": {
-                "text": "Sauber C13",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C13"
-              },
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
               "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1994_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "PAC",
-                "url": "https://en.wikipedia.org/wiki/1994_Pacific_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1994_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1994_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1994_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1994_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1994_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1994_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1994_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1994_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1994_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1994_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1994_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1994_European_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1994_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1994_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "PAC",
+              "3": "SMR",
+              "4": "MON",
+              "5": "ESP",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "JPN",
+              "16": "AUS",
               "Points": "12",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Broker Sauber Mercedes",
-                "url": "https://en.wikipedia.org/wiki/Sauber"
-              },
-              "Chassis": {
-                "text": "Sauber C13",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C13"
-              },
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
               "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Karl Wendlinger",
-                "url": "https://en.wikipedia.org/wiki/Karl_Wendlinger"
-              },
+              "Tyres": "G",
+              "Drivers": "Karl Wendlinger",
               "1": "6",
               "2": "Ret",
               "3": "4",
               "4": "WD",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
               "Points": "12",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Broker Sauber Mercedes",
-                "url": "https://en.wikipedia.org/wiki/Sauber"
-              },
-              "Chassis": {
-                "text": "Sauber C13",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C13"
-              },
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
               "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Andrea de Cesaris",
-                "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Tyres": "G",
+              "Drivers": "Andrea de Cesaris",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "Ret",
               "7": "6",
               "8": "Ret",
@@ -1113,74 +684,44 @@
               "12": "Ret",
               "13": "Ret",
               "14": "Ret",
-              "15": null,
-              "16": null,
+              "15": "",
+              "16": "",
               "Points": "12",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Broker Sauber Mercedes",
-                "url": "https://en.wikipedia.org/wiki/Sauber"
-              },
-              "Chassis": {
-                "text": "Sauber C13",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C13"
-              },
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
               "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "JJ Lehto",
-                "url": "https://en.wikipedia.org/wiki/JJ_Lehto"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
+              "Tyres": "G",
+              "Drivers": "JJ Lehto",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
               "15": "Ret",
               "16": "10",
               "Points": "12",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Broker Sauber Mercedes",
-                "url": "https://en.wikipedia.org/wiki/Sauber"
-              },
-              "Chassis": {
-                "text": "Sauber C13",
-                "url": "https://en.wikipedia.org/wiki/Sauber_C13"
-              },
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
               "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Heinz-Harald Frentzen",
-                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-              },
+              "Tyres": "G",
+              "Drivers": "Heinz-Harald Frentzen",
               "1": "Ret",
               "2": "5",
               "3": "7",
@@ -1201,27 +742,12 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Pacific Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/Pacific_Racing"
-              },
-              "Chassis": {
-                "text": "Pacific PR01",
-                "url": "https://en.wikipedia.org/wiki/Pacific_PR01"
-              },
+              "Year": "1994",
+              "Entrant": "Pacific Grand Prix",
+              "Chassis": "Pacific PR01",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Paul Belmondo",
-                "url": "https://en.wikipedia.org/wiki/Paul_Belmondo"
-              },
+              "Tyres": "G",
+              "Drivers": "Paul Belmondo",
               "1": "DNQ",
               "2": "DNQ",
               "3": "DNQ",
@@ -1242,27 +768,12 @@
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Pacific Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/Pacific_Racing"
-              },
-              "Chassis": {
-                "text": "Pacific PR01",
-                "url": "https://en.wikipedia.org/wiki/Pacific_PR01"
-              },
+              "Year": "1994",
+              "Entrant": "Pacific Grand Prix",
+              "Chassis": "Pacific PR01",
               "Engine": "Ilmor 2175A 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Bertrand Gachot",
-                "url": "https://en.wikipedia.org/wiki/Bertrand_Gachot"
-              },
+              "Tyres": "G",
+              "Drivers": "Bertrand Gachot",
               "1": "Ret",
               "2": "DNQ",
               "3": "Ret",
@@ -1308,7 +819,8 @@
               "Points": "For results after 1994, please see Mercedes-Benz Grand Prix results",
               "WCC": "For results after 1994, please see Mercedes-Benz Grand Prix results"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

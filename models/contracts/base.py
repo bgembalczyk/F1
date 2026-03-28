@@ -5,11 +5,25 @@ from dataclasses import dataclass
 from dataclasses import field
 from dataclasses import fields
 from typing import Any
+from typing import Protocol
+
+
+class RecordContract(Protocol):
+    @classmethod
+    def can_handle(cls, record: Mapping[str, Any]) -> bool: ...
+
+    @classmethod
+    def from_record(cls, record: Mapping[str, Any]) -> "DataContract": ...
 
 
 @dataclass(slots=True)
 class DataContract(MutableMapping[str, Any]):
     _extra: dict[str, Any] = field(default_factory=dict, init=False, repr=False)
+
+    @classmethod
+    def can_handle(cls, record: Mapping[str, Any]) -> bool:
+        del record
+        return False
 
     @classmethod
     def from_record(cls, record: Mapping[str, Any]) -> "DataContract":

@@ -7,12 +7,11 @@ from bs4 import Tag
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.table.constants import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.row import TableRow
 
 logger = logging.getLogger(__name__)
-
-HEADER_ROWS_WITH_SUBHEADERS = 2
 
 
 class HtmlTableParser:
@@ -28,6 +27,7 @@ class HtmlTableParser:
         fragment: str | None = None,
         expected_headers: Sequence[str] | None = None,
         table_css_class: str = "wikitable",
+        section_domain: str | None = None,
         strip_lang_suffix: bool = True,
         strip_refs: bool = True,
         normalize_dashes: bool = True,
@@ -36,6 +36,7 @@ class HtmlTableParser:
         self.fragment = fragment
         self.expected_headers = expected_headers
         self.table_css_class = table_css_class
+        self.section_domain = section_domain
         self.strip_lang_suffix = strip_lang_suffix
         self.strip_refs = strip_refs
         self.normalize_dashes = normalize_dashes
@@ -94,6 +95,7 @@ class HtmlTableParser:
             section_id,
             ["table"],
             class_=self.table_css_class,
+            domain=self.section_domain,
         )
 
         for table in candidate_tables:
@@ -272,6 +274,30 @@ class HtmlTableParser:
                 second_index += 1
 
         return combined, combined_cells
+
+    def clean_cells(self, cells: Sequence[Tag]) -> list[str]:
+        return self._clean_cells(cells)
+
+    @staticmethod
+    def has_multirow_header(
+        first_cells: Sequence[Tag],
+        second_cells: Sequence[Tag],
+    ) -> bool:
+        return HtmlTableParser._has_multirow_header(first_cells, second_cells)
+
+    @staticmethod
+    def combine_header_rows(
+        first_cells: Sequence[Tag],
+        first_headers: Sequence[str],
+        second_cells: Sequence[Tag],
+        second_headers: Sequence[str],
+    ) -> tuple[list[str], list[Tag]]:
+        return HtmlTableParser._combine_header_rows(
+            first_cells,
+            first_headers,
+            second_cells,
+            second_headers,
+        )
 
     def _extract_headers(self, table: Tag) -> tuple[list[str], list[Tag], int]:
         rows = table.find_all("tr")

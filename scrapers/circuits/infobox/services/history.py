@@ -1,9 +1,9 @@
 import re
-from datetime import UTC
 from datetime import datetime
+from datetime import timezone
 from typing import Any
 
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import MONTHS
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
@@ -51,7 +51,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
     def _parse_periods_string(self, periods_raw: str) -> list[dict[str, str]]:
         """Normalizuje zakresy lat do listy dictów."""
-        now_year = datetime.now(tz=UTC).year
+        now_year = datetime.now(tz=timezone.utc).year
         periods: list[dict[str, str]] = []
         segments = [seg.strip() for seg in periods_raw.split(",") if seg.strip()]
 
@@ -101,33 +101,37 @@ class CircuitHistoryParser(InfoboxTextUtils):
         if not is_start and lower in {"present", "present day", "current", "now"}:
             return str(now_year)
 
-        try:
-            month_match = re.search(
-                (
-                    r"(january|february|march|april|may|june|july|august|"
-                    r"september|october|november|december)\s+(\d{4})"
-                ),
-                lower,
-            )
-            if month_match:
-                month_name = month_match.group(1)
-                year = int(month_match.group(2))
-                return f"{year:04d}-{MONTHS[month_name]:02d}"
+        return ErrorHandler.run_domain_parse(
+            lambda: CircuitHistoryParser._parse_period_endpoint_value(
+                lower=lower,
+                is_start=is_start,
+            ),
+            message=f"Nie udało się sparsować zakresu daty: {raw!r}.",
+            parser_name=CircuitHistoryParser.__name__,
+        )
 
-            decade_match = re.search(r"(\d{4})s\b", lower)
-            if decade_match:
-                year = int(decade_match.group(1))
-                return str(year if is_start else year + 9)
+    @staticmethod
+    def _parse_period_endpoint_value(*, lower: str, is_start: bool) -> str | None:
+        month_match = re.search(
+            (
+                r"(january|february|march|april|may|june|july|august|"
+                r"september|october|november|december)\s+(\d{4})"
+            ),
+            lower,
+        )
+        if month_match:
+            month_name = month_match.group(1)
+            year = int(month_match.group(2))
+            return f"{year:04d}-{MONTHS[month_name]:02d}"
 
-            year_match = re.search(r"(\d{4})", lower)
-            if year_match:
-                return str(int(year_match.group(1)))
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować zakresu daty: {raw!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+        decade_match = re.search(r"(\d{4})s\b", lower)
+        if decade_match:
+            year = int(decade_match.group(1))
+            return str(year if is_start else year + 9)
+
+        year_match = re.search(r"(\d{4})", lower)
+        if year_match:
+            return str(int(year_match.group(1)))
 
         return None
 

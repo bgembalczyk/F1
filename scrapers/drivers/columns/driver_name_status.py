@@ -1,5 +1,5 @@
-from scrapers.base.table.columns.types.name_status import NameStatusColumn
-from scrapers.base.table.columns.types.name_status import create_suffix_checker
+from scrapers.base.table.columns.types import NameStatusColumn
+from scrapers.base.table.columns.types import create_suffix_checker
 from scrapers.drivers.constants import MARK_ACTIVE_DRIVER
 from scrapers.drivers.constants import MARK_ACTIVE_DRIVER_ALT
 from scrapers.drivers.constants import MARK_WORLD_CHAMPION

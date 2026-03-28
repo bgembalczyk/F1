@@ -3,10 +3,10 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.html_utils import find_section_tables
 from scrapers.base.helpers.table_parsing import TableParsingHelper
-from scrapers.base.records import record_from_mapping
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
@@ -14,11 +14,10 @@ from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
+from scrapers.seasons.parsers.constants import CANCELLED_ROUNDS_TABLE_INDEX
+from scrapers.seasons.parsers.constants import EXPECTED_HEADERS
+from scrapers.seasons.parsers.constants import MIN_TABLES_WITH_CANCELLED
 from scrapers.seasons.parsers.table import SeasonTableParser
-
-EXPECTED_HEADERS = ["Grand Prix", "Circuit"]
-CANCELLED_ROUNDS_TABLE_INDEX = 1
-MIN_TABLES_WITH_CANCELLED = 2
 
 
 class CancelledRoundsParser:
@@ -101,11 +100,15 @@ class CancelledRoundsParser:
         expected_headers: list[str],
     ) -> list[Tag]:
         try:
-            candidate_tables = find_section_tables(soup, section_id)
+            candidate_tables = find_section_tables(soup, section_id, domain="seasons")
         except RuntimeError:
             return []
 
-        parser = HtmlTableParser(section_id=None, expected_headers=expected_headers)
+        parser = HtmlTableParser(
+            section_id=None,
+            expected_headers=expected_headers,
+            section_domain="seasons",
+        )
         return [
             table
             for table in candidate_tables
@@ -132,7 +135,7 @@ class CancelledRoundsParser:
             expected_headers=EXPECTED_HEADERS,
             schema=schema,
             default_column=None,
-            record_factory=record_from_mapping,
+            record_factory=RECORD_FACTORIES.mapping(),
         )
         pipeline = TablePipeline(
             config=config,

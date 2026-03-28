@@ -5,14 +5,6 @@ from typing import Any
 from models.value_objects.normalized_date import NormalizedDate
 from models.value_objects.time_types import DateValue
 
-SHORT_YEAR_DIGITS = 2
-
-
-def expand_range(start: int, end: int) -> Iterable[int]:
-    if end < start:
-        start, end = end, start
-    return range(start, end + 1)
-
 
 def split_delimited_text(text: str | None, *, pattern: str = r"[,;/]") -> list[str]:
     if not text:
@@ -24,34 +16,6 @@ def parse_int_values(text: str | None) -> list[int]:
     if not text:
         return []
     return [int(value) for value in re.findall(r"\d+", text)]
-
-
-def parse_year_range(text: str | None) -> dict[str, int | None]:
-    normalized = (text or "").strip()
-    if not normalized:
-        return {"start": None, "end": None}
-
-    range_match = re.search(r"\b(\d{4})\s*[-\u2013]\s*(\d{2,4})\b", normalized)
-    if range_match:
-        start = int(range_match.group(1))
-        end_text = range_match.group(2)
-        if len(end_text) == SHORT_YEAR_DIGITS:
-            end = (start // 100) * 100 + int(end_text)
-        else:
-            end = int(end_text)
-        return {"start": start, "end": end}
-
-    years = [int(value) for value in re.findall(r"\d{4}", normalized)]
-    if not years:
-        return {"start": None, "end": None}
-    start = years[0]
-    if "present" in normalized.lower() and len(years) == 1:
-        end = None
-    elif len(years) > 1:
-        end = years[-1]
-    else:
-        end = start
-    return {"start": start, "end": end}
 
 
 def expand_all(total_rounds: int | None) -> list[int]:

@@ -2,12 +2,13 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
+from models.domain_utils.normalization import normalize_link_items
+from models.records.engine_manufacturer import ENGINE_MANUFACTURER_SCHEMA
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_MANUFACTURER_STATUSES
-from models.validation.core import validate_float
-from models.validation.core import validate_int
-from models.validation.core import validate_status
-from models.validation.validators import normalize_link_list
+from models.validation.helpers import validate_float
+from models.validation.helpers import validate_int
+from models.validation.helpers import validate_status
 from models.validation.validators import normalize_season_list
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
@@ -15,6 +16,7 @@ from models.value_objects.season_ref import SeasonRef
 
 @dataclass
 class EngineManufacturer(ValidatedModel):
+    __schema__ = ENGINE_MANUFACTURER_SCHEMA
     manufacturer: Link | dict[str, Any]
     manufacturer_status: str
     engines_built_in: list[Link | dict[str, Any]] = field(default_factory=list)
@@ -28,10 +30,6 @@ class EngineManufacturer(ValidatedModel):
     podiums: int | None = None
     wcc: int | None = None
     wdc: int | None = None
-
-    def __post_init__(self) -> None:
-        # Jeśli ValidatedModel nie odpala walidacji sam, ten hook to wymusza
-        self.validate()
 
     def validate(self) -> None:
         # --- manufacturer (Link | dict -> Link) ---
@@ -49,7 +47,13 @@ class EngineManufacturer(ValidatedModel):
         )
 
         # --- engines_built_in: koercja do Link + filtr pustych ---
-        self.engines_built_in = normalize_link_list(self.engines_built_in)
+        self.engines_built_in = [
+            Link.from_dict(item)
+            for item in normalize_link_items(
+                self.engines_built_in,
+                field_name="engines_built_in",
+            )
+        ]
 
         # --- seasons: koercja do SeasonRef + filtr None ---
         self.seasons = normalize_season_list(self.seasons)

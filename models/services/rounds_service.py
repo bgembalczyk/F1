@@ -1,52 +1,49 @@
 import re
-from dataclasses import dataclass
 
+from models.domain_utils.years import expand_inclusive_range
+from models.domain_utils.years import parse_numeric_dash_range
 from models.services.helpers import expand_all
-from models.services.helpers import expand_range
 from models.services.helpers import unique_sorted
+from models.value_objects.rounds import Rounds
 
 
-@dataclass(frozen=True)
-class RoundsService:
-    @staticmethod
-    def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> list[int]:
-        if not text:
-            return []
+def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> Rounds:
+    if not text:
+        return Rounds()
 
-        normalized = text.strip()
-        if not normalized:
-            return []
+    normalized = text.strip()
+    if not normalized:
+        return Rounds()
 
-        lower = normalized.lower()
-        if "all" in lower:
-            return expand_all(total_rounds)
+    lower = normalized.lower()
+    if "all" in lower:
+        return Rounds.from_values(expand_all(total_rounds))
 
-        normalized = re.sub(
-            r"\b(rounds?|races?)\b",
-            "",
-            normalized,
-            flags=re.IGNORECASE,
-        )
-        parts = [p.strip() for p in re.split(r"[;,]", normalized) if p.strip()]
+    normalized = re.sub(
+        r"\b(rounds?|races?)\b",
+        "",
+        normalized,
+        flags=re.IGNORECASE,
+    )
+    parts = [p.strip() for p in re.split(r"[;,]", normalized) if p.strip()]
 
-        values: list[int] = []
-        for part in parts:
-            if not part:
-                continue
+    values: list[int] = []
+    for part in parts:
+        if not part:
+            continue
 
-            if "all" in part.lower():
-                values.extend(expand_all(total_rounds))
-                continue
+        if "all" in part.lower():
+            values.extend(expand_all(total_rounds))
+            continue
 
-            match = re.match(r"^(\d+)\s*[\u2013\u2014-]\s*(\d+)$", part)
-            if match:
-                start = int(match.group(1))
-                end = int(match.group(2))
-                values.extend(expand_range(start, end))
-                continue
+        parsed_range = parse_numeric_dash_range(part)
+        if parsed_range:
+            start, end = parsed_range
+            values.extend(expand_inclusive_range(start, end))
+            continue
 
-            match = re.search(r"\d+", part)
-            if match:
-                values.append(int(match.group(0)))
+        match = re.search(r"\d+", part)
+        if match:
+            values.append(int(match.group(0)))
 
-        return unique_sorted(values)
+    return Rounds.from_values(unique_sorted(values))

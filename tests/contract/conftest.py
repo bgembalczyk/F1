@@ -1,61 +1,16 @@
-import importlib.util
+# ruff: noqa: PT001
 import sys
-import types
 from pathlib import Path
 
 import pytest
+
+from tests.support.dependency_stubs import ensure_optional_deps
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
-if importlib.util.find_spec("requests") is None:
-    requests_stub = types.ModuleType("requests")
-
-    class _RequestError(Exception):
-        pass
-
-    class _Session:
-        def get(self, *_args, **_kwargs):
-            msg = "requests stub"
-            raise _RequestError(msg)
-
-    requests_stub.RequestException = _RequestError
-    requests_stub.Session = _Session
-    sys.modules["requests"] = requests_stub
-
-if importlib.util.find_spec("certifi") is None:
-    certifi_stub = types.ModuleType("certifi")
-
-    def _where():
-        return ""
-
-    certifi_stub.where = _where
-    sys.modules["certifi"] = certifi_stub
-
-if importlib.util.find_spec("pandas") is None:
-    pandas_stub = types.ModuleType("pandas")
-
-    class _StubDataFrame:
-        def __init__(self, *_args, **_kwargs):
-            pass
-
-    pandas_stub.DataFrame = _StubDataFrame
-    sys.modules["pandas"] = pandas_stub
-
-if importlib.util.find_spec("bs4") is None:
-    bs4_stub = types.ModuleType("bs4")
-
-    class _Tag:
-        pass
-
-    class _BeautifulSoup:
-        def __init__(self, *_args, **_kwargs):
-            pass
-
-    bs4_stub.Tag = _Tag
-    bs4_stub.BeautifulSoup = _BeautifulSoup
-    sys.modules["bs4"] = bs4_stub
+ensure_optional_deps(require_bs4=False, bs4_skip_reason="")
 
 
 @pytest.fixture()

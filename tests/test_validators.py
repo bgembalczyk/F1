@@ -1,8 +1,8 @@
 import pytest
 
-from models.validation.core import validate_float
-from models.validation.core import validate_int
-from models.validation.core import validate_status
+from models.validation.helpers import validate_float
+from models.validation.helpers import validate_int
+from models.validation.helpers import validate_status
 from models.validation.validators import validate_seasons
 from models.value_objects.link_utils import validate_link
 from models.value_objects.season_ref import SeasonRef

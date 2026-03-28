@@ -11,6 +11,7 @@ from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
+from scrapers.sponsorship_liveries.parsers.parts import SponsorPartsParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
@@ -41,19 +42,21 @@ class SponsorColumn(BaseColumn):
         """
         results: list[Any] = []
         for seg_nodes in self._split_cell_by_br(ctx.cell):
-            seg_html = "".join(str(node) for node in seg_nodes)
-            seg_soup = BeautifulSoup(seg_html, "html.parser")
-            raw_text = seg_soup.get_text(" ", strip=True)
-            seg_text = clean_wiki_text(raw_text)
-            seg_links = normalize_links(
-                seg_soup,
-                full_url=lambda href: normalize_url(ctx.base_url, href),
-                drop_empty_text=True,
-            )
-            seg_items = self._parse_text_with_links(seg_text, seg_links)
-            seg_items = self._propagate_segment_scope(seg_items)
-            results.extend(seg_items)
+            results.extend(self._parse_br_segment(seg_nodes, ctx.base_url))
         return results
+
+    def _parse_br_segment(self, seg_nodes: list[Any], base_url: str) -> list[Any]:
+        seg_html = "".join(str(node) for node in seg_nodes)
+        seg_soup = BeautifulSoup(seg_html, "html.parser")
+        seg_text = clean_wiki_text(seg_soup.get_text(" ", strip=True))
+        seg_links = normalize_links(
+            seg_soup,
+            full_url=lambda href: normalize_url(base_url, href),
+            drop_empty_text=True,
+        )
+        return self._propagate_segment_scope(
+            self._parse_text_with_links(seg_text, seg_links),
+        )
 
     def _parse_text_with_links(
         self,
@@ -81,25 +84,36 @@ class SponsorColumn(BaseColumn):
             for p, s in parts_with_sep
         ]
 
+        return self._parse_parts_grouped_by_slash(parts_with_sep, links)
+
+    def _parse_parts_grouped_by_slash(
+        self,
+        parts_with_sep: list[tuple[str, str]],
+        links: list[dict[str, Any]],
+    ) -> list[Any]:
         results: list[Any] = []
         slash_group: list[str] = []
-
-        def flush_slash_group() -> None:
-            if not slash_group:
-                return
-            parsed = [self._parse_part(p, links) for p in slash_group]
-            if len(slash_group) > 1:
-                parsed = self._propagate_slash_group_year_params(parsed)
-            results.extend(item for item in parsed if item is not None)
-            slash_group.clear()
 
         for part, sep in parts_with_sep:
             slash_group.append(part)
             if sep != "/":
-                flush_slash_group()
-        flush_slash_group()
-
+                self._flush_slash_group(results, slash_group, links)
+        self._flush_slash_group(results, slash_group, links)
         return results
+
+    def _flush_slash_group(
+        self,
+        results: list[Any],
+        slash_group: list[str],
+        links: list[dict[str, Any]],
+    ) -> None:
+        if not slash_group:
+            return
+        parsed = [self._parse_part(p, links) for p in slash_group]
+        if len(slash_group) > 1:
+            parsed = self._propagate_slash_group_year_params(parsed)
+        results.extend(item for item in parsed if item is not None)
+        slash_group.clear()
 
     @staticmethod
     def _split_cell_by_br(cell: Tag) -> list[list[Any]]:
@@ -195,50 +209,19 @@ class SponsorColumn(BaseColumn):
         return re.sub(r"^\s*and\s+", "", text, flags=re.IGNORECASE)
 
     @staticmethod
-    def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:  # noqa: C901
+    def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:
         """Split text into (part, separator_after) tuples.
 
         separator_after is one of ',', ';', '/' or '' for the last part.
 
         In addition to the explicit separators, an implicit split is emitted
         after a closing ')' at depth 0 when the next non-whitespace character
-        starts a new token.  This handles Wikipedia entries where consecutive
-        sponsors each carry their own parenthetical (e.g. year range or Grand
-        Prix scope) but are not separated by a comma or semicolon:
-        ``Elf (1983-1986) Goodyear (1984-1986) Olympus (1985)``
+        starts a new token.
         """
         if not text:
             return []
-        parts: list[tuple[str, str]] = []
-        current: list[str] = []
-        depth = 0
-        after_close_paren = False
-        for char in text:
-            if char == "(":
-                depth += 1
-                after_close_paren = False
-            elif char == ")":
-                depth = max(depth - 1, 0)
-                if depth == 0:
-                    after_close_paren = True
-            if depth == 0 and char in {",", ";", "/"}:
-                part = "".join(current).strip()
-                if part:
-                    parts.append((part, char))
-                current = []
-                after_close_paren = False
-                continue
-            if depth == 0 and after_close_paren and not char.isspace() and char != ")":
-                part = "".join(current).strip()
-                if part:
-                    parts.append((part, " "))
-                current = []
-                after_close_paren = False
-            current.append(char)
-        part = "".join(current).strip()
-        if part:
-            parts.append((part, ""))
-        return parts
+        parser = SponsorPartsParser(text)
+        return parser.parse()
 
     @staticmethod
     def _propagate_slash_group_year_params(
