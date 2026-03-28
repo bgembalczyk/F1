@@ -2,7 +2,7 @@ from bs4 import Tag
 
 from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
 from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
-from scrapers.wiki.parsers.sections.contants import TOP_SECTION_NAME
+from scrapers.wiki.parsers.sections.constants import TOP_SECTION_NAME
 from scrapers.wiki.parsers.sections.data_classes import SectionProfile
 from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
 
