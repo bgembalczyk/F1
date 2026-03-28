@@ -2,6 +2,7 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.sponsorship_liveries.helpers.constants import decade_re
 from scrapers.sponsorship_liveries.helpers.constants import year_range_abbrev_re
 from scrapers.sponsorship_liveries.helpers.constants import year_range_re
 from scrapers.sponsorship_liveries.helpers.constants import year_re
@@ -81,7 +82,7 @@ class SponsorshipRecordText:
     @classmethod
     def extract_years_from_text(cls, text: str) -> set[int]:
         years = {int(match) for match in year_re.findall(text)}
-        for decade in re.findall(r"\b(\d{3})0s\b", text):
+        for decade in decade_re.findall(text):
             start = int(decade) * 10
             years.update(range(start, start + 10))
         return years
@@ -101,6 +102,6 @@ class SponsorshipRecordText:
     @classmethod
     def strip_years_keep_context(cls, text: str) -> str:
         cleaned = year_re.sub("", text)
-        cleaned = re.sub(r"\b\d{3}0s\b", "", cleaned)
+        cleaned = decade_re.sub("", cleaned)
         cleaned = re.sub(r"\(\s*\)", "", cleaned)
         return clean_wiki_text(cleaned)
