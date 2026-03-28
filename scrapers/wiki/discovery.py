@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.wiki.component_metadata import ComponentMetadata
+from scrapers.wiki.component_metadata import parse_component_metadata
 from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
 
 if TYPE_CHECKING:
@@ -49,12 +50,9 @@ def _read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
     raw = getattr(candidate, COMPONENT_METADATA_ATTR, None)
     if raw is None:
         return None
-    if isinstance(raw, ComponentMetadata):
-        return raw
-    if isinstance(raw, dict):
-        return ComponentMetadata(**raw)
-    message = f"Unsupported metadata format for {candidate!r}: {type(raw)!r}"
-    raise TypeError(message)
+    metadata = parse_component_metadata(raw)
+    setattr(candidate, COMPONENT_METADATA_ATTR, metadata)
+    return metadata
 
 
 def discover_components() -> tuple[DiscoveredComponent, ...]:

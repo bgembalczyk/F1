@@ -3,9 +3,15 @@ from complete_extractor.domain_config import BundleRecordWithDetailsStrategy
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
+from scrapers.wiki.component_metadata import build_component_metadata
+from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
 
 
 class CompleteSeasonDataExtractor(CompleteExtractorBase):
+    COMPONENT_METADATA = build_component_metadata(
+        domain="seasons",
+        kind=COMPLETE_SCRAPER_KIND,
+    )
     url = SeasonsListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
         list_scraper_cls=SeasonsListScraper,

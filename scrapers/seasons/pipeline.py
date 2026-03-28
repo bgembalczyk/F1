@@ -29,6 +29,7 @@ from scrapers.seasons.sections.results import SeasonResultsSectionParser
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSectionParser
 from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
+from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
 
 if TYPE_CHECKING:
     from typing import Any
@@ -124,9 +125,16 @@ class SeasonCollectedData:
 
 
 class SeasonParserSetBuilder:
-    def __init__(self, *, options: ScraperOptions, include_urls: bool) -> None:
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions,
+        include_urls: bool,
+        policy: DomainParsingPolicy | None = None,
+    ) -> None:
         self._options = options
         self._include_urls = include_urls
+        self._policy = policy or DomainParsingPolicy()
 
     def build(self, *, url: str, season_year: int | None) -> SeasonParserSet:
         table_parser = SeasonTableParser(
@@ -137,10 +145,17 @@ class SeasonParserSetBuilder:
         standings_parser = SeasonStandingsParser(table_parser)
         return SeasonParserSet(
             table_parser=table_parser,
-            entries_parser=SeasonEntriesParser(table_parser, EntryMerger()),
+            entries_parser=SeasonEntriesParser(
+                table_parser,
+                EntryMerger(),
+                policy=self._policy,
+            ),
             free_practice_parser=SeasonFreePracticeParser(table_parser),
             cancelled_rounds_parser=CancelledRoundsParser(table_parser),
-            testing_venues_parser=TestingVenuesParser(table_parser),
+            testing_venues_parser=TestingVenuesParser(
+                table_parser,
+                policy=self._policy,
+            ),
             non_championship_parser=SeasonNonChampionshipParser(table_parser),
             scoring_system_parser=SeasonScoringSystemParser(table_parser),
             jim_clark_trophy_parser=JimClarkTrophyParser(table_parser),

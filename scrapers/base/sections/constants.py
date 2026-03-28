@@ -18,7 +18,7 @@ DOMAIN_SECTION_ALIASES: dict[str, dict[str, set[str]]] = {
     for domain, profile in DOMAIN_SECTION_PROFILES.items()
 }
 
-DOMAIN_CRITICAL_SECTIONS: dict[str, tuple[CriticalSection, ...]] = {
+DOMAIN_SECTION_RESOLVER_CONFIG: dict[str, tuple[CriticalSection, ...]] = {
     "drivers": (
         CriticalSection(
             section_id="Career_results",
@@ -229,3 +229,7 @@ DOMAIN_CRITICAL_SECTIONS: dict[str, tuple[CriticalSection, ...]] = {
         ),
     ),
 }
+
+
+# Backward compatible alias.
+DOMAIN_CRITICAL_SECTIONS = DOMAIN_SECTION_RESOLVER_CONFIG

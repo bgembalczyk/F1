@@ -2,8 +2,10 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.records import record_from_mapping
+  from scrapers.base.records import record_from_mapping
 from scrapers.drivers.columns.driver import DriverColumn
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.table.columns.types import DriverColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.points.columns.points import PointsColumn
 from scrapers.seasons.columns.position import PositionColumn
@@ -53,7 +55,7 @@ class JimClarkTrophyParser:
                 season_year=season_year,
                 star_mark_note="insufficient_events_to_be_eligible",
             ),
-            record_factory=record_from_mapping,
+            record_factory=RECORD_FACTORIES.mapping(),
         )
 
         scraper = F1StandingsScraper(options=self._table_parser.options, config=config)

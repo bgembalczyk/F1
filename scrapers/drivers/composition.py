@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
-from scrapers.drivers.domain_record_service import DomainRecordService
+from scrapers.drivers.services.domain_record import DomainRecordService
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.sections.service import DriverSectionExtractionService
 

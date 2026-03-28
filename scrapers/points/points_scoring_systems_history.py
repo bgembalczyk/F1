@@ -1,6 +1,6 @@
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from scrapers.base.records import record_from_mapping
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
@@ -57,7 +57,7 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
         section_id="Points_scoring_systems",
         expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
     def __init__(
