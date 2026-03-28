@@ -1,4 +1,5 @@
 """DOMAIN-SPECIFIC: engines column rule moved out of base layer."""
+# pylint: disable=duplicate-code
 
 from typing import Any
 
