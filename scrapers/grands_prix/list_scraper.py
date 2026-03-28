@@ -15,15 +15,13 @@ from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 
 class GrandsPrixListScraper(SeedListTableScraper):
     domain = "grands_prix"
-    default_output_path = "raw/grands_prix/seeds/f1_grands_prix_extended.json"
-    legacy_output_path = "grands_prix/f1_grands_prix_extended.json"
+    output_basename = "f1_grands_prix_extended.json"
 
     """
     Uproszczony scraper np. dla tabeli 'By race title'
     z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix
     """
-
 
     schema_columns = build_columns(
         build_name_status_fragment(

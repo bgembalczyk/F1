@@ -5,6 +5,8 @@ from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
 from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
+from scrapers.wiki.component_metadata import build_component_metadata
+from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
 
 
 class F1CompleteEngineManufacturerDataExtractor(CompleteExtractorBase):
@@ -13,6 +15,10 @@ class F1CompleteEngineManufacturerDataExtractor(CompleteExtractorBase):
     wszystkie infoboksy i tabele z artykułu każdego producenta.
     """
 
+    COMPONENT_METADATA = build_component_metadata(
+        domain="engines",
+        kind=COMPLETE_SCRAPER_KIND,
+    )
     url = EngineManufacturersListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
         list_scraper_clses=(

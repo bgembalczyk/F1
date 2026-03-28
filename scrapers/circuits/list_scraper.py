@@ -12,15 +12,12 @@ from scrapers.circuits.sections.list_section import CircuitsListSectionParser
 
 class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScraper):
     domain = "circuits"
-    default_output_path = "raw/circuits/seeds/complete_circuits"
-    legacy_output_path = "circuits/complete_circuits"
 
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
     (duża tabela 'Circuits')
     """
-
 
     CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",

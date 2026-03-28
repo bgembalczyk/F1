@@ -11,6 +11,7 @@ from scrapers.base.helpers.http import resolve_http_policy
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
+from scrapers.wiki.component_metadata import validate_metadata_for_component_class
 
 
 class BaseDataExtractor(ABC):
@@ -28,6 +29,7 @@ class BaseDataExtractor(ABC):
     url: str
 
     def __init__(self, *, options: ScraperOptions) -> None:
+        validate_metadata_for_component_class(type(self))
         self.logger = get_logger(self.__class__.__name__)
         self._data: list[Any] | None = None
         self.exporter = options.exporter or DataExporter()
