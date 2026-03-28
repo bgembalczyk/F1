@@ -1,12 +1,12 @@
 from typing import Any
 
-from models.records.factories.build import RECORD_BUILDERS
-from scrapers.base.source_catalog import DRIVERS_FATALITIES
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
+from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
+from scrapers.base.source_catalog import DRIVERS_FATALITIES
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
@@ -70,12 +70,10 @@ class F1FatalitiesListScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            FatalitiesCarTransformer(),
-        ]
-        super().__init__(options=options, config=config)
+        super().__init__(
+            options=append_transformer(options, FatalitiesCarTransformer()),
+            config=config,
+        )
 
     # Methods using shared utilities from date_parsing module
     # Kept here for backward compatibility if they are used elsewhere
