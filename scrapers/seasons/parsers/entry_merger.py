@@ -113,12 +113,10 @@ class EntryMerger:
 
     @staticmethod
     def _entry_merge_key(record: dict[str, Any]) -> tuple[tuple[str, str], ...]:
-        items: list[tuple[str, str]] = []
-        for key, value in record.items():
-            if key in {"race_drivers", "driver", "drivers", "rounds", "races", "no"}:
-                continue
-            items.append((key, repr(value)))
-        return tuple(sorted(items))
+        excluded = EntryMerger._DRIVER_FIELDS
+        items = [(k, repr(v)) for k, v in record.items() if k not in excluded]
+        items.sort()
+        return tuple(items)
 
     @staticmethod
     def _strip_entry_driver_fields(record: dict[str, Any]) -> dict[str, Any]:
