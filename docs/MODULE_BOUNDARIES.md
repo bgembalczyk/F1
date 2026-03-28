@@ -105,17 +105,63 @@ Checklistę operacyjną merge-gate utrzymujemy również w `docs/CHANGES_CHECKLI
 
 Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
 
+### 7.1 Harmonogram deprecacji (2 wersje przejściowe)
+
+- **R0 (aktualna wersja):** legacy moduły działają, ale emitują `DeprecationWarning`.
+- **R1 (kolejna wersja):** legacy moduły nadal działają, warning pozostaje obowiązkowy.
+- **R2 (druga wersja przejściowa):** legacy moduły są usuwane.
+
+Runtime warning ma teraz jawny komunikat o oknie migracji:
+- `scheduled for removal after 2 transitional releases`
+- oraz wskazanie canonical komendy `python -m scrapers.cli run <new_module>`.
+
+### 7.2 Deprecated moduły i zamienniki (CLI/API)
+
+#### Domenowe list-entrypointy (preferowane nowe API)
+
+- `scrapers.circuits.list_scraper` -> `scrapers.circuits.entrypoint`
+- `scrapers.constructors.current_constructors_list` -> `scrapers.constructors.entrypoint`
+- `scrapers.drivers.list_scraper` -> `scrapers.drivers.entrypoint`
+- `scrapers.grands_prix.list_scraper` -> `scrapers.grands_prix.entrypoint`
+- `scrapers.seasons.list_scraper` -> `scrapers.seasons.entrypoint`
+
+W praktyce oznacza to migrację:
+- z `python -m scrapers.cli run scrapers.<domain>.list_scraper`
+- na `python -m scrapers.cli run scrapers.<domain>.entrypoint`
+
+#### Pozostałe legacy moduły (bez nowego modułu API, canonical przez `scrapers.cli run`)
+
+- `scrapers.circuits.complete_scraper`
+- `scrapers.constructors.former_constructors_list`
+- `scrapers.constructors.indianapolis_only_constructors_list`
+- `scrapers.constructors.privateer_teams_list`
+- `scrapers.constructors.complete_scraper`
+- `scrapers.drivers.female_drivers_list`
+- `scrapers.drivers.fatalities_list_scraper`
+- `scrapers.drivers.complete_scraper`
+- `scrapers.engines.engine_manufacturers_list`
+- `scrapers.engines.indianapolis_only_engine_manufacturers_list`
+- `scrapers.engines.engine_regulation`
+- `scrapers.engines.engine_restrictions`
+- `scrapers.engines.complete_scraper`
+- `scrapers.grands_prix.complete_scraper`
+- `scrapers.grands_prix.red_flagged_races_scraper.non_championship`
+- `scrapers.grands_prix.red_flagged_races_scraper.world_championship`
+- `scrapers.seasons.complete_scraper`
+- `scrapers.sponsorship_liveries.scraper`
+- `scrapers.tyres.list_scraper`
+
 ### Mapa `old_command -> new_command`
 
 - `python main.py --mode <layer0|layer1|full>` -> `python -m scrapers.cli wiki --mode <layer0|layer1|full>`
-- `python -m scrapers.circuits.list_scraper` -> `python -m scrapers.cli run scrapers.circuits.list_scraper`
+- `python -m scrapers.circuits.list_scraper` -> `python -m scrapers.cli run scrapers.circuits.entrypoint`
 - `python -m scrapers.circuits.complete_scraper` -> `python -m scrapers.cli run scrapers.circuits.complete_scraper`
-- `python -m scrapers.constructors.current_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.current_constructors_list`
+- `python -m scrapers.constructors.current_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.entrypoint`
 - `python -m scrapers.constructors.former_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.former_constructors_list`
 - `python -m scrapers.constructors.indianapolis_only_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.indianapolis_only_constructors_list`
 - `python -m scrapers.constructors.privateer_teams_list` -> `python -m scrapers.cli run scrapers.constructors.privateer_teams_list`
 - `python -m scrapers.constructors.complete_scraper` -> `python -m scrapers.cli run scrapers.constructors.complete_scraper`
-- `python -m scrapers.drivers.list_scraper` -> `python -m scrapers.cli run scrapers.drivers.list_scraper`
+- `python -m scrapers.drivers.list_scraper` -> `python -m scrapers.cli run scrapers.drivers.entrypoint`
 - `python -m scrapers.drivers.female_drivers_list` -> `python -m scrapers.cli run scrapers.drivers.female_drivers_list`
 - `python -m scrapers.drivers.fatalities_list_scraper` -> `python -m scrapers.cli run scrapers.drivers.fatalities_list_scraper`
 - `python -m scrapers.drivers.complete_scraper` -> `python -m scrapers.cli run scrapers.drivers.complete_scraper`
@@ -124,14 +170,14 @@ Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
 - `python -m scrapers.engines.engine_regulation` -> `python -m scrapers.cli run scrapers.engines.engine_regulation`
 - `python -m scrapers.engines.engine_restrictions` -> `python -m scrapers.cli run scrapers.engines.engine_restrictions`
 - `python -m scrapers.engines.complete_scraper` -> `python -m scrapers.cli run scrapers.engines.complete_scraper`
-- `python -m scrapers.grands_prix.list_scraper` -> `python -m scrapers.cli run scrapers.grands_prix.list_scraper`
+- `python -m scrapers.grands_prix.list_scraper` -> `python -m scrapers.cli run scrapers.grands_prix.entrypoint`
 - `python -m scrapers.grands_prix.complete_scraper` -> `python -m scrapers.cli run scrapers.grands_prix.complete_scraper`
 - `python -m scrapers.grands_prix.red_flagged_races_scraper.non_championship` -> `python -m scrapers.cli run scrapers.grands_prix.red_flagged_races_scraper.non_championship`
 - `python -m scrapers.grands_prix.red_flagged_races_scraper.world_championship` -> `python -m scrapers.cli run scrapers.grands_prix.red_flagged_races_scraper.world_championship`
 - `python -m scrapers.points.sprint_qualifying_points` -> `python -m scrapers.cli run scrapers.points.sprint_qualifying_points`
 - `python -m scrapers.points.points_scoring_systems_history` -> `python -m scrapers.cli run scrapers.points.points_scoring_systems_history`
 - `python -m scrapers.points.shortened_race_points` -> `python -m scrapers.cli run scrapers.points.shortened_race_points`
-- `python -m scrapers.seasons.list_scraper` -> `python -m scrapers.cli run scrapers.seasons.list_scraper`
+- `python -m scrapers.seasons.list_scraper` -> `python -m scrapers.cli run scrapers.seasons.entrypoint`
 - `python -m scrapers.seasons.complete_scraper` -> `python -m scrapers.cli run scrapers.seasons.complete_scraper`
 - `python -m scrapers.sponsorship_liveries.scraper` -> `python -m scrapers.cli run scrapers.sponsorship_liveries.scraper`
 - `python -m scrapers.tyres.list_scraper` -> `python -m scrapers.cli run scrapers.tyres.list_scraper`
