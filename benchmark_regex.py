@@ -1,6 +1,8 @@
 import timeit
 
-text = " ".join(["2000-2005", "2008", "2010-2012", "2014-2015", "2018", "2020-2022", "2023"] * 100)
+text = " ".join(
+    ["2000-2005", "2008", "2010-2012", "2014-2015", "2018", "2020-2022", "2023"] * 100,
+)
 
 setup_uncompiled = "import re\ntext = '" + text + "'"
 
@@ -11,7 +13,11 @@ for match in re.finditer(r"\\b(\\d{4})\\b", text):
     pass
 """
 
-setup_compiled = "import re\ntext = '" + text + "'\nYEAR_RANGE_RE = re.compile(r\"\\b(\\d{4})\\s*[--]\\s*(\\d{2,4})\\b\")\nYEAR_RE = re.compile(r\"\\b(\\d{4})\\b\")"
+setup_compiled = (
+    "import re\ntext = '"
+    + text
+    + '\'\nYEAR_RANGE_RE = re.compile(r"\\b(\\d{4})\\s*[--]\\s*(\\d{2,4})\\b")\nYEAR_RE = re.compile(r"\\b(\\d{4})\\b")'
+)
 
 stmt_compiled = """
 for match in YEAR_RANGE_RE.finditer(text):

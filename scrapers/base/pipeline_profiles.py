@@ -74,8 +74,7 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
         validator_factory="scrapers.grands_prix.validator:GrandsPrixRecordValidator",
     ),
     (
-        "scrapers.drivers.female_drivers_list."
-        "FemaleDriversListScraper"
+        "scrapers.drivers.female_drivers_list.FemaleDriversListScraper"
     ): ScraperPipelineBinding(
         post_processors=(
             "scrapers.drivers.post_processors:EntriesStartsPointsPostProcessor",
@@ -87,8 +86,7 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
         ),
     ),
     (
-        "scrapers.constructors.single_scraper."
-        "SingleConstructorScraper"
+        "scrapers.constructors.single_scraper.SingleConstructorScraper"
     ): ScraperPipelineBinding(
         post_processors=(
             "scrapers.constructors.postprocess.contract:ConstructorSectionContractPostProcessor",
@@ -105,8 +103,7 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
         ),
     ),
     (
-        "scrapers.grands_prix.single_scraper."
-        "F1SingleGrandPrixScraper"
+        "scrapers.grands_prix.single_scraper.F1SingleGrandPrixScraper"
     ): ScraperPipelineBinding(
         post_processors=(
             "scrapers.grands_prix.postprocess.contract:GrandPrixSectionContractPostProcessor",

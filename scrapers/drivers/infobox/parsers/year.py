@@ -59,15 +59,14 @@ class YearParser:
             if all_years:
                 years["start"] = int(all_years[0])
         # Handle "YEAR-YEAR" or "YEAR-YEAR"
-        else:
-            if len(all_years) >= MIN_RANGE_YEARS:
-                years["start"] = int(all_years[0])
-                years["end"] = int(all_years[-1])
-            elif len(all_years) == 1:
-                # Single year without context (e.g., just "(2015)")
-                # Treat as a single-year validity period.
-                # Reasonable assumption for one-year licences.
-                years["start"] = int(all_years[0])
-                years["end"] = int(all_years[0])
+        elif len(all_years) >= MIN_RANGE_YEARS:
+            years["start"] = int(all_years[0])
+            years["end"] = int(all_years[-1])
+        elif len(all_years) == 1:
+            # Single year without context (e.g., just "(2015)")
+            # Treat as a single-year validity period.
+            # Reasonable assumption for one-year licences.
+            years["start"] = int(all_years[0])
+            years["end"] = int(all_years[0])
 
         return years
