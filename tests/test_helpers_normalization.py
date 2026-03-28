@@ -11,6 +11,7 @@ from scrapers.base.helpers.text_normalization import split_delimited_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.time import parse_time_text
 from scrapers.base.helpers.url import normalize_url
+from scrapers.base.normalization_pipeline import normalize_value
 from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 
 TIME_IN_SECONDS = 12.5
@@ -249,3 +250,34 @@ def test_normalize_url_builds_and_validates() -> None:
     assert normalize_url(base, "https://example.com/path") == "https://example.com/path"
     assert normalize_url(base, "mailto:test@example.com") is None
     assert normalize_url(base, "https://example.com//double") is None
+
+
+def test_normalize_value_pipeline_drops_empty_text_for_single_link_when_requested():
+    value = {"text": "†", "url": "https://example.com/marked"}
+
+    assert normalize_value(
+        value,
+        strip_marks=True,
+        drop_empty=True,
+        drop_empty_text=True,
+    ) is None
+
+
+def test_normalize_value_pipeline_runs_plugins_last():
+    calls: list[str] = []
+
+    def plugin(value):
+        calls.append("plugin")
+        if isinstance(value, dict):
+            value["plugin"] = True
+        return value
+
+    result = normalize_value(
+        {"text": " Marked* ", "url": "https://example.com/marked"},
+        strip_marks=True,
+        drop_empty=True,
+        plugins=[plugin],
+    )
+
+    assert result == {"text": "Marked", "url": "https://example.com/marked", "plugin": True}
+    assert calls == ["plugin"]
