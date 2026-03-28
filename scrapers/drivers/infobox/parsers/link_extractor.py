@@ -7,6 +7,7 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.url import normalize_url
+from scrapers.base.helpers.year_extraction import YEAR_RE
 from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.constants import TWO_DIGIT_YEAR_SUFFIX
 
@@ -111,7 +112,7 @@ class InfoboxLinkExtractor:
             )
 
         # Then, find individual years not part of ranges
-        for match in _YEAR_RE.finditer(text):
+        for match in YEAR_RE.finditer(text):
             year = int(match.group(1))
             if year not in processed_years:
                 processed_years.add(year)
@@ -200,7 +201,7 @@ class InfoboxLinkExtractor:
                 for year in sorted(years_in_li)
             ]
 
-        year_match = _YEAR_RE.search(li_text)
+        year_match = YEAR_RE.search(li_text)
         if not year_match:
             return []
         year = int(year_match.group(1))
