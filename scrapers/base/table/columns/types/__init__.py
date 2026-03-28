@@ -6,10 +6,6 @@ from scrapers.base.table.columns.types.column_factory import FloatColumn
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.column_factory import column_factory
 from scrapers.base.table.columns.types.date import DateColumn
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.engine import EngineColumn
-from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -27,12 +23,27 @@ from scrapers.base.table.columns.types.time_range import TimeRangeColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 
+# Backward-compatible re-exports for domain-specific columns moved out of
+# scrapers.base.table.columns.types.
+from scrapers.seasons.columns.constructor import ConstructorColumn
+from scrapers.seasons.columns.driver import DriverColumn
+from scrapers.seasons.columns.driver_list import DriverListColumn
+from scrapers.seasons.columns.engine import EngineColumn
+from scrapers.seasons.columns.entrant import EntrantColumn
+from scrapers.seasons.columns.points import PointsColumn
+from scrapers.seasons.columns.seasons import SeasonsColumn
+
 __all__ = [
     "AutoColumn",
     "BaseColumn",
     "BoolColumn",
     "BrListColumn",
+    "ConstructorColumn",
     "DateColumn",
+    "DriverColumn",
+    "DriverListColumn",
+    "EngineColumn",
+    "EntrantColumn",
     "EnumMarksColumn",
     "FloatColumn",
     "FuncColumn",
@@ -42,8 +53,10 @@ __all__ = [
     "MultiColumn",
     "NameStatusColumn",
     "ParsedValueColumn",
+    "PointsColumn",
     "RangeColumn",
     "RegexColumn",
+    "SeasonsColumn",
     "SkipColumn",
     "TextColumn",
     "TimeColumn",
