@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.wiki.component_metadata import ComponentMetadata
-from scrapers.wiki.contants import COMPONENT_METADATA_ATTR
+from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
 
 if TYPE_CHECKING:
     from types import ModuleType
