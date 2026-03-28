@@ -93,10 +93,8 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         _ = soup
         _ = infobox_payload
         _ = tables_payload
-        sections = self._domain_record_service.build_sections_payload(
-            sections_payload.data,
-        )
-        return self._domain_record_service.assemble_record(sections)
+        payload = self._domain_record_service.build_payload(sections_payload.data)
+        return self._domain_record_service.assemble_record(payload)
 
     @staticmethod
     def _extract_year_from_url(url: str) -> int | None:
