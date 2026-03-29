@@ -24,6 +24,8 @@ from scrapers.base.scraper_components import ErrorPolicy
 from scrapers.base.scraper_components import PipelineOrchestrator
 from scrapers.base.scraper_components import QualityReportService
 from scrapers.base.scraper_components import RuntimeInitializer
+from scrapers.base.services.result_export_service import ResultExportService
+from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.validation_runner import ValidationRunner
 from scrapers.wiki.component_metadata import validate_metadata_for_component_class
@@ -63,6 +65,8 @@ class ABCScraper(ABC):
         self._initialize_quality_report_service()
         self._initialize_pipeline_orchestrator()
         self._data: list[ExportRecord] | None = None
+        self.result_export_service = ResultExportService()
+        self.result_tabular_adapter = ResultTabularAdapter()
 
     def _initialize_runtime(self, options: ScraperOptions) -> None:
         runtime = RuntimeInitializer(
@@ -225,7 +229,8 @@ class ABCScraper(ABC):
         include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
-        result.to_json(
+        self.result_export_service.to_json(
+            result,
             path,
             exporter=self.exporter,
             indent=indent,
@@ -241,7 +246,8 @@ class ABCScraper(ABC):
         include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
-        result.to_csv(
+        self.result_export_service.to_csv(
+            result,
             path,
             exporter=self.exporter,
             fieldnames=fieldnames,
@@ -251,7 +257,7 @@ class ABCScraper(ABC):
 
     def to_dataframe(self):
         result = self.build_result()
-        return result.to_dataframe()
+        return self.result_tabular_adapter.to_dataframe(result)
 
     # ---------- Metody wewnętrzne ----------
 
@@ -276,6 +282,10 @@ class ABCScraper(ABC):
         if self.parser is None:
             return self._parse_soup(soup)
         return self.parser.parse(soup)
+
+    def parse_soup(self, soup: BeautifulSoup) -> list[RawRecord]:
+        """Public facade for parsing an already constructed BeautifulSoup document."""
+        return self.parse(soup)
 
     # ---------- Hooki: normalize/export ----------
 

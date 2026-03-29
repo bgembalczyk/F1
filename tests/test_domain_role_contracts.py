@@ -8,7 +8,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from models.records.base_factory import RecordFactoryProtocol
-from models.records.factories.registry import FACTORY_REGISTRY
+from models.records.factories.registry import FactoryRegistryProvider
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
@@ -29,6 +29,9 @@ if TYPE_CHECKING:
     from scrapers.base.contracts import SectionExtractionServiceProtocol
 
 SECTION_RESULT_KEYS = ("section_id", "section_label", "records", "metadata")
+
+
+FACTORY_REGISTRY = FactoryRegistryProvider().get()
 
 
 def _soup(html: str) -> BeautifulSoup:
