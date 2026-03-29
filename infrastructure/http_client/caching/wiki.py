@@ -1,7 +1,9 @@
 from pathlib import Path
+from collections.abc import Mapping
 from urllib.parse import urlparse
 
 from infrastructure.http_client.caching.file import FileCache
+from infrastructure.http_client.policies.cache_key_strategy import CacheKeyStrategy
 from infrastructure.http_client.policies.response_cache import ResponseCache
 
 
@@ -11,15 +13,25 @@ class WikipediaCachePolicy(ResponseCache):
     def __init__(self, cache: ResponseCache) -> None:
         self.cache = cache
 
-    def get(self, url: str) -> str | None:
+    @property
+    def cache_key_strategy(self) -> CacheKeyStrategy:
+        return self.cache.cache_key_strategy
+
+    def build_cache_key(
+        self,
+        url: str,
+        *,
+        headers: Mapping[str, str] | None = None,
+    ) -> str | None:
         if not self._is_wikipedia_url(url):
             return None
-        return self.cache.get(url)
+        return self.cache.build_cache_key(url, headers=headers)
 
-    def set(self, url: str, text: str) -> None:
-        if not self._is_wikipedia_url(url):
-            return
-        self.cache.set(url, text)
+    def get(self, cache_key: str) -> str | None:
+        return self.cache.get(cache_key)
+
+    def set(self, cache_key: str, text: str) -> None:
+        self.cache.set(cache_key, text)
 
     @classmethod
     def with_file_cache(

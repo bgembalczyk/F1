@@ -165,18 +165,22 @@ class BaseHttpClient(ABC):
         """
         Zwraca response.text z obsługą cache.
 
-        Cache działa tylko po URL (headers/timeout są ignorowane w cache key).
+        Domyślnie cache działa po URL, ale strategia cache_key może uwzględniać
+        także istotne parametry żądania (np. wybrane nagłówki).
         """
+        cache_key: str | None = None
         if self.cache is not None:
-            cached = self.cache.get(url)
-            if cached is not None:
-                return cached
+            cache_key = self.cache.build_cache_key(url, headers=headers)
+            if cache_key is not None:
+                cached = self.cache.get(cache_key)
+                if cached is not None:
+                    return cached
 
         response = self.get(url, headers=headers, timeout=timeout)
         text = response.text
 
-        if self.cache is not None:
-            self.cache.set(url, text)
+        if self.cache is not None and cache_key is not None:
+            self.cache.set(cache_key, text)
 
         return text
 

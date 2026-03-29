@@ -11,6 +11,9 @@ from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
+from infrastructure.http_client.policies.cache_key_strategy import (
+    SelectedHeadersCacheKeyStrategy,
+)
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
@@ -163,12 +166,35 @@ def test_wikipedia_cache_policy_hit_and_miss(tmp_path):
     url = "https://en.wikipedia.org/wiki/Formula_One"
     other_url = "https://example.com"
 
-    assert cache.get(url) is None
-    cache.set(url, "cached")
-    assert cache.get(url) == "cached"
+    cache_key = cache.build_cache_key(url)
+    assert cache_key is not None
+    assert cache.get(cache_key) is None
+    cache.set(cache_key, "cached")
+    assert cache.get(cache_key) == "cached"
 
-    cache.set(other_url, "skip")
-    assert cache.get(other_url) is None
+    assert cache.build_cache_key(other_url) is None
+
+
+@pytest.mark.parametrize(("name", "factory"), CLIENT_FACTORIES)
+def test_cache_key_strategy_can_include_selected_headers(
+    name, factory, http_server, tmp_path
+):
+    base_url, _handler = http_server
+    cache = FileCache(
+        cache_dir=tmp_path,
+        ttl_seconds=60,
+        cache_key_strategy=SelectedHeadersCacheKeyStrategy(
+            header_names=["X-Test-Header"]
+        ),
+    )
+    client = factory(cache=cache)
+    url = f"{base_url}/headers"
+
+    first = client.get_text(url, headers={"X-Test-Header": "a"})
+    second = client.get_text(url, headers={"X-Test-Header": "b"})
+
+    assert first == "a"
+    assert second == "b"
 
 
 def test_default_retry_policy_for_statuses():
