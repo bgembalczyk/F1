@@ -8,9 +8,10 @@ from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.text_cleaning import clean_table_cell_text
+from scrapers.wiki.parsers.types import TableParsedData
 
 
-class TableParser(WikiParser):
+class TableParser(WikiParser[TableParsedData]):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">
