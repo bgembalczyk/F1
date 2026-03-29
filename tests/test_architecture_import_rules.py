@@ -1,45 +1,24 @@
 from __future__ import annotations
 
-import ast
 from pathlib import Path
 
-DOMAINS = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
-    "engines",
-    "points",
-    "sponsorship_liveries",
-    "tyres",
-)
+from tests.architecture.rules import DOMAINS
+from tests.architecture.rules import resolve_import_targets
+
 MIN_IMPORT_PARTS = 3
 
 
 def _iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
-    tree = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
     violations: list[str] = []
 
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            for alias in node.names:
-                parts = alias.name.split(".")
-                if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
-                    continue
-                imported_domain = parts[1]
-                if imported_domain in DOMAINS and imported_domain != domain:
-                    violations.append(alias.name)
+    for target in resolve_import_targets(py_file):
+        parts = target.split(".")
+        if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
+            continue
 
-        if isinstance(node, ast.ImportFrom):
-            if node.level != 0 or node.module is None:
-                continue
-            parts = node.module.split(".")
-            if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
-                continue
-            imported_domain = parts[1]
-            if imported_domain in DOMAINS and imported_domain != domain:
-                violations.append(node.module)
+        imported_domain = parts[1]
+        if imported_domain in DOMAINS and imported_domain != domain:
+            violations.append(target)
 
     return violations
 
