@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
 import sys
 
@@ -21,35 +22,42 @@ SOURCE_DIRS = (
     "complete_extractor",
 )
 
-TYPO_RULES = (
-    {
-        "target_packages": (
+
+@dataclass(frozen=True)
+class TypoRule:
+    target_packages: tuple[Path, ...]
+    expected_module_name: str
+    disallowed_typo_name: str
+    disallowed_import: str
+
+
+TYPO_RULES: tuple[TypoRule, ...] = (
+    TypoRule(
+        target_packages=(
             PROJECT_ROOT / "scrapers" / "wiki",
             PROJECT_ROOT / "scrapers" / "wiki" / "parsers" / "sections",
         ),
-        "expected_module_name": "constants.py",
-        "disallowed_typo_name": "contants.py",
-        "disallowed_import": "scrapers.wiki.contants",
-    },
-    {
-        "target_packages": (
+        expected_module_name="constants.py",
+        disallowed_typo_name="contants.py",
+        disallowed_import="scrapers.wiki.contants",
+    ),
+    TypoRule(
+        target_packages=(
             PROJECT_ROOT / "scrapers" / "base" / "orchestration" / "components",
         ),
-        "expected_module_name": "section_source_adapter.py",
-        "disallowed_typo_name": "section_soruce_adapter.py",
-        "disallowed_import": (
-            "scrapers.base.orchestration.components.section_soruce_adapter"
-        ),
-    },
+        expected_module_name="section_source_adapter.py",
+        disallowed_typo_name="section_soruce_adapter.py",
+        disallowed_import="scrapers.base.orchestration.components.section_soruce_adapter",
+    ),
 )
 
 
 def _validate_target_packages() -> list[str]:
     errors: list[str] = []
     for rule in TYPO_RULES:
-        for package in rule["target_packages"]:
-            expected = package / rule["expected_module_name"]
-            typo = package / rule["disallowed_typo_name"]
+        for package in rule.target_packages:
+            expected = package / rule.expected_module_name
+            typo = package / rule.disallowed_typo_name
 
             if not expected.exists():
                 errors.append(f"missing expected module: {expected}")
@@ -67,7 +75,7 @@ def _scan_typo_imports() -> list[str]:
         for py_file in root.rglob("*.py"):
             content = py_file.read_text(encoding="utf-8")
             for rule in TYPO_RULES:
-                if rule["disallowed_import"] in content:
+                if rule.disallowed_import in content:
                     rel_path = py_file.relative_to(PROJECT_ROOT)
                     errors.append(f"found typo import in {rel_path}")
     return errors
