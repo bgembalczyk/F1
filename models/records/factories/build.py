@@ -181,3 +181,35 @@ class RecordBuilders:
 
 
 RECORD_BUILDERS = RecordBuilders()
+
+
+def build_record(record_type: str, record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.build(record_type, record)
+
+
+def build_season_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.season(record)
+
+
+def build_driver_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.driver(record)
+
+
+def build_constructor_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.constructor(record)
+
+
+def build_special_driver_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.special_driver(record)
+
+
+def build_fatality_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.fatality(record)
+
+
+def build_season_summary_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.season_summary(record)
+
+
+def build_grands_prix_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.grands_prix(record)

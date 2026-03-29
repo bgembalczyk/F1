@@ -3,8 +3,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
+from layers.orchestration.protocols import LayerOneRunnerProtocol
+from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
+from layers.orchestration.runners.metadata import build_runner_metadata
 from scrapers.circuits.helpers.export import export_complete_circuits
 from scrapers.constructors.helpers.export import export_complete_constructors
 from scrapers.drivers.helpers.export import export_complete_drivers
@@ -24,43 +27,19 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
         "grands_prix": GrandPrixRunner(),
         "circuits": FunctionExportRunner(
             export_function=export_complete_circuits,
-            component_metadata={
-                "domain": "circuits",
-                "seed_name": "circuits",
-                "layer": "layer_one",
-                "output_category": "circuits",
-                "component_type": "runner",
-            },
+            component_metadata=build_runner_metadata("circuits"),
         ),
         "drivers": FunctionExportRunner(
             export_function=export_complete_drivers,
-            component_metadata={
-                "domain": "drivers",
-                "seed_name": "drivers",
-                "layer": "layer_one",
-                "output_category": "drivers",
-                "component_type": "runner",
-            },
+            component_metadata=build_runner_metadata("drivers"),
         ),
         "seasons": FunctionExportRunner(
             export_function=export_complete_seasons,
-            component_metadata={
-                "domain": "seasons",
-                "seed_name": "seasons",
-                "layer": "layer_one",
-                "output_category": "seasons",
-                "component_type": "runner",
-            },
+            component_metadata=build_runner_metadata("seasons"),
         ),
         "constructors": FunctionExportRunner(
             export_function=export_complete_constructors,
-            component_metadata={
-                "domain": "constructors",
-                "seed_name": "constructors",
-                "layer": "layer_one",
-                "output_category": "constructors",
-                "component_type": "runner",
-            },
+            component_metadata=build_runner_metadata("constructors"),
         ),
     }
 

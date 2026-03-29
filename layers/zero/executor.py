@@ -1,11 +1,11 @@
 from collections.abc import Callable
 from pathlib import Path
 
+from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.reporter import PipelineStepReporterProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
-from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
@@ -22,7 +22,7 @@ class LayerZeroExecutor:
             dict[str, LayerZeroRunConfigFactoryProtocol],
         ],
         default_config_factory: LayerZeroRunConfigFactoryProtocol,
-        merge_service: LayerZeroMergeService,
+        merge_service: LayerZeroMergeServiceProtocol,
         job_hook: LayerZeroJobHook,
         step_reporter: PipelineStepReporterProtocol,
         year_provider: Callable[[], int],

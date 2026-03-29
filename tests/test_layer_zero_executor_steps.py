@@ -1,8 +1,12 @@
 from pathlib import Path
 
+from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
+from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.orchestration.reporter import PipelineStepReporterProtocol
 from layers.zero.executor import LayerZeroExecutor
+from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
 from layers.zero.policies import NullLayerZeroJobHook
 from scrapers.base.run_config import RunConfig
@@ -13,7 +17,7 @@ class _FakeScraper:
     pass
 
 
-class _FakeConfigFactory:
+class _FakeConfigFactory(LayerZeroRunConfigFactoryProtocol):
     def __init__(self, scraper_kwargs: dict[str, object]) -> None:
         self._scraper_kwargs = scraper_kwargs
 
@@ -21,7 +25,7 @@ class _FakeConfigFactory:
         return self._scraper_kwargs
 
 
-class _MergeService:
+class _MergeService(LayerZeroMergeServiceProtocol):
     def __init__(self) -> None:
         self.calls: list[Path] = []
 
@@ -121,6 +125,14 @@ def test_resolve_config_factory_uses_builder_result() -> None:
     resolved = executor._resolve_config_factory()
 
     assert resolved is expected
+
+
+def test_protocol_contracts_are_met_by_production_implementations() -> None:
+    assert isinstance(DefaultLayerZeroRunConfigFactory(), LayerZeroRunConfigFactoryProtocol)
+    assert isinstance(
+        LayerZeroMergeService(merge_function=lambda _base_wiki_dir: None),
+        LayerZeroMergeServiceProtocol,
+    )
 
 
 def test_build_local_run_config_uses_seed_specific_factory() -> None:

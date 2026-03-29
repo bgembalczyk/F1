@@ -1,6 +1,7 @@
 """Text helper utilities shared across scrapers."""
 
 import re
+from collections.abc import Callable
 
 from bs4 import Tag
 
@@ -126,4 +127,20 @@ def strip_marks(text: str | Tag) -> str:
         .replace("~", "")
         .replace("^", "")
         .strip()
+    )
+
+
+def extract_links_from_cell(
+    cell: Tag | str | None,
+    *,
+    full_url: Callable[[str], str | None] | None = None,
+) -> list[dict[str, str | None]]:
+    """Backward-compatible helper for extracting normalized links from table cells."""
+    from scrapers.base.helpers.links import normalize_links
+
+    return normalize_links(
+        cell,
+        full_url=full_url,
+        drop_empty=True,
+        strip_lang_suffix=True,
     )
