@@ -4,6 +4,8 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Protocol
 
+from layers.types import DomainName
+from layers.types import KeySourceName
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
@@ -19,7 +21,7 @@ from scrapers.wiki.constants import TYRE_MANUFACTURERS_SOURCE
 class RecordTransformHandler(Protocol):
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]: ...
@@ -69,7 +71,11 @@ def _pop_red_flag_fields(record: dict[str, object]) -> None:
         record.pop(key, None)
 
 
-def _transform_record(domain: str, source_name: str, record: object) -> object:
+def _transform_record(
+    domain: DomainName,
+    source_name: str,
+    record: object,
+) -> object:
     if not isinstance(record, dict):
         return record
 
@@ -82,7 +88,7 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
 class _TyreManufacturersTransformHandler:
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]:
@@ -93,7 +99,7 @@ class _TyreManufacturersTransformHandler:
 class _ConstructorDomainTransformHandler:
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]:
@@ -103,7 +109,7 @@ class _ConstructorDomainTransformHandler:
 class _CircuitsDomainTransformHandler:
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]:
@@ -114,7 +120,7 @@ class _CircuitsDomainTransformHandler:
 class _EnginesDomainTransformHandler:
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]:
@@ -124,7 +130,7 @@ class _EnginesDomainTransformHandler:
 class _GrandsPrixDomainTransformHandler:
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]:
@@ -135,7 +141,7 @@ class _GrandsPrixDomainTransformHandler:
 class _TeamsDomainTransformHandler:
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]:
@@ -145,7 +151,7 @@ class _TeamsDomainTransformHandler:
 class _DriversDomainTransformHandler:
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]:
@@ -155,7 +161,7 @@ class _DriversDomainTransformHandler:
 class _RacesDomainTransformHandler:
     def transform(
         self,
-        domain: str,
+        domain: DomainName,
         source_name: str,
         record: dict[str, object],
     ) -> dict[str, object]:
@@ -163,38 +169,38 @@ class _RacesDomainTransformHandler:
 
 
 def _build_record_transform_handler_registry() -> dict[
-    str,
+    DomainName,
     dict[str | None, tuple[RecordTransformHandler, ...]],
 ]:
     return {
-        "*": {
-            TYRE_MANUFACTURERS_SOURCE: (_TyreManufacturersTransformHandler(),),
+        DomainName.ANY: {
+            KeySourceName.TYRE_MANUFACTURERS: (_TyreManufacturersTransformHandler(),),
         },
-        "constructors": {
+        DomainName.CONSTRUCTORS: {
             None: (_ConstructorDomainTransformHandler(),),
         },
-        "constructor": {
+        DomainName.CONSTRUCTOR: {
             None: (_ConstructorDomainTransformHandler(),),
         },
-        "chassis": {
+        DomainName.CHASSIS: {
             None: (_ConstructorDomainTransformHandler(),),
         },
-        "circuits": {
+        DomainName.CIRCUITS: {
             None: (_CircuitsDomainTransformHandler(),),
         },
-        "engines": {
+        DomainName.ENGINES: {
             None: (_EnginesDomainTransformHandler(),),
         },
-        "grands_prix": {
+        DomainName.GRANDS_PRIX: {
             None: (_GrandsPrixDomainTransformHandler(),),
         },
-        "teams": {
+        DomainName.TEAMS: {
             None: (_TeamsDomainTransformHandler(),),
         },
-        "drivers": {
+        DomainName.DRIVERS: {
             None: (_DriversDomainTransformHandler(),),
         },
-        "races": {
+        DomainName.RACES: {
             None: (_RacesDomainTransformHandler(),),
         },
     }
@@ -204,12 +210,12 @@ _RECORD_TRANSFORM_HANDLER_REGISTRY = _build_record_transform_handler_registry()
 
 
 def _resolve_record_transform_handlers(
-    domain: str,
+    domain: DomainName,
     source_name: str,
 ) -> tuple[RecordTransformHandler, ...]:
     handlers: list[RecordTransformHandler] = []
 
-    for domain_key in ("*", domain):
+    for domain_key in (DomainName.ANY, domain):
         domain_registry = _RECORD_TRANSFORM_HANDLER_REGISTRY.get(domain_key, {})
         handlers.extend(domain_registry.get(None, ()))
         handlers.extend(domain_registry.get(source_name, ()))
@@ -233,20 +239,20 @@ def _transform_tyre_manufacturers(
 
 
 def _transform_constructor_domain(
-    domain: str,
+    domain: DomainName,
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
     if domain not in CHASSIS_CONSTRUCTOR_DOMAINS:
         return transformed
 
-    if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
+    if source_name == KeySourceName.INDIANAPOLIS_ONLY_CONSTRUCTORS:
         return _transform_indianapolis_only_constructor(transformed)
-    if source_name == FORMER_CONSTRUCTORS_SOURCE:
+    if source_name == KeySourceName.FORMER_CONSTRUCTORS:
         return _transform_former_constructor(transformed)
 
     constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
-    if domain == "constructors" and re.fullmatch(
+    if domain == DomainName.CONSTRUCTORS and re.fullmatch(
         r"f1_constructors_\d{4}\.json",
         source_name,
     ):
@@ -302,10 +308,10 @@ def _ensure_constructor_status(transformed: dict[str, object]) -> None:
 
 
 def _transform_circuits_domain(
-    domain: str,
+    domain: DomainName,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "circuits":
+    if domain != DomainName.CIRCUITS:
         return transformed
     _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
     if "racing_series" not in transformed:
@@ -314,11 +320,11 @@ def _transform_circuits_domain(
 
 
 def _transform_engines_domain(
-    domain: str,
+    domain: DomainName,
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "engines":
+    if domain != DomainName.ENGINES:
         return transformed
     if source_name == "f1_indianapolis_only_engine_manufacturers.json":
         transformed["racing_series"] = {
@@ -331,20 +337,20 @@ def _transform_engines_domain(
 
 
 def _transform_grands_prix_domain(
-    domain: str,
+    domain: DomainName,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain == "grands_prix":
+    if domain == DomainName.GRANDS_PRIX:
         _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
     return transformed
 
 
 def _transform_teams_domain(
-    domain: str,
+    domain: DomainName,
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "teams":
+    if domain != DomainName.TEAMS:
         return transformed
     if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
         transformed = {
@@ -365,11 +371,11 @@ def _transform_teams_domain(
 
 
 def _transform_drivers_domain(
-    domain: str,
+    domain: DomainName,
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "drivers":
+    if domain != DomainName.DRIVERS:
         return transformed
     if source_name == "f1_drivers.json":
         return _transform_f1_driver(transformed)
@@ -414,11 +420,11 @@ def _attach_driver_death_data(transformed: dict[str, object]) -> None:
 
 
 def _transform_races_domain(
-    domain: str,
+    domain: DomainName,
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "races":
+    if domain != DomainName.RACES:
         return transformed
     if source_name == "f1_red_flagged_world_championship_races.json":
         transformed["championship"] = True
@@ -430,7 +436,7 @@ def _transform_races_domain(
 
 
 def _iter_transformed_records(
-    domain: str,
+    domain: DomainName,
     source_name: str,
     payload: object,
 ) -> list[object]:
@@ -757,10 +763,11 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
         return
 
     for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir):
+        domain = DomainName.from_io(domain_dir.name)
         merged_records = _load_domain_records(domain_dir)
         if not merged_records:
             continue
-        merged_records = _post_process_domain_records(domain_dir.name, merged_records)
+        merged_records = _post_process_domain_records(domain, merged_records)
         _write_merged_domain_records(domain_dir, merged_records)
 
 
@@ -777,21 +784,22 @@ def _iter_mergeable_domain_dirs(layer_zero_dir: Path) -> list[Path]:
 
 
 def _load_domain_records(domain_dir: Path) -> list[object]:
+    domain = DomainName.from_io(domain_dir.name)
     merged_records: list[object] = []
     raw_dir = domain_dir / "raw"
     for json_path in sorted(raw_dir.rglob("*.json")):
         payload = json.loads(json_path.read_text(encoding="utf-8"))
         merged_records.extend(
-            _iter_transformed_records(domain_dir.name, json_path.name, payload),
+            _iter_transformed_records(domain, json_path.name, payload),
         )
     return merged_records
 
 
 def _domain_post_processors(
-    domain: str,
+    domain: DomainName,
 ) -> list[Callable[[list[object]], list[object]]]:
     processors: list[Callable[[list[object]], list[object]]] = []
-    if domain == "drivers":
+    if domain == DomainName.DRIVERS:
         processors.extend(
             [
                 _merge_duplicate_drivers,
@@ -800,7 +808,7 @@ def _domain_post_processors(
         )
     if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
         processors.append(lambda items: sorted(items, key=_constructor_sort_key))
-    if domain == "teams":
+    if domain == DomainName.TEAMS:
         processors.extend(
             [
                 _merge_duplicate_teams,
@@ -810,12 +818,15 @@ def _domain_post_processors(
                 lambda items: sorted(items, key=_team_sort_key),
             ],
         )
-    if domain == "seasons":
+    if domain == DomainName.SEASONS:
         processors.append(lambda items: sorted(items, key=_season_sort_key))
     return processors
 
 
-def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
+def _post_process_domain_records(
+    domain: DomainName,
+    records: list[object],
+) -> list[object]:
     merged_records = records
     for processor in _domain_post_processors(domain):
         merged_records = processor(merged_records)

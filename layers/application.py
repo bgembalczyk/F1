@@ -16,6 +16,7 @@ from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.helpers import get_wiki_seed_registry
 from layers.seed.registry.helpers import validate_list_job_registry
 from layers.seed.registry.helpers import validate_seed_registry
+from layers.types import DomainName
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
@@ -36,9 +37,9 @@ def create_default_wiki_pipeline_application(
 ) -> WikiPipelineApplication:
     constructors_mirror_service = ConstructorsMirrorService(
         mirror_targets=(
-            ("chassis_constructors", "f1_constructors_{year}.json"),
-            ("constructors", "f1_constructors_{year}.json"),
-            ("teams", "f1_constructors_{year}.json"),
+            (DomainName.CHASSIS_CONSTRUCTORS, "f1_constructors_{year}.json"),
+            (DomainName.CONSTRUCTORS, "f1_constructors_{year}.json"),
+            (DomainName.TEAMS, "f1_constructors_{year}.json"),
         ),
         copy_file=shutil.copy2,
         year_provider=_current_year,

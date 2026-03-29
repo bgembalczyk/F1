@@ -1,6 +1,7 @@
 from collections.abc import Callable
 from pathlib import Path
 
+from layers.types import DomainName
 from layers.zero.helpers import LayerZeroPathBuilder
 
 
@@ -8,7 +9,7 @@ class ConstructorsMirrorService:
     def __init__(
         self,
         *,
-        mirror_targets: tuple[tuple[str, str], ...],
+        mirror_targets: tuple[tuple[DomainName, str], ...],
         copy_file: Callable[[Path, Path], None],
         year_provider: Callable[[], int],
         path_builder: LayerZeroPathBuilder | None = None,
@@ -22,7 +23,7 @@ class ConstructorsMirrorService:
         current_year = self._year_provider()
         for target_category, target_name_template in self._mirror_targets:
             target_rel_path = self._path_builder.raw_file_path(
-                target_category,
+                str(target_category),
                 target_name_template.format(year=current_year),
             )
             target_path = base_wiki_dir / target_rel_path
