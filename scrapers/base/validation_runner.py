@@ -77,12 +77,10 @@ class ValidationRunner:
         return errors_for_tracking, messages
 
     def _record_factory_label(self, *, default: str | None = None) -> str | None:
-        if self.validator.record_factory is None:
+        validator = self.validator.record_factory_validator
+        if validator is None:
             return default
-        model_label = getattr(self.validator.record_factory, "__name__", None)
-        if model_label is not None:
-            return model_label
-        return self.validator.record_factory.__class__.__name__
+        return validator.__class__.__name__
 
     def _validation_error_message(
         self,

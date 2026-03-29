@@ -12,6 +12,7 @@ from typing import TypeAlias
 
 from validation.issue import ValidationIssue
 from validation.quality_stats import QualityStats
+from validation.record_factory_validator import RecordFactoryValidatorProtocol
 from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
@@ -20,19 +21,22 @@ ExportRecord: TypeAlias = dict[str, Any]
 
 
 class RecordValidator(ABC):
-    def __init__(self, record_factory: Callable[..., Any] | type | None = None) -> None:
-        self.record_factory = record_factory
+    def __init__(
+        self,
+        record_factory_validator: RecordFactoryValidatorProtocol | None = None,
+    ) -> None:
+        self.record_factory_validator = record_factory_validator
         self._stats = QualityStats()
 
     @abstractmethod
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
         raise NotImplementedError
 
-    def set_record_factory(
+    def set_record_factory_validator(
         self,
-        record_factory: Callable[..., Any] | type | None,
+        record_factory_validator: RecordFactoryValidatorProtocol | None,
     ) -> None:
-        self.record_factory = record_factory
+        self.record_factory_validator = record_factory_validator
 
     def reset_stats(self) -> None:
         self._stats = QualityStats()
@@ -89,65 +93,20 @@ class RecordValidator(ABC):
         return report_path
 
     def validate_record_factory(self, record: ExportRecord) -> list[ValidationIssue]:
-        record_factory = self.record_factory
-        if record_factory is None:
+        validator = self.record_factory_validator
+        if validator is None:
             return []
 
-        model_validate = getattr(record_factory, "model_validate", None)
-        if callable(model_validate):
-            return self._run_record_factory_validator(
-                validator=model_validate,
-                record=record,
-                failure_label="model_validate",
-            )
-
-        validate_record = getattr(record_factory, "validate_record", None)
-        if callable(validate_record):
-            return self._run_validate_record(validate_record, record)
-
-        validate = getattr(record_factory, "validate", None)
-        if callable(validate) and not isinstance(record_factory, type):
-            return self._run_record_factory_validator(
-                validator=validate,
-                record=None,
-                failure_label="validate",
-            )
-        return []
-
-    def _run_record_factory_validator(
-        self,
-        validator: Callable[..., Any],
-        record: ExportRecord | None,
-        failure_label: str,
-    ) -> list[ValidationIssue]:
         try:
-            if record is None:
-                validator()
-            else:
-                validator(record)
+            errors = validator.validate_record(record)
         except (AttributeError, TypeError, ValueError) as exc:
             return [
                 ValidationIssue.custom(
-                    f"{failure_label} failed: {exc}",
+                    f"record factory validation failed: {exc}",
                     code="record_factory",
                 ),
             ]
-        return []
 
-    def _run_validate_record(
-        self,
-        validator: Callable[..., Any],
-        record: ExportRecord,
-    ) -> list[ValidationIssue]:
-        try:
-            errors = validator(record)
-        except (AttributeError, TypeError, ValueError) as exc:
-            return [
-                ValidationIssue.custom(
-                    f"validate_record failed: {exc}",
-                    code="record_factory",
-                ),
-            ]
         if not errors:
             return []
         return [self._coerce_issue(error) for error in errors]

@@ -18,6 +18,7 @@ from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.pipeline_runner import ScraperPipelineRunner
 from scrapers.base.quality.reporter import QualityReporter
 from scrapers.base.validation_runner import ValidationRunner
+from validation.record_factory_validator import adapt_record_factory_validator
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -69,7 +70,9 @@ class RuntimeInitializer:
         runtime = ScraperRuntimeFactory().build(options=options, policy=http_policy)
         validator = options.validator or default_validator
         if validator is not None:
-            validator.set_record_factory(options.record_factory)
+            validator.set_record_factory_validator(
+                adapt_record_factory_validator(options.record_factory),
+            )
         return RuntimeComponents(
             http_policy=http_policy,
             source_adapter=runtime.source_adapter,
