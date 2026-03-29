@@ -4,24 +4,27 @@ import ast
 from dataclasses import dataclass
 from pathlib import Path
 
-DOMAINS: tuple[str, ...] = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
-    "engines",
-    "points",
-    "sponsorship_liveries",
-    "tyres",
+from tests.architecture.registry import ARCHITECTURE_REGISTRY
+
+DOMAINS: tuple[str, ...] = ARCHITECTURE_REGISTRY.domain_names
+ENTRYPOINT_DOMAINS: tuple[str, ...] = ARCHITECTURE_REGISTRY.entrypoint_domains
+LAYERS: tuple[str, ...] = ARCHITECTURE_REGISTRY.layers
+REQUIRED_LAYERS_BY_DOMAIN: dict[str, tuple[str, ...]] = (
+    ARCHITECTURE_REGISTRY.required_layers_by_domain
+)
+FORBIDDEN_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = (
+    ARCHITECTURE_REGISTRY.forbidden_imports_by_layer
+)
+ALLOWED_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = (
+    ARCHITECTURE_REGISTRY.allowed_imports_by_layer
 )
 
-ENTRYPOINT_DOMAINS: tuple[str, ...] = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
+ENTRYPOINT_MODULES: tuple[str, ...] = (
+    "scrapers/drivers/entrypoint.py",
+    "scrapers/constructors/entrypoint.py",
+    "scrapers/circuits/entrypoint.py",
+    "scrapers/seasons/entrypoint.py",
+    "scrapers/grands_prix/entrypoint.py",
 )
 
 LAYERS: tuple[str, ...] = ("list", "sections", "infobox", "postprocess")

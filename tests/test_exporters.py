@@ -5,6 +5,7 @@ from datetime import timezone
 
 from scrapers.base.export.service import ExportService
 from scrapers.base.results import ScrapeResult
+from scrapers.base.services.result_export_service import ResultExportService
 
 EXPECTED_TWO_RECORDS = 2
 
@@ -33,7 +34,7 @@ def test_to_csv_union_fieldnames_preserves_order(tmp_path):
     result = ScrapeResult(data=data, source_url=None)
     output = tmp_path / "union.csv"
 
-    result.to_csv(output, include_metadata=True)
+    ResultExportService().to_csv(result, output, include_metadata=True)
 
     metadata = _read_metadata(output)
     assert metadata["records_count"] == EXPECTED_TWO_RECORDS
@@ -45,7 +46,12 @@ def test_to_csv_first_row_fieldnames_preserves_order(tmp_path):
     result = ScrapeResult(data=data, source_url=None)
     output = tmp_path / "first_row.csv"
 
-    result.to_csv(output, fieldnames_strategy="first_row", include_metadata=True)
+    ResultExportService().to_csv(
+        result,
+        output,
+        fieldnames_strategy="first_row",
+        include_metadata=True,
+    )
 
     metadata = _read_metadata(output)
     assert metadata["records_count"] == EXPECTED_TWO_RECORDS
@@ -61,7 +67,7 @@ def test_to_json_includes_metadata_from_result(tmp_path):
     )
     output = tmp_path / "result.json"
 
-    result.to_json(output, include_metadata=True)
+    ResultExportService().to_json(result, output, include_metadata=True)
 
     payload = json.loads(output.read_text(encoding="utf-8"))
     assert payload["meta"]["source_url"] == "https://example.com"
@@ -77,7 +83,7 @@ def test_to_json_excludes_metadata_by_default(tmp_path):
     )
     output = tmp_path / "result.json"
 
-    result.to_json(output)
+    ResultExportService().to_json(result, output)
 
     payload = json.loads(output.read_text(encoding="utf-8"))
     # By default, should return just the data array without meta wrapper
@@ -94,7 +100,7 @@ def test_to_csv_excludes_metadata_by_default(tmp_path):
     )
     output = tmp_path / "result.csv"
 
-    result.to_csv(output)
+    ResultExportService().to_csv(result, output)
 
     content = output.read_text(encoding="utf-8")
     # By default, should not include metadata comment

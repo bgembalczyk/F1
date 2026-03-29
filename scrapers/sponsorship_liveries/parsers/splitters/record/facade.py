@@ -3,6 +3,9 @@ from typing import Any
 from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline import (
     RecordSplitPipeline,
 )
+from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
 from scrapers.sponsorship_liveries.parsers.splitters.record.strategies import (
     deduplicate,
 )
@@ -27,4 +30,5 @@ class SponsorshipRecordSplitter:
         )
 
     def split_record_by_season(self, record: dict[str, Any]) -> list[dict[str, Any]]:
-        return self._pipeline.apply(record)
+        domain_record = PipelineRecord.from_input(record)
+        return [item.to_dict() for item in self._pipeline.apply(domain_record)]
