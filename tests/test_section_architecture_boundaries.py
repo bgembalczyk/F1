@@ -7,10 +7,7 @@ from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from tests.architecture.registry import ARCHITECTURE_REGISTRY
 from tests.support.imports_analyzer import parse_imports
 
-DOMAINS = ARCHITECTURE_REGISTRY.entrypoint_domains
-
-from tests.architecture.rules import ENTRYPOINT_DOMAINS
-from tests.support.imports_analyzer import parse_imports
+ENTRYPOINT_DOMAINS = ARCHITECTURE_REGISTRY.entrypoint_domains
 
 
 def _is_forbidden_single_scraper_import(
