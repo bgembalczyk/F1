@@ -1,9 +1,8 @@
-import json
-import time
-from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
+from infrastructure.cache.file_ttl_cache import FileTtlCache
+from infrastructure.cache.file_ttl_cache import GeminiJsonFileCacheAdapter
 from infrastructure.gemini.constants import ONE_YEAR_SECONDS
 
 
@@ -28,13 +27,12 @@ class GeminiCache:
         if cache_dir is None:
             # Domyślna ścieżka: <repo_root>/data/gemini_cache
             cache_dir = Path(__file__).resolve().parents[2] / "data" / "gemini_cache"
-        self.cache_dir = Path(cache_dir)
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
-        self.ttl_seconds = max(0, int(ttl_seconds))
 
-    # ------------------------------------------------------------------
-    # public API
-    # ------------------------------------------------------------------
+        self._cache = FileTtlCache[dict[str, Any]](
+            cache_dir=cache_dir,
+            ttl_seconds=ttl_seconds,
+            adapter=GeminiJsonFileCacheAdapter(),
+        )
 
     def get(self, question: str, model: str) -> dict[str, Any] | None:
         """Zwraca zbuforowaną odpowiedź lub ``None`` gdy brak/przestarzała.
@@ -42,30 +40,11 @@ class GeminiCache:
         Wynik z cache jest zwracany tylko jeśli zgadza się zarówno *question*
         jak i *model*.
         """
-        path = self._cache_path(question, model)
-        if not self._is_fresh(path):
-            return None
-        try:
-            return json.loads(path.read_text(encoding="utf-8"))
-        except (json.JSONDecodeError, OSError):
-            return None
+        return self._cache.get(self._cache_key(question, model))
 
     def set(self, question: str, model: str, response: dict[str, Any]) -> None:
         """Zapisuje odpowiedź do cache."""
-        path = self._cache_path(question, model)
-        path.write_text(json.dumps(response, ensure_ascii=False), encoding="utf-8")
+        self._cache.set(self._cache_key(question, model), response)
 
-    # ------------------------------------------------------------------
-    # helpers
-    # ------------------------------------------------------------------
-
-    def _cache_path(self, question: str, model: str) -> Path:
-        key = f"{model}:{question}"
-        digest = sha256(key.encode("utf-8")).hexdigest()
-        return self.cache_dir / f"{digest}.json"
-
-    def _is_fresh(self, path: Path) -> bool:
-        if not path.exists() or self.ttl_seconds <= 0:
-            return False
-        age_seconds = time.time() - path.stat().st_mtime
-        return age_seconds <= self.ttl_seconds
+    def _cache_key(self, question: str, model: str) -> str:
+        return f"{model}:{question}"

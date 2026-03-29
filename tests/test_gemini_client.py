@@ -9,6 +9,7 @@ from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.client import GeminiClient
 from infrastructure.gemini.client import ModelConfig
 from infrastructure.gemini.client import ModelState
+from infrastructure.gemini.constants import DEFAULT_MODELS
 
 # ---------------------------------------------------------------------------
 # ModelConfig / _ModelState unit tests
@@ -55,6 +56,34 @@ def test_model_state_rpd_window_expires() -> None:
     past = time.monotonic() - 86401.0  # just over 24 h ago
     state._rpd_timestamps.append(past)  # noqa: SLF001
     assert state.is_available(time.monotonic())
+
+
+def test_model_config_is_frozen() -> None:
+    config = ModelConfig("m", requests_per_minute=5, requests_per_day=100)
+
+    with pytest.raises(AttributeError):
+        config.model = "other-model"  # type: ignore[misc]
+
+
+@pytest.mark.parametrize(
+    ("model", "rpm", "rpd", "match"),
+    [
+        ("", 1, 1, "model"),
+        ("   ", 1, 1, "model"),
+        ("m", 0, 1, "requests_per_minute"),
+        ("m", -1, 1, "requests_per_minute"),
+        ("m", 1, 0, "requests_per_day"),
+        ("m", 1, -1, "requests_per_day"),
+    ],
+)
+def test_model_config_validation_boundaries(
+    model: str,
+    rpm: int,
+    rpd: int,
+    match: str,
+) -> None:
+    with pytest.raises(ValueError, match=match):
+        ModelConfig(model, requests_per_minute=rpm, requests_per_day=rpd)
 
 
 # ---------------------------------------------------------------------------
@@ -137,7 +166,8 @@ def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
 
     call_log: list[str] = []
 
-    def fake_call_api(_prompt, *, model, _response_mime_type):
+    def fake_call_api(_prompt, *, model, response_mime_type):
+        del response_mime_type
         call_log.append(model)
         if model == "model-a":
             msg = "API error from model-a"
@@ -185,7 +215,8 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
 
     call_log: list[str] = []
 
-    def fake_call_api(_prompt, *, model, _response_mime_type):
+    def fake_call_api(_prompt, *, model, response_mime_type):
+        del response_mime_type
         call_log.append(model)
         return {"ok": True}
 
@@ -227,7 +258,8 @@ def test_from_key_file_uses_default_models(tmp_path) -> None:
     key_file.write_text("my-api-key", encoding="utf-8")
     client = GeminiClient.from_key_file(key_file)
     assert len(client._model_states) > 0  # noqa: SLF001
-    assert client._model_states[0].model == "gemini-2.5-flash-lite"  # noqa: SLF001
+    assert client._model_states[0].model == "gemini-3-flash-preview"  # noqa: SLF001
+    assert client._model_states[0].model == DEFAULT_MODELS[0].model  # noqa: SLF001
 
 
 def test_from_key_file_accepts_custom_models(tmp_path) -> None:

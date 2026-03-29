@@ -26,7 +26,7 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
     )
     url = CurrentConstructorsListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_clses=(
+        list_scraper_classes=(
             CurrentConstructorsListScraper,
             FormerConstructorsListScraper,
             IndianapolisOnlyConstructorsListScraper,

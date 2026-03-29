@@ -3,6 +3,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
 from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
@@ -15,15 +16,13 @@ from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 
-RecoverableError = (
-    AttributeError,
-    KeyError,
-    LookupError,
+RecoverableNetworkError = (
+    RequestError,
+    ConnectionError,
     OSError,
-    RuntimeError,
-    TypeError,
-    ValueError,
+    TimeoutError,
 )
+RecoverableParseError = (KeyError, LookupError, ValueError)
 
 
 class WikipediaInfoboxScraper:
@@ -57,6 +56,8 @@ class WikipediaInfoboxScraper:
         self.record_factory = options.record_factory
         self.debug_dir = options.debug_dir
         self.error_report = options.error_report
+        self.error_policy = options.error_policy
+        self.error_retry_attempts = options.error_retry_attempts
         self.run_id = run_id
         self.url: str | None = None
         self.transformers = build_transformers(options.transformers)
@@ -74,14 +75,20 @@ class WikipediaInfoboxScraper:
             run_id=self.run_id,
         )
         html: str | None = None
-        try:
-            self.url = url
-            html = self._fetch(url)
-        except ScraperError as error:
-            return self._handle_scrape_error(error, handler=handler)
-        except RecoverableError as exc:
-            error = handler.wrap_network(exc, url=url)
-            return self._handle_scrape_error(error, handler=handler, cause=exc)
+        self.url = url
+        for attempt in range(self.error_retry_attempts):
+            try:
+                html = self._fetch(url)
+                break
+            except ScraperError as error:
+                return self._handle_scrape_error(error, handler=handler)
+            except RecoverableNetworkError as exc:
+                if self.error_policy == "retry" and attempt + 1 < self.error_retry_attempts:
+                    continue
+                if self.error_policy == "skip":
+                    return {}
+                error = handler.wrap_network(exc, url=url)
+                return self._handle_scrape_error(error, handler=handler, cause=exc)
 
         try:
             soup = BeautifulSoup(html, "html.parser")
@@ -89,7 +96,9 @@ class WikipediaInfoboxScraper:
             return self._apply_transformers(raw)
         except ScraperError as error:
             return self._handle_scrape_error(error, handler=handler)
-        except RecoverableError as exc:
+        except RecoverableParseError as exc:
+            if self.error_policy == "skip":
+                return {}
             error = handler.wrap_parse(exc, url=url)
             return self._handle_scrape_error(error, handler=handler, cause=exc)
 

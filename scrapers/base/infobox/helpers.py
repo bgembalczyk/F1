@@ -21,5 +21,6 @@ def parse_infobox_from_soup(
         debug_dir=getattr(infobox_scraper, "debug_dir", None),
         run_id=getattr(infobox_scraper, "run_id", None),
         url=getattr(infobox_scraper, "url", None),
+        error_policy=getattr(infobox_scraper, "error_policy", "fail-fast"),
     )
     return extractor.extract(soup)

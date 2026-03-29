@@ -2,47 +2,48 @@ from __future__ import annotations
 
 from pathlib import Path
 
-DOMAINS = ("drivers", "constructors", "circuits", "seasons", "grands_prix")
-LAYERS = ("list", "sections", "infobox", "postprocess")
+from tests.architecture.rules import ENTRYPOINT_DOMAINS
+from tests.architecture.rules import FORBIDDEN_IMPORTS_BY_LAYER
+from tests.architecture.rules import LAYERS
+from tests.architecture.rules import REQUIRED_LAYERS_BY_DOMAIN
+from tests.architecture.rules import infer_layer
+from tests.architecture.rules import resolve_import_targets
 
-FORBIDDEN_IMPORTS_BY_LAYER = {
-    "list": ("sections", "infobox", "postprocess"),
-    "sections": ("list_scraper", "single_scraper"),
-    "infobox": ("sections", "list", "postprocess"),
-    "postprocess": ("sections", "list", "infobox"),
-}
+
+def _iter_layer_files(domain_dir: Path, domain: str) -> list[tuple[Path, str]]:
+    collected: list[tuple[Path, str]] = []
+    for py_file in domain_dir.rglob("*.py"):
+        layer = infer_layer(py_file, domain=domain)
+        if layer in LAYERS:
+            collected.append((py_file, layer))
+    return collected
 
 
 def test_domains_have_required_layout_and_facade_entrypoint() -> None:
     root = Path("scrapers")
-    for domain in DOMAINS:
+    for domain in ENTRYPOINT_DOMAINS:
         domain_dir = root / domain
         assert domain_dir.exists(), f"Missing domain directory: {domain_dir}"
         assert (
             domain_dir / "entrypoint.py"
         ).exists(), f"Missing facade entrypoint in domain: {domain}"
-        for layer in LAYERS:
-            layer_dir = domain_dir / layer
-            assert layer_dir.exists(), f"Missing layer directory: {layer_dir}"
-            assert (
-                layer_dir / "__init__.py"
-            ).exists(), f"Missing layer package init: {layer_dir / '__init__.py'}"
+
+        available_layers = {layer for _, layer in _iter_layer_files(domain_dir, domain)}
+        required_layers = set(REQUIRED_LAYERS_BY_DOMAIN[domain])
+        missing_layers = required_layers - available_layers
+        assert not missing_layers, f"Missing layer modules for {domain}: {sorted(missing_layers)}"
 
 
 def test_layer_import_boundaries_are_not_violated() -> None:
     root = Path("scrapers")
-    for domain in DOMAINS:
+    for domain in ENTRYPOINT_DOMAINS:
         domain_dir = root / domain
-        for layer, forbidden in FORBIDDEN_IMPORTS_BY_LAYER.items():
-            layer_dir = domain_dir / layer
-            for py_file in layer_dir.glob("*.py"):
-                source = py_file.read_text(encoding="utf-8")
-                for forbidden_target in forbidden:
-                    dotted = f"scrapers.{domain}.{forbidden_target}"
-                    slashed = f"scrapers/{domain}/{forbidden_target}"
-                    assert (
-                        dotted not in source
-                    ), f"Layer boundary violation: {py_file} imports {dotted}"
-                    assert (
-                        slashed not in source
-                    ), f"Layer boundary violation: {py_file} references {slashed}"
+        for py_file, layer in _iter_layer_files(domain_dir, domain):
+            targets = resolve_import_targets(py_file)
+            forbidden = FORBIDDEN_IMPORTS_BY_LAYER[layer]
+            for forbidden_target in forbidden:
+                dotted = f"scrapers.{domain}.{forbidden_target}"
+                assert all(
+                    not (target == dotted or target.startswith(f"{dotted}."))
+                    for target in targets
+                ), f"Layer boundary violation: {py_file} imports {dotted}; targets={targets}"

@@ -15,6 +15,7 @@ from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
 from scrapers.wiki.scraper import WikiScraper
+from validation.record_factory_validator import adapt_record_factory_validator
 
 
 class F1TableScraper(WikiScraper, ABC):
@@ -86,8 +87,13 @@ class F1TableScraper(WikiScraper, ABC):
             model_fields=self._model_fields(),
             debug_dir=options.debug_dir,
         )
-        if self.validator is not None and self.validator.record_factory is None:
-            self.validator.set_record_factory(self.record_factory)
+        if (
+            self.validator is not None
+            and self.validator.record_factory_validator is None
+        ):
+            self.validator.set_record_factory_validator(
+                adapt_record_factory_validator(self.record_factory),
+            )
 
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         return options

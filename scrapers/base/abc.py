@@ -87,6 +87,8 @@ class ABCScraper(ABC):
             error_handler=runtime.error_handler,
             logger=self.logger,
             get_url=lambda: getattr(self, "url", None),
+            policy=options.error_policy,
+            retry_attempts=options.error_retry_attempts,
         )
 
     def _initialize_quality_report_service(self) -> None:
