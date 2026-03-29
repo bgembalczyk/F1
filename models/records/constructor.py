@@ -50,3 +50,7 @@ CONSTRUCTOR_DEFINITION = RecordDefinition(
 )
 
 CONSTRUCTOR_SCHEMA = CONSTRUCTOR_DEFINITION.to_schema()
+
+
+def validate_constructor_record(record: dict[str, object]) -> list[str]:
+    return [issue.message for issue in CONSTRUCTOR_DEFINITION.validate_record(record)]

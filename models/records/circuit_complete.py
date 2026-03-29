@@ -17,3 +17,13 @@ class CircuitCompleteRecord(CircuitBaseRecord, total=False):
     fia_grade: str
     history: list[Any]
     layouts: list[dict[str, Any]]
+
+
+def validate_circuit_complete_record(record: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    if "url" in record and record.get("url") is not None and not isinstance(
+        record.get("url"),
+        str,
+    ):
+        errors.append("Invalid type for url: expected str or None")
+    return errors
