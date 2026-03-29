@@ -23,6 +23,8 @@ def _default_export_service() -> ExportService:
     return create_default_export_service()
 
 
+
+
 @dataclass(frozen=True)
 class ScrapeResult:
     data: list[ExportRecord]

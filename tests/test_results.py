@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 
 from scrapers.base.results import ScrapeResult
+from scrapers.base.services.result_normalizer import ScrapeResultNormalizer
 
 
 def test_scrape_result_normalizes_mixed_data() -> None:
@@ -15,7 +16,8 @@ def test_scrape_result_normalizes_mixed_data() -> None:
         source_url=None,
     )
 
-    normalized = result._with_normalized_data(
+    normalized = ScrapeResultNormalizer().normalize(
+        result,
         normalize_keys=True,
         normalization_rules=None,
     )

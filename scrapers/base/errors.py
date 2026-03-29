@@ -1,6 +1,7 @@
 from dataclasses import KW_ONLY
 from dataclasses import dataclass
 from enum import Enum
+from typing import TypedDict
 
 
 class ErrorCategory(str, Enum):
@@ -55,12 +56,39 @@ class ScraperError(Exception):
             details = f"{details} ({', '.join(context)})"
         return details
 
+    def to_payload(self) -> "ScraperErrorPayload":
+        return ScraperErrorPayload(
+            message=self.message,
+            category=self.category.value,
+            behavior=self.behavior.value,
+            critical=self.critical,
+            url=self.url,
+            section_id=self.section_id,
+            parser_name=self.parser_name,
+            run_id=self.run_id,
+            cause=str(self.cause) if self.cause else None,
+        )
+
     @property
     def behavior(self) -> ErrorBehavior:
         return ERROR_BEHAVIOR_BY_CATEGORY.get(
             self.category,
             ErrorBehavior.HARD if self.critical else ErrorBehavior.SOFT,
         )
+
+
+class ScraperErrorPayload(TypedDict):
+    """Typed payload for exporting scraper exceptions to pipeline logs."""
+
+    message: str
+    category: str
+    behavior: str
+    critical: bool
+    url: str | None
+    section_id: str | None
+    parser_name: str | None
+    run_id: str | None
+    cause: str | None
 
 
 @dataclass(eq=False)

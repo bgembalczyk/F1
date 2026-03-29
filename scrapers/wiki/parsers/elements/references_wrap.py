@@ -1,18 +1,17 @@
-from typing import Any
-
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.text_cleaning import extract_text
+from scrapers.wiki.parsers.types import ReferencesWrapParsedData
 
 
-class ReferencesWrapParser(WikiParser):
+class ReferencesWrapParser(WikiParser[ReferencesWrapParsedData]):
     """Parser sekcji przypisów Wikipedii.
 
     Przetwarza divy z klasą zawierającą 'references-wrap'.
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag) -> ReferencesWrapParsedData:
         """Parsuje sekcję przypisów HTML.
 
         Args:
