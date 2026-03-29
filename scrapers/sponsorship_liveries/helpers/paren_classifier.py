@@ -16,9 +16,15 @@ Każda kategoria to lista łańcuchów (lub pusta lista, jeśli nie dotyczy).
 """
 
 import logging
+import time
 from typing import Any
+from typing import Literal
 
 from infrastructure.gemini.client import GeminiClient
+from infrastructure.gemini.errors import GeminiHttpError
+from infrastructure.gemini.errors import GeminiRateLimitExhaustedError
+from infrastructure.gemini.errors import GeminiResponseParseError
+from infrastructure.gemini.errors import GeminiTransportError
 from scrapers.sponsorship_liveries.helpers.constants import PROMPT_TEMPLATE
 
 logger = logging.getLogger(__name__)
@@ -37,6 +43,18 @@ class ParenClassifier:
 
     def __init__(self, gemini_client: GeminiClient) -> None:
         self._client = gemini_client
+        self._error_policy: Literal["retry", "fallback", "fail-fast"] = "fallback"
+        self._retry_attempts = 2
+
+    def with_error_policy(
+        self,
+        *,
+        policy: Literal["retry", "fallback", "fail-fast"],
+        retry_attempts: int = 2,
+    ) -> "ParenClassifier":
+        self._error_policy = policy
+        self._retry_attempts = max(1, retry_attempts)
+        return self
 
     # ------------------------------------------------------------------
     # public API
@@ -77,16 +95,11 @@ class ParenClassifier:
             year_text=year_text,
             headers=headers or [],
         )
-        try:
-            result = self._client.query(prompt)
-            return self._normalize_result(result)
-        except Exception:
-            logger.exception(
-                "Gemini classification failed for paren=%r team=%r",
-                paren_content,
-                team_name,
-            )
-            return self._empty_result()
+        return self._classify_with_policy(
+            prompt=prompt,
+            paren_content=paren_content,
+            team_name=team_name,
+        )
 
     # ------------------------------------------------------------------
     # helpers
@@ -131,3 +144,55 @@ class ParenClassifier:
             else:
                 result[key] = []
         return result
+
+    def _classify_with_policy(
+        self,
+        *,
+        prompt: str,
+        paren_content: str,
+        team_name: str,
+    ) -> dict[str, list[str]]:
+        retries_left = self._retry_attempts
+        while retries_left > 0:
+            try:
+                result = self._client.query(prompt)
+                return self._normalize_result(result)
+            except (GeminiTransportError, GeminiHttpError) as exc:
+                retries_left -= 1
+                if self._error_policy == "retry" and retries_left > 0:
+                    time.sleep(0.05)
+                    continue
+                return self._handle_error(
+                    exc=exc,
+                    paren_content=paren_content,
+                    team_name=team_name,
+                )
+            except (GeminiResponseParseError, GeminiRateLimitExhaustedError) as exc:
+                return self._handle_error(
+                    exc=exc,
+                    paren_content=paren_content,
+                    team_name=team_name,
+                )
+            except Exception as exc:
+                return self._handle_error(
+                    exc=exc,
+                    paren_content=paren_content,
+                    team_name=team_name,
+                )
+        return self._empty_result()
+
+    def _handle_error(
+        self,
+        *,
+        exc: Exception,
+        paren_content: str,
+        team_name: str,
+    ) -> dict[str, list[str]]:
+        if self._error_policy == "fail-fast":
+            raise exc
+        logger.exception(
+            "Gemini classification failed for paren=%r team=%r",
+            paren_content,
+            team_name,
+        )
+        return self._empty_result()

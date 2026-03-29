@@ -3,6 +3,8 @@
 
 from unittest.mock import MagicMock
 
+import pytest
+
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
@@ -520,10 +522,11 @@ def test_hallucination_only_matching_values_kept() -> None:
 def test_gemini_classifier_exception_does_not_propagate() -> None:
     """If classifier.classify() raises, the column still sets the season field."""
     from infrastructure.gemini.client import GeminiClient
+    from infrastructure.gemini.errors import GeminiTransportError
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
     mock_client = MagicMock(spec=GeminiClient)
-    mock_client.query.side_effect = RuntimeError("network error")
+    mock_client.query.side_effect = GeminiTransportError("network error")
     classifier = ParenClassifier(mock_client)
 
     col = SponsorshipSeasonsColumn(team_name="Coloni", classifier=classifier)
@@ -538,6 +541,24 @@ def test_gemini_classifier_exception_does_not_propagate() -> None:
     assert "car" not in record
     assert "engine" not in record
     assert "grand_prix_scope" not in record
+
+
+def test_gemini_classifier_fail_fast_policy_propagates_error() -> None:
+    from infrastructure.gemini.client import GeminiClient
+    from infrastructure.gemini.errors import GeminiResponseParseError
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+
+    mock_client = MagicMock(spec=GeminiClient)
+    mock_client.query.side_effect = GeminiResponseParseError("bad response")
+    classifier = ParenClassifier(mock_client).with_error_policy(policy="fail-fast")
+
+    with pytest.raises(GeminiResponseParseError, match="bad response"):
+        classifier.classify(
+            paren_content="with Subaru power",
+            team_name="Coloni",
+            year_text="1990",
+            headers=["Year"],
+        )
 
 
 # ── Fix 5: McLaren – "Livery principal sponsor(s)" maps to livery_principal_sponsors ──

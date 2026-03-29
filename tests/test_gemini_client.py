@@ -1,6 +1,8 @@
 """Tests for GeminiClient - multi-model fallback, RPM/RPD limits, cache integration."""
 
+import json
 import time
+import urllib.error
 from unittest.mock import MagicMock
 
 import pytest
@@ -9,6 +11,10 @@ from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.client import GeminiClient
 from infrastructure.gemini.client import ModelConfig
 from infrastructure.gemini.client import ModelState
+from infrastructure.gemini.constants import DEFAULT_MODELS
+from infrastructure.gemini.errors import GeminiRateLimitExhaustedError
+from infrastructure.gemini.errors import GeminiResponseParseError
+from infrastructure.gemini.errors import GeminiTransportError
 
 # ---------------------------------------------------------------------------
 # ModelConfig / _ModelState unit tests
@@ -127,7 +133,7 @@ def test_query_stores_result_in_cache(tmp_path) -> None:
 
 
 def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
-    """When model-a raises RuntimeError, query retries with model-b."""
+    """When model-a raises GeminiTransportError, query retries with model-b."""
     cache = GeminiCache(cache_dir=tmp_path / "c")
     models = [
         ModelConfig("model-a", requests_per_minute=10, requests_per_day=500),
@@ -137,11 +143,12 @@ def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
 
     call_log: list[str] = []
 
-    def fake_call_api(_prompt, *, model, _response_mime_type):
+    def fake_call_api(_prompt, *, model, response_mime_type):
+        _ = response_mime_type
         call_log.append(model)
         if model == "model-a":
             msg = "API error from model-a"
-            raise RuntimeError(msg)
+            raise GeminiTransportError(msg)
         return {"result": "ok"}
 
     client._call_api = fake_call_api  # noqa: SLF001
@@ -152,16 +159,16 @@ def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
 
 
 def test_query_raises_when_all_models_exhausted(tmp_path) -> None:
-    """RuntimeError is raised when every model in the list returns an error."""
+    """GeminiRateLimitExhaustedError when every model in the list returns an error."""
     cache = GeminiCache(cache_dir=tmp_path / "c")
     models = [
         ModelConfig("model-a", requests_per_minute=10, requests_per_day=500),
         ModelConfig("model-b", requests_per_minute=10, requests_per_day=500),
     ]
     client = GeminiClient(api_key="key", models=models, cache=cache)
-    client._call_api = MagicMock(side_effect=RuntimeError("always fails"))  # noqa: SLF001
+    client._call_api = MagicMock(side_effect=GeminiTransportError("always fails"))  # noqa: SLF001
 
-    with pytest.raises(RuntimeError, match="wyczerpane"):
+    with pytest.raises(GeminiRateLimitExhaustedError, match="wyczerpane"):
         client.query("prompt")
 
 
@@ -185,7 +192,8 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
 
     call_log: list[str] = []
 
-    def fake_call_api(_prompt, *, model, _response_mime_type):
+    def fake_call_api(_prompt, *, model, response_mime_type):
+        _ = response_mime_type
         call_log.append(model)
         return {"ok": True}
 
@@ -198,7 +206,7 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
 
 
 def test_query_raises_when_all_models_at_rpm_limit(tmp_path) -> None:
-    """RuntimeError when every model has hit its RPM limit and no fallback remains."""
+    """GeminiRateLimitExhaustedError when every model hit RPM limit."""
 
     cache = GeminiCache(cache_dir=tmp_path / "c")
     models = [
@@ -208,7 +216,7 @@ def test_query_raises_when_all_models_at_rpm_limit(tmp_path) -> None:
     now = time.monotonic()
     client._model_states[0]._rpm_timestamps.append(now)  # noqa: SLF001
 
-    with pytest.raises(RuntimeError, match="wyczerpane"):
+    with pytest.raises(GeminiRateLimitExhaustedError, match="wyczerpane"):
         client.query("prompt")
 
 
@@ -227,7 +235,7 @@ def test_from_key_file_uses_default_models(tmp_path) -> None:
     key_file.write_text("my-api-key", encoding="utf-8")
     client = GeminiClient.from_key_file(key_file)
     assert len(client._model_states) > 0  # noqa: SLF001
-    assert client._model_states[0].model == "gemini-2.5-flash-lite"  # noqa: SLF001
+    assert client._model_states[0].model == DEFAULT_MODELS[0].model  # noqa: SLF001
 
 
 def test_from_key_file_accepts_custom_models(tmp_path) -> None:
@@ -236,3 +244,51 @@ def test_from_key_file_accepts_custom_models(tmp_path) -> None:
     custom = [ModelConfig("custom-model", requests_per_minute=5, requests_per_day=100)]
     client = GeminiClient.from_key_file(key_file, models=custom)
     assert client._model_states[0].model == "custom-model"  # noqa: SLF001
+
+
+def test_call_api_raises_transport_error_on_urlerror(tmp_path, monkeypatch) -> None:
+    client = GeminiClient(
+        api_key="key",
+        models=[ModelConfig("model-a", requests_per_minute=10, requests_per_day=500)],
+        cache=GeminiCache(cache_dir=tmp_path / "c"),
+    )
+
+    def _raise_urlerror(*_args, **_kwargs):
+        raise urllib.error.URLError("network down")
+
+    monkeypatch.setattr("urllib.request.urlopen", _raise_urlerror)
+
+    with pytest.raises(GeminiTransportError, match="Nie udało się połączyć"):
+        client._call_api(  # noqa: SLF001
+            "prompt",
+            model="model-a",
+            response_mime_type="application/json",
+        )
+
+
+def test_call_api_raises_parse_error_on_invalid_payload_json(tmp_path, monkeypatch) -> None:
+    client = GeminiClient(
+        api_key="key",
+        models=[ModelConfig("model-a", requests_per_minute=10, requests_per_day=500)],
+        cache=GeminiCache(cache_dir=tmp_path / "c"),
+    )
+
+    class _FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def read(self):
+            payload = {"candidates": [{"content": {"parts": [{"text": "{bad json"}]}}]}
+            return json.dumps(payload).encode("utf-8")
+
+    monkeypatch.setattr("urllib.request.urlopen", lambda *_args, **_kwargs: _FakeResponse())
+
+    with pytest.raises(GeminiResponseParseError, match="nie jest poprawnym JSON-em"):
+        client._call_api(  # noqa: SLF001
+            "prompt",
+            model="model-a",
+            response_mime_type="application/json",
+        )
