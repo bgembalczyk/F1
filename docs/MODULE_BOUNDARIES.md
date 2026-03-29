@@ -320,6 +320,19 @@ Każda większa zmiana architektoniczna w PR musi:
 - wskazywać numer ADR (`ADR-XXXX`) w opisie PR i/lub commit message,
 - wskazywać, czy zmiana **stosuje** istniejącą decyzję, czy ją **modyfikuje**.
 
+### CI gate: automatyczna walidacja referencji ADR
+
+Workflow `static-quality-gates.yml` uruchamia skrypt `scripts/ci/enforce_architecture_adr_reference.py`, który:
+- analizuje diff i wykrywa zmiany w ścieżkach: `layers/`, `scrapers/base/`, `tests/architecture/`,
+- wymaga co najmniej jednej referencji `ADR-XXXX` w tytule/opisie PR lub commit message,
+- ignoruje zmiany wyłącznie kosmetyczne (puste linie, formatowanie, komentarze `#`).
+
+### Przykłady poprawnych referencji
+
+- `ADR-0002: dostosowanie parsera sekcji do nowego kontraktu`
+- `Implement cache boundary for layer adapters (ADR-0003)`
+- `Refactor hook names according to ADR-0004`
+
 ### Wymóg review
 
 Jeżeli PR zmienia wcześniej zatwierdzoną zasadę, review wymaga:

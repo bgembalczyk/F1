@@ -59,11 +59,17 @@ class DriversChampionships(ValueObject):
     ) -> "DriversChampionships":
         if isinstance(value, cls):
             return value
-        payload = dict(value or {})
-        return cls(
-            count=payload.get("count", 0),
-            seasons=payload.get("seasons") or [],
-        )
+        if value is None:
+            return cls()
+        if not isinstance(value, Mapping):
+            msg = f"Nieobsługiwany typ danych: {type(value)!r}"
+            raise TypeError(msg)
+        return cls.from_mapping(value)
+
+    @classmethod
+    def from_mapping(cls, data: Mapping[str, Any]) -> "DriversChampionships":
+        payload = dict(data)
+        return cls(count=payload.get("count", 0), seasons=payload.get("seasons") or [])
 
     def to_dict(self) -> dict[str, Any]:
         return {

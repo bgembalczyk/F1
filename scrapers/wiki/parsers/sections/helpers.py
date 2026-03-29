@@ -5,6 +5,8 @@ from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
 from scrapers.wiki.parsers.sections.constants import TOP_SECTION_NAME
 from scrapers.wiki.parsers.sections.data_classes import SectionProfile
 from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
+from scrapers.wiki.parsers.sections.section_profiles_config import SECTION_PROFILES_CONFIG
+from scrapers.wiki.parsers.sections.section_profiles_config import validate_section_profiles_config
 
 
 def _split_into_parts(
@@ -38,66 +40,16 @@ def _split_into_parts(
     return parts
 
 
-def _domain_aliases() -> dict[str, dict[str, set[str]]]:
-    return {
-        "seasons": {
-            "results": {"grands prix", "results and standings"},
-            "regulation changes": {"rule changes"},
-            "mid-season changes": {"driver changes"},
-        },
-        "drivers": {
-            "career results": {"racing record", "karting record"},
-            "racing record": {"motorsport career results"},
-            "non-championship": {"non-championship races"},
-        },
-        "circuits": {
-            "circuits": {"formula one circuits", "list of formula one circuits"},
-            "results": {"race results"},
-            "layout history": {"history"},
-            "events": {"races"},
-            "lap records": {"formula one lap records"},
-        },
-        "constructors": {
-            "former constructors": {"defunct constructors"},
-            "championship results": {"formula one/world championship results"},
-            "complete formula one results": {"complete world championship results"},
-        },
-        "grands_prix": {},
-    }
-
-
-def _canonical_sections() -> dict[str, set[str]]:
-    return {
-        "drivers": {"career results", "racing record", "non-championship"},
-        "constructors": {
-            "history",
-            "championship results",
-            "complete formula one results",
-            "former constructors",
-        },
-        "circuits": {"circuits", "layout history", "lap records", "events", "results"},
-        "seasons": {
-            "results",
-            "regulation changes",
-            "mid-season changes",
-            "calendar",
-            "standings",
-        },
-        "grands_prix": {"by year", "winners"},
-    }
-
-
 def _copy_common_aliases() -> dict[str, set[str]]:
     return {key: set(values) for key, values in BASE_COMMON_ALIASES.items()}
 
 
 def _build_profile_aliases(
     *,
-    domain: str,
-    domain_aliases: dict[str, dict[str, set[str]]],
+    domain_aliases: dict[str, frozenset[str]],
 ) -> dict[str, frozenset[str]]:
     aliases = _copy_common_aliases()
-    for key, values in domain_aliases.get(domain, {}).items():
+    for key, values in domain_aliases.items():
         aliases.setdefault(key, set()).update(values)
     return {key: frozenset(values) for key, values in aliases.items()}
 
@@ -105,14 +57,13 @@ def _build_profile_aliases(
 def _build_domain_profile(
     *,
     domain: str,
-    canonical_sections: set[str],
-    domain_aliases: dict[str, dict[str, set[str]]],
+    canonical_sections: frozenset[str],
+    domain_aliases: dict[str, frozenset[str]],
 ) -> SectionProfile:
     return SectionProfile(
         domain=domain,
         canonical_section_ids=frozenset(canonical_sections),
         heading_aliases=_build_profile_aliases(
-            domain=domain,
             domain_aliases=domain_aliases,
         ),
         required_sections=frozenset(),
@@ -121,18 +72,15 @@ def _build_domain_profile(
 
 
 def _build_profiles() -> dict[str, SectionProfile]:
-    canonical = _canonical_sections()
-    domain_aliases = _domain_aliases()
-    profiles: dict[str, SectionProfile] = {}
-
-    for domain, canonical_sections in canonical.items():
-        profiles[domain] = _build_domain_profile(
+    validate_section_profiles_config(SECTION_PROFILES_CONFIG)
+    return {
+        domain: _build_domain_profile(
             domain=domain,
-            canonical_sections=canonical_sections,
-            domain_aliases=domain_aliases,
+            canonical_sections=config.canonical_sections,
+            domain_aliases=dict(config.heading_aliases),
         )
-
-    return profiles
+        for domain, config in SECTION_PROFILES_CONFIG.items()
+    }
 
 
 DOMAIN_SECTION_PROFILES = _build_profiles()

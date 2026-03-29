@@ -18,3 +18,11 @@ class Response:
     def raise_for_status(self) -> None:
         if HttpStatusPolicy.is_error(self.status_code):
             raise HTTPError(self.url, self.status_code, self.text, self.headers)
+        if self.status_code >= HTTP_BAD_REQUEST:
+            raise HTTPError(
+                self.url,
+                self.status_code,
+                f"HTTP request failed with status {self.status_code}",
+                self.headers,
+                self.text,
+            )
