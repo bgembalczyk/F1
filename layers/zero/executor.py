@@ -3,6 +3,7 @@ from pathlib import Path
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.reporter import LayerExecutionReporterProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.merge_service import LayerZeroMergeService
@@ -25,6 +26,7 @@ class LayerZeroExecutor:
         merge_service: LayerZeroMergeService,
         job_hook: LayerZeroJobHook,
         year_provider: Callable[[], int],
+        reporter: LayerExecutionReporterProtocol,
     ) -> None:
         self._list_job_registry = list_job_registry
         self._validate_list_registry = validate_list_registry
@@ -33,13 +35,14 @@ class LayerZeroExecutor:
         self._merge_service = merge_service
         self._job_hook = job_hook
         self._year_provider = year_provider
+        self._reporter = reporter
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
 
         for job in self._list_job_registry:
-            print(f"[list] running  {job.list_scraper_cls.__name__}")
+            self._reporter.started(layer="layer_zero", step=job.seed_name)
 
             local_run_config = self._build_local_run_config(
                 run_config=run_config,
@@ -57,7 +60,7 @@ class LayerZeroExecutor:
                 l0_raw_json_path=l0_raw_json_path,
             )
 
-            print(f"[list] finished {job.list_scraper_cls.__name__}")
+            self._reporter.finished(layer="layer_zero", step=job.seed_name)
 
         self._finalize_merge(base_wiki_dir)
 
