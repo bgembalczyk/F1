@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
-from scripts.check_di_antipatterns import run_check
+from scripts.check_di_antipatterns import DI_ADR_THRESHOLD, run_check
 
 
 def _write(path: Path, content: str) -> Path:
@@ -98,3 +99,12 @@ class DriverPipeline:
 
     assert len(violations) == 1
     assert violations[0].violation_type == "import"
+
+
+def test_di_adr_threshold_is_consistent_between_code_and_docs() -> None:
+    docs_path = Path("docs/architecture/di-antipattern-rules.md")
+    docs_text = docs_path.read_text(encoding="utf-8")
+    match = re.search(r"co najmniej (\d+) naruszeń", docs_text)
+
+    assert match is not None
+    assert int(match.group(1)) == DI_ADR_THRESHOLD
