@@ -28,9 +28,11 @@ def test_entrypoints_reuse_centralized_domain_config_registry() -> None:
         module = importlib.import_module(module_name)
         domain = module_name.split(".")[-2]
         config = get_domain_entrypoint_config(domain)
+        resolved_scraper_cls = config.list_scraper_cls_provider.resolve()
 
         assert config == module.ENTRYPOINT_CONFIG
-        assert module.LIST_SCRAPER_CLASS is config.list_scraper_cls
+        assert module.LIST_SCRAPER_CLASS_PROVIDER is config.list_scraper_cls_provider
+        assert module.LIST_SCRAPER_CLASS is resolved_scraper_cls
         assert config.default_output_json == module.DEFAULT_OUTPUT_JSON
         assert config.default_output_csv == getattr(module, "DEFAULT_OUTPUT_CSV", None)
         assert module.RUN_CONFIG_PROFILE is config.run_config_profile
