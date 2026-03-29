@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import TYPE_CHECKING
 from typing import Any
+from typing import Callable
 
 from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
 
@@ -40,6 +41,7 @@ class SectionProfile:
     domain: str
     canonical_section_ids: frozenset[str]
     heading_aliases: dict[str, frozenset[str]]
+    dynamic_alias_resolver: Callable[[str], set[str]] | None = None
     priorities: SectionMatchPriorities = field(
         default_factory=SectionMatchPriorities,
     )
@@ -51,6 +53,8 @@ class SectionProfile:
         aliases = set(self.heading_aliases.get(normalized_target, frozenset()))
         if normalized_target in self.canonical_section_ids:
             aliases.update(self.heading_aliases.get(normalized_target, frozenset()))
+        if self.dynamic_alias_resolver is not None:
+            aliases.update(self.dynamic_alias_resolver(normalized_target))
         return aliases
 
     def canonical_for(self, target: str) -> str | None:
