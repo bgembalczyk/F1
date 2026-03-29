@@ -26,11 +26,16 @@ class CompositeRecordValidator(RecordValidator):
         record_factory_validator: RecordFactoryValidatorProtocol | None = None,
     ) -> None:
         super().__init__(record_factory_validator=record_factory_validator)
-        self._common_rules = tuple(common_rules)
-        self._domain_rules = tuple(domain_rules)
+        self._rules = (*common_rules, *domain_rules)
 
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        return self._execute_rules(record, (*self._common_rules, *self._domain_rules))
+        return self._execute_rules(record, self._rules)
+
+    def with_rules(self, *rules: ValidationRule) -> CompositeRecordValidator:
+        return CompositeRecordValidator(
+            common_rules=(*self._rules, *rules),
+            record_factory_validator=self.record_factory_validator,
+        )
 
     @classmethod
     def _execute_rules(
