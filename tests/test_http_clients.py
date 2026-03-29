@@ -11,6 +11,11 @@ from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
+from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
+from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
+from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
+from infrastructure.http_client.requests_shim.response import Response
+from infrastructure.http_client.requests_shim.session import Session
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
@@ -207,16 +212,32 @@ def test_http_policy_shared_between_scraper_options_and_fetchers():
     policy = HttpPolicy(timeout=5, retries=1, cache=None)
     http_client = _DummyHttpClient()
 
-    options = ScraperOptions(policy=policy, http_client=http_client)
-    fetcher = options.with_fetcher()
+    options = ScraperOptions()
+    options.http.policy = policy
+    options.http.http_client = http_client
+    fetcher = options.http.http_client
 
     sub_options = ScraperOptions(
-        policy=options.policy,
-        http_client=options.http_client,
         source_adapter=fetcher,
     )
-    sub_fetcher = sub_options.with_fetcher()
+    sub_options.http.policy = options.http.policy
+    sub_options.http.http_client = options.http.http_client
+    sub_fetcher = sub_options.source_adapter
 
-    assert fetcher.policy is policy
+    assert options.http.policy is policy
     assert sub_fetcher is fetcher
     assert sub_fetcher.policy is policy
+
+
+def test_runtime_checkable_session_protocol_accepts_requests_shim_session():
+    assert isinstance(Session(), SessionProtocol)
+
+
+def test_runtime_checkable_response_protocol_accepts_requests_shim_response():
+    response = Response(url="https://example.com", status_code=200, headers={}, text="ok")
+    assert isinstance(response, HttpResponseProtocol)
+
+
+def test_runtime_checkable_http_client_protocol_accepts_urllib_client():
+    client = UrllibHttpClient()
+    assert isinstance(client, HttpClientProtocol)

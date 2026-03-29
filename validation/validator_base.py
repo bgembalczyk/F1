@@ -43,22 +43,10 @@ class RecordValidator(ABC):
 
     def record_validation_result(self, errors: Sequence[ValidationIssue | str]) -> None:
         issues = [self._coerce_issue(error) for error in errors]
-        self._stats.total_records += 1
         if issues:
-            self._stats.rejected_records += 1
-        self._track_errors(issues)
-
-    def _track_errors(self, errors: Sequence[ValidationIssue]) -> None:
-        for error in errors:
-            if error.code in {"missing", "null"} and error.field:
-                self._stats.missing[error.field] = (
-                    self._stats.missing.get(error.field, 0) + 1
-                )
-                continue
-            if error.code == "type" and error.field:
-                self._stats.types[error.field] = (
-                    self._stats.types.get(error.field, 0) + 1
-                )
+            self._stats.record_rejected(issues)
+            return
+        self._stats.record_accepted()
 
     @staticmethod
     def _extract_missing_key(error: str) -> str | None:
@@ -73,11 +61,10 @@ class RecordValidator(ABC):
         return SchemaValidationEngine.coerce_issue(error)
 
     def build_quality_report(self) -> dict[str, Any]:
-        accepted = self._stats.total_records - self._stats.rejected_records
         return {
             "summary": {
                 "total_records": self._stats.total_records,
-                "accepted_records": accepted,
+                "accepted_records": self._stats.accepted_records,
                 "rejected_records": self._stats.rejected_records,
             },
             "missing": dict(sorted(self._stats.missing.items())),
@@ -139,7 +126,7 @@ class RecordValidator(ABC):
             errors.extend(cls._validate_nested_value(key, value, nested_schema))
         for validator in normalized.custom_validators:
             errors.extend(cls._coerce_issue(error) for error in validator(record))
-        return errors
+        return SchemaValidationEngine.render_issues(errors)
 
     @classmethod
     def _validate_nested_value(

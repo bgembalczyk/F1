@@ -60,7 +60,7 @@ class WikipediaInfoboxScraper:
         self.error_retry_attempts = options.error_retry_attempts
         self.run_id = run_id
         self.url: str | None = None
-        self.transformers = build_transformers(options.transformers)
+        self.transformers = build_transformers(options.pipeline.transformers)
 
     # ------------------------------
     # Public API

@@ -2,6 +2,7 @@ import json
 import re
 from collections.abc import Callable
 from pathlib import Path
+from typing import Protocol
 
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
@@ -13,6 +14,15 @@ from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
 from scrapers.wiki.constants import RED_FLAG_FIELDS
 from scrapers.wiki.constants import TYRE_MANUFACTURERS_SOURCE
+
+
+class RecordTransformHandler(Protocol):
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]: ...
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -63,36 +73,148 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
     if not isinstance(record, dict):
         return record
 
-    return _transform_races_domain(
-        domain,
-        source_name,
-        _transform_drivers_domain(
-            domain,
-            source_name,
-            _transform_teams_domain(
-                domain,
-                source_name,
-                _transform_grands_prix_domain(
-                    domain,
-                    _transform_engines_domain(
-                        domain,
-                        source_name,
-                        _transform_circuits_domain(
-                            domain,
-                            _transform_constructor_domain(
-                                domain,
-                                source_name,
-                                _transform_tyre_manufacturers(
-                                    source_name,
-                                    dict(record),
-                                ),
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
-    )
+    transformed = dict(record)
+    for handler in _resolve_record_transform_handlers(domain, source_name):
+        transformed = handler.transform(domain, source_name, transformed)
+    return transformed
+
+
+class _TyreManufacturersTransformHandler:
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]:
+        _ = domain
+        return _transform_tyre_manufacturers(source_name, record)
+
+
+class _ConstructorDomainTransformHandler:
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]:
+        return _transform_constructor_domain(domain, source_name, record)
+
+
+class _CircuitsDomainTransformHandler:
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]:
+        _ = source_name
+        return _transform_circuits_domain(domain, record)
+
+
+class _EnginesDomainTransformHandler:
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]:
+        return _transform_engines_domain(domain, source_name, record)
+
+
+class _GrandsPrixDomainTransformHandler:
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]:
+        _ = source_name
+        return _transform_grands_prix_domain(domain, record)
+
+
+class _TeamsDomainTransformHandler:
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]:
+        return _transform_teams_domain(domain, source_name, record)
+
+
+class _DriversDomainTransformHandler:
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]:
+        return _transform_drivers_domain(domain, source_name, record)
+
+
+class _RacesDomainTransformHandler:
+    def transform(
+        self,
+        domain: str,
+        source_name: str,
+        record: dict[str, object],
+    ) -> dict[str, object]:
+        return _transform_races_domain(domain, source_name, record)
+
+
+def _build_record_transform_handler_registry() -> dict[
+    str,
+    dict[str | None, tuple[RecordTransformHandler, ...]],
+]:
+    return {
+        "*": {
+            TYRE_MANUFACTURERS_SOURCE: (_TyreManufacturersTransformHandler(),),
+        },
+        "constructors": {
+            None: (_ConstructorDomainTransformHandler(),),
+        },
+        "constructor": {
+            None: (_ConstructorDomainTransformHandler(),),
+        },
+        "chassis": {
+            None: (_ConstructorDomainTransformHandler(),),
+        },
+        "circuits": {
+            None: (_CircuitsDomainTransformHandler(),),
+        },
+        "engines": {
+            None: (_EnginesDomainTransformHandler(),),
+        },
+        "grands_prix": {
+            None: (_GrandsPrixDomainTransformHandler(),),
+        },
+        "teams": {
+            None: (_TeamsDomainTransformHandler(),),
+        },
+        "drivers": {
+            None: (_DriversDomainTransformHandler(),),
+        },
+        "races": {
+            None: (_RacesDomainTransformHandler(),),
+        },
+    }
+
+
+_RECORD_TRANSFORM_HANDLER_REGISTRY = _build_record_transform_handler_registry()
+
+
+def _resolve_record_transform_handlers(
+    domain: str,
+    source_name: str,
+) -> tuple[RecordTransformHandler, ...]:
+    handlers: list[RecordTransformHandler] = []
+
+    for domain_key in ("*", domain):
+        domain_registry = _RECORD_TRANSFORM_HANDLER_REGISTRY.get(domain_key, {})
+        handlers.extend(domain_registry.get(None, ()))
+        handlers.extend(domain_registry.get(source_name, ()))
+
+    return tuple(handlers)
 
 
 def _transform_tyre_manufacturers(
