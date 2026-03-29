@@ -7,6 +7,7 @@ import pytest
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from infrastructure.http_client.requests_shim.request_error import RequestError
+from scrapers.base.composite_dto import ListRecordDTO
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
 if TYPE_CHECKING:
@@ -147,7 +148,10 @@ def test_build_children_uses_configured_multiple_list_scrapers() -> None:
     assert len(extractor.list_scraper) == EXPECTED_LIST_SCRAPER_COUNT
     assert extractor.list_scraper[0].options.include_urls is True
     assert extractor.list_scraper[1].options.include_urls is True
-    assert extractor.records_adapter.get() == [{"item": "a"}, {"item": "b"}]
+    assert extractor.records_adapter.get() == [
+        ListRecordDTO.from_dict({"item": "a"}),
+        ListRecordDTO.from_dict({"item": "b"}),
+    ]
 
 
 def test_extract_detail_url_uses_fallbacks_and_ignores_redlinks() -> None:
@@ -155,12 +159,14 @@ def test_extract_detail_url_uses_fallbacks_and_ignores_redlinks() -> None:
 
     assert (
         extractor.extract_detail_url(
-            {
-                "primary": {
-                    "url": "https://en.wikipedia.org/w/index.php?title=Missing&action=edit&redlink=1",
+            ListRecordDTO.from_dict(
+                {
+                    "primary": {
+                        "url": "https://en.wikipedia.org/w/index.php?title=Missing&action=edit&redlink=1",
+                    },
+                    "fallback_url": "https://en.wikipedia.org/wiki/Real_page",
                 },
-                "fallback_url": "https://en.wikipedia.org/wiki/Real_page",
-            },
+            ),
         )
         == "https://en.wikipedia.org/wiki/Real_page"
     )
@@ -169,10 +175,14 @@ def test_extract_detail_url_uses_fallbacks_and_ignores_redlinks() -> None:
 def test_assemble_record_uses_custom_assembler() -> None:
     extractor = _ConfiguredExtractor()
 
-    assert extractor.assemble_record(
-        {"name": "Example"},
-        {"url": "https://en.wikipedia.org/wiki/Example"},
-    ) == {
+    assembled = extractor.assemble_record(
+        ListRecordDTO.from_dict({"name": "Example"}),
+        extractor.json_boundary.detail_from_json(
+            {"url": "https://en.wikipedia.org/wiki/Example"},
+        ),
+    )
+
+    assert assembled.to_dict() == {
         "record": {"name": "Example"},
         "detail_url": "https://en.wikipedia.org/wiki/Example",
     }
@@ -183,7 +193,7 @@ def test_config_normalization_supports_legacy_single_list_fields() -> None:
 
     assert extractor.DOMAIN_CONFIG.list_scraper_classes == (_FakeListScraperA,)
     assert extractor.DOMAIN_CONFIG.detail_url_field_paths == ("primary.url",)
-    assert extractor.records_adapter.get() == [{"item": "a"}]
+    assert extractor.records_adapter.get() == [ListRecordDTO.from_dict({"item": "a"})]
 
 
 def test_config_normalization_supports_legacy_multi_list_fields() -> None:
@@ -198,7 +208,10 @@ def test_config_normalization_supports_legacy_multi_list_fields() -> None:
         "fallback_url",
     )
     assert isinstance(extractor.records_adapter, MultiIterableSourceAdapter)
-    assert extractor.records_adapter.get() == [{"item": "a"}, {"item": "b"}]
+    assert extractor.records_adapter.get() == [
+        ListRecordDTO.from_dict({"item": "a"}),
+        ListRecordDTO.from_dict({"item": "b"}),
+    ]
 
 
 def test_fetch_propagates_programmer_error_from_list_scraper() -> None:

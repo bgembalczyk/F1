@@ -5,6 +5,9 @@ from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.composite_scraper import ListScraperProtocol
 from scrapers.base.composite_scraper import SingleScraperProtocol
+from scrapers.base.composite_dto import CompositeRecordDTO
+from scrapers.base.composite_dto import DetailRecordDTO
+from scrapers.base.composite_dto import ListRecordDTO
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
@@ -44,8 +47,8 @@ class CompleteExtractorBase(CompositeDataExtractor):
         list_scrapers: list[ListScraperProtocol] | None,
     ) -> tuple[
         ListScraperProtocol | list[ListScraperProtocol],
-        IterableSourceAdapter[dict[str, Any]]
-        | MultiIterableSourceAdapter[dict[str, Any]],
+        IterableSourceAdapter[ListRecordDTO]
+        | MultiIterableSourceAdapter[ListRecordDTO],
     ]:
         if list_scrapers is None:
             list_scraper = self.build_list_scraper(self.options)
@@ -62,7 +65,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
             source_adapter=self.source_adapter,
             debug_dir=options.debug_dir,
         )
-        scraper_options.policy = self.http_policy
+        scraper_options.http.policy = self.http_policy
         return scraper_options
 
     def single_scraper_options(self, options: ScraperOptions) -> ScraperOptions:
@@ -70,7 +73,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
             source_adapter=self.source_adapter,
             debug_dir=options.debug_dir,
         )
-        scraper_options.policy = self.http_policy
+        scraper_options.http.policy = self.http_policy
         return scraper_options
 
     def build_list_scraper(self, options: ScraperOptions) -> ListScraperProtocol:
@@ -118,10 +121,11 @@ class CompleteExtractorBase(CompositeDataExtractor):
             raise NotImplementedError(msg)
         return scraper_cls(options=self.single_scraper_options(options))
 
-    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
+    def extract_detail_url(self, record: ListRecordDTO) -> str | None:
         """Wyciągnij URL szczegółów z rekordu listy na podstawie field path."""
+        payload = record.to_dict()
         for field_path in self.DOMAIN_CONFIG.detail_url_field_paths:
-            value = self._get_value_by_path(record, field_path)
+            value = self._get_value_by_path(payload, field_path)
             if not isinstance(value, str) or not value:
                 continue
             if self.DOMAIN_CONFIG.filter_redlinks and is_wikipedia_redlink(value):
@@ -129,28 +133,30 @@ class CompleteExtractorBase(CompositeDataExtractor):
             return value
         return None
 
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
+    def get_detail_url(self, record: ListRecordDTO) -> str | None:
         return self.extract_detail_url(record)
 
     def assemble_record(
         self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
+        record: ListRecordDTO,
+        details: DetailRecordDTO | None,
+    ) -> CompositeRecordDTO:
+        record_payload = record.to_dict()
+        details_payload = details.to_dict() if details is not None else None
         assembler = self.DOMAIN_CONFIG.record_assembler
         if assembler is not None:
-            assembled = assembler(record, details)
+            assembled = assembler(record_payload, details_payload)
         else:
             assembled = self.DOMAIN_CONFIG.record_assembly_strategy.assemble(
-                record,
-                details,
+                record_payload,
+                details_payload,
             )
 
         postprocessor = self.DOMAIN_CONFIG.record_postprocessor
         if postprocessor is not None:
-            return postprocessor(assembled)
+            return CompositeRecordDTO.from_dict(postprocessor(assembled))
 
-        return assembled
+        return CompositeRecordDTO.from_dict(assembled)
 
     @staticmethod
     def _get_value_by_path(source: dict[str, Any], field_path: str) -> Any:
@@ -162,9 +168,10 @@ class CompleteExtractorBase(CompositeDataExtractor):
         return current
 
     def _records_fetcher(self, scraper: ListScraperProtocol):
-        def _fetch() -> list[dict[str, Any]]:
+        def _fetch() -> list[ListRecordDTO]:
             try:
-                return scraper.fetch()
+                records = scraper.fetch()
+                return [self.json_boundary.list_from_json(record) for record in records]
             except (
                 RequestError,
                 ScraperNetworkError,
