@@ -5,7 +5,7 @@ from typing import Any
 from typing import Literal
 from typing import overload
 
-from models.records.factories.registry import FACTORY_REGISTRY
+from models.records.factories.registry import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry import get_factory
 
 if TYPE_CHECKING:
@@ -33,7 +33,7 @@ class RecordBuilders:
     """Object facade for building normalized record models."""
 
     def __init__(self, factory_registry: Mapping[str, BaseRecordFactory] | None = None):
-        self._factory_registry = factory_registry or FACTORY_REGISTRY
+        self._factory_registry = factory_registry or FACTORY_REGISTRY_PROVIDER.get()
 
     def _factory_for(self, record_type: str) -> BaseRecordFactory:
         return get_factory(record_type, self._factory_registry)
