@@ -1,8 +1,23 @@
 from pathlib import Path
 
+from scripts.lib.paths import PROJECT_ROOT, SOURCE_DIR_NAMES, SOURCE_DIRS, iter_python_files
+
+
+def test_paths_module_exposes_single_source_scan_dirs():
+    expected_dir_names = (
+        "layers",
+        "scrapers",
+        "models",
+        "infrastructure",
+        "validation",
+        "complete_extractor",
+    )
+    assert SOURCE_DIR_NAMES == expected_dir_names
+    assert SOURCE_DIRS == tuple(PROJECT_ROOT / name for name in expected_dir_names)
+
 
 def test_key_package_file_names_do_not_contain_contants_typo():
-    project_root = Path(__file__).resolve().parents[1]
+    project_root = PROJECT_ROOT
     key_packages = (
         project_root / "scrapers" / "wiki",
         project_root / "scrapers" / "wiki" / "parsers" / "sections",
@@ -18,7 +33,7 @@ def test_key_package_file_names_do_not_contain_contants_typo():
 
 
 def test_key_package_constants_modules_exist():
-    project_root = Path(__file__).resolve().parents[1]
+    project_root = PROJECT_ROOT
     expected_paths = (
         project_root / "scrapers" / "wiki" / "constants.py",
         project_root / "scrapers" / "wiki" / "parsers" / "sections" / "constants.py",
@@ -29,33 +44,20 @@ def test_key_package_constants_modules_exist():
 
 
 def test_no_typo_import_path_remains():
-    project_root = Path(__file__).resolve().parents[1]
+    project_root = PROJECT_ROOT
     disallowed_import = "scrapers.wiki.contants"
-    source_dirs = (
-        "layers",
-        "scrapers",
-        "models",
-        "infrastructure",
-        "validation",
-        "complete_extractor",
-    )
 
-    matches = []
-    for source_dir in source_dirs:
-        root = project_root / source_dir
-        if not root.exists():
-            continue
-        matches.extend(
-            py_path.relative_to(project_root)
-            for py_path in root.rglob("*.py")
-            if disallowed_import in py_path.read_text(encoding="utf-8")
-        )
+    matches = [
+        py_path.relative_to(project_root)
+        for py_path in iter_python_files(SOURCE_DIRS)
+        if disallowed_import in py_path.read_text(encoding="utf-8")
+    ]
 
     assert not matches, f"Found typo import path(s): {matches}"
 
 
 def test_no_parallel_typo_and_correct_module_pairs_exist():
-    project_root = Path(__file__).resolve().parents[1]
+    project_root = PROJECT_ROOT
     target_packages = (
         project_root / "scrapers" / "wiki",
         project_root / "scrapers" / "wiki" / "parsers" / "sections",
