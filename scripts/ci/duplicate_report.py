@@ -1,19 +1,17 @@
 # ruff: noqa: S603
 from __future__ import annotations
 
+import argparse
+import json
+import re
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
-from scripts.ci.git_diff import build_added_lines_map
-from scripts.ci.io_utils import append_output_vars
-from scripts.ci.io_utils import read_json_file
-from scripts.ci.io_utils import write_text_file
-from scripts.ci.reporting import CiStatus
-from scripts.ci.reporting import build_ci_parser
-from scripts.ci.reporting import exit_code_for_status
-from scripts.ci.reporting import line_range
-from scripts.ci.reporting import resolve_status
-from scripts.ci.reporting import split_csv
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 
 class DuplicateNormalizer:

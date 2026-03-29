@@ -114,6 +114,7 @@ jobs:
         with:
           recreate: true
           path: .jscpd-report/pr-comment.md
+          message: "⚠️ Nie udało się wygenerować raportu duplikatów; sprawdź logi kroku `Build duplicate report and evaluate thresholds`."
 
       - name: Skip PR comment for forked repositories (read-only token)
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && always()
