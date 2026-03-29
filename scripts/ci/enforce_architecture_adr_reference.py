@@ -5,10 +5,10 @@ import re
 import subprocess
 from pathlib import PurePosixPath
 
-ARCHITECTURE_PREFIXES: tuple[str, ...] = (
-    "layers/",
-    "scrapers/base/",
-    "tests/architecture/",
+from tests.architecture.registry import ARCHITECTURE_REGISTRY
+
+ARCHITECTURE_SENSITIVE_PATHS: tuple[str, ...] = (
+    ARCHITECTURE_REGISTRY.architecture_sensitive_paths
 )
 ADR_PATTERN = re.compile(r"\bADR-\d{4}\b", re.IGNORECASE)
 
@@ -48,7 +48,7 @@ def list_changed_files(base_sha: str, head_sha: str) -> list[str]:
 
 def is_architecture_path(path: str) -> bool:
     normalized = PurePosixPath(path).as_posix()
-    return any(normalized.startswith(prefix) for prefix in ARCHITECTURE_PREFIXES)
+    return any(normalized.startswith(prefix) for prefix in ARCHITECTURE_SENSITIVE_PATHS)
 
 
 def is_cosmetic_line(content: str) -> bool:

@@ -18,6 +18,9 @@ FORBIDDEN_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = (
 ALLOWED_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = (
     ARCHITECTURE_REGISTRY.allowed_imports_by_layer
 )
+ARCHITECTURE_SENSITIVE_PATHS: tuple[str, ...] = (
+    ARCHITECTURE_REGISTRY.architecture_sensitive_paths
+)
 
 ENTRYPOINT_MODULES: tuple[str, ...] = (
     "scrapers/drivers/entrypoint.py",

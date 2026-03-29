@@ -2,6 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from scripts.ci.enforce_architecture_adr_reference import (
+    ARCHITECTURE_SENSITIVE_PATHS as ADR_GATE_ARCHITECTURE_SENSITIVE_PATHS,
+)
+from tests.architecture.rules import ARCHITECTURE_SENSITIVE_PATHS
 from tests.architecture.rules import DOMAINS
 from tests.architecture.rules import ENTRYPOINT_DOMAINS
 from tests.architecture.rules import ENTRYPOINT_MODULES
@@ -51,3 +55,7 @@ def test_configured_entrypoint_modules_exist() -> None:
         "Update tests/architecture/rules.py ENTRYPOINT_MODULES. "
         f"missing={missing_entrypoint_modules}"
     )
+
+
+def test_adr_gate_and_architecture_tests_share_sensitive_paths() -> None:
+    assert ADR_GATE_ARCHITECTURE_SENSITIVE_PATHS == ARCHITECTURE_SENSITIVE_PATHS

@@ -15,6 +15,7 @@ class ArchitectureRegistry:
     domains: tuple[DomainArchitecture, ...]
     layers: tuple[str, ...]
     forbidden_imports_by_layer: dict[str, tuple[str, ...]]
+    architecture_sensitive_paths: tuple[str, ...]
 
     @property
     def domain_names(self) -> tuple[str, ...]:
@@ -67,4 +68,9 @@ ARCHITECTURE_REGISTRY = ArchitectureRegistry(
         "infobox": ("list", "sections", "postprocess", "single_scraper"),
         "postprocess": ("list", "sections", "infobox", "single_scraper"),
     },
+    architecture_sensitive_paths=(
+        "layers/",
+        "scrapers/base/",
+        "tests/architecture/",
+    ),
 )
