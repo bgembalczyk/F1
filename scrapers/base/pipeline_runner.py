@@ -12,6 +12,7 @@ if TYPE_CHECKING:
 
 from bs4 import BeautifulSoup
 
+from models.mappers.serialization import QualityRecord
 from models.mappers.serialization import to_dict_list
 from validation.validator_base import ExportRecord
 
@@ -19,7 +20,7 @@ PipelineResult: TypeAlias = (
     list[ExportRecord] | list[RawRecord] | list[NormalizedRecord]
 )
 StepRunner: TypeAlias = Callable[[], PipelineResult]
-StepQualityWriter: TypeAlias = Callable[[str, list[dict[str, object]]], None]
+StepQualityWriter: TypeAlias = Callable[[str, list[QualityRecord]], None]
 
 
 class ScraperPipelineRunner:
@@ -49,25 +50,21 @@ class ScraperPipelineRunner:
             run_id,
             "normalize",
             lambda: self._normalize_records(list(raw_records)),
-            to_dict=True,
         )
         transformed_records = self._log_step(
             run_id,
             "transform",
             lambda: self._transform_records(normalized_records),
-            to_dict=True,
         )
         validated_records = self._log_step(
             run_id,
             "validate",
             lambda: self._validate_records(transformed_records),
-            to_dict=True,
         )
         return self._log_step(
             run_id,
             "post_process",
             lambda: self._post_process_records(validated_records),
-            to_dict=True,
         )
 
     def _log_step(
@@ -75,8 +72,6 @@ class ScraperPipelineRunner:
         run_id: str,
         step_name: str,
         run_step: StepRunner,
-        *,
-        to_dict: bool = False,
     ) -> PipelineResult:
         step_label = step_name.replace("_", "-")
         self.logger.debug("Scrape run %s: start %s", run_id, step_label)
@@ -84,6 +79,6 @@ class ScraperPipelineRunner:
         self.logger.debug("Scrape run %s: finish %s", run_id, step_label)
         self._write_step_quality_report(
             step_name,
-            to_dict_list(list(records)) if to_dict else list(records),
+            to_dict_list(list(records)),
         )
         return records

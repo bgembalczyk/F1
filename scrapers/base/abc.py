@@ -9,6 +9,7 @@ from uuid import uuid4
 from bs4 import BeautifulSoup
 
 from infrastructure.http_client.policies.http import HttpPolicy
+from models.mappers.serialization import QualityRecord
 from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
@@ -324,7 +325,7 @@ class ABCScraper(ABC):
         self,
         *,
         step_name: str,
-        records: list[dict[str, object]],
+        records: list[QualityRecord],
     ) -> None:
         self._quality_report_service.write_step(step_name=step_name, records=records)
 

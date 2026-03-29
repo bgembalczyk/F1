@@ -2,11 +2,16 @@ from collections.abc import Mapping
 from dataclasses import asdict
 from dataclasses import is_dataclass
 from typing import Any
+from typing import TypeAlias
 
 from models.records.circuit_base import CircuitBaseRecord
 from models.records.circuit_complete import CircuitCompleteRecord
 from models.records.circuit_details import CircuitDetailsRecord
 from models.value_objects.base import ValueObject
+
+JSONScalar: TypeAlias = str | int | float | bool | None
+JSONValue: TypeAlias = JSONScalar | list["JSONValue"] | dict[str, "JSONValue"]
+QualityRecord: TypeAlias = Mapping[str, JSONValue]
 
 
 def _extract_serializable(value: Any) -> Any:
@@ -35,7 +40,7 @@ def normalize_value(value: Any) -> Any:
     return value
 
 
-def to_dict(value: Any) -> dict[str, Any]:
+def to_dict(value: object) -> dict[str, JSONValue]:
     if value is None:
         return {}
 
@@ -51,10 +56,10 @@ def to_circuit_record_dict(
     value: CircuitBaseRecord
     | CircuitCompleteRecord
     | CircuitDetailsRecord
-    | Mapping[str, Any],
-) -> dict[str, Any]:
+    | Mapping[str, JSONValue],
+) -> dict[str, JSONValue]:
     return to_dict(value)
 
 
-def to_dict_list(values: list[Any]) -> list[dict[str, Any]]:
+def to_dict_list(values: list[object]) -> list[dict[str, JSONValue]]:
     return [to_dict(value) for value in values]
