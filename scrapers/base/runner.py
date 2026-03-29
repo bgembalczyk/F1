@@ -42,24 +42,28 @@ class ScraperRunner:
         json_path = output_dir / Path(json_rel)
         ensure_parent(json_path)
         result.to_json(json_path, exporter=scraper.exporter)
-        step_report = getattr(scraper, "_write_step_quality_report", None)
-        if callable(step_report):
-            step_report(
-                step_name="export_json",
-                records=to_dict_list(list(data)),
-            )
+        self._report_step(scraper, "export-json", data)
 
         if csv_rel:
             csv_path = output_dir / Path(csv_rel)
             ensure_parent(csv_path)
             result.to_csv(csv_path, exporter=scraper.exporter)
-            step_report = getattr(scraper, "_write_step_quality_report", None)
-            if callable(step_report):
-                step_report(
-                    step_name="export_csv",
-                    records=to_dict_list(list(data)),
-                )
+            self._report_step(scraper, "export-csv", data)
         run_logger.info("Scrape run %s finished", run_id)
+
+    def _report_step(
+        self,
+        scraper: ABCScraper,
+        step_name: str,
+        data: list[object],
+    ) -> None:
+        step_report = getattr(scraper, "_write_step_quality_report", None)
+        if not callable(step_report):
+            return
+        step_report(
+            step_name=step_name,
+            records=to_dict_list(list(data)),
+        )
 
     def _make_scraper(
         self,
