@@ -1,5 +1,8 @@
 # Architecture Decision Records (ADR)
 
+> Uwaga dot. DRY dokumentacji: pełny spis dokumentów utrzymujemy centralnie w [`docs/README.md`](../README.md).
+
+
 Ten katalog przechowuje **trwałe decyzje architektoniczne** projektu.
 
 ## Zasady
