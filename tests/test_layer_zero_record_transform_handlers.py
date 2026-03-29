@@ -1,17 +1,16 @@
-from layers.zero.merge import _CircuitsDomainTransformHandler
-from layers.zero.merge import _ConstructorDomainTransformHandler
-from layers.zero.merge import _DriversDomainTransformHandler
-from layers.zero.merge import _EnginesDomainTransformHandler
-from layers.zero.merge import _GrandsPrixDomainTransformHandler
-from layers.zero.merge import _RacesDomainTransformHandler
-from layers.zero.merge import _TeamsDomainTransformHandler
-from layers.zero.merge import _TyreManufacturersTransformHandler
+from layers.zero.merge import _circuits_domain_handler
+from layers.zero.merge import _constructor_domain_handler
+from layers.zero.merge import _drivers_domain_handler
+from layers.zero.merge import _engines_domain_handler
+from layers.zero.merge import _grands_prix_domain_handler
+from layers.zero.merge import _races_domain_handler
+from layers.zero.merge import _resolve_record_transform_handlers
+from layers.zero.merge import _teams_domain_handler
+from layers.zero.merge import _tyre_manufacturers_handler
 
 
 def test_tyre_manufacturers_transform_handler() -> None:
-    handler = _TyreManufacturersTransformHandler()
-
-    transformed = handler.transform(
+    transformed = _tyre_manufacturers_handler(
         domain="seasons",
         source_name="f1_tyre_manufacturers_by_season.json",
         record={"manufacturers": ["A"], "seasons": [2025], "x": 1},
@@ -23,9 +22,7 @@ def test_tyre_manufacturers_transform_handler() -> None:
 
 
 def test_constructor_domain_transform_handler() -> None:
-    handler = _ConstructorDomainTransformHandler()
-
-    transformed = handler.transform(
+    transformed = _constructor_domain_handler(
         domain="constructors",
         source_name="f1_constructors_2026.json",
         record={
@@ -42,9 +39,7 @@ def test_constructor_domain_transform_handler() -> None:
 
 
 def test_circuits_domain_transform_handler() -> None:
-    handler = _CircuitsDomainTransformHandler()
-
-    transformed = handler.transform(
+    transformed = _circuits_domain_handler(
         domain="circuits",
         source_name="ignored.json",
         record={"circuit": "Monza", "grands_prix_held": 74},
@@ -54,9 +49,7 @@ def test_circuits_domain_transform_handler() -> None:
 
 
 def test_engines_domain_transform_handler() -> None:
-    handler = _EnginesDomainTransformHandler()
-
-    transformed = handler.transform(
+    transformed = _engines_domain_handler(
         domain="engines",
         source_name="f1_engine_manufacturers.json",
         record={"engine_manufacturer": "Honda", "wins": 89},
@@ -66,9 +59,7 @@ def test_engines_domain_transform_handler() -> None:
 
 
 def test_grands_prix_domain_transform_handler() -> None:
-    handler = _GrandsPrixDomainTransformHandler()
-
-    transformed = handler.transform(
+    transformed = _grands_prix_domain_handler(
         domain="grands_prix",
         source_name="ignored.json",
         record={"grand_prix": "Italian Grand Prix", "years_held": [1921, 2025]},
@@ -78,9 +69,7 @@ def test_grands_prix_domain_transform_handler() -> None:
 
 
 def test_teams_domain_transform_handler() -> None:
-    handler = _TeamsDomainTransformHandler()
-
-    transformed = handler.transform(
+    transformed = _teams_domain_handler(
         domain="teams",
         source_name="f1_privateer_teams.json",
         record={"team": "Scuderia Centro Sud", "seasons": [1956, 1965]},
@@ -91,9 +80,7 @@ def test_teams_domain_transform_handler() -> None:
 
 
 def test_drivers_domain_transform_handler() -> None:
-    handler = _DriversDomainTransformHandler()
-
-    transformed = handler.transform(
+    transformed = _drivers_domain_handler(
         domain="drivers",
         source_name="f1_drivers.json",
         record={"driver": "Lewis Hamilton", "entries": 350, "starts": 348},
@@ -105,9 +92,7 @@ def test_drivers_domain_transform_handler() -> None:
 
 
 def test_races_domain_transform_handler() -> None:
-    handler = _RacesDomainTransformHandler()
-
-    transformed = handler.transform(
+    transformed = _races_domain_handler(
         domain="races",
         source_name="f1_red_flagged_world_championship_races.json",
         record={"race": "A", "lap": "54/72", "incident": "rain"},
@@ -116,3 +101,21 @@ def test_races_domain_transform_handler() -> None:
     assert transformed["championship"] is True
     assert transformed["red_flag"] == {"lap": "54/72", "incident": "rain"}
     assert "lap" not in transformed
+
+
+def test_resolve_record_transform_handlers_uses_domain_fallback_when_no_source_override() -> None:
+    handlers = _resolve_record_transform_handlers(
+        domain="teams",
+        source_name="unknown.json",
+    )
+
+    assert handlers == (_teams_domain_handler,)
+
+
+def test_resolve_record_transform_handlers_includes_global_source_pipeline() -> None:
+    handlers = _resolve_record_transform_handlers(
+        domain="seasons",
+        source_name="f1_tyre_manufacturers_by_season.json",
+    )
+
+    assert handlers == (_tyre_manufacturers_handler,)

@@ -7,6 +7,7 @@ from models.records.record_definition import RecordDefinition
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
 from validation.schemas import NestedSchema
+from validation.validator_base import RecordValidator
 
 
 class CircuitRecord(TypedDict, total=False):
@@ -43,3 +44,7 @@ CIRCUIT_DEFINITION = RecordDefinition(
 )
 
 CIRCUIT_SCHEMA = CIRCUIT_DEFINITION.to_schema()
+
+
+def validate_circuit_record(record: dict[str, object]) -> list[str]:
+    return [error.message for error in RecordValidator.validate_schema(record, CIRCUIT_SCHEMA)]
