@@ -1,9 +1,22 @@
 from __future__ import annotations
 
 import argparse
+import re
+from pathlib import PurePosixPath
 import subprocess
 
 from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
+
+from scripts.ci.git_diff import collect_commit_messages
+from scripts.ci.git_diff import get_unified_diff
+from scripts.ci.git_diff import list_changed_files
+
+ARCHITECTURE_PREFIXES: tuple[str, ...] = (
+    "layers/",
+    "scrapers/base/",
+    "tests/architecture/",
+)
+ADR_PATTERN = re.compile(r"\bADR-\d{4}\b", re.IGNORECASE)
 
 
 def parse_args() -> argparse.Namespace:
@@ -20,25 +33,6 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def list_changed_files(base_sha: str, head_sha: str) -> list[str]:
-    proc = subprocess.run(
-        [
-            "git",
-            "diff",
-            "--name-only",
-            "--diff-filter=ACMR",
-            base_sha,
-            head_sha,
-        ],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    if proc.returncode != 0:
-        return []
-    return [line.strip() for line in proc.stdout.splitlines() if line.strip()]
-
-
 def is_architecture_path(path: str) -> bool:
     return DEFAULT_ADR_ENFORCEMENT_POLICY.is_architecture_path(path)
 
@@ -51,16 +45,14 @@ def has_non_cosmetic_changes(base_sha: str, head_sha: str, files: list[str]) -> 
     if not files:
         return False
 
-    proc = subprocess.run(
-        ["git", "diff", "--unified=0", "--no-color", base_sha, head_sha, "--", *files],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    if proc.returncode != 0:
+    diff_result = get_unified_diff(base_sha, head_sha, files)
+    if diff_result.returncode != 0:
         return True
 
-    for line in proc.stdout.splitlines():
+    if not diff_result.stdout.strip():
+        return False
+
+    for line in diff_result.stdout.splitlines():
         if line.startswith(("+++", "---", "@@")):
             continue
         if not line.startswith(("+", "-")):
@@ -72,18 +64,6 @@ def has_non_cosmetic_changes(base_sha: str, head_sha: str, files: list[str]) -> 
             return True
 
     return False
-
-
-def collect_commit_messages(base_sha: str, head_sha: str) -> str:
-    proc = subprocess.run(
-        ["git", "log", "--format=%B", f"{base_sha}..{head_sha}"],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    if proc.returncode != 0:
-        return ""
-    return proc.stdout
 
 
 def main() -> int:
