@@ -8,6 +8,14 @@ from scrapers.domains import DOMAINS
 
 ENTRYPOINT_DOMAINS: tuple[str, ...] = DOMAINS
 
+ENTRYPOINT_MODULES: tuple[str, ...] = (
+    "scrapers/drivers/entrypoint.py",
+    "scrapers/constructors/entrypoint.py",
+    "scrapers/circuits/entrypoint.py",
+    "scrapers/seasons/entrypoint.py",
+    "scrapers/grands_prix/entrypoint.py",
+)
+
 LAYERS: tuple[str, ...] = ("list", "sections", "infobox", "postprocess")
 
 REQUIRED_LAYERS_BY_DOMAIN: dict[str, tuple[str, ...]] = {

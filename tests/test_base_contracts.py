@@ -87,7 +87,7 @@ class _AdapterStub:
 class _SectionServiceContractStub(BaseSectionExtractionService):
     domain = "unit-test"
 
-    def build_entries(self) -> list[object]:
+    def build_entries(self) -> list[SectionParseResult]:
         return []
 
 

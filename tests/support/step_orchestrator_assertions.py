@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from typing import TYPE_CHECKING
 
-from scrapers.base.orchestration.components.section_soruce_adapter import (
+from scrapers.base.orchestration.components.section_source_adapter import (
     SectionSourceAdapter,
 )
 from scrapers.base.orchestration.models import StepDeclaration

@@ -4,6 +4,7 @@ from pathlib import Path
 
 from tests.architecture.rules import DOMAINS
 from tests.architecture.rules import ENTRYPOINT_DOMAINS
+from tests.architecture.rules import ENTRYPOINT_MODULES
 
 IGNORED_PACKAGES = {"base", "wiki", "__pycache__"}
 
@@ -34,4 +35,18 @@ def test_entrypoint_domains_registry_matches_domains_with_entrypoints() -> None:
         "Entrypoint domains list is out of sync with current code. "
         "Update scrapers/domains.py DOMAINS. "
         f"discovered={sorted(discovered_entrypoint_domains)} configured={sorted(ENTRYPOINT_DOMAINS)}"
+    )
+
+
+def test_configured_entrypoint_modules_exist() -> None:
+    missing_entrypoint_modules = [
+        module_path
+        for module_path in ENTRYPOINT_MODULES
+        if not Path(module_path).exists()
+    ]
+
+    assert not missing_entrypoint_modules, (
+        "Configured entrypoint module paths do not exist. "
+        "Update tests/architecture/rules.py ENTRYPOINT_MODULES. "
+        f"missing={missing_entrypoint_modules}"
     )
