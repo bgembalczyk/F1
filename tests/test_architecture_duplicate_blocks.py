@@ -6,8 +6,6 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
-from tests.architecture.registry import ARCHITECTURE_REGISTRY
-from tests.architecture.rules import ENTRYPOINT_MODULES
 
 
 def _entrypoint_module_paths() -> tuple[Path, ...]:
@@ -15,8 +13,6 @@ def _entrypoint_module_paths() -> tuple[Path, ...]:
         Path("scrapers") / domain / "entrypoint.py"
         for domain in sorted(get_domain_entrypoint_scraper_metadata())
     )
-
-ENTRYPOINT_MODULES = ARCHITECTURE_REGISTRY.entrypoint_files
 
 
 @dataclass(frozen=True)
