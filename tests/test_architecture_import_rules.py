@@ -7,10 +7,6 @@ from tests.architecture.rules import collect_cross_domain_import_violations
 from tests.architecture.registry import ARCHITECTURE_REGISTRY
 from tests.support.imports_analyzer import parse_imports
 
-DOMAINS = ARCHITECTURE_REGISTRY.domain_names
-from tests.architecture.rules import DOMAINS
-from tests.support.imports_analyzer import parse_imports
-
 MIN_IMPORT_PARTS = 3
 
 
@@ -24,7 +20,7 @@ def _iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
         if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
             continue
         imported_domain = parts[1]
-        if imported_domain in DOMAINS and imported_domain != domain:
+        if imported_domain in ARCHITECTURE_REGISTRY.domain_names and imported_domain != domain:
             violations.append(parsed_import.module)
 
     return violations
@@ -32,7 +28,7 @@ def _iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
 
 def test_domains_do_not_import_each_other_directly() -> None:
     root = Path("scrapers")
-    for domain in DOMAINS:
+    for domain in ARCHITECTURE_REGISTRY.domain_names:
         domain_dir = root / domain
         assert domain_dir.exists(), f"Missing domain package: {domain_dir}"
 

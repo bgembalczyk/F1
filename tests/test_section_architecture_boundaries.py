@@ -7,10 +7,7 @@ from tests.architecture.rules import collect_single_scraper_import_violations
 from tests.architecture.registry import ARCHITECTURE_REGISTRY
 from tests.support.imports_analyzer import parse_imports
 
-DOMAINS = ARCHITECTURE_REGISTRY.entrypoint_domains
-
-from tests.architecture.rules import ENTRYPOINT_DOMAINS
-from tests.support.imports_analyzer import parse_imports
+ENTRYPOINT_DOMAINS = ARCHITECTURE_REGISTRY.entrypoint_domains
 
 
 def test_sections_modules_do_not_import_single_scraper() -> None:
