@@ -5,8 +5,13 @@ import argparse
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 
 class DuplicateNormalizer:
@@ -221,8 +226,8 @@ class GithubOutputWriter:
             fh.write(f"duplicate_status={duplicate_status}\n")
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
+def build_ci_parser(description: str) -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=description)
     parser.add_argument("--report-json", required=True)
     parser.add_argument("--output-md", required=True)
     parser.add_argument("--warn-threshold", type=int, required=True)
@@ -231,6 +236,11 @@ def main() -> int:
     parser.add_argument("--head-sha", default="")
     parser.add_argument("--changed-files", default="")
     parser.add_argument("--github-output", required=True)
+    return parser
+
+
+def main() -> int:
+    parser = build_ci_parser("Generate duplicate report for changed files in PR.")
     args = parser.parse_args()
 
     normalizer = DuplicateNormalizer()

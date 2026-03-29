@@ -108,12 +108,31 @@ jobs:
             --changed-files "${{ steps.changed-py.outputs.changed_files }}" \
             --github-output "$GITHUB_OUTPUT"
 
+      - name: Prepare duplicate PR comment body
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && always()
+        id: dup-comment
+        shell: bash
+        run: |
+          if [[ -f .jscpd-report/pr-comment.md ]]; then
+            {
+              echo "message<<EOF"
+              cat .jscpd-report/pr-comment.md
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            {
+              echo "message<<EOF"
+              echo "⚠️ Nie udało się wygenerować raportu duplikatów; sprawdź logi kroku 'Build duplicate report and evaluate thresholds'."
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Publish duplicate report as PR comment
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && always()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           recreate: true
-          path: .jscpd-report/pr-comment.md
+          message: ${{ steps.dup-comment.outputs.message }}
 
       - name: Skip PR comment for forked repositories (read-only token)
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && always()
