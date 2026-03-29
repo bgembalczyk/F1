@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import pytest
+
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
@@ -7,6 +9,7 @@ from scrapers.base.runner import ScraperRunner
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
 
 
+@pytest.mark.unit
 def test_grand_prix_runner_uses_scraper_runner_path() -> None:
     calls: list[dict[str, object]] = []
     original_method = ScraperRunner.run_and_export

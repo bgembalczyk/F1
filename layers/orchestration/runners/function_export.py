@@ -3,6 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Callable
 
+from scrapers.wiki.component_metadata import ComponentMetadata
+
 from layers.orchestration.runners.layer_job import LayerJobRunner
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
@@ -15,7 +17,7 @@ class FunctionExportRunner(LayerJobRunner):
         self,
         *,
         export_function: ExportCallable,
-        component_metadata: dict[str, str],
+        component_metadata: ComponentMetadata,
     ) -> None:
         self._export_function = export_function
         self.COMPONENT_METADATA = component_metadata

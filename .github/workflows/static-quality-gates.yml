@@ -109,7 +109,7 @@ jobs:
             --github-output "$GITHUB_OUTPUT"
 
       - name: Publish duplicate report as PR comment
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && always()
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && hashFiles('.jscpd-report/pr-comment.md') != '' && always()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           recreate: true
