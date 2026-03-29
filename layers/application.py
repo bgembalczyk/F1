@@ -7,19 +7,12 @@ from typing import TYPE_CHECKING
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
-from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
-from layers.orchestration.helpers import build_layer_one_runner_map
-from layers.orchestration.helpers import build_layer_zero_run_config_factory_map
-from layers.orchestration.helpers import run_engine_manufacturers
+from layers.orchestration.adapter_registry import get_default_layer_adapter_registry
+from layers.orchestration.adapter_registry import validate_layer_adapter_registry
 from layers.pipeline import WikiPipelineApplication
-from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
-from layers.seed.registry.helpers import WIKI_SEED_REGISTRY
-from layers.seed.registry.helpers import validate_list_job_registry
-from layers.seed.registry.helpers import validate_seed_registry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
-from scrapers.base.helpers.runner import run_and_export
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -34,6 +27,9 @@ def create_default_wiki_pipeline_application(
     base_wiki_dir: Path,
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
+    adapter_registry = get_default_layer_adapter_registry()
+    validate_layer_adapter_registry(adapter_registry)
+
     constructors_mirror_service = ConstructorsMirrorService(
         mirror_targets=(
             ("chassis_constructors", "f1_constructors_{year}.json"),
@@ -45,11 +41,11 @@ def create_default_wiki_pipeline_application(
     )
 
     layer_zero_executor = LayerZeroExecutor(
-        list_job_registry=WIKI_LIST_JOB_REGISTRY,
-        validate_list_registry=validate_list_job_registry,
-        run_config_factory_map_builder=build_layer_zero_run_config_factory_map,
-        default_config_factory=DefaultLayerZeroRunConfigFactory(),
-        run_and_export_function=run_and_export,
+        list_job_registry=adapter_registry.layer_zero.list_job_registry,
+        validate_list_registry=adapter_registry.layer_zero.validate_list_registry,
+        run_config_factory_map_builder=adapter_registry.layer_zero.run_config_factory_map_builder,
+        default_config_factory=adapter_registry.layer_zero.default_config_factory,
+        run_and_export_function=adapter_registry.layer_zero.run_and_export_function,
         constructors_mirror_service=constructors_mirror_service,
         merge_service=LayerZeroMergeService(
             merge_function=merge_layer_zero_raw_outputs,
@@ -59,10 +55,10 @@ def create_default_wiki_pipeline_application(
     )
 
     layer_one_executor = LayerOneExecutor(
-        seed_registry=WIKI_SEED_REGISTRY,
-        validate_seed_registry_function=validate_seed_registry,
-        runner_map_builder=build_layer_one_runner_map,
-        engine_manufacturers_runner=run_engine_manufacturers,
+        seed_registry=adapter_registry.layer_one.seed_registry,
+        validate_seed_registry_function=adapter_registry.layer_one.validate_seed_registry_function,
+        runner_map_builder=adapter_registry.layer_one.runner_map_builder,
+        engine_manufacturers_runner=adapter_registry.layer_one.engine_manufacturers_runner,
     )
 
     return WikiPipelineApplication(
