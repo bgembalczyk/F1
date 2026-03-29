@@ -1,4 +1,4 @@
-# ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
+# ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 """
 Unit tests for red-flagged races scraper improvements.
 
@@ -49,7 +49,7 @@ class TestRedFlaggedRacesScraperRobustness:
         """
         soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
-        records = scraper._parse_soup(soup)
+        records = scraper.parse_soup(soup)
 
         assert len(records) == 1
         assert records[0]["season"] == 2024
@@ -79,7 +79,7 @@ class TestRedFlaggedRacesScraperRobustness:
         """
         soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
-        records = scraper._parse_soup(soup)
+        records = scraper.parse_soup(soup)
 
         assert len(records) == 1
         assert records[0]["season"] == 2024
@@ -121,7 +121,7 @@ class TestRedFlaggedRacesScraperRobustness:
         """
         soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedNonChampionshipRacesScraper()
-        records = scraper._parse_soup(soup)
+        records = scraper.parse_soup(soup)
 
         # Should find the non-championship table (with "Event" column)
         assert len(records) == 1
@@ -141,7 +141,7 @@ class TestRedFlaggedRacesScraperRobustness:
         scraper = RedFlaggedWorldChampionshipRacesScraper()
 
         try:
-            scraper._parse_soup(soup)
+            scraper.parse_soup(soup)
             msg = "Should have raised RuntimeError"
             raise AssertionError(msg)
         except RuntimeError as e:
@@ -179,7 +179,7 @@ class TestRedFlaggedRacesScraperRobustness:
         import logging
 
         logging.basicConfig(level=logging.WARNING)
-        records = scraper._parse_soup(soup)
+        records = scraper.parse_soup(soup)
 
         # Should still parse successfully via fallback
         assert len(records) == 1

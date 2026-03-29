@@ -2,8 +2,10 @@ from __future__ import annotations
 
 from typing import Any
 
+from scripts.ci.duplicate_report import DuplicateFileMeta
 from scripts.ci.duplicate_report import DuplicateFilter
 from scripts.ci.duplicate_report import DuplicateNormalizer
+from scripts.ci.duplicate_report import DuplicateRecord
 from scripts.ci.duplicate_report import MarkdownRenderer
 
 
@@ -18,11 +20,11 @@ def test_duplicate_normalizer_maps_supported_keys() -> None:
 
     normalized = normalizer.normalize(payload)
 
-    assert normalized == {
-        "first": {"name": "a.py", "start": 10, "end": 12},
-        "second": {"name": "b.py", "start": 20, "end": 25},
-        "fragment": "print('x')",
-    }
+    assert normalized == DuplicateRecord(
+        first=DuplicateFileMeta(name="a.py", start=10, end=12),
+        second=DuplicateFileMeta(name="b.py", start=20, end=25),
+        fragment="print('x')",
+    )
 
 
 def test_duplicate_filter_returns_only_overlapping_duplicates(monkeypatch: Any) -> None:
@@ -41,16 +43,16 @@ def test_duplicate_filter_returns_only_overlapping_duplicates(monkeypatch: Any) 
     )
 
     duplicates = [
-        {
-            "first": {"name": "src/app.py", "start": 9, "end": 10},
-            "second": {"name": "src/other.py", "start": 1, "end": 2},
-            "fragment": "x",
-        },
-        {
-            "first": {"name": "src/app.py", "start": 30, "end": 31},
-            "second": {"name": "src/other.py", "start": 1, "end": 2},
-            "fragment": "y",
-        },
+        DuplicateRecord(
+            first=DuplicateFileMeta(name="src/app.py", start=9, end=10),
+            second=DuplicateFileMeta(name="src/other.py", start=1, end=2),
+            fragment="x",
+        ),
+        DuplicateRecord(
+            first=DuplicateFileMeta(name="src/app.py", start=30, end=31),
+            second=DuplicateFileMeta(name="src/other.py", start=1, end=2),
+            fragment="y",
+        ),
     ]
 
     result = duplicate_filter.filter_new_duplicates(
@@ -66,11 +68,11 @@ def test_duplicate_filter_returns_only_overlapping_duplicates(monkeypatch: Any) 
 def test_markdown_renderer_renders_duplicates_list_and_status() -> None:
     renderer = MarkdownRenderer()
     duplicates = [
-        {
-            "first": {"name": "src/a.py", "start": 1, "end": 2},
-            "second": {"name": "src/b.py", "start": 3, "end": 4},
-            "fragment": "a = 1\nb = 2",
-        },
+        DuplicateRecord(
+            first=DuplicateFileMeta(name="src/a.py", start=1, end=2),
+            second=DuplicateFileMeta(name="src/b.py", start=3, end=4),
+            fragment="a = 1\nb = 2",
+        ),
     ]
 
     markdown = renderer.render(duplicates, warn_threshold=1, fail_threshold=2)
