@@ -1,4 +1,5 @@
 from collections.abc import Mapping
+import ssl
 import socket
 import urllib.error
 import urllib.request
@@ -9,12 +10,21 @@ from infrastructure.http_client.requests_shim.constants import HTTP_STATUS_UNKNO
 from infrastructure.http_client.requests_shim.constants import SSL_CONTEXT
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from infrastructure.http_client.requests_shim.response import Response
+from infrastructure.http_client.requests_shim.ssl import SSLContextProvider
+from infrastructure.http_client.requests_shim.ssl import build_ssl_context
 from infrastructure.http_client.requests_shim.timeout_error import HTTPTimeoutError
 
 
 class Session:
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        *,
+        ssl_context: ssl.SSLContext | None = None,
+        ssl_context_provider: SSLContextProvider | None = None,
+    ) -> None:
         self.headers: dict[str, str] = {}
+        provider = ssl_context_provider or build_ssl_context
+        self._ssl_context = ssl_context or provider()
 
     def get(
         self,
@@ -37,7 +47,7 @@ class Session:
             with urllib.request.urlopen(  # noqa: S310
                 request,
                 timeout=timeout,
-                context=SSL_CONTEXT,
+                context=self._ssl_context,
             ) as resp:
                 body = resp.read()
                 status_code = resp.getcode() or HTTP_STATUS_UNKNOWN

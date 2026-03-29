@@ -9,6 +9,7 @@ from scrapers.wiki.parsers.elements.mixin import WikiElementParserMixin
 from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
 from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
+from scrapers.wiki.parsers.types import WikiParsedPayload
 
 
 class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
@@ -35,7 +36,7 @@ class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
         elements: list,
         *,
         context: SectionExtractionContext | None = None,
-    ) -> dict[str, Any]:
+    ) -> dict[str, list[WikiParsedPayload]]:
         section_context = context or SectionExtractionContext()
         tags = [c for c in elements if isinstance(c, Tag)]
         return {

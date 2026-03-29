@@ -9,12 +9,10 @@ from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.infobox.parsers.career import InfoboxCareerParser
-from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
-from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
-from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
-from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
-from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
+from scrapers.drivers.infobox.parsers.providers import (
+    DefaultDriverInfoboxParserProvider,
+    DriverInfoboxParserProvider,
+)
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
@@ -28,6 +26,7 @@ class DriverInfoboxParser(InfoboxParser):
         options: ScraperOptions | None = None,
         run_id: str | None = None,
         url: str | None = None,
+        parser_provider: DriverInfoboxParserProvider | None = None,
     ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls
@@ -38,23 +37,19 @@ class DriverInfoboxParser(InfoboxParser):
         self.url = url
         self.logger = get_logger(self.__class__.__name__)
         self.transformers = build_transformers(options.pipeline.transformers)
-        self._link_extractor = InfoboxLinkExtractor(
+        provider = parser_provider or DefaultDriverInfoboxParserProvider()
+        parser_bundle = provider.build(
             include_urls=self.include_urls,
             wikipedia_base=self.wikipedia_base,
-        )
-        self._cell_parser = InfoboxCellParser(
-            include_urls=self.include_urls,
-            link_extractor=self._link_extractor,
-        )
-        self._general_parser = InfoboxGeneralParser(
-            include_urls=self.include_urls,
-            link_extractor=self._link_extractor,
             schema=DRIVER_GENERAL_SCHEMA,
             logger=self.logger,
         )
-        self._titles_parser = InfoboxTitlesParser(self._link_extractor)
-        self._career_parser = InfoboxCareerParser(self._cell_parser)
-        self._section_collector = InfoboxSectionCollector()
+        self._link_extractor = parser_bundle.link_extractor
+        self._cell_parser = parser_bundle.cell_parser
+        self._general_parser = parser_bundle.general_parser
+        self._titles_parser = parser_bundle.titles_parser
+        self._career_parser = parser_bundle.career_parser
+        self._section_collector = parser_bundle.section_discovery
 
     def parse(self, element: Tag) -> list[Any]:
         self.logger.debug("Infobox parse start (run_id=%s)", self.run_id)

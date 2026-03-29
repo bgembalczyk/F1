@@ -1,6 +1,8 @@
 from typing import Protocol
+from typing import runtime_checkable
 
 
+@runtime_checkable
 class TextCacheProtocol(Protocol):
     """Wspólny kontrakt cache dla wartości tekstowych (get/set)."""
 

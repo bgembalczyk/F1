@@ -21,6 +21,11 @@ DI_SUSPECT_SUFFIXES = (
     "Repository",
     "Adapter",
     "Fetcher",
+    "Parser",
+    "Collector",
+    "Provider",
+    "Discovery",
+    "Chain",
 )
 ALLOWED_FACTORY_METHOD_PATTERNS = (
     "__init__",
@@ -45,9 +50,16 @@ class Violation:
     method_name: str
     class_name: str
     dependency_name: str
+    violation_type: str = "creation"
 
     def format_message(self, repo_root: Path) -> str:
         rel = self.path.relative_to(repo_root)
+        if self.violation_type == "import":
+            return (
+                f"{rel}:{self.lineno} {self.class_name}.{self.method_name} -> "
+                f"ukryty import '{self.dependency_name}' wewnątrz metody biznesowej. "
+                "Sugerowane: przenieś import do modułu lub wstrzyknij zależność przez __init__/factory (DI)."
+            )
         return (
             f"{rel}:{self.lineno} {self.class_name}.{self.method_name} -> "
             f"utworzono '{self.dependency_name}' wewnątrz metody biznesowej. "
@@ -100,6 +112,51 @@ class DependencyCreationVisitor(ast.NodeVisitor):
                 ),
             )
         self.generic_visit(node)
+
+    def visit_Import(self, node: ast.Import) -> None:  # noqa: N802
+        if not self._is_hidden_import(node.lineno):
+            return
+        dependency_name = ", ".join(alias.name for alias in node.names)
+        class_name = self._class_stack[-1] if self._class_stack else "<module>"
+        method_name = self._method_stack[-1] if self._method_stack else "<module>"
+        self.violations.append(
+            Violation(
+                path=self.path,
+                lineno=node.lineno,
+                method_name=method_name,
+                class_name=class_name,
+                dependency_name=dependency_name,
+                violation_type="import",
+            ),
+        )
+
+    def visit_ImportFrom(self, node: ast.ImportFrom) -> None:  # noqa: N802
+        if not self._is_hidden_import(node.lineno):
+            return
+        names = ", ".join(alias.name for alias in node.names)
+        module = node.module or ""
+        dependency_name = f"{module}:{names}" if module else names
+        class_name = self._class_stack[-1] if self._class_stack else "<module>"
+        method_name = self._method_stack[-1] if self._method_stack else "<module>"
+        self.violations.append(
+            Violation(
+                path=self.path,
+                lineno=node.lineno,
+                method_name=method_name,
+                class_name=class_name,
+                dependency_name=dependency_name,
+                violation_type="import",
+            ),
+        )
+
+    def _is_hidden_import(self, lineno: int) -> bool:
+        if not self._method_stack:
+            return False
+        method_name = self._method_stack[-1]
+        return _is_business_method(method_name) and not _has_allow_comment(
+            self.source_lines,
+            lineno,
+        )
 
 
 def _called_name(func: ast.expr) -> str | None:
