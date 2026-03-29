@@ -12,6 +12,7 @@ from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
+from infrastructure.http_client.requests_shim.session import Session
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
 
@@ -124,6 +125,43 @@ def test_custom_headers_are_forwarded(name, factory, http_server):
 
     assert response.text == "demo"
     assert handler.last_header == "demo"
+
+
+def test_header_merge_priority_client_over_session(http_server):
+    base_url, handler = http_server
+    handler.last_header = ""
+
+    session = Session()
+    session.headers["X-Test-Header"] = "from-session"
+    client = UrllibHttpClient(
+        session=session,
+        config=HttpClientConfig(headers={"X-Test-Header": "from-client"}),
+    )
+
+    response = client.get(f"{base_url}/headers")
+
+    assert response.text == "from-client"
+    assert handler.last_header == "from-client"
+
+
+def test_header_merge_priority_request_over_client_and_session(http_server):
+    base_url, handler = http_server
+    handler.last_header = ""
+
+    session = Session()
+    session.headers["X-Test-Header"] = "from-session"
+    client = UrllibHttpClient(
+        session=session,
+        config=HttpClientConfig(headers={"X-Test-Header": "from-client"}),
+    )
+
+    response = client.get(
+        f"{base_url}/headers",
+        headers={"X-Test-Header": "from-request"},
+    )
+
+    assert response.text == "from-request"
+    assert handler.last_header == "from-request"
 
 
 @pytest.mark.parametrize(("name", "factory"), CLIENT_FACTORIES)

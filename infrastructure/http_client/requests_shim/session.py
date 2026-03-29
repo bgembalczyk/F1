@@ -19,16 +19,12 @@ class Session:
         headers: dict[str, str] | None = None,
         timeout: int | None = None,
     ) -> Response:
-        merged_headers = dict(self.headers)
-        if headers:
-            merged_headers.update(headers)
-
         parsed_url = urlsplit(url)
         if parsed_url.scheme not in ALLOWED_URL_SCHEMES:
             msg = f"Unsupported URL scheme: {parsed_url.scheme!r}"
             raise RequestError(msg)
 
-        request = urllib.request.Request(url, headers=merged_headers)  # noqa: S310
+        request = urllib.request.Request(url, headers=headers or {})  # noqa: S310
 
         try:
             with urllib.request.urlopen(  # noqa: S310
