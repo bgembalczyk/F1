@@ -21,7 +21,6 @@ from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
-from scrapers.base.helpers.runner import run_and_export
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -52,7 +51,6 @@ def create_default_wiki_pipeline_application(
         validate_list_registry=validate_list_job_registry,
         run_config_factory_map_builder=build_layer_zero_run_config_factory_map,
         default_config_factory=DefaultLayerZeroRunConfigFactory(),
-        run_and_export_function=run_and_export,
         merge_service=LayerZeroMergeService(
             merge_function=merge_layer_zero_raw_outputs,
         ),

@@ -8,6 +8,7 @@ from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.run_config import RunConfig
+from scrapers.base.runner import ScraperRunner
 
 
 class LayerZeroExecutor:
@@ -21,7 +22,6 @@ class LayerZeroExecutor:
             dict[str, LayerZeroRunConfigFactoryProtocol],
         ],
         default_config_factory: LayerZeroRunConfigFactoryProtocol,
-        run_and_export_function: Callable[..., None],
         merge_service: LayerZeroMergeService,
         job_hook: LayerZeroJobHook,
         step_reporter: PipelineStepReporterProtocol,
@@ -31,7 +31,6 @@ class LayerZeroExecutor:
         self._validate_list_registry = validate_list_registry
         self._run_config_factory_map_builder = run_config_factory_map_builder
         self._default_config_factory = default_config_factory
-        self._run_and_export_function = run_and_export_function
         self._merge_service = merge_service
         self._job_hook = job_hook
         self._step_reporter = step_reporter
@@ -108,7 +107,10 @@ class LayerZeroExecutor:
             csv_output_path=job.csv_output_path,
         )
 
-        self._run_and_export_function(
+        effective_run_config = (
+            local_run_config if local_run_config.scraper_kwargs else run_config
+        )
+        ScraperRunner(effective_run_config).run_and_export(
             job.list_scraper_cls,
             l0_raw_json_path,
             l0_raw_csv_path,
