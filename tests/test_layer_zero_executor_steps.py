@@ -1,5 +1,7 @@
 from pathlib import Path
+from typing import get_type_hints
 
+from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.policies import MirrorConstructorsJobHook
@@ -95,12 +97,21 @@ def _build_default_and_local_run_config(
 
 
 def test_resolve_config_factory_uses_builder_result() -> None:
-    expected = {"drivers": object()}
+    expected = {"drivers": _FakeConfigFactory({"from": "builder"})}
     executor = _executor(run_config_factory_map_builder=lambda: expected)
 
     resolved = executor._resolve_config_factory()
 
     assert resolved is expected
+
+
+def test_layer_zero_executor_typing_does_not_fallback_to_object_for_factories() -> None:
+    resolve_hints = get_type_hints(LayerZeroExecutor._resolve_config_factory)
+    build_hints = get_type_hints(LayerZeroExecutor._build_local_run_config)
+
+    expected_factory_map_type = dict[str, LayerZeroRunConfigFactoryProtocol]
+    assert resolve_hints["return"] == expected_factory_map_type
+    assert build_hints["config_factories"] == expected_factory_map_type
 
 
 def test_build_local_run_config_uses_seed_specific_factory() -> None:

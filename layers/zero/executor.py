@@ -61,7 +61,7 @@ class LayerZeroExecutor:
 
         self._finalize_merge(base_wiki_dir)
 
-    def _resolve_config_factory(self) -> dict[str, object]:
+    def _resolve_config_factory(self) -> dict[str, LayerZeroRunConfigFactoryProtocol]:
         return self._run_config_factory_map_builder()
 
     def _build_local_run_config(
@@ -69,7 +69,7 @@ class LayerZeroExecutor:
         *,
         run_config: RunConfig,
         job: ListJobRegistryEntry,
-        config_factories: dict[str, object],
+        config_factories: dict[str, LayerZeroRunConfigFactoryProtocol],
     ) -> RunConfig:
         config_factory = config_factories.get(job.seed_name, self._default_config_factory)
         scraper_kwargs = config_factory.create_scraper_kwargs(job)
