@@ -23,6 +23,10 @@ Aktualny scope bramki typowania (`mypy.ini`):
 5. **Nowe moduły: brak `Any` bez uzasadnienia**
    - nowy plik w `layers/`, `validation/`, `infrastructure/http_client/` nie może używać `Any`,
      chyba że obok znajduje się komentarz uzasadniający `ANY-JUSTIFIED:`.
+6. **Registry seedów: jedno źródło prawdy**
+   - kanoniczne API seed registry to `layers.seed.registry`.
+   - `scrapers.wiki.seed_registry` jest wyłącznie fasadą kompatybilności wstecznej
+     (re-export tych samych symboli), nie miejscem na nową logikę.
 
 ## Roadmapa rolloutu strict typing (per pakiet)
 > Każdy etap ma **akceptowalny budżet błędów = 0** i jest zamykany dopiero, gdy

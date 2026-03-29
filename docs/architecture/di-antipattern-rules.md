@@ -7,7 +7,12 @@ Zakres checka: `layers/*` oraz `scrapers/base/*`.
 1. **Tworzenie zależności typu klient/serwis wewnątrz metod biznesowych**
    - Przykład: `HttpClient()`, `SectionService()`, `WikiFetcher()` w metodzie domenowej typu `process`, `run`, `extract`.
 2. **Ukryte składanie zależności poza composition root**
-   - Jeżeli metoda nie jest konstruktorem/fabryką (`__init__`, `build*`, `create*`, `factory*`, `compose*`, `wire*`, `setup*`, `configure*`), instancjacja klas o sufiksach `Client|Service|Repository|Adapter|Fetcher` jest raportowana.
+   - Jeżeli metoda nie jest konstruktorem/fabryką (`__init__`, `build*`, `create*`, `factory*`, `compose*`, `wire*`, `setup*`, `configure*`), instancjacja klas o sufiksach `Client|Service|Repository|Adapter|Fetcher|Parser|Collector|Provider|Discovery|Chain` jest raportowana.
+
+
+3. **Ukryte importy w metodach biznesowych**
+   - `import ...` lub `from ... import ...` wewnątrz metod domenowych jest traktowane jako ukryte wiązanie implementacyjne.
+   - Dozwolone pozostają importy na poziomie modułu oraz miejsca oznaczone komentarzem wyjątku.
 
 ## Raportowanie naruszeń
 
