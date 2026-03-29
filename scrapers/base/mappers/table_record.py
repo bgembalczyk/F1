@@ -88,11 +88,3 @@ class LayoutTableRecordMapper:
             {"layout": name, "lap_records": records}
             for name, records in grouped.items()
         ]
-
-
-__all__ = [
-    "LayoutTableRecordMapper",
-    "LayoutTableRowsInput",
-    "TableRecordInput",
-    "TableRecordMapper",
-]

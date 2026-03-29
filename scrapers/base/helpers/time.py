@@ -212,24 +212,6 @@ def parse_time_key(rec: dict[str, Any]) -> float | str | None:
     return s.lower()
 
 
-def parse_time_seconds(rec: dict[str, Any]) -> float | None:
-    """
-    Zwraca czas WYŁĄCZNIE jako sekundy (float) albo None.
-    Obsługuje:
-    - rec["time_seconds"] (jeśli istnieje)
-    - rec["time"] jako liczba
-    - rec["time"] jako dict {"seconds": ...}
-    - rec["time"] jako tekst: "M:SS.xxx" albo "SS.xxx"
-    - rec["time"] jako NormalizedTime
-    """
-    ts = rec.get("time_seconds")
-    if isinstance(ts, int | float):
-        return float(ts)
-
-    t = rec.get("time")
-    return parse_time_seconds_from_text(t)
-
-
 def normalize_time_value(rec: dict[str, Any]) -> None:
     """
     Zamienia time dict/NormalizedTime na float jeśli jest seconds,

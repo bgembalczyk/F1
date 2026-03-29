@@ -10,9 +10,7 @@ def test_base_columns_types_stays_domain_neutral() -> None:
         "driver_list.py",
         "engine.py",
         "entrant.py",
-        "points.py",
         "position.py",
-        "rounds.py",
         "seasons.py",
         "tyre.py",
     }

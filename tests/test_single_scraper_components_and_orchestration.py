@@ -13,11 +13,11 @@ from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.composition import DriverScraperDependencies
-from scrapers.drivers.domain_record_service import DomainRecordService
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.sections.service import DriverSectionExtractionService
+from scrapers.drivers.services.domain_record import DomainRecordService
 from scrapers.drivers.single_scraper import SingleDriverScraper
 from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler

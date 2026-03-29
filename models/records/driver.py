@@ -1,4 +1,3 @@
-from typing import Any
 from typing import TypedDict
 
 from models.records.driver_championships import DRIVERS_CHAMPIONSHIPS_SCHEMA
@@ -6,10 +5,8 @@ from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from models.records.record_definition import RecordDefinition
-from models.records.record_definition import build_validator
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 
 
@@ -55,8 +52,3 @@ DRIVER_DEFINITION = RecordDefinition(
 )
 
 DRIVER_SCHEMA = DRIVER_DEFINITION.to_schema()
-_DRIVER_VALIDATOR = build_validator(DRIVER_DEFINITION)
-
-
-def validate_driver_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return _DRIVER_VALIDATOR(record)

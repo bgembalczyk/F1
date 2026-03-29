@@ -7,9 +7,9 @@ from typing import TypeAlias
 from typing import TypeVar
 from typing import runtime_checkable
 
-from models.value_objects import EntityName
-from models.value_objects import SectionId
-from models.value_objects import WikiUrl
+from models.value_objects.common_terms import EntityName
+from models.value_objects.common_terms import SectionId
+from models.value_objects.common_terms import WikiUrl
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -49,18 +49,6 @@ class SectionParser(Protocol):
     """
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
-
-
-class SectionTextParser(Protocol):
-    """Common parser interface for narrative/text section content."""
-
-    def parse(self, section_fragment: BeautifulSoup) -> list[SectionRecord]: ...
-
-
-class SectionTableParser(Protocol):
-    """Common parser interface for table-oriented section content."""
-
-    def parse(self, section_fragment: BeautifulSoup) -> list[SectionRecord]: ...
 
 
 ServiceT_co = TypeVar("ServiceT_co", covariant=True)

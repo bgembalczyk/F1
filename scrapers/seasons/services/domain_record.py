@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.postprocess import BaseRecordAssemblerInput
+from scrapers.base.postprocess.assembler import BaseRecordAssemblerInput
 from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections

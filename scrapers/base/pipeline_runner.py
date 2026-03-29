@@ -4,14 +4,15 @@ from collections.abc import Callable
 from typing import TYPE_CHECKING
 from typing import TypeAlias
 
+from scrapers.base.records import NormalizedRecord
+from scrapers.base.records import RawRecord
+
 if TYPE_CHECKING:
     from logging import Logger
 
 from bs4 import BeautifulSoup
 
 from models.mappers.serialization import to_dict_list
-from scrapers.base.records import NormalizedRecord
-from scrapers.base.records import RawRecord
 from validation.validator_base import ExportRecord
 
 PipelineResult: TypeAlias = (

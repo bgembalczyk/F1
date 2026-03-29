@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
-from typing import Protocol
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -80,18 +79,6 @@ class CheckpointPayload:
 
 
 @dataclass(frozen=True)
-class StepExecutionResult:
-    step: StepDeclaration
-    domain: str
-    input_path: str
-    output_path: str
-    input_records: int
-    output_records: int
-    errors: list[str]
-    duration_ms: float
-
-
-@dataclass(frozen=True)
 class AuditEntry:
     timestamp: str
     step_id: int
@@ -103,37 +90,3 @@ class AuditEntry:
     output_records: int
     errors: list[str]
     duration_ms: float
-
-
-class InputResolver(Protocol):
-    def resolve(self, step: StepDeclaration, domain: str) -> ResolvedInput:
-        """Resolve step input records and source path."""
-
-
-class StepExecutor(Protocol):
-    def execute(
-        self,
-        step: StepDeclaration,
-        input_records: list[dict[str, Any]],
-    ) -> ExecutedStep:
-        """Execute parser for step and return normalized execution outcome."""
-
-
-class CheckpointRepository(Protocol):
-    def save(
-        self,
-        step: StepDeclaration,
-        domain: str,
-        input_path: Path,
-        input_records: list[dict[str, Any]],
-        execution: ExecutedStep,
-    ) -> Path:
-        """Persist checkpoint payload for a step and return output path."""
-
-
-class AuditRepository(Protocol):
-    def append(self, entry: AuditEntry) -> None:
-        """Append audit row for step execution."""
-
-    def write_regression_report(self, report_path: Path) -> Path:
-        """Persist aggregated audit report and return path."""

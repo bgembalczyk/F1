@@ -3,10 +3,10 @@ from __future__ import annotations
 
 from bs4 import BeautifulSoup
 
-from scrapers.wiki.parsers.section_adapter import find_section_tree
-from scrapers.wiki.parsers.section_detection import find_section_heading
-from scrapers.wiki.parsers.section_profiles import DOMAIN_SECTION_PROFILES
-from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+from scrapers.wiki.parsers.sections.adapter import find_section_tree
+from scrapers.wiki.parsers.sections.detection import find_section_heading
+from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
+from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 
 def test_section_profiles_define_expected_domains_and_contract_shape() -> None:

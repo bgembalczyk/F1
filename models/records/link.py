@@ -3,7 +3,6 @@ from typing import TypedDict
 
 from validation.issue import ValidationIssue
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 def validate_link_text(record: dict[str, Any]) -> list[ValidationIssue]:
@@ -24,7 +23,3 @@ LINK_SCHEMA = RecordSchema(
 class LinkRecord(TypedDict):
     text: str
     url: str | None
-
-
-def validate_link_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return RecordValidator.validate_schema(record, LINK_SCHEMA)

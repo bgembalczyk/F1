@@ -8,11 +8,11 @@ from datetime import timezone
 from typing import TYPE_CHECKING
 from typing import Any
 
+SCHEMA_VERSION = "1.0"
+
 if TYPE_CHECKING:
     from collections.abc import Mapping
     from pathlib import Path
-
-SCHEMA_VERSION = "1.0"
 
 
 @dataclass(slots=True)

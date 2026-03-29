@@ -5,7 +5,6 @@ from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.helpers.wiki import is_reference_link
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 
 
 def _tag(html: str):
@@ -117,43 +116,3 @@ def test_find_section_elements_without_section_id_returns_all_matches():
     matches = find_section_elements(soup, None, ["table"], class_="wikitable")
 
     assert [match["id"] for match in matches] == ["match-1", "match-2"]
-
-
-def test_split_url_fragment_returns_base_and_fragment():
-    mixin = WikipediaSectionByIdMixin()
-
-    base_url, fragment = mixin.split_url_fragment(
-        "https://en.wikipedia.org/wiki/Foo#Bar_Baz",
-    )
-
-    assert base_url == "https://en.wikipedia.org/wiki/Foo"
-    assert fragment == "Bar_Baz"
-
-
-def test_split_url_fragment_handles_missing_fragment():
-    mixin = WikipediaSectionByIdMixin()
-
-    base_url, fragment = mixin.split_url_fragment("https://en.wikipedia.org/wiki/Foo")
-
-    assert base_url == "https://en.wikipedia.org/wiki/Foo"
-    assert fragment is None
-
-
-def test_extract_section_by_id_with_text_alias_and_modern_heading_wrapper():
-    html = """
-    <div class="mw-heading mw-heading2"><h2 id="Career_results">Career result</h2></div>
-    <table class="wikitable" id="t1"></table>
-    <div class="mw-heading mw-heading2"><h2 id="Other">Other</h2></div>
-    <table class="wikitable" id="t2"></table>
-    """
-    soup = BeautifulSoup(html, "html.parser")
-
-    section = WikipediaSectionByIdMixin.extract_section_by_id(
-        soup,
-        "Career_results",
-        domain="drivers",
-    )
-
-    assert section is not None
-    assert section.find(id="t1") is not None
-    assert section.find(id="t2") is None

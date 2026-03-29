@@ -4,10 +4,10 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
-from scrapers.base.single_wiki_article import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article import SectionsPayloadDTO
-from scrapers.base.single_wiki_article import SingleWikiArticleScraperBase
-from scrapers.base.single_wiki_article import TablesPayloadDTO
+from scrapers.base.single_wiki_article.base import SingleWikiArticleScraperBase
+from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
+from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 

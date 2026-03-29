@@ -1,12 +1,9 @@
-from typing import Any
 from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 class SeasonSummaryRecord(TypedDict, total=False):
@@ -48,7 +45,3 @@ SEASON_SUMMARY_SCHEMA = RecordSchema(
         "constructors_champion": NestedSchema(LINK_SCHEMA, is_list=True),
     },
 )
-
-
-def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return RecordValidator.validate_schema(record, SEASON_SUMMARY_SCHEMA)

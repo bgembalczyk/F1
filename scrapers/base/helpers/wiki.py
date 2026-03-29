@@ -5,19 +5,6 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text_normalization import is_language_link
-from scrapers.base.helpers.url import normalize_url
-
-
-def build_full_url(base: str, href: str) -> str | None:
-    """
-    Buduje pełny URL na podstawie bazy i href.
-
-    Obsługuje przypadki:
-    - względne ścieżki (/wiki/...),
-    - schemowe URL-e (//...),
-    - absolutne URL-e (http/https i inne schematy).
-    """
-    return normalize_url(base, href)
 
 
 def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:

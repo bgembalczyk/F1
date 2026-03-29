@@ -5,11 +5,10 @@ from abc import ABC
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 from typing import Any
-from typing import Protocol
 
-from models.value_objects import EntityName
-from models.value_objects import SectionId
-from models.value_objects import WikiUrl
+from models.value_objects.common_terms import EntityName
+from models.value_objects.common_terms import SectionId
+from models.value_objects.common_terms import WikiUrl
 from scrapers.base.sections.serializer import normalize_section_metadata
 from scrapers.base.sections.serializer import serialize_section_result
 
@@ -23,10 +22,6 @@ if TYPE_CHECKING:
 
 
 logger = logging.getLogger(__name__)
-
-
-class SectionExtractionService(Protocol):
-    def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]]: ...
 
 
 class BaseSectionExtractionService(ABC):

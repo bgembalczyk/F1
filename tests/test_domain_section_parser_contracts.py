@@ -5,11 +5,8 @@ from dataclasses import asdict
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.options import ScraperOptions
 from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
 from scrapers.constructors.sections.history import ConstructorHistorySectionParser
-from scrapers.drivers.sections.career import DriverCareerSectionParser
-from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 from scrapers.seasons.sections.regulation_changes import (
     SeasonRegulationChangesSectionParser,
@@ -32,17 +29,6 @@ def test_constructor_section_parser_contract() -> None:
 def test_circuit_section_parser_contract() -> None:
     parser = CircuitLayoutHistorySectionParser()
     result = parser.parse(BeautifulSoup("<p>First layout</p>", "html.parser"))
-    assert tuple(asdict(result).keys()) == CONTRACT_KEYS
-
-
-def test_driver_section_parser_contract() -> None:
-    raw = DriverResultsSectionParser(
-        options=ScraperOptions(include_urls=False),
-        url="https://example.com/driver",
-    )
-    parser = DriverCareerSectionParser(parser=raw)
-    html = '<table class="wikitable"><tr><th>Season</th><th>Series</th><th>Position</th></tr><tr><td>2024</td><td>F1</td><td>1</td></tr></table>'
-    result = parser.parse(BeautifulSoup(html, "html.parser"))
     assert tuple(asdict(result).keys()) == CONTRACT_KEYS
 
 

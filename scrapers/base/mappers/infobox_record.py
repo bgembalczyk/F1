@@ -51,6 +51,3 @@ class InfoboxRecordMapper:
         if isinstance(value, list):
             return [self._normalize_value(item) for item in value]
         return value
-
-
-__all__ = ["InfoboxRecordInput", "InfoboxRecordMapper"]

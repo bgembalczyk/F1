@@ -7,7 +7,7 @@ from scrapers.base.errors import ScraperError
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.base.sections.section_id_resolver import MissingSectionError
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
-from scrapers.base.single_wiki_article import SingleWikiArticleScraperBase
+from scrapers.base.single_wiki_article.base import SingleWikiArticleScraperBase
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )

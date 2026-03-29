@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.adapters import HtmlRowBackgroundColorAdapter
+from scrapers.base.adapters.row_background import HtmlRowBackgroundColorAdapter
 from scrapers.grands_prix.helpers.constants import BACKGROUND_MAP
 from scrapers.grands_prix.helpers.constants import DEFAULT_CHAMPIONSHIP
 from scrapers.grands_prix.helpers.constants import UNKNOWN_CHAMPIONSHIP

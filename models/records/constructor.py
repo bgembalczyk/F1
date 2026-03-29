@@ -1,13 +1,10 @@
-from typing import Any
 from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from models.records.record_definition import RecordDefinition
-from models.records.record_definition import build_validator
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 
 
@@ -53,8 +50,3 @@ CONSTRUCTOR_DEFINITION = RecordDefinition(
 )
 
 CONSTRUCTOR_SCHEMA = CONSTRUCTOR_DEFINITION.to_schema()
-_CONSTRUCTOR_VALIDATOR = build_validator(CONSTRUCTOR_DEFINITION)
-
-
-def validate_constructor_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return _CONSTRUCTOR_VALIDATOR(record)

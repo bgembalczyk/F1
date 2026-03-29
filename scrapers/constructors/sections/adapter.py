@@ -8,7 +8,7 @@ from scrapers.constructors.sections.complete_f1_results import (
     ConstructorCompleteF1ResultsSectionParser,
 )
 from scrapers.constructors.sections.history import ConstructorHistorySectionParser
-from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 
 def constructor_section_entries() -> list[SectionAdapterEntry]:

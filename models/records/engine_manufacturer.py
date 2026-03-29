@@ -1,4 +1,3 @@
-from typing import Any
 from typing import Literal
 from typing import TypedDict
 
@@ -6,10 +5,8 @@ from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 class EngineManufacturerRecord(TypedDict, total=False):
@@ -42,9 +39,3 @@ ENGINE_MANUFACTURER_SCHEMA = RecordSchema(
         "seasons": NestedSchema(SEASON_SCHEMA, is_list=True),
     },
 )
-
-
-def validate_engine_manufacturer_record(
-    record: dict[str, Any],
-) -> list[ValidationIssue]:
-    return RecordValidator.validate_schema(record, ENGINE_MANUFACTURER_SCHEMA)

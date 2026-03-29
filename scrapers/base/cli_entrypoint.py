@@ -129,40 +129,6 @@ def build_cli_main(
     return _main
 
 
-def build_deprecated_module_main(
-    *,
-    target: Callable[..., None],
-    deprecation_message: str,
-    argv: Sequence[str] | None = None,
-    base_config: RunConfig | None = None,
-    deprecation_stacklevel: int = 2,
-) -> Callable[[], None]:
-    """Build ``__main__`` launcher dedicated to deprecated module shims."""
-    return build_cli_main(
-        target=target,
-        base_config=base_config or deprecated_module_base_config(),
-        profile=RunProfileName.DEPRECATED,
-        argv=argv,
-        deprecation_message=deprecation_message,
-        deprecation_stacklevel=deprecation_stacklevel,
-    )
-
-
-def build_complete_extractor_main(
-    *,
-    target: Callable[..., None],
-    argv: Sequence[str] | None = None,
-    base_config: RunConfig | None = None,
-) -> Callable[[], None]:
-    """Build ``__main__`` launcher for complete extractor modules."""
-    return build_cli_main(
-        target=target,
-        base_config=base_config or complete_extractor_base_config(),
-        profile=RunProfileName.MINIMAL,
-        argv=argv,
-    )
-
-
 def _invoke_target(*, target: Callable[..., None], run_config: RunConfig) -> None:
     try:
         signature = inspect.signature(target)

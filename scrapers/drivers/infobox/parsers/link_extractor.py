@@ -13,7 +13,6 @@ from scrapers.drivers.infobox.parsers.constants import TWO_DIGIT_YEAR_SUFFIX
 
 _YEAR_FINDALL_RE = re.compile(r"\b\d{4}(?:[--]\d{4})?\b")
 _YEAR_RANGE_RE = re.compile(r"\b(\d{4})\s*[--]\s*(\d{2,4})\b")
-_YEAR_RE = re.compile(r"\b(\d{4})\b")
 _YEAR_OPTIONAL_RANGE_RE = re.compile(r"\d{4}(?:[--]\d{4})?")
 _YEAR_OPTIONAL_RANGE_WS_RE = re.compile(r"\d{4}(?:\s*[--]\s*\d{2,4})?")
 _YEAR_RANGE_STRICT_RE = re.compile(r"\d{4}\s*[--]\s*\d{2,4}")

@@ -17,11 +17,3 @@ ALLOWED_MANUFACTURER_STATUSES = (
     MANUFACTURER_STATUS_CURRENT,
     MANUFACTURER_STATUS_FORMER,
 )
-
-# Statusy wyścigów (Grand Prix).
-RACE_STATUS_ACTIVE = "active"  # Wyścig nadal występuje w kalendarzu.
-RACE_STATUS_PAST = "past"  # Wyścig nie jest już rozgrywany.
-ALLOWED_RACE_STATUSES = (
-    RACE_STATUS_ACTIVE,
-    RACE_STATUS_PAST,
-)

@@ -1,4 +1,3 @@
-from typing import Any
 from typing import TypedDict
 
 from models.records.car import CAR_SCHEMA
@@ -7,10 +6,8 @@ from models.records.event import EVENT_SCHEMA
 from models.records.event import EventRecord
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 class FatalityRecord(TypedDict, total=False):
@@ -33,7 +30,3 @@ FATALITY_SCHEMA = RecordSchema(
         "car": NestedSchema(CAR_SCHEMA),
     },
 )
-
-
-def validate_fatality_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return RecordValidator.validate_schema(record, FATALITY_SCHEMA)

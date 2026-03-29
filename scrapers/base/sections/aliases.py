@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 from scrapers.base.sections.constants import COMMON_SECTION_ALIASES
-from scrapers.wiki.parsers.section_profiles import DOMAIN_SECTION_PROFILES
-from scrapers.wiki.parsers.section_profiles import normalize_section_profile_key
-from scrapers.wiki.parsers.section_profiles import profile_aliases_for_target
+from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
+from scrapers.wiki.parsers.sections.helpers import profile_aliases_for_target
+from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
 
 
 def _build_domain_section_aliases() -> dict[str, dict[str, set[str]]]:
@@ -24,6 +24,3 @@ def builtin_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
     aliases = set(COMMON_SECTION_ALIASES.get(normalized_target, set()))
     aliases.update(profile_aliases_for_target(target, domain=domain))
     return aliases
-
-
-__all__ = ["DOMAIN_SECTION_ALIASES", "builtin_aliases_for_target"]

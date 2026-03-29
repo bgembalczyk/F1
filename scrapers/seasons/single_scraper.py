@@ -4,10 +4,12 @@ import warnings
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.single_wiki_article import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article import SectionsPayloadDTO
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
-from scrapers.base.single_wiki_article import TablesPayloadDTO
+from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
+from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
+from scrapers.base.single_wiki_article.section_adapter import (
+    SingleWikiArticleSectionAdapterBase,
+)
 from scrapers.seasons.composition import SeasonScraperCompositionFactory
 from scrapers.seasons.composition import SeasonScraperDependencies
 from scrapers.seasons.pipeline import SeasonYearResolver

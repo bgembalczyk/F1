@@ -6,8 +6,8 @@ from typing import Protocol
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
-from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
-from scrapers.wiki.parsers.section_detection import make_stable_section_id
+from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
+from scrapers.wiki.parsers.sections.detection import make_stable_section_id
 from scrapers.wiki.parsers.sections.helpers import _split_into_parts
 
 

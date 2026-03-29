@@ -1,9 +1,10 @@
 import json
 from pathlib import Path
 
-from scrapers.base.orchestration.step_orchestrator import SectionSourceAdapter
-from scrapers.base.orchestration.step_orchestrator import StepDeclaration
-from scrapers.base.orchestration.step_orchestrator import StepOrchestrator
+from scrapers.base.orchestration.components.section_soruce_adapter import (
+    SectionSourceAdapter,
+)
+from scrapers.base.orchestration.models import StepDeclaration
 from tests.support.step_orchestrator_assertions import (
     assert_section_source_adapter_falls_back_to_raw,
 )
@@ -34,30 +35,3 @@ def test_section_source_adapter_fallbacks_to_legacy_wiki(tmp_path: Path) -> None
 
     assert resolved.source_path == legacy_path
     assert resolved.records == [{"driver": {"url": "legacy"}}]
-
-
-def test_step_orchestrator_writes_standardized_checkpoint(tmp_path: Path) -> None:
-    source = tmp_path / "data" / "checkpoints" / "step_0_layer0_drivers.json"
-    source.parent.mkdir(parents=True, exist_ok=True)
-    source.write_text(
-        json.dumps({"records": [{"url": "https://example.test/a"}]}),
-        encoding="utf-8",
-    )
-
-    orchestrator = StepOrchestrator(base_dir=tmp_path / "data")
-    step = StepDeclaration(
-        step_id=1,
-        layer="layer1",
-        input_source="step_0_layer0_drivers",
-        parser=lambda rows: [*rows, {"url": "https://example.test/b"}],
-        output_target="checkpoints",
-    )
-
-    result = orchestrator.run(step, "drivers")
-    output_path = Path(result.output_path)
-
-    payload = json.loads(output_path.read_text(encoding="utf-8"))
-    assert output_path.name == "step_1_layer1_drivers.json"
-    assert payload["metadata"]["output_target"] == "checkpoints"
-    expected_count = 2
-    assert len(payload["records"]) == expected_count

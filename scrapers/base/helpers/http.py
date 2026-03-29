@@ -2,8 +2,8 @@ from dataclasses import replace
 from typing import TYPE_CHECKING
 
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
-from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_RETRIES
-from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_TIMEOUT
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_RETRIES
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_TIMEOUT
 from infrastructure.http_client.policies.http import HttpPolicy
 from infrastructure.http_client.policies.response_cache import ResponseCache
 

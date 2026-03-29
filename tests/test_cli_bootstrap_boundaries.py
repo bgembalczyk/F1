@@ -24,7 +24,6 @@ ALLOWED_MAIN_FILES = {
     "scrapers/engines/indianapolis_only_engine_manufacturers_list.py",
     "scrapers/grands_prix/complete_scraper.py",
     "scrapers/grands_prix/list_scraper.py",
-    "scrapers/grands_prix/red_flagged_races_scraper/non_championship.py",
     "scrapers/grands_prix/red_flagged_races_scraper/world_championship.py",
     "scrapers/points/points_scoring_systems_history.py",
     "scrapers/points/shortened_race_points.py",

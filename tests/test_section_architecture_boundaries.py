@@ -4,7 +4,7 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
-from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 
 DOMAINS = ("drivers", "constructors", "circuits", "seasons", "grands_prix")
 
@@ -85,7 +85,7 @@ def test_single_scraper_can_depend_on_sections_without_reverse_dependency() -> N
 
 def test_critical_sections_have_alias_fallbacks() -> None:
     for domain in DOMAINS:
-        critical = DOMAIN_CRITICAL_SECTIONS.get(domain, ())
+        critical = DOMAIN_SECTION_RESOLVER_CONFIG.get(domain, ())
         assert critical, f"Missing critical sections map for domain={domain}"
         for section in critical:
             assert section.section_id.strip(), f"Empty section id in domain={domain}"

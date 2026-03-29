@@ -487,19 +487,6 @@ def _deprecated_runtime_message(
     )
 
 
-def get_deprecated_module_migrations() -> tuple[tuple[str, str], ...]:
-    """Return deprecated module paths and their canonical replacements."""
-    migrations: list[tuple[str, str]] = []
-    for definition in LEGACY_MODULE_REGISTRY.definitions:
-        if not definition.deprecated:
-            continue
-        replacement_module = (
-            definition.replacement_module_path or definition.module_path
-        )
-        migrations.append((definition.module_path, replacement_module))
-    return tuple(migrations)
-
-
 def _invoke_target(target: Callable[..., None], run_config: RunConfig) -> None:
     signature = inspect.signature(target)
     if "run_config" in signature.parameters:
@@ -570,19 +557,9 @@ def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
     _invoke_target(spec.target, run_config)
 
 
-def run_current_legacy_wrapper(argv: list[str] | None = None) -> None:
-    run_registered_module_for_caller(argv)
-
-
 def run_registered_module(module_path: str, argv: list[str] | None = None) -> None:
     """Run a legacy-compatible registered module command."""
     run_legacy_wrapper(module_path, argv)
-
-
-def run_domain_command(domain: str, argv: list[str] | None = None) -> None:
-    """Run a domain command generated from scraper metadata."""
-    command = DOMAIN_COMMANDS[domain]
-    run_registered_module(command.module_path, argv)
 
 
 def run_registered_module_for_caller(argv: list[str] | None = None) -> None:
@@ -626,46 +603,3 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         app.run_layer_zero()
     if args.mode in {"layer1", "full"}:
         app.run_layer_one()
-
-
-def _build_main_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Canonical scrapers launcher")
-    subparsers = parser.add_subparsers(dest="command", required=True)
-
-    wiki_parser = subparsers.add_parser("wiki")
-    wiki_parser.add_argument(
-        "--mode",
-        choices=("layer0", "layer1", "full"),
-        default="layer0",
-    )
-
-    run_parser = subparsers.add_parser("run")
-    run_parser.add_argument("module", choices=tuple(sorted(SCRAPER_REGISTRY.keys())))
-    run_parser.add_argument("args", nargs=argparse.REMAINDER)
-
-    domain_parser = subparsers.add_parser("domain")
-    domain_parser.add_argument("name", choices=tuple(sorted(DOMAIN_COMMANDS.keys())))
-    domain_parser.add_argument("args", nargs=argparse.REMAINDER)
-    return parser
-
-
-def _normalize_passthrough_args(args: list[str]) -> list[str]:
-    if args and args[0] == "--":
-        return args[1:]
-    return args
-
-
-def main(argv: list[str] | None = None) -> None:
-    parser = _build_main_parser()
-    args = parser.parse_args(argv)
-    if args.command == "wiki":
-        run_wiki_cli(["--mode", args.mode])
-        return
-    if args.command == "domain":
-        run_domain_command(args.name, _normalize_passthrough_args(args.args))
-        return
-    run_registered_module(args.module, _normalize_passthrough_args(args.args))
-
-
-if __name__ == "__main__":
-    main()

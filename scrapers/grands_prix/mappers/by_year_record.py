@@ -87,6 +87,3 @@ class GrandPrixByYearRecordMapper:
             if all(self._get_text(item) == first_text for item in normalized)
             else None
         )
-
-
-__all__ = ["GrandPrixByYearRecordInput", "GrandPrixByYearRecordMapper"]

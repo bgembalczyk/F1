@@ -1,12 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from typing import Any
-
-if TYPE_CHECKING:
-    from collections.abc import Mapping
-
-    from scrapers.base.helpers.value_objects.lap_record import LapRecord
 
 
 def normalize_seconds(value: Any) -> float | None:
@@ -21,11 +15,3 @@ def normalize_seconds(value: Any) -> float | None:
         except ValueError:
             return None
     return None
-
-
-def as_lap_record(record: LapRecord | Mapping[str, Any]):
-    from scrapers.base.helpers.value_objects.lap_record import LapRecord
-
-    if isinstance(record, LapRecord):
-        return record
-    return LapRecord.from_dict(record)

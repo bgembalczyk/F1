@@ -1,9 +1,6 @@
 # ruff: noqa: E501
 from __future__ import annotations
 
-from dataclasses import asdict
-from typing import TYPE_CHECKING
-
 import pytest
 from bs4 import BeautifulSoup
 
@@ -13,69 +10,22 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
-from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
-from scrapers.constructors.sections.history import ConstructorHistorySectionParser
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.postprocess.assembler import DriverRecordDTO
-from scrapers.drivers.sections.career import DriverCareerSectionParser
-from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.drivers.sections.service import DriverSectionExtractionService
-from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
-from scrapers.seasons.sections.regulation_changes import (
-    SeasonRegulationChangesSectionParser,
-)
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
-
-if TYPE_CHECKING:
-    from scrapers.base.sections.interface import SectionParser
 
 SECTION_RESULT_KEYS = ("section_id", "section_label", "records", "metadata")
 
 
 def _soup(html: str) -> BeautifulSoup:
     return BeautifulSoup(html, "html.parser")
-
-
-@pytest.mark.parametrize(
-    ("parser", "html"),
-    [
-        (
-            ConstructorHistorySectionParser(),
-            '<table class="wikitable"><tr><th>Year</th></tr><tr><td>1950</td></tr></table>',
-        ),
-        (CircuitLayoutHistorySectionParser(), "<p>First layout</p>"),
-        (
-            DriverCareerSectionParser(
-                parser=DriverResultsSectionParser(
-                    options=ScraperOptions(include_urls=False),
-                    url="https://example.com/driver",
-                ),
-            ),
-            '<table class="wikitable"><tr><th>Season</th><th>Series</th><th>Position</th></tr><tr><td>2024</td><td>F1</td><td>1</td></tr></table>',
-        ),
-        (SeasonRegulationChangesSectionParser(), "<ul><li>Rules update</li></ul>"),
-        (
-            GrandPrixByYearSectionParser(
-                url="https://example.com/gp",
-                include_urls=False,
-                normalize_empty_values=True,
-            ),
-            '<table class="wikitable"><tr><th>Year</th><th>Driver</th><th>Constructor</th><th>Report</th></tr><tr><td>2024</td><td>Max Verstappen</td><td>Red Bull-Ford</td><td>Race report</td></tr></table>',
-        ),
-    ],
-)
-def test_section_parser_contract_for_each_domain_implementation(
-    parser: SectionParser,
-    html: str,
-) -> None:
-    result = parser.parse(_soup(html))
-    assert tuple(asdict(result).keys()) == SECTION_RESULT_KEYS
 
 
 @pytest.mark.parametrize(

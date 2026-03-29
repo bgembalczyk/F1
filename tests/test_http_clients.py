@@ -9,7 +9,6 @@ import pytest
 
 from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
-from infrastructure.http_client.clients.http import HttpClient
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
@@ -92,14 +91,6 @@ def _client_with_config(client_cls, **config_kwargs):
 
 
 CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
-    (
-        "requests",
-        lambda **kwargs: _client_with_config(
-            HttpClient,
-            backoff_seconds=0.01,
-            **kwargs,
-        ),
-    ),
     (
         "urllib",
         lambda **kwargs: _client_with_config(

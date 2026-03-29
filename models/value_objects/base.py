@@ -2,11 +2,8 @@ from collections.abc import Mapping
 from dataclasses import asdict
 from dataclasses import is_dataclass
 from typing import Any
-from typing import TypeVar
 
 from typing_extensions import Self
-
-TValueObject = TypeVar("TValueObject", bound="ValueObject")
 
 
 class ValueObject:

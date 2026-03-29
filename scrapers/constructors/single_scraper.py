@@ -3,10 +3,12 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.single_wiki_article import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article import SectionsPayloadDTO
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
-from scrapers.base.single_wiki_article import TablesPayloadDTO
+from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
+from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
+from scrapers.base.single_wiki_article.section_adapter import (
+    SingleWikiArticleSectionAdapterBase,
+)
 from scrapers.constructors.composition import ConstructorScraperCompositionFactory
 from scrapers.constructors.composition import ConstructorScraperDependencies
 

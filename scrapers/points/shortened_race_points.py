@@ -1,8 +1,6 @@
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.transformers.shortened_race_points import (
@@ -37,14 +35,6 @@ class ShortenedRacePointsScraper(BasePointsScraper):
             options=append_transformer(options, ShortenedRacePointsTransformer()),
             config=config,
         )
-
-
-def run_list_scraper(*, run_config: RunConfig) -> None:
-    run_and_export(
-        ShortenedRacePointsScraper,
-        "points/points_scoring_systems_shortened.json",
-        run_config=run_config,
-    )
 
 
 if __name__ == "__main__":

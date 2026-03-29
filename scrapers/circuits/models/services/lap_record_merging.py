@@ -6,7 +6,6 @@ from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.text_normalization import match_driver_loose
 from scrapers.base.helpers.text_normalization import match_vehicle_prefix
 from scrapers.base.helpers.time import normalize_time_value
-from scrapers.base.helpers.time import parse_time_key
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.circuits.models.services.lap_record_utils import build_lap_record_key
 from scrapers.circuits.models.services.lap_record_utils import extract_year
@@ -157,30 +156,6 @@ def _same_dict_text_value(
     )
     big_text = (big_value.get("text") or big_value.get("name") or "").strip().lower()
     return not (small_text and big_text and small_text != big_text)
-
-
-def select_best_time(records: list[dict[str, Any]]) -> float | None:
-    """Zwraca czas WYŁĄCZNIE jako sekundy (float)."""
-    for r in records:
-        tk = parse_time_key(r)
-        if isinstance(tk, int | float):
-            return float(tk)
-
-    for r in records:
-        t = r.get("time")
-        if isinstance(t, dict):
-            sec = t.get("seconds")
-            if isinstance(sec, int | float):
-                return float(sec)
-        if isinstance(t, int | float):
-            return float(t)
-        if isinstance(t, str):
-            try:
-                return float(t.strip())
-            except ValueError:
-                continue
-
-    return None
 
 
 def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:

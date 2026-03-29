@@ -56,16 +56,5 @@ def to_circuit_record_dict(
     return to_dict(value)
 
 
-def to_circuit_record_dict_list(
-    values: list[
-        CircuitBaseRecord
-        | CircuitCompleteRecord
-        | CircuitDetailsRecord
-        | Mapping[str, Any]
-    ],
-) -> list[dict[str, Any]]:
-    return [to_circuit_record_dict(value) for value in values]
-
-
 def to_dict_list(values: list[Any]) -> list[dict[str, Any]]:
     return [to_dict(value) for value in values]

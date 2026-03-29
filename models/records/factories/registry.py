@@ -19,21 +19,7 @@ class FactoryRegistryError(ValueError):
 _REGISTERED_FACTORY_CLASSES: list[type[BaseRecordFactory]] = []
 CRITICAL_RECORD_TYPES: Final[frozenset[str]] = frozenset(
     {
-        "link",
-        "season",
         "drivers_championships",
-        "driver",
-        "special_driver",
-        "constructor",
-        "circuit",
-        "event",
-        "car",
-        "fatality",
-        "season_summary",
-        "grands_prix",
-        "circuit_details",
-        "circuit_complete",
-        "engine_manufacturer",
     },
 )
 

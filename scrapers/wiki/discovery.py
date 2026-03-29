@@ -111,31 +111,3 @@ def discover_layer_one_seed_components() -> dict[str, DiscoveredComponent]:
             raise ValueError(msg)
         seed_components[metadata.seed_name] = component
     return seed_components
-
-
-def validate_discovery_metadata_completeness() -> None:
-    module_names = _iter_discovery_module_names()
-    missing: list[str] = []
-
-    for module_name in module_names:
-        module = importlib.import_module(module_name)
-        for _, candidate in inspect.getmembers(module, inspect.isclass):
-            if candidate.__module__ != module.__name__:
-                continue
-            if (
-                candidate.__name__.endswith("Runner")
-                and candidate.__name__ != "LayerJobRunner"
-            ):
-                if getattr(candidate, COMPONENT_METADATA_ATTR, None) is None:
-                    missing.append(f"{module_name}.{candidate.__name__}")
-
-        list_scraper_cls = getattr(module, "LIST_SCRAPER_CLASS", None)
-        if (
-            inspect.isclass(list_scraper_cls)
-            and getattr(list_scraper_cls, COMPONENT_METADATA_ATTR, None) is None
-        ):
-            missing.append(f"{list_scraper_cls.__module__}.{list_scraper_cls.__name__}")
-
-    if missing:
-        msg = "Discovery metadata missing for components: " + ", ".join(sorted(missing))
-        raise ValueError(msg)

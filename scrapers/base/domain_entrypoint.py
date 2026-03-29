@@ -177,42 +177,6 @@ def build_entrypoint_alias_getattr_for_domain(domain: str) -> Callable[[str], ob
     return _module_getattr
 
 
-def build_run_list_scraper(
-    *,
-    list_scraper_cls: type[ABCScraper],
-    default_output_json: str | Path,
-    default_profile: Callable[[], RunConfig],
-    default_output_csv: str | Path | None = None,
-) -> Callable[..., None]:
-    """Build a standardized ``run_list_scraper`` facade for domain entrypoints."""
-
-    return build_run_list_scraper_from_config(
-        DomainEntrypointConfig(
-            list_scraper_cls=list_scraper_cls,
-            default_output_json=default_output_json,
-            default_output_csv=default_output_csv,
-            run_config_profile=default_profile,
-        ),
-    )
-
-
-def build_run_list_scraper_from_config(
-    config: DomainEntrypointConfig,
-) -> Callable[..., None]:
-    """Build a standardized ``run_list_scraper`` facade from declarative config."""
-
-    def run_list_scraper(*, run_config: RunConfig | None = None) -> None:
-        resolved_config = run_config or config.run_config_profile()
-        run_and_export(
-            config.list_scraper_cls,
-            config.default_output_json,
-            config.default_output_csv,
-            run_config=resolved_config,
-        )
-
-    return run_list_scraper
-
-
 def build_run_list_scraper_for_domain(domain: str) -> Callable[..., None]:
     """Build ``run_list_scraper`` facade that resolves its config lazily by domain."""
 

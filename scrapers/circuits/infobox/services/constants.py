@@ -9,7 +9,6 @@ MIN_DETAILS_FOR_SERIES = 4
 
 
 # tylko markery językowe w nawiasie: (es), ( de ), (it)
-LANG_PAREN_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)$", flags=re.IGNORECASE)
 LANG_PAREN_ANYWHERE_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)", flags=re.IGNORECASE)
 
 # do czyszczenia uciętych markerów typu "( es" / "( cs"

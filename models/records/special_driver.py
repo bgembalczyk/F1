@@ -1,14 +1,11 @@
-from typing import Any
 from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 class SpecialDriverRecord(TypedDict, total=False):
@@ -36,7 +33,3 @@ SPECIAL_DRIVER_SCHEMA = RecordSchema(
         "teams": NestedSchema(LINK_SCHEMA, is_list=True),
     },
 )
-
-
-def validate_special_driver_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return RecordValidator.validate_schema(record, SPECIAL_DRIVER_SCHEMA)

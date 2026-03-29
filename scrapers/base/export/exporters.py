@@ -45,21 +45,3 @@ class DataExporter:
             include_metadata=include_metadata,
         )
         Path(path).write_text(payload, encoding="utf-8")
-
-
-def export_result(
-    result: ScrapeResult,
-    path: str | Path,
-    *,
-    output_format: str = "json",
-    **kwargs,
-) -> None:
-    exporter = DataExporter()
-    if output_format == "json":
-        exporter.to_json(result, path, **kwargs)
-        return
-    if output_format == "csv":
-        exporter.to_csv(result, path, **kwargs)
-        return
-    msg = "Nieznany format eksportu. Dostępne: 'json', 'csv'."
-    raise ValueError(msg)

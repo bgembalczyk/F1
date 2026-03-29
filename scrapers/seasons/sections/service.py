@@ -12,7 +12,7 @@ from scrapers.seasons.sections.mid_season_changes import (
 from scrapers.seasons.sections.regulation_changes import (
     SeasonRegulationChangesSectionParser,
 )
-from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

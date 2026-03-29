@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from scrapers.base.sections.constants import SECTION_RESULT_KEYS
 from scrapers.base.sections.contract_validation import validate_section_result_payload
 
 
@@ -44,10 +43,3 @@ class SectionRecordMapper:
 
     def map_many(self, payloads: list[dict[str, Any]]) -> list[dict[str, Any]]:
         return [self.map(payload) for payload in payloads]
-
-
-__all__ = [
-    "SECTION_RESULT_KEYS",
-    "SectionRecordInput",
-    "SectionRecordMapper",
-]

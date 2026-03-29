@@ -3,8 +3,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.constants import UNIT_RE
-from scrapers.base.helpers.parsing import parse_float_from_text
+from scrapers.base.constants.patterns import UNIT_RE
 from scrapers.base.helpers.parsing import parse_numeric_value
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.parsers.unit_value import UnitValue
@@ -36,11 +35,6 @@ def parse_entries_starts(ctx: ColumnContext) -> EntriesStarts:
     entries = values[0]
     starts = values[1] if len(values) > 1 else None
     return entries, starts
-
-
-def parse_points_from_cell(ctx: ColumnContext) -> NumericValue:
-    text = extract_visible_text(ctx)
-    return parse_float_from_text(text)
 
 
 def normalize_unit(unit: str) -> str:

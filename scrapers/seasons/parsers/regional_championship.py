@@ -6,7 +6,7 @@ from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.seasons.columns.constructor import ConstructorColumn
+from scrapers.constructors.columns.constructor import ConstructorColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.columns.driver import DriverColumn
 from scrapers.seasons.parsers.table import SeasonTableParser

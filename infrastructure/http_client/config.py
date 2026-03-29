@@ -3,9 +3,9 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_BACKOFF_SECONDS
-from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_RETRIES
-from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_TIMEOUT
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_RETRIES
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_TIMEOUT
 from infrastructure.http_client.policies.rate_limiter import RateLimiter
 from infrastructure.http_client.policies.response_cache import ResponseCache
 from infrastructure.http_client.policies.retry import RetryPolicy

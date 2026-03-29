@@ -43,7 +43,3 @@ EVENT_SCHEMA = RecordSchema(
     types={"championship": bool},
     custom_validators=(validate_event_field,),
 )
-
-
-def validate_event_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return RecordValidator.validate_schema(record, EVENT_SCHEMA)

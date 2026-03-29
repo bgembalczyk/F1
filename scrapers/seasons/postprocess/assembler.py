@@ -4,8 +4,8 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from scrapers.base.postprocess import BaseRecordAssembler
-from scrapers.base.postprocess import BaseRecordAssemblerInput
+from scrapers.base.postprocess.assembler import BaseRecordAssembler
+from scrapers.base.postprocess.assembler import BaseRecordAssemblerInput
 
 
 @dataclass(frozen=True)

@@ -10,7 +10,7 @@ from bs4 import Tag
 from scrapers.base.helpers.constants import HEADING_AND_TABLE_TAGS
 from scrapers.base.helpers.constants import HEADING_TAGS
 from scrapers.base.sections.aliases import DOMAIN_SECTION_ALIASES
-from scrapers.wiki.parsers.section_detection import find_section_heading
+from scrapers.wiki.parsers.sections.detection import find_section_heading
 
 
 def find_section_elements(
@@ -95,7 +95,3 @@ def find_heading(
     if not match:
         return None
     return match.heading
-
-
-def find_heading_by_text(soup: BeautifulSoup, section_id: str) -> Tag | None:
-    return find_heading(soup, section_id)

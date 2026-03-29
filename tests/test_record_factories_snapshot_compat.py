@@ -1,31 +1,17 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from copy import deepcopy
 from typing import Any
-
-import pytest
 
 from models.mappers.field_aliases import FIELD_ALIASES
 from models.mappers.field_aliases import apply_field_aliases
-from models.records.factories.build import build_circuit_record
-from models.records.factories.build import build_constructor_record
-from models.records.factories.build import build_driver_record
-from models.records.factories.build import build_engine_manufacturer_record
-from models.records.factories.build import build_fatality_record
-from models.records.factories.build import build_grands_prix_record
-from models.records.factories.build import build_season_summary_record
-from models.records.factories.build import build_special_driver_record
-from models.records.factories.car_factory import CarRecordFactory
 from models.records.factories.drivers_championships_factory import (
     DriversChampionshipsRecordFactory,
 )
-from models.records.factories.event_factory import EventRecordFactory
 from models.records.factories.helpers import (
     normalize_optional_link_list_or_link_or_string,
 )
 from models.records.factories.helpers import normalize_optional_link_or_string
-from models.records.factories.helpers import normalize_points
 from models.records.field_normalizer import FieldNormalizer
 
 NORMALIZER = FieldNormalizer()
@@ -134,19 +120,6 @@ def _legacy_circuit(record: Mapping[str, Any]) -> dict[str, Any]:
     return payload
 
 
-def _legacy_special_driver(record: Mapping[str, Any]) -> dict[str, Any]:
-    payload = dict(record)
-    payload["driver"] = NORMALIZER.normalize_link(payload.get("driver"), "driver")
-    payload["seasons"] = NORMALIZER.normalize_seasons(payload.get("seasons"))
-    payload["teams"] = NORMALIZER.normalize_link_list(payload.get("teams"), "teams")
-    payload["entries"] = NORMALIZER.normalize_int(payload.get("entries"), "entries")
-    payload["starts"] = NORMALIZER.normalize_int(payload.get("starts"), "starts")
-    payload["points"] = normalize_points(NORMALIZER, payload.get("points"))
-    payload.setdefault("seasons", [])
-    payload.setdefault("teams", [])
-    return payload
-
-
 def _legacy_grands_prix(record: Mapping[str, Any]) -> dict[str, Any]:
     payload = dict(record)
     payload["race_title"] = NORMALIZER.normalize_link(
@@ -163,29 +136,6 @@ def _legacy_grands_prix(record: Mapping[str, Any]) -> dict[str, Any]:
     payload["total"] = NORMALIZER.normalize_int(payload.get("total"), "total")
     payload.setdefault("years_held", [])
     payload.setdefault("country", [])
-    return payload
-
-
-def _legacy_fatality(record: Mapping[str, Any]) -> dict[str, Any]:
-    payload = dict(record)
-    payload["driver"] = NORMALIZER.normalize_link(payload.get("driver"), "driver")
-    payload["circuit"] = NORMALIZER.normalize_link(payload.get("circuit"), "circuit")
-    payload["age"] = NORMALIZER.normalize_int(payload.get("age"), "age")
-    event = payload.get("event")
-    payload["event"] = (
-        EventRecordFactory(NORMALIZER).build(event)
-        if isinstance(event, Mapping)
-        else None
-    )
-    car = payload.get("car")
-    payload["car"] = (
-        CarRecordFactory(NORMALIZER).build(car)
-        if isinstance(car, Mapping)
-        else NORMALIZER.normalize_link(car, "car")
-        if car
-        else None
-    )
-    payload["session"] = NORMALIZER.normalize_string(payload.get("session"))
     return payload
 
 
@@ -233,229 +183,3 @@ def _legacy_season_summary(record: Mapping[str, Any]) -> dict[str, Any]:
     payload.setdefault("drivers_champion_team", [])
     payload.setdefault("constructors_champion", [])
     return payload
-
-
-def _factory_snapshot_cases() -> list[object]:
-    return [
-        pytest.param(
-            build_driver_record,
-            _legacy_driver,
-            {
-                "driver_name": {
-                    "text": "Ayrton Senna",
-                    "url": "https://en.wikipedia.org/wiki/Ayrton_Senna",
-                },
-                "nationality": " Brazilian ",
-                "is_active": "false",
-                "is_world_champion": "true",
-                "seasons_competed": [{"year": "1988"}, {"year": "1990"}],
-                "drivers_championships": {
-                    "count": "3",
-                    "seasons": [{"year": "1988"}, {"year": "1990"}, {"year": "1991"}],
-                },
-                "race_entries": "161",
-                "race_starts": "161",
-                "pole_positions": "65",
-                "race_wins": "41",
-                "podiums": "80",
-                "fastest_laps": "19",
-            },
-            id="driver",
-        ),
-        pytest.param(
-            build_constructor_record,
-            _legacy_constructor,
-            {
-                "constructor_name": {
-                    "text": "McLaren",
-                    "url": "https://en.wikipedia.org/wiki/McLaren",
-                },
-                "engine": [
-                    {
-                        "text": "Mercedes",
-                        "url": "https://en.wikipedia.org/wiki/Mercedes",
-                    },
-                ],
-                "based_in": [{"text": "Woking", "url": None}],
-                "seasons": [{"year": 1966}],
-                "licensed_in": "United Kingdom",
-                "wcc_titles": "9",
-            },
-            id="constructor",
-        ),
-        pytest.param(
-            build_circuit_record,
-            _legacy_circuit,
-            {
-                "circuit": {
-                    "text": "Monza",
-                    "url": "https://en.wikipedia.org/wiki/Monza_Circuit",
-                },
-                "circuit_status": "current",
-                "last_length_used_km": "5.793",
-                "last_length_used_mi": "3.600",
-                "turns": "11",
-                "grands_prix_held": "74",
-                "grands_prix": [
-                    {
-                        "text": "Italian Grand Prix",
-                        "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix",
-                    },
-                ],
-                "seasons": [{"year": 1950}],
-                "country": {
-                    "text": "Italy",
-                    "url": "https://en.wikipedia.org/wiki/Italy",
-                },
-            },
-            id="circuit",
-        ),
-        pytest.param(
-            build_special_driver_record,
-            _legacy_special_driver,
-            {
-                "driver": {
-                    "text": "Nico Hülkenberg",
-                    "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg",
-                },
-                "seasons": [{"year": "2010"}, {"year": "2023"}],
-                "teams": [
-                    {
-                        "text": "Williams",
-                        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-                    },
-                ],
-                "entries": "220",
-                "starts": "210",
-                "points": {"championship_points": "571", "total_points": "571.0"},
-            },
-            id="special_driver",
-        ),
-        pytest.param(
-            build_grands_prix_record,
-            _legacy_grands_prix,
-            {
-                "race_title": {
-                    "text": "Miami Grand Prix",
-                    "url": "https://en.wikipedia.org/wiki/Miami_Grand_Prix",
-                },
-                "race_status": " current ",
-                "years_held": [{"year": "2022"}, {"year": "2024"}],
-                "country": [
-                    {
-                        "text": "United States",
-                        "url": "https://en.wikipedia.org/wiki/United_States",
-                    },
-                ],
-                "circuits": "1",
-                "total": "3",
-            },
-            id="grands_prix",
-        ),
-        pytest.param(
-            build_fatality_record,
-            _legacy_fatality,
-            {
-                "driver": {
-                    "text": "Sample Driver",
-                    "url": "https://en.wikipedia.org/wiki/Sample",
-                },
-                "date": "1960-01-01",
-                "age": "29",
-                "event": {
-                    "event": {
-                        "text": "1960 Belgian GP",
-                        "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix",
-                    },
-                    "championship": "yes",
-                },
-                "circuit": {
-                    "text": "Spa",
-                    "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps",
-                },
-                "car": {
-                    "car": {
-                        "text": "Lotus",
-                        "url": "https://en.wikipedia.org/wiki/Lotus",
-                    },
-                    "formula_category": " F1 ",
-                },
-                "session": " Race ",
-            },
-            id="fatality",
-        ),
-        pytest.param(
-            build_engine_manufacturer_record,
-            _legacy_engine,
-            {
-                "manufacturer": {
-                    "text": "Honda",
-                    "url": "https://en.wikipedia.org/wiki/Honda",
-                },
-                "manufacturer_status": "current",
-                "engines_built_in": [
-                    {"text": "Japan", "url": "https://en.wikipedia.org/wiki/Japan"},
-                ],
-                "seasons": [{"year": 1964}, {"year": 2026}],
-                "races_entered": "500",
-                "races_started": "498",
-                "wins": "90",
-                "poles": "80",
-                "fastest_laps": "95",
-                "podiums": "250",
-                "wcc": "6",
-                "wdc": "7",
-                "points": "3000.5",
-            },
-            id="engine",
-        ),
-        pytest.param(
-            build_season_summary_record,
-            _legacy_season_summary,
-            {
-                "season": {
-                    "text": "2023",
-                    "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
-                },
-                "first": {
-                    "text": "Bahrain GP",
-                    "url": "https://en.wikipedia.org/wiki/2023_Bahrain_Grand_Prix",
-                },
-                "last": {
-                    "text": "Abu Dhabi GP",
-                    "url": "https://en.wikipedia.org/wiki/2023_Abu_Dhabi_Grand_Prix",
-                },
-                "races": "22",
-                "countries": "20",
-                "drivers_champion_team": [
-                    {
-                        "text": "Red Bull Racing",
-                        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-                    },
-                ],
-                "constructors_champion": [
-                    {
-                        "text": "Red Bull Racing",
-                        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-                    },
-                ],
-                "winners": "4",
-            },
-            id="season_summary",
-        ),
-    ]
-
-
-@pytest.mark.parametrize(
-    ("builder", "legacy", "record"),
-    _factory_snapshot_cases(),
-)
-def test_factories_snapshot_compatibility(
-    builder,
-    legacy,
-    record: Mapping[str, Any],
-) -> None:
-    before_snapshot = legacy(deepcopy(record))
-    after_snapshot = builder(deepcopy(record))
-
-    assert after_snapshot == before_snapshot

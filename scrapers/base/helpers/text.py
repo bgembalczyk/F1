@@ -1,13 +1,11 @@
 """Text helper utilities shared across scrapers."""
 
 import re
-from collections.abc import Callable
 
-from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from models.records.link import LinkRecord
-from scrapers.base.helpers.constants import LANG_CODES
+from scrapers.base.helpers.constants import LANG_SUFFIX_NO_PAREN_RE
+from scrapers.base.helpers.constants import LANG_SUFFIX_PAREN_RE
 from scrapers.base.helpers.constants import REF_RE
 
 
@@ -73,14 +71,6 @@ def normalize_dashes(text: str) -> str:
     return re.sub(r"(?<=\w)\s*-\s*(?=\w)", "-", t)
 
 
-_LANG_ALT = "|".join(sorted(LANG_CODES, key=len, reverse=True))
-_LANG_SUFFIX_PAREN_RE = re.compile(
-    rf"\s*\(\s*({_LANG_ALT})\s*\)\s*$",
-    flags=re.IGNORECASE,
-)
-_LANG_SUFFIX_NO_PAREN_RE = re.compile(rf"\s+({_LANG_ALT})\s*$", flags=re.IGNORECASE)
-
-
 def strip_lang_suffix(text: str) -> str:
     """Usuń tokeny językowe na końcu (np. "(es)", " es")."""
     t = text
@@ -89,10 +79,10 @@ def strip_lang_suffix(text: str) -> str:
         before = t
 
         # Usuń tokeny w nawiasach: (es), (fr), etc.
-        t = _LANG_SUFFIX_PAREN_RE.sub("", t).strip()
+        t = LANG_SUFFIX_PAREN_RE.sub("", t).strip()
 
         # Usuń tokeny bez nawiasów: " es", " fr", etc.
-        t = _LANG_SUFFIX_NO_PAREN_RE.sub("", t).strip()
+        t = LANG_SUFFIX_NO_PAREN_RE.sub("", t).strip()
 
         if t == before:
             break
@@ -137,39 +127,3 @@ def strip_marks(text: str | Tag) -> str:
         .replace("^", "")
         .strip()
     )
-
-
-def extract_links_from_cell(
-    cell: str | Tag,
-    *,
-    full_url: Callable[[str], str | None] | None = None,
-    allow_local_anchors: bool = True,
-) -> list[LinkRecord]:
-    """
-    Zwraca listę linków {text, url} z komórki,
-    ignorując przypisy (cite_note / reference).
-    """
-    if isinstance(cell, Tag):
-        search_root = cell
-    else:
-        search_root = BeautifulSoup(cell or "", "html.parser")
-
-    from scrapers.base.helpers.wiki import clean_link_record
-    from scrapers.base.helpers.wiki import is_reference_link
-
-    links: list[LinkRecord] = []
-
-    for a in search_root.find_all("a", href=True):
-        href = str(a.get("href") or "")
-        text = clean_wiki_text(a.get_text(strip=True))
-
-        if is_reference_link(a, allow_local_anchors=allow_local_anchors):
-            continue
-
-        url: str | None = full_url(href) if full_url else href
-        link: LinkRecord = {"text": text, "url": url}
-        cleaned = clean_link_record(link)
-        if cleaned:
-            links.append(cleaned)
-
-    return links

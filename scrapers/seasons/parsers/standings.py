@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.seasons.columns.constructor import ConstructorColumn
+from scrapers.constructors.columns.constructor import ConstructorColumn
 from scrapers.seasons.columns.driver import DriverColumn
 from scrapers.seasons.parsers.constants import MERGED_ENTRY_BASE_KEYS
 from scrapers.seasons.parsers.constants import ROUND_LEVEL_RESULT_ATTRIBUTES

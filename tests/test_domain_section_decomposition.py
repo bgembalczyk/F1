@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.circuits.sections.events import CircuitEventsSectionParser
 from scrapers.circuits.sections.lap_records import CircuitLapRecordsSectionParser
 from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
@@ -159,10 +159,10 @@ def test_grand_prix_by_year_uses_domain_critical_alias_fallback() -> None:
 
 def test_each_critical_section_has_alias_fallback() -> None:
     required_domains = {"drivers", "constructors", "circuits", "seasons", "grands_prix"}
-    assert required_domains.issubset(DOMAIN_CRITICAL_SECTIONS.keys())
+    assert required_domains.issubset(DOMAIN_SECTION_RESOLVER_CONFIG.keys())
 
     for domain in required_domains:
-        sections = DOMAIN_CRITICAL_SECTIONS[domain]
+        sections = DOMAIN_SECTION_RESOLVER_CONFIG[domain]
         assert sections, f"Missing critical sections for domain={domain}"
         for section in sections:
             assert section.alternative_section_ids, f"Critical section without aliases: domain={domain} section={section.section_id}"

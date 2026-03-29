@@ -1,5 +1,4 @@
 from pathlib import Path
-from time import time
 from typing import Any
 from typing import Protocol
 
@@ -15,29 +14,6 @@ class CacheBackend(Protocol):
 
     def set(self, key: str, text: str) -> None:
         """Zapisuje tekst do cache."""
-
-
-class MemoryCache(CacheBackend):
-    """Cache w pamięci z opcjonalnym TTL."""
-
-    def __init__(self, *, ttl_seconds: int = 0) -> None:
-        self._ttl_seconds = max(0, int(ttl_seconds))
-        self._store: dict[str, tuple[str, float]] = {}
-
-    def get(self, key: str) -> str | None:
-        entry = self._store.get(key)
-        if entry is None:
-            return None
-        text, timestamp = entry
-        if self._ttl_seconds <= 0:
-            return None
-        if (time() - timestamp) > self._ttl_seconds:
-            self._store.pop(key, None)
-            return None
-        return text
-
-    def set(self, key: str, text: str) -> None:
-        self._store[key] = (text, time())
 
 
 class FileCacheBackend(CacheBackend):

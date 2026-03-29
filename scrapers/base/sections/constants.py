@@ -229,7 +229,3 @@ DOMAIN_SECTION_RESOLVER_CONFIG: dict[str, tuple[CriticalSection, ...]] = {
         ),
     ),
 }
-
-
-# Backward compatible alias.
-DOMAIN_CRITICAL_SECTIONS = DOMAIN_SECTION_RESOLVER_CONFIG

@@ -7,7 +7,7 @@ from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
-from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_BACKOFF_SECONDS
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.cache_adapter import CacheAdapter
 from scrapers.base.cache_adapter import CacheBackend

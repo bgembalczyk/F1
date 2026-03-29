@@ -6,7 +6,7 @@ from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.circuits.sections.events import CircuitEventsSectionParser
 from scrapers.circuits.sections.lap_records import CircuitLapRecordsSectionParser
 from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
-from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions

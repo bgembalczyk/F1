@@ -1,6 +1,4 @@
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
@@ -19,14 +17,6 @@ class SprintQualifyingPointsScraper(BasePointsScraper):
         expected_headers=SPRINT_QUALIFYING_EXPECTED_HEADERS,
         schema=build_sprint_qualifying_schema(),
         record_factory=RECORD_FACTORIES.mapping(),
-    )
-
-
-def run_list_scraper(*, run_config: RunConfig) -> None:
-    run_and_export(
-        SprintQualifyingPointsScraper,
-        "points/points_scoring_systems_sprint.json",
-        run_config=run_config,
     )
 
 

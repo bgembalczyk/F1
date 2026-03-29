@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.grands_prix.mappers import GrandPrixByYearRecordMapper
+from scrapers.grands_prix.mappers.by_year_record import GrandPrixByYearRecordMapper
 from scrapers.grands_prix.services.championship import GrandPrixChampionshipResolver
 
 if TYPE_CHECKING:

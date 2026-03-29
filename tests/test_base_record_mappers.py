@@ -1,6 +1,6 @@
-from scrapers.base.mappers import InfoboxRecordMapper
-from scrapers.base.mappers import LayoutTableRecordMapper
-from scrapers.base.mappers import SectionRecordMapper
+from scrapers.base.mappers.infobox_record import InfoboxRecordMapper
+from scrapers.base.mappers.section_record import SectionRecordMapper
+from scrapers.base.mappers.table_record import LayoutTableRecordMapper
 
 
 def test_section_record_mapper_validates_and_trims_labels() -> None:

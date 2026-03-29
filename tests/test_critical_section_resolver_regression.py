@@ -3,9 +3,9 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
-from scrapers.wiki.parsers.section_detection import find_section_heading
+from scrapers.wiki.parsers.sections.detection import find_section_heading
 
 
 def _fixture(name: str) -> BeautifulSoup:
@@ -26,7 +26,7 @@ def test_each_critical_section_has_non_empty_fallback_and_resolves_alias_fixture
 
     for domain, fixture_name in fixtures.items():
         soup = _fixture(fixture_name)
-        for critical in DOMAIN_CRITICAL_SECTIONS[domain]:
+        for critical in DOMAIN_SECTION_RESOLVER_CONFIG[domain]:
             assert critical.alternative_section_ids, f"Critical section without aliases: domain={domain} section={critical.section_id}"
 
             candidates = resolve_section_candidates(

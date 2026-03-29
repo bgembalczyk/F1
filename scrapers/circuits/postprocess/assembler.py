@@ -4,9 +4,9 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.mappers import LayoutTableRecordMapper
-from scrapers.base.postprocess import BaseRecordAssembler
-from scrapers.base.postprocess import BaseRecordAssemblerInput
+from scrapers.base.mappers.table_record import LayoutTableRecordMapper
+from scrapers.base.postprocess.assembler import BaseRecordAssembler
+from scrapers.base.postprocess.assembler import BaseRecordAssemblerInput
 
 if TYPE_CHECKING:
     from models.value_objects import WikiUrl

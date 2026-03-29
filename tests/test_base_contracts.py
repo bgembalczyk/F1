@@ -8,8 +8,6 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.service import BaseSectionExtractionService
-from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
-from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 
 _single_wiki_base = pytest.importorskip("scrapers.base.single_wiki_article.base")
 _single_wiki_dto = pytest.importorskip("scrapers.base.single_wiki_article.dto")
@@ -19,7 +17,6 @@ SectionsPayloadDTO = _single_wiki_dto.SectionsPayloadDTO
 TablesPayloadDTO = _single_wiki_dto.TablesPayloadDTO
 
 if TYPE_CHECKING:
-    from scrapers.base.layers.interfaces import Assembler
     from scrapers.base.sections.interface import SectionParseResult
 
 
@@ -123,14 +120,3 @@ def test_base_section_service_contract_requires_optional_dependencies() -> None:
 
     with pytest.raises(ValueError, match="requires a URL"):
         service.require_url()
-
-
-def test_assembler_contract_returns_domain_record_dict() -> None:
-    assembler: Assembler = SeasonRecordAssembler()
-    payload = SeasonRecordSections.empty()
-
-    assembled = assembler.assemble(payload)
-
-    assert isinstance(assembled, dict)
-    assert "entries" in assembled
-    assert "results" in assembled

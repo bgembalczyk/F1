@@ -2,9 +2,9 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
-from scrapers.wiki.parsers.section_detection import find_section_heading
-from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
+from scrapers.wiki.parsers.sections.detection import find_section_heading
+from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 
 def _fixture(name: str) -> BeautifulSoup:
@@ -23,7 +23,7 @@ def test_critical_section_alias_snapshots_cover_all_target_domains() -> None:
 
     for domain, fixture_name in fixtures.items():
         soup = _fixture(fixture_name)
-        sections = DOMAIN_CRITICAL_SECTIONS[domain]
+        sections = DOMAIN_SECTION_RESOLVER_CONFIG[domain]
 
         matched = 0
         for critical in sections:

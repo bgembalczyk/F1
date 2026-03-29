@@ -5,7 +5,7 @@ from scrapers.base.sections.service import BaseSectionExtractionService
 from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
 from scrapers.drivers.sections.constants import SECTION_CONFIGS
 from scrapers.drivers.sections.results import DriverResultsSectionParser
-from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 
 class DriverSectionExtractionService(BaseSectionExtractionService):
