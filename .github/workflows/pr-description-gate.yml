@@ -1,0 +1,25 @@
+name: PR description gate
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-pr-description:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Validate required PR sections and DoD
+        run: |
+          python scripts/ci/validate_pr_description.py \
+            --pr-body "${{ github.event.pull_request.body || '' }}"

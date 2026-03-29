@@ -62,4 +62,7 @@ Przed merge PR sprawdź:
 - [ ] Czy dodano/uzupełniono testy (jednostkowe i/lub statyczne) adekwatne do zmiany?
 - [ ] Czy zaktualizowano dokumentację domeny (`scrapers/<domain>/README.md`) i wpisano link do indeksu docs?
 - [ ] Czy jeśli zmiana ma charakter architektoniczny, dodano/zmieniono ADR i referencję w PR?
+- [ ] Czy sekcje PR (`SRP impact`, `DRY impact`, `Contracts changed`, `Backward compatibility`, `DoD`) są uzupełnione?
+- [ ] Czy checklista techniczna (`testy kontraktowe`, `brak nowych Any`, `brak nowych magic strings`, `zaktualizowany ADR/docs`) jest odhaczona?
+- [ ] Czy w PR dodano dowód review (output testów/checków) wymagany do akceptacji?
 - [ ] Czy nowy entrypoint i sposób uruchomienia są zgodne z canonical CLI (`python -m scrapers.cli`)?
