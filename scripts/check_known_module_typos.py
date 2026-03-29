@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
 import sys
 
@@ -10,7 +11,11 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from scripts.lib.check_runner import run_cli
+try:
+    from scripts.lib.check_runner import run_cli
+except ModuleNotFoundError:  # uruchomienie z katalogu scripts/ w CI
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from lib.check_runner import run_cli
 
 SOURCE_DIRS = (
     "layers",
@@ -21,40 +26,50 @@ SOURCE_DIRS = (
     "complete_extractor",
 )
 
+DISALLOWED_FILENAME_PATTERNS = (
+    "contants",
+    "soruce",
+)
+
+
+@dataclass(frozen=True)
+class TypoRule:
+    target_packages: tuple[Path, ...]
+    expected_module_name: str
+
+
 TYPO_RULES = (
-    {
-        "target_packages": (
+    TypoRule(
+        target_packages=(
             PROJECT_ROOT / "scrapers" / "wiki",
             PROJECT_ROOT / "scrapers" / "wiki" / "parsers" / "sections",
         ),
-        "expected_module_name": "constants.py",
-        "disallowed_typo_name": "contants.py",
-        "disallowed_import": "scrapers.wiki.contants",
-    },
-    {
-        "target_packages": (
+        expected_module_name="constants.py",
+    ),
+    TypoRule(
+        target_packages=(
             PROJECT_ROOT / "scrapers" / "base" / "orchestration" / "components",
         ),
-        "expected_module_name": "section_source_adapter.py",
-        "disallowed_typo_name": "section_soruce_adapter.py",
-        "disallowed_import": (
-            "scrapers.base.orchestration.components.section_soruce_adapter"
-        ),
-    },
+        expected_module_name="section_source_adapter.py",
+    ),
 )
+
+
+def _contains_disallowed_pattern(value: str) -> bool:
+    return any(pattern in value for pattern in DISALLOWED_FILENAME_PATTERNS)
 
 
 def _validate_target_packages() -> list[str]:
     errors: list[str] = []
     for rule in TYPO_RULES:
-        for package in rule["target_packages"]:
-            expected = package / rule["expected_module_name"]
-            typo = package / rule["disallowed_typo_name"]
-
+        for package in rule.target_packages:
+            expected = package / rule.expected_module_name
             if not expected.exists():
                 errors.append(f"missing expected module: {expected}")
-            if typo.exists():
-                errors.append(f"found typo module: {typo}")
+
+            for py_file in package.glob("*.py"):
+                if _contains_disallowed_pattern(py_file.name):
+                    errors.append(f"found typo module: {py_file}")
     return errors
 
 
@@ -66,10 +81,10 @@ def _scan_typo_imports() -> list[str]:
             continue
         for py_file in root.rglob("*.py"):
             content = py_file.read_text(encoding="utf-8")
-            for rule in TYPO_RULES:
-                if rule["disallowed_import"] in content:
-                    rel_path = py_file.relative_to(PROJECT_ROOT)
-                    errors.append(f"found typo import in {rel_path}")
+            if not _contains_disallowed_pattern(content):
+                continue
+            rel_path = py_file.relative_to(PROJECT_ROOT)
+            errors.append(f"found typo import in {rel_path}")
     return errors
 
 
