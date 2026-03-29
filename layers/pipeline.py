@@ -1,7 +1,6 @@
 from pathlib import Path
 
-from layers.one.executor import LayerOneExecutor
-from layers.zero.executor import LayerZeroExecutor
+from layers.orchestration.protocols import LayerExecutorProtocol
 from layers.zero.helpers import build_debug_run_config
 from scrapers.base.run_config import RunConfig
 
@@ -12,8 +11,8 @@ class WikiPipelineApplication:
         *,
         base_wiki_dir: Path,
         base_debug_dir: Path,
-        layer_zero_executor: LayerZeroExecutor,
-        layer_one_executor: LayerOneExecutor,
+        layer_zero_executor: LayerExecutorProtocol,
+        layer_one_executor: LayerExecutorProtocol,
     ) -> None:
         self._base_wiki_dir = base_wiki_dir
         self._base_debug_dir = base_debug_dir
