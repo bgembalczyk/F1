@@ -1,0 +1,59 @@
+name: Test profiles
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "Profile to run"
+        required: true
+        default: full
+        type: choice
+        options:
+          - quick
+          - full
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Select profile
+        id: profile
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            PROFILE="${{ inputs.profile }}"
+          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            PROFILE="quick"
+          else
+            PROFILE="full"
+          fi
+          echo "profile=$PROFILE" >> "$GITHUB_OUTPUT"
+          echo "Selected profile: $PROFILE"
+
+      - name: Run quick profile (unit + contract + architecture)
+        if: steps.profile.outputs.profile == 'quick'
+        run: |
+          pytest -q -m "unit or contract or architecture"
+
+      - name: Run full profile (all tests)
+        if: steps.profile.outputs.profile == 'full'
+        run: |
+          pytest -q
