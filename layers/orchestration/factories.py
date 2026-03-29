@@ -1,9 +1,15 @@
 from abc import ABC
 from abc import abstractmethod
+from typing import Protocol
 
 from infrastructure.gemini.client import GeminiClient
 from layers.seed.registry.entries import ListJobRegistryEntry
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+
+
+class LayerZeroRunConfigFactoryProtocol(Protocol):
+    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
+        """Build scraper kwargs for layer-zero list job."""
 
 
 class LayerZeroRunConfigFactory(ABC):
