@@ -24,14 +24,14 @@ from typing import Any
 
 import certifi
 
+from config.app_config_provider import AppConfigProvider
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.cache_service import GeminiCacheService
-from infrastructure.gemini.constants import DEFAULT_KEY_FILE
 from infrastructure.gemini.constants import DEFAULT_MODELS
 from infrastructure.gemini.constants import DEFAULT_TIMEOUT
 from infrastructure.gemini.model_config import ModelConfig
 from infrastructure.gemini.model_selector import ModelSelector
-from infrastructure.gemini.model_state import ModelState
+from infrastructure.gemini.model_state import ModelState  # noqa: F401
 from infrastructure.gemini.orchestration import GeminiOrchestrationService
 from infrastructure.gemini.response_parser import GeminiResponseParser
 from infrastructure.gemini.transport import GeminiTransport
@@ -79,20 +79,38 @@ class GeminiClient:
         timeout: int = DEFAULT_TIMEOUT,
     ) -> "GeminiClient":
         """Tworzy klienta wczytując klucz API z pliku."""
-        path = Path(key_file) if key_file else DEFAULT_KEY_FILE
-        if not path.exists():
-            msg = (
-                f"Plik z kluczem Gemini API nie istnieje: {path}\n"
-                "Utwórz plik i wpisz do niego swój klucz API (tylko klucz, bez spacji)."
+        if key_file is not None:
+            provider = AppConfigProvider(
+                env={"GEMINI_API_KEY_FILE": str(key_file)},
             )
-            raise FileNotFoundError(msg)
-
-        api_key = path.read_text(encoding="utf-8").strip()
-        return cls(
-            api_key,
-            models=models if models is not None else list(DEFAULT_MODELS),
+        else:
+            provider = AppConfigProvider()
+        return cls.from_config_provider(
+            provider,
+            models=models,
             cache=cache,
             timeout=timeout,
+        )
+
+    @classmethod
+    def from_config_provider(
+        cls,
+        provider: AppConfigProvider,
+        *,
+        models: list[ModelConfig] | None = None,
+        cache: GeminiCache | None = None,
+        timeout: int | None = None,
+    ) -> "GeminiClient":
+        """Tworzy klienta używając centralnego AppConfigProvider."""
+        app_config = provider.get()
+        resolved_timeout = (
+            timeout if timeout is not None else app_config.gemini.timeout_seconds
+        )
+        return cls(
+            app_config.gemini.api_key,
+            models=models if models is not None else list(DEFAULT_MODELS),
+            cache=cache,
+            timeout=resolved_timeout,
         )
 
     def query(

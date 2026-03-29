@@ -27,9 +27,11 @@ from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.row import TableRow
 from scrapers.base.table.sentinels import SKIP_SENTINEL
+from scrapers.base.types import JsonValue
+from scrapers.base.types import PipelineRecord
 
-RecordValue: TypeAlias = object
-TableRecord: TypeAlias = dict[str, RecordValue]
+RecordValue: TypeAlias = JsonValue
+TableRecord: TypeAlias = PipelineRecord
 
 
 class TablePipeline:

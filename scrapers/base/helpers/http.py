@@ -1,9 +1,9 @@
 from dataclasses import replace
 from typing import TYPE_CHECKING
 
+from config.app_config_provider import AppConfigProvider
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_RETRIES
-from infrastructure.http_client.policies.constants import DEFAULT_HTTP_TIMEOUT
 from infrastructure.http_client.policies.http import HttpPolicy
 from infrastructure.http_client.policies.response_cache import ResponseCache
 
@@ -12,21 +12,27 @@ if TYPE_CHECKING:
 
 
 def default_http_policy() -> HttpPolicy:
+    timeout = AppConfigProvider().get_http_config().timeout_seconds
     return HttpPolicy(
         cache=WikipediaCachePolicy.with_file_cache(),
         retries=DEFAULT_HTTP_RETRIES,
-        timeout=DEFAULT_HTTP_TIMEOUT,
+        timeout=timeout,
     )
 
 
 def build_http_policy(
     *,
-    timeout: int = DEFAULT_HTTP_TIMEOUT,
+    timeout: int | None = None,
     retries: int = DEFAULT_HTTP_RETRIES,
     cache: ResponseCache | None = None,
 ) -> HttpPolicy:
+    resolved_timeout = (
+        timeout
+        if timeout is not None
+        else AppConfigProvider().get_http_config().timeout_seconds
+    )
     return HttpPolicy(
-        timeout=timeout,
+        timeout=resolved_timeout,
         retries=retries,
         cache=cache,
     )
