@@ -16,6 +16,7 @@ from infrastructure.http_client.factories.default_http_policy_factory import (
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,
 )
+from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 
 
 class BaseHttpClient(ABC):
@@ -29,7 +30,7 @@ class BaseHttpClient(ABC):
     def __init__(
         self,
         *,
-        session: Any,
+        session: SessionProtocol,
         config: HttpClientConfig,
         request_exception_cls: type[Exception],
     ) -> None:

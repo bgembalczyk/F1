@@ -5,13 +5,14 @@ from typing import runtime_checkable
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,
 )
+from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 
 
 @runtime_checkable
 class HttpClientProtocol(Protocol):
     """Kontrakt klienta HTTP zgodnego z biblioteką requests."""
 
-    session: object
+    session: SessionProtocol
 
     def get(
         self,
