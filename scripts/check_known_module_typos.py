@@ -16,14 +16,14 @@ assert _BOOTSTRAP_SPEC and _BOOTSTRAP_SPEC.loader
 _BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
 _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
-PROJECT_ROOT = _BOOTSTRAP_MODULE.ensure_project_root_on_path()
+REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
 from scripts.lib.check_runner import run_cli
 from scripts.lib.known_typos import run_known_typos_check
 
 
 def run_check() -> list[str]:
-    return run_known_typos_check(PROJECT_ROOT)
+    return run_known_typos_check(REPO_ROOT)
 
 
 def main(argv: list[str] | None = None) -> int:
