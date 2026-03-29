@@ -1,7 +1,9 @@
 """Text helper utilities shared across scrapers."""
 
 import re
+from collections.abc import Callable
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.constants import LANG_SUFFIX_NO_PAREN_RE
@@ -95,6 +97,17 @@ _normalize_dashes_func = normalize_dashes
 _strip_lang_suffix_func = strip_lang_suffix
 
 
+def _is_language_link(text: str | None, url: str | None) -> bool:
+    txt = (text or "").strip().lower()
+    url_l = (url or "").strip().lower()
+    return bool(txt and len(txt) in {2, 3} and f"://{txt}.wikipedia.org/" in url_l)
+
+
+def _is_wikipedia_redlink(url: str | None) -> bool:
+    normalized = (url or "").lower()
+    return "redlink=1" in normalized and "w/index.php" in normalized
+
+
 def clean_wiki_text(
     text: str | Tag,
     *,
@@ -127,3 +140,42 @@ def strip_marks(text: str | Tag) -> str:
         .replace("^", "")
         .strip()
     )
+
+
+def extract_links_from_cell(
+    cell: Tag | str | None,
+    *,
+    full_url: Callable[[str], str | None] | None = None,
+) -> list[dict[str, str | None]]:
+    if cell is None:
+        return []
+
+    cell_tag: Tag
+    if isinstance(cell, str):
+        soup = BeautifulSoup(cell, "html.parser")
+        found = soup.find("td") or soup
+        if not isinstance(found, Tag):
+            return []
+        cell_tag = found
+    else:
+        cell_tag = cell
+
+    links: list[dict[str, str | None]] = []
+    for anchor in cell_tag.find_all("a"):
+        if not isinstance(anchor, Tag):
+            continue
+        text = clean_wiki_text(anchor.get_text(" ", strip=True))
+        href = anchor.get("href")
+        if not isinstance(href, str):
+            continue
+        if href.startswith("#cite_note-"):
+            continue
+
+        url = full_url(href) if full_url is not None else href
+        if isinstance(url, str) and _is_language_link(text, url):
+            continue
+        if isinstance(url, str) and _is_wikipedia_redlink(url):
+            url = None
+
+        links.append({"text": text, "url": url})
+    return links

@@ -52,3 +52,7 @@ DRIVER_DEFINITION = RecordDefinition(
 )
 
 DRIVER_SCHEMA = DRIVER_DEFINITION.to_schema()
+
+
+def validate_driver_record(record: dict[str, object]) -> list[str]:
+    return [issue.message for issue in DRIVER_DEFINITION.validate_record(record)]
