@@ -8,15 +8,23 @@ from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
 from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
+from scrapers.base.services.result_export_service import ResultExportService
 
 
 class ScraperRunner:
     """Orkiestruje tworzenie scrapera i eksport wyników."""
 
-    def __init__(self, run_config: RunConfig, *, supports_urls: bool = True) -> None:
+    def __init__(
+        self,
+        run_config: RunConfig,
+        *,
+        supports_urls: bool = True,
+        result_export_service: ResultExportService | None = None,
+    ) -> None:
         self._run_config = run_config
         self._supports_urls = supports_urls
         self._factory = ScraperFactory()
+        self._result_export_service = result_export_service or ResultExportService()
 
     def run_and_export(
         self,
@@ -41,13 +49,21 @@ class ScraperRunner:
         output_dir = Path(self._run_config.output_dir)
         json_path = output_dir / Path(json_rel)
         ensure_parent(json_path)
-        result.to_json(json_path, exporter=scraper.exporter)
+        self._result_export_service.to_json(
+            result,
+            json_path,
+            exporter=scraper.exporter,
+        )
         self._report_step(scraper, "export-json", data)
 
         if csv_rel:
             csv_path = output_dir / Path(csv_rel)
             ensure_parent(csv_path)
-            result.to_csv(csv_path, exporter=scraper.exporter)
+            self._result_export_service.to_csv(
+                result,
+                csv_path,
+                exporter=scraper.exporter,
+            )
             self._report_step(scraper, "export-csv", data)
         run_logger.info("Scrape run %s finished", run_id)
 

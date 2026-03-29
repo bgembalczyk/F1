@@ -1,8 +1,12 @@
 from __future__ import annotations
 
+import pytest
+
 from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
+from scrapers.base.run_profiles import PROFILE_RESOLVER
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
+from scrapers.base.run_profiles import get_run_profile_spec
 from scrapers.base.run_profiles import resolve_cli_profile
 from scrapers.cli import _parse_legacy_args
 
@@ -30,3 +34,21 @@ def test_legacy_arg_parser_uses_central_alias_choices_and_defaults() -> None:
     assert profile_args.profile == "list_scraper"
     assert args.quality_report is True
     assert args.error_report is False
+
+
+def test_profile_resolver_contract_for_legacy_aliases() -> None:
+    assert PROFILE_RESOLVER.resolve_cli_profile("list_scraper") is RunProfileName.STRICT
+    assert PROFILE_RESOLVER.resolve_cli_profile(
+        "complete_extractor",
+    ) is RunProfileName.MINIMAL
+    assert PROFILE_RESOLVER.resolve_cli_profile(
+        "deprecated_entrypoint",
+    ) is RunProfileName.DEPRECATED
+
+
+def test_profile_resolver_rejects_invalid_profile_names() -> None:
+    with pytest.raises(ValueError):
+        PROFILE_RESOLVER.resolve_cli_profile("not-a-profile")  # type: ignore[arg-type]
+
+    with pytest.raises(ValueError):
+        get_run_profile_spec("not-a-profile")  # type: ignore[arg-type]

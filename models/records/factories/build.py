@@ -5,7 +5,7 @@ from typing import Any
 from typing import Literal
 from typing import overload
 
-from models.records.factories.registry import FACTORY_REGISTRY
+from models.records.factories.registry import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry import get_factory
 
 if TYPE_CHECKING:
@@ -33,7 +33,7 @@ class RecordBuilders:
     """Object facade for building normalized record models."""
 
     def __init__(self, factory_registry: Mapping[str, BaseRecordFactory] | None = None):
-        self._factory_registry = factory_registry or FACTORY_REGISTRY
+        self._factory_registry = factory_registry or FACTORY_REGISTRY_PROVIDER.get()
 
     def _factory_for(self, record_type: str) -> BaseRecordFactory:
         return get_factory(record_type, self._factory_registry)
@@ -181,3 +181,35 @@ class RecordBuilders:
 
 
 RECORD_BUILDERS = RecordBuilders()
+
+
+def build_record(record_type: str, record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.build(record_type, record)
+
+
+def build_season_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.season(record)
+
+
+def build_driver_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.driver(record)
+
+
+def build_constructor_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.constructor(record)
+
+
+def build_special_driver_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.special_driver(record)
+
+
+def build_fatality_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.fatality(record)
+
+
+def build_season_summary_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.season_summary(record)
+
+
+def build_grands_prix_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.grands_prix(record)

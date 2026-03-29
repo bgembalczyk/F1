@@ -1,11 +1,14 @@
 # ruff: noqa: E501
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+from typing import Any
+
 import pytest
 from bs4 import BeautifulSoup
 
 from models.records.base_factory import RecordFactoryProtocol
-from models.records.factories.registry import FACTORY_REGISTRY
+from models.records.factories.registry import FactoryRegistryProvider
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
@@ -21,7 +24,14 @@ from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 
+if TYPE_CHECKING:
+    from scrapers.base.contracts import RecordAssemblerProtocol
+    from scrapers.base.contracts import SectionExtractionServiceProtocol
+
 SECTION_RESULT_KEYS = ("section_id", "section_label", "records", "metadata")
+
+
+FACTORY_REGISTRY = FactoryRegistryProvider().get()
 
 
 def _soup(html: str) -> BeautifulSoup:
@@ -71,14 +81,16 @@ def _soup(html: str) -> BeautifulSoup:
     ],
 )
 def test_record_assembler_contract_for_each_domain_implementation(
-    assembler: object,
-    payload: object,
+    assembler: RecordAssemblerProtocol[
+        DriverRecordDTO
+        | ConstructorRecordDTO
+        | CircuitRecordDTO
+        | SeasonRecordSections
+    ],
+    payload: DriverRecordDTO | ConstructorRecordDTO | CircuitRecordDTO | SeasonRecordSections,
     expected_keys: set[str],
 ) -> None:
-    if isinstance(assembler, SeasonRecordAssembler):
-        record = assembler.assemble(payload)  # type: ignore[arg-type]
-    else:
-        record = assembler.assemble(payload=payload)  # type: ignore[call-arg]
+    record = assembler.assemble(payload)
     assert isinstance(record, dict)
     assert expected_keys.issubset(record)
 
@@ -117,7 +129,7 @@ def test_record_assembler_contract_for_each_domain_implementation(
     ],
 )
 def test_section_service_contract_for_each_domain_implementation(
-    service: object,
+    service: SectionExtractionServiceProtocol[list[dict[str, Any]] | dict[str, list[dict[str, Any]]]],
     html: str,
 ) -> None:
     result = service.extract(_soup(html))
