@@ -4,13 +4,9 @@ import ast
 from collections import defaultdict
 from pathlib import Path
 
-ENTRYPOINT_MODULES = (
-    "scrapers/drivers/entrypoint.py",
-    "scrapers/constructors/entrypoint.py",
-    "scrapers/circuits/entrypoint.py",
-    "scrapers/seasons/entrypoint.py",
-    "scrapers/grands_prix/entrypoint.py",
-)
+from scrapers.domains import DOMAINS
+
+ENTRYPOINT_MODULES = tuple(f"scrapers/{domain}/entrypoint.py" for domain in DOMAINS)
 
 
 def _collect_config_assignment_fingerprints() -> dict[str, list[str]]:
