@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.constructors.columns.constructor import ConstructorColumn
+from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 

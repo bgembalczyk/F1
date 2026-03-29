@@ -5,10 +5,10 @@ from bs4 import BeautifulSoup
 from models.services.rounds_service import parse_rounds
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.types import BrListColumn
+from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.constructors.columns.constructor import ConstructorColumn
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
