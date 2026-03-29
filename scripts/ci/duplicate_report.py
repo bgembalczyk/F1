@@ -5,8 +5,13 @@ import argparse
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 
 class DuplicateNormalizer:
@@ -221,8 +226,8 @@ class GithubOutputWriter:
             fh.write(f"duplicate_status={duplicate_status}\n")
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
+def build_ci_parser(description: str) -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=description)
     parser.add_argument("--report-json", required=True)
     parser.add_argument("--output-md", required=True)
     parser.add_argument("--warn-threshold", type=int, required=True)
@@ -231,6 +236,21 @@ def main() -> int:
     parser.add_argument("--head-sha", default="")
     parser.add_argument("--changed-files", default="")
     parser.add_argument("--github-output", required=True)
+    return parser
+
+
+def read_json_file(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def split_csv(value: str) -> list[str]:
+    return [part for part in value.split(",") if part]
+
+
+def main() -> int:
+    parser = build_ci_parser("Generate duplicate report for changed files in PR.")
     args = parser.parse_args()
 
     normalizer = DuplicateNormalizer()
@@ -238,15 +258,11 @@ def main() -> int:
     markdown_renderer = MarkdownRenderer()
     github_output_writer = GithubOutputWriter()
 
-    report_path = Path(args.report_json)
-    if not report_path.exists():
-        duplicates: list[dict[str, Any]] = []
-    else:
-        payload = json.loads(report_path.read_text(encoding="utf-8"))
-        raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
-        duplicates = [normalizer.normalize(item) for item in raw_duplicates]
+    payload = read_json_file(Path(args.report_json))
+    raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
+    duplicates = [normalizer.normalize(item) for item in raw_duplicates]
 
-    changed_files = [part for part in args.changed_files.split(",") if part]
+    changed_files = split_csv(args.changed_files)
     new_duplicates = duplicate_filter.filter_new_duplicates(
         duplicates,
         args.base_sha,
