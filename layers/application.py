@@ -13,7 +13,7 @@ from layers.orchestration.helpers import build_layer_zero_run_config_factory_map
 from layers.orchestration.helpers import run_engine_manufacturers
 from layers.pipeline import WikiPipelineApplication
 from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
-from layers.seed.registry.helpers import WIKI_SEED_REGISTRY
+from layers.seed.registry.helpers import get_wiki_seed_registry
 from layers.seed.registry.helpers import validate_list_job_registry
 from layers.seed.registry.helpers import validate_seed_registry
 from layers.zero.executor import LayerZeroExecutor
@@ -59,7 +59,7 @@ def create_default_wiki_pipeline_application(
     )
 
     layer_one_executor = LayerOneExecutor(
-        seed_registry=WIKI_SEED_REGISTRY,
+        seed_registry=get_wiki_seed_registry(),
         validate_seed_registry_function=validate_seed_registry,
         runner_map_builder=build_layer_one_runner_map,
         engine_manufacturers_runner=run_engine_manufacturers,
