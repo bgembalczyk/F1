@@ -1,17 +1,33 @@
 from dataclasses import dataclass
 from typing import Any
+from typing import Protocol
+from typing import runtime_checkable
 
 from tqdm import tqdm
 
+from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.data_extractor import BaseDataExtractor
+from scrapers.base.errors import DomainParseError
+from scrapers.base.errors import ScraperNetworkError
+from scrapers.base.errors import ScraperParseError
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
 
+@runtime_checkable
+class ListScraperProtocol(Protocol):
+    def fetch(self) -> list[dict[str, Any]]: ...
+
+
+@runtime_checkable
+class SingleScraperProtocol(Protocol):
+    def fetch_by_url(self, url: str) -> list[dict[str, Any]]: ...
+
+
 @dataclass(frozen=True)
 class CompositeDataExtractorChildren:
-    list_scraper: Any
-    single_scraper: Any
+    list_scraper: ListScraperProtocol | list[ListScraperProtocol]
+    single_scraper: SingleScraperProtocol
     records_adapter: (
         IterableSourceAdapter[dict[str, Any]]
         | MultiIterableSourceAdapter[dict[str, Any]]
@@ -63,7 +79,12 @@ class CompositeDataExtractor(BaseDataExtractor):
                 try:
                     details_list = self.single_scraper.fetch_by_url(detail_url)
                     details = details_list[0] if details_list else None
-                except Exception:
+                except (
+                    RequestError,
+                    ScraperNetworkError,
+                    ScraperParseError,
+                    DomainParseError,
+                ):
                     self.logger.exception(
                         "Nie udało się pobrać szczegółów rekordu (url=%s).",
                         detail_url,
