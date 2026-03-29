@@ -2,16 +2,33 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable
 from collections.abc import Mapping
 from collections.abc import Sequence
 from dataclasses import dataclass
+from typing import Protocol
+from typing import runtime_checkable
 from typing import Any
 
 from validation.issue import ValidationIssue
 
 RecordLike = Mapping[str, Any]
-ValidationRule = Callable[[RecordLike], Sequence[ValidationIssue | str]]
+
+
+@runtime_checkable
+class ValidationRuleProtocol(Protocol):
+    """Contract for composable validation rules used by validators."""
+
+    rule_name: str
+    rule_params: Mapping[str, Any]
+
+    def __call__(self, record: RecordLike) -> Sequence[ValidationIssue | str]:
+        ...
+
+    def validate(self, record: RecordLike) -> Sequence[ValidationIssue | str]:
+        ...
+
+
+ValidationRule = ValidationRuleProtocol
 
 
 @dataclass(frozen=True)
@@ -22,13 +39,116 @@ class ValueRange:
     max_value: int | float | None = None
 
 
-def required_field_rule(field: str) -> ValidationRule:
-    def _rule(record: RecordLike) -> list[ValidationIssue]:
-        if field in record:
-            return []
-        return [ValidationIssue.missing(field)]
+@dataclass(frozen=True)
+class RequiredFieldRule:
+    field: str
+    rule_name: str = "required_field"
 
-    return _rule
+    @property
+    def rule_params(self) -> Mapping[str, Any]:
+        return {"field": self.field}
+
+    def validate(self, record: RecordLike) -> list[ValidationIssue]:
+        if self.field in record:
+            return []
+        return [ValidationIssue.missing(self.field)]
+
+    def __call__(self, record: RecordLike) -> list[ValidationIssue]:
+        return self.validate(record)
+
+
+@dataclass(frozen=True)
+class TypeRule:
+    field: str
+    expected_types: type | tuple[type, ...]
+    allow_none: bool = False
+    rule_name: str = "type"
+
+    @property
+    def rule_params(self) -> Mapping[str, Any]:
+        expected = (
+            self.expected_types
+            if isinstance(self.expected_types, tuple)
+            else (self.expected_types,)
+        )
+        return {
+            "field": self.field,
+            "expected_types": tuple(expected_type.__name__ for expected_type in expected),
+            "allow_none": self.allow_none,
+        }
+
+    def validate(self, record: RecordLike) -> list[ValidationIssue]:
+        if self.field not in record:
+            return []
+        value = record[self.field]
+        if value is None:
+            return [] if self.allow_none else [ValidationIssue.null(self.field)]
+        if isinstance(value, self.expected_types):
+            return []
+        expected = (
+            self.expected_types
+            if isinstance(self.expected_types, tuple)
+            else (self.expected_types,)
+        )
+        expected_names = ", ".join(value_type.__name__ for value_type in expected)
+        return [
+            ValidationIssue.type_error(
+                self.field,
+                expected=expected_names,
+                actual=type(value).__name__,
+            ),
+        ]
+
+    def __call__(self, record: RecordLike) -> list[ValidationIssue]:
+        return self.validate(record)
+
+
+@dataclass(frozen=True)
+class RangeRule:
+    field: str
+    value_range: ValueRange
+    rule_name: str = "range"
+
+    @property
+    def rule_params(self) -> Mapping[str, Any]:
+        return {
+            "field": self.field,
+            "min_value": self.value_range.min_value,
+            "max_value": self.value_range.max_value,
+        }
+
+    def validate(self, record: RecordLike) -> list[ValidationIssue]:
+        if self.field not in record:
+            return []
+        value = record[self.field]
+        if value is None:
+            return []
+        if not isinstance(value, int | float):
+            return []
+        if self.value_range.min_value is not None and value < self.value_range.min_value:
+            return [
+                ValidationIssue.custom(
+                    f"Value for {self.field} must be >= {self.value_range.min_value}",
+                    code="range",
+                    field=self.field,
+                ),
+            ]
+        if self.value_range.max_value is not None and value > self.value_range.max_value:
+            return [
+                ValidationIssue.custom(
+                    f"Value for {self.field} must be <= {self.value_range.max_value}",
+                    code="range",
+                    field=self.field,
+                ),
+            ]
+        return []
+
+    def __call__(self, record: RecordLike) -> list[ValidationIssue]:
+        return self.validate(record)
+
+
+def required_field_rule(field: str) -> ValidationRule:
+    return RequiredFieldRule(field=field)
 
 
 def type_rule(
@@ -37,57 +157,11 @@ def type_rule(
     *,
     allow_none: bool = False,
 ) -> ValidationRule:
-    def _rule(record: RecordLike) -> list[ValidationIssue]:
-        if field not in record:
-            return []
-        value = record[field]
-        if value is None:
-            return [] if allow_none else [ValidationIssue.null(field)]
-        if isinstance(value, expected_types):
-            return []
-        expected = (
-            expected_types if isinstance(expected_types, tuple) else (expected_types,)
-        )
-        expected_names = ", ".join(value_type.__name__ for value_type in expected)
-        return [
-            ValidationIssue.type_error(
-                field,
-                expected=expected_names,
-                actual=type(value).__name__,
-            ),
-        ]
-
-    return _rule
+    return TypeRule(field=field, expected_types=expected_types, allow_none=allow_none)
 
 
 def range_rule(field: str, value_range: ValueRange) -> ValidationRule:
-    def _rule(record: RecordLike) -> list[ValidationIssue]:
-        if field not in record:
-            return []
-        value = record[field]
-        if value is None:
-            return []
-        if not isinstance(value, int | float):
-            return []
-        if value_range.min_value is not None and value < value_range.min_value:
-            return [
-                ValidationIssue.custom(
-                    f"Value for {field} must be >= {value_range.min_value}",
-                    code="range",
-                    field=field,
-                ),
-            ]
-        if value_range.max_value is not None and value > value_range.max_value:
-            return [
-                ValidationIssue.custom(
-                    f"Value for {field} must be <= {value_range.max_value}",
-                    code="range",
-                    field=field,
-                ),
-            ]
-        return []
-
-    return _rule
+    return RangeRule(field=field, value_range=value_range)
 
 
 def build_common_rules(

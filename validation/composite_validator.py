@@ -32,6 +32,12 @@ class CompositeRecordValidator(RecordValidator):
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
         return self._execute_rules(record, (*self._common_rules, *self._domain_rules))
 
+    def describe_rules(self) -> dict[str, list[dict[str, Any]]]:
+        return {
+            "common_rules": [self._describe_rule(rule) for rule in self._common_rules],
+            "domain_rules": [self._describe_rule(rule) for rule in self._domain_rules],
+        }
+
     @classmethod
     def _execute_rules(
         cls,
@@ -43,3 +49,9 @@ class CompositeRecordValidator(RecordValidator):
             result = rule(record)
             errors.extend(cls._coerce_issue(error) for error in result)
         return errors
+
+    @staticmethod
+    def _describe_rule(rule: ValidationRule) -> dict[str, Any]:
+        rule_name = getattr(rule, "rule_name", type(rule).__name__)
+        rule_params = dict(getattr(rule, "rule_params", {}))
+        return {"name": rule_name, "params": rule_params}
