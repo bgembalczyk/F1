@@ -3,6 +3,9 @@ from typing import Any
 from typing import Protocol
 from typing import runtime_checkable
 
+from scrapers.base.data_extractor import BaseDataExtractor
+from scrapers.base.progress import ProgressAdapter
+from scrapers.base.progress import TqdmProgressAdapter
 from tqdm import tqdm
 
 from infrastructure.http_client.requests_shim.request_error import RequestError
@@ -35,9 +38,15 @@ class CompositeDataExtractorChildren:
 
 
 class CompositeDataExtractor(BaseDataExtractor):
-    def __init__(self, *, options) -> None:
+    def __init__(
+        self,
+        *,
+        options,
+        progress: ProgressAdapter | None = None,
+    ) -> None:
         super().__init__(options=options)
         self.options = options
+        self.progress = progress or TqdmProgressAdapter()
         children = self.build_children()
         self.list_scraper = children.list_scraper
         self.single_scraper = children.single_scraper
@@ -64,7 +73,11 @@ class CompositeDataExtractor(BaseDataExtractor):
         complete: list[dict[str, Any]] = []
 
         extractor_name = self.__class__.__name__
-        for record in tqdm(records, desc=extractor_name, unit="item"):
+        for record in self.progress.wrap(
+            records,
+            desc=extractor_name,
+            unit="item",
+        ):
             if not isinstance(record, dict):
                 msg = (
                     "Records adapter musi zwracać dict, "
