@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from typing import Any
 
 from bs4 import Tag
@@ -46,15 +47,7 @@ class TableParser(WikiParser):
             if not cells or all(not c.get_text(strip=True) for c in cells):
                 continue
 
-            cleaned_cells = [
-                clean_table_cell_text(
-                    c.get_text(" ", strip=True),
-                    strip_lang_suffix=parser.strip_lang_suffix,
-                    strip_refs=parser.strip_refs,
-                    normalize_dashes=parser.normalize_dashes,
-                )
-                for c in cells
-            ]
+            cleaned_cells = self._clean_cells(cells, parser)
             if parser.is_footer_row(cells, cleaned_cells, full_headers):
                 continue
             if is_repeated_header_row(cleaned_cells, headers):
@@ -65,15 +58,7 @@ class TableParser(WikiParser):
                 full_headers,
                 pending_rowspans,
             )
-            cleaned_expanded = [
-                clean_table_cell_text(
-                    c.get_text(" ", strip=True),
-                    strip_lang_suffix=parser.strip_lang_suffix,
-                    strip_refs=parser.strip_refs,
-                    normalize_dashes=parser.normalize_dashes,
-                )
-                for c in expanded_cells
-            ]
+            cleaned_expanded = self._clean_cells(expanded_cells, parser)
 
             normalized_row = [
                 cleaned_expanded[idx] if idx < len(cleaned_expanded) else ""
@@ -114,3 +99,27 @@ class TableParser(WikiParser):
             second_headers,
         )
         return combined, HEADER_ROWS_WITH_SUBHEADERS
+
+    @staticmethod
+    def _cleaner_config(parser: HtmlTableParser) -> dict[str, bool]:
+        return {
+            "strip_lang_suffix": parser.strip_lang_suffix,
+            "strip_refs": parser.strip_refs,
+            "normalize_dashes": parser.normalize_dashes,
+        }
+
+    @staticmethod
+    def _clean_cells(
+        cells: Sequence[Tag],
+        parser: HtmlTableParser,
+    ) -> list[str]:
+        config = TableParser._cleaner_config(parser)
+        return [
+            clean_table_cell_text(
+                cell.get_text(" ", strip=True),
+                strip_lang_suffix=config["strip_lang_suffix"],
+                strip_refs=config["strip_refs"],
+                normalize_dashes=config["normalize_dashes"],
+            )
+            for cell in cells
+        ]
