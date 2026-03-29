@@ -245,16 +245,17 @@ Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem.
 5. Podepnij `record_factory` i (opcjonalnie) `default_validator`.
 6. Dla uruchamiania używaj `entrypoint.py`; `list_scraper.py` traktuj jako warstwę kompatybilności.
 
-## 8. Static quality gates (CI)
+## 8. Static quality gates (lokalne hooki pre-commit)
 
-Dla PR/push do `main` działa workflow `.github/workflows/static-quality-gates.yml` z czterema bramkami:
+Bramki jakości zostały przeniesione z GitHub Actions do lokalnego hooka `pre-commit`
+(`.githooks/pre-commit` -> `scripts/hooks/pre-commit.sh`):
 
 1. **Complexity warning (radon)** – próg ostrzegawczy: od klasy złożoności `B` wzwyż (`radon cc --min B`, krok typu warning).
 2. **Complexity error (xenon)** – progi blokujące merge:
    - `--max-absolute C`
    - `--max-modules C`
    - `--max-average B`
-3. **Duplicate code + oversized classes/functions (pylint)** – blokada CI przy wykryciu:
+3. **Duplicate code + oversized classes/functions (pylint)** – blokada commita przy wykryciu:
    - duplikacji (`duplicate-code`, `min-similarity-lines=30`),
    - zbyt dużych klas/funkcji (`too-many-*`) z limitami:
      - `max-attributes=20`
@@ -268,7 +269,8 @@ Dla PR/push do `main` działa workflow `.github/workflows/static-quality-gates.y
 Konfiguracja bramek znajduje się w plikach:
 - `.pylintrc`
 - `importlinter.ini`
-- `.github/workflows/static-quality-gates.yml`
+- `.githooks/pre-commit`
+- `scripts/hooks/pre-commit.sh`
 
 ## 9. Standard deklaracji konfiguracji scraperów (build_scraper_config + schema DSL)
 
