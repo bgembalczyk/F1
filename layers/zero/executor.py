@@ -2,6 +2,7 @@ from collections.abc import Callable
 from pathlib import Path
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
+from layers.orchestration.progress_reporter import ProgressReporter
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.merge_service import LayerZeroMergeService
@@ -21,6 +22,7 @@ class LayerZeroExecutor:
         merge_service: LayerZeroMergeService,
         current_constructors_scraper_name: str,
         year_provider: Callable[[], int],
+        progress_reporter: ProgressReporter,
     ) -> None:
         self._list_job_registry = list_job_registry
         self._validate_list_registry = validate_list_registry
@@ -31,6 +33,7 @@ class LayerZeroExecutor:
         self._merge_service = merge_service
         self._current_constructors_scraper_name = current_constructors_scraper_name
         self._year_provider = year_provider
+        self._progress_reporter = progress_reporter
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
         self._validate_list_registry(self._list_job_registry)
@@ -38,7 +41,8 @@ class LayerZeroExecutor:
         config_factories = self._run_config_factory_map_builder()
 
         for job in self._list_job_registry:
-            print(f"[list] running  {job.list_scraper_cls.__name__}")
+            scraper_name = job.list_scraper_cls.__name__
+            self._progress_reporter.started("list", scraper_name)
 
             config_factory = config_factories.get(
                 job.seed_name,
@@ -67,13 +71,13 @@ class LayerZeroExecutor:
                 run_config=local_run_config if scraper_kwargs else run_config,
             )
 
-            if job.list_scraper_cls.__name__ == self._current_constructors_scraper_name:
+            if scraper_name == self._current_constructors_scraper_name:
                 source_json_path = base_wiki_dir / l0_raw_json_path
                 self._constructors_mirror_service.mirror(
                     base_wiki_dir,
                     source_json_path,
                 )
 
-            print(f"[list] finished {job.list_scraper_cls.__name__}")
+            self._progress_reporter.finished("list", scraper_name)
 
         self._merge_service.merge(base_wiki_dir)
