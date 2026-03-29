@@ -1,184 +1,108 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from collections.abc import Mapping
+from enum import Enum
+from functools import partial
 from typing import Any
-from typing import Literal
+from typing import TYPE_CHECKING
+from typing import Callable
 from typing import overload
 
 from models.records.factories.registry import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry import get_factory
 
 if TYPE_CHECKING:
-    from collections.abc import Mapping
-
     from models.records.base_factory import BaseRecordFactory
-    from models.records.car import CarRecord
-    from models.records.circuit import CircuitRecord
-    from models.records.circuit_complete import CircuitCompleteRecord
-    from models.records.circuit_details import CircuitDetailsRecord
-    from models.records.constructor import ConstructorRecord
-    from models.records.driver import DriverRecord
-    from models.records.driver_championships import DriversChampionshipsRecord
-    from models.records.engine_manufacturer import EngineManufacturerRecord
-    from models.records.event import EventRecord
-    from models.records.fatality import FatalityRecord
-    from models.records.grand_prix import GrandsPrixRecord
-    from models.records.link import LinkRecord
-    from models.records.season import SeasonRecord
-    from models.records.season_summary import SeasonSummaryRecord
-    from models.records.special_driver import SpecialDriverRecord
 
 
+class RecordType(str, Enum):
+    LINK = "link"
+    SEASON = "season"
+    DRIVERS_CHAMPIONSHIPS = "drivers_championships"
+    DRIVER = "driver"
+    SPECIAL_DRIVER = "special_driver"
+    CONSTRUCTOR = "constructor"
+    CIRCUIT = "circuit"
+    EVENT = "event"
+    CAR = "car"
+    FATALITY = "fatality"
+    SEASON_SUMMARY = "season_summary"
+    GRANDS_PRIX = "grands_prix"
+    CIRCUIT_DETAILS = "circuit_details"
+    CIRCUIT_COMPLETE = "circuit_complete"
+    ENGINE_MANUFACTURER = "engine_manufacturer"
+    
 class RecordBuilders:
     """Object facade for building normalized record models."""
 
     def __init__(self, factory_registry: Mapping[str, BaseRecordFactory] | None = None):
         self._factory_registry = factory_registry or FACTORY_REGISTRY_PROVIDER.get()
 
-    def _factory_for(self, record_type: str) -> BaseRecordFactory:
-        return get_factory(record_type, self._factory_registry)
+
+class RecordBuilders:
+    """Object facade for building normalized record models."""
+
+    def __init__(
+        self,
+        factory_registry: dict[str, BaseRecordFactory] | None = None,
+    ):
+        self._factory_registry = factory_registry
+
+    def _factory_for(self, record_type: RecordType | str) -> BaseRecordFactory:
+        resolved_type = (
+            record_type.value if isinstance(record_type, RecordType) else record_type
+        )
+        from models.records.factories.registry import get_factory
+
+        return get_factory(resolved_type, self._factory_registry)
 
     @overload
-    def build(
-        self,
-        record_type: Literal["link"],
-        record: Mapping[str, Any],
-    ) -> LinkRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["season"],
-        record: Mapping[str, Any],
-    ) -> SeasonRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["drivers_championships"],
-        record: Mapping[str, Any],
-    ) -> DriversChampionshipsRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["driver"],
-        record: Mapping[str, Any],
-    ) -> DriverRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["special_driver"],
-        record: Mapping[str, Any],
-    ) -> SpecialDriverRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["constructor"],
-        record: Mapping[str, Any],
-    ) -> ConstructorRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["circuit"],
-        record: Mapping[str, Any],
-    ) -> CircuitRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["event"],
-        record: Mapping[str, Any],
-    ) -> EventRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["car"],
-        record: Mapping[str, Any],
-    ) -> CarRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["fatality"],
-        record: Mapping[str, Any],
-    ) -> FatalityRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["season_summary"],
-        record: Mapping[str, Any],
-    ) -> SeasonSummaryRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["grands_prix"],
-        record: Mapping[str, Any],
-    ) -> GrandsPrixRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["circuit_details"],
-        record: Mapping[str, Any],
-    ) -> CircuitDetailsRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["circuit_complete"],
-        record: Mapping[str, Any],
-    ) -> CircuitCompleteRecord: ...
-
-    @overload
-    def build(
-        self,
-        record_type: Literal["engine_manufacturer"],
-        record: Mapping[str, Any],
-    ) -> EngineManufacturerRecord: ...
+    def build(self, record_type: RecordType, record: Mapping[str, Any]) -> Any: ...
 
     @overload
     def build(self, record_type: str, record: Mapping[str, Any]) -> Any: ...
 
-    def build(self, record_type: str, record: Mapping[str, Any]) -> Any:
+    def build(self, record_type: RecordType | str, record: Mapping[str, Any]) -> Any:
         return self._factory_for(record_type).build(record)
 
-    def season(self, record: Mapping[str, Any]) -> SeasonRecord:
-        return self.build("season", record)
+    def __getattr__(self, name: str) -> Callable[[Mapping[str, Any]], Any]:
+        if name in RecordType._value2member_map_:
+            return partial(self.build, RecordType(name))
 
-    def driver(self, record: Mapping[str, Any]) -> DriverRecord:
-        return self.build("driver", record)
+        message = f"{self.__class__.__name__!s} has no attribute {name!r}"
+        raise AttributeError(message)
 
-    def constructor(self, record: Mapping[str, Any]) -> ConstructorRecord:
-        return self.build("constructor", record)
 
-    def circuit(self, record: Mapping[str, Any]) -> CircuitRecord:
-        return self.build("circuit", record)
+RECORD_BUILDERS = RecordBuilders()
 
-    def special_driver(self, record: Mapping[str, Any]) -> SpecialDriverRecord:
-        return self.build("special_driver", record)
 
-    def fatality(self, record: Mapping[str, Any]) -> FatalityRecord:
-        return self.build("fatality", record)
+@overload
+def build_record(record_type: RecordType, record: Mapping[str, Any]) -> Any: ...
 
-    def season_summary(self, record: Mapping[str, Any]) -> SeasonSummaryRecord:
-        return self.build("season_summary", record)
 
-    def grands_prix(self, record: Mapping[str, Any]) -> GrandsPrixRecord:
-        return self.build("grands_prix", record)
+@overload
+def build_record(record_type: str, record: Mapping[str, Any]) -> Any: ...
 
-    def engine_manufacturer(
-        self,
-        record: Mapping[str, Any],
-    ) -> EngineManufacturerRecord:
-        return self.build("engine_manufacturer", record)
 
+def build_record(record_type: RecordType | str, record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.build(record_type, record)
+
+
+def _build_convenience(record_type: RecordType) -> Callable[[Mapping[str, Any]], Any]:
+    return partial(build_record, record_type)
+
+
+for _record_type in RecordType:
+    globals()[f"build_{_record_type.value}_record"] = _build_convenience(_record_type)
+
+
+__all__ = [
+    "RECORD_BUILDERS",
+    "RecordBuilders",
+    "RecordType",
+    "build_record",
+    *[f"build_{record_type.value}_record" for record_type in RecordType],
+]
 
 RECORD_BUILDERS = RecordBuilders()
 

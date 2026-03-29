@@ -8,12 +8,14 @@
 - [ ] **DIP**: moduły wysokiego poziomu zależą od abstrakcji, nie od implementacji.
 - [ ] **Brak nowej duplikacji**: sprawdzone lokalnie (`pylint` duplicate-code / CI static gates).
 - [ ] **Zgodność z bazowymi abstrakcjami**: klasy rozszerzają istniejące kontrakty/interfejsy i nie łamią ich API.
-- [ ] Brak nowych `Any`.
-- [ ] Granice modułów.
-- [ ] Duplikacja.
-- [ ] Architecture impact.
+- [ ] **Brak nowych `Any`**: potwierdzone przez gate `Strict typing regression gate (mypy)` (`scripts/ci/mypy_regression_gate.py`).
+- [ ] **Granice modułów**: potwierdzone przez `Architecture tests` + `import-linter`.
+- [ ] **Duplikacja**: potwierdzona przez `jscpd` + `pylint duplicate-code` (`Static quality gates`).
+- [ ] **Architecture impact**: sekcja poniżej jest uzupełniona i przechodzi walidator PR template (`scripts/ci/validate_pr_template.py`).
 
 ## Architecture impact
+
+<!-- Pole wymagane. Dla PR bez zmian w `scrapers/base/` wpisz jawnie: "nie dotyczy". -->
 
 - Zmiany w `scrapers/base/`: <!-- opisz konkretnie, nie wpisuj "nie dotyczy" gdy PR modyfikuje ten obszar -->
 - Dotknięte domeny: <!-- np. scrapers, layers, infrastructure -->

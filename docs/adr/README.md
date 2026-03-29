@@ -11,7 +11,7 @@ Ten katalog przechowuje **trwałe decyzje architektoniczne** projektu.
 2. Każda większa zmiana architektoniczna w PR musi mieć referencję do co najmniej jednego ADR (np. `ADR-0002`).
 3. Jeżeli zmiana modyfikuje wcześniej zatwierdzoną zasadę, PR musi zawierać aktualizację istniejącego ADR lub nowy ADR, który go zastępuje.
 4. Brak referencji ADR dla zmian architektonicznych traktujemy jako blokadę na review.
-5. CI gate `scripts/check_di_antipatterns.py` egzekwuje ten wymóg automatycznie dla większych zmian (>=3 naruszeń DI).
+5. CI gate `scripts/check_di_antipatterns.py` egzekwuje ten wymóg automatycznie dla większych zmian (>=5 naruszeń DI; stała `DI_ADR_THRESHOLD`).
 
 ## Lista decyzji
 
