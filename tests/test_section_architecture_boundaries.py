@@ -1,10 +1,10 @@
 # ruff: noqa: PERF401
 from __future__ import annotations
 
-import ast
 from pathlib import Path
 
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
+from tests.support.imports_analyzer import parse_imports
 
 DOMAINS = ("drivers", "constructors", "circuits", "seasons", "grands_prix")
 
@@ -27,27 +27,16 @@ def _is_forbidden_single_scraper_import(
 
 
 def _collect_import_violations(py_file: Path, domain: str) -> list[str]:
-    tree = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
     violations: list[str] = []
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            for alias in node.names:
-                if _is_forbidden_single_scraper_import(
-                    domain=domain,
-                    imported_module=alias.name,
-                    import_level=0,
-                ):
-                    violations.append(alias.name)
-
-        if isinstance(node, ast.ImportFrom):
-            if _is_forbidden_single_scraper_import(
-                domain=domain,
-                imported_module=node.module,
-                import_level=node.level,
-            ):
-                violations.append(
-                    f"{'.' * node.level}{node.module or ''}",
-                )
+    for parsed_import in parse_imports(py_file):
+        if _is_forbidden_single_scraper_import(
+            domain=domain,
+            imported_module=parsed_import.module,
+            import_level=parsed_import.level,
+        ):
+            violations.append(
+                f"{'.' * parsed_import.level}{parsed_import.module}",
+            )
     return violations
 
 
