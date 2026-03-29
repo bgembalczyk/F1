@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING
 from typing import TypeVar
 
 from infrastructure.http_client.requests_shim.request_error import RequestError
+from models.mappers.serialization import QualityRecord
 from models.mappers.serialization import to_dict_list
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
@@ -208,7 +209,7 @@ class QualityReportService:
     def set_run_id(self, run_id: str) -> None:
         self._run_id = run_id
 
-    def write_step(self, *, step_name: str, records: list[dict[str, object]]) -> None:
+    def write_step(self, *, step_name: str, records: list[QualityRecord]) -> None:
         if not self._enabled or self._reporter is None:
             return
         run_id = self._run_id or "no_run_id"
@@ -319,12 +320,12 @@ class PipelineOrchestrator:
     def _write_pipeline_quality_report(
         self,
         step_name: str,
-        records: list[dict[str, object]],
+        records: list[QualityRecord],
     ) -> None:
         self._quality_report_service.write_step(step_name=step_name, records=records)
 
     @staticmethod
-    def to_dict_records(records: list[ExportRecord]) -> list[dict[str, object]]:
+    def to_dict_records(records: list[ExportRecord]) -> list[QualityRecord]:
         return to_dict_list(records)
 
     @staticmethod

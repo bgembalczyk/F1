@@ -8,6 +8,8 @@ from datetime import timezone
 from typing import TYPE_CHECKING
 from typing import Any
 
+from models.mappers.serialization import QualityRecord
+
 SCHEMA_VERSION = "1.0"
 
 if TYPE_CHECKING:
@@ -28,7 +30,7 @@ class QualityReporter:
         self,
         *,
         step_id: str,
-        records: list[dict[str, Any]] | None,
+        records: list[QualityRecord] | None,
         source_metadata: Mapping[str, Any] | None = None,
     ) -> Path:
         resolved_records = records or []
@@ -54,7 +56,7 @@ class QualityReporter:
         return output_path
 
     @staticmethod
-    def _missing_fields(records: list[dict[str, Any]]) -> dict[str, int]:
+    def _missing_fields(records: list[QualityRecord]) -> dict[str, int]:
         all_fields: set[str] = set()
         for record in records:
             all_fields.update(record.keys())
@@ -72,7 +74,7 @@ class QualityReporter:
 
     def _duplicate_keys(
         self,
-        records: list[dict[str, Any]],
+        records: list[QualityRecord],
         *,
         source_metadata: Mapping[str, Any] | None,
     ) -> dict[str, int]:
