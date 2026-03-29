@@ -19,13 +19,14 @@ if TYPE_CHECKING:
 
 
 def _build_explicit_layer_one_runner_map() -> dict[str, LayerJobRunner]:
-    return {
-        "grands_prix": GrandPrixRunner(),
-        "circuits": CircuitsRunner(),
-        "drivers": DriversRunner(),
-        "seasons": SeasonsRunner(),
-        "constructors": ConstructorsRunner(),
-    }
+    runners = (
+        GrandPrixRunner(),
+        CircuitsRunner(),
+        DriversRunner(),
+        SeasonsRunner(),
+        ConstructorsRunner(),
+    )
+    return {runner.metadata.seed_name: runner for runner in runners}
 
 
 def _merge_runner_maps(

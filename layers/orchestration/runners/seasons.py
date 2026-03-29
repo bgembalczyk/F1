@@ -1,19 +1,18 @@
 from pathlib import Path
 
 from layers.orchestration.runners.layer_job import LayerJobRunner
+from layers.orchestration.runners.metadata import RunnerMetadata
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
 from scrapers.seasons.helpers import export_complete_seasons
 
 
 class SeasonsRunner(LayerJobRunner):
-    COMPONENT_METADATA = {
-        "domain": "seasons",
-        "seed_name": "seasons",
-        "layer": "layer_one",
-        "output_category": "seasons",
-        "component_type": "runner",
-    }
+    _METADATA = RunnerMetadata.build(domain="seasons")
+
+    @property
+    def metadata(self) -> RunnerMetadata:
+        return self._METADATA
 
     def run(
         self,

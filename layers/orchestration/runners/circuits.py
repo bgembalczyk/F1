@@ -1,19 +1,18 @@
 from pathlib import Path
 
 from layers.orchestration.runners.layer_job import LayerJobRunner
+from layers.orchestration.runners.metadata import RunnerMetadata
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
 from scrapers.circuits.helpers.export import export_complete_circuits
 
 
 class CircuitsRunner(LayerJobRunner):
-    COMPONENT_METADATA = {
-        "domain": "circuits",
-        "seed_name": "circuits",
-        "layer": "layer_one",
-        "output_category": "circuits",
-        "component_type": "runner",
-    }
+    _METADATA = RunnerMetadata.build(domain="circuits")
+
+    @property
+    def metadata(self) -> RunnerMetadata:
+        return self._METADATA
 
     def run(
         self,
