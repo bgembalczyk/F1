@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import ast
 import importlib.util
-import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -19,6 +18,7 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_project_root_on_path()
 
+from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
 from scripts.lib.check_runner import iter_python_paths, run_cli
 DEFAULT_TARGETS = [REPO_ROOT / "layers", REPO_ROOT / "scrapers" / "base"]
 
@@ -46,7 +46,6 @@ ALLOWED_FACTORY_METHOD_PATTERNS = (
     "setup",
     "configure",
 )
-ADR_TOKEN_PATTERN = re.compile(r"\bADR-\d{4}\b", re.IGNORECASE)
 ALLOW_COMMENT = "di-antipattern-allow:"
 
 
@@ -216,14 +215,14 @@ def _validate_adr_reference_for_major_changes(
     adr_reference_text: str,
     threshold: int,
 ) -> list[str]:
-    if len(violations) < threshold:
+    if not DEFAULT_ADR_ENFORCEMENT_POLICY.should_emit_di_trigger_signal(len(violations), threshold):
         return []
-    if ADR_TOKEN_PATTERN.search(adr_reference_text):
+    if DEFAULT_ADR_ENFORCEMENT_POLICY.has_adr_reference(adr_reference_text):
         return []
     return [
         (
-            f"Wykryto {len(violations)} naruszeń DI (>= {threshold}), "
-            "dlatego wymagane jest odniesienie ADR-XXXX w PR/commit message."
+            f"Wykryto {len(violations)} naruszeń DI (>= {threshold}); "
+            "to dodatkowy sygnał DI-trigger i wymagane jest odniesienie ADR-XXXX w PR/commit message."
         ),
     ]
 
@@ -232,7 +231,7 @@ def main(argv: list[str] | None = None) -> int:
     argv = argv or []
     paths: list[Path] = []
     adr_reference_text = ""
-    adr_required_violation_threshold = 5
+    adr_required_violation_threshold = DEFAULT_ADR_ENFORCEMENT_POLICY.di_required_violation_threshold
 
     i = 0
     while i < len(argv):
