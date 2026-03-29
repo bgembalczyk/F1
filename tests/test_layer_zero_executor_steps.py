@@ -8,6 +8,17 @@ from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 
 
+
+
+class _Reporter:
+    def started(self, *, layer: str, step: str) -> None:
+        return None
+
+    def finished(self, *, layer: str, step: str) -> None:
+        return None
+
+    def skipped(self, *, layer: str, step: str, reason: str) -> None:
+        return None
 class _FakeScraper:
     pass
 
@@ -73,6 +84,7 @@ def _executor(
         merge_service=(merge_service if merge_service else _MergeService()),
         job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
         year_provider=lambda: 2026,
+        reporter=_Reporter(),
     )
 
 
