@@ -17,26 +17,40 @@ SOURCE_DIRS = (
     "complete_extractor",
 )
 
-TARGET_PACKAGES = (
-    PROJECT_ROOT / "scrapers" / "wiki",
-    PROJECT_ROOT / "scrapers" / "wiki" / "parsers" / "sections",
+TYPO_RULES = (
+    {
+        "target_packages": (
+            PROJECT_ROOT / "scrapers" / "wiki",
+            PROJECT_ROOT / "scrapers" / "wiki" / "parsers" / "sections",
+        ),
+        "expected_module_name": "constants.py",
+        "disallowed_typo_name": "contants.py",
+        "disallowed_import": "scrapers.wiki.contants",
+    },
+    {
+        "target_packages": (
+            PROJECT_ROOT / "scrapers" / "base" / "orchestration" / "components",
+        ),
+        "expected_module_name": "section_source_adapter.py",
+        "disallowed_typo_name": "section_soruce_adapter.py",
+        "disallowed_import": (
+            "scrapers.base.orchestration.components.section_soruce_adapter"
+        ),
+    },
 )
-
-EXPECTED_MODULE_NAME = "constants.py"
-DISALLOWED_TYPO_NAME = "contants.py"
-DISALLOWED_IMPORT = "scrapers.wiki.contants"
 
 
 def _validate_target_packages() -> list[str]:
     errors: list[str] = []
-    for package in TARGET_PACKAGES:
-        expected = package / EXPECTED_MODULE_NAME
-        typo = package / DISALLOWED_TYPO_NAME
+    for rule in TYPO_RULES:
+        for package in rule["target_packages"]:
+            expected = package / rule["expected_module_name"]
+            typo = package / rule["disallowed_typo_name"]
 
-        if not expected.exists():
-            errors.append(f"missing expected module: {expected}")
-        if typo.exists():
-            errors.append(f"found typo module: {typo}")
+            if not expected.exists():
+                errors.append(f"missing expected module: {expected}")
+            if typo.exists():
+                errors.append(f"found typo module: {typo}")
     return errors
 
 
@@ -48,9 +62,10 @@ def _scan_typo_imports() -> list[str]:
             continue
         for py_file in root.rglob("*.py"):
             content = py_file.read_text(encoding="utf-8")
-            if DISALLOWED_IMPORT in content:
-                rel_path = py_file.relative_to(PROJECT_ROOT)
-                errors.append(f"found typo import in {rel_path}")
+            for rule in TYPO_RULES:
+                if rule["disallowed_import"] in content:
+                    rel_path = py_file.relative_to(PROJECT_ROOT)
+                    errors.append(f"found typo import in {rel_path}")
     return errors
 
 
