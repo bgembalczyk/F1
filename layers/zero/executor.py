@@ -1,8 +1,8 @@
 from collections.abc import Callable
 from pathlib import Path
 
-from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.reporter import PipelineStepReporterProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.merge_service import LayerZeroMergeService
@@ -24,6 +24,7 @@ class LayerZeroExecutor:
         run_and_export_function: Callable[..., None],
         merge_service: LayerZeroMergeService,
         job_hook: LayerZeroJobHook,
+        step_reporter: PipelineStepReporterProtocol,
         year_provider: Callable[[], int],
     ) -> None:
         self._list_job_registry = list_job_registry
@@ -33,6 +34,7 @@ class LayerZeroExecutor:
         self._run_and_export_function = run_and_export_function
         self._merge_service = merge_service
         self._job_hook = job_hook
+        self._step_reporter = step_reporter
         self._year_provider = year_provider
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
@@ -40,7 +42,11 @@ class LayerZeroExecutor:
         config_factories = self._resolve_config_factory()
 
         for job in self._list_job_registry:
-            print(f"[list] running  {job.list_scraper_cls.__name__}")
+            self._step_reporter.start(
+                layer="layer_zero",
+                step_type="list_job",
+                step_name=job.list_scraper_cls.__name__,
+            )
 
             local_run_config = self._build_local_run_config(
                 run_config=run_config,
@@ -58,7 +64,11 @@ class LayerZeroExecutor:
                 l0_raw_json_path=l0_raw_json_path,
             )
 
-            print(f"[list] finished {job.list_scraper_cls.__name__}")
+            self._step_reporter.finish(
+                layer="layer_zero",
+                step_type="list_job",
+                step_name=job.list_scraper_cls.__name__,
+            )
 
         self._finalize_merge(base_wiki_dir)
 
@@ -72,7 +82,10 @@ class LayerZeroExecutor:
         job: ListJobRegistryEntry,
         config_factories: dict[str, object],
     ) -> RunConfig:
-        config_factory = config_factories.get(job.seed_name, self._default_config_factory)
+        config_factory = config_factories.get(
+            job.seed_name,
+            self._default_config_factory,
+        )
         scraper_kwargs = config_factory.create_scraper_kwargs(job)
         return RunConfig(
             output_dir=run_config.output_dir,
@@ -99,7 +112,9 @@ class LayerZeroExecutor:
             job.list_scraper_cls,
             l0_raw_json_path,
             l0_raw_csv_path,
-            run_config=(local_run_config if local_run_config.scraper_kwargs else run_config),
+            run_config=(
+                local_run_config if local_run_config.scraper_kwargs else run_config
+            ),
         )
         return l0_raw_json_path
 
