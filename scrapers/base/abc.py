@@ -34,7 +34,7 @@ from validation.validator_base import ExportRecord
 T = TypeVar("T")
 
 
-class ABCScraper(ABC):
+class ABCScraper(ABC):  # pylint: disable=too-many-instance-attributes
     """
     Bazowa klasa dla wszystkich scraperów F1.
 

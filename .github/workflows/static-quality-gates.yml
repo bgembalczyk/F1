@@ -14,6 +14,8 @@ env:
   NEW_DUPLICATES_WARN_THRESHOLD: "1"
   NEW_DUPLICATES_FAIL_THRESHOLD: "3"
   MYPY_ERROR_BUDGET: "0"
+  TYPO_WARN_THRESHOLD: "1"
+  TYPO_FAIL_THRESHOLD: "2"
 
 jobs:
   static-analysis:
@@ -68,13 +70,25 @@ jobs:
             --pr-body "${{ github.event.pull_request.body || '' }}"
 
       - name: Enforce ADR reference for architecture changes
+        id: adr-gate
+        continue-on-error: true
         shell: bash
         run: |
+          set +e
           python scripts/ci/enforce_architecture_adr_reference.py \
             --base-sha "${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}" \
             --head-sha "${{ github.sha }}" \
             --pr-title "${{ github.event_name == 'pull_request' && github.event.pull_request.title || '' }}" \
-            --pr-body "${{ github.event_name == 'pull_request' && github.event.pull_request.body || '' }}"
+            --pr-body "${{ github.event_name == 'pull_request' && github.event.pull_request.body || '' }}" | tee .adr-gate.log
+          ADR_EXIT=$?
+          if [[ "$ADR_EXIT" -eq 0 ]]; then
+            echo "adr_status=ok" >> "$GITHUB_OUTPUT"
+            echo "adr_message=Brak naruszeń ADR (lub gate pominięty)." >> "$GITHUB_OUTPUT"
+          else
+            echo "adr_status=fail" >> "$GITHUB_OUTPUT"
+            echo "adr_message=Zmiany architektoniczne bez referencji ADR-XXXX." >> "$GITHUB_OUTPUT"
+          fi
+          exit "$ADR_EXIT"
 
       - name: Detect changed Python files
         id: changed-py
@@ -131,6 +145,31 @@ jobs:
             --changed-files "${{ steps.changed-py.outputs.changed_files }}" \
             --github-output "$GITHUB_OUTPUT"
 
+      - name: Typo gate (known module typos)
+        if: always()
+        id: typo-gate
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          python scripts/check_known_module_typos.py | tee .typo-gate.log
+          TYPO_EXIT=$?
+          TYPO_COUNT=$(grep -c '^- ' .typo-gate.log || true)
+          echo "typo_count=$TYPO_COUNT" >> "$GITHUB_OUTPUT"
+          if [[ "$TYPO_COUNT" -ge "$TYPO_FAIL_THRESHOLD" || "$TYPO_EXIT" -ne 0 ]]; then
+            echo "typo_status=fail" >> "$GITHUB_OUTPUT"
+            echo "typo_message=Przekroczony próg fail (${TYPO_FAIL_THRESHOLD}) dla literówek modułów." >> "$GITHUB_OUTPUT"
+            exit 1
+          elif [[ "$TYPO_COUNT" -ge "$TYPO_WARN_THRESHOLD" ]]; then
+            echo "typo_status=warn" >> "$GITHUB_OUTPUT"
+            echo "typo_message=Próg warning (${TYPO_WARN_THRESHOLD}) dla literówek modułów przekroczony." >> "$GITHUB_OUTPUT"
+            exit 0
+          else
+            echo "typo_status=ok" >> "$GITHUB_OUTPUT"
+            echo "typo_message=Brak znanych literówek modułów." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
       - name: Publish duplicate report as PR comment
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && always()
         uses: marocchino/sticky-pull-request-comment@v2
@@ -145,23 +184,44 @@ jobs:
 
       - name: Enforce duplicate thresholds for new code
         if: always()
+        id: duplicate-gate
+        continue-on-error: true
         shell: bash
         run: |
           echo "Nowe duplikaty: ${{ steps.dup-report.outputs.duplicate_count }}"
           echo "Status: ${{ steps.dup-report.outputs.duplicate_status }}"
+          DUP_STATUS="${{ steps.dup-report.outputs.duplicate_status }}"
+          echo "duplicate_status=${DUP_STATUS}" >> "$GITHUB_OUTPUT"
 
-          if [[ "${{ steps.dup-report.outputs.duplicate_status }}" == "warn" ]]; then
+          if [[ "$DUP_STATUS" == "warn" ]]; then
             echo "::warning::Przekroczono próg ostrzegawczy nowych duplikatów (${NEW_DUPLICATES_WARN_THRESHOLD})."
+            echo "duplicate_message=Przekroczony próg warning (${NEW_DUPLICATES_WARN_THRESHOLD}) dla nowych duplikatów." >> "$GITHUB_OUTPUT"
           fi
 
-          if [[ "${{ steps.dup-report.outputs.duplicate_status }}" == "fail" ]]; then
+          if [[ "$DUP_STATUS" == "fail" ]]; then
             echo "::error::Przekroczono próg blokujący nowych duplikatów (${NEW_DUPLICATES_FAIL_THRESHOLD})."
+            echo "duplicate_message=Przekroczony próg fail (${NEW_DUPLICATES_FAIL_THRESHOLD}) dla nowych duplikatów." >> "$GITHUB_OUTPUT"
             exit 1
+          fi
+          if [[ "$DUP_STATUS" == "ok" ]]; then
+            echo "duplicate_message=Brak nowych duplikatów w scope PR." >> "$GITHUB_OUTPUT"
           fi
 
       - name: Architectural import rules (import-linter)
+        id: architecture-gate
+        continue-on-error: true
         run: |
-          lint-imports --config importlinter.ini
+          set +e
+          lint-imports --config importlinter.ini | tee .architecture-gate.log
+          ARCH_EXIT=$?
+          if [[ "$ARCH_EXIT" -eq 0 ]]; then
+            echo "architecture_status=ok" >> "$GITHUB_OUTPUT"
+            echo "architecture_message=Granice architektoniczne zachowane." >> "$GITHUB_OUTPUT"
+          else
+            echo "architecture_status=fail" >> "$GITHUB_OUTPUT"
+            echo "architecture_message=Naruszenie granic architektonicznych (import-linter)." >> "$GITHUB_OUTPUT"
+          fi
+          exit "$ARCH_EXIT"
 
       - name: Unused imports regression gate (layer wiring)
         run: |
@@ -175,12 +235,18 @@ jobs:
             --head-sha "${{ github.sha }}"
 
       - name: Strict typing regression gate (mypy)
+        if: always()
+        id: typing-gate
+        continue-on-error: true
         shell: bash
         run: |
+          set +e
           python scripts/ci/mypy_regression_gate.py \
             --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
             --head-sha "${{ github.sha }}" \
-            --error-budget "${MYPY_ERROR_BUDGET}"
+            --error-budget "${MYPY_ERROR_BUDGET}" \
+            --github-output "$GITHUB_OUTPUT" | tee .typing-gate.log
+          exit $?
 
 
       - name: DI anti-pattern AST check (layers + selected scrapers)
@@ -193,16 +259,82 @@ jobs:
             ADR_REFERENCE_TEXT="${{ github.event.head_commit.message }}"
           fi
 
-          mapfile -t DI_SCOPE_FILES < <(printf '%s
-' "${{ steps.changed-py.outputs.changed_files }}" | tr ',' '
-' | sed '/^$/d' | grep -E '^(layers/|scrapers/base/|scrapers/drivers/infobox/).+\.py$' || true)
+          mapfile -t DI_SCOPE_FILES < <(
+            printf '%s\n' "${{ steps.changed-py.outputs.changed_files }}" \
+              | tr ',' '\n' \
+              | sed '/^$/d' \
+              | grep -E '^(layers/|scrapers/base/|scrapers/drivers/infobox/).+\.py$' || true
+          )
 
           if [[ ${#DI_SCOPE_FILES[@]} -eq 0 ]]; then
             echo "Brak zmian Python w layers/*, scrapers/base/* i scrapers/drivers/infobox/* - pomijam check DI."
             exit 0
           fi
 
-          python scripts/check_di_antipatterns.py "${DI_SCOPE_FILES[@]}"             --adr-reference-text "$ADR_REFERENCE_TEXT"             --adr-required-violation-threshold 3
+          python scripts/check_di_antipatterns.py "${DI_SCOPE_FILES[@]}" \
+            --adr-reference-text "$ADR_REFERENCE_TEXT" \
+            --adr-required-violation-threshold 3
       - name: Domain contracts gate (pytest)
         run: |
           pytest -q tests/test_domain_role_contracts.py tests/test_domain_role_contracts_ci_meta.py tests/test_di_antipatterns_ci_meta.py
+
+      - name: Build aggregated quality report
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p .quality-report
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          cat > .quality-report/pr-quality-report.md <<EOF
+          ## Raport jakości PR (gates)
+
+          | Gate | Status | Próg / zasada | Komunikat | Linki do naruszeń |
+          | --- | --- | --- | --- | --- |
+          | Typing strict scope | ${{ steps.typing-gate.outputs.gate_status || 'fail' }} | fail: regresja (`head > base`) lub `head > MYPY_ERROR_BUDGET`; warning: `head == base > 0` | ${{ steps.typing-gate.outputs.gate_message || 'Brak danych z gate typing.' }} | [log](${RUN_URL}) |
+          | Architecture boundaries | ${{ steps.architecture-gate.outputs.architecture_status || 'fail' }} | fail: ≥1 naruszenie import-linter; warning: n/d | ${{ steps.architecture-gate.outputs.architecture_message || 'Brak danych z gate architecture.' }} | [log](${RUN_URL}) |
+          | Duplicate code | ${{ steps.duplicate-gate.outputs.duplicate_status || 'fail' }} | warning: `>= ${NEW_DUPLICATES_WARN_THRESHOLD}`; fail: `>= ${NEW_DUPLICATES_FAIL_THRESHOLD}` | ${{ steps.duplicate-gate.outputs.duplicate_message || 'Brak danych z gate duplicate.' }} | [raport duplikatów](./.jscpd-report/pr-comment.md) |
+          | Typo checks | ${{ steps.typo-gate.outputs.typo_status || 'fail' }} | warning: `>= ${TYPO_WARN_THRESHOLD}`; fail: `>= ${TYPO_FAIL_THRESHOLD}` | ${{ steps.typo-gate.outputs.typo_message || 'Brak danych z gate typo.' }} | [log](${RUN_URL}) |
+          | ADR reference | ${{ steps.adr-gate.outputs.adr_status || 'fail' }} | fail: zmiana architektoniczna bez `ADR-XXXX`; warning: n/d | ${{ steps.adr-gate.outputs.adr_message || 'Brak danych z gate ADR.' }} | [log](${RUN_URL}) |
+          EOF
+          cat .quality-report/pr-quality-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish aggregated quality report as PR comment
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && always()
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: quality-gates-summary
+          recreate: true
+          path: .quality-report/pr-quality-report.md
+
+      - name: Upload quality report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-quality-report
+          path: |
+            .quality-report/pr-quality-report.md
+            .jscpd-report/pr-comment.md
+            .typing-gate.log
+            .architecture-gate.log
+            .typo-gate.log
+            .adr-gate.log
+
+      - name: Block merge on fail-gate regression
+        if: always()
+        shell: bash
+        run: |
+          FAIL=0
+          for STATUS in \
+            "${{ steps.typing-gate.outputs.gate_status }}" \
+            "${{ steps.architecture-gate.outputs.architecture_status }}" \
+            "${{ steps.duplicate-gate.outputs.duplicate_status }}" \
+            "${{ steps.typo-gate.outputs.typo_status }}" \
+            "${{ steps.adr-gate.outputs.adr_status }}"; do
+            if [[ "$STATUS" == "fail" ]]; then
+              FAIL=1
+            fi
+          done
+          if [[ "$FAIL" -eq 1 ]]; then
+            echo "::error::Wykryto regresję fail-gate — merge zablokowany."
+            exit 1
+          fi
+          echo "Brak regresji fail-gate — merge dozwolony."
