@@ -4,15 +4,42 @@ from pathlib import Path
 import subprocess
 import sys
 
+import pytest
 
-def test_single_wiki_hook_names_runs_from_foreign_cwd(tmp_path: Path) -> None:
-    repo_root = Path(__file__).resolve().parents[1]
-    script_path = repo_root / "scripts" / "check_single_wiki_hook_names.py"
-    target_path = tmp_path / "target.py"
-    target_path.write_text("class PlainModule:\n    pass\n", encoding="utf-8")
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+@pytest.mark.parametrize(
+    ("script_rel_path", "arguments", "ok_message"),
+    [
+        (
+            Path("scripts/check_single_wiki_hook_names.py"),
+            ("scrapers/base/helpers/path.py",),
+            "[single-wiki-hook-names] OK",
+        ),
+        (
+            Path("scripts/check_di_antipatterns.py"),
+            ("scripts/lib/bootstrap.py",),
+            "[di-antipatterns] OK",
+        ),
+        (
+            Path("scripts/check_known_module_typos.py"),
+            tuple(),
+            "[known-module-typos] OK",
+        ),
+    ],
+)
+def test_check_script_runs_from_foreign_cwd(
+    tmp_path: Path,
+    script_rel_path: Path,
+    arguments: tuple[str, ...],
+    ok_message: str,
+) -> None:
+    script_path = REPO_ROOT / script_rel_path
 
     process = subprocess.run(
-        [sys.executable, str(script_path), str(target_path)],
+        [sys.executable, str(script_path), *arguments],
         cwd=tmp_path,
         capture_output=True,
         text=True,
@@ -20,4 +47,4 @@ def test_single_wiki_hook_names_runs_from_foreign_cwd(tmp_path: Path) -> None:
     )
 
     assert process.returncode == 0, process.stdout + process.stderr
-    assert "[single-wiki-hook-names] OK" in process.stdout
+    assert ok_message in process.stdout

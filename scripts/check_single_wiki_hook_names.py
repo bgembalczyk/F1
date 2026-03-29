@@ -14,7 +14,7 @@ assert _BOOTSTRAP_SPEC and _BOOTSTRAP_SPEC.loader
 _BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
 _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
-REPO_ROOT = _BOOTSTRAP_MODULE.ensure_project_root_on_path()
+REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
 from scripts.lib.check_runner import iter_python_paths, run_cli
 SCRAPERS_DIR = REPO_ROOT / "scrapers"
@@ -89,7 +89,7 @@ def lint_path(path: Path) -> list[str]:
 
 
 def run_check(argv: list[str] | None = None) -> list[str]:
-    targets = [Path(arg) for arg in (argv or [])] if argv else [SCRAPERS_DIR]
+    targets = [Path(arg) for arg in argv] if argv else [SCRAPERS_DIR]
     errors: list[str] = []
     for path in iter_python_paths(targets):
         errors.extend(lint_path(path))
