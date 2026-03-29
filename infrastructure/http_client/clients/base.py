@@ -16,6 +16,7 @@ from infrastructure.http_client.factories.default_http_policy_factory import (
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,
 )
+from infrastructure.http_client.interfaces.http_error_protocol import HttpErrorProtocol
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 
 
@@ -32,7 +33,7 @@ class BaseHttpClient(ABC):
         *,
         session: SessionProtocol,
         config: HttpClientConfig,
-        request_exception_cls: type[Exception],
+        request_error_contract: type[HttpErrorProtocol],
     ) -> None:
         """
         Inicjalizacja klienta HTTP.
@@ -40,12 +41,12 @@ class BaseHttpClient(ABC):
         Args:
             session: Obiekt sesji (requests.Session lub requests_shim.Session)
             config: Konfiguracja klienta HTTP
-            request_exception_cls: Klasa wyjątku dla błędów requestów
+            request_error_contract: Kontrakt wyjątku dla błędów requestów
         """
         self.session = session
         self.config = config
         self.timeout = int(config.timeout)
-        self.request_exception_cls = request_exception_cls
+        self.request_error_contract = request_error_contract
 
         self.retry_policy = DefaultHttpPolicyFactory.build_retry_policy(config)
         self.rate_limiter = DefaultHttpPolicyFactory.build_rate_limiter(config)
@@ -78,7 +79,7 @@ class BaseHttpClient(ABC):
             headers=merged_headers,
             timeout=effective_timeout,
             request_func=request_func,
-            request_exception_cls=self.request_exception_cls,
+            request_error_contract=self.request_error_contract,
         )
 
     @abstractmethod

@@ -12,10 +12,14 @@ from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
+from infrastructure.http_client.interfaces.http_error_protocol import HttpErrorProtocol
 from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
+from infrastructure.http_client.requests_shim.http_error import HTTPError
+from infrastructure.http_client.requests_shim.request_error import RequestError
 from infrastructure.http_client.requests_shim.response import Response
 from infrastructure.http_client.requests_shim.session import Session
+from infrastructure.http_client.requests_shim.timeout_error import HTTPTimeoutError
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
@@ -241,3 +245,42 @@ def test_runtime_checkable_response_protocol_accepts_requests_shim_response():
 def test_runtime_checkable_http_client_protocol_accepts_urllib_client():
     client = UrllibHttpClient()
     assert isinstance(client, HttpClientProtocol)
+
+
+@pytest.mark.parametrize(
+    "exception",
+    [
+        RequestError("network", url="https://example.com"),
+        HTTPTimeoutError("timeout", url="https://example.com"),
+        HTTPError("https://example.com", 503, "bad gateway", {"Retry-After": "1"}),
+    ],
+)
+def test_requests_shim_exceptions_implement_http_error_contract(exception) -> None:
+    assert isinstance(exception, HttpErrorProtocol)
+    assert exception.url == "https://example.com"
+    assert isinstance(exception.status, int)
+    assert isinstance(exception.reason, str)
+    assert isinstance(exception.headers, dict)
+
+
+def test_shim_exception_flows_through_retry_policy_and_is_raised_finally() -> None:
+    class _AlwaysFailingSession:
+        def __init__(self) -> None:
+            self.calls = 0
+
+        def get(self, url: str, *, headers=None, timeout=None):
+            _ = headers, timeout
+            self.calls += 1
+            raise RequestError("temporary offline", url=url)
+
+    session = _AlwaysFailingSession()
+    client = UrllibHttpClient(
+        session=session,
+        config=HttpClientConfig(retries=2, backoff_seconds=0.0),
+    )
+
+    with pytest.raises(RequestError, match="temporary offline") as exc_info:
+        client.get("https://example.com/fail")
+
+    assert session.calls == 3
+    assert exc_info.value.url == "https://example.com/fail"

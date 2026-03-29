@@ -4,6 +4,7 @@ import time
 from collections.abc import Callable
 from typing import Any
 
+from infrastructure.http_client.interfaces.http_error_protocol import HttpErrorProtocol
 from infrastructure.http_client.policies.rate_limiter import RateLimiter
 from infrastructure.http_client.policies.retry import RetryPolicy
 
@@ -29,7 +30,7 @@ class RequestExecutor:
         headers: dict[str, str],
         timeout: int,
         request_func: Callable[..., Any],
-        request_exception_cls: type[Exception],
+        request_error_contract: type[HttpErrorProtocol] | type[Exception],
     ) -> Any:
         attempts = self._retry_policy.max_retries + 1
 
@@ -42,7 +43,9 @@ class RequestExecutor:
                     headers=headers,
                     timeout=timeout,
                 )
-            except request_exception_cls as exc:
+            except Exception as exc:
+                if not isinstance(exc, request_error_contract):
+                    raise
                 if (
                     attempt >= self._retry_policy.max_retries
                     or not self._retry_policy.should_retry(
