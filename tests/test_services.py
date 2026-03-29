@@ -9,9 +9,9 @@ from models.services.helpers import split_delimited_text
 from models.services.rounds_service import parse_rounds
 from models.services.season_service import parse_seasons
 from scrapers.base.export.exporters import DataExporter
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.runner import RunConfig
+from scrapers.base.runner import ScraperRunner
 from scrapers.circuits.models.services.circuit_service import CircuitService
 
 CHAMPIONSHIP_SEASON_COUNT = 2
@@ -150,11 +150,10 @@ def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
         options=ScraperOptions(include_urls=True),
     )
 
-    run_and_export(
+    ScraperRunner(run_config).run_and_export(
         DummyScraper,
         "dummy.json",
         "dummy.csv",
-        run_config=run_config,
     )
 
     json_path = tmp_path / "dummy.json"
