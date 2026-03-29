@@ -4,7 +4,7 @@
 """
 
 from scrapers.base.table.columns.types.constructor_base import BaseConstructorColumn
-from scrapers.constructors.columns.constructor_part import ConstructorPartColumn
+from scrapers.drivers.columns.constructor_part import ConstructorPartColumn
 
 
 class ConstructorColumn(BaseConstructorColumn):
