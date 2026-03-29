@@ -4,6 +4,10 @@ from pathlib import Path
 from typing import Any
 
 from scripts.ci.git_diff import build_added_lines_map
+from scripts.ci.git_diff import collect_commit_messages
+from scripts.ci.git_diff import get_unified_diff
+from scripts.ci.git_diff import GitCommandResult
+from scripts.ci.git_diff import list_changed_files
 from scripts.ci.git_diff import parse_added_lines_from_unified_diff
 from scripts.ci.io_utils import append_output_vars
 from scripts.ci.io_utils import read_json_file
@@ -31,16 +35,60 @@ def test_parse_added_lines_from_unified_diff_parses_hunks() -> None:
 
 
 def test_build_added_lines_map_returns_empty_on_git_error(monkeypatch: Any) -> None:
-    class Completed:
-        returncode = 1
-        stdout = ""
+    def fake_diff(*_args: Any, **_kwargs: Any) -> GitCommandResult:
+        return GitCommandResult(returncode=1, stdout="")
 
-    def fake_run(*_args: Any, **_kwargs: Any) -> Completed:
-        return Completed()
-
-    monkeypatch.setattr("scripts.ci.git_diff.subprocess.run", fake_run)
+    monkeypatch.setattr("scripts.ci.git_diff.get_unified_diff", fake_diff)
 
     assert build_added_lines_map("base", "head", ["src/app.py"]) == {}
+
+
+def test_list_changed_files_returns_entries_and_handles_error(monkeypatch: Any) -> None:
+    calls: list[list[str]] = []
+
+    def fake_run(args: list[str]) -> GitCommandResult:
+        calls.append(args)
+        return GitCommandResult(
+            returncode=0,
+            stdout=" src/a.py \n\nsrc/b.py\n",
+        )
+
+    monkeypatch.setattr("scripts.ci.git_diff._run_git_and_capture_stdout", fake_run)
+
+    changed = list_changed_files("base", "head")
+
+    assert calls == [["diff", "--name-only", "--diff-filter=ACMR", "base", "head"]]
+    assert changed == ["src/a.py", "src/b.py"]
+
+    def fake_run_error(_args: list[str]) -> GitCommandResult:
+        return GitCommandResult(returncode=1, stdout="src/c.py")
+
+    monkeypatch.setattr("scripts.ci.git_diff._run_git_and_capture_stdout", fake_run_error)
+    assert list_changed_files("base", "head") == []
+    assert list_changed_files("", "head") == []
+
+
+def test_collect_commit_messages_and_unified_diff_fallbacks(monkeypatch: Any) -> None:
+    def fake_run(args: list[str]) -> GitCommandResult:
+        if args[0] == "log":
+            return GitCommandResult(returncode=0, stdout="feat: add\n\nfix: patch\n")
+        return GitCommandResult(returncode=0, stdout="@@ -1 +1 @@\n+line\n")
+
+    monkeypatch.setattr("scripts.ci.git_diff._run_git_and_capture_stdout", fake_run)
+
+    assert collect_commit_messages("base", "head") == "feat: add\n\nfix: patch\n"
+    assert get_unified_diff("base", "head", ["src/a.py"]) == GitCommandResult(
+        returncode=0,
+        stdout="@@ -1 +1 @@\n+line\n",
+    )
+    assert get_unified_diff("base", "head", []) == GitCommandResult(returncode=0, stdout="")
+    assert get_unified_diff("", "head", ["src/a.py"]) == GitCommandResult(returncode=1, stdout="")
+
+    def fake_run_error(_args: list[str]) -> GitCommandResult:
+        return GitCommandResult(returncode=1, stdout="unexpected")
+
+    monkeypatch.setattr("scripts.ci.git_diff._run_git_and_capture_stdout", fake_run_error)
+    assert collect_commit_messages("base", "head") == ""
 
 
 def test_io_utils_read_write_and_append(tmp_path: Path) -> None:
