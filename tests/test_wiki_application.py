@@ -2,12 +2,12 @@
 from pathlib import Path
 
 from scrapers.base.run_config import RunConfig
-from scrapers.wiki.application import ConstructorsMirrorService
-from scrapers.wiki.application import LayerOneExecutor
-from scrapers.wiki.application import LayerZeroExecutor
-from scrapers.wiki.application import LayerZeroMergeService
-from scrapers.wiki.seed_registry import ListJobRegistryEntry
-from scrapers.wiki.seed_registry import SeedRegistryEntry
+from layers.constructors_mirror_service import ConstructorsMirrorService
+from layers.one.executor import LayerOneExecutor
+from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry.entries import SeedRegistryEntry
+from layers.zero.executor import LayerZeroExecutor
+from layers.zero.merge_service import LayerZeroMergeService
 
 
 class _FakeScraper:
@@ -137,6 +137,7 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         list_scraper_cls=CurrentConstructorsListScraper,
         json_output_path="raw/constructors/list/f1_constructors_{year}.json",
         legacy_json_output_path="constructors/f1_constructors_{year}.json",
+        requires_mirroring=True,
     )
 
     mirror_calls: list[tuple[Path, Path]] = []
@@ -168,7 +169,6 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         ),
         constructors_mirror_service=constructors_mirror_service,
         merge_service=merge_service,
-        current_constructors_scraper_name="CurrentConstructorsListScraper",
         year_provider=lambda: 2026,
     )
 

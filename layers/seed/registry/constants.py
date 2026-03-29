@@ -96,6 +96,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
         list_scraper_cls=CurrentConstructorsListScraper,
         json_output_path="raw/constructors/list/f1_constructors_{year}.json",
         legacy_json_output_path="constructors/f1_constructors_{year}.json",
+        requires_mirroring=True,
     ),
     ListJobRegistryEntry(
         seed_name="constructors_former",
