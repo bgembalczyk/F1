@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import warnings
+from pathlib import Path
 
 import pytest
 
@@ -91,3 +92,18 @@ def test_deprecation_message_has_domain_migration_hint(monkeypatch) -> None:
     monkeypatch.setattr(cli, "_invoke_target", fake_invoke_target)
     with pytest.warns(DeprecationWarning, match="scrapers\\.cli domain drivers"):
         cli.run_legacy_wrapper("scrapers.drivers.list_scraper", [])
+
+
+def test_runtime_warning_and_docs_schedule_share_same_removal_target() -> None:
+    runtime_message = cli._deprecated_runtime_message(
+        "scrapers.drivers.list_scraper",
+        replacement_module_path="scrapers.drivers.entrypoint",
+    )
+    docs_schedule = cli.render_deprecation_schedule_markdown()
+    docs_path = Path(__file__).resolve().parents[1] / "docs" / "MODULE_BOUNDARIES.md"
+    docs_content = docs_path.read_text(encoding="utf-8")
+
+    removal_target = cli.DEPRECATION_POLICY.removal_target
+    assert f"removal target: {removal_target}" in runtime_message
+    assert f"removal target: {removal_target}" in docs_schedule
+    assert docs_schedule in docs_content

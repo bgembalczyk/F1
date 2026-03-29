@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from typing import Any
 
 from bs4 import Tag
@@ -7,13 +8,17 @@ from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.text_cleaning import clean_table_cell_text
+from scrapers.wiki.parsers.types import TableParsedData
 
 
-class TableParser(WikiParser):
+class TableParser(WikiParser[TableParsedData]):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">
     """
+
+    def __init__(self, table_parser: HtmlTableParser | None = None) -> None:
+        self._table_parser = table_parser or HtmlTableParser()
 
     def parse(self, element: Tag) -> dict[str, Any]:
         """Parsuje tabelę wikitable HTML.
@@ -24,7 +29,7 @@ class TableParser(WikiParser):
         Returns:
             Słownik z nagłówkami i wierszami tabeli.
         """
-        parser = HtmlTableParser()
+        parser = self._table_parser
         full_headers, header_rows = self._extract_full_headers(parser, element)
         if not full_headers:
             return {"headers": [], "rows": [], "raw_rows": []}
@@ -43,15 +48,7 @@ class TableParser(WikiParser):
             if not cells or all(not c.get_text(strip=True) for c in cells):
                 continue
 
-            cleaned_cells = [
-                clean_table_cell_text(
-                    c.get_text(" ", strip=True),
-                    strip_lang_suffix=parser.strip_lang_suffix,
-                    strip_refs=parser.strip_refs,
-                    normalize_dashes=parser.normalize_dashes,
-                )
-                for c in cells
-            ]
+            cleaned_cells = self._clean_cells(cells, parser)
             if parser.is_footer_row(cells, cleaned_cells, full_headers):
                 continue
             if is_repeated_header_row(cleaned_cells, headers):
@@ -62,15 +59,7 @@ class TableParser(WikiParser):
                 full_headers,
                 pending_rowspans,
             )
-            cleaned_expanded = [
-                clean_table_cell_text(
-                    c.get_text(" ", strip=True),
-                    strip_lang_suffix=parser.strip_lang_suffix,
-                    strip_refs=parser.strip_refs,
-                    normalize_dashes=parser.normalize_dashes,
-                )
-                for c in expanded_cells
-            ]
+            cleaned_expanded = self._clean_cells(expanded_cells, parser)
 
             normalized_row = [
                 cleaned_expanded[idx] if idx < len(cleaned_expanded) else ""
@@ -111,3 +100,27 @@ class TableParser(WikiParser):
             second_headers,
         )
         return combined, HEADER_ROWS_WITH_SUBHEADERS
+
+    @staticmethod
+    def _cleaner_config(parser: HtmlTableParser) -> dict[str, bool]:
+        return {
+            "strip_lang_suffix": parser.strip_lang_suffix,
+            "strip_refs": parser.strip_refs,
+            "normalize_dashes": parser.normalize_dashes,
+        }
+
+    @staticmethod
+    def _clean_cells(
+        cells: Sequence[Tag],
+        parser: HtmlTableParser,
+    ) -> list[str]:
+        config = TableParser._cleaner_config(parser)
+        return [
+            clean_table_cell_text(
+                cell.get_text(" ", strip=True),
+                strip_lang_suffix=config["strip_lang_suffix"],
+                strip_refs=config["strip_refs"],
+                normalize_dashes=config["normalize_dashes"],
+            )
+            for cell in cells
+        ]

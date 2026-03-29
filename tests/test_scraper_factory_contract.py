@@ -70,3 +70,42 @@ def test_factory_creates_legacy_scraper_without_include_urls_when_disabled() -> 
     )
 
     assert scraper.run_id == "legacy-run-id"
+
+
+class _AlwaysAdapter:
+    def __init__(self, marker: object) -> None:
+        self._marker = marker
+
+    def supports(self, _ctor) -> bool:
+        return True
+
+    def create(self, *, context, ctor):
+        return context.scraper_cls(options=ScraperOptions(), marker=self._marker)
+
+
+class _CustomAdapterChainProvider:
+    def __init__(self, marker: object) -> None:
+        self._marker = marker
+
+    def build(self, *, mapper):
+        _ = mapper
+        return (_AlwaysAdapter(self._marker),)
+
+
+class CustomChainScraper:
+    def __init__(self, *, options: ScraperOptions, marker: object) -> None:
+        self.options = options
+        self.marker = marker
+
+
+def test_factory_uses_adapter_chain_provider() -> None:
+    marker = object()
+    factory = ScraperFactory(adapter_chain_provider=_CustomAdapterChainProvider(marker))
+
+    scraper = factory.create(
+        scraper_cls=CustomChainScraper,
+        run_config=RunConfig(),
+        run_id="chain",
+    )
+
+    assert scraper.marker is marker
