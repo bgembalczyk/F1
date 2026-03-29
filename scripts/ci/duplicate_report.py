@@ -3,10 +3,15 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
-import subprocess
+import sys
 from pathlib import Path
 from typing import Any
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from scripts.ci.git_diff import build_added_lines_map
 
 
 class DuplicateNormalizer:
@@ -30,68 +35,13 @@ class DuplicateNormalizer:
 
 
 class DiffAddedLinesProvider:
-    def __init__(self) -> None:
-        self._hunk_re = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@")
-
-    def _as_int(self, value: Any) -> int:
-        try:
-            return int(value)
-        except (TypeError, ValueError):
-            return 0
-
     def build_added_lines_map(
         self,
         base_sha: str,
         head_sha: str,
         changed_files: list[str],
     ) -> dict[str, set[int]]:
-        if not base_sha or not head_sha or not changed_files:
-            return {}
-
-        diff_cmd = [
-            "git",
-            "diff",
-            "--unified=0",
-            "--no-color",
-            base_sha,
-            head_sha,
-            "--",
-            *changed_files,
-        ]
-        proc = subprocess.run(
-            diff_cmd,
-            check=False,
-            capture_output=True,
-            text=True,
-        )
-        if proc.returncode != 0:
-            return {}
-
-        added: dict[str, set[int]] = {}
-        current_file: str | None = None
-
-        for raw_line in proc.stdout.splitlines():
-            if raw_line.startswith("+++ b/"):
-                current_file = raw_line[6:]
-                added.setdefault(current_file, set())
-                continue
-
-            if not raw_line.startswith("@@") or not current_file:
-                continue
-
-            match = self._hunk_re.match(raw_line)
-            if not match:
-                continue
-
-            start = self._as_int(match.group(1))
-            count = self._as_int(match.group(2) or 1)
-            if count <= 0:
-                continue
-
-            for line_no in range(start, start + count):
-                added[current_file].add(line_no)
-
-        return added
+        return build_added_lines_map(base_sha, head_sha, changed_files)
 
 
 class DuplicateFilter:
@@ -147,6 +97,14 @@ class DuplicateFilter:
         ]
 
 
+def resolve_status(count: int, warn_threshold: int, fail_threshold: int) -> str:
+    if count >= fail_threshold:
+        return "fail"
+    if count >= warn_threshold:
+        return "warn"
+    return "ok"
+
+
 class MarkdownRenderer:
     def _line_range(self, meta: dict[str, Any]) -> str:
         start = meta.get("start", 0)
@@ -162,13 +120,14 @@ class MarkdownRenderer:
         fail_threshold: int,
     ) -> str:
         count = len(duplicates)
+        status_type = resolve_status(count, warn_threshold, fail_threshold)
         status = "✅ Brak nowych duplikatów w zmienionych plikach."
-        if count >= fail_threshold:
+        if status_type == "fail":
             status = (
                 f"❌ Wykryto **{count}** nowych duplikatów "
                 f"(próg blokujący: {fail_threshold})."
             )
-        elif count >= warn_threshold:
+        elif status_type == "warn":
             status = (
                 f"⚠️ Wykryto **{count}** nowych duplikatów "
                 f"(próg ostrzegawczy: {warn_threshold})."
@@ -221,8 +180,8 @@ class GithubOutputWriter:
             fh.write(f"duplicate_status={duplicate_status}\n")
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
+def build_ci_parser(description: str) -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=description)
     parser.add_argument("--report-json", required=True)
     parser.add_argument("--output-md", required=True)
     parser.add_argument("--warn-threshold", type=int, required=True)
@@ -231,6 +190,19 @@ def main() -> int:
     parser.add_argument("--head-sha", default="")
     parser.add_argument("--changed-files", default="")
     parser.add_argument("--github-output", required=True)
+    return parser
+
+
+def read_json_file(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def split_csv(value: str) -> list[str]:
+    return [part for part in value.split(",") if part]
+
+
+def main() -> int:
+    parser = build_ci_parser("Generate duplicate report for changed files in PR.")
     args = parser.parse_args()
 
     normalizer = DuplicateNormalizer()
@@ -242,11 +214,11 @@ def main() -> int:
     if not report_path.exists():
         duplicates: list[dict[str, Any]] = []
     else:
-        payload = json.loads(report_path.read_text(encoding="utf-8"))
+        payload = read_json_file(report_path)
         raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
         duplicates = [normalizer.normalize(item) for item in raw_duplicates]
 
-    changed_files = [part for part in args.changed_files.split(",") if part]
+    changed_files = split_csv(args.changed_files)
     new_duplicates = duplicate_filter.filter_new_duplicates(
         duplicates,
         args.base_sha,
@@ -265,11 +237,7 @@ def main() -> int:
     output_md_path.parent.mkdir(parents=True, exist_ok=True)
     output_md_path.write_text(markdown, encoding="utf-8")
 
-    status = "ok"
-    if count >= args.fail_threshold:
-        status = "fail"
-    elif count >= args.warn_threshold:
-        status = "warn"
+    status = resolve_status(count, args.warn_threshold, args.fail_threshold)
 
     github_output_writer.write(Path(args.github_output), count, status)
     return 0
