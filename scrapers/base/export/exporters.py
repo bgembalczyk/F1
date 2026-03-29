@@ -3,7 +3,10 @@ from pathlib import Path
 
 from scrapers.base.format.csv_formatter import CsvFormatter
 from scrapers.base.format.json_formatter import JsonFormatter
-from scrapers.base.results import ScrapeResult
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from scrapers.base.results import ScrapeResult
 
 
 class DataExporter:
@@ -18,7 +21,7 @@ class DataExporter:
 
     def to_json(
         self,
-        result: ScrapeResult,
+        result: "ScrapeResult",
         path: str | Path,
         *,
         indent: int = 2,
@@ -33,7 +36,7 @@ class DataExporter:
 
     def to_csv(
         self,
-        result: ScrapeResult,
+        result: "ScrapeResult",
         path: str | Path,
         *,
         fieldnames: Sequence[str] | None = None,
