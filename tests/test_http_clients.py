@@ -15,8 +15,11 @@ from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
 from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
+from infrastructure.http_client.requests_shim.http_error import HTTPError
+from infrastructure.http_client.requests_shim.http_shim_error import HttpShimError
 from infrastructure.http_client.requests_shim.response import Response
 from infrastructure.http_client.requests_shim.session import Session
+from infrastructure.http_client.requests_shim.timeout_error import HTTPTimeoutError
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
@@ -315,3 +318,39 @@ def test_session_uses_custom_ssl_context_provider(monkeypatch):
     assert response.status_code == 200
     assert provider_called == 1
     assert captured_context is custom_context
+    
+def test_http_error_inherits_http_shim_error_and_exposes_response_adapter():
+    response = Response(
+        url="https://example.com/not-found",
+        status_code=404,
+        headers={"X-Req": 123},
+        text="Not Found",
+    )
+
+    with pytest.raises(HTTPError) as exc_info:
+        response.raise_for_status()
+
+    error = exc_info.value
+    assert isinstance(error, HttpShimError)
+    assert error.body == "Not Found"
+    assert error.headers == {"X-Req": "123"}
+    assert error.response.url == error.url
+    assert error.response.status_code == 404
+    assert error.response.headers == {"X-Req": "123"}
+    assert error.response.text == "Not Found"
+
+
+def test_http_timeout_error_inherits_http_shim_error_with_domain_fields():
+    error = HTTPTimeoutError(
+        url="https://example.com/slow",
+        message="Request timed out",
+        headers={"Retry-After": 1},
+        body="timeout",
+    )
+
+    assert isinstance(error, HttpShimError)
+    assert error.url == "https://example.com/slow"
+    assert error.status_code == 0
+    assert error.headers == {"Retry-After": "1"}
+    assert error.body == "timeout"
+    assert error.response.status_code == 0

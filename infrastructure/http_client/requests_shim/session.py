@@ -1,5 +1,6 @@
 from collections.abc import Mapping
 import ssl
+import socket
 import urllib.error
 import urllib.request
 from urllib.parse import urlsplit
@@ -62,6 +63,12 @@ class Session:
             response.raise_for_status()
             return response
         except urllib.error.URLError as exc:
-            if isinstance(exc.reason, HTTPTimeoutError):
-                raise HTTPTimeoutError(str(exc)) from exc
+            if isinstance(exc.reason, TimeoutError | socket.timeout):
+                detail = str(exc.reason or exc)
+                raise HTTPTimeoutError(
+                    url=url,
+                    message=f"Request timed out: {detail}",
+                    headers={},
+                    body=detail,
+                ) from exc
             raise RequestError(str(exc)) from exc

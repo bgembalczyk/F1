@@ -13,6 +13,7 @@ permissions:
 env:
   NEW_DUPLICATES_WARN_THRESHOLD: "1"
   NEW_DUPLICATES_FAIL_THRESHOLD: "3"
+  MYPY_ERROR_BUDGET: "0"
 
 jobs:
   static-analysis:
@@ -57,6 +58,15 @@ jobs:
         run: |
           pylint scrapers layers models validation infrastructure --rcfile=.pylintrc
 
+      - name: Enforce ADR reference for architecture changes
+        shell: bash
+        run: |
+          python scripts/ci/enforce_architecture_adr_reference.py \
+            --base-sha "${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}" \
+            --head-sha "${{ github.sha }}" \
+            --pr-title "${{ github.event_name == 'pull_request' && github.event.pull_request.title || '' }}" \
+            --pr-body "${{ github.event_name == 'pull_request' && github.event.pull_request.body || '' }}"
+
       - name: Detect changed Python files
         id: changed-py
         shell: bash
@@ -98,6 +108,10 @@ jobs:
         id: dup-report
         shell: bash
         run: |
+          mkdir -p .jscpd-report
+          echo "## Raport duplikatów (jscpd)" > .jscpd-report/pr-comment.md
+          echo "" >> .jscpd-report/pr-comment.md
+          echo "ℹ️ Raport nie został jeszcze wygenerowany." >> .jscpd-report/pr-comment.md
           python scripts/ci/duplicate_report.py \
             --report-json .jscpd-report/jscpd-report.json \
             --output-md .jscpd-report/pr-comment.md \
@@ -140,6 +154,10 @@ jobs:
         run: |
           lint-imports --config importlinter.ini
 
+      - name: Unused imports regression gate (layer wiring)
+        run: |
+          ruff check layers/zero/executor.py layers/application.py --select F401
+          
       - name: Any policy for new modules (rollout scope)
         shell: bash
         run: |
@@ -152,8 +170,30 @@ jobs:
         run: |
           python scripts/ci/mypy_regression_gate.py \
             --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
-            --head-sha "${{ github.sha }}"
+            --head-sha "${{ github.sha }}" \
+            --error-budget "${MYPY_ERROR_BUDGET}"
 
+
+      - name: DI anti-pattern AST check (layers + scrapers/base)
+        shell: bash
+        run: |
+          ADR_REFERENCE_TEXT=""
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            ADR_REFERENCE_TEXT="${{ github.event.pull_request.title }} ${{ github.event.pull_request.body }}"
+          else
+            ADR_REFERENCE_TEXT="${{ github.event.head_commit.message }}"
+          fi
+
+          mapfile -t DI_SCOPE_FILES < <(printf '%s
+' "${{ steps.changed-py.outputs.changed_files }}" | tr ',' '
+' | sed '/^$/d' | grep -E '^(layers/|scrapers/base/).+\.py$' || true)
+
+          if [[ ${#DI_SCOPE_FILES[@]} -eq 0 ]]; then
+            echo "Brak zmian Python w layers/* i scrapers/base/* - pomijam check DI."
+            exit 0
+          fi
+
+          python scripts/check_di_antipatterns.py "${DI_SCOPE_FILES[@]}"             --adr-reference-text "$ADR_REFERENCE_TEXT"             --adr-required-violation-threshold 3
       - name: Domain contracts gate (pytest)
         run: |
-          pytest -q tests/test_domain_role_contracts.py tests/test_domain_role_contracts_ci_meta.py
+          pytest -q tests/test_domain_role_contracts.py tests/test_domain_role_contracts_ci_meta.py tests/test_di_antipatterns_ci_meta.py

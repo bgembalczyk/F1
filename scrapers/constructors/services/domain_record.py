@@ -33,7 +33,7 @@ class DomainRecordService:
         sections: list[dict[str, Any]],
     ) -> dict[str, Any]:
         return self._assembler.assemble(
-            payload=ConstructorRecordDTO(
+            ConstructorRecordDTO(
                 url=url,
                 infoboxes=infoboxes,
                 tables=tables,
