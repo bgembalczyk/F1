@@ -170,6 +170,41 @@ def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
     assert "marker" in csv_path.read_text(encoding="utf-8")
 
 
+def test_run_and_export_uses_reportable_scraper_contract(tmp_path: Path) -> None:
+    class DummyReportableScraper:
+        reports: list[tuple[str, list[dict[str, object]]]] = []
+
+        def __init__(self, *, options: ScraperOptions) -> None:
+            self.options = options
+            self.exporter = DataExporter()
+
+        def fetch(self):
+            return [{"name": "test"}]
+
+        def write_step_quality_report(
+            self,
+            *,
+            step_name: str,
+            records: list[dict[str, object]],
+        ) -> None:
+            DummyReportableScraper.reports.append((step_name, records))
+
+    run_config = RunConfig(output_dir=tmp_path)
+    DummyReportableScraper.reports = []
+
+    run_and_export(
+        DummyReportableScraper,
+        "dummy.json",
+        "dummy.csv",
+        run_config=run_config,
+    )
+
+    assert DummyReportableScraper.reports == [
+        ("export_json", [{"name": "test"}]),
+        ("export_csv", [{"name": "test"}]),
+    ]
+
+
 def test_split_delimited_text_handles_multiple_separators() -> None:
     assert split_delimited_text("A, B;C / D") == ["A", "B", "C", "D"]
     assert split_delimited_text("") == []
