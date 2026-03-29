@@ -3,6 +3,7 @@ from uuid import uuid4
 
 from models.mappers.serialization import to_dict_list
 from scrapers.base.abc import ABCScraper
+from scrapers.base.contracts import ReportableScraper
 from scrapers.base.factory.factory import ScraperFactory
 from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
@@ -42,9 +43,8 @@ class ScraperRunner:
         json_path = output_dir / Path(json_rel)
         ensure_parent(json_path)
         result.to_json(json_path, exporter=scraper.exporter)
-        step_report = getattr(scraper, "_write_step_quality_report", None)
-        if callable(step_report):
-            step_report(
+        if isinstance(scraper, ReportableScraper):
+            scraper.write_step_quality_report(
                 step_name="export_json",
                 records=to_dict_list(list(data)),
             )
@@ -53,9 +53,8 @@ class ScraperRunner:
             csv_path = output_dir / Path(csv_rel)
             ensure_parent(csv_path)
             result.to_csv(csv_path, exporter=scraper.exporter)
-            step_report = getattr(scraper, "_write_step_quality_report", None)
-            if callable(step_report):
-                step_report(
+            if isinstance(scraper, ReportableScraper):
+                scraper.write_step_quality_report(
                     step_name="export_csv",
                     records=to_dict_list(list(data)),
                 )

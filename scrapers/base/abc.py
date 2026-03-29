@@ -320,13 +320,27 @@ class ABCScraper(ABC):
             "url": getattr(self, "url", ""),
         }
 
-    def _write_step_quality_report(
+    def write_step_quality_report(
         self,
         *,
         step_name: str,
         records: list[dict[str, object]],
     ) -> None:
         self._quality_report_service.write_step(step_name=step_name, records=records)
+
+    def _write_step_quality_report(
+        self,
+        *,
+        step_name: str,
+        records: list[dict[str, object]],
+    ) -> None:
+        warnings.warn(
+            "ABCScraper._write_step_quality_report() is deprecated; use "
+            "write_step_quality_report() instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self.write_step_quality_report(step_name=step_name, records=records)
 
     def _write_quality_report(self) -> None:
         self._quality_report_service.write_validation_report()
