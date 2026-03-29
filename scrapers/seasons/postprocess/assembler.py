@@ -84,7 +84,7 @@ class SeasonRecordAssembler(BaseRecordAssembler):
             if isinstance(payload, SeasonPayloadDTO)
             else SeasonPayloadDTO(sections=payload)
         )
-        record = super().assemble(payload=dto.base)
+        record = super().assemble(dto.base)
         record.update(self._map_sections(dto.sections))
         return record
 

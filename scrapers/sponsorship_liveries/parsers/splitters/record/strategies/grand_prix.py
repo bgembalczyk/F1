@@ -6,27 +6,31 @@ from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScop
 from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import (
     ColourScopeHandler,
 )
+from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
 
 
 class GrandPrixSplitStrategy:
-    def apply(self, record: dict[str, Any]) -> list[dict[str, Any]]:
-        base_sponsors, scoped_items = self._separate_sponsors(record)
-        base_colours, scoped_colours = self._separate_colours(record)
+    def apply(self, record: PipelineRecord) -> list[PipelineRecord]:
+        raw_record = record.payload
+        base_sponsors, scoped_items = self._separate_sponsors(raw_record)
+        base_colours, scoped_colours = self._separate_colours(raw_record)
 
         if not scoped_items and not scoped_colours:
             return [record]
 
         scope_map = self._build_scope_map(scoped_items, scoped_colours)
         split_records = self._build_split_records(
-            record,
+            raw_record,
             scope_map,
             base_sponsors,
             base_colours,
         )
         split_records.append(
-            self._build_other_record(record, base_sponsors, base_colours),
+            self._build_other_record(raw_record, base_sponsors, base_colours),
         )
-        return split_records
+        return [PipelineRecord.from_input(item) for item in split_records]
 
     @staticmethod
     def _separate_sponsors(

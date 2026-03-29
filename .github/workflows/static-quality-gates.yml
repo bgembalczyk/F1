@@ -13,6 +13,7 @@ permissions:
 env:
   NEW_DUPLICATES_WARN_THRESHOLD: "1"
   NEW_DUPLICATES_FAIL_THRESHOLD: "3"
+  MYPY_ERROR_BUDGET: "0"
 
 jobs:
   static-analysis:
@@ -57,6 +58,24 @@ jobs:
         run: |
           pylint scrapers layers models validation infrastructure --rcfile=.pylintrc
 
+      - name: Validate PR template required fields and checklist
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          python scripts/ci/validate_pr_template.py \
+            --base-sha "${{ github.event.pull_request.base.sha }}" \
+            --head-sha "${{ github.sha }}" \
+            --pr-body "${{ github.event.pull_request.body || '' }}"
+
+      - name: Enforce ADR reference for architecture changes
+        shell: bash
+        run: |
+          python scripts/ci/enforce_architecture_adr_reference.py \
+            --base-sha "${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}" \
+            --head-sha "${{ github.sha }}" \
+            --pr-title "${{ github.event_name == 'pull_request' && github.event.pull_request.title || '' }}" \
+            --pr-body "${{ github.event_name == 'pull_request' && github.event.pull_request.body || '' }}"
+
       - name: Detect changed Python files
         id: changed-py
         shell: bash
@@ -98,6 +117,10 @@ jobs:
         id: dup-report
         shell: bash
         run: |
+          mkdir -p .jscpd-report
+          echo "## Raport duplikatów (jscpd)" > .jscpd-report/pr-comment.md
+          echo "" >> .jscpd-report/pr-comment.md
+          echo "ℹ️ Raport nie został jeszcze wygenerowany." >> .jscpd-report/pr-comment.md
           python scripts/ci/duplicate_report.py \
             --report-json .jscpd-report/jscpd-report.json \
             --output-md .jscpd-report/pr-comment.md \
@@ -128,6 +151,10 @@ jobs:
         run: |
           python scripts/ci/architecture_registry_consistency.py
 
+      - name: Unused imports regression gate (layer wiring)
+        run: |
+          ruff check layers/zero/executor.py layers/application.py --select F401
+          
       - name: Any policy for new modules (rollout scope)
         shell: bash
         run: |
@@ -140,7 +167,8 @@ jobs:
         run: |
           python scripts/ci/mypy_scope_regression.py \
             --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
-            --head-sha "${{ github.sha }}"
+            --head-sha "${{ github.sha }}" \
+            --error-budget "${MYPY_ERROR_BUDGET}"
 
       - name: ADR reference check
         id: adr-check
@@ -158,7 +186,7 @@ jobs:
             --reference-text "$ADR_REFERENCE_TEXT" \
             --github-output "$GITHUB_OUTPUT"
 
-      - name: DI anti-pattern AST check (layers + scrapers/base)
+      - name: DI anti-pattern AST check (layers + selected scrapers)
         shell: bash
         run: |
           ADR_REFERENCE_TEXT=""
@@ -170,10 +198,10 @@ jobs:
 
           mapfile -t DI_SCOPE_FILES < <(printf '%s
 ' "${{ steps.changed-py.outputs.changed_files }}" | tr ',' '
-' | sed '/^$/d' | grep -E '^(layers/|scrapers/base/).+\.py$' || true)
+' | sed '/^$/d' | grep -E '^(layers/|scrapers/base/|scrapers/drivers/infobox/).+\.py$' || true)
 
           if [[ ${#DI_SCOPE_FILES[@]} -eq 0 ]]; then
-            echo "Brak zmian Python w layers/* i scrapers/base/* - pomijam check DI."
+            echo "Brak zmian Python w layers/*, scrapers/base/* i scrapers/drivers/infobox/* - pomijam check DI."
             exit 0
           fi
 

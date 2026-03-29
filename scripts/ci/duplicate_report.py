@@ -1,8 +1,9 @@
 # ruff: noqa: S603
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Mapping
 
 from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.io_utils import append_output_vars
@@ -18,62 +19,87 @@ from scripts.ci.reporting import resolve_status
 from scripts.ci.reporting import split_csv
 
 
+@dataclass(frozen=True)
+class DuplicateFileMeta:
+    name: str
+    start: int
+    end: int
+
+
+@dataclass(frozen=True)
+class DuplicateRecord:
+    first: DuplicateFileMeta
+    second: DuplicateFileMeta
+    fragment: str
+
+
 class DuplicateNormalizer:
-    def normalize(self, item: dict[str, Any]) -> dict[str, Any]:
-        first = item.get("firstFile", {})
-        second = item.get("secondFile", {})
+    @staticmethod
+    def _as_mapping(value: object) -> Mapping[str, object]:
+        if isinstance(value, Mapping):
+            return value
+        return {}
+
+    @staticmethod
+    def _as_int(value: object) -> int:
+        if isinstance(value, bool):
+            return int(value)
+        if isinstance(value, int):
+            return value
+        if isinstance(value, float):
+            return int(value)
+        if isinstance(value, str):
+            try:
+                return int(value)
+            except ValueError:
+                return 0
+        return 0
+
+    def _normalize_file_meta(self, payload: Mapping[str, object]) -> DuplicateFileMeta:
+        name_obj = payload.get("name") or payload.get("path") or "<unknown>"
+        return DuplicateFileMeta(
+            name=str(name_obj),
+            start=self._as_int(payload.get("start") or payload.get("startLoc")),
+            end=self._as_int(payload.get("end") or payload.get("endLoc")),
+        )
+
+    def normalize(self, item: Mapping[str, object]) -> DuplicateRecord:
+        first = self._normalize_file_meta(self._as_mapping(item.get("firstFile")))
+        second = self._normalize_file_meta(self._as_mapping(item.get("secondFile")))
         fragment = item.get("fragment") or item.get("codefragment") or ""
-        return {
-            "first": {
-                "name": first.get("name") or first.get("path") or "<unknown>",
-                "start": first.get("start") or first.get("startLoc") or 0,
-                "end": first.get("end") or first.get("endLoc") or 0,
-            },
-            "second": {
-                "name": second.get("name") or second.get("path") or "<unknown>",
-                "start": second.get("start") or second.get("startLoc") or 0,
-                "end": second.get("end") or second.get("endLoc") or 0,
-            },
-            "fragment": str(fragment).strip(),
-        }
+        return DuplicateRecord(
+            first=first,
+            second=second,
+            fragment=str(fragment).strip(),
+        )
 
 
 class DuplicateFilter:
-    def _as_int(self, value: Any) -> int:
-        try:
-            return int(value)
-        except (TypeError, ValueError):
-            return 0
-
     def _is_new_duplicate(
         self,
-        duplicate: dict[str, Any],
+        duplicate: DuplicateRecord,
         added_lines: dict[str, set[int]],
     ) -> bool:
-        for side in ("first", "second"):
-            file_meta = duplicate[side]
-            file_name = str(file_meta.get("name", ""))
-            start = self._as_int(file_meta.get("start"))
-            end = self._as_int(file_meta.get("end"))
-            if not file_name or start <= 0 or end <= 0:
+        for file_meta in (duplicate.first, duplicate.second):
+            if not file_meta.name or file_meta.start <= 0 or file_meta.end <= 0:
                 continue
 
-            changed_line_set = added_lines.get(file_name, set())
+            changed_line_set = added_lines.get(file_meta.name, set())
             if not changed_line_set:
                 continue
 
-            for line_no in range(start, end + 1):
+            for line_no in range(file_meta.start, file_meta.end + 1):
                 if line_no in changed_line_set:
                     return True
         return False
 
     def filter_new_duplicates(
         self,
-        duplicates: list[dict[str, Any]],
+        duplicates: list[DuplicateRecord],
         base_sha: str,
         head_sha: str,
         changed_files: list[str],
-    ) -> list[dict[str, Any]]:
+    ) -> list[DuplicateRecord]:
         added_lines_map = build_added_lines_map(base_sha, head_sha, changed_files)
         if changed_files and not added_lines_map:
             return duplicates
@@ -85,9 +111,15 @@ class DuplicateFilter:
 
 
 class MarkdownRenderer:
+    @staticmethod
+    def _line_range(meta: DuplicateFileMeta) -> str:
+        if meta.start and meta.end:
+            return f"L{meta.start}-L{meta.end}"
+        return "line ?"
+
     def render(
         self,
-        duplicates: list[dict[str, Any]],
+        duplicates: list[DuplicateRecord],
         warn_threshold: int,
         fail_threshold: int,
     ) -> str:
@@ -125,14 +157,12 @@ class MarkdownRenderer:
         lines.append("")
 
         for idx, dup in enumerate(duplicates, start=1):
-            first = dup["first"]
-            second = dup["second"]
             lines.append(
-                f"{idx}. `{first['name']}` ({line_range(first)}) "
-                f"↔ `{second['name']}` ({line_range(second)})",
+                f"{idx}. `{dup.first.name}` ({self._line_range(dup.first)}) "
+                f"↔ `{dup.second.name}` ({self._line_range(dup.second)})",
             )
-            if dup["fragment"]:
-                snippet = dup["fragment"][:400]
+            if dup.fragment:
+                snippet = dup.fragment[:400]
                 lines.append("   ```python")
                 lines.extend(f"   {line}" for line in snippet.splitlines())
                 lines.append("   ```")
@@ -150,7 +180,11 @@ def main() -> int:
 
     payload = read_json_file(Path(args.report_json))
     raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
-    duplicates = [normalizer.normalize(item) for item in raw_duplicates]
+    duplicates = [
+        normalizer.normalize(item)
+        for item in raw_duplicates
+        if isinstance(item, Mapping)
+    ]
 
     changed_files = split_csv(args.changed_files)
     new_duplicates = duplicate_filter.filter_new_duplicates(
