@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
@@ -7,11 +9,16 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 from scrapers.base.normalization import NormalizationRule
-from scrapers.base.normalization import RecordNormalizer
 from validation.validator_base import ExportRecord
 
 if TYPE_CHECKING:
     from scrapers.base.export.exporters import DataExporter
+
+
+@dataclass(frozen=True)
+class PreparedExport:
+    result: "ScrapeResult"
+    fieldnames: Sequence[str] | None = None
 
 
 @dataclass(frozen=True)
@@ -26,6 +33,8 @@ class ScrapeResult:
         normalize_keys: bool,
         normalization_rules: Sequence[NormalizationRule] | None,
     ) -> "ScrapeResult":
+        from scrapers.base.normalization import RecordNormalizer
+
         normalizer = RecordNormalizer(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
@@ -41,6 +50,40 @@ class ScrapeResult:
             timestamp=self.timestamp,
         )
 
+    def prepare_for_export(
+        self,
+        *,
+        normalize_keys: bool = False,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
+        fieldnames: Sequence[str] | None = None,
+        fieldnames_strategy: str = "union",
+    ) -> PreparedExport:
+        from scrapers.base.export.export_helpers import fieldnames_from_first_row
+        from scrapers.base.export.export_helpers import fieldnames_from_union
+        from scrapers.base.format.formatter_helpers import extract_data
+
+        normalized = self._with_normalized_data(
+            normalize_keys=normalize_keys,
+            normalization_rules=normalization_rules,
+        )
+
+        resolved_fieldnames = fieldnames
+        if resolved_fieldnames is None:
+            data = extract_data(normalized)
+            if data:
+                if fieldnames_strategy == "union":
+                    resolved_fieldnames = fieldnames_from_union(data)
+                elif fieldnames_strategy == "first_row":
+                    resolved_fieldnames = fieldnames_from_first_row(data)
+                else:
+                    msg = (
+                        "Nieznana strategia fieldnames: "
+                        f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'."
+                    )
+                    raise ValueError(msg)
+
+        return PreparedExport(result=normalized, fieldnames=resolved_fieldnames)
+
     def to_json(
         self,
         path: str | Path,
@@ -51,14 +94,17 @@ class ScrapeResult:
         normalization_rules: Sequence[NormalizationRule] | None = None,
         include_metadata: bool = False,
     ) -> None:
-        normalized = self._with_normalized_data(
+        from scrapers.base.export.strategies import JsonExportStrategy
+
+        prepared = self.prepare_for_export(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
         )
-        exporter = self._resolve_exporter(exporter)
-        exporter.to_json(
-            normalized,
-            path,
+        strategy = JsonExportStrategy()
+        strategy.export(
+            prepared.result,
+            exporter=self._resolve_exporter(exporter),
+            path=path,
             indent=indent,
             include_metadata=include_metadata,
         )
@@ -74,36 +120,21 @@ class ScrapeResult:
         normalization_rules: Sequence[NormalizationRule] | None = None,
         include_metadata: bool = False,
     ) -> None:
-        from scrapers.base.export.export_helpers import fieldnames_from_first_row
-        from scrapers.base.export.export_helpers import fieldnames_from_union
-        from scrapers.base.format.formatter_helpers import extract_data
+        from scrapers.base.export.strategies import CsvExportStrategy
 
-        normalized = self._with_normalized_data(
+        prepared = self.prepare_for_export(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
+            fieldnames=fieldnames,
+            fieldnames_strategy=fieldnames_strategy,
         )
 
-        if fieldnames is None:
-            data = extract_data(normalized)
-            if data:
-                if fieldnames_strategy == "union":
-                    fieldnames = fieldnames_from_union(data)
-                elif fieldnames_strategy == "first_row":
-                    fieldnames = fieldnames_from_first_row(data)
-                else:
-                    msg = (
-                        "Nieznana strategia fieldnames: "
-                        f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'."
-                    )
-                    raise ValueError(
-                        msg,
-                    )
-
-        exporter = self._resolve_exporter(exporter)
-        exporter.to_csv(
-            normalized,
-            path,
-            fieldnames=fieldnames,
+        strategy = CsvExportStrategy()
+        strategy.export(
+            prepared.result,
+            exporter=self._resolve_exporter(exporter),
+            path=path,
+            fieldnames=prepared.fieldnames,
             include_metadata=include_metadata,
         )
 
@@ -113,13 +144,14 @@ class ScrapeResult:
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
     ):
-        from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
+        from scrapers.base.export.strategies import DataFrameExportStrategy
 
-        normalized = self._with_normalized_data(
+        prepared = self.prepare_for_export(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
         )
-        return PandasDataFrameFormatter().format(normalized)
+        strategy = DataFrameExportStrategy()
+        return strategy.export(prepared.result)
 
     @staticmethod
     def _resolve_exporter(exporter: "DataExporter | None") -> "DataExporter":
