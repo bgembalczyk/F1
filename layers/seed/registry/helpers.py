@@ -7,6 +7,7 @@ from layers.seed.registry.constants import EXPLICIT_LAYER_ONE_SEED_REGISTRY
 from layers.seed.registry.constants import LIST_JOB_REGISTRY_VALIDATION_SPEC
 from layers.seed.registry.constants import SEED_REGISTRY_VALIDATION_SPEC
 from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
+from layers.seed.registry.entries import BaseRegistryEntry
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.wiki.discovery import discover_layer_one_seed_components
@@ -32,7 +33,7 @@ def _seed_entry_from_component(
 
 def _validate_registry_entry(
     *,
-    entry: Any,
+    entry: BaseRegistryEntry,
     spec: RegistryValidationSpec,
     seen_seed_names: set[str],
 ) -> None:
@@ -132,7 +133,7 @@ def _validate_wikipedia_url(
         raise ValueError(msg)
 
 
-def _validate_path_prefix(*, entry: Any, rule: RegistryValidationRule) -> None:
+def _validate_path_prefix(*, entry: BaseRegistryEntry, rule: RegistryValidationRule) -> None:
     output_path = rule.extractor(entry)
     prefix = rule.expected_prefix(entry)
     if not output_path.startswith(prefix):
@@ -142,7 +143,7 @@ def _validate_path_prefix(*, entry: Any, rule: RegistryValidationRule) -> None:
 
 def _validate_registry(
     *,
-    registry: tuple[Any, ...],
+    registry: tuple[BaseRegistryEntry, ...],
     spec: RegistryValidationSpec,
 ) -> None:
     seen_seed_names: set[str] = set()
