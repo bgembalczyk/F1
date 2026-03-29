@@ -9,6 +9,13 @@ class RecordPostProcessor(Protocol):
     def post_process(self, records: list[ExportRecord]) -> list[ExportRecord]: ...
 
 
+class CommonMetadataPostProcessor:
+    """Compatibility no-op post processor used by legacy tests."""
+
+    def post_process(self, records: list[ExportRecord]) -> list[ExportRecord]:
+        return records
+
+
 def apply_post_processors(
     post_processors: Sequence[RecordPostProcessor],
     records: list[ExportRecord],

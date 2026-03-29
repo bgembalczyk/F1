@@ -23,7 +23,7 @@ class Link(ValueObject):
         return not self.text and self.url is None
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any] | None) -> "Link":
+    def from_mapping(cls, data: Mapping[str, Any]) -> "Link":
         payload = data or {}
         return cls(text=payload.get("text") or "", url=payload.get("url"))
 

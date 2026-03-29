@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from models.records.base_factory import RecordFactoryProtocol
 from models.records.factories.registry import FACTORY_REGISTRY
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
+from models.records.factories.registry import FactoryRegistryProvider
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
@@ -130,6 +131,9 @@ DOMAIN_CONTRACT_MATRIX: dict[str, dict[str, Any]] = {
         ),
     },
 }
+
+
+FACTORY_REGISTRY = FactoryRegistryProvider().get()
 
 
 def _soup(html: str) -> BeautifulSoup:
