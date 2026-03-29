@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.engine_parsing import EngineParsingHelpers
-from scrapers.engines.columns.engine import EngineColumn
+from scrapers.base.table.columns.types.engine import EngineColumn
 
 BASE_URL = "https://en.wikipedia.org"
 
