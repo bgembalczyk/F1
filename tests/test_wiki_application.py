@@ -1,13 +1,12 @@
 # ruff: noqa: ARG002, ARG005, S108
 from pathlib import Path
 
+from layers.constructors_mirror_service import ConstructorsMirrorService
+from layers.one.executor import LayerOneExecutor
+from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry.entries import SeedRegistryEntry
+from layers.zero.executor import LayerZeroExecutor
 from scrapers.base.run_config import RunConfig
-from scrapers.wiki.application import ConstructorsMirrorService
-from scrapers.wiki.application import LayerOneExecutor
-from scrapers.wiki.application import LayerZeroExecutor
-from scrapers.wiki.application import LayerZeroMergeService
-from scrapers.wiki.seed_registry import ListJobRegistryEntry
-from scrapers.wiki.seed_registry import SeedRegistryEntry
 
 
 class _FakeScraper:
@@ -124,9 +123,7 @@ def test_constructors_mirror_service_mirrors_json_to_targets(tmp_path: Path) -> 
 
 def test_layer_zero_executor_runs_merge_after_jobs() -> None:
     merge_calls: list[Path] = []
-    merge_service = LayerZeroMergeService(
-        merge_function=lambda base_wiki_dir: merge_calls.append(base_wiki_dir),
-    )
+    merge_function = lambda base_wiki_dir: merge_calls.append(base_wiki_dir)
 
     run_calls: list[type] = []
 
@@ -167,7 +164,7 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
             scraper_cls,
         ),
         constructors_mirror_service=constructors_mirror_service,
-        merge_service=merge_service,
+        merge_function=merge_function,
         current_constructors_scraper_name="CurrentConstructorsListScraper",
         year_provider=lambda: 2026,
     )
