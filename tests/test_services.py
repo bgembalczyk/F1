@@ -169,6 +169,52 @@ def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
     assert "marker" in csv_path.read_text(encoding="utf-8")
 
 
+def test_run_and_export_uses_injected_result_export_service(tmp_path: Path) -> None:
+    class DummyScraper:
+        def __init__(self, *, options: ScraperOptions, marker: str) -> None:
+            _ = options
+            self.marker = marker
+            self.exporter = DataExporter()
+
+        def fetch(self):
+            return [{"name": "test", "marker": self.marker}]
+
+    class ExportServiceSpy:
+        def __init__(self) -> None:
+            self.json_calls: list[dict[str, object]] = []
+            self.csv_calls: list[dict[str, object]] = []
+
+        def to_json(self, result, path, **kwargs) -> None:
+            self.json_calls.append(
+                {"result": result, "path": path, "kwargs": kwargs},
+            )
+
+        def to_csv(self, result, path, **kwargs) -> None:
+            self.csv_calls.append(
+                {"result": result, "path": path, "kwargs": kwargs},
+            )
+
+    spy = ExportServiceSpy()
+    run_config = RunConfig(
+        output_dir=tmp_path,
+        scraper_kwargs={"marker": "custom"},
+    )
+
+    ScraperRunner(
+        run_config,
+        result_export_service=spy,
+    ).run_and_export(
+        DummyScraper,
+        "dummy.json",
+        "dummy.csv",
+    )
+
+    assert len(spy.json_calls) == 1
+    assert len(spy.csv_calls) == 1
+    assert spy.json_calls[0]["path"] == tmp_path / "dummy.json"
+    assert spy.csv_calls[0]["path"] == tmp_path / "dummy.csv"
+
+
 def test_run_and_export_reports_same_records_for_json_and_csv(tmp_path: Path) -> None:
     class DummyScraper:
         def __init__(self, *, options: ScraperOptions, marker: str) -> None:

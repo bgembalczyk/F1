@@ -78,7 +78,7 @@ class DomainRecordService:
         sections: list[dict[str, Any]],
     ) -> dict[str, Any]:
         return self._assembler.assemble(
-            payload=CircuitRecordDTO(
+            CircuitRecordDTO(
                 url=source_url,
                 infobox=infobox,
                 lap_record_rows=lap_record_rows,

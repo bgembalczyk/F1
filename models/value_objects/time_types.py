@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Mapping
 from typing import Any
 
 from models.value_objects.base import ValueObject
@@ -11,6 +12,10 @@ class DateValue(ValueObject):
     month: int | None = None
     day: int | None = None
     raw: str | None = None
+
+    @classmethod
+    def from_mapping(cls, data: Mapping[str, Any]) -> "DateValue":
+        return cls(**dict(data))
 
     def to_dict(self) -> dict[str, Any]:
         return {
