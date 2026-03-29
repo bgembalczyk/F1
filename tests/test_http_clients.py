@@ -15,7 +15,9 @@ from infrastructure.http_client.interfaces.http_client_protocol import HttpClien
 from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 from infrastructure.http_client.requests_shim.response import Response
+from infrastructure.http_client.requests_shim import constants as shim_constants
 from infrastructure.http_client.requests_shim.session import Session
+from infrastructure.http_client.requests_shim.session import _resolve_ssl_context
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
@@ -241,3 +243,14 @@ def test_runtime_checkable_response_protocol_accepts_requests_shim_response():
 def test_runtime_checkable_http_client_protocol_accepts_urllib_client():
     client = UrllibHttpClient()
     assert isinstance(client, HttpClientProtocol)
+
+
+def test_requests_shim_session_resolves_ssl_context_without_constant(monkeypatch):
+    sentinel = object()
+    monkeypatch.setattr(shim_constants, "SSL_CONTEXT", sentinel, raising=False)
+    assert _resolve_ssl_context() is sentinel
+
+    monkeypatch.delattr(shim_constants, "SSL_CONTEXT", raising=False)
+    fallback_context = _resolve_ssl_context()
+
+    assert fallback_context is not None
