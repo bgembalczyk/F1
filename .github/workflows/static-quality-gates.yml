@@ -114,6 +114,7 @@ jobs:
         with:
           recreate: true
           path: .jscpd-report/pr-comment.md
+          message: "## Raport duplikatów (jscpd)\n\n⚠️ Nie udało się wygenerować raportu markdown."
 
       - name: Skip PR comment for forked repositories (read-only token)
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && always()

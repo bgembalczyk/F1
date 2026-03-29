@@ -127,3 +127,13 @@ def strip_marks(text: str | Tag) -> str:
         .replace("^", "")
         .strip()
     )
+
+
+def extract_links_from_cell(
+    cell: Tag | str | None,
+    *,
+    full_url=None,
+) -> list[dict[str, str | None]]:
+    from scrapers.base.helpers.links import normalize_links
+
+    return normalize_links(cell, full_url=full_url)
