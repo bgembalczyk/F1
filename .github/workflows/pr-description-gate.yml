@@ -1,0 +1,40 @@
+name: PR description gate
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-pr-description:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Extract pull request body from event payload
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          event_path = Path(os.environ["GITHUB_EVENT_PATH"])
+          body = json.loads(event_path.read_text(encoding="utf-8")).get("pull_request", {}).get("body") or ""
+          output = Path(os.environ["RUNNER_TEMP"]) / "pr_body.txt"
+          output.write_text(body, encoding="utf-8")
+          print(f"Saved PR body to: {output}")
+          PY
+
+      - name: Validate required PR sections and DoD
+        run: |
+          python scripts/ci/validate_pr_description.py \
+            --pr-body-file "$RUNNER_TEMP/pr_body.txt"
