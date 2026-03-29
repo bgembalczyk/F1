@@ -1,4 +1,5 @@
 from collections.abc import Callable
+from functools import lru_cache
 from typing import Any
 
 from layers.seed.data_classes import RegistryValidationRule
@@ -83,7 +84,8 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
             ),
         )
 
-    for seed_name, component in discovered.items():
+    for seed_name in sorted(discovered):
+        component = discovered[seed_name]
         if seed_name in explicit_by_seed:
             continue
         metadata = component.metadata
@@ -105,9 +107,13 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
     return tuple(registry)
 
 
-WIKI_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
-    _build_discovered_layer_one_seed_registry()
-)
+@lru_cache(maxsize=1)
+def get_wiki_seed_registry() -> tuple[SeedRegistryEntry, ...]:
+    return _build_discovered_layer_one_seed_registry()
+
+
+def clear_wiki_seed_registry_cache() -> None:
+    get_wiki_seed_registry.cache_clear()
 
 
 def _validate_unique_seed_name(
@@ -157,8 +163,10 @@ def _validate_registry(
 
 
 def validate_seed_registry(
-    registry: tuple[SeedRegistryEntry, ...] = WIKI_SEED_REGISTRY,
+    registry: tuple[SeedRegistryEntry, ...] | None = None,
 ) -> None:
+    if registry is None:
+        registry = get_wiki_seed_registry()
     _validate_registry(registry=registry, spec=SEED_REGISTRY_VALIDATION_SPEC)
 
 

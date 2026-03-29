@@ -2,8 +2,11 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+import pytest
+
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
+from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
 if TYPE_CHECKING:
@@ -35,6 +38,38 @@ class _FakeSingleScraper:
 
     def fetch_by_url(self, url: str) -> list[dict[str, str]]:
         return [{"url": url}]
+
+
+class _FailingListScraper:
+    def __init__(self, *, options: ScraperOptions) -> None:
+        self.options = options
+
+    def fetch(self) -> list[dict[str, str]]:
+        raise TypeError("programmer bug in list scraper")
+
+
+class _FailingSingleScraper:
+    def __init__(self, *, options: ScraperOptions) -> None:
+        self.options = options
+
+    def fetch_by_url(self, _url: str) -> list[dict[str, str]]:
+        raise TypeError("programmer bug in single scraper")
+
+
+class _DetailListScraper:
+    def __init__(self, *, options: ScraperOptions) -> None:
+        self.options = options
+
+    def fetch(self) -> list[dict[str, str]]:
+        return [{"fallback_url": "https://example.com/wiki/Item"}]
+
+
+class _RecoverableFailingSingleScraper:
+    def __init__(self, *, options: ScraperOptions) -> None:
+        self.options = options
+
+    def fetch_by_url(self, _url: str) -> list[dict[str, str]]:
+        raise RequestError("temporary offline")
 
 
 def _custom_record_assembler(
@@ -74,6 +109,33 @@ class _LegacyMultiListExtractor(CompleteExtractorBase):
         single_scraper_cls=_FakeSingleScraper,
         detail_url_field_paths=("fallback_url",),
         detail_url_field_path="primary.url",
+    )
+
+
+class _ProgrammerListErrorExtractor(CompleteExtractorBase):
+    url = "https://example.com"
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_classes=(_FailingListScraper,),
+        single_scraper_cls=_FakeSingleScraper,
+        detail_url_field_paths=("fallback_url",),
+    )
+
+
+class _ProgrammerSingleErrorExtractor(CompleteExtractorBase):
+    url = "https://example.com"
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_classes=(_DetailListScraper,),
+        single_scraper_cls=_FailingSingleScraper,
+        detail_url_field_paths=("fallback_url",),
+    )
+
+
+class _RecoverableSingleErrorExtractor(CompleteExtractorBase):
+    url = "https://example.com"
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_classes=(_FakeListScraperA,),
+        single_scraper_cls=_RecoverableFailingSingleScraper,
+        detail_url_field_paths=("fallback_url",),
     )
 
 
@@ -137,3 +199,24 @@ def test_config_normalization_supports_legacy_multi_list_fields() -> None:
     )
     assert isinstance(extractor.records_adapter, MultiIterableSourceAdapter)
     assert extractor.records_adapter.get() == [{"item": "a"}, {"item": "b"}]
+
+
+def test_fetch_propagates_programmer_error_from_list_scraper() -> None:
+    extractor = _ProgrammerListErrorExtractor()
+
+    with pytest.raises(TypeError, match="programmer bug in list scraper"):
+        extractor.fetch()
+
+
+def test_fetch_propagates_programmer_error_from_single_scraper() -> None:
+    extractor = _ProgrammerSingleErrorExtractor()
+
+    with pytest.raises(TypeError, match="programmer bug in single scraper"):
+        extractor.fetch()
+
+
+def test_fetch_soft_skips_recoverable_single_scraper_errors() -> None:
+    extractor = _RecoverableSingleErrorExtractor()
+    result = extractor.fetch()
+
+    assert result == [{"item": "a", "details": None}]

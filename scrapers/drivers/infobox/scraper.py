@@ -37,7 +37,7 @@ class DriverInfoboxParser(InfoboxParser):
         self.run_id = run_id
         self.url = url
         self.logger = get_logger(self.__class__.__name__)
-        self.transformers = build_transformers(options.transformers)
+        self.transformers = build_transformers(options.pipeline.transformers)
         self._link_extractor = InfoboxLinkExtractor(
             include_urls=self.include_urls,
             wikipedia_base=self.wikipedia_base,

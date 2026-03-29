@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-import ast
 from pathlib import Path
+
+from tests.support.imports_analyzer import parse_imports
 
 DOMAINS = (
     "drivers",
@@ -18,28 +19,17 @@ MIN_IMPORT_PARTS = 3
 
 
 def _iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
-    tree = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
     violations: list[str] = []
 
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            for alias in node.names:
-                parts = alias.name.split(".")
-                if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
-                    continue
-                imported_domain = parts[1]
-                if imported_domain in DOMAINS and imported_domain != domain:
-                    violations.append(alias.name)
-
-        if isinstance(node, ast.ImportFrom):
-            if node.level != 0 or node.module is None:
-                continue
-            parts = node.module.split(".")
-            if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
-                continue
-            imported_domain = parts[1]
-            if imported_domain in DOMAINS and imported_domain != domain:
-                violations.append(node.module)
+    for parsed_import in parse_imports(py_file):
+        if parsed_import.level != 0:
+            continue
+        parts = parsed_import.module.split(".")
+        if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
+            continue
+        imported_domain = parts[1]
+        if imported_domain in DOMAINS and imported_domain != domain:
+            violations.append(parsed_import.module)
 
     return violations
 

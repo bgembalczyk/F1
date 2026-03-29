@@ -3,11 +3,17 @@ from typing import Any
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.composite_scraper import ListScraperProtocol
+from scrapers.base.composite_scraper import SingleScraperProtocol
+from scrapers.base.errors import DomainParseError
+from scrapers.base.errors import ScraperNetworkError
+from scrapers.base.errors import ScraperParseError
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
+from infrastructure.http_client.requests_shim.request_error import RequestError
 
 
 class CompleteExtractorBase(CompositeDataExtractor):
@@ -35,9 +41,9 @@ class CompleteExtractorBase(CompositeDataExtractor):
 
     def _build_list_sources(
         self,
-        list_scrapers: list[Any] | None,
+        list_scrapers: list[ListScraperProtocol] | None,
     ) -> tuple[
-        Any,
+        ListScraperProtocol | list[ListScraperProtocol],
         IterableSourceAdapter[dict[str, Any]]
         | MultiIterableSourceAdapter[dict[str, Any]],
     ]:
@@ -67,7 +73,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
         scraper_options.policy = self.http_policy
         return scraper_options
 
-    def build_list_scraper(self, options: ScraperOptions) -> Any:
+    def build_list_scraper(self, options: ScraperOptions) -> ListScraperProtocol:
         """Zbuduj scraper listy dla przypadków jedno-listowych."""
         scraper_classes = self.DOMAIN_CONFIG.list_scraper_classes
         if len(scraper_classes) > 1:
@@ -87,7 +93,10 @@ class CompleteExtractorBase(CompositeDataExtractor):
             raise NotImplementedError(msg)
         return scraper_cls(options=self.list_scraper_options(options))
 
-    def build_list_scrapers(self, options: ScraperOptions) -> list[Any] | None:
+    def build_list_scrapers(
+        self,
+        options: ScraperOptions,
+    ) -> list[ListScraperProtocol] | None:
         """Opcjonalny hook dla przypadków wielolistowych."""
         scraper_classes = self.DOMAIN_CONFIG.list_scraper_classes
         if len(scraper_classes) <= 1:
@@ -97,7 +106,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
             for scraper_cls in scraper_classes
         ]
 
-    def build_single_scraper(self, options: ScraperOptions) -> Any:
+    def build_single_scraper(self, options: ScraperOptions) -> SingleScraperProtocol:
         """Zbuduj scraper szczegółów."""
         scraper_cls = self.DOMAIN_CONFIG.single_scraper_cls
         if scraper_cls is None:
@@ -152,11 +161,16 @@ class CompleteExtractorBase(CompositeDataExtractor):
             current = current.get(part)
         return current
 
-    def _records_fetcher(self, scraper: Any):
+    def _records_fetcher(self, scraper: ListScraperProtocol):
         def _fetch() -> list[dict[str, Any]]:
             try:
                 return scraper.fetch()
-            except Exception:
+            except (
+                RequestError,
+                ScraperNetworkError,
+                ScraperParseError,
+                DomainParseError,
+            ):
                 self.logger.exception(
                     "Nie udało się pobrać listy rekordów (%s).",
                     scraper.__class__.__name__,
