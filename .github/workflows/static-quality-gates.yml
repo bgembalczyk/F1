@@ -13,6 +13,7 @@ permissions:
 env:
   NEW_DUPLICATES_WARN_THRESHOLD: "1"
   NEW_DUPLICATES_FAIL_THRESHOLD: "3"
+  MYPY_ERROR_BUDGET: "0"
 
 jobs:
   static-analysis:
@@ -152,7 +153,8 @@ jobs:
         run: |
           python scripts/ci/mypy_regression_gate.py \
             --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
-            --head-sha "${{ github.sha }}"
+            --head-sha "${{ github.sha }}" \
+            --error-budget "${MYPY_ERROR_BUDGET}"
 
       - name: Domain contracts gate (pytest)
         run: |
