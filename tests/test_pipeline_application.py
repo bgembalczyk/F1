@@ -1,7 +1,13 @@
 from pathlib import Path
 
+import pytest
+
 from layers.pipeline import WikiPipelineApplication
+from layers.pipeline import RunProfile
 from scrapers.base.run_config import RunConfig
+from scrapers.base.run_profiles import RunPathConfig
+from scrapers.base.run_profiles import RunProfileName
+from scrapers.base.run_profiles import build_run_profile
 
 
 class _LayerExecutorStub:
@@ -52,3 +58,34 @@ def test_run_layer_one_uses_private_run_config_builder(tmp_path: Path) -> None:
     assert base_wiki_dir == app._base_wiki_dir  # noqa: SLF001
     assert run_config.output_dir == app._base_wiki_dir  # noqa: SLF001
     assert run_config.debug_dir == app._base_debug_dir  # noqa: SLF001
+
+
+@pytest.mark.parametrize(
+    ("profile", "expected_profile_name"),
+    (
+        (RunProfile.DEBUG, RunProfileName.DEBUG),
+        (RunProfile.PROD, RunProfileName.MINIMAL),
+        (RunProfile.CI, RunProfileName.STRICT),
+    ),
+)
+def test_build_run_config_uses_profile_builder_map(
+    tmp_path: Path, profile: RunProfile, expected_profile_name: RunProfileName
+) -> None:
+    base_wiki_dir = tmp_path / "wiki"
+    base_debug_dir = tmp_path / "debug"
+    app = WikiPipelineApplication(
+        base_wiki_dir=base_wiki_dir,
+        base_debug_dir=base_debug_dir,
+        layer_zero_executor=_LayerExecutorStub(),
+        layer_one_executor=_LayerExecutorStub(),
+    )
+
+    run_config = app._build_run_config(profile=profile)  # noqa: SLF001
+
+    assert run_config == build_run_profile(
+        expected_profile_name,
+        paths=RunPathConfig(
+            wiki_output_dir=base_wiki_dir,
+            debug_dir=base_debug_dir,
+        ),
+    )
