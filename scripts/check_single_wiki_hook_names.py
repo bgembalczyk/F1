@@ -4,8 +4,12 @@ import ast
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-SCRAPERS_DIR = REPO_ROOT / "scrapers"
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+from scripts.lib.paths import PROJECT_ROOT, iter_python_files
+
+SCRAPERS_DIR = PROJECT_ROOT / "scrapers"
 
 STANDARD_HOOK_NAMES = {
     "_build_infobox_payload",
@@ -75,21 +79,11 @@ def lint_path(path: Path) -> list[str]:
     return errors
 
 
-def iter_python_paths(paths: list[Path]) -> list[Path]:
-    python_paths: list[Path] = []
-    for path in paths:
-        if path.is_file() and path.suffix == ".py":
-            python_paths.append(path)
-            continue
-        if path.is_dir():
-            python_paths.extend(path.rglob("*.py"))
-    return python_paths
-
 
 def main(argv: list[str]) -> int:
     targets = [Path(arg) for arg in argv] if argv else [SCRAPERS_DIR]
     errors: list[str] = []
-    for path in iter_python_paths(targets):
+    for path in iter_python_files(targets):
         errors.extend(lint_path(path))
 
     if errors:

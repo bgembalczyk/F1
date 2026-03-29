@@ -3,17 +3,13 @@
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIRS = (
-    "layers",
-    "scrapers",
-    "models",
-    "infrastructure",
-    "validation",
-    "complete_extractor",
-)
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+from scripts.lib.paths import PROJECT_ROOT, SOURCE_DIRS, iter_python_files
 
 TARGET_PACKAGES = (
     PROJECT_ROOT / "scrapers" / "wiki",
@@ -40,15 +36,11 @@ def _validate_target_packages() -> list[str]:
 
 def _scan_typo_imports() -> list[str]:
     errors: list[str] = []
-    for source_dir in SOURCE_DIRS:
-        root = PROJECT_ROOT / source_dir
-        if not root.exists():
-            continue
-        for py_file in root.rglob("*.py"):
-            content = py_file.read_text(encoding="utf-8")
-            if DISALLOWED_IMPORT in content:
-                rel_path = py_file.relative_to(PROJECT_ROOT)
-                errors.append(f"found typo import in {rel_path}")
+    for py_file in iter_python_files(SOURCE_DIRS):
+        content = py_file.read_text(encoding="utf-8")
+        if DISALLOWED_IMPORT in content:
+            rel_path = py_file.relative_to(PROJECT_ROOT)
+            errors.append(f"found typo import in {rel_path}")
     return errors
 
 
