@@ -118,30 +118,48 @@ LEGACY_CLI_PROFILE_NAMES: tuple[LegacyCliProfileName, ...] = tuple(
 )
 
 
-def _coerce_profile(profile: RunProfileSelector) -> RunProfileName:
-    if isinstance(profile, RunProfileName):
-        return profile
-    return RunProfileName(profile)
+@dataclass(frozen=True)
+class ProfileResolver:
+    """Normalize, validate and resolve canonical/legacy profile names."""
+
+    legacy_cli_aliases: dict[LegacyCliProfileName, RunProfileName]
+
+    def _normalize_profile(self, profile: RunProfileSelector) -> RunProfileName:
+        if isinstance(profile, RunProfileName):
+            return profile
+        return RunProfileName(profile)
+
+    def _coerce_profile(self, profile: RunProfileSelector) -> RunProfileName:
+        return self._normalize_profile(profile)
+
+    def resolve_cli_profile(self, profile: CliProfileSelector) -> RunProfileName:
+        if isinstance(profile, RunProfileName):
+            return profile
+        if profile in self.legacy_cli_aliases:
+            return self.legacy_cli_aliases[profile]
+        return self._normalize_profile(profile)
+
+    def validate_supported_profile(self, profile: RunProfileName) -> RunProfileSpec:
+        spec = RUN_PROFILE_SPECS.get(profile)
+        if spec is not None:
+            return spec
+
+        msg = f"Unsupported run profile: {profile!r}"
+        raise ValueError(msg)
+
+
+PROFILE_RESOLVER = ProfileResolver(legacy_cli_aliases=LEGACY_CLI_PROFILE_ALIASES)
 
 
 def resolve_cli_profile(profile: CliProfileSelector) -> RunProfileName:
     """Resolve canonical and legacy CLI profile names to a run profile."""
-    if isinstance(profile, RunProfileName):
-        return profile
-    if profile in LEGACY_CLI_PROFILE_ALIASES:
-        return LEGACY_CLI_PROFILE_ALIASES[profile]
-    return RunProfileName(profile)
+    return PROFILE_RESOLVER.resolve_cli_profile(profile)
 
 
 def get_run_profile_spec(profile: RunProfileSelector) -> RunProfileSpec:
     """Return the explicit definition for a named profile."""
-    normalized_profile = _coerce_profile(profile)
-    spec = RUN_PROFILE_SPECS.get(normalized_profile)
-    if spec is not None:
-        return spec
-
-    msg = f"Unsupported run profile: {normalized_profile!r}"
-    raise ValueError(msg)
+    normalized_profile = PROFILE_RESOLVER._coerce_profile(profile)
+    return PROFILE_RESOLVER.validate_supported_profile(normalized_profile)
 
 
 def get_cli_profile_defaults(profile: CliProfileSelector) -> tuple[bool, bool]:
@@ -156,4 +174,7 @@ def build_run_profile(
     paths: RunPathConfig = DEFAULT_RUN_PATHS,
 ) -> RunConfig:
     """Build ``RunConfig`` for a named profile."""
-    return get_run_profile_spec(profile).build_config(paths=paths)
+    normalized_profile = PROFILE_RESOLVER._coerce_profile(profile)
+    return PROFILE_RESOLVER.validate_supported_profile(normalized_profile).build_config(
+        paths=paths,
+    )

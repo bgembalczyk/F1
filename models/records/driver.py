@@ -8,6 +8,7 @@ from models.records.record_definition import RecordDefinition
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
 from validation.schemas import NestedSchema
+from validation.validator_base import RecordValidator
 
 
 class DriverRecord(TypedDict, total=False):
@@ -52,3 +53,9 @@ DRIVER_DEFINITION = RecordDefinition(
 )
 
 DRIVER_SCHEMA = DRIVER_DEFINITION.to_schema()
+
+
+def validate_driver_record(record: dict[str, object]) -> list[str]:
+    return [
+        error.message for error in RecordValidator.validate_schema(record, DRIVER_SCHEMA)
+    ]
