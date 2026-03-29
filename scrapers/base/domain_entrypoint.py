@@ -8,9 +8,9 @@ from importlib import import_module
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
+from scrapers.base.runner import ScraperRunner
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -183,11 +183,10 @@ def build_run_list_scraper_for_domain(domain: str) -> Callable[..., None]:
     def run_list_scraper(*, run_config: RunConfig | None = None) -> None:
         config = get_domain_entrypoint_config(domain)
         resolved_config = run_config or config.run_config_profile()
-        run_and_export(
+        ScraperRunner(resolved_config).run_and_export(
             config.list_scraper_cls,
             config.default_output_json,
             config.default_output_csv,
-            run_config=resolved_config,
         )
 
     return run_list_scraper

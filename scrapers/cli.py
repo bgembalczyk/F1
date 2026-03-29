@@ -19,6 +19,7 @@ from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
 from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
+from scrapers.base.runner import ScraperRunner
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -124,11 +125,11 @@ def _run_and_export_target(
 ) -> Callable[..., None]:
     def _target(*, run_config: RunConfig) -> None:
         scraper_cls = _import_target(class_path)
-        run_and_export = _import_target("scrapers.base.helpers.runner:run_and_export")
+        runner = ScraperRunner(run_config)
         if output_csv:
-            run_and_export(scraper_cls, output_json, output_csv, run_config=run_config)
+            runner.run_and_export(scraper_cls, output_json, output_csv)
             return
-        run_and_export(scraper_cls, output_json, run_config=run_config)
+        runner.run_and_export(scraper_cls, output_json)
 
     return _target
 
