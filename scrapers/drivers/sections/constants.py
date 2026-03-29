@@ -3,6 +3,12 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.table.columns.types import DriverListColumn
+from scrapers.base.table.columns.types.constructor import ConstructorColumn
+from scrapers.base.table.columns.types.engine import EngineColumn
+from scrapers.base.table.columns.types.entrant import EntrantColumn
+from scrapers.base.table.columns.types.position import PositionColumn
+from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.drivers.sections.common import DriverResultsSectionConfig
 
 if TYPE_CHECKING:
@@ -17,14 +23,8 @@ from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
 from scrapers.base.table.headers_shared import POINTS_HEADER
 from scrapers.base.table.headers_shared import POINTS_HEADER_TO_KEY
-from scrapers.drivers.columns.constructor import ConstructorColumn
-from scrapers.drivers.columns.driver_list import DriverListColumn
-from scrapers.drivers.columns.engine import EngineColumn
-from scrapers.drivers.columns.entrant import EntrantColumn
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
-from scrapers.drivers.columns.position import PositionColumn
 from scrapers.drivers.columns.series import SeriesColumn
-from scrapers.drivers.columns.tyre import TyreColumn
 
 COMPLETE_RESULTS_REQUIRED_HEADER = "Year"
 
