@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.seasons.columns.entrant import EntrantColumn
+from scrapers.base.table.columns.types import EntrantColumn
 
 
 def _ctx_with_cell(html: str, *, links: list[dict] | None = None) -> ColumnContext:

@@ -9,17 +9,17 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
+from scrapers.base.table.columns.types import DriverListColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.failed_to_make_restart import (
     FailedToMakeRestartTransformer,
 )
-from scrapers.grands_prix.columns.driver import DriverColumn
-from scrapers.grands_prix.columns.driver_list import DriverListColumn
 from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 
 logger = logging.getLogger(__name__)
