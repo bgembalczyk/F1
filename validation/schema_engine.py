@@ -7,6 +7,8 @@ from collections.abc import Mapping
 from collections.abc import Sequence
 from typing import Any
 
+from validation.issue import IssueMessageFormatter
+from validation.issue import LegacyValidationIssueAdapter
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
@@ -50,15 +52,7 @@ class SchemaValidationEngine:
     def coerce_issue(cls, error: ValidationIssue | str) -> ValidationIssue:
         if isinstance(error, ValidationIssue):
             return error
-        message = str(error)
-        missing_key = cls.extract_missing_key(message)
-        if missing_key:
-            code = "null" if message.startswith("Null value for: ") else "missing"
-            return ValidationIssue(code=code, field=missing_key, message=message)
-        type_key = cls.extract_type_key(message)
-        if type_key:
-            return ValidationIssue(code="type", field=type_key, message=message)
-        return ValidationIssue.custom(message)
+        return LegacyValidationIssueAdapter.from_legacy_message(str(error))
 
     @staticmethod
     def prefix_errors(
@@ -66,6 +60,10 @@ class SchemaValidationEngine:
         prefix: str,
     ) -> list[ValidationIssue]:
         return [error.with_prefix(prefix) for error in errors]
+
+    @staticmethod
+    def render_issues(errors: Sequence[ValidationIssue]) -> list[ValidationIssue]:
+        return [IssueMessageFormatter.render(error) for error in errors]
 
     @classmethod
     def validate_nested_value(

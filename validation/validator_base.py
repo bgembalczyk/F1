@@ -139,7 +139,7 @@ class RecordValidator(ABC):
             errors.extend(cls._validate_nested_value(key, value, nested_schema))
         for validator in normalized.custom_validators:
             errors.extend(cls._coerce_issue(error) for error in validator(record))
-        return errors
+        return SchemaValidationEngine.render_issues(errors)
 
     @classmethod
     def _validate_nested_value(
