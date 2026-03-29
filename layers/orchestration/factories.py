@@ -2,23 +2,24 @@ from abc import ABC
 from abc import abstractmethod
 
 from infrastructure.gemini.client import GeminiClient
+from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
-class LayerZeroRunConfigFactory(ABC):
+class LayerZeroRunConfigFactory(LayerZeroRunConfigFactoryProtocol, ABC):
     @abstractmethod
-    def create_scraper_kwargs(self, _job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
         """Build scraper kwargs for layer-zero list job."""
 
 
 class DefaultLayerZeroRunConfigFactory(LayerZeroRunConfigFactory):
-    def create_scraper_kwargs(self, _job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
         return {}
 
 
 class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
-    def create_scraper_kwargs(self, _job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
         scraper_kwargs: dict[str, object] = {}
         try:
             gemini_client = GeminiClient.from_key_file()

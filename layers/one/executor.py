@@ -1,6 +1,7 @@
 from collections.abc import Callable
 from pathlib import Path
 
+from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
 
@@ -14,7 +15,7 @@ class LayerOneExecutor:
             [tuple[SeedRegistryEntry, ...]],
             None,
         ],
-        runner_map_builder: Callable[[], dict[str, object]],
+        runner_map_builder: Callable[[], dict[str, LayerOneRunnerProtocol]],
         engine_manufacturers_runner: Callable[[Path, bool], None],
     ) -> None:
         self._seed_registry = seed_registry

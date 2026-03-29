@@ -1,6 +1,8 @@
 from collections.abc import Callable
 from pathlib import Path
 
+from layers.constructors_mirror_service import ConstructorsMirrorService
+from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.merge_service import LayerZeroMergeService
@@ -14,8 +16,11 @@ class LayerZeroExecutor:
         *,
         list_job_registry: tuple[ListJobRegistryEntry, ...],
         validate_list_registry: Callable[[tuple[ListJobRegistryEntry, ...]], None],
-        run_config_factory_map_builder: Callable[[], dict[str, object]],
-        default_config_factory: object,
+        run_config_factory_map_builder: Callable[
+            [],
+            dict[str, LayerZeroRunConfigFactoryProtocol],
+        ],
+        default_config_factory: LayerZeroRunConfigFactoryProtocol,
         run_and_export_function: Callable[..., None],
         merge_service: LayerZeroMergeService,
         job_hook: LayerZeroJobHook,
