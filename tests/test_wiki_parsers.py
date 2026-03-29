@@ -399,6 +399,23 @@ def test_wiki_element_parser_mixin_default_registry_matches_expected_types() -> 
     ]
 
 
+def test_wiki_element_parser_mixin_default_rules_order_and_count() -> None:
+    parser = SubSubSubSectionParser()
+
+    expected_order = [
+        "paragraph",
+        "figure",
+        "list",
+        "infobox",
+        "table",
+        "navbox",
+        "references_wrap",
+    ]
+
+    assert len(parser._parser_rules) == len(expected_order)
+    assert [rule.result_type for rule in parser._parser_rules] == expected_order
+
+
 def test_sub_sub_section_parser_divides_into_sub_sub_sub_sections():
     html = """
     <div>

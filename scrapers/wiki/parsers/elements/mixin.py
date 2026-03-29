@@ -16,6 +16,46 @@ from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 
 
 class WikiElementParserMixin:
+    DEFAULT_PARSER_RULE_SPECS: list[
+        tuple[
+            Callable[["WikiElementParserMixin", Tag], bool],
+            str,
+            str,
+            int,
+        ]
+    ] = [
+        (lambda mixin, el: el.name == "p", "paragraph_parser", "paragraph", 0),
+        (lambda mixin, el: el.name == "figure", "figure_parser", "figure", 1),
+        (lambda mixin, el: el.name == "ul", "list_parser", "list", 2),
+        (
+            lambda mixin, el: el.name == "table" and "infobox" in mixin._get_classes(el),
+            "infobox_parser",
+            "infobox",
+            3,
+        ),
+        (
+            lambda mixin, el: el.name == "table" and "wikitable" in mixin._get_classes(el),
+            "table_parser",
+            "table",
+            4,
+        ),
+        (
+            lambda mixin, el: el.name == "div"
+            and el.get("role") == "navigation"
+            and "navbox" in mixin._get_classes(el),
+            "navbox_parser",
+            "navbox",
+            5,
+        ),
+        (
+            lambda mixin, el: el.name == "div"
+            and any("references-wrap" in c for c in mixin._get_classes(el)),
+            "references_wrap_parser",
+            "references_wrap",
+            6,
+        ),
+    ]
+
     def __init__(self) -> None:
         self.infobox_parser = InfoboxParser()
         self.paragraph_parser = ParagraphParser()
@@ -50,46 +90,19 @@ class WikiElementParserMixin:
         self._parser_rules.insert(index, rule)
 
     def _register_default_parser_rules(self) -> None:
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "p",
-            parser=self.paragraph_parser.parse,
-            result_type="paragraph",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "figure",
-            parser=self.figure_parser.parse,
-            result_type="figure",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "ul",
-            parser=self.list_parser.parse,
-            result_type="list",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "table"
-            and "infobox" in self._get_classes(el),
-            parser=self.infobox_parser.parse,
-            result_type="infobox",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "table"
-            and "wikitable" in self._get_classes(el),
-            parser=self.table_parser.parse,
-            result_type="table",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "div"
-            and el.get("role") == "navigation"
-            and "navbox" in self._get_classes(el),
-            parser=self.navbox_parser.parse,
-            result_type="navbox",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "div"
-            and any("references-wrap" in c for c in self._get_classes(el)),
-            parser=self.references_wrap_parser.parse,
-            result_type="references_wrap",
-        )
+        for (
+            predicate,
+            parser_key,
+            result_type,
+            priority,
+        ) in self.DEFAULT_PARSER_RULE_SPECS:
+            parser_instance = getattr(self, parser_key)
+            self.register_parser_rule(
+                predicate=lambda el, rule_predicate=predicate: rule_predicate(self, el),
+                parser=parser_instance.parse,
+                result_type=result_type,
+                priority=priority,
+            )
 
     @staticmethod
     def _has_infobox_class(classes: Any) -> bool:
