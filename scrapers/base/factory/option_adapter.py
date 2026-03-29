@@ -20,13 +20,12 @@ class OptionsScraperAdapter:
     ) -> ABCScraper:
         kwargs = self._build_kwargs(context)
         options = self._resolve_options(context)
-        self._mapper.apply(
+        options = self._mapper.apply(
             run_config=context.run_config,
             options=options,
             run_id=context.run_id,
+            supports_urls=context.supports_urls,
         )
-        if context.supports_urls:
-            options.include_urls = context.run_config.include_urls
         kwargs.setdefault("options", options)
         if ctor.accepts("run_id"):
             kwargs.setdefault("run_id", context.run_id)
