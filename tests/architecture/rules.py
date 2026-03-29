@@ -4,47 +4,20 @@ import ast
 from dataclasses import dataclass
 from pathlib import Path
 
-DOMAINS: tuple[str, ...] = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
-    "engines",
-    "points",
-    "sponsorship_liveries",
-    "tyres",
+from tests.architecture.registry import ARCHITECTURE_REGISTRY
+
+DOMAINS: tuple[str, ...] = ARCHITECTURE_REGISTRY.domain_names
+ENTRYPOINT_DOMAINS: tuple[str, ...] = ARCHITECTURE_REGISTRY.entrypoint_domains
+LAYERS: tuple[str, ...] = ARCHITECTURE_REGISTRY.layers
+REQUIRED_LAYERS_BY_DOMAIN: dict[str, tuple[str, ...]] = (
+    ARCHITECTURE_REGISTRY.required_layers_by_domain
 )
-
-ENTRYPOINT_DOMAINS: tuple[str, ...] = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
+FORBIDDEN_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = (
+    ARCHITECTURE_REGISTRY.forbidden_imports_by_layer
 )
-
-LAYERS: tuple[str, ...] = ("list", "sections", "infobox", "postprocess")
-
-REQUIRED_LAYERS_BY_DOMAIN: dict[str, tuple[str, ...]] = {
-    "drivers": ("list", "sections", "infobox", "postprocess"),
-    "constructors": ("list", "sections", "infobox", "postprocess"),
-    "circuits": ("list", "sections", "infobox", "postprocess"),
-    "seasons": ("list", "sections", "postprocess"),
-    "grands_prix": ("list", "sections"),
-}
-
-FORBIDDEN_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = {
-    "list": ("infobox", "postprocess"),
-    "sections": ("list", "single_scraper"),
-    "infobox": ("list", "sections", "postprocess", "single_scraper"),
-    "postprocess": ("list", "sections", "infobox", "single_scraper"),
-}
-
-ALLOWED_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = {
-    layer: tuple(sorted(set(LAYERS) - {layer} - set(FORBIDDEN_IMPORTS_BY_LAYER[layer])))
-    for layer in LAYERS
-}
+ALLOWED_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = (
+    ARCHITECTURE_REGISTRY.allowed_imports_by_layer
+)
 
 
 @dataclass(frozen=True)

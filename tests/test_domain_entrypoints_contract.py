@@ -6,14 +6,9 @@ import inspect
 
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
 from scrapers.base.run_config import RunConfig
+from tests.architecture.registry import ARCHITECTURE_REGISTRY
 
-ENTRYPOINT_MODULES = (
-    "scrapers.drivers.entrypoint",
-    "scrapers.constructors.entrypoint",
-    "scrapers.circuits.entrypoint",
-    "scrapers.seasons.entrypoint",
-    "scrapers.grands_prix.entrypoint",
-)
+ENTRYPOINT_MODULES = ARCHITECTURE_REGISTRY.entrypoint_modules
 
 
 def test_entrypoints_expose_uniform_run_list_scraper_signature() -> None:

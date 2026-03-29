@@ -4,9 +4,10 @@ from __future__ import annotations
 from pathlib import Path
 
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
+from tests.architecture.registry import ARCHITECTURE_REGISTRY
 from tests.support.imports_analyzer import parse_imports
 
-DOMAINS = ("drivers", "constructors", "circuits", "seasons", "grands_prix")
+DOMAINS = ARCHITECTURE_REGISTRY.entrypoint_domains
 
 
 def _is_forbidden_single_scraper_import(
