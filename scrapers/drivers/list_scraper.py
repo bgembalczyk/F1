@@ -7,6 +7,7 @@ from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import build_name_status_fragment
 from scrapers.base.table.builders import metric_column
+from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
@@ -15,7 +16,6 @@ from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
 )
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
-from scrapers.drivers.columns.seasons import SeasonsColumn
 from scrapers.drivers.constants import DRIVER_CHAMPIONSHIPS_HEADER
 from scrapers.drivers.constants import DRIVER_FASTEST_LAPS_HEADER
 from scrapers.drivers.constants import DRIVER_NAME_HEADER
