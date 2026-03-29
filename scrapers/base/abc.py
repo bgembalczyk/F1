@@ -277,6 +277,10 @@ class ABCScraper(ABC):
             return self._parse_soup(soup)
         return self.parser.parse(soup)
 
+    def parse_soup(self, soup: BeautifulSoup) -> list[RawRecord]:
+        """Public facade for parsing an already constructed BeautifulSoup document."""
+        return self.parse(soup)
+
     # ---------- Hooki: normalize/export ----------
 
     @staticmethod

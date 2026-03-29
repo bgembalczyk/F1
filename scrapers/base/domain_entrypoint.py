@@ -7,6 +7,7 @@ from functools import cache
 from importlib import import_module
 from pathlib import Path
 from typing import TYPE_CHECKING
+from typing import Protocol
 
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
@@ -27,6 +28,46 @@ class DomainEntrypointConfig:
     default_output_json: str | Path
     run_config_profile: Callable[[], RunConfig]
     default_output_csv: str | Path | None = None
+
+
+class OutputPathRenderer(Protocol):
+    """Policy contract for rendering configured output paths per domain."""
+
+    def render(self, path: str | Path | None) -> str | Path | None: ...
+
+
+@dataclass(frozen=True)
+class IdentityOutputPathRenderer:
+    """No-op renderer for domains without placeholders in output paths."""
+
+    def render(self, path: str | Path | None) -> str | Path | None:
+        return path
+
+
+@dataclass(frozen=True)
+class YearPlaceholderOutputPathRenderer:
+    """Renderer replacing ``{year}`` placeholder with the configured year value."""
+
+    year: int | None
+
+    def render(self, path: str | Path | None) -> str | Path | None:
+        if path is None or self.year is None:
+            return path
+        if isinstance(path, Path):
+            return Path(str(path).format(year=self.year))
+        return path.format(year=self.year)
+
+
+@dataclass(frozen=True)
+class CurrentYearOutputPathRenderer:
+    """Renderer that resolves ``CURRENT_YEAR`` lazily from a module attribute."""
+
+    module_path: str
+    attr_name: str = "CURRENT_YEAR"
+
+    def render(self, path: str | Path | None) -> str | Path | None:
+        year = getattr(import_module(self.module_path), self.attr_name, None)
+        return YearPlaceholderOutputPathRenderer(year=year).render(path)
 
 
 class LazyScraperClassProxy:
@@ -57,6 +98,7 @@ class _DomainEntrypointSpec:
     default_output_json: str | Path
     run_config_profile: Callable[[], RunConfig]
     default_output_csv: str | Path | None = None
+    output_path_renderer: OutputPathRenderer = IdentityOutputPathRenderer()
 
 
 def strict_quality_profile() -> RunConfig:
@@ -106,6 +148,9 @@ _DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
         default_output_json="constructors/f1_constructors_{year}.json",
         default_output_csv="constructors/f1_constructors_{year}.csv",
         run_config_profile=minimal_debug_profile,
+        output_path_renderer=CurrentYearOutputPathRenderer(
+            module_path="scrapers.constructors.constants",
+        ),
     ),
 }
 
@@ -127,25 +172,11 @@ def _import_target(path: str) -> object:
 def _resolve_domain_entrypoint_config(domain: str) -> DomainEntrypointConfig:
     spec = _DOMAIN_ENTRYPOINT_SPECS[domain]
     list_scraper_cls = LazyScraperClassProxy(spec.scraper_path)
-    current_year = None
-    if domain == "constructors":
-        current_year = getattr(
-            import_module("scrapers.constructors.constants"),
-            "CURRENT_YEAR",
-            None,
-        )
-
-    def _render(path: str | Path | None) -> str | Path | None:
-        if path is None or current_year is None:
-            return path
-        if isinstance(path, Path):
-            return Path(str(path).format(year=current_year))
-        return path.format(year=current_year)
 
     return DomainEntrypointConfig(
         list_scraper_cls=list_scraper_cls,
-        default_output_json=_render(spec.default_output_json),
-        default_output_csv=_render(spec.default_output_csv),
+        default_output_json=spec.output_path_renderer.render(spec.default_output_json),
+        default_output_csv=spec.output_path_renderer.render(spec.default_output_csv),
         run_config_profile=spec.run_config_profile,
     )
 

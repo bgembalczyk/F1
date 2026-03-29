@@ -5,6 +5,7 @@ import importlib
 import inspect
 import sys
 import types
+from pathlib import Path
 
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
 from scrapers.base.run_config import RunConfig
@@ -135,3 +136,29 @@ def test_new_domain_requires_only_config_plus_generic_shim(monkeypatch) -> None:
     assert module.DEFAULT_OUTPUT_JSON == config.default_output_json
     assert module.DEFAULT_OUTPUT_CSV == config.default_output_csv
     assert module.RUN_CONFIG_PROFILE is config.run_config_profile
+def test_domain_output_path_policy_renders_placeholder_paths() -> None:
+    config = get_domain_entrypoint_config("constructors")
+    current_year = getattr(
+        importlib.import_module("scrapers.constructors.constants"),
+        "CURRENT_YEAR",
+    )
+
+    assert config.default_output_json == f"constructors/f1_constructors_{current_year}.json"
+    assert config.default_output_csv == f"constructors/f1_constructors_{current_year}.csv"
+
+
+def test_domain_output_path_policy_keeps_non_placeholder_paths() -> None:
+    config = get_domain_entrypoint_config("drivers")
+
+    assert config.default_output_json == "drivers/f1_drivers.json"
+    assert config.default_output_csv is None
+
+
+def test_year_placeholder_renderer_handles_path_inputs() -> None:
+    from scrapers.base.domain_entrypoint import YearPlaceholderOutputPathRenderer
+
+    rendered = YearPlaceholderOutputPathRenderer(year=2042).render(
+        Path("constructors/f1_constructors_{year}.json"),
+    )
+
+    assert rendered == Path("constructors/f1_constructors_2042.json")

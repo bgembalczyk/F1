@@ -38,6 +38,12 @@ def main() -> int:
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)
+    parser.add_argument(
+        "--error-budget",
+        type=int,
+        default=None,
+        help="Maksymalna akceptowalna liczba błędów mypy dla head.",
+    )
     args = parser.parse_args()
 
     repo_root = Path.cwd()
@@ -66,6 +72,14 @@ def main() -> int:
         print("\n=== HEAD OUTPUT ===")
         print(head_output)
         print("\nRegresja typowania: liczba błędów wzrosła.")
+        return 1
+
+    if args.error_budget is not None and head_errors > args.error_budget:
+        print(
+            f"Przekroczony budżet błędów mypy: {head_errors} > {args.error_budget}."
+        )
+        print("\n=== HEAD OUTPUT ===")
+        print(head_output)
         return 1
 
     print("Brak regresji typowania (liczba błędów nie wzrosła).")
