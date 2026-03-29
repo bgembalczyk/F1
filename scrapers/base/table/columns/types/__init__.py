@@ -6,7 +6,10 @@ from scrapers.base.table.columns.types.column_factory import FloatColumn
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.column_factory import column_factory
 from scrapers.base.table.columns.types.date import DateColumn
+from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
+from scrapers.base.table.columns.types.engine import EngineColumn
+from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -15,6 +18,7 @@ from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.name_status import NameStatusColumn
 from scrapers.base.table.columns.types.name_status import create_suffix_checker
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
+from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.range import RangeColumn
 from scrapers.base.table.columns.types.regex import RegexColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -24,13 +28,6 @@ from scrapers.base.table.columns.types.time import TimeColumn
 from scrapers.base.table.columns.types.time_range import TimeRangeColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-
-# Backward-compatible re-exports for domain-specific columns moved out of
-# scrapers.base.table.columns.types.
-from scrapers.seasons.columns.driver import DriverColumn
-from scrapers.seasons.columns.engine import EngineColumn
-from scrapers.seasons.columns.entrant import EntrantColumn
-from scrapers.seasons.columns.points import PointsColumn
 
 __all__ = [
     "AutoColumn",

@@ -2,8 +2,8 @@ from typing import Any
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.constants import SEPARATOR_PATTERN
-from scrapers.base.table.constants import TIME_12H_PATTERN
+from scrapers.base.table.patterns import SEPARATOR_PATTERN
+from scrapers.base.table.patterns import TIME_12H_PATTERN
 
 
 class TimeRangeColumn(BaseColumn):
