@@ -1,3 +1,4 @@
+from collections.abc import Mapping
 import urllib.error
 import urllib.request
 from urllib.parse import urlsplit
@@ -16,7 +17,7 @@ class Session:
     def get(
         self,
         url: str,
-        headers: dict[str, str] | None = None,
+        headers: Mapping[str, str] | None = None,
         timeout: int | None = None,
     ) -> Response:
         merged_headers = dict(self.headers)

@@ -3,6 +3,7 @@ from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,
 )
+from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from infrastructure.http_client.requests_shim.session import Session
 
@@ -13,7 +14,7 @@ class UrllibHttpClient(BaseHttpClient):
     def __init__(
         self,
         *,
-        session: Session | None = None,
+        session: SessionProtocol | None = None,
         config: HttpClientConfig | None = None,
     ) -> None:
         """
