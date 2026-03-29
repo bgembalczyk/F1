@@ -19,16 +19,20 @@ class WikiPipelineApplication:
         self._layer_zero_executor = layer_zero_executor
         self._layer_one_executor = layer_one_executor
 
+    def _build_run_config(self, *, profile: str = "debug"):
+        """Build run config for selected execution profile."""
+        if profile == "debug":
+            return build_debug_run_config(
+                base_wiki_dir=self._base_wiki_dir,
+                base_debug_dir=self._base_debug_dir,
+            )
+
+        raise ValueError(f"Unsupported run config profile: {profile}")
+
     def run_layer_zero(self) -> None:
-        run_config = build_debug_run_config(
-            base_wiki_dir=self._base_wiki_dir,
-            base_debug_dir=self._base_debug_dir,
-        )
+        run_config = self._build_run_config(profile="debug")
         self._layer_zero_executor.run(run_config, self._base_wiki_dir)
 
     def run_layer_one(self) -> None:
-        run_config = build_debug_run_config(
-            base_wiki_dir=self._base_wiki_dir,
-            base_debug_dir=self._base_debug_dir,
-        )
+        run_config = self._build_run_config(profile="debug")
         self._layer_one_executor.run(run_config, self._base_wiki_dir)
