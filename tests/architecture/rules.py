@@ -2,37 +2,19 @@ from __future__ import annotations
 
 import ast
 from dataclasses import dataclass
-from pathlib import Path
+from typing import TYPE_CHECKING
 
-DOMAINS: tuple[str, ...] = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
-    "engines",
-    "points",
-    "sponsorship_liveries",
-    "tyres",
+from scrapers.base.architecture_registry import ARCHITECTURE_REGISTRY
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
+DOMAINS: tuple[str, ...] = ARCHITECTURE_REGISTRY.domains
+ENTRYPOINT_DOMAINS: tuple[str, ...] = ARCHITECTURE_REGISTRY.entrypoint_domains
+LAYERS: tuple[str, ...] = ARCHITECTURE_REGISTRY.layers
+REQUIRED_LAYERS_BY_DOMAIN: dict[str, tuple[str, ...]] = (
+    ARCHITECTURE_REGISTRY.required_layers_by_domain
 )
-
-ENTRYPOINT_DOMAINS: tuple[str, ...] = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
-)
-
-LAYERS: tuple[str, ...] = ("list", "sections", "infobox", "postprocess")
-
-REQUIRED_LAYERS_BY_DOMAIN: dict[str, tuple[str, ...]] = {
-    "drivers": ("list", "sections", "infobox", "postprocess"),
-    "constructors": ("list", "sections", "infobox", "postprocess"),
-    "circuits": ("list", "sections", "infobox", "postprocess"),
-    "seasons": ("list", "sections", "postprocess"),
-    "grands_prix": ("list", "sections"),
-}
 
 FORBIDDEN_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = {
     "list": ("infobox", "postprocess"),
@@ -112,12 +94,10 @@ def infer_layer(py_file: Path, *, domain: str) -> str | None:
         return "postprocess"
 
     filename = py_file.name
-    if (
-        filename == "list_scraper.py"
-        or filename.endswith("_list.py")
-        or filename.endswith("_list_scraper.py")
-        or filename == "base_constructor_list_scraper.py"
-    ):
+    if filename in {
+        "list_scraper.py",
+        "base_constructor_list_scraper.py",
+    } or filename.endswith(("_list.py", "_list_scraper.py")):
         return "list"
 
     if f"scrapers/{domain}/" not in py_file.as_posix():
