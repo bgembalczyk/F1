@@ -9,6 +9,9 @@ from tests.support.imports_analyzer import parse_imports
 
 DOMAINS = ARCHITECTURE_REGISTRY.entrypoint_domains
 
+from tests.architecture.rules import ENTRYPOINT_DOMAINS
+from tests.support.imports_analyzer import parse_imports
+
 
 def _is_forbidden_single_scraper_import(
     *,
@@ -43,7 +46,7 @@ def _collect_import_violations(py_file: Path, domain: str) -> list[str]:
 
 def test_sections_modules_do_not_import_single_scraper() -> None:
     root = Path("scrapers")
-    for domain in DOMAINS:
+    for domain in ENTRYPOINT_DOMAINS:
         sections_dir = root / domain / "sections"
         for py_file in sections_dir.glob("*.py"):
             violations = _collect_import_violations(py_file, domain)
@@ -55,7 +58,7 @@ def test_sections_modules_do_not_import_single_scraper() -> None:
 
 def test_single_scraper_can_depend_on_sections_without_reverse_dependency() -> None:
     root = Path("scrapers")
-    for domain in DOMAINS:
+    for domain in ENTRYPOINT_DOMAINS:
         single_scraper_file = root / domain / "single_scraper.py"
         assert (
             single_scraper_file.exists()
@@ -74,7 +77,7 @@ def test_single_scraper_can_depend_on_sections_without_reverse_dependency() -> N
 
 
 def test_critical_sections_have_alias_fallbacks() -> None:
-    for domain in DOMAINS:
+    for domain in ENTRYPOINT_DOMAINS:
         critical = DOMAIN_SECTION_RESOLVER_CONFIG.get(domain, ())
         assert critical, f"Missing critical sections map for domain={domain}"
         for section in critical:

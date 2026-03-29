@@ -27,7 +27,6 @@ class DriverRecordAssembler:
 
     def assemble(
         self,
-        *,
         payload: DriverRecordDTO,
     ) -> dict[str, Any]:
         url = WikiUrl.from_raw(payload.url)

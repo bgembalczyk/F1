@@ -19,6 +19,36 @@ ALLOWED_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = (
     ARCHITECTURE_REGISTRY.allowed_imports_by_layer
 )
 
+ENTRYPOINT_MODULES: tuple[str, ...] = (
+    "scrapers/drivers/entrypoint.py",
+    "scrapers/constructors/entrypoint.py",
+    "scrapers/circuits/entrypoint.py",
+    "scrapers/seasons/entrypoint.py",
+    "scrapers/grands_prix/entrypoint.py",
+)
+
+LAYERS: tuple[str, ...] = ("list", "sections", "infobox", "postprocess")
+
+REQUIRED_LAYERS_BY_DOMAIN: dict[str, tuple[str, ...]] = {
+    "drivers": ("list", "sections", "infobox", "postprocess"),
+    "constructors": ("list", "sections", "infobox", "postprocess"),
+    "circuits": ("list", "sections", "infobox", "postprocess"),
+    "seasons": ("list", "sections", "postprocess"),
+    "grands_prix": ("list", "sections"),
+}
+
+FORBIDDEN_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = {
+    "list": ("infobox", "postprocess"),
+    "sections": ("list", "single_scraper"),
+    "infobox": ("list", "sections", "postprocess", "single_scraper"),
+    "postprocess": ("list", "sections", "infobox", "single_scraper"),
+}
+
+ALLOWED_IMPORTS_BY_LAYER: dict[str, tuple[str, ...]] = {
+    layer: tuple(sorted(set(LAYERS) - {layer} - set(FORBIDDEN_IMPORTS_BY_LAYER[layer])))
+    for layer in LAYERS
+}
+
 
 @dataclass(frozen=True)
 class ImportDependencyRules:
