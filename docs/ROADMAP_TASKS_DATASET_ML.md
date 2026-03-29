@@ -133,3 +133,40 @@
 - Każdy PR funkcjonalny: obowiązkowo sekcja „Refactor included” i minimum jeden mikro-refactor.
 - Każdy sprint: podsumowanie metryki trendu duplikacji (`removed`/`added`) oraz decyzja o aktualizacji priorytetów refaktorów.
 - Raz na kwartał: rewizja progów jakości (np. minimalny bilans netto i progi duplicate-code w CI).
+
+## Skonsolidowany backlog wykrytych obszarów (layers / scrapers/base / validation / discovery / scripts/ci)
+
+> Źródła punktów startowych backlogu: luki otwarte w etapach roadmapy (`Etap 1-4`, `D1-D7`), dług typowania z `docs/TYPING_GUARDRAILS.md`, oraz obszary techniczne wskazane w wizji/UML (orchestrator, walidacja regułowa, auto-discovery, redukcja duplikacji).
+
+### Fala 1 — Quick wins (1 sprint)
+
+| ID | Problem | Moduł | Expected impact | Owner | Deadline | Metryki sukcesu |
+|---|---|---|---|---|---|---|
+| QW-1 | Brak spójnego minimalnego schematu seed (`name`, `link`, `source_url`, `scraped_at`) utrudnia stabilne checkpointy L0→L1. | `layers.seed.*`, `scrapers/base/export/*` | Stabilniejsze wejście orchestratora i mniej regresji mapowania rekordów. | Data Platform (L0) | Sprint 1 (do 2026-04-12) | 100% seed scraperów zapisuje wymagane pola; 0 błędów kontraktu w testach seed registry. |
+| QW-2 | Brak wspólnego logowania jakości (liczba rekordów, puste pola, duplikaty) per uruchomienie. | `layers/zero/*`, `validation/quality_stats.py`, `scrapers/base/results.py` | Szybka diagnostyka jakości danych i krótszy feedback loop w CI. | Data Quality | Sprint 1 (do 2026-04-12) | Raport jakości generowany dla każdego joba L0; metryki `record_count`, `empty_ratio`, `duplicates_count` obecne w 100% runów smoke CI. |
+| QW-3 | Dług typowania (`Any`) utrzymuje się w krytycznym scope `layers/` i `validation/`. | `layers/seed/*`, `layers/zero/*`, `validation/*` | Wyższa stabilność refaktoru i mniej błędów kontraktowych w runtime. | Typing Guild | Sprint 1 (do 2026-04-12) | Redukcja wystąpień `Any` o min. 20% w wskazanych modułach; brak wzrostu błędów `mypy_regression_gate`; 0 nowych naruszeń `ANY-JUSTIFIED`. |
+| QW-4 | Utility CI używają luźnych typów (`Any`) i rozproszonego formatowania raportów. | `scripts/ci/io_utils.py`, `scripts/ci/reporting.py`, `scripts/ci/git_diff.py` | Lepsza czytelność gate’ów i mniejsze ryzyko błędów narzędzi CI. | DevEx / CI | Sprint 1 (do 2026-04-12) | Redukcja `Any` o min. 50% w `scripts/ci/*`; 100% testów `tests/test_ci_utilities.py` przechodzi; jednolity format komunikatów błędów. |
+
+### Fala 2 — Średnie (2–3 sprinty)
+
+| ID | Problem | Moduł | Expected impact | Owner | Deadline | Metryki sukcesu |
+|---|---|---|---|---|---|---|
+| MID-1 | Brak jawnego `StepOrchestrator` dla flow `L0 -> L1 -> L0/L1` z deklaratywnym `checkpoint_input`. | `layers/orchestration/*`, `scrapers/base/orchestration/*` | Powtarzalny pipeline iteracyjny i pełna kontrola „skąd bierzemy kolejne punkty startowe”. | Pipeline Core | Sprint 3 (do 2026-05-10) | 100% kroków w `step_registry` ma `input->parser->output`; min. 1 e2e flow dla `drivers` i `constructors`; brak ręcznego wskazywania źródeł poza rejestrem. |
+| MID-2 | Strategia URL resolverów nadal częściowo rozproszona między parserami. | `scrapers/base/helpers/url.py`, `scrapers/wiki/discovery.py`, domenowe list/single scrapers | Mniej duplikacji i spójne canonical URL dla L0/L1. | Scraper Core | Sprint 3 (do 2026-05-10) | 100% budowania URL przez wspólną strategię; redukcja duplikacji resolverów o min. 50%; testy alias/relative/fallback zielone. |
+| MID-3 | Część parserów/komponentów discovery ma rejestrację ręczną zamiast kontrolowanego auto-discovery. | `scrapers/wiki/discovery.py`, `layers/orchestration/factories.py` | Krótszy onboarding nowych domen i mniej incydentów „zapomnianej rejestracji”. | Platform Architecture | Sprint 3 (do 2026-05-10) | Min. 80% komponentów parser/extractor rejestrowanych automatycznie; 0 incydentów brakującej rejestracji przez 2 sprinty. |
+| MID-4 | Warstwa `scrapers/base` nadal ma obszary o mieszanej odpowiedzialności i duplikacji helperów. | `scrapers/base/helpers/*`, `scrapers/base/transformers/*`, `scrapers/base/mixins/*` | Uproszczenie API bazowego i łatwiejsze testowanie modułów bazowych. | Refactor Crew | Sprint 2-3 (do 2026-05-10) | Spadek duplikacji bloków o min. 30% (wg CI duplicate report); uproszczenie public API (min. 3 moduły z mniejszą liczbą punktów wejścia). |
+| MID-5 | Walidacja działa, ale jest częściowo rozproszona między schematami/rules i validatorami domenowymi. | `validation/schema_engine.py`, `validation/schema_rules.py`, `validation/composite_validator.py` | Jednolity silnik reguł i mniejszy koszt utrzymania walidatorów. | Data Quality | Sprint 3 (do 2026-05-10) | Min. 40% reguł walidacyjnych przeniesionych do wspólnego engine; redukcja duplikatów reguł w domenach; brak regresji w `tests/test_validators*.py`. |
+
+### Fala 3 — Strategiczne (4+ sprintów)
+
+| ID | Problem | Moduł | Expected impact | Owner | Deadline | Metryki sukcesu |
+|---|---|---|---|---|---|---|
+| STR-1 | Brak pełnej wspólnej bazy `Complete*Extractor` dla domen L0/L1. | `scrapers/*/complete_scraper.py`, `scrapers/base/*` | Niższy koszt rozwijania nowych domen i mocniejsze kontrakty OOP/DRY. | Platform Architecture | Sprint 5+ (target: 2026-06-07) | Redukcja zduplikowanych bloków logicznych o min. 40%; spadek LOC extractorów complete o min. 20%; min. 3 domeny przepięte na wspólną bazę. |
+| STR-2 | Brak pełnego domknięcia strict typing dla etapów 2–4 (`layers`, `validation`) i utrzymywanie wyjątków `ignore_errors`. | `mypy.ini`, `layers/*`, `validation/*` | Wyższa przewidywalność zmian i mniej błędów integracyjnych w pipeline. | Typing Guild | Sprint 6+ (target: 2026-06-21) | Usunięcie 100% `ignore_errors=True` dla etapów 2–4; 0 błędów mypy w scope; trwała redukcja `Any` do granic I/O. |
+| STR-3 | Brak trendu refaktoryzacji jako metryki zarządczej sprint→sprint (`removed_duplication` vs `added_duplication`). | `scripts/ci/duplicate_report.py`, dokumentacja roadmapy/DoD | Governance techniczny: decyzje backlogowe oparte na danych, nie intuicji. | Engineering Manager + DevEx | Sprint 6+ (target: 2026-06-21) | Raport trendu 3-sprintowego publikowany co sprint; dodatni bilans netto duplikacji przez min. 3 sprinty z rzędu; 100% PR ma sekcję „Refactor included”. |
+| STR-4 | Warstwa discovery i orkiestracji nadal wymaga ręcznych korekt przy rozszerzaniu nowych domen. | `scrapers/wiki/discovery.py`, `layers/application.py`, `layers/pipeline.py` | Skalowalne dodawanie domen (mniej kodu integracyjnego per nowy scraper). | Pipeline Core | Sprint 7+ (target: 2026-07-05) | Czas integracji nowej domeny skrócony o min. 50%; max 1 plik integracyjny wymagający ręcznej zmiany; uproszczenie API inicjalizacji pipeline (jedno wejście konfiguracyjne). |
+
+### Kolejność realizacji i punkty startowe (jawnie)
+- Fala 1 startuje z otwartych pozycji: Etap 1 (schema seed + quality logging), Etap 4 (metryki), rollout typowania (`docs/TYPING_GUARDRAILS.md`), oraz narzędzia `scripts/ci/*`.
+- Fala 2 bierze input z rejestru kroków i checkpointów (`data/checkpoints/*.json`) + backlogu D1-D4 (orchestrator, URL strategy, auto-discovery).
+- Fala 3 domyka długi strukturalne (wspólna baza extractorów, pełne strict typing, governance trendów duplikacji, skalowanie discovery).
