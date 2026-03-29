@@ -277,6 +277,60 @@ def test_table_parser_handles_rowspan_and_colspan_with_stable_mapping() -> None:
     assert result["raw_rows"][1]["Grand Prix"] == "Monaco"
 
 
+def test_table_parser_rowspan_cell_is_cleaned_after_expansion_regression() -> None:
+    html = """
+    <table class="wikitable">
+      <tr>
+        <th>Year</th>
+        <th>Grand Prix</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td rowspan="2">1953 [1]</td>
+        <td>Argentina</td>
+        <td>Win</td>
+      </tr>
+      <tr>
+        <td>Monaco</td>
+        <td>DNF</td>
+      </tr>
+    </table>
+    """
+    soup = _make_soup(html)
+    parser = TableParser()
+
+    result = parser.parse(soup.find("table"))
+
+    assert result["rows"] == [
+        ["1953", "Argentina", "Win"],
+        ["1953", "Monaco", "DNF"],
+    ]
+    assert result["raw_rows"][1]["Year"] == "1953"
+
+
+def test_table_parser_colspan_cells_remain_cleaned_regression() -> None:
+    html = """
+    <table class="wikitable">
+      <tr>
+        <th>Year</th>
+        <th>Result</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>1953</td>
+        <td colspan="2">Winner [2]</td>
+      </tr>
+    </table>
+    """
+    soup = _make_soup(html)
+    parser = TableParser()
+
+    result = parser.parse(soup.find("table"))
+
+    assert result["rows"] == [["1953", "Winner", "Winner"]]
+    assert result["raw_rows"] == [{"Year": "1953", "Result": "Winner", "Notes": "Winner"}]
+
+
 def test_navbox_parser():
     html = """
     <div role="navigation" class="navbox">
