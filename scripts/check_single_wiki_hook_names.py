@@ -4,7 +4,10 @@ import ast
 import sys
 from pathlib import Path
 
-from lib.check_runner import iter_python_paths, run_cli
+try:
+    from scripts.lib.check_runner import iter_python_paths, run_cli
+except ModuleNotFoundError:  # pragma: no cover - script execution fallback
+    from lib.check_runner import iter_python_paths, run_cli
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRAPERS_DIR = REPO_ROOT / "scrapers"
