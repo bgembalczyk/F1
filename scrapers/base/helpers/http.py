@@ -54,9 +54,16 @@ def init_scraper_options(
     *,
     include_urls: bool | None = None,
 ) -> "ScraperOptions":
+    """Zwróć nową instancję ``ScraperOptions`` bez mutowania argumentu wejściowego.
+
+    Semantyka helpera jest immutable:
+    - zawsze zwracana jest nowa instancja opcji (copy/replace),
+    - `include_urls` może nadpisać wyłącznie pole `ScraperOptions.include_urls`,
+    - pozostałe pola są kopiowane 1:1 z wejściowych opcji.
+    """
     from scrapers.base.options import ScraperOptions
 
-    resolved = options or ScraperOptions()
-    if include_urls is not None:
-        resolved.include_urls = include_urls
-    return resolved
+    base_options = options or ScraperOptions()
+    if include_urls is None:
+        return replace(base_options)
+    return replace(base_options, include_urls=include_urls)
