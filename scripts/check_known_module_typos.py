@@ -80,9 +80,9 @@ def run_check() -> list[str]:
     ]
 
 
-def main() -> int:
+def main(_argv: list[str]) -> int:
     return run_cli("known-module-typos", run_check)
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main(sys.argv[1:]))

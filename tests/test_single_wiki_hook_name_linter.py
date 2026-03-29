@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from scripts.check_single_wiki_hook_names import lint_path
+from scripts.check_single_wiki_hook_names import main
 
 
 def test_linter_accepts_standard_hooks(tmp_path: Path) -> None:
@@ -50,3 +51,30 @@ class AllowedAliasScraper(SingleWikiArticleScraperBase):
     )
 
     assert lint_path(file_path) == []
+
+
+def test_cli_supports_explicit_empty_target_list(capsys) -> None:
+    exit_code = main(["--paths"])
+
+    captured = capsys.readouterr()
+    assert exit_code == 0
+    assert "[single-wiki-hook-names] OK" in captured.out
+
+
+def test_cli_supports_explicit_target_list(tmp_path: Path, capsys) -> None:
+    bad_file = tmp_path / "bad_scraper.py"
+    bad_file.write_text(
+        """
+class BadScraper(SingleWikiArticleScraperBase):
+    def build_infobox_payload(self, soup):
+        return {}
+""".strip(),
+        encoding="utf-8",
+    )
+
+    exit_code = main(["--paths", str(bad_file)])
+
+    captured = capsys.readouterr()
+    assert exit_code == 1
+    assert "[single-wiki-hook-names] ERROR" in captured.out
+    assert "unsupported hook alias 'build_infobox_payload'" in captured.out

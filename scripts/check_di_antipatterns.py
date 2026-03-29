@@ -11,7 +11,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from scripts.lib.check_runner import iter_python_paths, run_cli
+from scripts.lib.check_runner import iter_python_paths
+from scripts.lib.check_runner import parse_target_paths
+from scripts.lib.check_runner import run_cli
 
 DEFAULT_TARGETS = [REPO_ROOT / "layers", REPO_ROOT / "scrapers" / "base"]
 
@@ -222,28 +224,29 @@ def _validate_adr_reference_for_major_changes(
 
 
 def main(argv: list[str]) -> int:
-    paths: list[Path] = []
+    paths, args = parse_target_paths(
+        argv,
+        default_paths=DEFAULT_TARGETS,
+        repo_root=REPO_ROOT,
+    )
     adr_reference_text = ""
     adr_required_violation_threshold = 5
 
     i = 0
-    while i < len(argv):
-        arg = argv[i]
-        if arg == "--adr-reference-text" and i + 1 < len(argv):
-            adr_reference_text = argv[i + 1]
+    while i < len(args):
+        arg = args[i]
+        if arg == "--adr-reference-text" and i + 1 < len(args):
+            adr_reference_text = args[i + 1]
             i += 2
             continue
-        if arg == "--adr-required-violation-threshold" and i + 1 < len(argv):
-            adr_required_violation_threshold = int(argv[i + 1])
+        if arg == "--adr-required-violation-threshold" and i + 1 < len(args):
+            adr_required_violation_threshold = int(args[i + 1])
             i += 2
             continue
-        paths.append(Path(arg))
         i += 1
 
-    resolved_paths = [REPO_ROOT / path for path in paths] if paths else None
-
     def _runner() -> list[str]:
-        violations = run_check(resolved_paths)
+        violations = run_check(paths)
         messages = [v.format_message(REPO_ROOT) for v in violations]
         messages.extend(
             _validate_adr_reference_for_major_changes(

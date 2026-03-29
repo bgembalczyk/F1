@@ -8,7 +8,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from scripts.lib.check_runner import iter_python_paths, run_cli
+from scripts.lib.check_runner import iter_python_paths
+from scripts.lib.check_runner import parse_target_paths
+from scripts.lib.check_runner import run_cli
 
 SCRAPERS_DIR = REPO_ROOT / "scrapers"
 
@@ -81,8 +83,8 @@ def lint_path(path: Path) -> list[str]:
 
 
 
-def run_check(argv: list[str] | None = None) -> list[str]:
-    targets = [Path(arg) for arg in (argv or [])] if argv else [SCRAPERS_DIR]
+def run_check(paths: list[Path] | None = None) -> list[str]:
+    targets = paths or [SCRAPERS_DIR]
     errors: list[str] = []
     for path in iter_python_paths(targets):
         errors.extend(lint_path(path))
@@ -90,7 +92,12 @@ def run_check(argv: list[str] | None = None) -> list[str]:
 
 
 def main(argv: list[str]) -> int:
-    return run_cli("single-wiki-hook-names", lambda: run_check(argv))
+    paths, _ = parse_target_paths(
+        argv,
+        default_paths=[SCRAPERS_DIR],
+        repo_root=REPO_ROOT,
+    )
+    return run_cli("single-wiki-hook-names", lambda: run_check(paths))
 
 
 if __name__ == "__main__":

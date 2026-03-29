@@ -6,6 +6,42 @@ from typing import Callable
 CheckRunner = Callable[[], list[str]]
 
 
+def parse_target_paths(
+    argv: list[str],
+    *,
+    default_paths: list[Path],
+    repo_root: Path | None = None,
+) -> tuple[list[Path], list[str]]:
+    """Parse optional `--paths` from argv.
+
+    Returns a tuple: (resolved_target_paths, remaining_args).
+    If `--paths` is omitted, `default_paths` are returned.
+    If `--paths` is present without values, an explicit empty list is returned.
+    """
+    remaining_args: list[str] = []
+    parsed_path_args: list[str] | None = None
+
+    i = 0
+    while i < len(argv):
+        arg = argv[i]
+        if arg != "--paths":
+            remaining_args.append(arg)
+            i += 1
+            continue
+
+        parsed_path_args = []
+        i += 1
+        while i < len(argv) and not argv[i].startswith("--"):
+            parsed_path_args.append(argv[i])
+            i += 1
+
+    if parsed_path_args is None:
+        return default_paths, remaining_args
+
+    base = repo_root or Path.cwd()
+    return [base / raw_path for raw_path in parsed_path_args], remaining_args
+
+
 def iter_python_paths(paths: list[Path]) -> list[Path]:
     """Collect all Python files from explicit files/directories."""
     python_paths: list[Path] = []
