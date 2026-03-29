@@ -5,6 +5,9 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
+from tests.architecture.registry import ARCHITECTURE_REGISTRY
+
+ENTRYPOINT_MODULES = ARCHITECTURE_REGISTRY.entrypoint_files
 from tests.architecture.rules import ENTRYPOINT_MODULES
 
 
