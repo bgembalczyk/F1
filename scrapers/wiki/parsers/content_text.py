@@ -10,7 +10,7 @@ from scrapers.wiki.parsers.sections.helpers import _split_into_parts
 from scrapers.wiki.parsers.sections.section import SectionParser
 
 
-class ContentTextParser(WikiParser):
+class ContentTextParser(WikiParser[dict[str, Any]]):
     def __init__(self) -> None:
         self.section_parser = SectionParser()
 

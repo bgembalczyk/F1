@@ -1,11 +1,15 @@
 from abc import ABC
 from abc import abstractmethod
 from typing import Any
+from typing import Generic
+from typing import TypeVar
 
 from bs4 import Tag
 
+TWikiParsed = TypeVar("TWikiParsed")
 
-class WikiParser(ABC):
+
+class WikiParser(ABC, Generic[TWikiParsed]):
     """Bazowa klasa dla wszystkich parserów HTML Wikipedii.
 
     Parser przetwarza konkretny fragment HTML (Tag) i zwraca
@@ -13,7 +17,7 @@ class WikiParser(ABC):
     """
 
     @abstractmethod
-    def parse(self, element: Tag) -> Any:
+    def parse(self, element: Tag, *args: Any, **kwargs: Any) -> TWikiParsed:
         """Parsuje przekazany element HTML.
 
         Args:

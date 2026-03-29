@@ -1,5 +1,4 @@
 from collections.abc import Callable
-from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -13,6 +12,8 @@ from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.rules import ParserRule
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
+from scrapers.wiki.parsers.types import WikiParsedPayload
+from scrapers.wiki.parsers.types import WikiParserData
 
 
 class WikiElementParserMixin:
@@ -38,7 +39,7 @@ class WikiElementParserMixin:
         self,
         *,
         predicate: Callable[[Tag], bool],
-        parser: Callable[[Tag], Any],
+        parser: Callable[[Tag], WikiParserData],
         result_type: str,
         priority: int | None = None,
     ) -> None:
@@ -92,7 +93,7 @@ class WikiElementParserMixin:
         )
 
     @staticmethod
-    def _has_infobox_class(classes: Any) -> bool:
+    def _has_infobox_class(classes: object) -> bool:
         if not classes:
             return False
         if isinstance(classes, str):
@@ -113,8 +114,8 @@ class WikiElementParserMixin:
         elements: list[Tag],
         *,
         section_context: SectionExtractionContext,
-    ) -> list[dict[str, Any]]:
-        result: list[dict[str, Any]] = []
+    ) -> list[WikiParsedPayload]:
+        result: list[WikiParsedPayload] = []
         for el in elements:
             parsed = self._parse_element(el, section_context=section_context)
             if parsed is not None:
@@ -126,7 +127,7 @@ class WikiElementParserMixin:
         el: Tag,
         *,
         section_context: SectionExtractionContext,
-    ) -> dict[str, Any] | None:
+    ) -> WikiParsedPayload | None:
         for rule in self._parser_rules:
             if rule.predicate(el):
                 return self._build_parsed_payload(
@@ -156,7 +157,7 @@ class WikiElementParserMixin:
         el: Tag,
         rule: ParserRule,
         section_context: SectionExtractionContext,
-    ) -> dict[str, Any]:
+    ) -> WikiParsedPayload:
         return {
             "kind": rule.result_type,
             "source_section_id": section_context.section_id,

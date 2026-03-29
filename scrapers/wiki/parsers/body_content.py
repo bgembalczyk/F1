@@ -8,7 +8,7 @@ from scrapers.wiki.parsers.category_links import CategoryLinksParser
 from scrapers.wiki.parsers.content_text import ContentTextParser
 
 
-class BodyContentParser(WikiParser):
+class BodyContentParser(WikiParser[dict[str, Any]]):
     """Parser głównej treści strony Wikipedii.
 
     Przetwarza div z id="bodyContent". Używa:

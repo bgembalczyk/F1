@@ -1,5 +1,3 @@
-from typing import Any
-
 from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
@@ -7,15 +5,16 @@ from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.text_cleaning import clean_table_cell_text
+from scrapers.wiki.parsers.types import TableParsedData
 
 
-class TableParser(WikiParser):
+class TableParser(WikiParser[TableParsedData]):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag) -> TableParsedData:
         """Parsuje tabelę wikitable HTML.
 
         Args:
