@@ -1,6 +1,9 @@
 from collections.abc import Callable
-from typing import Any
+from typing import TypeVar
+from typing import cast
 
+from layers.seed.data_classes import DiscoveryComponentProtocol
+from layers.seed.data_classes import RegistryEntryProtocol
 from layers.seed.data_classes import RegistryValidationRule
 from layers.seed.data_classes import RegistryValidationSpec
 from layers.seed.registry.constants import EXPLICIT_LAYER_ONE_SEED_REGISTRY
@@ -11,18 +14,22 @@ from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.wiki.discovery import discover_layer_one_seed_components
 
+RegistryEntryLikeT = TypeVar("RegistryEntryLikeT", bound=RegistryEntryProtocol)
+
 
 def _seed_entry_from_component(
     *,
     seed_name: str,
-    component: Any,
+    component: DiscoveryComponentProtocol,
     default_output_path: str,
     legacy_output_path: str,
 ) -> SeedRegistryEntry:
     metadata = component.metadata
+    config = getattr(component.cls, "CONFIG", None)
+    wikipedia_url = getattr(config, "url", "")
     return SeedRegistryEntry(
         seed_name=seed_name,
-        wikipedia_url=component.cls.CONFIG.url,
+        wikipedia_url=wikipedia_url,
         output_category=metadata.output_category,
         list_scraper_cls=component.cls,
         default_output_path=default_output_path,
@@ -32,8 +39,8 @@ def _seed_entry_from_component(
 
 def _validate_registry_entry(
     *,
-    entry: Any,
-    spec: RegistryValidationSpec,
+    entry: RegistryEntryLikeT,
+    spec: RegistryValidationSpec[RegistryEntryLikeT],
     seen_seed_names: set[str],
 ) -> None:
     _validate_unique_seed_name(
@@ -74,7 +81,7 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
         registry.append(
             _seed_entry_from_component(
                 seed_name=metadata.seed_name,
-                component=component,
+                component=cast(DiscoveryComponentProtocol, component),
                 default_output_path=metadata.default_output_path
                 or explicit.default_output_path,
                 legacy_output_path=metadata.legacy_output_path
@@ -95,7 +102,7 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
         registry.append(
             _seed_entry_from_component(
                 seed_name=seed_name,
-                component=component,
+                component=cast(DiscoveryComponentProtocol, component),
                 default_output_path=metadata.default_output_path,
                 legacy_output_path=metadata.legacy_output_path,
             ),
@@ -132,7 +139,11 @@ def _validate_wikipedia_url(
         raise ValueError(msg)
 
 
-def _validate_path_prefix(*, entry: Any, rule: RegistryValidationRule) -> None:
+def _validate_path_prefix(
+    *,
+    entry: RegistryEntryLikeT,
+    rule: RegistryValidationRule[RegistryEntryLikeT],
+) -> None:
     output_path = rule.extractor(entry)
     prefix = rule.expected_prefix(entry)
     if not output_path.startswith(prefix):
@@ -142,8 +153,8 @@ def _validate_path_prefix(*, entry: Any, rule: RegistryValidationRule) -> None:
 
 def _validate_registry(
     *,
-    registry: tuple[Any, ...],
-    spec: RegistryValidationSpec,
+    registry: tuple[RegistryEntryLikeT, ...],
+    spec: RegistryValidationSpec[RegistryEntryLikeT],
 ) -> None:
     seen_seed_names: set[str] = set()
 

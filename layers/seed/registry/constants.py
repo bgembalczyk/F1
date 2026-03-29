@@ -252,7 +252,9 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
 )
 
 
-SEED_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec(
+SEED_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec[
+    SeedRegistryEntry
+](
     duplicate_message=lambda seed_name: f"Duplicate seed_name found: {seed_name}",
     empty_url_message=lambda seed_name: f"Seed '{seed_name}' has empty wikipedia_url",
     path_rules=(
@@ -278,7 +280,9 @@ SEED_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec(
 )
 
 
-LIST_JOB_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec(
+LIST_JOB_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec[
+    ListJobRegistryEntry
+](
     duplicate_message=(
         lambda seed_name: f"Duplicate list seed_name found: {seed_name}"
     ),

@@ -5,7 +5,6 @@ import inspect
 from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
-from typing import Any
 
 from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.component_metadata import parse_component_metadata
@@ -17,7 +16,7 @@ if TYPE_CHECKING:
 
 @dataclass(frozen=True)
 class DiscoveredComponent:
-    cls: type[Any]
+    cls: type[object]
     metadata: ComponentMetadata
 
 
@@ -46,7 +45,7 @@ def _iter_discovery_module_names() -> tuple[str, ...]:
     )
 
 
-def _read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
+def _read_component_metadata(candidate: type[object]) -> ComponentMetadata | None:
     raw = getattr(candidate, COMPONENT_METADATA_ATTR, None)
     if raw is None:
         return None
@@ -65,7 +64,7 @@ def discover_components() -> tuple[DiscoveredComponent, ...]:
 
 def _discover_components_in_module(module: ModuleType) -> list[DiscoveredComponent]:
     result: list[DiscoveredComponent] = []
-    seen: set[type[Any]] = set()
+    seen: set[type[object]] = set()
 
     for _, candidate in inspect.getmembers(module, inspect.isclass):
         metadata = _read_component_metadata(candidate)
@@ -83,9 +82,9 @@ def _discover_components_in_module(module: ModuleType) -> list[DiscoveredCompone
     return result
 
 
-def build_layer_one_runner_map_discovered() -> dict[str, Any]:
-    runner_map: dict[str, Any] = {}
-    source_cls_by_seed: dict[str, type[Any]] = {}
+def build_layer_one_runner_map_discovered() -> dict[str, object]:
+    runner_map: dict[str, object] = {}
+    source_cls_by_seed: dict[str, type[object]] = {}
     for component in discover_components():
         metadata = component.metadata
         if metadata.layer != "layer_one" or metadata.component_type != "runner":
