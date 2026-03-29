@@ -45,9 +45,6 @@ class DiffAddedLinesProvider:
 
 
 class DuplicateFilter:
-    def __init__(self) -> None:
-        self._line_provider = DiffAddedLinesProvider()
-
     def _as_int(self, value: Any) -> int:
         try:
             return int(value)
@@ -83,11 +80,7 @@ class DuplicateFilter:
         head_sha: str,
         changed_files: list[str],
     ) -> list[dict[str, Any]]:
-        added_lines_map = self._line_provider.build_added_lines_map(
-            base_sha,
-            head_sha,
-            changed_files,
-        )
+        added_lines_map = build_added_lines_map(base_sha, head_sha, changed_files)
         if changed_files and not added_lines_map:
             return duplicates
         return [
@@ -98,13 +91,6 @@ class DuplicateFilter:
 
 
 class MarkdownRenderer:
-    def _line_range(self, meta: dict[str, Any]) -> str:
-        start = meta.get("start", 0)
-        end = meta.get("end", 0)
-        if start and end:
-            return f"L{start}-L{end}"
-        return "line ?"
-
     def render(
         self,
         duplicates: list[dict[str, Any]],
@@ -112,17 +98,19 @@ class MarkdownRenderer:
         fail_threshold: int,
     ) -> str:
         count = len(duplicates)
-        status = "✅ Brak nowych duplikatów w zmienionych plikach."
-        if count >= fail_threshold:
+        status_type = resolve_status(count, warn_threshold, fail_threshold)
+        if status_type == CiStatus.fail:
             status = (
                 f"❌ Wykryto **{count}** nowych duplikatów "
                 f"(próg blokujący: {fail_threshold})."
             )
-        elif count >= warn_threshold:
+        elif status_type == CiStatus.warn:
             status = (
                 f"⚠️ Wykryto **{count}** nowych duplikatów "
                 f"(próg ostrzegawczy: {warn_threshold})."
             )
+        else:
+            status = "✅ Brak nowych duplikatów w zmienionych plikach."
 
         lines = [
             "## Raport duplikatów (jscpd)",
@@ -146,8 +134,8 @@ class MarkdownRenderer:
             first = dup["first"]
             second = dup["second"]
             lines.append(
-                f"{idx}. `{first['name']}` ({self._line_range(first)}) "
-                f"↔ `{second['name']}` ({self._line_range(second)})",
+                f"{idx}. `{first['name']}` ({line_range(first)}) "
+                f"↔ `{second['name']}` ({line_range(second)})",
             )
             if dup["fragment"]:
                 snippet = dup["fragment"][:400]
@@ -158,45 +146,19 @@ class MarkdownRenderer:
         return "\n".join(lines)
 
 
-class GithubOutputWriter:
-    def write(
-        self,
-        output_path: Path,
-        duplicate_count: int,
-        duplicate_status: str,
-    ) -> None:
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        with output_path.open("a", encoding="utf-8") as fh:
-            fh.write(f"duplicate_count={duplicate_count}\n")
-            fh.write(f"duplicate_status={duplicate_status}\n")
-
-
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--report-json", required=True)
-    parser.add_argument("--output-md", required=True)
-    parser.add_argument("--warn-threshold", type=int, required=True)
-    parser.add_argument("--fail-threshold", type=int, required=True)
-    parser.add_argument("--base-sha", default="")
-    parser.add_argument("--head-sha", default="")
-    parser.add_argument("--changed-files", default="")
-    parser.add_argument("--github-output", required=True)
+    parser = build_ci_parser("Generate duplicate report for changed files in PR.")
     args = parser.parse_args()
 
     normalizer = DuplicateNormalizer()
     duplicate_filter = DuplicateFilter()
     markdown_renderer = MarkdownRenderer()
-    github_output_writer = GithubOutputWriter()
 
-    report_path = Path(args.report_json)
-    if not report_path.exists():
-        duplicates: list[dict[str, Any]] = []
-    else:
-        payload = json.loads(report_path.read_text(encoding="utf-8"))
-        raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
-        duplicates = [normalizer.normalize(item) for item in raw_duplicates]
+    payload = read_json_file(Path(args.report_json))
+    raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
+    duplicates = [normalizer.normalize(item) for item in raw_duplicates]
 
-    changed_files = [part for part in args.changed_files.split(",") if part]
+    changed_files = split_csv(args.changed_files)
     new_duplicates = duplicate_filter.filter_new_duplicates(
         duplicates,
         args.base_sha,
@@ -210,19 +172,18 @@ def main() -> int:
         args.warn_threshold,
         args.fail_threshold,
     )
+    write_text_file(Path(args.output_md), markdown)
 
-    output_md_path = Path(args.output_md)
-    output_md_path.parent.mkdir(parents=True, exist_ok=True)
-    output_md_path.write_text(markdown, encoding="utf-8")
+    status = resolve_status(count, args.warn_threshold, args.fail_threshold)
+    append_output_vars(
+        Path(args.github_output),
+        {
+            "duplicate_count": count,
+            "duplicate_status": status.value,
+        },
+    )
 
-    status = "ok"
-    if count >= args.fail_threshold:
-        status = "fail"
-    elif count >= args.warn_threshold:
-        status = "warn"
-
-    github_output_writer.write(Path(args.github_output), count, status)
-    return 0
+    return exit_code_for_status(status)
 
 
 if __name__ == "__main__":
