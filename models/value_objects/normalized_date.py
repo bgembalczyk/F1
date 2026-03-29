@@ -28,5 +28,9 @@ class NormalizedDate(ValueObject):
             return cls(text=value, iso=None)
         return cls(text=str(value).strip(), iso=None)
 
+    @classmethod
+    def from_mapping(cls, data: Mapping[str, Any]) -> "NormalizedDate":
+        return cls(text=data.get("text"), iso=data.get("iso"))
+
     def to_dict(self) -> dict[str, Any]:
         return {"text": self.text, "iso": self.iso}

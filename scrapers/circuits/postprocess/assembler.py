@@ -40,11 +40,10 @@ class CircuitRecordAssembler(BaseRecordAssembler):
 
     def assemble(
         self,
-        *,
         payload: CircuitRecordDTO,
     ) -> dict[str, Any]:
         record = super().assemble(
-            payload=BaseRecordAssemblerInput(
+            BaseRecordAssemblerInput(
                 url=payload.url,
                 metadata=payload.metadata,
                 infobox=payload.infobox,

@@ -48,6 +48,7 @@ def test_no_typo_import_path_remains():
         matches.extend(
             py_path.relative_to(project_root)
             for py_path in root.rglob("*.py")
+            if py_path.name != "test_key_package_filename_typos.py"
             if disallowed_import in py_path.read_text(encoding="utf-8")
         )
 
@@ -69,3 +70,45 @@ def test_no_parallel_typo_and_correct_module_pairs_exist():
             duplicates.append(package)
 
     assert not duplicates, f"Found parallel typo/correct module pairs: {duplicates}"
+
+
+def test_orchestration_components_do_not_contain_section_source_typo():
+    project_root = Path(__file__).resolve().parents[1]
+    package = project_root / "scrapers" / "base" / "orchestration" / "components"
+
+    assert (package / "section_source_adapter.py").exists(), (
+        "Missing expected module: "
+        f"{package / 'section_source_adapter.py'}"
+    )
+    assert not (package / "section_soruce_adapter.py").exists(), (
+        "Found typo module: "
+        f"{package / 'section_soruce_adapter.py'}"
+    )
+
+
+def test_no_typo_import_for_section_source_adapter_remains():
+    project_root = Path(__file__).resolve().parents[1]
+    disallowed_import = "scrapers.base.orchestration.components.section_soruce_adapter"
+    source_dirs = (
+        "layers",
+        "scrapers",
+        "models",
+        "infrastructure",
+        "validation",
+        "complete_extractor",
+        "tests",
+    )
+
+    matches = []
+    for source_dir in source_dirs:
+        root = project_root / source_dir
+        if not root.exists():
+            continue
+        matches.extend(
+            py_path.relative_to(project_root)
+            for py_path in root.rglob("*.py")
+            if py_path.name != "test_key_package_filename_typos.py"
+            if disallowed_import in py_path.read_text(encoding="utf-8")
+        )
+
+    assert not matches, f"Found typo import path(s): {matches}"
