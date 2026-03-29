@@ -279,6 +279,17 @@ Konfiguracja bramek znajduje się w plikach:
 - `importlinter.ini`
 - `.github/workflows/static-quality-gates.yml`
 
+### 8.1 Mapowanie reguł checklisty PR -> automatyczne bramki
+
+Dokumentacja pozostaje opisowa, ale egzekucja reguł jest realizowana przez automatyczne bramki CI.
+
+| Reguła z checklisty PR | Automated check (źródło egzekucji) |
+|---|---|
+| Brak nowych `Any` | `Strict typing regression gate (mypy)` w `.github/workflows/static-quality-gates.yml` (`scripts/ci/mypy_regression_gate.py`) |
+| Granice modułów | `Architecture tests` (`tests/test_architecture_import_rules.py`, `tests/test_section_architecture_boundaries.py`) + `import-linter` (`lint-imports --config importlinter.ini`) |
+| Duplikacja | `Scan changed Python files for duplicate fragments (jscpd)` + `Duplicate code and oversized units gate (pylint)` |
+| Architecture impact | Walidator PR template: `scripts/ci/validate_pr_template.py` + wymagane pola w `.github/pull_request_template.md` |
+
 ## 9. Standard deklaracji konfiguracji scraperów (build_scraper_config + schema DSL)
 
 Ujednolicamy jeden standard dla deklaracji `CONFIG` w scraperach tabelowych:
