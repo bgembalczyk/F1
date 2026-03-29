@@ -2,6 +2,7 @@
 import pytest
 
 from models.records.factories.build import RECORD_BUILDERS
+from models.records.factories.build import RecordType
 from models.records.factories.build import build_constructor_record
 from models.records.factories.build import build_driver_record
 from models.records.factories.build import build_fatality_record
@@ -146,6 +147,47 @@ def test_record_builders_facade_supports_typed_and_generic_builds() -> None:
 
     assert season_record["year"] == 2023
     assert generic_record["year"] == 2024
+
+
+def test_record_builders_api_compatibility_for_popular_record_types() -> None:
+    season_from_string = RECORD_BUILDERS.build("season", {"year": "2025"})
+    season_from_enum = RECORD_BUILDERS.build(RecordType.SEASON, {"year": "2025"})
+    driver_from_string = RECORD_BUILDERS.build(
+        "driver",
+        {
+            "driver": {"text": "Test Driver", "url": ""},
+            "nationality": "Polish",
+            "is_active": False,
+            "is_world_champion": False,
+            "seasons_competed": [],
+            "drivers_championships": {"count": 0, "seasons": []},
+        },
+    )
+    driver_from_enum = RECORD_BUILDERS.build(
+        RecordType.DRIVER,
+        {
+            "driver": {"text": "Test Driver", "url": ""},
+            "nationality": "Polish",
+            "is_active": False,
+            "is_world_champion": False,
+            "seasons_competed": [],
+            "drivers_championships": {"count": 0, "seasons": []},
+        },
+    )
+
+    assert season_from_string == season_from_enum
+    assert driver_from_string == driver_from_enum
+    assert build_season_record({"year": "2025"})["year"] == 2025
+    assert build_driver_record(
+        {
+            "driver": {"text": "Test Driver", "url": ""},
+            "nationality": "Polish",
+            "is_active": False,
+            "is_world_champion": False,
+            "seasons_competed": [],
+            "drivers_championships": {"count": 0, "seasons": []},
+        },
+    )["driver"]["text"] == "Test Driver"
 
 
 def test_record_builders_facade_raises_for_unsupported_type() -> None:
