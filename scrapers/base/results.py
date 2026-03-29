@@ -4,14 +4,21 @@ from dataclasses import field
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
-from typing import TYPE_CHECKING
+import typing
 
+from scrapers.base.export.service import ExportService
 from scrapers.base.normalization import NormalizationRule
 from scrapers.base.normalization import RecordNormalizer
 from validation.validator_base import ExportRecord
 
-if TYPE_CHECKING:
-    from scrapers.base.export.exporters import DataExporter
+if typing.TYPE_CHECKING:
+    from scrapers.base.export.contracts import ExporterProtocol
+
+
+def _default_export_service() -> ExportService:
+    from scrapers.base.export.composition import create_default_export_service
+
+    return create_default_export_service()
 
 
 @dataclass(frozen=True)
@@ -19,6 +26,7 @@ class ScrapeResult:
     data: list[ExportRecord]
     source_url: str | None
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    export_service: ExportService = field(default_factory=_default_export_service)
 
     def _with_normalized_data(
         self,
@@ -39,13 +47,14 @@ class ScrapeResult:
             data=normalized,
             source_url=self.source_url,
             timestamp=self.timestamp,
+            export_service=self.export_service,
         )
 
     def to_json(
         self,
         path: str | Path,
         *,
-        exporter: "DataExporter | None" = None,
+        exporter: "ExporterProtocol | None" = None,
         indent: int = 2,
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
@@ -55,10 +64,10 @@ class ScrapeResult:
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
         )
-        exporter = self._resolve_exporter(exporter)
-        exporter.to_json(
+        self.export_service.to_json(
             normalized,
             path,
+            exporter=exporter,
             indent=indent,
             include_metadata=include_metadata,
         )
@@ -67,43 +76,24 @@ class ScrapeResult:
         self,
         path: str | Path,
         *,
-        exporter: "DataExporter | None" = None,
+        exporter: "ExporterProtocol | None" = None,
         fieldnames: Sequence[str] | None = None,
         fieldnames_strategy: str = "union",
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
         include_metadata: bool = False,
     ) -> None:
-        from scrapers.base.export.export_helpers import fieldnames_from_first_row
-        from scrapers.base.export.export_helpers import fieldnames_from_union
-        from scrapers.base.format.formatter_helpers import extract_data
-
         normalized = self._with_normalized_data(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
         )
 
-        if fieldnames is None:
-            data = extract_data(normalized)
-            if data:
-                if fieldnames_strategy == "union":
-                    fieldnames = fieldnames_from_union(data)
-                elif fieldnames_strategy == "first_row":
-                    fieldnames = fieldnames_from_first_row(data)
-                else:
-                    msg = (
-                        "Nieznana strategia fieldnames: "
-                        f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'."
-                    )
-                    raise ValueError(
-                        msg,
-                    )
-
-        exporter = self._resolve_exporter(exporter)
-        exporter.to_csv(
+        self.export_service.to_csv(
             normalized,
             path,
+            exporter=exporter,
             fieldnames=fieldnames,
+            fieldnames_strategy=fieldnames_strategy,
             include_metadata=include_metadata,
         )
 
@@ -113,16 +103,8 @@ class ScrapeResult:
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
     ):
-        from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
-
         normalized = self._with_normalized_data(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
         )
-        return PandasDataFrameFormatter().format(normalized)
-
-    @staticmethod
-    def _resolve_exporter(exporter: "DataExporter | None") -> "DataExporter":
-        from scrapers.base.export.exporters import DataExporter
-
-        return exporter or DataExporter()
+        return self.export_service.to_dataframe(normalized)
