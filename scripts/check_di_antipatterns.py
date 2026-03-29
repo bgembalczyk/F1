@@ -48,6 +48,7 @@ ALLOWED_FACTORY_METHOD_PATTERNS = (
 )
 ADR_TOKEN_PATTERN = re.compile(r"\bADR-\d{4}\b", re.IGNORECASE)
 ALLOW_COMMENT = "di-antipattern-allow:"
+DI_ADR_THRESHOLD = 5
 
 
 @dataclass(frozen=True)
@@ -232,7 +233,7 @@ def main(argv: list[str] | None = None) -> int:
     argv = argv or []
     paths: list[Path] = []
     adr_reference_text = ""
-    adr_required_violation_threshold = 5
+    adr_required_violation_threshold = DI_ADR_THRESHOLD
 
     i = 0
     while i < len(argv):
