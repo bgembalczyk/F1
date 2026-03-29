@@ -104,7 +104,7 @@ def test_request_executor_retries_after_retryable_status() -> None:
         headers={"X": "1"},
         timeout=3,
         request_func=request_func,
-        request_exception_cls=DummyRequestError,
+        request_error_contract=DummyRequestError,
     )
 
     assert response.status_code == 200
@@ -126,7 +126,7 @@ def test_request_executor_raises_after_exhausted_retryable_exceptions() -> None:
             headers={"X": "1"},
             timeout=3,
             request_func=request_func,
-            request_exception_cls=DummyRequestError,
+            request_error_contract=DummyRequestError,
         )
     except DummyRequestError:
         pass
