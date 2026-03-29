@@ -140,6 +140,10 @@ jobs:
         run: |
           lint-imports --config importlinter.ini
 
+      - name: Unused imports regression gate (layer wiring)
+        run: |
+          ruff check layers/zero/executor.py layers/application.py --select F401
+
       - name: Strict typing regression gate (mypy)
         run: |
           mypy --config-file mypy.ini

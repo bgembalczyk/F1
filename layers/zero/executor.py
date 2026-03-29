@@ -1,7 +1,6 @@
 from collections.abc import Callable
 from pathlib import Path
 
-from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
