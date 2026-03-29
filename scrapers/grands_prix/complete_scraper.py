@@ -21,9 +21,9 @@ class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
     )
     url = GrandsPrixListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_cls=GrandsPrixListScraper,
+        list_scraper_classes=(GrandsPrixListScraper,),
         single_scraper_cls=F1SingleGrandPrixScraper,
-        detail_url_field_path="race_title.url",
+        detail_url_field_paths=("race_title.url",),
         record_assembly_strategy=ExtractDetailFieldStrategy(detail_field="by_year"),
     )
 

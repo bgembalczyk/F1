@@ -21,7 +21,7 @@ class F1CompleteEngineManufacturerDataExtractor(CompleteExtractorBase):
     )
     url = EngineManufacturersListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_clses=(
+        list_scraper_classes=(
             EngineManufacturersListScraper,
             IndianapolisOnlyEngineManufacturersListScraper,
         ),

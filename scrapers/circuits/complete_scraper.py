@@ -23,9 +23,9 @@ class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
     )
     url = CircuitsListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_cls=CircuitsListScraper,
+        list_scraper_classes=(CircuitsListScraper,),
         single_scraper_cls=F1SingleCircuitScraper,
-        detail_url_field_path="circuit.url",
+        detail_url_field_paths=("circuit.url",),
         record_postprocessor=CircuitService.normalize_record,
     )
 
