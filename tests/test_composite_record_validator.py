@@ -1,5 +1,8 @@
 from validation.composite_validator import CompositeRecordValidator
 from validation.issue import ValidationIssue
+from validation.rules import RangeRule
+from validation.rules import RequiredFieldRule
+from validation.rules import TypeRule
 from validation.rules import ValueRange
 from validation.rules import build_common_rules
 
@@ -41,3 +44,47 @@ def test_validation_issue_custom_supports_field_name() -> None:
     assert issue.code == "rule"
     assert issue.field == "points"
     assert issue.message == "Invalid value"
+
+
+def test_common_rules_return_rule_objects_with_introspection() -> None:
+    rules = build_common_rules(
+        required=("name",),
+        types={"count": int},
+        allow_none=("count",),
+        ranges={"count": ValueRange(min_value=0, max_value=10)},
+    )
+
+    assert isinstance(rules[0], RequiredFieldRule)
+    assert isinstance(rules[1], TypeRule)
+    assert isinstance(rules[2], RangeRule)
+    assert rules[0].rule_name == "required_field"
+    assert rules[0].rule_params == {"field": "name"}
+    assert rules[1].rule_params == {
+        "field": "count",
+        "expected_types": ("int",),
+        "allow_none": True,
+    }
+    assert rules[2].rule_params == {
+        "field": "count",
+        "min_value": 0,
+        "max_value": 10,
+    }
+
+
+def test_composite_validator_describe_rules_returns_name_and_params() -> None:
+    common_rules = build_common_rules(required=("name",))
+
+    def domain_rule(record):
+        return [] if record else []
+
+    validator = CompositeRecordValidator(
+        common_rules=common_rules,
+        domain_rules=(domain_rule,),
+    )
+
+    snapshot = validator.describe_rules()
+
+    assert snapshot["common_rules"] == [
+        {"name": "required_field", "params": {"field": "name"}},
+    ]
+    assert snapshot["domain_rules"] == [{"name": "function", "params": {}}]
