@@ -179,6 +179,8 @@ class RecordValidator(ABC):
         schema: RecordSchema | Mapping[str, Any],
     ) -> list[ValidationIssue]:
         normalized = cls._coerce_schema(schema)
+        if isinstance(schema, RecordSchema):
+            return schema.validate(record)
         errors: list[ValidationIssue] = []
         errors.extend(cls.require_keys(record, normalized.required))
         allow_none = set(normalized.allow_none)
@@ -332,12 +334,4 @@ class RecordValidator(ABC):
 
     @staticmethod
     def _coerce_schema(schema: RecordSchema | Mapping[str, Any]) -> RecordSchema:
-        if isinstance(schema, RecordSchema):
-            return schema
-        return RecordSchema(
-            required=schema.get("required", ()),
-            types=schema.get("types", {}),
-            allow_none=schema.get("allow_none", ()),
-            nested=schema.get("nested", {}),
-            custom_validators=schema.get("custom_validators", ()),
-        )
+        return RecordSchema.from_mapping(schema)

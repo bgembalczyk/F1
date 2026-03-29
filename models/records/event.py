@@ -5,13 +5,12 @@ from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from validation.issue import ValidationIssue
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
     event = record.get("event")
     if isinstance(event, dict):
-        return RecordValidator.validate_schema(event, LINK_SCHEMA)
+        return LINK_SCHEMA.validate(event)
     if isinstance(event, list):
         errors: list[ValidationIssue] = []
         for index, item in enumerate(event):
@@ -21,10 +20,8 @@ def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
                 )
                 continue
             errors.extend(
-                RecordValidator.prefix_errors(
-                    RecordValidator.validate_schema(item, LINK_SCHEMA),
-                    f"event[{index}]",
-                ),
+                error.with_prefix(f"event[{index}]")
+                for error in LINK_SCHEMA.validate(item)
             )
         return errors
     if event is not None and not isinstance(event, str):

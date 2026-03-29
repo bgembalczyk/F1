@@ -3,7 +3,6 @@ from typing import Any
 
 from validation.issue import ValidationIssue
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 class ValidatedModel:
@@ -23,7 +22,7 @@ class ValidatedModel:
         record: Mapping[str, Any],
         schema: RecordSchema | Mapping[str, Any],
     ) -> list[ValidationIssue]:
-        return RecordValidator.validate_schema(record, schema)
+        return RecordSchema.from_mapping(schema).validate(record)
 
     @classmethod
     def validate_record(cls, record: Mapping[str, Any]) -> list[ValidationIssue]:

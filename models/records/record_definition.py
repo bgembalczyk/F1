@@ -8,7 +8,6 @@ from typing import Any
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 @dataclass(frozen=True)
@@ -42,6 +41,6 @@ def build_validator(
     schema = definition.to_schema()
 
     def validate_record(record: dict[str, Any]) -> list[ValidationIssue]:
-        return RecordValidator.validate_schema(record, schema)
+        return schema.validate(record)
 
     return validate_record
