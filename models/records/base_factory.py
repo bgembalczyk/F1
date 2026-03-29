@@ -3,13 +3,25 @@
 from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
+from typing import Protocol
 from typing import TypedDict
 from typing import TypeVar
+from typing import runtime_checkable
 
 from models.mappers.field_aliases import apply_field_aliases
 from models.records.field_normalizer import FieldNormalizer
 
 T = TypeVar("T")
+
+
+@runtime_checkable
+class RecordFactoryProtocol(Protocol):
+    """Structural protocol for all record factories registered in FACTORY_REGISTRY."""
+
+    record_type: str
+
+    def build(self, record: Mapping[str, Any]) -> Any:
+        ...
 
 
 class FactorySpec(TypedDict, total=False):
