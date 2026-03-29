@@ -1,5 +1,8 @@
 # Index - Dokumentacja UML i Analiza Struktury Projektu
 
+> Ten dokument indeksuje wyłącznie obszar UML. Canonical indeks całej dokumentacji: [`docs/README.md`](README.md).
+
+
 ## 📋 Spis Treści
 
 ### Diagramy UML (PlantUML)

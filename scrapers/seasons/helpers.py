@@ -4,6 +4,7 @@ from typing import Any
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.results import ScrapeResult
+from scrapers.base.services.result_export_service import ResultExportService
 from scrapers.seasons.complete_scraper import CompleteSeasonDataExtractor
 
 
@@ -30,6 +31,7 @@ def export_complete_seasons(
     scraper.logger.info("Pobrano rekordów: %s", len(data))
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    result_export_service = ResultExportService()
 
     for season_entry in data:
         season_info = season_entry.get("season")
@@ -41,4 +43,4 @@ def export_complete_seasons(
             data=[season_entry],
             source_url=getattr(scraper, "url", None),
         )
-        result.to_json(json_path, exporter=scraper.exporter)
+        result_export_service.to_json(result, json_path, exporter=scraper.exporter)

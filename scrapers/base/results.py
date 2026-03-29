@@ -1,10 +1,7 @@
-from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
-from typing import TYPE_CHECKING
 
 from scrapers.base.export.service import ExportService
 from scrapers.base.normalization import NormalizationRule
@@ -19,6 +16,8 @@ def _default_export_service() -> ExportService:
     from scrapers.base.export.composition import create_default_export_service
 
     return create_default_export_service()
+
+from validation.validator_base import ExportRecord
 
 
 @dataclass(frozen=True)

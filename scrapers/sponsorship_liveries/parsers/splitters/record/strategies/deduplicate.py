@@ -1,5 +1,9 @@
 from typing import Any
 
+from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
+
 
 class DeduplicateRecordStrategy:
     def __init__(self):
@@ -8,8 +12,8 @@ class DeduplicateRecordStrategy:
     def reset(self) -> None:
         self._seen.clear()
 
-    def apply(self, record: dict[str, Any]) -> list[dict[str, Any]]:
-        fingerprint = self._fingerprint(record)
+    def apply(self, record: PipelineRecord) -> list[PipelineRecord]:
+        fingerprint = self._fingerprint(record.payload)
         if fingerprint in self._seen:
             return []
         self._seen.add(fingerprint)
