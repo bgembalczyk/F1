@@ -35,6 +35,10 @@ from infrastructure.gemini.constants import API_URL_TEMPLATE
 from infrastructure.gemini.constants import DEFAULT_KEY_FILE
 from infrastructure.gemini.constants import DEFAULT_MODELS
 from infrastructure.gemini.constants import DEFAULT_TIMEOUT
+from infrastructure.gemini.errors import GeminiHttpError
+from infrastructure.gemini.errors import GeminiRateLimitExhaustedError
+from infrastructure.gemini.errors import GeminiResponseParseError
+from infrastructure.gemini.errors import GeminiTransportError
 from infrastructure.gemini.model_config import ModelConfig
 from infrastructure.gemini.model_state import ModelState
 
@@ -141,7 +145,7 @@ class GeminiClient:
                     f"Modele z błędem API: {error_models or '(brak)'}\n"
                     f"Dostępne modele: {[s.model for s in self._model_states]}"
                 )
-                raise RuntimeError(
+                raise GeminiRateLimitExhaustedError(
                     msg,
                 )
 
@@ -158,7 +162,13 @@ class GeminiClient:
                     model=model,
                     response_mime_type=response_mime_type,
                 )
-            except RuntimeError:
+            except GeminiTransportError:
+                error_models.add(model)
+                continue
+            except GeminiHttpError:
+                error_models.add(model)
+                continue
+            except GeminiResponseParseError:
                 error_models.add(model)
                 continue
 
@@ -197,7 +207,7 @@ class GeminiClient:
         parsed_url = urllib.parse.urlparse(url)
         if parsed_url.scheme != "https":
             msg = "Gemini API endpoint musi używać schematu https."
-            raise RuntimeError(msg)
+            raise GeminiTransportError(msg)
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseMimeType": response_mime_type},
@@ -218,7 +228,7 @@ class GeminiClient:
             parsed_req_url = urllib.parse.urlparse(req_url)
             if parsed_req_url.scheme != "https":
                 msg = "Żądanie Gemini API musi używać schematu https."
-                raise RuntimeError(msg)
+                raise GeminiTransportError(msg)
 
             with urllib.request.urlopen(  # noqa: S310
                 req,
@@ -232,7 +242,7 @@ class GeminiClient:
                 f"Gemini API zwróciło HTTP {exc.code}: {exc.reason}\n"
                 f"Response body:\n{error_body}"
             )
-            raise RuntimeError(
+            raise GeminiHttpError(
                 msg,
             ) from exc
         except urllib.error.URLError as exc:
@@ -242,7 +252,7 @@ class GeminiClient:
                 "poprawność endpointu.\n"
                 f"Szczegóły: {exc}"
             )
-            raise RuntimeError(
+            raise GeminiTransportError(
                 msg,
             ) from exc
 
@@ -253,7 +263,7 @@ class GeminiClient:
             api_response = json.loads(raw)
         except json.JSONDecodeError as exc:
             msg = f"Gemini API zwróciło niepoprawny JSON:\n{raw}"
-            raise RuntimeError(
+            raise GeminiResponseParseError(
                 msg,
             ) from exc
 
@@ -270,7 +280,7 @@ class GeminiClient:
                 "Pełna odpowiedź:\n"
                 f"{json.dumps(api_response, ensure_ascii=False, indent=2)}"
             )
-            raise RuntimeError(
+            raise GeminiResponseParseError(
                 msg,
             )
 
@@ -283,7 +293,7 @@ class GeminiClient:
                 "Pełna odpowiedź API:\n"
                 f"{json.dumps(api_response, ensure_ascii=False, indent=2)}"
             )
-            raise RuntimeError(
+            raise GeminiResponseParseError(
                 msg,
             ) from exc
 
