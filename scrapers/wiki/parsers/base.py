@@ -12,6 +12,9 @@ class WikiParser(ABC):
     wyekstrahowane dane w postaci słownika.
     """
 
+    def __init__(self, *args: object, **kwargs: object) -> None:
+        super().__init__(*args, **kwargs)
+
     @abstractmethod
     def parse(self, element: Tag) -> Any:
         """Parsuje przekazany element HTML.
