@@ -2,8 +2,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from layers.orchestration.factories import LayerZeroRunConfigFactory
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
+from layers.orchestration.protocols import LayerOneRunnerProtocol
+from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.runners.circuits import CircuitsRunner
 from layers.orchestration.runners.constructors import ConstructorsRunner
 from layers.orchestration.runners.drivers import DriversRunner
@@ -15,10 +16,8 @@ from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 if TYPE_CHECKING:
     from pathlib import Path
 
-    from layers.orchestration.runners.layer_job import LayerJobRunner
 
-
-def _build_explicit_layer_one_runner_map() -> dict[str, LayerJobRunner]:
+def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
     return {
         "grands_prix": GrandPrixRunner(),
         "circuits": CircuitsRunner(),
@@ -29,22 +28,25 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerJobRunner]:
 
 
 def _merge_runner_maps(
-    discovered: dict[str, LayerJobRunner],
-    explicit: dict[str, LayerJobRunner],
-) -> dict[str, LayerJobRunner]:
+    discovered: dict[str, LayerOneRunnerProtocol],
+    explicit: dict[str, LayerOneRunnerProtocol],
+) -> dict[str, LayerOneRunnerProtocol]:
     merged = dict(discovered)
     for seed_name, runner in explicit.items():
         merged.setdefault(seed_name, runner)
     return merged
 
 
-def build_layer_one_runner_map() -> dict[str, LayerJobRunner]:
+def build_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
     explicit_runner_map = _build_explicit_layer_one_runner_map()
     discovered_runner_map = build_layer_one_runner_map_discovered()
     return _merge_runner_maps(discovered_runner_map, explicit_runner_map)
 
 
-def build_layer_zero_run_config_factory_map() -> dict[str, LayerZeroRunConfigFactory]:
+def build_layer_zero_run_config_factory_map() -> dict[
+    str,
+    LayerZeroRunConfigFactoryProtocol,
+]:
     return {
         "sponsorship_liveries": SponsorshipLiveriesRunConfigFactory(),
     }
