@@ -76,6 +76,24 @@ def _executor(
     )
 
 
+def _build_default_and_local_run_config(
+    *,
+    local_scraper_kwargs: dict[str, object] | None = None,
+) -> tuple[RunConfig, RunConfig]:
+    default_run_config = RunConfig(
+        output_dir=Path("/tmp"),
+        include_urls=False,
+        debug_dir=Path("/tmp/debug"),
+    )
+    local_run_config = RunConfig(
+        output_dir=Path("/tmp"),
+        include_urls=False,
+        debug_dir=Path("/tmp/debug"),
+        scraper_kwargs=(local_scraper_kwargs if local_scraper_kwargs is not None else {}),
+    )
+    return default_run_config, local_run_config
+
+
 def test_resolve_config_factory_uses_builder_result() -> None:
     expected = {"drivers": object()}
     executor = _executor(run_config_factory_map_builder=lambda: expected)
@@ -122,16 +140,8 @@ def test_run_single_job_passes_local_run_config_when_kwargs_present() -> None:
     ScraperRunner.run_and_export = _capture_call
     executor = _executor()
 
-    default_run_config = RunConfig(
-        output_dir=Path("/tmp"),
-        include_urls=False,
-        debug_dir=Path("/tmp/debug"),
-    )
-    local_run_config = RunConfig(
-        output_dir=Path("/tmp"),
-        include_urls=False,
-        debug_dir=Path("/tmp/debug"),
-        scraper_kwargs={"x": 1},
+    default_run_config, local_run_config = _build_default_and_local_run_config(
+        local_scraper_kwargs={"x": 1},
     )
 
     try:
@@ -159,16 +169,7 @@ def test_run_single_job_passes_global_run_config_when_local_kwargs_missing() -> 
     ScraperRunner.run_and_export = _capture_call
     executor = _executor()
 
-    default_run_config = RunConfig(
-        output_dir=Path("/tmp"),
-        include_urls=False,
-        debug_dir=Path("/tmp/debug"),
-    )
-    local_run_config = RunConfig(
-        output_dir=Path("/tmp"),
-        include_urls=False,
-        debug_dir=Path("/tmp/debug"),
-    )
+    default_run_config, local_run_config = _build_default_and_local_run_config()
 
     try:
         executor._run_single_job(
