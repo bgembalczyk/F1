@@ -39,11 +39,10 @@ class ConstructorRecordAssembler(BaseRecordAssembler):
 
     def assemble(
         self,
-        *,
         payload: ConstructorRecordDTO,
     ) -> dict[str, Any]:
         return super().assemble(
-            payload=BaseRecordAssemblerInput(
+            BaseRecordAssemblerInput(
                 url=payload.url,
                 metadata=payload.metadata,
                 infoboxes=payload.infoboxes,
