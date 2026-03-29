@@ -1,8 +1,3 @@
-"""DOMAIN-SPECIFIC: drivers column rule.
-
-(entrant parsing) localized for drivers domain.
-"""
-
 from typing import Any
 
 from scrapers.base.helpers.cell_splitting import split_cell_on_br

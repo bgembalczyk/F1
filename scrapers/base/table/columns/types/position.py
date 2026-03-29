@@ -1,8 +1,3 @@
-"""DOMAIN-SPECIFIC: drivers column rule.
-
-(position semantics) localized for drivers domain.
-"""
-
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
