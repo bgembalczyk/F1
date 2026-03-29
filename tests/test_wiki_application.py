@@ -168,7 +168,9 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         ),
         constructors_mirror_service=constructors_mirror_service,
         merge_service=merge_service,
-        current_constructors_scraper_name="CurrentConstructorsListScraper",
+        should_mirror_constructors_job=(
+            lambda list_job: list_job.seed_name == "constructors_current"
+        ),
         year_provider=lambda: 2026,
     )
 
