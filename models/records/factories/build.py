@@ -8,11 +8,43 @@ from typing import TYPE_CHECKING
 from typing import Callable
 from typing import overload
 
-from models.records.factories.registry import FACTORY_REGISTRY
+from models.records.factories.registry import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry import get_factory
 
 if TYPE_CHECKING:
     from models.records.base_factory import BaseRecordFactory
+    from models.records.car import CarRecord
+    from models.records.circuit import CircuitRecord
+    from models.records.circuit_complete import CircuitCompleteRecord
+    from models.records.circuit_details import CircuitDetailsRecord
+    from models.records.constructor import ConstructorRecord
+    from models.records.driver import DriverRecord
+    from models.records.driver_championships import DriversChampionshipsRecord
+    from models.records.engine_manufacturer import EngineManufacturerRecord
+    from models.records.event import EventRecord
+    from models.records.fatality import FatalityRecord
+    from models.records.grand_prix import GrandsPrixRecord
+    from models.records.link import LinkRecord
+    from models.records.season import SeasonRecord
+    from models.records.season_summary import SeasonSummaryRecord
+    from models.records.special_driver import SpecialDriverRecord
+
+
+class RecordBuilders:
+    """Object facade for building normalized record models."""
+
+    def __init__(self, factory_registry: Mapping[str, BaseRecordFactory] | None = None):
+        self._factory_registry = factory_registry or FACTORY_REGISTRY_PROVIDER.get()
+
+    def _factory_for(self, record_type: str) -> BaseRecordFactory:
+        return get_factory(record_type, self._factory_registry)
+
+    @overload
+    def build(
+        self,
+        record_type: Literal["link"],
+        record: Mapping[str, Any],
+    ) -> LinkRecord: ...
 
 
 class RecordType(str, Enum):
@@ -95,3 +127,36 @@ __all__ = [
     "build_record",
     *[f"build_{record_type.value}_record" for record_type in RecordType],
 ]
+RECORD_BUILDERS = RecordBuilders()
+
+
+def build_record(record_type: str, record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.build(record_type, record)
+
+
+def build_season_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.season(record)
+
+
+def build_driver_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.driver(record)
+
+
+def build_constructor_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.constructor(record)
+
+
+def build_special_driver_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.special_driver(record)
+
+
+def build_fatality_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.fatality(record)
+
+
+def build_season_summary_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.season_summary(record)
+
+
+def build_grands_prix_record(record: Mapping[str, Any]) -> Any:
+    return RECORD_BUILDERS.grands_prix(record)

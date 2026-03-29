@@ -1,21 +1,20 @@
-from typing import Any
-
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.constants import HEADER_CLASS
 from scrapers.wiki.parsers.constants import HEADER_TAG
+from scrapers.wiki.parsers.types import HeaderParsedData
 
 
-class HeaderParser(WikiParser):
+class HeaderParser(WikiParser[HeaderParsedData]):
     """Parser nagłówka strony Wikipedii.
 
     Przetwarza element:
     <header class="mw-body-header vector-page-titlebar no-font-mode-scale">
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag) -> HeaderParsedData:
         """Parsuje nagłówek strony Wikipedii.
 
         Args:

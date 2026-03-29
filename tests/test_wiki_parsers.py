@@ -12,6 +12,8 @@ from scrapers.wiki.parsers.elements.figure import FigureParser
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.navbox import NavBoxParser
+from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
+from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
 from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
@@ -22,6 +24,30 @@ from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
+
+
+class _StubElementParser:
+    def __init__(self, payload: dict[str, str]) -> None:
+        self.payload = payload
+
+    def parse(self, _element):
+        return self.payload
+
+
+def _with_overridden_element_parsers(**overrides) -> WikiElementParsers:
+    defaults = build_default_wiki_element_parsers()
+    return WikiElementParsers(
+        infobox_parser=overrides.get("infobox_parser", defaults.infobox_parser),
+        paragraph_parser=overrides.get("paragraph_parser", defaults.paragraph_parser),
+        figure_parser=overrides.get("figure_parser", defaults.figure_parser),
+        list_parser=overrides.get("list_parser", defaults.list_parser),
+        table_parser=overrides.get("table_parser", defaults.table_parser),
+        navbox_parser=overrides.get("navbox_parser", defaults.navbox_parser),
+        references_wrap_parser=overrides.get(
+            "references_wrap_parser",
+            defaults.references_wrap_parser,
+        ),
+    )
 
 # ---------------------------------------------------------------------------
 # WikiParser is abstract
@@ -277,6 +303,96 @@ def test_table_parser_handles_rowspan_and_colspan_with_stable_mapping() -> None:
     assert result["raw_rows"][1]["Grand Prix"] == "Monaco"
 
 
+def test_table_parser_uses_custom_html_table_parser() -> None:
+    class _StubHtmlTableParser:
+        def __init__(self) -> None:
+            self.strip_lang_suffix = False
+            self.strip_refs = False
+            self.normalize_dashes = False
+            self.was_used = False
+
+        def clean_cells(self, cells):  # noqa: ANN001
+            self.was_used = True
+            return [cell.get_text(" ", strip=True) for cell in cells]
+
+        def has_multirow_header(self, first_cells, second_cells):  # noqa: ANN001
+            return False
+
+        def is_footer_row(self, cells, cleaned_cells, headers):  # noqa: ANN001
+            return False
+
+        def expand_row_cells(self, cells, headers, pending_rowspans):  # noqa: ANN001
+            return cells
+
+    html = """
+    <table class="wikitable">
+      <tr><th>Name</th><th>Year</th></tr>
+      <tr><td>Hamilton</td><td>2020</td></tr>
+    </table>
+    """
+    soup = _make_soup(html)
+    stub_parser = _StubHtmlTableParser()
+    parser = TableParser(table_parser=stub_parser)
+
+    result = parser.parse(soup.find("table"))
+
+    assert stub_parser.was_used is True
+    assert result["headers"] == ["Name", "Year"]
+    assert result["rows"] == [["Hamilton", "2020"]]
+def test_table_parser_rowspan_cell_is_cleaned_after_expansion_regression() -> None:
+    html = """
+    <table class="wikitable">
+      <tr>
+        <th>Year</th>
+        <th>Grand Prix</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td rowspan="2">1953 [1]</td>
+        <td>Argentina</td>
+        <td>Win</td>
+      </tr>
+      <tr>
+        <td>Monaco</td>
+        <td>DNF</td>
+      </tr>
+    </table>
+    """
+    soup = _make_soup(html)
+    parser = TableParser()
+
+    result = parser.parse(soup.find("table"))
+
+    assert result["rows"] == [
+        ["1953", "Argentina", "Win"],
+        ["1953", "Monaco", "DNF"],
+    ]
+    assert result["raw_rows"][1]["Year"] == "1953"
+
+
+def test_table_parser_colspan_cells_remain_cleaned_regression() -> None:
+    html = """
+    <table class="wikitable">
+      <tr>
+        <th>Year</th>
+        <th>Result</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>1953</td>
+        <td colspan="2">Winner [2]</td>
+      </tr>
+    </table>
+    """
+    soup = _make_soup(html)
+    parser = TableParser()
+
+    result = parser.parse(soup.find("table"))
+
+    assert result["rows"] == [["1953", "Winner", "Winner"]]
+    assert result["raw_rows"] == [{"Year": "1953", "Result": "Winner", "Notes": "Winner"}]
+
+
 def test_navbox_parser():
     html = """
     <div role="navigation" class="navbox">
@@ -397,6 +513,42 @@ def test_wiki_element_parser_mixin_default_registry_matches_expected_types() -> 
         "navbox",
         "references_wrap",
     ]
+
+
+def test_wiki_element_parser_mixin_allows_stubbed_paragraph_parser() -> None:
+    soup = _make_soup("<p>Injected paragraph parser</p>")
+    parser = SubSubSubSectionParser(
+        element_parsers=_with_overridden_element_parsers(
+            paragraph_parser=_StubElementParser({"stub": "paragraph"}),
+        ),
+    )
+
+    result = parser._parse_element(
+        soup.find("p"),
+        section_context=SectionExtractionContext(),
+    )
+
+    assert result is not None
+    assert result["kind"] == "paragraph"
+    assert result["data"] == {"stub": "paragraph"}
+
+
+def test_wiki_element_parser_mixin_allows_stubbed_wikitable_parser() -> None:
+    soup = _make_soup('<table class="wikitable"><tr><td>row</td></tr></table>')
+    parser = SubSubSubSectionParser(
+        element_parsers=_with_overridden_element_parsers(
+            table_parser=_StubElementParser({"stub": "table"}),
+        ),
+    )
+
+    result = parser._parse_element(
+        soup.find("table"),
+        section_context=SectionExtractionContext(),
+    )
+
+    assert result is not None
+    assert result["kind"] == "table"
+    assert result["data"] == {"stub": "table"}
 
 
 def test_sub_sub_section_parser_divides_into_sub_sub_sub_sections():
