@@ -141,3 +141,35 @@ def _invoke_target(*, target: Callable[..., None], run_config: RunConfig) -> Non
         return
 
     target()
+
+
+def build_deprecated_module_main(
+    *,
+    target: Callable[..., None],
+    argv: Sequence[str] | None = None,
+    deprecation_message: str | None = None,
+    deprecation_stacklevel: int = 2,
+) -> Callable[[], None]:
+    """Backward-compatible helper for deprecated scraper modules."""
+    return build_cli_main(
+        target=target,
+        base_config=deprecated_module_base_config(),
+        profile=RunProfileName.DEPRECATED,
+        argv=argv,
+        deprecation_message=deprecation_message,
+        deprecation_stacklevel=deprecation_stacklevel,
+    )
+
+
+def build_complete_extractor_main(
+    *,
+    target: Callable[..., None],
+    argv: Sequence[str] | None = None,
+) -> Callable[[], None]:
+    """Backward-compatible helper for complete extractor modules."""
+    return build_cli_main(
+        target=target,
+        base_config=complete_extractor_base_config(),
+        profile=RunProfileName.MINIMAL,
+        argv=argv,
+    )

@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from collections.abc import Iterable
-from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.composite_dto import ListRecordDTO
 from scrapers.base.options import ScraperOptions
 from scrapers.base.progress import NoOpProgressAdapter
 from scrapers.base.source_adapter import IterableSourceAdapter
@@ -23,23 +23,27 @@ class _DemoCompositeExtractor(CompositeDataExtractor):
             list_scraper=object(),
             single_scraper=_SingleScraperStub(),
             records_adapter=IterableSourceAdapter(lambda: [
-                {"name": "A", "detail_url": "https://example.com/a"},
-                {"name": "B", "detail_url": "https://example.com/b"},
+                ListRecordDTO.from_dict(
+                    {"name": "A", "detail_url": "https://example.com/a"},
+                ),
+                ListRecordDTO.from_dict(
+                    {"name": "B", "detail_url": "https://example.com/b"},
+                ),
             ]),
         )
 
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
-        return str(record.get("detail_url"))
+    def get_detail_url(self, record: ListRecordDTO) -> str | None:
+        return str(record.data.get("detail_url"))
 
 
 class _PassThroughProgress:
     def wrap(
         self,
-        iterable: Iterable[dict[str, Any]],
+        iterable: Iterable[ListRecordDTO],
         *,
         desc: str,
         unit: str,
-    ) -> Iterable[dict[str, Any]]:
+    ) -> Iterable[ListRecordDTO]:
         return iterable
 
 

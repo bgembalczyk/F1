@@ -13,6 +13,10 @@ from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
+from scrapers.base.composite_dto import CompositeJSONBoundaryAdapter
+from scrapers.base.composite_dto import CompositeRecordDTO
+from scrapers.base.composite_dto import DetailRecordDTO
+from scrapers.base.composite_dto import ListRecordDTO
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
@@ -32,8 +36,8 @@ class CompositeDataExtractorChildren:
     list_scraper: ListScraperProtocol | list[ListScraperProtocol]
     single_scraper: SingleScraperProtocol
     records_adapter: (
-        IterableSourceAdapter[dict[str, Any]]
-        | MultiIterableSourceAdapter[dict[str, Any]]
+        IterableSourceAdapter[ListRecordDTO]
+        | MultiIterableSourceAdapter[ListRecordDTO]
     )
 
 
@@ -47,6 +51,7 @@ class CompositeDataExtractor(BaseDataExtractor):
         super().__init__(options=options)
         self.options = options
         self.progress = progress or TqdmProgressAdapter()
+        self.json_boundary = CompositeJSONBoundaryAdapter()
         children = self.build_children()
         self.list_scraper = children.list_scraper
         self.single_scraper = children.single_scraper
@@ -56,21 +61,21 @@ class CompositeDataExtractor(BaseDataExtractor):
         msg = "CompositeDataExtractor requires build_children()."
         raise NotImplementedError(msg)
 
-    def get_detail_url(self, _record: dict[str, Any]) -> str | None:
+    def get_detail_url(self, _record: ListRecordDTO) -> str | None:
         return None
 
     def assemble_record(
         self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
-        full_record = dict(record)
-        full_record["details"] = details
-        return full_record
+        record: ListRecordDTO,
+        details: DetailRecordDTO | None,
+    ) -> CompositeRecordDTO:
+        full_record = record.to_dict()
+        full_record["details"] = details.to_dict() if details is not None else None
+        return CompositeRecordDTO(data=full_record)
 
     def fetch(self) -> list[dict[str, Any]]:
         records = self.records_adapter.get()
-        complete: list[dict[str, Any]] = []
+        complete: list[CompositeRecordDTO] = []
 
         extractor_name = self.__class__.__name__
         for record in self.progress.wrap(
@@ -78,20 +83,24 @@ class CompositeDataExtractor(BaseDataExtractor):
             desc=extractor_name,
             unit="item",
         ):
-            if not isinstance(record, dict):
+            if not isinstance(record, ListRecordDTO):
                 msg = (
-                    "Records adapter musi zwracać dict, "
+                    "Records adapter musi zwracać ListRecordDTO, "
                     f"otrzymano: {type(record).__name__}"
                 )
                 raise TypeError(msg)
 
             detail_url = self.get_detail_url(record)
-            details: dict[str, Any] | None = None
+            details: DetailRecordDTO | None = None
 
             if detail_url:
                 try:
                     details_list = self.single_scraper.fetch_by_url(detail_url)
-                    details = details_list[0] if details_list else None
+                    details = (
+                        self.json_boundary.detail_from_json(details_list[0])
+                        if details_list
+                        else None
+                    )
                 except (
                     RequestError,
                     ScraperNetworkError,
@@ -105,5 +114,5 @@ class CompositeDataExtractor(BaseDataExtractor):
 
             complete.append(self.assemble_record(record, details))
 
-        self._data = complete
+        self._data = [self.json_boundary.output_to_json(record) for record in complete]
         return self._data
