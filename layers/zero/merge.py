@@ -1,6 +1,7 @@
 import json
 import re
 from collections.abc import Callable
+from dataclasses import dataclass
 from pathlib import Path
 
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
@@ -13,6 +14,103 @@ from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
 from scrapers.wiki.constants import RED_FLAG_FIELDS
 from scrapers.wiki.constants import TYRE_MANUFACTURERS_SOURCE
+
+
+@dataclass(frozen=True)
+class SourceMetadata:
+    source_type: str
+    domain: str
+    variant: str
+    flags: frozenset[str] = frozenset()
+
+    def has_flag(self, flag: str) -> bool:
+        return flag in self.flags
+
+
+@dataclass(frozen=True)
+class _MetadataTemplate:
+    source_type: str
+    variant: str
+    flags: tuple[str, ...] = ()
+
+
+SOURCE_METADATA_BY_FILENAME: dict[str, _MetadataTemplate] = {
+    TYRE_MANUFACTURERS_SOURCE: _MetadataTemplate(
+        source_type="list",
+        variant="tyre_manufacturers",
+    ),
+    INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE: _MetadataTemplate(
+        source_type="list",
+        variant="indianapolis_only_constructors",
+    ),
+    FORMER_CONSTRUCTORS_SOURCE: _MetadataTemplate(
+        source_type="list",
+        variant="former_constructors",
+    ),
+    "f1_indianapolis_only_engine_manufacturers.json": _MetadataTemplate(
+        source_type="list",
+        variant="indianapolis_only_engine_manufacturers",
+    ),
+    "f1_engine_manufacturers.json": _MetadataTemplate(
+        source_type="list",
+        variant="engine_manufacturers",
+    ),
+    "f1_sponsorship_liveries.json": _MetadataTemplate(
+        source_type="list",
+        variant="sponsorship_liveries",
+    ),
+    "f1_privateer_teams.json": _MetadataTemplate(
+        source_type="list",
+        variant="privateer_teams",
+    ),
+    "f1_drivers.json": _MetadataTemplate(
+        source_type="list",
+        variant="f1_drivers",
+    ),
+    "female_drivers.json": _MetadataTemplate(
+        source_type="list",
+        variant="female_drivers",
+    ),
+    "f1_driver_fatalities.json": _MetadataTemplate(
+        source_type="list",
+        variant="driver_fatalities",
+    ),
+    "f1_red_flagged_world_championship_races.json": _MetadataTemplate(
+        source_type="list",
+        variant="red_flagged_world_championship_races",
+        flags=("world_championship",),
+    ),
+    "f1_red_flagged_non_championship_races.json": _MetadataTemplate(
+        source_type="list",
+        variant="red_flagged_non_championship_races",
+        flags=("non_championship",),
+    ),
+}
+
+YEARLY_CONSTRUCTORS_FILENAME_RE = re.compile(r"f1_constructors_\d{4}\.json")
+
+
+def _build_source_metadata(domain: str, source_name: str) -> SourceMetadata:
+    template = SOURCE_METADATA_BY_FILENAME.get(source_name)
+    if template is not None:
+        return SourceMetadata(
+            source_type=template.source_type,
+            domain=domain,
+            variant=template.variant,
+            flags=frozenset(template.flags),
+        )
+    if YEARLY_CONSTRUCTORS_FILENAME_RE.fullmatch(source_name):
+        return SourceMetadata(
+            source_type="snapshot",
+            domain=domain,
+            variant="yearly_constructors_snapshot",
+            flags=frozenset({"yearly_constructors_snapshot"}),
+        )
+    return SourceMetadata(
+        source_type="unknown",
+        domain=domain,
+        variant="generic",
+    )
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -59,31 +157,26 @@ def _pop_red_flag_fields(record: dict[str, object]) -> None:
         record.pop(key, None)
 
 
-def _transform_record(domain: str, source_name: str, record: object) -> object:
+def _transform_record(metadata: SourceMetadata, record: object) -> object:
     if not isinstance(record, dict):
         return record
 
     return _transform_races_domain(
-        domain,
-        source_name,
+        metadata,
         _transform_drivers_domain(
-            domain,
-            source_name,
+            metadata,
             _transform_teams_domain(
-                domain,
-                source_name,
+                metadata,
                 _transform_grands_prix_domain(
-                    domain,
+                    metadata,
                     _transform_engines_domain(
-                        domain,
-                        source_name,
+                        metadata,
                         _transform_circuits_domain(
-                            domain,
+                            metadata,
                             _transform_constructor_domain(
-                                domain,
-                                source_name,
+                                metadata,
                                 _transform_tyre_manufacturers(
-                                    source_name,
+                                    metadata,
                                     dict(record),
                                 ),
                             ),
@@ -96,10 +189,10 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
 
 
 def _transform_tyre_manufacturers(
-    source_name: str,
+    metadata: SourceMetadata,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if source_name != TYRE_MANUFACTURERS_SOURCE:
+    if metadata.variant != "tyre_manufacturers":
         return transformed
 
     if "manufacturers" in transformed:
@@ -111,22 +204,21 @@ def _transform_tyre_manufacturers(
 
 
 def _transform_constructor_domain(
-    domain: str,
-    source_name: str,
+    metadata: SourceMetadata,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain not in CHASSIS_CONSTRUCTOR_DOMAINS:
+    if metadata.domain not in CHASSIS_CONSTRUCTOR_DOMAINS:
         return transformed
 
-    if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
+    if metadata.variant == "indianapolis_only_constructors":
         return _transform_indianapolis_only_constructor(transformed)
-    if source_name == FORMER_CONSTRUCTORS_SOURCE:
+    if metadata.variant == "former_constructors":
         return _transform_former_constructor(transformed)
 
     constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
-    if domain == "constructors" and re.fullmatch(
-        r"f1_constructors_\d{4}\.json",
-        source_name,
+    if (
+        metadata.domain == "constructors"
+        and metadata.has_flag("yearly_constructors_snapshot")
     ):
         constructor_fields.discard("engine")
 
@@ -180,10 +272,10 @@ def _ensure_constructor_status(transformed: dict[str, object]) -> None:
 
 
 def _transform_circuits_domain(
-    domain: str,
+    metadata: SourceMetadata,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "circuits":
+    if metadata.domain != "circuits":
         return transformed
     _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
     if "racing_series" not in transformed:
@@ -192,48 +284,46 @@ def _transform_circuits_domain(
 
 
 def _transform_engines_domain(
-    domain: str,
-    source_name: str,
+    metadata: SourceMetadata,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "engines":
+    if metadata.domain != "engines":
         return transformed
-    if source_name == "f1_indianapolis_only_engine_manufacturers.json":
+    if metadata.variant == "indianapolis_only_engine_manufacturers":
         transformed["racing_series"] = {
             "AAA_national_championship": [],
             "formula_one": {"status": "former", "indianapolis_only": True},
         }
-    elif source_name == "f1_engine_manufacturers.json":
+    elif metadata.variant == "engine_manufacturers":
         _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
     return transformed
 
 
 def _transform_grands_prix_domain(
-    domain: str,
+    metadata: SourceMetadata,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain == "grands_prix":
+    if metadata.domain == "grands_prix":
         _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
     return transformed
 
 
 def _transform_teams_domain(
-    domain: str,
-    source_name: str,
+    metadata: SourceMetadata,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "teams":
+    if metadata.domain != "teams":
         return transformed
-    if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
+    if metadata.has_flag("yearly_constructors_snapshot"):
         transformed = {
             "team": transformed.get("constructor"),
             "racing_series": _build_racing_series({**transformed}),
         }
-    if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
+    if metadata.variant == "sponsorship_liveries" and "liveries" in transformed:
         transformed["racing_series"] = _build_racing_series(
             {"liveries": transformed.pop("liveries")},
         )
-    if source_name == "f1_privateer_teams.json":
+    if metadata.variant == "privateer_teams":
         formula_one = {
             key: transformed.pop(key) for key in ("seasons",) if key in transformed
         }
@@ -243,17 +333,16 @@ def _transform_teams_domain(
 
 
 def _transform_drivers_domain(
-    domain: str,
-    source_name: str,
+    metadata: SourceMetadata,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "drivers":
+    if metadata.domain != "drivers":
         return transformed
-    if source_name == "f1_drivers.json":
+    if metadata.variant == "f1_drivers":
         return _transform_f1_driver(transformed)
-    if source_name == "female_drivers.json":
+    if metadata.variant == "female_drivers":
         return _transform_female_driver(transformed)
-    if source_name == "f1_driver_fatalities.json":
+    if metadata.variant == "driver_fatalities":
         _attach_driver_death_data(transformed)
     return transformed
 
@@ -292,15 +381,14 @@ def _attach_driver_death_data(transformed: dict[str, object]) -> None:
 
 
 def _transform_races_domain(
-    domain: str,
-    source_name: str,
+    metadata: SourceMetadata,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "races":
+    if metadata.domain != "races":
         return transformed
-    if source_name == "f1_red_flagged_world_championship_races.json":
+    if metadata.has_flag("world_championship"):
         transformed["championship"] = True
-    if source_name == "f1_red_flagged_non_championship_races.json":
+    if metadata.has_flag("non_championship"):
         transformed["championship"] = False
     transformed["red_flag"] = _extract_red_flag(transformed)
     _pop_red_flag_fields(transformed)
@@ -308,14 +396,13 @@ def _transform_races_domain(
 
 
 def _iter_transformed_records(
-    domain: str,
-    source_name: str,
+    metadata: SourceMetadata,
     payload: object,
 ) -> list[object]:
     if isinstance(payload, list):
-        return [_transform_record(domain, source_name, item) for item in payload]
+        return [_transform_record(metadata, item) for item in payload]
 
-    return [_transform_record(domain, source_name, payload)]
+    return [_transform_record(metadata, payload)]
 
 
 def _driver_record_key(record: object) -> str | None:
@@ -659,8 +746,9 @@ def _load_domain_records(domain_dir: Path) -> list[object]:
     raw_dir = domain_dir / "raw"
     for json_path in sorted(raw_dir.rglob("*.json")):
         payload = json.loads(json_path.read_text(encoding="utf-8"))
+        metadata = _build_source_metadata(domain_dir.name, json_path.name)
         merged_records.extend(
-            _iter_transformed_records(domain_dir.name, json_path.name, payload),
+            _iter_transformed_records(metadata, payload),
         )
     return merged_records
 
