@@ -11,6 +11,7 @@ from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.orchestration.helpers import build_layer_one_runner_map
 from layers.orchestration.helpers import build_layer_zero_run_config_factory_map
 from layers.orchestration.helpers import run_engine_manufacturers
+from layers.orchestration.progress_reporter import ProgressReporter
 from layers.pipeline import WikiPipelineApplication
 from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.helpers import WIKI_SEED_REGISTRY
@@ -34,6 +35,8 @@ def create_default_wiki_pipeline_application(
     base_wiki_dir: Path,
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
+    progress_reporter = ProgressReporter()
+
     constructors_mirror_service = ConstructorsMirrorService(
         mirror_targets=(
             ("chassis_constructors", "f1_constructors_{year}.json"),
@@ -56,6 +59,7 @@ def create_default_wiki_pipeline_application(
         ),
         current_constructors_scraper_name="CurrentConstructorsListScraper",
         year_provider=_current_year,
+        progress_reporter=progress_reporter,
     )
 
     layer_one_executor = LayerOneExecutor(
@@ -63,6 +67,7 @@ def create_default_wiki_pipeline_application(
         validate_seed_registry_function=validate_seed_registry,
         runner_map_builder=build_layer_one_runner_map,
         engine_manufacturers_runner=run_engine_manufacturers,
+        progress_reporter=progress_reporter,
     )
 
     return WikiPipelineApplication(
