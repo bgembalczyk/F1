@@ -22,3 +22,13 @@ Ten katalog przechowuje **trwałe decyzje architektoniczne** projektu.
 2. Nadaj kolejny numer i konkretny tytuł.
 3. Ustaw status (`Proposed` -> `Accepted` po zatwierdzeniu).
 4. Podlinkuj ADR w dokumentacji i opisie PR.
+
+
+## Automatyczny gate CI
+
+Workflow `static-quality-gates.yml` blokuje PR/push bez referencji ADR, gdy zmiany dotykają `layers/`, `scrapers/base/` lub `tests/architecture/` i nie są wyłącznie kosmetyczne.
+
+Przykłady poprawnych referencji:
+- `ADR-0001`
+- `Zmiana granic modułu zgodnie z ADR-0003`
+- `Refactor parser hooks (ADR-0004)`
