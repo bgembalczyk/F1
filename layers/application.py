@@ -34,16 +34,6 @@ def create_default_wiki_pipeline_application(
     base_wiki_dir: Path,
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
-    constructors_mirror_service = ConstructorsMirrorService(
-        mirror_targets=(
-            ("chassis_constructors", "f1_constructors_{year}.json"),
-            ("constructors", "f1_constructors_{year}.json"),
-            ("teams", "f1_constructors_{year}.json"),
-        ),
-        copy_file=shutil.copy2,
-        year_provider=_current_year,
-    )
-
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,
@@ -53,7 +43,15 @@ def create_default_wiki_pipeline_application(
             merge_function=merge_layer_zero_raw_outputs,
         ),
         job_hook=MirrorConstructorsJobHook(
-            constructors_mirror_service=constructors_mirror_service,
+            constructors_mirror_service=ConstructorsMirrorService(
+                mirror_targets=(
+                    ("chassis_constructors", "f1_constructors_{year}.json"),
+                    ("constructors", "f1_constructors_{year}.json"),
+                    ("teams", "f1_constructors_{year}.json"),
+                ),
+                copy_file=shutil.copy2,
+                year_provider=_current_year,
+            ),
             should_mirror_predicate=(
                 lambda job: job.list_scraper_cls.__name__
                 == "CurrentConstructorsListScraper"
