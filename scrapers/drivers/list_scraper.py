@@ -105,8 +105,8 @@ class F1DriversListScraper(SeedListTableScraper):
     )
 
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
-        options.transformers = [
-            *list(options.transformers or []),
+        options.pipeline.transformers = [
+            *list(options.pipeline.transformers or []),
             DriversChampionshipsTransformer(),
         ]
         return options

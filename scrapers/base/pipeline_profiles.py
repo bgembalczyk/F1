@@ -163,9 +163,9 @@ def apply_scraper_pipeline_bindings(
         post_processor_cls = _resolve_object(post_processor_path)
         if any(
             isinstance(post_processor, post_processor_cls)
-            for post_processor in options.post_processors
+            for post_processor in options.pipeline.post_processors
         ):
             continue
-        options.post_processors.append(post_processor_cls())
+        options.pipeline.post_processors.append(post_processor_cls())
 
     return options
