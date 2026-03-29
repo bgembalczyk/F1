@@ -82,8 +82,8 @@ class RuntimeInitializer:
             record_normalizer=RecordNormalizer(
                 normalize_empty_values=normalize_empty_values,
             ),
-            transformers=build_transformers(options.transformers),
-            post_processors=list(options.post_processors or []),
+            transformers=build_transformers(options.pipeline.transformers),
+            post_processors=list(options.pipeline.post_processors or []),
             error_handler=ErrorHandler(
                 logger=logger,
                 debug_dir=options.debug_dir,

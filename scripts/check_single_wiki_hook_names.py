@@ -4,6 +4,8 @@ import ast
 import sys
 from pathlib import Path
 
+from lib.check_runner import iter_python_paths, run_cli
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRAPERS_DIR = REPO_ROOT / "scrapers"
 
@@ -75,27 +77,17 @@ def lint_path(path: Path) -> list[str]:
     return errors
 
 
-def iter_python_paths(paths: list[Path]) -> list[Path]:
-    python_paths: list[Path] = []
-    for path in paths:
-        if path.is_file() and path.suffix == ".py":
-            python_paths.append(path)
-            continue
-        if path.is_dir():
-            python_paths.extend(path.rglob("*.py"))
-    return python_paths
 
-
-def main(argv: list[str]) -> int:
-    targets = [Path(arg) for arg in argv] if argv else [SCRAPERS_DIR]
+def run_check(argv: list[str] | None = None) -> list[str]:
+    targets = [Path(arg) for arg in (argv or [])] if argv else [SCRAPERS_DIR]
     errors: list[str] = []
     for path in iter_python_paths(targets):
         errors.extend(lint_path(path))
+    return errors
 
-    if errors:
-        print("\n".join(errors))
-        return 1
-    return 0
+
+def main(argv: list[str]) -> int:
+    return run_cli("single-wiki-hook-names", lambda: run_check(argv))
 
 
 if __name__ == "__main__":
