@@ -13,6 +13,7 @@ permissions:
 env:
   NEW_DUPLICATES_WARN_THRESHOLD: "1"
   NEW_DUPLICATES_FAIL_THRESHOLD: "3"
+  MYPY_ERROR_BUDGET: "0"
 
 jobs:
   static-analysis:
@@ -57,6 +58,15 @@ jobs:
         run: |
           pylint scrapers layers models validation infrastructure --rcfile=.pylintrc
 
+      - name: Enforce ADR reference for architecture changes
+        shell: bash
+        run: |
+          python scripts/ci/enforce_architecture_adr_reference.py \
+            --base-sha "${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}" \
+            --head-sha "${{ github.sha }}" \
+            --pr-title "${{ github.event_name == 'pull_request' && github.event.pull_request.title || '' }}" \
+            --pr-body "${{ github.event_name == 'pull_request' && github.event.pull_request.body || '' }}"
+
       - name: Detect changed Python files
         id: changed-py
         shell: bash
@@ -98,6 +108,10 @@ jobs:
         id: dup-report
         shell: bash
         run: |
+          mkdir -p .jscpd-report
+          echo "## Raport duplikatów (jscpd)" > .jscpd-report/pr-comment.md
+          echo "" >> .jscpd-report/pr-comment.md
+          echo "ℹ️ Raport nie został jeszcze wygenerowany." >> .jscpd-report/pr-comment.md
           python scripts/ci/duplicate_report.py \
             --report-json .jscpd-report/jscpd-report.json \
             --output-md .jscpd-report/pr-comment.md \
@@ -152,7 +166,8 @@ jobs:
         run: |
           python scripts/ci/mypy_regression_gate.py \
             --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
-            --head-sha "${{ github.sha }}"
+            --head-sha "${{ github.sha }}" \
+            --error-budget "${MYPY_ERROR_BUDGET}"
 
 
       - name: DI anti-pattern AST check (layers + scrapers/base)

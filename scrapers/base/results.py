@@ -1,17 +1,9 @@
-from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
-from typing import TYPE_CHECKING
 
-from scrapers.base.normalization import NormalizationRule
-from scrapers.base.normalization import RecordNormalizer
 from validation.validator_base import ExportRecord
-
-if TYPE_CHECKING:
-    from scrapers.base.export.exporters import DataExporter
 
 
 
