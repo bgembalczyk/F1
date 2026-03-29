@@ -6,8 +6,6 @@ from tests.architecture.registry import ARCHITECTURE_REGISTRY
 from tests.support.imports_analyzer import parse_imports
 
 DOMAINS = ARCHITECTURE_REGISTRY.domain_names
-from tests.architecture.rules import DOMAINS
-from tests.support.imports_analyzer import parse_imports
 
 MIN_IMPORT_PARTS = 3
 
