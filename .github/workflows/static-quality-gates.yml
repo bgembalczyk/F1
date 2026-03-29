@@ -58,6 +58,15 @@ jobs:
         run: |
           pylint scrapers layers models validation infrastructure --rcfile=.pylintrc
 
+      - name: Validate PR template required fields and checklist
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          python scripts/ci/validate_pr_template.py \
+            --base-sha "${{ github.event.pull_request.base.sha }}" \
+            --head-sha "${{ github.sha }}" \
+            --pr-body "${{ github.event.pull_request.body || '' }}"
+
       - name: Enforce ADR reference for architecture changes
         shell: bash
         run: |
