@@ -3,7 +3,6 @@ from abc import abstractmethod
 from collections.abc import Callable
 from collections.abc import Iterable
 from collections.abc import Mapping
-from typing import Any
 from typing import Generic
 from typing import TypeVar
 
@@ -15,7 +14,7 @@ class SourceAdapter(ABC):
 
     @property
     @abstractmethod
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, object]:
         """Metadane adaptera (np. polityka HTTP, cache)."""
         raise NotImplementedError
 

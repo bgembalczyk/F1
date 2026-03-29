@@ -3,7 +3,9 @@ import json
 from datetime import datetime
 from datetime import timezone
 
+from scrapers.base.export.service import ExportService
 from scrapers.base.results import ScrapeResult
+from scrapers.base.services.result_export_service import ResultExportService
 
 EXPECTED_TWO_RECORDS = 2
 
@@ -32,7 +34,7 @@ def test_to_csv_union_fieldnames_preserves_order(tmp_path):
     result = ScrapeResult(data=data, source_url=None)
     output = tmp_path / "union.csv"
 
-    result.to_csv(output, include_metadata=True)
+    ResultExportService().to_csv(result, output, include_metadata=True)
 
     metadata = _read_metadata(output)
     assert metadata["records_count"] == EXPECTED_TWO_RECORDS
@@ -44,7 +46,12 @@ def test_to_csv_first_row_fieldnames_preserves_order(tmp_path):
     result = ScrapeResult(data=data, source_url=None)
     output = tmp_path / "first_row.csv"
 
-    result.to_csv(output, fieldnames_strategy="first_row", include_metadata=True)
+    ResultExportService().to_csv(
+        result,
+        output,
+        fieldnames_strategy="first_row",
+        include_metadata=True,
+    )
 
     metadata = _read_metadata(output)
     assert metadata["records_count"] == EXPECTED_TWO_RECORDS
@@ -60,7 +67,7 @@ def test_to_json_includes_metadata_from_result(tmp_path):
     )
     output = tmp_path / "result.json"
 
-    result.to_json(output, include_metadata=True)
+    ResultExportService().to_json(result, output, include_metadata=True)
 
     payload = json.loads(output.read_text(encoding="utf-8"))
     assert payload["meta"]["source_url"] == "https://example.com"
@@ -76,7 +83,7 @@ def test_to_json_excludes_metadata_by_default(tmp_path):
     )
     output = tmp_path / "result.json"
 
-    result.to_json(output)
+    ResultExportService().to_json(result, output)
 
     payload = json.loads(output.read_text(encoding="utf-8"))
     # By default, should return just the data array without meta wrapper
@@ -93,7 +100,7 @@ def test_to_csv_excludes_metadata_by_default(tmp_path):
     )
     output = tmp_path / "result.csv"
 
-    result.to_csv(output)
+    ResultExportService().to_csv(result, output)
 
     content = output.read_text(encoding="utf-8")
     # By default, should not include metadata comment
@@ -102,3 +109,74 @@ def test_to_csv_excludes_metadata_by_default(tmp_path):
     assert lines[0] == "driver"
     assert "Lewis" in lines[1]
     assert "Max" in lines[2]
+
+
+class _SpyExporter:
+    def __init__(self) -> None:
+        self.csv_calls = []
+        self.json_calls = []
+
+    def to_json(self, result, path, *, indent=2, include_metadata=False) -> None:
+        self.json_calls.append((result, path, indent, include_metadata))
+
+    def to_csv(self, result, path, *, fieldnames=None, include_metadata=False) -> None:
+        self.csv_calls.append((result, path, fieldnames, include_metadata))
+
+
+class _SpyFieldnamesStrategy:
+    def __init__(self) -> None:
+        self.calls = []
+
+    def resolve(self, data, *, strategy):
+        self.calls.append((data, strategy))
+        return ["driver", "wins"]
+
+
+class _SpyDataFrameFormatter:
+    def __init__(self) -> None:
+        self.calls = []
+
+    def format(self, result):
+        self.calls.append(result)
+        return {"rows": len(result.data)}
+
+
+def test_to_csv_uses_injected_fieldnames_strategy_without_monkeypatching(tmp_path):
+    spy_exporter = _SpyExporter()
+    spy_strategy = _SpyFieldnamesStrategy()
+    service = ExportService(
+        exporter=spy_exporter,
+        fieldnames_strategy=spy_strategy,
+        dataframe_formatter=_SpyDataFrameFormatter(),
+    )
+    result = ScrapeResult(
+        data=[{"driver": "Max", "wins": 54}],
+        source_url=None,
+        export_service=service,
+    )
+
+    output = tmp_path / "spy.csv"
+    result.to_csv(output, fieldnames_strategy="first_row")
+
+    assert spy_strategy.calls
+    assert spy_strategy.calls[0][1] == "first_row"
+    assert spy_exporter.csv_calls[0][2] == ["driver", "wins"]
+
+
+def test_to_dataframe_uses_injected_formatter_without_monkeypatching():
+    spy_formatter = _SpyDataFrameFormatter()
+    service = ExportService(
+        exporter=_SpyExporter(),
+        fieldnames_strategy=_SpyFieldnamesStrategy(),
+        dataframe_formatter=spy_formatter,
+    )
+    result = ScrapeResult(
+        data=[{"driver": "Max"}, {"driver": "Lewis"}],
+        source_url=None,
+        export_service=service,
+    )
+
+    payload = result.to_dataframe()
+
+    assert payload == {"rows": EXPECTED_TWO_RECORDS}
+    assert spy_formatter.calls and spy_formatter.calls[0] is result

@@ -1,5 +1,3 @@
-from typing import Any
-
 from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.source_adapter import SourceAdapter
@@ -26,10 +24,10 @@ class CacheAdapter(SourceAdapter):
         metadata["cache"] = self._cache
         return metadata
 
-    def get(self, url: str, **kwargs: Any) -> str:
+    def get(self, url: str) -> str:
         cached = self._cache.get(url)
         if cached is not None:
             return cached
-        text = self._source_adapter.get(url, **kwargs)
+        text = self._source_adapter.get(url)
         self._cache.set(url, text)
         return text

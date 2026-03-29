@@ -1,29 +1,32 @@
 from collections.abc import Callable
-from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.wiki.parsers.elements.figure import FigureParser
-from scrapers.wiki.parsers.elements.infobox import InfoboxParser
-from scrapers.wiki.parsers.elements.list import ListParser
-from scrapers.wiki.parsers.elements.navbox import NavBoxParser
-from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
-from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
+from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
 from scrapers.wiki.parsers.elements.rules import ParserRule
-from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
+from scrapers.wiki.parsers.types import WikiParsedPayload
+from scrapers.wiki.parsers.types import WikiParserData
 
 
 class WikiElementParserMixin:
-    def __init__(self) -> None:
-        self.infobox_parser = InfoboxParser()
-        self.paragraph_parser = ParagraphParser()
-        self.figure_parser = FigureParser()
-        self.list_parser = ListParser()
-        self.table_parser = TableParser()
-        self.navbox_parser = NavBoxParser()
-        self.references_wrap_parser = ReferencesWrapParser()
+    def __init__(
+        self,
+        *,
+        element_parsers: WikiElementParsers | None = None,
+    ) -> None:
+        resolved_parsers = element_parsers
+        if resolved_parsers is None:
+            msg = "element_parsers must be provided by composition root"
+            raise ValueError(msg)
+        self.infobox_parser = resolved_parsers.infobox_parser
+        self.paragraph_parser = resolved_parsers.paragraph_parser
+        self.figure_parser = resolved_parsers.figure_parser
+        self.list_parser = resolved_parsers.list_parser
+        self.table_parser = resolved_parsers.table_parser
+        self.navbox_parser = resolved_parsers.navbox_parser
+        self.references_wrap_parser = resolved_parsers.references_wrap_parser
         self._parser_rules: list[ParserRule] = []
         self._register_default_parser_rules()
 
@@ -38,7 +41,7 @@ class WikiElementParserMixin:
         self,
         *,
         predicate: Callable[[Tag], bool],
-        parser: Callable[[Tag], Any],
+        parser: Callable[[Tag], WikiParserData],
         result_type: str,
         priority: int | None = None,
     ) -> None:
@@ -92,7 +95,7 @@ class WikiElementParserMixin:
         )
 
     @staticmethod
-    def _has_infobox_class(classes: Any) -> bool:
+    def _has_infobox_class(classes: object) -> bool:
         if not classes:
             return False
         if isinstance(classes, str):
@@ -113,8 +116,8 @@ class WikiElementParserMixin:
         elements: list[Tag],
         *,
         section_context: SectionExtractionContext,
-    ) -> list[dict[str, Any]]:
-        result: list[dict[str, Any]] = []
+    ) -> list[WikiParsedPayload]:
+        result: list[WikiParsedPayload] = []
         for el in elements:
             parsed = self._parse_element(el, section_context=section_context)
             if parsed is not None:
@@ -126,7 +129,7 @@ class WikiElementParserMixin:
         el: Tag,
         *,
         section_context: SectionExtractionContext,
-    ) -> dict[str, Any] | None:
+    ) -> WikiParsedPayload | None:
         for rule in self._parser_rules:
             if rule.predicate(el):
                 return self._build_parsed_payload(
@@ -156,7 +159,7 @@ class WikiElementParserMixin:
         el: Tag,
         rule: ParserRule,
         section_context: SectionExtractionContext,
-    ) -> dict[str, Any]:
+    ) -> WikiParsedPayload:
         return {
             "kind": rule.result_type,
             "source_section_id": section_context.section_id,

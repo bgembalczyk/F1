@@ -26,7 +26,7 @@ class DomainRecordService:
         career_results: list[dict[str, Any]],
     ) -> dict[str, Any]:
         return self._assembler.assemble(
-            payload=DriverRecordDTO(
+            DriverRecordDTO(
                 url=url,
                 infobox=infobox,
                 career_results=career_results,

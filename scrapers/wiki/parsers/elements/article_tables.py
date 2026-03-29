@@ -22,7 +22,7 @@ if TYPE_CHECKING:
     from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 
 
-class ArticleTablesParser(WikiParser):
+class ArticleTablesParser(WikiParser[list[dict[str, Any]]]):
     """Wspólny parser tabel wikitable z artykułów Wikipedii."""
 
     def __init__(

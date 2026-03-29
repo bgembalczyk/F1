@@ -129,6 +129,37 @@ def build_cli_main(
     return _main
 
 
+def build_complete_extractor_main(
+    *,
+    target: Callable[..., None],
+    argv: Sequence[str] | None = None,
+) -> Callable[[], None]:
+    """Backward-compatible helper for complete extractor entrypoints."""
+    return build_cli_main(
+        target=target,
+        base_config=complete_extractor_base_config(),
+        profile="complete_extractor",
+        argv=argv,
+    )
+
+
+def build_deprecated_module_main(
+    *,
+    target: Callable[..., None],
+    deprecation_message: str,
+    argv: Sequence[str] | None = None,
+) -> Callable[[], None]:
+    """Backward-compatible helper for deprecated entrypoints."""
+    return build_cli_main(
+        target=target,
+        base_config=deprecated_module_base_config(),
+        profile="deprecated_entrypoint",
+        argv=argv,
+        deprecation_message=deprecation_message,
+        deprecation_stacklevel=3,
+    )
+
+
 def _invoke_target(*, target: Callable[..., None], run_config: RunConfig) -> None:
     try:
         signature = inspect.signature(target)

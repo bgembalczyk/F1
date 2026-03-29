@@ -11,6 +11,8 @@ from scrapers.base.helpers.http import resolve_http_policy
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
+from scrapers.base.services.result_export_service import ResultExportService
+from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
 from scrapers.wiki.component_metadata import validate_metadata_for_component_class
 
 
@@ -33,6 +35,8 @@ class BaseDataExtractor(ABC):
         self.logger = get_logger(self.__class__.__name__)
         self._data: list[Any] | None = None
         self.exporter = options.exporter or DataExporter()
+        self.result_export_service = ResultExportService()
+        self.result_tabular_adapter = ResultTabularAdapter()
 
         self.http_policy = self.get_http_policy(options)
         runtime = ScraperRuntimeFactory().build(
@@ -64,7 +68,8 @@ class BaseDataExtractor(ABC):
         include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
-        result.to_json(
+        self.result_export_service.to_json(
+            result,
             path,
             exporter=self.exporter,
             indent=indent,
@@ -80,7 +85,8 @@ class BaseDataExtractor(ABC):
         include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
-        result.to_csv(
+        self.result_export_service.to_csv(
+            result,
             path,
             exporter=self.exporter,
             fieldnames=fieldnames,
@@ -90,4 +96,4 @@ class BaseDataExtractor(ABC):
 
     def to_dataframe(self):
         result = self.build_result()
-        return result.to_dataframe()
+        return self.result_tabular_adapter.to_dataframe(result)

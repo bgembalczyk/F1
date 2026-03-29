@@ -3,12 +3,12 @@ import json
 
 import pytest
 
-from scrapers.wiki.seed_registry import WIKI_LIST_JOB_REGISTRY
-from scrapers.wiki.seed_registry import WIKI_SEED_REGISTRY
-from scrapers.wiki.seed_registry import ListJobRegistryEntry
-from scrapers.wiki.seed_registry import SeedRegistryEntry
-from scrapers.wiki.seed_registry import validate_list_job_registry
-from scrapers.wiki.seed_registry import validate_seed_registry
+from layers.seed.registry import WIKI_LIST_JOB_REGISTRY
+from layers.seed.registry import WIKI_SEED_REGISTRY
+from layers.seed.registry import ListJobRegistryEntry
+from layers.seed.registry import SeedRegistryEntry
+from layers.seed.registry import validate_list_job_registry
+from layers.seed.registry import validate_seed_registry
 
 
 def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
@@ -19,7 +19,7 @@ def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
                     seed_name="empty-url",
                     wikipedia_url="",
                     output_category="drivers",
-                    scraper_cls=object,
+                    list_scraper_cls=object,
                     default_output_path="raw/drivers/a.json",
                     legacy_output_path="drivers/a.json",
                 ),
@@ -34,7 +34,7 @@ def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
                     seed_name="bad-json-path",
                     wikipedia_url="https://example.test/a",
                     output_category="drivers",
-                    scraper_cls=object,
+                    list_scraper_cls=object,
                     default_output_path="raw/circuits/a.json",
                     legacy_output_path="drivers/a.json",
                 ),
@@ -49,7 +49,7 @@ def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
                     seed_name="bad-legacy-path",
                     wikipedia_url="https://example.test/a",
                     output_category="drivers",
-                    scraper_cls=object,
+                    list_scraper_cls=object,
                     default_output_path="raw/drivers/a.json",
                     legacy_output_path="circuits/a.json",
                 ),

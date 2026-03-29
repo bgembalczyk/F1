@@ -20,7 +20,7 @@ class NestedChildParser(Protocol):
     ) -> dict[str, Any]: ...
 
 
-class BaseNestedSectionParser(WikiParser):
+class BaseNestedSectionParser(WikiParser[dict[str, Any]]):
     heading_class: str
     output_key: str
 
