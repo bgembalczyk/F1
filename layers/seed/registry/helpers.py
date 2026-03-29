@@ -9,6 +9,7 @@ from layers.seed.registry.constants import SEED_REGISTRY_VALIDATION_SPEC
 from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
+from layers.seed.registry.url_resolver import resolve_scraper_url
 from scrapers.wiki.discovery import discover_layer_one_seed_components
 
 
@@ -22,7 +23,7 @@ def _seed_entry_from_component(
     metadata = component.metadata
     return SeedRegistryEntry(
         seed_name=seed_name,
-        wikipedia_url=component.cls.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(component.cls),
         output_category=metadata.output_category,
         list_scraper_cls=component.cls,
         default_output_path=default_output_path,
