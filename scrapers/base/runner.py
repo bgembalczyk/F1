@@ -16,7 +16,7 @@ class ScraperRunner:
     def __init__(self, run_config: RunConfig, *, supports_urls: bool = True) -> None:
         self._run_config = run_config
         self._supports_urls = supports_urls
-        self._factory = ScraperFactory()
+        self._factory = ScraperFactory(adapters=ScraperFactory.default_adapters())
 
     def run_and_export(
         self,
