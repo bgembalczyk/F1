@@ -37,6 +37,8 @@ from infrastructure.gemini.constants import DEFAULT_MODELS
 from infrastructure.gemini.constants import DEFAULT_TIMEOUT
 from infrastructure.gemini.model_config import ModelConfig
 from infrastructure.gemini.model_state import ModelState
+from infrastructure.gemini.logging import ProgressReporter
+from infrastructure.gemini.logging import RedactingLogger
 
 
 class GeminiClient:
@@ -58,6 +60,7 @@ class GeminiClient:
         models: list[ModelConfig],
         cache: GeminiCache | None = None,
         timeout: int = DEFAULT_TIMEOUT,
+        reporter: ProgressReporter | None = None,
     ) -> None:
         if not api_key:
             msg = "Gemini API key nie może być pusty."
@@ -71,6 +74,7 @@ class GeminiClient:
         self._timeout = timeout
         self._ssl_context = self._build_ssl_context()
         self._rate_lock = threading.Lock()
+        self._reporter = reporter if reporter is not None else RedactingLogger()
 
     # ------------------------------------------------------------------
     # factory
@@ -84,6 +88,7 @@ class GeminiClient:
         models: list[ModelConfig] | None = None,
         cache: GeminiCache | None = None,
         timeout: int = DEFAULT_TIMEOUT,
+        reporter: ProgressReporter | None = None,
     ) -> "GeminiClient":
         """Tworzy klienta wczytując klucz API z pliku.
 
@@ -108,6 +113,7 @@ class GeminiClient:
             models=models if models is not None else list(DEFAULT_MODELS),
             cache=cache,
             timeout=timeout,
+            reporter=reporter,
         )
 
     # ------------------------------------------------------------------
@@ -141,14 +147,21 @@ class GeminiClient:
                     f"Modele z błędem API: {error_models or '(brak)'}\n"
                     f"Dostępne modele: {[s.model for s in self._model_states]}"
                 )
+                self._reporter.error(
+                    "gemini.models.exhausted",
+                    error_models=sorted(error_models),
+                    available_models=[s.model for s in self._model_states],
+                )
                 raise RuntimeError(
                     msg,
                 )
 
             cached = self._cache.get(prompt, model)
             if cached is not None:
-                print(
-                    f"[GeminiClient] Cache hit (model={model}), pomijam wywołanie API.",
+                self._reporter.info(
+                    "gemini.cache_hit",
+                    model=model,
+                    action="skip_api_call",
                 )
                 return cached
 
@@ -158,8 +171,14 @@ class GeminiClient:
                     model=model,
                     response_mime_type=response_mime_type,
                 )
-            except RuntimeError:
+            except RuntimeError as exc:
                 error_models.add(model)
+                self._reporter.warn(
+                    "gemini.model.failed",
+                    model=model,
+                    error=str(exc),
+                    fallback=True,
+                )
                 continue
 
             self._cache.set(prompt, model, result)
@@ -210,8 +229,12 @@ class GeminiClient:
             method="POST",
         )
 
-        print(f"[GeminiClient] >>> Zapytanie do API (model={model}):")
-        print(prompt)
+        self._reporter.debug(
+            "gemini.api.request",
+            model=model,
+            prompt=prompt,
+            response_mime_type=response_mime_type,
+        )
 
         try:
             req_url = req.full_url
@@ -232,6 +255,13 @@ class GeminiClient:
                 f"Gemini API zwróciło HTTP {exc.code}: {exc.reason}\n"
                 f"Response body:\n{error_body}"
             )
+            self._reporter.warn(
+                "gemini.api.http_error",
+                model=model,
+                http_code=exc.code,
+                reason=str(exc.reason),
+                raw_response=error_body,
+            )
             raise RuntimeError(
                 msg,
             ) from exc
@@ -242,12 +272,20 @@ class GeminiClient:
                 "poprawność endpointu.\n"
                 f"Szczegóły: {exc}"
             )
+            self._reporter.error(
+                "gemini.api.network_error",
+                model=model,
+                error=str(exc),
+            )
             raise RuntimeError(
                 msg,
             ) from exc
 
-        print("[GeminiClient] <<< Odpowiedź surowa od API:")
-        print(raw)
+        self._reporter.debug(
+            "gemini.api.raw_response",
+            model=model,
+            raw_response=raw,
+        )
 
         try:
             api_response = json.loads(raw)

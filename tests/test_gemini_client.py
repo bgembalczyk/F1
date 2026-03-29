@@ -1,5 +1,6 @@
 """Tests for GeminiClient - multi-model fallback, RPM/RPD limits, cache integration."""
 
+import logging
 import time
 from unittest.mock import MagicMock
 
@@ -9,6 +10,8 @@ from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.client import GeminiClient
 from infrastructure.gemini.client import ModelConfig
 from infrastructure.gemini.client import ModelState
+from infrastructure.gemini.constants import DEFAULT_MODELS
+from infrastructure.gemini.logging import RedactingLogger
 
 # ---------------------------------------------------------------------------
 # ModelConfig / _ModelState unit tests
@@ -137,7 +140,8 @@ def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
 
     call_log: list[str] = []
 
-    def fake_call_api(_prompt, *, model, _response_mime_type):
+    def fake_call_api(_prompt, *, model, response_mime_type):
+        assert response_mime_type == "application/json"
         call_log.append(model)
         if model == "model-a":
             msg = "API error from model-a"
@@ -185,7 +189,8 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
 
     call_log: list[str] = []
 
-    def fake_call_api(_prompt, *, model, _response_mime_type):
+    def fake_call_api(_prompt, *, model, response_mime_type):
+        assert response_mime_type == "application/json"
         call_log.append(model)
         return {"ok": True}
 
@@ -227,7 +232,7 @@ def test_from_key_file_uses_default_models(tmp_path) -> None:
     key_file.write_text("my-api-key", encoding="utf-8")
     client = GeminiClient.from_key_file(key_file)
     assert len(client._model_states) > 0  # noqa: SLF001
-    assert client._model_states[0].model == "gemini-2.5-flash-lite"  # noqa: SLF001
+    assert client._model_states[0].model == DEFAULT_MODELS[0].model  # noqa: SLF001
 
 
 def test_from_key_file_accepts_custom_models(tmp_path) -> None:
@@ -236,3 +241,41 @@ def test_from_key_file_accepts_custom_models(tmp_path) -> None:
     custom = [ModelConfig("custom-model", requests_per_minute=5, requests_per_day=100)]
     client = GeminiClient.from_key_file(key_file, models=custom)
     assert client._model_states[0].model == "custom-model"  # noqa: SLF001
+
+
+def test_query_logs_cache_hit_event_without_prompt_payload(tmp_path, caplog) -> None:
+    cache = GeminiCache(cache_dir=tmp_path / "c")
+    secret_prompt = "sensitive prompt text"
+    cache.set(secret_prompt, "model-a", {"cached": True})
+    logger = logging.getLogger("tests.gemini.cache")
+    client = GeminiClient(
+        api_key="test-key",
+        models=[ModelConfig("model-a", requests_per_minute=10, requests_per_day=500)],
+        cache=cache,
+        reporter=RedactingLogger(logger),
+    )
+
+    with caplog.at_level(logging.INFO, logger=logger.name):
+        client.query(secret_prompt)
+
+    assert "gemini.cache_hit" in caplog.text
+    assert secret_prompt not in caplog.text
+
+
+def test_redacting_logger_masks_prompt_and_raw_response(caplog) -> None:
+    logger = logging.getLogger("tests.gemini.redaction")
+    reporter = RedactingLogger(logger)
+
+    with caplog.at_level(logging.DEBUG, logger=logger.name):
+        reporter.debug(
+            "gemini.api.request",
+            model="gemini-2.5-flash-lite",
+            prompt="TOP SECRET PROMPT",
+            raw_response='{"token": "very-secret"}',
+        )
+
+    assert "gemini.api.request" in caplog.text
+    assert "TOP SECRET PROMPT" not in caplog.text
+    assert '"very-secret"' not in caplog.text
+    assert "prompt='[REDACTED]'" in caplog.text
+    assert "raw_response='[REDACTED]'" in caplog.text
