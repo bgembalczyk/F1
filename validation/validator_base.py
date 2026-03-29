@@ -310,7 +310,7 @@ class RecordValidator(ABC):
         allow_none: bool = False,
     ) -> list[ValidationIssue]:
         if key not in record:
-            return [ValidationIssue.missing(key)]
+            return []
         value = record[key]
         if value is None:
             return [] if allow_none else [ValidationIssue.null(key)]
