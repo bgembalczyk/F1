@@ -86,6 +86,30 @@ class BaseHttpClient(ABC):
             merged_headers.update(config.headers)
         self.default_headers = merged_headers
 
+    def _merge_request_headers(
+        self,
+        headers: dict[str, str] | None = None,
+    ) -> dict[str, str]:
+        """
+        Buduje nagłówki requestu wg jawnego kontraktu priorytetu.
+
+        Kontrakt: client > session.
+        - session.headers: globalne nagłówki sesji (najniższy priorytet)
+        - default_headers klienta + config.headers (wyższy priorytet)
+        - headers requestu (najwyższy priorytet)
+        """
+        merged_headers: dict[str, str] = {}
+
+        session_headers = getattr(self.session, "headers", None)
+        if session_headers:
+            merged_headers.update(session_headers)
+
+        merged_headers.update(self.default_headers)
+
+        if headers:
+            merged_headers.update(headers)
+        return merged_headers
+
     def _backoff_sleep(self, attempt: int) -> None:
         delay = self.retry_policy.backoff_seconds(attempt)
         if delay > 0:
@@ -106,13 +130,9 @@ class BaseHttpClient(ABC):
                 self.rate_limiter.wait(url)
 
             try:
-                merged_headers = dict(self.default_headers)
-                if headers:
-                    merged_headers.update(headers)
-
                 response = request_func(
                     url,
-                    headers=merged_headers,
+                    headers=self._merge_request_headers(headers),
                     timeout=timeout or self.timeout,
                 )
             except self.request_exception_cls as exc:
