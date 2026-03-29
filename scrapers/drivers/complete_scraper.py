@@ -13,9 +13,9 @@ class CompleteDriverDataExtractor(CompleteExtractorBase):
     )
     url = F1DriversListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_cls=F1DriversListScraper,
+        list_scraper_classes=(F1DriversListScraper,),
         single_scraper_cls=SingleDriverScraper,
-        detail_url_field_path="driver.url",
+        detail_url_field_paths=("driver.url",),
     )
 
 
