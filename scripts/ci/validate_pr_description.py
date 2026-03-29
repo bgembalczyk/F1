@@ -25,8 +25,8 @@ REQUIRED_CHECKLIST_ITEMS: tuple[str, ...] = (
 )
 
 
-HEADING_PATTERN = re.compile(r"^\s{0,3}#{2,6}\s+(.+?)\s*$", re.MULTILINE)
-CHECKLIST_PATTERN = re.compile(r"- \[(?P<state>[ xX])\]\s*(?P<label>.+)")
+HEADING_PATTERN = re.compile(r"^\s*#{2,6}\s+(.+?)\s*$", re.MULTILINE)
+CHECKLIST_PATTERN = re.compile(r"^\s*- \[(?P<state>[ xX])\]\s*(?P<label>.+)\s*$", re.MULTILINE)
 CODE_BLOCK_PATTERN = re.compile(r"```.+?```", re.DOTALL)
 
 
