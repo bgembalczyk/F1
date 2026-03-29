@@ -63,3 +63,38 @@ class DriverPipeline:
     violations = run_check([source])
 
     assert violations == []
+
+
+
+def test_detects_parser_creation_inside_business_method(tmp_path: Path) -> None:
+    source = _write(
+        tmp_path / "sample_parser.py",
+        """
+class DriverPipeline:
+    def run(self) -> None:
+        parser = ResultsParser()
+        parser.parse()
+""",
+    )
+
+    violations = run_check([source])
+
+    assert len(violations) == 1
+    assert violations[0].dependency_name == "ResultsParser"
+
+
+def test_detects_hidden_import_inside_business_method(tmp_path: Path) -> None:
+    source = _write(
+        tmp_path / "sample_import.py",
+        """
+class DriverPipeline:
+    def run(self) -> None:
+        from scrapers.shared import helper
+        helper.parse()
+""",
+    )
+
+    violations = run_check([source])
+
+    assert len(violations) == 1
+    assert violations[0].violation_type == "import"
