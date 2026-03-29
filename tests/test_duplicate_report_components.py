@@ -43,7 +43,7 @@ def test_diff_added_lines_provider_parses_diff_hunks(monkeypatch: Any) -> None:
     def fake_run(*_args: Any, **_kwargs: Any) -> Completed:
         return Completed()
 
-    monkeypatch.setattr("scripts.ci.duplicate_report.subprocess.run", fake_run)
+    monkeypatch.setattr("scripts.ci.git_diff.subprocess.run", fake_run)
 
     added = provider.build_added_lines_map(
         "base",
