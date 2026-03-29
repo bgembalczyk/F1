@@ -14,9 +14,9 @@ class CompleteSeasonDataExtractor(CompleteExtractorBase):
     )
     url = SeasonsListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_cls=SeasonsListScraper,
+        list_scraper_classes=(SeasonsListScraper,),
         single_scraper_cls=SingleSeasonScraper,
-        detail_url_field_path="season.url",
+        detail_url_field_paths=("season.url",),
         record_assembly_strategy=BundleRecordWithDetailsStrategy(
             record_field="season",
             details_key="tables",

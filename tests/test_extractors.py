@@ -63,3 +63,32 @@ def test_infobox_extractor_extracts_rows_and_logs(
     assert record["title"] == "Test Circuit"
     assert record["rows"]["Country"]["text"] == "Testland"
     assert "InfoboxExtractor extracted 1 row(s)" in caplog.text
+
+
+def test_infobox_extractor_skip_policy_returns_empty_on_recoverable_error() -> None:
+    class _Parser:
+        def parse(self, _soup):
+            raise ValueError("bad infobox")
+
+        def find_infobox(self, _soup):
+            return None
+
+    extractor = InfoboxExtractor(parser=_Parser(), error_policy="skip")
+    soup = BeautifulSoup("<html></html>", "html.parser")
+
+    assert extractor.extract(soup) == {}
+
+
+def test_infobox_extractor_propagates_type_error_as_non_recoverable() -> None:
+    class _Parser:
+        def parse(self, _soup):
+            raise TypeError("programmer bug")
+
+        def find_infobox(self, _soup):
+            return None
+
+    extractor = InfoboxExtractor(parser=_Parser(), error_policy="skip")
+    soup = BeautifulSoup("<html></html>", "html.parser")
+
+    with pytest.raises(TypeError):
+        extractor.extract(soup)

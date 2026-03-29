@@ -1,3 +1,6 @@
+from dataclasses import dataclass
+from typing import Any
+
 from layers.seed.data_classes import RegistryValidationRule
 from layers.seed.data_classes import RegistryValidationSpec
 from layers.seed.registry.entries import ListJobRegistryEntry
@@ -36,219 +39,261 @@ from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
 
-EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
-    SeedRegistryEntry(
-        seed_name="drivers",
-        wikipedia_url=F1DriversListScraper.CONFIG.url,
-        output_category="drivers",
-        list_scraper_cls=F1DriversListScraper,
-        default_output_path="raw/drivers/seeds/complete_drivers",
-        legacy_output_path="drivers/complete_drivers",
-    ),
-    SeedRegistryEntry(
-        seed_name="constructors",
-        wikipedia_url=CurrentConstructorsListScraper.CONFIG.url,
-        output_category="constructors",
-        list_scraper_cls=CurrentConstructorsListScraper,
-        default_output_path="raw/constructors/seeds/complete_constructors",
-        legacy_output_path="constructors/complete_constructors",
-    ),
-    SeedRegistryEntry(
-        seed_name="grands_prix",
-        wikipedia_url=GrandsPrixListScraper.CONFIG.url,
-        output_category="grands_prix",
-        list_scraper_cls=GrandsPrixListScraper,
-        default_output_path="raw/grands_prix/seeds/f1_grands_prix_extended.json",
-        legacy_output_path="grands_prix/f1_grands_prix_extended.json",
-    ),
-    SeedRegistryEntry(
+
+@dataclass(frozen=True)
+class RawRegistrySpec:
+    seed_name: str
+    list_scraper_cls: type[Any]
+    output_category: str
+    list_filename: str
+    seed_filename: str | None = None
+    seed_output_category: str | None = None
+    list_output_category: str | None = None
+    include_in_list_registry: bool = True
+
+
+def _resolve_wikipedia_url(list_scraper_cls: type[Any]) -> str:
+    config = getattr(list_scraper_cls, "CONFIG", None)
+    if config is not None and hasattr(config, "url"):
+        return config.url
+
+    url = getattr(list_scraper_cls, "url", None)
+    if isinstance(url, str):
+        return url
+
+    msg = f"Cannot resolve wikipedia_url for scraper '{list_scraper_cls.__name__}'"
+    raise ValueError(msg)
+
+
+def _seed_default_output_path(*, output_category: str, filename: str) -> str:
+    return f"raw/{output_category}/seeds/{filename}"
+
+
+def _seed_legacy_output_path(*, output_category: str, filename: str) -> str:
+    return f"{output_category}/{filename}"
+
+
+def _list_default_output_path(*, output_category: str, filename: str) -> str:
+    return f"raw/{output_category}/list/{filename}"
+
+
+def _list_legacy_output_path(*, output_category: str, filename: str) -> str:
+    return f"{output_category}/{filename}"
+
+
+def build_seed_registry_entry_from_spec(spec: RawRegistrySpec) -> SeedRegistryEntry | None:
+    if spec.seed_filename is None:
+        return None
+
+    output_category = spec.seed_output_category or spec.output_category
+    return SeedRegistryEntry(
+        seed_name=spec.seed_name,
+        wikipedia_url=_resolve_wikipedia_url(spec.list_scraper_cls),
+        output_category=output_category,
+        list_scraper_cls=spec.list_scraper_cls,
+        default_output_path=_seed_default_output_path(
+            output_category=output_category,
+            filename=spec.seed_filename,
+        ),
+        legacy_output_path=_seed_legacy_output_path(
+            output_category=output_category,
+            filename=spec.seed_filename,
+        ),
+    )
+
+
+def build_list_job_registry_entry_from_spec(spec: RawRegistrySpec) -> ListJobRegistryEntry:
+    output_category = spec.list_output_category or spec.output_category
+    return ListJobRegistryEntry(
+        seed_name=spec.seed_name,
+        wikipedia_url=_resolve_wikipedia_url(spec.list_scraper_cls),
+        output_category=output_category,
+        list_scraper_cls=spec.list_scraper_cls,
+        json_output_path=_list_default_output_path(
+            output_category=output_category,
+            filename=spec.list_filename,
+        ),
+        legacy_json_output_path=_list_legacy_output_path(
+            output_category=output_category,
+            filename=spec.list_filename,
+        ),
+    )
+
+
+RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
+    RawRegistrySpec(
         seed_name="circuits",
-        wikipedia_url=CircuitsListScraper.CONFIG.url,
-        output_category="circuits",
         list_scraper_cls=CircuitsListScraper,
-        default_output_path="raw/circuits/seeds/complete_circuits",
-        legacy_output_path="circuits/complete_circuits",
+        output_category="circuits",
+        list_filename="f1_circuits.json",
+        seed_filename="complete_circuits",
     ),
-    SeedRegistryEntry(
+    RawRegistrySpec(
+        seed_name="constructors_current",
+        list_scraper_cls=CurrentConstructorsListScraper,
+        output_category="constructors",
+        list_filename="f1_constructors_{year}.json",
+    ),
+    RawRegistrySpec(
+        seed_name="constructors_former",
+        list_scraper_cls=FormerConstructorsListScraper,
+        output_category="chassis_constructors",
+        list_filename="f1_former_constructors.json",
+    ),
+    RawRegistrySpec(
+        seed_name="constructors_indianapolis_only",
+        list_scraper_cls=IndianapolisOnlyConstructorsListScraper,
+        output_category="chassis_constructors",
+        list_filename="f1_indianapolis_only_constructors.json",
+    ),
+    RawRegistrySpec(
+        seed_name="constructors_privateer",
+        list_scraper_cls=PrivateerTeamsListScraper,
+        output_category="teams",
+        list_filename="f1_privateer_teams.json",
+    ),
+    RawRegistrySpec(
+        seed_name="drivers",
+        list_scraper_cls=F1DriversListScraper,
+        output_category="drivers",
+        list_filename="f1_drivers.json",
+        seed_filename="complete_drivers",
+    ),
+    RawRegistrySpec(
+        seed_name="drivers_female",
+        list_scraper_cls=FemaleDriversListScraper,
+        output_category="drivers",
+        list_filename="female_drivers.json",
+    ),
+    RawRegistrySpec(
+        seed_name="drivers_fatalities",
+        list_scraper_cls=F1FatalitiesListScraper,
+        output_category="drivers",
+        list_filename="f1_driver_fatalities.json",
+    ),
+    RawRegistrySpec(
         seed_name="seasons",
-        wikipedia_url=SeasonsListScraper.CONFIG.url,
-        output_category="seasons",
         list_scraper_cls=SeasonsListScraper,
-        default_output_path="raw/seasons/seeds/complete_seasons",
-        legacy_output_path="seasons/complete_seasons",
+        output_category="seasons",
+        list_filename="f1_seasons.json",
+        seed_filename="complete_seasons",
+    ),
+    RawRegistrySpec(
+        seed_name="grands_prix_by_title",
+        list_scraper_cls=GrandsPrixListScraper,
+        output_category="grands_prix",
+        list_filename="f1_grands_prix_by_title.json",
+    ),
+    RawRegistrySpec(
+        seed_name="engines_indianapolis_only",
+        list_scraper_cls=IndianapolisOnlyEngineManufacturersListScraper,
+        output_category="engines",
+        list_filename="f1_indianapolis_only_engine_manufacturers.json",
+    ),
+    RawRegistrySpec(
+        seed_name="engines_restrictions",
+        list_scraper_cls=EngineRestrictionsScraper,
+        output_category="rules",
+        list_filename="f1_engine_restrictions.json",
+    ),
+    RawRegistrySpec(
+        seed_name="engines_regulations",
+        list_scraper_cls=EngineRegulationScraper,
+        output_category="rules",
+        list_filename="f1_engine_regulations.json",
+    ),
+    RawRegistrySpec(
+        seed_name="engines_manufacturers",
+        list_scraper_cls=EngineManufacturersListScraper,
+        output_category="engines",
+        list_filename="f1_engine_manufacturers.json",
+    ),
+    RawRegistrySpec(
+        seed_name="grands_prix_red_flagged_world_championship",
+        list_scraper_cls=RedFlaggedWorldChampionshipRacesScraper,
+        output_category="races",
+        list_filename="f1_red_flagged_world_championship_races.json",
+    ),
+    RawRegistrySpec(
+        seed_name="grands_prix_red_flagged_non_championship",
+        list_scraper_cls=RedFlaggedNonChampionshipRacesScraper,
+        output_category="races",
+        list_filename="f1_red_flagged_non_championship_races.json",
+    ),
+    RawRegistrySpec(
+        seed_name="points_sprint",
+        list_scraper_cls=SprintQualifyingPointsScraper,
+        output_category="points",
+        list_filename="points_scoring_systems_sprint.json",
+    ),
+    RawRegistrySpec(
+        seed_name="points_shortened",
+        list_scraper_cls=ShortenedRacePointsScraper,
+        output_category="points",
+        list_filename="points_scoring_systems_shortened.json",
+    ),
+    RawRegistrySpec(
+        seed_name="points_history",
+        list_scraper_cls=PointsScoringSystemsHistoryScraper,
+        output_category="points",
+        list_filename="points_scoring_systems_history.json",
+    ),
+    RawRegistrySpec(
+        seed_name="tyres",
+        list_scraper_cls=TyreManufacturersBySeasonScraper,
+        output_category="seasons",
+        list_filename="f1_tyre_manufacturers_by_season.json",
+    ),
+    RawRegistrySpec(
+        seed_name="sponsorship_liveries",
+        list_scraper_cls=F1SponsorshipLiveriesScraper,
+        output_category="teams",
+        list_filename="f1_sponsorship_liveries.json",
+    ),
+    RawRegistrySpec(
+        seed_name="constructors",
+        list_scraper_cls=CurrentConstructorsListScraper,
+        output_category="constructors",
+        list_filename="f1_constructors_{year}.json",
+        seed_filename="complete_constructors",
+        include_in_list_registry=False,
+    ),
+    RawRegistrySpec(
+        seed_name="grands_prix",
+        list_scraper_cls=GrandsPrixListScraper,
+        output_category="grands_prix",
+        list_filename="f1_grands_prix_by_title.json",
+        seed_filename="f1_grands_prix_extended.json",
+        include_in_list_registry=False,
     ),
 )
 
 
-WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
-    ListJobRegistryEntry(
-        seed_name="circuits",
-        wikipedia_url=CircuitsListScraper.CONFIG.url,
-        output_category="circuits",
-        list_scraper_cls=CircuitsListScraper,
-        json_output_path="raw/circuits/list/f1_circuits.json",
-        legacy_json_output_path="circuits/f1_circuits.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="constructors_current",
-        wikipedia_url=CurrentConstructorsListScraper.CONFIG.url,
-        output_category="constructors",
-        list_scraper_cls=CurrentConstructorsListScraper,
-        json_output_path="raw/constructors/list/f1_constructors_{year}.json",
-        legacy_json_output_path="constructors/f1_constructors_{year}.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="constructors_former",
-        wikipedia_url=FormerConstructorsListScraper.CONFIG.url,
-        output_category="chassis_constructors",
-        list_scraper_cls=FormerConstructorsListScraper,
-        json_output_path="raw/chassis_constructors/list/f1_former_constructors.json",
-        legacy_json_output_path="chassis_constructors/f1_former_constructors.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="constructors_indianapolis_only",
-        wikipedia_url=IndianapolisOnlyConstructorsListScraper.url,
-        output_category="chassis_constructors",
-        list_scraper_cls=IndianapolisOnlyConstructorsListScraper,
-        json_output_path="raw/chassis_constructors/list/f1_indianapolis_only_constructors.json",
-        legacy_json_output_path="chassis_constructors/f1_indianapolis_only_constructors.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="constructors_privateer",
-        wikipedia_url=PrivateerTeamsListScraper.url,
-        output_category="teams",
-        list_scraper_cls=PrivateerTeamsListScraper,
-        json_output_path="raw/teams/list/f1_privateer_teams.json",
-        legacy_json_output_path="teams/f1_privateer_teams.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="drivers",
-        wikipedia_url=F1DriversListScraper.CONFIG.url,
-        output_category="drivers",
-        list_scraper_cls=F1DriversListScraper,
-        json_output_path="raw/drivers/list/f1_drivers.json",
-        legacy_json_output_path="drivers/f1_drivers.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="drivers_female",
-        wikipedia_url=FemaleDriversListScraper.CONFIG.url,
-        output_category="drivers",
-        list_scraper_cls=FemaleDriversListScraper,
-        json_output_path="raw/drivers/list/female_drivers.json",
-        legacy_json_output_path="drivers/female_drivers.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="drivers_fatalities",
-        wikipedia_url=F1FatalitiesListScraper.CONFIG.url,
-        output_category="drivers",
-        list_scraper_cls=F1FatalitiesListScraper,
-        json_output_path="raw/drivers/list/f1_driver_fatalities.json",
-        legacy_json_output_path="drivers/f1_driver_fatalities.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="seasons",
-        wikipedia_url=SeasonsListScraper.CONFIG.url,
-        output_category="seasons",
-        list_scraper_cls=SeasonsListScraper,
-        json_output_path="raw/seasons/list/f1_seasons.json",
-        legacy_json_output_path="seasons/f1_seasons.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="grands_prix_by_title",
-        wikipedia_url=GrandsPrixListScraper.CONFIG.url,
-        output_category="grands_prix",
-        list_scraper_cls=GrandsPrixListScraper,
-        json_output_path="raw/grands_prix/list/f1_grands_prix_by_title.json",
-        legacy_json_output_path="grands_prix/f1_grands_prix_by_title.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="engines_indianapolis_only",
-        wikipedia_url=IndianapolisOnlyEngineManufacturersListScraper.url,
-        output_category="engines",
-        list_scraper_cls=IndianapolisOnlyEngineManufacturersListScraper,
-        json_output_path="raw/engines/list/f1_indianapolis_only_engine_manufacturers.json",
-        legacy_json_output_path="engines/f1_indianapolis_only_engine_manufacturers.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="engines_restrictions",
-        wikipedia_url=EngineRestrictionsScraper.CONFIG.url,
-        output_category="rules",
-        list_scraper_cls=EngineRestrictionsScraper,
-        json_output_path="raw/rules/list/f1_engine_restrictions.json",
-        legacy_json_output_path="rules/f1_engine_restrictions.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="engines_regulations",
-        wikipedia_url=EngineRegulationScraper.CONFIG.url,
-        output_category="rules",
-        list_scraper_cls=EngineRegulationScraper,
-        json_output_path="raw/rules/list/f1_engine_regulations.json",
-        legacy_json_output_path="rules/f1_engine_regulations.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="engines_manufacturers",
-        wikipedia_url=EngineManufacturersListScraper.CONFIG.url,
-        output_category="engines",
-        list_scraper_cls=EngineManufacturersListScraper,
-        json_output_path="raw/engines/list/f1_engine_manufacturers.json",
-        legacy_json_output_path="engines/f1_engine_manufacturers.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="grands_prix_red_flagged_world_championship",
-        wikipedia_url=RedFlaggedWorldChampionshipRacesScraper.CONFIG.url,
-        output_category="races",
-        list_scraper_cls=RedFlaggedWorldChampionshipRacesScraper,
-        json_output_path="raw/races/list/f1_red_flagged_world_championship_races.json",
-        legacy_json_output_path="races/f1_red_flagged_world_championship_races.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="grands_prix_red_flagged_non_championship",
-        wikipedia_url=RedFlaggedNonChampionshipRacesScraper.CONFIG.url,
-        output_category="races",
-        list_scraper_cls=RedFlaggedNonChampionshipRacesScraper,
-        json_output_path="raw/races/list/f1_red_flagged_non_championship_races.json",
-        legacy_json_output_path="races/f1_red_flagged_non_championship_races.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="points_sprint",
-        wikipedia_url=SprintQualifyingPointsScraper.CONFIG.url,
-        output_category="points",
-        list_scraper_cls=SprintQualifyingPointsScraper,
-        json_output_path="raw/points/list/points_scoring_systems_sprint.json",
-        legacy_json_output_path="points/points_scoring_systems_sprint.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="points_shortened",
-        wikipedia_url=ShortenedRacePointsScraper.CONFIG.url,
-        output_category="points",
-        list_scraper_cls=ShortenedRacePointsScraper,
-        json_output_path="raw/points/list/points_scoring_systems_shortened.json",
-        legacy_json_output_path="points/points_scoring_systems_shortened.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="points_history",
-        wikipedia_url=PointsScoringSystemsHistoryScraper.CONFIG.url,
-        output_category="points",
-        list_scraper_cls=PointsScoringSystemsHistoryScraper,
-        json_output_path="raw/points/list/points_scoring_systems_history.json",
-        legacy_json_output_path="points/points_scoring_systems_history.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="tyres",
-        wikipedia_url=TyreManufacturersBySeasonScraper.CONFIG.url,
-        output_category="seasons",
-        list_scraper_cls=TyreManufacturersBySeasonScraper,
-        json_output_path="raw/seasons/list/f1_tyre_manufacturers_by_season.json",
-        legacy_json_output_path="seasons/f1_tyre_manufacturers_by_season.json",
-    ),
-    ListJobRegistryEntry(
-        seed_name="sponsorship_liveries",
-        wikipedia_url=F1SponsorshipLiveriesScraper.url,
-        output_category="teams",
-        list_scraper_cls=F1SponsorshipLiveriesScraper,
-        json_output_path="raw/teams/list/f1_sponsorship_liveries.json",
-        legacy_json_output_path="teams/f1_sponsorship_liveries.json",
-    ),
+_LAYER_ONE_SEED_REGISTRY_ORDER: tuple[str, ...] = (
+    "drivers",
+    "constructors",
+    "grands_prix",
+    "circuits",
+    "seasons",
+)
+
+_seed_entries_by_name = {
+    entry.seed_name: entry
+    for entry in (
+        build_seed_registry_entry_from_spec(spec) for spec in RAW_REGISTRY_SPEC
+    )
+    if entry is not None
+}
+
+EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = tuple(
+    _seed_entries_by_name[seed_name] for seed_name in _LAYER_ONE_SEED_REGISTRY_ORDER
+)
+
+
+WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = tuple(
+    build_list_job_registry_entry_from_spec(spec)
+    for spec in RAW_REGISTRY_SPEC
+    if spec.include_in_list_registry
 )
 
 

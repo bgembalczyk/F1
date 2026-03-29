@@ -13,6 +13,7 @@ from typing import TypeAlias
 from validation.issue import ValidationIssue
 from validation.quality_stats import QualityStats
 from validation.record_factory_validator import RecordFactoryValidatorProtocol
+from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
 
@@ -61,36 +62,15 @@ class RecordValidator(ABC):
 
     @staticmethod
     def _extract_missing_key(error: str) -> str | None:
-        if error.startswith("Missing key: "):
-            return error.replace("Missing key: ", "", 1).strip() or None
-        if error.startswith("Null value for: "):
-            return error.replace("Null value for: ", "", 1).strip() or None
-        if error.endswith(" is missing"):
-            return error[: -len(" is missing")].strip() or None
-        return None
+        return SchemaValidationEngine.extract_missing_key(error)
 
     @staticmethod
     def _extract_type_key(error: str) -> str | None:
-        if error.startswith("Invalid type for "):
-            trimmed = error.replace("Invalid type for ", "", 1)
-            return trimmed.split(":", 1)[0].strip() or None
-        if " must be " in error:
-            return error.split(" must be ", 1)[0].strip() or None
-        return None
+        return SchemaValidationEngine.extract_type_key(error)
 
     @classmethod
     def _coerce_issue(cls, error: ValidationIssue | str) -> ValidationIssue:
-        if isinstance(error, ValidationIssue):
-            return error
-        message = str(error)
-        missing_key = cls._extract_missing_key(message)
-        if missing_key:
-            code = "null" if message.startswith("Null value for: ") else "missing"
-            return ValidationIssue(code=code, field=missing_key, message=message)
-        type_key = cls._extract_type_key(message)
-        if type_key:
-            return ValidationIssue(code="type", field=type_key, message=message)
-        return ValidationIssue.custom(message)
+        return SchemaValidationEngine.coerce_issue(error)
 
     def build_quality_report(self) -> dict[str, Any]:
         accepted = self._stats.total_records - self._stats.rejected_records
@@ -137,7 +117,7 @@ class RecordValidator(ABC):
         record: Mapping[str, Any],
         schema: RecordSchema | Mapping[str, Any],
     ) -> list[ValidationIssue]:
-        normalized = cls._coerce_schema(schema)
+        normalized = SchemaValidationEngine.coerce_schema(schema)
         errors: list[ValidationIssue] = []
         errors.extend(cls.require_keys(record, normalized.required))
         allow_none = set(normalized.allow_none)
@@ -168,39 +148,12 @@ class RecordValidator(ABC):
         value: Any,
         nested_schema: NestedSchema,
     ) -> list[ValidationIssue]:
-        errors: list[ValidationIssue] = []
-        if nested_schema.is_list:
-            if not isinstance(value, list):
-                errors.append(
-                    ValidationIssue.type_error(
-                        key,
-                        "list",
-                        type(value).__name__,
-                    ),
-                )
-                return errors
-            for index, item in enumerate(value):
-                if not isinstance(item, Mapping):
-                    errors.append(
-                        ValidationIssue.custom(f"{key}[{index}] must be a mapping"),
-                    )
-                    continue
-                errors.extend(
-                    cls.prefix_errors(
-                        cls._validate_nested_schema(item, nested_schema.schema),
-                        f"{key}[{index}]",
-                    ),
-                )
-            return errors
-        if not isinstance(value, Mapping):
-            return [ValidationIssue.custom(f"{key} must be a mapping")]
-        errors.extend(
-            cls.prefix_errors(
-                cls._validate_nested_schema(value, nested_schema.schema),
-                key,
-            ),
+        return SchemaValidationEngine.validate_nested_value(
+            key,
+            value,
+            nested_schema,
+            cls.validate_schema,
         )
-        return errors
 
     @classmethod
     def _validate_nested_schema(
@@ -209,16 +162,18 @@ class RecordValidator(ABC):
         nested_schema: RecordSchema
         | Callable[[Mapping[str, Any]], Sequence[ValidationIssue | str]],
     ) -> list[ValidationIssue]:
-        if isinstance(nested_schema, RecordSchema):
-            return cls.validate_schema(record, nested_schema)
-        return [cls._coerce_issue(error) for error in nested_schema(record)]
+        return SchemaValidationEngine.validate_nested_schema(
+            record,
+            nested_schema,
+            cls.validate_schema,
+        )
 
     @staticmethod
     def prefix_errors(
         errors: Sequence[ValidationIssue],
         prefix: str,
     ) -> list[ValidationIssue]:
-        return [error.with_prefix(prefix) for error in errors]
+        return SchemaValidationEngine.prefix_errors(errors, prefix)
 
     @staticmethod
     def require_link_dict(value: Any, field_name: str) -> list[ValidationIssue]:
@@ -291,12 +246,4 @@ class RecordValidator(ABC):
 
     @staticmethod
     def _coerce_schema(schema: RecordSchema | Mapping[str, Any]) -> RecordSchema:
-        if isinstance(schema, RecordSchema):
-            return schema
-        return RecordSchema(
-            required=schema.get("required", ()),
-            types=schema.get("types", {}),
-            allow_none=schema.get("allow_none", ()),
-            nested=schema.get("nested", {}),
-            custom_validators=schema.get("custom_validators", ()),
-        )
+        return SchemaValidationEngine.coerce_schema(schema)
