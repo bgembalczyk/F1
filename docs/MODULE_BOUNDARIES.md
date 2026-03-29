@@ -159,12 +159,13 @@ Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
 
 ### 7.1 Harmonogram deprecacji (2 wersje przejściowe)
 
+<!-- generated-from: scrapers.cli.render_deprecation_schedule_markdown -->
 - **R0 (aktualna wersja):** legacy moduły działają, ale emitują `DeprecationWarning`.
 - **R1 (kolejna wersja):** legacy moduły nadal działają, warning pozostaje obowiązkowy.
 - **R2 (druga wersja przejściowa):** legacy moduły są usuwane.
 
 Runtime warning ma teraz jawny komunikat o oknie migracji:
-- `scheduled for removal after 2 transitional releases`
+- `scheduled for removal after 2 transitional releases (removal target: R2)`
 - oraz wskazanie canonical komendy `python -m scrapers.cli run <new_module>`.
 
 <!-- BEGIN AUTO-GENERATED: command-migration-map -->
