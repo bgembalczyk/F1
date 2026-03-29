@@ -7,6 +7,8 @@ from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.body_content import BodyContentParser
+from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
+from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
 from scrapers.wiki.parsers.header import HeaderParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
 
@@ -48,6 +50,7 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
         options: ScraperOptions | None = None,
         header_parser: HeaderParser | None = None,
         body_content_parser: BodyContentParser | None = None,
+        element_parsers: WikiElementParsers | None = None,
     ) -> None:
         """Inicjalizuje WikiScraper.
 
@@ -58,12 +61,18 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
             body_content_parser: Parser treści strony. Domyślnie tworzy nowy
                 BodyContentParser.
         """
-        WikiElementParserMixin.__init__(self)
+        resolved_element_parsers = element_parsers or build_default_wiki_element_parsers()
+        WikiElementParserMixin.__init__(
+            self,
+            element_parsers=resolved_element_parsers,
+        )
         options = init_scraper_options(options)
         ABCScraper.__init__(self, options=options)
 
         self.header_parser = header_parser or HeaderParser()
-        self.body_content_parser = body_content_parser or BodyContentParser()
+        self.body_content_parser = body_content_parser or BodyContentParser(
+            element_parsers=resolved_element_parsers,
+        )
         self.section_parser: SectionParser = (
             self.body_content_parser.content_text_parser.section_parser
         )

@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
+from typing import Protocol
+
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.adapter import SectionAdapterEntry
@@ -7,22 +10,46 @@ from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.service import BaseSectionExtractionService
 
 
-class _AdapterStub:
-    def __init__(self, sections: list[SectionParseResult]) -> None:
-        self.sections = sections
-        self.calls: list[tuple[str, list[object]]] = []
+class _SectionAdapterContract(Protocol):
+    def parse_sections(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[SectionParseResult]: ...
 
-    def parse_sections(self, *, soup, domain, entries):
+
+class _SectionServiceContract(Protocol):
+    def build_entries(self) -> list[SectionAdapterEntry]: ...
+
+
+@dataclass
+class _AdapterStub(_SectionAdapterContract):
+    sections: list[SectionParseResult]
+
+    def __post_init__(self) -> None:
+        self.calls: list[tuple[str, list[SectionAdapterEntry]]] = []
+
+    def parse_sections(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[SectionParseResult]:
         _ = soup
         self.calls.append((domain, entries))
         return self.sections
 
 
-class _SectionServiceStub(BaseSectionExtractionService):
+class _SectionServiceStub(BaseSectionExtractionService, _SectionServiceContract):
     domain = "unit"
 
-    def build_entries(self) -> list[object]:
-        return ["entry"]
+    def build_entries(self) -> list[SectionAdapterEntry]:
+        return [
+            SectionAdapterEntry(section_id="entry", aliases=(), parser=_ParserOk()),
+        ]
 
 
 class _FlattenSectionServiceStub(_SectionServiceStub):
@@ -45,7 +72,13 @@ def test_base_section_extraction_service_returns_normalized_section_payloads() -
         BeautifulSoup("<div></div>", "html.parser"),
     )
 
-    assert adapter.calls == [("unit", ["entry"])]
+    assert len(adapter.calls) == 1
+    domain, entries = adapter.calls[0]
+    assert domain == "unit"
+    assert len(entries) == 1
+    assert entries[0].section_id == "entry"
+    assert entries[0].aliases == ()
+    assert isinstance(entries[0].parser, _ParserOk)
     assert result == [
         {
             "section_id": "history",
@@ -111,8 +144,14 @@ class _ParserFail:
         raise RuntimeError(msg)
 
 
-class _AdapterPerEntryStub:
-    def parse_sections(self, *, soup, domain, entries):
+class _AdapterPerEntryStub(_SectionAdapterContract):
+    def parse_sections(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[SectionParseResult]:
         _ = soup, domain
         return [entries[0].parser.parse(None)]
 
@@ -120,7 +159,7 @@ class _AdapterPerEntryStub:
 class _ErrorTolerantService(BaseSectionExtractionService):
     domain = "unit"
 
-    def build_entries(self):
+    def build_entries(self) -> list[SectionAdapterEntry]:
         return [
             SectionAdapterEntry(section_id="ok", aliases=(), parser=_ParserOk()),
             SectionAdapterEntry(section_id="fail", aliases=(), parser=_ParserFail()),

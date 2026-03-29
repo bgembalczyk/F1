@@ -26,7 +26,6 @@ if TYPE_CHECKING:
 
 BaseConfigFactory = Literal["deprecated", "complete", "default"]
 LegacyTargetFactory = Literal["lazy", "run_and_export", "run_export_complete"]
-DEPRECATION_TRANSITION_RELEASES = 2
 SCRAPER_MODULE_PATH_PARTS = 3
 
 
@@ -94,6 +93,57 @@ class DomainCommand:
     name: str
     module_path: str
     scraper_path: str
+
+
+@dataclass(frozen=True)
+class DeprecationPolicy:
+    transitional_release_window: tuple[str, ...]
+    removal_target: str
+    canonical_replacement_template: str
+
+    @property
+    def transition_release_count(self) -> int:
+        return len(self.transitional_release_window)
+
+    def render_runtime_message(
+        self,
+        *,
+        module_path: str,
+        replacement_module: str,
+        domain_hint: str = "",
+    ) -> str:
+        return (
+            f"{module_path} is deprecated and scheduled for removal after "
+            f"{self.transition_release_count} transitional releases "
+            f"(removal target: {self.removal_target}); "
+            f"use `{self.canonical_replacement_template.format(replacement_module=replacement_module)}`"
+            f"{domain_hint}."
+        )
+
+    def render_schedule_markdown(self) -> str:
+        r0, r1 = self.transitional_release_window
+        return "\n".join(
+            (
+                f"- **{r0} (aktualna wersja):** legacy moduły działają, ale emitują `DeprecationWarning`.",
+                f"- **{r1} (kolejna wersja):** legacy moduły nadal działają, warning pozostaje obowiązkowy.",
+                f"- **{self.removal_target} (druga wersja przejściowa):** legacy moduły są usuwane.",
+                "",
+                "Runtime warning ma teraz jawny komunikat o oknie migracji:",
+                (
+                    "- `scheduled for removal after "
+                    f"{self.transition_release_count} transitional releases "
+                    f"(removal target: {self.removal_target})`"
+                ),
+                "- oraz wskazanie canonical komendy `python -m scrapers.cli run <new_module>`.",
+            )
+        )
+
+
+DEPRECATION_POLICY = DeprecationPolicy(
+    transitional_release_window=("R0", "R1"),
+    removal_target="R2",
+    canonical_replacement_template="python -m scrapers.cli run {replacement_module}",
+)
 
 
 def _build_base_config(factory: BaseConfigFactory) -> RunConfig:
@@ -481,11 +531,15 @@ def _deprecated_runtime_message(
         domain_name = parts[1]
         if domain_name in DOMAIN_COMMANDS:
             domain_hint = f" or `python -m scrapers.cli domain {domain_name}`"
-    return (
-        f"{module_path} is deprecated and scheduled for removal after "
-        f"{DEPRECATION_TRANSITION_RELEASES} transitional releases; "
-        f"use `python -m scrapers.cli run {replacement_module}`{domain_hint}."
+    return DEPRECATION_POLICY.render_runtime_message(
+        module_path=module_path,
+        replacement_module=replacement_module,
+        domain_hint=domain_hint,
     )
+
+
+def render_deprecation_schedule_markdown() -> str:
+    return DEPRECATION_POLICY.render_schedule_markdown()
 
 
 def _invoke_target(target: Callable[..., None], run_config: RunConfig) -> None:
@@ -576,6 +630,36 @@ def run_registered_module_for_caller(argv: list[str] | None = None) -> None:
         del frame
 
     run_registered_module(_module_path_from_file(caller_file), argv)
+
+
+def get_deprecated_module_migrations() -> tuple[tuple[str, str], ...]:
+    migrations: list[tuple[str, str]] = []
+    for definition in LEGACY_MODULE_REGISTRY.definitions:
+        if not definition.deprecated:
+            continue
+        replacement = definition.replacement_module_path or definition.module_path
+        migrations.append((definition.module_path, replacement))
+    return tuple(migrations)
+
+
+def _build_main_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Canonical scraper CLI")
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    run_parser = subparsers.add_parser("run")
+    run_parser.add_argument("module", choices=tuple(sorted(MODULE_DEFINITIONS)))
+
+    domain_parser = subparsers.add_parser("domain")
+    domain_parser.add_argument("name", choices=tuple(sorted(DOMAIN_COMMANDS)))
+
+    wiki_parser = subparsers.add_parser("wiki")
+    wiki_parser.add_argument(
+        "--mode",
+        choices=("layer0", "layer1", "full"),
+        default="layer0",
+    )
+
+    return parser
 
 
 def _build_wiki_parser() -> argparse.ArgumentParser:

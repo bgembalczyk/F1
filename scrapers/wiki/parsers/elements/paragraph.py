@@ -1,18 +1,17 @@
-from typing import Any
-
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.text_cleaning import extract_text
+from scrapers.wiki.parsers.types import ParagraphParsedData
 
 
-class ParagraphParser(WikiParser):
+class ParagraphParser(WikiParser[ParagraphParsedData]):
     """Parser akapitów Wikipedii.
 
     Przetwarza element: <p>
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag) -> ParagraphParsedData:
         """Parsuje akapit HTML.
 
         Args:
