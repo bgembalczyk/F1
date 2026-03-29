@@ -1,9 +1,20 @@
 # ruff: noqa: S603
 from __future__ import annotations
 
+import importlib.util
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Mapping
+
+_BOOTSTRAP_PATH = Path(__file__).resolve().parents[1] / "lib" / "bootstrap.py"
+_BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
+    "_scripts_bootstrap",
+    _BOOTSTRAP_PATH,
+)
+assert _BOOTSTRAP_SPEC and _BOOTSTRAP_SPEC.loader
+_BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
+_BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
+_BOOTSTRAP_MODULE.ensure_project_root_on_path()
 
 from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.io_utils import append_output_vars
