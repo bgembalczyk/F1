@@ -3,12 +3,13 @@ import json
 
 import pytest
 
-from scrapers.wiki.seed_registry import WIKI_LIST_JOB_REGISTRY
-from scrapers.wiki.seed_registry import WIKI_SEED_REGISTRY
-from scrapers.wiki.seed_registry import ListJobRegistryEntry
-from scrapers.wiki.seed_registry import SeedRegistryEntry
-from scrapers.wiki.seed_registry import validate_list_job_registry
-from scrapers.wiki.seed_registry import validate_seed_registry
+from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
+from layers.seed.registry.entries import BaseRegistryEntry
+from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry.entries import SeedRegistryEntry
+from layers.seed.registry.helpers import WIKI_SEED_REGISTRY
+from layers.seed.registry.helpers import validate_list_job_registry
+from layers.seed.registry.helpers import validate_seed_registry
 
 
 def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
@@ -19,7 +20,7 @@ def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
                     seed_name="empty-url",
                     wikipedia_url="",
                     output_category="drivers",
-                    scraper_cls=object,
+                    list_scraper_cls=object,
                     default_output_path="raw/drivers/a.json",
                     legacy_output_path="drivers/a.json",
                 ),
@@ -34,7 +35,7 @@ def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
                     seed_name="bad-json-path",
                     wikipedia_url="https://example.test/a",
                     output_category="drivers",
-                    scraper_cls=object,
+                    list_scraper_cls=object,
                     default_output_path="raw/circuits/a.json",
                     legacy_output_path="drivers/a.json",
                 ),
@@ -49,7 +50,7 @@ def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
                     seed_name="bad-legacy-path",
                     wikipedia_url="https://example.test/a",
                     output_category="drivers",
-                    scraper_cls=object,
+                    list_scraper_cls=object,
                     default_output_path="raw/drivers/a.json",
                     legacy_output_path="circuits/a.json",
                 ),
@@ -142,11 +143,20 @@ def test_seed_registry_entry_serialization() -> None:
     serialized = json.dumps(payload, default=str)
 
     assert isinstance(entry, SeedRegistryEntry)
+    assert isinstance(entry, BaseRegistryEntry)
     assert payload["seed_name"] == "drivers"
     assert payload["wikipedia_url"].startswith("https://")
     assert payload["output_category"] == "drivers"
     assert payload["default_output_path"].startswith("raw/drivers/")
     assert payload["legacy_output_path"].startswith("drivers/")
+    assert set(payload) == {
+        "seed_name",
+        "wikipedia_url",
+        "output_category",
+        "list_scraper_cls",
+        "default_output_path",
+        "legacy_output_path",
+    }
     assert "F1DriversListScraper" in serialized
 
 
@@ -161,10 +171,20 @@ def test_list_job_registry_entry_serialization() -> None:
     serialized = json.dumps(payload, default=str)
 
     assert isinstance(entry, ListJobRegistryEntry)
+    assert isinstance(entry, BaseRegistryEntry)
     assert payload["output_category"] == "circuits"
     assert payload["wikipedia_url"].startswith("https://")
     assert payload["json_output_path"].startswith("raw/circuits/")
     assert payload["legacy_json_output_path"].startswith("circuits/")
+    assert set(payload) == {
+        "seed_name",
+        "wikipedia_url",
+        "output_category",
+        "list_scraper_cls",
+        "json_output_path",
+        "legacy_json_output_path",
+        "csv_output_path",
+    }
     assert "CircuitsListScraper" in serialized
 
 
