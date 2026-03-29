@@ -10,6 +10,7 @@ from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import DateColumn
+from scrapers.base.table.columns.types import DriverColumn
 from scrapers.base.table.columns.types import TimeColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
@@ -17,7 +18,6 @@ from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.drivers.columns.driver import DriverColumn
 
 
 class LapRecordsTableScraper(F1TableScraper):

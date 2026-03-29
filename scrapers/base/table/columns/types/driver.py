@@ -1,5 +1,3 @@
-"""Seasons domain column rule for driver parsing."""
-
 from typing import TYPE_CHECKING
 from typing import Any
 
