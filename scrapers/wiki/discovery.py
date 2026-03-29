@@ -6,10 +6,20 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
+from typing import cast
 
 from scrapers.wiki.component_metadata import ComponentMetadata
+from scrapers.wiki.component_metadata import LIST_SCRAPER_KIND
+from scrapers.wiki.component_metadata import RUNNER_KIND
 from scrapers.wiki.component_metadata import parse_component_metadata
 from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
+from scrapers.wiki.protocols import DiscoveredListScraperClassProtocol
+from scrapers.wiki.protocols import DiscoveredRunnerClassProtocol
+from scrapers.wiki.protocols import DiscoveredRunnerProtocol
+
+DiscoveredComponentClass = (
+    DiscoveredRunnerClassProtocol | DiscoveredListScraperClassProtocol
+)
 
 if TYPE_CHECKING:
     from types import ModuleType
@@ -17,7 +27,7 @@ if TYPE_CHECKING:
 
 @dataclass(frozen=True)
 class DiscoveredComponent:
-    cls: type[Any]
+    cls: DiscoveredComponentClass
     metadata: ComponentMetadata
 
 
@@ -87,31 +97,68 @@ def _discover_components_in_module(module: ModuleType) -> list[DiscoveredCompone
         metadata = _read_component_metadata(candidate)
         if metadata is None:
             continue
-        result.append(DiscoveredComponent(cls=candidate, metadata=metadata))
+        result.append(
+            DiscoveredComponent(
+                cls=_coerce_discovered_component_class(candidate, metadata=metadata),
+                metadata=metadata,
+            ),
+        )
         seen.add(candidate)
 
     list_scraper_cls = getattr(module, "LIST_SCRAPER_CLASS", None)
     if inspect.isclass(list_scraper_cls) and list_scraper_cls not in seen:
         metadata = _read_component_metadata(list_scraper_cls)
         if metadata is not None:
-            result.append(DiscoveredComponent(cls=list_scraper_cls, metadata=metadata))
+            result.append(
+                DiscoveredComponent(
+                    cls=_coerce_discovered_component_class(
+                        list_scraper_cls,
+                        metadata=metadata,
+                    ),
+                    metadata=metadata,
+                ),
+            )
 
     return result
 
 
-def build_layer_one_runner_map_discovered() -> dict[str, Any]:
-    runner_map: dict[str, Any] = {}
+def _coerce_discovered_component_class(
+    candidate: Any,
+    *,
+    metadata: ComponentMetadata,
+) -> DiscoveredComponentClass:
+    if metadata.component_type == RUNNER_KIND:
+        if not callable(candidate):
+            msg = f"Runner component '{candidate}' must be callable"
+            raise TypeError(msg)
+        return cast(DiscoveredRunnerClassProtocol, candidate)
+    if metadata.component_type == LIST_SCRAPER_KIND:
+        config = getattr(candidate, "CONFIG", None)
+        url = getattr(config, "url", None)
+        if not isinstance(url, str) or not url.strip():
+            msg = f"List scraper component '{candidate}' must expose CONFIG.url"
+            raise TypeError(msg)
+        return cast(DiscoveredListScraperClassProtocol, candidate)
+    return cast(DiscoveredComponentClass, candidate)
+
+
+def build_layer_one_runner_map_discovered() -> dict[str, DiscoveredRunnerProtocol]:
+    runner_map: dict[str, DiscoveredRunnerProtocol] = {}
     source_cls_by_seed: dict[str, type[Any]] = {}
     for component in discover_components():
         metadata = component.metadata
-        if metadata.layer != "layer_one" or metadata.component_type != "runner":
+        if metadata.layer != "layer_one" or metadata.component_type != RUNNER_KIND:
             continue
         existing_cls = source_cls_by_seed.get(metadata.seed_name)
         if existing_cls is not None and existing_cls is not component.cls:
             msg = f"Duplicate runner seed_name discovered: {metadata.seed_name}"
             raise ValueError(msg)
         source_cls_by_seed[metadata.seed_name] = component.cls
-        runner_map[metadata.seed_name] = component.cls()
+        runner = component.cls()
+        if not hasattr(runner, "run") or not callable(getattr(runner, "run")):
+            msg = f"Runner '{metadata.seed_name}' does not implement run() contract"
+            raise TypeError(msg)
+        runner_map[metadata.seed_name] = cast(DiscoveredRunnerProtocol, runner)
     return runner_map
 
 
