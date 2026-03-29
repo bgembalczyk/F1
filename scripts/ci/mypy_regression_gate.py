@@ -44,6 +44,11 @@ def main() -> int:
         default=None,
         help="Maksymalna akceptowalna liczba błędów mypy dla head.",
     )
+    parser.add_argument(
+        "--github-output",
+        default="",
+        help="Opcjonalna ścieżka do pliku GITHUB_OUTPUT.",
+    )
     args = parser.parse_args()
 
     repo_root = Path.cwd()
@@ -66,22 +71,42 @@ def main() -> int:
     print(f"Mypy errors (base {args.base_sha[:7]}): {base_errors}")
     print(f"Mypy errors (head {args.head_sha[:7]}): {head_errors}")
 
+    gate_status = "ok"
+    gate_message = "Brak regresji typowania."
+
     if head_errors > base_errors:
         print("\n=== BASE OUTPUT ===")
         print(base_output)
         print("\n=== HEAD OUTPUT ===")
         print(head_output)
         print("\nRegresja typowania: liczba błędów wzrosła.")
-        return 1
-
-    if args.error_budget is not None and head_errors > args.error_budget:
+        gate_status = "fail"
+        gate_message = "Regresja typowania: liczba błędów mypy wzrosła."
+    elif args.error_budget is not None and head_errors > args.error_budget:
         print(
             f"Przekroczony budżet błędów mypy: {head_errors} > {args.error_budget}."
         )
         print("\n=== HEAD OUTPUT ===")
         print(head_output)
-        return 1
+        gate_status = "fail"
+        gate_message = (
+            f"Przekroczony budżet błędów mypy: {head_errors} > {args.error_budget}."
+        )
+    elif head_errors > 0:
+        gate_status = "warn"
+        gate_message = (
+            "Brak regresji względem base, ale w strict scope nadal są błędy mypy."
+        )
 
+    if args.github_output:
+        with Path(args.github_output).open("a", encoding="utf-8") as handle:
+            handle.write(f"base_errors={base_errors}\n")
+            handle.write(f"head_errors={head_errors}\n")
+            handle.write(f"gate_status={gate_status}\n")
+            handle.write(f"gate_message={gate_message}\n")
+
+    if gate_status == "fail":
+        return 1
     print("Brak regresji typowania (liczba błędów nie wzrosła).")
     return 0
 
