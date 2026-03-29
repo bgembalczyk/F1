@@ -3,10 +3,15 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
-import subprocess
+import sys
 from pathlib import Path
 from typing import Any
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from scripts.ci.git_diff import build_added_lines_map
 
 
 class DuplicateNormalizer:
@@ -30,68 +35,13 @@ class DuplicateNormalizer:
 
 
 class DiffAddedLinesProvider:
-    def __init__(self) -> None:
-        self._hunk_re = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@")
-
-    def _as_int(self, value: Any) -> int:
-        try:
-            return int(value)
-        except (TypeError, ValueError):
-            return 0
-
     def build_added_lines_map(
         self,
         base_sha: str,
         head_sha: str,
         changed_files: list[str],
     ) -> dict[str, set[int]]:
-        if not base_sha or not head_sha or not changed_files:
-            return {}
-
-        diff_cmd = [
-            "git",
-            "diff",
-            "--unified=0",
-            "--no-color",
-            base_sha,
-            head_sha,
-            "--",
-            *changed_files,
-        ]
-        proc = subprocess.run(
-            diff_cmd,
-            check=False,
-            capture_output=True,
-            text=True,
-        )
-        if proc.returncode != 0:
-            return {}
-
-        added: dict[str, set[int]] = {}
-        current_file: str | None = None
-
-        for raw_line in proc.stdout.splitlines():
-            if raw_line.startswith("+++ b/"):
-                current_file = raw_line[6:]
-                added.setdefault(current_file, set())
-                continue
-
-            if not raw_line.startswith("@@") or not current_file:
-                continue
-
-            match = self._hunk_re.match(raw_line)
-            if not match:
-                continue
-
-            start = self._as_int(match.group(1))
-            count = self._as_int(match.group(2) or 1)
-            if count <= 0:
-                continue
-
-            for line_no in range(start, start + count):
-                added[current_file].add(line_no)
-
-        return added
+        return build_added_lines_map(base_sha, head_sha, changed_files)
 
 
 class DuplicateFilter:
