@@ -18,6 +18,7 @@ class BodyContentParser(WikiParser):
     """
 
     def __init__(self) -> None:
+        super().__init__()
         self.category_links_parser = CategoryLinksParser()
         self.content_text_parser = ContentTextParser()
 

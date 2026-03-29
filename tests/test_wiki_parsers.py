@@ -329,6 +329,37 @@ def test_sub_sub_sub_section_parser():
     assert "list" in types
 
 
+def test_section_parsers_support_cooperative_init_mro() -> None:
+    calls: list[str] = []
+
+    class InitTrackerMixin:
+        def __init__(self, *args: object, **kwargs: object) -> None:
+            calls.append("tracker")
+            super().__init__(*args, **kwargs)
+
+    class ProbeSubSubSubParser(InitTrackerMixin, SubSubSubSectionParser):
+        def __init__(self) -> None:
+            calls.append("sub_sub_sub")
+            super().__init__()
+
+    class ProbeSectionParser(InitTrackerMixin, SectionParser):
+        def __init__(self) -> None:
+            calls.append("section")
+            super().__init__()
+
+    leaf_parser = ProbeSubSubSubParser()
+    top_parser = ProbeSectionParser()
+
+    assert calls == ["sub_sub_sub", "tracker", "section", "tracker"]
+    assert hasattr(leaf_parser, "_parser_rules")
+    assert isinstance(top_parser.child_parser, SubSectionParser)
+    assert isinstance(top_parser.child_parser.child_parser, SubSubSectionParser)
+    assert isinstance(
+        top_parser.child_parser.child_parser.child_parser,
+        SubSubSubSectionParser,
+    )
+
+
 def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() -> None:
     html = '<table class="infobox wikitable"><tr><td>Cell</td></tr></table>'
     soup = _make_soup(html)
