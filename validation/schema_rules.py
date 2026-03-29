@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from validation.issue import ValidationIssue
+from validation.rule_engine import RuleEngine
 from validation.schemas import RecordSchema
 from validation.validator_base import RecordValidator
 
@@ -27,12 +28,6 @@ def _coerce_schema(schema: RecordSchema | Mapping[str, Any]) -> RecordSchema:
         nested=schema.get("nested", {}),
         custom_validators=schema.get("custom_validators", ()),
     )
-
-
-def _coerce_issue(error: ValidationIssue | str) -> ValidationIssue:
-    if isinstance(error, ValidationIssue):
-        return error
-    return ValidationIssue.custom(str(error))
 
 
 def _validate_nested_field(
@@ -86,7 +81,7 @@ def build_domain_rules(
     def _custom_rule(record: Mapping[str, Any]) -> list[ValidationIssue]:
         errors: list[ValidationIssue] = []
         for validator in normalized.custom_validators:
-            errors.extend(_coerce_issue(error) for error in validator(record))
+            errors.extend(RuleEngine.coerce_issue(error) for error in validator(record))
         return errors
 
     return [_nested_rule, _custom_rule]

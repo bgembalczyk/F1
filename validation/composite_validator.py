@@ -5,11 +5,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from validation.rule_engine import RuleEngine
 from validation.validator_base import ExportRecord
 from validation.validator_base import RecordValidator
 
 if TYPE_CHECKING:
-    from collections.abc import Mapping
     from collections.abc import Sequence
 
     from validation.issue import ValidationIssue
@@ -29,16 +29,4 @@ class CompositeRecordValidator(RecordValidator):
         self._domain_rules = tuple(domain_rules)
 
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        return self._execute_rules(record, (*self._common_rules, *self._domain_rules))
-
-    @classmethod
-    def _execute_rules(
-        cls,
-        record: Mapping[str, Any],
-        rules: Sequence[ValidationRule],
-    ) -> list[ValidationIssue]:
-        errors: list[ValidationIssue] = []
-        for rule in rules:
-            result = rule(record)
-            errors.extend(cls._coerce_issue(error) for error in result)
-        return errors
+        return RuleEngine.execute(record, (*self._common_rules, *self._domain_rules))
