@@ -143,10 +143,20 @@ jobs:
       - name: Unused imports regression gate (layer wiring)
         run: |
           ruff check layers/zero/executor.py layers/application.py --select F401
+          
+      - name: Any policy for new modules (rollout scope)
+        shell: bash
+        run: |
+          python scripts/ci/enforce_new_module_any_policy.py \
+            --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
+            --head-sha "${{ github.sha }}"
 
       - name: Strict typing regression gate (mypy)
+        shell: bash
         run: |
-          mypy --config-file mypy.ini
+          python scripts/ci/mypy_regression_gate.py \
+            --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
+            --head-sha "${{ github.sha }}"
 
       - name: Domain contracts gate (pytest)
         run: |

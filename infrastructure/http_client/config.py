@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 
+from config.app_config_provider import AppConfigProvider
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_RETRIES
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_TIMEOUT
@@ -26,3 +27,12 @@ class HttpClientConfig:
     cache_dir: Path | str | None = None
     cache_ttl_days: int = 30
     headers: dict[str, str] | None = None
+
+
+def default_http_client_config(
+    provider: AppConfigProvider | None = None,
+) -> HttpClientConfig:
+    """Buduje domyślną konfigurację HTTP przez AppConfigProvider."""
+    resolved_provider = provider or AppConfigProvider()
+    http_config = resolved_provider.get_http_config()
+    return HttpClientConfig(timeout=http_config.timeout_seconds)
