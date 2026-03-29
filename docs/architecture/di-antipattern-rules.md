@@ -35,6 +35,10 @@ Komentarz działa lokalnie (okno kilku linii przed instancjacją) i powinien by�
 
 ## Powiązanie z ADR
 
-Dla większych zmian (domyślnie: **co najmniej 3 naruszenia** w jednym uruchomieniu checka) CI wymaga referencji `ADR-XXXX` w treści PR (lub commit message dla push).
+Dla większych zmian (domyślnie: **co najmniej 5 naruszeń** w jednym uruchomieniu checka) CI wymaga referencji `ADR-XXXX` w treści PR (lub commit message dla push).
+
+Docelowy próg to `5` (stała `DI_ADR_THRESHOLD` w `scripts/check_di_antipatterns.py`), bo:
+- ogranicza fałszywe alarmy przy małych, inkrementalnych refaktorach,
+- jednocześnie nadal wymusza ADR przy zmianach o wyraźnej skali architektonicznej.
 
 To mapuje governance na `docs/adr/README.md`, szczególnie wymóg referencji ADR dla większych zmian architektonicznych.

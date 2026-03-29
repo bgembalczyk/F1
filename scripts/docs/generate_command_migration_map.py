@@ -1,12 +1,20 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+_BOOTSTRAP_PATH = Path(__file__).resolve().parents[1] / "lib" / "bootstrap.py"
+_BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
+    "_scripts_bootstrap",
+    _BOOTSTRAP_PATH,
+)
+assert _BOOTSTRAP_SPEC and _BOOTSTRAP_SPEC.loader
+_BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
+_BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
+
+REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
 from scrapers.cli import MODULE_DEFINITIONS
 
