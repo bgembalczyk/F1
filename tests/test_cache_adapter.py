@@ -1,4 +1,4 @@
-from scrapers.base.cache_adapter import FileCacheBackend
+from infrastructure.http_client.caching.file import FileCache
 from scrapers.base.source_adapter import SourceAdapter
 
 
@@ -25,7 +25,7 @@ class _StubHttpClient:
 
 
 def test_file_cache_returns_cached_data(tmp_path):
-    cache = FileCacheBackend(cache_dir=tmp_path, ttl_seconds=60)
+    cache = FileCache(cache_dir=tmp_path, ttl_seconds=60)
 
     cache.set("key", "value")
 

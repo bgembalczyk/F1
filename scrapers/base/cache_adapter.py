@@ -1,32 +1,11 @@
-from pathlib import Path
 from typing import Any
-from typing import Protocol
 
 from infrastructure.http_client.caching.file import FileCache
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.source_adapter import SourceAdapter
 
-
-class CacheBackend(Protocol):
-    """Interfejs cache dla HTML (get/set)."""
-
-    def get(self, key: str) -> str | None:
-        """Zwraca tekst z cache lub None."""
-
-    def set(self, key: str, text: str) -> None:
-        """Zapisuje tekst do cache."""
-
-
-class FileCacheBackend(CacheBackend):
-    """Cache oparty o pliki z TTL."""
-
-    def __init__(self, *, cache_dir: Path | str, ttl_seconds: int = 0) -> None:
-        self._cache = FileCache(cache_dir=cache_dir, ttl_seconds=ttl_seconds)
-
-    def get(self, key: str) -> str | None:
-        return self._cache.get(key)
-
-    def set(self, key: str, text: str) -> None:
-        self._cache.set(key, text)
+# Alias zachowujący dotychczasowe nazewnictwo po stronie scraperów.
+CacheBackend = TextCacheProtocol
 
 
 class CacheAdapter(SourceAdapter):
@@ -36,7 +15,7 @@ class CacheAdapter(SourceAdapter):
         self,
         *,
         source_adapter: SourceAdapter,
-        cache_adapter: CacheBackend,
+        cache_adapter: TextCacheProtocol,
     ) -> None:
         self._source_adapter = source_adapter
         self._cache = cache_adapter
