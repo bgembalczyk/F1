@@ -6,6 +6,7 @@ from typing import Any
 from typing import Protocol
 
 from models.records.factories.build import RECORD_BUILDERS
+from models.records.factories.build import RecordType
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -42,7 +43,7 @@ class CallableRecordFactoryAdapter:
 class RecordBuildersAdapter:
     """Adapter over models.records.factories.build.RECORD_BUILDERS."""
 
-    record_type: str
+    record_type: RecordType | str
 
     def create(self, payload: Mapping[str, Any]) -> Any:
         return RECORD_BUILDERS.build(self.record_type, payload)
@@ -60,7 +61,7 @@ class RecordFactoryAdapters:
         return CallableRecordFactoryAdapter(factory=factory)
 
     @staticmethod
-    def builders(record_type: str) -> RecordFactory:
+    def builders(record_type: RecordType | str) -> RecordFactory:
         return RecordBuildersAdapter(record_type=record_type)
 
 
