@@ -1,30 +1,34 @@
 from collections.abc import Callable
 from pathlib import Path
+from typing import Protocol
+
+
+class MirrorTargetPolicyProtocol(Protocol):
+    def targets_for(self, *, source_category: str, year: int) -> tuple[Path, ...]: ...
 
 
 class ConstructorsMirrorService:
     def __init__(
         self,
         *,
-        mirror_targets: tuple[tuple[str, str], ...],
+        mirror_target_policy: MirrorTargetPolicyProtocol,
         copy_file: Callable[[Path, Path], None],
         year_provider: Callable[[], int],
     ) -> None:
-        self._mirror_targets = mirror_targets
+        self._mirror_target_policy = mirror_target_policy
         self._copy_file = copy_file
         self._year_provider = year_provider
 
     def mirror(self, base_wiki_dir: Path, source_json_path: Path) -> None:
         current_year = self._year_provider()
-        for target_category, target_name_template in self._mirror_targets:
-            target_path = (
-                base_wiki_dir
-                / "layers"
-                / "0_layer"
-                / target_category
-                / "raw"
-                / target_name_template.format(year=current_year)
-            )
+        source_category = source_json_path.parent.parent.name
+        mirror_targets = self._mirror_target_policy.targets_for(
+            source_category=source_category,
+            year=current_year,
+        )
+
+        for mirror_target_path in mirror_targets:
+            target_path = base_wiki_dir / mirror_target_path
 
             if target_path == source_json_path:
                 continue

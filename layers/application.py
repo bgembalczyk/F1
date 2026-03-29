@@ -6,6 +6,7 @@ from datetime import timezone
 from typing import TYPE_CHECKING
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
+from layers.mirror_target_policy import MirrorTargetPolicy
 from layers.one.executor import LayerOneExecutor
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.orchestration.helpers import build_layer_one_runner_map
@@ -36,10 +37,14 @@ def create_default_wiki_pipeline_application(
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
     constructors_mirror_service = ConstructorsMirrorService(
-        mirror_targets=(
-            ("chassis_constructors", "f1_constructors_{year}.json"),
-            ("constructors", "f1_constructors_{year}.json"),
-            ("teams", "f1_constructors_{year}.json"),
+        mirror_target_policy=MirrorTargetPolicy(
+            target_templates_by_source_category={
+                "constructors": (
+                    ("chassis_constructors", "f1_constructors_{year}.json"),
+                    ("constructors", "f1_constructors_{year}.json"),
+                    ("teams", "f1_constructors_{year}.json"),
+                ),
+            },
         ),
         copy_file=shutil.copy2,
         year_provider=_current_year,
