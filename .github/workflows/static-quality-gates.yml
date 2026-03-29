@@ -107,6 +107,10 @@ jobs:
         id: dup-report
         shell: bash
         run: |
+          mkdir -p .jscpd-report
+          echo "## Raport duplikatów (jscpd)" > .jscpd-report/pr-comment.md
+          echo "" >> .jscpd-report/pr-comment.md
+          echo "ℹ️ Raport nie został jeszcze wygenerowany." >> .jscpd-report/pr-comment.md
           python scripts/ci/duplicate_report.py \
             --report-json .jscpd-report/jscpd-report.json \
             --output-md .jscpd-report/pr-comment.md \
