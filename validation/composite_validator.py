@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from collections.abc import Sequence
 
     from validation.issue import ValidationIssue
+    from validation.record_factory_validator import RecordFactoryValidatorProtocol
     from validation.rules import ValidationRule
 
 
@@ -22,9 +23,9 @@ class CompositeRecordValidator(RecordValidator):
         *,
         common_rules: Sequence[ValidationRule] = (),
         domain_rules: Sequence[ValidationRule] = (),
-        record_factory: Any = None,
+        record_factory_validator: RecordFactoryValidatorProtocol | None = None,
     ) -> None:
-        super().__init__(record_factory=record_factory)
+        super().__init__(record_factory_validator=record_factory_validator)
         self._common_rules = tuple(common_rules)
         self._domain_rules = tuple(domain_rules)
 
