@@ -4,6 +4,7 @@ from pathlib import Path
 
 from tests.architecture.rules import DOMAINS
 from tests.architecture.rules import ENTRYPOINT_DOMAINS
+from tests.architecture.rules import validate_architecture_registry
 
 IGNORED_PACKAGES = {"base", "wiki", "__pycache__"}
 
@@ -36,3 +37,7 @@ def test_entrypoint_domains_registry_matches_domains_with_entrypoints() -> None:
         f"Update tests/architecture/rules.py ENTRYPOINT_DOMAINS. "
         f"discovered={sorted(discovered_entrypoint_domains)} configured={sorted(ENTRYPOINT_DOMAINS)}"
     )
+
+
+def test_architecture_registry_validator_reports_no_errors() -> None:
+    assert validate_architecture_registry() == ()

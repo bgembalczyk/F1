@@ -6,13 +6,10 @@ import inspect
 
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
 from scrapers.base.run_config import RunConfig
+from tests.architecture.rules import get_entrypoint_domain_specs
 
-ENTRYPOINT_MODULES = (
-    "scrapers.drivers.entrypoint",
-    "scrapers.constructors.entrypoint",
-    "scrapers.circuits.entrypoint",
-    "scrapers.seasons.entrypoint",
-    "scrapers.grands_prix.entrypoint",
+ENTRYPOINT_MODULES = tuple(
+    f"scrapers.{spec.domain}.entrypoint" for spec in get_entrypoint_domain_specs()
 )
 
 

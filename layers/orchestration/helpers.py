@@ -1,70 +1,51 @@
 from __future__ import annotations
 
+from importlib import import_module
 from typing import TYPE_CHECKING
 
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.orchestration.runners.circuits import CircuitsRunner
-from layers.orchestration.runners.constructors import ConstructorsRunner
-from layers.orchestration.runners.drivers import DriversRunner
 from layers.orchestration.runners.function_export import FunctionExportRunner
-from layers.orchestration.runners.grand_prix import GrandPrixRunner
-from scrapers.circuits.helpers.export import export_complete_circuits
-from scrapers.constructors.helpers.export import export_complete_constructors
-from scrapers.drivers.helpers.export import export_complete_drivers
 from scrapers.engines.helpers.export import export_complete_engine_manufacturers
-from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
+from tests.architecture.rules import get_layer_one_runner_specs
+from tests.architecture.rules import validate_architecture_registry_or_raise
 
 if TYPE_CHECKING:
     from pathlib import Path
 
 
+def _import_target(path: str) -> object:
+    module_name, attr_name = path.split(":", maxsplit=1)
+    module = import_module(module_name)
+    return getattr(module, attr_name)
+
+
 def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
-    return {
-        "grands_prix": GrandPrixRunner(),
-        "circuits": FunctionExportRunner(
-            export_function=export_complete_circuits,
+    validate_architecture_registry_or_raise()
+    explicit_map: dict[str, LayerOneRunnerProtocol] = {}
+    for spec in get_layer_one_runner_specs():
+        if spec.layer_one_runner_path is not None:
+            runner_cls = _import_target(spec.layer_one_runner_path)
+            explicit_map[spec.domain] = runner_cls()
+            continue
+
+        if spec.layer_one_export_function_path is None:
+            continue
+
+        export_function = _import_target(spec.layer_one_export_function_path)
+        explicit_map[spec.domain] = FunctionExportRunner(
+            export_function=export_function,
             component_metadata={
-                "domain": "circuits",
-                "seed_name": "circuits",
+                "domain": spec.domain,
+                "seed_name": spec.domain,
                 "layer": "layer_one",
-                "output_category": "circuits",
+                "output_category": spec.domain,
                 "component_type": "runner",
             },
-        ),
-        "drivers": FunctionExportRunner(
-            export_function=export_complete_drivers,
-            component_metadata={
-                "domain": "drivers",
-                "seed_name": "drivers",
-                "layer": "layer_one",
-                "output_category": "drivers",
-                "component_type": "runner",
-            },
-        ),
-        "seasons": FunctionExportRunner(
-            export_function=export_complete_seasons,
-            component_metadata={
-                "domain": "seasons",
-                "seed_name": "seasons",
-                "layer": "layer_one",
-                "output_category": "seasons",
-                "component_type": "runner",
-            },
-        ),
-        "constructors": FunctionExportRunner(
-            export_function=export_complete_constructors,
-            component_metadata={
-                "domain": "constructors",
-                "seed_name": "constructors",
-                "layer": "layer_one",
-                "output_category": "constructors",
-                "component_type": "runner",
-            },
-        ),
-    }
+        )
+    return explicit_map
 
 
 def _merge_runner_maps(

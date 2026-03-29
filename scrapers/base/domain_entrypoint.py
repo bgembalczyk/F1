@@ -11,6 +11,9 @@ from typing import TYPE_CHECKING
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 from scrapers.base.runner import ScraperRunner
+from tests.architecture.rules import ArchitectureDomainSpec
+from tests.architecture.rules import get_entrypoint_domain_specs
+from tests.architecture.rules import validate_architecture_registry_or_raise
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -51,14 +54,6 @@ class LazyScraperClassProxy:
         return f"LazyScraperClassProxy({self._import_path!r})"
 
 
-@dataclass(frozen=True)
-class _DomainEntrypointSpec:
-    scraper_path: str
-    default_output_json: str | Path
-    run_config_profile: Callable[[], RunConfig]
-    default_output_csv: str | Path | None = None
-
-
 def strict_quality_profile() -> RunConfig:
     """Profile with stricter diagnostics enabled."""
     return build_run_profile(RunProfileName.STRICT)
@@ -74,46 +69,27 @@ def minimal_debug_profile() -> RunConfig:
     return build_run_profile(RunProfileName.DEBUG)
 
 
-_DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
-    "drivers": _DomainEntrypointSpec(
-        scraper_path="scrapers.drivers.list_scraper:F1DriversListScraper",
-        default_output_json="drivers/f1_drivers.json",
-        run_config_profile=strict_quality_profile,
-    ),
-    "seasons": _DomainEntrypointSpec(
-        scraper_path="scrapers.seasons.list_scraper:SeasonsListScraper",
-        default_output_json="seasons/f1_seasons.json",
-        default_output_csv="seasons/f1_seasons.csv",
-        run_config_profile=minimal_profile,
-    ),
-    "grands_prix": _DomainEntrypointSpec(
-        scraper_path="scrapers.grands_prix.list_scraper:GrandsPrixListScraper",
-        default_output_json="grands_prix/f1_grands_prix_by_title.json",
-        default_output_csv="grands_prix/f1_grands_prix_by_title.csv",
-        run_config_profile=minimal_profile,
-    ),
-    "circuits": _DomainEntrypointSpec(
-        scraper_path="scrapers.circuits.list_scraper:CircuitsListScraper",
-        default_output_json="circuits/f1_circuits.json",
-        default_output_csv="circuits/f1_circuits.csv",
-        run_config_profile=strict_quality_profile,
-    ),
-    "constructors": _DomainEntrypointSpec(
-        scraper_path=(
-            "scrapers.constructors.current_constructors_list:"
-            "CurrentConstructorsListScraper"
-        ),
-        default_output_json="constructors/f1_constructors_{year}.json",
-        default_output_csv="constructors/f1_constructors_{year}.csv",
-        run_config_profile=minimal_debug_profile,
-    ),
+_PROFILE_BUILDERS: dict[str, Callable[[], RunConfig]] = {
+    "strict_quality": strict_quality_profile,
+    "minimal": minimal_profile,
+    "minimal_debug": minimal_debug_profile,
 }
+
+
+def _load_entrypoint_specs() -> dict[str, ArchitectureDomainSpec]:
+    validate_architecture_registry_or_raise()
+    return {spec.domain: spec for spec in get_entrypoint_domain_specs()}
+
+
+_DOMAIN_ENTRYPOINT_SPECS: dict[str, ArchitectureDomainSpec] = _load_entrypoint_specs()
 
 
 def get_domain_entrypoint_scraper_metadata() -> dict[str, str]:
     """Return static domain-to-scraper-path metadata for command generation."""
     return {
-        domain: spec.scraper_path for domain, spec in _DOMAIN_ENTRYPOINT_SPECS.items()
+        domain: spec.entrypoint_scraper_path
+        for domain, spec in _DOMAIN_ENTRYPOINT_SPECS.items()
+        if spec.entrypoint_scraper_path is not None
     }
 
 
@@ -126,7 +102,11 @@ def _import_target(path: str) -> object:
 @cache
 def _resolve_domain_entrypoint_config(domain: str) -> DomainEntrypointConfig:
     spec = _DOMAIN_ENTRYPOINT_SPECS[domain]
-    list_scraper_cls = LazyScraperClassProxy(spec.scraper_path)
+    scraper_path = spec.entrypoint_scraper_path
+    if scraper_path is None:
+        raise KeyError(domain)
+    list_scraper_cls = LazyScraperClassProxy(scraper_path)
+
     current_year = None
     if domain == "constructors":
         current_year = getattr(
@@ -142,11 +122,15 @@ def _resolve_domain_entrypoint_config(domain: str) -> DomainEntrypointConfig:
             return Path(str(path).format(year=current_year))
         return path.format(year=current_year)
 
+    run_profile_name = spec.entrypoint_run_profile
+    if run_profile_name is None:
+        raise KeyError(domain)
+
     return DomainEntrypointConfig(
         list_scraper_cls=list_scraper_cls,
-        default_output_json=_render(spec.default_output_json),
-        default_output_csv=_render(spec.default_output_csv),
-        run_config_profile=spec.run_config_profile,
+        default_output_json=_render(spec.entrypoint_output_json),
+        default_output_csv=_render(spec.entrypoint_output_csv),
+        run_config_profile=_PROFILE_BUILDERS[run_profile_name],
     )
 
 
