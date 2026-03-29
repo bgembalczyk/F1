@@ -64,7 +64,7 @@ def test_driver_sections_service_extracts_alias_section_id() -> None:
 
 def test_driver_assembler_builds_record_shape() -> None:
     record = DriverRecordAssembler().assemble(
-        payload=DriverRecordDTO(
+        DriverRecordDTO(
             url="u",
             infobox={"title": "A"},
             career_results=[{"year": "2024"}],
@@ -88,7 +88,7 @@ def test_constructor_component_services_and_assembler() -> None:
     infoboxes = ConstructorInfoboxExtractionService().extract(soup).as_list()
     sections = ConstructorSectionExtractionService(adapter=scraper).extract(soup)
     record = ConstructorRecordAssembler().assemble(
-        payload=ConstructorRecordDTO(
+        ConstructorRecordDTO(
             url="x",
             infoboxes=infoboxes,
             tables=[],
@@ -110,7 +110,7 @@ def test_circuit_component_services_and_assembler() -> None:
         .primary_record
     )
     record = CircuitRecordAssembler().assemble(
-        payload=CircuitRecordDTO(
+        CircuitRecordDTO(
             url="u",
             infobox=infobox,
             lap_record_rows=[],
