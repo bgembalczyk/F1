@@ -9,9 +9,12 @@ from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.io_utils import append_output_vars
 from scripts.ci.io_utils import read_json_file
 from scripts.ci.io_utils import write_text_file
+from scripts.ci.reporting import CiReport
 from scripts.ci.reporting import CiStatus
 from scripts.ci.reporting import build_ci_parser
 from scripts.ci.reporting import exit_code_for_status
+from scripts.ci.reporting import line_range
+from scripts.ci.reporting import print_console_report
 from scripts.ci.reporting import resolve_status
 from scripts.ci.reporting import split_csv
 
@@ -207,6 +210,17 @@ def main() -> int:
             "duplicate_status": status.value,
         },
     )
+
+    report = CiReport(
+        check_name="duplicate-blocks",
+        status=status,
+        summary=f"Wykryto {count} nowych duplikatów.",
+        recommendation=(
+            "Usuń/prefaktoryzuj duplikowane bloki albo obniż zakres zmiany, "
+            "aby liczba nowych duplikatów była poniżej progu."
+        ),
+    )
+    print_console_report(report)
 
     return exit_code_for_status(status)
 
