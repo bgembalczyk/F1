@@ -93,7 +93,7 @@ jobs:
             --output .jscpd-report \
             $(echo "${{ steps.changed-py.outputs.changed_files }}" | tr ',' ' ')
 
-      - name: Build duplicate report and evaluate thresholds
+      - name: Duplicate blocks check
         if: always()
         id: dup-report
         shell: bash
@@ -120,25 +120,13 @@ jobs:
         run: |
           echo "::warning::Pomijam publikację komentarza PR dla forka (GITHUB_TOKEN bez uprawnienia write)."
 
-      - name: Enforce duplicate thresholds for new code
-        if: always()
-        shell: bash
-        run: |
-          echo "Nowe duplikaty: ${{ steps.dup-report.outputs.duplicate_count }}"
-          echo "Status: ${{ steps.dup-report.outputs.duplicate_status }}"
-
-          if [[ "${{ steps.dup-report.outputs.duplicate_status }}" == "warn" ]]; then
-            echo "::warning::Przekroczono próg ostrzegawczy nowych duplikatów (${NEW_DUPLICATES_WARN_THRESHOLD})."
-          fi
-
-          if [[ "${{ steps.dup-report.outputs.duplicate_status }}" == "fail" ]]; then
-            echo "::error::Przekroczono próg blokujący nowych duplikatów (${NEW_DUPLICATES_FAIL_THRESHOLD})."
-            exit 1
-          fi
-
       - name: Architectural import rules (import-linter)
         run: |
           lint-imports --config importlinter.ini
+
+      - name: Architecture registry consistency check
+        run: |
+          python scripts/ci/architecture_registry_consistency.py
 
       - name: Any policy for new modules (rollout scope)
         shell: bash
@@ -147,13 +135,28 @@ jobs:
             --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
             --head-sha "${{ github.sha }}"
 
-      - name: Strict typing regression gate (mypy)
+      - name: Mypy scope regression check
         shell: bash
         run: |
-          python scripts/ci/mypy_regression_gate.py \
+          python scripts/ci/mypy_scope_regression.py \
             --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
             --head-sha "${{ github.sha }}"
 
+      - name: ADR reference check
+        id: adr-check
+        shell: bash
+        run: |
+          ADR_REFERENCE_TEXT=""
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            ADR_REFERENCE_TEXT="${{ github.event.pull_request.title }} ${{ github.event.pull_request.body }}"
+          else
+            ADR_REFERENCE_TEXT="${{ github.event.head_commit.message }}"
+          fi
+
+          python scripts/ci/adr_reference_check.py \
+            --changed-files "${{ steps.changed-py.outputs.changed_files }}" \
+            --reference-text "$ADR_REFERENCE_TEXT" \
+            --github-output "$GITHUB_OUTPUT"
 
       - name: DI anti-pattern AST check (layers + scrapers/base)
         shell: bash
@@ -174,7 +177,27 @@ jobs:
             exit 0
           fi
 
-          python scripts/check_di_antipatterns.py "${DI_SCOPE_FILES[@]}"             --adr-reference-text "$ADR_REFERENCE_TEXT"             --adr-required-violation-threshold 3
+          python scripts/ci/check_di_antipatterns.py "${DI_SCOPE_FILES[@]}" \
+            --adr-reference-text "$ADR_REFERENCE_TEXT" \
+            --adr-required-violation-threshold 3
+
       - name: Domain contracts gate (pytest)
         run: |
           pytest -q tests/test_domain_role_contracts.py tests/test_domain_role_contracts_ci_meta.py tests/test_di_antipatterns_ci_meta.py
+
+      - name: No new architectural debt policy
+        if: always()
+        shell: bash
+        run: |
+          echo "Duplicate status: ${{ steps.dup-report.outputs.duplicate_status }}"
+          echo "ADR status: ${{ steps.adr-check.outputs.adr_status }}"
+
+          if [[ "${{ steps.dup-report.outputs.duplicate_status }}" != "ok" ]]; then
+            echo "::error::No new architectural debt policy: nowe duplikaty są niedozwolone."
+            exit 1
+          fi
+
+          if [[ "${{ steps.adr-check.outputs.adr_status }}" != "ok" ]]; then
+            echo "::error::No new architectural debt policy: zmiany architektoniczne wymagają referencji ADR."
+            exit 1
+          fi
