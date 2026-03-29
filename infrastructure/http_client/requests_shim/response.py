@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from collections.abc import Mapping
 
-from infrastructure.http_client.requests_shim.constants import HTTP_BAD_REQUEST
+from infrastructure.http_client.policies.http_status import HttpStatusPolicy
 from infrastructure.http_client.requests_shim.http_error import HTTPError
 
 
@@ -16,5 +16,5 @@ class Response:
         object.__setattr__(self, "headers", {str(k): str(v) for k, v in self.headers.items()})
 
     def raise_for_status(self) -> None:
-        if self.status_code >= HTTP_BAD_REQUEST:
+        if HttpStatusPolicy.is_error(self.status_code):
             raise HTTPError(self.url, self.status_code, self.text, self.headers)
