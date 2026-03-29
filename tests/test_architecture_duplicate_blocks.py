@@ -5,10 +5,18 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from tests.architecture.registry import ARCHITECTURE_REGISTRY
+from tests.architecture.rules import ENTRYPOINT_MODULES
+
+
+def _entrypoint_module_paths() -> tuple[Path, ...]:
+    return tuple(
+        Path("scrapers") / domain / "entrypoint.py"
+        for domain in sorted(get_domain_entrypoint_scraper_metadata())
+    )
 
 ENTRYPOINT_MODULES = ARCHITECTURE_REGISTRY.entrypoint_files
-from tests.architecture.rules import ENTRYPOINT_MODULES
 
 
 @dataclass(frozen=True)
@@ -204,8 +212,7 @@ def test_duplicate_config_blocks_whitelist_has_justification() -> None:
 
 
 def test_domain_entrypoints_use_shared_factory_builders() -> None:
-    for path_str in ENTRYPOINT_MODULES:
-        py_file = Path(path_str)
+    for py_file in _entrypoint_module_paths():
         source = py_file.read_text(encoding="utf-8")
         tree = ast.parse(source, filename=str(py_file))
 
