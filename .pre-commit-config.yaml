@@ -9,6 +9,12 @@ repos:
         language: system
         pass_filenames: true
         files: ^scrapers/.*\.py$
+      - id: check-architecture-rules
+        name: check-architecture-rules
+        entry: python scripts/check_architecture_rules.py
+        language: system
+        pass_filenames: true
+        files: ^scrapers/.*\.py$
 
   # Python lint + autofix + format
   - repo: https://github.com/astral-sh/ruff-pre-commit
