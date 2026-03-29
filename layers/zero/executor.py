@@ -19,7 +19,6 @@ class LayerZeroExecutor:
         run_and_export_function: Callable[..., None],
         constructors_mirror_service: ConstructorsMirrorService,
         merge_service: LayerZeroMergeService,
-        current_constructors_scraper_name: str,
         year_provider: Callable[[], int],
     ) -> None:
         self._list_job_registry = list_job_registry
@@ -29,7 +28,6 @@ class LayerZeroExecutor:
         self._run_and_export_function = run_and_export_function
         self._constructors_mirror_service = constructors_mirror_service
         self._merge_service = merge_service
-        self._current_constructors_scraper_name = current_constructors_scraper_name
         self._year_provider = year_provider
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
@@ -67,7 +65,7 @@ class LayerZeroExecutor:
                 run_config=local_run_config if scraper_kwargs else run_config,
             )
 
-            if job.list_scraper_cls.__name__ == self._current_constructors_scraper_name:
+            if job.requires_mirroring:
                 source_json_path = base_wiki_dir / l0_raw_json_path
                 self._constructors_mirror_service.mirror(
                     base_wiki_dir,

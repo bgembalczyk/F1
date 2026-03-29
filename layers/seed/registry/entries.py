@@ -25,6 +25,7 @@ class ListJobRegistryEntry:
     json_output_path: str
     legacy_json_output_path: str
     csv_output_path: str | None = None
+    requires_mirroring: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

@@ -54,7 +54,6 @@ def create_default_wiki_pipeline_application(
         merge_service=LayerZeroMergeService(
             merge_function=merge_layer_zero_raw_outputs,
         ),
-        current_constructors_scraper_name="CurrentConstructorsListScraper",
         year_provider=_current_year,
     )
 
