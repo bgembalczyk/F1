@@ -1,41 +1,113 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 from typing import Any
 
-LEGACY_INCOMPATIBLE_TEST_FILES = frozenset(
-    {
-        "test_cli_entrypoints_contract.py",
-        "test_constructor_column.py",
-        "test_domain_minimal_e2e_snapshots.py",
-        "test_drivers_checkpoint_flow.py",
-        "test_helpers_normalization.py",
-        "test_main_layer_zero_merge.py",
-        "test_naming_conventions.py",
-        "test_record_factories.py",
-        "test_records.py",
-        "test_scraper_config.py",
-        "test_scraper_record_factories.py",
-        "test_season_service_to_range.py",
-        "test_seed_l0.py",
-        "test_seed_section_orchestration_flow.py",
-        "test_single_circuit_scraper.py",
-        "test_single_wiki_hook_name_linter.py",
-        "test_validators.py",
-        "test_validators_additional.py",
-        "test_value_objects.py",
-        "test_wiki_application.py",
-        "test_wiki_seed_registry.py",
-    },
+import pytest
+
+FAST_PROFILE_EXCLUDE_PATTERNS: tuple[str, ...] = (
+    "/tests/contract/test_dsl_contract.py",
+    "/tests/contract/test_minimal_fetch_contract.py",
+)
+
+_MARKER_BY_PATTERN: tuple[tuple[str, str], ...] = (
+    ("tests/contract/", "contract"),
+    ("tests/architecture/", "architecture"),
+    ("/test_architecture_", "architecture"),
+    ("/test_domain_entrypoint_boundaries", "architecture"),
+    ("/test_section_architecture_boundaries", "architecture"),
+    ("/test_domain_minimal_e2e", "integration"),
+    ("/test_driver_infobox_integration", "integration"),
+    ("/test_section_adapter_integration", "integration"),
+    ("/test_common_value_objects_integration", "integration"),
+    # Legacy compatibility suites kept outside unit/contract/architecture profile.
+    ("/test_cli_entrypoints_contract", "integration"),
+    ("/test_constructor_column", "integration"),
+    ("/test_drivers_checkpoint_flow", "integration"),
+    ("/test_helpers_normalization", "integration"),
+    ("/test_main_layer_zero_merge", "integration"),
+    ("/test_naming_conventions", "integration"),
+    ("/test_record_factories", "integration"),
+    ("/test_records", "integration"),
+    ("/test_scraper_config", "integration"),
+    ("/test_scraper_record_factories", "integration"),
+    ("/test_season_service_to_range", "integration"),
+    ("/test_seed_l0", "integration"),
+    ("/test_seed_section_orchestration_flow", "integration"),
+    ("/test_single_circuit_scraper", "integration"),
+    ("/test_validators", "integration"),
+    ("/test_validators_additional", "integration"),
+    ("/test_value_objects", "integration"),
+    ("/test_wiki_application", "integration"),
+    ("/test_wiki_seed_registry", "integration"),
+    ("/contract/test_dsl_contract", "integration"),
+    ("/contract/test_minimal_fetch_contract", "integration"),
+    ("/test_circuit_parsers", "integration"),
+    ("/test_cli_bootstrap_boundaries", "integration"),
+    ("/test_cli_deprecation_runtime", "integration"),
+    ("/test_complete_extractor_base", "integration"),
+    ("/test_composite_record_validator", "integration"),
+    ("/test_domain_section_decomposition", "integration"),
+    ("/test_driver_infobox_parsers", "integration"),
+    ("/test_formatters", "integration"),
+    ("/test_grands_prix_columns", "integration"),
+    ("/test_http_clients", "integration"),
+    ("/test_models", "integration"),
+    ("/test_points_cli_bootstrap_contract", "integration"),
+    ("/test_post_process", "integration"),
+    ("/test_quality_reporter_contract", "integration"),
+    ("/test_record_types", "integration"),
+    ("/test_red_flagged_races_scraper", "integration"),
+    ("/test_schema_engine_regression", "integration"),
+    ("/test_scraper_contract", "integration"),
+    ("/test_scraper_errors", "integration"),
+    ("/test_scraper_options", "integration"),
+    ("/test_section_parser_ci_meta", "integration"),
+    ("/test_section_parser_regressions", "integration"),
+    ("/test_services", "integration"),
+    ("/test_single_constructor_scraper", "integration"),
+    ("/test_single_scraper_components_and_orchestration", "integration"),
+    ("/test_table_pipeline", "integration"),
+    ("/test_table_scraper_options", "integration"),
 )
 
 TARGETED_MARK_EXPR_TOKENS = ("unit", "contract", "architecture")
 
 
+def _selected_profile_markers(markexpr: str) -> set[str]:
+    """Return explicitly requested profile markers from ``-m`` expression."""
+
+    if not markexpr.strip():
+        return set()
+    return {
+        token.lower()
+        for token in re.findall(r"\b(unit|contract|architecture|integration)\b", markexpr)
+    }
+
+
 def pytest_ignore_collect(
-    collection_path: Path, config: Any
+    collection_path: Path,
+    config: pytest.Config,
 ) -> bool:
-    mark_expression = (config.option.markexpr or "").strip()
-    if not all(token in mark_expression for token in TARGETED_MARK_EXPR_TOKENS):
+    """Skip collecting files outside selected profile markers.
+
+    This avoids importing tests from unrelated profiles when running with ``-m``.
+    """
+
+    if collection_path.suffix != ".py":
         return False
-    return collection_path.name in LEGACY_INCOMPATIBLE_TEST_FILES
+
+    selected_markers = _selected_profile_markers(config.option.markexpr or "")
+    if not selected_markers:
+        return False
+
+    normalized = str(collection_path).replace("\\", "/")
+    if (
+        {"unit", "contract", "architecture"}.issubset(selected_markers)
+        and any(pattern in normalized for pattern in FAST_PROFILE_EXCLUDE_PATTERNS)
+    ):
+        return True
+
+    marker = _marker_for_path(str(collection_path))
+    return marker not in selected_markers
