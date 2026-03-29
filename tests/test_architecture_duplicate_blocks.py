@@ -5,6 +5,9 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
+from scrapers.domains import DOMAINS
+
+ENTRYPOINT_MODULES = tuple(f"scrapers/{domain}/entrypoint.py" for domain in DOMAINS)
 from tests.architecture.rules import ENTRYPOINT_MODULES
 
 

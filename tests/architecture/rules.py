@@ -4,25 +4,9 @@ import ast
 from dataclasses import dataclass
 from pathlib import Path
 
-DOMAINS: tuple[str, ...] = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
-    "engines",
-    "points",
-    "sponsorship_liveries",
-    "tyres",
-)
+from scrapers.domains import DOMAINS
 
-ENTRYPOINT_DOMAINS: tuple[str, ...] = (
-    "drivers",
-    "constructors",
-    "circuits",
-    "seasons",
-    "grands_prix",
-)
+ENTRYPOINT_DOMAINS: tuple[str, ...] = DOMAINS
 
 ENTRYPOINT_MODULES: tuple[str, ...] = (
     "scrapers/drivers/entrypoint.py",

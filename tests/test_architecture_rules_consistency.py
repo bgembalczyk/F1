@@ -9,18 +9,17 @@ from tests.architecture.rules import ENTRYPOINT_MODULES
 IGNORED_PACKAGES = {"base", "wiki", "__pycache__"}
 
 
-def test_domains_registry_matches_scrapers_packages() -> None:
+def test_domains_registry_has_directory_and_entrypoint() -> None:
     root = Path("scrapers")
-    discovered_domains = {
-        path.name
-        for path in root.iterdir()
-        if path.is_dir() and path.name not in IGNORED_PACKAGES
-    }
+    missing_dirs = [domain for domain in DOMAINS if not (root / domain).is_dir()]
+    missing_entrypoints = [
+        domain for domain in DOMAINS if not (root / domain / "entrypoint.py").is_file()
+    ]
 
-    assert discovered_domains == set(DOMAINS), (
-        "Architecture domains list is out of sync with scrapers packages. "
-        f"Update tests/architecture/rules.py DOMAINS. "
-        f"discovered={sorted(discovered_domains)} configured={sorted(DOMAINS)}"
+    assert not missing_dirs, f"Missing domain directories: {sorted(missing_dirs)}"
+    assert not missing_entrypoints, (
+        "Every domain from scrapers.domains.DOMAINS must expose an entrypoint. "
+        f"missing={sorted(missing_entrypoints)}"
     )
 
 
@@ -34,7 +33,7 @@ def test_entrypoint_domains_registry_matches_domains_with_entrypoints() -> None:
 
     assert discovered_entrypoint_domains == set(ENTRYPOINT_DOMAINS), (
         "Entrypoint domains list is out of sync with current code. "
-        f"Update tests/architecture/rules.py ENTRYPOINT_DOMAINS. "
+        "Update scrapers/domains.py DOMAINS. "
         f"discovered={sorted(discovered_entrypoint_domains)} configured={sorted(ENTRYPOINT_DOMAINS)}"
     )
 

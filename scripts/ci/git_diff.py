@@ -71,4 +71,28 @@ def build_added_lines_map(
     if proc.returncode != 0:
         return {}
 
-    return parse_added_lines_from_unified_diff(proc.stdout)
+    added: dict[str, set[int]] = {}
+    current_file: str | None = None
+
+    for raw_line in proc.stdout.splitlines():
+        if raw_line.startswith("+++ b/"):
+            current_file = raw_line[6:]
+            added.setdefault(current_file, set())
+            continue
+
+        if not raw_line.startswith("@@") or not current_file:
+            continue
+
+        match = _HUNK_RE.match(raw_line)
+        if not match:
+            continue
+
+        start = _as_int(match.group(1))
+        count = _as_int(match.group(2) or 1)
+        if count <= 0:
+            continue
+
+        for line_no in range(start, start + count):
+            added[current_file].add(line_no)
+
+    return added
