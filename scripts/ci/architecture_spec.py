@@ -61,6 +61,10 @@ class ArchitectureSpec:
         }
 
     @property
+    def entrypoint_modules(self) -> tuple[str, ...]:
+        return tuple(f"scrapers.{domain}.entrypoint" for domain in self.entrypoint_domains)
+
+    @property
     def entrypoint_files(self) -> tuple[str, ...]:
         return tuple(f"scrapers/{domain}/entrypoint.py" for domain in self.entrypoint_domains)
 

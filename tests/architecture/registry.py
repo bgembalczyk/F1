@@ -13,6 +13,7 @@ class ArchitectureRegistry:
     forbidden_imports_by_layer: dict[str, tuple[str, ...]]
     required_layers_by_domain: dict[str, tuple[str, ...]]
     allowed_imports_by_layer: dict[str, tuple[str, ...]]
+    entrypoint_modules: tuple[str, ...]
     entrypoint_files: tuple[str, ...]
 
 
@@ -23,5 +24,6 @@ ARCHITECTURE_REGISTRY = ArchitectureRegistry(
     forbidden_imports_by_layer=ARCHITECTURE_SPEC.forbidden_imports_by_layer,
     required_layers_by_domain=ARCHITECTURE_SPEC.required_layers_by_domain,
     allowed_imports_by_layer=ARCHITECTURE_SPEC.allowed_imports_by_layer,
+    entrypoint_modules=ARCHITECTURE_SPEC.entrypoint_modules,
     entrypoint_files=ARCHITECTURE_SPEC.entrypoint_files,
 )
