@@ -4,14 +4,12 @@ import ast
 import sys
 from pathlib import Path
 
-try:
-    from lib.check_runner import iter_python_paths
-    from lib.check_runner import run_cli
-except ModuleNotFoundError:  # pragma: no cover - compatibility for package-style imports
-    from scripts.lib.check_runner import iter_python_paths
-    from scripts.lib.check_runner import run_cli
-
 REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.lib.check_runner import iter_python_paths, run_cli
+
 SCRAPERS_DIR = REPO_ROOT / "scrapers"
 
 STANDARD_HOOK_NAMES = {
