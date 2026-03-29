@@ -6,6 +6,7 @@ from bs4 import Tag
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.category_links import CategoryLinksParser
 from scrapers.wiki.parsers.content_text import ContentTextParser
+from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
 
 
 class BodyContentParser(WikiParser):
@@ -17,9 +18,13 @@ class BodyContentParser(WikiParser):
       i klasą zawierającą 'body-content'
     """
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        *,
+        element_parsers: WikiElementParsers | None = None,
+    ) -> None:
         self.category_links_parser = CategoryLinksParser()
-        self.content_text_parser = ContentTextParser()
+        self.content_text_parser = ContentTextParser(element_parsers=element_parsers)
 
     def parse(self, element: Tag) -> dict[str, Any]:
         """Parsuje główną treść strony Wikipedii.
