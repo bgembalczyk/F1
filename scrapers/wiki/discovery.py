@@ -21,6 +21,9 @@ class DiscoveredComponent:
     metadata: ComponentMetadata
 
 
+_COMPONENT_METADATA_CACHE: dict[tuple[str, str], ComponentMetadata | None] = {}
+
+
 def _repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
@@ -47,12 +50,25 @@ def _iter_discovery_module_names() -> tuple[str, ...]:
 
 
 def _read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
+    cache_key = (candidate.__module__, candidate.__qualname__)
+    cached = _COMPONENT_METADATA_CACHE.get(cache_key)
+    if cached is not None:
+        return cached
+
+    if cache_key in _COMPONENT_METADATA_CACHE:
+        return None
+
     raw = getattr(candidate, COMPONENT_METADATA_ATTR, None)
     if raw is None:
+        _COMPONENT_METADATA_CACHE[cache_key] = None
         return None
     metadata = parse_component_metadata(raw)
-    setattr(candidate, COMPONENT_METADATA_ATTR, metadata)
+    _COMPONENT_METADATA_CACHE[cache_key] = metadata
     return metadata
+
+
+def _clear_component_metadata_cache() -> None:
+    _COMPONENT_METADATA_CACHE.clear()
 
 
 def discover_components() -> tuple[DiscoveredComponent, ...]:
