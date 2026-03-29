@@ -3,6 +3,7 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
+from scrapers.base.export.exporters import DataExporter
 from scrapers.base.results import ScrapeResult
 from validation.validator_base import ExportRecord
 
@@ -15,6 +16,7 @@ def export_grouped_json(
 ) -> None:
     scraper.logger.info("Pobrano rekordów: %s", len(data))
     output_dir.mkdir(parents=True, exist_ok=True)
+    exporter = getattr(scraper, "exporter", None) or DataExporter()
 
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for record in data:
@@ -26,7 +28,7 @@ def export_grouped_json(
             data=records,
             source_url=getattr(scraper, "url", None),
         )
-        result.to_json(output_dir / f"{key}.json", exporter=scraper.exporter)
+        exporter.to_json(result, output_dir / f"{key}.json")
 
 
 def fieldnames_from_union(data: list[ExportRecord]) -> list[str]:
