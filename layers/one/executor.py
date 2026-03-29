@@ -3,6 +3,7 @@ from pathlib import Path
 
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.seed.registry.entries import SeedRegistryEntry
+from layers.types import DomainName
 from scrapers.base.run_config import RunConfig
 
 
@@ -15,7 +16,7 @@ class LayerOneExecutor:
             [tuple[SeedRegistryEntry, ...]],
             None,
         ],
-        runner_map_builder: Callable[[], dict[str, LayerOneRunnerProtocol]],
+        runner_map_builder: Callable[[], dict[DomainName, LayerOneRunnerProtocol]],
         engine_manufacturers_runner: Callable[[Path, bool], None],
     ) -> None:
         self._seed_registry = seed_registry
@@ -30,7 +31,7 @@ class LayerOneExecutor:
         for seed in self._seed_registry:
             print(f"[complete] running  {seed.seed_name}")
 
-            runner = runner_map.get(seed.seed_name)
+            runner = runner_map.get(seed.domain)
             if runner is None:
                 print(f"[complete] skipping unsupported seed: {seed.seed_name}")
                 continue

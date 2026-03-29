@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.types import DomainName
 from layers.orchestration.runners.circuits import CircuitsRunner
 from layers.orchestration.runners.constructors import ConstructorsRunner
 from layers.orchestration.runners.drivers import DriversRunner
@@ -21,10 +22,10 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
+def _build_explicit_layer_one_runner_map() -> dict[DomainName, LayerOneRunnerProtocol]:
     return {
-        "grands_prix": GrandPrixRunner(),
-        "circuits": FunctionExportRunner(
+        DomainName.GRANDS_PRIX: GrandPrixRunner(),
+        DomainName.CIRCUITS: FunctionExportRunner(
             export_function=export_complete_circuits,
             component_metadata={
                 "domain": "circuits",
@@ -34,7 +35,7 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
                 "component_type": "runner",
             },
         ),
-        "drivers": FunctionExportRunner(
+        DomainName.DRIVERS: FunctionExportRunner(
             export_function=export_complete_drivers,
             component_metadata={
                 "domain": "drivers",
@@ -44,7 +45,7 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
                 "component_type": "runner",
             },
         ),
-        "seasons": FunctionExportRunner(
+        DomainName.SEASONS: FunctionExportRunner(
             export_function=export_complete_seasons,
             component_metadata={
                 "domain": "seasons",
@@ -54,7 +55,7 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
                 "component_type": "runner",
             },
         ),
-        "constructors": FunctionExportRunner(
+        DomainName.CONSTRUCTORS: FunctionExportRunner(
             export_function=export_complete_constructors,
             component_metadata={
                 "domain": "constructors",
@@ -69,26 +70,28 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
 
 def _merge_runner_maps(
     discovered: dict[str, LayerOneRunnerProtocol],
-    explicit: dict[str, LayerOneRunnerProtocol],
-) -> dict[str, LayerOneRunnerProtocol]:
-    merged = dict(discovered)
-    for seed_name, runner in explicit.items():
-        merged.setdefault(seed_name, runner)
+    explicit: dict[DomainName, LayerOneRunnerProtocol],
+) -> dict[DomainName, LayerOneRunnerProtocol]:
+    merged: dict[DomainName, LayerOneRunnerProtocol] = {
+        DomainName.from_io(seed_name): runner for seed_name, runner in discovered.items()
+    }
+    for domain, runner in explicit.items():
+        merged.setdefault(domain, runner)
     return merged
 
 
-def build_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
+def build_layer_one_runner_map() -> dict[DomainName, LayerOneRunnerProtocol]:
     explicit_runner_map = _build_explicit_layer_one_runner_map()
     discovered_runner_map = build_layer_one_runner_map_discovered()
     return _merge_runner_maps(discovered_runner_map, explicit_runner_map)
 
 
 def build_layer_zero_run_config_factory_map() -> dict[
-    str,
+    DomainName,
     LayerZeroRunConfigFactoryProtocol,
 ]:
     return {
-        "sponsorship_liveries": SponsorshipLiveriesRunConfigFactory(),
+        DomainName.SPONSORSHIP_LIVERIES: SponsorshipLiveriesRunConfigFactory(),
     }
 
 

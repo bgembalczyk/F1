@@ -4,6 +4,7 @@ from pathlib import Path
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.types import DomainName
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import LayerZeroJobHook
@@ -19,7 +20,7 @@ class LayerZeroExecutor:
         validate_list_registry: Callable[[tuple[ListJobRegistryEntry, ...]], None],
         run_config_factory_map_builder: Callable[
             [],
-            dict[str, LayerZeroRunConfigFactoryProtocol],
+            dict[DomainName, LayerZeroRunConfigFactoryProtocol],
         ],
         default_config_factory: LayerZeroRunConfigFactoryProtocol,
         merge_service: LayerZeroMergeService,
@@ -69,9 +70,9 @@ class LayerZeroExecutor:
         *,
         run_config: RunConfig,
         job: ListJobRegistryEntry,
-        config_factories: dict[str, object],
+        config_factories: dict[DomainName, object],
     ) -> RunConfig:
-        config_factory = config_factories.get(job.seed_name, self._default_config_factory)
+        config_factory = config_factories.get(job.domain, self._default_config_factory)
         scraper_kwargs = config_factory.create_scraper_kwargs(job)
         return RunConfig(
             output_dir=run_config.output_dir,
