@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from scrapers.wiki.parsers.sections.adapter import find_section_tree
 from scrapers.wiki.parsers.sections.detection import find_section_heading
 from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
+from scrapers.wiki.parsers.sections.helpers import profile_aliases_for_target
 from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 
@@ -55,3 +56,15 @@ def test_profile_entry_aliases_merges_fallback_and_profile_aliases_stably() -> N
     normalized = {alias.lower().replace("_", " ") for alias in aliases}
     assert "layout history" in normalized
     assert "history" in normalized
+
+
+def test_profile_aliases_for_target_supports_dynamic_current_constructors() -> None:
+    aliases = profile_aliases_for_target(
+        "Constructors_for_the_2026_season",
+        domain="constructors",
+    )
+
+    normalized = {alias.lower().replace("_", " ") for alias in aliases}
+    assert "constructors for the current season" in normalized
+    assert "current constructors" in normalized
+    assert "constructors" in normalized

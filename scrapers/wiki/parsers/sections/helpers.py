@@ -1,3 +1,5 @@
+from collections.abc import Callable
+
 from bs4 import Tag
 
 from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
@@ -107,6 +109,7 @@ def _build_domain_profile(
     domain: str,
     canonical_sections: set[str],
     domain_aliases: dict[str, dict[str, set[str]]],
+    dynamic_alias_resolver: Callable[[str], set[str]] | None = None,
 ) -> SectionProfile:
     return SectionProfile(
         domain=domain,
@@ -115,6 +118,7 @@ def _build_domain_profile(
             domain=domain,
             domain_aliases=domain_aliases,
         ),
+        dynamic_alias_resolver=dynamic_alias_resolver,
         required_sections=frozenset(),
         optional_sections=frozenset(canonical_sections),
     )
@@ -123,6 +127,7 @@ def _build_domain_profile(
 def _build_profiles() -> dict[str, SectionProfile]:
     canonical = _canonical_sections()
     domain_aliases = _domain_aliases()
+    dynamic_alias_resolvers = _domain_dynamic_alias_resolvers()
     profiles: dict[str, SectionProfile] = {}
 
     for domain, canonical_sections in canonical.items():
@@ -130,9 +135,24 @@ def _build_profiles() -> dict[str, SectionProfile]:
             domain=domain,
             canonical_sections=canonical_sections,
             domain_aliases=domain_aliases,
+            dynamic_alias_resolver=dynamic_alias_resolvers.get(domain),
         )
 
     return profiles
+
+
+def _constructors_dynamic_aliases(target: str) -> set[str]:
+    if CURRENT_CONSTRUCTORS_ID.match(target):
+        return {
+            "constructors for the current season",
+            "current constructors",
+            "constructors",
+        }
+    return set()
+
+
+def _domain_dynamic_alias_resolvers() -> dict[str, Callable[[str], set[str]]]:
+    return {"constructors": _constructors_dynamic_aliases}
 
 
 DOMAIN_SECTION_PROFILES = _build_profiles()
@@ -150,18 +170,7 @@ def profile_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
         return set()
 
     normalized_target = normalize_section_profile_key(target)
-    aliases = set(profile.aliases_for(normalized_target))
-
-    if domain == "constructors" and CURRENT_CONSTRUCTORS_ID.match(normalized_target):
-        aliases.update(
-            {
-                "constructors for the current season",
-                "current constructors",
-                "constructors",
-            },
-        )
-
-    return aliases
+    return set(profile.aliases_for(normalized_target))
 
 
 def profile_entry_aliases(
