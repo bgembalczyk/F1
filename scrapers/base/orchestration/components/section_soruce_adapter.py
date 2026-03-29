@@ -1,10 +1,52 @@
 import json
+import re
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 from scrapers.base.orchestration.models import OrchestrationPaths
 from scrapers.base.orchestration.models import ResolvedInput
 from scrapers.base.orchestration.models import StepDeclaration
+
+
+@dataclass(frozen=True)
+class SourceSelectionRule:
+    source: str
+    pattern: str
+    priority: int
+
+
+@dataclass(frozen=True)
+class SourceSelectionPolicy:
+    priorities: tuple[str, ...]
+    rules: tuple[SourceSelectionRule, ...]
+    tie_breaker: str
+
+
+SOURCE_SELECTION_POLICY = SourceSelectionPolicy(
+    priorities=("checkpoint", "raw"),
+    rules=(
+        SourceSelectionRule(
+            source="checkpoint",
+            pattern="*{input_source}*{domain}*.json",
+            priority=1,
+        ),
+        SourceSelectionRule(
+            source="checkpoint",
+            pattern="step_*_{layer}_{domain}.json",
+            priority=2,
+        ),
+        SourceSelectionRule(
+            source="raw",
+            pattern="**/*{domain}*.json",
+            priority=1,
+        ),
+    ),
+    tie_breaker=(
+        "Najpierw numer kroku (step_<N>), potem mtime (najnowszy), "
+        "na końcu ścieżka leksykograficznie."
+    ),
+)
 
 
 class SectionSourceAdapter:
@@ -31,8 +73,12 @@ class SectionSourceAdapter:
         if direct_path.is_absolute() and direct_path.exists():
             return direct_path
 
-        for resolver in (self._resolve_checkpoint, self._resolve_raw):
-            resolved = resolver(step, domain)
+        resolvers = {
+            "checkpoint": self._resolve_checkpoint,
+            "raw": self._resolve_raw,
+        }
+        for source in SOURCE_SELECTION_POLICY.priorities:
+            resolved = resolvers[source](step, domain)
             if resolved is not None:
                 return resolved
         return None
@@ -43,13 +89,19 @@ class SectionSourceAdapter:
         if explicit.exists():
             return explicit
 
-        matches = sorted(checkpoints_dir.glob(f"*{step.input_source}*{domain}*.json"))
-        if matches:
-            return matches[-1]
-
-        matches = sorted(checkpoints_dir.glob(f"step_*_{step.layer}_{domain}.json"))
-        if matches:
-            return matches[-1]
+        for rule in self._rules_for("checkpoint"):
+            matches = list(
+                checkpoints_dir.glob(
+                    rule.pattern.format(
+                        input_source=step.input_source,
+                        domain=domain,
+                        layer=step.layer,
+                    )
+                )
+            )
+            selected = self._select_best_match(matches)
+            if selected is not None:
+                return selected
         return None
 
     def _resolve_raw(self, step: StepDeclaration, domain: str) -> Path | None:
@@ -65,9 +117,19 @@ class SectionSourceAdapter:
             if candidate.exists():
                 return candidate
 
-        matches = sorted(raw_dir.glob(f"**/*{domain}*.json"))
-        if matches:
-            return matches[-1]
+        for rule in self._rules_for("raw"):
+            matches = list(
+                raw_dir.glob(
+                    rule.pattern.format(
+                        input_source=step.input_source,
+                        domain=domain,
+                        layer=step.layer,
+                    )
+                )
+            )
+            selected = self._select_best_match(matches)
+            if selected is not None:
+                return selected
         return None
 
     @staticmethod
@@ -80,3 +142,27 @@ class SectionSourceAdapter:
             if isinstance(records, list):
                 return [item for item in records if isinstance(item, dict)]
         return []
+
+    @staticmethod
+    def _rules_for(source: str) -> list[SourceSelectionRule]:
+        return sorted(
+            [rule for rule in SOURCE_SELECTION_POLICY.rules if rule.source == source],
+            key=lambda rule: rule.priority,
+        )
+
+    @staticmethod
+    def _step_number(path: Path) -> int:
+        match = re.search(r"step_(\d+)", path.name)
+        return int(match.group(1)) if match else -1
+
+    def _select_best_match(self, matches: list[Path]) -> Path | None:
+        if not matches:
+            return None
+        return max(
+            matches,
+            key=lambda candidate: (
+                self._step_number(candidate),
+                candidate.stat().st_mtime_ns,
+                str(candidate),
+            ),
+        )
