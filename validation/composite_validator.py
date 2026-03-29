@@ -14,20 +14,23 @@ if TYPE_CHECKING:
 
     from validation.issue import ValidationIssue
     from validation.record_factory_validator import RecordFactoryValidatorProtocol
+    from validation.rules import LegacyValidationRule
     from validation.rules import ValidationRule
+
+from validation.rules import adapt_legacy_rule
 
 
 class CompositeRecordValidator(RecordValidator):
     def __init__(
         self,
         *,
-        common_rules: Sequence[ValidationRule] = (),
-        domain_rules: Sequence[ValidationRule] = (),
+        common_rules: Sequence[LegacyValidationRule] = (),
+        domain_rules: Sequence[LegacyValidationRule] = (),
         record_factory_validator: RecordFactoryValidatorProtocol | None = None,
     ) -> None:
         super().__init__(record_factory_validator=record_factory_validator)
-        self._common_rules = tuple(common_rules)
-        self._domain_rules = tuple(domain_rules)
+        self._common_rules = tuple(adapt_legacy_rule(rule) for rule in common_rules)
+        self._domain_rules = tuple(adapt_legacy_rule(rule) for rule in domain_rules)
 
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
         return self._execute_rules(record, (*self._common_rules, *self._domain_rules))
@@ -40,6 +43,5 @@ class CompositeRecordValidator(RecordValidator):
     ) -> list[ValidationIssue]:
         errors: list[ValidationIssue] = []
         for rule in rules:
-            result = rule(record)
-            errors.extend(cls._coerce_issue(error) for error in result)
+            errors.extend(rule(record))
         return errors

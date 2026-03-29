@@ -11,7 +11,8 @@ from typing import Any
 from validation.issue import ValidationIssue
 
 RecordLike = Mapping[str, Any]
-ValidationRule = Callable[[RecordLike], Sequence[ValidationIssue | str]]
+ValidationRule = Callable[[RecordLike], Sequence[ValidationIssue]]
+LegacyValidationRule = Callable[[RecordLike], Sequence[ValidationIssue | str]]
 
 
 @dataclass(frozen=True)
@@ -20,6 +21,24 @@ class ValueRange:
 
     min_value: int | float | None = None
     max_value: int | float | None = None
+
+
+def adapt_legacy_rule(
+    rule: LegacyValidationRule,
+) -> ValidationRule:
+    """Adapt legacy rules returning ``str`` into ``ValidationIssue`` objects."""
+
+    def _rule(record: RecordLike) -> list[ValidationIssue]:
+        return [
+            (
+                issue
+                if isinstance(issue, ValidationIssue)
+                else ValidationIssue.custom(str(issue))
+            )
+            for issue in rule(record)
+        ]
+
+    return _rule
 
 
 def required_field_rule(field: str) -> ValidationRule:

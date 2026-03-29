@@ -41,3 +41,28 @@ def test_validation_issue_custom_supports_field_name() -> None:
     assert issue.code == "rule"
     assert issue.field == "points"
     assert issue.message == "Invalid value"
+
+
+def test_composite_record_validator_supports_legacy_string_rules() -> None:
+    def legacy_rule(record):
+        if record.get("name") != "ok":
+            return ["Missing key: name"]
+        return []
+
+    validator = CompositeRecordValidator(domain_rules=(legacy_rule,))
+
+    errors = validator.validate({"name": "bad"})
+
+    assert len(errors) == 1
+    assert errors[0] == ValidationIssue.custom("Missing key: name")
+
+
+def test_composite_record_validator_keeps_structured_issue_from_legacy_adapter() -> None:
+    issue = ValidationIssue.type_error("count", "int", "str")
+
+    def mixed_legacy_rule(_record):
+        return [issue]
+
+    validator = CompositeRecordValidator(domain_rules=(mixed_legacy_rule,))
+
+    assert validator.validate({"count": "x"}) == [issue]
