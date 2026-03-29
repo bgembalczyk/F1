@@ -1,16 +1,9 @@
 from __future__ import annotations
 
 import argparse
-import re
 import subprocess
-from pathlib import PurePosixPath
 
-ARCHITECTURE_PREFIXES: tuple[str, ...] = (
-    "layers/",
-    "scrapers/base/",
-    "tests/architecture/",
-)
-ADR_PATTERN = re.compile(r"\bADR-\d{4}\b", re.IGNORECASE)
+from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
 
 
 def parse_args() -> argparse.Namespace:
@@ -47,17 +40,11 @@ def list_changed_files(base_sha: str, head_sha: str) -> list[str]:
 
 
 def is_architecture_path(path: str) -> bool:
-    normalized = PurePosixPath(path).as_posix()
-    return any(normalized.startswith(prefix) for prefix in ARCHITECTURE_PREFIXES)
+    return DEFAULT_ADR_ENFORCEMENT_POLICY.is_architecture_path(path)
 
 
 def is_cosmetic_line(content: str) -> bool:
-    stripped = content.strip()
-    if not stripped:
-        return True
-    if stripped.startswith("#"):
-        return True
-    return False
+    return DEFAULT_ADR_ENFORCEMENT_POLICY.is_cosmetic_line(content)
 
 
 def has_non_cosmetic_changes(base_sha: str, head_sha: str, files: list[str]) -> bool:
@@ -109,7 +96,12 @@ def main() -> int:
         print("Brak zmian w ścieżkach architektonicznych; gate ADR pominięty.")
         return 0
 
-    if not has_non_cosmetic_changes(args.base_sha, args.head_sha, architecture_files):
+    has_non_cosmetic = has_non_cosmetic_changes(args.base_sha, args.head_sha, architecture_files)
+
+    if not DEFAULT_ADR_ENFORCEMENT_POLICY.should_require_adr_for_architecture_diff(
+        has_architecture_changes=bool(architecture_files),
+        has_non_cosmetic_changes=has_non_cosmetic,
+    ):
         print(
             "Wykryto wyłącznie zmiany kosmetyczne (formatowanie/komentarze) "
             "w ścieżkach architektonicznych; gate ADR pominięty."
@@ -124,7 +116,7 @@ def main() -> int:
         ]
     )
 
-    if ADR_PATTERN.search(combined_text):
+    if DEFAULT_ADR_ENFORCEMENT_POLICY.has_adr_reference(combined_text):
         print("Referencja ADR-XXXX znaleziona. Gate ADR zaliczony.")
         return 0
 
