@@ -2,11 +2,23 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
-from typing import Any
 
 if TYPE_CHECKING:
     from collections.abc import Callable
     from pathlib import Path
+
+OrchestrationRecord = dict[str, object]
+OrchestrationRecords = list[OrchestrationRecord]
+
+
+def normalize_orchestration_payload(payload: object) -> OrchestrationRecords:
+    if isinstance(payload, list):
+        return [item for item in payload if isinstance(item, dict)]
+    if isinstance(payload, dict):
+        records = payload.get("records", [])
+        if isinstance(records, list):
+            return [item for item in records if isinstance(item, dict)]
+    return []
 
 
 @dataclass(frozen=True)
@@ -34,19 +46,19 @@ class StepDeclaration:
     step_id: int
     layer: str
     input_source: str
-    parser: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    parser: Callable[[OrchestrationRecords], OrchestrationRecords]
     output_target: str
 
 
 @dataclass(frozen=True)
 class ResolvedInput:
-    records: list[dict[str, Any]]
+    records: OrchestrationRecords
     source_path: Path
 
 
 @dataclass(frozen=True)
 class ExecutedStep:
-    records: list[dict[str, Any]]
+    records: OrchestrationRecords
     errors: list[str]
     duration_ms: float
 
@@ -75,7 +87,7 @@ class CheckpointMetadata:
 @dataclass(frozen=True)
 class CheckpointPayload:
     metadata: CheckpointMetadata
-    records: list[dict[str, Any]]
+    records: OrchestrationRecords
 
 
 @dataclass(frozen=True)

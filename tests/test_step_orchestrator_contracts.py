@@ -4,8 +4,10 @@ from __future__ import annotations
 from pathlib import Path
 
 from scrapers.base.orchestration.models import AuditEntry
+from scrapers.base.orchestration.models import OrchestrationRecords
 from scrapers.base.orchestration.models import ResolvedInput
 from scrapers.base.orchestration.models import StepDeclaration
+from scrapers.base.orchestration.models import normalize_orchestration_payload
 from tests.support.step_orchestrator_assertions import (
     assert_section_source_adapter_falls_back_to_raw,
 )
@@ -46,3 +48,26 @@ class FakeAuditRepository:
 
 def test_input_resolver_contract_returns_records_and_path(tmp_path: Path) -> None:
     assert_section_source_adapter_falls_back_to_raw(tmp_path)
+
+
+def test_step_parser_contract_accepts_orchestration_records_type() -> None:
+    seen: list[OrchestrationRecords] = []
+
+    def parser(rows: OrchestrationRecords) -> OrchestrationRecords:
+        seen.append(rows)
+        return rows
+
+    step = StepDeclaration(
+        step_id=1,
+        layer="layer1",
+        input_source="drivers",
+        parser=parser,
+        output_target="checkpoints",
+    )
+    payload = normalize_orchestration_payload(
+        {"records": [{"driver": {"url": "x"}}, "invalid"]},
+    )
+    parsed = step.parser(payload)
+
+    assert seen == [[{"driver": {"url": "x"}}]]
+    assert parsed == [{"driver": {"url": "x"}}]
