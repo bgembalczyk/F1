@@ -1,9 +1,20 @@
 from abc import ABC
 from abc import abstractmethod
 from pathlib import Path
+from typing import Protocol
 
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
+
+
+class LayerOneRunnerProtocol(Protocol):
+    def run(
+        self,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+    ) -> None:
+        """Execute layer-one job for given seed."""
 
 
 class LayerJobRunner(ABC):

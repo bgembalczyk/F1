@@ -5,7 +5,8 @@ import inspect
 from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
-from typing import Any
+from typing import Protocol
+from typing import cast
 
 from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.component_metadata import parse_component_metadata
@@ -15,9 +16,17 @@ if TYPE_CHECKING:
     from types import ModuleType
 
 
+class DiscoveryComponentClassProtocol(Protocol):
+    class _ConfigProtocol(Protocol):
+        url: str
+
+    CONFIG: _ConfigProtocol
+    COMPONENT_METADATA: ComponentMetadata | dict[str, object]
+
+
 @dataclass(frozen=True)
 class DiscoveredComponent:
-    cls: type[Any]
+    cls: type[DiscoveryComponentClassProtocol]
     metadata: ComponentMetadata
 
 
@@ -46,8 +55,10 @@ def _iter_discovery_module_names() -> tuple[str, ...]:
     )
 
 
-def _read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
-    raw = getattr(candidate, COMPONENT_METADATA_ATTR, None)
+def _read_component_metadata(
+    candidate: type[DiscoveryComponentClassProtocol],
+) -> ComponentMetadata | None:
+    raw = candidate.__dict__.get(COMPONENT_METADATA_ATTR)
     if raw is None:
         return None
     metadata = parse_component_metadata(raw)
@@ -65,27 +76,36 @@ def discover_components() -> tuple[DiscoveredComponent, ...]:
 
 def _discover_components_in_module(module: ModuleType) -> list[DiscoveredComponent]:
     result: list[DiscoveredComponent] = []
-    seen: set[type[Any]] = set()
+    seen: set[type[DiscoveryComponentClassProtocol]] = set()
 
-    for _, candidate in inspect.getmembers(module, inspect.isclass):
+    for candidate_value in module.__dict__.values():
+        if not inspect.isclass(candidate_value):
+            continue
+        candidate = cast(type[DiscoveryComponentClassProtocol], candidate_value)
         metadata = _read_component_metadata(candidate)
         if metadata is None:
             continue
         result.append(DiscoveredComponent(cls=candidate, metadata=metadata))
         seen.add(candidate)
 
-    list_scraper_cls = getattr(module, "LIST_SCRAPER_CLASS", None)
+    list_scraper_cls = module.__dict__.get("LIST_SCRAPER_CLASS")
     if inspect.isclass(list_scraper_cls) and list_scraper_cls not in seen:
-        metadata = _read_component_metadata(list_scraper_cls)
+        typed_list_scraper_cls = cast(
+            type[DiscoveryComponentClassProtocol],
+            list_scraper_cls,
+        )
+        metadata = _read_component_metadata(typed_list_scraper_cls)
         if metadata is not None:
-            result.append(DiscoveredComponent(cls=list_scraper_cls, metadata=metadata))
+            result.append(
+                DiscoveredComponent(cls=typed_list_scraper_cls, metadata=metadata),
+            )
 
     return result
 
 
-def build_layer_one_runner_map_discovered() -> dict[str, Any]:
-    runner_map: dict[str, Any] = {}
-    source_cls_by_seed: dict[str, type[Any]] = {}
+def build_layer_one_runner_map_discovered() -> dict[str, object]:
+    runner_map: dict[str, object] = {}
+    source_cls_by_seed: dict[str, type[DiscoveryComponentClassProtocol]] = {}
     for component in discover_components():
         metadata = component.metadata
         if metadata.layer != "layer_one" or metadata.component_type != "runner":
