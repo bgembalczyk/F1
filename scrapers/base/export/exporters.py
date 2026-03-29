@@ -29,7 +29,7 @@ class DataExporter:
             indent=indent,
             include_metadata=include_metadata,
         )
-        Path(path).write_text(payload, encoding="utf-8")
+        self._write_payload(path, payload)
 
     def to_csv(
         self,
@@ -44,4 +44,15 @@ class DataExporter:
             fieldnames=fieldnames,
             include_metadata=include_metadata,
         )
-        Path(path).write_text(payload, encoding="utf-8")
+        self._write_payload(path, payload)
+
+    def _write_payload(self, path: str | Path, payload: str) -> None:
+        output_path = self._normalize_path(path)
+        output_path.write_text(payload, encoding="utf-8")
+
+    @staticmethod
+    def _normalize_path(path: str | Path) -> Path:
+        output_path = Path(path)
+        if output_path.exists() and output_path.is_dir():
+            raise IsADirectoryError(f"Expected file path, got directory: {output_path}")
+        return output_path
