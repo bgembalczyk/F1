@@ -277,6 +277,44 @@ def test_table_parser_handles_rowspan_and_colspan_with_stable_mapping() -> None:
     assert result["raw_rows"][1]["Grand Prix"] == "Monaco"
 
 
+def test_table_parser_uses_custom_html_table_parser() -> None:
+    class _StubHtmlTableParser:
+        def __init__(self) -> None:
+            self.strip_lang_suffix = False
+            self.strip_refs = False
+            self.normalize_dashes = False
+            self.was_used = False
+
+        def clean_cells(self, cells):  # noqa: ANN001
+            self.was_used = True
+            return [cell.get_text(" ", strip=True) for cell in cells]
+
+        def has_multirow_header(self, first_cells, second_cells):  # noqa: ANN001
+            return False
+
+        def is_footer_row(self, cells, cleaned_cells, headers):  # noqa: ANN001
+            return False
+
+        def expand_row_cells(self, cells, headers, pending_rowspans):  # noqa: ANN001
+            return cells
+
+    html = """
+    <table class="wikitable">
+      <tr><th>Name</th><th>Year</th></tr>
+      <tr><td>Hamilton</td><td>2020</td></tr>
+    </table>
+    """
+    soup = _make_soup(html)
+    stub_parser = _StubHtmlTableParser()
+    parser = TableParser(table_parser=stub_parser)
+
+    result = parser.parse(soup.find("table"))
+
+    assert stub_parser.was_used is True
+    assert result["headers"] == ["Name", "Year"]
+    assert result["rows"] == [["Hamilton", "2020"]]
+
+
 def test_navbox_parser():
     html = """
     <div role="navigation" class="navbox">
