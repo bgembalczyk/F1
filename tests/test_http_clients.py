@@ -4,6 +4,7 @@ import time
 from collections.abc import Callable
 from http.server import BaseHTTPRequestHandler
 from http.server import ThreadingHTTPServer
+import ssl
 
 import pytest
 
@@ -246,6 +247,78 @@ def test_runtime_checkable_http_client_protocol_accepts_urllib_client():
     assert isinstance(client, HttpClientProtocol)
 
 
+def test_session_uses_injected_ssl_context(monkeypatch):
+    custom_context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+    captured_context = None
+
+    class _DummyResponse:
+        headers: dict[str, str] = {}
+
+        def read(self):
+            return b"ok"
+
+        def getcode(self):
+            return 200
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+    def _fake_urlopen(_request, *, timeout=None, context=None):
+        del timeout
+        nonlocal captured_context
+        captured_context = context
+        return _DummyResponse()
+
+    monkeypatch.setattr("urllib.request.urlopen", _fake_urlopen)
+
+    response = Session(ssl_context=custom_context).get("https://example.com")
+
+    assert response.status_code == 200
+    assert captured_context is custom_context
+
+
+def test_session_uses_custom_ssl_context_provider(monkeypatch):
+    custom_context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+    captured_context = None
+    provider_called = 0
+
+    class _DummyResponse:
+        headers: dict[str, str] = {}
+
+        def read(self):
+            return b"ok"
+
+        def getcode(self):
+            return 200
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+    def _fake_urlopen(_request, *, timeout=None, context=None):
+        del timeout
+        nonlocal captured_context
+        captured_context = context
+        return _DummyResponse()
+
+    def _provider():
+        nonlocal provider_called
+        provider_called += 1
+        return custom_context
+
+    monkeypatch.setattr("urllib.request.urlopen", _fake_urlopen)
+
+    response = Session(ssl_context_provider=_provider).get("https://example.com")
+
+    assert response.status_code == 200
+    assert provider_called == 1
+    assert captured_context is custom_context
+    
 def test_http_error_inherits_http_shim_error_and_exposes_response_adapter():
     response = Response(
         url="https://example.com/not-found",

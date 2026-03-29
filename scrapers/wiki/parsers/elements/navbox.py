@@ -1,18 +1,17 @@
-from typing import Any
-
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.text_cleaning import extract_text
+from scrapers.wiki.parsers.types import NavBoxParsedData
 
 
-class NavBoxParser(WikiParser):
+class NavBoxParser(WikiParser[NavBoxParsedData]):
     """Parser navboxów Wikipedii.
 
     Przetwarza element: <div role="navigation" class="navbox">
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag) -> NavBoxParsedData:
         """Parsuje navbox HTML.
 
         Args:
@@ -23,9 +22,9 @@ class NavBoxParser(WikiParser):
         """
         title_tag = element.find(class_="navbox-title")
         title = extract_text(title_tag)
-        links = [
-            {"text": extract_text(a), "href": a.get("href")}
-            for a in element.find_all("a")
-            if a.get("href")
-        ]
+        links = []
+        for anchor in element.find_all("a"):
+            href = anchor.get("href")
+            if isinstance(href, str):
+                links.append({"text": extract_text(anchor), "href": href})
         return {"title": title, "links": links}
