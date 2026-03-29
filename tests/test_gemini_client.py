@@ -5,6 +5,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
+from config.app_config_provider import AppConfigProvider
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.client import GeminiClient
 from infrastructure.gemini.client import ModelConfig
@@ -258,6 +259,24 @@ def test_from_key_file_uses_default_models(tmp_path) -> None:
     key_file.write_text("my-api-key", encoding="utf-8")
     client = GeminiClient.from_key_file(key_file)
     assert len(client._model_states) > 0  # noqa: SLF001
+
+
+def test_from_config_provider_uses_provider_values(tmp_path) -> None:
+    expected_timeout = 41
+    key_file = tmp_path / "key.txt"
+    key_file.write_text("my-provider-key", encoding="utf-8")
+    provider = AppConfigProvider(
+        env={
+            "GEMINI_API_KEY_FILE": str(key_file),
+            "GEMINI_TIMEOUT_SECONDS": str(expected_timeout),
+        },
+        project_root=tmp_path,
+    )
+
+    client = GeminiClient.from_config_provider(provider)
+
+    assert len(client._model_states) > 0  # noqa: SLF001
+    assert client._transport._timeout == expected_timeout  # noqa: SLF001
     assert client._model_states[0].model == "gemini-3-flash-preview"  # noqa: SLF001
     assert client._model_states[0].model == DEFAULT_MODELS[0].model  # noqa: SLF001
 
