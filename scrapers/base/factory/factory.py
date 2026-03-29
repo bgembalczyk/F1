@@ -1,5 +1,10 @@
+from collections.abc import Sequence
+
 from scrapers.base.abc import ABCScraper
 from scrapers.base.factory.constructor_introspection import ConstructorIntrospection
+from scrapers.base.factory.creation_adapter_protocol import (
+    ScraperCreationAdapterProtocol,
+)
 from scrapers.base.factory.creation_context import ScraperCreationContext
 from scrapers.base.factory.legacy_adapter import LegacyScraperAdapter
 from scrapers.base.factory.option_adapter import OptionsScraperAdapter
@@ -8,12 +13,25 @@ from scrapers.base.run_config import RunConfig
 
 
 class ScraperFactory:
-    def __init__(self, *, mapper: RunConfigOptionsMapper | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        mapper: RunConfigOptionsMapper | None = None,
+        adapters: Sequence[ScraperCreationAdapterProtocol] | None = None,
+    ) -> None:
         resolved_mapper = mapper or RunConfigOptionsMapper()
-        self._adapters = (
+        self._adapters = tuple(adapters or self.default_adapters(mapper=resolved_mapper))
+
+    @staticmethod
+    def default_adapters(
+        *,
+        mapper: RunConfigOptionsMapper | None = None,
+    ) -> list[ScraperCreationAdapterProtocol]:
+        resolved_mapper = mapper or RunConfigOptionsMapper()
+        return [
             OptionsScraperAdapter(resolved_mapper),
             LegacyScraperAdapter(),
-        )
+        ]
 
     def create(
         self,
