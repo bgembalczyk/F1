@@ -8,5 +8,5 @@ def test_ci_meta_enforces_di_antipattern_ast_check_with_adr_binding() -> None:
         encoding="utf-8",
     )
     assert "scripts/check_di_antipatterns.py" in workflow
-    assert "grep -E '^(layers/|scrapers/base/).+\\.py$'" in workflow
+    assert "grep -E '^(layers/|scrapers/base/|scrapers/drivers/infobox/).+\\.py$'" in workflow
     assert "--adr-reference-text" in workflow

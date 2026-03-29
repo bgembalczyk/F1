@@ -1,3 +1,5 @@
+from collections.abc import Mapping
+
 from infrastructure.http_client.clients.base import BaseHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_response_protocol import (
@@ -34,7 +36,7 @@ class UrllibHttpClient(BaseHttpClient):
         self,
         url: str,
         *,
-        headers: dict[str, str] | None = None,
+        headers: Mapping[str, str] | None = None,
         timeout: int | None = None,
     ) -> HttpResponseProtocol:
         """Wykonuje żądanie GET."""

@@ -4,6 +4,11 @@ from __future__ import annotations
 from pathlib import Path
 
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
+from tests.architecture.registry import ARCHITECTURE_REGISTRY
+from tests.support.imports_analyzer import parse_imports
+
+DOMAINS = ARCHITECTURE_REGISTRY.entrypoint_domains
+
 from tests.architecture.rules import ENTRYPOINT_DOMAINS
 from tests.support.imports_analyzer import parse_imports
 

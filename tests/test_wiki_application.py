@@ -6,8 +6,8 @@ from scrapers.wiki.application import ConstructorsMirrorService
 from scrapers.wiki.application import LayerOneExecutor
 from scrapers.wiki.application import LayerZeroExecutor
 from scrapers.wiki.application import LayerZeroMergeService
-from scrapers.wiki.seed_registry import ListJobRegistryEntry
-from scrapers.wiki.seed_registry import SeedRegistryEntry
+from layers.seed.registry import ListJobRegistryEntry
+from layers.seed.registry import SeedRegistryEntry
 
 
 class _FakeScraper:

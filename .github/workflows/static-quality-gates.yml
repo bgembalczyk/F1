@@ -154,6 +154,10 @@ jobs:
         run: |
           lint-imports --config importlinter.ini
 
+      - name: Unused imports regression gate (layer wiring)
+        run: |
+          ruff check layers/zero/executor.py layers/application.py --select F401
+          
       - name: Any policy for new modules (rollout scope)
         shell: bash
         run: |
@@ -170,7 +174,7 @@ jobs:
             --error-budget "${MYPY_ERROR_BUDGET}"
 
 
-      - name: DI anti-pattern AST check (layers + scrapers/base)
+      - name: DI anti-pattern AST check (layers + selected scrapers)
         shell: bash
         run: |
           ADR_REFERENCE_TEXT=""
@@ -182,10 +186,10 @@ jobs:
 
           mapfile -t DI_SCOPE_FILES < <(printf '%s
 ' "${{ steps.changed-py.outputs.changed_files }}" | tr ',' '
-' | sed '/^$/d' | grep -E '^(layers/|scrapers/base/).+\.py$' || true)
+' | sed '/^$/d' | grep -E '^(layers/|scrapers/base/|scrapers/drivers/infobox/).+\.py$' || true)
 
           if [[ ${#DI_SCOPE_FILES[@]} -eq 0 ]]; then
-            echo "Brak zmian Python w layers/* i scrapers/base/* - pomijam check DI."
+            echo "Brak zmian Python w layers/*, scrapers/base/* i scrapers/drivers/infobox/* - pomijam check DI."
             exit 0
           fi
 

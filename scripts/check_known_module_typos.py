@@ -6,6 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 import sys
+from scripts.lib.known_typos import run_known_typos_check
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -85,10 +87,7 @@ def _scan_typo_imports() -> list[str]:
 
 
 def run_check() -> list[str]:
-    return [
-        *_validate_target_packages(),
-        *_scan_typo_imports(),
-    ]
+    return run_known_typos_check(PROJECT_ROOT)
 
 
 def main() -> int:

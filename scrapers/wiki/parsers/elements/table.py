@@ -8,13 +8,17 @@ from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.text_cleaning import clean_table_cell_text
+from scrapers.wiki.parsers.types import TableParsedData
 
 
-class TableParser(WikiParser):
+class TableParser(WikiParser[TableParsedData]):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">
     """
+
+    def __init__(self, table_parser: HtmlTableParser | None = None) -> None:
+        self._table_parser = table_parser or HtmlTableParser()
 
     def parse(self, element: Tag) -> dict[str, Any]:
         """Parsuje tabelę wikitable HTML.
@@ -25,7 +29,7 @@ class TableParser(WikiParser):
         Returns:
             Słownik z nagłówkami i wierszami tabeli.
         """
-        parser = HtmlTableParser()
+        parser = self._table_parser
         full_headers, header_rows = self._extract_full_headers(parser, element)
         if not full_headers:
             return {"headers": [], "rows": [], "raw_rows": []}

@@ -3,6 +3,7 @@
 import json
 from abc import ABC
 from abc import abstractmethod
+from collections.abc import Mapping
 from collections.abc import Callable
 from typing import Any
 
@@ -16,6 +17,7 @@ from infrastructure.http_client.factories.default_http_policy_factory import (
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,
 )
+from infrastructure.http_client.interfaces.http_client_protocol import JsonValue
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 
 
@@ -67,7 +69,7 @@ class BaseHttpClient(ABC):
         self,
         url: str,
         *,
-        headers: dict[str, str] | None,
+        headers: Mapping[str, str] | None,
         timeout: int | None,
         request_func: Callable[..., Any],
     ):
@@ -86,7 +88,7 @@ class BaseHttpClient(ABC):
         self,
         url: str,
         *,
-        headers: dict[str, str] | None = None,
+        headers: Mapping[str, str] | None = None,
         timeout: int | None = None,
     ) -> HttpResponseProtocol:
         """Pobiera URL i zwraca response."""
@@ -96,7 +98,7 @@ class BaseHttpClient(ABC):
         self,
         url: str,
         *,
-        headers: dict[str, str] | None = None,
+        headers: Mapping[str, str] | None = None,
         timeout: int | None = None,
     ) -> str:
         """
@@ -113,9 +115,9 @@ class BaseHttpClient(ABC):
         self,
         url: str,
         *,
-        headers: dict[str, str] | None = None,
+        headers: Mapping[str, str] | None = None,
         timeout: int | None = None,
-    ) -> Any:
+    ) -> JsonValue:
         """
         Parsuje JSON z odpowiedzi.
 

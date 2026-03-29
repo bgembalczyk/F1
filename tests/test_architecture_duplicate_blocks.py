@@ -5,6 +5,9 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
+from tests.architecture.registry import ARCHITECTURE_REGISTRY
+
+ENTRYPOINT_MODULES = ARCHITECTURE_REGISTRY.entrypoint_files
 from tests.architecture.rules import ENTRYPOINT_MODULES
 
 
@@ -206,8 +209,7 @@ def test_domain_entrypoints_use_shared_factory_builders() -> None:
         source = py_file.read_text(encoding="utf-8")
         tree = ast.parse(source, filename=str(py_file))
 
-        assert "build_run_list_scraper_for_domain" in source
-        assert "build_entrypoint_alias_getattr_for_domain" in source
+        assert "install_domain_entrypoint" in source
 
         local_dups = [
             node.name
@@ -217,6 +219,6 @@ def test_domain_entrypoints_use_shared_factory_builders() -> None:
         ]
         assert not local_dups, (
             "Entrypoint should not duplicate local wrappers. "
-            "Use shared builders from scrapers.base.domain_entrypoint instead: "
+            "Use shared domain facade installer from scrapers.base.domain_entrypoint instead: "
             f"{py_file}"
         )
