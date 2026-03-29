@@ -207,16 +207,18 @@ def test_http_policy_shared_between_scraper_options_and_fetchers():
     policy = HttpPolicy(timeout=5, retries=1, cache=None)
     http_client = _DummyHttpClient()
 
-    options = ScraperOptions(policy=policy, http_client=http_client)
-    fetcher = options.with_fetcher()
+    options = ScraperOptions()
+    options.http.policy = policy
+    options.http.http_client = http_client
+    fetcher = options.http.http_client
 
     sub_options = ScraperOptions(
-        policy=options.policy,
-        http_client=options.http_client,
         source_adapter=fetcher,
     )
-    sub_fetcher = sub_options.with_fetcher()
+    sub_options.http.policy = options.http.policy
+    sub_options.http.http_client = options.http.http_client
+    sub_fetcher = sub_options.source_adapter
 
-    assert fetcher.policy is policy
+    assert options.http.policy is policy
     assert sub_fetcher is fetcher
-    assert sub_fetcher.policy is policy
+    assert sub_options.http.policy is policy

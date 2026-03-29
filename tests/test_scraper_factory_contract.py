@@ -41,7 +41,7 @@ def test_factory_creates_new_style_scraper_with_options() -> None:
 
     assert isinstance(scraper.options, ScraperOptions)
     assert scraper.options.include_urls is False
-    assert scraper.options.http_timeout == 21
+    assert scraper.options.http.timeout == 21
     assert scraper.options.run_id == "run-1"
     assert scraper.run_id == "run-1"
 

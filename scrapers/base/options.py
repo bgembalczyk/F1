@@ -72,82 +72,64 @@ class ScraperOptions:
             msg = "error_retry_attempts must be >= 1"
             raise ValueError(msg)
 
-    @property
-    def policy(self) -> HttpPolicy:
-        return self.http.policy
 
-    @policy.setter
-    def policy(self, value: HttpPolicy) -> None:
-        self.http.policy = value
+@dataclass(slots=True)
+class ScraperOptionsBuilder:
+    """Fluent builder for composing `ScraperOptions` with nested sub-options."""
 
-    @property
-    def http_client(self) -> HttpClientProtocol | None:
-        return self.http.http_client
+    _options: ScraperOptions = field(default_factory=ScraperOptions)
 
-    @http_client.setter
-    def http_client(self, value: HttpClientProtocol | None) -> None:
-        self.http.http_client = value
+    def with_http(
+        self,
+        *,
+        policy: HttpPolicy | None = None,
+        http_client: HttpClientProtocol | None = None,
+        timeout: int | None = None,
+        retries: int | None = None,
+        backoff_seconds: float | None = None,
+    ) -> "ScraperOptionsBuilder":
+        if policy is not None:
+            self._options.http.policy = policy
+        if http_client is not None:
+            self._options.http.http_client = http_client
+        if timeout is not None:
+            self._options.http.timeout = timeout
+        if retries is not None:
+            self._options.http.retries = retries
+        if backoff_seconds is not None:
+            self._options.http.backoff_seconds = backoff_seconds
+        return self
 
-    @property
-    def http_timeout(self) -> int | None:
-        return self.http.timeout
+    def with_cache(
+        self,
+        *,
+        cache_dir: Path | str | None = None,
+        cache_ttl: int | None = None,
+        cache_adapter: CacheBackend | None = None,
+    ) -> "ScraperOptionsBuilder":
+        if cache_dir is not None:
+            self._options.cache.cache_dir = cache_dir
+        if cache_ttl is not None:
+            self._options.cache.cache_ttl = cache_ttl
+        if cache_adapter is not None:
+            self._options.cache.cache_adapter = cache_adapter
+        return self
 
-    @http_timeout.setter
-    def http_timeout(self, value: int | None) -> None:
-        self.http.timeout = value
+    def with_pipeline(
+        self,
+        *,
+        transformers: list[RecordTransformer] | None = None,
+        post_processors: list[RecordPostProcessor] | None = None,
+    ) -> "ScraperOptionsBuilder":
+        if transformers is not None:
+            self._options.pipeline.transformers = list(transformers)
+        if post_processors is not None:
+            self._options.pipeline.post_processors = list(post_processors)
+        return self
 
-    @property
-    def http_retries(self) -> int | None:
-        return self.http.retries
+    def build(self) -> ScraperOptions:
+        return self._options
 
-    @http_retries.setter
-    def http_retries(self, value: int | None) -> None:
-        self.http.retries = value
 
-    @property
-    def http_backoff_seconds(self) -> float | None:
-        return self.http.backoff_seconds
-
-    @http_backoff_seconds.setter
-    def http_backoff_seconds(self, value: float | None) -> None:
-        self.http.backoff_seconds = value
-
-    @property
-    def cache_dir(self) -> Path | str | None:
-        return self.cache.cache_dir
-
-    @cache_dir.setter
-    def cache_dir(self, value: Path | str | None) -> None:
-        self.cache.cache_dir = value
-
-    @property
-    def cache_ttl(self) -> int | None:
-        return self.cache.cache_ttl
-
-    @cache_ttl.setter
-    def cache_ttl(self, value: int | None) -> None:
-        self.cache.cache_ttl = value
-
-    @property
-    def cache_adapter(self) -> CacheBackend | None:
-        return self.cache.cache_adapter
-
-    @cache_adapter.setter
-    def cache_adapter(self, value: CacheBackend | None) -> None:
-        self.cache.cache_adapter = value
-
-    @property
-    def transformers(self) -> list[RecordTransformer]:
-        return self.pipeline.transformers
-
-    @transformers.setter
-    def transformers(self, value: list[RecordTransformer] | None) -> None:
-        self.pipeline.transformers = list(value or [])
-
-    @property
-    def post_processors(self) -> list[RecordPostProcessor]:
-        return self.pipeline.post_processors
-
-    @post_processors.setter
-    def post_processors(self, value: list[RecordPostProcessor] | None) -> None:
-        self.pipeline.post_processors = list(value or [])
+def build_scraper_options(*, base: ScraperOptions | None = None) -> ScraperOptionsBuilder:
+    return ScraperOptionsBuilder(_options=base or ScraperOptions())
