@@ -16,6 +16,9 @@ class TableParser(WikiParser):
     Przetwarza tabelę: <table class="wikitable">
     """
 
+    def __init__(self, table_parser: HtmlTableParser | None = None) -> None:
+        self._table_parser = table_parser or HtmlTableParser()
+
     def parse(self, element: Tag) -> dict[str, Any]:
         """Parsuje tabelę wikitable HTML.
 
@@ -25,7 +28,7 @@ class TableParser(WikiParser):
         Returns:
             Słownik z nagłówkami i wierszami tabeli.
         """
-        parser = HtmlTableParser()
+        parser = self._table_parser
         full_headers, header_rows = self._extract_full_headers(parser, element)
         if not full_headers:
             return {"headers": [], "rows": [], "raw_rows": []}
