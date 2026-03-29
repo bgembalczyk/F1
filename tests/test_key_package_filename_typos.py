@@ -1,114 +1,79 @@
 from pathlib import Path
 
+import pytest
 
-def test_key_package_file_names_do_not_contain_contants_typo():
-    project_root = Path(__file__).resolve().parents[1]
-    key_packages = (
-        project_root / "scrapers" / "wiki",
-        project_root / "scrapers" / "wiki" / "parsers" / "sections",
-    )
-    typo_file_name = "contants.py"
+from scripts.check_known_module_typos import DISALLOWED_FILENAME_PATTERNS
 
-    typo_paths = [
-        typo_path
-        for package in key_packages
-        if (typo_path := package / typo_file_name).exists()
-    ]
-    assert not typo_paths, f"Found typo filename(s): {typo_paths}"
-
-
-def test_key_package_constants_modules_exist():
-    project_root = Path(__file__).resolve().parents[1]
-    expected_paths = (
-        project_root / "scrapers" / "wiki" / "constants.py",
-        project_root / "scrapers" / "wiki" / "parsers" / "sections" / "constants.py",
-    )
-
-    missing_paths = [path for path in expected_paths if not path.exists()]
-    assert not missing_paths, f"Missing expected constants module(s): {missing_paths}"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SOURCE_DIRS = (
+    "layers",
+    "scrapers",
+    "models",
+    "infrastructure",
+    "validation",
+    "complete_extractor",
+    "tests",
+)
 
 
-def test_no_typo_import_path_remains():
-    project_root = Path(__file__).resolve().parents[1]
-    disallowed_import = "scrapers.wiki.contants"
-    source_dirs = (
-        "layers",
-        "scrapers",
-        "models",
-        "infrastructure",
-        "validation",
-        "complete_extractor",
-    )
-
-    matches = []
-    for source_dir in source_dirs:
-        root = project_root / source_dir
-        if not root.exists():
-            continue
-        matches.extend(
-            py_path.relative_to(project_root)
-            for py_path in root.rglob("*.py")
-            if py_path.name != "test_key_package_filename_typos.py"
-            if disallowed_import in py_path.read_text(encoding="utf-8")
-        )
-
-    assert not matches, f"Found typo import path(s): {matches}"
-
-
-def test_no_parallel_typo_and_correct_module_pairs_exist():
-    project_root = Path(__file__).resolve().parents[1]
-    target_packages = (
-        project_root / "scrapers" / "wiki",
-        project_root / "scrapers" / "wiki" / "parsers" / "sections",
-    )
-
-    duplicates = []
-    for package in target_packages:
-        has_correct = (package / "constants.py").exists()
-        has_typo = (package / "contants.py").exists()
-        if has_correct and has_typo:
-            duplicates.append(package)
-
-    assert not duplicates, f"Found parallel typo/correct module pairs: {duplicates}"
-
-
-def test_orchestration_components_do_not_contain_section_source_typo():
-    project_root = Path(__file__).resolve().parents[1]
-    package = project_root / "scrapers" / "base" / "orchestration" / "components"
-
-    assert (package / "section_source_adapter.py").exists(), (
+@pytest.mark.parametrize(
+    ("package", "expected_module"),
+    [
+        (PROJECT_ROOT / "scrapers" / "wiki", "constants.py"),
+        (
+            PROJECT_ROOT / "scrapers" / "wiki" / "parsers" / "sections",
+            "constants.py",
+        ),
+        (
+            PROJECT_ROOT / "scrapers" / "base" / "orchestration" / "components",
+            "section_source_adapter.py",
+        ),
+    ],
+)
+def test_expected_modules_exist(package: Path, expected_module: str) -> None:
+    assert (package / expected_module).exists(), (
         "Missing expected module: "
-        f"{package / 'section_source_adapter.py'}"
-    )
-    assert not (package / "section_soruce_adapter.py").exists(), (
-        "Found typo module: "
-        f"{package / 'section_soruce_adapter.py'}"
+        f"{package / expected_module}"
     )
 
 
-def test_no_typo_import_for_section_source_adapter_remains():
-    project_root = Path(__file__).resolve().parents[1]
-    disallowed_import = "scrapers.base.orchestration.components.section_soruce_adapter"
-    source_dirs = (
-        "layers",
-        "scrapers",
-        "models",
-        "infrastructure",
-        "validation",
-        "complete_extractor",
-        "tests",
-    )
+@pytest.mark.parametrize(
+    "package",
+    [
+        PROJECT_ROOT / "scrapers" / "wiki",
+        PROJECT_ROOT / "scrapers" / "wiki" / "parsers" / "sections",
+        PROJECT_ROOT / "scrapers" / "base" / "orchestration" / "components",
+    ],
+)
+def test_target_packages_do_not_contain_disallowed_filename_patterns(
+    package: Path,
+) -> None:
+    matches = [
+        py_path
+        for py_path in package.glob("*.py")
+        if any(pattern in py_path.name for pattern in DISALLOWED_FILENAME_PATTERNS)
+    ]
+    assert not matches, f"Found typo filename(s): {matches}"
 
+
+def test_no_disallowed_filename_pattern_in_import_paths() -> None:
     matches = []
-    for source_dir in source_dirs:
-        root = project_root / source_dir
+    for source_dir in SOURCE_DIRS:
+        root = PROJECT_ROOT / source_dir
         if not root.exists():
             continue
         matches.extend(
-            py_path.relative_to(project_root)
+            py_path.relative_to(PROJECT_ROOT)
             for py_path in root.rglob("*.py")
             if py_path.name != "test_key_package_filename_typos.py"
-            if disallowed_import in py_path.read_text(encoding="utf-8")
+            if any(
+                pattern in py_path.read_text(encoding="utf-8")
+                for pattern in DISALLOWED_FILENAME_PATTERNS
+            )
         )
 
     assert not matches, f"Found typo import path(s): {matches}"
+
+
+def test_regression_detects_section_soruce_adapter_typo_pattern() -> None:
+    assert "soruce" in DISALLOWED_FILENAME_PATTERNS
