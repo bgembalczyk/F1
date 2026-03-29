@@ -47,6 +47,7 @@ ALLOWED_FACTORY_METHOD_PATTERNS = (
     "configure",
 )
 ALLOW_COMMENT = "di-antipattern-allow:"
+DI_ADR_THRESHOLD = 5
 
 
 @dataclass(frozen=True)

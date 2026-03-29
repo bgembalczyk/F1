@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from tests.architecture.rules import DOMAINS
+from tests.architecture.rules import collect_cross_domain_import_violations
 from tests.architecture.registry import ARCHITECTURE_REGISTRY
 from tests.support.imports_analyzer import parse_imports
 
@@ -36,7 +38,7 @@ def test_domains_do_not_import_each_other_directly() -> None:
 
         violations_by_file: dict[str, list[str]] = {}
         for py_file in domain_dir.rglob("*.py"):
-            violations = _iter_cross_domain_imports(py_file, domain)
+            violations = collect_cross_domain_import_violations(py_file, domain)
             if violations:
                 violations_by_file[str(py_file)] = sorted(set(violations))
 
