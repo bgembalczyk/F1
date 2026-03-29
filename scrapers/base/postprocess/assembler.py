@@ -37,7 +37,7 @@ class BaseRecordAssembler:
         self._table_mapper = table_mapper or TableRecordMapper()
         self._section_mapper = section_mapper or SectionRecordMapper()
 
-    def assemble(self, *, payload: BaseRecordAssemblerInput) -> dict[str, Any]:
+    def assemble(self, payload: BaseRecordAssemblerInput) -> dict[str, Any]:
         record: dict[str, Any] = {}
         if payload.url is not None:
             record["url"] = WikiUrl.from_raw(payload.url).to_export()

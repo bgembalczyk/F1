@@ -3,10 +3,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
+from typing import Protocol
 
 import pytest
 from bs4 import BeautifulSoup
 
+from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.base.sections.service import BaseSectionExtractionService
 
 _single_wiki_base = pytest.importorskip("scrapers.base.single_wiki_article.base")
@@ -18,6 +20,20 @@ TablesPayloadDTO = _single_wiki_dto.TablesPayloadDTO
 
 if TYPE_CHECKING:
     from scrapers.base.sections.interface import SectionParseResult
+
+
+class _SectionAdapterContract(Protocol):
+    def parse_sections(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[SectionParseResult]: ...
+
+
+class _SectionServiceContract(Protocol):
+    def build_entries(self) -> list[SectionAdapterEntry]: ...
 
 
 class _ContractSingleScraper(SingleWikiArticleScraperBase):
@@ -74,20 +90,26 @@ class _ContractSingleScraper(SingleWikiArticleScraperBase):
 
 
 @dataclass
-class _AdapterStub:
+class _AdapterStub(_SectionAdapterContract):
     sections: list[SectionParseResult]
 
-    def parse_sections(self, *, soup, domain, entries):
+    def parse_sections(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[SectionParseResult]:
         _ = soup
         _ = domain
         _ = entries
         return self.sections
 
 
-class _SectionServiceContractStub(BaseSectionExtractionService):
+class _SectionServiceContractStub(BaseSectionExtractionService, _SectionServiceContract):
     domain = "unit-test"
 
-    def build_entries(self) -> list[object]:
+    def build_entries(self) -> list[SectionAdapterEntry]:
         return []
 
 

@@ -3,15 +3,16 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.types import InfoboxParsedData
 
 
-class InfoboxParser(WikiParser):
+class InfoboxParser(WikiParser[InfoboxParsedData]):
     """Parser infoboxów Wikipedii.
 
     Przetwarza tabelę: <table class="infobox vcard">
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag) -> InfoboxParsedData:
         """Parsuje infobox Wikipedii.
 
         Args:
@@ -22,8 +23,8 @@ class InfoboxParser(WikiParser):
         """
         return self.parse_table_rows(element)
 
-    def parse_table_rows(self, table: Tag) -> dict[str, Any]:
-        data: dict[str, Any] = {"title": None, "rows": {}}
+    def parse_table_rows(self, table: Tag) -> InfoboxParsedData:
+        data: InfoboxParsedData = {"title": None, "rows": {}}
 
         caption = table.find("caption")
         if caption:

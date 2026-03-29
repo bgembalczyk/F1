@@ -1,19 +1,22 @@
 from scrapers.base.abc import ABCScraper
+from scrapers.base.factory.adapter_chain import DefaultScraperAdapterChainProvider
+from scrapers.base.factory.adapter_chain import ScraperAdapterChainProvider
 from scrapers.base.factory.constructor_introspection import ConstructorIntrospection
 from scrapers.base.factory.creation_context import ScraperCreationContext
-from scrapers.base.factory.legacy_adapter import LegacyScraperAdapter
-from scrapers.base.factory.option_adapter import OptionsScraperAdapter
 from scrapers.base.factory.run_config_options_mapper import RunConfigOptionsMapper
 from scrapers.base.run_config import RunConfig
 
 
 class ScraperFactory:
-    def __init__(self, *, mapper: RunConfigOptionsMapper | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        mapper: RunConfigOptionsMapper | None = None,
+        adapter_chain_provider: ScraperAdapterChainProvider | None = None,
+    ) -> None:
         resolved_mapper = mapper or RunConfigOptionsMapper()
-        self._adapters = (
-            OptionsScraperAdapter(resolved_mapper),
-            LegacyScraperAdapter(),
-        )
+        chain_provider = adapter_chain_provider or DefaultScraperAdapterChainProvider()
+        self._adapters = chain_provider.build(mapper=resolved_mapper)
 
     def create(
         self,

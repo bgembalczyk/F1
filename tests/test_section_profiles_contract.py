@@ -2,11 +2,14 @@
 from __future__ import annotations
 
 from bs4 import BeautifulSoup
+import pytest
 
 from scrapers.wiki.parsers.sections.adapter import find_section_tree
 from scrapers.wiki.parsers.sections.detection import find_section_heading
 from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
 from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
+from scrapers.wiki.parsers.sections.section_profiles_config import SectionDomainConfig
+from scrapers.wiki.parsers.sections.section_profiles_config import validate_section_profiles_config
 
 
 def test_section_profiles_define_expected_domains_and_contract_shape() -> None:
@@ -55,3 +58,30 @@ def test_profile_entry_aliases_merges_fallback_and_profile_aliases_stably() -> N
     normalized = {alias.lower().replace("_", " ") for alias in aliases}
     assert "layout history" in normalized
     assert "history" in normalized
+
+
+def test_validate_section_profiles_config_rejects_duplicate_aliases() -> None:
+    invalid = {
+        "drivers": SectionDomainConfig(
+            canonical_sections=frozenset({"career results", "racing record"}),
+            heading_aliases={
+                "career results": frozenset({"results"}),
+                "racing record": frozenset({"results"}),
+            },
+        ),
+    }
+
+    with pytest.raises(ValueError, match="Duplicated aliases"):
+        validate_section_profiles_config(invalid)
+
+
+def test_validate_section_profiles_config_rejects_unknown_canonical_id() -> None:
+    invalid = {
+        "drivers": SectionDomainConfig(
+            canonical_sections=frozenset({"career results"}),
+            heading_aliases={"racing record": frozenset({"motorsport career results"})},
+        ),
+    }
+
+    with pytest.raises(ValueError, match="Invalid canonical ids"):
+        validate_section_profiles_config(invalid)

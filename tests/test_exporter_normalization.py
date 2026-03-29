@@ -1,6 +1,7 @@
 import json
 
 from scrapers.base.results import ScrapeResult
+from scrapers.base.services.result_export_service import ResultExportService
 
 
 def test_exporter_normalizes_keys_and_drops_empty_fields(tmp_path) -> None:
@@ -11,7 +12,7 @@ def test_exporter_normalizes_keys_and_drops_empty_fields(tmp_path) -> None:
     result = ScrapeResult(data=data, source_url=None)
 
     output = tmp_path / "normalized.json"
-    result.to_json(output, normalize_keys=True)
+    ResultExportService().to_json(result, output, normalize_keys=True)
 
     normalized = json.loads(output.read_text(encoding="utf-8"))
 
@@ -36,7 +37,8 @@ def test_exporter_allows_custom_normalization_rules(tmp_path) -> None:
     result = ScrapeResult(data=data, source_url=None)
 
     output = tmp_path / "custom.json"
-    result.to_json(
+    ResultExportService().to_json(
+        result,
         output,
         normalize_keys=True,
         normalization_rules=[rename_wins],
@@ -53,8 +55,9 @@ def test_exporter_json_matches_for_list_and_result(tmp_path) -> None:
     output_list = tmp_path / "list.json"
     output_result = tmp_path / "result.json"
 
-    ScrapeResult(data=data, source_url=None).to_json(output_list)
-    result.to_json(output_result)
+    exporter = ResultExportService()
+    exporter.to_json(ScrapeResult(data=data, source_url=None), output_list)
+    exporter.to_json(result, output_result)
 
     assert output_list.read_text(encoding="utf-8") == output_result.read_text(
         encoding="utf-8",

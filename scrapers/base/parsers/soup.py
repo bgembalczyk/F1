@@ -1,9 +1,13 @@
-from typing import Any
 from typing import Protocol
+from typing import TypeVar
+from typing import runtime_checkable
 
 from bs4 import BeautifulSoup
 
+SoupParseResultT_co = TypeVar("SoupParseResultT_co", covariant=True)
 
-class SoupParser(Protocol):
-    def parse(self, soup: BeautifulSoup) -> Any:
+
+@runtime_checkable
+class SoupParser(Protocol[SoupParseResultT_co]):
+    def parse(self, soup: BeautifulSoup) -> SoupParseResultT_co:
         """Zamienia soup na docelową strukturę danych."""
