@@ -1,19 +1,17 @@
 # ruff: noqa: S603
 from __future__ import annotations
 
+import argparse
+import json
+import re
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
-from scripts.ci.git_diff import build_added_lines_map
-from scripts.ci.io_utils import append_output_vars
-from scripts.ci.io_utils import read_json_file
-from scripts.ci.io_utils import write_text_file
-from scripts.ci.reporting import CiStatus
-from scripts.ci.reporting import build_ci_parser
-from scripts.ci.reporting import exit_code_for_status
-from scripts.ci.reporting import line_range
-from scripts.ci.reporting import resolve_status
-from scripts.ci.reporting import split_csv
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 
 class DuplicateNormalizer:
@@ -136,6 +134,42 @@ class MarkdownRenderer:
                 lines.append("   ```")
 
         return "\n".join(lines)
+
+
+class GithubOutputWriter:
+    def write(
+        self,
+        output_path: Path,
+        duplicate_count: int,
+        duplicate_status: str,
+    ) -> None:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with output_path.open("a", encoding="utf-8") as fh:
+            fh.write(f"duplicate_count={duplicate_count}\n")
+            fh.write(f"duplicate_status={duplicate_status}\n")
+
+
+def build_ci_parser(description: str) -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument("--report-json", required=True)
+    parser.add_argument("--output-md", required=True)
+    parser.add_argument("--warn-threshold", type=int, required=True)
+    parser.add_argument("--fail-threshold", type=int, required=True)
+    parser.add_argument("--base-sha", default="")
+    parser.add_argument("--head-sha", default="")
+    parser.add_argument("--changed-files", default="")
+    parser.add_argument("--github-output", required=True)
+    return parser
+
+
+def read_json_file(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def split_csv(value: str) -> list[str]:
+    return [part for part in value.split(",") if part]
 
 
 def main() -> int:
