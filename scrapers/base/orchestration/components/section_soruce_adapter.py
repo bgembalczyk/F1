@@ -3,8 +3,8 @@ from pathlib import Path
 from typing import Any
 
 from scrapers.base.orchestration.models import OrchestrationPaths
-from scrapers.base.orchestration.models import ResolvedInput
 from scrapers.base.orchestration.models import StepDeclaration
+from scrapers.base.orchestration.models import StepExecutionResult
 
 
 class SectionSourceAdapter:
@@ -13,7 +13,7 @@ class SectionSourceAdapter:
     def __init__(self, base_dir: Path = Path("data")) -> None:
         self.paths = OrchestrationPaths(base_dir=base_dir)
 
-    def resolve(self, step: StepDeclaration, domain: str) -> ResolvedInput:
+    def resolve(self, step: StepDeclaration, domain: str) -> StepExecutionResult:
         resolved_path = self._resolve_source_path(step, domain)
         if resolved_path is None:
             msg = (
@@ -21,9 +21,16 @@ class SectionSourceAdapter:
                 f"kroku={step.step_id}, source={step.input_source}"
             )
             raise FileNotFoundError(msg)
-        return ResolvedInput(
-            records=self._read_records(resolved_path),
-            source_path=resolved_path,
+
+        records = self._read_records(resolved_path)
+        return StepExecutionResult(
+            status="resolved",
+            records=records,
+            errors=[],
+            metrics={
+                "input_records": len(records),
+            },
+            output_paths={"source_path": str(resolved_path)},
         )
 
     def _resolve_source_path(self, step: StepDeclaration, domain: str) -> Path | None:
