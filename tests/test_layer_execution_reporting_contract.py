@@ -1,11 +1,16 @@
 from pathlib import Path
 
+import pytest
+
 from layers.one.executor import LayerOneExecutor
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.policies import NullLayerZeroJobHook
 from scrapers.base.run_config import RunConfig
+
+
+pytestmark = pytest.mark.contract
 
 
 class _EventReporter:

@@ -1,11 +1,16 @@
 from pathlib import Path
 
+import pytest
+
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.policies import MirrorConstructorsJobHook
 from layers.zero.policies import NullLayerZeroJobHook
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
+
+
+pytestmark = pytest.mark.unit
 
 
 
