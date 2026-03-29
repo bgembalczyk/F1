@@ -7,8 +7,11 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 
+from layers.orchestration.runners.layer_job import LayerJobRunner
+from layers.orchestration.runners.metadata import RunnerMetadata
 from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.component_metadata import parse_component_metadata
+from scrapers.wiki.component_metadata import RUNNER_KIND
 from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
 
 if TYPE_CHECKING:
@@ -19,6 +22,12 @@ if TYPE_CHECKING:
 class DiscoveredComponent:
     cls: type[Any]
     metadata: ComponentMetadata
+
+
+@dataclass(frozen=True)
+class DiscoveredRunner:
+    cls: type[LayerJobRunner]
+    metadata: RunnerMetadata
 
 
 def _repo_root() -> Path:
@@ -83,20 +92,32 @@ def _discover_components_in_module(module: ModuleType) -> list[DiscoveredCompone
     return result
 
 
-def build_layer_one_runner_map_discovered() -> dict[str, Any]:
-    runner_map: dict[str, Any] = {}
-    source_cls_by_seed: dict[str, type[Any]] = {}
+def discover_layer_one_runners() -> dict[str, DiscoveredRunner]:
+    runner_components: dict[str, DiscoveredRunner] = {}
     for component in discover_components():
         metadata = component.metadata
-        if metadata.layer != "layer_one" or metadata.component_type != "runner":
+        if metadata.layer != "layer_one" or metadata.component_type != RUNNER_KIND:
             continue
-        existing_cls = source_cls_by_seed.get(metadata.seed_name)
-        if existing_cls is not None and existing_cls is not component.cls:
-            msg = f"Duplicate runner seed_name discovered: {metadata.seed_name}"
+        if not issubclass(component.cls, LayerJobRunner):
+            msg = f"Discovered runner {component.cls.__name__} must inherit LayerJobRunner"
+            raise TypeError(msg)
+        runner_metadata = RunnerMetadata.from_component_metadata(metadata)
+        existing = runner_components.get(runner_metadata.seed_name)
+        if existing is not None and existing.cls is not component.cls:
+            msg = f"Duplicate runner seed_name discovered: {runner_metadata.seed_name}"
             raise ValueError(msg)
-        source_cls_by_seed[metadata.seed_name] = component.cls
-        runner_map[metadata.seed_name] = component.cls()
-    return runner_map
+        runner_components[runner_metadata.seed_name] = DiscoveredRunner(
+            cls=component.cls,
+            metadata=runner_metadata,
+        )
+    return runner_components
+
+
+def build_layer_one_runner_map_discovered() -> dict[str, LayerJobRunner]:
+    return {
+        seed_name: component.cls()
+        for seed_name, component in discover_layer_one_runners().items()
+    }
 
 
 def discover_layer_one_seed_components() -> dict[str, DiscoveredComponent]:

@@ -1,19 +1,18 @@
 from pathlib import Path
 
 from layers.orchestration.runners.layer_job import LayerJobRunner
+from layers.orchestration.runners.metadata import RunnerMetadata
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
 from scrapers.drivers.helpers.export import export_complete_drivers
 
 
 class DriversRunner(LayerJobRunner):
-    COMPONENT_METADATA = {
-        "domain": "drivers",
-        "seed_name": "drivers",
-        "layer": "layer_one",
-        "output_category": "drivers",
-        "component_type": "runner",
-    }
+    _METADATA = RunnerMetadata.build(domain="drivers")
+
+    @property
+    def metadata(self) -> RunnerMetadata:
+        return self._METADATA
 
     def run(
         self,

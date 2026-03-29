@@ -1,19 +1,18 @@
 from pathlib import Path
 
 from layers.orchestration.runners.layer_job import LayerJobRunner
+from layers.orchestration.runners.metadata import RunnerMetadata
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
 from scrapers.constructors.helpers.export import export_complete_constructors
 
 
 class ConstructorsRunner(LayerJobRunner):
-    COMPONENT_METADATA = {
-        "domain": "constructors",
-        "seed_name": "constructors",
-        "layer": "layer_one",
-        "output_category": "constructors",
-        "component_type": "runner",
-    }
+    _METADATA = RunnerMetadata.build(domain="constructors")
+
+    @property
+    def metadata(self) -> RunnerMetadata:
+        return self._METADATA
 
     def run(
         self,
