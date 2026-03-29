@@ -5,6 +5,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from lib.check_runner import run_cli
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIRS = (
     "layers",
@@ -52,20 +54,15 @@ def _scan_typo_imports() -> list[str]:
     return errors
 
 
-def main() -> int:
-    errors = [
+def run_check() -> list[str]:
+    return [
         *_validate_target_packages(),
         *_scan_typo_imports(),
     ]
 
-    if not errors:
-        print("OK: no known module typos detected.")
-        return 0
 
-    print("Known module typo check failed:")
-    for error in errors:
-        print(f"- {error}")
-    return 1
+def main() -> int:
+    return run_cli("known-module-typos", run_check)
 
 
 if __name__ == "__main__":
