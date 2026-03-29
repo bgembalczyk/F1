@@ -2,17 +2,24 @@
 from __future__ import annotations
 
 import ast
+import importlib.util
 import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+_BOOTSTRAP_PATH = Path(__file__).resolve().parent / "lib" / "bootstrap.py"
+_BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
+    "_scripts_bootstrap",
+    _BOOTSTRAP_PATH,
+)
+assert _BOOTSTRAP_SPEC and _BOOTSTRAP_SPEC.loader
+_BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
+_BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
+
+REPO_ROOT = _BOOTSTRAP_MODULE.ensure_project_root_on_path()
 
 from scripts.lib.check_runner import iter_python_paths, run_cli
-
 DEFAULT_TARGETS = [REPO_ROOT / "layers", REPO_ROOT / "scrapers" / "base"]
 
 DI_SUSPECT_SUFFIXES = (
@@ -221,7 +228,8 @@ def _validate_adr_reference_for_major_changes(
     ]
 
 
-def main(argv: list[str]) -> int:
+def main(argv: list[str] | None = None) -> int:
+    argv = argv or []
     paths: list[Path] = []
     adr_reference_text = ""
     adr_required_violation_threshold = 5
