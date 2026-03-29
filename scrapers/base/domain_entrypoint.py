@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from functools import cache
 from importlib import import_module
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Protocol
 
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
@@ -23,32 +23,43 @@ if TYPE_CHECKING:
 class DomainEntrypointConfig:
     """Declarative configuration for a domain ``run_list_scraper`` facade."""
 
-    list_scraper_cls: type[ABCScraper] | LazyScraperClassProxy
+    list_scraper_cls_provider: ScraperClassProviderProtocol
     default_output_json: str | Path
     run_config_profile: Callable[[], RunConfig]
     default_output_csv: str | Path | None = None
 
 
+class ScraperClassProviderProtocol(Protocol):
+    """Provider contract for resolving list scraper class lazily/eagerly."""
+
+    def resolve(self) -> type[ABCScraper]:
+        """Return scraper class used by ``run_list_scraper`` entrypoints."""
+
+
 class LazyScraperClassProxy:
-    """Lazy wrapper that resolves a scraper class only when it is actually used."""
+    """Lazy provider that resolves a scraper class only when it is actually used."""
 
     def __init__(self, import_path: str) -> None:
         self._import_path = import_path
         self._resolved_cls: type[ABCScraper] | None = None
 
-    def _resolve(self) -> type[ABCScraper]:
+    def resolve(self) -> type[ABCScraper]:
         if self._resolved_cls is None:
             self._resolved_cls = _import_target(self._import_path)
         return self._resolved_cls
 
-    def __call__(self, *args: object, **kwargs: object) -> object:
-        return self._resolve()(*args, **kwargs)
-
-    def __getattr__(self, name: str) -> object:
-        return getattr(self._resolve(), name)
-
     def __repr__(self) -> str:
         return f"LazyScraperClassProxy({self._import_path!r})"
+
+
+class EagerScraperClassProvider:
+    """Eager provider that already has a scraper class instance resolved."""
+
+    def __init__(self, scraper_cls: type[ABCScraper]) -> None:
+        self._scraper_cls = scraper_cls
+
+    def resolve(self) -> type[ABCScraper]:
+        return self._scraper_cls
 
 
 @dataclass(frozen=True)
@@ -126,7 +137,7 @@ def _import_target(path: str) -> object:
 @cache
 def _resolve_domain_entrypoint_config(domain: str) -> DomainEntrypointConfig:
     spec = _DOMAIN_ENTRYPOINT_SPECS[domain]
-    list_scraper_cls = LazyScraperClassProxy(spec.scraper_path)
+    list_scraper_cls_provider = LazyScraperClassProxy(spec.scraper_path)
     current_year = None
     if domain == "constructors":
         current_year = getattr(
@@ -143,7 +154,7 @@ def _resolve_domain_entrypoint_config(domain: str) -> DomainEntrypointConfig:
         return path.format(year=current_year)
 
     return DomainEntrypointConfig(
-        list_scraper_cls=list_scraper_cls,
+        list_scraper_cls_provider=list_scraper_cls_provider,
         default_output_json=_render(spec.default_output_json),
         default_output_csv=_render(spec.default_output_csv),
         run_config_profile=spec.run_config_profile,
@@ -162,7 +173,8 @@ def build_entrypoint_alias_getattr_for_domain(domain: str) -> Callable[[str], ob
         config = get_domain_entrypoint_config(domain)
         aliases: dict[str, object] = {
             "ENTRYPOINT_CONFIG": config,
-            "LIST_SCRAPER_CLASS": config.list_scraper_cls,
+            "LIST_SCRAPER_CLASS_PROVIDER": config.list_scraper_cls_provider,
+            "LIST_SCRAPER_CLASS": config.list_scraper_cls_provider.resolve(),
             "DEFAULT_OUTPUT_JSON": config.default_output_json,
             "RUN_CONFIG_PROFILE": config.run_config_profile,
         }
@@ -183,8 +195,9 @@ def build_run_list_scraper_for_domain(domain: str) -> Callable[..., None]:
     def run_list_scraper(*, run_config: RunConfig | None = None) -> None:
         config = get_domain_entrypoint_config(domain)
         resolved_config = run_config or config.run_config_profile()
+        list_scraper_cls = config.list_scraper_cls_provider.resolve()
         ScraperRunner(resolved_config).run_and_export(
-            config.list_scraper_cls,
+            list_scraper_cls,
             config.default_output_json,
             config.default_output_csv,
         )
