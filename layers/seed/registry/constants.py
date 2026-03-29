@@ -2,6 +2,7 @@ from layers.seed.data_classes import RegistryValidationRule
 from layers.seed.data_classes import RegistryValidationSpec
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
+from layers.seed.registry.url_resolver import resolve_scraper_url
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
@@ -39,7 +40,7 @@ from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
 EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
     SeedRegistryEntry(
         seed_name="drivers",
-        wikipedia_url=F1DriversListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(F1DriversListScraper),
         output_category="drivers",
         list_scraper_cls=F1DriversListScraper,
         default_output_path="raw/drivers/seeds/complete_drivers",
@@ -47,7 +48,7 @@ EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
     ),
     SeedRegistryEntry(
         seed_name="constructors",
-        wikipedia_url=CurrentConstructorsListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(CurrentConstructorsListScraper),
         output_category="constructors",
         list_scraper_cls=CurrentConstructorsListScraper,
         default_output_path="raw/constructors/seeds/complete_constructors",
@@ -55,7 +56,7 @@ EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
     ),
     SeedRegistryEntry(
         seed_name="grands_prix",
-        wikipedia_url=GrandsPrixListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(GrandsPrixListScraper),
         output_category="grands_prix",
         list_scraper_cls=GrandsPrixListScraper,
         default_output_path="raw/grands_prix/seeds/f1_grands_prix_extended.json",
@@ -63,7 +64,7 @@ EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
     ),
     SeedRegistryEntry(
         seed_name="circuits",
-        wikipedia_url=CircuitsListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(CircuitsListScraper),
         output_category="circuits",
         list_scraper_cls=CircuitsListScraper,
         default_output_path="raw/circuits/seeds/complete_circuits",
@@ -71,7 +72,7 @@ EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
     ),
     SeedRegistryEntry(
         seed_name="seasons",
-        wikipedia_url=SeasonsListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(SeasonsListScraper),
         output_category="seasons",
         list_scraper_cls=SeasonsListScraper,
         default_output_path="raw/seasons/seeds/complete_seasons",
@@ -83,7 +84,7 @@ EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
 WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ListJobRegistryEntry(
         seed_name="circuits",
-        wikipedia_url=CircuitsListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(CircuitsListScraper),
         output_category="circuits",
         list_scraper_cls=CircuitsListScraper,
         json_output_path="raw/circuits/list/f1_circuits.json",
@@ -91,7 +92,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="constructors_current",
-        wikipedia_url=CurrentConstructorsListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(CurrentConstructorsListScraper),
         output_category="constructors",
         list_scraper_cls=CurrentConstructorsListScraper,
         json_output_path="raw/constructors/list/f1_constructors_{year}.json",
@@ -99,7 +100,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="constructors_former",
-        wikipedia_url=FormerConstructorsListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(FormerConstructorsListScraper),
         output_category="chassis_constructors",
         list_scraper_cls=FormerConstructorsListScraper,
         json_output_path="raw/chassis_constructors/list/f1_former_constructors.json",
@@ -107,7 +108,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="constructors_indianapolis_only",
-        wikipedia_url=IndianapolisOnlyConstructorsListScraper.url,
+        wikipedia_url=resolve_scraper_url(IndianapolisOnlyConstructorsListScraper),
         output_category="chassis_constructors",
         list_scraper_cls=IndianapolisOnlyConstructorsListScraper,
         json_output_path="raw/chassis_constructors/list/f1_indianapolis_only_constructors.json",
@@ -115,7 +116,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="constructors_privateer",
-        wikipedia_url=PrivateerTeamsListScraper.url,
+        wikipedia_url=resolve_scraper_url(PrivateerTeamsListScraper),
         output_category="teams",
         list_scraper_cls=PrivateerTeamsListScraper,
         json_output_path="raw/teams/list/f1_privateer_teams.json",
@@ -123,7 +124,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="drivers",
-        wikipedia_url=F1DriversListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(F1DriversListScraper),
         output_category="drivers",
         list_scraper_cls=F1DriversListScraper,
         json_output_path="raw/drivers/list/f1_drivers.json",
@@ -131,7 +132,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="drivers_female",
-        wikipedia_url=FemaleDriversListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(FemaleDriversListScraper),
         output_category="drivers",
         list_scraper_cls=FemaleDriversListScraper,
         json_output_path="raw/drivers/list/female_drivers.json",
@@ -139,7 +140,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="drivers_fatalities",
-        wikipedia_url=F1FatalitiesListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(F1FatalitiesListScraper),
         output_category="drivers",
         list_scraper_cls=F1FatalitiesListScraper,
         json_output_path="raw/drivers/list/f1_driver_fatalities.json",
@@ -147,7 +148,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="seasons",
-        wikipedia_url=SeasonsListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(SeasonsListScraper),
         output_category="seasons",
         list_scraper_cls=SeasonsListScraper,
         json_output_path="raw/seasons/list/f1_seasons.json",
@@ -155,7 +156,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="grands_prix_by_title",
-        wikipedia_url=GrandsPrixListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(GrandsPrixListScraper),
         output_category="grands_prix",
         list_scraper_cls=GrandsPrixListScraper,
         json_output_path="raw/grands_prix/list/f1_grands_prix_by_title.json",
@@ -163,7 +164,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="engines_indianapolis_only",
-        wikipedia_url=IndianapolisOnlyEngineManufacturersListScraper.url,
+        wikipedia_url=resolve_scraper_url(IndianapolisOnlyEngineManufacturersListScraper),
         output_category="engines",
         list_scraper_cls=IndianapolisOnlyEngineManufacturersListScraper,
         json_output_path="raw/engines/list/f1_indianapolis_only_engine_manufacturers.json",
@@ -171,7 +172,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="engines_restrictions",
-        wikipedia_url=EngineRestrictionsScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(EngineRestrictionsScraper),
         output_category="rules",
         list_scraper_cls=EngineRestrictionsScraper,
         json_output_path="raw/rules/list/f1_engine_restrictions.json",
@@ -179,7 +180,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="engines_regulations",
-        wikipedia_url=EngineRegulationScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(EngineRegulationScraper),
         output_category="rules",
         list_scraper_cls=EngineRegulationScraper,
         json_output_path="raw/rules/list/f1_engine_regulations.json",
@@ -187,7 +188,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="engines_manufacturers",
-        wikipedia_url=EngineManufacturersListScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(EngineManufacturersListScraper),
         output_category="engines",
         list_scraper_cls=EngineManufacturersListScraper,
         json_output_path="raw/engines/list/f1_engine_manufacturers.json",
@@ -195,7 +196,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="grands_prix_red_flagged_world_championship",
-        wikipedia_url=RedFlaggedWorldChampionshipRacesScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(RedFlaggedWorldChampionshipRacesScraper),
         output_category="races",
         list_scraper_cls=RedFlaggedWorldChampionshipRacesScraper,
         json_output_path="raw/races/list/f1_red_flagged_world_championship_races.json",
@@ -203,7 +204,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="grands_prix_red_flagged_non_championship",
-        wikipedia_url=RedFlaggedNonChampionshipRacesScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(RedFlaggedNonChampionshipRacesScraper),
         output_category="races",
         list_scraper_cls=RedFlaggedNonChampionshipRacesScraper,
         json_output_path="raw/races/list/f1_red_flagged_non_championship_races.json",
@@ -211,7 +212,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="points_sprint",
-        wikipedia_url=SprintQualifyingPointsScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(SprintQualifyingPointsScraper),
         output_category="points",
         list_scraper_cls=SprintQualifyingPointsScraper,
         json_output_path="raw/points/list/points_scoring_systems_sprint.json",
@@ -219,7 +220,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="points_shortened",
-        wikipedia_url=ShortenedRacePointsScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(ShortenedRacePointsScraper),
         output_category="points",
         list_scraper_cls=ShortenedRacePointsScraper,
         json_output_path="raw/points/list/points_scoring_systems_shortened.json",
@@ -227,7 +228,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="points_history",
-        wikipedia_url=PointsScoringSystemsHistoryScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(PointsScoringSystemsHistoryScraper),
         output_category="points",
         list_scraper_cls=PointsScoringSystemsHistoryScraper,
         json_output_path="raw/points/list/points_scoring_systems_history.json",
@@ -235,7 +236,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="tyres",
-        wikipedia_url=TyreManufacturersBySeasonScraper.CONFIG.url,
+        wikipedia_url=resolve_scraper_url(TyreManufacturersBySeasonScraper),
         output_category="seasons",
         list_scraper_cls=TyreManufacturersBySeasonScraper,
         json_output_path="raw/seasons/list/f1_tyre_manufacturers_by_season.json",
@@ -243,7 +244,7 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ),
     ListJobRegistryEntry(
         seed_name="sponsorship_liveries",
-        wikipedia_url=F1SponsorshipLiveriesScraper.url,
+        wikipedia_url=resolve_scraper_url(F1SponsorshipLiveriesScraper),
         output_category="teams",
         list_scraper_cls=F1SponsorshipLiveriesScraper,
         json_output_path="raw/teams/list/f1_sponsorship_liveries.json",
