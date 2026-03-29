@@ -3,14 +3,14 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.constants import DOMAIN_SECTION_ALIASES
+from scrapers.base.table.columns.types import DriverColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
+from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.seasons.columns.constructor import ConstructorColumn
-from scrapers.seasons.columns.driver import DriverColumn
-from scrapers.seasons.columns.tyre import TyreColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.sections.adapter import collect_section_elements

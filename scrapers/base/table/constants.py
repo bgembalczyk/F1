@@ -1,13 +1,13 @@
+
+from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
-from scrapers.base.table.patterns import SEPARATOR_PATTERN
-from scrapers.base.table.patterns import TIME_12H_PATTERN
 from scrapers.base.table.sentinels import SKIP_SENTINEL
-from scrapers.seasons.columns.seasons import SeasonsColumn
 
 HEADER_ROWS_WITH_SUBHEADERS = 2
 
 skip = SKIP_SENTINEL
+
 
 BASE_STATS_MAP = {
     "Seasons": "seasons",
