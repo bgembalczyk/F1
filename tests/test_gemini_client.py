@@ -9,6 +9,7 @@ from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.client import GeminiClient
 from infrastructure.gemini.client import ModelConfig
 from infrastructure.gemini.client import ModelState
+from infrastructure.gemini.constants import DEFAULT_MODELS
 
 # ---------------------------------------------------------------------------
 # ModelConfig / _ModelState unit tests
@@ -258,6 +259,7 @@ def test_from_key_file_uses_default_models(tmp_path) -> None:
     client = GeminiClient.from_key_file(key_file)
     assert len(client._model_states) > 0  # noqa: SLF001
     assert client._model_states[0].model == "gemini-3-flash-preview"  # noqa: SLF001
+    assert client._model_states[0].model == DEFAULT_MODELS[0].model  # noqa: SLF001
 
 
 def test_from_key_file_accepts_custom_models(tmp_path) -> None:

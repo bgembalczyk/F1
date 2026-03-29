@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from dataclasses import field
 from pathlib import Path
+from typing import Literal
 
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
@@ -57,9 +58,19 @@ class ScraperOptions:
     run_id: str | None = None
     quality_report: bool = False
     error_report: bool = False
+    error_policy: Literal["retry", "skip", "fail-fast"] = "fail-fast"
+    error_retry_attempts: int = 1
     http: HttpOptions = field(default_factory=HttpOptions)
     cache: CacheOptions = field(default_factory=CacheOptions)
     pipeline: PipelineOptions = field(default_factory=PipelineOptions)
+
+    def __post_init__(self) -> None:
+        if self.error_policy not in {"retry", "skip", "fail-fast"}:
+            msg = "error_policy must be one of: 'retry', 'skip', 'fail-fast'"
+            raise ValueError(msg)
+        if self.error_retry_attempts < 1:
+            msg = "error_retry_attempts must be >= 1"
+            raise ValueError(msg)
 
     @property
     def policy(self) -> HttpPolicy:

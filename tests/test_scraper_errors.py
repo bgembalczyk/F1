@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import DomainParseError
@@ -127,6 +128,14 @@ class DummyParseScraper(ABCScraper):
         raise ValueError(msg)
 
 
+class DummyTypeErrorScraper(ABCScraper):
+    url = "https://example.com"
+
+    def _parse_soup(self, _soup):
+        msg = "type boom"
+        raise TypeError(msg)
+
+
 class DummyListScraper(F1ListScraper):
     url = "https://example.com"
     section_id = None
@@ -146,6 +155,22 @@ class DummySingleCircuitScraper(F1SingleCircuitScraper):
     def _parse_details(self, _soup):
         msg = "Brak danych"
         raise ScraperNotFoundError(msg)
+
+
+class FlakyRequestFetcher:
+    def __init__(self, *, html: str, failures: int) -> None:
+        self.html = html
+        self.failures = failures
+        self.calls = 0
+
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
+        self.calls += 1
+        if self.calls <= self.failures:
+            raise RequestError("temporary offline")
+        return self.html
+
+    def get(self, _url: str) -> str:
+        return self.get_text(_url)
 
 
 def test_scraper_error_contract_is_consistent() -> None:
@@ -180,6 +205,41 @@ def test_fetch_maps_parse_errors_to_domain_exception():
 
     with pytest.raises(ScraperParseError):
         scraper.fetch()
+
+
+def test_fetch_propagates_type_error_as_non_recoverable() -> None:
+    scraper = DummyTypeErrorScraper(
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
+    )
+
+    with pytest.raises(TypeError):
+        scraper.fetch()
+
+
+def test_fetch_retry_policy_retries_recoverable_network_error() -> None:
+    fetcher = FlakyRequestFetcher(html="<html></html>", failures=1)
+    scraper = DummyScraper(
+        options=ScraperOptions(
+            fetcher=fetcher,
+            error_policy="retry",
+            error_retry_attempts=2,
+        ),
+    )
+
+    assert scraper.fetch() == []
+    assert fetcher.calls == 2
+
+
+def test_fetch_skip_policy_soft_skips_recoverable_network_error() -> None:
+    fetcher = FlakyRequestFetcher(html="<html></html>", failures=2)
+    scraper = DummyScraper(
+        options=ScraperOptions(
+            fetcher=fetcher,
+            error_policy="skip",
+        ),
+    )
+
+    assert scraper.fetch() == []
 
 
 def test_list_scraper_skips_missing_list_with_log():

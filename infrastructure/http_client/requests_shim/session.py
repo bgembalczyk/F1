@@ -38,10 +38,17 @@ class Session:
             ) as resp:
                 body = resp.read()
                 status_code = resp.getcode() or 0
-                return Response(url, body, status_code, headers=dict(resp.headers))
+                text = body.decode("utf-8", errors="replace")
+                return Response(url=url, status_code=status_code, headers=resp.headers, text=text)
         except urllib.error.HTTPError as exc:
             body = exc.read() or b""
-            response = Response(url, body, exc.code, headers=dict(exc.headers))
+            text = body.decode("utf-8", errors="replace")
+            response = Response(
+                url=url,
+                status_code=exc.code,
+                headers=exc.headers,
+                text=text,
+            )
             response.raise_for_status()
             return response
         except urllib.error.URLError as exc:

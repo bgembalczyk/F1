@@ -1,28 +1,21 @@
 """Klasa bazowa dla klientów HTTP."""
 
 import json
-import time
 from abc import ABC
 from abc import abstractmethod
 from collections.abc import Callable
-from typing import TYPE_CHECKING
 from typing import Any
-from typing import cast
 
-from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
+from infrastructure.http_client.components.header_resolver import HeaderResolver
+from infrastructure.http_client.components.request_executor import RequestExecutor
+from infrastructure.http_client.components.response_cache_service import ResponseCacheService
 from infrastructure.http_client.config import HttpClientConfig
+from infrastructure.http_client.factories.default_http_policy_factory import (
+    DefaultHttpPolicyFactory,
+)
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,
 )
-from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
-from infrastructure.http_client.policies.min_delay_rate_limiter import (
-    MinDelayRateLimiter,
-)
-
-if TYPE_CHECKING:
-    from infrastructure.http_client.policies.rate_limiter import RateLimiter
-    from infrastructure.http_client.policies.response_cache import ResponseCache
-    from infrastructure.http_client.policies.retry import RetryPolicy
 
 
 class BaseHttpClient(ABC):
@@ -53,43 +46,21 @@ class BaseHttpClient(ABC):
         self.timeout = int(config.timeout)
         self.request_exception_cls = request_exception_cls
 
-        # Buduj retry policy
-        if config.retry_policy is None:
-            self.retry_policy: RetryPolicy = DefaultRetryPolicy(
-                retries=config.retries,
-                backoff_seconds=config.backoff_seconds,
-            )
-        else:
-            self.retry_policy = config.retry_policy
+        self.retry_policy = DefaultHttpPolicyFactory.build_retry_policy(config)
+        self.rate_limiter = DefaultHttpPolicyFactory.build_rate_limiter(config)
+        self.cache = DefaultHttpPolicyFactory.build_response_cache(config)
 
-        # Buduj rate limiter
-        if config.rate_limiter is None:
-            self.rate_limiter: RateLimiter = MinDelayRateLimiter(
-                min_delay_seconds=config.min_delay_seconds,
-                jitter_seconds=config.jitter_seconds,
-            )
-        else:
-            self.rate_limiter = config.rate_limiter
-
-        # Buduj cache
-        if config.cache is None:
-            self.cache: ResponseCache | None = WikipediaCachePolicy.with_file_cache(
-                cache_dir=config.cache_dir,
-                ttl_days=config.cache_ttl_days,
-            )
-        else:
-            self.cache = config.cache
-
-        # Merge headers
         merged_headers = dict(self.DEFAULT_HEADERS)
         if config.headers:
             merged_headers.update(config.headers)
         self.default_headers = merged_headers
 
-    def _backoff_sleep(self, attempt: int) -> None:
-        delay = self.retry_policy.backoff_seconds(attempt)
-        if delay > 0:
-            time.sleep(delay)
+        self.header_resolver = HeaderResolver(default_headers=self.default_headers)
+        self.request_executor = RequestExecutor(
+            retry_policy=self.retry_policy,
+            rate_limiter=self.rate_limiter,
+        )
+        self.response_cache_service = ResponseCacheService(cache=self.cache)
 
     def _request_with_retries(
         self,
@@ -99,50 +70,15 @@ class BaseHttpClient(ABC):
         timeout: int | None,
         request_func: Callable[..., Any],
     ):
-        attempts = self.retry_policy.max_retries + 1
-
-        for attempt in range(attempts):
-            if self.rate_limiter is not None:
-                self.rate_limiter.wait(url)
-
-            try:
-                merged_headers = dict(self.default_headers)
-                if headers:
-                    merged_headers.update(headers)
-
-                response = request_func(
-                    url,
-                    headers=merged_headers,
-                    timeout=timeout or self.timeout,
-                )
-            except self.request_exception_cls as exc:
-                if (
-                    attempt >= self.retry_policy.max_retries
-                    or not self.retry_policy.should_retry(
-                        response=None,
-                        exception=exc,
-                        attempt=attempt,
-                    )
-                ):
-                    raise
-                self._backoff_sleep(attempt)
-                continue
-
-            if self.retry_policy.should_retry(
-                response=response,
-                exception=None,
-                attempt=attempt,
-            ):
-                if attempt >= self.retry_policy.max_retries:
-                    response.raise_for_status()
-                self._backoff_sleep(attempt)
-                continue
-
-            response.raise_for_status()
-            return cast("Any", response)
-
-        msg = "Unreachable code"
-        raise AssertionError(msg)
+        merged_headers = self.header_resolver.resolve(headers)
+        effective_timeout = timeout or self.timeout
+        return self.request_executor.execute(
+            url=url,
+            headers=merged_headers,
+            timeout=effective_timeout,
+            request_func=request_func,
+            request_exception_cls=self.request_exception_cls,
+        )
 
     @abstractmethod
     def get(
@@ -167,18 +103,10 @@ class BaseHttpClient(ABC):
 
         Cache działa tylko po URL (headers/timeout są ignorowane w cache key).
         """
-        if self.cache is not None:
-            cached = self.cache.get(url)
-            if cached is not None:
-                return cached
-
-        response = self.get(url, headers=headers, timeout=timeout)
-        text = response.text
-
-        if self.cache is not None:
-            self.cache.set(url, text)
-
-        return text
+        return self.response_cache_service.get_text(
+            url,
+            lambda: self.get(url, headers=headers, timeout=timeout).text,
+        )
 
     def get_json(
         self,

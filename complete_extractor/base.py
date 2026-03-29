@@ -51,23 +51,25 @@ class CompleteExtractorBase(CompositeDataExtractor):
         return list_scrapers, records_adapter
 
     def list_scraper_options(self, options: ScraperOptions) -> ScraperOptions:
-        return ScraperOptions(
+        scraper_options = ScraperOptions(
             include_urls=True,
-            policy=self.http_policy,
             source_adapter=self.source_adapter,
             debug_dir=options.debug_dir,
         )
+        scraper_options.policy = self.http_policy
+        return scraper_options
 
     def single_scraper_options(self, options: ScraperOptions) -> ScraperOptions:
-        return ScraperOptions(
-            policy=self.http_policy,
+        scraper_options = ScraperOptions(
             source_adapter=self.source_adapter,
             debug_dir=options.debug_dir,
         )
+        scraper_options.policy = self.http_policy
+        return scraper_options
 
     def build_list_scraper(self, options: ScraperOptions) -> Any:
         """Zbuduj scraper listy dla przypadków jedno-listowych."""
-        scraper_classes = self.DOMAIN_CONFIG.get_list_scraper_classes()
+        scraper_classes = self.DOMAIN_CONFIG.list_scraper_classes
         if len(scraper_classes) > 1:
             msg = (
                 f"{self.__class__.__name__} definiuje wiele list scraperów; "
@@ -79,7 +81,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
         if scraper_cls is None:
             msg = (
                 f"{self.__class__.__name__} musi ustawić "
-                "DOMAIN_CONFIG.list_scraper_cls / list_scraper_clses "
+                "DOMAIN_CONFIG.list_scraper_classes "
                 "lub nadpisać build_list_scraper()."
             )
             raise NotImplementedError(msg)
@@ -87,7 +89,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
 
     def build_list_scrapers(self, options: ScraperOptions) -> list[Any] | None:
         """Opcjonalny hook dla przypadków wielolistowych."""
-        scraper_classes = self.DOMAIN_CONFIG.get_list_scraper_classes()
+        scraper_classes = self.DOMAIN_CONFIG.list_scraper_classes
         if len(scraper_classes) <= 1:
             return None
         return [
@@ -109,7 +111,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
 
     def extract_detail_url(self, record: dict[str, Any]) -> str | None:
         """Wyciągnij URL szczegółów z rekordu listy na podstawie field path."""
-        for field_path in self.DOMAIN_CONFIG.get_detail_url_field_paths():
+        for field_path in self.DOMAIN_CONFIG.detail_url_field_paths:
             value = self._get_value_by_path(record, field_path)
             if not isinstance(value, str) or not value:
                 continue

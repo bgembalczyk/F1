@@ -50,11 +50,30 @@ def _custom_record_assembler(
 class _ConfiguredExtractor(CompleteExtractorBase):
     url = "https://example.com"
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_clses=(_FakeListScraperA, _FakeListScraperB),
+        list_scraper_classes=(_FakeListScraperA, _FakeListScraperB),
         single_scraper_cls=_FakeSingleScraper,
         detail_url_field_paths=("primary.url", "fallback_url"),
         filter_redlinks=True,
         record_assembler=_custom_record_assembler,
+    )
+
+
+class _LegacySingleListExtractor(CompleteExtractorBase):
+    url = "https://example.com"
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_cls=_FakeListScraperA,
+        single_scraper_cls=_FakeSingleScraper,
+        detail_url_field_path="primary.url",
+    )
+
+
+class _LegacyMultiListExtractor(CompleteExtractorBase):
+    url = "https://example.com"
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_clses=(_FakeListScraperA, _FakeListScraperB),
+        single_scraper_cls=_FakeSingleScraper,
+        detail_url_field_paths=("fallback_url",),
+        detail_url_field_path="primary.url",
     )
 
 
@@ -95,3 +114,26 @@ def test_assemble_record_uses_custom_assembler() -> None:
         "record": {"name": "Example"},
         "detail_url": "https://en.wikipedia.org/wiki/Example",
     }
+
+
+def test_config_normalization_supports_legacy_single_list_fields() -> None:
+    extractor = _LegacySingleListExtractor()
+
+    assert extractor.DOMAIN_CONFIG.list_scraper_classes == (_FakeListScraperA,)
+    assert extractor.DOMAIN_CONFIG.detail_url_field_paths == ("primary.url",)
+    assert extractor.records_adapter.get() == [{"item": "a"}]
+
+
+def test_config_normalization_supports_legacy_multi_list_fields() -> None:
+    extractor = _LegacyMultiListExtractor()
+
+    assert extractor.DOMAIN_CONFIG.list_scraper_classes == (
+        _FakeListScraperA,
+        _FakeListScraperB,
+    )
+    assert extractor.DOMAIN_CONFIG.detail_url_field_paths == (
+        "primary.url",
+        "fallback_url",
+    )
+    assert isinstance(extractor.records_adapter, MultiIterableSourceAdapter)
+    assert extractor.records_adapter.get() == [{"item": "a"}, {"item": "b"}]
