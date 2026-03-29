@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import TypeVar
 
+from infrastructure.http_client.requests_shim.request_error import RequestError
 from models.mappers.serialization import to_dict_list
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
@@ -100,10 +101,14 @@ class ErrorPolicy:
         error_handler: ErrorHandler,
         logger,
         get_url: Callable[[], str | None],
+        policy: str = "fail-fast",
+        retry_attempts: int = 1,
     ) -> None:
         self._error_handler = error_handler
         self._logger = logger
         self._get_url = get_url
+        self._policy = policy
+        self._retry_attempts = retry_attempts
 
     def set_run_id(self, run_id: str | None) -> None:
         self._error_handler.set_run_id(run_id)
@@ -129,6 +134,46 @@ class ErrorPolicy:
         if error is exc:
             raise exc
         raise error from exc
+
+    @property
+    def policy(self) -> str:
+        return self._policy
+
+    @property
+    def retry_attempts(self) -> int:
+        return self._retry_attempts
+
+    def should_retry(self, *, attempt: int) -> bool:
+        return self._policy == "retry" and attempt < self._retry_attempts
+
+    def should_skip(self) -> bool:
+        return self._policy == "skip"
+
+    def handle_recoverable_exception(
+        self,
+        *,
+        exc: Exception,
+        error: ScraperError,
+        attempt: int,
+    ):
+        if self.should_retry(attempt=attempt):
+            self._logger.warning(
+                "Recoverable error for url=%s. Retry attempt %d/%d: %s",
+                self._get_url(),
+                attempt + 1,
+                self._retry_attempts,
+                exc,
+            )
+            return "retry"
+        if self.should_skip():
+            self._logger.warning(
+                "Recoverable error for url=%s. Skip by policy '%s': %s",
+                self._get_url(),
+                self._policy,
+                exc,
+            )
+            return None
+        return self.handle_exception(exc, error)
 
 
 class QualityReportService:
@@ -232,17 +277,27 @@ class PipelineOrchestrator:
         run_id: str,
         download_html: Callable[[], str],
     ) -> str | None:
-        try:
-            self._logger.debug("Scrape run %s: start download", run_id)
-            html = download_html()
-            self._logger.debug("Scrape run %s: finish download", run_id)
-            self._quality_report_service.write_step(step_name="download", records=[])
-        except ScraperError as error:
-            return self._error_policy.handle_exception(error, error)
-        except (RuntimeError, ValueError, OSError) as exc:
-            error = self._error_policy.wrap_network(exc)
-            return self._error_policy.handle_exception(exc, error)
-        return html
+        attempt = 0
+        while True:
+            try:
+                self._logger.debug("Scrape run %s: start download", run_id)
+                html = download_html()
+                self._logger.debug("Scrape run %s: finish download", run_id)
+                self._quality_report_service.write_step(step_name="download", records=[])
+                return html
+            except ScraperError as error:
+                return self._error_policy.handle_exception(error, error)
+            except (RequestError, ConnectionError, OSError, TimeoutError) as exc:
+                error = self._error_policy.wrap_network(exc)
+                decision = self._error_policy.handle_recoverable_exception(
+                    exc=exc,
+                    error=error,
+                    attempt=attempt,
+                )
+                if decision == "retry":
+                    attempt += 1
+                    continue
+                return decision
 
     def _parse_pipeline_with_error_handling(
         self,
@@ -254,7 +309,7 @@ class PipelineOrchestrator:
             return self._pipeline_runner.run(run_id=run_id, html=html)
         except ScraperError as error:
             return self._error_policy.handle_exception(error, error)
-        except (AttributeError, KeyError, RuntimeError, TypeError, ValueError) as exc:
+        except (KeyError, ValueError) as exc:
             error = self._error_policy.wrap_parse(exc)
             return self._error_policy.handle_exception(exc, error)
 
