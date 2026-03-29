@@ -4,6 +4,7 @@ from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.constants import HEADING_CLASS
+from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 from scrapers.wiki.parsers.sections.detection import make_stable_section_id
 from scrapers.wiki.parsers.sections.helpers import _split_into_parts
@@ -11,8 +12,12 @@ from scrapers.wiki.parsers.sections.section import SectionParser
 
 
 class ContentTextParser(WikiParser):
-    def __init__(self) -> None:
-        self.section_parser = SectionParser()
+    def __init__(
+        self,
+        *,
+        element_parsers: WikiElementParsers | None = None,
+    ) -> None:
+        self.section_parser = SectionParser(element_parsers=element_parsers)
 
     def parse(
         self,
