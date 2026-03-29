@@ -3,28 +3,40 @@ from __future__ import annotations
 
 import importlib
 import inspect
+from pathlib import Path
 
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.run_config import RunConfig
 
-ENTRYPOINT_MODULES = (
-    "scrapers.drivers.entrypoint",
-    "scrapers.constructors.entrypoint",
-    "scrapers.circuits.entrypoint",
-    "scrapers.seasons.entrypoint",
-    "scrapers.grands_prix.entrypoint",
-)
+
+def _entrypoint_modules_from_registry() -> tuple[str, ...]:
+    return tuple(
+        f"scrapers.{domain}.entrypoint"
+        for domain in sorted(get_domain_entrypoint_scraper_metadata())
+    )
+
+
+def _entrypoint_modules_discovered() -> tuple[str, ...]:
+    root = Path("scrapers")
+    return tuple(
+        sorted(
+            ".".join(path.with_suffix("").parts)
+            for path in root.glob("*/entrypoint.py")
+            if path.is_file()
+        ),
+    )
 
 
 def test_entrypoints_expose_uniform_run_list_scraper_signature() -> None:
-    for module_name in ENTRYPOINT_MODULES:
+    for module_name in _entrypoint_modules_from_registry():
         module = importlib.import_module(module_name)
         signature = inspect.signature(module.run_list_scraper)
         assert str(signature) == "(*, run_config: 'RunConfig | None' = None) -> 'None'"
 
 
 def test_entrypoints_reuse_centralized_domain_config_registry() -> None:
-    for module_name in ENTRYPOINT_MODULES:
+    for module_name in _entrypoint_modules_from_registry():
         module = importlib.import_module(module_name)
         domain = module_name.split(".")[-2]
         config = get_domain_entrypoint_config(domain)
@@ -56,7 +68,7 @@ def test_entrypoints_delegate_to_run_and_export_with_default_profile(
         fake_run_and_export,
     )
 
-    for module_name in ENTRYPOINT_MODULES:
+    for module_name in _entrypoint_modules_from_registry():
         module = importlib.import_module(module_name)
         module.run_list_scraper()
 
@@ -83,8 +95,13 @@ def test_entrypoints_delegate_to_run_and_export_with_overridden_run_config(
     )
 
     custom_config = RunConfig(include_urls=False)
-    for module_name in ENTRYPOINT_MODULES:
+    entrypoint_modules = _entrypoint_modules_from_registry()
+    for module_name in entrypoint_modules:
         module = importlib.import_module(module_name)
         module.run_list_scraper(run_config=custom_config)
 
-    assert delegate_calls == [custom_config] * len(ENTRYPOINT_MODULES)
+    assert delegate_calls == [custom_config] * len(entrypoint_modules)
+
+
+def test_entrypoint_registry_matches_discovered_entrypoint_modules() -> None:
+    assert _entrypoint_modules_discovered() == _entrypoint_modules_from_registry()

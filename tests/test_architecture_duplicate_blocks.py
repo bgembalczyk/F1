@@ -4,13 +4,14 @@ import ast
 from collections import defaultdict
 from pathlib import Path
 
-ENTRYPOINT_MODULES = (
-    "scrapers/drivers/entrypoint.py",
-    "scrapers/constructors/entrypoint.py",
-    "scrapers/circuits/entrypoint.py",
-    "scrapers/seasons/entrypoint.py",
-    "scrapers/grands_prix/entrypoint.py",
-)
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
+
+
+def _entrypoint_module_paths() -> tuple[Path, ...]:
+    return tuple(
+        Path("scrapers") / domain / "entrypoint.py"
+        for domain in sorted(get_domain_entrypoint_scraper_metadata())
+    )
 
 
 def _collect_config_assignment_fingerprints() -> dict[str, list[str]]:
@@ -43,8 +44,7 @@ def test_no_duplicate_config_blocks() -> None:
 
 
 def test_domain_entrypoints_use_shared_factory_builders() -> None:
-    for path_str in ENTRYPOINT_MODULES:
-        py_file = Path(path_str)
+    for py_file in _entrypoint_module_paths():
         source = py_file.read_text(encoding="utf-8")
         tree = ast.parse(source, filename=str(py_file))
 
