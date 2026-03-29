@@ -1,12 +1,14 @@
 from collections.abc import Callable
 from pathlib import Path
 
-from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.reporter import NullPipelineStepReporter
+from layers.orchestration.reporter import PipelineStepReporterProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import LayerZeroJobHook
+from scrapers.base.runner import ScraperRunner
 from scrapers.base.run_config import RunConfig
 
 
@@ -21,10 +23,11 @@ class LayerZeroExecutor:
             dict[str, LayerZeroRunConfigFactoryProtocol],
         ],
         default_config_factory: LayerZeroRunConfigFactoryProtocol,
-        run_and_export_function: Callable[..., None],
         merge_service: LayerZeroMergeService,
         job_hook: LayerZeroJobHook,
         year_provider: Callable[[], int],
+        run_and_export_function: Callable[..., None] | None = None,
+        step_reporter: PipelineStepReporterProtocol | None = None,
     ) -> None:
         self._list_job_registry = list_job_registry
         self._validate_list_registry = validate_list_registry
@@ -33,6 +36,7 @@ class LayerZeroExecutor:
         self._run_and_export_function = run_and_export_function
         self._merge_service = merge_service
         self._job_hook = job_hook
+        self._step_reporter = step_reporter or NullPipelineStepReporter()
         self._year_provider = year_provider
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
@@ -40,7 +44,11 @@ class LayerZeroExecutor:
         config_factories = self._resolve_config_factory()
 
         for job in self._list_job_registry:
-            print(f"[list] running  {job.list_scraper_cls.__name__}")
+            self._step_reporter.start(
+                layer="layer_zero",
+                step_type="list_job",
+                step_name=job.list_scraper_cls.__name__,
+            )
 
             local_run_config = self._build_local_run_config(
                 run_config=run_config,
@@ -58,7 +66,11 @@ class LayerZeroExecutor:
                 l0_raw_json_path=l0_raw_json_path,
             )
 
-            print(f"[list] finished {job.list_scraper_cls.__name__}")
+            self._step_reporter.finish(
+                layer="layer_zero",
+                step_type="list_job",
+                step_name=job.list_scraper_cls.__name__,
+            )
 
         self._finalize_merge(base_wiki_dir)
 
@@ -72,7 +84,10 @@ class LayerZeroExecutor:
         job: ListJobRegistryEntry,
         config_factories: dict[str, object],
     ) -> RunConfig:
-        config_factory = config_factories.get(job.seed_name, self._default_config_factory)
+        config_factory = config_factories.get(
+            job.seed_name,
+            self._default_config_factory,
+        )
         scraper_kwargs = config_factory.create_scraper_kwargs(job)
         return RunConfig(
             output_dir=run_config.output_dir,
@@ -95,12 +110,30 @@ class LayerZeroExecutor:
             csv_output_path=job.csv_output_path,
         )
 
-        self._run_and_export_function(
-            job.list_scraper_cls,
-            l0_raw_json_path,
-            l0_raw_csv_path,
-            run_config=(local_run_config if local_run_config.scraper_kwargs else run_config),
+        effective_run_config = (
+            local_run_config if local_run_config.scraper_kwargs else run_config
         )
+        if self._run_and_export_function is None:
+            ScraperRunner(effective_run_config).run_and_export(
+                job.list_scraper_cls,
+                l0_raw_json_path,
+                l0_raw_csv_path,
+            )
+            return l0_raw_json_path
+
+        try:
+            self._run_and_export_function(
+                job.list_scraper_cls,
+                l0_raw_json_path,
+                l0_raw_csv_path,
+                run_config=effective_run_config,
+            )
+        except TypeError:
+            self._run_and_export_function(
+                job.list_scraper_cls,
+                l0_raw_json_path,
+                l0_raw_csv_path,
+            )
         return l0_raw_json_path
 
     def _maybe_mirror_constructors(

@@ -3,11 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
-from layers.orchestration.protocols import LayerOneRunnerProtocol
-from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.orchestration.runners.circuits import CircuitsRunner
-from layers.orchestration.runners.constructors import ConstructorsRunner
-from layers.orchestration.runners.drivers import DriversRunner
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from scrapers.circuits.helpers.export import export_complete_circuits
@@ -19,6 +14,9 @@ from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
     from pathlib import Path
+    from layers.orchestration.protocols import LayerOneRunnerProtocol
+    from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+    from layers.orchestration.reporter import PipelineStepReporterProtocol
 
 
 def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
@@ -92,10 +90,24 @@ def build_layer_zero_run_config_factory_map() -> dict[
     }
 
 
-def run_engine_manufacturers(*, base_wiki_dir: Path, include_urls: bool) -> None:
-    print("[complete] running  F1CompleteEngineManufacturerDataExtractor")
+def run_engine_manufacturers(
+    *,
+    base_wiki_dir: Path,
+    include_urls: bool,
+    step_reporter: PipelineStepReporterProtocol,
+) -> None:
+    step_name = "F1CompleteEngineManufacturerDataExtractor"
+    step_reporter.start(
+        layer="layer_one",
+        step_type="seed",
+        step_name=step_name,
+    )
     export_complete_engine_manufacturers(
         output_dir=base_wiki_dir / "engines/complete_engine_manufacturers",
         include_urls=include_urls,
     )
-    print("[complete] finished F1CompleteEngineManufacturerDataExtractor")
+    step_reporter.finish(
+        layer="layer_one",
+        step_type="seed",
+        step_name=step_name,
+    )

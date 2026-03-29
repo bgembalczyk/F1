@@ -1,6 +1,7 @@
 # ruff: noqa: ARG002, ARG005, S108
 from pathlib import Path
 
+from layers.orchestration.reporter import PipelineStepReporterProtocol
 from scrapers.base.run_config import RunConfig
 from scrapers.wiki.application import ConstructorsMirrorService
 from scrapers.wiki.application import LayerOneExecutor
@@ -16,6 +17,24 @@ class _FakeScraper:
 
 class CurrentConstructorsListScraper:
     pass
+
+
+class _Reporter(PipelineStepReporterProtocol):
+    def start(self, *, layer: str, step_type: str, step_name: str) -> None:
+        return None
+
+    def finish(self, *, layer: str, step_type: str, step_name: str) -> None:
+        return None
+
+    def skip(
+        self,
+        *,
+        layer: str,
+        step_type: str,
+        step_name: str,
+        reason: str,
+    ) -> None:
+        return None
 
 
 def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> None:
@@ -54,9 +73,11 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
         validate_seed_registry_function=lambda registry: None,
         runner_map_builder=lambda: {"drivers": _Runner()},
         engine_manufacturers_runner=lambda base_wiki_dir,
-        include_urls: engine_runner_calls.append(
+        include_urls,
+        step_reporter: engine_runner_calls.append(
             (base_wiki_dir, include_urls),
         ),
+        step_reporter=_Reporter(),
     )
 
     run_config = RunConfig(
@@ -169,6 +190,7 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         constructors_mirror_service=constructors_mirror_service,
         merge_service=merge_service,
         current_constructors_scraper_name="CurrentConstructorsListScraper",
+        step_reporter=_Reporter(),
         year_provider=lambda: 2026,
     )
 

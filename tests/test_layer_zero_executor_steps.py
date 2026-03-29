@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.orchestration.reporter import PipelineStepReporterProtocol
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.policies import MirrorConstructorsJobHook
 from layers.zero.policies import NullLayerZeroJobHook
@@ -41,6 +42,24 @@ class _Hook:
         self.calls.append((base_wiki_dir, job.seed_name, l0_raw_json_path))
 
 
+class _Reporter(PipelineStepReporterProtocol):
+    def start(self, *, layer: str, step_type: str, step_name: str) -> None:
+        return None
+
+    def finish(self, *, layer: str, step_type: str, step_name: str) -> None:
+        return None
+
+    def skip(
+        self,
+        *,
+        layer: str,
+        step_type: str,
+        step_name: str,
+        reason: str,
+    ) -> None:
+        return None
+
+
 def _job(*, seed_name: str = "drivers") -> ListJobRegistryEntry:
     return ListJobRegistryEntry(
         seed_name=seed_name,
@@ -75,6 +94,7 @@ def _executor(
         ),
         merge_service=(merge_service if merge_service else _MergeService()),
         job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
+        step_reporter=_Reporter(),
         year_provider=lambda: 2026,
     )
 
