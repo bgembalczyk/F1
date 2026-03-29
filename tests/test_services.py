@@ -170,6 +170,51 @@ def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
     assert "marker" in csv_path.read_text(encoding="utf-8")
 
 
+def test_run_and_export_reports_same_records_for_json_and_csv(tmp_path: Path) -> None:
+    class DummyScraper:
+        def __init__(self, *, options: ScraperOptions, marker: str) -> None:
+            self.options = options
+            self.marker = marker
+            self.exporter = DataExporter()
+            self.step_calls: list[tuple[str, list[dict[str, object]]]] = []
+
+        def fetch(self):
+            return [{"name": "test", "marker": self.marker}]
+
+        def _write_step_quality_report(
+            self,
+            *,
+            step_name: str,
+            records: list[dict[str, object]],
+        ) -> None:
+            self.step_calls.append((step_name, records))
+
+    scraper_ref: dict[str, DummyScraper] = {}
+
+    class DummyFactoryScraper(DummyScraper):
+        def __init__(self, *, options: ScraperOptions, marker: str) -> None:
+            super().__init__(options=options, marker=marker)
+            scraper_ref["instance"] = self
+
+    run_config = RunConfig(
+        output_dir=tmp_path,
+        scraper_kwargs={"marker": "custom"},
+    )
+
+    run_and_export(
+        DummyFactoryScraper,
+        "dummy.json",
+        "dummy.csv",
+        run_config=run_config,
+    )
+
+    step_calls = scraper_ref["instance"].step_calls
+
+    assert step_calls[0][0] == "export-json"
+    assert step_calls[1][0] == "export-csv"
+    assert step_calls[0][1] == step_calls[1][1]
+
+
 def test_split_delimited_text_handles_multiple_separators() -> None:
     assert split_delimited_text("A, B;C / D") == ["A", "B", "C", "D"]
     assert split_delimited_text("") == []
