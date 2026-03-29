@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import importlib
 import inspect
+from pathlib import Path
 
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
 from scrapers.base.run_config import RunConfig
@@ -88,3 +89,31 @@ def test_entrypoints_delegate_to_run_and_export_with_overridden_run_config(
         module.run_list_scraper(run_config=custom_config)
 
     assert delegate_calls == [custom_config] * len(ENTRYPOINT_MODULES)
+
+
+def test_domain_output_path_policy_renders_placeholder_paths() -> None:
+    config = get_domain_entrypoint_config("constructors")
+    current_year = getattr(
+        importlib.import_module("scrapers.constructors.constants"),
+        "CURRENT_YEAR",
+    )
+
+    assert config.default_output_json == f"constructors/f1_constructors_{current_year}.json"
+    assert config.default_output_csv == f"constructors/f1_constructors_{current_year}.csv"
+
+
+def test_domain_output_path_policy_keeps_non_placeholder_paths() -> None:
+    config = get_domain_entrypoint_config("drivers")
+
+    assert config.default_output_json == "drivers/f1_drivers.json"
+    assert config.default_output_csv is None
+
+
+def test_year_placeholder_renderer_handles_path_inputs() -> None:
+    from scrapers.base.domain_entrypoint import YearPlaceholderOutputPathRenderer
+
+    rendered = YearPlaceholderOutputPathRenderer(year=2042).render(
+        Path("constructors/f1_constructors_{year}.json"),
+    )
+
+    assert rendered == Path("constructors/f1_constructors_2042.json")
