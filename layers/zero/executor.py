@@ -4,7 +4,6 @@ from pathlib import Path
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
-from layers.zero.merge_service import LayerZeroMergeService
 from scrapers.base.run_config import RunConfig
 
 
@@ -18,7 +17,7 @@ class LayerZeroExecutor:
         default_config_factory: object,
         run_and_export_function: Callable[..., None],
         constructors_mirror_service: ConstructorsMirrorService,
-        merge_service: LayerZeroMergeService,
+        merge_function: Callable[[Path], None],
         current_constructors_scraper_name: str,
         year_provider: Callable[[], int],
     ) -> None:
@@ -28,7 +27,7 @@ class LayerZeroExecutor:
         self._default_config_factory = default_config_factory
         self._run_and_export_function = run_and_export_function
         self._constructors_mirror_service = constructors_mirror_service
-        self._merge_service = merge_service
+        self._merge_function = merge_function
         self._current_constructors_scraper_name = current_constructors_scraper_name
         self._year_provider = year_provider
 
@@ -76,4 +75,4 @@ class LayerZeroExecutor:
 
             print(f"[list] finished {job.list_scraper_cls.__name__}")
 
-        self._merge_service.merge(base_wiki_dir)
+        self._merge_function(base_wiki_dir)
