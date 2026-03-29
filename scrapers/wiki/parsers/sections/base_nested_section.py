@@ -24,7 +24,13 @@ class BaseNestedSectionParser(WikiParser):
     heading_class: str
     output_key: str
 
-    def __init__(self, *, child_parser: NestedChildParser) -> None:
+    def __init__(
+        self,
+        *,
+        child_parser: NestedChildParser,
+        **kwargs: object,
+    ) -> None:
+        super().__init__(**kwargs)
         self.child_parser = child_parser
 
     def parse(

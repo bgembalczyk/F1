@@ -16,7 +16,8 @@ from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 
 
 class WikiElementParserMixin:
-    def __init__(self) -> None:
+    def __init__(self, *args: object, **kwargs: object) -> None:
+        super().__init__(*args, **kwargs)
         self.infobox_parser = InfoboxParser()
         self.paragraph_parser = ParagraphParser()
         self.figure_parser = FigureParser()

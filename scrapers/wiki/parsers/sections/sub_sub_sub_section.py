@@ -11,7 +11,7 @@ from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 
 class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
     def __init__(self) -> None:
-        WikiElementParserMixin.__init__(self)
+        super().__init__()
 
     def parse(
         self,

@@ -12,6 +12,7 @@ from scrapers.wiki.parsers.sections.section import SectionParser
 
 class ContentTextParser(WikiParser):
     def __init__(self) -> None:
+        super().__init__()
         self.section_parser = SectionParser()
 
     def parse(
