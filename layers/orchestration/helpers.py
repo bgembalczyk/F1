@@ -10,6 +10,7 @@ from layers.orchestration.runners.constructors import ConstructorsRunner
 from layers.orchestration.runners.drivers import DriversRunner
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
+from layers.orchestration.reporter import LayerExecutionReporterProtocol
 from scrapers.circuits.helpers.export import export_complete_circuits
 from scrapers.constructors.helpers.export import export_complete_constructors
 from scrapers.drivers.helpers.export import export_complete_drivers
@@ -92,10 +93,15 @@ def build_layer_zero_run_config_factory_map() -> dict[
     }
 
 
-def run_engine_manufacturers(*, base_wiki_dir: Path, include_urls: bool) -> None:
-    print("[complete] running  F1CompleteEngineManufacturerDataExtractor")
+def run_engine_manufacturers(
+    *,
+    base_wiki_dir: Path,
+    include_urls: bool,
+    reporter: LayerExecutionReporterProtocol,
+) -> None:
+    reporter.started(layer="layer_one", step="engine_manufacturers")
     export_complete_engine_manufacturers(
         output_dir=base_wiki_dir / "engines/complete_engine_manufacturers",
         include_urls=include_urls,
     )
-    print("[complete] finished F1CompleteEngineManufacturerDataExtractor")
+    reporter.finished(layer="layer_one", step="engine_manufacturers")

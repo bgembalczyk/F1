@@ -25,6 +25,34 @@ def test_duplicate_normalizer_maps_supported_keys() -> None:
     }
 
 
+def test_diff_added_lines_provider_parses_diff_hunks(monkeypatch: Any) -> None:
+    provider = DiffAddedLinesProvider()
+
+    class Completed:
+        returncode = 0
+        stdout = (
+            "+++ b/src/app.py\n"
+            "@@ -1,0 +5,2 @@\n"
+            "@@ -10,1 +20 @@\n"
+            "+++ b/src/other.py\n"
+            "@@ -4 +7,0 @@"
+        )
+
+    def fake_run(*_args: Any, **_kwargs: Any) -> Completed:
+        return Completed()
+
+    monkeypatch.setattr("scripts.ci.git_diff.subprocess.run", fake_run)
+
+    added = provider.build_added_lines_map(
+        "base",
+        "head",
+        ["src/app.py", "src/other.py"],
+    )
+
+    assert added["src/app.py"] == {5, 6, 20}
+    assert added["src/other.py"] == set()
+
+
 def test_duplicate_filter_returns_only_overlapping_duplicates(monkeypatch: Any) -> None:
     duplicate_filter = DuplicateFilter()
 

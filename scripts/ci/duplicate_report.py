@@ -1,19 +1,17 @@
 # ruff: noqa: S603
 from __future__ import annotations
 
+import argparse
+import json
+import sys
 from pathlib import Path
 from typing import Any
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from scripts.ci.git_diff import build_added_lines_map
-from scripts.ci.io_utils import append_output_vars
-from scripts.ci.io_utils import read_json_file
-from scripts.ci.io_utils import write_text_file
-from scripts.ci.reporting import CiStatus
-from scripts.ci.reporting import build_ci_parser
-from scripts.ci.reporting import exit_code_for_status
-from scripts.ci.reporting import line_range
-from scripts.ci.reporting import resolve_status
-from scripts.ci.reporting import split_csv
 
 
 class DuplicateNormalizer:
@@ -34,6 +32,16 @@ class DuplicateNormalizer:
             },
             "fragment": str(fragment).strip(),
         }
+
+
+class DiffAddedLinesProvider:
+    def build_added_lines_map(
+        self,
+        base_sha: str,
+        head_sha: str,
+        changed_files: list[str],
+    ) -> dict[str, set[int]]:
+        return build_added_lines_map(base_sha, head_sha, changed_files)
 
 
 class DuplicateFilter:
@@ -138,6 +146,40 @@ class MarkdownRenderer:
         return "\n".join(lines)
 
 
+class GithubOutputWriter:
+    def write(
+        self,
+        output_path: Path,
+        duplicate_count: int,
+        duplicate_status: str,
+    ) -> None:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with output_path.open("a", encoding="utf-8") as fh:
+            fh.write(f"duplicate_count={duplicate_count}\n")
+            fh.write(f"duplicate_status={duplicate_status}\n")
+
+
+def build_ci_parser(description: str) -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument("--report-json", required=True)
+    parser.add_argument("--output-md", required=True)
+    parser.add_argument("--warn-threshold", type=int, required=True)
+    parser.add_argument("--fail-threshold", type=int, required=True)
+    parser.add_argument("--base-sha", default="")
+    parser.add_argument("--head-sha", default="")
+    parser.add_argument("--changed-files", default="")
+    parser.add_argument("--github-output", required=True)
+    return parser
+
+
+def read_json_file(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def split_csv(value: str) -> list[str]:
+    return [part for part in value.split(",") if part]
+
+
 def main() -> int:
     parser = build_ci_parser("Generate duplicate report for changed files in PR.")
     args = parser.parse_args()
@@ -146,9 +188,13 @@ def main() -> int:
     duplicate_filter = DuplicateFilter()
     markdown_renderer = MarkdownRenderer()
 
-    payload = read_json_file(Path(args.report_json))
-    raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
-    duplicates = [normalizer.normalize(item) for item in raw_duplicates]
+    report_path = Path(args.report_json)
+    if not report_path.exists():
+        duplicates: list[dict[str, Any]] = []
+    else:
+        payload = read_json_file(report_path)
+        raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
+        duplicates = [normalizer.normalize(item) for item in raw_duplicates]
 
     changed_files = split_csv(args.changed_files)
     new_duplicates = duplicate_filter.filter_new_duplicates(
