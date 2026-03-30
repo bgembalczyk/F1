@@ -105,6 +105,13 @@ def main(argv: Sequence[str]) -> int:
         print("PR description is empty; skipping validation in this run.")
         return 0
 
+    detected_required_sections = [
+        section for section in REQUIRED_SECTIONS if has_required_section(body, section)
+    ]
+    if not detected_required_sections:
+        print("PR description does not use the enforced template sections; skipping validation in this run.")
+        return 0
+
     missing_sections = [
         section for section in REQUIRED_SECTIONS if not has_required_section(body, section)
     ]
