@@ -153,4 +153,4 @@ class LayerZeroExecutor:
         )
 
     def _finalize_merge(self, base_wiki_dir: Path) -> None:
-        self._merge_service.merge(LayerZeroMergeRequestDTO(base_wiki_dir=base_wiki_dir))
+        self._merge_service.merge(base_wiki_dir)
