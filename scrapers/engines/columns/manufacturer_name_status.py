@@ -1,14 +1,13 @@
-from scrapers.base.table.columns.types import EnumMarksColumn
-from scrapers.base.table.columns.types import MultiColumn
-from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.columns.types import EnumMarksMixin
+from scrapers.base.table.columns.types import NameStatusColumn
 
 
-class EngineManufacturerNameStatusColumn(MultiColumn):
+class EngineManufacturerNameStatusColumn(NameStatusColumn):
     def __init__(self) -> None:
         super().__init__(
-            {
-                "manufacturer": UrlColumn(),
-                "manufacturer_status": EnumMarksColumn(
+            entity_key="manufacturer",
+            status_extractors={
+                "manufacturer_status": EnumMarksMixin(
                     {"~": "current"},
                     default="former",
                 ),

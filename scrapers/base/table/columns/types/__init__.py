@@ -1,4 +1,5 @@
 from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.background_mixin import BackgroundMixin
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.br_list import BrListColumn
@@ -11,6 +12,7 @@ from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.engine import EngineColumn
 from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
+from scrapers.base.table.columns.types.enum_marks import EnumMarksMixin
 from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.list import ListColumn
@@ -31,6 +33,7 @@ from scrapers.base.table.columns.types.url import UrlColumn
 
 __all__ = [
     "AutoColumn",
+    "BackgroundMixin",
     "BaseColumn",
     "BoolColumn",
     "BrListColumn",
@@ -40,6 +43,7 @@ __all__ = [
     "EngineColumn",
     "EntrantColumn",
     "EnumMarksColumn",
+    "EnumMarksMixin",
     "FloatColumn",
     "FuncColumn",
     "IntColumn",

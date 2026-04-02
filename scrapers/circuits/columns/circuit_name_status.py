@@ -1,14 +1,13 @@
-from scrapers.base.table.columns.types import EnumMarksColumn
-from scrapers.base.table.columns.types import MultiColumn
-from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.columns.types import EnumMarksMixin
+from scrapers.base.table.columns.types import NameStatusColumn
 
 
-class CircuitNameStatusColumn(MultiColumn):
+class CircuitNameStatusColumn(NameStatusColumn):
     def __init__(self) -> None:
         super().__init__(
-            {
-                "circuit": UrlColumn(),
-                "circuit_status": EnumMarksColumn(
+            entity_key="circuit",
+            status_extractors={
+                "circuit_status": EnumMarksMixin(
                     {"*": "current", "†": "future"},
                     default="former",
                 ),
