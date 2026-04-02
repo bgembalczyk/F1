@@ -24,19 +24,19 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
     return {
         "grands_prix": GrandPrixRunner(),
         "circuits": FunctionExportRunner(
-            export_function=export_complete_circuits,
+            export=export_complete_circuits,
             component_metadata=build_runner_metadata("circuits"),
         ),
         "drivers": FunctionExportRunner(
-            export_function=export_complete_drivers,
+            export=export_complete_drivers,
             component_metadata=build_runner_metadata("drivers"),
         ),
         "seasons": FunctionExportRunner(
-            export_function=export_complete_seasons,
+            export=export_complete_seasons,
             component_metadata=build_runner_metadata("seasons"),
         ),
         "constructors": FunctionExportRunner(
-            export_function=export_complete_constructors,
+            export=export_complete_constructors,
             component_metadata=build_runner_metadata("constructors"),
         ),
     }
