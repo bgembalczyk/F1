@@ -145,6 +145,45 @@ class TestRedFlaggedRacesScraperRobustness:
             WorldChampionshipsRacesTableParser,
         )
 
+    def test_section_parser_parses_table_without_nested_headings(self):
+        """RedFlaggedRacesSectionParser should parse direct table payloads."""
+        html = """
+        <div>
+          <h2><span class="mw-headline" id="Red-flagged_races">Red-flagged races</span></h2>
+          <table class="wikitable">
+            <tr>
+              <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
+              <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
+              <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
+            </tr>
+            <tr><th>Drivers</th><th>Reason</th></tr>
+            <tr>
+              <td>2024</td><td>Monaco</td><td>5</td><td>Y</td>
+              <td>Driver</td><td>Crash</td><td></td><td></td><td>[1]</td>
+            </tr>
+          </table>
+        </div>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        section_parser = RedFlaggedRacesSectionParser()
+        parsed = section_parser.parse_group(list(soup.div.children))
+
+        table_payloads = []
+
+        def visit(node):
+            if isinstance(node, dict):
+                if node.get("table_type") == "red_flagged_world_championship_races":
+                    table_payloads.append(node)
+                for value in node.values():
+                    visit(value)
+            elif isinstance(node, list):
+                for item in node:
+                    visit(item)
+
+        visit(parsed)
+        assert table_payloads
+        assert table_payloads[0]["domain_rows"][0]["season"] == "2024"
+
     def test_error_message_with_no_matching_table(self):
         """Test that error message includes diagnostic information."""
         html = """

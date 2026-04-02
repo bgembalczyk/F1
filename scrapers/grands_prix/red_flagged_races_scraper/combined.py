@@ -98,13 +98,22 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        if not parsed.get("sub_sub_sections"):
+        if not self._has_table_payload(parsed):
             parsed["elements"] = self._fallback_parser.parse_group(
                 elements,
                 context=context,
             )["elements"]
         self._apply_non_championship_table_parser(parsed)
         return parsed
+
+    def _has_table_payload(self, payload: Any) -> bool:
+        if isinstance(payload, dict):
+            if payload.get("kind") == "table":
+                return True
+            return any(self._has_table_payload(value) for value in payload.values())
+        if isinstance(payload, list):
+            return any(self._has_table_payload(item) for item in payload)
+        return False
 
     def _apply_non_championship_table_parser(self, payload: dict[str, Any]) -> None:
         self._apply_for_elements(payload.get("elements", []))
@@ -137,13 +146,22 @@ class RedFlaggedRacesSectionParser(SectionParser):
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        if not parsed.get("sub_sections"):
+        if not self._has_table_payload(parsed):
             parsed["elements"] = self._fallback_parser.parse_group(
                 elements,
                 context=context,
             )["elements"]
         self._apply_world_championship_table_parser(parsed)
         return parsed
+
+    def _has_table_payload(self, payload: Any) -> bool:
+        if isinstance(payload, dict):
+            if payload.get("kind") == "table":
+                return True
+            return any(self._has_table_payload(value) for value in payload.values())
+        if isinstance(payload, list):
+            return any(self._has_table_payload(item) for item in payload)
+        return False
 
     def _apply_world_championship_table_parser(self, payload: dict[str, Any]) -> None:
         self._apply_for_elements(payload.get("elements", []))
