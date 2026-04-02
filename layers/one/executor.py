@@ -14,22 +14,41 @@ class LayerOneExecutor:
         self,
         *,
         seed_registry: tuple[SeedRegistryEntry, ...],
+        validate_seed_registry: Callable[
+            [tuple[SeedRegistryEntry, ...]],
+            None,
+        ]
+        | None = None,
         validate_seed_registry_function: Callable[
             [tuple[SeedRegistryEntry, ...]],
             None,
-        ],
-        runner_map_builder: Callable[[], dict[str, LayerOneRunnerProtocol]],
-        engine_manufacturers_runner: Callable[[Path, bool], None],
+        ]
+        | None = None,
+        runners: Callable[[], dict[str, LayerOneRunnerProtocol]] | None = None,
+        runner_map_builder: Callable[[], dict[str, LayerOneRunnerProtocol]] | None = None,
+        engine_manufacturers_runner: Callable[[Path, bool], None] | None = None,
     ) -> None:
         self._seed_registry = seed_registry
-        self._validate_seed_registry_function = validate_seed_registry_function
-        self._runner_map_builder = runner_map_builder
+        self._validate_seed_registry = (
+            validate_seed_registry or validate_seed_registry_function
+        )
+        self._runners = runners or runner_map_builder
+        if (
+            self._validate_seed_registry is None
+            or self._runners is None
+            or engine_manufacturers_runner is None
+        ):
+            msg = (
+                "LayerOneExecutor requires `validate_seed_registry`, `runners` "
+                "and `engine_manufacturers_runner`."
+            )
+            raise ValueError(msg)
         self._engine_manufacturers_runner = engine_manufacturers_runner
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
-        self._validate_seed_registry_function(self._seed_registry)
-        runner_map = self._runner_map_builder()
+        self._validate_seed_registry(self._seed_registry)
+        runner_map = self._runners()
         run_id = str(uuid4())
 
         for seed in self._seed_registry:
