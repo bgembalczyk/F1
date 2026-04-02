@@ -5,7 +5,7 @@ from layers.orchestration.runners.metadata import build_runner_metadata
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
-from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
+from scrapers.grands_prix import F1CompleteGrandPrixDataExtractor
 
 
 class GrandPrixRunner(LayerJobRunner):

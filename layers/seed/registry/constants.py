@@ -5,21 +5,21 @@ from layers.seed.data_classes import RegistryValidationRule
 from layers.seed.data_classes import RegistryValidationSpec
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
-from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
-from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
-from scrapers.drivers.list_scraper import F1DriversListScraper
-from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
-from scrapers.engines.engine_regulation import EngineRegulationScraper
-from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
-from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
+from scrapers.circuits import CircuitsListScraper
+from scrapers.constructors import ConstructorsListScraper
+from scrapers.drivers import F1FatalitiesListScraper
+from scrapers.drivers import FemaleDriversListScraper
+from scrapers.drivers import F1DriversListScraper
+from scrapers.engines import EngineManufacturersListScraper
+from scrapers.engines import EngineRegulationScraper
+from scrapers.engines import EngineRestrictionsScraper
+from scrapers.grands_prix import GrandsPrixListScraper
 from scrapers.grands_prix.red_flagged_races_scraper.combined import (
     RedFlaggedRacesScraper,
 )
-from scrapers.points.points_scraper import PointsScraper
-from scrapers.seasons.list_scraper import SeasonsListScraper
-from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
+from scrapers.points import PointsScraper
+from scrapers.seasons import SeasonsListScraper
+from scrapers.sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersScraper
 from scrapers.wiki.sources_registry import get_source_by_seed_name
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
