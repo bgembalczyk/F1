@@ -37,7 +37,7 @@ from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
 from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
-from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
+from scrapers.tyres.list_scraper import TyreManufacturersScraper
 
 
 @dataclass(frozen=True)
@@ -240,7 +240,7 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
     ),
     RawRegistrySpec(
         seed_name="tyres",
-        list_scraper_cls=TyreManufacturersBySeasonScraper,
+        list_scraper_cls=TyreManufacturersScraper,
         output_category="seasons",
         list_filename="f1_tyre_manufacturers_by_season.json",
     ),

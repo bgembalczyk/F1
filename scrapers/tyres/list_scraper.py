@@ -1,3 +1,5 @@
+from typing import Any
+
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import TYRES
 from scrapers.base.table.columns.types import SeasonsColumn
@@ -7,9 +9,73 @@ from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.tyres.columns.append_links import AppendLinksColumn
+from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
+from scrapers.wiki.parsers.sections.section import SectionParser
+from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 
 
-class TyreManufacturersBySeasonScraper(F1TableScraper):
+class TyreManufacturersBySeasonTableParser(WikiTableBaseParser):
+    table_type = "tyre_manufacturers_by_season"
+    missing_columns_policy = "ignore"
+    extra_columns_policy = "ignore"
+
+    _column_mapping = {
+        "Season": "seasons",
+        "Manufacturer 1": "manufacturers",
+        "Manufacturer 2": "manufacturers",
+        "Manufacturer 3": "manufacturers",
+        "Manufacturer 4": "manufacturers",
+        "Manufacturer 5": "manufacturers",
+        "Manufacturer 6": "manufacturers",
+        "Wins": "wins",
+    }
+
+    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
+        required_headers = {"Season", "Manufacturer 1", "Wins"}
+        return required_headers.issubset(set(headers))
+
+    def map_columns(self, headers: list[str]) -> dict[str, str]:
+        return {
+            header: self._column_mapping[header]
+            for header in headers
+            if header in self._column_mapping
+        }
+
+
+class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._table_parser = TyreManufacturersBySeasonTableParser()
+
+    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super().parse_group(elements, context=context)
+        self._apply_table_parser(parsed)
+        return parsed
+
+    def _apply_table_parser(self, payload: dict[str, Any]) -> None:
+        for section in payload.get("sub_sub_sections", []):
+            self._apply_for_elements(section.get("elements", []))
+            self._apply_table_parser(section)
+
+    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            parsed = self._table_parser.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
+
+
+class ManufacturersSectionParser(SectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.child_parser = TyreManufacturersBySeasonSubSectionParser()
+
+
+class TyreManufacturersScraper(F1TableScraper):
     """
     Scraper producentów opon F1:
     https://en.wikipedia.org/wiki/Formula_One_tyres#Tyre_manufacturers_by_season
@@ -37,6 +103,15 @@ class TyreManufacturersBySeasonScraper(F1TableScraper):
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=RECORD_FACTORIES.mapping(),
     )
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        parser = ManufacturersSectionParser()
+        self.section_parser = parser
+        self.body_content_parser.content_text_parser.section_parser = parser
+
+
+TyreManufacturersBySeasonScraper = TyreManufacturersScraper
 
 
 if __name__ == "__main__":
