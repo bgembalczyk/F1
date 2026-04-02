@@ -13,17 +13,11 @@ class ScraperCreationAdapter(Protocol):
     def create(self, *, context: object, ctor: object) -> object: ...
 
 
-class ScraperAdapterChainProvider(Protocol):
-    def build(self, *, mapper: RunConfigOptionsMapper) -> tuple[ScraperCreationAdapter, ...]: ...
-
-
-class DefaultScraperAdapterChainProvider:
-    def build(
-        self,
-        *,
-        mapper: RunConfigOptionsMapper,
-    ) -> tuple[ScraperCreationAdapter, ...]:
-        return (
-            OptionsScraperAdapter(mapper),
-            LegacyScraperAdapter(),
-        )
+def default_scraper_creation_adapters(
+    *,
+    mapper: RunConfigOptionsMapper,
+) -> tuple[ScraperCreationAdapter, ...]:
+    return (
+        OptionsScraperAdapter(mapper),
+        LegacyScraperAdapter(),
+    )

@@ -39,6 +39,18 @@ class RecordBuilders:
         self._factory_registry = factory_registry or FACTORY_REGISTRY_PROVIDER.get()
 
 
+RECORD_TYPE_ALIASES: dict[str, str] = {
+    "grand_prix": "grands_prix",
+    "grandprix": "grands_prix",
+}
+
+
+def normalize_record_type(record_type: RecordType | str) -> RecordType | str:
+    if isinstance(record_type, RecordType):
+        return record_type
+    return RECORD_TYPE_ALIASES.get(record_type, record_type)
+
+
 class RecordBuilders:
     """Object facade for building normalized record models."""
 
@@ -85,7 +97,7 @@ def build_record(record_type: str, record: Mapping[str, Any]) -> Any: ...
 
 
 def build_record(record_type: RecordType | str, record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.build(record_type, record)
+    return RECORD_BUILDERS.build(normalize_record_type(record_type), record)
 
 
 def _build_convenience(record_type: RecordType) -> Callable[[Mapping[str, Any]], Any]:
@@ -108,7 +120,7 @@ RECORD_BUILDERS = RecordBuilders()
 
 
 def build_record(record_type: str, record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.build(record_type, record)
+    return RECORD_BUILDERS.build(normalize_record_type(record_type), record)
 
 
 def build_season_record(record: Mapping[str, Any]) -> Any:

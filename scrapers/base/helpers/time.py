@@ -186,32 +186,6 @@ def parse_date_text(text: str) -> DateValue:
     )
 
 
-def parse_time_key(rec: dict[str, Any]) -> float | str | None:
-    """
-    Normalizuje time do postaci klucza:
-    - jeśli mamy seconds -> używamy seconds (float)
-    - jeśli mamy tekst, próbujemy sparsować MM:SS.xxx -> sekundy
-    - jak się nie uda, używamy znormalizowanego tekstu
-    """
-    t = rec.get("time")
-
-    seconds = parse_time_seconds_from_text(t)
-    if seconds is not None:
-        return seconds
-
-    txt = parse_time_text(t)
-    if not txt:
-        return None
-
-    s = txt.strip()
-
-    m = TIME_KEY_RE.match(s)
-    if m:
-        return seconds_from_match(m)
-
-    return s.lower()
-
-
 def normalize_time_value(rec: dict[str, Any]) -> None:
     """
     Zamienia time dict/NormalizedTime na float jeśli jest seconds,

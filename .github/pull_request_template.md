@@ -28,6 +28,7 @@
 - [ ] Brak nowych Any
 - [ ] Brak nowych magic strings
 - [ ] Zaktualizowany ADR/docs
+- [ ] Spójność terminologii domenowej (zgodnie z `docs/DOMAIN_GLOSSARY.md`)
 
 ## Checklist (quality gate)
 
@@ -35,6 +36,7 @@
 - [ ] **Granice modułów**: potwierdzone przez `Architecture tests` + `import-linter`.
 - [ ] **Duplikacja**: potwierdzona przez `jscpd` + `pylint duplicate-code` (`Static quality gates`).
 - [ ] **Architecture impact**: sekcja poniżej jest uzupełniona i przechodzi walidator PR template (`scripts/ci/validate_pr_template.py`).
+- [ ] **Terminologia domenowa**: brak niedozwolonych wariantów nazw (`python scripts/check_domain_terminology.py`).
 
 ## Architecture impact
 

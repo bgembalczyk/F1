@@ -20,7 +20,6 @@ ANY_EXCEPTION_MODULES = {
     "layers/orchestration/runners/function_export.py",
     "layers/orchestration/runners/grand_prix.py",
     "layers/seed/data_classes.py",
-    "layers/seed/helpers.py",
     "layers/seed/registry/constants.py",
     "layers/seed/registry/entries.py",
     "layers/seed/registry/helpers.py",
