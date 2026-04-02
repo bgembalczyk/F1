@@ -13,12 +13,15 @@ from abc import ABC
 from collections.abc import Callable
 
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.background_mixin import BackgroundMixin
+from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.columns.types.bool import BoolColumn
+from scrapers.base.table.columns.types.enum_marks import EnumMarksMixin
 from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 
 
-class NameStatusColumn(MultiColumn, ABC):
+class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
     """
     Base class for columns that parse entity name with status markers.
 
@@ -26,15 +29,18 @@ class NameStatusColumn(MultiColumn, ABC):
     - Entity name with URL (e.g., "Lewis Hamilton", "Monaco")
     - Status indicated by suffix markers (e.g., "†", "*", "~")
 
+    Inherits BackgroundMixin (adds background to record) and EnumMarksMixin
+    (provides enum marks parsing utility for subclasses).
+
     Subclasses define:
     - entity_key: The key for the entity name (e.g., "driver", "circuit")
-    - status_extractors: Dict mapping status keys to extractor functions
+    - status_extractors: Dict mapping status keys to extractor functions or BaseColumn instances
     """
 
     def __init__(
         self,
         entity_key: str,
-        status_extractors: dict[str, Callable[[ColumnContext], bool]],
+        status_extractors: dict[str, BaseColumn | Callable[[ColumnContext], bool]],
     ) -> None:
         """
         Initialize name+status column.
@@ -42,12 +48,16 @@ class NameStatusColumn(MultiColumn, ABC):
         Args:
             entity_key: Key for the entity name field
             status_extractors: Mapping of status field names to extractor functions
+                or BaseColumn instances. Callables are automatically wrapped in BoolColumn.
         """
-        columns = {entity_key: UrlColumn()}
+        columns: dict[str, BaseColumn] = {entity_key: UrlColumn()}
         for status_key, extractor in status_extractors.items():
-            columns[status_key] = BoolColumn(extractor)
+            if isinstance(extractor, BaseColumn):
+                columns[status_key] = extractor
+            else:
+                columns[status_key] = BoolColumn(extractor)
 
-        super().__init__(columns)
+        MultiColumn.__init__(self, columns)
         self.entity_key = entity_key
         self.status_extractors = status_extractors
 
