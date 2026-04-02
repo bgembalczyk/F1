@@ -5,6 +5,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
+from layers.path_resolver import PathResolver
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
 from layers.zero.merge_types import RaceRecordModel
@@ -742,18 +743,20 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
     if not layer_zero_dir.exists():
         return
 
-    for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir):
-        merged_records = _load_domain_records(domain_dir)
+    resolver = PathResolver(layer_zero_root=layer_zero_dir)
+
+    for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir, resolver):
+        merged_records = _load_domain_records(domain_dir, resolver)
         if not merged_records:
             continue
         merged_records = _post_process_domain_records(domain_dir.name, merged_records)
-        _write_merged_domain_records(domain_dir, merged_records)
+        _write_merged_domain_records(domain_dir, merged_records, resolver)
 
 
-def _iter_mergeable_domain_dirs(layer_zero_dir: Path) -> list[Path]:
+def _iter_mergeable_domain_dirs(layer_zero_dir: Path, resolver: PathResolver) -> list[Path]:
     domain_dirs: list[Path] = []
     for domain_dir in sorted(p for p in layer_zero_dir.iterdir() if p.is_dir()):
-        raw_dir = domain_dir / "raw"
+        raw_dir = resolver.raw_dir(domain=domain_dir.name)
         if not raw_dir.exists() or not raw_dir.is_dir():
             continue
         if domain_dir.name in {"points", "rules"}:
@@ -762,9 +765,9 @@ def _iter_mergeable_domain_dirs(layer_zero_dir: Path) -> list[Path]:
     return domain_dirs
 
 
-def _load_domain_records(domain_dir: Path) -> list[object]:
+def _load_domain_records(domain_dir: Path, resolver: PathResolver) -> list[object]:
     merged_records: list[object] = []
-    raw_dir = domain_dir / "raw"
+    raw_dir = resolver.raw_dir(domain=domain_dir.name)
     for json_path in sorted(raw_dir.rglob("*.json")):
         payload = json.loads(json_path.read_text(encoding="utf-8"))
         merged_records.extend(
@@ -898,8 +901,9 @@ def _post_process_domain_records(domain: str, records: list[object]) -> list[obj
 def _write_merged_domain_records(
     domain_dir: Path,
     merged_records: list[object],
+    resolver: PathResolver,
 ) -> None:
-    merged_path = domain_dir / f"{domain_dir.name}.json"
+    merged_path = resolver.merged(domain=domain_dir.name)
     merged_path.write_text(
         json.dumps(merged_records, ensure_ascii=False, indent=2),
         encoding="utf-8",
