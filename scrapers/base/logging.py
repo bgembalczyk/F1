@@ -7,6 +7,8 @@ from datetime import timezone
 from typing import Any
 
 from scrapers.base.constants.runtime import LOGGER_NAME
+from scrapers.base.debug_contract import DebugMode
+from scrapers.base.debug_contract import resolve_debug_contract
 
 
 _DEFAULT_EXECUTION_CONTEXT: dict[str, str | None] = {
@@ -32,8 +34,8 @@ class JsonLinesFormatter(logging.Formatter):
         return json.dumps(payload, ensure_ascii=False)
 
 
-def configure_logging(*, verbose: bool = False, trace: bool = False) -> None:
-    level = logging.DEBUG if trace else logging.INFO if verbose else logging.WARNING
+def configure_logging(*, debug_mode: DebugMode = DebugMode.OFF) -> None:
+    level = resolve_debug_contract(debug_mode).log_level
     root_logger = logging.getLogger()
     root_logger.setLevel(level)
 

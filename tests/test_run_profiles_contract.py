@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
+from scrapers.base.debug_contract import DebugMode
 from scrapers.base.domain_entrypoint import minimal_debug_profile
 from scrapers.base.domain_entrypoint import minimal_profile
 from scrapers.base.domain_entrypoint import strict_quality_profile
@@ -49,8 +50,10 @@ def test_profile_spec_exposes_explicit_configuration() -> None:
     assert strict_spec.debug_dir is RunPathName.DEBUG_DIR
     assert strict_spec.quality_report is True
     assert strict_spec.error_report is False
+    assert strict_spec.debug_mode is DebugMode.VERBOSE
 
     assert minimal_spec.name is RunProfileName.MINIMAL
     assert minimal_spec.output_dir is RunPathName.WIKI_OUTPUT_DIR
     assert minimal_spec.debug_dir is None
     assert minimal_spec.quality_report is False
+    assert minimal_spec.debug_mode is DebugMode.OFF

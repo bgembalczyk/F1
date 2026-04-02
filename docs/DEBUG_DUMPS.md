@@ -1,5 +1,29 @@
 # Debug dumpy scraperów
 
+## Kontrakt `debug_mode` (jedno źródło prawdy)
+
+Tryb debug jest centralnie definiowany przez `scrapers/base/debug_contract.py` i
+przenoszony w `RunConfig(debug_mode=...)`.
+
+- `off`:
+  - log level: `WARNING`
+  - verbosity: 0
+  - dumpy: wyłączone
+  - `debug_dir`: niewymuszony
+- `verbose`:
+  - log level: `INFO`
+  - verbosity: 1
+  - dumpy: wyłączone
+  - `debug_dir`: niewymuszony
+- `trace`:
+  - log level: `DEBUG`
+  - verbosity: 2
+  - dumpy: włączone
+  - `debug_dir`: wymagany
+
+Executory warstw (`LayerZeroExecutor`, `LayerOneExecutor`) walidują ten kontrakt
+przed uruchomieniem runnerów.
+
 ## Gdzie powstają dumpy?
 
 Scrapery, które uruchamiasz z `RunConfig(debug_dir=...)`, zapisują dumpy błędów

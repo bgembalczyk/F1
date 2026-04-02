@@ -8,6 +8,8 @@ from scrapers.wiki.application import LayerZeroExecutor
 from scrapers.wiki.application import LayerZeroMergeService
 from layers.seed.registry import ListJobRegistryEntry
 from layers.seed.registry import SeedRegistryEntry
+from layers.zero.policies import MirrorConstructorsJobHook
+from scrapers.base.runner import ScraperRunner
 
 
 class _FakeScraper:
@@ -39,6 +41,8 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
     ran_seeds: list[str] = []
 
     class _Runner:
+        DEBUG_CONTRACT_VERSION = "v1"
+
         def run(
             self,
             seed: SeedRegistryEntry,
@@ -158,17 +162,23 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         ) -> dict[str, object]:
             return {}
 
+    original_method = ScraperRunner.run_and_export
+
+    def _capture_run(self, scraper_cls, *_args, **_kwargs) -> None:
+        run_calls.append(scraper_cls)
+
+    ScraperRunner.run_and_export = _capture_run
+
     executor = LayerZeroExecutor(
         list_job_registry=(job,),
         validate_list_registry=lambda registry: None,
         run_config_factory_map_builder=dict,
         default_config_factory=_DefaultConfigFactory(),
-        run_and_export_function=lambda scraper_cls, *_args, **_kwargs: run_calls.append(
-            scraper_cls,
-        ),
-        constructors_mirror_service=constructors_mirror_service,
         merge_service=merge_service,
-        current_constructors_scraper_name="CurrentConstructorsListScraper",
+        job_hook=MirrorConstructorsJobHook(
+            constructors_mirror_service=constructors_mirror_service,
+            should_mirror_predicate=lambda _job: True,
+        ),
         year_provider=lambda: 2026,
     )
 
@@ -178,7 +188,10 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         debug_dir=Path("/tmp/debug"),
     )
     base_wiki_dir = Path("/tmp/wiki")
-    executor.run(run_config, base_wiki_dir)
+    try:
+        executor.run(run_config, base_wiki_dir)
+    finally:
+        ScraperRunner.run_and_export = original_method
 
     assert run_calls == [CurrentConstructorsListScraper]
     assert merge_calls == [base_wiki_dir]

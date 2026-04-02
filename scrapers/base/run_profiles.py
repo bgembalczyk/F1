@@ -8,6 +8,8 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Literal
 
+from scrapers.base.debug_contract import DebugMode
+
 if TYPE_CHECKING:
     from scrapers.base.run_config import RunConfig
 
@@ -67,6 +69,7 @@ class RunProfileSpec:
     debug_dir: RunPathName | None = None
     quality_report: bool = False
     error_report: bool = False
+    debug_mode: DebugMode = DebugMode.OFF
     cli_aliases: tuple[LegacyCliProfileName, ...] = ()
 
     def build_config(self, *, paths: RunPathConfig) -> RunConfig:
@@ -80,6 +83,7 @@ class RunProfileSpec:
             ),
             quality_report=self.quality_report,
             error_report=self.error_report,
+            debug_mode=self.debug_mode,
         )
 
 
@@ -89,6 +93,7 @@ RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
         debug_dir=RunPathName.DEBUG_DIR,
         quality_report=True,
         error_report=False,
+        debug_mode=DebugMode.VERBOSE,
         cli_aliases=("list_scraper",),
     ),
     RunProfileName.MINIMAL: RunProfileSpec(
@@ -98,10 +103,12 @@ RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
     RunProfileName.DEBUG: RunProfileSpec(
         name=RunProfileName.DEBUG,
         debug_dir=RunPathName.DEBUG_DIR,
+        debug_mode=DebugMode.TRACE,
     ),
     RunProfileName.DEPRECATED: RunProfileSpec(
         name=RunProfileName.DEPRECATED,
         debug_dir=RunPathName.DEBUG_DIR,
+        debug_mode=DebugMode.TRACE,
         cli_aliases=("deprecated_entrypoint",),
     ),
 }

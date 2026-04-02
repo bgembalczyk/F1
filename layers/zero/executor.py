@@ -1,3 +1,4 @@
+import dataclasses
 from collections.abc import Callable
 from pathlib import Path
 from uuid import uuid4
@@ -7,6 +8,9 @@ from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
+from scrapers.base.debug_contract import DebugMode
+from scrapers.base.debug_contract import resolve_debug_contract
+from scrapers.base.logging import configure_logging
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.base.run_config import RunConfig
@@ -39,6 +43,8 @@ class LayerZeroExecutor:
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
         self._validate_list_registry(self._list_job_registry)
+        effective_run_config = self._normalize_run_config_for_debug_contract(run_config)
+        configure_logging(debug_mode=effective_run_config.debug_mode)
         config_factories = self._resolve_config_factory()
         run_id = str(uuid4())
 
@@ -52,12 +58,12 @@ class LayerZeroExecutor:
             self._logger.info("layer0 job started", extra=context)
 
             local_run_config = self._build_local_run_config(
-                run_config=run_config,
+                run_config=effective_run_config,
                 job=job,
                 config_factories=config_factories,
             )
             l0_raw_json_path = self._run_single_job(
-                run_config=run_config,
+                run_config=effective_run_config,
                 local_run_config=local_run_config,
                 job=job,
             )
@@ -87,6 +93,9 @@ class LayerZeroExecutor:
             output_dir=run_config.output_dir,
             include_urls=run_config.include_urls,
             debug_dir=run_config.debug_dir,
+            quality_report=run_config.quality_report,
+            error_report=run_config.error_report,
+            debug_mode=run_config.debug_mode,
             scraper_kwargs=scraper_kwargs,
         )
 
@@ -129,3 +138,13 @@ class LayerZeroExecutor:
 
     def _finalize_merge(self, base_wiki_dir: Path) -> None:
         self._merge_service.merge(base_wiki_dir)
+
+    @staticmethod
+    def _normalize_run_config_for_debug_contract(run_config: RunConfig) -> RunConfig:
+        contract = resolve_debug_contract(run_config.debug_mode)
+        if contract.enforces_debug_output_path and run_config.debug_dir is None:
+            msg = "debug_mode=trace requires debug_dir to be set."
+            raise ValueError(msg)
+        if run_config.debug_mode in {DebugMode.OFF, DebugMode.VERBOSE}:
+            return dataclasses.replace(run_config, debug_dir=None)
+        return run_config

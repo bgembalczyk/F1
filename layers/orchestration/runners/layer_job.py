@@ -7,6 +7,8 @@ from scrapers.base.run_config import RunConfig
 
 
 class LayerJobRunner(ABC):
+    DEBUG_CONTRACT_VERSION = "v1"
+
     @abstractmethod
     def run(
         self,

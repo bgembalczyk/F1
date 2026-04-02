@@ -11,6 +11,7 @@ from scrapers.base.cli_entrypoint import build_deprecated_module_main
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
+from scrapers.base.debug_contract import DebugMode
 from scrapers.base.cli_entrypoint import run_cli_entrypoint
 from scrapers.base.run_config import RunConfig
 
@@ -65,8 +66,7 @@ def test_entrypoint_parsers_expose_consistent_flag_contract(
         "--no-quality-report",
         "--error-report",
         "--no-error-report",
-        "--verbose",
-        "--trace",
+        "--debug-mode",
     }
 
     args = parser.parse_args([])
@@ -116,6 +116,7 @@ def test_deprecated_module_base_config_has_expected_defaults() -> None:
         output_dir=Path("../../data/wiki"),
         include_urls=True,
         debug_dir=Path("../../data/debug"),
+        debug_mode=DebugMode.TRACE,
     )
 
 
@@ -147,6 +148,7 @@ def test_build_deprecated_module_main_warns_and_passes_run_config() -> None:
             debug_dir=Path("../../data/debug"),
             quality_report=False,
             error_report=True,
+            debug_mode=DebugMode.TRACE,
         ),
     ]
 

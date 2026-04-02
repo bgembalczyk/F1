@@ -9,6 +9,7 @@ import warnings
 from typing import TYPE_CHECKING
 
 from scrapers.base.logging import configure_logging
+from scrapers.base.debug_contract import DebugMode
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 from scrapers.base.run_profiles import get_cli_profile_defaults
@@ -36,6 +37,7 @@ def build_standard_parser(
     *,
     quality_report_default: bool = False,
     error_report_default: bool = False,
+    debug_mode_default: DebugMode = DebugMode.OFF,
 ) -> argparse.ArgumentParser:
     """Build parser with standardized quality/error report flags."""
     parser = argparse.ArgumentParser()
@@ -52,16 +54,10 @@ def build_standard_parser(
         help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
     )
     parser.add_argument(
-        "--verbose",
-        action="store_true",
-        default=False,
-        help="Ustaw poziom logów na INFO.",
-    )
-    parser.add_argument(
-        "--trace",
-        action="store_true",
-        default=False,
-        help="Ustaw poziom logów na DEBUG (nadpisuje --verbose).",
+        "--debug-mode",
+        choices=tuple(mode.value for mode in DebugMode),
+        default=debug_mode_default.value,
+        help="Tryb debug: off=WARNING, verbose=INFO, trace=DEBUG+dumpy.",
     )
     return parser
 
@@ -72,8 +68,7 @@ def build_run_config(*, base_config: RunConfig, args: argparse.Namespace) -> Run
         base_config,
         quality_report=args.quality_report,
         error_report=args.error_report,
-        verbose=args.verbose,
-        trace=args.trace,
+        debug_mode=DebugMode(args.debug_mode),
     )
 
 
@@ -91,10 +86,11 @@ def run_cli_entrypoint(
     parser = build_standard_parser(
         quality_report_default=quality_report_default,
         error_report_default=error_report_default,
+        debug_mode_default=base_config.debug_mode,
     )
     args = parser.parse_args(argv)
     run_config = build_run_config(base_config=base_config, args=args)
-    configure_logging(verbose=run_config.verbose, trace=run_config.trace)
+    configure_logging(debug_mode=run_config.debug_mode)
 
     if deprecation_message:
         warnings.warn(
