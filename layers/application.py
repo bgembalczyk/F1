@@ -29,6 +29,13 @@ def _current_year() -> int:
     return datetime.now(tz=timezone.utc).year
 
 
+def _should_mirror_constructors_job(job: object) -> bool:
+    """Aktywna dla `CurrentConstructorsListScraper` i `ConstructorsListScraper`."""
+    list_scraper_cls = getattr(job, "list_scraper_cls", None)
+    scraper_name = getattr(list_scraper_cls, "__name__", "")
+    return scraper_name in {"CurrentConstructorsListScraper", "ConstructorsListScraper"}
+
+
 def create_default_wiki_pipeline_application(
     *,
     base_wiki_dir: Path,
@@ -52,10 +59,7 @@ def create_default_wiki_pipeline_application(
                 copy_file=shutil.copy2,
                 year_provider=_current_year,
             ),
-            should_mirror_predicate=(
-                lambda job: job.list_scraper_cls.__name__
-                in {"CurrentConstructorsListScraper", "ConstructorsListScraper"}
-            ),
+            should_mirror_predicate=_should_mirror_constructors_job,
         ),
         year_provider=_current_year,
     )
