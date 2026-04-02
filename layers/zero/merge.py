@@ -14,12 +14,13 @@ from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import ENGINES_FORMULA_ONE_FIELDS
-from scrapers.wiki.constants import FORMER_CONSTRUCTORS_SOURCE
 from scrapers.wiki.constants import FORMULA_ONE_SERIES
 from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
-from scrapers.wiki.constants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
 from scrapers.wiki.constants import RED_FLAG_FIELDS
-from scrapers.wiki.constants import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 RecordTransformHandler = Callable[
     [str, str, dict[str, object]],
@@ -193,6 +194,7 @@ def _build_transform_pipelines() -> dict[
 
 
 TRANSFORM_PIPELINES = _build_transform_pipelines()
+validate_sources_registry_consistency()
 
 
 def _resolve_record_transform_handlers(

@@ -1,10 +1,10 @@
+from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
+
 SEED_RECORD_SCHEMA_VERSION = "1.0"
 
 COMPONENT_METADATA_ATTR = "COMPONENT_METADATA"
-
-FORMER_CONSTRUCTORS_SOURCE = "f1_former_constructors.json"
-INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE = "f1_indianapolis_only_constructors.json"
-TYRE_MANUFACTURERS_SOURCE = "f1_tyre_manufacturers_by_season.json"
 
 FORMULA_ONE_SERIES = ["Formula One"]
 CHASSIS_CONSTRUCTOR_DOMAINS = {"constructors", "chassis_constructors"}
