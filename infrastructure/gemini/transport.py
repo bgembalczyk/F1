@@ -70,7 +70,7 @@ class GeminiTransport:
                 raw = resp.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
             raise TransportError(
-                message=f"Gemini API HTTP error ({exc.code}).",
+                message=f"Gemini API zwróciło HTTP {exc.code}.",
                 source_name=model,
                 cause=exc,
             ) from exc
@@ -87,7 +87,7 @@ class GeminiTransport:
             return json.loads(raw)
         except json.JSONDecodeError as exc:
             raise TransportError(
-                message="Gemini API response JSON decode failed.",
+                message="Gemini API zwróciło niepoprawny JSON.",
                 source_name=model,
                 cause=exc,
             ) from exc

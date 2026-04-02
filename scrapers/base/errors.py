@@ -25,7 +25,7 @@ ERROR_BEHAVIOR_BY_CATEGORY: dict[ErrorCategory, ErrorBehavior] = {
 
 
 @dataclass(eq=False)
-class ScraperError(Exception):
+class ScraperError(RuntimeError):
     """Bazowy wyjątek domenowy dla scraperów."""
 
     message: str
@@ -72,6 +72,13 @@ class ScraperError(Exception):
             domain=self.domain,
             source_name=self.source_name,
             cause=str(self.cause) if self.cause else None,
+            category=self.category.value,
+            behavior=self.behavior.value,
+            critical=self.critical,
+            url=self.url,
+            section_id=self.section_id,
+            parser_name=self.parser_name,
+            run_id=self.run_id,
         )
 
     @property
@@ -90,6 +97,13 @@ class ScraperErrorPayload(TypedDict):
     domain: str
     source_name: str | None
     cause: str | None
+    category: str
+    behavior: str
+    critical: bool
+    url: str | None
+    section_id: str | None
+    parser_name: str | None
+    run_id: str | None
 
 
 @dataclass(eq=False)

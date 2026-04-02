@@ -14,7 +14,7 @@ class GeminiResponseParser:
 
         if text is None:
             raise SourceParseError(
-                message="Gemini API response does not contain text payload.",
+                message="Gemini API nie zwróciło pola candidates[0].content.parts[0].text.",
                 source_name="gemini",
             )
 
@@ -22,7 +22,7 @@ class GeminiResponseParser:
             return json.loads(text)
         except json.JSONDecodeError as exc:
             raise SourceParseError(
-                message="Gemini text payload is not valid JSON.",
+                message="Gemini zwróciło tekst, który nie jest poprawnym JSON-em.",
                 source_name="gemini",
                 cause=exc,
             ) from exc
