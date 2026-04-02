@@ -50,6 +50,12 @@ class MirrorConstructorsJobHook:
         job: ListJobRegistryEntry,
         l0_raw_json_path: Path,
     ) -> None:
+        if not isinstance(base_wiki_dir, Path):
+            msg = "base_wiki_dir must be a pathlib.Path instance."
+            raise TypeError(msg)
+        if not isinstance(l0_raw_json_path, Path):
+            msg = "l0_raw_json_path must be a pathlib.Path instance."
+            raise TypeError(msg)
         if not self._should_mirror_predicate(job):
             return
 

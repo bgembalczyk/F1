@@ -19,6 +19,12 @@ class ConstructorsMirrorService:
         self._path_builder = path_builder or LayerZeroPathBuilder()
 
     def mirror(self, base_wiki_dir: Path, source_json_path: Path) -> None:
+        if not isinstance(base_wiki_dir, Path):
+            msg = "base_wiki_dir must be a pathlib.Path instance."
+            raise TypeError(msg)
+        if not isinstance(source_json_path, Path):
+            msg = "source_json_path must be a pathlib.Path instance."
+            raise TypeError(msg)
         current_year = self._year_provider()
         for target_category, target_name_template in self._mirror_targets:
             target_rel_path = self._path_builder.raw_file_path(

@@ -15,4 +15,7 @@ class LayerZeroMergeService:
             raise ValueError(msg)
 
     def merge(self, base_wiki_dir: Path) -> None:
+        if not isinstance(base_wiki_dir, Path):
+            msg = "base_wiki_dir must be a pathlib.Path instance."
+            raise TypeError(msg)
         self._merge(base_wiki_dir)

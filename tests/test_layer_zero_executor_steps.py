@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from layers.orchestration.dto import LayerZeroConfigFactoriesDto
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
@@ -99,12 +100,13 @@ def _build_default_and_local_run_config(
 
 
 def test_resolve_config_factory_uses_builder_result() -> None:
-    expected = {"drivers": object()}
+    expected = {"drivers": _FakeConfigFactory({"domain": "drivers"})}
     executor = _executor(run_config_factory_map_builder=lambda: expected)
 
     resolved = executor._resolve_config_factory()
 
-    assert resolved is expected
+    assert isinstance(resolved, LayerZeroConfigFactoriesDto)
+    assert resolved.entries == expected
 
 
 def test_protocol_contracts_are_met_by_production_implementations() -> None:
@@ -128,7 +130,9 @@ def test_build_local_run_config_uses_seed_specific_factory() -> None:
             debug_dir=Path("/tmp/debug"),
         ),
         job=seed_job,
-        config_factories={"drivers": _FakeConfigFactory({"domain": "drivers"})},
+        config_factories=LayerZeroConfigFactoriesDto.from_mapping(
+            {"drivers": _FakeConfigFactory({"domain": "drivers"})},
+        ),
     )
 
     assert local_run_config.scraper_kwargs == {"domain": "drivers"}
