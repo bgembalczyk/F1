@@ -8,56 +8,14 @@ if TYPE_CHECKING:
 
     from scrapers.base.options import ScraperOptions
 from scrapers.points.base_points_scraper import BasePointsScraper
+from scrapers.points.config_factory import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
 from scrapers.points.parsers import PointsScoringSystemsSectionParser
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.columns.types import AutoColumn
-from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import SeasonsColumn
-from scrapers.base.table.columns.types import SkipColumn
-from scrapers.base.table.dsl.column import column
-from scrapers.points.columns.first_place import FirstPlaceColumn
-from scrapers.points.constants import HISTORICAL_POSITIONS
-from scrapers.points.constants import POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER
-from scrapers.points.constants import POINTS_DRIVERS_CHAMPIONSHIP_HEADER
-from scrapers.points.constants import POINTS_FASTEST_LAP_HEADER
-from scrapers.points.constants import POINTS_NOTES_HEADER
-from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
-from scrapers.points.constants import POINTS_SEASONS_HEADER
 from scrapers.wiki.parsers.body_content import BodyContentParser
 
 
 class PointsScraper(BasePointsScraper):
     """Aggregate scraper joining all points scoring tables from one article."""
 
-    schema_columns = [column(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn())]
-    for index, position in enumerate(HISTORICAL_POSITIONS):
-        column_instance = FirstPlaceColumn() if index == 0 else IntColumn()
-        schema_columns.append(column(position, position.lower(), column_instance))
-    schema_columns.extend(
-        [
-            column(POINTS_FASTEST_LAP_HEADER, "fastest_lap", IntColumn()),
-            column(
-                POINTS_DRIVERS_CHAMPIONSHIP_HEADER,
-                "drivers_championship",
-                AutoColumn(),
-            ),
-            column(
-                POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER,
-                "constructors_championship",
-                AutoColumn(),
-            ),
-            column(POINTS_NOTES_HEADER, "notes", SkipColumn()),
-        ],
-    )
-    CONFIG = build_scraper_config(
-        url=BasePointsScraper.BASE_URL,
-        section_id="Points_scoring_systems",
-        expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
-        schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=RECORD_FACTORIES.mapping(),
-    )
     _SUPPORTED_EXPORT_SCOPES = {"all", "history", "shortened", "sprint"}
 
     def __init__(
@@ -68,7 +26,7 @@ class PointsScraper(BasePointsScraper):
     ) -> None:
         super().__init__(
             options=options,
-            config=self.CONFIG,
+            config=POINTS_SCORING_SYSTEMS_HISTORY_CONFIG,
         )
         if export_scope not in self._SUPPORTED_EXPORT_SCOPES:
             msg = f"Unsupported export_scope='{export_scope}' for {self.__class__.__name__}"
