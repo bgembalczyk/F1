@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import RED_FLAGGED_RACES
@@ -206,8 +207,7 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
         self.body_content_parser.content_text_parser.section_parser = parser
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        body_content = BodyContentParser.find_body_content(soup)
-        parsed = self.body_content_parser.parse(body_content) if body_content else {}
+        parsed = self._parse_document_structure(soup)
         world_records = self._collect_table_rows(
             parsed,
             table_type="red_flagged_world_championship_races",
@@ -221,6 +221,44 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
         if self._export_scope == "non_championship":
             return non_championship_records
         return [*world_records, *non_championship_records]
+
+    def _parse_document_structure(self, soup: BeautifulSoup) -> dict[str, Any]:
+        body_content = BodyContentParser.find_body_content(soup)
+        if body_content:
+            return self.body_content_parser.parse(body_content)
+
+        content_text = soup.find(
+            "div",
+            id=lambda x: x and "content-text" in x,
+            class_=lambda x: x
+            and any(
+                "body-content" in token
+                for token in (x if isinstance(x, list) else x.split())
+            ),
+        )
+        if not isinstance(content_text, Tag):
+            content_text = soup.find(
+                "div",
+                class_=lambda x: x
+                and "mw-content-ltr" in (x if isinstance(x, list) else x.split()),
+            )
+        if isinstance(content_text, Tag):
+            return {
+                "content_text": self.body_content_parser.content_text_parser.parse(
+                    content_text,
+                ),
+            }
+
+        fallback_root = soup.find("body")
+        if not isinstance(fallback_root, Tag):
+            fallback_root = soup.find("html")
+        if not isinstance(fallback_root, Tag):
+            return {"content_text": {"sections": []}}
+        return {
+            "content_text": self.body_content_parser.content_text_parser.parse(
+                fallback_root,
+            ),
+        }
 
     def _collect_table_rows(
         self,

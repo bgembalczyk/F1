@@ -22,6 +22,7 @@ from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
 )
 from scrapers.grands_prix.red_flagged_races_scraper import (
     NonChampionshipsRacesSubSectionParser,
+    RedFlaggedRacesScraper,
     RedFlaggedRacesSectionParser,
     WorldChampionshipsRacesTableParser,
 )
@@ -201,6 +202,36 @@ class TestRedFlaggedRacesScraperRobustness:
         # Should still parse successfully via fallback
         assert len(records) == 1
         # Note: caplog verification would require pytest, which may not be run in this context
+
+    def test_composite_scraper_without_bodycontent_wrapper(self):
+        """Test composite scraper fallback when HTML has no div#bodyContent wrapper."""
+        html = """
+        <html><body>
+        <div id="mw-content-text" class="mw-body-content">
+          <h2><span class="mw-headline" id="Red-flagged_races">Red-flagged races</span></h2>
+          <table class="wikitable">
+            <tr>
+              <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
+              <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
+              <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
+            </tr>
+            <tr>
+              <th>Drivers</th><th>Reason</th>
+            </tr>
+            <tr>
+              <td>2024</td><td>Monaco</td><td>5</td><td>Y</td>
+              <td>Driver</td><td>Crash</td><td></td><td></td><td>[1]</td>
+            </tr>
+          </table>
+        </div>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        scraper = RedFlaggedRacesScraper(export_scope="world_championship")
+        records = scraper.parse_soup(soup)
+
+        assert len(records) == 1
+        assert records[0]["season"] == "2024"
 
 
 if __name__ == "__main__":
