@@ -19,6 +19,8 @@ from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScrap
 class PointsScraper(BasePointsScraper):
     """Aggregate scraper joining all points scoring tables from one article."""
 
+    CONFIG = PointsScoringSystemsHistoryScraper.CONFIG
+
     def __init__(
         self,
         *,
