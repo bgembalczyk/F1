@@ -9,6 +9,8 @@ from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
+from layers.seed.registry.types import SeedName
+from layers.seed.registry.types import parse_seed_name
 from scrapers.circuits.helpers.export import export_complete_circuits
 from scrapers.constructors.helpers.export import export_complete_constructors
 from scrapers.drivers.helpers.export import export_complete_drivers
@@ -20,22 +22,22 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
+def _build_explicit_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
     return {
-        "grands_prix": GrandPrixRunner(),
-        "circuits": FunctionExportRunner(
+        SeedName.GRANDS_PRIX: GrandPrixRunner(),
+        SeedName.CIRCUITS: FunctionExportRunner(
             export_function=export_complete_circuits,
             component_metadata=build_runner_metadata("circuits"),
         ),
-        "drivers": FunctionExportRunner(
+        SeedName.DRIVERS: FunctionExportRunner(
             export_function=export_complete_drivers,
             component_metadata=build_runner_metadata("drivers"),
         ),
-        "seasons": FunctionExportRunner(
+        SeedName.SEASONS: FunctionExportRunner(
             export_function=export_complete_seasons,
             component_metadata=build_runner_metadata("seasons"),
         ),
-        "constructors": FunctionExportRunner(
+        SeedName.CONSTRUCTORS: FunctionExportRunner(
             export_function=export_complete_constructors,
             component_metadata=build_runner_metadata("constructors"),
         ),
@@ -43,57 +45,60 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
 
 
 def _merge_runner_maps(
-    discovered: dict[str, LayerOneRunnerProtocol],
-    explicit: dict[str, LayerOneRunnerProtocol],
-) -> dict[str, LayerOneRunnerProtocol]:
+    discovered: dict[SeedName, LayerOneRunnerProtocol],
+    explicit: dict[SeedName, LayerOneRunnerProtocol],
+) -> dict[SeedName, LayerOneRunnerProtocol]:
     merged = dict(discovered)
     for seed_name, runner in explicit.items():
         merged.setdefault(seed_name, runner)
     return merged
 
 
-def build_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
+def build_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
     explicit_runner_map = _build_explicit_layer_one_runner_map()
-    discovered_runner_map = build_layer_one_runner_map_discovered()
+    discovered_runner_map = {
+        parse_seed_name(seed_name): runner
+        for seed_name, runner in build_layer_one_runner_map_discovered().items()
+    }
     return _merge_runner_maps(discovered_runner_map, explicit_runner_map)
 
 
 def build_layer_zero_run_config_factory_map() -> dict[
-    str,
+    SeedName,
     LayerZeroRunConfigFactoryProtocol,
 ]:
     return {
-        "constructors_current": StaticScraperKwargsFactory(
+        SeedName.CONSTRUCTORS_CURRENT: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "current"},
         ),
-        "constructors_former": StaticScraperKwargsFactory(
+        SeedName.CONSTRUCTORS_FORMER: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "former"},
         ),
-        "constructors_indianapolis_only": StaticScraperKwargsFactory(
+        SeedName.CONSTRUCTORS_INDIANAPOLIS_ONLY: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "indianapolis"},
         ),
-        "constructors_privateer": StaticScraperKwargsFactory(
+        SeedName.CONSTRUCTORS_PRIVATEER: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "privateer"},
         ),
-        "engines_indianapolis_only": StaticScraperKwargsFactory(
+        SeedName.ENGINES_INDIANAPOLIS_ONLY: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "indianapolis_only"},
         ),
-        "points_sprint": StaticScraperKwargsFactory(
+        SeedName.POINTS_SPRINT: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "sprint"},
         ),
-        "points_shortened": StaticScraperKwargsFactory(
+        SeedName.POINTS_SHORTENED: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "shortened"},
         ),
-        "points_history": StaticScraperKwargsFactory(
+        SeedName.POINTS_HISTORY: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "history"},
         ),
-        "grands_prix_red_flagged_world_championship": StaticScraperKwargsFactory(
+        SeedName.GRANDS_PRIX_RED_FLAGGED_WORLD_CHAMPIONSHIP: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "world_championship"},
         ),
-        "grands_prix_red_flagged_non_championship": StaticScraperKwargsFactory(
+        SeedName.GRANDS_PRIX_RED_FLAGGED_NON_CHAMPIONSHIP: StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "non_championship"},
         ),
-        "sponsorship_liveries": SponsorshipLiveriesRunConfigFactory(),
+        SeedName.SPONSORSHIP_LIVERIES: SponsorshipLiveriesRunConfigFactory(),
     }
 
 

@@ -2,12 +2,15 @@ from dataclasses import asdict
 from dataclasses import dataclass
 from typing import Any
 
+from layers.seed.registry.types import DomainName
+from layers.seed.registry.types import SeedName
+
 
 @dataclass(frozen=True)
 class BaseRegistryEntry:
-    seed_name: str
+    seed_name: SeedName
     wikipedia_url: str
-    output_category: str
+    output_category: DomainName
     list_scraper_cls: type[Any]
 
     def to_dict(self) -> dict[str, Any]:

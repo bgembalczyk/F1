@@ -1,6 +1,8 @@
 from pathlib import Path
 
 from layers.orchestration.protocols import LayerExecutorProtocol
+from layers.seed.registry.types import RunProfile
+from layers.seed.registry.types import parse_run_profile
 from layers.zero.helpers import build_debug_run_config
 from scrapers.base.run_config import RunConfig
 
@@ -20,12 +22,14 @@ class WikiPipelineApplication:
         self._layer_one_executor = layer_one_executor
 
     def _build_run_config(self, *, profile: str = "debug") -> RunConfig:
-        if profile == "debug":
+        resolved_profile = parse_run_profile(profile)
+        if resolved_profile is RunProfile.DEBUG:
             return build_debug_run_config(
                 base_wiki_dir=self._base_wiki_dir,
                 base_debug_dir=self._base_debug_dir,
             )
-        raise ValueError(profile)
+        msg = f"Unsupported wiki pipeline profile: {resolved_profile.value}"
+        raise ValueError(msg)
 
     def run_layer_zero(self) -> None:
         run_config = self._build_run_config()

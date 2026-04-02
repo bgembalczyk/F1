@@ -11,12 +11,14 @@ from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.entries import BaseRegistryEntry
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
+from layers.seed.registry.types import SeedName
+from layers.seed.registry.types import parse_seed_name
 from scrapers.wiki.discovery import discover_layer_one_seed_components
 
 
 def _seed_entry_from_component(
     *,
-    seed_name: str,
+    seed_name: SeedName,
     component: Any,
     default_output_path: str,
     legacy_output_path: str,
@@ -84,8 +86,9 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
             ),
         )
 
-    for seed_name in sorted(discovered):
-        component = discovered[seed_name]
+    for raw_seed_name in sorted(discovered):
+        component = discovered[raw_seed_name]
+        seed_name = parse_seed_name(raw_seed_name)
         if seed_name in explicit_by_seed:
             continue
         metadata = component.metadata
