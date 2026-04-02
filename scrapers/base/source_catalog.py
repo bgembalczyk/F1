@@ -65,7 +65,7 @@ GRANDS_PRIX_LIST = SourceRef(
 SEASONS_LIST = SourceRef("List_of_Formula_One_seasons", section_id="Seasons")
 
 POINTS_SCORING_SYSTEMS = SourceRef(
-    "List_of_Formula_One_World_Championship_points_scoring_systems",
+    "List_of_Formula_One_points_systems",
 )
 
 ENGINES_LIST = SourceRef(
