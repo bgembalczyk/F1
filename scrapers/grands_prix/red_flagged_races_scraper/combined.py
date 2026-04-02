@@ -5,15 +5,15 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
+from scrapers.base.source_catalog import RED_FLAGGED_RACES
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.grands_prix.red_flagged_races_scraper.base import RedFlaggedRacesBaseScraper
-from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
-    RedFlaggedNonChampionshipRacesScraper,
-)
-from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
-    RedFlaggedWorldChampionshipRacesScraper,
-)
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
+from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 
@@ -147,13 +147,24 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
     """Composite scraper that returns both world and non-championship red-flagged races."""
 
     _SUPPORTED_EXPORT_SCOPES = {"all", "world_championship", "non_championship"}
+    _SCHEMA_COLUMNS = RedFlaggedRacesBaseScraper.build_common_red_flag_columns()
+    _SCHEMA_COLUMNS[1] = column("Grand Prix", "grand_prix", UrlColumn())
 
     CONFIG = build_scraper_config(
-        url=RedFlaggedWorldChampionshipRacesScraper.CONFIG.url,
-        section_id=RedFlaggedWorldChampionshipRacesScraper.CONFIG.section_id,
-        expected_headers=RedFlaggedWorldChampionshipRacesScraper.CONFIG.expected_headers,
-        schema=RedFlaggedWorldChampionshipRacesScraper.CONFIG.schema,
-        record_factory=RedFlaggedWorldChampionshipRacesScraper.CONFIG.record_factory,
+        url=RED_FLAGGED_RACES.base_url,
+        section_id=RED_FLAGGED_RACES.section_id,
+        expected_headers=[
+            "Year",
+            "Grand Prix",
+            "Lap",
+            "R",
+            "Winner",
+            "Incident that prompted red flag",
+        ],
+        schema=TableSchemaDSL(
+            columns=_SCHEMA_COLUMNS,
+        ),
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
     def __init__(
@@ -170,16 +181,45 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
         parser = RedFlaggedRacesSectionParser()
         self.section_parser = parser
         self.body_content_parser.content_text_parser.section_parser = parser
-        self._world_scraper = RedFlaggedWorldChampionshipRacesScraper(options=options)
-        self._non_championship_scraper = RedFlaggedNonChampionshipRacesScraper(
-            options=options,
-        )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        body_content = BodyContentParser.find_body_content(soup)
+        parsed = self.body_content_parser.parse(body_content) if body_content else {}
+        world_records = self._collect_table_rows(
+            parsed,
+            table_type="red_flagged_world_championship_races",
+        )
+        non_championship_records = self._collect_table_rows(
+            parsed,
+            table_type="red_flagged_non_championship_races",
+        )
         if self._export_scope == "world_championship":
-            return self._world_scraper.parse_soup(soup)
+            return world_records
         if self._export_scope == "non_championship":
-            return self._non_championship_scraper.parse_soup(soup)
-        world_records = self._world_scraper.parse_soup(soup)
-        non_championship_records = self._non_championship_scraper.parse_soup(soup)
+            return non_championship_records
         return [*world_records, *non_championship_records]
+
+    def _collect_table_rows(
+        self,
+        payload: dict[str, Any],
+        *,
+        table_type: str,
+    ) -> list[dict[str, Any]]:
+        rows: list[dict[str, Any]] = []
+
+        def visit(node: Any) -> None:
+            if isinstance(node, dict):
+                if node.get("table_type") == table_type:
+                    table_rows = node.get("domain_rows", [])
+                    if isinstance(table_rows, list):
+                        rows.extend(
+                            [row for row in table_rows if isinstance(row, dict)],
+                        )
+                for value in node.values():
+                    visit(value)
+            elif isinstance(node, list):
+                for item in node:
+                    visit(item)
+
+        visit(payload)
+        return rows

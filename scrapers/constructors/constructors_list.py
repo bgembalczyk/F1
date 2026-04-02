@@ -11,12 +11,10 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
 from scrapers.base.source_catalog import CONSTRUCTORS_LIST
-from scrapers.constructors.current_constructors_list import CurrentConstructorsListScraper
-from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
-from scrapers.constructors.indianapolis_only_constructors_list import (
-    IndianapolisOnlyConstructorsListScraper,
-)
-from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
+from scrapers.constructors.config_factory import build_constructor_list_config
+from scrapers.constructors.constants import CURRENT_YEAR
+from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
+from scrapers.constructors.constants import FORMER_CONSTRUCTORS_EXPECTED_HEADERS
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsSectionParser
@@ -30,11 +28,20 @@ class ConstructorsListScraper(F1ListScraper):
     """Combined constructors list scraper for all constructors list sections."""
 
     url = CONSTRUCTORS_LIST.base_url
-    combined_scraper_classes = (
-        CurrentConstructorsListScraper,
-        FormerConstructorsListScraper,
-        IndianapolisOnlyConstructorsListScraper,
-        PrivateerTeamsListScraper,
+    _CURRENT_SECTION_ID = f"Constructors_for_the_{CURRENT_YEAR}_season"
+    _CURRENT_SECTION_LABEL = "Current constructors"
+    _FORMER_SECTION_ID = "Former_constructors"
+    _FORMER_SECTION_LABEL = "Former constructors"
+    _PRIVATEER_SECTION_ID = "Privateer_teams"
+    _CURRENT_CONFIG = build_constructor_list_config(
+        section_id=_CURRENT_SECTION_ID,
+        expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
+        columns=[],
+    )
+    _FORMER_CONFIG = build_constructor_list_config(
+        section_id=_FORMER_SECTION_ID,
+        expected_headers=FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
+        columns=[],
     )
 
     _SECTION_PARSER_EXPORT_KEY = "section_parser"
@@ -62,13 +69,13 @@ class ConstructorsListScraper(F1ListScraper):
 
         current_section = selector.extract_section_by_id(
             soup,
-            CurrentConstructorsListScraper.CONFIG.section_id,
+            self._CURRENT_SECTION_ID,
             domain="constructors",
         )
         if current_section is not None:
             current_parser = CurrentConstructorsSectionParser(
-                config=CurrentConstructorsListScraper.CONFIG,
-                section_label=CurrentConstructorsListScraper.section_label,
+                config=self._CURRENT_CONFIG,
+                section_label=self._CURRENT_SECTION_LABEL,
                 include_urls=self.include_urls,
                 normalize_empty_values=self.normalize_empty_values,
             )
@@ -81,13 +88,13 @@ class ConstructorsListScraper(F1ListScraper):
 
         former_section = selector.extract_section_by_id(
             soup,
-            FormerConstructorsListScraper.CONFIG.section_id,
+            self._FORMER_SECTION_ID,
             domain="constructors",
         )
         if former_section is not None:
             former_parser = FormerConstructorsSectionParser(
-                config=FormerConstructorsListScraper.CONFIG,
-                section_label=FormerConstructorsListScraper.section_label,
+                config=self._FORMER_CONFIG,
+                section_label=self._FORMER_SECTION_LABEL,
                 include_urls=self.include_urls,
                 normalize_empty_values=self.normalize_empty_values,
             )
@@ -105,7 +112,7 @@ class ConstructorsListScraper(F1ListScraper):
 
         privateer_section = selector.extract_section_by_id(
             soup,
-            PrivateerTeamsListScraper.section_id,
+            self._PRIVATEER_SECTION_ID,
             domain="constructors",
         )
         if privateer_section is not None:
