@@ -54,7 +54,7 @@ def create_default_wiki_pipeline_application(
             ),
             should_mirror_predicate=(
                 lambda job: job.list_scraper_cls.__name__
-                == "CurrentConstructorsListScraper"
+                in {"CurrentConstructorsListScraper", "ConstructorsListScraper"}
             ),
         ),
         year_provider=_current_year,

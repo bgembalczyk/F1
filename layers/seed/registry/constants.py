@@ -6,35 +6,18 @@ from layers.seed.data_classes import RegistryValidationSpec
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.constructors.current_constructors_list import (
-    CurrentConstructorsListScraper,
-)
-from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
-from scrapers.constructors.indianapolis_only_constructors_list import (
-    IndianapolisOnlyConstructorsListScraper,
-)
-from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
+from scrapers.constructors.constructors_list import ConstructorsListScraper
 from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
 from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.engine_regulation import EngineRegulationScraper
 from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
-from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
-    IndianapolisOnlyEngineManufacturersListScraper,
-)
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
-from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
-    RedFlaggedNonChampionshipRacesScraper,
+from scrapers.grands_prix.red_flagged_races_scraper.combined import (
+    RedFlaggedRacesScraper,
 )
-from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
-    RedFlaggedWorldChampionshipRacesScraper,
-)
-from scrapers.points.points_scoring_systems_history import (
-    PointsScoringSystemsHistoryScraper,
-)
-from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
-from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
+from scrapers.points.points_scraper import PointsScraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersScraper
@@ -130,25 +113,25 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
     ),
     RawRegistrySpec(
         seed_name="constructors_current",
-        list_scraper_cls=CurrentConstructorsListScraper,
+        list_scraper_cls=ConstructorsListScraper,
         output_category="constructors",
         list_filename="f1_constructors_{year}.json",
     ),
     RawRegistrySpec(
         seed_name="constructors_former",
-        list_scraper_cls=FormerConstructorsListScraper,
+        list_scraper_cls=ConstructorsListScraper,
         output_category="chassis_constructors",
         list_filename="f1_former_constructors.json",
     ),
     RawRegistrySpec(
         seed_name="constructors_indianapolis_only",
-        list_scraper_cls=IndianapolisOnlyConstructorsListScraper,
+        list_scraper_cls=ConstructorsListScraper,
         output_category="chassis_constructors",
         list_filename="f1_indianapolis_only_constructors.json",
     ),
     RawRegistrySpec(
         seed_name="constructors_privateer",
-        list_scraper_cls=PrivateerTeamsListScraper,
+        list_scraper_cls=ConstructorsListScraper,
         output_category="teams",
         list_filename="f1_privateer_teams.json",
     ),
@@ -186,7 +169,7 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
     ),
     RawRegistrySpec(
         seed_name="engines_indianapolis_only",
-        list_scraper_cls=IndianapolisOnlyEngineManufacturersListScraper,
+        list_scraper_cls=EngineManufacturersListScraper,
         output_category="engines",
         list_filename="f1_indianapolis_only_engine_manufacturers.json",
     ),
@@ -210,31 +193,31 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
     ),
     RawRegistrySpec(
         seed_name="grands_prix_red_flagged_world_championship",
-        list_scraper_cls=RedFlaggedWorldChampionshipRacesScraper,
+        list_scraper_cls=RedFlaggedRacesScraper,
         output_category="races",
         list_filename="f1_red_flagged_world_championship_races.json",
     ),
     RawRegistrySpec(
         seed_name="grands_prix_red_flagged_non_championship",
-        list_scraper_cls=RedFlaggedNonChampionshipRacesScraper,
+        list_scraper_cls=RedFlaggedRacesScraper,
         output_category="races",
         list_filename="f1_red_flagged_non_championship_races.json",
     ),
     RawRegistrySpec(
         seed_name="points_sprint",
-        list_scraper_cls=SprintQualifyingPointsScraper,
+        list_scraper_cls=PointsScraper,
         output_category="points",
         list_filename="points_scoring_systems_sprint.json",
     ),
     RawRegistrySpec(
         seed_name="points_shortened",
-        list_scraper_cls=ShortenedRacePointsScraper,
+        list_scraper_cls=PointsScraper,
         output_category="points",
         list_filename="points_scoring_systems_shortened.json",
     ),
     RawRegistrySpec(
         seed_name="points_history",
-        list_scraper_cls=PointsScoringSystemsHistoryScraper,
+        list_scraper_cls=PointsScraper,
         output_category="points",
         list_filename="points_scoring_systems_history.json",
     ),
@@ -252,7 +235,7 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
     ),
     RawRegistrySpec(
         seed_name="constructors",
-        list_scraper_cls=CurrentConstructorsListScraper,
+        list_scraper_cls=ConstructorsListScraper,
         output_category="constructors",
         list_filename="f1_constructors_{year}.json",
         seed_filename="complete_constructors",
