@@ -9,11 +9,11 @@ from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
-from scrapers.circuits.helpers.export import export_complete_circuits
-from scrapers.constructors.helpers.export import export_complete_constructors
-from scrapers.drivers.helpers.export import export_complete_drivers
-from scrapers.engines.helpers.export import export_complete_engine_manufacturers
-from scrapers.seasons.helpers import export_complete_seasons
+from scrapers.circuits import export_complete_circuits
+from scrapers.constructors import export_complete_constructors
+from scrapers.drivers import export_complete_drivers
+from scrapers.engines import export_complete_engine_manufacturers
+from scrapers.seasons import export_complete_seasons
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
@@ -24,19 +24,19 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
     return {
         "grands_prix": GrandPrixRunner(),
         "circuits": FunctionExportRunner(
-            export_function=export_complete_circuits,
+            export=export_complete_circuits,
             component_metadata=build_runner_metadata("circuits"),
         ),
         "drivers": FunctionExportRunner(
-            export_function=export_complete_drivers,
+            export=export_complete_drivers,
             component_metadata=build_runner_metadata("drivers"),
         ),
         "seasons": FunctionExportRunner(
-            export_function=export_complete_seasons,
+            export=export_complete_seasons,
             component_metadata=build_runner_metadata("seasons"),
         ),
         "constructors": FunctionExportRunner(
-            export_function=export_complete_constructors,
+            export=export_complete_constructors,
             component_metadata=build_runner_metadata("constructors"),
         ),
     }

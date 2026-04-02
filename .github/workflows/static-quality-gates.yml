@@ -14,6 +14,9 @@ env:
   NEW_DUPLICATES_WARN_THRESHOLD: "1"
   NEW_DUPLICATES_FAIL_THRESHOLD: "3"
   MYPY_ERROR_BUDGET: "0"
+  FUNCTION_MAX_LINES: "80"
+  FUNCTION_MAX_NESTING: "4"
+  FUNCTION_MAX_BRANCHES: "12"
 
 jobs:
   static-analysis:
@@ -159,6 +162,41 @@ jobs:
             exit 1
           fi
 
+
+      - name: Function complexity gate (length/nesting/branching)
+        if: steps.changed-py.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          python scripts/ci/enforce_function_complexity.py \
+            --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
+            --head-sha "${{ github.sha }}" \
+            --changed-files "${{ steps.changed-py.outputs.changed_files }}" \
+            --max-function-lines "${FUNCTION_MAX_LINES}" \
+            --max-nesting "${FUNCTION_MAX_NESTING}" \
+            --max-branches "${FUNCTION_MAX_BRANCHES}"
+
+      - name: Magic source-name strings gate
+        if: steps.changed-py.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          python scripts/ci/enforce_source_name_magic_strings.py \
+            --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
+            --head-sha "${{ github.sha }}" \
+            --changed-files "${{ steps.changed-py.outputs.changed_files }}"
+
+      - name: Duplicate default-config values gate
+        shell: bash
+        run: |
+          python scripts/ci/check_duplicate_default_configs.py
+
+      - name: No new print(...) outside allowlist gate
+        if: steps.changed-py.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          python scripts/ci/enforce_no_new_prints.py \
+            --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
+            --head-sha "${{ github.sha }}" \
+            --changed-files "${{ steps.changed-py.outputs.changed_files }}"
       - name: Architectural import rules (import-linter)
         run: |
           lint-imports --config importlinter.ini
@@ -173,6 +211,15 @@ jobs:
           python scripts/ci/enforce_new_module_any_policy.py \
             --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
             --head-sha "${{ github.sha }}"
+
+      - name: Complexity structure gate for changed Python files (ruff)
+        if: steps.changed-py.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          mapfile -t PY_FILES < <(echo "${{ steps.changed-py.outputs.changed_files }}" | tr ',' '\n' | sed '/^$/d')
+          ruff check "${PY_FILES[@]}" \
+            --preview \
+            --select PLR0912,PLR0915,PLR1702
 
       - name: Strict typing regression gate (mypy)
         shell: bash

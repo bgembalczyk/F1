@@ -26,16 +26,12 @@ from scrapers.seasons.columns.helpers.race_result.rules.mark_based_eligibility i
     MarkBasedEligibilityRule,
 )
 from scrapers.seasons.columns.helpers.race_result.rules.protocol import ResultRule
-from scrapers.seasons.columns.helpers.race_result.rules.round.context import (
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
+    DoublePointsRoundRule,
+    HalfPointsRoundRule,
+    RoundRule,
     RoundRuleContext,
 )
-from scrapers.seasons.columns.helpers.race_result.rules.round.double_points import (
-    DoublePointsRoundRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.round.half_points import (
-    HalfPointsRoundRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.round.protocol import RoundRule
 from scrapers.seasons.columns.helpers.race_result.rules.shared import SharedDriveRule
 from scrapers.seasons.columns.helpers.race_result.rules.star_mark_note import (
     StarMarkNoteRule,

@@ -31,6 +31,10 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
 
 ## Reguły praktyczne
 
+0. **Reguła składni nazwy (max 3 człony)**.
+   - Stosuj schemat: `czasownik + obiekt + (opcjonalny kontekst)`.
+   - Przykłady: `build_runner_map`, `merge_layer_zero`, `export_results_csv`.
+   - Nie doklejaj członów, które dublują już informację z typu pola/klasy.
 1. **Unikaj nowych `helpers.py`**.
    - Preferuj nazwy celu, np. `runner_registry.py`, `run_profile_paths.py`, `seed_record_projection.py`.
 2. Dla istniejących mylących nazw stosuj migrację bez breaking change:
@@ -43,3 +47,4 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
 - [ ] Każdy nowy moduł ma nazwę odzwierciedlającą jedną z ról: `Service`, `Factory`, `Runner`, `Adapter`, `EntryPoint` albo nazwę celu technicznego.
 - [ ] Nie dodano nowego pliku o nazwie `helpers.py` bez ADR/uzasadnienia.
 - [ ] Jeśli zmieniono mylącą nazwę, zachowano alias legacy + deprecację.
+- [ ] Nowe nazwy pól/argumentów/metod nie dublują informacji już zakodowanej w typie (`*_service`, `*_builder`, `*_function` tylko gdy dodają semantykę).
