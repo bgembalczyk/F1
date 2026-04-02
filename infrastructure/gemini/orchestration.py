@@ -1,6 +1,6 @@
 from typing import Any, Callable
 
-from infrastructure.gemini.cache_service import GeminiCacheService
+from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.model_selector import ModelSelector
 
 
@@ -11,10 +11,10 @@ class GeminiOrchestrationService:
         self,
         *,
         model_selector: ModelSelector,
-        cache_service: GeminiCacheService,
+        cache: GeminiCache,
     ) -> None:
         self._model_selector = model_selector
-        self._cache_service = cache_service
+        self._cache = cache
 
     def run(
         self,
@@ -37,7 +37,7 @@ class GeminiOrchestrationService:
                 )
                 raise RuntimeError(msg)
 
-            cached = self._cache_service.get(prompt, model)
+            cached = self._cache.get(prompt, model)
             if cached is not None:
                 print(
                     f"[GeminiClient] Cache hit (model={model}), pomijam wywołanie API.",
@@ -53,5 +53,5 @@ class GeminiOrchestrationService:
                 error_models.add(model)
                 continue
 
-            self._cache_service.set(prompt, model, result)
+            self._cache.set(prompt, model, result)
             return result
