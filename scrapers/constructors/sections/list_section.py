@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import replace
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -181,14 +180,7 @@ class FormerConstructorsSectionParser(_ConstructorsTableSectionParser):
         )
         self._indianapolis_sub_section_parser = IndianapolisOnlySubSectionParser()
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        base_result = super().parse(section_fragment)
-        indianapolis_records = self._parse_indianapolis_records(section_fragment)
-        if not indianapolis_records:
-            return base_result
-        return replace(base_result, records=[*base_result.records, *indianapolis_records])
-
-    def _parse_indianapolis_records(
+    def parse_indianapolis_only_records(
         self,
         section_fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:
@@ -197,16 +189,16 @@ class FormerConstructorsSectionParser(_ConstructorsTableSectionParser):
         if not isinstance(records, list):
             return []
 
-        if not self._include_urls:
-            for record in records:
-                if isinstance(record, dict):
-                    record.pop("constructor_url", None)
-            return records
-
+        normalized_records: list[dict[str, Any]] = []
         for record in records:
             if not isinstance(record, dict):
                 continue
-            url = record.get("constructor_url")
-            if isinstance(url, str) and url.startswith("/"):
-                record["constructor_url"] = f"https://en.wikipedia.org{url}"
-        return records
+            normalized = dict(record)
+            if not self._include_urls:
+                normalized.pop("constructor_url", None)
+            else:
+                url = normalized.get("constructor_url")
+                if isinstance(url, str) and url.startswith("/"):
+                    normalized["constructor_url"] = f"https://en.wikipedia.org{url}"
+            normalized_records.append(normalized)
+        return normalized_records
