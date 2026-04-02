@@ -40,6 +40,12 @@ Faza przejściowa z aliasami importów została domknięta — aliasy usunięto 
 
 Warstwy komunikują się przez kontrakty i orchestration w scraperach domenowych, nie przez ciasne importy między katalogami warstw.
 
+### Aktualizacja po uproszczeniu abstrakcji (2026-04-02)
+
+- Fabryki usług sekcji zostały uproszczone: per-domenowe klasy pass-through (`*SectionServiceFactory`) zastąpiono jedną konfigurującą fabryką bazową `ConfigurableSectionServiceFactory` w `scrapers/base/sections/factory.py`.
+- Abstrakcję kontraktową `SectionServiceFactory` pozostawiono, bo realnie wspiera testowalność (podmiana zależności przez `for_tests(...)`) i zmienność implementacji.
+- Usunięto przestarzały wrapper `SectionAdapter.parse_section_dicts(...)`; granica serializacji sekcji jest teraz jednoznaczna: `SectionAdapter.assemble_section_dicts(...)`.
+
 ### Niedozwolone kierunki importu
 
 - `sections/ -> single_scraper.py`

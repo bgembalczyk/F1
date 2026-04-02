@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from scrapers.base.sections.factory import ValidatingSectionServiceFactory
+from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.circuits.services.domain_record import DomainRecordService
@@ -11,32 +11,7 @@ from scrapers.circuits.services.domain_record import DomainRecordService
 if TYPE_CHECKING:
     from scrapers.base.infobox.service import InfoboxExtractionService
     from scrapers.base.options import ScraperOptions
-    from scrapers.base.sections.adapter import SectionAdapter
     from scrapers.base.sections.interface import SectionServiceFactory
-
-
-class CircuitSectionServiceFactory(
-    ValidatingSectionServiceFactory[CircuitSectionExtractionService],
-):
-    def create(
-        self,
-        *,
-        adapter: SectionAdapter,
-        options: ScraperOptions | None = None,
-        url: str | None = None,
-    ) -> CircuitSectionExtractionService:
-        self._validate_dependencies(
-            adapter=adapter,
-            options=options,
-            url=url,
-            require_options=True,
-            require_url=True,
-        )
-        return CircuitSectionExtractionService(
-            adapter=adapter,
-            options=options,
-            url=url,
-        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -85,7 +60,11 @@ class CircuitScraperCompositionFactory:
 
         sections_service_factory = self.sections_service_factory
         if sections_service_factory is None:
-            sections_service_factory = CircuitSectionServiceFactory()
+            sections_service_factory = ConfigurableSectionServiceFactory(
+                service_cls=CircuitSectionExtractionService,
+                require_options=True,
+                require_url=True,
+            )
 
         domain_record_service = self.domain_record_service
         if domain_record_service is None:
