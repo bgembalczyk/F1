@@ -30,6 +30,20 @@ class LegacyRunIdOnlyScraper:
         return []
 
 
+class _OptionsOnlyBase:
+    def __init__(self, *, options: ScraperOptions) -> None:
+        self.options = options
+
+
+class KwargsPassthroughOptionsScraper(_OptionsOnlyBase):
+    def __init__(self, **kwargs) -> None:
+        self.kwargs = kwargs
+        super().__init__(**kwargs)
+
+    def fetch(self):
+        return []
+
+
 def test_factory_creates_new_style_scraper_with_options() -> None:
     run_config = RunConfig(include_urls=False, http_timeout=21)
 
@@ -70,6 +84,20 @@ def test_factory_creates_legacy_scraper_without_include_urls_when_disabled() -> 
     )
 
     assert scraper.run_id == "legacy-run-id"
+
+
+def test_factory_does_not_inject_run_id_for_kwargs_passthrough_options_scraper() -> None:
+    run_config = RunConfig(include_urls=False)
+
+    scraper = ScraperFactory().create(
+        scraper_cls=KwargsPassthroughOptionsScraper,
+        run_config=run_config,
+        run_id="run-id-from-factory",
+    )
+
+    assert "run_id" not in scraper.kwargs
+    assert isinstance(scraper.options, ScraperOptions)
+    assert scraper.options.run_id == "run-id-from-factory"
 
 
 class _AlwaysAdapter:
