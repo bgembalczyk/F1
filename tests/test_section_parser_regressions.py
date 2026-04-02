@@ -7,6 +7,8 @@ from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
+from scrapers.constructors.constructors_list import ConstructorsListScraper
+from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.seasons.parsers.results import SeasonResultsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -129,3 +131,44 @@ def test_circuits_section_parser_falls_back_to_legacy_full_document_search() -> 
 
     assert data
     assert data[0]["circuit"]["text"] == "Spa"
+
+
+def test_current_constructors_section_parser_retries_with_table_only_fragment() -> None:
+    section_fragment = BeautifulSoup(
+        """
+        <div class="mw-heading mw-heading2">
+          <h2 id="Constructors_for_the_2026_season">Constructors for the 2026 season</h2>
+        </div>
+        <table class="wikitable sortable">
+          <tr><th>Constructor</th><th>Engine</th><th>Licensed in</th><th>Based in</th></tr>
+          <tr><td>Ferrari</td><td>Ferrari</td><td>Italy</td><td>Italy</td></tr>
+        </table>
+        """,
+        "html.parser",
+    )
+
+    parser = CurrentConstructorsSectionParser(
+        config=ConstructorsListScraper._CURRENT_CONFIG,
+        section_label="Current constructors",
+        include_urls=False,
+        normalize_empty_values=False,
+    )
+
+    call_count = 0
+    original_parse = parser._parser.parse
+
+    def flaky_parse(fragment: BeautifulSoup):
+        nonlocal call_count
+        call_count += 1
+        has_heading = fragment.find("h2", id="Constructors_for_the_2026_season") is not None
+        if has_heading:
+            raise RuntimeError("forced failure on full section fragment")
+        return original_parse(fragment)
+
+    parser._parser.parse = flaky_parse
+
+    result = parser.parse(section_fragment)
+
+    assert call_count == 2
+    assert result.records
+    assert result.records[0]["constructor"] == "Ferrari"

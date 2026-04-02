@@ -4,6 +4,8 @@ import logging
 from typing import TYPE_CHECKING
 from typing import Any
 
+from bs4 import BeautifulSoup
+
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser
@@ -17,8 +19,6 @@ from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser as WikiSectionParser
 
 if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
-
     from scrapers.base.sections.interface import SectionParseResult
     from scrapers.base.table.config import ScraperConfig
 
@@ -102,6 +102,12 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
         try:
             return self._parser.parse(section_fragment)
         except RuntimeError:
+            if table is not None:
+                table_only_fragment = BeautifulSoup(str(table), "html.parser")
+                try:
+                    return self._parser.parse(table_only_fragment)
+                except RuntimeError:
+                    pass
             logger.warning(
                 "Skipping constructors section '%s': matching table not found.",
                 self._parser._section_label,
