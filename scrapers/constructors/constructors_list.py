@@ -19,9 +19,6 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
-from scrapers.constructors.indianapolis_only_constructors_list import (
-    IndianapolisOnlySubSectionParser,
-)
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsSectionParser
 from scrapers.base.results import ScrapeResult
 
@@ -100,7 +97,9 @@ class ConstructorsListScraper(F1ListScraper):
             self._split_export_records[self._SECTION_PARSER_EXPORT_KEY].extend(
                 former_records,
             )
-            indianapolis_records = self._parse_indianapolis_only_records(former_section)
+            indianapolis_records = former_parser.parse_indianapolis_only_records(
+                former_section,
+            )
             if self._should_include_scope("indianapolis"):
                 records.extend(indianapolis_records)
 
@@ -129,26 +128,6 @@ class ConstructorsListScraper(F1ListScraper):
                 privateer_records,
             )
 
-        return records
-
-    def _parse_indianapolis_only_records(self, former_section: Any) -> list[dict[str, Any]]:
-        parser = IndianapolisOnlySubSectionParser()
-        parsed = parser.parse(former_section)
-        parsed_records = parsed.get("items", [])
-        if not isinstance(parsed_records, list):
-            return []
-        records: list[dict[str, Any]] = []
-        for record in parsed_records:
-            if not isinstance(record, dict):
-                continue
-            normalized = dict(record)
-            if not self.include_urls:
-                normalized.pop("constructor_url", None)
-            else:
-                url = normalized.get("constructor_url")
-                if isinstance(url, str) and url.startswith("/"):
-                    normalized["constructor_url"] = self._full_url(url)
-            records.append(normalized)
         return records
 
     def _should_include_scope(self, scope: str) -> bool:

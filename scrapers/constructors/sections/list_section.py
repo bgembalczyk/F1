@@ -7,6 +7,7 @@ from typing import Any
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser
+from scrapers.constructors.indianapolis_only_constructors_list import IndianapolisOnlySubSectionParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser as WikiSectionParser
 
@@ -177,3 +178,27 @@ class FormerConstructorsSectionParser(_ConstructorsTableSectionParser):
             normalize_empty_values=normalize_empty_values,
             table_parser=FormerConstructorsTableParser(),
         )
+        self._indianapolis_sub_section_parser = IndianapolisOnlySubSectionParser()
+
+    def parse_indianapolis_only_records(
+        self,
+        section_fragment: BeautifulSoup,
+    ) -> list[dict[str, Any]]:
+        parsed = self._indianapolis_sub_section_parser.parse(section_fragment)
+        records = parsed.get("items", [])
+        if not isinstance(records, list):
+            return []
+
+        normalized_records: list[dict[str, Any]] = []
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            normalized = dict(record)
+            if not self._include_urls:
+                normalized.pop("constructor_url", None)
+            else:
+                url = normalized.get("constructor_url")
+                if isinstance(url, str) and url.startswith("/"):
+                    normalized["constructor_url"] = f"https://en.wikipedia.org{url}"
+            normalized_records.append(normalized)
+        return normalized_records
