@@ -1,6 +1,8 @@
 import json
+import logging
 import re
 from collections.abc import Callable
+from dataclasses import dataclass
 from pathlib import Path
 
 from layers.zero.merge_types import DriverRecordModel
@@ -23,6 +25,9 @@ RecordTransformHandler = Callable[
     [str, str, dict[str, object]],
     dict[str, object],
 ]
+DomainPostProcessHandler = Callable[[list[object]], list[object]]
+
+LOGGER = logging.getLogger(__name__)
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -730,7 +735,71 @@ def _append_livery_to_season(season: object, livery_payload: dict[str, object]) 
     season_dict["liveries"] = season_liveries
 
 
-def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
+@dataclass(frozen=True)
+class DomainPostProcessStep:
+    name: str
+    handler: DomainPostProcessHandler
+
+
+def merge_duplicates(records: list[object]) -> list[object]:
+    return _merge_duplicate_drivers(records)
+
+
+def merge_team_duplicates(records: list[object]) -> list[object]:
+    return _merge_duplicate_teams(records)
+
+
+def normalize_fields(records: list[object]) -> list[object]:
+    return [_nest_team_liveries_in_seasons(record) for record in records]
+
+
+def sort_records_by_driver(records: list[object]) -> list[object]:
+    return sorted(records, key=_driver_sort_key)
+
+
+def sort_records_by_constructor(records: list[object]) -> list[object]:
+    return sorted(records, key=_constructor_sort_key)
+
+
+def sort_records_by_team(records: list[object]) -> list[object]:
+    return sorted(records, key=_team_sort_key)
+
+
+def sort_records_by_season(records: list[object]) -> list[object]:
+    return sorted(records, key=_season_sort_key)
+
+
+DOMAIN_POST_PROCESS_STEPS: dict[str, tuple[DomainPostProcessStep, ...]] = {
+    "drivers": (
+        DomainPostProcessStep(name="merge_duplicates", handler=merge_duplicates),
+        DomainPostProcessStep(name="sort_records", handler=sort_records_by_driver),
+    ),
+    "teams": (
+        DomainPostProcessStep(name="merge_duplicates", handler=merge_team_duplicates),
+        DomainPostProcessStep(name="normalize_fields", handler=normalize_fields),
+        DomainPostProcessStep(name="sort_records", handler=sort_records_by_team),
+    ),
+    "seasons": (
+        DomainPostProcessStep(name="sort_records", handler=sort_records_by_season),
+    ),
+}
+for _domain in CHASSIS_CONSTRUCTOR_DOMAINS:
+    DOMAIN_POST_PROCESS_STEPS.setdefault(
+        _domain,
+        (
+            DomainPostProcessStep(
+                name="sort_records",
+                handler=sort_records_by_constructor,
+            ),
+        ),
+    )
+
+
+def merge_layer_zero_raw_outputs(
+    base_wiki_dir: Path,
+    *,
+    diagnostic_step: str | None = None,
+) -> None:
     layer_zero_dir = base_wiki_dir / "layers" / "0_layer"
     if not layer_zero_dir.exists():
         return
@@ -739,7 +808,11 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
         merged_records = _load_domain_records(domain_dir)
         if not merged_records:
             continue
-        merged_records = _post_process_domain_records(domain_dir.name, merged_records)
+        merged_records = _post_process_domain_records(
+            domain_dir.name,
+            merged_records,
+            diagnostic_step=diagnostic_step,
+        )
         _write_merged_domain_records(domain_dir, merged_records)
 
 
@@ -766,38 +839,48 @@ def _load_domain_records(domain_dir: Path) -> list[object]:
     return merged_records
 
 
-def _domain_post_processors(
+def _domain_post_processors(domain: str) -> tuple[DomainPostProcessStep, ...]:
+    return DOMAIN_POST_PROCESS_STEPS.get(domain, ())
+
+
+def _record_fingerprint(record: object) -> str:
+    return json.dumps(record, ensure_ascii=False, sort_keys=True, default=str)
+
+
+def _count_step_changes(before: list[object], after: list[object]) -> int:
+    changed = abs(len(after) - len(before))
+    for previous, current in zip(before, after, strict=False):
+        if _record_fingerprint(previous) != _record_fingerprint(current):
+            changed += 1
+    return changed
+
+
+def _post_process_domain_records(
     domain: str,
-) -> list[Callable[[list[object]], list[object]]]:
-    processors: list[Callable[[list[object]], list[object]]] = []
-    if domain == "drivers":
-        processors.extend(
-            [
-                _merge_duplicate_drivers,
-                lambda items: sorted(items, key=_driver_sort_key),
-            ],
-        )
-    if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
-        processors.append(lambda items: sorted(items, key=_constructor_sort_key))
-    if domain == "teams":
-        processors.extend(
-            [
-                _merge_duplicate_teams,
-                lambda items: [
-                    _nest_team_liveries_in_seasons(record) for record in items
-                ],
-                lambda items: sorted(items, key=_team_sort_key),
-            ],
-        )
-    if domain == "seasons":
-        processors.append(lambda items: sorted(items, key=_season_sort_key))
-    return processors
-
-
-def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
+    records: list[object],
+    *,
+    diagnostic_step: str | None = None,
+) -> list[object]:
     merged_records = records
-    for processor in _domain_post_processors(domain):
-        merged_records = processor(merged_records)
+    for step in _domain_post_processors(domain):
+        if diagnostic_step is not None and step.name != diagnostic_step:
+            continue
+        before = list(merged_records)
+        LOGGER.debug(
+            "Post-process step '%s' domain=%s input_records=%d",
+            step.name,
+            domain,
+            len(before),
+        )
+        merged_records = step.handler(merged_records)
+        changes = _count_step_changes(before, merged_records)
+        LOGGER.debug(
+            "Post-process step '%s' domain=%s output_records=%d changes=%d",
+            step.name,
+            domain,
+            len(merged_records),
+            changes,
+        )
     return merged_records
 
 
