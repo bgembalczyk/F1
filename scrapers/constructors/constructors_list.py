@@ -276,8 +276,3 @@ class ConstructorsListScraper(F1ListScraper):
         output_path = Path(path)
         return output_path.with_name(f"{output_path.stem}_{parser_kind}{output_path.suffix}")
 
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

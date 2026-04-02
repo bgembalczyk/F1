@@ -761,3 +761,31 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         app.run_layer_zero()
     if args.mode in {"layer1", "full"}:
         app.run_layer_one()
+
+
+def _run_command(args: argparse.Namespace) -> None:
+    run_registered_module(args.module)
+
+
+def _domain_command(args: argparse.Namespace) -> None:
+    command = DOMAIN_COMMANDS[args.name]
+    run_registered_module(command.module_path)
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = _build_main_parser()
+    args = parser.parse_args(argv)
+    if args.command == "run":
+        _run_command(args)
+        return
+    if args.command == "domain":
+        _domain_command(args)
+        return
+    if args.command == "wiki":
+        run_wiki_cli(["--mode", args.mode])
+        return
+    parser.error(f"Unknown command: {args.command}")
+
+
+if __name__ == "__main__":
+    main()

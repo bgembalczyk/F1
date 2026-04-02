@@ -208,6 +208,13 @@ W praktyce oznacza to migrację:
 
 ### Mapa `old_command -> new_command`
 
+| Stary moduł / komenda | Nowa komenda (canonical CLI) |
+| --- | --- |
+| `python main.py --mode <layer0|layer1|full>` | `python -m scrapers.cli wiki --mode <layer0\|layer1\|full>` |
+| `python -m scrapers.drivers.list_scraper` | `python -m scrapers.cli run scrapers.drivers.entrypoint` |
+| `python -m scrapers.circuits.list_scraper` | `python -m scrapers.cli run scrapers.circuits.entrypoint` |
+| `python -m scrapers.grands_prix.red_flagged_races_scraper.world_championship` | `python -m scrapers.cli run scrapers.grands_prix.red_flagged_races_scraper.world_championship` |
+
 - `python main.py --mode <layer0|layer1|full>` -> `python -m scrapers.cli wiki --mode <layer0|layer1|full>`
 - `python -m scrapers.circuits.complete_scraper` -> `python -m scrapers.cli run scrapers.circuits.complete_scraper`
 - `python -m scrapers.circuits.entrypoint` -> `python -m scrapers.cli run scrapers.circuits.entrypoint`
