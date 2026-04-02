@@ -5,6 +5,8 @@ import re
 import subprocess
 from pathlib import PurePosixPath
 
+from scripts.ci.quality_gate_constants import NOT_APPLICABLE_VALUES
+
 REQUIRED_HEADINGS: tuple[str, ...] = (
     "## Opis zmiany",
     "## Checklist (quality gate)",
@@ -16,6 +18,10 @@ REQUIRED_CHECKBOXES: tuple[str, ...] = (
     "Brak nowych `Any`",
     "Granice modułów",
     "Duplikacja",
+    "Złożoność i długość modułów",
+    "Brak nowych print/magic strings/defaultów",
+    "Spójność rejestru konfiguracji i implementacji",
+    "Wyjątki tylko jawnie uzasadnione",
     "Architecture impact",
 )
 
@@ -25,8 +31,6 @@ ARCHITECTURE_IMPACT_FIELDS: tuple[str, ...] = (
     "Kompatybilność wsteczna",
     "Migracja wymagana",
 )
-
-NOT_APPLICABLE_VALUES = {"nie dotyczy", "n/a", "na"}
 
 
 def parse_args() -> argparse.Namespace:
