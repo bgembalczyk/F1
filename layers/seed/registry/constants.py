@@ -22,6 +22,7 @@ from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersScraper
 from scrapers.wiki.sources_registry import get_source_by_seed_name
+from scrapers.wiki.sources_registry import resolve_seed_name
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 
@@ -138,8 +139,27 @@ _SEED_FILENAME_OVERRIDES: dict[str, str] = {
 }
 
 
-def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
+def _validate_seed_name_consistency_at_startup() -> None:
     validate_sources_registry_consistency()
+
+    resolved_seed_names: set[str] = set()
+    for configured_seed_name in _LIST_SCRAPER_BY_SEED_NAME:
+        canonical_seed_name = resolve_seed_name(configured_seed_name, warn=False)
+        get_source_by_seed_name(canonical_seed_name, warn=False)
+        if canonical_seed_name in resolved_seed_names:
+            msg = (
+                "Duplicate canonical seed_name in _LIST_SCRAPER_BY_SEED_NAME "
+                f"after legacy alias resolution: {canonical_seed_name!r}"
+            )
+            raise ValueError(msg)
+        resolved_seed_names.add(canonical_seed_name)
+
+    for configured_seed_name in _SEED_FILENAME_OVERRIDES:
+        get_source_by_seed_name(configured_seed_name, warn=False)
+
+
+def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
+    _validate_seed_name_consistency_at_startup()
 
     specs: list[RawRegistrySpec] = []
     for seed_name, list_scraper_cls in _LIST_SCRAPER_BY_SEED_NAME.items():
