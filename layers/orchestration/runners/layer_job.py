@@ -1,9 +1,7 @@
 from abc import ABC
 from abc import abstractmethod
-from pathlib import Path
-
+from layers.orchestration.runtime_config import RuntimeConfig
 from layers.seed.registry.entries import SeedRegistryEntry
-from scrapers.base.run_config import RunConfig
 
 
 class LayerJobRunner(ABC):
@@ -11,7 +9,6 @@ class LayerJobRunner(ABC):
     def run(
         self,
         seed: SeedRegistryEntry,
-        run_config: RunConfig,
-        base_wiki_dir: Path,
+        runtime_config: RuntimeConfig,
     ) -> None:
         """Execute layer-one job for given seed."""

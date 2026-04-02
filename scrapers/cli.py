@@ -10,6 +10,8 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Literal
 
+from layers.orchestration.runtime_config import RuntimeConfig
+from layers.orchestration.runtime_config import map_wiki_cli_to_runtime_config
 from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
@@ -665,21 +667,30 @@ def _build_main_parser() -> argparse.ArgumentParser:
 
 
 def _build_wiki_parser() -> argparse.ArgumentParser:
+    defaults = RuntimeConfig(
+        base_wiki_dir=Path(),
+        base_debug_dir=Path(),
+    )
     parser = argparse.ArgumentParser(description="Canonical wiki pipeline launcher")
     parser.add_argument(
         "--mode",
         choices=("layer0", "layer1", "full"),
-        default="layer0",
+        default=defaults.mode,
+    )
+    parser.add_argument(
+        "--include-urls",
+        action=argparse.BooleanOptionalAction,
+        default=defaults.include_urls,
     )
     parser.add_argument(
         "--verbose",
         action="store_true",
-        default=False,
+        default=defaults.verbose,
     )
     parser.add_argument(
         "--trace",
         action="store_true",
-        default=False,
+        default=defaults.trace,
     )
     return parser
 
@@ -687,17 +698,28 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
 def run_wiki_cli(argv: list[str] | None = None) -> None:
     parser = _build_wiki_parser()
     args = parser.parse_args(argv)
-    configure_logging(verbose=args.verbose, trace=args.trace)
+    runtime_config = map_wiki_cli_to_runtime_config(
+        base_wiki_dir=Path("data/wiki").resolve(),
+        base_debug_dir=Path("data/debug").resolve(),
+        mode=args.mode,
+        include_urls=args.include_urls,
+        verbose=args.verbose,
+        trace=args.trace,
+    )
+    configure_logging(
+        verbose=runtime_config.verbose,
+        trace=runtime_config.trace,
+    )
 
     app_module = importlib.import_module("layers.application")
     create_default_wiki_pipeline_application = (
         app_module.create_default_wiki_pipeline_application
     )
     app = create_default_wiki_pipeline_application(
-        base_wiki_dir=Path("data/wiki").resolve(),
-        base_debug_dir=Path("data/debug").resolve(),
+        base_wiki_dir=runtime_config.base_wiki_dir,
+        base_debug_dir=runtime_config.base_debug_dir,
     )
-    if args.mode in {"layer0", "full"}:
-        app.run_layer_zero()
-    if args.mode in {"layer1", "full"}:
-        app.run_layer_one()
+    if runtime_config.mode in {"layer0", "full"}:
+        app.run_layer_zero(runtime_config)
+    if runtime_config.mode in {"layer1", "full"}:
+        app.run_layer_one(runtime_config)

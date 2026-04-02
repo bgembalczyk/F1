@@ -4,6 +4,7 @@ from uuid import uuid4
 
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.runtime_config import RuntimeConfig
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
@@ -37,9 +38,10 @@ class LayerZeroExecutor:
         self._year_provider = year_provider
         self._logger = get_logger(self.__class__.__name__)
 
-    def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
+    def run(self, runtime_config: RuntimeConfig) -> None:
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
+        run_config = runtime_config.to_run_config()
         run_id = str(uuid4())
 
         for job in self._list_job_registry:
@@ -62,14 +64,14 @@ class LayerZeroExecutor:
                 job=job,
             )
             self._maybe_mirror_constructors(
-                base_wiki_dir=base_wiki_dir,
+                base_wiki_dir=runtime_config.base_wiki_dir,
                 job=job,
                 l0_raw_json_path=l0_raw_json_path,
             )
 
             self._logger.info("layer0 job finished", extra=context)
 
-        self._finalize_merge(base_wiki_dir)
+        self._finalize_merge(runtime_config.base_wiki_dir)
 
     def _resolve_config_factory(self) -> dict[str, object]:
         return self._run_config_factory_map_builder()

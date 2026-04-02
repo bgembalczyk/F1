@@ -2,6 +2,7 @@ from pathlib import Path
 
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.runtime_config import RuntimeConfig
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
@@ -240,12 +241,11 @@ def test_run_orchestrates_steps_in_order() -> None:
     executor._finalize_merge = lambda *_args, **_kwargs: order.append("merge")
 
     executor.run(
-        RunConfig(
-            output_dir=Path("/tmp"),
+        RuntimeConfig(
+            base_wiki_dir=Path("/tmp/wiki"),
+            base_debug_dir=Path("/tmp/debug"),
             include_urls=True,
-            debug_dir=Path("/tmp/debug"),
         ),
-        Path("/tmp/wiki"),
     )
 
     assert order == ["resolve", "build", "run", "mirror", "merge"]

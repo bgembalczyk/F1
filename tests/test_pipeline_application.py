@@ -2,19 +2,19 @@ from pathlib import Path
 
 from layers.one.executor import LayerOneExecutor
 from layers.orchestration.protocols import LayerExecutorProtocol
+from layers.orchestration.runtime_config import RuntimeConfig
 from layers.zero.executor import LayerZeroExecutor
 from layers.pipeline import WikiPipelineApplication
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import NullLayerZeroJobHook
-from scrapers.base.run_config import RunConfig
 
 
 class _LayerExecutorStub(LayerExecutorProtocol):
     def __init__(self) -> None:
-        self.calls: list[tuple[RunConfig, Path]] = []
+        self.calls: list[RuntimeConfig] = []
 
-    def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
-        self.calls.append((run_config, base_wiki_dir))
+    def run(self, runtime_config: RuntimeConfig) -> None:
+        self.calls.append(runtime_config)
 
 
 def test_pipeline_executor_protocol_is_implemented_by_production_executors() -> None:
@@ -57,10 +57,9 @@ def test_run_layer_zero_uses_private_run_config_builder(tmp_path: Path) -> None:
     app.run_layer_zero()
 
     assert len(layer_zero_executor.calls) == 1
-    run_config, base_wiki_dir = layer_zero_executor.calls[0]
-    assert base_wiki_dir == app._base_wiki_dir  # noqa: SLF001
-    assert run_config.output_dir == app._base_wiki_dir  # noqa: SLF001
-    assert run_config.debug_dir == app._base_debug_dir  # noqa: SLF001
+    runtime_config = layer_zero_executor.calls[0]
+    assert runtime_config.base_wiki_dir == app._base_wiki_dir  # noqa: SLF001
+    assert runtime_config.base_debug_dir == app._base_debug_dir  # noqa: SLF001
 
 
 def test_run_layer_one_uses_private_run_config_builder(tmp_path: Path) -> None:
@@ -78,7 +77,6 @@ def test_run_layer_one_uses_private_run_config_builder(tmp_path: Path) -> None:
     app.run_layer_one()
 
     assert len(layer_one_executor.calls) == 1
-    run_config, base_wiki_dir = layer_one_executor.calls[0]
-    assert base_wiki_dir == app._base_wiki_dir  # noqa: SLF001
-    assert run_config.output_dir == app._base_wiki_dir  # noqa: SLF001
-    assert run_config.debug_dir == app._base_debug_dir  # noqa: SLF001
+    runtime_config = layer_one_executor.calls[0]
+    assert runtime_config.base_wiki_dir == app._base_wiki_dir  # noqa: SLF001
+    assert runtime_config.base_debug_dir == app._base_debug_dir  # noqa: SLF001

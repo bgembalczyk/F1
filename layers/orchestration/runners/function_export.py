@@ -1,12 +1,11 @@
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Callable
 
 from layers.orchestration.runners.layer_job import LayerJobRunner
 from layers.orchestration.runners.metadata import RunnerMetadata
+from layers.orchestration.runtime_config import RuntimeConfig
 from layers.seed.registry.entries import SeedRegistryEntry
-from scrapers.base.run_config import RunConfig
 
 ExportCallable = Callable[..., None]
 
@@ -24,10 +23,9 @@ class FunctionExportRunner(LayerJobRunner):
     def run(
         self,
         seed: SeedRegistryEntry,
-        run_config: RunConfig,
-        base_wiki_dir: Path,
+        runtime_config: RuntimeConfig,
     ) -> None:
         self._export_function(
-            output_dir=base_wiki_dir / seed.default_output_path,
-            include_urls=run_config.include_urls,
+            output_dir=runtime_config.base_wiki_dir / seed.default_output_path,
+            include_urls=runtime_config.include_urls,
         )

@@ -4,9 +4,9 @@ from pathlib import Path
 from typing import Protocol
 from typing import runtime_checkable
 
+from layers.orchestration.runtime_config import RuntimeConfig
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
-from scrapers.base.run_config import RunConfig
 
 
 @runtime_checkable
@@ -14,8 +14,7 @@ class LayerOneRunnerProtocol(Protocol):
     def run(
         self,
         seed: SeedRegistryEntry,
-        run_config: RunConfig,
-        base_wiki_dir: Path,
+        runtime_config: RuntimeConfig,
     ) -> None: ...
 
 
@@ -26,7 +25,7 @@ class LayerZeroRunConfigFactoryProtocol(Protocol):
 
 @runtime_checkable
 class LayerExecutorProtocol(Protocol):
-    def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None: ...
+    def run(self, runtime_config: RuntimeConfig) -> None: ...
 
 
 @runtime_checkable

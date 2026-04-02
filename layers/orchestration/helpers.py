@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
 from layers.orchestration.factories import StaticScraperKwargsFactory
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.runtime_config import RuntimeConfig
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
@@ -15,10 +14,6 @@ from scrapers.drivers.helpers.export import export_complete_drivers
 from scrapers.engines.helpers.export import export_complete_engine_manufacturers
 from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
-
-if TYPE_CHECKING:
-    from pathlib import Path
-
 
 def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
     return {
@@ -97,10 +92,10 @@ def build_layer_zero_run_config_factory_map() -> dict[
     }
 
 
-def run_engine_manufacturers(*, base_wiki_dir: Path, include_urls: bool) -> None:
+def run_engine_manufacturers(runtime_config: RuntimeConfig) -> None:
     print("[complete] running  F1CompleteEngineManufacturerDataExtractor")
     export_complete_engine_manufacturers(
-        output_dir=base_wiki_dir / "engines/complete_engine_manufacturers",
-        include_urls=include_urls,
+        output_dir=runtime_config.base_wiki_dir / "engines/complete_engine_manufacturers",
+        include_urls=runtime_config.include_urls,
     )
     print("[complete] finished F1CompleteEngineManufacturerDataExtractor")
