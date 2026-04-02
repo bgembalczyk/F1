@@ -174,7 +174,10 @@ class _SpecialCasesSubSubSectionRouter(SubSubSectionParser):
             return self.sprint_parser.parse_group(elements, context=context)
         if "shortened" in section_id.lower():
             return self.shortened_parser.parse_group(elements, context=context)
-        return super().parse_group(elements, context=context)
+        parsed = super().parse_group(elements, context=context)
+        self.sprint_parser._apply_table_parser(parsed)
+        self.shortened_parser._apply_table_parser(parsed)
+        return parsed
 
 
 class SpecialCasesSubSectionParser(SubSectionParser):

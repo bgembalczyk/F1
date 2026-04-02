@@ -5,6 +5,7 @@ from scrapers.points.parsers import ShortenedRacesSubSubSectionParser
 from scrapers.points.parsers import SpecialCasesSubSectionParser
 from scrapers.points.parsers import SprintRacesSubSubSectionParser
 from scrapers.points.points_scraper import PointsScraper
+from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 
 
 def test_points_scraper_uses_points_scoring_systems_section_parser() -> None:
@@ -44,3 +45,23 @@ def test_sprint_parser_parses_table_without_nested_heading() -> None:
 
     assert top_section["elements"][0]["data"]["table_type"] == "points_sprint_races"
     assert top_section["elements"][0]["data"]["domain_rows"][0]["seasons"] == "2021-present"
+
+
+def test_special_cases_router_applies_sprint_parser_without_section_hint() -> None:
+    parser = SpecialCasesSubSectionParser().child_parser
+    soup = BeautifulSoup(
+        """
+        <table class="wikitable">
+          <tr><th>Season(s)</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th></tr>
+          <tr><td>2021–present</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+        </table>
+        """,
+        "html.parser",
+    )
+    parsed = parser.parse_group(
+        soup.find_all("table"),
+        context=SectionExtractionContext(section_id="special_cases"),
+    )
+
+    top_section = parsed["sub_sub_sub_sections"][0]
+    assert top_section["elements"][0]["data"]["table_type"] == "points_sprint_races"
