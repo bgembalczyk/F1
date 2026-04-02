@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import shutil
+from dataclasses import dataclass
 from datetime import datetime
 from datetime import timezone
 from typing import TYPE_CHECKING
@@ -16,7 +17,9 @@ from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.helpers import get_wiki_seed_registry
 from layers.seed.registry.helpers import validate_list_job_registry
 from layers.seed.registry.helpers import validate_seed_registry
+from layers.one.executor import LayerOneExecutorDependencies
 from layers.zero.executor import LayerZeroExecutor
+from layers.zero.executor import LayerZeroExecutorDependencies
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
@@ -36,39 +39,58 @@ def _should_mirror_constructors_job(job: object) -> bool:
     return scraper_name in {"CurrentConstructorsListScraper", "ConstructorsListScraper"}
 
 
+@dataclass(frozen=True, slots=True)
+class WikiPipelineCompositionRootDependencies:
+    layer_zero: LayerZeroExecutorDependencies
+    layer_one: LayerOneExecutorDependencies
+
+    @classmethod
+    def create_default(cls) -> "WikiPipelineCompositionRootDependencies":
+        return cls(
+            layer_zero=LayerZeroExecutorDependencies(
+                validate_list_registry=validate_list_job_registry,
+                run_config_factory_map_builder=build_layer_zero_run_config_factory_map,
+                default_config_factory=DefaultLayerZeroRunConfigFactory(),
+                merge_service=LayerZeroMergeService(
+                    merge_function=merge_layer_zero_raw_outputs,
+                ),
+                job_hook=MirrorConstructorsJobHook(
+                    constructors_mirror_service=ConstructorsMirrorService(
+                        mirror_targets=(
+                            ("chassis_constructors", "f1_constructors_{year}.json"),
+                            ("constructors", "f1_constructors_{year}.json"),
+                            ("teams", "f1_constructors_{year}.json"),
+                        ),
+                        copy_file=shutil.copy2,
+                        year_provider=_current_year,
+                    ),
+                    should_mirror_predicate=_should_mirror_constructors_job,
+                ),
+                year_provider=_current_year,
+            ),
+            layer_one=LayerOneExecutorDependencies(
+                validate_seed_registry_function=validate_seed_registry,
+                runner_map_builder=build_layer_one_runner_map,
+                engine_manufacturers_runner=run_engine_manufacturers,
+            ),
+        )
+
+
 def create_default_wiki_pipeline_application(
     *,
     base_wiki_dir: Path,
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
+    dependencies = WikiPipelineCompositionRootDependencies.create_default()
+
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
-        validate_list_registry=validate_list_job_registry,
-        run_config_factory_map_builder=build_layer_zero_run_config_factory_map,
-        default_config_factory=DefaultLayerZeroRunConfigFactory(),
-        merge_service=LayerZeroMergeService(
-            merge_function=merge_layer_zero_raw_outputs,
-        ),
-        job_hook=MirrorConstructorsJobHook(
-            constructors_mirror_service=ConstructorsMirrorService(
-                mirror_targets=(
-                    ("chassis_constructors", "f1_constructors_{year}.json"),
-                    ("constructors", "f1_constructors_{year}.json"),
-                    ("teams", "f1_constructors_{year}.json"),
-                ),
-                copy_file=shutil.copy2,
-                year_provider=_current_year,
-            ),
-            should_mirror_predicate=_should_mirror_constructors_job,
-        ),
-        year_provider=_current_year,
+        dependencies=dependencies.layer_zero,
     )
 
     layer_one_executor = LayerOneExecutor(
         seed_registry=get_wiki_seed_registry(),
-        validate_seed_registry_function=validate_seed_registry,
-        runner_map_builder=build_layer_one_runner_map,
-        engine_manufacturers_runner=run_engine_manufacturers,
+        dependencies=dependencies.layer_one,
     )
 
     return WikiPipelineApplication(

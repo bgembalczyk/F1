@@ -4,6 +4,7 @@ from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.zero.executor import LayerZeroExecutorDependencies
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
@@ -67,16 +68,18 @@ def _executor(
 ) -> LayerZeroExecutor:
     return LayerZeroExecutor(
         list_job_registry=(_job(),),
-        validate_list_registry=lambda _registry: None,
-        run_config_factory_map_builder=(
-            run_config_factory_map_builder if run_config_factory_map_builder else dict
+        dependencies=LayerZeroExecutorDependencies(
+            validate_list_registry=lambda _registry: None,
+            run_config_factory_map_builder=(
+                run_config_factory_map_builder if run_config_factory_map_builder else dict
+            ),
+            default_config_factory=(
+                default_config_factory if default_config_factory else _FakeConfigFactory({})
+            ),
+            merge_service=(merge_service if merge_service else _MergeService()),
+            job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
+            year_provider=lambda: 2026,
         ),
-        default_config_factory=(
-            default_config_factory if default_config_factory else _FakeConfigFactory({})
-        ),
-        merge_service=(merge_service if merge_service else _MergeService()),
-        job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
-        year_provider=lambda: 2026,
     )
 
 
