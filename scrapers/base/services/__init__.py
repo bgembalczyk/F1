@@ -1,9 +1,7 @@
-from scrapers.base.services.result_export_service import ResultExportService
-from scrapers.base.services.result_normalizer import ScrapeResultNormalizer
-from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
+"""Internal service implementations for ``scrapers.base``.
 
-__all__ = [
-    "ResultExportService",
-    "ScrapeResultNormalizer",
-    "ResultTabularAdapter",
-]
+Intentionally no package-level public re-exports (YAGNI).
+Import concrete service modules directly inside ``scrapers.base`` internals.
+"""
+
+__all__: list[str] = []

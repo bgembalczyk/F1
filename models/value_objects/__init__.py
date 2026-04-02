@@ -1,3 +1,5 @@
+"""Canonical public value objects used across scraper packages."""
+
 from models.value_objects.common_terms import EntityName
 from models.value_objects.common_terms import SeasonYear
 from models.value_objects.common_terms import SectionId

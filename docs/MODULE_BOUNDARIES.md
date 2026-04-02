@@ -401,3 +401,20 @@ section_config = build_scraper_config(
     record_factory=record_from_mapping,
 )
 ```
+
+
+## 9. Canonical package entrypoints (API vs internal)
+
+Dla pakietów technicznych (`layers`, `scrapers.base`, `models`) obowiązuje jawny podział:
+
+- **`layers`**
+  - canonical API: `layers.create_default_wiki_pipeline_application`
+  - internal: `layers.zero.*`, `layers.one.*`, `layers.orchestration.*`, helpery/fabryki
+- **`models`**
+  - canonical API: `models.services.parse_seasons`, `models.value_objects.{EntityName, SeasonYear, SectionId, WikiUrl}`
+  - internal: pozostałe moduły `models.*` importowane bezpośrednio tylko gdy brak publicznego aliasu
+- **`scrapers.base`**
+  - canonical API: wyspecjalizowane subpackage API (`scrapers.base.constants`, `scrapers.base.table.columns.types`, `scrapers.base.orchestration.components`)
+  - internal: `scrapers.base.services` oraz pozostałe moduły implementacyjne bez stabilnej gwarancji API
+
+Zasada YAGNI: nowy eksport w `__init__.py` dodajemy wyłącznie po potwierdzeniu realnego użycia poza pakietem.
