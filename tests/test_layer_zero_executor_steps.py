@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from layers.orchestration.pipeline_trace import PipelineTrace
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
@@ -77,6 +78,7 @@ def _executor(
         merge_service=(merge_service if merge_service else _MergeService()),
         job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
         year_provider=lambda: 2026,
+        pipeline_trace=PipelineTrace(),
     )
 
 

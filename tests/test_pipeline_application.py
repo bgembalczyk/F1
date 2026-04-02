@@ -1,5 +1,7 @@
+import json
 from pathlib import Path
 
+from layers.orchestration.pipeline_trace import PipelineTrace
 from layers.one.executor import LayerOneExecutor
 from layers.orchestration.protocols import LayerExecutorProtocol
 from layers.zero.executor import LayerZeroExecutor
@@ -30,12 +32,14 @@ def test_pipeline_executor_protocol_is_implemented_by_production_executors() -> 
         merge_service=LayerZeroMergeService(merge_function=lambda _base_wiki_dir: None),
         job_hook=NullLayerZeroJobHook(),
         year_provider=lambda: 2026,
+        pipeline_trace=PipelineTrace(),
     )
     layer_one = LayerOneExecutor(
         seed_registry=(),
         validate_seed_registry_function=lambda _registry: None,
         runner_map_builder=dict,
         engine_manufacturers_runner=lambda *_args, **_kwargs: None,
+        pipeline_trace=PipelineTrace(),
     )
 
     assert isinstance(layer_zero, LayerExecutorProtocol)
@@ -82,3 +86,23 @@ def test_run_layer_one_uses_private_run_config_builder(tmp_path: Path) -> None:
     assert base_wiki_dir == app._base_wiki_dir  # noqa: SLF001
     assert run_config.output_dir == app._base_wiki_dir  # noqa: SLF001
     assert run_config.debug_dir == app._base_debug_dir  # noqa: SLF001
+
+
+def test_run_layer_zero_diagnostic_mode_writes_jsonl(tmp_path: Path) -> None:
+    trace_path = tmp_path / "debug" / "pipeline_trace.jsonl"
+    app = WikiPipelineApplication(
+        base_wiki_dir=tmp_path / "wiki",
+        base_debug_dir=tmp_path / "debug",
+        layer_zero_executor=_LayerExecutorStub(),
+        layer_one_executor=_LayerExecutorStub(),
+        diagnostic_trace_path=trace_path,
+    )
+
+    app.run_layer_zero()
+
+    entries = [
+        json.loads(line)
+        for line in trace_path.read_text(encoding="utf-8").splitlines()
+    ]
+    assert [entry["event"] for entry in entries] == ["start_job", "end_job"]
+    assert all(entry["job"] == "layer_zero" for entry in entries)

@@ -7,6 +7,8 @@ from typing import TYPE_CHECKING
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
+from layers.orchestration.pipeline_trace import JsonlPipelineTraceSink
+from layers.orchestration.pipeline_trace import PipelineTrace
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.orchestration.helpers import build_layer_one_runner_map
 from layers.orchestration.helpers import build_layer_zero_run_config_factory_map
@@ -33,7 +35,16 @@ def create_default_wiki_pipeline_application(
     *,
     base_wiki_dir: Path,
     base_debug_dir: Path,
+    diagnostic_mode: bool = False,
 ) -> WikiPipelineApplication:
+    pipeline_trace = PipelineTrace(
+        sink=(
+            JsonlPipelineTraceSink(base_debug_dir / "pipeline_trace.jsonl")
+            if diagnostic_mode
+            else None
+        ),
+    )
+
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,
@@ -58,6 +69,7 @@ def create_default_wiki_pipeline_application(
             ),
         ),
         year_provider=_current_year,
+        pipeline_trace=pipeline_trace,
     )
 
     layer_one_executor = LayerOneExecutor(
@@ -65,6 +77,7 @@ def create_default_wiki_pipeline_application(
         validate_seed_registry_function=validate_seed_registry,
         runner_map_builder=build_layer_one_runner_map,
         engine_manufacturers_runner=run_engine_manufacturers,
+        pipeline_trace=pipeline_trace,
     )
 
     return WikiPipelineApplication(
@@ -72,4 +85,8 @@ def create_default_wiki_pipeline_application(
         base_debug_dir=base_debug_dir,
         layer_zero_executor=layer_zero_executor,
         layer_one_executor=layer_one_executor,
+        pipeline_trace=pipeline_trace,
+        diagnostic_trace_path=(
+            base_debug_dir / "pipeline_trace.jsonl" if diagnostic_mode else None
+        ),
     )

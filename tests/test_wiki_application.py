@@ -1,6 +1,7 @@
 # ruff: noqa: ARG002, ARG005, S108
 from pathlib import Path
 
+from layers.orchestration.pipeline_trace import PipelineTrace
 from scrapers.base.run_config import RunConfig
 from scrapers.wiki.application import ConstructorsMirrorService
 from scrapers.wiki.application import LayerOneExecutor
@@ -57,6 +58,7 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
         include_urls: engine_runner_calls.append(
             (base_wiki_dir, include_urls),
         ),
+        pipeline_trace=PipelineTrace(),
     )
 
     run_config = RunConfig(

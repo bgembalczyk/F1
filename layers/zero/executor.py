@@ -1,6 +1,8 @@
+import logging
 from collections.abc import Callable
 from pathlib import Path
 
+from layers.orchestration.pipeline_trace import PipelineTrace
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
@@ -8,6 +10,9 @@ from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 class LayerZeroExecutor:
@@ -24,6 +29,7 @@ class LayerZeroExecutor:
         merge_service: LayerZeroMergeServiceProtocol,
         job_hook: LayerZeroJobHook,
         year_provider: Callable[[], int],
+        pipeline_trace: PipelineTrace,
     ) -> None:
         self._list_job_registry = list_job_registry
         self._validate_list_registry = validate_list_registry
@@ -32,13 +38,16 @@ class LayerZeroExecutor:
         self._merge_service = merge_service
         self._job_hook = job_hook
         self._year_provider = year_provider
+        self._pipeline_trace = pipeline_trace
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
 
         for job in self._list_job_registry:
-            print(f"[list] running  {job.list_scraper_cls.__name__}")
+            job_name = job.list_scraper_cls.__name__
+            LOGGER.info("Layer zero: running %s", job_name)
+            self._pipeline_trace.start_job(layer="layer_zero", job=job_name, seed=job.seed_name)
 
             local_run_config = self._build_local_run_config(
                 run_config=run_config,
@@ -56,7 +65,8 @@ class LayerZeroExecutor:
                 l0_raw_json_path=l0_raw_json_path,
             )
 
-            print(f"[list] finished {job.list_scraper_cls.__name__}")
+            self._pipeline_trace.end_job(layer="layer_zero", job=job_name, seed=job.seed_name)
+            LOGGER.info("Layer zero: finished %s", job_name)
 
         self._finalize_merge(base_wiki_dir)
 
@@ -117,4 +127,8 @@ class LayerZeroExecutor:
         )
 
     def _finalize_merge(self, base_wiki_dir: Path) -> None:
+        self._pipeline_trace.merge_start(layer="layer_zero", base_wiki_dir=str(base_wiki_dir))
+        LOGGER.info("Layer zero: starting merge")
         self._merge_service.merge(base_wiki_dir)
+        self._pipeline_trace.merge_end(layer="layer_zero", base_wiki_dir=str(base_wiki_dir))
+        LOGGER.info("Layer zero: merge finished")
