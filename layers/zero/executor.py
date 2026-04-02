@@ -3,6 +3,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
+from layers.orchestration.types import SeedName
 from layers.path_resolver import format_domain_year_name
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
@@ -23,12 +24,12 @@ class LayerZeroExecutor:
         validate_list_registry: Callable[[tuple[ListJobRegistryEntry, ...]], None],
         config_factories: Callable[
             [],
-            dict[str, LayerZeroRunConfigFactoryProtocol],
+            dict[SeedName, LayerZeroRunConfigFactoryProtocol],
         ]
         | None = None,
         run_config_factory_map_builder: Callable[
             [],
-            dict[str, LayerZeroRunConfigFactoryProtocol],
+            dict[SeedName, LayerZeroRunConfigFactoryProtocol],
         ]
         | None = None,
         default_config_factory: LayerZeroRunConfigFactoryProtocol | None = None,
@@ -106,7 +107,7 @@ class LayerZeroExecutor:
 
         self._finalize_merge(base_wiki_dir)
 
-    def _resolve_config_factory(self) -> dict[str, object]:
+    def _resolve_config_factory(self) -> dict[SeedName, LayerZeroRunConfigFactoryProtocol]:
         return self._config_factories()
 
     def _build_local_run_config(
@@ -114,7 +115,7 @@ class LayerZeroExecutor:
         *,
         run_config: RunConfig,
         job: ListJobRegistryEntry,
-        config_factories: dict[str, object],
+        config_factories: dict[SeedName, LayerZeroRunConfigFactoryProtocol],
     ) -> RunConfig:
         config_factory = config_factories.get(job.seed_name, self._default_config_factory)
         scraper_kwargs = config_factory.create_scraper_kwargs(job)

@@ -7,6 +7,8 @@ from dataclasses import field
 from pathlib import Path
 
 from layers.path_resolver import PathResolver
+from layers.orchestration.types import CONSTRUCTOR_STATUS_ACTIVE
+from layers.orchestration.types import CONSTRUCTOR_STATUS_FORMER
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import DriverSeriesStats
 from layers.zero.merge_types import EngineRecordModel
@@ -293,7 +295,7 @@ def _transform_indianapolis_only_constructor(
         "racing_series": {
             "AAA_national_championship": [],
             "formula_one": {
-                "status": "former",
+                "status": CONSTRUCTOR_STATUS_FORMER,
                 "indianapolis_only": True,
             },
         },
@@ -305,7 +307,7 @@ def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, o
     formula_one = {
         key: value for key, value in transformed.items() if key != "constructor"
     }
-    formula_one["status"] = "former"
+    formula_one["status"] = CONSTRUCTOR_STATUS_FORMER
     return {
         "constructor": constructor,
         "racing_series": _build_racing_series(formula_one),
@@ -314,7 +316,7 @@ def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, o
 
 def _ensure_constructor_status(transformed: dict[str, object]) -> None:
     if "racing_series" not in transformed:
-        transformed["status"] = "active"
+        transformed["status"] = CONSTRUCTOR_STATUS_ACTIVE
         transformed["series"] = FORMULA_ONE_SERIES.copy()
         return
 
@@ -323,7 +325,7 @@ def _ensure_constructor_status(transformed: dict[str, object]) -> None:
         racing_series = {}
         transformed["racing_series"] = racing_series
     formula_one = racing_series.setdefault("formula_one", {})
-    formula_one.setdefault("status", "active")
+    formula_one.setdefault("status", CONSTRUCTOR_STATUS_ACTIVE)
 
 
 def _transform_circuits_domain(
@@ -348,7 +350,10 @@ def _transform_engines_domain(
     if source_name == "f1_indianapolis_only_engine_manufacturers.json":
         transformed["racing_series"] = {
             "AAA_national_championship": [],
-            "formula_one": {"status": "former", "indianapolis_only": True},
+            "formula_one": {
+                "status": CONSTRUCTOR_STATUS_FORMER,
+                "indianapolis_only": True,
+            },
         }
     elif source_name == "f1_engine_manufacturers.json":
         _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
