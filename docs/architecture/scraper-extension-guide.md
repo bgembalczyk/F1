@@ -198,6 +198,8 @@ class ExampleSingleScraper(SingleWikiArticleScraperBase):
 - [ ] List scraper używa schema DSL i `build_scraper_config(...)`.
 - [ ] Brak placeholderów `TODO`.
 - [ ] Brak mieszania warstw technicznych i domenowych.
+- [ ] Nazwy nowych modułów są semantyczne (`Service`/`Factory`/`Runner`/`Adapter`/`EntryPoint`) lub jednoznacznie celowe technicznie.
+- [ ] Nie dodano nowego `helpers.py` bez udokumentowanego wyjątku (ADR/uzasadnienie w PR).
 
 ## 6. Powiązane dokumenty
 
@@ -205,3 +207,4 @@ class ExampleSingleScraper(SingleWikiArticleScraperBase):
 - `docs/MODULE_BOUNDARIES.md` (granice modułów i checklista PR)
 - `docs/CHANGES_CHECKLIST.md` (merge-gate i governance)
 - `docs/adr/0004-hook-naming-conventions.md` (konwencja nazewnictwa hooków)
+- `docs/architecture/module-naming-standard.md` (standard nazewnictwa ról i modułów)

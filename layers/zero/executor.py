@@ -4,7 +4,7 @@ from pathlib import Path
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
-from layers.zero.helpers import layer_zero_raw_paths
+from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
