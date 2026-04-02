@@ -29,6 +29,10 @@ class ConstructorsListScraper(F1ListScraper):
 
     url = CONSTRUCTORS_LIST.base_url
     _CURRENT_SECTION_ID = f"Constructors_for_the_{CURRENT_YEAR}_season"
+    _CURRENT_SECTION_FALLBACK_IDS = (
+        _CURRENT_SECTION_ID,
+        "Constructors_for_the_current_season",
+    )
     _CURRENT_SECTION_LABEL = "Current constructors"
     _FORMER_SECTION_ID = "Former_constructors"
     _FORMER_SECTION_LABEL = "Former constructors"
@@ -67,10 +71,9 @@ class ConstructorsListScraper(F1ListScraper):
         }
         records: list[dict[str, Any]] = []
 
-        current_section = selector.extract_section_by_id(
-            soup,
-            self._CURRENT_SECTION_ID,
-            domain="constructors",
+        current_section = self._extract_current_section(
+            selector=selector,
+            soup=soup,
         )
         if current_section is not None:
             current_parser = CurrentConstructorsSectionParser(
@@ -136,6 +139,22 @@ class ConstructorsListScraper(F1ListScraper):
             )
 
         return records
+
+    def _extract_current_section(
+        self,
+        *,
+        selector: WikipediaSectionByIdSelectionStrategy,
+        soup: BeautifulSoup,
+    ) -> BeautifulSoup | None:
+        for section_id in self._CURRENT_SECTION_FALLBACK_IDS:
+            section = selector.extract_section_by_id(
+                soup,
+                section_id,
+                domain="constructors",
+            )
+            if section is not None:
+                return section
+        return None
 
     def _should_include_scope(self, scope: str) -> bool:
         return self._export_scope in {"all", scope}
