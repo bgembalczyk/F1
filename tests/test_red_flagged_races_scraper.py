@@ -20,6 +20,11 @@ from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
 from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
     RedFlaggedWorldChampionshipRacesScraper,
 )
+from scrapers.grands_prix.red_flagged_races_scraper import (
+    NonChampionshipsRacesSubSectionParser,
+    RedFlaggedRacesSectionParser,
+    WorldChampionshipsRacesTableParser,
+)
 
 
 class TestRedFlaggedRacesScraperRobustness:
@@ -126,6 +131,18 @@ class TestRedFlaggedRacesScraperRobustness:
         # Should find the non-championship table (with "Event" column)
         assert len(records) == 1
         assert records[0]["season"] == 1971
+
+
+
+    def test_composite_parser_dependencies(self):
+        """Test required parser dependencies are wired in composite parser."""
+        section_parser = RedFlaggedRacesSectionParser()
+
+        assert isinstance(section_parser.child_parser, NonChampionshipsRacesSubSectionParser)
+        assert isinstance(
+            section_parser._world_championship_table_parser,
+            WorldChampionshipsRacesTableParser,
+        )
 
     def test_error_message_with_no_matching_table(self):
         """Test that error message includes diagnostic information."""
