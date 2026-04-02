@@ -144,6 +144,22 @@ def test_query_cache_hit_skips_api(tmp_path) -> None:
     mock_api.assert_not_called()
 
 
+def test_query_cache_hit_does_not_consume_rate_limits(tmp_path) -> None:
+    cache = GeminiCache(cache_dir=tmp_path / "c")
+    cache.set("prompt", "model-a", {"cached": True})
+    client, _ = _make_client_with_mock_api([], cache=cache)
+
+    state = client._model_states[0]  # noqa: SLF001
+    rpm_before = len(state._rpm_timestamps)  # noqa: SLF001
+    rpd_before = len(state._rpd_timestamps)  # noqa: SLF001
+
+    result = client.query("prompt")
+
+    assert result == {"cached": True}
+    assert len(state._rpm_timestamps) == rpm_before  # noqa: SLF001
+    assert len(state._rpd_timestamps) == rpd_before  # noqa: SLF001
+
+
 def test_query_stores_result_in_cache(tmp_path) -> None:
     cache = GeminiCache(cache_dir=tmp_path / "c")
     client, _ = _make_client_with_mock_api([{"answer": 99}], cache=cache)
