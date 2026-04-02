@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
@@ -16,11 +17,50 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
 
+    _HEADER_ALIASES: dict[str, set[str]] = {
+        "Towards WDC": {
+            "Towards WDC",
+            "Drivers' Championship",
+            "World Drivers' Championship",
+            "WDC",
+        },
+        "Towards WCC": {
+            "Towards WCC",
+            "Constructors' Championship",
+            "World Constructors' Championship",
+            "WCC",
+        },
+    }
+
+    @classmethod
+    def _normalize_header(cls, value: str) -> str:
+        compact = re.sub(r"\s+", " ", value).strip().lower()
+        return compact.replace("’", "'")
+
+    @classmethod
+    def _candidate_headers(cls, header: str) -> set[str]:
+        aliases = cls._HEADER_ALIASES.get(header, {header})
+        return {cls._normalize_header(alias) for alias in aliases}
+
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        return set(POINTS_SCORING_HISTORY_EXPECTED_HEADERS).issubset(set(headers))
+        normalized_headers = {self._normalize_header(header) for header in headers}
+        return all(
+            bool(self._candidate_headers(expected) & normalized_headers)
+            for expected in POINTS_SCORING_HISTORY_EXPECTED_HEADERS
+        )
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        return {header: header.lower().replace(" ", "_") for header in headers}
+        column_map = {
+            header: header.lower().replace(" ", "_")
+            for header in headers
+        }
+        for header in headers:
+            normalized = self._normalize_header(header)
+            if normalized in self._candidate_headers("Towards WDC"):
+                column_map[header] = "towards_wdc"
+            elif normalized in self._candidate_headers("Towards WCC"):
+                column_map[header] = "towards_wcc"
+        return column_map
 
 
 class SprintPointsTableParser(WikiTableBaseParser):

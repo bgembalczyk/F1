@@ -119,10 +119,53 @@ class WikiElementParserMixin:
     ) -> list[WikiParsedPayload]:
         result: list[WikiParsedPayload] = []
         for el in elements:
-            parsed = self._parse_element(el, section_context=section_context)
-            if parsed is not None:
-                result.append(parsed)
+            result.extend(
+                self._parse_element_list(el, section_context=section_context),
+            )
         return result
+
+    def _parse_element_list(
+        self,
+        el: Tag,
+        *,
+        section_context: SectionExtractionContext,
+    ) -> list[WikiParsedPayload]:
+        parsed = self._parse_element(el, section_context=section_context)
+        if parsed is not None:
+            classes = self._get_classes(el)
+            if (
+                parsed.get("kind") == "paragraph"
+                and isinstance(parsed.get("data"), dict)
+                and (
+                    not str(parsed["data"].get("text", "")).strip()
+                    or "mw-empty-elt" in classes
+                )
+            ):
+                nested_results = self._parse_nested_elements(
+                    el,
+                    section_context=section_context,
+                )
+                if nested_results:
+                    return nested_results
+            return [parsed]
+
+        return self._parse_nested_elements(el, section_context=section_context)
+
+    def _parse_nested_elements(
+        self,
+        el: Tag,
+        *,
+        section_context: SectionExtractionContext,
+    ) -> list[WikiParsedPayload]:
+        nested_results: list[WikiParsedPayload] = []
+        for nested_el in self._iter_direct_child_tags(el):
+            nested_results.extend(
+                self._parse_element_list(
+                    nested_el,
+                    section_context=section_context,
+                ),
+            )
+        return nested_results
 
     def _parse_element(
         self,
@@ -137,12 +180,6 @@ class WikiElementParserMixin:
                     rule=rule,
                     section_context=section_context,
                 )
-
-        if el.name in {"div", "span"}:
-            for nested_el in self._iter_direct_child_tags(el):
-                parsed = self._parse_element(nested_el, section_context=section_context)
-                if parsed is not None:
-                    return parsed
         return None
 
     @staticmethod
