@@ -1,5 +1,6 @@
 from bs4 import Tag
 
+from scrapers.base.helpers.transform_micro_ops import merge_unique_preserve_order
 from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
 from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
 from scrapers.wiki.parsers.sections.constants import TOP_SECTION_NAME
@@ -117,21 +118,15 @@ def profile_entry_aliases(
     *fallback_aliases: str,
 ) -> tuple[str, ...]:
     profile = get_section_profile(domain)
-    merged: list[str] = []
-    seen: set[str] = set()
+    profile_aliases = sorted(profile.aliases_for(section_id)) if profile else []
+    merged = merge_unique_preserve_order(list(fallback_aliases), profile_aliases)
 
-    def add(value: str) -> None:
+    filtered: list[str] = []
+    seen: set[str] = set()
+    for value in merged:
         normalized = normalize_section_profile_key(value)
         if not normalized or normalized in seen:
-            return
+            continue
         seen.add(normalized)
-        merged.append(value)
-
-    for alias in fallback_aliases:
-        add(alias)
-
-    if profile:
-        for alias in sorted(profile.aliases_for(section_id)):
-            add(alias)
-
-    return tuple(merged)
+        filtered.append(value)
+    return tuple(filtered)

@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.transform_micro_ops import expand_alias_variants
 from scrapers.base.sections.aliases import builtin_aliases_for_target
 from scrapers.wiki.parsers.constants import HEADING_TAGS
 from scrapers.wiki.parsers.sections.data_classes import SectionMatch
@@ -20,9 +21,6 @@ if TYPE_CHECKING:
 def normalize_section_text(text: str) -> str:
     return clean_wiki_text(text.replace("_", " ")).lower().strip()
 
-
-def _normalize_id(text: str) -> str:
-    return normalize_section_text(text).replace(" ", "_")
 
 
 def normalize_section_slug(text: str) -> str:
@@ -79,15 +77,7 @@ def _collect_heading_ids(heading: Tag) -> set[str]:
 
 def _expand_target_values(target: str, aliases: set[str]) -> tuple[set[str], set[str]]:
     values = {target, *aliases}
-    normalized_texts = {
-        normalize_section_text(value) for value in values if value.strip()
-    }
-    normalized_ids = {
-        variant
-        for text in normalized_texts
-        for variant in (_normalize_id(text), text.replace(" ", "_"), text)
-    }
-    return normalized_ids, normalized_texts
+    return expand_alias_variants(values, text_normalizer=normalize_section_text)
 
 
 def _resolve_aliases(
@@ -161,7 +151,7 @@ def find_section_heading(
     fuzzy_candidates: list[SectionMatch] = []
 
     for heading in soup.find_all(HEADING_TAGS):
-        heading_ids = {_normalize_id(value) for value in _collect_heading_ids(heading)}
+        heading_ids = {normalize_section_text(value).replace(" ", "_") for value in _collect_heading_ids(heading)}
         if heading_ids & target_ids:
             return SectionMatch(
                 heading=heading,
