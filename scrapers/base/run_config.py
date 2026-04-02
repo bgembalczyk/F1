@@ -20,5 +20,7 @@ class RunConfig:
     http_backoff_seconds: float | None = None
     quality_report: bool = False
     error_report: bool = False
+    verbose: bool = False
+    trace: bool = False
     scraper_kwargs: dict[str, Any] = field(default_factory=dict)
     options: ScraperOptions | None = None
