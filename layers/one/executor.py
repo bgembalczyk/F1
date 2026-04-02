@@ -57,13 +57,13 @@ class LayerOneExecutor:
                 run_id=run_id,
                 seed_name=seed.seed_name,
                 domain=seed.output_category,
-                source_name=seed.complete_scraper_cls.__name__,
+                source=seed.complete_scraper_cls.__name__,
             )
-            self._logger.info("layer1 seed started", extra=context)
+            self._logger.info("job_start", extra=context)
 
             runner = runner_map.get(seed.seed_name)
             if runner is None:
-                self._logger.warning("layer1 seed skipped: unsupported", extra=context)
+                self._logger.warning("job_skip", extra=context)
                 continue
 
             try:

@@ -68,9 +68,9 @@ class LayerZeroExecutor:
                 run_id=run_id,
                 seed_name=job.seed_name,
                 domain=job.output_category,
-                source_name=job.list_scraper_cls.__name__,
+                source=job.list_scraper_cls.__name__,
             )
-            self._logger.info("layer0 job started", extra=context)
+            self._logger.info("job_start", extra=context)
 
             local_run_config = self._build_local_run_config(
                 run_config=run_config,
@@ -102,9 +102,9 @@ class LayerZeroExecutor:
                 )
                 raise normalized_error from exc
 
-            self._logger.info("layer0 job finished", extra=context)
+            self._logger.info("job_end", extra=context)
 
-        self._finalize_merge(base_wiki_dir)
+        self._finalize_merge(base_wiki_dir, run_id)
 
     def _resolve_config_factory(self) -> dict[str, object]:
         return self._config_factories()
@@ -166,5 +166,13 @@ class LayerZeroExecutor:
             l0_raw_json_path=l0_raw_json_path,
         )
 
-    def _finalize_merge(self, base_wiki_dir: Path) -> None:
+    def _finalize_merge(self, base_wiki_dir: Path, run_id: str) -> None:
+        merge_context = build_execution_context(
+            run_id=run_id,
+            domain="layer_zero",
+            seed_name="layer_zero_merge",
+            source=self._merger.__class__.__name__,
+        )
+        self._logger.info("merge_start", extra=merge_context)
         self._merger.merge(base_wiki_dir)
+        self._logger.info("merge_end", extra=merge_context)

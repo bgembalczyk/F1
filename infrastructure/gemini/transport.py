@@ -49,7 +49,7 @@ class GeminiTransport:
 
         context = build_execution_context(
             domain="gemini",
-            source_name=model,
+            source=model,
         )
         self._logger.debug("Gemini request payload prompt=%s", prompt, extra=context)
 
