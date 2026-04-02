@@ -4,6 +4,7 @@ import argparse
 import dataclasses
 import importlib
 import inspect
+import json
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
@@ -25,6 +26,8 @@ from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
 from scrapers.base.runner import ScraperRunner
 from scrapers.wiki.sources_registry import ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE
+from scrapers.wiki.pipeline_spec import WIKI_PIPELINE_SPEC
+from scrapers.wiki.pipeline_spec import validate_wiki_pipeline_spec
 from scrapers.wiki.sources_registry import get_source_by_list_filename
 from scrapers.wiki.sources_registry import get_source_by_seed_name
 from scrapers.wiki.sources_registry import resolve_list_filename
@@ -540,6 +543,7 @@ MODULE_DEFINITIONS: dict[str, LegacyModuleDefinition] = {
 
 
 def _validate_startup_name_consistency() -> None:
+    validate_wiki_pipeline_spec()
     validate_sources_registry_consistency()
     expected_seed_by_module_path = {
         "scrapers.constructors.former_constructors_list": "constructors_former",
@@ -718,8 +722,39 @@ def get_deprecated_module_migrations() -> tuple[tuple[str, str], ...]:
     return tuple(migrations)
 
 
+def _pipeline_domains_for_help() -> tuple[str, ...]:
+    return tuple(sorted(spec.domain for spec in WIKI_PIPELINE_SPEC))
+
+
+def build_pipeline_spec_debug_output(*, as_json: bool = False) -> str:
+    payload = [
+        {
+            "domain": domain_spec.domain,
+            "sources": [source.seed_name for source in domain_spec.sources],
+            "transformers": list(domain_spec.transformers),
+            "postprocess": list(domain_spec.postprocess),
+            "output": domain_spec.output_filename or f"{domain_spec.domain}.json",
+            "merge_enabled": domain_spec.merge_enabled,
+        }
+        for domain_spec in WIKI_PIPELINE_SPEC
+    ]
+    if as_json:
+        return json.dumps(payload, ensure_ascii=False, indent=2)
+    lines = [
+        f"- {item['domain']}: sources={','.join(item['sources'])}; "
+        f"transformers={','.join(item['transformers']) or '-'}; "
+        f"postprocess={','.join(item['postprocess']) or '-'}; "
+        f"output={item['output']}; merge_enabled={item['merge_enabled']}"
+        for item in payload
+    ]
+    return "\n".join(lines)
+
+
 def _build_main_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Canonical scraper CLI")
+    parser = argparse.ArgumentParser(
+        description="Canonical scraper CLI",
+        epilog=f"Pipeline domains: {', '.join(_pipeline_domains_for_help())}",
+    )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     run_parser = subparsers.add_parser("run")

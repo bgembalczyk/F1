@@ -3,6 +3,11 @@ from __future__ import annotations
 import warnings
 from dataclasses import dataclass
 
+from scrapers.wiki.pipeline_spec import LEGACY_LIST_FILENAME_ALIASES
+from scrapers.wiki.pipeline_spec import LEGACY_SEED_NAME_ALIASES
+from scrapers.wiki.pipeline_spec import iter_source_specs
+from scrapers.wiki.pipeline_spec import validate_wiki_pipeline_spec
+
 
 @dataclass(frozen=True)
 class WikiSourceDefinition:
@@ -11,44 +16,13 @@ class WikiSourceDefinition:
     list_filename: str
 
 
-WIKI_SOURCE_DEFINITIONS: tuple[WikiSourceDefinition, ...] = (
-    WikiSourceDefinition("circuits", "circuits", "f1_circuits.json"),
-    WikiSourceDefinition("constructors_current", "constructors", "f1_constructors_{year}.json"),
-    WikiSourceDefinition("constructors_former", "chassis_constructors", "f1_former_constructors.json"),
+WIKI_SOURCE_DEFINITIONS: tuple[WikiSourceDefinition, ...] = tuple(
     WikiSourceDefinition(
-        "constructors_indianapolis_only",
-        "chassis_constructors",
-        "f1_indianapolis_only_constructors.json",
-    ),
-    WikiSourceDefinition("constructors_privateer", "teams", "f1_privateer_teams.json"),
-    WikiSourceDefinition("drivers", "drivers", "f1_drivers.json"),
-    WikiSourceDefinition("drivers_female", "drivers", "female_drivers.json"),
-    WikiSourceDefinition("drivers_fatalities", "drivers", "f1_driver_fatalities.json"),
-    WikiSourceDefinition("seasons", "seasons", "f1_seasons.json"),
-    WikiSourceDefinition("grands_prix_by_title", "grands_prix", "f1_grands_prix_by_title.json"),
-    WikiSourceDefinition(
-        "engines_indianapolis_only",
-        "engines",
-        "f1_indianapolis_only_engine_manufacturers.json",
-    ),
-    WikiSourceDefinition("engines_restrictions", "rules", "f1_engine_restrictions.json"),
-    WikiSourceDefinition("engines_regulations", "rules", "f1_engine_regulations.json"),
-    WikiSourceDefinition("engines_manufacturers", "engines", "f1_engine_manufacturers.json"),
-    WikiSourceDefinition(
-        "grands_prix_red_flagged_world_championship",
-        "races",
-        "f1_red_flagged_world_championship_races.json",
-    ),
-    WikiSourceDefinition(
-        "grands_prix_red_flagged_non_championship",
-        "races",
-        "f1_red_flagged_non_championship_races.json",
-    ),
-    WikiSourceDefinition("points_sprint", "points", "points_scoring_systems_sprint.json"),
-    WikiSourceDefinition("points_shortened", "points", "points_scoring_systems_shortened.json"),
-    WikiSourceDefinition("points_history", "points", "points_scoring_systems_history.json"),
-    WikiSourceDefinition("tyres", "seasons", "f1_tyre_manufacturers_by_season.json"),
-    WikiSourceDefinition("sponsorship_liveries", "teams", "f1_sponsorship_liveries.json"),
+        seed_name=seed_name,
+        output_category=domain,
+        list_filename=list_filename,
+    )
+    for seed_name, domain, list_filename in iter_source_specs()
 )
 
 SOURCE_BY_SEED_NAME: dict[str, WikiSourceDefinition] = {
@@ -58,14 +32,6 @@ SOURCE_BY_LIST_FILENAME: dict[str, WikiSourceDefinition] = {
     source.list_filename: source for source in WIKI_SOURCE_DEFINITIONS
 }
 
-LEGACY_SEED_NAME_ALIASES: dict[str, str] = {
-    "constructors": "constructors_current",
-    "grands_prix": "grands_prix_by_title",
-}
-
-LEGACY_LIST_FILENAME_ALIASES: dict[str, str] = {
-    "f1_engine_manufacturers_indianapolis_only.json": "f1_indianapolis_only_engine_manufacturers.json",
-}
 ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE = (
     "f1_engine_manufacturers_indianapolis_only.json"
 )
@@ -125,6 +91,7 @@ def get_source_by_list_filename(
 
 
 def validate_sources_registry_consistency() -> None:
+    validate_wiki_pipeline_spec()
     seen_seed_names: set[str] = set()
     seen_filenames: set[str] = set()
 

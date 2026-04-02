@@ -20,6 +20,7 @@ from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
+from scrapers.wiki.pipeline_spec import validate_wiki_pipeline_spec
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -41,6 +42,7 @@ def create_default_wiki_pipeline_application(
     base_wiki_dir: Path,
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
+    validate_wiki_pipeline_spec()
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,

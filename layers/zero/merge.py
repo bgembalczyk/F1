@@ -18,6 +18,8 @@ from scrapers.wiki.constants import ENGINES_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import FORMULA_ONE_SERIES
 from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import RED_FLAG_FIELDS
+from scrapers.wiki.pipeline_spec import get_pipeline_spec_for_domain
+from scrapers.wiki.pipeline_spec import validate_wiki_pipeline_spec
 from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
 from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
 from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
@@ -155,46 +157,59 @@ def _races_domain_handler(
 
 DEFAULT_SOURCE_PIPELINE = "*"
 
+TRANSFORM_HANDLER_BY_NAME: dict[str, RecordTransformHandler] = {
+    "tyre_manufacturers": _tyre_manufacturers_handler,
+    "constructor_domain": _constructor_domain_handler,
+    "circuits_domain": _circuits_domain_handler,
+    "engines_domain": _engines_domain_handler,
+    "grands_prix_domain": _grands_prix_domain_handler,
+    "teams_domain": _teams_domain_handler,
+    "drivers_domain": _drivers_domain_handler,
+    "races_domain": _races_domain_handler,
+}
+
 
 def _build_transform_pipelines() -> dict[
     str,
     dict[str, tuple[RecordTransformHandler, ...]],
 ]:
-    return {
-        "*": {
-            TYRE_MANUFACTURERS_SOURCE: (_tyre_manufacturers_handler,),
-        },
-        "constructors": {
-            DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,),
-        },
-        "constructor": {
-            DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,),
-        },
-        "chassis": {
-            DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,),
-        },
-        "circuits": {
-            DEFAULT_SOURCE_PIPELINE: (_circuits_domain_handler,),
-        },
-        "engines": {
-            DEFAULT_SOURCE_PIPELINE: (_engines_domain_handler,),
-        },
-        "grands_prix": {
-            DEFAULT_SOURCE_PIPELINE: (_grands_prix_domain_handler,),
-        },
-        "teams": {
-            DEFAULT_SOURCE_PIPELINE: (_teams_domain_handler,),
-        },
-        "drivers": {
-            DEFAULT_SOURCE_PIPELINE: (_drivers_domain_handler,),
-        },
-        "races": {
-            DEFAULT_SOURCE_PIPELINE: (_races_domain_handler,),
-        },
+    pipelines: dict[str, dict[str, tuple[RecordTransformHandler, ...]]] = {}
+    for domain in (
+        "circuits",
+        "constructors",
+        "chassis_constructors",
+        "engines",
+        "grands_prix",
+        "teams",
+        "drivers",
+        "races",
+        "seasons",
+    ):
+        domain_spec = get_pipeline_spec_for_domain(domain)
+        if domain_spec is None:
+            continue
+        source_transformers = domain_spec.source_transformers or {}
+        pipelines[domain] = {
+            DEFAULT_SOURCE_PIPELINE: tuple(
+                TRANSFORM_HANDLER_BY_NAME[name] for name in domain_spec.transformers
+            ),
+            **{
+                source: tuple(TRANSFORM_HANDLER_BY_NAME[name] for name in handlers)
+                for source, handlers in source_transformers.items()
+            },
+        }
+
+    constructors_pipeline = pipelines.get("constructors", {})
+    pipelines["constructor"] = constructors_pipeline
+    pipelines["chassis"] = constructors_pipeline
+    pipelines["*"] = {
+        TYRE_MANUFACTURERS_SOURCE: (TRANSFORM_HANDLER_BY_NAME["tyre_manufacturers"],),
     }
+    return pipelines
 
 
 TRANSFORM_PIPELINES = _build_transform_pipelines()
+validate_wiki_pipeline_spec()
 validate_sources_registry_consistency()
 
 
@@ -761,7 +776,8 @@ def _iter_mergeable_domain_dirs(layer_zero_dir: Path, resolver: PathResolver) ->
         raw_dir = resolver.raw_dir(domain=domain_dir.name)
         if not raw_dir.exists() or not raw_dir.is_dir():
             continue
-        if domain_dir.name in {"points", "rules"}:
+        domain_spec = get_pipeline_spec_for_domain(domain_dir.name)
+        if domain_spec is not None and not domain_spec.merge_enabled:
             continue
         domain_dirs.append(domain_dir)
     return domain_dirs
@@ -866,11 +882,17 @@ DOMAIN_POST_PROCESS_STRATEGIES: tuple[DomainPostProcessStrategy, ...] = (
         processor=_sort_seasons_by_year,
     ),
 )
+POSTPROCESS_STRATEGY_BY_NAME: dict[str, DomainPostProcessStrategy] = {
+    strategy.name: strategy for strategy in DOMAIN_POST_PROCESS_STRATEGIES
+}
 
 
 def _iter_active_domain_post_process_strategies(
     domain: str,
 ) -> list[DomainPostProcessStrategy]:
+    domain_spec = get_pipeline_spec_for_domain(domain)
+    if domain_spec is not None and domain_spec.postprocess:
+        return [POSTPROCESS_STRATEGY_BY_NAME[name] for name in domain_spec.postprocess]
     return [
         strategy
         for strategy in DOMAIN_POST_PROCESS_STRATEGIES
@@ -905,7 +927,11 @@ def _write_merged_domain_records(
     merged_records: list[object],
     resolver: PathResolver,
 ) -> None:
-    merged_path = resolver.merged(domain=domain_dir.name)
+    domain_spec = get_pipeline_spec_for_domain(domain_dir.name)
+    merged_path = resolver.merged(
+        domain=domain_dir.name,
+        filename=(domain_spec.output_filename if domain_spec else None),
+    )
     merged_path.write_text(
         json.dumps(merged_records, ensure_ascii=False, indent=2),
         encoding="utf-8",

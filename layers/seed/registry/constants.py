@@ -21,6 +21,7 @@ from scrapers.points.points_scraper import PointsScraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersScraper
+from scrapers.wiki.pipeline_spec import iter_source_specs
 from scrapers.wiki.sources_registry import get_source_by_seed_name
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
@@ -142,7 +143,11 @@ def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
     validate_sources_registry_consistency()
 
     specs: list[RawRegistrySpec] = []
-    for seed_name, list_scraper_cls in _LIST_SCRAPER_BY_SEED_NAME.items():
+    for seed_name, _domain, _list_filename in iter_source_specs():
+        list_scraper_cls = _LIST_SCRAPER_BY_SEED_NAME.get(seed_name)
+        if list_scraper_cls is None:
+            msg = f"Missing list scraper class for seed_name={seed_name!r}"
+            raise ValueError(msg)
         source = get_source_by_seed_name(seed_name, warn=False)
         specs.append(
             RawRegistrySpec(
