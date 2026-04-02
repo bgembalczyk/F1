@@ -5,6 +5,9 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
+from layers.orchestration.record_classifier import RecordClassifier
+from layers.orchestration.record_classifier import RecordClassifierInput
+from layers.orchestration.record_classifier import RecordRoutingDecision
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
 from layers.zero.merge_types import RaceRecordModel
@@ -28,6 +31,7 @@ RecordTransformHandler = Callable[
 DomainRecordsProcessor = Callable[[list[object]], list[object]]
 
 logger = logging.getLogger(__name__)
+record_classifier = RecordClassifier()
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -199,17 +203,26 @@ def _resolve_record_transform_handlers(
     domain: str,
     source_name: str,
 ) -> tuple[RecordTransformHandler, ...]:
+    decision = _routing_decision(domain=domain, source_name=source_name)
+    return _resolve_transform_handlers_for_decision(decision)
+
+
+def _resolve_transform_handlers_for_decision(
+    decision: RecordRoutingDecision,
+) -> tuple[RecordTransformHandler, ...]:
     global_handlers = TRANSFORM_PIPELINES.get("*", {})
-    domain_handlers = TRANSFORM_PIPELINES.get(domain, {})
+    domain_handlers = TRANSFORM_PIPELINES.get(decision.domain, {})
 
     resolved: list[RecordTransformHandler] = [
         *global_handlers.get(DEFAULT_SOURCE_PIPELINE, ()),
-        *global_handlers.get(source_name, ()),
     ]
-    domain_pipeline = domain_handlers.get(source_name)
-    if domain_pipeline is None:
-        domain_pipeline = domain_handlers.get(DEFAULT_SOURCE_PIPELINE, ())
-    resolved.extend(domain_pipeline)
+    if "tyre_manufacturers" in decision.transform_chain:
+        resolved.extend(global_handlers.get(TYRE_MANUFACTURERS_SOURCE, ()))
+
+    for chain_name in decision.transform_chain:
+        if chain_name.endswith("_domain"):
+            resolved.extend(domain_handlers.get(DEFAULT_SOURCE_PIPELINE, ()))
+
     return tuple(resolved)
 
 
@@ -430,16 +443,17 @@ def _iter_transformed_records(
     source_name: str,
     payload: object,
 ) -> list[object]:
+    decision = _routing_decision(domain=domain, source_name=source_name)
     if isinstance(payload, list):
         transformed = [_transform_record(domain, source_name, item) for item in payload]
-        if domain == "engines":
+        if decision.domain == "engines":
             return [
                 engine_record.to_dict()
                 if (engine_record := EngineRecordModel.from_object(record)) is not None
                 else record
                 for record in transformed
             ]
-        if domain != "races":
+        if decision.domain != "races":
             return transformed
         return [
             race_record.to_dict()
@@ -449,11 +463,11 @@ def _iter_transformed_records(
         ]
 
     transformed_record = _transform_record(domain, source_name, payload)
-    if domain == "engines":
+    if decision.domain == "engines":
         engine_record = EngineRecordModel.from_object(transformed_record)
         if engine_record is not None:
             return [engine_record.to_dict()]
-    if domain == "races":
+    if decision.domain == "races":
         race_record = RaceRecordModel.from_object(transformed_record)
         if race_record is not None:
             return [race_record.to_dict()]
@@ -764,8 +778,20 @@ def _iter_mergeable_domain_dirs(layer_zero_dir: Path) -> list[Path]:
 
 def _load_domain_records(domain_dir: Path) -> list[object]:
     merged_records: list[object] = []
+    logged_sources: set[str] = set()
     raw_dir = domain_dir / "raw"
     for json_path in sorted(raw_dir.rglob("*.json")):
+        decision = _routing_decision(domain=domain_dir.name, source_name=json_path.name)
+        if json_path.name not in logged_sources:
+            logged_sources.add(json_path.name)
+            logger.info(
+                "Routing decision domain=%s source=%s source_type=%s transform_chain=%s postprocess_chain=%s",
+                decision.domain,
+                json_path.name,
+                decision.source_type,
+                decision.transform_chain,
+                decision.postprocess_chain,
+            )
         payload = json.loads(json_path.read_text(encoding="utf-8"))
         merged_records.extend(
             _iter_transformed_records(domain_dir.name, json_path.name, payload),
@@ -866,11 +892,22 @@ DOMAIN_POST_PROCESS_STRATEGIES: tuple[DomainPostProcessStrategy, ...] = (
 def _iter_active_domain_post_process_strategies(
     domain: str,
 ) -> list[DomainPostProcessStrategy]:
+    decision = _routing_decision(domain=domain, source_name="")
+    active_names = set(decision.postprocess_chain)
     return [
         strategy
         for strategy in DOMAIN_POST_PROCESS_STRATEGIES
-        if strategy.is_active(domain)
+        if strategy.name in active_names
     ]
+
+
+def _routing_decision(domain: str, source_name: str) -> RecordRoutingDecision:
+    return record_classifier.classify(
+        RecordClassifierInput(
+            domain=domain,
+            source_name=source_name,
+        ),
+    )
 
 
 def _records_debug_summary(records: list[object]) -> str:
