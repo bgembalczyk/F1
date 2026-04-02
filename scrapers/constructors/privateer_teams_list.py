@@ -53,7 +53,7 @@ class PrivateerTeamsListParser(ListParser):
         return record
 
 
-class PrivateerTeamsListSectionParser(SectionParser):
+class PrivateerTeamsSectionParser(SectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._list_parser = PrivateerTeamsListParser()
@@ -74,7 +74,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
-        self._section_parser = PrivateerTeamsListSectionParser()
+        self._section_parser = PrivateerTeamsSectionParser()
 
     def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
         base_policy = super().get_http_policy(options)

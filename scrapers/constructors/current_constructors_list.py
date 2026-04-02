@@ -14,7 +14,7 @@ from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
 from scrapers.constructors.constants import CURRENT_YEAR
-from scrapers.constructors.sections.list_section import CurrentConstructorsListSectionParser
+from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 
 
 class CurrentConstructorsListScraper(BaseConstructorListScraper):
@@ -47,7 +47,7 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
     )
 
     section_label = "Current constructors"
-    section_parser_class = CurrentConstructorsListSectionParser
+    section_parser_class = CurrentConstructorsSectionParser
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 
 
-class IndianapolisOnlyConstructorsListParser(ListParser):
+class IndianapolisOnlyListParser(ListParser):
     def parse(self, element: Tag) -> dict[str, list[dict[str, str]]]:
         items: list[dict[str, str]] = []
         for li in element.find_all("li", recursive=False):
@@ -26,10 +26,10 @@ class IndianapolisOnlyConstructorsListParser(ListParser):
         return {"items": items}
 
 
-class IndianapolisOnlyConstructorsSubSectionParser(SubSectionParser):
+class IndianapolisOnlySubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._list_parser = IndianapolisOnlyConstructorsListParser()
+        self._list_parser = IndianapolisOnlyListParser()
 
     def parse(self, element: Tag, *args: Any, **kwargs: Any) -> dict[str, Any]:
         return self.parse_group(list(element.children), *args, **kwargs)
@@ -50,7 +50,7 @@ class IndianapolisOnlyConstructorsListScraper(IndianapolisOnlyListScraper):
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
-        self._sub_section_parser = IndianapolisOnlyConstructorsSubSectionParser()
+        self._sub_section_parser = IndianapolisOnlySubSectionParser()
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         root_list = self._find_list_root(soup)
