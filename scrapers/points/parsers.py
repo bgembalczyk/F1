@@ -3,9 +3,12 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from bs4 import Tag
+
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
 from scrapers.points.constants import SHORTENED_RACE_EXPECTED_HEADERS
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
+from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
@@ -162,10 +165,16 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = ShortenedRacesPointsTableParser()
+        self._raw_table_parser = TableParser()
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
         self._apply_table_parser(parsed)
+        self._apply_shortened_section_fallback(
+            parsed,
+            elements,
+            context_section_id=(getattr(context, "section_id", "") or ""),
+        )
         return parsed
 
     def _apply_table_parser(self, payload: dict[str, Any]) -> None:
@@ -188,6 +197,63 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
             parsed = self._table_parser.parse(data)
             if parsed is not None:
                 element["data"] = parsed
+
+    def _apply_shortened_section_fallback(
+        self,
+        payload: dict[str, Any],
+        elements: list,
+        *,
+        context_section_id: str,
+    ) -> None:
+        if context_section_id.lower() != "shortened_races":
+            return
+        if self._contains_shortened_table(payload):
+            return
+
+        fallback_tables = self._extract_shortened_tables(elements)
+        if not fallback_tables:
+            return
+
+        target = payload.setdefault("elements", [])
+        if not isinstance(target, list):
+            return
+        target.extend(
+            [
+                {
+                    "kind": "table",
+                    "type": "table",
+                    "source_section_id": context_section_id,
+                    "data": table_payload,
+                }
+                for table_payload in fallback_tables
+            ],
+        )
+
+    def _contains_shortened_table(self, payload: Any) -> bool:
+        if isinstance(payload, dict):
+            if payload.get("table_type") == "points_shortened_races":
+                return True
+            return any(self._contains_shortened_table(value) for value in payload.values())
+        if isinstance(payload, list):
+            return any(self._contains_shortened_table(item) for item in payload)
+        return False
+
+    def _extract_shortened_tables(self, elements: list) -> list[dict[str, Any]]:
+        tables: list[dict[str, Any]] = []
+        seen_ids: set[int] = set()
+        for node in elements:
+            if not isinstance(node, Tag):
+                continue
+            for table in node.find_all("table", class_="wikitable"):
+                key = id(table)
+                if key in seen_ids:
+                    continue
+                seen_ids.add(key)
+                raw_data = self._raw_table_parser.parse(table)
+                mapped = self._table_parser.parse(raw_data)
+                if mapped is not None:
+                    tables.append(mapped)
+        return tables
 
 
 class _SpecialCasesSubSubSectionRouter(SubSubSectionParser):

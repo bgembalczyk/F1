@@ -103,6 +103,28 @@ def test_split_into_parts_with_headings():
     assert parts[2][0] == "Sec2"
 
 
+def test_split_into_parts_with_plain_html_headings():
+    html = """
+    <div>
+      <p>Intro</p>
+      <h2 id="Sec1">Sec1</h2>
+      <p>Content 1</p>
+      <h2 id="Sec2">Sec2</h2>
+      <p>Content 2</p>
+    </div>
+    """
+    soup = _make_soup(html)
+    from bs4 import Tag
+
+    tags = [c for c in soup.find("div").children if isinstance(c, Tag)]
+    parts = _split_into_parts(tags, "mw-heading2")
+    assert len(parts) == 3
+    assert parts[1][0] == "Sec1"
+    assert parts[1][1] == "Sec1"
+    assert parts[2][0] == "Sec2"
+    assert parts[2][1] == "Sec2"
+
+
 # ---------------------------------------------------------------------------
 # HeaderParser
 # ---------------------------------------------------------------------------
