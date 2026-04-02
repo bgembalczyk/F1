@@ -65,6 +65,8 @@ def test_entrypoint_parsers_expose_consistent_flag_contract(
         "--no-quality-report",
         "--error-report",
         "--no-error-report",
+        "--verbose",
+        "--trace",
     }
 
     args = parser.parse_args([])
