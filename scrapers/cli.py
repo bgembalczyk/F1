@@ -219,8 +219,12 @@ def _run_export_complete(
 
 def _list_output_path(*, seed_name: str, output_category: str | None = None) -> str:
     source = get_source_by_seed_name(seed_name, warn=False)
-    category = output_category or source.output_category
-    return f"{category}/{source.list_filename}"
+    category = output_category or source.domain
+    return f"{category}/{source.output_file}"
+
+
+def _source_profile(seed_name: str) -> LegacyCliProfileName:
+    return get_source_by_seed_name(seed_name, warn=False).profile
 
 
 def _legacy_alias_output_path(
@@ -472,7 +476,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             module_path="scrapers.points.sprint_qualifying_points",
             factory="lazy",
             target_path="scrapers.points.sprint_qualifying_points:run_list_scraper",
-            profile="list_scraper",
+            profile=_source_profile("points_sprint"),
         ),
         LegacyModuleDefinition(
             module_path="scrapers.points.points_scoring_systems_history",
@@ -480,13 +484,13 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path=(
                 "scrapers.points.points_scoring_systems_history:run_list_scraper"
             ),
-            profile="list_scraper",
+            profile=_source_profile("points_history"),
         ),
         LegacyModuleDefinition(
             module_path="scrapers.points.shortened_race_points",
             factory="lazy",
             target_path="scrapers.points.shortened_race_points:run_list_scraper",
-            profile="list_scraper",
+            profile=_source_profile("points_shortened"),
         ),
         LegacyModuleDefinition(
             module_path="scrapers.seasons.list_scraper",

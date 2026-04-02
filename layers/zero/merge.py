@@ -23,6 +23,7 @@ from scrapers.wiki.constants import FORMULA_ONE_SERIES
 from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import RED_FLAG_FIELDS
 from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_ENGINES_SOURCE
 from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
 from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
@@ -345,7 +346,7 @@ def _transform_engines_domain(
 ) -> dict[str, object]:
     if domain != "engines":
         return transformed
-    if source_name == "f1_indianapolis_only_engine_manufacturers.json":
+    if source_name == INDIANAPOLIS_ONLY_ENGINES_SOURCE:
         transformed["racing_series"] = {
             "AAA_national_championship": [],
             "formula_one": {"status": "former", "indianapolis_only": True},
