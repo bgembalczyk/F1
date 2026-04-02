@@ -3,6 +3,8 @@ from pathlib import Path
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerOneRunnerProtocol
+from layers.orchestration.record_classifier import RecordClassifier
+from layers.orchestration.record_classifier import RecordClassifierInput
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
@@ -20,11 +22,13 @@ class LayerOneExecutor:
         ],
         runner_map_builder: Callable[[], dict[str, LayerOneRunnerProtocol]],
         engine_manufacturers_runner: Callable[[Path, bool], None],
+        record_classifier: RecordClassifier | None = None,
     ) -> None:
         self._seed_registry = seed_registry
         self._validate_seed_registry_function = validate_seed_registry_function
         self._runner_map_builder = runner_map_builder
         self._engine_manufacturers_runner = engine_manufacturers_runner
+        self._record_classifier = record_classifier or RecordClassifier()
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
@@ -33,6 +37,12 @@ class LayerOneExecutor:
         run_id = str(uuid4())
 
         for seed in self._seed_registry:
+            decision = self._record_classifier.classify(
+                RecordClassifierInput(
+                    domain=seed.output_category,
+                    source_name=seed.seed_name,
+                ),
+            )
             context = build_execution_context(
                 run_id=run_id,
                 seed_name=seed.seed_name,
@@ -40,6 +50,13 @@ class LayerOneExecutor:
                 source_name=seed.complete_scraper_cls.__name__,
             )
             self._logger.info("layer1 seed started", extra=context)
+            self._logger.debug(
+                "layer1 routing decision source_type=%s transform_chain=%s postprocess_chain=%s",
+                decision.source_type,
+                decision.transform_chain,
+                decision.postprocess_chain,
+                extra=context,
+            )
 
             runner = runner_map.get(seed.seed_name)
             if runner is None:

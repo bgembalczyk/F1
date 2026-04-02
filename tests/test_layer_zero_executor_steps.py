@@ -3,6 +3,7 @@ from pathlib import Path
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
+from layers.orchestration.record_classifier import RecordClassifierInput
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge_service import LayerZeroMergeService
@@ -77,6 +78,12 @@ def _executor(
         merge_service=(merge_service if merge_service else _MergeService()),
         job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
         year_provider=lambda: 2026,
+    )
+
+
+def _decision(executor: LayerZeroExecutor) -> object:
+    return executor._record_classifier.classify(
+        RecordClassifierInput(domain="drivers", source_name="drivers"),
     )
 
 
@@ -161,6 +168,7 @@ def test_run_single_job_passes_local_run_config_when_kwargs_present() -> None:
             run_config=default_run_config,
             local_run_config=local_run_config,
             job=_job(),
+            decision=_decision(executor),
         )
     finally:
         ScraperRunner.run_and_export = original_method
@@ -188,6 +196,7 @@ def test_run_single_job_passes_global_run_config_when_local_kwargs_missing() -> 
             run_config=default_run_config,
             local_run_config=local_run_config,
             job=_job(),
+            decision=_decision(executor),
         )
     finally:
         ScraperRunner.run_and_export = original_method
