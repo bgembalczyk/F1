@@ -4,12 +4,18 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
+import logging
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Literal
 
 if TYPE_CHECKING:
     from scrapers.base.run_config import RunConfig
+
+from scrapers.base.run_profile_contracts import BuildRunConfigRequestDTO
+from scrapers.base.run_profile_contracts import BuildRunConfigResultDTO
+
+_logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -69,18 +75,49 @@ class RunProfileSpec:
     error_report: bool = False
     cli_aliases: tuple[LegacyCliProfileName, ...] = ()
 
-    def build_config(self, *, paths: RunPathConfig) -> RunConfig:
+    def build_config(
+        self,
+        request: BuildRunConfigRequestDTO | None = None,
+        *,
+        paths: RunPathConfig | None = None,
+    ) -> BuildRunConfigResultDTO:
         from scrapers.base.run_config import RunConfig
 
-        return RunConfig(
-            output_dir=paths.resolve(self.output_dir),
-            include_urls=self.include_urls,
-            debug_dir=(
-                None if self.debug_dir is None else paths.resolve(self.debug_dir)
+        request_dto = self._coerce_build_config_request(request=request, paths=paths)
+        request_dto.validate()
+        result = BuildRunConfigResultDTO(
+            run_config=RunConfig(
+                output_dir=request_dto.paths.resolve(self.output_dir),
+                include_urls=self.include_urls,
+                debug_dir=(
+                    None
+                    if self.debug_dir is None
+                    else request_dto.paths.resolve(self.debug_dir)
+                ),
+                quality_report=self.quality_report,
+                error_report=self.error_report,
             ),
-            quality_report=self.quality_report,
-            error_report=self.error_report,
         )
+        result.validate()
+        _logger.info(
+            "run profile build_config: %s -> %s",
+            request_dto.short(),
+            result.short(),
+        )
+        return result
+
+    def _coerce_build_config_request(
+        self,
+        *,
+        request: BuildRunConfigRequestDTO | None,
+        paths: RunPathConfig | None,
+    ) -> BuildRunConfigRequestDTO:
+        if request is not None:
+            return request
+        if paths is None:
+            msg = "Either request DTO or paths must be provided"
+            raise TypeError(msg)
+        return BuildRunConfigRequestDTO(paths=paths)
 
 
 RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
@@ -175,6 +212,7 @@ def build_run_profile(
 ) -> RunConfig:
     """Build ``RunConfig`` for a named profile."""
     normalized_profile = PROFILE_RESOLVER._coerce_profile(profile)
-    return PROFILE_RESOLVER.validate_supported_profile(normalized_profile).build_config(
-        paths=paths,
+    result = PROFILE_RESOLVER.validate_supported_profile(normalized_profile).build_config(
+        BuildRunConfigRequestDTO(paths=paths),
     )
+    return result.run_config
