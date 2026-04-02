@@ -8,7 +8,16 @@ from pathlib import Path
 from layers.path_resolver import PathResolver
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
+from layers.zero.merge_types import FIELD_DRIVER
+from layers.zero.merge_types import FIELD_FORMULA_ONE
+from layers.zero.merge_types import FIELD_LIVERIES
+from layers.zero.merge_types import FIELD_RACING_SERIES
+from layers.zero.merge_types import FIELD_SEASON
+from layers.zero.merge_types import FIELD_TEAM
+from layers.zero.merge_types import LinkValue
+from layers.zero.merge_types import LiveryRecordModel
 from layers.zero.merge_types import RaceRecordModel
+from layers.zero.merge_types import SeasonRecordModel
 from layers.zero.merge_types import TeamRecordModel
 from layers.zero.merge_types import as_record_dict
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
@@ -47,8 +56,8 @@ def _move_fields_to_formula_one(
 
 
 def _link_text(value: object) -> str:
-    if isinstance(value, dict):
-        return str(value.get("text", ""))
+    if isinstance(value, dict) and (link := LinkValue.from_object(value)) is not None:
+        return link.display_text()
     return str(value or "")
 
 
@@ -566,25 +575,26 @@ def _merge_duplicate_drivers(records: list[object]) -> list[object]:
 
 
 def _season_sort_key(record: object) -> tuple[int, str]:
-    if not isinstance(record, dict):
+    season_record = SeasonRecordModel.from_object(record)
+    if season_record is None:
         return (1, "")
 
-    season = record.get("season")
+    season = season_record.raw.get(FIELD_SEASON)
     if isinstance(season, int):
-        return (0, str(season).zfill(10))
+        return (0, f"{season:010d}")
 
     return (1, "")
 
 
 def _driver_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
+    driver_record = DriverRecordModel.from_object(record)
+    if driver_record is None:
         return ""
-
-    driver_value = record.get("driver")
-    if isinstance(driver_value, dict):
-        driver_text = str(driver_value.get("text", ""))
+    driver_link = driver_record.driver_link()
+    if driver_link is not None:
+        driver_text = driver_link.display_text()
     else:
-        driver_text = str(driver_value or "")
+        driver_text = str(driver_record.raw.get(FIELD_DRIVER) or "")
 
     name_parts = driver_text.split(" ", 1)
     if len(name_parts) == 1:
@@ -599,9 +609,13 @@ def _constructor_sort_key(record: object) -> str:
 
 
 def _team_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
+    team_record = TeamRecordModel.from_object(record)
+    if team_record is None:
         return ""
-    return _link_text(record.get("team")).casefold()
+    team_link = team_record.team_link()
+    if team_link is not None:
+        return team_link.display_text().casefold()
+    return _link_text(team_record.raw.get(FIELD_TEAM)).casefold()
 
 
 def _merge_duplicate_teams(records: list[object]) -> list[object]:
@@ -645,18 +659,10 @@ def _merge_duplicate_teams(records: list[object]) -> list[object]:
 
 
 def _season_years(value: object) -> set[int]:
-    years: set[int] = set()
-    if isinstance(value, dict):
-        year = value.get("year")
-        if isinstance(year, int):
-            years.add(year)
-        return years
-
-    if isinstance(value, list):
-        for item in value:
-            years.update(_season_years(item))
-
-    return years
+    livery = LiveryRecordModel.from_object({FIELD_SEASON: value})
+    if livery is None:
+        return set()
+    return livery.season_years()
 
 
 def _nest_team_liveries_in_seasons(record: object) -> object:
@@ -665,15 +671,15 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
         return record
 
     seasons = formula_one.get("seasons")
-    liveries = formula_one.get("liveries")
+    liveries = formula_one.get(FIELD_LIVERIES)
     if not isinstance(seasons, list) or not isinstance(liveries, list):
         return record
 
     remaining_liveries = _distribute_liveries_across_seasons(seasons, liveries)
     if remaining_liveries:
-        formula_one["liveries"] = remaining_liveries
+        formula_one[FIELD_LIVERIES] = remaining_liveries
     else:
-        formula_one.pop("liveries", None)
+        formula_one.pop(FIELD_LIVERIES, None)
     return record
 
 
@@ -681,10 +687,10 @@ def _formula_one_series(record: object) -> dict[str, object] | None:
     record_dict = as_record_dict(record)
     if record_dict is None:
         return None
-    racing_series = as_record_dict(record_dict.get("racing_series"))
+    racing_series = as_record_dict(record_dict.get(FIELD_RACING_SERIES))
     if racing_series is None:
         return None
-    return as_record_dict(racing_series.get("formula_one"))
+    return as_record_dict(racing_series.get(FIELD_FORMULA_ONE))
 
 
 def _distribute_liveries_across_seasons(
@@ -705,8 +711,11 @@ def _attach_livery_to_matching_seasons(
     seasons: list[object],
     livery: dict[str, object],
 ) -> bool:
-    livery_years = _season_years(livery.get("season"))
-    livery_payload = {key: value for key, value in livery.items() if key != "season"}
+    livery_record = LiveryRecordModel.from_object(livery)
+    if livery_record is None:
+        return False
+    livery_years = livery_record.season_years()
+    livery_payload = livery_record.payload_without_season()
     matched = False
     for season in seasons:
         if not _season_matches_livery_years(season, livery_years):
@@ -717,27 +726,18 @@ def _attach_livery_to_matching_seasons(
 
 
 def _season_matches_livery_years(season: object, livery_years: set[int]) -> bool:
-    season_dict = as_record_dict(season)
-    if season_dict is None:
+    season_record = SeasonRecordModel.from_object(season)
+    if season_record is None:
         return False
-    season_year = season_dict.get("year")
-    return isinstance(season_year, int) and season_year in livery_years
+    season_year = season_record.year()
+    return season_year is not None and season_year in livery_years
 
 
 def _append_livery_to_season(season: object, livery_payload: dict[str, object]) -> None:
-    season_dict = as_record_dict(season)
-    if season_dict is None:
+    season_record = SeasonRecordModel.from_object(season)
+    if season_record is None:
         return
-    existing_liveries = season_dict.get("liveries")
-    if isinstance(existing_liveries, list):
-        existing_liveries.append(livery_payload)
-        return
-    existing_livery = season_dict.pop("livery", None)
-    season_liveries: list[object] = []
-    if existing_livery is not None:
-        season_liveries.append(existing_livery)
-    season_liveries.append(livery_payload)
-    season_dict["liveries"] = season_liveries
+    season_record.append_livery(livery_payload)
 
 
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
