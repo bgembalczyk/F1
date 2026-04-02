@@ -537,6 +537,47 @@ def test_wiki_element_parser_mixin_default_registry_matches_expected_types() -> 
     ]
 
 
+def test_wiki_element_parser_mixin_flattens_nested_div_children() -> None:
+    html = """
+    <div>
+      <div class="wrapper">
+        <table class="wikitable"><tr><th>A</th></tr><tr><td>1</td></tr></table>
+        <table class="wikitable"><tr><th>B</th></tr><tr><td>2</td></tr></table>
+      </div>
+    </div>
+    """
+    soup = _make_soup(html)
+    parser = SubSubSubSectionParser()
+    root = soup.find("div")
+
+    result = parser.parse_elements(
+        list(root.find_all(recursive=False)),
+        section_context=SectionExtractionContext(section_id="demo"),
+    )
+
+    assert [item["kind"] for item in result] == ["table", "table"]
+
+
+def test_wiki_element_parser_mixin_ignores_empty_wrapper_paragraph() -> None:
+    html = """
+    <div>
+      <p class="mw-empty-elt">
+        <table class="wikitable"><tr><th>A</th></tr><tr><td>1</td></tr></table>
+      </p>
+    </div>
+    """
+    soup = _make_soup(html)
+    parser = SubSubSubSectionParser()
+    root = soup.find("div")
+
+    result = parser.parse_elements(
+        list(root.find_all(recursive=False)),
+        section_context=SectionExtractionContext(section_id="demo"),
+    )
+
+    assert [item["kind"] for item in result] == ["table"]
+
+
 def test_wiki_element_parser_mixin_allows_stubbed_paragraph_parser() -> None:
     soup = _make_soup("<p>Injected paragraph parser</p>")
     parser = SubSubSubSectionParser(
