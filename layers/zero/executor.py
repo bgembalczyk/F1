@@ -2,12 +2,16 @@ from collections.abc import Callable
 from pathlib import Path
 from uuid import uuid4
 
+from layers.orchestration.dto import ExecutionContextDto
+from layers.orchestration.dto import LayerExecutionInputDto
+from layers.orchestration.dto import LayerZeroConfigFactoriesDto
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.path_resolver import format_domain_year_name
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
-from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
+from layers.zero.policies import MirrorConstructorsJobHook
+from layers.zero.run_profile_paths import layer_zero_raw_paths
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.base.run_config import RunConfig
@@ -35,6 +39,11 @@ class LayerZeroExecutor:
         merger: LayerZeroMergeServiceProtocol | None = None,
         merge_service: LayerZeroMergeServiceProtocol | None = None,
         job_hook: LayerZeroJobHook | None = None,
+        run_and_export_function: (
+            Callable[[type[object], Path, Path | None, RunConfig], None] | None
+        ) = None,
+        constructors_mirror_service: object | None = None,
+        current_constructors_scraper_name: str | None = None,
         year_provider: Callable[[], int] | None = None,
     ) -> None:
         self._list_job_registry = list_job_registry
@@ -42,6 +51,18 @@ class LayerZeroExecutor:
         self._config_factories = config_factories or run_config_factory_map_builder
         self._default_config_factory = default_config_factory
         self._merger = merger or merge_service
+        self._run_and_export_function = run_and_export_function
+        if (
+            job_hook is None
+            and constructors_mirror_service is not None
+            and current_constructors_scraper_name
+        ):
+            job_hook = MirrorConstructorsJobHook(
+                mirror=constructors_mirror_service,
+                should_mirror_predicate=lambda job: (
+                    job.list_scraper_cls.__name__ == current_constructors_scraper_name
+                ),
+            )
         if (
             self._config_factories is None
             or self._merger is None
@@ -59,32 +80,36 @@ class LayerZeroExecutor:
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
+        execution_input = LayerExecutionInputDto(
+            run_config=run_config,
+            base_wiki_dir=base_wiki_dir,
+        )
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
         run_id = str(uuid4())
 
         for job in self._list_job_registry:
-            context = build_execution_context(
+            context = ExecutionContextDto(
                 run_id=run_id,
                 seed_name=job.seed_name,
                 domain=job.output_category,
                 source_name=job.list_scraper_cls.__name__,
-            )
-            self._logger.info("layer0 job started", extra=context)
+            ).to_log_payload()
+            self._logger.info("layer0 job started", extra=build_execution_context(**context))
 
             local_run_config = self._build_local_run_config(
-                run_config=run_config,
+                run_config=execution_input.run_config,
                 job=job,
                 config_factories=config_factories,
             )
             try:
                 l0_raw_json_path = self._run_single_job(
-                    run_config=run_config,
+                    run_config=execution_input.run_config,
                     local_run_config=local_run_config,
                     job=job,
                 )
                 self._maybe_mirror_constructors(
-                    base_wiki_dir=base_wiki_dir,
+                    base_wiki_dir=execution_input.base_wiki_dir,
                     job=job,
                     l0_raw_json_path=l0_raw_json_path,
                 )
@@ -104,19 +129,22 @@ class LayerZeroExecutor:
 
             self._logger.info("layer0 job finished", extra=context)
 
-        self._finalize_merge(base_wiki_dir)
+        self._finalize_merge(execution_input.base_wiki_dir)
 
-    def _resolve_config_factory(self) -> dict[str, object]:
-        return self._config_factories()
+    def _resolve_config_factory(self) -> LayerZeroConfigFactoriesDto:
+        return LayerZeroConfigFactoriesDto.from_mapping(self._config_factories())
 
     def _build_local_run_config(
         self,
         *,
         run_config: RunConfig,
         job: ListJobRegistryEntry,
-        config_factories: dict[str, object],
+        config_factories: LayerZeroConfigFactoriesDto,
     ) -> RunConfig:
-        config_factory = config_factories.get(job.seed_name, self._default_config_factory)
+        config_factory = config_factories.resolve_for_seed(
+            job.seed_name,
+            default_factory=self._default_config_factory,
+        )
         scraper_kwargs = config_factory.create_scraper_kwargs(job)
         return RunConfig(
             output_dir=run_config.output_dir,
@@ -146,11 +174,19 @@ class LayerZeroExecutor:
         effective_run_config = (
             local_run_config if local_run_config.scraper_kwargs else run_config
         )
-        ScraperRunner(effective_run_config).run_and_export(
-            job.list_scraper_cls,
-            l0_raw_json_path,
-            l0_raw_csv_path,
-        )
+        if self._run_and_export_function is None:
+            ScraperRunner(effective_run_config).run_and_export(
+                job.list_scraper_cls,
+                l0_raw_json_path,
+                l0_raw_csv_path,
+            )
+        else:
+            self._run_and_export_function(
+                job.list_scraper_cls,
+                l0_raw_json_path,
+                l0_raw_csv_path,
+                effective_run_config,
+            )
         return l0_raw_json_path
 
     def _maybe_mirror_constructors(

@@ -2,6 +2,9 @@ from collections.abc import Callable
 from pathlib import Path
 from uuid import uuid4
 
+from layers.orchestration.dto import ExecutionContextDto
+from layers.orchestration.dto import LayerExecutionInputDto
+from layers.orchestration.dto import LayerOneRunnersDto
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.logging import build_execution_context
@@ -48,18 +51,22 @@ class LayerOneExecutor:
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
+        execution_input = LayerExecutionInputDto(
+            run_config=run_config,
+            base_wiki_dir=base_wiki_dir,
+        )
         self._validate_seed_registry(self._seed_registry)
-        runner_map = self._runners()
+        runner_map = LayerOneRunnersDto.from_mapping(self._runners())
         run_id = str(uuid4())
 
         for seed in self._seed_registry:
-            context = build_execution_context(
+            context = ExecutionContextDto(
                 run_id=run_id,
                 seed_name=seed.seed_name,
                 domain=seed.output_category,
-                source_name=seed.complete_scraper_cls.__name__,
-            )
-            self._logger.info("layer1 seed started", extra=context)
+                source_name=seed.list_scraper_cls.__name__,
+            ).to_log_payload()
+            self._logger.info("layer1 seed started", extra=build_execution_context(**context))
 
             runner = runner_map.get(seed.seed_name)
             if runner is None:
@@ -67,14 +74,14 @@ class LayerOneExecutor:
                 continue
 
             try:
-                runner.run(seed, run_config, base_wiki_dir)
+                runner.run(seed, execution_input.run_config, execution_input.base_wiki_dir)
             except Exception as exc:
                 normalized_error = normalize_pipeline_error(
                     exc,
                     code="layer1.seed_failed",
                     message="Layer one seed failed.",
                     domain=seed.output_category,
-                    source_name=seed.complete_scraper_cls.__name__,
+                    source_name=seed.list_scraper_cls.__name__,
                 )
                 self._logger.error(
                     "layer1 seed failed",
@@ -85,8 +92,8 @@ class LayerOneExecutor:
 
         try:
             self._engine_manufacturers_runner(
-                base_wiki_dir=base_wiki_dir,
-                include_urls=run_config.include_urls,
+                base_wiki_dir=execution_input.base_wiki_dir,
+                include_urls=execution_input.run_config.include_urls,
             )
         except Exception as exc:
             normalized_error = normalize_pipeline_error(
