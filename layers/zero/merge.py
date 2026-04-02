@@ -3,6 +3,11 @@ import re
 from collections.abc import Callable
 from pathlib import Path
 
+from layers.zero.merge_types import DriverRecordModel
+from layers.zero.merge_types import EngineRecordModel
+from layers.zero.merge_types import RaceRecordModel
+from layers.zero.merge_types import TeamRecordModel
+from layers.zero.merge_types import as_record_dict
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
@@ -13,7 +18,6 @@ from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
 from scrapers.wiki.constants import RED_FLAG_FIELDS
 from scrapers.wiki.constants import TYRE_MANUFACTURERS_SOURCE
-
 
 RecordTransformHandler = Callable[
     [str, str, dict[str, object]],
@@ -422,26 +426,33 @@ def _iter_transformed_records(
     payload: object,
 ) -> list[object]:
     if isinstance(payload, list):
-        return [_transform_record(domain, source_name, item) for item in payload]
+        transformed = [_transform_record(domain, source_name, item) for item in payload]
+        if domain == "engines":
+            return [
+                engine_record.to_dict()
+                if (engine_record := EngineRecordModel.from_object(record)) is not None
+                else record
+                for record in transformed
+            ]
+        if domain != "races":
+            return transformed
+        return [
+            race_record.to_dict()
+            if (race_record := RaceRecordModel.from_object(record)) is not None
+            else record
+            for record in transformed
+        ]
 
-    return [_transform_record(domain, source_name, payload)]
-
-
-def _driver_record_key(record: object) -> str | None:
-    if not isinstance(record, dict):
-        return None
-
-    driver_url = record.get("driver_url")
-    if isinstance(driver_url, str) and driver_url:
-        return driver_url
-
-    driver = record.get("driver")
-    if isinstance(driver, dict):
-        url = driver.get("url")
-        if isinstance(url, str) and url:
-            return url
-
-    return None
+    transformed_record = _transform_record(domain, source_name, payload)
+    if domain == "engines":
+        engine_record = EngineRecordModel.from_object(transformed_record)
+        if engine_record is not None:
+            return [engine_record.to_dict()]
+    if domain == "races":
+        race_record = RaceRecordModel.from_object(transformed_record)
+        if race_record is not None:
+            return [race_record.to_dict()]
+    return [transformed_record]
 
 
 def _merge_driver_values(existing: object, incoming: object) -> object:
@@ -518,20 +529,29 @@ def _merge_duplicate_drivers(records: list[object]) -> list[object]:
     key_to_index: dict[str, int] = {}
 
     for record in records:
-        key = _driver_record_key(record)
-        if key is None or not isinstance(record, dict):
+        driver_record = DriverRecordModel.from_object(record)
+        if driver_record is None:
             merged_records.append(record)
+            continue
+        key = driver_record.dedupe_key()
+        if key is None:
+            merged_records.append(driver_record.to_dict())
             continue
 
         index = key_to_index.get(key)
         if index is None:
             key_to_index[key] = len(merged_records)
-            merged_records.append(record)
+            merged_records.append(driver_record.to_dict())
             continue
 
         existing = merged_records[index]
-        if isinstance(existing, dict):
-            merged_records[index] = _merge_driver_values(existing, record)
+        existing_driver = DriverRecordModel.from_object(existing)
+        if existing_driver is None:
+            continue
+        merged_records[index] = _merge_driver_values(
+            existing_driver.to_dict(),
+            driver_record.to_dict(),
+        )
 
     return merged_records
 
@@ -575,71 +595,41 @@ def _team_sort_key(record: object) -> str:
     return _link_text(record.get("team")).casefold()
 
 
-def _team_record_key(record: object) -> str | None:
-    if not isinstance(record, dict):
-        return None
-
-    team = record.get("team")
-    if isinstance(team, dict):
-        url = team.get("url")
-        if isinstance(url, str) and url:
-            return url
-        text = team.get("text")
-        if isinstance(text, str) and text:
-            return text.casefold()
-
-    if isinstance(team, str) and team:
-        return team.casefold()
-
-    return None
-
-
-def _team_record_aliases(record: object) -> set[str]:
-    if not isinstance(record, dict):
-        return set()
-
-    aliases: set[str] = set()
-    team = record.get("team")
-
-    if isinstance(team, dict):
-        url = team.get("url")
-        if isinstance(url, str) and url:
-            aliases.add(url)
-        text = team.get("text")
-        if isinstance(text, str) and text:
-            aliases.add(text.casefold())
-
-    if isinstance(team, str) and team:
-        aliases.add(team.casefold())
-
-    return aliases
-
-
 def _merge_duplicate_teams(records: list[object]) -> list[object]:
     merged_records: list[object] = []
     key_to_index: dict[str, int] = {}
 
     for record in records:
-        key = _team_record_key(record)
-        if key is None or not isinstance(record, dict):
+        team_record = TeamRecordModel.from_object(record)
+        if team_record is None:
             merged_records.append(record)
+            continue
+        key = team_record.dedupe_key()
+        if key is None:
+            merged_records.append(team_record.to_dict())
             continue
 
         index = key_to_index.get(key)
         if index is None:
             index = len(merged_records)
             key_to_index[key] = index
-            merged_records.append(record)
-            for alias in _team_record_aliases(record):
+            merged_records.append(team_record.to_dict())
+            for alias in team_record.aliases():
                 key_to_index[alias] = index
             continue
 
         existing = merged_records[index]
-        if isinstance(existing, dict):
-            merged_record = _merge_values(existing, record)
-            merged_records[index] = merged_record
-            for alias in _team_record_aliases(merged_record):
-                key_to_index[alias] = index
+        existing_team = TeamRecordModel.from_object(existing)
+        if existing_team is None:
+            continue
+
+        merged_record = _merge_values(existing_team.to_dict(), team_record.to_dict())
+        merged_records[index] = merged_record
+        merged_team = TeamRecordModel.from_object(merged_record)
+        if merged_team is None:
+            continue
+        for alias in merged_team.aliases():
+            key_to_index[alias] = index
 
     return merged_records
 
@@ -678,13 +668,13 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
 
 
 def _formula_one_series(record: object) -> dict[str, object] | None:
-    if not isinstance(record, dict):
+    record_dict = as_record_dict(record)
+    if record_dict is None:
         return None
-    racing_series = record.get("racing_series")
-    if not isinstance(racing_series, dict):
+    racing_series = as_record_dict(record_dict.get("racing_series"))
+    if racing_series is None:
         return None
-    formula_one = racing_series.get("formula_one")
-    return formula_one if isinstance(formula_one, dict) else None
+    return as_record_dict(racing_series.get("formula_one"))
 
 
 def _distribute_liveries_across_seasons(
@@ -717,25 +707,27 @@ def _attach_livery_to_matching_seasons(
 
 
 def _season_matches_livery_years(season: object, livery_years: set[int]) -> bool:
-    if not isinstance(season, dict):
+    season_dict = as_record_dict(season)
+    if season_dict is None:
         return False
-    season_year = season.get("year")
+    season_year = season_dict.get("year")
     return isinstance(season_year, int) and season_year in livery_years
 
 
 def _append_livery_to_season(season: object, livery_payload: dict[str, object]) -> None:
-    if not isinstance(season, dict):
+    season_dict = as_record_dict(season)
+    if season_dict is None:
         return
-    existing_liveries = season.get("liveries")
+    existing_liveries = season_dict.get("liveries")
     if isinstance(existing_liveries, list):
         existing_liveries.append(livery_payload)
         return
-    existing_livery = season.pop("livery", None)
+    existing_livery = season_dict.pop("livery", None)
     season_liveries: list[object] = []
     if existing_livery is not None:
         season_liveries.append(existing_livery)
     season_liveries.append(livery_payload)
-    season["liveries"] = season_liveries
+    season_dict["liveries"] = season_liveries
 
 
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
