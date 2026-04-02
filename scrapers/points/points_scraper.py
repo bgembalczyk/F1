@@ -10,6 +10,7 @@ if TYPE_CHECKING:
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.config_factory import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
 from scrapers.points.parsers import PointsScoringSystemsSectionParser
+from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
 from scrapers.wiki.parsers.body_content import BodyContentParser
 
 
@@ -52,6 +53,8 @@ class PointsScraper(BasePointsScraper):
             parsed,
             table_type="points_sprint_races",
         )
+        if not sprint_records:
+            sprint_records = self._extract_sprint_rows_via_legacy_table_scraper(soup)
         if self._export_scope == "history":
             return history_records
         if self._export_scope == "shortened":
@@ -94,6 +97,14 @@ class PointsScraper(BasePointsScraper):
 
         visit(payload)
         return rows
+
+    def _extract_sprint_rows_via_legacy_table_scraper(
+        self,
+        soup: BeautifulSoup,
+    ) -> list[dict[str, Any]]:
+        legacy_scraper = SprintQualifyingPointsScraper()
+        rows = legacy_scraper._parse_soup(soup)
+        return [row for row in rows if isinstance(row, dict)]
 
 
 if __name__ == "__main__":
