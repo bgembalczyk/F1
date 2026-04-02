@@ -11,9 +11,8 @@ from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
 
 class FatalityEventColumn(EnumMarksMixin, BackgroundMixin, BaseColumn):
     def __init__(self, auto_column: AutoColumn | None = None) -> None:
-        EnumMarksMixin.__init__(
-            self,
-            {MARK_NON_CHAMPIONSHIP_EVENT: False},
+        super().__init__(
+            mapping={MARK_NON_CHAMPIONSHIP_EVENT: False},
             default=True,
         )
         self.auto_column = auto_column or AutoColumn()
