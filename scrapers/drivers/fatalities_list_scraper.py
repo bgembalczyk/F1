@@ -1,5 +1,8 @@
 from typing import Any
 
+from bs4 import BeautifulSoup
+from bs4 import Tag
+
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
@@ -33,6 +36,72 @@ from scrapers.drivers.constants import FATALITIES_SECTION_ID
 from scrapers.drivers.constants import FATALITIES_SESSION_HEADER
 from scrapers.drivers.constants import MARK_F2_CATEGORY
 from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
+from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
+from scrapers.wiki.parsers.sections.section import SectionParser
+from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+
+
+class FatalitiesTableParser(WikiTableBaseParser):
+    """Parser wyspecjalizowany dla tabeli „Detail by driver”."""
+
+    table_type = "fatalities_detail_by_driver"
+    missing_columns_policy = "require_core_fatalities_columns"
+    extra_columns_policy = "ignore"
+
+    _required_headers = frozenset(FATALITIES_HEADERS)
+    _column_mapping = {
+        FATALITIES_DRIVER_HEADER: "driver",
+        FATALITIES_DATE_HEADER: "date",
+        FATALITIES_AGE_HEADER: "age",
+        FATALITIES_EVENT_HEADER: "event",
+        FATALITIES_CIRCUIT_HEADER: "circuit",
+        FATALITIES_CAR_HEADER: "car",
+        FATALITIES_SESSION_HEADER: "session",
+        FATALITIES_REF_HEADER: "ref",
+    }
+
+    def matches(self, headers: list[str], _table_data: dict[str, object]) -> bool:
+        return self._required_headers.issubset(set(headers))
+
+    def map_columns(self, headers: list[str]) -> dict[str, str]:
+        return {
+            header: self._column_mapping[header]
+            for header in headers
+            if header in self._column_mapping
+        }
+
+
+class DetailByDriverSubSectionParser(SubSectionParser):
+    """Parser podsekcji sekcji „Detail by driver” z tabelą ofiar."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self._table_parser = ArticleTablesParser(
+            specialized_parsers=[FatalitiesTableParser()],
+        )
+
+    def parse_group(
+        self,
+        elements: list,
+        *,
+        context=None,
+    ) -> dict[str, Any]:
+        parsed = super().parse_group(elements, context=context)
+        tags = [element for element in elements if isinstance(element, Tag)]
+        section_fragment = BeautifulSoup("", "html.parser")
+        for tag in tags:
+            section_fragment.append(tag)
+        parsed["tables"] = self._table_parser.parse(section_fragment)
+        return parsed
+
+
+class FatalitiesSectionParser(SectionParser):
+    """Parser sekcji H3 dla listy ofiar śmiertelnych F1."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.child_parser = DetailByDriverSubSectionParser()
 
 
 class F1FatalitiesListScraper(F1TableScraper):
@@ -74,6 +143,7 @@ class F1FatalitiesListScraper(F1TableScraper):
             options=append_transformer(options, FatalitiesCarTransformer()),
             config=config,
         )
+        self.section_parser = FatalitiesSectionParser()
 
     # Methods using shared utilities from date_parsing module
     # Kept here for backward compatibility if they are used elsewhere
