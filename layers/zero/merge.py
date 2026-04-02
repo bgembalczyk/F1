@@ -23,8 +23,18 @@ from scrapers.wiki.constants import FORMULA_ONE_SERIES
 from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import RED_FLAG_FIELDS
 from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import DRIVER_FATALITIES_SOURCE
+from scrapers.wiki.sources_registry import DRIVERS_SOURCE
+from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE
+from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import FEMALE_DRIVERS_SOURCE
 from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import PRIVATEER_TEAMS_SOURCE
+from scrapers.wiki.sources_registry import RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.sources_registry import RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.sources_registry import SPONSORSHIP_LIVERIES_SOURCE
 from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import resolve_list_filename
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 RecordTransformHandler = Callable[
@@ -84,9 +94,10 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
     if not isinstance(record, dict):
         return record
 
+    canonical_source_name = resolve_list_filename(source_name)
     transformed = dict(record)
-    for handler in _resolve_record_transform_handlers(domain, source_name):
-        transformed = handler(domain, source_name, transformed)
+    for handler in _resolve_record_transform_handlers(domain, canonical_source_name):
+        transformed = handler(domain, canonical_source_name, transformed)
     return transformed
 
 
@@ -345,12 +356,12 @@ def _transform_engines_domain(
 ) -> dict[str, object]:
     if domain != "engines":
         return transformed
-    if source_name == "f1_indianapolis_only_engine_manufacturers.json":
+    if source_name == ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE:
         transformed["racing_series"] = {
             "AAA_national_championship": [],
             "formula_one": {"status": "former", "indianapolis_only": True},
         }
-    elif source_name == "f1_engine_manufacturers.json":
+    elif source_name == ENGINE_MANUFACTURERS_SOURCE:
         _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
     return transformed
 
@@ -376,11 +387,11 @@ def _transform_teams_domain(
             "team": transformed.get("constructor"),
             "racing_series": _build_racing_series({**transformed}),
         }
-    if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
+    if source_name == SPONSORSHIP_LIVERIES_SOURCE and "liveries" in transformed:
         transformed["racing_series"] = _build_racing_series(
             {"liveries": transformed.pop("liveries")},
         )
-    if source_name == "f1_privateer_teams.json":
+    if source_name == PRIVATEER_TEAMS_SOURCE:
         formula_one = {
             key: transformed.pop(key) for key in ("seasons",) if key in transformed
         }
@@ -396,11 +407,11 @@ def _transform_drivers_domain(
 ) -> dict[str, object]:
     if domain != "drivers":
         return transformed
-    if source_name == "f1_drivers.json":
+    if source_name == DRIVERS_SOURCE:
         return _transform_f1_driver(transformed)
-    if source_name == "female_drivers.json":
+    if source_name == FEMALE_DRIVERS_SOURCE:
         return _transform_female_driver(transformed)
-    if source_name == "f1_driver_fatalities.json":
+    if source_name == DRIVER_FATALITIES_SOURCE:
         _attach_driver_death_data(transformed)
     return transformed
 
@@ -446,9 +457,9 @@ def _transform_races_domain(
 ) -> dict[str, object]:
     if domain != "races":
         return transformed
-    if source_name == "f1_red_flagged_world_championship_races.json":
+    if source_name == RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE:
         transformed["championship"] = True
-    if source_name == "f1_red_flagged_non_championship_races.json":
+    if source_name == RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE:
         transformed["championship"] = False
     transformed["red_flag"] = _extract_red_flag(transformed)
     _pop_red_flag_fields(transformed)
