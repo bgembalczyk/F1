@@ -16,8 +16,9 @@ class WikiTableBaseParser(ABC):
             return None
 
         column_map = self.map_columns(headers)
+        normalized_rows = self._normalized_rows(table_data)
         mapped_rows = [
-            self._map_row(row, column_map) for row in table_data.get("rows", [])
+            self._map_row(row, column_map) for row in normalized_rows
         ]
 
         return {
@@ -27,6 +28,20 @@ class WikiTableBaseParser(ABC):
             "extra_columns_policy": self.extra_columns_policy,
             "domain_rows": mapped_rows,
         }
+
+    @staticmethod
+    def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
+        rows = table_data.get("rows", [])
+        if isinstance(rows, list):
+            dict_rows = [row for row in rows if isinstance(row, dict)]
+            if dict_rows:
+                return dict_rows
+
+        raw_rows = table_data.get("raw_rows", [])
+        if isinstance(raw_rows, list):
+            return [row for row in raw_rows if isinstance(row, dict)]
+
+        return []
 
     @abstractmethod
     def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
