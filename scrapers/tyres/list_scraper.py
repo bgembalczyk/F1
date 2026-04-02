@@ -1,10 +1,12 @@
 from typing import Any
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import TYRES
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
@@ -104,8 +106,13 @@ class TyreManufacturersScraper(F1TableScraper):
         record_factory=RECORD_FACTORIES.mapping(),
     )
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
+    ) -> None:
+        super().__init__(options=options, config=config)
         parser = ManufacturersSectionParser()
         self.section_parser = parser
         self.body_content_parser.content_text_parser.section_parser = parser
