@@ -14,7 +14,7 @@ class LegacyScraperAdapter:
         ctor: ConstructorIntrospection,
     ) -> ABCScraper:
         kwargs = dict(context.run_config.scraper_kwargs)
-        if ctor.accepts("run_id"):
+        if ctor.accepts_explicitly("run_id"):
             kwargs["run_id"] = context.run_id
         if context.supports_urls and ctor.accepts("include_urls"):
             kwargs.setdefault("include_urls", context.run_config.include_urls)

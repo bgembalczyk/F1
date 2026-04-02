@@ -15,3 +15,6 @@ class ConstructorIntrospection:
             param.kind == inspect.Parameter.VAR_KEYWORD
             for param in self._parameters.values()
         )
+
+    def accepts_explicitly(self, param_name: str) -> bool:
+        return param_name in self._parameters
