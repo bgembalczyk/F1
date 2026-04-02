@@ -36,7 +36,7 @@ class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
         context = build_execution_context(
             seed_name=job.seed_name,
             domain=job.output_category,
-            source_name=job.list_scraper_cls.__name__,
+            source=job.list_scraper_cls.__name__,
         )
         scraper_kwargs: dict[str, object] = {}
         try:
