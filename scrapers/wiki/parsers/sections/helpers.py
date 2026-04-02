@@ -9,6 +9,23 @@ from scrapers.wiki.parsers.sections.section_profiles_config import SECTION_PROFI
 from scrapers.wiki.parsers.sections.section_profiles_config import validate_section_profiles_config
 
 
+_HEADING_CLASS_TO_TAG = {
+    "mw-heading2": "h2",
+    "mw-heading3": "h3",
+    "mw-heading4": "h4",
+    "mw-heading5": "h5",
+    "mw-heading6": "h6",
+}
+
+
+def _is_heading_marker(tag: Tag, heading_class: str) -> bool:
+    classes = tag.get("class") or []
+    if heading_class in classes:
+        return True
+    expected_tag = _HEADING_CLASS_TO_TAG.get(heading_class)
+    return bool(expected_tag and tag.name == expected_tag)
+
+
 def _split_into_parts(
     children: list[Tag],
     heading_class: str,
@@ -22,10 +39,11 @@ def _split_into_parts(
     for child in children:
         if not isinstance(child, Tag):
             continue
-        classes = child.get("class") or []
-        if heading_class in classes:
+        if _is_heading_marker(child, heading_class):
             parts.append((current_name, current_anchor, current_elements))
             heading_tag = child.find(name=True, recursive=False)
+            if child.name in {"h2", "h3", "h4", "h5", "h6"}:
+                heading_tag = child
             current_anchor = heading_tag.get("id") if heading_tag else None
             current_name = (
                 heading_tag.get_text(" ", strip=True)
