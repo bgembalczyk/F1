@@ -13,7 +13,6 @@ from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
-from scrapers.constructors.constants import CURRENT_YEAR
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 
 
@@ -41,7 +40,7 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
     )
 
     CONFIG = build_constructor_list_config(
-        section_id=f"Constructors_for_the_{CURRENT_YEAR}_season",
+        section_id="Constructors_for_the_2026_season",
         expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
         columns=schema_columns,
     )

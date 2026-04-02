@@ -25,12 +25,12 @@ def test_extract_current_section_uses_current_season_fallback_id() -> None:
     assert section.find("table", class_="wikitable") is not None
 
 
-def test_extract_current_section_falls_back_to_latest_season_heading_pattern() -> None:
+def test_extract_current_section_supports_hardcoded_2026_section_id() -> None:
     soup = BeautifulSoup(
         """
         <html><body>
           <div class="mw-heading mw-heading2">
-            <h2 id="Constructors_for_the_2025_season">Constructors for the 2025 season</h2>
+            <h2 id="Constructors_for_the_2026_season">Constructors for the 2026 season</h2>
           </div>
           <p>Intro</p>
           <table class="wikitable sortable">
@@ -47,5 +47,5 @@ def test_extract_current_section_falls_back_to_latest_season_heading_pattern() -
     section = scraper._extract_current_section(selector=selector, soup=soup)  # noqa: SLF001
 
     assert section is not None
-    assert section.find("h2", id="Constructors_for_the_2025_season") is not None
+    assert section.find("h2", id="Constructors_for_the_2026_season") is not None
     assert section.find("table", class_="wikitable") is not None
