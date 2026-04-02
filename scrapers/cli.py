@@ -7,6 +7,9 @@ import inspect
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
+
+from layers.path_resolver import DEFAULT_PATH_RESOLVER
+from layers.path_resolver import PathResolver
 from typing import TYPE_CHECKING
 from typing import Literal
 
@@ -33,6 +36,11 @@ if TYPE_CHECKING:
 BaseConfigFactory = Literal["deprecated", "complete", "default"]
 LegacyTargetFactory = Literal["lazy", "run_and_export", "run_export_complete"]
 SCRAPER_MODULE_PATH_PARTS = 3
+
+CLI_PATH_RESOLVER = PathResolver(
+    exports_root=Path("../../data/wiki"),
+    debug_root=Path("../../data/debug"),
+)
 
 
 @dataclass(frozen=True)
@@ -198,7 +206,13 @@ def _run_export_complete(
 ) -> Callable[..., None]:
     def _target() -> None:
         export_fn = _import_target(path)
-        export_fn(output_dir=Path(output_dir), include_urls=include_urls)
+        if output_dir is None:
+            msg = "output_dir cannot be None for complete export target."
+            raise ValueError(msg)
+        export_fn(
+            output_dir=CLI_PATH_RESOLVER.exports(output_dir),
+            include_urls=include_urls,
+        )
 
     return _target
 
@@ -247,7 +261,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path="scrapers.circuits.helpers.export:export_complete_circuits",
             profile="complete_extractor",
             base_config_factory="complete",
-            output_dir="../../data/wiki/circuits/complete_circuits",
+            output_dir="circuits/complete_circuits",
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -305,7 +319,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             ),
             profile="complete_extractor",
             base_config_factory="default",
-            output_dir="../../data/wiki/constructors/complete_constructors",
+            output_dir="constructors/complete_constructors",
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -344,7 +358,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path="scrapers.drivers.helpers.export:export_complete_drivers",
             profile="complete_extractor",
             base_config_factory="default",
-            output_dir="../../data/wiki/drivers/complete_drivers",
+            output_dir="drivers/complete_drivers",
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -395,7 +409,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="complete_extractor",
             base_config_factory="default",
             output_json="engines/f1_engine_manufacturers_complete.json",
-            base_config_overrides={"output_dir": Path("../../data/wiki")},
+            base_config_overrides={"output_dir": CLI_PATH_RESOLVER.exports_root},
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -432,7 +446,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="deprecated_entrypoint",
             output_json="grands_prix/f1_red_flagged_non_championship_races.json",
             base_config_overrides={
-                "output_dir": Path("../../data/wiki"),
+                "output_dir": CLI_PATH_RESOLVER.exports_root,
                 "include_urls": True,
             },
             deprecated=True,
@@ -449,7 +463,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="deprecated_entrypoint",
             output_json="grands_prix/f1_red_flagged_world_championship_races.json",
             base_config_overrides={
-                "output_dir": Path("../../data/wiki"),
+                "output_dir": CLI_PATH_RESOLVER.exports_root,
                 "include_urls": True,
             },
             deprecated=True,
@@ -494,7 +508,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path="scrapers.seasons.helpers:export_complete_seasons",
             profile="complete_extractor",
             base_config_factory="complete",
-            output_dir="../../data/wiki/seasons/complete_seasons",
+            output_dir="seasons/complete_seasons",
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -754,8 +768,8 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         app_module.create_default_wiki_pipeline_application
     )
     app = create_default_wiki_pipeline_application(
-        base_wiki_dir=Path("data/wiki").resolve(),
-        base_debug_dir=Path("data/debug").resolve(),
+        base_wiki_dir=DEFAULT_PATH_RESOLVER.exports_root.resolve(),
+        base_debug_dir=DEFAULT_PATH_RESOLVER.debug_root.resolve(),
     )
     if args.mode in {"layer0", "full"}:
         app.run_layer_zero()

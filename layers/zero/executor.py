@@ -3,6 +3,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
+from layers.path_resolver import format_domain_year_name
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.run_profile_paths import layer_zero_raw_paths
@@ -116,7 +117,11 @@ class LayerZeroExecutor:
         local_run_config: RunConfig,
         job: ListJobRegistryEntry,
     ) -> Path:
-        rendered_json_path = job.json_output_path.format(year=self._year_provider())
+        rendered_json_path = format_domain_year_name(
+            job.json_output_path,
+            domain=job.output_category,
+            year=self._year_provider(),
+        )
         l0_raw_json_path, l0_raw_csv_path = layer_zero_raw_paths(
             output_category=job.output_category,
             rendered_json_path=rendered_json_path,
