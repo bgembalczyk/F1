@@ -1,23 +1,22 @@
 # layers/one
 
-## Cel modułu
-Warstwa 1 uruchamia scrape'y „complete” dla seedów z registry, delegując wykonanie do runnerów domenowych i finalnie odpala dodatkowy krok dla engine manufacturers.
+## Odpowiedzialność
+Warstwa 1 odpowiada za uruchamianie scrape'ów typu „complete” dla seedów z registry, delegację wykonania do runnerów domenowych oraz uruchomienie kroku końcowego dla engine manufacturers.
 
-## Główne klasy
-- `LayerOneExecutor` – orkiestracja pętli po `seed_registry`.
-- `LayerJobRunner` (ABC) – kontrakt dla runnerów warstwy 1.
-- Przykładowy runner: `GrandPrixRunner`.
+## Punkt wejścia
+- Publiczny alias: `LayerOneRunner` (`layers.one.__init__`).
+- Główny kontrakt uruchomienia: `LayerOneExecutor.run(run_config, base_wiki_dir)`.
 
-## Co jest publiczne
-- Publiczny alias: `LayerOneRunner` (alias do `LayerOneExecutor`) z `layers.one.__init__`.
-- Publiczny kontrakt uruchomienia: `LayerOneExecutor.run(run_config, base_wiki_dir)`.
+## Najczęstszy punkt debug
+Najczęściej debug zaczyna się w `layers/one/executor.py`, w szczególności przy:
+- budowie `runner_map`,
+- mapowaniu `seed_name -> runner`,
+- obsłudze przypadków `runner is None`.
 
-## Gdzie najczęściej debugować
-- `layers/one/executor.py`: budowanie `runner_map`, obsługa seedów bez wsparcia (`runner is None`).
-- `layers/orchestration/runners/*`: implementacje konkretnych runnerów i ich output paths.
-- Logi kontekstowe (`run_id`, `seed_name`, `domain`) emitowane podczas pętli.
+Drugi typowy punkt to implementacje runnerów w `layers/orchestration/runners/*`, gdy seed przechodzi przez executor, ale nie daje oczekiwanego outputu.
 
-## Najczęstsze pułapki
-- Brak runnera dla `seed_name` nie rzuca wyjątku — seed jest tylko pomijany z warningiem.
-- Niespójność między `seed_registry` i `runner_map` daje „ciche” braki w danych.
-- Łatwo przeoczyć, że `engine_manufacturers_runner` uruchamia się zawsze po pętli seedów.
+## Czego tu nie robić
+- Nie osadzać tu logiki HTTP/fetch i niskopoziomowych retry (to odpowiedzialność infrastruktury/scraperów).
+- Nie wrzucać tu transformacji rekordów „na skróty” zamiast do pipeline scrapera.
+- Nie dokładać specjalnych wyjątków per seed bez aktualizacji `runner_map` i jawnego kontraktu runnera.
+- Nie traktować tego modułu jako miejsca do globalnych side-effectów niezwiązanych z wykonaniem layer 1.
