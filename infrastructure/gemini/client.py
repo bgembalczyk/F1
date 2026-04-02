@@ -26,7 +26,6 @@ import certifi
 
 from config.app_config_provider import AppConfigProvider
 from infrastructure.gemini.cache import GeminiCache
-from infrastructure.gemini.cache_service import GeminiCacheService
 from infrastructure.gemini.constants import DEFAULT_MODELS
 from infrastructure.gemini.constants import DEFAULT_TIMEOUT
 from infrastructure.gemini.model_config import ModelConfig
@@ -54,7 +53,7 @@ class GeminiClient:
 
         self._ssl_context = self._build_ssl_context()
         self._model_selector = ModelSelector(models)
-        self._cache_service = GeminiCacheService(cache)
+        self._cache = cache if cache is not None else GeminiCache()
         self._transport = GeminiTransport(
             api_key=api_key,
             timeout=timeout,
@@ -63,7 +62,7 @@ class GeminiClient:
         self._response_parser = GeminiResponseParser()
         self._orchestration = GeminiOrchestrationService(
             model_selector=self._model_selector,
-            cache_service=self._cache_service,
+            cache=self._cache,
         )
 
         # Backward-compatible reference used by existing tests.

@@ -1,5 +1,8 @@
 from pathlib import Path
 
+import pytest
+
+from layers.path_resolver import format_domain_year_name
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 
 
@@ -34,3 +37,32 @@ def test_layer_zero_raw_paths_uses_only_filename_for_nested_inputs() -> None:
 
     assert json_path == Path("layers/0_layer/seasons/raw/seasons.json")
     assert csv_path == Path("layers/0_layer/seasons/raw/seasons.csv")
+
+
+def test_layer_zero_raw_paths_rejects_empty_filename() -> None:
+    with pytest.raises(ValueError, match="cannot be empty"):
+        layer_zero_raw_paths(
+            output_category="drivers",
+            rendered_json_path="",
+            csv_output_path=None,
+        )
+
+
+def test_layer_zero_raw_paths_rejects_double_extension() -> None:
+    with pytest.raises(ValueError, match="duplicated extension"):
+        layer_zero_raw_paths(
+            output_category="drivers",
+            rendered_json_path="drivers.json.json",
+            csv_output_path=None,
+        )
+
+
+def test_format_domain_year_name_supports_domain_and_year_placeholders() -> None:
+    assert (
+        format_domain_year_name(
+            "{domain}_summary_{year}.json",
+            domain="teams",
+            year=2026,
+        )
+        == "teams_summary_2026.json"
+    )

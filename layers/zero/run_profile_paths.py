@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from layers.path_resolver import DEFAULT_PATH_RESOLVER
 from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import RunPathConfig
 from scrapers.base.run_profiles import RunProfileName
@@ -8,7 +9,7 @@ from scrapers.base.run_profiles import build_run_profile
 
 class LayerZeroPathBuilder:
     def raw_file_path(self, category: str, filename: str) -> Path:
-        return Path("layers") / "0_layer" / category / "raw" / Path(filename).name
+        return DEFAULT_PATH_RESOLVER.raw(domain=category, filename=filename)
 
 
 def build_debug_run_config(*, base_wiki_dir: Path, base_debug_dir: Path) -> RunConfig:
