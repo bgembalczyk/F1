@@ -4,6 +4,7 @@ from pathlib import Path
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry.types import SeedName
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.run_config import RunConfig
@@ -18,7 +19,7 @@ class LayerZeroExecutor:
         validate_list_registry: Callable[[tuple[ListJobRegistryEntry, ...]], None],
         run_config_factory_map_builder: Callable[
             [],
-            dict[str, LayerZeroRunConfigFactoryProtocol],
+            dict[SeedName, LayerZeroRunConfigFactoryProtocol],
         ],
         default_config_factory: LayerZeroRunConfigFactoryProtocol,
         merge_service: LayerZeroMergeServiceProtocol,
@@ -60,7 +61,7 @@ class LayerZeroExecutor:
 
         self._finalize_merge(base_wiki_dir)
 
-    def _resolve_config_factory(self) -> dict[str, object]:
+    def _resolve_config_factory(self) -> dict[SeedName, object]:
         return self._run_config_factory_map_builder()
 
     def _build_local_run_config(
@@ -68,7 +69,7 @@ class LayerZeroExecutor:
         *,
         run_config: RunConfig,
         job: ListJobRegistryEntry,
-        config_factories: dict[str, object],
+        config_factories: dict[SeedName, object],
     ) -> RunConfig:
         config_factory = config_factories.get(job.seed_name, self._default_config_factory)
         scraper_kwargs = config_factory.create_scraper_kwargs(job)
