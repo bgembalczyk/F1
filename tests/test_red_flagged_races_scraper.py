@@ -173,6 +173,37 @@ class TestRedFlaggedRacesScraperRobustness:
         assert records[0]["season"] == "1971"
         assert records[0]["event"] == "Brands Hatch"
 
+    def test_composite_non_championship_scope_with_h4_but_no_h5(self):
+        """Test composite parser handles h4 structure without h5 nested sections."""
+        html = """
+        <html><body>
+        <div id="bodyContent">
+        <div id="mw-content-text" class="mw-body-content">
+        <div class="mw-content-ltr mw-parser-output">
+          <h3 class="mw-heading3"><span class="mw-headline" id="Non-championship_races">Non-championship races</span></h3>
+          <h4 class="mw-heading4"><span class="mw-headline" id="Examples">Examples</span></h4>
+          <table class="wikitable">
+            <tr>
+              <th>Year</th><th>Event</th><th>Lap</th><th>R</th>
+              <th>Winner</th><th>Incident that prompted red flag</th>
+            </tr>
+            <tr>
+              <td>1980</td><td>Silverstone Int.</td><td>9</td><td>Y</td><td>Alan Jones</td><td>Oil spill</td>
+            </tr>
+          </table>
+        </div>
+        </div>
+        </div>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        scraper = RedFlaggedRacesScraper(export_scope="non_championship")
+        records = scraper.parse_soup(soup)
+
+        assert len(records) == 1
+        assert records[0]["season"] == "1980"
+        assert records[0]["event"] == "Silverstone Int."
+
 
 
     def test_composite_parser_dependencies(self):

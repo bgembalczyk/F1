@@ -97,13 +97,25 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        if not parsed.get("sub_sub_sections"):
+        if not self._contains_table_elements(parsed):
             parsed["elements"] = self._fallback_element_parser.parse_group(
                 elements,
                 context=context,
             ).get("elements", [])
         self._apply_non_championship_table_parser(parsed)
         return parsed
+
+    def _contains_table_elements(self, payload: dict[str, Any]) -> bool:
+        def visit(node: Any) -> bool:
+            if isinstance(node, dict):
+                if node.get("kind") == "table":
+                    return True
+                return any(visit(value) for value in node.values())
+            if isinstance(node, list):
+                return any(visit(item) for item in node)
+            return False
+
+        return visit(payload)
 
     def _apply_non_championship_table_parser(self, payload: dict[str, Any]) -> None:
         self._apply_for_elements(payload.get("elements", []))
