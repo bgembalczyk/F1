@@ -11,6 +11,7 @@ from typing import TYPE_CHECKING
 from typing import Literal
 
 from scrapers.base.cli_entrypoint import build_run_config
+from scrapers.base.defaults import DEFAULT_INCLUDE_URLS
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
@@ -18,6 +19,8 @@ from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metada
 from scrapers.base.logging import configure_logging
 from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
+from scrapers.base.run_profiles import RunProfileName
+from scrapers.base.run_profiles import build_run_profile
 from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
 from scrapers.base.runner import ScraperRunner
@@ -157,7 +160,7 @@ def _build_base_config(factory: BaseConfigFactory) -> RunConfig:
         return deprecated_module_base_config()
     if factory == "complete":
         return complete_extractor_base_config()
-    return RunConfig()
+    return build_run_profile(RunProfileName.MINIMAL)
 
 
 def _import_target(path: str) -> Callable[..., None]:
@@ -194,7 +197,7 @@ def _run_export_complete(
     path: str,
     output_dir: str | None,
     *,
-    include_urls: bool | None = True,
+    include_urls: bool | None = DEFAULT_INCLUDE_URLS,
 ) -> Callable[..., None]:
     def _target() -> None:
         export_fn = _import_target(path)
@@ -395,7 +398,9 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="complete_extractor",
             base_config_factory="default",
             output_json="engines/f1_engine_manufacturers_complete.json",
-            base_config_overrides={"output_dir": Path("../../data/wiki")},
+            base_config_overrides={
+                "output_dir": build_run_profile(RunProfileName.MINIMAL).output_dir,
+            },
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -432,8 +437,8 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="deprecated_entrypoint",
             output_json="grands_prix/f1_red_flagged_non_championship_races.json",
             base_config_overrides={
-                "output_dir": Path("../../data/wiki"),
-                "include_urls": True,
+                "output_dir": build_run_profile(RunProfileName.MINIMAL).output_dir,
+                "include_urls": DEFAULT_INCLUDE_URLS,
             },
             deprecated=True,
         ),
@@ -449,8 +454,8 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="deprecated_entrypoint",
             output_json="grands_prix/f1_red_flagged_world_championship_races.json",
             base_config_overrides={
-                "output_dir": Path("../../data/wiki"),
-                "include_urls": True,
+                "output_dir": build_run_profile(RunProfileName.MINIMAL).output_dir,
+                "include_urls": DEFAULT_INCLUDE_URLS,
             },
             deprecated=True,
         ),

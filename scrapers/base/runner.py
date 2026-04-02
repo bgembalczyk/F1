@@ -24,7 +24,11 @@ class ScraperRunner:
         self._run_config = run_config
         self._supports_urls = supports_urls
         self._factory = ScraperFactory()
-        self._result_export_service = result_export_service or ResultExportService()
+        self._result_export_service = (
+            ResultExportService()
+            if result_export_service is None
+            else result_export_service
+        )
 
     def run_and_export(
         self,
