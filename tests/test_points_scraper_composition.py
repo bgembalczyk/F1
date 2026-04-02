@@ -1,3 +1,5 @@
+from bs4 import BeautifulSoup
+
 from scrapers.points.parsers import PointsScoringSystemsSectionParser
 from scrapers.points.parsers import ShortenedRacesSubSubSectionParser
 from scrapers.points.parsers import SpecialCasesSubSectionParser
@@ -23,3 +25,22 @@ def test_special_cases_subsection_parser_routes_to_required_subsubsection_parser
 
     assert isinstance(router.sprint_parser, SprintRacesSubSubSectionParser)
     assert isinstance(router.shortened_parser, ShortenedRacesSubSubSectionParser)
+
+
+def test_sprint_parser_parses_table_without_nested_heading() -> None:
+    parser = SprintRacesSubSubSectionParser()
+    soup = BeautifulSoup(
+        """
+        <table class="wikitable">
+          <tr><th>Season(s)</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th></tr>
+          <tr><td>2021–present</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+        </table>
+        """,
+        "html.parser",
+    )
+    parsed = parser.parse_group(soup.find_all("table"))
+
+    top_section = parsed["sub_sub_sub_sections"][0]
+
+    assert top_section["elements"][0]["data"]["table_type"] == "points_sprint_races"
+    assert top_section["elements"][0]["data"]["domain_rows"][0]["seasons"] == "2021-present"

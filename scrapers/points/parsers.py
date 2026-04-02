@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
@@ -17,10 +18,21 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
     extra_columns_policy = "ignore"
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        return set(POINTS_SCORING_HISTORY_EXPECTED_HEADERS).issubset(set(headers))
+        normalized_headers = {_normalize_header(header) for header in headers}
+        expected = {_normalize_header(header) for header in POINTS_SCORING_HISTORY_EXPECTED_HEADERS}
+        return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        return {header: header.lower().replace(" ", "_") for header in headers}
+        expected_lookup = _build_expected_header_lookup(
+            POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
+        )
+        return {
+            header: expected_lookup.get(
+                _normalize_header(header),
+                _normalize_column_name(header),
+            )
+            for header in headers
+        }
 
 
 class SprintPointsTableParser(WikiTableBaseParser):
@@ -29,10 +41,21 @@ class SprintPointsTableParser(WikiTableBaseParser):
     extra_columns_policy = "ignore"
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        return set(SPRINT_QUALIFYING_EXPECTED_HEADERS).issubset(set(headers))
+        normalized_headers = {_normalize_header(header) for header in headers}
+        expected = {_normalize_header(header) for header in SPRINT_QUALIFYING_EXPECTED_HEADERS}
+        return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        return {header: header.lower().replace(" ", "_") for header in headers}
+        expected_lookup = _build_expected_header_lookup(
+            SPRINT_QUALIFYING_EXPECTED_HEADERS,
+        )
+        return {
+            header: expected_lookup.get(
+                _normalize_header(header),
+                _normalize_column_name(header),
+            )
+            for header in headers
+        }
 
 
 class ShortenedRacesPointsTableParser(WikiTableBaseParser):
@@ -41,10 +64,36 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
     extra_columns_policy = "ignore"
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        return set(SHORTENED_RACE_EXPECTED_HEADERS).issubset(set(headers))
+        normalized_headers = {_normalize_header(header) for header in headers}
+        expected = {_normalize_header(header) for header in SHORTENED_RACE_EXPECTED_HEADERS}
+        return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        return {header: header.lower().replace(" ", "_") for header in headers}
+        expected_lookup = _build_expected_header_lookup(
+            SHORTENED_RACE_EXPECTED_HEADERS,
+        )
+        return {
+            header: expected_lookup.get(
+                _normalize_header(header),
+                _normalize_column_name(header),
+            )
+            for header in headers
+        }
+
+
+def _normalize_header(header: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", header.lower())
+
+
+def _normalize_column_name(header: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", header.lower()).strip("_")
+
+
+def _build_expected_header_lookup(expected_headers: list[str]) -> dict[str, str]:
+    return {
+        _normalize_header(header): _normalize_column_name(header)
+        for header in expected_headers
+    }
 
 
 class SprintRacesSubSubSectionParser(SubSubSectionParser):
@@ -54,6 +103,8 @@ class SprintRacesSubSubSectionParser(SubSubSectionParser):
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
+        if not parsed.get("sub_sub_sub_sections"):
+            parsed = self.child_parser.parse_group(elements, context=context)
         self._apply_table_parser(parsed)
         return parsed
 
