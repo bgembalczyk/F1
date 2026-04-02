@@ -49,7 +49,7 @@ class GeminiOrchestrationService:
 
             try:
                 result = call_api(model)
-            except RuntimeError:
+            except Exception:  # noqa: BLE001
                 error_models.add(model)
                 continue
 
