@@ -6,28 +6,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 17,
+        "wdc": 0,
+        "poles": 0,
+        "points": 4.0,
         "seasons": [
           {
             "year": 2001,
             "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 17,
-        "podiums": 0,
+        "races_started": 17,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 4.0,
-        "fastest_laps": 0,
-        "races_started": 17,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -38,6 +38,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 226,
+        "wdc": 2,
+        "poles": 15,
+        "points": 148.0,
         "seasons": [
           {
             "year": 1950,
@@ -124,22 +129,17 @@
             "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
           }
         ],
-        "wins": 12,
-        "races_entered": 226,
-        "podiums": 40,
+        "races_started": 215,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 148.0,
-        "fastest_laps": 20,
-        "races_started": 215,
+        "podiums": 40,
+        "wins": 12,
         "manufacturer_status": "former",
-        "poles": 15,
-        "wcc": 0,
-        "wdc": 2
+        "fastest_laps": 20
       }
     }
   },
@@ -150,6 +150,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 31,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1950,
@@ -192,22 +197,17 @@
             "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 31,
-        "podiums": 1,
+        "races_started": 26,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 26,
+        "podiums": 1,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -218,6 +218,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 32,
+        "wdc": 0,
+        "poles": 0,
+        "points": 7.0,
         "seasons": [
           {
             "year": 1998,
@@ -228,22 +233,17 @@
             "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 32,
-        "podiums": 0,
+        "races_started": 32,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 7.0,
-        "fastest_laps": 0,
-        "races_started": 32,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -254,6 +254,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 34,
+        "wdc": 0,
+        "poles": 0,
+        "points": 3.0,
         "seasons": [
           {
             "year": 2001,
@@ -264,22 +269,17 @@
             "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 34,
-        "podiums": 0,
+        "races_started": 33,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 3.0,
-        "fastest_laps": 0,
-        "races_started": 33,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -290,6 +290,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 6,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1959,
@@ -300,22 +305,17 @@
             "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 6,
-        "podiums": 0,
+        "races_started": 5,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 5,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -327,28 +327,28 @@
     "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": 2.0,
         "seasons": [
           {
             "year": 2026,
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": 2.0,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "current",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -359,6 +359,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 7,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1963,
@@ -373,22 +378,17 @@
             "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 7,
-        "podiums": 0,
+        "races_started": 7,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 7,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -399,6 +399,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 273,
+        "wdc": 1,
+        "poles": 33,
+        "points": 1021.0,
         "seasons": [
           {
             "year": 1952,
@@ -485,22 +490,17 @@
             "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
           }
         ],
-        "wins": 20,
-        "races_entered": 273,
-        "podiums": 86,
+        "races_started": 270,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": 1021.0,
-        "fastest_laps": 33,
-        "races_started": 270,
+        "podiums": 86,
+        "wins": 20,
         "manufacturer_status": "former",
-        "poles": 33,
-        "wcc": 0,
-        "wdc": 1
+        "fastest_laps": 33
       }
     }
   },
@@ -511,6 +511,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 3,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1959,
@@ -525,22 +530,17 @@
             "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 3,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -551,28 +551,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1952,
             "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 0,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 0,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -583,6 +583,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 17,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1952,
@@ -609,22 +614,17 @@
             "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 17,
-        "podiums": 1,
+        "races_started": 17,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 17,
+        "podiums": 1,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -635,6 +635,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 1,
+        "races_entered": 200,
+        "wdc": 1,
+        "poles": 11,
+        "points": 499.0,
         "seasons": [
           {
             "year": 1951,
@@ -725,22 +730,17 @@
             "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
           }
         ],
-        "wins": 18,
-        "races_entered": 200,
-        "podiums": 65,
+        "races_started": 189,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 499.0,
-        "fastest_laps": 14,
-        "races_started": 189,
+        "podiums": 65,
+        "wins": 18,
         "manufacturer_status": "former",
-        "poles": 11,
-        "wcc": 1,
-        "wdc": 1
+        "fastest_laps": 14
       }
     }
   },
@@ -751,28 +751,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1956,
             "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -783,28 +783,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 4,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1952,
             "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 4,
-        "podiums": 0,
+        "races_started": 2,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 2,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -815,6 +815,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 38,
+        "wdc": 0,
+        "poles": 1,
+        "points": 268.0,
         "seasons": [
           {
             "year": 2019,
@@ -825,22 +830,17 @@
             "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
           }
         ],
-        "wins": 1,
-        "races_entered": 38,
-        "podiums": 4,
+        "races_started": 38,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 268.0,
-        "fastest_laps": 0,
-        "races_started": 38,
+        "podiums": 4,
+        "wins": 1,
         "manufacturer_status": "former",
-        "poles": 1,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -851,28 +851,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 4,
+        "wdc": 0,
+        "poles": 0,
+        "points": 3.0,
         "seasons": [
           {
             "year": 1960,
             "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 4,
-        "podiums": 0,
+        "races_started": 3,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 3.0,
-        "fastest_laps": 0,
-        "races_started": 3,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -883,6 +883,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 4,
+        "races_entered": 97,
+        "wdc": 4,
+        "poles": 44,
+        "points": 684.0,
         "seasons": [
           {
             "year": 1957,
@@ -937,22 +942,17 @@
             "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
           }
         ],
-        "wins": 40,
-        "races_entered": 97,
-        "podiums": 104,
+        "races_started": 96,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 684.0,
-        "fastest_laps": 44,
-        "races_started": 96,
+        "podiums": 104,
+        "wins": 40,
         "manufacturer_status": "former",
-        "poles": 44,
-        "wcc": 4,
-        "wdc": 4
+        "fastest_laps": 44
       }
     }
   },
@@ -963,28 +963,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1961,
             "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -995,6 +995,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 199,
+        "wdc": 0,
+        "poles": 1,
+        "points": 179.0,
         "seasons": [
           {
             "year": 2000,
@@ -1041,22 +1046,17 @@
             "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 199,
-        "podiums": 2,
+        "races_started": 199,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 179.0,
-        "fastest_laps": 1,
-        "races_started": 199,
+        "podiums": 2,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 1,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 1
       }
     }
   },
@@ -1067,28 +1067,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1962,
             "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 0,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 0,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -1099,28 +1099,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1953,
             "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "East Germany",
             "url": "https://en.wikipedia.org/wiki/East_Germany"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -1131,6 +1131,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 4,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1950,
@@ -1141,22 +1146,17 @@
             "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 4,
-        "podiums": 0,
+        "races_started": 4,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 4,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -1167,28 +1167,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 17,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 2001,
             "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 17,
-        "podiums": 0,
+        "races_started": 17,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 17,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -1200,6 +1200,11 @@
     "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
+        "wcc": 16,
+        "races_entered": 1129,
+        "wdc": 15,
+        "poles": 256,
+        "points": 11984.0,
         "seasons": [
           {
             "year": 1950,
@@ -1510,22 +1515,17 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "wins": 249,
-        "races_entered": 1129,
-        "podiums": 844,
+        "races_started": 1125,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 11984.0,
-        "fastest_laps": 274,
-        "races_started": 1125,
+        "podiums": 844,
+        "wins": 249,
         "manufacturer_status": "current",
-        "poles": 256,
-        "wcc": 16,
-        "wdc": 15
+        "fastest_laps": 274
       }
     }
   },
@@ -1536,28 +1536,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1950,
             "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 0,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 0,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -1568,28 +1568,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 17,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 2000,
             "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 17,
-        "podiums": 0,
+        "races_started": 17,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 17,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -1600,6 +1600,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 10,
+        "races_entered": 528,
+        "wdc": 13,
+        "poles": 139,
+        "points": 4286.5,
         "seasons": [
           {
             "year": 1951,
@@ -1762,9 +1767,7 @@
             "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
           }
         ],
-        "wins": 176,
-        "races_entered": 528,
-        "podiums": 533,
+        "races_started": 523,
         "engines_built_in": [
           {
             "text": "United Kingdom",
@@ -1775,13 +1778,10 @@
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "points": 4286.5,
-        "fastest_laps": 159,
-        "races_started": 523,
+        "podiums": 533,
+        "wins": 176,
         "manufacturer_status": "former",
-        "poles": 139,
-        "wcc": 10,
-        "wdc": 13
+        "fastest_laps": 159
       }
     }
   },
@@ -1792,6 +1792,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 45,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1950,
@@ -1822,22 +1827,17 @@
             "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 45,
-        "podiums": 2,
+        "races_started": 40,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": null,
-        "fastest_laps": 1,
-        "races_started": 40,
+        "podiums": 2,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 1
       }
     }
   },
@@ -1848,6 +1848,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 158,
+        "wdc": 0,
+        "poles": 2,
+        "points": 63.0,
         "seasons": [
           {
             "year": 1981,
@@ -1894,22 +1899,17 @@
             "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 158,
-        "podiums": 5,
+        "races_started": 144,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 63.0,
-        "fastest_laps": 2,
-        "races_started": 144,
+        "podiums": 5,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 2,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 2
       }
     }
   },
@@ -1921,6 +1921,11 @@
     "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
+        "wcc": 6,
+        "races_entered": 483,
+        "wdc": 6,
+        "poles": 90,
+        "points": 3409.0,
         "seasons": [
           {
             "year": 1964,
@@ -2051,22 +2056,17 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "wins": 89,
-        "races_entered": 483,
-        "podiums": 223,
+        "races_started": 482,
         "engines_built_in": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
-        "points": 3409.0,
-        "fastest_laps": 76,
-        "races_started": 482,
+        "podiums": 223,
+        "wins": 89,
         "manufacturer_status": "current",
-        "poles": 90,
-        "wcc": 6,
-        "wdc": 6
+        "fastest_laps": 76
       }
     }
   },
@@ -2077,6 +2077,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 1,
+        "races_entered": 70,
+        "wdc": 2,
+        "poles": 30,
+        "points": 2063.0,
         "seasons": [
           {
             "year": 2023,
@@ -2091,22 +2096,17 @@
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
         ],
-        "wins": 38,
-        "races_entered": 70,
-        "podiums": 64,
+        "races_started": 70,
         "engines_built_in": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
-        "points": 2063.0,
-        "fastest_laps": 20,
-        "races_started": 70,
+        "podiums": 64,
+        "wins": 38,
         "manufacturer_status": "former",
-        "poles": 30,
-        "wcc": 1,
-        "wdc": 2
+        "fastest_laps": 20
       }
     }
   },
@@ -2117,6 +2117,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 48,
+        "wdc": 0,
+        "poles": 0,
+        "points": 12.0,
         "seasons": [
           {
             "year": 1991,
@@ -2131,22 +2136,17 @@
             "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 48,
-        "podiums": 0,
+        "races_started": 37,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 12.0,
-        "fastest_laps": 0,
-        "races_started": 37,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2157,28 +2157,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1950,
             "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2189,28 +2189,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1950,
             "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2221,6 +2221,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 76,
+        "wdc": 0,
+        "poles": 0,
+        "points": 86.0,
         "seasons": [
           {
             "year": 1988,
@@ -2243,22 +2248,17 @@
             "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 76,
-        "podiums": 8,
+        "races_started": 68,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 86.0,
-        "fastest_laps": 3,
-        "races_started": 68,
+        "podiums": 8,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 3
       }
     }
   },
@@ -2269,28 +2269,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1952,
             "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2301,6 +2301,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 80,
+        "wdc": 0,
+        "poles": 0,
+        "points": 20.0,
         "seasons": [
           {
             "year": 1989,
@@ -2323,22 +2328,17 @@
             "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 80,
-        "podiums": 1,
+        "races_started": 80,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 20.0,
-        "fastest_laps": 0,
-        "races_started": 80,
+        "podiums": 1,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2349,6 +2349,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 6,
+        "wdc": 0,
+        "poles": 2,
+        "points": null,
         "seasons": [
           {
             "year": 1953,
@@ -2363,22 +2368,17 @@
             "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 6,
-        "podiums": 1,
+        "races_started": 4,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": null,
-        "fastest_laps": 1,
-        "races_started": 4,
+        "podiums": 1,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 2,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 1
       }
     }
   },
@@ -2389,6 +2389,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 10,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1952,
@@ -2403,22 +2408,17 @@
             "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 10,
-        "podiums": 0,
+        "races_started": 10,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 10,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2429,28 +2429,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 12,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1990,
             "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 12,
-        "podiums": 0,
+        "races_started": 0,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 0,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2461,6 +2461,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 113,
+        "wdc": 2,
+        "poles": 11,
+        "points": 72.0,
         "seasons": [
           {
             "year": 1950,
@@ -2535,22 +2540,17 @@
             "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
           }
         ],
-        "wins": 11,
-        "races_entered": 113,
-        "podiums": 44,
+        "races_started": 108,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 72.0,
-        "fastest_laps": 17,
-        "races_started": 108,
+        "podiums": 44,
+        "wins": 11,
         "manufacturer_status": "former",
-        "poles": 11,
-        "wcc": 0,
-        "wdc": 2
+        "fastest_laps": 17
       }
     }
   },
@@ -2561,6 +2561,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 126,
+        "wdc": 0,
+        "poles": 4,
+        "points": 173.0,
         "seasons": [
           {
             "year": 1968,
@@ -2603,22 +2608,17 @@
             "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
           }
         ],
-        "wins": 3,
-        "races_entered": 126,
-        "podiums": 24,
+        "races_started": 125,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 173.0,
-        "fastest_laps": 5,
-        "races_started": 125,
+        "podiums": 24,
+        "wins": 3,
         "manufacturer_status": "former",
-        "poles": 4,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 5
       }
     }
   },
@@ -2629,28 +2629,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 16,
+        "wdc": 0,
+        "poles": 0,
+        "points": 38.0,
         "seasons": [
           {
             "year": 1998,
             "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 16,
-        "podiums": 3,
+        "races_started": 16,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 38.0,
-        "fastest_laps": 0,
-        "races_started": 16,
+        "podiums": 3,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2661,6 +2661,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 32,
+        "wdc": 0,
+        "poles": 0,
+        "points": 35.0,
         "seasons": [
           {
             "year": 1987,
@@ -2671,22 +2676,17 @@
             "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 32,
-        "podiums": 1,
+        "races_started": 32,
         "engines_built_in": [
           {
             "text": "Switzerland",
             "url": "https://en.wikipedia.org/wiki/Switzerland"
           }
         ],
-        "points": 35.0,
-        "fastest_laps": 0,
-        "races_started": 32,
+        "podiums": 1,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2698,6 +2698,11 @@
     "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
+        "wcc": 12,
+        "races_entered": 614,
+        "wdc": 14,
+        "poles": 249,
+        "points": 16464.5,
         "seasons": [
           {
             "year": 1954,
@@ -2840,22 +2845,17 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "wins": 239,
-        "races_entered": 614,
-        "podiums": 662,
+        "races_started": 612,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 16464.5,
-        "fastest_laps": 239,
-        "races_started": 612,
+        "podiums": 662,
+        "wins": 239,
         "manufacturer_status": "current",
-        "poles": 249,
-        "wcc": 12,
-        "wdc": 14
+        "fastest_laps": 239
       }
     }
   },
@@ -2866,6 +2866,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 46,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1985,
@@ -2880,22 +2885,17 @@
             "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 46,
-        "podiums": 0,
+        "races_started": 44,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 44,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2906,6 +2906,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 147,
+        "wdc": 0,
+        "poles": 1,
+        "points": 182.0,
         "seasons": [
           {
             "year": 1992,
@@ -2944,22 +2949,17 @@
             "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
           }
         ],
-        "wins": 4,
-        "races_entered": 147,
-        "podiums": 16,
+        "races_started": 147,
         "engines_built_in": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
-        "points": 182.0,
-        "fastest_laps": 0,
-        "races_started": 147,
+        "podiums": 16,
+        "wins": 4,
         "manufacturer_status": "former",
-        "poles": 1,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -2970,6 +2970,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 12,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1951,
@@ -3000,22 +3005,17 @@
             "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 12,
-        "podiums": 0,
+        "races_started": 8,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 8,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3026,28 +3026,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 16,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1988,
             "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 16,
-        "podiums": 0,
+        "races_started": 10,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 10,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3058,6 +3058,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 153,
+        "wdc": 0,
+        "poles": 0,
+        "points": 142.0,
         "seasons": [
           {
             "year": 1997,
@@ -3096,22 +3101,17 @@
             "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 153,
-        "podiums": 4,
+        "races_started": 151,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 142.0,
-        "fastest_laps": 0,
-        "races_started": 151,
+        "podiums": 4,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3122,6 +3122,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 115,
+        "wdc": 0,
+        "poles": 0,
+        "points": 128.0,
         "seasons": [
           {
             "year": 1994,
@@ -3152,22 +3157,17 @@
             "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 115,
-        "podiums": 14,
+        "races_started": 115,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 128.0,
-        "fastest_laps": 1,
-        "races_started": 115,
+        "podiums": 14,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 1
       }
     }
   },
@@ -3178,6 +3178,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 49,
+        "wdc": 0,
+        "poles": 1,
+        "points": 69.0,
         "seasons": [
           {
             "year": 1998,
@@ -3192,22 +3197,17 @@
             "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 49,
-        "podiums": 6,
+        "races_started": 49,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 69.0,
-        "fastest_laps": 1,
-        "races_started": 49,
+        "podiums": 6,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 1,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 1
       }
     }
   },
@@ -3218,6 +3218,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 39,
+        "wdc": 0,
+        "poles": 1,
+        "points": 48.0,
         "seasons": [
           {
             "year": 1958,
@@ -3252,22 +3257,17 @@
             "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
           }
         ],
-        "wins": 1,
-        "races_entered": 39,
-        "podiums": 5,
+        "races_started": 35,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": 48.0,
-        "fastest_laps": 0,
-        "races_started": 35,
+        "podiums": 5,
+        "wins": 1,
         "manufacturer_status": "former",
-        "poles": 1,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3278,28 +3278,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 3,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1971,
             "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 3,
-        "podiums": 0,
+        "races_started": 3,
         "engines_built_in": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 3,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3310,28 +3310,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 1,
+        "races_entered": 22,
+        "wdc": 1,
+        "poles": 8,
+        "points": 794.0,
         "seasons": [
           {
             "year": 2022,
             "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
           }
         ],
-        "wins": 17,
-        "races_entered": 22,
-        "podiums": 28,
+        "races_started": 22,
         "engines_built_in": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
-        "points": 794.0,
-        "fastest_laps": 8,
-        "races_started": 22,
+        "podiums": 28,
+        "wins": 17,
         "manufacturer_status": "former",
-        "poles": 8,
-        "wcc": 1,
-        "wdc": 1
+        "fastest_laps": 8
       }
     }
   },
@@ -3343,28 +3343,28 @@
     "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 1,
+        "wdc": 0,
+        "poles": 0,
+        "points": 12.0,
         "seasons": [
           {
             "year": 2026,
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 12.0,
-        "fastest_laps": 1,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "current",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 1
       }
     }
   },
@@ -3375,6 +3375,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 12,
+        "races_entered": 774,
+        "wdc": 11,
+        "poles": 213,
+        "points": 8228.5,
         "seasons": [
           {
             "year": 1977,
@@ -3553,22 +3558,17 @@
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
         ],
-        "wins": 169,
-        "races_entered": 774,
-        "podiums": 465,
+        "races_started": 771,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 8228.5,
-        "fastest_laps": 177,
-        "races_started": 771,
+        "podiums": 465,
+        "wins": 169,
         "manufacturer_status": "former",
-        "poles": 213,
-        "wcc": 12,
-        "wdc": 11
+        "fastest_laps": 177
       }
     }
   },
@@ -3579,6 +3579,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 2,
+        "races_entered": 33,
+        "wdc": 2,
+        "poles": 7,
+        "points": 126.0,
         "seasons": [
           {
             "year": 1966,
@@ -3597,22 +3602,17 @@
             "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
           }
         ],
-        "wins": 8,
-        "races_entered": 33,
-        "podiums": 25,
+        "races_started": 33,
         "engines_built_in": [
           {
             "text": "Australia",
             "url": "https://en.wikipedia.org/wiki/Australia"
           }
         ],
-        "points": 126.0,
-        "fastest_laps": 4,
-        "races_started": 33,
+        "podiums": 25,
+        "wins": 8,
         "manufacturer_status": "former",
-        "poles": 7,
-        "wcc": 2,
-        "wdc": 2
+        "fastest_laps": 4
       }
     }
   },
@@ -3623,28 +3623,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 16,
+        "wdc": 0,
+        "poles": 0,
+        "points": 12.0,
         "seasons": [
           {
             "year": 1993,
             "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 16,
-        "podiums": 0,
+        "races_started": 16,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 12.0,
-        "fastest_laps": 0,
-        "races_started": 16,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3655,28 +3655,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 6,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1960,
             "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 6,
-        "podiums": 0,
+        "races_started": 2,
         "engines_built_in": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 2,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3687,28 +3687,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 3,
+        "wdc": 0,
+        "poles": 0,
+        "points": 1.0,
         "seasons": [
           {
             "year": 1966,
             "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 3,
-        "podiums": 0,
+        "races_started": 1,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 1.0,
-        "fastest_laps": 0,
-        "races_started": 1,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3719,28 +3719,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 8,
+        "wdc": 0,
+        "poles": 0,
+        "points": 0.0,
         "seasons": [
           {
             "year": 1990,
             "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 8,
-        "podiums": 0,
+        "races_started": 0,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 0.0,
-        "fastest_laps": 0,
-        "races_started": 0,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3751,6 +3751,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 33,
+        "wdc": 0,
+        "poles": 0,
+        "points": 42.0,
         "seasons": [
           {
             "year": 1999,
@@ -3761,22 +3766,17 @@
             "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 33,
-        "podiums": 3,
+        "races_started": 33,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 42.0,
-        "fastest_laps": 1,
-        "races_started": 33,
+        "podiums": 3,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 1
       }
     }
   },
@@ -3787,6 +3787,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 2,
+        "races_entered": 68,
+        "wdc": 3,
+        "poles": 7,
+        "points": 405.5,
         "seasons": [
           {
             "year": 1983,
@@ -3809,22 +3814,17 @@
             "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
           }
         ],
-        "wins": 25,
-        "races_entered": 68,
-        "podiums": 54,
+        "races_started": 68,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": 405.5,
-        "fastest_laps": 18,
-        "races_started": 68,
+        "podiums": 54,
+        "wins": 25,
         "manufacturer_status": "former",
-        "poles": 7,
-        "wcc": 2,
-        "wdc": 3
+        "fastest_laps": 18
       }
     }
   },
@@ -3835,6 +3835,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 62,
+        "wdc": 0,
+        "poles": 3,
+        "points": 1255.0,
         "seasons": [
           {
             "year": 2016,
@@ -3849,22 +3854,17 @@
             "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
           }
         ],
-        "wins": 9,
-        "races_entered": 62,
-        "podiums": 42,
+        "races_started": 62,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 1255.0,
-        "fastest_laps": 13,
-        "races_started": 62,
+        "podiums": 42,
+        "wins": 9,
         "manufacturer_status": "former",
-        "poles": 3,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 13
       }
     }
   },
@@ -3875,6 +3875,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 14,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1950,
@@ -3885,22 +3890,17 @@
             "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 14,
-        "podiums": 2,
+        "races_started": 13,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 13,
+        "podiums": 2,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3911,6 +3911,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 13,
+        "wdc": 0,
+        "poles": 0,
+        "points": 1.0,
         "seasons": [
           {
             "year": 1972,
@@ -3921,22 +3926,17 @@
             "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 13,
-        "podiums": 0,
+        "races_started": 10,
         "engines_built_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "points": 1.0,
-        "fastest_laps": 0,
-        "races_started": 10,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3947,28 +3947,28 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 20,
+        "wdc": 0,
+        "poles": 0,
+        "points": 53.0,
         "seasons": [
           {
             "year": 2017,
             "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 20,
-        "podiums": 0,
+        "races_started": 20,
         "engines_built_in": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "points": 53.0,
-        "fastest_laps": 0,
-        "races_started": 20,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -3979,6 +3979,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 140,
+        "wdc": 0,
+        "poles": 3,
+        "points": 384.0,
         "seasons": [
           {
             "year": 2002,
@@ -4013,22 +4018,17 @@
             "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 140,
-        "podiums": 17,
+        "races_started": 140,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": 384.0,
-        "fastest_laps": 4,
-        "races_started": 140,
+        "podiums": 17,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 3,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 4
       }
     }
   },
@@ -4039,6 +4039,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 1,
+        "races_entered": 29,
+        "wdc": 0,
+        "poles": 7,
+        "points": 57.0,
         "seasons": [
           {
             "year": 1954,
@@ -4069,22 +4074,17 @@
             "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
           }
         ],
-        "wins": 9,
-        "races_entered": 29,
-        "podiums": 13,
+        "races_started": 28,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 57.0,
-        "fastest_laps": 6,
-        "races_started": 28,
+        "podiums": 13,
+        "wins": 9,
         "manufacturer_status": "former",
-        "poles": 7,
-        "wcc": 1,
-        "wdc": 0
+        "fastest_laps": 6
       }
     }
   },
@@ -4095,6 +4095,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": null,
+        "races_entered": 6,
+        "wdc": 0,
+        "poles": 0,
+        "points": null,
         "seasons": [
           {
             "year": 1951,
@@ -4109,22 +4114,17 @@
             "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 6,
-        "podiums": 0,
+        "races_started": 6,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": null,
-        "fastest_laps": 0,
-        "races_started": 6,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": null,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -4135,6 +4135,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 18,
+        "wdc": 0,
+        "poles": 0,
+        "points": 13.0,
         "seasons": [
           {
             "year": 1966,
@@ -4149,22 +4154,17 @@
             "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
           }
         ],
-        "wins": 1,
-        "races_entered": 18,
-        "podiums": 2,
+        "races_started": 18,
         "engines_built_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "points": 13.0,
-        "fastest_laps": 2,
-        "races_started": 18,
+        "podiums": 2,
+        "wins": 1,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 2
       }
     }
   },
@@ -4175,6 +4175,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 130,
+        "wdc": 0,
+        "poles": 0,
+        "points": 36.0,
         "seasons": [
           {
             "year": 1989,
@@ -4209,22 +4214,17 @@
             "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 130,
-        "podiums": 2,
+        "races_started": 116,
         "engines_built_in": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
-        "points": 36.0,
-        "fastest_laps": 0,
-        "races_started": 116,
+        "podiums": 2,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
@@ -4235,6 +4235,11 @@
     },
     "racing_series": {
       "formula_one": {
+        "wcc": 0,
+        "races_entered": 57,
+        "wdc": 0,
+        "poles": 0,
+        "points": 2.0,
         "seasons": [
           {
             "year": 1985,
@@ -4253,682 +4258,38 @@
             "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
           }
         ],
-        "wins": 0,
-        "races_entered": 57,
-        "podiums": 0,
+        "races_started": 51,
         "engines_built_in": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "points": 2.0,
-        "fastest_laps": 0,
-        "races_started": 51,
+        "podiums": 0,
+        "wins": 0,
         "manufacturer_status": "former",
-        "poles": 0,
-        "wcc": 0,
-        "wdc": 0
+        "fastest_laps": 0
       }
     }
   },
   {
     "manufacturer": {
-      "text": "Acer",
-      "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 17,
-    "races_started": 17,
-    "wins": 0,
-    "points": 4.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Alfa Romeo",
-      "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      },
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      },
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      },
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1965,
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1970,
-        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
-      },
-      {
-        "year": 1971,
-        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
-      },
-      {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-      },
-      {
-        "year": 1977,
-        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
-      },
-      {
-        "year": 1978,
-        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-      },
-      {
-        "year": 1979,
-        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
-      },
-      {
-        "year": 1980,
-        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
-      },
-      {
-        "year": 1981,
-        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-      },
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      },
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 226,
-    "races_started": 215,
-    "wins": 12,
-    "points": 148.0,
-    "poles": 15,
-    "fastest_laps": 20,
-    "podiums": 40,
-    "wcc": 0,
-    "wdc": 2,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Alta",
-      "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      },
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      },
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      },
-      {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-      },
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      },
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 31,
-    "races_started": 26,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 1,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Arrows",
-      "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      },
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 32,
-    "races_started": 32,
-    "wins": 0,
-    "points": 7.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Asiatech",
-      "url": "https://en.wikipedia.org/wiki/Asia_Motor_Technologies_France"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 34,
-    "races_started": 33,
-    "wins": 0,
-    "points": 3.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Aston Martin",
-      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 6,
-    "races_started": 5,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Audi",
-      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
-    },
-    "manufacturer_status": "current",
-    "background": "#F2CEE0",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2026,
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 1,
-    "wins": 0,
-    "points": 2.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "ATS",
-      "url": "https://en.wikipedia.org/wiki/Automobili_Turismo_e_Sport"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 7,
-    "races_started": 7,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "BMW",
-      "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      },
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      },
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      },
-      {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-      },
-      {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-      },
-      {
-        "year": 2007,
-        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-      },
-      {
-        "year": 2008,
-        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-      },
-      {
-        "year": 2009,
-        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 273,
-    "races_started": 270,
-    "wins": 20,
-    "points": 1021.0,
-    "poles": 33,
-    "fastest_laps": 33,
-    "podiums": 86,
-    "wcc": 0,
-    "wdc": 1,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Borgward",
-      "url": "https://en.wikipedia.org/wiki/Borgward"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      },
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 3,
-    "races_started": 1,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "BPM",
+      "text": "Cadillac",
       "url": null
     },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 0,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
     "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Bristol",
-      "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      },
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      },
-      {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 17,
-    "races_started": 17,
-    "wins": 0,
+    "wdc": null,
     "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 1,
-    "wcc": null,
-    "wdc": 0,
     "racing_series": {
       "AAA_national_championship": [],
       "formula_one": {
@@ -4939,1831 +4300,22 @@
   },
   {
     "manufacturer": {
-      "text": "BRM",
-      "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      },
-      {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-      },
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      },
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      },
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      },
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      },
-      {
-        "year": 1965,
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-      },
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1969,
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
-      },
-      {
-        "year": 1970,
-        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
-      },
-      {
-        "year": 1971,
-        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
-      },
-      {
-        "year": 1972,
-        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
-      },
-      {
-        "year": 1973,
-        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
-      },
-      {
-        "year": 1974,
-        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
-      },
-      {
-        "year": 1975,
-        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
-      },
-      {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-      },
-      {
-        "year": 1977,
-        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 200,
-    "races_started": 189,
-    "wins": 18,
-    "points": 499.0,
-    "poles": 11,
-    "fastest_laps": 14,
-    "podiums": 65,
-    "wcc": 1,
-    "wdc": 1,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Bugatti",
-      "url": "https://en.wikipedia.org/wiki/Bugatti"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 1,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Butterworth",
-      "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 4,
-    "races_started": 2,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "BWT Mercedes",
-      "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2019,
-        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-      },
-      {
-        "year": 2020,
-        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 38,
-    "races_started": 38,
-    "wins": 1,
-    "points": 268.0,
-    "poles": 1,
-    "fastest_laps": 0,
-    "podiums": 4,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Castellotti",
-      "url": "https://en.wikipedia.org/wiki/Castellotti"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 4,
-    "races_started": 3,
-    "wins": 0,
-    "points": 3.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Climax",
-      "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-      },
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      },
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      },
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      },
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      },
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      },
-      {
-        "year": 1965,
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-      },
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1969,
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 97,
-    "races_started": 96,
-    "wins": 40,
-    "points": 684.0,
-    "poles": 44,
-    "fastest_laps": 44,
-    "podiums": 104,
-    "wcc": 4,
-    "wdc": 4,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Conrero",
-      "url": "https://en.wikipedia.org/wiki/Virgilio_Conrero"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 1,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Cosworth",
-      "url": "https://en.wikipedia.org/wiki/Cosworth"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      },
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      },
-      {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-      },
-      {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-      },
-      {
-        "year": 2010,
-        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-      },
-      {
-        "year": 2011,
-        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-      },
-      {
-        "year": 2012,
-        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
-      },
-      {
-        "year": 2013,
-        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 199,
-    "races_started": 199,
-    "wins": 0,
-    "points": 179.0,
-    "poles": 1,
-    "fastest_laps": 1,
-    "podiums": 2,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "De Tomaso",
-      "url": "https://en.wikipedia.org/wiki/De_Tomaso"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 0,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "EMW",
-      "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "East Germany",
-        "url": "https://en.wikipedia.org/wiki/East_Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 1,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "ERA",
-      "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      },
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 4,
-    "races_started": 4,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "European",
-      "url": "https://en.wikipedia.org/wiki/European_(engine)"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 17,
-    "races_started": 17,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Ferrari",
-      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-    },
-    "manufacturer_status": "current",
-    "background": "#F2CEE0",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      },
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      },
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      },
-      {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-      },
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      },
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      },
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      },
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      },
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      },
-      {
-        "year": 1965,
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-      },
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1969,
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
-      },
-      {
-        "year": 1970,
-        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
-      },
-      {
-        "year": 1971,
-        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
-      },
-      {
-        "year": 1972,
-        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
-      },
-      {
-        "year": 1973,
-        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
-      },
-      {
-        "year": 1974,
-        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
-      },
-      {
-        "year": 1975,
-        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
-      },
-      {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-      },
-      {
-        "year": 1977,
-        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
-      },
-      {
-        "year": 1978,
-        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-      },
-      {
-        "year": 1979,
-        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
-      },
-      {
-        "year": 1980,
-        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
-      },
-      {
-        "year": 1981,
-        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-      },
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      },
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      },
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-      },
-      {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      },
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      },
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      },
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      },
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      },
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      },
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      },
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      },
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      },
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      },
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      },
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      },
-      {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-      },
-      {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-      },
-      {
-        "year": 2007,
-        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-      },
-      {
-        "year": 2008,
-        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-      },
-      {
-        "year": 2009,
-        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-      },
-      {
-        "year": 2010,
-        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-      },
-      {
-        "year": 2011,
-        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-      },
-      {
-        "year": 2012,
-        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
-      },
-      {
-        "year": 2013,
-        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
-      },
-      {
-        "year": 2014,
-        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
-      },
-      {
-        "year": 2015,
-        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-      },
-      {
-        "year": 2016,
-        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-      },
-      {
-        "year": 2017,
-        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-      },
-      {
-        "year": 2018,
-        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-      },
-      {
-        "year": 2019,
-        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-      },
-      {
-        "year": 2020,
-        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-      },
-      {
-        "year": 2021,
-        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-      },
-      {
-        "year": 2022,
-        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-      },
-      {
-        "year": 2023,
-        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
-      },
-      {
-        "year": 2024,
-        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
-      },
-      {
-        "year": 2025,
-        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
-      },
-      {
-        "year": 2026,
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1129,
-    "races_started": 1125,
-    "wins": 249,
-    "points": 11984.0,
-    "poles": 256,
-    "fastest_laps": 274,
-    "podiums": 844,
-    "wcc": 16,
-    "wdc": 15,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Fiat",
-      "url": "https://en.wikipedia.org/wiki/Fiat"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 0,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Fondmetal",
-      "url": "https://en.wikipedia.org/wiki/Fondmetal"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 17,
-    "races_started": 17,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Ford",
-      "url": "https://en.wikipedia.org/wiki/Ford_in_Formula_One"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      },
-      {
-        "text": "United States",
-        "url": "https://en.wikipedia.org/wiki/United_States"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      },
-      {
-        "year": 1965,
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-      },
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1969,
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
-      },
-      {
-        "year": 1970,
-        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
-      },
-      {
-        "year": 1971,
-        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
-      },
-      {
-        "year": 1972,
-        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
-      },
-      {
-        "year": 1973,
-        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
-      },
-      {
-        "year": 1974,
-        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
-      },
-      {
-        "year": 1975,
-        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
-      },
-      {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-      },
-      {
-        "year": 1977,
-        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
-      },
-      {
-        "year": 1978,
-        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-      },
-      {
-        "year": 1979,
-        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
-      },
-      {
-        "year": 1980,
-        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
-      },
-      {
-        "year": 1981,
-        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-      },
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      },
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      },
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-      },
-      {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      },
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      },
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      },
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      },
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      },
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      },
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      },
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      },
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      },
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      },
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 528,
-    "races_started": 523,
-    "wins": 176,
-    "points": 4286.5,
-    "poles": 139,
-    "fastest_laps": 159,
-    "podiums": 533,
-    "wcc": 10,
-    "wdc": 13,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Gordini",
-      "url": "https://en.wikipedia.org/wiki/Gordini"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      },
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      },
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 45,
-    "races_started": 40,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 1,
-    "podiums": 2,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Hart",
-      "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1981,
-        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-      },
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      },
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      },
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      },
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      },
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      },
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 158,
-    "races_started": 144,
-    "wins": 0,
-    "points": 63.0,
-    "poles": 2,
-    "fastest_laps": 2,
-    "podiums": 5,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Honda",
-      "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-    },
-    "manufacturer_status": "current",
-    "background": "#F2CEE0",
-    "engines_built_in": [
-      {
-        "text": "Japan",
-        "url": "https://en.wikipedia.org/wiki/Japan"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      },
-      {
-        "year": 1965,
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-      },
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      },
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-      },
-      {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      },
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      },
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      },
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      },
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      },
-      {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-      },
-      {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-      },
-      {
-        "year": 2007,
-        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-      },
-      {
-        "year": 2008,
-        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-      },
-      {
-        "year": 2015,
-        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-      },
-      {
-        "year": 2016,
-        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-      },
-      {
-        "year": 2017,
-        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-      },
-      {
-        "year": 2018,
-        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-      },
-      {
-        "year": 2019,
-        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-      },
-      {
-        "year": 2020,
-        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-      },
-      {
-        "year": 2021,
-        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-      },
-      {
-        "year": 2026,
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 483,
-    "races_started": 482,
-    "wins": 89,
-    "points": 3409.0,
-    "poles": 90,
-    "fastest_laps": 76,
-    "podiums": 223,
-    "wcc": 6,
-    "wdc": 6,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Honda RBPT",
-      "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Japan",
-        "url": "https://en.wikipedia.org/wiki/Japan"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2023,
-        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
-      },
-      {
-        "year": 2024,
-        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
-      },
-      {
-        "year": 2025,
-        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 70,
-    "races_started": 70,
-    "wins": 38,
-    "points": 2063.0,
-    "poles": 30,
-    "fastest_laps": 20,
-    "podiums": 64,
-    "wcc": 1,
-    "wdc": 2,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Ilmor",
-      "url": "https://en.wikipedia.org/wiki/Ilmor"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      },
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      },
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 48,
-    "races_started": 37,
-    "wins": 0,
-    "points": 12.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Jaguar",
-      "url": "https://en.wikipedia.org/wiki/Jaguar_Cars"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 1,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "JAP",
-      "url": "https://en.wikipedia.org/wiki/JA_Prestwich_Industries"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 1,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Judd",
-      "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-      },
-      {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      },
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      },
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      },
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 76,
-    "races_started": 68,
-    "wins": 0,
-    "points": 86.0,
-    "poles": 0,
-    "fastest_laps": 3,
-    "podiums": 8,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Küchen",
+      "text": "Chevrolet",
       "url": null
     },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 1,
-    "wins": 0,
-    "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Chevrolet",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
     "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Lamborghini",
-      "url": "https://en.wikipedia.org/wiki/Lamborghini"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      },
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      },
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      },
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      },
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 80,
-    "races_started": 80,
-    "wins": 0,
-    "points": 20.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 1,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Lancia",
-      "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 6,
-    "races_started": 4,
-    "wins": 0,
+    "wdc": null,
     "points": null,
-    "poles": 2,
-    "fastest_laps": 1,
-    "podiums": 1,
-    "wcc": null,
-    "wdc": 0,
     "racing_series": {
       "AAA_national_championship": [],
       "formula_one": {
@@ -6774,1841 +4326,100 @@
   },
   {
     "manufacturer": {
-      "text": "Lea-Francis",
-      "url": "https://en.wikipedia.org/wiki/Lea-Francis"
+      "text": "Chrysler",
+      "url": null
     },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 10,
-    "races_started": 10,
-    "wins": 0,
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Chrysler",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
     "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
+      }
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Cummins",
+      "url": null
+    },
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Cummins",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
     "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Life",
-      "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 12,
-    "races_started": 0,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Maserati",
-      "url": "https://en.wikipedia.org/wiki/Maserati_in_Formula_One"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      },
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      },
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      },
-      {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-      },
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      },
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      },
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      },
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      },
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1969,
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 113,
-    "races_started": 108,
-    "wins": 11,
-    "points": 72.0,
-    "poles": 11,
-    "fastest_laps": 17,
-    "podiums": 44,
-    "wcc": 0,
-    "wdc": 2,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Matra",
-      "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1970,
-        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
-      },
-      {
-        "year": 1971,
-        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
-      },
-      {
-        "year": 1972,
-        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
-      },
-      {
-        "year": 1975,
-        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
-      },
-      {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-      },
-      {
-        "year": 1977,
-        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
-      },
-      {
-        "year": 1978,
-        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-      },
-      {
-        "year": 1981,
-        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-      },
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 126,
-    "races_started": 125,
-    "wins": 3,
-    "points": 173.0,
-    "poles": 4,
-    "fastest_laps": 5,
-    "podiums": 24,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Mecachrome",
-      "url": "https://en.wikipedia.org/wiki/Mecachrome"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 16,
-    "races_started": 16,
-    "wins": 0,
-    "points": 38.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 3,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Megatron",
-      "url": "https://en.wikipedia.org/wiki/Megatron_(engine)"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Switzerland",
-        "url": "https://en.wikipedia.org/wiki/Switzerland"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      },
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 32,
-    "races_started": 32,
-    "wins": 0,
-    "points": 35.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 1,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Mercedes",
-      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-    },
-    "manufacturer_status": "current",
-    "background": "#F2CEE0",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      },
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      },
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      },
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      },
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      },
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      },
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      },
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      },
-      {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-      },
-      {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-      },
-      {
-        "year": 2007,
-        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-      },
-      {
-        "year": 2008,
-        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-      },
-      {
-        "year": 2009,
-        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-      },
-      {
-        "year": 2010,
-        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-      },
-      {
-        "year": 2011,
-        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-      },
-      {
-        "year": 2012,
-        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
-      },
-      {
-        "year": 2013,
-        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
-      },
-      {
-        "year": 2014,
-        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
-      },
-      {
-        "year": 2015,
-        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-      },
-      {
-        "year": 2016,
-        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-      },
-      {
-        "year": 2017,
-        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-      },
-      {
-        "year": 2018,
-        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-      },
-      {
-        "year": 2019,
-        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-      },
-      {
-        "year": 2020,
-        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-      },
-      {
-        "year": 2021,
-        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-      },
-      {
-        "year": 2022,
-        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-      },
-      {
-        "year": 2023,
-        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
-      },
-      {
-        "year": 2024,
-        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
-      },
-      {
-        "year": 2025,
-        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
-      },
-      {
-        "year": 2026,
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 614,
-    "races_started": 612,
-    "wins": 239,
-    "points": 16464.5,
-    "poles": 249,
-    "fastest_laps": 239,
-    "podiums": 662,
-    "wcc": 12,
-    "wdc": 14,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Motori Moderni",
-      "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 46,
-    "races_started": 44,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Mugen-Honda",
-      "url": "https://en.wikipedia.org/wiki/Mugen_Honda"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Japan",
-        "url": "https://en.wikipedia.org/wiki/Japan"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      },
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      },
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      },
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      },
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      },
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      },
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      },
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 147,
-    "races_started": 147,
-    "wins": 4,
-    "points": 182.0,
-    "poles": 1,
-    "fastest_laps": 0,
-    "podiums": 16,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "OSCA",
-      "url": "https://en.wikipedia.org/wiki/O.S.C.A."
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      },
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      },
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      },
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 12,
-    "races_started": 8,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Osella",
-      "url": "https://en.wikipedia.org/wiki/Osella"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 16,
-    "races_started": 10,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Petronas",
-      "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      },
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      },
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      },
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      },
-      {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 153,
-    "races_started": 151,
-    "wins": 0,
-    "points": 142.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 4,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Peugeot",
-      "url": "https://en.wikipedia.org/wiki/Peugeot"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      },
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      },
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      },
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      },
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      },
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 115,
-    "races_started": 115,
-    "wins": 0,
-    "points": 128.0,
-    "poles": 0,
-    "fastest_laps": 1,
-    "podiums": 14,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Playlife",
-      "url": "https://en.wikipedia.org/wiki/Playlife"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      },
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 49,
-    "races_started": 49,
-    "wins": 0,
-    "points": 69.0,
-    "poles": 1,
-    "fastest_laps": 1,
-    "podiums": 6,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Porsche",
-      "url": "https://en.wikipedia.org/wiki/Porsche_in_Formula_One"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      },
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      },
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      },
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      },
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      },
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 39,
-    "races_started": 35,
-    "wins": 1,
-    "points": 48.0,
-    "poles": 1,
-    "fastest_laps": 0,
-    "podiums": 5,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Pratt & Whitney",
-      "url": "https://en.wikipedia.org/wiki/Pratt_%26_Whitney"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United States",
-        "url": "https://en.wikipedia.org/wiki/United_States"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1971,
-        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 3,
-    "races_started": 3,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Red Bull Powertrains",
-      "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Japan",
-        "url": "https://en.wikipedia.org/wiki/Japan"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2022,
-        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 22,
-    "races_started": 22,
-    "wins": 17,
-    "points": 794.0,
-    "poles": 8,
-    "fastest_laps": 8,
-    "podiums": 28,
-    "wcc": 1,
-    "wdc": 1,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Red Bull Ford",
-      "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
-    },
-    "manufacturer_status": "current",
-    "background": "#F2CEE0",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2026,
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 1,
-    "races_started": 1,
-    "wins": 0,
-    "points": 12.0,
-    "poles": 0,
-    "fastest_laps": 1,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Renault",
-      "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1977,
-        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
-      },
-      {
-        "year": 1978,
-        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-      },
-      {
-        "year": 1979,
-        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
-      },
-      {
-        "year": 1980,
-        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
-      },
-      {
-        "year": 1981,
-        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-      },
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      },
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      },
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      },
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      },
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      },
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      },
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      },
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      },
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      },
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      },
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      },
-      {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-      },
-      {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-      },
-      {
-        "year": 2007,
-        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-      },
-      {
-        "year": 2008,
-        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-      },
-      {
-        "year": 2009,
-        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-      },
-      {
-        "year": 2010,
-        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-      },
-      {
-        "year": 2011,
-        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-      },
-      {
-        "year": 2012,
-        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
-      },
-      {
-        "year": 2013,
-        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
-      },
-      {
-        "year": 2014,
-        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
-      },
-      {
-        "year": 2015,
-        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-      },
-      {
-        "year": 2016,
-        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-      },
-      {
-        "year": 2017,
-        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-      },
-      {
-        "year": 2018,
-        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-      },
-      {
-        "year": 2019,
-        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-      },
-      {
-        "year": 2020,
-        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-      },
-      {
-        "year": 2021,
-        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-      },
-      {
-        "year": 2022,
-        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-      },
-      {
-        "year": 2023,
-        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
-      },
-      {
-        "year": 2024,
-        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
-      },
-      {
-        "year": 2025,
-        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 774,
-    "races_started": 771,
-    "wins": 169,
-    "points": 8228.5,
-    "poles": 213,
-    "fastest_laps": 177,
-    "podiums": 465,
-    "wcc": 12,
-    "wdc": 11,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Repco",
-      "url": "https://en.wikipedia.org/wiki/Repco"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Australia",
-        "url": "https://en.wikipedia.org/wiki/Australia"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      },
-      {
-        "year": 1969,
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 33,
-    "races_started": 33,
-    "wins": 8,
-    "points": 126.0,
-    "poles": 7,
-    "fastest_laps": 4,
-    "podiums": 25,
-    "wcc": 2,
-    "wdc": 2,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Sauber",
-      "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 16,
-    "races_started": 16,
-    "wins": 0,
-    "points": 12.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Scarab",
-      "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United States",
-        "url": "https://en.wikipedia.org/wiki/United_States"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 6,
-    "races_started": 2,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Serenissima",
-      "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 3,
-    "races_started": 1,
-    "wins": 0,
-    "points": 1.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Subaru",
-      "url": "https://en.wikipedia.org/wiki/Subaru"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 8,
-    "races_started": 0,
-    "wins": 0,
-    "points": 0.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Supertec",
-      "url": "https://en.wikipedia.org/wiki/Supertec"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      },
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 33,
-    "races_started": 33,
-    "wins": 0,
-    "points": 42.0,
-    "poles": 0,
-    "fastest_laps": 1,
-    "podiums": 3,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "TAG",
-      "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 68,
-    "races_started": 68,
-    "wins": 25,
-    "points": 405.5,
-    "poles": 7,
-    "fastest_laps": 18,
-    "podiums": 54,
-    "wcc": 2,
-    "wdc": 3,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "TAG Heuer",
-      "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2016,
-        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-      },
-      {
-        "year": 2017,
-        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-      },
-      {
-        "year": 2018,
-        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 62,
-    "races_started": 62,
-    "wins": 9,
-    "points": 1255.0,
-    "poles": 3,
-    "fastest_laps": 13,
-    "podiums": 42,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Talbot",
-      "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      },
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 14,
-    "races_started": 13,
-    "wins": 0,
+    "wdc": null,
     "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 2,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
+      }
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "DeSoto",
+      "url": null
+    },
+    "manufacturer_url": "https://en.wikipedia.org/wiki/DeSoto_(automobile)",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
     "wcc": null,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Tecno",
-      "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Italy",
-        "url": "https://en.wikipedia.org/wiki/Italy"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1972,
-        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
-      },
-      {
-        "year": 1973,
-        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 13,
-    "races_started": 10,
-    "wins": 0,
-    "points": 1.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Toro Rosso",
-      "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2017,
-        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 20,
-    "races_started": 20,
-    "wins": 0,
-    "points": 53.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Toyota",
-      "url": "https://en.wikipedia.org/wiki/Toyota_Racing_(Formula_One_team)"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      },
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      },
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      },
-      {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-      },
-      {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-      },
-      {
-        "year": 2007,
-        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-      },
-      {
-        "year": 2008,
-        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-      },
-      {
-        "year": 2009,
-        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 140,
-    "races_started": 140,
-    "wins": 0,
-    "points": 384.0,
-    "poles": 3,
-    "fastest_laps": 4,
-    "podiums": 17,
-    "wcc": 0,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Vanwall",
-      "url": "https://en.wikipedia.org/wiki/Vanwall"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      },
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      },
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      },
-      {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-      },
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      },
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      },
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 29,
-    "races_started": 28,
-    "wins": 9,
-    "points": 57.0,
-    "poles": 7,
-    "fastest_laps": 6,
-    "podiums": 13,
-    "wcc": 1,
-    "wdc": 0,
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": {
-        "status": "former",
-        "indianapolis_only": true
-      }
-    }
-  },
-  {
-    "manufacturer": {
-      "text": "Veritas",
-      "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-    },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 6,
-    "races_started": 6,
-    "wins": 0,
+    "wdc": null,
     "points": null,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
+      }
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Dodge",
+      "url": null
+    },
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Dodge",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
     "wcc": null,
-    "wdc": 0,
+    "wdc": null,
+    "points": null,
     "racing_series": {
       "AAA_national_championship": [],
       "formula_one": {
@@ -8619,39 +4430,21 @@
   },
   {
     "manufacturer": {
-      "text": "Weslake",
-      "url": "https://en.wikipedia.org/wiki/Weslake"
+      "text": "Duray",
+      "url": null
     },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-      },
-      {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      },
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 18,
-    "races_started": 18,
-    "wins": 1,
-    "points": 13.0,
-    "poles": 0,
-    "fastest_laps": 2,
-    "podiums": 2,
-    "wcc": 0,
-    "wdc": 0,
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
     "racing_series": {
       "AAA_national_championship": [],
       "formula_one": {
@@ -8662,59 +4455,22 @@
   },
   {
     "manufacturer": {
-      "text": "Yamaha",
-      "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
+      "text": "Mercury",
+      "url": null
     },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Japan",
-        "url": "https://en.wikipedia.org/wiki/Japan"
-      }
-    ],
-    "seasons": [
-      {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      },
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      },
-      {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-      },
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      },
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      },
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      },
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      },
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      }
-    ],
-    "races_entered": 130,
-    "races_started": 116,
-    "wins": 0,
-    "points": 36.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 2,
-    "wcc": 0,
-    "wdc": 0,
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Mercury_(automobile)",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
     "racing_series": {
       "AAA_national_championship": [],
       "formula_one": {
@@ -8725,43 +4481,200 @@
   },
   {
     "manufacturer": {
-      "text": "Zakspeed",
-      "url": "https://en.wikipedia.org/wiki/Zakspeed"
+      "text": "Miller",
+      "url": null
     },
-    "manufacturer_status": "former",
-    "engines_built_in": [
-      {
-        "text": "Germany",
-        "url": "https://en.wikipedia.org/wiki/Germany"
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Harry_Miller_(auto_racing)",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
       }
-    ],
-    "seasons": [
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      },
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Novi",
+      "url": null
+    },
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Novi_engine",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
       }
-    ],
-    "races_entered": 57,
-    "races_started": 51,
-    "wins": 0,
-    "points": 2.0,
-    "poles": 0,
-    "fastest_laps": 0,
-    "podiums": 0,
-    "wcc": 0,
-    "wdc": 0,
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Offenhauser [ x ]",
+      "url": null
+    },
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Offenhauser",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
+      }
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "R Miller",
+      "url": null
+    },
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
+      }
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Sparks",
+      "url": null
+    },
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
+      }
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Studebaker",
+      "url": null
+    },
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Studebaker",
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
+      }
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Voelker",
+      "url": null
+    },
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
+    "racing_series": {
+      "AAA_national_championship": [],
+      "formula_one": {
+        "status": "former",
+        "indianapolis_only": true
+      }
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Wayne",
+      "url": null
+    },
+    "manufacturer_status": null,
+    "engines_built_in": [],
+    "seasons": [],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": null,
+    "wdc": null,
+    "points": null,
     "racing_series": {
       "AAA_national_championship": [],
       "formula_one": {
