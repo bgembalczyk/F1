@@ -45,7 +45,7 @@ def test_default_config_is_scraper_config_alias():
     assert first is not second
 
 
-def test_default_data_paths_and_compatibility_resolution(tmp_path):
+def test_default_data_paths_resolve_only_raw_inputs(tmp_path):
     paths = default_data_paths(base_dir=tmp_path / "data")
 
     assert isinstance(paths, DataPaths)
@@ -58,4 +58,4 @@ def test_default_data_paths_and_compatibility_resolution(tmp_path):
     legacy.write_text("[]", encoding="utf-8")
 
     resolved = paths.resolve_compatible_input("drivers", "f1_drivers.json")
-    assert resolved == legacy
+    assert resolved == paths.raw_input_file("drivers", "f1_drivers.json")
