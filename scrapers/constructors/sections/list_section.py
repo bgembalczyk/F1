@@ -84,11 +84,25 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
         self._html_table_parser = HtmlTableParser()
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        logger.debug(
+            "Constructors section parser '%s': start parse.",
+            self._parser._section_label,
+        )
         table = section_fragment.find("table", class_="wikitable")
+        logger.debug(
+            "Constructors section parser '%s': first wikitable found=%s.",
+            self._parser._section_label,
+            table is not None,
+        )
         if table is not None:
             try:
                 rows = self._html_table_parser.parse_table(table)
                 headers = rows[0].headers if rows else []
+                logger.debug(
+                    "Constructors section parser '%s': first table headers=%s.",
+                    self._parser._section_label,
+                    headers,
+                )
                 row_maps = [
                     {
                         header: cell.get_text(" ", strip=True)
@@ -98,15 +112,27 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
                 ]
                 self._table_parser.parse({"headers": headers, "rows": row_maps})
             except RuntimeError:
+                logger.debug(
+                    "Constructors section parser '%s': lightweight table pre-parse failed.",
+                    self._parser._section_label,
+                )
                 pass
         try:
             return self._parser.parse(section_fragment)
         except RuntimeError:
+            logger.debug(
+                "Constructors section parser '%s': full section parse failed, trying table-only fallback.",
+                self._parser._section_label,
+            )
             if table is not None:
                 table_only_fragment = BeautifulSoup(str(table), "html.parser")
                 try:
                     return self._parser.parse(table_only_fragment)
                 except RuntimeError:
+                    logger.debug(
+                        "Constructors section parser '%s': table-only fallback failed.",
+                        self._parser._section_label,
+                    )
                     pass
             logger.warning(
                 "Skipping constructors section '%s': matching table not found.",

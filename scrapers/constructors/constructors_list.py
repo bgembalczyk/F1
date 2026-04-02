@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
@@ -21,6 +22,8 @@ from scrapers.base.results import ScrapeResult
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
+
+logger = logging.getLogger(__name__)
 
 
 class ConstructorsListScraper(F1ListScraper):
@@ -64,6 +67,7 @@ class ConstructorsListScraper(F1ListScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         selector = WikipediaSectionByIdSelectionStrategy(domain="constructors")
+        logger.info("ConstructorsListScraper: starting parse flow.")
         self._split_export_records = {
             self._SECTION_PARSER_EXPORT_KEY: [],
             self._SUB_SECTION_PARSER_EXPORT_KEY: [],
@@ -75,6 +79,10 @@ class ConstructorsListScraper(F1ListScraper):
             soup=soup,
         )
         if current_section is not None:
+            logger.info(
+                "ConstructorsListScraper: current section found (ids=%s).",
+                self._CURRENT_SECTION_FALLBACK_IDS,
+            )
             current_parser = CurrentConstructorsSectionParser(
                 config=self._CURRENT_CONFIG,
                 section_label=self._CURRENT_SECTION_LABEL,
@@ -82,10 +90,19 @@ class ConstructorsListScraper(F1ListScraper):
                 normalize_empty_values=self.normalize_empty_values,
             )
             current_records = current_parser.parse(current_section).records
+            logger.info(
+                "ConstructorsListScraper: current section parsed, records=%d.",
+                len(current_records),
+            )
             if self._should_include_scope("current"):
                 records.extend(current_records)
             self._split_export_records[self._SECTION_PARSER_EXPORT_KEY].extend(
                 current_records,
+            )
+        else:
+            logger.warning(
+                "ConstructorsListScraper: current section not found (ids=%s).",
+                self._CURRENT_SECTION_FALLBACK_IDS,
             )
 
         former_section = selector.extract_section_by_id(
@@ -94,6 +111,7 @@ class ConstructorsListScraper(F1ListScraper):
             domain="constructors",
         )
         if former_section is not None:
+            logger.info("ConstructorsListScraper: former section found.")
             former_parser = FormerConstructorsSectionParser(
                 config=self._FORMER_CONFIG,
                 section_label=self._FORMER_SECTION_LABEL,
@@ -101,6 +119,10 @@ class ConstructorsListScraper(F1ListScraper):
                 normalize_empty_values=self.normalize_empty_values,
             )
             former_records = former_parser.parse(former_section).records
+            logger.info(
+                "ConstructorsListScraper: former section parsed, records=%d.",
+                len(former_records),
+            )
             if self._should_include_scope("former"):
                 records.extend(former_records)
             self._split_export_records[self._SECTION_PARSER_EXPORT_KEY].extend(
@@ -111,6 +133,10 @@ class ConstructorsListScraper(F1ListScraper):
             )
             if self._should_include_scope("indianapolis"):
                 records.extend(indianapolis_records)
+            logger.info(
+                "ConstructorsListScraper: indianapolis-only extracted, records=%d.",
+                len(indianapolis_records),
+            )
 
         privateer_section = selector.extract_section_by_id(
             soup,
@@ -118,6 +144,7 @@ class ConstructorsListScraper(F1ListScraper):
             domain="constructors",
         )
         if privateer_section is not None:
+            logger.info("ConstructorsListScraper: privateer section found.")
             privateer_parser = PrivateerTeamsSectionParser()
             privateer_records = privateer_parser.parse(privateer_section).get("items", [])
             if not self.include_urls:
@@ -136,6 +163,11 @@ class ConstructorsListScraper(F1ListScraper):
             self._split_export_records[self._SUB_SECTION_PARSER_EXPORT_KEY].extend(
                 privateer_records,
             )
+            logger.info(
+                "ConstructorsListScraper: privateer section parsed, records=%d.",
+                len(privateer_records),
+            )
+        logger.info("ConstructorsListScraper: parse flow finished, total records=%d.", len(records))
 
         return records
 
@@ -146,12 +178,20 @@ class ConstructorsListScraper(F1ListScraper):
         soup: BeautifulSoup,
     ) -> BeautifulSoup | None:
         for section_id in self._CURRENT_SECTION_FALLBACK_IDS:
+            logger.debug(
+                "ConstructorsListScraper: trying current section_id='%s'.",
+                section_id,
+            )
             section = selector.extract_section_by_id(
                 soup,
                 section_id,
                 domain="constructors",
             )
             if section is not None:
+                logger.debug(
+                    "ConstructorsListScraper: section matched for section_id='%s'.",
+                    section_id,
+                )
                 return section
         return None
 
