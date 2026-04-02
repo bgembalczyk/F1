@@ -11,12 +11,13 @@ from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.entries import BaseRegistryEntry
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
+from layers.seed.registry.types import SeedName
 from scrapers.wiki.discovery import discover_layer_one_seed_components
 
 
 def _seed_entry_from_component(
     *,
-    seed_name: str,
+    seed_name: SeedName,
     component: Any,
     default_output_path: str,
     legacy_output_path: str,
