@@ -17,6 +17,12 @@ from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
 logger = logging.getLogger(__name__)
 
 
+def _trace(message: str) -> None:
+    # Intentionally stdout-based to make diagnostics visible in list runs
+    # even when Python logging is not configured.
+    print(f"[points][shortened-debug] {message}")
+
+
 class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
     table_type = "points_scoring_systems_history"
     missing_columns_policy = "ignore"
@@ -93,6 +99,9 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         context_section_id = (getattr(context, "section_id", "") or "")
+        _trace(
+            f"parse_group start: section_id={context_section_id!r} elements={len(elements)}",
+        )
         logger.debug(
             "ShortenedRacesSubSubSectionParser.parse_group start: section_id=%s elements=%d",
             context_section_id,
@@ -108,6 +117,9 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
         logger.debug(
             "ShortenedRacesSubSubSectionParser.parse_group done: has_shortened_table=%s",
             self._contains_shortened_table(parsed),
+        )
+        _trace(
+            f"parse_group done: section_id={context_section_id!r} has_shortened_table={self._contains_shortened_table(parsed)}",
         )
         return parsed
 
@@ -143,22 +155,30 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
         context_section_id: str,
     ) -> None:
         if context_section_id.lower() != "shortened_races":
+            _trace(
+                f"fallback skipped: section_id={context_section_id!r} (expected 'Shortened_races')",
+            )
             logger.debug(
                 "Shortened fallback skipped: section_id=%s (expected Shortened_races)",
                 context_section_id,
             )
             return
         if self._contains_shortened_table(payload):
+            _trace("fallback skipped: shortened table already present in payload")
             logger.debug("Shortened fallback skipped: table already present in payload")
             return
 
         fallback_tables = self._extract_shortened_tables(elements)
         if not fallback_tables:
+            _trace("fallback scan finished: no matching wikitable found")
             logger.debug("Shortened fallback: no matching wikitable found")
             return
 
         target = payload.setdefault("elements", [])
         if not isinstance(target, list):
+            _trace(
+                f"fallback aborted: payload['elements'] has invalid type={type(target).__name__}",
+            )
             logger.debug(
                 "Shortened fallback aborted: payload['elements'] is not a list (%s)",
                 type(target).__name__,
@@ -179,6 +199,9 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
             "Shortened fallback attached %d mapped table(s) for section_id=%s",
             len(fallback_tables),
             context_section_id,
+        )
+        _trace(
+            f"fallback attached tables: count={len(fallback_tables)} section_id={context_section_id!r}",
         )
 
     def _contains_shortened_table(self, payload: Any) -> bool:
@@ -212,6 +235,9 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
             scanned,
             len(tables),
         )
+        _trace(
+            f"fallback scan summary: scanned_tables={scanned} matched_tables={len(tables)}",
+        )
         return tables
 
 
@@ -223,17 +249,23 @@ class _SpecialCasesSubSubSectionRouter(SubSubSectionParser):
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         section_id = getattr(context, "section_id", "") or ""
+        _trace(
+            f"router decision: section_id={section_id!r} elements={len(elements)}",
+        )
         logger.debug(
             "SpecialCases router: section_id=%s elements=%d",
             section_id,
             len(elements),
         )
         if "sprint" in section_id.lower():
+            _trace("router -> sprint_parser")
             logger.debug("SpecialCases router -> sprint_parser")
             return self.sprint_parser.parse_group(elements, context=context)
         if "shortened" in section_id.lower():
+            _trace("router -> shortened_parser")
             logger.debug("SpecialCases router -> shortened_parser")
             return self.shortened_parser.parse_group(elements, context=context)
+        _trace("router -> default SubSubSectionParser")
         logger.debug("SpecialCases router -> default SubSubSectionParser")
         return super().parse_group(elements, context=context)
 
