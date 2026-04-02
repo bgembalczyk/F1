@@ -21,6 +21,18 @@ from scrapers.points.points_scraper import PointsScraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersScraper
+from scrapers.wiki.constants import DRIVER_FATALITIES_SOURCE
+from scrapers.wiki.constants import F1_DRIVERS_SOURCE
+from scrapers.wiki.constants import F1_ENGINE_MANUFACTURERS_SOURCE
+from scrapers.wiki.constants import F1_INDIANAPOLIS_ONLY_ENGINE_MANUFACTURERS_SOURCE
+from scrapers.wiki.constants import F1_RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.constants import F1_RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.constants import FEMALE_DRIVERS_SOURCE
+from scrapers.wiki.constants import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.constants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.constants import PRIVATEER_TEAMS_SOURCE
+from scrapers.wiki.constants import SPONSORSHIP_LIVERIES_SOURCE
+from scrapers.wiki.constants import TYRE_MANUFACTURERS_SOURCE
 
 
 @dataclass(frozen=True)
@@ -64,7 +76,9 @@ def _list_legacy_output_path(*, output_category: str, filename: str) -> str:
     return f"{output_category}/{filename}"
 
 
-def build_seed_registry_entry_from_spec(spec: RawRegistrySpec) -> SeedRegistryEntry | None:
+def build_seed_registry_entry_from_spec(
+    spec: RawRegistrySpec,
+) -> SeedRegistryEntry | None:
     if spec.seed_filename is None:
         return None
 
@@ -85,7 +99,9 @@ def build_seed_registry_entry_from_spec(spec: RawRegistrySpec) -> SeedRegistryEn
     )
 
 
-def build_list_job_registry_entry_from_spec(spec: RawRegistrySpec) -> ListJobRegistryEntry:
+def build_list_job_registry_entry_from_spec(
+    spec: RawRegistrySpec,
+) -> ListJobRegistryEntry:
     output_category = spec.list_output_category or spec.output_category
     return ListJobRegistryEntry(
         seed_name=spec.seed_name,
@@ -121,38 +137,38 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
         seed_name="constructors_former",
         list_scraper_cls=ConstructorsListScraper,
         output_category="chassis_constructors",
-        list_filename="f1_former_constructors.json",
+        list_filename=FORMER_CONSTRUCTORS_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="constructors_indianapolis_only",
         list_scraper_cls=ConstructorsListScraper,
         output_category="chassis_constructors",
-        list_filename="f1_indianapolis_only_constructors.json",
+        list_filename=INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="constructors_privateer",
         list_scraper_cls=ConstructorsListScraper,
         output_category="teams",
-        list_filename="f1_privateer_teams.json",
+        list_filename=PRIVATEER_TEAMS_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="drivers",
         list_scraper_cls=F1DriversListScraper,
         output_category="drivers",
-        list_filename="f1_drivers.json",
+        list_filename=F1_DRIVERS_SOURCE,
         seed_filename="complete_drivers",
     ),
     RawRegistrySpec(
         seed_name="drivers_female",
         list_scraper_cls=FemaleDriversListScraper,
         output_category="drivers",
-        list_filename="female_drivers.json",
+        list_filename=FEMALE_DRIVERS_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="drivers_fatalities",
         list_scraper_cls=F1FatalitiesListScraper,
         output_category="drivers",
-        list_filename="f1_driver_fatalities.json",
+        list_filename=DRIVER_FATALITIES_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="seasons",
@@ -171,7 +187,7 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
         seed_name="engines_indianapolis_only",
         list_scraper_cls=EngineManufacturersListScraper,
         output_category="engines",
-        list_filename="f1_indianapolis_only_engine_manufacturers.json",
+        list_filename=F1_INDIANAPOLIS_ONLY_ENGINE_MANUFACTURERS_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="engines_restrictions",
@@ -189,19 +205,19 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
         seed_name="engines_manufacturers",
         list_scraper_cls=EngineManufacturersListScraper,
         output_category="engines",
-        list_filename="f1_engine_manufacturers.json",
+        list_filename=F1_ENGINE_MANUFACTURERS_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="grands_prix_red_flagged_world_championship",
         list_scraper_cls=RedFlaggedRacesScraper,
         output_category="races",
-        list_filename="f1_red_flagged_world_championship_races.json",
+        list_filename=F1_RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="grands_prix_red_flagged_non_championship",
         list_scraper_cls=RedFlaggedRacesScraper,
         output_category="races",
-        list_filename="f1_red_flagged_non_championship_races.json",
+        list_filename=F1_RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="points_sprint",
@@ -225,13 +241,13 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
         seed_name="tyres",
         list_scraper_cls=TyreManufacturersScraper,
         output_category="seasons",
-        list_filename="f1_tyre_manufacturers_by_season.json",
+        list_filename=TYRE_MANUFACTURERS_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="sponsorship_liveries",
         list_scraper_cls=F1SponsorshipLiveriesScraper,
         output_category="teams",
-        list_filename="f1_sponsorship_liveries.json",
+        list_filename=SPONSORSHIP_LIVERIES_SOURCE,
     ),
     RawRegistrySpec(
         seed_name="constructors",

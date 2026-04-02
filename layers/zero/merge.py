@@ -1,8 +1,12 @@
 import json
 import re
 from collections.abc import Callable
+from functools import lru_cache
 from pathlib import Path
 
+from layers.zero.merge_policies import DriversMergePolicy
+from layers.zero.merge_policies import MergePolicy
+from layers.zero.merge_policies import TeamsMergePolicy
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
 from layers.zero.merge_types import RaceRecordModel
@@ -12,6 +16,11 @@ from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import ENGINES_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import F1_CONSTRUCTORS_BY_YEAR_PATTERN
+from scrapers.wiki.constants import F1_ENGINE_MANUFACTURERS_SOURCE
+from scrapers.wiki.constants import F1_INDIANAPOLIS_ONLY_ENGINE_MANUFACTURERS_SOURCE
+from scrapers.wiki.constants import F1_RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.constants import F1_RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE
 from scrapers.wiki.constants import FORMER_CONSTRUCTORS_SOURCE
 from scrapers.wiki.constants import FORMULA_ONE_SERIES
 from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
@@ -127,7 +136,7 @@ def _teams_domain_handler(
     source_name: str,
     record: dict[str, object],
 ) -> dict[str, object]:
-    return _transform_teams_domain(domain, source_name, record)
+    return _apply_domain_policies(domain, source_name, record)
 
 
 def _drivers_domain_handler(
@@ -135,7 +144,7 @@ def _drivers_domain_handler(
     source_name: str,
     record: dict[str, object],
 ) -> dict[str, object]:
-    return _transform_drivers_domain(domain, source_name, record)
+    return _apply_domain_policies(domain, source_name, record)
 
 
 def _races_domain_handler(
@@ -190,6 +199,23 @@ def _build_transform_pipelines() -> dict[
 TRANSFORM_PIPELINES = _build_transform_pipelines()
 
 
+@lru_cache(maxsize=1)
+def _domain_policy_registry() -> dict[str, tuple[MergePolicy, ...]]:
+    return {
+        "drivers": (
+            DriversMergePolicy(
+                transform_f1_driver=_transform_f1_driver,
+                transform_female_driver=_transform_female_driver,
+                attach_driver_death_data=_attach_driver_death_data,
+            ),
+        ),
+        "teams": (
+            TeamsMergePolicy(
+                build_racing_series=_build_racing_series,
+            ),
+        ),
+    }
+
 def _resolve_record_transform_handlers(
     domain: str,
     source_name: str,
@@ -206,6 +232,18 @@ def _resolve_record_transform_handlers(
         domain_pipeline = domain_handlers.get(DEFAULT_SOURCE_PIPELINE, ())
     resolved.extend(domain_pipeline)
     return tuple(resolved)
+
+
+def _apply_domain_policies(
+    domain: str,
+    source_name: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    for policy in _domain_policy_registry().get(domain, ()):
+        if not policy.supports(source_name):
+            continue
+        return policy.apply(transformed)
+    return transformed
 
 
 def _transform_tyre_manufacturers(
@@ -238,7 +276,7 @@ def _transform_constructor_domain(
 
     constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
     if domain == "constructors" and re.fullmatch(
-        r"f1_constructors_\d{4}\.json",
+        F1_CONSTRUCTORS_BY_YEAR_PATTERN,
         source_name,
     ):
         constructor_fields.discard("engine")
@@ -311,12 +349,12 @@ def _transform_engines_domain(
 ) -> dict[str, object]:
     if domain != "engines":
         return transformed
-    if source_name == "f1_indianapolis_only_engine_manufacturers.json":
+    if source_name == F1_INDIANAPOLIS_ONLY_ENGINE_MANUFACTURERS_SOURCE:
         transformed["racing_series"] = {
             "AAA_national_championship": [],
             "formula_one": {"status": "former", "indianapolis_only": True},
         }
-    elif source_name == "f1_engine_manufacturers.json":
+    elif source_name == F1_ENGINE_MANUFACTURERS_SOURCE:
         _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
     return transformed
 
@@ -327,47 +365,6 @@ def _transform_grands_prix_domain(
 ) -> dict[str, object]:
     if domain == "grands_prix":
         _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
-    return transformed
-
-
-def _transform_teams_domain(
-    domain: str,
-    source_name: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain != "teams":
-        return transformed
-    if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
-        transformed = {
-            "team": transformed.get("constructor"),
-            "racing_series": _build_racing_series({**transformed}),
-        }
-    if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
-        transformed["racing_series"] = _build_racing_series(
-            {"liveries": transformed.pop("liveries")},
-        )
-    if source_name == "f1_privateer_teams.json":
-        formula_one = {
-            key: transformed.pop(key) for key in ("seasons",) if key in transformed
-        }
-        formula_one["privateer"] = True
-        transformed["racing_series"] = _build_racing_series(formula_one)
-    return transformed
-
-
-def _transform_drivers_domain(
-    domain: str,
-    source_name: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain != "drivers":
-        return transformed
-    if source_name == "f1_drivers.json":
-        return _transform_f1_driver(transformed)
-    if source_name == "female_drivers.json":
-        return _transform_female_driver(transformed)
-    if source_name == "f1_driver_fatalities.json":
-        _attach_driver_death_data(transformed)
     return transformed
 
 
@@ -411,9 +408,9 @@ def _transform_races_domain(
 ) -> dict[str, object]:
     if domain != "races":
         return transformed
-    if source_name == "f1_red_flagged_world_championship_races.json":
+    if source_name == F1_RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE:
         transformed["championship"] = True
-    if source_name == "f1_red_flagged_non_championship_races.json":
+    if source_name == F1_RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE:
         transformed["championship"] = False
     transformed["red_flag"] = _extract_red_flag(transformed)
     _pop_red_flag_fields(transformed)
