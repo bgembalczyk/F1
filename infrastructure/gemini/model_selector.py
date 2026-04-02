@@ -27,6 +27,18 @@ class ModelSelector:
                 if state.model in excluded:
                     continue
                 if state.is_available(now):
-                    state.record_request(now)
                     return state.model
         return None
+
+    def try_record_request(self, model: str) -> bool:
+        """Atomically verifies model availability and records an API request."""
+        with self._rate_lock:
+            now = time.monotonic()
+            for state in self._model_states:
+                if state.model != model:
+                    continue
+                if not state.is_available(now):
+                    return False
+                state.record_request(now)
+                return True
+        return False

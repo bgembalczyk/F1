@@ -44,6 +44,9 @@ class GeminiOrchestrationService:
                 )
                 return cached
 
+            if not self._model_selector.try_record_request(model):
+                continue
+
             try:
                 result = call_api(model)
             except RuntimeError:
