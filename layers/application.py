@@ -8,9 +8,9 @@ from typing import TYPE_CHECKING
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
-from layers.orchestration.helpers import build_layer_one_runner_map
-from layers.orchestration.helpers import build_layer_zero_run_config_factory_map
-from layers.orchestration.helpers import run_engine_manufacturers
+from layers.orchestration.runner_registry import build_layer_one_runner_map
+from layers.orchestration.runner_registry import build_layer_zero_run_config_factory_map
+from layers.orchestration.runner_registry import run_engine_manufacturers
 from layers.pipeline import WikiPipelineApplication
 from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.helpers import get_wiki_seed_registry

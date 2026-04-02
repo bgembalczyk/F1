@@ -5,7 +5,7 @@ from uuid import uuid4
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
-from layers.zero.helpers import layer_zero_raw_paths
+from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger

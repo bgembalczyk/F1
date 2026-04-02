@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from layers.zero.helpers import layer_zero_raw_paths
+from layers.zero.run_profile_paths import layer_zero_raw_paths
 
 
 def test_layer_zero_raw_paths_returns_json_path_only_when_csv_missing() -> None:
