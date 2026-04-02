@@ -1,6 +1,6 @@
 ## Opis zmiany
 
-<!-- Krótko: co i dlaczego zostało zmienione -->
+<!-- Krótko: co i dlaczego zostało zmienione. -->
 
 ## SRP impact
 
@@ -31,6 +31,10 @@
 
 ## Checklist (quality gate)
 
+- [ ] **SRP**: każdy nowy/zmieniony komponent ma jedną, spójną odpowiedzialność.
+- [ ] **DIP**: moduły wysokiego poziomu zależą od abstrakcji, nie od implementacji.
+- [ ] **Brak nowej duplikacji**: sprawdzone lokalnie (`pylint` duplicate-code / CI static gates).
+- [ ] **Zgodność z bazowymi abstrakcjami**: klasy rozszerzają istniejące kontrakty/interfejsy i nie łamią ich API.
 - [ ] **Brak nowych `Any`**: potwierdzone przez gate `Strict typing regression gate (mypy)` (`scripts/ci/mypy_regression_gate.py`).
 - [ ] **Granice modułów**: potwierdzone przez `Architecture tests` + `import-linter`.
 - [ ] **Duplikacja**: potwierdzona przez `jscpd` + `pylint duplicate-code` (`Static quality gates`).
@@ -40,10 +44,10 @@
 
 <!-- Pole wymagane. Dla PR bez zmian w `scrapers/base/` wpisz jawnie: "nie dotyczy". -->
 
-- Zmiany w `scrapers/base/`: 
-- Dotknięte domeny: 
-- Kompatybilność wsteczna: 
-- Migracja wymagana: 
+- Zmiany w `scrapers/base/`: <!-- opisz konkretnie, nie wpisuj "nie dotyczy" gdy PR modyfikuje ten obszar -->
+- Dotknięte domeny: <!-- np. scrapers, layers, infrastructure -->
+- Kompatybilność wsteczna: <!-- np. zachowana / breaking + opis -->
+- Migracja wymagana: <!-- tak/nie + opis jeśli tak -->
 
 ## Refactor included
 
