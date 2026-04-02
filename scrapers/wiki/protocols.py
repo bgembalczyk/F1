@@ -4,7 +4,6 @@ from pathlib import Path
 from typing import Protocol
 from typing import runtime_checkable
 
-from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
 
@@ -28,4 +27,4 @@ class DiscoveredRunnerProtocol(Protocol):
 
 
 class DiscoveredRunnerClassProtocol(Protocol):
-    def __call__(self) -> LayerOneRunnerProtocol: ...
+    def __call__(self) -> DiscoveredRunnerProtocol: ...
