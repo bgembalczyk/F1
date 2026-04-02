@@ -204,6 +204,40 @@ class TestRedFlaggedRacesScraperRobustness:
         assert records[0]["season"] == "1980"
         assert records[0]["event"] == "Silverstone Int."
 
+    def test_composite_non_championship_scope_with_table_nested_in_div(self):
+        """Test composite parser finds non-championship table nested inside extra wrappers."""
+        html = """
+        <html><body>
+        <div id="bodyContent">
+        <div id="mw-content-text" class="mw-body-content">
+        <div class="mw-content-ltr mw-parser-output">
+          <h3 class="mw-heading3"><span class="mw-headline" id="Non-championship_races">Non-championship races</span></h3>
+          <div class="wrapper">
+            <div class="inner">
+              <table class="wikitable">
+                <tr>
+                  <th>Year</th><th>Event</th><th>Lap</th><th>R</th>
+                  <th>Winner</th><th>Incident that prompted red flag</th>
+                </tr>
+                <tr>
+                  <td>1972</td><td>Race of Champions</td><td>11</td><td>N</td><td>Emerson Fittipaldi</td><td>Collision</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        scraper = RedFlaggedRacesScraper(export_scope="non_championship")
+        records = scraper.parse_soup(soup)
+
+        assert len(records) == 1
+        assert records[0]["season"] == "1972"
+        assert records[0]["event"] == "Race of Champions"
+
 
 
     def test_composite_parser_dependencies(self):
