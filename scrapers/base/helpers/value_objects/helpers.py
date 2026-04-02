@@ -1,17 +1,14 @@
+"""DEPRECATED: use `scrapers.base.helpers.value_objects.seconds_normalization` instead."""
+
 from __future__ import annotations
 
-from typing import Any
+# Deprecated shim: import from dedicated module listed below.
+
+from scrapers.base.helpers.value_objects.seconds_normalization import (
+    normalize_seconds,
+)
 
 
-def normalize_seconds(value: Any) -> float | None:
-    if isinstance(value, int | float):
-        return float(value)
-    if isinstance(value, str):
-        stripped = value.strip()
-        if not stripped:
-            return None
-        try:
-            return float(stripped)
-        except ValueError:
-            return None
-    return None
+__all__ = [
+    'normalize_seconds',
+]

@@ -1,7 +1,14 @@
-from typing import Any
+"""DEPRECATED: use `scrapers.seasons.columns.helpers.race_result.result_notes` instead."""
+
+from __future__ import annotations
+
+# Deprecated shim: import from dedicated module listed below.
+
+from scrapers.seasons.columns.helpers.race_result.result_notes import (
+    append_note,
+)
 
 
-def append_note(result: dict[str, Any], note: str) -> None:
-    notes = result.setdefault("notes", [])
-    if note not in notes:
-        notes.append(note)
+__all__ = [
+    'append_note',
+]

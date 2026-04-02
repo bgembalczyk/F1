@@ -23,6 +23,12 @@ Aby ograniczać duplikację między dokumentami, w innych plikach utrzymujemy ty
 - [MODULE_BOUNDARIES (reguły zależności i antyduplikacja)](MODULE_BOUNDARIES.md)
 - [TYPING_GUARDRAILS](TYPING_GUARDRAILS.md)
 
+
+## Reguły review / migration helpers
+
+- [Reguła review: brak nowych funkcji w ogólnych helpers](helpers_review_rule.md)
+- [Mapa use-case -> plik po migracji helpers](helpers_use_case_map.md)
+
 ## UML i dokumentacja pomocnicza
 
 - [Index dokumentacji UML](INDEX_DOKUMENTACJI_UML.md)

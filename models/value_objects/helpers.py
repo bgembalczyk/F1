@@ -1,14 +1,15 @@
-from typing import Any
+"""DEPRECATED: use `models.value_objects.text_normalization` instead."""
+
+from __future__ import annotations
+
+# Deprecated shim: import from dedicated module listed below.
+
+from models.value_objects.text_normalization import (
+    normalize_iso,
+    normalize_text,
+)
 
 
-def normalize_iso(value: Any) -> str | None:
-    if isinstance(value, list):
-        value = value[0] if value else None
-    return normalize_text(value)
-
-
-def normalize_text(value: Any) -> str | None:
-    if value is None:
-        return None
-    text = str(value).strip()
-    return text or None
+__all__ = [
+    'normalize_iso', 'normalize_text',
+]

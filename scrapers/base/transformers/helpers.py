@@ -1,15 +1,14 @@
-from collections.abc import Sequence
+"""DEPRECATED: use `scrapers.base.transformers.transformer_application` instead."""
 
-from scrapers.base.transformers.pipeline import TransformersPipeline
-from scrapers.base.transformers.record_transformer import RecordTransformer
-from validation.validator_base import ExportRecord
+from __future__ import annotations
+
+# Deprecated shim: import from dedicated module listed below.
+
+from scrapers.base.transformers.transformer_application import (
+    apply_transformers,
+)
 
 
-def apply_transformers(
-    transformers: Sequence[RecordTransformer],
-    records: list[ExportRecord],
-    *,
-    logger=None,
-) -> list[ExportRecord]:
-    pipeline = TransformersPipeline(transformers, logger=logger)
-    return pipeline.apply(records)
+__all__ = [
+    'apply_transformers',
+]

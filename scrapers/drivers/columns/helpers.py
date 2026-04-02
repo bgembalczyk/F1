@@ -1,8 +1,14 @@
-import re
+"""DEPRECATED: use `scrapers.drivers.columns.series_splitting` instead."""
+
+from __future__ import annotations
+
+# Deprecated shim: import from dedicated module listed below.
+
+from scrapers.drivers.columns.series_splitting import (
+    split_series,
+)
 
 
-def split_series(text: str) -> tuple[str, str | None]:
-    parts = [p.strip() for p in re.split(r"\s*-\s*", text, maxsplit=1)]
-    if len(parts) == 1:
-        return text, None
-    return parts[0], parts[1] or None
+__all__ = [
+    'split_series',
+]

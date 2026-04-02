@@ -1,26 +1,14 @@
-from typing import TYPE_CHECKING
-from typing import Any
+"""DEPRECATED: use `scrapers.base.infobox.infobox_parsing` instead."""
 
-from bs4 import BeautifulSoup
+from __future__ import annotations
 
-from scrapers.base.extractors.infobox import InfoboxExtractor
+# Deprecated shim: import from dedicated module listed below.
 
-# Unikamy cyklicznego importu - import tylko dla typowania
-if TYPE_CHECKING:
-    from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.infobox.infobox_parsing import (
+    parse_infobox_from_soup,
+)
 
 
-def parse_infobox_from_soup(
-    infobox_scraper: "WikipediaInfoboxScraper",
-    soup: BeautifulSoup,
-) -> dict[str, Any]:
-    extractor = InfoboxExtractor(
-        parser=infobox_scraper.parser,
-        mapper=infobox_scraper.mapper,
-        logger=getattr(infobox_scraper, "logger", None),
-        debug_dir=getattr(infobox_scraper, "debug_dir", None),
-        run_id=getattr(infobox_scraper, "run_id", None),
-        url=getattr(infobox_scraper, "url", None),
-        error_policy=getattr(infobox_scraper, "error_policy", "fail-fast"),
-    )
-    return extractor.extract(soup)
+__all__ = [
+    'parse_infobox_from_soup',
+]
