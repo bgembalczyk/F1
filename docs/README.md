@@ -28,6 +28,7 @@ Aby ograniczać duplikację między dokumentami, w innych plikach utrzymujemy ty
 - [Index dokumentacji UML](INDEX_DOKUMENTACJI_UML.md)
 - [UML diagrams README (EN)](UML_DIAGRAMS_README.md)
 - [UML diagrams README (PL)](UML_DIAGRAMS_README_PL.md)
+- [Debug cookbook (objaw → gdzie szukać)](DEBUG_COOKBOOK.md)
 
 ## Roadmapa / przyszły kierunek
 
