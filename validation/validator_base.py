@@ -11,6 +11,7 @@ from typing import Any
 from typing import TypeAlias
 
 from validation.issue import ValidationIssue
+from validation.pipeline import ValidationResult
 from validation.quality_stats import QualityStats
 from validation.record_factory_validator import RecordFactoryValidatorProtocol
 from validation.schema_engine import SchemaValidationEngine
@@ -31,6 +32,11 @@ class RecordValidator(ABC):
     @abstractmethod
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
         raise NotImplementedError
+
+    def validate_result(self, record: ExportRecord) -> ValidationResult:
+        schema_issues = self.validate(record)
+        record_factory_issues = self.validate_record_factory(record)
+        return ValidationResult.from_violations([*schema_issues, *record_factory_issues])
 
     def set_record_factory_validator(
         self,

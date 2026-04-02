@@ -21,3 +21,12 @@
 
 - **Rekomendowana ścieżka uruchamiania:** `python -m scrapers.cli ...` (jedyny canonical launcher).
 - `entrypoint.py` traktuj jako API do wywołań z kodu; moduły typu `list_scraper.py`/`complete_scraper.py` są wyłącznie kompatybilnościowe i deprecated.
+
+## Public API
+Stabilne importy dla konsumentów:
+- `from scrapers.drivers import F1DriversListScraper`
+- `from scrapers.drivers import SingleDriverScraper`
+- `from scrapers.drivers import CompleteDriverDataExtractor`
+- `from scrapers.drivers import export_complete_drivers`
+
+`drivers.helpers` traktuj jako internal.

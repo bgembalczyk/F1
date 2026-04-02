@@ -8,6 +8,7 @@ from typing import Any
 from infrastructure.gemini.constants import API_URL_TEMPLATE
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
+from scrapers.base.errors import TransportError
 
 
 class GeminiTransport:
@@ -29,8 +30,10 @@ class GeminiTransport:
         url = API_URL_TEMPLATE.format(model=model, api_key=self._api_key)
         parsed_url = urllib.parse.urlparse(url)
         if parsed_url.scheme != "https":
-            msg = "Gemini API endpoint musi używać schematu https."
-            raise RuntimeError(msg)
+            raise TransportError(
+                message="Gemini API endpoint musi używać schematu https.",
+                source_name=model,
+            )
 
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
@@ -54,8 +57,10 @@ class GeminiTransport:
             req_url = req.full_url
             parsed_req_url = urllib.parse.urlparse(req_url)
             if parsed_req_url.scheme != "https":
-                msg = "Żądanie Gemini API musi używać schematu https."
-                raise RuntimeError(msg)
+                raise TransportError(
+                    message="Żądanie Gemini API musi używać schematu https.",
+                    source_name=model,
+                )
 
             with urllib.request.urlopen(  # noqa: S310
                 req,
@@ -64,34 +69,25 @@ class GeminiTransport:
             ) as resp:
                 raw = resp.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
-            error_body = exc.read().decode("utf-8", errors="replace")
-            self._logger.error(
-                "Gemini API HTTP error code=%s reason=%s body=%s",
-                exc.code,
-                exc.reason,
-                error_body,
-                extra=context,
-            )
-            msg = (
-                f"Gemini API zwróciło HTTP {exc.code}: {exc.reason}\n"
-                f"Response body:\n{error_body}"
-            )
-            raise RuntimeError(msg) from exc
+            raise TransportError(
+                message=f"Gemini API zwróciło HTTP {exc.code}.",
+                source_name=model,
+                cause=exc,
+            ) from exc
         except urllib.error.URLError as exc:
-            self._logger.error("Gemini API connection error: %s", exc, extra=context)
-            msg = (
-                "Nie udało się połączyć z Gemini API. "
-                "Sprawdź połączenie sieciowe, SSL/certyfikaty oraz\n"
-                "poprawność endpointu.\n"
-                f"Szczegóły: {exc}"
-            )
-            raise RuntimeError(msg) from exc
+            raise TransportError(
+                message="Gemini API connection error.",
+                source_name=model,
+                cause=exc,
+            ) from exc
 
         self._logger.debug("Gemini response raw=%s", raw, extra=context)
 
         try:
             return json.loads(raw)
         except json.JSONDecodeError as exc:
-            self._logger.error("Gemini response JSON decode failed", extra=context)
-            msg = f"Gemini API zwróciło niepoprawny JSON:\n{raw}"
-            raise RuntimeError(msg) from exc
+            raise TransportError(
+                message="Gemini API zwróciło niepoprawny JSON.",
+                source_name=model,
+                cause=exc,
+            ) from exc

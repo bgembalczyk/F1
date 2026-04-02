@@ -20,3 +20,6 @@ jobs:
 
       - name: Check known module typos
         run: python scripts/check_known_module_typos.py
+
+      - name: Check forbidden domain terminology variants
+        run: python scripts/check_domain_terminology.py
