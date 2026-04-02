@@ -28,8 +28,6 @@ class OptionsScraperAdapter:
         if context.supports_urls:
             options.include_urls = context.run_config.include_urls
         kwargs.setdefault("options", options)
-        if ctor.accepts("run_id"):
-            kwargs.setdefault("run_id", context.run_id)
         return context.scraper_cls(**kwargs)
 
     @staticmethod
