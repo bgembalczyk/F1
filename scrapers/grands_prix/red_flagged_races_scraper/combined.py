@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import RED_FLAGGED_RACES
@@ -16,6 +17,7 @@ from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
 
 
 class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
@@ -92,11 +94,26 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = NonChampionshipsRacesTableParser()
+        self._fallback_parser = SubSubSubSectionParser()
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
+        if not self._has_table_payload(parsed):
+            parsed["elements"] = self._fallback_parser.parse_group(
+                elements,
+                context=context,
+            )["elements"]
         self._apply_non_championship_table_parser(parsed)
         return parsed
+
+    def _has_table_payload(self, payload: Any) -> bool:
+        if isinstance(payload, dict):
+            if payload.get("kind") == "table":
+                return True
+            return any(self._has_table_payload(value) for value in payload.values())
+        if isinstance(payload, list):
+            return any(self._has_table_payload(item) for item in payload)
+        return False
 
     def _apply_non_championship_table_parser(self, payload: dict[str, Any]) -> None:
         self._apply_for_elements(payload.get("elements", []))
@@ -125,11 +142,26 @@ class RedFlaggedRacesSectionParser(SectionParser):
         super().__init__()
         self.child_parser = NonChampionshipsRacesSubSectionParser()
         self._world_championship_table_parser = WorldChampionshipsRacesTableParser()
+        self._fallback_parser = SubSubSubSectionParser()
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
+        if not self._has_table_payload(parsed):
+            parsed["elements"] = self._fallback_parser.parse_group(
+                elements,
+                context=context,
+            )["elements"]
         self._apply_world_championship_table_parser(parsed)
         return parsed
+
+    def _has_table_payload(self, payload: Any) -> bool:
+        if isinstance(payload, dict):
+            if payload.get("kind") == "table":
+                return True
+            return any(self._has_table_payload(value) for value in payload.values())
+        if isinstance(payload, list):
+            return any(self._has_table_payload(item) for item in payload)
+        return False
 
     def _apply_world_championship_table_parser(self, payload: dict[str, Any]) -> None:
         self._apply_for_elements(payload.get("elements", []))
@@ -193,8 +225,7 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
         self.body_content_parser.content_text_parser.section_parser = parser
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        body_content = BodyContentParser.find_body_content(soup)
-        parsed = self.body_content_parser.parse(body_content) if body_content else {}
+        parsed = self._parse_document_structure(soup)
         world_records = self._collect_table_rows(
             parsed,
             table_type="red_flagged_world_championship_races",
@@ -208,6 +239,44 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
         if self._export_scope == "non_championship":
             return non_championship_records
         return [*world_records, *non_championship_records]
+
+    def _parse_document_structure(self, soup: BeautifulSoup) -> dict[str, Any]:
+        body_content = BodyContentParser.find_body_content(soup)
+        if body_content:
+            return self.body_content_parser.parse(body_content)
+
+        content_text = soup.find(
+            "div",
+            id=lambda x: x and "content-text" in x,
+            class_=lambda x: x
+            and any(
+                "body-content" in token
+                for token in (x if isinstance(x, list) else x.split())
+            ),
+        )
+        if not isinstance(content_text, Tag):
+            content_text = soup.find(
+                "div",
+                class_=lambda x: x
+                and "mw-content-ltr" in (x if isinstance(x, list) else x.split()),
+            )
+        if isinstance(content_text, Tag):
+            return {
+                "content_text": self.body_content_parser.content_text_parser.parse(
+                    content_text,
+                ),
+            }
+
+        fallback_root = soup.find("body")
+        if not isinstance(fallback_root, Tag):
+            fallback_root = soup.find("html")
+        if not isinstance(fallback_root, Tag):
+            return {"content_text": {"sections": []}}
+        return {
+            "content_text": self.body_content_parser.content_text_parser.parse(
+                fallback_root,
+            ),
+        }
 
     def _collect_table_rows(
         self,
