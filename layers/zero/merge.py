@@ -23,12 +23,63 @@ from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 RecordTransformHandler = Callable[
-    [str, str, dict[str, object]],
+    ["RecordMeta", dict[str, object]],
     dict[str, object],
 ]
 DomainRecordsProcessor = Callable[[list[object]], list[object]]
 
 logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class RecordMeta:
+    domain: str
+    source_id: str
+    version: int
+    flags: frozenset[str]
+
+
+_SOURCE_ID_BY_FILENAME: dict[str, str] = {
+    TYRE_MANUFACTURERS_SOURCE: "tyre_manufacturers",
+    INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE: "constructors_indianapolis_only",
+    FORMER_CONSTRUCTORS_SOURCE: "constructors_former",
+    "f1_indianapolis_only_engine_manufacturers.json": "engines_indianapolis_only",
+    "f1_engine_manufacturers.json": "engines_manufacturers",
+    "f1_sponsorship_liveries.json": "teams_sponsorship_liveries",
+    "f1_privateer_teams.json": "teams_privateer",
+    "f1_drivers.json": "drivers_main",
+    "female_drivers.json": "drivers_female",
+    "f1_driver_fatalities.json": "drivers_fatalities",
+    "f1_red_flagged_world_championship_races.json": "races_red_flagged_world_championship",
+    "f1_red_flagged_non_championship_races.json": "races_red_flagged_non_championship",
+}
+
+
+def _resolve_record_meta(domain: str, source_name: str) -> RecordMeta:
+    version = 1
+    flags: set[str] = set()
+    source_id = _SOURCE_ID_BY_FILENAME.get(source_name, source_name.removesuffix(".json"))
+
+    if re.fullmatch(r"f1_constructors_(\d{4})\.json", source_name):
+        source_id = "constructors_current"
+        version = int(source_name[16:20])
+        flags.add("constructors_current")
+
+    if "indianapolis_only" in source_id:
+        flags.add("indianapolis_only")
+    if "red_flagged" in source_id:
+        flags.add("red_flagged")
+    if source_id.endswith("_world_championship"):
+        flags.add("world_championship")
+    if source_id.endswith("_non_championship"):
+        flags.add("non_championship")
+
+    return RecordMeta(
+        domain=domain,
+        source_id=source_id,
+        version=version,
+        flags=frozenset(flags),
+    )
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -75,81 +126,70 @@ def _pop_red_flag_fields(record: dict[str, object]) -> None:
         record.pop(key, None)
 
 
-def _transform_record(domain: str, source_name: str, record: object) -> object:
+def _transform_record(meta: RecordMeta, record: object) -> object:
     if not isinstance(record, dict):
         return record
 
     transformed = dict(record)
-    for handler in _resolve_record_transform_handlers(domain, source_name):
-        transformed = handler(domain, source_name, transformed)
+    for handler in _resolve_record_transform_handlers(meta):
+        transformed = handler(meta, transformed)
     return transformed
 
 
 def _tyre_manufacturers_handler(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     record: dict[str, object],
 ) -> dict[str, object]:
-    _ = domain
-    return _transform_tyre_manufacturers(source_name, record)
+    return _transform_tyre_manufacturers(meta, record)
 
 
 def _constructor_domain_handler(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     record: dict[str, object],
 ) -> dict[str, object]:
-    return _transform_constructor_domain(domain, source_name, record)
+    return _transform_constructor_domain(meta, record)
 
 
 def _circuits_domain_handler(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     record: dict[str, object],
 ) -> dict[str, object]:
-    _ = source_name
-    return _transform_circuits_domain(domain, record)
+    return _transform_circuits_domain(meta, record)
 
 
 def _engines_domain_handler(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     record: dict[str, object],
 ) -> dict[str, object]:
-    return _transform_engines_domain(domain, source_name, record)
+    return _transform_engines_domain(meta, record)
 
 
 def _grands_prix_domain_handler(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     record: dict[str, object],
 ) -> dict[str, object]:
-    _ = source_name
-    return _transform_grands_prix_domain(domain, record)
+    return _transform_grands_prix_domain(meta, record)
 
 
 def _teams_domain_handler(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     record: dict[str, object],
 ) -> dict[str, object]:
-    return _transform_teams_domain(domain, source_name, record)
+    return _transform_teams_domain(meta, record)
 
 
 def _drivers_domain_handler(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     record: dict[str, object],
 ) -> dict[str, object]:
-    return _transform_drivers_domain(domain, source_name, record)
+    return _transform_drivers_domain(meta, record)
 
 
 def _races_domain_handler(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     record: dict[str, object],
 ) -> dict[str, object]:
-    return _transform_races_domain(domain, source_name, record)
+    return _transform_races_domain(meta, record)
 
 
 DEFAULT_SOURCE_PIPELINE = "*"
@@ -161,7 +201,7 @@ def _build_transform_pipelines() -> dict[
 ]:
     return {
         "*": {
-            TYRE_MANUFACTURERS_SOURCE: (_tyre_manufacturers_handler,),
+            "tyre_manufacturers": (_tyre_manufacturers_handler,),
         },
         "constructors": {
             DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,),
@@ -197,18 +237,15 @@ TRANSFORM_PIPELINES = _build_transform_pipelines()
 validate_sources_registry_consistency()
 
 
-def _resolve_record_transform_handlers(
-    domain: str,
-    source_name: str,
-) -> tuple[RecordTransformHandler, ...]:
+def _resolve_record_transform_handlers(meta: RecordMeta) -> tuple[RecordTransformHandler, ...]:
     global_handlers = TRANSFORM_PIPELINES.get("*", {})
-    domain_handlers = TRANSFORM_PIPELINES.get(domain, {})
+    domain_handlers = TRANSFORM_PIPELINES.get(meta.domain, {})
 
     resolved: list[RecordTransformHandler] = [
         *global_handlers.get(DEFAULT_SOURCE_PIPELINE, ()),
-        *global_handlers.get(source_name, ()),
+        *global_handlers.get(meta.source_id, ()),
     ]
-    domain_pipeline = domain_handlers.get(source_name)
+    domain_pipeline = domain_handlers.get(meta.source_id)
     if domain_pipeline is None:
         domain_pipeline = domain_handlers.get(DEFAULT_SOURCE_PIPELINE, ())
     resolved.extend(domain_pipeline)
@@ -216,10 +253,10 @@ def _resolve_record_transform_handlers(
 
 
 def _transform_tyre_manufacturers(
-    source_name: str,
+    meta: RecordMeta,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if source_name != TYRE_MANUFACTURERS_SOURCE:
+    if meta.source_id != "tyre_manufacturers":
         return transformed
 
     if "manufacturers" in transformed:
@@ -231,23 +268,19 @@ def _transform_tyre_manufacturers(
 
 
 def _transform_constructor_domain(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain not in CHASSIS_CONSTRUCTOR_DOMAINS:
+    if meta.domain not in CHASSIS_CONSTRUCTOR_DOMAINS:
         return transformed
 
-    if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
+    if meta.source_id == "constructors_indianapolis_only":
         return _transform_indianapolis_only_constructor(transformed)
-    if source_name == FORMER_CONSTRUCTORS_SOURCE:
+    if meta.source_id == "constructors_former":
         return _transform_former_constructor(transformed)
 
     constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
-    if domain == "constructors" and re.fullmatch(
-        r"f1_constructors_\d{4}\.json",
-        source_name,
-    ):
+    if meta.domain == "constructors" and "constructors_current" in meta.flags:
         constructor_fields.discard("engine")
 
     _move_fields_to_formula_one(transformed, constructor_fields)
@@ -300,10 +333,10 @@ def _ensure_constructor_status(transformed: dict[str, object]) -> None:
 
 
 def _transform_circuits_domain(
-    domain: str,
+    meta: RecordMeta,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "circuits":
+    if meta.domain != "circuits":
         return transformed
     _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
     if "racing_series" not in transformed:
@@ -312,48 +345,46 @@ def _transform_circuits_domain(
 
 
 def _transform_engines_domain(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "engines":
+    if meta.domain != "engines":
         return transformed
-    if source_name == "f1_indianapolis_only_engine_manufacturers.json":
+    if meta.source_id == "engines_indianapolis_only":
         transformed["racing_series"] = {
             "AAA_national_championship": [],
             "formula_one": {"status": "former", "indianapolis_only": True},
         }
-    elif source_name == "f1_engine_manufacturers.json":
+    elif meta.source_id == "engines_manufacturers":
         _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
     return transformed
 
 
 def _transform_grands_prix_domain(
-    domain: str,
+    meta: RecordMeta,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain == "grands_prix":
+    if meta.domain == "grands_prix":
         _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
     return transformed
 
 
 def _transform_teams_domain(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "teams":
+    if meta.domain != "teams":
         return transformed
-    if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
+    if "constructors_current" in meta.flags:
         transformed = {
             "team": transformed.get("constructor"),
             "racing_series": _build_racing_series({**transformed}),
         }
-    if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
+    if meta.source_id == "teams_sponsorship_liveries" and "liveries" in transformed:
         transformed["racing_series"] = _build_racing_series(
             {"liveries": transformed.pop("liveries")},
         )
-    if source_name == "f1_privateer_teams.json":
+    if meta.source_id == "teams_privateer":
         formula_one = {
             key: transformed.pop(key) for key in ("seasons",) if key in transformed
         }
@@ -363,17 +394,16 @@ def _transform_teams_domain(
 
 
 def _transform_drivers_domain(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "drivers":
+    if meta.domain != "drivers":
         return transformed
-    if source_name == "f1_drivers.json":
+    if meta.source_id == "drivers_main":
         return _transform_f1_driver(transformed)
-    if source_name == "female_drivers.json":
+    if meta.source_id == "drivers_female":
         return _transform_female_driver(transformed)
-    if source_name == "f1_driver_fatalities.json":
+    if meta.source_id == "drivers_fatalities":
         _attach_driver_death_data(transformed)
     return transformed
 
@@ -412,15 +442,14 @@ def _attach_driver_death_data(transformed: dict[str, object]) -> None:
 
 
 def _transform_races_domain(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain != "races":
+    if meta.domain != "races":
         return transformed
-    if source_name == "f1_red_flagged_world_championship_races.json":
+    if "world_championship" in meta.flags:
         transformed["championship"] = True
-    if source_name == "f1_red_flagged_non_championship_races.json":
+    if "non_championship" in meta.flags:
         transformed["championship"] = False
     transformed["red_flag"] = _extract_red_flag(transformed)
     _pop_red_flag_fields(transformed)
@@ -428,20 +457,19 @@ def _transform_races_domain(
 
 
 def _iter_transformed_records(
-    domain: str,
-    source_name: str,
+    meta: RecordMeta,
     payload: object,
 ) -> list[object]:
     if isinstance(payload, list):
-        transformed = [_transform_record(domain, source_name, item) for item in payload]
-        if domain == "engines":
+        transformed = [_transform_record(meta, item) for item in payload]
+        if meta.domain == "engines":
             return [
                 engine_record.to_dict()
                 if (engine_record := EngineRecordModel.from_object(record)) is not None
                 else record
                 for record in transformed
             ]
-        if domain != "races":
+        if meta.domain != "races":
             return transformed
         return [
             race_record.to_dict()
@@ -450,12 +478,12 @@ def _iter_transformed_records(
             for record in transformed
         ]
 
-    transformed_record = _transform_record(domain, source_name, payload)
-    if domain == "engines":
+    transformed_record = _transform_record(meta, payload)
+    if meta.domain == "engines":
         engine_record = EngineRecordModel.from_object(transformed_record)
         if engine_record is not None:
             return [engine_record.to_dict()]
-    if domain == "races":
+    if meta.domain == "races":
         race_record = RaceRecordModel.from_object(transformed_record)
         if race_record is not None:
             return [race_record.to_dict()]
@@ -769,9 +797,8 @@ def _load_domain_records(domain_dir: Path) -> list[object]:
     raw_dir = domain_dir / "raw"
     for json_path in sorted(raw_dir.rglob("*.json")):
         payload = json.loads(json_path.read_text(encoding="utf-8"))
-        merged_records.extend(
-            _iter_transformed_records(domain_dir.name, json_path.name, payload),
-        )
+        meta = _resolve_record_meta(domain_dir.name, json_path.name)
+        merged_records.extend(_iter_transformed_records(meta, payload))
     return merged_records
 
 
