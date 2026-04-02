@@ -20,6 +20,71 @@ from scrapers.engines.columns.fuel_injection_pressure_limit import (
     FuelInjectionPressureLimitColumn,
 )
 from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
+from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
+from scrapers.wiki.parsers.sections.section import SectionParser
+from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+
+
+class EngineRestrictionsTableParser(WikiTableBaseParser):
+    table_type = "engine_restrictions"
+    missing_columns_policy = "ignore"
+    extra_columns_policy = "ignore"
+
+    _column_mapping = {
+        "Year": "year",
+        "2000-2005": "rules_2000_2005",
+        "2006-2013": "rules_2006_2013",
+        "2014-2025": "rules_2014_2025",
+    }
+
+    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
+        required_headers = {"Year", "2000-2005", "2006-2013", "2014-2025"}
+        return required_headers.issubset(set(headers))
+
+    def map_columns(self, headers: list[str]) -> dict[str, str]:
+        return {
+            header: self._column_mapping[header]
+            for header in headers
+            if header in self._column_mapping
+        }
+
+
+class EngineSubSectionParser(SubSectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._table_parser = EngineRestrictionsTableParser()
+
+    def parse_group(
+        self,
+        elements: list,
+        *,
+        context=None,
+    ) -> dict[str, Any]:
+        parsed = super().parse_group(elements, context=context)
+        self._apply_engine_restrictions_table_parser(parsed)
+        return parsed
+
+    def _apply_engine_restrictions_table_parser(self, payload: dict[str, Any]) -> None:
+        for section in payload.get("sub_sub_sections", []):
+            self._apply_for_elements(section.get("elements", []))
+            self._apply_engine_restrictions_table_parser(section)
+
+    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            parsed = self._table_parser.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
+
+
+class CurrentRulesSectionParser(SectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.child_parser = EngineSubSectionParser()
 
 
 class EngineRestrictionsScraper(BaseEngineTableScraper):
@@ -58,6 +123,12 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
         record_factory=RECORD_FACTORIES.callable(EngineRestriction),
         schema=TableSchemaDSL(columns=schema_columns),
     )
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        parser = CurrentRulesSectionParser()
+        self.section_parser = parser
+        self.body_content_parser.content_text_parser.section_parser = parser
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         """Parse transposed table where years are columns and metrics are rows."""
