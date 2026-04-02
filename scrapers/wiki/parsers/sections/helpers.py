@@ -105,7 +105,6 @@ def profile_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
             {
                 "constructors for the current season",
                 "current constructors",
-                "constructors",
             },
         )
 

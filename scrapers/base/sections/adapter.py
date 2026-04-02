@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from models.value_objects.common_terms import SectionId
+from models.value_objects import SectionId
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
 from scrapers.base.sections.serializer import serialize_section_result
 from scrapers.base.single_wiki_article.section_selection_strategy import (

@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from layers.orchestration.protocols import LayerExecutorProtocol
-from layers.zero.helpers import build_debug_run_config
+from layers.zero.run_profile_paths import build_debug_run_config
 from scrapers.base.run_config import RunConfig
 
 

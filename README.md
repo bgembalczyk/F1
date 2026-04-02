@@ -50,6 +50,7 @@ Checklisty review i merge-gate:
 - **Granice modułów:** [`docs/MODULE_BOUNDARIES.md`](docs/MODULE_BOUNDARIES.md)
 - **Architektura warstw scraperów:** [`docs/scrapers-layer-architecture.md`](docs/scrapers-layer-architecture.md)
 - **UML index:** [`docs/INDEX_DOKUMENTACJI_UML.md`](docs/INDEX_DOKUMENTACJI_UML.md)
+- **Debug cookbook (objaw → gdzie szukać):** [`docs/DEBUG_COOKBOOK.md`](docs/DEBUG_COOKBOOK.md)
 
 ## 5) Checklista: dodawanie nowej domeny / komponentu
 

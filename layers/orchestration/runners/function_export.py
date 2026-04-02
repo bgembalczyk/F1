@@ -16,10 +16,14 @@ class FunctionExportRunner(LayerJobRunner):
     def __init__(
         self,
         *,
-        export_function: ExportCallable,
+        export: ExportCallable | None = None,
+        export_function: ExportCallable | None = None,
         component_metadata: RunnerMetadata,
     ) -> None:
-        self._export_function = export_function
+        self._export = export or export_function
+        if self._export is None:
+            msg = "FunctionExportRunner requires `export` callable."
+            raise ValueError(msg)
         self.COMPONENT_METADATA = component_metadata
 
     def run(

@@ -21,6 +21,8 @@ from scrapers.points.points_scraper import PointsScraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersScraper
+from scrapers.wiki.sources_registry import get_source_by_seed_name
+from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 
 @dataclass(frozen=True)
@@ -103,153 +105,104 @@ def build_list_job_registry_entry_from_spec(spec: RawRegistrySpec) -> ListJobReg
     )
 
 
-RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = (
-    RawRegistrySpec(
-        seed_name="circuits",
-        list_scraper_cls=CircuitsListScraper,
-        output_category="circuits",
-        list_filename="f1_circuits.json",
-        seed_filename="complete_circuits",
-    ),
-    RawRegistrySpec(
-        seed_name="constructors_current",
-        list_scraper_cls=ConstructorsListScraper,
-        output_category="constructors",
-        list_filename="f1_constructors_{year}.json",
-    ),
-    RawRegistrySpec(
-        seed_name="constructors_former",
-        list_scraper_cls=ConstructorsListScraper,
-        output_category="chassis_constructors",
-        list_filename="f1_former_constructors.json",
-    ),
-    RawRegistrySpec(
-        seed_name="constructors_indianapolis_only",
-        list_scraper_cls=ConstructorsListScraper,
-        output_category="chassis_constructors",
-        list_filename="f1_indianapolis_only_constructors.json",
-    ),
-    RawRegistrySpec(
-        seed_name="constructors_privateer",
-        list_scraper_cls=ConstructorsListScraper,
-        output_category="teams",
-        list_filename="f1_privateer_teams.json",
-    ),
-    RawRegistrySpec(
-        seed_name="drivers",
-        list_scraper_cls=F1DriversListScraper,
-        output_category="drivers",
-        list_filename="f1_drivers.json",
-        seed_filename="complete_drivers",
-    ),
-    RawRegistrySpec(
-        seed_name="drivers_female",
-        list_scraper_cls=FemaleDriversListScraper,
-        output_category="drivers",
-        list_filename="female_drivers.json",
-    ),
-    RawRegistrySpec(
-        seed_name="drivers_fatalities",
-        list_scraper_cls=F1FatalitiesListScraper,
-        output_category="drivers",
-        list_filename="f1_driver_fatalities.json",
-    ),
-    RawRegistrySpec(
-        seed_name="seasons",
-        list_scraper_cls=SeasonsListScraper,
-        output_category="seasons",
-        list_filename="f1_seasons.json",
-        seed_filename="complete_seasons",
-    ),
-    RawRegistrySpec(
-        seed_name="grands_prix_by_title",
-        list_scraper_cls=GrandsPrixListScraper,
-        output_category="grands_prix",
-        list_filename="f1_grands_prix_by_title.json",
-    ),
-    RawRegistrySpec(
-        seed_name="engines_indianapolis_only",
-        list_scraper_cls=EngineManufacturersListScraper,
-        output_category="engines",
-        list_filename="f1_indianapolis_only_engine_manufacturers.json",
-    ),
-    RawRegistrySpec(
-        seed_name="engines_restrictions",
-        list_scraper_cls=EngineRestrictionsScraper,
-        output_category="rules",
-        list_filename="f1_engine_restrictions.json",
-    ),
-    RawRegistrySpec(
-        seed_name="engines_regulations",
-        list_scraper_cls=EngineRegulationScraper,
-        output_category="rules",
-        list_filename="f1_engine_regulations.json",
-    ),
-    RawRegistrySpec(
-        seed_name="engines_manufacturers",
-        list_scraper_cls=EngineManufacturersListScraper,
-        output_category="engines",
-        list_filename="f1_engine_manufacturers.json",
-    ),
-    RawRegistrySpec(
-        seed_name="grands_prix_red_flagged_world_championship",
-        list_scraper_cls=RedFlaggedRacesScraper,
-        output_category="races",
-        list_filename="f1_red_flagged_world_championship_races.json",
-    ),
-    RawRegistrySpec(
-        seed_name="grands_prix_red_flagged_non_championship",
-        list_scraper_cls=RedFlaggedRacesScraper,
-        output_category="races",
-        list_filename="f1_red_flagged_non_championship_races.json",
-    ),
-    RawRegistrySpec(
-        seed_name="points_sprint",
-        list_scraper_cls=PointsScraper,
-        output_category="points",
-        list_filename="points_scoring_systems_sprint.json",
-    ),
-    RawRegistrySpec(
-        seed_name="points_shortened",
-        list_scraper_cls=PointsScraper,
-        output_category="points",
-        list_filename="points_scoring_systems_shortened.json",
-    ),
-    RawRegistrySpec(
-        seed_name="points_history",
-        list_scraper_cls=PointsScraper,
-        output_category="points",
-        list_filename="points_scoring_systems_history.json",
-    ),
-    RawRegistrySpec(
-        seed_name="tyres",
-        list_scraper_cls=TyreManufacturersScraper,
-        output_category="seasons",
-        list_filename="f1_tyre_manufacturers_by_season.json",
-    ),
-    RawRegistrySpec(
-        seed_name="sponsorship_liveries",
-        list_scraper_cls=F1SponsorshipLiveriesScraper,
-        output_category="teams",
-        list_filename="f1_sponsorship_liveries.json",
-    ),
-    RawRegistrySpec(
-        seed_name="constructors",
-        list_scraper_cls=ConstructorsListScraper,
-        output_category="constructors",
-        list_filename="f1_constructors_{year}.json",
-        seed_filename="complete_constructors",
-        include_in_list_registry=False,
-    ),
-    RawRegistrySpec(
-        seed_name="grands_prix",
-        list_scraper_cls=GrandsPrixListScraper,
-        output_category="grands_prix",
-        list_filename="f1_grands_prix_by_title.json",
-        seed_filename="f1_grands_prix_extended.json",
-        include_in_list_registry=False,
-    ),
-)
+_LIST_SCRAPER_BY_SEED_NAME: dict[str, type[Any]] = {
+    "circuits": CircuitsListScraper,
+    "constructors_current": ConstructorsListScraper,
+    "constructors_former": ConstructorsListScraper,
+    "constructors_indianapolis_only": ConstructorsListScraper,
+    "constructors_privateer": ConstructorsListScraper,
+    "drivers": F1DriversListScraper,
+    "drivers_female": FemaleDriversListScraper,
+    "drivers_fatalities": F1FatalitiesListScraper,
+    "seasons": SeasonsListScraper,
+    "grands_prix_by_title": GrandsPrixListScraper,
+    "engines_indianapolis_only": EngineManufacturersListScraper,
+    "engines_restrictions": EngineRestrictionsScraper,
+    "engines_regulations": EngineRegulationScraper,
+    "engines_manufacturers": EngineManufacturersListScraper,
+    "grands_prix_red_flagged_world_championship": RedFlaggedRacesScraper,
+    "grands_prix_red_flagged_non_championship": RedFlaggedRacesScraper,
+    "points_sprint": PointsScraper,
+    "points_shortened": PointsScraper,
+    "points_history": PointsScraper,
+    "tyres": TyreManufacturersScraper,
+    "sponsorship_liveries": F1SponsorshipLiveriesScraper,
+}
+
+_SEED_FILENAME_OVERRIDES: dict[str, str] = {
+    "circuits": "complete_circuits",
+    "drivers": "complete_drivers",
+    "seasons": "complete_seasons",
+    "constructors": "complete_constructors",
+    "grands_prix": "f1_grands_prix_extended.json",
+}
+
+
+def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
+    validate_sources_registry_consistency()
+
+    specs: list[RawRegistrySpec] = []
+    for seed_name, list_scraper_cls in _LIST_SCRAPER_BY_SEED_NAME.items():
+        source = get_source_by_seed_name(seed_name, warn=False)
+        specs.append(
+            RawRegistrySpec(
+                seed_name=source.seed_name,
+                list_scraper_cls=list_scraper_cls,
+                output_category=source.output_category,
+                list_filename=source.list_filename,
+                seed_filename=_SEED_FILENAME_OVERRIDES.get(source.seed_name),
+            ),
+        )
+
+    constructors_source = get_source_by_seed_name("constructors", warn=False)
+    specs.append(
+        RawRegistrySpec(
+            seed_name="constructors",
+            list_scraper_cls=ConstructorsListScraper,
+            output_category=constructors_source.output_category,
+            list_filename=constructors_source.list_filename,
+            seed_filename=_SEED_FILENAME_OVERRIDES["constructors"],
+            include_in_list_registry=False,
+        ),
+    )
+
+    grands_prix_source = get_source_by_seed_name("grands_prix", warn=False)
+    specs.append(
+        RawRegistrySpec(
+            seed_name="grands_prix",
+            list_scraper_cls=GrandsPrixListScraper,
+            output_category=grands_prix_source.output_category,
+            list_filename=grands_prix_source.list_filename,
+            seed_filename=_SEED_FILENAME_OVERRIDES["grands_prix"],
+            include_in_list_registry=False,
+        ),
+    )
+    return tuple(specs)
+
+
+RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = _build_raw_registry_spec()
+
+
+def _validate_registry_startup_consistency() -> None:
+    for spec in RAW_REGISTRY_SPEC:
+        source = get_source_by_seed_name(spec.seed_name, warn=False)
+        if spec.output_category != source.output_category:
+            msg = (
+                "Seed registry startup consistency check failed for output_category: "
+                f"{spec.seed_name!r} -> {spec.output_category!r} "
+                f"(expected {source.output_category!r})"
+            )
+            raise ValueError(msg)
+        if spec.list_filename != source.list_filename:
+            msg = (
+                "Seed registry startup consistency check failed for list_filename: "
+                f"{spec.seed_name!r} -> {spec.list_filename!r} "
+                f"(expected {source.list_filename!r})"
+            )
+            raise ValueError(msg)
+
+
+_validate_registry_startup_consistency()
 
 
 _LAYER_ONE_SEED_REGISTRY_ORDER: tuple[str, ...] = (

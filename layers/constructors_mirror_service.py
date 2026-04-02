@@ -1,7 +1,7 @@
 from collections.abc import Callable
 from pathlib import Path
 
-from layers.zero.helpers import LayerZeroPathBuilder
+from layers.zero.run_profile_paths import LayerZeroPathBuilder
 
 
 class ConstructorsMirrorService:

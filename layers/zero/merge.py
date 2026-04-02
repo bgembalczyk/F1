@@ -1,8 +1,11 @@
 import json
+import logging
 import re
 from collections.abc import Callable
+from dataclasses import dataclass
 from pathlib import Path
 
+from layers.path_resolver import PathResolver
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
 from layers.zero.merge_types import RaceRecordModel
@@ -12,17 +15,21 @@ from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import ENGINES_FORMULA_ONE_FIELDS
-from scrapers.wiki.constants import FORMER_CONSTRUCTORS_SOURCE
 from scrapers.wiki.constants import FORMULA_ONE_SERIES
 from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
-from scrapers.wiki.constants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
 from scrapers.wiki.constants import RED_FLAG_FIELDS
-from scrapers.wiki.constants import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 RecordTransformHandler = Callable[
     [str, str, dict[str, object]],
     dict[str, object],
 ]
+DomainRecordsProcessor = Callable[[list[object]], list[object]]
+
+logger = logging.getLogger(__name__)
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -188,6 +195,7 @@ def _build_transform_pipelines() -> dict[
 
 
 TRANSFORM_PIPELINES = _build_transform_pipelines()
+validate_sources_registry_consistency()
 
 
 def _resolve_record_transform_handlers(
@@ -525,6 +533,7 @@ def _merge_values(existing: object, incoming: object) -> object:
 
 
 def _merge_duplicate_drivers(records: list[object]) -> list[object]:
+    """Aktywna, gdy domena to `drivers`."""
     merged_records: list[object] = []
     key_to_index: dict[str, int] = {}
 
@@ -596,6 +605,7 @@ def _team_sort_key(record: object) -> str:
 
 
 def _merge_duplicate_teams(records: list[object]) -> list[object]:
+    """Aktywna, gdy domena to `teams`."""
     merged_records: list[object] = []
     key_to_index: dict[str, int] = {}
 
@@ -735,18 +745,20 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
     if not layer_zero_dir.exists():
         return
 
-    for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir):
-        merged_records = _load_domain_records(domain_dir)
+    resolver = PathResolver(layer_zero_root=layer_zero_dir)
+
+    for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir, resolver):
+        merged_records = _load_domain_records(domain_dir, resolver)
         if not merged_records:
             continue
         merged_records = _post_process_domain_records(domain_dir.name, merged_records)
-        _write_merged_domain_records(domain_dir, merged_records)
+        _write_merged_domain_records(domain_dir, merged_records, resolver)
 
 
-def _iter_mergeable_domain_dirs(layer_zero_dir: Path) -> list[Path]:
+def _iter_mergeable_domain_dirs(layer_zero_dir: Path, resolver: PathResolver) -> list[Path]:
     domain_dirs: list[Path] = []
     for domain_dir in sorted(p for p in layer_zero_dir.iterdir() if p.is_dir()):
-        raw_dir = domain_dir / "raw"
+        raw_dir = resolver.raw_dir(domain=domain_dir.name)
         if not raw_dir.exists() or not raw_dir.is_dir():
             continue
         if domain_dir.name in {"points", "rules"}:
@@ -755,9 +767,9 @@ def _iter_mergeable_domain_dirs(layer_zero_dir: Path) -> list[Path]:
     return domain_dirs
 
 
-def _load_domain_records(domain_dir: Path) -> list[object]:
+def _load_domain_records(domain_dir: Path, resolver: PathResolver) -> list[object]:
     merged_records: list[object] = []
-    raw_dir = domain_dir / "raw"
+    raw_dir = resolver.raw_dir(domain=domain_dir.name)
     for json_path in sorted(raw_dir.rglob("*.json")):
         payload = json.loads(json_path.read_text(encoding="utf-8"))
         merged_records.extend(
@@ -766,46 +778,134 @@ def _load_domain_records(domain_dir: Path) -> list[object]:
     return merged_records
 
 
-def _domain_post_processors(
+@dataclass(frozen=True)
+class DomainPostProcessStrategy:
+    name: str
+    activation_condition: Callable[[str], bool]
+    processor: DomainRecordsProcessor
+
+    def is_active(self, domain: str) -> bool:
+        return self.activation_condition(domain)
+
+
+def _is_drivers_domain(domain: str) -> bool:
+    return domain == "drivers"
+
+
+def _is_constructor_domain(domain: str) -> bool:
+    return domain in CHASSIS_CONSTRUCTOR_DOMAINS
+
+
+def _is_teams_domain(domain: str) -> bool:
+    return domain == "teams"
+
+
+def _is_seasons_domain(domain: str) -> bool:
+    return domain == "seasons"
+
+
+def _sort_drivers_by_name(items: list[object]) -> list[object]:
+    """Aktywna, gdy domena to `drivers`."""
+    return sorted(items, key=_driver_sort_key)
+
+
+def _sort_constructors_by_name(items: list[object]) -> list[object]:
+    """Aktywna, gdy domena należy do `CHASSIS_CONSTRUCTOR_DOMAINS`."""
+    return sorted(items, key=_constructor_sort_key)
+
+
+def _nest_team_liveries(items: list[object]) -> list[object]:
+    """Aktywna, gdy domena to `teams`."""
+    return [_nest_team_liveries_in_seasons(record) for record in items]
+
+
+def _sort_teams_by_name(items: list[object]) -> list[object]:
+    """Aktywna, gdy domena to `teams`."""
+    return sorted(items, key=_team_sort_key)
+
+
+def _sort_seasons_by_year(items: list[object]) -> list[object]:
+    """Aktywna, gdy domena to `seasons`."""
+    return sorted(items, key=_season_sort_key)
+
+
+DOMAIN_POST_PROCESS_STRATEGIES: tuple[DomainPostProcessStrategy, ...] = (
+    DomainPostProcessStrategy(
+        name="merge_duplicate_drivers",
+        activation_condition=_is_drivers_domain,
+        processor=_merge_duplicate_drivers,
+    ),
+    DomainPostProcessStrategy(
+        name="sort_drivers_by_name",
+        activation_condition=_is_drivers_domain,
+        processor=_sort_drivers_by_name,
+    ),
+    DomainPostProcessStrategy(
+        name="sort_constructors_by_name",
+        activation_condition=_is_constructor_domain,
+        processor=_sort_constructors_by_name,
+    ),
+    DomainPostProcessStrategy(
+        name="merge_duplicate_teams",
+        activation_condition=_is_teams_domain,
+        processor=_merge_duplicate_teams,
+    ),
+    DomainPostProcessStrategy(
+        name="nest_team_liveries",
+        activation_condition=_is_teams_domain,
+        processor=_nest_team_liveries,
+    ),
+    DomainPostProcessStrategy(
+        name="sort_teams_by_name",
+        activation_condition=_is_teams_domain,
+        processor=_sort_teams_by_name,
+    ),
+    DomainPostProcessStrategy(
+        name="sort_seasons_by_year",
+        activation_condition=_is_seasons_domain,
+        processor=_sort_seasons_by_year,
+    ),
+)
+
+
+def _iter_active_domain_post_process_strategies(
     domain: str,
-) -> list[Callable[[list[object]], list[object]]]:
-    processors: list[Callable[[list[object]], list[object]]] = []
-    if domain == "drivers":
-        processors.extend(
-            [
-                _merge_duplicate_drivers,
-                lambda items: sorted(items, key=_driver_sort_key),
-            ],
-        )
-    if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
-        processors.append(lambda items: sorted(items, key=_constructor_sort_key))
-    if domain == "teams":
-        processors.extend(
-            [
-                _merge_duplicate_teams,
-                lambda items: [
-                    _nest_team_liveries_in_seasons(record) for record in items
-                ],
-                lambda items: sorted(items, key=_team_sort_key),
-            ],
-        )
-    if domain == "seasons":
-        processors.append(lambda items: sorted(items, key=_season_sort_key))
-    return processors
+) -> list[DomainPostProcessStrategy]:
+    return [
+        strategy
+        for strategy in DOMAIN_POST_PROCESS_STRATEGIES
+        if strategy.is_active(domain)
+    ]
+
+
+def _records_debug_summary(records: list[object]) -> str:
+    sample = records[0] if records else None
+    sample_type = type(sample).__name__ if sample is not None else "none"
+    return f"count={len(records)}, first_type={sample_type}"
 
 
 def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
     merged_records = records
-    for processor in _domain_post_processors(domain):
-        merged_records = processor(merged_records)
+    for strategy in _iter_active_domain_post_process_strategies(domain):
+        before_summary = _records_debug_summary(merged_records)
+        merged_records = strategy.processor(merged_records)
+        after_summary = _records_debug_summary(merged_records)
+        logger.debug(
+            "Domain post-process strategy '%s' applied for domain '%s': %s -> %s",
+            strategy.name,
+            domain,
+            before_summary,
+            after_summary,
+        )
     return merged_records
 
 
 def _write_merged_domain_records(
     domain_dir: Path,
     merged_records: list[object],
+    resolver: PathResolver,
 ) -> None:
-    merged_path = domain_dir / f"{domain_dir.name}.json"
+    merged_path = resolver.merged(domain=domain_dir.name)
     merged_path.write_text(
         json.dumps(merged_records, ensure_ascii=False, indent=2),
         encoding="utf-8",

@@ -1,4 +1,4 @@
-from layers.orchestration.helpers import _build_explicit_layer_one_runner_map
+from layers.orchestration.runner_registry import _build_explicit_layer_one_runner_map
 
 
 EXPECTED_METADATA_KEYS = {

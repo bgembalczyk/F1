@@ -1,4 +1,4 @@
-from layers.orchestration.helpers import build_layer_zero_run_config_factory_map
+from layers.orchestration.runner_registry import build_layer_zero_run_config_factory_map
 
 
 def test_build_layer_zero_run_config_factory_map_contains_parser_scopes() -> None:

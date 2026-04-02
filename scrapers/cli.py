@@ -7,6 +7,9 @@ import inspect
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
+
+from layers.path_resolver import DEFAULT_PATH_RESOLVER
+from layers.path_resolver import PathResolver
 from typing import TYPE_CHECKING
 from typing import Literal
 
@@ -21,6 +24,11 @@ from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
 from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
 from scrapers.base.runner import ScraperRunner
+from scrapers.wiki.sources_registry import ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE
+from scrapers.wiki.sources_registry import get_source_by_list_filename
+from scrapers.wiki.sources_registry import get_source_by_seed_name
+from scrapers.wiki.sources_registry import resolve_list_filename
+from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -28,6 +36,11 @@ if TYPE_CHECKING:
 BaseConfigFactory = Literal["deprecated", "complete", "default"]
 LegacyTargetFactory = Literal["lazy", "run_and_export", "run_export_complete"]
 SCRAPER_MODULE_PATH_PARTS = 3
+
+CLI_PATH_RESOLVER = PathResolver(
+    exports_root=Path("../../data/wiki"),
+    debug_root=Path("../../data/debug"),
+)
 
 
 @dataclass(frozen=True)
@@ -193,9 +206,37 @@ def _run_export_complete(
 ) -> Callable[..., None]:
     def _target() -> None:
         export_fn = _import_target(path)
-        export_fn(output_dir=Path(output_dir), include_urls=include_urls)
+        if output_dir is None:
+            msg = "output_dir cannot be None for complete export target."
+            raise ValueError(msg)
+        export_fn(
+            output_dir=CLI_PATH_RESOLVER.exports(output_dir),
+            include_urls=include_urls,
+        )
 
     return _target
+
+
+def _list_output_path(*, seed_name: str, output_category: str | None = None) -> str:
+    source = get_source_by_seed_name(seed_name, warn=False)
+    category = output_category or source.output_category
+    return f"{category}/{source.list_filename}"
+
+
+def _legacy_alias_output_path(
+    *,
+    legacy_filename: str,
+    output_category: str,
+) -> str:
+    canonical_filename = resolve_list_filename(legacy_filename, warn=False)
+    source = get_source_by_list_filename(canonical_filename, warn=False)
+    if source.output_category != output_category:
+        msg = (
+            "Legacy CLI output category mismatch for source "
+            f"{legacy_filename!r}: expected {source.output_category!r}, got {output_category!r}"
+        )
+        raise ValueError(msg)
+    return f"{output_category}/{legacy_filename}"
 
 
 LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
@@ -220,7 +261,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path="scrapers.circuits.helpers.export:export_complete_circuits",
             profile="complete_extractor",
             base_config_factory="complete",
-            output_dir="../../data/wiki/circuits/complete_circuits",
+            output_dir="circuits/complete_circuits",
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -245,7 +286,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "FormerConstructorsListScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="constructors/f1_former_constructors.json",
+            output_json=_list_output_path(seed_name="constructors_former", output_category="constructors"),
             output_csv="constructors/f1_former_constructors.csv",
             deprecated=True,
         ),
@@ -257,7 +298,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "IndianapolisOnlyConstructorsListScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="constructors/f1_indianapolis_only_constructors.json",
+            output_json=_list_output_path(seed_name="constructors_indianapolis_only", output_category="constructors"),
             output_csv="constructors/f1_indianapolis_only_constructors.csv",
             deprecated=True,
         ),
@@ -266,7 +307,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.constructors.privateer_teams_list:PrivateerTeamsListScraper",
             profile="deprecated_entrypoint",
-            output_json="constructors/f1_privateer_teams.json",
+            output_json=_list_output_path(seed_name="constructors_privateer", output_category="constructors"),
             output_csv="constructors/f1_privateer_teams.csv",
             deprecated=True,
         ),
@@ -278,7 +319,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             ),
             profile="complete_extractor",
             base_config_factory="default",
-            output_dir="../../data/wiki/constructors/complete_constructors",
+            output_dir="constructors/complete_constructors",
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -300,7 +341,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.drivers.female_drivers_list:FemaleDriversListScraper",
             profile="deprecated_entrypoint",
-            output_json="drivers/female_drivers.json",
+            output_json=_list_output_path(seed_name="drivers_female"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -308,7 +349,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.drivers.fatalities_list_scraper:F1FatalitiesListScraper",
             profile="deprecated_entrypoint",
-            output_json="drivers/f1_driver_fatalities.json",
+            output_json=_list_output_path(seed_name="drivers_fatalities"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -317,7 +358,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path="scrapers.drivers.helpers.export:export_complete_drivers",
             profile="complete_extractor",
             base_config_factory="default",
-            output_dir="../../data/wiki/drivers/complete_drivers",
+            output_dir="drivers/complete_drivers",
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -328,7 +369,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "EngineManufacturersListScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="engines/f1_engine_manufacturers.json",
+            output_json=_list_output_path(seed_name="engines_manufacturers"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -339,7 +380,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "IndianapolisOnlyEngineManufacturersListScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="engines/f1_engine_manufacturers_indianapolis_only.json",
+            output_json=_legacy_alias_output_path(legacy_filename=ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE, output_category="engines"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -347,7 +388,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.engines.engine_regulation:EngineRegulationScraper",
             profile="deprecated_entrypoint",
-            output_json="engines/f1_engine_regulations.json",
+            output_json=_list_output_path(seed_name="engines_regulations", output_category="engines"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -355,7 +396,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.engines.engine_restrictions:EngineRestrictionsScraper",
             profile="deprecated_entrypoint",
-            output_json="engines/f1_engine_restrictions.json",
+            output_json=_list_output_path(seed_name="engines_restrictions", output_category="engines"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -368,7 +409,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="complete_extractor",
             base_config_factory="default",
             output_json="engines/f1_engine_manufacturers_complete.json",
-            base_config_overrides={"output_dir": Path("../../data/wiki")},
+            base_config_overrides={"output_dir": CLI_PATH_RESOLVER.exports_root},
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -405,7 +446,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="deprecated_entrypoint",
             output_json="grands_prix/f1_red_flagged_non_championship_races.json",
             base_config_overrides={
-                "output_dir": Path("../../data/wiki"),
+                "output_dir": CLI_PATH_RESOLVER.exports_root,
                 "include_urls": True,
             },
             deprecated=True,
@@ -422,7 +463,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="deprecated_entrypoint",
             output_json="grands_prix/f1_red_flagged_world_championship_races.json",
             base_config_overrides={
-                "output_dir": Path("../../data/wiki"),
+                "output_dir": CLI_PATH_RESOLVER.exports_root,
                 "include_urls": True,
             },
             deprecated=True,
@@ -467,7 +508,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path="scrapers.seasons.helpers:export_complete_seasons",
             profile="complete_extractor",
             base_config_factory="complete",
-            output_dir="../../data/wiki/seasons/complete_seasons",
+            output_dir="seasons/complete_seasons",
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -496,6 +537,39 @@ MODULE_DEFINITIONS: dict[str, LegacyModuleDefinition] = {
     definition.module_path: definition
     for definition in LEGACY_MODULE_REGISTRY.definitions
 }
+
+
+def _validate_startup_name_consistency() -> None:
+    validate_sources_registry_consistency()
+    expected_seed_by_module_path = {
+        "scrapers.constructors.former_constructors_list": "constructors_former",
+        "scrapers.constructors.indianapolis_only_constructors_list": (
+            "constructors_indianapolis_only"
+        ),
+        "scrapers.drivers.female_drivers_list": "drivers_female",
+        "scrapers.drivers.fatalities_list_scraper": "drivers_fatalities",
+        "scrapers.engines.engine_manufacturers_list": "engines_manufacturers",
+        "scrapers.engines.engine_regulation": "engines_regulations",
+        "scrapers.engines.engine_restrictions": "engines_restrictions",
+    }
+    for module_path, seed_name in expected_seed_by_module_path.items():
+        definition = MODULE_DEFINITIONS[module_path]
+        if definition.output_json is None:
+            continue
+        configured_filename = Path(definition.output_json).name
+        source = get_source_by_seed_name(seed_name, warn=False)
+        canonical_filename = source.list_filename
+        resolved_filename = resolve_list_filename(configured_filename, warn=False)
+        if resolved_filename != canonical_filename:
+            msg = (
+                "Startup consistency check failed: "
+                f"module {module_path!r} uses output filename {configured_filename!r}, "
+                f"expected canonical {canonical_filename!r} (or a declared legacy alias)."
+            )
+            raise ValueError(msg)
+
+
+_validate_startup_name_consistency()
 
 _DOMAIN_SCRAPER_METADATA = get_domain_entrypoint_scraper_metadata()
 DOMAIN_COMMANDS: dict[str, DomainCommand] = {}
@@ -694,8 +768,8 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         app_module.create_default_wiki_pipeline_application
     )
     app = create_default_wiki_pipeline_application(
-        base_wiki_dir=Path("data/wiki").resolve(),
-        base_debug_dir=Path("data/debug").resolve(),
+        base_wiki_dir=DEFAULT_PATH_RESOLVER.exports_root.resolve(),
+        base_debug_dir=DEFAULT_PATH_RESOLVER.debug_root.resolve(),
     )
     if args.mode in {"layer0", "full"}:
         app.run_layer_zero()

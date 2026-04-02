@@ -49,3 +49,30 @@ def test_extract_current_section_supports_hardcoded_2026_section_id() -> None:
     assert section is not None
     assert section.find("h2", id="Constructors_for_the_2026_season") is not None
     assert section.find("table", class_="wikitable") is not None
+
+
+def test_extract_current_section_does_not_match_terminology_subsection_alias() -> None:
+    soup = BeautifulSoup(
+        """
+        <html><body>
+          <div class="mw-heading mw-heading2">
+            <h2 id="Terminology">Terminology</h2>
+          </div>
+          <div class="mw-heading mw-heading3">
+            <h3 id="Constructors">Constructors</h3>
+          </div>
+          <p>Definition-only subsection, no current constructors table.</p>
+
+          <div class="mw-heading mw-heading2">
+            <h2 id="Former_constructors">Former constructors</h2>
+          </div>
+        </body></html>
+        """,
+        "html.parser",
+    )
+    scraper = ConstructorsListScraper()
+    selector = WikipediaSectionByIdSelectionStrategy(domain="constructors")
+
+    section = scraper._extract_current_section(selector=selector, soup=soup)  # noqa: SLF001
+
+    assert section is None
