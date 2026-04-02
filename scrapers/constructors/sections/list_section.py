@@ -8,6 +8,11 @@ from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.constructors.indianapolis_only_constructors_list import IndianapolisOnlySubSectionParser
+from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser as WikiSectionParser
 
@@ -24,21 +29,12 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
     table_type = "current_constructors"
 
     def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
+        del table_data
         expected = {
-            "name",
-            "engine",
-            "licensed in",
-            "based in",
-            "seasons",
-            "entries",
-            "constructors' championships",
-            "drivers' championships",
-            "race victories",
-            "pole positions",
-            "fastest laps",
-            "podiums",
-            "drivers",
-            "antecedent teams",
+            CONSTRUCTOR_NAME_HEADER.lower(),
+            CONSTRUCTOR_ENGINE_HEADER.lower(),
+            CONSTRUCTOR_LICENSED_IN_HEADER.lower(),
+            CONSTRUCTOR_BASED_IN_HEADER.lower(),
         }
         normalized = {header.strip().lower() for header in headers}
         return expected.issubset(normalized)
@@ -51,17 +47,11 @@ class FormerConstructorsTableParser(WikiTableBaseParser):
     table_type = "former_constructors"
 
     def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
+        del table_data
         expected = {
-            "name",
-            "licensed in",
-            "seasons",
-            "entries",
-            "starts",
-            "wins",
-            "points",
-            "pole positions",
-            "fastest laps",
-            "podiums",
+            CONSTRUCTOR_NAME_HEADER.lower(),
+            CONSTRUCTOR_LICENSED_IN_HEADER.lower(),
+            CONSTRUCTOR_SEASONS_HEADER.lower(),
         }
         normalized = {header.strip().lower() for header in headers}
         return expected.issubset(normalized)

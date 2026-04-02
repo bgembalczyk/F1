@@ -58,9 +58,14 @@ class SprintRacesSubSubSectionParser(SubSubSectionParser):
         return parsed
 
     def _apply_table_parser(self, payload: dict[str, Any]) -> None:
-        for section in payload.get("sub_sub_sub_sections", []):
-            self._apply_for_elements(section.get("elements", []))
-            self._apply_table_parser(section)
+        self._apply_for_elements(payload.get("elements", []))
+        for value in payload.values():
+            if isinstance(value, dict):
+                self._apply_table_parser(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        self._apply_table_parser(item)
 
     def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
         for element in elements:
@@ -85,9 +90,14 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
         return parsed
 
     def _apply_table_parser(self, payload: dict[str, Any]) -> None:
-        for section in payload.get("sub_sub_sub_sections", []):
-            self._apply_for_elements(section.get("elements", []))
-            self._apply_table_parser(section)
+        self._apply_for_elements(payload.get("elements", []))
+        for value in payload.values():
+            if isinstance(value, dict):
+                self._apply_table_parser(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        self._apply_table_parser(item)
 
     def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
         for element in elements:
@@ -135,9 +145,13 @@ class PointsScoringSystemsSectionParser(SectionParser):
 
     def _apply_table_parser(self, payload: dict[str, Any]) -> None:
         self._apply_for_elements(payload.get("elements", []))
-        for section in payload.get("sub_sections", []):
-            self._apply_for_elements(section.get("elements", []))
-            self._apply_table_parser(section)
+        for value in payload.values():
+            if isinstance(value, dict):
+                self._apply_table_parser(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        self._apply_table_parser(item)
 
     def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
         for element in elements:
