@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import logging
 from dataclasses import replace
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.constructors.indianapolis_only_constructors_list import IndianapolisOnlySubSectionParser
@@ -15,6 +17,8 @@ if TYPE_CHECKING:
 
     from scrapers.base.sections.interface import SectionParseResult
     from scrapers.base.table.config import ScraperConfig
+
+logger = logging.getLogger(__name__)
 
 
 class CurrentConstructorsTableParser(WikiTableBaseParser):
@@ -106,7 +110,21 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
                 self._table_parser.parse({"headers": headers, "rows": row_maps})
             except RuntimeError:
                 pass
-        return self._parser.parse(section_fragment)
+        try:
+            return self._parser.parse(section_fragment)
+        except RuntimeError:
+            logger.warning(
+                "Skipping constructors section '%s': matching table not found.",
+                self._parser._section_label,
+            )
+            return build_section_parse_result(
+                section_id=self._parser._section_id,
+                section_label=self._parser._section_label,
+                records=[],
+                parser=self.__class__.__name__,
+                source="wikipedia",
+                extras={"domain": "constructors", "skipped": True},
+            )
 
 
 class ConstructorsListSectionParser(_ConstructorsTableSectionParser):
