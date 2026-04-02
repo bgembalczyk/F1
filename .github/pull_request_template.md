@@ -28,7 +28,7 @@
 - [ ] Brak nowych Any
 - [ ] Brak nowych magic strings
 - [ ] Zaktualizowany ADR/docs
-- [ ] Spójność terminologiczna (zgodność z `DOMAIN_GLOSSARY.md`)
+- [ ] Spójność terminologii domenowej (zgodnie z `docs/DOMAIN_GLOSSARY.md`)
 
 ## Checklist (quality gate)
 

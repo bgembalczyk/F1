@@ -25,6 +25,8 @@ from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
 from scrapers.base.runner import ScraperRunner
 from scrapers.wiki.sources_registry import ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE
+from scrapers.wiki.sources_registry import SPONSORSHIP_LIVERIES_SOURCE
+from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
 from scrapers.wiki.sources_registry import get_source_by_list_filename
 from scrapers.wiki.sources_registry import get_source_by_seed_name
 from scrapers.wiki.sources_registry import resolve_list_filename
@@ -444,7 +446,10 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "non_championship:RedFlaggedNonChampionshipRacesScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="grands_prix/f1_red_flagged_non_championship_races.json",
+            output_json=_list_output_path(
+                seed_name="grands_prix_red_flagged_non_championship",
+                output_category="grands_prix",
+            ),
             base_config_overrides={
                 "output_dir": CLI_PATH_RESOLVER.exports_root,
                 "include_urls": True,
@@ -461,7 +466,10 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "world_championship:RedFlaggedWorldChampionshipRacesScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="grands_prix/f1_red_flagged_world_championship_races.json",
+            output_json=_list_output_path(
+                seed_name="grands_prix_red_flagged_world_championship",
+                output_category="grands_prix",
+            ),
             base_config_overrides={
                 "output_dir": CLI_PATH_RESOLVER.exports_root,
                 "include_urls": True,
@@ -518,7 +526,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "scrapers.sponsorship_liveries.scraper:SponsorshipAndLiveriesScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="f1_sponsorship_and_livery.json",
+            output_json=SPONSORSHIP_LIVERIES_SOURCE,
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -526,7 +534,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.tyres.list_scraper:TyresListScraper",
             profile="deprecated_entrypoint",
-            output_json="f1_tyre_manufacturers.json",
+            output_json=TYRE_MANUFACTURERS_SOURCE,
             deprecated=True,
         ),
     ),
@@ -546,11 +554,20 @@ def _validate_startup_name_consistency() -> None:
         "scrapers.constructors.indianapolis_only_constructors_list": (
             "constructors_indianapolis_only"
         ),
+        "scrapers.constructors.privateer_teams_list": "constructors_privateer",
         "scrapers.drivers.female_drivers_list": "drivers_female",
         "scrapers.drivers.fatalities_list_scraper": "drivers_fatalities",
         "scrapers.engines.engine_manufacturers_list": "engines_manufacturers",
         "scrapers.engines.engine_regulation": "engines_regulations",
         "scrapers.engines.engine_restrictions": "engines_restrictions",
+        "scrapers.grands_prix.red_flagged_races_scraper.non_championship": (
+            "grands_prix_red_flagged_non_championship"
+        ),
+        "scrapers.grands_prix.red_flagged_races_scraper.world_championship": (
+            "grands_prix_red_flagged_world_championship"
+        ),
+        "scrapers.sponsorship_liveries.scraper": "sponsorship_liveries",
+        "scrapers.tyres.list_scraper": "tyres",
     }
     for module_path, seed_name in expected_seed_by_module_path.items():
         definition = MODULE_DEFINITIONS[module_path]

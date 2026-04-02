@@ -24,7 +24,7 @@ Najważniejsze kontrakty i interfejsy projektu:
 - kontrakty warstw (`Fetcher`, `Parser`, `Normalizer`, `Assembler`, `Exporter`),
 - kontrakt konfiguracji scraperów,
 - kontrakt parserów sekcji,
-- strategia Dependency Injection,
+- strategia Dependency Injection (bez zbędnych interfejsów o pojedynczej implementacji),
 - konwencje nazewnictwa hooków.
 
 Źródła prawdy (single source of truth):

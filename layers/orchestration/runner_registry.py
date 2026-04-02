@@ -9,11 +9,11 @@ from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
-from scrapers.circuits.helpers.export import export_complete_circuits
-from scrapers.constructors.helpers.export import export_complete_constructors
-from scrapers.drivers.helpers.export import export_complete_drivers
-from scrapers.engines.helpers.export import export_complete_engine_manufacturers
-from scrapers.seasons.helpers import export_complete_seasons
+from scrapers.circuits import export_complete_circuits
+from scrapers.constructors import export_complete_constructors
+from scrapers.drivers import export_complete_drivers
+from scrapers.engines import export_complete_engine_manufacturers
+from scrapers.seasons import export_complete_seasons
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:

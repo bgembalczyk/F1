@@ -111,24 +111,15 @@ class _AlwaysAdapter:
         return context.scraper_cls(options=ScraperOptions(), marker=self._marker)
 
 
-class _CustomAdapterChainProvider:
-    def __init__(self, marker: object) -> None:
-        self._marker = marker
-
-    def build(self, *, mapper):
-        _ = mapper
-        return (_AlwaysAdapter(self._marker),)
-
-
 class CustomChainScraper:
     def __init__(self, *, options: ScraperOptions, marker: object) -> None:
         self.options = options
         self.marker = marker
 
 
-def test_factory_uses_adapter_chain_provider() -> None:
+def test_factory_uses_injected_adapters() -> None:
     marker = object()
-    factory = ScraperFactory(adapter_chain_provider=_CustomAdapterChainProvider(marker))
+    factory = ScraperFactory(adapters=(_AlwaysAdapter(marker),))
 
     scraper = factory.create(
         scraper_cls=CustomChainScraper,
