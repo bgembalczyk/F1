@@ -176,8 +176,15 @@ Runtime warning ma teraz jawny komunikat o oknie migracji:
 
 - `scrapers.circuits.list_scraper` -> `scrapers.circuits.entrypoint`
 - `scrapers.constructors.current_constructors_list` -> `scrapers.constructors.entrypoint`
+- `scrapers.constructors.former_constructors_list` -> `scrapers.constructors.entrypoint`
+- `scrapers.constructors.indianapolis_only_constructors_list` -> `scrapers.constructors.entrypoint`
+- `scrapers.constructors.privateer_teams_list` -> `scrapers.constructors.entrypoint`
+- `scrapers.drivers.fatalities_list_scraper` -> `scrapers.drivers.entrypoint`
+- `scrapers.drivers.female_drivers_list` -> `scrapers.drivers.entrypoint`
 - `scrapers.drivers.list_scraper` -> `scrapers.drivers.entrypoint`
 - `scrapers.grands_prix.list_scraper` -> `scrapers.grands_prix.entrypoint`
+- `scrapers.grands_prix.red_flagged_races_scraper.non_championship` -> `scrapers.grands_prix.entrypoint`
+- `scrapers.grands_prix.red_flagged_races_scraper.world_championship` -> `scrapers.grands_prix.entrypoint`
 - `scrapers.seasons.list_scraper` -> `scrapers.seasons.entrypoint`
 
 W praktyce oznacza to migrację:
@@ -186,23 +193,10 @@ W praktyce oznacza to migrację:
 
 #### Pozostałe legacy moduły (bez nowego modułu API, canonical przez `scrapers.cli run`)
 
-- `scrapers.circuits.complete_scraper`
-- `scrapers.constructors.complete_scraper`
-- `scrapers.constructors.former_constructors_list`
-- `scrapers.constructors.indianapolis_only_constructors_list`
-- `scrapers.constructors.privateer_teams_list`
-- `scrapers.drivers.complete_scraper`
-- `scrapers.drivers.fatalities_list_scraper`
-- `scrapers.drivers.female_drivers_list`
-- `scrapers.engines.complete_scraper`
 - `scrapers.engines.engine_manufacturers_list`
 - `scrapers.engines.engine_regulation`
 - `scrapers.engines.engine_restrictions`
 - `scrapers.engines.indianapolis_only_engine_manufacturers_list`
-- `scrapers.grands_prix.complete_scraper`
-- `scrapers.grands_prix.red_flagged_races_scraper.non_championship`
-- `scrapers.grands_prix.red_flagged_races_scraper.world_championship`
-- `scrapers.seasons.complete_scraper`
 - `scrapers.sponsorship_liveries.scraper`
 - `scrapers.tyres.list_scraper`
 
@@ -242,7 +236,7 @@ W praktyce oznacza to migrację:
 - `python -m scrapers.sponsorship_liveries.scraper` -> `python -m scrapers.cli run scrapers.sponsorship_liveries.scraper`
 - `python -m scrapers.tyres.list_scraper` -> `python -m scrapers.cli run scrapers.tyres.list_scraper`
 
-Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem.
+Mapa pokazuje canonical komendy `scrapers.cli` dla wrapperów legacy.
 
 <!-- END AUTO-GENERATED: command-migration-map -->
 

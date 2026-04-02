@@ -26,9 +26,9 @@ END_MARKER = "<!-- END AUTO-GENERATED: command-migration-map -->"
 def _legacy_list_entrypoints() -> list[tuple[str, str]]:
     pairs: list[tuple[str, str]] = []
     for definition in MODULE_DEFINITIONS.values():
-        if not definition.deprecated:
+        if definition.profile != "deprecated_entrypoint":
             continue
-        replacement = definition.replacement_module_path
+        replacement = _resolve_replacement_module(definition.module_path)
         if replacement is None:
             continue
         pairs.append((definition.module_path, replacement))
@@ -39,9 +39,19 @@ def _other_legacy_modules() -> list[str]:
     modules = [
         definition.module_path
         for definition in MODULE_DEFINITIONS.values()
-        if definition.deprecated and definition.replacement_module_path is None
+        if definition.profile == "deprecated_entrypoint"
+        and _resolve_replacement_module(definition.module_path) is None
     ]
     return sorted(modules)
+
+
+def _resolve_replacement_module(module_path: str) -> str | None:
+    parts = module_path.split(".")
+    if len(parts) >= 3 and parts[0] == "scrapers":
+        inferred = f"scrapers.{parts[1]}.entrypoint"
+        if inferred in MODULE_DEFINITIONS and inferred != module_path:
+            return inferred
+    return None
 
 
 def _command_migration_map() -> list[tuple[str, str]]:
@@ -86,9 +96,7 @@ def build_generated_section() -> str:
     for old_command, new_command in _command_migration_map():
         lines.append(f"- `{old_command}` -> `{new_command}`")
     lines.append("")
-    lines.append(
-        "Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem."
-    )
+    lines.append("Mapa pokazuje canonical komendy `scrapers.cli` dla wrapperów legacy.")
     return "\n".join(lines).rstrip() + "\n"
 
 
