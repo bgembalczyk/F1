@@ -20,6 +20,11 @@ from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
 from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
 from scrapers.base.runner import ScraperRunner
+from scrapers.wiki.sources_registry import ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE
+from scrapers.wiki.sources_registry import get_source_by_list_filename
+from scrapers.wiki.sources_registry import get_source_by_seed_name
+from scrapers.wiki.sources_registry import resolve_list_filename
+from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -197,6 +202,28 @@ def _run_export_complete(
     return _target
 
 
+def _list_output_path(*, seed_name: str, output_category: str | None = None) -> str:
+    source = get_source_by_seed_name(seed_name, warn=False)
+    category = output_category or source.output_category
+    return f"{category}/{source.list_filename}"
+
+
+def _legacy_alias_output_path(
+    *,
+    legacy_filename: str,
+    output_category: str,
+) -> str:
+    canonical_filename = resolve_list_filename(legacy_filename, warn=False)
+    source = get_source_by_list_filename(canonical_filename, warn=False)
+    if source.output_category != output_category:
+        msg = (
+            "Legacy CLI output category mismatch for source "
+            f"{legacy_filename!r}: expected {source.output_category!r}, got {output_category!r}"
+        )
+        raise ValueError(msg)
+    return f"{output_category}/{legacy_filename}"
+
+
 LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
     definitions=(
         LegacyModuleDefinition(
@@ -244,7 +271,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "FormerConstructorsListScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="constructors/f1_former_constructors.json",
+            output_json=_list_output_path(seed_name="constructors_former", output_category="constructors"),
             output_csv="constructors/f1_former_constructors.csv",
             deprecated=True,
         ),
@@ -256,7 +283,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "IndianapolisOnlyConstructorsListScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="constructors/f1_indianapolis_only_constructors.json",
+            output_json=_list_output_path(seed_name="constructors_indianapolis_only", output_category="constructors"),
             output_csv="constructors/f1_indianapolis_only_constructors.csv",
             deprecated=True,
         ),
@@ -265,7 +292,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.constructors.privateer_teams_list:PrivateerTeamsListScraper",
             profile="deprecated_entrypoint",
-            output_json="constructors/f1_privateer_teams.json",
+            output_json=_list_output_path(seed_name="constructors_privateer", output_category="constructors"),
             output_csv="constructors/f1_privateer_teams.csv",
             deprecated=True,
         ),
@@ -299,7 +326,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.drivers.female_drivers_list:FemaleDriversListScraper",
             profile="deprecated_entrypoint",
-            output_json="drivers/female_drivers.json",
+            output_json=_list_output_path(seed_name="drivers_female"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -307,7 +334,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.drivers.fatalities_list_scraper:F1FatalitiesListScraper",
             profile="deprecated_entrypoint",
-            output_json="drivers/f1_driver_fatalities.json",
+            output_json=_list_output_path(seed_name="drivers_fatalities"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -327,7 +354,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "EngineManufacturersListScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="engines/f1_engine_manufacturers.json",
+            output_json=_list_output_path(seed_name="engines_manufacturers"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -338,7 +365,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "IndianapolisOnlyEngineManufacturersListScraper"
             ),
             profile="deprecated_entrypoint",
-            output_json="engines/f1_engine_manufacturers_indianapolis_only.json",
+            output_json=_legacy_alias_output_path(legacy_filename=ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE, output_category="engines"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -346,7 +373,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.engines.engine_regulation:EngineRegulationScraper",
             profile="deprecated_entrypoint",
-            output_json="engines/f1_engine_regulations.json",
+            output_json=_list_output_path(seed_name="engines_regulations", output_category="engines"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -354,7 +381,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             factory="run_and_export",
             target_path="scrapers.engines.engine_restrictions:EngineRestrictionsScraper",
             profile="deprecated_entrypoint",
-            output_json="engines/f1_engine_restrictions.json",
+            output_json=_list_output_path(seed_name="engines_restrictions", output_category="engines"),
             deprecated=True,
         ),
         LegacyModuleDefinition(
@@ -495,6 +522,39 @@ MODULE_DEFINITIONS: dict[str, LegacyModuleDefinition] = {
     definition.module_path: definition
     for definition in LEGACY_MODULE_REGISTRY.definitions
 }
+
+
+def _validate_startup_name_consistency() -> None:
+    validate_sources_registry_consistency()
+    expected_seed_by_module_path = {
+        "scrapers.constructors.former_constructors_list": "constructors_former",
+        "scrapers.constructors.indianapolis_only_constructors_list": (
+            "constructors_indianapolis_only"
+        ),
+        "scrapers.drivers.female_drivers_list": "drivers_female",
+        "scrapers.drivers.fatalities_list_scraper": "drivers_fatalities",
+        "scrapers.engines.engine_manufacturers_list": "engines_manufacturers",
+        "scrapers.engines.engine_regulation": "engines_regulations",
+        "scrapers.engines.engine_restrictions": "engines_restrictions",
+    }
+    for module_path, seed_name in expected_seed_by_module_path.items():
+        definition = MODULE_DEFINITIONS[module_path]
+        if definition.output_json is None:
+            continue
+        configured_filename = Path(definition.output_json).name
+        source = get_source_by_seed_name(seed_name, warn=False)
+        canonical_filename = source.list_filename
+        resolved_filename = resolve_list_filename(configured_filename, warn=False)
+        if resolved_filename != canonical_filename:
+            msg = (
+                "Startup consistency check failed: "
+                f"module {module_path!r} uses output filename {configured_filename!r}, "
+                f"expected canonical {canonical_filename!r} (or a declared legacy alias)."
+            )
+            raise ValueError(msg)
+
+
+_validate_startup_name_consistency()
 
 _DOMAIN_SCRAPER_METADATA = get_domain_entrypoint_scraper_metadata()
 DOMAIN_COMMANDS: dict[str, DomainCommand] = {}
