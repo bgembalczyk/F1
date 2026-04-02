@@ -2,6 +2,7 @@
 
 from typing import Any
 
+from scrapers.base.options import ScraperOptions
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import GRANDS_PRIX_LIST
 from scrapers.base.table.builders import build_columns
@@ -120,8 +121,8 @@ class GrandsPrixListScraper(SeedListTableScraper):
         record_factory=RECORD_FACTORIES.builders("grands_prix"),
     )
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self, *, options: ScraperOptions | None = None) -> None:
+        super().__init__(options=options)
         parser = RacesSectionParser()
         self.section_parser = parser
         self.body_content_parser.content_text_parser.section_parser = parser
