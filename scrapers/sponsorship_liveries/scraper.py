@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.sponsorship_liveries.parsers.section import SponsorshipSectionParser
+from scrapers.sponsorship_liveries.parsers.team_liveries import TeamLiveriesSectionParser
 from scrapers.sponsorship_liveries.parsers.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
@@ -43,7 +43,7 @@ class F1SponsorshipLiveriesScraper(WikiScraper):
         options = init_scraper_options(options, include_urls=True)
         super().__init__(options=options)
         self._splitter = SponsorshipRecordSplitter()
-        self._section_parser = SponsorshipSectionParser(
+        self._section_parser = TeamLiveriesSectionParser(
             url=self.url,
             include_urls=self.include_urls,
             normalize_empty_values=self.normalize_empty_values,
