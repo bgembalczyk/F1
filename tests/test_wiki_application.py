@@ -68,6 +68,11 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
 
     assert ran_seeds == ["drivers"]
     assert engine_runner_calls == [(Path("/tmp/wiki"), True)]
+    assert executor.last_summary is not None
+    assert executor.last_summary.total_jobs == 2
+    assert executor.last_summary.successes == 1
+    assert executor.last_summary.skipped == 1
+    assert executor.last_summary.errors == 0
 
 
 def test_constructors_mirror_service_mirrors_json_to_targets(tmp_path: Path) -> None:

@@ -249,6 +249,12 @@ def test_run_orchestrates_steps_in_order() -> None:
     )
 
     assert order == ["resolve", "build", "run", "mirror", "merge"]
+    assert executor.last_summary is not None
+    assert executor.last_summary.total_jobs == 1
+    assert executor.last_summary.successes == 1
+    assert executor.last_summary.output_paths == [
+        "/tmp/wiki/layers/0_layer/drivers/raw/f1_drivers_2026.json",
+    ]
 
 
 def test_mirror_constructors_job_hook_runs_only_for_matching_job() -> None:
