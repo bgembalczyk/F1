@@ -1,4 +1,4 @@
-from models.value_objects.common_terms import SectionId
+from models.value_objects import SectionId
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
 
 

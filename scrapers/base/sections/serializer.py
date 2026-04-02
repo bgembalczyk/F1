@@ -3,8 +3,8 @@ from __future__ import annotations
 from dataclasses import asdict
 from typing import Any
 
-from models.value_objects.common_terms import EntityName
-from models.value_objects.common_terms import SectionId
+from models.value_objects import EntityName
+from models.value_objects import SectionId
 from scrapers.base.sections.interface import SectionParseResult
 
 

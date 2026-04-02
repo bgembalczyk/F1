@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from models.value_objects.common_terms import WikiUrl
+from models.value_objects import WikiUrl
 from scrapers.base.mappers.infobox_record import InfoboxRecordMapper
 from scrapers.base.mappers.section_record import SectionRecordMapper
 

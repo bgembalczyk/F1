@@ -4,8 +4,8 @@ import re
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from models.value_objects.common_terms import SeasonYear
-from models.value_objects.common_terms import WikiUrl
+from models.value_objects import SeasonYear
+from models.value_objects import WikiUrl
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser

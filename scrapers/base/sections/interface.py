@@ -7,9 +7,9 @@ from typing import TypeAlias
 from typing import TypeVar
 from typing import runtime_checkable
 
-from models.value_objects.common_terms import EntityName
-from models.value_objects.common_terms import SectionId
-from models.value_objects.common_terms import WikiUrl
+from models.value_objects import EntityName
+from models.value_objects import SectionId
+from models.value_objects import WikiUrl
 from scrapers.base.types import JsonValue
 from scrapers.base.types import PipelineRecord
 
