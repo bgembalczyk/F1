@@ -16,6 +16,7 @@ from scrapers.wiki.parsers.body_content import BodyContentParser
 class PointsScraper(BasePointsScraper):
     """Aggregate scraper joining all points scoring tables from one article."""
 
+    CONFIG = POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
     _SUPPORTED_EXPORT_SCOPES = {"all", "history", "shortened", "sprint"}
 
     def __init__(
