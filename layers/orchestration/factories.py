@@ -18,6 +18,14 @@ class DefaultLayerZeroRunConfigFactory(LayerZeroRunConfigFactory):
         return {}
 
 
+class StaticScraperKwargsFactory(LayerZeroRunConfigFactory):
+    def __init__(self, *, scraper_kwargs: dict[str, object]) -> None:
+        self._scraper_kwargs = dict(scraper_kwargs)
+
+    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
+        return dict(self._scraper_kwargs)
+
+
 class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
     def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
         scraper_kwargs: dict[str, object] = {}

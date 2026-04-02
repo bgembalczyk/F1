@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
+from layers.orchestration.factories import StaticScraperKwargsFactory
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.runners.function_export import FunctionExportRunner
@@ -62,6 +63,36 @@ def build_layer_zero_run_config_factory_map() -> dict[
     LayerZeroRunConfigFactoryProtocol,
 ]:
     return {
+        "constructors_current": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "current"},
+        ),
+        "constructors_former": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "former"},
+        ),
+        "constructors_indianapolis_only": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "indianapolis"},
+        ),
+        "constructors_privateer": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "privateer"},
+        ),
+        "engines_indianapolis_only": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "indianapolis_only"},
+        ),
+        "points_sprint": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "sprint"},
+        ),
+        "points_shortened": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "shortened"},
+        ),
+        "points_history": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "history"},
+        ),
+        "grands_prix_red_flagged_world_championship": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "world_championship"},
+        ),
+        "grands_prix_red_flagged_non_championship": StaticScraperKwargsFactory(
+            scraper_kwargs={"export_scope": "non_championship"},
+        ),
         "sponsorship_liveries": SponsorshipLiveriesRunConfigFactory(),
     }
 

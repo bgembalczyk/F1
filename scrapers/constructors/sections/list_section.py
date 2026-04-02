@@ -1,14 +1,12 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import replace
 from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser
-from scrapers.constructors.indianapolis_only_constructors_list import IndianapolisOnlySubSectionParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser as WikiSectionParser
 
@@ -179,34 +177,3 @@ class FormerConstructorsSectionParser(_ConstructorsTableSectionParser):
             normalize_empty_values=normalize_empty_values,
             table_parser=FormerConstructorsTableParser(),
         )
-        self._indianapolis_sub_section_parser = IndianapolisOnlySubSectionParser()
-
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        base_result = super().parse(section_fragment)
-        indianapolis_records = self._parse_indianapolis_records(section_fragment)
-        if not indianapolis_records:
-            return base_result
-        return replace(base_result, records=[*base_result.records, *indianapolis_records])
-
-    def _parse_indianapolis_records(
-        self,
-        section_fragment: BeautifulSoup,
-    ) -> list[dict[str, Any]]:
-        parsed = self._indianapolis_sub_section_parser.parse(section_fragment)
-        records = parsed.get("items", [])
-        if not isinstance(records, list):
-            return []
-
-        if not self._include_urls:
-            for record in records:
-                if isinstance(record, dict):
-                    record.pop("constructor_url", None)
-            return records
-
-        for record in records:
-            if not isinstance(record, dict):
-                continue
-            url = record.get("constructor_url")
-            if isinstance(url, str) and url.startswith("/"):
-                record["constructor_url"] = f"https://en.wikipedia.org{url}"
-        return records

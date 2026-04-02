@@ -19,6 +19,9 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
+from scrapers.constructors.indianapolis_only_constructors_list import (
+    IndianapolisOnlySubSectionParser,
+)
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsSectionParser
 from scrapers.base.results import ScrapeResult
 
@@ -39,9 +42,14 @@ class ConstructorsListScraper(F1ListScraper):
 
     _SECTION_PARSER_EXPORT_KEY = "section_parser"
     _SUB_SECTION_PARSER_EXPORT_KEY = "sub_section_parser"
+    _SUPPORTED_EXPORT_SCOPES = {"all", "current", "former", "indianapolis", "privateer"}
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
+    def __init__(self, *args: Any, export_scope: str = "all", **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
+        if export_scope not in self._SUPPORTED_EXPORT_SCOPES:
+            msg = f"Unsupported export_scope='{export_scope}' for {self.__class__.__name__}"
+            raise ValueError(msg)
+        self._export_scope = export_scope
         self._split_export_records: dict[str, list[dict[str, Any]]] = {
             self._SECTION_PARSER_EXPORT_KEY: [],
             self._SUB_SECTION_PARSER_EXPORT_KEY: [],
@@ -68,7 +76,8 @@ class ConstructorsListScraper(F1ListScraper):
                 normalize_empty_values=self.normalize_empty_values,
             )
             current_records = current_parser.parse(current_section).records
-            records.extend(current_records)
+            if self._should_include_scope("current"):
+                records.extend(current_records)
             self._split_export_records[self._SECTION_PARSER_EXPORT_KEY].extend(
                 current_records,
             )
@@ -86,10 +95,14 @@ class ConstructorsListScraper(F1ListScraper):
                 normalize_empty_values=self.normalize_empty_values,
             )
             former_records = former_parser.parse(former_section).records
-            records.extend(former_records)
+            if self._should_include_scope("former"):
+                records.extend(former_records)
             self._split_export_records[self._SECTION_PARSER_EXPORT_KEY].extend(
                 former_records,
             )
+            indianapolis_records = self._parse_indianapolis_only_records(former_section)
+            if self._should_include_scope("indianapolis"):
+                records.extend(indianapolis_records)
 
         privateer_section = selector.extract_section_by_id(
             soup,
@@ -110,12 +123,36 @@ class ConstructorsListScraper(F1ListScraper):
                     url = record.get("team_url")
                     if isinstance(url, str) and url.startswith("/"):
                         record["team_url"] = self._full_url(url)
-            records.extend(privateer_records)
+            if self._should_include_scope("privateer"):
+                records.extend(privateer_records)
             self._split_export_records[self._SUB_SECTION_PARSER_EXPORT_KEY].extend(
                 privateer_records,
             )
 
         return records
+
+    def _parse_indianapolis_only_records(self, former_section: Any) -> list[dict[str, Any]]:
+        parser = IndianapolisOnlySubSectionParser()
+        parsed = parser.parse(former_section)
+        parsed_records = parsed.get("items", [])
+        if not isinstance(parsed_records, list):
+            return []
+        records: list[dict[str, Any]] = []
+        for record in parsed_records:
+            if not isinstance(record, dict):
+                continue
+            normalized = dict(record)
+            if not self.include_urls:
+                normalized.pop("constructor_url", None)
+            else:
+                url = normalized.get("constructor_url")
+                if isinstance(url, str) and url.startswith("/"):
+                    normalized["constructor_url"] = self._full_url(url)
+            records.append(normalized)
+        return records
+
+    def _should_include_scope(self, scope: str) -> bool:
+        return self._export_scope in {"all", scope}
 
     def to_json(
         self,

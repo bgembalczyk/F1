@@ -170,11 +170,31 @@ class EngineManufacturersListScraper(F1TableScraper):
         schema=EngineManufacturersTableParser.build_schema(),
     )
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
+    _SUPPORTED_EXPORT_SCOPES = {"all", "engine_manufacturers", "indianapolis_only"}
+
+    def __init__(
+        self,
+        *args: Any,
+        export_scope: str = "all",
+        **kwargs: Any,
+    ) -> None:
         super().__init__(*args, **kwargs)
+        if export_scope not in self._SUPPORTED_EXPORT_SCOPES:
+            msg = f"Unsupported export_scope='{export_scope}' for {self.__class__.__name__}"
+            raise ValueError(msg)
+        self._export_scope = export_scope
         parser = EngineManufacturersSectionParser()
         self.section_parser = parser
         self.body_content_parser.content_text_parser.section_parser = parser
+
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        if self._export_scope == "indianapolis_only":
+            scraper = IndianapolisOnlyEngineManufacturersListScraper(
+                options=self._options,
+            )
+            scraper.include_urls = self.include_urls
+            return scraper.parse(soup)
+        return super()._parse_soup(soup)
 
 
 class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper):
