@@ -4,21 +4,32 @@ import logging
 from typing import TYPE_CHECKING
 from typing import Any
 
+from bs4 import BeautifulSoup
+
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.constructors.indianapolis_only_constructors_list import IndianapolisOnlySubSectionParser
 from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_FASTEST_LAPS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_PODIUMS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_POLES_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_POINTS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_RACES_ENTERED_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_RACES_STARTED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser as WikiSectionParser
 
 if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
-
     from scrapers.base.sections.interface import SectionParseResult
     from scrapers.base.table.config import ScraperConfig
 
@@ -35,6 +46,18 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
             CONSTRUCTOR_ENGINE_HEADER.lower(),
             CONSTRUCTOR_LICENSED_IN_HEADER.lower(),
             CONSTRUCTOR_BASED_IN_HEADER.lower(),
+            CONSTRUCTOR_SEASONS_HEADER.lower(),
+            CONSTRUCTOR_RACES_ENTERED_HEADER.lower(),
+            CONSTRUCTOR_RACES_STARTED_HEADER.lower(),
+            CONSTRUCTOR_TOTAL_ENTRIES_HEADER.lower(),
+            CONSTRUCTOR_WINS_HEADER.lower(),
+            CONSTRUCTOR_POINTS_HEADER.lower(),
+            CONSTRUCTOR_POLES_HEADER.lower(),
+            CONSTRUCTOR_FASTEST_LAPS_HEADER.lower(),
+            CONSTRUCTOR_PODIUMS_HEADER.lower(),
+            CONSTRUCTOR_WCC_HEADER.lower(),
+            CONSTRUCTOR_WDC_HEADER.lower(),
+            CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER.lower(),
         }
         normalized = {header.strip().lower() for header in headers}
         return expected.issubset(normalized)
@@ -84,11 +107,25 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
         self._html_table_parser = HtmlTableParser()
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        logger.warning(
+            "Constructors section parser '%s': start parse.",
+            self._parser._section_label,
+        )
         table = section_fragment.find("table", class_="wikitable")
+        logger.warning(
+            "Constructors section parser '%s': first wikitable found=%s.",
+            self._parser._section_label,
+            table is not None,
+        )
         if table is not None:
             try:
                 rows = self._html_table_parser.parse_table(table)
                 headers = rows[0].headers if rows else []
+                logger.warning(
+                    "Constructors section parser '%s': first table headers=%s.",
+                    self._parser._section_label,
+                    headers,
+                )
                 row_maps = [
                     {
                         header: cell.get_text(" ", strip=True)
@@ -98,10 +135,28 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
                 ]
                 self._table_parser.parse({"headers": headers, "rows": row_maps})
             except RuntimeError:
+                logger.warning(
+                    "Constructors section parser '%s': lightweight table pre-parse failed.",
+                    self._parser._section_label,
+                )
                 pass
         try:
             return self._parser.parse(section_fragment)
         except RuntimeError:
+            logger.warning(
+                "Constructors section parser '%s': full section parse failed, trying table-only fallback.",
+                self._parser._section_label,
+            )
+            if table is not None:
+                table_only_fragment = BeautifulSoup(str(table), "html.parser")
+                try:
+                    return self._parser.parse(table_only_fragment)
+                except RuntimeError:
+                    logger.warning(
+                        "Constructors section parser '%s': table-only fallback failed.",
+                        self._parser._section_label,
+                    )
+                    pass
             logger.warning(
                 "Skipping constructors section '%s': matching table not found.",
                 self._parser._section_label,
