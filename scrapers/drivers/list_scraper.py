@@ -13,6 +13,7 @@ from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
@@ -64,6 +65,61 @@ class DriversListTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+    @staticmethod
+    def build_schema() -> TableSchemaDSL:
+        return TableSchemaDSL(
+            columns=build_columns(
+                build_name_status_fragment(
+                    header=DRIVER_NAME_HEADER,
+                    output_key="driver",
+                    column_type=DriverNameStatusColumn(),
+                ),
+                [column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn())],
+                [
+                    column(
+                        DRIVER_SEASONS_COMPETED_HEADER,
+                        "seasons_competed",
+                        SeasonsColumn(),
+                    ),
+                ],
+                [
+                    column(
+                        DRIVER_CHAMPIONSHIPS_HEADER,
+                        "drivers_championships",
+                        TextColumn(),  # zparsujemy ręcznie w fetch()
+                    ),
+                ],
+                build_metric_columns(
+                    [
+                        metric_column(
+                            DRIVER_RACE_ENTRIES_HEADER,
+                            "race_entries",
+                            "races_entered",
+                        ),
+                        metric_column(
+                            DRIVER_RACE_STARTS_HEADER,
+                            "race_starts",
+                            "races_started",
+                        ),
+                        metric_column(
+                            DRIVER_POLE_POSITIONS_HEADER,
+                            "pole_positions",
+                            "poles",
+                        ),
+                        metric_column(DRIVER_RACE_WINS_HEADER, "race_wins", "wins"),
+                        metric_column(DRIVER_PODIUMS_HEADER, "podiums", "podiums"),
+                        metric_column(
+                            DRIVER_FASTEST_LAPS_HEADER,
+                            "fastest_laps",
+                            "fastest_laps",
+                        ),
+                        metric_column(DRIVER_POINTS_HEADER, "points", "points"),
+                    ],
+                    column_overrides={"points": TextColumn()},
+                ),
+            ),
+        )
+
 
 class DriversListSectionParser(SectionParser):
     def __init__(self) -> None:
@@ -112,62 +168,11 @@ class F1DriversListScraper(SeedListTableScraper):
 
     options_profile = "seed_strict"
 
-    schema_columns = build_columns(
-        build_name_status_fragment(
-            header=DRIVER_NAME_HEADER,
-            output_key="driver",
-            column_type=DriverNameStatusColumn(),
-        ),
-        [column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn())],
-        [
-            column(
-                DRIVER_SEASONS_COMPETED_HEADER,
-                "seasons_competed",
-                SeasonsColumn(),
-            ),
-        ],
-        [
-            column(
-                DRIVER_CHAMPIONSHIPS_HEADER,
-                "drivers_championships",
-                TextColumn(),  # zparsujemy ręcznie w fetch()
-            ),
-        ],
-        build_metric_columns(
-            [
-                metric_column(
-                    DRIVER_RACE_ENTRIES_HEADER,
-                    "race_entries",
-                    "races_entered",
-                ),
-                metric_column(
-                    DRIVER_RACE_STARTS_HEADER,
-                    "race_starts",
-                    "races_started",
-                ),
-                metric_column(
-                    DRIVER_POLE_POSITIONS_HEADER,
-                    "pole_positions",
-                    "poles",
-                ),
-                metric_column(DRIVER_RACE_WINS_HEADER, "race_wins", "wins"),
-                metric_column(DRIVER_PODIUMS_HEADER, "podiums", "podiums"),
-                metric_column(
-                    DRIVER_FASTEST_LAPS_HEADER,
-                    "fastest_laps",
-                    "fastest_laps",
-                ),
-                metric_column(DRIVER_POINTS_HEADER, "points", "points"),
-            ],
-            column_overrides={"points": TextColumn()},
-        ),
-    )
-
     CONFIG = build_scraper_config(
         url=DRIVERS_LIST.base_url,
         section_id=DRIVERS_LIST.section_id,
         expected_headers=DRIVERS_LIST_HEADERS,
-        columns=schema_columns,
+        schema=DriversListTableParser.build_schema(),
         record_factory=RECORD_FACTORIES.builders("driver"),
     )
 

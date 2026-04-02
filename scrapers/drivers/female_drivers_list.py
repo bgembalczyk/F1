@@ -50,6 +50,23 @@ class FemaleDriversTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+    @staticmethod
+    def build_schema() -> TableSchemaDSL:
+        return TableSchemaDSL(
+            columns=[
+                column(FEMALE_DRIVERS_INDEX_HEADER, "_skip", SkipColumn()),
+                column(FEMALE_DRIVER_NAME_HEADER, "driver", UrlColumn()),
+                column(FEMALE_DRIVER_SEASONS_HEADER, "seasons", SeasonsColumn()),
+                column(FEMALE_DRIVER_TEAMS_HEADER, "teams", LinksListColumn()),
+                column(
+                    FEMALE_DRIVER_ENTRIES_STARTS_HEADER,
+                    "entries_starts",
+                    EntriesStartsColumn(),
+                ),
+                column(FEMALE_DRIVER_POINTS_HEADER, "points", PointsColumn()),
+            ],
+        )
+
 
 class OfficialDriversSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
@@ -95,24 +112,11 @@ class FemaleDriversListScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_female_Formula_One_drivers
     """
 
-    schema_columns = [
-        column(FEMALE_DRIVERS_INDEX_HEADER, "_skip", SkipColumn()),
-        column(FEMALE_DRIVER_NAME_HEADER, "driver", UrlColumn()),
-        column(FEMALE_DRIVER_SEASONS_HEADER, "seasons", SeasonsColumn()),
-        column(FEMALE_DRIVER_TEAMS_HEADER, "teams", LinksListColumn()),
-        column(
-            FEMALE_DRIVER_ENTRIES_STARTS_HEADER,
-            "entries_starts",
-            EntriesStartsColumn(),
-        ),
-        column(FEMALE_DRIVER_POINTS_HEADER, "points", PointsColumn()),
-    ]
-
     CONFIG = build_scraper_config(
         url=FEMALE_DRIVERS_LIST.base_url,
         section_id=FEMALE_DRIVERS_SECTION_ID,
         expected_headers=FEMALE_DRIVERS_HEADERS,
-        schema=TableSchemaDSL(columns=schema_columns),
+        schema=FemaleDriversTableParser.build_schema(),
         record_factory=RECORD_FACTORIES.builders("special_driver"),
     )
 

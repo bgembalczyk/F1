@@ -12,6 +12,7 @@ from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
@@ -43,6 +44,29 @@ class SeasonsTableParser(WikiTableBaseParser):
             for header in headers
             if header in self._column_mapping
         }
+
+    @staticmethod
+    def build_schema() -> TableSchemaDSL:
+        return TableSchemaDSL(
+            columns=build_columns(
+                column("Season", "season", UrlColumn()),
+                column("Races", "races", IntColumn()),
+                column("Countries", "countries", IntColumn()),
+                column("First", "first", UrlColumn()),
+                column("Last", "last", UrlColumn()),
+                column(
+                    "Drivers' Champion (team)",
+                    "drivers_champion_team",
+                    LinksListColumn(),
+                ),
+                column(
+                    "Constructors' Champion",
+                    "constructors_champion",
+                    LinksListColumn(),
+                ),
+                column("Winners", "winners", IntColumn()),
+            ),
+        )
 
 
 class SeasonsSectionParser(SectionParser):
@@ -86,17 +110,6 @@ class SeasonsListScraper(SeedListTableScraper):
     (główna tabela World Championship seasons)
     """
 
-    schema_columns = build_columns(
-        column("Season", "season", UrlColumn()),
-        column("Races", "races", IntColumn()),
-        column("Countries", "countries", IntColumn()),
-        column("First", "first", UrlColumn()),
-        column("Last", "last", UrlColumn()),
-        column("Drivers' Champion (team)", "drivers_champion_team", LinksListColumn()),
-        column("Constructors' Champion", "constructors_champion", LinksListColumn()),
-        column("Winners", "winners", IntColumn()),
-    )
-
     CONFIG = build_scraper_config(
         url=SEASONS_LIST.base_url,
         # jeśli id sekcji się kiedyś zmieni - poprawiasz tylko to
@@ -106,7 +119,7 @@ class SeasonsListScraper(SeedListTableScraper):
             "Season",
             "Races",
         ],
-        columns=schema_columns,
+        schema=SeasonsTableParser.build_schema(),
         record_factory=RECORD_FACTORIES.builders("season_summary"),
     )
 

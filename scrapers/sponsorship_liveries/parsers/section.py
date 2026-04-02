@@ -25,70 +25,27 @@ from scrapers.sponsorship_liveries.parsers.splitters.broader_scope import (
 from scrapers.sponsorship_liveries.parsers.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
+from scrapers.wiki.parsers.elements.table import TableParser
 
 if TYPE_CHECKING:
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
-class SponsorshipSectionParser:
-    def __init__(
-        self,
-        *,
-        url: str,
-        include_urls: bool,
-        normalize_empty_values: bool,
-        splitter: SponsorshipRecordSplitter,
-        classifier: Optional["ParenClassifier"] = None,
-    ):
-        self._url = url
-        self._include_urls = include_urls
-        self._normalize_empty_values = normalize_empty_values
-        self._splitter = splitter
-        self._classifier = classifier
-
-    def _build_pipeline(
-        self,
-        *,
-        team_name: str | None = None,
-        table_headers: list[str] | None = None,
-    ) -> TablePipeline:
-        def _seasons_col() -> SponsorshipSeasonsColumn:
-            return SponsorshipSeasonsColumn(
-                team_name=team_name,
-                classifier=self._classifier,
-                table_headers=table_headers,
-            )
-
-        schema_columns = self._schema_columns(_seasons_col)
-        config = ScraperConfig(
-            url=self._url,
-            schema=TableSchemaDSL(columns=schema_columns),
-            record_factory=RECORD_FACTORIES.mapping(),
+class SponsorshipTableParser(TableParser):
+    @staticmethod
+    def build_schema(seasons_col_factory: Any) -> TableSchemaDSL:
+        return TableSchemaDSL(
+            columns=[
+                *SponsorshipTableParser._season_column_specs(seasons_col_factory),
+                *SponsorshipTableParser._driver_column_specs(),
+                *SponsorshipTableParser._colour_column_specs(),
+                *SponsorshipTableParser._sponsor_column_specs(),
+                *SponsorshipTableParser._text_column_specs(),
+            ],
         )
-        return TablePipeline(
-            config=config,
-            include_urls=self._include_urls,
-            normalize_empty_values=self._normalize_empty_values,
-        )
-
-    def _schema_columns(self, seasons_col_factory: Any) -> list[Any]:
-        return [
-            *self._season_column_specs(seasons_col_factory),
-            *self._driver_column_specs(),
-            *self._colour_column_specs(),
-            *self._sponsor_column_specs(),
-            *self._text_column_specs(),
-        ]
-
-    # ------------------------------------------------------------------
-    # column-spec helpers for _build_pipeline
-    # ------------------------------------------------------------------
 
     @staticmethod
-    def _season_column_specs(
-        seasons_col_factory: Any,
-    ) -> list[Any]:
-        """Return column specs for the season/year header variants."""
+    def _season_column_specs(seasons_col_factory: Any) -> list[Any]:
         return [
             column("Year", "season", seasons_col_factory()),
             column("Years", "season", seasons_col_factory()),
@@ -193,6 +150,47 @@ class SponsorshipSectionParser:
                 TextColumn(),
             ),
         ]
+
+
+class SponsorshipSectionParser:
+    def __init__(
+        self,
+        *,
+        url: str,
+        include_urls: bool,
+        normalize_empty_values: bool,
+        splitter: SponsorshipRecordSplitter,
+        classifier: Optional["ParenClassifier"] = None,
+    ):
+        self._url = url
+        self._include_urls = include_urls
+        self._normalize_empty_values = normalize_empty_values
+        self._splitter = splitter
+        self._classifier = classifier
+
+    def _build_pipeline(
+        self,
+        *,
+        team_name: str | None = None,
+        table_headers: list[str] | None = None,
+    ) -> TablePipeline:
+        def _seasons_col() -> SponsorshipSeasonsColumn:
+            return SponsorshipSeasonsColumn(
+                team_name=team_name,
+                classifier=self._classifier,
+                table_headers=table_headers,
+            )
+
+        config = ScraperConfig(
+            url=self._url,
+            schema=SponsorshipTableParser.build_schema(_seasons_col),
+            record_factory=RECORD_FACTORIES.mapping(),
+        )
+        return TablePipeline(
+            config=config,
+            include_urls=self._include_urls,
+            normalize_empty_values=self._normalize_empty_values,
+        )
 
     def parse_section_table(
         self,
