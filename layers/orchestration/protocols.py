@@ -4,6 +4,10 @@ from pathlib import Path
 from typing import Protocol
 from typing import runtime_checkable
 
+from layers.orchestration.contracts import LayerExecutionRequestDTO
+from layers.orchestration.contracts import LayerExecutionResultDTO
+from layers.orchestration.contracts import LayerZeroMergeRequestDTO
+from layers.orchestration.contracts import LayerZeroMergeResultDTO
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
@@ -26,9 +30,16 @@ class LayerZeroRunConfigFactoryProtocol(Protocol):
 
 @runtime_checkable
 class LayerExecutorProtocol(Protocol):
-    def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None: ...
+    def run(
+        self,
+        request: LayerExecutionRequestDTO | RunConfig,
+        base_wiki_dir: Path | None = None,
+    ) -> LayerExecutionResultDTO: ...
 
 
 @runtime_checkable
 class LayerZeroMergeServiceProtocol(Protocol):
-    def merge(self, base_wiki_dir: Path) -> None: ...
+    def merge(
+        self,
+        request: LayerZeroMergeRequestDTO | Path,
+    ) -> LayerZeroMergeResultDTO: ...

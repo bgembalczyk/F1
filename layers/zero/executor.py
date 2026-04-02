@@ -2,6 +2,9 @@ from collections.abc import Callable
 from pathlib import Path
 from uuid import uuid4
 
+from layers.orchestration.contracts import LayerExecutionRequestDTO
+from layers.orchestration.contracts import LayerExecutionResultDTO
+from layers.orchestration.contracts import LayerZeroMergeRequestDTO
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry.entries import ListJobRegistryEntry
@@ -37,7 +40,14 @@ class LayerZeroExecutor:
         self._year_provider = year_provider
         self._logger = get_logger(self.__class__.__name__)
 
-    def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
+    def run(
+        self,
+        request: LayerExecutionRequestDTO | RunConfig,
+        base_wiki_dir: Path | None = None,
+    ) -> LayerExecutionResultDTO:
+        request_dto = self._coerce_run_request(request, base_wiki_dir)
+        request_dto.validate()
+        self._logger.info("layer0 run request: %s", request_dto.short())
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
         run_id = str(uuid4())
@@ -49,27 +59,42 @@ class LayerZeroExecutor:
                 domain=job.output_category,
                 source_name=job.list_scraper_cls.__name__,
             )
-            self._logger.info("layer0 job started", extra=context)
+            self._logger.info("layer0 job started %s", request_dto.short(), extra=context)
 
             local_run_config = self._build_local_run_config(
-                run_config=run_config,
+                run_config=request_dto.run_config,
                 job=job,
                 config_factories=config_factories,
             )
             l0_raw_json_path = self._run_single_job(
-                run_config=run_config,
+                run_config=request_dto.run_config,
                 local_run_config=local_run_config,
                 job=job,
             )
             self._maybe_mirror_constructors(
-                base_wiki_dir=base_wiki_dir,
+                base_wiki_dir=request_dto.base_wiki_dir,
                 job=job,
                 l0_raw_json_path=l0_raw_json_path,
             )
 
             self._logger.info("layer0 job finished", extra=context)
 
-        self._finalize_merge(base_wiki_dir)
+        self._finalize_merge(request_dto.base_wiki_dir)
+        result = LayerExecutionResultDTO(processed_jobs=len(self._list_job_registry))
+        self._logger.info("layer0 run finished: %s", result.short())
+        return result
+
+    def _coerce_run_request(
+        self,
+        request: LayerExecutionRequestDTO | RunConfig,
+        base_wiki_dir: Path | None,
+    ) -> LayerExecutionRequestDTO:
+        if isinstance(request, LayerExecutionRequestDTO):
+            return request
+        if base_wiki_dir is None:
+            msg = "base_wiki_dir is required for compatibility run_config calls"
+            raise TypeError(msg)
+        return LayerExecutionRequestDTO(run_config=request, base_wiki_dir=base_wiki_dir)
 
     def _resolve_config_factory(self) -> dict[str, object]:
         return self._run_config_factory_map_builder()
@@ -128,4 +153,4 @@ class LayerZeroExecutor:
         )
 
     def _finalize_merge(self, base_wiki_dir: Path) -> None:
-        self._merge_service.merge(base_wiki_dir)
+        self._merge_service.merge(LayerZeroMergeRequestDTO(base_wiki_dir=base_wiki_dir))
