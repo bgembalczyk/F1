@@ -13,7 +13,7 @@ from scrapers.constructors.constants import CONSTRUCTOR_RACES_STARTED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
 from scrapers.constructors.constants import FORMER_CONSTRUCTORS_EXPECTED_HEADERS
-from scrapers.constructors.sections.list_section import ConstructorsListSectionParser
+from scrapers.constructors.sections.list_section import FormerConstructorsListSectionParser
 
 
 class FormerConstructorsListScraper(BaseConstructorListScraper):
@@ -59,7 +59,7 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
     )
 
     section_label = "Former constructors"
-    section_parser_class = ConstructorsListSectionParser
+    section_parser_class = FormerConstructorsListSectionParser
 
 
 if __name__ == "__main__":

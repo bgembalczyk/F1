@@ -1,4 +1,4 @@
-"""Base scraper and shared factory for Indianapolis 500 only lists."""
+"""Base mixin and shared factory for Indianapolis 500 only lists."""
 
 from __future__ import annotations
 
@@ -18,11 +18,20 @@ class IndianapolisOnlyListConfig:
     record_type: str | None = None
 
 
+class IndianapolisOnlyMixin:
+    """Shared configuration mixin for Indianapolis 500 only list scrapers."""
+
+    section_id = "Indianapolis_500_only"
+    domain_name: str | None = None
+    record_type: str | None = None
+    CONFIG: IndianapolisOnlyListConfig | None = None
+
+
 def build_indianapolis_only_list_scraper(
     *,
     class_name: str,
     config: IndianapolisOnlyListConfig,
-) -> type[IndianapolisOnlyListScraper]:
+) -> type[F1ListScraper]:
     """Build a configured Indianapolis-only list scraper class.
 
     Domain modules should only provide the source URL and output field names,
@@ -46,10 +55,5 @@ def build_indianapolis_only_list_scraper(
     )
 
 
-class IndianapolisOnlyListScraper(F1ListScraper):
-    """Base class for Indianapolis 500 only list scrapers."""
-
-    section_id = "Indianapolis_500_only"
-    domain_name: str | None = None
-    record_type: str | None = None
-    CONFIG: IndianapolisOnlyListConfig | None = None
+class IndianapolisOnlyListScraper(IndianapolisOnlyMixin, F1ListScraper):
+    """Backward-compatible Indianapolis-only list scraper base class."""
