@@ -23,6 +23,14 @@ Aby ograniczać duplikację między dokumentami, w innych plikach utrzymujemy ty
 - [MODULE_BOUNDARIES (reguły zależności i antyduplikacja)](MODULE_BOUNDARIES.md)
 - [TYPING_GUARDRAILS](TYPING_GUARDRAILS.md)
 
+
+## README modułów (quick orientation)
+
+- [layers/zero README](../layers/zero/README.md)
+- [layers/one README](../layers/one/README.md)
+- [scrapers/base README](../scrapers/base/README.md)
+- [infrastructure/http_client README](../infrastructure/http_client/README.md)
+
 ## UML i dokumentacja pomocnicza
 
 - [Index dokumentacji UML](INDEX_DOKUMENTACJI_UML.md)
