@@ -17,6 +17,71 @@ from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
 from scrapers.engines.columns.nested_text import NestedTextColumn
 from scrapers.engines.columns.nested_unit_list import NestedUnitListColumn
+from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
+from scrapers.wiki.parsers.sections.section import SectionParser
+from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+
+
+class EngineRegulationTableParser(WikiTableBaseParser):
+    table_type = "engine_regulation_progression"
+    missing_columns_policy = "ignore"
+    extra_columns_policy = "ignore"
+
+    _column_mapping = {
+        "Years": "seasons",
+        "Operating principle": "operating_principle",
+        "Maximum displacement - Naturally aspirated": "maximum_displacement",
+        "Maximum displacement - Forced induction": "maximum_displacement",
+        "Configuration": "configuration",
+        "RPM limit": "rpm_limit",
+        "Fuel flow limit (Qmax)": "fuel_flow_limit",
+        "Fuel composition - Alcohol": "fuel_composition",
+        "Fuel composition - Petrol": "fuel_composition",
+    }
+
+    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
+        required_headers = {"Years", "Operating principle", "Configuration"}
+        return required_headers.issubset(set(headers))
+
+    def map_columns(self, headers: list[str]) -> dict[str, str]:
+        return {
+            header: self._column_mapping[header]
+            for header in headers
+            if header in self._column_mapping
+        }
+
+
+class EngineRegulationSubSectionParser(SubSectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._table_parser = EngineRegulationTableParser()
+
+    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super().parse_group(elements, context=context)
+        self._apply_engine_regulation_table_parser(parsed)
+        return parsed
+
+    def _apply_engine_regulation_table_parser(self, payload: dict[str, Any]) -> None:
+        for section in payload.get("sub_sub_sections", []):
+            self._apply_for_elements(section.get("elements", []))
+            self._apply_engine_regulation_table_parser(section)
+
+    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            parsed = self._table_parser.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
+
+
+class HistorySectionParser(SectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.child_parser = EngineRegulationSubSectionParser()
 
 
 class EngineRegulationScraper(BaseEngineTableScraper):
@@ -61,6 +126,12 @@ class EngineRegulationScraper(BaseEngineTableScraper):
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=RECORD_FACTORIES.mapping(),
     )
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        parser = HistorySectionParser()
+        self.section_parser = parser
+        self.body_content_parser.content_text_parser.section_parser = parser
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """Parse multi-level header table with rowspan support."""
