@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -18,6 +19,8 @@ from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
+
+logger = logging.getLogger(__name__)
 
 
 class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
@@ -97,13 +100,25 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
         self._fallback_parser = SubSubSubSectionParser()
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        logger.debug(
+            "[non_champ_subsection] parse_group start: elements=%d",
+            len(elements),
+        )
         parsed = super().parse_group(elements, context=context)
         if not self._has_table_payload(parsed):
+            logger.debug(
+                "[non_champ_subsection] no table payload in nested structure -> using fallback parser",
+            )
             parsed["elements"] = self._fallback_parser.parse_group(
                 elements,
                 context=context,
             )["elements"]
+        else:
+            logger.debug(
+                "[non_champ_subsection] table payload found in nested structure",
+            )
         self._apply_non_championship_table_parser(parsed)
+        logger.debug("[non_champ_subsection] parse_group end")
         return parsed
 
     def _has_table_payload(self, payload: Any) -> bool:
@@ -145,13 +160,23 @@ class RedFlaggedRacesSectionParser(SectionParser):
         self._fallback_parser = SubSubSubSectionParser()
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        logger.debug(
+            "[red_flag_section] parse_group start: elements=%d",
+            len(elements),
+        )
         parsed = super().parse_group(elements, context=context)
         if not self._has_table_payload(parsed):
+            logger.debug(
+                "[red_flag_section] no table payload in nested structure -> using fallback parser",
+            )
             parsed["elements"] = self._fallback_parser.parse_group(
                 elements,
                 context=context,
             )["elements"]
+        else:
+            logger.debug("[red_flag_section] table payload found in nested structure")
         self._apply_world_championship_table_parser(parsed)
+        logger.debug("[red_flag_section] parse_group end")
         return parsed
 
     def _has_table_payload(self, payload: Any) -> bool:
@@ -225,6 +250,10 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
         self.body_content_parser.content_text_parser.section_parser = parser
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        logger.info(
+            "[red_flag_scraper] start parse soup export_scope=%s",
+            self._export_scope,
+        )
         parsed = self._parse_document_structure(soup)
         world_records = self._collect_table_rows(
             parsed,
@@ -235,14 +264,29 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
             table_type="red_flagged_non_championship_races",
         )
         if self._export_scope == "world_championship":
+            logger.info(
+                "[red_flag_scraper] parsed world_championship records=%d",
+                len(world_records),
+            )
             return world_records
         if self._export_scope == "non_championship":
+            logger.info(
+                "[red_flag_scraper] parsed non_championship records=%d",
+                len(non_championship_records),
+            )
             return non_championship_records
+        logger.info(
+            "[red_flag_scraper] parsed all records world=%d non_championship=%d total=%d",
+            len(world_records),
+            len(non_championship_records),
+            len(world_records) + len(non_championship_records),
+        )
         return [*world_records, *non_championship_records]
 
     def _parse_document_structure(self, soup: BeautifulSoup) -> dict[str, Any]:
         body_content = BodyContentParser.find_body_content(soup)
         if body_content:
+            logger.debug("[red_flag_scraper] using bodyContent parser branch")
             return self.body_content_parser.parse(body_content)
 
         content_text = soup.find(
@@ -255,12 +299,16 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
             ),
         )
         if not isinstance(content_text, Tag):
+            logger.debug(
+                "[red_flag_scraper] content-text branch not found, trying mw-content-ltr",
+            )
             content_text = soup.find(
                 "div",
                 class_=lambda x: x
                 and "mw-content-ltr" in (x if isinstance(x, list) else x.split()),
             )
         if isinstance(content_text, Tag):
+            logger.debug("[red_flag_scraper] using content_text parser branch")
             return {
                 "content_text": self.body_content_parser.content_text_parser.parse(
                     content_text,
@@ -269,9 +317,16 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
 
         fallback_root = soup.find("body")
         if not isinstance(fallback_root, Tag):
+            logger.debug(
+                "[red_flag_scraper] body fallback missing, trying html fallback",
+            )
             fallback_root = soup.find("html")
         if not isinstance(fallback_root, Tag):
+            logger.warning(
+                "[red_flag_scraper] could not find body/html fallback root; returning empty sections",
+            )
             return {"content_text": {"sections": []}}
+        logger.debug("[red_flag_scraper] using body/html fallback parser branch")
         return {
             "content_text": self.body_content_parser.content_text_parser.parse(
                 fallback_root,
@@ -284,6 +339,10 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
         *,
         table_type: str,
     ) -> list[dict[str, Any]]:
+        logger.debug(
+            "[red_flag_scraper] collecting rows table_type=%s",
+            table_type,
+        )
         rows: list[dict[str, Any]] = []
 
         def visit(node: Any) -> None:
@@ -301,4 +360,9 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
                     visit(item)
 
         visit(payload)
+        logger.debug(
+            "[red_flag_scraper] collected rows table_type=%s count=%d",
+            table_type,
+            len(rows),
+        )
         return rows
