@@ -16,6 +16,7 @@ from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
 
 
 class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
@@ -92,9 +93,15 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = NonChampionshipsRacesTableParser()
+        self._fallback_element_parser = SubSubSubSectionParser()
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
+        if not parsed.get("sub_sub_sections"):
+            parsed["elements"] = self._fallback_element_parser.parse_group(
+                elements,
+                context=context,
+            ).get("elements", [])
         self._apply_non_championship_table_parser(parsed)
         return parsed
 
