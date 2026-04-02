@@ -84,12 +84,12 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
         self._html_table_parser = HtmlTableParser()
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        logger.debug(
+        logger.warning(
             "Constructors section parser '%s': start parse.",
             self._parser._section_label,
         )
         table = section_fragment.find("table", class_="wikitable")
-        logger.debug(
+        logger.warning(
             "Constructors section parser '%s': first wikitable found=%s.",
             self._parser._section_label,
             table is not None,
@@ -98,7 +98,7 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
             try:
                 rows = self._html_table_parser.parse_table(table)
                 headers = rows[0].headers if rows else []
-                logger.debug(
+                logger.warning(
                     "Constructors section parser '%s': first table headers=%s.",
                     self._parser._section_label,
                     headers,
@@ -112,7 +112,7 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
                 ]
                 self._table_parser.parse({"headers": headers, "rows": row_maps})
             except RuntimeError:
-                logger.debug(
+                logger.warning(
                     "Constructors section parser '%s': lightweight table pre-parse failed.",
                     self._parser._section_label,
                 )
@@ -120,7 +120,7 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
         try:
             return self._parser.parse(section_fragment)
         except RuntimeError:
-            logger.debug(
+            logger.warning(
                 "Constructors section parser '%s': full section parse failed, trying table-only fallback.",
                 self._parser._section_label,
             )
@@ -129,7 +129,7 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
                 try:
                     return self._parser.parse(table_only_fragment)
                 except RuntimeError:
-                    logger.debug(
+                    logger.warning(
                         "Constructors section parser '%s': table-only fallback failed.",
                         self._parser._section_label,
                     )
