@@ -6,6 +6,8 @@ import urllib.request
 from typing import Any
 
 from infrastructure.gemini.constants import API_URL_TEMPLATE
+from scrapers.base.logging import build_execution_context
+from scrapers.base.logging import get_logger
 
 
 class GeminiTransport:
@@ -15,6 +17,7 @@ class GeminiTransport:
         self._api_key = api_key
         self._timeout = timeout
         self._ssl_context = ssl_context
+        self._logger = get_logger(self.__class__.__name__)
 
     def generate(
         self,
@@ -41,8 +44,11 @@ class GeminiTransport:
             method="POST",
         )
 
-        print(f"[GeminiClient] >>> Zapytanie do API (model={model}):")
-        print(prompt)
+        context = build_execution_context(
+            domain="gemini",
+            source_name=model,
+        )
+        self._logger.debug("Gemini request payload prompt=%s", prompt, extra=context)
 
         try:
             req_url = req.full_url
@@ -59,12 +65,20 @@ class GeminiTransport:
                 raw = resp.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
             error_body = exc.read().decode("utf-8", errors="replace")
+            self._logger.error(
+                "Gemini API HTTP error code=%s reason=%s body=%s",
+                exc.code,
+                exc.reason,
+                error_body,
+                extra=context,
+            )
             msg = (
                 f"Gemini API zwróciło HTTP {exc.code}: {exc.reason}\n"
                 f"Response body:\n{error_body}"
             )
             raise RuntimeError(msg) from exc
         except urllib.error.URLError as exc:
+            self._logger.error("Gemini API connection error: %s", exc, extra=context)
             msg = (
                 "Nie udało się połączyć z Gemini API. "
                 "Sprawdź połączenie sieciowe, SSL/certyfikaty oraz\n"
@@ -73,11 +87,11 @@ class GeminiTransport:
             )
             raise RuntimeError(msg) from exc
 
-        print("[GeminiClient] <<< Odpowiedź surowa od API:")
-        print(raw)
+        self._logger.debug("Gemini response raw=%s", raw, extra=context)
 
         try:
             return json.loads(raw)
         except json.JSONDecodeError as exc:
+            self._logger.error("Gemini response JSON decode failed", extra=context)
             msg = f"Gemini API zwróciło niepoprawny JSON:\n{raw}"
             raise RuntimeError(msg) from exc

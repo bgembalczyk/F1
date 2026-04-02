@@ -15,6 +15,7 @@ from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
+from scrapers.base.logging import configure_logging
 from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
 from scrapers.base.run_profiles import LegacyCliProfileName
@@ -600,6 +601,7 @@ def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
     definition = MODULE_DEFINITIONS[module_path]
     _, args = _parse_legacy_args(argv, spec.profile)
     run_config = build_run_config(base_config=spec.base_config, args=args)
+    configure_logging(verbose=run_config.verbose, trace=run_config.trace)
     if definition.deprecated:
         warnings.warn(
             _deprecated_runtime_message(
@@ -669,12 +671,23 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
         choices=("layer0", "layer1", "full"),
         default="layer0",
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        default=False,
+    )
+    parser.add_argument(
+        "--trace",
+        action="store_true",
+        default=False,
+    )
     return parser
 
 
 def run_wiki_cli(argv: list[str] | None = None) -> None:
     parser = _build_wiki_parser()
     args = parser.parse_args(argv)
+    configure_logging(verbose=args.verbose, trace=args.trace)
 
     app_module = importlib.import_module("layers.application")
     create_default_wiki_pipeline_application = (

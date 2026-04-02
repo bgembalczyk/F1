@@ -8,6 +8,7 @@ import inspect
 import warnings
 from typing import TYPE_CHECKING
 
+from scrapers.base.logging import configure_logging
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 from scrapers.base.run_profiles import get_cli_profile_defaults
@@ -50,6 +51,18 @@ def build_standard_parser(
         default=error_report_default,
         help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        default=False,
+        help="Ustaw poziom logów na INFO.",
+    )
+    parser.add_argument(
+        "--trace",
+        action="store_true",
+        default=False,
+        help="Ustaw poziom logów na DEBUG (nadpisuje --verbose).",
+    )
     return parser
 
 
@@ -59,6 +72,8 @@ def build_run_config(*, base_config: RunConfig, args: argparse.Namespace) -> Run
         base_config,
         quality_report=args.quality_report,
         error_report=args.error_report,
+        verbose=args.verbose,
+        trace=args.trace,
     )
 
 
@@ -79,6 +94,7 @@ def run_cli_entrypoint(
     )
     args = parser.parse_args(argv)
     run_config = build_run_config(base_config=base_config, args=args)
+    configure_logging(verbose=run_config.verbose, trace=run_config.trace)
 
     if deprecation_message:
         warnings.warn(

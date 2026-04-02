@@ -1,5 +1,6 @@
 from collections.abc import Callable
 from pathlib import Path
+from uuid import uuid4
 
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
@@ -7,6 +8,8 @@ from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.types import SeedName
 from layers.zero.helpers import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
+from scrapers.base.logging import build_execution_context
+from scrapers.base.logging import get_logger
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 
@@ -33,13 +36,21 @@ class LayerZeroExecutor:
         self._merge_service = merge_service
         self._job_hook = job_hook
         self._year_provider = year_provider
+        self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
+        run_id = str(uuid4())
 
         for job in self._list_job_registry:
-            print(f"[list] running  {job.list_scraper_cls.__name__}")
+            context = build_execution_context(
+                run_id=run_id,
+                seed_name=job.seed_name,
+                domain=job.output_category,
+                source_name=job.list_scraper_cls.__name__,
+            )
+            self._logger.info("layer0 job started", extra=context)
 
             local_run_config = self._build_local_run_config(
                 run_config=run_config,
@@ -57,7 +68,7 @@ class LayerZeroExecutor:
                 l0_raw_json_path=l0_raw_json_path,
             )
 
-            print(f"[list] finished {job.list_scraper_cls.__name__}")
+            self._logger.info("layer0 job finished", extra=context)
 
         self._finalize_merge(base_wiki_dir)
 
