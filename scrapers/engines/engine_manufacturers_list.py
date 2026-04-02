@@ -15,6 +15,7 @@ from scrapers.base.table.builders import entity_column
 from scrapers.base.table.columns.types import FloatColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.engines.columns.manufacturer_name_status import (
     EngineManufacturerNameStatusColumn,
@@ -50,6 +51,28 @@ class EngineManufacturersTableParser(WikiTableBaseParser):
             for header in headers
             if header in self._column_mapping
         }
+
+    @staticmethod
+    def build_schema() -> TableSchemaDSL:
+        return TableSchemaDSL(
+            columns=build_columns(
+                build_name_status_fragment(
+                    header="Manufacturer",
+                    output_key="manufacturer",
+                    column_type=EngineManufacturerNameStatusColumn(),
+                ),
+                build_entity_metadata_columns(
+                    [
+                        entity_column(
+                            "Engines built in",
+                            "engines_built_in",
+                            LinksListColumn(),
+                        ),
+                    ],
+                ),
+                build_base_stats_columns(column_overrides={"points": FloatColumn()}),
+            ),
+        )
 
 
 class IndianapolisOnlyListParser(ListParser):
@@ -128,24 +151,6 @@ class EngineManufacturersListScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers#Engine_manufacturers
     """
 
-    schema_columns = build_columns(
-        build_name_status_fragment(
-            header="Manufacturer",
-            output_key="manufacturer",
-            column_type=EngineManufacturerNameStatusColumn(),
-        ),
-        build_entity_metadata_columns(
-            [
-                entity_column(
-                    "Engines built in",
-                    "engines_built_in",
-                    LinksListColumn(),
-                ),
-            ],
-        ),
-        build_base_stats_columns(column_overrides={"points": FloatColumn()}),
-    )
-
     CONFIG = build_scraper_config(
         url=ENGINES_LIST.base_url,
         # sekcja z główną tabelą
@@ -162,7 +167,7 @@ class EngineManufacturersListScraper(F1TableScraper):
         ],
         record_factory=RECORD_FACTORIES.builders("engine_manufacturer"),
         model_class=EngineManufacturer,
-        columns=schema_columns,
+        schema=EngineManufacturersTableParser.build_schema(),
     )
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:

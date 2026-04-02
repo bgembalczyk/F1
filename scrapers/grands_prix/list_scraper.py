@@ -12,6 +12,7 @@ from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
@@ -42,6 +43,26 @@ class GrandsPrixTableParser(WikiTableBaseParser):
             for header in headers
             if header in self._column_mapping
         }
+
+    @staticmethod
+    def build_schema() -> TableSchemaDSL:
+        return TableSchemaDSL(
+            columns=build_columns(
+                build_name_status_fragment(
+                    header="Race title",
+                    output_key="race_title",
+                    column_type=RaceTitleStatusColumn(),
+                ),
+                build_entity_metadata_columns(
+                    [
+                        entity_column("Country", "country", LinksListColumn()),
+                        entity_column("Years held", "years_held", SeasonsColumn()),
+                        entity_column("Circuits", "circuits", IntColumn()),
+                        entity_column("Total", "total", IntColumn()),
+                    ],
+                ),
+            ),
+        )
 
 
 class ByRaceTitleSubSectionParser(SubSectionParser):
@@ -87,22 +108,6 @@ class GrandsPrixListScraper(SeedListTableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix
     """
 
-    schema_columns = build_columns(
-        build_name_status_fragment(
-            header="Race title",
-            output_key="race_title",
-            column_type=RaceTitleStatusColumn(),
-        ),
-        build_entity_metadata_columns(
-            [
-                entity_column("Country", "country", LinksListColumn()),
-                entity_column("Years held", "years_held", SeasonsColumn()),
-                entity_column("Circuits", "circuits", IntColumn()),
-                entity_column("Total", "total", IntColumn()),
-            ],
-        ),
-    )
-
     CONFIG = build_scraper_config(
         url=GRANDS_PRIX_LIST.base_url,
         section_id=GRANDS_PRIX_LIST.section_id,
@@ -111,7 +116,7 @@ class GrandsPrixListScraper(SeedListTableScraper):
             "Race title",
             "Years held",
         ],
-        columns=schema_columns,
+        schema=GrandsPrixTableParser.build_schema(),
         record_factory=RECORD_FACTORIES.builders("grands_prix"),
     )
 

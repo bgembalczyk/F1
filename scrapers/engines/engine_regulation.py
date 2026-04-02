@@ -50,6 +50,38 @@ class EngineRegulationTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+    @staticmethod
+    def build_schema() -> TableSchemaDSL:
+        return TableSchemaDSL(
+            columns=[
+                column("Years", "seasons", SeasonsColumn()),
+                column("Operating principle", "operating_principle", TextColumn()),
+                column(
+                    "Maximum displacement - Naturally aspirated",
+                    "maximum_displacement",
+                    NestedUnitListColumn("naturally_aspirated"),
+                ),
+                column(
+                    "Maximum displacement - Forced induction",
+                    "maximum_displacement",
+                    NestedUnitListColumn("forced_induction"),
+                ),
+                column("Configuration", "configuration", EngineConfigurationColumn()),
+                column("RPM limit", "rpm_limit", UnitColumn(unit="rpm")),
+                column("Fuel flow limit (Qmax)", "fuel_flow_limit", TextColumn()),
+                column(
+                    "Fuel composition - Alcohol",
+                    "fuel_composition",
+                    NestedTextColumn("alcohol"),
+                ),
+                column(
+                    "Fuel composition - Petrol",
+                    "fuel_composition",
+                    NestedTextColumn("petrol"),
+                ),
+            ],
+        )
+
 
 class EngineRegulationSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
@@ -90,40 +122,12 @@ class EngineRegulationScraper(BaseEngineTableScraper):
     https://en.wikipedia.org/wiki/Formula_One_engines#Engine_regulation_progression_by_era
     """
 
-    schema_columns = [
-        column("Years", "seasons", SeasonsColumn()),
-        column("Operating principle", "operating_principle", TextColumn()),
-        column(
-            "Maximum displacement - Naturally aspirated",
-            "maximum_displacement",
-            NestedUnitListColumn("naturally_aspirated"),
-        ),
-        column(
-            "Maximum displacement - Forced induction",
-            "maximum_displacement",
-            NestedUnitListColumn("forced_induction"),
-        ),
-        column("Configuration", "configuration", EngineConfigurationColumn()),
-        column("RPM limit", "rpm_limit", UnitColumn(unit="rpm")),
-        column("Fuel flow limit (Qmax)", "fuel_flow_limit", TextColumn()),
-        column(
-            "Fuel composition - Alcohol",
-            "fuel_composition",
-            NestedTextColumn("alcohol"),
-        ),
-        column(
-            "Fuel composition - Petrol",
-            "fuel_composition",
-            NestedTextColumn("petrol"),
-        ),
-    ]
-
     CONFIG = build_scraper_config(
         url=ENGINE_PROGRESS.url(),
         section_id=ENGINE_PROGRESS.section_id,
         expected_headers=["Years", "Operating principle"],
         model_class=EngineRegulation,
-        schema=TableSchemaDSL(columns=schema_columns),
+        schema=EngineRegulationTableParser.build_schema(),
         record_factory=RECORD_FACTORIES.mapping(),
     )
 

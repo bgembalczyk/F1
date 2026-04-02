@@ -41,6 +41,21 @@ class TyreManufacturersBySeasonTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+    @staticmethod
+    def build_schema() -> TableSchemaDSL:
+        return TableSchemaDSL(
+            columns=[
+                column("Season", "seasons", SeasonsColumn()),
+                column("Manufacturer 1", "manufacturers", AppendLinksColumn()),
+                column("Manufacturer 2", "manufacturers", AppendLinksColumn()),
+                column("Manufacturer 3", "manufacturers", AppendLinksColumn()),
+                column("Manufacturer 4", "manufacturers", AppendLinksColumn()),
+                column("Manufacturer 5", "manufacturers", AppendLinksColumn()),
+                column("Manufacturer 6", "manufacturers", AppendLinksColumn()),
+                column("Wins", "wins", SkipColumn()),
+            ],
+        )
+
 
 class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
@@ -81,17 +96,6 @@ class TyreManufacturersScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/Formula_One_tyres#Tyre_manufacturers_by_season
     """
 
-    schema_columns = [
-        column("Season", "seasons", SeasonsColumn()),
-        column("Manufacturer 1", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 2", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 3", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 4", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 5", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 6", "manufacturers", AppendLinksColumn()),
-        column("Wins", "wins", SkipColumn()),
-    ]
-
     CONFIG = build_scraper_config(
         url=TYRES.url(),
         section_id=TYRES.section_id,
@@ -100,7 +104,7 @@ class TyreManufacturersScraper(F1TableScraper):
             "Manufacturer 1",
             "Wins",
         ],
-        schema=TableSchemaDSL(columns=schema_columns),
+        schema=TyreManufacturersBySeasonTableParser.build_schema(),
         record_factory=RECORD_FACTORIES.mapping(),
     )
 
