@@ -2,6 +2,10 @@ from collections.abc import Callable
 from pathlib import Path
 from uuid import uuid4
 
+from layers.one.workers import LayerOneRunnerSelectionInput
+from layers.one.workers import LayerOneRunnerSelector
+from layers.one.workers import LayerOneSeedExecutionInput
+from layers.one.workers import LayerOneSeedRunner
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.logging import build_execution_context
@@ -27,6 +31,8 @@ class LayerOneExecutor:
         runners: Callable[[], dict[str, LayerOneRunnerProtocol]] | None = None,
         runner_map_builder: Callable[[], dict[str, LayerOneRunnerProtocol]] | None = None,
         engine_manufacturers_runner: Callable[[Path, bool], None] | None = None,
+        runner_selector: LayerOneRunnerSelector | None = None,
+        seed_runner: LayerOneSeedRunner | None = None,
     ) -> None:
         self._seed_registry = seed_registry
         self._validate_seed_registry = (
@@ -44,6 +50,8 @@ class LayerOneExecutor:
             )
             raise ValueError(msg)
         self._engine_manufacturers_runner = engine_manufacturers_runner
+        self._runner_selector = runner_selector or LayerOneRunnerSelector()
+        self._seed_runner = seed_runner or LayerOneSeedRunner()
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
@@ -58,15 +66,33 @@ class LayerOneExecutor:
                 domain=seed.output_category,
                 source_name=seed.complete_scraper_cls.__name__,
             )
-            self._logger.info("layer1 seed started", extra=context)
+            try:
+                self._logger.info("layer1 seed started", extra=context)
+                runner = self._runner_selector.select(
+                    LayerOneRunnerSelectionInput(
+                        seed_name=seed.seed_name,
+                        runner_map=runner_map,
+                    ),
+                )
+                if runner is None:
+                    self._logger.warning(
+                        "layer1 seed skipped: unsupported",
+                        extra=context,
+                    )
+                    continue
 
-            runner = runner_map.get(seed.seed_name)
-            if runner is None:
-                self._logger.warning("layer1 seed skipped: unsupported", extra=context)
-                continue
-
-            runner.run(seed, run_config, base_wiki_dir)
-            self._logger.info("layer1 seed finished", extra=context)
+                self._seed_runner.run(
+                    LayerOneSeedExecutionInput(
+                        seed=seed,
+                        run_config=run_config,
+                        base_wiki_dir=base_wiki_dir,
+                        runner=runner,
+                    ),
+                )
+                self._logger.info("layer1 seed finished", extra=context)
+            except Exception:
+                self._logger.exception("layer1 seed failed", extra=context)
+                raise
 
         self._engine_manufacturers_runner(
             base_wiki_dir=base_wiki_dir,
