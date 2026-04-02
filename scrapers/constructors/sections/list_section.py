@@ -12,9 +12,20 @@ from scrapers.base.table.parser import HtmlTableParser
 from scrapers.constructors.indianapolis_only_constructors_list import IndianapolisOnlySubSectionParser
 from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_FASTEST_LAPS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_PODIUMS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_POLES_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_POINTS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_RACES_ENTERED_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_RACES_STARTED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser as WikiSectionParser
 
@@ -35,6 +46,18 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
             CONSTRUCTOR_ENGINE_HEADER.lower(),
             CONSTRUCTOR_LICENSED_IN_HEADER.lower(),
             CONSTRUCTOR_BASED_IN_HEADER.lower(),
+            CONSTRUCTOR_SEASONS_HEADER.lower(),
+            CONSTRUCTOR_RACES_ENTERED_HEADER.lower(),
+            CONSTRUCTOR_RACES_STARTED_HEADER.lower(),
+            CONSTRUCTOR_TOTAL_ENTRIES_HEADER.lower(),
+            CONSTRUCTOR_WINS_HEADER.lower(),
+            CONSTRUCTOR_POINTS_HEADER.lower(),
+            CONSTRUCTOR_POLES_HEADER.lower(),
+            CONSTRUCTOR_FASTEST_LAPS_HEADER.lower(),
+            CONSTRUCTOR_PODIUMS_HEADER.lower(),
+            CONSTRUCTOR_WCC_HEADER.lower(),
+            CONSTRUCTOR_WDC_HEADER.lower(),
+            CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER.lower(),
         }
         normalized = {header.strip().lower() for header in headers}
         return expected.issubset(normalized)

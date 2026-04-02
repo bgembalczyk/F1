@@ -140,8 +140,18 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
           <h2 id="Constructors_for_the_2026_season">Constructors for the 2026 season</h2>
         </div>
         <table class="wikitable sortable">
-          <tr><th>Constructor</th><th>Engine</th><th>Licensed in</th><th>Based in</th></tr>
-          <tr><td>Ferrari</td><td>Ferrari</td><td>Italy</td><td>Italy</td></tr>
+          <tr>
+            <th>Constructor</th><th>Engine</th><th>Licensed in</th><th>Based in</th>
+            <th>Seasons</th><th>Races entered</th><th>Races started</th><th>Drivers</th>
+            <th>Total entries</th><th>Wins</th><th>Points</th><th>Poles</th><th>FL</th>
+            <th>Podiums</th><th>WCC</th><th>WDC</th><th>Antecedent teams</th>
+          </tr>
+          <tr>
+            <td>Ferrari</td><td>Ferrari</td><td>Italy</td><td>Italy</td>
+            <td>1950-present</td><td>1</td><td>1</td><td>2</td>
+            <td>2</td><td>1</td><td>25</td><td>1</td><td>1</td>
+            <td>2</td><td>16</td><td>15</td><td>—</td>
+          </tr>
         </table>
         """,
         "html.parser",
