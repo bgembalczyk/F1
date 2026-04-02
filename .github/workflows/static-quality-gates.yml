@@ -99,6 +99,11 @@ jobs:
           echo "has_changes=true" >> "$GITHUB_OUTPUT"
           echo "changed_files=$CHANGED_FILES" >> "$GITHUB_OUTPUT"
 
+      - name: Terminology consistency gate
+        shell: bash
+        run: |
+          python scripts/ci/check_terminology_consistency.py             --base-sha "${{ steps.changed-py.outputs.base_sha }}"             --head-sha "${{ github.sha }}"
+
       - name: Scan changed Python files for duplicate fragments (jscpd)
         if: steps.changed-py.outputs.has_changes == 'true'
         run: |

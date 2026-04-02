@@ -17,6 +17,7 @@ REQUIRED_CHECKBOXES: tuple[str, ...] = (
     "Granice modułów",
     "Duplikacja",
     "Architecture impact",
+    "Spójność terminologiczna",
 )
 
 ARCHITECTURE_IMPACT_FIELDS: tuple[str, ...] = (
