@@ -16,17 +16,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.349,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Australian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.78,
-        "grands_prix_held": 11,
-        "turns": 16,
         "seasons": [
           {
             "year": 1985,
@@ -72,7 +61,18 @@
             "year": 1995,
             "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 11,
+        "last_length_used_km": 3.78,
+        "turns": 16,
+        "last_length_used_mi": 2.349,
+        "grands_prix": [
+          {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -93,23 +93,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1958,
+            "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 7.618,
+        "turns": 18,
         "last_length_used_mi": 4.734,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "Moroccan Grand Prix",
             "url": "https://en.wikipedia.org/wiki/Moroccan_Grand_Prix"
           }
         ],
-        "last_length_used_km": 7.618,
-        "grands_prix_held": 1,
-        "turns": 18,
-        "seasons": [
-          {
-            "year": 1958,
-            "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -130,17 +130,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.0,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "British Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.828,
-        "grands_prix_held": 5,
-        "turns": 12,
         "seasons": [
           {
             "year": 1955,
@@ -162,7 +151,18 @@
             "year": 1962,
             "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 5,
+        "last_length_used_km": 4.828,
+        "turns": 12,
+        "last_length_used_mi": 3.0,
+        "grands_prix": [
+          {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -171,6 +171,7 @@
       "text": "Albert Park Circuit",
       "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -183,17 +184,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.28,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Australian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.278,
-        "grands_prix_held": 29,
-        "turns": 16,
         "seasons": [
           {
             "year": 1996,
@@ -311,7 +301,18 @@
             "year": 2026,
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 29,
+        "last_length_used_km": 5.278,
+        "turns": 16,
+        "last_length_used_mi": 3.28,
+        "grands_prix": [
+          {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -320,6 +321,7 @@
       "text": "Algarve International Circuit",
       "url": "https://en.wikipedia.org/wiki/Algarve_International_Circuit"
     },
+    "background": "CEFBC1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -332,17 +334,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.891,
-        "circuit_status": "future",
-        "grands_prix": [
-          {
-            "text": "Portuguese Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.653,
-        "grands_prix_held": 2,
-        "turns": 15,
         "seasons": [
           {
             "year": 2020,
@@ -352,7 +343,18 @@
             "year": 2021,
             "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 2,
+        "last_length_used_km": 4.653,
+        "turns": 15,
+        "last_length_used_mi": 2.891,
+        "grands_prix": [
+          {
+            "text": "Portuguese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
+          }
+        ],
+        "circuit_status": "future"
       }
     }
   },
@@ -373,17 +375,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.709,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Portuguese Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.36,
-        "grands_prix_held": 13,
-        "turns": 13,
         "seasons": [
           {
             "year": 1984,
@@ -437,7 +428,18 @@
             "year": 1996,
             "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 13,
+        "last_length_used_km": 4.36,
+        "turns": 13,
+        "last_length_used_mi": 2.709,
+        "grands_prix": [
+          {
+            "text": "Portuguese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -446,6 +448,7 @@
       "text": "Autódromo Hermanos Rodríguez",
       "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -458,21 +461,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.674,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Mexican Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Mexican_Grand_Prix"
-          },
-          {
-            "text": "Mexico City Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Mexico_City_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.304,
-        "grands_prix_held": 25,
-        "turns": 17,
         "seasons": [
           {
             "year": 1963,
@@ -574,7 +562,22 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 25,
+        "last_length_used_km": 4.304,
+        "turns": 17,
+        "last_length_used_mi": 2.674,
+        "grands_prix": [
+          {
+            "text": "Mexican Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Mexican_Grand_Prix"
+          },
+          {
+            "text": "Mexico City Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Mexico_City_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -595,17 +598,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.126,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Brazilian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.031,
-        "grands_prix_held": 10,
-        "turns": 11,
         "seasons": [
           {
             "year": 1978,
@@ -647,7 +639,18 @@
             "year": 1989,
             "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 10,
+        "last_length_used_km": 5.031,
+        "turns": 11,
+        "last_length_used_mi": 3.126,
+        "grands_prix": [
+          {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -668,23 +671,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 2020,
+            "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 5.245,
+        "turns": 15,
         "last_length_used_mi": 3.259,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "Tuscan Grand Prix",
             "url": "https://en.wikipedia.org/wiki/Tuscan_Grand_Prix"
           }
         ],
-        "last_length_used_km": 5.245,
-        "grands_prix_held": 1,
-        "turns": 15,
-        "seasons": [
-          {
-            "year": 2020,
-            "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -705,25 +708,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.05,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Italian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
-          },
-          {
-            "text": "San Marino Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
-          },
-          {
-            "text": "Emilia Romagna Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Emilia_Romagna_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.909,
-        "grands_prix_held": 32,
-        "turns": 19,
         "seasons": [
           {
             "year": 1980,
@@ -853,7 +837,26 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 32,
+        "last_length_used_km": 4.909,
+        "turns": 19,
+        "last_length_used_mi": 3.05,
+        "grands_prix": [
+          {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          {
+            "text": "Emilia Romagna Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Emilia_Romagna_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -862,6 +865,7 @@
       "text": "Autodromo José Carlos Pace",
       "url": "https://en.wikipedia.org/wiki/Interlagos_circuit"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -874,21 +878,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.677,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Brazilian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
-          },
-          {
-            "text": "São Paulo Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.309,
-        "grands_prix_held": 42,
-        "turns": 15,
         "seasons": [
           {
             "year": 1973,
@@ -1058,7 +1047,22 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 42,
+        "last_length_used_km": 4.309,
+        "turns": 15,
+        "last_length_used_mi": 2.677,
+        "grands_prix": [
+          {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          {
+            "text": "São Paulo Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -1067,6 +1071,7 @@
       "text": "Autodromo Nazionale di Monza",
       "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1079,17 +1084,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.6,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Italian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.793,
-        "grands_prix_held": 75,
-        "turns": 11,
         "seasons": [
           {
             "year": 1950,
@@ -1391,7 +1385,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 75,
+        "last_length_used_km": 5.793,
+        "turns": 11,
+        "last_length_used_mi": 3.6,
+        "grands_prix": [
+          {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -1412,17 +1417,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.646,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Argentine Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.259,
-        "grands_prix_held": 20,
-        "turns": 18,
         "seasons": [
           {
             "year": 1953,
@@ -1504,7 +1498,18 @@
             "year": 1998,
             "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 20,
+        "last_length_used_km": 4.259,
+        "turns": 18,
+        "last_length_used_mi": 2.646,
+        "grands_prix": [
+          {
+            "text": "Argentine Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -1525,23 +1530,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1959,
+            "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 8.3,
+        "turns": 4,
         "last_length_used_mi": 5.157,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "German Grand Prix",
             "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
           }
         ],
-        "last_length_used_km": 8.3,
-        "grands_prix_held": 1,
-        "turns": 4,
-        "seasons": [
-          {
-            "year": 1959,
-            "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -1550,6 +1555,7 @@
       "text": "Bahrain International Circuit",
       "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1562,21 +1568,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.363,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Bahrain Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Bahrain_Grand_Prix"
-          },
-          {
-            "text": "Sakhir Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Sakhir_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.412,
-        "grands_prix_held": 22,
-        "turns": 15,
         "seasons": [
           {
             "year": 2004,
@@ -1662,7 +1653,22 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 22,
+        "last_length_used_km": 5.412,
+        "turns": 15,
+        "last_length_used_mi": 3.363,
+        "grands_prix": [
+          {
+            "text": "Bahrain Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Bahrain_Grand_Prix"
+          },
+          {
+            "text": "Sakhir Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Sakhir_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -1671,6 +1677,7 @@
       "text": "Baku City Circuit",
       "url": "https://en.wikipedia.org/wiki/Baku_City_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -1683,21 +1690,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.73,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "European Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
-          },
-          {
-            "text": "Azerbaijan Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Azerbaijan_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 6.003,
-        "grands_prix_held": 9,
-        "turns": 20,
         "seasons": [
           {
             "year": 2016,
@@ -1735,7 +1727,22 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 9,
+        "last_length_used_km": 6.003,
+        "turns": 20,
+        "last_length_used_mi": 3.73,
+        "grands_prix": [
+          {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          },
+          {
+            "text": "Azerbaijan Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Azerbaijan_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -1756,21 +1763,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.613,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "British Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
-          },
-          {
-            "text": "European Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.206,
-        "grands_prix_held": 14,
-        "turns": 11,
         "seasons": [
           {
             "year": 1964,
@@ -1828,7 +1820,22 @@
             "year": 1986,
             "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 14,
+        "last_length_used_km": 4.206,
+        "turns": 11,
+        "last_length_used_mi": 2.613,
+        "grands_prix": [
+          {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -1849,17 +1856,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.194,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Indian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Indian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.141,
-        "grands_prix_held": 3,
-        "turns": 16,
         "seasons": [
           {
             "year": 2011,
@@ -1873,7 +1869,18 @@
             "year": 2013,
             "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 3,
+        "last_length_used_km": 5.141,
+        "turns": 16,
+        "last_length_used_mi": 3.194,
+        "grands_prix": [
+          {
+            "text": "Indian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Indian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -1894,23 +1901,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1967,
+            "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 4.43,
+        "turns": 8,
         "last_length_used_mi": 2.753,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "French Grand Prix",
             "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
           }
         ],
-        "last_length_used_km": 4.43,
-        "grands_prix_held": 1,
-        "turns": 8,
-        "seasons": [
-          {
-            "year": 1967,
-            "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -1931,17 +1938,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.268,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Caesars Palace Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Caesars_Palace_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.65,
-        "grands_prix_held": 2,
-        "turns": 14,
         "seasons": [
           {
             "year": 1981,
@@ -1951,7 +1947,18 @@
             "year": 1982,
             "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 2,
+        "last_length_used_km": 3.65,
+        "turns": 14,
+        "last_length_used_mi": 2.268,
+        "grands_prix": [
+          {
+            "text": "Caesars Palace Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Caesars_Palace_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -1972,17 +1979,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 5.005,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "French Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 8.055,
-        "grands_prix_held": 4,
-        "turns": 38,
         "seasons": [
           {
             "year": 1965,
@@ -2000,7 +1996,18 @@
             "year": 1972,
             "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 4,
+        "last_length_used_km": 8.055,
+        "turns": 38,
+        "last_length_used_mi": 5.005,
+        "grands_prix": [
+          {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -2021,17 +2028,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 4.479,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Swiss Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Swiss_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 7.208,
-        "grands_prix_held": 5,
-        "turns": 14,
         "seasons": [
           {
             "year": 1950,
@@ -2053,7 +2049,18 @@
             "year": 1954,
             "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 5,
+        "last_length_used_km": 7.208,
+        "turns": 14,
+        "last_length_used_mi": 4.479,
+        "grands_prix": [
+          {
+            "text": "Swiss Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Swiss_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -2062,6 +2069,7 @@
       "text": "Circuit de Barcelona-Catalunya",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -2074,17 +2082,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.894,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Spanish Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.657,
-        "grands_prix_held": 35,
-        "turns": 14,
         "seasons": [
           {
             "year": 1991,
@@ -2226,7 +2223,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 35,
+        "last_length_used_km": 4.657,
+        "turns": 14,
+        "last_length_used_mi": 2.894,
+        "grands_prix": [
+          {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -2235,6 +2243,7 @@
       "text": "Circuit de Monaco",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -2247,17 +2256,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.074,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Monaco Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.337,
-        "grands_prix_held": 71,
-        "turns": 19,
         "seasons": [
           {
             "year": 1950,
@@ -2543,7 +2541,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 71,
+        "last_length_used_km": 3.337,
+        "turns": 19,
+        "last_length_used_mi": 2.074,
+        "grands_prix": [
+          {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -2564,17 +2573,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.741,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "French Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.411,
-        "grands_prix_held": 18,
-        "turns": 16,
         "seasons": [
           {
             "year": 1991,
@@ -2648,7 +2646,18 @@
             "year": 2008,
             "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 18,
+        "last_length_used_km": 4.411,
+        "turns": 16,
+        "last_length_used_mi": 2.741,
+        "grands_prix": [
+          {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -2669,17 +2678,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.925,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Spanish Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 6.316,
-        "grands_prix_held": 2,
-        "turns": 6,
         "seasons": [
           {
             "year": 1951,
@@ -2689,7 +2687,18 @@
             "year": 1954,
             "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 2,
+        "last_length_used_km": 6.316,
+        "turns": 6,
+        "last_length_used_mi": 3.925,
+        "grands_prix": [
+          {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -2710,17 +2719,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 5.159,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "French Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 8.302,
-        "grands_prix_held": 11,
-        "turns": 6,
         "seasons": [
           {
             "year": 1950,
@@ -2766,7 +2764,18 @@
             "year": 1966,
             "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 11,
+        "last_length_used_km": 8.302,
+        "turns": 6,
+        "last_length_used_mi": 5.159,
+        "grands_prix": [
+          {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -2775,6 +2784,7 @@
       "text": "Circuit de Spa-Francorchamps",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -2787,17 +2797,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 4.352,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Belgian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 7.004,
-        "grands_prix_held": 58,
-        "turns": 20,
         "seasons": [
           {
             "year": 1950,
@@ -3031,7 +3030,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 58,
+        "last_length_used_km": 7.004,
+        "turns": 20,
+        "last_length_used_mi": 4.352,
+        "grands_prix": [
+          {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -3052,21 +3062,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.415,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "French Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
-          },
-          {
-            "text": "Swiss Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Swiss_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.886,
-        "grands_prix_held": 6,
-        "turns": 12,
         "seasons": [
           {
             "year": 1974,
@@ -3092,7 +3087,22 @@
             "year": 1984,
             "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 6,
+        "last_length_used_km": 3.886,
+        "turns": 12,
+        "last_length_used_mi": 2.415,
+        "grands_prix": [
+          {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          {
+            "text": "Swiss Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Swiss_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -3101,6 +3111,7 @@
       "text": "Circuit Gilles-Villeneuve",
       "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -3113,17 +3124,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.71,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Canadian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.361,
-        "grands_prix_held": 44,
-        "turns": 14,
         "seasons": [
           {
             "year": 1978,
@@ -3301,7 +3301,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 44,
+        "last_length_used_km": 4.361,
+        "turns": 14,
+        "last_length_used_mi": 2.71,
+        "grands_prix": [
+          {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -3322,17 +3333,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.65,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Canadian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.265,
-        "grands_prix_held": 2,
-        "turns": 15,
         "seasons": [
           {
             "year": 1968,
@@ -3342,7 +3342,18 @@
             "year": 1970,
             "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 2,
+        "last_length_used_km": 4.265,
+        "turns": 15,
+        "last_length_used_mi": 2.65,
+        "grands_prix": [
+          {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -3351,6 +3362,7 @@
       "text": "Circuit of the Americas",
       "url": "https://en.wikipedia.org/wiki/Circuit_of_the_Americas"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -3363,17 +3375,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.426,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "United States Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.513,
-        "grands_prix_held": 13,
-        "turns": 20,
         "seasons": [
           {
             "year": 2012,
@@ -3427,7 +3428,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 13,
+        "last_length_used_km": 5.513,
+        "turns": 20,
+        "last_length_used_mi": 3.426,
+        "grands_prix": [
+          {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -3448,17 +3460,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.63,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "French Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.842,
-        "grands_prix_held": 18,
-        "turns": 15,
         "seasons": [
           {
             "year": 1971,
@@ -3532,7 +3533,18 @@
             "year": 2022,
             "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 18,
+        "last_length_used_km": 5.842,
+        "turns": 15,
+        "last_length_used_mi": 3.63,
+        "grands_prix": [
+          {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -3541,6 +3553,7 @@
       "text": "Circuit Zandvoort",
       "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3553,17 +3566,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.646,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Dutch Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.259,
-        "grands_prix_held": 35,
-        "turns": 14,
         "seasons": [
           {
             "year": 1952,
@@ -3705,7 +3707,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 35,
+        "last_length_used_km": 4.259,
+        "turns": 14,
+        "last_length_used_mi": 2.646,
+        "grands_prix": [
+          {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -3726,17 +3739,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.648,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Belgian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.262,
-        "grands_prix_held": 10,
-        "turns": 10,
         "seasons": [
           {
             "year": 1973,
@@ -3778,7 +3780,18 @@
             "year": 1984,
             "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 10,
+        "last_length_used_km": 4.262,
+        "turns": 10,
+        "last_length_used_mi": 2.648,
+        "grands_prix": [
+          {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -3799,17 +3812,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 4.831,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Portuguese Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 7.775,
-        "grands_prix_held": 2,
-        "turns": 15,
         "seasons": [
           {
             "year": 1958,
@@ -3819,7 +3821,18 @@
             "year": 1960,
             "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 2,
+        "last_length_used_km": 7.775,
+        "turns": 15,
+        "last_length_used_mi": 4.831,
+        "grands_prix": [
+          {
+            "text": "Portuguese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -3840,23 +3853,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1959,
+            "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 5.44,
+        "turns": 9,
         "last_length_used_mi": 3.38,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "Portuguese Grand Prix",
             "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
           }
         ],
-        "last_length_used_km": 5.44,
-        "grands_prix_held": 1,
-        "turns": 9,
-        "seasons": [
-          {
-            "year": 1959,
-            "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -3877,21 +3890,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.751,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Spanish Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
-          },
-          {
-            "text": "European Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.428,
-        "grands_prix_held": 7,
-        "turns": 13,
         "seasons": [
           {
             "year": 1986,
@@ -3921,7 +3919,22 @@
             "year": 1997,
             "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 7,
+        "last_length_used_km": 4.428,
+        "turns": 13,
+        "last_length_used_mi": 2.751,
+        "grands_prix": [
+          {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -3942,17 +3955,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.059,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Spanish Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.314,
-        "grands_prix_held": 9,
-        "turns": 12,
         "seasons": [
           {
             "year": 1968,
@@ -3990,7 +3992,18 @@
             "year": 1981,
             "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 9,
+        "last_length_used_km": 3.314,
+        "turns": 12,
+        "last_length_used_mi": 2.059,
+        "grands_prix": [
+          {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -4011,23 +4024,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1984,
+            "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 3.901,
+        "turns": 14,
         "last_length_used_mi": 2.424,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "Dallas Grand Prix",
             "url": "https://en.wikipedia.org/wiki/Dallas_Grand_Prix"
           }
         ],
-        "last_length_used_km": 3.901,
-        "grands_prix_held": 1,
-        "turns": 14,
-        "seasons": [
-          {
-            "year": 1984,
-            "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -4048,17 +4061,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.5,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Detroit Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Detroit_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.023,
-        "grands_prix_held": 7,
-        "turns": 20,
         "seasons": [
           {
             "year": 1982,
@@ -4088,7 +4090,18 @@
             "year": 1988,
             "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 7,
+        "last_length_used_km": 4.023,
+        "turns": 20,
+        "last_length_used_mi": 2.5,
+        "grands_prix": [
+          {
+            "text": "Detroit Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Detroit_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -4109,23 +4122,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1993,
+            "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 4.02,
+        "turns": 11,
         "last_length_used_mi": 2.498,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "European Grand Prix",
             "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
           }
         ],
-        "last_length_used_km": 4.02,
-        "grands_prix_held": 1,
-        "turns": 11,
-        "seasons": [
-          {
-            "year": 1993,
-            "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -4146,17 +4159,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.835,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Japanese Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.563,
-        "grands_prix_held": 4,
-        "turns": 16,
         "seasons": [
           {
             "year": 1976,
@@ -4174,7 +4176,18 @@
             "year": 2008,
             "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 4,
+        "last_length_used_km": 4.563,
+        "turns": 16,
+        "last_length_used_mi": 2.835,
+        "grands_prix": [
+          {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -4195,17 +4208,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.842,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "German Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.574,
-        "grands_prix_held": 37,
-        "turns": 16,
         "seasons": [
           {
             "year": 1970,
@@ -4355,7 +4357,18 @@
             "year": 2019,
             "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 37,
+        "last_length_used_km": 4.574,
+        "turns": 16,
+        "last_length_used_mi": 2.842,
+        "grands_prix": [
+          {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -4364,6 +4377,7 @@
       "text": "Hungaroring",
       "url": "https://en.wikipedia.org/wiki/Hungaroring"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4376,17 +4390,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.722,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Hungarian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.381,
-        "grands_prix_held": 40,
-        "turns": 14,
         "seasons": [
           {
             "year": 1986,
@@ -4548,7 +4551,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 40,
+        "last_length_used_km": 4.381,
+        "turns": 14,
+        "last_length_used_mi": 2.722,
+        "grands_prix": [
+          {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -4569,21 +4583,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.605,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Indianapolis 500",
-            "url": "https://en.wikipedia.org/wiki/Indianapolis_500"
-          },
-          {
-            "text": "United States Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.192,
-        "grands_prix_held": 19,
-        "turns": 13,
         "seasons": [
           {
             "year": 1950,
@@ -4661,7 +4660,22 @@
             "year": 2007,
             "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 19,
+        "last_length_used_km": 4.192,
+        "turns": 13,
+        "last_length_used_mi": 2.605,
+        "grands_prix": [
+          {
+            "text": "Indianapolis 500",
+            "url": "https://en.wikipedia.org/wiki/Indianapolis_500"
+          },
+          {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -4682,17 +4696,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.317,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Turkish Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Turkish_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.338,
-        "grands_prix_held": 9,
-        "turns": 14,
         "seasons": [
           {
             "year": 2005,
@@ -4730,7 +4733,18 @@
             "year": 2021,
             "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 9,
+        "last_length_used_km": 5.338,
+        "turns": 14,
+        "last_length_used_mi": 3.317,
+        "grands_prix": [
+          {
+            "text": "Turkish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Turkish_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -4739,6 +4753,7 @@
       "text": "Jeddah Corniche Circuit",
       "url": "https://en.wikipedia.org/wiki/Jeddah_Corniche_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4751,17 +4766,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.836,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Saudi Arabian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Saudi_Arabian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 6.174,
-        "grands_prix_held": 5,
-        "turns": 27,
         "seasons": [
           {
             "year": 2021,
@@ -4783,7 +4787,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 5,
+        "last_length_used_km": 6.174,
+        "turns": 27,
+        "last_length_used_mi": 3.836,
+        "grands_prix": [
+          {
+            "text": "Saudi Arabian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Saudi_Arabian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -4804,17 +4819,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.489,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Korean Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Korean_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.615,
-        "grands_prix_held": 4,
-        "turns": 18,
         "seasons": [
           {
             "year": 2010,
@@ -4832,7 +4836,18 @@
             "year": 2013,
             "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 4,
+        "last_length_used_km": 5.615,
+        "turns": 18,
+        "last_length_used_mi": 3.489,
+        "grands_prix": [
+          {
+            "text": "Korean Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Korean_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -4853,17 +4868,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.648,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "South African Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.261,
-        "grands_prix_held": 20,
-        "turns": 13,
         "seasons": [
           {
             "year": 1967,
@@ -4945,7 +4949,18 @@
             "year": 1993,
             "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 20,
+        "last_length_used_km": 4.261,
+        "turns": 13,
+        "last_length_used_mi": 2.648,
+        "grands_prix": [
+          {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -4954,6 +4969,7 @@
       "text": "Las Vegas Strip Circuit",
       "url": "https://en.wikipedia.org/wiki/Las_Vegas_Strip_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4966,17 +4982,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.853,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Las Vegas Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Las_Vegas_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 6.201,
-        "grands_prix_held": 3,
-        "turns": 17,
         "seasons": [
           {
             "year": 2023,
@@ -4990,7 +4995,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 3,
+        "last_length_used_km": 6.201,
+        "turns": 17,
+        "last_length_used_mi": 3.853,
+        "grands_prix": [
+          {
+            "text": "Las Vegas Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Las_Vegas_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -5011,17 +5027,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.035,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "United States Grand Prix West",
-            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix_West"
-          }
-        ],
-        "last_length_used_km": 3.275,
-        "grands_prix_held": 8,
-        "turns": 18,
         "seasons": [
           {
             "year": 1976,
@@ -5055,7 +5060,18 @@
             "year": 1983,
             "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 8,
+        "last_length_used_km": 3.275,
+        "turns": 18,
+        "last_length_used_mi": 2.035,
+        "grands_prix": [
+          {
+            "text": "United States Grand Prix West",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix_West"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -5064,6 +5080,7 @@
       "text": "Lusail International Circuit",
       "url": "https://en.wikipedia.org/wiki/Lusail_International_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5076,17 +5093,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.367,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Qatar Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Qatar_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.419,
-        "grands_prix_held": 4,
-        "turns": 16,
         "seasons": [
           {
             "year": 2021,
@@ -5104,7 +5110,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 4,
+        "last_length_used_km": 5.419,
+        "turns": 16,
+        "last_length_used_mi": 3.367,
+        "grands_prix": [
+          {
+            "text": "Qatar Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Qatar_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -5113,6 +5130,7 @@
       "text": "Madring",
       "url": "https://en.wikipedia.org/wiki/Madring"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -5125,18 +5143,18 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [],
+        "grands_prix_held": 0,
+        "last_length_used_km": 5.474,
+        "turns": 22,
         "last_length_used_mi": 3.401,
-        "circuit_status": "current",
         "grands_prix": [
           {
             "text": "Spanish Grand Prix",
             "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
           }
         ],
-        "last_length_used_km": 5.474,
-        "grands_prix_held": 0,
-        "turns": 22,
-        "seasons": []
+        "circuit_status": "current"
       }
     }
   },
@@ -5145,6 +5163,7 @@
       "text": "Marina Bay Street Circuit",
       "url": "https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -5157,17 +5176,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.07,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Singapore Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Singapore_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.94,
-        "grands_prix_held": 16,
-        "turns": 19,
         "seasons": [
           {
             "year": 2008,
@@ -5233,7 +5241,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 16,
+        "last_length_used_km": 4.94,
+        "turns": 19,
+        "last_length_used_mi": 3.07,
+        "grands_prix": [
+          {
+            "text": "Singapore Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Singapore_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -5242,6 +5261,7 @@
       "text": "Miami International Autodrome",
       "url": "https://en.wikipedia.org/wiki/Miami_International_Autodrome"
     },
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -5254,17 +5274,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.363,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Miami Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Miami_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.412,
-        "grands_prix_held": 4,
-        "turns": 19,
         "seasons": [
           {
             "year": 2022,
@@ -5282,7 +5291,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 4,
+        "last_length_used_km": 5.412,
+        "turns": 19,
+        "last_length_used_mi": 3.363,
+        "grands_prix": [
+          {
+            "text": "Miami Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Miami_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -5303,17 +5323,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.356,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Spanish Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.791,
-        "grands_prix_held": 4,
-        "turns": 18,
         "seasons": [
           {
             "year": 1969,
@@ -5331,7 +5340,18 @@
             "year": 1975,
             "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 4,
+        "last_length_used_km": 3.791,
+        "turns": 18,
+        "last_length_used_mi": 2.356,
+        "grands_prix": [
+          {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -5352,17 +5372,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.459,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Canadian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.957,
-        "grands_prix_held": 8,
-        "turns": 10,
         "seasons": [
           {
             "year": 1967,
@@ -5396,7 +5405,18 @@
             "year": 1977,
             "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 8,
+        "last_length_used_km": 3.957,
+        "turns": 10,
+        "last_length_used_mi": 2.459,
+        "grands_prix": [
+          {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -5417,17 +5437,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.314,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Belgian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.724,
-        "grands_prix_held": 2,
-        "turns": 7,
         "seasons": [
           {
             "year": 1972,
@@ -5437,7 +5446,18 @@
             "year": 1974,
             "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 2,
+        "last_length_used_km": 3.724,
+        "turns": 7,
+        "last_length_used_mi": 2.314,
+        "grands_prix": [
+          {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -5458,29 +5478,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.199,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "German Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
-          },
-          {
-            "text": "European Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
-          },
-          {
-            "text": "Luxembourg Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Luxembourg_Grand_Prix"
-          },
-          {
-            "text": "Eifel Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Eifel_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.148,
-        "grands_prix_held": 41,
-        "turns": 15,
         "seasons": [
           {
             "year": 1951,
@@ -5646,7 +5643,30 @@
             "year": 2020,
             "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 41,
+        "last_length_used_km": 5.148,
+        "turns": 15,
+        "last_length_used_mi": 3.199,
+        "grands_prix": [
+          {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          },
+          {
+            "text": "Luxembourg Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Luxembourg_Grand_Prix"
+          },
+          {
+            "text": "Eifel Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Eifel_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -5667,23 +5687,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1957,
+            "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 25.8,
+        "turns": 24,
         "last_length_used_mi": 16.031,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "Pescara Grand Prix",
             "url": "https://en.wikipedia.org/wiki/Pescara_Grand_Prix"
           }
         ],
-        "last_length_used_km": 25.8,
-        "grands_prix_held": 1,
-        "turns": 24,
-        "seasons": [
-          {
-            "year": 1957,
-            "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -5704,17 +5724,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.312,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "United States Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.72,
-        "grands_prix_held": 3,
-        "turns": 12,
         "seasons": [
           {
             "year": 1989,
@@ -5728,7 +5737,18 @@
             "year": 1991,
             "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 3,
+        "last_length_used_km": 3.72,
+        "turns": 12,
+        "last_length_used_mi": 2.312,
+        "grands_prix": [
+          {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -5749,17 +5769,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.436,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "South African Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.92,
-        "grands_prix_held": 3,
-        "turns": 8,
         "seasons": [
           {
             "year": 1962,
@@ -5773,7 +5782,18 @@
             "year": 1965,
             "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 3,
+        "last_length_used_km": 3.92,
+        "turns": 8,
+        "last_length_used_mi": 2.436,
+        "grands_prix": [
+          {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -5782,6 +5802,7 @@
       "text": "Red Bull Ring",
       "url": "https://en.wikipedia.org/wiki/Red_Bull_Ring"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5794,21 +5815,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.683,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Austrian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
-          },
-          {
-            "text": "Styrian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Styrian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.318,
-        "grands_prix_held": 39,
-        "turns": 10,
         "seasons": [
           {
             "year": 1970,
@@ -5958,7 +5964,22 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 39,
+        "last_length_used_km": 4.318,
+        "turns": 10,
+        "last_length_used_mi": 2.683,
+        "grands_prix": [
+          {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          {
+            "text": "Styrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Styrian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -5979,23 +6000,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1960,
+            "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 5.271,
+        "turns": 9,
         "last_length_used_mi": 3.275,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "United States Grand Prix",
             "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
           }
         ],
-        "last_length_used_km": 5.271,
-        "grands_prix_held": 1,
-        "turns": 9,
-        "seasons": [
-          {
-            "year": 1960,
-            "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -6016,17 +6037,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 4.065,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "French Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 6.542,
-        "grands_prix_held": 5,
-        "turns": 13,
         "seasons": [
           {
             "year": 1952,
@@ -6048,7 +6058,18 @@
             "year": 1968,
             "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 5,
+        "last_length_used_km": 6.542,
+        "turns": 13,
+        "last_length_used_mi": 4.065,
+        "grands_prix": [
+          {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -6069,17 +6090,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.505,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Swedish Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Swedish_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 4.031,
-        "grands_prix_held": 6,
-        "turns": 8,
         "seasons": [
           {
             "year": 1973,
@@ -6105,7 +6115,18 @@
             "year": 1978,
             "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 6,
+        "last_length_used_km": 4.031,
+        "turns": 8,
+        "last_length_used_mi": 2.505,
+        "grands_prix": [
+          {
+            "text": "Swedish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Swedish_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -6126,23 +6147,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1959,
+            "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 8.356,
+        "turns": 12,
         "last_length_used_mi": 5.192,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "United States Grand Prix",
             "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
           }
         ],
-        "last_length_used_km": 8.356,
-        "grands_prix_held": 1,
-        "turns": 12,
-        "seasons": [
-          {
-            "year": 1959,
-            "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   },
@@ -6163,17 +6184,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.444,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Malaysian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Malaysian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.543,
-        "grands_prix_held": 19,
-        "turns": 15,
         "seasons": [
           {
             "year": 1999,
@@ -6251,7 +6261,18 @@
             "year": 2017,
             "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 19,
+        "last_length_used_km": 5.543,
+        "turns": 15,
+        "last_length_used_mi": 3.444,
+        "grands_prix": [
+          {
+            "text": "Malaysian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Malaysian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -6260,6 +6281,7 @@
       "text": "Shanghai International Circuit",
       "url": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -6272,17 +6294,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.387,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Chinese Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.451,
-        "grands_prix_held": 18,
-        "turns": 16,
         "seasons": [
           {
             "year": 2004,
@@ -6356,7 +6367,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 18,
+        "last_length_used_km": 5.451,
+        "turns": 16,
+        "last_length_used_mi": 3.387,
+        "grands_prix": [
+          {
+            "text": "Chinese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -6365,6 +6387,7 @@
       "text": "Silverstone Circuit",
       "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -6377,21 +6400,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.66,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "British Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
-          },
-          {
-            "text": "70th Anniversary Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.891,
-        "grands_prix_held": 60,
-        "turns": 18,
         "seasons": [
           {
             "year": 1950,
@@ -6629,7 +6637,22 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 60,
+        "last_length_used_km": 5.891,
+        "turns": 18,
+        "last_length_used_mi": 3.66,
+        "grands_prix": [
+          {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          {
+            "text": "70th Anniversary Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -6650,17 +6673,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.634,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Russian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Russian_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.848,
-        "grands_prix_held": 8,
-        "turns": 15,
         "seasons": [
           {
             "year": 2014,
@@ -6694,7 +6706,18 @@
             "year": 2021,
             "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 8,
+        "last_length_used_km": 5.848,
+        "turns": 15,
+        "last_length_used_mi": 3.634,
+        "grands_prix": [
+          {
+            "text": "Russian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Russian_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -6703,6 +6726,7 @@
       "text": "Suzuka International Racing Course",
       "url": "https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Part clockwise and part anti-clockwise (figure eight)",
     "location": {
@@ -6715,17 +6739,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.608,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Japanese Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.807,
-        "grands_prix_held": 35,
-        "turns": 18,
         "seasons": [
           {
             "year": 1987,
@@ -6867,7 +6880,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 35,
+        "last_length_used_km": 5.807,
+        "turns": 18,
+        "last_length_used_mi": 3.608,
+        "grands_prix": [
+          {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -6888,17 +6912,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 2.301,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Pacific Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Pacific_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 3.703,
-        "grands_prix_held": 2,
-        "turns": 11,
         "seasons": [
           {
             "year": 1994,
@@ -6908,7 +6921,18 @@
             "year": 1995,
             "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 2,
+        "last_length_used_km": 3.703,
+        "turns": 11,
+        "last_length_used_mi": 2.301,
+        "grands_prix": [
+          {
+            "text": "Pacific Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Pacific_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -6929,17 +6953,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.367,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "European Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.419,
-        "grands_prix_held": 5,
-        "turns": 25,
         "seasons": [
           {
             "year": 2008,
@@ -6961,7 +6974,18 @@
             "year": 2012,
             "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 5,
+        "last_length_used_km": 5.419,
+        "turns": 25,
+        "last_length_used_mi": 3.367,
+        "grands_prix": [
+          {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -6982,17 +7006,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.374,
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "United States Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.43,
-        "grands_prix_held": 20,
-        "turns": 10,
         "seasons": [
           {
             "year": 1961,
@@ -7074,7 +7087,18 @@
             "year": 1980,
             "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 20,
+        "last_length_used_km": 5.43,
+        "turns": 10,
+        "last_length_used_mi": 3.374,
+        "grands_prix": [
+          {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          }
+        ],
+        "circuit_status": "former"
       }
     }
   },
@@ -7083,6 +7107,7 @@
       "text": "Yas Marina Circuit",
       "url": "https://en.wikipedia.org/wiki/Yas_Marina_Circuit"
     },
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -7095,17 +7120,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "last_length_used_mi": 3.281,
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Abu Dhabi Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Grand_Prix"
-          }
-        ],
-        "last_length_used_km": 5.281,
-        "grands_prix_held": 17,
-        "turns": 16,
         "seasons": [
           {
             "year": 2009,
@@ -7175,7 +7189,18 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "grands_prix_held": 17,
+        "last_length_used_km": 5.281,
+        "turns": 16,
+        "last_length_used_mi": 3.281,
+        "grands_prix": [
+          {
+            "text": "Abu Dhabi Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Grand_Prix"
+          }
+        ],
+        "circuit_status": "current"
       }
     }
   },
@@ -7196,23 +7221,23 @@
     },
     "racing_series": {
       "formula_one": {
+        "seasons": [
+          {
+            "year": 1964,
+            "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+          }
+        ],
+        "grands_prix_held": 1,
+        "last_length_used_km": 3.186,
+        "turns": 4,
         "last_length_used_mi": 1.98,
-        "circuit_status": "former",
         "grands_prix": [
           {
             "text": "Austrian Grand Prix",
             "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
           }
         ],
-        "last_length_used_km": 3.186,
-        "grands_prix_held": 1,
-        "turns": 4,
-        "seasons": [
-          {
-            "year": 1964,
-            "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-          }
-        ]
+        "circuit_status": "former"
       }
     }
   }

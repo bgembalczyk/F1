@@ -368,6 +368,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Thailand",
     "seasons_competed": [
       {
@@ -726,6 +727,7 @@
     },
     "is_active": true,
     "is_world_champion": true,
+    "background": "#F2CEE0",
     "nationality": "Spain",
     "seasons_competed": [
       {
@@ -1107,6 +1109,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United States",
     "seasons_competed": [
       {
@@ -1300,6 +1303,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Italy",
     "seasons_competed": [
       {
@@ -1550,6 +1554,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Italy",
     "seasons_competed": [
       {
@@ -2515,6 +2520,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -3909,6 +3915,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Brazil",
     "seasons_competed": [
       {
@@ -3965,6 +3972,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Finland",
     "seasons_competed": [
       {
@@ -4263,6 +4271,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Australia",
     "seasons_competed": [
       {
@@ -5280,6 +5289,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -6561,6 +6571,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -6658,6 +6669,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Argentina",
     "seasons_competed": [
       {
@@ -8918,6 +8930,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Argentina",
     "seasons_competed": [
       {
@@ -8993,6 +9006,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Italy",
     "seasons_competed": [
       {
@@ -9392,6 +9406,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Brazil",
     "seasons_competed": [
       {
@@ -10619,6 +10634,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "France",
     "seasons_competed": [
       {
@@ -12367,6 +12383,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "France",
     "seasons_competed": [
       {
@@ -12447,6 +12464,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Finland",
     "seasons_competed": [
       {
@@ -12632,6 +12650,7 @@
     },
     "is_active": true,
     "is_world_champion": true,
+    "background": "#F2CEE0",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -13147,6 +13166,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -13656,6 +13676,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -13715,6 +13736,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -13818,6 +13840,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United States",
     "seasons_competed": [
       {
@@ -14167,6 +14190,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Germany",
     "seasons_competed": [
       {
@@ -14249,6 +14273,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "New Zealand",
     "seasons_competed": [
       {
@@ -14316,6 +14341,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -15129,6 +15155,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Australia",
     "seasons_competed": [
       {
@@ -16668,6 +16695,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Austria",
     "seasons_competed": [
       {
@@ -16837,6 +16865,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "New Zealand",
     "seasons_competed": [
       {
@@ -16875,6 +16904,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Monaco",
     "seasons_competed": [
       {
@@ -17351,6 +17381,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -18395,6 +18426,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -21070,6 +21102,7 @@
     },
     "is_active": true,
     "is_world_champion": true,
+    "background": "#F2CEE0",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -21181,6 +21214,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "France",
     "seasons_competed": [
       {
@@ -22169,6 +22203,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Mexico",
     "seasons_competed": [
       {
@@ -22561,6 +22596,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Australia",
     "seasons_competed": [
       {
@@ -22871,6 +22907,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Brazil",
     "seasons_competed": [
       {
@@ -23420,6 +23457,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "France",
     "seasons_competed": [
       {
@@ -23699,6 +23737,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Finland",
     "seasons_competed": [
       {
@@ -24658,6 +24697,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Austria",
     "seasons_competed": [
       {
@@ -25083,6 +25123,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Finland",
     "seasons_competed": [
       {
@@ -25146,6 +25187,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Germany",
     "seasons_competed": [
       {
@@ -25477,6 +25519,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -25787,6 +25830,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Spain",
     "seasons_competed": [
       {
@@ -26307,6 +26351,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "South Africa",
     "seasons_competed": [
       {
@@ -26736,6 +26781,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Germany",
     "seasons_competed": [
       {
@@ -27177,6 +27223,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Brazil",
     "seasons_competed": [
       {
@@ -28150,6 +28197,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -28369,6 +28417,7 @@
     },
     "is_active": true,
     "is_world_champion": false,
+    "background": "#CEF2E0",
     "nationality": "Canada",
     "seasons_competed": [
       {
@@ -28617,6 +28666,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -30558,6 +30608,7 @@
     },
     "is_active": true,
     "is_world_champion": true,
+    "background": "#F2CEE0",
     "nationality": "Netherlands",
     "seasons_competed": [
       {
@@ -30645,6 +30696,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Germany",
     "seasons_competed": [
       {
@@ -30794,6 +30846,7 @@
     },
     "is_active": false,
     "is_world_champion": true,
+    "background": "#F2E0CE",
     "nationality": "Canada",
     "seasons_competed": [
       {
