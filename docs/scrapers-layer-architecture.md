@@ -34,3 +34,10 @@ Ten dokument porządkuje odpowiedzialności między warstwami i opisuje, co **wo
 3. Rozstrzygasz regułę domenową? → `Assembler`/usługa domenowa.
 4. Zapisujesz dane? → `Exporter`.
 5. Koordynujesz przepływ? → single scraper / pipeline (bez logiki domenowej i bez szczegółów technicznych).
+
+## Uproszczenie DI w `ScraperFactory`
+
+- W `scrapers/base/factory` utrzymujemy kontrakt `ScraperCreationAdapter` (realna zmienność: różne sposoby tworzenia scraperów, np. `options` vs legacy kwargs).
+- Usunięto pośredni interfejs/provider łańcucha adapterów, bo miał pojedynczą implementację produkcyjną i nie wnosił dodatkowej wartości architektonicznej.
+- `ScraperFactory` przyjmuje teraz bezpośrednio `adapters` (opcjonalne), a domyślny łańcuch powstaje przez funkcję `default_scraper_creation_adapters(...)`.
+- W testach nadal można wstrzykiwać własne adaptery — bez dodatkowej warstwy „provider” tylko dla testowalności.
