@@ -10,6 +10,7 @@
       "event": "Test",
       "championship": true
     },
+    "background": "#FBCEB1",
     "circuit": {
       "text": "MIRA",
       "url": "https://en.wikipedia.org/wiki/MIRA_Ltd."
@@ -57,6 +58,7 @@
       "event": "Modena Grand Prix",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Aerautodromo di Modena",
       "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena"
@@ -104,6 +106,7 @@
       "event": "Pau Grand Prix",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Circuit de Pau-Ville",
       "url": "https://en.wikipedia.org/wiki/Pau_Grand_Prix"
@@ -176,6 +179,7 @@
       "event": "Test",
       "championship": true
     },
+    "background": "#FBCEB1",
     "circuit": {
       "text": "Aerautodromo di Modena",
       "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena"
@@ -373,6 +377,7 @@
       "event": "BRDC International Trophy",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Silverstone Circuit",
       "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
@@ -445,6 +450,7 @@
       "event": "Silver City Trophy",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Brands Hatch",
       "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
@@ -467,6 +473,7 @@
       "event": "Test",
       "championship": true
     },
+    "background": "#FBCEB1",
     "circuit": {
       "text": "Aerautodromo di Modena",
       "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena"
@@ -514,6 +521,7 @@
       "event": "Mexican Grand Prix",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Autódromo Magdalena Mixiuhca",
       "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
@@ -536,6 +544,7 @@
       "event": "Natal Grand Prix",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Westmead Circuit",
       "url": null
@@ -633,6 +642,7 @@
       "event": "Test",
       "championship": true
     },
+    "background": "#FBCEB1",
     "circuit": {
       "text": "Silverstone Circuit",
       "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
@@ -683,6 +693,7 @@
       },
       "championship": true
     },
+    "background": "#FFF778",
     "circuit": {
       "text": "Nürburgring",
       "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
@@ -705,6 +716,7 @@
       "event": "Nottingham Sports Car Club meeting",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Silverstone Circuit",
       "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
@@ -777,6 +789,7 @@
       "event": "World Championship Victory Race",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Brands Hatch",
       "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
@@ -949,6 +962,7 @@
       "event": "Shellsport International Series Round 11",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Brands Hatch",
       "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
@@ -996,6 +1010,7 @@
       "event": "Test",
       "championship": true
     },
+    "background": "#FBCEB1",
     "circuit": {
       "text": "Hockenheimring",
       "url": "https://en.wikipedia.org/wiki/Hockenheimring"
@@ -1068,6 +1083,7 @@
       "event": "Test",
       "championship": true
     },
+    "background": "#FBCEB1",
     "circuit": {
       "text": "Circuit Paul Ricard",
       "url": "https://en.wikipedia.org/wiki/Circuit_Paul_Ricard"
@@ -1140,6 +1156,7 @@
       "event": "Goodwood Festival of Speed",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Goodwood Hillclimb",
       "url": "https://en.wikipedia.org/wiki/Goodwood_House"
@@ -1162,6 +1179,7 @@
       "event": "Czech Superprix",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Autodrom Most",
       "url": "https://en.wikipedia.org/wiki/Autodrom_Most"
@@ -1184,6 +1202,7 @@
       "event": "Jack Brabham Memorial Trophy",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Silverstone Circuit",
       "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
@@ -1231,6 +1250,7 @@
       "event": "Historic Grand Prix",
       "championship": false
     },
+    "background": "#dfffdf",
     "circuit": {
       "text": "Circuit Park Zandvoort",
       "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"

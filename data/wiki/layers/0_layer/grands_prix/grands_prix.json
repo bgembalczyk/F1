@@ -6,21 +6,21 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 1,
         "country": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
             "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 1
       }
     }
   },
@@ -29,17 +29,17 @@
       "text": "Abu Dhabi Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 17,
         "country": [
           {
             "text": "United Arab Emirates",
             "url": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2009,
@@ -109,7 +109,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 17
       }
     }
   },
@@ -120,15 +121,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 20,
         "country": [
           {
             "text": "Argentina",
             "url": "https://en.wikipedia.org/wiki/Argentina"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1953,
@@ -210,7 +210,8 @@
             "year": 1998,
             "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 20
       }
     }
   },
@@ -219,17 +220,17 @@
       "text": "Australian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 2,
-        "total": 40,
         "country": [
           {
             "text": "Australia",
             "url": "https://en.wikipedia.org/wiki/Australia"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1985,
@@ -391,7 +392,8 @@
             "year": 2026,
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 40
       }
     }
   },
@@ -400,17 +402,17 @@
       "text": "Austrian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 2,
-        "total": 38,
         "country": [
           {
             "text": "Austria",
             "url": "https://en.wikipedia.org/wiki/Austria"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1964,
@@ -564,7 +566,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 38
       }
     }
   },
@@ -573,17 +576,17 @@
       "text": "Azerbaijan Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Azerbaijan_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 8,
         "country": [
           {
             "text": "Azerbaijan",
             "url": "https://en.wikipedia.org/wiki/Azerbaijan"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2017,
@@ -617,7 +620,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 8
       }
     }
   },
@@ -626,17 +630,17 @@
       "text": "Bahrain Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Bahrain_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 21,
         "country": [
           {
             "text": "Bahrain",
             "url": "https://en.wikipedia.org/wiki/Bahrain"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2004,
@@ -722,7 +726,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 21
       }
     }
   },
@@ -731,18 +736,19 @@
       "text": "Barcelona-Catalunya Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Barcelona-Catalunya_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": null,
-        "total": null,
         "country": [
           {
             "text": "Spain",
             "url": "https://en.wikipedia.org/wiki/Spain"
           }
         ],
-        "race_status": "active",
-        "years_held": []
+        "years_held": [],
+        "total": null
       }
     }
   },
@@ -751,17 +757,17 @@
       "text": "Belgian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 3,
-        "total": 70,
         "country": [
           {
             "text": "Belgium",
             "url": "https://en.wikipedia.org/wiki/Belgium"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1950,
@@ -1043,7 +1049,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 70
       }
     }
   },
@@ -1054,15 +1061,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 2,
-        "total": 47,
         "country": [
           {
             "text": "Brazil",
             "url": "https://en.wikipedia.org/wiki/Brazil"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1973,
@@ -1252,7 +1258,8 @@
             "year": 2019,
             "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 47
       }
     }
   },
@@ -1261,17 +1268,17 @@
       "text": "British Grand Prix",
       "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 3,
-        "total": 76,
         "country": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1950,
@@ -1577,7 +1584,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 76
       }
     }
   },
@@ -1588,15 +1596,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 2,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1981,
@@ -1606,7 +1613,8 @@
             "year": 1982,
             "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 2
       }
     }
   },
@@ -1615,17 +1623,17 @@
       "text": "Canadian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 3,
-        "total": 54,
         "country": [
           {
             "text": "Canada",
             "url": "https://en.wikipedia.org/wiki/Canada"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1967,
@@ -1843,7 +1851,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 54
       }
     }
   },
@@ -1852,17 +1861,17 @@
       "text": "Chinese Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 18,
         "country": [
           {
             "text": "China",
             "url": "https://en.wikipedia.org/wiki/China"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2004,
@@ -1936,7 +1945,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 18
       }
     }
   },
@@ -1947,21 +1957,21 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 1,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1984,
             "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 1
       }
     }
   },
@@ -1972,15 +1982,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 7,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1982,
@@ -2010,7 +2019,8 @@
             "year": 1988,
             "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 7
       }
     }
   },
@@ -2019,17 +2029,17 @@
       "text": "Dutch Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 35,
         "country": [
           {
             "text": "Netherlands",
             "url": "https://en.wikipedia.org/wiki/Netherlands"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1952,
@@ -2171,7 +2181,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 35
       }
     }
   },
@@ -2182,21 +2193,21 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 1,
         "country": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
             "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 1
       }
     }
   },
@@ -2207,15 +2218,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 5,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
@@ -2237,7 +2247,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 5
       }
     }
   },
@@ -2248,8 +2259,8 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 6,
-        "total": 23,
         "country": [
           {
             "text": "United Kingdom",
@@ -2268,7 +2279,6 @@
             "url": "https://en.wikipedia.org/wiki/Azerbaijan"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1983,
@@ -2362,7 +2372,8 @@
             "year": 2016,
             "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 23
       }
     }
   },
@@ -2373,15 +2384,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 7,
-        "total": 62,
         "country": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1950,
@@ -2631,7 +2641,8 @@
             "year": 2022,
             "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 62
       }
     }
   },
@@ -2642,15 +2653,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 3,
-        "total": 64,
         "country": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1951,
@@ -2908,7 +2918,8 @@
             "year": 2019,
             "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 64
       }
     }
   },
@@ -2917,17 +2928,17 @@
       "text": "Hungarian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 40,
         "country": [
           {
             "text": "Hungary",
             "url": "https://en.wikipedia.org/wiki/Hungary"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1986,
@@ -3089,7 +3100,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 40
       }
     }
   },
@@ -3100,15 +3112,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 3,
         "country": [
           {
             "text": "India",
             "url": "https://en.wikipedia.org/wiki/India"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2011,
@@ -3122,7 +3133,8 @@
             "year": 2013,
             "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 3
       }
     }
   },
@@ -3133,15 +3145,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 11,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1950,
@@ -3187,7 +3198,8 @@
             "year": 1960,
             "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 11
       }
     }
   },
@@ -3196,17 +3208,17 @@
       "text": "Italian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 2,
-        "total": 76,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1950,
@@ -3512,7 +3524,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 76
       }
     }
   },
@@ -3521,17 +3534,17 @@
       "text": "Japanese Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 2,
-        "total": 39,
         "country": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1976,
@@ -3689,7 +3702,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 39
       }
     }
   },
@@ -3700,15 +3714,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 4,
         "country": [
           {
             "text": "South Korea",
             "url": "https://en.wikipedia.org/wiki/South_Korea"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2010,
@@ -3726,7 +3739,8 @@
             "year": 2013,
             "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 4
       }
     }
   },
@@ -3735,17 +3749,17 @@
       "text": "Las Vegas Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Las_Vegas_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 3,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2023,
@@ -3759,7 +3773,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 3
       }
     }
   },
@@ -3770,15 +3785,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 2,
         "country": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1997,
@@ -3788,7 +3802,8 @@
             "year": 1998,
             "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 2
       }
     }
   },
@@ -3799,15 +3814,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 19,
         "country": [
           {
             "text": "Malaysia",
             "url": "https://en.wikipedia.org/wiki/Malaysia"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1999,
@@ -3885,7 +3899,8 @@
             "year": 2017,
             "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 19
       }
     }
   },
@@ -3896,15 +3911,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 20,
         "country": [
           {
             "text": "Mexico",
             "url": "https://en.wikipedia.org/wiki/Mexico"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1963,
@@ -3986,7 +4000,8 @@
             "year": 2019,
             "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 20
       }
     }
   },
@@ -3995,17 +4010,17 @@
       "text": "Mexico City Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Mexico_City_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 5,
         "country": [
           {
             "text": "Mexico",
             "url": "https://en.wikipedia.org/wiki/Mexico"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2021,
@@ -4027,7 +4042,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 5
       }
     }
   },
@@ -4036,17 +4052,17 @@
       "text": "Miami Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Miami_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 4,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2022,
@@ -4064,7 +4080,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 4
       }
     }
   },
@@ -4073,17 +4090,17 @@
       "text": "Monaco Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 71,
         "country": [
           {
             "text": "Monaco",
             "url": "https://en.wikipedia.org/wiki/Monaco"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1950,
@@ -4369,7 +4386,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 71
       }
     }
   },
@@ -4380,21 +4398,21 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 1,
         "country": [
           {
             "text": "Morocco",
             "url": "https://en.wikipedia.org/wiki/Morocco"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1958,
             "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 1
       }
     }
   },
@@ -4405,15 +4423,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 2,
         "country": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1994,
@@ -4423,7 +4440,8 @@
             "year": 1995,
             "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 2
       }
     }
   },
@@ -4434,21 +4452,21 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 1,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1957,
             "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 1
       }
     }
   },
@@ -4457,17 +4475,17 @@
       "text": "Portuguese Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
     },
+    "background": "#CEFBC1",
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 4,
-        "total": 18,
         "country": [
           {
             "text": "Portugal",
             "url": "https://en.wikipedia.org/wiki/Portugal"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1958,
@@ -4541,7 +4559,8 @@
             "year": 2021,
             "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 18
       }
     }
   },
@@ -4550,17 +4569,17 @@
       "text": "Qatar Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Qatar_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 4,
         "country": [
           {
             "text": "Qatar",
             "url": "https://en.wikipedia.org/wiki/Qatar"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2021,
@@ -4578,7 +4597,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 4
       }
     }
   },
@@ -4589,15 +4609,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 8,
         "country": [
           {
             "text": "Russia",
             "url": "https://en.wikipedia.org/wiki/Russia"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2014,
@@ -4631,7 +4650,8 @@
             "year": 2021,
             "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 8
       }
     }
   },
@@ -4642,21 +4662,21 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 1,
         "country": [
           {
             "text": "Bahrain",
             "url": "https://en.wikipedia.org/wiki/Bahrain"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
             "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 1
       }
     }
   },
@@ -4667,15 +4687,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 26,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1981,
@@ -4781,7 +4800,8 @@
             "year": 2006,
             "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 26
       }
     }
   },
@@ -4790,17 +4810,17 @@
       "text": "São Paulo Grand Prix",
       "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 5,
         "country": [
           {
             "text": "Brazil",
             "url": "https://en.wikipedia.org/wiki/Brazil"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2021,
@@ -4822,7 +4842,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 5
       }
     }
   },
@@ -4831,17 +4852,17 @@
       "text": "Saudi Arabian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Saudi_Arabian_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 5,
         "country": [
           {
             "text": "Saudi Arabia",
             "url": "https://en.wikipedia.org/wiki/Saudi_Arabia"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2021,
@@ -4863,7 +4884,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 5
       }
     }
   },
@@ -4872,17 +4894,17 @@
       "text": "Singapore Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Singapore_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 1,
-        "total": 16,
         "country": [
           {
             "text": "Singapore",
             "url": "https://en.wikipedia.org/wiki/Singapore"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 2008,
@@ -4948,7 +4970,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 16
       }
     }
   },
@@ -4959,15 +4982,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 2,
-        "total": 23,
         "country": [
           {
             "text": "South Africa",
             "url": "https://en.wikipedia.org/wiki/South_Africa"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1962,
@@ -5061,7 +5083,8 @@
             "year": 1993,
             "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 23
       }
     }
   },
@@ -5070,17 +5093,17 @@
       "text": "Spanish Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 5,
-        "total": 55,
         "country": [
           {
             "text": "Spain",
             "url": "https://en.wikipedia.org/wiki/Spain"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1951,
@@ -5302,7 +5325,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 55
       }
     }
   },
@@ -5313,15 +5337,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 2,
         "country": [
           {
             "text": "Austria",
             "url": "https://en.wikipedia.org/wiki/Austria"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
@@ -5331,7 +5354,8 @@
             "year": 2021,
             "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 2
       }
     }
   },
@@ -5342,15 +5366,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 6,
         "country": [
           {
             "text": "Sweden",
             "url": "https://en.wikipedia.org/wiki/Sweden"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1973,
@@ -5376,7 +5399,8 @@
             "year": 1978,
             "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 6
       }
     }
   },
@@ -5387,8 +5411,8 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 2,
-        "total": 6,
         "country": [
           {
             "text": "Switzerland",
@@ -5399,7 +5423,6 @@
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1950,
@@ -5425,7 +5448,8 @@
             "year": 1982,
             "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 6
       }
     }
   },
@@ -5436,15 +5460,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 9,
         "country": [
           {
             "text": "Turkey",
             "url": "https://en.wikipedia.org/wiki/Turkey"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2005,
@@ -5482,7 +5505,8 @@
             "year": 2021,
             "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 9
       }
     }
   },
@@ -5493,21 +5517,21 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 1,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
             "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 1
       }
     }
   },
@@ -5516,17 +5540,17 @@
       "text": "United States Grand Prix",
       "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
     },
+    "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
+        "race_status": "active",
         "circuits": 6,
-        "total": 46,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "race_status": "active",
         "years_held": [
           {
             "year": 1959,
@@ -5712,7 +5736,8 @@
             "year": 2025,
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 46
       }
     }
   },
@@ -5723,15 +5748,14 @@
     },
     "racing_series": {
       "formula_one": {
+        "race_status": "past",
         "circuits": 1,
-        "total": 8,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
-        "race_status": "past",
         "years_held": [
           {
             "year": 1976,
@@ -5765,7 +5789,8 @@
             "year": 1983,
             "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
           }
-        ]
+        ],
+        "total": 8
       }
     }
   }

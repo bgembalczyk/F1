@@ -160,6 +160,7 @@
       "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -305,6 +306,7 @@
       "url": "https://en.wikipedia.org/wiki/Algarve_International_Circuit"
     },
     "circuit_status": "future",
+    "background": "CEFBC1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -423,6 +425,7 @@
       "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -823,6 +826,7 @@
       "url": "https://en.wikipedia.org/wiki/Interlagos_circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -1024,6 +1028,7 @@
       "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1495,6 +1500,7 @@
       "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1612,6 +1618,7 @@
       "url": "https://en.wikipedia.org/wiki/Baku_City_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -1975,6 +1982,7 @@
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -2144,6 +2152,7 @@
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -2668,6 +2677,7 @@
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -2986,6 +2996,7 @@
       "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -3228,6 +3239,7 @@
       "url": "https://en.wikipedia.org/wiki/Circuit_of_the_Americas"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -3410,6 +3422,7 @@
       "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4189,6 +4202,7 @@
       "url": "https://en.wikipedia.org/wiki/Hungaroring"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4552,6 +4566,7 @@
       "url": "https://en.wikipedia.org/wiki/Jeddah_Corniche_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4755,6 +4770,7 @@
       "url": "https://en.wikipedia.org/wiki/Las_Vegas_Strip_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4857,6 +4873,7 @@
       "url": "https://en.wikipedia.org/wiki/Lusail_International_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4902,6 +4919,7 @@
       "url": "https://en.wikipedia.org/wiki/Madring"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -4930,6 +4948,7 @@
       "url": "https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -5023,6 +5042,7 @@
       "url": "https://en.wikipedia.org/wiki/Miami_International_Autodrome"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -5531,6 +5551,7 @@
       "url": "https://en.wikipedia.org/wiki/Red_Bull_Ring"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5985,6 +6006,7 @@
       "url": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -6086,6 +6108,7 @@
       "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -6416,6 +6439,7 @@
       "url": "https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Part clockwise and part anti-clockwise (figure eight)",
     "location": {
@@ -6780,6 +6804,7 @@
       "url": "https://en.wikipedia.org/wiki/Yas_Marina_Circuit"
     },
     "circuit_status": "current",
+    "background": "FBCEB1",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {

@@ -369,6 +369,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2019,
@@ -500,6 +501,7 @@
       "text": "Mario Alborghetti",
       "url": "https://en.wikipedia.org/wiki/Mario_Alborghetti"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1955-04-11",
       "age": 26,
@@ -811,6 +813,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": true,
+        "background": "#F2CEE0",
         "seasons_competed": [
           {
             "year": 2001,
@@ -1122,6 +1125,7 @@
       "text": "Bob Anderson",
       "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
     },
+    "background": "#FBCEB1",
     "death": {
       "date": "1967-08-14",
       "age": 36,
@@ -1257,6 +1261,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1968,
@@ -1431,6 +1436,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2025,
@@ -1667,6 +1673,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1950,
@@ -2782,6 +2789,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2024,
@@ -4325,6 +4333,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2025,
@@ -4389,6 +4398,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2013,
@@ -4715,6 +4725,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1955,
@@ -4851,6 +4862,7 @@
       "text": "Martin Brain",
       "url": "https://en.wikipedia.org/wiki/Martin_Brain"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1970-05-25",
       "age": 37,
@@ -5893,6 +5905,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 2000,
@@ -6021,6 +6034,7 @@
       "text": "Giulio Cabianca",
       "url": "https://en.wikipedia.org/wiki/Giulio_Cabianca"
     },
+    "background": "#FBCEB1",
     "death": {
       "date": "1961-06-15",
       "age": 38,
@@ -6471,6 +6485,7 @@
       "text": "Eugenio Castellotti",
       "url": "https://en.wikipedia.org/wiki/Eugenio_Castellotti"
     },
+    "background": "#FBCEB1",
     "death": {
       "date": "1957-03-14",
       "age": 26,
@@ -7257,6 +7272,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1960,
@@ -7362,6 +7378,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2024,
@@ -8636,6 +8653,7 @@
       "text": "John Dawson-Damer",
       "url": null
     },
+    "background": "#dfffdf",
     "death": {
       "date": "2000-06-24",
       "age": 59,
@@ -8758,6 +8776,7 @@
       "text": "Elio de Angelis",
       "url": "https://en.wikipedia.org/wiki/Elio_de_Angelis"
     },
+    "background": "#FBCEB1",
     "death": {
       "date": "1986-05-14",
       "age": 28,
@@ -9344,6 +9363,7 @@
       "text": "Charles de Tornaco",
       "url": "https://en.wikipedia.org/wiki/Charles_de_Tornaco"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1953-09-18",
       "age": 26,
@@ -9542,6 +9562,7 @@
       "text": "Patrick Depailler",
       "url": "https://en.wikipedia.org/wiki/Patrick_Depailler"
     },
+    "background": "#FBCEB1",
     "death": {
       "date": "1980-08-01",
       "age": 35,
@@ -10221,6 +10242,7 @@
       "text": "Cameron Earl",
       "url": "https://en.wikipedia.org/wiki/Cameron_Earl"
     },
+    "background": "#FBCEB1",
     "death": {
       "date": "1952-06-18",
       "age": 29,
@@ -10958,6 +10980,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1950,
@@ -11084,6 +11107,7 @@
       "text": "David Ferrer ( FRA )",
       "url": null
     },
+    "background": "#dfffdf",
     "death": {
       "date": "2017-09-02",
       "age": 62,
@@ -11393,6 +11417,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1970,
@@ -12753,6 +12778,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2017,
@@ -13482,6 +13508,7 @@
       "text": "Fritz Glatz",
       "url": "https://en.wikipedia.org/wiki/Fritz_Glatz"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "2002-07-14",
       "age": 58,
@@ -14562,6 +14589,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2025,
@@ -14810,6 +14838,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": true,
+        "background": "#F2CEE0",
         "seasons_competed": [
           {
             "year": 2007,
@@ -15377,6 +15406,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1952,
@@ -15934,6 +15964,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1992,
@@ -15997,6 +16028,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1958,
@@ -16104,6 +16136,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1958,
@@ -16242,6 +16275,7 @@
       "text": "Gary Hocking",
       "url": "https://en.wikipedia.org/wiki/Gary_Hocking"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1962-12-21",
       "age": 25,
@@ -16513,6 +16547,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1965,
@@ -16584,6 +16619,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1973,
@@ -16703,6 +16739,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1991,
@@ -16782,6 +16819,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2010,
@@ -17680,6 +17718,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1975,
@@ -19380,6 +19419,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1971,
@@ -19565,6 +19605,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2023,
@@ -19607,6 +19648,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2018,
@@ -20120,6 +20162,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2026,
@@ -21283,6 +21326,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1980,
@@ -21472,6 +21516,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1950,
@@ -22393,6 +22438,7 @@
       "text": "Brian McGuire",
       "url": "https://en.wikipedia.org/wiki/Brian_McGuire_(racing_driver)"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1977-08-29",
       "age": 31,
@@ -22984,6 +23030,7 @@
       "text": "Gerhard Mitter",
       "url": "https://en.wikipedia.org/wiki/Gerhard_Mitter"
     },
+    "background": "#FFF778",
     "death": {
       "date": "1969-08-01",
       "age": 33,
@@ -24357,6 +24404,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": true,
+        "background": "#F2CEE0",
         "seasons_competed": [
           {
             "year": 2019,
@@ -24587,6 +24635,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2016,
@@ -25917,6 +25966,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2023,
@@ -26263,6 +26313,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1978,
@@ -26838,6 +26889,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1980,
@@ -27066,6 +27118,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2011,
@@ -28225,6 +28278,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1964,
@@ -28339,6 +28393,7 @@
       "text": "Ricardo Rodríguez",
       "url": "https://en.wikipedia.org/wiki/Ricardo_Rodr%C3%ADguez_(racing_driver)"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1962-11-01",
       "age": 20,
@@ -28626,6 +28681,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1978,
@@ -28693,6 +28749,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 2006,
@@ -29026,6 +29083,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2019,
@@ -29292,6 +29350,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 2001,
@@ -29471,6 +29530,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2015,
@@ -30039,6 +30099,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1972,
@@ -30101,6 +30162,7 @@
       "text": "Harry Schell",
       "url": "https://en.wikipedia.org/wiki/Harry_Schell"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1960-05-13",
       "age": 38,
@@ -30559,6 +30621,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1991,
@@ -31063,6 +31126,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1984,
@@ -31501,6 +31565,7 @@
       "text": "Jo Siffert",
       "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1971-10-24",
       "age": 35,
@@ -32191,6 +32256,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1965,
@@ -32430,6 +32496,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": false,
+        "background": "#CEF2E0",
         "seasons_competed": [
           {
             "year": 2017,
@@ -32639,6 +32706,7 @@
       "text": "Shane Summers",
       "url": "https://en.wikipedia.org/wiki/Shane_Summers"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "1961-06-01",
       "age": 24,
@@ -32728,6 +32796,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1960,
@@ -35026,6 +35095,7 @@
       "formula_one": {
         "is_active": true,
         "is_world_champion": true,
+        "background": "#F2CEE0",
         "seasons_competed": [
           {
             "year": 2015,
@@ -35117,6 +35187,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 2007,
@@ -35297,6 +35368,7 @@
       "formula_one": {
         "is_active": false,
         "is_world_champion": true,
+        "background": "#F2E0CE",
         "seasons_competed": [
           {
             "year": 1996,
@@ -36293,6 +36365,7 @@
       "text": "Denis Welch",
       "url": "https://en.wikipedia.org/wiki/Denis_Welch"
     },
+    "background": "#dfffdf",
     "death": {
       "date": "2014-07-27",
       "age": 69,
