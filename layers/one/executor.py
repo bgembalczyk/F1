@@ -7,6 +7,7 @@ from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.base.run_config import RunConfig
+from scrapers.base.errors import normalize_pipeline_error
 
 
 class LayerOneExecutor:
@@ -46,10 +47,38 @@ class LayerOneExecutor:
                 self._logger.warning("layer1 seed skipped: unsupported", extra=context)
                 continue
 
-            runner.run(seed, run_config, base_wiki_dir)
+            try:
+                runner.run(seed, run_config, base_wiki_dir)
+            except Exception as exc:
+                normalized_error = normalize_pipeline_error(
+                    exc,
+                    code="layer1.seed_failed",
+                    message="Layer one seed failed.",
+                    domain=seed.output_category,
+                    source_name=seed.complete_scraper_cls.__name__,
+                )
+                self._logger.error(
+                    "layer1 seed failed",
+                    extra=context | normalized_error.to_payload(),
+                )
+                raise normalized_error from exc
             self._logger.info("layer1 seed finished", extra=context)
 
-        self._engine_manufacturers_runner(
-            base_wiki_dir=base_wiki_dir,
-            include_urls=run_config.include_urls,
-        )
+        try:
+            self._engine_manufacturers_runner(
+                base_wiki_dir=base_wiki_dir,
+                include_urls=run_config.include_urls,
+            )
+        except Exception as exc:
+            normalized_error = normalize_pipeline_error(
+                exc,
+                code="layer1.engine_manufacturers_failed",
+                message="Layer one engine manufacturers export failed.",
+                domain="engines",
+                source_name="F1CompleteEngineManufacturerDataExtractor",
+            )
+            self._logger.error(
+                "layer1 engine manufacturers failed",
+                extra=normalized_error.to_payload(),
+            )
+            raise normalized_error from exc

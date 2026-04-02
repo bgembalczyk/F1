@@ -11,6 +11,7 @@ from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
+from scrapers.base.errors import normalize_pipeline_error
 
 
 class LayerZeroExecutor:
@@ -56,16 +57,30 @@ class LayerZeroExecutor:
                 job=job,
                 config_factories=config_factories,
             )
-            l0_raw_json_path = self._run_single_job(
-                run_config=run_config,
-                local_run_config=local_run_config,
-                job=job,
-            )
-            self._maybe_mirror_constructors(
-                base_wiki_dir=base_wiki_dir,
-                job=job,
-                l0_raw_json_path=l0_raw_json_path,
-            )
+            try:
+                l0_raw_json_path = self._run_single_job(
+                    run_config=run_config,
+                    local_run_config=local_run_config,
+                    job=job,
+                )
+                self._maybe_mirror_constructors(
+                    base_wiki_dir=base_wiki_dir,
+                    job=job,
+                    l0_raw_json_path=l0_raw_json_path,
+                )
+            except Exception as exc:
+                normalized_error = normalize_pipeline_error(
+                    exc,
+                    code="layer0.job_failed",
+                    message="Layer zero job failed.",
+                    domain=job.output_category,
+                    source_name=job.list_scraper_cls.__name__,
+                )
+                self._logger.error(
+                    "layer0 job failed",
+                    extra=context | normalized_error.to_payload(),
+                )
+                raise normalized_error from exc
 
             self._logger.info("layer0 job finished", extra=context)
 

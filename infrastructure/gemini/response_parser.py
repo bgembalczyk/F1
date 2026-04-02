@@ -1,6 +1,8 @@
 import json
 from typing import Any
 
+from scrapers.base.errors import SourceParseError
+
 
 class GeminiResponseParser:
     """Mapuje surową odpowiedź Gemini API na wynik biznesowy."""
@@ -11,20 +13,16 @@ class GeminiResponseParser:
         text = parts[0].get("text")
 
         if text is None:
-            msg = (
-                "Gemini API nie zwróciło pola candidates[0].content.parts[0].text.\n"
-                "Pełna odpowiedź:\n"
-                f"{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+            raise SourceParseError(
+                message="Gemini API response does not contain text payload.",
+                source_name="gemini",
             )
-            raise RuntimeError(msg)
 
         try:
             return json.loads(text)
         except json.JSONDecodeError as exc:
-            msg = (
-                "Gemini zwróciło tekst, który nie jest poprawnym JSON-em.\n"
-                f"Text:\n{text}\n\n"
-                "Pełna odpowiedź API:\n"
-                f"{json.dumps(api_response, ensure_ascii=False, indent=2)}"
-            )
-            raise RuntimeError(msg) from exc
+            raise SourceParseError(
+                message="Gemini text payload is not valid JSON.",
+                source_name="gemini",
+                cause=exc,
+            ) from exc
