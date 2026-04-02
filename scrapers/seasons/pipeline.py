@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 from models.value_objects import SeasonYear
 from models.value_objects import WikiUrl
-from scrapers.base.sections.factory import ValidatingSectionServiceFactory
+from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser
@@ -40,26 +40,6 @@ if TYPE_CHECKING:
     from scrapers.base.sections.adapter import SectionAdapter
     from scrapers.base.sections.interface import SectionServiceFactory
     from scrapers.seasons.sections.contracts import SeasonSectionParser
-
-
-class SeasonTextSectionServiceFactory(
-    ValidatingSectionServiceFactory[SeasonTextSectionExtractionService],
-):
-    def create(
-        self,
-        *,
-        adapter: SectionAdapter,
-        options: ScraperOptions | None = None,
-        url: str | None = None,
-    ) -> SeasonTextSectionExtractionService:
-        self._validate_dependencies(
-            adapter=adapter,
-            options=options,
-            url=url,
-            require_options=False,
-            require_url=False,
-        )
-        return SeasonTextSectionExtractionService(adapter=adapter)
 
 
 class SeasonYearResolver:
@@ -257,7 +237,13 @@ class SeasonSectionPipeline:
             section_data_collector or SeasonSectionDataCollector()
         )
         self._text_sections_service_factory = text_sections_service_factory or (
-            SeasonTextSectionServiceFactory()
+            ConfigurableSectionServiceFactory(
+                service_cls=SeasonTextSectionExtractionService,
+                require_options=False,
+                require_url=False,
+                pass_options=False,
+                pass_url=False,
+            )
         )
         self._parser_set: SeasonParserSet | None = None
         self._url = ""
