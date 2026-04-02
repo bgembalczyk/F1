@@ -6,14 +6,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
@@ -32,14 +32,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "United Arab Emirates",
             "url": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2009,
@@ -121,14 +121,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Argentina",
             "url": "https://en.wikipedia.org/wiki/Argentina"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1953,
@@ -223,14 +223,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 2,
         "country": [
           {
             "text": "Australia",
             "url": "https://en.wikipedia.org/wiki/Australia"
           }
         ],
+        "circuits": 2,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1985,
@@ -405,14 +405,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 2,
         "country": [
           {
             "text": "Austria",
             "url": "https://en.wikipedia.org/wiki/Austria"
           }
         ],
+        "circuits": 2,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1964,
@@ -579,14 +579,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Azerbaijan",
             "url": "https://en.wikipedia.org/wiki/Azerbaijan"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2017,
@@ -633,14 +633,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Bahrain",
             "url": "https://en.wikipedia.org/wiki/Bahrain"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2004,
@@ -739,14 +739,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": null,
         "country": [
           {
             "text": "Spain",
             "url": "https://en.wikipedia.org/wiki/Spain"
           }
         ],
+        "circuits": null,
+        "race_status": "active",
         "years_held": [],
         "total": null
       }
@@ -760,14 +760,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 3,
         "country": [
           {
             "text": "Belgium",
             "url": "https://en.wikipedia.org/wiki/Belgium"
           }
         ],
+        "circuits": 3,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1950,
@@ -1061,14 +1061,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 2,
         "country": [
           {
             "text": "Brazil",
             "url": "https://en.wikipedia.org/wiki/Brazil"
           }
         ],
+        "circuits": 2,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1973,
@@ -1271,14 +1271,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 3,
         "country": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
+        "circuits": 3,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1950,
@@ -1596,14 +1596,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1981,
@@ -1626,14 +1626,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 3,
         "country": [
           {
             "text": "Canada",
             "url": "https://en.wikipedia.org/wiki/Canada"
           }
         ],
+        "circuits": 3,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1967,
@@ -1864,14 +1864,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "China",
             "url": "https://en.wikipedia.org/wiki/China"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2004,
@@ -1957,14 +1957,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1984,
@@ -1982,14 +1982,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1982,
@@ -2032,14 +2032,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Netherlands",
             "url": "https://en.wikipedia.org/wiki/Netherlands"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1952,
@@ -2193,14 +2193,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
@@ -2218,14 +2218,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
@@ -2259,8 +2259,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 6,
         "country": [
           {
             "text": "United Kingdom",
@@ -2279,6 +2277,8 @@
             "url": "https://en.wikipedia.org/wiki/Azerbaijan"
           }
         ],
+        "circuits": 6,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1983,
@@ -2384,14 +2384,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 7,
         "country": [
           {
             "text": "France",
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
+        "circuits": 7,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1950,
@@ -2653,14 +2653,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 3,
         "country": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
+        "circuits": 3,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1951,
@@ -2931,14 +2931,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Hungary",
             "url": "https://en.wikipedia.org/wiki/Hungary"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1986,
@@ -3112,14 +3112,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "India",
             "url": "https://en.wikipedia.org/wiki/India"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2011,
@@ -3145,14 +3145,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1950,
@@ -3211,14 +3211,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 2,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
+        "circuits": 2,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1950,
@@ -3537,14 +3537,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 2,
         "country": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
+        "circuits": 2,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1976,
@@ -3714,14 +3714,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "South Korea",
             "url": "https://en.wikipedia.org/wiki/South_Korea"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2010,
@@ -3752,14 +3752,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2023,
@@ -3785,14 +3785,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Germany",
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1997,
@@ -3814,14 +3814,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Malaysia",
             "url": "https://en.wikipedia.org/wiki/Malaysia"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1999,
@@ -3911,14 +3911,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Mexico",
             "url": "https://en.wikipedia.org/wiki/Mexico"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1963,
@@ -4013,14 +4013,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Mexico",
             "url": "https://en.wikipedia.org/wiki/Mexico"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2021,
@@ -4055,14 +4055,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2022,
@@ -4093,14 +4093,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Monaco",
             "url": "https://en.wikipedia.org/wiki/Monaco"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1950,
@@ -4398,14 +4398,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Morocco",
             "url": "https://en.wikipedia.org/wiki/Morocco"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1958,
@@ -4423,14 +4423,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Japan",
             "url": "https://en.wikipedia.org/wiki/Japan"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1994,
@@ -4452,14 +4452,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1957,
@@ -4478,14 +4478,14 @@
     "background": "#CEFBC1",
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 4,
         "country": [
           {
             "text": "Portugal",
             "url": "https://en.wikipedia.org/wiki/Portugal"
           }
         ],
+        "circuits": 4,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1958,
@@ -4572,14 +4572,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Qatar",
             "url": "https://en.wikipedia.org/wiki/Qatar"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2021,
@@ -4609,14 +4609,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Russia",
             "url": "https://en.wikipedia.org/wiki/Russia"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2014,
@@ -4662,14 +4662,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Bahrain",
             "url": "https://en.wikipedia.org/wiki/Bahrain"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
@@ -4687,14 +4687,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1981,
@@ -4813,14 +4813,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Brazil",
             "url": "https://en.wikipedia.org/wiki/Brazil"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2021,
@@ -4855,14 +4855,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Saudi Arabia",
             "url": "https://en.wikipedia.org/wiki/Saudi_Arabia"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2021,
@@ -4897,14 +4897,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 1,
         "country": [
           {
             "text": "Singapore",
             "url": "https://en.wikipedia.org/wiki/Singapore"
           }
         ],
+        "circuits": 1,
+        "race_status": "active",
         "years_held": [
           {
             "year": 2008,
@@ -4982,14 +4982,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 2,
         "country": [
           {
             "text": "South Africa",
             "url": "https://en.wikipedia.org/wiki/South_Africa"
           }
         ],
+        "circuits": 2,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1962,
@@ -5096,14 +5096,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 5,
         "country": [
           {
             "text": "Spain",
             "url": "https://en.wikipedia.org/wiki/Spain"
           }
         ],
+        "circuits": 5,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1951,
@@ -5337,14 +5337,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Austria",
             "url": "https://en.wikipedia.org/wiki/Austria"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
@@ -5366,14 +5366,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Sweden",
             "url": "https://en.wikipedia.org/wiki/Sweden"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1973,
@@ -5411,8 +5411,6 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 2,
         "country": [
           {
             "text": "Switzerland",
@@ -5423,6 +5421,8 @@
             "url": "https://en.wikipedia.org/wiki/France"
           }
         ],
+        "circuits": 2,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1950,
@@ -5460,14 +5460,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Turkey",
             "url": "https://en.wikipedia.org/wiki/Turkey"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2005,
@@ -5517,14 +5517,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 2020,
@@ -5543,14 +5543,14 @@
     "background": "#FBCEB1",
     "racing_series": {
       "formula_one": {
-        "race_status": "active",
-        "circuits": 6,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
+        "circuits": 6,
+        "race_status": "active",
         "years_held": [
           {
             "year": 1959,
@@ -5748,14 +5748,14 @@
     },
     "racing_series": {
       "formula_one": {
-        "race_status": "past",
-        "circuits": 1,
         "country": [
           {
             "text": "United States",
             "url": "https://en.wikipedia.org/wiki/United_States"
           }
         ],
+        "circuits": 1,
+        "race_status": "past",
         "years_held": [
           {
             "year": 1976,
