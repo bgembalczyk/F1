@@ -2,6 +2,8 @@ from typing import Any, Callable
 
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.model_selector import ModelSelector
+from scrapers.base.errors import PipelineError
+from scrapers.base.errors import normalize_pipeline_error
 
 
 class GeminiOrchestrationService:
@@ -28,14 +30,12 @@ class GeminiOrchestrationService:
         while True:
             model = self._model_selector.pick_model(exclude=error_models)
             if model is None:
-                msg = (
-                    "Wszystkie dostępne modele Gemini są wyczerpane "
-                    "lub osiągnęły limit.\n"
-                    f"Modele z błędem API: {error_models or '(brak)'}\n"
-                    "Dostępne modele: "
-                    f"{[s.model for s in self._model_selector.model_states]}"
+                raise PipelineError(
+                    message="Wszystkie dostępne modele Gemini są wyczerpane lub osiągnęły limit.",
+                    code="gemini.models_exhausted",
+                    domain="gemini",
+                    source_name="gemini",
                 )
-                raise RuntimeError(msg)
 
             cached = self._cache.get(prompt, model)
             if cached is not None:
@@ -49,7 +49,14 @@ class GeminiOrchestrationService:
 
             try:
                 result = call_api(model)
-            except Exception:  # noqa: BLE001
+            except Exception as exc:  # noqa: BLE001
+                normalize_pipeline_error(
+                    exc,
+                    code="gemini.call_failed",
+                    message="Gemini model call failed.",
+                    domain="gemini",
+                    source_name=model,
+                )
                 error_models.add(model)
                 continue
 
