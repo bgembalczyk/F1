@@ -1,5 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
+from typing import Any
+
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import DRIVERS_LIST
@@ -28,6 +30,71 @@ from scrapers.drivers.constants import DRIVER_RACE_STARTS_HEADER
 from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
 from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
+from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
+from scrapers.wiki.parsers.sections.section import SectionParser
+
+
+class DriversListTableParser(WikiTableBaseParser):
+    table_type = "drivers_list"
+    missing_columns_policy = "ignore"
+    extra_columns_policy = "ignore"
+
+    _column_mapping = {
+        DRIVER_NAME_HEADER: "driver",
+        DRIVER_NATIONALITY_HEADER: "nationality",
+        DRIVER_SEASONS_COMPETED_HEADER: "seasons_competed",
+        DRIVER_CHAMPIONSHIPS_HEADER: "drivers_championships",
+        DRIVER_RACE_ENTRIES_HEADER: "race_entries",
+        DRIVER_RACE_STARTS_HEADER: "race_starts",
+        DRIVER_POLE_POSITIONS_HEADER: "pole_positions",
+        DRIVER_RACE_WINS_HEADER: "race_wins",
+        DRIVER_PODIUMS_HEADER: "podiums",
+        DRIVER_FASTEST_LAPS_HEADER: "fastest_laps",
+        DRIVER_POINTS_HEADER: "points",
+    }
+
+    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
+        required_headers = set(DRIVERS_LIST_HEADERS)
+        return required_headers.issubset(set(headers))
+
+    def map_columns(self, headers: list[str]) -> dict[str, str]:
+        return {
+            header: self._column_mapping[header]
+            for header in headers
+            if header in self._column_mapping
+        }
+
+
+class DriversListSectionParser(SectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._table_parser = DriversListTableParser()
+
+    def parse_group(
+        self,
+        elements: list,
+        *,
+        context=None,
+    ) -> dict[str, Any]:
+        parsed = super().parse_group(elements, context=context)
+        self._apply_drivers_table_parser(parsed)
+        return parsed
+
+    def _apply_drivers_table_parser(self, payload: dict[str, Any]) -> None:
+        for section in payload.get("sub_sections", []):
+            self._apply_for_elements(section.get("elements", []))
+            self._apply_drivers_table_parser(section)
+
+    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            parsed = self._table_parser.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
 
 
 class F1DriversListScraper(SeedListTableScraper):
@@ -103,6 +170,12 @@ class F1DriversListScraper(SeedListTableScraper):
         columns=schema_columns,
         record_factory=RECORD_FACTORIES.builders("driver"),
     )
+
+    def __init__(self, *, options: ScraperOptions | None = None) -> None:
+        super().__init__(options=options)
+        parser = DriversListSectionParser()
+        self.section_parser = parser
+        self.body_content_parser.content_text_parser.section_parser = parser
 
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         options.pipeline.transformers = [
