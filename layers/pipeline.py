@@ -1,6 +1,8 @@
 from pathlib import Path
 
 from layers.orchestration.protocols import LayerExecutorProtocol
+from layers.reporting import LayerRunSummary
+from layers.reporting import write_pipeline_report
 from layers.zero.run_profile_paths import build_debug_run_config
 from scrapers.base.run_config import RunConfig
 
@@ -34,3 +36,17 @@ class WikiPipelineApplication:
     def run_layer_one(self) -> None:
         run_config = self._build_run_config()
         self._layer_one_executor.run(run_config, self._base_wiki_dir)
+
+    def write_summary_report(self, *, mode: str) -> tuple[Path, Path]:
+        run_config = self._build_run_config()
+        summaries: list[LayerRunSummary] = []
+        for executor in (self._layer_zero_executor, self._layer_one_executor):
+            summary = getattr(executor, "last_summary", None)
+            if summary is None:
+                continue
+            summaries.append(summary)
+        return write_pipeline_report(
+            debug_dir=run_config.debug_dir,
+            mode=mode,
+            layer_summaries=summaries,
+        )

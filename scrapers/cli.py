@@ -4,6 +4,7 @@ import argparse
 import dataclasses
 import importlib
 import inspect
+import logging
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
@@ -771,7 +772,15 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         base_wiki_dir=DEFAULT_PATH_RESOLVER.exports_root.resolve(),
         base_debug_dir=DEFAULT_PATH_RESOLVER.debug_root.resolve(),
     )
-    if args.mode in {"layer0", "full"}:
-        app.run_layer_zero()
-    if args.mode in {"layer1", "full"}:
-        app.run_layer_one()
+    try:
+        if args.mode in {"layer0", "full"}:
+            app.run_layer_zero()
+        if args.mode in {"layer1", "full"}:
+            app.run_layer_one()
+    finally:
+        report_path, log_path = app.write_summary_report(mode=args.mode)
+        logging.getLogger(__name__).info(
+            "Saved wiki summary report: %s (log: %s)",
+            report_path,
+            log_path,
+        )

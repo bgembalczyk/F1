@@ -5,6 +5,9 @@ from uuid import uuid4
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.path_resolver import format_domain_year_name
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.reporting import LayerJobResult
+from layers.reporting import LayerRunSummary
+from layers.reporting import RunSummaryBuilder
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
@@ -55,41 +58,73 @@ class LayerZeroExecutor:
             raise ValueError(msg)
         self._job_hook = job_hook
         self._year_provider = year_provider
+        self._summary_builder = RunSummaryBuilder()
+        self._last_summary: LayerRunSummary | None = None
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
         run_id = str(uuid4())
+        summary, timer = self._summary_builder.start(layer="layer0")
 
-        for job in self._list_job_registry:
-            context = build_execution_context(
-                run_id=run_id,
-                seed_name=job.seed_name,
-                domain=job.output_category,
-                source_name=job.list_scraper_cls.__name__,
-            )
-            self._logger.info("layer0 job started", extra=context)
+        try:
+            for job in self._list_job_registry:
+                context = build_execution_context(
+                    run_id=run_id,
+                    seed_name=job.seed_name,
+                    domain=job.output_category,
+                    source_name=job.list_scraper_cls.__name__,
+                )
+                self._logger.info("layer0 job started", extra=context)
 
-            local_run_config = self._build_local_run_config(
-                run_config=run_config,
-                job=job,
-                config_factories=config_factories,
-            )
-            l0_raw_json_path = self._run_single_job(
-                run_config=run_config,
-                local_run_config=local_run_config,
-                job=job,
-            )
-            self._maybe_mirror_constructors(
-                base_wiki_dir=base_wiki_dir,
-                job=job,
-                l0_raw_json_path=l0_raw_json_path,
-            )
+                local_run_config = self._build_local_run_config(
+                    run_config=run_config,
+                    job=job,
+                    config_factories=config_factories,
+                )
+                try:
+                    l0_raw_json_path = self._run_single_job(
+                        run_config=run_config,
+                        local_run_config=local_run_config,
+                        job=job,
+                    )
+                    self._maybe_mirror_constructors(
+                        base_wiki_dir=base_wiki_dir,
+                        job=job,
+                        l0_raw_json_path=l0_raw_json_path,
+                    )
+                except Exception as exc:
+                    summary.jobs.append(
+                        LayerJobResult(
+                            name=job.seed_name,
+                            module=job.list_scraper_cls.__module__,
+                            status="error",
+                            output_path=None,
+                            error_code="L0_JOB_FAILED",
+                            error_detail=str(exc),
+                        ),
+                    )
+                    raise
+                else:
+                    summary.jobs.append(
+                        LayerJobResult(
+                            name=job.seed_name,
+                            module=job.list_scraper_cls.__module__,
+                            status="success",
+                            output_path=str((base_wiki_dir / l0_raw_json_path).resolve()),
+                        ),
+                    )
 
-            self._logger.info("layer0 job finished", extra=context)
+                self._logger.info("layer0 job finished", extra=context)
 
-        self._finalize_merge(base_wiki_dir)
+            self._finalize_merge(base_wiki_dir)
+        finally:
+            self._last_summary = self._summary_builder.finish(summary, timer)
+
+    @property
+    def last_summary(self) -> LayerRunSummary | None:
+        return self._last_summary
 
     def _resolve_config_factory(self) -> dict[str, object]:
         return self._config_factories()
