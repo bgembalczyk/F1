@@ -23,8 +23,8 @@ def append_transformer(
     transformer: RecordTransformer,
 ) -> ScraperOptions:
     resolved = options or ScraperOptions()
-    resolved.transformers = [
-        *list(resolved.transformers or []),
+    resolved.pipeline.transformers = [
+        *list(resolved.pipeline.transformers or []),
         transformer,
     ]
     return resolved
