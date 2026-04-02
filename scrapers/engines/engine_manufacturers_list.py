@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.validation.engine_manufacturer import EngineManufacturer
+from scrapers.base.single_wiki_article.section_selection_strategy import (
+    WikipediaSectionByIdSelectionStrategy,
+)
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.source_catalog import ENGINES_LIST
@@ -189,12 +192,54 @@ class EngineManufacturersListScraper(F1TableScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if self._export_scope == "indianapolis_only":
-            scraper = IndianapolisOnlyEngineManufacturersListScraper(
-                options=self._options,
+            selector = WikipediaSectionByIdSelectionStrategy(domain="engines")
+            section = selector.extract_section_by_id(
+                soup,
+                ENGINES_LIST.section_id,
+                domain="engines",
             )
-            scraper.include_urls = self.include_urls
-            return scraper.parse(soup)
+            if section is None:
+                return []
+            parsed = self.section_parser.parse(section)
+            return self._extract_indianapolis_only_records(parsed)
         return super()._parse_soup(soup)
+
+    def _extract_indianapolis_only_records(
+        self,
+        payload: dict[str, Any],
+    ) -> list[dict[str, Any]]:
+        records: list[dict[str, Any]] = []
+
+        def visit(node: dict[str, Any]) -> None:
+            for section in node.get("sub_sections", []):
+                visit(section)
+            for section in node.get("sub_sub_sections", []):
+                visit(section)
+            for section in node.get("sub_sub_sub_sections", []):
+                visit(section)
+            for element in node.get("elements", []):
+                if element.get("kind") != "list":
+                    continue
+                data = element.get("data")
+                if not isinstance(data, dict):
+                    continue
+                items = data.get("items", [])
+                if not isinstance(items, list):
+                    continue
+                for item in items:
+                    if not isinstance(item, dict):
+                        continue
+                    normalized = dict(item)
+                    if not self.include_urls:
+                        normalized.pop("manufacturer_url", None)
+                    else:
+                        url = normalized.get("manufacturer_url")
+                        if isinstance(url, str) and url.startswith("/"):
+                            normalized["manufacturer_url"] = self._full_url(url)
+                    records.append(normalized)
+
+        visit(payload)
+        return records
 
 
 class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper):
