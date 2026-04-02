@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.single_wiki_article.section_selection_strategy import (
@@ -154,7 +156,34 @@ class ConstructorsListScraper(F1ListScraper):
             )
             if section is not None:
                 return section
-        return None
+        return self._extract_current_section_by_year_pattern(selector=selector, soup=soup)
+
+    @staticmethod
+    def _extract_current_section_by_year_pattern(
+        *,
+        selector: WikipediaSectionByIdSelectionStrategy,
+        soup: BeautifulSoup,
+    ) -> BeautifulSoup | None:
+        season_heading_pattern = re.compile(r"^Constructors_for_the_(\d{4})_season$")
+        best_heading: Tag | None = None
+        best_year: int | None = None
+
+        for heading in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"]):
+            heading_id = heading.get("id")
+            if not isinstance(heading_id, str):
+                continue
+            match = season_heading_pattern.fullmatch(heading_id)
+            if match is None:
+                continue
+            year = int(match.group(1))
+            if best_year is None or year > best_year:
+                best_heading = heading
+                best_year = year
+
+        if best_heading is None:
+            return None
+
+        return selector.extract_section_by_heading(best_heading)
 
     def _should_include_scope(self, scope: str) -> bool:
         return self._export_scope in {"all", scope}
