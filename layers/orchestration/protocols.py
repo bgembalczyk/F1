@@ -1,12 +1,18 @@
 from __future__ import annotations
 
-from pathlib import Path
+from collections.abc import Callable
+from typing import TYPE_CHECKING
 from typing import Protocol
 from typing import runtime_checkable
 
-from layers.seed.registry.entries import ListJobRegistryEntry
-from layers.seed.registry.entries import SeedRegistryEntry
-from scrapers.base.run_config import RunConfig
+if TYPE_CHECKING:
+    from pathlib import Path
+
+    from layers.seed.registry.entries import ListJobRegistryEntry
+    from layers.seed.registry.entries import SeedRegistryEntry
+    from scrapers.base.run_config import RunConfig
+
+SponsorshipClassifierBuilder = Callable[[], object]
 
 
 @runtime_checkable

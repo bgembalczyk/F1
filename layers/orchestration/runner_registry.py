@@ -4,8 +4,6 @@ from typing import TYPE_CHECKING
 
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
 from layers.orchestration.factories import StaticScraperKwargsFactory
-from layers.orchestration.protocols import LayerOneRunnerProtocol
-from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
@@ -18,6 +16,10 @@ from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
     from pathlib import Path
+
+    from layers.orchestration.protocols import LayerOneRunnerProtocol
+    from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+    from layers.orchestration.protocols import SponsorshipClassifierBuilder
 
 
 def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
@@ -58,7 +60,10 @@ def build_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
     return _merge_runner_maps(discovered_runner_map, explicit_runner_map)
 
 
-def build_layer_zero_run_config_factory_map() -> dict[
+def build_layer_zero_run_config_factory_map(
+    *,
+    sponsorship_classifier_builder: SponsorshipClassifierBuilder | None = None,
+) -> dict[
     str,
     LayerZeroRunConfigFactoryProtocol,
 ]:
@@ -93,7 +98,9 @@ def build_layer_zero_run_config_factory_map() -> dict[
         "grands_prix_red_flagged_non_championship": StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "non_championship"},
         ),
-        "sponsorship_liveries": SponsorshipLiveriesRunConfigFactory(),
+        "sponsorship_liveries": SponsorshipLiveriesRunConfigFactory(
+            classifier_builder=sponsorship_classifier_builder,
+        ),
     }
 
 

@@ -5,6 +5,9 @@ from datetime import datetime
 from datetime import timezone
 from typing import TYPE_CHECKING
 
+from infrastructure.gemini.sponsorship_classifier_adapter import (
+    build_sponsorship_paren_classifier,
+)
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
@@ -44,7 +47,9 @@ def create_default_wiki_pipeline_application(
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,
-        config_factories=build_layer_zero_run_config_factory_map,
+        config_factories=lambda: build_layer_zero_run_config_factory_map(
+            sponsorship_classifier_builder=build_sponsorship_paren_classifier,
+        ),
         default_config_factory=DefaultLayerZeroRunConfigFactory(),
         merger=LayerZeroMergeService(
             merge=merge_layer_zero_raw_outputs,
