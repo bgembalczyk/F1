@@ -20,9 +20,7 @@ from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.logging import configure_logging
 from scrapers.base.run_config import RunConfig
-from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
 from scrapers.base.run_profiles import LegacyCliProfileName
-from scrapers.base.run_profiles import get_cli_profile_defaults
 from scrapers.base.runner import ScraperRunner
 from scrapers.wiki.sources_registry import ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE
 from scrapers.wiki.sources_registry import SPONSORSHIP_LIVERIES_SOURCE
@@ -642,36 +640,15 @@ def _invoke_target(target: Callable[..., None], run_config: RunConfig) -> None:
     target()
 
 
-def _legacy_profile_choices() -> tuple[LegacyCliProfileName, ...]:
-    return LEGACY_CLI_PROFILE_NAMES
-
-
-def _build_profile_parser(
-    default_profile: LegacyCliProfileName,
-) -> argparse.ArgumentParser:
-    profile_parser = argparse.ArgumentParser(add_help=False)
-    profile_parser.add_argument(
-        "--profile",
-        choices=_legacy_profile_choices(),
-        default=default_profile,
-    )
-    return profile_parser
-
-
 def _parse_legacy_args(
     argv: list[str] | None,
-    default_profile: LegacyCliProfileName,
-) -> tuple[argparse.Namespace, argparse.Namespace]:
-    profile_parser = _build_profile_parser(default_profile)
-    profile_args, remaining = profile_parser.parse_known_args(argv)
-
-    quality_default, error_default = get_cli_profile_defaults(profile_args.profile)
+    _default_profile: LegacyCliProfileName,
+) -> argparse.Namespace:
     parser = build_standard_parser(
-        quality_report_default=quality_default,
-        error_report_default=error_default,
+        quality_report_default=False,
+        error_report_default=False,
     )
-    args = parser.parse_args(remaining)
-    return profile_args, args
+    return parser.parse_args(argv)
 
 
 def _module_path_from_file(file_path: str) -> str:
@@ -690,7 +667,7 @@ def _module_path_from_file(file_path: str) -> str:
 def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
     spec = SCRAPER_REGISTRY[module_path]
     definition = MODULE_DEFINITIONS[module_path]
-    _, args = _parse_legacy_args(argv, spec.profile)
+    args = _parse_legacy_args(argv, spec.profile)
     run_config = build_run_config(base_config=spec.base_config, args=args)
     configure_logging(verbose=run_config.verbose, trace=run_config.trace)
     if definition.deprecated:
