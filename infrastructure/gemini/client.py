@@ -120,7 +120,6 @@ class GeminiClient:
     ) -> dict[str, Any]:
         return self._orchestration.run(
             prompt,
-            response_mime_type=response_mime_type,
             call_api=lambda model: self._call_api(
                 prompt,
                 model=model,
