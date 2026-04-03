@@ -173,7 +173,7 @@ def _extract_string_tuple_assignment(path: Path, symbol: str) -> tuple[str, ...]
             if isinstance(elt, ast.Constant) and isinstance(elt.value, str):
                 values.append(elt.value)
         return tuple(values)
-    return tuple()
+    return ()
 
 
 def _extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
@@ -195,7 +195,7 @@ def _extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
                 ):
                     keys.append(key_node.value)
             return tuple(keys)
-    return tuple()
+    return ()
 
 
 def _check_registry_implementation_drift() -> list[Violation]:
