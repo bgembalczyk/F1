@@ -1,4 +1,3 @@
-import json
 import logging
 import re
 from collections.abc import Callable
@@ -9,14 +8,22 @@ from pathlib import Path
 from layers.path_resolver import PathResolver
 from layers.orchestration.types import CONSTRUCTOR_STATUS_ACTIVE
 from layers.orchestration.types import CONSTRUCTOR_STATUS_FORMER
+from layers.zero.record_merge_ops import merge_driver_dict_values as _merge_driver_dict_values_impl
+from layers.zero.record_merge_ops import merge_driver_values as _merge_driver_values_impl
+from layers.zero.record_merge_ops import merge_list_values as _merge_list_values_impl
+from layers.zero.record_merge_ops import merge_values as _merge_values_impl
 from layers.zero.merge_types import DriverRecordModel
-from layers.zero.merge_types import DriverSeriesStats
 from layers.zero.merge_types import EngineRecordModel
 from layers.zero.merge_types import LinkValue
 from layers.zero.merge_types import RaceRecordModel
 from layers.zero.merge_types import SeasonRecordModel
 from layers.zero.merge_types import TeamRecordModel
 from layers.zero.merge_types import as_record_dict
+from layers.zero.source_routing import iter_mergeable_domain_dirs as _iter_mergeable_domain_dirs_impl
+from layers.zero.source_routing import load_domain_records as _load_domain_records_impl
+from layers.zero.source_routing import (
+    write_merged_domain_records as _write_merged_domain_records_impl,
+)
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
@@ -493,67 +500,22 @@ def _iter_transformed_records(
 
 
 def _merge_driver_values(existing: object, incoming: object) -> object:
-    if isinstance(existing, dict) and isinstance(incoming, dict):
-        return _merge_driver_dict_values(existing, incoming)
-    if isinstance(existing, list) and isinstance(incoming, list):
-        return _merge_list_values(existing, incoming)
-    if existing in (None, "", []):
-        return incoming
-    return existing
+    return _merge_driver_values_impl(existing, incoming)
 
 
 def _merge_driver_dict_values(
     existing: dict[str, object],
     incoming: dict[str, object],
 ) -> dict[str, object]:
-    normalized_incoming = _normalize_incoming_driver_stats(incoming)
-    merged = dict(existing)
-    for key, value in normalized_incoming.items():
-        if key in {"entries", "starts"}:
-            continue
-        if key in merged:
-            merged[key] = _merge_driver_values(merged[key], value)
-        else:
-            merged[key] = value
-    return merged
-
-
-def _normalize_incoming_driver_stats(incoming: dict[str, object]) -> dict[str, object]:
-    return DriverSeriesStats.from_dict(incoming).to_dict()
+    return _merge_driver_dict_values_impl(existing, incoming)
 
 
 def _merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
-    merged = list(existing)
-    seen = {
-        json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
-        for item in merged
-    }
-    for item in incoming:
-        serialized = json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
-        if serialized in seen:
-            continue
-        seen.add(serialized)
-        merged.append(item)
-    return merged
+    return _merge_list_values_impl(existing, incoming)
 
 
 def _merge_values(existing: object, incoming: object) -> object:
-    if isinstance(existing, dict) and isinstance(incoming, dict):
-        merged = dict(existing)
-        for key, value in incoming.items():
-            if key in merged:
-                merged[key] = _merge_values(merged[key], value)
-            else:
-                merged[key] = value
-        return merged
-
-    if isinstance(existing, list) and isinstance(incoming, list):
-        return _merge_list_values(existing, incoming)
-
-    if existing in (None, "", []):
-        return incoming
-
-    return existing
+    return _merge_values_impl(existing, incoming)
 
 
 def _merge_duplicate_drivers(records: list[object]) -> list[object]:
@@ -770,26 +732,15 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
 
 
 def _iter_mergeable_domain_dirs(layer_zero_dir: Path, resolver: PathResolver) -> list[Path]:
-    domain_dirs: list[Path] = []
-    for domain_dir in sorted(p for p in layer_zero_dir.iterdir() if p.is_dir()):
-        raw_dir = resolver.raw_dir(domain=domain_dir.name)
-        if not raw_dir.exists() or not raw_dir.is_dir():
-            continue
-        if domain_dir.name in {"points", "rules"}:
-            continue
-        domain_dirs.append(domain_dir)
-    return domain_dirs
+    return _iter_mergeable_domain_dirs_impl(layer_zero_dir, resolver)
 
 
 def _load_domain_records(domain_dir: Path, resolver: PathResolver) -> list[object]:
-    merged_records: list[object] = []
-    raw_dir = resolver.raw_dir(domain=domain_dir.name)
-    for json_path in sorted(raw_dir.rglob("*.json")):
-        payload = json.loads(json_path.read_text(encoding="utf-8"))
-        merged_records.extend(
-            _iter_transformed_records(domain_dir.name, json_path.name, payload),
-        )
-    return merged_records
+    return _load_domain_records_impl(
+        domain_dir,
+        resolver,
+        transform_records=_iter_transformed_records,
+    )
 
 
 def _sort_drivers_by_name(items: list[object]) -> list[object]:
@@ -905,8 +856,4 @@ def _write_merged_domain_records(
     merged_records: list[object],
     resolver: PathResolver,
 ) -> None:
-    merged_path = resolver.merged(domain=domain_dir.name)
-    merged_path.write_text(
-        json.dumps(merged_records, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    _write_merged_domain_records_impl(domain_dir, merged_records, resolver)
