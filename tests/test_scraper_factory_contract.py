@@ -109,7 +109,7 @@ class _AlwaysAdapter:
     def supports(self, _ctor) -> bool:
         return True
 
-    def create(self, *, context, ctor):
+    def create(self, *, context, _ctor):
         return context.scraper_cls(options=ScraperOptions(), marker=self._marker)
 
 
