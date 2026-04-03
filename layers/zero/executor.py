@@ -6,7 +6,7 @@ from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.types import SeedName
 from layers.path_resolver import format_domain_year_name
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry import ListJobRegistryEntry
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.logging import build_execution_context
@@ -38,6 +38,7 @@ class LayerZeroExecutor:
         merge_service: LayerZeroMergeServiceProtocol | None = None,
         job_hook: LayerZeroJobHook | None = None,
         year_provider: Callable[[], int] | None = None,
+        run_id_provider: Callable[[], str] | None = None,
     ) -> None:
         self._list_job_registry = list_job_registry
         self._validate_list_registry = validate_list_registry
@@ -58,17 +59,18 @@ class LayerZeroExecutor:
             raise ValueError(msg)
         self._job_hook = job_hook
         self._year_provider = year_provider
+        self._run_id_provider = run_id_provider or (lambda: str(uuid4()))
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
-        run_id = str(uuid4())
+        run_id = self._resolve_run_id(run_config)
         trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id)
         summary: dict[str, list[str]] = {"success": [], "skip": [], "fail": []}
         output_paths: list[str] = []
 
-        for job in self._list_job_registry:
+        for job in self._iter_jobs(run_config):
             context = build_execution_context(
                 run_id=run_id,
                 seed_name=job.seed_name,
@@ -215,7 +217,33 @@ class LayerZeroExecutor:
     def _finalize_merge(self, base_wiki_dir: Path) -> None:
         self._merger.merge(base_wiki_dir)
 
+    def _resolve_run_id(self, run_config: RunConfig) -> str:
+        if run_config.fixed_run_id:
+            return run_config.fixed_run_id
+        if run_config.deterministic_mode:
+            return "layer0-deterministic"
+        return self._run_id_provider()
+
+    def _iter_jobs(self, run_config: RunConfig) -> tuple[ListJobRegistryEntry, ...]:
+        if run_config.deterministic_mode or run_config.stable_sort:
+            return tuple(
+                sorted(
+                    self._list_job_registry,
+                    key=lambda job: (
+                        job.output_category,
+                        job.seed_name,
+                        job.list_scraper_cls.__name__,
+                    ),
+                ),
+            )
+        return self._list_job_registry
+
     def _build_trace_writer(self, *, run_config: RunConfig, run_id: str) -> RunTraceWriter:
         debug_root = Path(run_config.debug_dir) if run_config.debug_dir else Path(run_config.output_dir)
         trace_path = debug_root / "traces" / f"layer0_{run_id}.jsonl"
-        return RunTraceWriter(trace_path)
+        timestamp_provider = (
+            (lambda: run_config.fixed_timestamp)
+            if run_config.fixed_timestamp is not None
+            else None
+        )
+        return RunTraceWriter(trace_path, timestamp_provider=timestamp_provider)

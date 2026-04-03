@@ -5,6 +5,7 @@ import logging
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
+from collections.abc import Callable
 from typing import Any
 
 from scrapers.base.constants.runtime import LOGGER_NAME
@@ -34,7 +35,7 @@ class JsonLinesFormatter(logging.Formatter):
             "step": getattr(record, "step", None),
             "status": getattr(record, "status", None),
         }
-        return json.dumps(payload, ensure_ascii=False)
+        return json.dumps(payload, ensure_ascii=False, sort_keys=True)
 
 
 def configure_logging(*, verbose: bool = False, trace: bool = False) -> None:
@@ -84,9 +85,17 @@ def get_logger(
 
 
 class RunTraceWriter:
-    def __init__(self, trace_path: Path) -> None:
+    def __init__(
+        self,
+        trace_path: Path,
+        *,
+        timestamp_provider: Callable[[], str] | None = None,
+    ) -> None:
         self._trace_path = trace_path
         self._trace_path.parent.mkdir(parents=True, exist_ok=True)
+        self._timestamp_provider = timestamp_provider or (
+            lambda: datetime.now(tz=timezone.utc).isoformat()
+        )
 
     @property
     def trace_path(self) -> Path:
@@ -94,8 +103,8 @@ class RunTraceWriter:
 
     def write(self, *, event: dict[str, Any]) -> None:
         payload = {
-            "timestamp": datetime.now(tz=timezone.utc).isoformat(),
+            "timestamp": self._timestamp_provider(),
             **event,
         }
         with self._trace_path.open("a", encoding="utf-8") as trace_file:
-            trace_file.write(f"{json.dumps(payload, ensure_ascii=False)}\n")
+            trace_file.write(f"{json.dumps(payload, ensure_ascii=False, sort_keys=True)}\n")

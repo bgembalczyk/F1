@@ -3,7 +3,7 @@
 import re
 from typing import Any
 
-from models.services.helpers import prune_empty
+from models.services import prune_empty
 from scrapers.base.helpers.constants import LANG_CODES
 from scrapers.base.helpers.constants import NON_ALPHANUM_PATTERN
 from scrapers.base.helpers.constants import UNDERSCORE_PATTERN

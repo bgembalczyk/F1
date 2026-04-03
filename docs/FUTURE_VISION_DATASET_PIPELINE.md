@@ -77,3 +77,23 @@ Po ustabilizowaniu iteracyjnego pipeline Wikipedii:
 - Stabilny pipeline iteracyjny oparty o warstwy 0 i 1 dla kluczowych encji F1,
 - Powtarzalne budowanie datasetów bez ręcznej edycji danych,
 - Jasna kontrola „co jest następnym punktem startowym” na każdym kroku.
+
+## Ujednolicony lifecycle pipeline (kontrakt etapów)
+
+W całym orchestratorze 0/1 obowiązuje spójna sekwencja etapów:
+
+- `ingest` -> `normalize` -> `merge` -> `validate` -> `export`
+
+Minimalny kontrakt danych przekazywany między etapami:
+
+- `domain: str`
+- `stage: str`
+- `records: list[dict]`
+- `metadata: dict`
+- `errors: list[str]`
+
+Dla diagnostyki można opcjonalnie włączyć `checkpoint dump` po każdym etapie
+(zapisywany jako `data/checkpoints/stage_<stage>_<domain>.json`) dla wskazanych
+domen. Nazwy etapów w logach, checkpointach i dokumentacji muszą być identyczne
+z sekwencją powyżej.
+
