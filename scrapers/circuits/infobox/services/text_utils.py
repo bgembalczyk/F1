@@ -2,7 +2,7 @@ import re
 from typing import Any
 
 from models.records.link import LinkRecord
-from models.services.helpers import prune_empty
+from models.services import prune_empty
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.helpers.parsing import parse_number_with_unit

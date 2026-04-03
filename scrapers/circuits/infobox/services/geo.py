@@ -2,7 +2,7 @@ import re
 from typing import TYPE_CHECKING
 from typing import Any
 
-from models.services.helpers import split_delimited_text
+from models.services import split_delimited_text
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import LOCATION_STOPWORDS

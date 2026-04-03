@@ -3,7 +3,7 @@ from pathlib import Path
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
-from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
