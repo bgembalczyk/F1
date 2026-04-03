@@ -14,13 +14,13 @@ class _FacadeSpy:
         self.calls += 1
 
 
-def test_run_wiki_flow_routes_to_default_facade(monkeypatch) -> None:
+def test_run_wiki_flow_routes_to_default_facade(monkeypatch, tmp_path: Path) -> None:
     facade = _FacadeSpy()
 
     monkeypatch.setattr(
         flow_entrypoint,
         "DEFAULT_PATH_RESOLVER",
-        SimpleNamespace(exports_root=Path("/tmp/wiki"), debug_root=Path("/tmp/debug")),
+        SimpleNamespace(exports_root=tmp_path / "wiki", debug_root=tmp_path / "debug"),
     )
     monkeypatch.setattr(
         flow_entrypoint,

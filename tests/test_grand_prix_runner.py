@@ -7,7 +7,7 @@ from scrapers.base.runner import ScraperRunner
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
 
 
-def test_grand_prix_runner_uses_scraper_runner_path() -> None:
+def test_grand_prix_runner_uses_scraper_runner_path(tmp_path: Path) -> None:
     calls: list[dict[str, object]] = []
     original_method = ScraperRunner.run_and_export
 
@@ -33,9 +33,9 @@ def test_grand_prix_runner_uses_scraper_runner_path() -> None:
             default_output_path="raw/grands_prix/grands_prix.json",
             legacy_output_path="grands_prix/grands_prix.json",
         )
-        run_config = RunConfig(output_dir=Path("/tmp"), include_urls=True)
+        run_config = RunConfig(output_dir=tmp_path, include_urls=True)
 
-        runner.run(seed, run_config, Path("/tmp/wiki"))
+        runner.run(seed, run_config, tmp_path / "wiki")
     finally:
         ScraperRunner.run_and_export = original_method
 

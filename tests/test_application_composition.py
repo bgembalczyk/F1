@@ -7,10 +7,10 @@ from layers.zero.executor import LayerZeroExecutor
 from layers.zero.policies import MirrorConstructorsJobHook
 
 
-def test_default_application_is_wired_with_expected_components() -> None:
+def test_default_application_is_wired_with_expected_components(tmp_path: Path) -> None:
     app = create_default_wiki_pipeline_application(
-        base_wiki_dir=Path("/tmp/wiki"),
-        base_debug_dir=Path("/tmp/debug"),
+        base_wiki_dir=tmp_path / "wiki",
+        base_debug_dir=tmp_path / "debug",
     )
 
     assert isinstance(app, WikiPipelineApplication)

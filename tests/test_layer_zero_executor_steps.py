@@ -82,17 +82,19 @@ def _executor(
 
 def _build_default_and_local_run_config(
     *,
+    output_dir: Path,
+    debug_dir: Path,
     local_scraper_kwargs: dict[str, object] | None = None,
 ) -> tuple[RunConfig, RunConfig]:
     default_run_config = RunConfig(
-        output_dir=Path("/tmp"),
+        output_dir=output_dir,
         include_urls=False,
-        debug_dir=Path("/tmp/debug"),
+        debug_dir=debug_dir,
     )
     local_run_config = RunConfig(
-        output_dir=Path("/tmp"),
+        output_dir=output_dir,
         include_urls=False,
-        debug_dir=Path("/tmp/debug"),
+        debug_dir=debug_dir,
         scraper_kwargs=(
             local_scraper_kwargs if local_scraper_kwargs is not None else {}
         ),
@@ -120,7 +122,7 @@ def test_protocol_contracts_are_met_by_production_implementations() -> None:
     )
 
 
-def test_build_local_run_config_uses_seed_specific_factory() -> None:
+def test_build_local_run_config_uses_seed_specific_factory(tmp_path: Path) -> None:
     seed_job = _job(seed_name="drivers")
     executor = _executor(
         default_config_factory=_FakeConfigFactory({"from": "default"}),
@@ -128,9 +130,9 @@ def test_build_local_run_config_uses_seed_specific_factory() -> None:
 
     local_run_config = executor._build_local_run_config(
         run_config=RunConfig(
-            output_dir=Path("/tmp"),
+            output_dir=tmp_path,
             include_urls=True,
-            debug_dir=Path("/tmp/debug"),
+            debug_dir=tmp_path / "debug",
         ),
         job=seed_job,
         config_factories={"drivers": _FakeConfigFactory({"domain": "drivers"})},
@@ -139,7 +141,7 @@ def test_build_local_run_config_uses_seed_specific_factory() -> None:
     assert local_run_config.scraper_kwargs == {"domain": "drivers"}
 
 
-def test_run_single_job_passes_local_run_config_when_kwargs_present() -> None:
+def test_run_single_job_passes_local_run_config_when_kwargs_present(tmp_path: Path) -> None:
     calls: list[dict[str, object]] = []
 
     original_method = ScraperRunner.run_and_export
@@ -158,6 +160,8 @@ def test_run_single_job_passes_local_run_config_when_kwargs_present() -> None:
     executor = _executor()
 
     default_run_config, local_run_config = _build_default_and_local_run_config(
+        output_dir=tmp_path,
+        debug_dir=tmp_path / "debug",
         local_scraper_kwargs={"x": 1},
     )
 
@@ -178,7 +182,9 @@ def test_run_single_job_passes_local_run_config_when_kwargs_present() -> None:
     assert json_path == Path("layers/0_layer/drivers/raw/f1_drivers_2026.json")
 
 
-def test_run_single_job_passes_global_run_config_when_local_kwargs_missing() -> None:
+def test_run_single_job_passes_global_run_config_when_local_kwargs_missing(
+    tmp_path: Path,
+) -> None:
     calls: list[RunConfig] = []
     original_method = ScraperRunner.run_and_export
 
@@ -188,7 +194,10 @@ def test_run_single_job_passes_global_run_config_when_local_kwargs_missing() -> 
     ScraperRunner.run_and_export = _capture_call
     executor = _executor()
 
-    default_run_config, local_run_config = _build_default_and_local_run_config()
+    default_run_config, local_run_config = _build_default_and_local_run_config(
+        output_dir=tmp_path,
+        debug_dir=tmp_path / "debug",
+    )
 
     try:
         executor._run_single_job(
@@ -202,12 +211,12 @@ def test_run_single_job_passes_global_run_config_when_local_kwargs_missing() -> 
     assert calls == [default_run_config]
 
 
-def test_maybe_mirror_constructors_delegates_to_hook() -> None:
+def test_maybe_mirror_constructors_delegates_to_hook(tmp_path: Path) -> None:
     hook = _Hook()
     executor = _executor(job_hook=hook)
 
     executor._maybe_mirror_constructors(
-        base_wiki_dir=Path("/tmp/wiki"),
+        base_wiki_dir=tmp_path / "wiki",
         job=_job(seed_name="constructors"),
         l0_raw_json_path=Path(
             "layers/0_layer/constructors/raw/f1_constructors_2026.json",
@@ -216,23 +225,23 @@ def test_maybe_mirror_constructors_delegates_to_hook() -> None:
 
     assert hook.calls == [
         (
-            Path("/tmp/wiki"),
+            tmp_path / "wiki",
             "constructors",
             Path("layers/0_layer/constructors/raw/f1_constructors_2026.json"),
         ),
     ]
 
 
-def test_finalize_merge_calls_merge_service() -> None:
+def test_finalize_merge_calls_merge_service(tmp_path: Path) -> None:
     merge_service = _MergeService()
     executor = _executor(merge_service=merge_service)
 
-    executor._finalize_merge(Path("/tmp/wiki"))
+    executor._finalize_merge(tmp_path / "wiki")
 
-    assert merge_service.calls == [Path("/tmp/wiki")]
+    assert merge_service.calls == [tmp_path / "wiki"]
 
 
-def test_run_orchestrates_steps_in_order() -> None:
+def test_run_orchestrates_steps_in_order(tmp_path: Path) -> None:
     executor = _executor()
     order: list[str] = []
 
@@ -240,9 +249,9 @@ def test_run_orchestrates_steps_in_order() -> None:
     executor._build_local_run_config = lambda **_kwargs: order.append(
         "build",
     ) or RunConfig(
-        output_dir=Path("/tmp"),
+        output_dir=tmp_path,
         include_urls=True,
-        debug_dir=Path("/tmp/debug"),
+        debug_dir=tmp_path / "debug",
     )
     executor._run_single_job = lambda **_kwargs: order.append("run") or Path(
         "layers/0_layer/drivers/raw/f1_drivers_2026.json",
@@ -252,17 +261,17 @@ def test_run_orchestrates_steps_in_order() -> None:
 
     executor.run(
         RunConfig(
-            output_dir=Path("/tmp"),
+            output_dir=tmp_path,
             include_urls=True,
-            debug_dir=Path("/tmp/debug"),
+            debug_dir=tmp_path / "debug",
         ),
-        Path("/tmp/wiki"),
+        tmp_path / "wiki",
     )
 
     assert order == ["resolve", "build", "run", "mirror", "merge"]
 
 
-def test_iter_jobs_sorts_registry_in_deterministic_mode() -> None:
+def test_iter_jobs_sorts_registry_in_deterministic_mode(tmp_path: Path) -> None:
     constructors_job = ListJobRegistryEntry(
         seed_name="constructors",
         wikipedia_url="https://example.com",
@@ -284,23 +293,27 @@ def test_iter_jobs_sorts_registry_in_deterministic_mode() -> None:
     )
 
     ordered = executor._iter_jobs(
-        RunConfig(output_dir=Path("/tmp"), deterministic_mode=True),
+        RunConfig(output_dir=tmp_path, deterministic_mode=True),
     )
 
     assert [job.seed_name for job in ordered] == ["constructors", "drivers"]
 
 
-def test_resolve_run_id_returns_fixed_value_in_deterministic_mode() -> None:
+def test_resolve_run_id_returns_fixed_value_in_deterministic_mode(
+    tmp_path: Path,
+) -> None:
     executor = _executor()
 
     run_id = executor._resolve_run_id(
-        RunConfig(output_dir=Path("/tmp"), deterministic_mode=True),
+        RunConfig(output_dir=tmp_path, deterministic_mode=True),
     )
 
     assert run_id == "layer0-deterministic"
 
 
-def test_mirror_constructors_job_hook_runs_only_for_matching_job() -> None:
+def test_mirror_constructors_job_hook_runs_only_for_matching_job(
+    tmp_path: Path,
+) -> None:
     mirror_calls: list[tuple[Path, Path]] = []
 
     class _MirrorService:
@@ -313,12 +326,12 @@ def test_mirror_constructors_job_hook_runs_only_for_matching_job() -> None:
     )
 
     hook.after_job(
-        base_wiki_dir=Path("/tmp/wiki"),
+        base_wiki_dir=tmp_path / "wiki",
         job=_job(seed_name="drivers"),
         l0_raw_json_path=Path("layers/0_layer/drivers/raw/f1_drivers_2026.json"),
     )
     hook.after_job(
-        base_wiki_dir=Path("/tmp/wiki"),
+        base_wiki_dir=tmp_path / "wiki",
         job=_job(seed_name="constructors_current"),
         l0_raw_json_path=Path(
             "layers/0_layer/constructors/raw/f1_constructors_2026.json",
@@ -327,7 +340,7 @@ def test_mirror_constructors_job_hook_runs_only_for_matching_job() -> None:
 
     assert mirror_calls == [
         (
-            Path("/tmp/wiki"),
-            Path("/tmp/wiki/layers/0_layer/constructors/raw/f1_constructors_2026.json"),
+            tmp_path / "wiki",
+            tmp_path / "wiki/layers/0_layer/constructors/raw/f1_constructors_2026.json",
         ),
     ]
