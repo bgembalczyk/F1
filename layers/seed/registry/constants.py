@@ -168,8 +168,8 @@ def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
             RawRegistrySpec(
                 seed_name=source.seed_name,
                 list_scraper_cls=list_scraper_cls,
-                output_category=source.output_category,
-                list_filename=source.list_filename,
+                output_category=source.domain,
+                list_filename=source.output_file,
                 seed_filename=_SEED_FILENAME_OVERRIDES.get(source.seed_name),
             ),
         )
@@ -179,8 +179,8 @@ def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
         RawRegistrySpec(
             seed_name="constructors",
             list_scraper_cls=ConstructorsListScraper,
-            output_category=constructors_source.output_category,
-            list_filename=constructors_source.list_filename,
+            output_category=constructors_source.domain,
+            list_filename=constructors_source.output_file,
             seed_filename=_SEED_FILENAME_OVERRIDES["constructors"],
             include_in_list_registry=False,
         ),
@@ -191,8 +191,8 @@ def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
         RawRegistrySpec(
             seed_name="grands_prix",
             list_scraper_cls=GrandsPrixListScraper,
-            output_category=grands_prix_source.output_category,
-            list_filename=grands_prix_source.list_filename,
+            output_category=grands_prix_source.domain,
+            list_filename=grands_prix_source.output_file,
             seed_filename=_SEED_FILENAME_OVERRIDES["grands_prix"],
             include_in_list_registry=False,
         ),
@@ -206,18 +206,18 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = _build_raw_registry_spec()
 def _validate_registry_startup_consistency() -> None:
     for spec in RAW_REGISTRY_SPEC:
         source = get_source_by_seed_name(spec.seed_name, warn=False)
-        if spec.output_category != source.output_category:
+        if spec.output_category != source.domain:
             msg = (
                 "Seed registry startup consistency check failed for output_category: "
                 f"{spec.seed_name!r} -> {spec.output_category!r} "
-                f"(expected {source.output_category!r})"
+                f"(expected {source.domain!r})"
             )
             raise ValueError(msg)
-        if spec.list_filename != source.list_filename:
+        if spec.list_filename != source.output_file:
             msg = (
                 "Seed registry startup consistency check failed for list_filename: "
                 f"{spec.seed_name!r} -> {spec.list_filename!r} "
-                f"(expected {source.list_filename!r})"
+                f"(expected {source.output_file!r})"
             )
             raise ValueError(msg)
 
