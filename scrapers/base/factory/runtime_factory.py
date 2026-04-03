@@ -37,65 +37,111 @@ class ScraperRuntimeFactory:
     ) -> ScraperRuntime:
         resolved_policy = self._resolve_policy(options=options, policy=policy)
         cache_adapter = self._resolve_cache_adapter(options)
-
-        source_adapter = options.source_adapter
-        fetcher = options.fetcher
-
-        if isinstance(source_adapter, HtmlFetcher):
-            fetcher = source_adapter
-        elif isinstance(fetcher, SourceAdapter) and source_adapter is None:
-            source_adapter = fetcher
-
-        if fetcher is None and source_adapter is None:
-            http_client = self._resolve_http_client(
-                options=options,
-                policy=resolved_policy,
-            )
-            fetcher = HtmlFetcher(
-                policy=resolved_policy,
-                http_client=http_client,
-                cache_adapter=cache_adapter,
-            )
-            source_adapter = fetcher
-        else:
-            if fetcher is None and isinstance(source_adapter, HtmlFetcher):
-                fetcher = source_adapter
-            if fetcher is not None:
-                if hasattr(fetcher, "set_cache"):
-                    fetcher.set_cache(cache_adapter)
-                http_client = getattr(fetcher, "http_client", None)
-                if http_client is None:
-                    http_client = self._resolve_http_client(
-                        options=options,
-                        policy=resolved_policy,
-                    )
-            else:
-                http_client = self._resolve_http_client(
-                    options=options,
-                    policy=resolved_policy,
-                )
-
-            if source_adapter is None:
-                source_adapter = fetcher
-            elif cache_adapter is not None and not isinstance(
-                source_adapter,
-                HtmlFetcher,
-            ):
-                source_adapter = CacheAdapter(
-                    source_adapter=source_adapter,
-                    cache_adapter=cache_adapter,
-                )
-
-        if fetcher is None or source_adapter is None:
-            msg = "Could not build scraper runtime: missing fetcher/source_adapter"
-            raise ValueError(msg)
-
+        fetcher, source_adapter = self._resolve_fetcher_and_source_adapter(
+            options=options,
+            cache_adapter=cache_adapter,
+            resolved_policy=resolved_policy,
+        )
+        http_client = self._resolve_runtime_http_client(
+            options=options,
+            fetcher=fetcher,
+            resolved_policy=resolved_policy,
+        )
         return ScraperRuntime(
             policy=resolved_policy,
             http_client=http_client,
             cache_adapter=cache_adapter,
             fetcher=fetcher,
             source_adapter=source_adapter,
+        )
+
+    def _resolve_fetcher_and_source_adapter(
+        self,
+        *,
+        options: ScraperOptions,
+        cache_adapter: CacheBackend | None,
+        resolved_policy: HttpPolicy,
+    ) -> tuple[HtmlFetcher, SourceAdapter]:
+        fetcher, source_adapter = self._normalize_runtime_components(options=options)
+        if fetcher is None and source_adapter is None:
+            return self._build_default_components(
+                options=options,
+                cache_adapter=cache_adapter,
+                resolved_policy=resolved_policy,
+            )
+        return self._resolve_existing_components(
+            fetcher=fetcher,
+            source_adapter=source_adapter,
+            cache_adapter=cache_adapter,
+        )
+
+    @staticmethod
+    def _normalize_runtime_components(
+        *,
+        options: ScraperOptions,
+    ) -> tuple[HtmlFetcher | None, SourceAdapter | None]:
+        source_adapter = options.source_adapter
+        fetcher = options.fetcher
+        if isinstance(source_adapter, HtmlFetcher):
+            fetcher = source_adapter
+        elif isinstance(fetcher, SourceAdapter) and source_adapter is None:
+            source_adapter = fetcher
+        return fetcher, source_adapter
+
+    def _build_default_components(
+        self,
+        *,
+        options: ScraperOptions,
+        cache_adapter: CacheBackend | None,
+        resolved_policy: HttpPolicy,
+    ) -> tuple[HtmlFetcher, SourceAdapter]:
+        http_client = self._resolve_http_client(
+            options=options,
+            policy=resolved_policy,
+        )
+        fetcher = HtmlFetcher(
+            policy=resolved_policy,
+            http_client=http_client,
+            cache_adapter=cache_adapter,
+        )
+        return fetcher, fetcher
+
+    @staticmethod
+    def _resolve_existing_components(
+        *,
+        fetcher: HtmlFetcher | None,
+        source_adapter: SourceAdapter | None,
+        cache_adapter: CacheBackend | None,
+    ) -> tuple[HtmlFetcher, SourceAdapter]:
+        if fetcher is None and isinstance(source_adapter, HtmlFetcher):
+            fetcher = source_adapter
+        if fetcher is None:
+            msg = "Could not build scraper runtime: missing fetcher/source_adapter"
+            raise ValueError(msg)
+        if hasattr(fetcher, "set_cache"):
+            fetcher.set_cache(cache_adapter)
+        if source_adapter is None:
+            return fetcher, fetcher
+        if cache_adapter is not None and not isinstance(source_adapter, HtmlFetcher):
+            source_adapter = CacheAdapter(
+                source_adapter=source_adapter,
+                cache_adapter=cache_adapter,
+            )
+        return fetcher, source_adapter
+
+    def _resolve_runtime_http_client(
+        self,
+        *,
+        options: ScraperOptions,
+        fetcher: HtmlFetcher,
+        resolved_policy: HttpPolicy,
+    ) -> HttpClientProtocol:
+        fetcher_http_client = getattr(fetcher, "http_client", None)
+        if fetcher_http_client is not None:
+            return fetcher_http_client
+        return self._resolve_http_client(
+            options=options,
+            policy=resolved_policy,
         )
 
     @staticmethod

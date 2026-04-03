@@ -94,33 +94,14 @@ def main() -> int:
         print("::error::Pusty opis PR. Uzupełnij PR template.")
         return 1
 
-    errors: list[str] = []
-
-    for heading in REQUIRED_HEADINGS:
-        if heading not in pr_body:
-            errors.append(f"Brak sekcji: {heading}")
-
-    for checkbox in REQUIRED_CHECKBOXES:
-        if not has_checked_checkbox(pr_body, checkbox):
-            errors.append(f"Checklista niepotwierdzona: {checkbox}")
-
     field_values = extract_architecture_fields(pr_body)
-    for field, value in field_values.items():
-        if not value:
-            errors.append(f"Brak wartości pola: {field}")
+    errors = _collect_template_errors(pr_body, field_values)
 
     changed_files = list_changed_files(args.base_sha, args.head_sha)
     requires_detailed_impact = touches_scrapers_base(changed_files)
 
     if requires_detailed_impact:
-        for field, raw_value in field_values.items():
-            normalized = normalize_field_value(raw_value)
-            if not normalized or normalized in NOT_APPLICABLE_VALUES:
-                errors.append(
-                    "Zmiany w scrapers/base wymagają uzupełnionej sekcji "
-                    "Architecture impact; "
-                    f"pole '{field}' nie może mieć wartości 'nie dotyczy'.",
-                )
+        errors.extend(_validate_detailed_architecture_impact(field_values))
 
     if errors:
         for err in errors:
@@ -129,6 +110,55 @@ def main() -> int:
 
     print("Walidacja PR template zakończona sukcesem.")
     return 0
+
+
+def _collect_template_errors(
+    pr_body: str,
+    field_values: dict[str, str],
+) -> list[str]:
+    errors: list[str] = []
+    errors.extend(_missing_headings(pr_body))
+    errors.extend(_unchecked_checkboxes(pr_body))
+    errors.extend(_missing_architecture_fields(field_values))
+    return errors
+
+
+def _missing_headings(pr_body: str) -> list[str]:
+    return [
+        f"Brak sekcji: {heading}"
+        for heading in REQUIRED_HEADINGS
+        if heading not in pr_body
+    ]
+
+
+def _unchecked_checkboxes(pr_body: str) -> list[str]:
+    return [
+        f"Checklista niepotwierdzona: {checkbox}"
+        for checkbox in REQUIRED_CHECKBOXES
+        if not has_checked_checkbox(pr_body, checkbox)
+    ]
+
+
+def _missing_architecture_fields(field_values: dict[str, str]) -> list[str]:
+    return [
+        f"Brak wartości pola: {field}"
+        for field, value in field_values.items()
+        if not value
+    ]
+
+
+def _validate_detailed_architecture_impact(field_values: dict[str, str]) -> list[str]:
+    errors: list[str] = []
+    for field, raw_value in field_values.items():
+        normalized = normalize_field_value(raw_value)
+        if normalized and normalized not in NOT_APPLICABLE_VALUES:
+            continue
+        errors.append(
+            "Zmiany w scrapers/base wymagają uzupełnionej sekcji "
+            "Architecture impact; "
+            f"pole '{field}' nie może mieć wartości 'nie dotyczy'.",
+        )
+    return errors
 
 
 if __name__ == "__main__":
