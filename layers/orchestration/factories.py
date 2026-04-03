@@ -23,6 +23,7 @@ class DefaultLayerZeroRunConfigFactory(LayerZeroRunConfigFactory):
         self,
         job: ListJobRegistryEntry | None = None,
     ) -> dict[str, object]:
+        _ = job
         return {}
 
 
@@ -34,6 +35,7 @@ class StaticScraperKwargsFactory(LayerZeroRunConfigFactory):
         self,
         job: ListJobRegistryEntry | None = None,
     ) -> dict[str, object]:
+        _ = job
         return dict(self._scraper_kwargs)
 
 
