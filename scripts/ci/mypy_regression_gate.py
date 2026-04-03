@@ -14,7 +14,8 @@ GIT_BIN = shutil.which("git") or "git"
 
 
 def _run_mypy(repo_dir: Path) -> tuple[int, str]:
-    proc = subprocess.run(  # nosec B603 -- uruchomienie zaufanego `python -m mypy`  # noqa: S603
+    # nosec B603 -- uruchomienie zaufanego `python -m mypy`
+    proc = subprocess.run(  # noqa: S603
         [sys.executable, "-m", "mypy", "--config-file", "mypy.ini"],
         cwd=repo_dir,
         text=True,
@@ -31,7 +32,8 @@ def _run_mypy(repo_dir: Path) -> tuple[int, str]:
 
 
 def _git(*args: str) -> None:
-    subprocess.run(  # nosec B603 -- zaufane wywołanie lokalnego `git`  # noqa: S603
+    # nosec B603 -- zaufane wywołanie lokalnego `git`
+    subprocess.run(  # noqa: S603
         [GIT_BIN, *args],
         check=True,
         text=True,
@@ -61,7 +63,8 @@ def main() -> int:
         try:
             base_errors, base_output = _run_mypy(base_worktree)
         finally:
-            subprocess.run(  # nosec B603 -- zaufane wywołanie lokalnego `git worktree remove`  # noqa: S603
+            # nosec B603 -- zaufane wywołanie lokalnego `git worktree remove`
+            subprocess.run(  # noqa: S603
                 [GIT_BIN, "worktree", "remove", "--force", str(base_worktree)],
                 check=False,
                 capture_output=True,

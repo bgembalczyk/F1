@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: RUF100
 from __future__ import annotations
 
 import ast
@@ -95,15 +96,15 @@ class DependencyCreationVisitor(ast.NodeVisitor):
         self._class_stack: list[str] = []
         self._method_stack: list[str] = []
 
-    def visit_ClassDef(self, node: ast.ClassDef) -> None:
+    def visit_ClassDef(self, node: ast.ClassDef) -> None:  # noqa: N802
         self._class_stack.append(node.name)
         self.generic_visit(node)
         self._class_stack.pop()
 
-    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
+    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:  # noqa: N802
         self._visit_function(node)
 
-    def visit_AsyncFunctionDef(
+    def visit_AsyncFunctionDef(  # noqa: N802
         self,
         node: ast.AsyncFunctionDef,
     ) -> None:
@@ -114,7 +115,7 @@ class DependencyCreationVisitor(ast.NodeVisitor):
         self.generic_visit(node)
         self._method_stack.pop()
 
-    def visit_Call(self, node: ast.Call) -> None:
+    def visit_Call(self, node: ast.Call) -> None:  # noqa: N802
         class_name = self._class_stack[-1] if self._class_stack else "<module>"
         method_name = self._method_stack[-1] if self._method_stack else "<module>"
 
@@ -136,7 +137,7 @@ class DependencyCreationVisitor(ast.NodeVisitor):
             )
         self.generic_visit(node)
 
-    def visit_Import(self, node: ast.Import) -> None:
+    def visit_Import(self, node: ast.Import) -> None:  # noqa: N802
         if not self._is_hidden_import(node.lineno):
             return
         dependency_name = ", ".join(alias.name for alias in node.names)
@@ -153,7 +154,7 @@ class DependencyCreationVisitor(ast.NodeVisitor):
             ),
         )
 
-    def visit_ImportFrom(self, node: ast.ImportFrom) -> None:
+    def visit_ImportFrom(self, node: ast.ImportFrom) -> None:  # noqa: N802
         if not self._is_hidden_import(node.lineno):
             return
         names = ", ".join(alias.name for alias in node.names)
