@@ -3,6 +3,6 @@
 Import from this package (or dedicated domain packages) instead of deep module paths.
 """
 
-from scrapers.cli import run_wiki_cli
+from scrapers.wiki.flow_entrypoint import run_wiki_flow
 
-__all__ = ["run_wiki_cli"]
+__all__ = ["run_wiki_flow"]

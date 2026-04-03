@@ -39,7 +39,6 @@ class RunPathName(str, Enum):
 LegacyCliProfileName = Literal[
     "list_scraper",
     "complete_extractor",
-    "deprecated_entrypoint",
 ]
 
 RunProfileSelector = RunProfileName | Literal["default", "debug"]
@@ -86,7 +85,6 @@ RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
 LEGACY_CLI_PROFILE_ALIASES: dict[LegacyCliProfileName, RunProfileName] = {
     "list_scraper": RunProfileName.DEFAULT,
     "complete_extractor": RunProfileName.DEFAULT,
-    "deprecated_entrypoint": RunProfileName.DEFAULT,
 }
 
 LEGACY_CLI_PROFILE_NAMES: tuple[LegacyCliProfileName, ...] = tuple(

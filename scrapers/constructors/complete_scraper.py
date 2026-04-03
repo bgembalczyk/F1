@@ -26,9 +26,3 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
         detail_url_field_paths=("constructor.url", "constructor_url", "team_url"),
         filter_redlinks=True,
     )
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

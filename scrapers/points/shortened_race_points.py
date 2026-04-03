@@ -35,9 +35,3 @@ class ShortenedRacePointsScraper(BasePointsScraper):
             options=append_transformer(options, ShortenedRacePointsTransformer()),
             config=config,
         )
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()
