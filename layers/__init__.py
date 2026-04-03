@@ -9,6 +9,9 @@ All other modules under ``layers`` should be treated as internal wiring.
 
 from __future__ import annotations
 
+from layers.application import create_default_wiki_pipeline_facade
+from layers.composition import create_default_wiki_pipeline_application
+
 
 def create_default_wiki_pipeline_application(*args, **kwargs):
     """Create the default wiki pipeline application lazily."""

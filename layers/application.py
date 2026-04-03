@@ -6,7 +6,6 @@ from datetime import timezone
 from pathlib import Path
 from typing import NamedTuple
 
-from layers.composition import create_default_wiki_pipeline_application
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.facade import WikiPipelineFacade
 from layers.one.executor import LayerOneExecutor
