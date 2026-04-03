@@ -19,7 +19,7 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
-from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY  # noqa: E402
+from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
 from scripts.lib.check_runner import iter_python_paths  # noqa: E402
 from scripts.lib.check_runner import run_cli  # noqa: E402
 
