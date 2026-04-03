@@ -10,6 +10,8 @@ from scrapers.sponsorship_liveries.parsers.team_liveries import (
 from scrapers.sponsorship_liveries.parsers.team_liveries import TeamLiveriesTableParser
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 
+SAMPLE_SEASON_YEAR = 2020
+
 
 def test_sponsorship_scraper_uses_team_section_parser() -> None:
     scraper = F1SponsorshipLiveriesScraper(options=ScraperOptions())
@@ -44,4 +46,4 @@ def test_team_section_parser_splits_sections_and_uses_table_parser() -> None:
 
     assert len(parsed) == 1
     assert parsed[0]["team"] == "Team A"
-    assert parsed[0]["liveries"][0]["season"][0]["year"] == 2020
+    assert parsed[0]["liveries"][0]["season"][0]["year"] == SAMPLE_SEASON_YEAR

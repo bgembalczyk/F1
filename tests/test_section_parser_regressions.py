@@ -15,6 +15,7 @@ from scrapers.seasons.parsers.table import SeasonTableParser
 from tests._section_parser_fixture_pattern import ALIAS_FIXTURES
 
 ALIAS_DOMAINS = ("constructors", "circuits", "seasons")
+EXPECTED_PARSE_CALLS = 2
 
 
 class FixtureFetcher:
@@ -183,6 +184,6 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
 
     result = parser.parse(section_fragment)
 
-    assert call_count == 2
+    assert call_count == EXPECTED_PARSE_CALLS
     assert result.records
     assert result.records[0]["constructor"] == "Ferrari"

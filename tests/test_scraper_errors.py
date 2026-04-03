@@ -31,6 +31,8 @@ from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
+RETRY_ATTEMPTS = 2
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
@@ -226,12 +228,12 @@ def test_fetch_retry_policy_retries_recoverable_network_error() -> None:
         options=ScraperOptions(
             fetcher=fetcher,
             error_policy="retry",
-            error_retry_attempts=2,
+            error_retry_attempts=RETRY_ATTEMPTS,
         ),
     )
 
     assert scraper.fetch() == []
-    assert fetcher.calls == 2
+    assert fetcher.calls == RETRY_ATTEMPTS
 
 
 def test_fetch_skip_policy_soft_skips_recoverable_network_error() -> None:
@@ -305,7 +307,7 @@ def test_error_summary_aggregates_entries_by_code(tmp_path: Path) -> None:
 
     summary_path = write_error_summary_by_code(tmp_path, run_id="run-a")
     payload = json.loads(summary_path.read_text(encoding="utf-8"))
-    assert payload["total_errors"] == 2
+    assert payload["total_errors"] == RETRY_ATTEMPTS
     assert payload["error_counts_by_code"] == {"M002": 1, "P001": 1}
 
 

@@ -12,6 +12,9 @@ from infrastructure.gemini.cache import GeminiCache
 from infrastructure.http_client.caching.file import FileCache
 
 
+CACHE_TEST_VALUE = 123
+
+
 class _IntAdapter(FileTtlCacheAdapter[int]):
     extension = ".txt"
 
@@ -29,9 +32,9 @@ def test_file_ttl_cache_roundtrip(tmp_path: Path) -> None:
         adapter=_IntAdapter(),
     )
 
-    cache.set("key-1", 123)
+    cache.set("key-1", CACHE_TEST_VALUE)
 
-    assert cache.get("key-1") == 123
+    assert cache.get("key-1") == CACHE_TEST_VALUE
 
 
 def test_file_ttl_cache_ttl_expired(tmp_path: Path) -> None:
@@ -41,7 +44,7 @@ def test_file_ttl_cache_ttl_expired(tmp_path: Path) -> None:
         adapter=_IntAdapter(),
     )
 
-    cache.set("key-1", 123)
+    cache.set("key-1", CACHE_TEST_VALUE)
     cache_file = next((tmp_path / "cache").glob("*.txt"))
     old_ts = time.time() - 120
     os.utime(cache_file, (old_ts, old_ts))
@@ -56,7 +59,7 @@ def test_file_ttl_cache_zero_ttl_disables_reads(tmp_path: Path) -> None:
         adapter=_IntAdapter(),
     )
 
-    cache.set("key-1", 123)
+    cache.set("key-1", CACHE_TEST_VALUE)
 
     assert cache.get("key-1") is None
 

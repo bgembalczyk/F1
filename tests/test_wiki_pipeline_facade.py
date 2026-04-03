@@ -2,6 +2,8 @@ from pathlib import Path
 
 from layers.facade import WikiPipelineFacade
 
+EXPECTED_SCENARIO_RUNS = 2
+
 
 class _LayerExecutorSpy:
     def __init__(self) -> None:
@@ -37,6 +39,6 @@ def test_wiki_pipeline_facade_routes_common_scenarios(tmp_path: Path) -> None:
     facade.run_scenario("merge")
     facade.run_scenario("full")
 
-    assert len(layer_zero.calls) == 2
-    assert len(layer_one.calls) == 2
+    assert len(layer_zero.calls) == EXPECTED_SCENARIO_RUNS
+    assert len(layer_one.calls) == EXPECTED_SCENARIO_RUNS
     assert merge.calls == [tmp_path / "wiki"]
