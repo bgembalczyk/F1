@@ -7,21 +7,25 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
 - **Service**
   - Orkiestruje regułę biznesową lub przypadek użycia.
   - Nie powinien być „workiem” na utilsy techniczne.
+  - Powinien być idempotentny względem wejścia (brak ukrytych efektów ubocznych poza jawnie opisaną integracją I/O).
   - Nazwa: `<Domena><Akcja>Service` (np. `LayerZeroMergeService`).
 
 - **Factory**
   - Tworzy obiekty konfiguracyjne/instancje i ukrywa szczegóły konstrukcji.
   - Nie wykonuje docelowego use-case end-to-end.
+  - Dopuszczalna logika walidacji wejścia, ale bez „uruchamiania procesu”.
   - Nazwa: `<CoTworzy>Factory` lub `<Kontekst><CoTworzy>Factory`.
 
 - **Runner**
   - Uruchamia pełny przebieg procesu/pipeline/jobu.
   - Zarządza kolejnością kroków i lifecycle.
+  - Może wołać wiele `Service`, ale nie powinien implementować ich logiki domenowej inline.
   - Nazwa: `<Kontekst>Runner`.
 
 - **Adapter**
   - Tłumaczy kontrakt A -> B (API, format, źródło danych, model).
   - Bez logiki biznesowej domeny.
+  - Ma być wymienialny (łatwy do podmiany w testach i integracjach).
   - Nazwa: `<ŹródłoLubCel>Adapter`.
 
 - **EntryPoint**
@@ -41,6 +45,18 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
    - nowy moduł o nazwie semantycznej,
    - stary moduł jako alias/re-export + `DeprecationWarning`.
 3. Jeżeli klasa/moduł uruchamia cały flow, preferuj `Runner` zamiast ogólnego `Executor` w nowym kodzie.
+
+## Szybkie drzewko decyzyjne (Service vs Factory vs Runner vs Adapter)
+
+1. **Czy kod uruchamia cały pipeline/job?**  
+   -> użyj `Runner`.
+2. **Czy kod tworzy/konfiguruje obiekt(y) i zwraca je bez uruchamiania flow?**  
+   -> użyj `Factory`.
+3. **Czy kod mapuje format/kontrakt A na B?**  
+   -> użyj `Adapter`.
+4. **Czy kod realizuje regułę biznesową/use-case?**  
+   -> użyj `Service`.
+5. **Jeśli pasuje więcej niż jedna rola**: rozdziel moduł na mniejsze komponenty; nazwa modułu ma wskazywać dominującą odpowiedzialność.
 
 ## Checklista review (naming gate)
 

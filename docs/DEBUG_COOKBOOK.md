@@ -2,6 +2,75 @@
 
 Szybki przewodnik „**objaw → gdzie szukać**” dla pipeline’u danych.
 
+> Ten dokument jest podlinkowany z głównego README i z `docs/README.md` jako punkt startowy do diagnozy.
+
+## 0) Top scenariusze błędów (objaw → gdzie sprawdzić → co poprawić)
+
+### 0.1 Brak rekordu w wyniku końcowym
+- **Objaw:** rekord istnieje „gdzieś po drodze”, ale znika w finalnym JSON/CSV.
+- **Gdzie sprawdzić:**
+  1. `layers/0_layer/<domain>/raw/*.json` (czy rekord wyszedł z L0 source jobs),
+  2. `layers/0_layer/<domain>/<domain>.json` (czy przeszedł merge L0),
+  3. logi i mapowanie runnerów w `layers/one/executor.py`.
+- **Co poprawić:**
+  - naprawić source job/path (gdy brak w `raw`),
+  - poprawić logikę merge/post-process (`layers/zero/merge.py`),
+  - dodać/naprawić runner seeda w L1 (`runner_map`).
+
+### 0.2 Duplikaty rekordów
+- **Objaw:** ten sam byt biznesowy pojawia się wielokrotnie po merge.
+- **Gdzie sprawdzić:**
+  1. surowe pliki `raw` (czy duplikaty nie są wejściowe),
+  2. klucz deduplikacji i aliasy w `layers/zero/merge.py`,
+  3. domenowy post-process (czy nie dokleja rekordów ponownie).
+- **Co poprawić:**
+  - ujednolicić canonical key i alias mapping,
+  - dopiąć deduplikację przed zapisem merged,
+  - uszczelnić idempotencję post-process.
+
+### 0.3 Zły transformer (błędne mapowanie źródła)
+- **Objaw:** struktura rekordów jest niezgodna z domeną mimo poprawnego `raw`.
+- **Gdzie sprawdzić:** `TRANSFORM_PIPELINES`, `DEFAULT_SOURCE_PIPELINE`, `_resolve_record_transform_handlers(...)` w `layers/zero/merge.py`.
+- **Co poprawić:**
+  - dodać właściwy handler dla `(domain, source_name)`,
+  - poprawić fallback `*`,
+  - dopisać test regresyjny dla konkretnego źródła.
+
+### 0.4 Brak outputu po CLI run
+- **Objaw:** uruchomienie kończy się „sukcesem”, ale nie ma nowych plików.
+- **Gdzie sprawdzić:**
+  1. entrypoint i argumenty w `scrapers/cli.py`,
+  2. logi `[list]`, `[complete]`,
+  3. `output_dir` / `base_wiki_dir` i faktyczny katalog wyjściowy.
+- **Co poprawić:**
+  - skorygować profil/komendę,
+  - poprawić konfigurację ścieżek,
+  - dopiąć brakujące mapowanie seed → runner.
+
+## 0.5 Mapa flow (Layer 0 / merge / Layer 1)
+
+```mermaid
+flowchart TD
+    A[CLI: python -m scrapers.cli ...] --> B[Layer 0 Executor]
+    B --> C[Source jobs per seed/domain]
+    C --> D[raw JSON: layers/0_layer/<domain>/raw/*.json]
+    D --> E[Layer 0 Merge]
+    E --> F[Transform handlers by domain + source_name]
+    F --> G[Dedupe + post-process]
+    G --> H[merged JSON: layers/0_layer/<domain>/<domain>.json]
+    H --> I[Layer 1 Executor]
+    I --> J[Runner map (seed -> runner)]
+    J --> K[Complete output / agregacje domenowe]
+```
+
+## 0.6 Checklista 5 kroków diagnozy (zanim ruszysz kod)
+
+1. **Potwierdź objaw na minimalnym uruchomieniu** (1 domena/seed, bez pełnego batcha).
+2. **Zlokalizuj etap utraty jakości danych**: `raw` → `merged` → `layer1` output.
+3. **Sprawdź mapowanie seedów i transformerów** (`runner_map`, `TRANSFORM_PIPELINES`, fallbacki).
+4. **Zweryfikuj konfigurację ścieżek i profil CLI** (`output_dir`, `base_wiki_dir`, entrypoint).
+5. **Dopiero wtedy zmieniaj kod**: najpierw test/regresja reprodukująca błąd, potem poprawka.
+
 ## 1) Objaw → gdzie szukać
 
 ### Objaw: brak rekordu w wyniku końcowym

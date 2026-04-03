@@ -4,6 +4,8 @@ from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.model_selector import ModelSelector
 from scrapers.base.errors import PipelineError
 from scrapers.base.errors import normalize_pipeline_error
+from scrapers.base.logging import build_execution_context
+from scrapers.base.logging import get_logger
 
 
 class GeminiOrchestrationService:
@@ -17,6 +19,7 @@ class GeminiOrchestrationService:
     ) -> None:
         self._model_selector = model_selector
         self._cache = cache
+        self._logger = get_logger(self.__class__.__name__)
 
     def run(
         self,
@@ -39,8 +42,17 @@ class GeminiOrchestrationService:
 
             cached = self._cache.get(prompt, model)
             if cached is not None:
-                print(
-                    f"[GeminiClient] Cache hit (model={model}), pomijam wywołanie API.",
+                self._logger.info(
+                    "Gemini cache hit (model=%s), skip API call.",
+                    model,
+                    extra=build_execution_context(
+                        run_id=None,
+                        domain="gemini",
+                        seed_name="gemini",
+                        source_name=model,
+                        step="call",
+                        status="success",
+                    ),
                 )
                 return cached
 

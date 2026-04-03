@@ -3,6 +3,11 @@
 Ten plik jest punktem wejścia do dokumentacji projektu.  
 Szczegółowe opisy utrzymujemy centralnie w **indeksie dokumentacji**: [`docs/README.md`](docs/README.md).
 
+## Szybka diagnoza problemów pipeline
+
+Jeśli debugujesz Layer 0/1 lub merge rekordów, zacznij od cookbooka:  
+- [`docs/DEBUG_COOKBOOK.md`](docs/DEBUG_COOKBOOK.md)
+
 ## 1) Architektura warstw
 
 Architektura opiera się o separację odpowiedzialności między warstwami technicznymi i domenowymi:
