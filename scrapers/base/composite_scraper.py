@@ -70,11 +70,12 @@ class CompositeDataExtractor(BaseDataExtractor):
         complete: list[dict[str, Any]] = []
 
         extractor_name = self.__class__.__name__
-        for record in self.progress.wrap(
+        wrapped_records = self._wrap_records_with_progress(
             records,
             desc=extractor_name,
             unit="item",
-        ):
+        )
+        for record in wrapped_records:
             if not isinstance(record, dict):
                 msg = (
                     "Records adapter musi zwracać dict, "
@@ -104,3 +105,21 @@ class CompositeDataExtractor(BaseDataExtractor):
 
         self._data = complete
         return self._data
+
+    def _wrap_records_with_progress(
+        self,
+        records,
+        *,
+        desc: str,
+        unit: str,
+    ):
+        """Wrap records with progress adapter preserving backward compatibility."""
+
+        wrap = self.progress.wrap
+        try:
+            return wrap(records, desc=desc, unit=unit)
+        except TypeError:
+            try:
+                return wrap(records, desc, unit)
+            except TypeError:
+                return wrap(records)

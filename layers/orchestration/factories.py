@@ -11,12 +11,18 @@ from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifi
 
 class LayerZeroRunConfigFactory(LayerZeroRunConfigFactoryProtocol, ABC):
     @abstractmethod
-    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(
+        self,
+        job: ListJobRegistryEntry | None = None,
+    ) -> dict[str, object]:
         """Build scraper kwargs for layer-zero list job."""
 
 
 class DefaultLayerZeroRunConfigFactory(LayerZeroRunConfigFactory):
-    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(
+        self,
+        job: ListJobRegistryEntry | None = None,
+    ) -> dict[str, object]:
         return {}
 
 
@@ -24,7 +30,10 @@ class StaticScraperKwargsFactory(LayerZeroRunConfigFactory):
     def __init__(self, *, scraper_kwargs: dict[str, object]) -> None:
         self._scraper_kwargs = dict(scraper_kwargs)
 
-    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(
+        self,
+        job: ListJobRegistryEntry | None = None,
+    ) -> dict[str, object]:
         return dict(self._scraper_kwargs)
 
 
