@@ -7,7 +7,7 @@ from models.mappers.serialization import to_dict
 
 
 @pytest.fixture(autouse=True)
-def reset_serializable_adapters():
+def _reset_serializable_adapters():
     clear_serializable_adapters()
     yield
     clear_serializable_adapters()

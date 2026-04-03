@@ -19,9 +19,18 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
-from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
-from scripts.lib.check_runner import iter_python_paths  # noqa: E402
-from scripts.lib.check_runner import run_cli  # noqa: E402
+DEFAULT_ADR_ENFORCEMENT_POLICY = __import__(
+    "scripts.ci.adr_enforcement_policy",
+    fromlist=["DEFAULT_ADR_ENFORCEMENT_POLICY"],
+).DEFAULT_ADR_ENFORCEMENT_POLICY
+iter_python_paths = __import__(
+    "scripts.lib.check_runner",
+    fromlist=["iter_python_paths"],
+).iter_python_paths
+run_cli = __import__(
+    "scripts.lib.check_runner",
+    fromlist=["run_cli"],
+).run_cli
 
 DEFAULT_TARGETS = [REPO_ROOT / "layers", REPO_ROOT / "scrapers" / "base"]
 
@@ -86,15 +95,15 @@ class DependencyCreationVisitor(ast.NodeVisitor):
         self._class_stack: list[str] = []
         self._method_stack: list[str] = []
 
-    def visit_ClassDef(self, node: ast.ClassDef) -> None:  # noqa: N802
+    def visit_ClassDef(self, node: ast.ClassDef) -> None:
         self._class_stack.append(node.name)
         self.generic_visit(node)
         self._class_stack.pop()
 
-    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:  # noqa: N802
+    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
         self._visit_function(node)
 
-    def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:  # noqa: N802
+    def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:
         self._visit_function(node)
 
     def _visit_function(self, node: ast.FunctionDef | ast.AsyncFunctionDef) -> None:
@@ -102,7 +111,7 @@ class DependencyCreationVisitor(ast.NodeVisitor):
         self.generic_visit(node)
         self._method_stack.pop()
 
-    def visit_Call(self, node: ast.Call) -> None:  # noqa: N802
+    def visit_Call(self, node: ast.Call) -> None:
         class_name = self._class_stack[-1] if self._class_stack else "<module>"
         method_name = self._method_stack[-1] if self._method_stack else "<module>"
 
@@ -124,7 +133,7 @@ class DependencyCreationVisitor(ast.NodeVisitor):
             )
         self.generic_visit(node)
 
-    def visit_Import(self, node: ast.Import) -> None:  # noqa: N802
+    def visit_Import(self, node: ast.Import) -> None:
         if not self._is_hidden_import(node.lineno):
             return
         dependency_name = ", ".join(alias.name for alias in node.names)
@@ -141,7 +150,7 @@ class DependencyCreationVisitor(ast.NodeVisitor):
             ),
         )
 
-    def visit_ImportFrom(self, node: ast.ImportFrom) -> None:  # noqa: N802
+    def visit_ImportFrom(self, node: ast.ImportFrom) -> None:
         if not self._is_hidden_import(node.lineno):
             return
         names = ", ".join(alias.name for alias in node.names)
