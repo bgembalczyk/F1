@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import shutil
 import subprocess
 from pathlib import PurePosixPath
 
@@ -32,6 +33,7 @@ ARCHITECTURE_IMPACT_FIELDS: tuple[str, ...] = (
     "Kompatybilność wsteczna",
     "Migracja wymagana",
 )
+GIT_BIN = shutil.which("git") or "git"
 
 
 def parse_args() -> argparse.Namespace:
@@ -48,8 +50,8 @@ def parse_args() -> argparse.Namespace:
 
 
 def list_changed_files(base_sha: str, head_sha: str) -> list[str]:
-    proc = subprocess.run(
-        ["git", "diff", "--name-only", "--diff-filter=ACMR", base_sha, head_sha],
+    proc = subprocess.run(  # noqa: S603 -- zaufane wywołanie lokalnego `git`
+        [GIT_BIN, "diff", "--name-only", "--diff-filter=ACMR", base_sha, head_sha],
         check=False,
         capture_output=True,
         text=True,

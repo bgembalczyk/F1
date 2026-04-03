@@ -3,17 +3,19 @@ from __future__ import annotations
 
 import argparse
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
 
 SUMMARY_PATTERN = re.compile(r"Found\s+(\d+)\s+errors?")
+GIT_BIN = shutil.which("git") or "git"
 
 
 def _run_mypy(repo_dir: Path) -> tuple[int, str]:
-    proc = subprocess.run(
-        ["mypy", "--config-file", "mypy.ini"],
+    proc = subprocess.run(  # noqa: S603 -- uruchomienie zaufanego `python -m mypy`
+        [sys.executable, "-m", "mypy", "--config-file", "mypy.ini"],
         cwd=repo_dir,
         text=True,
         capture_output=True,
@@ -29,7 +31,12 @@ def _run_mypy(repo_dir: Path) -> tuple[int, str]:
 
 
 def _git(*args: str) -> None:
-    subprocess.run(["git", *args], check=True, text=True, capture_output=True)
+    subprocess.run(  # noqa: S603 -- zaufane wywołanie lokalnego `git`
+        [GIT_BIN, *args],
+        check=True,
+        text=True,
+        capture_output=True,
+    )
 
 
 def main() -> int:
@@ -54,8 +61,8 @@ def main() -> int:
         try:
             base_errors, base_output = _run_mypy(base_worktree)
         finally:
-            subprocess.run(
-                ["git", "worktree", "remove", "--force", str(base_worktree)],
+            subprocess.run(  # noqa: S603 -- zaufane wywołanie lokalnego `git worktree remove`
+                [GIT_BIN, "worktree", "remove", "--force", str(base_worktree)],
                 check=False,
                 capture_output=True,
                 text=True,

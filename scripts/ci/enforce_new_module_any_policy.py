@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -44,10 +45,16 @@ ANY_EXCEPTION_MODULES = {
 
 JUSTIFICATION_MARKER = "ANY-JUSTIFIED:"
 ANY_PATTERN = re.compile(r"\bAny\b")
+GIT_BIN = shutil.which("git") or "git"
 
 
 def _git(*args: str) -> str:
-    res = subprocess.run(["git", *args], check=True, capture_output=True, text=True)
+    res = subprocess.run(  # noqa: S603 -- zaufane wywołanie lokalnego `git` z argumentami z kodu
+        [GIT_BIN, *args],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
     return res.stdout
 
 
