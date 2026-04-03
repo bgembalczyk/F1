@@ -4,8 +4,6 @@ import argparse
 import dataclasses
 import importlib
 import inspect
-from datetime import date
-import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -19,7 +17,6 @@ from typing import Literal
 from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
-from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.logging import configure_logging
 from scrapers.base.run_config import RunConfig
@@ -36,7 +33,7 @@ from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-BaseConfigFactory = Literal["deprecated", "complete", "default"]
+BaseConfigFactory = Literal["complete", "default"]
 LegacyTargetFactory = Literal["lazy", "run_and_export", "run_export_complete"]
 SCRAPER_MODULE_PATH_PARTS = 3
 
@@ -60,16 +57,12 @@ class LegacyModuleDefinition:
     factory: LegacyTargetFactory
     target_path: str
     profile: LegacyCliProfileName
-    base_config_factory: BaseConfigFactory = "deprecated"
+    base_config_factory: BaseConfigFactory = "default"
     output_json: str | None = None
     output_csv: str | None = None
     output_dir: str | None = None
     include_urls: bool | None = None
     base_config_overrides: dict[str, object] | None = None
-    deprecated: bool = False
-    replacement_module_path: str | None = None
-    deprecated_since: str | None = None
-    remove_after: str | None = None
 
 
 @dataclass(frozen=True)
@@ -123,65 +116,7 @@ class WikiCliArgs:
     deterministic: bool
 
 
-@dataclass(frozen=True)
-class DeprecationPolicy:
-    transitional_release_window: tuple[str, ...]
-    removal_target: str
-    canonical_replacement_template: str
-    deprecated_since: str
-    remove_after: str
-
-    @property
-    def transition_release_count(self) -> int:
-        return len(self.transitional_release_window)
-
-    def render_runtime_message(
-        self,
-        *,
-        module_path: str,
-        replacement_module: str,
-        domain_hint: str = "",
-    ) -> str:
-        return (
-            f"{module_path} is deprecated and scheduled for removal after "
-            f"{self.transition_release_count} transitional releases "
-            f"(removal target: {self.removal_target}); "
-            f"use `{self.canonical_replacement_template.format(replacement_module=replacement_module)}`"
-            f"{domain_hint}."
-        )
-
-    def render_schedule_markdown(self) -> str:
-        r0, r1 = self.transitional_release_window
-        return "\n".join(
-            (
-                f"- **{r0} (aktualna wersja):** legacy moduły działają, ale emitują `DeprecationWarning`.",
-                f"- **{r1} (kolejna wersja):** legacy moduły nadal działają, warning pozostaje obowiązkowy.",
-                f"- **{self.removal_target} (druga wersja przejściowa):** legacy moduły są usuwane.",
-                "",
-                "Runtime warning ma teraz jawny komunikat o oknie migracji:",
-                (
-                    "- `scheduled for removal after "
-                    f"{self.transition_release_count} transitional releases "
-                    f"(removal target: {self.removal_target})`"
-                ),
-                "- oraz wskazanie canonical komendy `python -m scrapers.cli run <new_module>`.",
-            )
-        )
-
-
-DEPRECATION_POLICY = DeprecationPolicy(
-    transitional_release_window=("R0", "R1"),
-    removal_target="R2",
-    canonical_replacement_template="python -m scrapers.cli run {replacement_module}",
-    deprecated_since="2026-04-02",
-    remove_after="2026-10-01",
-)
-_WARNED_DEPRECATED_MODULES: set[str] = set()
-
-
 def _build_base_config(factory: BaseConfigFactory) -> RunConfig:
-    if factory == "deprecated":
-        return deprecated_module_base_config()
     if factory == "complete":
         return complete_extractor_base_config()
     return RunConfig()
@@ -268,9 +203,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             module_path="scrapers.circuits.list_scraper",
             factory="lazy",
             target_path="scrapers.circuits.entrypoint:run_list_scraper",
-            profile="deprecated_entrypoint",
-            deprecated=True,
-            replacement_module_path="scrapers.circuits.entrypoint",
+            profile="list_scraper",
         ),
         LegacyModuleDefinition(
             module_path="scrapers.circuits.entrypoint",
@@ -285,15 +218,12 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="complete_extractor",
             base_config_factory="complete",
             output_dir="circuits/complete_circuits",
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.constructors.current_constructors_list",
             factory="lazy",
             target_path="scrapers.constructors.entrypoint:run_list_scraper",
-            profile="deprecated_entrypoint",
-            deprecated=True,
-            replacement_module_path="scrapers.constructors.entrypoint",
+            profile="list_scraper",
         ),
         LegacyModuleDefinition(
             module_path="scrapers.constructors.entrypoint",
@@ -308,10 +238,9 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "scrapers.constructors.former_constructors_list:"
                 "FormerConstructorsListScraper"
             ),
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(seed_name="constructors_former", output_category="constructors"),
             output_csv="constructors/f1_former_constructors.csv",
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.constructors.indianapolis_only_constructors_list",
@@ -320,19 +249,17 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "scrapers.constructors.indianapolis_only_constructors_list:"
                 "IndianapolisOnlyConstructorsListScraper"
             ),
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(seed_name="constructors_indianapolis_only", output_category="constructors"),
             output_csv="constructors/f1_indianapolis_only_constructors.csv",
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.constructors.privateer_teams_list",
             factory="run_and_export",
             target_path="scrapers.constructors.privateer_teams_list:PrivateerTeamsListScraper",
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(seed_name="constructors_privateer", output_category="constructors"),
             output_csv="constructors/f1_privateer_teams.csv",
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.constructors.complete_scraper",
@@ -343,15 +270,12 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="complete_extractor",
             base_config_factory="default",
             output_dir="constructors/complete_constructors",
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.drivers.list_scraper",
             factory="lazy",
             target_path="scrapers.drivers.entrypoint:run_list_scraper",
-            profile="deprecated_entrypoint",
-            deprecated=True,
-            replacement_module_path="scrapers.drivers.entrypoint",
+            profile="list_scraper",
         ),
         LegacyModuleDefinition(
             module_path="scrapers.drivers.entrypoint",
@@ -363,17 +287,15 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             module_path="scrapers.drivers.female_drivers_list",
             factory="run_and_export",
             target_path="scrapers.drivers.female_drivers_list:FemaleDriversListScraper",
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(seed_name="drivers_female"),
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.drivers.fatalities_list_scraper",
             factory="run_and_export",
             target_path="scrapers.drivers.fatalities_list_scraper:F1FatalitiesListScraper",
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(seed_name="drivers_fatalities"),
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.drivers.complete_scraper",
@@ -382,7 +304,6 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="complete_extractor",
             base_config_factory="default",
             output_dir="drivers/complete_drivers",
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.engines.engine_manufacturers_list",
@@ -391,9 +312,8 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "scrapers.engines.engine_manufacturers_list:"
                 "EngineManufacturersListScraper"
             ),
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(seed_name="engines_manufacturers"),
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.engines.indianapolis_only_engine_manufacturers_list",
@@ -402,25 +322,22 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "scrapers.engines.indianapolis_only_engine_manufacturers_list:"
                 "IndianapolisOnlyEngineManufacturersListScraper"
             ),
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_legacy_alias_output_path(legacy_filename=ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE, output_category="engines"),
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.engines.engine_regulation",
             factory="run_and_export",
             target_path="scrapers.engines.engine_regulation:EngineRegulationScraper",
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(seed_name="engines_regulations", output_category="engines"),
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.engines.engine_restrictions",
             factory="run_and_export",
             target_path="scrapers.engines.engine_restrictions:EngineRestrictionsScraper",
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(seed_name="engines_restrictions", output_category="engines"),
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.engines.complete_scraper",
@@ -433,15 +350,12 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             base_config_factory="default",
             output_json="engines/f1_engine_manufacturers_complete.json",
             base_config_overrides={"output_dir": CLI_PATH_RESOLVER.exports_root},
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.grands_prix.list_scraper",
             factory="lazy",
             target_path="scrapers.grands_prix.entrypoint:run_list_scraper",
-            profile="deprecated_entrypoint",
-            deprecated=True,
-            replacement_module_path="scrapers.grands_prix.entrypoint",
+            profile="list_scraper",
         ),
         LegacyModuleDefinition(
             module_path="scrapers.grands_prix.entrypoint",
@@ -455,7 +369,6 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path="scrapers.grands_prix.entrypoint:run_complete_scraper",
             profile="complete_extractor",
             base_config_factory="complete",
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path=(
@@ -466,7 +379,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "scrapers.grands_prix.red_flagged_races_scraper."
                 "non_championship:RedFlaggedNonChampionshipRacesScraper"
             ),
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(
                 seed_name="grands_prix_red_flagged_non_championship",
                 output_category="grands_prix",
@@ -475,7 +388,6 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "output_dir": CLI_PATH_RESOLVER.exports_root,
                 "include_urls": True,
             },
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path=(
@@ -486,7 +398,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "scrapers.grands_prix.red_flagged_races_scraper."
                 "world_championship:RedFlaggedWorldChampionshipRacesScraper"
             ),
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=_list_output_path(
                 seed_name="grands_prix_red_flagged_world_championship",
                 output_category="grands_prix",
@@ -495,7 +407,6 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
                 "output_dir": CLI_PATH_RESOLVER.exports_root,
                 "include_urls": True,
             },
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.points.sprint_qualifying_points",
@@ -521,9 +432,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             module_path="scrapers.seasons.list_scraper",
             factory="lazy",
             target_path="scrapers.seasons.entrypoint:run_list_scraper",
-            profile="deprecated_entrypoint",
-            deprecated=True,
-            replacement_module_path="scrapers.seasons.entrypoint",
+            profile="list_scraper",
         ),
         LegacyModuleDefinition(
             module_path="scrapers.seasons.entrypoint",
@@ -538,7 +447,6 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             profile="complete_extractor",
             base_config_factory="complete",
             output_dir="seasons/complete_seasons",
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.sponsorship_liveries.scraper",
@@ -546,17 +454,15 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path=(
                 "scrapers.sponsorship_liveries.scraper:SponsorshipAndLiveriesScraper"
             ),
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=SPONSORSHIP_LIVERIES_SOURCE,
-            deprecated=True,
         ),
         LegacyModuleDefinition(
             module_path="scrapers.tyres.list_scraper",
             factory="run_and_export",
             target_path="scrapers.tyres.list_scraper:TyresListScraper",
-            profile="deprecated_entrypoint",
+            profile="list_scraper",
             output_json=TYRE_MANUFACTURERS_SOURCE,
-            deprecated=True,
         ),
     ),
 )
@@ -628,70 +534,6 @@ for module_path in MODULE_DEFINITIONS:
     )
 
 
-def _deprecated_runtime_message(
-    module_path: str,
-    *,
-    replacement_module_path: str | None,
-    deprecated_since: str,
-    remove_after: str,
-) -> str:
-    replacement_module = replacement_module_path or module_path
-    domain_hint = ""
-    parts = replacement_module.split(".")
-    if (
-        len(parts) >= SCRAPER_MODULE_PATH_PARTS
-        and parts[0] == "scrapers"
-        and parts[-1] == "entrypoint"
-    ):
-        domain_name = parts[1]
-        if domain_name in DOMAIN_COMMANDS:
-            domain_hint = f" or `python -m scrapers.cli domain {domain_name}`"
-    base_message = DEPRECATION_POLICY.render_runtime_message(
-        module_path=module_path,
-        replacement_module=replacement_module,
-        domain_hint=domain_hint,
-    )
-    return (
-        f"{base_message} "
-        f"Deprecated since: {deprecated_since}; planned removal date: {remove_after}."
-    )
-
-
-def _resolve_deprecation_metadata(
-    definition: LegacyModuleDefinition,
-) -> tuple[str, str, str]:
-    replacement_module = definition.replacement_module_path or definition.module_path
-    return (
-        definition.deprecated_since or DEPRECATION_POLICY.deprecated_since,
-        replacement_module,
-        definition.remove_after or DEPRECATION_POLICY.remove_after,
-    )
-
-
-def _validate_deprecation_contracts() -> None:
-    for definition in LEGACY_MODULE_REGISTRY.definitions:
-        if not definition.deprecated:
-            continue
-        deprecated_since, replacement_module, remove_after = _resolve_deprecation_metadata(definition)
-        _ = replacement_module
-        since_date = date.fromisoformat(deprecated_since)
-        remove_date = date.fromisoformat(remove_after)
-        if remove_date <= since_date:
-            msg = (
-                "Invalid deprecation dates for "
-                f"{definition.module_path}: remove_after ({remove_after}) must be "
-                f"later than deprecated_since ({deprecated_since})."
-            )
-            raise ValueError(msg)
-
-
-_validate_deprecation_contracts()
-
-
-def render_deprecation_schedule_markdown() -> str:
-    return DEPRECATION_POLICY.render_schedule_markdown()
-
-
 def _invoke_target(target: Callable[..., None], run_config: RunConfig) -> None:
     signature = inspect.signature(target)
     if "run_config" in signature.parameters:
@@ -724,33 +566,12 @@ def _module_path_from_file(file_path: str) -> str:
     return ".".join(suffixless_parts[scrapers_index:])
 
 
-def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
+def run_registered_module(module_path: str, argv: list[str] | None = None) -> None:
     spec = SCRAPER_REGISTRY[module_path]
-    definition = MODULE_DEFINITIONS[module_path]
     args = _parse_legacy_args(argv, spec.profile)
     run_config = build_run_config(base_config=spec.base_config, args=args)
     configure_logging(verbose=run_config.verbose, trace=run_config.trace)
-    if definition.deprecated:
-        if module_path not in _WARNED_DEPRECATED_MODULES:
-            deprecated_since, _, remove_after = _resolve_deprecation_metadata(definition)
-            warnings.warn(
-                _deprecated_runtime_message(
-                    module_path,
-                    replacement_module_path=definition.replacement_module_path,
-                    deprecated_since=deprecated_since,
-                    remove_after=remove_after,
-                ),
-                DeprecationWarning,
-                stacklevel=2,
-            )
-            _WARNED_DEPRECATED_MODULES.add(module_path)
     _invoke_target(spec.target, run_config)
-
-
-def run_registered_module(module_path: str, argv: list[str] | None = None) -> None:
-    """Run a legacy-compatible registered module command."""
-    run_legacy_wrapper(module_path, argv)
-
 
 def run_registered_module_for_caller(argv: list[str] | None = None) -> None:
     """Resolve caller module path and execute via command registry."""
@@ -765,33 +586,6 @@ def run_registered_module_for_caller(argv: list[str] | None = None) -> None:
         del frame
 
     run_registered_module(_module_path_from_file(caller_file), argv)
-
-
-def get_deprecated_module_migrations() -> tuple[tuple[str, str], ...]:
-    migrations: list[tuple[str, str]] = []
-    for definition in LEGACY_MODULE_REGISTRY.definitions:
-        if not definition.deprecated:
-            continue
-        replacement = definition.replacement_module_path or definition.module_path
-        migrations.append((definition.module_path, replacement))
-    return tuple(migrations)
-
-
-def get_deprecated_elements_report() -> tuple[tuple[str, str, str, str], ...]:
-    report: list[tuple[str, str, str, str]] = []
-    for definition in LEGACY_MODULE_REGISTRY.definitions:
-        if not definition.deprecated:
-            continue
-        deprecated_since, replacement_module, remove_after = _resolve_deprecation_metadata(definition)
-        report.append(
-            (
-                definition.module_path,
-                deprecated_since,
-                replacement_module,
-                remove_after,
-            )
-        )
-    return tuple(report)
 
 
 def _build_main_parser() -> argparse.ArgumentParser:
@@ -879,11 +673,6 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         base_debug_dir=DEFAULT_PATH_RESOLVER.debug_root.resolve(),
     )
     facade.run_scenario(args.scenario)
-    
-    if args.mode in {"layer0", "full"}:
-        app.run_layer_zero(deterministic=args.deterministic)
-    if args.mode in {"layer1", "full"}:
-        app.run_layer_one(deterministic=args.deterministic)
 
 
 def _run_command(args: argparse.Namespace) -> None:

@@ -42,14 +42,16 @@ def create_default_wiki_pipeline_application(
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
     """Composition root dla domyślnej aplikacji wiki pipeline."""
+    layer_zero_merge_service = LayerZeroMergeService(
+        merge=merge_layer_zero_raw_outputs,
+    )
+
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,
         config_factories=build_layer_zero_run_config_factory_map,
         default_config_factory=DefaultLayerZeroRunConfigFactory(),
-        merger=LayerZeroMergeService(
-            merge=merge_layer_zero_raw_outputs,
-        ),
+        merger=layer_zero_merge_service,
         job_hook=MirrorConstructorsJobHook(
             mirror=ConstructorsMirrorService(
                 mirror_targets=(
@@ -77,4 +79,5 @@ def create_default_wiki_pipeline_application(
         base_debug_dir=base_debug_dir,
         layer_zero_executor=layer_zero_executor,
         layer_one_executor=layer_one_executor,
+        layer_zero_merge_service=layer_zero_merge_service,
     )

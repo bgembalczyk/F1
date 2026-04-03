@@ -71,7 +71,3 @@ class IndianapolisOnlyConstructorsListScraper(IndianapolisOnlyListScraper):
         return records
 
 
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()
