@@ -17,15 +17,11 @@ SECTION_PROFILES_CONFIG: Mapping[str, SectionDomainConfig] = {
     "seasons": SectionDomainConfig(
         canonical_sections=frozenset(
             {
-                "results",
                 "regulation changes",
                 "mid-season changes",
-                "calendar",
-                "standings",
             },
         ),
         heading_aliases={
-            "results": frozenset({"grands prix", "results and standings"}),
             "regulation changes": frozenset({"rule changes"}),
             "mid-season changes": frozenset({"driver changes"}),
         },
@@ -39,10 +35,8 @@ SECTION_PROFILES_CONFIG: Mapping[str, SectionDomainConfig] = {
         },
     ),
     "circuits": SectionDomainConfig(
-        canonical_sections=frozenset({"circuits", "layout history", "lap records", "events", "results"}),
+        canonical_sections=frozenset({"layout history", "lap records", "events"}),
         heading_aliases={
-            "circuits": frozenset({"formula one circuits", "list of formula one circuits"}),
-            "results": frozenset({"race results"}),
             "layout history": frozenset({"history"}),
             "events": frozenset({"races"}),
             "lap records": frozenset({"formula one lap records"}),
@@ -54,11 +48,9 @@ SECTION_PROFILES_CONFIG: Mapping[str, SectionDomainConfig] = {
                 "history",
                 "championship results",
                 "complete formula one results",
-                "former constructors",
             },
         ),
         heading_aliases={
-            "former constructors": frozenset({"defunct constructors"}),
             "championship results": frozenset({"formula one/world championship results"}),
             "complete formula one results": frozenset({"complete world championship results"}),
         },
