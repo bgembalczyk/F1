@@ -316,14 +316,14 @@ def test_table_parser_uses_custom_html_table_parser() -> None:
             self.was_used = True
             return [cell.get_text(" ", strip=True) for cell in cells]
 
-        def has_multirow_header(self, first_cells, second_cells):
+        def has_multirow_header(self, _first_cells, _second_cells):
             return False
 
-        def is_footer_row(self, cells, cleaned_cells, headers):
+        def is_footer_row(self, _cells, _cleaned_cells, _headers):
             return False
 
-        def expand_row_cells(self, cells, headers, pending_rowspans):
-            return cells
+        def expand_row_cells(self, _cells, _headers, _pending_rowspans):
+            return _cells
 
     html = """
     <table class="wikitable">
