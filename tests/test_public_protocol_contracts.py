@@ -131,6 +131,8 @@ def test_scraper_error_payload_contract() -> None:
         run_id="run-1",
     )
     payload = error.to_payload()
+    assert payload["level"] == "error"
+    assert payload["source"] == "SampleParser"
     assert payload["category"] == "parse"
     assert payload["behavior"] == "hard"
     assert payload["section_id"] == "results"

@@ -66,3 +66,34 @@ def test_pipeline_runner_executes_steps_iteratively_and_reports_quality() -> Non
         "validate",
         "post_process",
     ]
+
+
+def test_pipeline_runner_writes_aggregated_error_summary_for_failed_step() -> None:
+    quality_calls: list[tuple[str, list[dict[str, object]]]] = []
+    summary_payload: dict[str, object] = {}
+
+    runner = ScraperPipelineRunner(
+        logger=getLogger(__name__),
+        write_step_quality_report=lambda step_name, records: quality_calls.append(
+            (step_name, records),
+        ),
+        write_error_summary_report=lambda payload: summary_payload.update(payload),
+        parse_records=lambda _soup: [{"value": 1}],
+        normalize_records=lambda records: records,
+        transform_records=lambda _records: (_ for _ in ()).throw(ValueError("boom")),
+        validate_records=lambda records: records,
+        post_process_records=lambda records: records,
+    )
+
+    try:
+        runner.run(run_id="run-err-1", html="<html></html>")
+    except Exception:  # noqa: BLE001
+        pass
+
+    assert [step_name for step_name, _ in quality_calls] == ["parse", "normalize"]
+    assert summary_payload["run_id"] == "run-err-1"
+    assert summary_payload["total_errors"] == 1
+    assert summary_payload["aggregation_by_code"] == {"pipeline.transform_failed": 1}
+    assert summary_payload["how_to_fix_links"] == {
+        "pipeline.transform_failed": "docs/ERROR_FIX_GUIDE.md#pipelinetransform_failed",
+    }
