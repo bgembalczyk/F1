@@ -17,10 +17,11 @@ from scrapers.seasons import export_complete_seasons
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
+    from pathlib import Path
+
     from layers.orchestration.protocols import LayerOneRunnerProtocol
     from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
     from layers.orchestration.types import SeedName
-    from pathlib import Path
 
 _LOGGER = get_logger("RunnerRegistry")
 

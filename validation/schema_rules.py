@@ -8,11 +8,11 @@ from typing import Any
 from validation.schema_engine import SchemaValidationEngine
 
 if TYPE_CHECKING:
-    from validation.issue import ValidationIssue
-    from validation.schemas import RecordSchema
     from collections.abc import Mapping
 
+    from validation.issue import ValidationIssue
     from validation.rules import ValidationRule
+    from validation.schemas import RecordSchema
 
 
 def _coerce_schema(schema: RecordSchema | Mapping[str, Any]) -> RecordSchema:

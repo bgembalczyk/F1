@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Protocol
 from typing import runtime_checkable
@@ -9,7 +10,6 @@ if TYPE_CHECKING:
     from layers.seed.registry import ListJobRegistryEntry
     from layers.seed.registry import SeedRegistryEntry
     from scrapers.base.run_config import RunConfig
-
 
 
 @runtime_checkable

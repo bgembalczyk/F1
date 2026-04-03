@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from typing import TYPE_CHECKING
 
 from scrapers.base.export.export_helpers import fieldnames_from_first_row
