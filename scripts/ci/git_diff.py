@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import re
+import shutil
 import subprocess
 from dataclasses import dataclass
 from typing import Any
 
 _HUNK_RE = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@")
+GIT_BIN = shutil.which("git") or "git"
 
 
 @dataclass(frozen=True)
@@ -15,8 +17,8 @@ class GitCommandResult:
 
 
 def _run_git_and_capture_stdout(args: list[str]) -> GitCommandResult:
-    proc = subprocess.run(
-        ["git", *args],
+    proc = subprocess.run(  # noqa: S603 -- zaufane wywołanie lokalnego `git`
+        [GIT_BIN, *args],
         check=False,
         capture_output=True,
         text=True,
