@@ -1,6 +1,8 @@
 from validation.issue import ValidationIssue
 from validation.quality_stats import QualityStats
 
+TOTAL_REJECTED_RECORDS = 2
+
 
 def test_record_accepted_increments_only_total_records() -> None:
     stats = QualityStats()
@@ -37,7 +39,7 @@ def test_record_rejected_accumulates_multiple_calls() -> None:
     stats.record_rejected([ValidationIssue.missing("country")])
     stats.record_rejected([ValidationIssue.type_error("country", "str", "int")])
 
-    assert stats.total_records == 2
-    assert stats.rejected_records == 2
+    assert stats.total_records == TOTAL_REJECTED_RECORDS
+    assert stats.rejected_records == TOTAL_REJECTED_RECORDS
     assert stats.missing == {"country": 1}
     assert stats.types == {"country": 1}

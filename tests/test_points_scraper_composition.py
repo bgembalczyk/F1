@@ -7,6 +7,9 @@ from scrapers.points.parsers import SprintRacesSubSubSectionParser
 from scrapers.points.points_scraper import PointsScraper
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 
+SPRINT_START_YEAR = 2021
+SPRINT_FIRST_PLACE_POINTS = 8
+
 
 def test_points_scraper_uses_points_scoring_systems_section_parser() -> None:
     scraper = PointsScraper()
@@ -91,8 +94,8 @@ def test_points_scraper_legacy_sprint_extractor_reads_sprint_races_section() -> 
 
     rows = scraper._extract_sprint_rows_via_legacy_table_scraper(soup)
 
-    assert rows[0]["seasons"][0]["year"] == 2021
-    assert rows[0]["1st"] == 8
+    assert rows[0]["seasons"][0]["year"] == SPRINT_START_YEAR
+    assert rows[0]["1st"] == SPRINT_FIRST_PLACE_POINTS
 
 
 def test_points_scraper_uses_legacy_fallback_when_nested_parser_has_no_sprint_rows(

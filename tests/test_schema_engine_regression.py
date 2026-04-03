@@ -9,6 +9,8 @@ from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
 from validation.validator_base import RecordValidator
 
+INVALID_TEAM_VALUE = 7
+
 
 def _legacy_extract_missing_key(error: str) -> str | None:
     if error.startswith("Missing key: "):
@@ -163,7 +165,7 @@ def _sample_schema() -> RecordSchema:
         errors: list[ValidationIssue | str] = []
         if record.get("status") is None:
             errors.append("Null value for: status")
-        if record.get("team") == 7:
+        if record.get("team") == INVALID_TEAM_VALUE:
             errors.append("Invalid type for team: expected str, got int")
         return errors
 
@@ -185,7 +187,7 @@ def test_validate_schema_matches_legacy_behavior() -> None:
         "status": None,
         "profile": {"country": 55},
         "seasons": [{"year": "2024"}, "broken"],
-        "team": 7,
+        "team": INVALID_TEAM_VALUE,
     }
 
     expected = _legacy_validate_schema(record, schema)
@@ -201,7 +203,7 @@ def test_build_domain_rules_matches_legacy_behavior() -> None:
         "status": None,
         "profile": {"country": 55},
         "seasons": [{"year": "2024"}, "broken"],
-        "team": 7,
+        "team": INVALID_TEAM_VALUE,
     }
 
     legacy_errors: list[ValidationIssue] = []

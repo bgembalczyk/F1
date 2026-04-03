@@ -8,16 +8,23 @@ from layers.zero.merge import _resolve_record_transform_handlers
 from layers.zero.merge import _teams_domain_handler
 from layers.zero.merge import _tyre_manufacturers_handler
 
+SEASON_YEAR = 2025
+CONSTRUCTOR_WINS = 198
+CIRCUIT_GRANDS_PRIX_HELD = 74
+ENGINE_WINS = 89
+DRIVER_RACE_ENTRIES = 350
+DRIVER_RACE_STARTS = 348
+
 
 def test_tyre_manufacturers_transform_handler() -> None:
     transformed = _tyre_manufacturers_handler(
         domain="seasons",
         source_name="f1_tyre_manufacturers_by_season.json",
-        record={"manufacturers": ["A"], "seasons": [2025], "x": 1},
+        record={"manufacturers": ["A"], "seasons": [SEASON_YEAR], "x": 1},
     )
 
     assert transformed["tyre_manufacturers"] == ["A"]
-    assert transformed["season"] == 2025
+    assert transformed["season"] == SEASON_YEAR
     assert transformed["x"] == 1
 
 
@@ -28,12 +35,12 @@ def test_constructor_domain_transform_handler() -> None:
         record={
             "constructor": "McLaren",
             "engine": "Mercedes",
-            "wins": 198,
+            "wins": CONSTRUCTOR_WINS,
         },
     )
 
     assert transformed["constructor"] == "McLaren"
-    assert transformed["racing_series"]["formula_one"]["wins"] == 198
+    assert transformed["racing_series"]["formula_one"]["wins"] == CONSTRUCTOR_WINS
     assert transformed["racing_series"]["formula_one"]["status"] == "active"
     assert "engine" in transformed
 
@@ -42,20 +49,23 @@ def test_circuits_domain_transform_handler() -> None:
     transformed = _circuits_domain_handler(
         domain="circuits",
         source_name="ignored.json",
-        record={"circuit": "Monza", "grands_prix_held": 74},
+        record={"circuit": "Monza", "grands_prix_held": CIRCUIT_GRANDS_PRIX_HELD},
     )
 
-    assert transformed["racing_series"]["formula_one"]["grands_prix_held"] == 74
+    assert (
+        transformed["racing_series"]["formula_one"]["grands_prix_held"]
+        == CIRCUIT_GRANDS_PRIX_HELD
+    )
 
 
 def test_engines_domain_transform_handler() -> None:
     transformed = _engines_domain_handler(
         domain="engines",
         source_name="f1_engine_manufacturers.json",
-        record={"engine_manufacturer": "Honda", "wins": 89},
+        record={"engine_manufacturer": "Honda", "wins": ENGINE_WINS},
     )
 
-    assert transformed["racing_series"]["formula_one"]["wins"] == 89
+    assert transformed["racing_series"]["formula_one"]["wins"] == ENGINE_WINS
 
 
 def test_grands_prix_domain_transform_handler() -> None:
@@ -83,12 +93,16 @@ def test_drivers_domain_transform_handler() -> None:
     transformed = _drivers_domain_handler(
         domain="drivers",
         source_name="f1_drivers.json",
-        record={"driver": "Lewis Hamilton", "entries": 350, "starts": 348},
+        record={
+            "driver": "Lewis Hamilton",
+            "entries": DRIVER_RACE_ENTRIES,
+            "starts": DRIVER_RACE_STARTS,
+        },
     )
 
     assert transformed["driver"] == "Lewis Hamilton"
-    assert transformed["racing_series"]["formula_one"]["race_entries"] == 350
-    assert transformed["racing_series"]["formula_one"]["race_starts"] == 348
+    assert transformed["racing_series"]["formula_one"]["race_entries"] == DRIVER_RACE_ENTRIES
+    assert transformed["racing_series"]["formula_one"]["race_starts"] == DRIVER_RACE_STARTS
 
 
 def test_races_domain_transform_handler() -> None:

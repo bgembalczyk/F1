@@ -4,6 +4,9 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.services.result_export_service import ResultExportService
 
 
+EXPECTED_RECORD_COUNT = 2
+
+
 def test_json_export_contract_is_backward_compatible(tmp_path) -> None:
     result = ScrapeResult(
         data=[{"driver": "Lewis"}, {"driver": "Max"}],
@@ -30,7 +33,7 @@ def test_csv_export_contract_is_backward_compatible(tmp_path) -> None:
     metadata = json.loads(content[0].replace("# meta: ", ""))
 
     assert metadata["source_url"] == "https://example.com"
-    assert metadata["records_count"] == 2
+    assert metadata["records_count"] == EXPECTED_RECORD_COUNT
     assert content[1] == "b,a,c"
     assert content[2] == "1,2,"
     assert content[3] == "4,,3"
