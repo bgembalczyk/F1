@@ -8,6 +8,8 @@ import inspect
 import warnings
 from typing import TYPE_CHECKING
 
+from scrapers.base.defaults import DEFAULT_ERROR_REPORT
+from scrapers.base.defaults import DEFAULT_QUALITY_REPORT
 from scrapers.base.logging import configure_logging
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
@@ -34,8 +36,8 @@ def complete_extractor_base_config() -> RunConfig:
 
 def build_standard_parser(
     *,
-    quality_report_default: bool = False,
-    error_report_default: bool = False,
+    quality_report_default: bool = DEFAULT_QUALITY_REPORT,
+    error_report_default: bool = DEFAULT_ERROR_REPORT,
 ) -> argparse.ArgumentParser:
     """Build parser with standardized quality/error report flags."""
     parser = argparse.ArgumentParser()
@@ -82,8 +84,8 @@ def run_cli_entrypoint(
     target: Callable[..., None],
     base_config: RunConfig,
     argv: Sequence[str] | None = None,
-    quality_report_default: bool = False,
-    error_report_default: bool = False,
+    quality_report_default: bool = DEFAULT_QUALITY_REPORT,
+    error_report_default: bool = DEFAULT_ERROR_REPORT,
     deprecation_message: str | None = None,
     deprecation_stacklevel: int = 2,
 ) -> None:
