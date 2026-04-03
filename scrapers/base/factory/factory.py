@@ -1,6 +1,6 @@
 from scrapers.base.abc import ABCScraper
-from scrapers.base.factory.adapter_chain import DefaultScraperAdapterChainProvider
-from scrapers.base.factory.adapter_chain import ScraperAdapterChainProvider
+from scrapers.base.factory.adapter_chain import ScraperCreationAdapter
+from scrapers.base.factory.adapter_chain import default_scraper_creation_adapters
 from scrapers.base.factory.constructor_introspection import ConstructorIntrospection
 from scrapers.base.factory.creation_context import ScraperCreationContext
 from scrapers.base.factory.run_config_options_mapper import RunConfigOptionsMapper
@@ -12,11 +12,12 @@ class ScraperFactory:
         self,
         *,
         mapper: RunConfigOptionsMapper | None = None,
-        adapter_chain_provider: ScraperAdapterChainProvider | None = None,
+        adapters: tuple[ScraperCreationAdapter, ...] | None = None,
     ) -> None:
         resolved_mapper = mapper or RunConfigOptionsMapper()
-        chain_provider = adapter_chain_provider or DefaultScraperAdapterChainProvider()
-        self._adapters = chain_provider.build(mapper=resolved_mapper)
+        self._adapters = adapters or default_scraper_creation_adapters(
+            mapper=resolved_mapper,
+        )
 
     def create(
         self,

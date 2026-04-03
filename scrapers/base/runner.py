@@ -1,5 +1,6 @@
 from pathlib import Path
 from uuid import uuid4
+from collections.abc import Callable
 
 from models.mappers.serialization import to_dict_list
 from scrapers.base.abc import ABCScraper
@@ -19,16 +20,15 @@ class ScraperRunner:
         run_config: RunConfig,
         *,
         supports_urls: bool = True,
+        run_id_provider: Callable[[], str] | None = None,
+        exporter: ResultExportService | None = None,
         result_export_service: ResultExportService | None = None,
     ) -> None:
         self._run_config = run_config
         self._supports_urls = supports_urls
         self._factory = ScraperFactory()
-        self._result_export_service = (
-            ResultExportService()
-            if result_export_service is None
-            else result_export_service
-        )
+        self._exporter = exporter or result_export_service or ResultExportService()
+        self._run_id_provider = run_id_provider or (lambda: uuid4().hex)
 
     def run_and_export(
         self,
@@ -36,7 +36,7 @@ class ScraperRunner:
         json_rel: str | Path,
         csv_rel: str | Path | None = None,
     ) -> None:
-        run_id = uuid4().hex
+        run_id = self._resolve_run_id(scraper_cls)
         run_logger = get_logger(scraper_cls.__name__)
         run_logger.info("Scrape run %s started", run_id)
         scraper = self._make_scraper(scraper_cls, run_id=run_id)
@@ -53,7 +53,7 @@ class ScraperRunner:
         output_dir = Path(self._run_config.output_dir)
         json_path = output_dir / Path(json_rel)
         ensure_parent(json_path)
-        self._result_export_service.to_json(
+        self._exporter.to_json(
             result,
             json_path,
             exporter=scraper.exporter,
@@ -63,13 +63,20 @@ class ScraperRunner:
         if csv_rel:
             csv_path = output_dir / Path(csv_rel)
             ensure_parent(csv_path)
-            self._result_export_service.to_csv(
+            self._exporter.to_csv(
                 result,
                 csv_path,
                 exporter=scraper.exporter,
             )
             self._report_step(scraper, "export-csv", data)
         run_logger.info("Scrape run %s finished", run_id)
+
+    def _resolve_run_id(self, scraper_cls: type[ABCScraper]) -> str:
+        if self._run_config.fixed_run_id:
+            return self._run_config.fixed_run_id
+        if self._run_config.deterministic_mode:
+            return f"deterministic-{scraper_cls.__name__}"
+        return self._run_id_provider()
 
     def _report_step(
         self,

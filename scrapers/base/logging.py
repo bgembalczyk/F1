@@ -4,6 +4,8 @@ import json
 import logging
 from datetime import datetime
 from datetime import timezone
+from pathlib import Path
+from collections.abc import Callable
 from typing import Any
 
 from scrapers.base.constants.runtime import LOGGER_NAME
@@ -11,9 +13,11 @@ from scrapers.base.constants.runtime import LOGGER_NAME
 
 _DEFAULT_EXECUTION_CONTEXT: dict[str, str | None] = {
     "run_id": None,
-    "seed_name": None,
+    "seed": None,
     "domain": None,
-    "source_name": None,
+    "source": None,
+    "step": None,
+    "status": None,
 }
 
 
@@ -25,11 +29,13 @@ class JsonLinesFormatter(logging.Formatter):
             "logger": record.name,
             "message": record.getMessage(),
             "run_id": getattr(record, "run_id", None),
-            "seed_name": getattr(record, "seed_name", None),
             "domain": getattr(record, "domain", None),
-            "source_name": getattr(record, "source_name", None),
+            "seed": getattr(record, "seed", None),
+            "source": getattr(record, "source", None),
+            "step": getattr(record, "step", None),
+            "status": getattr(record, "status", None),
         }
-        return json.dumps(payload, ensure_ascii=False)
+        return json.dumps(payload, ensure_ascii=False, sort_keys=True)
 
 
 def configure_logging(*, verbose: bool = False, trace: bool = False) -> None:
@@ -55,12 +61,16 @@ def build_execution_context(
     seed_name: str | None = None,
     domain: str | None = None,
     source_name: str | None = None,
+    step: str | None = None,
+    status: str | None = None,
 ) -> dict[str, str | None]:
     return {
         "run_id": run_id,
-        "seed_name": seed_name,
+        "seed": seed_name,
         "domain": domain,
-        "source_name": source_name,
+        "source": source_name,
+        "step": step,
+        "status": status,
     }
 
 
@@ -72,3 +82,29 @@ def get_logger(
     base_logger = logging.getLogger(f"{LOGGER_NAME}.{scraper_name}")
     context = _DEFAULT_EXECUTION_CONTEXT | (execution_context or {})
     return logging.LoggerAdapter(base_logger, {"scraper": scraper_name, **context})
+
+
+class RunTraceWriter:
+    def __init__(
+        self,
+        trace_path: Path,
+        *,
+        timestamp_provider: Callable[[], str] | None = None,
+    ) -> None:
+        self._trace_path = trace_path
+        self._trace_path.parent.mkdir(parents=True, exist_ok=True)
+        self._timestamp_provider = timestamp_provider or (
+            lambda: datetime.now(tz=timezone.utc).isoformat()
+        )
+
+    @property
+    def trace_path(self) -> Path:
+        return self._trace_path
+
+    def write(self, *, event: dict[str, Any]) -> None:
+        payload = {
+            "timestamp": self._timestamp_provider(),
+            **event,
+        }
+        with self._trace_path.open("a", encoding="utf-8") as trace_file:
+            trace_file.write(f"{json.dumps(payload, ensure_ascii=False, sort_keys=True)}\n")

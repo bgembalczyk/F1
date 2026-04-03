@@ -5,23 +5,24 @@ from layers.seed.data_classes import RegistryValidationRule
 from layers.seed.data_classes import RegistryValidationSpec
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
-from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
-from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
-from scrapers.drivers.list_scraper import F1DriversListScraper
-from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
-from scrapers.engines.engine_regulation import EngineRegulationScraper
-from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
-from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
+from scrapers.circuits import CircuitsListScraper
+from scrapers.constructors import ConstructorsListScraper
+from scrapers.drivers import F1FatalitiesListScraper
+from scrapers.drivers import FemaleDriversListScraper
+from scrapers.drivers import F1DriversListScraper
+from scrapers.engines import EngineManufacturersListScraper
+from scrapers.engines import EngineRegulationScraper
+from scrapers.engines import EngineRestrictionsScraper
+from scrapers.grands_prix import GrandsPrixListScraper
 from scrapers.grands_prix.red_flagged_races_scraper.combined import (
     RedFlaggedRacesScraper,
 )
-from scrapers.points.points_scraper import PointsScraper
-from scrapers.seasons.list_scraper import SeasonsListScraper
-from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
+from scrapers.points import PointsScraper
+from scrapers.seasons import SeasonsListScraper
+from scrapers.sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersScraper
 from scrapers.wiki.sources_registry import get_source_by_seed_name
+from scrapers.wiki.sources_registry import resolve_seed_name
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 
@@ -138,8 +139,27 @@ _SEED_FILENAME_OVERRIDES: dict[str, str] = {
 }
 
 
-def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
+def _validate_seed_name_consistency_at_startup() -> None:
     validate_sources_registry_consistency()
+
+    resolved_seed_names: set[str] = set()
+    for configured_seed_name in _LIST_SCRAPER_BY_SEED_NAME:
+        canonical_seed_name = resolve_seed_name(configured_seed_name, warn=False)
+        get_source_by_seed_name(canonical_seed_name, warn=False)
+        if canonical_seed_name in resolved_seed_names:
+            msg = (
+                "Duplicate canonical seed_name in _LIST_SCRAPER_BY_SEED_NAME "
+                f"after legacy alias resolution: {canonical_seed_name!r}"
+            )
+            raise ValueError(msg)
+        resolved_seed_names.add(canonical_seed_name)
+
+    for configured_seed_name in _SEED_FILENAME_OVERRIDES:
+        get_source_by_seed_name(configured_seed_name, warn=False)
+
+
+def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
+    _validate_seed_name_consistency_at_startup()
 
     specs: list[RawRegistrySpec] = []
     for seed_name, list_scraper_cls in _LIST_SCRAPER_BY_SEED_NAME.items():
@@ -148,8 +168,8 @@ def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
             RawRegistrySpec(
                 seed_name=source.seed_name,
                 list_scraper_cls=list_scraper_cls,
-                output_category=source.output_category,
-                list_filename=source.list_filename,
+                output_category=source.domain,
+                list_filename=source.output_file,
                 seed_filename=_SEED_FILENAME_OVERRIDES.get(source.seed_name),
             ),
         )
@@ -159,8 +179,8 @@ def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
         RawRegistrySpec(
             seed_name="constructors",
             list_scraper_cls=ConstructorsListScraper,
-            output_category=constructors_source.output_category,
-            list_filename=constructors_source.list_filename,
+            output_category=constructors_source.domain,
+            list_filename=constructors_source.output_file,
             seed_filename=_SEED_FILENAME_OVERRIDES["constructors"],
             include_in_list_registry=False,
         ),
@@ -171,8 +191,8 @@ def _build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
         RawRegistrySpec(
             seed_name="grands_prix",
             list_scraper_cls=GrandsPrixListScraper,
-            output_category=grands_prix_source.output_category,
-            list_filename=grands_prix_source.list_filename,
+            output_category=grands_prix_source.domain,
+            list_filename=grands_prix_source.output_file,
             seed_filename=_SEED_FILENAME_OVERRIDES["grands_prix"],
             include_in_list_registry=False,
         ),
@@ -186,18 +206,18 @@ RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = _build_raw_registry_spec()
 def _validate_registry_startup_consistency() -> None:
     for spec in RAW_REGISTRY_SPEC:
         source = get_source_by_seed_name(spec.seed_name, warn=False)
-        if spec.output_category != source.output_category:
+        if spec.output_category != source.domain:
             msg = (
                 "Seed registry startup consistency check failed for output_category: "
                 f"{spec.seed_name!r} -> {spec.output_category!r} "
-                f"(expected {source.output_category!r})"
+                f"(expected {source.domain!r})"
             )
             raise ValueError(msg)
-        if spec.list_filename != source.list_filename:
+        if spec.list_filename != source.output_file:
             msg = (
                 "Seed registry startup consistency check failed for list_filename: "
                 f"{spec.seed_name!r} -> {spec.list_filename!r} "
-                f"(expected {source.list_filename!r})"
+                f"(expected {source.output_file!r})"
             )
             raise ValueError(msg)
 

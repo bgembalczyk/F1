@@ -3,6 +3,11 @@
 Ten plik jest punktem wejścia do dokumentacji projektu.  
 Szczegółowe opisy utrzymujemy centralnie w **indeksie dokumentacji**: [`docs/README.md`](docs/README.md).
 
+## Szybka diagnoza problemów pipeline
+
+Jeśli debugujesz Layer 0/1 lub merge rekordów, zacznij od cookbooka:  
+- [`docs/DEBUG_COOKBOOK.md`](docs/DEBUG_COOKBOOK.md)
+
 ## 1) Architektura warstw
 
 Architektura opiera się o separację odpowiedzialności między warstwami technicznymi i domenowymi:
@@ -24,7 +29,7 @@ Najważniejsze kontrakty i interfejsy projektu:
 - kontrakty warstw (`Fetcher`, `Parser`, `Normalizer`, `Assembler`, `Exporter`),
 - kontrakt konfiguracji scraperów,
 - kontrakt parserów sekcji,
-- strategia Dependency Injection,
+- strategia Dependency Injection (bez zbędnych interfejsów o pojedynczej implementacji),
 - konwencje nazewnictwa hooków.
 
 Źródła prawdy (single source of truth):
@@ -50,6 +55,7 @@ Checklisty review i merge-gate:
 - **Granice modułów:** [`docs/MODULE_BOUNDARIES.md`](docs/MODULE_BOUNDARIES.md)
 - **Architektura warstw scraperów:** [`docs/scrapers-layer-architecture.md`](docs/scrapers-layer-architecture.md)
 - **UML index:** [`docs/INDEX_DOKUMENTACJI_UML.md`](docs/INDEX_DOKUMENTACJI_UML.md)
+- **Debug cookbook (objaw → gdzie szukać):** [`docs/DEBUG_COOKBOOK.md`](docs/DEBUG_COOKBOOK.md)
 
 ## 5) Checklista: dodawanie nowej domeny / komponentu
 

@@ -4,7 +4,7 @@ import re
 
 from bs4 import Tag
 
-from models.services.helpers import parse_int_values
+from models.services import parse_int_values
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 

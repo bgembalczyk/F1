@@ -471,6 +471,28 @@ def test_season_column_engine_constructor_text_only_fallback() -> None:
     assert record["engine"] == [{"text": "Subaru"}]
 
 
+def test_season_column_logs_applied_rule_with_source(caplog) -> None:
+    """Applied rule name/domain and source URL are logged for traceability."""
+    classification = {
+        "driver": [],
+        "car_model": [],
+        "engine_constructor": ["Subaru"],
+        "grand_prix": [],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(
+        team_name="Coloni",
+        classifier=_make_classifier(classification),
+    )
+    record: dict = {}
+    with caplog.at_level("INFO"):
+        col.apply(_ctx("1990 (with Subaru power)"), record)
+
+    assert "Applied rule 'engine' in domain 'entity'" in caplog.text
+    assert "for source 'https://en.wikipedia.org'" in caplog.text
+
+
 def test_hallucination_values_not_in_cell_text_are_ignored() -> None:
     """Classified values not present in the original cell text are treated as hallucinations."""
     classification = {

@@ -4,7 +4,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from models.services.helpers import split_delimited_text
+from models.services import split_delimited_text
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 

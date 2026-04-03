@@ -21,3 +21,12 @@
 
 - **Rekomendowana ścieżka uruchamiania:** `python -m scrapers.cli ...` (jedyny canonical launcher).
 - `entrypoint.py` traktuj jako API do wywołań z kodu; moduły typu `list_scraper.py`/`complete_scraper.py` są wyłącznie kompatybilnościowe i deprecated.
+
+## Public API
+Stabilne importy dla konsumentów:
+- `from scrapers.circuits import CircuitsListScraper`
+- `from scrapers.circuits import F1SingleCircuitScraper`
+- `from scrapers.circuits import F1CompleteCircuitDataExtractor`
+- `from scrapers.circuits import export_complete_circuits`
+
+`circuits.helpers` traktuj jako internal.

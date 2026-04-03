@@ -1,13 +1,22 @@
+import warnings
 from typing import Any
 
 from infrastructure.gemini.cache import GeminiCache
 
 
 class GeminiCacheService:
-    """Warstwa serwisowa cache dla klienta Gemini."""
+    """DEPRECATED: cienki shim kompatybilności wokół ``GeminiCache``."""
 
     def __init__(self, cache: GeminiCache | None = None) -> None:
         self._cache = cache if cache is not None else GeminiCache()
+        warnings.warn(
+            (
+                "GeminiCacheService jest przestarzały i zostanie usunięty. "
+                "Użyj bezpośrednio GeminiCache."
+            ),
+            DeprecationWarning,
+            stacklevel=2,
+        )
 
     @property
     def cache(self) -> GeminiCache:

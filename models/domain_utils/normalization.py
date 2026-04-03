@@ -2,6 +2,8 @@ from collections.abc import Iterable
 from collections.abc import Mapping
 from typing import Any
 
+from models.domain_utils.field_normalization.links import normalize_link_item as _normalize_link_item
+from models.domain_utils.field_normalization.links import normalize_link_items as _normalize_link_items
 from models.records.constants import WIKI_SEASON_URL
 from models.value_objects.link import Link
 from models.value_objects.link_utils import validate_link as validate_link_payload
@@ -20,19 +22,11 @@ def normalize_link_item(
     - invalid payload -> ValueError,
     - valid payload -> {"text": str, "url": str | None}.
     """
-    if isinstance(value, str):
-        text = value.strip()
-        return {"text": text, "url": None} if text else None
-
-    if isinstance(value, Link):
-        normalized = value.to_dict()
-    elif isinstance(value, Mapping) or value is None:
-        normalized = validate_link_payload(value, field_name=field_name)
-    else:
-        msg = f"Pole {field_name} musi być linkiem, słownikiem lub tekstem"
-        raise ValueError(msg)
-
-    return None if is_empty_link(normalized) else normalized
+    return _normalize_link_item(
+        value,
+        field_name=field_name,
+        validate_payload=validate_link_payload,
+    )
 
 
 def normalize_link_items(
@@ -40,15 +34,11 @@ def normalize_link_items(
     *,
     field_name: str,
 ) -> list[dict[str, Any]]:
-    if values is None:
-        return []
-
-    normalized: list[dict[str, Any]] = []
-    for value in values:
-        item = normalize_link_item(value, field_name=field_name)
-        if item is not None:
-            normalized.append(item)
-    return normalized
+    return _normalize_link_items(
+        values,
+        field_name=field_name,
+        validate_payload=validate_link_payload,
+    )
 
 
 def normalize_season_item(
@@ -95,19 +85,3 @@ def normalize_season_items(
         if item is not None:
             normalized.append(item)
     return normalized
-
-
-def is_empty_link(value: Link | Mapping[str, Any] | None) -> bool:
-    if value is None:
-        return True
-
-    if isinstance(value, Link):
-        text = value.text
-        url = value.url
-    else:
-        text = str(value.get("text") or "").strip()
-        url = value.get("url")
-        if url == "":
-            url = None
-
-    return text == "" and url is None

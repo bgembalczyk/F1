@@ -17,6 +17,11 @@ class _LayerExecutorStub(LayerExecutorProtocol):
         self.calls.append((run_config, base_wiki_dir))
 
 
+class _MergeServiceStub:
+    def merge(self, _base_wiki_dir: Path) -> None:
+        return
+
+
 def test_pipeline_executor_protocol_is_implemented_by_production_executors() -> None:
     class _DefaultFactory:
         def create_scraper_kwargs(self, _job: object) -> dict[str, object]:
@@ -52,6 +57,7 @@ def test_run_layer_zero_uses_private_run_config_builder(tmp_path: Path) -> None:
         base_debug_dir=base_debug_dir,
         layer_zero_executor=layer_zero_executor,
         layer_one_executor=layer_one_executor,
+        layer_zero_merge_service=_MergeServiceStub(),
     )
 
     app.run_layer_zero()
@@ -73,6 +79,7 @@ def test_run_layer_one_uses_private_run_config_builder(tmp_path: Path) -> None:
         base_debug_dir=base_debug_dir,
         layer_zero_executor=layer_zero_executor,
         layer_one_executor=layer_one_executor,
+        layer_zero_merge_service=_MergeServiceStub(),
     )
 
     app.run_layer_one()

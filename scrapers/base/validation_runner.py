@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.base.error_codes import resolve_error_code
 from scrapers.base.errors import ScraperValidationError
 
 if TYPE_CHECKING:
@@ -44,56 +45,41 @@ class ValidationRunner:
         record: ExportRecord,
         valid_records: list[ExportRecord],
     ) -> bool:
-        errors_for_tracking, messages = self._collect_validation_errors(record)
-        self.validator.record_validation_result(errors_for_tracking)
-        if not errors_for_tracking:
+        result = self.validator.validate_result(record)
+        self.validator.record_validation_result(result.violations)
+        if result.is_valid:
             valid_records.append(record)
             return True
 
-        message = self._validation_error_message(index, errors_for_tracking, messages)
+        message = self._validation_error_message(index, result)
         if self.validation_mode == "soft":
-            self.logger.warning(message)
+            code_definition = resolve_error_code("validation.soft_reject")
+            self.logger.warning(
+                "Validation warning [%s|%s] for url=%s: %s",
+                code_definition.code_id,
+                code_definition.short_description,
+                self.url,
+                message,
+            )
             return True
 
         self._write_quality_report()
         raise ScraperValidationError(message=message, url=self.url)
 
-    def _collect_validation_errors(self, record: ExportRecord):
-        errors = self.validator.validate(record)
-        record_factory_errors = self.validator.validate_record_factory(record)
-        errors_for_tracking = list(errors)
-        messages = [error.message for error in errors]
-        if not record_factory_errors:
-            return errors_for_tracking, messages
-
-        errors_for_tracking.extend(record_factory_errors)
-        record_factory_label = self._record_factory_label(default="record_factory")
-        messages.extend(
-            [
-                f"{record_factory_label}: {error.message}"
-                for error in record_factory_errors
-            ],
+    def _validation_error_message(self, index: int, result) -> str:
+        model_label = self._record_factory_label()
+        messages = [issue.message for issue in result.violations]
+        return (
+            f"Validation failed for record #{index}"
+            f"{f' ({model_label})' if model_label else ''} "
+            f"with {len(result.violations)} error(s): {', '.join(messages)}"
         )
-        return errors_for_tracking, messages
 
     def _record_factory_label(self, *, default: str | None = None) -> str | None:
         validator = self.validator.record_factory_validator
         if validator is None:
             return default
         return validator.__class__.__name__
-
-    def _validation_error_message(
-        self,
-        index: int,
-        errors_for_tracking: list,
-        messages: list[str],
-    ) -> str:
-        model_label = self._record_factory_label()
-        return (
-            f"Validation failed for record #{index}"
-            f"{f' ({model_label})' if model_label else ''} "
-            f"with {len(errors_for_tracking)} error(s): {', '.join(messages)}"
-        )
 
     def _log_validation_summary(self, *, total: int, valid: int) -> None:
         rejected = total - valid

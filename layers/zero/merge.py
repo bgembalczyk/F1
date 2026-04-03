@@ -1,15 +1,29 @@
-import json
 import logging
 import re
 from collections.abc import Callable
 from dataclasses import dataclass
+from dataclasses import field
 from pathlib import Path
 
+from layers.path_resolver import PathResolver
+from layers.orchestration.types import CONSTRUCTOR_STATUS_ACTIVE
+from layers.orchestration.types import CONSTRUCTOR_STATUS_FORMER
+from layers.zero.record_merge_ops import merge_driver_dict_values as _merge_driver_dict_values_impl
+from layers.zero.record_merge_ops import merge_driver_values as _merge_driver_values_impl
+from layers.zero.record_merge_ops import merge_list_values as _merge_list_values_impl
+from layers.zero.record_merge_ops import merge_values as _merge_values_impl
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
+from layers.zero.merge_types import LinkValue
 from layers.zero.merge_types import RaceRecordModel
+from layers.zero.merge_types import SeasonRecordModel
 from layers.zero.merge_types import TeamRecordModel
 from layers.zero.merge_types import as_record_dict
+from layers.zero.source_routing import iter_mergeable_domain_dirs as _iter_mergeable_domain_dirs_impl
+from layers.zero.source_routing import load_domain_records as _load_domain_records_impl
+from layers.zero.source_routing import (
+    write_merged_domain_records as _write_merged_domain_records_impl,
+)
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
@@ -18,8 +32,19 @@ from scrapers.wiki.constants import FORMULA_ONE_SERIES
 from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import RED_FLAG_FIELDS
 from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_ENGINES_SOURCE
+from scrapers.wiki.sources_registry import DRIVER_FATALITIES_SOURCE
+from scrapers.wiki.sources_registry import DRIVERS_SOURCE
+from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE
+from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import FEMALE_DRIVERS_SOURCE
 from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import PRIVATEER_TEAMS_SOURCE
+from scrapers.wiki.sources_registry import RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.sources_registry import RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.sources_registry import SPONSORSHIP_LIVERIES_SOURCE
 from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import resolve_list_filename
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 RecordTransformHandler = Callable[
@@ -29,6 +54,21 @@ RecordTransformHandler = Callable[
 DomainRecordsProcessor = Callable[[list[object]], list[object]]
 
 logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class DomainStep:
+    name: str
+    processor: DomainRecordsProcessor
+
+
+@dataclass(frozen=True)
+class DomainPipelineConfig:
+    transformers: dict[str, tuple[RecordTransformHandler, ...]] = field(
+        default_factory=dict,
+    )
+    postprocessors: tuple[DomainStep, ...] = ()
+    records_normalizer: DomainRecordsProcessor | None = None
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -46,24 +86,9 @@ def _move_fields_to_formula_one(
 
 
 def _link_text(value: object) -> str:
-    if isinstance(value, dict):
-        return str(value.get("text", ""))
+    if (link := LinkValue.from_object(value)) is not None:
+        return link.text
     return str(value or "")
-
-
-def _normalize_driver_series_stats(formula_one: dict[str, object]) -> dict[str, object]:
-    normalized = dict(formula_one)
-    if "race_entries" not in normalized and "entries" in normalized:
-        normalized["race_entries"] = normalized.pop("entries")
-    else:
-        normalized.pop("entries", None)
-
-    if "race_starts" not in normalized and "starts" in normalized:
-        normalized["race_starts"] = normalized.pop("starts")
-    else:
-        normalized.pop("starts", None)
-
-    return normalized
 
 
 def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
@@ -79,9 +104,10 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
     if not isinstance(record, dict):
         return record
 
+    canonical_source_name = resolve_list_filename(source_name)
     transformed = dict(record)
-    for handler in _resolve_record_transform_handlers(domain, source_name):
-        transformed = handler(domain, source_name, transformed)
+    for handler in _resolve_record_transform_handlers(domain, canonical_source_name):
+        transformed = handler(domain, canonical_source_name, transformed)
     return transformed
 
 
@@ -155,45 +181,61 @@ def _races_domain_handler(
 DEFAULT_SOURCE_PIPELINE = "*"
 
 
-def _build_transform_pipelines() -> dict[
-    str,
-    dict[str, tuple[RecordTransformHandler, ...]],
-]:
-    return {
-        "*": {
+def _normalize_engine_records(records: list[object]) -> list[object]:
+    return [
+        engine_record.to_dict()
+        if (engine_record := EngineRecordModel.from_object(record)) is not None
+        else record
+        for record in records
+    ]
+
+
+def _normalize_race_records(records: list[object]) -> list[object]:
+    return [
+        race_record.to_dict()
+        if (race_record := RaceRecordModel.from_object(record)) is not None
+        else record
+        for record in records
+    ]
+
+
+DOMAIN_PIPELINE_CONFIGS: dict[str, DomainPipelineConfig] = {
+    "*": DomainPipelineConfig(
+        transformers={
             TYRE_MANUFACTURERS_SOURCE: (_tyre_manufacturers_handler,),
         },
-        "constructors": {
-            DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,),
-        },
-        "constructor": {
-            DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,),
-        },
-        "chassis": {
-            DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,),
-        },
-        "circuits": {
-            DEFAULT_SOURCE_PIPELINE: (_circuits_domain_handler,),
-        },
-        "engines": {
-            DEFAULT_SOURCE_PIPELINE: (_engines_domain_handler,),
-        },
-        "grands_prix": {
-            DEFAULT_SOURCE_PIPELINE: (_grands_prix_domain_handler,),
-        },
-        "teams": {
-            DEFAULT_SOURCE_PIPELINE: (_teams_domain_handler,),
-        },
-        "drivers": {
-            DEFAULT_SOURCE_PIPELINE: (_drivers_domain_handler,),
-        },
-        "races": {
-            DEFAULT_SOURCE_PIPELINE: (_races_domain_handler,),
-        },
-    }
+    ),
+    "constructors": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,)},
+    ),
+    "constructor": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,)},
+    ),
+    "chassis": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,)},
+    ),
+    "circuits": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_circuits_domain_handler,)},
+    ),
+    "engines": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_engines_domain_handler,)},
+        records_normalizer=_normalize_engine_records,
+    ),
+    "grands_prix": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_grands_prix_domain_handler,)},
+    ),
+    "teams": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_teams_domain_handler,)},
+    ),
+    "drivers": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_drivers_domain_handler,)},
+    ),
+    "races": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_races_domain_handler,)},
+        records_normalizer=_normalize_race_records,
+    ),
+}
 
-
-TRANSFORM_PIPELINES = _build_transform_pipelines()
 validate_sources_registry_consistency()
 
 
@@ -201,8 +243,14 @@ def _resolve_record_transform_handlers(
     domain: str,
     source_name: str,
 ) -> tuple[RecordTransformHandler, ...]:
-    global_handlers = TRANSFORM_PIPELINES.get("*", {})
-    domain_handlers = TRANSFORM_PIPELINES.get(domain, {})
+    global_handlers = DOMAIN_PIPELINE_CONFIGS.get(
+        "*",
+        DomainPipelineConfig(),
+    ).transformers
+    domain_handlers = DOMAIN_PIPELINE_CONFIGS.get(
+        domain,
+        DomainPipelineConfig(),
+    ).transformers
 
     resolved: list[RecordTransformHandler] = [
         *global_handlers.get(DEFAULT_SOURCE_PIPELINE, ()),
@@ -266,7 +314,7 @@ def _transform_indianapolis_only_constructor(
         "racing_series": {
             "AAA_national_championship": [],
             "formula_one": {
-                "status": "former",
+                "status": CONSTRUCTOR_STATUS_FORMER,
                 "indianapolis_only": True,
             },
         },
@@ -278,7 +326,7 @@ def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, o
     formula_one = {
         key: value for key, value in transformed.items() if key != "constructor"
     }
-    formula_one["status"] = "former"
+    formula_one["status"] = CONSTRUCTOR_STATUS_FORMER
     return {
         "constructor": constructor,
         "racing_series": _build_racing_series(formula_one),
@@ -287,7 +335,7 @@ def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, o
 
 def _ensure_constructor_status(transformed: dict[str, object]) -> None:
     if "racing_series" not in transformed:
-        transformed["status"] = "active"
+        transformed["status"] = CONSTRUCTOR_STATUS_ACTIVE
         transformed["series"] = FORMULA_ONE_SERIES.copy()
         return
 
@@ -296,7 +344,7 @@ def _ensure_constructor_status(transformed: dict[str, object]) -> None:
         racing_series = {}
         transformed["racing_series"] = racing_series
     formula_one = racing_series.setdefault("formula_one", {})
-    formula_one.setdefault("status", "active")
+    formula_one.setdefault("status", CONSTRUCTOR_STATUS_ACTIVE)
 
 
 def _transform_circuits_domain(
@@ -318,12 +366,15 @@ def _transform_engines_domain(
 ) -> dict[str, object]:
     if domain != "engines":
         return transformed
-    if source_name == "f1_indianapolis_only_engine_manufacturers.json":
+    if source_name == INDIANAPOLIS_ONLY_ENGINES_SOURCE or source_name == ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE:
         transformed["racing_series"] = {
             "AAA_national_championship": [],
-            "formula_one": {"status": "former", "indianapolis_only": True},
+            "formula_one": {
+                "status": CONSTRUCTOR_STATUS_FORMER,
+                "indianapolis_only": True,
+            },
         }
-    elif source_name == "f1_engine_manufacturers.json":
+    elif source_name == ENGINE_MANUFACTURERS_SOURCE:
         _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
     return transformed
 
@@ -349,11 +400,11 @@ def _transform_teams_domain(
             "team": transformed.get("constructor"),
             "racing_series": _build_racing_series({**transformed}),
         }
-    if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
+    if source_name == SPONSORSHIP_LIVERIES_SOURCE and "liveries" in transformed:
         transformed["racing_series"] = _build_racing_series(
             {"liveries": transformed.pop("liveries")},
         )
-    if source_name == "f1_privateer_teams.json":
+    if source_name == PRIVATEER_TEAMS_SOURCE:
         formula_one = {
             key: transformed.pop(key) for key in ("seasons",) if key in transformed
         }
@@ -369,19 +420,19 @@ def _transform_drivers_domain(
 ) -> dict[str, object]:
     if domain != "drivers":
         return transformed
-    if source_name == "f1_drivers.json":
+    if source_name == DRIVERS_SOURCE:
         return _transform_f1_driver(transformed)
-    if source_name == "female_drivers.json":
+    if source_name == FEMALE_DRIVERS_SOURCE:
         return _transform_female_driver(transformed)
-    if source_name == "f1_driver_fatalities.json":
+    if source_name == DRIVER_FATALITIES_SOURCE:
         _attach_driver_death_data(transformed)
     return transformed
 
 
 def _transform_f1_driver(transformed: dict[str, object]) -> dict[str, object]:
-    driver = transformed.pop("driver", None)
-    nationality = transformed.pop("nationality", None)
-    formula_one = _normalize_driver_series_stats(transformed)
+    driver_record = DriverRecordModel(raw=transformed)
+    driver, nationality = driver_record.extract_identity()
+    formula_one = driver_record.extract_series_stats().to_dict()
     return {
         "driver": driver,
         "nationality": nationality,
@@ -390,8 +441,9 @@ def _transform_f1_driver(transformed: dict[str, object]) -> dict[str, object]:
 
 
 def _transform_female_driver(transformed: dict[str, object]) -> dict[str, object]:
-    driver = transformed.pop("driver", None)
-    formula_one = _normalize_driver_series_stats(transformed)
+    driver_record = DriverRecordModel(raw=transformed)
+    driver, _ = driver_record.extract_identity()
+    formula_one = driver_record.extract_series_stats().to_dict()
     return {
         "driver": driver,
         "gender": "female",
@@ -418,9 +470,9 @@ def _transform_races_domain(
 ) -> dict[str, object]:
     if domain != "races":
         return transformed
-    if source_name == "f1_red_flagged_world_championship_races.json":
+    if source_name == RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE:
         transformed["championship"] = True
-    if source_name == "f1_red_flagged_non_championship_races.json":
+    if source_name == RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE:
         transformed["championship"] = False
     transformed["red_flag"] = _extract_red_flag(transformed)
     _pop_red_flag_fields(transformed)
@@ -432,103 +484,38 @@ def _iter_transformed_records(
     source_name: str,
     payload: object,
 ) -> list[object]:
+    domain_config = DOMAIN_PIPELINE_CONFIGS.get(domain, DomainPipelineConfig())
+
     if isinstance(payload, list):
         transformed = [_transform_record(domain, source_name, item) for item in payload]
-        if domain == "engines":
-            return [
-                engine_record.to_dict()
-                if (engine_record := EngineRecordModel.from_object(record)) is not None
-                else record
-                for record in transformed
-            ]
-        if domain != "races":
+        if domain_config.records_normalizer is None:
             return transformed
-        return [
-            race_record.to_dict()
-            if (race_record := RaceRecordModel.from_object(record)) is not None
-            else record
-            for record in transformed
-        ]
+        return domain_config.records_normalizer(transformed)
 
     transformed_record = _transform_record(domain, source_name, payload)
-    if domain == "engines":
-        engine_record = EngineRecordModel.from_object(transformed_record)
-        if engine_record is not None:
-            return [engine_record.to_dict()]
-    if domain == "races":
-        race_record = RaceRecordModel.from_object(transformed_record)
-        if race_record is not None:
-            return [race_record.to_dict()]
-    return [transformed_record]
+    records = [transformed_record]
+    if domain_config.records_normalizer is None:
+        return records
+    return domain_config.records_normalizer(records)
 
 
 def _merge_driver_values(existing: object, incoming: object) -> object:
-    if isinstance(existing, dict) and isinstance(incoming, dict):
-        return _merge_driver_dict_values(existing, incoming)
-    if isinstance(existing, list) and isinstance(incoming, list):
-        return _merge_list_values(existing, incoming)
-    if existing in (None, "", []):
-        return incoming
-    return existing
+    return _merge_driver_values_impl(existing, incoming)
 
 
 def _merge_driver_dict_values(
     existing: dict[str, object],
     incoming: dict[str, object],
 ) -> dict[str, object]:
-    normalized_incoming = _normalize_incoming_driver_stats(incoming)
-    merged = dict(existing)
-    for key, value in normalized_incoming.items():
-        if key in {"entries", "starts"}:
-            continue
-        if key in merged:
-            merged[key] = _merge_driver_values(merged[key], value)
-        else:
-            merged[key] = value
-    return merged
-
-
-def _normalize_incoming_driver_stats(incoming: dict[str, object]) -> dict[str, object]:
-    normalized = dict(incoming)
-    if "race_entries" not in normalized and "entries" in normalized:
-        normalized["race_entries"] = normalized["entries"]
-    if "race_starts" not in normalized and "starts" in normalized:
-        normalized["race_starts"] = normalized["starts"]
-    return normalized
+    return _merge_driver_dict_values_impl(existing, incoming)
 
 
 def _merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
-    merged = list(existing)
-    seen = {
-        json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
-        for item in merged
-    }
-    for item in incoming:
-        serialized = json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
-        if serialized in seen:
-            continue
-        seen.add(serialized)
-        merged.append(item)
-    return merged
+    return _merge_list_values_impl(existing, incoming)
 
 
 def _merge_values(existing: object, incoming: object) -> object:
-    if isinstance(existing, dict) and isinstance(incoming, dict):
-        merged = dict(existing)
-        for key, value in incoming.items():
-            if key in merged:
-                merged[key] = _merge_values(merged[key], value)
-            else:
-                merged[key] = value
-        return merged
-
-    if isinstance(existing, list) and isinstance(incoming, list):
-        return _merge_list_values(existing, incoming)
-
-    if existing in (None, "", []):
-        return incoming
-
-    return existing
+    return _merge_values_impl(existing, incoming)
 
 
 def _merge_duplicate_drivers(records: list[object]) -> list[object]:
@@ -645,9 +632,8 @@ def _merge_duplicate_teams(records: list[object]) -> list[object]:
 
 def _season_years(value: object) -> set[int]:
     years: set[int] = set()
-    if isinstance(value, dict):
-        year = value.get("year")
-        if isinstance(year, int):
+    if (season := SeasonRecordModel.from_object(value)) is not None:
+        if (year := season.year()) is not None:
             years.add(year)
         return years
 
@@ -716,27 +702,18 @@ def _attach_livery_to_matching_seasons(
 
 
 def _season_matches_livery_years(season: object, livery_years: set[int]) -> bool:
-    season_dict = as_record_dict(season)
-    if season_dict is None:
+    season_record = SeasonRecordModel.from_object(season)
+    if season_record is None:
         return False
-    season_year = season_dict.get("year")
-    return isinstance(season_year, int) and season_year in livery_years
+    season_year = season_record.year()
+    return season_year is not None and season_year in livery_years
 
 
 def _append_livery_to_season(season: object, livery_payload: dict[str, object]) -> None:
-    season_dict = as_record_dict(season)
-    if season_dict is None:
+    season_record = SeasonRecordModel.from_object(season)
+    if season_record is None:
         return
-    existing_liveries = season_dict.get("liveries")
-    if isinstance(existing_liveries, list):
-        existing_liveries.append(livery_payload)
-        return
-    existing_livery = season_dict.pop("livery", None)
-    season_liveries: list[object] = []
-    if existing_livery is not None:
-        season_liveries.append(existing_livery)
-    season_liveries.append(livery_payload)
-    season_dict["liveries"] = season_liveries
+    season_record.append_livery(livery_payload)
 
 
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
@@ -744,135 +721,83 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
     if not layer_zero_dir.exists():
         return
 
-    for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir):
-        merged_records = _load_domain_records(domain_dir)
+    resolver = PathResolver(layer_zero_root=layer_zero_dir)
+
+    for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir, resolver):
+        merged_records = _load_domain_records(domain_dir, resolver)
         if not merged_records:
             continue
         merged_records = _post_process_domain_records(domain_dir.name, merged_records)
-        _write_merged_domain_records(domain_dir, merged_records)
+        _write_merged_domain_records(domain_dir, merged_records, resolver)
 
 
-def _iter_mergeable_domain_dirs(layer_zero_dir: Path) -> list[Path]:
-    domain_dirs: list[Path] = []
-    for domain_dir in sorted(p for p in layer_zero_dir.iterdir() if p.is_dir()):
-        raw_dir = domain_dir / "raw"
-        if not raw_dir.exists() or not raw_dir.is_dir():
-            continue
-        if domain_dir.name in {"points", "rules"}:
-            continue
-        domain_dirs.append(domain_dir)
-    return domain_dirs
+def _iter_mergeable_domain_dirs(layer_zero_dir: Path, resolver: PathResolver) -> list[Path]:
+    return _iter_mergeable_domain_dirs_impl(layer_zero_dir, resolver)
 
 
-def _load_domain_records(domain_dir: Path) -> list[object]:
-    merged_records: list[object] = []
-    raw_dir = domain_dir / "raw"
-    for json_path in sorted(raw_dir.rglob("*.json")):
-        payload = json.loads(json_path.read_text(encoding="utf-8"))
-        merged_records.extend(
-            _iter_transformed_records(domain_dir.name, json_path.name, payload),
-        )
-    return merged_records
-
-
-@dataclass(frozen=True)
-class DomainPostProcessStrategy:
-    name: str
-    activation_condition: Callable[[str], bool]
-    processor: DomainRecordsProcessor
-
-    def is_active(self, domain: str) -> bool:
-        return self.activation_condition(domain)
-
-
-def _is_drivers_domain(domain: str) -> bool:
-    return domain == "drivers"
-
-
-def _is_constructor_domain(domain: str) -> bool:
-    return domain in CHASSIS_CONSTRUCTOR_DOMAINS
-
-
-def _is_teams_domain(domain: str) -> bool:
-    return domain == "teams"
-
-
-def _is_seasons_domain(domain: str) -> bool:
-    return domain == "seasons"
+def _load_domain_records(domain_dir: Path, resolver: PathResolver) -> list[object]:
+    return _load_domain_records_impl(
+        domain_dir,
+        resolver,
+        transform_records=_iter_transformed_records,
+    )
 
 
 def _sort_drivers_by_name(items: list[object]) -> list[object]:
-    """Aktywna, gdy domena to `drivers`."""
     return sorted(items, key=_driver_sort_key)
 
 
 def _sort_constructors_by_name(items: list[object]) -> list[object]:
-    """Aktywna, gdy domena należy do `CHASSIS_CONSTRUCTOR_DOMAINS`."""
     return sorted(items, key=_constructor_sort_key)
 
 
 def _nest_team_liveries(items: list[object]) -> list[object]:
-    """Aktywna, gdy domena to `teams`."""
     return [_nest_team_liveries_in_seasons(record) for record in items]
 
 
 def _sort_teams_by_name(items: list[object]) -> list[object]:
-    """Aktywna, gdy domena to `teams`."""
     return sorted(items, key=_team_sort_key)
 
 
 def _sort_seasons_by_year(items: list[object]) -> list[object]:
-    """Aktywna, gdy domena to `seasons`."""
     return sorted(items, key=_season_sort_key)
 
 
-DOMAIN_POST_PROCESS_STRATEGIES: tuple[DomainPostProcessStrategy, ...] = (
-    DomainPostProcessStrategy(
-        name="merge_duplicate_drivers",
-        activation_condition=_is_drivers_domain,
-        processor=_merge_duplicate_drivers,
+DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN: dict[str, tuple[DomainStep, ...]] = {
+    "drivers": (
+        DomainStep("merge_duplicate_drivers", _merge_duplicate_drivers),
+        DomainStep("sort_drivers_by_name", _sort_drivers_by_name),
     ),
-    DomainPostProcessStrategy(
-        name="sort_drivers_by_name",
-        activation_condition=_is_drivers_domain,
-        processor=_sort_drivers_by_name,
+    "teams": (
+        DomainStep("merge_duplicate_teams", _merge_duplicate_teams),
+        DomainStep("nest_team_liveries", _nest_team_liveries),
+        DomainStep("sort_teams_by_name", _sort_teams_by_name),
     ),
-    DomainPostProcessStrategy(
-        name="sort_constructors_by_name",
-        activation_condition=_is_constructor_domain,
-        processor=_sort_constructors_by_name,
+    "seasons": (
+        DomainStep("sort_seasons_by_year", _sort_seasons_by_year),
     ),
-    DomainPostProcessStrategy(
-        name="merge_duplicate_teams",
-        activation_condition=_is_teams_domain,
-        processor=_merge_duplicate_teams,
-    ),
-    DomainPostProcessStrategy(
-        name="nest_team_liveries",
-        activation_condition=_is_teams_domain,
-        processor=_nest_team_liveries,
-    ),
-    DomainPostProcessStrategy(
-        name="sort_teams_by_name",
-        activation_condition=_is_teams_domain,
-        processor=_sort_teams_by_name,
-    ),
-    DomainPostProcessStrategy(
-        name="sort_seasons_by_year",
-        activation_condition=_is_seasons_domain,
-        processor=_sort_seasons_by_year,
-    ),
-)
+}
 
+for _constructor_domain in CHASSIS_CONSTRUCTOR_DOMAINS:
+    DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN.setdefault(
+        _constructor_domain,
+        (DomainStep("sort_constructors_by_name", _sort_constructors_by_name),),
+    )
 
-def _iter_active_domain_post_process_strategies(
-    domain: str,
-) -> list[DomainPostProcessStrategy]:
-    return [
-        strategy
-        for strategy in DOMAIN_POST_PROCESS_STRATEGIES
-        if strategy.is_active(domain)
-    ]
+for _domain, _postprocessors in DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN.items():
+    existing = DOMAIN_PIPELINE_CONFIGS.get(_domain, DomainPipelineConfig())
+    DOMAIN_PIPELINE_CONFIGS[_domain] = DomainPipelineConfig(
+        transformers=existing.transformers,
+        postprocessors=_postprocessors,
+        records_normalizer=existing.records_normalizer,
+    )
+
+for _domain, _config in tuple(DOMAIN_PIPELINE_CONFIGS.items()):
+    DOMAIN_PIPELINE_CONFIGS[_domain] = DomainPipelineConfig(
+        transformers=_config.transformers,
+        postprocessors=tuple(_config.postprocessors),
+        records_normalizer=_config.records_normalizer,
+    )
 
 
 def _records_debug_summary(records: list[object]) -> str:
@@ -881,28 +806,54 @@ def _records_debug_summary(records: list[object]) -> str:
     return f"count={len(records)}, first_type={sample_type}"
 
 
-def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
-    merged_records = records
-    for strategy in _iter_active_domain_post_process_strategies(domain):
-        before_summary = _records_debug_summary(merged_records)
-        merged_records = strategy.processor(merged_records)
-        after_summary = _records_debug_summary(merged_records)
+def _execute_domain_steps(
+    domain: str,
+    step_group: str,
+    records: list[object],
+    steps: tuple[DomainStep, ...],
+) -> list[object]:
+    current = records
+    executed_steps: list[str] = []
+    for step in steps:
+        before_summary = _records_debug_summary(current)
+        current = step.processor(current)
+        after_summary = _records_debug_summary(current)
+        executed_steps.append(step.name)
         logger.debug(
-            "Domain post-process strategy '%s' applied for domain '%s': %s -> %s",
-            strategy.name,
+            "Domain '%s' %s step '%s': %s -> %s",
             domain,
+            step_group,
+            step.name,
             before_summary,
             after_summary,
         )
-    return merged_records
+
+    logger.debug(
+        "Domain '%s' %s steps executed (order=%s, final_count=%s)",
+        domain,
+        step_group,
+        executed_steps,
+        len(current),
+    )
+    return current
+
+
+def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
+    postprocessors = DOMAIN_PIPELINE_CONFIGS.get(
+        domain,
+        DomainPipelineConfig(),
+    ).postprocessors
+    return _execute_domain_steps(
+        domain=domain,
+        step_group="postprocess",
+        records=records,
+        steps=postprocessors,
+    )
 
 
 def _write_merged_domain_records(
     domain_dir: Path,
     merged_records: list[object],
+    resolver: PathResolver,
 ) -> None:
-    merged_path = domain_dir / f"{domain_dir.name}.json"
-    merged_path.write_text(
-        json.dumps(merged_records, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    _write_merged_domain_records_impl(domain_dir, merged_records, resolver)
