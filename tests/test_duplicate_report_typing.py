@@ -10,7 +10,7 @@ def test_duplicate_report_module_passes_mypy_strict() -> None:
     module_path = repo_root / "scripts" / "ci" / "duplicate_report.py"
 
     # nosec B603 -- test uruchamia zaufane `python -m mypy` lokalnie
-    result = subprocess.run(  # noqa: S603
+    result = subprocess.run(
         [sys.executable, "-m", "mypy", "--strict", str(module_path)],
         capture_output=True,
         text=True,

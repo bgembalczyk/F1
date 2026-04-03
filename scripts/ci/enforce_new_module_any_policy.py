@@ -50,7 +50,7 @@ GIT_BIN = shutil.which("git") or "git"
 
 def _git(*args: str) -> str:
     # nosec B603 -- zaufane wywołanie lokalnego `git` z argumentami z kodu
-    res = subprocess.run(  # noqa: S603
+    res = subprocess.run(
         [GIT_BIN, *args],
         check=True,
         capture_output=True,

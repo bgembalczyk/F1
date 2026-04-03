@@ -35,7 +35,7 @@ def parse_args() -> argparse.Namespace:
 
 def list_changed_files(base_sha: str, head_sha: str) -> list[Path]:
     # nosec B603 -- zaufane polecenie `git` z listą argumentów
-    proc = subprocess.run(  # noqa: S603
+    proc = subprocess.run(
         [GIT_BIN, "diff", "--name-only", "--diff-filter=ACMR", base_sha, head_sha],
         check=False,
         capture_output=True,

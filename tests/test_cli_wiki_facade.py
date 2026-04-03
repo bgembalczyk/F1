@@ -17,7 +17,10 @@ class _ApplicationSpy:
         self.calls += 1
 
 
-def test_run_wiki_flow_routes_to_default_application(monkeypatch, tmp_path: Path) -> None:
+def test_run_wiki_flow_routes_to_default_application(
+    monkeypatch,
+    tmp_path: Path,
+) -> None:
     application = _ApplicationSpy()
 
     monkeypatch.setattr(

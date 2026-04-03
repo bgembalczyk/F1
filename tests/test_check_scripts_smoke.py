@@ -38,7 +38,7 @@ def test_check_script_runs_from_foreign_cwd(
     script_path = REPO_ROOT / script_rel_path
 
     # nosec B603 -- test uruchamia lokalny skrypt przez bieżący interpreter
-    process = subprocess.run(  # noqa: S603
+    process = subprocess.run(
         [sys.executable, str(script_path), *arguments],
         cwd=tmp_path,
         capture_output=True,
