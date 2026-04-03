@@ -165,4 +165,6 @@ def test_each_critical_section_has_alias_fallback() -> None:
         sections = DOMAIN_SECTION_RESOLVER_CONFIG[domain]
         assert sections, f"Missing critical sections for domain={domain}"
         for section in sections:
-            assert section.alternative_section_ids, f"Critical section without aliases: domain={domain} section={section.section_id}"
+            assert section.alternative_section_ids, (
+                f"Critical section without aliases: domain={domain} section={section.section_id}"
+            )

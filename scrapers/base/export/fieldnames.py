@@ -23,7 +23,8 @@ class FieldnamesStrategySelector:
         if resolver is None:
             msg = (
                 "Nieznana strategia fieldnames: "
-                f"{strategy!r}. Dostępne: {', '.join(repr(s) for s in self._strategies)}."
+                f"{strategy!r}. Dostępne: "
+                f"{', '.join(repr(s) for s in self._strategies)}."
             )
             raise ValueError(msg)
         return resolver(data)

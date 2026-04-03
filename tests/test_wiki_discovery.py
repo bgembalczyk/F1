@@ -75,7 +75,7 @@ def test_build_layer_one_runner_map_discovered_returns_runner_contract(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     class _Runner:
-        def run(self, seed, run_config, base_wiki_dir) -> None:
+        def run(self, _seed, _run_config, _base_wiki_dir) -> None:
             return None
 
     setattr(

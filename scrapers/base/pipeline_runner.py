@@ -33,7 +33,9 @@ ERROR_FIX_LINKS: dict[str, str] = {
     "pipeline.normalize_failed": "docs/ERROR_FIX_GUIDE.md#pipelinenormalize_failed",
     "pipeline.transform_failed": "docs/ERROR_FIX_GUIDE.md#pipelinetransform_failed",
     "pipeline.validate_failed": "docs/ERROR_FIX_GUIDE.md#pipelinevalidate_failed",
-    "pipeline.post_process_failed": "docs/ERROR_FIX_GUIDE.md#pipelinepost_process_failed",
+    "pipeline.post_process_failed": (
+        "docs/ERROR_FIX_GUIDE.md#pipelinepost_process_failed"
+    ),
 }
 
 

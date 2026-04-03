@@ -87,7 +87,9 @@ def _scan_file(path: Path) -> list[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Blokuje nowe moduły z Any bez uzasadnienia w obszarze rolloutu typingu.",
+        description=(
+            "Blokuje nowe moduły z Any bez uzasadnienia w obszarze rolloutu typingu."
+        ),
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)

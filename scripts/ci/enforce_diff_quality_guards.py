@@ -230,7 +230,10 @@ def _check_registry_implementation_drift() -> list[Violation]:
             Violation(
                 path="layers/orchestration/runner_registry.py",
                 line=1,
-                message=f"Seed '{seed}' jest w rejestrze, ale brak go w explicit runner map.",
+                message=(
+                    f"Seed '{seed}' jest w rejestrze, ale brak go "
+                    "w explicit runner map."
+                ),
             ),
         )
     for seed in missing_in_registry:
@@ -238,7 +241,10 @@ def _check_registry_implementation_drift() -> list[Violation]:
             Violation(
                 path="layers/seed/registry/constants.py",
                 line=1,
-                message=f"Seed '{seed}' jest w explicit runner map, ale brak go w seed registry.",
+                message=(
+                    f"Seed '{seed}' jest w explicit runner map, "
+                    "ale brak go w seed registry."
+                ),
             ),
         )
     return violations

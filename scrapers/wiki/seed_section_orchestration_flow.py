@@ -307,13 +307,15 @@ class SeedSectionOrchestrationFlow:
         lines = [
             "# Step Regression Audit Report",
             "",
-            "| step_id | layer | domain | input_records | output_records | duration_ms |",
+            "| step_id | layer | domain | input_records | output_records "
+            "| duration_ms |",
             "|---|---|---|---:|---:|---:|",
         ]
         for entry in entries:
             lines.append(
                 f"| {entry.step_id} | {entry.layer} | {entry.domain} "
-                f"| {entry.input_records} | {entry.output_records} | {entry.duration_ms:.2f} |",
+                f"| {entry.input_records} | {entry.output_records} "
+                f"| {entry.duration_ms:.2f} |",
             )
         report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
         return report_path

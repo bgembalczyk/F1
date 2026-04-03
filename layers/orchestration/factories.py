@@ -53,7 +53,8 @@ class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
             classifier = ParenClassifier(gemini_client=gemini_client)
             scraper_kwargs["classifier"] = classifier
             self._logger.info(
-                "Gemini ParenClassifier loaded; parentheses annotations classification enabled",
+                "Gemini ParenClassifier loaded; parentheses annotations "
+                "classification enabled",
                 extra=context,
             )
         except FileNotFoundError as e:

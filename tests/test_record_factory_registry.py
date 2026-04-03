@@ -17,9 +17,7 @@ def test_factory_registry_has_unique_record_types() -> None:
     assert len(record_types) == len(set(record_types))
 
 
-def test_build_factory_registry_multiple_initialization_does_not_duplicate_classes() -> (
-    None
-):
+def test_build_factory_registry_no_duplicate_classes_after_reinit() -> None:
     first_registry = registry.build_factory_registry()
     second_registry = registry.build_factory_registry()
 

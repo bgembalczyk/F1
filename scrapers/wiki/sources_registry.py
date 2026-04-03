@@ -158,7 +158,9 @@ LEGACY_SEED_NAME_ALIASES: dict[str, str] = {
 }
 
 LEGACY_LIST_FILENAME_ALIASES: dict[str, str] = {
-    "f1_engine_manufacturers_indianapolis_only.json": "f1_indianapolis_only_engine_manufacturers.json",
+    "f1_engine_manufacturers_indianapolis_only.json": (
+        "f1_indianapolis_only_engine_manufacturers.json"
+    ),
 }
 ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE = (
     "f1_engine_manufacturers_indianapolis_only.json"
@@ -191,7 +193,8 @@ PRIVATEER_TEAMS_SOURCE = SOURCE_BY_SEED_NAME["constructors_privateer"].list_file
 
 def _emit_deprecation_warning(kind: str, legacy: str, canonical: str) -> None:
     message = (
-        f"Legacy {kind} alias '{legacy}' is deprecated and will be removed in a future release; "
+        f"Legacy {kind} alias '{legacy}' is deprecated and "
+        "will be removed in a future release; "
         f"use canonical value '{canonical}'."
     )
     logger.warning(message)
@@ -260,12 +263,18 @@ def validate_sources_registry_consistency() -> None:
             msg = f"Empty domain in wiki sources registry for seed: {source.seed_name}"
             raise ValueError(msg)
         if source.seed_name in seen_seed_names:
-            msg = f"Duplicate canonical seed_name in wiki sources registry: {source.seed_name}"
+            msg = (
+                "Duplicate canonical seed_name in wiki sources registry: "
+                f"{source.seed_name}"
+            )
             raise ValueError(msg)
         seen_seed_names.add(source.seed_name)
 
         if source.source_name in seen_source_names:
-            msg = f"Duplicate canonical source_name in wiki sources registry: {source.source_name}"
+            msg = (
+                "Duplicate canonical source_name in wiki sources registry: "
+                f"{source.source_name}"
+            )
             raise ValueError(msg)
         seen_source_names.add(source.source_name)
 
@@ -282,7 +291,8 @@ def validate_sources_registry_consistency() -> None:
             and source.source_name in seen_seed_names
         ):
             msg = (
-                "Source registry naming conflict: source_name duplicates an existing seed_name: "
+                "Source registry naming conflict: source_name duplicates "
+                "an existing seed_name: "
                 f"{source.source_name!r}"
             )
             raise ValueError(msg)

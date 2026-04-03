@@ -102,7 +102,8 @@ def main() -> int:
         return 0
 
     print(
-        "::error::Zmiany architektoniczne wymagają referencji ADR-XXXX w PR lub commit message.",
+        "::error::Zmiany architektoniczne wymagają referencji ADR-XXXX "
+        "w PR lub commit message.",
     )
     print(f"::error::Dotknięte ścieżki: {', '.join(architecture_files)}")
     return 1

@@ -6,9 +6,11 @@ from scrapers.base.table.columns.types.base import BaseColumn
 
 class EnumMarksMixin(BaseColumn):
     """
-    Mixin/base dla kolumn parsujących wartości enum na podstawie znaków (np. *, †) w raw_text.
+    Mixin/base dla kolumn parsujących wartości enum
+    na podstawie znaków (np. *, †) w raw_text.
 
-    Może być używany jako samodzielna kolumna lub jako mixin w dziedziczeniu wielokrotnym.
+    Może być używany jako samodzielna kolumna
+    lub jako mixin w dziedziczeniu wielokrotnym.
 
     mapping: znak -> wartość enum
     default: wartość gdy żaden znak nie pasuje

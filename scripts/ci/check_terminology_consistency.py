@@ -78,7 +78,8 @@ def scan_files(files: list[Path], rules: tuple[TerminologyRule, ...]) -> list[st
             rules,
         ):
             errors.append(
-                f"{file_path}:{line_number}: znaleziono zabroniony termin '{forbidden}' "
+                f"{file_path}:{line_number}: "
+                f"znaleziono zabroniony termin '{forbidden}' "
                 f"(użyj canonical: '{canonical}')",
             )
 
