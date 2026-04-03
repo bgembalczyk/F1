@@ -8,6 +8,8 @@ from layers.orchestration.types import SeedName
 from layers.path_resolver import format_domain_year_name
 from layers.seed.registry import ListJobRegistryEntry
 from layers.zero.policies import LayerZeroJobHook
+from layers.zero.policies import MirrorConstructorsJobHook
+from layers.zero.policies import NullLayerZeroJobHook
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 from scrapers.base.errors import normalize_pipeline_error
 from scrapers.base.logging import RunTraceWriter
@@ -18,7 +20,6 @@ from scrapers.base.runner import ScraperRunner
 
 
 class LayerZeroExecutor:
-    # pylint: disable=too-many-arguments
     def __init__(
         self,
         *,
@@ -29,28 +30,63 @@ class LayerZeroExecutor:
             dict[SeedName, LayerZeroRunConfigFactoryProtocol],
         ]
         | None = None,
-        run_config_factory_map_builder: Callable[
-            [],
-            dict[SeedName, LayerZeroRunConfigFactoryProtocol],
-        ]
-        | None = None,
         default_config_factory: LayerZeroRunConfigFactoryProtocol | None = None,
         merger: LayerZeroMergeServiceProtocol | None = None,
-        merge_service: LayerZeroMergeServiceProtocol | None = None,
         job_hook: LayerZeroJobHook | None = None,
         year_provider: Callable[[], int] | None = None,
         run_id_provider: Callable[[], str] | None = None,
+        **legacy_kwargs: object,
     ) -> None:
+        run_config_factory_map_builder = legacy_kwargs.pop(
+            "run_config_factory_map_builder",
+            None,
+        )
+        merge_service = legacy_kwargs.pop("merge_service", None)
+        run_and_export_function = legacy_kwargs.pop("run_and_export_function", None)
+        constructors_mirror_service = legacy_kwargs.pop(
+            "constructors_mirror_service",
+            None,
+        )
+        current_constructors_scraper_name = legacy_kwargs.pop(
+            "current_constructors_scraper_name",
+            None,
+        )
+        if legacy_kwargs:
+            unexpected_keys = ", ".join(sorted(legacy_kwargs))
+            msg = f"Unexpected keyword arguments: {unexpected_keys}"
+            raise TypeError(msg)
+
         self._list_job_registry = list_job_registry
         self._validate_list_registry = validate_list_registry
+        if run_config_factory_map_builder is not None and config_factories is not None:
+            msg = (
+                "Provide only one of `config_factories` or "
+                "`run_config_factory_map_builder`."
+            )
+            raise ValueError(msg)
         self._config_factories = config_factories or run_config_factory_map_builder
+
+        if merge_service is not None and merger is not None:
+            msg = "Provide only one of `merger` or `merge_service`."
+            raise ValueError(msg)
         self._default_config_factory = default_config_factory
         self._merger = merger or merge_service
+        self._run_and_export = run_and_export_function or self._run_and_export_default
+
+        if job_hook is None and constructors_mirror_service is not None:
+            job_hook = MirrorConstructorsJobHook(
+                constructors_mirror_service=constructors_mirror_service,
+                should_mirror_predicate=lambda job: (
+                    job.list_scraper_cls.__name__ == current_constructors_scraper_name
+                ),
+            )
+        elif job_hook is None:
+            job_hook = NullLayerZeroJobHook()
+
         if (
             self._config_factories is None
             or self._merger is None
             or self._default_config_factory is None
-            or job_hook is None
             or year_provider is None
         ):
             msg = (
@@ -204,12 +240,26 @@ class LayerZeroExecutor:
         effective_run_config = (
             local_run_config if local_run_config.scraper_kwargs else run_config
         )
-        ScraperRunner(effective_run_config).run_and_export(
+        self._run_and_export(
             job.list_scraper_cls,
             l0_raw_json_path,
             l0_raw_csv_path,
+            effective_run_config,
         )
         return l0_raw_json_path
+
+    def _run_and_export_default(
+        self,
+        scraper_cls: type,
+        json_path: Path,
+        csv_path: Path | None,
+        run_config: RunConfig,
+    ) -> None:
+        ScraperRunner(run_config).run_and_export(
+            scraper_cls,
+            json_path,
+            csv_path,
+        )
 
     def _maybe_mirror_constructors(
         self,
