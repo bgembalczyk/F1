@@ -26,7 +26,6 @@ class GeminiOrchestrationService:
         self,
         prompt: str,
         *,
-        response_mime_type: str,
         call_api: Callable[[str], dict[str, Any]],
     ) -> dict[str, Any]:
         error_models: set[str] = set()
