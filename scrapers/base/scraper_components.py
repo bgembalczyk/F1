@@ -17,6 +17,7 @@ from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.pipeline_runner import ScraperPipelineRunner
+from scrapers.base.quality.reporter import CompactStepDiffWriter
 from scrapers.base.quality.reporter import QualityReporter
 from scrapers.base.validation_runner import ValidationRunner
 from validation.record_factory_validator import adapt_record_factory_validator
@@ -196,6 +197,8 @@ class QualityReportService:
         source_metadata_provider: Callable[[], dict[str, object]],
         logger,
         validator_provider: Callable[[], RecordValidator | None],
+        debug_diff_domains: set[str] | None = None,
+        debug_diff_record_ids: set[str] | None = None,
     ) -> None:
         self._enabled = enabled
         self._debug_dir = debug_dir
@@ -204,6 +207,7 @@ class QualityReportService:
         self._logger = logger
         self._validator_provider = validator_provider
         self._reporter: QualityReporter | None = None
+        self._diff_writer: CompactStepDiffWriter | None = None
 
         if self._enabled:
             self._reporter = QualityReporter(
@@ -211,9 +215,18 @@ class QualityReportService:
                 run_id=run_id or "pending",
                 source_metadata=self._source_metadata_provider(),
             )
+            if self._debug_dir is not None:
+                self._diff_writer = CompactStepDiffWriter(
+                    debug_dir=self._debug_dir,
+                    run_id=run_id or "pending",
+                    domain_filter=debug_diff_domains,
+                    record_id_filter=debug_diff_record_ids,
+                )
 
     def set_run_id(self, run_id: str) -> None:
         self._run_id = run_id
+        if self._diff_writer is not None:
+            self._diff_writer.set_run_id(run_id)
 
     def write_step(self, *, step_name: str, records: list[dict[str, object]]) -> None:
         if not self._enabled or self._reporter is None:
@@ -227,6 +240,14 @@ class QualityReportService:
             source_metadata=self._source_metadata_provider(),
         )
         self._logger.debug("Saved step quality report: %s", report_path)
+        if self._diff_writer is not None:
+            diff_path = self._diff_writer.write_step_diff(
+                step_name=step_name,
+                records=records,
+                source_metadata=self._source_metadata_provider(),
+            )
+            if diff_path is not None:
+                self._logger.debug("Saved compact step diffs: %s", diff_path)
 
     def write_validation_report(self) -> None:
         validator = self._validator_provider()
