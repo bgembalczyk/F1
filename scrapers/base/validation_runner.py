@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.base.error_codes import resolve_error_code
 from scrapers.base.errors import ScraperValidationError
 
 if TYPE_CHECKING:
@@ -52,7 +53,14 @@ class ValidationRunner:
 
         message = self._validation_error_message(index, result)
         if self.validation_mode == "soft":
-            self.logger.warning(message)
+            code_definition = resolve_error_code("validation.soft_reject")
+            self.logger.warning(
+                "Validation warning [%s|%s] for url=%s: %s",
+                code_definition.code_id,
+                code_definition.short_description,
+                self.url,
+                message,
+            )
             return True
 
         self._write_quality_report()

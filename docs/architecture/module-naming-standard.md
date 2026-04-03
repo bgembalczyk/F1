@@ -44,7 +44,12 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
 2. Dla istniejących mylących nazw stosuj migrację bez breaking change:
    - nowy moduł o nazwie semantycznej,
    - stary moduł jako alias/re-export + `DeprecationWarning`.
-3. Jeżeli klasa/moduł uruchamia cały flow, preferuj `Runner` zamiast ogólnego `Executor` w nowym kodzie.
+   - re-export usuwaj etapami (najpierw migracja importów wewnętrznych, potem usunięcie aliasu w kolejnym PR).
+3. W obszarach technicznych preferuj moduły celowe zamiast jednego worka:
+   - `path_resolver.py` (rozwiązywanie ścieżek),
+   - `record_merge_ops.py` (operacje merge rekordów),
+   - `source_routing.py` (wybór i routing źródeł danych).
+4. Jeżeli klasa/moduł uruchamia cały flow, preferuj `Runner` zamiast ogólnego `Executor` w nowym kodzie.
 
 ## Szybkie drzewko decyzyjne (Service vs Factory vs Runner vs Adapter)
 
@@ -62,5 +67,6 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
 
 - [ ] Każdy nowy moduł ma nazwę odzwierciedlającą jedną z ról: `Service`, `Factory`, `Runner`, `Adapter`, `EntryPoint` albo nazwę celu technicznego.
 - [ ] Nie dodano nowego pliku o nazwie `helpers.py` bez ADR/uzasadnienia.
+- [ ] Dla nowych funkcji technicznych wybrano moduł celowy zamiast dokładania kolejnych symboli do istniejącego `helpers.py`.
 - [ ] Jeśli zmieniono mylącą nazwę, zachowano alias legacy + deprecację.
 - [ ] Nowe nazwy pól/argumentów/metod nie dublują informacji już zakodowanej w typie (`*_service`, `*_builder`, `*_function` tylko gdy dodają semantykę).

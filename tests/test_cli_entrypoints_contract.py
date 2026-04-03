@@ -18,8 +18,8 @@ if TYPE_CHECKING:
     import argparse
 
 ENTRYPOINT_DEFAULTS = (
-    ("scrapers.drivers.list_scraper", True, False),
-    ("scrapers.circuits.list_scraper", True, False),
+    ("scrapers.drivers.list_scraper", False, False),
+    ("scrapers.circuits.list_scraper", False, False),
     ("scrapers.grands_prix.list_scraper", False, False),
     ("scrapers.seasons.list_scraper", False, False),
     ("scrapers.constructors.current_constructors_list", False, False),
@@ -115,7 +115,6 @@ def test_deprecated_module_base_config_has_expected_defaults() -> None:
     assert deprecated_module_base_config() == RunConfig(
         output_dir=Path("../../data/wiki"),
         include_urls=True,
-        debug_dir=Path("../../data/debug"),
     )
 
 
@@ -144,7 +143,6 @@ def test_build_deprecated_module_main_warns_and_passes_run_config() -> None:
         RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
-            debug_dir=Path("../../data/debug"),
             quality_report=False,
             error_report=True,
         ),
