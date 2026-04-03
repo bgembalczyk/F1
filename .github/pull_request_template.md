@@ -44,7 +44,7 @@
 - [ ] **Spójność rejestru konfiguracji i implementacji**: potwierdzona przez `scripts/ci/enforce_diff_quality_guards.py`.
 - [ ] **Wyjątki tylko jawnie uzasadnione**: każdy nowy `except Exception` ma adnotację `justified-exception:`.
 - [ ] **Architecture impact**: sekcja poniżej jest uzupełniona i przechodzi walidator PR template (`scripts/ci/validate_pr_template.py`).
-- [ ] **Terminologia domenowa**: brak niedozwolonych wariantów nazw (`python scripts/check_domain_terminology.py`).
+- [ ] **Spójność terminologiczna**: nazwy pól/klas są zgodne z `DOMAIN_GLOSSARY.md` oraz gate `scripts/ci/check_terminology_consistency.py`.
 
 ## Architecture impact
 

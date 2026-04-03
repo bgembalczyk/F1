@@ -15,14 +15,14 @@ Poniższe metody oznaczono jako niezgodne z docelową regułą i objęto migracj
 
 - `SingleWikiArticleScraperBase.fetch_by_url(...)` → docelowo `extract_by_url(...)`.
 - `SingleSeasonScraper.fetch_by_url(...)` → docelowo `extract_by_url(...)`.
-- `SectionAdapter.parse_section_dicts(...)` (parse + serializacja) → docelowo `assemble_section_dicts(...)`.
+- `SectionAdapter.parse_section_dicts(...)` (parse + serializacja) → zastąpione przez `assemble_section_dicts(...)` (alias usunięty).
 - `ABCScraper._finalize_fetch(...)` → docelowo `_assemble_fetch_result(...)`.
 
-## Plan migracji (etapowy, z aliasami deprecacyjnymi)
+## Plan migracji (etapowy; aliasy tylko tam, gdzie nadal są potrzebne)
 
 Etap 1 (ten commit):
 - Wprowadzamy nowe nazwy docelowe.
-- Zachowujemy stare metody jako aliasy z `DeprecationWarning`.
+- Dla części API zachowujemy stare metody jako aliasy z `DeprecationWarning`.
 
 Etap 2 (kolejny cykl):
 - Przepinamy wywołania wewnętrzne i domenowe na nowe API.

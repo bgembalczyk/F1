@@ -1,24 +1,22 @@
 # layers/zero
 
-## Cel modułu
-Warstwa 0 uruchamia scrape'y listowe (seed/list jobs), zapisuje surowe artefakty do `layers/0_layer/.../raw`, a na końcu odpala merge wyników.
+## Odpowiedzialność
+Warstwa 0 odpowiada za uruchamianie scrape'ów listowych (seed/list jobs), zapis surowych artefaktów do `layers/0_layer/.../raw` oraz finalny merge wyników po przejściu całego rejestru jobów.
 
-## Główne klasy
-- `LayerZeroExecutor` – główna orkiestracja pętli po `list_job_registry`.
-- `LayerZeroMergeService` – cienki adapter nad funkcją łączenia wyników.
-- Hooki w `policies.py` (`NullLayerZeroJobHook`, `MirrorConstructorsJobHook`) – logika post-job.
-- `LayerZeroPathBuilder` + `layer_zero_raw_paths()` – wyliczanie ścieżek outputu.
+## Punkt wejścia
+- Publiczny alias: `LayerZeroRunner` (`layers.zero.__init__`).
+- Główny kontrakt uruchomienia: `LayerZeroExecutor.run(run_config, base_wiki_dir)`.
 
-## Co jest publiczne
-- Publiczny alias: `LayerZeroRunner` (alias do `LayerZeroExecutor`) z `layers.zero.__init__`.
-- Publiczny kontrakt uruchomienia: `LayerZeroExecutor.run(run_config, base_wiki_dir)`.
+## Najczęstszy punkt debug
+Najczęściej debug zaczyna się w `layers/zero/executor.py`, zwłaszcza w:
+- `_build_local_run_config()` (nadpisania per seed),
+- `_run_single_job()` (realne odpalenie joba),
+- `_finalize_merge()` (spięcie artefaktów po pętli).
 
-## Gdzie najczęściej debugować
-- `layers/zero/executor.py`: `_build_local_run_config()`, `_run_single_job()`, `_finalize_merge()`.
-- `layers/zero/run_profile_paths.py`: czy output trafia do oczekiwanej ścieżki.
-- `layers/zero/policies.py`: czy hook po jobie uruchamia się tylko dla właściwych seedów.
+Pomocniczo warto sprawdzić `layers/zero/run_profile_paths.py` (czy ścieżki outputu są poprawne) i `layers/zero/policies.py` (hooki post-job).
 
-## Najczęstsze pułapki
-- Niezgodność `seed_name` vs mapa factory (`run_config_factory_map_builder`) powoduje fallback na domyślną konfigurację.
-- Mylenie `run_config` z `local_run_config` (nadpisania `scraper_kwargs` mogą nie wejść, jeśli są puste).
-- Błędny `json_output_path`/`csv_output_path` w rejestrze daje poprawny run, ale z nieoczekiwanym miejscem zapisu.
+## Czego tu nie robić
+- Nie przenosić tu logiki domenowej parsowania/normalizacji rekordów (to rola scraperów i warstw domenowych).
+- Nie dodawać tu ad-hoc transformacji „pod pojedynczy seed” — takie reguły powinny żyć bliżej runnera/scrapera.
+- Nie traktować warstwy 0 jako miejsca do ręcznego „naprawiania” wyników po merge; poprawki powinny iść do źródła danych lub pipeline.
+- Nie mieszać kontraktów globalnego `run_config` i lokalnego `local_run_config` bez jasnej intencji.

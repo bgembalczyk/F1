@@ -23,6 +23,7 @@ REQUIRED_CHECKBOXES: tuple[str, ...] = (
     "Spójność rejestru konfiguracji i implementacji",
     "Wyjątki tylko jawnie uzasadnione",
     "Architecture impact",
+    "Spójność terminologiczna",
 )
 
 ARCHITECTURE_IMPACT_FIELDS: tuple[str, ...] = (

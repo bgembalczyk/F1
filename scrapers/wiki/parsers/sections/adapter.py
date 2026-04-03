@@ -4,6 +4,7 @@ from difflib import SequenceMatcher
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.helpers.transform_micro_ops import expand_alias_variants
 from scrapers.wiki.parsers.sections.data_classes import SectionTree
 from scrapers.wiki.parsers.sections.data_classes import SectionTreeMatch
 from scrapers.wiki.parsers.sections.detection import normalize_section_text
@@ -12,9 +13,6 @@ from scrapers.wiki.parsers.sections.helpers import get_section_profile
 if TYPE_CHECKING:
     from collections.abc import Iterable
 
-
-def _normalize_id(text: str) -> str:
-    return normalize_section_text(text).replace(" ", "_")
 
 
 def _expand_targets(
@@ -32,17 +30,7 @@ def _expand_targets(
     values = {target, *aliases}
     if profile:
         values.update(profile.aliases_for(target))
-    normalized_texts = {
-        normalize_section_text(value)
-        for value in values
-        if isinstance(value, str) and value.strip()
-    }
-    normalized_ids = {
-        variant
-        for text in normalized_texts
-        for variant in (_normalize_id(text), text.replace(" ", "_"), text)
-    }
-    return normalized_ids, normalized_texts
+    return expand_alias_variants(values, text_normalizer=normalize_section_text)
 
 
 def _iter_sections(sections: list[SectionTree]) -> Iterable[SectionTree]:
@@ -113,7 +101,7 @@ def _find_match(
 
     for section in _iter_sections(sections):
         section_name = str(section.get("name", ""))
-        section_id = str(section.get("section_id") or _normalize_id(section_name))
+        section_id = str(section.get("section_id") or normalize_section_text(section_name).replace(" ", "_"))
         if section_id in target_ids:
             return SectionTreeMatch(
                 section=section,
