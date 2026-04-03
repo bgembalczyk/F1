@@ -22,9 +22,9 @@ class NullLayerZeroJobHook:
     def after_job(
         self,
         *,
-        base_wiki_dir: Path,
-        job: ListJobRegistryEntry,
-        l0_raw_json_path: Path,
+        _base_wiki_dir: Path,
+        _job: ListJobRegistryEntry,
+        _l0_raw_json_path: Path,
     ) -> None:
         return None
 
