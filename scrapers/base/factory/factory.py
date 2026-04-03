@@ -52,7 +52,14 @@ class ScraperFactory:
         try:
             return adapter.create(context=context, ctor=ctor)
         except TypeError:
-            try:
-                return adapter.create(context=context)
-            except TypeError:
-                return adapter.create(context, ctor)
+            pass
+
+        try:
+            return adapter.create(context=context, _ctor=ctor)
+        except TypeError:
+            pass
+
+        try:
+            return adapter.create(context=context)
+        except TypeError:
+            return adapter.create(context, ctor)

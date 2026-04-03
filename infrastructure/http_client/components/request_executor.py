@@ -92,7 +92,21 @@ class RequestExecutor:
                 attempt=attempt,
             )
         except TypeError:
+            pass
+
+        try:
+            return self._retry_policy.should_retry(
+                response=response,
+                exception=exception,
+                _attempt=attempt,
+            )
+        except TypeError:
+            pass
+
+        try:
             return self._retry_policy.should_retry(
                 response=response,
                 exception=exception,
             )
+        except TypeError:
+            return self._retry_policy.should_retry(response, exception, attempt)

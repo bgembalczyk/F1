@@ -119,7 +119,14 @@ class CompositeDataExtractor(BaseDataExtractor):
         try:
             return wrap(records, desc=desc, unit=unit)
         except TypeError:
-            try:
-                return wrap(records, desc, unit)
-            except TypeError:
-                return wrap(records)
+            pass
+
+        try:
+            return wrap(records, _desc=desc, _unit=unit)
+        except TypeError:
+            pass
+
+        try:
+            return wrap(records, desc, unit)
+        except TypeError:
+            return wrap(records)
