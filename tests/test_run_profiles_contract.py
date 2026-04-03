@@ -1,10 +1,9 @@
 # ruff: noqa: S108
 from __future__ import annotations
 
+from importlib import import_module
 from typing import TYPE_CHECKING
 
-from scrapers.base.cli_entrypoint import complete_extractor_base_config
-from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.domain_entrypoint import debug_profile
 from scrapers.base.domain_entrypoint import default_profile
 from scrapers.base.run_profiles import RunPathName
@@ -29,13 +28,6 @@ class _LayerExecutorSpy:
 def test_domain_entrypoint_profiles_match_central_definitions() -> None:
     assert default_profile() == build_run_profile(RunProfileName.DEFAULT)
     assert debug_profile() == build_run_profile(RunProfileName.DEBUG)
-
-
-def test_cli_entrypoint_profiles_match_central_definitions() -> None:
-    assert deprecated_module_base_config() == build_run_profile(
-        RunProfileName.DEFAULT,
-    )
-    assert complete_extractor_base_config() == build_run_profile(RunProfileName.DEFAULT)
 
 
 def test_profile_spec_exposes_explicit_configuration() -> None:

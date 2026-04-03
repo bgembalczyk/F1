@@ -25,4 +25,3 @@ def validate_section_result_payload(payload: dict[str, Any]) -> None:
     if not isinstance(payload["metadata"], dict):
         msg = "Section parser contract violation: metadata must be dict."
         raise TypeError(msg)
-

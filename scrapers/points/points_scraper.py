@@ -105,4 +105,3 @@ class PointsScraper(BasePointsScraper):
         legacy_scraper = SprintQualifyingPointsScraper()
         rows = legacy_scraper._parse_soup(soup)
         return [row for row in rows if isinstance(row, dict)]
-

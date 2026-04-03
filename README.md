@@ -49,6 +49,7 @@ Najważniejsze kontrakty i interfejsy projektu:
 - **Open/Closed**: rozszerzamy przez nowe implementacje, nie przez łamanie kontraktów.
 - **DRY**: nową logikę najpierw próbujemy osadzić w komponentach bazowych (`scrapers/base/*`), zamiast kopiować implementacje domenowe.
 - **Brak duplikacji opisów**: nie powielamy szczegółów architektury w wielu plikach — linkujemy do indeksu i dokumentu źródłowego.
+- **Brak kompatybilności wstecznej**: nie utrzymujemy aliasów legacy, fallbacków danych, wrapperów migracyjnych ani oznaczeń deprecated. Zmieniamy API i ścieżki od razu na finalne.
 
 Checklisty review i merge-gate:
 - [`docs/CHANGES_CHECKLIST.md`](docs/CHANGES_CHECKLIST.md)
@@ -74,7 +75,7 @@ Przed merge PR sprawdź:
 - [ ] Czy dodano/uzupełniono testy (jednostkowe i/lub statyczne) adekwatne do zmiany?
 - [ ] Czy zaktualizowano dokumentację domeny (`scrapers/<domain>/README.md`) i wpisano link do indeksu docs?
 - [ ] Czy jeśli zmiana ma charakter architektoniczny, dodano/zmieniono ADR i referencję w PR?
-- [ ] Czy sekcje PR (`SRP impact`, `DRY impact`, `Contracts changed`, `Backward compatibility`, `DoD`) są uzupełnione?
+- [ ] Czy sekcje PR (`SRP impact`, `DRY impact`, `Contracts changed`, `Breaking changes`, `DoD`) są uzupełnione?
 - [ ] Czy checklista techniczna (`testy kontraktowe`, `brak nowych Any`, `brak nowych magic strings`, `zaktualizowany ADR/docs`) jest odhaczona?
 - [ ] Czy w PR dodano dowód review (output testów/checków) wymagany do akceptacji?
 - [ ] Czy nowy entrypoint i sposób uruchomienia są zgodne ze standardem PyCharm Run (zgodnie z `docs/MODULE_BOUNDARIES.md`)?

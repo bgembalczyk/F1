@@ -28,4 +28,22 @@ jobs:
           pip install pre-commit
 
       - name: Run pre-commit on all files
-        run: pre-commit run --show-diff-on-failure --color=always --all-files
+        run: python -m pre_commit run --show-diff-on-failure --color=always --all-files
+
+      - name: Enforce ADR references in architecture docs
+        run: python scripts/ci/enforce_architecture_adr_reference.py
+
+      - name: DI anti-pattern AST check
+        shell: bash
+        run: |
+          CHANGED_FILES="$(git ls-files '*.py' | grep -E '^(layers/|scrapers/base/|scrapers/drivers/infobox/).+\.py$' || true)"
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No matching files for DI anti-pattern check."
+            exit 0
+          fi
+          python scripts/check_di_antipatterns.py \
+            --adr-reference-text "docs/adr/0003-di-strategy.md" \
+            $CHANGED_FILES
+
+      - name: Domain role contracts suite
+        run: pytest -q tests/test_domain_role_contracts.py

@@ -69,9 +69,3 @@ class IndianapolisOnlyConstructorsListScraper(IndianapolisOnlyListScraper):
             if isinstance(url, str):
                 record["constructor_url"] = self._full_url(url)
         return records
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

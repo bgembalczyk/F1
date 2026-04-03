@@ -308,4 +308,3 @@ class ConstructorsListScraper(F1ListScraper):
         return output_path.with_name(
             f"{output_path.stem}_{parser_kind}{output_path.suffix}",
         )
-
