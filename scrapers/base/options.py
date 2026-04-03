@@ -58,6 +58,8 @@ class ScraperOptions:
     run_id: str | None = None
     quality_report: bool = False
     error_report: bool = False
+    debug_diff_domains: set[str] | None = None
+    debug_diff_record_ids: set[str] | None = None
     error_policy: Literal["retry", "skip", "fail-fast"] = "fail-fast"
     error_retry_attempts: int = 1
     http: HttpOptions = field(default_factory=HttpOptions)

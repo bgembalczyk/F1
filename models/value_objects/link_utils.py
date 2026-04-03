@@ -1,16 +1,12 @@
 from collections.abc import Mapping
 from typing import Any
 
+from models.domain_utils.field_normalization.links import normalize_link_payload
 from models.validation.utils import is_valid_url
 
 
 def normalize_link(link: Mapping[str, Any] | None) -> dict[str, Any]:
-    data: dict[str, Any] = dict(link or {})
-    text = str(data.get("text") or "").strip()
-    url = data.get("url")
-    if url == "":
-        url = None
-    return {"text": text, "url": url}
+    return normalize_link_payload(link)
 
 
 def validate_link(link: Mapping[str, Any] | None, *, field_name: str) -> dict[str, Any]:

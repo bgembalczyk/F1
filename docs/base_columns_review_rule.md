@@ -16,3 +16,11 @@ Jeżeli zmiana dodaje logikę domenową:
 1. implementacja musi trafić do `scrapers/<domain>/columns/`,
 2. w opisie PR musi znaleźć się krótkie uzasadnienie wyboru domeny,
 3. wyjątek (umieszczenie w `base`) wymaga sekcji **"Uzasadnienie dla base"** i wskazania, które domeny korzystają z tej samej reguły bez modyfikacji.
+
+## Dodatkowy gate anty-`helpers.py`
+
+Przy review zmian technicznych obowiązuje dodatkowy warunek:
+
+1. nowe funkcje **nie mogą** domyślnie trafiać do kolejnego `helpers.py`,
+2. trzeba wskazać moduł celowy (np. `path_resolver`, `record_merge_ops`, `source_routing`),
+3. dopuszczalny jest tymczasowy re-export ze starego modułu `helpers.py`, ale z planem usunięcia aliasu w kolejnych PR-ach.

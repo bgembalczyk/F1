@@ -1,6 +1,6 @@
 from typing import Any
 
-from models.services.season_service import parse_seasons
+from models.services import parse_seasons
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 

@@ -1,9 +1,5 @@
-from dataclasses import dataclass
+"""Backward-compatible alias for round rule context."""
 
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import RoundRuleContext
 
-@dataclass(frozen=True)
-class RoundRuleContext:
-    season_year: int | None
-    marks: list[str]
-    header_text: str
-    round_url: str
+__all__ = ["RoundRuleContext"]

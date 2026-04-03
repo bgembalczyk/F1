@@ -1,11 +1,12 @@
 """Helper class for parsing nested tables from infobox cells."""
 
-import contextlib
 import re
 from typing import Any
 
 from bs4 import Tag
 
+from models.domain_utils.field_normalization.stats import extract_driver_stats_row
+from models.domain_utils.field_normalization.stats import is_driver_stats_table
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.constants import EXPECTED_STATS_COLUMNS
@@ -94,62 +95,15 @@ class TableParser:
 
     @staticmethod
     def _is_stats_table(table_data: dict[str, Any]) -> bool:
-        """Check if table is a Wins/Podiums/Poles or Wins/Top tens/Poles stats table.
-
-        Args:
-            table_data: Dictionary with parsed table data
-
-        Returns:
-            True if this is a recognized stats table format
-        """
+        """Check if table is a Wins/Podiums/Poles or Wins/Top tens/Poles stats table."""
         headers = table_data.get("headers", [])
-        if len(headers) != EXPECTED_STATS_COLUMNS:
-            return False
-        # Normalize headers for comparison
-        normalized = [h.lower().strip() for h in headers]
-        expected_wins_podiums_poles = ["wins", "podiums", "poles"]
-        expected_wins_topten_poles = ["wins", "top tens", "poles"]
-        return normalized in (expected_wins_podiums_poles, expected_wins_topten_poles)
+        return is_driver_stats_table(headers, expected_columns=EXPECTED_STATS_COLUMNS)
 
     @staticmethod
     def _extract_stats_from_table(table_data: dict[str, Any]) -> dict[str, int | None]:
-        """Extract Wins, Podiums/Top tens, Poles from stats table.
-
-        Args:
-            table_data: Dictionary with parsed table data
-
-        Returns:
-            Dictionary with wins, podiums, top_tens, and poles statistics
-        """
+        """Extract Wins, Podiums/Top tens, Poles from stats table."""
         headers = table_data.get("headers", [])
-        normalized = [h.lower().strip() for h in headers]
-
-        stats: dict[str, int | None] = {
-            "wins": None,
-            "podiums": None,
-            "top_tens": None,
-            "poles": None,
-        }
         rows = table_data.get("rows", [])
-        if rows and len(rows[0]) >= EXPECTED_STATS_COLUMNS:
-            # First row contains the values
-            # Determine if we have podiums or top tens based on header
-            has_podiums = "podiums" in normalized
-            has_top_tens = "top tens" in normalized
-
-            with contextlib.suppress(ValueError, IndexError):
-                stats["wins"] = int(rows[0][0])
-
-            # Second column is either podiums or top tens
-            if has_podiums:
-                with contextlib.suppress(ValueError, IndexError):
-                    stats["podiums"] = int(rows[0][1])
-            elif has_top_tens:
-                with contextlib.suppress(ValueError, IndexError):
-                    stats["top_tens"] = int(rows[0][1])
-
-            with contextlib.suppress(ValueError, IndexError):
-                stats["poles"] = int(rows[0][2])
-
-        # Remove None values for cleaner output
-        return {k: v for k, v in stats.items() if v is not None}
+        if not rows or len(rows[0]) < EXPECTED_STATS_COLUMNS:
+            return {}
+        return extract_driver_stats_row(rows[0], headers)

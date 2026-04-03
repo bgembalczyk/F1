@@ -3,6 +3,8 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import TypedDict
 
+from scrapers.base.error_codes import resolve_error_code
+
 
 class ErrorCategory(str, Enum):
     NETWORK = "network"
@@ -25,11 +27,17 @@ ERROR_BEHAVIOR_BY_CATEGORY: dict[ErrorCategory, ErrorBehavior] = {
 
 
 @dataclass(eq=False)
-class ScraperError(Exception):
+class ScraperError(RuntimeError):
     """Bazowy wyjątek domenowy dla scraperów."""
 
     message: str
     _: KW_ONLY
+    code: str = "pipeline.error"
+    domain: str = "scrapers"
+    level: str = "error"
+    source_name: str | None = None
+    record: str | None = None
+    suggestion: str | None = None
     url: str | None = None
     section_id: str | None = None
     parser_name: str | None = None
@@ -44,6 +52,12 @@ class ScraperError(Exception):
     def __str__(self) -> str:
         details = self.message
         context: list[str] = []
+        if self.code:
+            context.append(f"code={self.code}")
+        if self.domain:
+            context.append(f"domain={self.domain}")
+        if self.source_name:
+            context.append(f"source_name={self.source_name}")
         if self.url:
             context.append(f"url={self.url}")
         if self.section_id:
@@ -57,8 +71,19 @@ class ScraperError(Exception):
         return details
 
     def to_payload(self) -> "ScraperErrorPayload":
+        code_definition = resolve_error_code(self.code)
         return ScraperErrorPayload(
+            code=self.code,
+            level=self.level,
+            code_id=code_definition.code_id,
+            code_description=code_definition.short_description,
             message=self.message,
+            domain=self.domain,
+            source=self.source_name or self.parser_name,
+            record=self.record,
+            suggestion=self.suggestion,
+            source_name=self.source_name,
+            cause=str(self.cause) if self.cause else None,
             category=self.category.value,
             behavior=self.behavior.value,
             critical=self.critical,
@@ -66,7 +91,6 @@ class ScraperError(Exception):
             section_id=self.section_id,
             parser_name=self.parser_name,
             run_id=self.run_id,
-            cause=str(self.cause) if self.cause else None,
         )
 
     @property
@@ -80,7 +104,17 @@ class ScraperError(Exception):
 class ScraperErrorPayload(TypedDict):
     """Typed payload for exporting scraper exceptions to pipeline logs."""
 
+    code: str
+    level: str
+    code_id: str
+    code_description: str
     message: str
+    domain: str
+    source: str | None
+    record: str | None
+    suggestion: str | None
+    source_name: str | None
+    cause: str | None
     category: str
     behavior: str
     critical: bool
@@ -88,7 +122,6 @@ class ScraperErrorPayload(TypedDict):
     section_id: str | None
     parser_name: str | None
     run_id: str | None
-    cause: str | None
 
 
 @dataclass(eq=False)
@@ -96,6 +129,8 @@ class ScraperNetworkError(ScraperError):
     """Błąd sieci (krytyczny)."""
 
     category: ErrorCategory = ErrorCategory.NETWORK
+    code: str = "transport.error"
+    domain: str = "network"
 
 
 @dataclass(eq=False)
@@ -103,6 +138,8 @@ class ScraperParseError(ScraperError):
     """Błąd parsowania (krytyczny)."""
 
     category: ErrorCategory = ErrorCategory.PARSE
+    code: str = "source.parse_error"
+    domain: str = "parsing"
 
 
 @dataclass(eq=False)
@@ -111,6 +148,8 @@ class DomainParseError(ScraperError):
 
     category: ErrorCategory = ErrorCategory.DOMAIN
     critical: bool = False
+    code: str = "source.domain_parse_error"
+    domain: str = "domain"
 
 
 @dataclass(eq=False)
@@ -118,6 +157,8 @@ class ScraperValidationError(ScraperError):
     """Błąd walidacji rekordów (krytyczny)."""
 
     category: ErrorCategory = ErrorCategory.VALIDATION
+    code: str = "validation.error"
+    domain: str = "validation"
 
 
 @dataclass(eq=False)
@@ -126,3 +167,85 @@ class ScraperNotFoundError(ScraperError):
 
     category: ErrorCategory = ErrorCategory.DOMAIN
     critical: bool = False
+    code: str = "source.not_found"
+    domain: str = "domain"
+
+
+@dataclass(eq=False)
+class PipelineError(ScraperError):
+    """Znormalizowany błąd przekazywany między warstwami pipeline."""
+
+    code: str = "pipeline.error"
+    domain: str = "pipeline"
+
+
+@dataclass(eq=False)
+class SourceParseError(PipelineError):
+    code: str = "source.parse_error"
+    domain: str = "parsing"
+    category: ErrorCategory = ErrorCategory.PARSE
+
+
+@dataclass(eq=False)
+class ValidationError(PipelineError):
+    code: str = "validation.error"
+    domain: str = "validation"
+    category: ErrorCategory = ErrorCategory.VALIDATION
+
+
+@dataclass(eq=False)
+class TransportError(PipelineError):
+    code: str = "transport.error"
+    domain: str = "network"
+    category: ErrorCategory = ErrorCategory.NETWORK
+
+
+def normalize_pipeline_error(
+    exc: Exception,
+    *,
+    code: str = "pipeline.error",
+    message: str = "Pipeline execution failed.",
+    domain: str = "pipeline",
+    source_name: str | None = None,
+) -> PipelineError:
+    if isinstance(exc, PipelineError):
+        if source_name is not None and exc.source_name is None:
+            exc.source_name = source_name
+        return exc
+    if isinstance(exc, ScraperParseError):
+        return SourceParseError(
+            message=exc.message,
+            source_name=source_name or exc.source_name or exc.parser_name,
+            cause=exc.cause or exc,
+            url=exc.url,
+            section_id=exc.section_id,
+            parser_name=exc.parser_name,
+            run_id=exc.run_id,
+        )
+    if isinstance(exc, ScraperValidationError):
+        return ValidationError(
+            message=exc.message,
+            source_name=source_name or exc.source_name or exc.parser_name,
+            cause=exc.cause or exc,
+            url=exc.url,
+            section_id=exc.section_id,
+            parser_name=exc.parser_name,
+            run_id=exc.run_id,
+        )
+    if isinstance(exc, ScraperNetworkError):
+        return TransportError(
+            message=exc.message,
+            source_name=source_name or exc.source_name or exc.parser_name,
+            cause=exc.cause or exc,
+            url=exc.url,
+            section_id=exc.section_id,
+            parser_name=exc.parser_name,
+            run_id=exc.run_id,
+        )
+    return PipelineError(
+        message=message,
+        code=code,
+        domain=domain,
+        source_name=source_name,
+        cause=exc,
+    )

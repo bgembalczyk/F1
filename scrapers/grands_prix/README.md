@@ -21,3 +21,12 @@
 
 - **Rekomendowana ścieżka uruchamiania:** `python -m scrapers.cli ...` (jedyny canonical launcher).
 - `entrypoint.py` traktuj jako API do wywołań z kodu; moduły typu `list_scraper.py`/`complete_scraper.py` są wyłącznie kompatybilnościowe i deprecated.
+
+## Public API
+Stabilne importy dla konsumentów:
+- `from scrapers.grands_prix import GrandsPrixListScraper`
+- `from scrapers.grands_prix import F1SingleGrandPrixScraper`
+- `from scrapers.grands_prix import F1CompleteGrandPrixDataExtractor`
+- `from scrapers.grands_prix import RedFlaggedRacesScraper`
+
+`grands_prix.helpers` traktuj jako internal.

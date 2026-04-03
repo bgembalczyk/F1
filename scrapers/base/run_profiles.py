@@ -30,10 +30,8 @@ DEFAULT_RUN_PATHS = RunPathConfig()
 
 
 class RunProfileName(str, Enum):
-    STRICT = "strict"
-    MINIMAL = "minimal"
+    DEFAULT = "default"
     DEBUG = "debug"
-    DEPRECATED = "deprecated"
 
 
 class RunPathName(str, Enum):
@@ -47,15 +45,7 @@ LegacyCliProfileName = Literal[
     "deprecated_entrypoint",
 ]
 
-RunProfileSelector = (
-    RunProfileName
-    | Literal[
-        "strict",
-        "minimal",
-        "debug",
-        "deprecated",
-    ]
-)
+RunProfileSelector = RunProfileName | Literal["default", "debug"]
 
 CliProfileSelector = RunProfileSelector | LegacyCliProfileName
 
@@ -70,7 +60,6 @@ class RunProfileSpec:
     debug_dir: RunPathName | None = None
     quality_report: bool = False
     error_report: bool = False
-    cli_aliases: tuple[LegacyCliProfileName, ...] = ()
 
     def build_config(self, *, paths: RunPathConfig) -> RunConfig:
         from scrapers.base.run_config import RunConfig
@@ -87,33 +76,20 @@ class RunProfileSpec:
 
 
 RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
-    RunProfileName.STRICT: RunProfileSpec(
-        name=RunProfileName.STRICT,
-        debug_dir=RunPathName.DEBUG_DIR,
-        quality_report=True,
-        error_report=False,
-        cli_aliases=("list_scraper",),
-    ),
-    RunProfileName.MINIMAL: RunProfileSpec(
-        name=RunProfileName.MINIMAL,
-        cli_aliases=("complete_extractor",),
+    RunProfileName.DEFAULT: RunProfileSpec(
+        name=RunProfileName.DEFAULT,
     ),
     RunProfileName.DEBUG: RunProfileSpec(
         name=RunProfileName.DEBUG,
         debug_dir=RunPathName.DEBUG_DIR,
     ),
-    RunProfileName.DEPRECATED: RunProfileSpec(
-        name=RunProfileName.DEPRECATED,
-        debug_dir=RunPathName.DEBUG_DIR,
-        cli_aliases=("deprecated_entrypoint",),
-    ),
 }
 
 
 LEGACY_CLI_PROFILE_ALIASES: dict[LegacyCliProfileName, RunProfileName] = {
-    alias: spec.name
-    for spec in RUN_PROFILE_SPECS.values()
-    for alias in spec.cli_aliases
+    "list_scraper": RunProfileName.DEFAULT,
+    "complete_extractor": RunProfileName.DEFAULT,
+    "deprecated_entrypoint": RunProfileName.DEFAULT,
 }
 
 LEGACY_CLI_PROFILE_NAMES: tuple[LegacyCliProfileName, ...] = tuple(

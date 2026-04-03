@@ -1,61 +1,106 @@
 from __future__ import annotations
 
+import logging
 import warnings
 from dataclasses import dataclass
+
+from scrapers.base.run_profiles import LegacyCliProfileName
+
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
 class WikiSourceDefinition:
+    domain: str
     seed_name: str
-    output_category: str
-    list_filename: str
+    source_name: str
+    output_file: str
+    profile: LegacyCliProfileName = "list_scraper"
+
+    @property
+    def output_category(self) -> str:
+        """Backward-compatible alias for legacy naming used by older call-sites."""
+        return self.domain
+
+    @property
+    def list_filename(self) -> str:
+        """Backward-compatible alias for legacy naming used by older call-sites."""
+        return self.output_file
 
 
 WIKI_SOURCE_DEFINITIONS: tuple[WikiSourceDefinition, ...] = (
-    WikiSourceDefinition("circuits", "circuits", "f1_circuits.json"),
-    WikiSourceDefinition("constructors_current", "constructors", "f1_constructors_{year}.json"),
-    WikiSourceDefinition("constructors_former", "chassis_constructors", "f1_former_constructors.json"),
+    WikiSourceDefinition("circuits", "circuits", "circuits", "f1_circuits.json"),
     WikiSourceDefinition(
-        "constructors_indianapolis_only",
+        "constructors",
+        "constructors_current",
+        "constructors_current",
+        "f1_constructors_{year}.json",
+    ),
+    WikiSourceDefinition(
         "chassis_constructors",
+        "constructors_former",
+        "constructors_former",
+        "f1_former_constructors.json",
+    ),
+    WikiSourceDefinition(
+        "chassis_constructors",
+        "constructors_indianapolis_only",
+        "constructors_indianapolis_only",
         "f1_indianapolis_only_constructors.json",
     ),
-    WikiSourceDefinition("constructors_privateer", "teams", "f1_privateer_teams.json"),
-    WikiSourceDefinition("drivers", "drivers", "f1_drivers.json"),
-    WikiSourceDefinition("drivers_female", "drivers", "female_drivers.json"),
-    WikiSourceDefinition("drivers_fatalities", "drivers", "f1_driver_fatalities.json"),
-    WikiSourceDefinition("seasons", "seasons", "f1_seasons.json"),
-    WikiSourceDefinition("grands_prix_by_title", "grands_prix", "f1_grands_prix_by_title.json"),
+    WikiSourceDefinition("teams", "constructors_privateer", "constructors_privateer", "f1_privateer_teams.json"),
+    WikiSourceDefinition("drivers", "drivers", "drivers", "f1_drivers.json"),
+    WikiSourceDefinition("drivers", "drivers_female", "drivers_female", "female_drivers.json"),
+    WikiSourceDefinition("drivers", "drivers_fatalities", "drivers_fatalities", "f1_driver_fatalities.json"),
+    WikiSourceDefinition("seasons", "seasons", "seasons", "f1_seasons.json"),
     WikiSourceDefinition(
-        "engines_indianapolis_only",
+        "grands_prix",
+        "grands_prix_by_title",
+        "grands_prix_by_title",
+        "f1_grands_prix_by_title.json",
+    ),
+    WikiSourceDefinition(
         "engines",
+        "engines_indianapolis_only",
+        "engines_indianapolis_only",
         "f1_indianapolis_only_engine_manufacturers.json",
     ),
-    WikiSourceDefinition("engines_restrictions", "rules", "f1_engine_restrictions.json"),
-    WikiSourceDefinition("engines_regulations", "rules", "f1_engine_regulations.json"),
-    WikiSourceDefinition("engines_manufacturers", "engines", "f1_engine_manufacturers.json"),
+    WikiSourceDefinition("rules", "engines_restrictions", "engines_restrictions", "f1_engine_restrictions.json"),
+    WikiSourceDefinition("rules", "engines_regulations", "engines_regulations", "f1_engine_regulations.json"),
+    WikiSourceDefinition("engines", "engines_manufacturers", "engines_manufacturers", "f1_engine_manufacturers.json"),
     WikiSourceDefinition(
-        "grands_prix_red_flagged_world_championship",
         "races",
+        "grands_prix_red_flagged_world_championship",
+        "grands_prix_red_flagged_world_championship",
         "f1_red_flagged_world_championship_races.json",
     ),
     WikiSourceDefinition(
-        "grands_prix_red_flagged_non_championship",
         "races",
+        "grands_prix_red_flagged_non_championship",
+        "grands_prix_red_flagged_non_championship",
         "f1_red_flagged_non_championship_races.json",
     ),
-    WikiSourceDefinition("points_sprint", "points", "points_scoring_systems_sprint.json"),
-    WikiSourceDefinition("points_shortened", "points", "points_scoring_systems_shortened.json"),
-    WikiSourceDefinition("points_history", "points", "points_scoring_systems_history.json"),
-    WikiSourceDefinition("tyres", "seasons", "f1_tyre_manufacturers_by_season.json"),
-    WikiSourceDefinition("sponsorship_liveries", "teams", "f1_sponsorship_liveries.json"),
+    WikiSourceDefinition("points", "points_sprint", "points_sprint", "points_scoring_systems_sprint.json"),
+    WikiSourceDefinition(
+        "points",
+        "points_shortened",
+        "points_shortened",
+        "points_scoring_systems_shortened.json",
+    ),
+    WikiSourceDefinition("points", "points_history", "points_history", "points_scoring_systems_history.json"),
+    WikiSourceDefinition("seasons", "tyres", "tyres", "f1_tyre_manufacturers_by_season.json"),
+    WikiSourceDefinition("teams", "sponsorship_liveries", "sponsorship_liveries", "f1_sponsorship_liveries.json"),
 )
 
 SOURCE_BY_SEED_NAME: dict[str, WikiSourceDefinition] = {
     source.seed_name: source for source in WIKI_SOURCE_DEFINITIONS
 }
+SOURCE_BY_SOURCE_NAME: dict[str, WikiSourceDefinition] = {
+    source.source_name: source for source in WIKI_SOURCE_DEFINITIONS
+}
 SOURCE_BY_LIST_FILENAME: dict[str, WikiSourceDefinition] = {
-    source.list_filename: source for source in WIKI_SOURCE_DEFINITIONS
+    source.output_file: source for source in WIKI_SOURCE_DEFINITIONS
 }
 
 LEGACY_SEED_NAME_ALIASES: dict[str, str] = {
@@ -75,14 +120,34 @@ INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE = SOURCE_BY_SEED_NAME[
     "constructors_indianapolis_only"
 ].list_filename
 TYRE_MANUFACTURERS_SOURCE = SOURCE_BY_SEED_NAME["tyres"].list_filename
+INDIANAPOLIS_ONLY_ENGINES_SOURCE = SOURCE_BY_SEED_NAME[
+    "engines_indianapolis_only"
+].output_file
+ENGINE_MANUFACTURERS_SOURCE = SOURCE_BY_SEED_NAME["engines_manufacturers"].list_filename
+ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE = SOURCE_BY_SEED_NAME[
+    "engines_indianapolis_only"
+].list_filename
+DRIVERS_SOURCE = SOURCE_BY_SEED_NAME["drivers"].list_filename
+FEMALE_DRIVERS_SOURCE = SOURCE_BY_SEED_NAME["drivers_female"].list_filename
+DRIVER_FATALITIES_SOURCE = SOURCE_BY_SEED_NAME["drivers_fatalities"].list_filename
+RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE = SOURCE_BY_SEED_NAME[
+    "grands_prix_red_flagged_world_championship"
+].list_filename
+RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE = SOURCE_BY_SEED_NAME[
+    "grands_prix_red_flagged_non_championship"
+].list_filename
+SPONSORSHIP_LIVERIES_SOURCE = SOURCE_BY_SEED_NAME["sponsorship_liveries"].list_filename
+PRIVATEER_TEAMS_SOURCE = SOURCE_BY_SEED_NAME["constructors_privateer"].list_filename
 
 
 def _emit_deprecation_warning(kind: str, legacy: str, canonical: str) -> None:
+    message = (
+        f"Legacy {kind} alias '{legacy}' is deprecated and will be removed in a future release; "
+        f"use canonical value '{canonical}'."
+    )
+    logger.warning(message)
     warnings.warn(
-        (
-            f"Legacy {kind} alias '{legacy}' is deprecated and will be removed in a future release; "
-            f"use canonical value '{canonical}'."
-        ),
+        message,
         DeprecationWarning,
         stacklevel=3,
     )
@@ -124,25 +189,55 @@ def get_source_by_list_filename(
         raise KeyError(msg) from exc
 
 
+def get_source_by_source_name(source_name: str) -> WikiSourceDefinition:
+    try:
+        return SOURCE_BY_SOURCE_NAME[source_name]
+    except KeyError as exc:
+        msg = f"Unknown wiki source source_name: {source_name!r}"
+        raise KeyError(msg) from exc
+
+
 def validate_sources_registry_consistency() -> None:
     seen_seed_names: set[str] = set()
+    seen_source_names: set[str] = set()
     seen_filenames: set[str] = set()
 
     for source in WIKI_SOURCE_DEFINITIONS:
+        if source.domain.strip() == "":
+            msg = f"Empty domain in wiki sources registry for seed: {source.seed_name}"
+            raise ValueError(msg)
         if source.seed_name in seen_seed_names:
             msg = f"Duplicate canonical seed_name in wiki sources registry: {source.seed_name}"
             raise ValueError(msg)
         seen_seed_names.add(source.seed_name)
 
-        if source.list_filename in seen_filenames:
+        if source.source_name in seen_source_names:
+            msg = f"Duplicate canonical source_name in wiki sources registry: {source.source_name}"
+            raise ValueError(msg)
+        seen_source_names.add(source.source_name)
+
+        if source.output_file in seen_filenames:
             msg = (
                 "Duplicate canonical list_filename in wiki sources registry: "
-                f"{source.list_filename}"
+                f"{source.output_file}"
             )
             raise ValueError(msg)
-        seen_filenames.add(source.list_filename)
+        seen_filenames.add(source.output_file)
+
+        if source.seed_name != source.source_name and source.source_name in seen_seed_names:
+            msg = (
+                "Source registry naming conflict: source_name duplicates an existing seed_name: "
+                f"{source.source_name!r}"
+            )
+            raise ValueError(msg)
 
     for legacy_seed_name, canonical_seed_name in LEGACY_SEED_NAME_ALIASES.items():
+        if legacy_seed_name in SOURCE_BY_SEED_NAME:
+            msg = (
+                "Legacy seed alias conflicts with canonical seed_name: "
+                f"{legacy_seed_name}"
+            )
+            raise ValueError(msg)
         if canonical_seed_name not in SOURCE_BY_SEED_NAME:
             msg = (
                 "Legacy seed alias points to missing canonical seed: "
@@ -151,6 +246,12 @@ def validate_sources_registry_consistency() -> None:
             raise ValueError(msg)
 
     for legacy_filename, canonical_filename in LEGACY_LIST_FILENAME_ALIASES.items():
+        if legacy_filename in SOURCE_BY_LIST_FILENAME:
+            msg = (
+                "Legacy list filename alias conflicts with canonical list filename: "
+                f"{legacy_filename}"
+            )
+            raise ValueError(msg)
         if canonical_filename not in SOURCE_BY_LIST_FILENAME:
             msg = (
                 "Legacy filename alias points to missing canonical list filename: "
@@ -163,17 +264,29 @@ validate_sources_registry_consistency()
 
 
 __all__ = [
+    "DRIVERS_SOURCE",
+    "DRIVER_FATALITIES_SOURCE",
+    "ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE",
+    "ENGINE_MANUFACTURERS_SOURCE",
+    "FEMALE_DRIVERS_SOURCE",
     "FORMER_CONSTRUCTORS_SOURCE",
     "ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE",
+    "INDIANAPOLIS_ONLY_ENGINES_SOURCE",
     "INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE",
     "LEGACY_LIST_FILENAME_ALIASES",
     "LEGACY_SEED_NAME_ALIASES",
+    "PRIVATEER_TEAMS_SOURCE",
+    "RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE",
+    "RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE",
     "SOURCE_BY_LIST_FILENAME",
+    "SOURCE_BY_SOURCE_NAME",
     "SOURCE_BY_SEED_NAME",
+    "SPONSORSHIP_LIVERIES_SOURCE",
     "TYRE_MANUFACTURERS_SOURCE",
     "WIKI_SOURCE_DEFINITIONS",
     "WikiSourceDefinition",
     "get_source_by_list_filename",
+    "get_source_by_source_name",
     "get_source_by_seed_name",
     "resolve_list_filename",
     "resolve_seed_name",

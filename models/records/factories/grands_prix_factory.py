@@ -2,6 +2,7 @@ from collections.abc import Mapping
 from typing import Any
 from typing import cast
 
+from models.mappers.field_aliases import FIELD_ALIASES
 from models.records.base_factory import BaseRecordFactory
 from models.records.factories.registry import register_factory
 from models.records.grand_prix import GrandsPrixRecord
@@ -15,6 +16,8 @@ class GrandsPrixRecordFactory(BaseRecordFactory):
         payload = self.apply_spec(
             record,
             {
+                "aliases": FIELD_ALIASES["grands_prix"],
+                "record_name": "grands_prix",
                 "field_normalizers": {
                     "race_status": lambda value,
                     _field: self.normalizer.normalize_string(

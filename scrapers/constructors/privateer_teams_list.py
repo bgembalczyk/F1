@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from infrastructure.http_client.policies.http import HttpPolicy
-from models.services.season_service import parse_seasons
+from models.services import parse_seasons
 from scrapers.base.helpers.http import build_http_policy
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper

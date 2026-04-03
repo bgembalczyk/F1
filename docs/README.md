@@ -3,6 +3,10 @@
 To jest **jedyny centralny indeks** dokumentacji projektu.  
 Aby ograniczać duplikację między dokumentami, w innych plikach utrzymujemy tylko krótkie konteksty i linki tutaj.
 
+## Szybki start diagnozy
+
+- [Debug cookbook (Layer 0/1): objaw → gdzie sprawdzić → co poprawić](DEBUG_COOKBOOK.md)
+
 ## Architektura warstw
 
 - [Architektura warstw scraperów](scrapers-layer-architecture.md)
@@ -23,11 +27,20 @@ Aby ograniczać duplikację między dokumentami, w innych plikach utrzymujemy ty
 - [MODULE_BOUNDARIES (reguły zależności i antyduplikacja)](MODULE_BOUNDARIES.md)
 - [TYPING_GUARDRAILS](TYPING_GUARDRAILS.md)
 
+
+## README modułów (quick orientation)
+
+- [layers/zero README](../layers/zero/README.md)
+- [layers/one README](../layers/one/README.md)
+- [scrapers/base README](../scrapers/base/README.md)
+- [infrastructure/http_client README](../infrastructure/http_client/README.md)
+
 ## UML i dokumentacja pomocnicza
 
 - [Index dokumentacji UML](INDEX_DOKUMENTACJI_UML.md)
 - [UML diagrams README (EN)](UML_DIAGRAMS_README.md)
 - [UML diagrams README (PL)](UML_DIAGRAMS_README_PL.md)
+- [Debug cookbook (objaw → gdzie szukać)](DEBUG_COOKBOOK.md)
 
 ## Roadmapa / przyszły kierunek
 

@@ -22,5 +22,9 @@ class RunConfig:
     error_report: bool = False
     verbose: bool = False
     trace: bool = False
+    deterministic_mode: bool = False
+    fixed_run_id: str | None = None
+    fixed_timestamp: str | None = None
+    stable_sort: bool = False
     scraper_kwargs: dict[str, Any] = field(default_factory=dict)
     options: ScraperOptions | None = None
