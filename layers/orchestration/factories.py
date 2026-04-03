@@ -13,7 +13,7 @@ class LayerZeroRunConfigFactory(LayerZeroRunConfigFactoryProtocol, ABC):
     @abstractmethod
     def create_scraper_kwargs(
         self,
-        job: ListJobRegistryEntry | None = None,
+        _job: ListJobRegistryEntry | None = None,
     ) -> dict[str, object]:
         """Build scraper kwargs for layer-zero list job."""
 
@@ -21,7 +21,7 @@ class LayerZeroRunConfigFactory(LayerZeroRunConfigFactoryProtocol, ABC):
 class DefaultLayerZeroRunConfigFactory(LayerZeroRunConfigFactory):
     def create_scraper_kwargs(
         self,
-        job: ListJobRegistryEntry | None = None,
+        _job: ListJobRegistryEntry | None = None,
     ) -> dict[str, object]:
         return {}
 
@@ -32,7 +32,7 @@ class StaticScraperKwargsFactory(LayerZeroRunConfigFactory):
 
     def create_scraper_kwargs(
         self,
-        job: ListJobRegistryEntry | None = None,
+        _job: ListJobRegistryEntry | None = None,
     ) -> dict[str, object]:
         return dict(self._scraper_kwargs)
 

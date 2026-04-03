@@ -105,7 +105,7 @@ def test_points_scraper_uses_legacy_fallback_when_nested_parser_has_no_sprint_ro
     scraper = PointsScraper(export_scope="sprint")
     soup = BeautifulSoup('<div id="bodyContent"></div>', "html.parser")
 
-    monkeypatch.setattr(scraper, "_collect_table_rows", lambda *args, **kwargs: [])
+    monkeypatch.setattr(scraper, "_collect_table_rows", lambda *_args, **_kwargs: [])
     monkeypatch.setattr(
         scraper,
         "_extract_sprint_rows_via_legacy_table_scraper",
