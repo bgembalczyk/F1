@@ -77,6 +77,14 @@ def test_cli_exposes_domain_registry_choices() -> None:
     assert "circuits" in choices
 
 
+def test_wiki_parser_supports_deterministic_flag() -> None:
+    parser = cli._build_wiki_parser()
+
+    args = parser.parse_args(["--mode", "layer0", "--deterministic"])
+
+    assert args.deterministic is True
+
+
 def test_get_deprecated_module_migrations_points_to_new_domain_entrypoints() -> None:
     migrations = dict(cli.get_deprecated_module_migrations())
 

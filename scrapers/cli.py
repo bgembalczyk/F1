@@ -120,6 +120,7 @@ class WikiCliArgs:
     mode: LegacyWikiMode
     verbose: bool
     trace: bool
+    deterministic: bool
 
 
 @dataclass(frozen=True)
@@ -809,6 +810,11 @@ def _build_main_parser() -> argparse.ArgumentParser:
         choices=("layer0", "layer1", "full"),
         default="layer0",
     )
+    wiki_parser.add_argument(
+        "--deterministic",
+        action="store_true",
+        default=False,
+    )
 
     return parser
 
@@ -830,6 +836,12 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
         action="store_true",
         default=False,
     )
+    parser.add_argument(
+        "--deterministic",
+        action="store_true",
+        default=False,
+        help="Enforce stable processing order and deterministic debug artifacts.",
+    )
     return parser
 
 
@@ -848,6 +860,7 @@ def _parse_wiki_cli_args(argv: list[str] | None = None) -> WikiCliArgs:
         mode=namespace.mode,
         verbose=namespace.verbose,
         trace=namespace.trace,
+        deterministic=namespace.deterministic,
     )
 
 
@@ -864,9 +877,9 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         base_debug_dir=DEFAULT_PATH_RESOLVER.debug_root.resolve(),
     )
     if args.mode in {"layer0", "full"}:
-        app.run_layer_zero()
+        app.run_layer_zero(deterministic=args.deterministic)
     if args.mode in {"layer1", "full"}:
-        app.run_layer_one()
+        app.run_layer_one(deterministic=args.deterministic)
 
 
 def _run_command(args: argparse.Namespace) -> None:
@@ -888,7 +901,10 @@ def main(argv: list[str] | None = None) -> None:
         _domain_command(args)
         return
     if args.command == "wiki":
-        run_wiki_cli(["--mode", args.mode])
+        wiki_argv = ["--mode", args.mode]
+        if args.deterministic:
+            wiki_argv.append("--deterministic")
+        run_wiki_cli(wiki_argv)
         return
     parser.error(f"Unknown command: {args.command}")
 
