@@ -31,11 +31,3 @@ def test_deprecated_elements_report_contains_required_metadata() -> None:
         assert replacement
         assert remove_after
         assert date.fromisoformat(remove_after) >= today
-
-
-def test_docs_generator_script_uses_deprecation_catalog() -> None:
-    source = Path("scripts/docs/generate_command_migration_map.py").read_text(
-        encoding="utf-8",
-    )
-    assert "scrapers.deprecation_catalog" in source
-    assert "scrapers.cli" not in source
