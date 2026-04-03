@@ -132,7 +132,7 @@ def test_new_domain_requires_only_config_plus_generic_shim(monkeypatch) -> None:
             scraper_path=f"{scraper_module_name}:FakeListScraper",
             default_output_json="new_domain/fake.json",
             default_output_csv="new_domain/fake.csv",
-            run_config_profile=facade.minimal_profile,
+            run_config_profile=facade.default_profile,
         ),
     )
     facade._resolve_domain_entrypoint_config.cache_clear()
