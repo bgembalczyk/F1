@@ -8,9 +8,8 @@ import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
-from layers.orchestration.types import LegacyWikiMode
+from layers.facade import WikiRunScenario
 from layers.orchestration.types import DomainName
-from layers.orchestration.types import WIKI_MODE_VALUES
 from layers.path_resolver import DEFAULT_PATH_RESOLVER
 from layers.path_resolver import PathResolver
 from typing import TYPE_CHECKING
@@ -46,6 +45,7 @@ CLI_PATH_RESOLVER = PathResolver(
     exports_root=Path("../../data/wiki"),
     debug_root=Path("../../data/debug"),
 )
+WIKI_SCENARIOS: tuple[WikiRunScenario, ...] = ("layer0", "layer1", "full", "merge")
 
 
 @dataclass(frozen=True)
@@ -116,7 +116,7 @@ class DomainCommand:
 
 @dataclass(frozen=True)
 class WikiCliArgs:
-    mode: LegacyWikiMode
+    scenario: WikiRunScenario
     verbose: bool
     trace: bool
 
@@ -766,7 +766,7 @@ def _build_main_parser() -> argparse.ArgumentParser:
     wiki_parser = subparsers.add_parser("wiki")
     wiki_parser.add_argument(
         "--mode",
-        choices=("layer0", "layer1", "full"),
+        choices=WIKI_SCENARIOS,
         default="layer0",
     )
 
@@ -776,8 +776,10 @@ def _build_main_parser() -> argparse.ArgumentParser:
 def _build_wiki_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Canonical wiki pipeline launcher")
     parser.add_argument(
+        "--scenario",
         "--mode",
-        type=_parse_wiki_mode,
+        dest="scenario",
+        type=_parse_wiki_scenario,
         default="layer0",
     )
     parser.add_argument(
@@ -793,11 +795,11 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _parse_wiki_mode(raw: str) -> LegacyWikiMode:
-    if raw in WIKI_MODE_VALUES:
+def _parse_wiki_scenario(raw: str) -> WikiRunScenario:
+    if raw in WIKI_SCENARIOS:
         return raw
-    supported = ", ".join(WIKI_MODE_VALUES)
-    msg = f"Unsupported --mode value: {raw!r}. Supported values: {supported}."
+    supported = ", ".join(WIKI_SCENARIOS)
+    msg = f"Unsupported --scenario value: {raw!r}. Supported values: {supported}."
     raise argparse.ArgumentTypeError(msg)
 
 
@@ -805,7 +807,7 @@ def _parse_wiki_cli_args(argv: list[str] | None = None) -> WikiCliArgs:
     parser = _build_wiki_parser()
     namespace = parser.parse_args(argv)
     return WikiCliArgs(
-        mode=namespace.mode,
+        scenario=namespace.scenario,
         verbose=namespace.verbose,
         trace=namespace.trace,
     )
@@ -816,17 +818,14 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
     configure_logging(verbose=args.verbose, trace=args.trace)
 
     app_module = importlib.import_module("layers.application")
-    create_default_wiki_pipeline_application = (
-        app_module.create_default_wiki_pipeline_application
+    create_default_wiki_pipeline_facade = (
+        app_module.create_default_wiki_pipeline_facade
     )
-    app = create_default_wiki_pipeline_application(
+    facade = create_default_wiki_pipeline_facade(
         base_wiki_dir=DEFAULT_PATH_RESOLVER.exports_root.resolve(),
         base_debug_dir=DEFAULT_PATH_RESOLVER.debug_root.resolve(),
     )
-    if args.mode in {"layer0", "full"}:
-        app.run_layer_zero()
-    if args.mode in {"layer1", "full"}:
-        app.run_layer_one()
+    facade.run_scenario(args.scenario)
 
 
 def _run_command(args: argparse.Namespace) -> None:

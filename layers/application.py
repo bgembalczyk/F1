@@ -3,9 +3,11 @@ from __future__ import annotations
 import shutil
 from datetime import datetime
 from datetime import timezone
+from typing import NamedTuple
 from typing import TYPE_CHECKING
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
+from layers.facade import WikiPipelineFacade
 from layers.one.executor import LayerOneExecutor
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.orchestration.runner_registry import build_layer_one_runner_map
@@ -20,9 +22,16 @@ from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
+from layers.zero.run_profile_paths import build_debug_run_config
 
 if TYPE_CHECKING:
     from pathlib import Path
+
+
+class _WikiPipelineComponents(NamedTuple):
+    layer_zero_executor: LayerZeroExecutor
+    layer_one_executor: LayerOneExecutor
+    layer_zero_merge_service: LayerZeroMergeService
 
 
 def _current_year() -> int:
@@ -36,19 +45,17 @@ def _should_mirror_constructors_job(job: object) -> bool:
     return scraper_name in {"CurrentConstructorsListScraper", "ConstructorsListScraper"}
 
 
-def create_default_wiki_pipeline_application(
-    *,
-    base_wiki_dir: Path,
-    base_debug_dir: Path,
-) -> WikiPipelineApplication:
+def _build_default_wiki_pipeline_components() -> _WikiPipelineComponents:
+    layer_zero_merge_service = LayerZeroMergeService(
+        merge=merge_layer_zero_raw_outputs,
+    )
+
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,
         config_factories=build_layer_zero_run_config_factory_map,
         default_config_factory=DefaultLayerZeroRunConfigFactory(),
-        merger=LayerZeroMergeService(
-            merge=merge_layer_zero_raw_outputs,
-        ),
+        merger=layer_zero_merge_service,
         job_hook=MirrorConstructorsJobHook(
             mirror=ConstructorsMirrorService(
                 mirror_targets=(
@@ -71,9 +78,43 @@ def create_default_wiki_pipeline_application(
         engine_manufacturers_runner=run_engine_manufacturers,
     )
 
+    return _WikiPipelineComponents(
+        layer_zero_executor=layer_zero_executor,
+        layer_one_executor=layer_one_executor,
+        layer_zero_merge_service=layer_zero_merge_service,
+    )
+
+
+def create_default_wiki_pipeline_facade(
+    *,
+    base_wiki_dir: Path,
+    base_debug_dir: Path,
+) -> WikiPipelineFacade:
+    components = _build_default_wiki_pipeline_components()
+    return WikiPipelineFacade(
+        base_wiki_dir=base_wiki_dir,
+        base_debug_dir=base_debug_dir,
+        layer_zero_executor=components.layer_zero_executor,
+        layer_one_executor=components.layer_one_executor,
+        layer_zero_merge_service=components.layer_zero_merge_service,
+        run_config_factory=lambda: build_debug_run_config(
+            base_wiki_dir=base_wiki_dir,
+            base_debug_dir=base_debug_dir,
+        ),
+    )
+
+
+def create_default_wiki_pipeline_application(
+    *,
+    base_wiki_dir: Path,
+    base_debug_dir: Path,
+) -> WikiPipelineApplication:
+    components = _build_default_wiki_pipeline_components()
+
     return WikiPipelineApplication(
         base_wiki_dir=base_wiki_dir,
         base_debug_dir=base_debug_dir,
-        layer_zero_executor=layer_zero_executor,
-        layer_one_executor=layer_one_executor,
+        layer_zero_executor=components.layer_zero_executor,
+        layer_one_executor=components.layer_one_executor,
+        layer_zero_merge_service=components.layer_zero_merge_service,
     )

@@ -8,13 +8,25 @@ Cel: w 15 minut zawęzić źródło problemu do konkretnej warstwy i modułu (`C
 
 ## Plan 15-minutowy
 
+## Najczęstsze ścieżki uruchomienia (jedyny entrypoint CLI)
+
+Wszystkie scenariusze uruchamiaj przez **jeden entrypoint**: `python -m scrapers.cli wiki --scenario <...>`
+
+1. `full` — pełny przebieg `Layer 0 + Layer 1`.
+2. `layer0` — tylko pobranie list + merge do `layers/0_layer/<domain>/<domain>.json`.
+3. `layer1` — tylko complete-extractory oparte o seed registry.
+4. `merge` — samo ponowne scalenie istniejących plików `raw` (bez odpalania scraperów).
+
+Za powyższe scenariusze odpowiada `WikiPipelineFacade`, który składa istniejące executory/serwisy (`LayerZeroExecutor`, `LayerOneExecutor`, `LayerZeroMergeService`) bez dublowania logiki.
+
 ## 0:00-2:00 — Potwierdź punkt wejścia i tryb uruchomienia
 
-1. Zweryfikuj komendę uruchomienia (`python -m scrapers.cli ...`) i argumenty (`--mode`, profil, domena).
+1. Zweryfikuj komendę uruchomienia (`python -m scrapers.cli wiki --scenario ...`) i argumenty (`--scenario`, profil, domena).
 2. Sprawdź, czy log startowy pokazuje oczekiwany moduł oraz seedy.
 
 **Gdzie wejść w kod:**
 - `scrapers/cli.py`
+- `layers/facade.py`
 - `layers/application.py`
 - `layers/pipeline.py`
 
