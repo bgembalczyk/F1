@@ -10,8 +10,9 @@ from infrastructure.gemini.model_state import ModelState
 
 
 def __getattr__(name: str):
+    """Lazy-load heavy symbols to avoid import cycles at package import time."""
+
     if name == "GeminiClient":
-        # Lazy import avoids circular dependency during config bootstrap.
         from infrastructure.gemini.client import GeminiClient
 
         return GeminiClient

@@ -36,6 +36,23 @@ class ScraperFactory:
         ctor = ConstructorIntrospection(scraper_cls)
         for adapter in self._adapters:
             if adapter.supports(ctor):
-                return adapter.create(context=context, ctor=ctor)
+                return self._create_with_adapter(adapter, context=context, ctor=ctor)
         msg = f"No adapter available for {scraper_cls.__name__}"
         raise TypeError(msg)
+
+    @staticmethod
+    def _create_with_adapter(
+        adapter: ScraperCreationAdapter,
+        *,
+        context: ScraperCreationContext,
+        ctor: ConstructorIntrospection,
+    ) -> ABCScraper:
+        """Invoke adapter.create with compatibility for older adapter signatures."""
+
+        try:
+            return adapter.create(context=context, ctor=ctor)
+        except TypeError:
+            try:
+                return adapter.create(context=context)
+            except TypeError:
+                return adapter.create(context, ctor)
