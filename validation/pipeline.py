@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from collections.abc import Callable
 from collections.abc import Mapping
 from collections.abc import Sequence
@@ -9,7 +10,9 @@ from typing import Literal
 from typing import Protocol
 from typing import runtime_checkable
 
-from validation.issue import ValidationIssue
+if TYPE_CHECKING:
+    from validation.issue import ValidationIssue
+
 
 RecordLike = Mapping[str, Any]
 ValidationStatus = Literal["valid", "invalid"]

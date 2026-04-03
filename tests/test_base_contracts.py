@@ -8,7 +8,6 @@ from typing import Protocol
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.base.sections.service import BaseSectionExtractionService
 
 _single_wiki_base = pytest.importorskip("scrapers.base.single_wiki_article.base")
@@ -19,6 +18,7 @@ SectionsPayloadDTO = _single_wiki_dto.SectionsPayloadDTO
 TablesPayloadDTO = _single_wiki_dto.TablesPayloadDTO
 
 if TYPE_CHECKING:
+    from scrapers.base.sections.adapter import SectionAdapterEntry
     from scrapers.base.sections.interface import SectionParseResult
 
 

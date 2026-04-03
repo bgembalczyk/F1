@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 from typing import Protocol
 
-from validation.validator_base import ExportRecord
+if TYPE_CHECKING:
+    from validation.validator_base import ExportRecord
+
 
 
 class ExporterProtocol(Protocol):

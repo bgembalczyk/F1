@@ -2,19 +2,23 @@
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from collections.abc import Mapping
 from collections.abc import Sequence
 from typing import Any
 
-from validation.issue import ValidationIssue
 from validation.pipeline import FunctionalValidator
 from validation.pipeline import ValidationPipeline
 from validation.pipeline import ValidationResult
 from validation.pipeline import ValidationStage
-from validation.record_factory_validator import RecordFactoryValidatorProtocol
-from validation.rules import ValidationRule
 from validation.validator_base import ExportRecord
 from validation.validator_base import RecordValidator
+
+if TYPE_CHECKING:
+    from validation.issue import ValidationIssue
+    from validation.record_factory_validator import RecordFactoryValidatorProtocol
+    from validation.rules import ValidationRule
 
 
 class CompositeRecordValidator(RecordValidator):

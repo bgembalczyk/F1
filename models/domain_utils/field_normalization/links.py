@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from collections.abc import Callable
 from collections.abc import Iterable
 from collections.abc import Mapping
 from typing import Any
 
-from models.records.link import LinkRecord
+if TYPE_CHECKING:
+    from models.records.link import LinkRecord
+
 
 
 def normalize_link_payload(link: Mapping[str, Any] | None) -> dict[str, Any]:

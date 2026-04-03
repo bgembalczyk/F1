@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 import json
 from collections.abc import Callable
 from pathlib import Path
 
-from layers.path_resolver import PathResolver
+if TYPE_CHECKING:
+    from layers.path_resolver import PathResolver
+
 
 
 def iter_mergeable_domain_dirs(

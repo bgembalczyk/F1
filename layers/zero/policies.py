@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from collections.abc import Callable
 from pathlib import Path
 from typing import Protocol
 
-from layers.constructors_mirror_service import ConstructorsMirrorService
-from layers.seed.registry import ListJobRegistryEntry
+if TYPE_CHECKING:
+    from layers.constructors_mirror_service import ConstructorsMirrorService
+    from layers.seed.registry import ListJobRegistryEntry
+
 
 
 class LayerZeroJobHook(Protocol):
