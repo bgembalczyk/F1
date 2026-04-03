@@ -1,17 +1,17 @@
 from __future__ import annotations
 
 import typing
-from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
 
 from scrapers.base.normalization import NormalizationRule
 from scrapers.base.normalization import RecordNormalizer
 
 if typing.TYPE_CHECKING:
+    from collections.abc import Sequence
+    from pathlib import Path
     from scrapers.base.export.service import ExportService
     from validation.validator_base import ExportRecord
     from scrapers.base.export.contracts import ExporterProtocol

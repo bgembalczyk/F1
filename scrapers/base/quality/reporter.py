@@ -5,13 +5,13 @@ from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 
 SCHEMA_VERSION = "1.0"
 
 if TYPE_CHECKING:
+    from pathlib import Path
     from collections.abc import Mapping
 
 

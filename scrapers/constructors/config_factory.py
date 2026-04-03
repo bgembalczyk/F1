@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
-from collections.abc import Sequence
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import CONSTRUCTORS_LIST
@@ -9,6 +8,7 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 
 if TYPE_CHECKING:
+    from collections.abc import Sequence
     from scrapers.base.table.dsl.column import ColumnSpec
 
 

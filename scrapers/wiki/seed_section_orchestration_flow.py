@@ -2,13 +2,11 @@ from __future__ import annotations
 
 import csv
 import json
-from collections.abc import Callable
 from dataclasses import asdict
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
 from time import perf_counter
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from scrapers.base.orchestration.components.section_source_adapter import (
     SectionSourceAdapter,
@@ -22,6 +20,10 @@ from scrapers.base.orchestration.lifecycle import StageCheckpointDumper
 from scrapers.base.orchestration.lifecycle import StageEnvelope
 from scrapers.base.orchestration.models import AuditEntry
 from scrapers.base.orchestration.models import StepDeclaration
+
+if TYPE_CHECKING:
+    from pathlib import Path
+    from collections.abc import Callable
 
 SUPPORTED_DOMAINS: tuple[str, ...] = (
     "drivers",

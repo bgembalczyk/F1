@@ -2,13 +2,15 @@ from __future__ import annotations
 
 import json
 import logging
-from collections.abc import Callable
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from scrapers.base.constants.runtime import LOGGER_NAME
+
+if TYPE_CHECKING:
+    from pathlib import Path
+    from collections.abc import Callable
 
 _DEFAULT_EXECUTION_CONTEXT: dict[str, str | None] = {
     "run_id": None,

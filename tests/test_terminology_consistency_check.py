@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-from pathlib import Path
 
 from scripts.ci.check_terminology_consistency import TerminologyRule
 from scripts.ci.check_terminology_consistency import scan_files
 from scripts.ci.check_terminology_consistency import scan_text_forbidden_terms
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def test_scan_text_forbidden_terms_detects_forbidden_synonym() -> None:

@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
-from collections.abc import Callable
 
 from scrapers.base.export.export_helpers import fieldnames_from_first_row
 from scrapers.base.export.export_helpers import fieldnames_from_union
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
     from validation.validator_base import ExportRecord
 
 

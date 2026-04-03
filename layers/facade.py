@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
-from collections.abc import Callable
 from dataclasses import dataclass
-from pathlib import Path
 from typing import Literal
 
 if TYPE_CHECKING:
+    from pathlib import Path
+    from collections.abc import Callable
     from layers.orchestration.protocols import LayerExecutorProtocol
     from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
     from scrapers.base.run_config import RunConfig

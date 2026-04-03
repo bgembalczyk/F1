@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
-from collections.abc import Sequence
-from pathlib import Path
 from typing import Any
 from typing import Protocol
 
 if TYPE_CHECKING:
+    from pathlib import Path
+    from collections.abc import Sequence
     from validation.validator_base import ExportRecord
 
 

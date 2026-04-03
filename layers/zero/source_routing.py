@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 import json
-from collections.abc import Callable
-from pathlib import Path
 
 if TYPE_CHECKING:
+    from pathlib import Path
+    from collections.abc import Callable
     from layers.path_resolver import PathResolver
 
 

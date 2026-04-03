@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from pathlib import Path
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from scripts.ci.git_diff import GitCommandResult
 from scripts.ci.git_diff import build_added_lines_map
@@ -17,6 +16,9 @@ from scripts.ci.reporting import exit_code_for_status
 from scripts.ci.reporting import line_range
 from scripts.ci.reporting import resolve_status
 from scripts.ci.reporting import split_csv
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def test_parse_added_lines_from_unified_diff_parses_hunks() -> None:

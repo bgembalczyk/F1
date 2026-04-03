@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
-from typing import ClassVar
+from typing import ClassVar, TYPE_CHECKING
 
 import pytest
 
@@ -13,6 +12,9 @@ from models.value_objects.link import Link
 from models.value_objects.normalized_date import NormalizedDate
 from models.value_objects.season_ref import SeasonRef
 from models.value_objects.time_types import DateValue
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 
 @pytest.mark.parametrize(
