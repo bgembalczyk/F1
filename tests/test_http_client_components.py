@@ -96,6 +96,7 @@ def test_request_executor_retries_after_retryable_status() -> None:
     calls = {"count": 0}
 
     def request_func(url: str, *, headers: dict[str, str], timeout: int):
+        _ = (url, headers, timeout)
         calls["count"] += 1
         if calls["count"] == 1:
             return _DummyResponse(status_code=500)
@@ -120,6 +121,7 @@ def test_request_executor_raises_after_exhausted_retryable_exceptions() -> None:
     executor = RequestExecutor(retry_policy=policy, rate_limiter=rate_limiter)
 
     def request_func(url: str, *, headers: dict[str, str], timeout: int):
+        _ = (url, headers, timeout)
         raise DummyRequestError("network")
 
     try:

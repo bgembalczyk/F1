@@ -43,6 +43,7 @@ def validate_links(
     *,
     field_name: str,
 ) -> list[dict[str, Any]]:
+    _ = field_name
     return [item.to_dict() for item in normalize_link_list(items)]
 
 
