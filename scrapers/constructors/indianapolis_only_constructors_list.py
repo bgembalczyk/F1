@@ -37,7 +37,7 @@ class IndianapolisOnlySubSectionParser(SubSectionParser):
             return self._list_parser.parse(list_root)
         return self.parse_group(list(element.children), *args, **kwargs)
 
-    def parse_group(self, elements: list, *args: Any, **kwargs: Any) -> dict[str, Any]:
+    def parse_group(self, elements: list, *_args: Any, **_kwargs: Any) -> dict[str, Any]:
         for candidate in elements:
             if isinstance(candidate, Tag) and candidate.name in {"ul", "ol"}:
                 return self._list_parser.parse(candidate)
