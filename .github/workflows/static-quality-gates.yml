@@ -189,6 +189,13 @@ jobs:
         run: |
           python scripts/ci/check_duplicate_default_configs.py
 
+      - name: Deprecated elements lifecycle report gate
+        shell: bash
+        run: |
+          python scripts/ci/deprecated_elements_report.py \
+            --report-json .ci-report/deprecated-elements.json \
+            --output-md .ci-report/deprecated-elements.md
+
       - name: No new print(...) outside allowlist gate
         if: steps.changed-py.outputs.has_changes == 'true'
         shell: bash

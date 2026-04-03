@@ -4,6 +4,7 @@ import argparse
 import dataclasses
 import importlib
 import inspect
+from datetime import date
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
@@ -66,6 +67,8 @@ class LegacyModuleDefinition:
     base_config_overrides: dict[str, object] | None = None
     deprecated: bool = False
     replacement_module_path: str | None = None
+    deprecated_since: str | None = None
+    remove_after: str | None = None
 
 
 @dataclass(frozen=True)
@@ -116,6 +119,8 @@ class DeprecationPolicy:
     transitional_release_window: tuple[str, ...]
     removal_target: str
     canonical_replacement_template: str
+    deprecated_since: str
+    remove_after: str
 
     @property
     def transition_release_count(self) -> int:
@@ -159,7 +164,10 @@ DEPRECATION_POLICY = DeprecationPolicy(
     transitional_release_window=("R0", "R1"),
     removal_target="R2",
     canonical_replacement_template="python -m scrapers.cli run {replacement_module}",
+    deprecated_since="2026-04-02",
+    remove_after="2026-10-01",
 )
+_WARNED_DEPRECATED_MODULES: set[str] = set()
 
 
 def _build_base_config(factory: BaseConfigFactory) -> RunConfig:
@@ -611,6 +619,8 @@ def _deprecated_runtime_message(
     module_path: str,
     *,
     replacement_module_path: str | None,
+    deprecated_since: str,
+    remove_after: str,
 ) -> str:
     replacement_module = replacement_module_path or module_path
     domain_hint = ""
@@ -623,11 +633,46 @@ def _deprecated_runtime_message(
         domain_name = parts[1]
         if domain_name in DOMAIN_COMMANDS:
             domain_hint = f" or `python -m scrapers.cli domain {domain_name}`"
-    return DEPRECATION_POLICY.render_runtime_message(
+    base_message = DEPRECATION_POLICY.render_runtime_message(
         module_path=module_path,
         replacement_module=replacement_module,
         domain_hint=domain_hint,
     )
+    return (
+        f"{base_message} "
+        f"Deprecated since: {deprecated_since}; planned removal date: {remove_after}."
+    )
+
+
+def _resolve_deprecation_metadata(
+    definition: LegacyModuleDefinition,
+) -> tuple[str, str, str]:
+    replacement_module = definition.replacement_module_path or definition.module_path
+    return (
+        definition.deprecated_since or DEPRECATION_POLICY.deprecated_since,
+        replacement_module,
+        definition.remove_after or DEPRECATION_POLICY.remove_after,
+    )
+
+
+def _validate_deprecation_contracts() -> None:
+    for definition in LEGACY_MODULE_REGISTRY.definitions:
+        if not definition.deprecated:
+            continue
+        deprecated_since, replacement_module, remove_after = _resolve_deprecation_metadata(definition)
+        _ = replacement_module
+        since_date = date.fromisoformat(deprecated_since)
+        remove_date = date.fromisoformat(remove_after)
+        if remove_date <= since_date:
+            msg = (
+                "Invalid deprecation dates for "
+                f"{definition.module_path}: remove_after ({remove_after}) must be "
+                f"later than deprecated_since ({deprecated_since})."
+            )
+            raise ValueError(msg)
+
+
+_validate_deprecation_contracts()
 
 
 def render_deprecation_schedule_markdown() -> str:
@@ -694,14 +739,19 @@ def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
     run_config = build_run_config(base_config=spec.base_config, args=args)
     configure_logging(verbose=run_config.verbose, trace=run_config.trace)
     if definition.deprecated:
-        warnings.warn(
-            _deprecated_runtime_message(
-                module_path,
-                replacement_module_path=definition.replacement_module_path,
-            ),
-            DeprecationWarning,
-            stacklevel=2,
-        )
+        if module_path not in _WARNED_DEPRECATED_MODULES:
+            deprecated_since, _, remove_after = _resolve_deprecation_metadata(definition)
+            warnings.warn(
+                _deprecated_runtime_message(
+                    module_path,
+                    replacement_module_path=definition.replacement_module_path,
+                    deprecated_since=deprecated_since,
+                    remove_after=remove_after,
+                ),
+                DeprecationWarning,
+                stacklevel=2,
+            )
+            _WARNED_DEPRECATED_MODULES.add(module_path)
     _invoke_target(spec.target, run_config)
 
 
@@ -733,6 +783,23 @@ def get_deprecated_module_migrations() -> tuple[tuple[str, str], ...]:
         replacement = definition.replacement_module_path or definition.module_path
         migrations.append((definition.module_path, replacement))
     return tuple(migrations)
+
+
+def get_deprecated_elements_report() -> tuple[tuple[str, str, str, str], ...]:
+    report: list[tuple[str, str, str, str]] = []
+    for definition in LEGACY_MODULE_REGISTRY.definitions:
+        if not definition.deprecated:
+            continue
+        deprecated_since, replacement_module, remove_after = _resolve_deprecation_metadata(definition)
+        report.append(
+            (
+                definition.module_path,
+                deprecated_since,
+                replacement_module,
+                remove_after,
+            )
+        )
+    return tuple(report)
 
 
 def _build_main_parser() -> argparse.ArgumentParser:
