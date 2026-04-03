@@ -37,6 +37,14 @@ class TableSectionParser:
         self._include_urls = include_urls
         self._normalize_empty_values = normalize_empty_values
 
+    @property
+    def section_id(self) -> SectionId:
+        return self._section_id
+
+    @property
+    def section_label(self) -> EntityName:
+        return self._section_label
+
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         parser = HtmlTableParser(
             section_id=None,

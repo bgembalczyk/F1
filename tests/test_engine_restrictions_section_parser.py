@@ -1,3 +1,4 @@
+# ruff: noqa: SLF001
 from scrapers.engines.engine_restrictions import CurrentRulesSectionParser
 from scrapers.engines.engine_restrictions import EngineRestrictionsTableParser
 from scrapers.engines.engine_restrictions import EngineSubSectionParser

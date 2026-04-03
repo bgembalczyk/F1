@@ -78,7 +78,7 @@ class QualityReporter:
     ) -> dict[str, int]:
         metadata = source_metadata or self.source_metadata
         configured_primary_key = metadata.get("primary_key")
-        key_fields = self._normalize_primary_key(configured_primary_key)
+        key_fields = self.normalize_primary_key(configured_primary_key)
 
         if not key_fields and records and "url" in records[0]:
             key_fields = ["url"]
@@ -86,7 +86,7 @@ class QualityReporter:
         if key_fields:
             keys: list[str] = []
             for record in records:
-                joined = self._join_key_fields(record, key_fields)
+                joined = self.join_key_fields(record, key_fields)
                 if joined is not None:
                     keys.append(joined)
         else:
@@ -98,7 +98,7 @@ class QualityReporter:
         return {key: count for key, count in sorted(Counter(keys).items()) if count > 1}
 
     @staticmethod
-    def _normalize_primary_key(value: Any) -> list[str]:
+    def normalize_primary_key(value: Any) -> list[str]:
         if isinstance(value, str) and value:
             return [value]
         if isinstance(value, list | tuple):
@@ -106,7 +106,7 @@ class QualityReporter:
         return []
 
     @staticmethod
-    def _join_key_fields(
+    def join_key_fields(
         record: Mapping[str, Any],
         key_fields: list[str],
     ) -> str | None:
@@ -228,7 +228,7 @@ class CompactStepDiffWriter:
         records: list[dict[str, Any]],
         source_metadata: Mapping[str, Any],
     ) -> dict[str, dict[str, Any]]:
-        key_fields = QualityReporter._normalize_primary_key(
+        key_fields = QualityReporter.normalize_primary_key(
             source_metadata.get("primary_key"),
         )
         if not key_fields and records and "url" in records[0]:
@@ -252,7 +252,7 @@ class CompactStepDiffWriter:
         key_fields: list[str],
     ) -> str:
         if key_fields:
-            joined = QualityReporter._join_key_fields(record, key_fields)
+            joined = QualityReporter.join_key_fields(record, key_fields)
             if joined:
                 return joined
         if isinstance(record.get("id"), str) and record["id"]:

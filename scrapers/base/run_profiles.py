@@ -98,20 +98,20 @@ class ProfileResolver:
 
     legacy_cli_aliases: dict[LegacyCliProfileName, RunProfileName]
 
-    def _normalize_profile(self, profile: RunProfileSelector) -> RunProfileName:
+    def normalize_profile(self, profile: RunProfileSelector) -> RunProfileName:
         if isinstance(profile, RunProfileName):
             return profile
         return RunProfileName(profile)
 
-    def _coerce_profile(self, profile: RunProfileSelector) -> RunProfileName:
-        return self._normalize_profile(profile)
+    def coerce_profile(self, profile: RunProfileSelector) -> RunProfileName:
+        return self.normalize_profile(profile)
 
     def resolve_cli_profile(self, profile: CliProfileSelector) -> RunProfileName:
         if isinstance(profile, RunProfileName):
             return profile
         if profile in self.legacy_cli_aliases:
             return self.legacy_cli_aliases[profile]
-        return self._normalize_profile(profile)
+        return self.normalize_profile(profile)
 
     def validate_supported_profile(self, profile: RunProfileName) -> RunProfileSpec:
         spec = RUN_PROFILE_SPECS.get(profile)
@@ -132,7 +132,7 @@ def resolve_cli_profile(profile: CliProfileSelector) -> RunProfileName:
 
 def get_run_profile_spec(profile: RunProfileSelector) -> RunProfileSpec:
     """Return the explicit definition for a named profile."""
-    normalized_profile = PROFILE_RESOLVER._coerce_profile(profile)
+    normalized_profile = PROFILE_RESOLVER.coerce_profile(profile)
     return PROFILE_RESOLVER.validate_supported_profile(normalized_profile)
 
 
@@ -148,7 +148,7 @@ def build_run_profile(
     paths: RunPathConfig = DEFAULT_RUN_PATHS,
 ) -> RunConfig:
     """Build ``RunConfig`` for a named profile."""
-    normalized_profile = PROFILE_RESOLVER._coerce_profile(profile)
+    normalized_profile = PROFILE_RESOLVER.coerce_profile(profile)
     return PROFILE_RESOLVER.validate_supported_profile(normalized_profile).build_config(
         paths=paths,
     )

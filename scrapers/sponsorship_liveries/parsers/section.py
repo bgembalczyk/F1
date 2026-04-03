@@ -241,6 +241,10 @@ class SponsorshipSectionParser:
         return heading.get_text(" ", strip=True)
 
     @staticmethod
+    def team_name_from_heading(heading: Tag, headline: Tag) -> str:
+        return SponsorshipSectionParser._team_name_from_heading(heading, headline)
+
+    @staticmethod
     def _is_section_start(
         element: Tag,
         *,
@@ -261,6 +265,10 @@ class SponsorshipSectionParser:
             element.name == "table" and "wikitable" in (element.get("class") or [])
             for element in cls._iter_section_elements(heading, headline)
         )
+
+    @classmethod
+    def section_has_table(cls, heading: Tag, headline: Tag) -> bool:
+        return cls._section_has_table(heading, headline)
 
     @classmethod
     def _iter_section_elements(cls, heading: Tag, headline: Tag) -> list[Tag]:
@@ -340,6 +348,10 @@ class SponsorshipSectionParser:
         seen_sections.add(section_id)
         return section_id
 
+    @staticmethod
+    def section_id_if_new(headline: Tag, seen_sections: set[str]) -> str | None:
+        return SponsorshipSectionParser._section_id_if_new(headline, seen_sections)
+
     def _parse_section_heading_record(
         self,
         soup: BeautifulSoup,
@@ -370,6 +382,10 @@ class SponsorshipSectionParser:
             if isinstance(heading, Tag):
                 headings.append((heading, headline))
         return headings
+
+    @staticmethod
+    def collect_section_headings(soup: BeautifulSoup) -> list[tuple[Tag, Tag]]:
+        return SponsorshipSectionParser._collect_section_headings(soup)
 
     def _parse_single_section_record(
         self,
