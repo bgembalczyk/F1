@@ -4,6 +4,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerOneRunnerProtocol
+from layers.orchestration.types import SeedName
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
@@ -27,8 +28,12 @@ class LayerOneExecutor:
             None,
         ]
         | None = None,
-        runners: Callable[[], dict[str, LayerOneRunnerProtocol]] | None = None,
-        runner_map_builder: Callable[[], dict[str, LayerOneRunnerProtocol]] | None = None,
+        runners: Callable[[], dict[SeedName, LayerOneRunnerProtocol]] | None = None,
+        runner_map_builder: Callable[
+            [],
+            dict[SeedName, LayerOneRunnerProtocol],
+        ]
+        | None = None,
         engine_manufacturers_runner: Callable[[Path, bool], None] | None = None,
     ) -> None:
         self._seed_registry = seed_registry

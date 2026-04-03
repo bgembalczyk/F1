@@ -8,6 +8,7 @@ from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
 from layers.orchestration.factories import StaticScraperKwargsFactory
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.types import SeedName
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
@@ -24,7 +25,7 @@ if TYPE_CHECKING:
 _LOGGER = get_logger("RunnerRegistry")
 
 
-def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
+def _build_explicit_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
     return {
         "grands_prix": GrandPrixRunner(),
         "circuits": FunctionExportRunner(
@@ -47,25 +48,22 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
 
 
 def _merge_runner_maps(
-    discovered: dict[str, LayerOneRunnerProtocol],
-    explicit: dict[str, LayerOneRunnerProtocol],
-) -> dict[str, LayerOneRunnerProtocol]:
-    merged = dict(discovered)
+    discovered: dict[SeedName, LayerOneRunnerProtocol],
+    explicit: dict[SeedName, LayerOneRunnerProtocol],
+) -> dict[SeedName, LayerOneRunnerProtocol]:
+    merged: dict[SeedName, LayerOneRunnerProtocol] = dict(discovered)
     for seed_name, runner in explicit.items():
         merged.setdefault(seed_name, runner)
     return merged
 
 
-def build_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
+def build_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
     explicit_runner_map = _build_explicit_layer_one_runner_map()
     discovered_runner_map = build_layer_one_runner_map_discovered()
     return _merge_runner_maps(discovered_runner_map, explicit_runner_map)
 
 
-def build_layer_zero_run_config_factory_map() -> dict[
-    str,
-    LayerZeroRunConfigFactoryProtocol,
-]:
+def build_layer_zero_run_config_factory_map() -> dict[SeedName, LayerZeroRunConfigFactoryProtocol]:
     return {
         "constructors_current": StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "current"},

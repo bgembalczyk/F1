@@ -8,6 +8,9 @@ import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
+from layers.orchestration.types import LegacyWikiMode
+from layers.orchestration.types import DomainName
+from layers.orchestration.types import WIKI_MODE_VALUES
 from layers.path_resolver import DEFAULT_PATH_RESOLVER
 from layers.path_resolver import PathResolver
 from typing import TYPE_CHECKING
@@ -106,9 +109,16 @@ class LegacyCliRegistry:
 
 @dataclass(frozen=True)
 class DomainCommand:
-    name: str
+    name: DomainName
     module_path: str
     scraper_path: str
+
+
+@dataclass(frozen=True)
+class WikiCliArgs:
+    mode: LegacyWikiMode
+    verbose: bool
+    trace: bool
 
 
 @dataclass(frozen=True)
@@ -589,7 +599,7 @@ def _validate_startup_name_consistency() -> None:
 _validate_startup_name_consistency()
 
 _DOMAIN_SCRAPER_METADATA = get_domain_entrypoint_scraper_metadata()
-DOMAIN_COMMANDS: dict[str, DomainCommand] = {}
+DOMAIN_COMMANDS: dict[DomainName, DomainCommand] = {}
 for module_path in MODULE_DEFINITIONS:
     parts = module_path.split(".")
     if len(parts) < SCRAPER_MODULE_PATH_PARTS or parts[0] != "scrapers":
@@ -646,13 +656,21 @@ def _legacy_profile_choices() -> tuple[LegacyCliProfileName, ...]:
     return LEGACY_CLI_PROFILE_NAMES
 
 
+def _parse_legacy_cli_profile(raw: str) -> LegacyCliProfileName:
+    if raw in LEGACY_CLI_PROFILE_NAMES:
+        return raw
+    supported = ", ".join(LEGACY_CLI_PROFILE_NAMES)
+    msg = f"Unsupported --profile value: {raw!r}. Supported values: {supported}."
+    raise argparse.ArgumentTypeError(msg)
+
+
 def _build_profile_parser(
     default_profile: LegacyCliProfileName,
 ) -> argparse.ArgumentParser:
     profile_parser = argparse.ArgumentParser(add_help=False)
     profile_parser.add_argument(
         "--profile",
-        choices=_legacy_profile_choices(),
+        type=_parse_legacy_cli_profile,
         default=default_profile,
     )
     return profile_parser
@@ -759,7 +777,7 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Canonical wiki pipeline launcher")
     parser.add_argument(
         "--mode",
-        choices=("layer0", "layer1", "full"),
+        type=_parse_wiki_mode,
         default="layer0",
     )
     parser.add_argument(
@@ -775,9 +793,26 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def run_wiki_cli(argv: list[str] | None = None) -> None:
+def _parse_wiki_mode(raw: str) -> LegacyWikiMode:
+    if raw in WIKI_MODE_VALUES:
+        return raw
+    supported = ", ".join(WIKI_MODE_VALUES)
+    msg = f"Unsupported --mode value: {raw!r}. Supported values: {supported}."
+    raise argparse.ArgumentTypeError(msg)
+
+
+def _parse_wiki_cli_args(argv: list[str] | None = None) -> WikiCliArgs:
     parser = _build_wiki_parser()
-    args = parser.parse_args(argv)
+    namespace = parser.parse_args(argv)
+    return WikiCliArgs(
+        mode=namespace.mode,
+        verbose=namespace.verbose,
+        trace=namespace.trace,
+    )
+
+
+def run_wiki_cli(argv: list[str] | None = None) -> None:
+    args = _parse_wiki_cli_args(argv)
     configure_logging(verbose=args.verbose, trace=args.trace)
 
     app_module = importlib.import_module("layers.application")
