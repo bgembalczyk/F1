@@ -313,12 +313,14 @@ class SeedSectionOrchestrationFlow:
             "| duration_ms |",
             "|---|---|---|---:|---:|---:|",
         ]
-        for entry in entries:
-            lines.append(
+        lines.extend(
+            (
                 f"| {entry.step_id} | {entry.layer} | {entry.domain} "
                 f"| {entry.input_records} | {entry.output_records} "
-                f"| {entry.duration_ms:.2f} |",
+                f"| {entry.duration_ms:.2f} |"
             )
+            for entry in entries
+        )
         report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
         return report_path
 

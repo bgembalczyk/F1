@@ -146,12 +146,12 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
                     "elements",
                     [],
                 )
-                for parsed_element in parsed:
-                    if (
-                        isinstance(parsed_element, dict)
-                        and parsed_element.get("kind") == "table"
-                    ):
-                        table_elements.append(parsed_element)
+                table_elements.extend(
+                    parsed_element
+                    for parsed_element in parsed
+                    if isinstance(parsed_element, dict)
+                    and parsed_element.get("kind") == "table"
+                )
         return table_elements
 
     def _merge_unique_table_elements(
