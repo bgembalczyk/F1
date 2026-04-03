@@ -13,7 +13,7 @@ _DEFAULT_EXECUTION_CONTEXT: dict[str, str | None] = {
     "run_id": None,
     "seed_name": None,
     "domain": None,
-    "source_name": None,
+    "source": None,
 }
 
 
@@ -27,7 +27,7 @@ class JsonLinesFormatter(logging.Formatter):
             "run_id": getattr(record, "run_id", None),
             "seed_name": getattr(record, "seed_name", None),
             "domain": getattr(record, "domain", None),
-            "source_name": getattr(record, "source_name", None),
+            "source": getattr(record, "source", None),
         }
         return json.dumps(payload, ensure_ascii=False)
 
@@ -54,13 +54,13 @@ def build_execution_context(
     run_id: str | None = None,
     seed_name: str | None = None,
     domain: str | None = None,
-    source_name: str | None = None,
+    source: str | None = None,
 ) -> dict[str, str | None]:
     return {
         "run_id": run_id,
         "seed_name": seed_name,
         "domain": domain,
-        "source_name": source_name,
+        "source": source,
     }
 
 
