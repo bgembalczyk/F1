@@ -5,12 +5,10 @@ from __future__ import annotations
 import argparse
 import dataclasses
 import inspect
-import warnings
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from scrapers.base.logging import configure_logging
-from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 from scrapers.base.run_profiles import get_cli_profile_defaults
 from scrapers.base.run_profiles import resolve_cli_profile
@@ -23,14 +21,9 @@ if TYPE_CHECKING:
     from scrapers.base.run_config import RunConfig
 
 
-def deprecated_module_base_config() -> RunConfig:
-    """Build canonical ``RunConfig`` for deprecated compatibility modules."""
-    return build_run_profile(RunProfileName.DEFAULT)
-
-
 def complete_extractor_base_config() -> RunConfig:
     """Build canonical ``RunConfig`` for complete-extractor CLI modules."""
-    return build_run_profile(RunProfileName.DEFAULT)
+    return build_run_profile("default")
 
 
 @dataclass(frozen=True)
@@ -127,8 +120,6 @@ def run_cli_entrypoint(
     argv: Sequence[str] | None = None,
     quality_report_default: bool = False,
     error_report_default: bool = False,
-    deprecation_message: str | None = None,
-    deprecation_stacklevel: int = 2,
 ) -> None:
     """Parse standardized args, create ``RunConfig``, and invoke target."""
     parser = build_standard_parser(
@@ -138,13 +129,6 @@ def run_cli_entrypoint(
     args = parser.parse_args(argv)
     run_config = build_run_config(base_config=base_config, args=args)
     configure_logging(verbose=run_config.verbose, trace=run_config.trace)
-
-    if deprecation_message:
-        warnings.warn(
-            deprecation_message,
-            DeprecationWarning,
-            stacklevel=deprecation_stacklevel,
-        )
 
     _invoke_target(target=target, run_config=run_config)
 
@@ -157,8 +141,6 @@ def build_cli_main(
     argv: Sequence[str] | None = None,
     quality_report_default: bool | None = None,
     error_report_default: bool | None = None,
-    deprecation_message: str | None = None,
-    deprecation_stacklevel: int = 2,
 ) -> Callable[[], None]:
     """Build reusable ``__main__`` launcher with standardized profile defaults."""
     normalized_profile = resolve_cli_profile(profile)
@@ -181,8 +163,6 @@ def build_cli_main(
             argv=argv,
             quality_report_default=quality_default,
             error_report_default=error_default,
-            deprecation_message=deprecation_message,
-            deprecation_stacklevel=deprecation_stacklevel,
         )
 
     return _main
@@ -199,23 +179,6 @@ def build_complete_extractor_main(
         base_config=complete_extractor_base_config(),
         profile="complete_extractor",
         argv=argv,
-    )
-
-
-def build_deprecated_module_main(
-    *,
-    target: Callable[..., None],
-    deprecation_message: str,
-    argv: Sequence[str] | None = None,
-) -> Callable[[], None]:
-    """Backward-compatible helper for deprecated entrypoints."""
-    return build_cli_main(
-        target=target,
-        base_config=deprecated_module_base_config(),
-        profile="deprecated_entrypoint",
-        argv=argv,
-        deprecation_message=deprecation_message,
-        deprecation_stacklevel=3,
     )
 
 

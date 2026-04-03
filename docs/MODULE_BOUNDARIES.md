@@ -12,16 +12,14 @@ Każda domena (`drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`) 
 - `postprocess/` — normalizacja końcowa i domknięcie kontraktu danych.
 - `validators.py` — opcjonalny punkt walidacji domenowej (lub `validator.py` tylko przejściowo).
 
-Legacy pliki typu `list_scraper.py` / `*_constructors_list.py` pozostają tylko jako zgodność wsteczna:
-- mają oznaczenie **deprecated**,
-- emitują `DeprecationWarning` przez wspólny helper `scrapers.base.deprecated_entrypoint.run_deprecated_entrypoint`,
-- przekierowują uruchomienie do `python -m scrapers.cli run <module>` (rejestr i dispatch są utrzymywane wyłącznie w `scrapers/cli.py`).
+Pliki typu `list_scraper.py` / `*_constructors_list.py` traktujemy jako finalne moduły domenowe.
+Nie utrzymujemy dla nich warstwy kompatybilności wstecznej (bez aliasów legacy, bez `DeprecationWarning`, bez migracyjnych wrapperów CLI).
 
 ### 1.0 Mapa odpowiedzialności kluczowych katalogów
 
 | Katalog | Odpowiedzialność (skrót) | Entrypoint(y) | Właściciel logiczny | Granice użycia |
 |---|---|---|---|---|
-| `scrapers/cli.py` | Canonical launcher i dispatch uruchomień scraperów. | `python -m scrapers.cli ...` | Platforma scraperów (warstwa orkiestracji) | Nie umieszczamy logiki domenowej; tylko routing, konfiguracja run i kompatybilność CLI. |
+| `scrapers/cli.py` | Canonical launcher i dispatch uruchomień scraperów. | `python -m scrapers.cli ...` | Platforma scraperów (warstwa orkiestracji) | Nie umieszczamy logiki domenowej; tylko routing i konfiguracja run (bez warstwy legacy/migracyjnej). |
 | `scrapers/base/` | Wspólne kontrakty, adaptery, helpery i abstrakcje wielodomenowe. | Importowane API bazowe (`scrapers.base.*`) | Platforma scraperów (warstwa bazowa) | Bez wiedzy o konkretnych domenach (`drivers`, `circuits`, itd.); nowe API musi być generyczne i testowalne. |
 | `scrapers/<domain>/entrypoint.py` | Stabilny punkt startowy domeny (`run_list_scraper`). | `python -m scrapers.cli run scrapers.<domain>.entrypoint` | Właściciel domeny (`<domain>`) | Entrypoint orkiestruje flow i deleguje do warstw; nie duplikuje parserów/normalizacji. |
 | `scrapers/<domain>/list/` lub `list_scraper.py` | Seed scrape: lista encji + linki do szczegółów. | `run_list_scraper()` przez entrypoint domeny | Właściciel domeny (`<domain>`) | Brak importów do `sections/`, `infobox/`, `postprocess/`; tylko etap listowania/seedów. |
@@ -47,7 +45,15 @@ Faza przejściowa z aliasami importów została domknięta — aliasy usunięto 
 ## 2. Reguły zależności między warstwami
 
 - `list/` nie importuje `sections/`, `infobox/`, `postprocess/`.
-- `sections/` nie importuje `single_scraper.py` ani legacy `list_scraper.py`.
+- `sections/` nie importuje `single_scraper.py` ani żadnych wrapperów uruchomieniowych.
+
+## 2.1 Twarde reguły: brak kompatybilności wstecznej
+
+- Nie dodajemy aliasów API/importów dla starych nazw.
+- Nie dodajemy fallbacków danych (`legacy`, `compatible`, `migration`) w runtime.
+- Nie emitujemy `DeprecationWarning` ani harmonogramów wygaszania.
+- Gdy kontrakt się zmienia, aktualizujemy od razu wszystkie call-site’y i dokumentację.
+- CLI wspiera tylko aktualne, canonical komendy.
 - `infobox/` nie importuje `list/`, `sections/`, `postprocess/`.
 - `postprocess/` nie importuje `list/`, `sections/`, `infobox/`.
 - `single_scraper.py` może importować moduły z `sections/` (do orkiestracji parsowania).

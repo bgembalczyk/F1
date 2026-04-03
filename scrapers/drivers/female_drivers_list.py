@@ -127,7 +127,3 @@ class FemaleDriversListScraper(F1TableScraper):
         self.body_content_parser.content_text_parser.section_parser = parser
 
 
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()
