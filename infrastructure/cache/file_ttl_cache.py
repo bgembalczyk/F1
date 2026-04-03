@@ -46,7 +46,7 @@ class GeminiJsonFileCacheAdapter:
         parsed = json.loads(raw_text)
         if not isinstance(parsed, dict):
             msg = "Gemini cache payload must be a JSON object."
-            raise ValueError(msg)
+            raise TypeError(msg)
         return parsed
 
 
