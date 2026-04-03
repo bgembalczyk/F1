@@ -1,8 +1,10 @@
 from pathlib import Path
 
 from layers.one.executor import LayerOneExecutor
+from layers.one.executor import LayerOneExecutorPreset
 from layers.orchestration.protocols import LayerExecutorProtocol
 from layers.zero.executor import LayerZeroExecutor
+from layers.zero.executor import LayerZeroExecutorPreset
 from layers.pipeline import WikiPipelineApplication
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import NullLayerZeroJobHook
@@ -23,19 +25,23 @@ def test_pipeline_executor_protocol_is_implemented_by_production_executors() -> 
             return {}
 
     layer_zero = LayerZeroExecutor(
-        list_job_registry=(),
-        validate_list_registry=lambda _registry: None,
-        run_config_factory_map_builder=dict,
-        default_config_factory=_DefaultFactory(),
-        merge_service=LayerZeroMergeService(merge_function=lambda _base_wiki_dir: None),
-        job_hook=NullLayerZeroJobHook(),
-        year_provider=lambda: 2026,
+        preset=LayerZeroExecutorPreset(
+            list_job_registry=(),
+            validate_list_registry=lambda _registry: None,
+            config_factories=dict,
+            default_config_factory=_DefaultFactory(),
+            merger=LayerZeroMergeService(merge_function=lambda _base_wiki_dir: None),
+            job_hook=NullLayerZeroJobHook(),
+            year_provider=lambda: 2026,
+        ),
     )
     layer_one = LayerOneExecutor(
-        seed_registry=(),
-        validate_seed_registry_function=lambda _registry: None,
-        runner_map_builder=dict,
-        engine_manufacturers_runner=lambda *_args, **_kwargs: None,
+        preset=LayerOneExecutorPreset(
+            seed_registry=(),
+            validate_seed_registry=lambda _registry: None,
+            runners=dict,
+            engine_manufacturers_runner=lambda *_args, **_kwargs: None,
+        ),
     )
 
     assert isinstance(layer_zero, LayerExecutorProtocol)

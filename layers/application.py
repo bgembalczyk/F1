@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 import shutil
+from dataclasses import dataclass
 from datetime import datetime
 from datetime import timezone
+from enum import Enum
 from typing import TYPE_CHECKING
+from typing import Callable
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
+from layers.one.executor import LayerOneExecutorPreset
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.orchestration.runner_registry import build_layer_one_runner_map
 from layers.orchestration.runner_registry import build_layer_zero_run_config_factory_map
@@ -17,9 +21,11 @@ from layers.seed.registry.helpers import get_wiki_seed_registry
 from layers.seed.registry.helpers import validate_list_job_registry
 from layers.seed.registry.helpers import validate_seed_registry
 from layers.zero.executor import LayerZeroExecutor
+from layers.zero.executor import LayerZeroExecutorPreset
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
+from layers.zero.policies import NullLayerZeroJobHook
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -36,12 +42,20 @@ def _should_mirror_constructors_job(job: object) -> bool:
     return scraper_name in {"CurrentConstructorsListScraper", "ConstructorsListScraper"}
 
 
-def create_default_wiki_pipeline_application(
-    *,
-    base_wiki_dir: Path,
-    base_debug_dir: Path,
-) -> WikiPipelineApplication:
-    layer_zero_executor = LayerZeroExecutor(
+class ApplicationPresetName(str, Enum):
+    DEFAULT = "default"
+    DEBUG = "debug"
+    MINIMAL = "minimal"
+
+
+@dataclass(frozen=True)
+class ApplicationPreset:
+    layer_zero_preset: Callable[[], LayerZeroExecutorPreset]
+    layer_one_preset: Callable[[], LayerOneExecutorPreset]
+
+
+def _build_default_layer_zero_preset() -> LayerZeroExecutorPreset:
+    return LayerZeroExecutorPreset(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,
         config_factories=build_layer_zero_run_config_factory_map,
@@ -64,12 +78,54 @@ def create_default_wiki_pipeline_application(
         year_provider=_current_year,
     )
 
-    layer_one_executor = LayerOneExecutor(
+
+def _build_minimal_layer_zero_preset() -> LayerZeroExecutorPreset:
+    default_preset = _build_default_layer_zero_preset()
+    return LayerZeroExecutorPreset(
+        list_job_registry=default_preset.list_job_registry,
+        validate_list_registry=default_preset.validate_list_registry,
+        config_factories=default_preset.config_factories,
+        default_config_factory=default_preset.default_config_factory,
+        merger=default_preset.merger,
+        job_hook=NullLayerZeroJobHook(),
+        year_provider=default_preset.year_provider,
+    )
+
+
+def _build_default_layer_one_preset() -> LayerOneExecutorPreset:
+    return LayerOneExecutorPreset(
         seed_registry=get_wiki_seed_registry(),
         validate_seed_registry=validate_seed_registry,
         runners=build_layer_one_runner_map,
         engine_manufacturers_runner=run_engine_manufacturers,
     )
+
+
+APPLICATION_PRESETS: dict[ApplicationPresetName, ApplicationPreset] = {
+    ApplicationPresetName.DEFAULT: ApplicationPreset(
+        layer_zero_preset=_build_default_layer_zero_preset,
+        layer_one_preset=_build_default_layer_one_preset,
+    ),
+    ApplicationPresetName.DEBUG: ApplicationPreset(
+        layer_zero_preset=_build_default_layer_zero_preset,
+        layer_one_preset=_build_default_layer_one_preset,
+    ),
+    ApplicationPresetName.MINIMAL: ApplicationPreset(
+        layer_zero_preset=_build_minimal_layer_zero_preset,
+        layer_one_preset=_build_default_layer_one_preset,
+    ),
+}
+
+
+def create_default_wiki_pipeline_application(
+    *,
+    base_wiki_dir: Path,
+    base_debug_dir: Path,
+    preset: ApplicationPresetName = ApplicationPresetName.DEFAULT,
+) -> WikiPipelineApplication:
+    app_preset = APPLICATION_PRESETS[preset]
+    layer_zero_executor = LayerZeroExecutor(preset=app_preset.layer_zero_preset())
+    layer_one_executor = LayerOneExecutor(preset=app_preset.layer_one_preset())
 
     return WikiPipelineApplication(
         base_wiki_dir=base_wiki_dir,

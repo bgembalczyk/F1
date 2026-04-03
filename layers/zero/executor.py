@@ -1,4 +1,5 @@
 from collections.abc import Callable
+from dataclasses import dataclass
 from pathlib import Path
 from uuid import uuid4
 
@@ -17,47 +18,55 @@ from scrapers.base.runner import ScraperRunner
 from scrapers.base.errors import normalize_pipeline_error
 
 
+@dataclass(frozen=True)
+class LayerZeroExecutorPreset:
+    """Typed dependency preset for ``LayerZeroExecutor`` wiring."""
+
+    list_job_registry: tuple[ListJobRegistryEntry, ...]
+    validate_list_registry: Callable[[tuple[ListJobRegistryEntry, ...]], None]
+    config_factories: Callable[
+        [],
+        dict[SeedName, LayerZeroRunConfigFactoryProtocol],
+    ]
+    default_config_factory: LayerZeroRunConfigFactoryProtocol
+    merger: LayerZeroMergeServiceProtocol
+    job_hook: LayerZeroJobHook
+    year_provider: Callable[[], int]
+
+
+@dataclass(frozen=True)
+class LayerZeroExecutorOverrides:
+    """Optional dependency overrides applied on top of a preset."""
+
+    config_factories: Callable[
+        [],
+        dict[SeedName, LayerZeroRunConfigFactoryProtocol],
+    ] | None = None
+    default_config_factory: LayerZeroRunConfigFactoryProtocol | None = None
+    merger: LayerZeroMergeServiceProtocol | None = None
+    job_hook: LayerZeroJobHook | None = None
+    year_provider: Callable[[], int] | None = None
+
+
 class LayerZeroExecutor:
     def __init__(
         self,
         *,
-        list_job_registry: tuple[ListJobRegistryEntry, ...],
-        validate_list_registry: Callable[[tuple[ListJobRegistryEntry, ...]], None],
-        config_factories: Callable[
-            [],
-            dict[SeedName, LayerZeroRunConfigFactoryProtocol],
-        ]
-        | None = None,
-        run_config_factory_map_builder: Callable[
-            [],
-            dict[SeedName, LayerZeroRunConfigFactoryProtocol],
-        ]
-        | None = None,
-        default_config_factory: LayerZeroRunConfigFactoryProtocol | None = None,
-        merger: LayerZeroMergeServiceProtocol | None = None,
-        merge_service: LayerZeroMergeServiceProtocol | None = None,
-        job_hook: LayerZeroJobHook | None = None,
-        year_provider: Callable[[], int] | None = None,
+        preset: LayerZeroExecutorPreset,
+        overrides: LayerZeroExecutorOverrides | None = None,
     ) -> None:
-        self._list_job_registry = list_job_registry
-        self._validate_list_registry = validate_list_registry
-        self._config_factories = config_factories or run_config_factory_map_builder
-        self._default_config_factory = default_config_factory
-        self._merger = merger or merge_service
-        if (
-            self._config_factories is None
-            or self._merger is None
-            or self._default_config_factory is None
-            or job_hook is None
-            or year_provider is None
-        ):
-            msg = (
-                "LayerZeroExecutor requires `config_factories`, `default_config_factory`, "
-                "`merger`, `job_hook` and `year_provider`."
-            )
-            raise ValueError(msg)
-        self._job_hook = job_hook
-        self._year_provider = year_provider
+        resolved_overrides = overrides or LayerZeroExecutorOverrides()
+        self._list_job_registry = preset.list_job_registry
+        self._validate_list_registry = preset.validate_list_registry
+        self._config_factories = (
+            resolved_overrides.config_factories or preset.config_factories
+        )
+        self._default_config_factory = (
+            resolved_overrides.default_config_factory or preset.default_config_factory
+        )
+        self._merger = resolved_overrides.merger or preset.merger
+        self._job_hook = resolved_overrides.job_hook or preset.job_hook
+        self._year_provider = resolved_overrides.year_provider or preset.year_provider
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:

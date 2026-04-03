@@ -5,6 +5,8 @@ from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
+from layers.zero.executor import LayerZeroExecutorPreset
+from layers.zero.executor import LayerZeroExecutorOverrides
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
 from layers.zero.policies import NullLayerZeroJobHook
@@ -60,23 +62,45 @@ def _job(*, seed_name: str = "drivers") -> ListJobRegistryEntry:
 
 def _executor(
     *,
-    run_config_factory_map_builder=None,
+    config_factories=None,
     default_config_factory=None,
     merge_service=None,
     job_hook=None,
 ) -> LayerZeroExecutor:
     return LayerZeroExecutor(
-        list_job_registry=(_job(),),
-        validate_list_registry=lambda _registry: None,
-        run_config_factory_map_builder=(
-            run_config_factory_map_builder if run_config_factory_map_builder else dict
+        preset=LayerZeroExecutorPreset(
+            list_job_registry=(_job(),),
+            validate_list_registry=lambda _registry: None,
+            config_factories=(config_factories if config_factories else dict),
+            default_config_factory=(
+                default_config_factory if default_config_factory else _FakeConfigFactory({})
+            ),
+            merger=(merge_service if merge_service else _MergeService()),
+            job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
+            year_provider=lambda: 2026,
         ),
-        default_config_factory=(
-            default_config_factory if default_config_factory else _FakeConfigFactory({})
+    )
+
+
+def _executor_with_overrides(
+    *,
+    config_factories=None,
+    default_config_factory=None,
+) -> LayerZeroExecutor:
+    return LayerZeroExecutor(
+        preset=LayerZeroExecutorPreset(
+            list_job_registry=(_job(),),
+            validate_list_registry=lambda _registry: None,
+            config_factories=dict,
+            default_config_factory=_FakeConfigFactory({}),
+            merger=_MergeService(),
+            job_hook=NullLayerZeroJobHook(),
+            year_provider=lambda: 2026,
         ),
-        merge_service=(merge_service if merge_service else _MergeService()),
-        job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
-        year_provider=lambda: 2026,
+        overrides=LayerZeroExecutorOverrides(
+            config_factories=config_factories,
+            default_config_factory=default_config_factory,
+        ),
     )
 
 
@@ -98,9 +122,28 @@ def _build_default_and_local_run_config(
     return default_run_config, local_run_config
 
 
-def test_resolve_config_factory_uses_builder_result() -> None:
+def test_preset_overrides_are_applied() -> None:
+    executor = _executor_with_overrides(
+        config_factories=lambda: {"drivers": _FakeConfigFactory({"from": "override"})},
+        default_config_factory=_FakeConfigFactory({"fallback": "override"}),
+    )
+    seed_job = _job(seed_name="drivers")
+    local_run_config = executor._build_local_run_config(
+        run_config=RunConfig(
+            output_dir=Path("/tmp"),
+            include_urls=True,
+            debug_dir=Path("/tmp/debug"),
+        ),
+        job=seed_job,
+        config_factories=executor._resolve_config_factory(),
+    )
+
+    assert local_run_config.scraper_kwargs == {"from": "override"}
+
+
+def test_resolve_config_factory_uses_preset_result() -> None:
     expected = {"drivers": object()}
-    executor = _executor(run_config_factory_map_builder=lambda: expected)
+    executor = _executor(config_factories=lambda: expected)
 
     resolved = executor._resolve_config_factory()
 

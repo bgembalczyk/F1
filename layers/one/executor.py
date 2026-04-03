@@ -1,4 +1,5 @@
 from collections.abc import Callable
+from dataclasses import dataclass
 import inspect
 from pathlib import Path
 from uuid import uuid4
@@ -13,45 +14,42 @@ from scrapers.base.run_config import RunConfig
 from scrapers.base.errors import normalize_pipeline_error
 
 
+@dataclass(frozen=True)
+class LayerOneExecutorPreset:
+    """Typed dependency preset for ``LayerOneExecutor`` wiring."""
+
+    seed_registry: tuple[SeedRegistryEntry, ...]
+    validate_seed_registry: Callable[[tuple[SeedRegistryEntry, ...]], None]
+    runners: Callable[[], dict[SeedName, LayerOneRunnerProtocol]]
+    engine_manufacturers_runner: Callable[[Path, bool], None]
+
+
+@dataclass(frozen=True)
+class LayerOneExecutorOverrides:
+    """Optional dependency overrides applied on top of a preset."""
+
+    validate_seed_registry: Callable[[tuple[SeedRegistryEntry, ...]], None] | None = None
+    runners: Callable[[], dict[SeedName, LayerOneRunnerProtocol]] | None = None
+    engine_manufacturers_runner: Callable[[Path, bool], None] | None = None
+
+
 class LayerOneExecutor:
     def __init__(
         self,
         *,
-        seed_registry: tuple[SeedRegistryEntry, ...],
-        validate_seed_registry: Callable[
-            [tuple[SeedRegistryEntry, ...]],
-            None,
-        ]
-        | None = None,
-        validate_seed_registry_function: Callable[
-            [tuple[SeedRegistryEntry, ...]],
-            None,
-        ]
-        | None = None,
-        runners: Callable[[], dict[SeedName, LayerOneRunnerProtocol]] | None = None,
-        runner_map_builder: Callable[
-            [],
-            dict[SeedName, LayerOneRunnerProtocol],
-        ]
-        | None = None,
-        engine_manufacturers_runner: Callable[[Path, bool], None] | None = None,
+        preset: LayerOneExecutorPreset,
+        overrides: LayerOneExecutorOverrides | None = None,
     ) -> None:
-        self._seed_registry = seed_registry
+        resolved_overrides = overrides or LayerOneExecutorOverrides()
+        self._seed_registry = preset.seed_registry
         self._validate_seed_registry = (
-            validate_seed_registry or validate_seed_registry_function
+            resolved_overrides.validate_seed_registry or preset.validate_seed_registry
         )
-        self._runners = runners or runner_map_builder
-        if (
-            self._validate_seed_registry is None
-            or self._runners is None
-            or engine_manufacturers_runner is None
-        ):
-            msg = (
-                "LayerOneExecutor requires `validate_seed_registry`, `runners` "
-                "and `engine_manufacturers_runner`."
-            )
-            raise ValueError(msg)
-        self._engine_manufacturers_runner = engine_manufacturers_runner
+        self._runners = resolved_overrides.runners or preset.runners
+        self._engine_manufacturers_runner = (
+            resolved_overrides.engine_manufacturers_runner
+            or preset.engine_manufacturers_runner
+        )
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:

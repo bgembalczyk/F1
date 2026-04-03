@@ -4,10 +4,14 @@ from pathlib import Path
 from scrapers.base.run_config import RunConfig
 from scrapers.wiki.application import ConstructorsMirrorService
 from scrapers.wiki.application import LayerOneExecutor
+from layers.one.executor import LayerOneExecutorPreset
 from scrapers.wiki.application import LayerZeroExecutor
+from layers.zero.executor import LayerZeroExecutorPreset
 from scrapers.wiki.application import LayerZeroMergeService
+from layers.zero.policies import MirrorConstructorsJobHook
 from layers.seed.registry import ListJobRegistryEntry
 from layers.seed.registry import SeedRegistryEntry
+from scrapers.base.runner import ScraperRunner
 
 
 class _FakeScraper:
@@ -50,12 +54,14 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
     engine_runner_calls: list[tuple[Path, bool]] = []
 
     executor = LayerOneExecutor(
-        seed_registry=(supported_seed, unsupported_seed),
-        validate_seed_registry_function=lambda registry: None,
-        runner_map_builder=lambda: {"drivers": _Runner()},
-        engine_manufacturers_runner=lambda base_wiki_dir,
-        include_urls: engine_runner_calls.append(
-            (base_wiki_dir, include_urls),
+        preset=LayerOneExecutorPreset(
+            seed_registry=(supported_seed, unsupported_seed),
+            validate_seed_registry=lambda registry: None,
+            runners=lambda: {"drivers": _Runner()},
+            engine_manufacturers_runner=lambda base_wiki_dir,
+            include_urls: engine_runner_calls.append(
+                (base_wiki_dir, include_urls),
+            ),
         ),
     )
 
@@ -159,17 +165,21 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
             return {}
 
     executor = LayerZeroExecutor(
-        list_job_registry=(job,),
-        validate_list_registry=lambda registry: None,
-        run_config_factory_map_builder=dict,
-        default_config_factory=_DefaultConfigFactory(),
-        run_and_export_function=lambda scraper_cls, *_args, **_kwargs: run_calls.append(
-            scraper_cls,
+        preset=LayerZeroExecutorPreset(
+            list_job_registry=(job,),
+            validate_list_registry=lambda registry: None,
+            config_factories=dict,
+            default_config_factory=_DefaultConfigFactory(),
+            merger=merge_service,
+            job_hook=MirrorConstructorsJobHook(
+                constructors_mirror_service=constructors_mirror_service,
+                should_mirror_predicate=(
+                    lambda list_job: list_job.list_scraper_cls.__name__
+                    == "CurrentConstructorsListScraper"
+                ),
+            ),
+            year_provider=lambda: 2026,
         ),
-        constructors_mirror_service=constructors_mirror_service,
-        merge_service=merge_service,
-        current_constructors_scraper_name="CurrentConstructorsListScraper",
-        year_provider=lambda: 2026,
     )
 
     run_config = RunConfig(
@@ -178,7 +188,14 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         debug_dir=Path("/tmp/debug"),
     )
     base_wiki_dir = Path("/tmp/wiki")
-    executor.run(run_config, base_wiki_dir)
+    original_run_and_export = ScraperRunner.run_and_export
+    ScraperRunner.run_and_export = (
+        lambda self, scraper_cls, *_args, **_kwargs: run_calls.append(scraper_cls)
+    )
+    try:
+        executor.run(run_config, base_wiki_dir)
+    finally:
+        ScraperRunner.run_and_export = original_run_and_export
 
     assert run_calls == [CurrentConstructorsListScraper]
     assert merge_calls == [base_wiki_dir]
