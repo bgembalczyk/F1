@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from datetime import date
-from pathlib import Path
 
 from scrapers.deprecation_catalog import get_deprecated_elements_report
 from scrapers.deprecation_catalog import get_deprecated_module_migrations
