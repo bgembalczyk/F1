@@ -61,13 +61,13 @@ class TeamLiveriesSectionParser(SectionParser):
     def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []
         seen_sections: set[str] = set()
-        for heading, headline in self._base_parser._collect_section_headings(soup):
-            section_id = self._base_parser._section_id_if_new(headline, seen_sections)
+        for heading, headline in self._base_parser.collect_section_headings(soup):
+            section_id = self._base_parser.section_id_if_new(headline, seen_sections)
             if not section_id:
                 continue
-            if not self._base_parser._section_has_table(heading, headline):
+            if not self._base_parser.section_has_table(heading, headline):
                 continue
-            team = self._base_parser._team_name_from_heading(heading, headline)
+            team = self._base_parser.team_name_from_heading(heading, headline)
             liveries = self._parse_single_team_section(
                 soup,
                 section_id=section_id,

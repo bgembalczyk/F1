@@ -106,5 +106,5 @@ class PointsScraper(BasePointsScraper):
         soup: BeautifulSoup,
     ) -> list[dict[str, Any]]:
         legacy_scraper = SprintQualifyingPointsScraper()
-        rows = legacy_scraper._parse_soup(soup)
+        rows = legacy_scraper.parse_soup(soup)
         return [row for row in rows if isinstance(row, dict)]

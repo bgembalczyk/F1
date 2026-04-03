@@ -1,3 +1,4 @@
+# ruff: noqa: SLF001
 import pytest
 
 from models.records.base_factory import BaseRecordFactory

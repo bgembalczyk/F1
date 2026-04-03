@@ -1,3 +1,4 @@
+# ruff: noqa: SLF001
 from pathlib import Path
 
 from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory

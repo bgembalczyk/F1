@@ -1,3 +1,4 @@
+# ruff: noqa: SLF001
 from bs4 import BeautifulSoup
 
 from scrapers.points.parsers import PointsScoringSystemsSectionParser

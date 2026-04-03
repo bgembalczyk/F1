@@ -106,6 +106,9 @@ class F1TableScraper(WikiScraper, ABC):
         self.extractor.set_run_id(getattr(self, "_run_id", None))
         return self.extractor.extract(soup)
 
+    def parse_soup(self, soup: BeautifulSoup) -> list[Any]:
+        return self._parse_soup(soup)
+
     def parse_row(self, row: TableRow) -> Any | None:
         """
         Dla każdej komórki:
