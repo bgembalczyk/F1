@@ -21,7 +21,7 @@ Nie utrzymujemy dla nich warstwy kompatybilności wstecznej (bez aliasów legacy
 |---|---|---|---|---|
 | `scrapers/cli.py` | Canonical launcher i dispatch uruchomień scraperów. | `python -m scrapers.cli ...` | Platforma scraperów (warstwa orkiestracji) | Nie umieszczamy logiki domenowej; tylko routing i konfiguracja run (bez warstwy legacy/migracyjnej). |
 | `scrapers/base/` | Wspólne kontrakty, adaptery, helpery i abstrakcje wielodomenowe. | Importowane API bazowe (`scrapers.base.*`) | Platforma scraperów (warstwa bazowa) | Bez wiedzy o konkretnych domenach (`drivers`, `circuits`, itd.); nowe API musi być generyczne i testowalne. |
-| `scrapers/<domain>/entrypoint.py` | Stabilny punkt startowy domeny (`run_list_scraper`). | `python -m scrapers.cli run scrapers.<domain>.entrypoint` | Właściciel domeny (`<domain>`) | Entrypoint orkiestruje flow i deleguje do warstw; nie duplikuje parserów/normalizacji. |
+| `scrapers/<domain>/entrypoint.py` | Stabilny punkt startowy domeny (`run_list_scraper`). | Run configuration w PyCharm | Właściciel domeny (`<domain>`) | Entrypoint orkiestruje flow i deleguje do warstw; nie duplikuje parserów/normalizacji. |
 | `scrapers/<domain>/list/` lub `list_scraper.py` | Seed scrape: lista encji + linki do szczegółów. | `run_list_scraper()` przez entrypoint domeny | Właściciel domeny (`<domain>`) | Brak importów do `sections/`, `infobox/`, `postprocess/`; tylko etap listowania/seedów. |
 | `scrapers/<domain>/sections/` | Parsowanie sekcji `bodyContent` i tabel artykułu. | Wywołania z `single_scraper.py` / serwisów domenowych | Właściciel domeny (`<domain>`) | Nie importuje `single_scraper.py` (zakaz zależności zwrotnej) ani legacy launcherów listowych. |
 | `scrapers/<domain>/infobox/` | Parsowanie danych strukturalnych `table.infobox`. | Wywołania z flow domeny (`single_scraper`/services) | Właściciel domeny (`<domain>`) | Brak importów do `list/`, `sections/`, `postprocess/`; warstwa niezależna od pozostałych parserów. |
@@ -86,7 +86,7 @@ Każda domena eksportuje z `entrypoint.py` funkcję:
 
 - `run_list_scraper(*, run_config: RunConfig | None = None) -> None`
 
-To jest stabilny punkt startowy dla integracji kodowych. Dla uruchomień operatorskich rekomendowana ścieżka to wyłącznie `python -m scrapers.cli ...`.
+To jest stabilny punkt startowy dla integracji kodowych. Dla uruchomień operatorskich jedyną wspieraną ścieżką jest konfiguracja Run w PyCharm.
 
 ## 4. Przykładowy flow per domena
 
@@ -183,9 +183,9 @@ Minimum raz na sprint wykonujemy krótki przegląd duplikacji (`duplikacja tygod
 - przypisujemy orientacyjny termin domknięcia (najlepiej w tym samym lub kolejnym sprincie).
 
 
-## 7. Canonical launcher CLI i mapa kompatybilności
+## 7. Mapa kompatybilności legacy CLI
 
-Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
+CLI (`python -m ...`, w tym `python -m scrapers.cli`) pozostaje wyłącznie mechanizmem kompatybilności i nie jest wspieranym sposobem uruchamiania projektu.
 
 ### 7.1 Harmonogram deprecacji (2 wersje przejściowe)
 
@@ -196,7 +196,7 @@ Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
 
 Runtime warning ma teraz jawny komunikat o oknie migracji:
 - `scheduled for removal after 2 transitional releases (removal target: R2)`
-- oraz wskazanie canonical komendy `python -m scrapers.cli run <new_module>`.
+- oraz wskazanie modułu docelowego uruchamianego przez konfigurację Run w PyCharm.
 
 <!-- BEGIN AUTO-GENERATED: command-migration-map -->
 
@@ -238,6 +238,12 @@ Legacy moduły należy migrować na wskazane moduły API.
 
 <!-- END AUTO-GENERATED: command-migration-map -->
 
+## 3.1 Rules / Uruchamianie projektu
+
+- **Twarda reguła:** jedyny wspierany sposób uruchamiania projektu to konfiguracja **Run** w **PyCharm**.
+- Uruchamianie z terminala (`python -m ...`, w tym `python -m scrapers.cli ...`) jest **niewspierane**.
+- Wszystkie przykłady komend CLI w tym dokumencie mają charakter historyczny/kompatybilnościowy i nie stanowią rekomendacji operacyjnej.
+
 ## ✅ Krótka checklista: jak tworzyć nowy scraper listowy
 
 1. Dziedzicz po `SeedListTableScraper` i ustaw `domain`, `default_output_path`, `legacy_output_path`.
@@ -245,7 +251,7 @@ Legacy moduły należy migrować na wskazane moduły API.
 3. Buduj `CONFIG` wyłącznie przez `scrapers.base.table.config.build_scraper_config(...)`.
 4. Ustaw minimalne `expected_headers` (podzbiór wymaganych nagłówków tabeli).
 5. Podepnij `record_factory` i (opcjonalnie) `default_validator`.
-6. Dla uruchamiania używaj `entrypoint.py`; `list_scraper.py` traktuj jako warstwę kompatybilności.
+6. Dla uruchamiania używaj konfiguracji Run w PyCharm wskazującej `entrypoint.py`; `list_scraper.py` traktuj jako warstwę kompatybilności.
 
 ## 8. Static quality gates (CI)
 

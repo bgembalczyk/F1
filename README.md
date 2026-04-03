@@ -3,6 +3,12 @@
 Ten plik jest punktem wejścia do dokumentacji projektu.  
 Szczegółowe opisy utrzymujemy centralnie w **indeksie dokumentacji**: [`docs/README.md`](docs/README.md).
 
+## Quick start (PyCharm only)
+
+> Jedyny wspierany sposób uruchomienia projektu to konfiguracja **Run** w **PyCharm**.
+> Uruchamianie z terminala (`python -m ...`) jest niewspierane.
+> Pełne zasady: [`docs/MODULE_BOUNDARIES.md`](docs/MODULE_BOUNDARIES.md).
+
 ## Szybka diagnoza problemów pipeline
 
 Jeśli debugujesz Layer 0/1 lub merge rekordów, zacznij od cookbooka:  
@@ -72,4 +78,4 @@ Przed merge PR sprawdź:
 - [ ] Czy sekcje PR (`SRP impact`, `DRY impact`, `Contracts changed`, `Breaking changes`, `DoD`) są uzupełnione?
 - [ ] Czy checklista techniczna (`testy kontraktowe`, `brak nowych Any`, `brak nowych magic strings`, `zaktualizowany ADR/docs`) jest odhaczona?
 - [ ] Czy w PR dodano dowód review (output testów/checków) wymagany do akceptacji?
-- [ ] Czy nowy entrypoint i sposób uruchomienia są zgodne z canonical CLI (`python -m scrapers.cli`)?
+- [ ] Czy nowy entrypoint i sposób uruchomienia są zgodne ze standardem PyCharm Run (zgodnie z `docs/MODULE_BOUNDARIES.md`)?

@@ -11,14 +11,11 @@
 - Add/update snapshot + alias + contract tests when introducing new parser behavior.
 
 
-## CLI entrypoint standard
-- Moduły uruchamiane bezpośrednio (`python -m ...`) budują launcher przez `build_cli_main(...)` z `scrapers.base.cli_entrypoint`.
-- Używaj profili:
-  - `list_scraper` dla aktywnych list scraperów,
-  - `complete_extractor` dla pełnych ekstraktorów,
-
-- **Rekomendowana ścieżka uruchamiania:** `python -m scrapers.cli ...` (jedyny canonical launcher).
-- `entrypoint.py` traktuj jako jedyny wspierany punkt uruchomienia z kodu i CLI.
+## IDE entrypoint standard (PyCharm Run)
+- Jedyny wspierany sposób uruchamiania to konfiguracja **Run** w **PyCharm**.
+- Uruchamianie modułów z terminala (`python -m ...`, w tym `python -m scrapers.cli ...`) jest niewspierane.
+- `entrypoint.py` traktuj jako API do wywołań z kodu i docelowy punkt startu dla konfiguracji Run.
+- Moduły typu `list_scraper.py`/`complete_scraper.py` pozostają wyłącznie warstwą kompatybilnościową i deprecated.
 
 ## Public API
 Stabilne importy dla konsumentów:
