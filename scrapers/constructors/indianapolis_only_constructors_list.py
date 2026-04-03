@@ -69,5 +69,3 @@ class IndianapolisOnlyConstructorsListScraper(IndianapolisOnlyListScraper):
             if isinstance(url, str):
                 record["constructor_url"] = self._full_url(url)
         return records
-
-

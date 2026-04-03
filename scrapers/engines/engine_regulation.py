@@ -170,5 +170,3 @@ class EngineRegulationScraper(BaseEngineTableScraper):
                 records.append(record)
 
         return records
-
-

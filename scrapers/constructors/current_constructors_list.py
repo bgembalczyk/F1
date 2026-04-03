@@ -47,5 +47,3 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
 
     section_label = "Current constructors"
     section_parser_class = CurrentConstructorsSectionParser
-
-

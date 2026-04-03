@@ -60,5 +60,3 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
 
     section_label = "Former constructors"
     section_parser_class = FormerConstructorsSectionParser
-
-

@@ -26,5 +26,3 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
         detail_url_field_paths=("constructor.url", "constructor_url", "team_url"),
         filter_redlinks=True,
     )
-
-

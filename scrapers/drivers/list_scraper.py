@@ -188,5 +188,3 @@ class F1DriversListScraper(SeedListTableScraper):
             DriversChampionshipsTransformer(),
         ]
         return options
-
-

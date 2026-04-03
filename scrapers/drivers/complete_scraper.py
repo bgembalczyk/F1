@@ -17,5 +17,3 @@ class CompleteDriverDataExtractor(CompleteExtractorBase):
         single_scraper_cls=SingleDriverScraper,
         detail_url_field_paths=("driver.url",),
     )
-
-

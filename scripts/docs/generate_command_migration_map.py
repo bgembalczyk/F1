@@ -24,19 +24,10 @@ END_MARKER = "<!-- END AUTO-GENERATED: command-migration-map -->"
 
 
 def _command_migration_map() -> list[tuple[str, str]]:
-    rows = [
-        (
-            "python main.py --mode <layer0|layer1|full>",
-            "python -m scrapers.cli wiki --mode <layer0|layer1|full>",
-        )
-    ]
-    for module_path in sorted(MODULE_DEFINITIONS):
-        rows.append(
-            (
-                f"python -m {module_path}",
-                f"python -m scrapers.cli run {module_path}",
-            )
-        )
+    rows = [("python main.py", "from scrapers import run_wiki_flow; run_wiki_flow()")]
+    for item in sorted(DEPRECATED_MODULES, key=lambda x: x.module_path):
+        replacement = item.replacement_module_path or item.module_path
+        rows.append((f"python -m {item.module_path}", f"python -m {replacement}"))
     return rows
 
 
@@ -46,7 +37,9 @@ def build_generated_section() -> str:
     lines.append("")
     lines.append("Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrapperów.")
     lines.append("")
-    lines.append("### Mapa `module -> canonical_command`")
+    lines.append("W praktyce oznacza to migrację:")
+    lines.append("- z `python -m scrapers.<domain>.list_scraper`")
+    lines.append("- na `python -m scrapers.<domain>.entrypoint`")
     lines.append("")
     for module_command, canonical_command in _command_migration_map():
         lines.append(f"- `{module_command}` -> `{canonical_command}`")

@@ -5,5 +5,3 @@ from scrapers.grands_prix.red_flagged_races_scraper.services.world_championship 
 )
 
 __all__ = ["RedFlaggedWorldChampionshipRacesScraper"]
-
-

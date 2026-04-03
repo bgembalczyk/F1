@@ -30,5 +30,3 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
             options=append_transformer(options, transformer),
             config=config,
         )
-
-

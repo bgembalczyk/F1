@@ -123,5 +123,3 @@ class TyreManufacturersScraper(F1TableScraper):
 
 
 TyreManufacturersBySeasonScraper = TyreManufacturersScraper
-
-

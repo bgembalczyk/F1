@@ -161,5 +161,3 @@ class F1FatalitiesListScraper(F1TableScraper):
         auto_value = AutoColumn().parse(ctx)
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}
-
-

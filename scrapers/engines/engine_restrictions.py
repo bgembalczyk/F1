@@ -183,5 +183,3 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
                 records.append(record)
 
         return records
-
-

@@ -22,5 +22,3 @@ class CompleteSeasonDataExtractor(CompleteExtractorBase):
             details_key="tables",
         ),
     )
-
-

@@ -206,39 +206,35 @@ Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrappe
 
 ### Mapa `module -> canonical_command`
 
-- `python main.py --mode <layer0|layer1|full>` -> `python -m scrapers.cli wiki --mode <layer0|layer1|full>`
-- `python -m scrapers.circuits.complete_scraper` -> `python -m scrapers.cli run scrapers.circuits.complete_scraper`
-- `python -m scrapers.circuits.entrypoint` -> `python -m scrapers.cli run scrapers.circuits.entrypoint`
-- `python -m scrapers.circuits.list_scraper` -> `python -m scrapers.cli run scrapers.circuits.list_scraper`
-- `python -m scrapers.constructors.complete_scraper` -> `python -m scrapers.cli run scrapers.constructors.complete_scraper`
-- `python -m scrapers.constructors.current_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.current_constructors_list`
-- `python -m scrapers.constructors.entrypoint` -> `python -m scrapers.cli run scrapers.constructors.entrypoint`
-- `python -m scrapers.constructors.former_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.former_constructors_list`
-- `python -m scrapers.constructors.indianapolis_only_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.indianapolis_only_constructors_list`
-- `python -m scrapers.constructors.privateer_teams_list` -> `python -m scrapers.cli run scrapers.constructors.privateer_teams_list`
-- `python -m scrapers.drivers.complete_scraper` -> `python -m scrapers.cli run scrapers.drivers.complete_scraper`
-- `python -m scrapers.drivers.entrypoint` -> `python -m scrapers.cli run scrapers.drivers.entrypoint`
-- `python -m scrapers.drivers.fatalities_list_scraper` -> `python -m scrapers.cli run scrapers.drivers.fatalities_list_scraper`
-- `python -m scrapers.drivers.female_drivers_list` -> `python -m scrapers.cli run scrapers.drivers.female_drivers_list`
-- `python -m scrapers.drivers.list_scraper` -> `python -m scrapers.cli run scrapers.drivers.list_scraper`
-- `python -m scrapers.engines.complete_scraper` -> `python -m scrapers.cli run scrapers.engines.complete_scraper`
-- `python -m scrapers.engines.engine_manufacturers_list` -> `python -m scrapers.cli run scrapers.engines.engine_manufacturers_list`
-- `python -m scrapers.engines.engine_regulation` -> `python -m scrapers.cli run scrapers.engines.engine_regulation`
-- `python -m scrapers.engines.engine_restrictions` -> `python -m scrapers.cli run scrapers.engines.engine_restrictions`
-- `python -m scrapers.engines.indianapolis_only_engine_manufacturers_list` -> `python -m scrapers.cli run scrapers.engines.indianapolis_only_engine_manufacturers_list`
-- `python -m scrapers.grands_prix.complete_scraper` -> `python -m scrapers.cli run scrapers.grands_prix.complete_scraper`
-- `python -m scrapers.grands_prix.entrypoint` -> `python -m scrapers.cli run scrapers.grands_prix.entrypoint`
-- `python -m scrapers.grands_prix.list_scraper` -> `python -m scrapers.cli run scrapers.grands_prix.list_scraper`
-- `python -m scrapers.grands_prix.red_flagged_races_scraper.non_championship` -> `python -m scrapers.cli run scrapers.grands_prix.red_flagged_races_scraper.non_championship`
-- `python -m scrapers.grands_prix.red_flagged_races_scraper.world_championship` -> `python -m scrapers.cli run scrapers.grands_prix.red_flagged_races_scraper.world_championship`
-- `python -m scrapers.points.points_scoring_systems_history` -> `python -m scrapers.cli run scrapers.points.points_scoring_systems_history`
-- `python -m scrapers.points.shortened_race_points` -> `python -m scrapers.cli run scrapers.points.shortened_race_points`
-- `python -m scrapers.points.sprint_qualifying_points` -> `python -m scrapers.cli run scrapers.points.sprint_qualifying_points`
-- `python -m scrapers.seasons.complete_scraper` -> `python -m scrapers.cli run scrapers.seasons.complete_scraper`
-- `python -m scrapers.seasons.entrypoint` -> `python -m scrapers.cli run scrapers.seasons.entrypoint`
-- `python -m scrapers.seasons.list_scraper` -> `python -m scrapers.cli run scrapers.seasons.list_scraper`
-- `python -m scrapers.sponsorship_liveries.scraper` -> `python -m scrapers.cli run scrapers.sponsorship_liveries.scraper`
-- `python -m scrapers.tyres.list_scraper` -> `python -m scrapers.cli run scrapers.tyres.list_scraper`
+- `python main.py` -> `from scrapers import run_wiki_flow; run_wiki_flow()`
+- `python -m scrapers.circuits.complete_scraper` -> `python -m scrapers.circuits.complete_scraper`
+- `python -m scrapers.circuits.list_scraper` -> `python -m scrapers.circuits.entrypoint`
+- `python -m scrapers.constructors.complete_scraper` -> `python -m scrapers.constructors.complete_scraper`
+- `python -m scrapers.constructors.current_constructors_list` -> `python -m scrapers.constructors.entrypoint`
+- `python -m scrapers.constructors.former_constructors_list` -> `python -m scrapers.constructors.former_constructors_list`
+- `python -m scrapers.constructors.indianapolis_only_constructors_list` -> `python -m scrapers.constructors.indianapolis_only_constructors_list`
+- `python -m scrapers.constructors.privateer_teams_list` -> `python -m scrapers.constructors.privateer_teams_list`
+- `python -m scrapers.drivers.complete_scraper` -> `python -m scrapers.drivers.complete_scraper`
+- `python -m scrapers.drivers.fatalities_list_scraper` -> `python -m scrapers.drivers.fatalities_list_scraper`
+- `python -m scrapers.drivers.female_drivers_list` -> `python -m scrapers.drivers.female_drivers_list`
+- `python -m scrapers.drivers.list_scraper` -> `python -m scrapers.drivers.entrypoint`
+- `python -m scrapers.engines.complete_scraper` -> `python -m scrapers.engines.complete_scraper`
+- `python -m scrapers.engines.engine_manufacturers_list` -> `python -m scrapers.engines.engine_manufacturers_list`
+- `python -m scrapers.engines.engine_regulation` -> `python -m scrapers.engines.engine_regulation`
+- `python -m scrapers.engines.engine_restrictions` -> `python -m scrapers.engines.engine_restrictions`
+- `python -m scrapers.engines.indianapolis_only_engine_manufacturers_list` -> `python -m scrapers.engines.indianapolis_only_engine_manufacturers_list`
+- `python -m scrapers.grands_prix.complete_scraper` -> `python -m scrapers.grands_prix.complete_scraper`
+- `python -m scrapers.grands_prix.list_scraper` -> `python -m scrapers.grands_prix.entrypoint`
+- `python -m scrapers.grands_prix.red_flagged_races_scraper.world_championship` -> `python -m scrapers.grands_prix.red_flagged_races_scraper.world_championship`
+- `python -m scrapers.points.points_scoring_systems_history` -> `python -m scrapers.points.points_scoring_systems_history`
+- `python -m scrapers.points.shortened_race_points` -> `python -m scrapers.points.shortened_race_points`
+- `python -m scrapers.points.sprint_qualifying_points` -> `python -m scrapers.points.sprint_qualifying_points`
+- `python -m scrapers.seasons.complete_scraper` -> `python -m scrapers.seasons.complete_scraper`
+- `python -m scrapers.seasons.list_scraper` -> `python -m scrapers.seasons.entrypoint`
+- `python -m scrapers.sponsorship_liveries.scraper` -> `python -m scrapers.sponsorship_liveries.scraper`
+- `python -m scrapers.tyres.list_scraper` -> `python -m scrapers.tyres.list_scraper`
+
+Legacy moduły należy migrować na wskazane moduły API.
 
 <!-- END AUTO-GENERATED: command-migration-map -->
 

@@ -35,5 +35,3 @@ class ShortenedRacePointsScraper(BasePointsScraper):
             options=append_transformer(options, ShortenedRacePointsTransformer()),
             config=config,
         )
-
-

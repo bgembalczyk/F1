@@ -258,5 +258,3 @@ class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper
     url_key = "manufacturer_url"
     domain_name = "engines"
     record_type = "manufacturer"
-
-

@@ -28,5 +28,3 @@ class F1CompleteEngineManufacturerDataExtractor(CompleteExtractorBase):
         single_scraper_cls=SingleEngineManufacturerScraper,
         detail_url_field_paths=("manufacturer.url", "manufacturer_url"),
     )
-
-

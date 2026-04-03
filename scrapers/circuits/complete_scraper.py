@@ -28,5 +28,3 @@ class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
         detail_url_field_paths=("circuit.url",),
         record_postprocessor=CircuitService.normalize_record,
     )
-
-

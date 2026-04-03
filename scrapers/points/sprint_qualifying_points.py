@@ -18,5 +18,3 @@ class SprintQualifyingPointsScraper(BasePointsScraper):
         schema=build_sprint_qualifying_schema(),
         record_factory=RECORD_FACTORIES.mapping(),
     )
-
-
