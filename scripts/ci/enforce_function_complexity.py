@@ -55,7 +55,7 @@ def _iter_functions(tree: ast.AST) -> list[ast.FunctionDef | ast.AsyncFunctionDe
     return [
         node
         for node in ast.walk(tree)
-        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
+        if isinstance(node, ast.FunctionDef | ast.AsyncFunctionDef)
     ]
 
 
