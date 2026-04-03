@@ -1,6 +1,6 @@
 from layers.seed.registry.constants import EXPLICIT_LAYER_ONE_SEED_REGISTRY
 from layers.seed.registry.constants import RAW_REGISTRY_SPEC
-from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
+from layers.seed.registry import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.constants import build_list_job_registry_entry_from_spec
 from layers.seed.registry.constants import build_seed_registry_entry_from_spec
 

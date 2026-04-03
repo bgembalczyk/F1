@@ -4,7 +4,7 @@
 - Budowa map uruchamiania warstwy 0/1.
 - Definicja kontraktów runnerów/factory dla orchestration.
 
-## Publiczne entrypointy
+## Public API
 - `layers.orchestration.build_layer_one_runner_map`
 - `layers.orchestration.build_layer_zero_run_config_factory_map`
 - `layers.orchestration.run_engine_manufacturers`

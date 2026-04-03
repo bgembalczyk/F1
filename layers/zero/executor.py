@@ -6,7 +6,7 @@ from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.types import SeedName
 from layers.path_resolver import format_domain_year_name
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry import ListJobRegistryEntry
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.logging import build_execution_context

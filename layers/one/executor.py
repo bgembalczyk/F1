@@ -5,7 +5,7 @@ from uuid import uuid4
 
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.types import SeedName
-from layers.seed.registry.entries import SeedRegistryEntry
+from layers.seed.registry import SeedRegistryEntry
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.base.logging import RunTraceWriter

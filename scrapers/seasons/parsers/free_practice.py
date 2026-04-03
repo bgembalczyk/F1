@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from models.services.rounds_service import parse_rounds
+from models.services import parse_rounds
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.helpers.transform_micro_ops import pop_list_field
 from scrapers.base.table.columns.types import BrListColumn
