@@ -11,7 +11,7 @@ repo_root_str = str(REPO_ROOT)
 if repo_root_str not in sys.path:
     sys.path.insert(0, repo_root_str)
 
-from scrapers.cli import get_deprecated_elements_report
+from scrapers.deprecation_catalog import get_deprecated_elements_report
 
 
 def _build_rows(today: date) -> tuple[list[dict[str, str]], list[dict[str, str]]]:

@@ -16,7 +16,7 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
-from scrapers.cli import MODULE_DEFINITIONS
+from scrapers.deprecation_catalog import DEPRECATED_MODULES
 
 DOC_PATH = Path("docs/MODULE_BOUNDARIES.md")
 BEGIN_MARKER = "<!-- BEGIN AUTO-GENERATED: command-migration-map -->"
@@ -24,40 +24,26 @@ END_MARKER = "<!-- END AUTO-GENERATED: command-migration-map -->"
 
 
 def _legacy_list_entrypoints() -> list[tuple[str, str]]:
-    pairs: list[tuple[str, str]] = []
-    for definition in MODULE_DEFINITIONS.values():
-        if not definition.deprecated:
-            continue
-        replacement = definition.replacement_module_path
-        if replacement is None:
-            continue
-        pairs.append((definition.module_path, replacement))
-    return sorted(pairs)
+    return sorted(
+        (item.module_path, item.replacement_module_path)
+        for item in DEPRECATED_MODULES
+        if item.replacement_module_path is not None
+    )
 
 
 def _other_legacy_modules() -> list[str]:
-    modules = [
-        definition.module_path
-        for definition in MODULE_DEFINITIONS.values()
-        if definition.deprecated and definition.replacement_module_path is None
-    ]
-    return sorted(modules)
+    return sorted(
+        item.module_path
+        for item in DEPRECATED_MODULES
+        if item.replacement_module_path is None
+    )
 
 
 def _command_migration_map() -> list[tuple[str, str]]:
-    rows = [
-        (
-            "python main.py --mode <layer0|layer1|full>",
-            "python -m scrapers.cli wiki --mode <layer0|layer1|full>",
-        )
-    ]
-    for module_path in sorted(MODULE_DEFINITIONS):
-        rows.append(
-            (
-                f"python -m {module_path}",
-                f"python -m scrapers.cli run {module_path}",
-            )
-        )
+    rows = [("python main.py", "from scrapers import run_wiki_flow; run_wiki_flow()")]
+    for item in sorted(DEPRECATED_MODULES, key=lambda x: x.module_path):
+        replacement = item.replacement_module_path or item.module_path
+        rows.append((f"python -m {item.module_path}", f"python -m {replacement}"))
     return rows
 
 
@@ -71,11 +57,11 @@ def build_generated_section() -> str:
         lines.append(f"- `{legacy_module}` -> `{replacement_module}`")
     lines.append("")
     lines.append("W praktyce oznacza to migrację:")
-    lines.append("- z `python -m scrapers.cli run scrapers.<domain>.list_scraper`")
-    lines.append("- na `python -m scrapers.cli run scrapers.<domain>.entrypoint`")
+    lines.append("- z `python -m scrapers.<domain>.list_scraper`")
+    lines.append("- na `python -m scrapers.<domain>.entrypoint`")
     lines.append("")
     lines.append(
-        "#### Pozostałe legacy moduły (bez nowego modułu API, canonical przez `scrapers.cli run`)"
+        "#### Pozostałe legacy moduły (bez nowego modułu API)"
     )
     lines.append("")
     for module in _other_legacy_modules():
@@ -87,7 +73,7 @@ def build_generated_section() -> str:
         lines.append(f"- `{old_command}` -> `{new_command}`")
     lines.append("")
     lines.append(
-        "Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem."
+        "Legacy moduły należy migrować na wskazane moduły API."
     )
     return "\n".join(lines).rstrip() + "\n"
 
