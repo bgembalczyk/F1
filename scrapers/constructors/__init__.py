@@ -7,9 +7,9 @@ from scrapers.constructors.helpers.export import export_complete_constructors
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 
 __all__ = [
+    "CompleteConstructorsDataExtractor",
     "ConstructorsListScraper",
     "SingleConstructorScraper",
-    "CompleteConstructorsDataExtractor",
     "export_complete_constructors",
     "run_list_scraper",
 ]

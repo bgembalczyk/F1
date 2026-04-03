@@ -372,9 +372,9 @@ def _transform_engines_domain(
 ) -> dict[str, object]:
     if domain != "engines":
         return transformed
-    if (
-        source_name == INDIANAPOLIS_ONLY_ENGINES_SOURCE
-        or source_name == ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE
+    if source_name in (
+        INDIANAPOLIS_ONLY_ENGINES_SOURCE,
+        ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE,
     ):
         transformed["racing_series"] = {
             "AAA_national_championship": [],

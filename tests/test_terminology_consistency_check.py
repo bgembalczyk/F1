@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 
 from scripts.ci.check_terminology_consistency import TerminologyRule
 from scripts.ci.check_terminology_consistency import scan_files
 from scripts.ci.check_terminology_consistency import scan_text_forbidden_terms
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from pathlib import Path

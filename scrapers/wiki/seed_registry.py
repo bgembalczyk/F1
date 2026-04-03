@@ -14,10 +14,10 @@ from layers.seed.registry import validate_seed_registry
 WIKI_SEED_REGISTRY = get_wiki_seed_registry()
 
 __all__ = [
-    "ListJobRegistryEntry",
-    "SeedRegistryEntry",
     "WIKI_LIST_JOB_REGISTRY",
     "WIKI_SEED_REGISTRY",
+    "ListJobRegistryEntry",
+    "SeedRegistryEntry",
     "clear_wiki_seed_registry_cache",
     "get_wiki_seed_registry",
     "validate_list_job_registry",

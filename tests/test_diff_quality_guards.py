@@ -1,9 +1,9 @@
 # ruff: noqa: SLF001
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 
 from scripts.ci import enforce_diff_quality_guards as guards
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from pathlib import Path

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-
-from bs4 import BeautifulSoup
+from typing import TYPE_CHECKING
 
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
@@ -15,10 +14,11 @@ from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from models.serializers import SerializerProtocol
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.parsers.soup import SoupParser
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
+
+    from bs4 import BeautifulSoup
 
 
 class _StubSoupParser:

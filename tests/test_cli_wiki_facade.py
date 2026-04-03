@@ -1,9 +1,12 @@
 from __future__ import annotations
 
-from pathlib import Path
 from types import SimpleNamespace
+from typing import TYPE_CHECKING
 
 from scrapers.wiki import flow_entrypoint
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 class _FacadeSpy:

@@ -101,8 +101,13 @@ def test_drivers_domain_transform_handler() -> None:
     )
 
     assert transformed["driver"] == "Lewis Hamilton"
-    assert transformed["racing_series"]["formula_one"]["race_entries"] == DRIVER_RACE_ENTRIES
-    assert transformed["racing_series"]["formula_one"]["race_starts"] == DRIVER_RACE_STARTS
+    assert (
+        transformed["racing_series"]["formula_one"]["race_entries"]
+        == DRIVER_RACE_ENTRIES
+    )
+    assert (
+        transformed["racing_series"]["formula_one"]["race_starts"] == DRIVER_RACE_STARTS
+    )
 
 
 def test_races_domain_transform_handler() -> None:

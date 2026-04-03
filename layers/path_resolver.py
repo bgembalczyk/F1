@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-
 _MIN_DUPLICATE_SUFFIX_COUNT = 2
 
 
@@ -70,10 +69,7 @@ def _normalize_output_name(filename: str) -> str:
         raise ValueError(msg)
 
     suffixes = Path(normalized).suffixes
-    if (
-        len(suffixes) >= _MIN_DUPLICATE_SUFFIX_COUNT
-        and suffixes[-1] == suffixes[-2]
-    ):
+    if len(suffixes) >= _MIN_DUPLICATE_SUFFIX_COUNT and suffixes[-1] == suffixes[-2]:
         msg = f"Output filename cannot use duplicated extension: {normalized!r}."
         raise ValueError(msg)
 

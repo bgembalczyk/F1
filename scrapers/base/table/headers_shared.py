@@ -12,7 +12,7 @@ FASTEST_LAPS_HEADER = "FL"
 
 POINTS_HEADER_TO_KEY = {
     POINTS_HEADER: "points",
-    **{alias: "points" for alias in POINTS_ALIASES},
+    **dict.fromkeys(POINTS_ALIASES, "points"),
 }
 
 BASE_METRIC_HEADERS_TO_KEYS = {

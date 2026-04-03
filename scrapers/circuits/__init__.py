@@ -8,8 +8,8 @@ from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 __all__ = [
     "CircuitsListScraper",
-    "F1SingleCircuitScraper",
     "F1CompleteCircuitDataExtractor",
+    "F1SingleCircuitScraper",
     "export_complete_circuits",
     "run_list_scraper",
 ]

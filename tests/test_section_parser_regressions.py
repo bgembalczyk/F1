@@ -178,7 +178,8 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
             fragment.find("h2", id="Constructors_for_the_2026_season") is not None
         )
         if has_heading:
-            raise RuntimeError("forced failure on full section fragment")
+            msg = "forced failure on full section fragment"
+            raise RuntimeError(msg)
         return original_parse(fragment)
 
     parser._parser.parse = flaky_parse

@@ -142,7 +142,9 @@ def test_build_local_run_config_uses_seed_specific_factory(tmp_path: Path) -> No
     assert local_run_config.scraper_kwargs == {"domain": "drivers"}
 
 
-def test_run_single_job_passes_local_run_config_when_kwargs_present(tmp_path: Path) -> None:
+def test_run_single_job_passes_local_run_config_when_kwargs_present(
+    tmp_path: Path,
+) -> None:
     calls: list[dict[str, object]] = []
 
     original_method = ScraperRunner.run_and_export

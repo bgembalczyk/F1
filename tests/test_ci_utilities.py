@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
+from typing import Any
 
 from scripts.ci.git_diff import GitCommandResult
 from scripts.ci.git_diff import build_added_lines_map

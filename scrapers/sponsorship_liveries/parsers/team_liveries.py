@@ -3,13 +3,13 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import BeautifulSoup
-
 from scrapers.sponsorship_liveries.parsers.section import SponsorshipSectionParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 
 if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 

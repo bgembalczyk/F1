@@ -10,6 +10,7 @@ from scrapers.base.table.config import build_scraper_config
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
+
     from scrapers.base.table.dsl.column import ColumnSpec
 
 

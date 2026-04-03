@@ -105,7 +105,7 @@ class LayerOneExecutor:
                     domain=seed.output_category,
                     source_name=scraper_cls.__name__,
                 )
-                self._logger.error(
+                self._logger.exception(
                     "layer1 seed failed",
                     extra=context
                     | {"status": "failed"}
@@ -144,7 +144,7 @@ class LayerOneExecutor:
                 domain="engines",
                 source_name="F1CompleteEngineManufacturerDataExtractor",
             )
-            self._logger.error(
+            self._logger.exception(
                 "layer1 engine manufacturers failed",
                 extra=build_execution_context(
                     run_id=run_id,

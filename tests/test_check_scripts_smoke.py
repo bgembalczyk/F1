@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
         ),
         (
             Path("scripts/check_known_module_typos.py"),
-            tuple(),
+            (),
             "[known-module-typos] OK",
         ),
     ],
@@ -37,12 +37,14 @@ def test_check_script_runs_from_foreign_cwd(
 ) -> None:
     script_path = REPO_ROOT / script_rel_path
 
-    process = subprocess.run(  # noqa: S603 -- test uruchamia lokalny skrypt przez bieżący interpreter
-        [sys.executable, str(script_path), *arguments],
-        cwd=tmp_path,
-        capture_output=True,
-        text=True,
-        check=False,
+    process = (
+        subprocess.run(  # -- test uruchamia lokalny skrypt przez bieżący interpreter
+            [sys.executable, str(script_path), *arguments],
+            cwd=tmp_path,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
     )
 
     assert process.returncode == 0, process.stdout + process.stderr

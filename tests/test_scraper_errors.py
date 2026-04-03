@@ -172,7 +172,8 @@ class FlakyRequestFetcher:
     def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         self.calls += 1
         if self.calls <= self.failures:
-            raise RequestError("temporary offline")
+            msg = "temporary offline"
+            raise RequestError(msg)
         return self.html
 
     def get(self, _url: str) -> str:

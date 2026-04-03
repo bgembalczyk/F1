@@ -9,11 +9,11 @@ from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
 __all__ = [
-    "F1DriversListScraper",
-    "FemaleDriversListScraper",
-    "F1FatalitiesListScraper",
-    "SingleDriverScraper",
     "CompleteDriverDataExtractor",
+    "F1DriversListScraper",
+    "F1FatalitiesListScraper",
+    "FemaleDriversListScraper",
+    "SingleDriverScraper",
     "export_complete_drivers",
     "run_list_scraper",
 ]

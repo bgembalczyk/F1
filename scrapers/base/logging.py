@@ -4,13 +4,14 @@ import json
 import logging
 from datetime import datetime
 from datetime import timezone
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
+from typing import Any
 
 from scrapers.base.constants.runtime import LOGGER_NAME
 
 if TYPE_CHECKING:
-    from pathlib import Path
     from collections.abc import Callable
+    from pathlib import Path
 
 _DEFAULT_EXECUTION_CONTEXT: dict[str, str | None] = {
     "run_id": None,
