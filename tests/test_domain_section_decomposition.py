@@ -59,7 +59,7 @@ def test_circuit_sections_are_parsed_through_section_adapter() -> None:
         "html.parser",
     )
 
-    sections = scraper.parse_section_dicts(
+    sections = scraper.assemble_section_dicts(
         soup=soup,
         domain="circuits",
         entries=[

@@ -123,6 +123,21 @@ TYRE_MANUFACTURERS_SOURCE = SOURCE_BY_SEED_NAME["tyres"].list_filename
 INDIANAPOLIS_ONLY_ENGINES_SOURCE = SOURCE_BY_SEED_NAME[
     "engines_indianapolis_only"
 ].output_file
+ENGINE_MANUFACTURERS_SOURCE = SOURCE_BY_SEED_NAME["engines_manufacturers"].list_filename
+ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE = SOURCE_BY_SEED_NAME[
+    "engines_indianapolis_only"
+].list_filename
+DRIVERS_SOURCE = SOURCE_BY_SEED_NAME["drivers"].list_filename
+FEMALE_DRIVERS_SOURCE = SOURCE_BY_SEED_NAME["drivers_female"].list_filename
+DRIVER_FATALITIES_SOURCE = SOURCE_BY_SEED_NAME["drivers_fatalities"].list_filename
+RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE = SOURCE_BY_SEED_NAME[
+    "grands_prix_red_flagged_world_championship"
+].list_filename
+RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE = SOURCE_BY_SEED_NAME[
+    "grands_prix_red_flagged_non_championship"
+].list_filename
+SPONSORSHIP_LIVERIES_SOURCE = SOURCE_BY_SEED_NAME["sponsorship_liveries"].list_filename
+PRIVATEER_TEAMS_SOURCE = SOURCE_BY_SEED_NAME["constructors_privateer"].list_filename
 
 
 def _emit_deprecation_warning(kind: str, legacy: str, canonical: str) -> None:
@@ -249,15 +264,24 @@ validate_sources_registry_consistency()
 
 
 __all__ = [
+    "DRIVERS_SOURCE",
+    "DRIVER_FATALITIES_SOURCE",
+    "ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE",
+    "ENGINE_MANUFACTURERS_SOURCE",
+    "FEMALE_DRIVERS_SOURCE",
     "FORMER_CONSTRUCTORS_SOURCE",
     "ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE",
     "INDIANAPOLIS_ONLY_ENGINES_SOURCE",
     "INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE",
     "LEGACY_LIST_FILENAME_ALIASES",
     "LEGACY_SEED_NAME_ALIASES",
+    "PRIVATEER_TEAMS_SOURCE",
+    "RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE",
+    "RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE",
     "SOURCE_BY_LIST_FILENAME",
     "SOURCE_BY_SOURCE_NAME",
     "SOURCE_BY_SEED_NAME",
+    "SPONSORSHIP_LIVERIES_SOURCE",
     "TYRE_MANUFACTURERS_SOURCE",
     "WIKI_SOURCE_DEFINITIONS",
     "WikiSourceDefinition",

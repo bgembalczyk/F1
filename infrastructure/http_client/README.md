@@ -1,27 +1,21 @@
 # infrastructure/http_client
 
-## Cel modułu
-Ujednolicony klient HTTP dla projektu (retry, rate limit, cache, timeout, nagłówki), wykorzystywany przez scrapery niezależnie od konkretnego transportu.
+## Odpowiedzialność
+Moduł zapewnia ujednolicony klient HTTP dla projektu: timeouty, retry, rate limit, cache, nagłówki i wspólne polityki requestów, niezależnie od warstwy wywołującej.
 
-## Główne klasy
-- `HttpClientConfig` – wspólna konfiguracja klienta.
-- `BaseHttpClient` – bazowa implementacja logiki request/retry/cache.
-- `UrllibHttpClient` – domyślny klient oparty o `requests_shim`.
-- `DefaultHttpPolicyFactory` – budowa retry/rate-limit/cache z konfiguracji.
-- `RequestExecutor` – wykonanie pojedynczego requestu z backoffem.
+## Punkt wejścia
+- Konfiguracja: `HttpClientConfig`.
+- Bazowy kontrakt klienta: `BaseHttpClient`.
+- Domyślna implementacja: `UrllibHttpClient`.
+- Praktyczny interfejs użycia: `get()`, `get_text()`, `get_json()`.
 
-## Co jest publiczne
-- Publiczne entrypointy modułu: klasy klientów z `clients/*`, konfiguracja (`HttpClientConfig`) i interfejsy z `interfaces/*`.
-- Publiczny kontrakt praktyczny: `get()`, `get_text()`, `get_json()` na kliencie.
+## Najczęstszy punkt debug
+Najczęściej debug zaczyna się w `infrastructure/http_client/clients/base.py` (`_request_with_retries()`, `get_text()`, `get_json()`) oraz w `infrastructure/http_client/components/request_executor.py` (decyzje retry/backoff i `raise_for_status()`).
 
-## Gdzie najczęściej debugować
-- `infrastructure/http_client/clients/base.py`: `_request_with_retries()`, `get_text()`, `get_json()`.
-- `infrastructure/http_client/components/request_executor.py`: decyzje retry i moment `raise_for_status()`.
-- `infrastructure/http_client/factories/default_http_policy_factory.py`: czy wstrzyknięte policy nadpisują domyślne.
-- `infrastructure/http_client/config.py`: wartości timeout/retries/cache i ich źródło.
+Dla problemów konfiguracyjnych warto sprawdzić `infrastructure/http_client/factories/default_http_policy_factory.py` i `infrastructure/http_client/config.py`.
 
-## Najczęstsze pułapki
-- Cache w `get_text()` jest per URL (headers/timeout nie wpływają na cache key).
-- `response.raise_for_status()` jest wołane także po udanym requestcie — błędy HTTP wychodzą dopiero tu.
-- Ręczne `headers` nadpisują domyślne i mogą przypadkiem usunąć ważne nagłówki.
-- Zbyt agresywny retry/backoff może wydłużyć scrape bardziej niż oczekiwano.
+## Czego tu nie robić
+- Nie umieszczać tu logiki parsowania HTML/JSON specyficznej dla domeny (to odpowiedzialność scraperów).
+- Nie kodować tu wyjątków pod konkretne endpointy biznesowe.
+- Nie obchodzić policy factory przez „twarde” retry/backoff w kodzie wywołującym.
+- Nie traktować cache HTTP jako substytutu warstwy trwałego storage danych.
