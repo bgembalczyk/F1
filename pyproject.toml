@@ -82,6 +82,13 @@ ignore = [
   "RUF012", # Mutable class attributes should be annotated with `typing.ClassVar`
   "SIM102", # sometimes it's better to nest
 ]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/ci/*" = ["S603"]
+"tests/test_adr_enforcement_policy_integration.py" = ["S603"]
+"tests/test_check_scripts_smoke.py" = ["S603"]
+"tests/test_duplicate_report_typing.py" = ["S603"]
+
 [tool.ruff.lint.isort]
 force-single-line = true
 
