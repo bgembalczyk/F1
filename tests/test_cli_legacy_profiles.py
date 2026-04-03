@@ -14,13 +14,11 @@ from scrapers.cli import _parse_legacy_args
 def test_cli_profile_aliases_resolve_to_canonical_profiles() -> None:
     assert resolve_cli_profile("list_scraper") is RunProfileName.DEFAULT
     assert resolve_cli_profile("complete_extractor") is RunProfileName.DEFAULT
-    assert resolve_cli_profile("deprecated_entrypoint") is RunProfileName.DEFAULT
 
 
 def test_cli_profile_defaults_follow_canonical_run_profiles() -> None:
     assert get_cli_profile_defaults("list_scraper") == (False, False)
     assert get_cli_profile_defaults("complete_extractor") == (False, False)
-    assert get_cli_profile_defaults("deprecated_entrypoint") == (False, False)
 
 
 def test_legacy_arg_parser_uses_central_alias_choices_and_defaults() -> None:
@@ -29,7 +27,6 @@ def test_legacy_arg_parser_uses_central_alias_choices_and_defaults() -> None:
     assert LEGACY_CLI_PROFILE_NAMES == (
         "list_scraper",
         "complete_extractor",
-        "deprecated_entrypoint",
     )
     assert args.quality_report is False
     assert args.error_report is False
@@ -39,9 +36,6 @@ def test_profile_resolver_contract_for_legacy_aliases() -> None:
     assert PROFILE_RESOLVER.resolve_cli_profile("list_scraper") is RunProfileName.DEFAULT
     assert PROFILE_RESOLVER.resolve_cli_profile(
         "complete_extractor",
-    ) is RunProfileName.DEFAULT
-    assert PROFILE_RESOLVER.resolve_cli_profile(
-        "deprecated_entrypoint",
     ) is RunProfileName.DEFAULT
 
 

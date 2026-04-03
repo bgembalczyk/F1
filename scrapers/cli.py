@@ -673,11 +673,6 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         base_debug_dir=DEFAULT_PATH_RESOLVER.debug_root.resolve(),
     )
     facade.run_scenario(args.scenario)
-    
-    if args.mode in {"layer0", "full"}:
-        app.run_layer_zero(deterministic=args.deterministic)
-    if args.mode in {"layer1", "full"}:
-        app.run_layer_one(deterministic=args.deterministic)
 
 
 def _run_command(args: argparse.Namespace) -> None:

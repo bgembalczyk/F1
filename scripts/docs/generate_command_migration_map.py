@@ -23,27 +23,6 @@ BEGIN_MARKER = "<!-- BEGIN AUTO-GENERATED: command-migration-map -->"
 END_MARKER = "<!-- END AUTO-GENERATED: command-migration-map -->"
 
 
-def _legacy_list_entrypoints() -> list[tuple[str, str]]:
-    pairs: list[tuple[str, str]] = []
-    for definition in MODULE_DEFINITIONS.values():
-        if not definition.deprecated:
-            continue
-        replacement = definition.replacement_module_path
-        if replacement is None:
-            continue
-        pairs.append((definition.module_path, replacement))
-    return sorted(pairs)
-
-
-def _other_legacy_modules() -> list[str]:
-    modules = [
-        definition.module_path
-        for definition in MODULE_DEFINITIONS.values()
-        if definition.deprecated and definition.replacement_module_path is None
-    ]
-    return sorted(modules)
-
-
 def _command_migration_map() -> list[tuple[str, str]]:
     rows = [
         (
@@ -63,32 +42,14 @@ def _command_migration_map() -> list[tuple[str, str]]:
 
 def build_generated_section() -> str:
     lines: list[str] = []
-    lines.append("### 7.2 Deprecated moduły i zamienniki (CLI/API)")
+    lines.append("### 7.2 Canonical command map (CLI/API)")
     lines.append("")
-    lines.append("#### Domenowe list-entrypointy (preferowane nowe API)")
+    lines.append("Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrapperów.")
     lines.append("")
-    for legacy_module, replacement_module in _legacy_list_entrypoints():
-        lines.append(f"- `{legacy_module}` -> `{replacement_module}`")
+    lines.append("### Mapa `module -> canonical_command`")
     lines.append("")
-    lines.append("W praktyce oznacza to migrację:")
-    lines.append("- z `python -m scrapers.cli run scrapers.<domain>.list_scraper`")
-    lines.append("- na `python -m scrapers.cli run scrapers.<domain>.entrypoint`")
-    lines.append("")
-    lines.append(
-        "#### Pozostałe legacy moduły (bez nowego modułu API, canonical przez `scrapers.cli run`)"
-    )
-    lines.append("")
-    for module in _other_legacy_modules():
-        lines.append(f"- `{module}`")
-    lines.append("")
-    lines.append("### Mapa `old_command -> new_command`")
-    lines.append("")
-    for old_command, new_command in _command_migration_map():
-        lines.append(f"- `{old_command}` -> `{new_command}`")
-    lines.append("")
-    lines.append(
-        "Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem."
-    )
+    for module_command, canonical_command in _command_migration_map():
+        lines.append(f"- `{module_command}` -> `{canonical_command}`")
     return "\n".join(lines).rstrip() + "\n"
 
 
