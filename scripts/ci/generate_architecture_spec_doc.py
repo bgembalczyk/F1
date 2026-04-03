@@ -9,7 +9,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from scripts.ci.architecture_spec import ARCHITECTURE_SPEC
+from scripts.ci.architecture_spec import ARCHITECTURE_SPEC  # noqa: E402
 
 DEFAULT_OUTPUT = Path("docs/architecture/ARCHITECTURE_SPEC.md")
 

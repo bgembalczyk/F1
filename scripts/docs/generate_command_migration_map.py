@@ -15,7 +15,7 @@ _BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
 _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
-from scrapers.deprecation_catalog import get_deprecated_module_migrations
+from scrapers.deprecation_catalog import get_deprecated_module_migrations  # noqa: E402
 
 DOC_PATH = Path("docs/MODULE_BOUNDARIES.md")
 BEGIN_MARKER = "<!-- BEGIN AUTO-GENERATED: command-migration-map -->"

@@ -20,9 +20,9 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
-from scripts.lib.check_runner import run_cli
-from scripts.lib.domain_terminology import GLOSSARY_PATH
-from scripts.lib.domain_terminology import parse_forbidden_term_map
+from scripts.lib.check_runner import run_cli  # noqa: E402
+from scripts.lib.domain_terminology import GLOSSARY_PATH  # noqa: E402
+from scripts.lib.domain_terminology import parse_forbidden_term_map  # noqa: E402
 
 SOURCE_DIRS: tuple[str, ...] = (
     "models",
