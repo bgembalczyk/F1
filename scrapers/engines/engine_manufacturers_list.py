@@ -193,7 +193,10 @@ class EngineManufacturersListScraper(F1TableScraper):
     ) -> None:
         super().__init__(*args, **kwargs)
         if export_scope not in self._SUPPORTED_EXPORT_SCOPES:
-            msg = f"Unsupported export_scope='{export_scope}' for {self.__class__.__name__}"
+            msg = (
+                f"Unsupported export_scope='{export_scope}' for "
+                f"{self.__class__.__name__}"
+            )
             raise ValueError(msg)
         self._export_scope = export_scope
         parser = EngineManufacturersSectionParser()

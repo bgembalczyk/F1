@@ -25,9 +25,9 @@ def test_single_scraper_can_depend_on_sections_without_reverse_dependency() -> N
     root = Path("scrapers")
     for domain in ENTRYPOINT_DOMAINS:
         single_scraper_file = root / domain / "single_scraper.py"
-        assert (
-            single_scraper_file.exists()
-        ), f"Missing single scraper file in domain: {single_scraper_file}"
+        assert single_scraper_file.exists(), (
+            f"Missing single scraper file in domain: {single_scraper_file}"
+        )
 
         sections_dir = root / domain / "sections"
         violating_modules = [

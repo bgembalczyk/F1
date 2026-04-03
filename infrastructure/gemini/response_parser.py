@@ -14,7 +14,9 @@ class GeminiResponseParser:
 
         if text is None:
             raise SourceParseError(
-                message="Gemini API nie zwróciło pola candidates[0].content.parts[0].text.",
+                message=(
+                    "Gemini API nie zwróciło pola candidates[0].content.parts[0].text."
+                ),
                 source_name="gemini",
             )
 

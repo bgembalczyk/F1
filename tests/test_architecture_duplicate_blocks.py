@@ -48,8 +48,10 @@ ALLOWED_SIMILAR_CONFIG_BLOCKS: dict[frozenset[str], str] = {
             "scrapers/points/sprint_qualifying_points.py",
         },
     ): (
-        "Punkty współdzielą URL i record_factory mapping(), ale różne parsery schematów "
-        "odwzorowują inne tabele wiki; ich podobieństwo jest zamierzone i domenowo jawne."
+        "Punkty współdzielą URL i record_factory mapping(), "
+        "ale różne parsery schematów "
+        "odwzorowują inne tabele wiki; ich podobieństwo "
+        "jest zamierzone i domenowo jawne."
     ),
 }
 
@@ -168,7 +170,8 @@ def _suggest_extraction_target(group: list[ConfigBlockSemantics]) -> str:
     if len(domains) == 1:
         return (
             "Wydziel wspólny builder/factory CONFIG do "
-            f"`scrapers/{domains[0]}/.../config_factory.py` i wywołuj go z modułów list."
+            f"`scrapers/{domains[0]}/.../config_factory.py` "
+            "i wywołuj go z modułów list."
         )
 
     return (
@@ -209,9 +212,9 @@ def test_no_duplicate_config_blocks() -> None:
 def test_duplicate_config_blocks_whitelist_has_justification() -> None:
     for paths, reason in ALLOWED_SIMILAR_CONFIG_BLOCKS.items():
         assert len(paths) > 1, "Whitelist entry must contain at least two files."
-        assert (
-            reason.strip()
-        ), f"Whitelist entry {sorted(paths)} requires justification."
+        assert reason.strip(), (
+            f"Whitelist entry {sorted(paths)} requires justification."
+        )
 
 
 def test_domain_entrypoints_use_shared_factory_builders() -> None:
@@ -229,6 +232,7 @@ def test_domain_entrypoints_use_shared_factory_builders() -> None:
         ]
         assert not local_dups, (
             "Entrypoint should not duplicate local wrappers. "
-            "Use shared domain facade installer from scrapers.base.domain_entrypoint instead: "
+            "Use shared domain facade installer from "
+            "scrapers.base.domain_entrypoint instead: "
             f"{py_file}"
         )

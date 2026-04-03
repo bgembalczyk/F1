@@ -117,7 +117,8 @@ def main() -> int:
             normalized = normalize_field_value(raw_value)
             if not normalized or normalized in NOT_APPLICABLE_VALUES:
                 errors.append(
-                    "Zmiany w scrapers/base wymagają uzupełnionej sekcji Architecture impact; "
+                    "Zmiany w scrapers/base wymagają uzupełnionej sekcji "
+                    "Architecture impact; "
                     f"pole '{field}' nie może mieć wartości 'nie dotyczy'.",
                 )
 

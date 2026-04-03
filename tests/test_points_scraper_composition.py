@@ -13,9 +13,7 @@ def test_points_scraper_uses_points_scoring_systems_section_parser() -> None:
     assert isinstance(scraper.section_parser, PointsScoringSystemsSectionParser)
 
 
-def test_points_scoring_systems_section_parser_uses_special_cases_subsection_parser() -> (
-    None
-):
+def test_points_scoring_systems_uses_special_cases_subsection_parser() -> None:
     parser = PointsScoringSystemsSectionParser()
     assert isinstance(parser.child_parser, SpecialCasesSubSectionParser)
 

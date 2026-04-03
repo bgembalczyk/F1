@@ -30,11 +30,15 @@ def test_extract_current_section_supports_hardcoded_2026_section_id() -> None:
         """
         <html><body>
           <div class="mw-heading mw-heading2">
-            <h2 id="Constructors_for_the_2026_season">Constructors for the 2026 season</h2>
+            <h2 id="Constructors_for_the_2026_season">
+              Constructors for the 2026 season
+            </h2>
           </div>
           <p>Intro</p>
           <table class="wikitable sortable">
-            <tr><th>Constructor</th><th>Engine</th><th>Licensed in</th><th>Based in</th></tr>
+            <tr>
+              <th>Constructor</th><th>Engine</th><th>Licensed in</th><th>Based in</th>
+            </tr>
             <tr><td>Ferrari</td><td>Ferrari</td><td>Italy</td><td>Italy</td></tr>
           </table>
         </body></html>

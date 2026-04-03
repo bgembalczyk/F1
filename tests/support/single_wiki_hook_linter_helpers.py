@@ -22,11 +22,7 @@ def build_scraper_source(
         f"    def {method}(self, soup):\n        return {{}}" for method in methods
     )
 
-    return (
-        f"{comments_block}"
-        f"class {class_name}({base_class}):\n"
-        f"{indented_methods}\n"
-    )
+    return f"{comments_block}class {class_name}({base_class}):\n{indented_methods}\n"
 
 
 def write_and_lint(

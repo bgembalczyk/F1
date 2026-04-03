@@ -72,7 +72,8 @@ def run_check() -> list[str]:
             for forbidden, canonical in forbidden_map.items():
                 if patterns[forbidden].search(content):
                     errors.append(
-                        f"forbidden term '{forbidden}' in {rel_path} (use '{canonical}')",
+                        f"forbidden term '{forbidden}' in {rel_path} "
+                        f"(use '{canonical}')",
                     )
 
     return errors

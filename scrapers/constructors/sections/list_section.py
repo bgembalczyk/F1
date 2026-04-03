@@ -138,14 +138,16 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
                 self._table_parser.parse({"headers": headers, "rows": row_maps})
             except RuntimeError:
                 logger.warning(
-                    "Constructors section parser '%s': lightweight table pre-parse failed.",
+                    "Constructors section parser '%s': "
+                    "lightweight table pre-parse failed.",
                     self._parser._section_label,
                 )
         try:
             return self._parser.parse(section_fragment)
         except RuntimeError:
             logger.warning(
-                "Constructors section parser '%s': full section parse failed, trying table-only fallback.",
+                "Constructors section parser '%s': full section parse failed, "
+                "trying table-only fallback.",
                 self._parser._section_label,
             )
             if table is not None:

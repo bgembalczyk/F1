@@ -101,15 +101,18 @@ def evaluate_file(
 
         if length > max_function_lines:
             violations.append(
-                f"{path}:{function.lineno} function '{function.name}' length={length} > {max_function_lines}",
+                f"{path}:{function.lineno} function '{function.name}' "
+                f"length={length} > {max_function_lines}",
             )
         if visitor.max_nesting > max_nesting:
             violations.append(
-                f"{path}:{function.lineno} function '{function.name}' nesting={visitor.max_nesting} > {max_nesting}",
+                f"{path}:{function.lineno} function '{function.name}' "
+                f"nesting={visitor.max_nesting} > {max_nesting}",
             )
         if visitor.branch_count > max_branches:
             violations.append(
-                f"{path}:{function.lineno} function '{function.name}' branching={visitor.branch_count} > {max_branches}",
+                f"{path}:{function.lineno} function '{function.name}' "
+                f"branching={visitor.branch_count} > {max_branches}",
             )
 
     return violations
@@ -118,7 +121,8 @@ def evaluate_file(
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Enforce max function length/nesting/branching for changed Python functions."
+            "Enforce max function length/nesting/branching "
+            "for changed Python functions."
         ),
     )
     parser.add_argument("--base-sha", required=True)
