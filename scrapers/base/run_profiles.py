@@ -8,6 +8,9 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Literal
 
+from scrapers.base.defaults import DEFAULT_DEBUG_DIR
+from scrapers.base.defaults import DEFAULT_WIKI_OUTPUT_DIR
+
 if TYPE_CHECKING:
     from scrapers.base.run_config import RunConfig
 
@@ -16,8 +19,8 @@ if TYPE_CHECKING:
 class RunPathConfig:
     """Canonical default locations for wiki outputs and debug artifacts."""
 
-    wiki_output_dir: Path = Path("../../data/wiki")
-    debug_dir: Path = Path("../../data/debug")
+    wiki_output_dir: Path = DEFAULT_WIKI_OUTPUT_DIR
+    debug_dir: Path = DEFAULT_DEBUG_DIR
 
     def resolve(self, path_name: RunPathName) -> Path:
         return getattr(self, path_name.value)

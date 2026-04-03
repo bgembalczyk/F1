@@ -17,12 +17,16 @@ from typing import TYPE_CHECKING
 from typing import Literal
 
 from scrapers.base.cli_entrypoint import build_run_config
+from scrapers.base.defaults import DEFAULT_INCLUDE_URLS
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.logging import configure_logging
 from scrapers.base.run_config import RunConfig
+from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
+from scrapers.base.run_profiles import RunProfileName
+from scrapers.base.run_profiles import build_run_profile
 from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.runner import ScraperRunner
 from scrapers.wiki.sources_registry import ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE
@@ -184,7 +188,7 @@ def _build_base_config(factory: BaseConfigFactory) -> RunConfig:
         return deprecated_module_base_config()
     if factory == "complete":
         return complete_extractor_base_config()
-    return RunConfig()
+    return build_run_profile(RunProfileName.MINIMAL)
 
 
 def _import_target(path: str) -> Callable[..., None]:
@@ -221,7 +225,7 @@ def _run_export_complete(
     path: str,
     output_dir: str | None,
     *,
-    include_urls: bool | None = True,
+    include_urls: bool | None = DEFAULT_INCLUDE_URLS,
 ) -> Callable[..., None]:
     def _target() -> None:
         export_fn = _import_target(path)
