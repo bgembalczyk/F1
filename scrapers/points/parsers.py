@@ -35,7 +35,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
     @classmethod
     def _normalize_header(cls, value: str) -> str:
         compact = re.sub(r"\s+", " ", value).strip().lower()
-        return compact.replace("’", "'")
+        return compact.replace("\u2019", "'")
 
     @classmethod
     def _candidate_headers(cls, header: str) -> set[str]:
