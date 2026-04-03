@@ -48,10 +48,10 @@ jobs:
           echo "profile=$PROFILE" >> "$GITHUB_OUTPUT"
           echo "Selected profile: $PROFILE"
 
-      - name: Run quick profile (unit + contract + architecture)
+      - name: Run quick profile (unit + contract)
         if: steps.profile.outputs.profile == 'quick'
         run: |
-          pytest -q -m "unit or contract or architecture"
+          pytest -q -m "unit or contract"
 
       - name: Run full profile (all tests)
         if: steps.profile.outputs.profile == 'full'
