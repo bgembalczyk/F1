@@ -12,7 +12,7 @@ def test_grands_prix_table_parser_maps_domain_rows() -> None:
                 {
                     "Race title": "British Grand Prix",
                     "Country": "United Kingdom",
-                    "Years held": "1926, 1948–present",
+                    "Years held": "1926, 1948-present",
                     "Circuits": "4",
                     "Total": "78",
                 },
