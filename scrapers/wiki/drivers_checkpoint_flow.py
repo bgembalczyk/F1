@@ -6,7 +6,8 @@ from dataclasses import asdict
 from datetime import datetime
 from datetime import timezone
 from time import perf_counter
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
+from typing import Any
 
 from scrapers.base.orchestration.lifecycle import STAGE_EXPORT
 from scrapers.base.orchestration.lifecycle import STAGE_INGEST
@@ -18,8 +19,8 @@ from scrapers.base.orchestration.lifecycle import StageEnvelope
 from scrapers.base.orchestration.models import AuditEntry
 
 if TYPE_CHECKING:
-    from pathlib import Path
     from collections.abc import Callable
+    from pathlib import Path
 
 
 class DriversCheckpointFlow:

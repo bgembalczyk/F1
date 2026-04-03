@@ -131,15 +131,15 @@ def _coerce_discovered_component_class(
         if not callable(candidate):
             msg = f"Runner component '{candidate}' must be callable"
             raise TypeError(msg)
-        return cast(DiscoveredRunnerClassProtocol, candidate)
+        return cast("DiscoveredRunnerClassProtocol", candidate)
     if metadata.component_type == LIST_SCRAPER_KIND:
         config = getattr(candidate, "CONFIG", None)
         url = getattr(config, "url", None)
         if not isinstance(url, str) or not url.strip():
             msg = f"List scraper component '{candidate}' must expose CONFIG.url"
             raise TypeError(msg)
-        return cast(DiscoveredListScraperClassProtocol, candidate)
-    return cast(DiscoveredComponentClass, candidate)
+        return cast("DiscoveredListScraperClassProtocol", candidate)
+    return cast("DiscoveredComponentClass", candidate)
 
 
 def build_layer_one_runner_map_discovered() -> dict[str, DiscoveredRunnerProtocol]:
@@ -158,7 +158,7 @@ def build_layer_one_runner_map_discovered() -> dict[str, DiscoveredRunnerProtoco
         if not hasattr(runner, "run") or not callable(runner.run):
             msg = f"Runner '{metadata.seed_name}' does not implement run() contract"
             raise TypeError(msg)
-        runner_map[metadata.seed_name] = cast(DiscoveredRunnerProtocol, runner)
+        runner_map[metadata.seed_name] = cast("DiscoveredRunnerProtocol", runner)
     return runner_map
 
 

@@ -45,7 +45,8 @@ class _FailingListScraper:
         self.options = options
 
     def fetch(self) -> list[dict[str, str]]:
-        raise TypeError("programmer bug in list scraper")
+        msg = "programmer bug in list scraper"
+        raise TypeError(msg)
 
 
 class _FailingSingleScraper:
@@ -53,7 +54,8 @@ class _FailingSingleScraper:
         self.options = options
 
     def fetch_by_url(self, _url: str) -> list[dict[str, str]]:
-        raise TypeError("programmer bug in single scraper")
+        msg = "programmer bug in single scraper"
+        raise TypeError(msg)
 
 
 class _DetailListScraper:
@@ -69,7 +71,8 @@ class _RecoverableFailingSingleScraper:
         self.options = options
 
     def fetch_by_url(self, _url: str) -> list[dict[str, str]]:
-        raise RequestError("temporary offline")
+        msg = "temporary offline"
+        raise RequestError(msg)
 
 
 def _custom_record_assembler(

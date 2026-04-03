@@ -9,6 +9,7 @@ from scrapers.base.errors import normalize_pipeline_error
 
 if TYPE_CHECKING:
     from pathlib import Path
+
     from layers.orchestration.runners.metadata import RunnerMetadata
     from layers.seed.registry import SeedRegistryEntry
     from scrapers.base.run_config import RunConfig

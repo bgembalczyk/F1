@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 
 from scripts.check_single_wiki_hook_names import lint_path
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from pathlib import Path

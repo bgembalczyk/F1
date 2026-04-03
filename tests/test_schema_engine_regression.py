@@ -104,14 +104,13 @@ def _legacy_validate_schema(
     errors.extend(_legacy_custom_validator_errors(record, schema))
     return errors
 
+
 def _legacy_missing_required_errors(
     record: Mapping[str, Any],
     schema: RecordSchema,
 ) -> list[ValidationIssue]:
     return [
-        ValidationIssue.missing(key)
-        for key in schema.required
-        if key not in record
+        ValidationIssue.missing(key) for key in schema.required if key not in record
     ]
 
 

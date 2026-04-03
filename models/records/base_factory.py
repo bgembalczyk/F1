@@ -69,7 +69,7 @@ class BaseRecordFactory:
     ) -> None:
         self.normalize_fields(
             payload,
-            {name: self.normalizer.normalize_int for name in field_names},
+            dict.fromkeys(field_names, self.normalizer.normalize_int),
         )
 
     def normalize_float_fields(
@@ -79,7 +79,7 @@ class BaseRecordFactory:
     ) -> None:
         self.normalize_fields(
             payload,
-            {name: self.normalizer.normalize_float for name in field_names},
+            dict.fromkeys(field_names, self.normalizer.normalize_float),
         )
 
     def normalize_link_fields(
@@ -89,7 +89,7 @@ class BaseRecordFactory:
     ) -> None:
         self.normalize_fields(
             payload,
-            {name: self.normalizer.normalize_link for name in field_names},
+            dict.fromkeys(field_names, self.normalizer.normalize_link),
         )
 
     def normalize_link_list_fields(
@@ -99,7 +99,7 @@ class BaseRecordFactory:
     ) -> None:
         self.normalize_fields(
             payload,
-            {name: self.normalizer.normalize_link_list for name in field_names},
+            dict.fromkeys(field_names, self.normalizer.normalize_link_list),
         )
 
     def normalize_seasons_fields(

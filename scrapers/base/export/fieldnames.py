@@ -8,6 +8,7 @@ from scrapers.base.export.export_helpers import fieldnames_from_union
 
 if TYPE_CHECKING:
     from collections.abc import Callable
+
     from validation.validator_base import ExportRecord
 
 

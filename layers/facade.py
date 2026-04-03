@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-from dataclasses import dataclass
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
@@ -9,8 +7,9 @@ from typing import TYPE_CHECKING
 from typing import Literal
 
 if TYPE_CHECKING:
-    from pathlib import Path
     from collections.abc import Callable
+    from pathlib import Path
+
     from layers.orchestration.protocols import LayerExecutorProtocol
     from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
     from scrapers.base.run_config import RunConfig
@@ -56,7 +55,8 @@ class WikiPipelineFacade:
         if scenario == "full":
             self.run_full()
             return
-        raise ValueError(f"Unsupported wiki run scenario: {scenario!r}")
+        msg = f"Unsupported wiki run scenario: {scenario!r}"
+        raise ValueError(msg)
 
     def _build_run_config(self) -> RunConfig:
         return self.run_config_factory()

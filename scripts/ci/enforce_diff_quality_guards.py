@@ -172,9 +172,13 @@ def _extract_target_tuple(node: ast.stmt, symbol: str) -> ast.Tuple | None:
         if len(node.targets) != 1:
             return None
         target = node.targets[0]
-        if isinstance(target, ast.Name) and target.id == symbol and isinstance(
-            node.value,
-            ast.Tuple,
+        if (
+            isinstance(target, ast.Name)
+            and target.id == symbol
+            and isinstance(
+                node.value,
+                ast.Tuple,
+            )
         ):
             return node.value
         return None
@@ -250,8 +254,7 @@ def _check_registry_implementation_drift() -> list[Violation]:
             path="layers/orchestration/runner_registry.py",
             line=1,
             message=(
-                f"Seed '{seed}' jest w rejestrze, ale brak go "
-                "w explicit runner map."
+                f"Seed '{seed}' jest w rejestrze, ale brak go " "w explicit runner map."
             ),
         )
         for seed in missing_in_runners

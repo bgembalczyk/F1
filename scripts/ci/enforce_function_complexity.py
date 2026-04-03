@@ -54,7 +54,7 @@ class _ComplexityVisitor(ast.NodeVisitor):
 def _iter_functions(tree: ast.AST) -> list[ast.FunctionDef | ast.AsyncFunctionDef]:
     functions: list[ast.FunctionDef | ast.AsyncFunctionDef] = []
     for node in ast.walk(tree):
-        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+        if isinstance(node, ast.FunctionDef | ast.AsyncFunctionDef):
             functions.append(node)
     return functions
 
