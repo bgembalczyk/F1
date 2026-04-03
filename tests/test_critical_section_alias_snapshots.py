@@ -44,6 +44,6 @@ def test_critical_section_alias_snapshots_cover_all_target_domains() -> None:
             if match is not None:
                 matched += 1
 
-        assert matched >= 1, (
-            f"No critical alias resolved for domain={domain} fixture={fixture_name}"
-        )
+        assert (
+            matched >= 1
+        ), f"No critical alias resolved for domain={domain} fixture={fixture_name}"

@@ -43,13 +43,10 @@ class RequestExecutor:
                     timeout=timeout,
                 )
             except request_exception_cls as exc:
-                if (
-                    attempt >= self._retry_policy.max_retries
-                    or not self._should_retry(
-                        response=None,
-                        exception=exc,
-                        attempt=attempt,
-                    )
+                if attempt >= self._retry_policy.max_retries or not self._should_retry(
+                    response=None,
+                    exception=exc,
+                    attempt=attempt,
                 ):
                     raise
                 self._backoff_sleep(attempt)

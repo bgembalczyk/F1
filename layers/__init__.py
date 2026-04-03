@@ -28,6 +28,7 @@ def create_default_wiki_pipeline_facade(*args, **kwargs):
 
     return _factory(*args, **kwargs)
 
+
 __all__ = [
     "create_default_wiki_pipeline_application",
     "create_default_wiki_pipeline_facade",

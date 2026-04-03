@@ -27,9 +27,7 @@ def test_each_critical_section_has_non_empty_fallback_and_resolves_alias_fixture
     for domain, fixture_name in fixtures.items():
         soup = _fixture(fixture_name)
         for critical in DOMAIN_SECTION_RESOLVER_CONFIG[domain]:
-            assert critical.alternative_section_ids, (
-                f"Critical section without aliases: domain={domain} section={critical.section_id}"
-            )
+            assert critical.alternative_section_ids, f"Critical section without aliases: domain={domain} section={critical.section_id}"
 
             candidates = resolve_section_candidates(
                 domain=domain,
@@ -45,6 +43,6 @@ def test_each_critical_section_has_non_empty_fallback_and_resolves_alias_fixture
                 if match is not None:
                     break
 
-            assert match is not None, (
-                f"No resolver candidate matched for domain={domain} section={critical.section_id}"
-            )
+            assert (
+                match is not None
+            ), f"No resolver candidate matched for domain={domain} section={critical.section_id}"

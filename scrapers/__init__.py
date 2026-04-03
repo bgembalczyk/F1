@@ -11,6 +11,7 @@ def __getattr__(name: str):
     msg = f"module {__name__!r} has no attribute {name!r}"
     raise AttributeError(msg)
 
+
 from __future__ import annotations
 
 
