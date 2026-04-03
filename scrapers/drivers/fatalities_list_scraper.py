@@ -161,9 +161,3 @@ class F1FatalitiesListScraper(F1TableScraper):
         auto_value = AutoColumn().parse(ctx)
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

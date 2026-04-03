@@ -53,9 +53,3 @@ class F1SponsorshipLiveriesScraper(WikiScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._section_parser.parse_sections(soup)
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

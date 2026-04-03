@@ -28,9 +28,3 @@ class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
         detail_url_field_paths=("circuit.url",),
         record_postprocessor=CircuitService.normalize_record,
     )
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()
