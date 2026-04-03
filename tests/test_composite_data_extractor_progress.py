@@ -39,8 +39,8 @@ class _PassThroughProgress:
         self,
         iterable: Iterable[dict[str, Any]],
         *,
-        desc: str,
-        unit: str,
+        _desc: str,
+        _unit: str,
     ) -> Iterable[dict[str, Any]]:
         return iterable
 
