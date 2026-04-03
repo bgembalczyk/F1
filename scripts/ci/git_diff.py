@@ -17,7 +17,7 @@ class GitCommandResult:
 
 
 def _run_git_and_capture_stdout(args: list[str]) -> GitCommandResult:
-    proc = subprocess.run(  # noqa: S603  # nosec B603 -- zaufane wywołanie lokalnego `git`
+    proc = subprocess.run(  # nosec B603 -- zaufane wywołanie lokalnego `git`
         [GIT_BIN, *args],
         check=False,
         capture_output=True,
