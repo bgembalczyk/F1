@@ -1,0 +1,130 @@
+name: Main run data guard
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-main-and-check-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Run main.py and validate data folder immutability
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BEFORE_DIR="$(mktemp -d)"
+          RUN_LOG="$(mktemp)"
+
+          cp -a data/. "$BEFORE_DIR"/
+
+          echo "Uruchamiam main.py..."
+          if ! python main.py >"$RUN_LOG" 2>&1; then
+            echo "::error::main.py zakończył się błędem."
+            cat "$RUN_LOG"
+            exit 1
+          fi
+
+          echo "main.py zakończył się sukcesem. Sprawdzam zmiany w folderze data..."
+
+          BEFORE_DIR="$BEFORE_DIR" python - <<'PY'
+          import difflib
+          import filecmp
+          import os
+          import sys
+          from pathlib import Path
+
+          before_root = Path(os.environ["BEFORE_DIR"])
+          after_root = Path("data")
+
+          def collect_files(root: Path) -> set[str]:
+              files: set[str] = set()
+              for path in root.rglob("*"):
+                  if path.is_file():
+                      files.add(path.relative_to(root).as_posix())
+              return files
+
+          before_files = collect_files(before_root)
+          after_files = collect_files(after_root)
+
+          added = sorted(after_files - before_files)
+          removed = sorted(before_files - after_files)
+          common = sorted(before_files & after_files)
+          modified = [
+              rel
+              for rel in common
+              if not filecmp.cmp(before_root / rel, after_root / rel, shallow=False)
+          ]
+
+          changed = sorted(set(added + removed + modified))
+
+          if not changed:
+              print("✅ PASS: folder data nie zmienił się po uruchomieniu main.py.")
+              raise SystemExit(0)
+
+          print("❌ FAIL: wykryto zmiany w folderze data po uruchomieniu main.py.")
+          print("Lista plików ze zmianami:")
+          for rel in changed:
+              tag = (
+                  "[ADDED]"
+                  if rel in added
+                  else "[REMOVED]"
+                  if rel in removed
+                  else "[MODIFIED]"
+              )
+              print(f"- {tag} {rel}")
+
+          if len(changed) <= 5:
+              print("\nSzczegóły diff (<=5 plików):")
+
+              def read_lines(path: Path) -> list[str] | None:
+                  if not path.exists():
+                      return []
+                  try:
+                      return path.read_text(encoding="utf-8").splitlines(keepends=True)
+                  except UnicodeDecodeError:
+                      return None
+
+              for rel in changed:
+                  before_path = before_root / rel
+                  after_path = after_root / rel
+
+                  print(f"\n--- DIFF: {rel} ---")
+                  before_lines = read_lines(before_path)
+                  after_lines = read_lines(after_path)
+
+                  if before_lines is None or after_lines is None:
+                      print("(plik binarny lub nie-UTF-8, pomijam tekstowy diff)")
+                      continue
+
+                  diff = difflib.unified_diff(
+                      before_lines,
+                      after_lines,
+                      fromfile=f"before/{rel}",
+                      tofile=f"after/{rel}",
+                  )
+                  diff_output = "".join(diff)
+                  if diff_output:
+                      print(diff_output)
+                  else:
+                      print("(brak różnic tekstowych; możliwa zmiana metadanych)")
+
+          raise SystemExit(1)
+          PY
