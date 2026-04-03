@@ -18,9 +18,3 @@ class SprintQualifyingPointsScraper(BasePointsScraper):
         schema=build_sprint_qualifying_schema(),
         record_factory=RECORD_FACTORIES.mapping(),
     )
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

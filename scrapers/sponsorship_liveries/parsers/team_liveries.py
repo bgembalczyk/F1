@@ -94,4 +94,3 @@ class TeamLiveriesSectionParser(SectionParser):
             )
         except RuntimeError:
             return None
-

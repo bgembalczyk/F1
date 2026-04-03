@@ -30,9 +30,3 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
             options=append_transformer(options, transformer),
             config=config,
         )
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

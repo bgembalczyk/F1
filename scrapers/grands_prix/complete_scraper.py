@@ -26,9 +26,3 @@ class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
         detail_url_field_paths=("race_title.url",),
         record_assembly_strategy=ExtractDetailFieldStrategy(detail_field="by_year"),
     )
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

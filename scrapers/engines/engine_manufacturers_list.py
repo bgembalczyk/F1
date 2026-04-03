@@ -258,9 +258,3 @@ class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper
     url_key = "manufacturer_url"
     domain_name = "engines"
     record_type = "manufacturer"
-
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()
