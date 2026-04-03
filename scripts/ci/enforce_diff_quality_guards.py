@@ -3,9 +3,9 @@ from __future__ import annotations
 import argparse
 import ast
 import sys
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Sequence
 
 from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.git_diff import list_changed_files
@@ -33,14 +33,16 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
         description=(
             "Gate dla nowych zmian: printy, magic-string/defaults, jawnie uzasadnione "
             "except Exception oraz spójność registry konfiguracji z implementacją."
-        )
+        ),
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)
     return parser.parse_args(argv)
 
 
-def _iter_added_python_lines(added_lines_map: dict[str, set[int]]) -> list[tuple[str, int, str]]:
+def _iter_added_python_lines(
+    added_lines_map: dict[str, set[int]],
+) -> list[tuple[str, int, str]]:
     records: list[tuple[str, int, str]] = []
     for rel_path, line_numbers in sorted(added_lines_map.items()):
         if not rel_path.endswith(".py"):
@@ -65,12 +67,14 @@ def _check_new_prints(added_lines_map: dict[str, set[int]]) -> list[Violation]:
                     path=rel_path,
                     line=line_no,
                     message="Nowy print() jest zablokowany (użyj loggera).",
-                )
+                ),
             )
     return violations
 
 
-def _check_critical_defaults_duplication(added_lines_map: dict[str, set[int]]) -> list[Violation]:
+def _check_critical_defaults_duplication(
+    added_lines_map: dict[str, set[int]],
+) -> list[Violation]:
     violations: list[Violation] = []
     for rel_path, line_no, line in _iter_added_python_lines(added_lines_map):
         if (REPO_ROOT / rel_path).resolve() == CENTRAL_DEFAULTS_FILE.resolve():
@@ -86,7 +90,7 @@ def _check_critical_defaults_duplication(added_lines_map: dict[str, set[int]]) -
                             "Duplikacja krytycznego defaultu; użyj stałej z "
                             "scripts/ci/quality_gate_constants.py."
                         ),
-                    )
+                    ),
                 )
                 break
     return violations
@@ -137,7 +141,7 @@ def _check_broad_exceptions_with_justification(
                         "except Exception wymaga adnotacji 'justified-exception:' z "
                         "uzasadnieniem."
                     ),
-                )
+                ),
             )
 
     return violations
@@ -185,7 +189,10 @@ def _extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
                 continue
             keys: list[str] = []
             for key_node in stmt.value.keys:
-                if isinstance(key_node, ast.Constant) and isinstance(key_node.value, str):
+                if isinstance(key_node, ast.Constant) and isinstance(
+                    key_node.value,
+                    str,
+                ):
                     keys.append(key_node.value)
             return tuple(keys)
     return tuple()
@@ -193,10 +200,16 @@ def _extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
 
 def _check_registry_implementation_drift() -> list[Violation]:
     registry_order = set(
-        _extract_string_tuple_assignment(SEED_REGISTRY_FILE, "_LAYER_ONE_SEED_REGISTRY_ORDER")
+        _extract_string_tuple_assignment(
+            SEED_REGISTRY_FILE,
+            "_LAYER_ONE_SEED_REGISTRY_ORDER",
+        ),
     )
     explicit_runner_keys = set(
-        _extract_runner_map_keys(RUNNER_REGISTRY_FILE, "_build_explicit_layer_one_runner_map")
+        _extract_runner_map_keys(
+            RUNNER_REGISTRY_FILE,
+            "_build_explicit_layer_one_runner_map",
+        ),
     )
 
     if not registry_order or not explicit_runner_keys:
@@ -205,7 +218,7 @@ def _check_registry_implementation_drift() -> list[Violation]:
                 path="layers/seed/registry/constants.py",
                 line=1,
                 message="Nie udało się sparsować rejestrów do walidacji spójności.",
-            )
+            ),
         ]
 
     violations: list[Violation] = []
@@ -218,7 +231,7 @@ def _check_registry_implementation_drift() -> list[Violation]:
                 path="layers/orchestration/runner_registry.py",
                 line=1,
                 message=f"Seed '{seed}' jest w rejestrze, ale brak go w explicit runner map.",
-            )
+            ),
         )
     for seed in missing_in_registry:
         violations.append(
@@ -226,7 +239,7 @@ def _check_registry_implementation_drift() -> list[Violation]:
                 path="layers/seed/registry/constants.py",
                 line=1,
                 message=f"Seed '{seed}' jest w explicit runner map, ale brak go w seed registry.",
-            )
+            ),
         )
     return violations
 

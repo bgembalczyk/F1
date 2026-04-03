@@ -96,4 +96,3 @@ Dla diagnostyki można opcjonalnie włączyć `checkpoint dump` po każdym etapi
 (zapisywany jako `data/checkpoints/stage_<stage>_<domain>.json`) dla wskazanych
 domen. Nazwy etapów w logach, checkpointach i dokumentacji muszą być identyczne
 z sekwencją powyżej.
-

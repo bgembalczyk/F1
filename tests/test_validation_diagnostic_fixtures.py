@@ -1,6 +1,4 @@
-from tests.fixtures.validation_diagnostic_catalog import (
-    VALIDATION_DIAGNOSTIC_FIXTURES,
-)
+from tests.fixtures.validation_diagnostic_catalog import VALIDATION_DIAGNOSTIC_FIXTURES
 from validation.validator_base import RecordValidator
 
 

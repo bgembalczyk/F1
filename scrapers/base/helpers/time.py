@@ -13,7 +13,6 @@ from scrapers.base.helpers.constants import DATE_ISO_FULL_RE
 from scrapers.base.helpers.constants import DATE_ISO_MONTH_RE
 from scrapers.base.helpers.constants import DATE_ISO_YEAR_RE
 from scrapers.base.helpers.constants import DATE_RANGE_SPLIT
-from scrapers.base.helpers.constants import TIME_KEY_RE
 from scrapers.base.helpers.constants import TIME_SECONDS_RE
 from scrapers.base.helpers.constants import YEAR_RE
 from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime

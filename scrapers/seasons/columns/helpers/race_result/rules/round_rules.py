@@ -1,5 +1,6 @@
 from dataclasses import dataclass
-from typing import Any, Protocol
+from typing import Any
+from typing import Protocol
 
 from scrapers.seasons.columns.helpers.constants import DOUBLE_POINTS_SEASON_YEAR
 

@@ -8,7 +8,6 @@ from infrastructure.http_client.interfaces.http_response_protocol import (
 )
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 
-
 JsonScalar: TypeAlias = str | int | float | bool | None
 JsonValue: TypeAlias = JsonScalar | list["JsonValue"] | dict[str, "JsonValue"]
 

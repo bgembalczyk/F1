@@ -5,13 +5,9 @@ from dataclasses import dataclass
 from dataclasses import field
 from pathlib import Path
 
-from layers.path_resolver import PathResolver
 from layers.orchestration.types import CONSTRUCTOR_STATUS_ACTIVE
 from layers.orchestration.types import CONSTRUCTOR_STATUS_FORMER
-from layers.zero.record_merge_ops import merge_driver_dict_values as _merge_driver_dict_values_impl
-from layers.zero.record_merge_ops import merge_driver_values as _merge_driver_values_impl
-from layers.zero.record_merge_ops import merge_list_values as _merge_list_values_impl
-from layers.zero.record_merge_ops import merge_values as _merge_values_impl
+from layers.path_resolver import PathResolver
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
 from layers.zero.merge_types import LinkValue
@@ -19,7 +15,17 @@ from layers.zero.merge_types import RaceRecordModel
 from layers.zero.merge_types import SeasonRecordModel
 from layers.zero.merge_types import TeamRecordModel
 from layers.zero.merge_types import as_record_dict
-from layers.zero.source_routing import iter_mergeable_domain_dirs as _iter_mergeable_domain_dirs_impl
+from layers.zero.record_merge_ops import (
+    merge_driver_dict_values as _merge_driver_dict_values_impl,
+)
+from layers.zero.record_merge_ops import (
+    merge_driver_values as _merge_driver_values_impl,
+)
+from layers.zero.record_merge_ops import merge_list_values as _merge_list_values_impl
+from layers.zero.record_merge_ops import merge_values as _merge_values_impl
+from layers.zero.source_routing import (
+    iter_mergeable_domain_dirs as _iter_mergeable_domain_dirs_impl,
+)
 from layers.zero.source_routing import load_domain_records as _load_domain_records_impl
 from layers.zero.source_routing import (
     write_merged_domain_records as _write_merged_domain_records_impl,
@@ -31,14 +37,14 @@ from scrapers.wiki.constants import ENGINES_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import FORMULA_ONE_SERIES
 from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import RED_FLAG_FIELDS
-from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
-from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_ENGINES_SOURCE
 from scrapers.wiki.sources_registry import DRIVER_FATALITIES_SOURCE
 from scrapers.wiki.sources_registry import DRIVERS_SOURCE
 from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE
 from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_SOURCE
 from scrapers.wiki.sources_registry import FEMALE_DRIVERS_SOURCE
+from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
 from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_ENGINES_SOURCE
 from scrapers.wiki.sources_registry import PRIVATEER_TEAMS_SOURCE
 from scrapers.wiki.sources_registry import RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE
 from scrapers.wiki.sources_registry import RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE
@@ -366,7 +372,10 @@ def _transform_engines_domain(
 ) -> dict[str, object]:
     if domain != "engines":
         return transformed
-    if source_name == INDIANAPOLIS_ONLY_ENGINES_SOURCE or source_name == ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE:
+    if (
+        source_name == INDIANAPOLIS_ONLY_ENGINES_SOURCE
+        or source_name == ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE
+    ):
         transformed["racing_series"] = {
             "AAA_national_championship": [],
             "formula_one": {
@@ -731,7 +740,10 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
         _write_merged_domain_records(domain_dir, merged_records, resolver)
 
 
-def _iter_mergeable_domain_dirs(layer_zero_dir: Path, resolver: PathResolver) -> list[Path]:
+def _iter_mergeable_domain_dirs(
+    layer_zero_dir: Path,
+    resolver: PathResolver,
+) -> list[Path]:
     return _iter_mergeable_domain_dirs_impl(layer_zero_dir, resolver)
 
 
@@ -773,9 +785,7 @@ DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN: dict[str, tuple[DomainStep, ...]] = {
         DomainStep("nest_team_liveries", _nest_team_liveries),
         DomainStep("sort_teams_by_name", _sort_teams_by_name),
     ),
-    "seasons": (
-        DomainStep("sort_seasons_by_year", _sort_seasons_by_year),
-    ),
+    "seasons": (DomainStep("sort_seasons_by_year", _sort_seasons_by_year),),
 }
 
 for _constructor_domain in CHASSIS_CONSTRUCTOR_DOMAINS:

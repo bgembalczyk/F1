@@ -61,7 +61,7 @@ class WikiPipelineApplication:
 
     def run_merge_only(self) -> None:
         self._facade.run_merge_only()
-        
+
     def run_layer_zero(self, *, deterministic: bool = False) -> None:
         run_config = self._build_run_config(
             profile=("deterministic" if deterministic else "debug"),

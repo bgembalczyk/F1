@@ -85,6 +85,7 @@ def test_composite_record_validator_with_rules_returns_new_validator() -> None:
         ("extra", "count"),
     ]
 
+
 def test_common_rules_return_rule_objects_with_introspection() -> None:
     rules = build_common_rules(
         required=("name",),

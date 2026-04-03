@@ -2,8 +2,12 @@
 
 from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
     DoublePointsRoundRule,
+)
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
     HalfPointsRoundRule,
-    RoundRule,
+)
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import RoundRule
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
     RoundRuleContext,
 )
 

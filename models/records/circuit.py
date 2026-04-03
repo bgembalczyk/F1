@@ -47,4 +47,7 @@ CIRCUIT_SCHEMA = CIRCUIT_DEFINITION.to_schema()
 
 
 def validate_circuit_record(record: dict[str, object]) -> list[str]:
-    return [error.message for error in RecordValidator.validate_schema(record, CIRCUIT_SCHEMA)]
+    return [
+        error.message
+        for error in RecordValidator.validate_schema(record, CIRCUIT_SCHEMA)
+    ]

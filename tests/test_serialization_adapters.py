@@ -1,8 +1,8 @@
 import pytest
 
+from models.mappers.serialization import SerializableProtocol
 from models.mappers.serialization import clear_serializable_adapters
 from models.mappers.serialization import register_serializable_adapter
-from models.mappers.serialization import SerializableProtocol
 from models.mappers.serialization import to_dict
 
 

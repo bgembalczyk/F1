@@ -22,10 +22,12 @@ class _DemoCompositeExtractor(CompositeDataExtractor):
         return CompositeDataExtractorChildren(
             list_scraper=object(),
             single_scraper=_SingleScraperStub(),
-            records_adapter=IterableSourceAdapter(lambda: [
-                {"name": "A", "detail_url": "https://example.com/a"},
-                {"name": "B", "detail_url": "https://example.com/b"},
-            ]),
+            records_adapter=IterableSourceAdapter(
+                lambda: [
+                    {"name": "A", "detail_url": "https://example.com/a"},
+                    {"name": "B", "detail_url": "https://example.com/b"},
+                ],
+            ),
         )
 
     def get_detail_url(self, record: dict[str, Any]) -> str | None:
@@ -43,7 +45,9 @@ class _PassThroughProgress:
         return iterable
 
 
-def test_composite_extractor_returns_same_records_with_default_and_noop_progress() -> None:
+def test_composite_extractor_returns_same_records_with_default_and_noop_progress() -> (
+    None
+):
     options = ScraperOptions()
 
     default_progress_records = _DemoCompositeExtractor(options=options).fetch()
@@ -57,7 +61,10 @@ def test_composite_extractor_returns_same_records_with_default_and_noop_progress
 
 def test_composite_extractor_accepts_injected_progress_strategy() -> None:
     options = ScraperOptions()
-    extractor = _DemoCompositeExtractor(options=options, progress=_PassThroughProgress())
+    extractor = _DemoCompositeExtractor(
+        options=options,
+        progress=_PassThroughProgress(),
+    )
 
     records = extractor.fetch()
 

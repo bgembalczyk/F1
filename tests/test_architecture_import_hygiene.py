@@ -80,9 +80,7 @@ def test_architecture_tests_have_no_duplicate_import_statements() -> None:
             grouped[key].append(lineno)
 
         file_duplicates = [
-            (key, lines)
-            for key, lines in grouped.items()
-            if len(lines) > 1
+            (key, lines) for key, lines in grouped.items() if len(lines) > 1
         ]
         if file_duplicates:
             duplicates[str(test_file)] = sorted(file_duplicates)
@@ -99,4 +97,6 @@ def test_architecture_tests_do_not_reassign_imported_names() -> None:
         if reassignments:
             violations[str(test_file)] = reassignments
 
-    assert not violations, f"Reassigned imported names in architecture tests: {violations}"
+    assert (
+        not violations
+    ), f"Reassigned imported names in architecture tests: {violations}"

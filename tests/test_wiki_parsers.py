@@ -12,9 +12,9 @@ from scrapers.wiki.parsers.elements.figure import FigureParser
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.navbox import NavBoxParser
+from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
 from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
-from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.header import HeaderParser
@@ -48,6 +48,7 @@ def _with_overridden_element_parsers(**overrides) -> WikiElementParsers:
             defaults.references_wrap_parser,
         ),
     )
+
 
 # ---------------------------------------------------------------------------
 # WikiParser is abstract
@@ -311,17 +312,17 @@ def test_table_parser_uses_custom_html_table_parser() -> None:
             self.normalize_dashes = False
             self.was_used = False
 
-        def clean_cells(self, cells):  # noqa: ANN001
+        def clean_cells(self, cells):
             self.was_used = True
             return [cell.get_text(" ", strip=True) for cell in cells]
 
-        def has_multirow_header(self, first_cells, second_cells):  # noqa: ANN001
+        def has_multirow_header(self, first_cells, second_cells):
             return False
 
-        def is_footer_row(self, cells, cleaned_cells, headers):  # noqa: ANN001
+        def is_footer_row(self, cells, cleaned_cells, headers):
             return False
 
-        def expand_row_cells(self, cells, headers, pending_rowspans):  # noqa: ANN001
+        def expand_row_cells(self, cells, headers, pending_rowspans):
             return cells
 
     html = """
@@ -339,6 +340,8 @@ def test_table_parser_uses_custom_html_table_parser() -> None:
     assert stub_parser.was_used is True
     assert result["headers"] == ["Name", "Year"]
     assert result["rows"] == [["Hamilton", "2020"]]
+
+
 def test_table_parser_rowspan_cell_is_cleaned_after_expansion_regression() -> None:
     html = """
     <table class="wikitable">
@@ -390,7 +393,9 @@ def test_table_parser_colspan_cells_remain_cleaned_regression() -> None:
     result = parser.parse(soup.find("table"))
 
     assert result["rows"] == [["1953", "Winner", "Winner"]]
-    assert result["raw_rows"] == [{"Year": "1953", "Result": "Winner", "Notes": "Winner"}]
+    assert result["raw_rows"] == [
+        {"Year": "1953", "Result": "Winner", "Notes": "Winner"},
+    ]
 
 
 def test_navbox_parser():

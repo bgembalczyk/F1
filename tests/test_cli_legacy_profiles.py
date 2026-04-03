@@ -28,10 +28,15 @@ def test_legacy_alias_catalog_contains_supported_compat_aliases() -> None:
 
 
 def test_profile_resolver_contract_for_legacy_aliases() -> None:
-    assert PROFILE_RESOLVER.resolve_cli_profile("list_scraper") is RunProfileName.DEFAULT
-    assert PROFILE_RESOLVER.resolve_cli_profile(
-        "complete_extractor",
-    ) is RunProfileName.DEFAULT
+    assert (
+        PROFILE_RESOLVER.resolve_cli_profile("list_scraper") is RunProfileName.DEFAULT
+    )
+    assert (
+        PROFILE_RESOLVER.resolve_cli_profile(
+            "complete_extractor",
+        )
+        is RunProfileName.DEFAULT
+    )
 
 
 def test_profile_resolver_rejects_invalid_profile_names() -> None:

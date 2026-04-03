@@ -14,10 +14,10 @@ def test_build_layer_zero_run_config_factory_map_contains_parser_scopes() -> Non
         "points_shortened": {"export_scope": "shortened"},
         "points_sprint": {"export_scope": "sprint"},
         "grands_prix_red_flagged_world_championship": {
-            "export_scope": "world_championship"
+            "export_scope": "world_championship",
         },
         "grands_prix_red_flagged_non_championship": {
-            "export_scope": "non_championship"
+            "export_scope": "non_championship",
         },
     }
 

@@ -24,7 +24,7 @@ SCANNED_EXTENSIONS = {".py", ".md", ".yml", ".yaml"}
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Sprawdza spójność terminologiczną i wykrywa zabronione synonimy."
+        description="Sprawdza spójność terminologiczną i wykrywa zabronione synonimy.",
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)
@@ -52,7 +52,10 @@ def list_changed_files(base_sha: str, head_sha: str) -> list[Path]:
     return files
 
 
-def scan_text_forbidden_terms(text: str, rules: tuple[TerminologyRule, ...]) -> list[tuple[int, str, str]]:
+def scan_text_forbidden_terms(
+    text: str,
+    rules: tuple[TerminologyRule, ...],
+) -> list[tuple[int, str, str]]:
     issues: list[tuple[int, str, str]] = []
     for line_number, line in enumerate(text.splitlines(), start=1):
         for rule in rules:
@@ -70,10 +73,13 @@ def scan_files(files: list[Path], rules: tuple[TerminologyRule, ...]) -> list[st
         except UnicodeDecodeError:
             continue
 
-        for line_number, forbidden, canonical in scan_text_forbidden_terms(content, rules):
+        for line_number, forbidden, canonical in scan_text_forbidden_terms(
+            content,
+            rules,
+        ):
             errors.append(
                 f"{file_path}:{line_number}: znaleziono zabroniony termin '{forbidden}' "
-                f"(użyj canonical: '{canonical}')"
+                f"(użyj canonical: '{canonical}')",
             )
 
     return errors

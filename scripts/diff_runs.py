@@ -20,7 +20,9 @@ def _canonicalize(path: Path) -> str:
     if path.suffix == ".json":
         return _canonical_json(json.loads(_read_text(path)))
     if path.suffix == ".jsonl":
-        rows = [json.loads(line) for line in _read_text(path).splitlines() if line.strip()]
+        rows = [
+            json.loads(line) for line in _read_text(path).splitlines() if line.strip()
+        ]
         return _canonical_json(rows)
     return _read_text(path)
 
@@ -71,9 +73,15 @@ def diff_runs(left: Path, right: Path) -> int:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Diff artifacts from two pipeline runs.")
+    parser = argparse.ArgumentParser(
+        description="Diff artifacts from two pipeline runs.",
+    )
     parser.add_argument("left", type=Path, help="Left run artifact directory or file.")
-    parser.add_argument("right", type=Path, help="Right run artifact directory or file.")
+    parser.add_argument(
+        "right",
+        type=Path,
+        help="Right run artifact directory or file.",
+    )
     args = parser.parse_args()
     raise SystemExit(diff_runs(args.left, args.right))
 

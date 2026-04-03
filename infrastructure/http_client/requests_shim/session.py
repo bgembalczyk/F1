@@ -1,8 +1,8 @@
-from collections.abc import Mapping
-import ssl
 import socket
+import ssl
 import urllib.error
 import urllib.request
+from collections.abc import Mapping
 from urllib.parse import urlsplit
 
 from infrastructure.http_client.requests_shim.constants import ALLOWED_URL_SCHEMES
@@ -50,7 +50,12 @@ class Session:
                 body = resp.read()
                 status_code = resp.getcode() or 0
                 text = body.decode("utf-8", errors="replace")
-                return Response(url=url, status_code=status_code, headers=resp.headers, text=text)
+                return Response(
+                    url=url,
+                    status_code=status_code,
+                    headers=resp.headers,
+                    text=text,
+                )
         except urllib.error.HTTPError as exc:
             body = exc.read() or b""
             text = body.decode("utf-8", errors="replace")

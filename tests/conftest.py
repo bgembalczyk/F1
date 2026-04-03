@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from pathlib import Path
 import re
+from pathlib import Path
 
 import pytest
 
@@ -83,8 +83,8 @@ def _marker_for_path(path: str) -> str:
     """
 
     normalized = path.replace("\\", "/")
-    if '/tests/' in normalized:
-        normalized = normalized[normalized.index('/tests/') + 1 :]
+    if "/tests/" in normalized:
+        normalized = normalized[normalized.index("/tests/") + 1 :]
 
     if not normalized.startswith("tests/"):
         return "unit"
@@ -109,7 +109,10 @@ def _selected_profile_markers(markexpr: str) -> set[str]:
         return set()
     return {
         token.lower()
-        for token in re.findall(r"\b(unit|contract|architecture|integration)\b", markexpr)
+        for token in re.findall(
+            r"\b(unit|contract|architecture|integration)\b",
+            markexpr,
+        )
     }
 
 
@@ -130,9 +133,8 @@ def pytest_ignore_collect(
         return False
 
     normalized = str(collection_path).replace("\\", "/")
-    if (
-        {"unit", "contract", "architecture"}.issubset(selected_markers)
-        and any(pattern in normalized for pattern in FAST_PROFILE_EXCLUDE_PATTERNS)
+    if {"unit", "contract", "architecture"}.issubset(selected_markers) and any(
+        pattern in normalized for pattern in FAST_PROFILE_EXCLUDE_PATTERNS
     ):
         return True
 

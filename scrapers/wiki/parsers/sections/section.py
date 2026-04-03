@@ -1,5 +1,5 @@
-from scrapers.wiki.parsers.sections.base_nested_section import BaseNestedSectionParser
 from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
+from scrapers.wiki.parsers.sections.base_nested_section import BaseNestedSectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 
 

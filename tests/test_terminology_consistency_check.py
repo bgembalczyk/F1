@@ -23,5 +23,5 @@ def test_scan_files_reports_file_and_line(tmp_path: Path) -> None:
     errors = scan_files([target], rules)
 
     assert errors == [
-        f"{target}:1: znaleziono zabroniony termin 'grand_prixes' (użyj canonical: 'grands_prix')"
+        f"{target}:1: znaleziono zabroniony termin 'grand_prixes' (użyj canonical: 'grands_prix')",
     ]

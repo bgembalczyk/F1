@@ -53,13 +53,13 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
 
 ## Szybkie drzewko decyzyjne (Service vs Factory vs Runner vs Adapter)
 
-1. **Czy kod uruchamia cały pipeline/job?**  
+1. **Czy kod uruchamia cały pipeline/job?**
    -> użyj `Runner`.
-2. **Czy kod tworzy/konfiguruje obiekt(y) i zwraca je bez uruchamiania flow?**  
+2. **Czy kod tworzy/konfiguruje obiekt(y) i zwraca je bez uruchamiania flow?**
    -> użyj `Factory`.
-3. **Czy kod mapuje format/kontrakt A na B?**  
+3. **Czy kod mapuje format/kontrakt A na B?**
    -> użyj `Adapter`.
-4. **Czy kod realizuje regułę biznesową/use-case?**  
+4. **Czy kod realizuje regułę biznesową/use-case?**
    -> użyj `Service`.
 5. **Jeśli pasuje więcej niż jedna rola**: rozdziel moduł na mniejsze komponenty; nazwa modułu ma wskazywać dominującą odpowiedzialność.
 

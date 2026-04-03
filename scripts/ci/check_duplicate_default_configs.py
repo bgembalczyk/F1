@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import ast
 import json
-import sys
 from pathlib import Path
 
 REGISTRY_PATH = Path("layers/orchestration/runner_registry.py")
@@ -24,12 +23,22 @@ def _extract_static_kwargs_duplicates(tree: ast.AST) -> dict[str, list[str]]:
             continue
 
         for statement in node.body:
-            if not isinstance(statement, ast.Return) or not isinstance(statement.value, ast.Dict):
+            if not isinstance(statement, ast.Return) or not isinstance(
+                statement.value,
+                ast.Dict,
+            ):
                 continue
 
             seen: dict[str, str] = {}
-            for key_node, value_node in zip(statement.value.keys, statement.value.values):
-                if not isinstance(key_node, ast.Constant) or not isinstance(key_node.value, str):
+            for key_node, value_node in zip(
+                statement.value.keys,
+                statement.value.values,
+                strict=False,
+            ):
+                if not isinstance(key_node, ast.Constant) or not isinstance(
+                    key_node.value,
+                    str,
+                ):
                     continue
                 if not isinstance(value_node, ast.Call):
                     continue
@@ -47,7 +56,11 @@ def _extract_static_kwargs_duplicates(tree: ast.AST) -> dict[str, list[str]]:
                 if kwargs_value is None:
                     continue
 
-                fingerprint = json.dumps(kwargs_value, sort_keys=True, ensure_ascii=True)
+                fingerprint = json.dumps(
+                    kwargs_value,
+                    sort_keys=True,
+                    ensure_ascii=True,
+                )
                 existing = seen.get(fingerprint)
                 if existing is None:
                     seen[fingerprint] = key_node.value

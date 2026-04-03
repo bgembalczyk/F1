@@ -35,11 +35,7 @@ def build_default_rules(project_root: Path) -> tuple[TypoRule, ...]:
         ),
         TypoRule(
             target_packages=(
-                project_root
-                / "scrapers"
-                / "base"
-                / "orchestration"
-                / "components",
+                project_root / "scrapers" / "base" / "orchestration" / "components",
             ),
             expected_module_name="section_source_adapter.py",
             disallowed_typo_name="section_soruce_adapter.py",

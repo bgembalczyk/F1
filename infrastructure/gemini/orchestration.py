@@ -1,4 +1,5 @@
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.model_selector import ModelSelector

@@ -14,7 +14,7 @@ def _load_architecture_rules() -> Any:
     if str(repo_root) not in sys.path:
         sys.path.insert(0, str(repo_root))
 
-    from tests.architecture import rules  # noqa: PLC0415
+    from tests.architecture import rules
 
     return rules
 

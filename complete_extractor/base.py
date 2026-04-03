@@ -1,6 +1,7 @@
 from typing import Any
 
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
+from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.composite_scraper import ListScraperProtocol
@@ -13,7 +14,6 @@ from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
-from infrastructure.http_client.requests_shim.request_error import RequestError
 
 
 class CompleteExtractorBase(CompositeDataExtractor):

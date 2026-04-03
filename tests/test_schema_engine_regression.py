@@ -69,7 +69,9 @@ def _legacy_validate_nested_value(
             return errors
         for index, item in enumerate(value):
             if not isinstance(item, Mapping):
-                errors.append(ValidationIssue.custom(f"{key}[{index}] must be a mapping"))
+                errors.append(
+                    ValidationIssue.custom(f"{key}[{index}] must be a mapping"),
+                )
                 continue
             errors.extend(
                 _legacy_prefix_errors(
@@ -110,9 +112,13 @@ def _legacy_validate_schema(
             continue
         if isinstance(value, expected_types):
             continue
-        expected = expected_types if isinstance(expected_types, tuple) else (expected_types,)
+        expected = (
+            expected_types if isinstance(expected_types, tuple) else (expected_types,)
+        )
         expected_names = ", ".join(value_type.__name__ for value_type in expected)
-        errors.append(ValidationIssue.type_error(key, expected_names, type(value).__name__))
+        errors.append(
+            ValidationIssue.type_error(key, expected_names, type(value).__name__),
+        )
 
     for key, nested_schema in schema.nested.items():
         if key not in record:

@@ -1,9 +1,9 @@
 import logging
 import re
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
-from typing import Callable
 from typing import Optional
 
 from models.services import parse_seasons

@@ -49,6 +49,9 @@ def test_registry_required_layers_are_valid_and_scoped_to_entrypoints() -> None:
 
     assert set(ARCHITECTURE_REGISTRY.required_layers_by_domain) == entrypoint_domains
 
-    for domain, required_layers in ARCHITECTURE_REGISTRY.required_layers_by_domain.items():
+    for (
+        domain,
+        required_layers,
+    ) in ARCHITECTURE_REGISTRY.required_layers_by_domain.items():
         assert required_layers, f"Entrypoint domain without required layers: {domain}"
         assert set(required_layers) <= layers

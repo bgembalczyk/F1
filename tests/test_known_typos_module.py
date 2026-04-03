@@ -1,6 +1,9 @@
 from pathlib import Path
 
-from scripts.lib.known_typos import TypoRule, run_known_typos_check, scan_typo_imports, validate_target_packages
+from scripts.lib.known_typos import TypoRule
+from scripts.lib.known_typos import run_known_typos_check
+from scripts.lib.known_typos import scan_typo_imports
+from scripts.lib.known_typos import validate_target_packages
 
 
 def test_validate_target_packages_reports_missing_expected_module(tmp_path: Path):

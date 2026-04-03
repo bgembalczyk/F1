@@ -26,7 +26,7 @@ def parse_forbidden_term_map(glossary_path: Path) -> dict[str, str]:
 
         if "->" not in line:
             continue
-        forbidden, canonical = [item.strip() for item in line.split("->", 1)]
+        forbidden, canonical = (item.strip() for item in line.split("->", 1))
         if forbidden and canonical:
             mapping[forbidden] = canonical
 

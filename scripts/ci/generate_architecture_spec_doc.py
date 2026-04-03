@@ -15,13 +15,27 @@ DEFAULT_OUTPUT = Path("docs/architecture/ARCHITECTURE_SPEC.md")
 
 
 def _render_layout_section() -> str:
-    lines: list[str] = ["## layout", "", "### Domains", "", "| Domain | Entrypoint | Layers |", "|---|---|---|"]
+    lines: list[str] = [
+        "## layout",
+        "",
+        "### Domains",
+        "",
+        "| Domain | Entrypoint | Layers |",
+        "|---|---|---|",
+    ]
     for domain in ARCHITECTURE_SPEC.domains:
         entrypoint = "yes" if domain.has_entrypoint else "no"
         layers = ", ".join(domain.required_layers) if domain.required_layers else "-"
         lines.append(f"| `{domain.name}` | {entrypoint} | {layers} |")
 
-    lines.extend(["", "### Shared layers", "", ", ".join(f"`{layer}`" for layer in ARCHITECTURE_SPEC.layers)])
+    lines.extend(
+        [
+            "",
+            "### Shared layers",
+            "",
+            ", ".join(f"`{layer}`" for layer in ARCHITECTURE_SPEC.layers),
+        ],
+    )
     return "\n".join(lines)
 
 
@@ -42,11 +56,26 @@ def _render_rules_section() -> str:
 
 
 def _render_deprecation_map_section() -> str:
-    lines: list[str] = ["## deprecation map", "", "### Lifecycle", "", "| Stage | Description |", "|---|---|"]
+    lines: list[str] = [
+        "## deprecation map",
+        "",
+        "### Lifecycle",
+        "",
+        "| Stage | Description |",
+        "|---|---|",
+    ]
     for stage in ARCHITECTURE_SPEC.legacy_lifecycle:
         lines.append(f"| `{stage.stage}` | {stage.description} |")
 
-    lines.extend(["", "### Legacy module migration", "", "| Old module/command | New module/command | Notes |", "|---|---|---|"])
+    lines.extend(
+        [
+            "",
+            "### Legacy module migration",
+            "",
+            "| Old module/command | New module/command | Notes |",
+            "|---|---|---|",
+        ],
+    )
     for mapping in ARCHITECTURE_SPEC.legacy_module_mappings:
         notes = mapping.notes or "-"
         lines.append(f"| `{mapping.old_module}` | `{mapping.new_module}` | {notes} |")
@@ -71,18 +100,22 @@ def render_markdown() -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate architecture spec markdown from code spec.")
+    parser = argparse.ArgumentParser(
+        description="Generate architecture spec markdown from code spec.",
+    )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
 
     rendered = render_markdown()
     if args.check:
-        existing = args.output.read_text(encoding="utf-8") if args.output.exists() else ""
+        existing = (
+            args.output.read_text(encoding="utf-8") if args.output.exists() else ""
+        )
         if existing != rendered:
             print(
                 f"Architecture spec doc is out of date: {args.output}. "
-                "Run scripts/ci/generate_architecture_spec_doc.py to regenerate."
+                "Run scripts/ci/generate_architecture_spec_doc.py to regenerate.",
             )
             return 1
         print(f"Architecture spec doc is up to date: {args.output}")

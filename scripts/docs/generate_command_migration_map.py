@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
-import sys
 from pathlib import Path
 
 _BOOTSTRAP_PATH = Path(__file__).resolve().parents[1] / "lib" / "bootstrap.py"
@@ -16,7 +15,6 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
-from scrapers.cli import MODULE_DEFINITIONS
 
 DOC_PATH = Path("docs/MODULE_BOUNDARIES.md")
 BEGIN_MARKER = "<!-- BEGIN AUTO-GENERATED: command-migration-map -->"
@@ -35,7 +33,9 @@ def build_generated_section() -> str:
     lines: list[str] = []
     lines.append("### 7.2 Canonical command map (CLI/API)")
     lines.append("")
-    lines.append("Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrapperów.")
+    lines.append(
+        "Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrapperów.",
+    )
     lines.append("")
     lines.append("W praktyce oznacza to migrację:")
     lines.append("- z `python -m scrapers.<domain>.list_scraper`")
@@ -62,7 +62,7 @@ def _replace_between_markers(document: str, generated: str) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Generuje sekcję mapy migracji komend do docs/MODULE_BOUNDARIES.md"
+        description="Generuje sekcję mapy migracji komend do docs/MODULE_BOUNDARIES.md",
     )
     parser.add_argument(
         "--check",

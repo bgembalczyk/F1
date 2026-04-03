@@ -9,6 +9,7 @@ JsonValue: TypeAlias = JsonScalar | list["JsonValue"] | dict[str, "JsonValue"]
 MetadataMap: TypeAlias = Mapping[str, object]
 PipelineRecord: TypeAlias = dict[str, JsonValue]
 
+
 @runtime_checkable
 class ExportableRecord(Protocol):
     def __getitem__(self, key: str) -> JsonValue: ...

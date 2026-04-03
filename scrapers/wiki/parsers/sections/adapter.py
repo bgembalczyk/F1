@@ -14,7 +14,6 @@ if TYPE_CHECKING:
     from collections.abc import Iterable
 
 
-
 def _expand_targets(
     target: str,
     aliases: Iterable[str],
@@ -101,7 +100,10 @@ def _find_match(
 
     for section in _iter_sections(sections):
         section_name = str(section.get("name", ""))
-        section_id = str(section.get("section_id") or normalize_section_text(section_name).replace(" ", "_"))
+        section_id = str(
+            section.get("section_id")
+            or normalize_section_text(section_name).replace(" ", "_"),
+        )
         if section_id in target_ids:
             return SectionTreeMatch(
                 section=section,

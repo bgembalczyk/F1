@@ -3,18 +3,18 @@ from pathlib import Path
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
+from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.types import SeedName
 from layers.path_resolver import format_domain_year_name
-from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.seed.registry import ListJobRegistryEntry
-from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
+from layers.zero.run_profile_paths import layer_zero_raw_paths
+from scrapers.base.errors import normalize_pipeline_error
+from scrapers.base.logging import RunTraceWriter
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
-from scrapers.base.logging import RunTraceWriter
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
-from scrapers.base.errors import normalize_pipeline_error
 
 
 class LayerZeroExecutor:
@@ -121,7 +121,10 @@ class LayerZeroExecutor:
                 summary["fail"].append(job.seed_name)
                 raise normalized_error from exc
 
-            self._logger.info("layer0 job finished", extra=context | {"status": "success"})
+            self._logger.info(
+                "layer0 job finished",
+                extra=context | {"status": "success"},
+            )
             trace_writer.write(
                 event=context | {"status": "success", "message": "layer0 job finished"},
             )
@@ -154,7 +157,9 @@ class LayerZeroExecutor:
             },
         )
 
-    def _resolve_config_factory(self) -> dict[SeedName, LayerZeroRunConfigFactoryProtocol]:
+    def _resolve_config_factory(
+        self,
+    ) -> dict[SeedName, LayerZeroRunConfigFactoryProtocol]:
         return self._config_factories()
 
     def _build_local_run_config(
@@ -164,7 +169,10 @@ class LayerZeroExecutor:
         job: ListJobRegistryEntry,
         config_factories: dict[SeedName, LayerZeroRunConfigFactoryProtocol],
     ) -> RunConfig:
-        config_factory = config_factories.get(job.seed_name, self._default_config_factory)
+        config_factory = config_factories.get(
+            job.seed_name,
+            self._default_config_factory,
+        )
         scraper_kwargs = config_factory.create_scraper_kwargs(job)
         return RunConfig(
             output_dir=run_config.output_dir,
@@ -238,8 +246,17 @@ class LayerZeroExecutor:
             )
         return self._list_job_registry
 
-    def _build_trace_writer(self, *, run_config: RunConfig, run_id: str) -> RunTraceWriter:
-        debug_root = Path(run_config.debug_dir) if run_config.debug_dir else Path(run_config.output_dir)
+    def _build_trace_writer(
+        self,
+        *,
+        run_config: RunConfig,
+        run_id: str,
+    ) -> RunTraceWriter:
+        debug_root = (
+            Path(run_config.debug_dir)
+            if run_config.debug_dir
+            else Path(run_config.output_dir)
+        )
         trace_path = debug_root / "traces" / f"layer0_{run_id}.jsonl"
         timestamp_provider = (
             (lambda: run_config.fixed_timestamp)

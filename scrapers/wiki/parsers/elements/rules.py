@@ -7,6 +7,7 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
     from bs4 import Tag
+
     from scrapers.wiki.parsers.types import WikiParserData
 
 

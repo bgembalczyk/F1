@@ -1,4 +1,3 @@
-from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.source_adapter import SourceAdapter
 

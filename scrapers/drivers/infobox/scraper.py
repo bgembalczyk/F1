@@ -11,8 +11,8 @@ from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.parsers.providers import (
     DefaultDriverInfoboxParserProvider,
-    DriverInfoboxParserProvider,
 )
+from scrapers.drivers.infobox.parsers.providers import DriverInfoboxParserProvider
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 

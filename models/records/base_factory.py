@@ -20,8 +20,7 @@ class RecordFactoryProtocol(Protocol):
 
     record_type: str
 
-    def build(self, record: Mapping[str, Any]) -> Any:
-        ...
+    def build(self, record: Mapping[str, Any]) -> Any: ...
 
 
 class FactorySpec(TypedDict, total=False):

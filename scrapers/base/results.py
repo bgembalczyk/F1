@@ -1,12 +1,12 @@
 from __future__ import annotations
 
+import typing
 from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
-import typing
 
 from scrapers.base.export.service import ExportService
 from scrapers.base.normalization import NormalizationRule
@@ -23,8 +23,6 @@ def _default_export_service() -> ExportService:
     return create_default_export_service()
 
 
-
-
 @dataclass(frozen=True)
 class ScrapeResult:
     data: list[ExportRecord]
@@ -37,7 +35,7 @@ class ScrapeResult:
         *,
         normalize_keys: bool,
         normalization_rules: Sequence[NormalizationRule] | None,
-    ) -> "ScrapeResult":
+    ) -> ScrapeResult:
         normalizer = RecordNormalizer(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
@@ -58,7 +56,7 @@ class ScrapeResult:
         self,
         path: str | Path,
         *,
-        exporter: "ExporterProtocol | None" = None,
+        exporter: ExporterProtocol | None = None,
         indent: int = 2,
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
@@ -80,7 +78,7 @@ class ScrapeResult:
         self,
         path: str | Path,
         *,
-        exporter: "ExporterProtocol | None" = None,
+        exporter: ExporterProtocol | None = None,
         fieldnames: Sequence[str] | None = None,
         fieldnames_strategy: str = "union",
         normalize_keys: bool = False,

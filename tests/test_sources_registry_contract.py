@@ -8,7 +8,9 @@ from scrapers.wiki.sources_registry import resolve_seed_name
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
 
-def test_sources_registry_consistency_validation_passes_for_canonical_registry() -> None:
+def test_sources_registry_consistency_validation_passes_for_canonical_registry() -> (
+    None
+):
     validate_sources_registry_consistency()
 
 
@@ -26,7 +28,9 @@ def test_get_source_by_source_name_resolves_canonical_entries() -> None:
     assert source.seed_name == "points_sprint"
 
 
-def test_legacy_seed_alias_logs_and_emits_deprecation_warning(caplog: pytest.LogCaptureFixture) -> None:
+def test_legacy_seed_alias_logs_and_emits_deprecation_warning(
+    caplog: pytest.LogCaptureFixture,
+) -> None:
     with warnings.catch_warnings(record=True) as caught:
         warnings.simplefilter("always", DeprecationWarning)
         resolved = resolve_seed_name("constructors", warn=True)

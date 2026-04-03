@@ -17,9 +17,7 @@ class WikiTableBaseParser(ABC):
 
         column_map = self.map_columns(headers)
         normalized_rows = self._normalized_rows(table_data)
-        mapped_rows = [
-            self._map_row(row, column_map) for row in normalized_rows
-        ]
+        mapped_rows = [self._map_row(row, column_map) for row in normalized_rows]
 
         return {
             "table_type": self.table_type,

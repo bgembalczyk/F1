@@ -2,15 +2,17 @@ from __future__ import annotations
 
 import csv
 import json
+from collections.abc import Callable
 from dataclasses import asdict
-from datetime import timezone
 from datetime import datetime
+from datetime import timezone
 from pathlib import Path
 from time import perf_counter
 from typing import Any
-from typing import Callable
 
-from scrapers.base.orchestration.components.section_source_adapter import SectionSourceAdapter
+from scrapers.base.orchestration.components.section_source_adapter import (
+    SectionSourceAdapter,
+)
 from scrapers.base.orchestration.lifecycle import STAGE_EXPORT
 from scrapers.base.orchestration.lifecycle import STAGE_INGEST
 from scrapers.base.orchestration.lifecycle import STAGE_MERGE
@@ -116,7 +118,9 @@ class SeedSectionOrchestrationFlow:
         )
         self._dumper.dump(ingest_payload)
 
-        normalized = [self._normalize_seed_row(domain, row) for row in ingest_payload.records]
+        normalized = [
+            self._normalize_seed_row(domain, row) for row in ingest_payload.records
+        ]
         normalize_payload = StageEnvelope(
             domain=domain,
             stage=STAGE_NORMALIZE,
@@ -182,7 +186,9 @@ class SeedSectionOrchestrationFlow:
         normalize_payload = StageEnvelope(
             domain=domain,
             stage=STAGE_NORMALIZE,
-            records=[self._normalize_seed_row(domain, row) for row in ingest_payload.records],
+            records=[
+                self._normalize_seed_row(domain, row) for row in ingest_payload.records
+            ],
             metadata=ingest_payload.metadata,
         )
         self._dumper.dump(normalize_payload)
@@ -196,7 +202,10 @@ class SeedSectionOrchestrationFlow:
         self._dumper.dump(merge_payload)
 
         layer1_records = [
-            {"url": str(record.get("url", "")), "details": fetcher(str(record.get("url", "")))}
+            {
+                "url": str(record.get("url", "")),
+                "details": fetcher(str(record.get("url", ""))),
+            }
             for record in merge_payload.records
             if record.get("url")
         ]
@@ -258,14 +267,21 @@ class SeedSectionOrchestrationFlow:
             },
             "records": records,
         }
-        path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
         return path
 
     def _write_audit(self, entries: list[AuditEntry]) -> Path:
         self._checkpoints_dir.mkdir(parents=True, exist_ok=True)
         audit_json = self._checkpoints_dir / "step_audit.json"
         audit_json.write_text(
-            json.dumps([asdict(entry) for entry in entries], ensure_ascii=False, indent=2),
+            json.dumps(
+                [asdict(entry) for entry in entries],
+                ensure_ascii=False,
+                indent=2,
+            ),
             encoding="utf-8",
         )
 

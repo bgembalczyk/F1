@@ -18,10 +18,8 @@ from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxP
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
 from scrapers.wiki.scraper import WikiScraper
-from tests.support.refactored_base_classes_utils import (
-    assert_issubclass_cases,
-    assert_not_issubclass_cases,
-)
+from tests.support.refactored_base_classes_utils import assert_issubclass_cases
+from tests.support.refactored_base_classes_utils import assert_not_issubclass_cases
 
 
 @pytest.mark.parametrize(

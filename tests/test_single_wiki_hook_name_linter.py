@@ -5,10 +5,8 @@ from pathlib import Path
 import pytest
 
 from scripts.check_single_wiki_hook_names import lint_path
-from tests.support.single_wiki_hook_linter_helpers import (
-    build_scraper_source,
-    write_and_lint,
-)
+from tests.support.single_wiki_hook_linter_helpers import build_scraper_source
+from tests.support.single_wiki_hook_linter_helpers import write_and_lint
 
 
 def test_linter_accepts_standard_hooks(tmp_path: Path) -> None:
@@ -22,7 +20,10 @@ def test_linter_accepts_standard_hooks(tmp_path: Path) -> None:
         ],
     )
 
-    assert write_and_lint(tmp_path=tmp_path, source=source, filename="good_scraper.py") == []
+    assert (
+        write_and_lint(tmp_path=tmp_path, source=source, filename="good_scraper.py")
+        == []
+    )
 
 
 def test_linter_rejects_non_standard_alias() -> None:
@@ -70,8 +71,11 @@ def test_linter_allows_alias_with_justification(tmp_path: Path) -> None:
         header_comments=["# hook-name-allow: migration compatibility"],
     )
 
-    assert write_and_lint(
-        tmp_path=tmp_path,
-        source=source,
-        filename="allowed_alias_scraper.py",
-    ) == []
+    assert (
+        write_and_lint(
+            tmp_path=tmp_path,
+            source=source,
+            filename="allowed_alias_scraper.py",
+        )
+        == []
+    )

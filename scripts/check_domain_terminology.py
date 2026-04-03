@@ -4,9 +4,9 @@
 from __future__ import annotations
 
 import importlib.util
-from pathlib import Path
 import re
 import sys
+from pathlib import Path
 
 _BOOTSTRAP_PATH = Path(__file__).resolve().parent / "lib" / "bootstrap.py"
 _BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
@@ -31,9 +31,7 @@ SOURCE_DIRS: tuple[str, ...] = (
     "complete_extractor",
 )
 
-EXCLUDE_PATH_PARTS: tuple[str, ...] = (
-    "__pycache__",
-)
+EXCLUDE_PATH_PARTS: tuple[str, ...] = ("__pycache__",)
 
 ALLOWED_FORBIDDEN_USAGE_PATHS: set[Path] = {
     Path("models/mappers/field_aliases.py"),

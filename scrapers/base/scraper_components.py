@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 import json
+from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import TypeVar
@@ -329,7 +329,10 @@ class PipelineOrchestrator:
                 self._logger.debug("Scrape run %s: start download", run_id)
                 html = download_html()
                 self._logger.debug("Scrape run %s: finish download", run_id)
-                self._quality_report_service.write_step(step_name="download", records=[])
+                self._quality_report_service.write_step(
+                    step_name="download",
+                    records=[],
+                )
                 return html
             except ScraperError as error:
                 return self._error_policy.handle_exception(error, error)

@@ -2,11 +2,8 @@ from __future__ import annotations
 
 import argparse
 import re
-from pathlib import PurePosixPath
-import subprocess
 
 from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
-
 from scripts.ci.git_diff import collect_commit_messages
 from scripts.ci.git_diff import get_unified_diff
 from scripts.ci.git_diff import list_changed_files
@@ -24,7 +21,7 @@ def parse_args() -> argparse.Namespace:
         description=(
             "Wymaga referencji ADR-XXXX, gdy PR/commit zmienia ścieżki "
             "architektoniczne i zmiana nie jest wyłącznie kosmetyczna."
-        )
+        ),
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)
@@ -76,7 +73,11 @@ def main() -> int:
         print("Brak zmian w ścieżkach architektonicznych; gate ADR pominięty.")
         return 0
 
-    has_non_cosmetic = has_non_cosmetic_changes(args.base_sha, args.head_sha, architecture_files)
+    has_non_cosmetic = has_non_cosmetic_changes(
+        args.base_sha,
+        args.head_sha,
+        architecture_files,
+    )
 
     if not DEFAULT_ADR_ENFORCEMENT_POLICY.should_require_adr_for_architecture_diff(
         has_architecture_changes=bool(architecture_files),
@@ -84,7 +85,7 @@ def main() -> int:
     ):
         print(
             "Wykryto wyłącznie zmiany kosmetyczne (formatowanie/komentarze) "
-            "w ścieżkach architektonicznych; gate ADR pominięty."
+            "w ścieżkach architektonicznych; gate ADR pominięty.",
         )
         return 0
 
@@ -93,14 +94,16 @@ def main() -> int:
             args.pr_title,
             args.pr_body,
             collect_commit_messages(args.base_sha, args.head_sha),
-        ]
+        ],
     )
 
     if DEFAULT_ADR_ENFORCEMENT_POLICY.has_adr_reference(combined_text):
         print("Referencja ADR-XXXX znaleziona. Gate ADR zaliczony.")
         return 0
 
-    print("::error::Zmiany architektoniczne wymagają referencji ADR-XXXX w PR lub commit message.")
+    print(
+        "::error::Zmiany architektoniczne wymagają referencji ADR-XXXX w PR lub commit message.",
+    )
     print(f"::error::Dotknięte ścieżki: {', '.join(architecture_files)}")
     return 1
 

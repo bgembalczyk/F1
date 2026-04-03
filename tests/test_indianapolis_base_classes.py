@@ -9,11 +9,11 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
+from tests.support.refactored_base_classes_utils import INDIANAPOLIS_CONSTRUCTORS_URL
 from tests.support.refactored_base_classes_utils import (
-    INDIANAPOLIS_CONSTRUCTORS_URL,
     INDIANAPOLIS_ENGINE_MANUFACTURERS_URL,
-    assert_issubclass_cases,
 )
+from tests.support.refactored_base_classes_utils import assert_issubclass_cases
 
 
 @pytest.mark.parametrize(

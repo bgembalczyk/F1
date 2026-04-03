@@ -5,7 +5,10 @@ from pathlib import Path
 from scripts.ci import enforce_diff_quality_guards as guards
 
 
-def test_broad_exception_requires_justification_annotation(tmp_path: Path, monkeypatch) -> None:
+def test_broad_exception_requires_justification_annotation(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
     test_file = tmp_path / "sample.py"
     test_file.write_text(
         "try:\n    pass\nexcept Exception:\n    pass\n",

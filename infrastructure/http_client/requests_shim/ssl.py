@@ -1,5 +1,5 @@
-from collections.abc import Callable
 import ssl
+from collections.abc import Callable
 
 import certifi
 

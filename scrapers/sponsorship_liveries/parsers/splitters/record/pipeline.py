@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from typing import TYPE_CHECKING
 from typing import Any
-from typing import Mapping
 
 from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import (
     PipelineRecord,
@@ -30,6 +30,8 @@ class RecordSplitPipeline:
         for strategy in self._strategies:
             next_records: list[PipelineRecord] = []
             for candidate in records:
-                next_records.extend(strategy.apply(PipelineRecord.from_input(candidate)))
+                next_records.extend(
+                    strategy.apply(PipelineRecord.from_input(candidate)),
+                )
             records = next_records
         return records

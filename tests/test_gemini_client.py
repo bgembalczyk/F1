@@ -224,7 +224,9 @@ def test_query_falls_back_to_next_model_on_non_runtime_error(tmp_path) -> None:
     assert call_log == ["model-a", "model-b"]
 
 
-def test_query_after_fallback_returns_to_primary_model_for_next_prompt(tmp_path) -> None:
+def test_query_after_fallback_returns_to_primary_model_for_next_prompt(
+    tmp_path,
+) -> None:
     """Fallback is per prompt: next prompt starts again from the first model."""
     cache = GeminiCache(cache_dir=tmp_path / "c")
     models = [

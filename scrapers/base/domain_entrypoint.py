@@ -218,7 +218,11 @@ def build_run_list_scraper_for_domain(domain: str) -> Callable[..., None]:
     return run_list_scraper
 
 
-def install_domain_entrypoint(module_globals: dict[str, object], *, domain: str) -> None:
+def install_domain_entrypoint(
+    module_globals: dict[str, object],
+    *,
+    domain: str,
+) -> None:
     """Install standard domain-entrypoint shims into ``module_globals``."""
     module_globals["run_list_scraper"] = build_run_list_scraper_for_domain(domain)
     module_globals["__getattr__"] = build_entrypoint_alias_getattr_for_domain(domain)

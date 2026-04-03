@@ -3,16 +3,13 @@ from typing import Any
 from typing import Protocol
 from typing import runtime_checkable
 
-from scrapers.base.data_extractor import BaseDataExtractor
-from scrapers.base.progress import ProgressAdapter
-from scrapers.base.progress import TqdmProgressAdapter
-from tqdm import tqdm
-
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
+from scrapers.base.progress import ProgressAdapter
+from scrapers.base.progress import TqdmProgressAdapter
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 

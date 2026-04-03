@@ -28,8 +28,12 @@ from scrapers.seasons.columns.helpers.race_result.rules.mark_based_eligibility i
 from scrapers.seasons.columns.helpers.race_result.rules.protocol import ResultRule
 from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
     DoublePointsRoundRule,
+)
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
     HalfPointsRoundRule,
-    RoundRule,
+)
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import RoundRule
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
     RoundRuleContext,
 )
 from scrapers.seasons.columns.helpers.race_result.rules.shared import SharedDriveRule

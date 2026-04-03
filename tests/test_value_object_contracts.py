@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import ClassVar
 from typing import Any
+from typing import ClassVar
 
 import pytest
 
@@ -62,7 +62,7 @@ def test_from_dict_delegates_to_from_mapping() -> None:
         called: ClassVar[bool] = False
 
         @classmethod
-        def from_mapping(cls, data: Mapping[str, Any]) -> "ProbeValueObject":
+        def from_mapping(cls, data: Mapping[str, Any]) -> ProbeValueObject:
             cls.called = True
             return cls(value=int(data["value"]))
 
@@ -72,7 +72,10 @@ def test_from_dict_delegates_to_from_mapping() -> None:
     assert ProbeValueObject.called is True
 
 
-@pytest.mark.parametrize("vo_cls", [DateValue, Link, NormalizedDate, SeasonRef, DriversChampionships])
+@pytest.mark.parametrize(
+    "vo_cls",
+    [DateValue, Link, NormalizedDate, SeasonRef, DriversChampionships],
+)
 def test_from_dict_rejects_non_mapping_inputs(vo_cls: type[ValueObject]) -> None:
     with pytest.raises(TypeError, match="Nieobsługiwany typ danych"):
         vo_cls.from_dict("not-a-mapping")

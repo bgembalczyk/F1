@@ -21,7 +21,11 @@ class RunConfigOptionsMapper:
         self._apply_if_present(options.cache, "cache_adapter", run_config.cache_adapter)
         self._apply_if_present(options.http, "timeout", run_config.http_timeout)
         self._apply_if_present(options.http, "retries", run_config.http_retries)
-        self._apply_if_present(options.http, "backoff_seconds", run_config.http_backoff_seconds)
+        self._apply_if_present(
+            options.http,
+            "backoff_seconds",
+            run_config.http_backoff_seconds,
+        )
 
         options.run_id = run_id
         options.quality_report = run_config.quality_report

@@ -31,7 +31,9 @@ def test_domains_have_required_layout_and_facade_entrypoint() -> None:
         available_layers = {layer for _, layer in _iter_layer_files(domain_dir, domain)}
         required_layers = set(REQUIRED_LAYERS_BY_DOMAIN[domain])
         missing_layers = required_layers - available_layers
-        assert not missing_layers, f"Missing layer modules for {domain}: {sorted(missing_layers)}"
+        assert (
+            not missing_layers
+        ), f"Missing layer modules for {domain}: {sorted(missing_layers)}"
 
 
 def test_layer_import_boundaries_are_not_violated() -> None:

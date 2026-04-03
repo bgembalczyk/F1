@@ -62,17 +62,25 @@ class ArchitectureSpec:
 
     @property
     def entrypoint_modules(self) -> tuple[str, ...]:
-        return tuple(f"scrapers.{domain}.entrypoint" for domain in self.entrypoint_domains)
+        return tuple(
+            f"scrapers.{domain}.entrypoint" for domain in self.entrypoint_domains
+        )
 
     @property
     def entrypoint_files(self) -> tuple[str, ...]:
-        return tuple(f"scrapers/{domain}/entrypoint.py" for domain in self.entrypoint_domains)
+        return tuple(
+            f"scrapers/{domain}/entrypoint.py" for domain in self.entrypoint_domains
+        )
 
 
 ARCHITECTURE_SPEC = ArchitectureSpec(
     domains=(
         DomainSpec("drivers", True, ("list", "sections", "infobox", "postprocess")),
-        DomainSpec("constructors", True, ("list", "sections", "infobox", "postprocess")),
+        DomainSpec(
+            "constructors",
+            True,
+            ("list", "sections", "infobox", "postprocess"),
+        ),
         DomainSpec("circuits", True, ("list", "sections", "infobox", "postprocess")),
         DomainSpec("seasons", True, ("list", "sections", "postprocess")),
         DomainSpec("grands_prix", True, ("list", "sections")),
@@ -94,17 +102,26 @@ ARCHITECTURE_SPEC = ArchitectureSpec(
         LegacyLifecycle("R2", "legacy entrypointy usuwane"),
     ),
     legacy_module_mappings=(
-        LegacyModuleMapping("scrapers.circuits.list_scraper", "scrapers.circuits.entrypoint"),
+        LegacyModuleMapping(
+            "scrapers.circuits.list_scraper",
+            "scrapers.circuits.entrypoint",
+        ),
         LegacyModuleMapping(
             "scrapers.constructors.current_constructors_list",
             "scrapers.constructors.entrypoint",
         ),
-        LegacyModuleMapping("scrapers.drivers.list_scraper", "scrapers.drivers.entrypoint"),
+        LegacyModuleMapping(
+            "scrapers.drivers.list_scraper",
+            "scrapers.drivers.entrypoint",
+        ),
         LegacyModuleMapping(
             "scrapers.grands_prix.list_scraper",
             "scrapers.grands_prix.entrypoint",
         ),
-        LegacyModuleMapping("scrapers.seasons.list_scraper", "scrapers.seasons.entrypoint"),
+        LegacyModuleMapping(
+            "scrapers.seasons.list_scraper",
+            "scrapers.seasons.entrypoint",
+        ),
         LegacyModuleMapping(
             "python main.py --mode <layer0|layer1|full>",
             "python -m scrapers.cli wiki --mode <layer0|layer1|full>",

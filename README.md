@@ -1,6 +1,6 @@
 # F1 Data Pipeline — README
 
-Ten plik jest punktem wejścia do dokumentacji projektu.  
+Ten plik jest punktem wejścia do dokumentacji projektu.
 Szczegółowe opisy utrzymujemy centralnie w **indeksie dokumentacji**: [`docs/README.md`](docs/README.md).
 
 ## Quick start (PyCharm only)
@@ -11,7 +11,7 @@ Szczegółowe opisy utrzymujemy centralnie w **indeksie dokumentacji**: [`docs/R
 
 ## Szybka diagnoza problemów pipeline
 
-Jeśli debugujesz Layer 0/1 lub merge rekordów, zacznij od cookbooka:  
+Jeśli debugujesz Layer 0/1 lub merge rekordów, zacznij od cookbooka:
 - [`docs/DEBUG_COOKBOOK.md`](docs/DEBUG_COOKBOOK.md)
 
 ## 1) Architektura warstw
@@ -24,8 +24,8 @@ Architektura opiera się o separację odpowiedzialności między warstwami techn
 - **Assembler** — reguły domenowe i składanie rekordów,
 - **Exporter** — zapis danych wyjściowych.
 
-Pełny opis granic warstw i relacji między komponentami:  
-- [`docs/scrapers-layer-architecture.md`](docs/scrapers-layer-architecture.md)  
+Pełny opis granic warstw i relacji między komponentami:
+- [`docs/scrapers-layer-architecture.md`](docs/scrapers-layer-architecture.md)
 - [`docs/MODULE_BOUNDARIES.md`](docs/MODULE_BOUNDARIES.md)
 
 ## 2) Kluczowe protokoły / interfejsy

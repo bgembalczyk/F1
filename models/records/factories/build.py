@@ -1,11 +1,11 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from collections.abc import Mapping
 from enum import Enum
 from functools import partial
-from typing import Any
 from typing import TYPE_CHECKING
-from typing import Callable
+from typing import Any
 from typing import overload
 
 from models.records.factories.registry import FACTORY_REGISTRY_PROVIDER
@@ -31,7 +31,8 @@ class RecordType(str, Enum):
     CIRCUIT_DETAILS = "circuit_details"
     CIRCUIT_COMPLETE = "circuit_complete"
     ENGINE_MANUFACTURER = "engine_manufacturer"
-    
+
+
 class RecordBuilders:
     """Object facade for building normalized record models."""
 
@@ -64,7 +65,6 @@ class RecordBuilders:
         resolved_type = (
             record_type.value if isinstance(record_type, RecordType) else record_type
         )
-        from models.records.factories.registry import get_factory
 
         return get_factory(resolved_type, self._factory_registry)
 

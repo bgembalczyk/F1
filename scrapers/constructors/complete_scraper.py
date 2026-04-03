@@ -19,9 +19,7 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
     )
     url = ConstructorsListScraper.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_classes=(
-            ConstructorsListScraper,
-        ),
+        list_scraper_classes=(ConstructorsListScraper,),
         single_scraper_cls=SingleConstructorScraper,
         detail_url_field_paths=("constructor.url", "constructor_url", "team_url"),
         filter_redlinks=True,

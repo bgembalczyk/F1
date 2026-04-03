@@ -29,6 +29,8 @@ def _entrypoint_modules_discovered() -> tuple[str, ...]:
             if path.is_file()
         ),
     )
+
+
 ENTRYPOINT_MODULES = ARCHITECTURE_REGISTRY.entrypoint_modules
 
 
@@ -149,20 +151,26 @@ def test_new_domain_requires_only_config_plus_generic_shim(monkeypatch) -> None:
     assert callable(module.run_list_scraper)
 
     config = facade.get_domain_entrypoint_config("new_domain")
-    assert module.ENTRYPOINT_CONFIG == config
+    assert config == module.ENTRYPOINT_CONFIG
     assert module.LIST_SCRAPER_CLASS is config.list_scraper_cls
-    assert module.DEFAULT_OUTPUT_JSON == config.default_output_json
-    assert module.DEFAULT_OUTPUT_CSV == config.default_output_csv
+    assert config.default_output_json == module.DEFAULT_OUTPUT_JSON
+    assert config.default_output_csv == module.DEFAULT_OUTPUT_CSV
     assert module.RUN_CONFIG_PROFILE is config.run_config_profile
+
+
 def test_domain_output_path_policy_renders_placeholder_paths() -> None:
     config = get_domain_entrypoint_config("constructors")
-    current_year = getattr(
-        importlib.import_module("scrapers.constructors.constants"),
-        "CURRENT_YEAR",
-    )
+    current_year = importlib.import_module(
+        "scrapers.constructors.constants",
+    ).CURRENT_YEAR
 
-    assert config.default_output_json == f"constructors/f1_constructors_{current_year}.json"
-    assert config.default_output_csv == f"constructors/f1_constructors_{current_year}.csv"
+    assert (
+        config.default_output_json
+        == f"constructors/f1_constructors_{current_year}.json"
+    )
+    assert (
+        config.default_output_csv == f"constructors/f1_constructors_{current_year}.csv"
+    )
 
 
 def test_domain_output_path_policy_keeps_non_placeholder_paths() -> None:

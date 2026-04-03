@@ -6,15 +6,21 @@ import urllib.request
 from typing import Any
 
 from infrastructure.gemini.constants import API_URL_TEMPLATE
+from scrapers.base.errors import TransportError
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
-from scrapers.base.errors import TransportError
 
 
 class GeminiTransport:
     """Warstwa transportu HTTP do Gemini API."""
 
-    def __init__(self, *, api_key: str, timeout: int, ssl_context: ssl.SSLContext) -> None:
+    def __init__(
+        self,
+        *,
+        api_key: str,
+        timeout: int,
+        ssl_context: ssl.SSLContext,
+    ) -> None:
         self._api_key = api_key
         self._timeout = timeout
         self._ssl_context = ssl_context

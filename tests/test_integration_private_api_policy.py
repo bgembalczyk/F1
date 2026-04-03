@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from pathlib import Path
 import re
+from pathlib import Path
 
 _PRIVATE_MEMBER_ACCESS = re.compile(r"\.\_[A-Za-z]")
 _INTEGRATION_PATTERNS: tuple[str, ...] = (
@@ -39,7 +39,10 @@ def test_integration_tests_do_not_use_slf001_file_noqa() -> None:
 def test_integration_tests_do_not_touch_private_api_without_justification() -> None:
     violations: list[str] = []
     for path in _integration_tests():
-        for line_no, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        for line_no, line in enumerate(
+            path.read_text(encoding="utf-8").splitlines(),
+            start=1,
+        ):
             if not _PRIVATE_MEMBER_ACCESS.search(line):
                 continue
             if _JUSTIFICATION_TAG in line:

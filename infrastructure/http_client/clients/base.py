@@ -3,21 +3,23 @@
 import json
 from abc import ABC
 from abc import abstractmethod
-from collections.abc import Mapping
 from collections.abc import Callable
+from collections.abc import Mapping
 from typing import Any
 
 from infrastructure.http_client.components.header_resolver import HeaderResolver
 from infrastructure.http_client.components.request_executor import RequestExecutor
-from infrastructure.http_client.components.response_cache_service import ResponseCacheService
+from infrastructure.http_client.components.response_cache_service import (
+    ResponseCacheService,
+)
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.factories.default_http_policy_factory import (
     DefaultHttpPolicyFactory,
 )
+from infrastructure.http_client.interfaces.http_client_protocol import JsonValue
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,
 )
-from infrastructure.http_client.interfaces.http_client_protocol import JsonValue
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 
 

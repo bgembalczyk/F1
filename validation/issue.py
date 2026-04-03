@@ -29,17 +29,17 @@ class ValidationIssue:
         return ".".join(self.path_segments)
 
     @classmethod
-    def missing(cls, field: str) -> "ValidationIssue":
+    def missing(cls, field: str) -> ValidationIssue:
         issue = cls(code="missing", field=field)
         return IssueMessageFormatter.render(issue)
 
     @classmethod
-    def null(cls, field: str) -> "ValidationIssue":
+    def null(cls, field: str) -> ValidationIssue:
         issue = cls(code="null", field=field)
         return IssueMessageFormatter.render(issue)
 
     @classmethod
-    def type_error(cls, field: str, expected: str, actual: str) -> "ValidationIssue":
+    def type_error(cls, field: str, expected: str, actual: str) -> ValidationIssue:
         issue = cls(code="type", field=field, expected=expected, actual=actual)
         return IssueMessageFormatter.render(issue)
 
@@ -53,7 +53,7 @@ class ValidationIssue:
         expected: str | None = None,
         actual: str | None = None,
         path_segments: tuple[str, ...] = (),
-    ) -> "ValidationIssue":
+    ) -> ValidationIssue:
         return cls(
             code=code,
             message=message,
@@ -63,7 +63,7 @@ class ValidationIssue:
             path_segments=path_segments,
         )
 
-    def with_prefix(self, prefix: str) -> "ValidationIssue":
+    def with_prefix(self, prefix: str) -> ValidationIssue:
         prefix_segments = tuple(segment for segment in prefix.split(".") if segment)
         if not prefix_segments:
             return self

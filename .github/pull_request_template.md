@@ -50,10 +50,10 @@
 
 <!-- Pole wymagane. Dla PR bez zmian w `scrapers/base/` wpisz jawnie: "nie dotyczy". -->
 
-- Zmiany w `scrapers/base/`: 
-- Dotknięte domeny: 
-- Kompatybilność wsteczna: 
-- Migracja wymagana: 
+- Zmiany w `scrapers/base/`:
+- Dotknięte domeny:
+- Kompatybilność wsteczna:
+- Migracja wymagana:
 
 ## Refactor included
 

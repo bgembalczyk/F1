@@ -3,7 +3,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from scripts.check_di_antipatterns import DI_ADR_THRESHOLD, run_check
+from scripts.check_di_antipatterns import DI_ADR_THRESHOLD
+from scripts.check_di_antipatterns import run_check
 
 
 def _write(path: Path, content: str) -> Path:
@@ -64,7 +65,6 @@ class DriverPipeline:
     violations = run_check([source])
 
     assert violations == []
-
 
 
 def test_detects_parser_creation_inside_business_method(tmp_path: Path) -> None:

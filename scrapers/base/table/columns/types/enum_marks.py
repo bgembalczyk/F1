@@ -15,7 +15,10 @@ class EnumMarksMixin(BaseColumn):
     """
 
     def __init__(
-        self, mapping: dict[str, Any] | None = None, default: Any = None, **kwargs: Any
+        self,
+        mapping: dict[str, Any] | None = None,
+        default: Any = None,
+        **kwargs: Any,
     ) -> None:
         if mapping is not None:
             self.mapping = dict(mapping)

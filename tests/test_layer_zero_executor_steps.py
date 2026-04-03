@@ -1,8 +1,8 @@
 from pathlib import Path
 
+from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
 from layers.seed.registry import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge_service import LayerZeroMergeService
@@ -93,7 +93,9 @@ def _build_default_and_local_run_config(
         output_dir=Path("/tmp"),
         include_urls=False,
         debug_dir=Path("/tmp/debug"),
-        scraper_kwargs=(local_scraper_kwargs if local_scraper_kwargs is not None else {}),
+        scraper_kwargs=(
+            local_scraper_kwargs if local_scraper_kwargs is not None else {}
+        ),
     )
     return default_run_config, local_run_config
 
@@ -108,7 +110,10 @@ def test_resolve_config_factory_uses_builder_result() -> None:
 
 
 def test_protocol_contracts_are_met_by_production_implementations() -> None:
-    assert isinstance(DefaultLayerZeroRunConfigFactory(), LayerZeroRunConfigFactoryProtocol)
+    assert isinstance(
+        DefaultLayerZeroRunConfigFactory(),
+        LayerZeroRunConfigFactoryProtocol,
+    )
     assert isinstance(
         LayerZeroMergeService(merge_function=lambda _base_wiki_dir: None),
         LayerZeroMergeServiceProtocol,
@@ -166,7 +171,9 @@ def test_run_single_job_passes_local_run_config_when_kwargs_present() -> None:
         ScraperRunner.run_and_export = original_method
 
     assert calls[0]["scraper_cls"] is _FakeScraper
-    assert calls[0]["json_path"] == Path("layers/0_layer/drivers/raw/f1_drivers_2026.json")
+    assert calls[0]["json_path"] == Path(
+        "layers/0_layer/drivers/raw/f1_drivers_2026.json",
+    )
     assert calls[0]["run_config"] is local_run_config
     assert json_path == Path("layers/0_layer/drivers/raw/f1_drivers_2026.json")
 
@@ -202,7 +209,9 @@ def test_maybe_mirror_constructors_delegates_to_hook() -> None:
     executor._maybe_mirror_constructors(
         base_wiki_dir=Path("/tmp/wiki"),
         job=_job(seed_name="constructors"),
-        l0_raw_json_path=Path("layers/0_layer/constructors/raw/f1_constructors_2026.json"),
+        l0_raw_json_path=Path(
+            "layers/0_layer/constructors/raw/f1_constructors_2026.json",
+        ),
     )
 
     assert hook.calls == [
@@ -228,13 +237,15 @@ def test_run_orchestrates_steps_in_order() -> None:
     order: list[str] = []
 
     executor._resolve_config_factory = lambda: order.append("resolve") or {}
-    executor._build_local_run_config = (
-        lambda **_kwargs: order.append("build")
-        or RunConfig(output_dir=Path("/tmp"), include_urls=True, debug_dir=Path("/tmp/debug"))
+    executor._build_local_run_config = lambda **_kwargs: order.append(
+        "build",
+    ) or RunConfig(
+        output_dir=Path("/tmp"),
+        include_urls=True,
+        debug_dir=Path("/tmp/debug"),
     )
-    executor._run_single_job = (
-        lambda **_kwargs: order.append("run")
-        or Path("layers/0_layer/drivers/raw/f1_drivers_2026.json")
+    executor._run_single_job = lambda **_kwargs: order.append("run") or Path(
+        "layers/0_layer/drivers/raw/f1_drivers_2026.json",
     )
     executor._maybe_mirror_constructors = lambda **_kwargs: order.append("mirror")
     executor._finalize_merge = lambda *_args, **_kwargs: order.append("merge")
@@ -309,7 +320,9 @@ def test_mirror_constructors_job_hook_runs_only_for_matching_job() -> None:
     hook.after_job(
         base_wiki_dir=Path("/tmp/wiki"),
         job=_job(seed_name="constructors_current"),
-        l0_raw_json_path=Path("layers/0_layer/constructors/raw/f1_constructors_2026.json"),
+        l0_raw_json_path=Path(
+            "layers/0_layer/constructors/raw/f1_constructors_2026.json",
+        ),
     )
 
     assert mirror_calls == [

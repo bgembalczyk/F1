@@ -37,7 +37,11 @@ def test_generate_returns_decoded_response(monkeypatch: pytest.MonkeyPatch) -> N
 
     monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
 
-    assert transport.generate("p", model="m", response_mime_type="application/json") == {
+    assert transport.generate(
+        "p",
+        model="m",
+        response_mime_type="application/json",
+    ) == {
         "candidates": [],
     }
 

@@ -14,17 +14,19 @@ from bs4 import BeautifulSoup
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from scrapers.grands_prix.red_flagged_races_scraper import (
+    NonChampionshipsRacesSubSectionParser,
+)
+from scrapers.grands_prix.red_flagged_races_scraper import RedFlaggedRacesScraper
+from scrapers.grands_prix.red_flagged_races_scraper import RedFlaggedRacesSectionParser
+from scrapers.grands_prix.red_flagged_races_scraper import (
+    WorldChampionshipsRacesTableParser,
+)
 from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
     RedFlaggedNonChampionshipRacesScraper,
 )
 from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
     RedFlaggedWorldChampionshipRacesScraper,
-)
-from scrapers.grands_prix.red_flagged_races_scraper import (
-    NonChampionshipsRacesSubSectionParser,
-    RedFlaggedRacesScraper,
-    RedFlaggedRacesSectionParser,
-    WorldChampionshipsRacesTableParser,
 )
 
 
@@ -238,13 +240,14 @@ class TestRedFlaggedRacesScraperRobustness:
         assert records[0]["season"] == "1972"
         assert records[0]["event"] == "Race of Champions"
 
-
-
     def test_composite_parser_dependencies(self):
         """Test required parser dependencies are wired in composite parser."""
         section_parser = RedFlaggedRacesSectionParser()
 
-        assert isinstance(section_parser.child_parser, NonChampionshipsRacesSubSectionParser)
+        assert isinstance(
+            section_parser.child_parser,
+            NonChampionshipsRacesSubSectionParser,
+        )
         assert isinstance(
             section_parser._world_championship_table_parser,
             WorldChampionshipsRacesTableParser,

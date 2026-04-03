@@ -24,6 +24,9 @@ def test_complete_extractor_children_implement_base_protocols(extractor_cls) -> 
     single_scraper_cls = extractor_cls.DOMAIN_CONFIG.single_scraper_cls
 
     assert list_scraper_classes
-    assert all(callable(getattr(scraper_cls, "fetch", None)) for scraper_cls in list_scraper_classes)
+    assert all(
+        callable(getattr(scraper_cls, "fetch", None))
+        for scraper_cls in list_scraper_classes
+    )
     assert single_scraper_cls is not None
     assert callable(getattr(single_scraper_cls, "fetch_by_url", None))

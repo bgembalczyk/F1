@@ -17,7 +17,9 @@ def test_factory_registry_has_unique_record_types() -> None:
     assert len(record_types) == len(set(record_types))
 
 
-def test_build_factory_registry_multiple_initialization_does_not_duplicate_classes() -> None:
+def test_build_factory_registry_multiple_initialization_does_not_duplicate_classes() -> (
+    None
+):
     first_registry = registry.build_factory_registry()
     second_registry = registry.build_factory_registry()
 
@@ -68,6 +70,8 @@ def test_validate_factory_classes_raises_for_missing_critical_record_type(
         match="missing_critical_factory_record_types: critical_missing_type",
     ):
         registry._validate_factory_classes([_OnlyFactory])
+
+
 def test_factory_registry_provider_uses_lazy_cache() -> None:
     provider = FactoryRegistryProvider()
 

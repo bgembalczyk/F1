@@ -8,10 +8,8 @@ from scrapers.points.points_scoring_systems_history import (
 )
 from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
 from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
-from tests.support.refactored_base_classes_utils import (
-    POINTS_SYSTEMS_URL,
-    assert_issubclass_cases,
-)
+from tests.support.refactored_base_classes_utils import POINTS_SYSTEMS_URL
+from tests.support.refactored_base_classes_utils import assert_issubclass_cases
 
 
 @pytest.mark.parametrize(

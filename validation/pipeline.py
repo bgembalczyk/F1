@@ -28,7 +28,7 @@ class ValidationResult:
     def from_violations(
         cls,
         violations: Sequence[ValidationIssue],
-    ) -> "ValidationResult":
+    ) -> ValidationResult:
         normalized = tuple(violations)
         status: ValidationStatus = "invalid" if normalized else "valid"
         return cls(status=status, violations=normalized)
@@ -40,8 +40,7 @@ class StageValidator(Protocol):
 
     name: str
 
-    def validate(self, record: RecordLike) -> Sequence[ValidationIssue]:
-        ...
+    def validate(self, record: RecordLike) -> Sequence[ValidationIssue]: ...
 
 
 @dataclass(frozen=True)

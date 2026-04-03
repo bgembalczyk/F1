@@ -50,10 +50,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
         )
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        column_map = {
-            header: header.lower().replace(" ", "_")
-            for header in headers
-        }
+        column_map = {header: header.lower().replace(" ", "_") for header in headers}
         for header in headers:
             normalized = self._normalize_header(header)
             if normalized in self._candidate_headers("Towards WDC"):
@@ -70,7 +67,9 @@ class SprintPointsTableParser(WikiTableBaseParser):
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         normalized_headers = {_normalize_header(header) for header in headers}
-        expected = {_normalize_header(header) for header in SPRINT_QUALIFYING_EXPECTED_HEADERS}
+        expected = {
+            _normalize_header(header) for header in SPRINT_QUALIFYING_EXPECTED_HEADERS
+        }
         return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
@@ -93,7 +92,9 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         normalized_headers = {_normalize_header(header) for header in headers}
-        expected = {_normalize_header(header) for header in SHORTENED_RACE_EXPECTED_HEADERS}
+        expected = {
+            _normalize_header(header) for header in SHORTENED_RACE_EXPECTED_HEADERS
+        }
         return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:

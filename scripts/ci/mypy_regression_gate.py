@@ -34,7 +34,7 @@ def _git(*args: str) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="CI gate: nie pozwalaj zwiększać liczby błędów typowania (mypy)."
+        description="CI gate: nie pozwalaj zwiększać liczby błędów typowania (mypy).",
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)
@@ -76,7 +76,7 @@ def main() -> int:
 
     if args.error_budget is not None and head_errors > args.error_budget:
         print(
-            f"Przekroczony budżet błędów mypy: {head_errors} > {args.error_budget}."
+            f"Przekroczony budżet błędów mypy: {head_errors} > {args.error_budget}.",
         )
         print("\n=== HEAD OUTPUT ===")
         print(head_output)

@@ -14,8 +14,7 @@ from models.value_objects.base import ValueObject
 
 @runtime_checkable
 class SerializableProtocol(Protocol):
-    def to_serializable(self) -> Any:
-        ...
+    def to_serializable(self) -> Any: ...
 
 
 SerializableAdapter = Callable[[Any], Any]

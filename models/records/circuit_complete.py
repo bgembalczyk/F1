@@ -3,8 +3,8 @@ from typing import Any
 from models.records.circuit_base import CircuitBaseRecord
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
-from validation.validator_base import RecordValidator
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 class CircuitCompleteRecord(CircuitBaseRecord, total=False):

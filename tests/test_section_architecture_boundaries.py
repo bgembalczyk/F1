@@ -3,9 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
-from tests.architecture.rules import collect_single_scraper_import_violations
 from tests.architecture.registry import ARCHITECTURE_REGISTRY
-from tests.support.imports_analyzer import parse_imports
+from tests.architecture.rules import collect_single_scraper_import_violations
 
 ENTRYPOINT_DOMAINS = ARCHITECTURE_REGISTRY.entrypoint_domains
 

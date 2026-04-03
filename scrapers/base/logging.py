@@ -2,14 +2,13 @@ from __future__ import annotations
 
 import json
 import logging
+from collections.abc import Callable
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
-from collections.abc import Callable
 from typing import Any
 
 from scrapers.base.constants.runtime import LOGGER_NAME
-
 
 _DEFAULT_EXECUTION_CONTEXT: dict[str, str | None] = {
     "run_id": None,
@@ -107,4 +106,6 @@ class RunTraceWriter:
             **event,
         }
         with self._trace_path.open("a", encoding="utf-8") as trace_file:
-            trace_file.write(f"{json.dumps(payload, ensure_ascii=False, sort_keys=True)}\n")
+            trace_file.write(
+                f"{json.dumps(payload, ensure_ascii=False, sort_keys=True)}\n",
+            )

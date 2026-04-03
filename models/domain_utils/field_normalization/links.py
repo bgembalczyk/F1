@@ -18,7 +18,9 @@ def normalize_link_payload(link: Mapping[str, Any] | None) -> dict[str, Any]:
 
 
 def _is_link_object(value: Any) -> bool:
-    return hasattr(value, "to_dict") and hasattr(value, "text") and hasattr(value, "url")
+    return (
+        hasattr(value, "to_dict") and hasattr(value, "text") and hasattr(value, "url")
+    )
 
 
 def is_empty_link(value: Any) -> bool:

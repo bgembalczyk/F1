@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.validation.engine_manufacturer import EngineManufacturer
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
-from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.source_catalog import ENGINES_LIST
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns

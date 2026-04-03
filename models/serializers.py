@@ -14,7 +14,9 @@ if TYPE_CHECKING:
     from models.records.link import LinkRecord
 
 Primitive = str | int | float | bool | None
-SerializableValue = Primitive | list["SerializableValue"] | dict[str, "SerializableValue"]
+SerializableValue = (
+    Primitive | list["SerializableValue"] | dict[str, "SerializableValue"]
+)
 SerializerInputT_contra = TypeVar("SerializerInputT_contra", contravariant=True)
 SerializerOutputT_co = TypeVar("SerializerOutputT_co", covariant=True)
 

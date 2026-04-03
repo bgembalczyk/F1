@@ -178,16 +178,19 @@ def test_record_builders_api_compatibility_for_popular_record_types() -> None:
     assert season_from_string == season_from_enum
     assert driver_from_string == driver_from_enum
     assert build_season_record({"year": "2025"})["year"] == 2025
-    assert build_driver_record(
-        {
-            "driver": {"text": "Test Driver", "url": ""},
-            "nationality": "Polish",
-            "is_active": False,
-            "is_world_champion": False,
-            "seasons_competed": [],
-            "drivers_championships": {"count": 0, "seasons": []},
-        },
-    )["driver"]["text"] == "Test Driver"
+    assert (
+        build_driver_record(
+            {
+                "driver": {"text": "Test Driver", "url": ""},
+                "nationality": "Polish",
+                "is_active": False,
+                "is_world_champion": False,
+                "seasons_competed": [],
+                "drivers_championships": {"count": 0, "seasons": []},
+            },
+        )["driver"]["text"]
+        == "Test Driver"
+    )
 
 
 def test_record_builders_facade_raises_for_unsupported_type() -> None:

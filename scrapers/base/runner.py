@@ -1,6 +1,6 @@
+from collections.abc import Callable
 from pathlib import Path
 from uuid import uuid4
-from collections.abc import Callable
 
 from models.mappers.serialization import to_dict_list
 from scrapers.base.abc import ABCScraper

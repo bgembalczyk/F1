@@ -7,9 +7,9 @@ from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.circuits import CircuitsListScraper
 from scrapers.constructors import ConstructorsListScraper
+from scrapers.drivers import F1DriversListScraper
 from scrapers.drivers import F1FatalitiesListScraper
 from scrapers.drivers import FemaleDriversListScraper
-from scrapers.drivers import F1DriversListScraper
 from scrapers.engines import EngineManufacturersListScraper
 from scrapers.engines import EngineRegulationScraper
 from scrapers.engines import EngineRestrictionsScraper
@@ -67,7 +67,9 @@ def _list_legacy_output_path(*, output_category: str, filename: str) -> str:
     return f"{output_category}/{filename}"
 
 
-def build_seed_registry_entry_from_spec(spec: RawRegistrySpec) -> SeedRegistryEntry | None:
+def build_seed_registry_entry_from_spec(
+    spec: RawRegistrySpec,
+) -> SeedRegistryEntry | None:
     if spec.seed_filename is None:
         return None
 
@@ -88,7 +90,9 @@ def build_seed_registry_entry_from_spec(spec: RawRegistrySpec) -> SeedRegistryEn
     )
 
 
-def build_list_job_registry_entry_from_spec(spec: RawRegistrySpec) -> ListJobRegistryEntry:
+def build_list_job_registry_entry_from_spec(
+    spec: RawRegistrySpec,
+) -> ListJobRegistryEntry:
     output_category = spec.list_output_category or spec.output_category
     return ListJobRegistryEntry(
         seed_name=spec.seed_name,

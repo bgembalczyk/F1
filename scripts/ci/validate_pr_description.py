@@ -5,9 +5,8 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Sequence
-
 
 REQUIRED_SECTIONS: tuple[str, ...] = (
     "SRP impact",
@@ -31,7 +30,10 @@ REQUIRED_CHECKLIST_ITEMS: tuple[str, ...] = (
 
 
 HEADING_PATTERN = re.compile(r"^\s*#{2,6}\s+(.+?)\s*$", re.MULTILINE)
-CHECKLIST_PATTERN = re.compile(r"^\s*- \[(?P<state>[ xX])\]\s*(?P<label>.+)\s*$", re.MULTILINE)
+CHECKLIST_PATTERN = re.compile(
+    r"^\s*- \[(?P<state>[ xX])\]\s*(?P<label>.+)\s*$",
+    re.MULTILINE,
+)
 CODE_BLOCK_PATTERN = re.compile(r"```.+?```", re.DOTALL)
 
 
@@ -40,7 +42,7 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
         description=(
             "Validate PR body contains required sections, checked technical checklist "
             "items and review evidence."
-        )
+        ),
     )
     parser.add_argument("--pr-body", help="Pull request body text")
     parser.add_argument(
@@ -70,7 +72,9 @@ def normalize(text: str) -> str:
 
 def has_required_section(pr_body: str, section_name: str) -> bool:
     expected = normalize(section_name)
-    headings = [normalize(match.group(1)) for match in HEADING_PATTERN.finditer(pr_body)]
+    headings = [
+        normalize(match.group(1)) for match in HEADING_PATTERN.finditer(pr_body)
+    ]
     return expected in headings
 
 
@@ -113,11 +117,15 @@ def main(argv: Sequence[str]) -> int:
         section for section in REQUIRED_SECTIONS if has_required_section(body, section)
     ]
     if not detected_required_sections:
-        print("PR description does not use the enforced template sections; skipping validation in this run.")
+        print(
+            "PR description does not use the enforced template sections; skipping validation in this run.",
+        )
         return 0
 
     missing_sections = [
-        section for section in REQUIRED_SECTIONS if not has_required_section(body, section)
+        section
+        for section in REQUIRED_SECTIONS
+        if not has_required_section(body, section)
     ]
     unchecked_items = [
         item for item in REQUIRED_CHECKLIST_ITEMS if not find_check_state(body, item)

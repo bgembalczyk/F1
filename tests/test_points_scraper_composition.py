@@ -13,14 +13,16 @@ def test_points_scraper_uses_points_scoring_systems_section_parser() -> None:
     assert isinstance(scraper.section_parser, PointsScoringSystemsSectionParser)
 
 
-def test_points_scoring_systems_section_parser_uses_special_cases_subsection_parser(
-) -> None:
+def test_points_scoring_systems_section_parser_uses_special_cases_subsection_parser() -> (
+    None
+):
     parser = PointsScoringSystemsSectionParser()
     assert isinstance(parser.child_parser, SpecialCasesSubSectionParser)
 
 
-def test_special_cases_subsection_parser_routes_to_required_subsubsection_parsers(
-) -> None:
+def test_special_cases_subsection_parser_routes_to_required_subsubsection_parsers() -> (
+    None
+):
     parser = SpecialCasesSubSectionParser()
     router = parser.child_parser
 
@@ -44,7 +46,10 @@ def test_sprint_parser_parses_table_without_nested_heading() -> None:
     top_section = parsed["sub_sub_sub_sections"][0]
 
     assert top_section["elements"][0]["data"]["table_type"] == "points_sprint_races"
-    assert top_section["elements"][0]["data"]["domain_rows"][0]["seasons"] == "2021-present"
+    assert (
+        top_section["elements"][0]["data"]["domain_rows"][0]["seasons"]
+        == "2021-present"
+    )
 
 
 def test_special_cases_router_applies_sprint_parser_without_section_hint() -> None:

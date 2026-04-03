@@ -26,7 +26,14 @@ class DriverInfoboxParserBundle:
 
 
 class DriverInfoboxParserProvider(Protocol):
-    def build(self, *, include_urls: bool, wikipedia_base: str, schema: object, logger: object) -> DriverInfoboxParserBundle: ...
+    def build(
+        self,
+        *,
+        include_urls: bool,
+        wikipedia_base: str,
+        schema: object,
+        logger: object,
+    ) -> DriverInfoboxParserBundle: ...
 
 
 class DefaultDriverInfoboxParserProvider:

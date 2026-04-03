@@ -39,7 +39,7 @@ def parse_args() -> argparse.Namespace:
         description=(
             "Waliduje obecność wymaganych pól i checklisty z PR template, "
             "w tym sekcji Architecture impact."
-        )
+        ),
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)
@@ -60,7 +60,9 @@ def list_changed_files(base_sha: str, head_sha: str) -> list[str]:
 
 
 def touches_scrapers_base(files: list[str]) -> bool:
-    return any(PurePosixPath(path).as_posix().startswith("scrapers/base/") for path in files)
+    return any(
+        PurePosixPath(path).as_posix().startswith("scrapers/base/") for path in files
+    )
 
 
 def normalize_field_value(value: str) -> str:
@@ -70,7 +72,11 @@ def normalize_field_value(value: str) -> str:
 def extract_architecture_fields(pr_body: str) -> dict[str, str]:
     fields: dict[str, str] = {}
     for field in ARCHITECTURE_IMPACT_FIELDS:
-        match = re.search(rf"^-\s*{re.escape(field)}\s*:\s*(.*)$", pr_body, flags=re.MULTILINE)
+        match = re.search(
+            rf"^-\s*{re.escape(field)}\s*:\s*(.*)$",
+            pr_body,
+            flags=re.MULTILINE,
+        )
         fields[field] = match.group(1).strip() if match else ""
     return fields
 
@@ -112,7 +118,7 @@ def main() -> int:
             if not normalized or normalized in NOT_APPLICABLE_VALUES:
                 errors.append(
                     "Zmiany w scrapers/base wymagają uzupełnionej sekcji Architecture impact; "
-                    f"pole '{field}' nie może mieć wartości 'nie dotyczy'."
+                    f"pole '{field}' nie może mieć wartości 'nie dotyczy'.",
                 )
 
     if errors:

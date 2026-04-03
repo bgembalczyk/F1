@@ -1,9 +1,9 @@
 # ruff: noqa: S603
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Mapping
 
 from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.io_utils import append_output_vars

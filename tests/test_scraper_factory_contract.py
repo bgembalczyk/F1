@@ -86,7 +86,9 @@ def test_factory_creates_legacy_scraper_without_include_urls_when_disabled() -> 
     assert scraper.run_id == "legacy-run-id"
 
 
-def test_factory_does_not_inject_run_id_for_kwargs_passthrough_options_scraper() -> None:
+def test_factory_does_not_inject_run_id_for_kwargs_passthrough_options_scraper() -> (
+    None
+):
     run_config = RunConfig(include_urls=False)
 
     scraper = ScraperFactory().create(

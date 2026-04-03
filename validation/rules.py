@@ -5,9 +5,9 @@ from __future__ import annotations
 from collections.abc import Mapping
 from collections.abc import Sequence
 from dataclasses import dataclass
+from typing import Any
 from typing import Protocol
 from typing import runtime_checkable
-from typing import Any
 
 from validation.issue import ValidationIssue
 
@@ -21,11 +21,9 @@ class ValidationRuleProtocol(Protocol):
     rule_name: str
     rule_params: Mapping[str, Any]
 
-    def __call__(self, record: RecordLike) -> Sequence[ValidationIssue | str]:
-        ...
+    def __call__(self, record: RecordLike) -> Sequence[ValidationIssue | str]: ...
 
-    def validate(self, record: RecordLike) -> Sequence[ValidationIssue | str]:
-        ...
+    def validate(self, record: RecordLike) -> Sequence[ValidationIssue | str]: ...
 
 
 ValidationRule = ValidationRuleProtocol
@@ -73,7 +71,9 @@ class TypeRule:
         )
         return {
             "field": self.field,
-            "expected_types": tuple(expected_type.__name__ for expected_type in expected),
+            "expected_types": tuple(
+                expected_type.__name__ for expected_type in expected
+            ),
             "allow_none": self.allow_none,
         }
 
@@ -125,7 +125,10 @@ class RangeRule:
             return []
         if not isinstance(value, int | float):
             return []
-        if self.value_range.min_value is not None and value < self.value_range.min_value:
+        if (
+            self.value_range.min_value is not None
+            and value < self.value_range.min_value
+        ):
             return [
                 ValidationIssue.custom(
                     f"Value for {self.field} must be >= {self.value_range.min_value}",
@@ -133,7 +136,10 @@ class RangeRule:
                     field=self.field,
                 ),
             ]
-        if self.value_range.max_value is not None and value > self.value_range.max_value:
+        if (
+            self.value_range.max_value is not None
+            and value > self.value_range.max_value
+        ):
             return [
                 ValidationIssue.custom(
                     f"Value for {self.field} must be <= {self.value_range.max_value}",

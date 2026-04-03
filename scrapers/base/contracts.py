@@ -10,6 +10,8 @@ if TYPE_CHECKING:
 
 PayloadT_contra = TypeVar("PayloadT_contra", contravariant=True)
 SectionOutputT_co = TypeVar("SectionOutputT_co", covariant=True)
+
+
 class RecordAssemblerProtocol(Protocol[PayloadT_contra]):
     """Contract for domain assemblers that compose final export records."""
 

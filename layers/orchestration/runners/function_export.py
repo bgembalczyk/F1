@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
 from layers.orchestration.runners.layer_job import LayerJobRunner
 from layers.orchestration.runners.metadata import RunnerMetadata

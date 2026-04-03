@@ -1,6 +1,6 @@
 # Indeks dokumentacji (canonical)
 
-To jest **jedyny centralny indeks** dokumentacji projektu.  
+To jest **jedyny centralny indeks** dokumentacji projektu.
 Aby ograniczać duplikację między dokumentami, w innych plikach utrzymujemy tylko krótkie konteksty i linki tutaj.
 
 ## Szybki start diagnozy

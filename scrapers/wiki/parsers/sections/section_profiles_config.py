@@ -27,7 +27,9 @@ SECTION_PROFILES_CONFIG: Mapping[str, SectionDomainConfig] = {
         },
     ),
     "drivers": SectionDomainConfig(
-        canonical_sections=frozenset({"career results", "racing record", "non-championship"}),
+        canonical_sections=frozenset(
+            {"career results", "racing record", "non-championship"},
+        ),
         heading_aliases={
             "career results": frozenset({"racing record", "karting record"}),
             "racing record": frozenset({"motorsport career results"}),
@@ -51,8 +53,12 @@ SECTION_PROFILES_CONFIG: Mapping[str, SectionDomainConfig] = {
             },
         ),
         heading_aliases={
-            "championship results": frozenset({"formula one/world championship results"}),
-            "complete formula one results": frozenset({"complete world championship results"}),
+            "championship results": frozenset(
+                {"formula one/world championship results"},
+            ),
+            "complete formula one results": frozenset(
+                {"complete world championship results"},
+            ),
         },
     ),
     "grands_prix": SectionDomainConfig(

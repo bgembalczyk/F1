@@ -1,16 +1,16 @@
-from collections.abc import Callable
 import inspect
+from collections.abc import Callable
 from pathlib import Path
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.types import SeedName
 from layers.seed.registry import SeedRegistryEntry
+from scrapers.base.errors import normalize_pipeline_error
+from scrapers.base.logging import RunTraceWriter
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
-from scrapers.base.logging import RunTraceWriter
 from scrapers.base.run_config import RunConfig
-from scrapers.base.errors import normalize_pipeline_error
 
 
 class LayerOneExecutor:
@@ -85,7 +85,10 @@ class LayerOneExecutor:
                 )
                 trace_writer.write(
                     event=context
-                    | {"status": "skipped", "message": "layer1 seed skipped: unsupported"},
+                    | {
+                        "status": "skipped",
+                        "message": "layer1 seed skipped: unsupported",
+                    },
                 )
                 summary["skip"].append(seed.seed_name)
                 continue
@@ -114,9 +117,13 @@ class LayerOneExecutor:
                 )
                 summary["fail"].append(seed.seed_name)
                 raise normalized_error from exc
-            self._logger.info("layer1 seed finished", extra=context | {"status": "success"})
+            self._logger.info(
+                "layer1 seed finished",
+                extra=context | {"status": "success"},
+            )
             trace_writer.write(
-                event=context | {"status": "success", "message": "layer1 seed finished"},
+                event=context
+                | {"status": "success", "message": "layer1 seed finished"},
             )
 
         try:
@@ -178,8 +185,17 @@ class LayerOneExecutor:
             },
         )
 
-    def _build_trace_writer(self, *, run_config: RunConfig, run_id: str) -> RunTraceWriter:
-        debug_root = Path(run_config.debug_dir) if run_config.debug_dir else Path(run_config.output_dir)
+    def _build_trace_writer(
+        self,
+        *,
+        run_config: RunConfig,
+        run_id: str,
+    ) -> RunTraceWriter:
+        debug_root = (
+            Path(run_config.debug_dir)
+            if run_config.debug_dir
+            else Path(run_config.output_dir)
+        )
         trace_path = debug_root / "traces" / f"layer1_{run_id}.jsonl"
         timestamp_provider = (
             (lambda: run_config.fixed_timestamp)

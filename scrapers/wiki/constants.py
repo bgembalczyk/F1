@@ -1,7 +1,3 @@
-from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
-from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
-from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
-
 SEED_RECORD_SCHEMA_VERSION = "1.0"
 
 COMPONENT_METADATA_ATTR = "COMPONENT_METADATA"

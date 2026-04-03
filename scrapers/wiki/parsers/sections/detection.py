@@ -22,7 +22,6 @@ def normalize_section_text(text: str) -> str:
     return clean_wiki_text(text.replace("_", " ")).lower().strip()
 
 
-
 def normalize_section_slug(text: str) -> str:
     """Create stable section slug used in parser output IDs.
 
@@ -151,7 +150,10 @@ def find_section_heading(
     fuzzy_candidates: list[SectionMatch] = []
 
     for heading in soup.find_all(HEADING_TAGS):
-        heading_ids = {normalize_section_text(value).replace(" ", "_") for value in _collect_heading_ids(heading)}
+        heading_ids = {
+            normalize_section_text(value).replace(" ", "_")
+            for value in _collect_heading_ids(heading)
+        }
         if heading_ids & target_ids:
             return SectionMatch(
                 heading=heading,

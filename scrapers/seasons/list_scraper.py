@@ -9,8 +9,8 @@ from scrapers.base.table.builders import build_columns
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import UrlColumn
-from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper

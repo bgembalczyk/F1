@@ -4,7 +4,9 @@ from collections.abc import Mapping
 
 from bs4 import BeautifulSoup
 
-from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
+from infrastructure.http_client.interfaces.http_client_protocol import (
+    HttpClientProtocol,
+)
 from infrastructure.http_client.interfaces.http_client_protocol import JsonValue
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,

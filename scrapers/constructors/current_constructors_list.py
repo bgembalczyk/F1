@@ -2,11 +2,11 @@
 
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.constructors.config_factory import build_constructor_list_config
 from scrapers.base.table.dsl.column import column
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
+from scrapers.constructors.config_factory import build_constructor_list_config
 from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER

@@ -4,7 +4,9 @@ from dataclasses import dataclass
 from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.components.header_resolver import HeaderResolver
 from infrastructure.http_client.components.request_executor import RequestExecutor
-from infrastructure.http_client.components.response_cache_service import ResponseCacheService
+from infrastructure.http_client.components.response_cache_service import (
+    ResponseCacheService,
+)
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.factories.default_http_policy_factory import (
     DefaultHttpPolicyFactory,

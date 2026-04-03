@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from dataclasses import replace
 from typing import cast
 
-from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.caching.file import FileCache
+from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,

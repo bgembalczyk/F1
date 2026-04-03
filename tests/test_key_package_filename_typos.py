@@ -1,12 +1,10 @@
 from pathlib import Path
 
-from scripts.lib.known_typos import (
-    SOURCE_DIRS,
-    build_default_rules,
-    run_known_typos_check,
-    scan_typo_imports,
-    validate_target_packages,
-)
+from scripts.lib.known_typos import SOURCE_DIRS
+from scripts.lib.known_typos import build_default_rules
+from scripts.lib.known_typos import run_known_typos_check
+from scripts.lib.known_typos import scan_typo_imports
+from scripts.lib.known_typos import validate_target_packages
 
 
 def test_known_typo_rule_target_packages_are_valid():

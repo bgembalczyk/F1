@@ -11,7 +11,9 @@ def test_deprecated_module_migrations_include_domain_entrypoints() -> None:
     migrations = dict(get_deprecated_module_migrations())
 
     assert migrations["scrapers.drivers.list_scraper"] == "scrapers.drivers.entrypoint"
-    assert migrations["scrapers.circuits.list_scraper"] == "scrapers.circuits.entrypoint"
+    assert (
+        migrations["scrapers.circuits.list_scraper"] == "scrapers.circuits.entrypoint"
+    )
     assert (
         migrations["scrapers.constructors.current_constructors_list"]
         == "scrapers.constructors.entrypoint"

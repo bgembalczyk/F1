@@ -9,7 +9,9 @@ from scripts.ci import enforce_no_new_prints
 from scripts.ci import enforce_source_name_magic_strings
 
 
-def test_function_complexity_detects_length_nesting_and_branching(tmp_path: Path) -> None:
+def test_function_complexity_detects_length_nesting_and_branching(
+    tmp_path: Path,
+) -> None:
     file_path = tmp_path / "module.py"
     file_path.write_text(
         """
@@ -44,7 +46,7 @@ def test_source_name_magic_string_gate_flags_new_json_literal(
     monkeypatch,
 ) -> None:
     file_path = tmp_path / "module.py"
-    file_path.write_text("source_name = \"f1_new_source.json\"\n", encoding="utf-8")
+    file_path.write_text('source_name = "f1_new_source.json"\n', encoding="utf-8")
 
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(
@@ -54,7 +56,7 @@ def test_source_name_magic_string_gate_flags_new_json_literal(
     )
 
     exit_code = enforce_source_name_magic_strings.main(
-        ["--base-sha", "base", "--head-sha", "head", "--changed-files", "module.py"]
+        ["--base-sha", "base", "--head-sha", "head", "--changed-files", "module.py"],
     )
 
     assert exit_code == 1
@@ -83,7 +85,7 @@ def test_no_new_prints_gate_allows_scripts_and_blocks_other_paths(
             "head",
             "--changed-files",
             "app/module.py",
-        ]
+        ],
     )
 
     assert exit_code == 1

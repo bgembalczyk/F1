@@ -83,7 +83,10 @@ class WikipediaInfoboxScraper:
             except ScraperError as error:
                 return self._handle_scrape_error(error, handler=handler)
             except RecoverableNetworkError as exc:
-                if self.error_policy == "retry" and attempt + 1 < self.error_retry_attempts:
+                if (
+                    self.error_policy == "retry"
+                    and attempt + 1 < self.error_retry_attempts
+                ):
                     continue
                 if self.error_policy == "skip":
                     return {}

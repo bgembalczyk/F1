@@ -87,7 +87,7 @@ def list_changed_files(base_sha: str, head_sha: str) -> list[str]:
             "--diff-filter=ACMR",
             base_sha,
             head_sha,
-        ]
+        ],
     )
     if result.returncode != 0:
         return []
@@ -99,7 +99,9 @@ def collect_commit_messages(base_sha: str, head_sha: str) -> str:
     if not base_sha or not head_sha:
         return ""
 
-    result = _run_git_and_capture_stdout(["log", "--format=%B", f"{base_sha}..{head_sha}"])
+    result = _run_git_and_capture_stdout(
+        ["log", "--format=%B", f"{base_sha}..{head_sha}"],
+    )
     if result.returncode != 0:
         return ""
 
@@ -125,5 +127,5 @@ def get_unified_diff(
             head_sha,
             "--",
             *changed_files,
-        ]
+        ],
     )

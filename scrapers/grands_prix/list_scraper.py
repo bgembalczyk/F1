@@ -2,8 +2,8 @@
 
 from typing import Any
 
-from scrapers.base.options import ScraperOptions
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import GRANDS_PRIX_LIST
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns

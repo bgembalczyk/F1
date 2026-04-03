@@ -16,7 +16,9 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
-from scripts.lib.check_runner import iter_python_paths, run_cli
+from scripts.lib.check_runner import iter_python_paths
+from scripts.lib.check_runner import run_cli
+
 SCRAPERS_DIR = REPO_ROOT / "scrapers"
 
 STANDARD_HOOK_NAMES = {
@@ -85,7 +87,6 @@ def lint_path(path: Path) -> list[str]:
             )
 
     return errors
-
 
 
 def run_check(argv: list[str] | None = None) -> list[str]:

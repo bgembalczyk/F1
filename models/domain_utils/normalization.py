@@ -2,8 +2,12 @@ from collections.abc import Iterable
 from collections.abc import Mapping
 from typing import Any
 
-from models.domain_utils.field_normalization.links import normalize_link_item as _normalize_link_item
-from models.domain_utils.field_normalization.links import normalize_link_items as _normalize_link_items
+from models.domain_utils.field_normalization.links import (
+    normalize_link_item as _normalize_link_item,
+)
+from models.domain_utils.field_normalization.links import (
+    normalize_link_items as _normalize_link_items,
+)
 from models.records.constants import WIKI_SEASON_URL
 from models.value_objects.link import Link
 from models.value_objects.link_utils import validate_link as validate_link_payload

@@ -52,7 +52,15 @@ def _git(*args: str) -> str:
 
 
 def _new_python_files(base_sha: str, head_sha: str) -> list[str]:
-    output = _git("diff", "--name-only", "--diff-filter=A", base_sha, head_sha, "--", "*.py")
+    output = _git(
+        "diff",
+        "--name-only",
+        "--diff-filter=A",
+        base_sha,
+        head_sha,
+        "--",
+        "*.py",
+    )
     files = [line.strip() for line in output.splitlines() if line.strip()]
     return [
         path
@@ -71,13 +79,15 @@ def _scan_file(path: Path) -> list[str]:
             continue
         if idx > 1 and JUSTIFICATION_MARKER in lines[idx - 2]:
             continue
-        violations.append(f"{path}:{idx}: użyto 'Any' bez uzasadnienia ({JUSTIFICATION_MARKER})")
+        violations.append(
+            f"{path}:{idx}: użyto 'Any' bez uzasadnienia ({JUSTIFICATION_MARKER})",
+        )
     return violations
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Blokuje nowe moduły z Any bez uzasadnienia w obszarze rolloutu typingu."
+        description="Blokuje nowe moduły z Any bez uzasadnienia w obszarze rolloutu typingu.",
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)

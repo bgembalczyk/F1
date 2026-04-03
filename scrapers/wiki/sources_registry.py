@@ -6,7 +6,6 @@ from dataclasses import dataclass
 
 from scrapers.base.run_profiles import LegacyCliProfileName
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -49,10 +48,25 @@ WIKI_SOURCE_DEFINITIONS: tuple[WikiSourceDefinition, ...] = (
         "constructors_indianapolis_only",
         "f1_indianapolis_only_constructors.json",
     ),
-    WikiSourceDefinition("teams", "constructors_privateer", "constructors_privateer", "f1_privateer_teams.json"),
+    WikiSourceDefinition(
+        "teams",
+        "constructors_privateer",
+        "constructors_privateer",
+        "f1_privateer_teams.json",
+    ),
     WikiSourceDefinition("drivers", "drivers", "drivers", "f1_drivers.json"),
-    WikiSourceDefinition("drivers", "drivers_female", "drivers_female", "female_drivers.json"),
-    WikiSourceDefinition("drivers", "drivers_fatalities", "drivers_fatalities", "f1_driver_fatalities.json"),
+    WikiSourceDefinition(
+        "drivers",
+        "drivers_female",
+        "drivers_female",
+        "female_drivers.json",
+    ),
+    WikiSourceDefinition(
+        "drivers",
+        "drivers_fatalities",
+        "drivers_fatalities",
+        "f1_driver_fatalities.json",
+    ),
     WikiSourceDefinition("seasons", "seasons", "seasons", "f1_seasons.json"),
     WikiSourceDefinition(
         "grands_prix",
@@ -66,9 +80,24 @@ WIKI_SOURCE_DEFINITIONS: tuple[WikiSourceDefinition, ...] = (
         "engines_indianapolis_only",
         "f1_indianapolis_only_engine_manufacturers.json",
     ),
-    WikiSourceDefinition("rules", "engines_restrictions", "engines_restrictions", "f1_engine_restrictions.json"),
-    WikiSourceDefinition("rules", "engines_regulations", "engines_regulations", "f1_engine_regulations.json"),
-    WikiSourceDefinition("engines", "engines_manufacturers", "engines_manufacturers", "f1_engine_manufacturers.json"),
+    WikiSourceDefinition(
+        "rules",
+        "engines_restrictions",
+        "engines_restrictions",
+        "f1_engine_restrictions.json",
+    ),
+    WikiSourceDefinition(
+        "rules",
+        "engines_regulations",
+        "engines_regulations",
+        "f1_engine_regulations.json",
+    ),
+    WikiSourceDefinition(
+        "engines",
+        "engines_manufacturers",
+        "engines_manufacturers",
+        "f1_engine_manufacturers.json",
+    ),
     WikiSourceDefinition(
         "races",
         "grands_prix_red_flagged_world_championship",
@@ -81,16 +110,36 @@ WIKI_SOURCE_DEFINITIONS: tuple[WikiSourceDefinition, ...] = (
         "grands_prix_red_flagged_non_championship",
         "f1_red_flagged_non_championship_races.json",
     ),
-    WikiSourceDefinition("points", "points_sprint", "points_sprint", "points_scoring_systems_sprint.json"),
+    WikiSourceDefinition(
+        "points",
+        "points_sprint",
+        "points_sprint",
+        "points_scoring_systems_sprint.json",
+    ),
     WikiSourceDefinition(
         "points",
         "points_shortened",
         "points_shortened",
         "points_scoring_systems_shortened.json",
     ),
-    WikiSourceDefinition("points", "points_history", "points_history", "points_scoring_systems_history.json"),
-    WikiSourceDefinition("seasons", "tyres", "tyres", "f1_tyre_manufacturers_by_season.json"),
-    WikiSourceDefinition("teams", "sponsorship_liveries", "sponsorship_liveries", "f1_sponsorship_liveries.json"),
+    WikiSourceDefinition(
+        "points",
+        "points_history",
+        "points_history",
+        "points_scoring_systems_history.json",
+    ),
+    WikiSourceDefinition(
+        "seasons",
+        "tyres",
+        "tyres",
+        "f1_tyre_manufacturers_by_season.json",
+    ),
+    WikiSourceDefinition(
+        "teams",
+        "sponsorship_liveries",
+        "sponsorship_liveries",
+        "f1_sponsorship_liveries.json",
+    ),
 )
 
 SOURCE_BY_SEED_NAME: dict[str, WikiSourceDefinition] = {
@@ -167,7 +216,11 @@ def resolve_list_filename(list_filename: str, *, warn: bool = True) -> str:
     return canonical
 
 
-def get_source_by_seed_name(seed_name: str, *, warn: bool = True) -> WikiSourceDefinition:
+def get_source_by_seed_name(
+    seed_name: str,
+    *,
+    warn: bool = True,
+) -> WikiSourceDefinition:
     canonical_seed_name = resolve_seed_name(seed_name, warn=warn)
     try:
         return SOURCE_BY_SEED_NAME[canonical_seed_name]
@@ -224,7 +277,10 @@ def validate_sources_registry_consistency() -> None:
             raise ValueError(msg)
         seen_filenames.add(source.output_file)
 
-        if source.seed_name != source.source_name and source.source_name in seen_seed_names:
+        if (
+            source.seed_name != source.source_name
+            and source.source_name in seen_seed_names
+        ):
             msg = (
                 "Source registry naming conflict: source_name duplicates an existing seed_name: "
                 f"{source.source_name!r}"

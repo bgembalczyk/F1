@@ -139,7 +139,11 @@ def _validate_wikipedia_url(
         raise ValueError(msg)
 
 
-def _validate_path_prefix(*, entry: BaseRegistryEntry, rule: RegistryValidationRule) -> None:
+def _validate_path_prefix(
+    *,
+    entry: BaseRegistryEntry,
+    rule: RegistryValidationRule,
+) -> None:
     output_path = rule.extractor(entry)
     prefix = rule.expected_prefix(entry)
     if not output_path.startswith(prefix):

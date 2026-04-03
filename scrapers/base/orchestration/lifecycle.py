@@ -38,8 +38,7 @@ class PipelineStage(Protocol):
 
     name: str
 
-    def run(self, payload: StageEnvelope) -> StageEnvelope:
-        ...
+    def run(self, payload: StageEnvelope) -> StageEnvelope: ...
 
 
 class StageCheckpointDumper:
@@ -58,7 +57,9 @@ class StageCheckpointDumper:
         if self._enabled_domains and payload.domain not in self._enabled_domains:
             return None
         self._checkpoints_dir.mkdir(parents=True, exist_ok=True)
-        dump_path = self._checkpoints_dir / f"stage_{payload.stage}_{payload.domain}.json"
+        dump_path = (
+            self._checkpoints_dir / f"stage_{payload.stage}_{payload.domain}.json"
+        )
         dump_path.write_text(
             json.dumps(
                 {

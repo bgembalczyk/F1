@@ -6,8 +6,12 @@ from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
 from scrapers.wiki.parsers.sections.constants import TOP_SECTION_NAME
 from scrapers.wiki.parsers.sections.data_classes import SectionProfile
 from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
-from scrapers.wiki.parsers.sections.section_profiles_config import SECTION_PROFILES_CONFIG
-from scrapers.wiki.parsers.sections.section_profiles_config import validate_section_profiles_config
+from scrapers.wiki.parsers.sections.section_profiles_config import (
+    SECTION_PROFILES_CONFIG,
+)
+from scrapers.wiki.parsers.sections.section_profiles_config import (
+    validate_section_profiles_config,
+)
 
 
 def _split_into_parts(

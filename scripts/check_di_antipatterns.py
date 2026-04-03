@@ -19,7 +19,9 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
 from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
-from scripts.lib.check_runner import iter_python_paths, run_cli
+from scripts.lib.check_runner import iter_python_paths
+from scripts.lib.check_runner import run_cli
+
 DEFAULT_TARGETS = [REPO_ROOT / "layers", REPO_ROOT / "scrapers" / "base"]
 
 DI_SUSPECT_SUFFIXES = (
@@ -216,7 +218,10 @@ def _validate_adr_reference_for_major_changes(
     adr_reference_text: str,
     threshold: int,
 ) -> list[str]:
-    if not DEFAULT_ADR_ENFORCEMENT_POLICY.should_emit_di_trigger_signal(len(violations), threshold):
+    if not DEFAULT_ADR_ENFORCEMENT_POLICY.should_emit_di_trigger_signal(
+        len(violations),
+        threshold,
+    ):
         return []
     if DEFAULT_ADR_ENFORCEMENT_POLICY.has_adr_reference(adr_reference_text):
         return []
@@ -232,7 +237,9 @@ def main(argv: list[str] | None = None) -> int:
     argv = argv or []
     paths: list[Path] = []
     adr_reference_text = ""
-    adr_required_violation_threshold = DEFAULT_ADR_ENFORCEMENT_POLICY.di_required_violation_threshold
+    adr_required_violation_threshold = (
+        DEFAULT_ADR_ENFORCEMENT_POLICY.di_required_violation_threshold
+    )
 
     i = 0
     while i < len(argv):

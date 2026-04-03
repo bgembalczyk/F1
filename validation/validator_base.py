@@ -36,7 +36,9 @@ class RecordValidator(ABC):
     def validate_result(self, record: ExportRecord) -> ValidationResult:
         schema_issues = self.validate(record)
         record_factory_issues = self.validate_record_factory(record)
-        return ValidationResult.from_violations([*schema_issues, *record_factory_issues])
+        return ValidationResult.from_violations(
+            [*schema_issues, *record_factory_issues],
+        )
 
     def set_record_factory_validator(
         self,

@@ -103,7 +103,9 @@ def test_races_domain_transform_handler() -> None:
     assert "lap" not in transformed
 
 
-def test_resolve_record_transform_handlers_uses_domain_fallback_when_no_source_override() -> None:
+def test_resolve_record_transform_handlers_uses_domain_fallback_when_no_source_override() -> (
+    None
+):
     handlers = _resolve_record_transform_handlers(
         domain="teams",
         source_name="unknown.json",

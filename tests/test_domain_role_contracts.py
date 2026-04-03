@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup
 
 from models.records.base_factory import RecordFactoryProtocol
 from models.records.factories import registry as factory_registry_module
-from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from models.records.factories.registry import FactoryRegistryProvider
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
@@ -193,6 +193,7 @@ def test_section_service_contract_for_domain(domain: str) -> None:
     assert isinstance(result, list | dict)
     assert result
 
+
 @pytest.mark.parametrize(
     ("assembler", "payload", "expected_keys"),
     [
@@ -237,12 +238,12 @@ def test_section_service_contract_for_domain(domain: str) -> None:
 )
 def test_record_assembler_contract_for_each_domain_implementation(
     assembler: RecordAssemblerProtocol[
-        DriverRecordDTO
-        | ConstructorRecordDTO
-        | CircuitRecordDTO
-        | SeasonRecordSections
+        DriverRecordDTO | ConstructorRecordDTO | CircuitRecordDTO | SeasonRecordSections
     ],
-    payload: DriverRecordDTO | ConstructorRecordDTO | CircuitRecordDTO | SeasonRecordSections,
+    payload: DriverRecordDTO
+    | ConstructorRecordDTO
+    | CircuitRecordDTO
+    | SeasonRecordSections,
     expected_keys: set[str],
 ) -> None:
     record = assembler.assemble(payload)
@@ -284,7 +285,9 @@ def test_record_assembler_contract_for_each_domain_implementation(
     ],
 )
 def test_section_service_contract_for_each_domain_implementation(
-    service: SectionExtractionServiceProtocol[list[dict[str, Any]] | dict[str, list[dict[str, Any]]]],
+    service: SectionExtractionServiceProtocol[
+        list[dict[str, Any]] | dict[str, list[dict[str, Any]]]
+    ],
     html: str,
 ) -> None:
     result = service.extract(_soup(html))

@@ -1,8 +1,8 @@
 from typing import Any
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
-from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.base.options import ScraperOptions
+from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn

@@ -34,7 +34,7 @@ def test_scrapers_and_layers_import_depth_budget() -> None:
                 depth = imported_module.count(".") + 1
                 if depth > MAX_IMPORT_PATH_SEGMENTS:
                     violations.append(
-                        f"{py_file}:{line_no} imports {imported_module} (depth={depth})"
+                        f"{py_file}:{line_no} imports {imported_module} (depth={depth})",
                     )
 
     assert not violations, (

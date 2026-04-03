@@ -1,10 +1,10 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
+import ssl
 import threading
 import time
 from collections.abc import Callable
 from http.server import BaseHTTPRequestHandler
 from http.server import ThreadingHTTPServer
-import ssl
 
 import pytest
 
@@ -12,15 +12,19 @@ from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
-from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
+from infrastructure.http_client.interfaces.http_client_protocol import (
+    HttpClientProtocol,
+)
+from infrastructure.http_client.interfaces.http_response_protocol import (
+    HttpResponseProtocol,
+)
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
+from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from infrastructure.http_client.requests_shim.http_error import HTTPError
 from infrastructure.http_client.requests_shim.http_shim_error import HttpShimError
 from infrastructure.http_client.requests_shim.response import Response
 from infrastructure.http_client.requests_shim.session import Session
 from infrastructure.http_client.requests_shim.timeout_error import HTTPTimeoutError
-from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
 
@@ -238,7 +242,12 @@ def test_runtime_checkable_session_protocol_accepts_requests_shim_session():
 
 
 def test_runtime_checkable_response_protocol_accepts_requests_shim_response():
-    response = Response(url="https://example.com", status_code=200, headers={}, text="ok")
+    response = Response(
+        url="https://example.com",
+        status_code=200,
+        headers={},
+        text="ok",
+    )
     assert isinstance(response, HttpResponseProtocol)
 
 
@@ -318,7 +327,8 @@ def test_session_uses_custom_ssl_context_provider(monkeypatch):
     assert response.status_code == 200
     assert provider_called == 1
     assert captured_context is custom_context
-    
+
+
 def test_http_error_inherits_http_shim_error_and_exposes_response_adapter():
     response = Response(
         url="https://example.com/not-found",

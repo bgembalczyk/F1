@@ -26,7 +26,7 @@ def _is_allowed(file_path: str) -> bool:
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Block newly added print(...) calls outside allowlisted places."
+        description="Block newly added print(...) calls outside allowlisted places.",
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)

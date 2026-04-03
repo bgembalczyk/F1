@@ -156,7 +156,10 @@ class CompactStepDiffWriter:
         source_metadata: Mapping[str, Any],
     ) -> Path | None:
         domain = str(source_metadata.get("domain") or "").strip()
-        if self._domain_filter is not None and domain.lower() not in self._domain_filter:
+        if (
+            self._domain_filter is not None
+            and domain.lower() not in self._domain_filter
+        ):
             self._previous_records = list(records)
             self._previous_step_name = step_name
             return None
@@ -167,7 +170,10 @@ class CompactStepDiffWriter:
 
         all_record_ids = sorted(set(before_by_id) | set(after_by_id))
         for record_id in all_record_ids:
-            if self._record_id_filter is not None and record_id not in self._record_id_filter:
+            if (
+                self._record_id_filter is not None
+                and record_id not in self._record_id_filter
+            ):
                 continue
             before_record = before_by_id.get(record_id)
             after_record = after_by_id.get(record_id)
@@ -182,7 +188,7 @@ class CompactStepDiffWriter:
                     "source": str(
                         source_metadata.get("url")
                         or source_metadata.get("scraper")
-                        or "unknown"
+                        or "unknown",
                     ),
                     "record_id": record_id,
                     "changed_fields": field_changes,

@@ -114,7 +114,9 @@ class ConstructorsListScraper(F1ListScraper):
             "ConstructorsListScraper: current section parsed, records=%d.",
             len(current_records),
         )
-        self._split_export_records[self._SECTION_PARSER_EXPORT_KEY].extend(current_records)
+        self._split_export_records[self._SECTION_PARSER_EXPORT_KEY].extend(
+            current_records,
+        )
         if self._should_include_scope("current"):
             return current_records
         return []

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from collections.abc import Callable
 from collections import Counter
+from collections.abc import Callable
 from dataclasses import asdict
 from dataclasses import dataclass
 from typing import TYPE_CHECKING

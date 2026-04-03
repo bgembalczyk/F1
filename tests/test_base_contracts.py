@@ -106,7 +106,10 @@ class _AdapterStub(_SectionAdapterContract):
         return self.sections
 
 
-class _SectionServiceContractStub(BaseSectionExtractionService, _SectionServiceContract):
+class _SectionServiceContractStub(
+    BaseSectionExtractionService,
+    _SectionServiceContract,
+):
     domain = "unit-test"
 
     def build_entries(self) -> list[SectionAdapterEntry]:

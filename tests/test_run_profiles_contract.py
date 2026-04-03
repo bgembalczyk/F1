@@ -1,7 +1,6 @@
 # ruff: noqa: S108
 from __future__ import annotations
 
-from importlib import import_module
 from typing import TYPE_CHECKING
 
 from scrapers.base.domain_entrypoint import debug_profile

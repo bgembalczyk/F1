@@ -35,4 +35,3 @@ class HttpShimError(RequestError):
         self.headers = {str(k): str(v) for k, v in headers.items()}
         self.body = body
         self.response = HttpShimErrorResponseAdapter(self)
-

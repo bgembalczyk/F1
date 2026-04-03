@@ -1,10 +1,9 @@
 from __future__ import annotations
 
 import os
-from pathlib import Path
 import subprocess
 import sys
-
+from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -20,7 +19,14 @@ def _git(cwd: Path, *args: str) -> str:
     return proc.stdout.strip()
 
 
-def _run_enforcement(cwd: Path, base_sha: str, head_sha: str, *, pr_title: str = "", pr_body: str = "") -> subprocess.CompletedProcess[str]:
+def _run_enforcement(
+    cwd: Path,
+    base_sha: str,
+    head_sha: str,
+    *,
+    pr_title: str = "",
+    pr_body: str = "",
+) -> subprocess.CompletedProcess[str]:
     env = dict(os.environ)
     env["PYTHONPATH"] = str(REPO_ROOT)
     return subprocess.run(
@@ -55,8 +61,14 @@ def _init_repo(tmp_path: Path) -> tuple[Path, str]:
     (repo / "layers").mkdir(parents=True)
     (repo / "models").mkdir(parents=True)
 
-    (repo / "layers" / "pipeline.py").write_text("class Pipeline:\n    pass\n", encoding="utf-8")
-    (repo / "models" / "driver.py").write_text("class Driver:\n    pass\n", encoding="utf-8")
+    (repo / "layers" / "pipeline.py").write_text(
+        "class Pipeline:\n    pass\n",
+        encoding="utf-8",
+    )
+    (repo / "models" / "driver.py").write_text(
+        "class Driver:\n    pass\n",
+        encoding="utf-8",
+    )
 
     _git(repo, "add", ".")
     _git(repo, "commit", "-m", "base commit")
@@ -64,9 +76,14 @@ def _init_repo(tmp_path: Path) -> tuple[Path, str]:
     return repo, base_sha
 
 
-def test_enforcement_fails_without_adr_for_architectural_non_cosmetic_change(tmp_path: Path) -> None:
+def test_enforcement_fails_without_adr_for_architectural_non_cosmetic_change(
+    tmp_path: Path,
+) -> None:
     repo, base_sha = _init_repo(tmp_path)
-    (repo / "layers" / "pipeline.py").write_text("class Pipeline:\n    def run(self) -> int:\n        return 1\n", encoding="utf-8")
+    (repo / "layers" / "pipeline.py").write_text(
+        "class Pipeline:\n    def run(self) -> int:\n        return 1\n",
+        encoding="utf-8",
+    )
 
     _git(repo, "add", ".")
     _git(repo, "commit", "-m", "architectural change without adr")
@@ -80,7 +97,10 @@ def test_enforcement_fails_without_adr_for_architectural_non_cosmetic_change(tmp
 
 def test_enforcement_passes_when_adr_reference_is_present(tmp_path: Path) -> None:
     repo, base_sha = _init_repo(tmp_path)
-    (repo / "layers" / "pipeline.py").write_text("class Pipeline:\n    def run(self) -> int:\n        return 1\n", encoding="utf-8")
+    (repo / "layers" / "pipeline.py").write_text(
+        "class Pipeline:\n    def run(self) -> int:\n        return 1\n",
+        encoding="utf-8",
+    )
 
     _git(repo, "add", ".")
     _git(repo, "commit", "-m", "ADR-0003 architectural change")
@@ -94,7 +114,10 @@ def test_enforcement_passes_when_adr_reference_is_present(tmp_path: Path) -> Non
 
 def test_enforcement_skips_cosmetic_only_architectural_change(tmp_path: Path) -> None:
     repo, base_sha = _init_repo(tmp_path)
-    (repo / "layers" / "pipeline.py").write_text("# komentarz kosmetyczny\nclass Pipeline:\n    pass\n", encoding="utf-8")
+    (repo / "layers" / "pipeline.py").write_text(
+        "# komentarz kosmetyczny\nclass Pipeline:\n    pass\n",
+        encoding="utf-8",
+    )
 
     _git(repo, "add", ".")
     _git(repo, "commit", "-m", "cosmetic architecture change")
@@ -108,7 +131,10 @@ def test_enforcement_skips_cosmetic_only_architectural_change(tmp_path: Path) ->
 
 def test_enforcement_skips_non_architectural_changes(tmp_path: Path) -> None:
     repo, base_sha = _init_repo(tmp_path)
-    (repo / "models" / "driver.py").write_text("class Driver:\n    category = 'main'\n", encoding="utf-8")
+    (repo / "models" / "driver.py").write_text(
+        "class Driver:\n    category = 'main'\n",
+        encoding="utf-8",
+    )
 
     _git(repo, "add", ".")
     _git(repo, "commit", "-m", "model only change")

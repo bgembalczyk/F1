@@ -4,12 +4,12 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.list_scraper import CircuitsListScraper
+from scrapers.constructors.constructors_list import ConstructorsListScraper
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
-from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
+from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.seasons.parsers.results import SeasonResultsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 from tests._section_parser_fixture_pattern import ALIAS_FIXTURES
@@ -170,7 +170,9 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
     def flaky_parse(fragment: BeautifulSoup):
         nonlocal call_count
         call_count += 1
-        has_heading = fragment.find("h2", id="Constructors_for_the_2026_season") is not None
+        has_heading = (
+            fragment.find("h2", id="Constructors_for_the_2026_season") is not None
+        )
         if has_heading:
             raise RuntimeError("forced failure on full section fragment")
         return original_parse(fragment)

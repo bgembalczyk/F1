@@ -8,9 +8,9 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import cast
 
-from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.component_metadata import LIST_SCRAPER_KIND
 from scrapers.wiki.component_metadata import RUNNER_KIND
+from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.component_metadata import parse_component_metadata
 from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
 from scrapers.wiki.protocols import DiscoveredListScraperClassProtocol
@@ -155,7 +155,7 @@ def build_layer_one_runner_map_discovered() -> dict[str, DiscoveredRunnerProtoco
             raise ValueError(msg)
         source_cls_by_seed[metadata.seed_name] = component.cls
         runner = component.cls()
-        if not hasattr(runner, "run") or not callable(getattr(runner, "run")):
+        if not hasattr(runner, "run") or not callable(runner.run):
             msg = f"Runner '{metadata.seed_name}' does not implement run() contract"
             raise TypeError(msg)
         runner_map[metadata.seed_name] = cast(DiscoveredRunnerProtocol, runner)

@@ -3,10 +3,10 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from scripts.ci.git_diff import GitCommandResult
 from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.git_diff import collect_commit_messages
 from scripts.ci.git_diff import get_unified_diff
-from scripts.ci.git_diff import GitCommandResult
 from scripts.ci.git_diff import list_changed_files
 from scripts.ci.git_diff import parse_added_lines_from_unified_diff
 from scripts.ci.io_utils import append_output_vars
@@ -63,7 +63,10 @@ def test_list_changed_files_returns_entries_and_handles_error(monkeypatch: Any) 
     def fake_run_error(_args: list[str]) -> GitCommandResult:
         return GitCommandResult(returncode=1, stdout="src/c.py")
 
-    monkeypatch.setattr("scripts.ci.git_diff._run_git_and_capture_stdout", fake_run_error)
+    monkeypatch.setattr(
+        "scripts.ci.git_diff._run_git_and_capture_stdout",
+        fake_run_error,
+    )
     assert list_changed_files("base", "head") == []
     assert list_changed_files("", "head") == []
 
@@ -81,13 +84,22 @@ def test_collect_commit_messages_and_unified_diff_fallbacks(monkeypatch: Any) ->
         returncode=0,
         stdout="@@ -1 +1 @@\n+line\n",
     )
-    assert get_unified_diff("base", "head", []) == GitCommandResult(returncode=0, stdout="")
-    assert get_unified_diff("", "head", ["src/a.py"]) == GitCommandResult(returncode=1, stdout="")
+    assert get_unified_diff("base", "head", []) == GitCommandResult(
+        returncode=0,
+        stdout="",
+    )
+    assert get_unified_diff("", "head", ["src/a.py"]) == GitCommandResult(
+        returncode=1,
+        stdout="",
+    )
 
     def fake_run_error(_args: list[str]) -> GitCommandResult:
         return GitCommandResult(returncode=1, stdout="unexpected")
 
-    monkeypatch.setattr("scripts.ci.git_diff._run_git_and_capture_stdout", fake_run_error)
+    monkeypatch.setattr(
+        "scripts.ci.git_diff._run_git_and_capture_stdout",
+        fake_run_error,
+    )
     assert collect_commit_messages("base", "head") == ""
 
 
@@ -99,8 +111,7 @@ def test_io_utils_read_write_and_append(tmp_path: Path) -> None:
     output_path = tmp_path / "out" / "github_output.txt"
     append_output_vars(output_path, {"duplicate_count": 3, "duplicate_status": "warn"})
     assert output_path.read_text(encoding="utf-8") == (
-        "duplicate_count=3\n"
-        "duplicate_status=warn\n"
+        "duplicate_count=3\nduplicate_status=warn\n"
     )
 
 

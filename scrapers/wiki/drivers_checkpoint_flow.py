@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import csv
 import json
+from collections.abc import Callable
 from dataclasses import asdict
-from datetime import timezone
 from datetime import datetime
+from datetime import timezone
 from pathlib import Path
 from time import perf_counter
 from typing import Any
-from typing import Callable
 
 from scrapers.base.orchestration.lifecycle import STAGE_EXPORT
 from scrapers.base.orchestration.lifecycle import STAGE_INGEST
@@ -143,7 +143,9 @@ class DriversCheckpointFlow:
         validate_payload = StageEnvelope(
             domain="drivers",
             stage=STAGE_VALIDATE,
-            records=[row for row in merge_payload.records if isinstance(row.get("url"), str)],
+            records=[
+                row for row in merge_payload.records if isinstance(row.get("url"), str)
+            ],
             metadata=merge_payload.metadata,
         )
         self._dumper.dump(validate_payload)
@@ -198,7 +200,11 @@ class DriversCheckpointFlow:
     def _append_audit(self, entry: AuditEntry) -> None:
         self._registry_file.parent.mkdir(parents=True, exist_ok=True)
         registry_payload = self._read_json_payload(self._registry_file)
-        runs = registry_payload.get("runs", []) if isinstance(registry_payload, dict) else []
+        runs = (
+            registry_payload.get("runs", [])
+            if isinstance(registry_payload, dict)
+            else []
+        )
         runs.append(asdict(entry))
         self._registry_file.write_text(
             json.dumps({"runs": runs}, ensure_ascii=False, indent=2),
@@ -209,7 +215,10 @@ class DriversCheckpointFlow:
         existing = self._read_json_payload(audit_json)
         entries = existing if isinstance(existing, list) else []
         entries.append(asdict(entry))
-        audit_json.write_text(json.dumps(entries, ensure_ascii=False, indent=2), encoding="utf-8")
+        audit_json.write_text(
+            json.dumps(entries, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
 
         csv_file = self._checkpoint_file.parent / "step_audit.csv"
         fieldnames = [
@@ -262,7 +271,10 @@ class DriversCheckpointFlow:
             },
             "records": records,
         }
-        path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
 
     @staticmethod
     def _read_checkpoint_payload(path: Path) -> dict[str, Any]:

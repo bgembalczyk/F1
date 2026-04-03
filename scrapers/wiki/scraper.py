@@ -61,7 +61,9 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
             body_content_parser: Parser treści strony. Domyślnie tworzy nowy
                 BodyContentParser.
         """
-        resolved_element_parsers = element_parsers or build_default_wiki_element_parsers()
+        resolved_element_parsers = (
+            element_parsers or build_default_wiki_element_parsers()
+        )
         WikiElementParserMixin.__init__(
             self,
             element_parsers=resolved_element_parsers,

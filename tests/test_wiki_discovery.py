@@ -1,18 +1,16 @@
 from __future__ import annotations
 
 from types import ModuleType
-
-from scrapers.wiki.component_metadata import ComponentMetadata
-from scrapers.wiki.discovery import _clear_component_metadata_cache
-from scrapers.wiki.discovery import _discover_components_in_module
 from typing import get_type_hints
 
 import pytest
 
+from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.component_metadata import build_component_metadata
 from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
 from scrapers.wiki.discovery import DiscoveredComponent
 from scrapers.wiki.discovery import DiscoveredRunnerProtocol
+from scrapers.wiki.discovery import _clear_component_metadata_cache
 from scrapers.wiki.discovery import _discover_components_in_module
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
@@ -34,7 +32,7 @@ def test_discovery_does_not_mutate_imported_class_metadata() -> None:
         }
 
     module = ModuleType("tests.fake_discovery_module")
-    setattr(module, "_ListScraper", _ListScraper)
+    module._ListScraper = _ListScraper
 
     raw_before = _ListScraper.COMPONENT_METADATA
 
@@ -77,7 +75,7 @@ def test_build_layer_one_runner_map_discovered_returns_runner_contract(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     class _Runner:
-        def run(self, seed, run_config, base_wiki_dir) -> None:  # noqa: ANN001
+        def run(self, seed, run_config, base_wiki_dir) -> None:
             return None
 
     setattr(

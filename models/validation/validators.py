@@ -1,12 +1,12 @@
-from typing import Any
 from dataclasses import asdict
 from dataclasses import is_dataclass
+from typing import Any
 
-from models.value_objects.link import Link
-from models.value_objects.link_utils import validate_link as _validate_link
 from models.domain_utils.normalization import (
     normalize_season_items as core_normalize_season_items,
 )
+from models.value_objects.link import Link
+from models.value_objects.link_utils import validate_link as _validate_link
 from models.value_objects.season_ref import SeasonRef
 
 
@@ -46,7 +46,11 @@ def validate_links(
     return [item.to_dict() for item in normalize_link_list(items)]
 
 
-def validate_link(value: dict[str, Any] | Link | None, *, field_name: str) -> dict[str, Any]:
+def validate_link(
+    value: dict[str, Any] | Link | None,
+    *,
+    field_name: str,
+) -> dict[str, Any]:
     payload = value.to_dict() if isinstance(value, Link) else value
     return _validate_link(payload, field_name=field_name)
 

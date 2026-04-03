@@ -4,7 +4,6 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
-from bs4 import Tag
 
 from scrapers.sponsorship_liveries.parsers.section import SponsorshipSectionParser
 from scrapers.wiki.parsers.elements.table import TableParser

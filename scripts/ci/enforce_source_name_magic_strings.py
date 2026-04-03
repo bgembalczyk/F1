@@ -9,10 +9,10 @@ from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.reporting import split_csv
 
 SOURCE_LITERAL_RE = re.compile(r"['\"]([a-z0-9_]+\.json)['\"]")
-UPPER_CONSTANT_ASSIGN_RE = re.compile(r"^\s*[A-Z][A-Z0-9_]*\s*=\s*['\"][a-z0-9_]+\.json['\"]\s*$")
-ALLOWED_PATHS = (
-    "tests/",
+UPPER_CONSTANT_ASSIGN_RE = re.compile(
+    r"^\s*[A-Z][A-Z0-9_]*\s*=\s*['\"][a-z0-9_]+\.json['\"]\s*$",
 )
+ALLOWED_PATHS = ("tests/",)
 ALLOWED_FILES = {
     "layers/zero/source_names.py",
 }
@@ -28,7 +28,7 @@ def _is_allowed(file_path: str, line: str) -> bool:
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Detect newly added magic string source names (*.json literals)."
+        description="Detect newly added magic string source names (*.json literals).",
     )
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)
