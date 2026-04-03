@@ -8,6 +8,9 @@ import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
+from layers.orchestration.types import LegacyWikiMode
+from layers.orchestration.types import DomainName
+from layers.orchestration.types import WIKI_MODE_VALUES
 from layers.path_resolver import DEFAULT_PATH_RESOLVER
 from layers.path_resolver import PathResolver
 from typing import TYPE_CHECKING
@@ -104,9 +107,16 @@ class LegacyCliRegistry:
 
 @dataclass(frozen=True)
 class DomainCommand:
-    name: str
+    name: DomainName
     module_path: str
     scraper_path: str
+
+
+@dataclass(frozen=True)
+class WikiCliArgs:
+    mode: LegacyWikiMode
+    verbose: bool
+    trace: bool
 
 
 @dataclass(frozen=True)
@@ -219,8 +229,12 @@ def _run_export_complete(
 
 def _list_output_path(*, seed_name: str, output_category: str | None = None) -> str:
     source = get_source_by_seed_name(seed_name, warn=False)
-    category = output_category or source.output_category
-    return f"{category}/{source.list_filename}"
+    category = output_category or source.domain
+    return f"{category}/{source.output_file}"
+
+
+def _source_profile(seed_name: str) -> LegacyCliProfileName:
+    return get_source_by_seed_name(seed_name, warn=False).profile
 
 
 def _legacy_alias_output_path(
@@ -478,7 +492,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             module_path="scrapers.points.sprint_qualifying_points",
             factory="lazy",
             target_path="scrapers.points.sprint_qualifying_points:run_list_scraper",
-            profile="list_scraper",
+            profile=_source_profile("points_sprint"),
         ),
         LegacyModuleDefinition(
             module_path="scrapers.points.points_scoring_systems_history",
@@ -486,13 +500,13 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             target_path=(
                 "scrapers.points.points_scoring_systems_history:run_list_scraper"
             ),
-            profile="list_scraper",
+            profile=_source_profile("points_history"),
         ),
         LegacyModuleDefinition(
             module_path="scrapers.points.shortened_race_points",
             factory="lazy",
             target_path="scrapers.points.shortened_race_points:run_list_scraper",
-            profile="list_scraper",
+            profile=_source_profile("points_shortened"),
         ),
         LegacyModuleDefinition(
             module_path="scrapers.seasons.list_scraper",
@@ -587,7 +601,7 @@ def _validate_startup_name_consistency() -> None:
 _validate_startup_name_consistency()
 
 _DOMAIN_SCRAPER_METADATA = get_domain_entrypoint_scraper_metadata()
-DOMAIN_COMMANDS: dict[str, DomainCommand] = {}
+DOMAIN_COMMANDS: dict[DomainName, DomainCommand] = {}
 for module_path in MODULE_DEFINITIONS:
     parts = module_path.split(".")
     if len(parts) < SCRAPER_MODULE_PATH_PARTS or parts[0] != "scrapers":
@@ -736,7 +750,7 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Canonical wiki pipeline launcher")
     parser.add_argument(
         "--mode",
-        choices=("layer0", "layer1", "full"),
+        type=_parse_wiki_mode,
         default="layer0",
     )
     parser.add_argument(
@@ -752,9 +766,26 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def run_wiki_cli(argv: list[str] | None = None) -> None:
+def _parse_wiki_mode(raw: str) -> LegacyWikiMode:
+    if raw in WIKI_MODE_VALUES:
+        return raw
+    supported = ", ".join(WIKI_MODE_VALUES)
+    msg = f"Unsupported --mode value: {raw!r}. Supported values: {supported}."
+    raise argparse.ArgumentTypeError(msg)
+
+
+def _parse_wiki_cli_args(argv: list[str] | None = None) -> WikiCliArgs:
     parser = _build_wiki_parser()
-    args = parser.parse_args(argv)
+    namespace = parser.parse_args(argv)
+    return WikiCliArgs(
+        mode=namespace.mode,
+        verbose=namespace.verbose,
+        trace=namespace.trace,
+    )
+
+
+def run_wiki_cli(argv: list[str] | None = None) -> None:
+    args = _parse_wiki_cli_args(argv)
     configure_logging(verbose=args.verbose, trace=args.trace)
 
     app_module = importlib.import_module("layers.application")
@@ -769,3 +800,31 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
         app.run_layer_zero()
     if args.mode in {"layer1", "full"}:
         app.run_layer_one()
+
+
+def _run_command(args: argparse.Namespace) -> None:
+    run_registered_module(args.module)
+
+
+def _domain_command(args: argparse.Namespace) -> None:
+    command = DOMAIN_COMMANDS[args.name]
+    run_registered_module(command.module_path)
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = _build_main_parser()
+    args = parser.parse_args(argv)
+    if args.command == "run":
+        _run_command(args)
+        return
+    if args.command == "domain":
+        _domain_command(args)
+        return
+    if args.command == "wiki":
+        run_wiki_cli(["--mode", args.mode])
+        return
+    parser.error(f"Unknown command: {args.command}")
+
+
+if __name__ == "__main__":
+    main()

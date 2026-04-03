@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+from scrapers.base.logging import build_execution_context
+from scrapers.base.logging import get_logger
 from typing import TYPE_CHECKING
 
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
 from layers.orchestration.factories import StaticScraperKwargsFactory
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+from layers.orchestration.types import SeedName
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
@@ -19,8 +22,10 @@ from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 if TYPE_CHECKING:
     from pathlib import Path
 
+_LOGGER = get_logger("RunnerRegistry")
 
-def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
+
+def _build_explicit_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
     return {
         "grands_prix": GrandPrixRunner(),
         "circuits": FunctionExportRunner(
@@ -43,25 +48,22 @@ def _build_explicit_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
 
 
 def _merge_runner_maps(
-    discovered: dict[str, LayerOneRunnerProtocol],
-    explicit: dict[str, LayerOneRunnerProtocol],
-) -> dict[str, LayerOneRunnerProtocol]:
-    merged = dict(discovered)
+    discovered: dict[SeedName, LayerOneRunnerProtocol],
+    explicit: dict[SeedName, LayerOneRunnerProtocol],
+) -> dict[SeedName, LayerOneRunnerProtocol]:
+    merged: dict[SeedName, LayerOneRunnerProtocol] = dict(discovered)
     for seed_name, runner in explicit.items():
         merged.setdefault(seed_name, runner)
     return merged
 
 
-def build_layer_one_runner_map() -> dict[str, LayerOneRunnerProtocol]:
+def build_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
     explicit_runner_map = _build_explicit_layer_one_runner_map()
     discovered_runner_map = build_layer_one_runner_map_discovered()
     return _merge_runner_maps(discovered_runner_map, explicit_runner_map)
 
 
-def build_layer_zero_run_config_factory_map() -> dict[
-    str,
-    LayerZeroRunConfigFactoryProtocol,
-]:
+def build_layer_zero_run_config_factory_map() -> dict[SeedName, LayerZeroRunConfigFactoryProtocol]:
     return {
         "constructors_current": StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "current"},
@@ -97,10 +99,29 @@ def build_layer_zero_run_config_factory_map() -> dict[
     }
 
 
-def run_engine_manufacturers(*, base_wiki_dir: Path, include_urls: bool) -> None:
-    print("[complete] running  F1CompleteEngineManufacturerDataExtractor")
+def run_engine_manufacturers(
+    *,
+    base_wiki_dir: Path,
+    include_urls: bool,
+    run_id: str | None = None,
+) -> None:
+    start_context = build_execution_context(
+        run_id=run_id,
+        seed_name="engine_manufacturers",
+        domain="engines",
+        source_name="F1CompleteEngineManufacturerDataExtractor",
+        step="export",
+        status="started",
+    )
+    _LOGGER.info(
+        "[complete] running F1CompleteEngineManufacturerDataExtractor",
+        extra=start_context,
+    )
     export_complete_engine_manufacturers(
         output_dir=base_wiki_dir / "engines/complete_engine_manufacturers",
         include_urls=include_urls,
     )
-    print("[complete] finished F1CompleteEngineManufacturerDataExtractor")
+    _LOGGER.info(
+        "[complete] finished F1CompleteEngineManufacturerDataExtractor",
+        extra=start_context | {"status": "success"},
+    )

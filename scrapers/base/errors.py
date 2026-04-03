@@ -3,6 +3,8 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import TypedDict
 
+from scrapers.base.error_codes import resolve_error_code
+
 
 class ErrorCategory(str, Enum):
     NETWORK = "network"
@@ -66,8 +68,11 @@ class ScraperError(RuntimeError):
         return details
 
     def to_payload(self) -> "ScraperErrorPayload":
+        code_definition = resolve_error_code(self.code)
         return ScraperErrorPayload(
             code=self.code,
+            code_id=code_definition.code_id,
+            code_description=code_definition.short_description,
             message=self.message,
             domain=self.domain,
             source_name=self.source_name,
@@ -93,6 +98,8 @@ class ScraperErrorPayload(TypedDict):
     """Typed payload for exporting scraper exceptions to pipeline logs."""
 
     code: str
+    code_id: str
+    code_description: str
     message: str
     domain: str
     source_name: str | None
