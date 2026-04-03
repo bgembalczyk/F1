@@ -29,25 +29,19 @@ class WikiPipelineFacade:
     layer_zero_merge_service: LayerZeroMergeServiceProtocol
     run_config_factory: Callable[[], RunConfig]
 
-    def run_layer_zero(self) -> None:
-        self.layer_zero_executor.run(self._build_run_config(), self.base_wiki_dir)
-
-    def run_layer_one(self) -> None:
-        self.layer_one_executor.run(self._build_run_config(), self.base_wiki_dir)
-
     def run_full(self) -> None:
-        self.run_layer_zero()
-        self.run_layer_one()
+        self.layer_zero_executor.run(self.run_config_factory(), self.base_wiki_dir)
+        self.layer_one_executor.run(self.run_config_factory(), self.base_wiki_dir)
 
     def run_merge_only(self) -> None:
         self.layer_zero_merge_service.merge(self.base_wiki_dir)
 
     def run_scenario(self, scenario: WikiRunScenario) -> None:
         if scenario == "layer0":
-            self.run_layer_zero()
+            self.layer_zero_executor.run(self.run_config_factory(), self.base_wiki_dir)
             return
         if scenario == "layer1":
-            self.run_layer_one()
+            self.layer_one_executor.run(self.run_config_factory(), self.base_wiki_dir)
             return
         if scenario == "merge":
             self.run_merge_only()
@@ -57,6 +51,3 @@ class WikiPipelineFacade:
             return
         msg = f"Unsupported wiki run scenario: {scenario!r}"
         raise ValueError(msg)
-
-    def _build_run_config(self) -> RunConfig:
-        return self.run_config_factory()
