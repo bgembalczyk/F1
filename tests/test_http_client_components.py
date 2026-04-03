@@ -33,14 +33,14 @@ class _RetryOnServerErrorPolicy:
     def max_retries(self) -> int:
         return 1
 
-    def should_retry(self, *, response, exception, attempt: int) -> bool:
+    def should_retry(self, *, response, exception, _attempt: int) -> bool:
         if exception is not None:
             return True
         if response is not None and getattr(response, "status_code", 0) >= 500:
             return True
         return False
 
-    def backoff_seconds(self, attempt: int) -> float:
+    def backoff_seconds(self, _attempt: int) -> float:
         return 0.0
 
 
