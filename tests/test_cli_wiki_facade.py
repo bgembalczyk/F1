@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-class _FacadeSpy:
+class _ApplicationSpy:
     def __init__(self) -> None:
         self.calls = 0
 
@@ -17,8 +17,8 @@ class _FacadeSpy:
         self.calls += 1
 
 
-def test_run_wiki_flow_routes_to_default_facade(monkeypatch, tmp_path: Path) -> None:
-    facade = _FacadeSpy()
+def test_run_wiki_flow_routes_to_default_application(monkeypatch, tmp_path: Path) -> None:
+    application = _ApplicationSpy()
 
     monkeypatch.setattr(
         flow_entrypoint,
@@ -27,10 +27,10 @@ def test_run_wiki_flow_routes_to_default_facade(monkeypatch, tmp_path: Path) -> 
     )
     monkeypatch.setattr(
         flow_entrypoint,
-        "create_default_wiki_pipeline_facade",
-        lambda **_kwargs: facade,
+        "create_default_wiki_pipeline_application",
+        lambda **_kwargs: application,
     )
 
     flow_entrypoint.run_wiki_flow()
 
-    assert facade.calls == 1
+    assert application.calls == 1
