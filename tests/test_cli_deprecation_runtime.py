@@ -9,6 +9,11 @@ import pytest
 from scrapers import cli
 
 
+@pytest.fixture(autouse=True)
+def _reset_deprecated_warnings_state() -> None:
+    cli._WARNED_DEPRECATED_MODULES.clear()
+
+
 def test_run_legacy_wrapper_warns_for_deprecated_module(monkeypatch) -> None:
     calls: list[object] = []
 
@@ -98,6 +103,8 @@ def test_runtime_warning_and_docs_schedule_share_same_removal_target() -> None:
     runtime_message = cli._deprecated_runtime_message(
         "scrapers.drivers.list_scraper",
         replacement_module_path="scrapers.drivers.entrypoint",
+        deprecated_since=cli.DEPRECATION_POLICY.deprecated_since,
+        remove_after=cli.DEPRECATION_POLICY.remove_after,
     )
     docs_schedule = cli.render_deprecation_schedule_markdown()
     docs_path = Path(__file__).resolve().parents[1] / "docs" / "MODULE_BOUNDARIES.md"
@@ -107,3 +114,31 @@ def test_runtime_warning_and_docs_schedule_share_same_removal_target() -> None:
     assert f"removal target: {removal_target}" in runtime_message
     assert f"removal target: {removal_target}" in docs_schedule
     assert docs_schedule in docs_content
+
+
+def test_run_legacy_wrapper_warns_only_once_per_module_in_single_run(monkeypatch) -> None:
+    cli._WARNED_DEPRECATED_MODULES.clear()
+
+    def fake_invoke_target(*_args, **_kwargs):
+        return None
+
+    monkeypatch.setattr(cli, "_invoke_target", fake_invoke_target)
+    with warnings.catch_warnings(record=True) as records:
+        warnings.simplefilter("always")
+        cli.run_legacy_wrapper("scrapers.drivers.list_scraper", [])
+        cli.run_legacy_wrapper("scrapers.drivers.list_scraper", [])
+
+    deprecation_records = [
+        record for record in records if issubclass(record.category, DeprecationWarning)
+    ]
+    assert len(deprecation_records) == 1
+
+
+def test_deprecated_elements_report_contains_required_metadata() -> None:
+    report = cli.get_deprecated_elements_report()
+    assert report
+    for module_path, deprecated_since, replacement, remove_after in report:
+        assert module_path.startswith("scrapers.")
+        assert deprecated_since
+        assert replacement
+        assert remove_after
