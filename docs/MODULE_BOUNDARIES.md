@@ -204,7 +204,9 @@ Runtime warning ma teraz jawny komunikat o oknie migracji:
 
 Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrapperów.
 
-### Mapa `module -> canonical_command`
+W praktyce oznacza to migrację:
+- z `python -m scrapers.<domain>.list_scraper`
+- na `python -m scrapers.<domain>.entrypoint`
 
 - `python main.py` -> `from scrapers import run_wiki_flow; run_wiki_flow()`
 - `python -m scrapers.circuits.complete_scraper` -> `python -m scrapers.circuits.complete_scraper`
@@ -233,8 +235,6 @@ Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrappe
 - `python -m scrapers.seasons.list_scraper` -> `python -m scrapers.seasons.entrypoint`
 - `python -m scrapers.sponsorship_liveries.scraper` -> `python -m scrapers.sponsorship_liveries.scraper`
 - `python -m scrapers.tyres.list_scraper` -> `python -m scrapers.tyres.list_scraper`
-
-Legacy moduły należy migrować na wskazane moduły API.
 
 <!-- END AUTO-GENERATED: command-migration-map -->
 

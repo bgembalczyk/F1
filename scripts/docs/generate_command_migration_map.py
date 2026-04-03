@@ -14,6 +14,7 @@ _BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
 _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
+from scrapers.deprecation_catalog import get_deprecated_module_migrations
 
 
 DOC_PATH = Path("docs/MODULE_BOUNDARIES.md")
@@ -23,9 +24,8 @@ END_MARKER = "<!-- END AUTO-GENERATED: command-migration-map -->"
 
 def _command_migration_map() -> list[tuple[str, str]]:
     rows = [("python main.py", "from scrapers import run_wiki_flow; run_wiki_flow()")]
-    for item in sorted(DEPRECATED_MODULES, key=lambda x: x.module_path):
-        replacement = item.replacement_module_path or item.module_path
-        rows.append((f"python -m {item.module_path}", f"python -m {replacement}"))
+    for module_path, replacement_module_path in get_deprecated_module_migrations():
+        rows.append((f"python -m {module_path}", f"python -m {replacement_module_path}"))
     return rows
 
 

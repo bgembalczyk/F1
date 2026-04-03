@@ -45,7 +45,7 @@ class RequestExecutor:
             except request_exception_cls as exc:
                 if (
                     attempt >= self._retry_policy.max_retries
-                    or not self._retry_policy.should_retry(
+                    or not self._should_retry(
                         response=None,
                         exception=exc,
                         attempt=attempt,
@@ -55,7 +55,7 @@ class RequestExecutor:
                 self._backoff_sleep(attempt)
                 continue
 
-            if self._retry_policy.should_retry(
+            if self._should_retry(
                 response=response,
                 exception=None,
                 attempt=attempt,
@@ -75,3 +75,24 @@ class RequestExecutor:
         delay = self._retry_policy.backoff_seconds(attempt)
         if delay > 0:
             self._sleep_fn(delay)
+
+    def _should_retry(
+        self,
+        *,
+        response: Any | None,
+        exception: Exception | None,
+        attempt: int,
+    ) -> bool:
+        """Call retry policy with compatibility for legacy signatures."""
+
+        try:
+            return self._retry_policy.should_retry(
+                response=response,
+                exception=exception,
+                attempt=attempt,
+            )
+        except TypeError:
+            return self._retry_policy.should_retry(
+                response=response,
+                exception=exception,
+            )
