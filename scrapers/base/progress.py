@@ -35,7 +35,7 @@ class NoOpProgressAdapter:
         self,
         iterable: Iterable[T],
         *,
-        desc: str,
-        unit: str,
+        _desc: str,
+        _unit: str,
     ) -> Iterable[T]:
         return iterable
