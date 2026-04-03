@@ -3,6 +3,10 @@
 To jest **jedyny centralny indeks** dokumentacji projektu.  
 Aby ograniczać duplikację między dokumentami, w innych plikach utrzymujemy tylko krótkie konteksty i linki tutaj.
 
+## Szybki start diagnozy
+
+- [Debug cookbook (Layer 0/1): objaw → gdzie sprawdzić → co poprawić](DEBUG_COOKBOOK.md)
+
 ## Architektura warstw
 
 - [Architektura warstw scraperów](scrapers-layer-architecture.md)
