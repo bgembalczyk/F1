@@ -40,8 +40,8 @@ def test_profile_resolver_contract_for_legacy_aliases() -> None:
 
 
 def test_profile_resolver_rejects_invalid_profile_names() -> None:
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="not a valid RunProfileName"):
         PROFILE_RESOLVER.resolve_cli_profile("not-a-profile")  # type: ignore[arg-type]
 
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="not a valid RunProfileName"):
         get_run_profile_spec("not-a-profile")  # type: ignore[arg-type]
