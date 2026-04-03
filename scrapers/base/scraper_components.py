@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import TypeVar
 
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from models.mappers.serialization import to_dict_list
+from scrapers.base.error_codes import resolve_error_code
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
@@ -16,6 +18,7 @@ from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.pipeline_runner import ScraperPipelineRunner
+from scrapers.base.quality.reporter import CompactStepDiffWriter
 from scrapers.base.quality.reporter import QualityReporter
 from scrapers.base.validation_runner import ValidationRunner
 from validation.record_factory_validator import adapt_record_factory_validator
@@ -160,8 +163,11 @@ class ErrorPolicy:
         attempt: int,
     ):
         if self.should_retry(attempt=attempt):
+            code_definition = resolve_error_code(error.code)
             self._logger.warning(
-                "Recoverable error for url=%s. Retry attempt %d/%d: %s",
+                "Recoverable warning [%s|%s] for url=%s (attempt %d/%d): %s",
+                code_definition.code_id,
+                code_definition.short_description,
                 self._get_url(),
                 attempt + 1,
                 self._retry_attempts,
@@ -169,8 +175,11 @@ class ErrorPolicy:
             )
             return "retry"
         if self.should_skip():
+            code_definition = resolve_error_code(error.code)
             self._logger.warning(
-                "Recoverable error for url=%s. Skip by policy '%s': %s",
+                "Recoverable warning [%s|%s] for url=%s. Skip by policy '%s': %s",
+                code_definition.code_id,
+                code_definition.short_description,
                 self._get_url(),
                 self._policy,
                 exc,
@@ -189,6 +198,8 @@ class QualityReportService:
         source_metadata_provider: Callable[[], dict[str, object]],
         logger,
         validator_provider: Callable[[], RecordValidator | None],
+        debug_diff_domains: set[str] | None = None,
+        debug_diff_record_ids: set[str] | None = None,
     ) -> None:
         self._enabled = enabled
         self._debug_dir = debug_dir
@@ -197,6 +208,7 @@ class QualityReportService:
         self._logger = logger
         self._validator_provider = validator_provider
         self._reporter: QualityReporter | None = None
+        self._diff_writer: CompactStepDiffWriter | None = None
 
         if self._enabled:
             self._reporter = QualityReporter(
@@ -204,9 +216,18 @@ class QualityReportService:
                 run_id=run_id or "pending",
                 source_metadata=self._source_metadata_provider(),
             )
+            if self._debug_dir is not None:
+                self._diff_writer = CompactStepDiffWriter(
+                    debug_dir=self._debug_dir,
+                    run_id=run_id or "pending",
+                    domain_filter=debug_diff_domains,
+                    record_id_filter=debug_diff_record_ids,
+                )
 
     def set_run_id(self, run_id: str) -> None:
         self._run_id = run_id
+        if self._diff_writer is not None:
+            self._diff_writer.set_run_id(run_id)
 
     def write_step(self, *, step_name: str, records: list[dict[str, object]]) -> None:
         if not self._enabled or self._reporter is None:
@@ -220,6 +241,14 @@ class QualityReportService:
             source_metadata=self._source_metadata_provider(),
         )
         self._logger.debug("Saved step quality report: %s", report_path)
+        if self._diff_writer is not None:
+            diff_path = self._diff_writer.write_step_diff(
+                step_name=step_name,
+                records=records,
+                source_metadata=self._source_metadata_provider(),
+            )
+            if diff_path is not None:
+                self._logger.debug("Saved compact step diffs: %s", diff_path)
 
     def write_validation_report(self) -> None:
         validator = self._validator_provider()
@@ -227,6 +256,19 @@ class QualityReportService:
             return
         report_path = validator.write_quality_report(self._debug_dir)
         self._logger.info("Saved quality report: %s", report_path)
+
+    def write_error_summary(self, payload: dict[str, object]) -> None:
+        if not self._enabled:
+            return
+        run_id = str(payload.get("run_id") or self._run_id or "no_run_id")
+        report_root = self._resolve_report_root()
+        report_root.mkdir(parents=True, exist_ok=True)
+        report_path = report_root / f"error_summary_{run_id}.json"
+        report_path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        self._logger.debug("Saved error summary report: %s", report_path)
 
     def _resolve_report_root(self) -> Path:
         if self._debug_dir is not None:
@@ -253,6 +295,7 @@ class PipelineOrchestrator:
         self._pipeline_runner = ScraperPipelineRunner(
             logger=logger,
             write_step_quality_report=self._write_pipeline_quality_report,
+            write_error_summary_report=self._write_pipeline_error_summary,
             parse_records=parse_records,
             normalize_records=normalize_records,
             transform_records=transform_records,
@@ -322,6 +365,9 @@ class PipelineOrchestrator:
         records: list[dict[str, object]],
     ) -> None:
         self._quality_report_service.write_step(step_name=step_name, records=records)
+
+    def _write_pipeline_error_summary(self, payload: dict[str, object]) -> None:
+        self._quality_report_service.write_error_summary(payload)
 
     @staticmethod
     def to_dict_records(records: list[ExportRecord]) -> list[dict[str, object]]:

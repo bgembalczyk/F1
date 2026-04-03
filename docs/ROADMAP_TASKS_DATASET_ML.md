@@ -132,7 +132,14 @@
 ## Cadence operacyjny (refactor governance)
 - Każdy PR funkcjonalny: obowiązkowo sekcja „Refactor included” i minimum jeden mikro-refactor.
 - Każdy sprint: podsumowanie metryki trendu duplikacji (`removed`/`added`) oraz decyzja o aktualizacji priorytetów refaktorów.
+- Każdy sprint: przegląd YAGNI (`profile/flag/adapter`) z decyzją `keep/remove` i listą aktywnych konsumentów.
 - Raz na kwartał: rewizja progów jakości (np. minimalny bilans netto i progi duplicate-code w CI).
+
+### Sprintowy przegląd YAGNI (checklista)
+- [ ] Sprawdź profile uruchomieniowe i aliasy CLI pod kątem aktywnych konsumentów (`rg -n "profile=|--profile|RunProfileName"`).
+- [ ] Sprawdź flagi runtime, które mają stale jedną wartość domyślną i brak nadpisania (`rg -n "quality_report|error_report|include_urls"`).
+- [ ] Sprawdź klasy/adaptery pośrednie bez importów produkcyjnych (`rg -n "from layers\\.zero\\.helpers|import layers\\.zero\\.helpers"`).
+- [ ] Usuń elementy bez konsumentów i dopisz krótką notatkę w changelogu sprintu (co usunięto i jaki był wpływ).
 
 ## Skonsolidowany backlog wykrytych obszarów (layers / scrapers/base / validation / discovery / scripts/ci)
 

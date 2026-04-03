@@ -4,7 +4,7 @@ import contextlib
 import re
 from typing import Any
 
-from scrapers.base.helpers.text_normalization import add_unique_name
+from models.domain_utils.field_normalization.names import add_unique_name
 from scrapers.circuits.models.services.constants import LAYOUT_LENGTH_TOLERANCE_KM
 
 

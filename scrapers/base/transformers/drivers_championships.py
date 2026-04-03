@@ -1,7 +1,7 @@
 from typing import Any
 
 from models.records.driver_championships import DriversChampionshipsRecord
-from models.services.driver_service import parse_championships
+from models.services import parse_championships
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.validator_base import ExportRecord
 

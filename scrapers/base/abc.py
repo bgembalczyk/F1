@@ -59,6 +59,8 @@ class ABCScraper(ABC):
         self._run_id: str | None = options.run_id
         self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
         self._quality_report_enabled = options.quality_report
+        self._debug_diff_domains = options.debug_diff_domains
+        self._debug_diff_record_ids = options.debug_diff_record_ids
         self._validation_mode = "soft"
         self._initialize_runtime(options)
         self._validate_validation_mode()
@@ -103,6 +105,8 @@ class ABCScraper(ABC):
             source_metadata_provider=self._source_metadata,
             logger=self.logger,
             validator_provider=lambda: self.validator,
+            debug_diff_domains=self._debug_diff_domains,
+            debug_diff_record_ids=self._debug_diff_record_ids,
         )
 
     def _initialize_pipeline_orchestrator(self) -> None:

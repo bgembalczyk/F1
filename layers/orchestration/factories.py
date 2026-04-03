@@ -3,7 +3,7 @@ from abc import abstractmethod
 
 from infrastructure.gemini.client import GeminiClient
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry import ListJobRegistryEntry
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier

@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Protocol
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
-from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry import ListJobRegistryEntry
 
 
 class LayerZeroJobHook(Protocol):

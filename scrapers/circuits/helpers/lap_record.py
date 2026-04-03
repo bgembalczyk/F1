@@ -3,7 +3,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from models.services.helpers import split_delimited_text
+from models.services import split_delimited_text
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text

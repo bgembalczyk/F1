@@ -1,6 +1,6 @@
 from typing import Any
 
-from models.services.rounds_service import parse_rounds
+from models.services import parse_rounds
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.seasons.parsers.constants import DRIVER_FIELDS
 

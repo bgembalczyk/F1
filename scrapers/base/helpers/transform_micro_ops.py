@@ -3,6 +3,10 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Any
 
+from models.domain_utils.field_normalization.aliases import (
+    expand_alias_variants as _expand_alias_variants,
+)
+
 
 def pop_list_field(record: dict[str, Any], key: str) -> list[Any]:
     """Pop a key from record and normalize the value into a list."""
@@ -35,14 +39,4 @@ def expand_alias_variants(
     text_normalizer: Callable[[str], str],
 ) -> tuple[set[str], set[str]]:
     """Build normalized section-text and id variants from alias values."""
-    normalized_texts = {
-        text_normalizer(value)
-        for value in values
-        if isinstance(value, str) and value.strip()
-    }
-    normalized_ids = {
-        variant
-        for text in normalized_texts
-        for variant in (text.replace(" ", "_"), text)
-    }
-    return normalized_ids, normalized_texts
+    return _expand_alias_variants(values, text_normalizer=text_normalizer)

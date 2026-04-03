@@ -5,9 +5,8 @@ from typing import TYPE_CHECKING
 
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
-from scrapers.base.domain_entrypoint import minimal_debug_profile
-from scrapers.base.domain_entrypoint import minimal_profile
-from scrapers.base.domain_entrypoint import strict_quality_profile
+from scrapers.base.domain_entrypoint import debug_profile
+from scrapers.base.domain_entrypoint import default_profile
 from scrapers.base.run_profiles import RunPathName
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
@@ -28,29 +27,22 @@ class _LayerExecutorSpy:
 
 
 def test_domain_entrypoint_profiles_match_central_definitions() -> None:
-    assert strict_quality_profile() == build_run_profile(RunProfileName.STRICT)
-    assert minimal_profile() == build_run_profile(RunProfileName.MINIMAL)
-    assert minimal_debug_profile() == build_run_profile(RunProfileName.DEBUG)
+    assert default_profile() == build_run_profile(RunProfileName.DEFAULT)
+    assert debug_profile() == build_run_profile(RunProfileName.DEBUG)
 
 
 def test_cli_entrypoint_profiles_match_central_definitions() -> None:
     assert deprecated_module_base_config() == build_run_profile(
-        RunProfileName.DEPRECATED,
+        RunProfileName.DEFAULT,
     )
-    assert complete_extractor_base_config() == build_run_profile(RunProfileName.MINIMAL)
+    assert complete_extractor_base_config() == build_run_profile(RunProfileName.DEFAULT)
 
 
 def test_profile_spec_exposes_explicit_configuration() -> None:
-    strict_spec = get_run_profile_spec(RunProfileName.STRICT)
-    minimal_spec = get_run_profile_spec(RunProfileName.MINIMAL)
+    default_spec = get_run_profile_spec(RunProfileName.DEFAULT)
 
-    assert strict_spec.name is RunProfileName.STRICT
-    assert strict_spec.output_dir is RunPathName.WIKI_OUTPUT_DIR
-    assert strict_spec.debug_dir is RunPathName.DEBUG_DIR
-    assert strict_spec.quality_report is True
-    assert strict_spec.error_report is False
-
-    assert minimal_spec.name is RunProfileName.MINIMAL
-    assert minimal_spec.output_dir is RunPathName.WIKI_OUTPUT_DIR
-    assert minimal_spec.debug_dir is None
-    assert minimal_spec.quality_report is False
+    assert default_spec.name is RunProfileName.DEFAULT
+    assert default_spec.output_dir is RunPathName.WIKI_OUTPUT_DIR
+    assert default_spec.debug_dir is None
+    assert default_spec.quality_report is False
+    assert default_spec.error_report is False
