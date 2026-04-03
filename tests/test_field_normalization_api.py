@@ -99,5 +99,8 @@ def test_link_helpers_normalize_and_filter_empty_payloads() -> None:
 
 
 def test_normalize_link_item_rejects_unsupported_type() -> None:
-    with pytest.raises(ValueError):
+    with pytest.raises(
+        ValueError,
+        match="musi być linkiem, słownikiem lub tekstem",
+    ):
         normalize_link_item(123, field_name="driver", validate_payload=_validate_link)
