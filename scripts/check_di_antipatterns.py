@@ -7,10 +7,6 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
-from scripts.lib.check_runner import iter_python_paths
-from scripts.lib.check_runner import run_cli
-
 _BOOTSTRAP_PATH = Path(__file__).resolve().parent / "lib" / "bootstrap.py"
 _BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
     "_scripts_bootstrap",
@@ -22,6 +18,19 @@ _BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
 _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
+
+DEFAULT_ADR_ENFORCEMENT_POLICY = __import__(
+    "scripts.ci.adr_enforcement_policy",
+    fromlist=["DEFAULT_ADR_ENFORCEMENT_POLICY"],
+).DEFAULT_ADR_ENFORCEMENT_POLICY
+iter_python_paths = __import__(
+    "scripts.lib.check_runner",
+    fromlist=["iter_python_paths"],
+).iter_python_paths
+run_cli = __import__(
+    "scripts.lib.check_runner",
+    fromlist=["run_cli"],
+).run_cli
 
 DEFAULT_TARGETS = [REPO_ROOT / "layers", REPO_ROOT / "scrapers" / "base"]
 
