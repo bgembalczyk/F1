@@ -7,6 +7,7 @@ from typing import TypeVar
 
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from models.mappers.serialization import to_dict_list
+from scrapers.base.error_codes import resolve_error_code
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
@@ -160,8 +161,11 @@ class ErrorPolicy:
         attempt: int,
     ):
         if self.should_retry(attempt=attempt):
+            code_definition = resolve_error_code(error.code)
             self._logger.warning(
-                "Recoverable error for url=%s. Retry attempt %d/%d: %s",
+                "Recoverable warning [%s|%s] for url=%s (attempt %d/%d): %s",
+                code_definition.code_id,
+                code_definition.short_description,
                 self._get_url(),
                 attempt + 1,
                 self._retry_attempts,
@@ -169,8 +173,11 @@ class ErrorPolicy:
             )
             return "retry"
         if self.should_skip():
+            code_definition = resolve_error_code(error.code)
             self._logger.warning(
-                "Recoverable error for url=%s. Skip by policy '%s': %s",
+                "Recoverable warning [%s|%s] for url=%s. Skip by policy '%s': %s",
+                code_definition.code_id,
+                code_definition.short_description,
                 self._get_url(),
                 self._policy,
                 exc,
