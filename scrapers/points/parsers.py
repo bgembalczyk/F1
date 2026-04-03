@@ -134,18 +134,18 @@ class SprintRacesSubSubSectionParser(SubSubSectionParser):
         parsed = super().parse_group(elements, context=context)
         if not parsed.get("sub_sub_sub_sections"):
             parsed = self.child_parser.parse_group(elements, context=context)
-        self._apply_table_parser(parsed)
+        self.apply_table_parser(parsed)
         return parsed
 
-    def _apply_table_parser(self, payload: dict[str, Any]) -> None:
+    def apply_table_parser(self, payload: dict[str, Any]) -> None:
         self._apply_for_elements(payload.get("elements", []))
         for value in payload.values():
             if isinstance(value, dict):
-                self._apply_table_parser(value)
+                self.apply_table_parser(value)
             elif isinstance(value, list):
                 for item in value:
                     if isinstance(item, dict):
-                        self._apply_table_parser(item)
+                        self.apply_table_parser(item)
 
     def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
         for element in elements:
