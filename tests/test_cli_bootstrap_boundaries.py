@@ -35,6 +35,15 @@ ALLOWED_MAIN_FILES = {
 }
 
 
+IDE_ENTRYPOINT_FILES = {
+    "scrapers/circuits/entrypoint.py",
+    "scrapers/constructors/entrypoint.py",
+    "scrapers/drivers/entrypoint.py",
+    "scrapers/grands_prix/entrypoint.py",
+    "scrapers/seasons/entrypoint.py",
+}
+
+
 def test_no_new_standalone_cli_bootstraps_outside_allowlist() -> None:
     files_with_main: list[str] = []
     for file_path in sorted(SCRAPERS_DIR.rglob("*.py")):
@@ -45,12 +54,19 @@ def test_no_new_standalone_cli_bootstraps_outside_allowlist() -> None:
     assert set(files_with_main) == ALLOWED_MAIN_FILES
 
 
-def test_all_legacy_cli_wrappers_delegate_to_canonical_launcher() -> None:
+def test_legacy_wrappers_remain_thin_and_parser_free() -> None:
     for file_path in sorted(ALLOWED_MAIN_FILES):
-        source = Path(file_path).read_text(encoding="utf-8")
         if file_path == "scrapers/cli.py":
-            assert "main()" in source
             continue
-
+        source = Path(file_path).read_text(encoding="utf-8")
         assert "run_deprecated_entrypoint(" in source
         assert "argparse.ArgumentParser(" not in source
+
+
+def test_ide_entrypoints_stay_function_based_without_cli_bootstrap() -> None:
+    for file_path in sorted(IDE_ENTRYPOINT_FILES):
+        source = Path(file_path).read_text(encoding="utf-8")
+        assert "run_list_scraper" not in source
+        assert "install_domain_entrypoint(" in source
+        assert 'if __name__ == "__main__":' not in source
+        assert "argparse" not in source

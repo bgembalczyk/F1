@@ -4,8 +4,8 @@ from pathlib import Path
 
 POINTS_PACKAGE_DIR = Path("scrapers/points")
 ALLOWED_BOOTSTRAP_TOKENS = (
-    "run_legacy_wrapper(",
-    'run_legacy_wrapper("',
+    "run_deprecated_entrypoint(",
+    'run_deprecated_entrypoint("',
 )
 DISALLOWED_MANUAL_TOKENS = (
     "argparse.ArgumentParser(",
@@ -26,14 +26,14 @@ def _module_sources_with_main_block() -> list[tuple[str, str]]:
     return modules
 
 
-def test_points_cli_modules_delegate_to_canonical_wrapper_bootstrap() -> None:
+def test_points_legacy_modules_use_thin_deprecated_bootstrap_only() -> None:
     modules = _module_sources_with_main_block()
     assert modules, "No points CLI modules found to validate."
 
     for module_path, source in modules:
         assert any(
             token in source for token in ALLOWED_BOOTSTRAP_TOKENS
-        ), f"{module_path} should delegate to run_legacy_wrapper(...)."
+        ), f"{module_path} should delegate to run_deprecated_entrypoint(...)."
         for token in DISALLOWED_MANUAL_TOKENS:
             assert (
                 token not in source

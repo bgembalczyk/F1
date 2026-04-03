@@ -1,17 +1,14 @@
-# CLI / RunConfig — katalog flag i polityka YAGNI
+# RunConfig / IDE entrypoint — polityka stabilnego API uruchomień
 
-## 1) Aktualny katalog flag CLI
+## 1) Stabilny kontrakt uruchomień
 
-Wspólny parser (`scrapers.base.cli_entrypoint.build_standard_parser`) udostępnia tylko:
+Stabilnym kontraktem uruchomień jest funkcja startowa domeny:
 
-- `--quality-report` / `--no-quality-report`
-- `--error-report` / `--no-error-report`
-- `--verbose`
-- `--trace`
+- `scrapers.<domain>.entrypoint.run_list_scraper(...)`
 
-Legacy wrappery **nie przyjmują już** `--profile` — profil runtime jest domyślny i jednolity.
+To jest kontrakt utrzymywany dla integracji kodowych (IDE, testy architektoniczne, import bezpośredni).
 
-## 2) Aktualne opcje `RunConfig`
+## 2) Profile `RunConfig`
 
 Profile runtime są scentralizowane w `scrapers.base.run_profiles`:
 
@@ -23,14 +20,14 @@ To zastępuje wcześniejsze rozdrobnienie (`strict` / `minimal` / `deprecated`) 
 ## 3) Polityka redukcji opcji
 
 - Usuwamy opcje rzadko używane i duplikujące się semantycznie.
-- Jeśli dwie flagi robią to samo, zostaje jedna canonical flaga.
 - Każdy nowy profil musi uzasadniać różnicę względem `default`; w przeciwnym razie nie powstaje.
+- Kompatybilność terminalowa (`python -m ...`, legacy CLI wrappery) nie jest już traktowana jako kontrakt obowiązkowy.
 
-## 4) Wymuszenie YAGNI dla nowych flag
+## 4) Wymuszenie YAGNI dla nowych opcji runtime
 
-Nowe flagi muszą być deklarowane w katalogu `CliFlagSpec` i zawierać:
+Nowe opcje runtime muszą być deklarowane w katalogu `CliFlagSpec` i zawierać:
 
-- `justification` (po co ta flaga istnieje),
-- `review_by` (termin przeglądu, czy flaga nadal jest potrzebna).
+- `justification` (po co opcja istnieje),
+- `review_by` (termin przeglądu, czy opcja nadal jest potrzebna).
 
-Parser uruchamia walidację katalogu flag; brak któregokolwiek pola traktowany jest jako błąd konfiguracji.
+Walidacja katalogu opcji traktuje brak któregokolwiek pola jako błąd konfiguracji.
