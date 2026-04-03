@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 
 from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
@@ -86,9 +86,12 @@ def validate_section_profiles_config(
             if normalize_section_profile_key(canonical) not in normalized_canonical
         ]
         if invalid_canonical_keys:
-            raise ValueError(
+            msg = (
                 "Invalid canonical ids in heading_aliases for "
-                f"domain={domain}: {sorted(invalid_canonical_keys)}",
+                f"domain={domain}: {sorted(invalid_canonical_keys)}"
+            )
+            raise ValueError(
+                msg,
             )
 
         alias_to_canonical: dict[str, set[str]] = defaultdict(set)
@@ -105,7 +108,10 @@ def validate_section_profiles_config(
             if len(canonicals) > 1
         }
         if duplicated_aliases:
-            raise ValueError(
+            msg = (
                 "Duplicated aliases in section profile config for "
-                f"domain={domain}: {duplicated_aliases}",
+                f"domain={domain}: {duplicated_aliases}"
+            )
+            raise ValueError(
+                msg,
             )

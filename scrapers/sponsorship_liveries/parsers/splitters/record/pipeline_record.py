@@ -13,17 +13,20 @@ class PipelineRecord:
 
     def __post_init__(self) -> None:
         if not isinstance(self.payload, dict):
-            raise TypeError("PipelineRecord payload must be a dict[str, Any]")
+            msg = "PipelineRecord payload must be a dict[str, Any]"
+            raise TypeError(msg)
         for key in self.payload:
             if not isinstance(key, str):
-                raise TypeError("PipelineRecord keys must be str")
+                msg = "PipelineRecord keys must be str"
+                raise TypeError(msg)
 
     @classmethod
     def from_input(cls, record: Mapping[str, Any] | PipelineRecord) -> PipelineRecord:
         if isinstance(record, PipelineRecord):
             return record
         if not isinstance(record, Mapping):
-            raise TypeError("PipelineRecord input must be a mapping")
+            msg = "PipelineRecord input must be a mapping"
+            raise TypeError(msg)
         return cls(dict(record))
 
     def get(self, key: str, default: Any = None) -> Any:

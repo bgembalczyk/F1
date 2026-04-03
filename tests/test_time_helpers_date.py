@@ -8,7 +8,11 @@ EXPECTED_DAY = 27
 
 
 def test_parse_date_parts():
-    assert parse_date_parts("2023-10-27") == (EXPECTED_YEAR, EXPECTED_MONTH, EXPECTED_DAY)
+    assert parse_date_parts("2023-10-27") == (
+        EXPECTED_YEAR,
+        EXPECTED_MONTH,
+        EXPECTED_DAY,
+    )
     assert parse_date_parts("2023-10") == (EXPECTED_YEAR, EXPECTED_MONTH, None)
     assert parse_date_parts("2023") == (EXPECTED_YEAR, None, None)
     assert parse_date_parts("invalid") == (None, None, None)

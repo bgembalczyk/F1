@@ -57,5 +57,6 @@ class DataExporter:
     def _normalize_path(path: str | Path) -> Path:
         output_path = Path(path)
         if output_path.exists() and output_path.is_dir():
-            raise IsADirectoryError(f"Expected file path, got directory: {output_path}")
+            msg = f"Expected file path, got directory: {output_path}"
+            raise IsADirectoryError(msg)
         return output_path

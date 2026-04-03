@@ -25,7 +25,8 @@ class _DummyResponse:
 
     def raise_for_status(self) -> None:
         if self.status_code >= 400:
-            raise DummyRequestError(f"http {self.status_code}")
+            msg = f"http {self.status_code}"
+            raise DummyRequestError(msg)
 
 
 class _RetryOnServerErrorPolicy:
@@ -36,9 +37,7 @@ class _RetryOnServerErrorPolicy:
     def should_retry(self, *, response, exception, _attempt: int) -> bool:
         if exception is not None:
             return True
-        if response is not None and getattr(response, "status_code", 0) >= 500:
-            return True
-        return False
+        return bool(response is not None and getattr(response, "status_code", 0) >= 500)
 
     def backoff_seconds(self, _attempt: int) -> float:
         return 0.0
@@ -96,6 +95,7 @@ def test_request_executor_retries_after_retryable_status() -> None:
     calls = {"count": 0}
 
     def request_func(url: str, *, headers: dict[str, str], timeout: int):
+        _ = (url, headers, timeout)
         calls["count"] += 1
         if calls["count"] == 1:
             return _DummyResponse(status_code=500)
@@ -120,7 +120,9 @@ def test_request_executor_raises_after_exhausted_retryable_exceptions() -> None:
     executor = RequestExecutor(retry_policy=policy, rate_limiter=rate_limiter)
 
     def request_func(url: str, *, headers: dict[str, str], timeout: int):
-        raise DummyRequestError("network")
+        _ = (url, headers, timeout)
+        msg = "network"
+        raise DummyRequestError(msg)
 
     try:
         executor.execute(

@@ -13,7 +13,8 @@ _BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
     "_scripts_bootstrap",
     _BOOTSTRAP_PATH,
 )
-assert _BOOTSTRAP_SPEC and _BOOTSTRAP_SPEC.loader
+assert _BOOTSTRAP_SPEC
+assert _BOOTSTRAP_SPEC.loader
 _BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
 _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 

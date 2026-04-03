@@ -3,8 +3,9 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from dataclasses import field
+from typing import TYPE_CHECKING
 from typing import Any
-from typing import Protocol, TYPE_CHECKING
+from typing import Protocol
 
 if TYPE_CHECKING:
     from pathlib import Path

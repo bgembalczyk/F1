@@ -38,7 +38,7 @@ def test_sprint_parser_parses_table_without_nested_heading() -> None:
         """
         <table class="wikitable">
           <tr><th>Season(s)</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th></tr>
-          <tr><td>2021–present</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+          <tr><td>2021-present</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
         </table>
         """,
         "html.parser",
@@ -60,7 +60,7 @@ def test_special_cases_router_applies_sprint_parser_without_section_hint() -> No
         """
         <table class="wikitable">
           <tr><th>Season(s)</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th></tr>
-          <tr><td>2021–present</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+          <tr><td>2021-present</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
         </table>
         """,
         "html.parser",
@@ -85,7 +85,7 @@ def test_points_scraper_legacy_sprint_extractor_reads_sprint_races_section() -> 
               <th>Seasons</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th>
             </tr>
             <tr>
-              <td>2021–present</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td>
+              <td>2021-present</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td>
             </tr>
           </table>
         </div>

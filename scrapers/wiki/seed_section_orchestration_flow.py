@@ -6,7 +6,8 @@ from dataclasses import asdict
 from datetime import datetime
 from datetime import timezone
 from time import perf_counter
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
+from typing import Any
 
 from scrapers.base.orchestration.components.section_source_adapter import (
     SectionSourceAdapter,
@@ -22,8 +23,8 @@ from scrapers.base.orchestration.models import AuditEntry
 from scrapers.base.orchestration.models import StepDeclaration
 
 if TYPE_CHECKING:
-    from pathlib import Path
     from collections.abc import Callable
+    from pathlib import Path
 
 SUPPORTED_DOMAINS: tuple[str, ...] = (
     "drivers",

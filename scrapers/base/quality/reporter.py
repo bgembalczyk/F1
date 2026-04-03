@@ -11,8 +11,8 @@ from typing import Any
 SCHEMA_VERSION = "1.0"
 
 if TYPE_CHECKING:
-    from pathlib import Path
     from collections.abc import Mapping
+    from pathlib import Path
 
 
 @dataclass(slots=True)

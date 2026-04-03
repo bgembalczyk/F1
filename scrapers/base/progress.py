@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Protocol
-from typing import TypeVar, TYPE_CHECKING
+from typing import TypeVar
 
 if TYPE_CHECKING:
     from collections.abc import Iterable

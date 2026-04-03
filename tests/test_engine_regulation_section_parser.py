@@ -20,7 +20,7 @@ def test_engine_regulation_table_parser_maps_domain_rows() -> None:
             ],
             "rows": [
                 {
-                    "Years": "1950–1960",
+                    "Years": "1950-1960",
                     "Operating principle": "Naturally aspirated",
                     "Maximum displacement - Naturally aspirated": "4.5 L",
                     "Maximum displacement - Forced induction": "1.5 L",
@@ -36,7 +36,7 @@ def test_engine_regulation_table_parser_maps_domain_rows() -> None:
 
     assert parsed is not None
     assert parsed["table_type"] == "engine_regulation_progression"
-    assert parsed["domain_rows"][0]["seasons"] == "1950–1960"
+    assert parsed["domain_rows"][0]["seasons"] == "1950-1960"
 
 
 def test_history_section_parser_uses_engine_regulation_sub_section_parser() -> None:

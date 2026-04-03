@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
+from typing import Any
 
 from models.domain_utils.field_normalization.aliases import (
     expand_alias_variants as _expand_alias_variants,

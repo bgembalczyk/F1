@@ -7,9 +7,9 @@ from scrapers.grands_prix.red_flagged_races_scraper import RedFlaggedRacesScrape
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
 __all__ = [
-    "GrandsPrixListScraper",
-    "F1SingleGrandPrixScraper",
     "F1CompleteGrandPrixDataExtractor",
+    "F1SingleGrandPrixScraper",
+    "GrandsPrixListScraper",
     "RedFlaggedRacesScraper",
     "run_list_scraper",
 ]

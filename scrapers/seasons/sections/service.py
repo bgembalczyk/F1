@@ -46,4 +46,4 @@ class SeasonTextSectionExtractionService(BaseSectionExtractionService):
 
     def extract(self, soup: BeautifulSoup) -> dict[str, list[dict[str, Any]]]:
         # Utrzymujemy kontrakt sezonowego pipeline'u: mapowanie section_id -> records.
-        return cast(dict[str, list[dict[str, Any]]], super().extract(soup))
+        return cast("dict[str, list[dict[str, Any]]]", super().extract(soup))

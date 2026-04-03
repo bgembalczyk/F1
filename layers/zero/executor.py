@@ -109,7 +109,7 @@ class LayerZeroExecutor:
                     domain=job.output_category,
                     source_name=job.list_scraper_cls.__name__,
                 )
-                self._logger.error(
+                self._logger.exception(
                     "layer0 job failed",
                     extra=context
                     | {"status": "failed"}

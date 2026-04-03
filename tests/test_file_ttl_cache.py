@@ -11,7 +11,6 @@ from infrastructure.cache.file_ttl_cache import HttpResponseFileCacheAdapter
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.http_client.caching.file import FileCache
 
-
 CACHE_TEST_VALUE = 123
 
 

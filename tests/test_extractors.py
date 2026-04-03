@@ -68,7 +68,8 @@ def test_infobox_extractor_extracts_rows_and_logs(
 def test_infobox_extractor_skip_policy_returns_empty_on_recoverable_error() -> None:
     class _Parser:
         def parse(self, _soup):
-            raise ValueError("bad infobox")
+            msg = "bad infobox"
+            raise ValueError(msg)
 
         def find_infobox(self, _soup):
             return None
@@ -82,7 +83,8 @@ def test_infobox_extractor_skip_policy_returns_empty_on_recoverable_error() -> N
 def test_infobox_extractor_propagates_type_error_as_non_recoverable() -> None:
     class _Parser:
         def parse(self, _soup):
-            raise TypeError("programmer bug")
+            msg = "programmer bug"
+            raise TypeError(msg)
 
         def find_infobox(self, _soup):
             return None

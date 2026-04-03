@@ -3,7 +3,6 @@ import json
 from scrapers.base.results import ScrapeResult
 from scrapers.base.services.result_export_service import ResultExportService
 
-
 EXPECTED_RECORD_COUNT = 2
 
 

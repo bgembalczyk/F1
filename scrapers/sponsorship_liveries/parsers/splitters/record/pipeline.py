@@ -9,6 +9,7 @@ from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record impo
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
+
     from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import (
         RecordSplitStrategy,
     )

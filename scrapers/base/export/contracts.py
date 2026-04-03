@@ -7,8 +7,9 @@ from typing import Any
 from typing import Protocol
 
 if TYPE_CHECKING:
-    from pathlib import Path
     from collections.abc import Sequence
+    from pathlib import Path
+
     from validation.validator_base import ExportRecord
 
 

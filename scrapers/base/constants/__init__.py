@@ -3,7 +3,7 @@ from scrapers.base.constants.naming import SCRAPER_CONSTANT_PREFIXES
 from scrapers.base.constants.runtime import CliMainProfile
 
 __all__ = [
-    "CliMainProfile",
     "NAMING_CONVENTIONS",
     "SCRAPER_CONSTANT_PREFIXES",
+    "CliMainProfile",
 ]

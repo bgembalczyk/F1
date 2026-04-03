@@ -15,6 +15,7 @@ from models.domain_utils.field_normalization.stats import normalize_stats_header
 
 
 def _validate_link(payload, *, field_name: str):
+    _ = field_name
     if payload is None:
         return {"text": "", "url": None}
     return normalize_link_payload(payload)

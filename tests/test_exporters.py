@@ -179,4 +179,5 @@ def test_to_dataframe_uses_injected_formatter_without_monkeypatching():
     payload = result.to_dataframe()
 
     assert payload == {"rows": EXPECTED_TWO_RECORDS}
-    assert spy_formatter.calls and spy_formatter.calls[0] is result
+    assert spy_formatter.calls
+    assert spy_formatter.calls[0] is result
