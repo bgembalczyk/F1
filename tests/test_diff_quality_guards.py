@@ -1,8 +1,11 @@
 from __future__ import annotations
 
-from pathlib import Path
 
 from scripts.ci import enforce_diff_quality_guards as guards
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def test_broad_exception_requires_justification_annotation(

@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterable
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
 
 WIKI_BASE_URL = "https://en.wikipedia.org/wiki"
 INDIANAPOLIS_CONSTRUCTORS_URL = f"{WIKI_BASE_URL}/List_of_Formula_One_constructors"

@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from scrapers.wiki.constants import SEED_RECORD_SCHEMA_VERSION
+
+if TYPE_CHECKING:
+    from datetime import datetime
 
 
 @dataclass(frozen=True)

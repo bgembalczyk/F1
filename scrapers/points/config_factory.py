@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from collections.abc import Sequence
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import AutoColumn
@@ -21,6 +20,10 @@ from scrapers.points.constants import POINTS_FASTEST_LAP_HEADER
 from scrapers.points.constants import POINTS_NOTES_HEADER
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
 from scrapers.points.constants import POINTS_SEASONS_HEADER
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
 
 
 def build_points_scoring_systems_history_config(

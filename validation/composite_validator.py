@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from collections.abc import Mapping
 from collections.abc import Sequence
 from typing import TYPE_CHECKING
@@ -15,6 +17,8 @@ from validation.validator_base import ExportRecord
 from validation.validator_base import RecordValidator
 
 if TYPE_CHECKING:
+    from collections.abc import Sequence
+    from collections.abc import Mapping
     from validation.issue import ValidationIssue
     from validation.record_factory_validator import RecordFactoryValidatorProtocol
     from validation.rules import ValidationRule

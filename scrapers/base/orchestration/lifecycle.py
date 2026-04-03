@@ -3,9 +3,11 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from dataclasses import field
-from pathlib import Path
 from typing import Any
-from typing import Protocol
+from typing import Protocol, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 STAGE_INGEST = "ingest"
 STAGE_NORMALIZE = "normalize"

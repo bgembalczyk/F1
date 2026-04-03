@@ -2,13 +2,11 @@ from __future__ import annotations
 
 import csv
 import json
-from collections.abc import Callable
 from dataclasses import asdict
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
 from time import perf_counter
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from scrapers.base.orchestration.lifecycle import STAGE_EXPORT
 from scrapers.base.orchestration.lifecycle import STAGE_INGEST
@@ -18,6 +16,10 @@ from scrapers.base.orchestration.lifecycle import STAGE_VALIDATE
 from scrapers.base.orchestration.lifecycle import StageCheckpointDumper
 from scrapers.base.orchestration.lifecycle import StageEnvelope
 from scrapers.base.orchestration.models import AuditEntry
+
+if TYPE_CHECKING:
+    from pathlib import Path
+    from collections.abc import Callable
 
 
 class DriversCheckpointFlow:

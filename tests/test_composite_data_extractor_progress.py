@@ -1,13 +1,15 @@
 from __future__ import annotations
 
-from collections.abc import Iterable
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.progress import NoOpProgressAdapter
 from scrapers.base.source_adapter import IterableSourceAdapter
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
 
 
 class _SingleScraperStub:

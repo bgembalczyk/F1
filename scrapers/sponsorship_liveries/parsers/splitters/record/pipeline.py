@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from collections.abc import Mapping
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -9,6 +8,7 @@ from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record impo
 )
 
 if TYPE_CHECKING:
+    from collections.abc import Mapping
     from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import (
         RecordSplitStrategy,
     )

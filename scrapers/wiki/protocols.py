@@ -6,6 +6,7 @@ from typing import Protocol
 from typing import runtime_checkable
 
 if TYPE_CHECKING:
+    from pathlib import Path
     from layers.seed.registry import SeedRegistryEntry
     from scrapers.base.run_config import RunConfig
 

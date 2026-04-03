@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import ast
-from pathlib import Path
 
 from scripts.ci import check_duplicate_default_configs
 from scripts.ci import enforce_function_complexity
 from scripts.ci import enforce_no_new_prints
 from scripts.ci import enforce_source_name_magic_strings
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def test_function_complexity_detects_length_nesting_and_branching(

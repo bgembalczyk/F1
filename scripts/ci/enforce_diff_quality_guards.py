@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import ast
 import sys
-from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -11,6 +10,10 @@ from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.git_diff import list_changed_files
 from scripts.ci.quality_gate_constants import CRITICAL_DEFAULT_LITERALS
 from scripts.ci.quality_gate_constants import JUSTIFIED_EXCEPTION_MARKER
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SEED_REGISTRY_FILE = REPO_ROOT / "layers/seed/registry/constants.py"

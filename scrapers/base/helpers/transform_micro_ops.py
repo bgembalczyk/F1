@@ -1,11 +1,13 @@
 from __future__ import annotations
 
-from collections.abc import Callable
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from models.domain_utils.field_normalization.aliases import (
     expand_alias_variants as _expand_alias_variants,
 )
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 def pop_list_field(record: dict[str, Any], key: str) -> list[Any]:
