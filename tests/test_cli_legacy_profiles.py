@@ -24,7 +24,6 @@ def test_legacy_alias_catalog_contains_supported_compat_aliases() -> None:
     assert LEGACY_CLI_PROFILE_NAMES == (
         "list_scraper",
         "complete_extractor",
-        "deprecated_entrypoint",
     )
 
 

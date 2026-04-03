@@ -16,27 +16,11 @@ _BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
-from scrapers.deprecation_catalog import DEPRECATED_MODULES
+from scrapers.cli import MODULE_DEFINITIONS
 
 DOC_PATH = Path("docs/MODULE_BOUNDARIES.md")
 BEGIN_MARKER = "<!-- BEGIN AUTO-GENERATED: command-migration-map -->"
 END_MARKER = "<!-- END AUTO-GENERATED: command-migration-map -->"
-
-
-def _legacy_list_entrypoints() -> list[tuple[str, str]]:
-    return sorted(
-        (item.module_path, item.replacement_module_path)
-        for item in DEPRECATED_MODULES
-        if item.replacement_module_path is not None
-    )
-
-
-def _other_legacy_modules() -> list[str]:
-    return sorted(
-        item.module_path
-        for item in DEPRECATED_MODULES
-        if item.replacement_module_path is None
-    )
 
 
 def _command_migration_map() -> list[tuple[str, str]]:
@@ -49,32 +33,16 @@ def _command_migration_map() -> list[tuple[str, str]]:
 
 def build_generated_section() -> str:
     lines: list[str] = []
-    lines.append("### 7.2 Deprecated moduły i zamienniki (CLI/API)")
+    lines.append("### 7.2 Canonical command map (CLI/API)")
     lines.append("")
-    lines.append("#### Domenowe list-entrypointy (preferowane nowe API)")
-    lines.append("")
-    for legacy_module, replacement_module in _legacy_list_entrypoints():
-        lines.append(f"- `{legacy_module}` -> `{replacement_module}`")
+    lines.append("Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrapperów.")
     lines.append("")
     lines.append("W praktyce oznacza to migrację:")
     lines.append("- z `python -m scrapers.<domain>.list_scraper`")
     lines.append("- na `python -m scrapers.<domain>.entrypoint`")
     lines.append("")
-    lines.append(
-        "#### Pozostałe legacy moduły (bez nowego modułu API)"
-    )
-    lines.append("")
-    for module in _other_legacy_modules():
-        lines.append(f"- `{module}`")
-    lines.append("")
-    lines.append("### Mapa `old_command -> new_command`")
-    lines.append("")
-    for old_command, new_command in _command_migration_map():
-        lines.append(f"- `{old_command}` -> `{new_command}`")
-    lines.append("")
-    lines.append(
-        "Legacy moduły należy migrować na wskazane moduły API."
-    )
+    for module_command, canonical_command in _command_migration_map():
+        lines.append(f"- `{module_command}` -> `{canonical_command}`")
     return "\n".join(lines).rstrip() + "\n"
 
 
