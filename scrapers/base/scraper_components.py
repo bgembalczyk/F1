@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import TypeVar
@@ -228,6 +229,19 @@ class QualityReportService:
         report_path = validator.write_quality_report(self._debug_dir)
         self._logger.info("Saved quality report: %s", report_path)
 
+    def write_error_summary(self, payload: dict[str, object]) -> None:
+        if not self._enabled:
+            return
+        run_id = str(payload.get("run_id") or self._run_id or "no_run_id")
+        report_root = self._resolve_report_root()
+        report_root.mkdir(parents=True, exist_ok=True)
+        report_path = report_root / f"error_summary_{run_id}.json"
+        report_path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        self._logger.debug("Saved error summary report: %s", report_path)
+
     def _resolve_report_root(self) -> Path:
         if self._debug_dir is not None:
             return self._debug_dir
@@ -253,6 +267,7 @@ class PipelineOrchestrator:
         self._pipeline_runner = ScraperPipelineRunner(
             logger=logger,
             write_step_quality_report=self._write_pipeline_quality_report,
+            write_error_summary_report=self._write_pipeline_error_summary,
             parse_records=parse_records,
             normalize_records=normalize_records,
             transform_records=transform_records,
@@ -322,6 +337,9 @@ class PipelineOrchestrator:
         records: list[dict[str, object]],
     ) -> None:
         self._quality_report_service.write_step(step_name=step_name, records=records)
+
+    def _write_pipeline_error_summary(self, payload: dict[str, object]) -> None:
+        self._quality_report_service.write_error_summary(payload)
 
     @staticmethod
     def to_dict_records(records: list[ExportRecord]) -> list[dict[str, object]]:

@@ -32,7 +32,10 @@ class ScraperError(RuntimeError):
     _: KW_ONLY
     code: str = "pipeline.error"
     domain: str = "scrapers"
+    level: str = "error"
     source_name: str | None = None
+    record: str | None = None
+    suggestion: str | None = None
     url: str | None = None
     section_id: str | None = None
     parser_name: str | None = None
@@ -68,8 +71,12 @@ class ScraperError(RuntimeError):
     def to_payload(self) -> "ScraperErrorPayload":
         return ScraperErrorPayload(
             code=self.code,
+            level=self.level,
             message=self.message,
             domain=self.domain,
+            source=self.source_name or self.parser_name,
+            record=self.record,
+            suggestion=self.suggestion,
             source_name=self.source_name,
             cause=str(self.cause) if self.cause else None,
             category=self.category.value,
@@ -93,8 +100,12 @@ class ScraperErrorPayload(TypedDict):
     """Typed payload for exporting scraper exceptions to pipeline logs."""
 
     code: str
+    level: str
     message: str
     domain: str
+    source: str | None
+    record: str | None
+    suggestion: str | None
     source_name: str | None
     cause: str | None
     category: str
