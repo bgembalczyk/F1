@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from collections.abc import Sequence
+from typing import TYPE_CHECKING
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import CONSTRUCTORS_LIST

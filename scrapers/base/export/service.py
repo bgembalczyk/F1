@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from collections.abc import Sequence
 from pathlib import Path
+from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.base.format.formatter_helpers import extract_data

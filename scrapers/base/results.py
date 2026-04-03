@@ -12,9 +12,9 @@ from scrapers.base.normalization import NormalizationRule
 from scrapers.base.normalization import RecordNormalizer
 
 if typing.TYPE_CHECKING:
+    from scrapers.base.export.contracts import ExporterProtocol
     from scrapers.base.export.service import ExportService
     from validation.validator_base import ExportRecord
-    from scrapers.base.export.contracts import ExporterProtocol
 
 
 def _default_export_service() -> ExportService:

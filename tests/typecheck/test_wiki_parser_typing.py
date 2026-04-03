@@ -6,7 +6,6 @@ from typing import cast
 from bs4 import Tag
 
 
-
 def test_wiki_parser_typing_contracts() -> None:
     """Runtime no-op; typing assertions are validated by mypy/pyright."""
     assert True
@@ -17,11 +16,14 @@ if TYPE_CHECKING:
     from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
     from scrapers.wiki.parsers.elements.table import TableParser
     from scrapers.wiki.parsers.header import HeaderParser
-    from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
+    from scrapers.wiki.parsers.sections.sub_sub_sub_section import (
+        SubSubSubSectionParser,
+    )
     from scrapers.wiki.parsers.types import HeaderParsedData
     from scrapers.wiki.parsers.types import ParagraphParsedData
     from scrapers.wiki.parsers.types import TableParsedData
     from scrapers.wiki.parsers.types import WikiParsedPayload
+
     header_parser: WikiParser[HeaderParsedData] = HeaderParser()
     header_result: HeaderParsedData = header_parser.parse(cast(Tag, object()))
     header_title: str | None = header_result["title"]

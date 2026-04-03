@@ -9,7 +9,6 @@ if TYPE_CHECKING:
     )
 
 
-
 class RecordSplitStrategy(Protocol):
     def apply(self, record: PipelineRecord) -> list[PipelineRecord]:
         """Split a record into zero, one, or many records."""
