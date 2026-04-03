@@ -3,7 +3,6 @@ import logging
 import re
 from collections.abc import Callable
 from dataclasses import dataclass
-from dataclasses import field
 from pathlib import Path
 
 from layers.path_resolver import PathResolver
@@ -39,11 +38,8 @@ from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
 from scrapers.wiki.sources_registry import resolve_list_filename
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
-RecordTransformHandler = Callable[
-    [str, str, dict[str, object]],
-    dict[str, object],
-]
 DomainRecordsProcessor = Callable[[list[object]], list[object]]
+StrategyApplier = Callable[[dict[str, object]], dict[str, object]]
 
 logger = logging.getLogger(__name__)
 
@@ -56,11 +52,32 @@ class DomainStep:
 
 @dataclass(frozen=True)
 class DomainPipelineConfig:
-    transformers: dict[str, tuple[RecordTransformHandler, ...]] = field(
-        default_factory=dict,
-    )
     postprocessors: tuple[DomainStep, ...] = ()
     records_normalizer: DomainRecordsProcessor | None = None
+
+
+@dataclass(frozen=True)
+class SourceTransformStrategy:
+    name: str
+    domains: frozenset[str] | None = None
+    sources: frozenset[str] | None = None
+    source_pattern: re.Pattern[str] | None = None
+    apply_transform: StrategyApplier = lambda record: record
+
+    def supports(self, domain: str, source_name: str) -> bool:
+        if self.domains is not None and domain not in self.domains:
+            return False
+        if self.sources is not None and source_name not in self.sources:
+            return False
+        if self.source_pattern is not None and self.source_pattern.fullmatch(source_name) is None:
+            return False
+        return True
+
+    def apply(self, record: dict[str, object]) -> dict[str, object]:
+        return self.apply_transform(record)
+
+
+F1_CONSTRUCTORS_YEAR_SOURCE_PATTERN = re.compile(r"f1_constructors_\d{4}\.json")
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -98,79 +115,10 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
 
     canonical_source_name = resolve_list_filename(source_name)
     transformed = dict(record)
-    for handler in _resolve_record_transform_handlers(domain, canonical_source_name):
-        transformed = handler(domain, canonical_source_name, transformed)
+    for strategy in TRANSFORM_STRATEGIES:
+        if strategy.supports(domain, canonical_source_name):
+            transformed = strategy.apply(transformed)
     return transformed
-
-
-def _tyre_manufacturers_handler(
-    domain: str,
-    source_name: str,
-    record: dict[str, object],
-) -> dict[str, object]:
-    _ = domain
-    return _transform_tyre_manufacturers(source_name, record)
-
-
-def _constructor_domain_handler(
-    domain: str,
-    source_name: str,
-    record: dict[str, object],
-) -> dict[str, object]:
-    return _transform_constructor_domain(domain, source_name, record)
-
-
-def _circuits_domain_handler(
-    domain: str,
-    source_name: str,
-    record: dict[str, object],
-) -> dict[str, object]:
-    _ = source_name
-    return _transform_circuits_domain(domain, record)
-
-
-def _engines_domain_handler(
-    domain: str,
-    source_name: str,
-    record: dict[str, object],
-) -> dict[str, object]:
-    return _transform_engines_domain(domain, source_name, record)
-
-
-def _grands_prix_domain_handler(
-    domain: str,
-    source_name: str,
-    record: dict[str, object],
-) -> dict[str, object]:
-    _ = source_name
-    return _transform_grands_prix_domain(domain, record)
-
-
-def _teams_domain_handler(
-    domain: str,
-    source_name: str,
-    record: dict[str, object],
-) -> dict[str, object]:
-    return _transform_teams_domain(domain, source_name, record)
-
-
-def _drivers_domain_handler(
-    domain: str,
-    source_name: str,
-    record: dict[str, object],
-) -> dict[str, object]:
-    return _transform_drivers_domain(domain, source_name, record)
-
-
-def _races_domain_handler(
-    domain: str,
-    source_name: str,
-    record: dict[str, object],
-) -> dict[str, object]:
-    return _transform_races_domain(domain, source_name, record)
-
-
-DEFAULT_SOURCE_PIPELINE = "*"
 
 
 def _normalize_engine_records(records: list[object]) -> list[object]:
@@ -192,38 +140,18 @@ def _normalize_race_records(records: list[object]) -> list[object]:
 
 
 DOMAIN_PIPELINE_CONFIGS: dict[str, DomainPipelineConfig] = {
-    "*": DomainPipelineConfig(
-        transformers={
-            TYRE_MANUFACTURERS_SOURCE: (_tyre_manufacturers_handler,),
-        },
-    ),
-    "constructors": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,)},
-    ),
-    "constructor": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,)},
-    ),
-    "chassis": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,)},
-    ),
-    "circuits": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_circuits_domain_handler,)},
-    ),
+    "*": DomainPipelineConfig(),
+    "constructors": DomainPipelineConfig(),
+    "constructor": DomainPipelineConfig(),
+    "chassis": DomainPipelineConfig(),
+    "circuits": DomainPipelineConfig(),
     "engines": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_engines_domain_handler,)},
         records_normalizer=_normalize_engine_records,
     ),
-    "grands_prix": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_grands_prix_domain_handler,)},
-    ),
-    "teams": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_teams_domain_handler,)},
-    ),
-    "drivers": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_drivers_domain_handler,)},
-    ),
+    "grands_prix": DomainPipelineConfig(),
+    "teams": DomainPipelineConfig(),
+    "drivers": DomainPipelineConfig(),
     "races": DomainPipelineConfig(
-        transformers={DEFAULT_SOURCE_PIPELINE: (_races_domain_handler,)},
         records_normalizer=_normalize_race_records,
     ),
 }
@@ -231,37 +159,7 @@ DOMAIN_PIPELINE_CONFIGS: dict[str, DomainPipelineConfig] = {
 validate_sources_registry_consistency()
 
 
-def _resolve_record_transform_handlers(
-    domain: str,
-    source_name: str,
-) -> tuple[RecordTransformHandler, ...]:
-    global_handlers = DOMAIN_PIPELINE_CONFIGS.get(
-        "*",
-        DomainPipelineConfig(),
-    ).transformers
-    domain_handlers = DOMAIN_PIPELINE_CONFIGS.get(
-        domain,
-        DomainPipelineConfig(),
-    ).transformers
-
-    resolved: list[RecordTransformHandler] = [
-        *global_handlers.get(DEFAULT_SOURCE_PIPELINE, ()),
-        *global_handlers.get(source_name, ()),
-    ]
-    domain_pipeline = domain_handlers.get(source_name)
-    if domain_pipeline is None:
-        domain_pipeline = domain_handlers.get(DEFAULT_SOURCE_PIPELINE, ())
-    resolved.extend(domain_pipeline)
-    return tuple(resolved)
-
-
-def _transform_tyre_manufacturers(
-    source_name: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if source_name != TYRE_MANUFACTURERS_SOURCE:
-        return transformed
-
+def _transform_tyre_manufacturers(transformed: dict[str, object]) -> dict[str, object]:
     if "manufacturers" in transformed:
         transformed["tyre_manufacturers"] = transformed.pop("manufacturers")
     seasons = transformed.get("seasons")
@@ -270,26 +168,16 @@ def _transform_tyre_manufacturers(
     return transformed
 
 
-def _transform_constructor_domain(
-    domain: str,
-    source_name: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain not in CHASSIS_CONSTRUCTOR_DOMAINS:
-        return transformed
-
-    if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
-        return _transform_indianapolis_only_constructor(transformed)
-    if source_name == FORMER_CONSTRUCTORS_SOURCE:
-        return _transform_former_constructor(transformed)
-
+def _transform_constructor_base(transformed: dict[str, object]) -> dict[str, object]:
     constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
-    if domain == "constructors" and re.fullmatch(
-        r"f1_constructors_\d{4}\.json",
-        source_name,
-    ):
-        constructor_fields.discard("engine")
+    _move_fields_to_formula_one(transformed, constructor_fields)
+    _ensure_constructor_status(transformed)
+    return transformed
 
+
+def _transform_constructor_year_record(transformed: dict[str, object]) -> dict[str, object]:
+    constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
+    constructor_fields.discard("engine")
     _move_fields_to_formula_one(transformed, constructor_fields)
     _ensure_constructor_status(transformed)
     return transformed
@@ -339,85 +227,55 @@ def _ensure_constructor_status(transformed: dict[str, object]) -> None:
     formula_one.setdefault("status", CONSTRUCTOR_STATUS_ACTIVE)
 
 
-def _transform_circuits_domain(
-    domain: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain != "circuits":
-        return transformed
+def _transform_circuits_domain(transformed: dict[str, object]) -> dict[str, object]:
     _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
     if "racing_series" not in transformed:
         transformed["series"] = FORMULA_ONE_SERIES.copy()
     return transformed
 
 
-def _transform_engines_domain(
-    domain: str,
-    source_name: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain != "engines":
-        return transformed
-    if source_name == ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE:
-        transformed["racing_series"] = {
-            "AAA_national_championship": [],
-            "formula_one": {
-                "status": CONSTRUCTOR_STATUS_FORMER,
-                "indianapolis_only": True,
-            },
-        }
-    elif source_name == ENGINE_MANUFACTURERS_SOURCE:
-        _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
+def _transform_engine_indianapolis_only(transformed: dict[str, object]) -> dict[str, object]:
+    transformed["racing_series"] = {
+        "AAA_national_championship": [],
+        "formula_one": {
+            "status": CONSTRUCTOR_STATUS_FORMER,
+            "indianapolis_only": True,
+        },
+    }
     return transformed
 
 
-def _transform_grands_prix_domain(
-    domain: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain == "grands_prix":
-        _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
+def _transform_engine_manufacturers(transformed: dict[str, object]) -> dict[str, object]:
+    _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
     return transformed
 
 
-def _transform_teams_domain(
-    domain: str,
-    source_name: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain != "teams":
-        return transformed
-    if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
-        transformed = {
-            "team": transformed.get("constructor"),
-            "racing_series": _build_racing_series({**transformed}),
-        }
-    if source_name == SPONSORSHIP_LIVERIES_SOURCE and "liveries" in transformed:
+def _transform_grands_prix_domain(transformed: dict[str, object]) -> dict[str, object]:
+    _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
+    return transformed
+
+
+def _transform_constructor_team_alias(transformed: dict[str, object]) -> dict[str, object]:
+    return {
+        "team": transformed.get("constructor"),
+        "racing_series": _build_racing_series({**transformed}),
+    }
+
+
+def _transform_team_liveries(transformed: dict[str, object]) -> dict[str, object]:
+    if "liveries" in transformed:
         transformed["racing_series"] = _build_racing_series(
             {"liveries": transformed.pop("liveries")},
         )
-    if source_name == PRIVATEER_TEAMS_SOURCE:
-        formula_one = {
-            key: transformed.pop(key) for key in ("seasons",) if key in transformed
-        }
-        formula_one["privateer"] = True
-        transformed["racing_series"] = _build_racing_series(formula_one)
     return transformed
 
 
-def _transform_drivers_domain(
-    domain: str,
-    source_name: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain != "drivers":
-        return transformed
-    if source_name == DRIVERS_SOURCE:
-        return _transform_f1_driver(transformed)
-    if source_name == FEMALE_DRIVERS_SOURCE:
-        return _transform_female_driver(transformed)
-    if source_name == DRIVER_FATALITIES_SOURCE:
-        _attach_driver_death_data(transformed)
+def _transform_privateer_teams(transformed: dict[str, object]) -> dict[str, object]:
+    formula_one = {
+        key: transformed.pop(key) for key in ("seasons",) if key in transformed
+    }
+    formula_one["privateer"] = True
+    transformed["racing_series"] = _build_racing_series(formula_one)
     return transformed
 
 
@@ -455,20 +313,132 @@ def _attach_driver_death_data(transformed: dict[str, object]) -> None:
     transformed["death"] = {**death_fields, "crash": crash_fields}
 
 
-def _transform_races_domain(
-    domain: str,
-    source_name: str,
-    transformed: dict[str, object],
-) -> dict[str, object]:
-    if domain != "races":
-        return transformed
-    if source_name == RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE:
-        transformed["championship"] = True
-    if source_name == RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE:
-        transformed["championship"] = False
+def _transform_driver_fatalities(transformed: dict[str, object]) -> dict[str, object]:
+    _attach_driver_death_data(transformed)
+    return transformed
+
+
+def _transform_race_championship_true(transformed: dict[str, object]) -> dict[str, object]:
+    transformed["championship"] = True
+    return transformed
+
+
+def _transform_race_championship_false(transformed: dict[str, object]) -> dict[str, object]:
+    transformed["championship"] = False
+    return transformed
+
+
+def _transform_race_red_flag(transformed: dict[str, object]) -> dict[str, object]:
     transformed["red_flag"] = _extract_red_flag(transformed)
     _pop_red_flag_fields(transformed)
     return transformed
+
+
+TRANSFORM_STRATEGIES: tuple[SourceTransformStrategy, ...] = (
+    SourceTransformStrategy(
+        name="tyre_manufacturers",
+        sources=frozenset({TYRE_MANUFACTURERS_SOURCE}),
+        apply_transform=_transform_tyre_manufacturers,
+    ),
+    SourceTransformStrategy(
+        name="constructor_indianapolis_only",
+        domains=frozenset(CHASSIS_CONSTRUCTOR_DOMAINS),
+        sources=frozenset({INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE}),
+        apply_transform=_transform_indianapolis_only_constructor,
+    ),
+    SourceTransformStrategy(
+        name="constructor_former",
+        domains=frozenset(CHASSIS_CONSTRUCTOR_DOMAINS),
+        sources=frozenset({FORMER_CONSTRUCTORS_SOURCE}),
+        apply_transform=_transform_former_constructor,
+    ),
+    SourceTransformStrategy(
+        name="constructor_base",
+        domains=frozenset(CHASSIS_CONSTRUCTOR_DOMAINS),
+        apply_transform=_transform_constructor_base,
+    ),
+    SourceTransformStrategy(
+        name="constructor_year_source",
+        domains=frozenset({"constructors"}),
+        source_pattern=F1_CONSTRUCTORS_YEAR_SOURCE_PATTERN,
+        apply_transform=_transform_constructor_year_record,
+    ),
+    SourceTransformStrategy(
+        name="circuits_base",
+        domains=frozenset({"circuits"}),
+        apply_transform=_transform_circuits_domain,
+    ),
+    SourceTransformStrategy(
+        name="engines_indianapolis_only",
+        domains=frozenset({"engines"}),
+        sources=frozenset({ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE}),
+        apply_transform=_transform_engine_indianapolis_only,
+    ),
+    SourceTransformStrategy(
+        name="engines_manufacturers",
+        domains=frozenset({"engines"}),
+        sources=frozenset({ENGINE_MANUFACTURERS_SOURCE}),
+        apply_transform=_transform_engine_manufacturers,
+    ),
+    SourceTransformStrategy(
+        name="grands_prix_base",
+        domains=frozenset({"grands_prix"}),
+        apply_transform=_transform_grands_prix_domain,
+    ),
+    SourceTransformStrategy(
+        name="teams_constructor_year_alias",
+        domains=frozenset({"teams"}),
+        source_pattern=F1_CONSTRUCTORS_YEAR_SOURCE_PATTERN,
+        apply_transform=_transform_constructor_team_alias,
+    ),
+    SourceTransformStrategy(
+        name="teams_sponsorship_liveries",
+        domains=frozenset({"teams"}),
+        sources=frozenset({SPONSORSHIP_LIVERIES_SOURCE}),
+        apply_transform=_transform_team_liveries,
+    ),
+    SourceTransformStrategy(
+        name="teams_privateer",
+        domains=frozenset({"teams"}),
+        sources=frozenset({PRIVATEER_TEAMS_SOURCE}),
+        apply_transform=_transform_privateer_teams,
+    ),
+    SourceTransformStrategy(
+        name="drivers_f1",
+        domains=frozenset({"drivers"}),
+        sources=frozenset({DRIVERS_SOURCE}),
+        apply_transform=_transform_f1_driver,
+    ),
+    SourceTransformStrategy(
+        name="drivers_female",
+        domains=frozenset({"drivers"}),
+        sources=frozenset({FEMALE_DRIVERS_SOURCE}),
+        apply_transform=_transform_female_driver,
+    ),
+    SourceTransformStrategy(
+        name="drivers_fatalities",
+        domains=frozenset({"drivers"}),
+        sources=frozenset({DRIVER_FATALITIES_SOURCE}),
+        apply_transform=_transform_driver_fatalities,
+    ),
+    SourceTransformStrategy(
+        name="races_world_championship",
+        domains=frozenset({"races"}),
+        sources=frozenset({RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE}),
+        apply_transform=_transform_race_championship_true,
+    ),
+    SourceTransformStrategy(
+        name="races_non_championship",
+        domains=frozenset({"races"}),
+        sources=frozenset({RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE}),
+        apply_transform=_transform_race_championship_false,
+    ),
+    SourceTransformStrategy(
+        name="races_red_flag",
+        domains=frozenset({"races"}),
+        apply_transform=_transform_race_red_flag,
+    ),
+)
 
 
 def _iter_transformed_records(
@@ -835,14 +805,12 @@ for _constructor_domain in CHASSIS_CONSTRUCTOR_DOMAINS:
 for _domain, _postprocessors in DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN.items():
     existing = DOMAIN_PIPELINE_CONFIGS.get(_domain, DomainPipelineConfig())
     DOMAIN_PIPELINE_CONFIGS[_domain] = DomainPipelineConfig(
-        transformers=existing.transformers,
         postprocessors=_postprocessors,
         records_normalizer=existing.records_normalizer,
     )
 
 for _domain, _config in tuple(DOMAIN_PIPELINE_CONFIGS.items()):
     DOMAIN_PIPELINE_CONFIGS[_domain] = DomainPipelineConfig(
-        transformers=_config.transformers,
         postprocessors=tuple(_config.postprocessors),
         records_normalizer=_config.records_normalizer,
     )
