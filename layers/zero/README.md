@@ -10,7 +10,7 @@ Warstwa 0 odpowiada za uruchamianie scrape'ów listowych (seed/list jobs), zapis
 ## Najczęstszy punkt debug
 Najczęściej debug zaczyna się w `layers/zero/executor.py`, zwłaszcza w:
 - `_build_local_run_config()` (nadpisania per seed),
-- `_run_single_job()` (realne odpalenie joba),
+- `_execute_single_job()` (realne odpalenie joba; `_run_single_job()` to alias deprecacyjny),
 - `_finalize_merge()` (spięcie artefaktów po pętli).
 
 Pomocniczo warto sprawdzić `layers/zero/run_profile_paths.py` (czy ścieżki outputu są poprawne) i `layers/zero/policies.py` (hooki post-job).

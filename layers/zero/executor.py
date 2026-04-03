@@ -61,6 +61,11 @@ class LayerZeroExecutor:
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
+        """Run workflow layer-0 dla wszystkich jobów z rejestru.
+
+        Wejście: konfiguracja uruchomienia i katalog bazowy wiki.
+        Wyjście: brak (efekt uboczny: eksport plików i merge).
+        """
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
         run_id = str(uuid4())
@@ -171,13 +176,18 @@ class LayerZeroExecutor:
             scraper_kwargs=scraper_kwargs,
         )
 
-    def _run_single_job(
+    def _execute_single_job(
         self,
         *,
         run_config: RunConfig,
         local_run_config: RunConfig,
         job: ListJobRegistryEntry,
     ) -> Path:
+        """Execute techniczny krok uruchomienia pojedynczego joba.
+
+        Wejście: konfiguracje run oraz wpis joba.
+        Wyjście: ścieżka do surowego pliku JSON layer-0.
+        """
         rendered_json_path = format_domain_year_name(
             job.json_output_path,
             domain=job.output_category,
@@ -198,6 +208,24 @@ class LayerZeroExecutor:
             l0_raw_csv_path,
         )
         return l0_raw_json_path
+
+    def _run_single_job(
+        self,
+        *,
+        run_config: RunConfig,
+        local_run_config: RunConfig,
+        job: ListJobRegistryEntry,
+    ) -> Path:
+        """Deprecated alias for `_execute_single_job`.
+
+        Wejście: konfiguracje run oraz wpis joba.
+        Wyjście: ścieżka do surowego pliku JSON layer-0.
+        """
+        return self._execute_single_job(
+            run_config=run_config,
+            local_run_config=local_run_config,
+            job=job,
+        )
 
     def _maybe_mirror_constructors(
         self,

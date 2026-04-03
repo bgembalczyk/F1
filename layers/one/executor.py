@@ -1,6 +1,7 @@
 from collections.abc import Callable
 import inspect
 from pathlib import Path
+import warnings
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerOneRunnerProtocol
@@ -55,6 +56,11 @@ class LayerOneExecutor:
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
+        """Run workflow layer-1 dla seedów i eksportu silników.
+
+        Wejście: konfiguracja uruchomienia i katalog bazowy wiki.
+        Wyjście: brak (efekt uboczny: eksporty i log śladu).
+        """
         self._validate_seed_registry(self._seed_registry)
         runner_map = self._runners()
         run_id = str(uuid4())
@@ -118,7 +124,7 @@ class LayerOneExecutor:
             )
 
         try:
-            self._run_engine_manufacturers(
+            self._execute_engine_manufacturers(
                 base_wiki_dir=base_wiki_dir,
                 include_urls=run_config.include_urls,
                 run_id=run_id,
@@ -181,13 +187,18 @@ class LayerOneExecutor:
         trace_path = debug_root / "traces" / f"layer1_{run_id}.jsonl"
         return RunTraceWriter(trace_path)
 
-    def _run_engine_manufacturers(
+    def _execute_engine_manufacturers(
         self,
         *,
         base_wiki_dir: Path,
         include_urls: bool,
         run_id: str,
     ) -> None:
+        """Execute krok techniczny eksportu engine manufacturers.
+
+        Wejście: katalog bazowy wiki, flaga include_urls i run_id.
+        Wyjście: brak (efekt uboczny: zapis eksportu).
+        """
         signature = inspect.signature(self._engine_manufacturers_runner)
         if "run_id" in signature.parameters:
             self._engine_manufacturers_runner(
@@ -199,4 +210,27 @@ class LayerOneExecutor:
         self._engine_manufacturers_runner(
             base_wiki_dir=base_wiki_dir,
             include_urls=include_urls,
+        )
+
+    def _run_engine_manufacturers(
+        self,
+        *,
+        base_wiki_dir: Path,
+        include_urls: bool,
+        run_id: str,
+    ) -> None:
+        """Deprecated alias for `_execute_engine_manufacturers`.
+
+        Wejście: katalog bazowy wiki, flaga include_urls i run_id.
+        Wyjście: brak (efekt uboczny: zapis eksportu).
+        """
+        warnings.warn(
+            "`_run_engine_manufacturers` is deprecated; use `_execute_engine_manufacturers`.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self._execute_engine_manufacturers(
+            base_wiki_dir=base_wiki_dir,
+            include_urls=include_urls,
+            run_id=run_id,
         )

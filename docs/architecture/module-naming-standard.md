@@ -45,6 +45,12 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
    - nowy moduł o nazwie semantycznej,
    - stary moduł jako alias/re-export + `DeprecationWarning`.
 3. Jeżeli klasa/moduł uruchamia cały flow, preferuj `Runner` zamiast ogólnego `Executor` w nowym kodzie.
+4. **Konwencja czasowników metod (API semantyczne)**:
+   - `build*` — budowa konfiguracji/opisu (bez uruchamiania procesu),
+   - `create*` — tworzenie instancji obiektu,
+   - `run*` — uruchomienie pełnego workflow/pipeline,
+   - `execute*` — pojedynczy krok techniczny wewnątrz workflow.
+   - Migracje nazw wykonuj bez breaking change: utrzymaj alias legacy i oznacz go jako deprecated.
 
 ## Szybkie drzewko decyzyjne (Service vs Factory vs Runner vs Adapter)
 

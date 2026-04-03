@@ -1,4 +1,5 @@
 from pathlib import Path
+import warnings
 from uuid import uuid4
 
 from models.mappers.serialization import to_dict_list
@@ -12,7 +13,7 @@ from scrapers.base.services.result_export_service import ResultExportService
 
 
 class ScraperRunner:
-    """Orkiestruje tworzenie scrapera i eksport wyników."""
+    """Orkiestruje workflow uruchomienia scrapera i eksport wyników."""
 
     def __init__(
         self,
@@ -27,16 +28,21 @@ class ScraperRunner:
         self._factory = ScraperFactory()
         self._exporter = exporter or result_export_service or ResultExportService()
 
-    def run_and_export(
+    def run(
         self,
         scraper_cls: type[ABCScraper],
         json_rel: str | Path,
         csv_rel: str | Path | None = None,
     ) -> None:
+        """Run workflow scrapera i zapisz wynik do JSON/CSV.
+
+        Wejście: klasa scrapera oraz relatywne ścieżki wyjścia.
+        Wyjście: brak (efekt uboczny: zapis plików).
+        """
         run_id = uuid4().hex
         run_logger = get_logger(scraper_cls.__name__)
         run_logger.info("Scrape run %s started", run_id)
-        scraper = self._make_scraper(scraper_cls, run_id=run_id)
+        scraper = self._create_scraper(scraper_cls, run_id=run_id)
         data = scraper.fetch()
 
         scraper_logger = getattr(scraper, "logger", run_logger)
@@ -68,6 +74,24 @@ class ScraperRunner:
             self._report_step(scraper, "export-csv", data)
         run_logger.info("Scrape run %s finished", run_id)
 
+    def run_and_export(
+        self,
+        scraper_cls: type[ABCScraper],
+        json_rel: str | Path,
+        csv_rel: str | Path | None = None,
+    ) -> None:
+        """Deprecated alias for `run`.
+
+        Wejście: klasa scrapera oraz relatywne ścieżki wyjścia.
+        Wyjście: brak (efekt uboczny: zapis plików).
+        """
+        warnings.warn(
+            "`run_and_export` is deprecated; use `run` for workflow execution.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self.run(scraper_cls, json_rel, csv_rel)
+
     def _report_step(
         self,
         scraper: ABCScraper,
@@ -82,15 +106,38 @@ class ScraperRunner:
             records=to_dict_list(list(data)),
         )
 
-    def _make_scraper(
+    def _create_scraper(
         self,
         scraper_cls: type[ABCScraper],
         *,
         run_id: str,
     ) -> ABCScraper:
+        """Create instancję scrapera na podstawie klasy i run_id.
+
+        Wejście: klasa scrapera oraz identyfikator uruchomienia.
+        Wyjście: skonstruowana instancja `ABCScraper`.
+        """
         return self._factory.create(
             scraper_cls=scraper_cls,
             run_config=self._run_config,
             run_id=run_id,
             supports_urls=self._supports_urls,
         )
+
+    def _make_scraper(
+        self,
+        scraper_cls: type[ABCScraper],
+        *,
+        run_id: str,
+    ) -> ABCScraper:
+        """Deprecated alias for `_create_scraper`.
+
+        Wejście: klasa scrapera oraz identyfikator uruchomienia.
+        Wyjście: skonstruowana instancja `ABCScraper`.
+        """
+        warnings.warn(
+            "`_make_scraper` is deprecated; use `_create_scraper`.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self._create_scraper(scraper_cls, run_id=run_id)

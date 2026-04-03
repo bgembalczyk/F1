@@ -4,7 +4,7 @@
 `scrapers/base` dostarcza fundament pipeline'u scraperów: wspólny lifecycle, kontrakty źródeł, uruchamianie kroków przetwarzania, walidację, logowanie i eksport wyników.
 
 ## Punkt wejścia
-- Główny punkt wejścia uruchamiania: `ScraperRunner.run_and_export(...)`.
+- Główny punkt wejścia uruchamiania: `ScraperRunner.run(...)` (`run_and_export(...)` pozostaje aliasem deprecacyjnym).
 - Główny punkt wejścia dla implementacji nowych scraperów: dziedziczenie po `ABCScraper`.
 - Kontrakt konfiguracji uruchomienia: `RunConfig`.
 
