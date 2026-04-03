@@ -49,9 +49,6 @@ class DataPaths:
         return self.raw / category / filename
 
     def resolve_compatible_input(self, category: str, filename: str) -> Path:
-        legacy = self.legacy_wiki_file(category, filename)
-        if legacy.exists():
-            return legacy
         return self.raw_input_file(category, filename)
 
 
