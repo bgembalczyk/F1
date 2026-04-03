@@ -3,6 +3,7 @@
 import shutil
 from datetime import datetime
 from datetime import timezone
+from pathlib import Path
 from typing import NamedTuple
 from typing import TYPE_CHECKING
 from layers.composition import create_default_wiki_pipeline_application
@@ -24,9 +25,6 @@ from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.policies import MirrorConstructorsJobHook
 from layers.zero.run_profile_paths import build_debug_run_config
-
-if TYPE_CHECKING:
-    from pathlib import Path
 
 
 class _WikiPipelineComponents(NamedTuple):
