@@ -17,6 +17,21 @@ Legacy pliki typu `list_scraper.py` / `*_constructors_list.py` pozostają tylko 
 - emitują `DeprecationWarning` przez wspólny helper `scrapers.base.deprecated_entrypoint.run_deprecated_entrypoint`,
 - przekierowują uruchomienie do `python -m scrapers.cli run <module>` (rejestr i dispatch są utrzymywane wyłącznie w `scrapers/cli.py`).
 
+### 1.0 Mapa odpowiedzialności kluczowych katalogów
+
+| Katalog | Odpowiedzialność (skrót) | Entrypoint(y) | Właściciel logiczny | Granice użycia |
+|---|---|---|---|---|
+| `scrapers/cli.py` | Canonical launcher i dispatch uruchomień scraperów. | `python -m scrapers.cli ...` | Platforma scraperów (warstwa orkiestracji) | Nie umieszczamy logiki domenowej; tylko routing, konfiguracja run i kompatybilność CLI. |
+| `scrapers/base/` | Wspólne kontrakty, adaptery, helpery i abstrakcje wielodomenowe. | Importowane API bazowe (`scrapers.base.*`) | Platforma scraperów (warstwa bazowa) | Bez wiedzy o konkretnych domenach (`drivers`, `circuits`, itd.); nowe API musi być generyczne i testowalne. |
+| `scrapers/<domain>/entrypoint.py` | Stabilny punkt startowy domeny (`run_list_scraper`). | `python -m scrapers.cli run scrapers.<domain>.entrypoint` | Właściciel domeny (`<domain>`) | Entrypoint orkiestruje flow i deleguje do warstw; nie duplikuje parserów/normalizacji. |
+| `scrapers/<domain>/list/` lub `list_scraper.py` | Seed scrape: lista encji + linki do szczegółów. | `run_list_scraper()` przez entrypoint domeny | Właściciel domeny (`<domain>`) | Brak importów do `sections/`, `infobox/`, `postprocess/`; tylko etap listowania/seedów. |
+| `scrapers/<domain>/sections/` | Parsowanie sekcji `bodyContent` i tabel artykułu. | Wywołania z `single_scraper.py` / serwisów domenowych | Właściciel domeny (`<domain>`) | Nie importuje `single_scraper.py` (zakaz zależności zwrotnej) ani legacy launcherów listowych. |
+| `scrapers/<domain>/infobox/` | Parsowanie danych strukturalnych `table.infobox`. | Wywołania z flow domeny (`single_scraper`/services) | Właściciel domeny (`<domain>`) | Brak importów do `list/`, `sections/`, `postprocess/`; warstwa niezależna od pozostałych parserów. |
+| `scrapers/<domain>/services/` | Usługi domenowe i składanie rekordów pośrednich/końcowych. | API usług domenowych (`scrapers.<domain>.services.*`) | Właściciel domeny (`<domain>`) | Łączy komponenty domeny bez łamania granic warstw i bez przenoszenia logiki do CLI/base. |
+| `scrapers/<domain>/postprocess/` | Normalizacja końcowa i domknięcie kontraktu danych. | Etap końcowy flow domeny | Właściciel domeny (`<domain>`) | Brak importów do `list/`, `sections/`, `infobox/`; tylko końcowe porządki i walidacje. |
+
+**Zasada utrzymania mapy:** przy każdej zmianie architektonicznej (nowe granice, nowy entrypoint, zmiana odpowiedzialności katalogu) aktualizujemy tabelę 1.0 w tym samym PR.
+
 ## 1.1 Mapa migracji nazw/ścieżek (standaryzacja `services/`)
 
 W ramach refaktoru domenowego przeniesiono usługi składania rekordów do katalogów `services/`.
@@ -129,6 +144,8 @@ Każdy PR obejmujący kod scraperów przechodzi przez poniższą checklistę arc
 - [ ] **Użycie wspólnych abstrakcji:** preferowane są istniejące komponenty bazowe (`scrapers/base/*`) lub rozszerzenie wspólnego API.
 - [ ] **Brak nowych `Any` w domenie:** nowe adnotacje typów w kodzie domenowym nie wprowadzają kolejnych `Any` (chyba że istnieje formalnie udokumentowany wyjątek techniczny).
 - [ ] **Zgodność z extension guide:** nowy scraper spełnia kontrakt i antywzorce opisane w `docs/architecture/scraper-extension-guide.md`.
+- [ ] **Zgodność zmian z mapą odpowiedzialności (sekcja 1.0):** granice użycia, właściciel logiczny i entrypointy pozostały spójne albo zostały jawnie zaktualizowane.
+- [ ] **Aktualizacja mapy po zmianie architektonicznej:** jeżeli zmienia się odpowiedzialność katalogów, granice lub entrypointy, sekcja 1.0 została zaktualizowana w tym samym PR.
 - [ ] **Debug Quickstart aktualny:** dla zmian architektonicznych zaktualizowano `docs/DEBUG_QUICKSTART.md` (lub uzasadniono brak zmian).
 
 ### 6.2 „Architecture impact” dla zmian w `scrapers/base/`

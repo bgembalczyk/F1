@@ -6,6 +6,7 @@ import argparse
 import dataclasses
 import inspect
 import warnings
+from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from scrapers.base.logging import configure_logging
@@ -24,12 +25,65 @@ if TYPE_CHECKING:
 
 def deprecated_module_base_config() -> RunConfig:
     """Build canonical ``RunConfig`` for deprecated compatibility modules."""
-    return build_run_profile(RunProfileName.DEPRECATED)
+    return build_run_profile(RunProfileName.DEFAULT)
 
 
 def complete_extractor_base_config() -> RunConfig:
     """Build canonical ``RunConfig`` for complete-extractor CLI modules."""
-    return build_run_profile(RunProfileName.MINIMAL)
+    return build_run_profile(RunProfileName.DEFAULT)
+
+
+@dataclass(frozen=True)
+class CliFlagSpec:
+    name: str
+    default: bool
+    help_text: str
+    justification: str
+    review_by: str
+
+
+def _validate_flag_catalog(flag_specs: tuple[CliFlagSpec, ...]) -> None:
+    for spec in flag_specs:
+        if not spec.justification.strip() or not spec.review_by.strip():
+            msg = f"Flag {spec.name!r} must define justification and review_by (YAGNI)."
+            raise ValueError(msg)
+
+
+def _standard_flag_catalog(
+    *,
+    quality_report_default: bool,
+    error_report_default: bool,
+) -> tuple[CliFlagSpec, ...]:
+    return (
+        CliFlagSpec(
+            name="quality-report",
+            default=quality_report_default,
+            help_text="Zapisz raport jakości do debug_dir/quality_report.json.",
+            justification="Potrzebne do audytu jakości danych dla uruchomień produkcyjnych.",
+            review_by="2026-12-31",
+        ),
+        CliFlagSpec(
+            name="error-report",
+            default=error_report_default,
+            help_text="Zapisz raporty błędów do debug_dir/errors.jsonl.",
+            justification="Ułatwia triage błędów bez ponawiania pełnego runu.",
+            review_by="2026-12-31",
+        ),
+        CliFlagSpec(
+            name="verbose",
+            default=False,
+            help_text="Ustaw poziom logów na INFO.",
+            justification="Daje szybki podgląd postępu bez pełnego TRACE.",
+            review_by="2026-12-31",
+        ),
+        CliFlagSpec(
+            name="trace",
+            default=False,
+            help_text="Ustaw poziom logów na DEBUG (nadpisuje --verbose).",
+            justification="Wymagane do debugowania parserów i dumpów technicznych.",
+            review_by="2026-12-31",
+        ),
+    )
 
 
 def build_standard_parser(
@@ -39,30 +93,19 @@ def build_standard_parser(
 ) -> argparse.ArgumentParser:
     """Build parser with standardized quality/error report flags."""
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--quality-report",
-        action=argparse.BooleanOptionalAction,
-        default=quality_report_default,
-        help="Zapisz raport jakości do debug_dir/quality_report.json.",
+    flag_specs = _standard_flag_catalog(
+        quality_report_default=quality_report_default,
+        error_report_default=error_report_default,
     )
-    parser.add_argument(
-        "--error-report",
-        action=argparse.BooleanOptionalAction,
-        default=error_report_default,
-        help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
-    )
-    parser.add_argument(
-        "--verbose",
-        action="store_true",
-        default=False,
-        help="Ustaw poziom logów na INFO.",
-    )
-    parser.add_argument(
-        "--trace",
-        action="store_true",
-        default=False,
-        help="Ustaw poziom logów na DEBUG (nadpisuje --verbose).",
-    )
+    _validate_flag_catalog(flag_specs)
+
+    for spec in flag_specs:
+        parser.add_argument(
+            f"--{spec.name}",
+            action=argparse.BooleanOptionalAction if spec.name in {"quality-report", "error-report"} else "store_true",
+            default=spec.default,
+            help=spec.help_text,
+        )
     return parser
 
 

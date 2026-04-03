@@ -1,5 +1,6 @@
 import sys
 import types
+import json
 from pathlib import Path
 
 import pytest
@@ -11,6 +12,9 @@ from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperNotFoundError
 from scrapers.base.errors import ScraperParseError
+from scrapers.base.errors_report import ErrorReport
+from scrapers.base.errors_report import write_error_report
+from scrapers.base.errors_report import write_error_summary_by_code
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
@@ -257,6 +261,52 @@ def test_single_circuit_scraper_wraps_network_errors():
 
     with pytest.raises(ScraperNetworkError):
         scraper.fetch_by_url("https://example.com/wiki/Test")
+
+
+def test_error_report_contains_catalog_code_fields() -> None:
+    error = ScraperParseError(
+        message="Parse failed",
+        url="https://example.com",
+        parser_name="DummyParser",
+        run_id="run-1",
+    )
+    report = ErrorReport.from_exception(error)
+
+    assert report.code == "source.parse_error"
+    assert report.code_id == "P001"
+    assert report.code_description
+
+
+def test_error_summary_aggregates_entries_by_code(tmp_path: Path) -> None:
+    report_path = tmp_path / "errors.jsonl"
+    write_error_report(
+        tmp_path,
+        ErrorReport.from_exception(
+            ScraperParseError(message="parse"),
+            run_id="run-a",
+        ),
+    )
+    write_error_report(
+        tmp_path,
+        ErrorReport.from_exception(
+            ScraperNetworkError(message="net"),
+            run_id="run-a",
+        ),
+    )
+    write_error_report(
+        tmp_path,
+        ErrorReport.from_exception(
+            ScraperParseError(message="parse2"),
+            run_id="run-b",
+        ),
+    )
+
+    assert report_path.exists()
+
+    summary_path = write_error_summary_by_code(tmp_path, run_id="run-a")
+    payload = json.loads(summary_path.read_text(encoding="utf-8"))
+    assert payload["total_errors"] == 2
+    assert payload["error_counts_by_code"] == {"M002": 1, "P001": 1}
 
 
 def test_single_circuit_scraper_soft_skips_not_found():

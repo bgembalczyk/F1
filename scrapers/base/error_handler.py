@@ -3,6 +3,7 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import TypeVar
 
+from scrapers.base.error_codes import resolve_error_code
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ErrorBehavior
 from scrapers.base.errors import ScraperError
@@ -11,6 +12,7 @@ from scrapers.base.errors import ScraperParseError
 from scrapers.base.errors import ScraperValidationError
 from scrapers.base.errors_report import ErrorReport
 from scrapers.base.errors_report import write_error_report
+from scrapers.base.errors_report import write_error_summary_by_code
 
 T = TypeVar("T")
 
@@ -156,11 +158,17 @@ class ErrorHandler:
         if error.behavior == ErrorBehavior.HARD:
             return False
 
+        code_definition = resolve_error_code(error.code)
         self._logger.warning(
-            "Soft-skip dla błędu [%s/%s]: %s",
-            error.category.value,
-            error.behavior.value,
+            "Soft-skip [%s|%s]: %s | "
+            "context(url=%s, section_id=%s, parser=%s, run_id=%s)",
+            code_definition.code_id,
+            code_definition.short_description,
             error,
+            error.url,
+            error.section_id,
+            error.parser_name,
+            self._resolve_run_id(None),
         )
         return True
 
@@ -169,3 +177,7 @@ class ErrorHandler:
             return
         report = ErrorReport.from_exception(error, run_id=self._resolve_run_id(None))
         write_error_report(self._debug_dir, report)
+        write_error_summary_by_code(
+            self._debug_dir,
+            run_id=self._resolve_run_id(None),
+        )
