@@ -11,7 +11,7 @@ GIT_BIN = shutil.which("git") or "git"
 
 
 def _git(cwd: Path, *args: str) -> str:
-    proc = subprocess.run(  # -- test uruchamia zaufane lokalne `git`
+    proc = subprocess.run(  # noqa: S603 -- test uruchamia zaufane lokalne `git`
         [GIT_BIN, *args],
         cwd=cwd,
         capture_output=True,
@@ -31,7 +31,7 @@ def _run_enforcement(
 ) -> subprocess.CompletedProcess[str]:
     env = dict(os.environ)
     env["PYTHONPATH"] = str(REPO_ROOT)
-    return subprocess.run(  # -- test uruchamia bieżący interpreter i lokalny moduł
+    return subprocess.run(  # noqa: S603 -- test uruchamia bieżący interpreter i lokalny moduł
         [
             sys.executable,
             "-m",
