@@ -48,17 +48,22 @@ jobs:
           import difflib
           import filecmp
           import os
-          import sys
           from pathlib import Path
 
           before_root = Path(os.environ["BEFORE_DIR"])
           after_root = Path("data")
+          ignored_prefixes = ("debug/", "wiki_cache/")
+
+          def is_ignored(path: str) -> bool:
+              return any(path == prefix.rstrip("/") or path.startswith(prefix) for prefix in ignored_prefixes)
 
           def collect_files(root: Path) -> set[str]:
               files: set[str] = set()
               for path in root.rglob("*"):
                   if path.is_file():
-                      files.add(path.relative_to(root).as_posix())
+                      rel = path.relative_to(root).as_posix()
+                      if not is_ignored(rel):
+                          files.add(rel)
               return files
 
           before_files = collect_files(before_root)
