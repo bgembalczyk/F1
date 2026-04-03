@@ -25,7 +25,9 @@ def test_broad_exception_requires_justification_annotation(
 def test_broad_exception_with_marker_is_allowed(tmp_path: Path, monkeypatch) -> None:
     test_file = tmp_path / "sample.py"
     test_file.write_text(
-        "try:\n    pass\nexcept Exception:  # justified-exception: normalization boundary\n    pass\n",
+        "try:\n    pass\n"
+        "except Exception:  # justified-exception: normalization boundary\n"
+        "    pass\n",
         encoding="utf-8",
     )
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)

@@ -118,7 +118,8 @@ def main(argv: Sequence[str]) -> int:
     ]
     if not detected_required_sections:
         print(
-            "PR description does not use the enforced template sections; skipping validation in this run.",
+            "PR description does not use the enforced template sections; "
+            "skipping validation in this run.",
         )
         return 0
 

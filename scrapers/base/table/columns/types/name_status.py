@@ -34,7 +34,8 @@ class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
 
     Subclasses define:
     - entity_key: The key for the entity name (e.g., "driver", "circuit")
-    - status_extractors: Dict mapping status keys to extractor functions or BaseColumn instances
+    - status_extractors: Dict mapping status keys
+      to extractor functions or BaseColumn instances
     """
 
     def __init__(
@@ -48,7 +49,8 @@ class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
         Args:
             entity_key: Key for the entity name field
             status_extractors: Mapping of status field names to extractor functions
-                or BaseColumn instances. Callables are automatically wrapped in BoolColumn.
+                or BaseColumn instances.
+                Callables are automatically wrapped in BoolColumn.
         """
         columns: dict[str, BaseColumn] = {entity_key: UrlColumn()}
         for status_key, extractor in status_extractors.items():

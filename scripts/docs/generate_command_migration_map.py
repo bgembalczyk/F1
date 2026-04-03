@@ -34,7 +34,8 @@ def build_generated_section() -> str:
     lines.append("### 7.2 Canonical command map (CLI/API)")
     lines.append("")
     lines.append(
-        "Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrapperów.",
+        "Repo nie utrzymuje już warstwy kompatybilności wstecznej "
+        "ani deprecated-wrapperów.",
     )
     lines.append("")
     lines.append("W praktyce oznacza to migrację:")
@@ -67,7 +68,10 @@ def main() -> int:
     parser.add_argument(
         "--check",
         action="store_true",
-        help="Sprawdza czy docs/MODULE_BOUNDARIES.md jest zsynchronizowany z generatorem.",
+        help=(
+            "Sprawdza czy docs/MODULE_BOUNDARIES.md jest "
+            "zsynchronizowany z generatorem."
+        ),
     )
     parser.add_argument(
         "--write",

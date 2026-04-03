@@ -53,8 +53,9 @@ class LayerZeroExecutor:
             or year_provider is None
         ):
             msg = (
-                "LayerZeroExecutor requires `config_factories`, `default_config_factory`, "
-                "`merger`, `job_hook` and `year_provider`."
+                "LayerZeroExecutor requires `config_factories`, "
+                "`default_config_factory`, `merger`, `job_hook` "
+                "and `year_provider`."
             )
             raise ValueError(msg)
         self._job_hook = job_hook

@@ -35,7 +35,10 @@ class GeminiOrchestrationService:
             model = self._model_selector.pick_model(exclude=error_models)
             if model is None:
                 raise PipelineError(
-                    message="Wszystkie dostępne modele Gemini są wyczerpane lub osiągnęły limit.",
+                    message=(
+                        "Wszystkie dostępne modele Gemini są wyczerpane "
+                        "lub osiągnęły limit."
+                    ),
                     code="gemini.models_exhausted",
                     domain="gemini",
                     source_name="gemini",

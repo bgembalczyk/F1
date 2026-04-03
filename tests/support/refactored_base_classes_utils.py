@@ -10,7 +10,7 @@ INDIANAPOLIS_ENGINE_MANUFACTURERS_URL = (
     f"{WIKI_BASE_URL}/List_of_Formula_One_engine_manufacturers"
 )
 POINTS_SYSTEMS_URL = (
-    f"{WIKI_BASE_URL}/" "List_of_Formula_One_World_Championship_points_scoring_systems"
+    f"{WIKI_BASE_URL}/List_of_Formula_One_World_Championship_points_scoring_systems"
 )
 
 

@@ -137,7 +137,9 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
     section_fragment = BeautifulSoup(
         """
         <div class="mw-heading mw-heading2">
-          <h2 id="Constructors_for_the_2026_season">Constructors for the 2026 season</h2>
+          <h2 id="Constructors_for_the_2026_season">
+            Constructors for the 2026 season
+          </h2>
         </div>
         <table class="wikitable sortable">
           <tr>

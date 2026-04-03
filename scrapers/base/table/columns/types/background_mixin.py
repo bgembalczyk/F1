@@ -9,7 +9,8 @@ class BackgroundMixin:
     Mixin dodający ekstrakcję koloru tła komórki do wyniku kolumny.
 
     Nadpisuje metodę apply() tak, aby po normalnym wykonaniu super().apply()
-    dopisywał do rekordu klucz "background" z wartością koloru tła komórki (jeśli istnieje).
+    dopisywał do rekordu klucz "background"
+    z wartością koloru tła komórki (jeśli istnieje).
 
     Działa zarówno z BaseColumn (pojedyncze pola) jak i MultiColumn (wiele pól).
     """

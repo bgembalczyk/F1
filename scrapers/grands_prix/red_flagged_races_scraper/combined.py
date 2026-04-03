@@ -233,7 +233,7 @@ class RedFlaggedRacesSectionParser(SectionParser):
 
 
 class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
-    """Composite scraper that returns both world and non-championship red-flagged races."""
+    """Composite scraper returning world and non-championship red-flagged races."""
 
     _SUPPORTED_EXPORT_SCOPES = {"all", "world_championship", "non_championship"}
     _SCHEMA_COLUMNS = RedFlaggedRacesBaseScraper.build_common_red_flag_columns()
@@ -264,7 +264,10 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
     ) -> None:
         super().__init__(options=options)
         if export_scope not in self._SUPPORTED_EXPORT_SCOPES:
-            msg = f"Unsupported export_scope='{export_scope}' for {self.__class__.__name__}"
+            msg = (
+                f"Unsupported export_scope='{export_scope}' for "
+                f"{self.__class__.__name__}"
+            )
             raise ValueError(msg)
         self._export_scope = export_scope
         parser = RedFlaggedRacesSectionParser()

@@ -35,7 +35,8 @@ def test_entrypoint_domains_registry_matches_domains_with_entrypoints() -> None:
     assert discovered_entrypoint_domains == set(ENTRYPOINT_DOMAINS), (
         "Entrypoint domains list is out of sync with current code. "
         f"Update tests/architecture/rules.py ENTRYPOINT_DOMAINS. "
-        f"discovered={sorted(discovered_entrypoint_domains)} configured={sorted(ENTRYPOINT_DOMAINS)}"
+        f"discovered={sorted(discovered_entrypoint_domains)} "
+        f"configured={sorted(ENTRYPOINT_DOMAINS)}"
     )
 
 

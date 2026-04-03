@@ -67,7 +67,8 @@ class Violation:
             return (
                 f"{rel}:{self.lineno} {self.class_name}.{self.method_name} -> "
                 f"ukryty import '{self.dependency_name}' wewnątrz metody biznesowej. "
-                "Sugerowane: przenieś import do modułu lub wstrzyknij zależność przez __init__/factory (DI)."
+                "Sugerowane: przenieś import do modułu lub wstrzyknij "
+                "zależność przez __init__/factory (DI)."
             )
         return (
             f"{rel}:{self.lineno} {self.class_name}.{self.method_name} -> "
@@ -228,7 +229,8 @@ def _validate_adr_reference_for_major_changes(
     return [
         (
             f"Wykryto {len(violations)} naruszeń DI (>= {threshold}); "
-            "to dodatkowy sygnał DI-trigger i wymagane jest odniesienie ADR-XXXX w PR/commit message."
+            "to dodatkowy sygnał DI-trigger i wymagane jest "
+            "odniesienie ADR-XXXX w PR/commit message."
         ),
     ]
 
