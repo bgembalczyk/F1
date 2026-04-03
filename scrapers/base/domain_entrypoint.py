@@ -101,18 +101,13 @@ class _DomainEntrypointSpec:
     output_path_renderer: OutputPathRenderer = IdentityOutputPathRenderer()
 
 
-def strict_quality_profile() -> RunConfig:
-    """Profile with stricter diagnostics enabled."""
-    return build_run_profile(RunProfileName.STRICT)
+def default_profile() -> RunConfig:
+    """Default production-oriented profile."""
+    return build_run_profile(RunProfileName.DEFAULT)
 
 
-def minimal_profile() -> RunConfig:
-    """Profile with a minimal production-oriented configuration."""
-    return build_run_profile(RunProfileName.MINIMAL)
-
-
-def minimal_debug_profile() -> RunConfig:
-    """Profile with minimal checks and debug dumps enabled."""
+def debug_profile() -> RunConfig:
+    """Profile with debug dumps enabled."""
     return build_run_profile(RunProfileName.DEBUG)
 
 
@@ -120,25 +115,25 @@ _DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
     "drivers": _DomainEntrypointSpec(
         scraper_path="scrapers.drivers.list_scraper:F1DriversListScraper",
         default_output_json="drivers/f1_drivers.json",
-        run_config_profile=strict_quality_profile,
+        run_config_profile=default_profile,
     ),
     "seasons": _DomainEntrypointSpec(
         scraper_path="scrapers.seasons.list_scraper:SeasonsListScraper",
         default_output_json="seasons/f1_seasons.json",
         default_output_csv="seasons/f1_seasons.csv",
-        run_config_profile=minimal_profile,
+        run_config_profile=default_profile,
     ),
     "grands_prix": _DomainEntrypointSpec(
         scraper_path="scrapers.grands_prix.list_scraper:GrandsPrixListScraper",
         default_output_json="grands_prix/f1_grands_prix_by_title.json",
         default_output_csv="grands_prix/f1_grands_prix_by_title.csv",
-        run_config_profile=minimal_profile,
+        run_config_profile=default_profile,
     ),
     "circuits": _DomainEntrypointSpec(
         scraper_path="scrapers.circuits.list_scraper:CircuitsListScraper",
         default_output_json="circuits/f1_circuits.json",
         default_output_csv="circuits/f1_circuits.csv",
-        run_config_profile=strict_quality_profile,
+        run_config_profile=default_profile,
     ),
     "constructors": _DomainEntrypointSpec(
         scraper_path=(
@@ -147,7 +142,7 @@ _DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
         ),
         default_output_json="constructors/f1_constructors_{year}.json",
         default_output_csv="constructors/f1_constructors_{year}.csv",
-        run_config_profile=minimal_debug_profile,
+        run_config_profile=debug_profile,
         output_path_renderer=CurrentYearOutputPathRenderer(
             module_path="scrapers.constructors.constants",
         ),

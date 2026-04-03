@@ -1,6 +1,9 @@
-"""Backward-compatible module alias for the canonical composition root."""
+from __future__ import annotations
 
-from layers.composition import create_default_wiki_pipeline_application
+import shutil
+from datetime import datetime
+from datetime import timezone
+from typing import TYPE_CHECKING
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
@@ -9,10 +12,10 @@ from layers.orchestration.runner_registry import build_layer_one_runner_map
 from layers.orchestration.runner_registry import build_layer_zero_run_config_factory_map
 from layers.orchestration.runner_registry import run_engine_manufacturers
 from layers.pipeline import WikiPipelineApplication
-from layers.seed.registry import WIKI_LIST_JOB_REGISTRY
-from layers.seed.registry import get_wiki_seed_registry
-from layers.seed.registry import validate_list_job_registry
-from layers.seed.registry import validate_seed_registry
+from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
+from layers.seed.registry.helpers import get_wiki_seed_registry
+from layers.seed.registry.helpers import validate_list_job_registry
+from layers.seed.registry.helpers import validate_seed_registry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
@@ -38,6 +41,7 @@ def create_default_wiki_pipeline_application(
     base_wiki_dir: Path,
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
+    """Composition root dla domyślnej aplikacji wiki pipeline."""
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,

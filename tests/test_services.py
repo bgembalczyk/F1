@@ -215,6 +215,36 @@ def test_run_and_export_uses_injected_result_export_service(tmp_path: Path) -> N
     assert spy.csv_calls[0]["path"] == tmp_path / "dummy.csv"
 
 
+def test_run_and_export_uses_fixed_run_id_in_deterministic_mode(tmp_path: Path) -> None:
+    class DummyScraper:
+        def __init__(self, *, options: ScraperOptions) -> None:
+            _ = options
+            self.exporter = DataExporter()
+
+        def fetch(self):
+            return [{"name": "test"}]
+
+    run_config = RunConfig(
+        output_dir=tmp_path,
+        deterministic_mode=True,
+        fixed_run_id="det-run",
+    )
+    captured: list[str] = []
+    original_make_scraper = ScraperRunner._make_scraper
+
+    def _capture_make_scraper(self, scraper_cls, *, run_id):
+        captured.append(run_id)
+        return original_make_scraper(self, scraper_cls, run_id=run_id)
+
+    ScraperRunner._make_scraper = _capture_make_scraper
+    try:
+        ScraperRunner(run_config).run_and_export(DummyScraper, "dummy.json")
+    finally:
+        ScraperRunner._make_scraper = original_make_scraper
+
+    assert captured == ["det-run"]
+
+
 def test_run_and_export_reports_same_records_for_json_and_csv(tmp_path: Path) -> None:
     class DummyScraper:
         def __init__(self, *, options: ScraperOptions, marker: str) -> None:
@@ -246,11 +276,10 @@ def test_run_and_export_reports_same_records_for_json_and_csv(tmp_path: Path) ->
         scraper_kwargs={"marker": "custom"},
     )
 
-    run_and_export(
+    ScraperRunner(run_config).run_and_export(
         DummyFactoryScraper,
         "dummy.json",
         "dummy.csv",
-        run_config=run_config,
     )
 
     step_calls = scraper_ref["instance"].step_calls

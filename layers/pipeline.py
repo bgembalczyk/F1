@@ -25,12 +25,28 @@ class WikiPipelineApplication:
                 base_wiki_dir=self._base_wiki_dir,
                 base_debug_dir=self._base_debug_dir,
             )
+        if profile == "deterministic":
+            debug_config = build_debug_run_config(
+                base_wiki_dir=self._base_wiki_dir,
+                base_debug_dir=self._base_debug_dir,
+            )
+            return RunConfig(
+                **debug_config.__dict__,
+                deterministic_mode=True,
+                stable_sort=True,
+                fixed_run_id="deterministic",
+                fixed_timestamp="1970-01-01T00:00:00+00:00",
+            )
         raise ValueError(profile)
 
-    def run_layer_zero(self) -> None:
-        run_config = self._build_run_config()
+    def run_layer_zero(self, *, deterministic: bool = False) -> None:
+        run_config = self._build_run_config(
+            profile=("deterministic" if deterministic else "debug"),
+        )
         self._layer_zero_executor.run(run_config, self._base_wiki_dir)
 
-    def run_layer_one(self) -> None:
-        run_config = self._build_run_config()
+    def run_layer_one(self, *, deterministic: bool = False) -> None:
+        run_config = self._build_run_config(
+            profile=("deterministic" if deterministic else "debug"),
+        )
         self._layer_one_executor.run(run_config, self._base_wiki_dir)

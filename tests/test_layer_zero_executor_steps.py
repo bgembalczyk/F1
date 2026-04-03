@@ -251,6 +251,44 @@ def test_run_orchestrates_steps_in_order() -> None:
     assert order == ["resolve", "build", "run", "mirror", "merge"]
 
 
+def test_iter_jobs_sorts_registry_in_deterministic_mode() -> None:
+    constructors_job = ListJobRegistryEntry(
+        seed_name="constructors",
+        wikipedia_url="https://example.com",
+        output_category="constructors",
+        list_scraper_cls=_FakeScraper,
+        json_output_path="raw/constructors/f1_constructors_{year}.json",
+        legacy_json_output_path="constructors/f1_constructors_{year}.json",
+        csv_output_path="constructors/f1_constructors.csv",
+    )
+    drivers_job = _job(seed_name="drivers")
+    executor = LayerZeroExecutor(
+        list_job_registry=(drivers_job, constructors_job),
+        validate_list_registry=lambda _registry: None,
+        run_config_factory_map_builder=dict,
+        default_config_factory=_FakeConfigFactory({}),
+        merge_service=_MergeService(),
+        job_hook=NullLayerZeroJobHook(),
+        year_provider=lambda: 2026,
+    )
+
+    ordered = executor._iter_jobs(
+        RunConfig(output_dir=Path("/tmp"), deterministic_mode=True),
+    )
+
+    assert [job.seed_name for job in ordered] == ["constructors", "drivers"]
+
+
+def test_resolve_run_id_returns_fixed_value_in_deterministic_mode() -> None:
+    executor = _executor()
+
+    run_id = executor._resolve_run_id(
+        RunConfig(output_dir=Path("/tmp"), deterministic_mode=True),
+    )
+
+    assert run_id == "layer0-deterministic"
+
+
 def test_mirror_constructors_job_hook_runs_only_for_matching_job() -> None:
     mirror_calls: list[tuple[Path, Path]] = []
 
