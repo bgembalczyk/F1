@@ -106,8 +106,3 @@ class PointsScraper(BasePointsScraper):
         rows = legacy_scraper._parse_soup(soup)
         return [row for row in rows if isinstance(row, dict)]
 
-
-if __name__ == "__main__":
-    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
-
-    run_deprecated_entrypoint()

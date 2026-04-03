@@ -26,7 +26,3 @@ def validate_section_result_payload(payload: dict[str, Any]) -> None:
         msg = "Section parser contract violation: metadata must be dict."
         raise TypeError(msg)
 
-
-def validate_section_payloads(payloads: list[dict[str, Any]]) -> None:
-    for payload in payloads:
-        validate_section_result_payload(payload)

@@ -51,3 +51,14 @@ Szczegółowy przewodnik rozszerzania (hooki obowiązkowe, punkty rozszerzeń, a
 - Funkcje współdzielone między domenami dodawaj **najpierw** do `scrapers/base/helpers/`.
 - Dopiero gdy logika jest domenowa i nie ma sensu jej uogólniać, trzymaj ją lokalnie w domenie.
 - Dla funkcji przenoszonych między modułami utrzymuj jedno źródło prawdy (bez duplikatów).
+
+## Public API
+- Importuj orchestration z `scrapers` i publiczne elementy domen z `scrapers.<domena>`.
+- Unikaj importów typu `scrapers.<domena>.<moduł_wewnętrzny>` w kodzie konsumentów.
+- Katalogi `helpers` są **internal** i nie stanowią stabilnego API.
+
+Przykład:
+```python
+from scrapers import run_wiki_cli
+from scrapers.drivers import F1DriversListScraper
+```

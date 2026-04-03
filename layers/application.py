@@ -44,13 +44,13 @@ def create_default_wiki_pipeline_application(
     layer_zero_executor = LayerZeroExecutor(
         list_job_registry=WIKI_LIST_JOB_REGISTRY,
         validate_list_registry=validate_list_job_registry,
-        run_config_factory_map_builder=build_layer_zero_run_config_factory_map,
+        config_factories=build_layer_zero_run_config_factory_map,
         default_config_factory=DefaultLayerZeroRunConfigFactory(),
-        merge_service=LayerZeroMergeService(
-            merge_function=merge_layer_zero_raw_outputs,
+        merger=LayerZeroMergeService(
+            merge=merge_layer_zero_raw_outputs,
         ),
         job_hook=MirrorConstructorsJobHook(
-            constructors_mirror_service=ConstructorsMirrorService(
+            mirror=ConstructorsMirrorService(
                 mirror_targets=(
                     ("chassis_constructors", "f1_constructors_{year}.json"),
                     ("constructors", "f1_constructors_{year}.json"),
@@ -66,8 +66,8 @@ def create_default_wiki_pipeline_application(
 
     layer_one_executor = LayerOneExecutor(
         seed_registry=get_wiki_seed_registry(),
-        validate_seed_registry_function=validate_seed_registry,
-        runner_map_builder=build_layer_one_runner_map,
+        validate_seed_registry=validate_seed_registry,
+        runners=build_layer_one_runner_map,
         engine_manufacturers_runner=run_engine_manufacturers,
     )
 

@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 from models.services.rounds_service import parse_rounds
 from scrapers.base.helpers.parsing import parse_int_from_text
+from scrapers.base.helpers.transform_micro_ops import pop_list_field
 from scrapers.base.table.columns.types import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
@@ -146,9 +147,9 @@ class SeasonFreePracticeParser:
     ) -> list[dict[str, Any]]:
         normalized: list[dict[str, Any]] = []
         for record in records:
-            drivers = record.pop("drivers", []) or []
-            numbers = record.pop("numbers", []) or []
-            rounds_list = record.pop("rounds", []) or []
+            drivers = pop_list_field(record, "drivers")
+            numbers = pop_list_field(record, "numbers")
+            rounds_list = pop_list_field(record, "rounds")
 
             if len(numbers) == 1 and len(drivers) > 1:
                 numbers = [numbers[0] for _ in range(len(drivers))]

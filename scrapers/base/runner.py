@@ -19,6 +19,7 @@ class ScraperRunner:
         run_config: RunConfig,
         *,
         supports_urls: bool = True,
+        exporter: ResultExportService | None = None,
         result_export_service: ResultExportService | None = None,
     ) -> None:
         self._run_config = run_config
@@ -53,7 +54,7 @@ class ScraperRunner:
         output_dir = Path(self._run_config.output_dir)
         json_path = output_dir / Path(json_rel)
         ensure_parent(json_path)
-        self._result_export_service.to_json(
+        self._exporter.to_json(
             result,
             json_path,
             exporter=scraper.exporter,
@@ -63,7 +64,7 @@ class ScraperRunner:
         if csv_rel:
             csv_path = output_dir / Path(csv_rel)
             ensure_parent(csv_path)
-            self._result_export_service.to_csv(
+            self._exporter.to_csv(
                 result,
                 csv_path,
                 exporter=scraper.exporter,

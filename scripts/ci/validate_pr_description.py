@@ -22,6 +22,10 @@ REQUIRED_CHECKLIST_ITEMS: tuple[str, ...] = (
     "Testy kontraktowe",
     "Brak nowych Any",
     "Brak nowych magic strings",
+    "Brak nowych print",
+    "Złożoność i długość modułów",
+    "Spójność rejestru konfiguracji i implementacji",
+    "Wyjątki tylko jawnie uzasadnione",
     "Zaktualizowany ADR/docs",
 )
 

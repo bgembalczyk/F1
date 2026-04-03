@@ -88,3 +88,6 @@ force-single-line = true
 [tool.ruff.lint.pylint]
 max-args = 10
 max-positional-args = 5
+max-branches = 12
+max-statements = 50
+max-nested-blocks = 4
