@@ -1,13 +1,16 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.export.contracts import DataFrameFormatterProtocol
-from scrapers.base.export.contracts import ExporterProtocol
-from scrapers.base.export.contracts import FieldnamesStrategyProtocol
 from scrapers.base.format.formatter_helpers import extract_data
+
+if TYPE_CHECKING:
+    from scrapers.base.export.contracts import DataFrameFormatterProtocol
+    from scrapers.base.export.contracts import ExporterProtocol
+    from scrapers.base.export.contracts import FieldnamesStrategyProtocol
 
 
 class ExportService:

@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from scrapers.base.table.columns.context import ColumnContext
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from scrapers.base.table.columns.context import ColumnContext
 
 
 class ConstructorColumn:

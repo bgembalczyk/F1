@@ -4,12 +4,9 @@ from typing import TYPE_CHECKING
 
 from layers.orchestration.factories import SponsorshipLiveriesRunConfigFactory
 from layers.orchestration.factories import StaticScraperKwargsFactory
-from layers.orchestration.protocols import LayerOneRunnerProtocol
-from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
-from layers.orchestration.types import SeedName
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.circuits import export_complete_circuits
@@ -20,6 +17,9 @@ from scrapers.seasons import export_complete_seasons
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
+    from layers.orchestration.protocols import LayerOneRunnerProtocol
+    from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+    from layers.orchestration.types import SeedName
     from pathlib import Path
 
 _LOGGER = get_logger("RunnerRegistry")

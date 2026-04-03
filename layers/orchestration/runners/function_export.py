@@ -1,13 +1,16 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from collections.abc import Callable
 from pathlib import Path
 
 from layers.orchestration.runners.layer_job import LayerJobRunner
-from layers.orchestration.runners.metadata import RunnerMetadata
-from layers.seed.registry import SeedRegistryEntry
 from scrapers.base.errors import normalize_pipeline_error
-from scrapers.base.run_config import RunConfig
+
+if TYPE_CHECKING:
+    from layers.orchestration.runners.metadata import RunnerMetadata
+    from layers.seed.registry import SeedRegistryEntry
+    from scrapers.base.run_config import RunConfig
 
 ExportCallable = Callable[..., None]
 

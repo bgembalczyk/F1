@@ -1,19 +1,22 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 import re
 from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from infrastructure.http_client.policies.http import HttpPolicy
 from models.services import parse_seasons
 from scrapers.base.helpers.http import build_http_policy
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.sections.section import SectionParser
+
+if TYPE_CHECKING:
+    from infrastructure.http_client.policies.http import HttpPolicy
+    from scrapers.base.options import ScraperOptions
 
 
 class PrivateerTeamsListParser(ListParser):

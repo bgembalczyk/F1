@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 import json
 from typing import Any
 
@@ -7,7 +8,6 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
-from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import RED_FLAGGED_RACES
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
@@ -21,6 +21,9 @@ from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
+
+if TYPE_CHECKING:
+    from scrapers.base.options import ScraperOptions
 
 
 class WorldChampionshipsRacesTableParser(WikiTableBaseParser):

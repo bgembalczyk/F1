@@ -5,11 +5,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from validation.issue import ValidationIssue
 from validation.schema_engine import SchemaValidationEngine
-from validation.schemas import RecordSchema
 
 if TYPE_CHECKING:
+    from validation.issue import ValidationIssue
+    from validation.schemas import RecordSchema
     from collections.abc import Mapping
 
     from validation.rules import ValidationRule

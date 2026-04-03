@@ -1,13 +1,16 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
 
-from layers.orchestration.protocols import LayerExecutorProtocol
-from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
-from scrapers.base.run_config import RunConfig
+if TYPE_CHECKING:
+    from layers.orchestration.protocols import LayerExecutorProtocol
+    from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
+    from scrapers.base.run_config import RunConfig
+
 
 WikiRunScenario = Literal["layer0", "layer1", "full", "merge"]
 

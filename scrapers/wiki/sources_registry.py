@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 import logging
 import warnings
 from dataclasses import dataclass
 
-from scrapers.base.run_profiles import LegacyCliProfileName
+if TYPE_CHECKING:
+    from scrapers.base.run_profiles import LegacyCliProfileName
+
 
 logger = logging.getLogger(__name__)
 
