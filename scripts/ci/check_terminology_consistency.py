@@ -43,15 +43,13 @@ def list_changed_files(base_sha: str, head_sha: str) -> list[Path]:
     if proc.returncode != 0:
         return []
 
-    files: list[Path] = []
-    for line in proc.stdout.splitlines():
-        rel_path = line.strip()
-        if not rel_path:
-            continue
-        path = Path(rel_path)
-        if path.suffix in SCANNED_EXTENSIONS and path.exists():
-            files.append(path)
-    return files
+    return [
+        path
+        for line in proc.stdout.splitlines()
+        if (rel_path := line.strip())
+        and (path := Path(rel_path)).suffix in SCANNED_EXTENSIONS
+        and path.exists()
+    ]
 
 
 def scan_text_forbidden_terms(
@@ -61,9 +59,11 @@ def scan_text_forbidden_terms(
     issues: list[tuple[int, str, str]] = []
     for line_number, line in enumerate(text.splitlines(), start=1):
         for rule in rules:
-            for forbidden in rule.forbidden:
-                if re.search(re.escape(forbidden), line, flags=re.IGNORECASE):
-                    issues.append((line_number, forbidden, rule.canonical))
+            issues.extend(
+                (line_number, forbidden, rule.canonical)
+                for forbidden in rule.forbidden
+                if re.search(re.escape(forbidden), line, flags=re.IGNORECASE)
+            )
     return issues
 
 

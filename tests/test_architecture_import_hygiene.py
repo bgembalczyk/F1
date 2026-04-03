@@ -54,17 +54,19 @@ def _reassigned_imports(tree: ast.Module) -> list[tuple[str, int, int]]:
     reassignments: list[tuple[str, int, int]] = []
 
     for node in tree.body:
-        targets: list[ast.expr] = []
+        targets: list[ast.expr]
         if isinstance(node, ast.Assign):
-            targets.extend(node.targets)
+            targets = list(node.targets)
         elif isinstance(node, ast.AnnAssign):
-            targets.append(node.target)
+            targets = [node.target]
         else:
             continue
 
-        for target in targets:
-            if isinstance(target, ast.Name) and target.id in imported:
-                reassignments.append((target.id, imported[target.id], node.lineno))
+        reassignments.extend(
+            (target.id, imported[target.id], node.lineno)
+            for target in targets
+            if isinstance(target, ast.Name) and target.id in imported
+        )
 
     return reassignments
 

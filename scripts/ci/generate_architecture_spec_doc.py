@@ -64,8 +64,10 @@ def _render_deprecation_map_section() -> str:
         "| Stage | Description |",
         "|---|---|",
     ]
-    for stage in ARCHITECTURE_SPEC.legacy_lifecycle:
-        lines.append(f"| `{stage.stage}` | {stage.description} |")
+    lines.extend(
+        f"| `{stage.stage}` | {stage.description} |"
+        for stage in ARCHITECTURE_SPEC.legacy_lifecycle
+    )
 
     lines.extend(
         [
@@ -76,9 +78,10 @@ def _render_deprecation_map_section() -> str:
             "|---|---|---|",
         ],
     )
-    for mapping in ARCHITECTURE_SPEC.legacy_module_mappings:
-        notes = mapping.notes or "-"
-        lines.append(f"| `{mapping.old_module}` | `{mapping.new_module}` | {notes} |")
+    lines.extend(
+        f"| `{mapping.old_module}` | `{mapping.new_module}` | {mapping.notes or '-'} |"
+        for mapping in ARCHITECTURE_SPEC.legacy_module_mappings
+    )
 
     return "\n".join(lines)
 
