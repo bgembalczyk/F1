@@ -75,19 +75,39 @@ class ArchitectureSpec:
 
 ARCHITECTURE_SPEC = ArchitectureSpec(
     domains=(
-        DomainSpec("drivers", True, ("list", "sections", "infobox", "postprocess")),
+        DomainSpec(
+            "drivers",
+            has_entrypoint=True,
+            required_layers=("list", "sections", "infobox", "postprocess"),
+        ),
         DomainSpec(
             "constructors",
-            True,
-            ("list", "sections", "infobox", "postprocess"),
+            has_entrypoint=True,
+            required_layers=("list", "sections", "infobox", "postprocess"),
         ),
-        DomainSpec("circuits", True, ("list", "sections", "infobox", "postprocess")),
-        DomainSpec("seasons", True, ("list", "sections", "postprocess")),
-        DomainSpec("grands_prix", True, ("list", "sections")),
-        DomainSpec("engines", False, ()),
-        DomainSpec("points", False, ()),
-        DomainSpec("sponsorship_liveries", False, ()),
-        DomainSpec("tyres", False, ()),
+        DomainSpec(
+            "circuits",
+            has_entrypoint=True,
+            required_layers=("list", "sections", "infobox", "postprocess"),
+        ),
+        DomainSpec(
+            "seasons",
+            has_entrypoint=True,
+            required_layers=("list", "sections", "postprocess"),
+        ),
+        DomainSpec(
+            "grands_prix",
+            has_entrypoint=True,
+            required_layers=("list", "sections"),
+        ),
+        DomainSpec("engines", has_entrypoint=False, required_layers=()),
+        DomainSpec("points", has_entrypoint=False, required_layers=()),
+        DomainSpec(
+            "sponsorship_liveries",
+            has_entrypoint=False,
+            required_layers=(),
+        ),
+        DomainSpec("tyres", has_entrypoint=False, required_layers=()),
     ),
     layers=("list", "sections", "infobox", "postprocess"),
     forbidden_imports_by_layer={
