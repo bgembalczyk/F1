@@ -213,7 +213,9 @@ def build_run_list_scraper_for_domain(domain: str) -> Callable[..., None]:
 
     def run_list_scraper(*, run_config: RunConfig | None = None) -> None:
         config = get_domain_entrypoint_config(domain)
-        resolved_config = run_config or config.run_config_profile()
+        resolved_config = (
+            config.run_config_profile() if run_config is None else run_config
+        )
         ScraperRunner(resolved_config).run_and_export(
             config.list_scraper_cls,
             config.default_output_json,
