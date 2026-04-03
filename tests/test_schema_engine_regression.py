@@ -97,12 +97,30 @@ def _legacy_validate_schema(
     schema: RecordSchema,
 ) -> list[ValidationIssue]:
     errors: list[ValidationIssue] = []
-
-    for key in schema.required:
-        if key not in record:
-            errors.append(ValidationIssue.missing(key))
-
     allow_none = set(schema.allow_none)
+    errors.extend(_legacy_missing_required_errors(record, schema))
+    errors.extend(_legacy_type_errors(record, schema, allow_none))
+    errors.extend(_legacy_nested_errors(record, schema))
+    errors.extend(_legacy_custom_validator_errors(record, schema))
+    return errors
+
+def _legacy_missing_required_errors(
+    record: Mapping[str, Any],
+    schema: RecordSchema,
+) -> list[ValidationIssue]:
+    return [
+        ValidationIssue.missing(key)
+        for key in schema.required
+        if key not in record
+    ]
+
+
+def _legacy_type_errors(
+    record: Mapping[str, Any],
+    schema: RecordSchema,
+    allow_none: set[str],
+) -> list[ValidationIssue]:
+    errors: list[ValidationIssue] = []
     for key, expected_types in schema.types.items():
         if key not in record:
             errors.append(ValidationIssue.missing(key))
@@ -121,7 +139,14 @@ def _legacy_validate_schema(
         errors.append(
             ValidationIssue.type_error(key, expected_names, type(value).__name__),
         )
+    return errors
 
+
+def _legacy_nested_errors(
+    record: Mapping[str, Any],
+    schema: RecordSchema,
+) -> list[ValidationIssue]:
+    errors: list[ValidationIssue] = []
     for key, nested_schema in schema.nested.items():
         if key not in record:
             continue
@@ -129,10 +154,16 @@ def _legacy_validate_schema(
         if value is None:
             continue
         errors.extend(_legacy_validate_nested_value(key, value, nested_schema))
+    return errors
 
+
+def _legacy_custom_validator_errors(
+    record: Mapping[str, Any],
+    schema: RecordSchema,
+) -> list[ValidationIssue]:
+    errors: list[ValidationIssue] = []
     for validator in schema.custom_validators:
         errors.extend(_legacy_coerce_issue(error) for error in validator(record))
-
     return errors
 
 

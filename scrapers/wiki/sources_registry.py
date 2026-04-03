@@ -262,44 +262,72 @@ def validate_sources_registry_consistency() -> None:
     seen_filenames: set[str] = set()
 
     for source in WIKI_SOURCE_DEFINITIONS:
-        if source.domain.strip() == "":
-            msg = f"Empty domain in wiki sources registry for seed: {source.seed_name}"
-            raise ValueError(msg)
-        if source.seed_name in seen_seed_names:
-            msg = (
-                "Duplicate canonical seed_name in wiki sources registry: "
-                f"{source.seed_name}"
-            )
-            raise ValueError(msg)
-        seen_seed_names.add(source.seed_name)
+        _validate_canonical_source(
+            source=source,
+            seen_seed_names=seen_seed_names,
+            seen_source_names=seen_source_names,
+            seen_filenames=seen_filenames,
+        )
 
-        if source.source_name in seen_source_names:
-            msg = (
-                "Duplicate canonical source_name in wiki sources registry: "
-                f"{source.source_name}"
-            )
-            raise ValueError(msg)
-        seen_source_names.add(source.source_name)
+    _validate_legacy_seed_aliases()
+    _validate_legacy_filename_aliases()
 
-        if source.output_file in seen_filenames:
-            msg = (
-                "Duplicate canonical list_filename in wiki sources registry: "
-                f"{source.output_file}"
-            )
-            raise ValueError(msg)
-        seen_filenames.add(source.output_file)
 
-        if (
-            source.seed_name != source.source_name
-            and source.source_name in seen_seed_names
-        ):
-            msg = (
-                "Source registry naming conflict: source_name duplicates "
-                "an existing seed_name: "
-                f"{source.source_name!r}"
-            )
-            raise ValueError(msg)
+def _ensure_unique_or_raise(
+    *,
+    value: str,
+    seen: set[str],
+    duplicate_message: str,
+) -> None:
+    if value in seen:
+        raise ValueError(duplicate_message)
+    seen.add(value)
 
+
+def _validate_canonical_source(
+    *,
+    source: WikiSourceDefinition,
+    seen_seed_names: set[str],
+    seen_source_names: set[str],
+    seen_filenames: set[str],
+) -> None:
+    if source.domain.strip() == "":
+        msg = f"Empty domain in wiki sources registry for seed: {source.seed_name}"
+        raise ValueError(msg)
+    _ensure_unique_or_raise(
+        value=source.seed_name,
+        seen=seen_seed_names,
+        duplicate_message=(
+            "Duplicate canonical seed_name in wiki sources registry: "
+            f"{source.seed_name}"
+        ),
+    )
+    _ensure_unique_or_raise(
+        value=source.source_name,
+        seen=seen_source_names,
+        duplicate_message=(
+            "Duplicate canonical source_name in wiki sources registry: "
+            f"{source.source_name}"
+        ),
+    )
+    _ensure_unique_or_raise(
+        value=source.output_file,
+        seen=seen_filenames,
+        duplicate_message=(
+            "Duplicate canonical list_filename in wiki sources registry: "
+            f"{source.output_file}"
+        ),
+    )
+    if source.seed_name != source.source_name and source.source_name in seen_seed_names:
+        msg = (
+            "Source registry naming conflict: source_name duplicates "
+            "an existing seed_name: "
+            f"{source.source_name!r}"
+        )
+        raise ValueError(msg)
+
+
+def _validate_legacy_seed_aliases() -> None:
     for legacy_seed_name, canonical_seed_name in LEGACY_SEED_NAME_ALIASES.items():
         if legacy_seed_name in SOURCE_BY_SEED_NAME:
             msg = (
@@ -314,6 +342,8 @@ def validate_sources_registry_consistency() -> None:
             )
             raise ValueError(msg)
 
+
+def _validate_legacy_filename_aliases() -> None:
     for legacy_filename, canonical_filename in LEGACY_LIST_FILENAME_ALIASES.items():
         if legacy_filename in SOURCE_BY_LIST_FILENAME:
             msg = (
@@ -333,15 +363,15 @@ validate_sources_registry_consistency()
 
 
 __all__ = [
-    "DRIVERS_SOURCE",
     "DRIVER_FATALITIES_SOURCE",
+    "DRIVERS_SOURCE",
+    "ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE",
     "ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE",
     "ENGINE_MANUFACTURERS_SOURCE",
     "FEMALE_DRIVERS_SOURCE",
     "FORMER_CONSTRUCTORS_SOURCE",
-    "ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE",
-    "INDIANAPOLIS_ONLY_ENGINES_SOURCE",
     "INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE",
+    "INDIANAPOLIS_ONLY_ENGINES_SOURCE",
     "LEGACY_LIST_FILENAME_ALIASES",
     "LEGACY_SEED_NAME_ALIASES",
     "PRIVATEER_TEAMS_SOURCE",

@@ -222,37 +222,54 @@ class EngineManufacturersListScraper(F1TableScraper):
         payload: dict[str, Any],
     ) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []
-
-        def visit(node: dict[str, Any]) -> None:
-            for section in node.get("sub_sections", []):
-                visit(section)
-            for section in node.get("sub_sub_sections", []):
-                visit(section)
-            for section in node.get("sub_sub_sub_sections", []):
-                visit(section)
-            for element in node.get("elements", []):
-                if element.get("kind") != "list":
-                    continue
-                data = element.get("data")
-                if not isinstance(data, dict):
-                    continue
-                items = data.get("items", [])
-                if not isinstance(items, list):
-                    continue
-                for item in items:
-                    if not isinstance(item, dict):
-                        continue
-                    normalized = dict(item)
-                    if not self.include_urls:
-                        normalized.pop("manufacturer_url", None)
-                    else:
-                        url = normalized.get("manufacturer_url")
-                        if isinstance(url, str) and url.startswith("/"):
-                            normalized["manufacturer_url"] = self._full_url(url)
-                    records.append(normalized)
-
-        visit(payload)
+        self._visit_indianapolis_sections(payload, records)
         return records
+
+    def _visit_indianapolis_sections(
+        self,
+        node: dict[str, Any],
+        records: list[dict[str, Any]],
+    ) -> None:
+        for section in self._iter_sub_sections(node):
+            self._visit_indianapolis_sections(section, records)
+        for element in node.get("elements", []):
+            records.extend(self._extract_element_records(element))
+
+    @staticmethod
+    def _iter_sub_sections(node: dict[str, Any]) -> list[dict[str, Any]]:
+        sections: list[dict[str, Any]] = []
+        for key in ("sub_sections", "sub_sub_sections", "sub_sub_sub_sections"):
+            value = node.get(key, [])
+            if isinstance(value, list):
+                sections.extend(
+                    section for section in value if isinstance(section, dict)
+                )
+        return sections
+
+    def _extract_element_records(self, element: Any) -> list[dict[str, Any]]:
+        if not isinstance(element, dict) or element.get("kind") != "list":
+            return []
+        data = element.get("data")
+        if not isinstance(data, dict):
+            return []
+        items = data.get("items", [])
+        if not isinstance(items, list):
+            return []
+        return [
+            self._normalize_indianapolis_record(item)
+            for item in items
+            if isinstance(item, dict)
+        ]
+
+    def _normalize_indianapolis_record(self, item: dict[str, Any]) -> dict[str, Any]:
+        normalized = dict(item)
+        if not self.include_urls:
+            normalized.pop("manufacturer_url", None)
+            return normalized
+        url = normalized.get("manufacturer_url")
+        if isinstance(url, str) and url.startswith("/"):
+            normalized["manufacturer_url"] = self._full_url(url)
+        return normalized
 
 
 class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper):

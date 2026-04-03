@@ -5,12 +5,12 @@ import ast
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.git_diff import list_changed_files
 from scripts.ci.quality_gate_constants import CRITICAL_DEFAULT_LITERALS
 from scripts.ci.quality_gate_constants import JUSTIFIED_EXCEPTION_MARKER
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
@@ -54,9 +54,11 @@ def _iter_added_python_lines(
         if not file_path.exists():
             continue
         lines = file_path.read_text(encoding="utf-8").splitlines()
-        for line_no in sorted(line_numbers):
-            if 1 <= line_no <= len(lines):
-                records.append((rel_path, line_no, lines[line_no - 1]))
+        records.extend(
+            (rel_path, line_no, lines[line_no - 1])
+            for line_no in sorted(line_numbers)
+            if 1 <= line_no <= len(lines)
+        )
     return records
 
 
@@ -103,7 +105,38 @@ def _check_broad_exceptions_with_justification(
     added_lines_map: dict[str, set[int]],
 ) -> list[Violation]:
     violations: list[Violation] = []
+    for rel_path, source, tree, added_set in _iter_python_asts(added_lines_map):
+        source_lines = source.splitlines()
+        for node in ast.walk(tree):
+            if not _is_unjustified_broad_exception(node, added_set, source_lines):
+                continue
+            violations.append(
+                Violation(
+                    path=rel_path,
+                    line=node.lineno,
+                    message=(
+                        "except Exception wymaga adnotacji 'justified-exception:' z "
+                        "uzasadnieniem."
+                    ),
+                ),
+            )
+    return violations
 
+
+def _extract_string_tuple_assignment(path: Path, symbol: str) -> tuple[str, ...]:
+    source = path.read_text(encoding="utf-8")
+    tree = ast.parse(source)
+    for node in tree.body:
+        tuple_node = _extract_target_tuple(node, symbol)
+        if tuple_node is not None:
+            return _tuple_string_values(tuple_node)
+    return ()
+
+
+def _iter_python_asts(
+    added_lines_map: dict[str, set[int]],
+) -> list[tuple[str, str, ast.AST, set[int]]]:
+    records: list[tuple[str, str, ast.AST, set[int]]] = []
     for rel_path, line_numbers in sorted(added_lines_map.items()):
         if not rel_path.endswith(".py"):
             continue
@@ -115,68 +148,53 @@ def _check_broad_exceptions_with_justification(
             tree = ast.parse(source)
         except SyntaxError:
             continue
-
-        source_lines = source.splitlines()
-        added_set = set(line_numbers)
-
-        for node in ast.walk(tree):
-            if not isinstance(node, ast.ExceptHandler):
-                continue
-            if node.lineno not in added_set:
-                continue
-
-            if node.type is None:
-                continue
-            if not isinstance(node.type, ast.Name):
-                continue
-            if node.type.id != "Exception":
-                continue
-
-            handler_line = source_lines[node.lineno - 1].lower()
-            if JUSTIFIED_EXCEPTION_MARKER in handler_line:
-                continue
-
-            violations.append(
-                Violation(
-                    path=rel_path,
-                    line=node.lineno,
-                    message=(
-                        "except Exception wymaga adnotacji 'justified-exception:' z "
-                        "uzasadnieniem."
-                    ),
-                ),
-            )
-
-    return violations
+        records.append((rel_path, source, tree, set(line_numbers)))
+    return records
 
 
-def _extract_string_tuple_assignment(path: Path, symbol: str) -> tuple[str, ...]:
-    source = path.read_text(encoding="utf-8")
-    tree = ast.parse(source)
-    for node in tree.body:
-        tuple_node: ast.Tuple | None = None
-        if isinstance(node, ast.Assign):
-            if len(node.targets) != 1:
-                continue
-            target = node.targets[0]
-            if not isinstance(target, ast.Name) or target.id != symbol:
-                continue
-            if isinstance(node.value, ast.Tuple):
-                tuple_node = node.value
-        elif isinstance(node, ast.AnnAssign):
-            if not isinstance(node.target, ast.Name) or node.target.id != symbol:
-                continue
-            if isinstance(node.value, ast.Tuple):
-                tuple_node = node.value
-        if tuple_node is None:
-            continue
+def _is_unjustified_broad_exception(
+    node: ast.AST,
+    added_set: set[int],
+    source_lines: list[str],
+) -> bool:
+    if not isinstance(node, ast.ExceptHandler):
+        return False
+    if node.lineno not in added_set:
+        return False
+    if not isinstance(node.type, ast.Name) or node.type.id != "Exception":
+        return False
+    handler_line = source_lines[node.lineno - 1].lower()
+    return JUSTIFIED_EXCEPTION_MARKER not in handler_line
 
-        values: list[str] = []
-        for elt in tuple_node.elts:
-            if isinstance(elt, ast.Constant) and isinstance(elt.value, str):
-                values.append(elt.value)
-        return tuple(values)
-    return ()
+
+def _extract_target_tuple(node: ast.stmt, symbol: str) -> ast.Tuple | None:
+    if isinstance(node, ast.Assign):
+        if len(node.targets) != 1:
+            return None
+        target = node.targets[0]
+        if isinstance(target, ast.Name) and target.id == symbol and isinstance(
+            node.value,
+            ast.Tuple,
+        ):
+            return node.value
+        return None
+    if isinstance(node, ast.AnnAssign):
+        if (
+            isinstance(node.target, ast.Name)
+            and node.target.id == symbol
+            and isinstance(node.value, ast.Tuple)
+        ):
+            return node.value
+    return None
+
+
+def _tuple_string_values(tuple_node: ast.Tuple) -> tuple[str, ...]:
+    values = [
+        elt.value
+        for elt in tuple_node.elts
+        if isinstance(elt, ast.Constant) and isinstance(elt.value, str)
+    ]
+    return tuple(values)
 
 
 def _extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
@@ -190,13 +208,12 @@ def _extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
                 continue
             if not isinstance(stmt.value, ast.Dict):
                 continue
-            keys: list[str] = []
-            for key_node in stmt.value.keys:
-                if isinstance(key_node, ast.Constant) and isinstance(
-                    key_node.value,
-                    str,
-                ):
-                    keys.append(key_node.value)
+            keys = [
+                key_node.value
+                for key_node in stmt.value.keys
+                if isinstance(key_node, ast.Constant)
+                and isinstance(key_node.value, str)
+            ]
             return tuple(keys)
     return ()
 
@@ -228,28 +245,28 @@ def _check_registry_implementation_drift() -> list[Violation]:
     missing_in_runners = sorted(registry_order - explicit_runner_keys)
     missing_in_registry = sorted(explicit_runner_keys - registry_order)
 
-    for seed in missing_in_runners:
-        violations.append(
-            Violation(
-                path="layers/orchestration/runner_registry.py",
-                line=1,
-                message=(
-                    f"Seed '{seed}' jest w rejestrze, ale brak go "
-                    "w explicit runner map."
-                ),
+    violations.extend(
+        Violation(
+            path="layers/orchestration/runner_registry.py",
+            line=1,
+            message=(
+                f"Seed '{seed}' jest w rejestrze, ale brak go "
+                "w explicit runner map."
             ),
         )
-    for seed in missing_in_registry:
-        violations.append(
-            Violation(
-                path="layers/seed/registry/constants.py",
-                line=1,
-                message=(
-                    f"Seed '{seed}' jest w explicit runner map, "
-                    "ale brak go w seed registry."
-                ),
+        for seed in missing_in_runners
+    )
+    violations.extend(
+        Violation(
+            path="layers/seed/registry/constants.py",
+            line=1,
+            message=(
+                f"Seed '{seed}' jest w explicit runner map, "
+                "ale brak go w seed registry."
             ),
         )
+        for seed in missing_in_registry
+    )
     return violations
 
 

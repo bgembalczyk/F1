@@ -19,56 +19,62 @@ def _extract_static_kwargs_duplicates(tree: ast.AST) -> dict[str, list[str]]:
     duplicates: dict[str, list[str]] = {}
 
     for node in ast.walk(tree):
-        if not isinstance(node, ast.FunctionDef) or node.name != TARGET_FUNCTION:
-            continue
-
-        for statement in node.body:
-            if not isinstance(statement, ast.Return) or not isinstance(
-                statement.value,
-                ast.Dict,
-            ):
-                continue
-
-            seen: dict[str, str] = {}
-            for key_node, value_node in zip(
-                statement.value.keys,
-                statement.value.values,
-                strict=False,
-            ):
-                if not isinstance(key_node, ast.Constant) or not isinstance(
-                    key_node.value,
-                    str,
-                ):
-                    continue
-                if not isinstance(value_node, ast.Call):
-                    continue
-                if not isinstance(value_node.func, ast.Name):
-                    continue
-                if value_node.func.id != "StaticScraperKwargsFactory":
-                    continue
-
-                kwargs_value: dict[str, object] | None = None
-                for kw in value_node.keywords:
-                    if kw.arg == "scraper_kwargs" and isinstance(kw.value, ast.Dict):
-                        kwargs_value = _ast_to_python_dict(kw.value)
-                        break
-
-                if kwargs_value is None:
-                    continue
-
-                fingerprint = json.dumps(
-                    kwargs_value,
-                    sort_keys=True,
-                    ensure_ascii=True,
-                )
-                existing = seen.get(fingerprint)
-                if existing is None:
-                    seen[fingerprint] = key_node.value
-                    continue
-
-                duplicates.setdefault(fingerprint, [existing]).append(key_node.value)
+        if isinstance(node, ast.FunctionDef) and node.name == TARGET_FUNCTION:
+            _collect_duplicates_from_target_function(node, duplicates)
 
     return duplicates
+
+
+def _collect_duplicates_from_target_function(
+    node: ast.FunctionDef,
+    duplicates: dict[str, list[str]],
+) -> None:
+    for statement in node.body:
+        if not isinstance(statement, ast.Return) or not isinstance(
+            statement.value,
+            ast.Dict,
+        ):
+            continue
+        _collect_duplicates_from_return_dict(statement.value, duplicates)
+
+
+def _collect_duplicates_from_return_dict(
+    mapping: ast.Dict,
+    duplicates: dict[str, list[str]],
+) -> None:
+    seen: dict[str, str] = {}
+    for key_node, value_node in zip(mapping.keys, mapping.values, strict=False):
+        key = _extract_string_key(key_node)
+        if key is None:
+            continue
+        kwargs_value = _extract_scraper_kwargs_dict(value_node)
+        if kwargs_value is None:
+            continue
+        fingerprint = json.dumps(kwargs_value, sort_keys=True, ensure_ascii=True)
+        existing = seen.get(fingerprint)
+        if existing is None:
+            seen[fingerprint] = key
+            continue
+        duplicates.setdefault(fingerprint, [existing]).append(key)
+
+
+def _extract_string_key(node: ast.expr | None) -> str | None:
+    if isinstance(node, ast.Constant) and isinstance(node.value, str):
+        return node.value
+    return None
+
+
+def _extract_scraper_kwargs_dict(call_node: ast.expr) -> dict[str, object] | None:
+    if not isinstance(call_node, ast.Call):
+        return None
+    if not isinstance(call_node.func, ast.Name):
+        return None
+    if call_node.func.id != "StaticScraperKwargsFactory":
+        return None
+    for kw in call_node.keywords:
+        if kw.arg == "scraper_kwargs" and isinstance(kw.value, ast.Dict):
+            return _ast_to_python_dict(kw.value)
+    return None
 
 
 def main() -> int:
