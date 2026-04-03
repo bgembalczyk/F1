@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from importlib import import_module
 from pathlib import Path
 
 from scrapers.wiki.flow_entrypoint import run_wiki_flow

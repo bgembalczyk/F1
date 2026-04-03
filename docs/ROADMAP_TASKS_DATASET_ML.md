@@ -105,11 +105,11 @@
   - Metryka wyjściowa: 100% budowania URL dla parserów L0/L1 przechodzi przez strategię + redukcja duplikacji resolverów o min. 50%.
   - Kryterium ukończenia: zarejestrowane strategie per domena, jeden punkt wejścia resolvera i testy regresyjne dla aliasów/relative URL/fallback.
   - Skąd bierzemy kolejne punkty startowe: źródła URL do migracji bierzemy z `checkpoint_input` aktywnych kroków orchestratora (pliki `data/checkpoints/*.json`) oraz z listy parserów wskazanych przez registry kroków 0/1.
-- [x] D3. Centralizacja CLI i deprecated launcherów w jednym entrypoincie (z mapą kompatybilności i deprecations).
+- [x] D3. Stabilizacja entrypointów IDE (funkcje startowe domen) i odchudzenie legacy wrapperów.
   - Metryka wejściowa: liczba aktywnych skryptów uruchomieniowych/entrypointów CLI + liczba zduplikowanych opcji uruchomieniowych.
-  - Metryka wyjściowa: jeden canonical launcher + max 2 cienkie wrappery legacy, redukcja duplikowanych flag CLI o min. 60%.
-  - Kryterium ukończenia: dokumentowana mapa `old_command -> new_command`, warning deprecacyjny w wrapperach i przejście smoke-testów uruchomienia dla przepływu L0/L1.
-  - Kontekst: dodano canonical launcher `scrapers/cli.py`, cienkie wrappery delegujące w modułach z `__main__`, spójny `DeprecationWarning` i test statyczny pilnujący granic bootstrapów CLI.
+  - Metryka wyjściowa: stabilny kontrakt `run_list_scraper` dla domen + cienkie wrappery legacy bez parserów CLI.
+  - Kryterium ukończenia: udokumentowany kontrakt funkcji startowych domen, warning deprecacyjny w wrapperach i testy architektoniczne potwierdzające brak lokalnych parserów CLI.
+  - Kontekst: entrypointy domenowe utrzymują stabilne API funkcji startowych, legacy moduły delegują przez wspólny bootstrap, a testy pilnują braku ręcznego bootstrapu CLI.
   - Skąd bierzemy kolejne punkty startowe: priorytetowe komendy do migracji wyznaczamy z logów użycia CI/dev scripts i z kroków uruchamianych przez orchestrator `step_registry`.
 - [ ] D4. Automatyzacja registry factory (auto-discovery parserów/extractorów/strategii zamiast ręcznej rejestracji).
   - Metryka wejściowa: liczba ręcznych wpisów w registry/factory + liczba incydentów „zapomniano zarejestrować komponent”.
@@ -136,7 +136,7 @@
 - Raz na kwartał: rewizja progów jakości (np. minimalny bilans netto i progi duplicate-code w CI).
 
 ### Sprintowy przegląd YAGNI (checklista)
-- [ ] Sprawdź profile uruchomieniowe i aliasy CLI pod kątem aktywnych konsumentów (`rg -n "profile=|--profile|RunProfileName"`).
+- [ ] Sprawdź profile uruchomieniowe i aliasy entrypointów pod kątem aktywnych konsumentów (`rg -n "profile=|RunProfileName|run_list_scraper"`).
 - [ ] Sprawdź flagi runtime, które mają stale jedną wartość domyślną i brak nadpisania (`rg -n "quality_report|error_report|include_urls"`).
 - [ ] Sprawdź klasy/adaptery pośrednie bez importów produkcyjnych (`rg -n "from layers\\.zero\\.helpers|import layers\\.zero\\.helpers"`).
 - [ ] Usuń elementy bez konsumentów i dopisz krótką notatkę w changelogu sprintu (co usunięto i jaki był wpływ).
