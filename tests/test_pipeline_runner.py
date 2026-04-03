@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from contextlib import suppress
 from logging import getLogger
 from typing import TYPE_CHECKING
 
@@ -85,10 +86,8 @@ def test_pipeline_runner_writes_aggregated_error_summary_for_failed_step() -> No
         post_process_records=lambda records: records,
     )
 
-    try:
+    with suppress(Exception):
         runner.run(run_id="run-err-1", html="<html></html>")
-    except Exception:  # noqa: BLE001
-        pass
 
     assert [step_name for step_name, _ in quality_calls] == ["parse", "normalize"]
     assert summary_payload["run_id"] == "run-err-1"

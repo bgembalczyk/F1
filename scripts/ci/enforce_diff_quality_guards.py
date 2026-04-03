@@ -254,7 +254,7 @@ def _check_registry_implementation_drift() -> list[Violation]:
             path="layers/orchestration/runner_registry.py",
             line=1,
             message=(
-                f"Seed '{seed}' jest w rejestrze, ale brak go " "w explicit runner map."
+                f"Seed '{seed}' jest w rejestrze, ale brak go w explicit runner map."
             ),
         )
         for seed in missing_in_runners

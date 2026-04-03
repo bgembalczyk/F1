@@ -83,15 +83,9 @@ class WikipediaInfoboxScraper:
             except ScraperError as error:
                 return self._handle_scrape_error(error, handler=handler)
             except RecoverableNetworkError as exc:
-                if (
-                    self.error_policy == "retry"
-                    and attempt + 1 < self.error_retry_attempts
-                ):
+                if self._should_retry_network(attempt):
                     continue
-                if self.error_policy == "skip":
-                    return {}
-                error = handler.wrap_network(exc, url=url)
-                return self._handle_scrape_error(error, handler=handler, cause=exc)
+                return self._handle_network_error(exc=exc, handler=handler, url=url)
 
         try:
             soup = BeautifulSoup(html, "html.parser")
@@ -100,10 +94,7 @@ class WikipediaInfoboxScraper:
         except ScraperError as error:
             return self._handle_scrape_error(error, handler=handler)
         except RecoverableParseError as exc:
-            if self.error_policy == "skip":
-                return {}
-            error = handler.wrap_parse(exc, url=url)
-            return self._handle_scrape_error(error, handler=handler, cause=exc)
+            return self._handle_parse_error(exc=exc, handler=handler, url=url)
 
     def apply_record_factory(self, record: dict[str, Any]) -> Any:
         if self.record_factory is None:
@@ -130,6 +121,33 @@ class WikipediaInfoboxScraper:
         if cause is not None:
             raise error from cause
         raise error
+
+    def _should_retry_network(self, attempt: int) -> bool:
+        return self.error_policy == "retry" and attempt + 1 < self.error_retry_attempts
+
+    def _handle_network_error(
+        self,
+        *,
+        exc: BaseException,
+        handler: ErrorHandler,
+        url: str,
+    ) -> dict[str, Any]:
+        if self.error_policy == "skip":
+            return {}
+        error = handler.wrap_network(exc, url=url)
+        return self._handle_scrape_error(error, handler=handler, cause=exc)
+
+    def _handle_parse_error(
+        self,
+        *,
+        exc: BaseException,
+        handler: ErrorHandler,
+        url: str,
+    ) -> dict[str, Any]:
+        if self.error_policy == "skip":
+            return {}
+        error = handler.wrap_parse(exc, url=url)
+        return self._handle_scrape_error(error, handler=handler, cause=exc)
 
     def _apply_transformers(self, record: dict[str, Any]) -> Any:
         return apply_transformers_with_factory(

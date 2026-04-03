@@ -325,28 +325,45 @@ class PipelineOrchestrator:
     ) -> str | None:
         attempt = 0
         while True:
-            try:
-                self._logger.debug("Scrape run %s: start download", run_id)
-                html = download_html()
-                self._logger.debug("Scrape run %s: finish download", run_id)
-                self._quality_report_service.write_step(
-                    step_name="download",
-                    records=[],
-                )
-                return html
-            except ScraperError as error:
-                return self._error_policy.handle_exception(error, error)
-            except (RequestError, ConnectionError, OSError, TimeoutError) as exc:
-                error = self._error_policy.wrap_network(exc)
-                decision = self._error_policy.handle_recoverable_exception(
-                    exc=exc,
-                    error=error,
-                    attempt=attempt,
-                )
-                if decision == "retry":
-                    attempt += 1
-                    continue
-                return decision
+            should_retry, result = self._download_once(
+                run_id=run_id,
+                download_html=download_html,
+                attempt=attempt,
+            )
+            if should_retry:
+                attempt += 1
+                continue
+            return result
+
+    def _download_once(
+        self,
+        *,
+        run_id: str,
+        download_html: Callable[[], str],
+        attempt: int,
+    ) -> tuple[bool, str | None]:
+        try:
+            self._logger.debug("Scrape run %s: start download", run_id)
+            html = download_html()
+        except ScraperError as error:
+            return (False, self._error_policy.handle_exception(error, error))
+        except (RequestError, ConnectionError, OSError, TimeoutError) as exc:
+            error = self._error_policy.wrap_network(exc)
+            decision = self._error_policy.handle_recoverable_exception(
+                exc=exc,
+                error=error,
+                attempt=attempt,
+            )
+            if decision == "retry":
+                return (True, None)
+            return (False, decision)
+        else:
+            self._logger.debug("Scrape run %s: finish download", run_id)
+            self._quality_report_service.write_step(
+                step_name="download",
+                records=[],
+            )
+            return (False, html)
 
     def _parse_pipeline_with_error_handling(
         self,

@@ -18,6 +18,7 @@ from scrapers.base.runner import ScraperRunner
 
 
 class LayerZeroExecutor:
+    # pylint: disable=too-many-arguments
     def __init__(
         self,
         *,

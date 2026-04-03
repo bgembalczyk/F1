@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from dataclasses import field
 from functools import cache
 from importlib import import_module
 from pathlib import Path
@@ -98,7 +99,9 @@ class _DomainEntrypointSpec:
     default_output_json: str | Path
     run_config_profile: Callable[[], RunConfig]
     default_output_csv: str | Path | None = None
-    output_path_renderer: OutputPathRenderer = IdentityOutputPathRenderer()
+    output_path_renderer: OutputPathRenderer = field(
+        default_factory=IdentityOutputPathRenderer,
+    )
 
 
 def default_profile() -> RunConfig:

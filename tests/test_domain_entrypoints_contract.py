@@ -7,8 +7,11 @@ import sys
 import types
 from pathlib import Path
 
+from scrapers.base import domain_entrypoint as facade
+from scrapers.base.domain_entrypoint import YearPlaceholderOutputPathRenderer
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
+from scrapers.base.domain_entrypoint import install_domain_entrypoint
 from scrapers.base.run_config import RunConfig
 from tests.architecture.registry import ARCHITECTURE_REGISTRY
 
@@ -114,8 +117,6 @@ def test_entrypoint_registry_matches_discovered_entrypoint_modules() -> None:
 
 
 def test_new_domain_requires_only_config_plus_generic_shim(monkeypatch) -> None:
-    from scrapers.base import domain_entrypoint as facade
-
     module_name = "tests.fake_new_domain_entrypoint"
     scraper_module_name = "tests.fake_new_domain_scraper"
 
@@ -140,13 +141,9 @@ def test_new_domain_requires_only_config_plus_generic_shim(monkeypatch) -> None:
     facade._resolve_domain_entrypoint_config.cache_clear()
 
     module = types.ModuleType(module_name)
-    exec(
-        (
-            "from scrapers.base.domain_entrypoint import install_domain_entrypoint\n"
-            'install_domain_entrypoint(globals(), domain="new_domain")\n'
-        ),
-        module.__dict__,
-    )
+    module.__dict__["__name__"] = module_name
+
+    install_domain_entrypoint(module.__dict__, domain="new_domain")
 
     assert callable(module.run_list_scraper)
 
@@ -181,8 +178,6 @@ def test_domain_output_path_policy_keeps_non_placeholder_paths() -> None:
 
 
 def test_year_placeholder_renderer_handles_path_inputs() -> None:
-    from scrapers.base.domain_entrypoint import YearPlaceholderOutputPathRenderer
-
     rendered = YearPlaceholderOutputPathRenderer(year=2042).render(
         Path("constructors/f1_constructors_{year}.json"),
     )
