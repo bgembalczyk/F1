@@ -50,12 +50,6 @@ class WikiPipelineApplication:
             )
         raise ValueError(profile)
 
-    def run_layer_zero(self) -> None:
-        self._facade.run_layer_zero()
-
-    def run_layer_one(self) -> None:
-        self._facade.run_layer_one()
-
     def run_full(self) -> None:
         self._facade.run_full()
 

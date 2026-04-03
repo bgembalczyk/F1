@@ -7,7 +7,6 @@ Canonical entrypoint for external integrations:
 All other modules under ``layers`` should be treated as internal wiring.
 """
 
-from layers.application import create_default_wiki_pipeline_application
 from layers.application import create_default_wiki_pipeline_facade
 from layers.composition import create_default_wiki_pipeline_application
 

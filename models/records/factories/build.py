@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from collections.abc import Callable
-from collections.abc import Mapping
 from enum import Enum
 from functools import partial
 from typing import TYPE_CHECKING
@@ -12,6 +10,9 @@ from models.records.factories.registry import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry import get_factory
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+    from collections.abc import Mapping
+
     from models.records.base_factory import BaseRecordFactory
 
 
@@ -33,13 +34,6 @@ class RecordType(str, Enum):
     ENGINE_MANUFACTURER = "engine_manufacturer"
 
 
-class RecordBuilders:
-    """Object facade for building normalized record models."""
-
-    def __init__(self, factory_registry: Mapping[str, BaseRecordFactory] | None = None):
-        self._factory_registry = factory_registry or FACTORY_REGISTRY_PROVIDER.get()
-
-
 RECORD_TYPE_ALIASES: dict[str, str] = {
     "grand_prix": "grands_prix",
     "grandprix": "grands_prix",
@@ -57,9 +51,9 @@ class RecordBuilders:
 
     def __init__(
         self,
-        factory_registry: dict[str, BaseRecordFactory] | None = None,
+        factory_registry: Mapping[str, BaseRecordFactory] | None = None,
     ):
-        self._factory_registry = factory_registry
+        self._factory_registry = factory_registry or FACTORY_REGISTRY_PROVIDER.get()
 
     def _factory_for(self, record_type: RecordType | str) -> BaseRecordFactory:
         resolved_type = (
@@ -113,39 +107,6 @@ __all__ = [
     "RecordBuilders",
     "RecordType",
     "build_record",
-    *[f"build_{record_type.value}_record" for record_type in RecordType],
 ]
 
-RECORD_BUILDERS = RecordBuilders()
-
-
-def build_record(record_type: str, record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.build(normalize_record_type(record_type), record)
-
-
-def build_season_record(record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.season(record)
-
-
-def build_driver_record(record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.driver(record)
-
-
-def build_constructor_record(record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.constructor(record)
-
-
-def build_special_driver_record(record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.special_driver(record)
-
-
-def build_fatality_record(record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.fatality(record)
-
-
-def build_season_summary_record(record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.season_summary(record)
-
-
-def build_grands_prix_record(record: Mapping[str, Any]) -> Any:
-    return RECORD_BUILDERS.grands_prix(record)
+__all__ += [f"build_{record_type.value}_record" for record_type in RecordType]
