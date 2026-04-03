@@ -27,6 +27,10 @@
 - [ ] Testy kontraktowe
 - [ ] Brak nowych Any
 - [ ] Brak nowych magic strings
+- [ ] Brak nowych print
+- [ ] Złożoność i długość modułów
+- [ ] Spójność rejestru konfiguracji i implementacji
+- [ ] Wyjątki tylko jawnie uzasadnione
 - [ ] Zaktualizowany ADR/docs
 - [ ] Spójność terminologii domenowej (zgodnie z `docs/DOMAIN_GLOSSARY.md`)
 
@@ -35,6 +39,10 @@
 - [ ] **Brak nowych `Any`**: potwierdzone przez gate `Strict typing regression gate (mypy)` (`scripts/ci/mypy_regression_gate.py`).
 - [ ] **Granice modułów**: potwierdzone przez `Architecture tests` + `import-linter`.
 - [ ] **Duplikacja**: potwierdzona przez `jscpd` + `pylint duplicate-code` (`Static quality gates`).
+- [ ] **Złożoność i długość modułów**: potwierdzone przez próg `pylint` (`too-many-branches`, `too-many-statements`, `too-many-lines`).
+- [ ] **Brak nowych print/magic strings/defaultów**: potwierdzone przez `scripts/ci/enforce_diff_quality_guards.py`.
+- [ ] **Spójność rejestru konfiguracji i implementacji**: potwierdzona przez `scripts/ci/enforce_diff_quality_guards.py`.
+- [ ] **Wyjątki tylko jawnie uzasadnione**: każdy nowy `except Exception` ma adnotację `justified-exception:`.
 - [ ] **Architecture impact**: sekcja poniżej jest uzupełniona i przechodzi walidator PR template (`scripts/ci/validate_pr_template.py`).
 - [ ] **Spójność terminologiczna**: nazwy pól/klas są zgodne z `DOMAIN_GLOSSARY.md` oraz gate `scripts/ci/check_terminology_consistency.py`.
 

@@ -14,7 +14,10 @@ env:
   NEW_DUPLICATES_WARN_THRESHOLD: "1"
   NEW_DUPLICATES_FAIL_THRESHOLD: "3"
   MYPY_ERROR_BUDGET: "0"
-  FUNCTION_MAX_LINES: "80"
+  PYLINT_MAX_BRANCHES: "12"
+  PYLINT_MAX_STATEMENTS: "50"
+  PYLINT_MAX_MODULE_LINES: "1000"
+  FUNCTION_MAX_LINES: "100"
   FUNCTION_MAX_NESTING: "4"
   FUNCTION_MAX_BRANCHES: "12"
 
@@ -225,6 +228,25 @@ jobs:
           ruff check "${PY_FILES[@]}" \
             --preview \
             --select PLR0912,PLR0915,PLR1702
+
+      - name: Module and function thresholds for changed Python files (pylint)
+        if: steps.changed-py.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          mapfile -t PY_FILES < <(echo "${{ steps.changed-py.outputs.changed_files }}" | tr ',' '\n' | sed '/^$/d')
+          pylint "${PY_FILES[@]}" \
+            --disable=all \
+            --enable=too-many-branches,too-many-statements,too-many-lines \
+            --max-branches "${PYLINT_MAX_BRANCHES}" \
+            --max-statements "${PYLINT_MAX_STATEMENTS}" \
+            --max-module-lines "${PYLINT_MAX_MODULE_LINES}"
+
+      - name: Diff quality guards (prints/magic/defaults/registry/exceptions)
+        shell: bash
+        run: |
+          python scripts/ci/enforce_diff_quality_guards.py \
+            --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
+            --head-sha "${{ github.sha }}"
 
       - name: Strict typing regression gate (mypy)
         shell: bash
