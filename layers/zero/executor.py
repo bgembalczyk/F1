@@ -10,6 +10,7 @@ from layers.zero.run_profile_paths import layer_zero_raw_paths
 from layers.zero.policies import LayerZeroJobHook
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
+from scrapers.base.logging import RunTraceWriter
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 from scrapers.base.errors import normalize_pipeline_error
@@ -62,6 +63,9 @@ class LayerZeroExecutor:
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
         run_id = str(uuid4())
+        trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id)
+        summary: dict[str, list[str]] = {"success": [], "skip": [], "fail": []}
+        output_paths: list[str] = []
 
         for job in self._list_job_registry:
             context = build_execution_context(
@@ -69,8 +73,11 @@ class LayerZeroExecutor:
                 seed_name=job.seed_name,
                 domain=job.output_category,
                 source_name=job.list_scraper_cls.__name__,
+                step="job",
+                status="started",
             )
             self._logger.info("layer0 job started", extra=context)
+            trace_writer.write(event=context | {"message": "layer0 job started"})
 
             local_run_config = self._build_local_run_config(
                 run_config=run_config,
@@ -88,6 +95,8 @@ class LayerZeroExecutor:
                     job=job,
                     l0_raw_json_path=l0_raw_json_path,
                 )
+                summary["success"].append(job.seed_name)
+                output_paths.append(str(l0_raw_json_path))
             except Exception as exc:
                 normalized_error = normalize_pipeline_error(
                     exc,
@@ -98,13 +107,49 @@ class LayerZeroExecutor:
                 )
                 self._logger.error(
                     "layer0 job failed",
-                    extra=context | normalized_error.to_payload(),
+                    extra=context
+                    | {"status": "failed"}
+                    | normalized_error.to_payload(),
                 )
+                trace_writer.write(
+                    event=context
+                    | {"status": "failed", "message": normalized_error.message},
+                )
+                summary["fail"].append(job.seed_name)
                 raise normalized_error from exc
 
-            self._logger.info("layer0 job finished", extra=context)
+            self._logger.info("layer0 job finished", extra=context | {"status": "success"})
+            trace_writer.write(
+                event=context | {"status": "success", "message": "layer0 job finished"},
+            )
 
         self._finalize_merge(base_wiki_dir)
+        summary_context = build_execution_context(
+            run_id=run_id,
+            domain="layer0",
+            source_name=self.__class__.__name__,
+            step="summary",
+            status="success",
+        )
+        self._logger.info(
+            "layer0 summary: success=%d skip=%d fail=%d outputs=%s trace=%s",
+            len(summary["success"]),
+            len(summary["skip"]),
+            len(summary["fail"]),
+            output_paths,
+            trace_writer.trace_path,
+            extra=summary_context,
+        )
+        trace_writer.write(
+            event=summary_context
+            | {
+                "success": summary["success"],
+                "skip": summary["skip"],
+                "fail": summary["fail"],
+                "outputs": output_paths,
+                "trace_path": str(trace_writer.trace_path),
+            },
+        )
 
     def _resolve_config_factory(self) -> dict[str, object]:
         return self._config_factories()
@@ -168,3 +213,8 @@ class LayerZeroExecutor:
 
     def _finalize_merge(self, base_wiki_dir: Path) -> None:
         self._merger.merge(base_wiki_dir)
+
+    def _build_trace_writer(self, *, run_config: RunConfig, run_id: str) -> RunTraceWriter:
+        debug_root = Path(run_config.debug_dir) if run_config.debug_dir else Path(run_config.output_dir)
+        trace_path = debug_root / "traces" / f"layer0_{run_id}.jsonl"
+        return RunTraceWriter(trace_path)
