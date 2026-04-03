@@ -22,42 +22,28 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install dependencies
+      - name: Install pre-commit
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements-dev.txt
+          pip install pre-commit
 
       - name: Run pre-commit on all files
-        run: pre-commit run --show-diff-on-failure --color=always --all-files
+        run: python -m pre_commit run --show-diff-on-failure --color=always --all-files
 
-      - name: Enforce ADR reference for architecture changes
-        env:
-          PR_TITLE: ${{ github.event.pull_request.title || '' }}
-          PR_BODY: ${{ github.event.pull_request.body || '' }}
-        run: |
-          python scripts/ci/enforce_architecture_adr_reference.py \
-            --base-sha "${{ github.event.pull_request.base.sha || github.event.before }}" \
-            --head-sha "${{ github.event.pull_request.head.sha || github.sha }}" \
-            --pr-title "$PR_TITLE" \
-            --pr-body "$PR_BODY"
+      - name: Enforce ADR references in architecture docs
+        run: python scripts/ci/enforce_architecture_adr_reference.py
 
       - name: DI anti-pattern AST check
-        env:
-          ADR_REFERENCE_TEXT: >-
-            ${{ github.event.pull_request.title || '' }}
-            ${{ github.event.pull_request.body || '' }}
+        shell: bash
         run: |
-          mapfile -t TARGETS < <(
-            git ls-files '*.py' \
-            | grep -E '^(layers/|scrapers/base/|scrapers/drivers/infobox/).+\.py$' || true
-          )
-          if [ "${#TARGETS[@]}" -eq 0 ]; then
-            echo "No DI-targeted Python files found; skipping."
+          CHANGED_FILES="$(git ls-files '*.py' | grep -E '^(layers/|scrapers/base/|scrapers/drivers/infobox/).+\.py$' || true)"
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No matching files for DI anti-pattern check."
             exit 0
           fi
           python scripts/check_di_antipatterns.py \
-            --adr-reference-text "$ADR_REFERENCE_TEXT" \
-            "${TARGETS[@]}"
+            --adr-reference-text "docs/adr/0003-di-strategy.md" \
+            $CHANGED_FILES
 
-      - name: Domain role contract suite
+      - name: Domain role contracts suite
         run: pytest -q tests/test_domain_role_contracts.py

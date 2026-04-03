@@ -79,5 +79,7 @@ def create_default_wiki_pipeline_application(
         base_debug_dir=base_debug_dir,
         layer_zero_executor=layer_zero_executor,
         layer_one_executor=layer_one_executor,
-        layer_zero_merge_service=layer_zero_merge_service,
+        layer_zero_merge_service=LayerZeroMergeService(
+            merge=merge_layer_zero_raw_outputs,
+        ),
     )

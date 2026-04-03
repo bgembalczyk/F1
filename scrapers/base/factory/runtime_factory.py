@@ -61,8 +61,14 @@ class ScraperRuntimeFactory:
             if fetcher is None and isinstance(source_adapter, HtmlFetcher):
                 fetcher = source_adapter
             if fetcher is not None:
-                fetcher.set_cache(cache_adapter)
-                http_client = fetcher.http_client
+                if hasattr(fetcher, "set_cache"):
+                    fetcher.set_cache(cache_adapter)
+                http_client = getattr(fetcher, "http_client", None)
+                if http_client is None:
+                    http_client = self._resolve_http_client(
+                        options=options,
+                        policy=resolved_policy,
+                    )
             else:
                 http_client = self._resolve_http_client(
                     options=options,
