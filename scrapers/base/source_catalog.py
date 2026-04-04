@@ -19,12 +19,15 @@ class SourceRef:
 
     @property
     def base_url(self) -> str:
-        """Stable convenience API kept for scraper configs expecting article-only URL."""
+        """Stable API for scraper configs expecting article-only URL."""
         return wiki_article_url(self.article)
 
     def url(self, *, section_id: str | None = None) -> str:
-        """Stable boundary API for building source URL with default or overridden section."""
-        return wiki_article_url(self.article, section_id=section_id or self.section_id)
+        """Build URL with default section id or explicit override."""
+        return wiki_article_url(
+            self.article,
+            section_id=section_id or self.section_id,
+        )
 
 
 def wiki_article_url(article: str, *, section_id: str | None = None) -> str:
