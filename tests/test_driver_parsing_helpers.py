@@ -3,7 +3,7 @@
 
 from scrapers.base.table.columns.helpers.driver_parsing import DriverParsingHelpers
 
-_EXPECTED_LINK_COUNT = 2
+_EXPECTED_HAMILTON_LINK_COUNT = 2
 
 
 def test_build_link_lookup_handles_link_list_without_recursion() -> None:
@@ -22,4 +22,4 @@ def test_build_link_lookup_handles_link_list_without_recursion() -> None:
     lookup = DriverParsingHelpers.build_link_lookup(links)
 
     assert "lewis hamilton" in lookup
-    assert len(lookup["lewis hamilton"]) == _EXPECTED_LINK_COUNT
+    assert len(lookup["lewis hamilton"]) == _EXPECTED_HAMILTON_LINK_COUNT
