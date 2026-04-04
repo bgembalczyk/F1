@@ -136,7 +136,11 @@ class F1TableScraper(WikiScraper, ABC):
             headers = list(row.keys())
             cells = list(row.values())
             return self.extractor.pipeline.parse_cells(headers, cells)
-        return self.extractor.parse_row(row)
+        return self.extractor.pipeline.parse_cells(
+            row.headers,
+            row.cells,
+            header_cells=row.header_cells,
+        )
 
     def _model_fields(self) -> set[str] | None:
         model_class = getattr(self, "model_class", None)
