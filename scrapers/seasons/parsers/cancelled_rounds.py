@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.html_utils import find_section_tables
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.table.columns.types import UrlColumn

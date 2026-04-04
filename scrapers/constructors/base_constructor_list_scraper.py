@@ -69,7 +69,11 @@ class BaseConstructorListScraper(
         """Build the licensed_in column definition."""
         from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 
-        return ColumnSpec(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", LinksListColumn())
+        return ColumnSpec(
+            CONSTRUCTOR_LICENSED_IN_HEADER,
+            "licensed_in",
+            LinksListColumn(),
+        )
 
     @classmethod
     def extend_schema_fragments(

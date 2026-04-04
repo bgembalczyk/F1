@@ -12,7 +12,10 @@ from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
         (None, None),
     ],
 )
-def test_parse_int_happy_path_and_empty_fallbacks(row: dict | None, expected: int | None) -> None:
+def test_parse_int_happy_path_and_empty_fallbacks(
+    row: dict | None,
+    expected: int | None,
+) -> None:
     utils = InfoboxTextUtils()
 
     assert utils.parse_int(row) == expected
@@ -37,7 +40,9 @@ def test_parse_length_handles_valid_values_and_non_matching_units(
     assert utils.parse_length(row, unit=unit) == expected
 
 
-def test_parse_length_wraps_value_error_as_domain_parse_error(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_parse_length_wraps_value_error_as_domain_parse_error(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     utils = InfoboxTextUtils()
 
     def _raise_value_error(_: str | None, *, unit: str) -> float:
@@ -59,12 +64,25 @@ def test_parse_length_wraps_value_error_as_domain_parse_error(monkeypatch: pytes
     [
         (
             "Main Circuit",
-            [{"text": "Main Circuit", "url": "https://en.wikipedia.org/wiki/Main_Circuit"}],
-            {"text": "Main Circuit", "url": "https://en.wikipedia.org/wiki/Main_Circuit"},
+            [
+                {
+                    "text": "Main Circuit",
+                    "url": "https://en.wikipedia.org/wiki/Main_Circuit",
+                },
+            ],
+            {
+                "text": "Main Circuit",
+                "url": "https://en.wikipedia.org/wiki/Main_Circuit",
+            },
         ),
         (
             "Main Circuit",
-            [{"text": "Main Circuit", "url": "https://en.wikipedia.org/w/index.php?title=Missing&action=edit&redlink=1"}],
+            [
+                {
+                    "text": "Main Circuit",
+                    "url": "https://en.wikipedia.org/w/index.php?title=Missing&action=edit&redlink=1",
+                },
+            ],
             {"text": "Main Circuit", "url": None},
         ),
         (None, [], None),

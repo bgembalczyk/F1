@@ -1,5 +1,4 @@
 from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.config import build_scraper_config
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS

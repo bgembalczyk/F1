@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from dataclasses import fields
 from dataclasses import field
+from dataclasses import fields
 from typing import Any
 
 from scrapers.base.postprocess.assembler import BaseRecordAssembler

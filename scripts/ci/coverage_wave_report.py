@@ -25,8 +25,14 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--coverage-db", default=".coverage")
     parser.add_argument("--repo-root", default=".")
     parser.add_argument("--top", type=int, default=30)
-    parser.add_argument("--json-out", default="artifacts/coverage_top_remaining_misses.json")
-    parser.add_argument("--md-out", default="artifacts/coverage_top_remaining_misses.md")
+    parser.add_argument(
+        "--json-out",
+        default="artifacts/coverage_top_remaining_misses.json",
+    )
+    parser.add_argument(
+        "--md-out",
+        default="artifacts/coverage_top_remaining_misses.md",
+    )
     parser.add_argument("--backlog-out", default="docs/COVERAGE_WAVE_BACKLOG.md")
     return parser.parse_args()
 
@@ -45,7 +51,7 @@ def _load_executed_lines(coverage_db: Path) -> dict[str, set[int]]:
             SELECT f.path, lb.numbits
             FROM file AS f
             JOIN line_bits AS lb ON f.id = lb.file_id
-            """
+            """,
         )
         per_file: dict[str, set[int]] = {}
         for raw_path, numbits in rows:
@@ -94,7 +100,7 @@ def _collect_misses(repo_root: Path, executed: dict[str, set[int]]) -> list[File
                 statements=len(stmt_lines),
                 executed=executed_stmt_count,
                 miss=miss,
-            )
+            ),
         )
     rows.sort(key=lambda row: (-row.miss, row.path))
     return rows
@@ -102,7 +108,9 @@ def _collect_misses(repo_root: Path, executed: dict[str, set[int]]) -> list[File
 
 def _wave_for_path(path: str, miss: int) -> str:
     low = path.lower()
-    if miss >= 40 and ("parser" in low or "helper" in low or low.startswith("scripts/ci/")):
+    if miss >= 40 and (
+        "parser" in low or "helper" in low or low.startswith("scripts/ci/")
+    ):
         return "Fala 1"
     if 20 <= miss <= 39 and ("domain" in low or "service" in low or "services" in low):
         return "Fala 2"
@@ -131,14 +139,19 @@ def _render_top_md(top: list[dict[str, object]]) -> str:
     ]
     for idx, item in enumerate(top, start=1):
         lines.append(
-            f"| {idx} | `{item['path']}` | {item['miss']} | {item['coverage']}% | {item['wave']} |"
+            f"| {idx} | `{item['path']}` | {item['miss']} | {item['coverage']}% | {item['wave']} |",
         )
     lines.append("")
     return "\n".join(lines)
 
 
 def _render_backlog_md(top: list[dict[str, object]]) -> str:
-    grouped: dict[str, list[dict[str, object]]] = {"Fala 1": [], "Fala 2": [], "Fala 3": [], "Fala 4": []}
+    grouped: dict[str, list[dict[str, object]]] = {
+        "Fala 1": [],
+        "Fala 2": [],
+        "Fala 3": [],
+        "Fala 4": [],
+    }
     for item in top:
         grouped[item["wave"]].append(item)
 
@@ -159,7 +172,7 @@ def _render_backlog_md(top: list[dict[str, object]]) -> str:
         else:
             for item in items:
                 lines.append(
-                    f"- [ ] `{item['path']}` — miss: {item['miss']}, coverage: {item['coverage']}%"
+                    f"- [ ] `{item['path']}` — miss: {item['miss']}, coverage: {item['coverage']}%",
                 )
         lines.append("")
     return "\n".join(lines)
@@ -174,7 +187,10 @@ def main() -> int:
 
     json_out = Path(args.json_out)
     json_out.parent.mkdir(parents=True, exist_ok=True)
-    json_out.write_text(json.dumps(top_rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    json_out.write_text(
+        json.dumps(top_rows, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
     md_out = Path(args.md_out)
     md_out.parent.mkdir(parents=True, exist_ok=True)

@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import SeasonsColumn

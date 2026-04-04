@@ -241,7 +241,7 @@ HELPER_SECTION_MODULES_EXCLUDED_FROM_DOD: frozenset[str] = frozenset(
         "driver_results_table_classifier.py",
         "list_table.py",
         "service.py",
-    }
+    },
 )
 
 SECTION_MODULES_REQUIRING_DOD: tuple[str, ...] = tuple(
@@ -252,7 +252,7 @@ SECTION_MODULES_REQUIRING_DOD: tuple[str, ...] = tuple(
         and path.name not in HELPER_SECTION_MODULES_EXCLUDED_FROM_DOD
         and path.parts[1]
         in {"drivers", "constructors", "circuits", "seasons", "grands_prix"}
-    )
+    ),
 )
 
 SNAPSHOT_COVERED_SECTION_MODULES: tuple[str, ...] = (

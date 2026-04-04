@@ -19,6 +19,7 @@ class RunPathConfig:
     wiki_output_dir: Path = Path("../../data/wiki")
     debug_dir: Path = Path("../../data/debug")
 
+
 DEFAULT_RUN_PATHS = RunPathConfig()
 
 
@@ -60,9 +61,7 @@ class RunProfileSpec:
             output_dir=getattr(paths, self.output_dir.value),
             include_urls=self.include_urls,
             debug_dir=(
-                None
-                if self.debug_dir is None
-                else getattr(paths, self.debug_dir.value)
+                None if self.debug_dir is None else getattr(paths, self.debug_dir.value)
             ),
             quality_report=self.quality_report,
             error_report=self.error_report,

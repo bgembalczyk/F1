@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
 from scrapers.base.table.columns.types import AutoColumn

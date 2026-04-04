@@ -390,7 +390,9 @@ def test_error_report_for_non_scraper_exception_maps_to_unknown_code() -> None:
     assert report.parser_name is None
 
 
-def test_error_summary_handles_empty_file_lines_and_missing_code(tmp_path: Path) -> None:
+def test_error_summary_handles_empty_file_lines_and_missing_code(
+    tmp_path: Path,
+) -> None:
     report_path = tmp_path / "errors.jsonl"
     report_path.write_text(
         "\n".join(
@@ -400,7 +402,7 @@ def test_error_summary_handles_empty_file_lines_and_missing_code(tmp_path: Path)
                 json.dumps({"run_id": "run-a"}),
                 json.dumps({"run_id": "run-b", "code_id": "M002"}),
                 "",
-            ]
+            ],
         ),
         encoding="utf-8",
     )

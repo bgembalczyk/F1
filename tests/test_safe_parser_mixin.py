@@ -29,7 +29,7 @@ def test_safe_parse_returns_empty_result_without_degradation() -> None:
         url_provider=lambda: "https://example.com",
     )
 
-    result = parser._safe_parse(lambda: [])
+    result = parser._safe_parse(list)
 
     assert result == []
     assert parser.error_handler.handled_errors == []

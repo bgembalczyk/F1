@@ -1,5 +1,4 @@
 from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import RED_FLAGGED_RACES
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config

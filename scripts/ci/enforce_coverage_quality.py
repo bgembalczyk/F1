@@ -95,7 +95,9 @@ def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation
         current_sprint = int(policy.get("current_sprint", 1))
         min_increment = float(policy.get("minimum_global_increment_per_sprint_pp", 0))
     except (TypeError, ValueError):
-        return [Violation("Niepoprawne typy w coverage policy (sprint/progi/przyrost).")]
+        return [
+            Violation("Niepoprawne typy w coverage policy (sprint/progi/przyrost)."),
+        ]
 
     for index in range(1, len(threshold_values)):
         if threshold_values[index] <= threshold_values[index - 1]:
@@ -181,7 +183,10 @@ def main() -> int:
                 ),
             )
 
-        if changed_file in legacy_files and current_cov < baseline_cov + legacy_improvement:
+        if (
+            changed_file in legacy_files
+            and current_cov < baseline_cov + legacy_improvement
+        ):
             violations.append(
                 Violation(
                     f"Legacy low coverage '{changed_file}' został dotknięty, ale poprawa "

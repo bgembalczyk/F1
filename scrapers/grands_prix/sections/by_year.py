@@ -4,7 +4,6 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_metadata
 from scrapers.base.table.columns.types import AutoColumn

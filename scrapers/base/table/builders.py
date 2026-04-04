@@ -46,7 +46,9 @@ def build_columns(*parts: SchemaPart) -> list[ColumnSpec]:
 def build_entity_metadata_columns(
     specs: Sequence[EntityColumnSpec],
 ) -> list[ColumnSpec]:
-    return [ColumnSpec(spec.header, spec.output_key, spec.column_type) for spec in specs]
+    return [
+        ColumnSpec(spec.header, spec.output_key, spec.column_type) for spec in specs
+    ]
 
 
 def build_metric_columns(

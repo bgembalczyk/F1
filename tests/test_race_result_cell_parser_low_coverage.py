@@ -1,9 +1,11 @@
-from bs4 import BeautifulSoup
 import pytest
+from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.seasons.columns.helpers.constants import SPRINT_POINTS_START_YEAR
-from scrapers.seasons.columns.helpers.race_result.cell_parser import RaceResultCellParser
+from scrapers.seasons.columns.helpers.race_result.cell_parser import (
+    RaceResultCellParser,
+)
 
 
 @pytest.mark.parametrize(
@@ -15,7 +17,10 @@ from scrapers.seasons.columns.helpers.race_result.cell_parser import RaceResultC
         ("", []),
     ],
 )
-def test_parse_results_covers_happy_path_and_weird_separators(raw_text: str, expected: list[dict]) -> None:
+def test_parse_results_covers_happy_path_and_weird_separators(
+    raw_text: str,
+    expected: list[dict],
+) -> None:
     parser = RaceResultCellParser()
 
     assert parser.parse_results(raw_text) == expected
@@ -51,8 +56,8 @@ def test_parse_superscripts_handles_rule_conflicts_and_year_priority(
 ) -> None:
     parser = RaceResultCellParser()
     soup = BeautifulSoup(
-        '<td><b>1</b><i>fast</i><sup>1PF</sup><sup>2</sup></td>',
-        'html.parser',
+        "<td><b>1</b><i>fast</i><sup>1PF</sup><sup>2</sup></td>",
+        "html.parser",
     )
     ctx = ColumnContext(
         header="Race",
@@ -77,7 +82,7 @@ def test_prepare_cell_fragment_strips_absolute_spans_and_superscripts() -> None:
     parser = RaceResultCellParser()
     soup = BeautifulSoup(
         '<td><span style="position: absolute; left:-9999px">ghost</span> 4<sup>7</sup></td>',
-        'html.parser',
+        "html.parser",
     )
 
     fragment = parser._prepare_cell_fragment(soup.td)

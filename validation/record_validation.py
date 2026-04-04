@@ -82,7 +82,9 @@ def _require_type(
     )
     allows_none_by_type = any(value_type is type(None) for value_type in expected)
     if value is None:
-        return [] if (allow_none or allows_none_by_type) else [ValidationIssue.null(key)]
+        return (
+            [] if (allow_none or allows_none_by_type) else [ValidationIssue.null(key)]
+        )
 
     if isinstance(value, expected_types):
         return []

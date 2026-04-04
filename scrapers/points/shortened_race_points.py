@@ -1,5 +1,4 @@
 from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig

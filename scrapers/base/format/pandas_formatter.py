@@ -1,6 +1,6 @@
+import warnings
 from typing import TYPE_CHECKING
 from typing import Any
-import warnings
 
 from scrapers.base.format.formatter_helpers import extract_data
 
