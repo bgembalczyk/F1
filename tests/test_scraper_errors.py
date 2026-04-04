@@ -111,7 +111,12 @@ class DummyFetcher:
         self.html = html
         self.exc = exc
 
-    def get_text(self, _url: str, *, timeout: int | None = None) -> str:
+    def get_text(
+        self,
+        _url: str,
+        *,
+        timeout: int | None = None,  # noqa: ARG002 - wymagane przez interfejs fetchera
+    ) -> str:
         if self.exc:
             raise self.exc
         assert self.html is not None
