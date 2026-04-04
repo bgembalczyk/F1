@@ -7,7 +7,7 @@ from validation.issue import ValidationIssue
 from validation.schema_rules import build_domain_rules
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
+from validation.record_validation import validate_record
 
 INVALID_TEAM_VALUE = 7
 
@@ -221,7 +221,7 @@ def test_validate_schema_matches_legacy_behavior() -> None:
     }
 
     expected = _legacy_validate_schema(record, schema)
-    actual = RecordValidator.validate_schema(record, schema)
+    actual = validate_record(record, schema)
 
     assert actual == expected
 

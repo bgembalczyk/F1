@@ -1,5 +1,5 @@
 from tests.fixtures.validation_diagnostic_catalog import VALIDATION_DIAGNOSTIC_FIXTURES
-from validation.validator_base import RecordValidator
+from validation.record_validation import validate_record
 
 
 def test_validation_fixture_catalog_is_one_to_one_and_minimal() -> None:
@@ -14,7 +14,7 @@ def test_validation_fixture_catalog_is_one_to_one_and_minimal() -> None:
 
 def test_validation_fixture_catalog_drives_diagnostic_scenarios() -> None:
     for fixture in VALIDATION_DIAGNOSTIC_FIXTURES:
-        errors = RecordValidator.validate_schema(fixture.record, fixture.schema)
+        errors = validate_record(fixture.record, fixture.schema)
 
         assert len(errors) == 1, (
             f"Scenariusz={fixture.scenario} powinien mapować 1:1 na jeden wynik "
