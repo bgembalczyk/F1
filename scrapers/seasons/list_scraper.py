@@ -45,6 +45,7 @@ class SeasonsTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+
 TABLE_SCHEMA = TableSchemaDSL(
     columns=build_columns(
         column("Season", "season", UrlColumn()),

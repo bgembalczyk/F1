@@ -50,6 +50,7 @@ class EngineRegulationTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
         column("Years", "seasons", SeasonsColumn()),

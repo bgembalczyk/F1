@@ -5,7 +5,6 @@ from typing import Any
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import DRIVERS_LIST
-from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.columns.types import SeasonsColumn
@@ -63,6 +62,7 @@ class DriversListTableParser(WikiTableBaseParser):
             for header in headers
             if header in self._column_mapping
         }
+
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=build_columns(

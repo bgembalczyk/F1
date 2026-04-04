@@ -46,6 +46,7 @@ class CircuitsListTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
         column(CIRCUIT_NAME_HEADER, "circuit", CircuitNameStatusColumn()),

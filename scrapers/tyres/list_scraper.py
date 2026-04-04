@@ -43,6 +43,7 @@ class TyreManufacturersBySeasonTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
         column("Season", "seasons", SeasonsColumn()),

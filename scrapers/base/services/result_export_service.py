@@ -9,6 +9,7 @@ from scrapers.base.normalization import NormalizationRule
 from scrapers.base.results import ScrapeResult
 from scrapers.base.services.result_normalizer import ScrapeResultNormalizer
 
+
 class ResultExportService:
     def __init__(
         self,
