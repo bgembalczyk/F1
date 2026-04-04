@@ -171,3 +171,100 @@ def wrapper_for_private_attr(self, payload):
     )
     assert not any("_private_wrapper" in item for item in violations)
     assert not any("wrapper_for_private_attr" in item for item in violations)
+
+
+def test_structural_quality_allows_lambda_in_call_args(tmp_path: Path) -> None:
+    file_path = tmp_path / "module.py"
+    file_path.write_text(
+        """
+def find_header(soup):
+    return soup.find(
+        "h1",
+        class_=lambda x: x and "cls" in (x if isinstance(x, list) else x.split()),
+    )
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    violations = enforce_structural_quality.evaluate_file(
+        file_path,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
+    )
+
+    assert not any("redundant alias" in item for item in violations)
+
+
+def test_structural_quality_allows_generator_expr_in_call_args(tmp_path: Path) -> None:
+    file_path = tmp_path / "module.py"
+    file_path.write_text(
+        """
+def should_apply(record):
+    return any(
+        handler.has_group(record.get(key))
+        for key in COLOUR_KEYS
+    )
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    violations = enforce_structural_quality.evaluate_file(
+        file_path,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
+    )
+
+    assert not any("redundant alias" in item for item in violations)
+
+
+def test_structural_quality_allows_method_override_in_derived_class(
+    tmp_path: Path,
+) -> None:
+    file_path = tmp_path / "module.py"
+    file_path.write_text(
+        """
+class RestartStatusColumn(BackgroundMixin, BaseColumn):
+    def parse(self, ctx):
+        return restart_status(ctx)
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    violations = enforce_structural_quality.evaluate_file(
+        file_path,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
+    )
+
+    assert not any("redundant alias" in item for item in violations)
+
+
+def test_structural_quality_still_flags_standalone_redundant_alias(
+    tmp_path: Path,
+) -> None:
+    file_path = tmp_path / "module.py"
+    file_path.write_text(
+        """
+def redundant(value):
+    return normalize(value)
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    violations = enforce_structural_quality.evaluate_file(
+        file_path,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
+    )
+
+    assert any(
+        "function 'redundant' is a redundant alias" in item for item in violations
+    )
