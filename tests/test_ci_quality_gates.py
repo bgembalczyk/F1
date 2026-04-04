@@ -268,3 +268,47 @@ def redundant(value):
     assert any(
         "function 'redundant' is a redundant alias" in item for item in violations
     )
+
+
+def test_structural_quality_allows_multiline_alias_used_multiple_times_across_files(
+    tmp_path: Path,
+) -> None:
+    source_file = tmp_path / "record_definition.py"
+    source_file.write_text(
+        """
+class RecordDefinition:
+    def to_schema(self):
+        return RecordSchema(
+            required=self.required,
+            types=self.types,
+        )
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    usage_file = tmp_path / "record_usage.py"
+    usage_file.write_text(
+        """
+def build(definition):
+    definition.to_schema()
+    definition.to_schema()
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    call_counts = enforce_structural_quality._collect_project_call_counts(
+        [source_file, usage_file],
+    )
+    violations = enforce_structural_quality.evaluate_file(
+        source_file,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
+        call_counts=call_counts,
+    )
+
+    assert not any(
+        "function 'to_schema' is a redundant alias" in item for item in violations
+    )
