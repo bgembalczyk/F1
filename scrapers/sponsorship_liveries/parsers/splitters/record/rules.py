@@ -14,14 +14,14 @@ from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record impo
 class HasPossessiveColoursRule:
     def should_apply(self, record: PipelineRecord) -> bool:
         return any(
-            ColourScopeHandler.has_possessive_colour_groups(record.get(key))
+            ColourScopeHandler.has_possessive_colour_groups(record.payload.get(key))
             for key in COLOUR_KEYS
         )
 
 
 class HasMultipleSeasonsRule:
     def should_apply(self, record: PipelineRecord) -> bool:
-        seasons = record.get("season")
+        seasons = record.payload.get("season")
         return isinstance(seasons, list) and len(seasons) > 1
 
 

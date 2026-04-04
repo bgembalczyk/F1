@@ -25,7 +25,7 @@ class PossessiveDriverColourSplitStrategy:
 
     @staticmethod
     def _normalize_colours(record: PipelineRecord) -> PipelineRecord:
-        normalized = record.to_dict()
+        normalized = dict(record.payload)
         for key in COLOUR_KEYS:
             if key in normalized:
                 normalized[key] = ColourScopeHandler.split_or_colours(normalized[key])
@@ -37,7 +37,7 @@ class PossessiveDriverColourSplitStrategy:
         common_by_key: dict[str, list[Any]] = {}
 
         for key in COLOUR_KEYS:
-            colours = record.get(key)
+            colours = record.payload.get(key)
             if not isinstance(colours, list):
                 continue
             groups = ColourScopeHandler.extract_possessive_colour_groups(colours)
@@ -56,7 +56,7 @@ class PossessiveDriverColourSplitStrategy:
 
         result: list[PipelineRecord] = []
         for driver_name, colour_map in driver_colour_map.items():
-            new_record = record.with_updates(driver=[{"text": driver_name}]).to_dict()
+            new_record = {**record.payload, "driver": [{"text": driver_name}]}
             for key in COLOUR_KEYS:
                 if key not in record.payload:
                     continue
