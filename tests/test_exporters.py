@@ -93,6 +93,20 @@ def test_to_json_excludes_metadata_by_default(tmp_path):
     assert payload[1]["driver"] == "Max"
 
 
+def test_to_json_sorts_keys_alphabetically(tmp_path):
+    result = ScrapeResult(
+        data=[{"zeta": 1, "alpha": 2}],
+        source_url="https://example.com",
+    )
+    output = tmp_path / "result.json"
+
+    ResultExportService().to_json(result, output, include_metadata=True)
+
+    content = output.read_text(encoding="utf-8")
+    assert content.index('"alpha"') < content.index('"zeta"')
+    assert content.index('"data"') < content.index('"meta"')
+
+
 def test_to_csv_excludes_metadata_by_default(tmp_path):
     result = ScrapeResult(
         data=[{"driver": "Lewis"}, {"driver": "Max"}],
