@@ -2,13 +2,14 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
@@ -52,18 +53,18 @@ class SeasonTableParser:
         include_car_no_column: bool = True,
     ) -> list[dict[str, Any]]:
         schema_columns = [
-            column("Pos.", "pos", PositionColumn()),
-            column("Pos", "pos", PositionColumn()),
-            column(subject_header, subject_key, subject_column),
-            column("Points", "points", PointsColumn()),
-            column("Pts.", "points", PointsColumn()),
-            column("Pts", "points", PointsColumn()),
-            column("No.", "no", IntColumn()),
-            column("No", "no", IntColumn()),
+            ColumnSpec("Pos.", "pos", PositionColumn()),
+            ColumnSpec("Pos", "pos", PositionColumn()),
+            ColumnSpec(subject_header, subject_key, subject_column),
+            ColumnSpec("Points", "points", PointsColumn()),
+            ColumnSpec("Pts.", "points", PointsColumn()),
+            ColumnSpec("Pts", "points", PointsColumn()),
+            ColumnSpec("No.", "no", IntColumn()),
+            ColumnSpec("No", "no", IntColumn()),
         ]
         if include_car_no_column:
             # Handle "Car<br>no." which becomes "Car no." after text extraction
-            schema_columns.append(column("Car no.", "no", IntColumn()))
+            schema_columns.append(ColumnSpec("Car no.", "no", IntColumn()))
         for section_id in section_ids:
             config = ScraperConfig(
                 url=self.url,
@@ -74,7 +75,7 @@ class SeasonTableParser:
                     season_year=season_year,
                     star_mark_note=star_mark_note,
                 ),
-                record_factory=RECORD_FACTORIES.mapping(),
+                record_factory=MappingRecordFactory(),
             )
             scraper = F1StandingsScraper(options=self._options, config=config)
             try:
@@ -101,7 +102,7 @@ class SeasonTableParser:
                 expected_headers=expected_headers,
                 schema=schema,
                 default_column=default_column,
-                record_factory=RECORD_FACTORIES.mapping(),
+                record_factory=MappingRecordFactory(),
             )
             pipeline = TablePipeline(
                 config=config,
@@ -157,7 +158,7 @@ class SeasonTableParser:
             expected_headers=expected_headers,
             schema=schema,
             default_column=default_column,
-            record_factory=RECORD_FACTORIES.mapping(),
+            record_factory=MappingRecordFactory(),
         )
         pipeline = TablePipeline(
             config=config,

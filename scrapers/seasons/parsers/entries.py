@@ -9,7 +9,7 @@ from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.parsers.entry_merger import EntryMerger
@@ -46,25 +46,25 @@ class SeasonEntriesParser:
             expected_headers=["Entrant", "Constructor", "Chassis"],
             schema=TableSchemaDSL(
                 columns=[
-                    column("Entrant", "entrant", EntrantColumn()),
-                    column("Constructor", "constructor", ConstructorColumn()),
-                    column(
+                    ColumnSpec("Entrant", "entrant", EntrantColumn()),
+                    ColumnSpec("Constructor", "constructor", ConstructorColumn()),
+                    ColumnSpec(
                         "Chassis",
                         "chassis",
                         LinksListColumn(text_for_missing_url=True),
                     ),
-                    column("Power Unit", "power_unit", EngineColumn()),
-                    column("Power unit", "power_unit", EngineColumn()),
-                    column("Race drivers", "race_drivers", DriversWithRoundsColumn()),
-                    column("Race drivers", "race_drivers", DriverListColumn()),
-                    column("Race Drivers", "race_drivers", DriverListColumn()),
-                    column("Race driver(s)", "race_drivers", DriversWithRoundsColumn()),
-                    column("No.", "no", BrListColumn()),
-                    column("Driver name", "drivers", DriverListColumn()),
-                    column("Driver", "drivers", DriverListColumn()),
-                    column("Rounds", "rounds", BrListColumn()),
-                    column("Engine", "engine", engine_column),
-                    column("Tyre", "tyre", TyreColumn()),
+                    ColumnSpec("Power Unit", "power_unit", EngineColumn()),
+                    ColumnSpec("Power unit", "power_unit", EngineColumn()),
+                    ColumnSpec("Race drivers", "race_drivers", DriversWithRoundsColumn()),
+                    ColumnSpec("Race drivers", "race_drivers", DriverListColumn()),
+                    ColumnSpec("Race Drivers", "race_drivers", DriverListColumn()),
+                    ColumnSpec("Race driver(s)", "race_drivers", DriversWithRoundsColumn()),
+                    ColumnSpec("No.", "no", BrListColumn()),
+                    ColumnSpec("Driver name", "drivers", DriverListColumn()),
+                    ColumnSpec("Driver", "drivers", DriverListColumn()),
+                    ColumnSpec("Rounds", "rounds", BrListColumn()),
+                    ColumnSpec("Engine", "engine", engine_column),
+                    ColumnSpec("Tyre", "tyre", TyreColumn()),
                 ],
             ),
         )

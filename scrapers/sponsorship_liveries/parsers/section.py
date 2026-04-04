@@ -5,12 +5,13 @@ from typing import Optional
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
@@ -47,26 +48,26 @@ class SponsorshipTableParser(TableParser):
     @staticmethod
     def _season_column_specs(seasons_col_factory: Any) -> list[Any]:
         return [
-            column("Year", "season", seasons_col_factory()),
-            column("Years", "season", seasons_col_factory()),
-            column("Season", "season", seasons_col_factory()),
-            column("Seasons", "season", seasons_col_factory()),
-            column("Year(s)", "season", seasons_col_factory()),
+            ColumnSpec("Year", "season", seasons_col_factory()),
+            ColumnSpec("Years", "season", seasons_col_factory()),
+            ColumnSpec("Season", "season", seasons_col_factory()),
+            ColumnSpec("Seasons", "season", seasons_col_factory()),
+            ColumnSpec("Year(s)", "season", seasons_col_factory()),
         ]
 
     @staticmethod
     def _driver_column_specs() -> list[Any]:
-        return [column("Driver(s)", "drivers", DriverListColumn())]
+        return [ColumnSpec("Driver(s)", "drivers", DriverListColumn())]
 
     @staticmethod
     def _colour_column_specs() -> list[Any]:
         return [
-            column(
+            ColumnSpec(
                 "Main colour(s)",
                 normalize_header("Main colour(s)"),
                 ColourListColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Additional colour(s)",
                 normalize_header("Additional colour(s)"),
                 ColourListColumn(),
@@ -76,22 +77,22 @@ class SponsorshipTableParser(TableParser):
     @staticmethod
     def _sponsor_column_specs() -> list[Any]:
         return [
-            column(
+            ColumnSpec(
                 "Additional major sponsor(s)",
                 normalize_header("Additional major sponsor(s)"),
                 SponsorColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Livery sponsor(s)",
                 normalize_header("Livery sponsor(s)"),
                 SponsorColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Main sponsor(s)",
                 normalize_header("Main sponsor(s)"),
                 SponsorColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Livery principal sponsor(s)",
                 "livery_principal_sponsors",
                 SponsorColumn(),
@@ -101,50 +102,50 @@ class SponsorshipTableParser(TableParser):
     @staticmethod
     def _text_column_specs() -> list[Any]:
         return [
-            column("Notes", normalize_header("Notes"), TextColumn()),
-            column(
+            ColumnSpec("Notes", normalize_header("Notes"), TextColumn()),
+            ColumnSpec(
                 "Non-tobacco liveries",
                 normalize_header("Non-tobacco liveries"),
                 TextColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Special liveries",
                 normalize_header("Special liveries"),
                 TextColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Non-tobacco/alcohol livery changes",
                 normalize_header("Non-tobacco/alcohol livery changes"),
                 TextColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Other Informations (including non-tobacco/alcohol race changes)",
                 normalize_header(
                     "Other Informations (including non-tobacco/alcohol race changes)",
                 ),
                 TextColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Other information",
                 normalize_header("Other information"),
                 TextColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Non Tobacco/Alcohol changes(s)",
                 normalize_header("Non Tobacco/Alcohol changes(s)"),
                 TextColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Additional major sponsor(s) / Notes",
                 normalize_header("Additional major sponsor(s) / Notes"),
                 TextColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Location-specific livery changes (2011-present)",
                 normalize_header("Location-specific livery changes (2011-present)"),
                 TextColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Other Changes",
                 normalize_header("Other Changes"),
                 TextColumn(),
@@ -184,7 +185,7 @@ class SponsorshipSectionParser:
         config = ScraperConfig(
             url=self._url,
             schema=SponsorshipTableParser.build_schema(_seasons_col),
-            record_factory=RECORD_FACTORIES.mapping(),
+            record_factory=MappingRecordFactory(),
         )
         return TablePipeline(
             config=config,

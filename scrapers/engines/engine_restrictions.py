@@ -11,7 +11,7 @@ from scrapers.base.table.columns.types import RangeColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import UnitColumn
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
@@ -51,22 +51,22 @@ class EngineRestrictionsTableParser(WikiTableBaseParser):
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
-        column("Year", "year", SeasonsColumn()),
-        column("Size", "size", UnitColumn(unit="litre")),
-        column("Type of engine", "type_of_engine", LinksListColumn()),
-        column(
+        ColumnSpec("Year", "year", SeasonsColumn()),
+        ColumnSpec("Size", "size", UnitColumn(unit="litre")),
+        ColumnSpec("Type of engine", "type_of_engine", LinksListColumn()),
+        ColumnSpec(
             "Fuel-limit per race",
             "fuel_limit_per_race",
             FuelLimitPerRaceColumn(),
         ),
-        column("Fuel-flow rate", "fuel_flow_rate", FuelFlowRateColumn()),
-        column(
+        ColumnSpec("Fuel-flow rate", "fuel_flow_rate", FuelFlowRateColumn()),
+        ColumnSpec(
             "Fuel-injection pressure limit",
             "fuel_injection_pressure_limit",
             FuelInjectionPressureLimitColumn(),
         ),
-        column("Engine RPM limit", "engine_rpm_limit", EngineRpmLimitColumn()),
-        column(
+        ColumnSpec("Engine RPM limit", "engine_rpm_limit", EngineRpmLimitColumn()),
+        ColumnSpec(
             "Power Output",
             "power_output",
             RangeColumn(

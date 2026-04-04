@@ -42,11 +42,3 @@ class ColumnSpec:
         if isinstance(self.column, BaseColumn):
             return self.column
         return self.column.build()
-
-
-def column(
-    header: str,
-    key: str,
-    column_instance: BaseColumn | ColumnRef,
-) -> ColumnSpec:
-    return ColumnSpec(header=header, key=key, column=column_instance)

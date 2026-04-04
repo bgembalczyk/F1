@@ -9,7 +9,7 @@ from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
@@ -54,16 +54,16 @@ class FemaleDriversTableParser(WikiTableBaseParser):
     def build_schema() -> TableSchemaDSL:
         return TableSchemaDSL(
             columns=[
-                column(FEMALE_DRIVERS_INDEX_HEADER, "_skip", SkipColumn()),
-                column(FEMALE_DRIVER_NAME_HEADER, "driver", UrlColumn()),
-                column(FEMALE_DRIVER_SEASONS_HEADER, "seasons", SeasonsColumn()),
-                column(FEMALE_DRIVER_TEAMS_HEADER, "teams", LinksListColumn()),
-                column(
+                ColumnSpec(FEMALE_DRIVERS_INDEX_HEADER, "_skip", SkipColumn()),
+                ColumnSpec(FEMALE_DRIVER_NAME_HEADER, "driver", UrlColumn()),
+                ColumnSpec(FEMALE_DRIVER_SEASONS_HEADER, "seasons", SeasonsColumn()),
+                ColumnSpec(FEMALE_DRIVER_TEAMS_HEADER, "teams", LinksListColumn()),
+                ColumnSpec(
                     FEMALE_DRIVER_ENTRIES_STARTS_HEADER,
                     "entries_starts",
                     EntriesStartsColumn(),
                 ),
-                column(FEMALE_DRIVER_POINTS_HEADER, "points", PointsColumn()),
+                ColumnSpec(FEMALE_DRIVER_POINTS_HEADER, "points", PointsColumn()),
             ],
         )
 

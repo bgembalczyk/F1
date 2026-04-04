@@ -11,7 +11,7 @@ from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
@@ -48,22 +48,22 @@ class SeasonsTableParser(WikiTableBaseParser):
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=build_columns(
-        column("Season", "season", UrlColumn()),
-        column("Races", "races", IntColumn()),
-        column("Countries", "countries", IntColumn()),
-        column("First", "first", UrlColumn()),
-        column("Last", "last", UrlColumn()),
-        column(
+        ColumnSpec("Season", "season", UrlColumn()),
+        ColumnSpec("Races", "races", IntColumn()),
+        ColumnSpec("Countries", "countries", IntColumn()),
+        ColumnSpec("First", "first", UrlColumn()),
+        ColumnSpec("Last", "last", UrlColumn()),
+        ColumnSpec(
             "Drivers' Champion (team)",
             "drivers_champion_team",
             LinksListColumn(),
         ),
-        column(
+        ColumnSpec(
             "Constructors' Champion",
             "constructors_champion",
             LinksListColumn(),
         ),
-        column("Winners", "winners", IntColumn()),
+        ColumnSpec("Winners", "winners", IntColumn()),
     ),
 )
 

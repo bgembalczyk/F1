@@ -8,7 +8,7 @@ from scrapers.base.helpers.transform_micro_ops import pop_list_field
 from scrapers.base.table.columns.types import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -25,12 +25,12 @@ class SeasonFreePracticeParser:
             expected_headers=["Constructor", "No.", "Driver name", "Rounds"],
             schema=TableSchemaDSL(
                 columns=[
-                    column("Constructor", "constructor", ConstructorColumn()),
-                    column("No.", "numbers", BrListColumn()),
-                    column("No", "numbers", BrListColumn()),
-                    column("Driver name", "drivers", DriverListColumn()),
-                    column("Driver", "drivers", DriverListColumn()),
-                    column("Rounds", "rounds", BrListColumn()),
+                    ColumnSpec("Constructor", "constructor", ConstructorColumn()),
+                    ColumnSpec("No.", "numbers", BrListColumn()),
+                    ColumnSpec("No", "numbers", BrListColumn()),
+                    ColumnSpec("Driver name", "drivers", DriverListColumn()),
+                    ColumnSpec("Driver", "drivers", DriverListColumn()),
+                    ColumnSpec("Rounds", "rounds", BrListColumn()),
                 ],
             ),
         )
@@ -44,10 +44,10 @@ class SeasonFreePracticeParser:
             expected_headers=["Constructor", "Driver name", "Rounds"],
             schema=TableSchemaDSL(
                 columns=[
-                    column("Constructor", "constructor", ConstructorColumn()),
-                    column("Driver name", "drivers", DriverListColumn()),
-                    column("Driver", "drivers", DriverListColumn()),
-                    column("Rounds", "rounds", BrListColumn()),
+                    ColumnSpec("Constructor", "constructor", ConstructorColumn()),
+                    ColumnSpec("Driver name", "drivers", DriverListColumn()),
+                    ColumnSpec("Driver", "drivers", DriverListColumn()),
+                    ColumnSpec("Rounds", "rounds", BrListColumn()),
                 ],
             ),
         )
@@ -61,13 +61,13 @@ class SeasonFreePracticeParser:
             expected_headers=["Constructor", "Practice drivers"],
             schema=TableSchemaDSL(
                 columns=[
-                    column("Constructor", "constructor", ConstructorColumn()),
-                    column(
+                    ColumnSpec("Constructor", "constructor", ConstructorColumn()),
+                    ColumnSpec(
                         "Practice drivers",
                         "practice_drivers",
                         DriversWithRoundsColumn(),
                     ),
-                    column(
+                    ColumnSpec(
                         "Practice driver(s)",
                         "practice_drivers",
                         DriversWithRoundsColumn(),

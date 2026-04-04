@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from models.validation.engine_regulation import EngineRegulation
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
@@ -11,7 +12,7 @@ from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import UnitColumn
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
@@ -53,27 +54,27 @@ class EngineRegulationTableParser(WikiTableBaseParser):
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
-        column("Years", "seasons", SeasonsColumn()),
-        column("Operating principle", "operating_principle", TextColumn()),
-        column(
+        ColumnSpec("Years", "seasons", SeasonsColumn()),
+        ColumnSpec("Operating principle", "operating_principle", TextColumn()),
+        ColumnSpec(
             "Maximum displacement - Naturally aspirated",
             "maximum_displacement",
             NestedUnitListColumn("naturally_aspirated"),
         ),
-        column(
+        ColumnSpec(
             "Maximum displacement - Forced induction",
             "maximum_displacement",
             NestedUnitListColumn("forced_induction"),
         ),
-        column("Configuration", "configuration", EngineConfigurationColumn()),
-        column("RPM limit", "rpm_limit", UnitColumn(unit="rpm")),
-        column("Fuel flow limit (Qmax)", "fuel_flow_limit", TextColumn()),
-        column(
+        ColumnSpec("Configuration", "configuration", EngineConfigurationColumn()),
+        ColumnSpec("RPM limit", "rpm_limit", UnitColumn(unit="rpm")),
+        ColumnSpec("Fuel flow limit (Qmax)", "fuel_flow_limit", TextColumn()),
+        ColumnSpec(
             "Fuel composition - Alcohol",
             "fuel_composition",
             NestedTextColumn("alcohol"),
         ),
-        column(
+        ColumnSpec(
             "Fuel composition - Petrol",
             "fuel_composition",
             NestedTextColumn("petrol"),
@@ -127,7 +128,7 @@ class EngineRegulationScraper(BaseEngineTableScraper):
         expected_headers=["Years", "Operating principle"],
         model_class=EngineRegulation,
         schema=TABLE_SCHEMA,
-        record_factory=RECORD_FACTORIES.mapping(),
+        record_factory=MappingRecordFactory(),
     )
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:

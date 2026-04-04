@@ -1,3 +1,4 @@
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
@@ -22,7 +23,7 @@ class ShortenedRacePointsScraper(BasePointsScraper):
         section_id="Shortened_races",
         expected_headers=SHORTENED_RACE_EXPECTED_HEADERS,
         schema=build_shortened_race_points_schema(),
-        record_factory=RECORD_FACTORIES.mapping(),
+        record_factory=MappingRecordFactory(),
     )
 
     def __init__(

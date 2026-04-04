@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
@@ -39,7 +39,7 @@ class DriverResultsSchemaFactory:
                 column_factory_by_key=COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
             ).columns
             schema_columns.extend(
-                column(header, header, self._unknown(RoundColumn()))
+                ColumnSpec(header, header, self._unknown(RoundColumn()))
                 for header in headers
                 if header.isdigit()
             )
@@ -55,7 +55,7 @@ class DriverResultsSchemaFactory:
     ) -> TableSchemaDSL:
         return TableSchemaDSL(
             columns=[
-                column(
+                ColumnSpec(
                     header,
                     key,
                     self._unknown(column_factory_by_key[key]()),
