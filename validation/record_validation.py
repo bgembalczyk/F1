@@ -56,7 +56,8 @@ def _validate_nested_value(
 
 
 def _require_keys(
-    record: Mapping[str, Any], keys: tuple[str, ...]
+    record: Mapping[str, Any],
+    keys: tuple[str, ...],
 ) -> list[ValidationIssue]:
     return [ValidationIssue.missing(key) for key in keys if key not in record]
 
