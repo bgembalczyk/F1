@@ -17,7 +17,7 @@ repos:
         files: ^scrapers/.*\.py$
       - id: enforce-structural-quality
         name: enforce-structural-quality
-        entry: python scripts/ci/enforce_structural_quality.py
+        entry: python -m scripts.ci.enforce_structural_quality
         language: system
         pass_filenames: true
         files: ^(layers|models|scrapers|validation|infrastructure|complete_extractor|config)/.*\.py$

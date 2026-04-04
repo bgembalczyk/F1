@@ -8,11 +8,11 @@ from warnings import warn
 
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 
 if TYPE_CHECKING:
     from scrapers.base.table.columns.types.base import BaseColumn
     from scrapers.base.table.config import ScraperConfig
+    from scrapers.base.table.dsl.table_schema import TableSchemaDSL
     from scrapers.base.table.schema import TableSchema
     from scrapers.base.table.schema import TableSchemaBuilder
 
@@ -101,10 +101,6 @@ def build_name_status_fragment(
     column_type: BaseColumn,
 ) -> list[ColumnSpec]:
     return [column(header, output_key, column_type)]
-
-
-def build_table_schema(*parts: SchemaPart) -> TableSchemaDSL:
-    return TableSchemaDSL(columns=build_columns(*parts))
 
 
 def build_scraper_config(

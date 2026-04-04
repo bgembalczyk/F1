@@ -17,7 +17,6 @@ from scrapers.base.table.columns.helpers.constants import FUEL_TYPE_URLS
 from scrapers.base.table.columns.helpers.constants import MODIFIER_ONLY_URLS
 from scrapers.base.table.columns.helpers.constants import TYPE_WITH_MODIFIER_RE
 from scrapers.base.table.columns.helpers.constants import VERBOSE_TYPE_MAP
-from scrapers.base.table.columns.helpers.link_lookup import build_link_lookup
 
 
 class EngineLinkHelpers:
@@ -30,19 +29,6 @@ class EngineLinkHelpers:
     - Resolving engine type codes from links
     - Processing secondary (non-model) links
     """
-
-    @staticmethod
-    def build_link_lookup(links: list[LinkRecord]) -> dict[str, list[LinkRecord]]:
-        """
-        Build lookup dictionary mapping engine names to their link records.
-
-        Args:
-            links: List of link records for engines
-
-        Returns:
-            Dictionary mapping lowercase engine names to lists of matching links
-        """
-        return build_link_lookup(links)
 
     @staticmethod
     def _extract_modifier_flags(

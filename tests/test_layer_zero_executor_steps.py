@@ -249,15 +249,21 @@ def test_run_orchestrates_steps_in_order(tmp_path: Path) -> None:
     order: list[str] = []
 
     executor._resolve_config_factory = lambda: order.append("resolve") or {}
-    executor._build_local_run_config = lambda **_kwargs: order.append(
-        "build",
-    ) or RunConfig(
-        output_dir=tmp_path,
-        include_urls=True,
-        debug_dir=tmp_path / "debug",
+    executor._build_local_run_config = lambda **_kwargs: (
+        order.append(
+            "build",
+        )
+        or RunConfig(
+            output_dir=tmp_path,
+            include_urls=True,
+            debug_dir=tmp_path / "debug",
+        )
     )
-    executor._run_single_job = lambda **_kwargs: order.append("run") or Path(
-        "layers/0_layer/drivers/raw/f1_drivers_2026.json",
+    executor._run_single_job = lambda **_kwargs: (
+        order.append("run")
+        or Path(
+            "layers/0_layer/drivers/raw/f1_drivers_2026.json",
+        )
     )
     executor._maybe_mirror_constructors = lambda **_kwargs: order.append("mirror")
     executor._finalize_merge = lambda *_args, **_kwargs: order.append("merge")

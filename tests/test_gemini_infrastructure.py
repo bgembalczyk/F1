@@ -91,7 +91,9 @@ def test_model_selector_try_record_request_respects_limits() -> None:
 
 def test_orchestration_cache_hit_and_miss(tmp_path: Path) -> None:
     cache = GeminiCache(cache_dir=tmp_path / "cache")
-    selector = ModelSelector([ModelConfig("m", requests_per_minute=5, requests_per_day=50)])
+    selector = ModelSelector(
+        [ModelConfig("m", requests_per_minute=5, requests_per_day=50)],
+    )
     service = GeminiOrchestrationService(model_selector=selector, cache=cache)
 
     cache.set("p-hit", "m", {"cached": True})
@@ -127,7 +129,9 @@ def test_orchestration_maps_transport_error_and_falls_back(tmp_path: Path) -> No
     assert seen == ["m1", "m2"]
 
 
-def test_orchestration_raises_models_exhausted_when_all_models_fail(tmp_path: Path) -> None:
+def test_orchestration_raises_models_exhausted_when_all_models_fail(
+    tmp_path: Path,
+) -> None:
     cache = GeminiCache(cache_dir=tmp_path / "cache")
     selector = ModelSelector(
         [
@@ -213,7 +217,11 @@ def test_transport_success_and_error_mapping(monkeypatch: pytest.MonkeyPatch) ->
         "urllib.request.urlopen",
         lambda *_args, **_kwargs: _DummyResponse('{"candidates": []}'),
     )
-    assert transport.generate("p", model="m", response_mime_type="application/json") == {
+    assert transport.generate(
+        "p",
+        model="m",
+        response_mime_type="application/json",
+    ) == {
         "candidates": [],
     }
 

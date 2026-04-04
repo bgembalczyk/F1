@@ -5,7 +5,6 @@ from scrapers.base.options import HttpPolicy
 from scrapers.base.options import default_http_policy
 from scrapers.config import DataPaths
 from scrapers.config import ScraperConfig
-from scrapers.config import default_config
 from scrapers.config import default_data_paths
 from scrapers.config import default_scraper_config
 
@@ -34,15 +33,6 @@ def test_default_scraper_config_includes_http_policy():
     assert isinstance(config, ScraperConfig)
     assert config.include_urls is True
     assert isinstance(config.policy, HttpPolicy)
-
-
-def test_default_config_is_scraper_config_alias():
-    first = default_config()
-    second = default_scraper_config()
-
-    assert isinstance(first, ScraperConfig)
-    assert isinstance(second, ScraperConfig)
-    assert first is not second
 
 
 def test_default_data_paths_and_compatibility_resolution(tmp_path):

@@ -14,7 +14,9 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
 from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_metric_columns
-from scrapers.constructors.base_constructor_list_scraper import BaseConstructorListScraper
+from scrapers.constructors.base_constructor_list_scraper import (
+    BaseConstructorListScraper,
+)
 from scrapers.constructors.config_factory import build_constructor_list_config
 from scrapers.constructors.constants import CONSTRUCTOR_FASTEST_LAPS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_PODIUMS_HEADER

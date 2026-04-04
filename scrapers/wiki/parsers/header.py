@@ -25,8 +25,9 @@ class HeaderParser(WikiParser[HeaderParsedData]):
         """
         title_tag = element.find(
             ["h1", "span"],
-            class_=lambda x: x
-            and "mw-page-title" in (x if isinstance(x, list) else x.split()),
+            class_=lambda x: (
+                x and "mw-page-title" in (x if isinstance(x, list) else x.split())
+            ),
         )
         if title_tag is None:
             title_tag = element.find("h1")
@@ -46,6 +47,7 @@ class HeaderParser(WikiParser[HeaderParsedData]):
         """
         return soup.find(
             HEADER_TAG,
-            class_=lambda x: x
-            and HEADER_CLASS in (x if isinstance(x, list) else x.split()),
+            class_=lambda x: (
+                x and HEADER_CLASS in (x if isinstance(x, list) else x.split())
+            ),
         )

@@ -7,7 +7,12 @@ from scrapers.seasons.parsers.free_practice import SeasonFreePracticeParser
 
 
 class _StubFreePracticeTableParser:
-    def __init__(self, responses: list[list[dict[str, Any]]] | None = None, *, error: Exception | None = None) -> None:
+    def __init__(
+        self,
+        responses: list[list[dict[str, Any]]] | None = None,
+        *,
+        error: Exception | None = None,
+    ) -> None:
         self._responses = responses or []
         self._error = error
         self.calls: list[dict[str, Any]] = []

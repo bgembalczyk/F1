@@ -22,11 +22,12 @@ class ConstructorRecordFactory(BaseRecordFactory):
                 "aliases": FIELD_ALIASES["constructor"],
                 "record_name": "constructor",
                 "field_normalizers": {
-                    "licensed_in": lambda value,
-                    field: normalize_optional_link_list_or_link_or_string(
-                        self.normalizer,
-                        value,
-                        field,
+                    "licensed_in": lambda value, field: (
+                        normalize_optional_link_list_or_link_or_string(
+                            self.normalizer,
+                            value,
+                            field,
+                        )
                     ),
                 },
                 "list_field_normalizers": {

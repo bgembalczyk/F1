@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pytest
 
+
 @pytest.mark.parametrize("module_name", ["main"])
 def test_main_import_and_entrypoint_call_path(
     monkeypatch: pytest.MonkeyPatch,
@@ -73,7 +74,11 @@ def test_create_default_pipeline_application_wires_components(
     module = importlib.import_module(module_name)
     captured: dict[str, object] = {}
 
-    monkeypatch.setattr(module, "LayerZeroMergeService", lambda **kwargs: ("merge", kwargs))
+    monkeypatch.setattr(
+        module,
+        "LayerZeroMergeService",
+        lambda **kwargs: ("merge", kwargs),
+    )
     monkeypatch.setattr(module, "LayerZeroExecutor", lambda **kwargs: ("l0", kwargs))
     monkeypatch.setattr(module, "LayerOneExecutor", lambda **kwargs: ("l1", kwargs))
 
@@ -97,9 +102,16 @@ def test_create_default_pipeline_application_wires_components(
 @pytest.mark.parametrize(
     ("factory_builder", "expected"),
     [
-        (lambda: importlib.import_module("layers.orchestration.factories").DefaultLayerZeroRunConfigFactory(), {}),
         (
-            lambda: importlib.import_module("layers.orchestration.factories").StaticScraperKwargsFactory(
+            lambda: importlib.import_module(
+                "layers.orchestration.factories",
+            ).DefaultLayerZeroRunConfigFactory(),
+            {},
+        ),
+        (
+            lambda: importlib.import_module(
+                "layers.orchestration.factories",
+            ).StaticScraperKwargsFactory(
                 scraper_kwargs={"export_scope": "history"},
             ),
             {"export_scope": "history"},
@@ -132,7 +144,11 @@ def test_sponsorship_liveries_factory_fallback_and_success(
         legacy_json_output_path="y",
     )
 
-    monkeypatch.setattr(factories, "ParenClassifier", lambda gemini_client: ("classifier", gemini_client))
+    monkeypatch.setattr(
+        factories,
+        "ParenClassifier",
+        lambda gemini_client: ("classifier", gemini_client),
+    )
     if missing_key:
         monkeypatch.setattr(
             factories.GeminiClient,
@@ -168,7 +184,11 @@ def test_orchestration_helpers_exports_and_emits_deprecation_warning() -> None:
 @pytest.mark.parametrize(
     ("discovered", "explicit", "expected_runner"),
     [
-        ({"drivers": "d"}, {"drivers": "e", "seasons": "s"}, {"drivers": "d", "seasons": "s"}),
+        (
+            {"drivers": "d"},
+            {"drivers": "e", "seasons": "s"},
+            {"drivers": "d", "seasons": "s"},
+        ),
         ({}, {"drivers": "e"}, {"drivers": "e"}),
         ({"drivers": "d"}, {}, {"drivers": "d"}),
     ],
@@ -196,8 +216,13 @@ def test_merge_runner_maps_prefers_discovered_and_falls_back_to_explicit(
         ("points_history", "history"),
     ],
 )
-def test_build_layer_zero_factory_map_parametrized(seed_name: str, expected_scope: str) -> None:
-    from layers.orchestration.runner_registry import build_layer_zero_run_config_factory_map
+def test_build_layer_zero_factory_map_parametrized(
+    seed_name: str,
+    expected_scope: str,
+) -> None:
+    from layers.orchestration.runner_registry import (
+        build_layer_zero_run_config_factory_map,
+    )
 
     factory_map = build_layer_zero_run_config_factory_map()
 
@@ -211,7 +236,7 @@ def test_runner_map_missing_runner_and_invalid_key_behaviour(
 ) -> None:
     from layers.orchestration import runner_registry
 
-    monkeypatch.setattr(runner_registry, "build_layer_one_runner_map_discovered", lambda: {})
+    monkeypatch.setattr(runner_registry, "build_layer_one_runner_map_discovered", dict)
     monkeypatch.setattr(
         runner_registry,
         "_build_explicit_layer_one_runner_map",

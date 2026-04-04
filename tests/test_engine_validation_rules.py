@@ -85,9 +85,10 @@ def test_engine_regulation_happy_paths(payload, expected):
         assert na_value["min"]["value"] == expected["na_min"]
     if expected["na_min"] is None:
         assert isinstance(na_value, list)
-    assert model.maximum_displacement.get("forced_induction") == expected[
-        "forced_induction"
-    ]
+    assert (
+        model.maximum_displacement.get("forced_induction")
+        == expected["forced_induction"]
+    )
     assert model.configuration["text"] == expected["config_text"]
     assert model.configuration.get("max_cylinders") == expected["max_cylinders"]
     assert model.configuration["extras"] == expected["extras"]
@@ -116,8 +117,8 @@ def test_engine_regulation_happy_paths(payload, expected):
         pytest.param(
             {
                 "maximum_displacement": {
-                    "forced_induction": [{"value": 1500, "unit": "cc"}, "oops"]
-                }
+                    "forced_induction": [{"value": 1500, "unit": "cc"}, "oops"],
+                },
             },
             TypeError,
             "Pole maximum_displacement.forced_induction[1] musi być słownikiem lub liczbą",
@@ -147,8 +148,8 @@ def test_engine_regulation_happy_paths(payload, expected):
                     "naturally_aspirated": {
                         "min": {"value": -1, "unit": "cc"},
                         "max": {"value": 1000, "unit": "cc"},
-                    }
-                }
+                    },
+                },
             },
             ValueError,
             "Pole maximum_displacement.naturally_aspirated.min.value nie może być ujemne",
@@ -179,18 +180,20 @@ def test_engine_regulation_validation_errors(payload, error_type, message):
                     "range_kg": {
                         "min": {"value": 100, "unit": "kg"},
                         "max": {"value": 110, "unit": "kg"},
-                    }
+                    },
                 },
                 "fuel_flow_rate": {
                     "rate": {"value": 100, "unit": "kg/h"},
                     "applies_above_rpm": 10500,
                 },
-                "fuel_injection_pressure_limit": {"limit": {"value": 500, "unit": "bar"}},
+                "fuel_injection_pressure_limit": {
+                    "limit": {"value": 500, "unit": "bar"},
+                },
                 "engine_rpm_limit": {
                     "limit": {
                         "min": {"value": 10000, "unit": "rpm"},
                         "max": {"value": 15000, "unit": "rpm"},
-                    }
+                    },
                 },
                 "power_output": {
                     "min": {"value": 600, "unit": "hp"},
@@ -275,8 +278,22 @@ def test_engine_restriction_validation_errors(payload, error_type, message):
 @pytest.mark.parametrize(
     ("value", "allowed", "field_name", "expected", "error"),
     [
-        pytest.param(" Active ", ["active", " retired ", "ACTIVE"], "status", "active", None, id="status-happy-path"),
-        pytest.param("invalid", ["active", "retired"], "status", None, "Pole status musi mieć jedną z wartości: active, retired", id="status-invalid"),
+        pytest.param(
+            " Active ",
+            ["active", " retired ", "ACTIVE"],
+            "status",
+            "active",
+            None,
+            id="status-happy-path",
+        ),
+        pytest.param(
+            "invalid",
+            ["active", "retired"],
+            "status",
+            None,
+            "Pole status musi mieć jedną z wartości: active, retired",
+            id="status-invalid",
+        ),
     ],
 )
 def test_validate_status(value, allowed, field_name, expected, error):
@@ -290,9 +307,30 @@ def test_validate_status(value, allowed, field_name, expected, error):
 @pytest.mark.parametrize(
     ("value", "field_name", "expected", "error_type", "error"),
     [
-        pytest.param({"value": "1.5", "unit": "bar"}, "pressure", {"value": 1.5, "unit": "bar"}, None, None, id="unit-value-dict"),
-        pytest.param(42, "pressure", {"value": 42.0, "unit": None}, None, None, id="unit-value-number"),
-        pytest.param("bad", "pressure", None, TypeError, "Pole pressure musi być słownikiem lub liczbą", id="unit-value-invalid"),
+        pytest.param(
+            {"value": "1.5", "unit": "bar"},
+            "pressure",
+            {"value": 1.5, "unit": "bar"},
+            None,
+            None,
+            id="unit-value-dict",
+        ),
+        pytest.param(
+            42,
+            "pressure",
+            {"value": 42.0, "unit": None},
+            None,
+            None,
+            id="unit-value-number",
+        ),
+        pytest.param(
+            "bad",
+            "pressure",
+            None,
+            TypeError,
+            "Pole pressure musi być słownikiem lub liczbą",
+            id="unit-value-invalid",
+        ),
     ],
 )
 def test_normalize_unit_value_cases(value, field_name, expected, error_type, error):
@@ -314,7 +352,13 @@ def test_normalize_unit_value_cases(value, field_name, expected, error_type, err
             None,
             id="unit-list-happy-path",
         ),
-        pytest.param("bad", "items", None, "Pole items musi być listą", id="unit-list-invalid-container"),
+        pytest.param(
+            "bad",
+            "items",
+            None,
+            "Pole items musi być listą",
+            id="unit-list-invalid-container",
+        ),
     ],
 )
 def test_normalize_unit_list_cases(value, field_name, expected, error):
@@ -331,12 +375,22 @@ def test_normalize_unit_list_cases(value, field_name, expected, error):
         pytest.param(
             {"min": {"value": 10, "unit": "kg"}, "max": 20},
             "range",
-            {"min": {"value": 10.0, "unit": "kg"}, "max": {"value": 20.0, "unit": None}},
+            {
+                "min": {"value": 10.0, "unit": "kg"},
+                "max": {"value": 20.0, "unit": None},
+            },
             None,
             None,
             id="range-value-happy-path",
         ),
-        pytest.param("bad", "range", None, TypeError, "Pole range musi być słownikiem", id="range-value-invalid"),
+        pytest.param(
+            "bad",
+            "range",
+            None,
+            TypeError,
+            "Pole range musi być słownikiem",
+            id="range-value-invalid",
+        ),
     ],
 )
 def test_normalize_range_value_cases(value, field_name, expected, error_type, error):
@@ -345,7 +399,6 @@ def test_normalize_range_value_cases(value, field_name, expected, error_type, er
     else:
         with pytest.raises(error_type, match=re.escape(error)):
             normalize_range_value(value, field_name)
-
 
 
 @pytest.mark.parametrize(

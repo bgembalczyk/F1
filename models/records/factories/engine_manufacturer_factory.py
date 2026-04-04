@@ -16,11 +16,12 @@ class EngineManufacturerRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "manufacturer_status": lambda value,
-                    field: self.normalizer.normalize_status(
-                        value,
-                        ["current", "former"],
-                        field,
+                    "manufacturer_status": lambda value, field: (
+                        self.normalizer.normalize_status(
+                            value,
+                            ["current", "former"],
+                            field,
+                        )
                     ),
                 },
                 "list_field_normalizers": {

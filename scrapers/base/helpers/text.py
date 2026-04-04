@@ -61,11 +61,6 @@ def choose_richer_entity(a: object, b: object) -> object:
 # Centralne miejsce do usuwania przypisów wiki - nie duplikuj regexu w scraperach.
 
 
-def strip_wiki_refs(text: str) -> str:
-    """Usuń przypisy w formacie [1], [note 3], ..."""
-    return REF_RE.sub("", text)
-
-
 def normalize_dashes(text: str) -> str:
     """Ujednolić warianty myślników i usuń spacje wokół '-'."""
     t = text.replace("\u2013", "-").replace("\u2014", "-").replace("\u2212", "-")
@@ -106,7 +101,7 @@ def clean_wiki_text(
     """Normalizuje whitespace oraz opcjonalnie usuwa przypisy i markery językowe."""
     t = coerce_text(text).replace("\xa0", " ").replace("&nbsp;", " ")
     if strip_refs:
-        t = strip_wiki_refs(t)
+        t = REF_RE.sub("", t)
     t = re.sub(r"\s+", " ", t).strip()
     if normalize_dashes:
         t = _normalize_dashes_func(t)

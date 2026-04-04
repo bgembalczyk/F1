@@ -20,9 +20,16 @@ if typing.TYPE_CHECKING:
 
 def _default_export_service() -> ExportService:
     # di-antipattern-allow: local import by design.
-    from scrapers.base.export.composition import create_default_export_service
+    from scrapers.base.export.exporters import DataExporter
+    from scrapers.base.export.fieldnames import FieldnamesStrategySelector
+    from scrapers.base.export.service import ExportService as _ExportService
+    from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
 
-    return create_default_export_service()
+    return _ExportService(
+        exporter=DataExporter(),
+        fieldnames_strategy=FieldnamesStrategySelector(),
+        dataframe_formatter=PandasDataFrameFormatter(),
+    )
 
 
 @dataclass(frozen=True)
