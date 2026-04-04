@@ -2,8 +2,8 @@ from collections.abc import Mapping
 from typing import Any
 
 from validation.issue import ValidationIssue
+from validation.record_validation import validate_record
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 class ValidatedModel:
@@ -18,19 +18,11 @@ class ValidatedModel:
         return
 
     @classmethod
-    def validate_schema(
-        cls,
-        record: Mapping[str, Any],
-        schema: RecordSchema | Mapping[str, Any],
-    ) -> list[ValidationIssue]:
-        return RecordValidator.validate_schema(record, schema)
-
-    @classmethod
     def validate_record(cls, record: Mapping[str, Any]) -> list[ValidationIssue]:
         schema = cls.__schema__
         if schema is None:
             return []
-        return cls.validate_schema(record, schema)
+        return validate_record(record, schema)
 
     @classmethod
     def model_validate(cls, record: Mapping[str, Any]) -> "ValidatedModel":
