@@ -65,7 +65,7 @@ class F1TableScraper(WikiScraper, ABC):
 
         super().__init__(options=options)
 
-        resolved_config = config or self.CONFIG
+        resolved_config = config or self.CONFIG or self._build_config_from_class_attrs()
         if resolved_config is None:
             msg = "ScraperConfig must be provided for F1TableScraper."
             raise ValueError(msg)
@@ -98,6 +98,22 @@ class F1TableScraper(WikiScraper, ABC):
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         return options
 
+    def _build_config_from_class_attrs(self) -> ScraperConfig | None:
+        url = getattr(self, "url", None)
+        if not isinstance(url, str) or not url.strip():
+            return None
+        return ScraperConfig(
+            url=url,
+            section_id=getattr(self, "section_id", None),
+            expected_headers=getattr(self, "expected_headers", None),
+            column_map=getattr(self, "column_map", {}),
+            columns=getattr(self, "columns", {}),
+            table_css_class=getattr(self, "table_css_class", "wikitable"),
+            record_factory=getattr(self, "record_factory", None),
+            model_class=getattr(self, "model_class", None),
+            default_column=getattr(self, "default_column", AutoColumn()),
+        )
+
     def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         """
         Parsuje tabelę przez HtmlTableParser
@@ -109,13 +125,17 @@ class F1TableScraper(WikiScraper, ABC):
     def parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         return self._parse_soup(soup)
 
-    def parse_row(self, row: TableRow) -> Any | None:
+    def parse_row(self, row: TableRow | dict[str, Any]) -> Any | None:
         """
         Dla każdej komórki:
         - ustala nagłówek i klucz,
         - wybiera typ kolumny z `columns`,
         - deleguje całą logikę do handlera kolumny.
         """
+        if isinstance(row, dict):
+            headers = list(row.keys())
+            cells = list(row.values())
+            return self.extractor.pipeline.parse_cells(headers, cells)
         return self.extractor.parse_row(row)
 
     def _model_fields(self) -> set[str] | None:

@@ -10,7 +10,7 @@ from validation.schemas import NestedSchema
 from validation.validator_base import RecordValidator
 
 
-class CircuitRecord(TypedDict, total=False):
+class CircuitRecord(TypedDict):
     circuit: LinkRecord
     circuit_status: Literal["current", "future", "former"]
     type: str | None

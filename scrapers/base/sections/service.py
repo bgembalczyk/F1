@@ -92,7 +92,7 @@ class BaseSectionExtractionService(ABC):
             ]
         if self.aggregate_records_by_section_id:
             return {
-                SectionId.from_raw(section.section_id).to_export(): section.records
+                str(section.section_id): section.records
                 for section in sections
             }
         return [self._build_section_payload(section) for section in sections]
@@ -127,7 +127,7 @@ class BaseSectionExtractionService(ABC):
     ) -> dict[str, Any]:
         return {
             "section": EntityName.from_raw(section.section_label).to_export(),
-            "section_id": SectionId.from_raw(section.section_id).to_export(),
+            "section_id": str(section.section_id),
             "section_metadata": section_metadata,
         }
 

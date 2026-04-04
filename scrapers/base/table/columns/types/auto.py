@@ -36,7 +36,12 @@ class AutoColumn(BaseColumn):
     def _cell_text(self, ctx: ColumnContext) -> str:
         if ctx.cell is not None:
             # stripped_strings zachowuje np. "-" jako osobny token
-            raw = " ".join(list(ctx.cell.stripped_strings))
+            if hasattr(ctx.cell, "stripped_strings"):
+                raw = " ".join(list(ctx.cell.stripped_strings))
+            elif hasattr(ctx.cell, "get_text"):
+                raw = ctx.cell.get_text(" ", strip=True)
+            else:
+                raw = str(ctx.cell)
             return clean_wiki_text(
                 raw,
                 strip_lang_suffix=self.strip_lang_suffix,
@@ -81,7 +86,11 @@ class AutoColumn(BaseColumn):
             return value or None
 
         # 2) wiele linków: lista tylko gdy poza linkami są same ',' / ';'
-        if len(links) > 1 and ctx.cell is not None:
+        if (
+            len(links) > 1
+            and ctx.cell is not None
+            and hasattr(ctx.cell, "decode_contents")
+        ):
             raw_html = ctx.cell.decode_contents()
             tmp = raw_html
 

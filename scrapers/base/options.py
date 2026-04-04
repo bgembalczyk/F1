@@ -1,3 +1,4 @@
+from contextlib import suppress
 from dataclasses import dataclass
 from dataclasses import field
 from pathlib import Path
@@ -89,6 +90,22 @@ class ScraperOptions:
             self.pipeline.post_processors = list(self.post_processors)
         else:
             self.post_processors = self.pipeline.post_processors
+        if (
+            self.source_adapter is not None
+            and not hasattr(self.source_adapter, "policy")
+        ):
+            with suppress(AttributeError, TypeError):
+                self.source_adapter.policy = self.http.policy
+
+    def __getattribute__(self, name: str):
+        value = object.__getattribute__(self, name)
+        if name == "source_adapter" and value is not None:
+            try:
+                policy = object.__getattribute__(self, "http").policy
+                value.policy = policy
+            except (AttributeError, TypeError):
+                pass
+        return value
 
     def to_http_policy(self) -> HttpPolicy:
         return self.http.policy

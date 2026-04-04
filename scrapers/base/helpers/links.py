@@ -45,7 +45,10 @@ def normalize_single_link(
     if is_wikipedia_redlink(url):
         url = None
 
-    normalized = validate_link({"text": text, "url": url}, field_name="link")
+    if isinstance(url, str) and url.startswith("/"):
+        normalized = {"text": text, "url": url}
+    else:
+        normalized = validate_link({"text": text, "url": url}, field_name="link")
     if not normalized.get("text") and normalized.get("url") is None:
         return empty_link_record(drop_empty=drop_empty)
     return normalized
@@ -58,7 +61,7 @@ def normalize_links(
     allow_local_anchors: bool = True,
     strip_marks: bool = True,
     drop_empty: bool = True,
-    drop_empty_text: bool = False,
+    drop_empty_text: bool = True,
     strip_lang_suffix: bool = True,
 ) -> list[LinkRecord]:
     if isinstance(links, Tag | str):

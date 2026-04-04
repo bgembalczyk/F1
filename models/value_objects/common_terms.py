@@ -56,12 +56,8 @@ class SectionId(str):
         if not text:
             msg = "SectionId cannot be empty."
             raise ValueError(msg)
-        normalized = re.sub(r"[\s\-]+", "_", text.lower())
-        normalized = re.sub(r"_+", "_", normalized).strip("_")
-        if not normalized:
-            msg = "SectionId cannot normalize to empty."
-            raise ValueError(msg)
-        return str.__new__(cls, normalized)
+        cleaned = re.sub(r"\s+", " ", text).strip()
+        return str.__new__(cls, cleaned)
 
     @classmethod
     def from_raw(cls, value: str | SectionId) -> SectionId:

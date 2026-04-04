@@ -73,9 +73,10 @@ class ScraperConfig:
                     msg,
                 )
 
-        if self.record_factory is not None and not hasattr(
-            self.record_factory,
-            "create",
+        if (
+            self.record_factory is not None
+            and not hasattr(self.record_factory, "create")
+            and not callable(self.record_factory)
         ):
             msg = "ScraperConfig.record_factory must implement RecordFactory.create()."
             raise TypeError(msg)

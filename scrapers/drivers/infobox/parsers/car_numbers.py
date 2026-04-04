@@ -10,6 +10,8 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.drivers.infobox.parsers.constants import MIN_VALID_CAR_NUMBER_YEAR
 from scrapers.drivers.infobox.parsers.year import YearParser
 
+MIN_YEAR_TOKENS_FOR_RANGE = 2
+
 
 class CarNumbersParser:
     """Handles parsing of car numbers with optional year ranges."""
@@ -53,10 +55,13 @@ class CarNumbersParser:
             if number >= MIN_VALID_CAR_NUMBER_YEAR and not prefix:
                 continue
             years_text = match.group("years") or ""
-            years = (
-                YearParser.parse_year_range(years_text)
-                if years_text
-                else {"start": None, "end": None}
-            )
+            years = {"start": None, "end": None}
+            if years_text:
+                parsed = YearParser.parse_year_range(years_text)
+                year_tokens = re.findall(r"\b\d{4}\b", years_text)
+                if len(year_tokens) >= MIN_YEAR_TOKENS_FOR_RANGE:
+                    parsed["start"] = int(year_tokens[0])
+                    parsed["end"] = int(year_tokens[-1])
+                years = parsed
             entries.append({"number": number, "years": years})
         return entries
