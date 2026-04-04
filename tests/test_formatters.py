@@ -47,6 +47,20 @@ def test_json_formatter_with_metadata() -> None:
     assert parsed["data"] == [{"name": "Ayrton", "wins": 41}]
 
 
+def test_json_formatter_sorts_nested_dict_keys() -> None:
+    formatter = JsonFormatter()
+    data = [{"z": {"d": 1, "a": 2}, "a": {"y": {"b": 1, "a": 2}}}]
+
+    payload = formatter.format(data, include_metadata=False)
+
+    assert payload.index('"a"') < payload.index('"z"')
+    assert payload.index('"a": 2') < payload.index('"d": 1')
+    assert payload.index('"a": 2', payload.index('"y"')) < payload.index(
+        '"b": 1',
+        payload.index('"y"'),
+    )
+
+
 def test_csv_formatter_builds_union_of_fields() -> None:
     formatter = CsvFormatter()
     result = ScrapeResult(
