@@ -98,6 +98,7 @@ class ABCScraper(ABC):
         )
 
     def _initialize_quality_report_service(self) -> None:
+        # di-antipattern-allow: legacy runtime wiring kept for backward compatibility.
         self._quality_report_service = QualityReportService(
             enabled=self._quality_report_enabled,
             debug_dir=self.debug_dir,

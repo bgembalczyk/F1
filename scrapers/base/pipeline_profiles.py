@@ -80,34 +80,14 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
             "scrapers.drivers.post_processors:EntriesStartsPointsPostProcessor",
         ),
     ),
-    "scrapers.drivers.single_scraper.SingleDriverScraper": ScraperPipelineBinding(
-        post_processors=(
-            "scrapers.drivers.postprocess.contract:DriverSectionContractPostProcessor",
-        ),
+    "scrapers.drivers.single_scraper.SingleDriverScraper": ScraperPipelineBinding(),
+    "scrapers.constructors.single_scraper.SingleConstructorScraper": (
+        ScraperPipelineBinding()
     ),
-    (
-        "scrapers.constructors.single_scraper.SingleConstructorScraper"
-    ): ScraperPipelineBinding(
-        post_processors=(
-            "scrapers.constructors.postprocess.contract:ConstructorSectionContractPostProcessor",
-        ),
-    ),
-    "scrapers.circuits.single_scraper.F1SingleCircuitScraper": ScraperPipelineBinding(
-        post_processors=(
-            "scrapers.circuits.postprocess.contract:CircuitSectionContractPostProcessor",
-        ),
-    ),
-    "scrapers.seasons.single_scraper.SingleSeasonScraper": ScraperPipelineBinding(
-        post_processors=(
-            "scrapers.seasons.postprocess.contract:SeasonSectionContractPostProcessor",
-        ),
-    ),
-    (
-        "scrapers.grands_prix.single_scraper.F1SingleGrandPrixScraper"
-    ): ScraperPipelineBinding(
-        post_processors=(
-            "scrapers.grands_prix.postprocess.contract:GrandPrixSectionContractPostProcessor",
-        ),
+    "scrapers.circuits.single_scraper.F1SingleCircuitScraper": ScraperPipelineBinding(),
+    "scrapers.seasons.single_scraper.SingleSeasonScraper": ScraperPipelineBinding(),
+    "scrapers.grands_prix.single_scraper.F1SingleGrandPrixScraper": (
+        ScraperPipelineBinding()
     ),
 }
 

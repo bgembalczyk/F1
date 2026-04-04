@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
+from scrapers.base.single_wiki_article.section_selection_strategy import (
+    WikipediaSectionByIdSelectionStrategy,
+)
 from scrapers.circuits.helpers.sections import is_circuit_like_article
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.circuits.single_scraper import detect_layout_name
@@ -27,7 +30,10 @@ def test_is_circuit_like_article_false_without_categories() -> None:
 
 
 def test_select_section_returns_fragment_section_only() -> None:
-    scraper = F1SingleCircuitScraper()
+    scraper = object.__new__(F1SingleCircuitScraper)
+    scraper.section_selection_strategy = WikipediaSectionByIdSelectionStrategy(
+        domain="circuits",
+    )
     soup = BeautifulSoup(
         """
         <h2 id="History">History</h2>
@@ -45,7 +51,10 @@ def test_select_section_returns_fragment_section_only() -> None:
 
 
 def test_select_section_returns_full_soup_when_missing_fragment() -> None:
-    scraper = F1SingleCircuitScraper()
+    scraper = object.__new__(F1SingleCircuitScraper)
+    scraper.section_selection_strategy = WikipediaSectionByIdSelectionStrategy(
+        domain="circuits",
+    )
     soup = BeautifulSoup(
         """
         <h2 id="History">History</h2>

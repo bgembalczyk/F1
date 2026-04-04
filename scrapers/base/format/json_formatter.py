@@ -15,7 +15,7 @@ class JsonFormatter:
         include_metadata: bool = False,
     ) -> str:
         payload = self._json_payload(result, include_metadata=include_metadata)
-        return json.dumps(payload, ensure_ascii=False, indent=indent)
+        return json.dumps(payload, ensure_ascii=False, indent=indent, sort_keys=True)
 
     @staticmethod
     def _json_payload(
