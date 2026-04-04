@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 import pytest
 
+from models.validation.utils import coerce_number
 from models.validation.validators import model_to_dict
 from models.validation.validators import normalize_link_list
 from models.validation.validators import normalize_season_list
@@ -12,7 +13,6 @@ from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
 from validation.issue import ValidationIssue
 from validation.validator_base import RecordValidator
-from models.validation.utils import coerce_number
 
 VALID_FLOAT_STRING = "3.5"
 EXPECTED_FLOAT_VALUE = 3.5
@@ -29,7 +29,10 @@ def test_validate_int_allows_none_and_rejects_invalid_values():
 
 
 def test_validate_float_coerces_and_rejects_negative_values():
-    assert coerce_number(VALID_FLOAT_STRING, float, "value", allow_none=True) == EXPECTED_FLOAT_VALUE
+    assert (
+        coerce_number(VALID_FLOAT_STRING, float, "value", allow_none=True)
+        == EXPECTED_FLOAT_VALUE
+    )
 
     with pytest.raises(ValueError, match="nie może być ujemne"):
         coerce_number(-1.0, float, "value", allow_none=True)

@@ -4,6 +4,7 @@ from dataclasses import dataclass
 
 RecordDict = dict[str, object]
 
+
 @dataclass(frozen=True, slots=True)
 class LinkValue:
     text: str

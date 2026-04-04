@@ -76,8 +76,7 @@ def validate_section_profiles_config(
 ) -> None:
     for domain, domain_config in config.items():
         normalized_canonical = {
-            normalize_section_text(value)
-            for value in domain_config.canonical_sections
+            normalize_section_text(value) for value in domain_config.canonical_sections
         }
 
         invalid_canonical_keys = [

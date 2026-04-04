@@ -17,6 +17,7 @@ from scrapers.wiki.parsers.sections.normalization import normalize_section_text
 if TYPE_CHECKING:
     from collections.abc import Mapping
 
+
 def normalize_section_slug(text: str) -> str:
     """Create stable section slug used in parser output IDs.
 

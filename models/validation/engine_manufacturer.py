@@ -7,10 +7,10 @@ from models.records.engine_manufacturer import ENGINE_MANUFACTURER_SCHEMA
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_MANUFACTURER_STATUSES
 from models.validation.helpers import validate_status
+from models.validation.utils import coerce_number
 from models.validation.validators import normalize_season_list
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
-from models.validation.utils import coerce_number
 
 
 @dataclass
@@ -58,12 +58,27 @@ class EngineManufacturer(ValidatedModel):
         self.seasons = normalize_season_list(self.seasons)
 
         # --- stats ---
-        self.races_entered = coerce_number(self.races_entered, int, "races_entered", allow_none=True)
-        self.races_started = coerce_number(self.races_started, int, "races_started", allow_none=True)
+        self.races_entered = coerce_number(
+            self.races_entered,
+            int,
+            "races_entered",
+            allow_none=True,
+        )
+        self.races_started = coerce_number(
+            self.races_started,
+            int,
+            "races_started",
+            allow_none=True,
+        )
         self.wins = coerce_number(self.wins, int, "wins", allow_none=True)
         self.points = coerce_number(self.points, float, "points", allow_none=True)
         self.poles = coerce_number(self.poles, int, "poles", allow_none=True)
-        self.fastest_laps = coerce_number(self.fastest_laps, int, "fastest_laps", allow_none=True)
+        self.fastest_laps = coerce_number(
+            self.fastest_laps,
+            int,
+            "fastest_laps",
+            allow_none=True,
+        )
         self.podiums = coerce_number(self.podiums, int, "podiums", allow_none=True)
         self.wcc = coerce_number(self.wcc, int, "wcc", allow_none=True)
         self.wdc = coerce_number(self.wdc, int, "wdc", allow_none=True)

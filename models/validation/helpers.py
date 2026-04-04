@@ -35,7 +35,12 @@ def normalize_unit_value(value: Any, field_name: str) -> dict[str, Any] | None:
         return {"value": normalized_value, "unit": normalized_unit}
     if isinstance(value, int | float):
         return {
-            "value": coerce_number(value, float, f"{field_name}.value", allow_none=True),
+            "value": coerce_number(
+                value,
+                float,
+                f"{field_name}.value",
+                allow_none=True,
+            ),
             "unit": None,
         }
     msg = f"Pole {field_name} musi być słownikiem lub liczbą"

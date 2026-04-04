@@ -7,8 +7,8 @@ from typing import Any
 from scrapers.base.helpers.transform_micro_ops import expand_alias_variants
 from scrapers.wiki.parsers.sections.data_classes import SectionTree
 from scrapers.wiki.parsers.sections.data_classes import SectionTreeMatch
-from scrapers.wiki.parsers.sections.normalization import normalize_section_text
 from scrapers.wiki.parsers.sections.helpers import get_section_profile
+from scrapers.wiki.parsers.sections.normalization import normalize_section_text
 
 if TYPE_CHECKING:
     from collections.abc import Iterable

@@ -5,10 +5,10 @@ from typing import Any
 from models.validation.base import ValidatedModel
 from models.validation.helpers import normalize_unit_list
 from models.validation.helpers import normalize_unit_value
+from models.validation.utils import coerce_number
 from models.validation.validators import normalize_season_list
 from models.value_objects.helpers import normalize_text
 from models.value_objects.season_ref import SeasonRef
-from models.validation.utils import coerce_number
 
 
 @dataclass

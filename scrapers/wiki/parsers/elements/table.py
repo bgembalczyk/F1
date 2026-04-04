@@ -3,8 +3,8 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.tables.header import is_repeated_header_row
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser

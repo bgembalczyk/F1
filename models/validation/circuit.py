@@ -7,10 +7,10 @@ from models.records.circuit import CIRCUIT_SCHEMA
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_CIRCUIT_STATUSES
 from models.validation.helpers import validate_status
+from models.validation.utils import coerce_number
 from models.validation.validators import normalize_season_list
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
-from models.validation.utils import coerce_number
 
 
 @dataclass
