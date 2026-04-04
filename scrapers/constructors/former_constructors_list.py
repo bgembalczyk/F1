@@ -12,7 +12,7 @@ from scrapers.constructors.constants import CONSTRUCTOR_RACES_ENTERED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_RACES_STARTED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
-from scrapers.constructors.constants import FORMER_CONSTRUCTORS_EXPECTED_HEADERS
+from scrapers.constructors.constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
 
 
@@ -54,7 +54,7 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
 
     CONFIG = build_constructor_list_config(
         section_id="Former_constructors",
-        expected_headers=FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
+        expected_headers=CONSTRUCTORS_FORMER_EXPECTED_HEADERS,
         columns=schema_columns,
     )
 
