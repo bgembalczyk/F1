@@ -20,14 +20,6 @@ class RecordFactory(Protocol):
 
 
 @dataclass(frozen=True, slots=True)
-class MappingRecordFactory:
-    """Adapter returning plain dict from mapping payload."""
-
-    def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
-        return dict(payload)
-
-
-@dataclass(frozen=True, slots=True)
 class CallableRecordFactoryAdapter:
     """Adapter for callable- and class-based legacy record factories."""
 
@@ -54,7 +46,7 @@ class RecordFactoryAdapters:
 
     @staticmethod
     def mapping() -> RecordFactory:
-        return MappingRecordFactory()
+        return CallableRecordFactoryAdapter(factory=dict)
 
     @staticmethod
     def callable(factory: Callable[[dict[str, Any]], Any] | type) -> RecordFactory:

@@ -60,7 +60,7 @@ def test_drivers_championships_rejects_mismatched_count():
 
 
 def test_rounds_value_object_normalizes_and_sorts():
-    assert Rounds.from_values([4, 2, 4, 3]).to_list() == [2, 3, 4]
+    assert list(Rounds((4, 2, 4, 3)).values) == [2, 3, 4]
 
 
 def test_to_dict_uses_value_object_interface():

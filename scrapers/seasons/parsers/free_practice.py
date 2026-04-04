@@ -167,7 +167,7 @@ class SeasonFreePracticeParser:
 
                 if index < len(rounds_list):
                     rounds_text = rounds_list[index]
-                    rounds = parse_rounds(rounds_text).to_list()
+                    rounds = list(parse_rounds(rounds_text).values)
                     if rounds_text or rounds:
                         entry["rounds"] = rounds
 

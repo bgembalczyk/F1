@@ -60,9 +60,6 @@ class LapRecord:
     def items(self) -> Iterable[tuple[str, Any]]:
         return tuple((key, self.data[key]) for key in self.data)
 
-    def keys(self) -> Iterable[str]:
-        return tuple(self.data)
-
     def update(self, other: Mapping[str, Any]) -> None:
         for key, value in other.items():
             self[key] = value
