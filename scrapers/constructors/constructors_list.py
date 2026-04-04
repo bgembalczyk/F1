@@ -34,8 +34,8 @@ from scrapers.constructors.constants import CONSTRUCTOR_RACES_ENTERED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_RACES_STARTED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
-from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
-from scrapers.constructors.constants import FORMER_CONSTRUCTORS_EXPECTED_HEADERS
+from scrapers.constructors.constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADERS
+from scrapers.constructors.constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsSectionParser
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
@@ -78,12 +78,12 @@ class ConstructorsListScraper(F1ListScraper):
     )
     _CURRENT_CONFIG = build_constructor_list_config(
         section_id=_CURRENT_SECTION_ID,
-        expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
+        expected_headers=CONSTRUCTORS_CURRENT_EXPECTED_HEADERS,
         columns=_CURRENT_SCHEMA_COLUMNS,
     )
     _FORMER_CONFIG = build_constructor_list_config(
         section_id=_FORMER_SECTION_ID,
-        expected_headers=FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
+        expected_headers=CONSTRUCTORS_FORMER_EXPECTED_HEADERS,
         columns=BaseConstructorListScraper.build_schema_columns(
             BaseConstructorListScraper.build_common_metadata_columns(),
             [BaseConstructorListScraper.build_licensed_in_column()],
