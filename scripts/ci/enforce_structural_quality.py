@@ -37,6 +37,7 @@ class StructuralVisitor(ast.NodeVisitor):
         self.class_violations: list[tuple[str, int, int]] = []
         self.alias_violations: list[tuple[str, int, str]] = []
         self._overload_names: frozenset[str] = overload_names
+        self._class_has_bases_stack: list[bool] = []
 
     @staticmethod
     def _decorator_names(node: ast.FunctionDef | ast.AsyncFunctionDef) -> list[str]:
