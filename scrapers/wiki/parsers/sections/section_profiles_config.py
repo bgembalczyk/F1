@@ -36,7 +36,9 @@ SECTION_PROFILES_CONFIG: Mapping[str, SectionDomainConfig] = {
         heading_aliases={
             "career results": frozenset({"racing record", "karting record"}),
             "racing record": frozenset({"motorsport career results"}),
-            "non-championship": frozenset({"non-championship races"}),
+            "non-championship": frozenset(
+                {"non-championship races", "non-championship_races"},
+            ),
         },
     ),
     "circuits": SectionDomainConfig(

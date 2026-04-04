@@ -7,6 +7,7 @@ from models.value_objects import SectionId
 from scrapers.base.errors import DomainParseError
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.wiki.parsers.sections.detection import find_section_heading
+from scrapers.wiki.parsers.sections.detection import normalize_section_lookup_key
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -80,12 +81,16 @@ class SectionIdResolver:
                     break
 
         candidates: list[str] = [canonical_section_id]
+        seen_lookup = {normalize_section_lookup_key(canonical_section_id)}
         for alias in resolved_alternatives:
-            if alias and alias not in candidates:
+            lookup_key = normalize_section_lookup_key(alias)
+            if alias and lookup_key not in seen_lookup:
                 candidates.append(alias)
+                seen_lookup.add(lookup_key)
 
         section_label = section_id_to_label(canonical_section_id)
-        if section_label and section_label not in candidates:
+        section_label_lookup = normalize_section_lookup_key(section_label)
+        if section_label and section_label_lookup not in seen_lookup:
             candidates.append(section_label)
         return tuple(candidates)
 
