@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from validation.record_validation import validate_record
 from validation.schema_engine import SchemaValidationEngine
 
 if TYPE_CHECKING:
@@ -27,9 +28,7 @@ def _schema_validator(
     record: Mapping[str, Any],
     schema: RecordSchema | Mapping[str, Any],
 ) -> list[ValidationIssue]:
-    from validation.validator_base import RecordValidator
-
-    return RecordValidator.validate_schema(record, schema)
+    return validate_record(record, schema)
 
 
 def build_domain_rules(
