@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from dataclasses import fields
 from dataclasses import field
 from typing import Any
 
@@ -56,25 +57,6 @@ class SeasonPayloadDTO:
 
 
 class SeasonRecordAssembler(BaseRecordAssembler):
-    _SECTION_KEYS: tuple[str, ...] = (
-        "entries",
-        "free_practice_drivers",
-        "calendar",
-        "cancelled_rounds",
-        "testing_venues_and_dates",
-        "results",
-        "non_championship_races",
-        "scoring_system",
-        "drivers_standings",
-        "constructors_standings",
-        "jim_clark_trophy",
-        "colin_chapman_trophy",
-        "south_african_formula_one_championship",
-        "british_formula_one_championship",
-        "regulation_changes",
-        "mid_season_changes",
-    )
-
     def assemble(
         self,
         payload: SeasonPayloadDTO | SeasonRecordSections,
@@ -89,4 +71,7 @@ class SeasonRecordAssembler(BaseRecordAssembler):
         return record
 
     def _map_sections(self, sections: SeasonRecordSections) -> dict[str, Any]:
-        return {key: getattr(sections, key) for key in self._SECTION_KEYS}
+        return {
+            section_field.name: getattr(sections, section_field.name)
+            for section_field in fields(SeasonRecordSections)
+        }

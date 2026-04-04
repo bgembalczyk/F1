@@ -21,11 +21,13 @@ if TYPE_CHECKING:
 class SeasonTextSectionExtractionService(BaseSectionExtractionService):
     domain = "seasons"
     aggregate_records_by_section_id = True
+    _REGULATION_CHANGES_KEY = "regulation_changes"
+    _MID_SEASON_CHANGES_KEY = "mid-season_changes"
 
     def build_entries(self) -> list[SectionAdapterEntry]:
         return [
             SectionAdapterEntry(
-                section_id="Regulation_changes",
+                section_id=self._REGULATION_CHANGES_KEY,
                 aliases=profile_entry_aliases(
                     self.domain,
                     "Regulation_changes",
@@ -34,7 +36,7 @@ class SeasonTextSectionExtractionService(BaseSectionExtractionService):
                 parser=SeasonRegulationChangesSectionParser(),
             ),
             SectionAdapterEntry(
-                section_id="Mid-season_changes",
+                section_id=self._MID_SEASON_CHANGES_KEY,
                 aliases=profile_entry_aliases(
                     self.domain,
                     "Mid-season_changes",
@@ -46,4 +48,14 @@ class SeasonTextSectionExtractionService(BaseSectionExtractionService):
 
     def extract(self, soup: BeautifulSoup) -> dict[str, list[dict[str, Any]]]:
         # Utrzymujemy kontrakt sezonowego pipeline'u: mapowanie section_id -> records.
-        return cast("dict[str, list[dict[str, Any]]]", super().extract(soup))
+        extracted = cast("dict[str, list[dict[str, Any]]]", super().extract(soup))
+        return {
+            self._REGULATION_CHANGES_KEY: extracted.get(
+                self._REGULATION_CHANGES_KEY,
+                [],
+            ),
+            self._MID_SEASON_CHANGES_KEY: extracted.get(
+                self._MID_SEASON_CHANGES_KEY,
+                [],
+            ),
+        }
