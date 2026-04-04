@@ -268,3 +268,32 @@ def redundant(value):
     assert any(
         "function 'redundant' is a redundant alias" in item for item in violations
     )
+
+
+def test_structural_quality_allows_multiline_alias_even_with_single_usage(
+    tmp_path: Path,
+) -> None:
+    file_path = tmp_path / "record_definition.py"
+    file_path.write_text(
+        """
+class RecordDefinition:
+    def to_schema(self):
+        return RecordSchema(
+            required=self.required,
+            types=self.types,
+        )
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    violations = enforce_structural_quality.evaluate_file(
+        file_path,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
+    )
+
+    assert not any(
+        "function 'to_schema' is a redundant alias" in item for item in violations
+    )

@@ -181,10 +181,7 @@ class StructuralVisitor(ast.NodeVisitor):
             self.function_violations.append((node.name, node.lineno, length))
         if (
             self._is_redundant_alias_body(node)
-            and not (
-                self._body_spans_multiple_lines(node)
-                and self._call_counts.get(node.name, 0) > 1
-            )
+            and not self._body_spans_multiple_lines(node)
             and not self._is_abstract_or_overload(node)
             and not self._in_derived_class()
             and (self.file_path, node.name) not in REDUNDANT_ALIAS_EXCEPTIONS
