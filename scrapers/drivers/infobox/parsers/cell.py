@@ -5,14 +5,12 @@ from bs4 import Tag
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.active_years import ActiveYearsParser
 from scrapers.drivers.infobox.parsers.best_finish import BestFinishParser
-from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
 from scrapers.drivers.infobox.parsers.championships import ChampionshipsParser
 from scrapers.drivers.infobox.parsers.collapsible_table import CollapsibleTableParser
 from scrapers.drivers.infobox.parsers.finished_season import FinishedSeasonParser
 from scrapers.drivers.infobox.parsers.licence import LicenceParser
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.nationality import NationalityParser
-from scrapers.drivers.infobox.parsers.numeric import NumericParser
 from scrapers.drivers.infobox.parsers.race_event import RaceEventParser
 from scrapers.drivers.infobox.parsers.table import TableParser
 from scrapers.drivers.infobox.parsers.teams import TeamsParser
@@ -76,14 +74,6 @@ class InfoboxCellParser:
     def parse_teams(self, cell: Tag) -> list[Any]:
         return self._teams_parser.parse_teams(cell)
 
-    @staticmethod
-    def parse_entries(cell: Tag) -> dict[str, int | None]:
-        return NumericParser.parse_entries(cell)
-
-    @staticmethod
-    def parse_int_cell(cell: Tag) -> int | None:
-        return NumericParser.parse_int_cell(cell)
-
     def parse_championships(self, cell: Tag) -> dict[str, Any]:
         """Parse championships count with links.
 
@@ -100,14 +90,6 @@ class InfoboxCellParser:
         - "6 (1969, 1975, 1976)" -> {count: 6, wins: [{year: 1969, url: ...}, ...]}
         """
         return self._championships_parser.parse_class_wins(cell)
-
-    @staticmethod
-    def parse_float_cell(cell: Tag) -> float | None:
-        return NumericParser.parse_float_cell(cell)
-
-    @staticmethod
-    def parse_car_numbers(cell: Tag) -> list[dict[str, Any]]:
-        return CarNumbersParser.parse_car_numbers(cell)
 
     def parse_best_finish(self, cell: Tag) -> dict[str, Any]:
         """Parse best finish field - delegates to BestFinishParser."""
@@ -134,10 +116,6 @@ class InfoboxCellParser:
 
     def parse_full_data(self, cell: Tag) -> dict[str, Any]:
         return self._table_parser.parse_full_data(cell, include_urls=self._include_urls)
-
-    @staticmethod
-    def parse_nested_table(table: Tag) -> dict[str, Any]:
-        return TableParser.parse_nested_table(table)
 
     def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.

@@ -21,7 +21,7 @@ from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.validator_base import RecordValidator
+from validation.record_validation import validate_record
 
 
 def test_link_and_season_records_have_expected_keys() -> None:
@@ -106,7 +106,7 @@ def test_circuit_serialization_supports_details_and_complete() -> None:
 
 
 def test_validate_schema_reports_missing_and_type_errors() -> None:
-    errors = RecordValidator.validate_schema({"year": "2024"}, SEASON_SCHEMA)
+    errors = validate_record({"year": "2024"}, SEASON_SCHEMA)
 
     messages = [error.message for error in errors]
     assert "Missing key: url" in messages
@@ -126,7 +126,7 @@ def test_validate_schema_handles_nested_records() -> None:
         "is_world_champion": False,
     }
 
-    errors = RecordValidator.validate_schema(record, DRIVER_SCHEMA)
+    errors = validate_record(record, DRIVER_SCHEMA)
 
     messages = [error.message for error in errors]
     assert "driver.text must be a non-empty string" in messages

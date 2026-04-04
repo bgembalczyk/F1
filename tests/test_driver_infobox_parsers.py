@@ -4,6 +4,7 @@
 import pytest
 from bs4 import BeautifulSoup
 
+from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
 from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
@@ -295,7 +296,7 @@ def test_car_number_year_range_multiple_dashes(cell_parser):
     </td>
     """
     cell = BeautifulSoup(html, "html.parser").find("td")
-    result = cell_parser.parse_car_numbers(cell)
+    result = CarNumbersParser.parse_car_numbers(cell)
 
     assert len(result) == 1
     assert result[0]["number"] == 5
@@ -432,7 +433,7 @@ def test_parse_racing_licence_with_beautiful_soup(cell_parser):
 
 def test_car_number_with_present(cell_parser):
     """Test that car number parsing handles 'present' as null end year."""
-    assert_car_number_with_present(cell_parser)
+    assert_car_number_with_present()
 
 
 def test_died_with_hidden_iso_date(general_parser):

@@ -29,9 +29,6 @@ class TableExtractor:
         )
         self.logger = get_logger(self.__class__.__name__)
 
-    def set_run_id(self, run_id: str | None) -> None:
-        self.pipeline.set_run_id(run_id)
-
     def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         self.logger.debug(
             "TableExtractor start (run_id=%s)",

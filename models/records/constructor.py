@@ -5,8 +5,8 @@ from models.records.link import LinkRecord
 from models.records.record_definition import RecordDefinition
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
+from validation.record_validation import validate_record
 from validation.schemas import NestedSchema
-from validation.validator_base import RecordValidator
 
 
 class ConstructorRecord(TypedDict, total=False):
@@ -54,7 +54,4 @@ CONSTRUCTOR_SCHEMA = CONSTRUCTOR_DEFINITION.to_schema()
 
 
 def validate_constructor_record(record: dict[str, object]) -> list[str]:
-    return [
-        error.message
-        for error in RecordValidator.validate_schema(record, CONSTRUCTOR_SCHEMA)
-    ]
+    return [error.message for error in validate_record(record, CONSTRUCTOR_SCHEMA)]

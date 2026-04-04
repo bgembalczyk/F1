@@ -4,6 +4,7 @@ from typing import TypedDict
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from validation.issue import ValidationIssue
+from validation.record_validation import validate_record
 from validation.schemas import RecordSchema
 from validation.validator_base import RecordValidator
 
@@ -11,7 +12,7 @@ from validation.validator_base import RecordValidator
 def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
     event = record.get("event")
     if isinstance(event, dict):
-        return RecordValidator.validate_schema(event, LINK_SCHEMA)
+        return validate_record(event, LINK_SCHEMA)
     if isinstance(event, list):
         errors: list[ValidationIssue] = []
         for index, item in enumerate(event):
@@ -22,7 +23,7 @@ def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
                 continue
             errors.extend(
                 RecordValidator.prefix_errors(
-                    RecordValidator.validate_schema(item, LINK_SCHEMA),
+                    validate_record(item, LINK_SCHEMA),
                     f"event[{index}]",
                 ),
             )

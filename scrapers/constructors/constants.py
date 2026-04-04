@@ -1,9 +1,15 @@
 from datetime import datetime
 from datetime import timezone
 
-from scrapers.base.constants.shared_headers import SHARED_PODIUMS_HEADER as _SHARED_PODIUMS_HEADER
-from scrapers.base.constants.shared_headers import SHARED_POINTS_HEADER as _SHARED_POINTS_HEADER
-from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER as _SHARED_SEASONS_HEADER
+from scrapers.base.constants.shared_headers import (
+    SHARED_PODIUMS_HEADER as _SHARED_PODIUMS_HEADER,
+)
+from scrapers.base.constants.shared_headers import (
+    SHARED_POINTS_HEADER as _SHARED_POINTS_HEADER,
+)
+from scrapers.base.constants.shared_headers import (
+    SHARED_SEASONS_HEADER as _SHARED_SEASONS_HEADER,
+)
 
 CONSTRUCTOR_NAME_HEADER = "Constructor"
 CONSTRUCTOR_ENGINE_HEADER = "Engine"

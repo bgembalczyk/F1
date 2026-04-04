@@ -1,7 +1,9 @@
 from collections.abc import Callable
 from typing import Any
 
+from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
+from scrapers.drivers.infobox.parsers.numeric import NumericParser
 
 _ACTIVE_YEARS_LABELS = {"Active years", "Years active", "Years"}
 _TEAM_LABELS = {"Teams", "Former teams"}
@@ -28,13 +30,13 @@ def _parser_mappings(
 ) -> tuple[tuple[set[str], Callable[[Any], Any]], ...]:
     return (
         (_ACTIVE_YEARS_LABELS, cell_parser.parse_active_years),
-        ({"Car number"}, cell_parser.parse_car_numbers),
+        ({"Car number"}, CarNumbersParser.parse_car_numbers),
         (_TEAM_LABELS, cell_parser.parse_teams),
-        ({"Entries"}, cell_parser.parse_entries),
+        ({"Entries"}, NumericParser.parse_entries),
         ({"Championships"}, cell_parser.parse_championships),
         ({"Class wins"}, cell_parser.parse_class_wins),
-        (_INT_CELL_LABELS, cell_parser.parse_int_cell),
-        ({"Career points"}, cell_parser.parse_float_cell),
+        (_INT_CELL_LABELS, NumericParser.parse_int_cell),
+        ({"Career points"}, NumericParser.parse_float_cell),
         ({"Best finish"}, cell_parser.parse_best_finish),
         (_RACE_EVENT_LABELS, cell_parser.parse_race_event),
         ({"Finished last season"}, cell_parser.parse_finished_last_season),

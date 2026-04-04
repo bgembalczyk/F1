@@ -30,6 +30,8 @@ def register_serializable_adapter(
 
 
 def clear_serializable_adapters() -> None:
+    if not SERIALIZABLE_ADAPTERS:
+        return
     SERIALIZABLE_ADAPTERS.clear()
 
 
@@ -87,7 +89,9 @@ def to_circuit_record_dict(
     | CircuitDetailsRecord
     | Mapping[str, Any],
 ) -> dict[str, Any]:
-    return to_dict(value)
+    record = to_dict(value)
+    record.setdefault("url", None)
+    return record
 
 
 def to_dict_list(values: list[Any]) -> list[dict[str, Any]]:

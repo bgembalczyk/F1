@@ -54,7 +54,7 @@ class SeasonSplitStrategy:
         split_records: list[PipelineRecord] = []
         for season_entry in season_entries:
             year = season_entry["year"]
-            new_record = record.with_updates(season=[season_entry]).to_dict()
+            new_record = {**raw_record, "season": [season_entry]}
             for key in SPONSOR_KEYS:
                 if key in raw_record:
                     new_record[key] = SponsorScopeHandler.filter_sponsors_for_year(
@@ -108,7 +108,7 @@ class SeasonSplitStrategy:
     def _extract_colour_year_sets(record: PipelineRecord) -> list[set[int]]:
         colour_year_sets: list[set[int]] = []
         for key in COLOUR_KEYS:
-            colours = record.get(key)
+            colours = record.payload.get(key)
             if not isinstance(colours, list):
                 continue
             for item in colours:
@@ -133,7 +133,7 @@ class SeasonSplitStrategy:
         if not base_seasons:
             return []
 
-        base_record = record.with_updates(season=base_seasons).to_dict()
+        base_record = {**raw_record, "season": base_seasons}
         for key in COLOUR_KEYS:
             if key in raw_record:
                 base_record[key] = ColourScopeHandler.remove_year_specific_colours(
@@ -155,7 +155,7 @@ class SeasonSplitStrategy:
             ]
             if not scoped_seasons:
                 continue
-            scoped_record = record.with_updates(season=scoped_seasons).to_dict()
+            scoped_record = {**raw_record, "season": scoped_seasons}
             for key in COLOUR_KEYS:
                 if key in raw_record:
                     scoped_record[key] = ColourScopeHandler.filter_colours_for_years(

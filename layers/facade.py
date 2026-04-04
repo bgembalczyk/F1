@@ -33,9 +33,6 @@ class WikiPipelineFacade:
         self.layer_zero_executor.run(self.run_config_factory(), self.base_wiki_dir)
         self.layer_one_executor.run(self.run_config_factory(), self.base_wiki_dir)
 
-    def run_merge_only(self) -> None:
-        self.layer_zero_merge_service.merge(self.base_wiki_dir)
-
     def run_scenario(self, scenario: WikiRunScenario) -> None:
         if scenario == "layer0":
             self.layer_zero_executor.run(self.run_config_factory(), self.base_wiki_dir)
@@ -44,7 +41,7 @@ class WikiPipelineFacade:
             self.layer_one_executor.run(self.run_config_factory(), self.base_wiki_dir)
             return
         if scenario == "merge":
-            self.run_merge_only()
+            self.layer_zero_merge_service.merge(self.base_wiki_dir)
             return
         if scenario == "full":
             self.run_full()

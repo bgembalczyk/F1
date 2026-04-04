@@ -1,7 +1,7 @@
 from collections.abc import Callable
 from pathlib import Path
 
-from layers.zero.run_profile_paths import LayerZeroPathBuilder
+from layers.path_resolver import DEFAULT_PATH_RESOLVER
 
 
 class ConstructorsMirrorService:
@@ -11,19 +11,17 @@ class ConstructorsMirrorService:
         mirror_targets: tuple[tuple[str, str], ...],
         copy_file: Callable[[Path, Path], None],
         year_provider: Callable[[], int],
-        path_builder: LayerZeroPathBuilder | None = None,
     ) -> None:
         self._mirror_targets = mirror_targets
         self._copy_file = copy_file
         self._year_provider = year_provider
-        self._path_builder = path_builder or LayerZeroPathBuilder()
 
     def mirror(self, base_wiki_dir: Path, source_json_path: Path) -> None:
         current_year = self._year_provider()
         for target_category, target_name_template in self._mirror_targets:
-            target_rel_path = self._path_builder.raw_file_path(
-                target_category,
-                target_name_template.format(year=current_year),
+            target_rel_path = DEFAULT_PATH_RESOLVER.raw(
+                domain=target_category,
+                filename=target_name_template.format(year=current_year),
             )
             target_path = base_wiki_dir / target_rel_path
 

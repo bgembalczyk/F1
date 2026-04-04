@@ -41,7 +41,7 @@ def test_get_wiki_seed_registry_uses_cached_provider(monkeypatch) -> None:
         calls["count"] += 1
         return (SimpleNamespace(seed_name="drivers"),)
 
-    helpers.clear_wiki_seed_registry_cache()
+    helpers.get_wiki_seed_registry.cache_clear()
     monkeypatch.setattr(
         helpers,
         "_build_discovered_layer_one_seed_registry",

@@ -215,7 +215,7 @@ class TestCarNumberWithPresent:
 
     def test_car_number_with_present(self, cell_parser):
         """Test that car number parsing handles 'present' as null end year."""
-        assert_car_number_with_present(cell_parser)
+        assert_car_number_with_present()
 
 
 class TestBestFinishWithNavigableString:

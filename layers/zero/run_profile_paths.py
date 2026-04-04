@@ -7,11 +7,6 @@ from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 
 
-class LayerZeroPathBuilder:
-    def raw_file_path(self, category: str, filename: str) -> Path:
-        return DEFAULT_PATH_RESOLVER.raw(domain=category, filename=filename)
-
-
 def build_debug_run_config(*, base_wiki_dir: Path, base_debug_dir: Path) -> RunConfig:
     return build_run_profile(
         RunProfileName.DEBUG,
@@ -28,9 +23,14 @@ def layer_zero_raw_paths(
     rendered_json_path: str,
     csv_output_path: str | None,
 ) -> tuple[Path, Path | None]:
-    path_builder = LayerZeroPathBuilder()
-    json_path = path_builder.raw_file_path(output_category, rendered_json_path)
+    json_path = DEFAULT_PATH_RESOLVER.raw(
+        domain=output_category,
+        filename=rendered_json_path,
+    )
     csv_path: Path | None = None
     if csv_output_path:
-        csv_path = path_builder.raw_file_path(output_category, csv_output_path)
+        csv_path = DEFAULT_PATH_RESOLVER.raw(
+            domain=output_category,
+            filename=csv_output_path,
+        )
     return json_path, csv_path

@@ -2,10 +2,12 @@ from dataclasses import dataclass
 
 import pytest
 
+from models.domain_utils.normalization import (
+    normalize_season_items as core_normalize_season_items,
+)
 from models.validation.utils import coerce_number
 from models.validation.validators import model_to_dict
 from models.validation.validators import normalize_link_list
-from models.validation.validators import normalize_season_list
 from models.validation.validators import validate_link
 from models.validation.validators import validate_links
 from models.validation.validators import validate_seasons
@@ -93,13 +95,15 @@ def test_normalize_link_list_filters_empty_links():
     assert links == [Link(text="Example", url=None)]
 
 
-def test_normalize_season_list_filters_none_entries():
-    seasons = normalize_season_list(
-        [
-            {"year": 2020},
-            {"url": "https://example.com"},
-            SeasonRef(year=2021),
-        ],
+def test_core_normalize_season_items_filters_none_entries():
+    seasons = list(
+        core_normalize_season_items(
+            [
+                {"year": 2020},
+                {"url": "https://example.com"},
+                SeasonRef(year=2021),
+            ],
+        ),
     )
 
     assert seasons == [SeasonRef(year=2020), SeasonRef(year=2021)]

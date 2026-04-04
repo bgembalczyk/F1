@@ -8,7 +8,6 @@ Pakiet utrzymuje rejestr seedów wiki i jego walidację.
 - `layers.seed.registry.get_wiki_seed_registry`
 - `layers.seed.registry.validate_seed_registry`
 - `layers.seed.registry.validate_list_job_registry`
-- `layers.seed.registry.clear_wiki_seed_registry_cache`
 - `layers.seed.registry.SeedRegistryEntry`
 - `layers.seed.registry.ListJobRegistryEntry`
 

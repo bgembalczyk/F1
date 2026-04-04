@@ -49,29 +49,41 @@ class ScraperConfig:
             raise ValueError(msg)
 
         if not isinstance(self.column_map, Mapping):
-            msg = "ScraperConfig.column_map must be a mapping."
+            msg = (
+                "ScraperConfig.column_map must be of type Mapping; "
+                f"got {type(self.column_map).__name__}."
+            )
             raise TypeError(msg)
 
         for key, value in self.column_map.items():
             if not isinstance(key, str) or not isinstance(value, str):
-                msg = "ScraperConfig.column_map must map str keys to str values."
-                raise TypeError(
-                    msg,
+                msg = (
+                    "ScraperConfig.column_map must map str keys to str values; "
+                    f"got key type {type(key).__name__} "
+                    f"and value type {type(value).__name__}."
                 )
+                raise TypeError(msg)
 
         if not isinstance(self.columns, Mapping):
-            msg = "ScraperConfig.columns must be a mapping."
+            msg = (
+                "ScraperConfig.columns must be of type Mapping; "
+                f"got {type(self.columns).__name__}."
+            )
             raise TypeError(msg)
 
         for key, value in self.columns.items():
             if not isinstance(key, str):
-                msg = "ScraperConfig.columns must use str keys."
+                msg = (
+                    "ScraperConfig.columns must use keys of type str; "
+                    f"got {type(key).__name__}."
+                )
                 raise TypeError(msg)
             if not isinstance(value, BaseColumn):
-                msg = "ScraperConfig.columns must map str keys to BaseColumn values."
-                raise TypeError(
-                    msg,
+                msg = (
+                    "ScraperConfig.columns must map str keys to BaseColumn values; "
+                    f"got value type {type(value).__name__}."
                 )
+                raise TypeError(msg)
 
         if (
             self.record_factory is not None

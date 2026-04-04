@@ -61,7 +61,11 @@ def test_should_mirror_constructors_job(
 ) -> None:
     module = importlib.import_module(module_name)
     list_scraper_cls = type(scraper_name, (), {})
-    job = type("Job", (), {"list_scraper_cls": list_scraper_cls, "seed_name": seed_name})()
+    job = type(
+        "Job",
+        (),
+        {"list_scraper_cls": list_scraper_cls, "seed_name": seed_name},
+    )()
 
     assert module._should_mirror_constructors_job(job) is expected  # noqa: SLF001
 

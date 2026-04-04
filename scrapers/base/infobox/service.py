@@ -32,9 +32,6 @@ class InfoboxExtractionResult:
     def primary_record(self) -> dict[str, Any]:
         return self.records[0] if self.records else {}
 
-    def as_list(self) -> list[dict[str, Any]]:
-        return list(self.records)
-
 
 class InfoboxExtractor(Protocol, Generic[ParserInputT]):
     """Strategia ekstrakcji infoboxów dla konkretnej domeny."""

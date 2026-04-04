@@ -7,7 +7,7 @@ from typing import Any
 
 @dataclass(frozen=True)
 class PipelineRecord:
-    """Domain model for splitter pipeline records."""
+    """Thin validated wrapper around the splitter record payload mapping."""
 
     payload: dict[str, Any]
 
@@ -28,12 +28,3 @@ class PipelineRecord:
             msg = "PipelineRecord input must be a mapping"
             raise TypeError(msg)
         return cls(dict(record))
-
-    def get(self, key: str, default: Any = None) -> Any:
-        return self.payload.get(key, default)
-
-    def with_updates(self, **updates: Any) -> PipelineRecord:
-        return PipelineRecord({**self.payload, **updates})
-
-    def to_dict(self) -> dict[str, Any]:
-        return dict(self.payload)

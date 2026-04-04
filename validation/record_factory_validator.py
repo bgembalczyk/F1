@@ -18,7 +18,7 @@ ExportRecord = dict[str, Any]
 class RecordFactoryValidatorProtocol(Protocol):
     """Unified contract used by ``RecordValidator`` for factory-level validation."""
 
-    def validate_record(self, record: ExportRecord) -> list[ValidationIssue | str]: ...
+    def __call__(self, record: ExportRecord) -> list[ValidationIssue | str]: ...
 
 
 @dataclass(frozen=True, slots=True)
@@ -27,7 +27,7 @@ class ModelValidateRecordFactoryValidatorAdapter:
 
     validator: Callable[[ExportRecord], Any]
 
-    def validate_record(self, record: ExportRecord) -> list[ValidationIssue | str]:
+    def __call__(self, record: ExportRecord) -> list[ValidationIssue | str]:
         self.validator(record)
         return []
 
@@ -38,7 +38,7 @@ class ValidateRecordFactoryValidatorAdapter:
 
     validator: Callable[[ExportRecord], list[ValidationIssue | str] | None]
 
-    def validate_record(self, record: ExportRecord) -> list[ValidationIssue | str]:
+    def __call__(self, record: ExportRecord) -> list[ValidationIssue | str]:
         return list(self.validator(record) or [])
 
 
@@ -48,7 +48,7 @@ class ValidateMethodRecordFactoryValidatorAdapter:
 
     validator: Callable[[], Any]
 
-    def validate_record(self, _record: ExportRecord) -> list[ValidationIssue | str]:
+    def __call__(self, _record: ExportRecord) -> list[ValidationIssue | str]:
         self.validator()
         return []
 

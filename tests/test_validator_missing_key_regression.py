@@ -1,9 +1,10 @@
 from validation.issue import ValidationIssue
+from validation.record_validation import validate_record
 from validation.validator_base import RecordValidator
 
 
 def test_validate_schema_reports_single_missing_error_for_typed_missing_field() -> None:
-    errors = RecordValidator.validate_schema(
+    errors = validate_record(
         {"name": "Example"},
         {
             "required": ("name", "count"),
@@ -20,7 +21,7 @@ def test_quality_report_maintains_missing_and_types_buckets() -> None:
             return []
 
     validator = DummyValidator()
-    errors = RecordValidator.validate_schema(
+    errors = validate_record(
         {"name": "Example"},
         {
             "required": ("name", "count"),

@@ -38,14 +38,6 @@ class BaseRecordFactory:
     def __init__(self, normalizer: FieldNormalizer | None = None):
         self.normalizer = normalizer or FieldNormalizer()
 
-    def apply_aliases(
-        self,
-        record: Mapping[str, Any],
-        aliases: dict[str, str],
-        record_name: str,
-    ) -> dict[str, Any]:
-        return apply_field_aliases(record, aliases, record_name=record_name)
-
     def normalize_field(
         self,
         payload: dict[str, Any],
@@ -129,10 +121,10 @@ class BaseRecordFactory:
     ) -> dict[str, Any]:
         aliases = spec.get("aliases")
         if aliases:
-            payload = self.apply_aliases(
+            payload = apply_field_aliases(
                 record,
                 aliases,
-                spec.get("record_name", "record"),
+                record_name=spec.get("record_name", "record"),
             )
         else:
             payload = dict(record)

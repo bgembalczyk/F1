@@ -8,9 +8,9 @@ from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
+from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
@@ -53,7 +53,7 @@ class BaseConstructorListScraper(
         """Build common constructor metadata columns."""
         return build_entity_metadata_columns(
             [
-                EntityColumnSpec(CONSTRUCTOR_NAME_HEADER, "constructor", UrlColumn()),
+                EntityColumnSpec(CONSTRUCTOR_NAME_HEADER, "constructor", AutoColumn()),
                 EntityColumnSpec(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
                 EntityColumnSpec(
                     CONSTRUCTOR_TOTAL_ENTRIES_HEADER,

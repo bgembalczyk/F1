@@ -14,6 +14,7 @@ from validation.issue import ValidationIssue
 from validation.pipeline import ValidationResult
 from validation.quality_stats import QualityStats
 from validation.record_factory_validator import RecordFactoryValidatorProtocol
+from validation.record_validation import validate_record
 from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
@@ -93,7 +94,7 @@ class RecordValidator(ABC):
             return []
 
         try:
-            errors = validator.validate_record(record)
+            errors = validator(record)
         except (AttributeError, TypeError, ValueError) as exc:
             return [
                 ValidationIssue.custom(
@@ -107,36 +108,6 @@ class RecordValidator(ABC):
         return [self._coerce_issue(error) for error in errors]
 
     @classmethod
-    def validate_schema(
-        cls,
-        record: Mapping[str, Any],
-        schema: RecordSchema | Mapping[str, Any],
-    ) -> list[ValidationIssue]:
-        normalized = SchemaValidationEngine.coerce_schema(schema)
-        errors: list[ValidationIssue] = []
-        errors.extend(cls.require_keys(record, normalized.required))
-        allow_none = set(normalized.allow_none)
-        for key, expected_types in normalized.types.items():
-            errors.extend(
-                cls.require_type(
-                    record,
-                    key,
-                    expected_types,
-                    allow_none=key in allow_none,
-                ),
-            )
-        for key, nested_schema in normalized.nested.items():
-            if key not in record:
-                continue
-            value = record[key]
-            if value is None:
-                continue
-            errors.extend(cls._validate_nested_value(key, value, nested_schema))
-        for validator in normalized.custom_validators:
-            errors.extend(cls._coerce_issue(error) for error in validator(record))
-        return SchemaValidationEngine.render_issues(errors)
-
-    @classmethod
     def _validate_nested_value(
         cls,
         key: str,
@@ -147,7 +118,7 @@ class RecordValidator(ABC):
             key,
             value,
             nested_schema,
-            cls.validate_schema,
+            validate_record,
         )
 
     @classmethod
@@ -160,7 +131,7 @@ class RecordValidator(ABC):
         return SchemaValidationEngine.validate_nested_schema(
             record,
             nested_schema,
-            cls.validate_schema,
+            validate_record,
         )
 
     @staticmethod

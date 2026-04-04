@@ -25,18 +25,37 @@ def _collect_overload_names(tree: ast.AST) -> frozenset[str]:
     return frozenset(names)
 
 
+def _collect_call_counts(tree: ast.AST) -> dict[str, int]:
+    """Return how many times each call target name is used in a file."""
+    call_counts: dict[str, int] = {}
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        called_name: str | None = None
+        if isinstance(node.func, ast.Name):
+            called_name = node.func.id
+        elif isinstance(node.func, ast.Attribute):
+            called_name = node.func.attr
+
+        if called_name:
+            call_counts[called_name] = call_counts.get(called_name, 0) + 1
+    return call_counts
+
+
 class StructuralVisitor(ast.NodeVisitor):
     def __init__(
         self,
         *,
         file_path: str,
         overload_names: frozenset[str] = frozenset(),
+        call_counts: dict[str, int] | None = None,
     ) -> None:
         self.file_path = file_path
         self.function_violations: list[tuple[str, int, int]] = []
         self.class_violations: list[tuple[str, int, int]] = []
         self.alias_violations: list[tuple[str, int, str]] = []
         self._overload_names: frozenset[str] = overload_names
+        self._call_counts: dict[str, int] = call_counts or {}
         self._class_has_bases_stack: list[bool] = []
 
     @staticmethod
@@ -139,6 +158,16 @@ class StructuralVisitor(ast.NodeVisitor):
             return False
         return not self._is_private_attribute_call(call)
 
+    @staticmethod
+    def _body_spans_multiple_lines(
+        function: ast.FunctionDef | ast.AsyncFunctionDef,
+    ) -> bool:
+        if not function.body:
+            return False
+        start = getattr(function.body[0], "lineno", function.lineno)
+        end = getattr(function.body[-1], "end_lineno", start)
+        return end > start
+
     def _visit_function_common(
         self,
         node: ast.FunctionDef | ast.AsyncFunctionDef,
@@ -152,6 +181,7 @@ class StructuralVisitor(ast.NodeVisitor):
             self.function_violations.append((node.name, node.lineno, length))
         if (
             self._is_redundant_alias_body(node)
+            and not self._body_spans_multiple_lines(node)
             and not self._is_abstract_or_overload(node)
             and not self._in_derived_class()
             and (self.file_path, node.name) not in REDUNDANT_ALIAS_EXCEPTIONS
@@ -215,6 +245,7 @@ def evaluate_file(
     visitor = StructuralVisitor(
         file_path=path.as_posix(),
         overload_names=_collect_overload_names(tree),
+        call_counts=_collect_call_counts(tree),
     )
     visitor.max_function_lines = max_function_lines
     visitor.max_class_lines = max_class_lines

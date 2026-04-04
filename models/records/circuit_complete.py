@@ -3,8 +3,8 @@ from typing import Any
 from models.records.circuit_base import CircuitBaseRecord
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
+from validation.record_validation import validate_record
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 class CircuitCompleteRecord(CircuitBaseRecord, total=False):
@@ -29,6 +29,5 @@ _CIRCUIT_COMPLETE_SCHEMA = RecordSchema(
 
 def validate_circuit_complete_record(record: dict[str, object]) -> list[str]:
     return [
-        error.message
-        for error in RecordValidator.validate_schema(record, _CIRCUIT_COMPLETE_SCHEMA)
+        error.message for error in validate_record(record, _CIRCUIT_COMPLETE_SCHEMA)
     ]

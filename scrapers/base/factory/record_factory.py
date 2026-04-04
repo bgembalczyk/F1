@@ -20,14 +20,6 @@ class RecordFactory(Protocol):
 
 
 @dataclass(frozen=True, slots=True)
-class MappingRecordFactory:
-    """Adapter returning plain dict from mapping payload."""
-
-    def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
-        return dict(payload)
-
-
-@dataclass(frozen=True, slots=True)
 class CallableRecordFactoryAdapter:
     """Adapter for callable- and class-based legacy record factories."""
 
@@ -39,31 +31,29 @@ class CallableRecordFactoryAdapter:
         return self.factory(dict(payload))
 
 
-@dataclass(frozen=True, slots=True)
-class RecordBuildersAdapter:
-    """Adapter over models.records.factories.build.RECORD_BUILDERS."""
-
-    record_type: RecordType | str
-
-    def create(self, payload: Mapping[str, Any]) -> Any:
-        return RECORD_BUILDERS.build(self.record_type, payload)
-
-
 class RecordFactoryAdapters:
     """Factory helpers for the unified RecordFactory contract."""
 
     @staticmethod
     def mapping() -> RecordFactory:
-        return MappingRecordFactory()
+        return CallableRecordFactoryAdapter(factory=dict)
 
     @staticmethod
     def callable(factory: Callable[[dict[str, Any]], Any] | type) -> RecordFactory:
         # di-antipattern-allow: adapter wrapping is the factory responsibility.
+        if not callable(factory):
+            msg = "Record factory must be callable or a record type."
+            raise TypeError(msg)
         return CallableRecordFactoryAdapter(factory=factory)
 
     @staticmethod
     def builders(record_type: RecordType | str) -> RecordFactory:
-        return RecordBuildersAdapter(record_type=record_type)
+        if isinstance(record_type, str) and not record_type.strip():
+            msg = "record_type cannot be empty."
+            raise ValueError(msg)
+        return CallableRecordFactoryAdapter(
+            factory=lambda payload: RECORD_BUILDERS.build(record_type, payload),
+        )
 
 
 RECORD_FACTORIES = RecordFactoryAdapters()

@@ -6,9 +6,9 @@ from dataclasses import field
 from typing import Any
 
 from validation.issue import ValidationIssue
+from validation.record_validation import validate_record
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
-from validation.validator_base import RecordValidator
 
 
 @dataclass(frozen=True)
@@ -40,8 +40,4 @@ def build_validator(
     """Build a reusable validator function from a record definition."""
 
     schema = definition.to_schema()
-
-    def validate_record(record: dict[str, Any]) -> list[ValidationIssue]:
-        return RecordValidator.validate_schema(record, schema)
-
-    return validate_record
+    return lambda record: validate_record(record, schema)
