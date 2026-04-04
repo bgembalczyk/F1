@@ -2,13 +2,17 @@
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+from typing import TYPE_CHECKING
 from typing import Any
 
 from validation.issue import ValidationIssue
 from validation.schema_engine import SchemaValidationEngine
-from validation.schemas import NestedSchema
-from validation.schemas import RecordSchema
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
+
+    from validation.schemas import NestedSchema
+    from validation.schemas import RecordSchema
 
 
 def validate_record(
