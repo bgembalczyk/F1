@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from bs4 import BeautifulSoup
 
+from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
+
 EXPECTED_RECORDS_COUNT = 2
 FIRST_NUMBER = 27
 FIRST_START_YEAR = 2014
@@ -20,7 +22,7 @@ def assert_car_number_with_present(cell_parser) -> None:
         "</td>"
     )
     cell = BeautifulSoup(html, "html.parser").find("td")
-    result = cell_parser.parse_car_numbers(cell)
+    result = CarNumbersParser.parse_car_numbers(cell)
 
     assert len(result) == EXPECTED_RECORDS_COUNT
     assert result[0]["number"] == FIRST_NUMBER
