@@ -53,3 +53,7 @@ def default_data_paths(*, base_dir: Path = Path("../../data")) -> DataPaths:
 
 def default_scraper_config() -> ScraperConfig:
     return ScraperConfig()
+
+
+def default_config() -> ScraperConfig:
+    return default_scraper_config()

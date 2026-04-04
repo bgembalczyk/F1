@@ -77,7 +77,8 @@ class DomainPipelineConfig:
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
-    return {"formula_one": formula_one}
+    sorted_formula_one = {key: formula_one[key] for key in sorted(formula_one)}
+    return {"formula_one": sorted_formula_one}
 
 
 def _move_fields_to_formula_one(

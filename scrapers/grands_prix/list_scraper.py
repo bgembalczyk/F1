@@ -9,6 +9,8 @@ from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
 from scrapers.base.table.builders import build_name_status_fragment
+from scrapers.base.table.builders import build_name_status_fragment
+from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import SeasonsColumn
