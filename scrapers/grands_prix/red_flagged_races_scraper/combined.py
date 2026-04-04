@@ -7,21 +7,18 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.text import strip_marks
+from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.source_catalog import RED_FLAGGED_RACES
-from scrapers.base.table.columns.types import UrlColumn
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.grands_prix.red_flagged_races_scraper.base import (
-    RedFlaggedRacesBaseScraper,
+from scrapers.base.transformers.failed_to_make_restart import (
+    FailedToMakeRestartTransformer,
 )
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
+from scrapers.wiki.scraper import WikiScraper
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
@@ -337,68 +334,8 @@ class RedFlaggedRacesSectionParser(SectionParser):
             if parsed is not None:
                 element["data"] = parsed
 
-
-class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
-    """Composite scraper returning world and non-championship red-flagged races."""
-
-    _SUPPORTED_EXPORT_SCOPES = {"all", "world_championship", "non_championship"}
-    _SCHEMA_COLUMNS = RedFlaggedRacesBaseScraper.build_common_red_flag_columns()
-    _SCHEMA_COLUMNS[1] = column("Grand Prix", "grand_prix", UrlColumn())
-
-    CONFIG = build_scraper_config(
-        url=RED_FLAGGED_RACES.base_url,
-        section_id=RED_FLAGGED_RACES.section_id,
-        expected_headers=[
-            "Year",
-            "Grand Prix",
-            "Lap",
-            "R",
-            "Winner",
-            "Incident that prompted red flag",
-        ],
-        schema=TableSchemaDSL(
-            columns=_SCHEMA_COLUMNS,
-        ),
-        record_factory=RECORD_FACTORIES.mapping(),
-    )
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        export_scope: str = "all",
-    ) -> None:
-        super().__init__(options=options)
-        if export_scope not in self._SUPPORTED_EXPORT_SCOPES:
-            msg = (
-                f"Unsupported export_scope='{export_scope}' for "
-                f"{self.__class__.__name__}"
-            )
-            raise ValueError(msg)
-        self._export_scope = export_scope
-        parser = RedFlaggedRacesSectionParser()
-        self.section_parser = parser
-        self.body_content_parser.content_text_parser.section_parser = parser
-
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        body_content = BodyContentParser.find_body_content(soup)
-        parsed = self.body_content_parser.parse(body_content) if body_content else {}
-        world_records = self._collect_table_rows(
-            parsed,
-            table_type="red_flagged_world_championship_races",
-        )
-        non_championship_records = self._collect_table_rows(
-            parsed,
-            table_type="red_flagged_non_championship_races",
-        )
-        if self._export_scope == "world_championship":
-            return world_records
-        if self._export_scope == "non_championship":
-            return non_championship_records
-        return [*world_records, *non_championship_records]
-
-    def _collect_table_rows(
-        self,
+    @staticmethod
+    def collect_rows(
         payload: dict[str, Any],
         *,
         table_type: str,
@@ -429,3 +366,47 @@ class RedFlaggedRacesScraper(RedFlaggedRacesBaseScraper):
             seen.add(signature)
             deduplicated.append(row)
         return deduplicated
+
+
+class RedFlaggedRacesScraper(WikiScraper):
+    """Composite scraper returning world and non-championship red-flagged races."""
+
+    _SUPPORTED_EXPORT_SCOPES = {"all", "world_championship", "non_championship"}
+    url = RED_FLAGGED_RACES.base_url
+
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        export_scope: str = "all",
+    ) -> None:
+        if export_scope not in self._SUPPORTED_EXPORT_SCOPES:
+            msg = (
+                f"Unsupported export_scope='{export_scope}' for "
+                f"{self.__class__.__name__}"
+            )
+            raise ValueError(msg)
+        super().__init__(
+            options=append_transformer(options, FailedToMakeRestartTransformer()),
+        )
+        self._export_scope = export_scope
+        parser = RedFlaggedRacesSectionParser()
+        self.section_parser = parser
+        self.body_content_parser.content_text_parser.section_parser = parser
+
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        body_content = BodyContentParser.find_body_content(soup)
+        parsed = self.body_content_parser.parse(body_content) if body_content else {}
+        world_records = RedFlaggedRacesSectionParser.collect_rows(
+            parsed,
+            table_type="red_flagged_world_championship_races",
+        )
+        non_championship_records = RedFlaggedRacesSectionParser.collect_rows(
+            parsed,
+            table_type="red_flagged_non_championship_races",
+        )
+        if self._export_scope == "world_championship":
+            return world_records
+        if self._export_scope == "non_championship":
+            return non_championship_records
+        return [*world_records, *non_championship_records]
