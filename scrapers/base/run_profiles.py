@@ -19,10 +19,6 @@ class RunPathConfig:
     wiki_output_dir: Path = Path("../../data/wiki")
     debug_dir: Path = Path("../../data/debug")
 
-    def resolve(self, path_name: RunPathName) -> Path:
-        return getattr(self, path_name.value)
-
-
 DEFAULT_RUN_PATHS = RunPathConfig()
 
 
@@ -61,10 +57,12 @@ class RunProfileSpec:
         from scrapers.base.run_config import RunConfig
 
         return RunConfig(
-            output_dir=paths.resolve(self.output_dir),
+            output_dir=getattr(paths, self.output_dir.value),
             include_urls=self.include_urls,
             debug_dir=(
-                None if self.debug_dir is None else paths.resolve(self.debug_dir)
+                None
+                if self.debug_dir is None
+                else getattr(paths, self.debug_dir.value)
             ),
             quality_report=self.quality_report,
             error_report=self.error_report,
@@ -103,15 +101,12 @@ class ProfileResolver:
             return profile
         return RunProfileName(profile)
 
-    def coerce_profile(self, profile: RunProfileSelector) -> RunProfileName:
-        return self.normalize_profile(profile)
-
     def resolve_cli_profile(self, profile: CliProfileSelector) -> RunProfileName:
         if isinstance(profile, RunProfileName):
             return profile
         if profile in self.legacy_cli_aliases:
             return self.legacy_cli_aliases[profile]
-        return self.normalize_profile(profile)
+        return RunProfileName(profile)
 
     def validate_supported_profile(self, profile: RunProfileName) -> RunProfileSpec:
         spec = RUN_PROFILE_SPECS.get(profile)
@@ -132,7 +127,7 @@ def resolve_cli_profile(profile: CliProfileSelector) -> RunProfileName:
 
 def get_run_profile_spec(profile: RunProfileSelector) -> RunProfileSpec:
     """Return the explicit definition for a named profile."""
-    normalized_profile = PROFILE_RESOLVER.coerce_profile(profile)
+    normalized_profile = PROFILE_RESOLVER.normalize_profile(profile)
     return PROFILE_RESOLVER.validate_supported_profile(normalized_profile)
 
 
@@ -148,7 +143,7 @@ def build_run_profile(
     paths: RunPathConfig = DEFAULT_RUN_PATHS,
 ) -> RunConfig:
     """Build ``RunConfig`` for a named profile."""
-    normalized_profile = PROFILE_RESOLVER.coerce_profile(profile)
+    normalized_profile = PROFILE_RESOLVER.normalize_profile(profile)
     return PROFILE_RESOLVER.validate_supported_profile(normalized_profile).build_config(
         paths=paths,
     )
