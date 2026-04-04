@@ -16,7 +16,9 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.link_lookup import build_link_lookup
+from scrapers.base.table.columns.helpers.link_lookup import (
+    build_link_lookup as build_shared_link_lookup,
+)
 
 
 class DriverParsingHelpers:
@@ -42,7 +44,7 @@ class DriverParsingHelpers:
         Returns:
             Dictionary mapping lowercase driver names to lists of matching links
         """
-        return build_link_lookup(links)
+        return build_shared_link_lookup(links)
 
     @staticmethod
     def parse_segment(
