@@ -15,6 +15,7 @@ from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.constructors.config_factory import build_constructor_list_config
 from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
 from scrapers.constructors.constants import FORMER_CONSTRUCTORS_EXPECTED_HEADERS
+from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsSectionParser
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
@@ -48,7 +49,7 @@ class ConstructorsListScraper(F1ListScraper):
     _FORMER_CONFIG = build_constructor_list_config(
         section_id=_FORMER_SECTION_ID,
         expected_headers=FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
-        columns=[],
+        columns=FormerConstructorsListScraper.schema_columns,
     )
 
     _SECTION_PARSER_EXPORT_KEY = "section_parser"
