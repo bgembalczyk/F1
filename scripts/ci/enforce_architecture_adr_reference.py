@@ -5,8 +5,11 @@ import os
 import re
 import subprocess
 import sys
-from collections.abc import Sequence
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
 
 if __package__ in {None, ""}:
     sys.path.append(str(Path(__file__).resolve().parents[2]))
