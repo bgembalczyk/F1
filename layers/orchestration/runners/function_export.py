@@ -38,7 +38,7 @@ class FunctionExportRunner(LayerJobRunner):
         base_wiki_dir: Path,
     ) -> None:
         try:
-            self._export_function(
+            self._export(
                 output_dir=base_wiki_dir / seed.default_output_path,
                 include_urls=run_config.include_urls,
             )
@@ -48,5 +48,5 @@ class FunctionExportRunner(LayerJobRunner):
                 code="layer1.function_export_failed",
                 message="Layer one function export failed.",
                 domain=seed.output_category,
-                source_name=self.COMPONENT_METADATA.seed_name,
+                source_name=self.COMPONENT_METADATA["seed_name"],
             ) from exc
