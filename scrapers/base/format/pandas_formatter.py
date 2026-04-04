@@ -1,5 +1,6 @@
 from typing import TYPE_CHECKING
 from typing import Any
+import warnings
 
 from scrapers.base.format.formatter_helpers import extract_data
 
@@ -10,7 +11,12 @@ if TYPE_CHECKING:
 class PandasDataFrameFormatter:
     @staticmethod
     def format(result: "ScrapeResult") -> Any:
-        # di-antipattern-allow: optional dependency.
-        import pandas as pd
+        data = extract_data(result)
+        try:
+            # di-antipattern-allow: optional dependency.
+            import pandas as pd
 
-        return pd.DataFrame(extract_data(result))
+            return pd.DataFrame(data)
+        except (ImportError, AttributeError):
+            warnings.warn("Pandas nie jest zainstalowane", RuntimeWarning, stacklevel=2)
+            return data
