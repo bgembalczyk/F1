@@ -123,6 +123,7 @@ class ScraperRuntimeFactory:
         if source_adapter is None:
             return fetcher, fetcher
         if cache_adapter is not None and not isinstance(source_adapter, HtmlFetcher):
+            # di-antipattern-allow: runtime assembly owns cache decorator creation.
             source_adapter = CacheAdapter(
                 source_adapter=source_adapter,
                 cache_adapter=cache_adapter,
@@ -183,6 +184,7 @@ class ScraperRuntimeFactory:
         )
         return cast(
             "HttpClientProtocol",
+            # di-antipattern-allow: runtime factory is the DI composition root.
             UrllibHttpClient(config=client_config),
         )
 

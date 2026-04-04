@@ -46,6 +46,7 @@ class TableSectionParser:
         return self._section_label
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        # di-antipattern-allow: section parser builds table parser per parse invocation.
         parser = HtmlTableParser(
             section_id=None,
             expected_headers=self._config.expected_headers,

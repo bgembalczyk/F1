@@ -1,6 +1,8 @@
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.format.formatter_helpers import extract_data
+
 if TYPE_CHECKING:
     from scrapers.base.results import ScrapeResult
 
@@ -8,8 +10,7 @@ if TYPE_CHECKING:
 class PandasDataFrameFormatter:
     @staticmethod
     def format(result: "ScrapeResult") -> Any:
-        import pandas as pd
-
-        from scrapers.base.format.formatter_helpers import extract_data
+        # di-antipattern-allow: optional dependency.
+        import pandas as pd  # noqa: PLC0415
 
         return pd.DataFrame(extract_data(result))

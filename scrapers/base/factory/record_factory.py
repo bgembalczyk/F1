@@ -58,6 +58,7 @@ class RecordFactoryAdapters:
 
     @staticmethod
     def callable(factory: Callable[[dict[str, Any]], Any] | type) -> RecordFactory:
+        # di-antipattern-allow: adapter wrapping is the factory responsibility.
         return CallableRecordFactoryAdapter(factory=factory)
 
     @staticmethod
