@@ -232,14 +232,27 @@ def assert_section_contract_template(
         assert result.metadata[key] == expected_value
 
 
+HELPER_SECTION_MODULES_EXCLUDED_FROM_DOD: frozenset[str] = frozenset(
+    {
+        "adapter.py",
+        "common.py",
+        "constants.py",
+        "driver_results_schema_factory.py",
+        "driver_results_table_classifier.py",
+        "list_table.py",
+        "service.py",
+    }
+)
+
 SECTION_MODULES_REQUIRING_DOD: tuple[str, ...] = tuple(
     sorted(
         str(path).replace("\\", "/")
         for path in Path("scrapers").glob("*/sections/*.py")
         if path.name != "__init__.py"
+        and path.name not in HELPER_SECTION_MODULES_EXCLUDED_FROM_DOD
         and path.parts[1]
         in {"drivers", "constructors", "circuits", "seasons", "grands_prix"}
-    ),
+    )
 )
 
 SNAPSHOT_COVERED_SECTION_MODULES: tuple[str, ...] = (
@@ -248,7 +261,6 @@ SNAPSHOT_COVERED_SECTION_MODULES: tuple[str, ...] = (
     "scrapers/circuits/sections/layout_history.py",
     "scrapers/circuits/sections/list_section.py",
     "scrapers/constructors/sections/championship_results.py",
-    "scrapers/constructors/sections/common.py",
     "scrapers/constructors/sections/complete_f1_results.py",
     "scrapers/constructors/sections/history.py",
     "scrapers/constructors/sections/list_section.py",
