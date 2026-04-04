@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 from scrapers.base.logging import get_logger
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
-from scrapers.base.table.row import TableRow
 
 
 class TableExtractor:
@@ -45,11 +44,3 @@ class TableExtractor:
             self.pipeline.run_id,
         )
         return records
-
-    def parse_row(self, row: TableRow, *, row_index: int | None = None) -> Any:
-        return self.pipeline.parse_cells(
-            row.headers,
-            row.cells,
-            row_index=row_index,
-            header_cells=row.header_cells,
-        )
