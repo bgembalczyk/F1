@@ -15,7 +15,6 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.helpers.background import extract_background
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text import clean_wiki_text
@@ -267,21 +266,6 @@ class ResultsParsingHelpers:
             return int(match.group())
 
         return None
-
-    @staticmethod
-    def extract_race_result_background(cell: Tag) -> str | None:
-        """
-        Extract background color from race result cell.
-
-        This is an alias for extract_background for semantic clarity.
-
-        Args:
-            cell: HTML table cell
-
-        Returns:
-            Background color string, or None
-        """
-        return extract_background(cell)
 
     @staticmethod
     def has_year(text: str) -> bool:

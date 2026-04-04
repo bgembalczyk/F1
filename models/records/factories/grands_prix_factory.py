@@ -19,9 +19,10 @@ class GrandsPrixRecordFactory(BaseRecordFactory):
                 "aliases": FIELD_ALIASES["grands_prix"],
                 "record_name": "grands_prix",
                 "field_normalizers": {
-                    "race_status": lambda value,
-                    _field: self.normalizer.normalize_string(
-                        value,
+                    "race_status": lambda value, _field: (
+                        self.normalizer.normalize_string(
+                            value,
+                        )
                     ),
                 },
                 "list_field_normalizers": {

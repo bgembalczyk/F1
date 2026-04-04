@@ -5,6 +5,7 @@ from typing import Any
 
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.table.columns.helpers.engine_parsing import EngineParsingHelpers
+from scrapers.base.table.columns.helpers.link_lookup import build_link_lookup
 from scrapers.base.table.columns.types.base import BaseColumn
 
 if TYPE_CHECKING:
@@ -40,7 +41,7 @@ class BaseEngineColumn(BaseColumn):
             return None
 
         segments = split_cell_on_br(cell)
-        link_lookup = EngineParsingHelpers.build_link_lookup(ctx.links or [])
+        link_lookup = build_link_lookup(ctx.links or [])
         engines: list[dict[str, Any]] = []
         class_value = EngineParsingHelpers.extract_engine_class(cell)
 

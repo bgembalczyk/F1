@@ -5,7 +5,6 @@ from uuid import uuid4
 from models.mappers.serialization import to_dict_list
 from scrapers.base.abc import ABCScraper
 from scrapers.base.factory.factory import ScraperFactory
-from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
 from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
@@ -52,7 +51,7 @@ class ScraperRunner:
 
         output_dir = Path(self._run_config.output_dir)
         json_path = output_dir / Path(json_rel)
-        ensure_parent(json_path)
+        json_path.parent.mkdir(parents=True, exist_ok=True)
         self._exporter.to_json(
             result,
             json_path,
@@ -62,7 +61,7 @@ class ScraperRunner:
 
         if csv_rel:
             csv_path = output_dir / Path(csv_rel)
-            ensure_parent(csv_path)
+            csv_path.parent.mkdir(parents=True, exist_ok=True)
             self._exporter.to_csv(
                 result,
                 csv_path,

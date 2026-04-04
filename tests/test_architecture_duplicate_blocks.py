@@ -212,9 +212,9 @@ def test_no_duplicate_config_blocks() -> None:
 def test_duplicate_config_blocks_whitelist_has_justification() -> None:
     for paths, reason in ALLOWED_SIMILAR_CONFIG_BLOCKS.items():
         assert len(paths) > 1, "Whitelist entry must contain at least two files."
-        assert (
-            reason.strip()
-        ), f"Whitelist entry {sorted(paths)} requires justification."
+        assert reason.strip(), (
+            f"Whitelist entry {sorted(paths)} requires justification."
+        )
 
 
 def test_domain_entrypoints_use_shared_factory_builders() -> None:

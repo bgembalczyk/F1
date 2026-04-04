@@ -69,27 +69,33 @@ class WikiElementParserMixin:
             result_type="list",
         )
         self.register_parser_rule(
-            predicate=lambda el: el.name == "table"
-            and "infobox" in self._get_classes(el),
+            predicate=lambda el: (
+                el.name == "table" and "infobox" in self._get_classes(el)
+            ),
             parser=self.infobox_parser.parse,
             result_type="infobox",
         )
         self.register_parser_rule(
-            predicate=lambda el: el.name == "table"
-            and "wikitable" in self._get_classes(el),
+            predicate=lambda el: (
+                el.name == "table" and "wikitable" in self._get_classes(el)
+            ),
             parser=self.table_parser.parse,
             result_type="table",
         )
         self.register_parser_rule(
-            predicate=lambda el: el.name == "div"
-            and el.get("role") == "navigation"
-            and "navbox" in self._get_classes(el),
+            predicate=lambda el: (
+                el.name == "div"
+                and el.get("role") == "navigation"
+                and "navbox" in self._get_classes(el)
+            ),
             parser=self.navbox_parser.parse,
             result_type="navbox",
         )
         self.register_parser_rule(
-            predicate=lambda el: el.name == "div"
-            and any("references-wrap" in c for c in self._get_classes(el)),
+            predicate=lambda el: (
+                el.name == "div"
+                and any("references-wrap" in c for c in self._get_classes(el))
+            ),
             parser=self.references_wrap_parser.parse,
             result_type="references_wrap",
         )

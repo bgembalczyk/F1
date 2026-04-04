@@ -33,22 +33,12 @@ class EngineParsingHelpers:
     Orchestration class for parsing engine information from table cells.
 
     Provides the public API for:
-    - Building engine link lookups (delegates to EngineLinkHelpers)
     - Parsing engine segments into structured data
     - Extracting engine class from cell background colour
 
     Low-level link and text parsing is handled by EngineLinkHelpers and
     EngineTextHelpers respectively.
     """
-
-    @staticmethod
-    def build_link_lookup(links: list[LinkRecord]) -> dict[str, list[LinkRecord]]:
-        """
-        Build lookup dictionary mapping engine names to their link records.
-
-        Delegates to :meth:`EngineLinkHelpers.build_link_lookup`.
-        """
-        return EngineLinkHelpers.build_link_lookup(links)
 
     @staticmethod
     def extract_engine_class(cell: Tag) -> str | None:

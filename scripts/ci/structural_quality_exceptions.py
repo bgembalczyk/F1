@@ -7,7 +7,6 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("infrastructure/cache/file_ttl_cache.py", "serialize"),
     ("layers/facade.py", "run_merge_only"),
     ("layers/seed/registry/helpers.py", "clear_wiki_seed_registry_cache"),
-    ("layers/zero/record_merge_ops.py", "normalize_incoming_driver_stats"),
     ("layers/zero/run_profile_paths.py", "build_debug_run_config"),
     ("layers/zero/run_profile_paths.py", "raw_file_path"),
     ("models/mappers/serialization.py", "clear_serializable_adapters"),
@@ -23,9 +22,9 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("models/records/record_definition.py", "to_schema"),
     ("models/records/record_definition.py", "validate_record"),
     ("models/validation/base.py", "validate_schema"),
-    ("models/validation/validators.py", "normalize_season_list"),
+    ("models/validation/validators.py", "normalize_season_list"),  # tested directly
     ("models/value_objects/common_terms.py", "to_export"),
-    ("models/value_objects/link_utils.py", "normalize_link"),
+    ("models/value_objects/link_utils.py", "normalize_link"),  # tested directly
     ("models/value_objects/normalized_date.py", "from_mapping"),
     ("models/value_objects/rounds.py", "from_values"),
     ("models/value_objects/rounds.py", "to_list"),
@@ -43,7 +42,6 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/base/error_handler.py", "wrap_parse"),
     ("scrapers/base/error_handler.py", "wrap_validation"),
     ("scrapers/base/errors.py", "behavior"),
-    ("scrapers/base/export/composition.py", "create_default_export_service"),
     ("scrapers/base/export/metadata.py", "from_result"),
     ("scrapers/base/extractors/table.py", "set_run_id"),
     ("scrapers/base/factory/option_adapter.py", "supports"),
@@ -55,9 +53,7 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/base/helpers/parsing.py", "parse_float_from_text"),
     ("scrapers/base/helpers/parsing.py", "parse_int_from_text"),
     ("scrapers/base/helpers/parsing.py", "parse_number_with_unit"),
-    ("scrapers/base/helpers/path.py", "ensure_parent"),
     ("scrapers/base/helpers/text.py", "strip_marks"),
-    ("scrapers/base/helpers/text.py", "strip_wiki_refs"),
     ("scrapers/base/helpers/value_objects/lap_record.py", "items"),
     ("scrapers/base/helpers/value_objects/lap_record.py", "keys"),
     ("scrapers/base/html_fetcher.py", "get"),
@@ -82,27 +78,27 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/base/sections/serializer.py", "build_section_parse_result"),
     ("scrapers/base/source_catalog.py", "base_url"),
     ("scrapers/base/source_catalog.py", "url"),
-    ("scrapers/base/table/columns/helpers/driver_parsing.py", "build_link_lookup"),
-    ("scrapers/base/table/columns/helpers/engine_link_helpers.py", "build_link_lookup"),
-    ("scrapers/base/table/columns/helpers/engine_parsing.py", "build_link_lookup"),
     (
-        "scrapers/base/table/columns/helpers/results_parsing.py",
-        "extract_race_result_background",
-    ),
+        "scrapers/base/table/columns/helpers/driver_parsing.py",
+        "build_link_lookup",
+    ),  # tested directly
     ("scrapers/base/table/columns/types/column_factory.py", "FloatColumn"),
     ("scrapers/base/table/columns/types/column_factory.py", "IntColumn"),
     ("scrapers/base/table/columns/types/constructor_part.py", "parse"),
     ("scrapers/base/table/columns/types/func.py", "parse"),
     ("scrapers/base/table/columns/types/name_status.py", "checker"),
-    ("scrapers/base/table/dsl/column.py", "column"),
+    ("scrapers/base/table/dsl/column.py", "column"),  # widely used named constructor
     ("scrapers/base/table/headers.py", "normalize_header"),
-    ("scrapers/base/table/schema.py", "build"),
+    ("scrapers/base/table/schema.py", "build"),  # builder pattern
     ("scrapers/base/table/scraper.py", "parse_row"),
     ("scrapers/circuits/composition.py", "for_tests"),
-    ("scrapers/circuits/helpers/sections.py", "is_circuit_like_article"),
+    ("scrapers/circuits/helpers/sections.py", "is_circuit_like_article"),  # tested
     ("scrapers/circuits/infobox/service.py", "build_parser"),
     ("scrapers/circuits/infobox/service.py", "normalize_result"),
-    ("scrapers/circuits/infobox/services/text_utils.py", "prune_nulls"),
+    (
+        "scrapers/circuits/infobox/services/text_utils.py",
+        "prune_nulls",
+    ),  # method with many callers
     ("scrapers/circuits/sections/service.py", "build_entries"),
     ("scrapers/config.py", "default_data_paths"),
     ("scrapers/config.py", "default_scraper_config"),
@@ -127,7 +123,6 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/drivers/infobox/parsers/cell.py", "parse_float_cell"),
     ("scrapers/drivers/infobox/parsers/cell.py", "parse_int_cell"),
     ("scrapers/drivers/infobox/parsers/cell.py", "parse_nested_table"),
-    ("scrapers/drivers/infobox/parsers/year.py", "detect_url_pattern"),
     ("scrapers/drivers/infobox/service.py", "build_parser"),
     ("scrapers/drivers/sections/common.py", "from_config"),
     ("scrapers/engines/columns/configuration.py", "parse"),
@@ -136,8 +131,6 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/engines/columns/fuel_injection_pressure_limit.py", "parse"),
     ("scrapers/engines/columns/fuel_limit_per_race.py", "parse"),
     ("scrapers/grands_prix/columns/restart_status.py", "parse"),
-    ("scrapers/grands_prix/helpers/sections.py", "has_grand_prix_category"),
-    ("scrapers/grands_prix/helpers/sections.py", "has_grand_prix_navbox"),
     (
         "scrapers/points/config_factory.py",
         "build_points_scoring_systems_history_config",
@@ -159,17 +152,29 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
         "with_updates",
     ),
     ("scrapers/sponsorship_liveries/parsers/splitters/record/rules.py", "should_apply"),
-    ("scrapers/wiki/component_metadata.py", "build_layer_one_list_scraper"),
-    ("scrapers/wiki/parsers/body_content.py", "find_body_content"),
+    (
+        "scrapers/wiki/component_metadata.py",
+        "build_layer_one_list_scraper",
+    ),  # tested directly
+    (
+        "scrapers/wiki/parsers/body_content.py",
+        "find_body_content",
+    ),  # tested directly
     ("scrapers/wiki/parsers/elements/infobox.py", "parse"),
     ("scrapers/wiki/parsers/elements/infobox.py", "parse_row_value"),
     ("scrapers/wiki/parsers/elements/mixin.py", "find_infobox"),
     ("scrapers/wiki/parsers/elements/mixin.py", "find_infoboxes"),
-    ("scrapers/wiki/parsers/elements/parsers.py", "build_default_wiki_element_parsers"),
-    ("scrapers/wiki/parsers/header.py", "find_header"),
+    (
+        "scrapers/wiki/parsers/elements/parsers.py",
+        "build_default_wiki_element_parsers",
+    ),  # tested directly
+    ("scrapers/wiki/parsers/header.py", "find_header"),  # tested directly
     ("scrapers/wiki/parsers/sections/base_nested_section.py", "parse"),
     ("scrapers/wiki/parsers/sections/data_classes.py", "with_section"),
-    ("scrapers/wiki/parsers/sections/normalization.py", "normalize_section_text"),
+    (
+        "scrapers/wiki/parsers/sections/normalization.py",
+        "normalize_section_text",
+    ),  # widely used
     ("scrapers/wiki/parsers/sections/sub_sub_sub_section.py", "parse"),
     ("validation/pipeline.py", "validate"),
     ("validation/record_factory_validator.py", "validate_record"),

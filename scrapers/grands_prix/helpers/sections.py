@@ -6,16 +6,8 @@ from scrapers.grands_prix.helpers.constants import GRAND_PRIX_KEYWORD
 from scrapers.grands_prix.helpers.constants import GRAND_PRIX_NAVBOX_TEMPLATE
 
 
-def has_grand_prix_navbox(soup: BeautifulSoup) -> bool:
-    """Sprawdza navbox Grand Prix po linku szablonu (BeautifulSoup -> bool)."""
-    return has_navbox_template_link(soup, GRAND_PRIX_NAVBOX_TEMPLATE)
-
-
-def has_grand_prix_category(soup: BeautifulSoup) -> bool:
-    """Sprawdza kategorię Grand Prix po słowie kluczowym (BeautifulSoup -> bool)."""
-    return has_category_keyword(soup, [GRAND_PRIX_KEYWORD])
-
-
 def is_grand_prix_article(soup: BeautifulSoup) -> bool:
     """Sprawdza, czy artykuł wygląda na Grand Prix (BeautifulSoup -> bool)."""
-    return has_grand_prix_navbox(soup) or has_grand_prix_category(soup)
+    has_navbox = has_navbox_template_link(soup, GRAND_PRIX_NAVBOX_TEMPLATE)
+    has_category = has_category_keyword(soup, [GRAND_PRIX_KEYWORD])
+    return has_navbox or has_category

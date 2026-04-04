@@ -64,12 +64,10 @@ def build_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
     return _merge_runner_maps(discovered_runner_map, explicit_runner_map)
 
 
-def build_layer_zero_run_config_factory_map() -> (
-    dict[
-        SeedName,
-        LayerZeroRunConfigFactoryProtocol,
-    ]
-):
+def build_layer_zero_run_config_factory_map() -> dict[
+    SeedName,
+    LayerZeroRunConfigFactoryProtocol,
+]:
     return {
         "constructors_current": StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "current"},

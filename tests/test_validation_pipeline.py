@@ -13,9 +13,11 @@ def test_validation_pipeline_returns_standardized_result() -> None:
                 validators=(
                     FunctionalValidator(
                         name="required_name",
-                        handler=lambda record: []
-                        if "name" in record
-                        else [ValidationIssue.missing("name")],
+                        handler=lambda record: (
+                            []
+                            if "name" in record
+                            else [ValidationIssue.missing("name")]
+                        ),
                     ),
                 ),
             ),

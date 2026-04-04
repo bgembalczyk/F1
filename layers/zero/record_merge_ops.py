@@ -5,10 +5,6 @@ import json
 from layers.zero.merge_types import DriverSeriesStats
 
 
-def normalize_incoming_driver_stats(incoming: dict[str, object]) -> dict[str, object]:
-    return DriverSeriesStats.from_dict(incoming).to_dict()
-
-
 def merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
     merged = list(existing)
     seen = {
@@ -47,7 +43,7 @@ def merge_driver_dict_values(
     existing: dict[str, object],
     incoming: dict[str, object],
 ) -> dict[str, object]:
-    normalized_incoming = normalize_incoming_driver_stats(incoming)
+    normalized_incoming = DriverSeriesStats.from_dict(incoming).to_dict()
     merged = dict(existing)
     for key, value in normalized_incoming.items():
         if key in {"entries", "starts"}:

@@ -5,7 +5,6 @@ import re
 from models.domain_utils.years import parse_year_range as parse_domain_year_range
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.constants import MIN_RANGE_YEARS
 
 _YEAR_RE = re.compile(r"\b(\d{4})\b")
@@ -24,14 +23,6 @@ class YearParser:
             message=f"Nie udało się sparsować zakresu lat: {text!r}.",
             parser_name=YearParser.__name__,
         )
-
-    @staticmethod
-    def detect_url_pattern(year_to_link: dict[int, str | None]) -> str | None:
-        """Detect a predictable URL pattern from available year links.
-
-        Returns a pattern string with {year} placeholder if pattern is predictable.
-        """
-        return YearExtractor.detect_url_pattern(year_to_link)
 
     @staticmethod
     def parse_licence_years(year_text: str) -> dict[str, int | None]:

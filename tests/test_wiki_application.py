@@ -53,9 +53,10 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
         seed_registry=(supported_seed, unsupported_seed),
         validate_seed_registry_function=lambda registry: None,
         runner_map_builder=lambda: {"drivers": _Runner()},
-        engine_manufacturers_runner=lambda base_wiki_dir,
-        include_urls: engine_runner_calls.append(
-            (base_wiki_dir, include_urls),
+        engine_manufacturers_runner=lambda base_wiki_dir, include_urls: (
+            engine_runner_calls.append(
+                (base_wiki_dir, include_urls),
+            )
         ),
     )
 
@@ -145,8 +146,8 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         copy_file=lambda source, target: None,
         year_provider=lambda: 2026,
     )
-    constructors_mirror_service.mirror = (
-        lambda base_wiki_dir, source_json_path: mirror_calls.append(
+    constructors_mirror_service.mirror = lambda base_wiki_dir, source_json_path: (
+        mirror_calls.append(
             (base_wiki_dir, source_json_path),
         )
     )
