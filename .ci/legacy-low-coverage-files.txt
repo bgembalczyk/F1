@@ -1,0 +1,4 @@
+# Lista plików legacy z niskim pokryciem, które wymagają poprawy przy każdym dotknięciu.
+# Format: ścieżka względem repo, jedna linia = jeden plik.
+# Przykład:
+# scrapers/example/legacy_parser.py

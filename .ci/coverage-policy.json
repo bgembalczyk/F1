@@ -1,0 +1,6 @@
+{
+  "current_sprint": 1,
+  "global_threshold_path": [85.0, 88.0, 91.0, 94.0, 97.0, 99.0],
+  "minimum_global_increment_per_sprint_pp": 1.5,
+  "legacy_minimum_improvement_pp": 0.5
+}

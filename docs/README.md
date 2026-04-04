@@ -26,6 +26,7 @@ Aby ograniczać duplikację między dokumentami, w innych plikach utrzymujemy ty
 - [CHANGES_CHECKLIST (review + merge gate)](CHANGES_CHECKLIST.md)
 - [MODULE_BOUNDARIES (reguły zależności i antyduplikacja)](MODULE_BOUNDARIES.md)
 - [TYPING_GUARDRAILS](TYPING_GUARDRAILS.md)
+- [Polityka jakości coverage w CI](COVERAGE_QUALITY_POLICY.md)
 
 
 ## README modułów (quick orientation)
