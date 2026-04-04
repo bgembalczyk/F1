@@ -1,6 +1,8 @@
 # ruff: noqa: E501, PLR2004, SLF001
 from dataclasses import dataclass
 
+import pytest
+
 from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.components.header_resolver import HeaderResolver
 from infrastructure.http_client.components.request_executor import RequestExecutor
@@ -49,6 +51,32 @@ class _NoopRateLimiter:
 
     def wait(self, url: str) -> None:
         self.calls.append(url)
+
+
+class _NeverRetryPolicy:
+    @property
+    def max_retries(self) -> int:
+        return 0
+
+    def should_retry(self, *, response, exception, _attempt: int) -> bool:
+        _ = (response, exception)
+        return False
+
+    def backoff_seconds(self, _attempt: int) -> float:
+        return 0.0
+
+
+class _LegacyPositionalRetryPolicy:
+    @property
+    def max_retries(self) -> int:
+        return 0
+
+    def should_retry(self, response, exception, attempt) -> bool:
+        _ = (response, exception, attempt)
+        return False
+
+    def backoff_seconds(self, _attempt: int) -> float:
+        return 0.0
 
 
 class _MemoryCache:
@@ -139,6 +167,40 @@ def test_request_executor_raises_after_exhausted_retryable_exceptions() -> None:
         raise AssertionError(msg)
 
     assert len(rate_limiter.calls) == 2
+
+
+def test_request_executor_supports_legacy_positional_retry_signature() -> None:
+    rate_limiter = _NoopRateLimiter()
+    policy = _LegacyPositionalRetryPolicy()
+    executor = RequestExecutor(retry_policy=policy, rate_limiter=rate_limiter)
+
+    response = executor.execute(
+        url="https://en.wikipedia.org/wiki/F1",
+        headers={"X": "1"},
+        timeout=3,
+        request_func=lambda *_args, **_kwargs: _DummyResponse(status_code=200),
+        request_exception_cls=DummyRequestError,
+    )
+
+    assert response.status_code == 200
+    assert len(rate_limiter.calls) == 1
+
+
+def test_request_executor_fails_for_none_response_without_retry() -> None:
+    rate_limiter = _NoopRateLimiter()
+    policy = _NeverRetryPolicy()
+    executor = RequestExecutor(retry_policy=policy, rate_limiter=rate_limiter)
+
+    with pytest.raises(AttributeError):
+        executor.execute(
+            url="https://en.wikipedia.org/wiki/F1",
+            headers={"X": "1"},
+            timeout=3,
+            request_func=lambda *_args, **_kwargs: None,
+            request_exception_cls=DummyRequestError,
+        )
+
+    assert len(rate_limiter.calls) == 1
 
 
 def test_default_http_policy_factory_builds_default_components(tmp_path) -> None:
