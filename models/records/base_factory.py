@@ -120,7 +120,7 @@ class BaseRecordFactory:
             payload.setdefault(key, default_value)
 
     def normalize_bool_field(self, payload: dict[str, Any], field_name: str) -> None:
-        payload[field_name] = self.normalizer.normalize_bool(payload.get(field_name))
+        payload[field_name] = bool(payload.get(field_name))
 
     def apply_spec(
         self,

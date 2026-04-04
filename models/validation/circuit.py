@@ -6,12 +6,11 @@ from models.domain_utils.normalization import normalize_link_items
 from models.records.circuit import CIRCUIT_SCHEMA
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_CIRCUIT_STATUSES
-from models.validation.helpers import validate_float
-from models.validation.helpers import validate_int
 from models.validation.helpers import validate_status
 from models.validation.validators import normalize_season_list
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
+from models.validation.utils import coerce_number
 
 
 @dataclass
@@ -44,18 +43,24 @@ class Circuit(ValidatedModel):
             ALLOWED_CIRCUIT_STATUSES,
             "circuit_status",
         )
-        self.last_length_used_km = validate_float(
+        self.last_length_used_km = coerce_number(
             self.last_length_used_km,
+            float,
             "last_length_used_km",
+            allow_none=True,
         )
-        self.last_length_used_mi = validate_float(
+        self.last_length_used_mi = coerce_number(
             self.last_length_used_mi,
+            float,
             "last_length_used_mi",
+            allow_none=True,
         )
-        self.turns = validate_int(self.turns, "turns")
-        self.grands_prix_held = validate_int(
+        self.turns = coerce_number(self.turns, int, "turns", allow_none=True)
+        self.grands_prix_held = coerce_number(
             self.grands_prix_held,
+            int,
             "grands_prix_held",
+            allow_none=True,
         )
 
         # --- grands_prix: koercja do Link + filtr pustych ---

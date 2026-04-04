@@ -7,9 +7,8 @@ from typing import cast
 from models.domain_utils.normalization import normalize_link_item
 from models.domain_utils.normalization import normalize_link_items
 from models.domain_utils.normalization import normalize_season_items
-from models.validation.helpers import validate_float
-from models.validation.helpers import validate_int
 from models.validation.helpers import validate_status
+from models.validation.utils import coerce_number
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord
@@ -25,7 +24,7 @@ class FieldNormalizer:
         if value is None:
             return None
         try:
-            return validate_int(value, field_name)
+            return coerce_number(value, int, field_name, allow_none=True)
         except ValueError:
             return None
 
@@ -34,7 +33,7 @@ class FieldNormalizer:
         if value is None:
             return None
         try:
-            return validate_float(value, field_name)
+            return coerce_number(value, float, field_name, allow_none=True)
         except ValueError:
             return None
 
@@ -93,7 +92,3 @@ class FieldNormalizer:
         if isinstance(value, str):
             return value.strip() or None
         return str(value).strip() or None
-
-    @staticmethod
-    def normalize_bool(value: Any) -> bool:
-        return bool(value)

@@ -25,10 +25,7 @@ class EventRecordFactory(BaseRecordFactory):
                         value,
                         field,
                     ),
-                    "championship": lambda value,
-                    _field: self.normalizer.normalize_bool(
-                        value,
-                    ),
+                    "championship": lambda value, _field: bool(value),
                 },
             },
         )

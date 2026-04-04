@@ -2,8 +2,6 @@ from dataclasses import dataclass
 
 import pytest
 
-from models.validation.helpers import validate_float
-from models.validation.helpers import validate_int
 from models.validation.validators import model_to_dict
 from models.validation.validators import normalize_link_list
 from models.validation.validators import normalize_season_list
@@ -14,26 +12,27 @@ from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
 from validation.issue import ValidationIssue
 from validation.validator_base import RecordValidator
+from models.validation.utils import coerce_number
 
 VALID_FLOAT_STRING = "3.5"
 EXPECTED_FLOAT_VALUE = 3.5
 
 
 def test_validate_int_allows_none_and_rejects_invalid_values():
-    assert validate_int(None, "value") is None
+    assert coerce_number(None, int, "value", allow_none=True) is None
 
     with pytest.raises(ValueError, match="musi być liczbą"):
-        validate_int("bad", "value")
+        coerce_number("bad", int, "value", allow_none=True)
 
     with pytest.raises(ValueError, match="nie może być ujemne"):
-        validate_int(-1, "value")
+        coerce_number(-1, int, "value", allow_none=True)
 
 
 def test_validate_float_coerces_and_rejects_negative_values():
-    assert validate_float(VALID_FLOAT_STRING, "value") == EXPECTED_FLOAT_VALUE
+    assert coerce_number(VALID_FLOAT_STRING, float, "value", allow_none=True) == EXPECTED_FLOAT_VALUE
 
     with pytest.raises(ValueError, match="nie może być ujemne"):
-        validate_float(-1.0, "value")
+        coerce_number(-1.0, float, "value", allow_none=True)
 
 
 def test_validate_link_accepts_link_instance():

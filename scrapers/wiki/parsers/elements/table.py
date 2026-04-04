@@ -3,11 +3,11 @@ from typing import Any
 
 from bs4 import Tag
 
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
-from scrapers.wiki.parsers.elements.text_cleaning import clean_table_cell_text
 from scrapers.wiki.parsers.types import TableParsedData
 
 
@@ -116,7 +116,7 @@ class TableParser(WikiParser[TableParsedData]):
     ) -> list[str]:
         config = TableParser._cleaner_config(parser)
         return [
-            clean_table_cell_text(
+            clean_wiki_text(
                 cell.get_text(" ", strip=True),
                 strip_lang_suffix=config["strip_lang_suffix"],
                 strip_refs=config["strip_refs"],

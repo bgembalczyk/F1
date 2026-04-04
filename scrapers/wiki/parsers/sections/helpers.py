@@ -5,7 +5,7 @@ from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
 from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
 from scrapers.wiki.parsers.sections.constants import TOP_SECTION_NAME
 from scrapers.wiki.parsers.sections.data_classes import SectionProfile
-from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
+from scrapers.wiki.parsers.sections.normalization import normalize_section_text
 from scrapers.wiki.parsers.sections.section_profiles_config import (
     SECTION_PROFILES_CONFIG,
 )
@@ -102,7 +102,7 @@ def profile_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
     if not profile:
         return set()
 
-    normalized_target = normalize_section_profile_key(target)
+    normalized_target = normalize_section_text(target)
     aliases = set(profile.aliases_for(normalized_target))
 
     if domain == "constructors" and CURRENT_CONSTRUCTORS_ID.match(normalized_target):
@@ -128,7 +128,7 @@ def profile_entry_aliases(
     filtered: list[str] = []
     seen: set[str] = set()
     for value in merged:
-        normalized = normalize_section_profile_key(value)
+        normalized = normalize_section_text(value)
         if not normalized or normalized in seen:
             continue
         seen.add(normalized)
