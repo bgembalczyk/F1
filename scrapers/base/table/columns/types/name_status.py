@@ -78,7 +78,4 @@ def create_suffix_checker(*markers: str) -> Callable[[ColumnContext], bool]:
         Function that returns True if context raw_text ends with any marker
     """
 
-    def checker(ctx: ColumnContext) -> bool:
-        return (ctx.raw_text or "").strip().endswith(markers)
-
-    return checker
+    return lambda ctx: (ctx.raw_text or "").strip().endswith(markers)
