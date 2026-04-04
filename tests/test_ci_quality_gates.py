@@ -8,6 +8,7 @@ from scripts.ci import check_duplicate_default_configs
 from scripts.ci import enforce_function_complexity
 from scripts.ci import enforce_no_new_prints
 from scripts.ci import enforce_source_name_magic_strings
+from scripts.ci import enforce_structural_quality
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -111,3 +112,58 @@ def build_layer_zero_run_config_factory_map():
     assert len(duplicates) == 1
     seeds = next(iter(duplicates.values()))
     assert seeds == ["a", "b"]
+
+
+def test_structural_quality_detects_file_function_and_class_length(tmp_path: Path) -> None:
+    file_path = tmp_path / "module.py"
+    class_body = "\n".join("    pass" for _ in range(4))
+    function_body = "\n".join("    x = 1" for _ in range(4))
+    file_path.write_text(
+        f"class Oversized:\n{class_body}\n\ndef oversized_fn():\n{function_body}\n",
+        encoding="utf-8",
+    )
+
+    violations = enforce_structural_quality.evaluate_file(
+        file_path,
+        max_function_lines=3,
+        max_class_lines=3,
+        max_file_lines=8,
+    )
+
+    assert any("file length=" in item for item in violations)
+    assert any("function 'oversized_fn'" in item for item in violations)
+    assert any("class 'Oversized'" in item for item in violations)
+
+
+def test_structural_quality_flags_redundant_public_alias_and_allows_private_wrapper(
+    tmp_path: Path,
+) -> None:
+    file_path = tmp_path / "module.py"
+    file_path.write_text(
+        """
+
+def redundant(value):
+    return normalize(value)
+
+
+def _private_wrapper(value):
+    return normalize(value)
+
+
+def wrapper_for_private_attr(self, payload):
+    return self._service.handle(payload)
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    violations = enforce_structural_quality.evaluate_file(
+        file_path,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
+    )
+
+    assert any("function 'redundant' is a redundant alias" in item for item in violations)
+    assert not any("_private_wrapper" in item for item in violations)
+    assert not any("wrapper_for_private_attr" in item for item in violations)

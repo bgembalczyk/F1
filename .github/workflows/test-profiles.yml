@@ -57,3 +57,7 @@ jobs:
         if: steps.profile.outputs.profile == 'full'
         run: |
           pytest -q
+
+      - name: Coverage gate (minimum 99%)
+        run: |
+          pytest -q --cov=. --cov-report=term-missing --cov-fail-under=99

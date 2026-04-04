@@ -15,6 +15,17 @@ repos:
         language: system
         pass_filenames: true
         files: ^scrapers/.*\.py$
+      - id: enforce-structural-quality
+        name: enforce-structural-quality
+        entry: python scripts/ci/enforce_structural_quality.py
+        language: system
+        pass_filenames: true
+        files: ^(layers|models|scrapers|validation|infrastructure|complete_extractor|config)/.*\.py$
+      - id: enforce-no-dead-code
+        name: enforce-no-dead-code
+        entry: python scripts/ci/enforce_no_dead_code.py
+        language: system
+        pass_filenames: false
 
   # Python lint + autofix + format
   - repo: https://github.com/astral-sh/ruff-pre-commit
