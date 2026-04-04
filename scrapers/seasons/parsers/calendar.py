@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import UrlColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
@@ -21,11 +21,11 @@ class SeasonCalendarParser:
         season_year: int | None,
     ) -> list[dict[str, Any]]:
         schema_columns = [
-            column("Round", "round", IntColumn()),
-            column("Grand Prix", "grand_prix", UrlColumn()),
-            column("Circuit", "circuit", CalendarCircuitColumn()),
-            column("Race date", "race_date", SeasonDateColumn(year=season_year)),
-            column("Date", "race_date", SeasonDateColumn(year=season_year)),
+            ColumnSpec("Round", "round", IntColumn()),
+            ColumnSpec("Grand Prix", "grand_prix", UrlColumn()),
+            ColumnSpec("Circuit", "circuit", CalendarCircuitColumn()),
+            ColumnSpec("Race date", "race_date", SeasonDateColumn(year=season_year)),
+            ColumnSpec("Date", "race_date", SeasonDateColumn(year=season_year)),
         ]
         schema = TableSchemaDSL(columns=schema_columns)
         records = self._table_parser.parse_table(

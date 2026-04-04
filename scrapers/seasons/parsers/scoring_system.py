@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import TextColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.parsers.table import SeasonTableParser
 
@@ -19,7 +19,7 @@ class SeasonScoringSystemParser:
             section_ids=["Scoring_system", "Points_scoring_system"],
             expected_headers=["Position", "1st", "2nd", "3rd", "4th", "5th"],
             schema=TableSchemaDSL(
-                columns=[column("Position", "position", TextColumn())],
+                columns=[ColumnSpec("Position", "position", TextColumn())],
             ),
             default_column=IntColumn(),
         )

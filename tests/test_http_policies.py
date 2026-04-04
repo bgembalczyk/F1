@@ -1,14 +1,14 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 from scrapers.base.factory.run_config_options_mapper import RunConfigOptionsMapper
 from scrapers.base.options import ScraperOptions
-from scrapers.base.options import build_scraper_options
+from scrapers.base.options import ScraperOptionsBuilder
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 
 
 def test_scraper_options_builder_sets_nested_http_and_cache_options() -> None:
     options = (
-        build_scraper_options()
+        ScraperOptionsBuilder()
         .with_http(timeout=25, retries=2, backoff_seconds=1.25)
         .with_cache(cache_dir="cache", cache_ttl=12, cache_adapter="adapter")
         .build()

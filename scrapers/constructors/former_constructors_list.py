@@ -25,7 +25,7 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
 
     schema_columns = BaseConstructorListScraper.build_schema_columns(
         BaseConstructorListScraper.build_common_metadata_columns(),
-        [BaseConstructorListScraper.build_licensed_in_column()],
+        [BaseConstructorListScraper.build_licensed_in_ColumnSpec()],
         build_metric_columns(
             [
                 MetricColumnSpec(CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),

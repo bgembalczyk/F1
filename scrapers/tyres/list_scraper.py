@@ -1,5 +1,6 @@
 from typing import Any
 
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import TYRES
@@ -7,7 +8,7 @@ from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.tyres.columns.append_links import AppendLinksColumn
@@ -46,14 +47,14 @@ class TyreManufacturersBySeasonTableParser(WikiTableBaseParser):
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
-        column("Season", "seasons", SeasonsColumn()),
-        column("Manufacturer 1", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 2", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 3", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 4", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 5", "manufacturers", AppendLinksColumn()),
-        column("Manufacturer 6", "manufacturers", AppendLinksColumn()),
-        column("Wins", "wins", SkipColumn()),
+        ColumnSpec("Season", "seasons", SeasonsColumn()),
+        ColumnSpec("Manufacturer 1", "manufacturers", AppendLinksColumn()),
+        ColumnSpec("Manufacturer 2", "manufacturers", AppendLinksColumn()),
+        ColumnSpec("Manufacturer 3", "manufacturers", AppendLinksColumn()),
+        ColumnSpec("Manufacturer 4", "manufacturers", AppendLinksColumn()),
+        ColumnSpec("Manufacturer 5", "manufacturers", AppendLinksColumn()),
+        ColumnSpec("Manufacturer 6", "manufacturers", AppendLinksColumn()),
+        ColumnSpec("Wins", "wins", SkipColumn()),
     ],
 )
 
@@ -106,7 +107,7 @@ class TyreManufacturersScraper(F1TableScraper):
             "Wins",
         ],
         schema=TABLE_SCHEMA,
-        record_factory=RECORD_FACTORIES.mapping(),
+        record_factory=MappingRecordFactory(),
     )
 
     def __init__(

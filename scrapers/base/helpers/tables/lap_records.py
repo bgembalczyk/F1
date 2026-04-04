@@ -5,6 +5,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
@@ -14,7 +15,7 @@ from scrapers.base.table.columns.types import DriverColumn
 from scrapers.base.table.columns.types import TimeColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
@@ -29,14 +30,14 @@ class LapRecordsTableScraper(F1TableScraper):
     """
 
     schema_columns = [
-        column("Category", "category", AutoColumn()),
-        column("Class", "class_", AutoColumn()),
-        column("Driver", "driver", DriverColumn()),
-        column("Driver/Rider", "driver_rider", DriverColumn()),
-        column("Vehicle", "vehicle", AutoColumn()),
-        column("Event", "event", UrlColumn()),
-        column("Time", "time", TimeColumn()),
-        column("Date", "date", DateColumn()),
+        ColumnSpec("Category", "category", AutoColumn()),
+        ColumnSpec("Class", "class_", AutoColumn()),
+        ColumnSpec("Driver", "driver", DriverColumn()),
+        ColumnSpec("Driver/Rider", "driver_rider", DriverColumn()),
+        ColumnSpec("Vehicle", "vehicle", AutoColumn()),
+        ColumnSpec("Event", "event", UrlColumn()),
+        ColumnSpec("Time", "time", TimeColumn()),
+        ColumnSpec("Date", "date", DateColumn()),
     ]
 
     CONFIG = build_scraper_config(
@@ -44,7 +45,7 @@ class LapRecordsTableScraper(F1TableScraper):
         section_id=None,
         expected_headers=["Time"],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=RECORD_FACTORIES.mapping(),
+        record_factory=MappingRecordFactory(),
     )
 
     def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:

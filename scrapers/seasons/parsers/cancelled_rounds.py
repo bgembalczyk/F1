@@ -3,12 +3,13 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.html_utils import find_section_tables
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
@@ -31,19 +32,19 @@ class CancelledRoundsParser:
         calendar_data: list[dict[str, Any]] | None = None,
     ) -> list[dict[str, Any]]:
         schema_columns = [
-            column("Grand Prix", "grand_prix", UrlColumn()),
-            column("Circuit", "circuit", CalendarCircuitColumn()),
-            column(
+            ColumnSpec("Grand Prix", "grand_prix", UrlColumn()),
+            ColumnSpec("Circuit", "circuit", CalendarCircuitColumn()),
+            ColumnSpec(
                 "Scheduled date",
                 "scheduled_date",
                 SeasonDateColumn(year=season_year),
             ),
-            column(
+            ColumnSpec(
                 "Original date",
                 "scheduled_date",
                 SeasonDateColumn(year=season_year),
             ),
-            column("Date", "scheduled_date", SeasonDateColumn(year=season_year)),
+            ColumnSpec("Date", "scheduled_date", SeasonDateColumn(year=season_year)),
         ]
         schema = TableSchemaDSL(columns=schema_columns)
 
@@ -135,7 +136,7 @@ class CancelledRoundsParser:
             expected_headers=EXPECTED_HEADERS,
             schema=schema,
             default_column=None,
-            record_factory=RECORD_FACTORIES.mapping(),
+            record_factory=MappingRecordFactory(),
         )
         pipeline = TablePipeline(
             config=config,
