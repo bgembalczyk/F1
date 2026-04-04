@@ -14,11 +14,19 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
 from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_metric_columns
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.dsl.column import column
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
 from scrapers.constructors.config_factory import build_constructor_list_config
+from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_FASTEST_LAPS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_PODIUMS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_POINTS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_POLES_HEADER
@@ -53,10 +61,25 @@ class ConstructorsListScraper(F1ListScraper):
     _FORMER_SECTION_ID = "Former_constructors"
     _FORMER_SECTION_LABEL = "Former constructors"
     _PRIVATEER_SECTION_ID = "Privateer_teams"
+    _CURRENT_SCHEMA_COLUMNS = BaseConstructorListScraper.build_schema_columns(
+        [column(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
+        [column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
+        [column(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
+        BaseConstructorListScraper.build_common_stats_columns(),
+        [column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
+        BaseConstructorListScraper.build_common_metadata_columns(),
+        [
+            column(
+                CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
+                "antecedent_teams",
+                LinksListColumn(),
+            ),
+        ],
+    )
     _CURRENT_CONFIG = build_constructor_list_config(
         section_id=_CURRENT_SECTION_ID,
         expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
-        columns=[],
+        columns=_CURRENT_SCHEMA_COLUMNS,
     )
     _FORMER_CONFIG = build_constructor_list_config(
         section_id=_FORMER_SECTION_ID,

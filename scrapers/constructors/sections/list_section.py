@@ -11,6 +11,7 @@ from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_FASTEST_LAPS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
@@ -64,8 +65,34 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
         normalized = {header.strip().lower() for header in headers}
         return expected.issubset(normalized)
 
+    _HEADER_TO_KEY: dict[str, str] = {
+        CONSTRUCTOR_NAME_HEADER: "constructor",
+        CONSTRUCTOR_ENGINE_HEADER: "engine",
+        CONSTRUCTOR_LICENSED_IN_HEADER: "licensed_in",
+        CONSTRUCTOR_BASED_IN_HEADER: "based_in",
+        CONSTRUCTOR_SEASONS_HEADER: "seasons",
+        CONSTRUCTOR_RACES_ENTERED_HEADER: "races_entered",
+        CONSTRUCTOR_RACES_STARTED_HEADER: "races_started",
+        CONSTRUCTOR_DRIVERS_HEADER: "drivers",
+        CONSTRUCTOR_TOTAL_ENTRIES_HEADER: "total_entries",
+        CONSTRUCTOR_WINS_HEADER: "wins",
+        CONSTRUCTOR_POINTS_HEADER: "points",
+        CONSTRUCTOR_POLES_HEADER: "poles",
+        CONSTRUCTOR_FASTEST_LAPS_HEADER: "fastest_laps",
+        CONSTRUCTOR_PODIUMS_HEADER: "podiums",
+        CONSTRUCTOR_WCC_HEADER: "wcc_titles",
+        CONSTRUCTOR_WDC_HEADER: "wdc_titles",
+        CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER: "antecedent_teams",
+    }
+
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        return {header: header.strip().lower().replace(" ", "_") for header in headers}
+        return {
+            header: self._HEADER_TO_KEY.get(
+                header.strip(),
+                header.strip().lower().replace(" ", "_"),
+            )
+            for header in headers
+        }
 
 
 class FormerConstructorsTableParser(WikiTableBaseParser):
