@@ -21,16 +21,16 @@ def _install_scrapers_pkg_stub() -> None:
 
 _install_scrapers_pkg_stub()
 
-from infrastructure.gemini.cache import GeminiCache
-from infrastructure.gemini.cache_service import GeminiCacheService
-from infrastructure.gemini.client import GeminiClient
-from infrastructure.gemini.model_config import ModelConfig
-from infrastructure.gemini.model_selector import ModelSelector
-from infrastructure.gemini.orchestration import GeminiOrchestrationService
-from infrastructure.gemini.transport import GeminiTransport
-from scrapers.base.errors import PipelineError
-from scrapers.base.errors import SourceParseError
-from scrapers.base.errors import TransportError
+from infrastructure.gemini.cache import GeminiCache  # noqa: E402
+from infrastructure.gemini.cache_service import GeminiCacheService  # noqa: E402
+from infrastructure.gemini.client import GeminiClient  # noqa: E402
+from infrastructure.gemini.model_config import ModelConfig  # noqa: E402
+from infrastructure.gemini.model_selector import ModelSelector  # noqa: E402
+from infrastructure.gemini.orchestration import GeminiOrchestrationService  # noqa: E402
+from infrastructure.gemini.transport import GeminiTransport  # noqa: E402
+from scrapers.base.errors import PipelineError  # noqa: E402
+from scrapers.base.errors import SourceParseError  # noqa: E402
+from scrapers.base.errors import TransportError  # noqa: E402
 
 
 def test_package_exports_and_lazy_client_import() -> None:
@@ -122,7 +122,8 @@ def test_orchestration_maps_transport_error_and_falls_back(tmp_path: Path) -> No
     def call_api(model: str) -> dict[str, object]:
         seen.append(model)
         if model == "m1":
-            raise TimeoutError("socket timeout")
+            msg = "socket timeout"
+            raise TimeoutError(msg)
         return {"ok": model}
 
     assert service.run("prompt", call_api=call_api) == {"ok": "m2"}
@@ -151,8 +152,9 @@ def test_orchestration_raises_models_exhausted_when_all_models_fail(
 
 
 def test_client_from_config_provider_uses_config_timeout() -> None:
+    _expected_timeout = 17
     app_config = SimpleNamespace(
-        gemini=SimpleNamespace(api_key="k", timeout_seconds=17),
+        gemini=SimpleNamespace(api_key="k", timeout_seconds=_expected_timeout),
     )
     provider = Mock()
     provider.get.return_value = app_config
@@ -160,7 +162,7 @@ def test_client_from_config_provider_uses_config_timeout() -> None:
     client = GeminiClient.from_config_provider(provider)
 
     assert isinstance(client, GeminiClient)
-    assert client._transport._timeout == 17  # noqa: SLF001
+    assert client._transport._timeout == _expected_timeout  # noqa: SLF001
 
 
 def test_client_call_api_maps_empty_response_to_source_parse_error(
@@ -239,7 +241,8 @@ def test_transport_success_and_error_mapping(monkeypatch: pytest.MonkeyPatch) ->
         transport.generate("p", model="m", response_mime_type="application/json")
 
     def raise_url(*_args, **_kwargs):
-        raise urllib.error.URLError("timeout")
+        msg = "timeout"
+        raise urllib.error.URLError(msg)
 
     monkeypatch.setattr("urllib.request.urlopen", raise_url)
     with pytest.raises(TransportError, match="connection error"):

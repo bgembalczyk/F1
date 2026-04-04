@@ -17,7 +17,7 @@ class _StubFreePracticeTableParser:
         self._error = error
         self.calls: list[dict[str, Any]] = []
 
-    def parse_table(self, soup: BeautifulSoup, **kwargs: Any) -> list[dict[str, Any]]:
+    def parse_table(self, _soup: BeautifulSoup, **kwargs: Any) -> list[dict[str, Any]]:
         self.calls.append(kwargs)
         if self._error is not None:
             raise self._error

@@ -19,7 +19,7 @@ class _StubStandingsTableParser:
 
     def parse_standings_table(
         self,
-        soup: BeautifulSoup,
+        _soup: BeautifulSoup,
         **kwargs: Any,
     ) -> list[dict[str, Any]]:
         self.calls.append(kwargs)
@@ -51,11 +51,12 @@ def test_parse_drivers_marks_ineligible_section_and_shares_fastest_lap() -> None
 
     result = parser.parse_drivers(BeautifulSoup("<html></html>", "html.parser"))
 
+    _expected_share_count = 2
     assert [row["driver"]["text"] for row in result] == ["Driver A", "Driver B"]
     assert result[1]["eligible_for_points"] is False
     assert result[0]["r1"]["fastest_lap_shared"] is True
     assert result[1]["r1"]["fastest_lap_shared"] is True
-    assert result[0]["r1"]["fastest_lap_share_count"] == 2
+    assert result[0]["r1"]["fastest_lap_share_count"] == _expected_share_count
 
 
 def test_parse_constructors_merges_duplicate_rows_into_one_domain_result() -> None:
@@ -112,16 +113,17 @@ def test_parse_drivers_propagates_table_parser_errors() -> None:
 
 
 def test_parse_drivers_requests_primary_and_alias_section_ids() -> None:
+    _expected_season_year = 2024
     table_parser = _StubStandingsTableParser(responses=[[]])
     parser = SeasonStandingsParser(table_parser)
 
     parser.parse_drivers(
         BeautifulSoup("<html></html>", "html.parser"),
-        season_year=2024,
+        season_year=_expected_season_year,
     )
 
     assert table_parser.calls[0]["section_ids"] == [
         "World_Drivers'_Championship_standings",
         "World_Championship_of_Drivers_standings",
     ]
-    assert table_parser.calls[0]["season_year"] == 2024
+    assert table_parser.calls[0]["season_year"] == _expected_season_year
