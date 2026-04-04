@@ -1,0 +1,25 @@
+[run]
+branch = True
+source =
+    scrapers
+    models
+    validation
+    infrastructure
+    layers
+    complete_extractor
+    config
+omit =
+    tests/*
+    tests/support/*
+    tests/fixtures/*
+
+[report]
+show_missing = True
+skip_covered = False
+precision = 2
+
+[html]
+directory = coverage_html
+
+[xml]
+output = coverage.xml
