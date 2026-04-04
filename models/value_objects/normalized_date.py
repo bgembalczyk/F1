@@ -33,4 +33,5 @@ class NormalizedDate(ValueObject):
         return cls(text=data.get("text"), iso=data.get("iso"))
 
     def to_dict(self) -> dict[str, Any]:
+        """Jawny kontrakt eksportu daty znormalizowanej do payloadu rekordu."""
         return {"text": self.text, "iso": self.iso}
