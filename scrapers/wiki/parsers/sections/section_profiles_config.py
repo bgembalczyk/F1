@@ -40,7 +40,9 @@ SECTION_PROFILES_CONFIG: Mapping[str, SectionDomainConfig] = {
         },
     ),
     "circuits": SectionDomainConfig(
-        canonical_sections=frozenset({"layout history", "lap records", "events", "circuits"}),
+        canonical_sections=frozenset(
+            {"layout history", "lap records", "events", "circuits"},
+        ),
         heading_aliases={
             "layout history": frozenset({"history"}),
             "events": frozenset({"races"}),
