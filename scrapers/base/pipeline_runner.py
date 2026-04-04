@@ -189,7 +189,7 @@ class ScraperPipelineRunner:
                     suggestion=normalized.suggestion,
                 ),
             )
-            raise normalized from exc
+            raise
         self.logger.debug("Scrape run %s: finish %s", run_id, step_label)
         self._write_step_quality_report(
             step_name,

@@ -56,7 +56,7 @@ class SectionId(str):
         if not text:
             msg = "SectionId cannot be empty."
             raise ValueError(msg)
-        cleaned = re.sub(r"\s+", " ", text).strip()
+        cleaned = re.sub(r"\s+", "_", text.lower())
         return str.__new__(cls, cleaned)
 
     @classmethod

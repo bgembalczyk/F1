@@ -3,6 +3,7 @@ from abc import ABC
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.errors import ErrorCategory
 from scrapers.base.errors import ScraperNotFoundError
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.types import ExportableRecord
@@ -46,7 +47,7 @@ class F1ListScraper(WikiScraper, ABC):
 
         if self.section_id:
             msg = "Nie znaleziono listy w sekcji."
-            raise ScraperNotFoundError(msg)
+            raise ScraperNotFoundError(msg, category=ErrorCategory.PARSE)
 
         msg = "Nie znaleziono żadnej listy."
         raise ScraperNotFoundError(msg)
