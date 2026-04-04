@@ -108,7 +108,9 @@ class BaseHttpClient(ABC):
 
         Cache działa tylko po URL (headers/timeout są ignorowane w cache key).
         """
-        cache_loader = lambda: self.get(url, headers=headers, timeout=timeout).text
+        def cache_loader() -> str:
+            return self.get(url, headers=headers, timeout=timeout).text
+
         return self.response_cache_service.get_text(
             url,
             cache_loader,

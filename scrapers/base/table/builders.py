@@ -103,6 +103,18 @@ def build_name_status_fragment(
     return [column(header, output_key, column_type)]
 
 
+def metric_column(header: str, output_key: str, metric_key: str) -> MetricColumnSpec:
+    return MetricColumnSpec(header=header, output_key=output_key, metric_key=metric_key)
+
+
+def entity_column(
+    header: str, output_key: str, column_type: BaseColumn,
+) -> EntityColumnSpec:
+    return EntityColumnSpec(
+        header=header, output_key=output_key, column_type=column_type,
+    )
+
+
 def build_table_schema(*parts: SchemaPart) -> TableSchemaDSL:
     return TableSchemaDSL(columns=build_columns(*parts))
 
