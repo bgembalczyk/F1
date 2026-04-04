@@ -36,10 +36,14 @@ def metric_column(header: str, output_key: str, metric_key: str) -> MetricColumn
 
 
 def entity_column(
-    header: str, output_key: str, column_type: BaseColumn,
+    header: str,
+    output_key: str,
+    column_type: BaseColumn,
 ) -> EntityColumnSpec:
     return EntityColumnSpec(
-        header=header, output_key=output_key, column_type=column_type,
+        header=header,
+        output_key=output_key,
+        column_type=column_type,
     )
 
 

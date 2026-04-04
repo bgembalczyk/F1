@@ -37,6 +37,23 @@ class DataPaths:
     def raw_input_file(self, category: str, filename: str) -> Path:
         return self.raw / category / filename
 
+    def legacy_wiki_file(self, category: str, filename: str) -> Path:
+        return self.base_dir / category / filename
+
+    def resolve_compatible_input(self, category: str, filename: str) -> Path:
+        legacy = self.legacy_wiki_file(category, filename)
+        if legacy.exists():
+            return legacy
+        return self.raw / category / filename
+
 
 def default_data_paths(*, base_dir: Path = Path("../../data")) -> DataPaths:
     return DataPaths(base_dir=base_dir)
+
+
+def default_scraper_config() -> ScraperConfig:
+    return ScraperConfig()
+
+
+def default_config() -> ScraperConfig:
+    return ScraperConfig()

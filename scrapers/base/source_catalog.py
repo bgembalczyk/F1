@@ -25,7 +25,8 @@ class SourceRef:
     def url(self, *, section_id: str | None = None) -> str:
         """Build source URL, optionally overriding the default section id."""
         return wiki_article_url(
-            self.article, section_id=section_id or self.section_id,
+            self.article,
+            section_id=section_id or self.section_id,
         )
 
 
