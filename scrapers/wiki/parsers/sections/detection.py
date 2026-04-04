@@ -29,6 +29,12 @@ def normalize_section_slug(text: str) -> str:
     return collapsed or "section"
 
 
+def normalize_section_lookup_key(value: str) -> str:
+    """Normalize separators so '-', '_' and spaces compare equally."""
+    normalized = normalize_section_text(value)
+    return re.sub(r"[\s_-]+", " ", normalized).strip()
+
+
 def make_stable_section_id(
     *,
     heading_anchor: str | None,
@@ -82,7 +88,7 @@ def _resolve_aliases(
     domain_aliases: Mapping[str, Mapping[str, set[str]]] | None,
     domain: str | None,
 ) -> set[str]:
-    normalized_target = normalize_section_text(target)
+    normalized_target = normalize_section_lookup_key(target)
     resolved = builtin_aliases_for_target(target, domain=domain)
 
     if domain and domain_aliases:
@@ -141,16 +147,21 @@ def find_section_heading(
         domain_aliases=domain_aliases,
         domain=domain,
     )
-    target_ids, target_texts = _expand_target_values(target, resolved_aliases)
+    _, target_texts = _expand_target_values(target, resolved_aliases)
+    target_lookup_keys = {
+        normalize_section_lookup_key(value)
+        for value in {target, *resolved_aliases}
+        if isinstance(value, str) and value.strip()
+    }
 
     fuzzy_candidates: list[SectionMatch] = []
 
     for heading in soup.find_all(HEADING_TAGS):
         heading_ids = {
-            normalize_section_text(value).replace(" ", "_")
+            normalize_section_lookup_key(value)
             for value in _collect_heading_ids(heading)
         }
-        if heading_ids & target_ids:
+        if heading_ids & target_lookup_keys:
             return SectionMatch(
                 heading=heading,
                 strategy="exact_id",
@@ -158,7 +169,7 @@ def find_section_heading(
             )
 
         heading_text = normalize_section_text(_headline_text(heading))
-        if heading_text in target_texts:
+        if normalize_section_lookup_key(heading_text) in target_lookup_keys:
             return SectionMatch(
                 heading=heading,
                 strategy="exact_text",

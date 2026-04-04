@@ -4,7 +4,6 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from models.value_objects import SectionId
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
 from scrapers.base.sections.serializer import serialize_section_result
 from scrapers.base.single_wiki_article.section_selection_strategy import (
@@ -15,6 +14,7 @@ from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
+    from models.value_objects import SectionId
     from scrapers.base.sections.interface import SectionParser
     from scrapers.base.sections.interface import SectionParseResult
 
@@ -43,18 +43,18 @@ class SectionAdapter:
         parsed: list[SectionParseResult] = []
         resolver = SectionIdResolver(domain=domain)
         for entry in entries:
-            section_id = SectionId.from_raw(entry.section_id)
+            canonical_section_id = str(entry.section_id).strip()
             entry_aliases = profile_entry_aliases(
                 domain,
-                section_id.to_export(),
+                canonical_section_id,
                 *entry.aliases,
             )
             resolution = resolver.resolve_heading(
                 soup=soup,
-                section_id=section_id,
+                section_id=canonical_section_id,
                 alternative_section_ids=entry_aliases,
                 aliases={
-                    section_id.to_export().replace("_", " "): set(entry_aliases),
+                    canonical_section_id: set(entry_aliases),
                 },
             )
             if resolution.heading_match is None:
