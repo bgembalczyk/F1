@@ -433,7 +433,7 @@ def test_parse_racing_licence_with_beautiful_soup(cell_parser):
 
 def test_car_number_with_present(cell_parser):
     """Test that car number parsing handles 'present' as null end year."""
-    assert_car_number_with_present(cell_parser)
+    assert_car_number_with_present()
 
 
 def test_died_with_hidden_iso_date(general_parser):
