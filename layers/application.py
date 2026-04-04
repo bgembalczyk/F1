@@ -36,10 +36,13 @@ def _current_year() -> int:
 
 
 def _should_mirror_constructors_job(job: object) -> bool:
-    """Aktywna dla `CurrentConstructorsListScraper` i `ConstructorsListScraper`."""
+    """Aktywna dla `CurrentConstructorsListScraper` i `constructors_current`."""
     list_scraper_cls = getattr(job, "list_scraper_cls", None)
     scraper_name = getattr(list_scraper_cls, "__name__", "")
-    return scraper_name in {"CurrentConstructorsListScraper", "ConstructorsListScraper"}
+    if scraper_name == "CurrentConstructorsListScraper":
+        return True
+    seed_name = getattr(job, "seed_name", "")
+    return seed_name == "constructors_current"
 
 
 def _build_default_wiki_pipeline_components() -> _WikiPipelineComponents:
