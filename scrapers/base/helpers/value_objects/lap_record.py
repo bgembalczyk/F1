@@ -41,22 +41,31 @@ class LapRecord:
         return result
 
     def get(self, key: str, default: Any = None) -> Any:
-        return self.data.get(key, default)
+        if key not in self.data:
+            return default
+        return self.data[key]
 
     def setdefault(self, key: str, default: Any = None) -> Any:
-        return self.data.setdefault(key, default)
+        if key not in self.data:
+            self[key] = default
+        return self.data[key]
 
     def pop(self, key: str, default: Any = None) -> Any:
-        return self.data.pop(key, default)
+        if key in self.data:
+            value = self.data[key]
+            del self.data[key]
+            return value
+        return default
 
     def items(self) -> Iterable[tuple[str, Any]]:
-        return self.data.items()
+        return tuple((key, self.data[key]) for key in self.data)
 
     def keys(self) -> Iterable[str]:
-        return self.data.keys()
+        return tuple(self.data)
 
     def update(self, other: Mapping[str, Any]) -> None:
-        self.data.update(other)
+        for key, value in other.items():
+            self[key] = value
 
     def __getitem__(self, key: str) -> Any:
         return self.data[key]

@@ -153,23 +153,6 @@ class RangeRule:
         return self.validate(record)
 
 
-def required_field_rule(field: str) -> ValidationRule:
-    return RequiredFieldRule(field=field)
-
-
-def type_rule(
-    field: str,
-    expected_types: type | tuple[type, ...],
-    *,
-    allow_none: bool = False,
-) -> ValidationRule:
-    return TypeRule(field=field, expected_types=expected_types, allow_none=allow_none)
-
-
-def range_rule(field: str, value_range: ValueRange) -> ValidationRule:
-    return RangeRule(field=field, value_range=value_range)
-
-
 def build_common_rules(
     *,
     required: Sequence[str] = (),
@@ -177,12 +160,16 @@ def build_common_rules(
     allow_none: Sequence[str] = (),
     ranges: Mapping[str, ValueRange] | None = None,
 ) -> list[ValidationRule]:
-    rules: list[ValidationRule] = [required_field_rule(field) for field in required]
+    rules: list[ValidationRule] = [RequiredFieldRule(field=field) for field in required]
     allow_none_set = set(allow_none)
     for field, expected_types in (types or {}).items():
         rules.append(
-            type_rule(field, expected_types, allow_none=field in allow_none_set),
+            TypeRule(
+                field=field,
+                expected_types=expected_types,
+                allow_none=field in allow_none_set,
+            ),
         )
     for field, value_range in (ranges or {}).items():
-        rules.append(range_rule(field, value_range))
+        rules.append(RangeRule(field=field, value_range=value_range))
     return rules

@@ -69,12 +69,16 @@ class CompositeRecordValidator(RecordValidator):
         )
 
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        return list(self.validate_result(record).violations)
+        result = self.validate_result(record)
+        self.record_validation_result(result.violations)
+        return [*result.violations]
 
     def validate_result(self, record: ExportRecord) -> ValidationResult:
         return self._pipeline.validate(record)
 
     def with_rules(self, *rules: ValidationRule) -> CompositeRecordValidator:
+        if not rules:
+            return self
         return CompositeRecordValidator(
             common_rules=self._common_rules,
             domain_rules=(*self._domain_rules, *rules),

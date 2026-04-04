@@ -108,9 +108,10 @@ class BaseHttpClient(ABC):
 
         Cache działa tylko po URL (headers/timeout są ignorowane w cache key).
         """
+        cache_loader = lambda: self.get(url, headers=headers, timeout=timeout).text
         return self.response_cache_service.get_text(
             url,
-            lambda: self.get(url, headers=headers, timeout=timeout).text,
+            cache_loader,
         )
 
     def get_json(
@@ -125,4 +126,5 @@ class BaseHttpClient(ABC):
 
         Bazuje na get_text(), więc cache działa również dla JSON.
         """
-        return json.loads(self.get_text(url, headers=headers, timeout=timeout))
+        payload = self.get_text(url, headers=headers, timeout=timeout)
+        return json.loads(payload)

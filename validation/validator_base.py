@@ -168,6 +168,10 @@ class RecordValidator(ABC):
         errors: Sequence[ValidationIssue],
         prefix: str,
     ) -> list[ValidationIssue]:
+        if not errors:
+            return []
+        if not prefix.strip():
+            return [*errors]
         return SchemaValidationEngine.prefix_errors(errors, prefix)
 
     @staticmethod
