@@ -30,59 +30,58 @@ class StructuralVisitor(ast.NodeVisitor):
         owner = func.value
         return isinstance(owner, ast.Attribute) and owner.attr.startswith("_")
 
-    def _is_redundant_alias_body(self, function: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
-        body = function.body
-        if not body:
-            return False
+    @staticmethod
+    def _is_docstring_stmt(stmt: ast.stmt) -> bool:
+        return (
+            isinstance(stmt, ast.Expr)
+            and isinstance(stmt.value, ast.Constant)
+            and isinstance(stmt.value.value, str)
+        )
 
-        filtered: list[ast.stmt] = []
-        for stmt in body:
-            if isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Constant) and isinstance(stmt.value.value, str):
-                continue
-            filtered.append(stmt)
-
-        if len(filtered) != 1:
-            return False
-
-        stmt = filtered[0]
-        call: ast.Call | None = None
+    @staticmethod
+    def _extract_call(stmt: ast.stmt) -> ast.Call | None:
         if isinstance(stmt, ast.Return) and isinstance(stmt.value, ast.Call):
-            call = stmt.value
-        elif isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call):
-            call = stmt.value
+            return stmt.value
+        if isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call):
+            return stmt.value
+        return None
 
-        if call is None:
-            return False
-
-        if self._is_private_name(function.name):
+    def _is_redundant_alias_body(
+        self,
+        function: ast.FunctionDef | ast.AsyncFunctionDef,
+    ) -> bool:
+        filtered = [stmt for stmt in function.body if not self._is_docstring_stmt(stmt)]
+        call = self._extract_call(filtered[0]) if len(filtered) == 1 else None
+        if call is None or self._is_private_name(function.name):
             return False
 
         called = call.func
-        if isinstance(called, ast.Name) and self._is_private_name(called.id):
-            return False
-        if isinstance(called, ast.Attribute) and self._is_private_name(called.attr):
-            return False
-        if self._is_private_attribute_call(call):
-            return False
+        called_private_name = (
+            isinstance(called, ast.Name) and self._is_private_name(called.id)
+        ) or (isinstance(called, ast.Attribute) and self._is_private_name(called.attr))
+        return not called_private_name and not self._is_private_attribute_call(call)
 
-        return True
-
-    def _visit_function_common(self, node: ast.FunctionDef | ast.AsyncFunctionDef) -> None:
+    def _visit_function_common(
+        self,
+        node: ast.FunctionDef | ast.AsyncFunctionDef,
+    ) -> None:
         length = self._node_length(node)
         if length > self.max_function_lines:
             self.function_violations.append((node.name, node.lineno, length))
         if self._is_redundant_alias_body(node):
-            self.alias_violations.append((node.name, node.lineno, ast.unparse(node.body[-1])))
+            self.alias_violations.append(
+                (node.name, node.lineno, ast.unparse(node.body[-1])),
+            )
 
-    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:  # noqa: N802
+    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
         self._visit_function_common(node)
         self.generic_visit(node)
 
-    def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:  # noqa: N802
+    def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:
         self._visit_function_common(node)
         self.generic_visit(node)
 
-    def visit_ClassDef(self, node: ast.ClassDef) -> None:  # noqa: N802
+    def visit_ClassDef(self, node: ast.ClassDef) -> None:
         length = self._node_length(node)
         if length > self.max_class_lines:
             self.class_violations.append((node.name, node.lineno, length))
@@ -98,11 +97,17 @@ def _iter_python_files(paths: list[str]) -> list[Path]:
     if paths:
         return [Path(item) for item in paths if item.endswith(".py")]
 
-    all_files = Path(".").rglob("*.py")
+    all_files = Path().rglob("*.py")
     return [path for path in all_files if not _should_skip(path)]
 
 
-def evaluate_file(path: Path, *, max_function_lines: int, max_class_lines: int, max_file_lines: int) -> list[str]:
+def evaluate_file(
+    path: Path,
+    *,
+    max_function_lines: int,
+    max_class_lines: int,
+    max_file_lines: int,
+) -> list[str]:
     try:
         source = path.read_text(encoding="utf-8")
     except OSError as exc:
@@ -124,9 +129,13 @@ def evaluate_file(path: Path, *, max_function_lines: int, max_class_lines: int, 
     visitor.visit(tree)
 
     for name, lineno, length in visitor.function_violations:
-        violations.append(f"{path}:{lineno} function '{name}' length={length} > {max_function_lines}")
+        violations.append(
+            f"{path}:{lineno} function '{name}' length={length} > {max_function_lines}",
+        )
     for name, lineno, length in visitor.class_violations:
-        violations.append(f"{path}:{lineno} class '{name}' length={length} > {max_class_lines}")
+        violations.append(
+            f"{path}:{lineno} class '{name}' length={length} > {max_class_lines}",
+        )
     for name, lineno, alias_expr in visitor.alias_violations:
         violations.append(
             f"{path}:{lineno} function '{name}' is a redundant alias ({alias_expr})",
@@ -137,7 +146,11 @@ def evaluate_file(path: Path, *, max_function_lines: int, max_class_lines: int, 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Structural Python quality gates.")
-    parser.add_argument("files", nargs="*", help="Optional list of Python files to scan.")
+    parser.add_argument(
+        "files",
+        nargs="*",
+        help="Optional list of Python files to scan.",
+    )
     parser.add_argument("--max-function-lines", type=int, default=100)
     parser.add_argument("--max-class-lines", type=int, default=500)
     parser.add_argument("--max-file-lines", type=int, default=1000)
@@ -146,7 +159,11 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 
 def main(argv: list[str]) -> int:
     args = parse_args(argv)
-    files = [path for path in _iter_python_files(args.files) if path.exists() and not _should_skip(path)]
+    files = [
+        path
+        for path in _iter_python_files(args.files)
+        if path.exists() and not _should_skip(path)
+    ]
 
     if not files:
         print("No Python files to scan.")

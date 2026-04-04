@@ -30,6 +30,13 @@ __all__ = [
 ]
 
 
+__all__ = [
+    "F1SingleCircuitScraper",
+    "detect_layout_name",
+    "is_lap_record_table",
+]
+
+
 class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     def __init__(
         self,

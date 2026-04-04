@@ -4,13 +4,22 @@ import argparse
 import subprocess
 import sys
 
-
-DEFAULT_TARGETS = ["layers", "models", "scrapers", "validation", "infrastructure", "complete_extractor", "config"]
+DEFAULT_TARGETS = [
+    "layers",
+    "models",
+    "scrapers",
+    "validation",
+    "infrastructure",
+    "complete_extractor",
+    "config",
+]
 DEFAULT_EXCLUDES = ["*/tests/*", "*/test_*", "*/__init__.py", "*/scripts/*", "*/data/*"]
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Fail CI when dead code is detected by vulture.")
+    parser = argparse.ArgumentParser(
+        description="Fail CI when dead code is detected by vulture.",
+    )
     parser.add_argument("paths", nargs="*", default=DEFAULT_TARGETS)
     parser.add_argument("--min-confidence", type=int, default=90)
     return parser.parse_args(argv)
@@ -34,7 +43,10 @@ def main(argv: list[str]) -> int:
         print("Dead code gate: OK")
         return 0
 
-    print("::error::Potential dead code detected. Remove unused production symbols/files and related tests.")
+    print(
+        "::error::Potential dead code detected. "
+        "Remove unused production symbols/files and related tests.",
+    )
     return result.returncode
 
 
