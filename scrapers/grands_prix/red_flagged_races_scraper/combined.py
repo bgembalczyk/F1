@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.helpers.text import strip_marks
 from scrapers.base.source_catalog import RED_FLAGGED_RACES
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
@@ -24,6 +25,65 @@ from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionP
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
+
+_WIKIPEDIA_BASE_URL = "https://en.wikipedia.org"
+_RESTART_STATUS_MAP = {
+    "N": "race_was_not_restarted",
+    "Y": "race_was_restarted_over_original_distance",
+    "R": "race_was_resumed_to_complete_original_distance",
+    "S": "race_was_restarted_or_resumed_without_completing_original_distance",
+}
+
+
+def _build_full_url(url: str | None) -> str | None:
+    if url is None:
+        return None
+    if isinstance(url, str) and url.startswith("/"):
+        return _WIKIPEDIA_BASE_URL + url
+    return url
+
+
+def _try_int(text: str) -> int | str:
+    try:
+        return int(text)
+    except ValueError:
+        return text
+
+
+def _extract_rich_cell(
+    cell_data: Any,
+) -> tuple[str, list[Any], str | None, str | None]:
+    if isinstance(cell_data, dict) and "text" in cell_data:
+        text = cell_data.get("text") or ""
+        links = cell_data.get("links") or []
+        background = cell_data.get("background")
+        url = _build_full_url(links[0].get("url") if links else None)
+        return text, links, background, url
+    text = str(cell_data) if cell_data else ""
+    return text, [], None, None
+
+
+def _map_winner_cell(text: str, links: list[Any]) -> dict[str, Any]:
+    winner_link = links[-1] if links else None
+    if winner_link:
+        winner_text = strip_marks(winner_link.get("text") or "") or text
+        return {"text": winner_text, "url": _build_full_url(winner_link.get("url"))}
+    return {"text": strip_marks(text) if text else text, "url": None}
+
+
+def _map_drivers_cell(text: str, links: list[Any]) -> list[dict[str, Any]]:
+    if links:
+        return [
+            {
+                "text": strip_marks(lnk.get("text") or ""),
+                "url": _build_full_url(lnk.get("url")),
+            }
+            for lnk in links
+            if lnk.get("text")
+        ]
+    if text:
+        return [{"text": strip_marks(text), "url": None}]
+    return []
 
 
 class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
@@ -59,6 +119,49 @@ class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
             for header in headers
             if header in self._column_mapping
         }
+
+    @staticmethod
+    def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
+        rich_rows = table_data.get("rich_rows", [])
+        if isinstance(rich_rows, list) and rich_rows:
+            return [row for row in rich_rows if isinstance(row, dict)]
+        rows = table_data.get("rows", [])
+        if isinstance(rows, list):
+            dict_rows = [row for row in rows if isinstance(row, dict)]
+            if dict_rows:
+                return dict_rows
+        raw_rows = table_data.get("raw_rows", [])
+        if isinstance(raw_rows, list):
+            return [row for row in raw_rows if isinstance(row, dict)]
+        return []
+
+    @staticmethod
+    def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+        mapped: dict[str, Any] = {}
+        for header, cell_data in row.items():
+            key = column_map.get(header)
+            if not key:
+                continue
+            text, links, background, url = _extract_rich_cell(cell_data)
+            if key in ("season", "lap"):
+                mapped[key] = _try_int(text)
+            elif key == "grand_prix":
+                mapped[key] = {"text": text, "url": url}
+            elif key == "restart_status":
+                code = text[0].upper() if text else ""
+                mapped[key] = {
+                    "code": code,
+                    "description": _RESTART_STATUS_MAP.get(code),
+                }
+                if background:
+                    mapped["background"] = background
+            elif key == "winner":
+                mapped[key] = _map_winner_cell(text, links)
+            elif key == "failed_to_make_restart_drivers":
+                mapped[key] = _map_drivers_cell(text, links)
+            else:
+                mapped[key] = text
+        return mapped
 
 
 class NonChampionshipsRacesTableParser(WikiTableBaseParser):

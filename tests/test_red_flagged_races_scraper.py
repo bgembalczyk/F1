@@ -311,6 +311,57 @@ class TestRedFlaggedRacesScraperRobustness:
         assert len(records) == 1
         # Note: caplog verification would require pytest, which may not be run in this context
 
+    def test_composite_world_championship_scope_produces_rich_output(self):
+        """Test composite parser produces structured output matching RedFlaggedWorldChampionshipRacesScraper."""
+        html = """
+        <html><body>
+        <div id="bodyContent">
+        <div id="mw-content-text" class="mw-body-content">
+        <div class="mw-content-ltr mw-parser-output">
+          <h3 class="mw-heading3"><span class="mw-headline" id="World_Championship_races">World Championship races</span></h3>
+          <table class="wikitable">
+            <tr>
+              <th>Year</th><th>Grand Prix</th><th>Lap</th><th>R</th>
+              <th>Winner</th><th>Incident that prompted red flag</th>
+            </tr>
+            <tr>
+              <td>1971</td>
+              <td><a href="/wiki/1971_Canadian_Grand_Prix">Canadian</a></td>
+              <td>64</td>
+              <td style="background:#fdd">N</td>
+              <td><a href="/wiki/Jackie_Stewart">Jackie Stewart</a></td>
+              <td>Mist.</td>
+            </tr>
+          </table>
+        </div>
+        </div>
+        </div>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        scraper = RedFlaggedRacesScraper(export_scope="world_championship")
+        records = scraper.parse_soup(soup)
+
+        assert len(records) == 1
+        record = records[0]
+
+        assert record["season"] == 1971
+        assert record["grand_prix"] == {
+            "text": "Canadian",
+            "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix",
+        }
+        assert record["lap"] == 64
+        assert record["restart_status"] == {
+            "code": "N",
+            "description": "race_was_not_restarted",
+        }
+        assert record["background"] == "#fdd"
+        assert record["winner"] == {
+            "text": "Jackie Stewart",
+            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart",
+        }
+        assert record["incident"] == "Mist."
+
 
 if __name__ == "__main__":
     # Run tests manually for verification

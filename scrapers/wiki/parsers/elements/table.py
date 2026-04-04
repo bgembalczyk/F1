@@ -3,6 +3,8 @@ from typing import Any
 
 from bs4 import Tag
 
+from scrapers.base.helpers.background import extract_background
+from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
@@ -32,7 +34,7 @@ class TableParser(WikiParser[TableParsedData]):
         parser = self._table_parser
         full_headers, header_rows = self._extract_full_headers(parser, element)
         if not full_headers:
-            return {"headers": [], "rows": [], "raw_rows": []}
+            return {"headers": [], "rows": [], "raw_rows": [], "rich_rows": []}
 
         included_indexes = [
             i for i, header in enumerate(full_headers) if header.strip()
@@ -41,6 +43,7 @@ class TableParser(WikiParser[TableParsedData]):
 
         rows: list[list[str]] = []
         raw_rows: list[dict[str, str]] = []
+        rich_rows: list[dict[str, Any]] = []
         pending_rowspans: dict[int, dict[str, object]] = {}
 
         for tr in element.find_all("tr")[header_rows:]:
@@ -68,7 +71,35 @@ class TableParser(WikiParser[TableParsedData]):
             rows.append(normalized_row)
             raw_rows.append(dict(zip(headers, normalized_row, strict=False)))
 
-        return {"headers": headers, "rows": rows, "raw_rows": raw_rows}
+            rich_row: dict[str, Any] = {}
+            for col_idx, (header, text) in enumerate(
+                zip(headers, normalized_row, strict=False),
+            ):
+                original_idx = included_indexes[col_idx]
+                cell = (
+                    expanded_cells[original_idx]
+                    if original_idx < len(expanded_cells)
+                    else None
+                )
+                if cell is not None and isinstance(cell, Tag):
+                    links = normalize_links(cell, drop_empty_text=True)
+                    background = extract_background(cell)
+                else:
+                    links = []
+                    background = None
+                rich_row[header] = {
+                    "text": text,
+                    "links": links,
+                    "background": background,
+                }
+            rich_rows.append(rich_row)
+
+        return {
+            "headers": headers,
+            "rows": rows,
+            "raw_rows": raw_rows,
+            "rich_rows": rich_rows,
+        }
 
     @staticmethod
     def _extract_full_headers(
