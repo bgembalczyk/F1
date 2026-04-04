@@ -72,6 +72,7 @@ class DriversChampionships(ValueObject):
         return cls(count=payload.get("count", 0), seasons=payload.get("seasons") or [])
 
     def to_dict(self) -> dict[str, Any]:
+        """Kontrakt eksportu osiągnięć kierowcy do rekordu domenowego."""
         return {
             "count": self.count,
             "seasons": [season.to_dict() for season in self.seasons],

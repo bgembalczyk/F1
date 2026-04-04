@@ -28,15 +28,8 @@ class LapRecord:
         if "class" in self.data and "class_" not in self.data:
             self.data["class_"] = self.data.get("class")
 
-    @classmethod
-    def from_dict(cls, payload: Mapping[str, Any]) -> "LapRecord":
-        if not isinstance(payload, Mapping):
-            msg = "LapRecord.from_dict oczekuje mappingu."
-            raise TypeError(msg)
-        normalized_payload = dict(payload)
-        return cls(data=normalized_payload)
-
     def to_dict(self) -> dict[str, Any]:
+        """Eksportuje rekord do stabilnego formatu dict używanego przez warstwy I/O."""
         result: dict[str, Any] = {}
         for key, value in self.data.items():
             if isinstance(value, NormalizedTime | NormalizedDate) or (

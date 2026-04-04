@@ -45,28 +45,26 @@ class SeasonsTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
-    @staticmethod
-    def build_schema() -> TableSchemaDSL:
-        return TableSchemaDSL(
-            columns=build_columns(
-                column("Season", "season", UrlColumn()),
-                column("Races", "races", IntColumn()),
-                column("Countries", "countries", IntColumn()),
-                column("First", "first", UrlColumn()),
-                column("Last", "last", UrlColumn()),
-                column(
-                    "Drivers' Champion (team)",
-                    "drivers_champion_team",
-                    LinksListColumn(),
-                ),
-                column(
-                    "Constructors' Champion",
-                    "constructors_champion",
-                    LinksListColumn(),
-                ),
-                column("Winners", "winners", IntColumn()),
-            ),
-        )
+TABLE_SCHEMA = TableSchemaDSL(
+    columns=build_columns(
+        column("Season", "season", UrlColumn()),
+        column("Races", "races", IntColumn()),
+        column("Countries", "countries", IntColumn()),
+        column("First", "first", UrlColumn()),
+        column("Last", "last", UrlColumn()),
+        column(
+            "Drivers' Champion (team)",
+            "drivers_champion_team",
+            LinksListColumn(),
+        ),
+        column(
+            "Constructors' Champion",
+            "constructors_champion",
+            LinksListColumn(),
+        ),
+        column("Winners", "winners", IntColumn()),
+    ),
+)
 
 
 class SeasonsSectionParser(SectionParser):
@@ -119,7 +117,7 @@ class SeasonsListScraper(SeedListTableScraper):
             "Season",
             "Races",
         ],
-        schema=SeasonsTableParser.build_schema(),
+        schema=TABLE_SCHEMA,
         record_factory=RECORD_FACTORIES.builders("season_summary"),
     )
 

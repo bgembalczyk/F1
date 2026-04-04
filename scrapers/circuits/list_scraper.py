@@ -8,7 +8,7 @@ from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.sections.list_section import CircuitsListSectionParser
-from scrapers.circuits.sections.list_table import CircuitsListTableParser
+from scrapers.circuits.sections.list_table import TABLE_SCHEMA
 
 
 class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScraper):
@@ -25,7 +25,7 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScrape
         section_id=CIRCUITS_LIST.section_id,
         expected_headers=CIRCUITS_EXPECTED_HEADERS,
         model_class=Circuit,
-        schema=CircuitsListTableParser.build_schema(),
+        schema=TABLE_SCHEMA,
         record_factory=RECORD_FACTORIES.builders("circuit"),
     )
 

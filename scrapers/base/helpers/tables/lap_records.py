@@ -102,7 +102,7 @@ class LapRecordsTableScraper(F1TableScraper):
                     raise RuntimeError(
                         msg,
                     )
-                out_records.append(LapRecord.from_dict(record))
+                out_records.append(LapRecord(data=dict(record)))
             else:
                 out_records.append(record)
 

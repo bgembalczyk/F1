@@ -48,36 +48,34 @@ class EngineRestrictionsTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
-    @staticmethod
-    def build_schema() -> TableSchemaDSL:
-        return TableSchemaDSL(
-            columns=[
-                column("Year", "year", SeasonsColumn()),
-                column("Size", "size", UnitColumn(unit="litre")),
-                column("Type of engine", "type_of_engine", LinksListColumn()),
-                column(
-                    "Fuel-limit per race",
-                    "fuel_limit_per_race",
-                    FuelLimitPerRaceColumn(),
-                ),
-                column("Fuel-flow rate", "fuel_flow_rate", FuelFlowRateColumn()),
-                column(
-                    "Fuel-injection pressure limit",
-                    "fuel_injection_pressure_limit",
-                    FuelInjectionPressureLimitColumn(),
-                ),
-                column("Engine RPM limit", "engine_rpm_limit", EngineRpmLimitColumn()),
-                column(
-                    "Power Output",
-                    "power_output",
-                    RangeColumn(
-                        UnitColumn(unit="hp"),
-                        UnitColumn(unit="hp"),
-                        shared_suffix="hp",
-                    ),
-                ),
-            ],
-        )
+TABLE_SCHEMA = TableSchemaDSL(
+    columns=[
+        column("Year", "year", SeasonsColumn()),
+        column("Size", "size", UnitColumn(unit="litre")),
+        column("Type of engine", "type_of_engine", LinksListColumn()),
+        column(
+            "Fuel-limit per race",
+            "fuel_limit_per_race",
+            FuelLimitPerRaceColumn(),
+        ),
+        column("Fuel-flow rate", "fuel_flow_rate", FuelFlowRateColumn()),
+        column(
+            "Fuel-injection pressure limit",
+            "fuel_injection_pressure_limit",
+            FuelInjectionPressureLimitColumn(),
+        ),
+        column("Engine RPM limit", "engine_rpm_limit", EngineRpmLimitColumn()),
+        column(
+            "Power Output",
+            "power_output",
+            RangeColumn(
+                UnitColumn(unit="hp"),
+                UnitColumn(unit="hp"),
+                shared_suffix="hp",
+            ),
+        ),
+    ],
+)
 
 
 class EngineSubSectionParser(SubSectionParser):
@@ -129,7 +127,7 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
         section_id=ENGINE_REGULATIONS.section_id,
         expected_headers=["Year", "2000-2005", "2006-2013", "2014-2025"],
         record_factory=RECORD_FACTORIES.callable(EngineRestriction),
-        schema=EngineRestrictionsTableParser.build_schema(),
+        schema=TABLE_SCHEMA,
     )
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:

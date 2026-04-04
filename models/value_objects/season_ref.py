@@ -34,6 +34,7 @@ class SeasonRef(ValueObject):
         return cls(year=year, url=payload.get("url"))
 
     def to_dict(self) -> dict[str, Any]:
+        """Kontrakt eksportu sezonu używany przez rekordy i schematy walidacji."""
         result: dict[str, Any] = {"year": self.year}
         if self.url:
             result["url"] = self.url
