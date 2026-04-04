@@ -41,7 +41,6 @@ class WikiPipelineFacade:
             self.layer_one_executor.run(self.run_config_factory(), self.base_wiki_dir)
             return
         if scenario == "merge":
-            # merge-only scenario: combine layer-zero outputs into final raw dataset
             self.layer_zero_merge_service.merge(self.base_wiki_dir)
             return
         if scenario == "full":

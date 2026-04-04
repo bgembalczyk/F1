@@ -31,4 +31,4 @@ class SponsorshipRecordSplitter:
 
     def split_record_by_season(self, record: dict[str, Any]) -> list[dict[str, Any]]:
         domain_record = PipelineRecord.from_input(record)
-        return [item.to_dict() for item in self._pipeline.apply(domain_record)]
+        return [dict(item.payload) for item in self._pipeline.apply(domain_record)]

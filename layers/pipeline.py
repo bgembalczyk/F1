@@ -53,10 +53,6 @@ class WikiPipelineApplication:
     def run_full(self) -> None:
         self._facade.run_full()
 
-    def run_merge_only(self) -> None:
-        # merge-only run: execute layer-zero raw outputs merge directly
-        self._facade.layer_zero_merge_service.merge(self._base_wiki_dir)
-
     def run_layer_zero(self, *, deterministic: bool = False) -> None:
         run_config = self._build_run_config(
             profile=("deterministic" if deterministic else "debug"),
