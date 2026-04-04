@@ -31,16 +31,6 @@ class CallableRecordFactoryAdapter:
         return self.factory(dict(payload))
 
 
-@dataclass(frozen=True, slots=True)
-class RecordBuildersAdapter:
-    """Adapter over models.records.factories.build.RECORD_BUILDERS."""
-
-    record_type: RecordType | str
-
-    def create(self, payload: Mapping[str, Any]) -> Any:
-        return RECORD_BUILDERS.build(self.record_type, payload)
-
-
 class RecordFactoryAdapters:
     """Factory helpers for the unified RecordFactory contract."""
 
@@ -61,7 +51,9 @@ class RecordFactoryAdapters:
         if isinstance(record_type, str) and not record_type.strip():
             msg = "record_type cannot be empty."
             raise ValueError(msg)
-        return RecordBuildersAdapter(record_type=record_type)
+        return CallableRecordFactoryAdapter(
+            factory=lambda payload: RECORD_BUILDERS.build(record_type, payload),
+        )
 
 
 RECORD_FACTORIES = RecordFactoryAdapters()

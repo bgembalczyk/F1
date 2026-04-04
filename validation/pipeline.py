@@ -53,18 +53,18 @@ class FunctionalValidator:
     name: str
     handler: Callable[[RecordLike], Sequence[ValidationIssue]]
 
-    def validate(self, record: RecordLike) -> Sequence[ValidationIssue]:
-        return self.handler(record)
-
 
 @dataclass(frozen=True)
 class ValidationStage:
     name: str
-    validators: tuple[StageValidator, ...]
+    validators: tuple[StageValidator | FunctionalValidator, ...]
 
     def validate(self, record: RecordLike) -> list[ValidationIssue]:
         violations: list[ValidationIssue] = []
         for validator in self.validators:
+            if isinstance(validator, FunctionalValidator):
+                violations.extend(validator.handler(record))
+                continue
             violations.extend(validator.validate(record))
         return violations
 
