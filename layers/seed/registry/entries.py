@@ -1,4 +1,3 @@
-from dataclasses import asdict
 from dataclasses import dataclass
 from typing import Any
 
@@ -9,9 +8,6 @@ class BaseRegistryEntry:
     wikipedia_url: str
     output_category: str
     list_scraper_cls: type[Any]
-
-    def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
 
 
 @dataclass(frozen=True)

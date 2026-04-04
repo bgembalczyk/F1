@@ -18,6 +18,7 @@ class DateValue(ValueObject):
         return cls(**dict(data))
 
     def to_dict(self) -> dict[str, Any]:
+        """Kontrakt eksportu pełnej reprezentacji daty dla warstw I/O."""
         return {
             "iso": self.iso,
             "year": self.year,
