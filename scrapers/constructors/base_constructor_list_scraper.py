@@ -11,7 +11,6 @@ from scrapers.base.table.builders import build_entity_metadata_columns
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
