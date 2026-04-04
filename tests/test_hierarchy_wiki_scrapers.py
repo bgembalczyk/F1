@@ -83,12 +83,10 @@ def test_wiki_scraper_has_element_parsers_from_mixin() -> None:
     assert hasattr(scraper, "paragraph_parser")
 
 
-def test_wiki_element_parser_mixin_has_find_infobox_helpers() -> None:
-    """WikiElementParserMixin keeps helper methods available."""
-    assert hasattr(WikiElementParserMixin, "find_infobox")
-    assert hasattr(WikiElementParserMixin, "find_infoboxes")
-    assert callable(WikiElementParserMixin.find_infobox)
-    assert callable(WikiElementParserMixin.find_infoboxes)
+def test_wiki_element_parser_mixin_exposes_infobox_class_predicate() -> None:
+    """WikiElementParserMixin keeps shared infobox class predicate."""
+    assert hasattr(WikiElementParserMixin, "_has_infobox_class")
+    assert callable(WikiElementParserMixin._has_infobox_class)
 
 
 def test_wiki_scraper_has_scrape_method() -> None:
