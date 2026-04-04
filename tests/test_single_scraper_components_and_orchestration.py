@@ -59,7 +59,7 @@ def test_driver_sections_service_extracts_alias_section_id() -> None:
         ),
     )
     assert records
-    assert all(r["section_id"] == "Non-championship" for r in records)
+    assert all(r["section_id"] == "non-championship" for r in records)
 
 
 def test_driver_assembler_builds_record_shape() -> None:
@@ -67,13 +67,27 @@ def test_driver_assembler_builds_record_shape() -> None:
         DriverRecordDTO(
             url="u",
             infobox={"title": "A"},
-            career_results=[{"year": "2024"}],
+            career_results=[
+                {
+                    "section_id": "Career_results",
+                    "section_label": "Career results",
+                    "records": [{"year": "2024"}],
+                    "metadata": {},
+                },
+            ],
         ),
     )
     assert record == {
         "url": "u",
         "infobox": {"title": "A"},
-        "career_results": [{"year": "2024"}],
+        "career_results": [
+            {
+                "section_id": "Career_results",
+                "section_label": "Career results",
+                "records": [{"year": "2024"}],
+                "metadata": {},
+            },
+        ],
     }
 
 
@@ -149,7 +163,7 @@ def test_season_text_sections_service_and_assembler() -> None:
             colin_chapman_trophy=[],
             south_african_formula_one_championship=[],
             british_formula_one_championship=[],
-            regulation_changes=text_records.get("Regulation_changes", []),
+            regulation_changes=text_records.get("regulation_changes", []),
             mid_season_changes=[],
         ),
     )
@@ -170,7 +184,14 @@ def test_orchestration_integration_single_driver_uses_injected_dependencies() ->
 
     class _SectionsStub:
         def extract(self, _soup: BeautifulSoup):
-            return [{"section_id": "Career_results", "section": "Career"}]
+            return [
+                {
+                    "section_id": "Career_results",
+                    "section_label": "Career results",
+                    "records": [{"year": "2023"}],
+                    "metadata": {},
+                },
+            ]
 
     class _SectionsFactoryStub:
         def create(
@@ -199,4 +220,4 @@ def test_orchestration_integration_single_driver_uses_injected_dependencies() ->
     result = scraper._parse_soup(_soup("<html></html>"))[0]  # noqa: SLF001
 
     assert result["infobox"]["from"] == "infobox"
-    assert result["career_results"][0]["section"] == "Career"
+    assert result["career_results"][0]["section_id"] == "Career_results"

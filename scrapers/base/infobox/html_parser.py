@@ -18,6 +18,8 @@ class InfoboxHtmlParser(InfoboxParser):
         self.wikipedia_base = wikipedia_base or self.WIKIPEDIA_BASE
 
     def parse(self, soup: BeautifulSoup) -> dict[str, Any]:
+        if isinstance(soup, Tag) and self.has_infobox_class(soup.get("class", [])):
+            return self._parse_infobox(soup)
         infobox = self.find_infobox(soup)
         if infobox is None:
             return {"title": None, "rows": {}}
