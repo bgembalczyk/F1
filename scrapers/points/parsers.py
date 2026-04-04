@@ -130,6 +130,9 @@ class SprintRacesSubSubSectionParser(SubSubSectionParser):
         super().__init__()
         self._table_parser = SprintPointsTableParser()
 
+    def collect_rows(self, parsed: dict[str, Any]) -> list[dict[str, Any]]:
+        return self._table_parser.collect_rows(parsed)
+
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
         if not parsed.get("sub_sub_sub_sections"):
@@ -163,6 +166,9 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = ShortenedRacesPointsTableParser()
+
+    def collect_rows(self, parsed: dict[str, Any]) -> list[dict[str, Any]]:
+        return self._table_parser.collect_rows(parsed)
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
@@ -220,6 +226,19 @@ class PointsScoringSystemsSectionParser(SectionParser):
         super().__init__()
         self.child_parser = SpecialCasesSubSectionParser()
         self._table_parser = PointsScoringSystemsHistoryTableParser()
+
+    @property
+    def sprint_subsection_parser(self) -> SprintRacesSubSubSectionParser:
+        router = self.child_parser.child_parser  # type: ignore[union-attr]
+        return router.sprint_parser  # type: ignore[union-attr]
+
+    @property
+    def shortened_subsection_parser(self) -> ShortenedRacesSubSubSectionParser:
+        router = self.child_parser.child_parser  # type: ignore[union-attr]
+        return router.shortened_parser  # type: ignore[union-attr]
+
+    def collect_rows(self, parsed: dict[str, Any]) -> list[dict[str, Any]]:
+        return self._table_parser.collect_rows(parsed)
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
