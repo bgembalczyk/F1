@@ -12,7 +12,7 @@ SECOND_NUMBER = 25
 SECOND_START_YEAR = 2015
 
 
-def assert_car_number_with_present(cell_parser) -> None:
+def assert_car_number_with_present() -> None:
     html = (
         '<td class="infobox-data">'
         '27 (<a href="/wiki/2014-15_Formula_E_Championship" '
