@@ -1,3 +1,4 @@
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.config import build_scraper_config
 from scrapers.points.base_points_scraper import BasePointsScraper
@@ -16,5 +17,5 @@ class SprintQualifyingPointsScraper(BasePointsScraper):
         section_id="Sprint_races",
         expected_headers=SPRINT_QUALIFYING_EXPECTED_HEADERS,
         schema=build_sprint_qualifying_schema(),
-        record_factory=RECORD_FACTORIES.mapping(),
+        record_factory=MappingRecordFactory(),
     )

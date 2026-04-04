@@ -16,7 +16,7 @@ def _parse_segment(html: str) -> dict:
     return EngineParsingHelpers.parse_segment(segment, {}, BASE_URL)
 
 
-def _parse_column(html: str) -> dict:
+def _parse_ColumnSpec(html: str) -> dict:
     """Parse engine data via EngineColumn (includes background-class detection)."""
     cell = BeautifulSoup(html, "html.parser").find("td")
     ctx = ColumnContext(
@@ -207,7 +207,7 @@ class TestGasTurbine:
 class TestF2Background:
     def test_climax_fpf_f2_class(self) -> None:
         html = '<td style="background:#ffcccc;"><a href="/wiki/Coventry_Climax#FPF">Climax FPF 1.5 L4</a></td>'
-        result = _parse_column(html)
+        result = _parse_ColumnSpec(html)
         assert result["class"] == "F2"
         assert result["model"]["text"] == "Climax FPF"
         assert result["type"] == "L4"
@@ -219,7 +219,7 @@ class TestF2Background:
             '<a href="/wiki/Flat-4">F4</a>'
             "</td>"
         )
-        result = _parse_column(html)
+        result = _parse_ColumnSpec(html)
         assert result["class"] == "F2"
         assert result["model"]["text"] == "Porsche 547/3"
         assert result["type"] == "F4"
@@ -269,14 +269,14 @@ class TestIsF2BackgroundShorthand:
     def test_fcc_uppercase_is_f2(self) -> None:
         assert EngineParsingHelpers.is_f2_background("#FCC") is True
 
-    def test_fcc_column_class_from_column(self) -> None:
+    def test_fcc_column_class_from_ColumnSpec(self) -> None:
         html = (
             '<td style="background:#fcc;">'
             '<a href="/wiki/Cosworth_FVA">Ford Cosworth FVA</a> 1.6 '
             '<a href="/wiki/Straight-4">L4</a>'
             "</td>"
         )
-        result = _parse_column(html)
+        result = _parse_ColumnSpec(html)
         assert result["class"] == "F2"
         assert result["type"] == "L4"
 

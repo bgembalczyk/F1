@@ -35,10 +35,6 @@ class RecordFactoryAdapters:
     """Factory helpers for the unified RecordFactory contract."""
 
     @staticmethod
-    def mapping() -> RecordFactory:
-        return CallableRecordFactoryAdapter(factory=dict)
-
-    @staticmethod
     def callable(factory: Callable[[dict[str, Any]], Any] | type) -> RecordFactory:
         # di-antipattern-allow: adapter wrapping is the factory responsibility.
         if not callable(factory):

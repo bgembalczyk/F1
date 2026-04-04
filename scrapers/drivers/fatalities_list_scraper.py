@@ -18,7 +18,7 @@ from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
@@ -120,14 +120,14 @@ class F1FatalitiesListScraper(F1TableScraper):
         expected_headers=FATALITIES_HEADERS,
         schema=TableSchemaDSL(
             columns=[
-                column(FATALITIES_DRIVER_HEADER, "driver", UrlColumn()),
-                column(FATALITIES_DATE_HEADER, "date", FatalityDateColumn()),
-                column(FATALITIES_AGE_HEADER, "age", IntColumn()),
-                column(FATALITIES_EVENT_HEADER, "event", FatalityEventColumn()),
-                column(FATALITIES_CIRCUIT_HEADER, "circuit", UrlColumn()),
-                column(FATALITIES_CAR_HEADER, "car", UrlColumn()),
-                column(FATALITIES_SESSION_HEADER, "session", TextColumn()),
-                column(FATALITIES_REF_HEADER, "ref", SkipColumn()),
+                ColumnSpec(FATALITIES_DRIVER_HEADER, "driver", UrlColumn()),
+                ColumnSpec(FATALITIES_DATE_HEADER, "date", FatalityDateColumn()),
+                ColumnSpec(FATALITIES_AGE_HEADER, "age", IntColumn()),
+                ColumnSpec(FATALITIES_EVENT_HEADER, "event", FatalityEventColumn()),
+                ColumnSpec(FATALITIES_CIRCUIT_HEADER, "circuit", UrlColumn()),
+                ColumnSpec(FATALITIES_CAR_HEADER, "car", UrlColumn()),
+                ColumnSpec(FATALITIES_SESSION_HEADER, "session", TextColumn()),
+                ColumnSpec(FATALITIES_REF_HEADER, "ref", SkipColumn()),
             ],
         ),
         record_factory=RECORD_FACTORIES.builders("fatality"),

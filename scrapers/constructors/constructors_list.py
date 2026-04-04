@@ -16,7 +16,7 @@ from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
@@ -62,14 +62,14 @@ class ConstructorsListScraper(F1ListScraper):
     _FORMER_SECTION_LABEL = "Former constructors"
     _PRIVATEER_SECTION_ID = "Privateer_teams"
     _CURRENT_SCHEMA_COLUMNS = BaseConstructorListScraper.build_schema_columns(
-        [column(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
-        [column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
-        [column(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
+        [ColumnSpec(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
+        [ColumnSpec(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
+        [ColumnSpec(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
         BaseConstructorListScraper.build_common_stats_columns(),
-        [column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
+        [ColumnSpec(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
         BaseConstructorListScraper.build_common_metadata_columns(),
         [
-            column(
+            ColumnSpec(
                 CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
                 "antecedent_teams",
                 LinksListColumn(),
@@ -86,7 +86,7 @@ class ConstructorsListScraper(F1ListScraper):
         expected_headers=CONSTRUCTORS_FORMER_EXPECTED_HEADERS,
         columns=BaseConstructorListScraper.build_schema_columns(
             BaseConstructorListScraper.build_common_metadata_columns(),
-            [BaseConstructorListScraper.build_licensed_in_column()],
+            [BaseConstructorListScraper.build_licensed_in_ColumnSpec()],
             build_metric_columns(
                 [
                     MetricColumnSpec(CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),

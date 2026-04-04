@@ -7,7 +7,6 @@ from typing import TYPE_CHECKING
 from warnings import warn
 
 from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.column import column
 
 if TYPE_CHECKING:
     from scrapers.base.table.columns.types.base import BaseColumn
@@ -47,7 +46,7 @@ def build_columns(*parts: SchemaPart) -> list[ColumnSpec]:
 def build_entity_metadata_columns(
     specs: Sequence[EntityColumnSpec],
 ) -> list[ColumnSpec]:
-    return [column(spec.header, spec.output_key, spec.column_type) for spec in specs]
+    return [ColumnSpec(spec.header, spec.output_key, spec.column_type) for spec in specs]
 
 
 def build_metric_columns(
@@ -59,7 +58,7 @@ def build_metric_columns(
 
     column_overrides = column_overrides or {}
     return [
-        column(
+        ColumnSpec(
             spec.header,
             spec.output_key,
             column_overrides.get(spec.metric_key, BASE_STATS_COLUMNS[spec.metric_key]),
@@ -100,7 +99,7 @@ def build_name_status_fragment(
     output_key: str,
     column_type: BaseColumn,
 ) -> list[ColumnSpec]:
-    return [column(header, output_key, column_type)]
+    return [ColumnSpec(header, output_key, column_type)]
 
 
 def build_scraper_config(

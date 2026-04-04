@@ -12,7 +12,7 @@ from scrapers.base.table.builders import build_name_status_fragment
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.base.transformers.drivers_championships import (
@@ -73,16 +73,16 @@ TABLE_SCHEMA = TableSchemaDSL(
             output_key="driver",
             column_type=DriverNameStatusColumn(),
         ),
-        [column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn())],
+        [ColumnSpec(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn())],
         [
-            column(
+            ColumnSpec(
                 DRIVER_SEASONS_COMPETED_HEADER,
                 "seasons_competed",
                 SeasonsColumn(),
             ),
         ],
         [
-            column(
+            ColumnSpec(
                 DRIVER_CHAMPIONSHIPS_HEADER,
                 "drivers_championships",
                 TextColumn(),  # zparsujemy ręcznie w fetch()

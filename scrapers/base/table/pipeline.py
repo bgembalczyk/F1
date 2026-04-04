@@ -268,7 +268,7 @@ class TablePipeline:
             drop_empty_text=True,
         )
 
-    def _select_column(self, key: str, header: str) -> BaseColumn:
+    def _select_ColumnSpec(self, key: str, header: str) -> BaseColumn:
         return self.columns.get(key) or self.columns.get(header) or self.default_column
 
     def _apply_cell(
@@ -313,7 +313,7 @@ class TablePipeline:
             header_link=header_link,
         )
 
-        col = self._select_column(key, header)
+        col = self._select_ColumnSpec(key, header)
         try:
             col.apply(ctx, record)
         except Exception as exc:

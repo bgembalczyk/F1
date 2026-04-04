@@ -14,7 +14,7 @@ from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.failed_to_make_restart import (
@@ -56,27 +56,27 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             List of column definitions common to all red-flagged race tables.
         """
         return [
-            column("Year", "season", IntColumn()),
-            column(
+            ColumnSpec("Year", "season", IntColumn()),
+            ColumnSpec(
                 race_name_header,
                 race_name_header.lower().replace(" ", "_"),
                 None,
             ),  # Will be set by caller
-            column("Lap", "lap", IntColumn()),
-            column("R", "restart_status", RestartStatusColumn()),
-            column("Winner", "winner", DriverColumn()),
-            column("Incident that prompted red flag", "incident", TextColumn()),
-            column(
+            ColumnSpec("Lap", "lap", IntColumn()),
+            ColumnSpec("R", "restart_status", RestartStatusColumn()),
+            ColumnSpec("Winner", "winner", DriverColumn()),
+            ColumnSpec("Incident that prompted red flag", "incident", TextColumn()),
+            ColumnSpec(
                 "Failed to make the restart - Drivers",
                 "failed_to_make_restart_drivers",
                 DriverListColumn(),
             ),
-            column(
+            ColumnSpec(
                 "Failed to make the restart - Reason",
                 "failed_to_make_restart_reason",
                 TextColumn(),
             ),
-            column("Ref.", "ref", SkipColumn()),
+            ColumnSpec("Ref.", "ref", SkipColumn()),
         ]
 
     def __init__(
