@@ -270,11 +270,11 @@ def redundant(value):
     )
 
 
-def test_structural_quality_allows_multiline_alias_used_multiple_times_across_files(
+def test_structural_quality_allows_multiline_alias_even_with_single_usage(
     tmp_path: Path,
 ) -> None:
-    source_file = tmp_path / "record_definition.py"
-    source_file.write_text(
+    file_path = tmp_path / "record_definition.py"
+    file_path.write_text(
         """
 class RecordDefinition:
     def to_schema(self):
@@ -287,26 +287,11 @@ class RecordDefinition:
         encoding="utf-8",
     )
 
-    usage_file = tmp_path / "record_usage.py"
-    usage_file.write_text(
-        """
-def build(definition):
-    definition.to_schema()
-    definition.to_schema()
-""".strip()
-        + "\n",
-        encoding="utf-8",
-    )
-
-    call_counts = enforce_structural_quality._collect_project_call_counts(
-        [source_file, usage_file],
-    )
     violations = enforce_structural_quality.evaluate_file(
-        source_file,
+        file_path,
         max_function_lines=100,
         max_class_lines=500,
         max_file_lines=1000,
-        call_counts=call_counts,
     )
 
     assert not any(

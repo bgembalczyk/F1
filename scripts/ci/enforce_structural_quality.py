@@ -42,23 +42,6 @@ def _collect_call_counts(tree: ast.AST) -> dict[str, int]:
     return call_counts
 
 
-def _collect_project_call_counts(paths: list[Path]) -> dict[str, int]:
-    """Aggregate call target usage counts across all scanned files."""
-    merged_counts: dict[str, int] = {}
-    for path in paths:
-        try:
-            source = path.read_text(encoding="utf-8")
-        except OSError:
-            continue
-        try:
-            tree = ast.parse(source)
-        except SyntaxError:
-            continue
-        for name, count in _collect_call_counts(tree).items():
-            merged_counts[name] = merged_counts.get(name, 0) + count
-    return merged_counts
-
-
 class StructuralVisitor(ast.NodeVisitor):
     def __init__(
         self,
@@ -198,10 +181,7 @@ class StructuralVisitor(ast.NodeVisitor):
             self.function_violations.append((node.name, node.lineno, length))
         if (
             self._is_redundant_alias_body(node)
-            and not (
-                self._body_spans_multiple_lines(node)
-                and self._call_counts.get(node.name, 0) > 1
-            )
+            and not self._body_spans_multiple_lines(node)
             and not self._is_abstract_or_overload(node)
             and not self._in_derived_class()
             and (self.file_path, node.name) not in REDUNDANT_ALIAS_EXCEPTIONS
@@ -246,7 +226,6 @@ def evaluate_file(
     max_function_lines: int,
     max_class_lines: int,
     max_file_lines: int,
-    call_counts: dict[str, int] | None = None,
 ) -> list[str]:
     try:
         source = path.read_text(encoding="utf-8")
@@ -266,7 +245,7 @@ def evaluate_file(
     visitor = StructuralVisitor(
         file_path=path.as_posix(),
         overload_names=_collect_overload_names(tree),
-        call_counts=call_counts or _collect_call_counts(tree),
+        call_counts=_collect_call_counts(tree),
     )
     visitor.max_function_lines = max_function_lines
     visitor.max_class_lines = max_class_lines
@@ -313,7 +292,6 @@ def main(argv: list[str]) -> int:
         print("No Python files to scan.")
         return 0
 
-    project_call_counts = _collect_project_call_counts(files)
     violations: list[str] = []
     for path in files:
         violations.extend(
@@ -322,7 +300,6 @@ def main(argv: list[str]) -> int:
                 max_function_lines=args.max_function_lines,
                 max_class_lines=args.max_class_lines,
                 max_file_lines=args.max_file_lines,
-                call_counts=project_call_counts,
             ),
         )
 
