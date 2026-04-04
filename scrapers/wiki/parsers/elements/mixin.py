@@ -1,6 +1,5 @@
 from collections.abc import Callable
 
-from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
@@ -110,12 +109,6 @@ class WikiElementParserMixin:
             return "infobox" in list(classes)
         except TypeError:
             return False
-
-    def find_infobox(self, soup: BeautifulSoup) -> Tag | None:
-        return soup.find(name="table", class_=self._has_infobox_class)
-
-    def find_infoboxes(self, soup: BeautifulSoup) -> list[Tag]:
-        return soup.find_all(name="table", class_=self._has_infobox_class)
 
     def parse_elements(
         self,

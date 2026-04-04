@@ -94,7 +94,7 @@ class RecordValidator(ABC):
             return []
 
         try:
-            errors = validator.validate_record(record)
+            errors = validator(record)
         except (AttributeError, TypeError, ValueError) as exc:
             return [
                 ValidationIssue.custom(

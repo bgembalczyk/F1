@@ -2,13 +2,17 @@
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+from typing import TYPE_CHECKING
 from typing import Any
 
 from validation.issue import ValidationIssue
 from validation.schema_engine import SchemaValidationEngine
-from validation.schemas import NestedSchema
-from validation.schemas import RecordSchema
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
+
+    from validation.schemas import NestedSchema
+    from validation.schemas import RecordSchema
 
 
 def validate_record(
@@ -73,15 +77,16 @@ def _require_type(
         return []
 
     value = record[key]
+    expected = (
+        expected_types if isinstance(expected_types, tuple) else (expected_types,)
+    )
+    allows_none_by_type = any(value_type is type(None) for value_type in expected)
     if value is None:
-        return [] if allow_none else [ValidationIssue.null(key)]
+        return [] if (allow_none or allows_none_by_type) else [ValidationIssue.null(key)]
 
     if isinstance(value, expected_types):
         return []
 
-    expected = (
-        expected_types if isinstance(expected_types, tuple) else (expected_types,)
-    )
     expected_names = ", ".join(value_type.__name__ for value_type in expected)
     return [
         ValidationIssue.type_error(

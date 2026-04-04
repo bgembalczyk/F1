@@ -1,0 +1,16 @@
+[run]
+branch = True
+source =
+    tests/support
+    tests/fixtures
+
+[report]
+show_missing = True
+skip_covered = False
+fail_under = 0
+
+[html]
+directory = coverage_html_testsupport
+
+[xml]
+output = coverage_testsupport.xml

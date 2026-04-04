@@ -85,7 +85,7 @@ def test_constructor_component_services_and_assembler() -> None:
         """,
     )
     scraper = SingleConstructorScraper()
-    infoboxes = ConstructorInfoboxExtractionService().extract(soup).as_list()
+    infoboxes = list(ConstructorInfoboxExtractionService().extract(soup).records)
     sections = ConstructorSectionExtractionService(adapter=scraper).extract(soup)
     record = ConstructorRecordAssembler().assemble(
         ConstructorRecordDTO(

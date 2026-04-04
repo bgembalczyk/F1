@@ -299,8 +299,8 @@ class SeasonSectionPipeline:
             british_formula_one_championship=(
                 section_data.british_formula_one_championship
             ),
-            regulation_changes=text_records.get("Regulation_changes", []),
-            mid_season_changes=text_records.get("Mid-season_changes", []),
+            regulation_changes=text_records.get("regulation_changes", []),
+            mid_season_changes=text_records.get("mid-season_changes", []),
         )
 
     def _require_parser_set(self) -> SeasonParserSet:

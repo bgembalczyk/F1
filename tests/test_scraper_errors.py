@@ -10,6 +10,7 @@ from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import DomainParseError
+from scrapers.base.errors import ErrorBehavior
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperNotFoundError
 from scrapers.base.errors import ScraperParseError
@@ -128,6 +129,9 @@ class DummyFetcher:
 
 class DummyScraper(ABCScraper):
     url = "https://example.com"
+
+    def _parse_soup(self, _soup):
+        return []
 
 
 class DummyParseScraper(ABCScraper):
@@ -372,3 +376,62 @@ def test_circuit_entities_parser_skips_domain_parse_errors():
 
     assert result["normalized"]["name"] == "Test Circuit"
     assert result["normalized"].get("specs") is None
+
+
+def test_error_report_for_non_scraper_exception_maps_to_unknown_code() -> None:
+    report = ErrorReport.from_exception(RuntimeError("normalizer failed"))
+
+    assert report.code is None
+    assert report.code_id == "U000"
+    assert report.category is None
+    assert report.behavior is None
+    assert report.url is None
+    assert report.section_id is None
+    assert report.parser_name is None
+
+
+def test_error_summary_handles_empty_file_lines_and_missing_code(tmp_path: Path) -> None:
+    report_path = tmp_path / "errors.jsonl"
+    report_path.write_text(
+        "\n".join(
+            [
+                "",
+                json.dumps({"run_id": "run-a", "code_id": "P001"}),
+                json.dumps({"run_id": "run-a"}),
+                json.dumps({"run_id": "run-b", "code_id": "M002"}),
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    summary_path = write_error_summary_by_code(tmp_path, run_id="run-a")
+    payload = json.loads(summary_path.read_text(encoding="utf-8"))
+
+    assert payload == {
+        "run_id": "run-a",
+        "total_errors": 2,
+        "error_counts_by_code": {"P001": 1, "U000": 1},
+    }
+
+
+def test_error_summary_for_missing_report_file_returns_empty_payload(
+    tmp_path: Path,
+) -> None:
+    summary_path = write_error_summary_by_code(tmp_path, run_id="run-z")
+    payload = json.loads(summary_path.read_text(encoding="utf-8"))
+
+    assert payload["run_id"] == "run-z"
+    assert payload["total_errors"] == 0
+    assert payload["error_counts_by_code"] == {}
+
+
+def test_error_handler_handle_respects_soft_and_hard_behaviors() -> None:
+    handler = ErrorHandler()
+
+    soft_error = DomainParseError("soft issue")
+    hard_error = ScraperParseError("hard issue")
+
+    assert soft_error.behavior == ErrorBehavior.SOFT
+    assert hard_error.behavior == ErrorBehavior.HARD
+    assert handler.handle(soft_error) is True
+    assert handler.handle(hard_error) is False

@@ -20,14 +20,6 @@ class RecordFactory(Protocol):
 
 
 @dataclass(frozen=True, slots=True)
-class MappingRecordFactory:
-    """Adapter returning plain dict from mapping payload."""
-
-    def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
-        return dict(payload)
-
-
-@dataclass(frozen=True, slots=True)
 class CallableRecordFactoryAdapter:
     """Adapter for callable- and class-based legacy record factories."""
 
@@ -37,16 +29,6 @@ class CallableRecordFactoryAdapter:
         if isinstance(self.factory, type):
             return self.factory(**dict(payload))
         return self.factory(dict(payload))
-
-
-@dataclass(frozen=True, slots=True)
-class RecordBuildersAdapter:
-    """Adapter over models.records.factories.build.RECORD_BUILDERS."""
-
-    record_type: RecordType | str
-
-    def create(self, payload: Mapping[str, Any]) -> Any:
-        return RECORD_BUILDERS.build(self.record_type, payload)
 
 
 class RecordFactoryAdapters:
@@ -65,7 +47,9 @@ class RecordFactoryAdapters:
         if isinstance(record_type, str) and not record_type.strip():
             msg = "record_type cannot be empty."
             raise ValueError(msg)
-        return RecordBuildersAdapter(record_type=record_type)
+        return CallableRecordFactoryAdapter(
+            factory=lambda payload: RECORD_BUILDERS.build(record_type, payload),
+        )
 
 
 RECORD_FACTORIES = RecordFactoryAdapters()

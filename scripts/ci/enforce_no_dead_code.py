@@ -16,7 +16,7 @@ DEFAULT_TARGETS = [
 DEFAULT_EXCLUDES = ["*/tests/*", "*/test_*", "*/__init__.py", "*/scripts/*", "*/data/*"]
 
 
-def parse_args(argv: list[str]) -> argparse.Namespace:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Fail CI when dead code is detected by vulture.",
     )
@@ -25,7 +25,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def main(argv: list[str]) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     exclude_arg = ",".join(DEFAULT_EXCLUDES)
     command = [

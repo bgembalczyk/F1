@@ -62,6 +62,9 @@ class PrivateerTeamsSectionParser(SectionParser):
         self._list_parser = PrivateerTeamsListParser()
 
     def parse(self, element: Tag, *_args: Any, **_kwargs: Any) -> dict[str, Any]:
+        if element.name in {"ul", "ol"}:
+            return self._list_parser.parse(element)
+
         list_root = element.find(["ul", "ol"])
         if isinstance(list_root, Tag):
             return self._list_parser.parse(list_root)

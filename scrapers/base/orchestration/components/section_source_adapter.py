@@ -5,6 +5,7 @@ from typing import Any
 from scrapers.base.orchestration.models import OrchestrationPaths
 from scrapers.base.orchestration.models import ResolvedInput
 from scrapers.base.orchestration.models import StepDeclaration
+from scrapers.base.sections.serializer import coerce_section_parse_result
 
 
 class SectionSourceAdapter:
@@ -73,7 +74,30 @@ class SectionSourceAdapter:
     @staticmethod
     def _read_records(path: Path) -> list[dict[str, Any]]:
         payload = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(payload, dict) and ("section" in payload or "items" in payload):
+            return coerce_section_parse_result(
+                payload,
+                default_section_id="legacy_section",
+                default_section_label="Legacy section",
+                parser="SectionSourceAdapter",
+            ).records
         if isinstance(payload, list):
+            if payload and all(
+                isinstance(item, dict)
+                and ("section" in item or "items" in item or "section_id" in item)
+                for item in payload
+            ):
+                records: list[dict[str, Any]] = []
+                for item in payload:
+                    records.extend(
+                        coerce_section_parse_result(
+                            item,
+                            default_section_id="legacy_section",
+                            default_section_label="Legacy section",
+                            parser="SectionSourceAdapter",
+                        ).records,
+                    )
+                return records
             return [item for item in payload if isinstance(item, dict)]
         if isinstance(payload, dict):
             records = payload.get("records", [])

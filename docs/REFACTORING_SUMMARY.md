@@ -4,6 +4,18 @@ This document summarizes the refactoring work completed to eliminate code duplic
 
 ## Recent Refactoring: Class Structure and Inheritance (January 2026)
 
+## Migration Note: Removed Thin Serialization/Collection Aliases (April 2026)
+
+To reduce API surface and avoid pass-through wrappers, the following aliases were removed from public module/class APIs:
+- `PipelineIssue.as_dict()` → use `dataclasses.asdict(issue)`
+- `InfoboxExtractionResult.as_list()` → use `list(result.records)`
+- `Rounds.from_values(values)` → use `Rounds(tuple(values or ()))`
+- `Rounds.to_list()` → use `list(rounds.values)`
+- `LapRecord.keys()` → use `tuple(lap_record.data)`
+- simple mapping factory adapter now delegates through callable adapter (no dedicated `MappingRecordFactory` wrapper class)
+
+This is a source-compatible migration for internal runtime behavior, but call sites must be updated to the explicit operations above.
+
 ### 1. Indianapolis-Only List Scrapers (`scrapers/base/list/indianapolis_only_scraper.py`)
 
 **Problem:** `IndianapolisOnlyConstructorsListScraper` and `IndianapolisOnlyEngineManufacturersListScraper` had identical structure with duplicated `section_id` declaration.

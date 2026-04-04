@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -58,6 +60,33 @@ jobs:
         run: |
           pytest -q
 
-      - name: Coverage gate (minimum 99%)
+      - name: Run coverage and export XML
         run: |
-          pytest -q --cov=. --cov-report=term-missing --cov-fail-under=99
+          pytest -q --cov=. --cov-report=term-missing --cov-report=xml:coverage.xml
+
+      - name: Resolve base SHA for coverage diff gates
+        id: coverage_shas
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+            BASE_SHA="$(git rev-list --max-count=1 HEAD^)"
+          fi
+
+          echo "base_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
+          echo "head_sha=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+
+      - name: Coverage quality gates (patch/global/legacy)
+        run: |
+          python scripts/ci/enforce_coverage_quality.py \
+            --coverage-xml coverage.xml \
+            --baseline .ci/coverage-baseline.json \
+            --policy .ci/coverage-policy.json \
+            --legacy-files .ci/legacy-low-coverage-files.txt \
+            --base-sha "${{ steps.coverage_shas.outputs.base_sha }}" \
+            --head-sha "${{ steps.coverage_shas.outputs.head_sha }}"

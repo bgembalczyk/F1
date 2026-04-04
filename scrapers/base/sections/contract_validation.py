@@ -5,6 +5,10 @@ from typing import Any
 from scrapers.base.sections.constants import SECTION_RESULT_KEYS
 
 
+def is_legacy_section_payload(payload: dict[str, Any]) -> bool:
+    return "section" in payload or "items" in payload
+
+
 def validate_section_result_payload(payload: dict[str, Any]) -> None:
     if tuple(payload.keys()) != SECTION_RESULT_KEYS:
         msg = (

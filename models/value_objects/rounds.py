@@ -12,10 +12,6 @@ class Rounds:
         normalized = self._normalize_values(self.values)
         object.__setattr__(self, "values", normalized)
 
-    @classmethod
-    def from_values(cls, values: Iterable[int] | None) -> "Rounds":
-        return cls(tuple(values or ()))
-
     @staticmethod
     def _normalize_values(values: Iterable[Any]) -> tuple[int, ...]:
         normalized: list[int] = []
@@ -35,9 +31,6 @@ class Rounds:
             normalized.append(round_no)
         normalized.sort()
         return tuple(normalized)
-
-    def to_list(self) -> list[int]:
-        return list(self.values)
 
     def __bool__(self) -> bool:
         return bool(self.values)

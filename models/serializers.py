@@ -9,6 +9,7 @@ from typing import cast
 from typing import runtime_checkable
 
 from models.contracts.helpers import map_record_to_contract
+from models.domain_utils.field_normalization.links import normalize_link_payload
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord
@@ -48,10 +49,7 @@ def _normalize_link_mapping(value: Mapping[str, object]) -> dict[str, object] | 
         return None
     if not set(value.keys()).issubset({"text", "url"}):
         return None
-    return cast(
-        "LinkRecord",
-        {"text": value.get("text") or "", "url": value.get("url")},
-    )
+    return cast("LinkRecord", normalize_link_payload(value))
 
 
 def to_dict_any(

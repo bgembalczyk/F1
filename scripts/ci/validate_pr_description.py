@@ -40,7 +40,7 @@ CHECKLIST_PATTERN = re.compile(
 CODE_BLOCK_PATTERN = re.compile(r"```.+?```", re.DOTALL)
 
 
-def parse_args(argv: Sequence[str]) -> argparse.Namespace:
+def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Validate PR body contains required sections, checked technical checklist "
@@ -108,7 +108,7 @@ def has_review_evidence(pr_body: str) -> bool:
     return any(marker in normalized for marker in evidence_markers)
 
 
-def main(argv: Sequence[str]) -> int:
+def main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
     body = read_body(args)
 

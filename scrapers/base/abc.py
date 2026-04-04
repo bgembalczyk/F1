@@ -277,9 +277,18 @@ class ABCScraper(ABC):
         )
 
     def parse(self, soup: BeautifulSoup) -> list[RawRecord]:
-        if self.parser is None:
-            return self._parse_soup(soup)
-        return self.parser.parse(soup)
+        if self.parser is not None:
+            return self.parser.parse(soup)
+
+        parse_impl = type(self)._parse_soup
+        if parse_impl is ABCScraper._parse_soup:
+            self.logger.debug(
+                "No parser/_parse_soup implementation for %s; returning empty list.",
+                self.__class__.__name__,
+            )
+            return []
+
+        return self._parse_soup(soup)
 
     def parse_soup(self, soup: BeautifulSoup) -> list[RawRecord]:
         """Public facade for parsing an already constructed BeautifulSoup document."""

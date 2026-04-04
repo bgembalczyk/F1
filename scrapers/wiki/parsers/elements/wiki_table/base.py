@@ -10,6 +10,29 @@ class WikiTableBaseParser(ABC):
     missing_columns_policy: str = "skip"
     extra_columns_policy: str = "ignore"
 
+    def collect_rows(self, payload: Any) -> list[dict[str, Any]]:
+        """Traverse parsed payload and collect all domain rows matching this table type.
+
+        The payload may be a nested dict/list structure produced by section parsers.
+        Every node whose ``table_type`` equals ``self.table_type`` contributes its
+        ``domain_rows`` list to the result.
+        """
+        rows: list[dict[str, Any]] = []
+        self._collect_from_node(payload, rows)
+        return rows
+
+    def _collect_from_node(self, node: Any, rows: list[dict[str, Any]]) -> None:
+        if isinstance(node, dict):
+            if node.get("table_type") == self.table_type:
+                table_rows = node.get("domain_rows", [])
+                if isinstance(table_rows, list):
+                    rows.extend(row for row in table_rows if isinstance(row, dict))
+            for value in node.values():
+                self._collect_from_node(value, rows)
+        elif isinstance(node, list):
+            for item in node:
+                self._collect_from_node(item, rows)
+
     def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
         headers = table_data.get("headers", [])
         if not isinstance(headers, list) or not self.matches(headers, table_data):
