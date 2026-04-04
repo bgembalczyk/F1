@@ -61,8 +61,9 @@ def _collect_heading_ids(heading: Tag) -> set[str]:
     if isinstance(heading_id, str) and heading_id.strip():
         ids.add(heading_id.strip())
 
-    span = heading.find("span", class_="mw-headline")
-    if isinstance(span, Tag):
+    for span in heading.find_all("span"):
+        if not isinstance(span, Tag):
+            continue
         span_id = span.get("id")
         if isinstance(span_id, str) and span_id.strip():
             ids.add(span_id.strip())

@@ -61,8 +61,11 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         self._sections_service_factory = resolved_dependencies.sections_service_factory
         self._domain_record_service = resolved_dependencies.domain_record_service
 
-    def _should_parse_article(self, soup: BeautifulSoup) -> bool:
+    def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)
+
+    def _should_parse_article(self, soup: BeautifulSoup) -> bool:
+        return self._is_circuit_like_article(soup)
 
     def _select_section(
         self,
@@ -111,10 +114,17 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         tables_payload: TablesPayloadDTO,
         sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
-        _ = soup
+        if type(self)._parse_details is not F1SingleCircuitScraper._parse_details:
+            record = self._parse_details(soup)
+            return {"url": self._original_url or self.url, **record}
+
         return self._domain_record_service.assemble_record(
             source_url=self._original_url or self.url,
             infobox=infobox_payload.data,
             lap_record_rows=tables_payload.data,
             sections=sections_payload.data,
         )
+
+    def _parse_details(self, soup: BeautifulSoup) -> dict[str, Any]:
+        _ = soup
+        return {}
