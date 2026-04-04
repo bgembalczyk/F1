@@ -2,6 +2,7 @@
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_config
 from scrapers.base.helpers.config_factory import build_scraper_options
+from scrapers.base.pipeline_profiles import apply_scraper_pipeline_bindings
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
@@ -150,6 +151,25 @@ def test_pipeline_profile_attaches_domain_post_processors():
 
     assert [
         post_processor.__class__.__name__ for post_processor in scraper.post_processors
+    ] == ["EntriesStartsPointsPostProcessor"]
+
+
+def test_pipeline_profile_binding_deduplicates_post_processors():
+    source = DummySourceAdapter("<html></html>")
+    options = ScraperOptions(source_adapter=source)
+
+    apply_scraper_pipeline_bindings(
+        options,
+        scraper_cls=FemaleDriversListScraper,
+    )
+    apply_scraper_pipeline_bindings(
+        options,
+        scraper_cls=FemaleDriversListScraper,
+    )
+
+    assert [
+        post_processor.__class__.__name__
+        for post_processor in options.pipeline.post_processors
     ] == ["EntriesStartsPointsPostProcessor"]
 
 
