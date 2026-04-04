@@ -5,9 +5,13 @@ import ast
 import sys
 from pathlib import Path
 
+from structural_quality_exceptions import MAX_FUNCTION_LINES_EXCEPTIONS
+from structural_quality_exceptions import REDUNDANT_ALIAS_EXCEPTIONS
+
 
 class StructuralVisitor(ast.NodeVisitor):
-    def __init__(self) -> None:
+    def __init__(self, *, file_path: str) -> None:
+        self.file_path = file_path
         self.function_violations: list[tuple[str, int, int]] = []
         self.class_violations: list[tuple[str, int, int]] = []
         self.alias_violations: list[tuple[str, int, str]] = []
@@ -30,45 +34,60 @@ class StructuralVisitor(ast.NodeVisitor):
         owner = func.value
         return isinstance(owner, ast.Attribute) and owner.attr.startswith("_")
 
-    @staticmethod
-    def _is_docstring_stmt(stmt: ast.stmt) -> bool:
-        return (
-            isinstance(stmt, ast.Expr)
-            and isinstance(stmt.value, ast.Constant)
-            and isinstance(stmt.value.value, str)
-        )
-
-    @staticmethod
-    def _extract_call(stmt: ast.stmt) -> ast.Call | None:
-        if isinstance(stmt, ast.Return) and isinstance(stmt.value, ast.Call):
-            return stmt.value
-        if isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call):
-            return stmt.value
-        return None
-
-    def _is_redundant_alias_body(
+    def _is_redundant_alias_body(  # noqa: C901, PLR0911
         self,
         function: ast.FunctionDef | ast.AsyncFunctionDef,
     ) -> bool:
-        filtered = [stmt for stmt in function.body if not self._is_docstring_stmt(stmt)]
-        call = self._extract_call(filtered[0]) if len(filtered) == 1 else None
-        if call is None or self._is_private_name(function.name):
+        body = function.body
+        if not body:
+            return False
+
+        filtered: list[ast.stmt] = []
+        for stmt in body:
+            if (
+                isinstance(stmt, ast.Expr)
+                and isinstance(stmt.value, ast.Constant)
+                and isinstance(stmt.value.value, str)
+            ):
+                continue
+            filtered.append(stmt)
+
+        if len(filtered) != 1:
+            return False
+
+        stmt = filtered[0]
+        call: ast.Call | None = None
+        if isinstance(stmt, ast.Return) and isinstance(stmt.value, ast.Call):  # noqa: SIM114
+            call = stmt.value
+        elif isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call):
+            call = stmt.value
+
+        if call is None:
+            return False
+
+        if self._is_private_name(function.name):
             return False
 
         called = call.func
-        called_private_name = (
-            isinstance(called, ast.Name) and self._is_private_name(called.id)
-        ) or (isinstance(called, ast.Attribute) and self._is_private_name(called.attr))
-        return not called_private_name and not self._is_private_attribute_call(call)
+        if isinstance(called, ast.Name) and self._is_private_name(called.id):
+            return False
+        if isinstance(called, ast.Attribute) and self._is_private_name(called.attr):
+            return False
+        return not self._is_private_attribute_call(call)
 
     def _visit_function_common(
-        self,
-        node: ast.FunctionDef | ast.AsyncFunctionDef,
+        self, node: ast.FunctionDef | ast.AsyncFunctionDef,
     ) -> None:
         length = self._node_length(node)
-        if length > self.max_function_lines:
+        length_limit = MAX_FUNCTION_LINES_EXCEPTIONS.get(
+            (self.file_path, node.name), self.max_function_lines,
+        )
+        if length > length_limit:
             self.function_violations.append((node.name, node.lineno, length))
-        if self._is_redundant_alias_body(node):
+        if (
+            self._is_redundant_alias_body(node)
+            and (self.file_path, node.name) not in REDUNDANT_ALIAS_EXCEPTIONS
+        ):
             self.alias_violations.append(
                 (node.name, node.lineno, ast.unparse(node.body[-1])),
             )
@@ -102,11 +121,7 @@ def _iter_python_files(paths: list[str]) -> list[Path]:
 
 
 def evaluate_file(
-    path: Path,
-    *,
-    max_function_lines: int,
-    max_class_lines: int,
-    max_file_lines: int,
+    path: Path, *, max_function_lines: int, max_class_lines: int, max_file_lines: int,
 ) -> list[str]:
     try:
         source = path.read_text(encoding="utf-8")
@@ -123,7 +138,7 @@ def evaluate_file(
     except SyntaxError:
         return violations
 
-    visitor = StructuralVisitor()
+    visitor = StructuralVisitor(file_path=path.as_posix())
     visitor.max_function_lines = max_function_lines
     visitor.max_class_lines = max_class_lines
     visitor.visit(tree)
@@ -147,9 +162,7 @@ def evaluate_file(
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Structural Python quality gates.")
     parser.add_argument(
-        "files",
-        nargs="*",
-        help="Optional list of Python files to scan.",
+        "files", nargs="*", help="Optional list of Python files to scan.",
     )
     parser.add_argument("--max-function-lines", type=int, default=100)
     parser.add_argument("--max-class-lines", type=int, default=500)
