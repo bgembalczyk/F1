@@ -161,19 +161,9 @@ class ABCScraper(ABC):
             download_html=self._download,
         )
         if data is None:
-            return self._store_empty_data()
+            self._data = []
+            return self._data
 
-        return self._assemble_fetch_result(run_id, data)
-
-    def _store_empty_data(self) -> list[ExportRecord]:
-        self._data = []
-        return self._data
-
-    def _assemble_fetch_result(
-        self,
-        run_id: str,
-        data: list[ExportRecord],
-    ) -> list[ExportRecord]:
         self._data = data
         self.logger.debug("Scrape run %s finished", run_id)
         return self._data
@@ -183,13 +173,16 @@ class ABCScraper(ABC):
         run_id: str,
         data: list[ExportRecord],
     ) -> list[ExportRecord]:
+        """Backward-compatible alias for legacy subclasses overriding finalization."""
         warnings.warn(
             "ABCScraper._finalize_fetch() is deprecated; use "
-            "_assemble_fetch_result() instead.",
+            "fetch() return path instead.",
             DeprecationWarning,
             stacklevel=2,
         )
-        return self._assemble_fetch_result(run_id, data)
+        self._data = data
+        self.logger.debug("Scrape run %s finished", run_id)
+        return self._data
 
     def _validate_fetch_url(self) -> None:
         if getattr(self, "url", None):

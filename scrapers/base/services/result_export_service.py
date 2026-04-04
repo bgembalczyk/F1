@@ -1,6 +1,5 @@
 from collections.abc import Sequence
 from pathlib import Path
-from typing import TYPE_CHECKING
 
 from scrapers.base.export.export_helpers import fieldnames_from_first_row
 from scrapers.base.export.export_helpers import fieldnames_from_union
@@ -9,10 +8,6 @@ from scrapers.base.format.formatter_helpers import extract_data
 from scrapers.base.normalization import NormalizationRule
 from scrapers.base.results import ScrapeResult
 from scrapers.base.services.result_normalizer import ScrapeResultNormalizer
-
-if TYPE_CHECKING:
-    from scrapers.base.abc import ABCScraper
-
 
 class ResultExportService:
     def __init__(
@@ -82,23 +77,6 @@ class ResultExportService:
             normalized,
             path,
             fieldnames=resolved_fieldnames,
-            include_metadata=include_metadata,
-        )
-
-    def export_scraper_result_to_json(
-        self,
-        scraper: "ABCScraper",
-        result: ScrapeResult,
-        path: str | Path,
-        *,
-        indent: int = 2,
-        include_metadata: bool = False,
-    ) -> None:
-        self.to_json(
-            result,
-            path,
-            exporter=scraper.exporter,
-            indent=indent,
             include_metadata=include_metadata,
         )
 
