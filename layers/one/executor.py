@@ -126,15 +126,34 @@ class LayerOneExecutor:
                 | {"status": "success", "message": "layer1 seed finished"},
             )
 
+        self._run_engine_manufacturers_with_report(
+            run_config=run_config,
+            base_wiki_dir=base_wiki_dir,
+            run_id=run_id,
+            summary=summary,
+            output_paths=output_paths,
+        )
+        self._emit_summary(
+            run_id=run_id,
+            summary=summary,
+            output_paths=output_paths,
+            trace_writer=trace_writer,
+        )
+
+    def _run_engine_manufacturers_with_report(
+        self,
+        *,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+        run_id: str,
+        summary: dict[str, list[str]],
+        output_paths: list[str],
+    ) -> None:
         try:
             self._run_engine_manufacturers(
                 base_wiki_dir=base_wiki_dir,
                 include_urls=run_config.include_urls,
                 run_id=run_id,
-            )
-            summary["success"].append("engine_manufacturers")
-            output_paths.append(
-                str(base_wiki_dir / "engines/complete_engine_manufacturers"),
             )
         except Exception as exc:
             normalized_error = normalize_pipeline_error(
@@ -158,6 +177,17 @@ class LayerOneExecutor:
             )
             summary["fail"].append("engine_manufacturers")
             raise normalized_error from exc
+        summary["success"].append("engine_manufacturers")
+        output_paths.append(str(base_wiki_dir / "engines/complete_engine_manufacturers"))
+
+    def _emit_summary(
+        self,
+        *,
+        run_id: str,
+        summary: dict[str, list[str]],
+        output_paths: list[str],
+        trace_writer: RunTraceWriter,
+    ) -> None:
         summary_context = build_execution_context(
             run_id=run_id,
             domain="layer1",

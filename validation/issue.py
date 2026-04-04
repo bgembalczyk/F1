@@ -54,7 +54,7 @@ class ValidationIssue:
         actual: str | None = None,
         path_segments: tuple[str, ...] = (),
     ) -> ValidationIssue:
-        return cls(
+        issue = cls(
             code=code,
             message=message,
             field=field,
@@ -62,6 +62,7 @@ class ValidationIssue:
             actual=actual,
             path_segments=path_segments,
         )
+        return IssueMessageFormatter.render(issue)
 
     def with_prefix(self, prefix: str) -> ValidationIssue:
         prefix_segments = tuple(segment for segment in prefix.split(".") if segment)
@@ -92,7 +93,10 @@ class IssueMessageFormatter:
 
     @classmethod
     def render(cls, issue: ValidationIssue) -> ValidationIssue:
-        return replace(issue, message=cls.format(issue))
+        formatted_message = cls.format(issue)
+        if issue.message == formatted_message:
+            return issue
+        return replace(issue, message=formatted_message)
 
 
 class LegacyValidationIssueAdapter:
