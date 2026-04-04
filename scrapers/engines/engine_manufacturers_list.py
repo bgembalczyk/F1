@@ -10,11 +10,11 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
 from scrapers.base.source_catalog import ENGINES_LIST
+from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
 from scrapers.base.table.builders import build_name_status_fragment
-from scrapers.base.table.builders import entity_column
 from scrapers.base.table.columns.types import FloatColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.config import build_scraper_config
@@ -65,7 +65,7 @@ TABLE_SCHEMA = TableSchemaDSL(
         ),
         build_entity_metadata_columns(
             [
-                entity_column(
+                EntityColumnSpec(
                     "Engines built in",
                     "engines_built_in",
                     LinksListColumn(),

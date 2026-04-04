@@ -5,10 +5,10 @@ from typing import Any
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import GRANDS_PRIX_LIST
+from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
 from scrapers.base.table.builders import build_name_status_fragment
-from scrapers.base.table.builders import entity_column
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import SeasonsColumn
@@ -55,10 +55,10 @@ TABLE_SCHEMA = TableSchemaDSL(
         ),
         build_entity_metadata_columns(
             [
-                entity_column("Country", "country", LinksListColumn()),
-                entity_column("Years held", "years_held", SeasonsColumn()),
-                entity_column("Circuits", "circuits", IntColumn()),
-                entity_column("Total", "total", IntColumn()),
+                EntityColumnSpec("Country", "country", LinksListColumn()),
+                EntityColumnSpec("Years held", "years_held", SeasonsColumn()),
+                EntityColumnSpec("Circuits", "circuits", IntColumn()),
+                EntityColumnSpec("Total", "total", IntColumn()),
             ],
         ),
     ),

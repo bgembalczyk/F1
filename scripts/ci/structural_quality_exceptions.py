@@ -82,9 +82,6 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/base/sections/serializer.py", "build_section_parse_result"),
     ("scrapers/base/source_catalog.py", "base_url"),
     ("scrapers/base/source_catalog.py", "url"),
-    ("scrapers/base/table/builders.py", "build_table_schema"),
-    ("scrapers/base/table/builders.py", "entity_column"),
-    ("scrapers/base/table/builders.py", "metric_column"),
     ("scrapers/base/table/columns/helpers/driver_parsing.py", "build_link_lookup"),
     ("scrapers/base/table/columns/helpers/engine_link_helpers.py", "build_link_lookup"),
     ("scrapers/base/table/columns/helpers/engine_parsing.py", "build_link_lookup"),
@@ -107,7 +104,6 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/circuits/infobox/service.py", "normalize_result"),
     ("scrapers/circuits/infobox/services/text_utils.py", "prune_nulls"),
     ("scrapers/circuits/sections/service.py", "build_entries"),
-    ("scrapers/config.py", "default_config"),
     ("scrapers/config.py", "default_data_paths"),
     ("scrapers/config.py", "default_scraper_config"),
     (
