@@ -47,9 +47,9 @@ class SectionTableParserBase(ABC):
                 table_classification=table_classification,
             )
             mapped = self.map_table_result(
-                table_data=table_data,
+                _table_data=table_data,
                 table_classification=table_classification,
-                table_pipeline=table_pipeline,
+                _table_pipeline=table_pipeline,
             )
             if mapped is None:
                 continue
@@ -68,18 +68,20 @@ class SectionTableParserBase(ABC):
     def build_pipeline(
         self,
         *,
-        _table_data: dict[str, Any],
-        _table_classification: Any,
+        table_data: dict[str, Any],
+        table_classification: Any,
     ) -> Any:
+        _ = table_data
+        _ = table_classification
         return None
 
     @abstractmethod
     def map_table_result(
         self,
         *,
-        table_data: dict[str, Any],
+        _table_data: dict[str, Any],
         table_classification: Any,
-        table_pipeline: Any,
+        _table_pipeline: Any,
     ) -> dict[str, Any] | None:
         """Transform a parsed table into a domain record (or skip with None)."""
 

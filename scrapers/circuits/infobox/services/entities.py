@@ -33,7 +33,7 @@ class CircuitEntitiesParser(SafeParserMixin):
         lap_record_parser: CircuitLapRecordParser,
         entity_parser: CircuitEntityParser,
         additional_info_parser: CircuitAdditionalInfoParser,
-        error_handler: ErrorHandler,
+        error_handler: ErrorHandler | None = None,
         url_provider: Callable[[], str | None] | None = None,
     ) -> None:
         self.text_utils = text_utils
@@ -43,7 +43,7 @@ class CircuitEntitiesParser(SafeParserMixin):
         self.lap_record_parser = lap_record_parser
         self.entity_parser = entity_parser
         self.additional_info_parser = additional_info_parser
-        self.error_handler = error_handler
+        self.error_handler = error_handler or ErrorHandler()
         self._url_provider = url_provider
 
     def _build_normalized_data(

@@ -7,6 +7,9 @@ from scrapers.base.errors import ScraperError
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.base.sections.section_id_resolver import MissingSectionError
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
+from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
+from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
 from scrapers.base.single_wiki_article.base import SingleWikiArticleScraperBase
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
@@ -88,3 +91,17 @@ class F1SingleGrandPrixScraper(SingleWikiArticleScraperBase):
             if result is not None:
                 return result
         return [{"url": self.url, "by_year": []}]
+
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
+    ) -> dict[str, Any]:
+        _ = infobox_payload
+        _ = tables_payload
+        _ = sections_payload
+        parsed = self.parse(soup)
+        return parsed[0] if parsed else {"url": self.url, "by_year": []}
