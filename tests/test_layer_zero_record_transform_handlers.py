@@ -58,6 +58,22 @@ def test_circuits_domain_transform_handler() -> None:
     )
 
 
+def test_circuits_domain_transform_handler_sorts_formula_one_keys() -> None:
+    transformed = _circuits_domain_handler(
+        domain="circuits",
+        source_name="ignored.json",
+        record={
+            "circuit": "Monza",
+            "turns": 11,
+            "circuit_status": "active",
+            "grands_prix_held": CIRCUIT_GRANDS_PRIX_HELD,
+        },
+    )
+
+    formula_one = transformed["racing_series"]["formula_one"]
+    assert list(formula_one) == sorted(formula_one)
+
+
 def test_engines_domain_transform_handler() -> None:
     transformed = _engines_domain_handler(
         domain="engines",
