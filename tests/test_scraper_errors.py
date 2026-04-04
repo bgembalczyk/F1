@@ -1,6 +1,7 @@
 import json
 import sys
 import types
+from importlib.machinery import ModuleSpec
 from pathlib import Path
 
 import pytest
@@ -90,6 +91,7 @@ if "certifi" not in sys.modules:
 
 if "pandas" not in sys.modules:
     pandas_stub = types.ModuleType("pandas")
+    pandas_stub.__spec__ = ModuleSpec("pandas", loader=None)
 
     class _StubDataFrame:
         def __init__(self, *_args, **_kwargs):

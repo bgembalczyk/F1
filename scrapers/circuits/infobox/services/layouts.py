@@ -24,7 +24,7 @@ class CircuitLayoutsParser(SafeParserMixin):
         text_utils: InfoboxTextUtils,
         lap_record_parser: CircuitLapRecordParser,
         specs_parser: CircuitSpecsParser,
-        error_handler: ErrorHandler,
+        error_handler: ErrorHandler | None = None,
         url_provider: Callable[[], str | None] | None = None,
     ) -> None:
         self.infobox_scraper = infobox_scraper
@@ -32,7 +32,7 @@ class CircuitLayoutsParser(SafeParserMixin):
         self.lap_record_parser = lap_record_parser
         self.specs_parser = specs_parser
         self.schema = CIRCUIT_INFOBOX_SCHEMA
-        self.error_handler = error_handler
+        self.error_handler = error_handler or ErrorHandler()
         self._url_provider = url_provider
 
     @staticmethod

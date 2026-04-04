@@ -1,4 +1,5 @@
-from typing import TypedDict
+from typing_extensions import NotRequired
+from typing_extensions import TypedDict
 
 from models.records.driver_championships import DRIVERS_CHAMPIONSHIPS_SCHEMA
 from models.records.driver_championships import DriversChampionshipsRecord
@@ -11,20 +12,20 @@ from validation.schemas import NestedSchema
 from validation.validator_base import RecordValidator
 
 
-class DriverRecord(TypedDict, total=False):
+class DriverRecord(TypedDict):
     driver: LinkRecord
     is_active: bool
     is_world_champion: bool
     nationality: str | None
     seasons_competed: list[SeasonRecord]
     drivers_championships: DriversChampionshipsRecord
-    race_entries: int | None
-    race_starts: int | None
-    pole_positions: int | None
-    race_wins: int | None
-    podiums: int | None
-    fastest_laps: int | None
-    points: str | None
+    race_entries: NotRequired[int | None]
+    race_starts: NotRequired[int | None]
+    pole_positions: NotRequired[int | None]
+    race_wins: NotRequired[int | None]
+    podiums: NotRequired[int | None]
+    fastest_laps: NotRequired[int | None]
+    points: NotRequired[str | None]
 
 
 DRIVER_DEFINITION = RecordDefinition(

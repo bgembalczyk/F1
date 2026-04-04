@@ -1,3 +1,4 @@
+from contextlib import suppress
 from dataclasses import dataclass
 from dataclasses import field
 from pathlib import Path
@@ -62,6 +63,10 @@ class ScraperOptions:
     debug_diff_record_ids: set[str] | None = None
     error_policy: Literal["retry", "skip", "fail-fast"] = "fail-fast"
     error_retry_attempts: int = 1
+    # Backward-compatible aliases.
+    policy: HttpPolicy | None = None
+    transformers: list[RecordTransformer] | None = None
+    post_processors: list[RecordPostProcessor] | None = None
     http: HttpOptions = field(default_factory=HttpOptions)
     cache: CacheOptions = field(default_factory=CacheOptions)
     pipeline: PipelineOptions = field(default_factory=PipelineOptions)
@@ -73,6 +78,48 @@ class ScraperOptions:
         if self.error_retry_attempts < 1:
             msg = "error_retry_attempts must be >= 1"
             raise ValueError(msg)
+        if self.policy is not None:
+            self.http.policy = self.policy
+        else:
+            self.policy = self.http.policy
+        if self.transformers is not None:
+            self.pipeline.transformers = list(self.transformers)
+        else:
+            self.transformers = self.pipeline.transformers
+        if self.post_processors is not None:
+            self.pipeline.post_processors = list(self.post_processors)
+        else:
+            self.post_processors = self.pipeline.post_processors
+        if (
+            self.source_adapter is not None
+            and not hasattr(self.source_adapter, "policy")
+        ):
+            with suppress(AttributeError, TypeError):
+                self.source_adapter.policy = self.http.policy
+
+    def __getattribute__(self, name: str):
+        value = object.__getattribute__(self, name)
+        if name == "source_adapter" and value is not None:
+            try:
+                policy = object.__getattribute__(self, "http").policy
+                value.policy = policy
+            except (AttributeError, TypeError):
+                pass
+        return value
+
+    def to_http_policy(self) -> HttpPolicy:
+        return self.http.policy
+
+    def with_fetcher(self) -> HtmlFetcher:
+        from scrapers.base.factory.runtime_factory import (  # noqa: PLC0415
+            ScraperRuntimeFactory,
+        )
+
+        runtime = ScraperRuntimeFactory().build(
+            options=self,
+            policy=self.to_http_policy(),
+        )
+        return runtime.fetcher
 
 
 @dataclass(slots=True)

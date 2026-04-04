@@ -18,6 +18,9 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
+    from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
+    from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
+    from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
 
 
 class F1SingleGrandPrixScraper(SingleWikiArticleScraperBase):
@@ -88,3 +91,17 @@ class F1SingleGrandPrixScraper(SingleWikiArticleScraperBase):
             if result is not None:
                 return result
         return [{"url": self.url, "by_year": []}]
+
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
+    ) -> dict[str, Any]:
+        _ = infobox_payload
+        _ = tables_payload
+        _ = sections_payload
+        parsed = self.parse(soup)
+        return parsed[0] if parsed else {"url": self.url, "by_year": []}

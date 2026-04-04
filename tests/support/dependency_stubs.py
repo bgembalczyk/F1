@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.machinery
 import importlib.util
 import sys
 import types
@@ -52,6 +53,7 @@ def _ensure_pandas_stub() -> None:
     if _module_exists("pandas"):
         return
     pandas_stub = types.ModuleType("pandas")
+    pandas_stub.__spec__ = importlib.machinery.ModuleSpec("pandas", loader=None)
 
     class _StubDataFrame:
         def __init__(self, *_args, **_kwargs):

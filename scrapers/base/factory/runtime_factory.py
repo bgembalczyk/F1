@@ -115,6 +115,9 @@ class ScraperRuntimeFactory:
     ) -> tuple[HtmlFetcher, SourceAdapter]:
         if fetcher is None and isinstance(source_adapter, HtmlFetcher):
             fetcher = source_adapter
+        if fetcher is None and source_adapter is not None:
+            # Backward compatibility: allow runtime with injected source adapter only.
+            fetcher = _SourceAdapterFetcherShim(source_adapter)
         if fetcher is None:
             msg = "Could not build scraper runtime: missing fetcher/source_adapter"
             raise ValueError(msg)
@@ -199,3 +202,24 @@ class ScraperRuntimeFactory:
             cache_dir=options.cache.cache_dir,
             ttl_seconds=ttl_seconds,
         )
+
+
+class _SourceAdapterFetcherShim(HtmlFetcher):
+    """Adapter exposing SourceAdapter as HtmlFetcher for legacy option wiring."""
+
+    def __init__(self, source_adapter: SourceAdapter) -> None:
+        self._source_adapter = source_adapter
+        self.cache_adapter = None
+        self.timeout = 10
+        self.http_client = None
+        self.policy = HttpPolicy(timeout=10, retries=0, cache=False)
+
+    def set_cache(self, cache_adapter: CacheBackend | None) -> None:
+        self.cache_adapter = cache_adapter
+
+    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+        _ = timeout
+        return self._source_adapter.get(url)
+
+    def get(self, url: str) -> str:
+        return self._source_adapter.get(url)

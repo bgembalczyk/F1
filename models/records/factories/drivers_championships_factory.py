@@ -14,11 +14,11 @@ class DriversChampionshipsRecordFactory(BaseRecordFactory):
 
     def build(
         self,
-        record: Mapping[str, Any] | DriversChampionships,
+        record: Mapping[str, Any] | DriversChampionships | int | str | None,
     ) -> DriversChampionshipsRecord:
         if isinstance(record, DriversChampionships):
             payload = record.to_dict()
-        else:
+        elif isinstance(record, Mapping):
             payload = self.apply_spec(
                 record,
                 {
@@ -28,5 +28,16 @@ class DriversChampionshipsRecordFactory(BaseRecordFactory):
                     },
                 },
             )
-            payload["count"] = payload.get("count") or 0
+        else:
+            payload = {"count": record, "seasons": []}
+            payload = self.apply_spec(
+                payload,
+                {
+                    "list_field_normalizers": {
+                        "int": ["count"],
+                        "seasons": ["seasons"],
+                    },
+                },
+            )
+        payload["count"] = payload.get("count") or 0
         return cast("DriversChampionshipsRecord", payload)

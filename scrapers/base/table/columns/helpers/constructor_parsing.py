@@ -133,7 +133,14 @@ class ConstructorParsingHelpers:
             LinkRecord for the constructor, or None if index out of range
         """
         if not ctx.links:
-            return None
+            hyphen_split = ConstructorParsingHelpers.split_on_external_hyphen(ctx)
+            if hyphen_split is None:
+                return None
+            parts = [hyphen_split[0], hyphen_split[1]]
+            if index >= len(parts):
+                return None
+            part = clean_wiki_text(parts[index])
+            return {"text": part, "url": None} if part else None
 
         if index >= len(ctx.links):
             # When a single link is present, it can represent both

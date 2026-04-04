@@ -10,10 +10,23 @@ class RecordPostProcessor(Protocol):
 
 
 class CommonMetadataPostProcessor:
-    """Compatibility no-op post processor used by legacy tests."""
+    """Compatibility post processor used by legacy tests."""
+
+    def __init__(self, **metadata) -> None:
+        self._metadata = {
+            key: value.isoformat() if hasattr(value, "isoformat") else value
+            for key, value in metadata.items()
+        }
 
     def post_process(self, records: list[ExportRecord]) -> list[ExportRecord]:
-        return records
+        if not self._metadata:
+            return records
+        enriched: list[ExportRecord] = []
+        for record in records:
+            merged = dict(record)
+            merged.update(self._metadata)
+            enriched.append(merged)
+        return enriched
 
 
 def apply_post_processors(

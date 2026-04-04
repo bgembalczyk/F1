@@ -46,7 +46,7 @@ class SectionTableParserBase(ABC):
                 table_data=table_data,
                 table_classification=table_classification,
             )
-            mapped = self.map_table_result(
+            mapped = self._map_table_result_compat(
                 table_data=table_data,
                 table_classification=table_classification,
                 table_pipeline=table_pipeline,
@@ -68,20 +68,45 @@ class SectionTableParserBase(ABC):
     def build_pipeline(
         self,
         *,
-        _table_data: dict[str, Any],
-        _table_classification: Any,
+        table_data: dict[str, Any],
+        table_classification: Any,
     ) -> Any:
+        _ = table_data
+        _ = table_classification
         return None
 
     @abstractmethod
     def map_table_result(
         self,
         *,
+        _table_data: dict[str, Any],
+        table_classification: Any,
+        _table_pipeline: Any,
+    ) -> dict[str, Any] | None:
+        """Transform a parsed table into a domain record (or skip with None)."""
+
+    def _map_table_result_compat(
+        self,
+        *,
         table_data: dict[str, Any],
         table_classification: Any,
         table_pipeline: Any,
     ) -> dict[str, Any] | None:
-        """Transform a parsed table into a domain record (or skip with None)."""
+        try:
+            return self.map_table_result(
+                _table_data=table_data,
+                table_classification=table_classification,
+                _table_pipeline=table_pipeline,
+            )
+        except TypeError as first_error:
+            try:
+                return self.map_table_result(
+                    table_data=table_data,
+                    table_classification=table_classification,
+                    table_pipeline=table_pipeline,
+                )
+            except TypeError as second_error:
+                raise first_error from second_error
 
     def build_result(self, records: list[dict[str, Any]]) -> SectionParseResult:
         return build_section_parse_result(

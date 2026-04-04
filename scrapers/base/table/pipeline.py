@@ -190,14 +190,25 @@ class TablePipeline:
             payload = {
                 key: value for key, value in payload.items() if key in self.model_fields
             }
-        created = self.record_factory.create(payload)
-        return dict(created) if isinstance(created, Mapping) else record
+        if hasattr(self.record_factory, "create"):
+            created = self.record_factory.create(payload)
+        elif callable(self.record_factory):
+            created = self.record_factory(**payload)
+        else:
+            return record
+        if isinstance(created, Mapping):
+            return dict(created)
+        return created
 
     @staticmethod
     def _cell_html(cell: Tag | None) -> str | None:
         if cell is None:
             return None
-        return cell.decode_contents()
+        if hasattr(cell, "decode_contents"):
+            return cell.decode_contents()
+        if hasattr(cell, "get_text"):
+            return cell.get_text(" ", strip=True)
+        return str(cell)
 
     def _dump_parse_context(
         self,

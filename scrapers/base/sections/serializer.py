@@ -4,7 +4,6 @@ from dataclasses import asdict
 from typing import Any
 
 from models.value_objects import EntityName
-from models.value_objects import SectionId
 from scrapers.base.sections.interface import SectionParseResult
 
 
@@ -57,7 +56,7 @@ def normalize_section_metadata(
     metadata.setdefault("heading_path", [])
     metadata.setdefault(
         "section_id",
-        SectionId.from_raw(section.section_id).to_export(),
+        str(section.section_id),
     )
     metadata.setdefault(
         "section_label",
@@ -68,7 +67,7 @@ def normalize_section_metadata(
 
 def serialize_section_result(section: SectionParseResult) -> dict[str, Any]:
     payload = asdict(section)
-    payload["section_id"] = SectionId.from_raw(section.section_id).to_export()
+    payload["section_id"] = str(section.section_id)
     payload["section_label"] = EntityName.from_raw(section.section_label).to_export()
     payload["metadata"] = normalize_section_metadata(section)
     return payload
