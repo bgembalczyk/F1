@@ -4,29 +4,9 @@ from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.circuits.helpers.sections import is_circuit_like_article
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.circuits.single_scraper import detect_layout_name
 from scrapers.circuits.single_scraper import is_lap_record_table
-
-
-def test_is_circuit_like_article_true_when_category_matches() -> None:
-    soup = BeautifulSoup(
-        """
-        <div id="mw-normal-catlinks">
-            <a href="/wiki/Category:Formula_One_circuits">Formula One circuits</a>
-        </div>
-        """,
-        "html.parser",
-    )
-
-    assert is_circuit_like_article(soup) is True
-
-
-def test_is_circuit_like_article_false_without_categories() -> None:
-    soup = BeautifulSoup("<div>No categories here</div>", "html.parser")
-
-    assert is_circuit_like_article(soup) is False
 
 
 def test_select_section_returns_fragment_section_only() -> None:

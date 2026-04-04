@@ -22,9 +22,9 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("models/records/record_definition.py", "to_schema"),
     ("models/records/record_definition.py", "validate_record"),
     ("models/validation/base.py", "validate_schema"),
-    ("models/validation/validators.py", "normalize_season_list"),  # tested directly
+    ("models/validation/validators.py", "normalize_season_list"),
     ("models/value_objects/common_terms.py", "to_export"),
-    ("models/value_objects/link_utils.py", "normalize_link"),  # tested directly
+    ("models/value_objects/link_utils.py", "normalize_link"),
     ("models/value_objects/normalized_date.py", "from_mapping"),
     ("models/value_objects/rounds.py", "from_values"),
     ("models/value_objects/rounds.py", "to_list"),
@@ -81,7 +81,7 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     (
         "scrapers/base/table/columns/helpers/driver_parsing.py",
         "build_link_lookup",
-    ),  # tested directly
+    ),
     ("scrapers/base/table/columns/types/column_factory.py", "FloatColumn"),
     ("scrapers/base/table/columns/types/column_factory.py", "IntColumn"),
     ("scrapers/base/table/columns/types/constructor_part.py", "parse"),
@@ -92,7 +92,7 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/base/table/schema.py", "build"),  # builder pattern
     ("scrapers/base/table/scraper.py", "parse_row"),
     ("scrapers/circuits/composition.py", "for_tests"),
-    ("scrapers/circuits/helpers/sections.py", "is_circuit_like_article"),  # tested
+    ("scrapers/circuits/helpers/sections.py", "is_circuit_like_article"),
     ("scrapers/circuits/infobox/service.py", "build_parser"),
     ("scrapers/circuits/infobox/service.py", "normalize_result"),
     (
@@ -155,11 +155,11 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     (
         "scrapers/wiki/component_metadata.py",
         "build_layer_one_list_scraper",
-    ),  # tested directly
+    ),
     (
         "scrapers/wiki/parsers/body_content.py",
         "find_body_content",
-    ),  # tested directly
+    ),
     ("scrapers/wiki/parsers/elements/infobox.py", "parse"),
     ("scrapers/wiki/parsers/elements/infobox.py", "parse_row_value"),
     ("scrapers/wiki/parsers/elements/mixin.py", "find_infobox"),
@@ -167,8 +167,8 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     (
         "scrapers/wiki/parsers/elements/parsers.py",
         "build_default_wiki_element_parsers",
-    ),  # tested directly
-    ("scrapers/wiki/parsers/header.py", "find_header"),  # tested directly
+    ),
+    ("scrapers/wiki/parsers/header.py", "find_header"),
     ("scrapers/wiki/parsers/sections/base_nested_section.py", "parse"),
     ("scrapers/wiki/parsers/sections/data_classes.py", "with_section"),
     (

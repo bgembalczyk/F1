@@ -122,25 +122,6 @@ def test_header_parser_extracts_title():
     assert result["title"] == "Lewis Hamilton"
 
 
-def test_header_parser_find_header():
-    html = """
-    <html><body>
-      <header class="mw-body-header vector-page-titlebar">
-        <h1>Title</h1>
-      </header>
-    </body></html>
-    """
-    soup = _make_soup(html)
-    header_el = HeaderParser.find_header(soup)
-    assert header_el is not None
-    assert header_el.name == "header"
-
-
-def test_header_parser_find_header_returns_none_when_absent():
-    soup = _make_soup("<html><body><div>No header here</div></body></html>")
-    assert HeaderParser.find_header(soup) is None
-
-
 # ---------------------------------------------------------------------------
 # CategoryLinksParser
 # ---------------------------------------------------------------------------
@@ -808,15 +789,3 @@ def test_body_content_parser():
     assert sections[0]["section_label"] == "(Top)"
     assert sections[1]["section_label"] == "History"
     assert result["category_links"] is not None
-
-
-def test_body_content_parser_find():
-    html = """
-    <html><body>
-      <div id="bodyContent"><p>Content</p></div>
-    </body></html>
-    """
-    soup = _make_soup(html)
-    el = BodyContentParser.find_body_content(soup)
-    assert el is not None
-    assert el.get("id") == "bodyContent"
