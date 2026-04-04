@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from copy import deepcopy
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
@@ -52,7 +53,14 @@ class ConstructorsListScraper(F1ListScraper):
 
     _SECTION_PARSER_EXPORT_KEY = "section_parser"
     _SUB_SECTION_PARSER_EXPORT_KEY = "sub_section_parser"
-    _SUPPORTED_EXPORT_SCOPES = {"all", "current", "former", "indianapolis", "privateer"}
+    _SUPPORTED_EXPORT_SCOPES = {
+        "all",
+        "current",
+        "former",
+        "indianapolis",
+        "privateer",
+    }
+    _PARSE_SCOPE_CACHE: dict[tuple[bool, bool], dict[str, list[dict[str, Any]]]] = {}
 
     def __init__(self, *args: Any, export_scope: str = "all", **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
@@ -69,22 +77,44 @@ class ConstructorsListScraper(F1ListScraper):
         }
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        cache_key = (self.include_urls, self.normalize_empty_values)
+        cached_scopes = self._PARSE_SCOPE_CACHE.get(cache_key)
+        if cached_scopes is not None:
+            logger.warning("ConstructorsListScraper: using cached parse flow.")
+            self._restore_split_export_records(cached_scopes)
+            return deepcopy(cached_scopes[self._export_scope])
+
         selector = WikipediaSectionByIdSelectionStrategy(domain="constructors")
         logger.warning("ConstructorsListScraper: starting parse flow.")
-        self._split_export_records = {
-            self._SECTION_PARSER_EXPORT_KEY: [],
-            self._SUB_SECTION_PARSER_EXPORT_KEY: [],
+        current_records = self._parse_current_section(selector=selector, soup=soup)
+        former_records, indianapolis_records = self._parse_former_sections(
+            selector=selector,
+            soup=soup,
+        )
+        privateer_records = self._parse_privateer_section(
+            selector=selector,
+            soup=soup,
+        )
+        scope_records = {
+            "all": [
+                *current_records,
+                *former_records,
+                *indianapolis_records,
+                *privateer_records,
+            ],
+            "current": current_records,
+            "former": former_records,
+            "indianapolis": indianapolis_records,
+            "privateer": privateer_records,
         }
-        records: list[dict[str, Any]] = []
-        records.extend(self._parse_current_section(selector=selector, soup=soup))
-        records.extend(self._parse_former_sections(selector=selector, soup=soup))
-        records.extend(self._parse_privateer_section(selector=selector, soup=soup))
+        self._PARSE_SCOPE_CACHE[cache_key] = deepcopy(scope_records)
+        self._restore_split_export_records(scope_records)
         logger.warning(
             "ConstructorsListScraper: parse flow finished, total records=%d.",
-            len(records),
+            len(scope_records["all"]),
         )
 
-        return records
+        return deepcopy(scope_records[self._export_scope])
 
     def _parse_current_section(
         self,
@@ -92,6 +122,7 @@ class ConstructorsListScraper(F1ListScraper):
         selector: WikipediaSectionByIdSelectionStrategy,
         soup: BeautifulSoup,
     ) -> list[dict[str, Any]]:
+        self._split_export_records[self._SECTION_PARSER_EXPORT_KEY] = []
         current_section = self._extract_current_section(selector=selector, soup=soup)
         if current_section is None:
             logger.warning(
@@ -117,23 +148,21 @@ class ConstructorsListScraper(F1ListScraper):
         self._split_export_records[self._SECTION_PARSER_EXPORT_KEY].extend(
             current_records,
         )
-        if self._should_include_scope("current"):
-            return current_records
-        return []
+        return current_records
 
     def _parse_former_sections(
         self,
         *,
         selector: WikipediaSectionByIdSelectionStrategy,
         soup: BeautifulSoup,
-    ) -> list[dict[str, Any]]:
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         former_section = selector.extract_section_by_id(
             soup,
             self._FORMER_SECTION_ID,
             domain="constructors",
         )
         if former_section is None:
-            return []
+            return ([], [])
         logger.warning("ConstructorsListScraper: former section found.")
         former_parser = FormerConstructorsSectionParser(
             config=self._FORMER_CONFIG,
@@ -156,12 +185,7 @@ class ConstructorsListScraper(F1ListScraper):
             "ConstructorsListScraper: indianapolis-only extracted, records=%d.",
             len(indianapolis_records),
         )
-        records: list[dict[str, Any]] = []
-        if self._should_include_scope("former"):
-            records.extend(former_records)
-        if self._should_include_scope("indianapolis"):
-            records.extend(indianapolis_records)
-        return records
+        return (former_records, indianapolis_records)
 
     def _parse_privateer_section(
         self,
@@ -187,9 +211,19 @@ class ConstructorsListScraper(F1ListScraper):
             "ConstructorsListScraper: privateer section parsed, records=%d.",
             len(privateer_records),
         )
-        if self._should_include_scope("privateer"):
-            return privateer_records
-        return []
+        return privateer_records
+
+    def _restore_split_export_records(
+        self,
+        scope_records: dict[str, list[dict[str, Any]]],
+    ) -> None:
+        self._split_export_records = {
+            self._SECTION_PARSER_EXPORT_KEY: [
+                *scope_records["current"],
+                *scope_records["former"],
+            ],
+            self._SUB_SECTION_PARSER_EXPORT_KEY: [*scope_records["privateer"]],
+        }
 
     def _normalize_privateer_urls(self, privateer_records: list[Any]) -> None:
         if not self.include_urls:
