@@ -274,7 +274,7 @@ def test_scraper_config_rejects_blank_url() -> None:
 
 
 def test_scraper_config_rejects_invalid_column_map() -> None:
-    with pytest.raises(ValueError, match="column_map must map str keys to str values"):
+    with pytest.raises(TypeError, match="column_map must map str keys to str values"):
         ScraperConfig(
             url="https://example.com",
             column_map={"Header": 123},
@@ -283,7 +283,7 @@ def test_scraper_config_rejects_invalid_column_map() -> None:
 
 def test_scraper_config_rejects_invalid_columns() -> None:
     with pytest.raises(
-        ValueError,
+        TypeError,
         match="columns must map str keys to BaseColumn values",
     ):
         ScraperConfig(
@@ -304,7 +304,7 @@ def test_table_scraper_validates_config_in_init() -> None:
     object.__setattr__(config, "default_column", AutoColumn())
 
     with pytest.raises(
-        ValueError,
+        TypeError,
         match="columns must map str keys to BaseColumn values",
     ):
         DummyTableScraper(
