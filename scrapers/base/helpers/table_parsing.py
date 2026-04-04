@@ -25,6 +25,7 @@ class TableParsingHelper:
         Returns:
             List of parsed records
         """
+        # di-antipattern-allow: parser helper intentionally creates local parser instance.
         parser = HtmlTableParser()
         records: list[dict[str, Any]] = []
         for row_index, row in enumerate(parser.parse_table(table)):

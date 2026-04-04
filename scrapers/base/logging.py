@@ -83,6 +83,7 @@ def get_logger(
 ) -> logging.LoggerAdapter:
     base_logger = logging.getLogger(f"{LOGGER_NAME}.{scraper_name}")
     context = _DEFAULT_EXECUTION_CONTEXT | (execution_context or {})
+    # di-antipattern-allow: logger adapter creation is part of logging facade.
     return logging.LoggerAdapter(base_logger, {"scraper": scraper_name, **context})
 
 

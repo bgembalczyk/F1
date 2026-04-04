@@ -19,6 +19,7 @@ if typing.TYPE_CHECKING:
 
 
 def _default_export_service() -> ExportService:
+    # di-antipattern-allow: local import prevents import cycle during model bootstrap.
     from scrapers.base.export.composition import create_default_export_service
 
     return create_default_export_service()

@@ -194,8 +194,11 @@ class ResultsParsingHelpers:
         Returns:
             Dictionary with entrant data including name and title_sponsors list
         """
+        # di-antipattern-allow: scoped imports keep helper dependencies optional/lightweight.
         from scrapers.base.helpers.links import normalize_links
+        # di-antipattern-allow: scoped imports keep helper dependencies optional/lightweight.
         from scrapers.base.helpers.text import clean_wiki_text
+        # di-antipattern-allow: scoped imports keep helper dependencies optional/lightweight.
         from scrapers.base.helpers.url import normalize_url
 
         links = normalize_links(
@@ -227,7 +230,9 @@ class ResultsParsingHelpers:
         Returns:
             List of license records
         """
+        # di-antipattern-allow: scoped imports keep helper dependencies optional/lightweight.
         from scrapers.base.helpers.links import normalize_links
+        # di-antipattern-allow: scoped imports keep helper dependencies optional/lightweight.
         from scrapers.base.helpers.url import normalize_url
 
         licenses: list[dict[str, str]] = []

@@ -28,6 +28,7 @@ class TqdmProgressAdapter:
         desc: str,
         unit: str,
     ) -> Iterable[T]:
+        # di-antipattern-allow: lazy import keeps tqdm as optional dependency.
         from tqdm import tqdm
 
         return tqdm(iterable, desc=desc, unit=unit)

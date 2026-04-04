@@ -8,8 +8,10 @@ if TYPE_CHECKING:
 class PandasDataFrameFormatter:
     @staticmethod
     def format(result: "ScrapeResult") -> Any:
+        # di-antipattern-allow: optional dependency imported lazily to keep pandas optional.
         import pandas as pd
 
+        # di-antipattern-allow: lightweight lazy import aligned with optional pandas path.
         from scrapers.base.format.formatter_helpers import extract_data
 
         return pd.DataFrame(extract_data(result))

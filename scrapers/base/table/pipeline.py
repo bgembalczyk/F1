@@ -99,6 +99,7 @@ class TablePipeline:
             self.fragment,
             self.run_id,
         )
+        # di-antipattern-allow: per-run parser creation is intentional for state isolation.
         parser = HtmlTableParser(
             section_id=self.section_id,
             fragment=self.fragment,
