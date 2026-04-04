@@ -54,7 +54,4 @@ CONSTRUCTOR_SCHEMA = CONSTRUCTOR_DEFINITION.to_schema()
 
 
 def validate_constructor_record(record: dict[str, object]) -> list[str]:
-    return [
-        error.message
-        for error in validate_record(record, CONSTRUCTOR_SCHEMA)
-    ]
+    return [error.message for error in validate_record(record, CONSTRUCTOR_SCHEMA)]

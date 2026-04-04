@@ -4,8 +4,8 @@ from typing import TypedDict
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from validation.issue import ValidationIssue
-from validation.schemas import RecordSchema
 from validation.record_validation import validate_record
+from validation.schemas import RecordSchema
 from validation.validator_base import RecordValidator
 
 

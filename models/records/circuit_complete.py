@@ -29,6 +29,5 @@ _CIRCUIT_COMPLETE_SCHEMA = RecordSchema(
 
 def validate_circuit_complete_record(record: dict[str, object]) -> list[str]:
     return [
-        error.message
-        for error in validate_record(record, _CIRCUIT_COMPLETE_SCHEMA)
+        error.message for error in validate_record(record, _CIRCUIT_COMPLETE_SCHEMA)
     ]

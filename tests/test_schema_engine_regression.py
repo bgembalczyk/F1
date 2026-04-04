@@ -4,10 +4,10 @@ from collections.abc import Mapping
 from typing import Any
 
 from validation.issue import ValidationIssue
+from validation.record_validation import validate_record
 from validation.schema_rules import build_domain_rules
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
-from validation.record_validation import validate_record
 
 INVALID_TEAM_VALUE = 7
 

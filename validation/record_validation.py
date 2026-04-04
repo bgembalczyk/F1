@@ -36,7 +36,9 @@ def validate_record(
             continue
         errors.extend(_validate_nested_value(key, value, nested_schema))
     for validator in normalized.custom_validators:
-        errors.extend(SchemaValidationEngine.coerce_issue(error) for error in validator(record))
+        errors.extend(
+            SchemaValidationEngine.coerce_issue(error) for error in validator(record)
+        )
     return SchemaValidationEngine.render_issues(errors)
 
 
@@ -53,7 +55,9 @@ def _validate_nested_value(
     )
 
 
-def _require_keys(record: Mapping[str, Any], keys: tuple[str, ...]) -> list[ValidationIssue]:
+def _require_keys(
+    record: Mapping[str, Any], keys: tuple[str, ...]
+) -> list[ValidationIssue]:
     return [ValidationIssue.missing(key) for key in keys if key not in record]
 
 
@@ -74,7 +78,9 @@ def _require_type(
     if isinstance(value, expected_types):
         return []
 
-    expected = expected_types if isinstance(expected_types, tuple) else (expected_types,)
+    expected = (
+        expected_types if isinstance(expected_types, tuple) else (expected_types,)
+    )
     expected_names = ", ".join(value_type.__name__ for value_type in expected)
     return [
         ValidationIssue.type_error(

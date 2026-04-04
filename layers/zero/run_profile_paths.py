@@ -24,11 +24,13 @@ def layer_zero_raw_paths(
     csv_output_path: str | None,
 ) -> tuple[Path, Path | None]:
     json_path = DEFAULT_PATH_RESOLVER.raw(
-        domain=output_category, filename=rendered_json_path
+        domain=output_category,
+        filename=rendered_json_path,
     )
     csv_path: Path | None = None
     if csv_output_path:
         csv_path = DEFAULT_PATH_RESOLVER.raw(
-            domain=output_category, filename=csv_output_path
+            domain=output_category,
+            filename=csv_output_path,
         )
     return json_path, csv_path

@@ -14,8 +14,8 @@ from validation.issue import ValidationIssue
 from validation.pipeline import ValidationResult
 from validation.quality_stats import QualityStats
 from validation.record_factory_validator import RecordFactoryValidatorProtocol
-from validation.schema_engine import SchemaValidationEngine
 from validation.record_validation import validate_record
+from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
 
