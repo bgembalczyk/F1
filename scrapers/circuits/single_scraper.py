@@ -14,12 +14,21 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
 )
 from scrapers.circuits.composition import CircuitScraperCompositionFactory
 from scrapers.circuits.composition import CircuitScraperDependencies
+from scrapers.circuits.helpers.lap_record import is_lap_record_table
+from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.helpers.sections import is_circuit_like_article
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
+
+
+__all__ = [
+    "F1SingleCircuitScraper",
+    "detect_layout_name",
+    "is_lap_record_table",
+]
 
 
 class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
