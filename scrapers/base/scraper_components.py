@@ -347,7 +347,7 @@ class PipelineOrchestrator:
             html = download_html()
         except ScraperError as error:
             return (False, self._error_policy.handle_exception(error, error))
-        except (RequestError, ConnectionError, OSError, TimeoutError) as exc:
+        except (RequestError, ConnectionError, OSError, TimeoutError, RuntimeError) as exc:
             error = self._error_policy.wrap_network(exc)
             decision = self._error_policy.handle_recoverable_exception(
                 exc=exc,

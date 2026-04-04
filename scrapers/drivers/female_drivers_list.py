@@ -112,6 +112,8 @@ class FemaleDriversListScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_female_Formula_One_drivers
     """
 
+    options_profile = "seed_soft"
+
     CONFIG = build_scraper_config(
         url=FEMALE_DRIVERS_LIST.base_url,
         section_id=FEMALE_DRIVERS_SECTION_ID,

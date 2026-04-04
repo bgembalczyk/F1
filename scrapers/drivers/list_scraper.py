@@ -182,8 +182,10 @@ class F1DriversListScraper(SeedListTableScraper):
         self.body_content_parser.content_text_parser.section_parser = parser
 
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
-        options.pipeline.transformers = [
+        new_transformers = [
             *list(options.pipeline.transformers or []),
             DriversChampionshipsTransformer(),
         ]
+        options.pipeline.transformers = new_transformers
+        options.transformers = new_transformers
         return options
