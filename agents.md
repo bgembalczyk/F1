@@ -26,3 +26,9 @@ to **najpierw** sprawdź i oprzyj się głównie na plikach:
 ## Zasada dla poprawek po review
 - Nie modyfikuj plików `*.json` przy poprawkach po komentarzach do PR.
 - Zmiany wprowadzaj wyłącznie w plikach Python (`*.py`) oraz dokumentacji (`docs/`, `agents.md`).
+
+## Zasada lokalnego review dla zadań kodowych
+- Dla każdego zadania obejmującego edycję kodu, przed zakończeniem pracy uruchom lokalnie jako review te same polecenia/checki, które są zdefiniowane w GitHub Actions workflows.
+- Wyjątek: pomijaj workflow `main-run-data-guard.yml`.
+- Celem jest samodzielna walidacja poprawności i jakości kodu oraz natychmiastowe wprowadzanie poprawek w pętli learning loop.
+- W tym zadaniu tej zasady **nie uruchamiaj** (dodanie zasady bez wykonywania checków).
