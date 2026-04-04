@@ -1,5 +1,5 @@
+from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_metric_columns
-from scrapers.base.table.builders import metric_column
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
@@ -28,26 +28,26 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
         [BaseConstructorListScraper.build_licensed_in_column()],
         build_metric_columns(
             [
-                metric_column(CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),
-                metric_column(
+                MetricColumnSpec(CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),
+                MetricColumnSpec(
                     CONSTRUCTOR_RACES_ENTERED_HEADER,
                     "races_entered",
                     "races_entered",
                 ),
-                metric_column(
+                MetricColumnSpec(
                     CONSTRUCTOR_RACES_STARTED_HEADER,
                     "races_started",
                     "races_started",
                 ),
-                metric_column(CONSTRUCTOR_WINS_HEADER, "wins", "wins"),
-                metric_column(CONSTRUCTOR_POINTS_HEADER, "points", "points"),
-                metric_column(CONSTRUCTOR_POLES_HEADER, "poles", "poles"),
-                metric_column(
+                MetricColumnSpec(CONSTRUCTOR_WINS_HEADER, "wins", "wins"),
+                MetricColumnSpec(CONSTRUCTOR_POINTS_HEADER, "points", "points"),
+                MetricColumnSpec(CONSTRUCTOR_POLES_HEADER, "poles", "poles"),
+                MetricColumnSpec(
                     CONSTRUCTOR_FASTEST_LAPS_HEADER,
                     "fastest_laps",
                     "fastest_laps",
                 ),
-                metric_column(CONSTRUCTOR_PODIUMS_HEADER, "podiums", "podiums"),
+                MetricColumnSpec(CONSTRUCTOR_PODIUMS_HEADER, "podiums", "podiums"),
             ],
         ),
     )

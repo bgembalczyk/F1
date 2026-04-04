@@ -4,10 +4,10 @@ from collections.abc import Sequence
 
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.base.options import ScraperOptions
+from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
-from scrapers.base.table.builders import entity_column
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import UrlColumn
@@ -53,15 +53,15 @@ class BaseConstructorListScraper(
         """Build common constructor metadata columns."""
         return build_entity_metadata_columns(
             [
-                entity_column(CONSTRUCTOR_NAME_HEADER, "constructor", UrlColumn()),
-                entity_column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
-                entity_column(
+                EntityColumnSpec(CONSTRUCTOR_NAME_HEADER, "constructor", UrlColumn()),
+                EntityColumnSpec(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+                EntityColumnSpec(
                     CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
                     "total_entries",
                     IntColumn(),
                 ),
-                entity_column(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
-                entity_column(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
+                EntityColumnSpec(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
+                EntityColumnSpec(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
             ],
         )
 

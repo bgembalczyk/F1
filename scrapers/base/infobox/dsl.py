@@ -21,15 +21,6 @@ class InfoboxFieldSpec:
         )
 
 
-def field(
-    key: str,
-    labels: Iterable[str],
-    *,
-    parser: str | None = None,
-) -> InfoboxFieldSpec:
-    return InfoboxFieldSpec(key=key, labels=labels, parser=parser)
-
-
 @dataclass(frozen=True)
 class InfoboxSchemaDSL:
     fields: Iterable[InfoboxFieldSpec]

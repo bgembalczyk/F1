@@ -18,14 +18,6 @@ class ScraperConfig:
     policy: HttpPolicy = field(default_factory=default_http_policy)
 
 
-def default_scraper_config() -> ScraperConfig:
-    return ScraperConfig()
-
-
-def default_config() -> ScraperConfig:
-    return default_scraper_config()
-
-
 @dataclass(frozen=True)
 class DataPaths:
     base_dir: Path = Path("../../data")

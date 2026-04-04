@@ -31,22 +31,6 @@ class EntityColumnSpec:
     column_type: BaseColumn
 
 
-def metric_column(header: str, output_key: str, metric_key: str) -> MetricColumnSpec:
-    return MetricColumnSpec(header=header, output_key=output_key, metric_key=metric_key)
-
-
-def entity_column(
-    header: str,
-    output_key: str,
-    column_type: BaseColumn,
-) -> EntityColumnSpec:
-    return EntityColumnSpec(
-        header=header,
-        output_key=output_key,
-        column_type=column_type,
-    )
-
-
 SchemaPart = ColumnSpec | Sequence[ColumnSpec]
 
 
@@ -98,7 +82,7 @@ def build_base_stats_columns(
     key_aliases = key_aliases or {}
 
     specs = [
-        metric_column(
+        MetricColumnSpec(
             header,
             key_aliases.get(metric_key, metric_key),
             metric_key,

@@ -5,10 +5,9 @@ from typing import Any
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import DRIVERS_LIST
+from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
-from scrapers.base.table.builders import build_name_status_fragment
-from scrapers.base.table.builders import metric_column
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.config import build_scraper_config
@@ -69,11 +68,7 @@ class DriversListTableParser(WikiTableBaseParser):
     def build_schema() -> TableSchemaDSL:
         return TableSchemaDSL(
             columns=build_columns(
-                build_name_status_fragment(
-                    header=DRIVER_NAME_HEADER,
-                    output_key="driver",
-                    column_type=DriverNameStatusColumn(),
-                ),
+                [column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn())],
                 [column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn())],
                 [
                     column(
@@ -91,29 +86,29 @@ class DriversListTableParser(WikiTableBaseParser):
                 ],
                 build_metric_columns(
                     [
-                        metric_column(
+                        MetricColumnSpec(
                             DRIVER_RACE_ENTRIES_HEADER,
                             "race_entries",
                             "races_entered",
                         ),
-                        metric_column(
+                        MetricColumnSpec(
                             DRIVER_RACE_STARTS_HEADER,
                             "race_starts",
                             "races_started",
                         ),
-                        metric_column(
+                        MetricColumnSpec(
                             DRIVER_POLE_POSITIONS_HEADER,
                             "pole_positions",
                             "poles",
                         ),
-                        metric_column(DRIVER_RACE_WINS_HEADER, "race_wins", "wins"),
-                        metric_column(DRIVER_PODIUMS_HEADER, "podiums", "podiums"),
-                        metric_column(
+                        MetricColumnSpec(DRIVER_RACE_WINS_HEADER, "race_wins", "wins"),
+                        MetricColumnSpec(DRIVER_PODIUMS_HEADER, "podiums", "podiums"),
+                        MetricColumnSpec(
                             DRIVER_FASTEST_LAPS_HEADER,
                             "fastest_laps",
                             "fastest_laps",
                         ),
-                        metric_column(DRIVER_POINTS_HEADER, "points", "points"),
+                        MetricColumnSpec(DRIVER_POINTS_HEADER, "points", "points"),
                     ],
                     column_overrides={"points": TextColumn()},
                 ),
