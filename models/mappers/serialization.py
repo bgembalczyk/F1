@@ -19,22 +19,22 @@ class SerializableProtocol(Protocol):
 
 SerializableAdapter = Callable[[Any], Any]
 
-_SERIALIZABLE_ADAPTERS: dict[type[Any], SerializableAdapter] = {}
+SERIALIZABLE_ADAPTERS: dict[type[Any], SerializableAdapter] = {}
 
 
 def register_serializable_adapter(
     model_type: type[Any],
     adapter: SerializableAdapter,
 ) -> None:
-    _SERIALIZABLE_ADAPTERS[model_type] = adapter
+    SERIALIZABLE_ADAPTERS[model_type] = adapter
 
 
 def clear_serializable_adapters() -> None:
-    _SERIALIZABLE_ADAPTERS.clear()
+    SERIALIZABLE_ADAPTERS.clear()
 
 
 def _extract_registered_adapter(value: Any) -> Any | None:
-    for model_type, adapter in _SERIALIZABLE_ADAPTERS.items():
+    for model_type, adapter in SERIALIZABLE_ADAPTERS.items():
         if isinstance(value, model_type):
             return adapter(value)
     return None
