@@ -111,7 +111,8 @@ class DummyFetcher:
         self.html = html
         self.exc = exc
 
-    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, timeout: int | None = None) -> str:
+        _ = timeout
         if self.exc:
             raise self.exc
         assert self.html is not None
@@ -123,6 +124,9 @@ class DummyFetcher:
 
 class DummyScraper(ABCScraper):
     url = "https://example.com"
+
+    def _parse_soup(self, _soup):
+        return []
 
 
 class DummyParseScraper(ABCScraper):
