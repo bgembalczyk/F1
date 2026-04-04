@@ -29,24 +29,39 @@ def test_main_import_and_entrypoint_call_path(
 
 
 @pytest.mark.parametrize(
-    ("module_name", "scraper_name", "expected"),
+    ("module_name", "scraper_name", "seed_name", "expected"),
     [
-        ("layers.application", "CurrentConstructorsListScraper", True),
-        ("layers.application", "ConstructorsListScraper", True),
-        ("layers.application", "SomeOtherScraper", False),
-        ("layers.composition", "CurrentConstructorsListScraper", True),
-        ("layers.composition", "ConstructorsListScraper", True),
-        ("layers.composition", "SomeOtherScraper", False),
+        ("layers.application", "CurrentConstructorsListScraper", "", True),
+        ("layers.application", "ConstructorsListScraper", "constructors_current", True),
+        (
+            "layers.application",
+            "ConstructorsListScraper",
+            "constructors_privateer",
+            False,
+        ),
+        ("layers.application", "ConstructorsListScraper", "", False),
+        ("layers.application", "SomeOtherScraper", "", False),
+        ("layers.composition", "CurrentConstructorsListScraper", "", True),
+        ("layers.composition", "ConstructorsListScraper", "constructors_current", True),
+        (
+            "layers.composition",
+            "ConstructorsListScraper",
+            "constructors_privateer",
+            False,
+        ),
+        ("layers.composition", "ConstructorsListScraper", "", False),
+        ("layers.composition", "SomeOtherScraper", "", False),
     ],
 )
 def test_should_mirror_constructors_job(
     module_name: str,
     scraper_name: str,
+    seed_name: str,
     expected: bool,  # noqa: FBT001
 ) -> None:
     module = importlib.import_module(module_name)
     list_scraper_cls = type(scraper_name, (), {})
-    job = type("Job", (), {"list_scraper_cls": list_scraper_cls})()
+    job = type("Job", (), {"list_scraper_cls": list_scraper_cls, "seed_name": seed_name})()
 
     assert module._should_mirror_constructors_job(job) is expected  # noqa: SLF001
 
