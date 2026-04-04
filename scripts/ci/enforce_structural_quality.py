@@ -32,6 +32,7 @@ class StructuralVisitor(ast.NodeVisitor):
         self.class_violations: list[tuple[str, int, int]] = []
         self.alias_violations: list[tuple[str, int, str]] = []
         self._overload_names: frozenset[str] = frozenset()
+        self._class_has_bases_stack: list[bool] = []
 
     @staticmethod
     def _decorator_names(node: ast.FunctionDef | ast.AsyncFunctionDef) -> list[str]:
@@ -73,6 +74,22 @@ class StructuralVisitor(ast.NodeVisitor):
         owner = func.value
         return isinstance(owner, ast.Attribute) and owner.attr.startswith("_")
 
+    @staticmethod
+    def _call_has_complex_args(call: ast.Call) -> bool:
+        """Return True if call contains lambda or generator/comprehension args."""
+        complex_types = (
+            ast.Lambda,
+            ast.GeneratorExp,
+            ast.ListComp,
+            ast.SetComp,
+            ast.DictComp,
+        )
+        return any(isinstance(node, complex_types) for node in ast.walk(call))
+
+    def _in_derived_class(self) -> bool:
+        """Return True if currently visiting inside a class that has base classes."""
+        return bool(self._class_has_bases_stack and self._class_has_bases_stack[-1])
+
     def _is_redundant_alias_body(  # noqa: C901, PLR0911
         self,
         function: ast.FunctionDef | ast.AsyncFunctionDef,
@@ -104,6 +121,9 @@ class StructuralVisitor(ast.NodeVisitor):
         if call is None:
             return False
 
+        if self._call_has_complex_args(call):
+            return False
+
         if self._is_private_name(function.name):
             return False
 
@@ -128,6 +148,7 @@ class StructuralVisitor(ast.NodeVisitor):
         if (
             self._is_redundant_alias_body(node)
             and not self._is_abstract_or_overload(node)
+            and not self._in_derived_class()
             and (self.file_path, node.name) not in REDUNDANT_ALIAS_EXCEPTIONS
         ):
             self.alias_violations.append(
@@ -146,7 +167,9 @@ class StructuralVisitor(ast.NodeVisitor):
         length = self._node_length(node)
         if length > self.max_class_lines:
             self.class_violations.append((node.name, node.lineno, length))
+        self._class_has_bases_stack.append(bool(node.bases))
         self.generic_visit(node)
+        self._class_has_bases_stack.pop()
 
 
 def _should_skip(path: Path) -> bool:
