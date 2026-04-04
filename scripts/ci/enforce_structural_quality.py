@@ -5,8 +5,8 @@ import ast
 import sys
 from pathlib import Path
 
-from structural_quality_exceptions import MAX_FUNCTION_LINES_EXCEPTIONS
-from structural_quality_exceptions import REDUNDANT_ALIAS_EXCEPTIONS
+from scripts.ci.structural_quality_exceptions import MAX_FUNCTION_LINES_EXCEPTIONS
+from scripts.ci.structural_quality_exceptions import REDUNDANT_ALIAS_EXCEPTIONS
 
 
 class StructuralVisitor(ast.NodeVisitor):
