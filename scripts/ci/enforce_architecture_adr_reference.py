@@ -1,7 +1,18 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
+import subprocess
+import sys
+from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
+
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
 from scripts.ci.git_diff import collect_commit_messages
@@ -16,18 +27,42 @@ ARCHITECTURE_PREFIXES: tuple[str, ...] = (
 ADR_PATTERN = re.compile(r"\bADR-\d{4}\b", re.IGNORECASE)
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Wymaga referencji ADR-XXXX, gdy PR/commit zmienia ścieżki "
             "architektoniczne i zmiana nie jest wyłącznie kosmetyczna."
         ),
     )
-    parser.add_argument("--base-sha", required=True)
-    parser.add_argument("--head-sha", required=True)
+    parser.add_argument("--base-sha", default="")
+    parser.add_argument("--head-sha", default="")
     parser.add_argument("--pr-title", default="")
     parser.add_argument("--pr-body", default="")
-    return parser.parse_args()
+    return parser.parse_args(argv)
+
+
+def _rev_parse(ref: str) -> str:
+    result = subprocess.run(  # noqa: S603
+        ["git", "rev-parse", ref],  # noqa: S607
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return ""
+    return result.stdout.strip()
+
+
+def resolve_sha_pair(base_sha: str, head_sha: str) -> tuple[str, str]:
+    resolved_head = head_sha or os.getenv("GITHUB_SHA", "") or _rev_parse("HEAD")
+    if base_sha:
+        return base_sha, resolved_head
+
+    env_base = os.getenv("GITHUB_BASE_SHA", "")
+    if env_base:
+        return env_base, resolved_head
+
+    return resolved_head, resolved_head
 
 
 def is_architecture_path(path: str) -> bool:
@@ -65,8 +100,9 @@ def has_non_cosmetic_changes(base_sha: str, head_sha: str, files: list[str]) -> 
 
 def main() -> int:
     args = parse_args()
+    base_sha, head_sha = resolve_sha_pair(args.base_sha, args.head_sha)
 
-    changed_files = list_changed_files(args.base_sha, args.head_sha)
+    changed_files = list_changed_files(base_sha, head_sha)
     architecture_files = [path for path in changed_files if is_architecture_path(path)]
 
     if not architecture_files:
@@ -74,8 +110,8 @@ def main() -> int:
         return 0
 
     has_non_cosmetic = has_non_cosmetic_changes(
-        args.base_sha,
-        args.head_sha,
+        base_sha,
+        head_sha,
         architecture_files,
     )
 
@@ -93,7 +129,7 @@ def main() -> int:
         [
             args.pr_title,
             args.pr_body,
-            collect_commit_messages(args.base_sha, args.head_sha),
+            collect_commit_messages(base_sha, head_sha),
         ],
     )
 

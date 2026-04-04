@@ -29,5 +29,5 @@ class GrandPrixRunner(LayerJobRunner):
                 code="layer1.grand_prix_failed",
                 message="Grand prix export failed.",
                 domain=seed.output_category,
-                source_name=self.COMPONENT_METADATA.seed_name,
+                source_name=self.COMPONENT_METADATA["seed_name"],
             ) from exc
