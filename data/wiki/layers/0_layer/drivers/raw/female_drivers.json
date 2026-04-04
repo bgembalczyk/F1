@@ -4,16 +4,19 @@
       "text": "Maria Teresa de Filippis",
       "url": "https://en.wikipedia.org/wiki/Maria_Teresa_de_Filippis"
     },
+    "entries": 5,
+    "points": 0.0,
     "seasons": [
       {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship",
+        "year": 1958
       },
       {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
+        "year": 1959
       }
     ],
+    "starts": 3,
     "teams": [
       {
         "text": "Maserati",
@@ -23,30 +26,30 @@
         "text": "Behra-Porsche",
         "url": "https://en.wikipedia.org/wiki/Behra-Porsche"
       }
-    ],
-    "entries": 5,
-    "starts": 3,
-    "points": 0.0
+    ]
   },
   {
     "driver": {
       "text": "Lella Lombardi",
       "url": "https://en.wikipedia.org/wiki/Lella_Lombardi"
     },
+    "entries": 17,
+    "points": 0.5,
     "seasons": [
       {
-        "year": 1974,
-        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship",
+        "year": 1974
       },
       {
-        "year": 1975,
-        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship",
+        "year": 1975
       },
       {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+        "year": 1976
       }
     ],
+    "starts": 12,
     "teams": [
       {
         "text": "March",
@@ -60,26 +63,26 @@
         "text": "Williams",
         "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
       }
-    ],
-    "entries": 17,
-    "starts": 12,
-    "points": 0.5
+    ]
   },
   {
     "driver": {
       "text": "Divina Galica",
       "url": "https://en.wikipedia.org/wiki/Divina_Galica"
     },
+    "entries": 3,
+    "points": null,
     "seasons": [
       {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+        "year": 1976
       },
       {
-        "year": 1978,
-        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship",
+        "year": 1978
       }
     ],
+    "starts": 0,
     "teams": [
       {
         "text": "Surtees",
@@ -89,51 +92,48 @@
         "text": "Hesketh",
         "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
       }
-    ],
-    "entries": 3,
-    "starts": 0,
-    "points": null
+    ]
   },
   {
     "driver": {
       "text": "Desiré Wilson",
       "url": "https://en.wikipedia.org/wiki/Desir%C3%A9_Wilson"
     },
+    "entries": 1,
+    "points": null,
     "seasons": [
       {
-        "year": 1980,
-        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship",
+        "year": 1980
       }
     ],
+    "starts": 0,
     "teams": [
       {
         "text": "Williams",
         "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
       }
-    ],
-    "entries": 1,
-    "starts": 0,
-    "points": null
+    ]
   },
   {
     "driver": {
       "text": "Giovanna Amati",
       "url": "https://en.wikipedia.org/wiki/Giovanna_Amati"
     },
+    "entries": 3,
+    "points": null,
     "seasons": [
       {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
+        "year": 1992
       }
     ],
+    "starts": 0,
     "teams": [
       {
         "text": "Brabham",
         "url": "https://en.wikipedia.org/wiki/Brabham"
       }
-    ],
-    "entries": 3,
-    "starts": 0,
-    "points": null
+    ]
   }
 ]

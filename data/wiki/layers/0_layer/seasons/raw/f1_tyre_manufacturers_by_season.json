@@ -1,11 +1,5 @@
 [
   {
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
@@ -23,15 +17,15 @@
         "text": "Englebert",
         "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
+        "year": 1950
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
@@ -49,15 +43,15 @@
         "text": "Englebert",
         "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship",
+        "year": 1951
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
@@ -75,15 +69,15 @@
         "text": "Englebert",
         "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship",
+        "year": 1952
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
@@ -101,15 +95,15 @@
         "text": "Englebert",
         "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship",
+        "year": 1953
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
@@ -135,15 +129,15 @@
         "text": "Avon",
         "url": "https://en.wikipedia.org/wiki/Avon_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship",
+        "year": 1954
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Continental",
@@ -165,15 +159,15 @@
         "text": "Dunlop",
         "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship",
+        "year": 1955
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Englebert",
@@ -195,15 +189,15 @@
         "text": "Avon",
         "url": "https://en.wikipedia.org/wiki/Avon_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship",
+        "year": 1956
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
@@ -225,15 +219,15 @@
         "text": "Avon",
         "url": "https://en.wikipedia.org/wiki/Avon_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship",
+        "year": 1957
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Dunlop",
@@ -259,15 +253,15 @@
         "text": "Avon",
         "url": "https://en.wikipedia.org/wiki/Avon_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship",
+        "year": 1958
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Dunlop",
@@ -281,15 +275,15 @@
         "text": "Avon",
         "url": "https://en.wikipedia.org/wiki/Avon_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
+        "year": 1959
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Dunlop",
@@ -299,75 +293,57 @@
         "text": "Firestone",
         "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship",
+        "year": 1960
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Dunlop",
         "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship",
+        "year": 1961
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Dunlop",
         "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship",
+        "year": 1962
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Dunlop",
         "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
       }
-    ]
-  },
-  {
+    ],
     "seasons": [
       {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      }
-    ],
-    "manufacturers": [
-      {
-        "text": "Dunlop",
-        "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
-      },
-      {
-        "text": "Goodyear",
-        "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship",
+        "year": 1963
       }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1965,
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Dunlop",
@@ -377,15 +353,33 @@
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship",
+        "year": 1964
+      }
     ]
   },
   {
-    "seasons": [
+    "manufacturers": [
       {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+        "text": "Dunlop",
+        "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
+      },
+      {
+        "text": "Goodyear",
+        "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
     ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship",
+        "year": 1965
+      }
+    ]
+  },
+  {
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -399,37 +393,15 @@
         "text": "Firestone",
         "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
       }
-    ]
-  },
-  {
+    ],
     "seasons": [
       {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-      }
-    ],
-    "manufacturers": [
-      {
-        "text": "Firestone",
-        "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-      },
-      {
-        "text": "Goodyear",
-        "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-      },
-      {
-        "text": "Dunlop",
-        "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship",
+        "year": 1966
       }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Firestone",
@@ -443,15 +415,37 @@
         "text": "Dunlop",
         "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship",
+        "year": 1967
+      }
     ]
   },
   {
-    "seasons": [
+    "manufacturers": [
       {
-        "year": 1969,
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+        "text": "Firestone",
+        "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+      },
+      {
+        "text": "Goodyear",
+        "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+      },
+      {
+        "text": "Dunlop",
+        "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
       }
     ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship",
+        "year": 1968
+      }
+    ]
+  },
+  {
     "manufacturers": [
       {
         "text": "Dunlop",
@@ -465,15 +459,15 @@
         "text": "Firestone",
         "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship",
+        "year": 1969
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1970,
-        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Firestone",
@@ -487,15 +481,15 @@
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship",
+        "year": 1970
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1971,
-        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -505,15 +499,15 @@
         "text": "Firestone",
         "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship",
+        "year": 1971
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1972,
-        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Firestone",
@@ -523,15 +517,15 @@
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship",
+        "year": 1972
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1973,
-        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -541,15 +535,15 @@
         "text": "Firestone",
         "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship",
+        "year": 1973
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1974,
-        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -559,15 +553,15 @@
         "text": "Firestone",
         "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship",
+        "year": 1974
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1975,
-        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -577,15 +571,15 @@
         "text": "Firestone",
         "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship",
+        "year": 1975
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -599,15 +593,15 @@
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+        "year": 1976
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1977,
-        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -625,15 +619,15 @@
         "text": "Michelin",
         "url": "https://en.wikipedia.org/wiki/Michelin"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship",
+        "year": 1977
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1978,
-        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -643,15 +637,15 @@
         "text": "Michelin",
         "url": "https://en.wikipedia.org/wiki/Michelin"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship",
+        "year": 1978
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1979,
-        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -661,15 +655,15 @@
         "text": "Michelin",
         "url": "https://en.wikipedia.org/wiki/Michelin"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship",
+        "year": 1979
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1980,
-        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -679,15 +673,15 @@
         "text": "Michelin",
         "url": "https://en.wikipedia.org/wiki/Michelin"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship",
+        "year": 1980
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1981,
-        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Michelin",
@@ -705,15 +699,15 @@
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
+        "year": 1981
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -731,15 +725,15 @@
         "text": "Avon",
         "url": "https://en.wikipedia.org/wiki/Avon_Rubber"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
+        "year": 1982
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Michelin",
@@ -753,15 +747,15 @@
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship",
+        "year": 1983
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Michelin",
@@ -775,15 +769,15 @@
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
+        "year": 1984
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -793,15 +787,15 @@
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
+        "year": 1985
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -811,61 +805,43 @@
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
+        "year": 1986
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
+        "year": 1987
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
-    ]
-  },
-  {
+    ],
     "seasons": [
       {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      }
-    ],
-    "manufacturers": [
-      {
-        "text": "Goodyear",
-        "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-      },
-      {
-        "text": "Pirelli",
-        "url": "https://en.wikipedia.org/wiki/Pirelli"
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+        "year": 1988
       }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -875,15 +851,15 @@
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
+        "year": 1989
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -893,85 +869,103 @@
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
+        "year": 1990
+      }
     ]
   },
   {
-    "seasons": [
+    "manufacturers": [
       {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+        "text": "Goodyear",
+        "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+      },
+      {
+        "text": "Pirelli",
+        "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
     ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
+        "year": 1991
+      }
+    ]
+  },
+  {
     "manufacturers": [
       {
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
+        "year": 1992
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship",
+        "year": 1993
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship",
+        "year": 1994
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship",
+        "year": 1995
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship",
+        "year": 1996
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Goodyear",
@@ -981,15 +975,15 @@
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship",
+        "year": 1997
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
@@ -999,61 +993,43 @@
         "text": "Goodyear",
         "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship",
+        "year": 1998
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship",
+        "year": 1999
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
-    ]
-  },
-  {
+    ],
     "seasons": [
       {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      }
-    ],
-    "manufacturers": [
-      {
-        "text": "Bridgestone",
-        "url": "https://en.wikipedia.org/wiki/Bridgestone"
-      },
-      {
-        "text": "Michelin",
-        "url": "https://en.wikipedia.org/wiki/Michelin"
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship",
+        "year": 2000
       }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
@@ -1063,15 +1039,15 @@
         "text": "Michelin",
         "url": "https://en.wikipedia.org/wiki/Michelin"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship",
+        "year": 2001
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
@@ -1081,15 +1057,15 @@
         "text": "Michelin",
         "url": "https://en.wikipedia.org/wiki/Michelin"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship",
+        "year": 2002
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
@@ -1099,15 +1075,33 @@
         "text": "Michelin",
         "url": "https://en.wikipedia.org/wiki/Michelin"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship",
+        "year": 2003
+      }
     ]
   },
   {
-    "seasons": [
+    "manufacturers": [
       {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+        "text": "Bridgestone",
+        "url": "https://en.wikipedia.org/wiki/Bridgestone"
+      },
+      {
+        "text": "Michelin",
+        "url": "https://en.wikipedia.org/wiki/Michelin"
       }
     ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
+        "year": 2004
+      }
+    ]
+  },
+  {
     "manufacturers": [
       {
         "text": "Michelin",
@@ -1117,15 +1111,15 @@
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship",
+        "year": 2005
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Michelin",
@@ -1135,285 +1129,291 @@
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship",
+        "year": 2006
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2007,
-        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship",
+        "year": 2007
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2008,
-        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship",
+        "year": 2008
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2009,
-        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
+        "year": 2009
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2010,
-        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Bridgestone",
         "url": "https://en.wikipedia.org/wiki/Bridgestone"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship",
+        "year": 2010
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2011,
-        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
+        "year": 2011
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2012,
-        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship",
+        "year": 2012
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2013,
-        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
+        "year": 2013
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2014,
-        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship",
+        "year": 2014
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2015,
-        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
+        "year": 2015
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2016,
-        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+        "year": 2016
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2017,
-        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
+        "year": 2017
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2018,
-        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
+        "year": 2018
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2019,
-        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
+        "year": 2019
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2020,
-        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship",
+        "year": 2020
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2021,
-        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+        "year": 2021
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2022,
-        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+        "year": 2022
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2023,
-        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2024,
-        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2025,
-        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      }
     ]
   },
   {
-    "seasons": [
-      {
-        "year": 2026,
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-      }
-    ],
     "manufacturers": [
       {
         "text": "Pirelli",
         "url": "https://en.wikipedia.org/wiki/Pirelli"
+      }
+    ],
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
+        "year": 2026
       }
     ]
   }
