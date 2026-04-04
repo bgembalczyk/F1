@@ -5,7 +5,7 @@ from typing import Any
 from models.validation.base import ValidatedModel
 from models.validation.helpers import normalize_unit_list
 from models.validation.helpers import normalize_unit_value
-from models.validation.helpers import validate_int
+from models.validation.utils import coerce_number
 from models.validation.validators import normalize_season_list
 from models.value_objects.helpers import normalize_text
 from models.value_objects.season_ref import SeasonRef
@@ -88,9 +88,11 @@ class EngineRegulation(ValidatedModel):
         if "type" in result:
             result["type"] = normalize_text(result.get("type"))
         if "max_cylinders" in result:
-            result["max_cylinders"] = validate_int(
+            result["max_cylinders"] = coerce_number(
                 result.get("max_cylinders"),
+                int,
                 "configuration.max_cylinders",
+                allow_none=True,
             )
         extras = result.get("extras")
         if extras is None:

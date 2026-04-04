@@ -4,14 +4,6 @@ from typing import Any
 from models.validation.utils import coerce_number
 
 
-def validate_int(value: Any, field_name: str) -> int | None:
-    return coerce_number(value, int, field_name, allow_none=True)
-
-
-def validate_float(value: Any, field_name: str) -> float | None:
-    return coerce_number(value, float, field_name, allow_none=True)
-
-
 def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
     status_normalized = (value or "").strip().lower()
     allowed_normalized: list[str] = []
@@ -35,14 +27,22 @@ def normalize_unit_value(value: Any, field_name: str) -> dict[str, Any] | None:
         raw_value = value.get("value")
         unit = value.get("unit")
         normalized_value = (
-            validate_float(raw_value, f"{field_name}.value")
+            coerce_number(raw_value, float, f"{field_name}.value", allow_none=True)
             if raw_value is not None
             else None
         )
         normalized_unit = str(unit).strip() if unit is not None else None
         return {"value": normalized_value, "unit": normalized_unit}
     if isinstance(value, int | float):
-        return {"value": validate_float(value, f"{field_name}.value"), "unit": None}
+        return {
+            "value": coerce_number(
+                value,
+                float,
+                f"{field_name}.value",
+                allow_none=True,
+            ),
+            "unit": None,
+        }
     msg = f"Pole {field_name} musi być słownikiem lub liczbą"
     raise TypeError(msg)
 

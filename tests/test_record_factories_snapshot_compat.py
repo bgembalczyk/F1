@@ -29,10 +29,8 @@ def _legacy_driver(record: Mapping[str, Any]) -> dict[str, Any]:
         payload["drivers_championships"] = DriversChampionshipsRecordFactory(
             NORMALIZER,
         ).build(championships)
-    payload["is_active"] = NORMALIZER.normalize_bool(payload.get("is_active"))
-    payload["is_world_champion"] = NORMALIZER.normalize_bool(
-        payload.get("is_world_champion"),
-    )
+    payload["is_active"] = bool(payload.get("is_active"))
+    payload["is_world_champion"] = bool(payload.get("is_world_champion"))
     for name in [
         "race_entries",
         "race_starts",

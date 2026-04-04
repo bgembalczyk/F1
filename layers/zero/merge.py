@@ -14,7 +14,6 @@ from layers.zero.merge_types import LinkValue
 from layers.zero.merge_types import RaceRecordModel
 from layers.zero.merge_types import SeasonRecordModel
 from layers.zero.merge_types import TeamRecordModel
-from layers.zero.merge_types import as_record_dict
 from layers.zero.record_merge_ops import (
     merge_driver_dict_values as _merge_driver_dict_values_impl,
 )
@@ -672,13 +671,15 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
 
 
 def _formula_one_series(record: object) -> dict[str, object] | None:
-    record_dict = as_record_dict(record)
-    if record_dict is None:
+    if not isinstance(record, dict):
         return None
-    racing_series = as_record_dict(record_dict.get("racing_series"))
-    if racing_series is None:
+    racing_series = record.get("racing_series")
+    if not isinstance(racing_series, dict):
         return None
-    return as_record_dict(racing_series.get("formula_one"))
+    formula_one = racing_series.get("formula_one")
+    if not isinstance(formula_one, dict):
+        return None
+    return formula_one
 
 
 def _distribute_liveries_across_seasons(

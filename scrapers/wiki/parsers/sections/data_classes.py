@@ -5,7 +5,7 @@ from dataclasses import field
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
+from scrapers.wiki.parsers.sections.normalization import normalize_section_text
 
 if TYPE_CHECKING:
     from bs4 import Tag
@@ -47,14 +47,14 @@ class SectionProfile:
     optional_sections: frozenset[str] = frozenset()
 
     def aliases_for(self, target: str) -> set[str]:
-        normalized_target = normalize_section_profile_key(target)
+        normalized_target = normalize_section_text(target)
         aliases = set(self.heading_aliases.get(normalized_target, frozenset()))
         if normalized_target in self.canonical_section_ids:
             aliases.update(self.heading_aliases.get(normalized_target, frozenset()))
         return aliases
 
     def canonical_for(self, target: str) -> str | None:
-        normalized_target = normalize_section_profile_key(target)
+        normalized_target = normalize_section_text(target)
         if normalized_target in self.canonical_section_ids:
             return normalized_target
 

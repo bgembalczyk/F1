@@ -4,7 +4,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
+from scrapers.wiki.parsers.sections.normalization import normalize_section_text
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
@@ -76,14 +76,13 @@ def validate_section_profiles_config(
 ) -> None:
     for domain, domain_config in config.items():
         normalized_canonical = {
-            normalize_section_profile_key(value)
-            for value in domain_config.canonical_sections
+            normalize_section_text(value) for value in domain_config.canonical_sections
         }
 
         invalid_canonical_keys = [
             canonical
             for canonical in domain_config.heading_aliases
-            if normalize_section_profile_key(canonical) not in normalized_canonical
+            if normalize_section_text(canonical) not in normalized_canonical
         ]
         if invalid_canonical_keys:
             msg = (
@@ -96,9 +95,9 @@ def validate_section_profiles_config(
 
         alias_to_canonical: dict[str, set[str]] = defaultdict(set)
         for canonical, aliases in domain_config.heading_aliases.items():
-            normalized_canonical_id = normalize_section_profile_key(canonical)
+            normalized_canonical_id = normalize_section_text(canonical)
             for alias in aliases:
-                normalized_alias = normalize_section_profile_key(alias)
+                normalized_alias = normalize_section_text(alias)
                 if normalized_alias:
                     alias_to_canonical[normalized_alias].add(normalized_canonical_id)
 

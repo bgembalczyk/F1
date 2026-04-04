@@ -1,19 +1,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import TypeGuard
 
 RecordDict = dict[str, object]
-
-
-def is_record_dict(value: object) -> TypeGuard[RecordDict]:
-    return isinstance(value, dict)
-
-
-def as_record_dict(value: object) -> RecordDict | None:
-    if not is_record_dict(value):
-        return None
-    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -23,9 +12,9 @@ class LinkValue:
 
     @classmethod
     def from_object(cls, value: object) -> LinkValue | None:
-        record = as_record_dict(value)
-        if record is None:
+        if not isinstance(value, dict):
             return None
+        record: RecordDict = value
         text = str(record.get("text") or "").strip()
         url = record.get("url")
         return cls(text=text, url=url if isinstance(url, str) and url else None)
@@ -77,9 +66,9 @@ class DriverRecordModel:
 
     @classmethod
     def from_object(cls, value: object) -> DriverRecordModel | None:
-        record = as_record_dict(value)
-        if record is None:
+        if not isinstance(value, dict):
             return None
+        record: RecordDict = value
         return cls(raw=record)
 
     def dedupe_key(self) -> str | None:
@@ -113,9 +102,9 @@ class TeamRecordModel:
 
     @classmethod
     def from_object(cls, value: object) -> TeamRecordModel | None:
-        record = as_record_dict(value)
-        if record is None:
+        if not isinstance(value, dict):
             return None
+        record: RecordDict = value
         return cls(raw=record)
 
     def dedupe_key(self) -> str | None:
@@ -154,9 +143,9 @@ class EngineRecordModel:
 
     @classmethod
     def from_object(cls, value: object) -> EngineRecordModel | None:
-        record = as_record_dict(value)
-        if record is None:
+        if not isinstance(value, dict):
             return None
+        record: RecordDict = value
         return cls(raw=record)
 
     def to_dict(self) -> RecordDict:
@@ -169,9 +158,9 @@ class RaceRecordModel:
 
     @classmethod
     def from_object(cls, value: object) -> RaceRecordModel | None:
-        record = as_record_dict(value)
-        if record is None:
+        if not isinstance(value, dict):
             return None
+        record: RecordDict = value
         return cls(raw=record)
 
     def to_dict(self) -> RecordDict:
@@ -184,9 +173,9 @@ class SeasonRecordModel:
 
     @classmethod
     def from_object(cls, value: object) -> SeasonRecordModel | None:
-        record = as_record_dict(value)
-        if record is None:
+        if not isinstance(value, dict):
             return None
+        record: RecordDict = value
         return cls(raw=record)
 
     def year(self) -> int | None:

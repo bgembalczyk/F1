@@ -6,9 +6,8 @@ from models.domain_utils.normalization import normalize_link_items
 from models.records.engine_manufacturer import ENGINE_MANUFACTURER_SCHEMA
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_MANUFACTURER_STATUSES
-from models.validation.helpers import validate_float
-from models.validation.helpers import validate_int
 from models.validation.helpers import validate_status
+from models.validation.utils import coerce_number
 from models.validation.validators import normalize_season_list
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
@@ -59,12 +58,27 @@ class EngineManufacturer(ValidatedModel):
         self.seasons = normalize_season_list(self.seasons)
 
         # --- stats ---
-        self.races_entered = validate_int(self.races_entered, "races_entered")
-        self.races_started = validate_int(self.races_started, "races_started")
-        self.wins = validate_int(self.wins, "wins")
-        self.points = validate_float(self.points, "points")
-        self.poles = validate_int(self.poles, "poles")
-        self.fastest_laps = validate_int(self.fastest_laps, "fastest_laps")
-        self.podiums = validate_int(self.podiums, "podiums")
-        self.wcc = validate_int(self.wcc, "wcc")
-        self.wdc = validate_int(self.wdc, "wdc")
+        self.races_entered = coerce_number(
+            self.races_entered,
+            int,
+            "races_entered",
+            allow_none=True,
+        )
+        self.races_started = coerce_number(
+            self.races_started,
+            int,
+            "races_started",
+            allow_none=True,
+        )
+        self.wins = coerce_number(self.wins, int, "wins", allow_none=True)
+        self.points = coerce_number(self.points, float, "points", allow_none=True)
+        self.poles = coerce_number(self.poles, int, "poles", allow_none=True)
+        self.fastest_laps = coerce_number(
+            self.fastest_laps,
+            int,
+            "fastest_laps",
+            allow_none=True,
+        )
+        self.podiums = coerce_number(self.podiums, int, "podiums", allow_none=True)
+        self.wcc = coerce_number(self.wcc, int, "wcc", allow_none=True)
+        self.wdc = coerce_number(self.wdc, int, "wdc", allow_none=True)
