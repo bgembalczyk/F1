@@ -98,7 +98,10 @@ class ScraperOptions:
             ScraperRuntimeFactory,
         )
 
-        runtime = ScraperRuntimeFactory().build(options=self, policy=self.to_http_policy())
+        runtime = ScraperRuntimeFactory().build(
+            options=self,
+            policy=self.to_http_policy(),
+        )
         return runtime.fetcher
 
 

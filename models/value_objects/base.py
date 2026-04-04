@@ -29,9 +29,7 @@ class ValueObject(ABC):
             raise TypeError(msg)
         try:
             return cls.from_mapping(data)
-        except ValueError:
-            raise
-        except (TypeError, KeyError) as exc:
+        except (TypeError, ValueError, KeyError) as exc:
             msg = f"Nie można utworzyć {cls.__name__} z przekazanego payloadu"
             raise ValueError(msg) from exc
 
