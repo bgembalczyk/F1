@@ -9,9 +9,6 @@ class OptionsScraperAdapter:
     def __init__(self, mapper: RunConfigOptionsMapper) -> None:
         self._mapper = mapper
 
-    def supports(self, ctor: ConstructorIntrospection) -> bool:
-        return ctor.accepts("options")
-
     def create(
         self,
         *,

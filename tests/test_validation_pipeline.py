@@ -35,7 +35,7 @@ def test_validation_pipeline_returns_standardized_result() -> None:
 
 def test_composite_validator_uses_schema_business_and_completeness_stages() -> None:
     class StubRecordFactoryValidator:
-        def validate_record(self, _record):
+        def __call__(self, _record):
             return [ValidationIssue.custom("factory failed", code="record_factory")]
 
     def business_rule(_record):

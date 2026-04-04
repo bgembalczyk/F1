@@ -112,10 +112,6 @@ def get_wiki_seed_registry() -> tuple[SeedRegistryEntry, ...]:
     return _build_discovered_layer_one_seed_registry()
 
 
-def clear_wiki_seed_registry_cache() -> None:
-    get_wiki_seed_registry.cache_clear()
-
-
 def _validate_unique_seed_name(
     *,
     seed_name: str,
