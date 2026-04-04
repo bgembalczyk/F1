@@ -17,7 +17,7 @@ def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> Rounds
 
     lower = normalized.lower()
     if "all" in lower:
-        return Rounds.from_values(expand_all(total_rounds))
+        return Rounds(tuple(expand_all(total_rounds) or ()))
 
     normalized = re.sub(
         r"\b(rounds?|races?)\b",
@@ -46,4 +46,4 @@ def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> Rounds
         if match:
             values.append(int(match.group(0)))
 
-    return Rounds.from_values(unique_sorted(values))
+    return Rounds(tuple(unique_sorted(values) or ()))

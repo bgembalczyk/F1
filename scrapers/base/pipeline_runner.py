@@ -48,9 +48,6 @@ class PipelineIssue:
     record: str | None
     suggestion: str | None
 
-    def as_dict(self) -> dict[str, object]:
-        return asdict(self)
-
 
 @dataclass(frozen=True)
 class PipelineStep:
@@ -205,7 +202,7 @@ class ScraperPipelineRunner:
         payload: dict[str, object] = {
             "run_id": run_id,
             "total_errors": len(issues),
-            "errors": [issue.as_dict() for issue in issues],
+            "errors": [asdict(issue) for issue in issues],
             "aggregation_by_code": dict(by_code),
             "how_to_fix_links": {
                 code: ERROR_FIX_LINKS[code]

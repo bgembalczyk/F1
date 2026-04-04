@@ -38,7 +38,7 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         self._domain_record_service = resolved_dependencies.domain_record_service
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
-        infoboxes = self._infobox_service.extract(soup, url=self.url).as_list()
+        infoboxes = list(self._infobox_service.extract(soup, url=self.url).records)
         return InfoboxPayloadDTO(infoboxes)
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
