@@ -85,7 +85,7 @@ class FormerConstructorsTableParser(WikiTableBaseParser):
         return {header: header.strip().lower().replace(" ", "_") for header in headers}
 
 
-class _ConstructorsTableSectionParser(WikiSectionParser):
+class ConstructorsSectionParser(WikiSectionParser):
     def __init__(
         self,
         *,
@@ -173,7 +173,7 @@ class _ConstructorsTableSectionParser(WikiSectionParser):
             )
 
 
-class ConstructorsListSectionParser(_ConstructorsTableSectionParser):
+class CurrentConstructorsSectionParser(ConstructorsSectionParser):
     def __init__(
         self,
         *,
@@ -191,25 +191,7 @@ class ConstructorsListSectionParser(_ConstructorsTableSectionParser):
         )
 
 
-class CurrentConstructorsSectionParser(_ConstructorsTableSectionParser):
-    def __init__(
-        self,
-        *,
-        config: ScraperConfig,
-        section_label: str | None = None,
-        include_urls: bool,
-        normalize_empty_values: bool,
-    ) -> None:
-        super().__init__(
-            config=config,
-            section_label=section_label,
-            include_urls=include_urls,
-            normalize_empty_values=normalize_empty_values,
-            table_parser=CurrentConstructorsTableParser(),
-        )
-
-
-class FormerConstructorsSectionParser(_ConstructorsTableSectionParser):
+class FormerConstructorsSectionParser(ConstructorsSectionParser):
     def __init__(
         self,
         *,
