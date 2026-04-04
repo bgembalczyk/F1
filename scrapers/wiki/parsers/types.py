@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any
+from typing import NotRequired
 from typing import TypedDict
 
 WikiParserData = dict[str, Any]
@@ -63,7 +64,14 @@ class InfoboxParsedData(TypedDict):
     rows: dict[str, Any]
 
 
+class RichCellData(TypedDict):
+    text: str
+    links: list[dict[str, Any]]
+    background: str | None
+
+
 class TableParsedData(TypedDict):
     headers: list[str]
     rows: list[list[str]]
     raw_rows: list[dict[str, str]]
+    rich_rows: NotRequired[list[dict[str, Any]]]
