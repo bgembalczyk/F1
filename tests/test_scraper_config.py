@@ -5,8 +5,6 @@ from scrapers.base.options import HttpPolicy
 from scrapers.base.options import default_http_policy
 from scrapers.config import DataPaths
 from scrapers.config import ScraperConfig
-from scrapers.config import default_data_paths
-from scrapers.config import default_scraper_config
 
 DEFAULT_TIMEOUT = 10
 
@@ -28,7 +26,7 @@ def test_default_http_policy_builds_wikipedia_cache():
 
 
 def test_default_scraper_config_includes_http_policy():
-    config = default_scraper_config()
+    config = ScraperConfig()
 
     assert isinstance(config, ScraperConfig)
     assert config.include_urls is True
@@ -36,7 +34,7 @@ def test_default_scraper_config_includes_http_policy():
 
 
 def test_default_data_paths_and_compatibility_resolution(tmp_path):
-    paths = default_data_paths(base_dir=tmp_path / "data")
+    paths = DataPaths(base_dir=tmp_path / "data")
 
     assert isinstance(paths, DataPaths)
     assert paths.raw == tmp_path / "data" / "raw"
