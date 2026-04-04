@@ -5,6 +5,9 @@ import ast
 import sys
 from pathlib import Path
 
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[2]))
+
 from scripts.ci.structural_quality_exceptions import MAX_FUNCTION_LINES_EXCEPTIONS
 from scripts.ci.structural_quality_exceptions import REDUNDANT_ALIAS_EXCEPTIONS
 

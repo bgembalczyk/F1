@@ -5,14 +5,14 @@ from typing import Any
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import GRANDS_PRIX_LIST
-from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
+from scrapers.base.table.builders import build_name_status_fragment
+from scrapers.base.table.builders import entity_column
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
