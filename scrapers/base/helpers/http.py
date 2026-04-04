@@ -68,8 +68,8 @@ def init_scraper_options(
     - `include_urls` może nadpisać wyłącznie pole `ScraperOptions.include_urls`,
     - pozostałe pola są kopiowane 1:1 z wejściowych opcji.
     """
-    # di-antipattern-allow: local import prevents runtime circular dependencies.
-    from scrapers.base.options import ScraperOptions
+    # di-antipattern-allow: local import by design.
+    from scrapers.base.options import ScraperOptions  # noqa: PLC0415
 
     base_options = options or ScraperOptions()
     if include_urls is None:
