@@ -9,12 +9,44 @@ from scripts.ci.structural_quality_exceptions import MAX_FUNCTION_LINES_EXCEPTIO
 from scripts.ci.structural_quality_exceptions import REDUNDANT_ALIAS_EXCEPTIONS
 
 
+def _collect_overload_names(tree: ast.AST) -> frozenset[str]:
+    """Return names of all functions that have at least one ``@overload`` variant in the file."""
+    names: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            for d in node.decorator_list:
+                dname = d.id if isinstance(d, ast.Name) else (d.attr if isinstance(d, ast.Attribute) else "")
+                if dname == "overload":
+                    names.add(node.name)
+    return frozenset(names)
+
+
 class StructuralVisitor(ast.NodeVisitor):
     def __init__(self, *, file_path: str) -> None:
         self.file_path = file_path
         self.function_violations: list[tuple[str, int, int]] = []
         self.class_violations: list[tuple[str, int, int]] = []
         self.alias_violations: list[tuple[str, int, str]] = []
+        self._overload_names: frozenset[str] = frozenset()
+
+    @staticmethod
+    def _decorator_names(node: ast.FunctionDef | ast.AsyncFunctionDef) -> list[str]:
+        names: list[str] = []
+        for d in node.decorator_list:
+            if isinstance(d, ast.Name):
+                names.append(d.id)
+            elif isinstance(d, ast.Attribute):
+                names.append(d.attr)
+        return names
+
+    def _is_abstract_or_overload(self, node: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
+        """Return True for @abstractmethod, @overload, or overload implementations."""
+        deco_names = self._decorator_names(node)
+        return (
+            "abstractmethod" in deco_names
+            or "overload" in deco_names
+            or node.name in self._overload_names
+        )
 
     @staticmethod
     def _node_length(node: ast.AST) -> int:
@@ -88,6 +120,7 @@ class StructuralVisitor(ast.NodeVisitor):
             self.function_violations.append((node.name, node.lineno, length))
         if (
             self._is_redundant_alias_body(node)
+            and not self._is_abstract_or_overload(node)
             and (self.file_path, node.name) not in REDUNDANT_ALIAS_EXCEPTIONS
         ):
             self.alias_violations.append(
@@ -147,6 +180,7 @@ def evaluate_file(
     visitor = StructuralVisitor(file_path=path.as_posix())
     visitor.max_function_lines = max_function_lines
     visitor.max_class_lines = max_class_lines
+    visitor._overload_names = _collect_overload_names(tree)
     visitor.visit(tree)
 
     for name, lineno, length in visitor.function_violations:

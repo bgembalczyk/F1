@@ -16,8 +16,6 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("models/records/base_factory.py", "normalize_int_fields"),
     ("models/records/base_factory.py", "normalize_link_fields"),
     ("models/records/base_factory.py", "normalize_link_list_fields"),
-    ("models/records/factories/build.py", "build"),
-    ("models/records/factories/build.py", "build_record"),
     ("models/records/field_normalizer.py", "normalize_link"),
     ("models/records/record_definition.py", "to_schema"),
     ("models/records/record_definition.py", "validate_record"),
