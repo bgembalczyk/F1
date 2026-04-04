@@ -57,75 +57,181 @@ class LayerOneExecutor:
         self._logger = get_logger(self.__class__.__name__)
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
+        run_id, trace_writer, summary, output_paths, runner_map = (
+            self._prepare_execution_inputs(run_config)
+        )
+        self._execute_pipeline_steps(
+            run_config=run_config,
+            base_wiki_dir=base_wiki_dir,
+            run_id=run_id,
+            trace_writer=trace_writer,
+            summary=summary,
+            output_paths=output_paths,
+            runner_map=runner_map,
+        )
+        self._finalize_run(
+            run_id=run_id,
+            trace_writer=trace_writer,
+            summary=summary,
+            output_paths=output_paths,
+        )
+
+    def _prepare_execution_inputs(
+        self,
+        run_config: RunConfig,
+    ) -> tuple[
+        str,
+        RunTraceWriter,
+        dict[str, list[str]],
+        list[str],
+        dict[SeedName, LayerOneRunnerProtocol],
+    ]:
         self._validate_seed_registry(self._seed_registry)
         runner_map = self._runners()
         run_id = self._resolve_run_id(run_config)
         trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id)
         summary: dict[str, list[str]] = {"success": [], "skip": [], "fail": []}
         output_paths: list[str] = []
+        return run_id, trace_writer, summary, output_paths, runner_map
 
+    def _execute_pipeline_steps(
+        self,
+        *,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+        run_id: str,
+        trace_writer: RunTraceWriter,
+        summary: dict[str, list[str]],
+        output_paths: list[str],
+        runner_map: dict[SeedName, LayerOneRunnerProtocol],
+    ) -> None:
         for seed in self._iter_seeds(run_config):
-            scraper_cls = getattr(seed, "complete_scraper_cls", seed.list_scraper_cls)
-            context = build_execution_context(
+            self._run_single_seed(
+                seed=seed,
+                run_config=run_config,
+                base_wiki_dir=base_wiki_dir,
                 run_id=run_id,
-                seed_name=seed.seed_name,
-                domain=seed.output_category,
-                source_name=scraper_cls.__name__,
-                step="seed",
-                status="started",
+                trace_writer=trace_writer,
+                summary=summary,
+                output_paths=output_paths,
+                runner_map=runner_map,
             )
-            self._logger.info("layer1 seed started", extra=context)
-            trace_writer.write(event=context | {"message": "layer1 seed started"})
+        self._run_engine_manufacturers_step(
+            run_config=run_config,
+            base_wiki_dir=base_wiki_dir,
+            run_id=run_id,
+            summary=summary,
+            output_paths=output_paths,
+        )
 
-            runner = runner_map.get(seed.seed_name)
-            if runner is None:
-                self._logger.warning(
-                    "layer1 seed skipped: unsupported",
-                    extra=context | {"status": "skipped"},
-                )
-                trace_writer.write(
-                    event=context
-                    | {
-                        "status": "skipped",
-                        "message": "layer1 seed skipped: unsupported",
-                    },
-                )
-                summary["skip"].append(seed.seed_name)
-                continue
+    def _run_single_seed(
+        self,
+        *,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+        run_id: str,
+        trace_writer: RunTraceWriter,
+        summary: dict[str, list[str]],
+        output_paths: list[str],
+        runner_map: dict[SeedName, LayerOneRunnerProtocol],
+    ) -> None:
+        scraper_cls = getattr(seed, "complete_scraper_cls", seed.list_scraper_cls)
+        context = build_execution_context(
+            run_id=run_id,
+            seed_name=seed.seed_name,
+            domain=seed.output_category,
+            source_name=scraper_cls.__name__,
+            step="seed",
+            status="started",
+        )
+        self._logger.info("layer1 seed started", extra=context)
+        trace_writer.write(event=context | {"message": "layer1 seed started"})
 
-            try:
-                runner.run(seed, run_config, base_wiki_dir)
-                output_paths.append(seed.default_output_path)
-                summary["success"].append(seed.seed_name)
-            except Exception as exc:
-                normalized_error = normalize_pipeline_error(
-                    exc,
-                    code="layer1.seed_failed",
-                    message="Layer one seed failed.",
-                    domain=seed.output_category,
-                    source_name=scraper_cls.__name__,
-                )
-                self._logger.exception(
-                    "layer1 seed failed",
-                    extra=context
-                    | {"status": "failed"}
-                    | normalized_error.to_payload(),
-                )
-                trace_writer.write(
-                    event=context
-                    | {"status": "failed", "message": normalized_error.message},
-                )
-                summary["fail"].append(seed.seed_name)
-                raise normalized_error from exc
-            self._logger.info(
-                "layer1 seed finished",
-                extra=context | {"status": "success"},
+        runner = runner_map.get(seed.seed_name)
+        if runner is None:
+            self._log_unsupported_seed(context=context, trace_writer=trace_writer)
+            summary["skip"].append(seed.seed_name)
+            return
+
+        self._run_seed_with_error_handling(
+            runner=runner,
+            seed=seed,
+            run_config=run_config,
+            base_wiki_dir=base_wiki_dir,
+            context=context,
+            trace_writer=trace_writer,
+            summary=summary,
+            output_paths=output_paths,
+            source_name=scraper_cls.__name__,
+        )
+
+    def _log_unsupported_seed(
+        self,
+        *,
+        context: dict[str, str],
+        trace_writer: RunTraceWriter,
+    ) -> None:
+        self._logger.warning(
+            "layer1 seed skipped: unsupported",
+            extra=context | {"status": "skipped"},
+        )
+        trace_writer.write(
+            event=context
+            | {
+                "status": "skipped",
+                "message": "layer1 seed skipped: unsupported",
+            },
+        )
+
+    def _run_seed_with_error_handling(
+        self,
+        *,
+        runner: LayerOneRunnerProtocol,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+        context: dict[str, str],
+        trace_writer: RunTraceWriter,
+        summary: dict[str, list[str]],
+        output_paths: list[str],
+        source_name: str,
+    ) -> None:
+        try:
+            runner.run(seed, run_config, base_wiki_dir)
+            output_paths.append(seed.default_output_path)
+            summary["success"].append(seed.seed_name)
+        except Exception as exc:
+            normalized_error = normalize_pipeline_error(
+                exc,
+                code="layer1.seed_failed",
+                message="Layer one seed failed.",
+                domain=seed.output_category,
+                source_name=source_name,
+            )
+            self._logger.exception(
+                "layer1 seed failed",
+                extra=context | {"status": "failed"} | normalized_error.to_payload(),
             )
             trace_writer.write(
-                event=context
-                | {"status": "success", "message": "layer1 seed finished"},
+                event=context | {"status": "failed", "message": normalized_error.message},
             )
+            summary["fail"].append(seed.seed_name)
+            raise normalized_error from exc
+        self._logger.info("layer1 seed finished", extra=context | {"status": "success"})
+        trace_writer.write(
+            event=context | {"status": "success", "message": "layer1 seed finished"},
+        )
 
+    def _run_engine_manufacturers_step(
+        self,
+        *,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+        run_id: str,
+        summary: dict[str, list[str]],
+        output_paths: list[str],
+    ) -> None:
         try:
             self._run_engine_manufacturers(
                 base_wiki_dir=base_wiki_dir,
@@ -137,27 +243,49 @@ class LayerOneExecutor:
                 str(base_wiki_dir / "engines/complete_engine_manufacturers"),
             )
         except Exception as exc:
-            normalized_error = normalize_pipeline_error(
-                exc,
-                code="layer1.engine_manufacturers_failed",
-                message="Layer one engine manufacturers export failed.",
+            self._handle_engine_manufacturers_failure(
+                exc=exc,
+                run_id=run_id,
+                summary=summary,
+            )
+
+    def _handle_engine_manufacturers_failure(
+        self,
+        *,
+        exc: Exception,
+        run_id: str,
+        summary: dict[str, list[str]],
+    ) -> None:
+        normalized_error = normalize_pipeline_error(
+            exc,
+            code="layer1.engine_manufacturers_failed",
+            message="Layer one engine manufacturers export failed.",
+            domain="engines",
+            source_name="F1CompleteEngineManufacturerDataExtractor",
+        )
+        self._logger.exception(
+            "layer1 engine manufacturers failed",
+            extra=build_execution_context(
+                run_id=run_id,
+                seed_name="engine_manufacturers",
                 domain="engines",
                 source_name="F1CompleteEngineManufacturerDataExtractor",
+                step="seed",
+                status="failed",
             )
-            self._logger.exception(
-                "layer1 engine manufacturers failed",
-                extra=build_execution_context(
-                    run_id=run_id,
-                    seed_name="engine_manufacturers",
-                    domain="engines",
-                    source_name="F1CompleteEngineManufacturerDataExtractor",
-                    step="seed",
-                    status="failed",
-                )
-                | normalized_error.to_payload(),
-            )
-            summary["fail"].append("engine_manufacturers")
-            raise normalized_error from exc
+            | normalized_error.to_payload(),
+        )
+        summary["fail"].append("engine_manufacturers")
+        raise normalized_error from exc
+
+    def _finalize_run(
+        self,
+        *,
+        run_id: str,
+        trace_writer: RunTraceWriter,
+        summary: dict[str, list[str]],
+        output_paths: list[str],
+    ) -> None:
         summary_context = build_execution_context(
             run_id=run_id,
             domain="layer1",
