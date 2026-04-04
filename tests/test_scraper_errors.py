@@ -124,6 +124,9 @@ class DummyFetcher:
 class DummyScraper(ABCScraper):
     url = "https://example.com"
 
+    def _parse_soup(self, _soup):
+        return []
+
 
 class DummyParseScraper(ABCScraper):
     url = "https://example.com"
