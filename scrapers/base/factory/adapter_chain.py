@@ -21,6 +21,8 @@ def default_scraper_creation_adapters(
     mapper: RunConfigOptionsMapper,
 ) -> tuple[ScraperCreationAdapter, ...]:
     return (
+        # di-antipattern-allow: intentional composition point.
         OptionsScraperAdapter(mapper),
+        # di-antipattern-allow: intentional composition point.
         LegacyScraperAdapter(),
     )

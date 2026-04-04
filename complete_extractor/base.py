@@ -62,7 +62,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
             source_adapter=self.source_adapter,
             debug_dir=options.debug_dir,
         )
-        scraper_options.policy = self.http_policy
+        scraper_options.http.policy = self.http_policy
         return scraper_options
 
     def single_scraper_options(self, options: ScraperOptions) -> ScraperOptions:
@@ -70,7 +70,7 @@ class CompleteExtractorBase(CompositeDataExtractor):
             source_adapter=self.source_adapter,
             debug_dir=options.debug_dir,
         )
-        scraper_options.policy = self.http_policy
+        scraper_options.http.policy = self.http_policy
         return scraper_options
 
     def build_list_scraper(self, options: ScraperOptions) -> ListScraperProtocol:

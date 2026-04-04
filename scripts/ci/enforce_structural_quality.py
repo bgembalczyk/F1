@@ -76,7 +76,8 @@ class StructuralVisitor(ast.NodeVisitor):
         return not self._is_private_attribute_call(call)
 
     def _visit_function_common(
-        self, node: ast.FunctionDef | ast.AsyncFunctionDef,
+        self,
+        node: ast.FunctionDef | ast.AsyncFunctionDef,
     ) -> None:
         length = self._node_length(node)
         length_limit = MAX_FUNCTION_LINES_EXCEPTIONS.get(
@@ -121,7 +122,11 @@ def _iter_python_files(paths: list[str]) -> list[Path]:
 
 
 def evaluate_file(
-    path: Path, *, max_function_lines: int, max_class_lines: int, max_file_lines: int,
+    path: Path,
+    *,
+    max_function_lines: int,
+    max_class_lines: int,
+    max_file_lines: int,
 ) -> list[str]:
     try:
         source = path.read_text(encoding="utf-8")
@@ -162,7 +167,9 @@ def evaluate_file(
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Structural Python quality gates.")
     parser.add_argument(
-        "files", nargs="*", help="Optional list of Python files to scan.",
+        "files",
+        nargs="*",
+        help="Optional list of Python files to scan.",
     )
     parser.add_argument("--max-function-lines", type=int, default=100)
     parser.add_argument("--max-class-lines", type=int, default=500)

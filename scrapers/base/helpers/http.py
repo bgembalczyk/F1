@@ -12,6 +12,7 @@ if TYPE_CHECKING:
 
 
 def default_http_policy() -> HttpPolicy:
+    # di-antipattern-allow: config provider access is intentionally deferred to runtime.
     timeout = AppConfigProvider().get_http_config().timeout_seconds
     return HttpPolicy(
         cache=WikipediaCachePolicy.with_file_cache(),
@@ -67,7 +68,8 @@ def init_scraper_options(
     - `include_urls` może nadpisać wyłącznie pole `ScraperOptions.include_urls`,
     - pozostałe pola są kopiowane 1:1 z wejściowych opcji.
     """
-    from scrapers.base.options import ScraperOptions
+    # di-antipattern-allow: local import by design.
+    from scrapers.base.options import ScraperOptions  # noqa: PLC0415
 
     base_options = options or ScraperOptions()
     if include_urls is None:

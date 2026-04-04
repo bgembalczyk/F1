@@ -28,7 +28,8 @@ class TqdmProgressAdapter:
         desc: str,
         unit: str,
     ) -> Iterable[T]:
-        from tqdm import tqdm
+        # di-antipattern-allow: optional dependency.
+        from tqdm import tqdm  # noqa: PLC0415
 
         return tqdm(iterable, desc=desc, unit=unit)
 
