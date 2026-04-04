@@ -28,4 +28,5 @@ class Link(ValueObject):
         return cls(text=payload.get("text") or "", url=payload.get("url"))
 
     def to_dict(self) -> dict[str, Any]:
+        """Stabilny format eksportu linku dla walidatorów i warstwy zapisu."""
         return {"text": self.text, "url": self.url}

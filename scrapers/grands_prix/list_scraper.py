@@ -45,21 +45,23 @@ class GrandsPrixTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
-    @staticmethod
-    def build_schema() -> TableSchemaDSL:
-        return TableSchemaDSL(
-            columns=build_columns(
-                [column("Race title", "race_title", RaceTitleStatusColumn())],
-                build_entity_metadata_columns(
-                    [
-                        EntityColumnSpec("Country", "country", LinksListColumn()),
-                        EntityColumnSpec("Years held", "years_held", SeasonsColumn()),
-                        EntityColumnSpec("Circuits", "circuits", IntColumn()),
-                        EntityColumnSpec("Total", "total", IntColumn()),
-                    ],
-                ),
-            ),
-        )
+TABLE_SCHEMA = TableSchemaDSL(
+    columns=build_columns(
+        build_name_status_fragment(
+            header="Race title",
+            output_key="race_title",
+            column_type=RaceTitleStatusColumn(),
+        ),
+        build_entity_metadata_columns(
+            [
+                entity_column("Country", "country", LinksListColumn()),
+                entity_column("Years held", "years_held", SeasonsColumn()),
+                entity_column("Circuits", "circuits", IntColumn()),
+                entity_column("Total", "total", IntColumn()),
+            ],
+        ),
+    ),
+)
 
 
 class ByRaceTitleSubSectionParser(SubSectionParser):
@@ -113,7 +115,7 @@ class GrandsPrixListScraper(SeedListTableScraper):
             "Race title",
             "Years held",
         ],
-        schema=GrandsPrixTableParser.build_schema(),
+        schema=TABLE_SCHEMA,
         record_factory=RECORD_FACTORIES.builders("grands_prix"),
     )
 

@@ -10,6 +10,7 @@ from typing_extensions import Self
 
 class ValueObject(ABC):
     def to_dict(self) -> dict[str, Any]:
+        """Kontrakt serializacji między warstwą domenową a mapperami."""
         if is_dataclass(self):
             return asdict(self)
         msg = f"Nieobsługiwany ValueObject: {type(self)!r}"

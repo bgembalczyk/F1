@@ -43,20 +43,18 @@ class TyreManufacturersBySeasonTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
-    @staticmethod
-    def build_schema() -> TableSchemaDSL:
-        return TableSchemaDSL(
-            columns=[
-                column("Season", "seasons", SeasonsColumn()),
-                column("Manufacturer 1", "manufacturers", AppendLinksColumn()),
-                column("Manufacturer 2", "manufacturers", AppendLinksColumn()),
-                column("Manufacturer 3", "manufacturers", AppendLinksColumn()),
-                column("Manufacturer 4", "manufacturers", AppendLinksColumn()),
-                column("Manufacturer 5", "manufacturers", AppendLinksColumn()),
-                column("Manufacturer 6", "manufacturers", AppendLinksColumn()),
-                column("Wins", "wins", SkipColumn()),
-            ],
-        )
+TABLE_SCHEMA = TableSchemaDSL(
+    columns=[
+        column("Season", "seasons", SeasonsColumn()),
+        column("Manufacturer 1", "manufacturers", AppendLinksColumn()),
+        column("Manufacturer 2", "manufacturers", AppendLinksColumn()),
+        column("Manufacturer 3", "manufacturers", AppendLinksColumn()),
+        column("Manufacturer 4", "manufacturers", AppendLinksColumn()),
+        column("Manufacturer 5", "manufacturers", AppendLinksColumn()),
+        column("Manufacturer 6", "manufacturers", AppendLinksColumn()),
+        column("Wins", "wins", SkipColumn()),
+    ],
+)
 
 
 class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
@@ -106,7 +104,7 @@ class TyreManufacturersScraper(F1TableScraper):
             "Manufacturer 1",
             "Wins",
         ],
-        schema=TyreManufacturersBySeasonTableParser.build_schema(),
+        schema=TABLE_SCHEMA,
         record_factory=RECORD_FACTORIES.mapping(),
     )
 

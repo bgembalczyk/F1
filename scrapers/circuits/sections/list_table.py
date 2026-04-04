@@ -46,28 +46,26 @@ class CircuitsListTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
-    @staticmethod
-    def build_schema() -> TableSchemaDSL:
-        return TableSchemaDSL(
-            columns=[
-                column(CIRCUIT_NAME_HEADER, "circuit", CircuitNameStatusColumn()),
-                column(CIRCUIT_MAP_HEADER, "map", SkipColumn()),
-                column(CIRCUIT_TYPE_HEADER, "type", AutoColumn()),
-                column(CIRCUIT_DIRECTION_HEADER, "direction", AutoColumn()),
-                column(CIRCUIT_LOCATION_HEADER, "location", AutoColumn()),
-                column(CIRCUIT_COUNTRY_HEADER, "country", AutoColumn()),
-                column(
-                    CIRCUIT_LAST_LENGTH_USED_HEADER,
-                    "last_length_used_km",
-                    LastLengthUsedColumn(),
-                ),
-                column(CIRCUIT_TURNS_HEADER, "turns", IntColumn()),
-                column(CIRCUIT_GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn()),
-                column(CIRCUIT_SEASONS_HEADER, "seasons", SeasonsColumn()),
-                column(
-                    CIRCUIT_GRANDS_PRIX_HELD_HEADER,
-                    "grands_prix_held",
-                    IntColumn(),
-                ),
-            ],
-        )
+TABLE_SCHEMA = TableSchemaDSL(
+    columns=[
+        column(CIRCUIT_NAME_HEADER, "circuit", CircuitNameStatusColumn()),
+        column(CIRCUIT_MAP_HEADER, "map", SkipColumn()),
+        column(CIRCUIT_TYPE_HEADER, "type", AutoColumn()),
+        column(CIRCUIT_DIRECTION_HEADER, "direction", AutoColumn()),
+        column(CIRCUIT_LOCATION_HEADER, "location", AutoColumn()),
+        column(CIRCUIT_COUNTRY_HEADER, "country", AutoColumn()),
+        column(
+            CIRCUIT_LAST_LENGTH_USED_HEADER,
+            "last_length_used_km",
+            LastLengthUsedColumn(),
+        ),
+        column(CIRCUIT_TURNS_HEADER, "turns", IntColumn()),
+        column(CIRCUIT_GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn()),
+        column(CIRCUIT_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        column(
+            CIRCUIT_GRANDS_PRIX_HELD_HEADER,
+            "grands_prix_held",
+            IntColumn(),
+        ),
+    ],
+)

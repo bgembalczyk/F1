@@ -55,29 +55,25 @@ class EngineManufacturersTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
-    @staticmethod
-    def build_schema() -> TableSchemaDSL:
-        return TableSchemaDSL(
-            columns=build_columns(
-                [
-                    column(
-                        "Manufacturer",
-                        "manufacturer",
-                        EngineManufacturerNameStatusColumn(),
-                    ),
-                ],
-                build_entity_metadata_columns(
-                    [
-                        EntityColumnSpec(
-                            "Engines built in",
-                            "engines_built_in",
-                            LinksListColumn(),
-                        ),
-                    ],
+TABLE_SCHEMA = TableSchemaDSL(
+    columns=build_columns(
+        build_name_status_fragment(
+            header="Manufacturer",
+            output_key="manufacturer",
+            column_type=EngineManufacturerNameStatusColumn(),
+        ),
+        build_entity_metadata_columns(
+            [
+                entity_column(
+                    "Engines built in",
+                    "engines_built_in",
+                    LinksListColumn(),
                 ),
-                build_base_stats_columns(column_overrides={"points": FloatColumn()}),
-            ),
-        )
+            ],
+        ),
+        build_base_stats_columns(column_overrides={"points": FloatColumn()}),
+    ),
+)
 
 
 class IndianapolisOnlyListParser(ListParser):
@@ -182,7 +178,7 @@ class EngineManufacturersListScraper(F1TableScraper):
         ],
         record_factory=RECORD_FACTORIES.builders("engine_manufacturer"),
         model_class=EngineManufacturer,
-        schema=EngineManufacturersTableParser.build_schema(),
+        schema=TABLE_SCHEMA,
     )
 
     _SUPPORTED_EXPORT_SCOPES = {"all", "engine_manufacturers", "indianapolis_only"}

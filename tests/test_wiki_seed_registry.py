@@ -1,5 +1,6 @@
 # ruff: noqa: E501, PT007
 import json
+from dataclasses import asdict
 
 import pytest
 
@@ -138,7 +139,7 @@ def test_wiki_seed_registry_integrity() -> None:
 def test_seed_registry_entry_serialization() -> None:
     entry = WIKI_SEED_REGISTRY[0]
 
-    payload = entry.to_dict()
+    payload = asdict(entry)
     serialized = json.dumps(payload, default=str)
 
     assert isinstance(entry, SeedRegistryEntry)
@@ -157,7 +158,7 @@ def test_wiki_list_job_registry_integrity() -> None:
 def test_list_job_registry_entry_serialization() -> None:
     entry = WIKI_LIST_JOB_REGISTRY[0]
 
-    payload = entry.to_dict()
+    payload = asdict(entry)
     serialized = json.dumps(payload, default=str)
 
     assert isinstance(entry, ListJobRegistryEntry)
