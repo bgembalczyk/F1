@@ -42,7 +42,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
 
 
 def _rev_parse(ref: str) -> str:
-    result = subprocess.run(  # noqa: S603
+    result = subprocess.run(
         ["git", "rev-parse", ref],  # noqa: S607
         check=False,
         capture_output=True,
