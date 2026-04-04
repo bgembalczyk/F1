@@ -89,6 +89,10 @@ class IssueMessageFormatter:
                 f"Invalid type for {path}: expected {issue.expected}, "
                 f"got {issue.actual}"
             )
+        if issue.code == "custom" and path and issue.message:
+            if issue.message.startswith(path):
+                return issue.message
+            return f"{path}.{issue.message}"
         return issue.message
 
     @classmethod
@@ -107,23 +111,16 @@ class LegacyValidationIssueAdapter:
         message = str(error)
         if message.startswith("Missing key: "):
             path = message.replace("Missing key: ", "", 1).strip()
-            return ValidationIssue.missing(path)
+            return ValidationIssue(code="missing", field=path, message=message)
         if message.startswith("Null value for: "):
             path = message.replace("Null value for: ", "", 1).strip()
-            return ValidationIssue.null(path)
+            return ValidationIssue(code="null", field=path, message=message)
         if message.startswith("Invalid type for ") and ":" in message:
             trimmed = message.replace("Invalid type for ", "", 1)
             path, _, details = trimmed.partition(":")
-            expected = None
-            actual = None
-            if "expected " in details and ", got " in details:
-                _, _, expected_actual = details.partition("expected ")
-                expected, _, actual = expected_actual.partition(", got ")
             return ValidationIssue(
                 code="type",
                 field=path.strip() or None,
-                expected=(expected or "").strip() or None,
-                actual=(actual or "").strip() or None,
                 message=message,
             )
         if message.endswith(" is missing"):
