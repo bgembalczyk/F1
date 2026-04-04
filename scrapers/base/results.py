@@ -20,9 +20,7 @@ if typing.TYPE_CHECKING:
 
 def _default_export_service() -> ExportService:
     # di-antipattern-allow: local import by design.
-    from scrapers.base.export.composition import (  # noqa: PLC0415
-        create_default_export_service,
-    )
+    from scrapers.base.export.composition import create_default_export_service
 
     return create_default_export_service()
 

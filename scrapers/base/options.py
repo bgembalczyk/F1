@@ -90,9 +90,9 @@ class ScraperOptions:
             self.pipeline.post_processors = list(self.post_processors)
         else:
             self.post_processors = self.pipeline.post_processors
-        if (
-            self.source_adapter is not None
-            and not hasattr(self.source_adapter, "policy")
+        if self.source_adapter is not None and not hasattr(
+            self.source_adapter,
+            "policy",
         ):
             with suppress(AttributeError, TypeError):
                 self.source_adapter.policy = self.http.policy
@@ -111,9 +111,7 @@ class ScraperOptions:
         return self.http.policy
 
     def with_fetcher(self) -> HtmlFetcher:
-        from scrapers.base.factory.runtime_factory import (  # noqa: PLC0415
-            ScraperRuntimeFactory,
-        )
+        from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 
         runtime = ScraperRuntimeFactory().build(
             options=self,

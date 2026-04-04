@@ -137,7 +137,7 @@ def extract_links_from_cell(
 ) -> list[dict[str, str | None]]:
     """Backward-compatible helper for extracting normalized links from table cells."""
     # di-antipattern-allow: local import by design.
-    from scrapers.base.helpers.links import normalize_links  # noqa: PLC0415
+    from scrapers.base.helpers.links import normalize_links
 
     return normalize_links(
         cell,

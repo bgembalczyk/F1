@@ -81,7 +81,8 @@ class StructuralVisitor(ast.NodeVisitor):
     ) -> None:
         length = self._node_length(node)
         length_limit = MAX_FUNCTION_LINES_EXCEPTIONS.get(
-            (self.file_path, node.name), self.max_function_lines,
+            (self.file_path, node.name),
+            self.max_function_lines,
         )
         if length > length_limit:
             self.function_violations.append((node.name, node.lineno, length))

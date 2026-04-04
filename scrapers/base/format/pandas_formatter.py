@@ -11,6 +11,6 @@ class PandasDataFrameFormatter:
     @staticmethod
     def format(result: "ScrapeResult") -> Any:
         # di-antipattern-allow: optional dependency.
-        import pandas as pd  # noqa: PLC0415
+        import pandas as pd
 
         return pd.DataFrame(extract_data(result))

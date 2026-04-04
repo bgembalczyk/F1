@@ -26,8 +26,7 @@ class JsonFormatter:
     def _sort_nested_dict_keys(cls, value: Any) -> Any:
         if isinstance(value, dict):
             return {
-                key: cls._sort_nested_dict_keys(value[key])
-                for key in sorted(value)
+                key: cls._sort_nested_dict_keys(value[key]) for key in sorted(value)
             }
         if isinstance(value, list):
             return [cls._sort_nested_dict_keys(item) for item in value]

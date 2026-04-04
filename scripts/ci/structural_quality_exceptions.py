@@ -38,5 +38,4 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("validation/record_factory_validator.py", "validate_record"),
 }
 
-MAX_FUNCTION_LINES_EXCEPTIONS: dict[tuple[str, str], int] = {
-}
+MAX_FUNCTION_LINES_EXCEPTIONS: dict[tuple[str, str], int] = {}

@@ -91,10 +91,7 @@ class BaseSectionExtractionService(ABC):
                 for record in self._build_section_records(section)
             ]
         if self.aggregate_records_by_section_id:
-            return {
-                str(section.section_id): section.records
-                for section in sections
-            }
+            return {str(section.section_id): section.records for section in sections}
         return [self._build_section_payload(section) for section in sections]
 
     def _build_section_payload(
