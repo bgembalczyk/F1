@@ -36,7 +36,7 @@ def test_table_extractor_extracts_records_and_logs(
         config=config,
         include_urls=False,
     )
-    extractor.set_run_id("run-1")
+    extractor.pipeline.set_run_id("run-1")
 
     with caplog.at_level(logging.DEBUG):
         records = extractor.extract(soup)

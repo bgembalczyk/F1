@@ -119,7 +119,8 @@ class F1TableScraper(WikiScraper, ABC):
         Parsuje tabelę przez HtmlTableParser
         (wybór tabeli + mapowanie nagłówków -> komórki).
         """
-        self.extractor.set_run_id(getattr(self, "_run_id", None))
+        # propagate scraper run-id into parsing pipeline for logs/debug artifacts
+        self.extractor.pipeline.set_run_id(getattr(self, "_run_id", None))
         return self.extractor.extract(soup)
 
     def parse_soup(self, soup: BeautifulSoup) -> list[Any]:
