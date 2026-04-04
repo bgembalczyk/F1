@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
@@ -10,7 +11,6 @@ from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.columns.first_place import FirstPlaceColumn
@@ -35,31 +35,31 @@ def build_points_scoring_systems_history_config(
         section_id="Points_scoring_systems",
         expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
         schema=TableSchemaDSL(columns=columns),
-        record_factory=RECORD_FACTORIES.mapping(),
+        record_factory=MappingRecordFactory(),
     )
 
 
 def build_points_scoring_systems_history_columns() -> list[ColumnSpec]:
     schema_columns: list[ColumnSpec] = [
-        column(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        ColumnSpec(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
     ]
     for index, position in enumerate(HISTORICAL_POSITIONS):
         column_instance = FirstPlaceColumn() if index == 0 else IntColumn()
-        schema_columns.append(column(position, position.lower(), column_instance))
+        schema_columns.append(ColumnSpec(position, position.lower(), column_instance))
     schema_columns.extend(
         [
-            column(POINTS_FASTEST_LAP_HEADER, "fastest_lap", IntColumn()),
-            column(
+            ColumnSpec(POINTS_FASTEST_LAP_HEADER, "fastest_lap", IntColumn()),
+            ColumnSpec(
                 POINTS_DRIVERS_CHAMPIONSHIP_HEADER,
                 "drivers_championship",
                 AutoColumn(),
             ),
-            column(
+            ColumnSpec(
                 POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER,
                 "constructors_championship",
                 AutoColumn(),
             ),
-            column(POINTS_NOTES_HEADER, "notes", SkipColumn()),
+            ColumnSpec(POINTS_NOTES_HEADER, "notes", SkipColumn()),
         ],
     )
     return schema_columns

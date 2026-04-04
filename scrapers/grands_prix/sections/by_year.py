@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_metadata
@@ -10,7 +11,7 @@ from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import DriverListColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
@@ -71,11 +72,11 @@ class GrandPrixByYearSectionParser:
     def _build_pipeline(self, section_id: str | None) -> TablePipeline:
         schema = TableSchemaDSL(
             columns=[
-                column("Year", "year", UrlColumn()),
-                column("Driver", "driver", DriverListColumn()),
-                column("Constructor", "constructor", ConstructorSplitColumn()),
-                column("Report", "report", AutoColumn()),
-                column("Location", "location", LocationColumn()),
+                ColumnSpec("Year", "year", UrlColumn()),
+                ColumnSpec("Driver", "driver", DriverListColumn()),
+                ColumnSpec("Constructor", "constructor", ConstructorSplitColumn()),
+                ColumnSpec("Report", "report", AutoColumn()),
+                ColumnSpec("Location", "location", LocationColumn()),
             ],
         )
         config = ScraperConfig(
@@ -83,7 +84,7 @@ class GrandPrixByYearSectionParser:
             section_id=section_id,
             expected_headers=["Year", "Driver", "Constructor", "Report"],
             schema=schema,
-            record_factory=RECORD_FACTORIES.mapping(),
+            record_factory=MappingRecordFactory(),
         )
         return TablePipeline(
             config=config,

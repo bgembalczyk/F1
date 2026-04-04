@@ -176,10 +176,3 @@ class ScraperOptionsBuilder:
 
     def build(self) -> ScraperOptions:
         return self._options
-
-
-def build_scraper_options(
-    *,
-    base: ScraperOptions | None = None,
-) -> ScraperOptionsBuilder:
-    return ScraperOptionsBuilder(_options=base or ScraperOptions())

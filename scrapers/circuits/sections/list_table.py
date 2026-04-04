@@ -3,7 +3,7 @@ from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
@@ -49,21 +49,21 @@ class CircuitsListTableParser(WikiTableBaseParser):
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
-        column(CIRCUIT_NAME_HEADER, "circuit", CircuitNameStatusColumn()),
-        column(CIRCUIT_MAP_HEADER, "map", SkipColumn()),
-        column(CIRCUIT_TYPE_HEADER, "type", AutoColumn()),
-        column(CIRCUIT_DIRECTION_HEADER, "direction", AutoColumn()),
-        column(CIRCUIT_LOCATION_HEADER, "location", AutoColumn()),
-        column(CIRCUIT_COUNTRY_HEADER, "country", AutoColumn()),
-        column(
+        ColumnSpec(CIRCUIT_NAME_HEADER, "circuit", CircuitNameStatusColumn()),
+        ColumnSpec(CIRCUIT_MAP_HEADER, "map", SkipColumn()),
+        ColumnSpec(CIRCUIT_TYPE_HEADER, "type", AutoColumn()),
+        ColumnSpec(CIRCUIT_DIRECTION_HEADER, "direction", AutoColumn()),
+        ColumnSpec(CIRCUIT_LOCATION_HEADER, "location", AutoColumn()),
+        ColumnSpec(CIRCUIT_COUNTRY_HEADER, "country", AutoColumn()),
+        ColumnSpec(
             CIRCUIT_LAST_LENGTH_USED_HEADER,
             "last_length_used_km",
             LastLengthUsedColumn(),
         ),
-        column(CIRCUIT_TURNS_HEADER, "turns", IntColumn()),
-        column(CIRCUIT_GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn()),
-        column(CIRCUIT_SEASONS_HEADER, "seasons", SeasonsColumn()),
-        column(
+        ColumnSpec(CIRCUIT_TURNS_HEADER, "turns", IntColumn()),
+        ColumnSpec(CIRCUIT_GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn()),
+        ColumnSpec(CIRCUIT_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        ColumnSpec(
             CIRCUIT_GRANDS_PRIX_HELD_HEADER,
             "grands_prix_held",
             IntColumn(),

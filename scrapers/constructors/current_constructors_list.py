@@ -2,7 +2,7 @@
 
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
@@ -24,14 +24,14 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
     """
 
     schema_columns = BaseConstructorListScraper.build_schema_columns(
-        [column(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
-        [column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
-        [column(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
+        [ColumnSpec(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
+        [ColumnSpec(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
+        [ColumnSpec(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
         BaseConstructorListScraper.build_common_stats_columns(),
-        [column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
+        [ColumnSpec(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
         BaseConstructorListScraper.build_common_metadata_columns(),
         [
-            column(
+            ColumnSpec(
                 CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
                 "antecedent_teams",
                 LinksListColumn(),

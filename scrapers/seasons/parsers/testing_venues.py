@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import TimeRangeColumn
-from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
@@ -51,17 +51,17 @@ class TestingVenuesParser:
         We parse them as-is and then swap them to correct the Wikipedia error.
         """
         schema_columns = [
-            column("Test", "test", IntColumn()),
+            ColumnSpec("Test", "test", IntColumn()),
             # Swapped content - Circuit contains text
-            column("Circuit", "circuit", TextColumn()),
+            ColumnSpec("Circuit", "circuit", TextColumn()),
             # Swapped content - Event contains circuit data
-            column("Event", "event", CalendarCircuitColumn()),
+            ColumnSpec("Event", "event", CalendarCircuitColumn()),
             # Session Timings has subcolumns Morning and Afternoon
-            column("Morning", "session_timings_morning", TimeRangeColumn()),
-            column("Afternoon", "session_timings_afternoon", TimeRangeColumn()),
+            ColumnSpec("Morning", "session_timings_morning", TimeRangeColumn()),
+            ColumnSpec("Afternoon", "session_timings_afternoon", TimeRangeColumn()),
             # Dates has subcolumns Start and End
-            column("Start", "dates_start", SeasonDateColumn(year=season_year)),
-            column("End", "dates_end", SeasonDateColumn(year=season_year)),
+            ColumnSpec("Start", "dates_start", SeasonDateColumn(year=season_year)),
+            ColumnSpec("End", "dates_end", SeasonDateColumn(year=season_year)),
         ]
         schema = TableSchemaDSL(columns=schema_columns)
 
@@ -88,10 +88,10 @@ class TestingVenuesParser:
         Parses the testing table for 2009.
         """
         schema_columns = [
-            column("Test", "test", IntColumn()),
-            column("Event", "event", TextColumn()),
-            column("Circuit", "circuit", CalendarCircuitColumn()),
-            column("Dates", "dates", DateRangeColumn(year=season_year)),
+            ColumnSpec("Test", "test", IntColumn()),
+            ColumnSpec("Event", "event", TextColumn()),
+            ColumnSpec("Circuit", "circuit", CalendarCircuitColumn()),
+            ColumnSpec("Dates", "dates", DateRangeColumn(year=season_year)),
         ]
         schema = TableSchemaDSL(columns=schema_columns)
 

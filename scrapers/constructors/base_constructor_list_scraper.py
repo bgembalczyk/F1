@@ -12,7 +12,6 @@ from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.column import column
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
@@ -66,11 +65,11 @@ class BaseConstructorListScraper(
         )
 
     @staticmethod
-    def build_licensed_in_column():
+    def build_licensed_in_ColumnSpec():
         """Build the licensed_in column definition."""
         from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 
-        return column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", LinksListColumn())
+        return ColumnSpec(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", LinksListColumn())
 
     @classmethod
     def extend_schema_fragments(
