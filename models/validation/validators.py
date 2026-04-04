@@ -10,12 +10,6 @@ from models.value_objects.link_utils import validate_link as _validate_link
 from models.value_objects.season_ref import SeasonRef
 
 
-def normalize_season_list(
-    items: list[SeasonRef | dict[str, Any] | None] | None,
-) -> list[SeasonRef]:
-    return list(core_normalize_season_items(items))
-
-
 def model_to_dict(model: Any) -> dict[str, Any]:
     if hasattr(model, "model_dump"):
         return model.model_dump()
@@ -59,4 +53,4 @@ def validate_link(
 def validate_seasons(
     items: list[SeasonRef | dict[str, Any] | None] | None,
 ) -> list[dict[str, Any]]:
-    return [season.to_dict() for season in normalize_season_list(items)]
+    return [season.to_dict() for season in core_normalize_season_items(items)]
