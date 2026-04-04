@@ -10,10 +10,10 @@ from scripts.ci.structural_quality_exceptions import REDUNDANT_ALIAS_EXCEPTIONS
 
 
 def _collect_overload_names(tree: ast.AST) -> frozenset[str]:
-    """Return names of all functions that have at least one ``@overload`` variant in the file."""
+    """Return names of all functions that have at least one ``@overload`` variant."""
     names: set[str] = set()
     for node in ast.walk(tree):
-        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+        if isinstance(node, ast.FunctionDef | ast.AsyncFunctionDef):
             for d in node.decorator_list:
                 dname = (
                     d.id
@@ -26,12 +26,17 @@ def _collect_overload_names(tree: ast.AST) -> frozenset[str]:
 
 
 class StructuralVisitor(ast.NodeVisitor):
-    def __init__(self, *, file_path: str) -> None:
+    def __init__(
+        self,
+        *,
+        file_path: str,
+        overload_names: frozenset[str] = frozenset(),
+    ) -> None:
         self.file_path = file_path
         self.function_violations: list[tuple[str, int, int]] = []
         self.class_violations: list[tuple[str, int, int]] = []
         self.alias_violations: list[tuple[str, int, str]] = []
-        self._overload_names: frozenset[str] = frozenset()
+        self._overload_names: frozenset[str] = overload_names
 
     @staticmethod
     def _decorator_names(node: ast.FunctionDef | ast.AsyncFunctionDef) -> list[str]:
@@ -184,10 +189,12 @@ def evaluate_file(
     except SyntaxError:
         return violations
 
-    visitor = StructuralVisitor(file_path=path.as_posix())
+    visitor = StructuralVisitor(
+        file_path=path.as_posix(),
+        overload_names=_collect_overload_names(tree),
+    )
     visitor.max_function_lines = max_function_lines
     visitor.max_class_lines = max_class_lines
-    visitor._overload_names = _collect_overload_names(tree)
     visitor.visit(tree)
 
     for name, lineno, length in visitor.function_violations:

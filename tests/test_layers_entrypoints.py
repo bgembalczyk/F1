@@ -3,9 +3,12 @@ from __future__ import annotations
 import importlib
 import sys
 import warnings
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 @pytest.mark.parametrize("module_name", ["main"])
@@ -39,17 +42,17 @@ def test_main_import_and_entrypoint_call_path(
 def test_should_mirror_constructors_job(
     module_name: str,
     scraper_name: str,
-    expected: bool,
+    expected: bool,  # noqa: FBT001
 ) -> None:
     module = importlib.import_module(module_name)
     list_scraper_cls = type(scraper_name, (), {})
     job = type("Job", (), {"list_scraper_cls": list_scraper_cls})()
 
-    assert module._should_mirror_constructors_job(job) is expected
+    assert module._should_mirror_constructors_job(job) is expected  # noqa: SLF001
 
 
 @pytest.mark.parametrize(
-    "factory,expected",
+    ("factory", "expected"),
     [
         pytest.param(
             "layers.application.create_default_wiki_pipeline_application",
@@ -130,7 +133,7 @@ def test_run_config_factories_return_expected_scraper_kwargs(
 @pytest.mark.parametrize("missing_key", [True, False])
 def test_sponsorship_liveries_factory_fallback_and_success(
     monkeypatch: pytest.MonkeyPatch,
-    missing_key: bool,
+    missing_key: bool,  # noqa: FBT001
 ) -> None:
     from layers.orchestration import factories
     from layers.seed.registry.entries import ListJobRegistryEntry

@@ -113,7 +113,7 @@ def test_detect_relevant_domains_uses_scrapers_prefix() -> None:
         Path("tests/test_something.py"),
     ]
 
-    detected = architecture_rules._detect_relevant_domains(
+    detected = architecture_rules._detect_relevant_domains(  # noqa: SLF001
         changed,
         domains=("seasons", "circuits", "drivers"),
     )
@@ -136,7 +136,7 @@ def test_check_required_layout_reports_missing_entrypoint_and_layers(
         lambda _path, domain: "app" if domain == "seasons" else "unknown"
     )
 
-    violations = architecture_rules._check_required_layout(root, ("seasons",), rules)
+    violations = architecture_rules._check_required_layout(root, ("seasons",), rules)  # noqa: SLF001
 
     assert any("Missing facade entrypoint in domain: seasons" in v for v in violations)
     assert any("Missing layer modules for seasons" in v for v in violations)
@@ -200,7 +200,7 @@ def test_architecture_main_parses_paths_from_argv(
 
 def test_token_pattern_matches_whole_tokens_only() -> None:
     """contract/static: forbidden-term regex avoids substring matches."""
-    pattern = domain_terminology._token_pattern("constructor")
+    pattern = domain_terminology._token_pattern("constructor")  # noqa: SLF001
 
     assert pattern.search("constructor standings")
     assert not pattern.search("constructors standings")
@@ -220,16 +220,17 @@ def test_run_check_returns_missing_glossary_error(
 def test_main_delegates_to_run_cli(monkeypatch: pytest.MonkeyPatch) -> None:
     """contract/static: main() delegates execution through scripts run_cli wrapper."""
     called: dict[str, object] = {}
+    expected_exit_code = 7
 
     def fake_run_cli(name: str, runner):
         called["name"] = name
         called["runner"] = runner
-        return 7
+        return expected_exit_code
 
     monkeypatch.setattr(domain_terminology, "run_cli", fake_run_cli)
 
     result = domain_terminology.main(["--ignored"])
 
-    assert result == 7
+    assert result == expected_exit_code
     assert called["name"] == "domain-terminology"
     assert callable(called["runner"])
