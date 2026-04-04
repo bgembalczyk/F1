@@ -23,7 +23,8 @@ class CircuitCompleteRecord(CircuitBaseRecord, total=False):
 
 _CIRCUIT_COMPLETE_SCHEMA = RecordSchema(
     required=(),
-    types={"url": (str, type(None))},
+    types={"url": str},
+    allow_none=("url",),
 )
 
 

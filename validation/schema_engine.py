@@ -59,7 +59,9 @@ class SchemaValidationEngine:
         errors: Sequence[ValidationIssue],
         prefix: str,
     ) -> list[ValidationIssue]:
-        return [error.with_prefix(prefix) for error in errors]
+        return [
+            IssueMessageFormatter.render(error.with_prefix(prefix)) for error in errors
+        ]
 
     @staticmethod
     def render_issues(errors: Sequence[ValidationIssue]) -> list[ValidationIssue]:
