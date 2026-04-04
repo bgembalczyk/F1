@@ -2,6 +2,11 @@ from __future__ import annotations
 
 import argparse
 import re
+import sys
+from pathlib import Path
+
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
 from scripts.ci.git_diff import collect_commit_messages
