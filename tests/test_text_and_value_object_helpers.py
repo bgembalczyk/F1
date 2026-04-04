@@ -197,7 +197,7 @@ def test_match_vehicle_prefix(a, b, min_len, expected):
         ("A; B, C / D", r";|,|/", 1, ["A", "B", "C", "D"]),
         ("White, Red (1982, 1984)", r";|,|/", 1, ["White", "Red (1982, 1984)"]),
         ("A • B • C", r"\s*[•·]\s*", 1, ["A", "B", "C"]),
-        ("A｜B｜C", r"｜", 1, ["A", "B", "C"]),
+        ("A｜B｜C", r"｜", 1, ["A", "B", "C"]),  # noqa: RUF001
         ("", r";|,|/", 1, []),
         (None, r";|,|/", 1, []),
         ("only-one", r";|,|/", 2, []),
@@ -333,21 +333,25 @@ def test_lap_record_post_init_and_to_dict(
 
 
 def test_lap_record_mapping_behaviour_and_setitem_normalization():
+    _expected_laps = 10
+    _expected_seconds = 90.0
     record = LapRecord({})
-    record.setdefault("laps", 10)
+    record.setdefault("laps", _expected_laps)
     record.setdefault("laps", 99)
 
     record["time"] = {"text": " 1:30.000 ", "seconds": "90"}
     record["date"] = {"text": "June 7, 2019", "iso": "2019-06-07"}
 
-    assert record.get("laps") == 10
+    assert record.get("laps") == _expected_laps
     assert isinstance(record["time"], NormalizedTime)
-    assert record["time"].seconds == 90.0
+    assert record["time"].seconds == _expected_seconds
     assert isinstance(record["date"], NormalizedDate)
     assert record.pop("missing", "fallback") == "fallback"
 
     keys = list(record.keys())
-    assert "laps" in keys and "time" in keys and "date" in keys
+    assert "laps" in keys
+    assert "time" in keys
+    assert "date" in keys
 
 
 def test_coerce_text_supports_bs4_tag():

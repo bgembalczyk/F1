@@ -121,7 +121,8 @@ def test_engine_regulation_happy_paths(payload, expected):
                 },
             },
             TypeError,
-            "Pole maximum_displacement.forced_induction[1] musi być słownikiem lub liczbą",
+            "Pole maximum_displacement.forced_induction[1] musi być"
+            " słownikiem lub liczbą",
             id="forced-induction-list-item-invalid-type",
         ),
         pytest.param(
@@ -152,7 +153,8 @@ def test_engine_regulation_happy_paths(payload, expected):
                 },
             },
             ValueError,
-            "Pole maximum_displacement.naturally_aspirated.min.value nie może być ujemne",
+            "Pole maximum_displacement.naturally_aspirated.min.value"
+            " nie może być ujemne",
             id="conflicting-negative-range-value",
         ),
         pytest.param(
@@ -215,6 +217,10 @@ def test_engine_regulation_validation_errors(payload, error_type, message):
     ],
 )
 def test_engine_restriction_happy_paths(payload, expected_limit_kind):
+    _expected_size_cc = 1600.0
+    _expected_rpm_min = 10000.0
+    _expected_rpm_single = 12000.0
+
     model = EngineRestriction(**payload)
 
     assert model.year
@@ -222,11 +228,11 @@ def test_engine_restriction_happy_paths(payload, expected_limit_kind):
     if model.type_of_engine:
         assert model.type_of_engine[0].text
     if model.size is not None:
-        assert model.size["value"] == 1600.0
+        assert model.size["value"] == _expected_size_cc
     if expected_limit_kind == "range":
-        assert model.engine_rpm_limit["limit"]["min"]["value"] == 10000.0
+        assert model.engine_rpm_limit["limit"]["min"]["value"] == _expected_rpm_min
     else:
-        assert model.engine_rpm_limit["limit"]["value"] == 12000.0
+        assert model.engine_rpm_limit["limit"]["value"] == _expected_rpm_single
 
 
 @pytest.mark.parametrize(

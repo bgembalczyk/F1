@@ -22,13 +22,19 @@ def test_constructors_list_scraper_exports_split_json_files(tmp_path) -> None:
 
     assert json.loads(output.read_text(encoding="utf-8")) == [{"constructor": "Alpha"}]
     assert json.loads(
-        (tmp_path / "constructors_current_constructors.json").read_text(encoding="utf-8"),
+        (tmp_path / "constructors_current_constructors.json").read_text(
+            encoding="utf-8",
+        ),
     ) == [{"constructor": "Alpha"}]
     assert json.loads(
-        (tmp_path / "constructors_former_constructors.json").read_text(encoding="utf-8"),
+        (tmp_path / "constructors_former_constructors.json").read_text(
+            encoding="utf-8",
+        ),
     ) == [{"constructor": "Beta"}]
     assert json.loads(
-        (tmp_path / "constructors_indianapolis_only_constructors.json").read_text(encoding="utf-8"),
+        (tmp_path / "constructors_indianapolis_only_constructors.json").read_text(
+            encoding="utf-8",
+        ),
     ) == [{"constructor": "Gamma"}]
     assert json.loads(
         (tmp_path / "constructors_privateer_teams.json").read_text(encoding="utf-8"),

@@ -229,7 +229,9 @@ class ConstructorsListScraper(F1ListScraper):
             "ConstructorsListScraper: indianapolis-only extracted, records=%d.",
             len(indianapolis_records),
         )
-        self._split_export_records[self._INDIANAPOLIS_SUB_SECTION_PARSER_EXPORT_KEY].extend(
+        self._split_export_records[
+            self._INDIANAPOLIS_SUB_SECTION_PARSER_EXPORT_KEY
+        ].extend(
             indianapolis_records,
         )
         return (former_records, indianapolis_records)
@@ -251,7 +253,9 @@ class ConstructorsListScraper(F1ListScraper):
         privateer_parser = PrivateerTeamsSectionParser()
         privateer_records = privateer_parser.parse(privateer_section).get("items", [])
         self._normalize_privateer_urls(privateer_records)
-        self._split_export_records[self._PRIVATEER_SUB_SECTION_PARSER_EXPORT_KEY].extend(
+        self._split_export_records[
+            self._PRIVATEER_SUB_SECTION_PARSER_EXPORT_KEY
+        ].extend(
             privateer_records,
         )
         logger.warning(
@@ -267,8 +271,12 @@ class ConstructorsListScraper(F1ListScraper):
         self._split_export_records = {
             self._CURRENT_SECTION_PARSER_EXPORT_KEY: list(scope_records["current"]),
             self._FORMER_SECTION_PARSER_EXPORT_KEY: list(scope_records["former"]),
-            self._INDIANAPOLIS_SUB_SECTION_PARSER_EXPORT_KEY: list(scope_records["indianapolis"]),
-            self._PRIVATEER_SUB_SECTION_PARSER_EXPORT_KEY: list(scope_records["privateer"]),
+            self._INDIANAPOLIS_SUB_SECTION_PARSER_EXPORT_KEY: list(
+                scope_records["indianapolis"],
+            ),
+            self._PRIVATEER_SUB_SECTION_PARSER_EXPORT_KEY: list(
+                scope_records["privateer"],
+            ),
         }
 
     def _normalize_privateer_urls(self, privateer_records: list[Any]) -> None:
