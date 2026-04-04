@@ -4,6 +4,7 @@ from dataclasses import asdict
 from typing import Any
 
 from models.value_objects import EntityName
+from models.value_objects import SectionId
 from scrapers.base.sections.interface import SectionParseResult
 
 
@@ -71,3 +72,53 @@ def serialize_section_result(section: SectionParseResult) -> dict[str, Any]:
     payload["section_label"] = EntityName.from_raw(section.section_label).to_export()
     payload["metadata"] = normalize_section_metadata(section)
     return payload
+
+
+def coerce_section_parse_result(
+    payload: SectionParseResult | dict[str, Any] | list[dict[str, Any]],
+    *,
+    default_section_id: str,
+    default_section_label: str,
+    parser: str,
+    source: str = "legacy",
+) -> SectionParseResult:
+    if isinstance(payload, SectionParseResult):
+        return payload
+
+    if isinstance(payload, list):
+        return build_section_parse_result(
+            section_id=default_section_id,
+            section_label=default_section_label,
+            records=[item for item in payload if isinstance(item, dict)],
+            parser=parser,
+            source=source,
+            extras={"legacy_payload": True},
+        )
+
+    if not isinstance(payload, dict):
+        msg = "Section parser contract violation: parser output is not serializable."
+        raise TypeError(msg)
+
+    records_raw = payload.get("records")
+    if records_raw is None:
+        records_raw = payload.get("items", [])
+    records = records_raw if isinstance(records_raw, list) else []
+    metadata = payload.get("metadata")
+    return SectionParseResult(
+        section_id=SectionId.from_raw(payload.get("section_id", default_section_id)),
+        section_label=EntityName.from_raw(
+            payload.get(
+                "section_label",
+                payload.get("section", default_section_label),
+            ),
+        ),
+        records=[item for item in records if isinstance(item, dict)],
+        metadata={
+            **build_section_metadata(
+                parser=parser,
+                source=source,
+                extras={"legacy_payload": True},
+            ),
+            **(metadata if isinstance(metadata, dict) else {}),
+        },
+    )

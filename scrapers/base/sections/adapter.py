@@ -6,6 +6,7 @@ from typing import Any
 
 from models.value_objects import SectionId
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
+from scrapers.base.sections.serializer import coerce_section_parse_result
 from scrapers.base.sections.serializer import serialize_section_result
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
@@ -65,7 +66,14 @@ class SectionAdapter:
             )
             if section_fragment is None:
                 continue
-            parsed.append(entry.parser.parse(section_fragment))
+            parsed.append(
+                coerce_section_parse_result(
+                    entry.parser.parse(section_fragment),
+                    default_section_id=section_id.to_export(),
+                    default_section_label=section_id.to_export().replace("_", " "),
+                    parser=entry.parser.__class__.__name__,
+                ),
+            )
         return parsed
 
     def assemble_section_dicts(
