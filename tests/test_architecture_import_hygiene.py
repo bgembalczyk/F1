@@ -99,6 +99,6 @@ def test_architecture_tests_do_not_reassign_imported_names() -> None:
         if reassignments:
             violations[str(test_file)] = reassignments
 
-    assert not violations, (
-        f"Reassigned imported names in architecture tests: {violations}"
-    )
+    assert (
+        not violations
+    ), f"Reassigned imported names in architecture tests: {violations}"

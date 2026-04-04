@@ -15,7 +15,11 @@ def _collect_overload_names(tree: ast.AST) -> frozenset[str]:
     for node in ast.walk(tree):
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
             for d in node.decorator_list:
-                dname = d.id if isinstance(d, ast.Name) else (d.attr if isinstance(d, ast.Attribute) else "")
+                dname = (
+                    d.id
+                    if isinstance(d, ast.Name)
+                    else (d.attr if isinstance(d, ast.Attribute) else "")
+                )
                 if dname == "overload":
                     names.add(node.name)
     return frozenset(names)
@@ -39,7 +43,10 @@ class StructuralVisitor(ast.NodeVisitor):
                 names.append(d.attr)
         return names
 
-    def _is_abstract_or_overload(self, node: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
+    def _is_abstract_or_overload(
+        self,
+        node: ast.FunctionDef | ast.AsyncFunctionDef,
+    ) -> bool:
         """Return True for @abstractmethod, @overload, or overload implementations."""
         deco_names = self._decorator_names(node)
         return (

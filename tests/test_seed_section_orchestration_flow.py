@@ -167,7 +167,7 @@ def test_seed_section_orchestration_supports_extended_domains_without_unsupporte
         base_dir=data_dir,
         detail_fetchers={
             domain: (lambda kind: lambda url: {"url": url, "details": {"kind": kind}})(
-                domain
+                domain,
             )
             for domain in (
                 "drivers",

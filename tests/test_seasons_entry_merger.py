@@ -30,7 +30,9 @@ def test_merge_entries_full_match_combines_drivers_into_single_domain_entry() ->
     ]
 
 
-def test_merge_entries_partial_match_keeps_separate_subgroups_for_conflicting_values() -> None:
+def test_merge_entries_partial_match_keeps_separate_subgroups_for_conflicting_values() -> (
+    None
+):
     merger = EntryMerger()
     records = [
         {

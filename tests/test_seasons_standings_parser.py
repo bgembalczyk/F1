@@ -7,12 +7,21 @@ from scrapers.seasons.parsers.standings import SeasonStandingsParser
 
 
 class _StubStandingsTableParser:
-    def __init__(self, responses: list[Any] | None = None, *, error: Exception | None = None) -> None:
+    def __init__(
+        self,
+        responses: list[Any] | None = None,
+        *,
+        error: Exception | None = None,
+    ) -> None:
         self._responses = responses or []
         self._error = error
         self.calls: list[dict[str, Any]] = []
 
-    def parse_standings_table(self, soup: BeautifulSoup, **kwargs: Any) -> list[dict[str, Any]]:
+    def parse_standings_table(
+        self,
+        soup: BeautifulSoup,
+        **kwargs: Any,
+    ) -> list[dict[str, Any]]:
         self.calls.append(kwargs)
         if self._error is not None:
             raise self._error
@@ -94,7 +103,9 @@ def test_parse_constructors_merges_duplicate_rows_into_one_domain_result() -> No
 
 
 def test_parse_drivers_propagates_table_parser_errors() -> None:
-    parser = SeasonStandingsParser(_StubStandingsTableParser(error=ValueError("bad table")))
+    parser = SeasonStandingsParser(
+        _StubStandingsTableParser(error=ValueError("bad table")),
+    )
 
     with pytest.raises(ValueError, match="bad table"):
         parser.parse_drivers(BeautifulSoup("<html></html>", "html.parser"))
@@ -104,7 +115,10 @@ def test_parse_drivers_requests_primary_and_alias_section_ids() -> None:
     table_parser = _StubStandingsTableParser(responses=[[]])
     parser = SeasonStandingsParser(table_parser)
 
-    parser.parse_drivers(BeautifulSoup("<html></html>", "html.parser"), season_year=2024)
+    parser.parse_drivers(
+        BeautifulSoup("<html></html>", "html.parser"),
+        season_year=2024,
+    )
 
     assert table_parser.calls[0]["section_ids"] == [
         "World_Drivers'_Championship_standings",

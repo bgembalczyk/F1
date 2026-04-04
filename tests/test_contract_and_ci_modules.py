@@ -20,6 +20,7 @@ pytestmark = pytest.mark.contract
 
 # ---- scrapers/base/contracts.py ----
 
+
 def test_base_contracts_export_expected_protocols() -> None:
     """contract/static: module exports key protocol symbols."""
     assert hasattr(base_contracts, "RecordAssemblerProtocol")
@@ -35,11 +36,14 @@ def test_record_assembler_protocol_signature_is_stable() -> None:
 
 def test_section_extraction_protocol_signature_is_stable() -> None:
     """contract/static: section extractor protocol accepts soup argument."""
-    signature = inspect.signature(base_contracts.SectionExtractionServiceProtocol.extract)
+    signature = inspect.signature(
+        base_contracts.SectionExtractionServiceProtocol.extract,
+    )
     assert tuple(signature.parameters) == ("self", "soup")
 
 
 # ---- scrapers/base/export/contracts.py ----
+
 
 def test_export_contracts_protocols_exist() -> None:
     """contract/static: export protocol API is exposed."""
@@ -85,6 +89,7 @@ def test_export_support_protocol_signatures_are_stable() -> None:
 
 # ---- scrapers/seasons/sections/contracts.py + circuits schema ----
 
+
 def test_season_section_protocol_parse_signature_is_stable() -> None:
     """contract/static: season section parser protocol accepts fragment."""
     signature = inspect.signature(season_contracts.SeasonSectionParser.parse)
@@ -98,6 +103,7 @@ def test_build_circuits_schema_returns_shared_table_schema() -> None:
 
 
 # ---- scripts/check_architecture_rules.py ----
+
 
 def test_detect_relevant_domains_uses_scrapers_prefix() -> None:
     """contract/static: detects only configured domains under scrapers/."""
@@ -115,7 +121,9 @@ def test_detect_relevant_domains_uses_scrapers_prefix() -> None:
     assert detected == {"seasons", "circuits"}
 
 
-def test_check_required_layout_reports_missing_entrypoint_and_layers(tmp_path: Path) -> None:
+def test_check_required_layout_reports_missing_entrypoint_and_layers(
+    tmp_path: Path,
+) -> None:
     """contract/static: required layout reports missing files/layers."""
     root = tmp_path / "scrapers"
     (root / "seasons").mkdir(parents=True)
@@ -124,7 +132,9 @@ def test_check_required_layout_reports_missing_entrypoint_and_layers(tmp_path: P
         REQUIRED_LAYERS_BY_DOMAIN={"seasons": ("app", "sections")},
     )
     rules.LAYERS = {"app", "sections"}
-    rules.infer_layer = lambda _path, domain: "app" if domain == "seasons" else "unknown"
+    rules.infer_layer = (
+        lambda _path, domain: "app" if domain == "seasons" else "unknown"
+    )
 
     violations = architecture_rules._check_required_layout(root, ("seasons",), rules)
 
@@ -132,16 +142,38 @@ def test_check_required_layout_reports_missing_entrypoint_and_layers(tmp_path: P
     assert any("Missing layer modules for seasons" in v for v in violations)
 
 
-def test_architecture_main_parses_paths_from_argv(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_architecture_main_parses_paths_from_argv(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     """contract/static: main() consumes positional paths via argparse."""
-    monkeypatch.setattr(architecture_rules, "_load_architecture_rules", lambda: types.SimpleNamespace(
-        DOMAINS=("seasons",),
-        ENTRYPOINT_DOMAINS=("seasons",),
-    ))
-    monkeypatch.setattr(architecture_rules, "_check_required_layout", lambda *_args, **_kwargs: [])
-    monkeypatch.setattr(architecture_rules, "_check_layer_boundaries", lambda *_args, **_kwargs: [])
-    monkeypatch.setattr(architecture_rules, "_check_sections_single_scraper_boundary", lambda *_args, **_kwargs: [])
-    monkeypatch.setattr(architecture_rules, "_check_cross_domain_imports", lambda *_args, **_kwargs: [])
+    monkeypatch.setattr(
+        architecture_rules,
+        "_load_architecture_rules",
+        lambda: types.SimpleNamespace(
+            DOMAINS=("seasons",),
+            ENTRYPOINT_DOMAINS=("seasons",),
+        ),
+    )
+    monkeypatch.setattr(
+        architecture_rules,
+        "_check_required_layout",
+        lambda *_args, **_kwargs: [],
+    )
+    monkeypatch.setattr(
+        architecture_rules,
+        "_check_layer_boundaries",
+        lambda *_args, **_kwargs: [],
+    )
+    monkeypatch.setattr(
+        architecture_rules,
+        "_check_sections_single_scraper_boundary",
+        lambda *_args, **_kwargs: [],
+    )
+    monkeypatch.setattr(
+        architecture_rules,
+        "_check_cross_domain_imports",
+        lambda *_args, **_kwargs: [],
+    )
 
     captured: dict[str, list[Path]] = {}
 
@@ -151,7 +183,10 @@ def test_architecture_main_parses_paths_from_argv(monkeypatch: pytest.MonkeyPatc
         return set()
 
     monkeypatch.setattr(architecture_rules, "_detect_relevant_domains", fake_detect)
-    monkeypatch.setattr("sys.argv", ["check_architecture_rules.py", "scrapers/seasons/x.py", "README.md"])
+    monkeypatch.setattr(
+        "sys.argv",
+        ["check_architecture_rules.py", "scrapers/seasons/x.py", "README.md"],
+    )
 
     result = architecture_rules.main()
 
@@ -162,6 +197,7 @@ def test_architecture_main_parses_paths_from_argv(monkeypatch: pytest.MonkeyPatc
 
 # ---- scripts/check_domain_terminology.py ----
 
+
 def test_token_pattern_matches_whole_tokens_only() -> None:
     """contract/static: forbidden-term regex avoids substring matches."""
     pattern = domain_terminology._token_pattern("constructor")
@@ -170,7 +206,10 @@ def test_token_pattern_matches_whole_tokens_only() -> None:
     assert not pattern.search("constructors standings")
 
 
-def test_run_check_returns_missing_glossary_error(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+def test_run_check_returns_missing_glossary_error(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
     """contract/static: run_check reports when glossary is absent."""
     monkeypatch.setattr(domain_terminology, "REPO_ROOT", tmp_path)
     monkeypatch.setattr(domain_terminology, "GLOSSARY_PATH", Path("missing.md"))

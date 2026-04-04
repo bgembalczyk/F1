@@ -11,9 +11,9 @@ from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.dsl.column import ColumnRef
 from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.dsl.serialization import column_ref_payload
 from scrapers.base.table.dsl.serialization import serialize_value
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.schema import TableSchemaBuilder
 
 
@@ -32,6 +32,7 @@ def _ctx(text: str | None, *, links: list[dict] | None = None) -> ColumnContext:
 
 # ---- range.py ----
 
+
 def test_range_column_parse_success_with_shared_suffix() -> None:
     column = RangeColumn(
         lower_column=UnitColumn(unit="kg"),
@@ -48,7 +49,10 @@ def test_range_column_parse_success_with_shared_suffix() -> None:
 
 
 def test_range_column_parse_fail_when_underlying_parser_fails() -> None:
-    column = RangeColumn(lower_column=UnitColumn(unit="kg"), upper_column=UnitColumn(unit="kg"))
+    column = RangeColumn(
+        lower_column=UnitColumn(unit="kg"),
+        upper_column=UnitColumn(unit="kg"),
+    )
 
     parsed = column.parse(_ctx("abc-def"))
 
@@ -64,6 +68,7 @@ def test_range_column_edge_case_single_value_applies_to_both_bounds() -> None:
 
 
 # ---- time_range.py ----
+
 
 def test_time_range_column_parse_success() -> None:
     parsed = TimeRangeColumn().parse(_ctx("9:00am - 1:30pm"))
@@ -84,6 +89,7 @@ def test_time_range_column_edge_case_empty_input() -> None:
 
 
 # ---- tyre.py ----
+
 
 def test_tyre_column_parse_success_from_text_tokens() -> None:
     parsed = TyreColumn().parse(_ctx("M/P"))
@@ -108,15 +114,16 @@ def test_tyre_column_edge_case_links_take_precedence_and_strip_marks() -> None:
                 {
                     "text": "M*",
                     "url": "/wiki/Medium",
-                }
+                },
             ],
-        )
+        ),
     )
 
     assert parsed == [{"text": "Michelin", "url": "/wiki/Medium"}]
 
 
 # ---- unit.py ----
+
 
 def test_unit_column_parse_success_with_explicit_unit() -> None:
     parsed = UnitColumn(unit="kg").parse(_ctx("1,234 kg"))
@@ -137,6 +144,7 @@ def test_unit_column_edge_case_partial_range_uses_first_value() -> None:
 
 
 # ---- dsl/serialization.py ----
+
 
 def test_serialize_value_handles_primitives_types_and_callables() -> None:
     def normalize_unit(unit: str) -> str:
@@ -159,7 +167,11 @@ def test_serialize_value_handles_primitives_types_and_callables() -> None:
 
 
 def test_column_ref_payload_supports_column_instance_and_column_ref() -> None:
-    instance_spec = ColumnSpec(header="Weight", key="weight", column=UnitColumn(unit="kg"))
+    instance_spec = ColumnSpec(
+        header="Weight",
+        key="weight",
+        column=UnitColumn(unit="kg"),
+    )
     ref_spec = ColumnSpec(
         header="Name",
         key="name",
@@ -181,6 +193,7 @@ def test_column_ref_payload_supports_column_instance_and_column_ref() -> None:
 
 
 # ---- schema.py ----
+
 
 def test_table_schema_builder_build_success() -> None:
     schema = (
@@ -217,6 +230,7 @@ def test_table_schema_builder_map_validation_failures(
 
 # ---- DSL round-trip ----
 
+
 def test_table_schema_dsl_round_trip_semantic_equivalence() -> None:
     original = TableSchemaDSL(
         columns=[
@@ -238,7 +252,7 @@ def test_table_schema_dsl_round_trip_semantic_equivalence() -> None:
                     kwargs={},
                 ),
             ),
-        ]
+        ],
     )
 
     serialized = original.to_dict()

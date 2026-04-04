@@ -27,7 +27,11 @@ from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
     ("value", "expected_text", "expected_url"),
     [
         ({"text": " Driver A ", "url": " /wiki/a "}, "Driver A", "/wiki/a"),
-        ({"name": "Driver B", "url": "https://example.com"}, "Driver B", "https://example.com"),
+        (
+            {"name": "Driver B", "url": "https://example.com"},
+            "Driver B",
+            "https://example.com",
+        ),
         ({"text": None, "name": None, "url": None}, "", ""),
         ("  Plain value  ", "Plain value", ""),
         (123, "123", ""),
@@ -205,7 +209,10 @@ def test_split_delimited_text_with_unusual_separators(
     min_parts,
     expected,
 ):
-    assert split_delimited_text(text, separators=separators, min_parts=min_parts) == expected
+    assert (
+        split_delimited_text(text, separators=separators, min_parts=min_parts)
+        == expected
+    )
 
 
 @pytest.mark.parametrize(

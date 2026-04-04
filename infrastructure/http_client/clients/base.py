@@ -108,6 +108,7 @@ class BaseHttpClient(ABC):
 
         Cache działa tylko po URL (headers/timeout są ignorowane w cache key).
         """
+
         def cache_loader() -> str:
             return self.get(url, headers=headers, timeout=timeout).text
 
