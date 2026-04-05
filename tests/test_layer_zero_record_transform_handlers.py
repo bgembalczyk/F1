@@ -212,11 +212,11 @@ def test_expand_season_records_for_engine_restrictions_uses_year_ranges() -> Non
     assert expanded == [
         {
             "season": {"year": 2000},
-            "engine_regulations": {"type_of_engine": [{"text": "V10"}]},
+            "engine_restrictions": {"type_of_engine": [{"text": "V10"}]},
         },
         {
             "season": {"year": 2001},
-            "engine_regulations": {"type_of_engine": [{"text": "V10"}]},
+            "engine_restrictions": {"type_of_engine": [{"text": "V10"}]},
         },
     ]
 
@@ -298,5 +298,23 @@ def test_seasons_domain_postprocess_merges_duplicate_year_representations() -> N
         {
             "season": {"text": "2000", "url": "https://example.com/2000", "year": 2000},
             "points_scoring_system": {"first": 10},
+        },
+    ]
+
+
+def test_seasons_domain_postprocess_keeps_engine_regulations_and_restrictions_separate() -> None:
+    processed = _post_process_domain_records(
+        "seasons",
+        [
+            {"season": {"year": 2000}, "engine_regulations": {"configuration": "V10"}},
+            {"season": {"year": 2000}, "engine_restrictions": {"type_of_engine": "V10"}},
+        ],
+    )
+
+    assert processed == [
+        {
+            "season": {"year": 2000},
+            "engine_regulations": {"configuration": "V10"},
+            "engine_restrictions": {"type_of_engine": "V10"},
         },
     ]

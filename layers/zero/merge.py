@@ -546,7 +546,7 @@ def _season_payload_key(source_name: str) -> str | None:
     if source_name == ENGINE_REGULATIONS_SOURCE:
         return "engine_regulations"
     if source_name == ENGINE_RESTRICTIONS_SOURCE:
-        return "engine_regulations"
+        return "engine_restrictions"
     if source_name == POINTS_SCORING_SYSTEM_SOURCE:
         return "points_scoring_system"
     if source_name == POINTS_SCORING_SYSTEM_SHORTENED_SOURCE:
