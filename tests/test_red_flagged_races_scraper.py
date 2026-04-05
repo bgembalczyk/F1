@@ -14,18 +14,18 @@ from bs4 import BeautifulSoup
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scrapers.grands_prix.red_flagged_races_scraper import (
+from scrapers.races.red_flagged_races_scraper import (
     NonChampionshipsRacesSubSectionParser,
 )
-from scrapers.grands_prix.red_flagged_races_scraper import RedFlaggedRacesScraper
-from scrapers.grands_prix.red_flagged_races_scraper import RedFlaggedRacesSectionParser
-from scrapers.grands_prix.red_flagged_races_scraper import (
+from scrapers.races.red_flagged_races_scraper import RedFlaggedRacesScraper
+from scrapers.races.red_flagged_races_scraper import RedFlaggedRacesSectionParser
+from scrapers.races.red_flagged_races_scraper import (
     WorldChampionshipsRacesTableParser,
 )
-from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
+from scrapers.races.red_flagged_races_scraper.non_championship import (
     RedFlaggedNonChampionshipRacesScraper,
 )
-from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
+from scrapers.races.red_flagged_races_scraper.world_championship import (
     RedFlaggedWorldChampionshipRacesScraper,
 )
 

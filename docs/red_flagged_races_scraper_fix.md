@@ -65,7 +65,7 @@ All tests pass successfully.
 
 ## Files Changed
 
-- `scrapers/grands_prix/red_flagged_races_scraper/base.py`: Improved error handling and diagnostics
+- `scrapers/races/red_flagged_races_scraper/base.py`: Improved error handling and diagnostics
 - `tests/test_red_flagged_races_scraper.py`: New comprehensive test suite
 
 ## Expected Behavior

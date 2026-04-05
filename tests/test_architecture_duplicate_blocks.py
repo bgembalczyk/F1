@@ -33,8 +33,8 @@ class ConfigBlockSemantics:
 ALLOWED_SIMILAR_CONFIG_BLOCKS: dict[frozenset[str], str] = {
     frozenset(
         {
-            "scrapers/grands_prix/red_flagged_races_scraper/world_championship.py",
-            "scrapers/grands_prix/red_flagged_races_scraper/non_championship.py",
+            "scrapers/races/red_flagged_races_scraper/world_championship.py",
+            "scrapers/races/red_flagged_races_scraper/non_championship.py",
         },
     ): (
         "Dwie listy czerwonych flag mają wspólne źródło/kolumny, ale różnią się "

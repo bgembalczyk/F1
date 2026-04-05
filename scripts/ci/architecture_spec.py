@@ -100,6 +100,7 @@ ARCHITECTURE_SPEC = ArchitectureSpec(
             has_entrypoint=True,
             required_layers=("list", "sections"),
         ),
+        DomainSpec("races", has_entrypoint=False, required_layers=()),
         DomainSpec("engines", has_entrypoint=False, required_layers=()),
         DomainSpec("points", has_entrypoint=False, required_layers=()),
         DomainSpec(
