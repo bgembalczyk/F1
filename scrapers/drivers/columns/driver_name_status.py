@@ -11,8 +11,8 @@ class DriverNameStatusColumn(NameStatusColumn):
 
     Extracts:
     - driver: Driver name with URL
-    - is_active: True if name ends with † or ~
-    - is_world_champion: True if name ends with † or ^
+    - is_active: True if name ends with ~ or *
+    - is_world_champion: True if name ends with ^
     """
 
     def __init__(self) -> None:
@@ -24,7 +24,6 @@ class DriverNameStatusColumn(NameStatusColumn):
                     MARK_ACTIVE_DRIVER_ALT,
                 ),
                 "is_world_champion": create_suffix_checker(
-                    MARK_ACTIVE_DRIVER,
                     MARK_WORLD_CHAMPION,
                 ),
             },

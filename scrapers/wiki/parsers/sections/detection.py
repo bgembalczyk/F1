@@ -97,6 +97,7 @@ def _resolve_aliases(
 
     if aliases:
         resolved.update(aliases.get(normalized_target, set()))
+        resolved.update(aliases.get(target, set()))
 
     return resolved
 
