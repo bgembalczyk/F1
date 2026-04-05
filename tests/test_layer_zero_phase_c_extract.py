@@ -313,3 +313,198 @@ class TestExtractFromRaces:
         drivers = json.loads(drivers_file.read_text(encoding="utf-8"))
         assert len(drivers) == 1
         assert drivers[0]["text"] == "Jackie Stewart"
+
+
+class TestExtractFromSeasons:
+    def test_extracts_tyre_manufacturers_and_constructors_champion(
+        self, tmp_path: Path,
+    ) -> None:
+        base = tmp_path / "data" / "wiki"
+        pirelli = {"text": "Pirelli", "url": "https://en.wikipedia.org/wiki/Pirelli"}
+        dunlop = {"text": "Dunlop", "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"}
+        vanwall = {"text": "Vanwall", "url": "https://en.wikipedia.org/wiki/Vanwall"}
+        payload = [
+            {
+                "season": {"year": 1958},
+                "tyre_manufacturers": [pirelli, dunlop],
+                "constructors_champion": [vanwall],
+            },
+        ]
+        _write_json(_b_merge_path(base, "seasons") / "seasons.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        tyre_file = (
+            _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
+        )
+        assert tyre_file.exists()
+        tyres = json.loads(tyre_file.read_text(encoding="utf-8"))
+        assert pirelli in tyres
+        assert dunlop in tyres
+
+        constructors_file = (
+            _c_extract_path(base, "constructors") / "from_seasons.json"
+        )
+        assert constructors_file.exists()
+        constructors = json.loads(constructors_file.read_text(encoding="utf-8"))
+        assert vanwall in constructors
+
+    def test_handles_single_tyre_manufacturer(self, tmp_path: Path) -> None:
+        base = tmp_path / "data" / "wiki"
+        goodyear = {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company",
+        }
+        payload = [{"season": {"year": 1975}, "tyre_manufacturers": goodyear}]
+        _write_json(_b_merge_path(base, "seasons") / "seasons.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        tyre_file = (
+            _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
+        )
+        tyres = json.loads(tyre_file.read_text(encoding="utf-8"))
+        assert len(tyres) == 1
+        assert goodyear in tyres
+
+    def test_skips_records_without_tyre_or_champion(self, tmp_path: Path) -> None:
+        base = tmp_path / "data" / "wiki"
+        payload = [{"season": {"year": 1950}}]
+        _write_json(_b_merge_path(base, "seasons") / "seasons.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        assert not (
+            _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
+        ).exists()
+        assert not (
+            _c_extract_path(base, "constructors") / "from_seasons.json"
+        ).exists()
+
+
+class TestExtractFromTeams:
+    def test_extracts_colors_sponsors_teams_countries(self, tmp_path: Path) -> None:
+        base = tmp_path / "data" / "wiki"
+        toleman = {"text": "Toleman", "url": "https://en.wikipedia.org/wiki/Toleman"}
+        uk = {"text": "United Kingdom", "url": "https://en.wikipedia.org/wiki/United_Kingdom"}
+        france = {"text": "France", "url": "https://en.wikipedia.org/wiki/France"}
+        elf = {"text": "Elf", "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"}
+        payload = [
+            {
+                "team": "Benetton",
+                "racing_series": {
+                    "formula_one": {
+                        "antecedent_teams": [toleman],
+                        "based_in": [uk],
+                        "licensed_in": france,
+                        "liveries": [
+                            {
+                                "season": [{"year": 1986}],
+                                "main_colours": ["White", "Blue"],
+                                "additional_colours": ["Red"],
+                                "main_sponsors": ["None"],
+                                "additional_major_sponsors": [elf],
+                            },
+                        ],
+                    },
+                },
+            },
+        ]
+        _write_json(_b_merge_path(base, "teams") / "teams.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        colors_file = _c_extract_path(base, "colors") / "from_teams.json"
+        assert colors_file.exists()
+        colors = json.loads(colors_file.read_text(encoding="utf-8"))
+        assert "White" in colors
+        assert "Blue" in colors
+        assert "Red" in colors
+
+        sponsors_file = _c_extract_path(base, "sponsors") / "from_teams.json"
+        assert sponsors_file.exists()
+        sponsors = json.loads(sponsors_file.read_text(encoding="utf-8"))
+        assert "None" in sponsors
+        assert elf in sponsors
+
+        teams_file = _c_extract_path(base, "teams") / "from_teams.json"
+        assert teams_file.exists()
+        teams = json.loads(teams_file.read_text(encoding="utf-8"))
+        assert toleman in teams
+
+        countries_file = _c_extract_path(base, "countries") / "from_teams.json"
+        assert countries_file.exists()
+        countries = json.loads(countries_file.read_text(encoding="utf-8"))
+        assert uk in countries
+        assert france in countries
+
+    def test_skips_null_livery_colour_and_sponsor_values(
+        self, tmp_path: Path,
+    ) -> None:
+        base = tmp_path / "data" / "wiki"
+        payload = [
+            {
+                "team": "AGS",
+                "racing_series": {
+                    "formula_one": {
+                        "liveries": [
+                            {
+                                "season": [{"year": 1986}],
+                                "main_colours": ["White"],
+                                "additional_colours": None,
+                                "main_sponsors": None,
+                                "additional_major_sponsors": ["Jolly Club"],
+                            },
+                        ],
+                    },
+                },
+            },
+        ]
+        _write_json(_b_merge_path(base, "teams") / "teams.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        colors_file = _c_extract_path(base, "colors") / "from_teams.json"
+        colors = json.loads(colors_file.read_text(encoding="utf-8"))
+        assert colors == ["White"]
+
+        sponsors_file = _c_extract_path(base, "sponsors") / "from_teams.json"
+        sponsors = json.loads(sponsors_file.read_text(encoding="utf-8"))
+        assert sponsors == ["Jolly Club"]
+
+    def test_extracts_livery_sponsors_field(self, tmp_path: Path) -> None:
+        base = tmp_path / "data" / "wiki"
+        payload = [
+            {
+                "team": "SomeTeam",
+                "racing_series": {
+                    "formula_one": {
+                        "liveries": [
+                            {
+                                "season": [{"year": 2000}],
+                                "main_colours": ["Silver"],
+                                "livery_sponsors": ["ATS Wheels"],
+                            },
+                        ],
+                    },
+                },
+            },
+        ]
+        _write_json(_b_merge_path(base, "teams") / "teams.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        sponsors_file = _c_extract_path(base, "sponsors") / "from_teams.json"
+        assert sponsors_file.exists()
+        sponsors = json.loads(sponsors_file.read_text(encoding="utf-8"))
+        assert "ATS Wheels" in sponsors
+
+    def test_skips_team_without_formula_one(self, tmp_path: Path) -> None:
+        base = tmp_path / "data" / "wiki"
+        payload = [{"team": "Privateer", "racing_series": {}}]
+        _write_json(_b_merge_path(base, "teams") / "teams.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        assert not (_c_extract_path(base, "colors") / "from_teams.json").exists()
+        assert not (_c_extract_path(base, "sponsors") / "from_teams.json").exists()
