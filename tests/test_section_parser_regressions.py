@@ -6,9 +6,6 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.constructors.current_constructors_list import (
-    CurrentConstructorsListScraper,
-)
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
@@ -37,18 +34,27 @@ def _fixture_html(name: str) -> str:
 
 
 def test_current_constructors_section_parser_handles_current_season_alias() -> None:
-    scraper = CurrentConstructorsListScraper(
-        options=ScraperOptions(
-            fetcher=FixtureFetcher(ALIAS_FIXTURES["constructors"]),
-            include_urls=True,
-        ),
+    section_fragment = BeautifulSoup(ALIAS_FIXTURES["constructors"], "html.parser")
+    parser = CurrentConstructorsSectionParser(
+        config=ConstructorsListScraper._CURRENT_CONFIG,
+        section_label="Current constructors",
+        include_urls=True,
+        normalize_empty_values=False,
     )
 
-    data = scraper.get_data()
+    result = parser.parse(section_fragment)
 
-    assert data
-    assert data[0]["constructor"]["text"] == "Ferrari"
-    assert data[0]["constructor"]["url"].endswith("/wiki/Ferrari")
+    assert result.records
+    assert result.records[0]["constructor"] == {
+        "chassis_constructor": {
+            "text": "Ferrari",
+            "url": "https://en.wikipedia.org/wiki/Ferrari",
+        },
+        "engine_constructor": {
+            "text": "Ferrari",
+            "url": "https://en.wikipedia.org/wiki/Ferrari_059/6",
+        },
+    }
 
 
 def test_former_constructors_section_parser_handles_defunct_alias() -> None:
@@ -278,10 +284,12 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
 
     assert call_count == EXPECTED_PARSE_CALLS
     assert result.records
-    assert result.records[0]["constructor"] == "Ferrari"
+    assert result.records[0]["constructor"] == {
+        "chassis_constructor": {"text": "Ferrari"},
+        "engine_constructor": {"text": "Ferrari"},
+    }
     assert list(result.records[0].keys()) == [
         "constructor",
-        "engine",
         "antecedent_teams",
         "based_in",
         "drivers",
