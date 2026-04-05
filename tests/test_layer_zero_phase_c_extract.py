@@ -313,3 +313,57 @@ class TestExtractFromRaces:
         drivers = json.loads(drivers_file.read_text(encoding="utf-8"))
         assert len(drivers) == 1
         assert drivers[0]["text"] == "Jackie Stewart"
+
+
+class TestCrossDomainFromFilesNormalization:
+    def test_from_files_are_sorted_and_deduplicated(self, tmp_path: Path) -> None:
+        base = tmp_path / "data" / "wiki"
+        payload = [
+            {"driver": {"text": "Driver A"}, "nationality": "Brazil"},
+            {"driver": {"text": "Driver B"}, "nationality": "Argentina"},
+            {"driver": {"text": "Driver C"}, "nationality": "Brazil"},
+        ]
+        _write_json(_b_merge_path(base, "drivers") / "drivers.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        countries_file = _c_extract_path(base, "countries") / "from_drivers.json"
+        countries = json.loads(countries_file.read_text(encoding="utf-8"))
+        assert countries == ["Argentina", "Brazil"]
+
+    def test_from_files_are_sorted_and_deduplicated_for_objects(
+        self, tmp_path: Path,
+    ) -> None:
+        base = tmp_path / "data" / "wiki"
+        payload = [
+            {
+                "season": 1971,
+                "red_flag": {
+                    "winner": {"url": "https://example.com/js", "text": "Jackie Stewart"},
+                    "failed_to_make_restart": [
+                        {
+                            "reason": "Crash",
+                            "drivers": [
+                                {"text": "Clay Regazzoni", "url": "https://example.com/cr"},
+                            ],
+                        },
+                        {
+                            "reason": "Crash",
+                            "drivers": [
+                                {"url": "https://example.com/cr", "text": "Clay Regazzoni"},
+                            ],
+                        },
+                    ],
+                },
+            },
+        ]
+        _write_json(_b_merge_path(base, "races") / "races.json", payload)
+
+        extract_layer_zero_phase_c(base)
+
+        drivers_file = _c_extract_path(base, "drivers") / "from_races.json"
+        drivers = json.loads(drivers_file.read_text(encoding="utf-8"))
+        assert drivers == [
+            {"text": "Clay Regazzoni", "url": "https://example.com/cr"},
+            {"text": "Jackie Stewart", "url": "https://example.com/js"},
+        ]
