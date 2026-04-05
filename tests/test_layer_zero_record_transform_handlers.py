@@ -199,6 +199,28 @@ def test_expand_season_records_for_engine_regulations() -> None:
     ]
 
 
+def test_expand_season_records_for_engine_restrictions_uses_year_ranges() -> None:
+    expanded = _expand_season_records(
+        domain="seasons",
+        source_name="f1_engine_restrictions.json",
+        record={
+            "year": [{"year": 2000}, {"year": 2001}],
+            "type_of_engine": [{"text": "V10"}],
+        },
+    )
+
+    assert expanded == [
+        {
+            "season": {"year": 2000},
+            "engine_regulations": {"type_of_engine": [{"text": "V10"}]},
+        },
+        {
+            "season": {"year": 2001},
+            "engine_regulations": {"type_of_engine": [{"text": "V10"}]},
+        },
+    ]
+
+
 def test_expand_season_records_for_points_sources() -> None:
     history = _expand_season_records(
         domain="seasons",
@@ -252,3 +274,29 @@ def test_seasons_domain_postprocess_sorts_by_nested_season_year() -> None:
     )
 
     assert [item["season"]["year"] for item in processed] == [1950, 2000, 2021]
+
+
+def test_seasons_domain_postprocess_merges_duplicate_year_representations() -> None:
+    processed = _post_process_domain_records(
+        "seasons",
+        [
+            {"season": {"text": "1950", "url": "https://example.com/1950"}},
+            {
+                "season": {"year": 1950},
+                "engine_regulations": {"configuration": "V12"},
+            },
+            {"season": {"text": "2000", "url": "https://example.com/2000"}},
+            {"season": {"year": 2000}, "points_scoring_system": {"first": 10}},
+        ],
+    )
+
+    assert processed == [
+        {
+            "season": {"text": "1950", "url": "https://example.com/1950", "year": 1950},
+            "engine_regulations": {"configuration": "V12"},
+        },
+        {
+            "season": {"text": "2000", "url": "https://example.com/2000", "year": 2000},
+            "points_scoring_system": {"first": 10},
+        },
+    ]

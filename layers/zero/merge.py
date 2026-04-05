@@ -573,6 +573,10 @@ def _expand_season_records(
     transformed = dict(record)
     if is_tyre_source and "manufacturers" in transformed:
         transformed["tyre_manufacturers"] = transformed.pop("manufacturers")
+    if source_name == ENGINE_RESTRICTIONS_SOURCE and "seasons" not in transformed:
+        restriction_years = transformed.pop("year", None)
+        if isinstance(restriction_years, list):
+            transformed["seasons"] = restriction_years
 
     seasons = transformed.pop("seasons", None)
     if not isinstance(seasons, list) or not seasons:
@@ -642,15 +646,29 @@ def _season_sort_key(record: object) -> tuple[int, str]:
     if not isinstance(record, dict):
         return (1, "")
 
-    season = record.get("season")
-    if isinstance(season, int):
-        return (0, str(season).zfill(10))
-    if isinstance(season, dict):
-        year = season.get("year")
-        if isinstance(year, int):
-            return (0, str(year).zfill(10))
+    season_year = _season_year(record.get("season"))
+    if season_year is not None:
+        return (0, str(season_year).zfill(10))
 
     return (1, "")
+
+
+def _season_year(season: object) -> int | None:
+    if isinstance(season, int):
+        return season
+    if not isinstance(season, dict):
+        return None
+
+    direct_year = season.get("year")
+    if isinstance(direct_year, int):
+        return direct_year
+
+    text_year = season.get("text")
+    if isinstance(text_year, str):
+        match = re.search(r"\b(\d{4})\b", text_year)
+        if match is not None:
+            return int(match.group(1))
+    return None
 
 
 def _driver_sort_key(record: object) -> str:
@@ -869,6 +887,32 @@ def _sort_seasons_by_year(items: list[object]) -> list[object]:
     return sorted(items, key=_season_sort_key)
 
 
+def _merge_duplicate_seasons(items: list[object]) -> list[object]:
+    merged_records: list[object] = []
+    index_by_year: dict[int, int] = {}
+    for item in items:
+        if not isinstance(item, dict):
+            merged_records.append(item)
+            continue
+        season_year = _season_year(item.get("season"))
+        if season_year is None:
+            merged_records.append(item)
+            continue
+
+        existing_index = index_by_year.get(season_year)
+        if existing_index is None:
+            index_by_year[season_year] = len(merged_records)
+            merged_records.append(item)
+            continue
+
+        existing_record = merged_records[existing_index]
+        if not isinstance(existing_record, dict):
+            continue
+        merged_records[existing_index] = _merge_values(existing_record, item)
+
+    return merged_records
+
+
 DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN: dict[str, tuple[DomainStep, ...]] = {
     "drivers": (
         DomainStep("merge_duplicate_drivers", _merge_duplicate_drivers),
@@ -882,7 +926,10 @@ DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN: dict[str, tuple[DomainStep, ...]] = {
     "engines": (
         DomainStep("sort_engines_by_manufacturer", _sort_engines_by_manufacturer),
     ),
-    "seasons": (DomainStep("sort_seasons_by_year", _sort_seasons_by_year),),
+    "seasons": (
+        DomainStep("merge_duplicate_seasons", _merge_duplicate_seasons),
+        DomainStep("sort_seasons_by_year", _sort_seasons_by_year),
+    ),
 }
 
 for _constructor_domain in CHASSIS_CONSTRUCTOR_DOMAINS:
