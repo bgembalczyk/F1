@@ -53,3 +53,10 @@ class RecordFactoryAdapters:
 
 
 RECORD_FACTORIES = RecordFactoryAdapters()
+
+
+class MappingRecordFactory:
+    """Legacy compatibility factory returning payload mappings unchanged."""
+
+    def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
+        return dict(payload)
