@@ -1,5 +1,9 @@
 [
   {
+    "manufacturer": {
+      "text": "Acer",
+      "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -7,10 +11,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Acer",
-      "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 4.0,
@@ -28,6 +28,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Alfa Romeo",
+      "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -35,10 +39,6 @@
       }
     ],
     "fastest_laps": 20,
-    "manufacturer": {
-      "text": "Alfa Romeo",
-      "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-    },
     "manufacturer_status": "former",
     "podiums": 40,
     "points": 148.0,
@@ -136,6 +136,10 @@
     "wins": 12
   },
   {
+    "manufacturer": {
+      "text": "Alta",
+      "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -143,10 +147,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Alta",
-      "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-    },
     "manufacturer_status": "former",
     "podiums": 1,
     "points": null,
@@ -200,6 +200,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Arrows",
+      "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -207,10 +211,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Arrows",
-      "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 7.0,
@@ -232,6 +232,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Asiatech",
+      "url": "https://en.wikipedia.org/wiki/Asia_Motor_Technologies_France"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -239,10 +243,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Asiatech",
-      "url": "https://en.wikipedia.org/wiki/Asia_Motor_Technologies_France"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 3.0,
@@ -264,6 +264,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Aston Martin",
+      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -271,10 +275,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Aston Martin",
-      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -296,6 +296,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Audi",
+      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
+    },
     "background": "#F2CEE0",
     "engines_built_in": [
       {
@@ -304,10 +308,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Audi",
-      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
-    },
     "manufacturer_status": "current",
     "podiums": 0,
     "points": 2.0,
@@ -325,6 +325,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "ATS",
+      "url": "https://en.wikipedia.org/wiki/Automobili_Turismo_e_Sport"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -332,10 +336,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "ATS",
-      "url": "https://en.wikipedia.org/wiki/Automobili_Turismo_e_Sport"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -361,6 +361,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "BMW",
+      "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+    },
     "engines_built_in": [
       {
         "text": "Germany",
@@ -368,10 +372,6 @@
       }
     ],
     "fastest_laps": 33,
-    "manufacturer": {
-      "text": "BMW",
-      "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-    },
     "manufacturer_status": "former",
     "podiums": 86,
     "points": 1021.0,
@@ -469,6 +469,10 @@
     "wins": 20
   },
   {
+    "manufacturer": {
+      "text": "Borgward",
+      "url": "https://en.wikipedia.org/wiki/Borgward"
+    },
     "engines_built_in": [
       {
         "text": "Germany",
@@ -476,10 +480,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Borgward",
-      "url": "https://en.wikipedia.org/wiki/Borgward"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -505,6 +505,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "BPM",
+      "url": null
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -512,10 +516,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "BPM",
-      "url": null
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -533,6 +533,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Bristol",
+      "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -540,10 +544,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Bristol",
-      "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-    },
     "manufacturer_status": "former",
     "podiums": 1,
     "points": null,
@@ -581,6 +581,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "BRM",
+      "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -588,10 +592,6 @@
       }
     ],
     "fastest_laps": 14,
-    "manufacturer": {
-      "text": "BRM",
-      "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-    },
     "manufacturer_status": "former",
     "podiums": 65,
     "points": 499.0,
@@ -693,6 +693,10 @@
     "wins": 18
   },
   {
+    "manufacturer": {
+      "text": "Bugatti",
+      "url": "https://en.wikipedia.org/wiki/Bugatti"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -700,10 +704,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Bugatti",
-      "url": "https://en.wikipedia.org/wiki/Bugatti"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -721,6 +721,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Butterworth",
+      "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -728,10 +732,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Butterworth",
-      "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -749,6 +749,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "BWT Mercedes",
+      "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -756,10 +760,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "BWT Mercedes",
-      "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-    },
     "manufacturer_status": "former",
     "podiums": 4,
     "points": 268.0,
@@ -781,6 +781,10 @@
     "wins": 1
   },
   {
+    "manufacturer": {
+      "text": "Castellotti",
+      "url": "https://en.wikipedia.org/wiki/Castellotti"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -788,10 +792,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Castellotti",
-      "url": "https://en.wikipedia.org/wiki/Castellotti"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 3.0,
@@ -809,6 +809,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Climax",
+      "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -816,10 +820,6 @@
       }
     ],
     "fastest_laps": 44,
-    "manufacturer": {
-      "text": "Climax",
-      "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-    },
     "manufacturer_status": "former",
     "podiums": 104,
     "points": 684.0,
@@ -885,6 +885,10 @@
     "wins": 40
   },
   {
+    "manufacturer": {
+      "text": "Conrero",
+      "url": "https://en.wikipedia.org/wiki/Virgilio_Conrero"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -892,10 +896,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Conrero",
-      "url": "https://en.wikipedia.org/wiki/Virgilio_Conrero"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -913,6 +913,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Cosworth",
+      "url": "https://en.wikipedia.org/wiki/Cosworth"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -920,10 +924,6 @@
       }
     ],
     "fastest_laps": 1,
-    "manufacturer": {
-      "text": "Cosworth",
-      "url": "https://en.wikipedia.org/wiki/Cosworth"
-    },
     "manufacturer_status": "former",
     "podiums": 2,
     "points": 179.0,
@@ -981,6 +981,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "De Tomaso",
+      "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -988,10 +992,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "De Tomaso",
-      "url": "https://en.wikipedia.org/wiki/De_Tomaso"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -1009,6 +1009,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "EMW",
+      "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
+    },
     "engines_built_in": [
       {
         "text": "East Germany",
@@ -1016,10 +1020,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "EMW",
-      "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -1037,6 +1037,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "ERA",
+      "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -1044,10 +1048,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "ERA",
-      "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -1069,6 +1069,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "European",
+      "url": "https://en.wikipedia.org/wiki/European_(engine)"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -1076,10 +1080,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "European",
-      "url": "https://en.wikipedia.org/wiki/European_(engine)"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -1097,6 +1097,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Ferrari",
+      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+    },
     "background": "#F2CEE0",
     "engines_built_in": [
       {
@@ -1105,10 +1109,6 @@
       }
     ],
     "fastest_laps": 274,
-    "manufacturer": {
-      "text": "Ferrari",
-      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-    },
     "manufacturer_status": "current",
     "podiums": 844,
     "points": 11984.0,
@@ -1430,6 +1430,10 @@
     "wins": 249
   },
   {
+    "manufacturer": {
+      "text": "Fiat",
+      "url": "https://en.wikipedia.org/wiki/Fiat"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -1437,10 +1441,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Fiat",
-      "url": "https://en.wikipedia.org/wiki/Fiat"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -1458,6 +1458,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Fondmetal",
+      "url": "https://en.wikipedia.org/wiki/Fondmetal"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -1465,10 +1469,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Fondmetal",
-      "url": "https://en.wikipedia.org/wiki/Fondmetal"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -1486,6 +1486,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Ford",
+      "url": "https://en.wikipedia.org/wiki/Ford_in_Formula_One"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -1497,10 +1501,6 @@
       }
     ],
     "fastest_laps": 159,
-    "manufacturer": {
-      "text": "Ford",
-      "url": "https://en.wikipedia.org/wiki/Ford_in_Formula_One"
-    },
     "manufacturer_status": "former",
     "podiums": 533,
     "points": 4286.5,
@@ -1674,6 +1674,10 @@
     "wins": 176
   },
   {
+    "manufacturer": {
+      "text": "Gordini",
+      "url": "https://en.wikipedia.org/wiki/Gordini"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -1681,10 +1685,6 @@
       }
     ],
     "fastest_laps": 1,
-    "manufacturer": {
-      "text": "Gordini",
-      "url": "https://en.wikipedia.org/wiki/Gordini"
-    },
     "manufacturer_status": "former",
     "podiums": 2,
     "points": null,
@@ -1726,6 +1726,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Hart",
+      "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -1733,10 +1737,6 @@
       }
     ],
     "fastest_laps": 2,
-    "manufacturer": {
-      "text": "Hart",
-      "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
-    },
     "manufacturer_status": "former",
     "podiums": 5,
     "points": 63.0,
@@ -1794,6 +1794,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Honda",
+      "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+    },
     "background": "#F2CEE0",
     "engines_built_in": [
       {
@@ -1802,10 +1806,6 @@
       }
     ],
     "fastest_laps": 76,
-    "manufacturer": {
-      "text": "Honda",
-      "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-    },
     "manufacturer_status": "current",
     "podiums": 223,
     "points": 3409.0,
@@ -1947,6 +1947,10 @@
     "wins": 89
   },
   {
+    "manufacturer": {
+      "text": "Honda RBPT",
+      "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
+    },
     "engines_built_in": [
       {
         "text": "Japan",
@@ -1954,10 +1958,6 @@
       }
     ],
     "fastest_laps": 20,
-    "manufacturer": {
-      "text": "Honda RBPT",
-      "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
-    },
     "manufacturer_status": "former",
     "podiums": 64,
     "points": 2063.0,
@@ -1983,6 +1983,10 @@
     "wins": 38
   },
   {
+    "manufacturer": {
+      "text": "Ilmor",
+      "url": "https://en.wikipedia.org/wiki/Ilmor"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -1990,10 +1994,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Ilmor",
-      "url": "https://en.wikipedia.org/wiki/Ilmor"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 12.0,
@@ -2019,34 +2019,10 @@
     "wins": 0
   },
   {
-    "engines_built_in": [
-      {
-        "text": "United Kingdom",
-        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-      }
-    ],
-    "fastest_laps": 0,
     "manufacturer": {
       "text": "Jaguar",
       "url": "https://en.wikipedia.org/wiki/Jaguar_Cars"
     },
-    "manufacturer_status": "former",
-    "podiums": 0,
-    "points": null,
-    "poles": 0,
-    "races_entered": 1,
-    "races_started": 1,
-    "seasons": [
-      {
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
-        "year": 1950
-      }
-    ],
-    "wcc": null,
-    "wdc": 0,
-    "wins": 0
-  },
-  {
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -2054,10 +2030,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "JAP",
-      "url": "https://en.wikipedia.org/wiki/JA_Prestwich_Industries"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -2075,6 +2047,38 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "JAP",
+      "url": "https://en.wikipedia.org/wiki/JA_Prestwich_Industries"
+    },
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "fastest_laps": 0,
+    "manufacturer_status": "former",
+    "podiums": 0,
+    "points": null,
+    "poles": 0,
+    "races_entered": 1,
+    "races_started": 1,
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
+        "year": 1950
+      }
+    ],
+    "wcc": null,
+    "wdc": 0,
+    "wins": 0
+  },
+  {
+    "manufacturer": {
+      "text": "Judd",
+      "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -2082,10 +2086,6 @@
       }
     ],
     "fastest_laps": 3,
-    "manufacturer": {
-      "text": "Judd",
-      "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
-    },
     "manufacturer_status": "former",
     "podiums": 8,
     "points": 86.0,
@@ -2119,6 +2119,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Küchen",
+      "url": null
+    },
     "engines_built_in": [
       {
         "text": "Germany",
@@ -2126,10 +2130,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Küchen",
-      "url": null
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -2147,6 +2147,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Lamborghini",
+      "url": "https://en.wikipedia.org/wiki/Lamborghini"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -2154,10 +2158,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Lamborghini",
-      "url": "https://en.wikipedia.org/wiki/Lamborghini"
-    },
     "manufacturer_status": "former",
     "podiums": 1,
     "points": 20.0,
@@ -2191,6 +2191,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Lancia",
+      "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -2198,10 +2202,6 @@
       }
     ],
     "fastest_laps": 1,
-    "manufacturer": {
-      "text": "Lancia",
-      "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
-    },
     "manufacturer_status": "former",
     "podiums": 1,
     "points": null,
@@ -2227,6 +2227,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Lea-Francis",
+      "url": "https://en.wikipedia.org/wiki/Lea-Francis"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -2234,10 +2238,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Lea-Francis",
-      "url": "https://en.wikipedia.org/wiki/Lea-Francis"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -2263,6 +2263,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Life",
+      "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -2270,10 +2274,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Life",
-      "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -2291,6 +2291,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Maserati",
+      "url": "https://en.wikipedia.org/wiki/Maserati_in_Formula_One"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -2298,10 +2302,6 @@
       }
     ],
     "fastest_laps": 17,
-    "manufacturer": {
-      "text": "Maserati",
-      "url": "https://en.wikipedia.org/wiki/Maserati_in_Formula_One"
-    },
     "manufacturer_status": "former",
     "podiums": 44,
     "points": 72.0,
@@ -2387,6 +2387,10 @@
     "wins": 11
   },
   {
+    "manufacturer": {
+      "text": "Matra",
+      "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -2394,10 +2398,6 @@
       }
     ],
     "fastest_laps": 5,
-    "manufacturer": {
-      "text": "Matra",
-      "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
-    },
     "manufacturer_status": "former",
     "podiums": 24,
     "points": 173.0,
@@ -2451,6 +2451,10 @@
     "wins": 3
   },
   {
+    "manufacturer": {
+      "text": "Mecachrome",
+      "url": "https://en.wikipedia.org/wiki/Mecachrome"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -2458,10 +2462,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Mecachrome",
-      "url": "https://en.wikipedia.org/wiki/Mecachrome"
-    },
     "manufacturer_status": "former",
     "podiums": 3,
     "points": 38.0,
@@ -2479,6 +2479,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Megatron",
+      "url": "https://en.wikipedia.org/wiki/Megatron_(engine)"
+    },
     "engines_built_in": [
       {
         "text": "Switzerland",
@@ -2486,10 +2490,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Megatron",
-      "url": "https://en.wikipedia.org/wiki/Megatron_(engine)"
-    },
     "manufacturer_status": "former",
     "podiums": 1,
     "points": 35.0,
@@ -2511,6 +2511,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Mercedes",
+      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+    },
     "background": "#F2CEE0",
     "engines_built_in": [
       {
@@ -2519,10 +2523,6 @@
       }
     ],
     "fastest_laps": 239,
-    "manufacturer": {
-      "text": "Mercedes",
-      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-    },
     "manufacturer_status": "current",
     "podiums": 662,
     "points": 16464.5,
@@ -2676,6 +2676,10 @@
     "wins": 239
   },
   {
+    "manufacturer": {
+      "text": "Motori Moderni",
+      "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -2683,10 +2687,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Motori Moderni",
-      "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -2712,6 +2712,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Mugen-Honda",
+      "url": "https://en.wikipedia.org/wiki/Mugen_Honda"
+    },
     "engines_built_in": [
       {
         "text": "Japan",
@@ -2719,10 +2723,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Mugen-Honda",
-      "url": "https://en.wikipedia.org/wiki/Mugen_Honda"
-    },
     "manufacturer_status": "former",
     "podiums": 16,
     "points": 182.0,
@@ -2772,6 +2772,10 @@
     "wins": 4
   },
   {
+    "manufacturer": {
+      "text": "OSCA",
+      "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -2779,10 +2783,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "OSCA",
-      "url": "https://en.wikipedia.org/wiki/O.S.C.A."
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -2824,6 +2824,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Osella",
+      "url": "https://en.wikipedia.org/wiki/Osella"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -2831,10 +2835,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Osella",
-      "url": "https://en.wikipedia.org/wiki/Osella"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -2852,6 +2852,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Petronas",
+      "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -2859,10 +2863,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Petronas",
-      "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
-    },
     "manufacturer_status": "former",
     "podiums": 4,
     "points": 142.0,
@@ -2912,6 +2912,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Peugeot",
+      "url": "https://en.wikipedia.org/wiki/Peugeot"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -2919,10 +2923,6 @@
       }
     ],
     "fastest_laps": 1,
-    "manufacturer": {
-      "text": "Peugeot",
-      "url": "https://en.wikipedia.org/wiki/Peugeot"
-    },
     "manufacturer_status": "former",
     "podiums": 14,
     "points": 128.0,
@@ -2964,6 +2964,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Playlife",
+      "url": "https://en.wikipedia.org/wiki/Playlife"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -2971,10 +2975,6 @@
       }
     ],
     "fastest_laps": 1,
-    "manufacturer": {
-      "text": "Playlife",
-      "url": "https://en.wikipedia.org/wiki/Playlife"
-    },
     "manufacturer_status": "former",
     "podiums": 6,
     "points": 69.0,
@@ -3000,6 +3000,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Porsche",
+      "url": "https://en.wikipedia.org/wiki/Porsche_in_Formula_One"
+    },
     "engines_built_in": [
       {
         "text": "Germany",
@@ -3007,10 +3011,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Porsche",
-      "url": "https://en.wikipedia.org/wiki/Porsche_in_Formula_One"
-    },
     "manufacturer_status": "former",
     "podiums": 5,
     "points": 48.0,
@@ -3056,6 +3056,10 @@
     "wins": 1
   },
   {
+    "manufacturer": {
+      "text": "Pratt & Whitney",
+      "url": "https://en.wikipedia.org/wiki/Pratt_%26_Whitney"
+    },
     "engines_built_in": [
       {
         "text": "United States",
@@ -3063,10 +3067,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Pratt & Whitney",
-      "url": "https://en.wikipedia.org/wiki/Pratt_%26_Whitney"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -3084,6 +3084,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Red Bull Powertrains",
+      "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+    },
     "engines_built_in": [
       {
         "text": "Japan",
@@ -3091,10 +3095,6 @@
       }
     ],
     "fastest_laps": 8,
-    "manufacturer": {
-      "text": "Red Bull Powertrains",
-      "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
-    },
     "manufacturer_status": "former",
     "podiums": 28,
     "points": 794.0,
@@ -3112,6 +3112,10 @@
     "wins": 17
   },
   {
+    "manufacturer": {
+      "text": "Red Bull Ford",
+      "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+    },
     "background": "#F2CEE0",
     "engines_built_in": [
       {
@@ -3120,10 +3124,6 @@
       }
     ],
     "fastest_laps": 1,
-    "manufacturer": {
-      "text": "Red Bull Ford",
-      "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
-    },
     "manufacturer_status": "current",
     "podiums": 0,
     "points": 12.0,
@@ -3141,6 +3141,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Renault",
+      "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -3148,10 +3152,6 @@
       }
     ],
     "fastest_laps": 177,
-    "manufacturer": {
-      "text": "Renault",
-      "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-    },
     "manufacturer_status": "former",
     "podiums": 465,
     "points": 8228.5,
@@ -3341,6 +3341,10 @@
     "wins": 169
   },
   {
+    "manufacturer": {
+      "text": "Repco",
+      "url": "https://en.wikipedia.org/wiki/Repco"
+    },
     "engines_built_in": [
       {
         "text": "Australia",
@@ -3348,10 +3352,6 @@
       }
     ],
     "fastest_laps": 4,
-    "manufacturer": {
-      "text": "Repco",
-      "url": "https://en.wikipedia.org/wiki/Repco"
-    },
     "manufacturer_status": "former",
     "podiums": 25,
     "points": 126.0,
@@ -3381,6 +3381,10 @@
     "wins": 8
   },
   {
+    "manufacturer": {
+      "text": "Sauber",
+      "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -3388,10 +3392,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Sauber",
-      "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 12.0,
@@ -3409,6 +3409,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Scarab",
+      "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
+    },
     "engines_built_in": [
       {
         "text": "United States",
@@ -3416,10 +3420,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Scarab",
-      "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -3437,6 +3437,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Serenissima",
+      "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -3444,10 +3448,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Serenissima",
-      "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 1.0,
@@ -3465,6 +3465,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Subaru",
+      "url": "https://en.wikipedia.org/wiki/Subaru"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -3472,10 +3476,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Subaru",
-      "url": "https://en.wikipedia.org/wiki/Subaru"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 0.0,
@@ -3493,6 +3493,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Supertec",
+      "url": "https://en.wikipedia.org/wiki/Supertec"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -3500,10 +3504,6 @@
       }
     ],
     "fastest_laps": 1,
-    "manufacturer": {
-      "text": "Supertec",
-      "url": "https://en.wikipedia.org/wiki/Supertec"
-    },
     "manufacturer_status": "former",
     "podiums": 3,
     "points": 42.0,
@@ -3525,6 +3525,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "TAG",
+      "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+    },
     "engines_built_in": [
       {
         "text": "Germany",
@@ -3532,10 +3536,6 @@
       }
     ],
     "fastest_laps": 18,
-    "manufacturer": {
-      "text": "TAG",
-      "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
-    },
     "manufacturer_status": "former",
     "podiums": 54,
     "points": 405.5,
@@ -3569,6 +3569,10 @@
     "wins": 25
   },
   {
+    "manufacturer": {
+      "text": "TAG Heuer",
+      "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -3576,10 +3580,6 @@
       }
     ],
     "fastest_laps": 13,
-    "manufacturer": {
-      "text": "TAG Heuer",
-      "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-    },
     "manufacturer_status": "former",
     "podiums": 42,
     "points": 1255.0,
@@ -3605,6 +3605,10 @@
     "wins": 9
   },
   {
+    "manufacturer": {
+      "text": "Talbot",
+      "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -3612,10 +3616,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Talbot",
-      "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-    },
     "manufacturer_status": "former",
     "podiums": 2,
     "points": null,
@@ -3637,6 +3637,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Tecno",
+      "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
+    },
     "engines_built_in": [
       {
         "text": "Italy",
@@ -3644,10 +3648,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Tecno",
-      "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 1.0,
@@ -3669,6 +3669,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Toro Rosso",
+      "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
+    },
     "engines_built_in": [
       {
         "text": "France",
@@ -3676,10 +3680,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Toro Rosso",
-      "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 53.0,
@@ -3697,6 +3697,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Toyota",
+      "url": "https://en.wikipedia.org/wiki/Toyota_Racing_(Formula_One_team)"
+    },
     "engines_built_in": [
       {
         "text": "Germany",
@@ -3704,10 +3708,6 @@
       }
     ],
     "fastest_laps": 4,
-    "manufacturer": {
-      "text": "Toyota",
-      "url": "https://en.wikipedia.org/wiki/Toyota_Racing_(Formula_One_team)"
-    },
     "manufacturer_status": "former",
     "podiums": 17,
     "points": 384.0,
@@ -3753,6 +3753,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Vanwall",
+      "url": "https://en.wikipedia.org/wiki/Vanwall"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -3760,10 +3764,6 @@
       }
     ],
     "fastest_laps": 6,
-    "manufacturer": {
-      "text": "Vanwall",
-      "url": "https://en.wikipedia.org/wiki/Vanwall"
-    },
     "manufacturer_status": "former",
     "podiums": 13,
     "points": 57.0,
@@ -3805,6 +3805,10 @@
     "wins": 9
   },
   {
+    "manufacturer": {
+      "text": "Veritas",
+      "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
+    },
     "engines_built_in": [
       {
         "text": "Germany",
@@ -3812,10 +3816,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Veritas",
-      "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": null,
@@ -3841,6 +3841,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Weslake",
+      "url": "https://en.wikipedia.org/wiki/Weslake"
+    },
     "engines_built_in": [
       {
         "text": "United Kingdom",
@@ -3848,10 +3852,6 @@
       }
     ],
     "fastest_laps": 2,
-    "manufacturer": {
-      "text": "Weslake",
-      "url": "https://en.wikipedia.org/wiki/Weslake"
-    },
     "manufacturer_status": "former",
     "podiums": 2,
     "points": 13.0,
@@ -3877,6 +3877,10 @@
     "wins": 1
   },
   {
+    "manufacturer": {
+      "text": "Yamaha",
+      "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
+    },
     "engines_built_in": [
       {
         "text": "Japan",
@@ -3884,10 +3888,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Yamaha",
-      "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
-    },
     "manufacturer_status": "former",
     "podiums": 2,
     "points": 36.0,
@@ -3933,6 +3933,10 @@
     "wins": 0
   },
   {
+    "manufacturer": {
+      "text": "Zakspeed",
+      "url": "https://en.wikipedia.org/wiki/Zakspeed"
+    },
     "engines_built_in": [
       {
         "text": "Germany",
@@ -3940,10 +3944,6 @@
       }
     ],
     "fastest_laps": 0,
-    "manufacturer": {
-      "text": "Zakspeed",
-      "url": "https://en.wikipedia.org/wiki/Zakspeed"
-    },
     "manufacturer_status": "former",
     "podiums": 0,
     "points": 2.0,
