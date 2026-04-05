@@ -5,7 +5,7 @@ from scrapers.engines.engine_manufacturers_list import EngineManufacturersListSc
 def test_indianapolis_record_normalization_embeds_url_into_manufacturer_link() -> None:
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
 
-    normalized = scraper._normalize_indianapolis_record(
+    normalized = scraper.normalize_indianapolis_record(
         {
             "manufacturer": "Cadillac",
             "manufacturer_url": "/wiki/Cadillac_in_Formula_One",
@@ -22,10 +22,11 @@ def test_indianapolis_record_normalization_embeds_url_into_manufacturer_link() -
     assert "manufacturer_url" not in normalized
 
 
-def test_indianapolis_record_normalization_omits_url_when_include_urls_disabled() -> None:
+def test_indianapolis_record_normalization_omits_url_when_include_urls_disabled(
+) -> None:
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=False))
 
-    normalized = scraper._normalize_indianapolis_record(
+    normalized = scraper.normalize_indianapolis_record(
         {
             "manufacturer": "Cadillac",
             "manufacturer_url": "/wiki/Cadillac_in_Formula_One",

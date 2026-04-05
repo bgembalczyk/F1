@@ -36,7 +36,7 @@ class _FakeSingleScraper:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
-    def fetch_by_url(self, url: str) -> list[dict[str, str]]:
+    def extract_by_url(self, url: str) -> list[dict[str, str]]:
         return [{"url": url}]
 
 
@@ -53,7 +53,7 @@ class _FailingSingleScraper:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
-    def fetch_by_url(self, _url: str) -> list[dict[str, str]]:
+    def extract_by_url(self, _url: str) -> list[dict[str, str]]:
         msg = "programmer bug in single scraper"
         raise TypeError(msg)
 
@@ -70,7 +70,7 @@ class _RecoverableFailingSingleScraper:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
-    def fetch_by_url(self, _url: str) -> list[dict[str, str]]:
+    def extract_by_url(self, _url: str) -> list[dict[str, str]]:
         msg = "temporary offline"
         raise RequestError(msg)
 

@@ -291,7 +291,7 @@ def test_single_circuit_scraper_wraps_network_errors():
     )
 
     with pytest.raises(ScraperNetworkError):
-        scraper.fetch_by_url("https://example.com/wiki/Test")
+        scraper.extract_by_url("https://example.com/wiki/Test")
 
 
 def test_error_report_contains_catalog_code_fields() -> None:
@@ -345,7 +345,7 @@ def test_single_circuit_scraper_soft_skips_not_found():
         options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
-    assert scraper.fetch_by_url("https://example.com/wiki/Test") == []
+    assert scraper.extract_by_url("https://example.com/wiki/Test") == []
 
 
 def test_infobox_scraper_soft_skips_not_found():
@@ -366,7 +366,7 @@ def test_single_grand_prix_scraper_soft_skips_missing_section(monkeypatch):
         options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
-    result = scraper.fetch_by_url("https://example.com/wiki/Test")
+    result = scraper.extract_by_url("https://example.com/wiki/Test")
 
     assert result == [{"url": scraper.url, "by_year": None}]
 

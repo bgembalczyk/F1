@@ -29,4 +29,4 @@ def test_complete_extractor_children_implement_base_protocols(extractor_cls) -> 
         for scraper_cls in list_scraper_classes
     )
     assert single_scraper_cls is not None
-    assert callable(getattr(single_scraper_cls, "fetch_by_url", None))
+    assert callable(getattr(single_scraper_cls, "extract_by_url", None))

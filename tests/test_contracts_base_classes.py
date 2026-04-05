@@ -43,7 +43,7 @@ def test_composite_data_extractor_does_not_inherit_abc_scraper() -> None:
     assert not issubclass(CompositeDataExtractor, ABCScraper)
 
 
-def test_single_engine_manufacturer_has_fetch_by_url_method() -> None:
-    """SingleEngineManufacturerScraper keeps fetch_by_url contract."""
-    assert hasattr(SingleEngineManufacturerScraper, "fetch_by_url")
-    assert callable(SingleEngineManufacturerScraper.fetch_by_url)
+def test_single_engine_manufacturer_has_extract_by_url_method() -> None:
+    """SingleEngineManufacturerScraper keeps extract_by_url contract."""
+    assert hasattr(SingleEngineManufacturerScraper, "extract_by_url")
+    assert callable(SingleEngineManufacturerScraper.extract_by_url)

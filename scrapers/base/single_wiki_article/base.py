@@ -1,4 +1,3 @@
-import warnings
 from abc import ABC
 from abc import abstractmethod
 from typing import Any
@@ -86,15 +85,6 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
             self.url = url
             self._section_fragment = None
         return super().fetch()
-
-    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
-        warnings.warn(
-            "SingleWikiArticleScraperBase.fetch_by_url() is deprecated; use "
-            "extract_by_url() instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.extract_by_url(url)
 
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not self._should_parse_article(soup):
