@@ -238,7 +238,7 @@ def _validate_adr_reference_for_major_changes(
         threshold,
     ):
         return []
-    if DEFAULT_ADR_ENFORCEMENT_POLICY.has_adr_reference(adr_reference_text):
+    if DEFAULT_ADR_ENFORCEMENT_POLICY.adr_pattern.search(adr_reference_text):
         return []
     return [
         (

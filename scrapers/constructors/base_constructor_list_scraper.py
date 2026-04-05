@@ -14,6 +14,7 @@ from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
@@ -65,10 +66,8 @@ class BaseConstructorListScraper(
         )
 
     @staticmethod
-    def build_licensed_in_column_spec():
+    def build_licensed_in_column_spec() -> ColumnSpec:
         """Build the licensed_in column definition."""
-        from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
-
         return ColumnSpec(
             CONSTRUCTOR_LICENSED_IN_HEADER,
             "licensed_in",
