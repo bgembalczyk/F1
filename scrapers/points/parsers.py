@@ -5,7 +5,10 @@ from typing import Any
 
 from models.services import parse_seasons
 from scrapers.base.helpers.parsing import parse_int_from_text
+from scrapers.points.constants import HISTORICAL_POSITIONS
+from scrapers.points.constants import POINTS_NOTES_HEADER
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
+from scrapers.points.constants import ROLE_PATTERN
 from scrapers.points.constants import SHORTENED_RACE_EXPECTED_HEADERS
 from scrapers.points.constants import SPRINT_POSITIONS
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
@@ -13,6 +16,11 @@ from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
+
+# Position keys for the points history table (excluding "1st" which is handled separately)
+_HISTORY_POSITION_KEYS_WITH_FASTEST_LAP: frozenset[str] = frozenset(
+    pos.lower() for pos in HISTORICAL_POSITIONS[1:]
+) | {"fastest_lap"}
 
 
 class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
@@ -57,14 +65,55 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
         )
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        column_map = {header: header.lower().replace(" ", "_") for header in headers}
+        column_map: dict[str, str] = {}
         for header in headers:
             normalized = self._normalize_header(header)
             if normalized in self._candidate_headers("Towards WDC"):
-                column_map[header] = "towards_wdc"
+                column_map[header] = "drivers_championship"
             elif normalized in self._candidate_headers("Towards WCC"):
-                column_map[header] = "towards_wcc"
+                column_map[header] = "constructors_championship"
+            elif normalized == self._normalize_header(POINTS_NOTES_HEADER):
+                pass  # skip the Notes column
+            else:
+                column_map[header] = header.lower().replace(" ", "_")
         return column_map
+
+    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().parse(table_data)
+        if result is None:
+            return None
+        result["domain_rows"] = [
+            self._apply_schema_transforms(row) for row in result["domain_rows"]
+        ]
+        return result
+
+    @staticmethod
+    def _apply_schema_transforms(row: dict[str, Any]) -> dict[str, Any]:
+        transformed: dict[str, Any] = {}
+        for key, value in row.items():
+            text = value if isinstance(value, str) else ""
+            if key == "seasons":
+                transformed[key] = [s.to_dict() for s in parse_seasons(text)]
+            elif key == "1st":
+                int_val = parse_int_from_text(text)
+                if int_val is None:
+                    transformed[key] = None
+                else:
+                    role_match = ROLE_PATTERN.search(text)
+                    if role_match:
+                        role = (
+                            "driver"
+                            if role_match.group(1).lower() == "d"
+                            else "constructor"
+                        )
+                        transformed[key] = {"value": int_val, "role": role}
+                    else:
+                        transformed[key] = int_val
+            elif key in _HISTORY_POSITION_KEYS_WITH_FASTEST_LAP:
+                transformed[key] = parse_int_from_text(text)
+            else:
+                transformed[key] = value
+        return transformed
 
 
 _SPRINT_DISQUALIFYING_HEADERS: frozenset[str] = frozenset(

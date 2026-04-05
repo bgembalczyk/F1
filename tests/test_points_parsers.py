@@ -49,21 +49,25 @@ def test_points_history_parser_accepts_championship_alias_headers() -> None:
     assert parsed["table_type"] == "points_scoring_systems_history"
     assert parsed["domain_rows"] == [
         {
-            "seasons": "1950",
-            "1st": "8",
-            "2nd": "6",
-            "3rd": "4",
-            "4th": "3",
-            "5th": "2",
-            "6th": "0",
-            "7th": "0",
-            "8th": "0",
-            "9th": "0",
-            "10th": "0",
-            "fastest_lap": "1",
-            "towards_wdc": "Yes",
-            "towards_wcc": "No",
-            "notes": "-",
+            "seasons": [
+                {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
+                }
+            ],
+            "1st": 8,
+            "2nd": 6,
+            "3rd": 4,
+            "4th": 3,
+            "5th": 2,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0,
+            "10th": 0,
+            "fastest_lap": 1,
+            "drivers_championship": "Yes",
+            "constructors_championship": "No",
         },
     ]
 

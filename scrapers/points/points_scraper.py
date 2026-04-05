@@ -7,6 +7,9 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
+from scrapers.base.transformers.points_scoring_systems_history import (
+    PointsScoringSystemsHistoryTransformer,
+)
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.config_factory import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
 from scrapers.points.parsers import PointsScoringSystemsSectionParser
@@ -52,7 +55,10 @@ class PointsScraper(BasePointsScraper):
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         body_content = BodyContentParser.find_body_content(soup)
         parsed = self.body_content_parser.parse(body_content) if body_content else {}
-        history_records = self.section_parser.collect_rows(parsed)
+        raw_history_records = self.section_parser.collect_rows(parsed)
+        history_records = PointsScoringSystemsHistoryTransformer().transform(
+            raw_history_records
+        )
         shortened_records = self.shortened_subsection_parser.collect_rows(parsed)
         sprint_records = self.sprint_subsection_parser.collect_rows(parsed)
         if not sprint_records:
