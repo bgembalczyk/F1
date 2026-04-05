@@ -362,6 +362,85 @@ class TestRedFlaggedRacesScraperRobustness:
         }
         assert record["incident"] == "Mist."
 
+    def test_multi_row_race_produces_failed_to_make_restart_list(self):
+        """Test that multi-row race entries (rowspan) produce a grouped failed_to_make_restart list."""
+        html = """
+        <html><body>
+        <div id="bodyContent">
+        <div id="mw-content-text" class="mw-body-content">
+        <div class="mw-content-ltr mw-parser-output">
+          <h3 class="mw-heading3"><span class="mw-headline" id="World_Championship_races">World Championship races</span></h3>
+          <table class="wikitable">
+            <tr>
+              <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
+              <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
+              <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
+            </tr>
+            <tr>
+              <th>Drivers</th><th>Reason</th>
+            </tr>
+            <tr>
+              <th rowspan="4"><a href="/wiki/1973_Formula_One_season">1973</a></th>
+              <td rowspan="4" align="center"><a href="/wiki/1973_British_Grand_Prix">British</a></td>
+              <td rowspan="4" align="center">2</td>
+              <td rowspan="4" align="center" style="background:#cfc">Y</td>
+              <td rowspan="4"><a href="/wiki/Peter_Revson">Peter Revson</a></td>
+              <td rowspan="4">Crash involving <a href="/wiki/Jody_Scheckter">Jody Scheckter</a></td>
+              <td><a href="/wiki/Jody_Scheckter">Jody Scheckter</a> <br> <a href="/wiki/Roger_Williamson">Roger Williamson</a></td>
+              <td>Crash</td>
+              <td rowspan="4">[19]</td>
+            </tr>
+            <tr>
+              <td><a href="/wiki/Andrea_de_Adamich">Andrea de Adamich</a></td>
+              <td>Crash, injured</td>
+            </tr>
+            <tr>
+              <td><a href="/wiki/David_Purley">David Purley</a></td>
+              <td>Spun off</td>
+            </tr>
+            <tr>
+              <td><a href="/wiki/Graham_McRae">Graham McRae</a></td>
+              <td>Throttle</td>
+            </tr>
+          </table>
+        </div>
+        </div>
+        </div>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        scraper = RedFlaggedRacesScraper(export_scope="world_championship")
+        records = scraper.parse_soup(soup)
+
+        assert len(records) == 1
+        record = records[0]
+
+        assert record["season"] == 1973
+        assert record["grand_prix"]["text"] == "British"
+        assert record["lap"] == 2
+        assert record["restart_status"]["code"] == "Y"
+        assert record["background"] == "#cfc"
+        assert record["winner"]["text"] == "Peter Revson"
+
+        ftmr = record["failed_to_make_restart"]
+        assert isinstance(ftmr, list)
+        assert len(ftmr) == 4
+
+        assert ftmr[0]["reason"] == "Crash"
+        assert len(ftmr[0]["drivers"]) == 2
+        assert ftmr[0]["drivers"][0]["text"] == "Jody Scheckter"
+        assert ftmr[0]["drivers"][1]["text"] == "Roger Williamson"
+
+        assert ftmr[1]["reason"] == "Crash, injured"
+        assert len(ftmr[1]["drivers"]) == 1
+        assert ftmr[1]["drivers"][0]["text"] == "Andrea de Adamich"
+
+        assert ftmr[2]["reason"] == "Spun off"
+        assert ftmr[2]["drivers"][0]["text"] == "David Purley"
+
+        assert ftmr[3]["reason"] == "Throttle"
+        assert ftmr[3]["drivers"][0]["text"] == "Graham McRae"
+
 
 if __name__ == "__main__":
     # Run tests manually for verification
