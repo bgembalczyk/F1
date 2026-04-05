@@ -14,10 +14,8 @@ from scrapers.engines import EngineManufacturersListScraper
 from scrapers.engines import EngineRegulationScraper
 from scrapers.engines import EngineRestrictionsScraper
 from scrapers.grands_prix import GrandsPrixListScraper
-from scrapers.races.red_flagged_races_scraper.combined import (
-    RedFlaggedRacesScraper,
-)
 from scrapers.points import PointsScraper
+from scrapers.races.red_flagged_races_scraper.combined import RedFlaggedRacesScraper
 from scrapers.seasons import SeasonsListScraper
 from scrapers.sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersScraper

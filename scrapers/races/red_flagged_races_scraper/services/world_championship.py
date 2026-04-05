@@ -4,9 +4,7 @@ from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.races.red_flagged_races_scraper.base import (
-    RedFlaggedRacesBaseScraper,
-)
+from scrapers.races.red_flagged_races_scraper.base import RedFlaggedRacesBaseScraper
 
 
 class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):

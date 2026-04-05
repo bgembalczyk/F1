@@ -4,9 +4,7 @@ from scrapers.races.red_flagged_races_scraper.combined import (
 from scrapers.races.red_flagged_races_scraper.combined import (
     NonChampionshipsRacesTableParser,
 )
-from scrapers.races.red_flagged_races_scraper.combined import (
-    RedFlaggedRacesScraper,
-)
+from scrapers.races.red_flagged_races_scraper.combined import RedFlaggedRacesScraper
 from scrapers.races.red_flagged_races_scraper.combined import (
     RedFlaggedRacesSectionParser,
 )
