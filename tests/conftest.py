@@ -145,5 +145,5 @@ def pytest_ignore_collect(
     ):
         return True
 
-    marker = _marker_for_path(str(collection_path))
+    marker = marker_for_path(str(collection_path))
     return marker not in selected_markers
