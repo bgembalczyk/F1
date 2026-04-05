@@ -222,7 +222,9 @@ class CurrentConstructorsSectionParser(ConstructorsSectionParser):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         parsed = super().parse(section_fragment)
         sorted_records = [
-            self._sort_current_constructor_record_keys(record)
+            self._sort_current_constructor_record_keys(
+                self._normalize_constructor_fields(record),
+            )
             for record in parsed.records
         ]
         return build_section_parse_result(
@@ -240,8 +242,49 @@ class CurrentConstructorsSectionParser(ConstructorsSectionParser):
         )
 
     @staticmethod
+    def _normalize_constructor_fields(record: dict[str, Any]) -> dict[str, Any]:
+        normalized = dict(record)
+        if "constructor" not in normalized:
+            return normalized
+
+        chassis = CurrentConstructorsSectionParser._normalize_constructor_link(
+            normalized.get("constructor"),
+        )
+        engine = CurrentConstructorsSectionParser._normalize_constructor_link(
+            normalized.get("engine"),
+        )
+        if engine is None:
+            engine = chassis
+
+        normalized["constructor"] = {
+            "chassis_constructor": chassis,
+            "engine_constructor": engine,
+        }
+        normalized.pop("engine", None)
+        return normalized
+
+    @staticmethod
+    def _normalize_constructor_link(value: Any) -> dict[str, Any] | None:
+        if isinstance(value, list):
+            if not value:
+                return None
+            value = value[0]
+        if isinstance(value, dict):
+            text = value.get("text")
+            url = value.get("url")
+            normalized: dict[str, Any] = {}
+            if text is not None:
+                normalized["text"] = text
+            if url is not None:
+                normalized["url"] = url
+            return normalized or None
+        if isinstance(value, str):
+            return {"text": value}
+        return None
+
+    @staticmethod
     def _sort_current_constructor_record_keys(record: dict[str, Any]) -> dict[str, Any]:
-        pinned_keys = ("constructor", "engine")
+        pinned_keys = ("constructor",)
         ordered: dict[str, Any] = {}
 
         for key in pinned_keys:
