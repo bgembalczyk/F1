@@ -65,10 +65,22 @@ class FatalitiesTableParser(WikiTableBaseParser):
         return self._required_headers.issubset(set(headers))
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
+        mapped_headers = [
+            header for header in headers if header in self._column_mapping
+        ]
+        driver_headers = [
+            header
+            for header in mapped_headers
+            if self._column_mapping[header] == "driver"
+        ]
+        other_headers = [
+            header
+            for header in mapped_headers
+            if self._column_mapping[header] != "driver"
+        ]
         return {
             header: self._column_mapping[header]
-            for header in headers
-            if header in self._column_mapping
+            for header in [*driver_headers, *other_headers]
         }
 
 
