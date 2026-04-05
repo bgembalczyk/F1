@@ -79,6 +79,34 @@ def test_json_formatter_prioritizes_constructor_engine_and_manufacturer_keys() -
     assert payload.index('"manufacturer"') < payload.index('"points"')
 
 
+def test_json_formatter_prioritizes_season_then_grand_prix_or_event_keys() -> None:
+    formatter = JsonFormatter()
+    grand_prix_data = [
+        {
+            "winner": {"text": "A"},
+            "grand_prix": {"text": "B"},
+            "season": 2024,
+            "lap": 5,
+        },
+    ]
+    event_data = [
+        {
+            "winner": {"text": "A"},
+            "event": {"text": "B"},
+            "season": 1971,
+            "lap": 12,
+        },
+    ]
+
+    grand_prix_payload = formatter.format(grand_prix_data, include_metadata=False)
+    event_payload = formatter.format(event_data, include_metadata=False)
+
+    assert grand_prix_payload.index('"season"') < grand_prix_payload.index('"grand_prix"')
+    assert grand_prix_payload.index('"grand_prix"') < grand_prix_payload.index('"lap"')
+    assert event_payload.index('"season"') < event_payload.index('"event"')
+    assert event_payload.index('"event"') < event_payload.index('"lap"')
+
+
 def test_csv_formatter_builds_union_of_fields() -> None:
     formatter = CsvFormatter()
     result = ScrapeResult(
