@@ -21,6 +21,9 @@ class ValidationIssue:
             object.__setattr__(self, "field", normalized_segments[-1])
         if normalized_segments != self.path_segments:
             object.__setattr__(self, "path_segments", normalized_segments)
+        formatted = IssueMessageFormatter.format(self)
+        if formatted and formatted != self.message:
+            object.__setattr__(self, "message", formatted)
 
     @property
     def path(self) -> str | None:

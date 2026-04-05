@@ -35,6 +35,9 @@ class AdrEnforcementPolicy:
     ) -> bool:
         return has_architecture_changes and has_non_cosmetic_changes
 
+    def has_adr_reference(self, text: str) -> bool:
+        return bool(self.adr_pattern.search(text))
+
     def should_emit_di_trigger_signal(
         self,
         violation_count: int,
