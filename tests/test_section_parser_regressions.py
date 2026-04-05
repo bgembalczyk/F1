@@ -71,9 +71,7 @@ def test_former_constructors_section_parser_handles_defunct_alias() -> None:
     ]
 
 
-def test_former_constructors_section_parser_keeps_constructor_link_without_acronym() -> (
-    None
-):
+def test_former_constructors_parser_keeps_link_without_acronym() -> None:
     html = """
     <html><body>
       <h2><span id="Former_constructors">Former constructors</span></h2>
@@ -93,7 +91,7 @@ def test_former_constructors_section_parser_keeps_constructor_link_without_acron
           </td>
           <td><a href="/wiki/France">France</a></td>
           <td>
-            <a href="/wiki/1986_Formula_One_World_Championship">1986</a>–
+            <a href="/wiki/1986_Formula_One_World_Championship">1986</a>-
             <a href="/wiki/1991_Formula_One_World_Championship">1991</a>
           </td>
           <td>80</td><td>32</td><td>10</td><td>124</td><td>0</td><td>2</td>
