@@ -138,20 +138,20 @@ class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
     def _merge_failed_to_restart_rows(
         rows: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
+        _key = WorldChampionshipsRacesTableParser._race_key
         merged: list[dict[str, Any]] = []
         for row in rows:
             drivers = row.pop("failed_to_make_restart_drivers", None) or []
             reason = row.pop("failed_to_make_restart_reason", None)
-            race_key = WorldChampionshipsRacesTableParser._race_key(row)
-            _get_key = WorldChampionshipsRacesTableParser._race_key
-            if merged and _get_key(merged[-1]) == race_key:
-                if drivers or reason is not None:
+            race_key = _key(row)
+            if merged and _key(merged[-1]) == race_key:
+                if drivers or reason:
                     merged[-1]["failed_to_make_restart"].append(
                         {"drivers": drivers, "reason": reason},
                     )
             else:
                 row["failed_to_make_restart"] = []
-                if drivers or reason is not None:
+                if drivers or reason:
                     row["failed_to_make_restart"].append(
                         {"drivers": drivers, "reason": reason},
                     )
