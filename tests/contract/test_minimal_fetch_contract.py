@@ -2,11 +2,7 @@ import pytest
 
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
-from scrapers.points.points_scoring_systems_history import (
-    PointsScoringSystemsHistoryScraper,
-)
 
 
 class StubFetcher:
@@ -30,8 +26,6 @@ pytest.importorskip("bs4")
     [
         F1DriversListScraper,
         CircuitsListScraper,
-        PointsScoringSystemsHistoryScraper,
-        FormerConstructorsListScraper,
     ],
 )
 def test_minimal_fetch_contract(scraper_cls, minimal_fetch_html) -> None:

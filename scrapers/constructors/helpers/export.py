@@ -8,8 +8,6 @@ from scrapers.constructors.complete_scraper import CompleteConstructorsDataExtra
 
 
 def constructor_name_initial(record: dict[str, Any]) -> str:
-    # Try to get name from CurrentConstructorsListScraper /
-    # FormerConstructorsListScraper
     constructor = record.get("constructor")
     if isinstance(constructor, dict):
         name = constructor.get("text") or ""
@@ -22,7 +20,6 @@ def constructor_name_initial(record: dict[str, Any]) -> str:
     elif isinstance(constructor, str):
         name = constructor
     else:
-        # Try PrivateerTeamsListScraper
         name = record.get("team") or ""
 
     name = name.strip()

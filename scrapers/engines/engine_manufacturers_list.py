@@ -5,7 +5,6 @@ from bs4 import Tag
 
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
-from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
@@ -283,11 +282,3 @@ class EngineManufacturersListScraper(F1TableScraper):
                 "url": resolved_url,
             }
         return normalized
-
-
-class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper):
-    url = ENGINES_LIST.base_url
-    record_key = "manufacturer"
-    url_key = "manufacturer_url"
-    domain_name = "engines"
-    record_type = "manufacturer"

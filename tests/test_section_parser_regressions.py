@@ -6,10 +6,6 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.constructors.current_constructors_list import (
-    CurrentConstructorsListScraper,
-)
-from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
 from scrapers.seasons.parsers.results import SeasonResultsParser
@@ -37,11 +33,13 @@ def _fixture_html(name: str) -> str:
 
 
 def test_current_constructors_section_parser_handles_current_season_alias() -> None:
-    scraper = CurrentConstructorsListScraper(
+    ConstructorsListScraper._PARSE_SCOPE_CACHE.clear()
+    scraper = ConstructorsListScraper(
         options=ScraperOptions(
             fetcher=FixtureFetcher(ALIAS_FIXTURES["constructors"]),
             include_urls=True,
         ),
+        export_scope="current",
     )
 
     data = scraper.get_data()
@@ -52,22 +50,26 @@ def test_current_constructors_section_parser_handles_current_season_alias() -> N
 
 
 def test_former_constructors_section_parser_handles_defunct_alias() -> None:
-    scraper = FormerConstructorsListScraper(
+    ConstructorsListScraper._PARSE_SCOPE_CACHE.clear()
+    scraper = ConstructorsListScraper(
         options=ScraperOptions(
             fetcher=FixtureFetcher(_fixture_html("former_constructors_alias.html")),
             include_urls=True,
         ),
+        export_scope="former",
     )
 
     data = scraper.get_data()
 
     assert data
     assert data[0]["constructor"]["text"] == "Lotus"
+
+    def _season_url(year: int) -> str:
+        suffix = "Formula_One_season" if year <= 1980 else "Formula_One_World_Championship"
+        return f"https://en.wikipedia.org/wiki/{year}_{suffix}"
+
     assert data[0]["seasons"] == [
-        {
-            "year": year,
-            "url": f"https://en.wikipedia.org/wiki/{year}_Formula_One_World_Championship",
-        }
+        {"year": year, "url": _season_url(year)}
         for year in range(1958, 1995)
     ]
 
@@ -101,11 +103,13 @@ def test_former_constructors_parser_keeps_link_without_acronym() -> None:
       </table>
     </body></html>
     """
-    scraper = FormerConstructorsListScraper(
+    ConstructorsListScraper._PARSE_SCOPE_CACHE.clear()
+    scraper = ConstructorsListScraper(
         options=ScraperOptions(
             fetcher=FixtureFetcher(html),
             include_urls=True,
         ),
+        export_scope="former",
     )
 
     data = scraper.get_data()

@@ -1,11 +1,16 @@
 from __future__ import annotations
 
 import logging
+import re
 from copy import deepcopy
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 
+from bs4 import Tag
+
+from models.services import parse_seasons
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.results import ScrapeResult
 from scrapers.base.single_wiki_article.section_selection_strategy import (
@@ -42,9 +47,10 @@ from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
 from scrapers.constructors.constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADERS
 from scrapers.constructors.constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
-from scrapers.constructors.privateer_teams_list import PrivateerTeamsSectionParser
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
+from scrapers.wiki.parsers.elements.list import ListParser
+from scrapers.wiki.parsers.sections.section import SectionParser as _WikiSectionParser
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
@@ -52,6 +58,69 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
+
+
+class _PrivateerTeamsListParser(ListParser):
+    def parse(self, element: Tag) -> dict[str, list[dict[str, Any]]]:
+        items: list[dict[str, Any]] = []
+        for li in element.find_all("li", recursive=False):
+            row = self._parse_item(li)
+            if row is not None:
+                items.append(row)
+        return {"items": items}
+
+    @staticmethod
+    def _parse_item(li: Tag) -> dict[str, Any] | None:
+        for span in li.find_all("span", class_="flagicon"):
+            span.decompose()
+
+        team_a = li.find("a")
+        if not team_a:
+            return None
+
+        team_name = team_a.get_text(" ", strip=True)
+        if not team_name:
+            return None
+
+        record: dict[str, Any] = {"team": team_name}
+        if team_a.has_attr("href"):
+            record["team_url"] = team_a["href"]
+
+        full_text = li.get_text(" ", strip=True)
+        match = re.search(r"\((.+?)\)", full_text)
+        if match:
+            seasons_raw = clean_wiki_text(match.group(1))
+            seasons = parse_seasons(seasons_raw)
+            if seasons:
+                record["seasons"] = [season.to_dict() for season in seasons]
+
+        return record
+
+
+class _PrivateerTeamsSectionParser(_WikiSectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._list_parser = _PrivateerTeamsListParser()
+
+    def parse(self, element: Tag, *_args: Any, **_kwargs: Any) -> dict[str, Any]:
+        if element.name in {"ul", "ol"}:
+            return self._list_parser.parse(element)
+
+        list_root = element.find(["ul", "ol"])
+        if isinstance(list_root, Tag):
+            return self._list_parser.parse(list_root)
+        return self.parse_group(list(element.children), *_args, **_kwargs)
+
+    def parse_group(
+        self,
+        elements: list,
+        *_args: Any,
+        **_kwargs: Any,
+    ) -> dict[str, Any]:
+        for candidate in elements:
+            if isinstance(candidate, Tag) and candidate.name in {"ul", "ol"}:
+                return self._list_parser.parse(candidate)
+        return {"items": []}
 
 
 class ConstructorsListScraper(F1ListScraper):
@@ -293,7 +362,7 @@ class ConstructorsListScraper(F1ListScraper):
         if privateer_section is None:
             return []
         logger.warning("ConstructorsListScraper: privateer section found.")
-        privateer_parser = PrivateerTeamsSectionParser()
+        privateer_parser = _PrivateerTeamsSectionParser()
         privateer_records = privateer_parser.parse(privateer_section).get("items", [])
         self._normalize_privateer_urls(privateer_records)
         self._split_export_records[

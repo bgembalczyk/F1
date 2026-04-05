@@ -20,118 +20,10 @@ from scrapers.races.red_flagged_races_scraper import (
 from scrapers.races.red_flagged_races_scraper import RedFlaggedRacesScraper
 from scrapers.races.red_flagged_races_scraper import RedFlaggedRacesSectionParser
 from scrapers.races.red_flagged_races_scraper import WorldChampionshipsRacesTableParser
-from scrapers.races.red_flagged_races_scraper.non_championship import (
-    RedFlaggedNonChampionshipRacesScraper,
-)
-from scrapers.races.red_flagged_races_scraper.world_championship import (
-    RedFlaggedWorldChampionshipRacesScraper,
-)
 
 
 class TestRedFlaggedRacesScraperRobustness:
     """Test that the scraper handles various HTML structures gracefully."""
-
-    def test_with_proper_section_headings(self):
-        """Test scraper works with proper Wikipedia section structure."""
-        html = """
-        <html><body>
-        <h2><span class="mw-headline" id="Red-flagged_races">Red-flagged races</span></h2>
-        <table class="wikitable">
-          <tr>
-            <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
-            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
-          </tr>
-          <tr>
-            <th>Drivers</th><th>Reason</th>
-          </tr>
-          <tr>
-            <td>2024</td><td><a href="/wiki/Monaco">Monaco</a></td><td>5</td><td>Y</td>
-            <td><a href="/wiki/Driver">Driver</a></td><td>Crash</td>
-            <td></td><td></td><td>[1]</td>
-          </tr>
-        </table>
-        </body></html>
-        """
-        soup = BeautifulSoup(html, "html.parser")
-        scraper = RedFlaggedWorldChampionshipRacesScraper()
-        records = scraper.parse_soup(soup)
-
-        assert len(records) == 1
-        assert records[0]["season"] == 2024
-
-    def test_with_missing_section_headings(self):
-        """Test scraper works even when section headings are missing (uses whole document fallback)."""
-        html = """
-        <html><body>
-        <!-- NO proper h2 heading, just a div -->
-        <div>Red-flagged races</div>
-        <table class="wikitable">
-          <tr>
-            <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
-            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
-          </tr>
-          <tr>
-            <th>Drivers</th><th>Reason</th>
-          </tr>
-          <tr>
-            <td>2024</td><td><a href="/wiki/Monaco">Monaco</a></td><td>5</td><td>Y</td>
-            <td><a href="/wiki/Driver">Driver</a></td><td>Crash</td>
-            <td></td><td></td><td>[1]</td>
-          </tr>
-        </table>
-        </body></html>
-        """
-        soup = BeautifulSoup(html, "html.parser")
-        scraper = RedFlaggedWorldChampionshipRacesScraper()
-        records = scraper.parse_soup(soup)
-
-        assert len(records) == 1
-        assert records[0]["season"] == 2024
-
-    def test_non_championship_scraper_differentiates_tables(self):
-        """Test that non-championship scraper finds the correct table based on headers."""
-        html = """
-        <html><body>
-        <!-- Two tables, first is championship, second is non-championship -->
-        <table class="wikitable">
-          <tr>
-            <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
-            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
-          </tr>
-          <tr>
-            <th>Drivers</th><th>Reason</th>
-          </tr>
-          <tr>
-            <td>2024</td><td>Monaco</td><td>5</td><td>Y</td>
-            <td>Driver A</td><td>Crash</td><td></td><td></td><td>[1]</td>
-          </tr>
-        </table>
-        <table class="wikitable">
-          <tr>
-            <th rowspan="2">Year</th><th rowspan="2">Event</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
-            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
-          </tr>
-          <tr>
-            <th>Drivers</th><th>Reason</th>
-          </tr>
-          <tr>
-            <td>1971</td><td>Brand Hatch</td><td>15</td><td>N</td>
-            <td>Peter Gethin</td><td>Fatal crash</td><td></td><td></td><td>[1]</td>
-          </tr>
-        </table>
-        </body></html>
-        """
-        soup = BeautifulSoup(html, "html.parser")
-        scraper = RedFlaggedNonChampionshipRacesScraper()
-        records = scraper.parse_soup(soup)
-
-        # Should find the non-championship table (with "Event" column)
-        assert len(records) == 1
-        assert records[0]["season"] == 1971
 
     def test_composite_non_championship_scope_with_direct_h3_table(self):
         """Test composite parser handles non-championship table directly under h3."""
@@ -260,66 +152,8 @@ class TestRedFlaggedRacesScraperRobustness:
             WorldChampionshipsRacesTableParser,
         )
 
-    def test_error_message_with_no_matching_table(self):
-        """Test that error message includes diagnostic information."""
-        html = """
-        <html><body>
-        <table class="wikitable">
-          <tr><th>Wrong</th><th>Headers</th></tr>
-          <tr><td>1</td><td>2</td></tr>
-        </table>
-        </body></html>
-        """
-        soup = BeautifulSoup(html, "html.parser")
-        scraper = RedFlaggedWorldChampionshipRacesScraper()
-
-        try:
-            scraper.parse_soup(soup)
-            msg = "Should have raised RuntimeError"
-            raise AssertionError(msg)
-        except RuntimeError as e:
-            error_msg = str(e)
-            # Should mention that 1 table was found (in Polish)
-            assert "Znaleziono 1 tabel" in error_msg
-
-    def test_toc_warning_when_section_missing(self, caplog):
-        """Test that a warning is logged when TOC exists but section heading doesn't."""
-        html = """
-        <html><body>
-        <div id="toc-Red-flagged_races">
-          <a href="#Red-flagged_races">Red-flagged races</a>
-        </div>
-        <!-- NO actual section heading -->
-        <table class="wikitable">
-          <tr>
-            <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
-            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
-          </tr>
-          <tr>
-            <th>Drivers</th><th>Reason</th>
-          </tr>
-          <tr>
-            <td>2024</td><td>Monaco</td><td>5</td><td>Y</td>
-            <td>Driver</td><td>Crash</td><td></td><td></td><td>[1]</td>
-          </tr>
-        </table>
-        </body></html>
-        """
-        soup = BeautifulSoup(html, "html.parser")
-        scraper = RedFlaggedWorldChampionshipRacesScraper()
-
-        import logging
-
-        logging.basicConfig(level=logging.WARNING)
-        records = scraper.parse_soup(soup)
-
-        # Should still parse successfully via fallback
-        assert len(records) == 1
-        # Note: caplog verification would require pytest, which may not be run in this context
-
     def test_composite_world_championship_scope_produces_rich_output(self):
-        """Test composite parser produces structured output matching RedFlaggedWorldChampionshipRacesScraper."""
+        """Test composite parser produces structured output for world championship races."""
         html = """
         <html><body>
         <div id="bodyContent">

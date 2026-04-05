@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from models.value_objects import EntityName
 from models.value_objects import SectionId
@@ -28,17 +29,54 @@ from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
-from scrapers.constructors.indianapolis_only_constructors_list import (
-    IndianapolisOnlySubSectionParser,
-)
+from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser as WikiSectionParser
+from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 
 if TYPE_CHECKING:
     from scrapers.base.sections.interface import SectionParseResult
     from scrapers.base.table.config import ScraperConfig
 
 logger = logging.getLogger(__name__)
+
+
+class _IndianapolisOnlyListParser(ListParser):
+    def parse(self, element: Tag) -> dict[str, list[dict[str, str]]]:
+        items: list[dict[str, str]] = []
+        for li in element.find_all("li", recursive=False):
+            anchor = li.find("a")
+            constructor = li.get_text(" ", strip=True)
+            if not constructor:
+                continue
+            row: dict[str, str] = {"constructor": constructor}
+            if anchor and anchor.has_attr("href"):
+                row["constructor_url"] = anchor["href"]
+            items.append(row)
+        return {"items": items}
+
+
+class IndianapolisOnlySubSectionParser(SubSectionParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._list_parser = _IndianapolisOnlyListParser()
+
+    def parse(self, element: Tag, *args: Any, **kwargs: Any) -> dict[str, Any]:
+        list_root = element.find(["ul", "ol"])
+        if isinstance(list_root, Tag):
+            return self._list_parser.parse(list_root)
+        return self.parse_group(list(element.children), *args, **kwargs)
+
+    def parse_group(
+        self,
+        elements: list,
+        *_args: Any,
+        **_kwargs: Any,
+    ) -> dict[str, Any]:
+        for candidate in elements:
+            if isinstance(candidate, Tag) and candidate.name in {"ul", "ol"}:
+                return self._list_parser.parse(candidate)
+        return {"items": []}
 
 
 class CurrentConstructorsTableParser(WikiTableBaseParser):
