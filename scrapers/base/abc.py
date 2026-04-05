@@ -268,8 +268,18 @@ class ABCScraper(ABC):
 
     def _parse_soup(self, _soup: BeautifulSoup) -> list[RawRecord]:
         """Parsowanie BS4 -> lista rekordów surowych."""
+        warnings.warn(
+            "ABCScraper._parse_soup() is deprecated; implement parse_records() "
+            "instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.parse_records(_soup)
+
+    def parse_records(self, _soup: BeautifulSoup) -> list[RawRecord]:
+        """Primary extension point for parsing BeautifulSoup into raw records."""
         msg = (
-            f"{self.__class__.__name__} must implement _parse_soup() "
+            f"{self.__class__.__name__} must implement parse_records() "
             "or override parse()."
         )
         raise NotImplementedError(
@@ -280,15 +290,19 @@ class ABCScraper(ABC):
         if self.parser is not None:
             return self.parser.parse(soup)
 
-        parse_impl = type(self)._parse_soup
-        if parse_impl is ABCScraper._parse_soup:
-            self.logger.debug(
-                "No parser/_parse_soup implementation for %s; returning empty list.",
-                self.__class__.__name__,
-            )
-            return []
+        parse_impl = type(self).parse_records
+        if parse_impl is not ABCScraper.parse_records:
+            return self.parse_records(soup)
 
-        return self._parse_soup(soup)
+        legacy_parse_impl = type(self)._parse_soup
+        if legacy_parse_impl is not ABCScraper._parse_soup:
+            return self._parse_soup(soup)
+
+        self.logger.debug(
+            "No parser/parse_records implementation for %s; returning empty list.",
+            self.__class__.__name__,
+        )
+        return []
 
     def parse_soup(self, soup: BeautifulSoup) -> list[RawRecord]:
         """Public facade for parsing an already constructed BeautifulSoup document."""
