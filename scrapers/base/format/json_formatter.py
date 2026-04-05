@@ -7,7 +7,7 @@ from scrapers.base.results import ScrapeResult
 
 
 class JsonFormatter:
-    _PINNED_FRONT_KEYS: tuple[str, ...] = ("constructor", "engine")
+    _PINNED_FRONT_KEYS: tuple[str, ...] = ("constructor", "engine", "manufacturer")
 
     def format(
         self,
