@@ -112,7 +112,7 @@ class EntryMerger:
 
     @staticmethod
     def _entry_merge_key(record: dict[str, Any]) -> tuple[tuple[str, str], ...]:
-        excluded = EntryMerger._DRIVER_FIELDS
+        excluded = DRIVER_FIELDS
         items = [(k, repr(v)) for k, v in record.items() if k not in excluded]
         items.sort()
         return tuple(items)
