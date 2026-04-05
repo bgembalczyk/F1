@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class _SingleScraperStub:
-    def fetch_by_url(self, url: str) -> list[dict[str, str]]:
+    def extract_by_url(self, url: str) -> list[dict[str, str]]:
         return [{"fetched_from": url}]
 
 

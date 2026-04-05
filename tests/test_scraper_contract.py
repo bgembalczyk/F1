@@ -330,7 +330,7 @@ def test_single_scraper_returns_single_item_list() -> None:
         details={"infobox": {"name": "Test"}, "tables": []},
     )
 
-    result = scraper.fetch_by_url("https://example.com/wiki/Test")
+    result = scraper.extract_by_url("https://example.com/wiki/Test")
 
     assert len(result) == 1
     assert result[0]["url"] == "https://example.com/wiki/Test"
@@ -340,6 +340,6 @@ def test_single_scraper_returns_single_item_list() -> None:
 def test_single_scraper_returns_empty_list_when_not_circuit() -> None:
     scraper = DummySingleCircuitScraper(is_circuit=False, details=None)
 
-    result = scraper.fetch_by_url("https://example.com/wiki/Test")
+    result = scraper.extract_by_url("https://example.com/wiki/Test")
 
     assert result == []

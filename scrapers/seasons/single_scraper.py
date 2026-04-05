@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import warnings
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -12,7 +11,6 @@ from scrapers.base.single_wiki_article.section_adapter import (
 )
 from scrapers.seasons.composition import SeasonScraperCompositionFactory
 from scrapers.seasons.composition import SeasonScraperDependencies
-from scrapers.seasons.pipeline import SeasonYearResolver
 from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
 
 if TYPE_CHECKING:
@@ -54,20 +52,6 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         self._refresh_pipeline_state(explicit_year=season_year)
         return super().fetch()
 
-    def fetch_by_url(
-        self,
-        url: str,
-        *,
-        season_year: int | None = None,
-    ) -> list[dict[str, Any]]:
-        warnings.warn(
-            "SingleSeasonScraper.fetch_by_url() is deprecated; use "
-            "extract_by_url() instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.extract_by_url(url, season_year=season_year)
-
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         _ = soup
         return InfoboxPayloadDTO([])
@@ -90,16 +74,6 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         _ = tables_payload
         payload = self._domain_record_service.build_payload(sections_payload.data)
         return self._domain_record_service.assemble_record(payload)
-
-    @staticmethod
-    def _extract_year_from_url(url: str) -> int | None:
-        warnings.warn(
-            "SingleSeasonScraper._extract_year_from_url() is deprecated; use "
-            "SeasonYearResolver.extract_from_url() instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return SeasonYearResolver.extract_from_url(url)
 
     def _refresh_pipeline_state(self, *, explicit_year: int | None = None) -> None:
         self.season_year = self._season_year_resolver.resolve(

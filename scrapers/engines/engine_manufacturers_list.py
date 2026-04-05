@@ -255,10 +255,14 @@ class EngineManufacturersListScraper(F1TableScraper):
         if not isinstance(items, list):
             return []
         return [
-            self._normalize_indianapolis_record(item)
+            self.normalize_indianapolis_record(item)
             for item in items
             if isinstance(item, dict)
         ]
+
+    def normalize_indianapolis_record(self, item: dict[str, Any]) -> dict[str, Any]:
+        """Normalize a single Indianapolis-only list item."""
+        return self._normalize_indianapolis_record(item)
 
     def _normalize_indianapolis_record(self, item: dict[str, Any]) -> dict[str, Any]:
         normalized = dict(item)

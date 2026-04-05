@@ -21,7 +21,7 @@ class ListScraperProtocol(Protocol):
 
 @runtime_checkable
 class SingleScraperProtocol(Protocol):
-    def fetch_by_url(self, url: str) -> list[dict[str, Any]]: ...
+    def extract_by_url(self, url: str) -> list[dict[str, Any]]: ...
 
 
 @dataclass(frozen=True)
@@ -88,7 +88,7 @@ class CompositeDataExtractor(BaseDataExtractor):
 
             if detail_url:
                 try:
-                    details_list = self.single_scraper.fetch_by_url(detail_url)
+                    details_list = self.single_scraper.extract_by_url(detail_url)
                     details = details_list[0] if details_list else None
                 except (
                     RequestError,
