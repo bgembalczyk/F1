@@ -24,7 +24,7 @@ def test_coverage_wave_report_generates_outputs() -> None:
         if candidate.exists():
             candidate.unlink()
 
-    result = subprocess.run(  # noqa: S603 - trusted local command and fixed args
+    result = subprocess.run(  # - trusted local command and fixed args
         [
             str(python_executable),
             str(SCRIPT_PATH),

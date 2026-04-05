@@ -20,7 +20,7 @@ class PandasDataFrameFormatter:
         data = extract_data(result)
         try:
             # di-antipattern-allow: optional dependency.
-            import pandas as pd  # noqa: PLC0415
+            import pandas as pd
 
             dataframe = pd.DataFrame(data)
             _validate_dataframe_columns(dataframe)
