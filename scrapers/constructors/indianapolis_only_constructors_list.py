@@ -12,16 +12,20 @@ from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 
 
 class IndianapolisOnlyListParser(ListParser):
-    def parse(self, element: Tag) -> dict[str, list[dict[str, str]]]:
-        items: list[dict[str, str]] = []
+    def parse(self, element: Tag) -> dict[str, list[dict[str, Any]]]:
+        items: list[dict[str, Any]] = []
         for li in element.find_all("li", recursive=False):
             anchor = li.find("a")
             constructor = li.get_text(" ", strip=True)
             if not constructor:
                 continue
-            row: dict[str, str] = {"constructor": constructor}
+            row: dict[str, Any] = {
+                "chassis_constructor": {
+                    "text": constructor,
+                },
+            }
             if anchor and anchor.has_attr("href"):
-                row["constructor_url"] = anchor["href"]
+                row["chassis_constructor"]["url"] = anchor["href"]
             items.append(row)
         return {"items": items}
 
@@ -64,13 +68,14 @@ class IndianapolisOnlyConstructorsListScraper(IndianapolisOnlyListScraper):
         root_list = self._find_list_root(soup)
         parsed = self._sub_section_parser.parse(root_list)
         records = parsed.get("items", [])
-        if not self.include_urls:
-            for record in records:
-                record.pop("constructor_url", None)
-            return records
-
         for record in records:
-            url = record.get("constructor_url")
+            constructor = record.get("chassis_constructor")
+            if not isinstance(constructor, dict):
+                continue
+            if not self.include_urls:
+                constructor.pop("url", None)
+                continue
+            url = constructor.get("url")
             if isinstance(url, str):
-                record["constructor_url"] = self._full_url(url)
+                constructor["url"] = self._full_url(url)
         return records
