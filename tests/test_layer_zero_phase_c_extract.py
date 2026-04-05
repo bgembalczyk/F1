@@ -158,7 +158,7 @@ class TestExtractFromConstructors:
                     {
                         "text": "Mercedes",
                         "url": "https://en.wikipedia.org/wiki/Mercedes",
-                    }
+                    },
                 ],
                 "racing_series": {
                     "formula_one": {

@@ -102,7 +102,7 @@ def test_json_formatter_prioritizes_season_then_grand_prix_or_event_keys() -> No
     event_payload = formatter.format(event_data, include_metadata=False)
 
     assert grand_prix_payload.index('"season"') < grand_prix_payload.index(
-        '"grand_prix"'
+        '"grand_prix"',
     )
     assert grand_prix_payload.index('"grand_prix"') < grand_prix_payload.index('"lap"')
     assert event_payload.index('"season"') < event_payload.index('"event"')
