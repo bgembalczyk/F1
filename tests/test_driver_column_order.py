@@ -19,8 +19,8 @@ def test_drivers_list_table_parser_places_driver_mapping_first() -> None:
         ],
     )
 
-    assert list(result.values())[0] == "driver"
-    assert list(result.keys())[0] == DRIVER_NAME_HEADER
+    assert next(iter(result.values())) == "driver"
+    assert next(iter(result.keys())) == DRIVER_NAME_HEADER
 
 
 def test_fatalities_table_parser_places_driver_mapping_first() -> None:
@@ -34,5 +34,5 @@ def test_fatalities_table_parser_places_driver_mapping_first() -> None:
         ],
     )
 
-    assert list(result.values())[0] == "driver"
-    assert list(result.keys())[0] == FATALITIES_DRIVER_HEADER
+    assert next(iter(result.values())) == "driver"
+    assert next(iter(result.keys())) == FATALITIES_DRIVER_HEADER

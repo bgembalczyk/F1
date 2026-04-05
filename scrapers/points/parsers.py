@@ -17,7 +17,8 @@ from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
 
-# Position keys for the points history table (excluding "1st" which is handled separately)
+# Position keys for the points history table (excluding "1st" which is
+# handled separately)
 _HISTORY_POSITION_KEYS_WITH_FASTEST_LAP: frozenset[str] = frozenset(
     pos.lower() for pos in HISTORICAL_POSITIONS[1:]
 ) | {"fastest_lap"}

@@ -302,7 +302,7 @@ def test_seasons_domain_postprocess_merges_duplicate_year_representations() -> N
     ]
 
 
-def test_seasons_domain_postprocess_keeps_engine_regulations_and_restrictions_separate() -> (
+def test_seasons_domain_postprocess_keeps_engine_regs_and_restrictions_separate() -> (
     None
 ):
     processed = _post_process_domain_records(

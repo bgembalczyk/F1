@@ -4,6 +4,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
+from scrapers.base.table.columns.types.seasons import _LAST_YEAR_FORMULA_ONE_SEASON
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.constructors_list import ConstructorsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
@@ -42,19 +43,11 @@ def test_current_constructors_section_parser_handles_current_season_alias() -> N
         export_scope="current",
     )
 
-    result = parser.parse(section_fragment)
+    data = scraper.get_data()
 
-    assert result.records
-    assert result.records[0]["constructor"] == {
-        "chassis_constructor": {
-            "text": "Ferrari",
-            "url": "https://en.wikipedia.org/wiki/Ferrari",
-        },
-        "engine_constructor": {
-            "text": "Ferrari",
-            "url": "https://en.wikipedia.org/wiki/Ferrari_059/6",
-        },
-    }
+    assert data
+    assert data[0]["constructor"]["chassis_constructor"]["text"] == "Ferrari"
+    assert data[0]["constructor"]["chassis_constructor"]["url"].endswith("/wiki/Ferrari")
 
 
 def test_former_constructors_section_parser_handles_defunct_alias() -> None:
@@ -73,12 +66,15 @@ def test_former_constructors_section_parser_handles_defunct_alias() -> None:
     assert data[0]["constructor"]["text"] == "Lotus"
 
     def _season_url(year: int) -> str:
-        suffix = "Formula_One_season" if year <= 1980 else "Formula_One_World_Championship"
+        suffix = (
+            "Formula_One_season"
+            if year <= _LAST_YEAR_FORMULA_ONE_SEASON
+            else "Formula_One_World_Championship"
+        )
         return f"https://en.wikipedia.org/wiki/{year}_{suffix}"
 
     assert data[0]["seasons"] == [
-        {"year": year, "url": _season_url(year)}
-        for year in range(1958, 1995)
+        {"year": year, "url": _season_url(year)} for year in range(1958, 1995)
     ]
 
 

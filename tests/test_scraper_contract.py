@@ -14,7 +14,6 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
-from scrapers.constructors.constructors_list import ConstructorsListScraper
 from tests.support.dependency_stubs import ensure_optional_deps
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -104,7 +103,8 @@ def test_scraper_propagates_parsing_errors() -> None:
         url = "https://example.com"
 
         def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
-            raise RuntimeError("parsing failed")
+            msg = "parsing failed"
+            raise RuntimeError(msg)
 
     scraper = _ErrorScraper(
         options=ScraperOptions(fetcher=StubFetcher("<html></html>")),
