@@ -46,10 +46,14 @@ class SectionAdapter:
         for entry in entries:
             canonical_section_id = str(entry.section_id).strip()
             export_section_id = (
-                entry.section_id.to_export()
-                if hasattr(entry.section_id, "to_export")
-                else canonical_section_id
-            ).strip().lower()
+                (
+                    entry.section_id.to_export()
+                    if hasattr(entry.section_id, "to_export")
+                    else canonical_section_id
+                )
+                .strip()
+                .lower()
+            )
             entry_aliases = profile_entry_aliases(
                 domain,
                 canonical_section_id,

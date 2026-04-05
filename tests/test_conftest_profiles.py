@@ -4,11 +4,30 @@ from tests import conftest as tests_conftest
 
 
 def test_marker_for_path_maps_profiles_and_fallbacks() -> None:
-    assert tests_conftest._marker_for_path("tests/contract/test_complete_extractor_children_contract.py") == "contract"
-    assert tests_conftest._marker_for_path("tests/contract/test_dsl_contract.py") == "integration"
-    assert tests_conftest._marker_for_path("tests/test_architecture_import_rules.py") == "architecture"
-    assert tests_conftest._marker_for_path("tests/test_adr_enforcement_policy_integration.py") == "integration"
-    assert tests_conftest._marker_for_path("tests/test_integration_private_api_policy.py") == "integration"
+    assert (
+        tests_conftest._marker_for_path(
+            "tests/contract/test_complete_extractor_children_contract.py",
+        )
+        == "contract"
+    )
+    assert (
+        tests_conftest._marker_for_path("tests/contract/test_dsl_contract.py")
+        == "integration"
+    )
+    assert (
+        tests_conftest._marker_for_path("tests/test_architecture_import_rules.py")
+        == "architecture"
+    )
+    assert (
+        tests_conftest._marker_for_path(
+            "tests/test_adr_enforcement_policy_integration.py",
+        )
+        == "integration"
+    )
+    assert (
+        tests_conftest._marker_for_path("tests/test_integration_private_api_policy.py")
+        == "integration"
+    )
     assert tests_conftest._marker_for_path("tests/test_results.py") == "unit"
 
 

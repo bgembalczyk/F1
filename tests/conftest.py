@@ -95,7 +95,9 @@ def _marker_for_path(path: str) -> str:
             return marker
 
     file_name = Path(normalized).name
-    if file_name.startswith("test_integration_") or file_name.endswith("_integration.py"):
+    if file_name.startswith("test_integration_") or file_name.endswith(
+        "_integration.py",
+    ):
         return "integration"
     return "unit"
 

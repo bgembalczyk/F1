@@ -109,8 +109,8 @@ def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation
             violations.append(
                 Violation(
                     "global_threshold_path musi być ściśle rosnąca "
-                    f"(problem na pozycji {index + 1})."
-                )
+                    f"(problem na pozycji {index + 1}).",
+                ),
             )
 
     for index in range(1, len(threshold_values)):
@@ -120,16 +120,16 @@ def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation
                 Violation(
                     "Minimalny przyrost globalny na sprint jest za mały: "
                     f"sprint {index}→{index + 1} ma {delta:.2f} pp, "
-                    f"wymagane >= {min_increment:.2f} pp."
-                )
+                    f"wymagane >= {min_increment:.2f} pp.",
+                ),
             )
 
     if current_sprint < 1 or current_sprint > len(threshold_values):
         violations.append(
             Violation(
                 "current_sprint poza zakresem global_threshold_path "
-                f"(1..{len(threshold_values)})."
-            )
+                f"(1..{len(threshold_values)}).",
+            ),
         )
     return violations
 
@@ -176,8 +176,8 @@ def _evaluate_global_threshold(inputs: GateInputs) -> list[Violation]:
     return [
         Violation(
             f"Global coverage {inputs.global_coverage:.2f}% < próg sprintu "
-            f"{inputs.current_sprint} ({inputs.current_threshold:.2f}%)."
-        )
+            f"{inputs.current_sprint} ({inputs.current_threshold:.2f}%).",
+        ),
     ]
 
 
@@ -200,8 +200,8 @@ def _evaluate_changed_files(inputs: GateInputs) -> list[Violation]:
             violations.append(
                 Violation(
                     f"Patch coverage regression: {changed_file} spadł z "
-                    f"{baseline_cov:.2f}% do {current_cov:.2f}%."
-                )
+                    f"{baseline_cov:.2f}% do {current_cov:.2f}%.",
+                ),
             )
 
         if (
@@ -212,8 +212,8 @@ def _evaluate_changed_files(inputs: GateInputs) -> list[Violation]:
                 Violation(
                     f"Legacy low coverage '{changed_file}' został dotknięty, "
                     f"ale poprawa to tylko {current_cov - baseline_cov:.2f} pp; "
-                    f"wymagane >= {inputs.legacy_improvement:.2f} pp."
-                )
+                    f"wymagane >= {inputs.legacy_improvement:.2f} pp.",
+                ),
             )
 
     return violations
@@ -229,7 +229,7 @@ def _format_and_print_result(inputs: GateInputs, violations: list[Violation]) ->
     print("Coverage quality gate: OK")
     print(
         f"Global coverage: {inputs.global_coverage:.2f}% (sprint "
-        f"{inputs.current_sprint}, próg {inputs.current_threshold:.2f}%)."
+        f"{inputs.current_sprint}, próg {inputs.current_threshold:.2f}%).",
     )
     return 0
 

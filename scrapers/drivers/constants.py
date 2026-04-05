@@ -1,6 +1,10 @@
-from scrapers.base.constants.shared_headers import SHARED_PODIUMS_HEADER as podiums_header
+from scrapers.base.constants.shared_headers import (
+    SHARED_PODIUMS_HEADER as podiums_header,
+)
 from scrapers.base.constants.shared_headers import SHARED_POINTS_HEADER as points_header
-from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER as seasons_header
+from scrapers.base.constants.shared_headers import (
+    SHARED_SEASONS_HEADER as seasons_header,
+)
 
 DRIVER_NAME_HEADER = "Driver name"
 DRIVER_NATIONALITY_HEADER = "Nationality"

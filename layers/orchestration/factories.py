@@ -9,9 +9,7 @@ from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 
 if TYPE_CHECKING:
-    from infrastructure.gemini.client import GeminiClient
     from layers.seed.registry.entries import ListJobRegistryEntry
-    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
 class LayerZeroRunConfigFactory(LayerZeroRunConfigFactoryProtocol, ABC):
