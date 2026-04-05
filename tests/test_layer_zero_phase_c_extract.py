@@ -2,11 +2,12 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
-
-import pytest
+from typing import TYPE_CHECKING
 
 from layers.zero.extract import extract_layer_zero_phase_c
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def _write_json(path: Path, payload: object) -> None:
@@ -65,19 +66,24 @@ class TestExtractFromChassisConstructors:
 
         extract_layer_zero_phase_c(base)
 
-        countries_file = _c_extract_path(base, "countries") / "from_chassis_constructors.json"
+        countries_file = (
+            _c_extract_path(base, "countries") / "from_chassis_constructors.json"
+        )
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 2
-        assert {"text": "France", "url": "https://en.wikipedia.org/wiki/France"} in countries
-        assert {"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"} in countries
+        france = {"text": "France", "url": "https://en.wikipedia.org/wiki/France"}
+        italy = {"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"}
+        assert france in countries
+        assert italy in countries
 
     def test_handles_single_licensed_in_value(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
+        germany = {"text": "Germany", "url": "https://en.wikipedia.org/wiki/Germany"}
         payload = [
             {
                 "constructor": {"text": "Team B"},
-                "licensed_in": {"text": "Germany", "url": "https://en.wikipedia.org/wiki/Germany"},
+                "licensed_in": germany,
             },
         ]
         _write_json(
@@ -87,15 +93,17 @@ class TestExtractFromChassisConstructors:
 
         extract_layer_zero_phase_c(base)
 
-        countries_file = _c_extract_path(base, "countries") / "from_chassis_constructors.json"
+        countries_file = (
+            _c_extract_path(base, "countries") / "from_chassis_constructors.json"
+        )
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 1
-        assert {"text": "Germany", "url": "https://en.wikipedia.org/wiki/Germany"} in countries
+        assert germany in countries
 
 
 class TestExtractFromCircuits:
     def test_extracts_country_to_countries_and_location_to_locations(
-        self, tmp_path: Path
+        self, tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [
@@ -129,7 +137,8 @@ class TestExtractFromCircuits:
         assert locations_file.exists()
         locations = json.loads(locations_file.read_text(encoding="utf-8"))
         assert len(locations) == 2
-        assert {"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"} in locations
+        monza = {"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"}
+        assert monza in locations
 
 
 class TestExtractFromConstructors:
@@ -169,19 +178,22 @@ class TestExtractFromConstructors:
         assert engines_file.exists()
         engines = json.loads(engines_file.read_text(encoding="utf-8"))
         assert len(engines) == 1
-        assert {"text": "Mercedes", "url": "https://en.wikipedia.org/wiki/Mercedes"} in engines
+        mercedes = {"text": "Mercedes", "url": "https://en.wikipedia.org/wiki/Mercedes"}
+        assert mercedes in engines
 
         teams_file = _c_extract_path(base, "teams") / "from_constructors.json"
         assert teams_file.exists()
         teams = json.loads(teams_file.read_text(encoding="utf-8"))
         assert len(teams) == 1
-        assert {"text": "Toleman", "url": "https://en.wikipedia.org/wiki/Toleman"} in teams
+        toleman = {"text": "Toleman", "url": "https://en.wikipedia.org/wiki/Toleman"}
+        assert toleman in teams
 
         countries_file = _c_extract_path(base, "countries") / "from_constructors.json"
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 2
-        assert {"text": "France", "url": "https://en.wikipedia.org/wiki/France"} in countries
+        france = {"text": "France", "url": "https://en.wikipedia.org/wiki/France"}
+        assert france in countries
         assert {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom",
@@ -239,12 +251,13 @@ class TestExtractFromEngines:
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 1
-        assert {"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"} in countries
+        italy = {"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"}
+        assert italy in countries
 
 
 class TestExtractFromRaces:
     def test_extracts_winner_and_failed_to_make_restart_drivers(
-        self, tmp_path: Path
+        self, tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [

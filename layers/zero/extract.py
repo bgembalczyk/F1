@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import json
 import shutil
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 from layers.path_resolver import PathResolver
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def extract_layer_zero_phase_c(base_wiki_dir: Path) -> None:
@@ -93,13 +96,11 @@ def _extract_from_chassis_constructors(
     for record in records:
         if not isinstance(record, dict):
             continue
-        licensed_in = record.get("licensed_in")
-        if isinstance(licensed_in, list):
-            countries.extend(licensed_in)
-        elif licensed_in is not None:
-            countries.append(licensed_in)
+        _collect_list_or_single(countries, record.get("licensed_in"))
 
-    _write_c_extract_file("countries", "from_chassis_constructors.json", countries, resolver)
+    _write_c_extract_file(
+        "countries", "from_chassis_constructors.json", countries, resolver,
+    )
 
 
 def _extract_from_circuits(
@@ -127,6 +128,16 @@ def _extract_from_circuits(
     _write_c_extract_file("locations", "from_circuits.json", locations, resolver)
 
 
+def _collect_list_or_single(
+    target: list[object],
+    value: object,
+) -> None:
+    if isinstance(value, list):
+        target.extend(value)
+    elif value is not None:
+        target.append(value)
+
+
 def _extract_from_constructors(
     layer_zero_dir: Path,
     resolver: PathResolver,
@@ -142,34 +153,13 @@ def _extract_from_constructors(
     for record in records:
         if not isinstance(record, dict):
             continue
-
-        engine = record.get("engine")
-        if isinstance(engine, list):
-            engines.extend(engine)
-        elif engine is not None:
-            engines.append(engine)
-
+        _collect_list_or_single(engines, record.get("engine"))
         formula_one = _get_formula_one(record)
         if formula_one is None:
             continue
-
-        antecedent_teams = formula_one.get("antecedent_teams")
-        if isinstance(antecedent_teams, list):
-            teams.extend(antecedent_teams)
-        elif antecedent_teams is not None:
-            teams.append(antecedent_teams)
-
-        based_in = formula_one.get("based_in")
-        if isinstance(based_in, list):
-            countries.extend(based_in)
-        elif based_in is not None:
-            countries.append(based_in)
-
-        licensed_in = formula_one.get("licensed_in")
-        if isinstance(licensed_in, list):
-            countries.extend(licensed_in)
-        elif licensed_in is not None:
-            countries.append(licensed_in)
+        _collect_list_or_single(teams, formula_one.get("antecedent_teams"))
+        _collect_list_or_single(countries, formula_one.get("based_in"))
+        _collect_list_or_single(countries, formula_one.get("licensed_in"))
 
     _write_c_extract_file("engines", "from_constructors.json", engines, resolver)
     _write_c_extract_file("teams", "from_constructors.json", teams, resolver)
@@ -210,13 +200,25 @@ def _extract_from_engines(
         formula_one = _get_formula_one(record)
         if formula_one is None:
             continue
-        engines_built_in = formula_one.get("engines_built_in")
-        if isinstance(engines_built_in, list):
-            countries.extend(engines_built_in)
-        elif engines_built_in is not None:
-            countries.append(engines_built_in)
+        _collect_list_or_single(countries, formula_one.get("engines_built_in"))
 
     _write_c_extract_file("countries", "from_engines.json", countries, resolver)
+
+
+def _collect_red_flag_drivers(
+    drivers: list[object],
+    red_flag: dict[str, object],
+) -> None:
+    winner = red_flag.get("winner")
+    if winner is not None:
+        drivers.append(winner)
+    failed = red_flag.get("failed_to_make_restart")
+    if not isinstance(failed, list):
+        return
+    for entry in failed:
+        if isinstance(entry, dict):
+            _collect_list_or_single(entry_drivers := [], entry.get("drivers"))
+            drivers.extend(entry_drivers)
 
 
 def _extract_from_races(
@@ -232,22 +234,7 @@ def _extract_from_races(
         if not isinstance(record, dict):
             continue
         red_flag = record.get("red_flag")
-        if not isinstance(red_flag, dict):
-            continue
-
-        winner = red_flag.get("winner")
-        if winner is not None:
-            drivers.append(winner)
-
-        failed_to_make_restart = red_flag.get("failed_to_make_restart")
-        if isinstance(failed_to_make_restart, list):
-            for entry in failed_to_make_restart:
-                if not isinstance(entry, dict):
-                    continue
-                entry_drivers = entry.get("drivers")
-                if isinstance(entry_drivers, list):
-                    drivers.extend(entry_drivers)
-                elif entry_drivers is not None:
-                    drivers.append(entry_drivers)
+        if isinstance(red_flag, dict):
+            _collect_red_flag_drivers(drivers, red_flag)
 
     _write_c_extract_file("drivers", "from_races.json", drivers, resolver)

@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 from layers.zero.d_merge import merge_layer_zero_phase_d
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def _write_json(path: Path, payload: object) -> None:
@@ -54,7 +57,9 @@ class TestMergeLayerZeroPhaseD:
         merge_layer_zero_phase_d(base)
 
         result = json.loads(
-            (_d_merge_path(base, "countries") / "countries.json").read_text(encoding="utf-8")
+            (_d_merge_path(base, "countries") / "countries.json").read_text(
+                encoding="utf-8",
+            ),
         )
         assert len(result) == 2
 
@@ -68,7 +73,9 @@ class TestMergeLayerZeroPhaseD:
         merge_layer_zero_phase_d(base)
 
         result = json.loads(
-            (_d_merge_path(base, "countries") / "countries.json").read_text(encoding="utf-8")
+            (_d_merge_path(base, "countries") / "countries.json").read_text(
+                encoding="utf-8",
+            ),
         )
         assert result.count("Italy") == 1
 
@@ -84,7 +91,7 @@ class TestMergeLayerZeroPhaseD:
         assert not _d_merge_path(base, "circuits").exists()
 
     def test_produces_d_merge_for_existing_domain_with_single_file(
-        self, tmp_path: Path
+        self, tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [{"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"}]
