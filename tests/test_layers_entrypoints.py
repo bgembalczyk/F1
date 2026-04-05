@@ -71,6 +71,40 @@ def test_should_mirror_constructors_job(
 
 
 @pytest.mark.parametrize(
+    ("module_name", "scraper_name", "seed_name", "expected"),
+    [
+        ("layers.application", "EngineRegulationScraper", "", True),
+        ("layers.application", "EngineRestrictionsScraper", "", True),
+        ("layers.application", "SomeOtherScraper", "engines_regulations", True),
+        ("layers.application", "SomeOtherScraper", "engines_restrictions", True),
+        ("layers.application", "SomeOtherScraper", "engines_manufacturers", False),
+        ("layers.application", "SomeOtherScraper", "", False),
+        ("layers.composition", "EngineRegulationScraper", "", True),
+        ("layers.composition", "EngineRestrictionsScraper", "", True),
+        ("layers.composition", "SomeOtherScraper", "engines_regulations", True),
+        ("layers.composition", "SomeOtherScraper", "engines_restrictions", True),
+        ("layers.composition", "SomeOtherScraper", "engines_manufacturers", False),
+        ("layers.composition", "SomeOtherScraper", "", False),
+    ],
+)
+def test_should_mirror_engine_rules_job(
+    module_name: str,
+    scraper_name: str,
+    seed_name: str,
+    expected: bool,  # noqa: FBT001
+) -> None:
+    module = importlib.import_module(module_name)
+    list_scraper_cls = type(scraper_name, (), {})
+    job = type(
+        "Job",
+        (),
+        {"list_scraper_cls": list_scraper_cls, "seed_name": seed_name},
+    )()
+
+    assert module._should_mirror_engine_rules_job(job) is expected  # noqa: SLF001
+
+
+@pytest.mark.parametrize(
     ("factory", "expected"),
     [
         pytest.param(

@@ -50,6 +50,15 @@ def _should_mirror_points_job(job: object) -> bool:
     return seed_name in {"points_history", "points_shortened", "points_sprint"}
 
 
+def _should_mirror_engine_rules_job(job: object) -> bool:
+    list_scraper_cls = getattr(job, "list_scraper_cls", None)
+    scraper_name = getattr(list_scraper_cls, "__name__", "")
+    if scraper_name in {"EngineRegulationScraper", "EngineRestrictionsScraper"}:
+        return True
+    seed_name = getattr(job, "seed_name", "")
+    return seed_name in {"engines_regulations", "engines_restrictions"}
+
+
 def create_default_wiki_pipeline_application(
     *,
     base_wiki_dir: Path,
@@ -83,6 +92,10 @@ def create_default_wiki_pipeline_application(
                 MirrorToDomainByFilenameJobHook(
                     target_domain="seasons",
                     should_mirror_predicate=_should_mirror_points_job,
+                ),
+                MirrorToDomainByFilenameJobHook(
+                    target_domain="seasons",
+                    should_mirror_predicate=_should_mirror_engine_rules_job,
                 ),
             ),
         ),
