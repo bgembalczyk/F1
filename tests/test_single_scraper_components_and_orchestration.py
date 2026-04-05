@@ -12,6 +12,7 @@ from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembl
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.constructors.single_scraper import SingleConstructorScraper
+from scrapers.drivers.composition import DriverScraperCompositionFactory
 from scrapers.drivers.composition import DriverScraperDependencies
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
@@ -200,3 +201,48 @@ def test_orchestration_integration_single_driver_uses_injected_dependencies() ->
 
     assert result["infobox"]["from"] == "infobox"
     assert result["career_results"][0]["section"] == "Career"
+
+
+def test_driver_composition_factory_for_tests_creates_test_mode_factory() -> None:
+    factory = DriverScraperCompositionFactory.for_tests()
+
+    assert factory.test_mode is True
+    assert factory.infobox_service is None
+    assert factory.sections_service_factory is None
+    assert factory.domain_record_service is None
+
+
+def test_driver_composition_factory_for_tests_preserves_provided_services() -> None:
+    infobox_stub = DriverInfoboxExtractionService(options=ScraperOptions())
+    domain_record_stub = DomainRecordService()
+
+    factory = DriverScraperCompositionFactory.for_tests(
+        infobox_service=infobox_stub,
+        domain_record_service=domain_record_stub,
+    )
+
+    assert factory.test_mode is True
+    assert factory.infobox_service is infobox_stub
+    assert factory.domain_record_service is domain_record_stub
+
+
+def test_driver_composition_factory_build_uses_provided_services() -> None:
+    infobox_stub = DriverInfoboxExtractionService(options=ScraperOptions())
+    domain_record_stub = DomainRecordService()
+
+    class _SectionsFactoryStub:
+        def create(self, *, adapter, options=None, url=None):
+            pass  # pragma: no cover
+
+    sections_factory_stub = _SectionsFactoryStub()
+
+    factory = DriverScraperCompositionFactory(
+        infobox_service=infobox_stub,
+        sections_service_factory=sections_factory_stub,
+        domain_record_service=domain_record_stub,
+    )
+    deps = factory.build()
+
+    assert deps.infobox_service is infobox_stub
+    assert deps.sections_service_factory is sections_factory_stub
+    assert deps.domain_record_service is domain_record_stub
