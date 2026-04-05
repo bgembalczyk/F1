@@ -6,7 +6,6 @@ from dataclasses import field
 from datetime import datetime
 from datetime import timezone
 
-from infrastructure.export.default_export_service import build_default_export_service
 from scrapers.base.normalization import NormalizationRule
 from scrapers.base.normalization import RecordNormalizer
 

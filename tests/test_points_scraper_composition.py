@@ -100,8 +100,8 @@ def test_points_scraper_legacy_sprint_extractor_reads_sprint_races_section() -> 
 
 
 def test_sprint_parser_does_not_match_history_table() -> None:
-    from scrapers.points.parsers import SprintPointsTableParser
     from scrapers.points.constants import HISTORICAL_POSITIONS
+    from scrapers.points.parsers import SprintPointsTableParser
 
     parser = SprintPointsTableParser()
     history_headers = [
