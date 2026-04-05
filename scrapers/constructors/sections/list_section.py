@@ -354,6 +354,14 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
         )
         self._indianapolis_sub_section_parser = IndianapolisOnlySubSectionParser()
 
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        result = super().parse(section_fragment)
+        for record in result.records:
+            if not isinstance(record, dict) or "constructor" not in record:
+                continue
+            record["chassis_constructor"] = record.pop("constructor")
+        return result
+
     def parse_indianapolis_only_records(
         self,
         section_fragment: BeautifulSoup,
@@ -368,11 +376,16 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
             if not isinstance(record, dict):
                 continue
             normalized = dict(record)
+            constructor = normalized.get("chassis_constructor")
+            if not isinstance(constructor, dict):
+                continue
+            normalized_constructor = dict(constructor)
             if not self._include_urls:
-                normalized.pop("constructor_url", None)
+                normalized_constructor.pop("url", None)
             else:
-                url = normalized.get("constructor_url")
+                url = normalized_constructor.get("url")
                 if isinstance(url, str) and url.startswith("/"):
-                    normalized["constructor_url"] = f"https://en.wikipedia.org{url}"
+                    normalized_constructor["url"] = f"https://en.wikipedia.org{url}"
+            normalized["chassis_constructor"] = normalized_constructor
             normalized_records.append(normalized)
         return normalized_records

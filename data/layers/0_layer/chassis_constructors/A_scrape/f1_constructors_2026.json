@@ -1,15 +1,15 @@
 [
   {
     "constructor": {
-      "text": "Alpine",
-      "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Alpine",
+        "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
+      },
+      "engine_constructor": {
         "text": "Mercedes",
         "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
       }
-    ],
+    },
     "antecedent_teams": [
       {
         "text": "Toleman",
@@ -78,15 +78,15 @@
   },
   {
     "constructor": {
-      "text": "Aston Martin",
-      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Aston Martin",
+        "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
+      },
+      "engine_constructor": {
         "text": "Honda",
         "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
       }
-    ],
+    },
     "antecedent_teams": [
       {
         "text": "Jordan",
@@ -171,15 +171,15 @@
   },
   {
     "constructor": {
-      "text": "Williams",
-      "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      "engine_constructor": {
         "text": "Mercedes",
         "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
       }
-    ],
+    },
     "antecedent_teams": null,
     "based_in": [
       {
@@ -403,15 +403,15 @@
   },
   {
     "constructor": {
-      "text": "Audi",
-      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Audi",
+        "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
+      },
+      "engine_constructor": {
         "text": "Audi",
         "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
       }
-    ],
+    },
     "antecedent_teams": [
       {
         "text": "Sauber",
@@ -468,15 +468,15 @@
   },
   {
     "constructor": {
-      "text": "Cadillac",
-      "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Cadillac",
+        "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"
+      },
+      "engine_constructor": {
         "text": "Ferrari",
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
-    ],
+    },
     "antecedent_teams": null,
     "based_in": [
       {
@@ -512,15 +512,15 @@
   },
   {
     "constructor": {
-      "text": "Ferrari",
-      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      },
+      "engine_constructor": {
         "text": "Ferrari",
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
-    ],
+    },
     "antecedent_teams": null,
     "based_in": [
       {
@@ -856,15 +856,15 @@
   },
   {
     "constructor": {
-      "text": "Haas",
-      "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Haas",
+        "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
+      },
+      "engine_constructor": {
         "text": "Ferrari",
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
-    ],
+    },
     "antecedent_teams": null,
     "based_in": [
       {
@@ -944,15 +944,15 @@
   },
   {
     "constructor": {
-      "text": "McLaren",
-      "url": "https://en.wikipedia.org/wiki/McLaren"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      "engine_constructor": {
         "text": "Mercedes",
         "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
       }
-    ],
+    },
     "antecedent_teams": null,
     "based_in": [
       {
@@ -1224,15 +1224,15 @@
   },
   {
     "constructor": {
-      "text": "Mercedes",
-      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      },
+      "engine_constructor": {
         "text": "Mercedes",
         "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
       }
-    ],
+    },
     "antecedent_teams": [
       {
         "text": "Tyrrell",
@@ -1353,15 +1353,15 @@
   },
   {
     "constructor": {
-      "text": "Racing Bulls",
-      "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Racing Bulls",
+        "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
+      },
+      "engine_constructor": {
         "text": "Red Bull Ford",
         "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
       }
-    ],
+    },
     "antecedent_teams": [
       {
         "text": "Minardi",
@@ -1418,15 +1418,15 @@
   },
   {
     "constructor": {
-      "text": "Red Bull Racing",
-      "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-    },
-    "engine": [
-      {
+      "chassis_constructor": {
+        "text": "Red Bull Racing",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      },
+      "engine_constructor": {
         "text": "Red Bull Ford",
         "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
       }
-    ],
+    },
     "antecedent_teams": [
       {
         "text": "Stewart",

@@ -64,7 +64,7 @@ def test_former_constructors_section_parser_handles_defunct_alias() -> None:
     data = scraper.get_data()
 
     assert data
-    assert data[0]["constructor"]["text"] == "Lotus"
+    assert data[0]["chassis_constructor"]["text"] == "Lotus"
 
     def _season_url(year: int) -> str:
         suffix = (
@@ -120,7 +120,7 @@ def test_former_constructors_parser_keeps_link_without_acronym() -> None:
     data = scraper.get_data()
 
     assert data
-    assert data[0]["constructor"] == {
+    assert data[0]["chassis_constructor"] == {
         "text": "Automobiles Gonfaronnaises Sportives",
         "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives",
     }
@@ -164,7 +164,7 @@ def test_former_constructors_parser_extracts_alias_names_with_common_url() -> No
     data = parser.parse(section).records
 
     assert data
-    assert data[0]["constructor"] == {
+    assert data[0]["chassis_constructor"] == {
         "names": ["Ligier", "Talbot Ligier"],
         "url": "https://en.wikipedia.org/wiki/Equipe_Ligier",
     }
@@ -308,4 +308,33 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
         "wcc_titles",
         "wdc_titles",
         "wins",
+    ]
+
+
+def test_former_constructors_parser_indianapolis_only_uses_chassis_constructor() -> None:
+    html = """
+    <html><body>
+      <h3><span id="Indianapolis_500_only">Indianapolis 500 only</span></h3>
+      <ul>
+        <li><a href="/wiki/Adams_(constructor)">Adams</a></li>
+      </ul>
+    </body></html>
+    """
+    parser = FormerConstructorsSectionParser(
+        config=ConstructorsListScraper._FORMER_CONFIG,
+        section_label="Former constructors",
+        include_urls=True,
+        normalize_empty_values=False,
+    )
+    section = BeautifulSoup(html, "html.parser")
+
+    data = parser.parse_indianapolis_only_records(section)
+
+    assert data == [
+        {
+            "chassis_constructor": {
+                "text": "Adams",
+                "url": "https://en.wikipedia.org/wiki/Adams_(constructor)",
+            },
+        },
     ]
