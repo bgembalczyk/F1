@@ -56,8 +56,28 @@ def _ensure_pandas_stub() -> None:
     pandas_stub.__spec__ = importlib.machinery.ModuleSpec("pandas", loader=None)
 
     class _StubDataFrame:
-        def __init__(self, *_args, **_kwargs):
-            pass
+        def __init__(self, data=None, *_args, **_kwargs):
+            self._rows = data if isinstance(data, list) else []
+            first_row = self._rows[0] if self._rows else {}
+            self.columns = list(first_row.keys()) if isinstance(first_row, dict) else []
+
+        @property
+        def iloc(self):
+            class _StubILoc:
+                def __init__(self, rows):
+                    self._rows = rows
+
+                def __getitem__(self, index):
+                    class _StubRow:
+                        def __init__(self, row):
+                            self._row = row if isinstance(row, dict) else {}
+
+                        def to_dict(self):
+                            return dict(self._row)
+
+                    return _StubRow(self._rows[index])
+
+            return _StubILoc(self._rows)
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub

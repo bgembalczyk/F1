@@ -39,6 +39,14 @@ class CallableRecordFactoryAdapter:
         return self.factory(dict(payload))
 
 
+@dataclass(frozen=True, slots=True)
+class MappingRecordFactory:
+    """Backwards-compatible adapter that returns plain dict payloads."""
+
+    def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
+        return dict(payload)
+
+
 class RecordFactoryAdapters:
     """Factory helpers for the unified RecordFactory contract."""
 

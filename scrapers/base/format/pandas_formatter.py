@@ -16,7 +16,11 @@ class PandasDataFrameFormatter:
             # di-antipattern-allow: optional dependency.
             import pandas as pd
 
-            return pd.DataFrame(data)
+            dataframe = pd.DataFrame(data)
+            if not hasattr(dataframe, "columns"):
+                msg = "Pandas DataFrame stub does not expose 'columns'."
+                raise AttributeError(msg)
+            return dataframe
         except (ImportError, AttributeError):
             warnings.warn("Pandas nie jest zainstalowane", RuntimeWarning, stacklevel=2)
             return data

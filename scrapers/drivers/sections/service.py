@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from models.value_objects import SectionId
 from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.base.sections.service import BaseSectionExtractionService
 from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
@@ -55,6 +56,7 @@ class DriverSectionExtractionService(BaseSectionExtractionService):
             normalize_section_text(str(section.section_id)),
             str(section.section_id),
         )
+        canonical_section_id = SectionId.from_raw(canonical_section_id).to_export()
         metadata["section_id"] = canonical_section_id
         section_meta = dict(metadata["section_metadata"])
         section_meta["section_id"] = canonical_section_id

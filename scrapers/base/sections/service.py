@@ -122,9 +122,10 @@ class BaseSectionExtractionService(ABC):
         section: SectionParseResult,
         section_metadata: dict[str, Any],
     ) -> dict[str, Any]:
+        normalized_section_id = SectionId.from_raw(section.section_id).to_export()
         return {
             "section": EntityName.from_raw(section.section_label).to_export(),
-            "section_id": str(section.section_id),
+            "section_id": normalized_section_id,
             "section_metadata": section_metadata,
         }
 
