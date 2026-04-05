@@ -14,7 +14,7 @@ class PathResolver:
 
     def raw_dir(self, *, domain: str) -> Path:
         normalized_domain = _normalize_domain(domain)
-        return self.layer_zero_root / normalized_domain / "raw"
+        return self.layer_zero_root / normalized_domain / "A_scrape"
 
     def raw(self, *, domain: str, filename: str) -> Path:
         normalized_name = _normalize_output_name(filename)
@@ -22,7 +22,7 @@ class PathResolver:
 
     def merged_dir(self, *, domain: str) -> Path:
         normalized_domain = _normalize_domain(domain)
-        return self.layer_zero_root / normalized_domain
+        return self.layer_zero_root / normalized_domain / "B_merge"
 
     def merged(self, *, domain: str, filename: str | None = None) -> Path:
         normalized_domain = _normalize_domain(domain)

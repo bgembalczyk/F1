@@ -1,7 +1,7 @@
 # layers/zero
 
 ## Odpowiedzialność
-Warstwa 0 odpowiada za uruchamianie scrape'ów listowych (seed/list jobs), zapis surowych artefaktów do `layers/0_layer/.../raw` oraz finalny merge wyników po przejściu całego rejestru jobów.
+Warstwa 0 odpowiada za uruchamianie scrape'ów listowych (seed/list jobs), zapis surowych artefaktów do `layers/0_layer/.../A_scrape` oraz finalny merge wyników do `layers/0_layer/.../B_merge` po przejściu całego rejestru jobów.
 
 ## Punkt wejścia
 - Publiczny alias: `LayerZeroRunner` (`layers.zero.__init__`).

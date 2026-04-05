@@ -179,10 +179,10 @@ def test_run_single_job_passes_local_run_config_when_kwargs_present(
 
     assert calls[0]["scraper_cls"] is _FakeScraper
     assert calls[0]["json_path"] == Path(
-        "layers/0_layer/drivers/raw/f1_drivers_2026.json",
+        "layers/0_layer/drivers/A_scrape/f1_drivers_2026.json",
     )
     assert calls[0]["run_config"] is local_run_config
-    assert json_path == Path("layers/0_layer/drivers/raw/f1_drivers_2026.json")
+    assert json_path == Path("layers/0_layer/drivers/A_scrape/f1_drivers_2026.json")
 
 
 def test_run_single_job_passes_global_run_config_when_local_kwargs_missing(
@@ -222,7 +222,7 @@ def test_maybe_mirror_constructors_delegates_to_hook(tmp_path: Path) -> None:
         base_wiki_dir=tmp_path / "wiki",
         job=_job(seed_name="constructors"),
         l0_raw_json_path=Path(
-            "layers/0_layer/constructors/raw/f1_constructors_2026.json",
+            "layers/0_layer/constructors/A_scrape/f1_constructors_2026.json",
         ),
     )
 
@@ -230,7 +230,7 @@ def test_maybe_mirror_constructors_delegates_to_hook(tmp_path: Path) -> None:
         (
             tmp_path / "wiki",
             "constructors",
-            Path("layers/0_layer/constructors/raw/f1_constructors_2026.json"),
+            Path("layers/0_layer/constructors/A_scrape/f1_constructors_2026.json"),
         ),
     ]
 
@@ -262,7 +262,7 @@ def test_run_orchestrates_steps_in_order(tmp_path: Path) -> None:
     executor._run_single_job = lambda **_kwargs: (
         order.append("run")
         or Path(
-            "layers/0_layer/drivers/raw/f1_drivers_2026.json",
+            "layers/0_layer/drivers/A_scrape/f1_drivers_2026.json",
         )
     )
     executor._maybe_mirror_constructors = lambda **_kwargs: order.append("mirror")
@@ -337,19 +337,19 @@ def test_mirror_constructors_job_hook_runs_only_for_matching_job(
     hook.after_job(
         base_wiki_dir=tmp_path / "wiki",
         job=_job(seed_name="drivers"),
-        l0_raw_json_path=Path("layers/0_layer/drivers/raw/f1_drivers_2026.json"),
+        l0_raw_json_path=Path("layers/0_layer/drivers/A_scrape/f1_drivers_2026.json"),
     )
     hook.after_job(
         base_wiki_dir=tmp_path / "wiki",
         job=_job(seed_name="constructors_current"),
         l0_raw_json_path=Path(
-            "layers/0_layer/constructors/raw/f1_constructors_2026.json",
+            "layers/0_layer/constructors/A_scrape/f1_constructors_2026.json",
         ),
     )
 
     assert mirror_calls == [
         (
             tmp_path / "wiki",
-            tmp_path / "wiki/layers/0_layer/constructors/raw/f1_constructors_2026.json",
+            tmp_path / "wiki/layers/0_layer/constructors/A_scrape/f1_constructors_2026.json",
         ),
     ]

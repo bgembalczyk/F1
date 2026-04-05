@@ -52,6 +52,7 @@ def write_merged_domain_records(
     resolver: PathResolver,
 ) -> None:
     merged_path = resolver.merged(domain=domain_dir.name)
+    merged_path.parent.mkdir(parents=True, exist_ok=True)
     merged_path.write_text(
         json.dumps(merged_records, ensure_ascii=False, indent=2),
         encoding="utf-8",
