@@ -107,6 +107,23 @@ def test_to_json_sorts_keys_alphabetically(tmp_path):
     assert content.index('"data"') < content.index('"meta"')
 
 
+def test_to_json_pins_driver_and_team_keys_before_alphabetical(tmp_path):
+    result = ScrapeResult(
+        data=[
+            {"zeta": 1, "driver": "A", "alpha": 2},
+            {"zeta": 1, "team": "B", "alpha": 2},
+        ],
+        source_url="https://example.com",
+    )
+    output = tmp_path / "result.json"
+
+    ResultExportService().to_json(result, output)
+
+    payload = json.loads(output.read_text(encoding="utf-8"))
+    assert list(payload[0])[:2] == ["driver", "alpha"]
+    assert list(payload[1])[:2] == ["team", "alpha"]
+
+
 def test_to_csv_excludes_metadata_by_default(tmp_path):
     result = ScrapeResult(
         data=[{"driver": "Lewis"}, {"driver": "Max"}],
