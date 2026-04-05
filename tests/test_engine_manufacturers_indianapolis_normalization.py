@@ -9,19 +9,19 @@ def test_indianapolis_record_normalization_embeds_url_into_manufacturer_link() -
 
     normalized = scraper.normalize_indianapolis_record(
         {
-            "manufacturer": "Cadillac",
-            "manufacturer_url": "/wiki/Cadillac_in_Formula_One",
+            "engine_constructor": "Cadillac",
+            "engine_constructor_url": "/wiki/Cadillac_in_Formula_One",
             "engines_built_in": [],
             "manufacturer_status": None,
             "seasons": [],
         },
     )
 
-    assert normalized["manufacturer"] == {
+    assert normalized["engine_constructor"] == {
         "text": "Cadillac",
         "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
     }
-    assert "manufacturer_url" not in normalized
+    assert "engine_constructor_url" not in normalized
 
 
 def test_indianapolis_record_normalization_omits_url_when_include_urls_disabled() -> (
@@ -31,16 +31,16 @@ def test_indianapolis_record_normalization_omits_url_when_include_urls_disabled(
 
     normalized = scraper.normalize_indianapolis_record(
         {
-            "manufacturer": "Cadillac",
-            "manufacturer_url": "/wiki/Cadillac_in_Formula_One",
+            "engine_constructor": "Cadillac",
+            "engine_constructor_url": "/wiki/Cadillac_in_Formula_One",
             "engines_built_in": [],
             "manufacturer_status": None,
             "seasons": [],
         },
     )
 
-    assert normalized["manufacturer"] == {"text": "Cadillac", "url": None}
-    assert "manufacturer_url" not in normalized
+    assert normalized["engine_constructor"] == {"text": "Cadillac", "url": None}
+    assert "engine_constructor_url" not in normalized
 
 
 # ---------------------------------------------------------------------------
@@ -74,7 +74,7 @@ def test_engine_manufacturers_table_parser_maps_known_columns() -> None:
 
     parser = EngineManufacturersTableParser()
     result = parser.map_columns(["Manufacturer", "Wins", "Points"])
-    assert result["Manufacturer"] == "manufacturer"
+    assert result["Manufacturer"] == "engine_constructor"
     assert result["Wins"] == "wins"
     assert "Unknown" not in result
 
@@ -99,8 +99,8 @@ def test_indianapolis_only_list_parser_parses_simple_list() -> None:
     assert "items" in result
     items = result["items"]
     assert len(items) == 1
-    assert items[0]["manufacturer"] == "Ferrari"
-    assert items[0]["manufacturer_url"] == "/wiki/Ferrari"
+    assert items[0]["engine_constructor"] == "Ferrari"
+    assert items[0]["engine_constructor_url"] == "/wiki/Ferrari"
 
 
 def test_indianapolis_only_list_parser_skips_empty_items() -> None:
@@ -117,7 +117,7 @@ def test_indianapolis_only_list_parser_skips_empty_items() -> None:
 
     items = result["items"]
     assert len(items) == 1
-    assert items[0]["manufacturer"] == "Mercedes"
+    assert items[0]["engine_constructor"] == "Mercedes"
 
 
 def test_indianapolis_only_list_parser_handles_no_anchor() -> None:
@@ -134,8 +134,8 @@ def test_indianapolis_only_list_parser_handles_no_anchor() -> None:
 
     items = result["items"]
     assert len(items) == 1
-    assert items[0]["manufacturer"] == "No Link"
-    assert "manufacturer_url" not in items[0]
+    assert items[0]["engine_constructor"] == "No Link"
+    assert "engine_constructor_url" not in items[0]
 
 
 # ---------------------------------------------------------------------------
