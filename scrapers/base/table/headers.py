@@ -6,6 +6,7 @@ def normalize_header(header: str) -> str:
         strip_marks(header)
         .strip()
         .lower()
+        .replace("\u2019", "'")
         .replace(" ", "_")
         .replace("(", "")
         .replace(")", "")

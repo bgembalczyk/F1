@@ -21,6 +21,10 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
     extra_columns_policy = "ignore"
 
     _HEADER_ALIASES: dict[str, set[str]] = {
+        "Seasons": {
+            "Seasons",
+            "Season(s)",
+        },
         "Towards WDC": {
             "Towards WDC",
             "Drivers' Championship",

@@ -67,6 +67,9 @@ class TablePipeline:
         self.section_id = config.section_id
         self.expected_headers = config.expected_headers
         self.column_map = config.column_map
+        self._normalized_column_map = {
+            normalize_header(k): v for k, v in config.column_map.items()
+        }
         self.columns = config.columns
         self.table_css_class = config.table_css_class
         self.default_column: BaseColumn = config.default_column or AutoColumn()
@@ -240,7 +243,11 @@ class TablePipeline:
         header: str,
         cell: Tag,
     ) -> tuple[str, str | None, str | None]:
-        key = self.column_map.get(header, normalize_header(header))
+        key = (
+            self.column_map.get(header)
+            or self._normalized_column_map.get(normalize_header(header))
+            or normalize_header(header)
+        )
         raw_text = cell.get_text(" ", strip=True)
         normalized_raw_text = normalize_empty(
             raw_text,

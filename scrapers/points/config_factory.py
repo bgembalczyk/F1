@@ -54,7 +54,17 @@ def build_points_scoring_systems_history_columns() -> list[ColumnSpec]:
                 AutoColumn(),
             ),
             ColumnSpec(
+                "Towards WDC",
+                "drivers_championship",
+                AutoColumn(),
+            ),
+            ColumnSpec(
                 POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER,
+                "constructors_championship",
+                AutoColumn(),
+            ),
+            ColumnSpec(
+                "Towards WCC",
                 "constructors_championship",
                 AutoColumn(),
             ),
