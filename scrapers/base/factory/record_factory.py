@@ -39,23 +39,29 @@ class CallableRecordFactoryAdapter:
         return self.factory(dict(payload))
 
 
+@dataclass(frozen=True, slots=True)
 class RecordFactoryAdapters:
     """Factory helpers for the unified RecordFactory contract."""
 
-    @staticmethod
-    def callable(factory: Callable[[dict[str, Any]], Any] | type) -> RecordFactory:
-        # di-antipattern-allow: adapter wrapping is the factory responsibility.
+    adapter_builder: Callable[
+        [Callable[[dict[str, Any]], Any] | type],
+        RecordFactory,
+    ] = CallableRecordFactoryAdapter
+
+    def callable(
+        self,
+        factory: Callable[[dict[str, Any]], Any] | type,
+    ) -> RecordFactory:
         if not callable(factory):
             msg = "Record factory must be callable or a record type."
             raise TypeError(msg)
-        return CallableRecordFactoryAdapter(factory=factory)
+        return self.adapter_builder(factory)
 
-    @staticmethod
-    def builders(record_type: RecordType | str) -> RecordFactory:
+    def builders(self, record_type: RecordType | str) -> RecordFactory:
         if isinstance(record_type, str) and not record_type.strip():
             msg = "record_type cannot be empty."
             raise ValueError(msg)
-        return CallableRecordFactoryAdapter(
+        return self.adapter_builder(
             factory=lambda payload: RECORD_BUILDERS.build(record_type, payload),
         )
 
