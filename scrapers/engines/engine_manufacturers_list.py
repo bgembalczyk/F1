@@ -282,7 +282,19 @@ class EngineManufacturersListScraper(F1TableScraper):
                 "text": manufacturer,
                 "url": resolved_url,
             }
-        return normalized
+        return self._sort_record_keys_prefer_manufacturer(normalized)
+
+    @staticmethod
+    def _sort_record_keys_prefer_manufacturer(
+        record: dict[str, Any],
+    ) -> dict[str, Any]:
+        ordered: dict[str, Any] = {}
+        if "manufacturer" in record:
+            ordered["manufacturer"] = record["manufacturer"]
+
+        for key in sorted(key for key in record if key != "manufacturer"):
+            ordered[key] = record[key]
+        return ordered
 
 
 class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper):

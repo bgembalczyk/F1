@@ -43,6 +43,27 @@ def test_indianapolis_record_normalization_omits_url_when_include_urls_disabled(
     assert "manufacturer_url" not in normalized
 
 
+def test_indianapolis_record_normalization_sorts_keys_with_manufacturer_first() -> None:
+    scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
+
+    normalized = scraper.normalize_indianapolis_record(
+        {
+            "wins": 2,
+            "manufacturer": "Cadillac",
+            "manufacturer_url": "/wiki/Cadillac_in_Formula_One",
+            "engines_built_in": [],
+            "seasons": [],
+        },
+    )
+
+    assert list(normalized.keys()) == [
+        "manufacturer",
+        "engines_built_in",
+        "seasons",
+        "wins",
+    ]
+
+
 # ---------------------------------------------------------------------------
 # EngineManufacturersTableParser
 # ---------------------------------------------------------------------------
