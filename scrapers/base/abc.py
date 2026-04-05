@@ -294,7 +294,7 @@ class ABCScraper(ABC):
         if parse_impl is not ABCScraper.parse_records:
             return self.parse_records(soup)
 
-        legacy_parse_impl = type(self)._parse_soup
+        legacy_parse_impl = type(self)._parse_soup  # noqa: SLF001
         if legacy_parse_impl is not ABCScraper._parse_soup:
             return self._parse_soup(soup)
 

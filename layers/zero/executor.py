@@ -1,14 +1,9 @@
 from __future__ import annotations
 
-from collections.abc import Callable
-from collections.abc import Mapping
 from pathlib import Path
 from typing import TYPE_CHECKING
 from uuid import uuid4
 
-from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
-from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.orchestration.types import SeedName
 from layers.path_resolver import format_domain_year_name
 from layers.zero.policies import LayerZeroJobHook
 from layers.zero.policies import MirrorConstructorsJobHook
@@ -22,6 +17,12 @@ from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+    from collections.abc import Mapping
+
+    from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
+    from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
+    from layers.orchestration.types import SeedName
     from layers.seed.registry.entries import ListJobRegistryEntry
 
 
