@@ -189,3 +189,22 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
     assert call_count == EXPECTED_PARSE_CALLS
     assert result.records
     assert result.records[0]["constructor"] == "Ferrari"
+    assert list(result.records[0].keys()) == [
+        "constructor",
+        "engine",
+        "antecedent_teams",
+        "based_in",
+        "drivers",
+        "fastest_laps",
+        "licensed_in",
+        "podiums",
+        "points",
+        "poles",
+        "races_entered",
+        "races_started",
+        "seasons",
+        "total_entries",
+        "wcc_titles",
+        "wdc_titles",
+        "wins",
+    ]
