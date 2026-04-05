@@ -102,6 +102,8 @@ def _extract_cross_domain_references(
     _extract_from_drivers(layer_zero_dir, resolver)
     _extract_from_engines(layer_zero_dir, resolver)
     _extract_from_races(layer_zero_dir, resolver)
+    _extract_from_seasons(layer_zero_dir, resolver)
+    _extract_from_teams(layer_zero_dir, resolver)
 
 
 def _extract_from_chassis_constructors(
@@ -258,3 +260,76 @@ def _extract_from_races(
             _collect_red_flag_drivers(drivers, red_flag)
 
     _write_c_extract_file("drivers", "from_races.json", drivers, resolver)
+
+
+def _extract_from_seasons(
+    layer_zero_dir: Path,
+    resolver: PathResolver,
+) -> None:
+    records = _read_b_merge(layer_zero_dir / "seasons", resolver)
+    if not records:
+        return
+
+    tyre_manufacturers: list[object] = []
+    constructors: list[object] = []
+
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        _collect_list_or_single(tyre_manufacturers, record.get("tyre_manufacturers"))
+        _collect_list_or_single(constructors, record.get("constructors_champion"))
+
+    _write_c_extract_file(
+        "tyre_manufacturers", "from_seasons.json", tyre_manufacturers, resolver,
+    )
+    _write_c_extract_file(
+        "constructors", "from_seasons.json", constructors, resolver,
+    )
+
+
+def _extract_from_teams(
+    layer_zero_dir: Path,
+    resolver: PathResolver,
+) -> None:
+    records = _read_b_merge(layer_zero_dir / "teams", resolver)
+    if not records:
+        return
+
+    colors: list[object] = []
+    sponsors: list[object] = []
+    teams: list[object] = []
+    countries: list[object] = []
+
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        formula_one = _get_formula_one(record)
+        if formula_one is None:
+            continue
+        _collect_list_or_single(teams, formula_one.get("antecedent_teams"))
+        _collect_list_or_single(countries, formula_one.get("based_in"))
+        _collect_list_or_single(countries, formula_one.get("licensed_in"))
+        liveries = formula_one.get("liveries")
+        if not isinstance(liveries, list):
+            continue
+        for livery in liveries:
+            _collect_livery_colors_and_sponsors(livery, colors, sponsors)
+
+    _write_c_extract_file("colors", "from_teams.json", colors, resolver)
+    _write_c_extract_file("sponsors", "from_teams.json", sponsors, resolver)
+    _write_c_extract_file("teams", "from_teams.json", teams, resolver)
+    _write_c_extract_file("countries", "from_teams.json", countries, resolver)
+
+
+def _collect_livery_colors_and_sponsors(
+    livery: object,
+    colors: list[object],
+    sponsors: list[object],
+) -> None:
+    if not isinstance(livery, dict):
+        return
+    for key, value in livery.items():
+        if "colour" in key:
+            _collect_list_or_single(colors, value)
+        elif "sponsor" in key:
+            _collect_list_or_single(sponsors, value)
