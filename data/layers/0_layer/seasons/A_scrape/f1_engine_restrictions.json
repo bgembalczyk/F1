@@ -1,0 +1,303 @@
+[
+  {
+    "engine_rpm_limit": null,
+    "fuel_flow_rate": null,
+    "fuel_injection_pressure_limit": null,
+    "fuel_limit_per_race": {
+      "has_limit": false,
+      "is_estimated": true,
+      "range_kg": {
+        "max": {
+          "unit": "kg",
+          "value": 200.0
+        },
+        "min": {
+          "unit": "kg",
+          "value": 180.0
+        }
+      },
+      "range_l": {
+        "max": {
+          "unit": "L",
+          "value": 290.0
+        },
+        "min": {
+          "unit": "L",
+          "value": 250.0
+        }
+      }
+    },
+    "power_output": {
+      "max": {
+        "unit": "hp",
+        "value": 1000.0
+      },
+      "min": {
+        "unit": "hp",
+        "value": 770.0
+      }
+    },
+    "size": {
+      "unit": "litre",
+      "value": 3.0
+    },
+    "type_of_engine": [
+      {
+        "text": "V10",
+        "url": "https://en.wikipedia.org/wiki/V10"
+      }
+    ],
+    "year": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship",
+        "year": 2000
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship",
+        "year": 2001
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship",
+        "year": 2002
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship",
+        "year": 2003
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
+        "year": 2004
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship",
+        "year": 2005
+      }
+    ]
+  },
+  {
+    "engine_rpm_limit": {
+      "limit": {
+        "max": {
+          "unit": null,
+          "value": 20500.0
+        },
+        "min": {
+          "unit": null,
+          "value": 18000.0
+        }
+      }
+    },
+    "fuel_flow_rate": null,
+    "fuel_injection_pressure_limit": null,
+    "fuel_limit_per_race": {
+      "has_limit": false,
+      "is_estimated": true,
+      "range_kg": {
+        "max": {
+          "unit": "kg",
+          "value": 160.0
+        },
+        "min": {
+          "unit": "kg",
+          "value": 130.0
+        }
+      },
+      "range_l": {
+        "max": {
+          "unit": "L",
+          "value": 230.0
+        },
+        "min": {
+          "unit": "L",
+          "value": 190.0
+        }
+      }
+    },
+    "power_output": {
+      "max": {
+        "unit": "hp",
+        "value": 840.0
+      },
+      "min": {
+        "unit": "hp",
+        "value": 730.0
+      }
+    },
+    "size": {
+      "unit": "litre",
+      "value": 2.4
+    },
+    "type_of_engine": [
+      {
+        "text": "V8",
+        "url": "https://en.wikipedia.org/wiki/V8"
+      }
+    ],
+    "year": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship",
+        "year": 2006
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship",
+        "year": 2007
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship",
+        "year": 2008
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
+        "year": 2009
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship",
+        "year": 2010
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
+        "year": 2011
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship",
+        "year": 2012
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
+        "year": 2013
+      }
+    ]
+  },
+  {
+    "engine_rpm_limit": {
+      "limit": {
+        "max": {
+          "unit": null,
+          "value": 15000.0
+        },
+        "min": {
+          "unit": null,
+          "value": 15000.0
+        }
+      }
+    },
+    "fuel_flow_rate": {
+      "applies_above_rpm": {
+        "unit": "RPM",
+        "value": 10500.0
+      },
+      "rate": {
+        "unit": "kg/h",
+        "value": 100.0
+      }
+    },
+    "fuel_injection_pressure_limit": {
+      "limit": {
+        "unit": "bar",
+        "value": 500.0
+      }
+    },
+    "fuel_limit_per_race": {
+      "has_limit": true,
+      "is_estimated": false,
+      "range_kg": {
+        "max": {
+          "unit": "kg",
+          "value": 110.0
+        },
+        "min": {
+          "unit": "kg",
+          "value": 100.0
+        }
+      },
+      "range_l": {
+        "max": {
+          "unit": "L",
+          "value": 145.0
+        },
+        "min": {
+          "unit": "L",
+          "value": 130.0
+        }
+      }
+    },
+    "power_output": {
+      "max": {
+        "unit": "hp",
+        "value": 1000.0
+      },
+      "min": {
+        "unit": "hp",
+        "value": 750.0
+      }
+    },
+    "size": {
+      "unit": "litre",
+      "value": 1.6
+    },
+    "type_of_engine": [
+      {
+        "text": "V6",
+        "url": "https://en.wikipedia.org/wiki/V6"
+      },
+      {
+        "text": "turbo",
+        "url": "https://en.wikipedia.org/wiki/Turbocharged"
+      },
+      {
+        "text": "hybrid",
+        "url": "https://en.wikipedia.org/wiki/Hybrid_vehicle_drivetrain"
+      }
+    ],
+    "year": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship",
+        "year": 2014
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
+        "year": 2015
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+        "year": 2016
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
+        "year": 2017
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
+        "year": 2018
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
+        "year": 2019
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship",
+        "year": 2020
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+        "year": 2021
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+        "year": 2022
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      }
+    ]
+  }
+]
