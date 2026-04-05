@@ -112,7 +112,7 @@ def test_drivers_list_record_factory_populates_championships() -> None:
                 "url": "https://en.wikipedia.org/wiki/Test_Driver",
             },
             "is_active": True,
-            "is_world_champion": False,
+            "is_world_champion": True,
             "nationality": "Exampleland",
             "seasons_competed": [
                 {

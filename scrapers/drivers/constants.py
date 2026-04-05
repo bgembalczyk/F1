@@ -52,8 +52,8 @@ FEMALE_DRIVERS_HEADERS = [
 
 FEMALE_DRIVERS_INDEX_HEADER = "#"
 
-MARK_ACTIVE_DRIVER = "~"  # Wiki oznacza aktywnego kierowcę.
-MARK_ACTIVE_DRIVER_ALT = "*"  # Alternatywny znacznik aktywnego kierowcy w tabelach.
+MARK_ACTIVE_DRIVER = "*"  # Wiki oznacza aktywnego kierowcę.
+MARK_ACTIVE_WORLD_CHAMPION = "~"  # Alternatywny znacznik aktywnego kierowcy w tabelach.
 MARK_WORLD_CHAMPION = "^"  # Wiki oznacza mistrza świata.
 MARK_F2_CATEGORY = "#"  # Symbol wiki wskazujący start w F2.
 MARK_NON_CHAMPIONSHIP_EVENT = "†"  # Symbol wiki oznacza event poza cyklem mistrzostw.

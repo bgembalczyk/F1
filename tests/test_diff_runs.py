@@ -10,6 +10,9 @@ import pytest
 
 import scripts.diff_runs as dr
 
+EXPECTED_JSON_KEYS_COUNT = 2
+EXPECTED_JSONL_ITEM_COUNT = 2
+
 # ---------------------------------------------------------------------------
 # _read_text
 # ---------------------------------------------------------------------------
@@ -52,7 +55,7 @@ def test_canonicalize_json_file(tmp_path: Path) -> None:
     result = dr._canonicalize(f)
     parsed = json.loads(result)
     assert parsed["a"] == 1
-    assert parsed["b"] == 2
+    assert parsed["b"] == EXPECTED_JSON_KEYS_COUNT
 
 
 @pytest.mark.unit()
@@ -62,7 +65,7 @@ def test_canonicalize_jsonl_file(tmp_path: Path) -> None:
     result = dr._canonicalize(f)
     parsed = json.loads(result)
     assert isinstance(parsed, list)
-    assert len(parsed) == 2
+    assert len(parsed) == EXPECTED_JSONL_ITEM_COUNT
 
 
 @pytest.mark.unit()
