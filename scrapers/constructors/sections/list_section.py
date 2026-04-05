@@ -5,6 +5,8 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
+from models.value_objects import EntityName
+from models.value_objects import SectionId
 
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
@@ -216,6 +218,40 @@ class CurrentConstructorsSectionParser(ConstructorsSectionParser):
             normalize_empty_values=normalize_empty_values,
             table_parser=CurrentConstructorsTableParser(),
         )
+
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        parsed = super().parse(section_fragment)
+        sorted_records = [
+            self._sort_current_constructor_record_keys(record) for record in parsed.records
+        ]
+        return build_section_parse_result(
+            section_id=str(SectionId.from_raw(parsed.section_id)),
+            section_label=EntityName.from_raw(parsed.section_label).to_export(),
+            records=sorted_records,
+            parser=str(parsed.metadata.get("parser", self.__class__.__name__)),
+            source=str(parsed.metadata.get("source", "wikipedia")),
+            extras={
+                key: value
+                for key, value in parsed.metadata.items()
+                if key not in {"parser", "source", "heading_path"}
+            },
+            heading_path=tuple(parsed.metadata.get("heading_path", [])),
+        )
+
+    @staticmethod
+    def _sort_current_constructor_record_keys(record: dict[str, Any]) -> dict[str, Any]:
+        pinned_keys = ("constructor", "engine")
+        ordered: dict[str, Any] = {}
+
+        for key in pinned_keys:
+            if key in record:
+                ordered[key] = record[key]
+
+        remaining_keys = sorted(key for key in record if key not in pinned_keys)
+        for key in remaining_keys:
+            ordered[key] = record[key]
+
+        return ordered
 
 
 class FormerConstructorsSectionParser(ConstructorsSectionParser):
