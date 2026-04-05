@@ -71,7 +71,9 @@ def test_former_constructors_section_parser_handles_defunct_alias() -> None:
     ]
 
 
-def test_former_constructors_section_parser_keeps_constructor_link_without_acronym() -> None:
+def test_former_constructors_section_parser_keeps_constructor_link_without_acronym() -> (
+    None
+):
     html = """
     <html><body>
       <h2><span id="Former_constructors">Former constructors</span></h2>

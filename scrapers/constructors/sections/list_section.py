@@ -5,9 +5,9 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
+
 from models.value_objects import EntityName
 from models.value_objects import SectionId
-
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser
@@ -222,7 +222,8 @@ class CurrentConstructorsSectionParser(ConstructorsSectionParser):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         parsed = super().parse(section_fragment)
         sorted_records = [
-            self._sort_current_constructor_record_keys(record) for record in parsed.records
+            self._sort_current_constructor_record_keys(record)
+            for record in parsed.records
         ]
         return build_section_parse_result(
             section_id=str(SectionId.from_raw(parsed.section_id)),

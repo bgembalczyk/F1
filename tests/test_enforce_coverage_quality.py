@@ -1,5 +1,6 @@
 # ruff: noqa: SLF001
 """Unit tests for scripts/ci/enforce_coverage_quality.py."""
+
 from __future__ import annotations
 
 from textwrap import dedent
@@ -16,6 +17,7 @@ if TYPE_CHECKING:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _make_inputs(**kwargs: Any) -> ecq.GateInputs:
     defaults: dict[str, Any] = {
@@ -37,7 +39,8 @@ def _make_inputs(**kwargs: Any) -> ecq.GateInputs:
 # _to_percent
 # ---------------------------------------------------------------------------
 
-@pytest.mark.unit
+
+@pytest.mark.unit()
 def test_to_percent_converts_rate_to_percentage() -> None:
     assert ecq._to_percent(0.9) == pytest.approx(90.0)
     assert ecq._to_percent(0.0) == pytest.approx(0.0)
@@ -48,7 +51,8 @@ def test_to_percent_converts_rate_to_percentage() -> None:
 # _parse_coverage
 # ---------------------------------------------------------------------------
 
-@pytest.mark.unit
+
+@pytest.mark.unit()
 def test_parse_coverage_reads_global_and_file_rates(tmp_path: Path) -> None:
     xml_content = dedent("""\
         <?xml version="1.0" ?>
@@ -76,7 +80,7 @@ def test_parse_coverage_reads_global_and_file_rates(tmp_path: Path) -> None:
     assert file_covs["src/module.py"] == pytest.approx(90.0)
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_parse_coverage_handles_missing_line_rate(tmp_path: Path) -> None:
     xml_content = dedent("""\
         <?xml version="1.0" ?>
@@ -93,7 +97,7 @@ def test_parse_coverage_handles_missing_line_rate(tmp_path: Path) -> None:
     assert file_covs == {}
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_parse_coverage_skips_class_without_filename(tmp_path: Path) -> None:
     xml_content = dedent("""\
         <?xml version="1.0" ?>
@@ -121,13 +125,14 @@ def test_parse_coverage_skips_class_without_filename(tmp_path: Path) -> None:
 # _load_legacy_files
 # ---------------------------------------------------------------------------
 
-@pytest.mark.unit
+
+@pytest.mark.unit()
 def test_load_legacy_files_returns_empty_if_missing(tmp_path: Path) -> None:
     missing = tmp_path / "does_not_exist.txt"
     assert ecq._load_legacy_files(missing) == set()
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_load_legacy_files_parses_file(tmp_path: Path) -> None:
     txt = tmp_path / "legacy.txt"
     txt.write_text(
@@ -138,12 +143,12 @@ def test_load_legacy_files_parses_file(tmp_path: Path) -> None:
     assert result == {"src/module.py", "other/file.py"}
 
 
-
 # ---------------------------------------------------------------------------
 # _validate_progressive_threshold
 # ---------------------------------------------------------------------------
 
-@pytest.mark.unit
+
+@pytest.mark.unit()
 def test_validate_progressive_threshold_valid_policy() -> None:
     policy = {
         "global_threshold_path": [80.0, 85.0, 90.0],
@@ -154,7 +159,7 @@ def test_validate_progressive_threshold_valid_policy() -> None:
     assert violations == []
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_validate_progressive_threshold_not_strictly_increasing() -> None:
     policy = {
         "global_threshold_path": [85.0, 85.0, 90.0],
@@ -165,7 +170,7 @@ def test_validate_progressive_threshold_not_strictly_increasing() -> None:
     assert any("ściśle rosnąca" in v.message for v in violations)
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_validate_progressive_threshold_increment_too_small() -> None:
     policy = {
         "global_threshold_path": [85.0, 86.0, 90.0],
@@ -176,7 +181,7 @@ def test_validate_progressive_threshold_increment_too_small() -> None:
     assert any("przyrost" in v.message for v in violations)
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_validate_progressive_threshold_sprint_out_of_range() -> None:
     policy = {
         "global_threshold_path": [85.0, 88.0],
@@ -187,7 +192,7 @@ def test_validate_progressive_threshold_sprint_out_of_range() -> None:
     assert any("zakresem" in v.message for v in violations)
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_validate_progressive_threshold_missing_path() -> None:
     policy: dict[str, Any] = {
         "current_sprint": 1,
@@ -197,7 +202,7 @@ def test_validate_progressive_threshold_missing_path() -> None:
     assert any("global_threshold_path" in v.message for v in violations)
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_validate_progressive_threshold_invalid_types() -> None:
     policy: dict[str, Any] = {
         "global_threshold_path": ["bad", "values"],
@@ -212,19 +217,20 @@ def test_validate_progressive_threshold_invalid_types() -> None:
 # _evaluate_global_threshold
 # ---------------------------------------------------------------------------
 
-@pytest.mark.unit
+
+@pytest.mark.unit()
 def test_evaluate_global_threshold_passes_when_above_threshold() -> None:
     inputs = _make_inputs(global_coverage=86.0, current_threshold=85.0)
     assert ecq._evaluate_global_threshold(inputs) == []
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_evaluate_global_threshold_passes_at_exact_threshold() -> None:
     inputs = _make_inputs(global_coverage=85.0, current_threshold=85.0)
     assert ecq._evaluate_global_threshold(inputs) == []
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_evaluate_global_threshold_fails_when_below() -> None:
     inputs = _make_inputs(global_coverage=76.15, current_threshold=85.0)
     violations = ecq._evaluate_global_threshold(inputs)
@@ -237,7 +243,8 @@ def test_evaluate_global_threshold_fails_when_below() -> None:
 # _evaluate_changed_files
 # ---------------------------------------------------------------------------
 
-@pytest.mark.unit
+
+@pytest.mark.unit()
 def test_evaluate_changed_files_no_violations_when_no_regression() -> None:
     inputs = _make_inputs(
         changed_files={"src/module.py"},
@@ -247,7 +254,7 @@ def test_evaluate_changed_files_no_violations_when_no_regression() -> None:
     assert ecq._evaluate_changed_files(inputs) == []
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_evaluate_changed_files_regression_detected() -> None:
     inputs = _make_inputs(
         changed_files={"src/module.py"},
@@ -260,7 +267,7 @@ def test_evaluate_changed_files_regression_detected() -> None:
     assert "src/module.py" in violations[0].message
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_evaluate_changed_files_skips_non_python() -> None:
     inputs = _make_inputs(
         changed_files={"README.md", "data.json"},
@@ -270,7 +277,7 @@ def test_evaluate_changed_files_skips_non_python() -> None:
     assert ecq._evaluate_changed_files(inputs) == []
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_evaluate_changed_files_skips_if_no_baseline() -> None:
     inputs = _make_inputs(
         changed_files={"src/new_file.py"},
@@ -280,7 +287,7 @@ def test_evaluate_changed_files_skips_if_no_baseline() -> None:
     assert ecq._evaluate_changed_files(inputs) == []
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_evaluate_changed_files_legacy_improvement_required() -> None:
     inputs = _make_inputs(
         changed_files={"src/legacy.py"},
@@ -295,7 +302,7 @@ def test_evaluate_changed_files_legacy_improvement_required() -> None:
     assert "src/legacy.py" in violations[0].message
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_evaluate_changed_files_legacy_improvement_sufficient() -> None:
     inputs = _make_inputs(
         changed_files={"src/legacy.py"},
@@ -308,7 +315,7 @@ def test_evaluate_changed_files_legacy_improvement_sufficient() -> None:
     assert not any("legacy" in v.message.lower() for v in violations)
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_evaluate_changed_files_skips_missing_from_current() -> None:
     inputs = _make_inputs(
         changed_files={"src/module.py"},
@@ -322,7 +329,8 @@ def test_evaluate_changed_files_skips_missing_from_current() -> None:
 # _format_and_print_result
 # ---------------------------------------------------------------------------
 
-@pytest.mark.unit
+
+@pytest.mark.unit()
 def test_format_and_print_result_ok(capsys: pytest.CaptureFixture[str]) -> None:
     inputs = _make_inputs(
         global_coverage=90.0,
@@ -335,7 +343,7 @@ def test_format_and_print_result_ok(capsys: pytest.CaptureFixture[str]) -> None:
     assert "OK" in out
 
 
-@pytest.mark.unit
+@pytest.mark.unit()
 def test_format_and_print_result_failed(capsys: pytest.CaptureFixture[str]) -> None:
     inputs = _make_inputs(
         global_coverage=70.0,
@@ -354,7 +362,8 @@ def test_format_and_print_result_failed(capsys: pytest.CaptureFixture[str]) -> N
 # _load_json
 # ---------------------------------------------------------------------------
 
-@pytest.mark.unit
+
+@pytest.mark.unit()
 def test_load_json_reads_and_parses(tmp_path: Path) -> None:
     json_path = tmp_path / "data.json"
     json_path.write_text('{"key": "value", "num": 42}', encoding="utf-8")
