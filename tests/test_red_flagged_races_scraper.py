@@ -172,8 +172,11 @@ class TestRedFlaggedRacesScraperRobustness:
         records = scraper.parse_soup(soup)
 
         assert len(records) == 1
-        assert records[0]["season"] == "1971"
-        assert records[0]["event"] == "Brands Hatch"
+        assert records[0]["season"] == 1971
+        assert records[0]["event"] == {
+            "text": "Brands Hatch",
+            "url": None,
+        }
 
     def test_composite_non_championship_scope_with_h4_but_no_h5(self):
         """Test composite parser handles h4 structure without h5 nested sections."""
@@ -203,8 +206,11 @@ class TestRedFlaggedRacesScraperRobustness:
         records = scraper.parse_soup(soup)
 
         assert len(records) == 1
-        assert records[0]["season"] == "1980"
-        assert records[0]["event"] == "Silverstone Int."
+        assert records[0]["season"] == 1980
+        assert records[0]["event"] == {
+            "text": "Silverstone Int.",
+            "url": None,
+        }
 
     def test_composite_non_championship_scope_with_table_nested_in_div(self):
         """Test composite parser finds non-championship table nested inside extra wrappers."""
@@ -237,8 +243,11 @@ class TestRedFlaggedRacesScraperRobustness:
         records = scraper.parse_soup(soup)
 
         assert len(records) == 1
-        assert records[0]["season"] == "1972"
-        assert records[0]["event"] == "Race of Champions"
+        assert records[0]["season"] == 1972
+        assert records[0]["event"] == {
+            "text": "Race of Champions",
+            "url": None,
+        }
 
     def test_composite_parser_dependencies(self):
         """Test required parser dependencies are wired in composite parser."""
@@ -361,6 +370,55 @@ class TestRedFlaggedRacesScraperRobustness:
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart",
         }
         assert record["incident"] == "Mist."
+
+    def test_composite_non_championship_scope_produces_rich_output(self):
+        """Test non-championship parser returns rich structured fields."""
+        html = """
+        <html><body>
+        <div id="bodyContent">
+        <div id="mw-content-text" class="mw-body-content">
+        <div class="mw-content-ltr mw-parser-output">
+          <h3 class="mw-heading3"><span class="mw-headline" id="Non-championship_races">Non-championship races</span></h3>
+          <table class="wikitable">
+            <tr>
+              <th>Year</th><th>Event</th><th>Lap</th><th>R</th>
+              <th>Winner</th><th>Incident that prompted red flag</th>
+            </tr>
+            <tr>
+              <td>1971</td>
+              <td><a href="/wiki/1971_World_Championship_Victory_Race">Brand Hatch</a></td>
+              <td>15</td>
+              <td>N</td>
+              <td><a href="/wiki/Peter_Gethin">Peter Gethin</a></td>
+              <td>Fatal crash of <a href="/wiki/Jo_Siffert">Jo Siffert</a>.</td>
+            </tr>
+          </table>
+        </div>
+        </div>
+        </div>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        scraper = RedFlaggedRacesScraper(export_scope="non_championship")
+        records = scraper.parse_soup(soup)
+
+        assert len(records) == 1
+        record = records[0]
+        assert record["season"] == 1971
+        assert record["event"] == {
+            "text": "Brand Hatch",
+            "url": "https://en.wikipedia.org/wiki/1971_World_Championship_Victory_Race",
+        }
+        assert record["lap"] == 15
+        assert record["restart_status"] == {
+            "code": "N",
+            "description": "race_was_not_restarted",
+        }
+        assert record["winner"] == {
+            "text": "Peter Gethin",
+            "url": "https://en.wikipedia.org/wiki/Peter_Gethin",
+        }
+        assert record["incident"] == "Fatal crash of Jo Siffert ."
 
     def test_multi_row_race_produces_failed_to_make_restart_list(self):
         """Test that multi-row race entries (rowspan) produce a grouped failed_to_make_restart list."""

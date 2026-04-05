@@ -233,6 +233,85 @@ class NonChampionshipsRacesTableParser(WikiTableBaseParser):
             if header in self._column_mapping
         }
 
+    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().parse(table_data)
+        if result is None:
+            return None
+        result["domain_rows"] = self._merge_failed_to_restart_rows(
+            result["domain_rows"],
+        )
+        return result
+
+    @staticmethod
+    def _race_key(row: dict[str, Any]) -> tuple:
+        season = row.get("season")
+        event = row.get("event")
+        event_text = event.get("text") if isinstance(event, dict) else event
+        lap = row.get("lap")
+        return (season, event_text, lap)
+
+    @staticmethod
+    def _merge_failed_to_restart_rows(
+        rows: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        _key = NonChampionshipsRacesTableParser._race_key
+        merged: list[dict[str, Any]] = []
+        for row in rows:
+            raw_drivers = row.pop("failed_to_make_restart_drivers", None)
+            drivers = raw_drivers if raw_drivers is not None else []
+            reason = row.pop("failed_to_make_restart_reason", None)
+            race_key = _key(row)
+            has_data = bool(drivers or reason)
+            entry = {"drivers": drivers, "reason": reason} if has_data else None
+            if merged and _key(merged[-1]) == race_key:
+                if entry is not None:
+                    merged[-1]["failed_to_make_restart"].append(entry)
+            else:
+                row["failed_to_make_restart"] = [entry] if entry is not None else []
+                merged.append(row)
+        return merged
+
+    @staticmethod
+    def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
+        rich_rows = table_data.get("rich_rows", [])
+        if isinstance(rich_rows, list) and rich_rows:
+            return [row for row in rich_rows if isinstance(row, dict)]
+        rows = table_data.get("rows", [])
+        if isinstance(rows, list):
+            dict_rows = [row for row in rows if isinstance(row, dict)]
+            if dict_rows:
+                return dict_rows
+        raw_rows = table_data.get("raw_rows", [])
+        if isinstance(raw_rows, list):
+            return [row for row in raw_rows if isinstance(row, dict)]
+        return []
+
+    @staticmethod
+    def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+        mapped: dict[str, Any] = {}
+        for header, cell_data in row.items():
+            key = column_map.get(header)
+            if not key:
+                continue
+            text, links, _background, url = _extract_rich_cell(cell_data)
+            if key in ("season", "lap"):
+                mapped[key] = _try_int(text)
+            elif key == "event":
+                mapped[key] = {"text": text, "url": url}
+            elif key == "restart_status":
+                code = text[0].upper() if text else ""
+                mapped[key] = {
+                    "code": code,
+                    "description": _RESTART_STATUS_MAP.get(code),
+                }
+            elif key == "winner":
+                mapped[key] = _map_winner_cell(text, links)
+            elif key == "failed_to_make_restart_drivers":
+                mapped[key] = _map_drivers_cell(text, links)
+            else:
+                mapped[key] = text
+        return mapped
+
 
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
