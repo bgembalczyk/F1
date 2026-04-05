@@ -146,6 +146,36 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
             for header in headers
         }
 
+    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().parse(table_data)
+        if result is None:
+            return None
+        result["domain_rows"] = self._group_rows_by_seasons(result["domain_rows"])
+        return result
+
+    @staticmethod
+    def _group_rows_by_seasons(
+        rows: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        groups: dict[str, list[dict[str, Any]]] = {}
+        order: list[str] = []
+        for row in rows:
+            seasons_text = row.get("seasons") or ""
+            if seasons_text not in groups:
+                groups[seasons_text] = []
+                order.append(seasons_text)
+            race_length_entry = {
+                k: v for k, v in row.items() if k not in ("seasons", "notes")
+            }
+            groups[seasons_text].append(race_length_entry)
+        return [
+            {
+                "seasons": [s.to_dict() for s in parse_seasons(seasons_text)],
+                "race_length_points": groups[seasons_text],
+            }
+            for seasons_text in order
+        ]
+
 
 def _normalize_header(header: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", header.lower())
