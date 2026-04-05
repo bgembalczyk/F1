@@ -61,6 +61,16 @@ def test_json_formatter_sorts_nested_dict_keys() -> None:
     )
 
 
+def test_json_formatter_prioritizes_constructor_and_engine_keys() -> None:
+    formatter = JsonFormatter()
+    data = [{"points": 1, "constructor": {"text": "A"}, "engine": {"text": "B"}}]
+
+    payload = formatter.format(data, include_metadata=False)
+
+    assert payload.index('"constructor"') < payload.index('"engine"')
+    assert payload.index('"engine"') < payload.index('"points"')
+
+
 def test_csv_formatter_builds_union_of_fields() -> None:
     formatter = CsvFormatter()
     result = ScrapeResult(
