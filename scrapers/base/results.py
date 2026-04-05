@@ -6,6 +6,7 @@ from dataclasses import field
 from datetime import datetime
 from datetime import timezone
 
+from infrastructure.export.default_export_service import build_default_export_service
 from scrapers.base.normalization import NormalizationRule
 from scrapers.base.normalization import RecordNormalizer
 
@@ -19,17 +20,7 @@ if typing.TYPE_CHECKING:
 
 
 def _default_export_service() -> ExportService:
-    # di-antipattern-allow: local import by design.
-    from scrapers.base.export.exporters import DataExporter
-    from scrapers.base.export.fieldnames import FieldnamesStrategySelector
-    from scrapers.base.export.service import ExportService as _ExportService
-    from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
-
-    return _ExportService(
-        exporter=DataExporter(),
-        fieldnames_strategy=FieldnamesStrategySelector(),
-        dataframe_formatter=PandasDataFrameFormatter(),
-    )
+    return build_default_export_service()
 
 
 @dataclass(frozen=True)
