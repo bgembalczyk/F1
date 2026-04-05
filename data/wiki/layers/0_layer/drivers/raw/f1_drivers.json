@@ -727,8 +727,17 @@
       "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 2,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship",
+          "year": 2005
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship",
+          "year": 2006
+        }
+      ]
     },
     "fastest_laps": 26,
     "is_active": true,
@@ -1100,8 +1109,13 @@
       "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship",
+          "year": 1978
+        }
+      ]
     },
     "fastest_laps": 10,
     "is_active": false,
@@ -1540,8 +1554,17 @@
       "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 2,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship",
+          "year": 1952
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship",
+          "year": 1953
+        }
+      ]
     },
     "fastest_laps": 12,
     "is_active": false,
@@ -4248,8 +4271,21 @@
       "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 3,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
+          "year": 1959
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship",
+          "year": 1960
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship",
+          "year": 1966
+        }
+      ]
     },
     "fastest_laps": 12,
     "is_active": false,
@@ -5253,8 +5289,13 @@
       "url": "https://en.wikipedia.org/wiki/Jenson_Button"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
+          "year": 2009
+        }
+      ]
     },
     "fastest_laps": 8,
     "is_active": false,
@@ -6530,8 +6571,17 @@
       "url": "https://en.wikipedia.org/wiki/Jim_Clark"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 2,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship",
+          "year": 1963
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship",
+          "year": 1965
+        }
+      ]
     },
     "fastest_laps": 28,
     "is_active": false,
@@ -8880,8 +8930,29 @@
       "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 5,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship",
+          "year": 1951
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship",
+          "year": 1954
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship",
+          "year": 1955
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship",
+          "year": 1956
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship",
+          "year": 1957
+        }
+      ]
     },
     "fastest_laps": 23,
     "is_active": false,
@@ -8935,8 +9006,13 @@
       "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
+          "year": 1950
+        }
+      ]
     },
     "fastest_laps": 5,
     "is_active": false,
@@ -9330,8 +9406,17 @@
       "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 2,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship",
+          "year": 1972
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship",
+          "year": 1974
+        }
+      ]
     },
     "fastest_laps": 6,
     "is_active": false,
@@ -12379,8 +12464,17 @@
       "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 2,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship",
+          "year": 1998
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship",
+          "year": 1999
+        }
+      ]
     },
     "fastest_laps": 25,
     "is_active": false,
@@ -12556,8 +12650,37 @@
       "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 7,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship",
+          "year": 2008
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship",
+          "year": 2014
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
+          "year": 2015
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
+          "year": 2017
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
+          "year": 2018
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
+          "year": 2019
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship",
+          "year": 2020
+        }
+      ]
     },
     "fastest_laps": 68,
     "is_active": true,
@@ -13043,8 +13166,13 @@
       "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship",
+          "year": 1958
+        }
+      ]
     },
     "fastest_laps": 6,
     "is_active": false,
@@ -13548,8 +13676,13 @@
       "url": "https://en.wikipedia.org/wiki/Damon_Hill"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship",
+          "year": 1996
+        }
+      ]
     },
     "fastest_laps": 19,
     "is_active": false,
@@ -13603,8 +13736,17 @@
       "url": "https://en.wikipedia.org/wiki/Graham_Hill"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 2,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship",
+          "year": 1962
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship",
+          "year": 1968
+        }
+      ]
     },
     "fastest_laps": 10,
     "is_active": false,
@@ -13698,8 +13840,13 @@
       "url": "https://en.wikipedia.org/wiki/Phil_Hill"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship",
+          "year": 1961
+        }
+      ]
     },
     "fastest_laps": 6,
     "is_active": false,
@@ -14126,8 +14273,13 @@
       "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship",
+          "year": 1967
+        }
+      ]
     },
     "fastest_laps": 9,
     "is_active": false,
@@ -14189,8 +14341,13 @@
       "url": "https://en.wikipedia.org/wiki/James_Hunt"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+          "year": 1976
+        }
+      ]
     },
     "fastest_laps": 8,
     "is_active": false,
@@ -14998,8 +15155,13 @@
       "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship",
+          "year": 1980
+        }
+      ]
     },
     "fastest_laps": 13,
     "is_active": false,
@@ -16533,8 +16695,21 @@
       "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 3,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship",
+          "year": 1975
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship",
+          "year": 1977
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
+          "year": 1984
+        }
+      ]
     },
     "fastest_laps": 24,
     "is_active": false,
@@ -18251,8 +18426,13 @@
       "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
+          "year": 1992
+        }
+      ]
     },
     "fastest_laps": 30,
     "is_active": false,
@@ -20922,8 +21102,13 @@
       "url": "https://en.wikipedia.org/wiki/Lando_Norris"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+          "year": 2025
+        }
+      ]
     },
     "fastest_laps": 18,
     "is_active": true,
@@ -22722,8 +22907,21 @@
       "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 3,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
+          "year": 1981
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship",
+          "year": 1983
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
+          "year": 1987
+        }
+      ]
     },
     "fastest_laps": 23,
     "is_active": false,
@@ -23259,8 +23457,25 @@
       "url": "https://en.wikipedia.org/wiki/Alain_Prost"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 4,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
+          "year": 1985
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
+          "year": 1986
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
+          "year": 1989
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship",
+          "year": 1993
+        }
+      ]
     },
     "fastest_laps": 41,
     "is_active": false,
@@ -23522,8 +23737,13 @@
       "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship",
+          "year": 2007
+        }
+      ]
     },
     "fastest_laps": 46,
     "is_active": false,
@@ -24477,8 +24697,13 @@
       "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship",
+          "year": 1970
+        }
+      ]
     },
     "fastest_laps": 3,
     "is_active": false,
@@ -24898,8 +25123,13 @@
       "url": "https://en.wikipedia.org/wiki/Keke_Rosberg"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
+          "year": 1982
+        }
+      ]
     },
     "fastest_laps": 3,
     "is_active": false,
@@ -24957,8 +25187,13 @@
       "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+          "year": 2016
+        }
+      ]
     },
     "fastest_laps": 20,
     "is_active": false,
@@ -26116,8 +26351,13 @@
       "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship",
+          "year": 1979
+        }
+      ]
     },
     "fastest_laps": 5,
     "is_active": false,
@@ -26541,8 +26781,37 @@
       "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 7,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship",
+          "year": 1994
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship",
+          "year": 1995
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship",
+          "year": 2000
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship",
+          "year": 2001
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship",
+          "year": 2002
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship",
+          "year": 2003
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
+          "year": 2004
+        }
+      ]
     },
     "fastest_laps": 77,
     "is_active": false,
@@ -26954,8 +27223,21 @@
       "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 3,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+          "year": 1988
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
+          "year": 1990
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
+          "year": 1991
+        }
+      ]
     },
     "fastest_laps": 19,
     "is_active": false,
@@ -27915,8 +28197,21 @@
       "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 3,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship",
+          "year": 1969
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship",
+          "year": 1971
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship",
+          "year": 1973
+        }
+      ]
     },
     "fastest_laps": 15,
     "is_active": false,
@@ -28371,8 +28666,13 @@
       "url": "https://en.wikipedia.org/wiki/John_Surtees"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship",
+          "year": 1964
+        }
+      ]
     },
     "fastest_laps": 10,
     "is_active": false,
@@ -30308,8 +30608,25 @@
       "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 4,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+          "year": 2021
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+          "year": 2022
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+          "year": 2023
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+          "year": 2024
+        }
+      ]
     },
     "fastest_laps": 37,
     "is_active": true,
@@ -30379,8 +30696,25 @@
       "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 4,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship",
+          "year": 2010
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
+          "year": 2011
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship",
+          "year": 2012
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
+          "year": 2013
+        }
+      ]
     },
     "fastest_laps": 38,
     "is_active": false,
@@ -30512,8 +30846,13 @@
       "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
     },
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship",
+          "year": 1997
+        }
+      ]
     },
     "fastest_laps": 9,
     "is_active": false,
