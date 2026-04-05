@@ -72,7 +72,7 @@ class IndianapolisOnlyListScraper(F1ListScraper):
 - `scrapers/constructors/current_constructors_list.py`
 - `scrapers/constructors/former_constructors_list.py`
 
-### 4. Red Flagged Races Base Enhancement (`scrapers/grands_prix/red_flagged_races_scraper/base.py`)
+### 4. Red Flagged Races Base Enhancement (`scrapers/races/red_flagged_races_scraper/base.py`)
 
 **Problem:** Base scraper lacked documentation and helper methods for shared column definitions.
 

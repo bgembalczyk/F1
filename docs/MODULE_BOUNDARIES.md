@@ -227,10 +227,10 @@ W praktyce oznacza to migrację:
 - `python -m scrapers.engines.indianapolis_only_engine_manufacturers_list` -> `python -m scrapers.engines.indianapolis_only_engine_manufacturers_list`
 - `python -m scrapers.grands_prix.complete_scraper` -> `python -m scrapers.grands_prix.complete_scraper`
 - `python -m scrapers.grands_prix.list_scraper` -> `python -m scrapers.grands_prix.entrypoint`
-- `python -m scrapers.grands_prix.red_flagged_races_scraper.world_championship` -> `python -m scrapers.grands_prix.red_flagged_races_scraper.world_championship`
 - `python -m scrapers.points.points_scoring_systems_history` -> `python -m scrapers.points.points_scoring_systems_history`
 - `python -m scrapers.points.shortened_race_points` -> `python -m scrapers.points.shortened_race_points`
 - `python -m scrapers.points.sprint_qualifying_points` -> `python -m scrapers.points.sprint_qualifying_points`
+- `python -m scrapers.races.red_flagged_races_scraper.world_championship` -> `python -m scrapers.races.red_flagged_races_scraper.world_championship`
 - `python -m scrapers.seasons.complete_scraper` -> `python -m scrapers.seasons.complete_scraper`
 - `python -m scrapers.seasons.list_scraper` -> `python -m scrapers.seasons.entrypoint`
 - `python -m scrapers.sponsorship_liveries.scraper` -> `python -m scrapers.sponsorship_liveries.scraper`
@@ -304,8 +304,8 @@ Ujednolicamy jeden standard dla deklaracji `CONFIG` w scraperach tabelowych:
 - `scrapers/drivers/fatalities_list_scraper.py`
 - `scrapers/engines/engine_regulation.py`
 - `scrapers/engines/engine_restrictions.py`
-- `scrapers/grands_prix/red_flagged_races_scraper/non_championship.py`
-- `scrapers/grands_prix/red_flagged_races_scraper/world_championship.py`
+- `scrapers/races/red_flagged_races_scraper/non_championship.py`
+- `scrapers/races/red_flagged_races_scraper/world_championship.py`
 - `scrapers/points/sprint_qualifying_points.py`
 - `scrapers/points/shortened_race_points.py`
 - `scrapers/points/points_scoring_systems_history.py`

@@ -31,7 +31,7 @@
 - [ ] `scrapers/sponsorship_liveries/columns/sponsor.py` — miss: 132, coverage: 49.43%
 - [ ] `scrapers/engines/engine_manufacturers_list.py` — miss: 116, coverage: 29.7%
 - [ ] `scrapers/constructors/constructors_list.py` — miss: 97, coverage: 40.85%
-- [ ] `scrapers/grands_prix/red_flagged_races_scraper/combined.py` — miss: 91, coverage: 63.75%
+- [ ] `scrapers/races/red_flagged_races_scraper/combined.py` — miss: 91, coverage: 63.75%
 - [ ] `scrapers/seasons/columns/race_result.py` — miss: 89, coverage: 25.83%
 - [ ] `scrapers/circuits/models/services/normalization.py` — miss: 85, coverage: 50.58%
 - [ ] `scrapers/base/abc.py` — miss: 80, coverage: 59.8%

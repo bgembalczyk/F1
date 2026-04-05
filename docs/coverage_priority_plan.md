@@ -33,7 +33,7 @@
 | `scrapers/engines/engine_manufacturers_list.py` | 105 | 36.36% | scraper | Fala 1 |
 | `scripts/ci/enforce_structural_quality.py` | 96 | 46.96% | scripts | Fala 1 |
 | `scrapers/constructors/constructors_list.py` | 89 | 45.73% | scraper | Fala 1 |
-| `scrapers/grands_prix/red_flagged_races_scraper/combined.py` | 85 | 66.14% | scraper | Fala 1 |
+| `scrapers/races/red_flagged_races_scraper/combined.py` | 85 | 66.14% | scraper | Fala 1 |
 | `scrapers/seasons/columns/race_result.py` | 78 | 35.00% | scraper | Fala 1 |
 | `tests/test_scraper_errors.py` | 77 | 60.91% | tests-support | Fala 1 |
 | `scrapers/seasons/parsers/entry_merger.py` | 75 | 61.14% | scraper | Fala 1 |

@@ -13,6 +13,7 @@ Generated from `scripts/ci/architecture_spec.py`. Do not edit manually.
 | `circuits` | yes | list, sections, infobox, postprocess |
 | `seasons` | yes | list, sections, postprocess |
 | `grands_prix` | yes | list, sections |
+| `races` | no | - |
 | `engines` | no | - |
 | `points` | no | - |
 | `sponsorship_liveries` | no | - |

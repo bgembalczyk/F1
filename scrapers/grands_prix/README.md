@@ -22,6 +22,6 @@ Stabilne importy dla konsumentów:
 - `from scrapers.grands_prix import GrandsPrixListScraper`
 - `from scrapers.grands_prix import F1SingleGrandPrixScraper`
 - `from scrapers.grands_prix import F1CompleteGrandPrixDataExtractor`
-- `from scrapers.grands_prix import RedFlaggedRacesScraper`
+- `from scrapers.races import RedFlaggedRacesScraper`
 
 `grands_prix.helpers` traktuj jako internal.

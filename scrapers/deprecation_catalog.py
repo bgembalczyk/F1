@@ -46,7 +46,7 @@ DEPRECATED_MODULES: tuple[DeprecatedModuleEntry, ...] = (
     ),
     DeprecatedModuleEntry("scrapers.grands_prix.complete_scraper"),
     DeprecatedModuleEntry(
-        "scrapers.grands_prix.red_flagged_races_scraper.world_championship",
+        "scrapers.races.red_flagged_races_scraper.world_championship",
     ),
     DeprecatedModuleEntry("scrapers.points.points_scoring_systems_history"),
     DeprecatedModuleEntry("scrapers.points.shortened_race_points"),

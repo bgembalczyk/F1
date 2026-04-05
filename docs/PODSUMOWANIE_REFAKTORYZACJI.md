@@ -131,7 +131,7 @@ Wszystkie zmiany są kompatybilne wstecz:
 - `scrapers/grands_prix/complete_scraper.py`
 - `scrapers/constructors/current_constructors_list.py`
 - `scrapers/constructors/former_constructors_list.py`
-- `scrapers/grands_prix/red_flagged_races_scraper/base.py`
+- `scrapers/races/red_flagged_races_scraper/base.py`
 - `scrapers/points/sprint_qualifying_points.py`
 - `scrapers/points/shortened_race_points.py`
 - `scrapers/points/points_scoring_systems_history.py`

@@ -4,28 +4,29 @@ from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.grands_prix.red_flagged_races_scraper.base import (
+from scrapers.races.red_flagged_races_scraper.base import (
     RedFlaggedRacesBaseScraper,
 )
 
 
-class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
+class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
     alternative_section_ids = [
-        "World_Championship_races",
-        "Championship_races",
-        "World_championship_races",
-        "Red_flagged_races",
+        "Non-championship",
+        "Non-Championship_races",
+        "Non_championship_races",
     ]
 
-    schema_columns = RedFlaggedRacesBaseScraper.build_common_red_flag_columns()
-    schema_columns[1] = ColumnSpec("Grand Prix", "grand_prix", UrlColumn())
+    schema_columns = RedFlaggedRacesBaseScraper.build_common_red_flag_columns(
+        "Event",
+    )
+    schema_columns[1] = ColumnSpec("Event", "event", UrlColumn())
 
     CONFIG = build_scraper_config(
         url=RED_FLAGGED_RACES.base_url,
-        section_id=RED_FLAGGED_RACES.section_id,
+        section_id="Non-championship_races",
         expected_headers=[
             "Year",
-            "Grand Prix",
+            "Event",
             "Lap",
             "R",
             "Winner",
