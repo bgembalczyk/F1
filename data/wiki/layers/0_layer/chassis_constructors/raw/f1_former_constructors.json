@@ -3156,7 +3156,10 @@
   },
   {
     "constructor": {
-      "text": "Ligier",
+      "names": [
+        "Ligier",
+        "Talbot Ligier"
+      ],
       "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
     },
     "drivers": 28,
@@ -4898,8 +4901,11 @@
   },
   {
     "constructor": {
-      "text": "Sauber",
-      "url": "https://en.wikipedia.org/wiki/Sauber"
+      "names": [
+        "Sauber",
+        "BMW Sauber",
+        "Kick Sauber"
+      ]
     },
     "drivers": 34,
     "fastest_laps": 5,
