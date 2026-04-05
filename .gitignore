@@ -9,3 +9,7 @@ __pycache__/
 *.pyd
 .Python
 .coverage
+
+# Generated test artifacts
+artifacts/
+docs/COVERAGE_WAVE_BACKLOG.test.md
