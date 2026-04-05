@@ -350,6 +350,7 @@ def test_mirror_constructors_job_hook_runs_only_for_matching_job(
     assert mirror_calls == [
         (
             tmp_path / "wiki",
-            tmp_path / "wiki/layers/0_layer/constructors/A_scrape/f1_constructors_2026.json",
+            tmp_path
+            / "wiki/layers/0_layer/constructors/A_scrape/f1_constructors_2026.json",
         ),
     ]
