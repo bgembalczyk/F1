@@ -182,7 +182,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
                     ),
                 ),
                 Rule(
-                    name="engine",
+                    name="engine_constructors",
                     condition=lambda rc: bool(rc.engine_names),
                     effect=lambda rc: self._apply_classified_field(
                         rc.record,
