@@ -12,6 +12,13 @@ from scripts.ci import enforce_no_new_prints
 from scripts.ci import enforce_source_name_magic_strings
 from scripts.ci import enforce_structural_quality
 
+EXPECTED_METHOD_CALL_COUNT = 2
+DEFAULT_MAX_FUNCTION_LINES = 100
+DEFAULT_MAX_CLASS_LINES = 500
+DEFAULT_MAX_FILE_LINES = 1000
+CUSTOM_MAX_FUNCTION_LINES = 50
+CUSTOM_MAX_CLASS_LINES = 200
+
 
 def test_function_complexity_detects_length_nesting_and_branching(
     tmp_path: Path,
@@ -351,7 +358,7 @@ def test_collect_call_counts_handles_attribute_calls() -> None:
     code = "obj.method()\nobj.other()\nobj.method()\n"
     tree = ast.parse(code)
     counts = enforce_structural_quality._collect_call_counts(tree)
-    assert counts.get("method", 0) == 2
+    assert counts.get("method", 0) == EXPECTED_METHOD_CALL_COUNT
     assert counts.get("other", 0) == 1
 
 
@@ -604,9 +611,9 @@ def test_evaluate_file_handles_syntax_error(tmp_path: Path) -> None:
 @pytest.mark.unit()
 def test_parse_args_uses_defaults() -> None:
     args = enforce_structural_quality.parse_args([])
-    assert args.max_function_lines == 100
-    assert args.max_class_lines == 500
-    assert args.max_file_lines == 1000
+    assert args.max_function_lines == DEFAULT_MAX_FUNCTION_LINES
+    assert args.max_class_lines == DEFAULT_MAX_CLASS_LINES
+    assert args.max_file_lines == DEFAULT_MAX_FILE_LINES
 
 
 @pytest.mark.unit()
@@ -614,8 +621,8 @@ def test_parse_args_accepts_custom_limits() -> None:
     args = enforce_structural_quality.parse_args(
         ["--max-function-lines", "50", "--max-class-lines", "200"],
     )
-    assert args.max_function_lines == 50
-    assert args.max_class_lines == 200
+    assert args.max_function_lines == CUSTOM_MAX_FUNCTION_LINES
+    assert args.max_class_lines == CUSTOM_MAX_CLASS_LINES
 
 
 # ---------------------------------------------------------------------------

@@ -9,6 +9,9 @@ import pytest
 
 from scripts.ci import enforce_diff_quality_guards as guards
 
+EXPECTED_ADDED_LINES_COUNT = 2
+LAST_ADDED_LINE_NUMBER = 3
+
 # ---------------------------------------------------------------------------
 # Violation.format()
 # ---------------------------------------------------------------------------
@@ -66,12 +69,12 @@ def test_iter_added_python_lines_returns_line_tuples(
     py_file.write_text("line1\nline2\nline3\n", encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
     result = guards._iter_added_python_lines({"module.py": {1, 3}})
-    assert len(result) == 2
+    assert len(result) == EXPECTED_ADDED_LINES_COUNT
     paths = [r[0] for r in result]
     lines = [r[1] for r in result]
     assert all(p == "module.py" for p in paths)
     assert 1 in lines
-    assert 3 in lines
+    assert LAST_ADDED_LINE_NUMBER in lines
 
 
 @pytest.mark.unit()
