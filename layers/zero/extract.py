@@ -53,13 +53,33 @@ def _write_c_extract_file(
 ) -> None:
     if not values:
         return
+    normalized_values = _prepare_c_extract_values(values, filename=filename)
+    if not normalized_values:
+        return
     extract_dir = resolver.extract_dir(domain=target_domain)
     extract_dir.mkdir(parents=True, exist_ok=True)
     out_path = extract_dir / filename
     out_path.write_text(
-        json.dumps(values, ensure_ascii=False, indent=2),
+        json.dumps(normalized_values, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+
+
+def _prepare_c_extract_values(values: list[object], *, filename: str) -> list[object]:
+    if not filename.startswith("from_"):
+        return values
+
+    unique_by_key: dict[str, object] = {}
+    for value in values:
+        normalized_key = json.dumps(
+            value,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        )
+        unique_by_key.setdefault(normalized_key, value)
+
+    return [unique_by_key[key] for key in sorted(unique_by_key)]
 
 
 def _get_formula_one(record: dict[str, object]) -> dict[str, object] | None:
