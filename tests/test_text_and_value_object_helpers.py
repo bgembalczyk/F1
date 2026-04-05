@@ -348,7 +348,7 @@ def test_lap_record_mapping_behaviour_and_setitem_normalization():
     assert isinstance(record["date"], NormalizedDate)
     assert record.pop("missing", "fallback") == "fallback"
 
-    keys = list(tuple(record.data))
+    keys = list(record.data)
     assert "laps" in keys
     assert "time" in keys
     assert "date" in keys
