@@ -15,11 +15,13 @@ from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
+from scrapers.constructors.columns.constructor_name import ConstructorNameColumn
 from scrapers.constructors.config_factory import build_constructor_list_config
 from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
@@ -27,12 +29,16 @@ from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_FASTEST_LAPS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_PODIUMS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_POINTS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_POLES_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_RACES_ENTERED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_RACES_STARTED_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
 from scrapers.constructors.constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADERS
 from scrapers.constructors.constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
@@ -85,7 +91,21 @@ class ConstructorsListScraper(F1ListScraper):
         section_id=_FORMER_SECTION_ID,
         expected_headers=CONSTRUCTORS_FORMER_EXPECTED_HEADERS,
         columns=BaseConstructorListScraper.build_schema_columns(
-            BaseConstructorListScraper.build_common_metadata_columns(),
+            [
+                ColumnSpec(
+                    CONSTRUCTOR_NAME_HEADER,
+                    "constructor",
+                    ConstructorNameColumn(),
+                ),
+                ColumnSpec(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+                ColumnSpec(
+                    CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
+                    "total_entries",
+                    IntColumn(),
+                ),
+                ColumnSpec(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
+                ColumnSpec(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
+            ],
             [BaseConstructorListScraper.build_licensed_in_column_spec()],
             build_metric_columns(
                 [
