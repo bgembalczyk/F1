@@ -45,6 +45,11 @@ class SectionAdapter:
         resolver = SectionIdResolver(domain=domain)
         for entry in entries:
             canonical_section_id = str(entry.section_id).strip()
+            export_section_id = (
+                entry.section_id.to_export()
+                if hasattr(entry.section_id, "to_export")
+                else canonical_section_id
+            ).strip().lower()
             entry_aliases = profile_entry_aliases(
                 domain,
                 canonical_section_id,
@@ -69,8 +74,8 @@ class SectionAdapter:
             parsed.append(
                 coerce_section_parse_result(
                     entry.parser.parse(section_fragment),
-                    default_section_id=section_id.to_export(),
-                    default_section_label=section_id.to_export().replace("_", " "),
+                    default_section_id=export_section_id,
+                    default_section_label=export_section_id.replace("_", " "),
                     parser=entry.parser.__class__.__name__,
                 ),
             )
