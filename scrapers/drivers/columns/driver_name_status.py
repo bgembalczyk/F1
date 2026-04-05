@@ -11,8 +11,8 @@ class DriverNameStatusColumn(NameStatusColumn):
 
     Extracts:
     - driver: Driver name with URL
-    - is_active: True if name ends with ~ or *
-    - is_world_champion: True if name ends with ^
+    - is_active: True if name ends with MARK_ACTIVE_DRIVER (~) or MARK_ACTIVE_DRIVER_ALT (*)
+    - is_world_champion: True if name ends with MARK_WORLD_CHAMPION (^)
     """
 
     def __init__(self) -> None:
