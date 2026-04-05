@@ -88,8 +88,12 @@ ignore = [
 "scripts/ci/enforce_structural_quality.py" = ["N802"]
 "tests/test_adr_enforcement_policy_integration.py" = ["S603"]
 "tests/test_check_scripts_smoke.py" = ["S603"]
-"tests/test_coverage_wave_report.py" = ["S603"]
+"tests/test_coverage_wave_report.py" = ["S603", "SLF001"]
 "tests/test_duplicate_report_typing.py" = ["S603"]
+"tests/test_diff_runs.py" = ["SLF001"]
+"tests/test_engine_manufacturers_indianapolis_normalization.py" = ["SLF001"]
+"tests/test_generate_command_migration_map.py" = ["SLF001"]
+"tests/test_seasons_entry_merger.py" = ["SLF001"]
 
 [tool.ruff.lint.isort]
 force-single-line = true
