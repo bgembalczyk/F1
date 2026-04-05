@@ -26,6 +26,7 @@ class DriverNameStatusColumn(NameStatusColumn):
                 ),
                 "is_world_champion": create_suffix_checker(
                     MARK_WORLD_CHAMPION,
+                    MARK_ACTIVE_DRIVER,
                 ),
             },
         )
