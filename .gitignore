@@ -12,10 +12,3 @@ __pycache__/
 
 # Generated test artifacts
 artifacts/
-docs/COVERAGE_WAVE_BACKLOG.test.md
-
-# Layer Zero generated phases (C_extract, D_merge)
-data/layers/0_layer/*/C_extract/
-data/layers/0_layer/*/D_merge/
-data/layers/0_layer/countries/
-data/layers/0_layer/locations/
