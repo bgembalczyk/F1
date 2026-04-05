@@ -65,7 +65,7 @@ class BaseConstructorListScraper(
         )
 
     @staticmethod
-    def build_licensed_in_ColumnSpec():
+    def build_licensed_in_column_spec():
         """Build the licensed_in column definition."""
         from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 
@@ -74,6 +74,11 @@ class BaseConstructorListScraper(
             "licensed_in",
             LinksListColumn(),
         )
+
+    @staticmethod
+    def build_licensed_in_ColumnSpec():  # noqa: N802
+        """Backward-compatible alias for build_licensed_in_column_spec."""
+        return BaseConstructorListScraper.build_licensed_in_column_spec()
 
     @classmethod
     def extend_schema_fragments(

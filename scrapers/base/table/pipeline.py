@@ -268,8 +268,12 @@ class TablePipeline:
             drop_empty_text=True,
         )
 
-    def _select_ColumnSpec(self, key: str, header: str) -> BaseColumn:
+    def _select_column_spec(self, key: str, header: str) -> BaseColumn:
         return self.columns.get(key) or self.columns.get(header) or self.default_column
+
+    # Backward compatibility for older reflective/dynamic call sites.
+    def _select_ColumnSpec(self, key: str, header: str) -> BaseColumn:  # noqa: N802
+        return self._select_column_spec(key, header)
 
     def _apply_cell(
         self,
@@ -313,7 +317,7 @@ class TablePipeline:
             header_link=header_link,
         )
 
-        col = self._select_ColumnSpec(key, header)
+        col = self._select_column_spec(key, header)
         try:
             col.apply(ctx, record)
         except Exception as exc:
