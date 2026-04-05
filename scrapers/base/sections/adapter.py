@@ -69,8 +69,8 @@ class SectionAdapter:
             parsed.append(
                 coerce_section_parse_result(
                     entry.parser.parse(section_fragment),
-                    default_section_id=section_id.to_export(),
-                    default_section_label=section_id.to_export().replace("_", " "),
+                    default_section_id=canonical_section_id,
+                    default_section_label=canonical_section_id.replace("_", " "),
                     parser=entry.parser.__class__.__name__,
                 ),
             )

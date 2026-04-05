@@ -70,7 +70,8 @@ def read_body(args: argparse.Namespace) -> str:
 
 
 def normalize(text: str) -> str:
-    return " ".join(text.strip().lower().split())
+    normalized_tokens = text.strip().lower().split()
+    return " ".join(normalized_tokens)
 
 
 def has_required_section(pr_body: str, section_name: str) -> bool:

@@ -4,4 +4,5 @@ from scrapers.base.helpers.text import clean_wiki_text
 
 
 def normalize_section_text(value: str) -> str:
-    return clean_wiki_text(value.replace("_", " ")).lower().strip()
+    text = clean_wiki_text(value.replace("_", " "))
+    return text.lower().strip()

@@ -40,7 +40,8 @@ class GeminiJsonFileCacheAdapter:
     extension = ".json"
 
     def serialize(self, value: dict[str, Any]) -> str:
-        return json.dumps(value, ensure_ascii=False)
+        payload = json.dumps(value, ensure_ascii=False)
+        return payload
 
     def deserialize(self, raw_text: str) -> dict[str, Any]:
         parsed = json.loads(raw_text)

@@ -28,7 +28,8 @@ class AdrEnforcementPolicy:
         return not stripped or stripped.startswith("#")
 
     def has_adr_reference(self, text: str) -> bool:
-        return bool(self.adr_pattern.search(text))
+        match = self.adr_pattern.search(text)
+        return bool(match)
 
     def should_require_adr_for_architecture_diff(
         self,

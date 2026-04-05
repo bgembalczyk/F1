@@ -8,6 +8,10 @@ from dataclasses import dataclass
 from pathlib import Path
 
 ROOT_PREFIX = "/home/runner/work/F1/F1/"
+TOP_DEFAULT_LIMIT = 30
+WAVE_1_MISS_THRESHOLD = 40
+WAVE_2_MISS_MIN = 20
+WAVE_2_MISS_MAX = 39
 
 
 @dataclass(frozen=True)
@@ -20,11 +24,14 @@ class FileMiss:
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate a coverage wave report and top remaining misses from .coverage SQLite data.",
+        description=(
+            "Generate a coverage wave report and top remaining misses "
+            "from .coverage SQLite data."
+        ),
     )
     parser.add_argument("--coverage-db", default=".coverage")
     parser.add_argument("--repo-root", default=".")
-    parser.add_argument("--top", type=int, default=30)
+    parser.add_argument("--top", type=int, default=TOP_DEFAULT_LIMIT)
     parser.add_argument(
         "--json-out",
         default="artifacts/coverage_top_remaining_misses.json",
@@ -108,11 +115,13 @@ def _collect_misses(repo_root: Path, executed: dict[str, set[int]]) -> list[File
 
 def _wave_for_path(path: str, miss: int) -> str:
     low = path.lower()
-    if miss >= 40 and (
+    if miss >= WAVE_1_MISS_THRESHOLD and (
         "parser" in low or "helper" in low or low.startswith("scripts/ci/")
     ):
         return "Fala 1"
-    if 20 <= miss <= 39 and ("domain" in low or "service" in low or "services" in low):
+    if WAVE_2_MISS_MIN <= miss <= WAVE_2_MISS_MAX and (
+        "domain" in low or "service" in low or "services" in low
+    ):
         return "Fala 2"
     if miss >= 1:
         return "Fala 3"
@@ -138,8 +147,12 @@ def _render_top_md(top: list[dict[str, object]]) -> str:
         "|---:|---|---:|---:|---|",
     ]
     for idx, item in enumerate(top, start=1):
+        row = (
+            f"| {idx} | `{item['path']}` | {item['miss']} | "
+            f"{item['coverage']}% | {item['wave']} |"
+        )
         lines.append(
-            f"| {idx} | `{item['path']}` | {item['miss']} | {item['coverage']}% | {item['wave']} |",
+            row,
         )
     lines.append("")
     return "\n".join(lines)
@@ -159,10 +172,19 @@ def _render_backlog_md(top: list[dict[str, object]]) -> str:
         "# Coverage backlog (aktualizacja automatyczna)",
         "",
         "## Cele fal",
-        "- Fala 1 (najwyższy ROI): parsery/helpers + scripts CI z `miss >= 40`; cel: +6–7 pp.",
-        "- Fala 2: moduły domenowe i services z `miss 20-39`; cel: +3–4 pp.",
-        "- Fala 3: domknięcie wyjątków/fallbacków i niskich plików pojedynczych; cel: +2–3 pp.",
-        "- Fala 4: polerka do 99% – pojedyncze linie i granice warunków; cel: +1–2 pp.",
+        (
+            "- Fala 1 (najwyzszy ROI): parsery/helpers + scripts CI "
+            "z `miss >= 40`; cel: +6-7 pp."
+        ),
+        "- Fala 2: moduly domenowe i services z `miss 20-39`; cel: +3-4 pp.",
+        (
+            "- Fala 3: domkniecie wyjatkow/fallbackow i niskich plikow "
+            "pojedynczych; cel: +2-3 pp."
+        ),
+        (
+            "- Fala 4: polerka do 99% - pojedyncze linie i granice "
+            "warunkow; cel: +1-2 pp."
+        ),
         "",
     ]
     for wave, items in grouped.items():
@@ -170,10 +192,13 @@ def _render_backlog_md(top: list[dict[str, object]]) -> str:
         if not items:
             lines.append("- Brak plików w top N.")
         else:
-            for item in items:
-                lines.append(
-                    f"- [ ] `{item['path']}` — miss: {item['miss']}, coverage: {item['coverage']}%",
+            lines.extend(
+                (
+                    f"- [ ] `{item['path']}` - miss: {item['miss']}, "
+                    f"coverage: {item['coverage']}%"
                 )
+                for item in items
+            )
         lines.append("")
     return "\n".join(lines)
 

@@ -65,7 +65,7 @@ class BaseConstructorListScraper(
         )
 
     @staticmethod
-    def build_licensed_in_ColumnSpec():
+    def build_licensed_in_column_spec():
         """Build the licensed_in column definition."""
         from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 

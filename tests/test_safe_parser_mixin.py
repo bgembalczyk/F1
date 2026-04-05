@@ -1,3 +1,5 @@
+import pytest
+
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
 
@@ -51,14 +53,10 @@ def test_safe_parse_wraps_exception_and_degrades_to_none_on_soft_handle() -> Non
 def test_safe_parse_rethrows_wrapped_error_when_soft_handling_disabled() -> None:
     parser = _ParserHarness(should_handle=False, url_provider=None)
 
-    try:
+    with pytest.raises(ScraperParseError) as exc_info:
         parser._safe_parse(lambda: (_ for _ in ()).throw(ValueError("bad normalizer")))
-    except ScraperParseError as exc:
-        assert exc.url is None
-        assert isinstance(exc.cause, ValueError)
-    else:
-        msg = "Expected ScraperParseError"
-        raise AssertionError(msg)
+    assert exc_info.value.url is None
+    assert isinstance(exc_info.value.cause, ValueError)
 
 
 def test_safe_parse_rethrows_original_scraper_error_when_already_wrapped() -> None:
@@ -68,10 +66,6 @@ def test_safe_parse_rethrows_original_scraper_error_when_already_wrapped() -> No
     )
     original = ScraperParseError("parser dependency failed")
 
-    try:
+    with pytest.raises(ScraperParseError) as exc_info:
         parser._safe_parse(lambda: (_ for _ in ()).throw(original))
-    except ScraperParseError as exc:
-        assert exc is original
-    else:
-        msg = "Expected original ScraperParseError"
-        raise AssertionError(msg)
+    assert exc_info.value is original

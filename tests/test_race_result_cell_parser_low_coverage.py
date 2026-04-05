@@ -80,8 +80,12 @@ def test_parse_superscripts_handles_rule_conflicts_and_year_priority(
 
 def test_prepare_cell_fragment_strips_absolute_spans_and_superscripts() -> None:
     parser = RaceResultCellParser()
+    cell_html = (
+        '<td><span style="position: absolute; left:-9999px">ghost</span> '
+        "4<sup>7</sup></td>"
+    )
     soup = BeautifulSoup(
-        '<td><span style="position: absolute; left:-9999px">ghost</span> 4<sup>7</sup></td>',
+        cell_html,
         "html.parser",
     )
 

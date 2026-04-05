@@ -4,8 +4,8 @@ import argparse
 import json
 import subprocess
 import sys
-import xml.etree.ElementTree as ET
 from dataclasses import dataclass
+from defusedxml import ElementTree as element_tree
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -41,7 +41,7 @@ def _to_percent(raw_rate: float) -> float:
 
 
 def _parse_coverage(coverage_xml: Path) -> tuple[float, dict[str, float]]:
-    tree = ET.parse(coverage_xml)
+    tree = element_tree.parse(coverage_xml)
     root = tree.getroot()
 
     global_rate = float(root.attrib.get("line-rate", "0"))
@@ -99,14 +99,14 @@ def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation
             Violation("Niepoprawne typy w coverage policy (sprint/progi/przyrost)."),
         ]
 
-    for index in range(1, len(threshold_values)):
-        if threshold_values[index] <= threshold_values[index - 1]:
-            violations.append(
-                Violation(
-                    "global_threshold_path musi być ściśle rosnąca "
-                    f"(problem na pozycji {index + 1}).",
-                ),
-            )
+    violations.extend(
+        Violation(
+            "global_threshold_path musi być ściśle rosnąca "
+            f"(problem na pozycji {index + 1}).",
+        )
+        for index in range(1, len(threshold_values))
+        if threshold_values[index] <= threshold_values[index - 1]
+    )
 
     for index in range(1, len(threshold_values)):
         delta = threshold_values[index] - threshold_values[index - 1]
@@ -152,8 +152,8 @@ def main() -> int:
     if global_coverage < current_threshold:
         violations.append(
             Violation(
-                f"Global coverage {global_coverage:.2f}% < próg sprintu {current_sprint} "
-                f"({current_threshold:.2f}%).",
+                f"Global coverage {global_coverage:.2f}% < próg sprintu "
+                f"{current_sprint} ({current_threshold:.2f}%).",
             ),
         )
 
@@ -189,7 +189,8 @@ def main() -> int:
         ):
             violations.append(
                 Violation(
-                    f"Legacy low coverage '{changed_file}' został dotknięty, ale poprawa "
+                    f"Legacy low coverage '{changed_file}' został dotknięty, "
+                    "ale poprawa "
                     f"to tylko {current_cov - baseline_cov:.2f} pp; wymagane >= "
                     f"{legacy_improvement:.2f} pp.",
                 ),

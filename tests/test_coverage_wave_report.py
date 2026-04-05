@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+TOP_LIMIT = 30
+
 
 def test_coverage_wave_report_generates_outputs() -> None:
     script = Path("scripts/ci/coverage_wave_report.py")
@@ -27,7 +29,7 @@ def test_coverage_wave_report_generates_outputs() -> None:
             "--repo-root",
             ".",
             "--top",
-            "30",
+            str(TOP_LIMIT),
             "--json-out",
             str(out_json),
             "--md-out",
@@ -46,7 +48,7 @@ def test_coverage_wave_report_generates_outputs() -> None:
 
     payload = json.loads(out_json.read_text(encoding="utf-8"))
     assert isinstance(payload, list)
-    assert len(payload) <= 30
+    assert len(payload) <= TOP_LIMIT
     assert all({"path", "miss", "coverage", "wave"}.issubset(row) for row in payload)
 
     md_text = out_md.read_text(encoding="utf-8")

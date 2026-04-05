@@ -86,7 +86,7 @@ class ConstructorsListScraper(F1ListScraper):
         expected_headers=CONSTRUCTORS_FORMER_EXPECTED_HEADERS,
         columns=BaseConstructorListScraper.build_schema_columns(
             BaseConstructorListScraper.build_common_metadata_columns(),
-            [BaseConstructorListScraper.build_licensed_in_ColumnSpec()],
+            [BaseConstructorListScraper.build_licensed_in_column_spec()],
             build_metric_columns(
                 [
                     MetricColumnSpec(CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),

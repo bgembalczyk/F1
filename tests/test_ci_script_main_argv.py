@@ -9,6 +9,8 @@ from scripts.ci import enforce_no_dead_code
 from scripts.ci import mypy_regression_gate
 from scripts.ci import validate_pr_description
 
+DEAD_CODE_EXIT_ERROR = 2
+
 
 def test_enforce_architecture_main_uses_sys_argv_and_fails_without_adr(
     monkeypatch,
@@ -143,7 +145,7 @@ def test_enforce_no_dead_code_main_uses_sys_argv_and_reports_error(
     exit_code = enforce_no_dead_code.main()
 
     out = capsys.readouterr().out
-    assert exit_code == 2
+    assert exit_code == DEAD_CODE_EXIT_ERROR
     assert "Potential dead code detected" in out
 
 
