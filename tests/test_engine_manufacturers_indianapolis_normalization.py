@@ -1,6 +1,8 @@
 from scrapers.base.options import ScraperOptions
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 
+EXPECTED_SUBSECTION_COUNT = 3
+
 
 def test_indianapolis_record_normalization_embeds_url_into_manufacturer_link() -> None:
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
@@ -174,7 +176,7 @@ def test_iter_sub_sections_returns_sub_and_sub_sub() -> None:
         "sub_sub_sub_sections": [{"name": "C"}],
     }
     result = scraper._iter_sub_sections(node)
-    assert len(result) == 3
+    assert len(result) == EXPECTED_SUBSECTION_COUNT
 
 
 def test_iter_sub_sections_skips_non_dict_values() -> None:

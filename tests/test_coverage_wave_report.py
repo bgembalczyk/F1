@@ -15,6 +15,13 @@ TOP_LIMIT = 30
 SCRIPT_PATH = Path("scripts/ci/coverage_wave_report.py")
 REPO_ROOT = Path()
 
+FIRST_STATEMENT_LINE = 1
+SECOND_STATEMENT_LINE = 2
+EXPECTED_COVERAGE_PERCENT = 80.0
+EXPECTED_STATEMENTS = 10
+EXPECTED_EXECUTED = 8
+EXPECTED_MISS = 2
+
 
 def _create_test_coverage_db(tmp_path: Path) -> Path:
     """Create a minimal .coverage SQLite database for testing."""
@@ -209,7 +216,7 @@ def test_statement_lines_finds_statements(tmp_path: Path) -> None:
     py_file.write_text("x = 1\ny = 2\n", encoding="utf-8")
     lines = cwr._statement_lines(py_file)
     assert 1 in lines
-    assert 2 in lines
+    assert SECOND_STATEMENT_LINE in lines
 
 
 @pytest.mark.unit()
@@ -349,11 +356,11 @@ def test_wave_for_path_wave2_miss_too_high() -> None:
 def test_to_dict_computes_coverage_percentage() -> None:
     fm = cwr.FileMiss(path="src/foo.py", statements=10, executed=8, miss=2)
     result = cwr._to_dict(fm)
-    assert result["coverage"] == 80.0
+    assert result["coverage"] == EXPECTED_COVERAGE_PERCENT
     assert result["path"] == "src/foo.py"
-    assert result["statements"] == 10
-    assert result["executed"] == 8
-    assert result["miss"] == 2
+    assert result["statements"] == EXPECTED_STATEMENTS
+    assert result["executed"] == EXPECTED_EXECUTED
+    assert result["miss"] == EXPECTED_MISS
     assert "wave" in result
 
 
