@@ -1,12 +1,15 @@
+from __future__ import annotations
+
 from collections.abc import Callable
+from collections.abc import Mapping
 from pathlib import Path
+from typing import TYPE_CHECKING
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
 from layers.orchestration.types import SeedName
 from layers.path_resolver import format_domain_year_name
-from layers.seed.registry import ListJobRegistryEntry
 from layers.zero.policies import LayerZeroJobHook
 from layers.zero.policies import MirrorConstructorsJobHook
 from layers.zero.policies import NullLayerZeroJobHook
@@ -17,6 +20,9 @@ from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
+
+if TYPE_CHECKING:
+    from layers.seed.registry.entries import ListJobRegistryEntry
 
 
 class LayerZeroExecutor:
@@ -29,6 +35,7 @@ class LayerZeroExecutor:
             [],
             dict[SeedName, LayerZeroRunConfigFactoryProtocol],
         ]
+        | Mapping[SeedName, LayerZeroRunConfigFactoryProtocol]
         | None = None,
         default_config_factory: LayerZeroRunConfigFactoryProtocol | None = None,
         merger: LayerZeroMergeServiceProtocol | None = None,
@@ -198,7 +205,9 @@ class LayerZeroExecutor:
     def _resolve_config_factory(
         self,
     ) -> dict[SeedName, LayerZeroRunConfigFactoryProtocol]:
-        return self._config_factories()
+        if callable(self._config_factories):
+            return self._config_factories()
+        return dict(self._config_factories)
 
     def _build_local_run_config(
         self,

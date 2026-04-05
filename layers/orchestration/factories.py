@@ -1,12 +1,17 @@
+from __future__ import annotations
+
 from abc import ABC
 from abc import abstractmethod
+from typing import TYPE_CHECKING
 
-from infrastructure.gemini.client import GeminiClient
 from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.seed.registry import ListJobRegistryEntry
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
-from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+
+if TYPE_CHECKING:
+    from infrastructure.gemini.client import GeminiClient
+    from layers.seed.registry.entries import ListJobRegistryEntry
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
 class LayerZeroRunConfigFactory(LayerZeroRunConfigFactoryProtocol, ABC):
@@ -51,6 +56,12 @@ class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
         )
         scraper_kwargs: dict[str, object] = {}
         try:
+            # Import lazily to avoid module-level circular imports during bootstrap.
+            from infrastructure.gemini.client import GeminiClient
+            from scrapers.sponsorship_liveries.helpers.paren_classifier import (
+                ParenClassifier,
+            )
+
             gemini_client = GeminiClient.from_key_file()
             classifier = ParenClassifier(gemini_client=gemini_client)
             scraper_kwargs["classifier"] = classifier
