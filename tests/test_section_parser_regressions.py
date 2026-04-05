@@ -47,7 +47,8 @@ def test_current_constructors_section_parser_handles_current_season_alias() -> N
 
     assert data
     assert data[0]["constructor"]["chassis_constructor"]["text"] == "Ferrari"
-    assert data[0]["constructor"]["chassis_constructor"]["url"].endswith("/wiki/Ferrari")
+    chassis_url = data[0]["constructor"]["chassis_constructor"]["url"]
+    assert chassis_url.endswith("/wiki/Ferrari")
 
 
 def test_former_constructors_section_parser_handles_defunct_alias() -> None:
