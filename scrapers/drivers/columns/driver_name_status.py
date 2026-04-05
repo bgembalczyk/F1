@@ -1,7 +1,7 @@
 from scrapers.base.table.columns.types import NameStatusColumn
 from scrapers.base.table.columns.types import create_suffix_checker
 from scrapers.drivers.constants import MARK_ACTIVE_DRIVER
-from scrapers.drivers.constants import MARK_ACTIVE_DRIVER_ALT
+from scrapers.drivers.constants import MARK_ACTIVE_WORLD_CHAMPION
 from scrapers.drivers.constants import MARK_WORLD_CHAMPION
 
 
@@ -22,10 +22,11 @@ class DriverNameStatusColumn(NameStatusColumn):
             status_extractors={
                 "is_active": create_suffix_checker(
                     MARK_ACTIVE_DRIVER,
-                    MARK_ACTIVE_DRIVER_ALT,
+                    MARK_ACTIVE_WORLD_CHAMPION,
                 ),
                 "is_world_champion": create_suffix_checker(
                     MARK_WORLD_CHAMPION,
+                    MARK_ACTIVE_WORLD_CHAMPION,
                 ),
             },
         )
