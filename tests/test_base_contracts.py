@@ -9,6 +9,9 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.service import BaseSectionExtractionService
+from scrapers.base.single_wiki_article.section_by_id import (
+    SingleWikiArticleSectionByIdBase,
+)
 
 _single_wiki_base = pytest.importorskip("scrapers.base.single_wiki_article.base")
 _single_wiki_dto = pytest.importorskip("scrapers.base.single_wiki_article.dto")
@@ -145,3 +148,15 @@ def test_base_section_service_contract_requires_optional_dependencies() -> None:
 
     with pytest.raises(ValueError, match="requires a URL"):
         service.require_url()
+
+
+@pytest.mark.unit()
+def test_single_wiki_article_section_by_id_base_is_subclass_of_scraper_base() -> None:
+    import inspect
+
+    assert issubclass(SingleWikiArticleSectionByIdBase, SingleWikiArticleScraperBase)
+    assert inspect.isabstract(SingleWikiArticleSectionByIdBase)
+
+    # Verify the __init__ signature has the section_selection_strategy kwarg injection
+    init_sig = inspect.signature(SingleWikiArticleSectionByIdBase.__init__)
+    assert "kwargs" in str(init_sig)
