@@ -52,6 +52,12 @@ class DriverRecordFactory(BaseRecordFactory):
                 "defaults": {
                     "drivers_championships": {"count": 0, "seasons": []},
                     "seasons_competed": [],
+                    "race_entries": None,
+                    "race_starts": None,
+                    "pole_positions": None,
+                    "race_wins": None,
+                    "podiums": None,
+                    "fastest_laps": None,
                 },
             },
         )

@@ -37,7 +37,14 @@ class CircuitRecordFactory(BaseRecordFactory):
                     "link_list": ["grands_prix"],
                     "seasons": ["seasons"],
                 },
-                "defaults": {"grands_prix": [], "seasons": []},
+                "defaults": {
+                    "grands_prix": [],
+                    "seasons": [],
+                    "last_length_used_km": None,
+                    "last_length_used_mi": None,
+                    "turns": None,
+                    "grands_prix_held": None,
+                },
             },
         )
         return cast("CircuitRecord", payload)
