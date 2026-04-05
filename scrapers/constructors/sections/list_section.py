@@ -375,17 +375,14 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
         for record in records:
             if not isinstance(record, dict):
                 continue
-            normalized = dict(record)
-            constructor = normalized.get("chassis_constructor")
-            if not isinstance(constructor, dict):
+            constructor_name = record.get("constructor")
+            if not constructor_name:
                 continue
-            normalized_constructor = dict(constructor)
-            if not self._include_urls:
-                normalized_constructor.pop("url", None)
-            else:
-                url = normalized_constructor.get("url")
-                if isinstance(url, str) and url.startswith("/"):
-                    normalized_constructor["url"] = f"https://en.wikipedia.org{url}"
-            normalized["chassis_constructor"] = normalized_constructor
-            normalized_records.append(normalized)
+            constructor_obj: dict[str, Any] = {"text": constructor_name}
+            url = record.get("constructor_url")
+            if self._include_urls and isinstance(url, str):
+                if url.startswith("/"):
+                    url = f"https://en.wikipedia.org{url}"
+                constructor_obj["url"] = url
+            normalized_records.append({"chassis_constructor": constructor_obj})
         return normalized_records
