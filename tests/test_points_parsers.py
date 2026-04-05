@@ -133,8 +133,14 @@ def test_shortened_races_parser_groups_rows_by_seasons() -> None:
     assert len(parsed["domain_rows"]) == 1
     group = parsed["domain_rows"][0]
     assert group["seasons"] == [
-        {"year": 1975, "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"},
-        {"year": 1976, "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"},
+        {
+            "year": 1975,
+            "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship",
+        },
+        {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+        },
     ]
     assert len(group["race_length_points"]) == 2
     assert group["race_length_points"][0] == {
