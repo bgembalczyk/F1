@@ -7,6 +7,8 @@ from scrapers.base.results import ScrapeResult
 
 
 class JsonFormatter:
+    _PINNED_FRONT_KEYS: tuple[str, ...] = ("constructor", "engine")
+
     def format(
         self,
         result: ScrapeResult,
@@ -19,18 +21,24 @@ class JsonFormatter:
             self._sort_nested_dict_keys(payload),
             ensure_ascii=False,
             indent=indent,
-            sort_keys=True,
         )
 
     @classmethod
     def _sort_nested_dict_keys(cls, value: Any) -> Any:
         if isinstance(value, dict):
             return {
-                key: cls._sort_nested_dict_keys(value[key]) for key in sorted(value)
+                key: cls._sort_nested_dict_keys(value[key])
+                for key in sorted(value, key=cls._dict_key_sort_key)
             }
         if isinstance(value, list):
             return [cls._sort_nested_dict_keys(item) for item in value]
         return value
+
+    @classmethod
+    def _dict_key_sort_key(cls, key: Any) -> tuple[int, str]:
+        if isinstance(key, str) and key in cls._PINNED_FRONT_KEYS:
+            return (cls._PINNED_FRONT_KEYS.index(key), key)
+        return (len(cls._PINNED_FRONT_KEYS), str(key))
 
     @staticmethod
     def _json_payload(
