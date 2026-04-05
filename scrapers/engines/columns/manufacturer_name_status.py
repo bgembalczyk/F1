@@ -5,7 +5,7 @@ from scrapers.base.table.columns.types import NameStatusColumn
 class EngineManufacturerNameStatusColumn(NameStatusColumn):
     def __init__(self) -> None:
         super().__init__(
-            entity_key="manufacturer",
+            entity_key="engine_constructor",
             status_extractors={
                 "manufacturer_status": EnumMarksMixin(
                     {"~": "current"},

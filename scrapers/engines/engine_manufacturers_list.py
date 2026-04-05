@@ -35,7 +35,7 @@ class EngineManufacturersTableParser(WikiTableBaseParser):
     extra_columns_policy = "ignore"
 
     _column_mapping = {
-        "Manufacturer": "manufacturer",
+        "Manufacturer": "engine_constructor",
         "Engines built in": "engines_built_in",
         "Seasons": "seasons",
         "Races Entered": "races_entered",
@@ -60,7 +60,7 @@ TABLE_SCHEMA = TableSchemaDSL(
     columns=build_columns(
         build_name_status_fragment(
             header="Manufacturer",
-            output_key="manufacturer",
+            output_key="engine_constructor",
             column_type=EngineManufacturerNameStatusColumn(),
         ),
         build_entity_metadata_columns(
@@ -82,12 +82,12 @@ class IndianapolisOnlyListParser(ListParser):
         items: list[dict[str, str]] = []
         for li in element.find_all("li", recursive=False):
             anchor = li.find("a")
-            manufacturer = li.get_text(" ", strip=True)
-            if not manufacturer:
+            engine_constructor = li.get_text(" ", strip=True)
+            if not engine_constructor:
                 continue
-            row: dict[str, str] = {"manufacturer": manufacturer}
+            row: dict[str, str] = {"engine_constructor": engine_constructor}
             if anchor and anchor.has_attr("href"):
-                row["manufacturer_url"] = anchor["href"]
+                row["engine_constructor_url"] = anchor["href"]
             items.append(row)
         return {"items": items}
 
@@ -266,20 +266,20 @@ class EngineManufacturersListScraper(F1TableScraper):
 
     def _normalize_indianapolis_record(self, item: dict[str, Any]) -> dict[str, Any]:
         normalized = dict(item)
-        manufacturer = normalized.get("manufacturer")
-        manufacturer_url = normalized.pop("manufacturer_url", None)
+        engine_constructor = normalized.get("engine_constructor")
+        engine_constructor_url = normalized.pop("engine_constructor_url", None)
 
         resolved_url: str | None = None
-        if self.include_urls and isinstance(manufacturer_url, str):
+        if self.include_urls and isinstance(engine_constructor_url, str):
             resolved_url = (
-                self._full_url(manufacturer_url)
-                if manufacturer_url.startswith("/")
-                else manufacturer_url
+                self._full_url(engine_constructor_url)
+                if engine_constructor_url.startswith("/")
+                else engine_constructor_url
             )
 
-        if isinstance(manufacturer, str):
-            normalized["manufacturer"] = {
-                "text": manufacturer,
+        if isinstance(engine_constructor, str):
+            normalized["engine_constructor"] = {
+                "text": engine_constructor,
                 "url": resolved_url,
             }
         return normalized
@@ -287,7 +287,7 @@ class EngineManufacturersListScraper(F1TableScraper):
 
 class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper):
     url = ENGINES_LIST.base_url
-    record_key = "manufacturer"
-    url_key = "manufacturer_url"
+    record_key = "engine_constructor"
+    url_key = "engine_constructor_url"
     domain_name = "engines"
     record_type = "manufacturer"
