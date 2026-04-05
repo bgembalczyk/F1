@@ -1,6 +1,6 @@
-from scrapers.base.constants.shared_headers import SHARED_PODIUMS_HEADER
-from scrapers.base.constants.shared_headers import SHARED_POINTS_HEADER
-from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
+from scrapers.base.constants.shared_headers import SHARED_PODIUMS_HEADER as _shared_podiums_header
+from scrapers.base.constants.shared_headers import SHARED_POINTS_HEADER as _shared_points_header
+from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER as _shared_seasons_header
 
 DRIVER_NAME_HEADER = "Driver name"
 DRIVER_NATIONALITY_HEADER = "Nationality"
@@ -10,9 +10,9 @@ DRIVER_RACE_ENTRIES_HEADER = "Race entries"
 DRIVER_RACE_STARTS_HEADER = "Race starts"
 DRIVER_POLE_POSITIONS_HEADER = "Pole positions"
 DRIVER_RACE_WINS_HEADER = "Race wins"
-DRIVER_PODIUMS_HEADER = SHARED_PODIUMS_HEADER
+DRIVER_PODIUMS_HEADER = _shared_podiums_header
 DRIVER_FASTEST_LAPS_HEADER = "Fastest laps"
-DRIVER_POINTS_HEADER = SHARED_POINTS_HEADER
+DRIVER_POINTS_HEADER = _shared_points_header
 
 DRIVERS_LIST_HEADERS = [
     DRIVER_NAME_HEADER,
@@ -42,10 +42,10 @@ FATALITIES_HEADERS = [
 
 FEMALE_DRIVERS_SECTION_ID = "Official_drivers"
 FEMALE_DRIVER_NAME_HEADER = "Name"
-FEMALE_DRIVER_SEASONS_HEADER = SHARED_SEASONS_HEADER
+FEMALE_DRIVER_SEASONS_HEADER = _shared_seasons_header
 FEMALE_DRIVER_TEAMS_HEADER = "Teams"
 FEMALE_DRIVER_ENTRIES_STARTS_HEADER = "Entries (starts)"  # Łączone wpisy i starty.
-FEMALE_DRIVER_POINTS_HEADER = SHARED_POINTS_HEADER
+FEMALE_DRIVER_POINTS_HEADER = _shared_points_header
 FEMALE_DRIVERS_HEADERS = [
     FEMALE_DRIVER_NAME_HEADER,
     FEMALE_DRIVER_SEASONS_HEADER,

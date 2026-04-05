@@ -83,7 +83,12 @@ def coerce_section_parse_result(
     source: str = "legacy",
 ) -> SectionParseResult:
     if isinstance(payload, SectionParseResult):
-        return payload
+        return SectionParseResult(
+            section_id=SectionId.from_raw(payload.section_id),
+            section_label=EntityName.from_raw(payload.section_label),
+            records=[item for item in payload.records if isinstance(item, dict)],
+            metadata=dict(payload.metadata),
+        )
 
     if isinstance(payload, list):
         return build_section_parse_result(

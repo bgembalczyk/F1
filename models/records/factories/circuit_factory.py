@@ -40,4 +40,12 @@ class CircuitRecordFactory(BaseRecordFactory):
                 "defaults": {"grands_prix": [], "seasons": []},
             },
         )
+        for optional_key in (
+            "last_length_used_km",
+            "last_length_used_mi",
+            "turns",
+            "grands_prix_held",
+        ):
+            if payload.get(optional_key) is None:
+                payload.pop(optional_key, None)
         return cast("CircuitRecord", payload)

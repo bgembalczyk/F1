@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from models.value_objects import SectionId
 from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
 from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
@@ -47,7 +48,18 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
             options=self._options,
             url=self.url,
         ).extract(soup)
-        return SectionsPayloadDTO(records)
+        normalized_records = [
+            {
+                **record,
+                "section_id": SectionId.from_raw(str(record.get("section_id", ""))).to_export()
+                if record.get("section_id")
+                else record.get("section_id"),
+            }
+            if isinstance(record, dict)
+            else record
+            for record in records
+        ]
+        return SectionsPayloadDTO(normalized_records)
 
     def _assemble_record(
         self,

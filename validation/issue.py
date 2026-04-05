@@ -80,13 +80,16 @@ class IssueMessageFormatter:
     @staticmethod
     def format(issue: ValidationIssue) -> str:
         path = issue.path or issue.field
+        type_display_path = issue.field or path
+        if isinstance(path, str) and "[" in path and not path.startswith("seasons["):
+            type_display_path = path
         if issue.code == "missing" and path:
             return f"Missing key: {path}"
         if issue.code == "null" and path:
             return f"Null value for: {path}"
-        if issue.code == "type" and path and issue.expected and issue.actual:
+        if issue.code == "type" and type_display_path and issue.expected and issue.actual:
             return (
-                f"Invalid type for {path}: expected {issue.expected}, "
+                f"Invalid type for {type_display_path}: expected {issue.expected}, "
                 f"got {issue.actual}"
             )
         if issue.code == "custom" and path and issue.message:

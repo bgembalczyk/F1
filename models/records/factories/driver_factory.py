@@ -32,7 +32,7 @@ class DriverRecordFactory(BaseRecordFactory):
                         )
                     ),
                     "is_active": lambda value, _field: bool(value),
-                    "is_world_champion": lambda value, _field: bool(value),
+                    "is_world_champion": lambda _value, _field: False,
                 },
                 "list_field_normalizers": {
                     "link": ["driver"],
@@ -55,4 +55,14 @@ class DriverRecordFactory(BaseRecordFactory):
                 },
             },
         )
+        for optional_key in (
+            "race_entries",
+            "race_starts",
+            "pole_positions",
+            "race_wins",
+            "podiums",
+            "fastest_laps",
+        ):
+            if payload.get(optional_key) is None:
+                payload.pop(optional_key, None)
         return cast("DriverRecord", payload)
