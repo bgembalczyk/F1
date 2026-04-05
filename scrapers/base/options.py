@@ -111,6 +111,7 @@ class ScraperOptions:
         return self.http.policy
 
     def with_fetcher(self) -> HtmlFetcher:
+        # di-antipattern-allow: lazy import avoids circular dependency at module level.
         from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 
         runtime = ScraperRuntimeFactory().build(

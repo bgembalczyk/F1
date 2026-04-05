@@ -18,7 +18,7 @@ if typing.TYPE_CHECKING:
     from validation.validator_base import ExportRecord
 
 
-def _default_export_service() -> ExportService:
+def _create_export_service() -> ExportService:
     # di-antipattern-allow: local import by design.
     from scrapers.base.export.exporters import DataExporter
     from scrapers.base.export.fieldnames import FieldnamesStrategySelector
@@ -37,7 +37,7 @@ class ScrapeResult:
     data: list[ExportRecord]
     source_url: str | None
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
-    export_service: ExportService = field(default_factory=_default_export_service)
+    export_service: ExportService = field(default_factory=_create_export_service)
 
     def _with_normalized_data(
         self,
