@@ -85,6 +85,11 @@ _SHORTENED_HEADERS = [
     "Notes",
 ]
 
+_EXPECTED_TWO_ROWS = 2
+_YEAR_1975 = 1975
+_YEAR_1976 = 1976
+_YEAR_2022 = 2022
+
 
 def test_shortened_races_parser_groups_rows_by_seasons() -> None:
     parser = ShortenedRacesPointsTableParser()
@@ -142,7 +147,7 @@ def test_shortened_races_parser_groups_rows_by_seasons() -> None:
             "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
         },
     ]
-    assert len(group["race_length_points"]) == 2
+    assert len(group["race_length_points"]) == _EXPECTED_TWO_ROWS
     assert group["race_length_points"][0] == {
         "race_length_completed": "Less than 30%",
         "1st": "-",
@@ -220,9 +225,9 @@ def test_shortened_races_parser_produces_multiple_season_groups() -> None:
     parsed = parser.parse(table_data)
 
     assert parsed is not None
-    assert len(parsed["domain_rows"]) == 2
-    assert parsed["domain_rows"][0]["seasons"][0]["year"] == 1975
-    assert parsed["domain_rows"][0]["seasons"][1]["year"] == 1976
+    assert len(parsed["domain_rows"]) == _EXPECTED_TWO_ROWS
+    assert parsed["domain_rows"][0]["seasons"][0]["year"] == _YEAR_1975
+    assert parsed["domain_rows"][0]["seasons"][1]["year"] == _YEAR_1976
     assert len(parsed["domain_rows"][0]["race_length_points"]) == 1
-    assert len(parsed["domain_rows"][1]["race_length_points"]) == 2
-    assert parsed["domain_rows"][1]["seasons"][0]["year"] == 2022
+    assert len(parsed["domain_rows"][1]["race_length_points"]) == _EXPECTED_TWO_ROWS
+    assert parsed["domain_rows"][1]["seasons"][0]["year"] == _YEAR_2022
