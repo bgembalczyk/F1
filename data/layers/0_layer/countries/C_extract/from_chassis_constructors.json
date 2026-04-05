@@ -1,567 +1,47 @@
 [
   {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "Switzerland",
-    "url": "https://en.wikipedia.org/wiki/Switzerland"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Switzerland",
-    "url": "https://en.wikipedia.org/wiki/Switzerland"
-  },
-  {
-    "text": "South Africa",
-    "url": "https://en.wikipedia.org/wiki/South_Africa"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "New Zealand",
-    "url": "https://en.wikipedia.org/wiki/New_Zealand"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Switzerland",
-    "url": "https://en.wikipedia.org/wiki/Switzerland"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "Switzerland",
-    "url": "https://en.wikipedia.org/wiki/Switzerland"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Netherlands",
-    "url": "https://en.wikipedia.org/wiki/Netherlands"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "Malaysia",
-    "url": "https://en.wikipedia.org/wiki/Malaysia"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "Belgium",
-    "url": "https://en.wikipedia.org/wiki/Belgium"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "East Germany",
-    "url": "https://en.wikipedia.org/wiki/East_Germany"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Brazil",
-    "url": "https://en.wikipedia.org/wiki/Brazil"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "India",
-    "url": "https://en.wikipedia.org/wiki/India"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "East Germany",
-    "url": "https://en.wikipedia.org/wiki/East_Germany"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Japan",
-    "url": "https://en.wikipedia.org/wiki/Japan"
-  },
-  {
-    "text": "Spain",
-    "url": "https://en.wikipedia.org/wiki/Spain"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Ireland",
-    "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "Japan",
-    "url": "https://en.wikipedia.org/wiki/Japan"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "South Africa",
-    "url": "https://en.wikipedia.org/wiki/South_Africa"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Malaysia",
-    "url": "https://en.wikipedia.org/wiki/Malaysia"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Japan",
-    "url": "https://en.wikipedia.org/wiki/Japan"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "Russia",
-    "url": "https://en.wikipedia.org/wiki/Russia"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "Switzerland",
-    "url": "https://en.wikipedia.org/wiki/Switzerland"
-  },
-  {
     "text": "Australia",
     "url": "https://en.wikipedia.org/wiki/Australia"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Russia",
-    "url": "https://en.wikipedia.org/wiki/Russia"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Rhodesia",
-    "url": "https://en.wikipedia.org/wiki/Rhodesia"
-  },
-  {
-    "text": "Mexico",
-    "url": "https://en.wikipedia.org/wiki/Mexico"
   },
   {
     "text": "Austria",
     "url": "https://en.wikipedia.org/wiki/Austria"
   },
   {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
+    "text": "Belgium",
+    "url": "https://en.wikipedia.org/wiki/Belgium"
   },
   {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Netherlands",
-    "url": "https://en.wikipedia.org/wiki/Netherlands"
+    "text": "Brazil",
+    "url": "https://en.wikipedia.org/wiki/Brazil"
   },
   {
     "text": "Canada",
     "url": "https://en.wikipedia.org/wiki/Canada"
   },
   {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Japan",
-    "url": "https://en.wikipedia.org/wiki/Japan"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
+    "text": "East Germany",
+    "url": "https://en.wikipedia.org/wiki/East_Germany"
   },
   {
     "text": "France",
     "url": "https://en.wikipedia.org/wiki/France"
   },
   {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
+    "text": "Germany",
+    "url": "https://en.wikipedia.org/wiki/Germany"
   },
   {
     "text": "Hong Kong",
     "url": "https://en.wikipedia.org/wiki/Hong_Kong"
   },
   {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "text": "India",
+    "url": "https://en.wikipedia.org/wiki/India"
   },
   {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "text": "Ireland",
+    "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
   },
   {
     "text": "Italy",
@@ -572,43 +52,47 @@
     "url": "https://en.wikipedia.org/wiki/Japan"
   },
   {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "text": "Malaysia",
+    "url": "https://en.wikipedia.org/wiki/Malaysia"
   },
   {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "text": "Mexico",
+    "url": "https://en.wikipedia.org/wiki/Mexico"
   },
   {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "text": "Netherlands",
+    "url": "https://en.wikipedia.org/wiki/Netherlands"
   },
   {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
+    "text": "New Zealand",
+    "url": "https://en.wikipedia.org/wiki/New_Zealand"
   },
   {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "text": "Rhodesia",
+    "url": "https://en.wikipedia.org/wiki/Rhodesia"
   },
   {
     "text": "Russia",
     "url": "https://en.wikipedia.org/wiki/Russia"
   },
   {
+    "text": "South Africa",
+    "url": "https://en.wikipedia.org/wiki/South_Africa"
+  },
+  {
+    "text": "Spain",
+    "url": "https://en.wikipedia.org/wiki/Spain"
+  },
+  {
+    "text": "Switzerland",
+    "url": "https://en.wikipedia.org/wiki/Switzerland"
+  },
+  {
     "text": "United Kingdom",
     "url": "https://en.wikipedia.org/wiki/United_Kingdom"
   },
   {
-    "text": "Canada",
-    "url": "https://en.wikipedia.org/wiki/Canada"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
+    "text": "United States",
+    "url": "https://en.wikipedia.org/wiki/United_States"
   }
 ]
