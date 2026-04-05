@@ -41,7 +41,7 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 
-class _IndianapolisOnlyListParser(ListParser):
+class _IndianapolisConstructorsListParser(ListParser):
     def parse(self, element: Tag) -> dict[str, list[dict[str, str]]]:
         items: list[dict[str, str]] = []
         for li in element.find_all("li", recursive=False):
@@ -59,7 +59,7 @@ class _IndianapolisOnlyListParser(ListParser):
 class IndianapolisOnlySubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._list_parser = _IndianapolisOnlyListParser()
+        self._list_parser = _IndianapolisConstructorsListParser()
 
     def parse(self, element: Tag, *args: Any, **kwargs: Any) -> dict[str, Any]:
         list_root = element.find(["ul", "ol"])
