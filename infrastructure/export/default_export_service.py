@@ -8,10 +8,10 @@ if TYPE_CHECKING:
 
 
 def build_default_export_service() -> ExportService:
-    from scrapers.base.export.exporters import DataExporter  # noqa: PLC0415
-    from scrapers.base.export.fieldnames import FieldnamesStrategySelector  # noqa: PLC0415
-    from scrapers.base.export.service import ExportService  # noqa: PLC0415
-    from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter  # noqa: PLC0415
+    from scrapers.base.export.exporters import DataExporter
+    from scrapers.base.export.fieldnames import FieldnamesStrategySelector
+    from scrapers.base.export.service import ExportService
+    from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
 
     return ExportService(
         exporter=DataExporter(),

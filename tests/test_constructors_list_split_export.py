@@ -67,7 +67,8 @@ import pytest
 def test_constructors_list_scraper_rejects_invalid_scope() -> None:
     with pytest.raises(ValueError, match="Unsupported export_scope"):
         ConstructorsListScraper(
-            options=ScraperOptions(), export_scope="invalid_scope"
+            options=ScraperOptions(),
+            export_scope="invalid_scope",
         )
 
 
@@ -80,8 +81,12 @@ def test_constructors_list_scraper_restore_split_export_records() -> None:
         "privateer": [{"constructor": "D"}],
     }
     scraper._restore_split_export_records(scope_records)
-    assert scraper._split_export_records["current_constructors"] == [{"constructor": "A"}]
-    assert scraper._split_export_records["former_constructors"] == [{"constructor": "B"}]
+    assert scraper._split_export_records["current_constructors"] == [
+        {"constructor": "A"},
+    ]
+    assert scraper._split_export_records["former_constructors"] == [
+        {"constructor": "B"},
+    ]
 
 
 def test_normalize_privateer_urls_without_include_urls() -> None:

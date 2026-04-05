@@ -102,7 +102,9 @@ def test_merge_entries_with_only_driver_fields_returns_single_merged_record() ->
     assert len(merged[0]["race_drivers"]) == 2
 
 
-def test_merge_entries_with_only_driver_fields_empty_drivers_returns_empty_merged() -> None:
+def test_merge_entries_with_only_driver_fields_empty_drivers_returns_empty_merged() -> (
+    None
+):
     merger = EntryMerger()
     # Records with only driver fields but driver value is None
     records = [{"rounds": "1"}]
@@ -360,7 +362,9 @@ def test_build_drivers_with_indexed_rounds_assigns_rounds_per_driver() -> None:
 def test_build_drivers_with_indexed_rounds_skips_empty_rounds() -> None:
     merger = EntryMerger()
     drivers = merger._build_drivers_with_indexed_rounds(
-        [{"text": "D1"}], [[]], []
+        [{"text": "D1"}],
+        [[]],
+        [],
     )
     assert len(drivers) == 1
     assert "rounds" not in drivers[0]
@@ -374,16 +378,24 @@ def test_build_drivers_with_indexed_rounds_skips_empty_rounds() -> None:
 def test_build_drivers_with_shared_rounds_adds_number_by_index() -> None:
     merger = EntryMerger()
     drivers = merger._build_drivers_with_shared_rounds(
-        [{"text": "D1"}, {"text": "D2"}], [1, 2], [44, 77], [44, 77]
+        [{"text": "D1"}, {"text": "D2"}],
+        [1, 2],
+        [44, 77],
+        [44, 77],
     )
     assert drivers[0]["no"] == 44
     assert drivers[1]["no"] == 77
 
 
-def test_build_drivers_with_shared_rounds_adds_single_number_for_single_driver() -> None:
+def test_build_drivers_with_shared_rounds_adds_single_number_for_single_driver() -> (
+    None
+):
     merger = EntryMerger()
     drivers = merger._build_drivers_with_shared_rounds(
-        [{"text": "D1"}], [1], [44], []
+        [{"text": "D1"}],
+        [1],
+        [44],
+        [],
     )
     assert drivers[0]["no"] == 44
 

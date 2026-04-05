@@ -3,10 +3,10 @@
 These tests verify that the round/ package aliases correctly re-export
 symbols from round_rules.py and that imports function correctly.
 """
+
 from __future__ import annotations
 
 import pytest
-
 
 # ---------------------------------------------------------------------------
 # Package-level __init__ aliases
@@ -44,7 +44,9 @@ def test_round_package_exports_round_rule_protocol() -> None:
 
 @pytest.mark.unit()
 def test_round_package_exports_round_rule_context() -> None:
-    from scrapers.seasons.columns.helpers.race_result.rules.round import RoundRuleContext
+    from scrapers.seasons.columns.helpers.race_result.rules.round import (
+        RoundRuleContext,
+    )
 
     ctx = RoundRuleContext(
         season_year=2014,
@@ -114,8 +116,12 @@ def test_round_aliases_match_round_rules_originals() -> None:
     from scrapers.seasons.columns.helpers.race_result.rules import round_rules
     from scrapers.seasons.columns.helpers.race_result.rules.round import (
         DoublePointsRoundRule,
+    )
+    from scrapers.seasons.columns.helpers.race_result.rules.round import (
         HalfPointsRoundRule,
-        RoundRule,
+    )
+    from scrapers.seasons.columns.helpers.race_result.rules.round import RoundRule
+    from scrapers.seasons.columns.helpers.race_result.rules.round import (
         RoundRuleContext,
     )
 

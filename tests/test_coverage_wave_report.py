@@ -5,7 +5,6 @@ import sqlite3
 import subprocess
 import sys
 from pathlib import Path
-from unittest.mock import MagicMock
 from unittest.mock import patch
 
 import pytest
@@ -150,12 +149,13 @@ def _make_db_with_entries(
             context_id integer,
             numbits blob
         );
-        """
+        """,
     )
     for path, numbits in entries:
         conn.execute("INSERT INTO file (path) VALUES (?)", (path,))
         fid = conn.execute(
-            "SELECT id FROM file WHERE path = ?", (path,)
+            "SELECT id FROM file WHERE path = ?",
+            (path,),
         ).fetchone()[0]
         conn.execute(
             "INSERT INTO line_bits (file_id, context_id, numbits) VALUES (?, 1, ?)",
@@ -412,7 +412,8 @@ def test_main_creates_output_files(tmp_path: Path) -> None:
     py_file.write_text("x = 1\ny = 2\n", encoding="utf-8")
 
     db = _make_db_with_entries(
-        tmp_path, [(str(py_file), bytes([0x01]))]  # line 1 covered only
+        tmp_path,
+        [(str(py_file), bytes([0x01]))],  # line 1 covered only
     )
     json_out = tmp_path / "out.json"
     md_out = tmp_path / "out.md"

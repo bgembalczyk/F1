@@ -1,4 +1,5 @@
 """Unit tests for scripts/diff_runs.py."""
+
 from __future__ import annotations
 
 import json
@@ -8,7 +9,6 @@ from unittest.mock import patch
 import pytest
 
 import scripts.diff_runs as dr
-
 
 # ---------------------------------------------------------------------------
 # _read_text
@@ -113,7 +113,8 @@ def test_diff_runs_no_difference_returns_zero(tmp_path: Path) -> None:
 
 @pytest.mark.unit()
 def test_diff_runs_different_content_returns_one(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
 ) -> None:
     left = tmp_path / "left"
     right = tmp_path / "right"
@@ -129,7 +130,8 @@ def test_diff_runs_different_content_returns_one(
 
 @pytest.mark.unit()
 def test_diff_runs_only_in_right(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
 ) -> None:
     left = tmp_path / "left"
     right = tmp_path / "right"
@@ -143,7 +145,8 @@ def test_diff_runs_only_in_right(
 
 @pytest.mark.unit()
 def test_diff_runs_only_in_left(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
 ) -> None:
     left = tmp_path / "left"
     right = tmp_path / "right"
