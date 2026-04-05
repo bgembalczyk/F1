@@ -66,6 +66,15 @@ def test_driver_name_status_column_active_champion() -> None:
     assert record["is_world_champion"] is True
 
 
+def test_driver_name_status_column_active_world_champion_marker() -> None:
+    column = DriverNameStatusColumn()
+    record: dict[str, object] = {}
+    column.apply(_ctx("Fernando Alonso~"), record)
+
+    assert record["is_active"] is True
+    assert record["is_world_champion"] is True
+
+
 def test_entries_starts_column_apply() -> None:
     column = EntriesStartsColumn()
     record: dict[str, object] = {}
