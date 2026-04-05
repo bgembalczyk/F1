@@ -13,6 +13,12 @@ def constructor_name_initial(record: dict[str, Any]) -> str:
     constructor = record.get("constructor")
     if isinstance(constructor, dict):
         name = constructor.get("text") or ""
+        if not name:
+            names = constructor.get("names")
+            if isinstance(names, list) and names:
+                first_name = names[0]
+                if isinstance(first_name, str):
+                    name = first_name
     elif isinstance(constructor, str):
         name = constructor
     else:

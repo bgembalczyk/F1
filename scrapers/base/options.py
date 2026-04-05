@@ -11,6 +11,7 @@ from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.cache_adapter import CacheBackend
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.factory.record_factory import RecordFactory
+from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.helpers.http import default_http_policy
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.parsers.soup import SoupParser
@@ -111,8 +112,6 @@ class ScraperOptions:
         return self.http.policy
 
     def with_fetcher(self) -> HtmlFetcher:
-        from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
-
         runtime = ScraperRuntimeFactory().build(
             options=self,
             policy=self.to_http_policy(),

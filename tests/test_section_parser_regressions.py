@@ -11,6 +11,7 @@ from scrapers.constructors.current_constructors_list import (
 )
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
+from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
 from scrapers.seasons.parsers.results import SeasonResultsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 from tests._section_parser_fixture_pattern import ALIAS_FIXTURES
@@ -113,6 +114,50 @@ def test_former_constructors_parser_keeps_link_without_acronym() -> None:
     assert data[0]["constructor"] == {
         "text": "Automobiles Gonfaronnaises Sportives",
         "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives",
+    }
+
+
+def test_former_constructors_parser_extracts_alias_names_with_common_url() -> None:
+    html = """
+    <html><body>
+      <h2><span id="Former_constructors">Former constructors</span></h2>
+      <table class="wikitable">
+        <tr>
+          <th>Constructor</th><th>Licensed in</th><th>Seasons</th>
+          <th>Races entered</th><th>Races started</th><th>Drivers</th>
+          <th>Total entries</th><th>Wins</th><th>Points</th><th>Poles</th>
+          <th>FL</th><th>Podiums</th><th>WCC</th><th>WDC</th>
+        </tr>
+        <tr>
+          <td>
+            <a href="/wiki/Equipe_Ligier">Ligier</a>/
+            <a href="/wiki/Equipe_Ligier">Talbot Ligier</a>
+          </td>
+          <td><a href="/wiki/France">France</a></td>
+          <td>
+            <a href="/wiki/1976_Formula_One_World_Championship">1976</a>-
+            <a href="/wiki/1996_Formula_One_World_Championship">1996</a>
+          </td>
+          <td>326</td><td>325</td><td>31</td><td>326</td><td>9</td><td>388</td>
+          <td>20</td><td>12</td><td>50</td><td>0</td><td>0</td>
+        </tr>
+      </table>
+    </body></html>
+    """
+    parser = FormerConstructorsSectionParser(
+        config=ConstructorsListScraper._FORMER_CONFIG,
+        section_label="Former constructors",
+        include_urls=True,
+        normalize_empty_values=False,
+    )
+    section = BeautifulSoup(html, "html.parser")
+
+    data = parser.parse(section).records
+
+    assert data
+    assert data[0]["constructor"] == {
+        "names": ["Ligier", "Talbot Ligier"],
+        "url": "https://en.wikipedia.org/wiki/Equipe_Ligier",
     }
 
 
