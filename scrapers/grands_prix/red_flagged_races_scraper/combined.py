@@ -95,8 +95,8 @@ class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
         "R": "restart_status",
         "Winner": "winner",
         "Incident that prompted red flag": "incident",
-        "Failed to make the restart - Drivers": "failed_to_make_restart_drivers",
-        "Failed to make the restart - Reason": "failed_to_make_restart_reason",
+        "Drivers": "failed_to_make_restart_drivers",
+        "Reason": "failed_to_make_restart_reason",
     }
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
@@ -116,6 +116,47 @@ class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
             for header in headers
             if header in self._column_mapping
         }
+
+    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().parse(table_data)
+        if result is None:
+            return None
+        result["domain_rows"] = self._merge_failed_to_restart_rows(
+            result["domain_rows"],
+        )
+        return result
+
+    @staticmethod
+    def _race_key(row: dict[str, Any]) -> tuple:
+        season = row.get("season")
+        gp = row.get("grand_prix")
+        gp_text = gp.get("text") if isinstance(gp, dict) else gp
+        lap = row.get("lap")
+        return (season, gp_text, lap)
+
+    @staticmethod
+    def _merge_failed_to_restart_rows(
+        rows: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        merged: list[dict[str, Any]] = []
+        for row in rows:
+            drivers = row.pop("failed_to_make_restart_drivers", None) or []
+            reason = row.pop("failed_to_make_restart_reason", None)
+            race_key = WorldChampionshipsRacesTableParser._race_key(row)
+            _get_key = WorldChampionshipsRacesTableParser._race_key
+            if merged and _get_key(merged[-1]) == race_key:
+                if drivers or reason is not None:
+                    merged[-1]["failed_to_make_restart"].append(
+                        {"drivers": drivers, "reason": reason},
+                    )
+            else:
+                row["failed_to_make_restart"] = []
+                if drivers or reason is not None:
+                    row["failed_to_make_restart"].append(
+                        {"drivers": drivers, "reason": reason},
+                    )
+                merged.append(row)
+        return merged
 
     @staticmethod
     def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
