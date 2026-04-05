@@ -57,7 +57,7 @@ def _create_test_coverage_db(tmp_path: Path) -> Path:
     return db_path
 
 
-@pytest.mark.integration
+@pytest.mark.integration()
 def test_coverage_wave_report_generates_outputs(tmp_path: Path) -> None:
     assert SCRIPT_PATH.exists()
     assert SCRIPT_PATH.is_file()

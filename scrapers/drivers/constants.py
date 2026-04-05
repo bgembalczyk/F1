@@ -1,4 +1,3 @@
-
 DRIVER_NAME_HEADER = "Driver name"
 DRIVER_NATIONALITY_HEADER = "Nationality"
 DRIVER_SEASONS_COMPETED_HEADER = "Seasons competed"

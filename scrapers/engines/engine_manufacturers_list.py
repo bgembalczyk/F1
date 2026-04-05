@@ -262,12 +262,22 @@ class EngineManufacturersListScraper(F1TableScraper):
 
     def _normalize_indianapolis_record(self, item: dict[str, Any]) -> dict[str, Any]:
         normalized = dict(item)
-        if not self.include_urls:
-            normalized.pop("manufacturer_url", None)
-            return normalized
-        url = normalized.get("manufacturer_url")
-        if isinstance(url, str) and url.startswith("/"):
-            normalized["manufacturer_url"] = self._full_url(url)
+        manufacturer = normalized.get("manufacturer")
+        manufacturer_url = normalized.pop("manufacturer_url", None)
+
+        resolved_url: str | None = None
+        if self.include_urls and isinstance(manufacturer_url, str):
+            resolved_url = (
+                self._full_url(manufacturer_url)
+                if manufacturer_url.startswith("/")
+                else manufacturer_url
+            )
+
+        if isinstance(manufacturer, str):
+            normalized["manufacturer"] = {
+                "text": manufacturer,
+                "url": resolved_url,
+            }
         return normalized
 
 
