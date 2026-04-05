@@ -2,18 +2,21 @@
 from __future__ import annotations
 
 import ast
-from pathlib import Path
+from typing import TYPE_CHECKING
 from unittest.mock import patch
 
 import pytest
 
 from scripts.ci import enforce_diff_quality_guards as guards
 
+if TYPE_CHECKING:
+    from pathlib import Path
+
 EXPECTED_ADDED_LINES_COUNT = 2
 LAST_ADDED_LINE_NUMBER = 3
 
 # ---------------------------------------------------------------------------
-# Violation.format()
+# Violation format
 # ---------------------------------------------------------------------------
 
 
@@ -434,13 +437,15 @@ def test_main_returns_zero_when_no_violations(
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
 
-    with patch.object(guards, "_check_registry_implementation_drift", return_value=[]):
-        with patch("scripts.ci.git_diff.list_changed_files", return_value=[]):
-            with patch(
-                "scripts.ci.git_diff.build_added_lines_map",
-                return_value={},
-            ):
-                result = guards.main(["--base-sha", "abc", "--head-sha", "def"])
+    with (
+        patch.object(guards, "_check_registry_implementation_drift", return_value=[]),
+        patch("scripts.ci.git_diff.list_changed_files", return_value=[]),
+        patch(
+            "scripts.ci.git_diff.build_added_lines_map",
+            return_value={},
+        ),
+    ):
+        result = guards.main(["--base-sha", "abc", "--head-sha", "def"])
     assert result == 0
 
 
@@ -453,29 +458,31 @@ def test_main_returns_one_when_violations_exist(
     violation = guards.Violation(path="src/foo.py", line=1, message="bad print")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
 
-    with patch.object(guards, "_check_registry_implementation_drift", return_value=[]):
-        with patch.object(guards, "_check_new_prints", return_value=[violation]):
-            with patch.object(
-                guards,
-                "_check_critical_defaults_duplication",
-                return_value=[],
-            ):
-                with patch.object(
-                    guards,
-                    "_check_broad_exceptions_with_justification",
-                    return_value=[],
-                ):
-                    with patch(
-                        "scripts.ci.git_diff.list_changed_files",
-                        return_value=[],
-                    ):
-                        with patch(
-                            "scripts.ci.git_diff.build_added_lines_map",
-                            return_value={},
-                        ):
-                            result = guards.main(
-                                ["--base-sha", "abc", "--head-sha", "def"],
-                            )
+    with (
+        patch.object(guards, "_check_registry_implementation_drift", return_value=[]),
+        patch.object(guards, "_check_new_prints", return_value=[violation]),
+        patch.object(
+            guards,
+            "_check_critical_defaults_duplication",
+            return_value=[],
+        ),
+        patch.object(
+            guards,
+            "_check_broad_exceptions_with_justification",
+            return_value=[],
+        ),
+        patch(
+            "scripts.ci.git_diff.list_changed_files",
+            return_value=[],
+        ),
+        patch(
+            "scripts.ci.git_diff.build_added_lines_map",
+            return_value={},
+        ),
+    ):
+        result = guards.main(
+            ["--base-sha", "abc", "--head-sha", "def"],
+        )
     assert result == 1
     captured = capsys.readouterr()
     assert "FAILED" in captured.out

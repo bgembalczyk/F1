@@ -321,7 +321,9 @@ def test_indianapolis_only_sub_section_parser_processes_list_elements() -> None:
         "elements": [
             {
                 "kind": "list",
-                "raw_html_fragment": "<ul><li><a href='/wiki/Ferrari'>Ferrari</a></li></ul>",
+                "raw_html_fragment": (
+                    "<ul><li><a href='/wiki/Ferrari'>Ferrari</a></li></ul>"
+                ),
             },
         ],
     }

@@ -440,7 +440,7 @@ def test_main_creates_output_files(tmp_path: Path) -> None:
         "--backlog-out",
         str(backlog_out),
     ]
-    with patch("sys.argv", ["coverage_wave_report"] + args):
+    with patch("sys.argv", ["coverage_wave_report", *args]):
         returncode = cwr.main()
     assert returncode == 0
     assert json_out.exists()

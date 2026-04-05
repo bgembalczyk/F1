@@ -10,6 +10,11 @@ from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 
 SPRINT_START_YEAR = 2021
 SPRINT_FIRST_PLACE_POINTS = 8
+ROW_COUNT = 2
+ROW_INDEX_2021 = 0
+ROW_INDEX_2022 = 1
+THIRD_PLACE_POINTS = 3
+SECOND_SPRINT_START_YEAR = 2022
 
 
 def test_points_scraper_uses_points_scoring_systems_section_parser() -> None:
@@ -122,8 +127,11 @@ def test_sprint_parser_transforms_rows_to_season_objects_and_integers() -> None:
         <table class="wikitable">
           <caption>Sprint qualifying and the sprints</caption>
           <tr><th>Seasons</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th></tr>
-          <tr><td>2021</td><td>3</td><td>2</td><td>1</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
-          <tr><td>2022 onwards</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+          <tr><td>2021</td><td>3</td><td>2</td><td>1</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr>
+            <td>2022 onwards</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td>
+            <td>3</td><td>2</td><td>1</td>
+          </tr>
         </table>
         """,
         "html.parser",
@@ -131,17 +139,17 @@ def test_sprint_parser_transforms_rows_to_season_objects_and_integers() -> None:
     parsed = parser.parse_group(soup.find_all("table"))
     rows = parser.collect_rows(parsed)
 
-    assert len(rows) == 2
+    assert len(rows) == ROW_COUNT
 
-    row_2021 = rows[0]
+    row_2021 = rows[ROW_INDEX_2021]
     assert isinstance(row_2021["seasons"], list)
-    assert row_2021["seasons"][0]["year"] == 2021
-    assert row_2021["1st"] == 3
+    assert row_2021["seasons"][0]["year"] == SPRINT_START_YEAR
+    assert row_2021["1st"] == THIRD_PLACE_POINTS
     assert row_2021["4th"] is None
 
-    row_2022 = rows[1]
-    assert row_2022["seasons"][0]["year"] == 2022
-    assert row_2022["1st"] == 8
+    row_2022 = rows[ROW_INDEX_2022]
+    assert row_2022["seasons"][0]["year"] == SECOND_SPRINT_START_YEAR
+    assert row_2022["1st"] == SPRINT_FIRST_PLACE_POINTS
     assert row_2022["8th"] == 1
 
 
