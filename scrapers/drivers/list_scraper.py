@@ -161,7 +161,7 @@ class F1DriversListScraper(SeedListTableScraper):
 
     Dodatkowo:
     - is_active: (~ lub * na końcu raw_text w kolumnie "Driver name")
-    - is_world_champion: (^ na końcu raw_text w kolumnie "Driver name")
+    - is_world_champion: (~ lub ^ na końcu raw_text w kolumnie "Driver name")
     - drivers_championships: parsowane do dict {count, seasons}
     """
 
