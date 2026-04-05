@@ -5,10 +5,16 @@ import subprocess
 import sys
 from pathlib import Path
 
+TOP_LIMIT = 30
+SCRIPT_PATH = Path("scripts/ci/coverage_wave_report.py")
+REPO_ROOT = Path(".")
+
 
 def test_coverage_wave_report_generates_outputs() -> None:
-    script = Path("scripts/ci/coverage_wave_report.py")
-    assert script.exists()
+    assert SCRIPT_PATH.exists()
+    assert SCRIPT_PATH.is_file()
+    python_executable = Path(sys.executable).resolve()
+    assert python_executable.exists()
 
     out_json = Path("artifacts/test_coverage_top.json")
     out_md = Path("artifacts/test_coverage_top.md")
@@ -18,16 +24,16 @@ def test_coverage_wave_report_generates_outputs() -> None:
         if candidate.exists():
             candidate.unlink()
 
-    result = subprocess.run(
+    result = subprocess.run(  # noqa: S603 - trusted local command and fixed args
         [
-            sys.executable,
-            str(script),
+            str(python_executable),
+            str(SCRIPT_PATH),
             "--coverage-db",
             ".coverage",
             "--repo-root",
-            ".",
+            str(REPO_ROOT),
             "--top",
-            "30",
+            str(TOP_LIMIT),
             "--json-out",
             str(out_json),
             "--md-out",
@@ -46,7 +52,7 @@ def test_coverage_wave_report_generates_outputs() -> None:
 
     payload = json.loads(out_json.read_text(encoding="utf-8"))
     assert isinstance(payload, list)
-    assert len(payload) <= 30
+    assert len(payload) <= TOP_LIMIT
     assert all({"path", "miss", "coverage", "wave"}.issubset(row) for row in payload)
 
     md_text = out_md.read_text(encoding="utf-8")

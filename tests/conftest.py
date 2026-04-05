@@ -11,6 +11,9 @@ FAST_PROFILE_EXCLUDE_PATTERNS: tuple[str, ...] = (
 )
 
 _MARKER_BY_PATTERN: tuple[tuple[str, str], ...] = (
+    # Legacy compatibility suites kept outside unit/contract/architecture profile.
+    ("/contract/test_dsl_contract", "integration"),
+    ("/contract/test_minimal_fetch_contract", "integration"),
     ("tests/contract/", "contract"),
     ("tests/architecture/", "architecture"),
     ("/test_architecture_", "architecture"),
@@ -20,7 +23,6 @@ _MARKER_BY_PATTERN: tuple[tuple[str, str], ...] = (
     ("/test_driver_infobox_integration", "integration"),
     ("/test_section_adapter_integration", "integration"),
     ("/test_common_value_objects_integration", "integration"),
-    # Legacy compatibility suites kept outside unit/contract/architecture profile.
     ("/test_cli_entrypoints_contract", "integration"),
     ("/test_constructor_column", "integration"),
     ("/test_drivers_checkpoint_flow", "integration"),
@@ -40,8 +42,6 @@ _MARKER_BY_PATTERN: tuple[tuple[str, str], ...] = (
     ("/test_value_objects", "integration"),
     ("/test_wiki_application", "integration"),
     ("/test_wiki_seed_registry", "integration"),
-    ("/contract/test_dsl_contract", "integration"),
-    ("/contract/test_minimal_fetch_contract", "integration"),
     ("/test_circuit_parsers", "integration"),
     ("/test_cli_bootstrap_boundaries", "integration"),
     ("/test_cli_deprecation_runtime", "integration"),
@@ -93,6 +93,10 @@ def _marker_for_path(path: str) -> str:
     for pattern, marker in _MARKER_BY_PATTERN:
         if pattern in normalized or pattern in path_with_leading_slash:
             return marker
+
+    file_name = Path(normalized).name
+    if file_name.startswith("test_integration_") or file_name.endswith("_integration.py"):
+        return "integration"
     return "unit"
 
 
@@ -112,6 +116,7 @@ def _selected_profile_markers(markexpr: str) -> set[str]:
         for token in re.findall(
             r"\b(unit|contract|architecture|integration)\b",
             markexpr,
+            flags=re.IGNORECASE,
         )
     }
 

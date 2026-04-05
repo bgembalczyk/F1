@@ -2,6 +2,12 @@ from datetime import datetime
 from datetime import timezone
 
 from scrapers.base.constants.shared_headers import (
+    SHARED_PODIUMS_HEADER as CONSTRUCTOR_PODIUMS_HEADER,
+)
+from scrapers.base.constants.shared_headers import (
+    SHARED_POINTS_HEADER as CONSTRUCTOR_POINTS_HEADER,
+)
+from scrapers.base.constants.shared_headers import (
     SHARED_SEASONS_HEADER as CONSTRUCTOR_SEASONS_HEADER,
 )
 
