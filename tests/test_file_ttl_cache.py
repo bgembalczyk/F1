@@ -4,6 +4,8 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
+import pytest
+
 from infrastructure.cache.file_ttl_cache import FileTtlCache
 from infrastructure.cache.file_ttl_cache import FileTtlCacheAdapter
 from infrastructure.cache.file_ttl_cache import GeminiJsonFileCacheAdapter
@@ -94,6 +96,20 @@ def test_gemini_json_adapter_roundtrip() -> None:
 
     assert adapter.extension == ".json"
     assert adapter.deserialize(raw) == payload
+
+
+def test_gemini_json_adapter_rejects_non_dict_payload() -> None:
+    adapter = GeminiJsonFileCacheAdapter()
+
+    with pytest.raises(TypeError, match="dictionary"):
+        adapter.serialize(["not", "a", "dict"])  # type: ignore[arg-type]
+
+
+def test_gemini_json_adapter_rejects_non_serializable_payload() -> None:
+    adapter = GeminiJsonFileCacheAdapter()
+
+    with pytest.raises(TypeError, match="JSON serializable"):
+        adapter.serialize({"bad": {1, 2, 3}})
 
 
 def test_file_cache_is_thin_adapter_over_file_ttl_cache(tmp_path: Path) -> None:
