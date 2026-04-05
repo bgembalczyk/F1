@@ -9,7 +9,7 @@ _MIN_DUPLICATE_SUFFIX_COUNT = 2
 @dataclass(frozen=True)
 class PathResolver:
     layer_zero_root: Path = Path("layers/0_layer")
-    exports_root: Path = Path("data/wiki")
+    exports_root: Path = Path("data")
     debug_root: Path = Path("data/debug")
 
     def raw_dir(self, *, domain: str) -> Path:
