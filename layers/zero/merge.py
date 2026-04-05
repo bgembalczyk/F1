@@ -49,6 +49,7 @@ from scrapers.wiki.sources_registry import RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE
 from scrapers.wiki.sources_registry import RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE
 from scrapers.wiki.sources_registry import SPONSORSHIP_LIVERIES_SOURCE
 from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import get_source_by_seed_name
 from scrapers.wiki.sources_registry import resolve_list_filename
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 
@@ -185,6 +186,26 @@ def _races_domain_handler(
 
 
 DEFAULT_SOURCE_PIPELINE = "*"
+ENGINE_REGULATIONS_SOURCE = get_source_by_seed_name(
+    "engines_regulations",
+    warn=False,
+).list_filename
+ENGINE_RESTRICTIONS_SOURCE = get_source_by_seed_name(
+    "engines_restrictions",
+    warn=False,
+).list_filename
+POINTS_SCORING_SYSTEM_SOURCE = get_source_by_seed_name(
+    "points_history",
+    warn=False,
+).list_filename
+POINTS_SCORING_SYSTEM_SHORTENED_SOURCE = get_source_by_seed_name(
+    "points_shortened",
+    warn=False,
+).list_filename
+POINTS_SCORING_SYSTEM_SPRINT_SOURCE = get_source_by_seed_name(
+    "points_sprint",
+    warn=False,
+).list_filename
 
 
 def _normalize_engine_records(records: list[object]) -> list[object]:
@@ -496,16 +517,73 @@ def _iter_transformed_records(
     domain_config = DOMAIN_PIPELINE_CONFIGS.get(domain, DomainPipelineConfig())
 
     if isinstance(payload, list):
-        transformed = [_transform_record(domain, source_name, item) for item in payload]
+        transformed: list[object] = []
+        for item in payload:
+            transformed_record = _transform_record(domain, source_name, item)
+            transformed.extend(
+                _expand_season_records(
+                    domain=domain,
+                    source_name=source_name,
+                    record=transformed_record,
+                ),
+            )
         if domain_config.records_normalizer is None:
             return transformed
         return domain_config.records_normalizer(transformed)
 
     transformed_record = _transform_record(domain, source_name, payload)
-    records = [transformed_record]
+    records = _expand_season_records(
+        domain=domain,
+        source_name=source_name,
+        record=transformed_record,
+    )
     if domain_config.records_normalizer is None:
         return records
     return domain_config.records_normalizer(records)
+
+
+def _season_payload_key(source_name: str) -> str | None:
+    if source_name == ENGINE_REGULATIONS_SOURCE:
+        return "engine_regulations"
+    if source_name == ENGINE_RESTRICTIONS_SOURCE:
+        return "engine_regulations"
+    if source_name == POINTS_SCORING_SYSTEM_SOURCE:
+        return "points_scoring_system"
+    if source_name == POINTS_SCORING_SYSTEM_SHORTENED_SOURCE:
+        return "points_scoring_system_shortened"
+    if source_name == POINTS_SCORING_SYSTEM_SPRINT_SOURCE:
+        return "points_scoring_system_sprint"
+    return None
+
+
+def _expand_season_records(
+    *,
+    domain: str,
+    source_name: str,
+    record: object,
+) -> list[object]:
+    if domain not in {"season", "seasons"} or not isinstance(record, dict):
+        return [record]
+
+    payload_key = _season_payload_key(source_name)
+    is_tyre_source = source_name == TYRE_MANUFACTURERS_SOURCE
+    if not is_tyre_source and payload_key is None:
+        return [record]
+
+    transformed = dict(record)
+    if is_tyre_source and "manufacturers" in transformed:
+        transformed["tyre_manufacturers"] = transformed.pop("manufacturers")
+
+    seasons = transformed.pop("seasons", None)
+    if not isinstance(seasons, list) or not seasons:
+        return [transformed]
+
+    if payload_key is None:
+        payload_fields = dict(transformed)
+    else:
+        payload_fields = {payload_key: transformed}
+
+    return [{"season": season, **payload_fields} for season in seasons]
 
 
 def _merge_driver_values(existing: object, incoming: object) -> object:
@@ -567,6 +645,10 @@ def _season_sort_key(record: object) -> tuple[int, str]:
     season = record.get("season")
     if isinstance(season, int):
         return (0, str(season).zfill(10))
+    if isinstance(season, dict):
+        year = season.get("year")
+        if isinstance(year, int):
+            return (0, str(year).zfill(10))
 
     return (1, "")
 

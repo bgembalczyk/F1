@@ -2,6 +2,7 @@ from layers.zero.merge import _circuits_domain_handler
 from layers.zero.merge import _constructor_domain_handler
 from layers.zero.merge import _drivers_domain_handler
 from layers.zero.merge import _engines_domain_handler
+from layers.zero.merge import _expand_season_records
 from layers.zero.merge import _grands_prix_domain_handler
 from layers.zero.merge import _post_process_domain_records
 from layers.zero.merge import _races_domain_handler
@@ -173,3 +174,81 @@ def test_engines_domain_postprocess_sorts_by_manufacturer() -> None:
         else record["manufacturer"]
         for record in processed
     ] == ["Alfa Romeo", "BMW", "Renault"]
+
+
+def test_expand_season_records_for_engine_regulations() -> None:
+    expanded = _expand_season_records(
+        domain="seasons",
+        source_name="f1_engine_regulations.json",
+        record={
+            "seasons": [{"year": 1950}, {"year": 1951}],
+            "configuration": "V12",
+            "fuel": "petrol",
+        },
+    )
+
+    assert expanded == [
+        {
+            "season": {"year": 1950},
+            "engine_regulations": {"configuration": "V12", "fuel": "petrol"},
+        },
+        {
+            "season": {"year": 1951},
+            "engine_regulations": {"configuration": "V12", "fuel": "petrol"},
+        },
+    ]
+
+
+def test_expand_season_records_for_points_sources() -> None:
+    history = _expand_season_records(
+        domain="seasons",
+        source_name="points_scoring_systems_history.json",
+        record={
+            "seasons": [{"year": 1960}],
+            "drivers_championship": {"1st": 8},
+        },
+    )
+    shortened = _expand_season_records(
+        domain="seasons",
+        source_name="points_scoring_systems_shortened.json",
+        record={"seasons": [{"year": 2022}], "race_length_points": [{"first": 25}]},
+    )
+    sprint = _expand_season_records(
+        domain="seasons",
+        source_name="points_scoring_systems_sprint.json",
+        record={"seasons": [{"year": 2021}], "first": 3},
+    )
+
+    assert history == [
+        {
+            "season": {"year": 1960},
+            "points_scoring_system": {"drivers_championship": {"1st": 8}},
+        },
+    ]
+    assert shortened == [
+        {
+            "season": {"year": 2022},
+            "points_scoring_system_shortened": {
+                "race_length_points": [{"first": 25}],
+            },
+        },
+    ]
+    assert sprint == [
+        {
+            "season": {"year": 2021},
+            "points_scoring_system_sprint": {"first": 3},
+        },
+    ]
+
+
+def test_seasons_domain_postprocess_sorts_by_nested_season_year() -> None:
+    processed = _post_process_domain_records(
+        "seasons",
+        [
+            {"season": {"year": 2021}},
+            {"season": {"year": 1950}},
+            {"season": {"year": 2000}},
+        ],
+    )
+
+    assert [item["season"]["year"] for item in processed] == [1950, 2000, 2021]
