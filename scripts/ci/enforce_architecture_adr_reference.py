@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import os
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -18,13 +17,6 @@ from scripts.ci.adr_enforcement_policy import DEFAULT_ADR_ENFORCEMENT_POLICY
 from scripts.ci.git_diff import collect_commit_messages
 from scripts.ci.git_diff import get_unified_diff
 from scripts.ci.git_diff import list_changed_files
-
-ARCHITECTURE_PREFIXES: tuple[str, ...] = (
-    "layers/",
-    "scrapers/base/",
-    "tests/architecture/",
-)
-ADR_PATTERN = re.compile(r"\bADR-\d{4}\b", re.IGNORECASE)
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
@@ -65,14 +57,6 @@ def resolve_sha_pair(base_sha: str, head_sha: str) -> tuple[str, str]:
     return resolved_head, resolved_head
 
 
-def is_architecture_path(path: str) -> bool:
-    return DEFAULT_ADR_ENFORCEMENT_POLICY.is_architecture_path(path)
-
-
-def is_cosmetic_line(content: str) -> bool:
-    return DEFAULT_ADR_ENFORCEMENT_POLICY.is_cosmetic_line(content)
-
-
 def has_non_cosmetic_changes(base_sha: str, head_sha: str, files: list[str]) -> bool:
     if not files:
         return False
@@ -92,10 +76,19 @@ def has_non_cosmetic_changes(base_sha: str, head_sha: str, files: list[str]) -> 
 
         marker = line[:1]
         payload = line[1:]
-        if marker in {"+", "-"} and not is_cosmetic_line(payload):
+        if marker in {"+", "-"} and not DEFAULT_ADR_ENFORCEMENT_POLICY.is_cosmetic_line(
+            payload,
+        ):
             return True
 
     return False
+
+
+def _has_adr_reference(text: str) -> bool:
+    custom_checker = getattr(DEFAULT_ADR_ENFORCEMENT_POLICY, "has_adr_reference", None)
+    if callable(custom_checker):
+        return bool(custom_checker(text))
+    return bool(DEFAULT_ADR_ENFORCEMENT_POLICY.adr_pattern.search(text))
 
 
 def main() -> int:
@@ -103,7 +96,11 @@ def main() -> int:
     base_sha, head_sha = resolve_sha_pair(args.base_sha, args.head_sha)
 
     changed_files = list_changed_files(base_sha, head_sha)
-    architecture_files = [path for path in changed_files if is_architecture_path(path)]
+    architecture_files = [
+        path
+        for path in changed_files
+        if DEFAULT_ADR_ENFORCEMENT_POLICY.is_architecture_path(path)
+    ]
 
     if not architecture_files:
         print("Brak zmian w ścieżkach architektonicznych; gate ADR pominięty.")
@@ -133,7 +130,7 @@ def main() -> int:
         ],
     )
 
-    if DEFAULT_ADR_ENFORCEMENT_POLICY.has_adr_reference(combined_text):
+    if _has_adr_reference(combined_text):
         print("Referencja ADR-XXXX znaleziona. Gate ADR zaliczony.")
         return 0
 

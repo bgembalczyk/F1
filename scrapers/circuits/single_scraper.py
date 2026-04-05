@@ -114,8 +114,9 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         tables_payload: TablesPayloadDTO,
         sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
-        if type(self)._parse_details is not F1SingleCircuitScraper._parse_details:
-            record = self._parse_details(soup)
+        details_record = self.parse_details(soup)
+        if details_record is not None:
+            record = details_record
             return {"url": self._original_url or self.url, **record}
 
         return self._domain_record_service.assemble_record(
@@ -124,6 +125,11 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
             lap_record_rows=tables_payload.data,
             sections=sections_payload.data,
         )
+
+    def parse_details(self, soup: BeautifulSoup) -> dict[str, Any] | None:
+        if type(self)._parse_details is F1SingleCircuitScraper._parse_details:
+            return None
+        return self._parse_details(soup)
 
     def _parse_details(self, soup: BeautifulSoup) -> dict[str, Any]:
         _ = soup

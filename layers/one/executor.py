@@ -1,16 +1,21 @@
+from __future__ import annotations
+
 import inspect
 from collections.abc import Callable
 from pathlib import Path
+from typing import TYPE_CHECKING
 from uuid import uuid4
 
 from layers.orchestration.protocols import LayerOneRunnerProtocol
 from layers.orchestration.types import SeedName
-from layers.seed.registry import SeedRegistryEntry
 from scrapers.base.errors import normalize_pipeline_error
 from scrapers.base.logging import RunTraceWriter
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.base.run_config import RunConfig
+
+if TYPE_CHECKING:
+    from layers.seed.registry.entries import SeedRegistryEntry
 
 
 class LayerOneExecutor:

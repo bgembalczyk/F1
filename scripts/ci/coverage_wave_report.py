@@ -9,6 +9,16 @@ from pathlib import Path
 
 ROOT_PREFIX = "/home/runner/work/F1/F1/"
 
+WAVE1_MIN_MISS = 40
+WAVE2_MIN_MISS = 20
+WAVE2_MAX_MISS = 39
+DEFAULT_TOP_LIMIT = 30
+
+WAVE1 = "Fala 1"
+WAVE2 = "Fala 2"
+WAVE3 = "Fala 3"
+WAVE4 = "Fala 4"
+
 
 @dataclass(frozen=True)
 class FileMiss:
@@ -20,11 +30,14 @@ class FileMiss:
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate a coverage wave report and top remaining misses from .coverage SQLite data.",
+        description=(
+            "Generate a coverage wave report and top remaining misses from "
+            ".coverage SQLite data."
+        ),
     )
     parser.add_argument("--coverage-db", default=".coverage")
     parser.add_argument("--repo-root", default=".")
-    parser.add_argument("--top", type=int, default=30)
+    parser.add_argument("--top", type=int, default=DEFAULT_TOP_LIMIT)
     parser.add_argument(
         "--json-out",
         default="artifacts/coverage_top_remaining_misses.json",
@@ -108,15 +121,17 @@ def _collect_misses(repo_root: Path, executed: dict[str, set[int]]) -> list[File
 
 def _wave_for_path(path: str, miss: int) -> str:
     low = path.lower()
-    if miss >= 40 and (
+    if miss >= WAVE1_MIN_MISS and (
         "parser" in low or "helper" in low or low.startswith("scripts/ci/")
     ):
-        return "Fala 1"
-    if 20 <= miss <= 39 and ("domain" in low or "service" in low or "services" in low):
-        return "Fala 2"
+        return WAVE1
+    if WAVE2_MIN_MISS <= miss <= WAVE2_MAX_MISS and (
+        "domain" in low or "service" in low or "services" in low
+    ):
+        return WAVE2
     if miss >= 1:
-        return "Fala 3"
-    return "Fala 4"
+        return WAVE3
+    return WAVE4
 
 
 def _to_dict(file_miss: FileMiss) -> dict[str, object]:
@@ -139,7 +154,9 @@ def _render_top_md(top: list[dict[str, object]]) -> str:
     ]
     for idx, item in enumerate(top, start=1):
         lines.append(
-            f"| {idx} | `{item['path']}` | {item['miss']} | {item['coverage']}% | {item['wave']} |",
+            "| "
+            f"{idx} | `{item['path']}` | {item['miss']} | "
+            f"{item['coverage']}% | {item['wave']} |",
         )
     lines.append("")
     return "\n".join(lines)
@@ -147,10 +164,10 @@ def _render_top_md(top: list[dict[str, object]]) -> str:
 
 def _render_backlog_md(top: list[dict[str, object]]) -> str:
     grouped: dict[str, list[dict[str, object]]] = {
-        "Fala 1": [],
-        "Fala 2": [],
-        "Fala 3": [],
-        "Fala 4": [],
+        WAVE1: [],
+        WAVE2: [],
+        WAVE3: [],
+        WAVE4: [],
     }
     for item in top:
         grouped[item["wave"]].append(item)
@@ -159,10 +176,19 @@ def _render_backlog_md(top: list[dict[str, object]]) -> str:
         "# Coverage backlog (aktualizacja automatyczna)",
         "",
         "## Cele fal",
-        "- Fala 1 (najwyższy ROI): parsery/helpers + scripts CI z `miss >= 40`; cel: +6–7 pp.",
-        "- Fala 2: moduły domenowe i services z `miss 20-39`; cel: +3–4 pp.",
-        "- Fala 3: domknięcie wyjątków/fallbacków i niskich plików pojedynczych; cel: +2–3 pp.",
-        "- Fala 4: polerka do 99% – pojedyncze linie i granice warunków; cel: +1–2 pp.",
+        (
+            "- Fala 1 (najwyższy ROI): parsery/helpers + scripts CI z "
+            f"`miss >= {WAVE1_MIN_MISS}`; cel: +6-7 pp."
+        ),
+        (
+            "- Fala 2: moduły domenowe i services z `miss "
+            f"{WAVE2_MIN_MISS}-{WAVE2_MAX_MISS}`; cel: +3-4 pp."
+        ),
+        (
+            "- Fala 3: domknięcie wyjątków/fallbacków i niskich plików "
+            "pojedynczych; cel: +2-3 pp."
+        ),
+        "- Fala 4: polerka do 99% - pojedyncze linie i granice warunków; cel: +1-2 pp.",
         "",
     ]
     for wave, items in grouped.items():
@@ -170,10 +196,15 @@ def _render_backlog_md(top: list[dict[str, object]]) -> str:
         if not items:
             lines.append("- Brak plików w top N.")
         else:
-            for item in items:
-                lines.append(
-                    f"- [ ] `{item['path']}` — miss: {item['miss']}, coverage: {item['coverage']}%",
-                )
+            lines.extend(
+                [
+                    (
+                        f"- [ ] `{item['path']}` - miss: {item['miss']}, "
+                        f"coverage: {item['coverage']}%"
+                    )
+                    for item in items
+                ],
+            )
         lines.append("")
     return "\n".join(lines)
 

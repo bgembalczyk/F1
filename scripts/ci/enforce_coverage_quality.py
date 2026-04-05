@@ -4,9 +4,10 @@ import argparse
 import json
 import subprocess
 import sys
-import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
+
+from defusedxml import ElementTree
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -14,6 +15,19 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 @dataclass(frozen=True)
 class Violation:
     message: str
+
+
+@dataclass(frozen=True)
+class GateInputs:
+    global_coverage: float
+    current_file_coverages: dict[str, float]
+    changed_files: set[str]
+    legacy_files: set[str]
+    baseline_file_coverages: dict[str, object]
+    threshold_path: list[float]
+    current_sprint: int
+    current_threshold: float
+    legacy_improvement: float
 
 
 def parse_args() -> argparse.Namespace:
@@ -41,7 +55,7 @@ def _to_percent(raw_rate: float) -> float:
 
 
 def _parse_coverage(coverage_xml: Path) -> tuple[float, dict[str, float]]:
-    tree = ET.parse(coverage_xml)
+    tree = ElementTree.parse(coverage_xml)
     root = tree.getroot()
 
     global_rate = float(root.attrib.get("line-rate", "0"))
@@ -60,14 +74,7 @@ def _parse_coverage(coverage_xml: Path) -> tuple[float, dict[str, float]]:
 
 
 def _git_changed_files(base_sha: str, head_sha: str) -> set[str]:
-    cmd = [
-        "git",
-        "diff",
-        "--name-only",
-        "--diff-filter=AMR",
-        base_sha,
-        head_sha,
-    ]
+    cmd = ["git", "diff", "--name-only", "--diff-filter=AMR", base_sha, head_sha]
     out = subprocess.check_output(cmd, cwd=REPO_ROOT, text=True)
     return {line.strip() for line in out.splitlines() if line.strip()}
 
@@ -75,13 +82,11 @@ def _git_changed_files(base_sha: str, head_sha: str) -> set[str]:
 def _load_legacy_files(path: Path) -> set[str]:
     if not path.exists():
         return set()
-    result: set[str] = set()
-    for raw in path.read_text(encoding="utf-8").splitlines():
-        line = raw.strip()
-        if not line or line.startswith("#"):
-            continue
-        result.add(Path(line).as_posix())
-    return result
+    return {
+        Path(raw.strip()).as_posix()
+        for raw in path.read_text(encoding="utf-8").splitlines()
+        if raw.strip() and not raw.strip().startswith("#")
+    }
 
 
 def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation]:
@@ -104,8 +109,8 @@ def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation
             violations.append(
                 Violation(
                     "global_threshold_path musi być ściśle rosnąca "
-                    f"(problem na pozycji {index + 1}).",
-                ),
+                    f"(problem na pozycji {index + 1})."
+                )
             )
 
     for index in range(1, len(threshold_values)):
@@ -115,23 +120,21 @@ def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation
                 Violation(
                     "Minimalny przyrost globalny na sprint jest za mały: "
                     f"sprint {index}→{index + 1} ma {delta:.2f} pp, "
-                    f"wymagane >= {min_increment:.2f} pp.",
-                ),
+                    f"wymagane >= {min_increment:.2f} pp."
+                )
             )
 
     if current_sprint < 1 or current_sprint > len(threshold_values):
         violations.append(
             Violation(
                 "current_sprint poza zakresem global_threshold_path "
-                f"(1..{len(threshold_values)}).",
-            ),
+                f"(1..{len(threshold_values)})."
+            )
         )
     return violations
 
 
-def main() -> int:
-    args = parse_args()
-
+def _load_gate_inputs(args: argparse.Namespace) -> GateInputs:
     coverage_xml = REPO_ROOT / args.coverage_xml
     baseline_json = REPO_ROOT / args.baseline
     policy_json = REPO_ROOT / args.policy
@@ -144,18 +147,9 @@ def main() -> int:
     changed_files = _git_changed_files(args.base_sha, args.head_sha)
     legacy_files = _load_legacy_files(legacy_files_txt)
 
-    violations = _validate_progressive_threshold(policy)
-
     threshold_path = [float(value) for value in policy["global_threshold_path"]]
     current_sprint = int(policy["current_sprint"])
     current_threshold = threshold_path[current_sprint - 1]
-    if global_coverage < current_threshold:
-        violations.append(
-            Violation(
-                f"Global coverage {global_coverage:.2f}% < próg sprintu {current_sprint} "
-                f"({current_threshold:.2f}%).",
-            ),
-        )
 
     baseline_file_coverages = baseline.get("file_coverages", {})
     if not isinstance(baseline_file_coverages, dict):
@@ -163,14 +157,41 @@ def main() -> int:
 
     legacy_improvement = float(policy.get("legacy_minimum_improvement_pp", 0.5))
 
-    for changed_file in sorted(changed_files):
+    return GateInputs(
+        global_coverage=global_coverage,
+        current_file_coverages=current_file_coverages,
+        changed_files=changed_files,
+        legacy_files=legacy_files,
+        baseline_file_coverages=baseline_file_coverages,
+        threshold_path=threshold_path,
+        current_sprint=current_sprint,
+        current_threshold=current_threshold,
+        legacy_improvement=legacy_improvement,
+    )
+
+
+def _evaluate_global_threshold(inputs: GateInputs) -> list[Violation]:
+    if inputs.global_coverage >= inputs.current_threshold:
+        return []
+    return [
+        Violation(
+            f"Global coverage {inputs.global_coverage:.2f}% < próg sprintu "
+            f"{inputs.current_sprint} ({inputs.current_threshold:.2f}%)."
+        )
+    ]
+
+
+def _evaluate_changed_files(inputs: GateInputs) -> list[Violation]:
+    violations: list[Violation] = []
+
+    for changed_file in sorted(inputs.changed_files):
         if not changed_file.endswith(".py"):
             continue
-        if changed_file not in current_file_coverages:
+        if changed_file not in inputs.current_file_coverages:
             continue
 
-        current_cov = float(current_file_coverages[changed_file])
-        baseline_cov_raw = baseline_file_coverages.get(changed_file)
+        current_cov = float(inputs.current_file_coverages[changed_file])
+        baseline_cov_raw = inputs.baseline_file_coverages.get(changed_file)
         if baseline_cov_raw is None:
             continue
 
@@ -179,22 +200,26 @@ def main() -> int:
             violations.append(
                 Violation(
                     f"Patch coverage regression: {changed_file} spadł z "
-                    f"{baseline_cov:.2f}% do {current_cov:.2f}%.",
-                ),
+                    f"{baseline_cov:.2f}% do {current_cov:.2f}%."
+                )
             )
 
         if (
-            changed_file in legacy_files
-            and current_cov < baseline_cov + legacy_improvement
+            changed_file in inputs.legacy_files
+            and current_cov < baseline_cov + inputs.legacy_improvement
         ):
             violations.append(
                 Violation(
-                    f"Legacy low coverage '{changed_file}' został dotknięty, ale poprawa "
-                    f"to tylko {current_cov - baseline_cov:.2f} pp; wymagane >= "
-                    f"{legacy_improvement:.2f} pp.",
-                ),
+                    f"Legacy low coverage '{changed_file}' został dotknięty, "
+                    f"ale poprawa to tylko {current_cov - baseline_cov:.2f} pp; "
+                    f"wymagane >= {inputs.legacy_improvement:.2f} pp."
+                )
             )
 
+    return violations
+
+
+def _format_and_print_result(inputs: GateInputs, violations: list[Violation]) -> int:
     if violations:
         print("Coverage quality gate: FAILED")
         for violation in violations:
@@ -203,10 +228,22 @@ def main() -> int:
 
     print("Coverage quality gate: OK")
     print(
-        f"Global coverage: {global_coverage:.2f}% (sprint {current_sprint}, "
-        f"próg {current_threshold:.2f}%).",
+        f"Global coverage: {inputs.global_coverage:.2f}% (sprint "
+        f"{inputs.current_sprint}, próg {inputs.current_threshold:.2f}%)."
     )
     return 0
+
+
+def main() -> int:
+    args = parse_args()
+    inputs = _load_gate_inputs(args)
+
+    policy = _load_json(REPO_ROOT / args.policy)
+    violations = _validate_progressive_threshold(policy)
+    violations.extend(_evaluate_global_threshold(inputs))
+    violations.extend(_evaluate_changed_files(inputs))
+
+    return _format_and_print_result(inputs, violations)
 
 
 if __name__ == "__main__":

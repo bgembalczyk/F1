@@ -1,13 +1,19 @@
 from __future__ import annotations
 
-from pathlib import Path
 from types import SimpleNamespace
+from typing import TYPE_CHECKING
 
 from scripts.ci import enforce_architecture_adr_reference
 from scripts.ci import enforce_new_module_any_policy
 from scripts.ci import enforce_no_dead_code
 from scripts.ci import mypy_regression_gate
 from scripts.ci import validate_pr_description
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
+
+DEAD_CODE_TOOL_ERROR_EXIT = 2
 
 
 def test_enforce_architecture_main_uses_sys_argv_and_fails_without_adr(
@@ -137,13 +143,13 @@ def test_enforce_no_dead_code_main_uses_sys_argv_and_reports_error(
     monkeypatch.setattr(
         enforce_no_dead_code.subprocess,
         "run",
-        lambda *_args, **_kwargs: SimpleNamespace(returncode=2),
+        lambda *_args, **_kwargs: SimpleNamespace(returncode=DEAD_CODE_TOOL_ERROR_EXIT),
     )
 
     exit_code = enforce_no_dead_code.main()
 
     out = capsys.readouterr().out
-    assert exit_code == 2
+    assert exit_code == DEAD_CODE_TOOL_ERROR_EXIT
     assert "Potential dead code detected" in out
 
 

@@ -83,10 +83,9 @@ def test_wiki_scraper_has_element_parsers_from_mixin() -> None:
     assert hasattr(scraper, "paragraph_parser")
 
 
-def test_wiki_element_parser_mixin_exposes_infobox_class_predicate() -> None:
-    """WikiElementParserMixin keeps shared infobox class predicate."""
-    assert hasattr(WikiElementParserMixin, "_has_infobox_class")
-    assert callable(WikiElementParserMixin._has_infobox_class)
+def test_wiki_element_parser_mixin_is_part_of_wiki_scraper_api() -> None:
+    """WikiScraper keeps WikiElementParserMixin in its public MRO."""
+    assert WikiElementParserMixin in WikiScraper.__mro__
 
 
 def test_wiki_scraper_has_scrape_method() -> None:

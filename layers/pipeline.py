@@ -21,13 +21,17 @@ class WikiPipelineApplication:
         self._base_debug_dir = base_debug_dir
         self._layer_zero_executor = layer_zero_executor
         self._layer_one_executor = layer_one_executor
+        # Backward-compatible private attribute kept for composition tests and
+        # downstream code that still introspects internal wiring.
+        self._layer_zero_merge_service = layer_zero_merge_service
+        self._run_config_factory = self._build_run_config
         self._facade = WikiPipelineFacade(
             base_wiki_dir=base_wiki_dir,
             base_debug_dir=base_debug_dir,
             layer_zero_executor=layer_zero_executor,
             layer_one_executor=layer_one_executor,
             layer_zero_merge_service=layer_zero_merge_service,
-            run_config_factory=self._build_run_config,
+            run_config_factory=self._run_config_factory,
         )
 
     def _build_run_config(self, *, profile: str = "debug") -> RunConfig:

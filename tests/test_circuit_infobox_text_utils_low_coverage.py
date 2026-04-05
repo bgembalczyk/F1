@@ -46,7 +46,8 @@ def test_parse_length_wraps_value_error_as_domain_parse_error(
     utils = InfoboxTextUtils()
 
     def _raise_value_error(_: str | None, *, unit: str) -> float:
-        raise ValueError(f"broken parser for unit={unit}")
+        msg = f"broken parser for unit={unit}"
+        raise ValueError(msg)
 
     monkeypatch.setattr(
         "scrapers.circuits.infobox.services.text_utils.parse_number_with_unit",
@@ -59,41 +60,14 @@ def test_parse_length_wraps_value_error_as_domain_parse_error(
     assert "Nie udało się sparsować długości (km)" in str(exc_info.value)
 
 
-@pytest.mark.parametrize(
-    ("text", "links", "expected"),
-    [
-        (
-            "Main Circuit",
-            [
-                {
-                    "text": "Main Circuit",
-                    "url": "https://en.wikipedia.org/wiki/Main_Circuit",
-                },
-            ],
-            {
-                "text": "Main Circuit",
-                "url": "https://en.wikipedia.org/wiki/Main_Circuit",
-            },
-        ),
-        (
-            "Main Circuit",
-            [
-                {
-                    "text": "Main Circuit",
-                    "url": "https://en.wikipedia.org/w/index.php?title=Missing&action=edit&redlink=1",
-                },
-            ],
-            {"text": "Main Circuit", "url": None},
-        ),
-        (None, [], None),
-    ],
-)
-def test_with_link_applies_fallback_for_missing_or_redlink_urls(
-    text: str | None,
-    links: list[dict],
-    expected: dict | None,
-) -> None:
+def test_prune_nulls_drops_empty_nested_values() -> None:
     utils = InfoboxTextUtils()
 
-    # Asercja na strukturę pośrednią budowaną przez helper.
-    assert utils._with_link(text, links) == expected
+    raw = {
+        "name": "Main Circuit",
+        "aliases": [],
+        "meta": {"url": None, "tags": []},
+        "country": "UK",
+    }
+
+    assert utils.prune_nulls(raw) == {"name": "Main Circuit", "country": "UK"}

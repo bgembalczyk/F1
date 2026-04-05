@@ -7,7 +7,6 @@ from typing import TYPE_CHECKING
 from typing import TypeVar
 
 from infrastructure.http_client.requests_shim.request_error import RequestError
-from models.mappers.serialization import to_dict_list
 from scrapers.base.error_codes import resolve_error_code
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
@@ -394,10 +393,6 @@ class PipelineOrchestrator:
 
     def _write_pipeline_error_summary(self, payload: dict[str, object]) -> None:
         self._quality_report_service.write_error_summary(payload)
-
-    @staticmethod
-    def to_dict_records(records: list[ExportRecord]) -> list[dict[str, object]]:
-        return to_dict_list(records)
 
     @staticmethod
     def build_validation_runner(

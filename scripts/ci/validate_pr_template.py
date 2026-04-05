@@ -69,7 +69,8 @@ def touches_scrapers_base(files: list[str]) -> bool:
 
 
 def normalize_field_value(value: str) -> str:
-    return re.sub(r"<!--.*?-->", "", value, flags=re.DOTALL).strip().lower()
+    without_html_comments = re.sub(r"<!--.*?-->", "", value, flags=re.DOTALL)
+    return without_html_comments.strip().lower()
 
 
 def extract_architecture_fields(pr_body: str) -> dict[str, str]:
