@@ -7,7 +7,7 @@ import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
 
-ROOT_PREFIX = "/home/runner/work/F1/F1/"
+ROOT_PREFIX = str(Path(__file__).resolve().parents[2]) + "/"
 
 WAVE1_MIN_MISS = 40
 WAVE2_MIN_MISS = 20

@@ -88,6 +88,7 @@ ignore = [
 "scripts/ci/enforce_structural_quality.py" = ["N802"]
 "tests/test_adr_enforcement_policy_integration.py" = ["S603"]
 "tests/test_check_scripts_smoke.py" = ["S603"]
+"tests/test_coverage_wave_report.py" = ["S603"]
 "tests/test_duplicate_report_typing.py" = ["S603"]
 
 [tool.ruff.lint.isort]
