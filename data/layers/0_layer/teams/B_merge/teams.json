@@ -9122,6 +9122,12 @@
             "non-tobacco_alcohol_livery_changes": "\"Lucky Strike\" was replaced with \" 555 World Racing \""
           },
           {
+            "driver": [
+              {
+                "text": "Anthony Davidson",
+                "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
+              }
+            ],
             "season": [
               {
                 "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
@@ -9145,12 +9151,6 @@
                 "url": "https://en.wikipedia.org/wiki/Honda"
               },
               "Intercond"
-            ],
-            "driver": [
-              {
-                "text": "Anthony Davidson",
-                "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
-              }
             ],
             "livery_sponsors": [
               {
@@ -28119,6 +28119,11 @@
             ]
           },
           {
+            "driver": [
+              {
+                "text": "Pescarolo"
+              }
+            ],
             "season": [
               {
                 "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship",
@@ -28138,11 +28143,6 @@
               "White"
             ],
             "additional_major_sponsors___notes": "Goodyear, Elf",
-            "driver": [
-              {
-                "text": "Pescarolo"
-              }
-            ],
             "livery_sponsors": [
               "Matra-Simca"
             ],
@@ -28151,6 +28151,11 @@
             ]
           },
           {
+            "driver": [
+              {
+                "text": "Beltoise"
+              }
+            ],
             "season": [
               {
                 "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship",
@@ -28170,11 +28175,6 @@
               "Red"
             ],
             "additional_major_sponsors___notes": "Goodyear, Elf",
-            "driver": [
-              {
-                "text": "Beltoise"
-              }
-            ],
             "livery_sponsors": [
               "Matra-Simca"
             ],

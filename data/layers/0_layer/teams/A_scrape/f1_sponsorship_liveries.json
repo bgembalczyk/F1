@@ -1,5 +1,6 @@
 [
   {
+    "team": "AGS",
     "liveries": [
       {
         "season": [
@@ -157,10 +158,10 @@
         ],
         "notes": null
       }
-    ],
-    "team": "AGS"
+    ]
   },
   {
+    "team": "Alfa Romeo",
     "liveries": [
       {
         "season": [
@@ -665,10 +666,10 @@
         ],
         "non-tobacco_liveries": "In countries where advertisement of gambling and sports betting are banned, Stake's branding will be replaced by Kick. Alfa Romeo raced a revised Kick livery called the \"disruptive livery\" at the Belgian Grand Prix. The team raced a special livery for the Las Vegas Grand Prix featuring “a pattern of playing cards featuring Alfa Romeo's Quadrifoglio in gold and heart suit cards emblazoned with the number six-for the six years of the relationship between Sauber Motorsport and Alfa Romeo."
       }
-    ],
-    "team": "Alfa Romeo"
+    ]
   },
   {
+    "team": "AlphaTauri",
     "liveries": [
       {
         "season": [
@@ -854,10 +855,10 @@
         ],
         "special_liveries": "AlphaTauri raced a special livery inspired by the AlphaTauri x Brendan Monroe Las Vegas Capsule Collection for the final two races of the season."
       }
-    ],
-    "team": "AlphaTauri"
+    ]
   },
   {
+    "team": "Alpine",
     "liveries": [
       {
         "season": [
@@ -1394,10 +1395,10 @@
         ],
         "special_liveries": "Since the beginning of their partnership with BWT , pink-accented liveries have been used by Alpine in certain rounds of the season. Initially, they were used for the opening rounds of the 2022 and 2023 seasons, while the livery was used in the final three races of 2024 and at the 2025 Las Vegas Grand Prix . Alpine raced with black nose cones at the 2022 Italian Grand Prix to mourn the death of Elizabeth II . Alpine's final race with Renault engines, the 2025 Abu Dhabi Grand Prix , features a \"Merci Viry \" decal on the tub."
       }
-    ],
-    "team": "Alpine"
+    ]
   },
   {
+    "team": "Andrea Moda",
     "liveries": [
       {
         "season": [
@@ -1436,10 +1437,10 @@
           }
         ]
       }
-    ],
-    "team": "Andrea Moda"
+    ]
   },
   {
+    "team": "Arrows",
     "liveries": [
       {
         "season": [
@@ -3489,10 +3490,10 @@
           }
         ]
       }
-    ],
-    "team": "Arrows"
+    ]
   },
   {
+    "team": "Aston Martin",
     "liveries": [
       {
         "season": [
@@ -4236,10 +4237,10 @@
         ],
         "notes": "For the 2025 Chinese Grand Prix , the team featured a dedication to Eddie Jordan , who died ahead of the Grand Prix weekend. Jordan was the founder of the team's original descent, Jordan Grand Prix ."
       }
-    ],
-    "team": "Aston Martin"
+    ]
   },
   {
+    "team": "ATS",
     "liveries": [
       {
         "season": [
@@ -4417,10 +4418,10 @@
         ],
         "notes": null
       }
-    ],
-    "team": "ATS"
+    ]
   },
   {
+    "team": "Audi",
     "liveries": [
       {
         "season": [
@@ -4499,10 +4500,10 @@
           }
         ]
       }
-    ],
-    "team": "Audi"
+    ]
   },
   {
+    "team": "Benetton",
     "liveries": [
       {
         "season": [
@@ -5478,10 +5479,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": "\"Mild Seven\" was replaced with \"Benetton\" (on team members clothing and rear wing's front side), \"Renaultsport\" on rear wing (rear side), \"Fisico\" on Fisichella 's car (on engine body) and \"Jenson\" on Button 's car (on engine body)"
       }
-    ],
-    "team": "Benetton"
+    ]
   },
   {
+    "team": "BMS Scuderia Italia",
     "liveries": [
       {
         "season": [
@@ -5755,10 +5756,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": "None"
       }
-    ],
-    "team": "BMS Scuderia Italia"
+    ]
   },
   {
+    "team": "BMW Sauber",
     "liveries": [
       {
         "season": [
@@ -5928,10 +5929,10 @@
           }
         ]
       }
-    ],
-    "team": "BMW Sauber"
+    ]
   },
   {
+    "team": "Brabham",
     "liveries": [
       {
         "season": [
@@ -8581,10 +8582,10 @@
           }
         ]
       }
-    ],
-    "team": "Brabham"
+    ]
   },
   {
+    "team": "Brawn GP",
     "liveries": [
       {
         "season": [
@@ -8630,10 +8631,10 @@
           }
         ]
       }
-    ],
-    "team": "Brawn GP"
+    ]
   },
   {
+    "team": "British American Racing",
     "liveries": [
       {
         "season": [
@@ -8838,6 +8839,12 @@
         "non-tobacco_alcohol_livery_changes": "\"Lucky Strike\" was replaced with \" 555 World Racing \""
       },
       {
+        "driver": [
+          {
+            "text": "Anthony Davidson",
+            "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
+          }
+        ],
         "season": [
           {
             "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
@@ -8862,12 +8869,6 @@
           },
           "Intercond"
         ],
-        "driver": [
-          {
-            "text": "Anthony Davidson",
-            "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
-          }
-        ],
         "livery_sponsors": [
           {
             "params": [
@@ -8883,10 +8884,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": "\"Lucky Strike\" was replaced with \" 555 World Racing \""
       }
-    ],
-    "team": "British American Racing"
+    ]
   },
   {
+    "team": "British Racing Motors",
     "liveries": [
       {
         "season": [
@@ -9116,10 +9117,10 @@
         ],
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       }
-    ],
-    "team": "British Racing Motors"
+    ]
   },
   {
+    "team": "Cadillac",
     "liveries": [
       {
         "season": [
@@ -9176,10 +9177,10 @@
           }
         ]
       }
-    ],
-    "team": "Cadillac"
+    ]
   },
   {
+    "team": "Caterham",
     "liveries": [
       {
         "season": [
@@ -9382,10 +9383,10 @@
           }
         ]
       }
-    ],
-    "team": "Caterham"
+    ]
   },
   {
+    "team": "Coloni",
     "liveries": [
       {
         "season": [
@@ -9580,10 +9581,10 @@
         "main_sponsors": null,
         "notes": null
       }
-    ],
-    "team": "Coloni"
+    ]
   },
   {
+    "team": "Ensign",
     "liveries": [
       {
         "season": [
@@ -11678,10 +11679,10 @@
           "Caribu"
         ]
       }
-    ],
-    "team": "Ensign"
+    ]
   },
   {
+    "team": "Eifelland",
     "liveries": [
       {
         "season": [
@@ -11729,10 +11730,10 @@
         ],
         "notes": null
       }
-    ],
-    "team": "Eifelland"
+    ]
   },
   {
+    "team": "EuroBrun",
     "liveries": [
       {
         "season": [
@@ -11855,10 +11856,10 @@
         ],
         "notes": "Used in 1 car"
       }
-    ],
-    "team": "EuroBrun"
+    ]
   },
   {
+    "team": "Ferrari",
     "liveries": [
       {
         "season": [
@@ -15945,10 +15946,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Ferrari"
+    ]
   },
   {
+    "team": "Fittipaldi",
     "liveries": [
       {
         "season": [
@@ -16139,10 +16140,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Fittipaldi"
+    ]
   },
   {
+    "team": "Fondmetal",
     "liveries": [
       {
         "season": [
@@ -16193,10 +16194,10 @@
           "Black"
         ]
       }
-    ],
-    "team": "Fondmetal"
+    ]
   },
   {
+    "team": "Force India",
     "liveries": [
       {
         "season": [
@@ -16955,10 +16956,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Force India"
+    ]
   },
   {
+    "team": "Forti",
     "liveries": [
       {
         "season": [
@@ -17087,10 +17088,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Forti"
+    ]
   },
   {
+    "team": "Frank Williams Racing Cars",
     "liveries": [
       {
         "season": [
@@ -17559,10 +17560,10 @@
           "Black"
         ]
       }
-    ],
-    "team": "Frank Williams Racing Cars"
+    ]
   },
   {
+    "team": "Haas",
     "liveries": [
       {
         "season": [
@@ -18210,10 +18211,10 @@
         ],
         "notes": null
       }
-    ],
-    "team": "Haas"
+    ]
   },
   {
+    "team": "Haas Lola",
     "liveries": [
       {
         "season": [
@@ -18312,10 +18313,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Haas Lola"
+    ]
   },
   {
+    "team": "Hesketh",
     "liveries": [
       {
         "season": [
@@ -19023,10 +19024,10 @@
           "Blue"
         ]
       }
-    ],
-    "team": "Hesketh"
+    ]
   },
   {
+    "team": "Honda",
     "liveries": [
       {
         "season": [
@@ -19214,10 +19215,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": "None"
       }
-    ],
-    "team": "Honda"
+    ]
   },
   {
+    "team": "HRT",
     "liveries": [
       {
         "season": [
@@ -19334,10 +19335,10 @@
         ],
         "other_information": "Tata Tea sponsored HRT at the Indian Grand Prix only as well as Tetley at the Korean."
       }
-    ],
-    "team": "HRT"
+    ]
   },
   {
+    "team": "Jaguar",
     "liveries": [
       {
         "season": [
@@ -19582,10 +19583,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": "Beck's was replaced by \"BEST'S\". The team used special livery with black engine covers for 2001 Italian Grand Prix in remembrance of the 11 September 2001 attacks in the United States . The team supported movies Terminator 3: Rise of the Machines at the 2003 British Grand Prix respectively. During the 2004 Monaco Grand Prix , the team promoted the movie Ocean's Twelve with a livery and a diamond worth $300,000 installed on the car's nose. Both cars ultimately retired; Webber's diamond was intact, though Klien's was not."
       }
-    ],
-    "team": "Jaguar"
+    ]
   },
   {
+    "team": "Jordan",
     "liveries": [
       {
         "season": [
@@ -20429,10 +20430,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": "Benson & Hedges logo changed to \"Bitten Hisses\" or to snake-related puns with driver surnames such as \" Fisssssi \" and \" Sssssschuey \" (1997), \"Buzzing Hornets\" (1998 to 2000), \"Bitten Heroes\" (2001), and \"Be On Edge\" (2002 to 2005), Sobranie logo changed to \"Be On Edge\", replaced with the driver's given name or removed completely (2005), \"200\" at the 2001 USA GP (only on Jean Alesi's car for his 200th F1 start), \"Lazarus\" in the first races of 2004 The team used special livery with American flag decals for 2001 Italian Grand Prix and 2001 United States Grand Prix in remembrance of the 11 September 2001 attacks in the United States . At the 2005 Canadian Grand Prix , the slogan \"Bring Back Hockey\" was printed on the airbox as a reaction to the 2004-05 NHL lockout . Sobranie replaced Benson & Hedges at the 2004 and 2005 United States Grands Prix due to U.S. Tobacco Master Settlement Agreement conflicts."
       }
-    ],
-    "team": "Jordan"
+    ]
   },
   {
+    "team": "Larrousse",
     "liveries": [
       {
         "season": [
@@ -20848,10 +20849,10 @@
         ],
         "non_tobacco_alcohol_changess": "In countries where advertising alcohol or tobacco is forbidden, Larrousse used the Tourtel livery"
       }
-    ],
-    "team": "Larrousse"
+    ]
   },
   {
+    "team": "LEC",
     "liveries": [
       {
         "season": [
@@ -20876,10 +20877,10 @@
           "LEC Refrigeration"
         ]
       }
-    ],
-    "team": "LEC"
+    ]
   },
   {
+    "team": "Life",
     "liveries": [
       {
         "season": [
@@ -20908,10 +20909,10 @@
           "Life-Pic"
         ]
       }
-    ],
-    "team": "Life"
+    ]
   },
   {
+    "team": "Ligier",
     "liveries": [
       {
         "season": [
@@ -21967,10 +21968,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": "\"Gauloises\" was replaced with \"Ligier\""
       }
-    ],
-    "team": "Ligier"
+    ]
   },
   {
+    "team": "Lotus (1958–1994)",
     "liveries": [
       {
         "season": [
@@ -23022,10 +23023,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Lotus (1958–1994)"
+    ]
   },
   {
+    "team": "Lotus (2010–2011)",
     "liveries": [
       {
         "season": [
@@ -23151,10 +23152,10 @@
           }
         ]
       }
-    ],
-    "team": "Lotus (2010–2011)"
+    ]
   },
   {
+    "team": "Lotus (2012–2015)",
     "liveries": [
       {
         "season": [
@@ -23474,10 +23475,10 @@
         ],
         "notes": "The team promoted the movie Mad Max: Fury Road at the Spanish Grand Prix ."
       }
-    ],
-    "team": "Lotus (2012–2015)"
+    ]
   },
   {
+    "team": "Maki",
     "liveries": [
       {
         "season": [
@@ -23524,10 +23525,10 @@
           "Blue"
         ]
       }
-    ],
-    "team": "Maki"
+    ]
   },
   {
+    "team": "Manor",
     "liveries": [
       {
         "season": [
@@ -23582,10 +23583,10 @@
           "Blue"
         ]
       }
-    ],
-    "team": "Manor"
+    ]
   },
   {
+    "team": "March Engineering",
     "liveries": [
       {
         "season": [
@@ -26489,10 +26490,10 @@
           "Light Blue"
         ]
       }
-    ],
-    "team": "March Engineering"
+    ]
   },
   {
+    "team": "Marussia",
     "liveries": [
       {
         "season": [
@@ -26652,10 +26653,10 @@
           "White"
         ]
       }
-    ],
-    "team": "Marussia"
+    ]
   },
   {
+    "team": "MasterCard Lola",
     "liveries": [
       {
         "season": [
@@ -26700,10 +26701,10 @@
           }
         ]
       }
-    ],
-    "team": "MasterCard Lola"
+    ]
   },
   {
+    "team": "Matra",
     "liveries": [
       {
         "season": [
@@ -26767,6 +26768,11 @@
         ]
       },
       {
+        "driver": [
+          {
+            "text": "Pescarolo"
+          }
+        ],
         "season": [
           {
             "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship",
@@ -26786,11 +26792,6 @@
           "White"
         ],
         "additional_major_sponsors___notes": "Goodyear, Elf",
-        "driver": [
-          {
-            "text": "Pescarolo"
-          }
-        ],
         "livery_sponsors": [
           "Matra-Simca"
         ],
@@ -26799,6 +26800,11 @@
         ]
       },
       {
+        "driver": [
+          {
+            "text": "Beltoise"
+          }
+        ],
         "season": [
           {
             "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship",
@@ -26818,11 +26824,6 @@
           "Red"
         ],
         "additional_major_sponsors___notes": "Goodyear, Elf",
-        "driver": [
-          {
-            "text": "Beltoise"
-          }
-        ],
         "livery_sponsors": [
           "Matra-Simca"
         ],
@@ -26830,10 +26831,10 @@
           "Blue"
         ]
       }
-    ],
-    "team": "Matra"
+    ]
   },
   {
+    "team": "McLaren",
     "liveries": [
       {
         "season": [
@@ -30528,10 +30529,10 @@
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       }
-    ],
-    "team": "McLaren"
+    ]
   },
   {
+    "team": "Mercedes-Benz",
     "liveries": [
       {
         "season": [
@@ -31608,10 +31609,10 @@
         ],
         "notes": null
       }
-    ],
-    "team": "Mercedes-Benz"
+    ]
   },
   {
+    "team": "Merzario",
     "liveries": [
       {
         "season": [
@@ -31732,10 +31733,10 @@
           "Florbath"
         ]
       }
-    ],
-    "team": "Merzario"
+    ]
   },
   {
+    "team": "Midland",
     "liveries": [
       {
         "season": [
@@ -31838,10 +31839,10 @@
           "Orange"
         ]
       }
-    ],
-    "team": "Midland"
+    ]
   },
   {
+    "team": "Minardi",
     "liveries": [
       {
         "season": [
@@ -32839,10 +32840,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Minardi"
+    ]
   },
   {
+    "team": "Modena",
     "liveries": [
       {
         "season": [
@@ -32877,10 +32878,10 @@
           "Central Park Hotel"
         ]
       }
-    ],
-    "team": "Modena"
+    ]
   },
   {
+    "team": "Onyx",
     "liveries": [
       {
         "season": [
@@ -32943,10 +32944,10 @@
         ],
         "non-tobacco_alcohol_livery_changess": "\"Marlboro\" was replaced with barcode, the Chevron logo is retained"
       }
-    ],
-    "team": "Onyx"
+    ]
   },
   {
+    "team": "Osella",
     "liveries": [
       {
         "season": [
@@ -33254,10 +33255,10 @@
           "Fondmetal"
         ]
       }
-    ],
-    "team": "Osella"
+    ]
   },
   {
+    "team": "Pacific",
     "liveries": [
       {
         "season": [
@@ -33340,10 +33341,10 @@
         ],
         "non-tobacco_alcohol_livery_changess": "Ursus logo was removed"
       }
-    ],
-    "team": "Pacific"
+    ]
   },
   {
+    "team": "Penske",
     "liveries": [
       {
         "season": [
@@ -33381,10 +33382,10 @@
         ],
         "notes": "A US flag as a mark of the team's nationality ."
       }
-    ],
-    "team": "Penske"
+    ]
   },
   {
+    "team": "Prost",
     "liveries": [
       {
         "season": [
@@ -33673,10 +33674,10 @@
           }
         ]
       }
-    ],
-    "team": "Prost"
+    ]
   },
   {
+    "team": "RAM",
     "liveries": [
       {
         "season": [
@@ -33775,10 +33776,10 @@
           }
         ]
       }
-    ],
-    "team": "RAM"
+    ]
   },
   {
+    "team": "Racing Bulls",
     "liveries": [
       {
         "season": [
@@ -34008,10 +34009,10 @@
         ],
         "special_liveries": "A special livery was used at the 2025 Miami Grand Prix that promoted Red Bull's Summer edition."
       }
-    ],
-    "team": "Racing Bulls"
+    ]
   },
   {
+    "team": "Racing Point",
     "liveries": [
       {
         "season": [
@@ -34167,10 +34168,10 @@
           }
         ]
       }
-    ],
-    "team": "Racing Point"
+    ]
   },
   {
+    "team": "Rebaque",
     "liveries": [
       {
         "season": [
@@ -34216,10 +34217,10 @@
           "Marlboro"
         ]
       }
-    ],
-    "team": "Rebaque"
+    ]
   },
   {
+    "team": "Red Bull Racing",
     "liveries": [
       {
         "season": [
@@ -35845,10 +35846,10 @@
         ],
         "special_liveries": null
       }
-    ],
-    "team": "Red Bull Racing"
+    ]
   },
   {
+    "team": "Renault",
     "liveries": [
       {
         "season": [
@@ -37493,10 +37494,10 @@
         ],
         "non-tobacco_alcohol_and_other_livery_changes": "During pre-season testing, the car was coloured in black."
       }
-    ],
-    "team": "Renault"
+    ]
   },
   {
+    "team": "Rial",
     "liveries": [
       {
         "season": [
@@ -37570,10 +37571,10 @@
           "Rial Wheels"
         ]
       }
-    ],
-    "team": "Rial"
+    ]
   },
   {
+    "team": "Sauber",
     "liveries": [
       {
         "season": [
@@ -38750,10 +38751,10 @@
         ],
         "other_changes": "Like the previous season's Alfa Romeo , in countries where advertisement of gambling and sports betting are banned, Stake's branding will be replaced by Kick."
       }
-    ],
-    "team": "Sauber"
+    ]
   },
   {
+    "team": "Shadow",
     "liveries": [
       {
         "season": [
@@ -39485,10 +39486,10 @@
         ],
         "notes": null
       }
-    ],
-    "team": "Shadow"
+    ]
   },
   {
+    "team": "Simtek",
     "liveries": [
       {
         "season": [
@@ -39672,10 +39673,10 @@
         ],
         "notes": "After Ratzenberger's death, an Austrian flag with \"For Roland\" text was displayed on the airbox."
       }
-    ],
-    "team": "Simtek"
+    ]
   },
   {
+    "team": "Spirit",
     "liveries": [
       {
         "season": [
@@ -39834,10 +39835,10 @@
           "Elledi Wafers"
         ]
       }
-    ],
-    "team": "Spirit"
+    ]
   },
   {
+    "team": "Spyker",
     "liveries": [
       {
         "season": [
@@ -39879,10 +39880,10 @@
           }
         ]
       }
-    ],
-    "team": "Spyker"
+    ]
   },
   {
+    "team": "Stewart",
     "liveries": [
       {
         "season": [
@@ -40029,10 +40030,10 @@
           }
         ]
       }
-    ],
-    "team": "Stewart"
+    ]
   },
   {
+    "team": "Super Aguri",
     "liveries": [
       {
         "season": [
@@ -40149,10 +40150,10 @@
           "None"
         ]
       }
-    ],
-    "team": "Super Aguri"
+    ]
   },
   {
+    "team": "Surtees",
     "liveries": [
       {
         "season": [
@@ -41286,10 +41287,10 @@
           "Beta Utensili"
         ]
       }
-    ],
-    "team": "Surtees"
+    ]
   },
   {
+    "team": "Tecno",
     "liveries": [
       {
         "season": [
@@ -41316,10 +41317,10 @@
           "Martini"
         ]
       }
-    ],
-    "team": "Tecno"
+    ]
   },
   {
+    "team": "Toleman",
     "liveries": [
       {
         "season": [
@@ -41497,10 +41498,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Toleman"
+    ]
   },
   {
+    "team": "Toro Rosso",
     "liveries": [
       {
         "season": [
@@ -42049,10 +42050,10 @@
           "Blue"
         ]
       }
-    ],
-    "team": "Toro Rosso"
+    ]
   },
   {
+    "team": "Toyota",
     "liveries": [
       {
         "season": [
@@ -42647,10 +42648,10 @@
         ],
         "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
       }
-    ],
-    "team": "Toyota"
+    ]
   },
   {
+    "team": "Theodore Racing",
     "liveries": [
       {
         "season": [
@@ -42766,10 +42767,10 @@
           "Sanyo"
         ]
       }
-    ],
-    "team": "Theodore Racing"
+    ]
   },
   {
+    "team": "Trojan",
     "liveries": [
       {
         "season": [
@@ -42793,10 +42794,10 @@
           "Suzuki GB"
         ]
       }
-    ],
-    "team": "Trojan"
+    ]
   },
   {
+    "team": "Tyrrell",
     "liveries": [
       {
         "season": [
@@ -44808,10 +44809,10 @@
         ],
         "notes": null
       }
-    ],
-    "team": "Tyrrell"
+    ]
   },
   {
+    "team": "Virgin",
     "liveries": [
       {
         "season": [
@@ -44918,10 +44919,10 @@
           "Red"
         ]
       }
-    ],
-    "team": "Virgin"
+    ]
   },
   {
+    "team": "Williams",
     "liveries": [
       {
         "season": [
@@ -47787,10 +47788,10 @@
         ],
         "non-tobacco_alcohol_livery_changes": null
       }
-    ],
-    "team": "Williams"
+    ]
   },
   {
+    "team": "Wolf",
     "liveries": [
       {
         "season": [
@@ -47859,10 +47860,10 @@
         ],
         "notes": "A Canadian flag as a mark of the team's nationality ."
       }
-    ],
-    "team": "Wolf"
+    ]
   },
   {
+    "team": "Zakspeed",
     "liveries": [
       {
         "season": [
@@ -48144,7 +48145,6 @@
         ],
         "non-tobacco_alcohol_livery_changes": "\"West\" was covered with black gaps or replaced with \"East\""
       }
-    ],
-    "team": "Zakspeed"
+    ]
   }
 ]

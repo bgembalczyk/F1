@@ -1,15 +1,16 @@
 [
   {
+    "team": "AE Moss",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship",
         "year": 1954
       }
     ],
-    "team": "AE Moss",
     "team_url": "https://en.wikipedia.org/wiki/Alfred_Moss"
   },
   {
+    "team": "Bernard White Racing",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship",
@@ -24,10 +25,10 @@
         "year": 1968
       }
     ],
-    "team": "Bernard White Racing",
     "team_url": "https://en.wikipedia.org/wiki/Bernard_White_Racing"
   },
   {
+    "team": "BMS Scuderia Italia",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
@@ -54,20 +55,20 @@
         "year": 1993
       }
     ],
-    "team": "BMS Scuderia Italia",
     "team_url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
   },
   {
+    "team": "British Formula One Racing Team",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship",
         "year": 1977
       }
     ],
-    "team": "British Formula One Racing Team",
     "team_url": "https://en.wikipedia.org/wiki/British_Formula_One_Racing_Team"
   },
   {
+    "team": "BS Fabrications",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
@@ -82,10 +83,10 @@
         "year": 1978
       }
     ],
-    "team": "BS Fabrications",
     "team_url": "https://en.wikipedia.org/wiki/BS_Fabrications"
   },
   {
+    "team": "Camoradi International",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
@@ -100,10 +101,10 @@
         "year": 1961
       }
     ],
-    "team": "Camoradi International",
     "team_url": "https://en.wikipedia.org/wiki/Camoradi_International"
   },
   {
+    "team": "DW Racing Enterprises",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship",
@@ -126,10 +127,10 @@
         "year": 1967
       }
     ],
-    "team": "DW Racing Enterprises",
     "team_url": "https://en.wikipedia.org/wiki/DW_Racing_Enterprises"
   },
   {
+    "team": "Ecurie Belge",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
@@ -148,10 +149,10 @@
         "year": 1953
       }
     ],
-    "team": "Ecurie Belge",
     "team_url": "https://en.wikipedia.org/wiki/Ecurie_Belge"
   },
   {
+    "team": "Ecurie Bleue",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
@@ -166,10 +167,10 @@
         "year": 1960
       }
     ],
-    "team": "Ecurie Bleue",
     "team_url": "https://en.wikipedia.org/w/index.php?title=Ecurie_Bleue&action=edit&redlink=1"
   },
   {
+    "team": "Ecurie Bonnier",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship",
@@ -204,10 +205,10 @@
         "year": 1971
       }
     ],
-    "team": "Ecurie Bonnier",
     "team_url": "https://en.wikipedia.org/wiki/Ecurie_Bonnier"
   },
   {
+    "team": "Ecurie Ecosse",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship",
@@ -222,10 +223,10 @@
         "year": 1954
       }
     ],
-    "team": "Ecurie Ecosse",
     "team_url": "https://en.wikipedia.org/wiki/Ecurie_Ecosse"
   },
   {
+    "team": "Ecurie Espadon",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
@@ -240,20 +241,20 @@
         "year": 1952
       }
     ],
-    "team": "Ecurie Espadon",
     "team_url": "https://en.wikipedia.org/wiki/Ecurie_Espadon"
   },
   {
+    "team": "Ecurie Lutetia",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
         "year": 1950
       }
     ],
-    "team": "Ecurie Lutetia",
     "team_url": "https://en.wikipedia.org/wiki/Ecurie_Lutetia"
   },
   {
+    "team": "Ecurie Maarsbergen",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship",
@@ -288,10 +289,10 @@
         "year": 1964
       }
     ],
-    "team": "Ecurie Maarsbergen",
     "team_url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen"
   },
   {
+    "team": "Ecurie Rosier",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
@@ -322,10 +323,10 @@
         "year": 1956
       }
     ],
-    "team": "Ecurie Rosier",
     "team_url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
   },
   {
+    "team": "Enrico Platé",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
@@ -344,30 +345,30 @@
         "year": 1953
       }
     ],
-    "team": "Enrico Platé",
     "team_url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
   },
   {
+    "team": "Equipe Banco Occidental",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
         "year": 1981
       }
     ],
-    "team": "Equipe Banco Occidental",
     "team_url": "https://en.wikipedia.org/wiki/Emilio_de_Villota"
   },
   {
+    "team": "Equipe Moss",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship",
         "year": 1954
       }
     ],
-    "team": "Equipe Moss",
     "team_url": "https://en.wikipedia.org/wiki/Alfred_Moss"
   },
   {
+    "team": "Escuderia Bandeirantes",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship",
@@ -382,20 +383,20 @@
         "year": 1953
       }
     ],
-    "team": "Escuderia Bandeirantes",
     "team_url": "https://en.wikipedia.org/wiki/Escuderia_Bandeirantes"
   },
   {
+    "team": "FISA",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship",
         "year": 1961
       }
     ],
-    "team": "FISA",
     "team_url": "https://en.wikipedia.org/wiki/Giancarlo_Baghetti"
   },
   {
+    "team": "FR Gerard Cars",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
@@ -422,20 +423,20 @@
         "year": 1957
       }
     ],
-    "team": "FR Gerard Cars",
     "team_url": "https://en.wikipedia.org/wiki/Bob_Gerard"
   },
   {
+    "team": "Goldie Hexagon Racing",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship",
         "year": 1974
       }
     ],
-    "team": "Goldie Hexagon Racing",
     "team_url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing"
   },
   {
+    "team": "1964",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship",
@@ -446,10 +447,10 @@
         "year": 1965
       }
     ],
-    "team": "1964",
     "team_url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
   },
   {
+    "team": "Matra International",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship",
@@ -460,20 +461,20 @@
         "year": 1969
       }
     ],
-    "team": "Matra International",
     "team_url": "https://en.wikipedia.org/wiki/Matra_International"
   },
   {
+    "team": "Mecom Racing Team",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship",
         "year": 1962
       }
     ],
-    "team": "Mecom Racing Team",
     "team_url": "https://en.wikipedia.org/wiki/Mecom_Racing_Team"
   },
   {
+    "team": "North American Racing Team",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship",
@@ -488,10 +489,10 @@
         "year": 1969
       }
     ],
-    "team": "North American Racing Team",
     "team_url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"
   },
   {
+    "team": "Otelle Nucci",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship",
@@ -506,10 +507,10 @@
         "year": 1965
       }
     ],
-    "team": "Otelle Nucci",
     "team_url": "https://en.wikipedia.org/w/index.php?title=Otelle_Nucci&action=edit&redlink=1"
   },
   {
+    "team": "Reg Parnell Racing",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
@@ -552,10 +553,10 @@
         "year": 1969
       }
     ],
-    "team": "Reg Parnell Racing",
     "team_url": "https://en.wikipedia.org/wiki/Reg_Parnell_Racing"
   },
   {
+    "team": "Rob Walker Racing Team",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship",
@@ -626,20 +627,20 @@
         "year": 1970
       }
     ],
-    "team": "Rob Walker Racing Team",
     "team_url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
   },
   {
+    "team": "Scuderia Achille Varzi",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
         "year": 1950
       }
     ],
-    "team": "Scuderia Achille Varzi",
     "team_url": "https://en.wikipedia.org/wiki/Scuderia_Achille_Varzi"
   },
   {
+    "team": "Scuderia Ambrosiana",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
@@ -654,10 +655,10 @@
         "year": 1954
       }
     ],
-    "team": "Scuderia Ambrosiana",
     "team_url": "https://en.wikipedia.org/wiki/Scuderia_Ambrosiana"
   },
   {
+    "team": "Scuderia Centro Sud",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship",
@@ -692,10 +693,10 @@
         "year": 1965
       }
     ],
-    "team": "Scuderia Centro Sud",
     "team_url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud"
   },
   {
+    "team": "Scuderia Filipinetti",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship",
@@ -706,40 +707,40 @@
         "year": 1963
       }
     ],
-    "team": "Scuderia Filipinetti",
     "team_url": "https://en.wikipedia.org/wiki/Scuderia_Filipinetti"
   },
   {
+    "team": "Scuderia Franera",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship",
         "year": 1952
       }
     ],
-    "team": "Scuderia Franera",
     "team_url": "https://en.wikipedia.org/w/index.php?title=Scuderia_Franera&action=edit&redlink=1"
   },
   {
+    "team": "Scuderia Sant'Ambroeus",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship",
         "year": 1961
       }
     ],
-    "team": "Scuderia Sant'Ambroeus",
     "team_url": "https://en.wikipedia.org/w/index.php?title=Scuderia_Sant%27Ambroeus&action=edit&redlink=1"
   },
   {
+    "team": "Scuderia Sud Americana",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship",
         "year": 1958
       }
     ],
-    "team": "Scuderia Sud Americana",
     "team_url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
   },
   {
+    "team": "Silvio Moser Racing Team",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship",
@@ -754,20 +755,20 @@
         "year": 1970
       }
     ],
-    "team": "Silvio Moser Racing Team",
     "team_url": "https://en.wikipedia.org/wiki/Silvio_Moser_Racing_Team"
   },
   {
+    "team": "T.A.S.O. Mathieson",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship",
         "year": 1953
       }
     ],
-    "team": "T.A.S.O. Mathieson",
     "team_url": "https://en.wikipedia.org/wiki/T.A.S.O._Mathieson"
   },
   {
+    "team": "Team Gunston",
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship",
@@ -814,7 +815,6 @@
         "year": 1975
       }
     ],
-    "team": "Team Gunston",
     "team_url": "https://en.wikipedia.org/wiki/Team_Gunston"
   }
 ]
