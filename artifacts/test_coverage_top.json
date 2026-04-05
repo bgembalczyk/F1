@@ -1,0 +1,242 @@
+[
+  {
+    "path": "scrapers/circuits/models/services/lap_record_merging.py",
+    "statements": 363,
+    "executed": 156,
+    "miss": 207,
+    "coverage": 42.98,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "layers/zero/merge.py",
+    "statements": 438,
+    "executed": 282,
+    "miss": 156,
+    "coverage": 64.38,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/sponsorship_liveries/columns/sponsor.py",
+    "statements": 261,
+    "executed": 129,
+    "miss": 132,
+    "coverage": 49.43,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/engines/engine_manufacturers_list.py",
+    "statements": 165,
+    "executed": 49,
+    "miss": 116,
+    "coverage": 29.7,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/constructors/constructors_list.py",
+    "statements": 164,
+    "executed": 67,
+    "miss": 97,
+    "coverage": 40.85,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scripts/ci/enforce_structural_quality.py",
+    "statements": 181,
+    "executed": 85,
+    "miss": 96,
+    "coverage": 46.96,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/grands_prix/red_flagged_races_scraper/combined.py",
+    "statements": 251,
+    "executed": 160,
+    "miss": 91,
+    "coverage": 63.75,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/seasons/columns/race_result.py",
+    "statements": 120,
+    "executed": 31,
+    "miss": 89,
+    "coverage": 25.83,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/seasons/parsers/entry_merger.py",
+    "statements": 193,
+    "executed": 104,
+    "miss": 89,
+    "coverage": 53.89,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/base/abc.py",
+    "statements": 210,
+    "executed": 124,
+    "miss": 86,
+    "coverage": 59.05,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/circuits/models/services/normalization.py",
+    "statements": 172,
+    "executed": 87,
+    "miss": 85,
+    "coverage": 50.58,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scripts/ci/enforce_diff_quality_guards.py",
+    "statements": 151,
+    "executed": 71,
+    "miss": 80,
+    "coverage": 47.02,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/points/parsers.py",
+    "statements": 176,
+    "executed": 98,
+    "miss": 78,
+    "coverage": 55.68,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/drivers/infobox/parsers/general.py",
+    "statements": 146,
+    "executed": 70,
+    "miss": 76,
+    "coverage": 47.95,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/drivers/infobox/parsers/link_extractor.py",
+    "statements": 130,
+    "executed": 58,
+    "miss": 72,
+    "coverage": 44.62,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/drivers/infobox/parsers/best_finish.py",
+    "statements": 150,
+    "executed": 80,
+    "miss": 70,
+    "coverage": 53.33,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/seasons/columns/helpers/race_result/cell_parser.py",
+    "statements": 101,
+    "executed": 31,
+    "miss": 70,
+    "coverage": 30.69,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scripts/check_di_antipatterns.py",
+    "statements": 144,
+    "executed": 74,
+    "miss": 70,
+    "coverage": 51.39,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scripts/check_architecture_rules.py",
+    "statements": 101,
+    "executed": 32,
+    "miss": 69,
+    "coverage": 31.68,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/base/table/columns/helpers/constructor_parsing.py",
+    "statements": 101,
+    "executed": 33,
+    "miss": 68,
+    "coverage": 32.67,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/base/table/columns/helpers/results_parsing.py",
+    "statements": 104,
+    "executed": 36,
+    "miss": 68,
+    "coverage": 34.62,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/engines/engine_restrictions.py",
+    "statements": 103,
+    "executed": 35,
+    "miss": 68,
+    "coverage": 33.98,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/circuits/infobox/services/specs.py",
+    "statements": 126,
+    "executed": 62,
+    "miss": 64,
+    "coverage": 49.21,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/base/table/parser.py",
+    "statements": 180,
+    "executed": 119,
+    "miss": 61,
+    "coverage": 66.11,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/base/scraper_components.py",
+    "statements": 187,
+    "executed": 128,
+    "miss": 59,
+    "coverage": 68.45,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/drivers/infobox/parsers/collapsible_table.py",
+    "statements": 61,
+    "executed": 2,
+    "miss": 59,
+    "coverage": 3.28,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/base/table/columns/types/links_list.py",
+    "statements": 78,
+    "executed": 20,
+    "miss": 58,
+    "coverage": 25.64,
+    "wave": "Fala 3"
+  },
+  {
+    "path": "scrapers/sponsorship_liveries/parsers/splitters/record/strategies/season.py",
+    "statements": 94,
+    "executed": 36,
+    "miss": 58,
+    "coverage": 38.3,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/sponsorship_liveries/parsers/section.py",
+    "statements": 169,
+    "executed": 112,
+    "miss": 57,
+    "coverage": 66.27,
+    "wave": "Fala 1"
+  },
+  {
+    "path": "scrapers/circuits/models/services/lap_record_utils.py",
+    "statements": 95,
+    "executed": 40,
+    "miss": 55,
+    "coverage": 42.11,
+    "wave": "Fala 3"
+  }
+]
