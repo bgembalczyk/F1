@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
-
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.seasons.columns.date_range import DateRangeColumn
 

@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
-
 from scrapers.base.adapters.row_background import HtmlRowBackgroundColorAdapter
 from scrapers.seasons.columns.helpers.race_result.background_mapper import (
     RaceResultBackgroundMapper,
@@ -18,7 +16,6 @@ from scrapers.seasons.columns.helpers.race_result.rules.mark_based_eligibility i
 )
 from scrapers.seasons.helpers import season_filename
 
-
 # ---------------------------------------------------------------------------
 # seasons/helpers.py – season_filename
 # ---------------------------------------------------------------------------
@@ -29,7 +26,10 @@ def test_season_filename_plain_year() -> None:
 
 
 def test_season_filename_slug_for_non_digit_text() -> None:
-    assert season_filename({"text": "1950 World Championship"}) == "1950_world_championship.json"
+    assert (
+        season_filename({"text": "1950 World Championship"})
+        == "1950_world_championship.json"
+    )
 
 
 def test_season_filename_unknown_for_missing_text() -> None:
@@ -107,11 +107,17 @@ def test_background_mapper_returns_none_for_invalid_hex() -> None:
 # ---------------------------------------------------------------------------
 
 
-def _make_context(*, background: str | None = None, year: int = 2000) -> ResultRuleContext:
+def _make_context(
+    *,
+    background: str | None = None,
+    year: int = 2000,
+) -> ResultRuleContext:
     return ResultRuleContext(season_year=year, background=background, footnotes=[])
 
 
-def test_mark_based_eligibility_star_mark_with_other_classified_sets_ineligible() -> None:
+def test_mark_based_eligibility_star_mark_with_other_classified_sets_ineligible() -> (
+    None
+):
     rule = MarkBasedEligibilityRule()
     result = {"marks": ["*"], "position": 7}
     rule.apply(result, _make_context(background="Other classified position"))
@@ -133,7 +139,9 @@ def test_mark_based_eligibility_tilde_mark_sets_ineligible_and_adds_note() -> No
     assert "shared_drive_no_points" in result.get("notes", [])
 
 
-def test_mark_based_eligibility_double_dagger_with_int_position_sets_ineligible() -> None:
+def test_mark_based_eligibility_double_dagger_with_int_position_sets_ineligible() -> (
+    None
+):
     rule = MarkBasedEligibilityRule()
     result = {"marks": ["‡"], "position": 5}
     rule.apply(result, _make_context())
@@ -251,7 +259,7 @@ def test_row_background_expands_short_hex() -> None:
 
 def test_row_background_prefers_row_style_over_cell() -> None:
     tag = _make_tag(
-        '<tr style="background:#ffffbf"><td style="background:#dfdfdf">test</td></tr>'
+        '<tr style="background:#ffffbf"><td style="background:#dfdfdf">test</td></tr>',
     )
     adapter = HtmlRowBackgroundColorAdapter()
     assert adapter.extract(tag) == "ffffbf"

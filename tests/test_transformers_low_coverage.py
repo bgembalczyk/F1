@@ -2,20 +2,18 @@
 
 from __future__ import annotations
 
-import pytest
-
-from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.base.transformers.failed_to_make_restart import (
     FailedToMakeRestartTransformer,
 )
+from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.base.transformers.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
 )
 from scrapers.base.transformers.shortened_race_points import (
     ShortenedRacePointsTransformer,
 )
-from scrapers.points.helpers.parsers import extract_first_place_role, seasons_key
-
+from scrapers.points.helpers.parsers import extract_first_place_role
+from scrapers.points.helpers.parsers import seasons_key
 
 # ---------------------------------------------------------------------------
 # points/helpers/parsers.py
@@ -177,7 +175,11 @@ def test_fatalities_car_transformer_moves_formula_category_into_car_dict() -> No
         {"car": {"text": "Ferrari", "url": None}, "formula_category": "F1"},
     ]
     result = transformer.transform(records)
-    assert result[0]["car"] == {"text": "Ferrari", "url": None, "formula_category": "F1"}
+    assert result[0]["car"] == {
+        "text": "Ferrari",
+        "url": None,
+        "formula_category": "F1",
+    }
     assert "formula_category" not in result[0]
 
 
