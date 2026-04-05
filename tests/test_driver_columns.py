@@ -60,9 +60,9 @@ def test_driver_name_status_column_apply() -> None:
 def test_driver_name_status_column_active_champion() -> None:
     column = DriverNameStatusColumn()
     record: dict[str, object] = {}
-    column.apply(_ctx("John Doe~"), record)
+    column.apply(_ctx("John Doe^"), record)
 
-    assert record["is_active"] is True
+    assert record["is_active"] is False
     assert record["is_world_champion"] is True
 
 

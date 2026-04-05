@@ -59,7 +59,7 @@ def test_driver_sections_service_extracts_alias_section_id() -> None:
         ),
     )
     assert records
-    assert all(r["section_id"] == "Non-championship" for r in records)
+    assert all(r["section_id"] == "non-championship" for r in records)
 
 
 def test_driver_assembler_builds_record_shape() -> None:
@@ -149,7 +149,7 @@ def test_season_text_sections_service_and_assembler() -> None:
             colin_chapman_trophy=[],
             south_african_formula_one_championship=[],
             british_formula_one_championship=[],
-            regulation_changes=text_records.get("Regulation_changes", []),
+            regulation_changes=text_records.get("regulation_changes", []),
             mid_season_changes=[],
         ),
     )

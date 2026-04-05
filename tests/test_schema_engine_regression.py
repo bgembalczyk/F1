@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any
 
+from validation.issue import IssueMessageFormatter
 from validation.issue import ValidationIssue
 from validation.record_validation import validate_record
 from validation.schema_rules import build_domain_rules
@@ -102,7 +103,7 @@ def _legacy_validate_schema(
     errors.extend(_legacy_type_errors(record, schema, allow_none))
     errors.extend(_legacy_nested_errors(record, schema))
     errors.extend(_legacy_custom_validator_errors(record, schema))
-    return errors
+    return [IssueMessageFormatter.render(e) for e in errors]
 
 
 def _legacy_missing_required_errors(
