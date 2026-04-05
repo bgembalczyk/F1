@@ -302,12 +302,17 @@ def test_seasons_domain_postprocess_merges_duplicate_year_representations() -> N
     ]
 
 
-def test_seasons_domain_postprocess_keeps_engine_regulations_and_restrictions_separate() -> None:
+def test_seasons_domain_postprocess_keeps_engine_regulations_and_restrictions_separate() -> (
+    None
+):
     processed = _post_process_domain_records(
         "seasons",
         [
             {"season": {"year": 2000}, "engine_regulations": {"configuration": "V10"}},
-            {"season": {"year": 2000}, "engine_restrictions": {"type_of_engine": "V10"}},
+            {
+                "season": {"year": 2000},
+                "engine_restrictions": {"type_of_engine": "V10"},
+            },
         ],
     )
 

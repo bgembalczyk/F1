@@ -42,11 +42,19 @@ def test_current_constructors_section_parser_handles_current_season_alias() -> N
         export_scope="current",
     )
 
-    data = scraper.get_data()
+    result = parser.parse(section_fragment)
 
-    assert data
-    assert data[0]["constructor"]["text"] == "Ferrari"
-    assert data[0]["constructor"]["url"].endswith("/wiki/Ferrari")
+    assert result.records
+    assert result.records[0]["constructor"] == {
+        "chassis_constructor": {
+            "text": "Ferrari",
+            "url": "https://en.wikipedia.org/wiki/Ferrari",
+        },
+        "engine_constructor": {
+            "text": "Ferrari",
+            "url": "https://en.wikipedia.org/wiki/Ferrari_059/6",
+        },
+    }
 
 
 def test_former_constructors_section_parser_handles_defunct_alias() -> None:
@@ -282,10 +290,12 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
 
     assert call_count == EXPECTED_PARSE_CALLS
     assert result.records
-    assert result.records[0]["constructor"] == "Ferrari"
+    assert result.records[0]["constructor"] == {
+        "chassis_constructor": {"text": "Ferrari"},
+        "engine_constructor": {"text": "Ferrari"},
+    }
     assert list(result.records[0].keys()) == [
         "constructor",
-        "engine",
         "antecedent_teams",
         "based_in",
         "drivers",

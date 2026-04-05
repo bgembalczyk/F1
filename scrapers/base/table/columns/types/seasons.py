@@ -42,11 +42,7 @@ class SeasonsColumn(BaseColumn):
                 if "/wiki/" in linked_url:
                     base = linked_url.split("/wiki/", 1)[0]
                     return f"{base}/wiki/{SeasonsColumn._season_page_title(year)}"
-                return (
-                    linked_url[: match.start()]
-                    + year
-                    + linked_url[match.end() :]
-                )
+                return linked_url[: match.start()] + year + linked_url[match.end() :]
         return None
 
     @staticmethod

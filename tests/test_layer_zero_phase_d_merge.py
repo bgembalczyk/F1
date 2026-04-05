@@ -91,7 +91,8 @@ class TestMergeLayerZeroPhaseD:
         assert not _d_merge_path(base, "circuits").exists()
 
     def test_produces_d_merge_for_existing_domain_with_single_file(
-        self, tmp_path: Path,
+        self,
+        tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [{"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"}]
