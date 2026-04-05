@@ -1,23 +1,6 @@
 [
   {
-    "seasons": [
-      {
-        "year": 1950,
-        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-      },
-      {
-        "year": 1951,
-        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-      },
-      {
-        "year": 1952,
-        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-      },
-      {
-        "year": 1953,
-        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-      }
-    ],
+    "10th": null,
     "1st": 8,
     "2nd": 6,
     "3rd": 4,
@@ -27,85 +10,30 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": 1,
+    "constructors_championship": "N/A",
     "drivers_championship": "4",
-    "constructors_championship": "N/A"
-  },
-  {
-    "seasons": [
-      {
-        "year": 1954,
-        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-      }
-    ],
-    "1st": 8,
-    "2nd": 6,
-    "3rd": 4,
-    "4th": 3,
-    "5th": 2,
-    "6th": null,
-    "7th": null,
-    "8th": null,
-    "9th": null,
-    "10th": null,
     "fastest_lap": 1,
-    "drivers_championship": "5",
-    "constructors_championship": "N/A"
-  },
-  {
     "seasons": [
       {
-        "year": 1955,
-        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-      }
-    ],
-    "1st": 8,
-    "2nd": 6,
-    "3rd": 4,
-    "4th": 3,
-    "5th": 2,
-    "6th": null,
-    "7th": null,
-    "8th": null,
-    "9th": null,
-    "10th": null,
-    "fastest_lap": 1,
-    "drivers_championship": "5",
-    "constructors_championship": "N/A"
-  },
-  {
-    "seasons": [
-      {
-        "year": 1956,
-        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
+        "year": 1950
       },
       {
-        "year": 1957,
-        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship",
+        "year": 1951
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship",
+        "year": 1952
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship",
+        "year": 1953
       }
-    ],
-    "1st": 8,
-    "2nd": 6,
-    "3rd": 4,
-    "4th": 3,
-    "5th": 2,
-    "6th": null,
-    "7th": null,
-    "8th": null,
-    "9th": null,
-    "10th": null,
-    "fastest_lap": 1,
-    "drivers_championship": "5",
-    "constructors_championship": "N/A"
+    ]
   },
   {
-    "seasons": [
-      {
-        "year": 1958,
-        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-      }
-    ],
+    "10th": null,
     "1st": 8,
     "2nd": 6,
     "3rd": 4,
@@ -115,18 +43,85 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
+    "constructors_championship": "N/A",
+    "drivers_championship": "5",
     "fastest_lap": 1,
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship",
+        "year": 1954
+      }
+    ]
+  },
+  {
+    "10th": null,
+    "1st": 8,
+    "2nd": 6,
+    "3rd": 4,
+    "4th": 3,
+    "5th": 2,
+    "6th": null,
+    "7th": null,
+    "8th": null,
+    "9th": null,
+    "constructors_championship": "N/A",
+    "drivers_championship": "5",
+    "fastest_lap": 1,
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship",
+        "year": 1955
+      }
+    ]
+  },
+  {
+    "10th": null,
+    "1st": 8,
+    "2nd": 6,
+    "3rd": 4,
+    "4th": 3,
+    "5th": 2,
+    "6th": null,
+    "7th": null,
+    "8th": null,
+    "9th": null,
+    "constructors_championship": "N/A",
+    "drivers_championship": "5",
+    "fastest_lap": 1,
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship",
+        "year": 1956
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship",
+        "year": 1957
+      }
+    ]
+  },
+  {
+    "10th": null,
+    "1st": 8,
+    "2nd": 6,
+    "3rd": 4,
+    "4th": 3,
+    "5th": 2,
+    "6th": null,
+    "7th": null,
+    "8th": null,
+    "9th": null,
+    "constructors_championship": "6",
     "drivers_championship": "6",
-    "constructors_championship": "6"
-  },
-  {
+    "fastest_lap": 1,
     "seasons": [
       {
-        "year": 1959,
-        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship",
+        "year": 1958
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 8,
     "2nd": 6,
     "3rd": 4,
@@ -136,18 +131,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": 1,
+    "constructors_championship": "5",
     "drivers_championship": "5",
-    "constructors_championship": "5"
-  },
-  {
+    "fastest_lap": 1,
     "seasons": [
       {
-        "year": 1960,
-        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
+        "year": 1959
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 8,
     "2nd": 6,
     "3rd": 4,
@@ -157,18 +152,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "6",
     "drivers_championship": "6",
-    "constructors_championship": "6"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship",
+        "year": 1960
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": {
       "driver": 9,
       "constructor": 8
@@ -181,18 +176,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "5",
     "drivers_championship": "5",
-    "constructors_championship": "5"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1962,
-        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship",
+        "year": 1961
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -202,26 +197,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "5",
     "drivers_championship": "5",
-    "constructors_championship": "5"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1963,
-        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-      },
-      {
-        "year": 1964,
-        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-      },
-      {
-        "year": 1965,
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship",
+        "year": 1962
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -231,18 +218,26 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "6",
     "drivers_championship": "6",
-    "constructors_championship": "6"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1966,
-        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship",
+        "year": 1963
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship",
+        "year": 1964
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship",
+        "year": 1965
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -252,18 +247,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "5",
     "drivers_championship": "5",
-    "constructors_championship": "5"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1967,
-        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship",
+        "year": 1966
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -273,18 +268,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "9 (5 from first 6, 4 from last 5)",
     "drivers_championship": "9 (5 from first 6, 4 from last 5)",
-    "constructors_championship": "9 (5 from first 6, 4 from last 5)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1968,
-        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship",
+        "year": 1967
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -294,18 +289,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "10 (5 each from first and last 6)",
     "drivers_championship": "10 (5 each from first and last 6)",
-    "constructors_championship": "10 (5 each from first and last 6)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1969,
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship",
+        "year": 1968
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -315,18 +310,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "9 (5 from first 6, 4 from last 5)",
     "drivers_championship": "9 (5 from first 6, 4 from last 5)",
-    "constructors_championship": "9 (5 from first 6, 4 from last 5)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1970,
-        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship",
+        "year": 1969
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -336,18 +331,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "11 (6 from first 7, 5 from last 6)",
     "drivers_championship": "11 (6 from first 7, 5 from last 6)",
-    "constructors_championship": "11 (6 from first 7, 5 from last 6)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1971,
-        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship",
+        "year": 1970
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -357,18 +352,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "9 (5 from first 6, 4 from last 5)",
     "drivers_championship": "9 (5 from first 6, 4 from last 5)",
-    "constructors_championship": "9 (5 from first 6, 4 from last 5)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1972,
-        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship",
+        "year": 1971
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -378,22 +373,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "10 (5 each from first and last 6)",
     "drivers_championship": "10 (5 each from first and last 6)",
-    "constructors_championship": "10 (5 each from first and last 6)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1973,
-        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
-      },
-      {
-        "year": 1974,
-        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship",
+        "year": 1972
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -403,18 +394,22 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "13 (7 from first 8, 6 from last 7)",
     "drivers_championship": "13 (7 from first 8, 6 from last 7)",
-    "constructors_championship": "13 (7 from first 8, 6 from last 7)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1975,
-        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship",
+        "year": 1973
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship",
+        "year": 1974
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -424,18 +419,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "12 (6 each from first and last 7)",
     "drivers_championship": "12 (6 each from first and last 7)",
-    "constructors_championship": "12 (6 each from first and last 7)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1976,
-        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship",
+        "year": 1975
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -445,18 +440,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "14 (7 each from first and last 8)",
     "drivers_championship": "14 (7 each from first and last 8)",
-    "constructors_championship": "14 (7 each from first and last 8)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1977,
-        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+        "year": 1976
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -466,18 +461,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "15 (8 from first 9, 7 from last 8)",
     "drivers_championship": "15 (8 from first 9, 7 from last 8)",
-    "constructors_championship": "15 (8 from first 9, 7 from last 8)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1978,
-        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship",
+        "year": 1977
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -487,18 +482,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "14 (7 each from first and last 8)",
     "drivers_championship": "14 (7 each from first and last 8)",
-    "constructors_championship": "14 (7 each from first and last 8)"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1979,
-        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship",
+        "year": 1978
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -508,18 +503,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "All",
     "drivers_championship": "8 (4 from first 7, 4 from last 8)",
-    "constructors_championship": "All"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1980,
-        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship",
+        "year": 1979
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -529,54 +524,18 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "All",
     "drivers_championship": "10 (5 each from first and last 7)",
-    "constructors_championship": "All"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1981,
-        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-      },
-      {
-        "year": 1982,
-        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-      },
-      {
-        "year": 1983,
-        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-      },
-      {
-        "year": 1984,
-        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-      },
-      {
-        "year": 1985,
-        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-      },
-      {
-        "year": 1986,
-        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-      },
-      {
-        "year": 1987,
-        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-      },
-      {
-        "year": 1988,
-        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-      },
-      {
-        "year": 1989,
-        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-      },
-      {
-        "year": 1990,
-        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship",
+        "year": 1980
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 9,
     "2nd": 6,
     "3rd": 4,
@@ -586,62 +545,54 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "All",
     "drivers_championship": "11",
-    "constructors_championship": "All"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 1991,
-        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
+        "year": 1981
       },
       {
-        "year": 1992,
-        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
+        "year": 1982
       },
       {
-        "year": 1993,
-        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship",
+        "year": 1983
       },
       {
-        "year": 1994,
-        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
+        "year": 1984
       },
       {
-        "year": 1995,
-        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
+        "year": 1985
       },
       {
-        "year": 1996,
-        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
+        "year": 1986
       },
       {
-        "year": 1997,
-        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
+        "year": 1987
       },
       {
-        "year": 1998,
-        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+        "year": 1988
       },
       {
-        "year": 1999,
-        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
+        "year": 1989
       },
       {
-        "year": 2000,
-        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-      },
-      {
-        "year": 2001,
-        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-      },
-      {
-        "year": 2002,
-        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
+        "year": 1990
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 10,
     "2nd": 6,
     "3rd": 4,
@@ -651,42 +602,62 @@
     "7th": null,
     "8th": null,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "All",
     "drivers_championship": "All",
-    "constructors_championship": "All"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 2003,
-        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
+        "year": 1991
       },
       {
-        "year": 2004,
-        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
+        "year": 1992
       },
       {
-        "year": 2005,
-        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship",
+        "year": 1993
       },
       {
-        "year": 2006,
-        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship",
+        "year": 1994
       },
       {
-        "year": 2007,
-        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship",
+        "year": 1995
       },
       {
-        "year": 2008,
-        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship",
+        "year": 1996
       },
       {
-        "year": 2009,
-        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship",
+        "year": 1997
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship",
+        "year": 1998
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship",
+        "year": 1999
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship",
+        "year": 2000
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship",
+        "year": 2001
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship",
+        "year": 2002
       }
-    ],
+    ]
+  },
+  {
+    "10th": null,
     "1st": 10,
     "2nd": 8,
     "3rd": 6,
@@ -696,50 +667,42 @@
     "7th": 2,
     "8th": 1,
     "9th": null,
-    "10th": null,
-    "fastest_lap": null,
+    "constructors_championship": "All",
     "drivers_championship": "All",
-    "constructors_championship": "All"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 2010,
-        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship",
+        "year": 2003
       },
       {
-        "year": 2011,
-        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
+        "year": 2004
       },
       {
-        "year": 2012,
-        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship",
+        "year": 2005
       },
       {
-        "year": 2013,
-        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship",
+        "year": 2006
       },
       {
-        "year": 2014,
-        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship",
+        "year": 2007
       },
       {
-        "year": 2015,
-        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship",
+        "year": 2008
       },
       {
-        "year": 2016,
-        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-      },
-      {
-        "year": 2017,
-        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-      },
-      {
-        "year": 2018,
-        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
+        "year": 2009
       }
-    ],
+    ]
+  },
+  {
+    "10th": 1,
     "1st": 25,
     "2nd": 18,
     "3rd": 15,
@@ -749,38 +712,50 @@
     "7th": 6,
     "8th": 4,
     "9th": 2,
-    "10th": 1,
-    "fastest_lap": null,
+    "constructors_championship": "All",
     "drivers_championship": "All",
-    "constructors_championship": "All"
-  },
-  {
+    "fastest_lap": null,
     "seasons": [
       {
-        "year": 2019,
-        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship",
+        "year": 2010
       },
       {
-        "year": 2020,
-        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
+        "year": 2011
       },
       {
-        "year": 2021,
-        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship",
+        "year": 2012
       },
       {
-        "year": 2022,
-        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
+        "year": 2013
       },
       {
-        "year": 2023,
-        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship",
+        "year": 2014
       },
       {
-        "year": 2024,
-        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
+        "year": 2015
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+        "year": 2016
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
+        "year": 2017
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
+        "year": 2018
       }
-    ],
+    ]
+  },
+  {
+    "10th": 1,
     "1st": 25,
     "2nd": 18,
     "3rd": 15,
@@ -790,22 +765,38 @@
     "7th": 6,
     "8th": 4,
     "9th": 2,
-    "10th": 1,
+    "constructors_championship": "All",
+    "drivers_championship": "All",
     "fastest_lap": 1,
-    "drivers_championship": "All",
-    "constructors_championship": "All"
-  },
-  {
     "seasons": [
       {
-        "year": 2025,
-        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
+        "year": 2019
       },
       {
-        "year": 2026,
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship",
+        "year": 2020
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+        "year": 2021
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+        "year": 2022
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
       }
-    ],
+    ]
+  },
+  {
+    "10th": 1,
     "1st": 25,
     "2nd": 18,
     "3rd": 15,
@@ -815,9 +806,18 @@
     "7th": 6,
     "8th": 4,
     "9th": 2,
-    "10th": 1,
-    "fastest_lap": null,
+    "constructors_championship": "All",
     "drivers_championship": "All",
-    "constructors_championship": "All"
+    "fastest_lap": null,
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
+        "year": 2026
+      }
+    ]
   }
 ]
