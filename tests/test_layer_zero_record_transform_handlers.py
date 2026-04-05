@@ -3,6 +3,7 @@ from layers.zero.merge import _constructor_domain_handler
 from layers.zero.merge import _drivers_domain_handler
 from layers.zero.merge import _engines_domain_handler
 from layers.zero.merge import _grands_prix_domain_handler
+from layers.zero.merge import _post_process_domain_records
 from layers.zero.merge import _races_domain_handler
 from layers.zero.merge import _resolve_record_transform_handlers
 from layers.zero.merge import _teams_domain_handler
@@ -154,3 +155,21 @@ def test_resolve_record_transform_handlers_includes_global_source_pipeline() -> 
     )
 
     assert handlers == (_tyre_manufacturers_handler,)
+
+
+def test_engines_domain_postprocess_sorts_by_manufacturer() -> None:
+    processed = _post_process_domain_records(
+        "engines",
+        [
+            {"manufacturer": "Renault"},
+            {"manufacturer": "Alfa Romeo"},
+            {"manufacturer": {"text": "BMW", "url": "https://example.com/bmw"}},
+        ],
+    )
+
+    assert [
+        record["manufacturer"]["text"]
+        if isinstance(record["manufacturer"], dict)
+        else record["manufacturer"]
+        for record in processed
+    ] == ["Alfa Romeo", "BMW", "Renault"]

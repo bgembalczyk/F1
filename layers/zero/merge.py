@@ -599,6 +599,12 @@ def _team_sort_key(record: object) -> str:
     return _link_text(record.get("team")).casefold()
 
 
+def _engine_sort_key(record: object) -> str:
+    if not isinstance(record, dict):
+        return ""
+    return _link_text(record.get("manufacturer")).casefold()
+
+
 def _merge_duplicate_teams(records: list[object]) -> list[object]:
     """Aktywna, gdy domena to `teams`."""
     merged_records: list[object] = []
@@ -773,6 +779,10 @@ def _sort_teams_by_name(items: list[object]) -> list[object]:
     return sorted(items, key=_team_sort_key)
 
 
+def _sort_engines_by_manufacturer(items: list[object]) -> list[object]:
+    return sorted(items, key=_engine_sort_key)
+
+
 def _sort_seasons_by_year(items: list[object]) -> list[object]:
     return sorted(items, key=_season_sort_key)
 
@@ -786,6 +796,9 @@ DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN: dict[str, tuple[DomainStep, ...]] = {
         DomainStep("merge_duplicate_teams", _merge_duplicate_teams),
         DomainStep("nest_team_liveries", _nest_team_liveries),
         DomainStep("sort_teams_by_name", _sort_teams_by_name),
+    ),
+    "engines": (
+        DomainStep("sort_engines_by_manufacturer", _sort_engines_by_manufacturer),
     ),
     "seasons": (DomainStep("sort_seasons_by_year", _sort_seasons_by_year),),
 }
