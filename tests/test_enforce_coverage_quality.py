@@ -255,8 +255,9 @@ def test_evaluate_changed_files_regression_detected() -> None:
         baseline_file_coverages={"src/module.py": 90.0},
     )
     violations = ecq._evaluate_changed_files(inputs)
-    assert len(violations) >= 1
-    assert any("regression" in v.message for v in violations)
+    assert len(violations) == 1
+    assert "Patch coverage regression" in violations[0].message
+    assert "src/module.py" in violations[0].message
 
 
 @pytest.mark.unit
@@ -289,7 +290,9 @@ def test_evaluate_changed_files_legacy_improvement_required() -> None:
         legacy_improvement=0.5,
     )
     violations = ecq._evaluate_changed_files(inputs)
-    assert any("legacy" in v.message.lower() for v in violations)
+    assert len(violations) == 1
+    assert "Legacy low coverage" in violations[0].message
+    assert "src/legacy.py" in violations[0].message
 
 
 @pytest.mark.unit
