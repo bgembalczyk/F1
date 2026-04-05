@@ -79,7 +79,7 @@ def test_constructors_mirror_service_mirrors_json_to_targets(tmp_path: Path) -> 
         / "layers"
         / "0_layer"
         / "constructors"
-        / "raw"
+        / "A_scrape"
         / "f1_constructors_2026.json"
     )
     source_json_path.parent.mkdir(parents=True, exist_ok=True)
@@ -110,7 +110,7 @@ def test_constructors_mirror_service_mirrors_json_to_targets(tmp_path: Path) -> 
         / "layers"
         / "0_layer"
         / "chassis_constructors"
-        / "raw"
+        / "A_scrape"
         / "f1_constructors_2026.json",
         tmp_path
         / "data"
@@ -118,7 +118,7 @@ def test_constructors_mirror_service_mirrors_json_to_targets(tmp_path: Path) -> 
         / "layers"
         / "0_layer"
         / "teams"
-        / "raw"
+        / "A_scrape"
         / "f1_constructors_2026.json",
     ]
 
@@ -186,6 +186,8 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
     assert mirror_calls == [
         (
             base_wiki_dir,
-            Path("/tmp/wiki/layers/0_layer/constructors/raw/f1_constructors_2026.json"),
+            Path(
+                "/tmp/wiki/layers/0_layer/constructors/A_scrape/f1_constructors_2026.json",
+            ),
         ),
     ]

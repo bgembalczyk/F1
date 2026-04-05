@@ -17,49 +17,59 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     merge_layer_zero_raw_outputs(base_wiki_dir)
 
     circuits_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "circuits" / "circuits.json").read_text(
-            encoding="utf-8",
-        ),
+        (
+            base_wiki_dir / "layers" / "0_layer" / "circuits" / "B_merge" / "circuits.json"
+        ).read_text(encoding="utf-8"),
     )
     constructors_merged = json.loads(
         (
-            base_wiki_dir / "layers" / "0_layer" / "constructors" / "constructors.json"
+            base_wiki_dir
+            / "layers"
+            / "0_layer"
+            / "constructors"
+            / "B_merge"
+            / "constructors.json"
         ).read_text(
             encoding="utf-8",
         ),
     )
     drivers_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "drivers" / "drivers.json").read_text(
-            encoding="utf-8",
-        ),
+        (
+            base_wiki_dir / "layers" / "0_layer" / "drivers" / "B_merge" / "drivers.json"
+        ).read_text(encoding="utf-8"),
     )
     races_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "races" / "races.json").read_text(
+        (base_wiki_dir / "layers" / "0_layer" / "races" / "B_merge" / "races.json").read_text(
             encoding="utf-8",
         ),
     )
     engines_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "engines" / "engines.json").read_text(
-            encoding="utf-8",
-        ),
+        (
+            base_wiki_dir / "layers" / "0_layer" / "engines" / "B_merge" / "engines.json"
+        ).read_text(encoding="utf-8"),
     )
     grands_prix_merged = json.loads(
         (
-            base_wiki_dir / "layers" / "0_layer" / "grands_prix" / "grands_prix.json"
+            base_wiki_dir
+            / "layers"
+            / "0_layer"
+            / "grands_prix"
+            / "B_merge"
+            / "grands_prix.json"
         ).read_text(encoding="utf-8"),
     )
     teams_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "teams" / "teams.json").read_text(
+        (base_wiki_dir / "layers" / "0_layer" / "teams" / "B_merge" / "teams.json").read_text(
             encoding="utf-8",
         ),
     )
     seasons_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "seasons" / "seasons.json").read_text(
-            encoding="utf-8",
-        ),
+        (
+            base_wiki_dir / "layers" / "0_layer" / "seasons" / "B_merge" / "seasons.json"
+        ).read_text(encoding="utf-8"),
     )
     season_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "season" / "season.json").read_text(
+        (base_wiki_dir / "layers" / "0_layer" / "season" / "B_merge" / "season.json").read_text(
             encoding="utf-8",
         ),
     )

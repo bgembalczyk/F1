@@ -27,7 +27,7 @@ def _seed_domain_raw(
 ) -> None:
     for filename, payload in files_payloads:
         _write_json(
-            base_wiki_dir / "layers" / "0_layer" / domain / "raw" / filename,
+            base_wiki_dir / "layers" / "0_layer" / domain / "A_scrape" / filename,
             payload,
         )
 
@@ -776,9 +776,11 @@ def _assert_seasons_outputs(
 
 
 def _assert_missing_outputs(base_wiki_dir: Path) -> None:
-    assert not (base_wiki_dir / "layers" / "0_layer" / "rules" / "rules.json").exists()
     assert not (
-        base_wiki_dir / "layers" / "0_layer" / "points" / "points.json"
+        base_wiki_dir / "layers" / "0_layer" / "rules" / "B_merge" / "rules.json"
+    ).exists()
+    assert not (
+        base_wiki_dir / "layers" / "0_layer" / "points" / "B_merge" / "points.json"
     ).exists()
 
 

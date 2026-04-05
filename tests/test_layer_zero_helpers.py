@@ -13,7 +13,7 @@ def test_layer_zero_raw_paths_returns_json_path_only_when_csv_missing() -> None:
         csv_output_path=None,
     )
 
-    assert json_path == Path("layers/0_layer/drivers/raw/drivers.json")
+    assert json_path == Path("layers/0_layer/drivers/A_scrape/drivers.json")
     assert csv_path is None
 
 
@@ -24,8 +24,8 @@ def test_layer_zero_raw_paths_returns_json_and_csv_paths() -> None:
         csv_output_path="circuits.csv",
     )
 
-    assert json_path == Path("layers/0_layer/circuits/raw/circuits.json")
-    assert csv_path == Path("layers/0_layer/circuits/raw/circuits.csv")
+    assert json_path == Path("layers/0_layer/circuits/A_scrape/circuits.json")
+    assert csv_path == Path("layers/0_layer/circuits/A_scrape/circuits.csv")
 
 
 def test_layer_zero_raw_paths_uses_only_filename_for_nested_inputs() -> None:
@@ -35,8 +35,8 @@ def test_layer_zero_raw_paths_uses_only_filename_for_nested_inputs() -> None:
         csv_output_path="deep/nested/seasons.csv",
     )
 
-    assert json_path == Path("layers/0_layer/seasons/raw/seasons.json")
-    assert csv_path == Path("layers/0_layer/seasons/raw/seasons.csv")
+    assert json_path == Path("layers/0_layer/seasons/A_scrape/seasons.json")
+    assert csv_path == Path("layers/0_layer/seasons/A_scrape/seasons.csv")
 
 
 def test_layer_zero_raw_paths_rejects_empty_filename() -> None:
