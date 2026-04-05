@@ -22,12 +22,10 @@ from layers.zero.record_merge_ops import (
 )
 from layers.zero.record_merge_ops import merge_list_values as _merge_list_values_impl
 from layers.zero.record_merge_ops import merge_values as _merge_values_impl
+from layers.zero.source_routing import iter_mergeable_domain_dirs as _iter_domain_dirs
+from layers.zero.source_routing import load_domain_records as _load_records
 from layers.zero.source_routing import (
-    iter_mergeable_domain_dirs as _iter_mergeable_domain_dirs_impl,
-)
-from layers.zero.source_routing import load_domain_records as _load_domain_records_impl
-from layers.zero.source_routing import (
-    write_merged_domain_records as _write_merged_domain_records_impl,
+    write_merged_domain_records as _write_merged_records,
 )
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
@@ -840,27 +838,16 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
 
     resolver = PathResolver(layer_zero_root=layer_zero_dir)
 
-    for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir, resolver):
-        merged_records = _load_domain_records(domain_dir, resolver)
+    for domain_dir in _iter_domain_dirs(layer_zero_dir, resolver):
+        merged_records = _load_records(
+            domain_dir,
+            resolver,
+            transform_records=_iter_transformed_records,
+        )
         if not merged_records:
             continue
         merged_records = _post_process_domain_records(domain_dir.name, merged_records)
-        _write_merged_domain_records(domain_dir, merged_records, resolver)
-
-
-def _iter_mergeable_domain_dirs(
-    layer_zero_dir: Path,
-    resolver: PathResolver,
-) -> list[Path]:
-    return _iter_mergeable_domain_dirs_impl(layer_zero_dir, resolver)
-
-
-def _load_domain_records(domain_dir: Path, resolver: PathResolver) -> list[object]:
-    return _load_domain_records_impl(
-        domain_dir,
-        resolver,
-        transform_records=_iter_transformed_records,
-    )
+        _write_merged_records(domain_dir, merged_records, resolver)
 
 
 def _sort_drivers_by_name(items: list[object]) -> list[object]:
@@ -1003,11 +990,3 @@ def _post_process_domain_records(domain: str, records: list[object]) -> list[obj
         records=records,
         steps=postprocessors,
     )
-
-
-def _write_merged_domain_records(
-    domain_dir: Path,
-    merged_records: list[object],
-    resolver: PathResolver,
-) -> None:
-    _write_merged_domain_records_impl(domain_dir, merged_records, resolver)

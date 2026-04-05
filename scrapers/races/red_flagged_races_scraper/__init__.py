@@ -11,19 +11,11 @@ from scrapers.races.red_flagged_races_scraper.combined import (
 from scrapers.races.red_flagged_races_scraper.combined import (
     WorldChampionshipsRacesTableParser,
 )
-from scrapers.races.red_flagged_races_scraper.non_championship import (
-    RedFlaggedNonChampionshipRacesScraper,
-)
-from scrapers.races.red_flagged_races_scraper.world_championship import (
-    RedFlaggedWorldChampionshipRacesScraper,
-)
 
 __all__ = [
     "NonChampionshipsRacesSubSectionParser",
     "NonChampionshipsRacesTableParser",
-    "RedFlaggedNonChampionshipRacesScraper",
     "RedFlaggedRacesScraper",
     "RedFlaggedRacesSectionParser",
-    "RedFlaggedWorldChampionshipRacesScraper",
     "WorldChampionshipsRacesTableParser",
 ]

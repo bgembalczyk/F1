@@ -14,10 +14,7 @@ def test_deprecated_module_migrations_include_domain_entrypoints() -> None:
     assert (
         migrations["scrapers.circuits.list_scraper"] == "scrapers.circuits.entrypoint"
     )
-    assert (
-        migrations["scrapers.constructors.current_constructors_list"]
-        == "scrapers.constructors.entrypoint"
-    )
+    assert "scrapers.constructors.current_constructors_list" not in migrations
 
 
 def test_deprecated_elements_report_contains_required_metadata() -> None:

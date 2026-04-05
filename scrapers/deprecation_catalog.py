@@ -18,13 +18,6 @@ DEPRECATED_MODULES: tuple[DeprecatedModuleEntry, ...] = (
         "scrapers.circuits.entrypoint",
     ),
     DeprecatedModuleEntry("scrapers.circuits.complete_scraper"),
-    DeprecatedModuleEntry(
-        "scrapers.constructors.current_constructors_list",
-        "scrapers.constructors.entrypoint",
-    ),
-    DeprecatedModuleEntry("scrapers.constructors.former_constructors_list"),
-    DeprecatedModuleEntry("scrapers.constructors.indianapolis_only_constructors_list"),
-    DeprecatedModuleEntry("scrapers.constructors.privateer_teams_list"),
     DeprecatedModuleEntry("scrapers.constructors.complete_scraper"),
     DeprecatedModuleEntry(
         "scrapers.drivers.list_scraper",
@@ -33,10 +26,6 @@ DEPRECATED_MODULES: tuple[DeprecatedModuleEntry, ...] = (
     DeprecatedModuleEntry("scrapers.drivers.female_drivers_list"),
     DeprecatedModuleEntry("scrapers.drivers.fatalities_list_scraper"),
     DeprecatedModuleEntry("scrapers.drivers.complete_scraper"),
-    DeprecatedModuleEntry("scrapers.engines.engine_manufacturers_list"),
-    DeprecatedModuleEntry(
-        "scrapers.engines.indianapolis_only_engine_manufacturers_list",
-    ),
     DeprecatedModuleEntry("scrapers.engines.engine_regulation"),
     DeprecatedModuleEntry("scrapers.engines.engine_restrictions"),
     DeprecatedModuleEntry("scrapers.engines.complete_scraper"),
@@ -45,12 +34,6 @@ DEPRECATED_MODULES: tuple[DeprecatedModuleEntry, ...] = (
         "scrapers.grands_prix.entrypoint",
     ),
     DeprecatedModuleEntry("scrapers.grands_prix.complete_scraper"),
-    DeprecatedModuleEntry(
-        "scrapers.races.red_flagged_races_scraper.world_championship",
-    ),
-    DeprecatedModuleEntry("scrapers.points.points_scoring_systems_history"),
-    DeprecatedModuleEntry("scrapers.points.shortened_race_points"),
-    DeprecatedModuleEntry("scrapers.points.sprint_qualifying_points"),
     DeprecatedModuleEntry(
         "scrapers.seasons.list_scraper",
         "scrapers.seasons.entrypoint",

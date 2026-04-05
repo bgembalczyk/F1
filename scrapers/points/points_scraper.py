@@ -7,16 +7,29 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
+from scrapers.base.factory.record_factory import MappingRecordFactory
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.transformers.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
 )
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.config_factory import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
+from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.points.parsers import PointsScoringSystemsSectionParser
 from scrapers.points.parsers import ShortenedRacesSubSubSectionParser
 from scrapers.points.parsers import SprintRacesSubSubSectionParser
-from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
+from scrapers.points.schemas import build_sprint_qualifying_schema
 from scrapers.wiki.parsers.body_content import BodyContentParser
+
+
+class _SprintQualifyingPointsScraper(BasePointsScraper):
+    CONFIG = build_scraper_config(
+        url=BasePointsScraper.BASE_URL,
+        section_id="Sprint_races",
+        expected_headers=SPRINT_QUALIFYING_EXPECTED_HEADERS,
+        schema=build_sprint_qualifying_schema(),
+        record_factory=MappingRecordFactory(),
+    )
 
 
 class PointsScraper(BasePointsScraper):
@@ -85,6 +98,6 @@ class PointsScraper(BasePointsScraper):
         self,
         soup: BeautifulSoup,
     ) -> list[dict[str, Any]]:
-        legacy_scraper = SprintQualifyingPointsScraper()
+        legacy_scraper = _SprintQualifyingPointsScraper()
         rows = legacy_scraper.parse_soup(soup)
         return [row for row in rows if isinstance(row, dict)]

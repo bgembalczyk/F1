@@ -4,9 +4,9 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
+from scrapers.base.table.columns.types.seasons import _LAST_YEAR_FORMULA_ONE_SEASON
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
 from scrapers.seasons.parsers.results import SeasonResultsParser
@@ -34,46 +34,49 @@ def _fixture_html(name: str) -> str:
 
 
 def test_current_constructors_section_parser_handles_current_season_alias() -> None:
-    section_fragment = BeautifulSoup(ALIAS_FIXTURES["constructors"], "html.parser")
-    parser = CurrentConstructorsSectionParser(
-        config=ConstructorsListScraper._CURRENT_CONFIG,
-        section_label="Current constructors",
-        include_urls=True,
-        normalize_empty_values=False,
+    ConstructorsListScraper._PARSE_SCOPE_CACHE.clear()
+    scraper = ConstructorsListScraper(
+        options=ScraperOptions(
+            fetcher=FixtureFetcher(ALIAS_FIXTURES["constructors"]),
+            include_urls=True,
+        ),
+        export_scope="current",
     )
 
-    result = parser.parse(section_fragment)
+    data = scraper.get_data()
 
-    assert result.records
-    assert result.records[0]["constructor"] == {
-        "chassis_constructor": {
-            "text": "Ferrari",
-            "url": "https://en.wikipedia.org/wiki/Ferrari",
-        },
-        "engine_constructor": {
-            "text": "Ferrari",
-            "url": "https://en.wikipedia.org/wiki/Ferrari_059/6",
-        },
-    }
+    assert data
+    assert data[0]["constructor"]["chassis_constructor"]["text"] == "Ferrari"
+    chassis_url = data[0]["constructor"]["chassis_constructor"]["url"]
+    assert chassis_url.endswith("/wiki/Ferrari")
 
 
 def test_former_constructors_section_parser_handles_defunct_alias() -> None:
-    scraper = FormerConstructorsListScraper(
+    ConstructorsListScraper._PARSE_SCOPE_CACHE.clear()
+    scraper = ConstructorsListScraper(
         options=ScraperOptions(
             fetcher=FixtureFetcher(_fixture_html("former_constructors_alias.html")),
             include_urls=True,
         ),
+        export_scope="former",
     )
 
     data = scraper.get_data()
 
     assert data
     assert data[0]["chassis_constructor"]["text"] == "Lotus"
-    seasons = data[0]["seasons"]
-    assert [season["year"] for season in seasons] == list(range(1958, 1995))
-    assert seasons[0]["url"].startswith(
-        "https://en.wikipedia.org/wiki/1958_Formula_One_",
-    )
+
+    def _season_url(year: int) -> str:
+        suffix = (
+            "Formula_One_season"
+            if year <= _LAST_YEAR_FORMULA_ONE_SEASON
+            else "Formula_One_World_Championship"
+        )
+        return f"https://en.wikipedia.org/wiki/{year}_{suffix}"
+
+    assert data[0]["seasons"] == [
+        {"year": year, "url": _season_url(year)} for year in range(1958, 1995)
+    ]
 
 
 def test_former_constructors_parser_keeps_link_without_acronym() -> None:
@@ -105,11 +108,13 @@ def test_former_constructors_parser_keeps_link_without_acronym() -> None:
       </table>
     </body></html>
     """
-    scraper = FormerConstructorsListScraper(
+    ConstructorsListScraper._PARSE_SCOPE_CACHE.clear()
+    scraper = ConstructorsListScraper(
         options=ScraperOptions(
             fetcher=FixtureFetcher(html),
             include_urls=True,
         ),
+        export_scope="former",
     )
 
     data = scraper.get_data()

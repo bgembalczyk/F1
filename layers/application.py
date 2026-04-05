@@ -40,7 +40,7 @@ def _current_year() -> int:
 
 
 def _should_mirror_constructors_job(job: object) -> bool:
-    """Aktywna dla `CurrentConstructorsListScraper` i `constructors_current`."""
+    """Aktywna dla `constructors_current`."""
     list_scraper_cls = getattr(job, "list_scraper_cls", None)
     scraper_name = getattr(list_scraper_cls, "__name__", "")
     if scraper_name == "CurrentConstructorsListScraper":

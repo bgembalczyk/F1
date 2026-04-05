@@ -1,15 +1,21 @@
 from __future__ import annotations
 
 import re
+from typing import TYPE_CHECKING
 from typing import Any
 
 from models.services import parse_seasons
 from models.value_objects.season_ref import SeasonRef
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+
+if TYPE_CHECKING:
+    from scrapers.base.table.columns.context import ColumnContext
 
 _YEAR_PATTERN = re.compile(r"^\d{4}$")
 _YEAR_IN_URL_PATTERN = re.compile(r"(?<!\d)\d{4}(?!\d)")
+
+
+_LAST_YEAR_FORMULA_ONE_SEASON = 1980
 
 
 class SeasonsColumn(BaseColumn):
@@ -53,7 +59,7 @@ class SeasonsColumn(BaseColumn):
     def _season_page_title(year: str) -> str:
         season_type = (
             "Formula_One_season"
-            if int(year) <= 1980
+            if int(year) <= _LAST_YEAR_FORMULA_ONE_SEASON
             else "Formula_One_World_Championship"
         )
         return f"{year}_{season_type}"
