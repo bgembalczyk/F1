@@ -55,6 +55,11 @@ class AutoColumn(BaseColumn):
             normalize_dashes=self.normalize_dashes,
         )
 
+    @staticmethod
+    def _is_parenthesized_suffix(text: str) -> bool:
+        normalized = text.strip()
+        return bool(re.fullmatch(r"\([^()]+\)", normalized))
+
     def parse(self, ctx: ColumnContext) -> Any:
         value = self._cell_text(ctx)
 
@@ -83,6 +88,14 @@ class AutoColumn(BaseColumn):
             )
             if cell_text and link_text and cell_text.lower() == link_text.lower():
                 return link
+            if (
+                cell_text
+                and link_text
+                and cell_text.lower().startswith(link_text.lower())
+            ):
+                suffix = cell_text[len(link_text) :].strip()
+                if suffix and self._is_parenthesized_suffix(suffix):
+                    return link
             return value or None
 
         # 2) wiele linków: lista tylko gdy poza linkami są same ',' / ';'

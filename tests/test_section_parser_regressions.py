@@ -71,6 +71,51 @@ def test_former_constructors_section_parser_handles_defunct_alias() -> None:
     ]
 
 
+def test_former_constructors_section_parser_keeps_constructor_link_without_acronym() -> None:
+    html = """
+    <html><body>
+      <h2><span id="Former_constructors">Former constructors</span></h2>
+      <table class="wikitable">
+        <tr>
+          <th>Constructor</th><th>Licensed in</th><th>Seasons</th>
+          <th>Races entered</th><th>Races started</th><th>Drivers</th>
+          <th>Total entries</th><th>Wins</th><th>Points</th><th>Poles</th>
+          <th>FL</th><th>Podiums</th><th>WCC</th><th>WDC</th>
+        </tr>
+        <tr>
+          <td>
+            <a href="/wiki/Automobiles_Gonfaronnaises_Sportives">
+              Automobiles Gonfaronnaises Sportives
+            </a>
+            <span>(AGS)</span>
+          </td>
+          <td><a href="/wiki/France">France</a></td>
+          <td>
+            <a href="/wiki/1986_Formula_One_World_Championship">1986</a>–
+            <a href="/wiki/1991_Formula_One_World_Championship">1991</a>
+          </td>
+          <td>80</td><td>32</td><td>10</td><td>124</td><td>0</td><td>2</td>
+          <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+      </table>
+    </body></html>
+    """
+    scraper = FormerConstructorsListScraper(
+        options=ScraperOptions(
+            fetcher=FixtureFetcher(html),
+            include_urls=True,
+        ),
+    )
+
+    data = scraper.get_data()
+
+    assert data
+    assert data[0]["constructor"] == {
+        "text": "Automobiles Gonfaronnaises Sportives",
+        "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives",
+    }
+
+
 def test_circuits_section_parser_handles_formula_one_circuits_alias() -> None:
     scraper = CircuitsListScraper(
         options=ScraperOptions(
