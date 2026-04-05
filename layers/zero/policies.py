@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from collections.abc import Callable
 import shutil
+from collections.abc import Callable
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Protocol

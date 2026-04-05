@@ -103,14 +103,21 @@ class TestExtractFromChassisConstructors:
 
 class TestExtractFromCircuits:
     def test_extracts_country_to_countries_and_location_to_locations(
-        self, tmp_path: Path,
+        self,
+        tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [
             {
                 "circuit": {"text": "Monza"},
-                "country": {"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"},
-                "location": {"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"},
+                "country": {
+                    "text": "Italy",
+                    "url": "https://en.wikipedia.org/wiki/Italy",
+                },
+                "location": {
+                    "text": "Monza",
+                    "url": "https://en.wikipedia.org/wiki/Monza",
+                },
             },
             {
                 "circuit": {"text": "Silverstone"},
@@ -147,11 +154,19 @@ class TestExtractFromConstructors:
         payload = [
             {
                 "constructor": {"text": "Alpine"},
-                "engine": [{"text": "Mercedes", "url": "https://en.wikipedia.org/wiki/Mercedes"}],
+                "engine": [
+                    {
+                        "text": "Mercedes",
+                        "url": "https://en.wikipedia.org/wiki/Mercedes",
+                    }
+                ],
                 "racing_series": {
                     "formula_one": {
                         "antecedent_teams": [
-                            {"text": "Toleman", "url": "https://en.wikipedia.org/wiki/Toleman"},
+                            {
+                                "text": "Toleman",
+                                "url": "https://en.wikipedia.org/wiki/Toleman",
+                            },
                         ],
                         "based_in": [
                             {
@@ -237,7 +252,10 @@ class TestExtractFromEngines:
                 "racing_series": {
                     "formula_one": {
                         "engines_built_in": [
-                            {"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"},
+                            {
+                                "text": "Italy",
+                                "url": "https://en.wikipedia.org/wiki/Italy",
+                            },
                         ],
                     },
                 },
@@ -257,7 +275,8 @@ class TestExtractFromEngines:
 
 class TestExtractFromRaces:
     def test_extracts_winner_and_failed_to_make_restart_drivers(
-        self, tmp_path: Path,
+        self,
+        tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [
@@ -299,7 +318,10 @@ class TestExtractFromRaces:
             {
                 "season": 1971,
                 "red_flag": {
-                    "winner": {"text": "Jackie Stewart", "url": "https://example.com/js"},
+                    "winner": {
+                        "text": "Jackie Stewart",
+                        "url": "https://example.com/js",
+                    },
                     "failed_to_make_restart": None,
                 },
             },
@@ -332,25 +354,35 @@ class TestCrossDomainFromFilesNormalization:
         assert countries == ["Argentina", "Brazil"]
 
     def test_from_files_are_sorted_and_deduplicated_for_objects(
-        self, tmp_path: Path,
+        self,
+        tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [
             {
                 "season": 1971,
                 "red_flag": {
-                    "winner": {"url": "https://example.com/js", "text": "Jackie Stewart"},
+                    "winner": {
+                        "url": "https://example.com/js",
+                        "text": "Jackie Stewart",
+                    },
                     "failed_to_make_restart": [
                         {
                             "reason": "Crash",
                             "drivers": [
-                                {"text": "Clay Regazzoni", "url": "https://example.com/cr"},
+                                {
+                                    "text": "Clay Regazzoni",
+                                    "url": "https://example.com/cr",
+                                },
                             ],
                         },
                         {
                             "reason": "Crash",
                             "drivers": [
-                                {"url": "https://example.com/cr", "text": "Clay Regazzoni"},
+                                {
+                                    "url": "https://example.com/cr",
+                                    "text": "Clay Regazzoni",
+                                },
                             ],
                         },
                     ],
@@ -367,13 +399,19 @@ class TestCrossDomainFromFilesNormalization:
             {"text": "Clay Regazzoni", "url": "https://example.com/cr"},
             {"text": "Jackie Stewart", "url": "https://example.com/js"},
         ]
+
+
 class TestExtractFromSeasons:
     def test_extracts_tyre_manufacturers_and_constructors_champion(
-        self, tmp_path: Path,
+        self,
+        tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         pirelli = {"text": "Pirelli", "url": "https://en.wikipedia.org/wiki/Pirelli"}
-        dunlop = {"text": "Dunlop", "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"}
+        dunlop = {
+            "text": "Dunlop",
+            "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber",
+        }
         vanwall = {"text": "Vanwall", "url": "https://en.wikipedia.org/wiki/Vanwall"}
         payload = [
             {
@@ -386,17 +424,13 @@ class TestExtractFromSeasons:
 
         extract_layer_zero_phase_c(base)
 
-        tyre_file = (
-            _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
-        )
+        tyre_file = _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
         assert tyre_file.exists()
         tyres = json.loads(tyre_file.read_text(encoding="utf-8"))
         assert pirelli in tyres
         assert dunlop in tyres
 
-        constructors_file = (
-            _c_extract_path(base, "constructors") / "from_seasons.json"
-        )
+        constructors_file = _c_extract_path(base, "constructors") / "from_seasons.json"
         assert constructors_file.exists()
         constructors = json.loads(constructors_file.read_text(encoding="utf-8"))
         assert vanwall in constructors
@@ -412,9 +446,7 @@ class TestExtractFromSeasons:
 
         extract_layer_zero_phase_c(base)
 
-        tyre_file = (
-            _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
-        )
+        tyre_file = _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
         tyres = json.loads(tyre_file.read_text(encoding="utf-8"))
         assert len(tyres) == 1
         assert goodyear in tyres
@@ -438,7 +470,10 @@ class TestExtractFromTeams:
     def test_extracts_colors_sponsors_teams_countries(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
         toleman = {"text": "Toleman", "url": "https://en.wikipedia.org/wiki/Toleman"}
-        uk = {"text": "United Kingdom", "url": "https://en.wikipedia.org/wiki/United_Kingdom"}
+        uk = {
+            "text": "United Kingdom",
+            "url": "https://en.wikipedia.org/wiki/United_Kingdom",
+        }
         france = {"text": "France", "url": "https://en.wikipedia.org/wiki/France"}
         elf = {"text": "Elf", "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"}
         payload = [
@@ -491,7 +526,8 @@ class TestExtractFromTeams:
         assert france in countries
 
     def test_skips_null_livery_colour_and_sponsor_values(
-        self, tmp_path: Path,
+        self,
+        tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [

@@ -53,7 +53,7 @@ def test_points_history_parser_accepts_championship_alias_headers() -> None:
                 {
                     "year": 1950,
                     "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship",
-                }
+                },
             ],
             "1st": 8,
             "2nd": 6,

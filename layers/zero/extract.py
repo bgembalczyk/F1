@@ -121,7 +121,10 @@ def _extract_from_chassis_constructors(
         _collect_list_or_single(countries, record.get("licensed_in"))
 
     _write_c_extract_file(
-        "countries", "from_chassis_constructors.json", countries, resolver,
+        "countries",
+        "from_chassis_constructors.json",
+        countries,
+        resolver,
     )
 
 
@@ -280,10 +283,16 @@ def _extract_from_seasons(
         _collect_list_or_single(constructors, record.get("constructors_champion"))
 
     _write_c_extract_file(
-        "tyre_manufacturers", "from_seasons.json", tyre_manufacturers, resolver,
+        "tyre_manufacturers",
+        "from_seasons.json",
+        tyre_manufacturers,
+        resolver,
     )
     _write_c_extract_file(
-        "constructors", "from_seasons.json", constructors, resolver,
+        "constructors",
+        "from_seasons.json",
+        constructors,
+        resolver,
     )
 
 

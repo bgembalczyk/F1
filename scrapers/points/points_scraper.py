@@ -57,7 +57,7 @@ class PointsScraper(BasePointsScraper):
         parsed = self.body_content_parser.parse(body_content) if body_content else {}
         raw_history_records = self.section_parser.collect_rows(parsed)
         history_records = PointsScoringSystemsHistoryTransformer().transform(
-            raw_history_records
+            raw_history_records,
         )
         shortened_records = self.shortened_subsection_parser.collect_rows(parsed)
         sprint_records = self.sprint_subsection_parser.collect_rows(parsed)
