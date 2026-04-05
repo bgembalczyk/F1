@@ -11,7 +11,7 @@ from pathlib import Path
 if importlib.util.find_spec("defusedxml") is not None:
     from defusedxml import ElementTree
 else:
-    from xml.etree import ElementTree  # noqa: ICN001
+    from xml.etree import ElementTree
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
