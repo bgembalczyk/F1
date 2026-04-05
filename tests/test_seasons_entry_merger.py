@@ -1,4 +1,10 @@
+# ruff: noqa: SLF001
 from scrapers.seasons.parsers.entry_merger import EntryMerger
+
+EXPECTED_TWO_ITEMS = 2
+LEWIS_NUMBER = 44
+BOTTAS_NUMBER = 77
+THIRD_ITEM_INDEX = 2
 
 
 def test_merge_entries_full_match_combines_drivers_into_single_domain_entry() -> None:
@@ -99,7 +105,7 @@ def test_merge_entries_with_only_driver_fields_returns_single_merged_record() ->
     merged = merger.merge_entries(records)
     assert len(merged) == 1
     assert "race_drivers" in merged[0]
-    assert len(merged[0]["race_drivers"]) == 2
+    assert len(merged[0]["race_drivers"]) == EXPECTED_TWO_ITEMS
 
 
 def test_merge_entries_with_only_driver_fields_empty_drivers_returns_empty_merged() -> (
@@ -140,7 +146,7 @@ def test_merge_entries_constructor_dict_values_are_inlined() -> None:
     # Constructor items in the subgroup should have inlined dict keys
     constructors = merged[0]["constructor"]
     assert isinstance(constructors, list)
-    assert len(constructors) == 2
+    assert len(constructors) == EXPECTED_TWO_ITEMS
     # Each item should have "text" inlined from the dict
     assert all("text" in c for c in constructors)
 
@@ -173,7 +179,7 @@ def test_strip_entry_driver_fields_removes_driver_fields() -> None:
         "drivers": ["D"],
         "rounds": [1],
         "races": [1],
-        "no": 44,
+        "no": LEWIS_NUMBER,
     }
     cleaned = EntryMerger._strip_entry_driver_fields(record)
     assert "constructor" in cleaned
@@ -194,7 +200,7 @@ def test_extract_race_driver_records_handles_indexed_rounds() -> None:
         "rounds": [[1, 2], [3, 4]],
     }
     result = merger._extract_race_driver_records(record)
-    assert len(result) == 2
+    assert len(result) == EXPECTED_TWO_ITEMS
     assert result[0].get("rounds") == [1, 2]
     assert result[1].get("rounds") == [3, 4]
 
@@ -209,21 +215,21 @@ def test_extract_race_driver_records_adds_number_per_driver() -> None:
     merger = EntryMerger()
     record = {
         "race_drivers": [{"driver": "D1"}, {"driver": "D2"}],
-        "no": [44, 77],
+        "no": [LEWIS_NUMBER, BOTTAS_NUMBER],
     }
     result = merger._extract_race_driver_records(record)
-    assert result[0].get("no") == 44
-    assert result[1].get("no") == 77
+    assert result[0].get("no") == LEWIS_NUMBER
+    assert result[1].get("no") == BOTTAS_NUMBER
 
 
 def test_extract_race_driver_records_adds_single_number_for_single_driver() -> None:
     merger = EntryMerger()
     record = {
         "race_drivers": [{"driver": "D1"}],
-        "no": 44,
+        "no": LEWIS_NUMBER,
     }
     result = merger._extract_race_driver_records(record)
-    assert result[0].get("no") == 44
+    assert result[0].get("no") == LEWIS_NUMBER
 
 
 # ---------------------------------------------------------------------------
@@ -238,7 +244,7 @@ def test_extract_fallback_driver_records_uses_drivers_key() -> None:
         "rounds": "1-3",
     }
     result = merger._extract_fallback_driver_records(record)
-    assert len(result) == 2
+    assert len(result) == EXPECTED_TWO_ITEMS
 
 
 def test_extract_fallback_driver_records_returns_empty_when_no_driver() -> None:
@@ -254,7 +260,7 @@ def test_extract_fallback_driver_records_with_indexed_rounds() -> None:
         "rounds": [[1, 2], [3, 4]],
     }
     result = merger._extract_fallback_driver_records(record)
-    assert len(result) == 2
+    assert len(result) == EXPECTED_TWO_ITEMS
     assert result[0].get("rounds") == [1, 2]
 
 
@@ -262,11 +268,11 @@ def test_extract_fallback_driver_records_with_indexed_numbers() -> None:
     merger = EntryMerger()
     record = {
         "driver": [{"text": "D1"}, {"text": "D2"}],
-        "no": [44, 77],
+        "no": [LEWIS_NUMBER, BOTTAS_NUMBER],
     }
     result = merger._extract_fallback_driver_records(record)
-    assert result[0].get("no") == 44
-    assert result[1].get("no") == 77
+    assert result[0].get("no") == LEWIS_NUMBER
+    assert result[1].get("no") == BOTTAS_NUMBER
 
 
 # ---------------------------------------------------------------------------
@@ -280,12 +286,12 @@ def test_rounds_by_index_returns_value_when_size_matches() -> None:
 
 
 def test_rounds_by_index_returns_none_when_size_mismatch() -> None:
-    result = EntryMerger._rounds_by_index([[1], [2], [3]], 2)
+    result = EntryMerger._rounds_by_index([[1], [2], [3]], EXPECTED_TWO_ITEMS)
     assert result is None
 
 
 def test_rounds_by_index_returns_none_for_non_list() -> None:
-    result = EntryMerger._rounds_by_index("1-5", 3)
+    result = EntryMerger._rounds_by_index("1-5", THIRD_ITEM_INDEX)
     assert result is None
 
 
@@ -297,21 +303,31 @@ def test_rounds_by_index_returns_none_for_non_list() -> None:
 def test_add_number_sets_from_index_when_numbers_by_index() -> None:
     merger = EntryMerger()
     entry: dict = {}
-    merger._add_number(entry, [44, 77], [44, 77], 1, 2)
-    assert entry["no"] == 77
+    merger._add_number(
+        entry,
+        [LEWIS_NUMBER, BOTTAS_NUMBER],
+        [LEWIS_NUMBER, BOTTAS_NUMBER],
+        1,
+        EXPECTED_TWO_ITEMS,
+    )
+    assert entry["no"] == BOTTAS_NUMBER
 
 
 def test_add_number_sets_single_number_for_single_driver() -> None:
     merger = EntryMerger()
-    entry: dict = {}
-    merger._add_number(entry, [44], [], 0, 1)
-    assert entry["no"] == 44
+    drivers = merger._build_drivers_with_shared_rounds(
+        [{"text": "D1"}],
+        [1],
+        [LEWIS_NUMBER],
+        [],
+    )
+    assert drivers[0]["no"] == LEWIS_NUMBER
 
 
 def test_add_number_does_nothing_for_multiple_drivers_no_index() -> None:
     merger = EntryMerger()
     entry: dict = {}
-    merger._add_number(entry, [44, 77], [], 0, 2)
+    merger._add_number(entry, [LEWIS_NUMBER, BOTTAS_NUMBER], [], 0, EXPECTED_TWO_ITEMS)
     assert "no" not in entry
 
 
@@ -351,11 +367,11 @@ def test_build_drivers_with_indexed_rounds_assigns_rounds_per_driver() -> None:
     drivers = merger._build_drivers_with_indexed_rounds(
         [{"text": "D1"}, {"text": "D2"}],
         [[1, 2], [3, 4]],
-        [44, 77],
+        [LEWIS_NUMBER, BOTTAS_NUMBER],
     )
-    assert len(drivers) == 2
+    assert len(drivers) == EXPECTED_TWO_ITEMS
     assert drivers[0]["rounds"] == [1, 2]
-    assert drivers[0]["no"] == 44
+    assert drivers[0]["no"] == LEWIS_NUMBER
     assert drivers[1]["rounds"] == [3, 4]
 
 
@@ -380,11 +396,11 @@ def test_build_drivers_with_shared_rounds_adds_number_by_index() -> None:
     drivers = merger._build_drivers_with_shared_rounds(
         [{"text": "D1"}, {"text": "D2"}],
         [1, 2],
-        [44, 77],
-        [44, 77],
+        [LEWIS_NUMBER, BOTTAS_NUMBER],
+        [LEWIS_NUMBER, BOTTAS_NUMBER],
     )
-    assert drivers[0]["no"] == 44
-    assert drivers[1]["no"] == 77
+    assert drivers[0]["no"] == LEWIS_NUMBER
+    assert drivers[1]["no"] == BOTTAS_NUMBER
 
 
 def test_build_drivers_with_shared_rounds_adds_single_number_for_single_driver() -> (
@@ -394,10 +410,10 @@ def test_build_drivers_with_shared_rounds_adds_single_number_for_single_driver()
     drivers = merger._build_drivers_with_shared_rounds(
         [{"text": "D1"}],
         [1],
-        [44],
+        [LEWIS_NUMBER],
         [],
     )
-    assert drivers[0]["no"] == 44
+    assert drivers[0]["no"] == LEWIS_NUMBER
 
 
 # ---------------------------------------------------------------------------
@@ -406,18 +422,20 @@ def test_build_drivers_with_shared_rounds_adds_single_number_for_single_driver()
 
 
 def test_normalize_entry_numbers_handles_list_of_ints() -> None:
-    result = EntryMerger._normalize_entry_numbers([44, 77])
-    assert result == [44, 77]
+    result = EntryMerger._normalize_entry_numbers([LEWIS_NUMBER, BOTTAS_NUMBER])
+    assert result == [LEWIS_NUMBER, BOTTAS_NUMBER]
 
 
 def test_normalize_entry_numbers_handles_list_with_string_ints() -> None:
-    result = EntryMerger._normalize_entry_numbers(["44", "77"])
-    assert result == [44, 77]
+    result = EntryMerger._normalize_entry_numbers(
+        [str(LEWIS_NUMBER), str(BOTTAS_NUMBER)],
+    )
+    assert result == [LEWIS_NUMBER, BOTTAS_NUMBER]
 
 
 def test_normalize_entry_numbers_handles_list_with_unparseable_strings() -> None:
-    result = EntryMerger._normalize_entry_numbers(["N/A", 44])
-    assert result == [44]
+    result = EntryMerger._normalize_entry_numbers(["N/A", LEWIS_NUMBER])
+    assert result == [LEWIS_NUMBER]
 
 
 def test_normalize_entry_numbers_handles_none() -> None:
@@ -425,11 +443,11 @@ def test_normalize_entry_numbers_handles_none() -> None:
 
 
 def test_normalize_entry_numbers_handles_single_int() -> None:
-    assert EntryMerger._normalize_entry_numbers(44) == [44]
+    assert EntryMerger._normalize_entry_numbers(LEWIS_NUMBER) == [LEWIS_NUMBER]
 
 
 def test_normalize_entry_numbers_handles_single_string() -> None:
-    assert EntryMerger._normalize_entry_numbers("44") == [44]
+    assert EntryMerger._normalize_entry_numbers(str(LEWIS_NUMBER)) == [LEWIS_NUMBER]
 
 
 def test_normalize_entry_numbers_handles_unparseable_string() -> None:
@@ -477,11 +495,11 @@ def test_merge_entry_groups_returns_empty_merged_when_no_drivers_and_no_keys() -
 
 
 def test_normalize_entry_numbers_list_with_unparseable_str_is_skipped() -> None:
-    result = EntryMerger._normalize_entry_numbers(["not_a_number", 44])
-    assert result == [44]
+    result = EntryMerger._normalize_entry_numbers(["not_a_number", LEWIS_NUMBER])
+    assert result == [LEWIS_NUMBER]
 
 
 def test_normalize_entry_numbers_list_with_non_str_non_int_items_ignored() -> None:
     # Items that are neither int nor str should be skipped
-    result = EntryMerger._normalize_entry_numbers([None, 44, {"no": 5}])
-    assert result == [44]
+    result = EntryMerger._normalize_entry_numbers([None, LEWIS_NUMBER, {"no": 5}])
+    assert result == [LEWIS_NUMBER]

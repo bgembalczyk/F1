@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import pytest
 
+ABU_DHABI_DOUBLE_POINTS_YEAR = 2014
+
 # ---------------------------------------------------------------------------
 # Package-level __init__ aliases
 # ---------------------------------------------------------------------------
@@ -49,12 +51,12 @@ def test_round_package_exports_round_rule_context() -> None:
     )
 
     ctx = RoundRuleContext(
-        season_year=2014,
+        season_year=ABU_DHABI_DOUBLE_POINTS_YEAR,
         marks=["‡"],
         header_text="Abu Dhabi",
         round_url="Abu_Dhabi_Grand_Prix",
     )
-    assert ctx.season_year == 2014
+    assert ctx.season_year == ABU_DHABI_DOUBLE_POINTS_YEAR
 
 
 # ---------------------------------------------------------------------------
