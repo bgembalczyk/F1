@@ -7,6 +7,11 @@ from scrapers.seasons.columns.helpers.race_result.cell_parser import (
     RaceResultCellParser,
 )
 
+HIDDEN_SPAN_CELL_HTML = (
+    "<td><span style='position: absolute; left:-9999px'>ghost</span> "
+    "4<sup>7</sup></td>"
+)
+
 
 @pytest.mark.parametrize(
     ("raw_text", "expected"),
@@ -80,12 +85,15 @@ def test_parse_superscripts_handles_rule_conflicts_and_year_priority(
 
 def test_prepare_cell_fragment_strips_absolute_spans_and_superscripts() -> None:
     parser = RaceResultCellParser()
-    soup = BeautifulSoup(
-        '<td><span style="position: absolute; left:-9999px">ghost</span> 4<sup>7</sup></td>',
-        "html.parser",
+    soup = BeautifulSoup(HIDDEN_SPAN_CELL_HTML, "html.parser")
+    ctx = ColumnContext(
+        header="Race",
+        key="result",
+        raw_text=None,
+        clean_text="",
+        links=[],
+        cell=soup.td,
+        base_url="https://example.test",
     )
 
-    fragment = parser._prepare_cell_fragment(soup.td)
-
-    assert "ghost" not in fragment.get_text(" ", strip=True)
-    assert "7" not in fragment.get_text(" ", strip=True)
+    assert parser.extract_result_text(ctx) == "4"
