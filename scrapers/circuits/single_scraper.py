@@ -127,7 +127,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         )
 
     def parse_details(self, soup: BeautifulSoup) -> dict[str, Any] | None:
-        if type(self)._parse_details is F1SingleCircuitScraper._parse_details:
+        if type(self)._parse_details is F1SingleCircuitScraper._parse_details:  # noqa: SLF001
             return None
         return self._parse_details(soup)
 

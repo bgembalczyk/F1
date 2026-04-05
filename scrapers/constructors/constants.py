@@ -2,10 +2,10 @@ from datetime import datetime
 from datetime import timezone
 
 from scrapers.base.constants.shared_headers import (
-    SHARED_PODIUMS_HEADER as CONSTRUCTOR_PODIUMS_HEADER,
+    SHARED_PODIUMS_HEADER as CONSTRUCTOR_PODIUMS_HEADER,  # noqa: F401
 )
 from scrapers.base.constants.shared_headers import (
-    SHARED_POINTS_HEADER as CONSTRUCTOR_POINTS_HEADER,
+    SHARED_POINTS_HEADER as CONSTRUCTOR_POINTS_HEADER,  # noqa: F401
 )
 from scrapers.base.constants.shared_headers import (
     SHARED_SEASONS_HEADER as CONSTRUCTOR_SEASONS_HEADER,
@@ -24,9 +24,7 @@ CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER = "Antecedent teams"  # Poprzednie zespoły.
 CONSTRUCTOR_RACES_ENTERED_HEADER = "Races Entered"
 CONSTRUCTOR_RACES_STARTED_HEADER = "Races Started"
 CONSTRUCTOR_WINS_HEADER = "Wins"
-CONSTRUCTOR_POINTS_HEADER = "Points"
 CONSTRUCTOR_POLES_HEADER = "Poles"
-CONSTRUCTOR_PODIUMS_HEADER = "Podiums"
 CONSTRUCTOR_FASTEST_LAPS_HEADER = "FL"  # Fastest laps.
 
 CURRENT_YEAR = datetime.now(tz=timezone.utc).year

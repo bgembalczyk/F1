@@ -104,14 +104,14 @@ def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation
             Violation("Niepoprawne typy w coverage policy (sprint/progi/przyrost)."),
         ]
 
-    for index in range(1, len(threshold_values)):
-        if threshold_values[index] <= threshold_values[index - 1]:
-            violations.append(
-                Violation(
-                    "global_threshold_path musi być ściśle rosnąca "
-                    f"(problem na pozycji {index + 1}).",
-                ),
-            )
+    violations.extend(
+        Violation(
+            "global_threshold_path musi być ściśle rosnąca "
+            f"(problem na pozycji {index + 1}).",
+        )
+        for index in range(1, len(threshold_values))
+        if threshold_values[index] <= threshold_values[index - 1]
+    )
 
     for index in range(1, len(threshold_values)):
         delta = threshold_values[index] - threshold_values[index - 1]

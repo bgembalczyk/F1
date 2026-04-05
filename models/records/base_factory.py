@@ -61,7 +61,7 @@ class BaseRecordFactory:
     ) -> None:
         self.normalize_fields(
             payload,
-            dict.fromkeys(field_names, self.normalizer.normalize_int),
+            {f: self.normalizer.normalize_int for f in field_names if f in payload},
         )
 
     def normalize_float_fields(
@@ -71,7 +71,7 @@ class BaseRecordFactory:
     ) -> None:
         self.normalize_fields(
             payload,
-            dict.fromkeys(field_names, self.normalizer.normalize_float),
+            {f: self.normalizer.normalize_float for f in field_names if f in payload},
         )
 
     def normalize_link_fields(

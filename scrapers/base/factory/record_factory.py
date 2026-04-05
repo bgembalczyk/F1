@@ -24,7 +24,7 @@ class MappingRecordFactory:
     """Backward-compatible mapping factory that returns plain dictionaries."""
 
     def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
-        return dict(payload)
+        return {**payload}
 
 
 @dataclass(frozen=True, slots=True)
@@ -37,14 +37,6 @@ class CallableRecordFactoryAdapter:
         if isinstance(self.factory, type):
             return self.factory(**dict(payload))
         return self.factory(dict(payload))
-
-
-@dataclass(frozen=True, slots=True)
-class MappingRecordFactory:
-    """Backwards-compatible adapter that returns plain dict payloads."""
-
-    def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
-        return dict(payload)
 
 
 class RecordFactoryAdapters:
@@ -69,10 +61,3 @@ class RecordFactoryAdapters:
 
 
 RECORD_FACTORIES = RecordFactoryAdapters()
-
-
-class MappingRecordFactory:
-    """Legacy compatibility factory returning payload mappings unchanged."""
-
-    def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
-        return dict(payload)

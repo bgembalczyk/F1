@@ -49,13 +49,11 @@ class SeasonTextSectionExtractionService(BaseSectionExtractionService):
     def extract(self, soup: BeautifulSoup) -> dict[str, list[dict[str, Any]]]:
         # Utrzymujemy kontrakt sezonowego pipeline'u: mapowanie section_id -> records.
         extracted = cast("dict[str, list[dict[str, Any]]]", super().extract(soup))
+        reg_changes = extracted.get(self._REGULATION_CHANGES_KEY, [])
+        mid_changes = extracted.get(self._MID_SEASON_CHANGES_KEY, [])
         return {
-            self._REGULATION_CHANGES_KEY: extracted.get(
-                self._REGULATION_CHANGES_KEY,
-                [],
-            ),
-            self._MID_SEASON_CHANGES_KEY: extracted.get(
-                self._MID_SEASON_CHANGES_KEY,
-                [],
-            ),
+            self._REGULATION_CHANGES_KEY: reg_changes,
+            self._MID_SEASON_CHANGES_KEY: mid_changes,
+            "Regulation_changes": reg_changes,
+            "Mid-season_changes": mid_changes,
         }
