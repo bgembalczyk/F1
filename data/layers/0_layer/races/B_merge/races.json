@@ -1,10 +1,10 @@
 [
   {
+    "season": 1971,
     "event": {
       "text": "Brand Hatch",
       "url": "https://en.wikipedia.org/wiki/1971_World_Championship_Victory_Race"
     },
-    "season": 1971,
     "championship": false,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -21,12 +21,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1971,
     "grand_prix": {
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
     },
-    "season": 1971,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -43,12 +43,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1973,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1973_British_Grand_Prix"
     },
-    "season": 1973,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -130,12 +130,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1974,
     "grand_prix": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1974_Brazilian_Grand_Prix"
     },
-    "season": 1974,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -152,12 +152,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1975,
     "grand_prix": {
       "text": "Spanish",
       "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
     },
-    "season": 1975,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -174,12 +174,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1975,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
     },
-    "season": 1975,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -196,12 +196,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1975,
     "grand_prix": {
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
     },
-    "season": 1975,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -218,12 +218,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1976,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
     },
-    "season": 1976,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -258,12 +258,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1976,
     "grand_prix": {
       "text": "German",
       "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
     },
-    "season": 1976,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -330,12 +330,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 1978,
     "grand_prix": {
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/1978_Austrian_Grand_Prix"
     },
-    "season": 1978,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -390,12 +390,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1978,
     "grand_prix": {
       "text": "Italian",
       "url": "https://en.wikipedia.org/wiki/1978_Italian_Grand_Prix"
     },
-    "season": 1978,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -453,12 +453,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1979,
     "grand_prix": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
     },
-    "season": 1979,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -511,12 +511,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 1979,
     "grand_prix": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
     },
-    "season": 1979,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -533,12 +533,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1980,
     "grand_prix": {
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/1980_Canadian_Grand_Prix"
     },
-    "season": 1980,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -574,12 +574,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 1981,
     "grand_prix": {
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
     },
-    "season": 1981,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -610,12 +610,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1981,
     "grand_prix": {
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
     },
-    "season": 1981,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -632,12 +632,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 1981,
     "grand_prix": {
       "text": "French",
       "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
     },
-    "season": 1981,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -654,12 +654,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1982,
     "grand_prix": {
       "text": "Detroit",
       "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
     },
-    "season": 1982,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -690,12 +690,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1982,
     "grand_prix": {
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
     },
-    "season": 1982,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -740,12 +740,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1984,
     "grand_prix": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1984_Monaco_Grand_Prix"
     },
-    "season": 1984,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -762,12 +762,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1984,
     "grand_prix": {
       "text": "Detroit",
       "url": "https://en.wikipedia.org/wiki/1984_Detroit_Grand_Prix"
     },
-    "season": 1984,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -794,12 +794,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1984,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1984_British_Grand_Prix"
     },
-    "season": 1984,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -816,12 +816,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1984,
     "grand_prix": {
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/1984_Austrian_Grand_Prix"
     },
-    "season": 1984,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -838,12 +838,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1985,
     "grand_prix": {
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/1985_Austrian_Grand_Prix"
     },
-    "season": 1985,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -870,12 +870,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1986,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
     },
-    "season": 1986,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -924,12 +924,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1987,
     "grand_prix": {
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
     },
-    "season": 1987,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -956,12 +956,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1987,
     "grand_prix": {
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
     },
-    "season": 1987,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -988,12 +988,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1987,
     "grand_prix": {
       "text": "Portuguese",
       "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
     },
-    "season": 1987,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1020,12 +1020,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1987,
     "grand_prix": {
       "text": "Mexican",
       "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
     },
-    "season": 1987,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1042,12 +1042,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1988,
     "grand_prix": {
       "text": "Portuguese",
       "url": "https://en.wikipedia.org/wiki/1988_Portuguese_Grand_Prix"
     },
-    "season": 1988,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1064,12 +1064,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1989,
     "grand_prix": {
       "text": "San Marino",
       "url": "https://en.wikipedia.org/wiki/1989_San_Marino_Grand_Prix"
     },
-    "season": 1989,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1096,12 +1096,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1989,
     "grand_prix": {
       "text": "Mexican",
       "url": "https://en.wikipedia.org/wiki/1989_Mexican_Grand_Prix"
     },
-    "season": 1989,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1118,12 +1118,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1989,
     "grand_prix": {
       "text": "French",
       "url": "https://en.wikipedia.org/wiki/1989_French_Grand_Prix"
     },
-    "season": 1989,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1140,12 +1140,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1989,
     "grand_prix": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/1989_Australian_Grand_Prix"
     },
-    "season": 1989,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1181,12 +1181,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1990,
     "grand_prix": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1990_Monaco_Grand_Prix"
     },
-    "season": 1990,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1203,12 +1203,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1990,
     "grand_prix": {
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/1990_Belgian_Grand_Prix"
     },
-    "season": 1990,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1244,12 +1244,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1990,
     "grand_prix": {
       "text": "Italian",
       "url": "https://en.wikipedia.org/wiki/1990_Italian_Grand_Prix"
     },
-    "season": 1990,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1266,12 +1266,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1990,
     "grand_prix": {
       "text": "Portuguese",
       "url": "https://en.wikipedia.org/wiki/1990_Portuguese_Grand_Prix"
     },
-    "season": 1990,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1288,12 +1288,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1991,
     "grand_prix": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix"
     },
-    "season": 1991,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1310,12 +1310,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1992,
     "grand_prix": {
       "text": "French",
       "url": "https://en.wikipedia.org/wiki/1992_French_Grand_Prix"
     },
-    "season": 1992,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1332,12 +1332,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1994,
     "grand_prix": {
       "text": "San Marino",
       "url": "https://en.wikipedia.org/wiki/1994_San_Marino_Grand_Prix"
     },
-    "season": 1994,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1373,12 +1373,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1994,
     "grand_prix": {
       "text": "Italian",
       "url": "https://en.wikipedia.org/wiki/1994_Italian_Grand_Prix"
     },
-    "season": 1994,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1395,12 +1395,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1994,
     "grand_prix": {
       "text": "Japanese",
       "url": "https://en.wikipedia.org/wiki/1994_Japanese_Grand_Prix"
     },
-    "season": 1994,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1427,12 +1427,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1995,
     "grand_prix": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1995_Argentine_Grand_Prix"
     },
-    "season": 1995,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1459,12 +1459,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1995,
     "grand_prix": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1995_Monaco_Grand_Prix"
     },
-    "season": 1995,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1500,12 +1500,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1995,
     "grand_prix": {
       "text": "Italian",
       "url": "https://en.wikipedia.org/wiki/1995_Italian_Grand_Prix"
     },
-    "season": 1995,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1536,12 +1536,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1995,
     "grand_prix": {
       "text": "Portuguese",
       "url": "https://en.wikipedia.org/wiki/1995_Portuguese_Grand_Prix"
     },
-    "season": 1995,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1577,12 +1577,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1996,
     "grand_prix": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/1996_Australian_Grand_Prix"
     },
-    "season": 1996,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1609,12 +1609,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1997,
     "grand_prix": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1997_Brazilian_Grand_Prix"
     },
-    "season": 1997,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1641,12 +1641,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 1997,
     "grand_prix": {
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/1997_Canadian_Grand_Prix"
     },
-    "season": 1997,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1663,12 +1663,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1998,
     "grand_prix": {
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/1998_Canadian_Grand_Prix"
     },
-    "season": 1998,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1685,12 +1685,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 1998,
     "grand_prix": {
       "text": "French",
       "url": "https://en.wikipedia.org/wiki/1998_French_Grand_Prix"
     },
-    "season": 1998,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1707,12 +1707,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1998,
     "grand_prix": {
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/1998_Belgian_Grand_Prix"
     },
-    "season": 1998,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1751,12 +1751,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 1999,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1999_British_Grand_Prix"
     },
-    "season": 1999,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1783,12 +1783,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 2000,
     "grand_prix": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/2000_Monaco_Grand_Prix"
     },
-    "season": 2000,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1815,12 +1815,12 @@
     }
   },
   {
-    "background": "#cfc",
+    "season": 2001,
     "grand_prix": {
       "text": "German",
       "url": "https://en.wikipedia.org/wiki/2001_German_Grand_Prix"
     },
-    "season": 2001,
+    "background": "#cfc",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1837,12 +1837,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 2001,
     "grand_prix": {
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/2001_Belgian_Grand_Prix"
     },
-    "season": 2001,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1896,12 +1896,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 2003,
     "grand_prix": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/2003_Brazilian_Grand_Prix"
     },
-    "season": 2003,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1918,12 +1918,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2007,
     "grand_prix": {
       "text": "European",
       "url": "https://en.wikipedia.org/wiki/2007_European_Grand_Prix"
     },
-    "season": 2007,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -1966,12 +1966,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 2009,
     "grand_prix": {
       "text": "Malaysian",
       "url": "https://en.wikipedia.org/wiki/2009_Malaysian_Grand_Prix"
     },
-    "season": 2009,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -1988,12 +1988,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2010,
     "grand_prix": {
       "text": "Korean",
       "url": "https://en.wikipedia.org/wiki/2010_Korean_Grand_Prix"
     },
-    "season": 2010,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -2010,12 +2010,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2011,
     "grand_prix": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/2011_Monaco_Grand_Prix"
     },
-    "season": 2011,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2046,12 +2046,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2011,
     "grand_prix": {
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/2011_Canadian_Grand_Prix"
     },
-    "season": 2011,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -2068,12 +2068,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2012,
     "grand_prix": {
       "text": "Malaysian",
       "url": "https://en.wikipedia.org/wiki/2012_Malaysian_Grand_Prix"
     },
-    "season": 2012,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -2090,12 +2090,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2013,
     "grand_prix": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/2013_Monaco_Grand_Prix"
     },
-    "season": 2013,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2122,12 +2122,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2014,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
     },
-    "season": 2014,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2158,12 +2158,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2014,
     "grand_prix": {
       "text": "Japanese",
       "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
     },
-    "season": 2014,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -2180,12 +2180,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 2014,
     "grand_prix": {
       "text": "Japanese",
       "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
     },
-    "season": 2014,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -2202,12 +2202,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2016,
     "grand_prix": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2016_Australian_Grand_Prix"
     },
-    "season": 2016,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2252,12 +2252,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2016,
     "grand_prix": {
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/2016_Belgian_Grand_Prix"
     },
-    "season": 2016,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2284,12 +2284,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2016,
     "grand_prix": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/2016_Brazilian_Grand_Prix"
     },
-    "season": 2016,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2325,12 +2325,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2016,
     "grand_prix": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/2016_Brazilian_Grand_Prix"
     },
-    "season": 2016,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -2347,12 +2347,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2017,
     "grand_prix": {
       "text": "Azerbaijan",
       "url": "https://en.wikipedia.org/wiki/2017_Azerbaijan_Grand_Prix"
     },
-    "season": 2017,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -2369,12 +2369,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2020,
     "grand_prix": {
       "text": "Italian",
       "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
     },
-    "season": 2020,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2401,12 +2401,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2020,
     "grand_prix": {
       "text": "Tuscan",
       "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
     },
-    "season": 2020,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2454,12 +2454,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2020,
     "grand_prix": {
       "text": "Tuscan",
       "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
     },
-    "season": 2020,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2486,12 +2486,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2020,
     "grand_prix": {
       "text": "Bahrain",
       "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
     },
-    "season": 2020,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2518,12 +2518,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2021,
     "grand_prix": {
       "text": "Emilia Romagna",
       "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
     },
-    "season": 2021,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2554,12 +2554,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2021,
     "grand_prix": {
       "text": "Azerbaijan",
       "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
     },
-    "season": 2021,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2586,12 +2586,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2021,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
     },
-    "season": 2021,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2618,12 +2618,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2021,
     "grand_prix": {
       "text": "Hungarian",
       "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
     },
-    "season": 2021,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2666,12 +2666,12 @@
     }
   },
   {
-    "background": "#fdd",
+    "season": 2021,
     "grand_prix": {
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix"
     },
-    "season": 2021,
+    "background": "#fdd",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": null,
@@ -2688,12 +2688,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2021,
     "grand_prix": {
       "text": "Saudi Arabian",
       "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
     },
-    "season": 2021,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2720,12 +2720,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2021,
     "grand_prix": {
       "text": "Saudi Arabian",
       "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
     },
-    "season": 2021,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2760,12 +2760,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 2022,
     "grand_prix": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/2022_Monaco_Grand_Prix"
     },
-    "season": 2022,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2792,12 +2792,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2022,
     "grand_prix": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/2022_British_Grand_Prix"
     },
-    "season": 2022,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2832,12 +2832,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 2022,
     "grand_prix": {
       "text": "Japanese",
       "url": "https://en.wikipedia.org/wiki/2022_Japanese_Grand_Prix"
     },
-    "season": 2022,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2873,12 +2873,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2023,
     "grand_prix": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2023_Australian_Grand_Prix"
     },
-    "season": 2023,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2905,12 +2905,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2023,
     "grand_prix": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2023_Australian_Grand_Prix"
     },
-    "season": 2023,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2937,12 +2937,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2023,
     "grand_prix": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2023_Australian_Grand_Prix"
     },
-    "season": 2023,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -2981,12 +2981,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2023,
     "grand_prix": {
       "text": "Dutch",
       "url": "https://en.wikipedia.org/wiki/2023_Dutch_Grand_Prix"
     },
-    "season": 2023,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -3013,12 +3013,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2023,
     "grand_prix": {
       "text": "Mexico City",
       "url": "https://en.wikipedia.org/wiki/2023_Mexico_City_Grand_Prix"
     },
-    "season": 2023,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -3045,12 +3045,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2023,
     "grand_prix": {
       "text": "São Paulo",
       "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
     },
-    "season": 2023,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -3081,12 +3081,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2024,
     "grand_prix": {
       "text": "Japanese",
       "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
     },
-    "season": 2024,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -3117,12 +3117,12 @@
     }
   },
   {
-    "background": "#FFD800",
+    "season": 2024,
     "grand_prix": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
     },
-    "season": 2024,
+    "background": "#FFD800",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [
@@ -3166,12 +3166,12 @@
     }
   },
   {
-    "background": "#FFFF33",
+    "season": 2024,
     "grand_prix": {
       "text": "São Paulo",
       "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
     },
-    "season": 2024,
+    "background": "#FFFF33",
     "championship": true,
     "red_flag": {
       "failed_to_make_restart": [

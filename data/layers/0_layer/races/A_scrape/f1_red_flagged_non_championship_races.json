@@ -1,5 +1,6 @@
 [
   {
+    "season": 1971,
     "event": {
       "text": "Brand Hatch",
       "url": "https://en.wikipedia.org/wiki/1971_World_Championship_Victory_Race"
@@ -11,7 +12,6 @@
       "code": "N",
       "description": "race_was_not_restarted"
     },
-    "season": 1971,
     "winner": {
       "text": "Peter Gethin",
       "url": "https://en.wikipedia.org/wiki/Peter_Gethin"

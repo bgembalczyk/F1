@@ -1,0 +1,50 @@
+[
+  {
+    "1st": 3,
+    "2nd": 2,
+    "3rd": 1,
+    "4th": null,
+    "5th": null,
+    "6th": null,
+    "7th": null,
+    "8th": null,
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+        "year": 2021
+      }
+    ]
+  },
+  {
+    "1st": 8,
+    "2nd": 7,
+    "3rd": 6,
+    "4th": 5,
+    "5th": 4,
+    "6th": 3,
+    "7th": 2,
+    "8th": 1,
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+        "year": 2022
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
+        "year": 2026
+      }
+    ]
+  }
+]

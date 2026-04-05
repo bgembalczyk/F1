@@ -1,5 +1,9 @@
 [
   {
+    "season": {
+      "text": "1950",
+      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+    },
     "constructors_champion": [],
     "countries": 7,
     "drivers_champion_team": [
@@ -21,13 +25,13 @@
       "url": "https://en.wikipedia.org/wiki/1950_Italian_Grand_Prix"
     },
     "races": 7,
-    "season": {
-      "text": "1950",
-      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-    },
     "winners": 3
   },
   {
+    "season": {
+      "text": "1951",
+      "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+    },
     "constructors_champion": [],
     "countries": 8,
     "drivers_champion_team": [
@@ -49,13 +53,13 @@
       "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
     },
     "races": 8,
-    "season": {
-      "text": "1951",
-      "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "1952",
+      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+    },
     "constructors_champion": [],
     "countries": 8,
     "drivers_champion_team": [
@@ -77,13 +81,13 @@
       "url": "https://en.wikipedia.org/wiki/1952_Italian_Grand_Prix"
     },
     "races": 8,
-    "season": {
-      "text": "1952",
-      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-    },
     "winners": 3
   },
   {
+    "season": {
+      "text": "1953",
+      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+    },
     "constructors_champion": [],
     "countries": 9,
     "drivers_champion_team": [
@@ -105,13 +109,13 @@
       "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
     },
     "races": 9,
-    "season": {
-      "text": "1953",
-      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1954",
+      "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+    },
     "constructors_champion": [],
     "countries": 9,
     "drivers_champion_team": [
@@ -137,13 +141,13 @@
       "url": "https://en.wikipedia.org/wiki/1954_Spanish_Grand_Prix"
     },
     "races": 9,
-    "season": {
-      "text": "1954",
-      "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1955",
+      "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
+    },
     "constructors_champion": [],
     "countries": 7,
     "drivers_champion_team": [
@@ -165,13 +169,13 @@
       "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
     },
     "races": 7,
-    "season": {
-      "text": "1955",
-      "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1956",
+      "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+    },
     "constructors_champion": [],
     "countries": 8,
     "drivers_champion_team": [
@@ -193,13 +197,13 @@
       "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
     },
     "races": 8,
-    "season": {
-      "text": "1956",
-      "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1957",
+      "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+    },
     "constructors_champion": [],
     "countries": 7,
     "drivers_champion_team": [
@@ -221,13 +225,13 @@
       "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
     },
     "races": 8,
-    "season": {
-      "text": "1957",
-      "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1958",
+      "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Vanwall",
@@ -254,13 +258,13 @@
       "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
     },
     "races": 11,
-    "season": {
-      "text": "1958",
-      "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "1959",
+      "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Cooper",
@@ -291,13 +295,13 @@
       "url": "https://en.wikipedia.org/wiki/1959_United_States_Grand_Prix"
     },
     "races": 9,
-    "season": {
-      "text": "1959",
-      "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "1960",
+      "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Cooper",
@@ -328,13 +332,13 @@
       "url": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix"
     },
     "races": 10,
-    "season": {
-      "text": "1960",
-      "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1961",
+      "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -361,13 +365,13 @@
       "url": "https://en.wikipedia.org/wiki/1961_United_States_Grand_Prix"
     },
     "races": 8,
-    "season": {
-      "text": "1961",
-      "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1962",
+      "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "BRM",
@@ -394,13 +398,13 @@
       "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
     },
     "races": 9,
-    "season": {
-      "text": "1962",
-      "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1963",
+      "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Lotus",
@@ -431,13 +435,13 @@
       "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
     },
     "races": 10,
-    "season": {
-      "text": "1963",
-      "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
-    },
     "winners": 3
   },
   {
+    "season": {
+      "text": "1964",
+      "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -468,13 +472,13 @@
       "url": "https://en.wikipedia.org/wiki/1964_Mexican_Grand_Prix"
     },
     "races": 10,
-    "season": {
-      "text": "1964",
-      "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1965",
+      "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Lotus",
@@ -505,13 +509,13 @@
       "url": "https://en.wikipedia.org/wiki/1965_Mexican_Grand_Prix"
     },
     "races": 10,
-    "season": {
-      "text": "1965",
-      "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1966",
+      "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Brabham",
@@ -542,13 +546,13 @@
       "url": "https://en.wikipedia.org/wiki/1966_Mexican_Grand_Prix"
     },
     "races": 9,
-    "season": {
-      "text": "1966",
-      "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1967",
+      "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Brabham",
@@ -579,13 +583,13 @@
       "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
     },
     "races": 11,
-    "season": {
-      "text": "1967",
-      "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "1968",
+      "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Lotus",
@@ -616,13 +620,13 @@
       "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
     },
     "races": 12,
-    "season": {
-      "text": "1968",
-      "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "1969",
+      "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Matra",
@@ -653,13 +657,13 @@
       "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
     },
     "races": 11,
-    "season": {
-      "text": "1969",
-      "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1970",
+      "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Lotus",
@@ -690,13 +694,13 @@
       "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
     },
     "races": 13,
-    "season": {
-      "text": "1970",
-      "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "1971",
+      "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Tyrrell",
@@ -727,13 +731,13 @@
       "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
     },
     "races": 11,
-    "season": {
-      "text": "1971",
-      "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "1972",
+      "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Lotus",
@@ -764,13 +768,13 @@
       "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
     },
     "races": 12,
-    "season": {
-      "text": "1972",
-      "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1973",
+      "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Lotus",
@@ -801,13 +805,13 @@
       "url": "https://en.wikipedia.org/wiki/1973_United_States_Grand_Prix"
     },
     "races": 15,
-    "season": {
-      "text": "1973",
-      "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1974",
+      "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -838,13 +842,13 @@
       "url": "https://en.wikipedia.org/wiki/1974_United_States_Grand_Prix"
     },
     "races": 15,
-    "season": {
-      "text": "1974",
-      "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "1975",
+      "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -871,13 +875,13 @@
       "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
     },
     "races": 14,
-    "season": {
-      "text": "1975",
-      "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
-    },
     "winners": 9
   },
   {
+    "season": {
+      "text": "1976",
+      "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -904,13 +908,13 @@
       "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1976",
-      "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "1977",
+      "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -937,13 +941,13 @@
       "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "1977",
-      "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
-    },
     "winners": 8
   },
   {
+    "season": {
+      "text": "1978",
+      "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Lotus",
@@ -974,13 +978,13 @@
       "url": "https://en.wikipedia.org/wiki/1978_Canadian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1978",
-      "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "1979",
+      "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1007,13 +1011,13 @@
       "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
     },
     "races": 15,
-    "season": {
-      "text": "1979",
-      "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "1980",
+      "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1044,13 +1048,13 @@
       "url": "https://en.wikipedia.org/wiki/1980_United_States_Grand_Prix"
     },
     "races": 14,
-    "season": {
-      "text": "1980",
-      "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "1981",
+      "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1081,13 +1085,13 @@
       "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
     },
     "races": 15,
-    "season": {
-      "text": "1981",
-      "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "1982",
+      "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1114,13 +1118,13 @@
       "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1982",
-      "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-    },
     "winners": 11
   },
   {
+    "season": {
+      "text": "1983",
+      "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1147,13 +1151,13 @@
       "url": "https://en.wikipedia.org/wiki/1983_South_African_Grand_Prix"
     },
     "races": 15,
-    "season": {
-      "text": "1983",
-      "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-    },
     "winners": 8
   },
   {
+    "season": {
+      "text": "1984",
+      "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -1184,13 +1188,13 @@
       "url": "https://en.wikipedia.org/wiki/1984_Portuguese_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1984",
-      "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1985",
+      "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -1221,13 +1225,13 @@
       "url": "https://en.wikipedia.org/wiki/1985_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1985",
-      "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-    },
     "winners": 8
   },
   {
+    "season": {
+      "text": "1986",
+      "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1258,13 +1262,13 @@
       "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1986",
-      "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1987",
+      "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1295,13 +1299,13 @@
       "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1987",
-      "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1988",
+      "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -1332,13 +1336,13 @@
       "url": "https://en.wikipedia.org/wiki/1988_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1988",
-      "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-    },
     "winners": 3
   },
   {
+    "season": {
+      "text": "1989",
+      "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -1369,13 +1373,13 @@
       "url": "https://en.wikipedia.org/wiki/1989_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1989",
-      "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "1990",
+      "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -1406,13 +1410,13 @@
       "url": "https://en.wikipedia.org/wiki/1990_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1990",
-      "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "1991",
+      "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -1443,13 +1447,13 @@
       "url": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1991",
-      "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1992",
+      "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1480,13 +1484,13 @@
       "url": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1992",
-      "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1993",
+      "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1517,13 +1521,13 @@
       "url": "https://en.wikipedia.org/wiki/1993_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1993",
-      "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1994",
+      "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1554,13 +1558,13 @@
       "url": "https://en.wikipedia.org/wiki/1994_Australian_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1994",
-      "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1995",
+      "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Benetton",
@@ -1591,13 +1595,13 @@
       "url": "https://en.wikipedia.org/wiki/1995_Australian_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "1995",
-      "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "1996",
+      "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1628,13 +1632,13 @@
       "url": "https://en.wikipedia.org/wiki/1996_Japanese_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1996",
-      "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1997",
+      "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Williams",
@@ -1665,13 +1669,13 @@
       "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "1997",
-      "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "1998",
+      "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -1702,13 +1706,13 @@
       "url": "https://en.wikipedia.org/wiki/1998_Japanese_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1998",
-      "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "1999",
+      "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1735,13 +1739,13 @@
       "url": "https://en.wikipedia.org/wiki/1999_Japanese_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "1999",
-      "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "2000",
+      "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1768,13 +1772,13 @@
       "url": "https://en.wikipedia.org/wiki/2000_Malaysian_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "2000",
-      "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "2001",
+      "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1801,13 +1805,13 @@
       "url": "https://en.wikipedia.org/wiki/2001_Japanese_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "2001",
-      "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2002",
+      "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1834,13 +1838,13 @@
       "url": "https://en.wikipedia.org/wiki/2002_Japanese_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "2002",
-      "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "2003",
+      "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1867,13 +1871,13 @@
       "url": "https://en.wikipedia.org/wiki/2003_Japanese_Grand_Prix"
     },
     "races": 16,
-    "season": {
-      "text": "2003",
-      "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-    },
     "winners": 8
   },
   {
+    "season": {
+      "text": "2004",
+      "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1900,13 +1904,13 @@
       "url": "https://en.wikipedia.org/wiki/2004_Brazilian_Grand_Prix"
     },
     "races": 18,
-    "season": {
-      "text": "2004",
-      "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2005",
+      "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Renault",
@@ -1933,13 +1937,13 @@
       "url": "https://en.wikipedia.org/wiki/2005_Chinese_Grand_Prix"
     },
     "races": 19,
-    "season": {
-      "text": "2005",
-      "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2006",
+      "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Renault",
@@ -1966,13 +1970,13 @@
       "url": "https://en.wikipedia.org/wiki/2006_Brazilian_Grand_Prix"
     },
     "races": 18,
-    "season": {
-      "text": "2006",
-      "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2007",
+      "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -1999,13 +2003,13 @@
       "url": "https://en.wikipedia.org/wiki/2007_Brazilian_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "2007",
-      "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "2008",
+      "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Ferrari",
@@ -2032,13 +2036,13 @@
       "url": "https://en.wikipedia.org/wiki/2008_Brazilian_Grand_Prix"
     },
     "races": 18,
-    "season": {
-      "text": "2008",
-      "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "2009",
+      "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Brawn",
@@ -2069,13 +2073,13 @@
       "url": "https://en.wikipedia.org/wiki/2009_Abu_Dhabi_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "2009",
-      "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "2010",
+      "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Red Bull",
@@ -2106,13 +2110,13 @@
       "url": "https://en.wikipedia.org/wiki/2010_Abu_Dhabi_Grand_Prix"
     },
     "races": 19,
-    "season": {
-      "text": "2010",
-      "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2011",
+      "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Red Bull",
@@ -2143,13 +2147,13 @@
       "url": "https://en.wikipedia.org/wiki/2011_Brazilian_Grand_Prix"
     },
     "races": 19,
-    "season": {
-      "text": "2011",
-      "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2012",
+      "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Red Bull",
@@ -2180,13 +2184,13 @@
       "url": "https://en.wikipedia.org/wiki/2012_Brazilian_Grand_Prix"
     },
     "races": 20,
-    "season": {
-      "text": "2012",
-      "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
-    },
     "winners": 8
   },
   {
+    "season": {
+      "text": "2013",
+      "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Red Bull",
@@ -2217,13 +2221,13 @@
       "url": "https://en.wikipedia.org/wiki/2013_Brazilian_Grand_Prix"
     },
     "races": 19,
-    "season": {
-      "text": "2013",
-      "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2014",
+      "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Mercedes",
@@ -2250,13 +2254,13 @@
       "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix"
     },
     "races": 19,
-    "season": {
-      "text": "2014",
-      "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
-    },
     "winners": 3
   },
   {
+    "season": {
+      "text": "2015",
+      "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Mercedes",
@@ -2283,13 +2287,13 @@
       "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
     },
     "races": 19,
-    "season": {
-      "text": "2015",
-      "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
-    },
     "winners": 3
   },
   {
+    "season": {
+      "text": "2016",
+      "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Mercedes",
@@ -2316,13 +2320,13 @@
       "url": "https://en.wikipedia.org/wiki/2016_Abu_Dhabi_Grand_Prix"
     },
     "races": 21,
-    "season": {
-      "text": "2016",
-      "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "2017",
+      "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Mercedes",
@@ -2349,13 +2353,13 @@
       "url": "https://en.wikipedia.org/wiki/2017_Abu_Dhabi_Grand_Prix"
     },
     "races": 20,
-    "season": {
-      "text": "2017",
-      "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2018",
+      "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Mercedes",
@@ -2382,13 +2386,13 @@
       "url": "https://en.wikipedia.org/wiki/2018_Abu_Dhabi_Grand_Prix"
     },
     "races": 21,
-    "season": {
-      "text": "2018",
-      "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2019",
+      "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Mercedes",
@@ -2415,13 +2419,13 @@
       "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
     },
     "races": 21,
-    "season": {
-      "text": "2019",
-      "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2020",
+      "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Mercedes",
@@ -2448,13 +2452,13 @@
       "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
     },
     "races": 17,
-    "season": {
-      "text": "2020",
-      "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2021",
+      "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Mercedes",
@@ -2481,13 +2485,13 @@
       "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
     },
     "races": 22,
-    "season": {
-      "text": "2021",
-      "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-    },
     "winners": 6
   },
   {
+    "season": {
+      "text": "2022",
+      "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Red Bull",
@@ -2518,13 +2522,13 @@
       "url": "https://en.wikipedia.org/wiki/2022_Abu_Dhabi_Grand_Prix"
     },
     "races": 22,
-    "season": {
-      "text": "2022",
-      "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-    },
     "winners": 5
   },
   {
+    "season": {
+      "text": "2023",
+      "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "Red Bull",
@@ -2555,13 +2559,13 @@
       "url": "https://en.wikipedia.org/wiki/2023_Abu_Dhabi_Grand_Prix"
     },
     "races": 22,
-    "season": {
-      "text": "2023",
-      "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
-    },
     "winners": 3
   },
   {
+    "season": {
+      "text": "2024",
+      "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -2592,13 +2596,13 @@
       "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
     },
     "races": 24,
-    "season": {
-      "text": "2024",
-      "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
-    },
     "winners": 7
   },
   {
+    "season": {
+      "text": "2025",
+      "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+    },
     "constructors_champion": [
       {
         "text": "McLaren",
@@ -2629,13 +2633,13 @@
       "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
     },
     "races": 24,
-    "season": {
-      "text": "2025",
-      "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
-    },
     "winners": 4
   },
   {
+    "season": {
+      "text": "2026",
+      "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+    },
     "constructors_champion": [],
     "countries": 21,
     "drivers_champion_team": [],
@@ -2648,10 +2652,6 @@
       "url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix"
     },
     "races": 24,
-    "season": {
-      "text": "2026",
-      "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-    },
     "winners": 1
   }
 ]
