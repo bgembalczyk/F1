@@ -23,13 +23,12 @@ from scripts.lib.check_runner import run_cli  # noqa: E402
 from scripts.lib.known_typos import run_known_typos_check  # noqa: E402
 
 
-def run_check() -> list[str]:
-    return run_known_typos_check(REPO_ROOT)
-
-
 def main(argv: list[str] | None = None) -> int:
     del argv
-    return run_cli("known-module-typos", run_check)
+    return run_cli(
+        "known-module-typos",
+        lambda: run_known_typos_check(REPO_ROOT),
+    )
 
 
 if __name__ == "__main__":
