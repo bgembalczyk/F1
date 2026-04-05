@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 from scrapers.base.options import ScraperOptions
 from scrapers.constructors.constructors_list import ConstructorsListScraper
 
@@ -59,9 +61,6 @@ def test_constructors_list_scraper_exports_split_csv_files(tmp_path) -> None:
     assert (tmp_path / "constructors_former_constructors.csv").exists()
     assert (tmp_path / "constructors_indianapolis_only_constructors.csv").exists()
     assert (tmp_path / "constructors_privateer_teams.csv").exists()
-
-
-import pytest
 
 
 def test_constructors_list_scraper_rejects_invalid_scope() -> None:

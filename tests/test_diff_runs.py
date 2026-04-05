@@ -199,9 +199,11 @@ def test_main_exits_with_zero_on_identical_dirs(tmp_path: Path) -> None:
     (left / "file.txt").write_text("same", encoding="utf-8")
     (right / "file.txt").write_text("same", encoding="utf-8")
 
-    with patch("sys.argv", ["diff_runs", str(left), str(right)]):
-        with pytest.raises(SystemExit) as exc_info:
-            dr.main()
+    with (
+        patch("sys.argv", ["diff_runs", str(left), str(right)]),
+        pytest.raises(SystemExit) as exc_info,
+    ):
+        dr.main()
     assert exc_info.value.code == 0
 
 
@@ -214,7 +216,9 @@ def test_main_exits_with_one_on_different_dirs(tmp_path: Path) -> None:
     (left / "file.txt").write_text("old", encoding="utf-8")
     (right / "file.txt").write_text("new", encoding="utf-8")
 
-    with patch("sys.argv", ["diff_runs", str(left), str(right)]):
-        with pytest.raises(SystemExit) as exc_info:
-            dr.main()
+    with (
+        patch("sys.argv", ["diff_runs", str(left), str(right)]),
+        pytest.raises(SystemExit) as exc_info,
+    ):
+        dr.main()
     assert exc_info.value.code == 1

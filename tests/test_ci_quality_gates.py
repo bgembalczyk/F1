@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import ast
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
@@ -11,6 +11,9 @@ from scripts.ci import enforce_function_complexity
 from scripts.ci import enforce_no_new_prints
 from scripts.ci import enforce_source_name_magic_strings
 from scripts.ci import enforce_structural_quality
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 EXPECTED_METHOD_CALL_COUNT = 2
 DEFAULT_MAX_FUNCTION_LINES = 100

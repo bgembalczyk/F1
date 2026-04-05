@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
-from pathlib import Path
+from typing import TYPE_CHECKING
 from unittest.mock import patch
 
 import pytest
 
 from scripts.docs import generate_command_migration_map as gcm
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 # ---------------------------------------------------------------------------
 # build_generated_section
@@ -91,9 +94,11 @@ def test_main_check_mode_reports_not_in_sync_when_stale(
     fake_doc = tmp_path / "MODULE_BOUNDARIES.md"
     fake_doc.write_text(stale_content, encoding="utf-8")
 
-    with patch.object(gcm, "DOC_PATH", fake_doc):
-        with patch("sys.argv", ["generate_command_migration_map", "--check"]):
-            result = gcm.main()
+    with (
+        patch.object(gcm, "DOC_PATH", fake_doc),
+        patch("sys.argv", ["generate_command_migration_map", "--check"]),
+    ):
+        result = gcm.main()
 
     # Since content is stale, should return 1
     assert result == 1
@@ -132,9 +137,11 @@ def test_main_write_mode_writes_to_doc(tmp_path: Path) -> None:
     fake_doc = tmp_path / "MODULE_BOUNDARIES.md"
     fake_doc.write_text(doc_content, encoding="utf-8")
 
-    with patch.object(gcm, "DOC_PATH", fake_doc):
-        with patch("sys.argv", ["generate_command_migration_map", "--write"]):
-            result = gcm.main()
+    with (
+        patch.object(gcm, "DOC_PATH", fake_doc),
+        patch("sys.argv", ["generate_command_migration_map", "--write"]),
+    ):
+        result = gcm.main()
     assert result == 0
     updated = fake_doc.read_text(encoding="utf-8")
     assert "Old" not in updated
