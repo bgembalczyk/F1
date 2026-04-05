@@ -72,7 +72,7 @@ _MARKER_BY_PATTERN: tuple[tuple[str, str], ...] = (
 )
 
 
-def _marker_for_path(path: str) -> str:
+def marker_for_path(path: str) -> str:
     """Map test file path to a run-profile marker.
 
     Konwencja markerów przypisuje dokładnie jeden marker profilowy na plik:
@@ -104,11 +104,11 @@ def _marker_for_path(path: str) -> str:
 
 def pytest_collection_modifyitems(items: list[pytest.Item]) -> None:
     for item in items:
-        marker = _marker_for_path(str(Path(item.fspath)))
+        marker = marker_for_path(str(Path(item.fspath)))
         item.add_marker(getattr(pytest.mark, marker))
 
 
-def _selected_profile_markers(markexpr: str) -> set[str]:
+def selected_profile_markers(markexpr: str) -> set[str]:
     """Return explicitly requested profile markers from ``-m`` expression."""
 
     if not markexpr.strip():
@@ -135,7 +135,7 @@ def pytest_ignore_collect(
     if collection_path.suffix != ".py":
         return False
 
-    selected_markers = _selected_profile_markers(config.option.markexpr or "")
+    selected_markers = selected_profile_markers(config.option.markexpr or "")
     if not selected_markers:
         return False
 
