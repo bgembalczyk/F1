@@ -8,6 +8,8 @@ from scrapers.base.results import ScrapeResult
 
 class JsonFormatter:
     _PINNED_FRONT_KEYS: tuple[str, ...] = (
+        "driver",
+        "team",
         "season",
         "grand_prix",
         "event",
