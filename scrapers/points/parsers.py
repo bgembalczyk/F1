@@ -3,8 +3,11 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from models.services import parse_seasons
+from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
 from scrapers.points.constants import SHORTENED_RACE_EXPECTED_HEADERS
+from scrapers.points.constants import SPRINT_POSITIONS
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
@@ -60,6 +63,16 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
         return column_map
 
 
+_SPRINT_DISQUALIFYING_HEADERS: frozenset[str] = frozenset(
+    re.sub(r"[^a-z0-9]+", "", h.lower())
+    for h in ("9th", "10th", "Fastest lap", "Race length completed")
+)
+
+_SPRINT_POSITION_KEYS: frozenset[str] = frozenset(
+    pos.lower() for pos in SPRINT_POSITIONS
+)
+
+
 class SprintPointsTableParser(WikiTableBaseParser):
     table_type = "points_sprint_races"
     missing_columns_policy = "ignore"
@@ -70,6 +83,8 @@ class SprintPointsTableParser(WikiTableBaseParser):
         expected = {
             _normalize_header(header) for header in SPRINT_QUALIFYING_EXPECTED_HEADERS
         }
+        if _SPRINT_DISQUALIFYING_HEADERS & normalized_headers:
+            return False
         return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
@@ -83,6 +98,28 @@ class SprintPointsTableParser(WikiTableBaseParser):
             )
             for header in headers
         }
+
+    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().parse(table_data)
+        if result is None:
+            return None
+        result["domain_rows"] = [
+            self._apply_schema_transforms(row) for row in result["domain_rows"]
+        ]
+        return result
+
+    @staticmethod
+    def _apply_schema_transforms(row: dict[str, Any]) -> dict[str, Any]:
+        transformed: dict[str, Any] = {}
+        for key, value in row.items():
+            text = value if isinstance(value, str) else ""
+            if key == "seasons":
+                transformed[key] = [s.to_dict() for s in parse_seasons(text)]
+            elif key in _SPRINT_POSITION_KEYS:
+                transformed[key] = parse_int_from_text(text)
+            else:
+                transformed[key] = value
+        return transformed
 
 
 class ShortenedRacesPointsTableParser(WikiTableBaseParser):
