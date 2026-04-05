@@ -489,7 +489,7 @@ def test_season_column_logs_applied_rule_with_source(caplog) -> None:
     with caplog.at_level("INFO"):
         col.apply(_ctx("1990 (with Subaru power)"), record)
 
-    assert "Applied rule 'engine' in domain 'entity'" in caplog.text
+    assert "Applied rule 'engine_constructors' in domain 'entity'" in caplog.text
     assert "for source 'https://en.wikipedia.org'" in caplog.text
 
 
