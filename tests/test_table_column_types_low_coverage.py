@@ -5,6 +5,7 @@ import pytest
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.range import RangeColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.time_range import TimeRangeColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
@@ -144,6 +145,44 @@ def test_unit_column_edge_case_partial_range_uses_first_value() -> None:
 
 
 # ---- dsl/serialization.py ----
+
+
+def test_seasons_column_builds_urls_using_split_era_rules_without_links() -> None:
+    parsed = SeasonsColumn().parse(_ctx("1979, 1981"))
+
+    assert parsed == [
+        {
+            "year": 1979,
+            "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season",
+        },
+        {
+            "year": 1981,
+            "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
+        },
+    ]
+
+
+def test_seasons_column_derived_urls_respect_boundary_when_range_crosses_1980() -> None:
+    parsed = SeasonsColumn().parse(
+        _ctx(
+            "1979-1981",
+            links=[
+                {
+                    "text": "1979",
+                    "url": "https://example.test/wiki/1979_Formula_One_season",
+                },
+            ],
+        ),
+    )
+
+    assert parsed == [
+        {"year": 1979, "url": "https://example.test/wiki/1979_Formula_One_season"},
+        {"year": 1980, "url": "https://example.test/wiki/1980_Formula_One_season"},
+        {
+            "year": 1981,
+            "url": "https://example.test/wiki/1981_Formula_One_World_Championship",
+        },
+    ]
 
 
 def test_serialize_value_handles_primitives_types_and_callables() -> None:

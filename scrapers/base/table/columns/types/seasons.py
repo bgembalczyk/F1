@@ -15,7 +15,7 @@ _YEAR_IN_URL_PATTERN = re.compile(r"(?<!\d)\d{4}(?!\d)")
 class SeasonsColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         season_refs = parse_seasons(ctx.clean_text)
-        if not season_refs or not ctx.links:
+        if not season_refs:
             return [season.to_dict() for season in season_refs]
 
         url_by_year: dict[str, str] = {}
@@ -25,15 +25,12 @@ class SeasonsColumn(BaseColumn):
             if _YEAR_PATTERN.match(text) and url:
                 url_by_year[text] = url
 
-        if not url_by_year:
-            return [season.to_dict() for season in season_refs]
-
         result = []
         for season in season_refs:
             year_str = str(season.year)
             url = url_by_year.get(year_str) or self._derive_url(year_str, url_by_year)
             if url is None:
-                url = season.url
+                url = self._build_season_url(year_str)
             result.append(SeasonRef(year=season.year, url=url).to_dict())
         return result
 
@@ -42,9 +39,25 @@ class SeasonsColumn(BaseColumn):
         for linked_year, linked_url in url_by_year.items():
             match = _YEAR_IN_URL_PATTERN.search(linked_url)
             if match and match.group() == linked_year:
+                if "/wiki/" in linked_url:
+                    base = linked_url.split("/wiki/", 1)[0]
+                    return f"{base}/wiki/{SeasonsColumn._season_page_title(year)}"
                 return (
                     linked_url[: match.start()]
                     + year
                     + linked_url[match.end() :]
                 )
         return None
+
+    @staticmethod
+    def _build_season_url(year: str) -> str:
+        return f"https://en.wikipedia.org/wiki/{SeasonsColumn._season_page_title(year)}"
+
+    @staticmethod
+    def _season_page_title(year: str) -> str:
+        season_type = (
+            "Formula_One_season"
+            if int(year) <= 1980
+            else "Formula_One_World_Championship"
+        )
+        return f"{year}_{season_type}"
