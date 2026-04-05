@@ -3,16 +3,11 @@ from __future__ import annotations
 
 import ast
 from pathlib import Path
-from typing import TYPE_CHECKING
 from unittest.mock import patch
 
 import pytest
 
 from scripts.ci import enforce_diff_quality_guards as guards
-
-if TYPE_CHECKING:
-    pass
-
 
 # ---------------------------------------------------------------------------
 # Violation.format()
@@ -44,7 +39,8 @@ def test_parse_args_parses_base_and_head_sha() -> None:
 
 @pytest.mark.unit()
 def test_iter_added_python_lines_skips_non_python_files(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
     result = guards._iter_added_python_lines({"README.md": {1}})
@@ -53,7 +49,8 @@ def test_iter_added_python_lines_skips_non_python_files(
 
 @pytest.mark.unit()
 def test_iter_added_python_lines_skips_missing_file(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
     result = guards._iter_added_python_lines({"nonexistent.py": {1}})
@@ -62,7 +59,8 @@ def test_iter_added_python_lines_skips_missing_file(
 
 @pytest.mark.unit()
 def test_iter_added_python_lines_returns_line_tuples(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     py_file = tmp_path / "module.py"
     py_file.write_text("line1\nline2\nline3\n", encoding="utf-8")
@@ -78,7 +76,8 @@ def test_iter_added_python_lines_returns_line_tuples(
 
 @pytest.mark.unit()
 def test_iter_added_python_lines_skips_out_of_bounds_lines(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     py_file = tmp_path / "mod.py"
     py_file.write_text("x = 1\n", encoding="utf-8")
@@ -94,7 +93,8 @@ def test_iter_added_python_lines_skips_out_of_bounds_lines(
 
 @pytest.mark.unit()
 def test_check_new_prints_detects_print_call(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     py_file = tmp_path / "mod.py"
     py_file.write_text("print('hello')\n", encoding="utf-8")
@@ -106,7 +106,8 @@ def test_check_new_prints_detects_print_call(
 
 @pytest.mark.unit()
 def test_check_new_prints_allows_non_print_lines(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     py_file = tmp_path / "mod.py"
     py_file.write_text("x = 1\n", encoding="utf-8")
@@ -122,7 +123,8 @@ def test_check_new_prints_allows_non_print_lines(
 
 @pytest.mark.unit()
 def test_check_critical_defaults_duplication_detects_duplicate_literal(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     from scripts.ci.quality_gate_constants import CRITICAL_DEFAULT_LITERALS
 
@@ -139,7 +141,8 @@ def test_check_critical_defaults_duplication_detects_duplicate_literal(
 
 @pytest.mark.unit()
 def test_check_critical_defaults_skips_central_defaults_file(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     from scripts.ci.quality_gate_constants import CRITICAL_DEFAULT_LITERALS
 
@@ -164,7 +167,8 @@ def test_check_critical_defaults_skips_central_defaults_file(
 
 @pytest.mark.unit()
 def test_iter_python_asts_skips_non_python(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
     result = guards._iter_python_asts({"README.md": {1}})
@@ -173,7 +177,8 @@ def test_iter_python_asts_skips_non_python(
 
 @pytest.mark.unit()
 def test_iter_python_asts_skips_missing_files(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
     result = guards._iter_python_asts({"missing.py": {1}})
@@ -182,7 +187,8 @@ def test_iter_python_asts_skips_missing_files(
 
 @pytest.mark.unit()
 def test_iter_python_asts_skips_syntax_errors(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     py_file = tmp_path / "bad.py"
     py_file.write_text("def broken(:\n", encoding="utf-8")
@@ -193,7 +199,8 @@ def test_iter_python_asts_skips_syntax_errors(
 
 @pytest.mark.unit()
 def test_iter_python_asts_returns_ast_tuple(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     py_file = tmp_path / "mod.py"
     py_file.write_text("x = 1\n", encoding="utf-8")
@@ -224,7 +231,9 @@ def test_is_unjustified_broad_exception_returns_false_for_non_added_line() -> No
         if isinstance(node, ast.ExceptHandler):
             # line 3, but we say only line 1 was added
             assert not guards._is_unjustified_broad_exception(
-                node, {1}, code.splitlines()
+                node,
+                {1},
+                code.splitlines(),
             )
             break
 
@@ -236,7 +245,9 @@ def test_is_unjustified_broad_exception_returns_false_for_specific_exception() -
     for node in ast.walk(tree):
         if isinstance(node, ast.ExceptHandler):
             assert not guards._is_unjustified_broad_exception(
-                node, {3}, code.splitlines()
+                node,
+                {3},
+                code.splitlines(),
             )
             break
 
@@ -286,10 +297,7 @@ def test_extract_target_tuple_multiple_targets_returns_none() -> None:
 
 @pytest.mark.unit()
 def test_extract_runner_map_keys_returns_dict_string_keys(tmp_path: Path) -> None:
-    code = (
-        "def build_map():\n"
-        "    return {'key1': 1, 'key2': 2}\n"
-    )
+    code = "def build_map():\n    return {'key1': 1, 'key2': 2}\n"
     py_file = tmp_path / "registry.py"
     py_file.write_text(code, encoding="utf-8")
     result = guards._extract_runner_map_keys(py_file, "build_map")
@@ -352,7 +360,8 @@ def test_broad_exception_requires_justification_annotation(
 
 
 def test_broad_exception_with_marker_is_allowed(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     test_file = tmp_path / "sample.py"
     test_file.write_text(
@@ -374,7 +383,8 @@ def test_registry_implementation_drift_check_passes_for_current_repo() -> None:
 
 @pytest.mark.unit()
 def test_check_registry_drift_returns_violation_when_registries_empty(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     empty_file = tmp_path / "empty.py"
     empty_file.write_text("x = 1\n", encoding="utf-8")
@@ -416,14 +426,16 @@ def test_extract_string_tuple_assignment_returns_empty_for_missing(
 
 @pytest.mark.unit()
 def test_main_returns_zero_when_no_violations(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
 
     with patch.object(guards, "_check_registry_implementation_drift", return_value=[]):
         with patch("scripts.ci.git_diff.list_changed_files", return_value=[]):
             with patch(
-                "scripts.ci.git_diff.build_added_lines_map", return_value={}
+                "scripts.ci.git_diff.build_added_lines_map",
+                return_value={},
             ):
                 result = guards.main(["--base-sha", "abc", "--head-sha", "def"])
     assert result == 0
@@ -431,7 +443,9 @@ def test_main_returns_zero_when_no_violations(
 
 @pytest.mark.unit()
 def test_main_returns_one_when_violations_exist(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
 ) -> None:
     violation = guards.Violation(path="src/foo.py", line=1, message="bad print")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
@@ -439,20 +453,25 @@ def test_main_returns_one_when_violations_exist(
     with patch.object(guards, "_check_registry_implementation_drift", return_value=[]):
         with patch.object(guards, "_check_new_prints", return_value=[violation]):
             with patch.object(
-                guards, "_check_critical_defaults_duplication", return_value=[]
+                guards,
+                "_check_critical_defaults_duplication",
+                return_value=[],
             ):
                 with patch.object(
                     guards,
                     "_check_broad_exceptions_with_justification",
                     return_value=[],
                 ):
-                    with patch("scripts.ci.git_diff.list_changed_files", return_value=[]):
+                    with patch(
+                        "scripts.ci.git_diff.list_changed_files",
+                        return_value=[],
+                    ):
                         with patch(
                             "scripts.ci.git_diff.build_added_lines_map",
                             return_value={},
                         ):
                             result = guards.main(
-                                ["--base-sha", "abc", "--head-sha", "def"]
+                                ["--base-sha", "abc", "--head-sha", "def"],
                             )
     assert result == 1
     captured = capsys.readouterr()

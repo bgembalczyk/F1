@@ -1,4 +1,5 @@
 """Unit tests for scripts/docs/generate_command_migration_map.py."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -7,7 +8,6 @@ from unittest.mock import patch
 import pytest
 
 from scripts.docs import generate_command_migration_map as gcm
-
 
 # ---------------------------------------------------------------------------
 # build_generated_section
@@ -128,9 +128,7 @@ def test_main_check_mode_reports_ok_when_in_sync(
 @pytest.mark.unit()
 def test_main_write_mode_writes_to_doc(tmp_path: Path) -> None:
     # Create a temporary doc with the required markers
-    doc_content = (
-        f"Prefix\n{gcm.BEGIN_MARKER}\nOld\n{gcm.END_MARKER}\nSuffix\n"
-    )
+    doc_content = f"Prefix\n{gcm.BEGIN_MARKER}\nOld\n{gcm.END_MARKER}\nSuffix\n"
     fake_doc = tmp_path / "MODULE_BOUNDARIES.md"
     fake_doc.write_text(doc_content, encoding="utf-8")
 

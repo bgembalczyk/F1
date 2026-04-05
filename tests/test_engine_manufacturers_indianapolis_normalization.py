@@ -47,7 +47,9 @@ def test_indianapolis_record_normalization_omits_url_when_include_urls_disabled(
 
 
 def test_engine_manufacturers_table_parser_matches_valid_headers() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersTableParser
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersTableParser,
+    )
 
     parser = EngineManufacturersTableParser()
     headers = ["Manufacturer", "Engines built in", "Seasons", "Wins", "Points"]
@@ -55,14 +57,18 @@ def test_engine_manufacturers_table_parser_matches_valid_headers() -> None:
 
 
 def test_engine_manufacturers_table_parser_rejects_missing_required_headers() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersTableParser
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersTableParser,
+    )
 
     parser = EngineManufacturersTableParser()
     assert not parser.matches(["Name", "Year"], {})
 
 
 def test_engine_manufacturers_table_parser_maps_known_columns() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersTableParser
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersTableParser,
+    )
 
     parser = EngineManufacturersTableParser()
     result = parser.map_columns(["Manufacturer", "Wins", "Points"])
@@ -136,10 +142,12 @@ def test_indianapolis_only_list_parser_handles_no_anchor() -> None:
 
 
 def test_engine_manufacturers_list_scraper_rejects_invalid_scope() -> None:
-    from scrapers.base.options import ScraperOptions
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
-
     import pytest
+
+    from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     with pytest.raises(ValueError, match="Unsupported export_scope"):
         EngineManufacturersListScraper(
@@ -154,8 +162,10 @@ def test_engine_manufacturers_list_scraper_rejects_invalid_scope() -> None:
 
 
 def test_iter_sub_sections_returns_sub_and_sub_sub() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
     from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
     node = {
@@ -168,8 +178,10 @@ def test_iter_sub_sections_returns_sub_and_sub_sub() -> None:
 
 
 def test_iter_sub_sections_skips_non_dict_values() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
     from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
     node = {"sub_sections": [{"name": "A"}, "not a dict"]}
@@ -183,32 +195,42 @@ def test_iter_sub_sections_skips_non_dict_values() -> None:
 
 
 def test_extract_element_records_returns_empty_for_non_list_kind() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
     from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
     assert scraper._extract_element_records({"kind": "table"}) == []
 
 
 def test_extract_element_records_returns_empty_for_missing_data() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
     from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
     assert scraper._extract_element_records({"kind": "list"}) == []
 
 
 def test_extract_element_records_returns_empty_for_non_dict_data() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
     from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
-    assert scraper._extract_element_records({"kind": "list", "data": "not a dict"}) == []
+    assert (
+        scraper._extract_element_records({"kind": "list", "data": "not a dict"}) == []
+    )
 
 
 def test_extract_element_records_returns_empty_for_non_list_items() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
     from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
     element = {"kind": "list", "data": {"items": "not a list"}}
@@ -216,8 +238,10 @@ def test_extract_element_records_returns_empty_for_non_list_items() -> None:
 
 
 def test_extract_element_records_normalizes_items() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
     from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
     element = {
@@ -225,7 +249,7 @@ def test_extract_element_records_normalizes_items() -> None:
         "data": {
             "items": [
                 {"manufacturer": "Ferrari", "manufacturer_url": "/wiki/Ferrari"},
-            ]
+            ],
         },
     }
     result = scraper._extract_element_records(element)
@@ -238,8 +262,10 @@ def test_extract_element_records_normalizes_items() -> None:
 
 
 def test_visit_indianapolis_sections_collects_records_from_elements() -> None:
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
     from scrapers.base.options import ScraperOptions
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))
     node = {
@@ -247,10 +273,15 @@ def test_visit_indianapolis_sections_collects_records_from_elements() -> None:
             {
                 "kind": "list",
                 "data": {
-                    "items": [{"manufacturer": "Ferrari", "manufacturer_url": "/wiki/Ferrari"}]
+                    "items": [
+                        {
+                            "manufacturer": "Ferrari",
+                            "manufacturer_url": "/wiki/Ferrari",
+                        },
+                    ],
                 },
-            }
-        ]
+            },
+        ],
     }
     records: list = []
     scraper._visit_indianapolis_sections(node, records)
@@ -271,7 +302,7 @@ def test_indianapolis_only_sub_section_parser_handles_non_list_elements() -> Non
     payload = {
         "elements": [
             {"kind": "table", "raw_html_fragment": "<table></table>"},
-        ]
+        ],
     }
     # Should not raise or modify table elements
     parser._apply_indianapolis_only_list_parser(payload)
@@ -289,8 +320,8 @@ def test_indianapolis_only_sub_section_parser_processes_list_elements() -> None:
             {
                 "kind": "list",
                 "raw_html_fragment": "<ul><li><a href='/wiki/Ferrari'>Ferrari</a></li></ul>",
-            }
-        ]
+            },
+        ],
     }
     parser._apply_indianapolis_only_list_parser(payload)
     elem = payload["elements"][0]
@@ -310,9 +341,9 @@ def test_indianapolis_only_sub_section_parser_processes_nested_dicts() -> None:
                 {
                     "kind": "list",
                     "raw_html_fragment": "<ul><li>Test</li></ul>",
-                }
-            ]
-        }
+                },
+            ],
+        },
     }
     parser._apply_indianapolis_only_list_parser(payload)
     # Should process nested dict
@@ -332,10 +363,10 @@ def test_indianapolis_only_sub_section_parser_processes_nested_lists() -> None:
                     {
                         "kind": "list",
                         "raw_html_fragment": "<ul><li>Item</li></ul>",
-                    }
-                ]
-            }
-        ]
+                    },
+                ],
+            },
+        ],
     }
     parser._apply_indianapolis_only_list_parser(payload)
     # Should process lists of dicts recursively
@@ -358,7 +389,7 @@ def test_engine_manufacturers_section_parser_processes_table_elements() -> None:
         "elements": [
             {"kind": "table", "data": {"headers": ["Name"], "rows": []}},
             {"kind": "table", "data": None},
-        ]
+        ],
     }
     parser._apply_engine_table_parser(payload)
     # Should not raise

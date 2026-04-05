@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import ast
 from pathlib import Path
-from typing import TYPE_CHECKING
 
 import pytest
 
@@ -12,9 +11,6 @@ from scripts.ci import enforce_function_complexity
 from scripts.ci import enforce_no_new_prints
 from scripts.ci import enforce_source_name_magic_strings
 from scripts.ci import enforce_structural_quality
-
-if TYPE_CHECKING:
-    pass
 
 
 def test_function_complexity_detects_length_nesting_and_branching(
@@ -388,7 +384,6 @@ def my_func():
 @pytest.mark.unit()
 def test_is_redundant_alias_body_returns_false_for_empty_body() -> None:
     import ast
-    from pathlib import Path
 
     visitor = enforce_structural_quality.StructuralVisitor(file_path="test.py")
     visitor.max_function_lines = 100
@@ -499,7 +494,7 @@ def test_body_spans_multiple_lines_returns_false_for_empty_body() -> None:
     assert isinstance(func, ast.FunctionDef)
     func.body = []
     result = enforce_structural_quality.StructuralVisitor._body_spans_multiple_lines(
-        func
+        func,
     )
     assert not result
 
@@ -516,7 +511,10 @@ def test_evaluate_file_detects_long_async_functions(tmp_path: Path) -> None:
     py_file = tmp_path / "async_fn.py"
     py_file.write_text(code, encoding="utf-8")
     violations = enforce_structural_quality.evaluate_file(
-        py_file, max_function_lines=50, max_class_lines=500, max_file_lines=10000
+        py_file,
+        max_function_lines=50,
+        max_class_lines=500,
+        max_file_lines=10000,
     )
     assert any("long_async_fn" in v for v in violations)
 
@@ -548,14 +546,17 @@ def test_should_skip_returns_false_for_regular_path() -> None:
 @pytest.mark.unit()
 def test_iter_python_files_filters_by_extension() -> None:
     result = enforce_structural_quality._iter_python_files(
-        ["src/foo.py", "src/bar.txt", "README.md"]
+        ["src/foo.py", "src/bar.txt", "README.md"],
     )
     assert len(result) == 1
     assert str(result[0]) == "src/foo.py"
 
 
 @pytest.mark.unit()
-def test_iter_python_files_empty_list_returns_disk_files(tmp_path: Path, monkeypatch) -> None:
+def test_iter_python_files_empty_list_returns_disk_files(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
     (tmp_path / "mod.py").write_text("x = 1\n", encoding="utf-8")
     monkeypatch.chdir(tmp_path)
     result = enforce_structural_quality._iter_python_files([])
@@ -572,7 +573,10 @@ def test_iter_python_files_empty_list_returns_disk_files(tmp_path: Path, monkeyp
 def test_evaluate_file_handles_os_error(tmp_path: Path) -> None:
     missing = tmp_path / "nonexistent.py"
     violations = enforce_structural_quality.evaluate_file(
-        missing, max_function_lines=100, max_class_lines=500, max_file_lines=1000
+        missing,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
     )
     assert len(violations) == 1
     assert "unable to read" in violations[0]
@@ -583,7 +587,10 @@ def test_evaluate_file_handles_syntax_error(tmp_path: Path) -> None:
     bad_file = tmp_path / "bad.py"
     bad_file.write_text("def broken(:\n", encoding="utf-8")
     violations = enforce_structural_quality.evaluate_file(
-        bad_file, max_function_lines=100, max_class_lines=500, max_file_lines=1000
+        bad_file,
+        max_function_lines=100,
+        max_class_lines=500,
+        max_file_lines=1000,
     )
     # No violations from syntax error (just skip parsing)
     assert isinstance(violations, list)
@@ -605,7 +612,7 @@ def test_parse_args_uses_defaults() -> None:
 @pytest.mark.unit()
 def test_parse_args_accepts_custom_limits() -> None:
     args = enforce_structural_quality.parse_args(
-        ["--max-function-lines", "50", "--max-class-lines", "200"]
+        ["--max-function-lines", "50", "--max-class-lines", "200"],
     )
     assert args.max_function_lines == 50
     assert args.max_class_lines == 200
@@ -632,12 +639,17 @@ def test_main_with_clean_file_returns_zero(tmp_path: Path) -> None:
 
 
 @pytest.mark.unit()
-def test_main_with_violations_returns_one(tmp_path: Path, capsys: pytest.CaptureFixture) -> None:
+def test_main_with_violations_returns_one(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture,
+) -> None:
     long_body = "\n    ".join(f"x{i} = {i}" for i in range(200))
     code = f"def super_long():\n    {long_body}\n"
     py_file = tmp_path / "bad.py"
     py_file.write_text(code, encoding="utf-8")
-    result = enforce_structural_quality.main([str(py_file), "--max-function-lines", "5"])
+    result = enforce_structural_quality.main(
+        [str(py_file), "--max-function-lines", "5"],
+    )
     assert result == 1
     assert "violations" in capsys.readouterr().out.lower()
 

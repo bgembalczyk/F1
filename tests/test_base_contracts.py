@@ -150,14 +150,9 @@ def test_base_section_service_contract_requires_optional_dependencies() -> None:
         service.require_url()
 
 
-
 @pytest.mark.unit()
 def test_single_wiki_article_section_by_id_base_is_subclass_of_scraper_base() -> None:
     import inspect
-
-    from scrapers.base.single_wiki_article.section_selection_strategy import (
-        WikipediaSectionByIdSelectionStrategy,
-    )
 
     assert issubclass(SingleWikiArticleSectionByIdBase, SingleWikiArticleScraperBase)
     assert inspect.isabstract(SingleWikiArticleSectionByIdBase)
