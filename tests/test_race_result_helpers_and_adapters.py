@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from bs4 import BeautifulSoup
+
 from scrapers.base.adapters.row_background import HtmlRowBackgroundColorAdapter
 from scrapers.seasons.columns.helpers.race_result.background_mapper import (
     RaceResultBackgroundMapper,
@@ -17,7 +19,7 @@ from scrapers.seasons.columns.helpers.race_result.rules.mark_based_eligibility i
 from scrapers.seasons.helpers import season_filename
 
 # ---------------------------------------------------------------------------
-# seasons/helpers.py – season_filename
+# seasons/helpers.py - season_filename
 # ---------------------------------------------------------------------------
 
 
@@ -45,7 +47,7 @@ def test_season_filename_strips_whitespace() -> None:
 
 
 # ---------------------------------------------------------------------------
-# seasons/columns/helpers/race_result/helpers.py – append_note
+# seasons/columns/helpers/race_result/helpers.py - append_note
 # ---------------------------------------------------------------------------
 
 
@@ -217,13 +219,11 @@ def test_fatal_accident_rule_none_season_year_no_note() -> None:
 
 
 # ---------------------------------------------------------------------------
-# base/adapters/row_background.py – HtmlRowBackgroundColorAdapter
+# base/adapters/row_background.py - HtmlRowBackgroundColorAdapter
 # ---------------------------------------------------------------------------
 
 
 def _make_tag(html: str):
-    from bs4 import BeautifulSoup
-
     return BeautifulSoup(html, "html.parser").find("tr")
 
 

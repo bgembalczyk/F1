@@ -15,6 +15,16 @@ from scrapers.base.transformers.shortened_race_points import (
 from scrapers.points.helpers.parsers import extract_first_place_role
 from scrapers.points.helpers.parsers import seasons_key
 
+FIRST_PLACE_POINTS_1950 = 8
+FIRST_PLACE_POINTS_1960 = 9
+DRIVER_POINTS_2014 = 25
+CONSTRUCTOR_POINTS_2014 = 43
+POINTS_NO_SEASONS_PRIMARY = 10
+POINTS_NO_SEASONS_SECONDARY = 12
+GROUPED_RECORDS_COUNT = 2
+GROUP_A_RACE_LENGTH_POINTS_COUNT = 2
+SHORTENED_POINTS_75_PERCENT = 12
+
 # ---------------------------------------------------------------------------
 # points/helpers/parsers.py
 # ---------------------------------------------------------------------------
@@ -38,10 +48,10 @@ def test_seasons_key_returns_tuple_of_year_url() -> None:
 
 
 def test_extract_first_place_role_returns_role_and_value() -> None:
-    first_place = {"role": "driver", "value": 9}
+    first_place = {"role": "driver", "value": FIRST_PLACE_POINTS_1960}
     role, value = extract_first_place_role(first_place)
     assert role == "driver"
-    assert value == 9
+    assert value == FIRST_PLACE_POINTS_1960
 
 
 def test_extract_first_place_role_returns_none_role_when_no_role_key() -> None:
@@ -51,9 +61,9 @@ def test_extract_first_place_role_returns_none_role_when_no_role_key() -> None:
 
 
 def test_extract_first_place_role_returns_int_value_when_plain_int() -> None:
-    role, value = extract_first_place_role(9)
+    role, value = extract_first_place_role(FIRST_PLACE_POINTS_1960)
     assert role is None
-    assert value == 9
+    assert value == FIRST_PLACE_POINTS_1960
 
 
 def test_extract_first_place_role_returns_none_for_non_int_non_dict() -> None:
@@ -76,52 +86,55 @@ def test_extract_first_place_role_returns_none_for_none() -> None:
 def test_points_scoring_systems_history_transformer_plain_records() -> None:
     transformer = PointsScoringSystemsHistoryTransformer()
     records = [
-        {"seasons": [{"year": 1950}], "1st": 8, "2nd": 6},
-        {"seasons": [{"year": 1960}], "1st": 9, "2nd": 6},
+        {"seasons": [{"year": 1950}], "1st": FIRST_PLACE_POINTS_1950, "2nd": 6},
+        {"seasons": [{"year": 1960}], "1st": FIRST_PLACE_POINTS_1960, "2nd": 6},
     ]
     result = transformer.transform(records)
-    assert len(result) == 2
-    assert result[0]["1st"] == 8
-    assert result[1]["1st"] == 9
+    assert len(result) == GROUPED_RECORDS_COUNT
+    assert result[0]["1st"] == FIRST_PLACE_POINTS_1950
+    assert result[1]["1st"] == FIRST_PLACE_POINTS_1960
 
 
 def test_points_scoring_systems_history_transformer_merges_role_records() -> None:
     transformer = PointsScoringSystemsHistoryTransformer()
     seasons = [{"year": 2014, "url": "http://example.com/2014"}]
     records = [
-        {"seasons": seasons, "1st": {"role": "driver", "value": 25}},
-        {"seasons": seasons, "1st": {"role": "constructor", "value": 43}},
+        {"seasons": seasons, "1st": {"role": "driver", "value": DRIVER_POINTS_2014}},
+        {
+            "seasons": seasons,
+            "1st": {"role": "constructor", "value": CONSTRUCTOR_POINTS_2014},
+        },
     ]
     result = transformer.transform(records)
     assert len(result) == 1
     merged_first = result[0]["1st"]
-    assert merged_first["driver"] == 25
-    assert merged_first["constructor"] == 43
+    assert merged_first["driver"] == DRIVER_POINTS_2014
+    assert merged_first["constructor"] == CONSTRUCTOR_POINTS_2014
 
 
 def test_points_scoring_systems_history_transformer_handles_no_seasons() -> None:
     transformer = PointsScoringSystemsHistoryTransformer()
     records = [
-        {"seasons": None, "1st": 10},
-        {"seasons": None, "1st": 12},
+        {"seasons": None, "1st": POINTS_NO_SEASONS_PRIMARY},
+        {"seasons": None, "1st": POINTS_NO_SEASONS_SECONDARY},
     ]
     result = transformer.transform(records)
     # Both records map to key=None; the second is deduplicated
     assert len(result) == 1
-    assert result[0]["1st"] == 10
+    assert result[0]["1st"] == POINTS_NO_SEASONS_PRIMARY
 
 
 def test_points_scoring_systems_history_transformer_skips_non_role_duplicates() -> None:
     transformer = PointsScoringSystemsHistoryTransformer()
     seasons = [{"year": 1950, "url": None}]
     records = [
-        {"seasons": seasons, "1st": 8},
-        {"seasons": seasons, "1st": 9},
+        {"seasons": seasons, "1st": FIRST_PLACE_POINTS_1950},
+        {"seasons": seasons, "1st": FIRST_PLACE_POINTS_1960},
     ]
     result = transformer.transform(records)
     # Second record is simply skipped (key already present)
     assert len(result) == 1
-    assert result[0]["1st"] == 8
+    assert result[0]["1st"] == FIRST_PLACE_POINTS_1950
 
 
 # ---------------------------------------------------------------------------
@@ -136,13 +149,13 @@ def test_shortened_race_points_transformer_groups_by_seasons() -> None:
     records = [
         {"seasons": seasons_a, "75%": 6, "50%": 4},
         {"seasons": seasons_a, "90%": 5},
-        {"seasons": seasons_b, "75%": 8},
+        {"seasons": seasons_b, "75%": FIRST_PLACE_POINTS_1950},
     ]
     result = transformer.transform(records)
-    assert len(result) == 2
+    assert len(result) == GROUPED_RECORDS_COUNT
 
     group_a = next(r for r in result if r["seasons"] == seasons_a)
-    assert len(group_a["race_length_points"]) == 2
+    assert len(group_a["race_length_points"]) == GROUP_A_RACE_LENGTH_POINTS_COUNT
     assert {"75%": 6, "50%": 4} in group_a["race_length_points"]
 
     group_b = next(r for r in result if r["seasons"] == seasons_b)
@@ -156,7 +169,7 @@ def test_shortened_race_points_transformer_excludes_seasons_from_inner() -> None
     result = transformer.transform(records)
     inner = result[0]["race_length_points"][0]
     assert "seasons" not in inner
-    assert inner["75%"] == 12
+    assert inner["75%"] == SHORTENED_POINTS_75_PERCENT
 
 
 def test_shortened_race_points_transformer_empty_input() -> None:
