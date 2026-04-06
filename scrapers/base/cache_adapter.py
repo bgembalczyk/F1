@@ -1,9 +1,6 @@
 from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.source_adapter import SourceAdapter
 
-# Alias zachowujący dotychczasowe nazewnictwo po stronie scraperów.
-CacheBackend = TextCacheProtocol
-
 
 class CacheAdapter(SourceAdapter):
     """Cache'ujący adapter źródła oparty o interfejs cache."""
