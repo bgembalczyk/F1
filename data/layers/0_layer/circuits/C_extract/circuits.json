@@ -360,302 +360,6 @@
   },
   {
     "circuit": {
-      "text": "Autódromo do Estoril",
-      "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril"
-    },
-    "country": {
-      "text": "Portugal",
-      "url": "https://en.wikipedia.org/wiki/Portugal"
-    },
-    "direction": "Clockwise",
-    "location": {
-      "text": "Estoril",
-      "url": "https://en.wikipedia.org/wiki/Estoril"
-    },
-    "type": "Race circuit",
-    "racing_series": {
-      "formula_one": {
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Portuguese Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
-          }
-        ],
-        "grands_prix_held": 13,
-        "last_length_used_km": 4.36,
-        "last_length_used_mi": 2.709,
-        "seasons": [
-          {
-            "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
-            "year": 1984
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
-            "year": 1985
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
-            "year": 1986
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
-            "year": 1987
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
-            "year": 1988
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
-            "year": 1989
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
-            "year": 1990
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
-            "year": 1991
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
-            "year": 1992
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship",
-            "year": 1993
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship",
-            "year": 1994
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship",
-            "year": 1995
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship",
-            "year": 1996
-          }
-        ],
-        "turns": 13
-      }
-    }
-  },
-  {
-    "background": "FBCEB1",
-    "circuit": {
-      "text": "Autódromo Hermanos Rodríguez",
-      "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
-    },
-    "country": {
-      "text": "Mexico",
-      "url": "https://en.wikipedia.org/wiki/Mexico"
-    },
-    "direction": "Clockwise",
-    "location": {
-      "text": "Mexico City",
-      "url": "https://en.wikipedia.org/wiki/Mexico_City"
-    },
-    "type": "Race circuit",
-    "racing_series": {
-      "formula_one": {
-        "circuit_status": "current",
-        "grands_prix": [
-          {
-            "text": "Mexican Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Mexican_Grand_Prix"
-          },
-          {
-            "text": "Mexico City Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Mexico_City_Grand_Prix"
-          }
-        ],
-        "grands_prix_held": 25,
-        "last_length_used_km": 4.304,
-        "last_length_used_mi": 2.674,
-        "seasons": [
-          {
-            "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season",
-            "year": 1963
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
-            "year": 1964
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season",
-            "year": 1965
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season",
-            "year": 1966
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season",
-            "year": 1967
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season",
-            "year": 1968
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
-            "year": 1969
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season",
-            "year": 1970
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
-            "year": 1986
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
-            "year": 1987
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
-            "year": 1988
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
-            "year": 1989
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
-            "year": 1990
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
-            "year": 1991
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
-            "year": 1992
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
-            "year": 2015
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
-            "year": 2016
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
-            "year": 2017
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
-            "year": 2018
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
-            "year": 2019
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
-            "year": 2021
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
-            "year": 2022
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
-            "year": 2023
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-            "year": 2024
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
-            "year": 2025
-          }
-        ],
-        "turns": 17
-      }
-    }
-  },
-  {
-    "circuit": {
-      "text": "Autódromo Internacional do Rio de Janeiro",
-      "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_Nelson_Piquet"
-    },
-    "country": {
-      "text": "Brazil",
-      "url": "https://en.wikipedia.org/wiki/Brazil"
-    },
-    "direction": "Anti-clockwise",
-    "location": {
-      "text": "Rio de Janeiro",
-      "url": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
-    },
-    "type": "Race circuit",
-    "racing_series": {
-      "formula_one": {
-        "circuit_status": "former",
-        "grands_prix": [
-          {
-            "text": "Brazilian Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
-          }
-        ],
-        "grands_prix_held": 10,
-        "last_length_used_km": 5.031,
-        "last_length_used_mi": 3.126,
-        "seasons": [
-          {
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season",
-            "year": 1978
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
-            "year": 1981
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
-            "year": 1982
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship",
-            "year": 1983
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
-            "year": 1984
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
-            "year": 1985
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
-            "year": 1986
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
-            "year": 1987
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
-            "year": 1988
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
-            "year": 1989
-          }
-        ],
-        "turns": 11
-      }
-    }
-  },
-  {
-    "circuit": {
       "text": "Autodromo Internazionale del Mugello",
       "url": "https://en.wikipedia.org/wiki/Autodromo_Internazionale_del_Mugello"
     },
@@ -1394,6 +1098,302 @@
           {
             "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
             "year": 2025
+          }
+        ],
+        "turns": 11
+      }
+    }
+  },
+  {
+    "circuit": {
+      "text": "Autódromo do Estoril",
+      "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril"
+    },
+    "country": {
+      "text": "Portugal",
+      "url": "https://en.wikipedia.org/wiki/Portugal"
+    },
+    "direction": "Clockwise",
+    "location": {
+      "text": "Estoril",
+      "url": "https://en.wikipedia.org/wiki/Estoril"
+    },
+    "type": "Race circuit",
+    "racing_series": {
+      "formula_one": {
+        "circuit_status": "former",
+        "grands_prix": [
+          {
+            "text": "Portuguese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
+          }
+        ],
+        "grands_prix_held": 13,
+        "last_length_used_km": 4.36,
+        "last_length_used_mi": 2.709,
+        "seasons": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
+            "year": 1984
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
+            "year": 1985
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
+            "year": 1986
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
+            "year": 1987
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+            "year": 1988
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
+            "year": 1989
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
+            "year": 1990
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
+            "year": 1991
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
+            "year": 1992
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship",
+            "year": 1993
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship",
+            "year": 1994
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship",
+            "year": 1995
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship",
+            "year": 1996
+          }
+        ],
+        "turns": 13
+      }
+    }
+  },
+  {
+    "background": "FBCEB1",
+    "circuit": {
+      "text": "Autódromo Hermanos Rodríguez",
+      "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
+    },
+    "country": {
+      "text": "Mexico",
+      "url": "https://en.wikipedia.org/wiki/Mexico"
+    },
+    "direction": "Clockwise",
+    "location": {
+      "text": "Mexico City",
+      "url": "https://en.wikipedia.org/wiki/Mexico_City"
+    },
+    "type": "Race circuit",
+    "racing_series": {
+      "formula_one": {
+        "circuit_status": "current",
+        "grands_prix": [
+          {
+            "text": "Mexican Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Mexican_Grand_Prix"
+          },
+          {
+            "text": "Mexico City Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Mexico_City_Grand_Prix"
+          }
+        ],
+        "grands_prix_held": 25,
+        "last_length_used_km": 4.304,
+        "last_length_used_mi": 2.674,
+        "seasons": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season",
+            "year": 1963
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
+            "year": 1964
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season",
+            "year": 1965
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season",
+            "year": 1966
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season",
+            "year": 1967
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season",
+            "year": 1968
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
+            "year": 1969
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season",
+            "year": 1970
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
+            "year": 1986
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
+            "year": 1987
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+            "year": 1988
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
+            "year": 1989
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
+            "year": 1990
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
+            "year": 1991
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
+            "year": 1992
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
+            "year": 2015
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+            "year": 2016
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
+            "year": 2017
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
+            "year": 2018
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
+            "year": 2019
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+            "year": 2021
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+            "year": 2022
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+            "year": 2023
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+            "year": 2024
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+            "year": 2025
+          }
+        ],
+        "turns": 17
+      }
+    }
+  },
+  {
+    "circuit": {
+      "text": "Autódromo Internacional do Rio de Janeiro",
+      "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_Nelson_Piquet"
+    },
+    "country": {
+      "text": "Brazil",
+      "url": "https://en.wikipedia.org/wiki/Brazil"
+    },
+    "direction": "Anti-clockwise",
+    "location": {
+      "text": "Rio de Janeiro",
+      "url": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
+    },
+    "type": "Race circuit",
+    "racing_series": {
+      "formula_one": {
+        "circuit_status": "former",
+        "grands_prix": [
+          {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          }
+        ],
+        "grands_prix_held": 10,
+        "last_length_used_km": 5.031,
+        "last_length_used_mi": 3.126,
+        "seasons": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season",
+            "year": 1978
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
+            "year": 1981
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
+            "year": 1982
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship",
+            "year": 1983
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
+            "year": 1984
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
+            "year": 1985
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
+            "year": 1986
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
+            "year": 1987
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+            "year": 1988
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
+            "year": 1989
           }
         ],
         "turns": 11

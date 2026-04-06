@@ -4808,48 +4808,6 @@
   {
     "background": "#FBCEB1",
     "race_title": {
-      "text": "São Paulo Grand Prix",
-      "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Grand_Prix"
-    },
-    "racing_series": {
-      "formula_one": {
-        "circuits": 1,
-        "country": [
-          {
-            "text": "Brazil",
-            "url": "https://en.wikipedia.org/wiki/Brazil"
-          }
-        ],
-        "race_status": "active",
-        "total": 5,
-        "years_held": [
-          {
-            "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
-            "year": 2021
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
-            "year": 2022
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
-            "year": 2023
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-            "year": 2024
-          },
-          {
-            "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
-            "year": 2025
-          }
-        ]
-      }
-    }
-  },
-  {
-    "background": "#FBCEB1",
-    "race_title": {
       "text": "Saudi Arabian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Saudi_Arabian_Grand_Prix"
     },
@@ -5448,6 +5406,48 @@
           {
             "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
             "year": 1982
+          }
+        ]
+      }
+    }
+  },
+  {
+    "background": "#FBCEB1",
+    "race_title": {
+      "text": "São Paulo Grand Prix",
+      "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Grand_Prix"
+    },
+    "racing_series": {
+      "formula_one": {
+        "circuits": 1,
+        "country": [
+          {
+            "text": "Brazil",
+            "url": "https://en.wikipedia.org/wiki/Brazil"
+          }
+        ],
+        "race_status": "active",
+        "total": 5,
+        "years_held": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+            "year": 2021
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+            "year": 2022
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+            "year": 2023
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+            "year": 2024
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+            "year": 2025
           }
         ]
       }
