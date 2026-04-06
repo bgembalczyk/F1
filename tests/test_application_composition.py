@@ -25,10 +25,11 @@ def test_default_application_is_wired_with_expected_components(tmp_path: Path) -
     assert callable(layer_zero_executor._config_factories)  # noqa: SLF001
     assert layer_zero_executor._default_config_factory is not None  # noqa: SLF001
     assert layer_zero_executor._merger is not None  # noqa: SLF001
-    assert isinstance(layer_zero_executor._job_hook, CompositeLayerZeroJobHook)  # noqa: SLF001
-    assert any(  # noqa: SLF001
+    composite_job_hook = layer_zero_executor._job_hook  # noqa: SLF001
+    assert isinstance(composite_job_hook, CompositeLayerZeroJobHook)
+    assert any(
         isinstance(hook, MirrorConstructorsJobHook)
-        for hook in layer_zero_executor._job_hook._hooks
+        for hook in composite_job_hook.hooks
     )
     assert callable(layer_zero_executor._year_provider)  # noqa: SLF001
 
