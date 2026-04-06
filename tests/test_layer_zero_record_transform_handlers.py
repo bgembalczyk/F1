@@ -463,11 +463,10 @@ def test_races_domain_postprocess_sorts_by_season_and_grand_prix_or_event() -> N
         ],
     )
 
-    normalized = [
+    assert [
         (item["season"], item.get("grand_prix") or item.get("event"))
         for item in processed
-    ]
-    assert normalized == [
+    ] == [
         (2019, {"text": "Australian"}),
         (2019, {"text": "Goodwood Festival"}),
         (2020, {"text": "Monaco"}),

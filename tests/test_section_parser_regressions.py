@@ -311,7 +311,9 @@ def test_current_constructors_section_parser_retries_with_table_only_fragment() 
     ]
 
 
-def test_former_constructors_parser_indianapolis_only_uses_chassis_constructor() -> None:
+def test_former_constructors_parser_indianapolis_only_uses_chassis_constructor() -> (
+    None
+):
     html = """
     <html><body>
       <h3><span id="Indianapolis_500_only">Indianapolis 500 only</span></h3>
