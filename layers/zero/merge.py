@@ -405,7 +405,9 @@ def _transform_former_constructor(
     transformed: dict[str, object],
 ) -> dict[str, object]:
     if domain in {"chassis_constructors", "chassis", "constructor"}:
-        flattened = {key: value for key, value in transformed.items() if key != "constructor"}
+        flattened = {
+            key: value for key, value in transformed.items() if key != "constructor"
+        }
         flattened["status"] = CONSTRUCTOR_STATUS_FORMER
         return flattened
 
@@ -1079,12 +1081,8 @@ def _merge_duplicate_seasons(items: list[object]) -> list[object]:
 
 
 DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN: dict[str, tuple[DomainStep, ...]] = {
-    "circuits": (
-        DomainStep("sort_circuits_by_name", _sort_circuits_by_name),
-    ),
-    "countries": (
-        DomainStep("sort_countries_by_text", _sort_countries_by_text),
-    ),
+    "circuits": (DomainStep("sort_circuits_by_name", _sort_circuits_by_name),),
+    "countries": (DomainStep("sort_countries_by_text", _sort_countries_by_text),),
     "drivers": (
         DomainStep("merge_duplicate_drivers", _merge_duplicate_drivers),
         DomainStep("sort_drivers_by_name", _sort_drivers_by_name),
@@ -1113,9 +1111,7 @@ DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN: dict[str, tuple[DomainStep, ...]] = {
             _sort_races_by_season_and_grand_prix,
         ),
     ),
-    "sponsors": (
-        DomainStep("sort_sponsors_by_text", _sort_sponsors_by_text),
-    ),
+    "sponsors": (DomainStep("sort_sponsors_by_text", _sort_sponsors_by_text),),
     "chassis_constructors": (
         DomainStep(
             "sort_chassis_constructors_by_name",

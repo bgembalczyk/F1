@@ -79,12 +79,16 @@ def test_engine_manufacturers_table_parser_maps_known_columns() -> None:
     assert "Unknown" not in result
 
 
-def test_engine_manufacturers_parse_row_extracts_manufacturer_link_with_references() -> None:
+def test_engine_manufacturers_parse_row_extracts_manufacturer_link_with_references() -> (
+    None
+):
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
     from scrapers.base.table.parser import HtmlTableParser
-    from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
+    from scrapers.engines.engine_manufacturers_list import (
+        EngineManufacturersListScraper,
+    )
 
     html = """
     <table class="wikitable">
@@ -103,7 +107,10 @@ def test_engine_manufacturers_parse_row_extracts_manufacturer_link_with_referenc
     """
 
     soup = BeautifulSoup(html, "html.parser")
-    parser = HtmlTableParser(expected_headers=["Manufacturer"], table_css_class="wikitable")
+    parser = HtmlTableParser(
+        expected_headers=["Manufacturer"],
+        table_css_class="wikitable",
+    )
     rows = parser.parse_table(soup.find("table"))
 
     scraper = EngineManufacturersListScraper(options=ScraperOptions(include_urls=True))

@@ -47,7 +47,9 @@ def test_constructor_domain_transform_handler() -> None:
     assert "engine" in transformed
 
 
-def test_constructor_domain_transform_handler_for_chassis_constructors_current_list() -> None:
+def test_constructor_domain_transform_handler_for_chassis_constructors_current_list() -> (
+    None
+):
     transformed = _constructor_domain_handler(
         domain="chassis_constructors",
         source_name="f1_constructors_2026.json",
@@ -72,7 +74,9 @@ def test_constructor_domain_transform_handler_for_chassis_constructors_current_l
     assert next(iter(transformed)) == "chassis_constructor"
 
 
-def test_constructor_domain_transform_handler_for_constructor_alias_current_list() -> None:
+def test_constructor_domain_transform_handler_for_constructor_alias_current_list() -> (
+    None
+):
     transformed = _constructor_domain_handler(
         domain="constructor",
         source_name="f1_constructors_2026.json",
@@ -120,9 +124,9 @@ def test_constructor_domain_transform_handler_for_chassis_alias_current_list() -
     assert "constructor" not in transformed
 
 
-
-
-def test_constructor_domain_transform_handler_for_indianapolis_only_chassis_constructors() -> None:
+def test_constructor_domain_transform_handler_for_indianapolis_only_chassis_constructors() -> (
+    None
+):
     transformed = _constructor_domain_handler(
         domain="chassis_constructors",
         source_name="f1_indianapolis_only_constructors.json",
@@ -148,7 +152,9 @@ def test_constructor_domain_transform_handler_for_indianapolis_only_chassis_cons
     assert "constructor" not in transformed
 
 
-def test_constructor_domain_transform_handler_for_indianapolis_only_constructors() -> None:
+def test_constructor_domain_transform_handler_for_indianapolis_only_constructors() -> (
+    None
+):
     transformed = _constructor_domain_handler(
         domain="constructors",
         source_name="f1_indianapolis_only_constructors.json",
@@ -170,7 +176,10 @@ def test_constructor_domain_transform_handler_for_indianapolis_only_constructors
         },
     }
 
-def test_constructor_domain_transform_handler_for_chassis_constructors_former_list() -> None:
+
+def test_constructor_domain_transform_handler_for_chassis_constructors_former_list() -> (
+    None
+):
     transformed = _constructor_domain_handler(
         domain="chassis_constructors",
         source_name="f1_former_constructors.json",
@@ -463,7 +472,10 @@ def test_races_domain_postprocess_sorts_by_season_and_grand_prix_or_event() -> N
         ],
     )
 
-    assert [(item["season"], item.get("grand_prix") or item.get("event")) for item in processed] == [
+    assert [
+        (item["season"], item.get("grand_prix") or item.get("event"))
+        for item in processed
+    ] == [
         (2019, {"text": "Australian"}),
         (2019, {"text": "Goodwood Festival"}),
         (2020, {"text": "Monaco"}),
