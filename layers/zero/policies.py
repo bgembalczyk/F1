@@ -41,6 +41,10 @@ class CompositeLayerZeroJobHook:
     def __init__(self, *, hooks: tuple[LayerZeroJobHook, ...]) -> None:
         self._hooks = hooks
 
+    @property
+    def hooks(self) -> tuple[LayerZeroJobHook, ...]:
+        return self._hooks
+
     def after_job(
         self,
         *,

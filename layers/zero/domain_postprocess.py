@@ -11,13 +11,11 @@ from layers.zero.record_merge_ops import merge_values
 DomainRecordsProcessor = Callable[[list[object]], list[object]]
 
 logger = logging.getLogger(__name__)
+MIN_YEAR_DIGITS = 4
 
 
 def _normalized_text(value: object) -> str:
-    if isinstance(value, dict):
-        text_value = value.get("text", "")
-    else:
-        text_value = value or ""
+    text_value = value.get("text", "") if isinstance(value, dict) else value or ""
     return str(text_value).strip().casefold()
 
 
@@ -39,7 +37,7 @@ def _season_year(season: object) -> int | None:
     text_year = season.get("text")
     if isinstance(text_year, str):
         year = "".join(ch for ch in text_year if ch.isdigit())
-        if len(year) >= 4:
+        if len(year) >= MIN_YEAR_DIGITS:
             return int(year[:4])
     return None
 
@@ -154,7 +152,10 @@ def _merge_duplicate_drivers(records: list[object]) -> list[object]:
         existing_driver = DriverRecordModel.from_object(existing)
         if existing_driver is None:
             continue
-        merged_records[index] = merge_values(existing_driver.to_dict(), driver_record.to_dict())
+        merged_records[index] = merge_values(
+            existing_driver.to_dict(),
+            driver_record.to_dict(),
+        )
 
     return merged_records
 
@@ -231,31 +232,51 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
     if not isinstance(seasons, list) or not isinstance(liveries, list):
         return record
 
-    remaining_liveries: list[object] = []
-    for livery in liveries:
-        if not isinstance(livery, dict):
-            remaining_liveries.append(livery)
-            continue
-        livery_years = _season_years(livery.get("season"))
-        livery_payload = {key: value for key, value in livery.items() if key != "season"}
-        matched = False
-        for season in seasons:
-            season_record = SeasonRecordModel.from_object(season)
-            if season_record is None:
-                continue
-            season_year = season_record.year()
-            if season_year is None or season_year not in livery_years:
-                continue
-            matched = True
-            season_record.append_livery(livery_payload)
-        if not matched:
-            remaining_liveries.append(livery)
+    remaining_liveries = _attach_liveries_to_matching_seasons(
+        seasons=seasons,
+        liveries=liveries,
+    )
 
     if remaining_liveries:
         formula_one["liveries"] = remaining_liveries
     else:
         formula_one.pop("liveries", None)
     return record
+
+
+def _attach_liveries_to_matching_seasons(
+    *,
+    seasons: list[object],
+    liveries: list[object],
+) -> list[object]:
+    remaining_liveries: list[object] = []
+    for livery in liveries:
+        if not isinstance(livery, dict):
+            remaining_liveries.append(livery)
+            continue
+        if not _livery_matches_any_season(seasons=seasons, livery=livery):
+            remaining_liveries.append(livery)
+    return remaining_liveries
+
+
+def _livery_matches_any_season(
+    *,
+    seasons: list[object],
+    livery: dict[str, object],
+) -> bool:
+    livery_years = _season_years(livery.get("season"))
+    livery_payload = {key: value for key, value in livery.items() if key != "season"}
+    matched = False
+    for season in seasons:
+        season_record = SeasonRecordModel.from_object(season)
+        if season_record is None:
+            continue
+        season_year = season_record.year()
+        if season_year is None or season_year not in livery_years:
+            continue
+        matched = True
+        season_record.append_livery(livery_payload)
+    return matched
 
 
 def _merge_duplicate_seasons(items: list[object]) -> list[object]:

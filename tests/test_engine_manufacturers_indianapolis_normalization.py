@@ -79,8 +79,7 @@ def test_engine_manufacturers_table_parser_maps_known_columns() -> None:
     assert "Unknown" not in result
 
 
-def test_engine_manufacturers_parse_row_extracts_manufacturer_link_with_references(
-    ) -> None:
+def test_engine_manufacturers_parse_row_extracts_manufacturer_link_with_references():
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
