@@ -2,7 +2,7 @@ from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
 from infrastructure.http_client.policies.http import HttpPolicy
-from scrapers.base.cache_adapter import CacheBackend
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.source_adapter import SourceAdapter
 
 
@@ -14,7 +14,7 @@ class HtmlFetcher(SourceAdapter):
         *,
         policy: HttpPolicy,
         http_client: HttpClientProtocol,
-        cache_adapter: CacheBackend | None = None,
+        cache_adapter: TextCacheProtocol | None = None,
     ) -> None:
         self.policy = policy
         self.http_client = http_client
@@ -31,7 +31,7 @@ class HtmlFetcher(SourceAdapter):
     def metadata(self) -> dict[str, object]:
         return dict(self._metadata)
 
-    def set_cache(self, cache_adapter: CacheBackend | None) -> None:
+    def set_cache(self, cache_adapter: TextCacheProtocol | None) -> None:
         self.cache_adapter = cache_adapter
         self._metadata["cache"] = cache_adapter
 

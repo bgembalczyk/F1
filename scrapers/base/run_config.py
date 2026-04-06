@@ -3,7 +3,7 @@ from dataclasses import field
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.cache_adapter import CacheBackend
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.options import ScraperOptions
 
 
@@ -14,7 +14,7 @@ class RunConfig:
     debug_dir: str | Path | None = None
     cache_dir: str | Path | None = None
     cache_ttl: int | None = None
-    cache_adapter: CacheBackend | None = None
+    cache_adapter: TextCacheProtocol | None = None
     http_timeout: int | None = None
     http_retries: int | None = None
     http_backoff_seconds: float | None = None

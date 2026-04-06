@@ -11,7 +11,7 @@ from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.cache_adapter import CacheAdapter
-from scrapers.base.cache_adapter import CacheBackend
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.source_adapter import SourceAdapter
 
@@ -26,7 +26,7 @@ if TYPE_CHECKING:
 class ScraperRuntime:
     policy: HttpPolicy
     http_client: HttpClientProtocol
-    cache_adapter: CacheBackend | None
+    cache_adapter: TextCacheProtocol | None
     fetcher: HtmlFetcher
     source_adapter: SourceAdapter
 
@@ -64,7 +64,7 @@ class ScraperRuntimeFactory:
         self,
         *,
         options: ScraperOptions,
-        cache_adapter: CacheBackend | None,
+        cache_adapter: TextCacheProtocol | None,
         resolved_policy: HttpPolicy,
     ) -> tuple[HtmlFetcher, SourceAdapter]:
         fetcher, source_adapter = self._normalize_runtime_components(options=options)
@@ -97,7 +97,7 @@ class ScraperRuntimeFactory:
         self,
         *,
         options: ScraperOptions,
-        cache_adapter: CacheBackend | None,
+        cache_adapter: TextCacheProtocol | None,
         resolved_policy: HttpPolicy,
     ) -> tuple[HtmlFetcher, SourceAdapter]:
         http_client = self._resolve_http_client(
@@ -116,7 +116,7 @@ class ScraperRuntimeFactory:
         *,
         fetcher: HtmlFetcher | None,
         source_adapter: SourceAdapter | None,
-        cache_adapter: CacheBackend | None,
+        cache_adapter: TextCacheProtocol | None,
     ) -> tuple[HtmlFetcher, SourceAdapter]:
         if fetcher is None and isinstance(source_adapter, HtmlFetcher):
             fetcher = source_adapter
@@ -197,7 +197,7 @@ class ScraperRuntimeFactory:
         )
 
     @staticmethod
-    def _resolve_cache_adapter(options: ScraperOptions) -> CacheBackend | None:
+    def _resolve_cache_adapter(options: ScraperOptions) -> TextCacheProtocol | None:
         if options.cache.cache_adapter is not None:
             return options.cache.cache_adapter
         if options.cache.cache_dir is None:
@@ -219,7 +219,7 @@ class _SourceAdapterFetcherShim(HtmlFetcher):
         self.http_client = None
         self.policy = HttpPolicy(timeout=10, retries=0, cache=False)
 
-    def set_cache(self, cache_adapter: CacheBackend | None) -> None:
+    def set_cache(self, cache_adapter: TextCacheProtocol | None) -> None:
         self.cache_adapter = cache_adapter
 
     def get_text(self, url: str, *, timeout: int | None = None) -> str:
