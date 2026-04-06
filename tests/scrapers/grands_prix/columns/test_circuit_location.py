@@ -5,7 +5,9 @@ from scrapers.grands_prix.columns.circuit_location import LocationColumn
 
 
 def _ctx(
-    *, clean_text: str | None, links: list[dict[str, str | None]],
+    *,
+    clean_text: str | None,
+    links: list[dict[str, str | None]],
 ) -> ColumnContext:
     return ColumnContext(
         header="Location",

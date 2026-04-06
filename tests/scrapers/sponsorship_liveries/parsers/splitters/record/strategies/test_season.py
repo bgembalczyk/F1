@@ -110,7 +110,8 @@ def test_colour_scope_helpers_cover_ambiguous_and_duplicate_sets() -> None:
     assert SeasonSplitStrategy._season_entries("2020") == []
     assert SeasonSplitStrategy._extract_colour_year_sets(ambiguous) == []
     assert SeasonSplitStrategy._split_record_by_colour_scopes(
-        ambiguous, season_entries,
+        ambiguous,
+        season_entries,
     ) == [ambiguous]
 
     year_sets = SeasonSplitStrategy._extract_colour_year_sets(record)
@@ -118,7 +119,9 @@ def test_colour_scope_helpers_cover_ambiguous_and_duplicate_sets() -> None:
     assert unique_year_sets == [{2020}, {2028}]
 
     base_split = SeasonSplitStrategy._build_base_colour_scoped_records(
-        record, season_entries, year_sets,
+        record,
+        season_entries,
+        year_sets,
     )
     assert [r.payload for r in base_split] == [
         {
@@ -128,7 +131,9 @@ def test_colour_scope_helpers_cover_ambiguous_and_duplicate_sets() -> None:
     ]
 
     scoped_split = SeasonSplitStrategy._build_year_scoped_colour_records(
-        record, season_entries, year_sets,
+        record,
+        season_entries,
+        year_sets,
     )
     assert [r.payload for r in scoped_split] == [
         {
@@ -137,14 +142,20 @@ def test_colour_scope_helpers_cover_ambiguous_and_duplicate_sets() -> None:
         },
     ]
 
-    assert SeasonSplitStrategy._build_base_colour_scoped_records(
-        record,
-        season_entries=[{"year": 2020}],
-        colour_year_sets=[{2020}],
-    ) == []
+    assert (
+        SeasonSplitStrategy._build_base_colour_scoped_records(
+            record,
+            season_entries=[{"year": 2020}],
+            colour_year_sets=[{2020}],
+        )
+        == []
+    )
 
-    assert SeasonSplitStrategy._build_year_scoped_colour_records(
-        record,
-        season_entries=[{"year": 2020}],
-        colour_year_sets=[{2030}],
-    ) == []
+    assert (
+        SeasonSplitStrategy._build_year_scoped_colour_records(
+            record,
+            season_entries=[{"year": 2020}],
+            colour_year_sets=[{2030}],
+        )
+        == []
+    )

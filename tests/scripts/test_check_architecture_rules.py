@@ -18,10 +18,10 @@ def _rules_stub() -> SimpleNamespace:
         DOMAINS=("drivers", "seasons"),
         ENTRYPOINT_DOMAINS=("drivers",),
         REQUIRED_LAYERS_BY_DOMAIN={"drivers": ("sections", "app")},
-        FORBIDDEN_IMPORTS_BY_LAYER={"sections": ("app",), "app": ()},
-        infer_layer=lambda path, domain=None: (  # noqa: ARG005
-            "sections" if "sections" in path.parts else "app"
-        ),
+        FORBIDDEN_IMPORTS_BY_LAYER={"sections": ("app",), "app": tuple()},
+        infer_layer=lambda path, domain=None: "sections"
+        if "sections" in path.parts
+        else "app",
         resolve_import_targets=lambda _path: ["scrapers.drivers.app.shared"],
         collect_cross_domain_import_violations=lambda _path, _domain: [
             "scrapers.seasons.app",
@@ -94,7 +94,9 @@ def test_main_returns_failure_and_success_with_expected_stdout(
     monkeypatch.setattr(sys, "argv", ["check_architecture_rules.py"])
     rules = _rules_stub()
     monkeypatch.setattr(
-        check_architecture_rules, "_load_architecture_rules", lambda: rules,
+        check_architecture_rules,
+        "_load_architecture_rules",
+        lambda: rules,
     )
     monkeypatch.setattr(
         check_architecture_rules,
@@ -108,7 +110,9 @@ def test_main_returns_failure_and_success_with_expected_stdout(
         lambda *_a, **_k: ["broken"],
     )
     monkeypatch.setattr(
-        check_architecture_rules, "_check_layer_boundaries", lambda *_a, **_k: [],
+        check_architecture_rules,
+        "_check_layer_boundaries",
+        lambda *_a, **_k: [],
     )
     monkeypatch.setattr(
         check_architecture_rules,
@@ -116,7 +120,9 @@ def test_main_returns_failure_and_success_with_expected_stdout(
         lambda *_a, **_k: [],
     )
     monkeypatch.setattr(
-        check_architecture_rules, "_check_cross_domain_imports", lambda *_a, **_k: [],
+        check_architecture_rules,
+        "_check_cross_domain_imports",
+        lambda *_a, **_k: [],
     )
 
     assert check_architecture_rules.main() == 1
@@ -125,7 +131,9 @@ def test_main_returns_failure_and_success_with_expected_stdout(
     assert "- broken" in output
 
     monkeypatch.setattr(
-        check_architecture_rules, "_check_required_layout", lambda *_a, **_k: [],
+        check_architecture_rules,
+        "_check_required_layout",
+        lambda *_a, **_k: [],
     )
     assert check_architecture_rules.main() == 0
     assert "Architecture rules check passed." in capsys.readouterr().out

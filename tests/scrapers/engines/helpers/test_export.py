@@ -12,7 +12,8 @@ def test_manufacturer_name_initial_handles_text_dict_and_fallback() -> None:
 
 
 def test_export_complete_engine_manufacturers_groups_output(
-    monkeypatch, tmp_path,
+    monkeypatch,
+    tmp_path,
 ) -> None:
     exported: list[Path] = []
 
@@ -44,7 +45,9 @@ def test_export_complete_engine_manufacturers_groups_output(
             exported.append(path)
 
     monkeypatch.setattr(
-        export_mod, "F1CompleteEngineManufacturerDataExtractor", _ScraperStub,
+        export_mod,
+        "F1CompleteEngineManufacturerDataExtractor",
+        _ScraperStub,
     )
     monkeypatch.setattr(export_mod, "ResultExportService", _ExportServiceStub)
 

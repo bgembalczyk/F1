@@ -7,7 +7,10 @@ from scrapers.base.table.columns.types.br_list import BrListColumn
 
 
 def _ctx(
-    *, html: str | None = None, clean_text: str = "", raw_text: str | None = None,
+    *,
+    html: str | None = None,
+    clean_text: str = "",
+    raw_text: str | None = None,
 ) -> ColumnContext:
     cell = None
     if html is not None:

@@ -65,7 +65,9 @@ def test_main_outputs_error_when_reference_missing(
 ) -> None:
     monkeypatch.setattr(sys, "argv", ["prog", "--base-sha", "a", "--head-sha", "b"])
     monkeypatch.setattr(
-        gate, "list_changed_files", lambda *_a, **_k: ["layers/pipeline.py"],
+        gate,
+        "list_changed_files",
+        lambda *_a, **_k: ["layers/pipeline.py"],
     )
     monkeypatch.setattr(gate, "has_non_cosmetic_changes", lambda *_a, **_k: True)
     monkeypatch.setattr(gate, "collect_commit_messages", lambda *_a, **_k: "")

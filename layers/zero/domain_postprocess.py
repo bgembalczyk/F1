@@ -1,12 +1,11 @@
 import logging
 from collections.abc import Callable
 
-from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
-
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import SeasonRecordModel
 from layers.zero.merge_types import TeamRecordModel
 from layers.zero.record_merge_ops import merge_values
+from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 
 DomainRecordsProcessor = Callable[[list[object]], list[object]]
 
@@ -319,8 +318,15 @@ def configure_domain_postprocessors(
     domain_pipeline_config_factory: type,
 ) -> None:
     postprocess_steps: dict[str, tuple[tuple[str, DomainRecordsProcessor], ...]] = {
-        "circuits": (("sort_circuits_by_name", lambda items: _sort(items, _circuits_sort_key)),),
-        "countries": (("sort_countries_by_text", lambda items: _sort(items, _sort_key_with_presence)),),
+        "circuits": (
+            ("sort_circuits_by_name", lambda items: _sort(items, _circuits_sort_key)),
+        ),
+        "countries": (
+            (
+                "sort_countries_by_text",
+                lambda items: _sort(items, _sort_key_with_presence),
+            ),
+        ),
         "drivers": (
             ("merge_duplicate_drivers", _merge_duplicate_drivers),
             ("sort_drivers_by_name", lambda items: _sort(items, _driver_sort_key)),
@@ -330,14 +336,34 @@ def configure_domain_postprocessors(
             ("nest_team_liveries", _nest_team_liveries),
             ("sort_teams_by_name", lambda items: _sort(items, _team_sort_key)),
         ),
-        "engines": (("sort_engines_by_manufacturer", lambda items: _sort(items, _engine_sort_key)),),
+        "engines": (
+            (
+                "sort_engines_by_manufacturer",
+                lambda items: _sort(items, _engine_sort_key),
+            ),
+        ),
         "seasons": (
             ("merge_duplicate_seasons", _merge_duplicate_seasons),
             ("sort_seasons_by_year", lambda items: _sort(items, _season_sort_key)),
         ),
-        "grands_prix": (("sort_grands_prix_by_race_title", lambda items: _sort(items, _grands_prix_sort_key)),),
-        "races": (("sort_races_by_season_and_grand_prix", lambda items: _sort(items, _races_sort_key)),),
-        "sponsors": (("sort_sponsors_by_text", lambda items: _sort(items, _sort_key_with_presence)),),
+        "grands_prix": (
+            (
+                "sort_grands_prix_by_race_title",
+                lambda items: _sort(items, _grands_prix_sort_key),
+            ),
+        ),
+        "races": (
+            (
+                "sort_races_by_season_and_grand_prix",
+                lambda items: _sort(items, _races_sort_key),
+            ),
+        ),
+        "sponsors": (
+            (
+                "sort_sponsors_by_text",
+                lambda items: _sort(items, _sort_key_with_presence),
+            ),
+        ),
         "chassis_constructors": (
             (
                 "sort_chassis_constructors_by_name",
@@ -349,7 +375,12 @@ def configure_domain_postprocessors(
     for constructor_domain in CHASSIS_CONSTRUCTOR_DOMAINS:
         postprocess_steps.setdefault(
             constructor_domain,
-            (("sort_constructors_by_name", lambda items: _sort(items, _constructor_sort_key)),),
+            (
+                (
+                    "sort_constructors_by_name",
+                    lambda items: _sort(items, _constructor_sort_key),
+                ),
+            ),
         )
 
     for domain, steps in postprocess_steps.items():

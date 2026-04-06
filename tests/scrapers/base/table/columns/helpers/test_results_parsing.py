@@ -11,25 +11,25 @@ from scrapers.base.table.columns.helpers.results_parsing import ResultsParsingHe
 BASE_URL = "https://en.wikipedia.org"
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_valid_record() -> str:
     return (
         '<td><a href="/wiki/Scuderia_Ferrari">Scuderia Ferrari</a>'
-        '<sup>12</sup><sup>†</sup><sup>*</sup></td>'
+        "<sup>12</sup><sup>†</sup><sup>*</sup></td>"
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_incomplete_record() -> str:
     return "<td></td>"
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_alias_or_text_record() -> str:
     return "<td>half points awarded</td>"
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_links_and_no_links_record() -> tuple[str, str]:
     return (
         '<td><a href="/wiki/Team_Lotus">Team Lotus</a></td>',
@@ -78,8 +78,13 @@ def test_parse_points_value_branch_coverage(
 def test_parse_points_value_returns_none_on_alias_text(
     html_alias_or_text_record: str,
 ) -> None:
-    text = BeautifulSoup(html_alias_or_text_record, "html.parser").find("td").get_text(
-        " ", strip=True,
+    text = (
+        BeautifulSoup(html_alias_or_text_record, "html.parser")
+        .find("td")
+        .get_text(
+            " ",
+            strip=True,
+        )
     )
 
     assert ResultsParsingHelpers.parse_points_value(text) is None
@@ -124,11 +129,11 @@ def test_parse_superscripts_returns_expected_tuple_structure(
 ) -> None:
     ctx = _ctx_from_html(html_valid_record)
 
-    (
-        reference_number,
-        has_dagger,
-        has_asterisk,
-    ) = ResultsParsingHelpers.parse_superscripts(ctx)
+    reference_number, has_dagger, has_asterisk = (
+        ResultsParsingHelpers.parse_superscripts(
+            ctx,
+        )
+    )
 
     assert isinstance(reference_number, int)
     assert isinstance(has_dagger, bool)
@@ -153,7 +158,9 @@ def test_parse_entrant_segment_with_and_without_links(
     without_links_segment = BeautifulSoup(without_links_html, "html.parser").find("td")
 
     parsed_with = ResultsParsingHelpers.parse_entrant_segment(
-        with_links_segment, {}, BASE_URL,
+        with_links_segment,
+        {},
+        BASE_URL,
     )
     parsed_without = ResultsParsingHelpers.parse_entrant_segment(
         without_links_segment,

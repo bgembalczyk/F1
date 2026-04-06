@@ -1,4 +1,3 @@
-# ruff: noqa: SLF001
 import pytest
 from bs4 import BeautifulSoup
 

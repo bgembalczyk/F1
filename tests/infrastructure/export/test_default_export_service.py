@@ -63,7 +63,7 @@ def test_default_export_service_to_csv_propagates_dependency_exception(
         raise ValueError(msg)
 
     monkeypatch.setattr(
-        service._fieldnames_strategy,  # noqa: SLF001
+        service._fieldnames_strategy,
         "resolve",
         _raise_for_malformed_payload,
     )

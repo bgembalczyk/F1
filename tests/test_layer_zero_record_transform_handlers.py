@@ -120,8 +120,6 @@ def test_constructor_domain_transform_handler_for_chassis_alias_current_list() -
     assert "constructor" not in transformed
 
 
-
-
 def test_constructor_domain_handler_indianapolis_only_chassis() -> None:
     transformed = _constructor_domain_handler(
         domain="chassis_constructors",
@@ -169,6 +167,7 @@ def test_constructor_domain_handler_indianapolis_only() -> None:
             "indianapolis_only": True,
         },
     }
+
 
 def test_constructor_domain_handler_chassis_former_list() -> None:
     transformed = _constructor_domain_handler(

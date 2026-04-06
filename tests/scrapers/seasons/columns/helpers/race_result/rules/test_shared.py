@@ -30,11 +30,14 @@ from scrapers.seasons.columns.helpers.race_result.rules.star_mark_note import (
 @pytest.mark.parametrize(
     ("year", "expected"),
     [
-        (1960, {
-            "shared_drive": True,
-            "points_eligible": False,
-            "notes": ["shared_drive_no_points"],
-        }),
+        (
+            1960,
+            {
+                "shared_drive": True,
+                "points_eligible": False,
+                "notes": ["shared_drive_no_points"],
+            },
+        ),
         (1957, {"shared_drive": True, "points_shared": True}),
     ],
 )
@@ -134,11 +137,14 @@ def test_double_points_round_rule_applies_only_for_2014_abu_dhabi_with_mark() ->
             round_url="https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
         ),
     ) == {"note": "double_points", "points_multiplier": 2.0}
-    assert rule.apply(
-        RoundRuleContext(
-            season_year=2015,
-            marks=["‡"],
-            header_text="Abu Dhabi",
-            round_url="https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix",
-        ),
-    ) is None
+    assert (
+        rule.apply(
+            RoundRuleContext(
+                season_year=2015,
+                marks=["‡"],
+                header_text="Abu Dhabi",
+                round_url="https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix",
+            ),
+        )
+        is None
+    )

@@ -9,22 +9,22 @@ from scrapers.base.table.columns.helpers.driver_parsing import DriverParsingHelp
 BASE_URL = "https://en.wikipedia.org"
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_valid_record() -> str:
     return '<td><a href="/wiki/Lewis_Hamilton">Lewis Hamilton</a></td>'
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_incomplete_record() -> str:
     return "<td>Unknown driver</td>"
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_alias_or_text_record() -> str:
     return '<td><a href="/wiki/Lewis_Hamilton">Sir Lewis Hamilton</a></td>'
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_links_and_no_links_record() -> tuple[str, str]:
     return (
         '<td><a href="/wiki/Max_Verstappen">Max Verstappen</a></td>',

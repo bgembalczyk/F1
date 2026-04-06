@@ -5,7 +5,9 @@ from scrapers.tyres.columns.append_links import AppendLinksColumn
 
 
 def _ctx(
-    *, key: str = "manufacturers", model_fields: set[str] | None = None,
+    *,
+    key: str = "manufacturers",
+    model_fields: set[str] | None = None,
 ) -> ColumnContext:
     return ColumnContext(
         header="Manufacturer 1",

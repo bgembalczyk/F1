@@ -46,8 +46,9 @@ def test_validate_detailed_architecture_impact_accepts_and_rejects_values() -> N
         for field in validate_pr_template.ARCHITECTURE_IMPACT_FIELDS
     }
 
-    _fn = validate_pr_template._validate_detailed_architecture_impact  # noqa: SLF001
-    errors = _fn(with_not_applicable)
+    errors = validate_pr_template._validate_detailed_architecture_impact(
+        with_not_applicable,
+    )
     assert len(errors) == 1
     assert "nie może mieć wartości 'nie dotyczy'" in errors[0]
 
@@ -56,11 +57,20 @@ def test_main_success_and_error_paths(monkeypatch: pytest.MonkeyPatch, capsys) -
     monkeypatch.setattr(
         sys,
         "argv",
-        ["validate_pr_template.py", "--base-sha", "a", "--head-sha", "b", "--pr-body",
-         _complete_pr_body()],
+        [
+            "validate_pr_template.py",
+            "--base-sha",
+            "a",
+            "--head-sha",
+            "b",
+            "--pr-body",
+            _complete_pr_body(),
+        ],
     )
     monkeypatch.setattr(
-        validate_pr_template, "list_changed_files", lambda *_a, **_k: [],
+        validate_pr_template,
+        "list_changed_files",
+        lambda *_a, **_k: [],
     )
 
     assert validate_pr_template.main() == 0
