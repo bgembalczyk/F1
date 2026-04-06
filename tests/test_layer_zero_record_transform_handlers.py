@@ -304,6 +304,154 @@ def test_engines_domain_postprocess_sorts_by_manufacturer() -> None:
     ] == ["Alfa Romeo", "BMW", "Renault"]
 
 
+def test_chassis_constructors_domain_postprocess_sorts_by_chassis_constructor() -> None:
+    processed = _post_process_domain_records(
+        "chassis_constructors",
+        [
+            {"chassis_constructor": {"text": "Williams"}},
+            {"chassis_constructor": {"text": "Alpine"}},
+            {"chassis_constructor": {"text": "Ferrari"}},
+        ],
+    )
+
+    assert [record["chassis_constructor"]["text"] for record in processed] == [
+        "Alpine",
+        "Ferrari",
+        "Williams",
+    ]
+
+
+def test_circuits_domain_postprocess_sorts_by_circuit_text() -> None:
+    processed = _post_process_domain_records(
+        "circuits",
+        [
+            {"circuit": {"text": "Monza"}},
+            {"circuit": {"text": "Bahrain International Circuit"}},
+            {"circuit": {"text": "Spa-Francorchamps"}},
+        ],
+    )
+
+    assert [record["circuit"]["text"] for record in processed] == [
+        "Bahrain International Circuit",
+        "Monza",
+        "Spa-Francorchamps",
+    ]
+
+
+def test_constructors_domain_postprocess_sorts_by_chassis_then_engine() -> None:
+    processed = _post_process_domain_records(
+        "constructors",
+        [
+            {
+                "constructor": {
+                    "chassis_constructor": {"text": "Williams"},
+                    "engine_constructor": {"text": "Mercedes"},
+                },
+            },
+            {
+                "constructor": {
+                    "chassis_constructor": {"text": "Ferrari"},
+                    "engine_constructor": {"text": "Ferrari"},
+                },
+            },
+            {
+                "constructor": {
+                    "chassis_constructor": {"text": "Williams"},
+                    "engine_constructor": {"text": "Honda"},
+                },
+            },
+        ],
+    )
+
+    assert [
+        (
+            item["constructor"]["chassis_constructor"]["text"],
+            item["constructor"]["engine_constructor"]["text"],
+        )
+        for item in processed
+    ] == [("Ferrari", "Ferrari"), ("Williams", "Honda"), ("Williams", "Mercedes")]
+
+
+def test_countries_domain_postprocess_sorts_dicts_and_strings_together() -> None:
+    processed = _post_process_domain_records(
+        "countries",
+        [
+            {"text": "Poland"},
+            "Belgium",
+            {"text": "Argentina"},
+            "Brazil",
+        ],
+    )
+
+    assert processed == [{"text": "Argentina"}, "Belgium", "Brazil", {"text": "Poland"}]
+
+
+def test_grands_prix_domain_postprocess_sorts_by_race_title() -> None:
+    processed = _post_process_domain_records(
+        "grands_prix",
+        [
+            {"race_title": {"text": "Monaco Grand Prix"}},
+            {"race_title": {"text": "Australian Grand Prix"}},
+            {"race_title": {"text": "Belgian Grand Prix"}},
+        ],
+    )
+
+    assert [record["race_title"]["text"] for record in processed] == [
+        "Australian Grand Prix",
+        "Belgian Grand Prix",
+        "Monaco Grand Prix",
+    ]
+
+
+def test_races_domain_postprocess_sorts_by_season_and_grand_prix_or_event() -> None:
+    processed = _post_process_domain_records(
+        "races",
+        [
+            {"season": 2020, "grand_prix": {"text": "Monaco"}},
+            {"season": 2019, "event": {"text": "Goodwood Festival"}},
+            {"season": 2019, "grand_prix": {"text": "Australian"}},
+        ],
+    )
+
+    assert [(item["season"], item.get("grand_prix") or item.get("event")) for item in processed] == [
+        (2019, {"text": "Australian"}),
+        (2019, {"text": "Goodwood Festival"}),
+        (2020, {"text": "Monaco"}),
+    ]
+
+
+def test_sponsors_domain_postprocess_sorts_dicts_and_strings_together() -> None:
+    processed = _post_process_domain_records(
+        "sponsors",
+        [
+            {"text": "Shell"},
+            "Agip",
+            {"text": "Mobil"},
+            "BP",
+        ],
+    )
+
+    assert processed == ["Agip", "BP", {"text": "Mobil"}, {"text": "Shell"}]
+
+
+def test_teams_domain_postprocess_sorts_by_team_or_text_equally() -> None:
+    processed = _post_process_domain_records(
+        "teams",
+        [
+            {"team": {"text": "Williams"}},
+            {"text": "Alpine"},
+            {"team": {"text": "Ferrari"}},
+        ],
+    )
+
+    assert [
+        (item.get("team") or item.get("text"))["text"]
+        if isinstance(item.get("team") or item.get("text"), dict)
+        else item.get("team") or item.get("text")
+        for item in processed
+    ] == ["Alpine", "Ferrari", "Williams"]
+
+
 def test_expand_season_records_for_engine_regulations() -> None:
     expanded = _expand_season_records(
         domain="seasons",
