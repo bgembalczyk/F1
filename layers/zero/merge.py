@@ -239,6 +239,9 @@ DOMAIN_PIPELINE_CONFIGS: dict[str, DomainPipelineConfig] = {
     "chassis": DomainPipelineConfig(
         transformers={DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,)},
     ),
+    "chassis_constructors": DomainPipelineConfig(
+        transformers={DEFAULT_SOURCE_PIPELINE: (_constructor_domain_handler,)},
+    ),
     "circuits": DomainPipelineConfig(
         transformers={DEFAULT_SOURCE_PIPELINE: (_circuits_domain_handler,)},
     ),

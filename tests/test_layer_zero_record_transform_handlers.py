@@ -247,6 +247,15 @@ def test_resolve_record_transform_handlers_domain_fallback() -> None:
     assert handlers == (_teams_domain_handler,)
 
 
+def test_resolve_record_transform_handlers_for_chassis_constructors_domain() -> None:
+    handlers = _resolve_record_transform_handlers(
+        domain="chassis_constructors",
+        source_name="f1_constructors_2026.json",
+    )
+
+    assert handlers == (_constructor_domain_handler,)
+
+
 def test_resolve_record_transform_handlers_includes_global_source_pipeline() -> None:
     handlers = _resolve_record_transform_handlers(
         domain="seasons",
