@@ -42,16 +42,20 @@ logger = logging.getLogger(__name__)
 
 
 class _IndianapolisConstructorsListParser(ListParser):
-    def parse(self, element: Tag) -> dict[str, list[dict[str, str]]]:
-        items: list[dict[str, str]] = []
+    def parse(self, element: Tag) -> dict[str, list[dict[str, Any]]]:
+        items: list[dict[str, Any]] = []
         for li in element.find_all("li", recursive=False):
             anchor = li.find("a")
             constructor = li.get_text(" ", strip=True)
             if not constructor:
                 continue
-            row: dict[str, str] = {"constructor": constructor}
+            row: dict[str, Any] = {
+                "chassis_constructor": {
+                    "text": constructor,
+                },
+            }
             if anchor and anchor.has_attr("href"):
-                row["constructor_url"] = anchor["href"]
+                row["chassis_constructor"]["url"] = anchor["href"]
             items.append(row)
         return {"items": items}
 
