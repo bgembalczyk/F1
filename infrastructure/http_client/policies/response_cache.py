@@ -11,7 +11,3 @@ class TextCacheProtocol(Protocol):
 
     def set(self, url: str, text: str) -> None:
         """Zapisuje tekst do cache."""
-
-
-# Alias zachowujący kompatybilność w kodzie HTTP.
-ResponseCache = TextCacheProtocol
