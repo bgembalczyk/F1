@@ -545,6 +545,7 @@ def _transform_drivers_domain(
 ) -> dict[str, object]:
     if domain != "drivers":
         return transformed
+    _normalize_driver_entry_start_fields(transformed)
     if source_name == DRIVERS_SOURCE:
         return _transform_f1_driver(transformed)
     if source_name == FEMALE_DRIVERS_SOURCE:
@@ -552,6 +553,18 @@ def _transform_drivers_domain(
     if source_name == DRIVER_FATALITIES_SOURCE:
         _attach_driver_death_data(transformed)
     return transformed
+
+
+def _normalize_driver_entry_start_fields(transformed: dict[str, object]) -> None:
+    if "race_entries" not in transformed and "entries" in transformed:
+        transformed["race_entries"] = transformed.pop("entries")
+    else:
+        transformed.pop("entries", None)
+
+    if "race_starts" not in transformed and "starts" in transformed:
+        transformed["race_starts"] = transformed.pop("starts")
+    else:
+        transformed.pop("starts", None)
 
 
 def _transform_f1_driver(transformed: dict[str, object]) -> dict[str, object]:
