@@ -104,3 +104,57 @@ class TestMergeLayerZeroPhaseD:
         assert d_merge_file.exists()
         result = json.loads(d_merge_file.read_text(encoding="utf-8"))
         assert result == payload
+
+    def test_sorts_countries_by_text_for_mixed_strings_and_dicts(
+        self,
+        tmp_path: Path,
+    ) -> None:
+        base = tmp_path / "data" / "wiki"
+        _write_json(
+            _c_extract_path(base, "countries") / "from_mixed.json",
+            [
+                {"text": "Poland", "url": "https://example.com/pl"},
+                "Argentina",
+                {"text": "Brazil", "url": "https://example.com/br"},
+            ],
+        )
+
+        merge_layer_zero_phase_d(base)
+
+        result = json.loads(
+            (_d_merge_path(base, "countries") / "countries.json").read_text(
+                encoding="utf-8",
+            ),
+        )
+        assert [item if isinstance(item, str) else item["text"] for item in result] == [
+            "Argentina",
+            "Brazil",
+            "Poland",
+        ]
+
+    def test_sorts_sponsors_by_text_for_mixed_strings_and_dicts(
+        self,
+        tmp_path: Path,
+    ) -> None:
+        base = tmp_path / "data" / "wiki"
+        _write_json(
+            _c_extract_path(base, "sponsors") / "from_mixed.json",
+            [
+                {"text": "Zeta", "url": "https://example.com/z"},
+                "Alpha",
+                {"text": "Beta"},
+            ],
+        )
+
+        merge_layer_zero_phase_d(base)
+
+        result = json.loads(
+            (_d_merge_path(base, "sponsors") / "sponsors.json").read_text(
+                encoding="utf-8",
+            ),
+        )
+        assert [item if isinstance(item, str) else item["text"] for item in result] == [
+            "Alpha",
+            "Beta",
+            "Zeta",
+        ]

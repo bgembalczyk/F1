@@ -37,6 +37,7 @@ def merge_layer_zero_phase_d(base_wiki_dir: Path) -> None:
                 all_records.append(payload)
 
         merged_records = _dedupe_records(all_records)
+        merged_records = _sort_records_for_domain(domain_dir.name, merged_records)
 
         d_merge_dir = resolver.d_merge_dir(domain=domain_dir.name)
         d_merge_dir.mkdir(parents=True, exist_ok=True)
@@ -69,3 +70,24 @@ def _dedup_key(record: object) -> str:
             return f"text:{text}"
         return json.dumps(record, sort_keys=True, ensure_ascii=False)
     return json.dumps(record, ensure_ascii=False)
+
+
+def _sort_records_for_domain(domain: str, records: list[object]) -> list[object]:
+    if domain not in {"countries", "sponsors"}:
+        return records
+    return sorted(records, key=_text_first_sort_key)
+
+
+def _text_first_sort_key(record: object) -> tuple[int, str]:
+    normalized_text = _normalize_record_text(record)
+    return (0, normalized_text) if normalized_text else (1, "")
+
+
+def _normalize_record_text(record: object) -> str:
+    if isinstance(record, str):
+        return record.strip().casefold()
+    if isinstance(record, dict):
+        text = record.get("text")
+        if isinstance(text, str):
+            return text.strip().casefold()
+    return ""
