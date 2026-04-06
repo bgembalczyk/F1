@@ -8,7 +8,7 @@ from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
 from infrastructure.http_client.policies.http import HttpPolicy
-from scrapers.base.cache_adapter import CacheBackend
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.factory.record_factory import RecordFactory
 from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
@@ -34,7 +34,7 @@ class HttpOptions:
 class CacheOptions:
     cache_dir: Path | str | None = None
     cache_ttl: int | None = None
-    cache_adapter: CacheBackend | None = None
+    cache_adapter: TextCacheProtocol | None = None
 
 
 @dataclass(slots=True)
@@ -151,7 +151,7 @@ class ScraperOptionsBuilder:
         *,
         cache_dir: Path | str | None = None,
         cache_ttl: int | None = None,
-        cache_adapter: CacheBackend | None = None,
+        cache_adapter: TextCacheProtocol | None = None,
     ) -> "ScraperOptionsBuilder":
         if cache_dir is not None:
             self._options.cache.cache_dir = cache_dir
