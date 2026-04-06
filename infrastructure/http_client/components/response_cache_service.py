@@ -2,13 +2,13 @@
 
 from collections.abc import Callable
 
-from infrastructure.http_client.policies.response_cache import ResponseCache
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 
 
 class ResponseCacheService:
     """Fasada dla logiki odczytu/zapisu cache odpowiedzi."""
 
-    def __init__(self, cache: ResponseCache | None) -> None:
+    def __init__(self, cache: TextCacheProtocol | None) -> None:
         self._cache = cache
 
     def get_text(self, url: str, fetch_text: Callable[[], str]) -> str:

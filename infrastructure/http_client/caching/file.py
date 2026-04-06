@@ -2,10 +2,10 @@ from pathlib import Path
 
 from infrastructure.cache.file_ttl_cache import FileTtlCache
 from infrastructure.cache.file_ttl_cache import HttpResponseFileCacheAdapter
-from infrastructure.http_client.policies.response_cache import ResponseCache
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 
 
-class FileCache(ResponseCache):
+class FileCache(TextCacheProtocol):
     """Cache oparty o pliki z TTL."""
 
     def __init__(self, *, cache_dir: Path | str, ttl_seconds: int = 0) -> None:

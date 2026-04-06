@@ -5,7 +5,7 @@ from config.app_config_provider import AppConfigProvider
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_RETRIES
 from infrastructure.http_client.policies.http import HttpPolicy
-from infrastructure.http_client.policies.response_cache import ResponseCache
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
@@ -25,7 +25,7 @@ def build_http_policy(
     *,
     timeout: int | None = None,
     retries: int = DEFAULT_HTTP_RETRIES,
-    cache: ResponseCache | None = None,
+    cache: TextCacheProtocol | None = None,
 ) -> HttpPolicy:
     resolved_timeout = (
         timeout

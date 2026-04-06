@@ -7,7 +7,7 @@ from infrastructure.http_client.policies.min_delay_rate_limiter import (
     MinDelayRateLimiter,
 )
 from infrastructure.http_client.policies.rate_limiter import RateLimiter
-from infrastructure.http_client.policies.response_cache import ResponseCache
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from infrastructure.http_client.policies.retry import RetryPolicy
 
 
@@ -33,7 +33,7 @@ class DefaultHttpPolicyFactory:
         )
 
     @staticmethod
-    def build_response_cache(config: HttpClientConfig) -> ResponseCache | None:
+    def build_response_cache(config: HttpClientConfig) -> TextCacheProtocol | None:
         if config.cache is not None:
             return config.cache
         return WikipediaCachePolicy.with_file_cache(

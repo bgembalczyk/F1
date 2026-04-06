@@ -2,12 +2,12 @@ from dataclasses import dataclass
 
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_RETRIES
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_TIMEOUT
-from infrastructure.http_client.policies.response_cache import ResponseCache
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 
 
 @dataclass(frozen=True)
 class HttpPolicy:
-    cache: ResponseCache | None = None
+    cache: TextCacheProtocol | None = None
     retries: int = DEFAULT_HTTP_RETRIES
     timeout: int = DEFAULT_HTTP_TIMEOUT
 
