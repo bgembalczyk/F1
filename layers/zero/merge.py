@@ -344,10 +344,15 @@ def _transform_chassis_constructor_from_current_constructors(
     if not isinstance(constructor_value, dict):
         return transformed
 
-    reshaped = dict(transformed)
     chassis_constructor = constructor_value.get("chassis_constructor")
+    reshaped: dict[str, object] = {}
     if chassis_constructor is not None:
         reshaped["chassis_constructor"] = chassis_constructor
+
+    for key, value in transformed.items():
+        if key == "constructor":
+            continue
+        reshaped[key] = value
 
     engine_constructor = constructor_value.get("engine_constructor")
     if engine_constructor is not None:
@@ -357,7 +362,6 @@ def _transform_chassis_constructor_from_current_constructors(
             else [engine_constructor]
         )
 
-    reshaped.pop("constructor", None)
     return reshaped
 
 

@@ -69,6 +69,7 @@ def test_constructor_domain_transform_handler_for_chassis_constructors_current_l
     ]
     assert transformed["antecedent_teams"] == [{"text": "Toleman"}]
     assert "constructor" not in transformed
+    assert next(iter(transformed)) == "chassis_constructor"
 
 
 def test_constructor_domain_transform_handler_for_constructor_alias_current_list() -> None:
