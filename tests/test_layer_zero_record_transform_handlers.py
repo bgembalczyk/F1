@@ -71,6 +71,54 @@ def test_constructor_domain_transform_handler_for_chassis_constructors_current_l
     assert "constructor" not in transformed
 
 
+def test_constructor_domain_transform_handler_for_constructor_alias_current_list() -> None:
+    transformed = _constructor_domain_handler(
+        domain="constructor",
+        source_name="f1_constructors_2026.json",
+        record={
+            "constructor": {
+                "chassis_constructor": {"text": "Alpine", "url": "https://example.com"},
+                "engine_constructor": {"text": "Mercedes", "url": "https://engine"},
+            },
+            "antecedent_teams": [{"text": "Toleman"}],
+        },
+    )
+
+    assert transformed["chassis_constructor"] == {
+        "text": "Alpine",
+        "url": "https://example.com",
+    }
+    assert transformed["engine_constructors"] == [
+        {"text": "Mercedes", "url": "https://engine"},
+    ]
+    assert transformed["antecedent_teams"] == [{"text": "Toleman"}]
+    assert "constructor" not in transformed
+
+
+def test_constructor_domain_transform_handler_for_chassis_alias_current_list() -> None:
+    transformed = _constructor_domain_handler(
+        domain="chassis",
+        source_name="f1_constructors_2026.json",
+        record={
+            "constructor": {
+                "chassis_constructor": {"text": "Alpine", "url": "https://example.com"},
+                "engine_constructor": {"text": "Mercedes", "url": "https://engine"},
+            },
+            "antecedent_teams": [{"text": "Toleman"}],
+        },
+    )
+
+    assert transformed["chassis_constructor"] == {
+        "text": "Alpine",
+        "url": "https://example.com",
+    }
+    assert transformed["engine_constructors"] == [
+        {"text": "Mercedes", "url": "https://engine"},
+    ]
+    assert transformed["antecedent_teams"] == [{"text": "Toleman"}]
+    assert "constructor" not in transformed
+
+
 def test_circuits_domain_transform_handler() -> None:
     transformed = _circuits_domain_handler(
         domain="circuits",

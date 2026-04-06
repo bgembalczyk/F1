@@ -308,14 +308,15 @@ def _transform_constructor_domain(
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if domain not in CHASSIS_CONSTRUCTOR_DOMAINS:
+    constructor_domains = CHASSIS_CONSTRUCTOR_DOMAINS | {"constructor", "chassis"}
+    if domain not in constructor_domains:
         return transformed
 
     if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
         return _transform_indianapolis_only_constructor(transformed)
     if source_name == FORMER_CONSTRUCTORS_SOURCE:
         return _transform_former_constructor(transformed)
-    if domain == "chassis_constructors" and re.fullmatch(
+    if domain in {"chassis_constructors", "chassis", "constructor"} and re.fullmatch(
         r"f1_constructors_\d{4}\.json",
         source_name,
     ):
