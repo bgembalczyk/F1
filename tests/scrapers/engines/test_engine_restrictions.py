@@ -30,21 +30,23 @@ def test_engine_restrictions_apply_for_elements_covers_all_guards() -> None:
     assert elements[3]["data"] == {"parsed": True}
 
 
-def test_engine_restrictions_parse_soup_raises_for_missing_header_or_incomplete() -> None:
+def test_engine_restrictions_parse_soup_raises_for_missing_header_or_incomplete(
+) -> None:
     scraper = EngineRestrictionsScraper()
 
+    soup = BeautifulSoup("<table></table>", "html.parser")
+    scraper._find_table = lambda _soup: _soup.find("table")
     with pytest.raises(RuntimeError, match="wiersza nagłówkowego"):
-        soup = BeautifulSoup("<table></table>", "html.parser")
-        scraper._find_table = lambda _soup: _soup.find("table")
         scraper._parse_soup(soup)
 
+    soup = BeautifulSoup("<table><tr><th>Year</th></tr></table>", "html.parser")
+    scraper._find_table = lambda _soup: _soup.find("table")
     with pytest.raises(RuntimeError, match="niekompletny"):
-        soup = BeautifulSoup("<table><tr><th>Year</th></tr></table>", "html.parser")
-        scraper._find_table = lambda _soup: _soup.find("table")
         scraper._parse_soup(soup)
 
 
-def test_engine_restrictions_parse_soup_transposes_rows_and_fills_missing_cells() -> None:
+def test_engine_restrictions_parse_soup_transposes_rows_and_fills_missing_cells(
+) -> None:
     scraper = EngineRestrictionsScraper()
     soup = BeautifulSoup(
         """
@@ -60,6 +62,6 @@ def test_engine_restrictions_parse_soup_transposes_rows_and_fills_missing_cells(
 
     records = scraper._parse_soup(soup)
 
-    assert len(records) == 3
+    assert len(records) == 3  # noqa: PLR2004
     assert all(record.get("size") is None for record in records)
     assert records[2]["type_of_engine"] == []

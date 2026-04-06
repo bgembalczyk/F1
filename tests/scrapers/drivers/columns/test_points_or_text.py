@@ -20,7 +20,7 @@ def _ctx(html: str, clean_text: str) -> ColumnContext:
 
 def test_points_or_text_column_returns_numeric_points() -> None:
     column = PointsOrTextColumn()
-    assert column.parse(_ctx("42", "42")) == 42.0
+    assert column.parse(_ctx("42", "42")) == 42.0  # noqa: PLR2004
 
 
 def test_points_or_text_column_returns_text_when_not_numeric() -> None:

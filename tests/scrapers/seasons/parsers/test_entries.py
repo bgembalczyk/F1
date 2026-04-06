@@ -10,14 +10,14 @@ class _FakePolicy:
         return None
 
     def should_normalize_entry_numbers(self, season_year: int | None) -> bool:
-        return season_year is not None and season_year < 2007
+        return season_year is not None and season_year < 2007  # noqa: PLR2004
 
 
 class _FakeTableParser:
     def __init__(self, records: list[dict]):
         self.records = records
 
-    def parse_table(self, *args, **kwargs):
+    def parse_table(self, *_args, **_kwargs):
         return list(self.records)
 
 
@@ -26,7 +26,8 @@ class _FakeMerger:
         return records
 
 
-def test_entries_parser_normalizes_single_number_for_multiple_drivers_pre_2007() -> None:
+def test_entries_parser_normalizes_single_number_for_multiple_drivers_pre_2007(
+) -> None:
     parser = SeasonEntriesParser(
         table_parser=_FakeTableParser(
             [

@@ -46,7 +46,13 @@ def test_constructor_base_parses_multiline_cell_into_list() -> None:
     parsed = _ContractConstructorColumn().parse(
         _ctx(
             clean_text="Ferrari - Renault McLaren - Mercedes",
-            html="<a href='/wiki/Ferrari'>Ferrari</a> - <a href='/wiki/Renault'>Renault</a><br><a href='/wiki/McLaren'>McLaren</a> - <a href='/wiki/Mercedes'>Mercedes</a>",
+            html=(
+                "<a href='/wiki/Ferrari'>Ferrari</a>"
+                " - <a href='/wiki/Renault'>Renault</a>"
+                "<br>"
+                "<a href='/wiki/McLaren'>McLaren</a>"
+                " - <a href='/wiki/Mercedes'>Mercedes</a>"
+            ),
             links=[
                 {"text": "Ferrari", "url": "/wiki/Ferrari"},
                 {"text": "Renault", "url": "/wiki/Renault"},

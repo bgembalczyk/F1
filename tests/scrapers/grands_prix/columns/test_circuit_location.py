@@ -4,7 +4,9 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 
 
-def _ctx(*, clean_text: str | None, links: list[dict[str, str | None]]) -> ColumnContext:
+def _ctx(
+    *, clean_text: str | None, links: list[dict[str, str | None]],
+) -> ColumnContext:
     return ColumnContext(
         header="Location",
         key="location",

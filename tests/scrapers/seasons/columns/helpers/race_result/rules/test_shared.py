@@ -2,25 +2,39 @@ from __future__ import annotations
 
 import pytest
 
-from scrapers.seasons.columns.helpers.race_result.rules.classified_dnf import ClassifiedDnfRule
+from scrapers.seasons.columns.helpers.race_result.rules.classified_dnf import (
+    ClassifiedDnfRule,
+)
 from scrapers.seasons.columns.helpers.race_result.rules.context import ResultRuleContext
-from scrapers.seasons.columns.helpers.race_result.rules.fatal_accident import FatalAccidentRule
+from scrapers.seasons.columns.helpers.race_result.rules.fatal_accident import (
+    FatalAccidentRule,
+)
 from scrapers.seasons.columns.helpers.race_result.rules.mark_based_eligibility import (
     MarkBasedEligibilityRule,
 )
 from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
     DoublePointsRoundRule,
 )
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import HalfPointsRoundRule
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import RoundRuleContext
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
+    HalfPointsRoundRule,
+)
+from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
+    RoundRuleContext,
+)
 from scrapers.seasons.columns.helpers.race_result.rules.shared import SharedDriveRule
-from scrapers.seasons.columns.helpers.race_result.rules.star_mark_note import StarMarkNoteRule
+from scrapers.seasons.columns.helpers.race_result.rules.star_mark_note import (
+    StarMarkNoteRule,
+)
 
 
 @pytest.mark.parametrize(
     ("year", "expected"),
     [
-        (1960, {"shared_drive": True, "points_eligible": False, "notes": ["shared_drive_no_points"]}),
+        (1960, {
+            "shared_drive": True,
+            "points_eligible": False,
+            "notes": ["shared_drive_no_points"],
+        }),
         (1957, {"shared_drive": True, "points_shared": True}),
     ],
 )
@@ -66,7 +80,8 @@ def test_fatal_accident_rule_boundary_non_string_position_is_noop() -> None:
     assert "notes" not in result
 
 
-def test_mark_based_eligibility_rule_sets_no_points_for_double_dagger_position() -> None:
+def test_mark_based_eligibility_rule_sets_no_points_for_double_dagger_position(
+) -> None:
     result = {"position": 5, "marks": ["‡"]}
     MarkBasedEligibilityRule().apply(
         result,

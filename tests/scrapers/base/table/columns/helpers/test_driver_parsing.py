@@ -90,7 +90,11 @@ def test_parse_segment_fallback_returns_segment_link_when_lookup_misses_alias(
 
     parsed = DriverParsingHelpers.parse_segment(
         segment,
-        {"lewis hamilton": [{"text": "Lewis Hamilton", "url": f"{BASE_URL}/wiki/Lewis_Hamilton"}]},
+        {
+            "lewis hamilton": [
+                {"text": "Lewis Hamilton", "url": f"{BASE_URL}/wiki/Lewis_Hamilton"},
+            ],
+        },
         BASE_URL,
     )
 
@@ -118,5 +122,6 @@ def test_links_and_no_links_fixture_paths(
     parsed_with = DriverParsingHelpers.extract_from_context(ctx_with, BASE_URL)
     parsed_without = DriverParsingHelpers.extract_from_context(ctx_without, BASE_URL)
 
-    assert parsed_with and set(parsed_with.keys()) == {"text", "url"}
+    assert parsed_with is not None
+    assert set(parsed_with.keys()) == {"text", "url"}
     assert parsed_without is None

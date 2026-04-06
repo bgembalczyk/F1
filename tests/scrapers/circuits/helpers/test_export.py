@@ -9,7 +9,9 @@ def test_circuit_name_initial_handles_missing_and_text() -> None:
     assert export_mod.circuit_name_initial({}) == "other"
 
 
-def test_export_complete_circuits_groups_records_and_exports(monkeypatch, tmp_path) -> None:
+def test_export_complete_circuits_groups_records_and_exports(
+    monkeypatch, tmp_path,
+) -> None:
     exported_paths: list[Path] = []
 
     class _Logger:

@@ -33,13 +33,13 @@ class _MemoryCache:
 
 
 class _ReadErrorCache(_MemoryCache):
-    def get(self, key: str) -> str | None:
+    def get(self, _key: str) -> str | None:
         msg = "cache read failed"
         raise OSError(msg)
 
 
 class _WriteErrorCache(_MemoryCache):
-    def set(self, key: str, value: str) -> None:
+    def set(self, _key: str, _value: str) -> None:
         msg = "cache write failed"
         raise OSError(msg)
 
@@ -78,7 +78,7 @@ def test_cache_adapter_refreshes_value_after_cache_eviction() -> None:
     second = adapter.get("https://example.com/a")
 
     assert first != second
-    assert source.calls == 2
+    assert source.calls == 2  # noqa: PLR2004
 
 
 def test_cache_adapter_propagates_cache_read_error() -> None:

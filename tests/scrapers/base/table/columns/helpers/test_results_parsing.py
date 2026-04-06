@@ -79,7 +79,7 @@ def test_parse_points_value_returns_none_on_alias_text(
     html_alias_or_text_record: str,
 ) -> None:
     text = BeautifulSoup(html_alias_or_text_record, "html.parser").find("td").get_text(
-        " ", strip=True
+        " ", strip=True,
     )
 
     assert ResultsParsingHelpers.parse_points_value(text) is None
@@ -89,7 +89,7 @@ def test_parse_results_structure_for_mixed_values() -> None:
     parsed = ResultsParsingHelpers.parse_results("1st/Ret/DNS")
 
     assert isinstance(parsed, list)
-    assert len(parsed) == 3
+    assert len(parsed) == 3  # noqa: PLR2004
     assert all(isinstance(item, dict) for item in parsed)
     assert parsed[0].keys() == {"position", "status"}
     assert isinstance(parsed[0]["position"], int)
@@ -111,7 +111,7 @@ def test_parse_result_part_status_map_and_fallback(
     token: str,
     expected_status: str,
 ) -> None:
-    parsed = ResultsParsingHelpers._parse_result_part(token)
+    parsed = ResultsParsingHelpers._parse_result_part(token)  # noqa: SLF001
 
     assert isinstance(parsed, dict)
     assert set(parsed.keys()) == {"status"}
@@ -124,9 +124,11 @@ def test_parse_superscripts_returns_expected_tuple_structure(
 ) -> None:
     ctx = _ctx_from_html(html_valid_record)
 
-    reference_number, has_dagger, has_asterisk = ResultsParsingHelpers.parse_superscripts(
-        ctx,
-    )
+    (
+        reference_number,
+        has_dagger,
+        has_asterisk,
+    ) = ResultsParsingHelpers.parse_superscripts(ctx)
 
     assert isinstance(reference_number, int)
     assert isinstance(has_dagger, bool)
@@ -150,7 +152,9 @@ def test_parse_entrant_segment_with_and_without_links(
     with_links_segment = BeautifulSoup(with_links_html, "html.parser").find("td")
     without_links_segment = BeautifulSoup(without_links_html, "html.parser").find("td")
 
-    parsed_with = ResultsParsingHelpers.parse_entrant_segment(with_links_segment, {}, BASE_URL)
+    parsed_with = ResultsParsingHelpers.parse_entrant_segment(
+        with_links_segment, {}, BASE_URL,
+    )
     parsed_without = ResultsParsingHelpers.parse_entrant_segment(
         without_links_segment,
         {},
@@ -181,7 +185,9 @@ def test_extract_licenses_and_fallback_empty_segments() -> None:
 
 
 def test_strip_refs_removes_all_sup_tags() -> None:
-    segment = BeautifulSoup("<td>1st<sup>1</sup><sup>†</sup></td>", "html.parser").find("td")
+    segment = BeautifulSoup(
+        "<td>1st<sup>1</sup><sup>†</sup></td>", "html.parser",
+    ).find("td")
 
     ResultsParsingHelpers.strip_refs(segment)
 
@@ -210,5 +216,5 @@ def test_extract_number_paths(text: str, expected: int | None) -> None:
         ("", False),
     ],
 )
-def test_has_year_paths(text: str, expected: bool) -> None:
+def test_has_year_paths(text: str, expected: bool) -> None:  # noqa: FBT001
     assert ResultsParsingHelpers.has_year(text) is expected

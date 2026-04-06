@@ -28,4 +28,7 @@ def test_scraper_wires_manufacturers_section_parser() -> None:
     scraper = TyreManufacturersScraper()
 
     assert isinstance(scraper.section_parser, ManufacturersSectionParser)
-    assert scraper.body_content_parser.content_text_parser.section_parser is scraper.section_parser
+    assert (
+        scraper.body_content_parser.content_text_parser.section_parser
+        is scraper.section_parser
+    )

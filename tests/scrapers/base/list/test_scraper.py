@@ -1,5 +1,6 @@
-from bs4 import BeautifulSoup
+# ruff: noqa: SLF001
 import pytest
+from bs4 import BeautifulSoup
 
 from scrapers.base.errors import ScraperNotFoundError
 from scrapers.base.list.scraper import F1ListScraper

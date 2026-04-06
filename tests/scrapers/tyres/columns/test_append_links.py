@@ -4,7 +4,9 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.tyres.columns.append_links import AppendLinksColumn
 
 
-def _ctx(*, key: str = "manufacturers", model_fields: set[str] | None = None) -> ColumnContext:
+def _ctx(
+    *, key: str = "manufacturers", model_fields: set[str] | None = None,
+) -> ColumnContext:
     return ColumnContext(
         header="Manufacturer 1",
         key=key,
@@ -23,7 +25,7 @@ def test_apply_appends_links_to_existing_record_list() -> None:
 
     column.apply(_ctx(), record)
 
-    assert len(record["manufacturers"]) == 2
+    assert len(record["manufacturers"]) == 2  # noqa: PLR2004
     assert record["manufacturers"][1]["text"] == "Pirelli"
 
 

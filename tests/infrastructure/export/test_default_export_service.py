@@ -7,7 +7,7 @@ from scrapers.base.export.service import ExportService
 
 
 @pytest.mark.parametrize(
-    "attribute_name,expected_type_name",
+    ("attribute_name", "expected_type_name"),
     [
         ("_exporter", "DataExporter"),
         ("_fieldnames_strategy", "FieldnamesStrategySelector"),
@@ -59,9 +59,14 @@ def test_default_export_service_to_csv_propagates_dependency_exception(
     output = tmp_path / "broken.csv"
 
     def _raise_for_malformed_payload(*_args, **_kwargs):
-        raise ValueError("malformed export payload")
+        msg = "malformed export payload"
+        raise ValueError(msg)
 
-    monkeypatch.setattr(service._fieldnames_strategy, "resolve", _raise_for_malformed_payload)
+    monkeypatch.setattr(
+        service._fieldnames_strategy,  # noqa: SLF001
+        "resolve",
+        _raise_for_malformed_payload,
+    )
 
     with pytest.raises(ValueError, match="malformed export payload"):
         service.to_csv([{"driver": "Ayrton Senna"}], output)

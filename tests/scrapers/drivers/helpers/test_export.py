@@ -32,8 +32,11 @@ def test_export_complete_drivers_uses_grouping_export(monkeypatch) -> None:
     monkeypatch.setattr(export_mod, "CompleteDriverDataExtractor", _ScraperStub)
     monkeypatch.setattr(export_mod, "export_grouped_json", _fake_export)
 
-    export_mod.export_complete_drivers(output_dir=Path("/tmp/drivers"), include_urls=False)
+    export_mod.export_complete_drivers(
+        output_dir=Path("/tmp/drivers"),  # noqa: S108
+        include_urls=False,
+    )
 
-    assert calls["output_dir"] == Path("/tmp/drivers")
+    assert calls["output_dir"] == Path("/tmp/drivers")  # noqa: S108
     assert calls["group_m"] == "V"
     assert calls["group_a"] == "S"
