@@ -501,12 +501,12 @@ def _transform_teams_from_current_constructors(
     formula_one = {
         key: value for key, value in transformed.items() if key != "constructor"
     }
+    if constructors:
+        formula_one["constructors"] = constructors
     team_record = {
         "team": team_value,
         "racing_series": _build_racing_series(formula_one),
     }
-    if constructors:
-        team_record["constructors"] = constructors
     return team_record
 
 
