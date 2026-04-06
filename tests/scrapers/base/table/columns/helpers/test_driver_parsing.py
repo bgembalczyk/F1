@@ -122,5 +122,6 @@ def test_links_and_no_links_fixture_paths(
     parsed_with = DriverParsingHelpers.extract_from_context(ctx_with, BASE_URL)
     parsed_without = DriverParsingHelpers.extract_from_context(ctx_without, BASE_URL)
 
-    assert parsed_with and set(parsed_with.keys()) == {"text", "url"}
+    assert parsed_with is not None
+    assert set(parsed_with.keys()) == {"text", "url"}
     assert parsed_without is None

@@ -17,7 +17,7 @@ def _ctx(clean_text: str) -> ColumnContext:
 
 
 def test_first_place_returns_plain_int_without_role_suffix() -> None:
-    assert FirstPlaceColumn().parse(_ctx("25")) == 25
+    assert FirstPlaceColumn().parse(_ctx("25")) == 25  # noqa: PLR2004
 
 
 def test_first_place_returns_driver_role_payload() -> None:

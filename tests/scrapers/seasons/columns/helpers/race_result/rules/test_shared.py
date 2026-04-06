@@ -83,9 +83,8 @@ def test_fatal_accident_rule_boundary_non_string_position_is_noop() -> None:
     assert "notes" not in result
 
 
-def test_mark_based_eligibility_rule_sets_no_points_for_double_dagger_position() -> (
-    None
-):
+def test_mark_based_eligibility_rule_sets_no_points_for_double_dagger_position(
+) -> None:
     result = {"position": 5, "marks": ["‡"]}
     MarkBasedEligibilityRule().apply(
         result,

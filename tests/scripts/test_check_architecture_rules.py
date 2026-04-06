@@ -4,8 +4,10 @@ import subprocess
 import sys
 from pathlib import Path
 from types import SimpleNamespace
+from typing import TYPE_CHECKING
 
-import pytest
+if TYPE_CHECKING:
+    import pytest
 
 from scripts import check_architecture_rules
 
@@ -52,7 +54,10 @@ def test_checks_cover_required_layout_boundaries_and_cross_domain(
         ("drivers",),
         rules,
     )
-    section_errors = check_architecture_rules._check_sections_single_scraper_boundary(  # noqa: SLF001
+    _check_ss = (
+        check_architecture_rules._check_sections_single_scraper_boundary  # noqa: SLF001
+    )
+    section_errors = _check_ss(
         root,
         ("drivers",),
         rules,
@@ -139,13 +144,13 @@ def test_cli_invalid_argument_reports_stderr() -> None:
         Path(__file__).resolve().parents[2] / "scripts" / "check_architecture_rules.py"
     )
 
-    proc = subprocess.run(
+    proc = subprocess.run(  # noqa: S603
         [sys.executable, str(script_path), "--bad-flag"],
         capture_output=True,
         text=True,
         check=False,
     )
 
-    assert proc.returncode == 2
+    assert proc.returncode == 2  # noqa: PLR2004
     assert "usage:" in proc.stderr
     assert "unrecognized arguments" in proc.stderr

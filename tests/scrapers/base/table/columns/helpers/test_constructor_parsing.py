@@ -64,7 +64,7 @@ def test_split_lines_builds_two_contexts_with_expected_structure(
 
     line_contexts = ConstructorParsingHelpers.split_lines(ctx)
 
-    assert len(line_contexts) == 2
+    assert len(line_contexts) == 2  # noqa: PLR2004
     for item in line_contexts:
         assert isinstance(item, ColumnContext)
         assert isinstance(item.links, list)
@@ -98,7 +98,8 @@ def test_extract_part_single_link_duplicates_engine_branch() -> None:
     engine = ConstructorParsingHelpers.extract_part(ctx, 1)
 
     assert chassis == engine
-    assert chassis and set(chassis.keys()) == {"text", "url"}
+    assert chassis is not None
+    assert set(chassis.keys()) == {"text", "url"}
 
 
 @pytest.mark.parametrize(
@@ -122,9 +123,8 @@ def test_extract_part_handles_incomplete_or_out_of_range(
     assert parsed == expected
 
 
-def test_find_hyphen_split_index_detects_split_only_when_two_plus_links_before_hyphen() -> (
-    None
-):
+def test_find_hyphen_split_index_detects_split_with_two_plus_links_before_hyphen(
+) -> None:
     ctx = _ctx_from_html(
         '<td><a href="/wiki/BRM">BRM</a> <a href="/wiki/P160">P160</a> - '
         '<a href="/wiki/Ford_Motor_Company">Ford</a></td>',
@@ -132,7 +132,7 @@ def test_find_hyphen_split_index_detects_split_only_when_two_plus_links_before_h
 
     split_index = ConstructorParsingHelpers.find_hyphen_split_index(ctx)
 
-    assert split_index == 2
+    assert split_index == 2  # noqa: PLR2004
 
 
 def test_extract_layout_text_returns_none_for_empty_and_link_only_values(

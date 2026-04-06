@@ -19,7 +19,7 @@ def test_check_known_module_typos_detects_module_name_typos(
     capsys,
     typo_module_name: str,
 ) -> None:
-    monkeypatch.setattr(check_known_module_typos, "REPO_ROOT", Path("/tmp/repo"))
+    monkeypatch.setattr(check_known_module_typos, "REPO_ROOT", Path("/tmp/repo"))  # noqa: S108
     monkeypatch.setattr(
         check_known_module_typos,
         "run_known_typos_check",
@@ -38,7 +38,7 @@ def test_check_known_module_typos_returns_success_without_typos(
     monkeypatch,
     capsys,
 ) -> None:
-    monkeypatch.setattr(check_known_module_typos, "REPO_ROOT", Path("/tmp/repo"))
+    monkeypatch.setattr(check_known_module_typos, "REPO_ROOT", Path("/tmp/repo"))  # noqa: S108
     monkeypatch.setattr(
         check_known_module_typos,
         "run_known_typos_check",
@@ -53,7 +53,7 @@ def test_check_known_module_typos_returns_success_without_typos(
 
 
 @pytest.mark.parametrize(
-    "errors,expected_lines",
+    ("errors", "expected_lines"),
     [
         (
             ["found typo module: /tmp/repo/contants.py"],
@@ -81,7 +81,7 @@ def test_check_known_module_typos_error_output_format_and_exit_code(
     errors: list[str],
     expected_lines: list[str],
 ) -> None:
-    monkeypatch.setattr(check_known_module_typos, "REPO_ROOT", Path("/tmp/repo"))
+    monkeypatch.setattr(check_known_module_typos, "REPO_ROOT", Path("/tmp/repo"))  # noqa: S108
     monkeypatch.setattr(
         check_known_module_typos,
         "run_known_typos_check",

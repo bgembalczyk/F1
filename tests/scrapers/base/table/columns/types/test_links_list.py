@@ -91,7 +91,11 @@ def test_links_list_preserves_duplicate_elements_and_links() -> None:
     parsed = LinksListColumn(text_for_missing_url=True).parse(
         _ctx(
             clean_text="Ferrari, Ferrari",
-            html="<a href='/wiki/Ferrari'>Ferrari</a>, Ferrari, <a href='/wiki/Ferrari'>Ferrari</a>",
+            html=(
+                "<a href='/wiki/Ferrari'>Ferrari</a>"
+                ", Ferrari, "
+                "<a href='/wiki/Ferrari'>Ferrari</a>"
+            ),
             links=[
                 {"text": "Ferrari", "url": "/wiki/Ferrari"},
                 {"text": "Ferrari", "url": "/wiki/Ferrari"},

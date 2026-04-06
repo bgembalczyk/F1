@@ -24,13 +24,12 @@ def test_build_headers_for_two_level_header_fixture() -> None:
 
     headers, header_rows = MultiLevelHeaderBuilder.build_headers(table)
 
-    assert header_rows == 2
+    expected_two_rows = 2
+    assert header_rows == expected_two_rows
     assert headers == ["Driver", "Results - Wins", "Results - Podiums"]
 
 
-def test_build_headers_with_missing_second_row_cell_falls_back_to_parent_header() -> (
-    None
-):
+def test_build_headers_missing_second_row_cell_falls_back_to_parent_header() -> None:
     table = _table(
         """
         <table>

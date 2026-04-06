@@ -73,8 +73,8 @@ def test_parse_promotes_single_result_with_sprint_position_to_scalar_payload() -
 
     assert parsed is not None
     assert isinstance(parsed["results"], dict)
-    assert parsed["results"]["position"] == 5
-    assert parsed["results"]["sprint_position"] == 2
+    assert parsed["results"]["position"] == 5  # noqa: PLR2004
+    assert parsed["results"]["sprint_position"] == 2  # noqa: PLR2004
 
 
 # ---------------------------------------------------------------------------
@@ -95,7 +95,7 @@ def test_parse_adds_half_points_round_note_for_marked_header() -> None:
 
     assert parsed is not None
     assert parsed["round"]["note"] == "half_points"
-    assert parsed["round"]["points_multiplier"] == 0.5
+    assert parsed["round"]["points_multiplier"] == 0.5  # noqa: PLR2004
 
 
 def test_parse_adds_double_points_round_note_for_2014_abu_dhabi() -> None:
@@ -111,18 +111,16 @@ def test_parse_adds_double_points_round_note_for_2014_abu_dhabi() -> None:
 
     assert parsed is not None
     assert parsed["round"]["note"] == "double_points"
-    assert parsed["round"]["points_multiplier"] == 2.0
+    assert parsed["round"]["points_multiplier"] == 2.0  # noqa: PLR2004
 
 
-def test_parse_marks_shared_drive_and_share_count_when_two_results_are_present() -> (
-    None
-):
+def test_parse_marks_shared_drive_and_share_count_when_two_results_present() -> None:
     parsed = RaceResultColumn(season_year=1957).parse(_ctx("<td>1† / 2†</td>"))
 
     assert parsed is not None
     assert parsed["results"][0]["shared_drive"] is True
     assert parsed["results"][0]["points_shared"] is True
-    assert parsed["results"][0]["points_share_count"] == 2
+    assert parsed["results"][0]["points_share_count"] == 2  # noqa: PLR2004
 
 
 # ---------------------------------------------------------------------------

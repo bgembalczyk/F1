@@ -30,9 +30,8 @@ def test_event_optional_field_normalization_accepts_none_and_missing_value() -> 
     assert validate_event_field({}) == []
 
 
-def test_event_field_supports_string_or_list_of_links_and_reports_invalid_items() -> (
-    None
-):
+def test_event_field_supports_string_or_list_of_links_and_reports_invalid_items(
+) -> None:
     assert validate_event_field({"event": "Goodwood Festival"}) == []
 
     errors = validate_event_field(
@@ -48,9 +47,8 @@ def test_event_field_supports_string_or_list_of_links_and_reports_invalid_items(
     assert errors[0].message == "event[1] must be a mapping"
 
 
-def test_event_record_representation_and_serialization_are_plain_json_friendly() -> (
-    None
-):
+def test_event_record_representation_and_serialization_are_plain_json_friendly(
+) -> None:
     record: EventRecord = {
         "event": "Mille Miglia",
         "championship": False,

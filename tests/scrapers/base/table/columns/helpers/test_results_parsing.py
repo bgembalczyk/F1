@@ -94,7 +94,7 @@ def test_parse_results_structure_for_mixed_values() -> None:
     parsed = ResultsParsingHelpers.parse_results("1st/Ret/DNS")
 
     assert isinstance(parsed, list)
-    assert len(parsed) == 3
+    assert len(parsed) == 3  # noqa: PLR2004
     assert all(isinstance(item, dict) for item in parsed)
     assert parsed[0].keys() == {"position", "status"}
     assert isinstance(parsed[0]["position"], int)
@@ -116,7 +116,7 @@ def test_parse_result_part_status_map_and_fallback(
     token: str,
     expected_status: str,
 ) -> None:
-    parsed = ResultsParsingHelpers._parse_result_part(token)
+    parsed = ResultsParsingHelpers._parse_result_part(token)  # noqa: SLF001
 
     assert isinstance(parsed, dict)
     assert set(parsed.keys()) == {"status"}
@@ -192,9 +192,9 @@ def test_extract_licenses_and_fallback_empty_segments() -> None:
 
 
 def test_strip_refs_removes_all_sup_tags() -> None:
-    segment = BeautifulSoup("<td>1st<sup>1</sup><sup>†</sup></td>", "html.parser").find(
-        "td",
-    )
+    segment = BeautifulSoup(
+        "<td>1st<sup>1</sup><sup>†</sup></td>", "html.parser",
+    ).find("td")
 
     ResultsParsingHelpers.strip_refs(segment)
 
@@ -223,5 +223,5 @@ def test_extract_number_paths(text: str, expected: int | None) -> None:
         ("", False),
     ],
 )
-def test_has_year_paths(text: str, expected: bool) -> None:
+def test_has_year_paths(text: str, expected: bool) -> None:  # noqa: FBT001
     assert ResultsParsingHelpers.has_year(text) is expected

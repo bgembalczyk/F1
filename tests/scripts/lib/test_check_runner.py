@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 from scripts.lib.check_runner import iter_python_paths
 from scripts.lib.check_runner import print_report

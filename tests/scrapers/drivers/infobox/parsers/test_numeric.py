@@ -8,12 +8,12 @@ def _cell(text: str):
 
 
 def test_parse_int_cell_numeric_vs_text() -> None:
-    assert NumericParser.parse_int_cell(_cell("1,234 entries")) == 1234
+    assert NumericParser.parse_int_cell(_cell("1,234 entries")) == 1234  # noqa: PLR2004
     assert NumericParser.parse_int_cell(_cell("unknown")) is None
 
 
 def test_parse_float_cell_numeric_vs_text() -> None:
-    assert NumericParser.parse_float_cell(_cell("3.14 litre")) == 3.14
+    assert NumericParser.parse_float_cell(_cell("3.14 litre")) == 3.14  # noqa: PLR2004
     assert NumericParser.parse_float_cell(_cell("n/a")) is None
 
 

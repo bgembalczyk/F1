@@ -1,3 +1,4 @@
+# ruff: noqa: SLF001
 from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import (
     PipelineRecord,
 )

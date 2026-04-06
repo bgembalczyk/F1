@@ -37,6 +37,6 @@ def test_export_complete_drivers_uses_grouping_export(monkeypatch) -> None:
         include_urls=False,
     )
 
-    assert calls["output_dir"] == Path("/tmp/drivers")
+    assert calls["output_dir"] == Path("/tmp/drivers")  # noqa: S108
     assert calls["group_m"] == "V"
     assert calls["group_a"] == "S"

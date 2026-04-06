@@ -3,8 +3,10 @@ from __future__ import annotations
 import os
 import subprocess
 import sys
+from typing import TYPE_CHECKING
 
-import pytest
+if TYPE_CHECKING:
+    import pytest
 
 from scripts.ci import enforce_architecture_adr_reference as gate
 
@@ -90,6 +92,6 @@ def test_cli_invalid_argument_prints_stderr() -> None:
         env=dict(os.environ),
     )
 
-    assert proc.returncode == 2
+    assert proc.returncode == 2  # noqa: PLR2004
     assert "usage:" in proc.stderr
     assert "unrecognized arguments" in proc.stderr
