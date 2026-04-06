@@ -146,7 +146,7 @@ def test_teams_domain_transform_handler_for_current_constructors_list() -> None:
     )
 
     assert transformed["team"] == {"text": "Alpine", "url": "https://example.com"}
-    assert transformed["constructors"] == [
+    assert transformed["racing_series"]["formula_one"]["constructors"] == [
         {
             "chassis_constructor": {"text": "Alpine", "url": "https://example.com"},
             "engine_constructor": {"text": "Mercedes", "url": "https://engine"},
