@@ -375,17 +375,34 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
         for record in records:
             if not isinstance(record, dict):
                 continue
-            normalized = dict(record)
-            constructor = normalized.get("chassis_constructor")
-            if not isinstance(constructor, dict):
+            normalized_constructor = self._normalize_indianapolis_constructor(record)
+            if normalized_constructor is None:
                 continue
-            normalized_constructor = dict(constructor)
             if not self._include_urls:
                 normalized_constructor.pop("url", None)
             else:
                 url = normalized_constructor.get("url")
                 if isinstance(url, str) and url.startswith("/"):
                     normalized_constructor["url"] = f"https://en.wikipedia.org{url}"
-            normalized["chassis_constructor"] = normalized_constructor
-            normalized_records.append(normalized)
+            normalized_records.append(
+                {"chassis_constructor": normalized_constructor},
+            )
         return normalized_records
+
+    @staticmethod
+    def _normalize_indianapolis_constructor(
+        record: dict[str, Any],
+    ) -> dict[str, Any] | None:
+        constructor = record.get("chassis_constructor")
+        if isinstance(constructor, dict):
+            return dict(constructor)
+
+        constructor_name = record.get("constructor")
+        if not isinstance(constructor_name, str) or not constructor_name.strip():
+            return None
+
+        normalized: dict[str, Any] = {"text": constructor_name.strip()}
+        constructor_url = record.get("constructor_url")
+        if isinstance(constructor_url, str) and constructor_url.strip():
+            normalized["url"] = constructor_url.strip()
+        return normalized
