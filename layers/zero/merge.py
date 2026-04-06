@@ -8,12 +8,12 @@ from pathlib import Path
 from layers.orchestration.types import CONSTRUCTOR_STATUS_ACTIVE
 from layers.orchestration.types import CONSTRUCTOR_STATUS_FORMER
 from layers.path_resolver import PathResolver
+from layers.zero.domain_postprocess import configure_domain_postprocessors
+from layers.zero.domain_postprocess import post_process_domain_records
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
 from layers.zero.merge_types import LinkValue
 from layers.zero.merge_types import RaceRecordModel
-from layers.zero.merge_types import SeasonRecordModel
-from layers.zero.merge_types import TeamRecordModel
 from layers.zero.record_merge_ops import (
     merge_driver_dict_values as _merge_driver_dict_values_impl,
 )
@@ -61,17 +61,11 @@ logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
-class DomainStep:
-    name: str
-    processor: DomainRecordsProcessor
-
-
-@dataclass(frozen=True)
 class DomainPipelineConfig:
     transformers: dict[str, tuple[RecordTransformHandler, ...]] = field(
         default_factory=dict,
     )
-    postprocessors: tuple[DomainStep, ...] = ()
+    postprocessors: tuple[tuple[str, DomainRecordsProcessor], ...] = ()
     records_normalizer: DomainRecordsProcessor | None = None
 
 
@@ -405,7 +399,9 @@ def _transform_former_constructor(
     transformed: dict[str, object],
 ) -> dict[str, object]:
     if domain in {"chassis_constructors", "chassis", "constructor"}:
-        flattened = {key: value for key, value in transformed.items() if key != "constructor"}
+        flattened = {
+            key: value for key, value in transformed.items() if key != "constructor"
+        }
         flattened["status"] = CONSTRUCTOR_STATUS_FORMER
         return flattened
 
@@ -536,11 +532,10 @@ def _transform_teams_from_current_constructors(
     }
     if constructors:
         formula_one["constructors"] = constructors
-    team_record = {
+    return {
         "team": team_value,
         "racing_series": _build_racing_series(formula_one),
     }
-    return team_record
 
 
 def _transform_drivers_domain(
@@ -742,247 +737,16 @@ def _merge_duplicate_drivers(records: list[object]) -> list[object]:
     return merged_records
 
 
-def _season_sort_key(record: object) -> tuple[int, str]:
-    if not isinstance(record, dict):
-        return (1, "")
-
-    season_year = _season_year(record.get("season"))
-    if season_year is not None:
-        return (0, str(season_year).zfill(10))
-
-    return (1, "")
+configure_domain_postprocessors(DOMAIN_PIPELINE_CONFIGS, DomainPipelineConfig)
 
 
-def _season_year(season: object) -> int | None:
-    if isinstance(season, int):
-        return season
-    if not isinstance(season, dict):
-        return None
-
-    direct_year = season.get("year")
-    if isinstance(direct_year, int):
-        return direct_year
-
-    text_year = season.get("text")
-    if isinstance(text_year, str):
-        match = re.search(r"\b(\d{4})\b", text_year)
-        if match is not None:
-            return int(match.group(1))
-    return None
-
-
-def _driver_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
-        return ""
-
-    driver_value = record.get("driver")
-    if isinstance(driver_value, dict):
-        driver_text = str(driver_value.get("text", ""))
-    else:
-        driver_text = str(driver_value or "")
-
-    name_parts = driver_text.split(" ", 1)
-    if len(name_parts) == 1:
-        return driver_text.strip().casefold()
-    return name_parts[1].strip().casefold()
-
-
-def _constructor_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
-        return ""
-    constructor = record.get("constructor")
-    if isinstance(constructor, dict):
-        chassis = _normalized_text(constructor.get("chassis_constructor"))
-        engine = _normalized_text(constructor.get("engine_constructor"))
-        if chassis or engine:
-            return f"{chassis}\u0000{engine}"
-    return _normalized_text(constructor)
-
-
-def _chassis_constructor_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
-        return ""
-    return _normalized_text(record.get("chassis_constructor"))
-
-
-def _circuits_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
-        return ""
-    return _normalized_text(record.get("circuit"))
-
-
-def _team_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
-        return ""
-    team_value = record.get("team")
-    if team_value is not None:
-        return _normalized_text(team_value)
-    return _normalized_text(record.get("text"))
-
-
-def _engine_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
-        return ""
-    engine_constructor = record.get("engine_constructor")
-    if engine_constructor is not None:
-        return _normalized_text(engine_constructor)
-    return _normalized_text(record.get("manufacturer"))
-
-
-def _grands_prix_sort_key(record: object) -> str:
-    if not isinstance(record, dict):
-        return ""
-    return _normalized_text(record.get("race_title"))
-
-
-def _races_sort_key(record: object) -> tuple[int, str, int, str]:
-    if not isinstance(record, dict):
-        return (1, "", 1, "")
-
-    season = record.get("season")
-    season_key = _sort_key_with_presence(season)
-
-    grand_prix = record.get("grand_prix")
-    if grand_prix is None:
-        grand_prix = record.get("event")
-    grand_prix_key = _sort_key_with_presence(grand_prix)
-    return season_key + grand_prix_key
-
-
-def _countries_sort_key(record: object) -> tuple[int, str]:
-    return _sort_key_with_presence(record)
-
-
-def _sponsors_sort_key(record: object) -> tuple[int, str]:
-    return _sort_key_with_presence(record)
-
-
-def _merge_duplicate_teams(records: list[object]) -> list[object]:
-    """Aktywna, gdy domena to `teams`."""
-    merged_records: list[object] = []
-    key_to_index: dict[str, int] = {}
-
-    for record in records:
-        team_record = TeamRecordModel.from_object(record)
-        if team_record is None:
-            merged_records.append(record)
-            continue
-        key = team_record.dedupe_key()
-        if key is None:
-            merged_records.append(team_record.to_dict())
-            continue
-
-        index = key_to_index.get(key)
-        if index is None:
-            index = len(merged_records)
-            key_to_index[key] = index
-            merged_records.append(team_record.to_dict())
-            for alias in team_record.aliases():
-                key_to_index[alias] = index
-            continue
-
-        existing = merged_records[index]
-        existing_team = TeamRecordModel.from_object(existing)
-        if existing_team is None:
-            continue
-
-        merged_record = _merge_values(existing_team.to_dict(), team_record.to_dict())
-        merged_records[index] = merged_record
-        merged_team = TeamRecordModel.from_object(merged_record)
-        if merged_team is None:
-            continue
-        for alias in merged_team.aliases():
-            key_to_index[alias] = index
-
-    return merged_records
-
-
-def _season_years(value: object) -> set[int]:
-    years: set[int] = set()
-    if (season := SeasonRecordModel.from_object(value)) is not None:
-        if (year := season.year()) is not None:
-            years.add(year)
-        return years
-
-    if isinstance(value, list):
-        for item in value:
-            years.update(_season_years(item))
-
-    return years
-
-
-def _nest_team_liveries_in_seasons(record: object) -> object:
-    formula_one = _formula_one_series(record)
-    if formula_one is None:
-        return record
-
-    seasons = formula_one.get("seasons")
-    liveries = formula_one.get("liveries")
-    if not isinstance(seasons, list) or not isinstance(liveries, list):
-        return record
-
-    remaining_liveries = _distribute_liveries_across_seasons(seasons, liveries)
-    if remaining_liveries:
-        formula_one["liveries"] = remaining_liveries
-    else:
-        formula_one.pop("liveries", None)
-    return record
-
-
-def _formula_one_series(record: object) -> dict[str, object] | None:
-    if not isinstance(record, dict):
-        return None
-    racing_series = record.get("racing_series")
-    if not isinstance(racing_series, dict):
-        return None
-    formula_one = racing_series.get("formula_one")
-    if not isinstance(formula_one, dict):
-        return None
-    return formula_one
-
-
-def _distribute_liveries_across_seasons(
-    seasons: list[object],
-    liveries: list[object],
-) -> list[object]:
-    remaining_liveries: list[object] = []
-    for livery in liveries:
-        if not isinstance(livery, dict):
-            remaining_liveries.append(livery)
-            continue
-        if not _attach_livery_to_matching_seasons(seasons, livery):
-            remaining_liveries.append(livery)
-    return remaining_liveries
-
-
-def _attach_livery_to_matching_seasons(
-    seasons: list[object],
-    livery: dict[str, object],
-) -> bool:
-    livery_years = _season_years(livery.get("season"))
-    livery_payload = {key: value for key, value in livery.items() if key != "season"}
-    matched = False
-    for season in seasons:
-        if not _season_matches_livery_years(season, livery_years):
-            continue
-        matched = True
-        _append_livery_to_season(season, livery_payload)
-    return matched
-
-
-def _season_matches_livery_years(season: object, livery_years: set[int]) -> bool:
-    season_record = SeasonRecordModel.from_object(season)
-    if season_record is None:
-        return False
-    season_year = season_record.year()
-    return season_year is not None and season_year in livery_years
-
-
-def _append_livery_to_season(season: object, livery_payload: dict[str, object]) -> None:
-    season_record = SeasonRecordModel.from_object(season)
-    if season_record is None:
-        return
-    season_record.append_livery(livery_payload)
+def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
+    return post_process_domain_records(
+        domain=domain,
+        records=records,
+        domain_pipeline_configs=DOMAIN_PIPELINE_CONFIGS,
+        domain_pipeline_config_factory=DomainPipelineConfig,
+    )
 
 
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
@@ -1002,196 +766,3 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
             continue
         merged_records = _post_process_domain_records(domain_dir.name, merged_records)
         _write_merged_records(domain_dir, merged_records, resolver)
-
-
-def _sort_drivers_by_name(items: list[object]) -> list[object]:
-    return sorted(items, key=_driver_sort_key)
-
-
-def _sort_constructors_by_name(items: list[object]) -> list[object]:
-    return sorted(items, key=_constructor_sort_key)
-
-
-def _sort_chassis_constructors_by_name(items: list[object]) -> list[object]:
-    return sorted(items, key=_chassis_constructor_sort_key)
-
-
-def _sort_circuits_by_name(items: list[object]) -> list[object]:
-    return sorted(items, key=_circuits_sort_key)
-
-
-def _nest_team_liveries(items: list[object]) -> list[object]:
-    return [_nest_team_liveries_in_seasons(record) for record in items]
-
-
-def _sort_teams_by_name(items: list[object]) -> list[object]:
-    return sorted(items, key=_team_sort_key)
-
-
-def _sort_engines_by_manufacturer(items: list[object]) -> list[object]:
-    return sorted(items, key=_engine_sort_key)
-
-
-def _sort_seasons_by_year(items: list[object]) -> list[object]:
-    return sorted(items, key=_season_sort_key)
-
-
-def _sort_grands_prix_by_race_title(items: list[object]) -> list[object]:
-    return sorted(items, key=_grands_prix_sort_key)
-
-
-def _sort_races_by_season_and_grand_prix(items: list[object]) -> list[object]:
-    return sorted(items, key=_races_sort_key)
-
-
-def _sort_countries_by_text(items: list[object]) -> list[object]:
-    return sorted(items, key=_countries_sort_key)
-
-
-def _sort_sponsors_by_text(items: list[object]) -> list[object]:
-    return sorted(items, key=_sponsors_sort_key)
-
-
-def _merge_duplicate_seasons(items: list[object]) -> list[object]:
-    merged_records: list[object] = []
-    index_by_year: dict[int, int] = {}
-    for item in items:
-        if not isinstance(item, dict):
-            merged_records.append(item)
-            continue
-        season_year = _season_year(item.get("season"))
-        if season_year is None:
-            merged_records.append(item)
-            continue
-
-        existing_index = index_by_year.get(season_year)
-        if existing_index is None:
-            index_by_year[season_year] = len(merged_records)
-            merged_records.append(item)
-            continue
-
-        existing_record = merged_records[existing_index]
-        if not isinstance(existing_record, dict):
-            continue
-        merged_records[existing_index] = _merge_values(existing_record, item)
-
-    return merged_records
-
-
-DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN: dict[str, tuple[DomainStep, ...]] = {
-    "circuits": (
-        DomainStep("sort_circuits_by_name", _sort_circuits_by_name),
-    ),
-    "countries": (
-        DomainStep("sort_countries_by_text", _sort_countries_by_text),
-    ),
-    "drivers": (
-        DomainStep("merge_duplicate_drivers", _merge_duplicate_drivers),
-        DomainStep("sort_drivers_by_name", _sort_drivers_by_name),
-    ),
-    "teams": (
-        DomainStep("merge_duplicate_teams", _merge_duplicate_teams),
-        DomainStep("nest_team_liveries", _nest_team_liveries),
-        DomainStep("sort_teams_by_name", _sort_teams_by_name),
-    ),
-    "engines": (
-        DomainStep("sort_engines_by_manufacturer", _sort_engines_by_manufacturer),
-    ),
-    "seasons": (
-        DomainStep("merge_duplicate_seasons", _merge_duplicate_seasons),
-        DomainStep("sort_seasons_by_year", _sort_seasons_by_year),
-    ),
-    "grands_prix": (
-        DomainStep(
-            "sort_grands_prix_by_race_title",
-            _sort_grands_prix_by_race_title,
-        ),
-    ),
-    "races": (
-        DomainStep(
-            "sort_races_by_season_and_grand_prix",
-            _sort_races_by_season_and_grand_prix,
-        ),
-    ),
-    "sponsors": (
-        DomainStep("sort_sponsors_by_text", _sort_sponsors_by_text),
-    ),
-    "chassis_constructors": (
-        DomainStep(
-            "sort_chassis_constructors_by_name",
-            _sort_chassis_constructors_by_name,
-        ),
-    ),
-}
-
-for _constructor_domain in CHASSIS_CONSTRUCTOR_DOMAINS:
-    DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN.setdefault(
-        _constructor_domain,
-        (DomainStep("sort_constructors_by_name", _sort_constructors_by_name),),
-    )
-
-for _domain, _postprocessors in DOMAIN_POSTPROCESS_STEPS_BY_DOMAIN.items():
-    existing = DOMAIN_PIPELINE_CONFIGS.get(_domain, DomainPipelineConfig())
-    DOMAIN_PIPELINE_CONFIGS[_domain] = DomainPipelineConfig(
-        transformers=existing.transformers,
-        postprocessors=_postprocessors,
-        records_normalizer=existing.records_normalizer,
-    )
-
-for _domain, _config in tuple(DOMAIN_PIPELINE_CONFIGS.items()):
-    DOMAIN_PIPELINE_CONFIGS[_domain] = DomainPipelineConfig(
-        transformers=_config.transformers,
-        postprocessors=tuple(_config.postprocessors),
-        records_normalizer=_config.records_normalizer,
-    )
-
-
-def _records_debug_summary(records: list[object]) -> str:
-    sample = records[0] if records else None
-    sample_type = type(sample).__name__ if sample is not None else "none"
-    return f"count={len(records)}, first_type={sample_type}"
-
-
-def _execute_domain_steps(
-    domain: str,
-    step_group: str,
-    records: list[object],
-    steps: tuple[DomainStep, ...],
-) -> list[object]:
-    current = records
-    executed_steps: list[str] = []
-    for step in steps:
-        before_summary = _records_debug_summary(current)
-        current = step.processor(current)
-        after_summary = _records_debug_summary(current)
-        executed_steps.append(step.name)
-        logger.debug(
-            "Domain '%s' %s step '%s': %s -> %s",
-            domain,
-            step_group,
-            step.name,
-            before_summary,
-            after_summary,
-        )
-
-    logger.debug(
-        "Domain '%s' %s steps executed (order=%s, final_count=%s)",
-        domain,
-        step_group,
-        executed_steps,
-        len(current),
-    )
-    return current
-
-
-def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
-    postprocessors = DOMAIN_PIPELINE_CONFIGS.get(
-        domain,
-        DomainPipelineConfig(),
-    ).postprocessors
-    return _execute_domain_steps(
-        domain=domain,
-        step_group="postprocess",
-        records=records,
-        steps=postprocessors,
-    )
