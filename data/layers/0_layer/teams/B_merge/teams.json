@@ -934,17 +934,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "constructor": {
-          "text": "Alpine",
-          "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
-        },
-        "drivers": 5,
-        "engine": [
+        "constructors": [
           {
-            "text": "Mercedes",
-            "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            "chassis_constructor": {
+              "text": "Alpine",
+              "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
           }
         ],
+        "drivers": 5,
         "fastest_laps": 1,
         "licensed_in": {
           "text": "France",
@@ -3641,17 +3643,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "constructor": {
-          "text": "Aston Martin",
-          "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-        },
-        "drivers": 7,
-        "engine": [
+        "constructors": [
           {
-            "text": "Honda",
-            "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+            "chassis_constructor": {
+              "text": "Aston Martin",
+              "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Honda",
+              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+            }
           }
         ],
+        "drivers": 7,
         "fastest_laps": 3,
         "licensed_in": {
           "text": "United Kingdom",
@@ -4637,17 +4641,19 @@
             "url": "https://en.wikipedia.org/wiki/Germany"
           }
         ],
-        "constructor": {
-          "text": "Audi",
-          "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
-        },
-        "drivers": 2,
-        "engine": [
+        "constructors": [
           {
-            "text": "Audi",
-            "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
+            "chassis_constructor": {
+              "text": "Audi",
+              "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Audi",
+              "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
+            }
           }
         ],
+        "drivers": 2,
         "fastest_laps": 0,
         "licensed_in": {
           "text": "Germany",
@@ -9464,17 +9470,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "constructor": {
-          "text": "Cadillac",
-          "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"
-        },
-        "drivers": 2,
-        "engine": [
+        "constructors": [
           {
-            "text": "Ferrari",
-            "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            "chassis_constructor": {
+              "text": "Cadillac",
+              "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
           }
         ],
+        "drivers": 2,
         "fastest_laps": 0,
         "licensed_in": {
           "text": "United States",
@@ -12632,17 +12640,19 @@
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "constructor": {
-          "text": "Ferrari",
-          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-        },
-        "drivers": 83,
-        "engine": [
+        "constructors": [
           {
-            "text": "Ferrari",
-            "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
           }
         ],
+        "drivers": 83,
         "fastest_laps": 265,
         "licensed_in": {
           "text": "Italy",
@@ -18820,17 +18830,19 @@
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "constructor": {
-          "text": "Haas",
-          "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-        },
-        "drivers": 9,
-        "engine": [
+        "constructors": [
           {
-            "text": "Ferrari",
-            "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            "chassis_constructor": {
+              "text": "Haas",
+              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
           }
         ],
+        "drivers": 9,
         "fastest_laps": 3,
         "licensed_in": {
           "text": "United States",
@@ -26304,52 +26316,6 @@
               {
                 "text": "Valvoline",
                 "url": "https://en.wikipedia.org/wiki/Valvoline"
-              }
-            ],
-            "drivers": [
-              {
-                "text": "Hans-Joachim Stuck",
-                "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
-              }
-            ],
-            "grand_prix_scope": {
-              "grand_prix": [
-                {
-                  "text": "United States Grand Prix West",
-                  "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-                }
-              ],
-              "type": "only"
-            },
-            "livery_sponsors": [
-              {
-                "text": "Theodore Racing Hong Kong",
-                "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
-              }
-            ],
-            "main_colours": [
-              "White"
-            ]
-          },
-          {
-            "season": [
-              {
-                "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
-                "year": 1976
-              }
-            ],
-            "additional_major_sponsors": [
-              {
-                "text": "Champion",
-                "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
-              },
-              {
-                "text": "Goodyear",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              {
-                "text": "Valvoline",
-                "url": "https://en.wikipedia.org/wiki/Valvoline"
               },
               {
                 "text": "Monaco Fine Arts Gallery"
@@ -26415,6 +26381,52 @@
               "type": "only"
             },
             "livery_sponsors": [],
+            "main_colours": [
+              "White"
+            ]
+          },
+          {
+            "season": [
+              {
+                "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+                "year": 1976
+              }
+            ],
+            "additional_major_sponsors": [
+              {
+                "text": "Champion",
+                "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+              },
+              {
+                "text": "Goodyear",
+                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+              },
+              {
+                "text": "Valvoline",
+                "url": "https://en.wikipedia.org/wiki/Valvoline"
+              }
+            ],
+            "drivers": [
+              {
+                "text": "Hans-Joachim Stuck",
+                "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+              }
+            ],
+            "grand_prix_scope": {
+              "grand_prix": [
+                {
+                  "text": "United States Grand Prix West",
+                  "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+                }
+              ],
+              "type": "only"
+            },
+            "livery_sponsors": [
+              {
+                "text": "Theodore Racing Hong Kong",
+                "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
+              }
+            ],
             "main_colours": [
               "White"
             ]
@@ -28219,17 +28231,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "constructor": {
-          "text": "McLaren",
-          "url": "https://en.wikipedia.org/wiki/McLaren"
-        },
-        "drivers": 52,
-        "engine": [
+        "constructors": [
           {
-            "text": "Mercedes",
-            "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
           }
         ],
+        "drivers": 52,
         "fastest_laps": 183,
         "licensed_in": {
           "text": "United Kingdom",
@@ -32203,17 +32217,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "constructor": {
-          "text": "Mercedes",
-          "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-        },
-        "drivers": 13,
-        "engine": [
+        "constructors": [
           {
-            "text": "Mercedes",
-            "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            "chassis_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
           }
         ],
+        "drivers": 13,
         "fastest_laps": 115,
         "licensed_in": {
           "text": "Germany",
@@ -35571,17 +35587,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "constructor": {
-          "text": "Racing Bulls",
-          "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
-        },
-        "drivers": 5,
-        "engine": [
+        "constructors": [
           {
-            "text": "Red Bull Ford",
-            "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+            "chassis_constructor": {
+              "text": "Racing Bulls",
+              "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
+            },
+            "engine_constructor": {
+              "text": "Red Bull Ford",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+            }
           }
         ],
+        "drivers": 5,
         "fastest_laps": 1,
         "licensed_in": {
           "text": "Italy",
@@ -36174,17 +36192,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "constructor": {
-          "text": "Red Bull Racing",
-          "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-        },
-        "drivers": 14,
-        "engine": [
+        "constructors": [
           {
-            "text": "Red Bull Ford",
-            "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+            "chassis_constructor": {
+              "text": "Red Bull Racing",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+            },
+            "engine_constructor": {
+              "text": "Red Bull Ford",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+            }
           }
         ],
+        "drivers": 14,
         "fastest_laps": 103,
         "licensed_in": {
           "text": "Austria",
@@ -41192,43 +41212,6 @@
               {
                 "text": "Valvoline",
                 "url": "https://en.wikipedia.org/wiki/Valvoline"
-              }
-            ],
-            "grand_prix_scope": {
-              "grand_prix": [
-                {
-                  "text": "Brazilian Grand Prix",
-                  "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
-                }
-              ],
-              "type": "only"
-            },
-            "livery_sponsors": [
-              {
-                "text": "BiC",
-                "url": "https://en.wikipedia.org/wiki/Bic_(company)"
-              }
-            ],
-            "main_colours": [
-              "Black"
-            ],
-            "notes": "A US flag as a mark of the team's origin (until the 1976 British GP )."
-          },
-          {
-            "season": [
-              {
-                "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
-                "year": 1976
-              }
-            ],
-            "additional_major_sponsors": [
-              {
-                "text": "Goodyear",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              {
-                "text": "Valvoline",
-                "url": "https://en.wikipedia.org/wiki/Valvoline"
               },
               {
                 "text": "F&S Properties"
@@ -41267,7 +41250,79 @@
               }
             ],
             "grand_prix_scope": {
+              "grand_prix": [
+                {
+                  "text": "Brazilian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
+                }
+              ],
+              "type": "only"
+            },
+            "livery_sponsors": [
+              {
+                "text": "BiC",
+                "url": "https://en.wikipedia.org/wiki/Bic_(company)"
+              }
+            ],
+            "main_colours": [
+              "Black"
+            ],
+            "notes": "A US flag as a mark of the team's origin (until the 1976 British GP )."
+          },
+          {
+            "season": [
+              {
+                "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+                "year": 1976
+              }
+            ],
+            "additional_major_sponsors": [
+              {
+                "text": "Goodyear",
+                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+              },
+              {
+                "text": "Valvoline",
+                "url": "https://en.wikipedia.org/wiki/Valvoline"
+              }
+            ],
+            "grand_prix_scope": {
               "type": "other"
+            },
+            "livery_sponsors": [],
+            "main_colours": [
+              "Black"
+            ],
+            "notes": "A US flag as a mark of the team's origin (until the 1976 British GP )."
+          },
+          {
+            "season": [
+              {
+                "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
+                "year": 1976
+              }
+            ],
+            "additional_major_sponsors": [
+              {
+                "text": "Goodyear",
+                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+              },
+              {
+                "text": "Valvoline",
+                "url": "https://en.wikipedia.org/wiki/Valvoline"
+              },
+              {
+                "text": "F&S Properties"
+              }
+            ],
+            "grand_prix_scope": {
+              "grand_prix": [
+                {
+                  "text": "Dutch Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+                }
+              ],
+              "type": "only"
             },
             "livery_sponsors": [],
             "main_colours": [
@@ -41327,19 +41382,10 @@
               {
                 "text": "Valvoline",
                 "url": "https://en.wikipedia.org/wiki/Valvoline"
-              },
-              {
-                "text": "F&S Properties"
               }
             ],
             "grand_prix_scope": {
-              "grand_prix": [
-                {
-                  "text": "Dutch Grand Prix",
-                  "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
-                }
-              ],
-              "type": "only"
+              "type": "other"
             },
             "livery_sponsors": [],
             "main_colours": [
@@ -41362,12 +41408,26 @@
               {
                 "text": "Valvoline",
                 "url": "https://en.wikipedia.org/wiki/Valvoline"
+              },
+              {
+                "text": "F&S Properties"
               }
             ],
             "grand_prix_scope": {
-              "type": "other"
+              "grand_prix": [
+                {
+                  "text": "Dutch Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+                }
+              ],
+              "type": "only"
             },
-            "livery_sponsors": [],
+            "livery_sponsors": [
+              {
+                "text": "Tabatip",
+                "url": "https://en.wikipedia.org/wiki/Villiger_Sons"
+              }
+            ],
             "main_colours": [
               "Black"
             ],
@@ -41433,26 +41493,12 @@
               {
                 "text": "Valvoline",
                 "url": "https://en.wikipedia.org/wiki/Valvoline"
-              },
-              {
-                "text": "F&S Properties"
               }
             ],
             "grand_prix_scope": {
-              "grand_prix": [
-                {
-                  "text": "Dutch Grand Prix",
-                  "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
-                }
-              ],
-              "type": "only"
+              "type": "other"
             },
-            "livery_sponsors": [
-              {
-                "text": "Tabatip",
-                "url": "https://en.wikipedia.org/wiki/Villiger_Sons"
-              }
-            ],
+            "livery_sponsors": [],
             "main_colours": [
               "Black"
             ],
@@ -41473,10 +41519,19 @@
               {
                 "text": "Valvoline",
                 "url": "https://en.wikipedia.org/wiki/Valvoline"
+              },
+              {
+                "text": "F&S Properties"
               }
             ],
             "grand_prix_scope": {
-              "type": "other"
+              "grand_prix": [
+                {
+                  "text": "Dutch Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+                }
+              ],
+              "type": "only"
             },
             "livery_sponsors": [],
             "main_colours": [
@@ -41516,41 +41571,6 @@
                 "url": "https://en.wikipedia.org/wiki/Benihana"
               }
             ],
-            "main_colours": [
-              "Black"
-            ],
-            "notes": "A US flag as a mark of the team's origin (until the 1976 British GP )."
-          },
-          {
-            "season": [
-              {
-                "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship",
-                "year": 1976
-              }
-            ],
-            "additional_major_sponsors": [
-              {
-                "text": "Goodyear",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              {
-                "text": "Valvoline",
-                "url": "https://en.wikipedia.org/wiki/Valvoline"
-              },
-              {
-                "text": "F&S Properties"
-              }
-            ],
-            "grand_prix_scope": {
-              "grand_prix": [
-                {
-                  "text": "Dutch Grand Prix",
-                  "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
-                }
-              ],
-              "type": "only"
-            },
-            "livery_sponsors": [],
             "main_colours": [
               "Black"
             ],
@@ -46105,7 +46125,8 @@
                 "url": "https://en.wikipedia.org/wiki/Valvoline"
               },
               {
-                "text": "Simac"
+                "text": "7-Eleven",
+                "url": "https://en.wikipedia.org/wiki/7-Eleven"
               }
             ],
             "drivers": [
@@ -46125,8 +46146,8 @@
             "grand_prix_scope": {
               "grand_prix": [
                 {
-                  "text": "Italian Grand Prix",
-                  "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
+                  "text": "Caesars Palace Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
                 }
               ],
               "type": "only"
@@ -46155,8 +46176,7 @@
                 "url": "https://en.wikipedia.org/wiki/Valvoline"
               },
               {
-                "text": "7-Eleven",
-                "url": "https://en.wikipedia.org/wiki/7-Eleven"
+                "text": "Simac"
               }
             ],
             "drivers": [
@@ -46176,8 +46196,8 @@
             "grand_prix_scope": {
               "grand_prix": [
                 {
-                  "text": "Caesars Palace Grand Prix",
-                  "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
+                  "text": "Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
                 }
               ],
               "type": "only"
@@ -47423,17 +47443,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "constructor": {
-          "text": "Williams",
-          "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-        },
-        "drivers": 49,
-        "engine": [
+        "constructors": [
           {
-            "text": "Mercedes",
-            "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            "chassis_constructor": {
+              "text": "Williams",
+              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
           }
         ],
+        "drivers": 49,
         "fastest_laps": 134,
         "licensed_in": {
           "text": "United Kingdom",
