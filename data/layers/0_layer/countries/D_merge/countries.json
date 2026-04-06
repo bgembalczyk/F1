@@ -1,104 +1,19 @@
 [
   {
+    "text": "Argentina",
+    "url": "https://en.wikipedia.org/wiki/Argentina"
+  },
+  "Argentina",
+  {
     "text": "Australia",
     "url": "https://en.wikipedia.org/wiki/Australia"
   },
+  "Australia",
   {
     "text": "Austria",
     "url": "https://en.wikipedia.org/wiki/Austria"
   },
-  {
-    "text": "Belgium",
-    "url": "https://en.wikipedia.org/wiki/Belgium"
-  },
-  {
-    "text": "Brazil",
-    "url": "https://en.wikipedia.org/wiki/Brazil"
-  },
-  {
-    "text": "Canada",
-    "url": "https://en.wikipedia.org/wiki/Canada"
-  },
-  {
-    "text": "East Germany",
-    "url": "https://en.wikipedia.org/wiki/East_Germany"
-  },
-  {
-    "text": "France",
-    "url": "https://en.wikipedia.org/wiki/France"
-  },
-  {
-    "text": "Germany",
-    "url": "https://en.wikipedia.org/wiki/Germany"
-  },
-  {
-    "text": "Hong Kong",
-    "url": "https://en.wikipedia.org/wiki/Hong_Kong"
-  },
-  {
-    "text": "India",
-    "url": "https://en.wikipedia.org/wiki/India"
-  },
-  {
-    "text": "Ireland",
-    "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
-  },
-  {
-    "text": "Italy",
-    "url": "https://en.wikipedia.org/wiki/Italy"
-  },
-  {
-    "text": "Japan",
-    "url": "https://en.wikipedia.org/wiki/Japan"
-  },
-  {
-    "text": "Malaysia",
-    "url": "https://en.wikipedia.org/wiki/Malaysia"
-  },
-  {
-    "text": "Mexico",
-    "url": "https://en.wikipedia.org/wiki/Mexico"
-  },
-  {
-    "text": "Netherlands",
-    "url": "https://en.wikipedia.org/wiki/Netherlands"
-  },
-  {
-    "text": "New Zealand",
-    "url": "https://en.wikipedia.org/wiki/New_Zealand"
-  },
-  {
-    "text": "Rhodesia",
-    "url": "https://en.wikipedia.org/wiki/Rhodesia"
-  },
-  {
-    "text": "Russia",
-    "url": "https://en.wikipedia.org/wiki/Russia"
-  },
-  {
-    "text": "South Africa",
-    "url": "https://en.wikipedia.org/wiki/South_Africa"
-  },
-  {
-    "text": "Spain",
-    "url": "https://en.wikipedia.org/wiki/Spain"
-  },
-  {
-    "text": "Switzerland",
-    "url": "https://en.wikipedia.org/wiki/Switzerland"
-  },
-  {
-    "text": "United Kingdom",
-    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-  },
-  {
-    "text": "United States",
-    "url": "https://en.wikipedia.org/wiki/United_States"
-  },
-  {
-    "text": "Argentina",
-    "url": "https://en.wikipedia.org/wiki/Argentina"
-  },
+  "Austria",
   {
     "text": "Azerbaijan",
     "url": "https://en.wikipedia.org/wiki/Azerbaijan"
@@ -108,29 +23,131 @@
     "url": "https://en.wikipedia.org/wiki/Bahrain"
   },
   {
+    "text": "Belgium",
+    "url": "https://en.wikipedia.org/wiki/Belgium"
+  },
+  "Belgium",
+  "Belgium France",
+  {
+    "text": "Brazil",
+    "url": "https://en.wikipedia.org/wiki/Brazil"
+  },
+  "Brazil",
+  {
+    "text": "Canada",
+    "url": "https://en.wikipedia.org/wiki/Canada"
+  },
+  "Canada",
+  "Chile",
+  {
     "text": "China",
     "url": "https://en.wikipedia.org/wiki/China"
+  },
+  "China",
+  "Colombia",
+  "Czech Republic",
+  "Denmark",
+  {
+    "text": "East Germany",
+    "url": "https://en.wikipedia.org/wiki/East_Germany"
+  },
+  "East Germany",
+  "East Germany, West Germany",
+  "Finland",
+  {
+    "text": "France",
+    "url": "https://en.wikipedia.org/wiki/France"
+  },
+  "France",
+  {
+    "text": "Germany",
+    "url": "https://en.wikipedia.org/wiki/Germany"
+  },
+  "Germany",
+  {
+    "text": "Hong Kong",
+    "url": "https://en.wikipedia.org/wiki/Hong_Kong"
   },
   {
     "text": "Hungary",
     "url": "https://en.wikipedia.org/wiki/Hungary"
   },
+  "Hungary",
+  {
+    "text": "India",
+    "url": "https://en.wikipedia.org/wiki/India"
+  },
+  "India",
+  "Indonesia",
+  {
+    "text": "Ireland",
+    "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
+  },
+  "Ireland",
+  {
+    "text": "Italy",
+    "url": "https://en.wikipedia.org/wiki/Italy"
+  },
+  "Italy",
+  {
+    "text": "Japan",
+    "url": "https://en.wikipedia.org/wiki/Japan"
+  },
+  "Japan",
+  "Liechtenstein",
+  {
+    "text": "Malaysia",
+    "url": "https://en.wikipedia.org/wiki/Malaysia"
+  },
+  "Malaysia",
+  {
+    "text": "Mexico",
+    "url": "https://en.wikipedia.org/wiki/Mexico"
+  },
+  "Mexico",
   {
     "text": "Monaco",
     "url": "https://en.wikipedia.org/wiki/Monaco"
   },
+  "Monaco",
+  "Monaco Netherlands",
   {
     "text": "Morocco",
     "url": "https://en.wikipedia.org/wiki/Morocco"
   },
+  "Morocco",
+  {
+    "text": "Netherlands",
+    "url": "https://en.wikipedia.org/wiki/Netherlands"
+  },
+  "Netherlands",
+  {
+    "text": "New Zealand",
+    "url": "https://en.wikipedia.org/wiki/New_Zealand"
+  },
+  "New Zealand",
+  "Poland",
   {
     "text": "Portugal",
     "url": "https://en.wikipedia.org/wiki/Portugal"
   },
+  "Portugal",
   {
     "text": "Qatar",
     "url": "https://en.wikipedia.org/wiki/Qatar"
   },
+  "RAF",
+  {
+    "text": "Rhodesia",
+    "url": "https://en.wikipedia.org/wiki/Rhodesia"
+  },
+  "Rhodesia",
+  "Rhodesia and Nyasaland",
+  {
+    "text": "Russia",
+    "url": "https://en.wikipedia.org/wiki/Russia"
+  },
+  "Russia",
   {
     "text": "Saudi Arabia",
     "url": "https://en.wikipedia.org/wiki/Saudi_Arabia"
@@ -140,13 +157,30 @@
     "url": "https://en.wikipedia.org/wiki/Singapore"
   },
   {
+    "text": "South Africa",
+    "url": "https://en.wikipedia.org/wiki/South_Africa"
+  },
+  "South Africa",
+  {
     "text": "South Korea",
     "url": "https://en.wikipedia.org/wiki/South_Korea"
   },
   {
+    "text": "Spain",
+    "url": "https://en.wikipedia.org/wiki/Spain"
+  },
+  "Spain",
+  {
     "text": "Sweden",
     "url": "https://en.wikipedia.org/wiki/Sweden"
   },
+  "Sweden",
+  {
+    "text": "Switzerland",
+    "url": "https://en.wikipedia.org/wiki/Switzerland"
+  },
+  "Switzerland",
+  "Thailand",
   {
     "text": "Turkey",
     "url": "https://en.wikipedia.org/wiki/Turkey"
@@ -155,49 +189,15 @@
     "text": "United Arab Emirates",
     "url": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
   },
-  "Argentina",
-  "Australia",
-  "Austria",
-  "Belgium France",
-  "Belgium",
-  "Brazil",
-  "Canada",
-  "Chile",
-  "China",
-  "Colombia",
-  "Czech Republic",
-  "Denmark",
-  "East Germany",
-  "East Germany, West Germany",
-  "Finland",
-  "France",
-  "Germany",
-  "Hungary",
-  "India",
-  "Indonesia",
-  "Ireland",
-  "Italy",
-  "Japan",
-  "Liechtenstein",
-  "Malaysia",
-  "Mexico",
-  "Monaco Netherlands",
-  "Monaco",
-  "Morocco",
-  "Netherlands",
-  "New Zealand",
-  "Poland",
-  "Portugal",
-  "RAF",
-  "Rhodesia and Nyasaland",
-  "Rhodesia",
-  "Russia",
-  "South Africa",
-  "Spain",
-  "Sweden",
-  "Switzerland",
-  "Thailand",
+  {
+    "text": "United Kingdom",
+    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+  },
   "United Kingdom",
+  {
+    "text": "United States",
+    "url": "https://en.wikipedia.org/wiki/United_States"
+  },
   "United States",
   "Uruguay",
   "Venezuela",
