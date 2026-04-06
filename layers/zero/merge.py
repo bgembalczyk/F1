@@ -315,6 +315,11 @@ def _transform_constructor_domain(
         return _transform_indianapolis_only_constructor(transformed)
     if source_name == FORMER_CONSTRUCTORS_SOURCE:
         return _transform_former_constructor(transformed)
+    if domain == "chassis_constructors" and re.fullmatch(
+        r"f1_constructors_\d{4}\.json",
+        source_name,
+    ):
+        return _transform_chassis_constructor_from_current_constructors(transformed)
 
     constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
     if domain == "constructors" and re.fullmatch(
@@ -326,6 +331,30 @@ def _transform_constructor_domain(
     _move_fields_to_formula_one(transformed, constructor_fields)
     _ensure_constructor_status(transformed)
     return transformed
+
+
+def _transform_chassis_constructor_from_current_constructors(
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    constructor_value = transformed.get("constructor")
+    if not isinstance(constructor_value, dict):
+        return transformed
+
+    reshaped = dict(transformed)
+    chassis_constructor = constructor_value.get("chassis_constructor")
+    if chassis_constructor is not None:
+        reshaped["chassis_constructor"] = chassis_constructor
+
+    engine_constructor = constructor_value.get("engine_constructor")
+    if engine_constructor is not None:
+        reshaped["engines"] = (
+            engine_constructor
+            if isinstance(engine_constructor, list)
+            else [engine_constructor]
+        )
+
+    reshaped.pop("constructor", None)
+    return reshaped
 
 
 def _transform_indianapolis_only_constructor(
@@ -424,10 +453,7 @@ def _transform_teams_domain(
     if domain != "teams":
         return transformed
     if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
-        transformed = {
-            "team": transformed.get("constructor"),
-            "racing_series": _build_racing_series({**transformed}),
-        }
+        transformed = _transform_teams_from_current_constructors(transformed)
     if source_name == SPONSORSHIP_LIVERIES_SOURCE and "liveries" in transformed:
         transformed["racing_series"] = _build_racing_series(
             {"liveries": transformed.pop("liveries")},
@@ -439,6 +465,42 @@ def _transform_teams_domain(
         formula_one["privateer"] = True
         transformed["racing_series"] = _build_racing_series(formula_one)
     return transformed
+
+
+def _transform_teams_from_current_constructors(
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    constructor_value = transformed.get("constructor")
+    if not (
+        isinstance(constructor_value, dict)
+        and "chassis_constructor" in constructor_value
+    ):
+        return {
+            "team": constructor_value,
+            "racing_series": _build_racing_series({**transformed}),
+        }
+
+    team_value: object = constructor_value["chassis_constructor"]
+    constructors: list[dict[str, object]] = []
+
+    constructor_entry: dict[str, object] = {
+        "chassis_constructor": constructor_value["chassis_constructor"],
+    }
+    engine_constructor = constructor_value.get("engine_constructor")
+    if engine_constructor is not None:
+        constructor_entry["engine_constructor"] = engine_constructor
+    constructors.append(constructor_entry)
+
+    formula_one = {
+        key: value for key, value in transformed.items() if key != "constructor"
+    }
+    team_record = {
+        "team": team_value,
+        "racing_series": _build_racing_series(formula_one),
+    }
+    if constructors:
+        team_record["constructors"] = constructors
+    return team_record
 
 
 def _transform_drivers_domain(
