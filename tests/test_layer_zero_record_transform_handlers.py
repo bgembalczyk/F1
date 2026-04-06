@@ -105,6 +105,7 @@ def test_engines_domain_transform_handler() -> None:
         record={"engine_manufacturer": "Honda", "wins": ENGINE_WINS},
     )
 
+    assert transformed["engine_constructor"] == "Honda"
     assert transformed["racing_series"]["formula_one"]["wins"] == ENGINE_WINS
 
 
@@ -209,16 +210,16 @@ def test_engines_domain_postprocess_sorts_by_manufacturer() -> None:
     processed = _post_process_domain_records(
         "engines",
         [
-            {"manufacturer": "Renault"},
-            {"manufacturer": "Alfa Romeo"},
-            {"manufacturer": {"text": "BMW", "url": "https://example.com/bmw"}},
+            {"engine_constructor": "Renault"},
+            {"engine_constructor": "Alfa Romeo"},
+            {"engine_constructor": {"text": "BMW", "url": "https://example.com/bmw"}},
         ],
     )
 
     assert [
-        record["manufacturer"]["text"]
-        if isinstance(record["manufacturer"], dict)
-        else record["manufacturer"]
+        record["engine_constructor"]["text"]
+        if isinstance(record["engine_constructor"], dict)
+        else record["engine_constructor"]
         for record in processed
     ] == ["Alfa Romeo", "BMW", "Renault"]
 

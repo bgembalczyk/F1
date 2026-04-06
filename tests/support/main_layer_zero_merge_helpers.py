@@ -626,7 +626,7 @@ def _assert_races_output(races_merged: list[dict[str, object]]) -> None:
 def _assert_engines_output(engines_merged: list[dict[str, object]]) -> None:
     assert engines_merged == [
         {
-            "manufacturer": "Ferrari",
+            "engine_constructor": "Ferrari",
             "racing_series": {
                 "formula_one": {
                     "manufacturer_status": "active",
@@ -635,7 +635,7 @@ def _assert_engines_output(engines_merged: list[dict[str, object]]) -> None:
             },
         },
         {
-            "manufacturer": "Offy",
+            "engine_constructor": "Offy",
             "racing_series": {
                 "AAA_national_championship": [],
                 "formula_one": {

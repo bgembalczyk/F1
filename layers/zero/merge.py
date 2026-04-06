@@ -420,6 +420,13 @@ def _transform_engines_domain(
 ) -> dict[str, object]:
     if domain != "engines":
         return transformed
+
+    if "engine_constructor" not in transformed:
+        if "manufacturer" in transformed:
+            transformed["engine_constructor"] = transformed.pop("manufacturer")
+        elif "engine_manufacturer" in transformed:
+            transformed["engine_constructor"] = transformed.pop("engine_manufacturer")
+
     if source_name in (
         INDIANAPOLIS_ONLY_ENGINES_SOURCE,
         ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE,
@@ -762,6 +769,9 @@ def _team_sort_key(record: object) -> str:
 def _engine_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
+    engine_constructor = record.get("engine_constructor")
+    if engine_constructor is not None:
+        return _link_text(engine_constructor).casefold()
     return _link_text(record.get("manufacturer")).casefold()
 
 
