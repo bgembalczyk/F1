@@ -79,9 +79,8 @@ def test_engine_manufacturers_table_parser_maps_known_columns() -> None:
     assert "Unknown" not in result
 
 
-def test_engine_manufacturers_parse_row_extracts_manufacturer_link_with_references() -> (
-    None
-):
+def test_engine_manufacturers_parse_row_extracts_manufacturer_link_with_references(
+    ) -> None:
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
@@ -93,15 +92,18 @@ def test_engine_manufacturers_parse_row_extracts_manufacturer_link_with_referenc
     html = """
     <table class="wikitable">
       <tr>
-        <th>Manufacturer</th><th>Engines built in</th><th>Seasons</th><th>Races Entered</th>
+        <th>Manufacturer</th><th>Engines built in</th><th>Seasons</th>
+        <th>Races Entered</th>
         <th>Races Started</th><th>Wins</th><th>Points</th><th>Pole positions</th>
         <th>Fastest laps</th><th>Podiums</th><th>WCC</th><th>WDC</th>
       </tr>
       <tr>
-        <td><a href="/wiki/Acer_(engine)">Acer</a><sup><a href="#cite_note-2">[a]</a></sup></td>
+        <td><a href="/wiki/Acer_(engine)">Acer</a>
+          <sup><a href="#cite_note-2">[a]</a></sup></td>
         <td><a href="/wiki/Italy">Italy</a></td>
         <td><a href="/wiki/2001_Formula_One_World_Championship">2001</a></td>
-        <td>17</td><td>17</td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        <td>17</td><td>17</td><td>0</td><td>4</td><td>0</td><td>0</td>
+        <td>0</td><td>0</td><td>0</td>
       </tr>
     </table>
     """
