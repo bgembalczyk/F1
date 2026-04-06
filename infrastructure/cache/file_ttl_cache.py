@@ -1,28 +1,31 @@
 import json
 import time
+from abc import ABC
+from abc import abstractmethod
 from hashlib import sha256
 from pathlib import Path
 from typing import Any
 from typing import Generic
-from typing import Protocol
 from typing import TypeVar
 
 T = TypeVar("T")
 
 
-class FileTtlCacheAdapter(Protocol[T]):
-    """Adapter serializacji wartości cache do/z tekstu."""
+class FileTtlCacheAdapter(Generic[T], ABC):
+    """Abstrakcyjna baza adapterów serializacji wartości cache do/z tekstu."""
 
     extension: str
 
+    @abstractmethod
     def serialize(self, value: T) -> str:
         """Serializuje wartość do postaci tekstowej."""
 
+    @abstractmethod
     def deserialize(self, raw_text: str) -> T:
         """Deserializuje tekst do docelowego typu."""
 
 
-class HttpResponseFileCacheAdapter:
+class HttpResponseFileCacheAdapter(FileTtlCacheAdapter[str]):
     """Adapter cache dla tekstowej odpowiedzi HTTP."""
 
     extension = ".html"
@@ -34,7 +37,7 @@ class HttpResponseFileCacheAdapter:
         return raw_text
 
 
-class GeminiJsonFileCacheAdapter:
+class GeminiJsonFileCacheAdapter(FileTtlCacheAdapter[dict[str, Any]]):
     """Adapter cache dla odpowiedzi Gemini (JSON)."""
 
     extension = ".json"
