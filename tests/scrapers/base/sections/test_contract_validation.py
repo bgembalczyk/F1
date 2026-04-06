@@ -1,0 +1,67 @@
+import pytest
+
+from scrapers.base.sections.contract_validation import is_legacy_section_payload
+from scrapers.base.sections.contract_validation import validate_section_result_payload
+
+
+def _valid_payload() -> dict[str, object]:
+    return {
+        "section_id": "career_results",
+        "section_label": "Career results",
+        "records": [],
+        "metadata": {},
+    }
+
+
+def test_is_legacy_section_payload_detects_legacy_keys() -> None:
+    assert is_legacy_section_payload({"section": "x"}) is True
+    assert is_legacy_section_payload({"items": []}) is True
+    assert is_legacy_section_payload(_valid_payload()) is False
+
+
+def test_validate_section_payload_rejects_invalid_key_order_or_set() -> None:
+    payload = {
+        "section_label": "Career results",
+        "section_id": "career_results",
+        "records": [],
+        "metadata": {},
+    }
+
+    with pytest.raises(TypeError, match="expected payload keys"):
+        validate_section_result_payload(payload)
+
+
+def test_validate_section_payload_rejects_non_string_section_id() -> None:
+    payload = _valid_payload()
+    payload["section_id"] = 123
+
+    with pytest.raises(TypeError, match="section_id must be str"):
+        validate_section_result_payload(payload)
+
+
+def test_validate_section_payload_rejects_non_string_section_label() -> None:
+    payload = _valid_payload()
+    payload["section_label"] = 123
+
+    with pytest.raises(TypeError, match="section_label must be str"):
+        validate_section_result_payload(payload)
+
+
+def test_validate_section_payload_rejects_non_list_records() -> None:
+    payload = _valid_payload()
+    payload["records"] = "not-a-list"
+
+    with pytest.raises(TypeError, match="records must be list"):
+        validate_section_result_payload(payload)
+
+
+def test_validate_section_payload_rejects_non_dict_metadata() -> None:
+    payload = _valid_payload()
+    payload["metadata"] = "not-a-dict"
+
+    with pytest.raises(TypeError, match="metadata must be dict"):
+        validate_section_result_payload(payload)
+
+
+def test_validate_section_payload_accepts_valid_contract() -> None:
+    validate_section_result_payload(_valid_payload())
