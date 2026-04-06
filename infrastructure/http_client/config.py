@@ -8,7 +8,7 @@ from infrastructure.http_client.policies.constants import DEFAULT_HTTP_BACKOFF_S
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_RETRIES
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_TIMEOUT
 from infrastructure.http_client.policies.rate_limiter import RateLimiter
-from infrastructure.http_client.policies.response_cache import ResponseCache
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from infrastructure.http_client.policies.retry import RetryPolicy
 
 
@@ -23,7 +23,7 @@ class HttpClientConfig:
     jitter_seconds: float = 0.7
     retry_policy: RetryPolicy | None = None
     rate_limiter: RateLimiter | None = None
-    cache: ResponseCache | None = None
+    cache: TextCacheProtocol | None = None
     cache_dir: Path | str | None = None
     cache_ttl_days: int = 30
     headers: dict[str, str] | None = None

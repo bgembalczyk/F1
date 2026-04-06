@@ -2,13 +2,13 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from infrastructure.http_client.caching.file import FileCache
-from infrastructure.http_client.policies.response_cache import ResponseCache
+from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 
 
-class WikipediaCachePolicy(ResponseCache):
+class WikipediaCachePolicy(TextCacheProtocol):
     """Cache tylko dla Wikipedia."""
 
-    def __init__(self, cache: ResponseCache) -> None:
+    def __init__(self, cache: TextCacheProtocol) -> None:
         self.cache = cache
 
     def get(self, url: str) -> str | None:
