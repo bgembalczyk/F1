@@ -28,7 +28,9 @@ def test_build_headers_for_two_level_header_fixture() -> None:
     assert headers == ["Driver", "Results - Wins", "Results - Podiums"]
 
 
-def test_build_headers_with_missing_second_row_cell_falls_back_to_parent_header() -> None:
+def test_build_headers_with_missing_second_row_cell_falls_back_to_parent_header() -> (
+    None
+):
     table = _table(
         """
         <table>

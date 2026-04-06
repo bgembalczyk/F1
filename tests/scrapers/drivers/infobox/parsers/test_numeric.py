@@ -18,5 +18,8 @@ def test_parse_float_cell_numeric_vs_text() -> None:
 
 
 def test_parse_entries_with_missing_start_value() -> None:
-    assert NumericParser.parse_entries(_cell("120 (95)")) == {"entries": 120, "starts": 95}
+    assert NumericParser.parse_entries(_cell("120 (95)")) == {
+        "entries": 120,
+        "starts": 95,
+    }
     assert NumericParser.parse_entries(_cell("120")) == {"entries": 120, "starts": None}

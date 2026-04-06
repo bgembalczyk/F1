@@ -3,7 +3,6 @@ from __future__ import annotations
 import os
 import subprocess
 import sys
-from pathlib import Path
 
 import pytest
 
@@ -23,7 +22,9 @@ def test_resolve_sha_pair_uses_environment(monkeypatch: pytest.MonkeyPatch) -> N
     assert gate.resolve_sha_pair("", "") == ("base-env", "head-env")
 
 
-def test_has_non_cosmetic_changes_handles_all_branches(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_has_non_cosmetic_changes_handles_all_branches(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     assert gate.has_non_cosmetic_changes("a", "b", []) is False
 
     class BadDiff:
@@ -41,7 +42,9 @@ def test_has_non_cosmetic_changes_handles_all_branches(monkeypatch: pytest.Monke
     assert not gate.has_non_cosmetic_changes("a", "b", ["layers/pipeline.py"])
 
 
-def test_has_adr_reference_uses_custom_checker_when_available(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_has_adr_reference_uses_custom_checker_when_available(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     class Policy:
         adr_pattern = gate.DEFAULT_ADR_ENFORCEMENT_POLICY.adr_pattern
 
@@ -59,7 +62,11 @@ def test_main_outputs_error_when_reference_missing(
     capsys: pytest.CaptureFixture[str],
 ) -> None:
     monkeypatch.setattr(sys, "argv", ["prog", "--base-sha", "a", "--head-sha", "b"])
-    monkeypatch.setattr(gate, "list_changed_files", lambda *_a, **_k: ["layers/pipeline.py"])
+    monkeypatch.setattr(
+        gate,
+        "list_changed_files",
+        lambda *_a, **_k: ["layers/pipeline.py"],
+    )
     monkeypatch.setattr(gate, "has_non_cosmetic_changes", lambda *_a, **_k: True)
     monkeypatch.setattr(gate, "collect_commit_messages", lambda *_a, **_k: "")
 
@@ -71,7 +78,12 @@ def test_main_outputs_error_when_reference_missing(
 
 def test_cli_invalid_argument_prints_stderr() -> None:
     proc = subprocess.run(
-        [sys.executable, "-m", "scripts.ci.enforce_architecture_adr_reference", "--bad"],
+        [
+            sys.executable,
+            "-m",
+            "scripts.ci.enforce_architecture_adr_reference",
+            "--bad",
+        ],
         capture_output=True,
         text=True,
         check=False,

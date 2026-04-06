@@ -1,8 +1,8 @@
 import json
 import re
 
-from bs4 import BeautifulSoup
 import pytest
+from bs4 import BeautifulSoup
 
 from scrapers.base.debug_dumps import TablePipelineDebugContext
 from scrapers.base.debug_dumps import write_infobox_dump
@@ -45,7 +45,9 @@ def test_debug_enabled_generates_infobox_dump_on_extract_failure(tmp_path) -> No
     assert "<table" in dumps[0].read_text(encoding="utf-8")
 
 
-def test_debug_disabled_does_not_generate_infobox_dump_on_extract_failure(tmp_path) -> None:
+def test_debug_disabled_does_not_generate_infobox_dump_on_extract_failure(
+    tmp_path,
+) -> None:
     soup = BeautifulSoup(
         '<table class="infobox"><tr><th>Name</th><td>Test</td></tr></table>',
         "html.parser",

@@ -4,12 +4,17 @@ from scrapers.engines.helpers import export as export_mod
 
 
 def test_manufacturer_name_initial_handles_text_dict_and_fallback() -> None:
-    assert export_mod.manufacturer_name_initial({"manufacturer": {"text": "Honda"}}) == "H"
+    assert (
+        export_mod.manufacturer_name_initial({"manufacturer": {"text": "Honda"}}) == "H"
+    )
     assert export_mod.manufacturer_name_initial({"manufacturer": "Renault"}) == "R"
     assert export_mod.manufacturer_name_initial({"manufacturer": "123"}) == "other"
 
 
-def test_export_complete_engine_manufacturers_groups_output(monkeypatch, tmp_path) -> None:
+def test_export_complete_engine_manufacturers_groups_output(
+    monkeypatch,
+    tmp_path,
+) -> None:
     exported: list[Path] = []
 
     class _Logger:
@@ -39,7 +44,11 @@ def test_export_complete_engine_manufacturers_groups_output(monkeypatch, tmp_pat
             _ = result, exporter
             exported.append(path)
 
-    monkeypatch.setattr(export_mod, "F1CompleteEngineManufacturerDataExtractor", _ScraperStub)
+    monkeypatch.setattr(
+        export_mod,
+        "F1CompleteEngineManufacturerDataExtractor",
+        _ScraperStub,
+    )
     monkeypatch.setattr(export_mod, "ResultExportService", _ExportServiceStub)
 
     export_mod.export_complete_engine_manufacturers(output_dir=tmp_path)

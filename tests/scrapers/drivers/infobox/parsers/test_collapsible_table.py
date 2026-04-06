@@ -46,7 +46,9 @@ def test_collapsible_table_parser_parses_label_rows_and_numeric_values() -> None
     assert result["rows"][2]["value"] == 129
 
 
-def test_collapsible_table_parser_parses_nested_table_and_returns_none_for_empty() -> None:
+def test_collapsible_table_parser_parses_nested_table_and_returns_none_for_empty() -> (
+    None
+):
     with_nested = _parse_table(
         """
         <table class="mw-collapsible">
@@ -65,5 +67,7 @@ def test_collapsible_table_parser_parses_nested_table_and_returns_none_for_empty
     assert with_nested is not None
     assert with_nested["rows"][0] == {"label": "Wins", "value": 4}
 
-    empty = _parse_table("<table class='mw-collapsible'><tr><th>Only title</th></tr></table>")
+    empty = _parse_table(
+        "<table class='mw-collapsible'><tr><th>Only title</th></tr></table>",
+    )
     assert empty is None

@@ -30,7 +30,9 @@ def test_engine_restrictions_apply_for_elements_covers_all_guards() -> None:
     assert elements[3]["data"] == {"parsed": True}
 
 
-def test_engine_restrictions_parse_soup_raises_for_missing_header_or_incomplete() -> None:
+def test_engine_restrictions_parse_soup_raises_for_missing_header_or_incomplete() -> (
+    None
+):
     scraper = EngineRestrictionsScraper()
 
     with pytest.raises(RuntimeError, match="wiersza nagłówkowego"):
@@ -44,7 +46,9 @@ def test_engine_restrictions_parse_soup_raises_for_missing_header_or_incomplete(
         scraper._parse_soup(soup)
 
 
-def test_engine_restrictions_parse_soup_transposes_rows_and_fills_missing_cells() -> None:
+def test_engine_restrictions_parse_soup_transposes_rows_and_fills_missing_cells() -> (
+    None
+):
     scraper = EngineRestrictionsScraper()
     soup = BeautifulSoup(
         """

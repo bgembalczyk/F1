@@ -26,7 +26,9 @@ class _FakeMerger:
         return records
 
 
-def test_entries_parser_normalizes_single_number_for_multiple_drivers_pre_2007() -> None:
+def test_entries_parser_normalizes_single_number_for_multiple_drivers_pre_2007() -> (
+    None
+):
     parser = SeasonEntriesParser(
         table_parser=_FakeTableParser(
             [

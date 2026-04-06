@@ -47,7 +47,10 @@ def test_split_skips_scope_split_for_driver_records() -> None:
         },
     ]
 
-    result = BroaderScopeSplitter(records, season_scoped=[{"season": [{"year": 2022}]}]).split()
+    result = BroaderScopeSplitter(
+        records,
+        season_scoped=[{"season": [{"year": 2022}]}],
+    ).split()
 
     assert result == records
 
@@ -58,7 +61,10 @@ def test_split_keeps_record_when_no_season_years_or_overlap() -> None:
         {"season": [{"year": 1999}], "main_colours": ["Green"]},
     ]
 
-    result = BroaderScopeSplitter(records, season_scoped=[{"season": [{"year": 2000}]}]).split()
+    result = BroaderScopeSplitter(
+        records,
+        season_scoped=[{"season": [{"year": 2000}]}],
+    ).split()
 
     assert result == records
 

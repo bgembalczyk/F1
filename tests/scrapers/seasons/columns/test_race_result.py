@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from bs4 import BeautifulSoup
 import pytest
+from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.seasons.columns.race_result import RaceResultColumn
@@ -87,7 +87,9 @@ def test_parse_adds_half_points_round_note_for_marked_header() -> None:
         _ctx(
             "<td>2</td>",
             header="Spanish Grand Prix*",
-            header_link={"url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"},
+            header_link={
+                "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+            },
         ),
     )
 
@@ -101,7 +103,9 @@ def test_parse_adds_double_points_round_note_for_2014_abu_dhabi() -> None:
         _ctx(
             "<td>1</td>",
             header="Abu Dhabi‡",
-            header_link={"url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix"},
+            header_link={
+                "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
+            },
         ),
     )
 
@@ -110,7 +114,9 @@ def test_parse_adds_double_points_round_note_for_2014_abu_dhabi() -> None:
     assert parsed["round"]["points_multiplier"] == 2.0
 
 
-def test_parse_marks_shared_drive_and_share_count_when_two_results_are_present() -> None:
+def test_parse_marks_shared_drive_and_share_count_when_two_results_are_present() -> (
+    None
+):
     parsed = RaceResultColumn(season_year=1957).parse(_ctx("<td>1† / 2†</td>"))
 
     assert parsed is not None

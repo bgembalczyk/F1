@@ -46,4 +46,6 @@ def test_parse_skips_segments_without_links() -> None:
     ctx = _ctx('<td>Unknown<br/><a href="/wiki/Driver_C">Driver C</a></td>')
 
     # Only valid linked segments are returned.
-    assert column.parse(ctx) == [{"text": "Driver C", "url": "https://en.wikipedia.org/wiki/Driver_C"}]
+    assert column.parse(ctx) == [
+        {"text": "Driver C", "url": "https://en.wikipedia.org/wiki/Driver_C"},
+    ]

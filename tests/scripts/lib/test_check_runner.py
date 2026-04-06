@@ -7,7 +7,9 @@ from scripts.lib.check_runner import print_report
 from scripts.lib.check_runner import run_cli
 
 
-def test_iter_python_paths_collects_files_from_file_and_directory(tmp_path: Path) -> None:
+def test_iter_python_paths_collects_files_from_file_and_directory(
+    tmp_path: Path,
+) -> None:
     pkg = tmp_path / "pkg"
     pkg.mkdir()
     direct_py = tmp_path / "direct.py"

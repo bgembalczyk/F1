@@ -61,7 +61,11 @@ def test_default_export_service_to_csv_propagates_dependency_exception(
     def _raise_for_malformed_payload(*_args, **_kwargs):
         raise ValueError("malformed export payload")
 
-    monkeypatch.setattr(service._fieldnames_strategy, "resolve", _raise_for_malformed_payload)
+    monkeypatch.setattr(
+        service._fieldnames_strategy,
+        "resolve",
+        _raise_for_malformed_payload,
+    )
 
     with pytest.raises(ValueError, match="malformed export payload"):
         service.to_csv([{"driver": "Ayrton Senna"}], output)

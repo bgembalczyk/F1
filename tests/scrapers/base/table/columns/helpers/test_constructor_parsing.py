@@ -11,7 +11,7 @@ from scrapers.base.table.columns.helpers.constructor_parsing import (
 BASE_URL = "https://en.wikipedia.org"
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_valid_record() -> str:
     return (
         '<td><a href="/wiki/Ferrari">Ferrari</a><br>'
@@ -19,17 +19,17 @@ def html_valid_record() -> str:
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_incomplete_record() -> str:
     return "<td>Ferrari -</td>"
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_alias_or_text_record() -> str:
     return "<td>Scuderia Alpha - Team Beta</td>"
 
 
-@pytest.fixture
+@pytest.fixture()
 def html_links_and_no_links_record() -> tuple[str, str]:
     with_links = (
         '<td><a href="/wiki/McLaren">McLaren</a> '

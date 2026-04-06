@@ -17,14 +17,22 @@ def _rules_stub() -> SimpleNamespace:
         ENTRYPOINT_DOMAINS=("drivers",),
         REQUIRED_LAYERS_BY_DOMAIN={"drivers": ("sections", "app")},
         FORBIDDEN_IMPORTS_BY_LAYER={"sections": ("app",), "app": tuple()},
-        infer_layer=lambda path, domain=None: "sections" if "sections" in path.parts else "app",
+        infer_layer=lambda path, domain=None: "sections"
+        if "sections" in path.parts
+        else "app",
         resolve_import_targets=lambda _path: ["scrapers.drivers.app.shared"],
-        collect_cross_domain_import_violations=lambda _path, _domain: ["scrapers.seasons.app"],
-        collect_single_scraper_import_violations=lambda _path, _domain: ["scrapers.drivers.single_scraper"],
+        collect_cross_domain_import_violations=lambda _path, _domain: [
+            "scrapers.seasons.app",
+        ],
+        collect_single_scraper_import_violations=lambda _path, _domain: [
+            "scrapers.drivers.single_scraper",
+        ],
     )
 
 
-def test_checks_cover_required_layout_boundaries_and_cross_domain(tmp_path: Path) -> None:
+def test_checks_cover_required_layout_boundaries_and_cross_domain(
+    tmp_path: Path,
+) -> None:
     root = tmp_path / "scrapers"
     domain = root / "drivers"
     (domain / "sections").mkdir(parents=True)
@@ -80,26 +88,56 @@ def test_main_returns_failure_and_success_with_expected_stdout(
 ) -> None:
     monkeypatch.setattr(sys, "argv", ["check_architecture_rules.py"])
     rules = _rules_stub()
-    monkeypatch.setattr(check_architecture_rules, "_load_architecture_rules", lambda: rules)
-    monkeypatch.setattr(check_architecture_rules, "_detect_relevant_domains", lambda *_args, **_kwargs: set())
+    monkeypatch.setattr(
+        check_architecture_rules,
+        "_load_architecture_rules",
+        lambda: rules,
+    )
+    monkeypatch.setattr(
+        check_architecture_rules,
+        "_detect_relevant_domains",
+        lambda *_args, **_kwargs: set(),
+    )
 
-    monkeypatch.setattr(check_architecture_rules, "_check_required_layout", lambda *_a, **_k: ["broken"])
-    monkeypatch.setattr(check_architecture_rules, "_check_layer_boundaries", lambda *_a, **_k: [])
-    monkeypatch.setattr(check_architecture_rules, "_check_sections_single_scraper_boundary", lambda *_a, **_k: [])
-    monkeypatch.setattr(check_architecture_rules, "_check_cross_domain_imports", lambda *_a, **_k: [])
+    monkeypatch.setattr(
+        check_architecture_rules,
+        "_check_required_layout",
+        lambda *_a, **_k: ["broken"],
+    )
+    monkeypatch.setattr(
+        check_architecture_rules,
+        "_check_layer_boundaries",
+        lambda *_a, **_k: [],
+    )
+    monkeypatch.setattr(
+        check_architecture_rules,
+        "_check_sections_single_scraper_boundary",
+        lambda *_a, **_k: [],
+    )
+    monkeypatch.setattr(
+        check_architecture_rules,
+        "_check_cross_domain_imports",
+        lambda *_a, **_k: [],
+    )
 
     assert check_architecture_rules.main() == 1
     output = capsys.readouterr().out
     assert "Architecture rules check failed" in output
     assert "- broken" in output
 
-    monkeypatch.setattr(check_architecture_rules, "_check_required_layout", lambda *_a, **_k: [])
+    monkeypatch.setattr(
+        check_architecture_rules,
+        "_check_required_layout",
+        lambda *_a, **_k: [],
+    )
     assert check_architecture_rules.main() == 0
     assert "Architecture rules check passed." in capsys.readouterr().out
 
 
 def test_cli_invalid_argument_reports_stderr() -> None:
-    script_path = Path(__file__).resolve().parents[2] / "scripts" / "check_architecture_rules.py"
+    script_path = (
+        Path(__file__).resolve().parents[2] / "scripts" / "check_architecture_rules.py"
+    )
 
     proc = subprocess.run(
         [sys.executable, str(script_path), "--bad-flag"],
