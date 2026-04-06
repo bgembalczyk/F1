@@ -120,6 +120,56 @@ def test_constructor_domain_transform_handler_for_chassis_alias_current_list() -
     assert "constructor" not in transformed
 
 
+
+
+def test_constructor_domain_transform_handler_for_indianapolis_only_chassis_constructors() -> None:
+    transformed = _constructor_domain_handler(
+        domain="chassis_constructors",
+        source_name="f1_indianapolis_only_constructors.json",
+        record={
+            "chassis_constructor": {
+                "text": "Adams",
+                "url": "https://en.wikipedia.org/wiki/Adams_(constructor)",
+            },
+        },
+    )
+
+    assert transformed["chassis_constructor"] == {
+        "text": "Adams",
+        "url": "https://en.wikipedia.org/wiki/Adams_(constructor)",
+    }
+    assert transformed["racing_series"] == {
+        "AAA_national_championship": [],
+        "formula_one": {
+            "status": "former",
+            "indianapolis_only": True,
+        },
+    }
+    assert "constructor" not in transformed
+
+
+def test_constructor_domain_transform_handler_for_indianapolis_only_constructors() -> None:
+    transformed = _constructor_domain_handler(
+        domain="constructors",
+        source_name="f1_indianapolis_only_constructors.json",
+        record={
+            "constructor": "Adams",
+            "constructor_url": "https://en.wikipedia.org/wiki/Adams_(constructor)",
+        },
+    )
+
+    assert transformed["constructor"] == {
+        "text": "Adams",
+        "url": "https://en.wikipedia.org/wiki/Adams_(constructor)",
+    }
+    assert transformed["racing_series"] == {
+        "AAA_national_championship": [],
+        "formula_one": {
+            "status": "former",
+            "indianapolis_only": True,
+        },
+    }
+
 def test_constructor_domain_transform_handler_for_chassis_constructors_former_list() -> None:
     transformed = _constructor_domain_handler(
         domain="chassis_constructors",

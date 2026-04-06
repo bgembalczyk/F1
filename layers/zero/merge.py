@@ -377,11 +377,19 @@ def _transform_chassis_constructor_from_current_constructors(
 def _transform_indianapolis_only_constructor(
     transformed: dict[str, object],
 ) -> dict[str, object]:
+    constructor_key = "constructor"
+    constructor_value: object = {
+        "text": transformed.get("constructor"),
+        "url": transformed.get("constructor_url"),
+    }
+
+    chassis_constructor = transformed.get("chassis_constructor")
+    if isinstance(chassis_constructor, dict):
+        constructor_key = "chassis_constructor"
+        constructor_value = chassis_constructor
+
     return {
-        "constructor": {
-            "text": transformed.get("constructor"),
-            "url": transformed.get("constructor_url"),
-        },
+        constructor_key: constructor_value,
         "racing_series": {
             "AAA_national_championship": [],
             "formula_one": {
