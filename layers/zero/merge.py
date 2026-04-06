@@ -318,7 +318,7 @@ def _transform_constructor_domain(
     if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
         return _transform_indianapolis_only_constructor(transformed)
     if source_name == FORMER_CONSTRUCTORS_SOURCE:
-        return _transform_former_constructor(transformed)
+        return _transform_former_constructor(domain, transformed)
     if domain in {"chassis_constructors", "chassis", "constructor"} and re.fullmatch(
         r"f1_constructors_\d{4}\.json",
         source_name,
@@ -383,7 +383,15 @@ def _transform_indianapolis_only_constructor(
     }
 
 
-def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, object]:
+def _transform_former_constructor(
+    domain: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    if domain in {"chassis_constructors", "chassis", "constructor"}:
+        flattened = {key: value for key, value in transformed.items() if key != "constructor"}
+        flattened["status"] = CONSTRUCTOR_STATUS_FORMER
+        return flattened
+
     constructor = transformed.get("constructor")
     formula_one = {
         key: value for key, value in transformed.items() if key != "constructor"

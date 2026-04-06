@@ -120,6 +120,26 @@ def test_constructor_domain_transform_handler_for_chassis_alias_current_list() -
     assert "constructor" not in transformed
 
 
+def test_constructor_domain_transform_handler_for_chassis_constructors_former_list() -> None:
+    transformed = _constructor_domain_handler(
+        domain="chassis_constructors",
+        source_name="f1_former_constructors.json",
+        record={
+            "constructor": None,
+            "chassis_constructor": {"text": "AGS", "url": "https://example.com/ags"},
+            "drivers": 10,
+            "points": 2,
+        },
+    )
+
+    assert transformed == {
+        "chassis_constructor": {"text": "AGS", "url": "https://example.com/ags"},
+        "drivers": 10,
+        "points": 2,
+        "status": "former",
+    }
+
+
 def test_circuits_domain_transform_handler() -> None:
     transformed = _circuits_domain_handler(
         domain="circuits",
