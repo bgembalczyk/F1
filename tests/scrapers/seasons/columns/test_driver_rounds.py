@@ -28,11 +28,11 @@ def test_parse_returns_empty_list_when_cell_is_none() -> None:
 def test_parse_extracts_drivers_from_br_segments_and_prefers_lookup_links() -> None:
     column = DriversWithRoundsColumn()
     ctx = _ctx(
-        '<td>'
+        "<td>"
         '<a href="/wiki/Driver_A">Driver A</a>'
-        '<br/>'
+        "<br/>"
         '<a href="/wiki/Driver_B">Driver B</a>'
-        '</td>',
+        "</td>",
         links=[
             {"text": "Driver A", "url": "https://example.test/driver-a"},
             {"text": "Driver B", "url": "https://example.test/driver-b"},

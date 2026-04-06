@@ -193,7 +193,8 @@ def test_extract_licenses_and_fallback_empty_segments() -> None:
 
 def test_strip_refs_removes_all_sup_tags() -> None:
     segment = BeautifulSoup(
-        "<td>1st<sup>1</sup><sup>†</sup></td>", "html.parser",
+        "<td>1st<sup>1</sup><sup>†</sup></td>",
+        "html.parser",
     ).find("td")
 
     ResultsParsingHelpers.strip_refs(segment)

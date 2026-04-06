@@ -46,8 +46,9 @@ def test_collapsible_table_parser_parses_label_rows_and_numeric_values() -> None
     assert result["rows"][2]["value"] == 129  # noqa: PLR2004
 
 
-def test_collapsible_table_parser_parses_nested_table_and_returns_none_for_empty(
-) -> None:
+def test_collapsible_table_parser_parses_nested_table_and_returns_none_for_empty() -> (
+    None
+):
     with_nested = _parse_table(
         """
         <table class="mw-collapsible">

@@ -123,8 +123,9 @@ def test_extract_part_handles_incomplete_or_out_of_range(
     assert parsed == expected
 
 
-def test_find_hyphen_split_index_detects_split_with_two_plus_links_before_hyphen(
-) -> None:
+def test_find_hyphen_split_index_detects_split_with_two_plus_links_before_hyphen() -> (
+    None
+):
     ctx = _ctx_from_html(
         '<td><a href="/wiki/BRM">BRM</a> <a href="/wiki/P160">P160</a> - '
         '<a href="/wiki/Ford_Motor_Company">Ford</a></td>',

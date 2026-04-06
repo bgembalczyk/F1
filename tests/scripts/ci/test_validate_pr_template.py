@@ -35,11 +35,15 @@ def test_collect_template_errors_reports_missing_heading_checkbox_and_field() ->
 
 def test_validate_detailed_architecture_impact_accepts_and_rejects_values() -> None:
     detailed = dict.fromkeys(
-        validate_pr_template.ARCHITECTURE_IMPACT_FIELDS, "wykonano",
+        validate_pr_template.ARCHITECTURE_IMPACT_FIELDS,
+        "wykonano",
     )
-    assert validate_pr_template._validate_detailed_architecture_impact(  # noqa: SLF001
-        detailed,
-    ) == []
+    assert (
+        validate_pr_template._validate_detailed_architecture_impact(  # noqa: SLF001
+            detailed,
+        )
+        == []
+    )
 
     with_not_applicable = {
         field: ("nie dotyczy" if field == "Dotknięte domeny" else "ok")
@@ -107,7 +111,9 @@ def test_list_changed_files_handles_git_failure(
         stdout = ""
 
     monkeypatch.setattr(
-        validate_pr_template.subprocess, "run", lambda *_a, **_k: Proc(),
+        validate_pr_template.subprocess,
+        "run",
+        lambda *_a, **_k: Proc(),
     )
 
     assert validate_pr_template.list_changed_files("a", "b") == []
@@ -116,7 +122,7 @@ def test_list_changed_files_handles_git_failure(
 def test_cli_argument_validation_stderr() -> None:
     module = "scripts.ci.validate_pr_template"
 
-    proc = subprocess.run(  # noqa: S603
+    proc = subprocess.run(
         [sys.executable, "-m", module],
         capture_output=True,
         text=True,
