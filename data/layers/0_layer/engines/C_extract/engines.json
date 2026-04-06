@@ -1,6 +1,6 @@
 [
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Acer",
       "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
     },
@@ -32,7 +32,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Alfa Romeo",
       "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
     },
@@ -144,7 +144,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Alta",
       "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
     },
@@ -212,7 +212,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Arrows",
       "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
     },
@@ -248,7 +248,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Asiatech",
       "url": "https://en.wikipedia.org/wiki/Asia_Motor_Technologies_France"
     },
@@ -284,7 +284,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Aston Martin",
       "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
     },
@@ -320,7 +320,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "ATS",
       "url": "https://en.wikipedia.org/wiki/Automobili_Turismo_e_Sport"
     },
@@ -360,11 +360,11 @@
     }
   },
   {
-    "manufacturer": {
+    "background": "#F2CEE0",
+    "engine_constructor": {
       "text": "Audi",
       "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
     },
-    "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
         "engines_built_in": [
@@ -393,7 +393,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "BMW",
       "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
     },
@@ -505,7 +505,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Borgward",
       "url": "https://en.wikipedia.org/wiki/Borgward"
     },
@@ -545,7 +545,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "BPM",
       "url": null
     },
@@ -577,7 +577,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Bristol",
       "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
     },
@@ -629,7 +629,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "BRM",
       "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
     },
@@ -745,7 +745,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Bugatti",
       "url": "https://en.wikipedia.org/wiki/Bugatti"
     },
@@ -777,7 +777,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Butterworth",
       "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
     },
@@ -809,7 +809,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "BWT Mercedes",
       "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
     },
@@ -845,7 +845,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Cadillac",
       "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"
     },
@@ -861,7 +862,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Castellotti",
       "url": "https://en.wikipedia.org/wiki/Castellotti"
     },
@@ -893,7 +894,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Chevrolet",
       "url": "https://en.wikipedia.org/wiki/Chevrolet"
     },
@@ -909,7 +911,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Chrysler",
       "url": "https://en.wikipedia.org/wiki/Chrysler"
     },
@@ -925,7 +928,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Climax",
       "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
     },
@@ -1005,7 +1008,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Conrero",
       "url": "https://en.wikipedia.org/wiki/Virgilio_Conrero"
     },
@@ -1037,7 +1040,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Cosworth",
       "url": "https://en.wikipedia.org/wiki/Cosworth"
     },
@@ -1109,7 +1112,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Cummins",
       "url": "https://en.wikipedia.org/wiki/Cummins"
     },
@@ -1125,7 +1129,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "De Tomaso",
       "url": "https://en.wikipedia.org/wiki/De_Tomaso"
     },
@@ -1157,7 +1161,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "DeSoto",
       "url": "https://en.wikipedia.org/wiki/DeSoto_(automobile)"
     },
@@ -1173,7 +1178,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Dodge",
       "url": "https://en.wikipedia.org/wiki/Dodge"
     },
@@ -1189,7 +1195,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Duray",
       "url": null
     },
@@ -1205,7 +1212,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "EMW",
       "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
     },
@@ -1237,7 +1244,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "ERA",
       "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
     },
@@ -1273,7 +1280,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "European",
       "url": "https://en.wikipedia.org/wiki/European_(engine)"
     },
@@ -1305,11 +1312,11 @@
     }
   },
   {
-    "manufacturer": {
+    "background": "#F2CEE0",
+    "engine_constructor": {
       "text": "Ferrari",
       "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
     },
-    "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
         "engines_built_in": [
@@ -1642,7 +1649,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Fiat",
       "url": "https://en.wikipedia.org/wiki/Fiat"
     },
@@ -1674,7 +1681,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Fondmetal",
       "url": "https://en.wikipedia.org/wiki/Fondmetal"
     },
@@ -1706,7 +1713,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Ford",
       "url": "https://en.wikipedia.org/wiki/Ford_in_Formula_One"
     },
@@ -1898,7 +1905,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Gordini",
       "url": "https://en.wikipedia.org/wiki/Gordini"
     },
@@ -1954,7 +1961,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Hart",
       "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
     },
@@ -2026,11 +2033,11 @@
     }
   },
   {
-    "manufacturer": {
+    "background": "#F2CEE0",
+    "engine_constructor": {
       "text": "Honda",
       "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
     },
-    "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
         "engines_built_in": [
@@ -2183,7 +2190,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Honda RBPT",
       "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
     },
@@ -2223,7 +2230,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Ilmor",
       "url": "https://en.wikipedia.org/wiki/Ilmor"
     },
@@ -2263,7 +2270,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Jaguar",
       "url": "https://en.wikipedia.org/wiki/Jaguar_Cars"
     },
@@ -2295,7 +2302,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "JAP",
       "url": "https://en.wikipedia.org/wiki/JA_Prestwich_Industries"
     },
@@ -2327,7 +2334,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Judd",
       "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
     },
@@ -2375,7 +2382,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Küchen",
       "url": null
     },
@@ -2407,7 +2414,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Lamborghini",
       "url": "https://en.wikipedia.org/wiki/Lamborghini"
     },
@@ -2455,7 +2462,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Lancia",
       "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
     },
@@ -2495,7 +2502,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Lea-Francis",
       "url": "https://en.wikipedia.org/wiki/Lea-Francis"
     },
@@ -2535,7 +2542,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Life",
       "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
     },
@@ -2567,7 +2574,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Maserati",
       "url": "https://en.wikipedia.org/wiki/Maserati_in_Formula_One"
     },
@@ -2667,7 +2674,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Matra",
       "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
     },
@@ -2735,7 +2742,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Mecachrome",
       "url": "https://en.wikipedia.org/wiki/Mecachrome"
     },
@@ -2767,7 +2774,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Megatron",
       "url": "https://en.wikipedia.org/wiki/Megatron_(engine)"
     },
@@ -2803,11 +2810,11 @@
     }
   },
   {
-    "manufacturer": {
+    "background": "#F2CEE0",
+    "engine_constructor": {
       "text": "Mercedes",
       "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
     },
-    "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
         "engines_built_in": [
@@ -2972,7 +2979,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Mercury",
       "url": "https://en.wikipedia.org/wiki/Mercury_(automobile)"
     },
@@ -2988,7 +2996,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Miller",
       "url": "https://en.wikipedia.org/wiki/Harry_Miller_(auto_racing)"
     },
@@ -3004,7 +3013,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Motori Moderni",
       "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
     },
@@ -3044,7 +3053,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Mugen-Honda",
       "url": "https://en.wikipedia.org/wiki/Mugen_Honda"
     },
@@ -3108,7 +3117,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Novi",
       "url": "https://en.wikipedia.org/wiki/Novi_engine"
     },
@@ -3124,7 +3134,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Offenhauser",
       "url": "https://en.wikipedia.org/wiki/Offenhauser"
     },
@@ -3140,7 +3151,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "OSCA",
       "url": "https://en.wikipedia.org/wiki/O.S.C.A."
     },
@@ -3196,7 +3207,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Osella",
       "url": "https://en.wikipedia.org/wiki/Osella"
     },
@@ -3228,7 +3239,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Petronas",
       "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
     },
@@ -3292,7 +3303,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Peugeot",
       "url": "https://en.wikipedia.org/wiki/Peugeot"
     },
@@ -3348,7 +3359,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Playlife",
       "url": "https://en.wikipedia.org/wiki/Playlife"
     },
@@ -3388,7 +3399,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Porsche",
       "url": "https://en.wikipedia.org/wiki/Porsche_in_Formula_One"
     },
@@ -3448,7 +3459,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Pratt & Whitney",
       "url": "https://en.wikipedia.org/wiki/Pratt_%26_Whitney"
     },
@@ -3480,7 +3491,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "R Miller",
       "url": null
     },
@@ -3496,11 +3508,11 @@
     }
   },
   {
-    "manufacturer": {
+    "background": "#F2CEE0",
+    "engine_constructor": {
       "text": "Red Bull Ford",
       "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
     },
-    "background": "#F2CEE0",
     "racing_series": {
       "formula_one": {
         "engines_built_in": [
@@ -3529,7 +3541,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Red Bull Powertrains",
       "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
     },
@@ -3561,7 +3573,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Renault",
       "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
     },
@@ -3765,7 +3777,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Repco",
       "url": "https://en.wikipedia.org/wiki/Repco"
     },
@@ -3809,7 +3821,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Sauber",
       "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
     },
@@ -3841,7 +3853,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Scarab",
       "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
     },
@@ -3873,7 +3885,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Serenissima",
       "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
     },
@@ -3905,7 +3917,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Sparks",
       "url": null
     },
@@ -3921,7 +3934,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Studebaker",
       "url": "https://en.wikipedia.org/wiki/Studebaker"
     },
@@ -3937,7 +3951,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Subaru",
       "url": "https://en.wikipedia.org/wiki/Subaru"
     },
@@ -3969,7 +3983,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Supertec",
       "url": "https://en.wikipedia.org/wiki/Supertec"
     },
@@ -4005,7 +4019,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "TAG",
       "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
     },
@@ -4053,7 +4067,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "TAG Heuer",
       "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
     },
@@ -4093,7 +4107,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Talbot",
       "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
     },
@@ -4129,7 +4143,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Tecno",
       "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
     },
@@ -4165,7 +4179,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Toro Rosso",
       "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
     },
@@ -4197,7 +4211,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Toyota",
       "url": "https://en.wikipedia.org/wiki/Toyota_Racing_(Formula_One_team)"
     },
@@ -4257,7 +4271,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Vanwall",
       "url": "https://en.wikipedia.org/wiki/Vanwall"
     },
@@ -4313,7 +4327,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Veritas",
       "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
     },
@@ -4353,7 +4367,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Voelker",
       "url": null
     },
@@ -4369,7 +4384,8 @@
     }
   },
   {
-    "manufacturer": {
+    "manufacturer": null,
+    "engine_constructor": {
       "text": "Wayne",
       "url": null
     },
@@ -4385,7 +4401,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Weslake",
       "url": "https://en.wikipedia.org/wiki/Weslake"
     },
@@ -4425,7 +4441,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Yamaha",
       "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
     },
@@ -4485,7 +4501,7 @@
     }
   },
   {
-    "manufacturer": {
+    "engine_constructor": {
       "text": "Zakspeed",
       "url": "https://en.wikipedia.org/wiki/Zakspeed"
     },
