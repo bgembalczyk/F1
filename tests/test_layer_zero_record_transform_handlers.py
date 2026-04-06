@@ -64,7 +64,9 @@ def test_constructor_domain_transform_handler_for_chassis_constructors_current_l
         "text": "Alpine",
         "url": "https://example.com",
     }
-    assert transformed["engines"] == [{"text": "Mercedes", "url": "https://engine"}]
+    assert transformed["engine_constructors"] == [
+        {"text": "Mercedes", "url": "https://engine"},
+    ]
     assert transformed["antecedent_teams"] == [{"text": "Toleman"}]
     assert "constructor" not in transformed
 

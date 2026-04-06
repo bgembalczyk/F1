@@ -347,7 +347,7 @@ def _transform_chassis_constructor_from_current_constructors(
 
     engine_constructor = constructor_value.get("engine_constructor")
     if engine_constructor is not None:
-        reshaped["engines"] = (
+        reshaped["engine_constructors"] = (
             engine_constructor
             if isinstance(engine_constructor, list)
             else [engine_constructor]
