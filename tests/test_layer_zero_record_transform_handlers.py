@@ -47,6 +47,28 @@ def test_constructor_domain_transform_handler() -> None:
     assert "engine" in transformed
 
 
+def test_constructor_domain_transform_handler_for_chassis_constructors_current_list() -> None:
+    transformed = _constructor_domain_handler(
+        domain="chassis_constructors",
+        source_name="f1_constructors_2026.json",
+        record={
+            "constructor": {
+                "chassis_constructor": {"text": "Alpine", "url": "https://example.com"},
+                "engine_constructor": {"text": "Mercedes", "url": "https://engine"},
+            },
+            "antecedent_teams": [{"text": "Toleman"}],
+        },
+    )
+
+    assert transformed["chassis_constructor"] == {
+        "text": "Alpine",
+        "url": "https://example.com",
+    }
+    assert transformed["engines"] == [{"text": "Mercedes", "url": "https://engine"}]
+    assert transformed["antecedent_teams"] == [{"text": "Toleman"}]
+    assert "constructor" not in transformed
+
+
 def test_circuits_domain_transform_handler() -> None:
     transformed = _circuits_domain_handler(
         domain="circuits",
@@ -105,6 +127,31 @@ def test_teams_domain_transform_handler() -> None:
 
     assert transformed["racing_series"]["formula_one"]["privateer"] is True
     assert transformed["racing_series"]["formula_one"]["seasons"] == [1956, 1965]
+
+
+def test_teams_domain_transform_handler_for_current_constructors_list() -> None:
+    transformed = _teams_domain_handler(
+        domain="teams",
+        source_name="f1_constructors_2026.json",
+        record={
+            "constructor": {
+                "chassis_constructor": {"text": "Alpine", "url": "https://example.com"},
+                "engine_constructor": {"text": "Mercedes", "url": "https://engine"},
+            },
+            "antecedent_teams": [{"text": "Toleman"}],
+        },
+    )
+
+    assert transformed["team"] == {"text": "Alpine", "url": "https://example.com"}
+    assert transformed["constructors"] == [
+        {
+            "chassis_constructor": {"text": "Alpine", "url": "https://example.com"},
+            "engine_constructor": {"text": "Mercedes", "url": "https://engine"},
+        },
+    ]
+    assert transformed["racing_series"]["formula_one"]["antecedent_teams"] == [
+        {"text": "Toleman"},
+    ]
 
 
 def test_drivers_domain_transform_handler() -> None:
