@@ -5,6 +5,7 @@ from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins import ApplyForElementsMixin
 from scrapers.base.source_catalog import ENGINE_REGULATIONS
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
@@ -23,7 +24,6 @@ from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
-from scrapers.base.mixins import ApplyForElementsMixin
 
 
 class EngineRestrictionsTableParser(WikiTableBaseParser):
@@ -100,7 +100,6 @@ class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
         for section in payload.get("sub_sub_sections", []):
             self._apply_for_elements(section.get("elements", []))
             self._apply_engine_restrictions_table_parser(section)
-
 
 
 class CurrentRulesSectionParser(SectionParser):

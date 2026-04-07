@@ -25,8 +25,10 @@ if TYPE_CHECKING:
     from layers.orchestration.types import SeedName
     from layers.seed.registry.entries import ListJobRegistryEntry
 
+from layers.base.executor import BaseExecutor
 
-class LayerZeroExecutor:
+
+class LayerZeroExecutor(BaseExecutor):
     def __init__(
         self,
         *,
@@ -112,7 +114,7 @@ class LayerZeroExecutor:
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
         run_id = self._resolve_run_id(run_config)
-        trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id)
+        trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id, layer=0)
         summary: dict[str, list[str]] = {"success": [], "skip": [], "fail": []}
         output_paths: list[str] = []
 
@@ -308,21 +310,3 @@ class LayerZeroExecutor:
             )
         return self._list_job_registry
 
-    def _build_trace_writer(
-        self,
-        *,
-        run_config: RunConfig,
-        run_id: str,
-    ) -> RunTraceWriter:
-        debug_root = (
-            Path(run_config.debug_dir)
-            if run_config.debug_dir
-            else Path(run_config.output_dir)
-        )
-        trace_path = debug_root / "traces" / f"layer0_{run_id}.jsonl"
-        timestamp_provider = (
-            (lambda: run_config.fixed_timestamp)
-            if run_config.fixed_timestamp is not None
-            else None
-        )
-        return RunTraceWriter(trace_path, timestamp_provider=timestamp_provider)

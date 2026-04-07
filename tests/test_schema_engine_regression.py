@@ -5,6 +5,7 @@ from typing import Any
 
 from validation.issue import IssueMessageFormatter
 from validation.issue import ValidationIssue
+from validation.issue import LegacyValidationIssueAdapter
 from validation.record_validation import validate_record
 from validation.schema_rules import build_domain_rules
 from validation.schemas import NestedSchema
@@ -14,13 +15,7 @@ INVALID_TEAM_VALUE = 7
 
 
 def _legacy_extract_missing_key(error: str) -> str | None:
-    if error.startswith("Missing key: "):
-        return error.replace("Missing key: ", "", 1).strip() or None
-    if error.startswith("Null value for: "):
-        return error.replace("Null value for: ", "", 1).strip() or None
-    if error.endswith(" is missing"):
-        return error[: -len(" is missing")].strip() or None
-    return None
+    return LegacyValidationIssueAdapter.extract_missing_key(error)
 
 
 def _legacy_extract_type_key(error: str) -> str | None:

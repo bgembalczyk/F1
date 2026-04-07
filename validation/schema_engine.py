@@ -31,13 +31,7 @@ class SchemaValidationEngine:
 
     @staticmethod
     def extract_missing_key(error: str) -> str | None:
-        if error.startswith("Missing key: "):
-            return error.replace("Missing key: ", "", 1).strip() or None
-        if error.startswith("Null value for: "):
-            return error.replace("Null value for: ", "", 1).strip() or None
-        if error.endswith(" is missing"):
-            return error[: -len(" is missing")].strip() or None
-        return None
+        return LegacyValidationIssueAdapter.extract_missing_key(error)
 
     @staticmethod
     def extract_type_key(error: str) -> str | None:
