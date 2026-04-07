@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+
 import pytest
 
 from scripts.ci import validate_pr_template

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+
 import pytest
 
 from scripts.ci import enforce_architecture_adr_reference as gate
