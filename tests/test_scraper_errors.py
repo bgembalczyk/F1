@@ -13,32 +13,32 @@ _ensure_certifi_stub()
 _ensure_pandas_stub()
 _ensure_requests_stub()
 
-from infrastructure.http_client.requests_shim.request_error import RequestError
-from scrapers.base.abc import ABCScraper
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.errors import DomainParseError
-from scrapers.base.errors import ErrorBehavior
-from scrapers.base.errors import ScraperNetworkError
-from scrapers.base.errors import ScraperNotFoundError
-from scrapers.base.errors import ScraperParseError
-from scrapers.base.errors_report import ErrorReport
-from scrapers.base.errors_report import write_error_report
-from scrapers.base.errors_report import write_error_summary_by_code
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.options import ScraperOptions
-from scrapers.circuits.infobox.services.additional_info import (
+from infrastructure.http_client.requests_shim.request_error import RequestError  # noqa: E402
+from scrapers.base.abc import ABCScraper  # noqa: E402
+from scrapers.base.error_handler import ErrorHandler  # noqa: E402
+from scrapers.base.errors import DomainParseError  # noqa: E402
+from scrapers.base.errors import ErrorBehavior  # noqa: E402
+from scrapers.base.errors import ScraperNetworkError  # noqa: E402
+from scrapers.base.errors import ScraperNotFoundError  # noqa: E402
+from scrapers.base.errors import ScraperParseError  # noqa: E402
+from scrapers.base.errors_report import ErrorReport  # noqa: E402
+from scrapers.base.errors_report import write_error_report  # noqa: E402
+from scrapers.base.errors_report import write_error_summary_by_code  # noqa: E402
+from scrapers.base.infobox.scraper import WikipediaInfoboxScraper  # noqa: E402
+from scrapers.base.list.scraper import F1ListScraper  # noqa: E402
+from scrapers.base.options import ScraperOptions  # noqa: E402
+from scrapers.circuits.infobox.services.additional_info import (  # noqa: E402
     CircuitAdditionalInfoParser,
 )
-from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
-from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
-from scrapers.circuits.infobox.services.geo import CircuitGeoParser
-from scrapers.circuits.infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
-from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
-from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
+from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser  # noqa: E402
+from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser  # noqa: E402
+from scrapers.circuits.infobox.services.geo import CircuitGeoParser  # noqa: E402
+from scrapers.circuits.infobox.services.history import CircuitHistoryParser  # noqa: E402
+from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser  # noqa: E402
+from scrapers.circuits.infobox.services.specs import CircuitSpecsParser  # noqa: E402
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils  # noqa: E402
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper  # noqa: E402
+from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper  # noqa: E402
 
 RETRY_ATTEMPTS = 2
 
