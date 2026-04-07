@@ -57,8 +57,8 @@ def test_by_race_title_parse_group_returns_dict() -> None:
     parser = ByRaceTitleSubSectionParser()
 
     class _Stub:
-        def parse(self, _data):
-            return None
+        def apply_to_payload(self, _payload):
+            pass
 
     parser._table_parser = _Stub()
     result = parser.parse_group([], context=None)
