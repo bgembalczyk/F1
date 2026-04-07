@@ -22,7 +22,7 @@ def scraper():
 
 
 class TestDriverInfoboxIntegration:
-    __test__ = True # Ensuring this class is discovered as tests
+    __test__ = True  # Ensuring this class is discovered as tests
 
     def _parse_and_validate(self, scraper, html, section_key):
         soup = BeautifulSoup(html, "html.parser")
@@ -45,7 +45,9 @@ class TestDriverInfoboxIntegration:
             </td></tr>
         </table>
         """
-        result = self._parse_and_validate(scraper, html, "general")  # PRIVATE-API-JUSTIFIED
+        result = self._parse_and_validate(
+            scraper, html, "general"
+        )  # PRIVATE-API-JUSTIFIED
         assert "died" in result[0]["general"]
         died = result[0]["general"]["died"]
         assert died["date"] == "2020-08-11"
@@ -79,7 +81,6 @@ class TestDriverInfoboxIntegration:
 
         pytest.fail("Best finish row not found")
 
-
     def test_championship_titles_with_year_ranges(self, scraper):
         """Test championship titles with year ranges expanded."""
         html = """
@@ -101,7 +102,9 @@ class TestDriverInfoboxIntegration:
             </tr>
         </table>
         """
-        result = self._parse_and_validate(scraper, html, "championship_titles")  # PRIVATE-API-JUSTIFIED
+        result = self._parse_and_validate(
+            scraper, html, "championship_titles"
+        )  # PRIVATE-API-JUSTIFIED
 
         # Check that years are expanded
         champ = result[0]["championship_titles"][0]
@@ -112,7 +115,6 @@ class TestDriverInfoboxIntegration:
         year_values = [y["year"] for y in years if "year" in y]
         for expected_year in EXPANDED_YEAR_VALUES:
             assert expected_year in year_values
-
 
     def test_nationality_with_or(self, scraper):
         """Test nationality parsing with 'or' separator."""
@@ -137,7 +139,6 @@ class TestDriverInfoboxIntegration:
                 return
 
         pytest.fail("Nationality row not found")
-
 
     def test_major_victories_from_championship_section(self, scraper):
         """Test parsing major victories from Championship titles section."""
@@ -169,7 +170,6 @@ class TestDriverInfoboxIntegration:
         assert victory["title"]["text"] == "24 Hours of Le Mans"
         assert len(victory["years"]) == 1
         assert victory["years"][0]["text"] == "1934"
-
 
     def test_full_data_table_top_tens(self, scraper):
         """Test full data table with Top tens column."""
