@@ -144,7 +144,8 @@ def test_cli_invalid_argument_reports_stderr(
         sys.argv = ["check_architecture_rules.py", "--bad-flag"]
         try:
             check_architecture_rules.main()
-            raise AssertionError("expected SystemExit")
+            msg = "expected SystemExit"
+            raise AssertionError(msg)
         except SystemExit as exc:
             assert exc.code == 2  # noqa: PLR2004
     finally:

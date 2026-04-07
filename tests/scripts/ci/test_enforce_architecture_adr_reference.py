@@ -91,7 +91,8 @@ def test_cli_invalid_argument_prints_stderr(
         ]
         try:
             gate.main()
-            raise AssertionError("expected SystemExit")
+            msg = "expected SystemExit"
+            raise AssertionError(msg)
         except SystemExit as exc:
             assert exc.code == 2  # noqa: PLR2004
     finally:

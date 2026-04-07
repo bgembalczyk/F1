@@ -124,7 +124,8 @@ def test_cli_argument_validation_stderr(capsys: pytest.CaptureFixture[str]) -> N
         sys.argv = ["validate_pr_template.py"]
         try:
             validate_pr_template.main()
-            raise AssertionError("expected SystemExit")
+            msg = "expected SystemExit"
+            raise AssertionError(msg)
         except SystemExit as exc:
             assert exc.code == 2  # noqa: PLR2004
     finally:
