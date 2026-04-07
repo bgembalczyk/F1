@@ -12,7 +12,7 @@ def test_official_drivers_sub_section_parser_apply_for_elements_skips_non_table(
     ]
 
     class _Stub:
-        def parse(self, data):
+        def parse(self, _data):
             return None
 
     parser._table_parser = _Stub()
@@ -29,7 +29,7 @@ def test_official_drivers_sub_section_parser_apply_for_elements_replaces_matched
     elements = [{"kind": "table", "data": {"ok": True}}]
 
     class _Stub:
-        def parse(self, data):
+        def parse(self, _data):
             return {"table_type": "female_drivers_list"}
 
     parser._table_parser = _Stub()
@@ -70,7 +70,7 @@ def test_official_drivers_sub_section_parse_group_calls_apply_and_returns() -> N
     parser = OfficialDriversSubSectionParser()
 
     class _Stub:
-        def parse(self, data):
+        def parse(self, _data):
             return None
 
     parser._table_parser = _Stub()

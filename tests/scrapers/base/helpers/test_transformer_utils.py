@@ -9,8 +9,8 @@ class _DoubleValueTransformer:
         return {k: v * 2 if isinstance(v, int) else v for k, v in record.items()}
 
     # Satisfy RecordTransformer interface used by apply_transformers
-    def transform(self, records):
-        return [self(r) for r in records]
+    def transform(self, _records):
+        return [self(r) for r in _records]
 
 
 def test_apply_transformers_with_factory_no_factory_no_transformers_returns_record() -> (
@@ -41,7 +41,7 @@ def test_apply_transformers_with_factory_empty_transformed_returns_empty_dict() 
     # we just need transformers_list to be non-empty and transformers to yield empty
 
     class _FilterAllTransformer:
-        def apply(self, records):
+        def apply(self, _records):
             return []
 
         # Make it look like a RecordTransformer via duck typing

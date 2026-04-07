@@ -12,7 +12,7 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
 class _ConcreteSectionByIdScraper(SingleWikiArticleSectionByIdBase):
     """Minimal concrete subclass for testing."""
 
-    def _assemble_record(self, *args, **kwargs):
+    def _assemble_record(self, *_args, **_kwargs):
         return {}
 
 

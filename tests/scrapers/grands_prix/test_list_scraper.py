@@ -31,7 +31,7 @@ def test_by_race_title_sub_section_parser_apply_for_elements_skips_non_table() -
     ]
 
     class _Stub:
-        def parse(self, data):
+        def parse(self, _data):
             return None
 
     parser._table_parser = _Stub()
@@ -45,7 +45,7 @@ def test_by_race_title_sub_section_parser_apply_for_elements_replaces_matched() 
     elements = [{"kind": "table", "data": {"ok": True}}]
 
     class _Stub:
-        def parse(self, data):
+        def parse(self, _data):
             return {"table_type": "grands_prix_list"}
 
     parser._table_parser = _Stub()
@@ -86,7 +86,7 @@ def test_by_race_title_parse_group_returns_dict() -> None:
     parser = ByRaceTitleSubSectionParser()
 
     class _Stub:
-        def parse(self, data):
+        def parse(self, _data):
             return None
 
     parser._table_parser = _Stub()
