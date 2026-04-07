@@ -1,9 +1,12 @@
 """Mixin for applying table parser to generic structured elements."""
 
-from typing import Any, Protocol
+from typing import Any
+from typing import Protocol
+
 
 class _HasTableParser(Protocol):
     _table_parser: Any
+
 
 class ApplyForElementsMixin:
     """Mixin to apply a table parser to elements within a structured payload."""
@@ -19,7 +22,9 @@ class ApplyForElementsMixin:
                     if isinstance(item, dict):
                         self.apply_table_parser(item)
 
-    def _apply_for_elements(self: _HasTableParser, elements: list[dict[str, Any]]) -> None:
+    def _apply_for_elements(
+        self: _HasTableParser, elements: list[dict[str, Any]]
+    ) -> None:
         """Applies the table parser to a list of elements."""
         for element in elements:
             if element.get("kind") != "table":

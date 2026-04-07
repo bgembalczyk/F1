@@ -5,6 +5,7 @@ from typing import Any
 
 from models.services import parse_seasons
 from scrapers.base.helpers.parsing import parse_int_from_text
+from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.points.constants import HISTORICAL_POSITIONS
 from scrapers.points.constants import POINTS_NOTES_HEADER
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
@@ -13,7 +14,6 @@ from scrapers.points.constants import SHORTENED_RACE_EXPECTED_HEADERS
 from scrapers.points.constants import SPRINT_POSITIONS
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
