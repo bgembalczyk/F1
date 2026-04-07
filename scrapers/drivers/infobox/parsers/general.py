@@ -5,10 +5,10 @@ from bs4 import Tag
 
 from models.records.link import LinkRecord
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.helpers.parsing import parse_relations
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.infobox.schema import InfoboxSchema
-from scrapers.base.helpers.parsing import parse_relations
 from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
