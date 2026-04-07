@@ -75,7 +75,7 @@ def merge_driver_values(existing: object, incoming: object) -> object:
     return existing
 
 
-from collections.abc import Callable
+
 
 
 class MergeModel(Protocol):
@@ -141,7 +141,6 @@ def _handle_new_record(
             key_to_index[alias] = index
 
 
-# ruff: noqa: C901
 def merge_duplicate_records(
     records: list[object],
     model_cls: type[T],

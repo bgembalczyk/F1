@@ -93,7 +93,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
     def _apply_schema_transforms(row: dict[str, Any]) -> dict[str, Any]:
         transformed: dict[str, Any] = {}
         for key, value in row.items():
-            text = value if isinstance(value, str) else ""
+            text = value.get("text", "") if isinstance(value, dict) else (value if isinstance(value, str) else "")
             if key == "seasons":
                 transformed[key] = [s.to_dict() for s in parse_seasons(text)]
             elif key == "1st":
@@ -167,7 +167,7 @@ class SprintPointsTableParser(WikiTableBaseParser):
     def _apply_schema_transforms(row: dict[str, Any]) -> dict[str, Any]:
         transformed: dict[str, Any] = {}
         for key, value in row.items():
-            text = value if isinstance(value, str) else ""
+            text = value.get("text", "") if isinstance(value, dict) else (value if isinstance(value, str) else "")
             if key == "seasons":
                 transformed[key] = [s.to_dict() for s in parse_seasons(text)]
             elif key in _SPRINT_POSITION_KEYS:
@@ -216,9 +216,8 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
         order: list[str] = []
         for row in rows:
             seasons_text = row.get("seasons") or ""
-            # Ensure seasons_text is hashable (it can occasionally be a parsed list/dict from transforms)
-            if not isinstance(seasons_text, str):
-                seasons_text = str(seasons_text)
+            if isinstance(seasons_text, dict):
+                seasons_text = seasons_text.get("text", "")
             if seasons_text not in groups:
                 groups[seasons_text] = []
                 order.append(seasons_text)
