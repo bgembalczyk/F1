@@ -17,9 +17,12 @@ Każda kategoria to lista łańcuchów (lub pusta lista, jeśli nie dotyczy).
 
 import logging
 from typing import Any
+from typing import TYPE_CHECKING
 
-from infrastructure.gemini.client import GeminiClient
 from scrapers.sponsorship_liveries.helpers.constants import PROMPT_TEMPLATE
+
+if TYPE_CHECKING:
+    from infrastructure.gemini.client import GeminiClient
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +38,7 @@ class ParenClassifier:
         Skonfigurowany klient Gemini API.
     """
 
-    def __init__(self, gemini_client: GeminiClient) -> None:
+    def __init__(self, gemini_client: "GeminiClient") -> None:
         self._client = gemini_client
 
     # ------------------------------------------------------------------
