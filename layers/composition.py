@@ -4,6 +4,7 @@ import shutil
 from datetime import datetime
 from datetime import timezone
 from typing import TYPE_CHECKING
+from typing import NamedTuple
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
@@ -29,42 +30,102 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-def _current_year() -> int:
-    return datetime.now(tz=timezone.utc).year
+class WikiPipelineComponents(NamedTuple):
+    layer_zero_executor: LayerZeroExecutor
+    layer_one_executor: LayerOneExecutor
+    layer_zero_merge_service: LayerZeroMergeService
 
 
-def _should_mirror_constructors_job(job: object) -> bool:
-    """Aktywna dla `constructors_current`."""
-    list_scraper_cls = getattr(job, "list_scraper_cls", None)
-    scraper_name = getattr(list_scraper_cls, "__name__", "")
-    if scraper_name == "CurrentConstructorsListScraper":
-        return True
-    seed_name = getattr(job, "seed_name", "")
-    return seed_name == "constructors_current"
+class WikiPipelineComponentsFactory:
+    @staticmethod
+    def current_year() -> int:
+        return datetime.now(tz=timezone.utc).year
 
+    @staticmethod
+    def should_mirror_constructors_job(job: object) -> bool:
+        """Aktywna dla `constructors_current`."""
+        list_scraper_cls = getattr(job, "list_scraper_cls", None)
+        scraper_name = getattr(list_scraper_cls, "__name__", "")
+        if scraper_name == "CurrentConstructorsListScraper":
+            return True
+        seed_name = getattr(job, "seed_name", "")
+        return seed_name == "constructors_current"
 
-def _should_mirror_points_job(job: object) -> bool:
-    list_scraper_cls = getattr(job, "list_scraper_cls", None)
-    scraper_name = getattr(list_scraper_cls, "__name__", "")
-    if scraper_name == "PointsScraper":
-        return True
-    seed_name = getattr(job, "seed_name", "")
-    return seed_name in {"points_history", "points_shortened", "points_sprint"}
+    @staticmethod
+    def should_mirror_points_job(job: object) -> bool:
+        list_scraper_cls = getattr(job, "list_scraper_cls", None)
+        scraper_name = getattr(list_scraper_cls, "__name__", "")
+        if scraper_name == "PointsScraper":
+            return True
+        seed_name = getattr(job, "seed_name", "")
+        return seed_name in {"points_history", "points_shortened", "points_sprint"}
 
+    @staticmethod
+    def should_mirror_engine_rules_job(job: object) -> bool:
+        list_scraper_cls = getattr(job, "list_scraper_cls", None)
+        scraper_name = getattr(list_scraper_cls, "__name__", "")
+        if scraper_name in {"EngineRegulationScraper", "EngineRestrictionsScraper"}:
+            return True
+        seed_name = getattr(job, "seed_name", "")
+        return seed_name in {"engines_regulations", "engines_restrictions"}
 
-def _should_mirror_engine_rules_job(job: object) -> bool:
-    list_scraper_cls = getattr(job, "list_scraper_cls", None)
-    scraper_name = getattr(list_scraper_cls, "__name__", "")
-    if scraper_name in {"EngineRegulationScraper", "EngineRestrictionsScraper"}:
-        return True
-    seed_name = getattr(job, "seed_name", "")
-    return seed_name in {"engines_regulations", "engines_restrictions"}
+    @staticmethod
+    def run_layer_zero_phases(base_wiki_dir: Path) -> None:
+        merge_layer_zero_raw_outputs(base_wiki_dir)
+        extract_layer_zero_phase_c(base_wiki_dir)
+        merge_layer_zero_phase_d(base_wiki_dir)
 
+    @classmethod
+    def build_components(cls) -> WikiPipelineComponents:
+        layer_zero_merge_service = LayerZeroMergeService(
+            merge=cls.run_layer_zero_phases,
+        )
 
-def _run_layer_zero_phases(base_wiki_dir: Path) -> None:
-    merge_layer_zero_raw_outputs(base_wiki_dir)
-    extract_layer_zero_phase_c(base_wiki_dir)
-    merge_layer_zero_phase_d(base_wiki_dir)
+        layer_zero_executor = LayerZeroExecutor(
+            list_job_registry=WIKI_LIST_JOB_REGISTRY,
+            validate_list_registry=validate_list_job_registry,
+            config_factories=build_layer_zero_run_config_factory_map,
+            default_config_factory=DefaultLayerZeroRunConfigFactory(),
+            merger=layer_zero_merge_service,
+            job_hook=CompositeLayerZeroJobHook(
+                hooks=(
+                    MirrorConstructorsJobHook(
+                        mirror=ConstructorsMirrorService(
+                            mirror_targets=(
+                                ("chassis_constructors", "f1_constructors_{year}.json"),
+                                ("constructors", "f1_constructors_{year}.json"),
+                                ("teams", "f1_constructors_{year}.json"),
+                            ),
+                            copy_file=shutil.copy2,
+                            year_provider=cls.current_year,
+                        ),
+                        should_mirror_predicate=cls.should_mirror_constructors_job,
+                    ),
+                    MirrorToDomainByFilenameJobHook(
+                        target_domain="seasons",
+                        should_mirror_predicate=cls.should_mirror_points_job,
+                    ),
+                    MirrorToDomainByFilenameJobHook(
+                        target_domain="seasons",
+                        should_mirror_predicate=cls.should_mirror_engine_rules_job,
+                    ),
+                ),
+            ),
+            year_provider=cls.current_year,
+        )
+
+        layer_one_executor = LayerOneExecutor(
+            seed_registry=get_wiki_seed_registry(),
+            validate_seed_registry=validate_seed_registry,
+            runners=build_layer_one_runner_map,
+            engine_manufacturers_runner=run_engine_manufacturers,
+        )
+
+        return WikiPipelineComponents(
+            layer_zero_executor=layer_zero_executor,
+            layer_one_executor=layer_one_executor,
+            layer_zero_merge_service=layer_zero_merge_service,
+        )
 
 
 def create_default_wiki_pipeline_application(
@@ -73,56 +134,11 @@ def create_default_wiki_pipeline_application(
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
     """Composition root dla domyślnej aplikacji wiki pipeline."""
-    layer_zero_merge_service = LayerZeroMergeService(
-        merge=_run_layer_zero_phases,
-    )
-
-    layer_zero_executor = LayerZeroExecutor(
-        list_job_registry=WIKI_LIST_JOB_REGISTRY,
-        validate_list_registry=validate_list_job_registry,
-        config_factories=build_layer_zero_run_config_factory_map,
-        default_config_factory=DefaultLayerZeroRunConfigFactory(),
-        merger=layer_zero_merge_service,
-        job_hook=CompositeLayerZeroJobHook(
-            hooks=(
-                MirrorConstructorsJobHook(
-                    mirror=ConstructorsMirrorService(
-                        mirror_targets=(
-                            ("chassis_constructors", "f1_constructors_{year}.json"),
-                            ("constructors", "f1_constructors_{year}.json"),
-                            ("teams", "f1_constructors_{year}.json"),
-                        ),
-                        copy_file=shutil.copy2,
-                        year_provider=_current_year,
-                    ),
-                    should_mirror_predicate=_should_mirror_constructors_job,
-                ),
-                MirrorToDomainByFilenameJobHook(
-                    target_domain="seasons",
-                    should_mirror_predicate=_should_mirror_points_job,
-                ),
-                MirrorToDomainByFilenameJobHook(
-                    target_domain="seasons",
-                    should_mirror_predicate=_should_mirror_engine_rules_job,
-                ),
-            ),
-        ),
-        year_provider=_current_year,
-    )
-
-    layer_one_executor = LayerOneExecutor(
-        seed_registry=get_wiki_seed_registry(),
-        validate_seed_registry=validate_seed_registry,
-        runners=build_layer_one_runner_map,
-        engine_manufacturers_runner=run_engine_manufacturers,
-    )
-
+    components = WikiPipelineComponentsFactory.build_components()
     return WikiPipelineApplication(
         base_wiki_dir=base_wiki_dir,
         base_debug_dir=base_debug_dir,
-        layer_zero_executor=layer_zero_executor,
-        layer_one_executor=layer_one_executor,
-        layer_zero_merge_service=LayerZeroMergeService(
-            merge=_run_layer_zero_phases,
-        ),
+        layer_zero_executor=components.layer_zero_executor,
+        layer_one_executor=components.layer_one_executor,
+        layer_zero_merge_service=components.layer_zero_merge_service,
     )
