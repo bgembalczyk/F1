@@ -46,7 +46,9 @@ class TestDriverInfoboxIntegration:
         </table>
         """
         result = self._parse_and_validate(
-            scraper, html, "general"
+            scraper,
+            html,
+            "general",
         )  # PRIVATE-API-JUSTIFIED
         assert "died" in result[0]["general"]
         died = result[0]["general"]["died"]
@@ -103,7 +105,9 @@ class TestDriverInfoboxIntegration:
         </table>
         """
         result = self._parse_and_validate(
-            scraper, html, "championship_titles"
+            scraper,
+            html,
+            "championship_titles",
         )  # PRIVATE-API-JUSTIFIED
 
         # Check that years are expanded

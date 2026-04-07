@@ -4,9 +4,9 @@ from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
-from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
+from scrapers.circuits.helpers.layout import detect_layout_name
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
 def test_select_section_returns_fragment_section_only() -> None:
