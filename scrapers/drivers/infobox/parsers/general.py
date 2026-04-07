@@ -8,7 +8,7 @@ from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.infobox.schema import InfoboxSchema
-from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN
+from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN, ISO_DATE_PATTERN
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
@@ -91,7 +91,7 @@ class InfoboxGeneralParser:
         for span in hidden_spans:
             span_text = span.get_text(strip=True)
             # Look for ISO date pattern in parentheses
-            iso_match = re.search(r"\((\d{4}-\d{2}-\d{2})\)", span_text)
+            iso_match = ISO_DATE_PATTERN.search(span_text)
             if iso_match:
                 return iso_match.group(1)
         return None
