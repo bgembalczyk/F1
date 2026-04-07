@@ -174,7 +174,7 @@ def test_query_stores_result_in_cache(tmp_path) -> None:
 
 class TestGeminiClientFallback:
     @pytest.fixture(autouse=True)
-    def setup(self, tmp_path) -> None:
+    def _setup(self, tmp_path) -> None:
         self.cache = GeminiCache(cache_dir=tmp_path / "c")
         self.models = [
             ModelConfig("model-a", requests_per_minute=10, requests_per_day=500),
@@ -218,7 +218,9 @@ class TestGeminiClientFallback:
         assert result == {"result": "ok"}
         assert call_log == ["model-a", "model-b"]
 
-    def test_query_after_fallback_returns_to_primary_model_for_next_prompt(self) -> None:
+    def test_query_after_fallback_returns_to_primary_model_for_next_prompt(
+        self,
+    ) -> None:
         """Fallback is per prompt: next prompt starts again from the first model."""
         call_log: list[tuple[str, str]] = []
 
