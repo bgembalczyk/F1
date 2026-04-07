@@ -4,8 +4,8 @@ from collections.abc import Callable
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import SeasonRecordModel
 from layers.zero.merge_types import TeamRecordModel
-from layers.zero.record_merge_ops import merge_values
 from layers.zero.record_merge_ops import merge_duplicate_records
+from layers.zero.record_merge_ops import merge_values
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 
 DomainRecordsProcessor = Callable[[list[object]], list[object]]

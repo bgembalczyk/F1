@@ -1,6 +1,6 @@
-from bs4 import Tag
-
 from difflib import SequenceMatcher
+
+from bs4 import Tag
 
 from scrapers.base.helpers.transform_micro_ops import merge_unique_preserve_order
 from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
