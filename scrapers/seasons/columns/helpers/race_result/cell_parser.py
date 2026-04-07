@@ -53,8 +53,10 @@ class RaceResultCellParser:
         if cell is None:
             return self._empty_superscript_result()
 
-        sup_texts, footnotes = self._collect_superscripts(cell)
-        sprint_position, pole_position, fastest_lap = self._parse_superscript_tokens(
+        sup_texts, footnotes, cell_pole, cell_fastest = (
+            self._extract_superscripts_and_formatting(cell)
+        )
+        sprint_position, sup_pole, sup_fastest = self._parse_superscript_tokens(
             sup_texts,
         )
 
@@ -63,11 +65,8 @@ class RaceResultCellParser:
             footnotes,
             season_year,
         )
-        pole_position, fastest_lap = self._enrich_marks_from_formatting(
-            cell,
-            pole_position=pole_position,
-            fastest_lap=fastest_lap,
-        )
+        pole_position = sup_pole or cell_pole
+        fastest_lap = sup_fastest or cell_fastest
 
         return SuperscriptParseResult(
             sprint_position=sprint_position,
@@ -104,19 +103,6 @@ class RaceResultCellParser:
         return sprint_position, [note for note in footnotes if note != sprint_str]
 
     @staticmethod
-    def _enrich_marks_from_formatting(
-        cell: Any,
-        *,
-        pole_position: bool,
-        fastest_lap: bool,
-    ) -> tuple[bool, bool]:
-        if not pole_position and cell.find(["b", "strong"]):
-            pole_position = True
-        if not fastest_lap and cell.find(["i", "em"]):
-            fastest_lap = True
-        return pole_position, fastest_lap
-
-    @staticmethod
     def _split_result_parts(text: str) -> list[str]:
         return [part.strip() for part in SPLIT_RESULTS_RE.split(text) if part.strip()]
 
@@ -148,16 +134,27 @@ class RaceResultCellParser:
         return cleaned
 
     @staticmethod
-    def _collect_superscripts(cell: Any) -> tuple[list[str], list[str]]:
+    def _extract_superscripts_and_formatting(
+        cell: Any,
+    ) -> tuple[list[str], list[str], bool, bool]:
         sup_texts: list[str] = []
         footnotes: list[str] = []
-        for sup in cell.find_all("sup"):
-            sup_text = clean_wiki_text(sup.get_text(" ", strip=True))
-            if not sup_text:
-                continue
-            sup_texts.append(sup_text)
-            footnotes.extend(FOOTNOTE_RE.findall(sup_text))
-        return sup_texts, footnotes
+        pole_position = False
+        fastest_lap = False
+
+        for tag in cell.find_all(["sup", "b", "strong", "i", "em"]):
+            if tag.name == "sup":
+                sup_text = clean_wiki_text(tag.get_text(" ", strip=True))
+                if not sup_text:
+                    continue
+                sup_texts.append(sup_text)
+                footnotes.extend(FOOTNOTE_RE.findall(sup_text))
+            elif tag.name in ("b", "strong"):
+                pole_position = True
+            elif tag.name in ("i", "em"):
+                fastest_lap = True
+
+        return sup_texts, footnotes, pole_position, fastest_lap
 
     @staticmethod
     def _parse_superscript_tokens(
