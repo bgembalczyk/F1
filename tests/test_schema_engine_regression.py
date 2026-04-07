@@ -8,34 +8,22 @@ from validation.issue import LegacyValidationIssueAdapter
 from validation.issue import ValidationIssue
 from validation.record_validation import validate_record
 from validation.schema_rules import build_domain_rules
+from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
 
 INVALID_TEAM_VALUE = 7
 
 
-def _legacy_extract_missing_key(error: str) -> str | None:
-    return LegacyValidationIssueAdapter.extract_missing_key(error)
-
-
-def _legacy_extract_type_key(error: str) -> str | None:
-    if error.startswith("Invalid type for "):
-        trimmed = error.replace("Invalid type for ", "", 1)
-        return trimmed.split(":", 1)[0].strip() or None
-    if " must be " in error:
-        return error.split(" must be ", 1)[0].strip() or None
-    return None
-
-
 def _legacy_coerce_issue(error: ValidationIssue | str) -> ValidationIssue:
     if isinstance(error, ValidationIssue):
         return error
     message = str(error)
-    missing_key = _legacy_extract_missing_key(message)
+    missing_key = SchemaValidationEngine.extract_missing_key(message)
     if missing_key:
         code = "null" if message.startswith("Null value for: ") else "missing"
         return ValidationIssue(code=code, field=missing_key, message=message)
-    type_key = _legacy_extract_type_key(message)
+    type_key = SchemaValidationEngine.extract_type_key(message)
     if type_key:
         return ValidationIssue(code="type", field=type_key, message=message)
     return ValidationIssue.custom(message)
