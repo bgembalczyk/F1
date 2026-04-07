@@ -216,6 +216,9 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
         order: list[str] = []
         for row in rows:
             seasons_text = row.get("seasons") or ""
+            # Ensure seasons_text is hashable (it can occasionally be a parsed list/dict from transforms)
+            if not isinstance(seasons_text, str):
+                seasons_text = str(seasons_text)
             if seasons_text not in groups:
                 groups[seasons_text] = []
                 order.append(seasons_text)
