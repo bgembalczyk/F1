@@ -9,6 +9,7 @@ from scrapers.base.constants.patterns import ANGLE_RE
 from scrapers.base.constants.patterns import CONFIG_TYPE_RE
 from scrapers.base.constants.patterns import MAX_CYLINDERS_RE
 from scrapers.base.constants.patterns import RANGE_RE
+from scrapers.base.constants.patterns import RELATIONS_PARENTHETICAL_PATTERN
 
 if TYPE_CHECKING:
     from scrapers.base.table.columns.context import ColumnContext
@@ -238,3 +239,23 @@ def parse_fuel_limit_per_race(ctx) -> dict[str, Any]:
         "range_kg": range_kg,
         "range_l": range_l,
     }
+
+
+def parse_relations(links: list[dict[str, Any]], text: str) -> list[dict[str, Any]]:
+    entries: list[dict[str, Any]] = []
+    matches = list(RELATIONS_PARENTHETICAL_PATTERN.finditer(text))
+
+    for link in links:
+        relation = None
+        t = link.get("text") or ""
+        if t:
+            for match in matches:
+                start_idx = match.start()
+                if start_idx >= len(t):
+                    if text[start_idx - len(t) : start_idx] == t:
+                        relation = match.group(1).strip()
+                        break
+        elif matches:
+            relation = matches[0].group(1).strip()
+        entries.append({"person": link, "relation": relation})
+    return entries
