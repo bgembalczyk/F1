@@ -156,21 +156,6 @@ class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
         return merged
 
     @staticmethod
-    def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
-        rich_rows = table_data.get("rich_rows", [])
-        if isinstance(rich_rows, list) and rich_rows:
-            return [row for row in rich_rows if isinstance(row, dict)]
-        rows = table_data.get("rows", [])
-        if isinstance(rows, list):
-            dict_rows = [row for row in rows if isinstance(row, dict)]
-            if dict_rows:
-                return dict_rows
-        raw_rows = table_data.get("raw_rows", [])
-        if isinstance(raw_rows, list):
-            return [row for row in raw_rows if isinstance(row, dict)]
-        return []
-
-    @staticmethod
     def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
         mapped: dict[str, Any] = {}
         for header, cell_data in row.items():
@@ -270,21 +255,6 @@ class NonChampionshipsRacesTableParser(WikiTableBaseParser):
                 row["failed_to_make_restart"] = [entry] if entry is not None else []
                 merged.append(row)
         return merged
-
-    @staticmethod
-    def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
-        rich_rows = table_data.get("rich_rows", [])
-        if isinstance(rich_rows, list) and rich_rows:
-            return [row for row in rich_rows if isinstance(row, dict)]
-        rows = table_data.get("rows", [])
-        if isinstance(rows, list):
-            dict_rows = [row for row in rows if isinstance(row, dict)]
-            if dict_rows:
-                return dict_rows
-        raw_rows = table_data.get("raw_rows", [])
-        if isinstance(raw_rows, list):
-            return [row for row in raw_rows if isinstance(row, dict)]
-        return []
 
     @staticmethod
     def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:

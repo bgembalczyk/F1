@@ -52,6 +52,10 @@ class WikiTableBaseParser(ABC):
 
     @staticmethod
     def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
+        rich_rows = table_data.get("rich_rows", [])
+        if isinstance(rich_rows, list) and rich_rows:
+            return [row for row in rich_rows if isinstance(row, dict)]
+
         rows = table_data.get("rows", [])
         if isinstance(rows, list):
             dict_rows = [row for row in rows if isinstance(row, dict)]
