@@ -1,6 +1,7 @@
 import re
 import timeit
 
+
 def original_parse(links, text):
     entries = []
     for link in links:
@@ -12,7 +13,9 @@ def original_parse(links, text):
         entries.append({"person": link, "relation": relation})
     return entries
 
+
 RELATION_PATTERN = re.compile(r"\s*\(([^)]+)\)")
+
 
 def optimized_parse_static(links, text):
     entries = []
@@ -20,7 +23,7 @@ def optimized_parse_static(links, text):
 
     for link in links:
         relation = None
-        t = link.get('text') or ''
+        t = link.get("text") or ""
 
         if t:
             for match in matches:
@@ -29,12 +32,12 @@ def optimized_parse_static(links, text):
                     if text[start_idx - len(t) : start_idx] == t:
                         relation = match.group(1).strip()
                         break
-        else:
-            if matches:
-                relation = matches[0].group(1).strip()
+        elif matches:
+            relation = matches[0].group(1).strip()
 
         entries.append({"person": link, "relation": relation})
     return entries
+
 
 def benchmark():
     # In a real scraper, there are hundreds/thousands of different strings.
@@ -45,7 +48,7 @@ def benchmark():
     import string
 
     def r_str(n=5):
-        return ''.join(random.choices(string.ascii_letters, k=n))
+        return "".join(random.choices(string.ascii_letters, k=n))
 
     t_orig = 0
     t_opt = 0
@@ -58,7 +61,7 @@ def benchmark():
         re.purge()
         names = [r_str() for _ in range(10)]
         rels = [r_str() for _ in range(10)]
-        text = " ".join(f"{n} ({r})" for n, r in zip(names, rels))
+        text = " ".join(f"{n} ({r})" for n, r in zip(names, rels, strict=False))
         links = [{"text": n, "url": ""} for n in names]
         links.append({"text": "", "url": ""})
 
@@ -73,5 +76,6 @@ def benchmark():
     print(f"Original: {t_orig:.4f} s")
     print(f"Optimized Static: {t_opt:.4f} s")
     print(f"Improvement: {t_orig / t_opt:.2f}x")
+
 
 benchmark()

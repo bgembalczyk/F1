@@ -1,8 +1,9 @@
 import timeit
-from bs4 import BeautifulSoup
-from scrapers.seasons.sections.mid_season_changes import SeasonMidSeasonChangesSectionParser
 
-html_content = """
+from bs4 import BeautifulSoup
+
+html_content = (
+    """
 <div id="mid-season_changes">
     <p>   Some mid-season changes text.   </p>
     <p></p>
@@ -18,15 +19,19 @@ html_content = """
     <li> Or maybe just li elements </li>
     <li> </li>
 </div>
-""" * 100 # Repeat to make it larger
+"""
+    * 100
+)  # Repeat to make it larger
 
-soup = BeautifulSoup(html_content, 'html.parser')
+soup = BeautifulSoup(html_content, "html.parser")
+
 
 def current_parse():
     records = []
     for p in soup.find_all("p"):
         if p.get_text(" ", strip=True):
             records.append({"text": p.get_text(" ", strip=True)})
+
 
 def new_parse():
     records = [
@@ -35,12 +40,14 @@ def new_parse():
         if (text := p.get_text(" ", strip=True))
     ]
 
+
 def current_extract_list_items():
     records = [
         {"text": li.get_text(" ", strip=True)}
         for li in soup.select("ul li")
         if li.get_text(" ", strip=True)
     ]
+
 
 def new_extract_list_items():
     records = [
@@ -61,8 +68,12 @@ if __name__ == "__main__":
 
     print(f"Current Parse (p tags): {t_curr_parse:.4f}s")
     print(f"New Parse (p tags):     {t_new_parse:.4f}s")
-    print(f"Improvement Parse:      {(t_curr_parse - t_new_parse) / t_curr_parse * 100:.2f}%")
+    print(
+        f"Improvement Parse:      {(t_curr_parse - t_new_parse) / t_curr_parse * 100:.2f}%",
+    )
 
     print(f"Current Extract (li tags): {t_curr_ext:.4f}s")
     print(f"New Extract (li tags):     {t_new_ext:.4f}s")
-    print(f"Improvement Extract:       {(t_curr_ext - t_new_ext) / t_curr_ext * 100:.2f}%")
+    print(
+        f"Improvement Extract:       {(t_curr_ext - t_new_ext) / t_curr_ext * 100:.2f}%",
+    )

@@ -1,7 +1,8 @@
 import sys
 from unittest.mock import MagicMock
+
 # Mock bs4
-sys.modules['bs4'] = MagicMock()
+sys.modules["bs4"] = MagicMock()
 
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
 

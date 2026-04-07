@@ -6,7 +6,6 @@ from models.services.helpers import expand_all
 from models.services.helpers import unique_sorted
 from models.value_objects.rounds import Rounds
 
-
 _ROUNDS_RE = re.compile(r"\b(rounds?|races?)\b", flags=re.IGNORECASE)
 _SPLIT_RE = re.compile(r"[;,]")
 _DIGITS_RE = re.compile(r"\d+")
