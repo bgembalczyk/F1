@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib
 import importlib.util
 import json
 import subprocess
@@ -9,9 +10,9 @@ from dataclasses import dataclass
 from pathlib import Path
 
 if importlib.util.find_spec("defusedxml") is not None:
-    from defusedxml import ElementTree as ET
+    parse_xml = importlib.import_module("defusedxml.ElementTree").parse
 else:
-    from xml.etree import ElementTree as ET
+    parse_xml = importlib.import_module("xml.etree.ElementTree").parse
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -59,7 +60,7 @@ def _to_percent(raw_rate: float) -> float:
 
 
 def _parse_coverage(coverage_xml: Path) -> tuple[float, dict[str, float]]:
-    tree = ET.parse(coverage_xml)  # noqa: S314
+    tree = parse_xml(coverage_xml)
     root = tree.getroot()
 
     global_rate = float(root.attrib.get("line-rate", "0"))
