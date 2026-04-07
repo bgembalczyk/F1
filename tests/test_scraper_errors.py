@@ -5,6 +5,16 @@ from pathlib import Path
 
 import pytest
 
+from tests.support.dependency_stubs import _ensure_bs4_stub
+from tests.support.dependency_stubs import _ensure_certifi_stub
+from tests.support.dependency_stubs import _ensure_pandas_stub
+from tests.support.dependency_stubs import _ensure_requests_stub
+
+_ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
+_ensure_certifi_stub()
+_ensure_pandas_stub()
+_ensure_requests_stub()
+
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
