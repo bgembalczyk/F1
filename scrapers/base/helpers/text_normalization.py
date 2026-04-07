@@ -35,9 +35,7 @@ def is_language_link(text: str | None, url: str | None) -> bool:
     if f"{txt}.wikipedia.org" in url_l:
         return True
 
-    if f"wikipedia.org/{txt}/" in url_l:
-        return True
-    return False
+    return f"wikipedia.org/{txt}/" in url_l
 
 
 def normalize_text(obj: Any) -> str:

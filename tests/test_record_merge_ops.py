@@ -1,12 +1,9 @@
 # ruff: noqa: E501, PLR2004
-import pytest
 
-from layers.zero.record_merge_ops import (
-    merge_list_values,
-    merge_values,
-    merge_driver_dict_values,
-    merge_driver_values,
-)
+from layers.zero.record_merge_ops import merge_driver_dict_values
+from layers.zero.record_merge_ops import merge_driver_values
+from layers.zero.record_merge_ops import merge_list_values
+from layers.zero.record_merge_ops import merge_values
 
 
 # merge_list_values - lines 9-20

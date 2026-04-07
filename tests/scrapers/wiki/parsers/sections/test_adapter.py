@@ -1,13 +1,11 @@
 # ruff: noqa: E501, PLR2004
 """Tests for adapter.py covering lines 46, 53, 65-69, 72-74, 116, 123, 127-137, 165."""
 
-from scrapers.wiki.parsers.sections.adapter import (
-    _extract_sections,
-    _iter_sections,
-    _profile_score,
-    collect_section_elements,
-    find_section_tree,
-)
+from scrapers.wiki.parsers.sections.adapter import _extract_sections
+from scrapers.wiki.parsers.sections.adapter import _iter_sections
+from scrapers.wiki.parsers.sections.adapter import _profile_score
+from scrapers.wiki.parsers.sections.adapter import collect_section_elements
+from scrapers.wiki.parsers.sections.adapter import find_section_tree
 
 
 class TestExtractSections:
@@ -25,8 +23,8 @@ class TestExtractSections:
     def test_dict_with_content_text_sections(self):
         article = {
             "content_text": {
-                "sections": [{"name": "Standings"}]
-            }
+                "sections": [{"name": "Standings"}],
+            },
         }
         result = _extract_sections(article)
         assert len(result) == 1
@@ -65,9 +63,9 @@ class TestIterSections:
             {
                 "name": "Level1",
                 "sub_sub_sections": [
-                    {"name": "Level2", "sub_sub_sub_sections": [{"name": "Level3"}]}
+                    {"name": "Level2", "sub_sub_sub_sections": [{"name": "Level3"}]},
                 ],
-            }
+            },
         ]
         result = list(_iter_sections(sections))
         names = [s["name"] for s in result]
@@ -143,7 +141,7 @@ class TestFindSectionTree:
             "sections": [
                 {"name": "Race Results", "section_id": "race_results", "elements": []},
                 {"name": "Other", "section_id": "other", "elements": []},
-            ]
+            ],
         }
         result = find_section_tree(article, "Race Results")
         assert result is not None
@@ -153,7 +151,7 @@ class TestFindSectionTree:
         article = {
             "sections": [
                 {"name": "Race Results Table", "elements": []},
-            ]
+            ],
         }
         # fuzzy match: "race results table" vs "race results" should be high similarity
         result = find_section_tree(article, "Race Results", min_fuzzy_score=0.7)
@@ -164,7 +162,7 @@ class TestFindSectionTree:
         article = {
             "sections": [
                 {"name": "Completely Different", "elements": []},
-            ]
+            ],
         }
         result = find_section_tree(article, "Race Results")
         assert result is None
@@ -174,8 +172,8 @@ class TestFindSectionTree:
             "content_text": {
                 "sections": [
                     {"name": "Drivers", "section_id": "drivers", "elements": []},
-                ]
-            }
+                ],
+            },
         }
         result = find_section_tree(article, "Drivers")
         assert result is not None
@@ -184,9 +182,13 @@ class TestFindSectionTree:
         article = {
             "sections": [
                 {"name": "Driver Standings", "elements": []},
-            ]
+            ],
         }
-        result = find_section_tree(article, "Driver Standings", aliases=["Drivers Championship"])
+        result = find_section_tree(
+            article,
+            "Driver Standings",
+            aliases=["Drivers Championship"],
+        )
         assert result is not None
 
 
@@ -227,7 +229,7 @@ class TestCollectSectionElements:
                 {
                     "name": "Nested",
                     "elements": [{"kind": "table", "data": {"rows": []}}],
-                }
+                },
             ],
         }
         result = collect_section_elements(section, "table")

@@ -9,9 +9,9 @@ from dataclasses import dataclass
 from pathlib import Path
 
 if importlib.util.find_spec("defusedxml") is not None:
-    from defusedxml import ElementTree
+    from defusedxml import ElementTree as ET
 else:
-    from xml.etree import ElementTree
+    from xml.etree import ElementTree as ET
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -59,7 +59,7 @@ def _to_percent(raw_rate: float) -> float:
 
 
 def _parse_coverage(coverage_xml: Path) -> tuple[float, dict[str, float]]:
-    tree = ElementTree.parse(coverage_xml)  # noqa: S314
+    tree = ET.parse(coverage_xml)  # noqa: S314
     root = tree.getroot()
 
     global_rate = float(root.attrib.get("line-rate", "0"))

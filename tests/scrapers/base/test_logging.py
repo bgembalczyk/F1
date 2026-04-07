@@ -1,16 +1,11 @@
 # ruff: noqa: E501, PLR2004
 import json
 import logging
-import warnings
 
-import pytest
-
-from scrapers.base.logging import (
-    JsonLinesFormatter,
-    configure_logging,
-    build_execution_context,
-    get_logger,
-)
+from scrapers.base.logging import JsonLinesFormatter
+from scrapers.base.logging import build_execution_context
+from scrapers.base.logging import configure_logging
+from scrapers.base.logging import get_logger
 
 
 def test_json_lines_formatter_produces_valid_json(tmp_path) -> None:

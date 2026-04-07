@@ -13,6 +13,7 @@ def parser() -> CircuitGeoParser:
 # _split_plain_segment  (line 40 – stopword filtering)
 # ---------------------------------------------------------------------------
 
+
 def test_split_plain_segment_basic(parser) -> None:
     result = CircuitGeoParser._split_plain_segment("Italy, Rome")
     assert "Italy" in result
@@ -32,6 +33,7 @@ def test_split_plain_segment_empty(parser) -> None:
 # ---------------------------------------------------------------------------
 # _components_from_links  (line 44 – processing links)
 # ---------------------------------------------------------------------------
+
 
 def test_components_from_links_with_links(parser) -> None:
     links = [{"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"}]
@@ -59,6 +61,7 @@ def test_components_from_links_link_not_in_text(parser) -> None:
 # parse_location  (line 84 – returns None when no components)
 # ---------------------------------------------------------------------------
 
+
 def test_parse_location_none(parser) -> None:
     assert parser.parse_location(None) is None
 
@@ -83,6 +86,7 @@ def test_parse_location_valid(parser) -> None:
 # parse_coordinates  (line 114 – None row)
 # ---------------------------------------------------------------------------
 
+
 def test_parse_coordinates_none(parser) -> None:
     assert parser.parse_coordinates(None) is None
 
@@ -95,8 +99,9 @@ def test_parse_coordinates_empty_text(parser) -> None:
 # _parse_position_payload  (lines 130-142 – directional coords)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "text, expected_lat, expected_lon",
+    ("text", "expected_lat", "expected_lon"),
     [
         ("45.5; 9.2", 45.5, 9.2),
         ("-33.8; 151.2", -33.8, 151.2),
@@ -123,6 +128,7 @@ def test_parse_position_payload_no_coords() -> None:
 # ---------------------------------------------------------------------------
 # _parse_area  (lines 147-171)
 # ---------------------------------------------------------------------------
+
 
 def test_parse_area_none(parser) -> None:
     assert CircuitGeoParser._parse_area(None) is None
@@ -159,6 +165,7 @@ def test_parse_area_no_units_returns_none(parser) -> None:
 # ---------------------------------------------------------------------------
 # _filter_components
 # ---------------------------------------------------------------------------
+
 
 def test_filter_components_removes_stopwords() -> None:
     comps = [{"text": "and"}, {"text": "Italy"}]

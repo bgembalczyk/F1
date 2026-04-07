@@ -1,7 +1,8 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.grands_prix.mappers.by_year_record import GrandPrixByYearRecordInput, GrandPrixByYearRecordMapper
+from scrapers.grands_prix.mappers.by_year_record import GrandPrixByYearRecordInput
+from scrapers.grands_prix.mappers.by_year_record import GrandPrixByYearRecordMapper
 
 
 @pytest.fixture()
@@ -22,13 +23,17 @@ def _not_held_record() -> dict:
     }
 
 
-def test_map_returns_none_for_not_held_by_driver_text(mapper: GrandPrixByYearRecordMapper) -> None:
+def test_map_returns_none_for_not_held_by_driver_text(
+    mapper: GrandPrixByYearRecordMapper,
+) -> None:
     record = _not_held_record()
     result = mapper.map(record)
     assert result is None
 
 
-def test_map_returns_dict_for_normal_record(mapper: GrandPrixByYearRecordMapper) -> None:
+def test_map_returns_dict_for_normal_record(
+    mapper: GrandPrixByYearRecordMapper,
+) -> None:
     record = {
         "driver": [_link("Lewis Hamilton")],
         "chassis_constructor": _link("Mercedes"),
@@ -46,7 +51,9 @@ def test_map_accepts_input_wrapper(mapper: GrandPrixByYearRecordMapper) -> None:
     assert result == {"key": "value"}
 
 
-def test_is_not_held_returns_false_when_texts_differ(mapper: GrandPrixByYearRecordMapper) -> None:
+def test_is_not_held_returns_false_when_texts_differ(
+    mapper: GrandPrixByYearRecordMapper,
+) -> None:
     record = {
         "driver": [_link("Not held")],
         "chassis_constructor": _link("Not held"),
@@ -57,7 +64,9 @@ def test_is_not_held_returns_false_when_texts_differ(mapper: GrandPrixByYearReco
     assert result is not None
 
 
-def test_is_not_held_returns_false_when_missing_fields(mapper: GrandPrixByYearRecordMapper) -> None:
+def test_is_not_held_returns_false_when_missing_fields(
+    mapper: GrandPrixByYearRecordMapper,
+) -> None:
     result = mapper.map({"driver": [_link("Not held")]})
     assert result is not None
 
@@ -73,7 +82,9 @@ def test_not_held_detected_via_report_text(mapper: GrandPrixByYearRecordMapper) 
     assert result is None
 
 
-def test_not_held_detected_via_layout_cancelled(mapper: GrandPrixByYearRecordMapper) -> None:
+def test_not_held_detected_via_layout_cancelled(
+    mapper: GrandPrixByYearRecordMapper,
+) -> None:
     record = _not_held_record()
     record["driver"] = [_link("XYZ")]
     record["chassis_constructor"] = _link("XYZ")
@@ -84,13 +95,19 @@ def test_not_held_detected_via_layout_cancelled(mapper: GrandPrixByYearRecordMap
     assert result is None
 
 
-def test_list_text_returns_none_for_empty_list(mapper: GrandPrixByYearRecordMapper) -> None:
+def test_list_text_returns_none_for_empty_list(
+    mapper: GrandPrixByYearRecordMapper,
+) -> None:
     assert mapper._list_text([]) is None
 
 
-def test_list_text_returns_none_for_mismatched_items(mapper: GrandPrixByYearRecordMapper) -> None:
+def test_list_text_returns_none_for_mismatched_items(
+    mapper: GrandPrixByYearRecordMapper,
+) -> None:
     assert mapper._list_text([_link("A"), _link("B")]) is None
 
 
-def test_list_text_returns_text_for_all_same(mapper: GrandPrixByYearRecordMapper) -> None:
+def test_list_text_returns_text_for_all_same(
+    mapper: GrandPrixByYearRecordMapper,
+) -> None:
     assert mapper._list_text([_link("Same"), _link("Same")]) == "Same"

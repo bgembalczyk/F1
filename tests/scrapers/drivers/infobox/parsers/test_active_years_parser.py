@@ -44,7 +44,12 @@ def test_parse_active_years_attaches_url_from_link() -> None:
 
 
 def test_parse_active_years_interpolates_missing_url_in_range() -> None:
-    links = [{"text": "2007", "url": "https://en.wikipedia.org/wiki/2007_Formula_One_season"}]
+    links = [
+        {
+            "text": "2007",
+            "url": "https://en.wikipedia.org/wiki/2007_Formula_One_season",
+        },
+    ]
     parser = ActiveYearsParser(_MockLinkExtractor(links))
     result = parser.parse_active_years(_cell("2007-2008"))
     result_by_year = {r["year"]: r["url"] for r in result}

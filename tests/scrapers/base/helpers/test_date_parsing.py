@@ -1,8 +1,8 @@
 # ruff: noqa: E501, PLR2004
-import pytest
 
+from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
+from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.helpers.date_parsing import parse_date_with_category_marker, parse_formula_category
 
 
 def _ctx(clean_text: str | None, raw_text: str | None = None) -> ColumnContext:

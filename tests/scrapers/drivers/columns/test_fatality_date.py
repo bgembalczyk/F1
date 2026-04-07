@@ -5,7 +5,12 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 
 
-def _ctx(raw: str, clean: str | None = None, *, model_fields: set[str] | None = None) -> ColumnContext:
+def _ctx(
+    raw: str,
+    clean: str | None = None,
+    *,
+    model_fields: set[str] | None = None,
+) -> ColumnContext:
     cell = BeautifulSoup(f"<td>{raw}</td>", "html.parser").find("td")
     return ColumnContext(
         header="Date of accident",

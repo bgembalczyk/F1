@@ -1,8 +1,6 @@
 # ruff: noqa: E501, PLR2004
 """Tests for GrandPrixScopeParser covering uncovered lines."""
 
-import pytest
-
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 
 
@@ -11,17 +9,32 @@ class TestParamsContainOnlyYearsOrGrandPrix:
         assert GrandPrixScopeParser.params_contain_only_years_or_grand_prix([]) is True
 
     def test_year_param_only(self):
-        assert GrandPrixScopeParser.params_contain_only_years_or_grand_prix(["1988"]) is True
+        assert (
+            GrandPrixScopeParser.params_contain_only_years_or_grand_prix(["1988"])
+            is True
+        )
 
     def test_grand_prix_param(self):
-        assert GrandPrixScopeParser.params_contain_only_years_or_grand_prix(["Monaco Grand Prix"]) is True
+        assert (
+            GrandPrixScopeParser.params_contain_only_years_or_grand_prix(
+                ["Monaco Grand Prix"],
+            )
+            is True
+        )
 
     def test_non_year_non_gp_returns_false(self):
-        assert GrandPrixScopeParser.params_contain_only_years_or_grand_prix(["some sponsor text"]) is False
+        assert (
+            GrandPrixScopeParser.params_contain_only_years_or_grand_prix(
+                ["some sponsor text"],
+            )
+            is False
+        )
 
     def test_mixed_year_and_gp(self):
         params = ["1988", "Monaco Grand Prix", "1990"]
-        assert GrandPrixScopeParser.params_contain_only_years_or_grand_prix(params) is True
+        assert (
+            GrandPrixScopeParser.params_contain_only_years_or_grand_prix(params) is True
+        )
 
 
 class TestParseGrandPrixScope:
@@ -44,18 +57,22 @@ class TestParseGrandPrixScope:
         assert result["type"] == "only"
 
     def test_invalid_non_gp_text_makes_scope_invalid(self):
-        result = GrandPrixScopeParser.parse_grand_prix_scope(["Monaco Grand Prix", "not gp text"])
+        result = GrandPrixScopeParser.parse_grand_prix_scope(
+            ["Monaco Grand Prix", "not gp text"],
+        )
         assert result is None
 
     def test_onwards_param_builds_range(self):
-        result = GrandPrixScopeParser.parse_grand_prix_scope(["Monaco Grand Prix onwards"])
+        result = GrandPrixScopeParser.parse_grand_prix_scope(
+            ["Monaco Grand Prix onwards"],
+        )
         assert result is not None
         assert result["type"] == "range"
         assert result["to"] is None
 
     def test_range_param_builds_range_scope(self):
         result = GrandPrixScopeParser.parse_grand_prix_scope(
-            ["Monaco Grand Prix to British Grand Prix"]
+            ["Monaco Grand Prix to British Grand Prix"],
         )
         assert result is not None
         assert result["type"] == "range"
@@ -68,6 +85,7 @@ class TestConsumesScopeParam:
         from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import (
             GrandPrixScopeAccumulator,
         )
+
         acc = GrandPrixScopeAccumulator()
         GrandPrixScopeParser._consume_scope_param(acc, "1988")
         assert not acc.entries
@@ -77,6 +95,7 @@ class TestConsumesScopeParam:
         from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import (
             GrandPrixScopeAccumulator,
         )
+
         acc = GrandPrixScopeAccumulator()
         GrandPrixScopeParser._consume_scope_param(acc, "some other text")
         assert acc.invalid
@@ -84,15 +103,24 @@ class TestConsumesScopeParam:
 
 class TestBuildGrandPrixEntry:
     def test_dict_param_with_url(self):
-        entry = GrandPrixScopeParser.build_grand_prix_entry({"url": "http://example.com"}, "Monaco Grand Prix")
+        entry = GrandPrixScopeParser.build_grand_prix_entry(
+            {"url": "http://example.com"},
+            "Monaco Grand Prix",
+        )
         assert entry == {"text": "Monaco Grand Prix", "url": "http://example.com"}
 
     def test_dict_param_without_url(self):
-        entry = GrandPrixScopeParser.build_grand_prix_entry({"text": "Monaco Grand Prix"}, "Monaco Grand Prix")
+        entry = GrandPrixScopeParser.build_grand_prix_entry(
+            {"text": "Monaco Grand Prix"},
+            "Monaco Grand Prix",
+        )
         assert entry == {"text": "Monaco Grand Prix"}
 
     def test_string_param(self):
-        entry = GrandPrixScopeParser.build_grand_prix_entry("Monaco Grand Prix", "Monaco Grand Prix")
+        entry = GrandPrixScopeParser.build_grand_prix_entry(
+            "Monaco Grand Prix",
+            "Monaco Grand Prix",
+        )
         assert entry == {"text": "Monaco Grand Prix"}
 
 
@@ -116,7 +144,10 @@ class TestParseGrandPrixNames:
 
 class TestGrandPrixScopeKey:
     def test_only_type(self):
-        scope = {"type": "only", "grand_prix": [{"text": "Monaco Grand Prix", "url": "http://example.com"}]}
+        scope = {
+            "type": "only",
+            "grand_prix": [{"text": "Monaco Grand Prix", "url": "http://example.com"}],
+        }
         key = GrandPrixScopeParser.grand_prix_scope_key(scope)
         assert key[0] == "only"
         assert ("Monaco Grand Prix", "http://example.com") in key[1]

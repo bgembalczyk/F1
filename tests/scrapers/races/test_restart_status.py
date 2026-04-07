@@ -24,7 +24,11 @@ def _ctx(clean_text: str | None) -> ColumnContext:
         ("N", "N", "race_was_not_restarted"),
         ("Y", "Y", "race_was_restarted_over_original_distance"),
         ("R", "R", "race_was_resumed_to_complete_original_distance"),
-        ("S", "S", "race_was_restarted_or_resumed_without_completing_original_distance"),
+        (
+            "S",
+            "S",
+            "race_was_restarted_or_resumed_without_completing_original_distance",
+        ),
         ("n", "N", "race_was_not_restarted"),
         ("y", "Y", "race_was_restarted_over_original_distance"),
     ],
@@ -53,7 +57,10 @@ def test_restart_status_column_delegates_to_helper() -> None:
     col = RestartStatusColumn()
     ctx = _ctx("Y")
     result = col.parse(ctx)
-    assert result == {"code": "Y", "description": "race_was_restarted_over_original_distance"}
+    assert result == {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance",
+    }
 
 
 def test_restart_status_column_empty_returns_none() -> None:

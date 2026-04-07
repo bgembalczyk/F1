@@ -6,14 +6,17 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
+from unittest.mock import patch
 
 import pytest
+
+from scripts.ci.reporting import build_ci_parser
 
 # ---------------------------------------------------------------------------
 # reporting.py
 # ---------------------------------------------------------------------------
-from scripts.ci.reporting import line_range, build_ci_parser, CiStatus, resolve_status, exit_code_for_status
+from scripts.ci.reporting import line_range
 
 
 def test_line_range_with_valid_start_end() -> None:
@@ -28,13 +31,20 @@ def test_line_range_with_missing_start_end() -> None:
 
 def test_build_ci_parser_returns_parser_with_all_args() -> None:
     parser = build_ci_parser("test description")
-    args = parser.parse_args([
-        "--report-json", "r.json",
-        "--output-md", "out.md",
-        "--warn-threshold", "3",
-        "--fail-threshold", "10",
-        "--github-output", "gh.out",
-    ])
+    args = parser.parse_args(
+        [
+            "--report-json",
+            "r.json",
+            "--output-md",
+            "out.md",
+            "--warn-threshold",
+            "3",
+            "--fail-threshold",
+            "10",
+            "--github-output",
+            "gh.out",
+        ],
+    )
     assert args.report_json == "r.json"
     assert args.output_md == "out.md"
     assert args.warn_threshold == 3
@@ -48,13 +58,11 @@ def test_build_ci_parser_returns_parser_with_all_args() -> None:
 # ---------------------------------------------------------------------------
 # duplicate_report.py
 # ---------------------------------------------------------------------------
-from scripts.ci.duplicate_report import (
-    DuplicateNormalizer,
-    DuplicateFilter,
-    DuplicateRecord,
-    DuplicateFileMeta,
-    MarkdownRenderer,
-)
+from scripts.ci.duplicate_report import DuplicateFileMeta
+from scripts.ci.duplicate_report import DuplicateFilter
+from scripts.ci.duplicate_report import DuplicateNormalizer
+from scripts.ci.duplicate_report import DuplicateRecord
+from scripts.ci.duplicate_report import MarkdownRenderer
 
 
 class TestDuplicateNormalizer:
@@ -107,7 +115,15 @@ class TestDuplicateNormalizer:
 
 
 class TestDuplicateFilter:
-    def _make_record(self, name1: str, s1: int, e1: int, name2: str, s2: int, e2: int) -> DuplicateRecord:
+    def _make_record(
+        self,
+        name1: str,
+        s1: int,
+        e1: int,
+        name2: str,
+        s2: int,
+        e2: int,
+    ) -> DuplicateRecord:
         return DuplicateRecord(
             first=DuplicateFileMeta(name=name1, start=s1, end=e1),
             second=DuplicateFileMeta(name=name2, start=s2, end=e2),
@@ -117,28 +133,40 @@ class TestDuplicateFilter:
     def test_filter_returns_all_when_no_added_lines(self) -> None:
         filt = DuplicateFilter()
         records = [self._make_record("a.py", 1, 5, "b.py", 1, 5)]
-        with patch("scripts.ci.duplicate_report.build_added_lines_map", return_value={}):
+        with patch(
+            "scripts.ci.duplicate_report.build_added_lines_map",
+            return_value={},
+        ):
             result = filt.filter_new_duplicates(records, "base", "head", ["a.py"])
         assert result == records
 
     def test_filter_keeps_record_with_added_line_in_range(self) -> None:
         filt = DuplicateFilter()
         records = [self._make_record("a.py", 1, 5, "b.py", 10, 20)]
-        with patch("scripts.ci.duplicate_report.build_added_lines_map", return_value={"a.py": {3}}):
+        with patch(
+            "scripts.ci.duplicate_report.build_added_lines_map",
+            return_value={"a.py": {3}},
+        ):
             result = filt.filter_new_duplicates(records, "base", "head", ["a.py"])
         assert len(result) == 1
 
     def test_filter_excludes_record_without_overlap(self) -> None:
         filt = DuplicateFilter()
         records = [self._make_record("a.py", 1, 5, "b.py", 1, 5)]
-        with patch("scripts.ci.duplicate_report.build_added_lines_map", return_value={"a.py": {10}}):
+        with patch(
+            "scripts.ci.duplicate_report.build_added_lines_map",
+            return_value={"a.py": {10}},
+        ):
             result = filt.filter_new_duplicates(records, "base", "head", ["a.py"])
         assert result == []
 
     def test_filter_skips_record_with_invalid_meta(self) -> None:
         filt = DuplicateFilter()
         records = [self._make_record("", 0, 0, "", 0, 0)]
-        with patch("scripts.ci.duplicate_report.build_added_lines_map", return_value={"a.py": {1}}):
+        with patch(
+            "scripts.ci.duplicate_report.build_added_lines_map",
+            return_value={"a.py": {1}},
+        ):
             result = filt.filter_new_duplicates(records, "base", "head", ["a.py"])
         assert result == []
 
@@ -156,7 +184,7 @@ class TestMarkdownRenderer:
                 first=DuplicateFileMeta("a.py", 1, 5),
                 second=DuplicateFileMeta("b.py", 10, 15),
                 fragment="code here",
-            )
+            ),
         ]
         md = renderer.render(records, warn_threshold=1, fail_threshold=10)
         assert "⚠️" in md
@@ -170,7 +198,7 @@ class TestMarkdownRenderer:
                 first=DuplicateFileMeta("a.py", 1, 5),
                 second=DuplicateFileMeta("b.py", 10, 15),
                 fragment="",
-            )
+            ),
         ] * 3
         md = renderer.render(records, warn_threshold=1, fail_threshold=2)
         assert "❌" in md
@@ -182,7 +210,7 @@ class TestMarkdownRenderer:
                 first=DuplicateFileMeta("a.py", 0, 0),
                 second=DuplicateFileMeta("b.py", 0, 0),
                 fragment="line1\nline2",
-            )
+            ),
         ]
         md = renderer.render(records, warn_threshold=5, fail_threshold=10)
         assert "```python" in md
@@ -201,7 +229,6 @@ from scripts.ci import check_terminology_consistency as tc
 
 
 def test_terminology_parse_args(monkeypatch: pytest.MonkeyPatch) -> None:
-    import sys
     monkeypatch.setattr(sys, "argv", ["prog", "--base-sha", "abc", "--head-sha", "def"])
     args = tc.parse_args()
     assert args.base_sha == "abc"
@@ -232,17 +259,25 @@ def test_terminology_scan_files_skips_unicode_errors(tmp_path: Path) -> None:
     assert errors == []
 
 
-def test_terminology_list_changed_files_returns_empty_on_git_error(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_terminology_list_changed_files_returns_empty_on_git_error(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     class FakeResult:
         returncode = 1
         stdout = ""
 
-    monkeypatch.setattr("scripts.ci.check_terminology_consistency.subprocess.run", lambda *a, **kw: FakeResult())
+    monkeypatch.setattr(
+        "scripts.ci.check_terminology_consistency.subprocess.run",
+        lambda *a, **kw: FakeResult(),
+    )
     result = tc.list_changed_files("base", "head")
     assert result == []
 
 
-def test_terminology_list_changed_files_filters_extensions(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_terminology_list_changed_files_filters_extensions(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     py_file = tmp_path / "a.py"
     py_file.write_text("x = 1", encoding="utf-8")
     bin_file = tmp_path / "b.bin"
@@ -252,14 +287,19 @@ def test_terminology_list_changed_files_filters_extensions(tmp_path: Path, monke
         returncode = 0
         stdout = f"{py_file}\n{bin_file}\n"
 
-    monkeypatch.setattr("scripts.ci.check_terminology_consistency.subprocess.run", lambda *a, **kw: FakeResult())
+    monkeypatch.setattr(
+        "scripts.ci.check_terminology_consistency.subprocess.run",
+        lambda *a, **kw: FakeResult(),
+    )
     result = tc.list_changed_files("base", "head")
     assert any(p.suffix == ".py" for p in result)
     assert not any(p.suffix == ".bin" for p in result)
 
 
-def test_terminology_main_no_files(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    import sys
+def test_terminology_main_no_files(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     monkeypatch.setattr(tc, "list_changed_files", lambda *_: [])
     monkeypatch.setattr(sys, "argv", ["prog", "--base-sha", "a", "--head-sha", "b"])
     code = tc.main()
@@ -268,8 +308,11 @@ def test_terminology_main_no_files(monkeypatch: pytest.MonkeyPatch, capsys: pyte
     assert "Brak" in out
 
 
-def test_terminology_main_with_errors(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    import sys
+def test_terminology_main_with_errors(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     f = tmp_path / "x.py"
     f.write_text("v = 'grand-prix'\n", encoding="utf-8")
     monkeypatch.setattr(tc, "list_changed_files", lambda *_: [f])
@@ -278,8 +321,11 @@ def test_terminology_main_with_errors(tmp_path: Path, monkeypatch: pytest.Monkey
     assert code == 1
 
 
-def test_terminology_main_ok(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    import sys
+def test_terminology_main_ok(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     f = tmp_path / "ok.py"
     f.write_text("x = 'grand_prix'\n", encoding="utf-8")
     monkeypatch.setattr(tc, "list_changed_files", lambda *_: [f])
@@ -309,37 +355,55 @@ def test_dedup_extract_string_key() -> None:
     assert dedup._extract_string_key(ast.Constant(value=42)) is None
 
 
-def test_dedup_main_missing_file(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+def test_dedup_main_missing_file(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     monkeypatch.setattr(dedup, "REGISTRY_PATH", tmp_path / "nonexistent.py")
     code = dedup.main()
     assert code == 1
     assert "::error::" in capsys.readouterr().out
 
 
-def test_dedup_main_no_duplicates(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+def test_dedup_main_no_duplicates(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     registry = tmp_path / "registry.py"
-    registry.write_text("""
+    registry.write_text(
+        """
 def build_layer_zero_run_config_factory_map():
     return {
         "a": StaticScraperKwargsFactory(scraper_kwargs={"x": 1}),
         "b": StaticScraperKwargsFactory(scraper_kwargs={"x": 2}),
     }
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
     monkeypatch.setattr(dedup, "REGISTRY_PATH", registry)
     code = dedup.main()
     assert code == 0
     assert "OK" in capsys.readouterr().out
 
 
-def test_dedup_main_with_duplicates(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+def test_dedup_main_with_duplicates(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     registry = tmp_path / "registry.py"
-    registry.write_text("""
+    registry.write_text(
+        """
 def build_layer_zero_run_config_factory_map():
     return {
         "a": StaticScraperKwargsFactory(scraper_kwargs={"x": 1}),
         "b": StaticScraperKwargsFactory(scraper_kwargs={"x": 1}),
     }
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
     monkeypatch.setattr(dedup, "REGISTRY_PATH", registry)
     code = dedup.main()
     assert code == 1
@@ -369,19 +433,31 @@ from scripts.ci import enforce_function_complexity as efc
 
 
 def test_main_no_py_files(capsys: pytest.CaptureFixture[str]) -> None:
-    code = efc.main(["--base-sha", "a", "--head-sha", "b", "--changed-files", "file.txt"])
+    code = efc.main(
+        ["--base-sha", "a", "--head-sha", "b", "--changed-files", "file.txt"],
+    )
     assert code == 0
     assert "pominięty" in capsys.readouterr().out
 
 
-def test_main_no_added_lines(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    monkeypatch.setattr("scripts.ci.enforce_function_complexity.build_added_lines_map", lambda *a, **k: {})
+def test_main_no_added_lines(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    monkeypatch.setattr(
+        "scripts.ci.enforce_function_complexity.build_added_lines_map",
+        lambda *a, **k: {},
+    )
     code = efc.main(["--base-sha", "a", "--head-sha", "b", "--changed-files", "f.py"])
     assert code == 0
     assert "pominięty" in capsys.readouterr().out
 
 
-def test_main_violations_detected(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+def test_main_violations_detected(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     py_file = tmp_path / "big.py"
     body = "\n".join(["    pass"] * 90)
     py_file.write_text(f"def huge_func():\n{body}\n", encoding="utf-8")
@@ -390,17 +466,28 @@ def test_main_violations_detected(tmp_path: Path, monkeypatch: pytest.MonkeyPatc
         "scripts.ci.enforce_function_complexity.build_added_lines_map",
         lambda *a, **k: {str(py_file): set(range(1, 92))},
     )
-    code = efc.main([
-        "--base-sha", "a", "--head-sha", "b",
-        "--changed-files", str(py_file),
-        "--max-function-lines", "10",
-    ])
+    code = efc.main(
+        [
+            "--base-sha",
+            "a",
+            "--head-sha",
+            "b",
+            "--changed-files",
+            str(py_file),
+            "--max-function-lines",
+            "10",
+        ],
+    )
     assert code == 1
     out = capsys.readouterr().out
     assert "::error::" in out
 
 
-def test_main_ok(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+def test_main_ok(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     py_file = tmp_path / "small.py"
     py_file.write_text("def f():\n    pass\n", encoding="utf-8")
 
@@ -408,10 +495,16 @@ def test_main_ok(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest
         "scripts.ci.enforce_function_complexity.build_added_lines_map",
         lambda *a, **k: {str(py_file): {1, 2}},
     )
-    code = efc.main([
-        "--base-sha", "a", "--head-sha", "b",
-        "--changed-files", str(py_file),
-    ])
+    code = efc.main(
+        [
+            "--base-sha",
+            "a",
+            "--head-sha",
+            "b",
+            "--changed-files",
+            str(py_file),
+        ],
+    )
     assert code == 0
     out = capsys.readouterr().out
     assert "OK" in out
@@ -431,7 +524,13 @@ def test_evaluate_file_os_error(tmp_path: Path) -> None:
 def test_evaluate_file_syntax_error(tmp_path: Path) -> None:
     f = tmp_path / "bad.py"
     f.write_bytes(b"def broken(\n")
-    result = efc.evaluate_file(f, {1}, max_function_lines=80, max_nesting=4, max_branches=12)
+    result = efc.evaluate_file(
+        f,
+        {1},
+        max_function_lines=80,
+        max_nesting=4,
+        max_branches=12,
+    )
     assert result == []
 
 
@@ -493,7 +592,9 @@ def test_new_python_files_filters_exceptions(monkeypatch: pytest.MonkeyPatch) ->
     assert "layers/new_module.py" in result
 
 
-def test_new_python_files_filters_non_rollout_prefix(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_new_python_files_filters_non_rollout_prefix(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     def mock_git(*args: str) -> str:
         return "scripts/something.py\n"
 
@@ -502,9 +603,11 @@ def test_new_python_files_filters_non_rollout_prefix(monkeypatch: pytest.MonkeyP
     assert result == []
 
 
-def test_any_policy_main_no_new_files(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+def test_any_policy_main_no_new_files(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     monkeypatch.setattr(any_policy, "_new_python_files", lambda *_: [])
-    import sys
     original = sys.argv
     sys.argv = ["prog", "--base-sha", "a", "--head-sha", "b"]
     try:
@@ -530,7 +633,6 @@ def test_render_markdown_returns_string() -> None:
 
 
 def test_main_writes_file(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    import sys
     out = tmp_path / "spec.md"
     monkeypatch.setattr(sys, "argv", ["prog", "--output", str(out)])
     code = gen_doc.main()
@@ -540,7 +642,6 @@ def test_main_writes_file(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> No
 
 
 def test_main_check_up_to_date(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    import sys
     out = tmp_path / "spec.md"
     rendered = gen_doc.render_markdown()
     out.write_text(rendered, encoding="utf-8")
@@ -549,8 +650,11 @@ def test_main_check_up_to_date(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) 
     assert code == 0
 
 
-def test_main_check_out_of_date(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    import sys
+def test_main_check_out_of_date(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     out = tmp_path / "spec.md"
     out.write_text("stale content", encoding="utf-8")
     monkeypatch.setattr(sys, "argv", ["prog", "--output", str(out), "--check"])
@@ -559,8 +663,11 @@ def test_main_check_out_of_date(tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
     assert "out of date" in capsys.readouterr().out
 
 
-def test_main_check_missing_file(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    import sys
+def test_main_check_missing_file(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     out = tmp_path / "missing.md"
     monkeypatch.setattr(sys, "argv", ["prog", "--output", str(out), "--check"])
     code = gen_doc.main()
@@ -579,8 +686,11 @@ def test_run_mypy_success_output() -> None:
         stdout = "Success: no issues found"
         stderr = ""
 
-    with patch("scripts.ci.mypy_regression_gate.subprocess.run", return_value=FakeResult()):
-        errors, output = mypy_gate._run_mypy(Path("."))
+    with patch(
+        "scripts.ci.mypy_regression_gate.subprocess.run",
+        return_value=FakeResult(),
+    ):
+        errors, output = mypy_gate._run_mypy(Path())
     assert errors == 0
 
 
@@ -590,8 +700,11 @@ def test_run_mypy_with_error_count() -> None:
         stdout = "Found 5 errors in 2 files"
         stderr = ""
 
-    with patch("scripts.ci.mypy_regression_gate.subprocess.run", return_value=FakeResult()):
-        errors, output = mypy_gate._run_mypy(Path("."))
+    with patch(
+        "scripts.ci.mypy_regression_gate.subprocess.run",
+        return_value=FakeResult(),
+    ):
+        errors, output = mypy_gate._run_mypy(Path())
     assert errors == 5
 
 
@@ -601,18 +714,20 @@ def test_run_mypy_no_match_returns_large_number() -> None:
         stdout = "Something went wrong"
         stderr = "error details"
 
-    with patch("scripts.ci.mypy_regression_gate.subprocess.run", return_value=FakeResult()):
-        errors, output = mypy_gate._run_mypy(Path("."))
+    with patch(
+        "scripts.ci.mypy_regression_gate.subprocess.run",
+        return_value=FakeResult(),
+    ):
+        errors, output = mypy_gate._run_mypy(Path())
     assert errors == 10**9
 
 
-def test_mypy_main_regression(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    import tempfile
+def test_mypy_main_regression(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     monkeypatch.setattr(mypy_gate, "_run_mypy", lambda p: (10, "output"))
     monkeypatch.setattr(mypy_gate, "_git", lambda *a: None)
-
-    call_count = [0]
-    orig_run_mypy = mypy_gate._run_mypy
 
     run_results = [(2, "base out"), (10, "head out")]
     run_idx = [0]
@@ -624,7 +739,9 @@ def test_mypy_main_regression(monkeypatch: pytest.MonkeyPatch, capsys: pytest.Ca
 
     monkeypatch.setattr(mypy_gate, "_run_mypy", fake_run_mypy)
 
-    with patch("scripts.ci.mypy_regression_gate.tempfile.TemporaryDirectory") as mock_tmp:
+    with patch(
+        "scripts.ci.mypy_regression_gate.tempfile.TemporaryDirectory",
+    ) as mock_tmp:
         mock_ctx = MagicMock()
         mock_ctx.__enter__ = MagicMock(return_value="/fake/tmp")
         mock_ctx.__exit__ = MagicMock(return_value=False)
@@ -635,13 +752,18 @@ def test_mypy_main_regression(monkeypatch: pytest.MonkeyPatch, capsys: pytest.Ca
             stdout = ""
             stderr = ""
 
-        with patch("scripts.ci.mypy_regression_gate.subprocess.run", return_value=FakeRemove()):
+        with patch(
+            "scripts.ci.mypy_regression_gate.subprocess.run",
+            return_value=FakeRemove(),
+        ):
             # Can't easily test without git worktree, skip integration path
             pass
 
 
-def test_mypy_main_budget_exceeded(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    import tempfile
+def test_mypy_main_budget_exceeded(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     run_results = [(2, "base"), (4, "head")]
     run_idx = [0]
 
@@ -653,7 +775,9 @@ def test_mypy_main_budget_exceeded(monkeypatch: pytest.MonkeyPatch, capsys: pyte
     monkeypatch.setattr(mypy_gate, "_run_mypy", fake_run_mypy)
     monkeypatch.setattr(mypy_gate, "_git", lambda *a: None)
 
-    with patch("scripts.ci.mypy_regression_gate.tempfile.TemporaryDirectory") as mock_tmp:
+    with patch(
+        "scripts.ci.mypy_regression_gate.tempfile.TemporaryDirectory",
+    ) as mock_tmp:
         mock_ctx = MagicMock()
         mock_ctx.__enter__ = MagicMock(return_value="/fake/tmp")
         mock_ctx.__exit__ = MagicMock(return_value=False)
@@ -664,7 +788,10 @@ def test_mypy_main_budget_exceeded(monkeypatch: pytest.MonkeyPatch, capsys: pyte
             stdout = ""
             stderr = ""
 
-        with patch("scripts.ci.mypy_regression_gate.subprocess.run", return_value=FakeRemove()):
+        with patch(
+            "scripts.ci.mypy_regression_gate.subprocess.run",
+            return_value=FakeRemove(),
+        ):
             pass  # Integration requires actual git worktree
 
 
@@ -678,7 +805,13 @@ def test_violation_format_message_creation(tmp_path: Path) -> None:
     path = tmp_path / "layers" / "foo.py"
     path.parent.mkdir(parents=True)
     path.write_text("", encoding="utf-8")
-    v = di.Violation(path=path, lineno=5, method_name="process", class_name="MyService", dependency_name="SomeClient")
+    v = di.Violation(
+        path=path,
+        lineno=5,
+        method_name="process",
+        class_name="MyService",
+        dependency_name="SomeClient",
+    )
     msg = v.format_message(tmp_path)
     assert "process" in msg
     assert "SomeClient" in msg
@@ -689,7 +822,14 @@ def test_violation_format_message_import(tmp_path: Path) -> None:
     path = tmp_path / "layers" / "foo.py"
     path.parent.mkdir(parents=True)
     path.write_text("", encoding="utf-8")
-    v = di.Violation(path=path, lineno=5, method_name="run", class_name="Cls", dependency_name="mod", violation_type="import")
+    v = di.Violation(
+        path=path,
+        lineno=5,
+        method_name="run",
+        class_name="Cls",
+        dependency_name="mod",
+        violation_type="import",
+    )
     msg = v.format_message(tmp_path)
     assert "ukryty import" in msg
 
@@ -745,24 +885,30 @@ def test_has_allow_comment_false() -> None:
 
 def test_lint_path_detects_di_violation(tmp_path: Path) -> None:
     src = tmp_path / "test_module.py"
-    src.write_text("""
+    src.write_text(
+        """
 class MyHandler:
     def process(self):
         client = HttpClient()
         return client
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
     violations = di.lint_path(src)
     assert any(v.dependency_name == "HttpClient" for v in violations)
 
 
 def test_lint_path_allows_factory_methods(tmp_path: Path) -> None:
     src = tmp_path / "factory.py"
-    src.write_text("""
+    src.write_text(
+        """
 class Builder:
     def build(self):
         client = HttpClient()
         return client
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
     violations = di.lint_path(src)
     assert violations == []
 
@@ -776,27 +922,44 @@ def test_validate_adr_reference_no_trigger(tmp_path: Path) -> None:
 def test_validate_adr_reference_with_adr_text() -> None:
     violations = [
         di.Violation(
-            path=Path("layers/x.py"), lineno=1, method_name="run",
-            class_name="Cls", dependency_name="SomeClient",
-        )
+            path=Path("layers/x.py"),
+            lineno=1,
+            method_name="run",
+            class_name="Cls",
+            dependency_name="SomeClient",
+        ),
     ] * 6
-    result = di._validate_adr_reference_for_major_changes(violations, "ADR-0042 changes", 5)
+    result = di._validate_adr_reference_for_major_changes(
+        violations,
+        "ADR-0042 changes",
+        5,
+    )
     assert result == []
 
 
 def test_validate_adr_reference_missing() -> None:
     violations = [
         di.Violation(
-            path=Path("layers/x.py"), lineno=1, method_name="run",
-            class_name="Cls", dependency_name="SomeClient",
-        )
+            path=Path("layers/x.py"),
+            lineno=1,
+            method_name="run",
+            class_name="Cls",
+            dependency_name="SomeClient",
+        ),
     ] * 6
-    result = di._validate_adr_reference_for_major_changes(violations, "no reference here", 5)
+    result = di._validate_adr_reference_for_major_changes(
+        violations,
+        "no reference here",
+        5,
+    )
     assert len(result) == 1
     assert "ADR" in result[0]
 
 
-def test_di_main_no_violations(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+def test_di_main_no_violations(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     src = tmp_path / "clean.py"
     src.write_text("x = 1\n", encoding="utf-8")
     code = di.main([str(src)])
@@ -806,19 +969,22 @@ def test_di_main_no_violations(tmp_path: Path, capsys: pytest.CaptureFixture[str
 # ---------------------------------------------------------------------------
 # validation/schema_engine.py
 # ---------------------------------------------------------------------------
-from validation.schema_engine import SchemaValidationEngine
-from validation.schemas import RecordSchema, NestedSchema
 from validation.issue import ValidationIssue
+from validation.schema_engine import SchemaValidationEngine
+from validation.schemas import NestedSchema
+from validation.schemas import RecordSchema
 
 
 def test_coerce_schema_from_mapping() -> None:
-    schema = SchemaValidationEngine.coerce_schema({
-        "required": ("name",),
-        "types": {"name": str},
-        "allow_none": (),
-        "nested": {},
-        "custom_validators": (),
-    })
+    schema = SchemaValidationEngine.coerce_schema(
+        {
+            "required": ("name",),
+            "types": {"name": str},
+            "allow_none": (),
+            "nested": {},
+            "custom_validators": (),
+        },
+    )
     assert isinstance(schema, RecordSchema)
     assert schema.required == ("name",)
 
@@ -856,7 +1022,9 @@ def test_coerce_issue_passthrough() -> None:
 def test_validate_nested_value_list_not_list() -> None:
     nested = NestedSchema(schema=RecordSchema(required=("x",)), is_list=True)
     errors = SchemaValidationEngine.validate_nested_value(
-        "items", "not a list", nested,
+        "items",
+        "not a list",
+        nested,
         lambda rec, sch: [],
     )
     assert any("list" in str(e) for e in errors)
@@ -865,7 +1033,9 @@ def test_validate_nested_value_list_not_list() -> None:
 def test_validate_nested_value_list_item_not_mapping() -> None:
     nested = NestedSchema(schema=RecordSchema(), is_list=True)
     errors = SchemaValidationEngine.validate_nested_value(
-        "items", ["not a dict"], nested,
+        "items",
+        ["not a dict"],
+        nested,
         lambda rec, sch: [],
     )
     assert len(errors) == 1
@@ -874,7 +1044,9 @@ def test_validate_nested_value_list_item_not_mapping() -> None:
 def test_validate_nested_value_not_mapping() -> None:
     nested = NestedSchema(schema=RecordSchema(), is_list=False)
     errors = SchemaValidationEngine.validate_nested_value(
-        "obj", "string", nested,
+        "obj",
+        "string",
+        nested,
         lambda rec, sch: [],
     )
     assert len(errors) == 1
@@ -885,7 +1057,8 @@ def test_validate_nested_schema_callable() -> None:
         return ["Missing key: x"]
 
     errors = SchemaValidationEngine.validate_nested_schema(
-        {"y": 1}, validator,
+        {"y": 1},
+        validator,
         lambda rec, sch: [],
     )
     assert len(errors) == 1
@@ -894,7 +1067,9 @@ def test_validate_nested_schema_callable() -> None:
 def test_validate_nested_value_valid_list() -> None:
     nested = NestedSchema(schema=RecordSchema(required=("x",)), is_list=True)
     errors = SchemaValidationEngine.validate_nested_value(
-        "items", [{"x": 1}], nested,
+        "items",
+        [{"x": 1}],
+        nested,
         lambda rec, sch: [],
     )
     assert errors == []
@@ -903,7 +1078,9 @@ def test_validate_nested_value_valid_list() -> None:
 def test_validate_nested_value_valid_mapping() -> None:
     nested = NestedSchema(schema=RecordSchema(), is_list=False)
     errors = SchemaValidationEngine.validate_nested_value(
-        "obj", {"a": 1}, nested,
+        "obj",
+        {"a": 1},
+        nested,
         lambda rec, sch: [],
     )
     assert errors == []

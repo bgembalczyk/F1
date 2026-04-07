@@ -2,7 +2,6 @@
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.sentinels import SKIP_SENTINEL
 
 
@@ -38,6 +37,7 @@ def test_multi_column_parse_empty_text() -> None:
 
 def test_multi_column_parse_skip_sentinel_excluded() -> None:
     from scrapers.base.table.columns.types.skip import SkipColumn
+
     col = MultiColumn({"skip_key": SkipColumn(), "name": TextColumn()})
     ctx = _ctx("hello")
     result = col.parse(ctx)

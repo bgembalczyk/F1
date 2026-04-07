@@ -13,13 +13,14 @@ def parser() -> CircuitSpecsParser:
 # _norm_surface_part  (lines 25, 28)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "surface_part, expected_contains",
+    ("surface_part", "expected_contains"),
     [
         ("asphalt", "Asphalt"),
         ("tarmac", "Asphalt"),
         ("concrete", "Concrete"),
-        ("asphalt concrete", "Asphalt"),   # asphalt beats concrete
+        ("asphalt concrete", "Asphalt"),  # asphalt beats concrete
         ("cobblestones", "Cobblestones"),
         ("brick", "Brick"),
         ("dirt track", "Dirt"),
@@ -41,6 +42,7 @@ def test_norm_surface_part_unique(parser) -> None:
 # ---------------------------------------------------------------------------
 # parse_surface  (lines 43, 64, 78-100)
 # ---------------------------------------------------------------------------
+
 
 def test_parse_surface_none(parser) -> None:
     assert CircuitSpecsParser.parse_surface(None) is None
@@ -77,7 +79,9 @@ def test_parse_surface_with_slash(parser) -> None:
 
 
 def test_parse_surface_with_note(parser) -> None:
-    result = CircuitSpecsParser.parse_surface({"text": "Asphalt (partially repaved 2018)"})
+    result = CircuitSpecsParser.parse_surface(
+        {"text": "Asphalt (partially repaved 2018)"},
+    )
     assert result is not None
     assert result.get("note") == "partially repaved 2018"
 
@@ -97,6 +101,7 @@ def test_parse_surface_only_unknown_stripped(parser) -> None:
 # ---------------------------------------------------------------------------
 # _parse_capacity  (lines 78-100)
 # ---------------------------------------------------------------------------
+
 
 def test_parse_capacity_none(parser) -> None:
     assert CircuitSpecsParser._parse_capacity(None) is None
@@ -133,8 +138,9 @@ def test_parse_capacity_no_numbers(parser) -> None:
 # _extract_currency  (lines 104-108)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "text, expected",
+    ("text", "expected"),
     [
         ("€10 million", "EUR"),
         ("$250 million", "USD"),
@@ -152,6 +158,7 @@ def test_extract_currency(text, expected) -> None:
 # ---------------------------------------------------------------------------
 # _parse_construction_cost  (lines 115-150)
 # ---------------------------------------------------------------------------
+
 
 def test_parse_construction_cost_none(parser) -> None:
     assert parser._parse_construction_cost(None) is None
@@ -188,6 +195,7 @@ def test_parse_construction_cost_no_scale(parser) -> None:
 # ---------------------------------------------------------------------------
 # parse_banking  (lines 159, 175)
 # ---------------------------------------------------------------------------
+
 
 def test_parse_banking_none(parser) -> None:
     assert CircuitSpecsParser.parse_banking(None) is None
@@ -226,4 +234,6 @@ def test_parse_banking_no_value(parser) -> None:
 
 def test_parse_banking_alias(parser) -> None:
     # _parse_banking is backward-compatible alias
-    assert parser._parse_banking({"text": "33°"}) == CircuitSpecsParser.parse_banking({"text": "33°"})
+    assert parser._parse_banking({"text": "33°"}) == CircuitSpecsParser.parse_banking(
+        {"text": "33°"},
+    )

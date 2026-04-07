@@ -1,8 +1,8 @@
 # ruff: noqa: SLF001
 
-import pytest
 
-from scrapers.engines.engine_regulation import EngineRegulationSubSectionParser, EngineRegulationTableParser
+from scrapers.engines.engine_regulation import EngineRegulationSubSectionParser
+from scrapers.engines.engine_regulation import EngineRegulationTableParser
 
 
 def test_engine_regulation_apply_for_elements_covers_all_guards() -> None:

@@ -13,8 +13,9 @@ def proc() -> CircuitTextProcessing:
 # _entity_text  (lines 15-21)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "val, expected",
+    ("val", "expected"),
     [
         ({"text": "Hello"}, "Hello"),
         ({"text": "  trimmed  "}, "trimmed"),
@@ -34,8 +35,9 @@ def test_entity_text(val, expected) -> None:
 # _entity_url  (lines 25-27)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "val, expected",
+    ("val", "expected"),
     [
         ({"url": "https://example.com"}, "https://example.com"),
         ({"url": None}, None),
@@ -53,12 +55,12 @@ def test_entity_url(val, expected) -> None:
 # _norm_time  (lines 35-40)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "t, expected",
+    ("t", "expected"),
     [
         (None, None),
         (1.5, "1.5"),
-        (1.500000, "1.5"),
         (90, "90"),
         (90.0, "90"),
         ("1:23.456", "1:23.456"),
@@ -74,8 +76,9 @@ def test_norm_time(t, expected) -> None:
 # _get_class_field  (line 49)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "rec, expected",
+    ("rec", "expected"),
     [
         ({"series": "F1"}, "F1"),
         ({"category": "GT"}, "GT"),
@@ -93,8 +96,9 @@ def test_get_class_field(rec, expected) -> None:
 # _strip_lang_marker_tail_only  (lines 72-74)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "s, expected",
+    ("s", "expected"),
     [
         ("Juan Martín Trucco ( es", "Juan Martín Trucco"),
         ("David Vršecký ( cs", "David Vršecký"),
@@ -112,8 +116,9 @@ def test_strip_lang_marker_tail_only(s, expected, proc) -> None:
 # _extract_outer_parens  (lines 82-102)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "text, expected",
+    ("text", "expected"),
     [
         ("hello (world)", "world"),
         ("no parens", None),
@@ -131,8 +136,9 @@ def test_extract_outer_parens(text, expected) -> None:
 # _is_en_wiki  (line 107)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "url, expected",
+    ("url", "expected"),
     [
         ("https://en.wikipedia.org/wiki/Circuit", True),
         ("http://en.wikipedia.org/wiki/Circuit", True),
@@ -148,6 +154,7 @@ def test_is_en_wiki(url, expected) -> None:
 # ---------------------------------------------------------------------------
 # _choose_richer_entity  (line 111)
 # ---------------------------------------------------------------------------
+
 
 def test_choose_richer_entity_prefers_dict_with_url(proc) -> None:
     a = "plain"

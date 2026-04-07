@@ -128,7 +128,7 @@ def test_drivers_championships_from_value_raises_for_unsupported_type() -> None:
 
 def test_drivers_championships_from_value_parses_mapping() -> None:
     result = DriversChampionships.from_value(
-        {"count": 2, "seasons": [{"year": 2005}, {"year": 2006}]}
+        {"count": 2, "seasons": [{"year": 2005}, {"year": 2006}]},
     )
     assert result.count == 2
     assert len(result.seasons) == 2

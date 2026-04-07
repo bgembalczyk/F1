@@ -1,12 +1,12 @@
 # ruff: noqa: E501, PLR2004
-import pytest
 from pathlib import Path
 from unittest.mock import MagicMock
+
+import pytest
 
 from layers.orchestration.runners.function_export import FunctionExportRunner
 from layers.orchestration.runners.metadata import build_runner_metadata
 from scrapers.base.errors import PipelineError
-
 
 METADATA = build_runner_metadata("test_domain", seed_name="test_seed")
 

@@ -1,14 +1,13 @@
 # ruff: noqa: E501, PLR2004
-import pytest
 from pathlib import Path
 from unittest.mock import MagicMock
 
-from layers.zero.policies import (
-    NullLayerZeroJobHook,
-    CompositeLayerZeroJobHook,
-    MirrorConstructorsJobHook,
-    MirrorToDomainByFilenameJobHook,
-)
+import pytest
+
+from layers.zero.policies import CompositeLayerZeroJobHook
+from layers.zero.policies import MirrorConstructorsJobHook
+from layers.zero.policies import MirrorToDomainByFilenameJobHook
+from layers.zero.policies import NullLayerZeroJobHook
 
 
 def _make_job(name: str = "test_job") -> MagicMock:
@@ -38,8 +37,16 @@ def test_composite_hook_calls_each_child_hook() -> None:
 
     composite.after_job(base_wiki_dir=base, job=job, l0_raw_json_path=raw)
 
-    child1.after_job.assert_called_once_with(base_wiki_dir=base, job=job, l0_raw_json_path=raw)
-    child2.after_job.assert_called_once_with(base_wiki_dir=base, job=job, l0_raw_json_path=raw)
+    child1.after_job.assert_called_once_with(
+        base_wiki_dir=base,
+        job=job,
+        l0_raw_json_path=raw,
+    )
+    child2.after_job.assert_called_once_with(
+        base_wiki_dir=base,
+        job=job,
+        l0_raw_json_path=raw,
+    )
 
 
 def test_composite_hook_exposes_hooks_property() -> None:

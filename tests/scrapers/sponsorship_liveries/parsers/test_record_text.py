@@ -1,8 +1,6 @@
 # ruff: noqa: E501, PLR2004
 """Tests for SponsorshipRecordText covering uncovered lines."""
 
-import pytest
-
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
@@ -62,7 +60,10 @@ class TestExtractYearParams:
 
 class TestParamText:
     def test_dict_with_text(self):
-        assert SponsorshipRecordText.param_text({"text": "Monaco Grand Prix"}) == "Monaco Grand Prix"
+        assert (
+            SponsorshipRecordText.param_text({"text": "Monaco Grand Prix"})
+            == "Monaco Grand Prix"
+        )
 
     def test_dict_without_text(self):
         assert SponsorshipRecordText.param_text({"url": "http://example.com"}) == ""
@@ -122,7 +123,9 @@ class TestStripYearSuffix:
 
 class TestStripYearsKeepContext:
     def test_strips_years_from_text(self):
-        result = SponsorshipRecordText.strip_years_keep_context("Sponsor from 1988 to 1990")
+        result = SponsorshipRecordText.strip_years_keep_context(
+            "Sponsor from 1988 to 1990",
+        )
         assert "1988" not in result
         assert "1990" not in result
 

@@ -2,20 +2,24 @@
 import pytest
 
 from models.value_objects.normalized_date import NormalizedDate
+from scrapers.circuits.models.services.lap_record_utils import build_lap_record_key
+from scrapers.circuits.models.services.lap_record_utils import extract_year
+from scrapers.circuits.models.services.lap_record_utils import extract_year_from_event
+from scrapers.circuits.models.services.lap_record_utils import has_meaningful_value
 from scrapers.circuits.models.services.lap_record_utils import (
-    build_lap_record_key,
-    extract_year,
-    extract_year_from_event,
-    has_meaningful_value,
     normalize_lap_record_entity,
+)
+from scrapers.circuits.models.services.lap_record_utils import (
     parse_lap_record_time_from_record,
+)
+from scrapers.circuits.models.services.lap_record_utils import (
     select_best_field_with_url,
 )
-
 
 # ---------------------------------------------------------------------------
 # extract_year_from_event  (lines 19-36)
 # ---------------------------------------------------------------------------
+
 
 def test_extract_year_from_event_dict_text() -> None:
     rec = {"event": {"text": "1963 Aintree 200", "url": None}}
@@ -45,6 +49,7 @@ def test_extract_year_from_event_no_event() -> None:
 # ---------------------------------------------------------------------------
 # extract_year  (lines 47-57)
 # ---------------------------------------------------------------------------
+
 
 def test_extract_year_from_year_field() -> None:
     rec = {"year": "2019"}
@@ -80,6 +85,7 @@ def test_extract_year_none() -> None:
 # normalize_lap_record_entity  (line 68 – with sanitizer)
 # ---------------------------------------------------------------------------
 
+
 def test_normalize_lap_record_entity_plain() -> None:
     assert normalize_lap_record_entity("Lewis Hamilton") == "lewis hamilton"
 
@@ -104,6 +110,7 @@ def test_normalize_lap_record_entity_empty() -> None:
 # ---------------------------------------------------------------------------
 # parse_lap_record_time_from_record  (line 88)
 # ---------------------------------------------------------------------------
+
 
 def test_parse_time_from_time_seconds() -> None:
     rec = {"time_seconds": 83.456}
@@ -130,8 +137,9 @@ def test_parse_time_none() -> None:
 # has_meaningful_value  (line 96)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "candidate, expected",
+    ("candidate", "expected"),
     [
         (None, False),
         ("", False),
@@ -152,6 +160,7 @@ def test_has_meaningful_value(candidate, expected) -> None:
 # select_best_field_with_url  (lines 101-103)
 # ---------------------------------------------------------------------------
 
+
 def test_select_best_field_no_records() -> None:
     assert select_best_field_with_url([], "driver") is None
 
@@ -165,7 +174,12 @@ def test_select_best_field_single(parser=None) -> None:
 def test_select_best_field_prefers_url() -> None:
     records = [
         {"driver": {"text": "Hamilton", "url": None}},
-        {"driver": {"text": "Hamilton", "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"}},
+        {
+            "driver": {
+                "text": "Hamilton",
+                "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
+            },
+        },
     ]
     result = select_best_field_with_url(records, "driver")
     assert result is not None
@@ -187,6 +201,7 @@ def test_select_best_field_skips_none_values() -> None:
 # ---------------------------------------------------------------------------
 # build_lap_record_key  (lines 121, 164)
 # ---------------------------------------------------------------------------
+
 
 def test_build_lap_record_key_basic() -> None:
     rec = {

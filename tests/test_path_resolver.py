@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
-import pytest
-
 from pathlib import Path
+
+import pytest
 
 from layers.path_resolver import DEFAULT_PATH_RESOLVER
 from layers.path_resolver import PathResolver

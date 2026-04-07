@@ -13,7 +13,9 @@ class _DoubleValueTransformer:
         return [self(r) for r in records]
 
 
-def test_apply_transformers_with_factory_no_factory_no_transformers_returns_record() -> None:
+def test_apply_transformers_with_factory_no_factory_no_transformers_returns_record() -> (
+    None
+):
     record = {"a": 1, "b": 2}
     result = apply_transformers_with_factory([], record, record_factory=None)
     assert result == {"a": 1, "b": 2}
@@ -41,6 +43,7 @@ def test_apply_transformers_with_factory_empty_transformed_returns_empty_dict() 
     class _FilterAllTransformer:
         def apply(self, records):
             return []
+
         # Make it look like a RecordTransformer via duck typing
         empty_value_policy = None
 

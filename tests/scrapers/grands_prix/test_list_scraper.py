@@ -1,5 +1,6 @@
 # ruff: noqa: E501, PLR2004, SLF001
-from scrapers.grands_prix.list_scraper import ByRaceTitleSubSectionParser, GrandsPrixTableParser
+from scrapers.grands_prix.list_scraper import ByRaceTitleSubSectionParser
+from scrapers.grands_prix.list_scraper import GrandsPrixTableParser
 
 
 def test_grands_prix_table_parser_matches_required_headers() -> None:
@@ -59,7 +60,10 @@ def test_by_race_title_sub_section_parser_apply_table_parser_recurses() -> None:
             {
                 "elements": [{"kind": "table", "data": {"id": "top"}}],
                 "sub_sub_sections": [
-                    {"elements": [{"kind": "table", "data": {"id": "inner"}}], "sub_sub_sections": []},
+                    {
+                        "elements": [{"kind": "table", "data": {"id": "inner"}}],
+                        "sub_sub_sections": [],
+                    },
                 ],
             },
         ],
@@ -73,7 +77,9 @@ def test_by_race_title_sub_section_parser_apply_table_parser_recurses() -> None:
     parser._apply_table_parser(payload)
 
     assert payload["sub_sub_sections"][0]["elements"][0]["data"] == {"mapped": "top"}
-    assert payload["sub_sub_sections"][0]["sub_sub_sections"][0]["elements"][0]["data"] == {"mapped": "inner"}
+    assert payload["sub_sub_sections"][0]["sub_sub_sections"][0]["elements"][0][
+        "data"
+    ] == {"mapped": "inner"}
 
 
 def test_by_race_title_parse_group_returns_dict() -> None:

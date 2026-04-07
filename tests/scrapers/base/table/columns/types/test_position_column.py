@@ -43,6 +43,6 @@ def test_position_column_non_numeric_text_returned_as_string() -> None:
     assert result == "DSQ"
 
 
-@pytest.mark.parametrize("text,expected", [("1", 1), ("10", 10), ("20", 20)])
+@pytest.mark.parametrize(("text", "expected"), [("1", 1), ("10", 10), ("20", 20)])
 def test_position_column_various_integers(text, expected) -> None:
     assert PositionColumn().parse(_ctx(text)) == expected

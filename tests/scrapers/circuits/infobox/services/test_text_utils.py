@@ -13,6 +13,7 @@ def utils() -> InfoboxTextUtils:
 # _split_simple_list  (lines 27-31)
 # ---------------------------------------------------------------------------
 
+
 def test_split_simple_list_none_row(utils) -> None:
     assert utils._split_simple_list(None) is None
 
@@ -36,6 +37,7 @@ def test_split_simple_list_multiple(utils) -> None:
 # parse_int  (lines ~34-41)
 # ---------------------------------------------------------------------------
 
+
 def test_parse_int_none(utils) -> None:
     assert utils.parse_int(None) is None
 
@@ -54,6 +56,7 @@ def test_parse_int_invalid(utils) -> None:
 # parse_length  (lines ~44-53)
 # ---------------------------------------------------------------------------
 
+
 def test_parse_length_none(utils) -> None:
     assert utils.parse_length(None, unit="km") is None
 
@@ -71,6 +74,7 @@ def test_parse_length_valid_mi(utils) -> None:
 # ---------------------------------------------------------------------------
 # _parse_dates  (lines ~56-76 / line 64, 72, 76)
 # ---------------------------------------------------------------------------
+
 
 def test_parse_dates_none(utils) -> None:
     assert utils._parse_dates(None) is None
@@ -97,6 +101,7 @@ def test_parse_dates_full_date(utils) -> None:
 # _find_link  (line 100)
 # ---------------------------------------------------------------------------
 
+
 def test_find_link_empty_text(utils) -> None:
     links = [{"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"}]
     assert utils._find_link(None, links) is None
@@ -119,6 +124,7 @@ def test_find_link_no_match(utils) -> None:
 # _with_link  (lines 113-124)
 # ---------------------------------------------------------------------------
 
+
 def test_with_link_none_text(utils) -> None:
     assert utils._with_link(None, []) is None
 
@@ -136,7 +142,12 @@ def test_with_link_with_valid_link(utils) -> None:
 
 def test_with_link_redlink_ignored(utils) -> None:
     # Wikipedia redlink pattern (w/index.php?title=...)
-    links = [{"text": "Stub", "url": "https://en.wikipedia.org/w/index.php?title=Stub&action=edit&redlink=1"}]
+    links = [
+        {
+            "text": "Stub",
+            "url": "https://en.wikipedia.org/w/index.php?title=Stub&action=edit&redlink=1",
+        },
+    ]
     result = utils._with_link("Stub", links)
     assert result is not None
     assert result["url"] is None
@@ -150,6 +161,7 @@ def test_with_link_none_links_arg(utils) -> None:
 # ---------------------------------------------------------------------------
 # prune_nulls
 # ---------------------------------------------------------------------------
+
 
 def test_prune_nulls(utils) -> None:
     data = {"a": None, "b": 1, "c": {}, "d": []}

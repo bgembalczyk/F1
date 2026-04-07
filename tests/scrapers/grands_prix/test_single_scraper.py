@@ -1,5 +1,6 @@
 # ruff: noqa: E501, PLR2004
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
+from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 
@@ -37,7 +38,10 @@ def test_parse_returns_empty_list_for_non_grand_prix_article() -> None:
     scraper.include_urls = False
     scraper.normalize_empty_values = False
 
-    with patch("scrapers.grands_prix.single_scraper.is_grand_prix_article", return_value=False):
+    with patch(
+        "scrapers.grands_prix.single_scraper.is_grand_prix_article",
+        return_value=False,
+    ):
         result = scraper.parse(_soup_without_grand_prix_markers())
 
     assert result == []
@@ -66,7 +70,10 @@ def test_assemble_record_returns_first_item_from_parse() -> None:
     scraper.include_urls = False
     scraper.normalize_empty_values = False
 
-    expected = {"url": "https://en.wikipedia.org/wiki/BritishGP", "by_year": [{"year": 2023}]}
+    expected = {
+        "url": "https://en.wikipedia.org/wiki/BritishGP",
+        "by_year": [{"year": 2023}],
+    }
     with patch.object(scraper, "parse", return_value=[expected]):
         result = scraper._assemble_record(
             soup=MagicMock(),

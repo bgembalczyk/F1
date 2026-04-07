@@ -3,11 +3,8 @@
 
 from unittest.mock import patch
 
-import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.types import IntColumn, TextColumn
-from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.races.columns.restart_status import RestartStatusColumn
 from scrapers.races.red_flagged_races_scraper.base import RedFlaggedRacesBaseScraper
 
@@ -24,7 +21,11 @@ def _make_scraper(
     class _Concrete(RedFlaggedRacesBaseScraper):
         pass
 
-    with patch.object(RedFlaggedRacesBaseScraper, "__init__", lambda self, **kwargs: None):
+    with patch.object(
+        RedFlaggedRacesBaseScraper,
+        "__init__",
+        lambda self, **kwargs: None,
+    ):
         s = _Concrete.__new__(_Concrete)
         s.__init__()
 
@@ -75,7 +76,10 @@ def test_resolved_alternative_section_ids_no_section_id_returns_empty() -> None:
 
 
 def test_resolved_alternative_section_ids_returns_list_of_strings() -> None:
-    s = _make_scraper(section_id="World_Championship_races", alternative_section_ids=["Championship_races"])
+    s = _make_scraper(
+        section_id="World_Championship_races",
+        alternative_section_ids=["Championship_races"],
+    )
     alts = s._resolved_alternative_section_ids()
     assert isinstance(alts, list)
     # Each alternative should be a string (section ids)

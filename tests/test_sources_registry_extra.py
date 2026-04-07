@@ -5,18 +5,13 @@ import warnings
 
 import pytest
 
-from scrapers.wiki.sources_registry import (
-    WikiSourceDefinition,
-    _emit_deprecation_warning,
-    _ensure_unique_or_raise,
-    _validate_canonical_source,
-    _validate_legacy_filename_aliases,
-    _validate_legacy_seed_aliases,
-    get_source_by_list_filename,
-    get_source_by_seed_name,
-    get_source_by_source_name,
-    resolve_list_filename,
-)
+from scrapers.wiki.sources_registry import WikiSourceDefinition
+from scrapers.wiki.sources_registry import _ensure_unique_or_raise
+from scrapers.wiki.sources_registry import _validate_canonical_source
+from scrapers.wiki.sources_registry import get_source_by_list_filename
+from scrapers.wiki.sources_registry import get_source_by_seed_name
+from scrapers.wiki.sources_registry import get_source_by_source_name
+from scrapers.wiki.sources_registry import resolve_list_filename
 
 
 class TestWikiSourceDefinitionProperties:
@@ -205,6 +200,7 @@ class TestValidateCanonicalSource:
 class TestValidateLegacySeedAliases:
     def test_raises_when_alias_conflicts_with_canonical_seed(self, monkeypatch):
         import scrapers.wiki.sources_registry as reg
+
         monkeypatch.setattr(
             reg,
             "LEGACY_SEED_NAME_ALIASES",
@@ -220,6 +216,7 @@ class TestValidateLegacySeedAliases:
 
     def test_raises_when_canonical_target_missing(self, monkeypatch):
         import scrapers.wiki.sources_registry as reg
+
         monkeypatch.setattr(
             reg,
             "LEGACY_SEED_NAME_ALIASES",
@@ -237,6 +234,7 @@ class TestValidateLegacySeedAliases:
 class TestValidateLegacyFilenameAliases:
     def test_raises_when_alias_conflicts_with_canonical_filename(self, monkeypatch):
         import scrapers.wiki.sources_registry as reg
+
         monkeypatch.setattr(
             reg,
             "LEGACY_LIST_FILENAME_ALIASES",
@@ -252,6 +250,7 @@ class TestValidateLegacyFilenameAliases:
 
     def test_raises_when_canonical_target_missing(self, monkeypatch):
         import scrapers.wiki.sources_registry as reg
+
         monkeypatch.setattr(
             reg,
             "LEGACY_LIST_FILENAME_ALIASES",

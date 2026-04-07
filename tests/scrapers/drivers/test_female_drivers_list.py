@@ -2,7 +2,9 @@
 from scrapers.drivers.female_drivers_list import OfficialDriversSubSectionParser
 
 
-def test_official_drivers_sub_section_parser_apply_for_elements_skips_non_table() -> None:
+def test_official_drivers_sub_section_parser_apply_for_elements_skips_non_table() -> (
+    None
+):
     parser = OfficialDriversSubSectionParser()
     elements = [
         {"kind": "text", "data": {"should": "remain"}},
@@ -20,7 +22,9 @@ def test_official_drivers_sub_section_parser_apply_for_elements_skips_non_table(
     assert elements[1]["data"] == "not-a-dict"
 
 
-def test_official_drivers_sub_section_parser_apply_for_elements_replaces_matched_table() -> None:
+def test_official_drivers_sub_section_parser_apply_for_elements_replaces_matched_table() -> (
+    None
+):
     parser = OfficialDriversSubSectionParser()
     elements = [{"kind": "table", "data": {"ok": True}}]
 
@@ -40,7 +44,10 @@ def test_official_drivers_sub_section_parser_apply_female_recurses() -> None:
             {
                 "elements": [{"kind": "table", "data": {"id": "top"}}],
                 "sub_sub_sections": [
-                    {"elements": [{"kind": "table", "data": {"id": "inner"}}], "sub_sub_sections": []},
+                    {
+                        "elements": [{"kind": "table", "data": {"id": "inner"}}],
+                        "sub_sub_sections": [],
+                    },
                 ],
             },
         ],
@@ -54,12 +61,13 @@ def test_official_drivers_sub_section_parser_apply_female_recurses() -> None:
     parser._apply_female_drivers_table_parser(payload)
 
     assert payload["sub_sub_sections"][0]["elements"][0]["data"] == {"mapped": "top"}
-    assert payload["sub_sub_sections"][0]["sub_sub_sections"][0]["elements"][0]["data"] == {"mapped": "inner"}
+    assert payload["sub_sub_sections"][0]["sub_sub_sections"][0]["elements"][0][
+        "data"
+    ] == {"mapped": "inner"}
 
 
 def test_official_drivers_sub_section_parse_group_calls_apply_and_returns() -> None:
     parser = OfficialDriversSubSectionParser()
-    payload = {"sub_sub_sections": []}
 
     class _Stub:
         def parse(self, data):

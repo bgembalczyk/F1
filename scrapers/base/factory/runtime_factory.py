@@ -10,7 +10,6 @@ from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http_client.policies.http import HttpPolicy
-from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.cache_adapter import CacheAdapter
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.source_adapter import SourceAdapter
@@ -19,6 +18,7 @@ if TYPE_CHECKING:
     from infrastructure.http_client.interfaces.http_client_protocol import (
         HttpClientProtocol,
     )
+    from infrastructure.http_client.policies.response_cache import TextCacheProtocol
     from scrapers.base.options import ScraperOptions
 
 

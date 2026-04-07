@@ -2,7 +2,8 @@
 from unittest.mock import MagicMock
 
 from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
-from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy, TestingVenuesLayout
+from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
+from scrapers.seasons.services.domain_parsing_policy import TestingVenuesLayout
 
 
 def _policy_with_layout(layout):
@@ -40,7 +41,9 @@ def test_parse_calls_parse_2011_for_swapped_layout() -> None:
 
 
 def test_parse_calls_parse_2009_for_standard_layout() -> None:
-    records = [{"test": 1, "event": "Pre-season", "circuit": {"text": "C"}, "dates": None}]
+    records = [
+        {"test": 1, "event": "Pre-season", "circuit": {"text": "C"}, "dates": None},
+    ]
     tp = _table_parser_returning(records)
     parser = TestingVenuesParser(
         table_parser=tp,

@@ -3,7 +3,8 @@ import warnings
 
 import pytest
 
-from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter, _validate_dataframe_columns
+from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
+from scrapers.base.format.pandas_formatter import _validate_dataframe_columns
 
 
 def test_validate_dataframe_columns_raises_for_object_without_columns() -> None:

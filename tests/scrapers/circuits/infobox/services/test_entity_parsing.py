@@ -13,6 +13,7 @@ def parser() -> CircuitEntityParser:
 # _split_entity_parts  (line 15 – empty string)
 # ---------------------------------------------------------------------------
 
+
 def test_split_entity_parts_empty(parser) -> None:
     assert parser._split_entity_parts("") == []
 
@@ -29,6 +30,7 @@ def test_split_entity_parts_multiple(parser) -> None:
 # ---------------------------------------------------------------------------
 # _links_to_entities  (line 54)
 # ---------------------------------------------------------------------------
+
 
 def test_links_to_entities_valid(parser) -> None:
     links = [
@@ -54,6 +56,7 @@ def test_links_to_entities_filters_invalid(parser) -> None:
 # _parts_to_entities  (lines 66-67, 71-73 – with/without match)
 # ---------------------------------------------------------------------------
 
+
 def test_parts_to_entities_with_matching_link(parser) -> None:
     parts = ["Monza"]
     links = [{"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"}]
@@ -73,6 +76,7 @@ def test_parts_to_entities_without_matching_link(parser) -> None:
 # ---------------------------------------------------------------------------
 # _build_from_multiple_links  (line 90 – fallback when entities empty)
 # ---------------------------------------------------------------------------
+
 
 def test_build_from_multiple_links_with_valid_links(parser) -> None:
     parts = ["Monza", "Spa"]
@@ -98,6 +102,7 @@ def test_build_from_multiple_links_empty_links_fallback(parser) -> None:
 # _build_without_links  (line 101 – single part)
 # ---------------------------------------------------------------------------
 
+
 def test_build_without_links_single_part(parser) -> None:
     result = CircuitEntityParser._build_without_links(["Monza"])
     assert result == "Monza"
@@ -116,6 +121,7 @@ def test_build_without_links_empty(parser) -> None:
 # ---------------------------------------------------------------------------
 # _build_from_single_link  (lines 109-115)
 # ---------------------------------------------------------------------------
+
 
 def test_build_from_single_link_single_part_with_url(parser) -> None:
     link = {"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"}
@@ -149,6 +155,7 @@ def test_build_from_single_link_invalid_link_no_parts(parser) -> None:
 # parse_linked_entity  (integration)
 # ---------------------------------------------------------------------------
 
+
 def test_parse_linked_entity_none(parser) -> None:
     assert parser.parse_linked_entity(None) is None
 
@@ -172,6 +179,7 @@ def test_parse_linked_entity_with_link(parser) -> None:
 # ---------------------------------------------------------------------------
 # _parse_website
 # ---------------------------------------------------------------------------
+
 
 def test_parse_website_none(parser) -> None:
     assert CircuitEntityParser._parse_website(None) is None

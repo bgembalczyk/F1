@@ -30,7 +30,9 @@ class TestSubSectionParserApplyForElements:
 
     def test_applies_table_parser_for_non_matching_table_dict(self):
         # Table dict that does NOT match the tyre parser → parse returns None → unchanged
-        elements = [{"kind": "table", "data": {"headers": ["Col1", "Col2"], "rows": []}}]
+        elements = [
+            {"kind": "table", "data": {"headers": ["Col1", "Col2"], "rows": []}},
+        ]
         original_data = elements[0]["data"]
         self.parser._apply_for_elements(elements)
         assert elements[0]["data"] is original_data
@@ -60,7 +62,7 @@ class TestSubSectionParserApplyTableParser:
         payload = {
             "sub_sub_sections": [
                 {"elements": [], "sub_sub_sections": []},
-            ]
+            ],
         }
         self.parser._apply_table_parser(payload)
 
@@ -72,8 +74,8 @@ class TestSubSectionParserApplyTableParser:
                     "sub_sub_sections": [
                         {"elements": [{"kind": "table", "data": None}]},
                     ],
-                }
-            ]
+                },
+            ],
         }
         self.parser._apply_table_parser(payload)
 
@@ -82,7 +84,7 @@ class TestSubSectionParserApplyTableParser:
         payload = {
             "sub_sub_sections": [
                 {"elements": [element]},
-            ]
+            ],
         }
         self.parser._apply_table_parser(payload)
         assert "data" in element

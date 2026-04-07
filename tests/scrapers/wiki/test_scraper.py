@@ -1,20 +1,26 @@
 # ruff: noqa: E501, PLR2004
 """Tests for WikiScraper covering lines 97-99, 113-127."""
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 
 from scrapers.wiki.scraper import WikiScraper
 
 
-def _make_minimal_soup(*, with_header: bool = False, with_body: bool = False) -> BeautifulSoup:
-    parts = ['<html><body>']
+def _make_minimal_soup(
+    *,
+    with_header: bool = False,
+    with_body: bool = False,
+) -> BeautifulSoup:
+    parts = ["<html><body>"]
     if with_header:
-        parts.append('<header class="mw-body-header vector-page-titlebar no-font-mode-scale"><h1>Test Title</h1></header>')
+        parts.append(
+            '<header class="mw-body-header vector-page-titlebar no-font-mode-scale"><h1>Test Title</h1></header>',
+        )
     if with_body:
         parts.append('<div id="bodyContent"><p>body text</p></div>')
-    parts.append('</body></html>')
+    parts.append("</body></html>")
     return BeautifulSoup("".join(parts), "html.parser")
 
 
@@ -27,7 +33,11 @@ class TestWikiScraperScrape:
 
     def test_scrape_returns_first_record_when_fetch_succeeds(self):
         scraper = WikiScraper()
-        expected = {"url": "https://en.wikipedia.org/wiki/Test", "header": None, "body_content": None}
+        expected = {
+            "url": "https://en.wikipedia.org/wiki/Test",
+            "header": None,
+            "body_content": None,
+        }
         with patch.object(scraper, "fetch", return_value=[expected]):
             result = scraper.scrape("https://en.wikipedia.org/wiki/Test")
         assert result == expected

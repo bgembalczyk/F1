@@ -18,7 +18,7 @@ def _rules_stub() -> SimpleNamespace:
         DOMAINS=("drivers", "seasons"),
         ENTRYPOINT_DOMAINS=("drivers",),
         REQUIRED_LAYERS_BY_DOMAIN={"drivers": ("sections", "app")},
-        FORBIDDEN_IMPORTS_BY_LAYER={"sections": ("app",), "app": tuple()},
+        FORBIDDEN_IMPORTS_BY_LAYER={"sections": ("app",), "app": ()},
         infer_layer=lambda path, domain=None: "sections"
         if "sections" in path.parts
         else "app",

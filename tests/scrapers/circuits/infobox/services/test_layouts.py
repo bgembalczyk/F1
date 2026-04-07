@@ -3,10 +3,10 @@ from typing import Any
 from unittest.mock import MagicMock
 
 import pytest
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
-from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
 from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
@@ -33,6 +33,7 @@ def parser() -> CircuitLayoutsParser:
 # _is_layout_header  (lines 66-67 area)
 # ---------------------------------------------------------------------------
 
+
 def test_is_layout_header_true() -> None:
     html = '<th class="infobox-header" colspan="2">Layout 1</th>'
     tag = BeautifulSoup(html, "html.parser").find("th")
@@ -54,6 +55,7 @@ def test_is_layout_header_no_class() -> None:
 # ---------------------------------------------------------------------------
 # _apply_layout_field  (lines 66-81)
 # ---------------------------------------------------------------------------
+
 
 def test_apply_layout_field_length(parser) -> None:
     current: dict[str, Any] = {}
@@ -103,6 +105,7 @@ def test_apply_layout_field_unknown_label(parser) -> None:
 # parse_layout_sections  (line 96 – table is None)
 # ---------------------------------------------------------------------------
 
+
 def test_parse_layout_sections_no_table(parser) -> None:
     parser.infobox_scraper.parser.find_infobox.return_value = None
     soup = BeautifulSoup("<html></html>", "html.parser")
@@ -113,8 +116,9 @@ def test_parse_layout_sections_no_table(parser) -> None:
 # _parse_layout_header  (line 119, 134)
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
-    "text, expected_name, expected_years",
+    ("text", "expected_name", "expected_years"),
     [
         ("Layout A (1990–2005)", "Layout A", "1990–2005"),
         ("Layout B", "Layout B", None),

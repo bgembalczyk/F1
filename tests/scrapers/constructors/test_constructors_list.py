@@ -2,11 +2,9 @@
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.constructors.constructors_list import (
-    ConstructorsListScraper,
-    _PrivateerTeamsListParser,
-    _PrivateerTeamsSectionParser,
-)
+from scrapers.constructors.constructors_list import ConstructorsListScraper
+from scrapers.constructors.constructors_list import _PrivateerTeamsListParser
+from scrapers.constructors.constructors_list import _PrivateerTeamsSectionParser
 
 
 def _li(html: str) -> Tag:
@@ -35,12 +33,17 @@ class TestPrivateerTeamsListParser:
         assert result is None
 
     def test_parse_item_returns_none_for_empty_team_name(self) -> None:
-        li = BeautifulSoup('<li><a href="/wiki/Team"></a></li>', "html.parser").find("li")
+        li = BeautifulSoup('<li><a href="/wiki/Team"></a></li>', "html.parser").find(
+            "li",
+        )
         result = _PrivateerTeamsListParser._parse_item(li)
         assert result is None
 
     def test_parse_item_includes_href_as_team_url(self) -> None:
-        li = BeautifulSoup('<li><a href="/wiki/Ferrari">Ferrari</a></li>', "html.parser").find("li")
+        li = BeautifulSoup(
+            '<li><a href="/wiki/Ferrari">Ferrari</a></li>',
+            "html.parser",
+        ).find("li")
         result = _PrivateerTeamsListParser._parse_item(li)
         assert result is not None
         assert result["team_url"] == "/wiki/Ferrari"
@@ -130,6 +133,9 @@ class TestConstructorsListScraperInit:
         from pathlib import Path
 
         path = Path("/output/results.json")
-        result = ConstructorsListScraper._split_export_path(path, "current_constructors")
+        result = ConstructorsListScraper._split_export_path(
+            path,
+            "current_constructors",
+        )
         assert result.name == "results_current_constructors.json"
         assert result.parent == path.parent

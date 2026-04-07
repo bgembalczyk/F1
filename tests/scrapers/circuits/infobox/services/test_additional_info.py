@@ -1,7 +1,9 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.circuits.infobox.services.additional_info import (
+    CircuitAdditionalInfoParser,
+)
 
 
 @pytest.fixture()
@@ -12,6 +14,7 @@ def parser() -> CircuitAdditionalInfoParser:
 # ---------------------------------------------------------------------------
 # collect_additional_info  (lines 28, 35-42, 45)
 # ---------------------------------------------------------------------------
+
 
 def test_collect_additional_info_skips_used_keys(parser) -> None:
     rows = {
@@ -56,7 +59,14 @@ def test_collect_additional_info_multiple_parts_with_link(parser) -> None:
     entry = result["sponsors"]
     assert "values" in entry
     # Alpha should be a dict with url
-    alpha = next((v for v in entry["values"] if isinstance(v, dict) and v.get("text") == "Alpha"), None)
+    alpha = next(
+        (
+            v
+            for v in entry["values"]
+            if isinstance(v, dict) and v.get("text") == "Alpha"
+        ),
+        None,
+    )
     assert alpha is not None
     assert alpha["url"] == "https://en.wikipedia.org/wiki/Alpha"
 

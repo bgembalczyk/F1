@@ -1,6 +1,7 @@
 # ruff: noqa: E501, PLR2004, SLF001
 from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
-from scrapers.drivers.list_scraper import DriversListSectionParser, DriversListTableParser
+from scrapers.drivers.list_scraper import DriversListSectionParser
+from scrapers.drivers.list_scraper import DriversListTableParser
 
 
 def test_drivers_list_table_parser_matches_when_all_required_headers_present() -> None:
@@ -15,7 +16,7 @@ def test_drivers_list_table_parser_does_not_match_with_missing_headers() -> None
 
 def test_drivers_list_table_parser_matches_with_extra_headers() -> None:
     parser = DriversListTableParser()
-    headers = list(DRIVERS_LIST_HEADERS) + ["Extra column"]
+    headers = [*list(DRIVERS_LIST_HEADERS), "Extra column"]
     assert parser.matches(headers, {}) is True
 
 
@@ -82,7 +83,10 @@ def test_drivers_list_section_parser_apply_recurses() -> None:
             {
                 "elements": [{"kind": "table", "data": {"id": "top"}}],
                 "sub_sections": [
-                    {"elements": [{"kind": "table", "data": {"id": "inner"}}], "sub_sections": []},
+                    {
+                        "elements": [{"kind": "table", "data": {"id": "inner"}}],
+                        "sub_sections": [],
+                    },
                 ],
             },
         ],
@@ -96,4 +100,6 @@ def test_drivers_list_section_parser_apply_recurses() -> None:
     parser._apply_drivers_table_parser(payload)
 
     assert payload["sub_sections"][0]["elements"][0]["data"] == {"mapped": "top"}
-    assert payload["sub_sections"][0]["sub_sections"][0]["elements"][0]["data"] == {"mapped": "inner"}
+    assert payload["sub_sections"][0]["sub_sections"][0]["elements"][0]["data"] == {
+        "mapped": "inner",
+    }

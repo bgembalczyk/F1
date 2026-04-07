@@ -1,5 +1,4 @@
 # ruff: noqa: E501, PLR2004
-import pytest
 
 from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.html_fetcher import HtmlFetcher

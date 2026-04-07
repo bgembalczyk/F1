@@ -1,5 +1,6 @@
 # ruff: noqa: E501, PLR2004
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
+from unittest.mock import patch
 
 import pytest
 
@@ -42,8 +43,12 @@ def test_export_complete_constructors_calls_fetch_and_export() -> None:
 
     with (
         patch("scrapers.constructors.helpers.export.init_scraper_options") as mock_opts,
-        patch("scrapers.constructors.helpers.export.CompleteConstructorsDataExtractor") as mock_cls,
-        patch("scrapers.constructors.helpers.export.export_grouped_json") as mock_export,
+        patch(
+            "scrapers.constructors.helpers.export.CompleteConstructorsDataExtractor",
+        ) as mock_cls,
+        patch(
+            "scrapers.constructors.helpers.export.export_grouped_json",
+        ) as mock_export,
     ):
         mock_scraper = MagicMock()
         mock_scraper.fetch.return_value = [{"constructor": {"text": "Ferrari"}}]

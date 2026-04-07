@@ -1,15 +1,14 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.seasons.parsers.constants import (
-    ENGINE_V10_END_YEAR,
-    ENGINE_V10_START_YEAR,
-    ENGINE_V8_YEAR,
-    PRE_2007_NORMALIZATION_CUTOFF,
-    TESTING_VENUES_SWAPPED_COLUMNS_YEAR,
-    TESTING_VENUES_YEARS,
-)
-from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy, TestingVenuesLayout
+from scrapers.seasons.parsers.constants import ENGINE_V8_YEAR
+from scrapers.seasons.parsers.constants import ENGINE_V10_END_YEAR
+from scrapers.seasons.parsers.constants import ENGINE_V10_START_YEAR
+from scrapers.seasons.parsers.constants import PRE_2007_NORMALIZATION_CUTOFF
+from scrapers.seasons.parsers.constants import TESTING_VENUES_SWAPPED_COLUMNS_YEAR
+from scrapers.seasons.parsers.constants import TESTING_VENUES_YEARS
+from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
+from scrapers.seasons.services.domain_parsing_policy import TestingVenuesLayout
 
 
 @pytest.fixture()
@@ -46,8 +45,12 @@ def test_resolve_engine_config_none_for_none(policy: DomainParsingPolicy) -> Non
     assert policy.resolve_engine_config(None) is None
 
 
-def test_should_normalize_entry_numbers_before_cutoff(policy: DomainParsingPolicy) -> None:
-    assert policy.should_normalize_entry_numbers(PRE_2007_NORMALIZATION_CUTOFF - 1) is True
+def test_should_normalize_entry_numbers_before_cutoff(
+    policy: DomainParsingPolicy,
+) -> None:
+    assert (
+        policy.should_normalize_entry_numbers(PRE_2007_NORMALIZATION_CUTOFF - 1) is True
+    )
 
 
 def test_should_normalize_entry_numbers_at_cutoff(policy: DomainParsingPolicy) -> None:
@@ -58,17 +61,23 @@ def test_should_normalize_entry_numbers_none(policy: DomainParsingPolicy) -> Non
     assert policy.should_normalize_entry_numbers(None) is False
 
 
-def test_resolve_testing_venues_layout_returns_none_for_unsupported_year(policy: DomainParsingPolicy) -> None:
+def test_resolve_testing_venues_layout_returns_none_for_unsupported_year(
+    policy: DomainParsingPolicy,
+) -> None:
     assert policy.resolve_testing_venues_layout(2023) is None
     assert policy.resolve_testing_venues_layout(None) is None
 
 
-def test_resolve_testing_venues_layout_swapped_for_2011(policy: DomainParsingPolicy) -> None:
+def test_resolve_testing_venues_layout_swapped_for_2011(
+    policy: DomainParsingPolicy,
+) -> None:
     result = policy.resolve_testing_venues_layout(TESTING_VENUES_SWAPPED_COLUMNS_YEAR)
     assert result is TestingVenuesLayout.SWAPPED_CIRCUIT_EVENT
 
 
-def test_resolve_testing_venues_layout_standard_for_other_testing_years(policy: DomainParsingPolicy) -> None:
+def test_resolve_testing_venues_layout_standard_for_other_testing_years(
+    policy: DomainParsingPolicy,
+) -> None:
     standard_years = TESTING_VENUES_YEARS - {TESTING_VENUES_SWAPPED_COLUMNS_YEAR}
     for year in standard_years:
         result = policy.resolve_testing_venues_layout(year)

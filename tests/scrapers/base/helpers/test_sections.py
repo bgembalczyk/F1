@@ -1,7 +1,9 @@
 # ruff: noqa: E501, PLR2004
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.sections import get_category_texts, has_category_keyword, has_navbox_template_link
+from scrapers.base.helpers.sections import get_category_texts
+from scrapers.base.helpers.sections import has_category_keyword
+from scrapers.base.helpers.sections import has_navbox_template_link
 
 
 def _soup_with_catlinks(links: list[str]) -> BeautifulSoup:
@@ -38,11 +40,11 @@ def test_has_category_keyword_false_when_no_match() -> None:
 
 
 def _soup_with_navbox(href_fragment: str) -> BeautifulSoup:
-    html = f'''
+    html = f"""
     <table class="navbox-inner">
         <tr><td><a href="/wiki/{href_fragment}">Link</a></td></tr>
     </table>
-    '''
+    """
     return BeautifulSoup(html, "html.parser")
 
 
