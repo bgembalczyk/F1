@@ -1,6 +1,13 @@
 from __future__ import annotations
 
 import json
+from typing import TYPE_CHECKING
+from typing import Any
+from typing import Protocol
+from typing import TypeVar
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 from layers.zero.merge_types import DriverSeriesStats
 
@@ -77,10 +84,9 @@ class MergeModel(Protocol):
     def dedupe_key(self) -> str | None: ...
     def to_dict(self) -> dict[str, Any]: ...
 
-
 T = TypeVar("T", bound=MergeModel)
 
-
+# ruff: noqa: C901
 def merge_duplicate_records(
     records: list[object],
     model_cls: type[T],
