@@ -3,7 +3,6 @@
 
 from scrapers.wiki.parsers.sections.adapter import _extract_sections
 from scrapers.wiki.parsers.sections.adapter import _iter_sections
-from scrapers.wiki.parsers.sections.adapter import _profile_score
 from scrapers.wiki.parsers.sections.adapter import collect_section_elements
 from scrapers.wiki.parsers.sections.adapter import find_section_tree
 
@@ -75,56 +74,6 @@ class TestIterSections:
 
     def test_handles_empty_list(self):
         assert list(_iter_sections([])) == []
-
-
-class TestProfileScore:
-    def test_none_profile_exact_id(self):
-        score = _profile_score(None, exact_id=True)
-        assert score == 3.0
-
-    def test_none_profile_exact_text(self):
-        score = _profile_score(None, exact_text=True)
-        assert score == 2.0
-
-    def test_none_profile_default(self):
-        score = _profile_score(None)
-        assert score == 1.0
-
-    def test_with_profile_exact_id(self):
-        class FakePriorities:
-            exact_id_score = 5.0
-            exact_text_score = 4.0
-            fuzzy_base_score = 2.0
-
-        class FakeProfile:
-            priorities = FakePriorities()
-
-        score = _profile_score(FakeProfile(), exact_id=True)
-        assert score == 5.0
-
-    def test_with_profile_exact_text(self):
-        class FakePriorities:
-            exact_id_score = 5.0
-            exact_text_score = 4.0
-            fuzzy_base_score = 2.0
-
-        class FakeProfile:
-            priorities = FakePriorities()
-
-        score = _profile_score(FakeProfile(), exact_text=True)
-        assert score == 4.0
-
-    def test_with_profile_fuzzy(self):
-        class FakePriorities:
-            exact_id_score = 5.0
-            exact_text_score = 4.0
-            fuzzy_base_score = 2.0
-
-        class FakeProfile:
-            priorities = FakePriorities()
-
-        score = _profile_score(FakeProfile())
-        assert score == 2.0
 
 
 class TestFindSectionTree:
