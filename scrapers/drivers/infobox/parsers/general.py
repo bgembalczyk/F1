@@ -11,6 +11,8 @@ from scrapers.base.infobox.schema import InfoboxSchema
 from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
+RELATIONS_PARENTHETICAL_PATTERN = re.compile(r"\s*\(([^)]+)\)")
+
 
 class InfoboxGeneralParser:
     def __init__(
@@ -211,11 +213,19 @@ class InfoboxGeneralParser:
         links = self._link_extractor.extract_links(cell)
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         entries: list[dict[str, Any]] = []
+        matches = list(RELATIONS_PARENTHETICAL_PATTERN.finditer(text))
+
         for link in links:
             relation = None
-            pattern = rf"{re.escape(link.get('text') or '')}\s*\(([^)]+)\)"
-            match = re.search(pattern, text)
-            if match:
-                relation = match.group(1).strip()
+            t = link.get("text") or ""
+            if t:
+                for match in matches:
+                    start_idx = match.start()
+                    if start_idx >= len(t):
+                        if text[start_idx - len(t) : start_idx] == t:
+                            relation = match.group(1).strip()
+                            break
+            elif matches:
+                relation = matches[0].group(1).strip()
             entries.append({"person": link, "relation": relation})
         return entries
