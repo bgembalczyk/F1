@@ -1,6 +1,7 @@
 from typing import Any
 from typing import Protocol
 
+
 """Mixin for applying table parser to generic structured elements."""
 
 from typing import Any
