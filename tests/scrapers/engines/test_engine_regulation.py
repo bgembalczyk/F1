@@ -1,6 +1,8 @@
 # ruff: noqa: SLF001
 
-from scrapers.engines.engine_regulation import EngineRegulationSubSectionParser
+import pytest
+
+from scrapers.engines.engine_regulation import EngineRegulationSubSectionParser, EngineRegulationTableParser
 
 
 def test_engine_regulation_apply_for_elements_covers_all_guards() -> None:
@@ -49,3 +51,36 @@ def test_engine_regulation_apply_parser_recurses_nested_sections() -> None:
     inner = payload["sub_sub_sections"][0]["sub_sub_sections"][0]["elements"][0]["data"]
     assert top == {"mapped": "top"}
     assert inner == {"mapped": "inner"}
+
+
+def test_engine_regulation_table_parser_matches_required_headers() -> None:
+    parser = EngineRegulationTableParser()
+    assert parser.matches(["Years", "Operating principle", "Configuration"], {}) is True
+
+
+def test_engine_regulation_table_parser_does_not_match_missing_headers() -> None:
+    parser = EngineRegulationTableParser()
+    assert parser.matches(["Years", "Operating principle"], {}) is False
+    assert parser.matches([], {}) is False
+
+
+def test_engine_regulation_sub_section_parse_group_applies_parser() -> None:
+    parser = EngineRegulationSubSectionParser()
+
+    class _Stub:
+        def parse(self, data):
+            if data.get("match"):
+                return {"table_type": "engine_regulation_progression"}
+            return None
+
+    parser._table_parser = _Stub()
+    payload = {
+        "sub_sub_sections": [
+            {
+                "elements": [{"kind": "table", "data": {"match": True}}],
+                "sub_sub_sections": [],
+            },
+        ],
+    }
+    result = parser.parse_group(list(payload["sub_sub_sections"]), context=None)
+    assert isinstance(result, dict)

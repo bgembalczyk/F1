@@ -87,3 +87,141 @@ def test_common_value_objects_normalize_input_values() -> None:
 def test_season_year_rejects_out_of_range_values() -> None:
     with pytest.raises(ValueError, match="SeasonYear out of supported range"):
         SeasonYear(1500)
+
+
+# DriversChampionships - _normalize_count errors
+def test_drivers_championships_count_rejects_non_numeric() -> None:
+    with pytest.raises(ValueError, match="Pole count musi być liczbą całkowitą"):
+        DriversChampionships(count="abc")  # type: ignore[arg-type]
+
+
+def test_drivers_championships_count_rejects_negative() -> None:
+    with pytest.raises(ValueError, match="nie może być ujemne"):
+        DriversChampionships(count=-1)
+
+
+# DriversChampionships - _normalize_seasons duplicate year
+def test_drivers_championships_rejects_duplicate_season_year() -> None:
+    with pytest.raises(ValueError, match="więcej niż raz"):
+        DriversChampionships(
+            count=2,
+            seasons=[SeasonRef(year=2005), SeasonRef(year=2005)],
+        )
+
+
+# DriversChampionships - from_value paths
+def test_drivers_championships_from_value_returns_same_instance() -> None:
+    dc = DriversChampionships(count=0)
+    assert DriversChampionships.from_value(dc) is dc
+
+
+def test_drivers_championships_from_value_returns_empty_for_none() -> None:
+    result = DriversChampionships.from_value(None)
+    assert result.count == 0
+    assert result.seasons == []
+
+
+def test_drivers_championships_from_value_raises_for_unsupported_type() -> None:
+    with pytest.raises(TypeError, match="Nieobsługiwany typ"):
+        DriversChampionships.from_value(42)  # type: ignore[arg-type]
+
+
+def test_drivers_championships_from_value_parses_mapping() -> None:
+    result = DriversChampionships.from_value(
+        {"count": 2, "seasons": [{"year": 2005}, {"year": 2006}]}
+    )
+    assert result.count == 2
+    assert len(result.seasons) == 2
+
+
+# DriversChampionships - to_dict
+def test_drivers_championships_to_dict_empty() -> None:
+    result = DriversChampionships(count=0).to_dict()
+    assert result == {"count": 0, "seasons": []}
+
+
+# NormalizedDate - from_value paths
+def test_normalized_date_from_value_returns_none_for_none() -> None:
+    assert NormalizedDate.from_value(None) is None
+
+
+def test_normalized_date_from_value_returns_same_instance() -> None:
+    nd = NormalizedDate(text="test")
+    assert NormalizedDate.from_value(nd) is nd
+
+
+def test_normalized_date_from_value_from_mapping() -> None:
+    result = NormalizedDate.from_value({"text": "Monaco", "iso": "2024-05-26"})
+    assert result.text == "Monaco"
+    assert result.iso == "2024-05-26"
+
+
+def test_normalized_date_from_value_from_string() -> None:
+    result = NormalizedDate.from_value("2024-05-26")
+    assert result.text == "2024-05-26"
+    assert result.iso is None
+
+
+def test_normalized_date_from_value_from_other_type() -> None:
+    result = NormalizedDate.from_value(2024)
+    assert result.text == "2024"
+    assert result.iso is None
+
+
+# Rounds - various paths
+def test_rounds_rejects_non_integer_value() -> None:
+    with pytest.raises(ValueError, match="liczbami całkowitymi"):
+        Rounds(("abc",))  # type: ignore[arg-type]
+
+
+def test_rounds_rejects_zero_value() -> None:
+    with pytest.raises(ValueError, match="dodatnie"):
+        Rounds((0,))
+
+
+def test_rounds_rejects_negative_value() -> None:
+    with pytest.raises(ValueError, match="dodatnie"):
+        Rounds((-1,))
+
+
+def test_rounds_bool_true_when_non_empty() -> None:
+    assert bool(Rounds((1, 2))) is True
+
+
+def test_rounds_bool_false_when_empty() -> None:
+    assert bool(Rounds(())) is False
+
+
+def test_rounds_iter() -> None:
+    assert list(Rounds((3, 1, 2))) == [1, 2, 3]
+
+
+def test_rounds_len() -> None:
+    assert len(Rounds((1, 2, 3))) == 3
+
+
+def test_rounds_getitem() -> None:
+    r = Rounds((3, 1, 2))
+    assert r[0] == 1
+
+
+def test_rounds_eq_with_list() -> None:
+    assert Rounds((1, 2, 3)) == [1, 2, 3]
+
+
+def test_rounds_eq_with_tuple() -> None:
+    assert Rounds((1, 2, 3)) == (1, 2, 3)
+
+
+def test_rounds_eq_with_other_rounds() -> None:
+    assert Rounds((1, 2)) == Rounds((2, 1))
+
+
+def test_rounds_eq_returns_not_implemented_for_unknown_type() -> None:
+    result = Rounds((1,)).__eq__("not a rounds")
+    assert result is NotImplemented
+
+
+def test_rounds_hash_is_consistent() -> None:
+    r = Rounds((1, 2, 3))
+    assert hash(r) == hash(r)
