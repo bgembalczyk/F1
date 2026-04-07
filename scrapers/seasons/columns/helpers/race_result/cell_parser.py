@@ -1,3 +1,4 @@
+import copy
 import re
 from typing import Any
 
@@ -63,14 +64,15 @@ class RaceResultCellParser:
         ]
 
     @staticmethod
-    def _prepare_cell_fragment(cell: Any) -> BeautifulSoup:
-        fragment = BeautifulSoup(str(cell), "html.parser")
-        for span in fragment.find_all("span", style=True):
-            style = "".join(span.get("style", "").split())
-            if "position:absolute" in style:
-                span.decompose()
-        for sup in fragment.find_all("sup"):
-            sup.decompose()
+    def _prepare_cell_fragment(cell: Any) -> Any:
+        fragment = copy.deepcopy(cell)
+        for element in fragment.find_all(["span", "sup"]):
+            if element.name == "sup":
+                element.decompose()
+            elif element.name == "span":
+                style = "".join(element.get("style", "").split())
+                if "position:absolute" in style:
+                    element.decompose()
         return fragment
 
     @staticmethod
