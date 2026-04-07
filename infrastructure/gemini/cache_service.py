@@ -1,5 +1,4 @@
 import warnings
-from typing import Any
 
 from infrastructure.gemini.cache import GeminiCache
 
@@ -15,8 +14,5 @@ class GeminiCacheService:
         )
         self.cache = cache
 
-    def get(self, question: str, model: str) -> dict[str, Any] | None:
-        return self.cache.get(question, model)
-
-    def set(self, question: str, model: str, response: dict[str, Any]) -> None:
-        self.cache.set(question, model, response)
+    def __getattr__(self, name: str) -> object:
+        return getattr(self.cache, name)
