@@ -249,7 +249,7 @@ class LayerOneExecutor:
             output_paths.append(
                 str(base_wiki_dir / "engines/complete_engine_manufacturers"),
             )
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001
             self._handle_engine_manufacturers_failure(
                 exc=exc,
                 run_id=run_id,
