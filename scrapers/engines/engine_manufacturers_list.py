@@ -5,6 +5,7 @@ from bs4 import Tag
 
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins import ApplyForElementsMixin
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
@@ -26,7 +27,6 @@ from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
-from scrapers.base.mixins import ApplyForElementsMixin
 
 
 class EngineManufacturersTableParser(WikiTableBaseParser):
@@ -144,7 +144,6 @@ class EngineManufacturersSectionParser(ApplyForElementsMixin, SectionParser):
                 for item in value:
                     if isinstance(item, dict):
                         self._apply_engine_table_parser(item)
-
 
 
 class EngineManufacturersListScraper(F1TableScraper):

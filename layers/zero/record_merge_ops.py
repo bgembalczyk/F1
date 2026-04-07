@@ -65,20 +65,26 @@ def merge_driver_values(existing: object, incoming: object) -> object:
     return existing
 
 
-from typing import TypeVar, Type, Callable, Optional, Protocol, Any
+from collections.abc import Callable
+from typing import Any
+from typing import Protocol
+from typing import TypeVar
+
 
 class MergeModel(Protocol):
     @classmethod
-    def from_object(cls, value: object) -> Optional['MergeModel']: ...
-    def dedupe_key(self) -> Optional[str]: ...
+    def from_object(cls, value: object) -> MergeModel | None: ...
+    def dedupe_key(self) -> str | None: ...
     def to_dict(self) -> dict[str, Any]: ...
 
-T = TypeVar('T', bound=MergeModel)
+
+T = TypeVar("T", bound=MergeModel)
+
 
 def merge_duplicate_records(
     records: list[object],
-    model_cls: Type[T],
-    merge_func: Callable[[object, object], object]
+    model_cls: type[T],
+    merge_func: Callable[[object, object], object],
 ) -> list[object]:
     merged_records: list[object] = []
     key_to_index: dict[str, int] = {}
@@ -99,7 +105,7 @@ def merge_duplicate_records(
             key_to_index[key] = index
             merged_records.append(model.to_dict())
 
-            if hasattr(model, 'aliases'):
+            if hasattr(model, "aliases"):
                 for alias in model.aliases():
                     key_to_index[alias] = index
             continue
@@ -112,7 +118,7 @@ def merge_duplicate_records(
         merged_record = merge_func(existing_model.to_dict(), model.to_dict())
         merged_records[index] = merged_record
 
-        if hasattr(model, 'aliases'):
+        if hasattr(model, "aliases"):
             merged_model = model_cls.from_object(merged_record)
             if merged_model is not None:
                 for alias in merged_model.aliases():
