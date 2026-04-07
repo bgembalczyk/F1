@@ -165,7 +165,7 @@ def test_select_best_field_no_records() -> None:
     assert select_best_field_with_url([], "driver") is None
 
 
-def test_select_best_field_single(parser=None) -> None:
+def test_select_best_field_single() -> None:
     records = [{"driver": {"text": "Hamilton", "url": None}}]
     result = select_best_field_with_url(records, "driver")
     assert result == {"text": "Hamilton", "url": None}

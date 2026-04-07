@@ -8,7 +8,7 @@ from scrapers.base.logging import configure_logging
 from scrapers.base.logging import get_logger
 
 
-def test_json_lines_formatter_produces_valid_json(tmp_path) -> None:
+def test_json_lines_formatter_produces_valid_json() -> None:
     # Lines 28-40: JsonLinesFormatter.format
     formatter = JsonLinesFormatter()
     record = logging.LogRecord(
