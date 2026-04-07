@@ -311,7 +311,7 @@ def test_terminology_main_no_files(
 def test_terminology_main_with_errors(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
-    capsys: pytest.CaptureFixture[str],
+    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     f = tmp_path / "x.py"
     f.write_text("v = 'grand-prix'\n", encoding="utf-8")
@@ -574,7 +574,7 @@ def test_scan_file_any_violation(tmp_path: Path) -> None:
 
 
 def test_new_python_files_git_error(monkeypatch: pytest.MonkeyPatch) -> None:
-    def mock_git(*args: str) -> str:
+    def mock_git(*_args: str) -> str:
         raise subprocess.CalledProcessError(1, "git")
 
     monkeypatch.setattr(any_policy, "_git", mock_git)
@@ -583,7 +583,7 @@ def test_new_python_files_git_error(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 def test_new_python_files_filters_exceptions(monkeypatch: pytest.MonkeyPatch) -> None:
-    def mock_git(*args: str) -> str:
+    def mock_git(*_args: str) -> str:
         return "layers/application.py\nlayers/new_module.py\n"
 
     monkeypatch.setattr(any_policy, "_git", mock_git)
@@ -595,7 +595,7 @@ def test_new_python_files_filters_exceptions(monkeypatch: pytest.MonkeyPatch) ->
 def test_new_python_files_filters_non_rollout_prefix(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    def mock_git(*args: str) -> str:
+    def mock_git(*_args: str) -> str:
         return "scripts/something.py\n"
 
     monkeypatch.setattr(any_policy, "_git", mock_git)
@@ -666,7 +666,7 @@ def test_main_check_out_of_date(
 def test_main_check_missing_file(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
-    capsys: pytest.CaptureFixture[str],
+    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     out = tmp_path / "missing.md"
     monkeypatch.setattr(sys, "argv", ["prog", "--output", str(out), "--check"])
@@ -724,7 +724,7 @@ def test_run_mypy_no_match_returns_large_number() -> None:
 
 def test_mypy_main_regression(
     monkeypatch: pytest.MonkeyPatch,
-    capsys: pytest.CaptureFixture[str],
+    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     monkeypatch.setattr(mypy_gate, "_run_mypy", lambda _p: (10, "output"))
     monkeypatch.setattr(mypy_gate, "_git", lambda *_args: None)
@@ -732,7 +732,7 @@ def test_mypy_main_regression(
     run_results = [(2, "base out"), (10, "head out")]
     run_idx = [0]
 
-    def fake_run_mypy(p: Path) -> tuple[int, str]:
+    def fake_run_mypy(_p: Path) -> tuple[int, str]:
         r = run_results[run_idx[0]]
         run_idx[0] += 1
         return r
@@ -762,7 +762,7 @@ def test_mypy_main_regression(
 
 def test_mypy_main_budget_exceeded(
     monkeypatch: pytest.MonkeyPatch,
-    capsys: pytest.CaptureFixture[str],
+    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     run_results = [(2, "base"), (4, "head")]
     run_idx = [0]
@@ -913,7 +913,7 @@ class Builder:
     assert violations == []
 
 
-def test_validate_adr_reference_no_trigger(tmp_path: Path) -> None:
+def test_validate_adr_reference_no_trigger(_tmp_path: Path) -> None:
     violations: list[di.Violation] = []
     result = di._validate_adr_reference_for_major_changes(violations, "", 5)
     assert result == []
@@ -958,7 +958,7 @@ def test_validate_adr_reference_missing() -> None:
 
 def test_di_main_no_violations(
     tmp_path: Path,
-    capsys: pytest.CaptureFixture[str],
+    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     src = tmp_path / "clean.py"
     src.write_text("x = 1\n", encoding="utf-8")
@@ -1053,7 +1053,7 @@ def test_validate_nested_value_not_mapping() -> None:
 
 
 def test_validate_nested_schema_callable() -> None:
-    def validator(record: Any) -> list[str]:
+    def validator(_record: Any) -> list[str]:
         return ["Missing key: x"]
 
     errors = SchemaValidationEngine.validate_nested_schema(

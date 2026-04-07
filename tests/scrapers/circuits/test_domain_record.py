@@ -16,7 +16,7 @@ def service() -> DomainRecordService:
 # ---------------------------------------------------------------------------
 
 
-def test_collect_lap_record_rows_no_tables(service) -> None:
+def test_collect_lap_record_rows_no_tables() -> None:
     # When article_tables_parser returns empty list → empty result
     mock_parser = MagicMock()
     mock_parser.parse.return_value = []
@@ -32,7 +32,7 @@ def test_collect_lap_record_rows_no_tables(service) -> None:
     assert result == []
 
 
-def test_collect_lap_record_rows_table_without_table_key(service) -> None:
+def test_collect_lap_record_rows_table_without_table_key() -> None:
     # table_data missing "_table" key → skipped
     mock_parser = MagicMock()
     mock_parser.parse.return_value = [{"headers": [], "table_type": None}]
@@ -48,7 +48,7 @@ def test_collect_lap_record_rows_table_without_table_key(service) -> None:
     assert result == []
 
 
-def test_collect_lap_record_rows_non_lap_table_skipped(service) -> None:
+def test_collect_lap_record_rows_non_lap_table_skipped() -> None:
     mock_parser = MagicMock()
     mock_table = MagicMock()
     mock_parser.parse.return_value = [
@@ -71,7 +71,7 @@ def test_collect_lap_record_rows_non_lap_table_skipped(service) -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_assemble_record_returns_dict(service) -> None:
+def test_assemble_record_returns_dict() -> None:
     mock_assembler = MagicMock()
     mock_assembler.assemble.return_value = {
         "url": "https://example.com",

@@ -33,7 +33,7 @@ def test_norm_surface_part(surface_part, expected_contains) -> None:
     assert expected_contains in result
 
 
-def test_norm_surface_part_unique(parser) -> None:
+def test_norm_surface_part_unique() -> None:
     # duplicates should not appear
     result = CircuitSpecsParser._norm_surface_part("asphalt and asphalt")
     assert result.count("Asphalt") == 1
@@ -44,21 +44,21 @@ def test_norm_surface_part_unique(parser) -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_parse_surface_none(parser) -> None:
+def test_parse_surface_none() -> None:
     assert CircuitSpecsParser.parse_surface(None) is None
 
 
-def test_parse_surface_empty_text(parser) -> None:
+def test_parse_surface_empty_text() -> None:
     assert CircuitSpecsParser.parse_surface({"text": ""}) is None
 
 
-def test_parse_surface_single(parser) -> None:
+def test_parse_surface_single() -> None:
     result = CircuitSpecsParser.parse_surface({"text": "Asphalt"})
     assert result is not None
     assert "Asphalt" in result["values"]
 
 
-def test_parse_surface_with_and(parser) -> None:
+def test_parse_surface_with_and() -> None:
     # line 64: "and" treated as separator
     result = CircuitSpecsParser.parse_surface({"text": "Asphalt and Concrete"})
     assert result is not None
@@ -66,19 +66,19 @@ def test_parse_surface_with_and(parser) -> None:
     assert "Concrete" in result["values"]
 
 
-def test_parse_surface_with_ampersand(parser) -> None:
+def test_parse_surface_with_ampersand() -> None:
     result = CircuitSpecsParser.parse_surface({"text": "Asphalt & Brick"})
     assert result is not None
     assert "Asphalt" in result["values"]
     assert "Brick" in result["values"]
 
 
-def test_parse_surface_with_slash(parser) -> None:
+def test_parse_surface_with_slash() -> None:
     result = CircuitSpecsParser.parse_surface({"text": "Asphalt/Concrete"})
     assert result is not None
 
 
-def test_parse_surface_with_note(parser) -> None:
+def test_parse_surface_with_note() -> None:
     result = CircuitSpecsParser.parse_surface(
         {"text": "Asphalt (partially repaved 2018)"},
     )
@@ -86,14 +86,14 @@ def test_parse_surface_with_note(parser) -> None:
     assert result.get("note") == "partially repaved 2018"
 
 
-def test_parse_surface_no_known_material(parser) -> None:
+def test_parse_surface_no_known_material() -> None:
     result = CircuitSpecsParser.parse_surface({"text": "Gravel"})
     assert result is not None
     # falls back to raw text
     assert result["values"] == ["Gravel"]
 
 
-def test_parse_surface_only_unknown_stripped(parser) -> None:
+def test_parse_surface_only_unknown_stripped() -> None:
     result = CircuitSpecsParser.parse_surface({"text": "  . "})
     assert result is None
 
@@ -103,34 +103,34 @@ def test_parse_surface_only_unknown_stripped(parser) -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_parse_capacity_none(parser) -> None:
+def test_parse_capacity_none() -> None:
     assert CircuitSpecsParser._parse_capacity(None) is None
 
 
-def test_parse_capacity_empty(parser) -> None:
+def test_parse_capacity_empty() -> None:
     assert CircuitSpecsParser._parse_capacity({"text": ""}) is None
 
 
-def test_parse_capacity_total_only(parser) -> None:
+def test_parse_capacity_total_only() -> None:
     result = CircuitSpecsParser._parse_capacity({"text": "125,000"})
     assert result is not None
     assert result["total"] == 125000
 
 
-def test_parse_capacity_with_seating(parser) -> None:
+def test_parse_capacity_with_seating() -> None:
     result = CircuitSpecsParser._parse_capacity({"text": "125,000 (44,000 seating)"})
     assert result is not None
     assert result["total"] == 125000
     assert result["seating"] == 44000
 
 
-def test_parse_capacity_with_ref(parser) -> None:
+def test_parse_capacity_with_ref() -> None:
     result = CircuitSpecsParser._parse_capacity({"text": "50000[1]"})
     assert result is not None
     assert result["total"] == 50000
 
 
-def test_parse_capacity_no_numbers(parser) -> None:
+def test_parse_capacity_no_numbers() -> None:
     assert CircuitSpecsParser._parse_capacity({"text": "unknown"}) is None
 
 
@@ -197,35 +197,35 @@ def test_parse_construction_cost_no_scale(parser) -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_parse_banking_none(parser) -> None:
+def test_parse_banking_none() -> None:
     assert CircuitSpecsParser.parse_banking(None) is None
 
 
-def test_parse_banking_empty(parser) -> None:
+def test_parse_banking_empty() -> None:
     assert CircuitSpecsParser.parse_banking({"text": ""}) is None
 
 
-def test_parse_banking_degrees(parser) -> None:
+def test_parse_banking_degrees() -> None:
     result = CircuitSpecsParser.parse_banking({"text": "33°"})
     assert result is not None
     assert result["value"] == pytest.approx(33.0)
     assert result["unit"] == "deg"
 
 
-def test_parse_banking_percent(parser) -> None:
+def test_parse_banking_percent() -> None:
     result = CircuitSpecsParser.parse_banking({"text": "12%"})
     assert result is not None
     assert result["value"] == pytest.approx(12.0)
     assert result["unit"] == "percent"
 
 
-def test_parse_banking_with_note(parser) -> None:
+def test_parse_banking_with_note() -> None:
     result = CircuitSpecsParser.parse_banking({"text": "33° (banked turn 1)"})
     assert result is not None
     assert result.get("note") is not None
 
 
-def test_parse_banking_no_value(parser) -> None:
+def test_parse_banking_no_value() -> None:
     result = CircuitSpecsParser.parse_banking({"text": "steeply banked"})
     assert result is not None
     assert "value" not in result

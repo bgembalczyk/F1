@@ -16,7 +16,7 @@ class _ConcreteSectionByIdScraper(SingleWikiArticleSectionByIdBase):
         return {}
 
 
-def _patched_init(self, *args, **kwargs):
+def _patched_init(self, *_args, **kwargs):
     """Replace super().__init__ to avoid HTTP setup."""
     self._kwargs_received = kwargs
 

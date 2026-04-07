@@ -14,19 +14,19 @@ def parser() -> CircuitGeoParser:
 # ---------------------------------------------------------------------------
 
 
-def test_split_plain_segment_basic(parser) -> None:
+def test_split_plain_segment_basic() -> None:
     result = CircuitGeoParser._split_plain_segment("Italy, Rome")
     assert "Italy" in result
     assert "Rome" in result
 
 
-def test_split_plain_segment_stopwords_removed(parser) -> None:
+def test_split_plain_segment_stopwords_removed() -> None:
     result = CircuitGeoParser._split_plain_segment("Italy and France")
     assert "and" not in result
     assert "&" not in result
 
 
-def test_split_plain_segment_empty(parser) -> None:
+def test_split_plain_segment_empty() -> None:
     assert CircuitGeoParser._split_plain_segment("") == []
 
 
@@ -130,35 +130,35 @@ def test_parse_position_payload_no_coords() -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_parse_area_none(parser) -> None:
+def test_parse_area_none() -> None:
     assert CircuitGeoParser._parse_area(None) is None
 
 
-def test_parse_area_empty_text(parser) -> None:
+def test_parse_area_empty_text() -> None:
     assert CircuitGeoParser._parse_area({"text": ""}) is None
 
 
-def test_parse_area_acres_and_ha(parser) -> None:
+def test_parse_area_acres_and_ha() -> None:
     result = CircuitGeoParser._parse_area({"text": "277 acres (112 ha)"})
     assert result is not None
     assert result["acres"] == pytest.approx(277.0)
     assert result["hectares"] == pytest.approx(112.0)
 
 
-def test_parse_area_only_ha(parser) -> None:
+def test_parse_area_only_ha() -> None:
     result = CircuitGeoParser._parse_area({"text": "112 ha"})
     assert result is not None
     assert result["hectares"] == pytest.approx(112.0)
     assert "acres" not in result
 
 
-def test_parse_area_only_acres(parser) -> None:
+def test_parse_area_only_acres() -> None:
     result = CircuitGeoParser._parse_area({"text": "277 acres"})
     assert result is not None
     assert result["acres"] == pytest.approx(277.0)
 
 
-def test_parse_area_no_units_returns_none(parser) -> None:
+def test_parse_area_no_units_returns_none() -> None:
     assert CircuitGeoParser._parse_area({"text": "no area here"}) is None
 
 
