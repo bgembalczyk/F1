@@ -1,3 +1,4 @@
+import copy
 import re
 from typing import Any
 
@@ -79,6 +80,18 @@ class RaceResultCellParser:
         return [
             self._parse_result_part(part) for part in self._split_result_parts(text)
         ]
+
+    @staticmethod
+    def _prepare_cell_fragment(cell: Any) -> Any:
+        fragment = copy.deepcopy(cell)
+        for element in fragment.find_all(["span", "sup"]):
+            if element.name == "sup":
+                element.decompose()
+            elif element.name == "span":
+                style = "".join(element.get("style", "").split())
+                if "position:absolute" in style:
+                    element.decompose()
+        return fragment
 
     @staticmethod
     def _empty_superscript_result() -> SuperscriptParseResult:
