@@ -1,7 +1,10 @@
-from typing import Any, Protocol
+from typing import Any
+from typing import Protocol
+
 
 class SupportsTableParser(Protocol):
     _table_parser: Any
+
 
 class ApplyForElementsMixin(SupportsTableParser):
     def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
