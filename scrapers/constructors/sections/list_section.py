@@ -7,8 +7,8 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from models.value_objects import EntityName
-from models.value_objects import SectionId
+from models.value_objects.common_terms import EntityName
+from models.value_objects.common_terms import SectionId
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.parser import HtmlTableParser

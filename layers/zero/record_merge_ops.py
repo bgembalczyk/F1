@@ -1,8 +1,18 @@
 from __future__ import annotations
 
 import json
+from typing import TYPE_CHECKING
+from typing import Any
+from typing import Protocol
+from typing import TypeVar
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 from layers.zero.merge_types import DriverSeriesStats
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 def merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
@@ -65,20 +75,77 @@ def merge_driver_values(existing: object, incoming: object) -> object:
     return existing
 
 
-from typing import TypeVar, Type, Callable, Optional, Protocol, Any
+from collections.abc import Callable
+
 
 class MergeModel(Protocol):
     @classmethod
-    def from_object(cls, value: object) -> Optional['MergeModel']: ...
-    def dedupe_key(self) -> Optional[str]: ...
+    def from_object(cls, value: object) -> MergeModel | None: ...
+    def dedupe_key(self) -> str | None: ...
     def to_dict(self) -> dict[str, Any]: ...
 
-T = TypeVar('T', bound=MergeModel)
 
+T = TypeVar("T", bound=MergeModel)
+
+
+def _process_new_model(
+    model: MergeModel,
+    merged_records: list[object],
+    key_to_index: dict[str, int],
+    key: str,
+) -> None:
+    index = len(merged_records)
+    key_to_index[key] = index
+    merged_records.append(model.to_dict())
+    if hasattr(model, "aliases"):
+        for alias in model.aliases():
+            key_to_index[alias] = index
+
+
+def _process_existing_model(
+    model: MergeModel,
+    existing: object,
+    merged_records: list[object],
+    key_to_index: dict[str, int],
+    index: int,
+    model_cls: type[T],
+    merge_func: Callable[[object, object], object],
+) -> None:
+    existing_model = model_cls.from_object(existing)
+    if existing_model is None:
+        return
+    merged_record = merge_func(existing_model.to_dict(), model.to_dict())
+    merged_records[index] = merged_record
+    if hasattr(model, "aliases"):
+        merged_model = model_cls.from_object(merged_record)
+        if merged_model is not None:
+            for alias in merged_model.aliases():
+                key_to_index[alias] = index
+
+
+T = TypeVar("T", bound=MergeModel)
+
+
+def _handle_new_record(
+    model: MergeModel,
+    merged_records: list[object],
+    key_to_index: dict[str, int],
+    key: str,
+) -> None:
+    index = len(merged_records)
+    key_to_index[key] = index
+    merged_records.append(model.to_dict())
+
+    if hasattr(model, "aliases"):
+        for alias in model.aliases():
+            key_to_index[alias] = index
+
+
+# ruff: noqa: C901
 def merge_duplicate_records(
     records: list[object],
-    model_cls: Type[T],
-    merge_func: Callable[[object, object], object]
+    model_cls: type[T],
+    merge_func: Callable[[object, object], object],
 ) -> list[object]:
     merged_records: list[object] = []
     key_to_index: dict[str, int] = {}
@@ -95,13 +162,7 @@ def merge_duplicate_records(
 
         index = key_to_index.get(key)
         if index is None:
-            index = len(merged_records)
-            key_to_index[key] = index
-            merged_records.append(model.to_dict())
-
-            if hasattr(model, 'aliases'):
-                for alias in model.aliases():
-                    key_to_index[alias] = index
+            _handle_new_record(model, merged_records, key_to_index, key)
             continue
 
         existing = merged_records[index]
@@ -112,7 +173,7 @@ def merge_duplicate_records(
         merged_record = merge_func(existing_model.to_dict(), model.to_dict())
         merged_records[index] = merged_record
 
-        if hasattr(model, 'aliases'):
+        if hasattr(model, "aliases"):
             merged_model = model_cls.from_object(merged_record)
             if merged_model is not None:
                 for alias in merged_model.aliases():

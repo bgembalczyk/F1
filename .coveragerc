@@ -10,8 +10,7 @@ source =
     config
 omit =
     tests/*
-    tests/support/*
-    tests/fixtures/*
+    benchmarks/*
 
 [report]
 show_missing = True

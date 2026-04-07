@@ -8,9 +8,9 @@ from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
-from scrapers.base.table.columns.types import AutoColumn
-from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.column_factory import IntColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER

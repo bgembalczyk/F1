@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from models.value_objects import SectionId
+from models.value_objects.common_terms import SectionId
 from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.base.sections.service import BaseSectionExtractionService
 from scrapers.drivers.sections.common import BaseDriverResultsSectionParser

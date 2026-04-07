@@ -5,6 +5,7 @@ from bs4 import Tag
 
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
@@ -14,8 +15,8 @@ from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
 from scrapers.base.table.builders import build_name_status_fragment
-from scrapers.base.table.columns.types import FloatColumn
-from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types.column_factory import FloatColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
@@ -123,7 +124,7 @@ class IndianapolisOnlySubSectionParser(SubSectionParser):
                 element["data"] = self._list_parser.parse(parsed_tag)
 
 
-class EngineManufacturersSectionParser(SectionParser):
+class EngineManufacturersSectionParser(ApplyForElementsMixin, SectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = IndianapolisOnlySubSectionParser()
@@ -143,17 +144,6 @@ class EngineManufacturersSectionParser(SectionParser):
                 for item in value:
                     if isinstance(item, dict):
                         self._apply_engine_table_parser(item)
-
-    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self._table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
 
 
 class EngineManufacturersListScraper(F1TableScraper):
