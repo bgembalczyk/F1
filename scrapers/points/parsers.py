@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from models.services import parse_seasons
+from models.services.season_service import parse_seasons
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.points.constants import HISTORICAL_POSITIONS

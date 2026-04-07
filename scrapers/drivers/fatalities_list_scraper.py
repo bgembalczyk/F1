@@ -11,11 +11,11 @@ from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import DRIVERS_FATALITIES
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types import AutoColumn
-from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import SkipColumn
-from scrapers.base.table.columns.types import TextColumn
-from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.column_factory import IntColumn
+from scrapers.base.table.columns.types.skip import SkipColumn
+from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec

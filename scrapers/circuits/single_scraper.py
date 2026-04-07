@@ -23,19 +23,6 @@ if TYPE_CHECKING:
 
     from scrapers.base.options import ScraperOptions
 
-__all__ = [
-    "F1SingleCircuitScraper",
-    "detect_layout_name",
-    "is_lap_record_table",
-]
-
-
-__all__ = [
-    "F1SingleCircuitScraper",
-    "detect_layout_name",
-    "is_lap_record_table",
-]
-
 
 class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     def __init__(

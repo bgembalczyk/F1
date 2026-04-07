@@ -362,32 +362,3 @@ def _validate_legacy_filename_aliases() -> None:
 validate_sources_registry_consistency()
 
 
-__all__ = [
-    "DRIVERS_SOURCE",
-    "DRIVER_FATALITIES_SOURCE",
-    "ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE",
-    "ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE",
-    "ENGINE_MANUFACTURERS_SOURCE",
-    "FEMALE_DRIVERS_SOURCE",
-    "FORMER_CONSTRUCTORS_SOURCE",
-    "INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE",
-    "INDIANAPOLIS_ONLY_ENGINES_SOURCE",
-    "LEGACY_LIST_FILENAME_ALIASES",
-    "LEGACY_SEED_NAME_ALIASES",
-    "PRIVATEER_TEAMS_SOURCE",
-    "RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE",
-    "RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE",
-    "SOURCE_BY_LIST_FILENAME",
-    "SOURCE_BY_SEED_NAME",
-    "SOURCE_BY_SOURCE_NAME",
-    "SPONSORSHIP_LIVERIES_SOURCE",
-    "TYRE_MANUFACTURERS_SOURCE",
-    "WIKI_SOURCE_DEFINITIONS",
-    "WikiSourceDefinition",
-    "get_source_by_list_filename",
-    "get_source_by_seed_name",
-    "get_source_by_source_name",
-    "resolve_list_filename",
-    "resolve_seed_name",
-    "validate_sources_registry_consistency",
-]

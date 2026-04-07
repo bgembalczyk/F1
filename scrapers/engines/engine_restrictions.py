@@ -5,12 +5,12 @@ from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
-from scrapers.base.mixins import ApplyForElementsMixin
+from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.source_catalog import ENGINE_REGULATIONS
-from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.columns.types import RangeColumn
-from scrapers.base.table.columns.types import SeasonsColumn
-from scrapers.base.table.columns.types import UnitColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types.range import RangeColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL

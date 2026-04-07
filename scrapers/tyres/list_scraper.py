@@ -3,8 +3,8 @@ from typing import Any
 from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import TYRES
-from scrapers.base.table.columns.types import SeasonsColumn
-from scrapers.base.table.columns.types import SkipColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec

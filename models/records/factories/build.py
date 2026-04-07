@@ -102,11 +102,3 @@ for _record_type in RecordType:
     globals()[f"build_{_record_type.value}_record"] = _build_convenience(_record_type)
 
 
-__all__ = [
-    "RECORD_BUILDERS",
-    "RecordBuilders",
-    "RecordType",
-    "build_record",
-]
-
-__all__ += [f"build_{record_type.value}_record" for record_type in RecordType]

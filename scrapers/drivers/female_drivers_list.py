@@ -3,11 +3,11 @@ from typing import Any
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
-from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.columns.types import SeasonsColumn
-from scrapers.base.table.columns.types import SkipColumn
-from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.points import PointsColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.skip import SkipColumn
+from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
