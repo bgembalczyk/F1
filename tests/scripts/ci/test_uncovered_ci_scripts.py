@@ -104,8 +104,8 @@ class TestDuplicateNormalizer:
 
     def test_as_int_handles_various_types(self) -> None:
         norm = DuplicateNormalizer()
-        assert norm._as_int(True) == 1
-        assert norm._as_int(False) == 0
+        assert norm._as_int(value=True) == 1
+        assert norm._as_int(value=False) == 0
         assert norm._as_int(3) == 3
         assert norm._as_int(3.7) == 3
         assert norm._as_int("5") == 5
