@@ -9,7 +9,8 @@ from scrapers.base.options import ScraperOptions
 from scrapers.constructors.constructors_list import ConstructorsListScraper
 
 
-def test_constructors_list_scraper_exports_split_json_files(tmp_path) -> None:
+@pytest.fixture
+def populated_scraper() -> ConstructorsListScraper:
     scraper = ConstructorsListScraper(options=ScraperOptions())
     scraper._data = [{"constructor": "Alpha"}]
     scraper._split_export_records = {
@@ -18,9 +19,14 @@ def test_constructors_list_scraper_exports_split_json_files(tmp_path) -> None:
         "indianapolis_only_constructors": [{"constructor": "Gamma"}],
         "privateer_teams": [{"constructor": "Delta"}],
     }
+    return scraper
 
+
+def test_constructors_list_scraper_exports_split_json_files(
+    populated_scraper, tmp_path
+) -> None:
     output = tmp_path / "constructors.json"
-    scraper.to_json(output)
+    populated_scraper.to_json(output)
 
     assert json.loads(output.read_text(encoding="utf-8")) == [{"constructor": "Alpha"}]
     assert json.loads(
@@ -43,18 +49,11 @@ def test_constructors_list_scraper_exports_split_json_files(tmp_path) -> None:
     ) == [{"constructor": "Delta"}]
 
 
-def test_constructors_list_scraper_exports_split_csv_files(tmp_path) -> None:
-    scraper = ConstructorsListScraper(options=ScraperOptions())
-    scraper._data = [{"constructor": "Alpha"}]
-    scraper._split_export_records = {
-        "current_constructors": [{"constructor": "Alpha"}],
-        "former_constructors": [{"constructor": "Beta"}],
-        "indianapolis_only_constructors": [{"constructor": "Gamma"}],
-        "privateer_teams": [{"constructor": "Delta"}],
-    }
-
+def test_constructors_list_scraper_exports_split_csv_files(
+    populated_scraper, tmp_path
+) -> None:
     output = tmp_path / "constructors.csv"
-    scraper.to_csv(output)
+    populated_scraper.to_csv(output)
 
     assert output.exists()
     assert (tmp_path / "constructors_current_constructors.csv").exists()

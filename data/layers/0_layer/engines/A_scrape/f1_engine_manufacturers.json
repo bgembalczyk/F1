@@ -312,8 +312,8 @@
     "podiums": 0,
     "points": 2.0,
     "poles": 0,
-    "races_entered": 1,
-    "races_started": 1,
+    "races_entered": 3,
+    "races_started": 3,
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
@@ -1110,11 +1110,11 @@
     ],
     "fastest_laps": 274,
     "manufacturer_status": "current",
-    "podiums": 844,
-    "points": 11984.0,
+    "podiums": 846,
+    "points": 12059.0,
     "poles": 256,
-    "races_entered": 1129,
-    "races_started": 1125,
+    "races_entered": 1131,
+    "races_started": 1127,
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season",
@@ -1810,8 +1810,8 @@
     "podiums": 223,
     "points": 3409.0,
     "poles": 90,
-    "races_entered": 483,
-    "races_started": 482,
+    "races_entered": 485,
+    "races_started": 484,
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
@@ -2522,13 +2522,13 @@
         "url": "https://en.wikipedia.org/wiki/United_Kingdom"
       }
     ],
-    "fastest_laps": 239,
+    "fastest_laps": 241,
     "manufacturer_status": "current",
-    "podiums": 662,
-    "points": 16464.5,
-    "poles": 249,
-    "races_entered": 614,
-    "races_started": 612,
+    "podiums": 666,
+    "points": 16609.5,
+    "poles": 251,
+    "races_entered": 616,
+    "races_started": 614,
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season",
@@ -2673,7 +2673,7 @@
     ],
     "wcc": 12,
     "wdc": 14,
-    "wins": 239
+    "wins": 241
   },
   {
     "manufacturer": {
@@ -3126,10 +3126,10 @@
     "fastest_laps": 1,
     "manufacturer_status": "current",
     "podiums": 0,
-    "points": 12.0,
+    "points": 30.0,
     "poles": 0,
-    "races_entered": 1,
-    "races_started": 1,
+    "races_entered": 3,
+    "races_started": 3,
     "seasons": [
       {
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
