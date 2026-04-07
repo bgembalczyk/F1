@@ -10,7 +10,7 @@ def parser() -> CircuitEntityParser:
 
 
 # ---------------------------------------------------------------------------
-# _split_entity_parts  (line 15 – empty string)
+# _split_entity_parts  (line 15 - empty string)
 # ---------------------------------------------------------------------------
 
 
@@ -53,7 +53,7 @@ def test_links_to_entities_filters_invalid(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# _parts_to_entities  (lines 66-67, 71-73 – with/without match)
+# _parts_to_entities  (lines 66-67, 71-73 - with/without match)
 # ---------------------------------------------------------------------------
 
 
@@ -74,7 +74,7 @@ def test_parts_to_entities_without_matching_link(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# _build_from_multiple_links  (line 90 – fallback when entities empty)
+# _build_from_multiple_links  (line 90 - fallback when entities empty)
 # ---------------------------------------------------------------------------
 
 
@@ -99,7 +99,7 @@ def test_build_from_multiple_links_empty_links_fallback(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# _build_without_links  (line 101 – single part)
+# _build_without_links  (line 101 - single part)
 # ---------------------------------------------------------------------------
 
 
@@ -152,7 +152,7 @@ def test_build_from_single_link_invalid_link_no_parts(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# parse_linked_entity  (integration)
+# linked entity parsing (integration)
 # ---------------------------------------------------------------------------
 
 

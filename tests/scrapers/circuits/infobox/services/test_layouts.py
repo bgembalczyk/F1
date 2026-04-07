@@ -102,7 +102,7 @@ def test_apply_layout_field_unknown_label(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# parse_layout_sections  (line 96 – table is None)
+# parse_layout_sections  (line 96 - table is None)
 # ---------------------------------------------------------------------------
 
 
@@ -120,7 +120,7 @@ def test_parse_layout_sections_no_table(parser) -> None:
 @pytest.mark.parametrize(
     ("text", "expected_name", "expected_years"),
     [
-        ("Layout A (1990–2005)", "Layout A", "1990–2005"),
+        ("Layout A (1990-2005)", "Layout A", "1990-2005"),
         ("Layout B", "Layout B", None),
         ("No years here", "No years here", None),
     ],

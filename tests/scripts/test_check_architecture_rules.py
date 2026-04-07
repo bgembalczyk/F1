@@ -10,15 +10,17 @@ from scripts import check_architecture_rules
 
 
 def _rules_stub() -> SimpleNamespace:
+    def _infer_layer(path: Path, *, domain: str | None = None) -> str:
+        _ = domain
+        return "sections" if "sections" in path.parts else "app"
+
     return SimpleNamespace(
         LAYERS={"sections", "app"},
         DOMAINS=("drivers", "seasons"),
         ENTRYPOINT_DOMAINS=("drivers",),
         REQUIRED_LAYERS_BY_DOMAIN={"drivers": ("sections", "app")},
         FORBIDDEN_IMPORTS_BY_LAYER={"sections": ("app",), "app": ()},
-        infer_layer=lambda path, domain=None: "sections"
-        if "sections" in path.parts
-        else "app",
+        infer_layer=_infer_layer,
         resolve_import_targets=lambda _path: ["scrapers.drivers.app.shared"],
         collect_cross_domain_import_violations=lambda _path, _domain: [
             "scrapers.seasons.app",

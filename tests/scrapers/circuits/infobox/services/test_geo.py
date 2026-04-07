@@ -10,7 +10,7 @@ def parser() -> CircuitGeoParser:
 
 
 # ---------------------------------------------------------------------------
-# _split_plain_segment  (line 40 – stopword filtering)
+# _split_plain_segment  (line 40 - stopword filtering)
 # ---------------------------------------------------------------------------
 
 
@@ -31,7 +31,7 @@ def test_split_plain_segment_empty() -> None:
 
 
 # ---------------------------------------------------------------------------
-# _components_from_links  (line 44 – processing links)
+# _components_from_links  (line 44 - processing links)
 # ---------------------------------------------------------------------------
 
 
@@ -58,7 +58,7 @@ def test_components_from_links_link_not_in_text(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# parse_location  (line 84 – returns None when no components)
+# parse_location  (line 84 - returns None when no components)
 # ---------------------------------------------------------------------------
 
 
@@ -71,7 +71,7 @@ def test_parse_location_empty_text(parser) -> None:
 
 
 def test_parse_location_only_stopwords(parser) -> None:
-    # Pure stopwords are filtered out – empty text returns None
+    # Pure stopwords are filtered out - empty text returns None
     result = parser.parse_location({"text": "", "links": []})
     assert result is None
 
@@ -83,7 +83,7 @@ def test_parse_location_valid(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# parse_coordinates  (line 114 – None row)
+# parse_coordinates  (line 114 - None row)
 # ---------------------------------------------------------------------------
 
 
@@ -96,7 +96,7 @@ def test_parse_coordinates_empty_text(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# _parse_position_payload  (lines 130-142 – directional coords)
+# _parse_position_payload  (lines 130-142 - directional coords)
 # ---------------------------------------------------------------------------
 
 
