@@ -30,6 +30,30 @@ from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
 
+from contextlib import contextmanager
+from typing import Iterator
+
+@contextmanager
+def mock_git_worktree() -> Iterator[None]:
+    with patch(
+        "scripts.ci.mypy_regression_gate.tempfile.TemporaryDirectory",
+    ) as mock_tmp:
+        mock_ctx = MagicMock()
+        mock_ctx.__enter__ = MagicMock(return_value="/fake/tmp")
+        mock_ctx.__exit__ = MagicMock(return_value=False)
+        mock_tmp.return_value = mock_ctx
+
+        class FakeRemove:
+            returncode = 0
+            stdout = ""
+            stderr = ""
+
+        with patch(
+            "scripts.ci.mypy_regression_gate.subprocess.run",
+            return_value=FakeRemove(),
+        ):
+            yield
+
 # ---------------------------------------------------------------------------
 # reporting.py
 # ---------------------------------------------------------------------------
@@ -744,25 +768,9 @@ def test_mypy_main_regression(
 
     monkeypatch.setattr(mypy_gate, "_run_mypy", fake_run_mypy)
 
-    with patch(
-        "scripts.ci.mypy_regression_gate.tempfile.TemporaryDirectory",
-    ) as mock_tmp:
-        mock_ctx = MagicMock()
-        mock_ctx.__enter__ = MagicMock(return_value="/fake/tmp")
-        mock_ctx.__exit__ = MagicMock(return_value=False)
-        mock_tmp.return_value = mock_ctx
-
-        class FakeRemove:
-            returncode = 0
-            stdout = ""
-            stderr = ""
-
-        with patch(
-            "scripts.ci.mypy_regression_gate.subprocess.run",
-            return_value=FakeRemove(),
-        ):
-            # Can't easily test without git worktree, skip integration path
-            pass
+    with mock_git_worktree():
+        # Can't easily test without git worktree, skip integration path
+        pass
 
 
 @pytest.mark.usefixtures("capsys")
@@ -780,24 +788,8 @@ def test_mypy_main_budget_exceeded(
     monkeypatch.setattr(mypy_gate, "_run_mypy", fake_run_mypy)
     monkeypatch.setattr(mypy_gate, "_git", lambda *_args: None)
 
-    with patch(
-        "scripts.ci.mypy_regression_gate.tempfile.TemporaryDirectory",
-    ) as mock_tmp:
-        mock_ctx = MagicMock()
-        mock_ctx.__enter__ = MagicMock(return_value="/fake/tmp")
-        mock_ctx.__exit__ = MagicMock(return_value=False)
-        mock_tmp.return_value = mock_ctx
-
-        class FakeRemove:
-            returncode = 0
-            stdout = ""
-            stderr = ""
-
-        with patch(
-            "scripts.ci.mypy_regression_gate.subprocess.run",
-            return_value=FakeRemove(),
-        ):
-            pass  # Integration requires actual git worktree
+    with mock_git_worktree():
+        pass  # Integration requires actual git worktree
 
 
 # ---------------------------------------------------------------------------
