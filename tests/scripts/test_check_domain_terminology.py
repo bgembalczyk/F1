@@ -1,13 +1,16 @@
 from __future__ import annotations
 
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 from scripts import check_domain_terminology
 
 
-@pytest.fixture()
+@pytest.fixture
 def terminology_repo(tmp_path: Path) -> Path:
     repo = tmp_path / "repo"
     repo.mkdir()
