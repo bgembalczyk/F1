@@ -36,10 +36,9 @@ class BestFinishParser:
         )
 
     def _parse_best_finish_payload(self, cell: Tag, text: str) -> dict[str, Any]:
-        result: dict[str, Any] = {"result": None, "seasons": None}
+        result: dict[str, Any] = {"result": self._extract_result_position(text), "seasons": None}
 
         # Extract result position
-        result["result"] = self._extract_result_position(text)
 
         # Extract season links and class information
         links = self._link_extractor.extract_links(cell)
