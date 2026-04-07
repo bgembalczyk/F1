@@ -4,6 +4,9 @@ from __future__ import annotations
 REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("scrapers/base/table/columns/types/column_factory.py", "FloatColumn"),
     ("scrapers/base/table/columns/types/column_factory.py", "IntColumn"),
+    ("infrastructure/gemini/cache_service.py", "get"),
+    ("infrastructure/gemini/cache_service.py", "set"),
+    ("scripts/ci/adr_enforcement_policy.py", "has_adr_reference"),
 }
 
 MAX_FUNCTION_LINES_EXCEPTIONS: dict[tuple[str, str], int] = {}
