@@ -40,4 +40,9 @@ def export_complete_constructors(
     options = init_scraper_options(None, include_urls=include_urls)
     scraper = CompleteConstructorsDataExtractor(options=options)
     data = scraper.fetch()
-    ResultExportService().export_grouped_json(scraper, data, output_dir, constructor_name_initial)
+    ResultExportService().export_grouped_json(
+        scraper,
+        data,
+        output_dir,
+        constructor_name_initial,
+    )

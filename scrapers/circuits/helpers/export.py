@@ -34,5 +34,8 @@ def export_complete_circuits(
 
     result_export_service = ResultExportService()
     result_export_service.export_grouped_json(
-        scraper, data, output_dir, circuit_name_initial
+        scraper,
+        data,
+        output_dir,
+        circuit_name_initial,
     )

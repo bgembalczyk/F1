@@ -42,13 +42,13 @@ def test_export_complete_circuits_groups_records_and_exports(
             _ = result, exporter
             exported_paths.append(path)
 
-        def export_grouped_json(self, scraper, data, output_dir, key_fn):
+        def export_grouped_json(self, _scraper, data, output_dir, key_fn):
             from collections import defaultdict
+
             grouped = defaultdict(list)
             for record in data:
                 grouped[key_fn(record)].append(record)
-            for key, records in grouped.items():
-                exported_paths.append(output_dir / f"{key}.json")
+            exported_paths.extend([output_dir / f"{key}.json" for key in grouped])
 
     monkeypatch.setattr(export_mod, "F1CompleteCircuitDataExtractor", _ScraperStub)
     monkeypatch.setattr(export_mod, "ResultExportService", _ExportServiceStub)

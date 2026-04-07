@@ -31,4 +31,9 @@ def export_complete_drivers(
     options = init_scraper_options(None, include_urls=include_urls)
     scraper = CompleteDriverDataExtractor(options=options)
     data = scraper.fetch()
-    ResultExportService().export_grouped_json(scraper, data, output_dir, surname_initial)
+    ResultExportService().export_grouped_json(
+        scraper,
+        data,
+        output_dir,
+        surname_initial,
+    )

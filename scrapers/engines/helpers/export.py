@@ -36,5 +36,8 @@ def export_complete_engine_manufacturers(
 
     result_export_service = ResultExportService()
     result_export_service.export_grouped_json(
-        scraper, data, output_dir, manufacturer_name_initial
+        scraper,
+        data,
+        output_dir,
+        manufacturer_name_initial,
     )
