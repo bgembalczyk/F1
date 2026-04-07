@@ -59,7 +59,7 @@ class TestPrivateerTeamsListParser:
 
     def test_parse_item_extracts_seasons_from_parentheses(self) -> None:
         li = BeautifulSoup(
-            '<li><a href="/wiki/Williams">Williams</a> (1950–1960)</li>',
+            '<li><a href="/wiki/Williams">Williams</a> (1950-1960)</li>',
             "html.parser",
         ).find("li")
         result = _PrivateerTeamsListParser._parse_item(li)

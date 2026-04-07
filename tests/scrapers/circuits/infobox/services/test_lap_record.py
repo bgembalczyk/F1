@@ -63,7 +63,7 @@ def test_wrap_entity_slash_split_link_match(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# parse_lap_record  (line 67 – no details returns None)
+# parse_lap_record  (line 67 - no details returns None)
 # ---------------------------------------------------------------------------
 
 
@@ -96,7 +96,7 @@ def test_parse_lap_record_valid(parser) -> None:
 
 
 # ---------------------------------------------------------------------------
-# build_lap_record  (line 74 – no time)
+# build_lap_record  (line 74 - no time)
 # ---------------------------------------------------------------------------
 
 
