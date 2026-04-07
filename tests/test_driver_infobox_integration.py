@@ -42,7 +42,7 @@ class TestDriverInfoboxIntegration:
             </td></tr>
         </table>
         """
-        result = self._parse_and_validate(scraper, html, "general")
+        result = self._parse_and_validate(scraper, html, "general")  # PRIVATE-API-JUSTIFIED
         assert "died" in result[0]["general"]
         died = result[0]["general"]["died"]
         assert died["date"] == "2020-08-11"
@@ -64,7 +64,7 @@ class TestDriverInfoboxIntegration:
             <td class="infobox-data">1st in 1957</td></tr>
         </table>
         """
-        result = self._parse_and_validate(scraper, html, "career")
+        result = self._parse_and_validate(scraper, html, "career")  # PRIVATE-API-JUSTIFIED
 
         # Find the "Best finish" row
         for row in result[0]["career"][0]["rows"]:
@@ -96,7 +96,7 @@ class TestDriverInfoboxIntegration:
             </td></tr>
         </table>
         """
-        result = self._parse_and_validate(scraper, html, "championship_titles")
+        result = self._parse_and_validate(scraper, html, "championship_titles")  # PRIVATE-API-JUSTIFIED
 
         # Check that years are expanded
         champ = result[0]["championship_titles"][0]
@@ -121,7 +121,7 @@ class TestDriverInfoboxIntegration:
             <td class="infobox-data">American or Italian</td></tr>
         </table>
         """
-        result = self._parse_and_validate(scraper, html, "career")
+        result = self._parse_and_validate(scraper, html, "career")  # PRIVATE-API-JUSTIFIED
 
         # Find the "Nationality" row
         for row in result[0]["career"][0]["rows"]:
@@ -150,7 +150,7 @@ class TestDriverInfoboxIntegration:
             </a>)</td></tr>
         </table>
         """
-        result = self._parse_and_validate(scraper, html, "major_victories")
+        result = self._parse_and_validate(scraper, html, "major_victories")  # PRIVATE-API-JUSTIFIED
 
         victory = result[0]["major_victories"][0]
         assert victory["title"]["text"] == "24 Hours of Le Mans"
@@ -184,7 +184,7 @@ class TestDriverInfoboxIntegration:
             </td></tr>
         </table>
         """
-        result = self._parse_and_validate(scraper, html, "career")
+        result = self._parse_and_validate(scraper, html, "career")  # PRIVATE-API-JUSTIFIED
 
         # Find the full_data row with stats
         for row in result[0]["career"][0]["rows"]:
