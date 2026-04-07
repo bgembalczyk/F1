@@ -3,22 +3,15 @@
 from __future__ import annotations
 
 import ast
-import importlib.util
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-_BOOTSTRAP_PATH = Path(__file__).resolve().parent / "lib" / "bootstrap.py"
-_BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
-    "_scripts_bootstrap",
-    _BOOTSTRAP_PATH,
-)
-assert _BOOTSTRAP_SPEC
-assert _BOOTSTRAP_SPEC.loader
-_BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
-_BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
+if str(Path(__file__).resolve().parents[1]) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from scripts.lib.bootstrap import ensure_repo_root_on_sys_path
 
-REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
+REPO_ROOT = ensure_repo_root_on_sys_path()
 
 DEFAULT_ADR_ENFORCEMENT_POLICY = __import__(
     "scripts.ci.adr_enforcement_policy",
@@ -137,16 +130,13 @@ class DependencyCreationVisitor(ast.NodeVisitor):
             )
         self.generic_visit(node)
 
-    def visit_Import(self, node: ast.Import) -> None:  # noqa: N802
-        if not self._is_hidden_import(node.lineno):
-            return
-        dependency_name = ", ".join(alias.name for alias in node.names)
+    def _add_import_violation(self, lineno: int, dependency_name: str) -> None:
         class_name = self._class_stack[-1] if self._class_stack else "<module>"
         method_name = self._method_stack[-1] if self._method_stack else "<module>"
         self.violations.append(
             Violation(
                 path=self.path,
-                lineno=node.lineno,
+                lineno=lineno,
                 method_name=method_name,
                 class_name=class_name,
                 dependency_name=dependency_name,
@@ -154,24 +144,19 @@ class DependencyCreationVisitor(ast.NodeVisitor):
             ),
         )
 
+    def visit_Import(self, node: ast.Import) -> None:  # noqa: N802
+        if not self._is_hidden_import(node.lineno):
+            return
+        dependency_name = ", ".join(alias.name for alias in node.names)
+        self._add_import_violation(node.lineno, dependency_name)
+
     def visit_ImportFrom(self, node: ast.ImportFrom) -> None:  # noqa: N802
         if not self._is_hidden_import(node.lineno):
             return
         names = ", ".join(alias.name for alias in node.names)
         module = node.module or ""
         dependency_name = f"{module}:{names}" if module else names
-        class_name = self._class_stack[-1] if self._class_stack else "<module>"
-        method_name = self._method_stack[-1] if self._method_stack else "<module>"
-        self.violations.append(
-            Violation(
-                path=self.path,
-                lineno=node.lineno,
-                method_name=method_name,
-                class_name=class_name,
-                dependency_name=dependency_name,
-                violation_type="import",
-            ),
-        )
+        self._add_import_violation(node.lineno, dependency_name)
 
     def _is_hidden_import(self, lineno: int) -> bool:
         if not self._method_stack:

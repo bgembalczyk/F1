@@ -20,6 +20,9 @@ from layers.zero.record_merge_ops import (
 from layers.zero.record_merge_ops import (
     merge_driver_values as _merge_driver_values_impl,
 )
+from layers.zero.record_merge_ops import (
+    merge_duplicate_records as _merge_duplicate_records,
+)
 from layers.zero.record_merge_ops import merge_list_values as _merge_list_values_impl
 from layers.zero.record_merge_ops import merge_values as _merge_values_impl
 from layers.zero.source_routing import iter_mergeable_domain_dirs as _iter_domain_dirs
@@ -719,35 +722,7 @@ def _merge_values(existing: object, incoming: object) -> object:
 
 def _merge_duplicate_drivers(records: list[object]) -> list[object]:
     """Aktywna, gdy domena to `drivers`."""
-    merged_records: list[object] = []
-    key_to_index: dict[str, int] = {}
-
-    for record in records:
-        driver_record = DriverRecordModel.from_object(record)
-        if driver_record is None:
-            merged_records.append(record)
-            continue
-        key = driver_record.dedupe_key()
-        if key is None:
-            merged_records.append(driver_record.to_dict())
-            continue
-
-        index = key_to_index.get(key)
-        if index is None:
-            key_to_index[key] = len(merged_records)
-            merged_records.append(driver_record.to_dict())
-            continue
-
-        existing = merged_records[index]
-        existing_driver = DriverRecordModel.from_object(existing)
-        if existing_driver is None:
-            continue
-        merged_records[index] = _merge_driver_values(
-            existing_driver.to_dict(),
-            driver_record.to_dict(),
-        )
-
-    return merged_records
+    return _merge_duplicate_records(records, DriverRecordModel, _merge_driver_values)
 
 
 configure_domain_postprocessors(DOMAIN_PIPELINE_CONFIGS, DomainPipelineConfig)
