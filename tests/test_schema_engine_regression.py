@@ -14,21 +14,11 @@ from validation.schemas import RecordSchema
 INVALID_TEAM_VALUE = 7
 
 
-def _legacy_extract_missing_key(error: str) -> str | None:
-    if error.startswith("Missing key: "):
-        return error.replace("Missing key: ", "", 1).strip() or None
-    if error.startswith("Null value for: "):
-        return error.replace("Null value for: ", "", 1).strip() or None
-    if error.endswith(" is missing"):
-        return error[: -len(" is missing")].strip() or None
-    return None
-
-
 def _legacy_coerce_issue(error: ValidationIssue | str) -> ValidationIssue:
     if isinstance(error, ValidationIssue):
         return error
     message = str(error)
-    missing_key = _legacy_extract_missing_key(message)
+    missing_key = SchemaValidationEngine.extract_missing_key(message)
     if missing_key:
         code = "null" if message.startswith("Null value for: ") else "missing"
         return ValidationIssue(code=code, field=missing_key, message=message)
