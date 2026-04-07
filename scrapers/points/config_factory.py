@@ -3,10 +3,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.table.columns.types import AutoColumn
-from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import SeasonsColumn
-from scrapers.base.table.columns.types import SkipColumn
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.column_factory import IntColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec

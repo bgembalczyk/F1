@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 
-from scrapers.races.columns.restart_status import RestartStatusColumn
+from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
 from scrapers.races.red_flagged_races_scraper.base import RedFlaggedRacesBaseScraper
 
 

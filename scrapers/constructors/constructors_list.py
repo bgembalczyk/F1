@@ -9,7 +9,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from models.services import parse_seasons
+from models.services.season_service import parse_seasons
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.results import ScrapeResult
@@ -19,9 +19,9 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
 from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_metric_columns
-from scrapers.base.table.columns.types import AutoColumn
-from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.column_factory import IntColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,

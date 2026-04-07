@@ -68,7 +68,7 @@ class RuntimeInitializer:
         normalize_empty_values: bool,
         default_validator: RecordValidator | None,
     ) -> RuntimeComponents:
-        http_policy = self._resolve_http_policy(options)
+        http_policy = options.resolve_http_policy()
         runtime = ScraperRuntimeFactory().build(options=options, policy=http_policy)
         validator = options.validator or default_validator
         if validator is not None:

@@ -236,9 +236,9 @@ def test_structural_quality_allows_method_override_in_derived_class(
     file_path = tmp_path / "module.py"
     file_path.write_text(
         """
-class RestartStatusColumn(BackgroundMixin, BaseColumn):
+class FakeRestartStatusColumn(BackgroundMixin, BaseColumn):
     def parse(self, ctx):
-        return restart_status(ctx)
+        return {}
 """.strip()
         + "\n",
         encoding="utf-8",

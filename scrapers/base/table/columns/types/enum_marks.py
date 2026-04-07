@@ -33,7 +33,3 @@ class EnumMarksMixin(BaseColumn):
             if mark in text:
                 return value
         return self.default
-
-
-# Backward-compatible alias
-EnumMarksColumn = EnumMarksMixin

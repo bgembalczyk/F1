@@ -1,5 +1,8 @@
+from collections import defaultdict
+from collections.abc import Callable
 from collections.abc import Sequence
 from pathlib import Path
+from typing import Any
 
 from scrapers.base.export.export_helpers import fieldnames_from_first_row
 from scrapers.base.export.export_helpers import fieldnames_from_union
@@ -84,3 +87,26 @@ class ResultExportService:
     @staticmethod
     def _resolve_exporter(exporter: DataExporter | None) -> DataExporter:
         return exporter or DataExporter()
+
+    def export_grouped_json(
+        self,
+        scraper: Any,
+        data: list[dict[str, Any]],
+        output_dir: Path,
+        key_fn: Callable[[dict[str, Any]], str],
+    ) -> None:
+        scraper.logger.info("Pobrano rekordów: %s", len(data))
+        output_dir.mkdir(parents=True, exist_ok=True)
+        exporter = getattr(scraper, "exporter", None)
+
+        grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for record in data:
+            key = key_fn(record).strip()
+            grouped[key if key else "other"].append(record)
+
+        for key, records in grouped.items():
+            result = ScrapeResult(
+                data=records,
+                source_url=getattr(scraper, "url", None),
+            )
+            self.to_json(result, output_dir / f"{key}.json", exporter=exporter)

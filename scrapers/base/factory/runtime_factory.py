@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from dataclasses import replace
 from typing import TYPE_CHECKING
 from typing import cast
 
@@ -40,7 +39,7 @@ class ScraperRuntimeFactory:
         options: ScraperOptions,
         policy: HttpPolicy | None = None,
     ) -> ScraperRuntime:
-        resolved_policy = self._resolve_policy(options=options, policy=policy)
+        resolved_policy = options.resolve_http_policy(policy=policy)
         cache_adapter = self._resolve_cache_adapter(options)
         fetcher, source_adapter = self._resolve_fetcher_and_source_adapter(
             options=options,
@@ -151,23 +150,6 @@ class ScraperRuntimeFactory:
         return self._resolve_http_client(
             options=options,
             policy=resolved_policy,
-        )
-
-    @staticmethod
-    def _resolve_policy(
-        *,
-        options: ScraperOptions,
-        policy: HttpPolicy | None,
-    ) -> HttpPolicy:
-        base_policy = policy or options.http.policy
-        timeout = options.http.timeout
-        retries = options.http.retries
-        if timeout is None and retries is None:
-            return base_policy
-        return replace(
-            base_policy,
-            timeout=timeout if timeout is not None else base_policy.timeout,
-            retries=retries if retries is not None else base_policy.retries,
         )
 
     @staticmethod

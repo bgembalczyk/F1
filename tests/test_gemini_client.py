@@ -172,105 +172,85 @@ def test_query_stores_result_in_cache(tmp_path) -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
-    """When model-a raises RuntimeError, query retries with model-b."""
-    cache = GeminiCache(cache_dir=tmp_path / "c")
-    models = [
-        ModelConfig("model-a", requests_per_minute=10, requests_per_day=500),
-        ModelConfig("model-b", requests_per_minute=10, requests_per_day=500),
-    ]
-    client = GeminiClient(api_key="key", models=models, cache=cache)
+class TestGeminiClientFallback:
+    @pytest.fixture(autouse=True)
+    def _setup(self, tmp_path) -> None:
+        self.cache = GeminiCache(cache_dir=tmp_path / "c")
+        self.models = [
+            ModelConfig("model-a", requests_per_minute=10, requests_per_day=500),
+            ModelConfig("model-b", requests_per_minute=10, requests_per_day=500),
+        ]
+        self.client = GeminiClient(api_key="key", models=self.models, cache=self.cache)
 
-    call_log: list[str] = []
+    def test_query_falls_back_to_next_model_on_error(self) -> None:
+        """When model-a raises RuntimeError, query retries with model-b."""
+        call_log: list[str] = []
 
-    def fake_call_api(_prompt, *, model, response_mime_type):
-        del response_mime_type
-        call_log.append(model)
-        if model == "model-a":
-            msg = "API error from model-a"
-            raise RuntimeError(msg)
-        return {"result": "ok"}
+        def fake_call_api(_prompt, *, model, response_mime_type):
+            del response_mime_type
+            call_log.append(model)
+            if model == "model-a":
+                msg = "API error from model-a"
+                raise RuntimeError(msg)
+            return {"result": "ok"}
 
-    client._call_api = fake_call_api
-    result = client.query("prompt")
+        self.client._call_api = fake_call_api
+        result = self.client.query("prompt")
 
-    assert result == {"result": "ok"}
-    assert call_log == ["model-a", "model-b"]
+        assert result == {"result": "ok"}
+        assert call_log == ["model-a", "model-b"]
 
+    def test_query_falls_back_to_next_model_on_non_runtime_error(self) -> None:
+        """Any API/transport exception should trigger fallback to the next model."""
+        call_log: list[str] = []
 
-def test_query_falls_back_to_next_model_on_non_runtime_error(tmp_path) -> None:
-    """Any API/transport exception should trigger fallback to the next model."""
-    cache = GeminiCache(cache_dir=tmp_path / "c")
-    models = [
-        ModelConfig("model-a", requests_per_minute=10, requests_per_day=500),
-        ModelConfig("model-b", requests_per_minute=10, requests_per_day=500),
-    ]
-    client = GeminiClient(api_key="key", models=models, cache=cache)
+        def fake_call_api(_prompt, *, model, response_mime_type):
+            del response_mime_type
+            call_log.append(model)
+            if model == "model-a":
+                msg = "transport timeout"
+                raise TimeoutError(msg)
+            return {"result": "ok"}
 
-    call_log: list[str] = []
+        self.client._call_api = fake_call_api
+        result = self.client.query("prompt")
 
-    def fake_call_api(_prompt, *, model, response_mime_type):
-        del response_mime_type
-        call_log.append(model)
-        if model == "model-a":
-            msg = "transport timeout"
-            raise TimeoutError(msg)
-        return {"result": "ok"}
+        assert result == {"result": "ok"}
+        assert call_log == ["model-a", "model-b"]
 
-    client._call_api = fake_call_api
-    result = client.query("prompt")
+    def test_query_after_fallback_returns_to_primary_model_for_next_prompt(
+        self,
+    ) -> None:
+        """Fallback is per prompt: next prompt starts again from the first model."""
+        call_log: list[tuple[str, str]] = []
 
-    assert result == {"result": "ok"}
-    assert call_log == ["model-a", "model-b"]
+        def fake_call_api(prompt, *, model, response_mime_type):
+            del response_mime_type
+            call_log.append((prompt, model))
+            if prompt == "prompt-1" and model == "model-a":
+                msg = "temporary timeout"
+                raise TimeoutError(msg)
+            return {"result": f"ok-{prompt}-{model}"}
 
+        self.client._call_api = fake_call_api
 
-def test_query_after_fallback_returns_to_primary_model_for_next_prompt(
-    tmp_path,
-) -> None:
-    """Fallback is per prompt: next prompt starts again from the first model."""
-    cache = GeminiCache(cache_dir=tmp_path / "c")
-    models = [
-        ModelConfig("model-a", requests_per_minute=10, requests_per_day=500),
-        ModelConfig("model-b", requests_per_minute=10, requests_per_day=500),
-    ]
-    client = GeminiClient(api_key="key", models=models, cache=cache)
+        first = self.client.query("prompt-1")
+        second = self.client.query("prompt-2")
 
-    call_log: list[tuple[str, str]] = []
+        assert first == {"result": "ok-prompt-1-model-b"}
+        assert second == {"result": "ok-prompt-2-model-a"}
+        assert call_log == [
+            ("prompt-1", "model-a"),
+            ("prompt-1", "model-b"),
+            ("prompt-2", "model-a"),
+        ]
 
-    def fake_call_api(prompt, *, model, response_mime_type):
-        del response_mime_type
-        call_log.append((prompt, model))
-        if prompt == "prompt-1" and model == "model-a":
-            msg = "temporary timeout"
-            raise TimeoutError(msg)
-        return {"result": f"ok-{prompt}-{model}"}
+    def test_query_raises_when_all_models_exhausted(self) -> None:
+        """RuntimeError is raised when every model in the list returns an error."""
+        self.client._call_api = MagicMock(side_effect=RuntimeError("always fails"))
 
-    client._call_api = fake_call_api
-
-    first = client.query("prompt-1")
-    second = client.query("prompt-2")
-
-    assert first == {"result": "ok-prompt-1-model-b"}
-    assert second == {"result": "ok-prompt-2-model-a"}
-    assert call_log == [
-        ("prompt-1", "model-a"),
-        ("prompt-1", "model-b"),
-        ("prompt-2", "model-a"),
-    ]
-
-
-def test_query_raises_when_all_models_exhausted(tmp_path) -> None:
-    """RuntimeError is raised when every model in the list returns an error."""
-    cache = GeminiCache(cache_dir=tmp_path / "c")
-    models = [
-        ModelConfig("model-a", requests_per_minute=10, requests_per_day=500),
-        ModelConfig("model-b", requests_per_minute=10, requests_per_day=500),
-    ]
-    client = GeminiClient(api_key="key", models=models, cache=cache)
-    client._call_api = MagicMock(side_effect=RuntimeError("always fails"))
-
-    with pytest.raises(RuntimeError, match="wyczerpane"):
-        client.query("prompt")
+        with pytest.raises(RuntimeError, match="wyczerpane"):
+            self.client.query("prompt")
 
 
 # ---------------------------------------------------------------------------
