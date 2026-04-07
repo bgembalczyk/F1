@@ -7,6 +7,11 @@ from models.services.helpers import unique_sorted
 from models.value_objects.rounds import Rounds
 
 
+_ROUNDS_RE = re.compile(r"\b(rounds?|races?)\b", flags=re.IGNORECASE)
+_SPLIT_RE = re.compile(r"[;,]")
+_DIGITS_RE = re.compile(r"\d+")
+
+
 def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> Rounds:
     if not text:
         return Rounds()
@@ -19,13 +24,8 @@ def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> Rounds
     if "all" in lower:
         return Rounds(tuple(expand_all(total_rounds) or ()))
 
-    normalized = re.sub(
-        r"\b(rounds?|races?)\b",
-        "",
-        normalized,
-        flags=re.IGNORECASE,
-    )
-    parts = [p.strip() for p in re.split(r"[;,]", normalized) if p.strip()]
+    normalized = _ROUNDS_RE.sub("", normalized)
+    parts = [p.strip() for p in _SPLIT_RE.split(normalized) if p.strip()]
 
     values: list[int] = []
     for part in parts:
@@ -42,7 +42,7 @@ def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> Rounds
             values.extend(expand_inclusive_range(start, end))
             continue
 
-        match = re.search(r"\d+", part)
+        match = _DIGITS_RE.search(part)
         if match:
             values.append(int(match.group(0)))
 
