@@ -16,22 +16,22 @@ def test_default_application_is_wired_with_expected_components(tmp_path: Path) -
 
     assert isinstance(app, WikiPipelineApplication)
 
-    layer_zero_executor = app._layer_zero_executor  # noqa: SLF001
-    layer_one_executor = app._layer_one_executor  # noqa: SLF001
+    layer_zero_executor = app._layer_zero_executor
+    layer_one_executor = app._layer_one_executor
 
     assert isinstance(layer_zero_executor, LayerZeroExecutor)
     assert isinstance(layer_one_executor, LayerOneExecutor)
 
-    assert callable(layer_zero_executor._config_factories)  # noqa: SLF001
-    assert layer_zero_executor._default_config_factory is not None  # noqa: SLF001
-    assert layer_zero_executor._merger is not None  # noqa: SLF001
-    composite_job_hook = layer_zero_executor._job_hook  # noqa: SLF001
+    assert callable(layer_zero_executor._config_factories)
+    assert layer_zero_executor._default_config_factory is not None
+    assert layer_zero_executor._merger is not None
+    composite_job_hook = layer_zero_executor._job_hook
     assert isinstance(composite_job_hook, CompositeLayerZeroJobHook)
     assert any(
         isinstance(hook, MirrorConstructorsJobHook) for hook in composite_job_hook.hooks
     )
-    assert callable(layer_zero_executor._year_provider)  # noqa: SLF001
+    assert callable(layer_zero_executor._year_provider)
 
-    assert callable(layer_one_executor._validate_seed_registry)  # noqa: SLF001
-    assert callable(layer_one_executor._runners)  # noqa: SLF001
-    assert callable(layer_one_executor._engine_manufacturers_runner)  # noqa: SLF001
+    assert callable(layer_one_executor._validate_seed_registry)
+    assert callable(layer_one_executor._runners)
+    assert callable(layer_one_executor._engine_manufacturers_runner)

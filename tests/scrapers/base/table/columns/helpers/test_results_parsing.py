@@ -116,7 +116,7 @@ def test_parse_result_part_status_map_and_fallback(
     token: str,
     expected_status: str,
 ) -> None:
-    parsed = ResultsParsingHelpers._parse_result_part(token)  # noqa: SLF001
+    parsed = ResultsParsingHelpers._parse_result_part(token)
 
     assert isinstance(parsed, dict)
     assert set(parsed.keys()) == {"status"}

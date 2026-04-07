@@ -162,7 +162,7 @@ def test_client_from_config_provider_uses_config_timeout() -> None:
     client = GeminiClient.from_config_provider(provider)
 
     assert isinstance(client, GeminiClient)
-    assert client._transport._timeout == _expected_timeout  # noqa: SLF001
+    assert client._transport._timeout == _expected_timeout
 
 
 def test_client_call_api_maps_empty_response_to_source_parse_error(
@@ -177,13 +177,13 @@ def test_client_call_api_maps_empty_response_to_source_parse_error(
     )
 
     monkeypatch.setattr(
-        client._transport,  # noqa: SLF001
+        client._transport,
         "generate",
         lambda *_args, **_kwargs: {"candidates": []},
     )
 
     with pytest.raises(SourceParseError, match="nie zwróciło pola"):
-        client._call_api(  # noqa: SLF001
+        client._call_api(
             "prompt",
             model="m",
             response_mime_type="application/json",

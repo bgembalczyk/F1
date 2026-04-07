@@ -39,7 +39,7 @@ def test_seasons_section_parser_rewrites_table_elements_recursively() -> None:
         ],
     }
 
-    parser._apply_seasons_table_parser(payload)  # noqa: SLF001
+    parser._apply_seasons_table_parser(payload)
 
     nested_table = payload["sub_sections"][0]["elements"][0]["data"]
     assert nested_table["table_type"] == "seasons_list"

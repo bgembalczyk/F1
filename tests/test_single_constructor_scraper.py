@@ -20,7 +20,7 @@ def _make_soup(html: str) -> BeautifulSoup:
 def test_build_infobox_payload_returns_empty_when_no_infobox() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup("<div><p>No infobox here.</p></div>")
-    result = scraper._build_infobox_payload(soup)  # noqa: SLF001
+    result = scraper._build_infobox_payload(soup)
     assert result.data == []
 
 
@@ -34,7 +34,7 @@ def test_build_infobox_payload_finds_single_infobox() -> None:
         </table>
         """,
     )
-    result = scraper._build_infobox_payload(soup)  # noqa: SLF001
+    result = scraper._build_infobox_payload(soup)
     assert len(result.data) == 1
     assert result.data[0]["title"] == "Williams Racing"
 
@@ -47,7 +47,7 @@ def test_build_infobox_payload_finds_multiple_infoboxes() -> None:
         <table class="infobox"><caption>Second</caption></table>
         """,
     )
-    result = scraper._build_infobox_payload(soup)  # noqa: SLF001
+    result = scraper._build_infobox_payload(soup)
     _expected_count = 2
     assert len(result.data) == _expected_count
 
@@ -60,7 +60,7 @@ def test_build_infobox_payload_finds_multiple_infoboxes() -> None:
 def test_build_tables_payload_returns_empty_when_no_wikitable() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup("<div><p>No tables here.</p></div>")
-    result = scraper._build_tables_payload(soup)  # noqa: SLF001
+    result = scraper._build_tables_payload(soup)
     assert result.data == []
 
 
@@ -74,7 +74,7 @@ def test_build_tables_payload_extracts_headers_and_rows() -> None:
         </table>
         """,
     )
-    result = scraper._build_tables_payload(soup)  # noqa: SLF001
+    result = scraper._build_tables_payload(soup)
     assert len(result.data) == 1
     assert result.data[0]["headers"] == ["Season", "Wins"]
     assert result.data[0]["rows"] == [{"Season": "2023", "Wins": "3"}]
@@ -91,14 +91,14 @@ def test_build_tables_payload_includes_caption_when_present() -> None:
         </table>
         """,
     )
-    result = scraper._build_tables_payload(soup)  # noqa: SLF001
+    result = scraper._build_tables_payload(soup)
     assert result.data[0].get("caption") == "Race Results"
 
 
 def test_build_tables_payload_skips_table_without_header_row() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup('<table class="wikitable"></table>')
-    result = scraper._build_tables_payload(soup)  # noqa: SLF001
+    result = scraper._build_tables_payload(soup)
     assert result.data == []
 
 
@@ -119,7 +119,7 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
         </table>
         """,
     )
-    result = scraper._parse_soup(soup)  # noqa: SLF001
+    result = scraper._parse_soup(soup)
     assert len(result) == 1
     record = result[0]
     assert record["url"] == "https://en.wikipedia.org/wiki/Test"
@@ -187,7 +187,7 @@ def _constructor_url_cases() -> list[tuple[dict[str, Any], str | None]]:
 
 @pytest.mark.parametrize(("record", "expected"), _constructor_url_cases())
 def test_get_constructor_url(record: dict[str, Any], expected: str | None) -> None:
-    result = CompleteConstructorsDataExtractor._get_constructor_url(record)  # noqa: SLF001
+    result = CompleteConstructorsDataExtractor._get_constructor_url(record)
     assert result == expected
 
 

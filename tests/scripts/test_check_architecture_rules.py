@@ -44,25 +44,23 @@ def test_checks_cover_required_layout_boundaries_and_cross_domain(
 
     rules = _rules_stub()
 
-    required_errors = check_architecture_rules._check_required_layout(  # noqa: SLF001
+    required_errors = check_architecture_rules._check_required_layout(
         root,
         ("drivers",),
         rules,
     )
-    boundary_errors = check_architecture_rules._check_layer_boundaries(  # noqa: SLF001
+    boundary_errors = check_architecture_rules._check_layer_boundaries(
         root,
         ("drivers",),
         rules,
     )
-    _check_ss = (
-        check_architecture_rules._check_sections_single_scraper_boundary  # noqa: SLF001
-    )
+    _check_ss = check_architecture_rules._check_sections_single_scraper_boundary
     section_errors = _check_ss(
         root,
         ("drivers",),
         rules,
     )
-    cross_errors = check_architecture_rules._check_cross_domain_imports(  # noqa: SLF001
+    cross_errors = check_architecture_rules._check_cross_domain_imports(
         root,
         ("drivers",),
         rules,
@@ -75,7 +73,7 @@ def test_checks_cover_required_layout_boundaries_and_cross_domain(
 
 
 def test_detect_relevant_domains_accepts_only_scrapers_python_paths() -> None:
-    detected = check_architecture_rules._detect_relevant_domains(  # noqa: SLF001
+    detected = check_architecture_rules._detect_relevant_domains(
         [
             Path("scrapers/drivers/entrypoint.py"),
             Path("scrapers/unknown/file.py"),

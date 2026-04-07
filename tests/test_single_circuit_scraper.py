@@ -24,7 +24,7 @@ def test_select_section_returns_fragment_section_only() -> None:
         "html.parser",
     )
 
-    section = scraper._select_section(soup, "History")  # noqa: SLF001
+    section = scraper._select_section(soup, "History")
 
     assert "Some history text." in section.get_text(" ")
     assert "Legacy text." not in section.get_text(" ")
@@ -45,7 +45,7 @@ def test_select_section_returns_full_soup_when_missing_fragment() -> None:
         "html.parser",
     )
 
-    section = scraper._select_section(soup, "Unknown")  # noqa: SLF001
+    section = scraper._select_section(soup, "Unknown")
 
     assert "Some history text." in section.get_text(" ")
     assert "Legacy text." in section.get_text(" ")

@@ -13,7 +13,7 @@ def test_standings_scraper_replaces_tied_marker_with_previous_position() -> None
         options=ScraperOptions(),
         config=build_scraper_config(url="https://example.test", columns=[]),
     )
-    scraper._extractor.extract = lambda _element: [  # noqa: SLF001
+    scraper._extractor.extract = lambda _element: [
         {"pos": 1, "driver": "A"},
         {"pos": PositionColumn.TIED, "driver": "B"},
         {"pos": 3, "driver": "C"},
@@ -30,7 +30,7 @@ def test_standings_scraper_keeps_none_when_tie_has_no_previous_position() -> Non
         options=ScraperOptions(),
         config=build_scraper_config(url="https://example.test", columns=[]),
     )
-    scraper._extractor.extract = lambda _element: [  # noqa: SLF001
+    scraper._extractor.extract = lambda _element: [
         {"pos": PositionColumn.TIED, "driver": "A"},
         {"pos": 2, "driver": "B"},
     ]

@@ -19,7 +19,7 @@ def test_extract_current_section_uses_current_season_fallback_id() -> None:
     scraper = ConstructorsListScraper()
     selector = WikipediaSectionByIdSelectionStrategy(domain="constructors")
 
-    section = scraper._extract_current_section(selector=selector, soup=soup)  # noqa: SLF001
+    section = scraper._extract_current_section(selector=selector, soup=soup)
 
     assert section is not None
     assert section.find("table", class_="wikitable") is not None
@@ -48,7 +48,7 @@ def test_extract_current_section_supports_hardcoded_2026_section_id() -> None:
     scraper = ConstructorsListScraper()
     selector = WikipediaSectionByIdSelectionStrategy(domain="constructors")
 
-    section = scraper._extract_current_section(selector=selector, soup=soup)  # noqa: SLF001
+    section = scraper._extract_current_section(selector=selector, soup=soup)
 
     assert section is not None
     assert section.find("h2", id="Constructors_for_the_2026_season") is not None
@@ -77,6 +77,6 @@ def test_extract_current_section_does_not_match_terminology_subsection_alias() -
     scraper = ConstructorsListScraper()
     selector = WikipediaSectionByIdSelectionStrategy(domain="constructors")
 
-    section = scraper._extract_current_section(selector=selector, soup=soup)  # noqa: SLF001
+    section = scraper._extract_current_section(selector=selector, soup=soup)
 
     assert section is None

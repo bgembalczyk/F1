@@ -28,7 +28,7 @@ def test_constructor_sections_are_parsed_through_section_adapter() -> None:
         "html.parser",
     )
 
-    result = scraper._parse_soup(soup)[0]  # noqa: SLF001
+    result = scraper._parse_soup(soup)[0]
 
     assert len(result["sections"]) == 3
     assert {section["section_id"] for section in result["sections"]} == {
@@ -106,7 +106,7 @@ def test_driver_sections_include_non_championship_alias() -> None:
         "html.parser",
     )
 
-    records = scraper._build_sections_payload(soup)  # noqa: SLF001
+    records = scraper._build_sections_payload(soup)
 
     assert records.data
     assert all(record["section_id"] == "non-championship" for record in records.data)
@@ -118,7 +118,7 @@ def test_single_season_separates_text_sections() -> None:
         season_year=2024,
     )
     scraper.url = "https://example.com/2024_Formula_One_World_Championship"
-    scraper._table_parser.update_url(scraper.url)  # noqa: SLF001
+    scraper._table_parser.update_url(scraper.url)
     soup = BeautifulSoup(
         """
         <h2 id="Regulation_changes">Regulation changes</h2>
@@ -129,7 +129,7 @@ def test_single_season_separates_text_sections() -> None:
         "html.parser",
     )
 
-    result = scraper._parse_soup(soup)[0]  # noqa: SLF001
+    result = scraper._parse_soup(soup)[0]
 
     assert result["regulation_changes"] == [{"text": "Point system update"}]
     assert result["mid_season_changes"] == [{"text": "Driver transfer"}]

@@ -197,7 +197,7 @@ def test_orchestration_integration_single_driver_uses_injected_dependencies() ->
         ),
     )
     scraper.url = "https://example.com/driver"
-    result = scraper._parse_soup(_soup("<html></html>"))[0]  # noqa: SLF001
+    result = scraper._parse_soup(_soup("<html></html>"))[0]
 
     assert result["infobox"]["from"] == "infobox"
     assert result["career_results"][0]["section"] == "Career"

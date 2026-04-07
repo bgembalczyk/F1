@@ -113,7 +113,7 @@ def test_detect_relevant_domains_uses_scrapers_prefix() -> None:
         Path("tests/test_something.py"),
     ]
 
-    detected = architecture_rules._detect_relevant_domains(  # noqa: SLF001
+    detected = architecture_rules._detect_relevant_domains(
         changed,
         domains=("seasons", "circuits", "drivers"),
     )
@@ -136,7 +136,7 @@ def test_check_required_layout_reports_missing_entrypoint_and_layers(
         lambda _path, domain: "app" if domain == "seasons" else "unknown"
     )
 
-    violations = architecture_rules._check_required_layout(root, ("seasons",), rules)  # noqa: SLF001
+    violations = architecture_rules._check_required_layout(root, ("seasons",), rules)
 
     assert any("Missing facade entrypoint in domain: seasons" in v for v in violations)
     assert any("Missing layer modules for seasons" in v for v in violations)
@@ -200,7 +200,7 @@ def test_architecture_main_parses_paths_from_argv(
 
 def test_token_pattern_matches_whole_tokens_only() -> None:
     """contract/static: forbidden-term regex avoids substring matches."""
-    pattern = domain_terminology._token_pattern("constructor")  # noqa: SLF001
+    pattern = domain_terminology._token_pattern("constructor")
 
     assert pattern.search("constructor standings")
     assert not pattern.search("constructors standings")

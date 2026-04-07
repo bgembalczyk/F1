@@ -74,8 +74,8 @@ def test_private_helpers_handle_ambiguous_season_records() -> None:
         "season": [{"year": 2025}, {"year": "2026"}, "invalid", {"other": 1}],
     }
 
-    years = BroaderScopeSplitter._years(record)  # noqa: SLF001
-    seasons_for_known_year = BroaderScopeSplitter._seasons_for_years(record, {2025})  # noqa: SLF001
+    years = BroaderScopeSplitter._years(record)
+    seasons_for_known_year = BroaderScopeSplitter._seasons_for_years(record, {2025})
 
     assert years == {2025, "2026"}
     assert seasons_for_known_year == [{"year": 2025}]

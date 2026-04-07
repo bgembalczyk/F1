@@ -30,7 +30,7 @@ def test_circuit_geo_parser_location_and_coordinates() -> None:
             {"text": "France", "url": "https://en.wikipedia.org/wiki/France"},
         ],
     }
-    location = parser._parse_location(row)  # noqa: SLF001
+    location = parser._parse_location(row)
     assert location == {
         "localisation1": {
             "text": "Paris",
@@ -48,27 +48,27 @@ def test_circuit_geo_parser_location_and_coordinates() -> None:
         },
     }
 
-    coords = parser._parse_coordinates({"text": "48.8566; 2.3522"})  # noqa: SLF001
+    coords = parser._parse_coordinates({"text": "48.8566; 2.3522"})
     assert coords == {"lat": 48.8566, "lon": 2.3522}
 
 
 def test_circuit_history_parser_former_names() -> None:
     parser = CircuitHistoryParser()
     row = {"text": "Old Name (1959-1979)"}
-    names = parser._parse_former_names(row)  # noqa: SLF001
+    names = parser._parse_former_names(row)
     assert names == [{"name": "Old Name", "periods": [{"from": "1959", "to": "1979"}]}]
 
 
 def test_circuit_specs_parser_surface_and_banking() -> None:
     parser = CircuitSpecsParser()
-    surface = parser._parse_surface({"text": "Asphalt (since 2020)"})  # noqa: SLF001
+    surface = parser._parse_surface({"text": "Asphalt (since 2020)"})
     assert surface == {
         "values": ["Asphalt"],
         "text": "Asphalt (since 2020)",
         "note": "since 2020",
     }
 
-    banking = parser._parse_banking({"text": "18° (Turn 1)"})  # noqa: SLF001
+    banking = parser._parse_banking({"text": "18° (Turn 1)"})
     assert banking == {"value": 18.0, "unit": "deg", "note": "Turn 1"}
 
 

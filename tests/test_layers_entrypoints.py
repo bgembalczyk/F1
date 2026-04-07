@@ -67,7 +67,7 @@ def test_should_mirror_constructors_job(
         {"list_scraper_cls": list_scraper_cls, "seed_name": seed_name},
     )()
 
-    assert module._should_mirror_constructors_job(job) is expected  # noqa: SLF001
+    assert module._should_mirror_constructors_job(job) is expected
 
 
 @pytest.mark.parametrize(
@@ -101,7 +101,7 @@ def test_should_mirror_engine_rules_job(
         {"list_scraper_cls": list_scraper_cls, "seed_name": seed_name},
     )()
 
-    assert module._should_mirror_engine_rules_job(job) is expected  # noqa: SLF001
+    assert module._should_mirror_engine_rules_job(job) is expected
 
 
 @pytest.mark.parametrize(

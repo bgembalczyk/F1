@@ -46,7 +46,7 @@ def test_model_state_rpm_window_expires() -> None:
     state = ModelState(ModelConfig("m", requests_per_minute=1, requests_per_day=100))
 
     past = time.monotonic() - 61.0  # 61 s ago
-    state._rpm_timestamps.append(past)  # noqa: SLF001
+    state._rpm_timestamps.append(past)
     assert state.is_available(time.monotonic())
 
 
@@ -55,7 +55,7 @@ def test_model_state_rpd_window_expires() -> None:
     state = ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=1))
 
     past = time.monotonic() - 86401.0  # just over 24 h ago
-    state._rpd_timestamps.append(past)  # noqa: SLF001
+    state._rpd_timestamps.append(past)
     assert state.is_available(time.monotonic())
 
 
@@ -123,7 +123,7 @@ def _make_client_with_mock_api(
     )
     # Replace _call_api with a side-effect iterator
     mock = MagicMock(side_effect=responses)
-    client._call_api = mock  # noqa: SLF001
+    client._call_api = mock
     return client, mock
 
 
@@ -149,15 +149,15 @@ def test_query_cache_hit_does_not_consume_rate_limits(tmp_path) -> None:
     cache.set("prompt", "model-a", {"cached": True})
     client, _ = _make_client_with_mock_api([], cache=cache)
 
-    state = client._model_states[0]  # noqa: SLF001
-    rpm_before = len(state._rpm_timestamps)  # noqa: SLF001
-    rpd_before = len(state._rpd_timestamps)  # noqa: SLF001
+    state = client._model_states[0]
+    rpm_before = len(state._rpm_timestamps)
+    rpd_before = len(state._rpd_timestamps)
 
     result = client.query("prompt")
 
     assert result == {"cached": True}
-    assert len(state._rpm_timestamps) == rpm_before  # noqa: SLF001
-    assert len(state._rpd_timestamps) == rpd_before  # noqa: SLF001
+    assert len(state._rpm_timestamps) == rpm_before
+    assert len(state._rpd_timestamps) == rpd_before
 
 
 def test_query_stores_result_in_cache(tmp_path) -> None:
@@ -191,7 +191,7 @@ def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
             raise RuntimeError(msg)
         return {"result": "ok"}
 
-    client._call_api = fake_call_api  # noqa: SLF001
+    client._call_api = fake_call_api
     result = client.query("prompt")
 
     assert result == {"result": "ok"}
@@ -217,7 +217,7 @@ def test_query_falls_back_to_next_model_on_non_runtime_error(tmp_path) -> None:
             raise TimeoutError(msg)
         return {"result": "ok"}
 
-    client._call_api = fake_call_api  # noqa: SLF001
+    client._call_api = fake_call_api
     result = client.query("prompt")
 
     assert result == {"result": "ok"}
@@ -245,7 +245,7 @@ def test_query_after_fallback_returns_to_primary_model_for_next_prompt(
             raise TimeoutError(msg)
         return {"result": f"ok-{prompt}-{model}"}
 
-    client._call_api = fake_call_api  # noqa: SLF001
+    client._call_api = fake_call_api
 
     first = client.query("prompt-1")
     second = client.query("prompt-2")
@@ -267,7 +267,7 @@ def test_query_raises_when_all_models_exhausted(tmp_path) -> None:
         ModelConfig("model-b", requests_per_minute=10, requests_per_day=500),
     ]
     client = GeminiClient(api_key="key", models=models, cache=cache)
-    client._call_api = MagicMock(side_effect=RuntimeError("always fails"))  # noqa: SLF001
+    client._call_api = MagicMock(side_effect=RuntimeError("always fails"))
 
     with pytest.raises(RuntimeError, match="wyczerpane"):
         client.query("prompt")
@@ -289,7 +289,7 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
     client = GeminiClient(api_key="key", models=models, cache=cache)
     # Saturate model-a RPM
     now = time.monotonic()
-    client._model_states[0]._rpm_timestamps.append(now)  # noqa: SLF001
+    client._model_states[0]._rpm_timestamps.append(now)
 
     call_log: list[str] = []
 
@@ -298,7 +298,7 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
         call_log.append(model)
         return {"ok": True}
 
-    client._call_api = fake_call_api  # noqa: SLF001
+    client._call_api = fake_call_api
     result = client.query("p")
 
     assert result == {"ok": True}
@@ -315,7 +315,7 @@ def test_query_raises_when_all_models_at_rpm_limit(tmp_path) -> None:
     ]
     client = GeminiClient(api_key="key", models=models, cache=cache)
     now = time.monotonic()
-    client._model_states[0]._rpm_timestamps.append(now)  # noqa: SLF001
+    client._model_states[0]._rpm_timestamps.append(now)
 
     with pytest.raises(RuntimeError, match="wyczerpane"):
         client.query("prompt")
@@ -335,7 +335,7 @@ def test_from_key_file_uses_default_models(tmp_path) -> None:
     key_file = tmp_path / "key.txt"
     key_file.write_text("my-api-key", encoding="utf-8")
     client = GeminiClient.from_key_file(key_file)
-    assert len(client._model_states) > 0  # noqa: SLF001
+    assert len(client._model_states) > 0
 
 
 def test_from_config_provider_uses_provider_values(tmp_path) -> None:
@@ -352,10 +352,10 @@ def test_from_config_provider_uses_provider_values(tmp_path) -> None:
 
     client = GeminiClient.from_config_provider(provider)
 
-    assert len(client._model_states) > 0  # noqa: SLF001
-    assert client._transport._timeout == expected_timeout  # noqa: SLF001
-    assert client._model_states[0].model == "gemini-3-flash-preview"  # noqa: SLF001
-    assert client._model_states[0].model == DEFAULT_MODELS[0].model  # noqa: SLF001
+    assert len(client._model_states) > 0
+    assert client._transport._timeout == expected_timeout
+    assert client._model_states[0].model == "gemini-3-flash-preview"
+    assert client._model_states[0].model == DEFAULT_MODELS[0].model
 
 
 def test_from_key_file_accepts_custom_models(tmp_path) -> None:
@@ -363,4 +363,4 @@ def test_from_key_file_accepts_custom_models(tmp_path) -> None:
     key_file.write_text("my-api-key", encoding="utf-8")
     custom = [ModelConfig("custom-model", requests_per_minute=5, requests_per_day=100)]
     client = GeminiClient.from_key_file(key_file, models=custom)
-    assert client._model_states[0].model == "custom-model"  # noqa: SLF001
+    assert client._model_states[0].model == "custom-model"

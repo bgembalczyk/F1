@@ -10,7 +10,7 @@ def _soup(html: str) -> BeautifulSoup:
 def test_single_engine_scraper_builds_infoboxes_and_filters_empty() -> None:
     scraper = SingleEngineManufacturerScraper()
     scraper.find_infoboxes = lambda soup: soup.find_all("table", class_="infobox")
-    payload = scraper._build_infobox_payload(  # noqa: SLF001
+    payload = scraper._build_infobox_payload(
         _soup(
             """
             <table class='infobox'><caption>Renault</caption></table>
@@ -26,7 +26,7 @@ def test_single_engine_scraper_assembles_record_with_tables() -> None:
     scraper = SingleEngineManufacturerScraper()
     scraper.find_infoboxes = lambda soup: soup.find_all("table", class_="infobox")
     scraper.url = "https://example.com/engine"
-    record = scraper._parse_soup(  # noqa: SLF001
+    record = scraper._parse_soup(
         _soup(
             """
             <table class='wikitable'>

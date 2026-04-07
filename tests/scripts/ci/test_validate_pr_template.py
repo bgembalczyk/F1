@@ -26,7 +26,7 @@ def test_collect_template_errors_reports_missing_heading_checkbox_and_field() ->
     body = "## Opis zmiany\n"
     fields = validate_pr_template.extract_architecture_fields(body)
 
-    errors = validate_pr_template._collect_template_errors(body, fields)  # noqa: SLF001
+    errors = validate_pr_template._collect_template_errors(body, fields)
 
     assert any("Brak sekcji" in err for err in errors)
     assert any("Checklista niepotwierdzona" in err for err in errors)
@@ -39,7 +39,7 @@ def test_validate_detailed_architecture_impact_accepts_and_rejects_values() -> N
         "wykonano",
     )
     assert (
-        validate_pr_template._validate_detailed_architecture_impact(  # noqa: SLF001
+        validate_pr_template._validate_detailed_architecture_impact(
             detailed,
         )
         == []

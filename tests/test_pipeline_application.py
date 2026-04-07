@@ -64,9 +64,9 @@ def test_run_layer_zero_uses_private_run_config_builder(tmp_path: Path) -> None:
 
     assert len(layer_zero_executor.calls) == 1
     run_config, base_wiki_dir = layer_zero_executor.calls[0]
-    assert base_wiki_dir == app._base_wiki_dir  # noqa: SLF001
-    assert run_config.output_dir == app._base_wiki_dir  # noqa: SLF001
-    assert run_config.debug_dir == app._base_debug_dir  # noqa: SLF001
+    assert base_wiki_dir == app._base_wiki_dir
+    assert run_config.output_dir == app._base_wiki_dir
+    assert run_config.debug_dir == app._base_debug_dir
 
 
 def test_run_layer_one_uses_private_run_config_builder(tmp_path: Path) -> None:
@@ -86,6 +86,6 @@ def test_run_layer_one_uses_private_run_config_builder(tmp_path: Path) -> None:
 
     assert len(layer_one_executor.calls) == 1
     run_config, base_wiki_dir = layer_one_executor.calls[0]
-    assert base_wiki_dir == app._base_wiki_dir  # noqa: SLF001
-    assert run_config.output_dir == app._base_wiki_dir  # noqa: SLF001
-    assert run_config.debug_dir == app._base_debug_dir  # noqa: SLF001
+    assert base_wiki_dir == app._base_wiki_dir
+    assert run_config.output_dir == app._base_wiki_dir
+    assert run_config.debug_dir == app._base_debug_dir
