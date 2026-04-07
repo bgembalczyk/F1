@@ -17,14 +17,17 @@ Wszystkie scenariusze uruchamiaj przez **jeden entrypoint**: `python -m scrapers
 3. `layer1` — tylko complete-extractory oparte o seed registry.
 4. `merge` — samo ponowne scalenie istniejących plików `raw` (bez odpalania scraperów).
 
-Za powyższe scenariusze odpowiada `WikiPipelineFacade`, który składa istniejące executory/serwisy (`LayerZeroExecutor`, `LayerOneExecutor`, `LayerZeroMergeService`) bez dublowania logiki.
+Za powyższe scenariusze odpowiada `WikiPipelineFacade`, który składa istniejące executory/serwisy (`LayerZeroExecutor`,
+`LayerOneExecutor`, `LayerZeroMergeService`) bez dublowania logiki.
 
 ## 0:00-2:00 — Potwierdź punkt wejścia i tryb uruchomienia
 
-1. Zweryfikuj komendę uruchomienia (`python -m scrapers.cli wiki --scenario ...`) i argumenty (`--scenario`, profil, domena).
+1. Zweryfikuj komendę uruchomienia (`python -m scrapers.cli wiki --scenario ...`) i argumenty (`--scenario`, profil,
+   domena).
 2. Sprawdź, czy log startowy pokazuje oczekiwany moduł oraz seedy.
 
 **Gdzie wejść w kod:**
+
 - `scrapers/cli.py`
 - `layers/facade.py`
 - `layers/application.py`
@@ -39,10 +42,12 @@ Za powyższe scenariusze odpowiada `WikiPipelineFacade`, który składa istniej�
 3. Jeśli `raw` istnieje, sprawdź merge domeny (`<domain>.json`).
 
 **Flow do prześledzenia:**
+
 - `layers/zero/executor.py` (uruchomienie jobów, ścieżki output)
 - `layers/zero/merge.py` (deduplikacja, transformery, zapis merged)
 
 **Pliki wynikowe do sprawdzenia:**
+
 - `layers/0_layer/<domain>/raw/*.json`
 - `layers/0_layer/<domain>/<domain>.json`
 
@@ -55,11 +60,13 @@ Za powyższe scenariusze odpowiada `WikiPipelineFacade`, który składa istniej�
 3. Sprawdź, czy finalny output został zapisany.
 
 **Gdzie wejść w kod:**
+
 - `layers/one/executor.py`
 - `layers/orchestration/runner_registry.py`
 - `layers/orchestration/runners/*.py`
 
 **Pliki wynikowe do sprawdzenia:**
+
 - `layers/1_layer/complete/*.json` (lub katalog wynikowy wskazany przez konfigurację)
 
 ---
@@ -71,6 +78,7 @@ Za powyższe scenariusze odpowiada `WikiPipelineFacade`, który składa istniej�
 3. Sprawdź mapowanie transformera (`domain + source_name`) i reguły merge.
 
 **Najczęściej kluczowe miejsca:**
+
 - `layers/zero/merge.py` (`TRANSFORM_PIPELINES`, dobór handlera, logika merge)
 - `layers/one/executor.py` (mapowanie seed -> runner)
 
@@ -78,14 +86,14 @@ Za powyższe scenariusze odpowiada `WikiPipelineFacade`, który składa istniej�
 
 ## Mapa: objaw -> prawdopodobne miejsce w kodzie
 
-| Objaw | Prawdopodobne miejsce | Co sprawdzić najpierw |
-|---|---|---|
-| Brak rekordu w output końcowym | `layers/zero/merge.py`, `layers/one/executor.py` | Czy rekord jest w `raw`; czy przechodzi do merged; czy seed ma runner |
-| Brak jakichkolwiek plików `raw` | `scrapers/cli.py`, `layers/zero/executor.py` | Czy uruchamiasz poprawny moduł/tryb; czy katalog output jest poprawny |
-| Duplikaty rekordów | `layers/zero/merge.py` | Klucz deduplikacji, aliasy nazw, łączenie wielu źródeł |
-| Rekord ma złą strukturę pól | `layers/zero/merge.py` | Jaki transformer został dobrany po `domain + source_name` |
-| Log: `skipping unsupported seed` | `layers/one/executor.py`, `layers/orchestration/runner_registry.py` | Spójność nazwy seeda i mapowania runnerów |
-| Pipeline kończy się „sukcesem”, ale brak complete output | `layers/one/executor.py`, konfiguracja ścieżek | Czy zapis idzie do oczekiwanego katalogu i profilu |
+| Objaw                                                    | Prawdopodobne miejsce                                               | Co sprawdzić najpierw                                                 |
+|----------------------------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------------------|
+| Brak rekordu w output końcowym                           | `layers/zero/merge.py`, `layers/one/executor.py`                    | Czy rekord jest w `raw`; czy przechodzi do merged; czy seed ma runner |
+| Brak jakichkolwiek plików `raw`                          | `scrapers/cli.py`, `layers/zero/executor.py`                        | Czy uruchamiasz poprawny moduł/tryb; czy katalog output jest poprawny |
+| Duplikaty rekordów                                       | `layers/zero/merge.py`                                              | Klucz deduplikacji, aliasy nazw, łączenie wielu źródeł                |
+| Rekord ma złą strukturę pól                              | `layers/zero/merge.py`                                              | Jaki transformer został dobrany po `domain + source_name`             |
+| Log: `skipping unsupported seed`                         | `layers/one/executor.py`, `layers/orchestration/runner_registry.py` | Spójność nazwy seeda i mapowania runnerów                             |
+| Pipeline kończy się „sukcesem”, ale brak complete output | `layers/one/executor.py`, konfiguracja ścieżek                      | Czy zapis idzie do oczekiwanego katalogu i profilu                    |
 
 ---
 
@@ -94,10 +102,10 @@ Za powyższe scenariusze odpowiada `WikiPipelineFacade`, który składa istniej�
 Dla każdej zmiany architektonicznej dotyczącej przepływu `CLI/Layer0/Layer1`:
 
 - [ ] Zaktualizowano ten dokument (`docs/DEBUG_QUICKSTART.md`), jeśli zmieniły się:
-  - punkty wejścia,
-  - flow wykonania,
-  - ścieżki plików wynikowych,
-  - mapa „objaw -> miejsce w kodzie”.
+    - punkty wejścia,
+    - flow wykonania,
+    - ścieżki plików wynikowych,
+    - mapa „objaw -> miejsce w kodzie”.
 - [ ] W opisie PR dodano krótką notkę: **„Debug Quickstart updated: yes/no + uzasadnienie”**.
 - [ ] Jeśli update nie był potrzebny, w PR podano powód (np. „zmiana wyłącznie lokalna, bez wpływu na flow”).
 

@@ -27,6 +27,8 @@ NORMALIZE_START_AND_RE = re.compile(r"^\s*and\s+", flags=re.IGNORECASE)
 
 PARAM_MATCH_ONLY_ONWARD_RE = re.compile(r"\b(only|onwards?)\b", flags=re.IGNORECASE)
 PARAM_MATCH_FROM_RE = re.compile(r"^\s*from\s+", flags=re.IGNORECASE)
+# Regex to remove whitespace and dashes from string remainders.
+REMAINDER_CLEANUP_RE = re.compile(r"[\s\-—]")
 
 
 season_headers = {

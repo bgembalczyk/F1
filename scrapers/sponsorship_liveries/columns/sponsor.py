@@ -17,6 +17,7 @@ from scrapers.sponsorship_liveries.helpers.constants import PARAM_MATCH_FROM_RE
 from scrapers.sponsorship_liveries.helpers.constants import PARAM_MATCH_ONLY_ONWARD_RE
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_PAREN_GROUP_RE
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_PAREN_REMOVE_RE
+from scrapers.sponsorship_liveries.helpers.constants import REMAINDER_CLEANUP_RE
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 from scrapers.sponsorship_liveries.parsers.parts import SponsorPartsParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
@@ -381,10 +382,10 @@ class SponsorColumn(BaseColumn):
                     best = link
                     best_len = len(link_text)
                 continue
-            remainder = target[len(link_lower) :]
-            if target.startswith(link_lower) and re.sub(r"[\s\-—]", "", remainder):
-                continue
             if target.startswith(link_lower):
+                remainder = target[len(link_lower) :]
+                if REMAINDER_CLEANUP_RE.sub("", remainder):
+                    continue
                 if len(link_text) > best_len:
                     best = link
                     best_len = len(link_text)
