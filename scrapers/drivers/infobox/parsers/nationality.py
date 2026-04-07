@@ -18,6 +18,9 @@ _YEAR_RE = re.compile(r"\b(\d{4})\b")
 _JUST_REF_MARKER_RE = re.compile(r"^\[\d+\]$")
 _OR_SPLIT_RE = re.compile(r"\s+or\s+", flags=re.IGNORECASE)
 _REF_MARKER_RE = re.compile(r"\[\d+\]")
+YEAR_PATTERNS_RE = re.compile(r"\(([^)]*\d{4}[^)]*)\)")
+YEAR_RANGE_RE = re.compile(r"(\d{4})\s*[--]\s*(\d{4})")
+YEAR_RE = re.compile(r"\b(\d{4})\b")
 
 
 class NationalityParser:
@@ -109,15 +112,13 @@ class NationalityParser:
                 start = int(range_match.group(1))
                 end = int(range_match.group(2))
                 for year in range(start, end + 1):
-                    if year not in years:
-                        years.append(year)
+                    years_set.add(year)
 
             for year_match in _YEAR_RE.finditer(year_pattern):
                 year = int(year_match.group(1))
-                if year not in years:
-                    years.append(year)
+                years_set.add(year)
 
-        return years
+        return list(years_set)
 
     def _parse_nationality_simple(
         self,
