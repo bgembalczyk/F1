@@ -23,6 +23,7 @@ from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.range import RangeColumn
 from scrapers.base.table.columns.types.regex import RegexColumn
+from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
@@ -55,6 +56,7 @@ __all__ = [
     "PointsColumn",
     "RangeColumn",
     "RegexColumn",
+    "RestartStatusColumn",
     "SeasonsColumn",
     "SkipColumn",
     "TextColumn",

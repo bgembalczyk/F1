@@ -20,7 +20,7 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.failed_to_make_restart import (
     FailedToMakeRestartTransformer,
 )
-from scrapers.races.columns.restart_status import RestartStatusColumn
+from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
 
 logger = logging.getLogger(__name__)
 
