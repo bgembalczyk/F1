@@ -3,10 +3,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 from types import SimpleNamespace
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    import pytest
+import pytest
 
 from scripts import check_architecture_rules
 
@@ -142,11 +139,9 @@ def test_cli_invalid_argument_reports_stderr(
     old_argv = sys.argv
     try:
         sys.argv = ["check_architecture_rules.py", "--bad-flag"]
-        try:
+        with pytest.raises(SystemExit) as exc:
             check_architecture_rules.main()
-            raise AssertionError("expected SystemExit")
-        except SystemExit as exc:
-            assert exc.code == 2  # noqa: PLR2004
+        assert exc.value.code == 2  # noqa: PLR2004
     finally:
         sys.argv = old_argv
 
