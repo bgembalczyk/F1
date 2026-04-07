@@ -23,7 +23,8 @@ class ApplyForElementsMixin:
                         self.apply_table_parser(item)
 
     def _apply_for_elements(
-        self: _HasTableParser, elements: list[dict[str, Any]]
+        self: _HasTableParser,
+        elements: list[dict[str, Any]],
     ) -> None:
         """Applies the table parser to a list of elements."""
         for element in elements:
