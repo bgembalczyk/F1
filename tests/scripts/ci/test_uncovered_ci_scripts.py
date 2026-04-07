@@ -11,12 +11,28 @@ from unittest.mock import patch
 
 import pytest
 
+from scripts.ci import check_duplicate_default_configs as dedup
+from scripts.ci import check_terminology_consistency as tc
+from scripts.ci import enforce_function_complexity as efc
+from scripts.ci import enforce_new_module_any_policy as any_policy
+from scripts.ci import generate_architecture_spec_doc as gen_doc
+from scripts.ci import mypy_regression_gate as mypy_gate
+from scripts.ci.duplicate_report import DuplicateFileMeta
+from scripts.ci.duplicate_report import DuplicateFilter
+from scripts.ci.duplicate_report import DuplicateNormalizer
+from scripts.ci.duplicate_report import DuplicateRecord
+from scripts.ci.duplicate_report import MarkdownRenderer
 from scripts.ci.reporting import build_ci_parser
+from scripts.ci.reporting import line_range
+from scripts import check_di_antipatterns as di
+from validation.issue import ValidationIssue
+from validation.schema_engine import SchemaValidationEngine
+from validation.schemas import NestedSchema
+from validation.schemas import RecordSchema
 
 # ---------------------------------------------------------------------------
 # reporting.py
 # ---------------------------------------------------------------------------
-from scripts.ci.reporting import line_range
 
 
 def test_line_range_with_valid_start_end() -> None:
@@ -58,11 +74,6 @@ def test_build_ci_parser_returns_parser_with_all_args() -> None:
 # ---------------------------------------------------------------------------
 # duplicate_report.py
 # ---------------------------------------------------------------------------
-from scripts.ci.duplicate_report import DuplicateFileMeta
-from scripts.ci.duplicate_report import DuplicateFilter
-from scripts.ci.duplicate_report import DuplicateNormalizer
-from scripts.ci.duplicate_report import DuplicateRecord
-from scripts.ci.duplicate_report import MarkdownRenderer
 
 
 class TestDuplicateNormalizer:
@@ -225,7 +236,6 @@ class TestMarkdownRenderer:
 # ---------------------------------------------------------------------------
 # check_terminology_consistency.py
 # ---------------------------------------------------------------------------
-from scripts.ci import check_terminology_consistency as tc
 
 
 def test_terminology_parse_args(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -339,7 +349,6 @@ def test_terminology_main_ok(
 # ---------------------------------------------------------------------------
 # check_duplicate_default_configs.py
 # ---------------------------------------------------------------------------
-from scripts.ci import check_duplicate_default_configs as dedup
 
 
 def test_dedup_ast_to_python_dict_valid() -> None:
@@ -429,7 +438,6 @@ def test_dedup_extract_scraper_kwargs_no_kwarg() -> None:
 # ---------------------------------------------------------------------------
 # enforce_function_complexity.py (main function path)
 # ---------------------------------------------------------------------------
-from scripts.ci import enforce_function_complexity as efc
 
 
 def test_main_no_py_files(capsys: pytest.CaptureFixture[str]) -> None:
@@ -544,7 +552,6 @@ def test_function_overlaps_added_lines() -> None:
 # ---------------------------------------------------------------------------
 # enforce_new_module_any_policy.py
 # ---------------------------------------------------------------------------
-from scripts.ci import enforce_new_module_any_policy as any_policy
 
 
 def test_scan_file_no_any(tmp_path: Path) -> None:
@@ -621,7 +628,6 @@ def test_any_policy_main_no_new_files(
 # ---------------------------------------------------------------------------
 # generate_architecture_spec_doc.py
 # ---------------------------------------------------------------------------
-from scripts.ci import generate_architecture_spec_doc as gen_doc
 
 
 def test_render_markdown_returns_string() -> None:
@@ -677,7 +683,6 @@ def test_main_check_missing_file(
 # ---------------------------------------------------------------------------
 # mypy_regression_gate.py
 # ---------------------------------------------------------------------------
-from scripts.ci import mypy_regression_gate as mypy_gate
 
 
 def test_run_mypy_success_output() -> None:
@@ -798,7 +803,6 @@ def test_mypy_main_budget_exceeded(
 # ---------------------------------------------------------------------------
 # check_di_antipatterns.py
 # ---------------------------------------------------------------------------
-from scripts import check_di_antipatterns as di
 
 
 def test_violation_format_message_creation(tmp_path: Path) -> None:
@@ -969,10 +973,6 @@ def test_di_main_no_violations(
 # ---------------------------------------------------------------------------
 # validation/schema_engine.py
 # ---------------------------------------------------------------------------
-from validation.issue import ValidationIssue
-from validation.schema_engine import SchemaValidationEngine
-from validation.schemas import NestedSchema
-from validation.schemas import RecordSchema
 
 
 def test_coerce_schema_from_mapping() -> None:
