@@ -308,10 +308,10 @@ def test_terminology_main_no_files(
     assert "Brak" in out
 
 
+@pytest.mark.usefixtures("capsys")
 def test_terminology_main_with_errors(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
-    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     f = tmp_path / "x.py"
     f.write_text("v = 'grand-prix'\n", encoding="utf-8")
@@ -663,10 +663,10 @@ def test_main_check_out_of_date(
     assert "out of date" in capsys.readouterr().out
 
 
+@pytest.mark.usefixtures("capsys")
 def test_main_check_missing_file(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
-    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     out = tmp_path / "missing.md"
     monkeypatch.setattr(sys, "argv", ["prog", "--output", str(out), "--check"])
@@ -722,9 +722,9 @@ def test_run_mypy_no_match_returns_large_number() -> None:
     assert errors == 10**9
 
 
+@pytest.mark.usefixtures("capsys")
 def test_mypy_main_regression(
     monkeypatch: pytest.MonkeyPatch,
-    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     monkeypatch.setattr(mypy_gate, "_run_mypy", lambda _p: (10, "output"))
     monkeypatch.setattr(mypy_gate, "_git", lambda *_args: None)
@@ -760,9 +760,9 @@ def test_mypy_main_regression(
             pass
 
 
+@pytest.mark.usefixtures("capsys")
 def test_mypy_main_budget_exceeded(
     monkeypatch: pytest.MonkeyPatch,
-    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     run_results = [(2, "base"), (4, "head")]
     run_idx = [0]
@@ -913,7 +913,8 @@ class Builder:
     assert violations == []
 
 
-def test_validate_adr_reference_no_trigger(_tmp_path: Path) -> None:
+@pytest.mark.usefixtures("tmp_path")
+def test_validate_adr_reference_no_trigger() -> None:
     violations: list[di.Violation] = []
     result = di._validate_adr_reference_for_major_changes(violations, "", 5)
     assert result == []
@@ -956,9 +957,9 @@ def test_validate_adr_reference_missing() -> None:
     assert "ADR" in result[0]
 
 
+@pytest.mark.usefixtures("capsys")
 def test_di_main_no_violations(
     tmp_path: Path,
-    _capsys: pytest.CaptureFixture[str],
 ) -> None:
     src = tmp_path / "clean.py"
     src.write_text("x = 1\n", encoding="utf-8")
