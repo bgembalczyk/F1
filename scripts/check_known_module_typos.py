@@ -3,21 +3,13 @@
 
 from __future__ import annotations
 
-import importlib.util
 import sys
 from pathlib import Path
 
-_BOOTSTRAP_PATH = Path(__file__).resolve().parent / "lib" / "bootstrap.py"
-_BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
-    "_scripts_bootstrap",
-    _BOOTSTRAP_PATH,
-)
-assert _BOOTSTRAP_SPEC
-assert _BOOTSTRAP_SPEC.loader
-_BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
-_BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from scripts.lib.bootstrap import ensure_repo_root_on_sys_path
 
-REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
+REPO_ROOT = ensure_repo_root_on_sys_path()
 
 from scripts.lib.check_runner import run_cli  # noqa: E402
 from scripts.lib.known_typos import run_known_typos_check  # noqa: E402
