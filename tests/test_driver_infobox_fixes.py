@@ -22,7 +22,23 @@ def cell_parser(link_extractor):
     return InfoboxCellParser(include_urls=True, link_extractor=link_extractor)
 
 
-class TestBestFinishWithClass:
+class BaseBestFinishTest:
+    """Base class for best finish tests providing common assertions."""
+
+    def _assert_lmp1_and_lmh_classes(self, result, first_season_text):
+        """Assert that the result contains LMP1 and LMH classes."""
+        # First season with LMP1
+        assert result["seasons"][0]["text"] == first_season_text
+        assert "class" in result["seasons"][0]
+        assert result["seasons"][0]["class"]["text"] == "LMP1"
+
+        # Second season with LMH
+        assert result["seasons"][1]["text"] == "2021"
+        assert "class" in result["seasons"][1]
+        assert result["seasons"][1]["class"]["text"] == "LMH"
+
+
+class TestBestFinishWithClass(BaseBestFinishTest):
     """Tests for best finish parsing with class information."""
 
     def test_single_season_with_class(self, cell_parser):
@@ -76,15 +92,7 @@ class TestBestFinishWithClass:
         assert result["result"] == "1st"
         assert len(result["seasons"]) == 2
 
-        # First season with LMP1
-        assert result["seasons"][0]["text"] == "2019-20"
-        assert "class" in result["seasons"][0]
-        assert result["seasons"][0]["class"]["text"] == "LMP1"
-
-        # Second season with LMH
-        assert result["seasons"][1]["text"] == "2021"
-        assert "class" in result["seasons"][1]
-        assert result["seasons"][1]["class"]["text"] == "LMH"
+        self._assert_lmp1_and_lmh_classes(result, "2019-20")
 
     def test_best_finish_without_class(self, cell_parser):
         """Test best finish without class information still works."""
@@ -218,7 +226,7 @@ class TestCarNumberWithPresent:
         assert_car_number_with_present()
 
 
-class TestBestFinishWithNavigableString:
+class TestBestFinishWithNavigableString(BaseBestFinishTest):
     """Tests for best finish parsing with NavigableString between elements."""
 
     def test_best_finish_with_text_between_link_and_class(self, cell_parser):
@@ -251,12 +259,4 @@ more text <span><small>(<a href="/wiki/LMH" title="LMH">LMH</a>)</small></span><
         assert result["result"] == "1st"
         assert len(result["seasons"]) == 2
 
-        # First season
-        assert result["seasons"][0]["text"] == "2019"
-        assert "class" in result["seasons"][0]
-        assert result["seasons"][0]["class"]["text"] == "LMP1"
-
-        # Second season
-        assert result["seasons"][1]["text"] == "2021"
-        assert "class" in result["seasons"][1]
-        assert result["seasons"][1]["class"]["text"] == "LMH"
+        self._assert_lmp1_and_lmh_classes(result, "2019")
