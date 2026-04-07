@@ -53,7 +53,7 @@ def test_drivers_list_section_parser_apply_for_elements_skips_non_table() -> Non
     ]
 
     class _Stub:
-        def parse(self, data):
+        def parse(self, _data):
             return None
 
     parser._table_parser = _Stub()
@@ -68,7 +68,7 @@ def test_drivers_list_section_parser_apply_for_elements_replaces_on_match() -> N
     elements = [{"kind": "table", "data": {"ok": True}}]
 
     class _Stub:
-        def parse(self, data):
+        def parse(self, _data):
             return {"table_type": "drivers_list"}
 
     parser._table_parser = _Stub()
