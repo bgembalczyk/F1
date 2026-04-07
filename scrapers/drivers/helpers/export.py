@@ -2,9 +2,9 @@ import re
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.export.export_helpers import export_grouped_json
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.parsers.helpers import extract_driver_text
+from scrapers.base.services.result_export_service import ResultExportService
 from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor
 
 
@@ -31,4 +31,4 @@ def export_complete_drivers(
     options = init_scraper_options(None, include_urls=include_urls)
     scraper = CompleteDriverDataExtractor(options=options)
     data = scraper.fetch()
-    export_grouped_json(scraper, data, output_dir, surname_initial)
+    ResultExportService().export_grouped_json(scraper, data, output_dir, surname_initial)
