@@ -18,6 +18,15 @@ POSSESSIVE_PAREN_RE = re.compile(r"\([^)]*'s[^)]*\)\s*$")
 # Regex for possessive colour-note suffixes with driver names.
 POSSESSIVE_COLOUR_RE = re.compile(r"^(.*?)\s*\(([^)']*)'s[^)]*\)\s*$")
 
+SPONSOR_PAREN_GROUP_RE = re.compile(r"\(([^)]+)\)")
+SPONSOR_PAREN_REMOVE_RE = re.compile(r"\s*\([^)]*\)")
+
+NORMALIZE_COMMA_AND_RE = re.compile(r",\s*and\s+", flags=re.IGNORECASE)
+NORMALIZE_SPACE_AND_RE = re.compile(r"\s+and\s+", flags=re.IGNORECASE)
+NORMALIZE_START_AND_RE = re.compile(r"^\s*and\s+", flags=re.IGNORECASE)
+
+PARAM_MATCH_ONLY_ONWARD_RE = re.compile(r"\b(only|onwards?)\b", flags=re.IGNORECASE)
+PARAM_MATCH_FROM_RE = re.compile(r"^\s*from\s+", flags=re.IGNORECASE)
 # Regex to remove whitespace and dashes from string remainders.
 REMAINDER_CLEANUP_RE = re.compile(r"[\s\-—]")
 

@@ -1,4 +1,6 @@
+import random
 import re
+import string
 import timeit
 
 
@@ -44,11 +46,8 @@ def benchmark():
     # The cache would be thrashing in `original_parse`.
     # Let's simulate a cache thrashing scenario.
 
-    import random
-    import string
-
     def r_str(n=5):
-        return "".join(random.choices(string.ascii_letters, k=n))
+        return "".join(random.choices(string.ascii_letters, k=n))  # noqa: S311
 
     t_orig = 0
     t_opt = 0

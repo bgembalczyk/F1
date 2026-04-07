@@ -35,21 +35,21 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
 
 ## Reguły praktyczne
 
-0. **Reguła składni nazwy (max 3 człony)**.
+1. **Reguła składni nazwy (max 3 człony)**.
    - Stosuj schemat: `czasownik + obiekt + (opcjonalny kontekst)`.
    - Przykłady: `build_runner_map`, `merge_layer_zero`, `export_results_csv`.
    - Nie doklejaj członów, które dublują już informację z typu pola/klasy.
-1. **Unikaj nowych `helpers.py`**.
+2. **Unikaj nowych `helpers.py`**.
    - Preferuj nazwy celu, np. `runner_registry.py`, `run_profile_paths.py`, `seed_record_projection.py`.
-2. Dla istniejących mylących nazw stosuj migrację bez breaking change:
+3. Dla istniejących mylących nazw stosuj migrację bez breaking change:
    - nowy moduł o nazwie semantycznej,
    - stary moduł jako alias/re-export + `DeprecationWarning`.
    - re-export usuwaj etapami (najpierw migracja importów wewnętrznych, potem usunięcie aliasu w kolejnym PR).
-3. W obszarach technicznych preferuj moduły celowe zamiast jednego worka:
+4. W obszarach technicznych preferuj moduły celowe zamiast jednego worka:
    - `path_resolver.py` (rozwiązywanie ścieżek),
    - `record_merge_ops.py` (operacje merge rekordów),
    - `source_routing.py` (wybór i routing źródeł danych).
-4. Jeżeli klasa/moduł uruchamia cały flow, preferuj `Runner` zamiast ogólnego `Executor` w nowym kodzie.
+5. Jeżeli klasa/moduł uruchamia cały flow, preferuj `Runner` zamiast ogólnego `Executor` w nowym kodzie.
 
 ## Szybkie drzewko decyzyjne (Service vs Factory vs Runner vs Adapter)
 

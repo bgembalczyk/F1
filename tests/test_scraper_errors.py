@@ -6,6 +6,13 @@ from pathlib import Path
 
 import pytest
 
+from tests.support.dependency_stubs import _ensure_bs4_stub, _ensure_certifi_stub, _ensure_pandas_stub, _ensure_requests_stub
+
+_ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
+_ensure_certifi_stub()
+_ensure_pandas_stub()
+_ensure_requests_stub()
+
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
@@ -39,87 +46,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
-if "bs4" not in sys.modules:
-    bs4_stub = types.ModuleType("bs4")
-
-    class _StubTag:
-        def find_all(self, *_, **__):
-            return []
-
-        def find_all_next(self, *_, **__):
-            return []
-
-        def find(self, *_, **__):
-            return None
-
-        def select(self, *_, **__):
-            return []
-
-        def get_text(self, *_, **__):
-            return ""
-
-    class _StubBeautifulSoup(_StubTag):
-        def __init__(self, html: str, *_):
-            self.html = html
-
-    bs4_stub.Tag = _StubTag
-    bs4_stub.BeautifulSoup = _StubBeautifulSoup
-    sys.modules["bs4"] = bs4_stub
-
-if "requests" not in sys.modules:
-    requests_stub = types.ModuleType("requests")
-
-    class _RequestError(Exception):
-        pass
-
-    class _Session:
-        def get(self, *_args, **_kwargs):
-            msg = "requests stub"
-            raise _RequestError(msg)
-
-    requests_stub.RequestException = _RequestError
-    requests_stub.Session = _Session
-    sys.modules["requests"] = requests_stub
-
-if "certifi" not in sys.modules:
-    certifi_stub = types.ModuleType("certifi")
-
-    def _where():
-        return ""
-
-    certifi_stub.where = _where
-    sys.modules["certifi"] = certifi_stub
-
-if "pandas" not in sys.modules:
-    pandas_stub = types.ModuleType("pandas")
-    pandas_stub.__spec__ = ModuleSpec("pandas", loader=None)
-
-    class _StubDataFrame:
-        def __init__(self, data=None, *_args, **_kwargs):
-            self._rows = data if isinstance(data, list) else []
-            first_row = self._rows[0] if self._rows else {}
-            self.columns = list(first_row.keys()) if isinstance(first_row, dict) else []
-
-        @property
-        def iloc(self):
-            class _StubILoc:
-                def __init__(self, rows):
-                    self._rows = rows
-
-                def __getitem__(self, index):
-                    class _StubRow:
-                        def __init__(self, row):
-                            self._row = row if isinstance(row, dict) else {}
-
-                        def to_dict(self):
-                            return dict(self._row)
-
-                    return _StubRow(self._rows[index])
-
-            return _StubILoc(self._rows)
-
-    pandas_stub.DataFrame = _StubDataFrame
-    sys.modules["pandas"] = pandas_stub
 
 
 class DummyFetcher:

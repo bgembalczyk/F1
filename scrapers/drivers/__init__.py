@@ -1,7 +1,6 @@
 """Public API for the drivers domain."""
 
 from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor
-from scrapers.drivers.entrypoint import run_list_scraper
 from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
 from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.helpers.export import export_complete_drivers
@@ -15,5 +14,4 @@ __all__ = [
     "FemaleDriversListScraper",
     "SingleDriverScraper",
     "export_complete_drivers",
-    "run_list_scraper",
 ]

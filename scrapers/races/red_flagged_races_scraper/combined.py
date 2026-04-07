@@ -83,7 +83,43 @@ def _map_drivers_cell(text: str, links: list[Any]) -> list[dict[str, Any]]:
     return []
 
 
-class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
+class BaseRedFlaggedRacesTableParser(WikiTableBaseParser):
+    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().parse(table_data)
+        if result is None:
+            return None
+        result["domain_rows"] = self._merge_failed_to_restart_rows(
+            result["domain_rows"],
+        )
+        return result
+
+    @staticmethod
+    def _race_key(row: dict[str, Any]) -> tuple:
+        raise NotImplementedError
+
+    @classmethod
+    def _merge_failed_to_restart_rows(
+        cls,
+        rows: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        merged: list[dict[str, Any]] = []
+        for row in rows:
+            raw_drivers = row.pop("failed_to_make_restart_drivers", None)
+            drivers = raw_drivers if raw_drivers is not None else []
+            reason = row.pop("failed_to_make_restart_reason", None)
+            race_key = cls._race_key(row)
+            has_data = bool(drivers or reason)
+            entry = {"drivers": drivers, "reason": reason} if has_data else None
+            if merged and cls._race_key(merged[-1]) == race_key:
+                if entry is not None:
+                    merged[-1]["failed_to_make_restart"].append(entry)
+            else:
+                row["failed_to_make_restart"] = [entry] if entry is not None else []
+                merged.append(row)
+        return merged
+
+
+class WorldChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
     table_type = "red_flagged_world_championship_races"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -116,15 +152,6 @@ class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
             for header in headers
             if header in self._column_mapping
         }
-
-    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
-        result = super().parse(table_data)
-        if result is None:
-            return None
-        result["domain_rows"] = self._merge_failed_to_restart_rows(
-            result["domain_rows"],
-        )
-        return result
 
     @staticmethod
     def _race_key(row: dict[str, Any]) -> tuple:
@@ -184,7 +211,7 @@ class WorldChampionshipsRacesTableParser(WikiTableBaseParser):
         return mapped
 
 
-class NonChampionshipsRacesTableParser(WikiTableBaseParser):
+class NonChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
     table_type = "red_flagged_non_championship_races"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -217,15 +244,6 @@ class NonChampionshipsRacesTableParser(WikiTableBaseParser):
             for header in headers
             if header in self._column_mapping
         }
-
-    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
-        result = super().parse(table_data)
-        if result is None:
-            return None
-        result["domain_rows"] = self._merge_failed_to_restart_rows(
-            result["domain_rows"],
-        )
-        return result
 
     @staticmethod
     def _race_key(row: dict[str, Any]) -> tuple:
@@ -301,7 +319,7 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
             parsed["elements"],
             self._extract_descendant_table_elements(elements),
         )
-        self._apply_non_championship_table_parser(parsed)
+        self._table_parser.apply_to_payload(parsed)
         return parsed
 
     def _contains_table_elements(self, payload: dict[str, Any]) -> bool:
@@ -367,27 +385,6 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
         rows_count = len(rows) if isinstance(rows, list) else -1
         return headers, rows_count
 
-    def _apply_non_championship_table_parser(self, payload: dict[str, Any]) -> None:
-        self._apply_for_elements(payload.get("elements", []))
-        for value in payload.values():
-            if isinstance(value, dict):
-                self._apply_non_championship_table_parser(value)
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        self._apply_non_championship_table_parser(item)
-
-    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self._table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
-
 
 class RedFlaggedRacesSectionParser(SectionParser):
     def __init__(self) -> None:
@@ -397,29 +394,8 @@ class RedFlaggedRacesSectionParser(SectionParser):
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        self._apply_world_championship_table_parser(parsed)
+        self._world_championship_table_parser.apply_to_payload(parsed)
         return parsed
-
-    def _apply_world_championship_table_parser(self, payload: dict[str, Any]) -> None:
-        self._apply_for_elements(payload.get("elements", []))
-        for value in payload.values():
-            if isinstance(value, dict):
-                self._apply_world_championship_table_parser(value)
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        self._apply_world_championship_table_parser(item)
-
-    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self._world_championship_table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
 
     @staticmethod
     def collect_rows(
