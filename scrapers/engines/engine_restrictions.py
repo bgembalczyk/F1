@@ -5,6 +5,7 @@ from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins import ApplyForElementsMixin
 from scrapers.base.source_catalog import ENGINE_REGULATIONS
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
@@ -79,7 +80,7 @@ TABLE_SCHEMA = TableSchemaDSL(
 )
 
 
-class EngineSubSectionParser(SubSectionParser):
+class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = EngineRestrictionsTableParser()
@@ -94,6 +95,11 @@ class EngineSubSectionParser(SubSectionParser):
         for section in parsed.get("sub_sub_sections", []):
             self._table_parser.apply_to_payload(section)
         return parsed
+
+    def _apply_engine_restrictions_table_parser(self, payload: dict[str, Any]) -> None:
+        for section in payload.get("sub_sub_sections", []):
+            self._apply_for_elements(section.get("elements", []))
+            self._apply_engine_restrictions_table_parser(section)
 
 
 class CurrentRulesSectionParser(SectionParser):
