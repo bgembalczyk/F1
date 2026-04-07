@@ -58,6 +58,8 @@ class SeasonYearResolver:
 
     @staticmethod
     def extract_from_url(url: WikiUrl | str) -> SeasonYear | None:
+        if not url:
+            return None
         resolved_url = WikiUrl.from_raw(url).to_export()
         match = re.search(r"/(\d{4})_Formula_One", resolved_url)
         if match:

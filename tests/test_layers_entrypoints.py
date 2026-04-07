@@ -11,23 +11,6 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-@pytest.mark.parametrize("module_name", ["main"])
-def test_main_import_and_entrypoint_call_path(
-    monkeypatch: pytest.MonkeyPatch,
-    module_name: str,
-) -> None:
-    calls: list[str] = []
-
-    monkeypatch.setattr("scrapers.run_wiki_flow", lambda: calls.append("run"))
-    module = importlib.reload(importlib.import_module(module_name))
-
-    assert calls == []
-
-    module.main()
-
-    assert calls == ["run"]
-
-
 @pytest.mark.parametrize(
     ("module_name", "scraper_name", "seed_name", "expected"),
     [

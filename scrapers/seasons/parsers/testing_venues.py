@@ -16,6 +16,8 @@ from scrapers.seasons.services.domain_parsing_policy import TestingVenuesLayout
 
 
 class TestingVenuesParser:
+    __test__ = False
+
     def __init__(
         self,
         table_parser: SeasonTableParser,

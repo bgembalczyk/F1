@@ -12,6 +12,12 @@ from scrapers.drivers.infobox.parsers.year import YearParser
 
 MIN_YEAR_TOKENS_FOR_RANGE = 2
 
+CAR_NUMBER_PATTERN_RE = re.compile(
+    r"(?<!\d)(?P<prefix>No\.?|#|№)?\s*(?P<number>\d+)\s*(?:\((?P<years>[^)]+)\))?",
+    re.IGNORECASE,
+)
+YEAR_TOKEN_RE = re.compile(r"\b\d{4}\b")
+
 
 class CarNumbersParser:
     """Handles parsing of car numbers with optional year ranges."""
@@ -41,11 +47,7 @@ class CarNumbersParser:
         normalized = re.sub(r"\band\b", ",", normalized, flags=re.IGNORECASE)
         normalized = normalized.replace("/", ",").replace(";", ",")
         entries: list[dict[str, Any]] = []
-        pattern = re.compile(
-            r"(?<!\d)(?P<prefix>No\.?|#|№)?\s*(?P<number>\d+)\s*(?:\((?P<years>[^)]+)\))?",
-            re.IGNORECASE,
-        )
-        for match in pattern.finditer(normalized):
+        for match in CAR_NUMBER_PATTERN_RE.finditer(normalized):
             prefix = match.group("prefix") or ""
             number = ErrorHandler.run_domain_parse(
                 lambda current_match=match: int(current_match.group("number")),
@@ -58,7 +60,7 @@ class CarNumbersParser:
             years = {"start": None, "end": None}
             if years_text:
                 parsed = YearParser.parse_year_range(years_text)
-                year_tokens = re.findall(r"\b\d{4}\b", years_text)
+                year_tokens = YEAR_TOKEN_RE.findall(years_text)
                 if len(year_tokens) >= MIN_YEAR_TOKENS_FOR_RANGE:
                     parsed["start"] = int(year_tokens[0])
                     parsed["end"] = int(year_tokens[-1])

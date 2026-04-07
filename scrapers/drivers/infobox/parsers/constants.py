@@ -13,6 +13,3 @@ DATE_PATTERN = r"\b\d{1,2}\s+[A-Za-z]+\s+\d{4}|\b[A-Za-z]+\s+\d{1,2},\s*\d{4}|\b
 # Regex patterns for year detection (compiled once for performance)
 FOUR_DIGIT_YEAR_PATTERN = re.compile(r"^(19|20)\d{2}$")
 TWO_DIGIT_SUFFIX_PATTERN = re.compile(r"^\d{2}$")
-
-# Regex pattern for ISO date matching in hidden spans
-ISO_DATE_PATTERN = re.compile(r"\((\d{4}-\d{2}-\d{2})\)")

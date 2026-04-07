@@ -4,6 +4,7 @@ from collections.abc import Callable
 from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import SeasonRecordModel
 from layers.zero.merge_types import TeamRecordModel
+from layers.zero.record_merge_ops import merge_duplicate_records
 from layers.zero.record_merge_ops import merge_values
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 
@@ -128,74 +129,11 @@ def _races_sort_key(record: object) -> tuple[int, str, int, str]:
 
 
 def _merge_duplicate_drivers(records: list[object]) -> list[object]:
-    merged_records: list[object] = []
-    key_to_index: dict[str, int] = {}
-
-    for record in records:
-        driver_record = DriverRecordModel.from_object(record)
-        if driver_record is None:
-            merged_records.append(record)
-            continue
-        key = driver_record.dedupe_key()
-        if key is None:
-            merged_records.append(driver_record.to_dict())
-            continue
-
-        index = key_to_index.get(key)
-        if index is None:
-            key_to_index[key] = len(merged_records)
-            merged_records.append(driver_record.to_dict())
-            continue
-
-        existing = merged_records[index]
-        existing_driver = DriverRecordModel.from_object(existing)
-        if existing_driver is None:
-            continue
-        merged_records[index] = merge_values(
-            existing_driver.to_dict(),
-            driver_record.to_dict(),
-        )
-
-    return merged_records
+    return merge_duplicate_records(records, DriverRecordModel, merge_values)
 
 
 def _merge_duplicate_teams(records: list[object]) -> list[object]:
-    merged_records: list[object] = []
-    key_to_index: dict[str, int] = {}
-
-    for record in records:
-        team_record = TeamRecordModel.from_object(record)
-        if team_record is None:
-            merged_records.append(record)
-            continue
-        key = team_record.dedupe_key()
-        if key is None:
-            merged_records.append(team_record.to_dict())
-            continue
-
-        index = key_to_index.get(key)
-        if index is None:
-            index = len(merged_records)
-            key_to_index[key] = index
-            merged_records.append(team_record.to_dict())
-            for alias in team_record.aliases():
-                key_to_index[alias] = index
-            continue
-
-        existing = merged_records[index]
-        existing_team = TeamRecordModel.from_object(existing)
-        if existing_team is None:
-            continue
-
-        merged_record = merge_values(existing_team.to_dict(), team_record.to_dict())
-        merged_records[index] = merged_record
-        merged_team = TeamRecordModel.from_object(merged_record)
-        if merged_team is None:
-            continue
-        for alias in merged_team.aliases():
-            key_to_index[alias] = index
-
-    return merged_records
+    return merge_duplicate_records(records, TeamRecordModel, merge_values)
 
 
 def _season_years(value: object) -> set[int]:

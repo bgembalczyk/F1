@@ -7,8 +7,12 @@ from bs4 import Tag
 
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.base.helpers.year_extraction import YEAR_RE
 from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
+
+COUNT_RE = re.compile(r"^(\d+)")
+PAREN_RE = re.compile(r"\(([^)]+)\)")
 
 
 class ChampionshipsParser:
@@ -47,7 +51,7 @@ class ChampionshipsParser:
 
     def _parse_championships_payload(self, cell: Tag, text: str) -> dict[str, Any]:
         # Extract count
-        count_match = re.search(r"^(\d+)", text)
+        count_match = COUNT_RE.search(text)
         count = int(count_match.group(1)) if count_match else 0
 
         # Extract links from parentheses - treat as simple list of links
@@ -79,7 +83,7 @@ class ChampionshipsParser:
 
     def _parse_class_wins_payload(self, cell: Tag, text: str) -> dict[str, Any]:
         # Extract count
-        count_match = re.search(r"^(\d+)", text)
+        count_match = COUNT_RE.search(text)
         count = int(count_match.group(1)) if count_match else 0
 
         # Extract year links
@@ -94,15 +98,15 @@ class ChampionshipsParser:
         small_tag = cell.find("small")
         if small_tag:
             small_text = clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
-            for year_match in re.finditer(r"\b(\d{4})\b", small_text):
+            for year_match in YEAR_RE.finditer(small_text):
                 year = int(year_match.group(1))
                 wins.append({"year": year, "url": year_to_url.get(year)})
         else:
             # Fallback to extracting from parentheses in main text
-            paren_match = re.search(r"\(([^)]+)\)", text)
+            paren_match = PAREN_RE.search(text)
             if paren_match:
                 paren_content = paren_match.group(1)
-                for year_match in re.finditer(r"\b(\d{4})\b", paren_content):
+                for year_match in YEAR_RE.finditer(paren_content):
                     year = int(year_match.group(1))
                     wins.append({"year": year, "url": year_to_url.get(year)})
 

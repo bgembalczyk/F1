@@ -5,10 +5,11 @@ from bs4 import Tag
 
 from models.records.link import LinkRecord
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.helpers.parsing import parse_relations
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.infobox.schema import InfoboxSchema
-from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN, ISO_DATE_PATTERN
+from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
@@ -91,7 +92,7 @@ class InfoboxGeneralParser:
         for span in hidden_spans:
             span_text = span.get_text(strip=True)
             # Look for ISO date pattern in parentheses
-            iso_match = ISO_DATE_PATTERN.search(span_text)
+            iso_match = re.search(r"\((\d{4}-\d{2}-\d{2})\)", span_text)
             if iso_match:
                 return iso_match.group(1)
         return None
@@ -210,12 +211,4 @@ class InfoboxGeneralParser:
     def _parse_relations(self, cell: Tag) -> list[dict[str, Any]]:
         links = self._link_extractor.extract_links(cell)
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        entries: list[dict[str, Any]] = []
-        for link in links:
-            relation = None
-            pattern = rf"{re.escape(link.get('text') or '')}\s*\(([^)]+)\)"
-            match = re.search(pattern, text)
-            if match:
-                relation = match.group(1).strip()
-            entries.append({"person": link, "relation": relation})
-        return entries
+        return parse_relations(links, text)

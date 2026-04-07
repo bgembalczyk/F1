@@ -1,4 +1,3 @@
-import re
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -10,6 +9,14 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.sponsorship_liveries.helpers.constants import NORMALIZE_COMMA_AND_RE
+from scrapers.sponsorship_liveries.helpers.constants import NORMALIZE_SPACE_AND_RE
+from scrapers.sponsorship_liveries.helpers.constants import NORMALIZE_START_AND_RE
+from scrapers.sponsorship_liveries.helpers.constants import PARAM_MATCH_FROM_RE
+from scrapers.sponsorship_liveries.helpers.constants import PARAM_MATCH_ONLY_ONWARD_RE
+from scrapers.sponsorship_liveries.helpers.constants import REMAINDER_CLEANUP_RE
+from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_PAREN_GROUP_RE
+from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_PAREN_REMOVE_RE
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 from scrapers.sponsorship_liveries.parsers.parts import SponsorPartsParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
@@ -204,9 +211,9 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _normalize_text(text: str) -> str:
-        text = re.sub(r",\s*and\s+", ", ", text, flags=re.IGNORECASE)
-        text = re.sub(r"\s+and\s+", ", ", text, flags=re.IGNORECASE)
-        return re.sub(r"^\s*and\s+", "", text, flags=re.IGNORECASE)
+        text = NORMALIZE_COMMA_AND_RE.sub(", ", text)
+        text = NORMALIZE_SPACE_AND_RE.sub(", ", text)
+        return NORMALIZE_START_AND_RE.sub("", text)
 
     @staticmethod
     def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:
@@ -323,9 +330,9 @@ class SponsorColumn(BaseColumn):
     @staticmethod
     def _extract_params(text: str) -> tuple[str, list[str]]:
         params = []
-        for group in re.findall(r"\(([^)]+)\)", text):
+        for group in SPONSOR_PAREN_GROUP_RE.findall(text):
             params.extend(SponsorColumn._split_parts(group))
-        base_text = re.sub(r"\s*\([^)]*\)", "", text).strip()
+        base_text = SPONSOR_PAREN_REMOVE_RE.sub("", text).strip()
         return base_text, params
 
     @staticmethod
@@ -350,8 +357,8 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _normalize_param_match_text(text: str) -> str:
-        text = re.sub(r"\b(only|onwards?)\b", "", text, flags=re.IGNORECASE)
-        text = re.sub(r"^\s*from\s+", "", text, flags=re.IGNORECASE)
+        text = PARAM_MATCH_ONLY_ONWARD_RE.sub("", text)
+        text = PARAM_MATCH_FROM_RE.sub("", text)
         return text.strip()
 
     @staticmethod
@@ -374,10 +381,10 @@ class SponsorColumn(BaseColumn):
                     best = link
                     best_len = len(link_text)
                 continue
-            remainder = target[len(link_lower) :]
-            if target.startswith(link_lower) and re.sub(r"[\s\-—]", "", remainder):
-                continue
             if target.startswith(link_lower):
+                remainder = target[len(link_lower) :]
+                if REMAINDER_CLEANUP_RE.sub("", remainder):
+                    continue
                 if len(link_text) > best_len:
                     best = link
                     best_len = len(link_text)
