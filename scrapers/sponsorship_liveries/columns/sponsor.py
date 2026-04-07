@@ -10,6 +10,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.sponsorship_liveries.helpers.constants import REMAINDER_CLEANUP_RE
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 from scrapers.sponsorship_liveries.parsers.parts import SponsorPartsParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
@@ -374,10 +375,10 @@ class SponsorColumn(BaseColumn):
                     best = link
                     best_len = len(link_text)
                 continue
-            remainder = target[len(link_lower) :]
-            if target.startswith(link_lower) and re.sub(r"[\s\-—]", "", remainder):
-                continue
             if target.startswith(link_lower):
+                remainder = target[len(link_lower) :]
+                if REMAINDER_CLEANUP_RE.sub("", remainder):
+                    continue
                 if len(link_text) > best_len:
                     best = link
                     best_len = len(link_text)
