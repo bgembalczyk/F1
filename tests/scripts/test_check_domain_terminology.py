@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 from scripts import check_domain_terminology
 
 
-@pytest.fixture
+@pytest.fixture()
 def terminology_repo(tmp_path: Path) -> Path:
     repo = tmp_path / "repo"
     repo.mkdir()
