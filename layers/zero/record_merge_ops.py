@@ -1,6 +1,13 @@
 from __future__ import annotations
 
 import json
+from typing import TYPE_CHECKING
+from typing import Any
+from typing import Protocol
+from typing import TypeVar
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 from layers.zero.merge_types import DriverSeriesStats
 
@@ -65,10 +72,7 @@ def merge_driver_values(existing: object, incoming: object) -> object:
     return existing
 
 
-from collections.abc import Callable
-from typing import Any
-from typing import Protocol
-from typing import TypeVar
+
 
 
 class MergeModel(Protocol):
@@ -79,6 +83,21 @@ class MergeModel(Protocol):
 
 
 T = TypeVar("T", bound=MergeModel)
+
+
+def _handle_new_record(
+    model: MergeModel,
+    key: str,
+    merged_records: list[object],
+    key_to_index: dict[str, int],
+) -> None:
+    index = len(merged_records)
+    key_to_index[key] = index
+    merged_records.append(model.to_dict())
+
+    if hasattr(model, "aliases"):
+        for alias in model.aliases():
+            key_to_index[alias] = index
 
 
 def merge_duplicate_records(
@@ -101,13 +120,7 @@ def merge_duplicate_records(
 
         index = key_to_index.get(key)
         if index is None:
-            index = len(merged_records)
-            key_to_index[key] = index
-            merged_records.append(model.to_dict())
-
-            if hasattr(model, "aliases"):
-                for alias in model.aliases():
-                    key_to_index[alias] = index
+            _handle_new_record(model, key, merged_records, key_to_index)
             continue
 
         existing = merged_records[index]

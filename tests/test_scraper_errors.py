@@ -14,9 +14,10 @@ _ensure_certifi_stub()
 _ensure_pandas_stub()
 _ensure_requests_stub()
 
-from infrastructure.http_client.requests_shim.request_error import RequestError
-from scrapers.base.abc import ABCScraper
-from scrapers.base.error_handler import ErrorHandler
+# ruff: noqa: E402
+from infrastructure.http_client.requests_shim.request_error import RequestError  # noqa: E402
+from scrapers.base.abc import ABCScraper  # noqa: E402
+from scrapers.base.error_handler import ErrorHandler  # noqa: E402
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ErrorBehavior
 from scrapers.base.errors import ScraperNetworkError
