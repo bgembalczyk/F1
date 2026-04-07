@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -33,6 +34,7 @@ def assert_car_number_with_present() -> None:
     assert result[1]["number"] == SECOND_NUMBER
     assert result[1]["years"]["start"] == SECOND_START_YEAR
     assert result[1]["years"]["end"] is None
+
 
 def assert_career_parsed(scraper: Any, html: str) -> list[Any]:
     """Parses HTML infobox and asserts that career sections exist."""
