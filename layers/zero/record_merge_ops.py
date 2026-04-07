@@ -11,6 +11,9 @@ if TYPE_CHECKING:
 
 from layers.zero.merge_types import DriverSeriesStats
 
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
 
 def merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
     merged = list(existing)
@@ -84,7 +87,24 @@ class MergeModel(Protocol):
     def dedupe_key(self) -> str | None: ...
     def to_dict(self) -> dict[str, Any]: ...
 
+
 T = TypeVar("T", bound=MergeModel)
+
+
+def _handle_new_record(
+    model: MergeModel,
+    merged_records: list[object],
+    key_to_index: dict[str, int],
+    key: str,
+) -> None:
+    index = len(merged_records)
+    key_to_index[key] = index
+    merged_records.append(model.to_dict())
+
+    if hasattr(model, "aliases"):
+        for alias in model.aliases():
+            key_to_index[alias] = index
+
 
 # ruff: noqa: C901
 def merge_duplicate_records(
@@ -107,13 +127,7 @@ def merge_duplicate_records(
 
         index = key_to_index.get(key)
         if index is None:
-            index = len(merged_records)
-            key_to_index[key] = index
-            merged_records.append(model.to_dict())
-
-            if hasattr(model, "aliases"):
-                for alias in model.aliases():
-                    key_to_index[alias] = index
+            _handle_new_record(model, merged_records, key_to_index, key)
             continue
 
         existing = merged_records[index]

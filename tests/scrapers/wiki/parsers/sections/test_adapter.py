@@ -81,8 +81,6 @@ class TestIterSections:
         assert list(_iter_sections([])) == []
 
 
-
-
 class TestFindSectionTree:
     def test_returns_none_for_empty_article(self):
         result = find_section_tree({}, "Results")
