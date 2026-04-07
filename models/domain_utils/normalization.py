@@ -2,47 +2,8 @@ from collections.abc import Iterable
 from collections.abc import Mapping
 from typing import Any
 
-from models.domain_utils.field_normalization.links import (
-    normalize_link_item as _normalize_link_item,
-)
-from models.domain_utils.field_normalization.links import (
-    normalize_link_items as _normalize_link_items,
-)
 from models.records.constants import WIKI_SEASON_URL
-from models.value_objects.link import Link
-from models.value_objects.link_utils import validate_link as validate_link_payload
 from models.value_objects.season_ref import SeasonRef
-
-
-def normalize_link_item(
-    value: Link | Mapping[str, Any] | str | None,
-    *,
-    field_name: str,
-) -> dict[str, Any] | None:
-    """Normalize a single link item.
-
-    Contract:
-    - empty payload -> None,
-    - invalid payload -> ValueError,
-    - valid payload -> {"text": str, "url": str | None}.
-    """
-    return _normalize_link_item(
-        value,
-        field_name=field_name,
-        validate_payload=validate_link_payload,
-    )
-
-
-def normalize_link_items(
-    values: Iterable[Link | Mapping[str, Any] | str | None] | None,
-    *,
-    field_name: str,
-) -> list[dict[str, Any]]:
-    return _normalize_link_items(
-        values,
-        field_name=field_name,
-        validate_payload=validate_link_payload,
-    )
 
 
 def normalize_season_item(

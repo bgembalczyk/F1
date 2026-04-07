@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.domain_utils.normalization import normalize_link_items
+from models.domain_utils.field_normalization.links import normalize_link_items
 from models.domain_utils.normalization import (
     normalize_season_items as core_normalize_season_items,
 )
@@ -12,6 +12,7 @@ from models.validation.constants import ALLOWED_CIRCUIT_STATUSES
 from models.validation.helpers import validate_status
 from models.validation.utils import coerce_number
 from models.value_objects.link import Link
+from models.value_objects.link_utils import validate_link
 from models.value_objects.season_ref import SeasonRef
 
 
@@ -68,7 +69,11 @@ class Circuit(ValidatedModel):
         # --- grands_prix: koercja do Link + filtr pustych ---
         self.grands_prix = [
             Link.from_dict(item)
-            for item in normalize_link_items(self.grands_prix, field_name="grands_prix")
+            for item in normalize_link_items(
+                self.grands_prix,
+                field_name="grands_prix",
+                validate_payload=validate_link,
+            )
         ]
 
         # --- seasons: koercja do SeasonRef + filtr None ---
