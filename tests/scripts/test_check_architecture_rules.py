@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import subprocess
 import sys
 from pathlib import Path
 from types import SimpleNamespace
@@ -19,7 +18,7 @@ def _rules_stub() -> SimpleNamespace:
         ENTRYPOINT_DOMAINS=("drivers",),
         REQUIRED_LAYERS_BY_DOMAIN={"drivers": ("sections", "app")},
         FORBIDDEN_IMPORTS_BY_LAYER={"sections": ("app",), "app": ()},
-        infer_layer=lambda path, _domain=None: "sections"
+        infer_layer=lambda path, domain=None: "sections"
         if "sections" in path.parts
         else "app",
         resolve_import_targets=lambda _path: ["scrapers.drivers.app.shared"],
@@ -137,18 +136,20 @@ def test_main_returns_failure_and_success_with_expected_stdout(
     assert "Architecture rules check passed." in capsys.readouterr().out
 
 
-def test_cli_invalid_argument_reports_stderr() -> None:
-    script_path = (
-        Path(__file__).resolve().parents[2] / "scripts" / "check_architecture_rules.py"
-    )
+def test_cli_invalid_argument_reports_stderr(
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    old_argv = sys.argv
+    try:
+        sys.argv = ["check_architecture_rules.py", "--bad-flag"]
+        try:
+            check_architecture_rules.main()
+            raise AssertionError("expected SystemExit")
+        except SystemExit as exc:
+            assert exc.code == 2  # noqa: PLR2004
+    finally:
+        sys.argv = old_argv
 
-    proc = subprocess.run(  # - controlled test command
-        [sys.executable, str(script_path), "--bad-flag"],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-
-    assert proc.returncode == 2  # noqa: PLR2004
-    assert "usage:" in proc.stderr
-    assert "unrecognized arguments" in proc.stderr
+    err = capsys.readouterr().err
+    assert "usage:" in err
+    assert "unrecognized arguments" in err

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import subprocess
 import sys
 from typing import TYPE_CHECKING
 
@@ -119,16 +118,18 @@ def test_list_changed_files_handles_git_failure(
     assert validate_pr_template.list_changed_files("a", "b") == []
 
 
-def test_cli_argument_validation_stderr() -> None:
-    module = "scripts.ci.validate_pr_template"
+def test_cli_argument_validation_stderr(capsys: pytest.CaptureFixture[str]) -> None:
+    old_argv = sys.argv
+    try:
+        sys.argv = ["validate_pr_template.py"]
+        try:
+            validate_pr_template.main()
+            raise AssertionError("expected SystemExit")
+        except SystemExit as exc:
+            assert exc.code == 2  # noqa: PLR2004
+    finally:
+        sys.argv = old_argv
 
-    proc = subprocess.run(  # - controlled test command
-        [sys.executable, "-m", module],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-
-    assert proc.returncode == 2  # noqa: PLR2004
-    assert "usage:" in proc.stderr
-    assert "required" in proc.stderr
+    err = capsys.readouterr().err
+    assert "usage:" in err
+    assert "required" in err

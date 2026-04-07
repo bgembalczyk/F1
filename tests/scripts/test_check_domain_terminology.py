@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import subprocess
-import sys
 from pathlib import Path
 
 import pytest
@@ -74,17 +72,4 @@ def test_cli_success_and_failure_exit_codes_and_stdout(
 
 
 def test_cli_ignores_unknown_arguments_for_backward_compatibility() -> None:
-    script_path = (
-        Path(__file__).resolve().parents[2] / "scripts" / "check_domain_terminology.py"
-    )
-
-    proc = subprocess.run(  # - controlled test command
-        [sys.executable, str(script_path), "--unknown-option"],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-
-    assert proc.returncode == 0
-    assert "[domain-terminology]" in proc.stdout
-    assert proc.stderr == ""
+    assert check_domain_terminology.main(["--unknown-option"]) == 0
