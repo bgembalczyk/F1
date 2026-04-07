@@ -94,8 +94,12 @@ class NationalityParser:
 
         return nationalities or []
 
-    @staticmethod
-    def _extract_years_from_text(text: str) -> list[int]:
+    YEAR_PATTERNS_RE = re.compile(r"\(([^)]*\d{4}[^)]*)\)")
+    YEAR_RANGE_RE = re.compile(r"(\d{4})\s*[--]\s*(\d{4})")
+    YEAR_RE = re.compile(r"\b(\d{4})\b")
+
+    @classmethod
+    def _extract_years_from_text(cls, text: str) -> list[int]:
         """Extract all years (including ranges) from parenthesised patterns in text.
 
         Args:
@@ -104,21 +108,20 @@ class NationalityParser:
         Returns:
             Deduplicated list of integer years found in the text.
         """
-        years: list[int] = []
-        year_patterns = _YEAR_PATTERNS_RE.findall(text)
+        years_dict: dict[int, None] = {}
+        year_patterns = cls.YEAR_PATTERNS_RE.findall(text)
 
         for year_pattern in year_patterns:
-            for range_match in _YEAR_RANGE_RE.finditer(year_pattern):
+            for range_match in cls.YEAR_RANGE_RE.finditer(year_pattern):
                 start = int(range_match.group(1))
                 end = int(range_match.group(2))
                 for year in range(start, end + 1):
-                    years_set.add(year)
+                    years_dict[year] = None
 
-            for year_match in _YEAR_RE.finditer(year_pattern):
-                year = int(year_match.group(1))
-                years_set.add(year)
+            for year_match in cls.YEAR_RE.finditer(year_pattern):
+                years_dict[int(year_match.group(1))] = None
 
-        return list(years_set)
+        return list(years_dict.keys())
 
     def _parse_nationality_simple(
         self,
