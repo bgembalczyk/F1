@@ -1,6 +1,7 @@
 from contextlib import suppress
 from dataclasses import dataclass
 from dataclasses import field
+from dataclasses import replace
 from pathlib import Path
 from typing import Literal
 
@@ -110,6 +111,22 @@ class ScraperOptions:
 
     def to_http_policy(self) -> HttpPolicy:
         return self.http.policy
+
+    def resolve_http_policy(
+        self,
+        *,
+        policy: HttpPolicy | None = None,
+    ) -> HttpPolicy:
+        base_policy = policy or self.http.policy
+        timeout = self.http.timeout
+        retries = self.http.retries
+        if timeout is None and retries is None:
+            return base_policy
+        return replace(
+            base_policy,
+            timeout=timeout if timeout is not None else base_policy.timeout,
+            retries=retries if retries is not None else base_policy.retries,
+        )
 
     def with_fetcher(self) -> HtmlFetcher:
         runtime = ScraperRuntimeFactory().build(
