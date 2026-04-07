@@ -360,5 +360,3 @@ def _validate_legacy_filename_aliases() -> None:
 
 
 validate_sources_registry_consistency()
-
-

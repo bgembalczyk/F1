@@ -36,8 +36,8 @@ from scrapers.drivers.constants import FATALITIES_SECTION_ID
 from scrapers.drivers.constants import FATALITIES_SESSION_HEADER
 from scrapers.drivers.constants import MARK_F2_CATEGORY
 from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
-from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.drivers.helpers.parsers import DriverOrderedTableParser
+from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 

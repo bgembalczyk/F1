@@ -4,6 +4,8 @@ from __future__ import annotations
 import ast
 import subprocess
 import sys
+from collections.abc import Iterator
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 from unittest.mock import MagicMock
@@ -30,8 +32,6 @@ from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
 
-from contextlib import contextmanager
-from typing import Iterator
 
 @contextmanager
 def mock_git_worktree() -> Iterator[None]:
@@ -53,6 +53,7 @@ def mock_git_worktree() -> Iterator[None]:
             return_value=FakeRemove(),
         ):
             yield
+
 
 # ---------------------------------------------------------------------------
 # reporting.py

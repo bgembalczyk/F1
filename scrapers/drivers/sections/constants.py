@@ -15,12 +15,12 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.drivers.sections.common import DriverResultsSectionConfig
 from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
 from scrapers.base.table.headers_shared import POINTS_HEADER
 from scrapers.base.table.headers_shared import POINTS_HEADER_TO_KEY
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
 from scrapers.drivers.columns.series import SeriesColumn
+from scrapers.drivers.sections.common import DriverResultsSectionConfig
 
 if TYPE_CHECKING:
     from collections.abc import Callable

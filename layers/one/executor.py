@@ -97,7 +97,11 @@ class LayerOneExecutor(BaseExecutor):
         self._validate_seed_registry(self._seed_registry)
         runner_map = self._runners()
         run_id = self._resolve_run_id(run_config)
-        trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id, layer=1)
+        trace_writer = self._build_trace_writer(
+            run_config=run_config,
+            run_id=run_id,
+            layer=1,
+        )
         summary: dict[str, list[str]] = {"success": [], "skip": [], "fail": []}
         output_paths: list[str] = []
         return run_id, trace_writer, summary, output_paths, runner_map

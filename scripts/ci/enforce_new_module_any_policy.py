@@ -8,12 +8,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROLLOUT_PREFIXES = (
-)
+ROLLOUT_PREFIXES = ()
 
 # Tymczasowa lista wyjątków (legacy debt) — utrzymywana jawnie podczas rolloutu.
-ANY_EXCEPTION_MODULES = {
-}
+ANY_EXCEPTION_MODULES = {}
 
 JUSTIFICATION_MARKER = "ANY-JUSTIFIED:"
 ANY_PATTERN = re.compile(r"\bAny\b")

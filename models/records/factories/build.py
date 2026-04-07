@@ -100,5 +100,3 @@ def _build_convenience(record_type: RecordType) -> Callable[[Mapping[str, Any]],
 
 for _record_type in RecordType:
     globals()[f"build_{_record_type.value}_record"] = _build_convenience(_record_type)
-
-

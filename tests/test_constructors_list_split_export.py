@@ -9,7 +9,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.constructors.constructors_list import ConstructorsListScraper
 
 
-@pytest.fixture
+@pytest.fixture()
 def populated_scraper() -> ConstructorsListScraper:
     scraper = ConstructorsListScraper(options=ScraperOptions())
     scraper._data = [{"constructor": "Alpha"}]
@@ -23,7 +23,8 @@ def populated_scraper() -> ConstructorsListScraper:
 
 
 def test_constructors_list_scraper_exports_split_json_files(
-    populated_scraper, tmp_path
+    populated_scraper,
+    tmp_path,
 ) -> None:
     output = tmp_path / "constructors.json"
     populated_scraper.to_json(output)
@@ -50,7 +51,8 @@ def test_constructors_list_scraper_exports_split_json_files(
 
 
 def test_constructors_list_scraper_exports_split_csv_files(
-    populated_scraper, tmp_path
+    populated_scraper,
+    tmp_path,
 ) -> None:
     output = tmp_path / "constructors.csv"
     populated_scraper.to_csv(output)

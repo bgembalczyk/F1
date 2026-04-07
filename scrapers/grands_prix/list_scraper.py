@@ -3,6 +3,7 @@
 from typing import Any
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import GRANDS_PRIX_LIST
 from scrapers.base.table.builders import EntityColumnSpec
@@ -14,7 +15,6 @@ from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser

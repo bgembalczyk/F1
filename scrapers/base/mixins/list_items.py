@@ -3,6 +3,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
+
 class ExtractListItemsMixin:
     @staticmethod
     def _extract_list_items(section_fragment: "BeautifulSoup") -> list[dict[str, str]]:

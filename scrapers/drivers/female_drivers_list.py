@@ -1,6 +1,7 @@
 from typing import Any
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -21,7 +22,6 @@ from scrapers.drivers.constants import FEMALE_DRIVER_TEAMS_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVERS_HEADERS
 from scrapers.drivers.constants import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVERS_SECTION_ID
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
