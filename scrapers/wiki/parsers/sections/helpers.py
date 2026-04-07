@@ -1,5 +1,7 @@
 from bs4 import Tag
 
+from difflib import SequenceMatcher
+
 from scrapers.base.helpers.transform_micro_ops import merge_unique_preserve_order
 from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
 from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
@@ -114,6 +116,10 @@ def profile_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
         )
 
     return aliases
+
+
+def best_fuzzy_ratio(text: str, target_texts: set[str]) -> float:
+    return max(SequenceMatcher(None, text, value).ratio() for value in target_texts)
 
 
 def profile_entry_aliases(

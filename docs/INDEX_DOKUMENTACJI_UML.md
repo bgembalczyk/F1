@@ -13,11 +13,11 @@
 5. **[uml_future_dataset_pipeline.puml](uml_future_dataset_pipeline.puml)** - Docelowa wizja iteracyjnego pipeline warstw 0/1 (Wikipedia → kolejne checkpointy → ML-ready)
 
 ### Dokumentacja README
-4. **[UML_DIAGRAMS_README.md](UML_DIAGRAMS_README.md)** - Kompleksowa dokumentacja w języku angielskim
-5. **[UML_DIAGRAMS_README_PL.md](UML_DIAGRAMS_README_PL.md)** - Kompleksowa dokumentacja w języku polskim
+1. **[UML_DIAGRAMS_README.md](UML_DIAGRAMS_README.md)** - Kompleksowa dokumentacja w języku angielskim
+2. **[UML_DIAGRAMS_README_PL.md](UML_DIAGRAMS_README_PL.md)** - Kompleksowa dokumentacja w języku polskim
 
 ### Podsumowanie
-6. **[ANALIZA_STRUKTURY_PODSUMOWANIE.md](ANALIZA_STRUKTURY_PODSUMOWANIE.md)** - Podsumowanie wykonanej analizy
+1. **[ANALIZA_STRUKTURY_PODSUMOWANIE.md](ANALIZA_STRUKTURY_PODSUMOWANIE.md)** - Podsumowanie wykonanej analizy
 
 ---
 

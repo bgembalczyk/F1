@@ -27,14 +27,15 @@ soup = BeautifulSoup(html_content, "html.parser")
 
 
 def current_parse():
-    records = []
-    for p in soup.find_all("p"):
-        if p.get_text(" ", strip=True):
-            records.append({"text": p.get_text(" ", strip=True)})
+    return [
+        {"text": p.get_text(" ", strip=True)}
+        for p in soup.find_all("p")
+        if p.get_text(" ", strip=True)
+    ]
 
 
 def new_parse():
-    records = [
+    return [
         {"text": text}
         for p in soup.find_all("p")
         if (text := p.get_text(" ", strip=True))
@@ -42,7 +43,7 @@ def new_parse():
 
 
 def current_extract_list_items():
-    records = [
+    return [
         {"text": li.get_text(" ", strip=True)}
         for li in soup.select("ul li")
         if li.get_text(" ", strip=True)
@@ -50,7 +51,7 @@ def current_extract_list_items():
 
 
 def new_extract_list_items():
-    records = [
+    return [
         {"text": text}
         for li in soup.select("ul li")
         if (text := li.get_text(" ", strip=True))
@@ -66,14 +67,13 @@ if __name__ == "__main__":
     t_curr_ext = timeit.timeit(current_extract_list_items, number=n)
     t_new_ext = timeit.timeit(new_extract_list_items, number=n)
 
+    parse_improvement = (t_curr_parse - t_new_parse) / t_curr_parse * 100
+    extract_improvement = (t_curr_ext - t_new_ext) / t_curr_ext * 100
+
     print(f"Current Parse (p tags): {t_curr_parse:.4f}s")
     print(f"New Parse (p tags):     {t_new_parse:.4f}s")
-    print(
-        f"Improvement Parse:      {(t_curr_parse - t_new_parse) / t_curr_parse * 100:.2f}%",
-    )
+    print(f"Improvement Parse:      {parse_improvement:.2f}%")
 
     print(f"Current Extract (li tags): {t_curr_ext:.4f}s")
     print(f"New Extract (li tags):     {t_new_ext:.4f}s")
-    print(
-        f"Improvement Extract:       {(t_curr_ext - t_new_ext) / t_curr_ext * 100:.2f}%",
-    )
+    print(f"Improvement Extract:       {extract_improvement:.2f}%")
