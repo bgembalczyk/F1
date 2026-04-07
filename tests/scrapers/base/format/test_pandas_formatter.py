@@ -40,7 +40,7 @@ def test_pandas_formatter_falls_back_to_list_when_no_columns_attr() -> None:
         pass
 
     original_df = pd.DataFrame
-    pd.DataFrame = lambda *a, **kw: _BadDataFrame()
+    pd.DataFrame = lambda *_args, **_kwargs: _BadDataFrame()
 
     try:
         with warnings.catch_warnings(record=True) as w:

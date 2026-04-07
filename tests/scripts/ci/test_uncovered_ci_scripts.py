@@ -268,7 +268,7 @@ def test_terminology_list_changed_files_returns_empty_on_git_error(
 
     monkeypatch.setattr(
         "scripts.ci.check_terminology_consistency.subprocess.run",
-        lambda *a, **kw: FakeResult(),
+        lambda *_args, **_kwargs: FakeResult(),
     )
     result = tc.list_changed_files("base", "head")
     assert result == []
@@ -289,7 +289,7 @@ def test_terminology_list_changed_files_filters_extensions(
 
     monkeypatch.setattr(
         "scripts.ci.check_terminology_consistency.subprocess.run",
-        lambda *a, **kw: FakeResult(),
+        lambda *_args, **_kwargs: FakeResult(),
     )
     result = tc.list_changed_files("base", "head")
     assert any(p.suffix == ".py" for p in result)
@@ -446,7 +446,7 @@ def test_main_no_added_lines(
 ) -> None:
     monkeypatch.setattr(
         "scripts.ci.enforce_function_complexity.build_added_lines_map",
-        lambda *a, **k: {},
+        lambda *_args, **_kwargs: {},
     )
     code = efc.main(["--base-sha", "a", "--head-sha", "b", "--changed-files", "f.py"])
     assert code == 0
@@ -464,7 +464,7 @@ def test_main_violations_detected(
 
     monkeypatch.setattr(
         "scripts.ci.enforce_function_complexity.build_added_lines_map",
-        lambda *a, **k: {str(py_file): set(range(1, 92))},
+        lambda *_args, **_kwargs: {str(py_file): set(range(1, 92))},
     )
     code = efc.main(
         [
@@ -493,7 +493,7 @@ def test_main_ok(
 
     monkeypatch.setattr(
         "scripts.ci.enforce_function_complexity.build_added_lines_map",
-        lambda *a, **k: {str(py_file): {1, 2}},
+        lambda *_args, **_kwargs: {str(py_file): {1, 2}},
     )
     code = efc.main(
         [
@@ -726,8 +726,8 @@ def test_mypy_main_regression(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
 ) -> None:
-    monkeypatch.setattr(mypy_gate, "_run_mypy", lambda p: (10, "output"))
-    monkeypatch.setattr(mypy_gate, "_git", lambda *a: None)
+    monkeypatch.setattr(mypy_gate, "_run_mypy", lambda _p: (10, "output"))
+    monkeypatch.setattr(mypy_gate, "_git", lambda *_args: None)
 
     run_results = [(2, "base out"), (10, "head out")]
     run_idx = [0]
@@ -773,7 +773,7 @@ def test_mypy_main_budget_exceeded(
         return r
 
     monkeypatch.setattr(mypy_gate, "_run_mypy", fake_run_mypy)
-    monkeypatch.setattr(mypy_gate, "_git", lambda *a: None)
+    monkeypatch.setattr(mypy_gate, "_git", lambda *_args: None)
 
     with patch(
         "scripts.ci.mypy_regression_gate.tempfile.TemporaryDirectory",
@@ -1025,7 +1025,7 @@ def test_validate_nested_value_list_not_list() -> None:
         "items",
         "not a list",
         nested,
-        lambda rec, sch: [],
+        lambda _rec, _sch: [],
     )
     assert any("list" in str(e) for e in errors)
 
@@ -1036,7 +1036,7 @@ def test_validate_nested_value_list_item_not_mapping() -> None:
         "items",
         ["not a dict"],
         nested,
-        lambda rec, sch: [],
+        lambda _rec, _sch: [],
     )
     assert len(errors) == 1
 
@@ -1047,7 +1047,7 @@ def test_validate_nested_value_not_mapping() -> None:
         "obj",
         "string",
         nested,
-        lambda rec, sch: [],
+        lambda _rec, _sch: [],
     )
     assert len(errors) == 1
 
@@ -1059,7 +1059,7 @@ def test_validate_nested_schema_callable() -> None:
     errors = SchemaValidationEngine.validate_nested_schema(
         {"y": 1},
         validator,
-        lambda rec, sch: [],
+        lambda _rec, _sch: [],
     )
     assert len(errors) == 1
 
@@ -1070,7 +1070,7 @@ def test_validate_nested_value_valid_list() -> None:
         "items",
         [{"x": 1}],
         nested,
-        lambda rec, sch: [],
+        lambda _rec, _sch: [],
     )
     assert errors == []
 
@@ -1081,6 +1081,6 @@ def test_validate_nested_value_valid_mapping() -> None:
         "obj",
         {"a": 1},
         nested,
-        lambda rec, sch: [],
+        lambda _rec, _sch: [],
     )
     assert errors == []
