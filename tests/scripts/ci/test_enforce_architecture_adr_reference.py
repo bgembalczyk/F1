@@ -79,7 +79,7 @@ def test_main_outputs_error_when_reference_missing(
 
 
 def test_cli_invalid_argument_prints_stderr() -> None:
-    proc = subprocess.run(  # noqa: S603 - controlled test command
+    proc = subprocess.run(  # - controlled test command
         [
             sys.executable,
             "-m",
