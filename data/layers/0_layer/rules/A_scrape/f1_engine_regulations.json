@@ -390,7 +390,12 @@
           "value": 1.5
         }
       ],
-      "naturally_aspirated": "prohibited"
+      "naturally_aspirated": [
+        {
+          "unit": "L",
+          "value": 1.5
+        }
+      ]
     },
     "operating_principle": "4-stroke Piston",
     "rpm_limit": null,

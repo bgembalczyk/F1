@@ -341,7 +341,7 @@
   {
     "circuit": {
       "text": "Autódromo do Estoril",
-      "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril"
+      "url": "https://en.wikipedia.org/wiki/Circuito_do_Estoril"
     },
     "circuit_status": "former",
     "country": {
@@ -625,7 +625,7 @@
   {
     "circuit": {
       "text": "Autodromo Internazionale del Mugello",
-      "url": "https://en.wikipedia.org/wiki/Autodromo_Internazionale_del_Mugello"
+      "url": "https://en.wikipedia.org/wiki/Mugello_Circuit"
     },
     "circuit_status": "former",
     "country": {
@@ -636,7 +636,7 @@
     "grands_prix": [
       {
         "text": "Tuscan Grand Prix",
-        "url": "https://en.wikipedia.org/wiki/Tuscan_Grand_Prix"
+        "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
       }
     ],
     "grands_prix_held": 1,
@@ -1026,7 +1026,7 @@
     "background": "FBCEB1",
     "circuit": {
       "text": "Autodromo Nazionale di Monza",
-      "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+      "url": "https://en.wikipedia.org/wiki/Monza_Circuit"
     },
     "circuit_status": "current",
     "country": {
@@ -1468,8 +1468,8 @@
     },
     "circuit_status": "former",
     "country": {
-      "text": "Germany",
-      "url": "https://en.wikipedia.org/wiki/Germany"
+      "text": "West Germany",
+      "url": "https://en.wikipedia.org/wiki/West_Germany"
     },
     "direction": "Anti-clockwise",
     "grands_prix": [
@@ -1495,12 +1495,12 @@
     "type": "Road circuit"
   },
   {
-    "background": "FBCEB1",
+    "background": "CEFBC1",
     "circuit": {
       "text": "Bahrain International Circuit",
       "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
     },
-    "circuit_status": "current",
+    "circuit_status": "future",
     "country": {
       "text": "Bahrain",
       "url": "https://en.wikipedia.org/wiki/Bahrain"
@@ -1814,7 +1814,7 @@
   },
   {
     "circuit": {
-      "text": "Bugatti Au Mans",
+      "text": "Bugatti Circuit",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_la_Sarthe#Bugatti_Circuit"
     },
     "circuit_status": "former",
@@ -1884,51 +1884,6 @@
   },
   {
     "circuit": {
-      "text": "Charade Circuit",
-      "url": "https://en.wikipedia.org/wiki/Circuit_de_Charade"
-    },
-    "circuit_status": "former",
-    "country": {
-      "text": "France",
-      "url": "https://en.wikipedia.org/wiki/France"
-    },
-    "direction": "Clockwise",
-    "grands_prix": [
-      {
-        "text": "French Grand Prix",
-        "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
-      }
-    ],
-    "grands_prix_held": 4,
-    "last_length_used_km": 8.055,
-    "last_length_used_mi": 5.005,
-    "location": {
-      "text": "Saint-Genès-Champanelle",
-      "url": "https://en.wikipedia.org/wiki/Saint-Gen%C3%A8s-Champanelle"
-    },
-    "seasons": [
-      {
-        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season",
-        "year": 1965
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
-        "year": 1969
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season",
-        "year": 1970
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season",
-        "year": 1972
-      }
-    ],
-    "turns": 38,
-    "type": "Road circuit"
-  },
-  {
-    "circuit": {
       "text": "Circuit Bremgarten",
       "url": "https://en.wikipedia.org/wiki/Circuit_Bremgarten"
     },
@@ -1992,6 +1947,10 @@
       {
         "text": "Spanish Grand Prix",
         "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+      },
+      {
+        "text": "Barcelona-Catalunya Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Barcelona-Catalunya_Grand_Prix"
       }
     ],
     "grands_prix_held": 35,
@@ -2145,6 +2104,51 @@
     ],
     "turns": 14,
     "type": "Race circuit"
+  },
+  {
+    "circuit": {
+      "text": "Circuit de Charade",
+      "url": "https://en.wikipedia.org/wiki/Circuit_de_Charade"
+    },
+    "circuit_status": "former",
+    "country": {
+      "text": "France",
+      "url": "https://en.wikipedia.org/wiki/France"
+    },
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "French Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 4,
+    "last_length_used_km": 8.055,
+    "last_length_used_mi": 5.005,
+    "location": {
+      "text": "Saint-Genès-Champanelle",
+      "url": "https://en.wikipedia.org/wiki/Saint-Gen%C3%A8s-Champanelle"
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season",
+        "year": 1965
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
+        "year": 1969
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season",
+        "year": 1970
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season",
+        "year": 1972
+      }
+    ],
+    "turns": 38,
+    "type": "Road circuit"
   },
   {
     "background": "FBCEB1",
@@ -2993,7 +2997,7 @@
   {
     "background": "FBCEB1",
     "circuit": {
-      "text": "Circuit Gilles-Villeneuve",
+      "text": "Circuit Gilles Villeneuve",
       "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
     },
     "circuit_status": "current",
@@ -4561,12 +4565,12 @@
     "type": "Race circuit"
   },
   {
-    "background": "FBCEB1",
+    "background": "CEFBC1",
     "circuit": {
       "text": "Jeddah Corniche Circuit",
       "url": "https://en.wikipedia.org/wiki/Jeddah_Corniche_Circuit"
     },
-    "circuit_status": "current",
+    "circuit_status": "future",
     "country": {
       "text": "Saudi Arabia",
       "url": "https://en.wikipedia.org/wiki/Saudi_Arabia"
@@ -4658,7 +4662,7 @@
   {
     "circuit": {
       "text": "Kyalami Grand Prix Circuit",
-      "url": "https://en.wikipedia.org/wiki/Kyalami_Racing_Circuit"
+      "url": "https://en.wikipedia.org/wiki/Kyalami"
     },
     "circuit_status": "former",
     "country": {
@@ -5084,8 +5088,8 @@
   },
   {
     "circuit": {
-      "text": "Montjuïc circuit",
-      "url": "https://en.wikipedia.org/wiki/Montju%C3%AFc_circuit"
+      "text": "Montjuïc Circuit",
+      "url": "https://en.wikipedia.org/wiki/Montju%C3%AFc_Circuit"
     },
     "circuit_status": "former",
     "country": {
@@ -6018,7 +6022,7 @@
         "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
       }
     ],
-    "grands_prix_held": 18,
+    "grands_prix_held": 19,
     "last_length_used_km": 5.451,
     "last_length_used_mi": 3.387,
     "location": {
@@ -6097,6 +6101,10 @@
       {
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
         "year": 2025
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
+        "year": 2026
       }
     ],
     "turns": 16,
@@ -6437,7 +6445,7 @@
     "background": "FBCEB1",
     "circuit": {
       "text": "Suzuka International Racing Course",
-      "url": "https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course"
+      "url": "https://en.wikipedia.org/wiki/Suzuka_Circuit"
     },
     "circuit_status": "current",
     "country": {
@@ -6451,7 +6459,7 @@
         "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
       }
     ],
-    "grands_prix_held": 35,
+    "grands_prix_held": 36,
     "last_length_used_km": 5.807,
     "last_length_used_mi": 3.608,
     "location": {
@@ -6598,6 +6606,10 @@
       {
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
         "year": 2025
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
+        "year": 2026
       }
     ],
     "turns": 18,
@@ -6899,7 +6911,7 @@
   {
     "circuit": {
       "text": "Zeltweg Airfield",
-      "url": "https://en.wikipedia.org/wiki/Zeltweg_Airfield"
+      "url": "https://en.wikipedia.org/wiki/Zeltweg_Air_Base#Motorsports"
     },
     "circuit_status": "former",
     "country": {

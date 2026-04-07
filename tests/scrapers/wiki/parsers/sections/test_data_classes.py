@@ -2,6 +2,7 @@
 
 from scrapers.wiki.parsers.sections.data_classes import SectionMatchPriorities
 
+
 class TestSectionMatchPriorities:
     def test_get_score_default(self):
         priorities = SectionMatchPriorities()
