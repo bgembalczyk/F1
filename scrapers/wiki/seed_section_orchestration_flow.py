@@ -21,6 +21,7 @@ from scrapers.base.orchestration.lifecycle import StageCheckpointDumper
 from scrapers.base.orchestration.lifecycle import StageEnvelope
 from scrapers.base.orchestration.models import AuditEntry
 from scrapers.base.orchestration.models import StepDeclaration
+from scrapers.wiki.base_flow import BaseOrchestrationFlow
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -35,7 +36,7 @@ SUPPORTED_DOMAINS: tuple[str, ...] = (
 )
 
 
-class SeedSectionOrchestrationFlow:
+class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
     def __init__(
         self,
         *,
@@ -348,18 +349,6 @@ class SeedSectionOrchestrationFlow:
                 "url": str(nested.get("url", "")),
             }
         return {"name": "", "url": ""}
-
-    @staticmethod
-    def _deduplicate_by_url(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        seen: set[str] = set()
-        normalized: list[dict[str, Any]] = []
-        for row in records:
-            url = str(row.get("url", "")).strip()
-            if not url or url in seen:
-                continue
-            seen.add(url)
-            normalized.append({"name": str(row.get("name", "")), "url": url})
-        return normalized
 
     @staticmethod
     def _timestamp() -> str:
