@@ -122,7 +122,7 @@ def test_list_changed_files_handles_git_failure(
 def test_cli_argument_validation_stderr() -> None:
     module = "scripts.ci.validate_pr_template"
 
-    proc = subprocess.run(
+    proc = subprocess.run(  # noqa: S603 - controlled test command
         [sys.executable, "-m", module],
         capture_output=True,
         text=True,
