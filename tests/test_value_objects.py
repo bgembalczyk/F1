@@ -14,6 +14,8 @@ from models.value_objects.season_ref import SeasonRef
 from models.value_objects.time_types import DateValue
 
 SUPPORTED_SEASON_YEAR = 2026
+EXPECTED_SEASONS_COUNT = 2
+EXPECTED_ROUNDS_LENGTH = 3
 
 
 def test_value_object_base_from_dict_for_date_value():
@@ -130,8 +132,8 @@ def test_drivers_championships_from_value_parses_mapping() -> None:
     result = DriversChampionships.from_value(
         {"count": 2, "seasons": [{"year": 2005}, {"year": 2006}]},
     )
-    assert result.count == 2
-    assert len(result.seasons) == 2
+    assert result.count == EXPECTED_SEASONS_COUNT
+    assert len(result.seasons) == EXPECTED_SEASONS_COUNT
 
 
 # DriversChampionships - to_dict
@@ -197,7 +199,7 @@ def test_rounds_iter() -> None:
 
 
 def test_rounds_len() -> None:
-    assert len(Rounds((1, 2, 3))) == 3
+    assert len(Rounds((1, 2, 3))) == EXPECTED_ROUNDS_LENGTH
 
 
 def test_rounds_getitem() -> None:
