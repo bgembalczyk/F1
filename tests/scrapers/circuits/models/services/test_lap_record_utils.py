@@ -82,7 +82,7 @@ def test_extract_year_none() -> None:
 
 
 # ---------------------------------------------------------------------------
-# normalize_lap_record_entity  (line 68 – with sanitizer)
+# normalize_lap_record_entity  (line 68 - with sanitizer)
 # ---------------------------------------------------------------------------
 
 
