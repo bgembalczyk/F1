@@ -92,7 +92,8 @@ class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
         context=None,
     ) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        self._apply_engine_restrictions_table_parser(parsed)
+        for section in parsed.get("sub_sub_sections", []):
+            self._table_parser.apply_to_payload(section)
         return parsed
 
     def _apply_engine_restrictions_table_parser(self, payload: dict[str, Any]) -> None:

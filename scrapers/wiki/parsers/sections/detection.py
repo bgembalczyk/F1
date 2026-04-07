@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import re
-from difflib import SequenceMatcher
 from typing import TYPE_CHECKING
 
 from bs4 import BeautifulSoup
@@ -11,6 +10,7 @@ from scrapers.base.helpers.transform_micro_ops import expand_alias_variants
 from scrapers.base.sections.aliases import builtin_aliases_for_target
 from scrapers.wiki.parsers.constants import HEADING_TAGS
 from scrapers.wiki.parsers.sections.data_classes import SectionMatch
+from scrapers.wiki.parsers.sections.helpers import best_fuzzy_ratio
 from scrapers.wiki.parsers.sections.helpers import get_section_profile
 from scrapers.wiki.parsers.sections.normalization import normalize_section_text
 
@@ -102,31 +102,6 @@ def _resolve_aliases(
     return resolved
 
 
-def _profile_score(
-    profile: object | None,
-    *,
-    exact_id: bool = False,
-    exact_text: bool = False,
-) -> float:
-    if profile is None:
-        if exact_id:
-            return 3.0
-        if exact_text:
-            return 2.0
-        return 1.0
-    if exact_id:
-        return profile.priorities.exact_id_score
-    if exact_text:
-        return profile.priorities.exact_text_score
-    return profile.priorities.fuzzy_base_score
-
-
-def _best_fuzzy_ratio(heading_text: str, target_texts: set[str]) -> float:
-    return max(
-        SequenceMatcher(None, heading_text, value).ratio() for value in target_texts
-    )
-
-
 def find_section_heading(
     soup: BeautifulSoup,
     target: str,
@@ -167,7 +142,7 @@ def find_section_heading(
             return SectionMatch(
                 heading=heading,
                 strategy="exact_id",
-                score=_profile_score(profile, exact_id=True),
+                score=profile.priorities.get_score(exact_id=True) if profile else 3.0,
             )
 
         heading_text = normalize_section_text(_headline_text(heading))
@@ -175,16 +150,17 @@ def find_section_heading(
             return SectionMatch(
                 heading=heading,
                 strategy="exact_text",
-                score=_profile_score(profile, exact_text=True),
+                score=profile.priorities.get_score(exact_text=True) if profile else 2.0,
             )
 
-        ratio = _best_fuzzy_ratio(heading_text, target_texts)
+        ratio = best_fuzzy_ratio(heading_text, target_texts)
         if ratio >= min_fuzzy_score:
+            base_score = profile.priorities.get_score() if profile else 1.0
             fuzzy_candidates.append(
                 SectionMatch(
                     heading=heading,
                     strategy="fuzzy",
-                    score=_profile_score(profile) + ratio,
+                    score=base_score + ratio,
                 ),
             )
 

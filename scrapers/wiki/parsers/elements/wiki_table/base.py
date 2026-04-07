@@ -50,8 +50,33 @@ class WikiTableBaseParser(ABC):
             "domain_rows": mapped_rows,
         }
 
+    def apply_to_payload(self, payload: dict[str, Any]) -> None:
+        self._apply_to_elements(payload.get("elements", []))
+        for value in payload.values():
+            if isinstance(value, dict):
+                self.apply_to_payload(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        self.apply_to_payload(item)
+
+    def _apply_to_elements(self, elements: list[dict[str, Any]]) -> None:
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            parsed = self.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
+
     @staticmethod
     def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
+        rich_rows = table_data.get("rich_rows", [])
+        if isinstance(rich_rows, list) and rich_rows:
+            return [row for row in rich_rows if isinstance(row, dict)]
+
         rows = table_data.get("rows", [])
         if isinstance(rows, list):
             dict_rows = [row for row in rows if isinstance(row, dict)]

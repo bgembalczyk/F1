@@ -16,7 +16,8 @@ class GeminiCacheService:
         self.cache = cache
 
     def get(self, question: str, model: str) -> dict[str, Any] | None:
-        return self.cache.get(question, model)
+        result = self.cache.get(question, model)
+        return result  # noqa: RET504
 
     def set(self, question: str, model: str, response: dict[str, Any]) -> None:
-        self.cache.set(question, model, response)
+        _ = self.cache.set(question, model, response)
