@@ -1,12 +1,10 @@
 """Implementacje strategii retry."""
 
 from http.client import FORBIDDEN
-from http.client import TOO_MANY_REQUESTS
 from secrets import SystemRandom
 from typing import Any
 
-from infrastructure.http_client.policies.constants import SERVER_ERROR_END
-from infrastructure.http_client.policies.constants import SERVER_ERROR_START
+from infrastructure.http_client.policies.http_status import HttpStatusPolicy
 from infrastructure.http_client.policies.retry import RetryPolicy
 
 _RANDOM = SystemRandom()
@@ -37,9 +35,7 @@ class DefaultRetryPolicy(RetryPolicy):
             return False
 
         status = int(getattr(response, "status_code", 0) or 0)
-        if status == TOO_MANY_REQUESTS or (
-            SERVER_ERROR_START <= status <= SERVER_ERROR_END
-        ):
+        if HttpStatusPolicy.is_retryable(status):
             return True
 
         # Wikipedia czasem zwraca 403 z treścią o robot policy / rate limit.

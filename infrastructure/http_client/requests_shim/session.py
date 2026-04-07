@@ -6,6 +6,8 @@ from collections.abc import Mapping
 from urllib.parse import urlsplit
 
 from infrastructure.http_client.requests_shim.constants import ALLOWED_URL_SCHEMES
+from infrastructure.http_client.requests_shim.constants import HTTP_STATUS_UNKNOWN
+from infrastructure.http_client.requests_shim.constants import SSL_CONTEXT
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from infrastructure.http_client.requests_shim.response import Response
 from infrastructure.http_client.requests_shim.ssl import SSLContextProvider
@@ -48,7 +50,7 @@ class Session:
                 context=self._ssl_context,
             ) as resp:
                 body = resp.read()
-                status_code = resp.getcode() or 0
+                status_code = resp.getcode() or HTTP_STATUS_UNKNOWN
                 text = body.decode("utf-8", errors="replace")
                 return Response(
                     url=url,
