@@ -3851,7 +3851,12 @@
             "value": 1.5
           }
         ],
-        "naturally_aspirated": "prohibited"
+        "naturally_aspirated": [
+          {
+            "unit": "L",
+            "value": 1.5
+          }
+        ]
       },
       "operating_principle": "4-stroke Piston",
       "rpm_limit": null
@@ -11192,7 +11197,7 @@
       "rpm_limit": null
     },
     "constructors_champion": [],
-    "countries": 21,
+    "countries": 19,
     "drivers_champion_team": [],
     "first": {
       "text": "Australian",
@@ -11202,8 +11207,8 @@
       "text": "Abu Dhabi",
       "url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix"
     },
-    "races": 24,
-    "winners": 1,
+    "races": 22,
+    "winners": 2,
     "tyre_manufacturers": [
       {
         "text": "Pirelli",
