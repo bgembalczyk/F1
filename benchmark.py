@@ -1,37 +1,38 @@
-import time
 import timeit
 from bs4 import BeautifulSoup
+from scrapers.seasons.sections.mid_season_changes import SeasonMidSeasonChangesSectionParser
 
-def baseline(soup):
-    records = [
-        {"text": li.get_text(" ", strip=True)}
-        for li in soup.select("ul li")
-        if li.get_text(" ", strip=True)
-    ]
-    return records
+html_content = """
+<div id="mid-season_changes">
+    <p>   Some mid-season changes text.   </p>
+    <p></p>
+    <p>   More text.   </p>
+    <p>    </p>
+    <ul>
+        <li>  Change 1  </li>
+        <li>  </li>
+        <li>  Change 2  </li>
+        <li>  Change 3  </li>
+        <li>    </li>
+    </ul>
+    <li> Or maybe just li elements </li>
+    <li> </li>
+</div>
+""" * 100 # Repeat to make it larger
 
-def optimized(soup):
-    records = [
-        {"text": text}
-        for li in soup.select("ul li")
-        if (text := li.get_text(" ", strip=True))
-    ]
-    return records
+soup = BeautifulSoup(html_content, 'html.parser')
 
-def run_benchmark():
-    html = "<html><body>" + "<ul><li>  hello  </li><li></li><li>world</li></ul>" * 1000 + "</body></html>"
-    soup = BeautifulSoup(html, 'html.parser')
+def test_parse():
+    parser = SeasonMidSeasonChangesSectionParser()
+    parser.parse(soup)
 
-    # Warmup
-    baseline(soup)
-    optimized(soup)
-
-    baseline_time = timeit.timeit(lambda: baseline(soup), number=100)
-    optimized_time = timeit.timeit(lambda: optimized(soup), number=100)
-
-    print(f"Baseline: {baseline_time:.4f} s")
-    print(f"Optimized: {optimized_time:.4f} s")
-    print(f"Improvement: {(baseline_time - optimized_time) / baseline_time * 100:.2f}%")
+def test_extract_list_items():
+    parser = SeasonMidSeasonChangesSectionParser()
+    parser._extract_list_items(soup)
 
 if __name__ == "__main__":
-    run_benchmark()
+    n = 1000
+    time_parse = timeit.timeit(test_parse, number=n)
+    time_extract = timeit.timeit(test_extract_list_items, number=n)
+    print(f"parse: {time_parse:.4f}s for {n} iterations")
+    print(f"extract_list_items: {time_extract:.4f}s for {n} iterations")
