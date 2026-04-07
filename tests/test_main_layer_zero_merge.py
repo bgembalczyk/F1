@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from scrapers.wiki.layer_zero_merge import merge_layer_zero_raw_outputs
+from layers.zero.merge import merge_layer_zero_raw_outputs
 from tests.support.main_layer_zero_merge_helpers import _assert_merged_outputs
 from tests.support.main_layer_zero_merge_helpers import _seed_layer_zero_raw_data
 

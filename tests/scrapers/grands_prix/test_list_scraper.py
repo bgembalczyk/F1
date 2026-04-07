@@ -23,6 +23,36 @@ def test_grands_prix_table_parser_map_columns_filters_known() -> None:
     assert "Unknown" not in result
 
 
+def test_by_race_title_sub_section_parser_apply_for_elements_skips_non_table() -> None:
+    parser = ByRaceTitleSubSectionParser()
+    elements = [
+        {"kind": "text", "data": {"preserve": True}},
+        {"kind": "table", "data": "not-a-dict"},
+    ]
+
+    class _Stub:
+        def parse(self, _data):
+            return None
+
+    parser._table_parser = _Stub()
+    parser._apply_for_elements(elements)
+    assert elements[0]["data"] == {"preserve": True}
+    assert elements[1]["data"] == "not-a-dict"
+
+
+def test_by_race_title_sub_section_parser_apply_for_elements_replaces_matched() -> None:
+    parser = ByRaceTitleSubSectionParser()
+    elements = [{"kind": "table", "data": {"ok": True}}]
+
+    class _Stub:
+        def parse(self, _data):
+            return {"table_type": "grands_prix_list"}
+
+    parser._table_parser = _Stub()
+    parser._apply_for_elements(elements)
+    assert elements[0]["data"] == {"table_type": "grands_prix_list"}
+
+
 def test_by_race_title_parse_group_returns_dict() -> None:
     parser = ByRaceTitleSubSectionParser()
 

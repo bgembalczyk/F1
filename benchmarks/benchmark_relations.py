@@ -3,6 +3,8 @@ import re
 import string
 import timeit
 
+from scrapers.base.helpers.parsing import parse_relations
+
 
 def original_parse(links, text):
     entries = []
@@ -16,29 +18,8 @@ def original_parse(links, text):
     return entries
 
 
-RELATION_PATTERN = re.compile(r"\s*\(([^)]+)\)")
-
-
 def optimized_parse_static(links, text):
-    entries = []
-    matches = list(RELATION_PATTERN.finditer(text))
-
-    for link in links:
-        relation = None
-        t = link.get("text") or ""
-
-        if t:
-            for match in matches:
-                start_idx = match.start()
-                if start_idx >= len(t):
-                    if text[start_idx - len(t) : start_idx] == t:
-                        relation = match.group(1).strip()
-                        break
-        elif matches:
-            relation = matches[0].group(1).strip()
-
-        entries.append({"person": link, "relation": relation})
-    return entries
+    return parse_relations(links, text)
 
 
 def benchmark():

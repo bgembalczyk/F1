@@ -3,15 +3,16 @@
 from typing import Any
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import GRANDS_PRIX_LIST
 from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
 from scrapers.base.table.builders import build_name_status_fragment
-from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.columns.types.column_factory import IntColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
@@ -65,14 +66,14 @@ TABLE_SCHEMA = TableSchemaDSL(
 )
 
 
-class ByRaceTitleSubSectionParser(SubSectionParser):
+class ByRaceTitleSubSectionParser(SubSectionParser, ApplyForElementsMixin):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = GrandsPrixTableParser()
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        self._table_parser.apply_to_payload(parsed)
+        self._apply_table_parser_to_sections(parsed, "sub_sub_sections")
         return parsed
 
 

@@ -4,6 +4,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from validation.issue import IssueMessageFormatter
+from validation.issue import LegacyValidationIssueAdapter
 from validation.issue import ValidationIssue
 from validation.record_validation import validate_record
 from validation.schema_rules import build_domain_rules
@@ -14,13 +15,7 @@ INVALID_TEAM_VALUE = 7
 
 
 def _legacy_extract_missing_key(error: str) -> str | None:
-    if error.startswith("Missing key: "):
-        return error.replace("Missing key: ", "", 1).strip() or None
-    if error.startswith("Null value for: "):
-        return error.replace("Null value for: ", "", 1).strip() or None
-    if error.endswith(" is missing"):
-        return error[: -len(" is missing")].strip() or None
-    return None
+    return LegacyValidationIssueAdapter.extract_missing_key(error)
 
 
 def _legacy_extract_type_key(error: str) -> str | None:
@@ -167,25 +162,24 @@ def _legacy_custom_validator_errors(
     return errors
 
 
+class LegacyNestedRule:
+    def __init__(self, schema: RecordSchema):
+        self.schema = schema
+
+    def __call__(self, record: Mapping[str, Any]) -> list[ValidationIssue]:
+        return _legacy_nested_errors(record, self.schema)
+
+
+class LegacyCustomRule:
+    def __init__(self, schema: RecordSchema):
+        self.schema = schema
+
+    def __call__(self, record: Mapping[str, Any]) -> list[ValidationIssue]:
+        return _legacy_custom_validator_errors(record, self.schema)
+
+
 def _legacy_build_domain_rules(schema: RecordSchema):
-    def _nested_rule(record: Mapping[str, Any]) -> list[ValidationIssue]:
-        errors: list[ValidationIssue] = []
-        for key, nested_schema in schema.nested.items():
-            if key not in record:
-                continue
-            value = record[key]
-            if value is None:
-                continue
-            errors.extend(_legacy_validate_nested_value(key, value, nested_schema))
-        return errors
-
-    def _custom_rule(record: Mapping[str, Any]) -> list[ValidationIssue]:
-        errors: list[ValidationIssue] = []
-        for validator in schema.custom_validators:
-            errors.extend(_legacy_coerce_issue(error) for error in validator(record))
-        return errors
-
-    return [_nested_rule, _custom_rule]
+    return [LegacyNestedRule(schema), LegacyCustomRule(schema)]
 
 
 def _sample_schema() -> RecordSchema:

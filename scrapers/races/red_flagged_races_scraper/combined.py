@@ -162,6 +162,27 @@ class WorldChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
         return (season, gp_text, lap)
 
     @staticmethod
+    def _merge_failed_to_restart_rows(
+        rows: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        _key = WorldChampionshipsRacesTableParser._race_key
+        merged: list[dict[str, Any]] = []
+        for row in rows:
+            raw_drivers = row.pop("failed_to_make_restart_drivers", None)
+            drivers = raw_drivers if raw_drivers is not None else []
+            reason = row.pop("failed_to_make_restart_reason", None)
+            race_key = _key(row)
+            has_data = bool(drivers or reason)
+            entry = {"drivers": drivers, "reason": reason} if has_data else None
+            if merged and _key(merged[-1]) == race_key:
+                if entry is not None:
+                    merged[-1]["failed_to_make_restart"].append(entry)
+            else:
+                row["failed_to_make_restart"] = [entry] if entry is not None else []
+                merged.append(row)
+        return merged
+
+    @staticmethod
     def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
         mapped: dict[str, Any] = {}
         for header, cell_data in row.items():
@@ -231,6 +252,27 @@ class NonChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
         event_text = event.get("text") if isinstance(event, dict) else event
         lap = row.get("lap")
         return (season, event_text, lap)
+
+    @staticmethod
+    def _merge_failed_to_restart_rows(
+        rows: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        _key = NonChampionshipsRacesTableParser._race_key
+        merged: list[dict[str, Any]] = []
+        for row in rows:
+            raw_drivers = row.pop("failed_to_make_restart_drivers", None)
+            drivers = raw_drivers if raw_drivers is not None else []
+            reason = row.pop("failed_to_make_restart_reason", None)
+            race_key = _key(row)
+            has_data = bool(drivers or reason)
+            entry = {"drivers": drivers, "reason": reason} if has_data else None
+            if merged and _key(merged[-1]) == race_key:
+                if entry is not None:
+                    merged[-1]["failed_to_make_restart"].append(entry)
+            else:
+                row["failed_to_make_restart"] = [entry] if entry is not None else []
+                merged.append(row)
+        return merged
 
     @staticmethod
     def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:

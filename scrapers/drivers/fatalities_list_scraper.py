@@ -11,11 +11,11 @@ from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import DRIVERS_FATALITIES
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types import AutoColumn
-from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import SkipColumn
-from scrapers.base.table.columns.types import TextColumn
-from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.column_factory import IntColumn
+from scrapers.base.table.columns.types.skip import SkipColumn
+from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
@@ -36,13 +36,13 @@ from scrapers.drivers.constants import FATALITIES_SECTION_ID
 from scrapers.drivers.constants import FATALITIES_SESSION_HEADER
 from scrapers.drivers.constants import MARK_F2_CATEGORY
 from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
+from scrapers.drivers.helpers.parsers import DriverOrderedTableParser
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 
 
-class FatalitiesTableParser(WikiTableBaseParser):
+class FatalitiesTableParser(DriverOrderedTableParser):
     """Parser wyspecjalizowany dla tabeli „Detail by driver”."""
 
     table_type = "fatalities_detail_by_driver"
@@ -63,25 +63,6 @@ class FatalitiesTableParser(WikiTableBaseParser):
 
     def matches(self, headers: list[str], _table_data: dict[str, object]) -> bool:
         return self._required_headers.issubset(set(headers))
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        mapped_headers = [
-            header for header in headers if header in self._column_mapping
-        ]
-        driver_headers = [
-            header
-            for header in mapped_headers
-            if self._column_mapping[header] == "driver"
-        ]
-        other_headers = [
-            header
-            for header in mapped_headers
-            if self._column_mapping[header] != "driver"
-        ]
-        return {
-            header: self._column_mapping[header]
-            for header in [*driver_headers, *other_headers]
-        }
 
 
 class DetailByDriverSubSectionParser(SubSectionParser):

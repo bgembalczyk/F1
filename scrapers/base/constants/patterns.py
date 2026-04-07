@@ -15,3 +15,5 @@ RANGE_RE = re.compile(
     r"(?P<min>[-+]?\d[\d,]*(?:\.\d+)?)\s*-\s*(?P<max>[-+]?\d[\d,]*(?:\.\d+)?)",
     flags=re.IGNORECASE,
 )
+
+RELATIONS_PARENTHETICAL_PATTERN = re.compile(r"\s*\(([^)]+)\)")

@@ -2,10 +2,10 @@ import pytest
 
 from models.mappers.serialization import to_dict
 from models.mappers.serialization import to_dict_list
-from models.value_objects import EntityName
-from models.value_objects import SeasonYear
-from models.value_objects import SectionId
-from models.value_objects import WikiUrl
+from models.value_objects.common_terms import EntityName
+from models.value_objects.common_terms import SeasonYear
+from models.value_objects.common_terms import SectionId
+from models.value_objects.common_terms import WikiUrl
 from models.value_objects.drivers_championships import DriversChampionships
 from models.value_objects.link import Link
 from models.value_objects.normalized_date import NormalizedDate

@@ -7,7 +7,6 @@ from typing import Any
 from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
-from scrapers.base.helpers.http import resolve_http_policy
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
@@ -47,7 +46,7 @@ class BaseDataExtractor(ABC):
         self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
 
     def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
-        return resolve_http_policy(options)
+        return options.resolve_http_policy()
 
     @abstractmethod
     def fetch(self) -> list[Any]:

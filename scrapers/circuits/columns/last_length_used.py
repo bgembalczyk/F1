@@ -1,5 +1,5 @@
-from scrapers.base.table.columns.types import MultiColumn
-from scrapers.base.table.columns.types import RegexColumn
+from scrapers.base.table.columns.types.multi import MultiColumn
+from scrapers.base.table.columns.types.regex import RegexColumn
 
 
 class LastLengthUsedColumn(MultiColumn):
