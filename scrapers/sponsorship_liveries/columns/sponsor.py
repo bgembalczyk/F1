@@ -1,4 +1,3 @@
-import re
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -15,9 +14,9 @@ from scrapers.sponsorship_liveries.helpers.constants import NORMALIZE_SPACE_AND_
 from scrapers.sponsorship_liveries.helpers.constants import NORMALIZE_START_AND_RE
 from scrapers.sponsorship_liveries.helpers.constants import PARAM_MATCH_FROM_RE
 from scrapers.sponsorship_liveries.helpers.constants import PARAM_MATCH_ONLY_ONWARD_RE
+from scrapers.sponsorship_liveries.helpers.constants import REMAINDER_CLEANUP_RE
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_PAREN_GROUP_RE
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_PAREN_REMOVE_RE
-from scrapers.sponsorship_liveries.helpers.constants import REMAINDER_CLEANUP_RE
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 from scrapers.sponsorship_liveries.parsers.parts import SponsorPartsParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
