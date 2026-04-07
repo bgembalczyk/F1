@@ -21,22 +21,20 @@ html_content = (
 
 def test_original():
     soup = BeautifulSoup(html_content, "html.parser")
-    records = [
+    return [
         {"text": li.get_text(" ", strip=True)}
         for li in soup.select("ul li")
         if li.get_text(" ", strip=True)
     ]
-    return records
 
 
 def test_walrus():
     soup = BeautifulSoup(html_content, "html.parser")
-    records = [
+    return [
         {"text": text}
         for li in soup.select("ul li")
         if (text := li.get_text(" ", strip=True))
     ]
-    return records
 
 
 print("Original:", timeit.timeit(test_original, number=100))
