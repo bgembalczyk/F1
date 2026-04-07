@@ -21,22 +21,6 @@ def parser():
     return CancelledRoundsParser(table_parser)
 
 
-@pytest.fixture()
-def sample_calendar_data():
-    """Return a standard calendar data list for testing."""
-    return [
-        {
-            "round": 1,
-            "grand_prix": {
-                "text": "Monaco Grand Prix",
-                "url": "/wiki/Monaco_Grand_Prix",
-            },
-            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
-            "race_date": "May 1",
-        },
-    ]
-
-
 def test_cancelled_rounds_returns_second_table_when_two_tables_in_section(
     parser,
 ) -> None:
@@ -85,10 +69,7 @@ def test_cancelled_rounds_returns_second_table_when_two_tables_in_section(
     assert result[0]["circuit"]["circuit"]["text"] == "Spa-Francorchamps"
 
 
-def test_cancelled_rounds_returns_empty_when_one_table_matches_calendar(
-    parser,
-    sample_calendar_data,
-) -> None:
+def test_cancelled_rounds_returns_empty_when_one_table_matches_calendar(parser) -> None:
     """When there's 1 table and it matches calendar, return empty list."""
     html = """
     <html>
@@ -111,15 +92,28 @@ def test_cancelled_rounds_returns_empty_when_one_table_matches_calendar(
     """
     soup = BeautifulSoup(html, "html.parser")
 
+    # Create calendar data that matches the table
+    # Note: The circuit structure is nested as {'circuit': {'text': '...', 'url': ...}}
+    calendar_data = [
+        {
+            "round": 1,
+            "grand_prix": {
+                "text": "Monaco Grand Prix",
+                "url": "/wiki/Monaco_Grand_Prix",
+            },
+            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
+            "race_date": "May 1",
+        },
+    ]
+
     # Parse with matching calendar data (should return empty)
-    result = parser.parse(soup, season_year=2020, calendar_data=sample_calendar_data)
+    result = parser.parse(soup, season_year=2020, calendar_data=calendar_data)
 
     assert result == []
 
 
 def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar(
     parser,
-    sample_calendar_data,
 ) -> None:
     """When there's 1 table and it differs from calendar, return it."""
     html = """
@@ -143,8 +137,21 @@ def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar(
     """
     soup = BeautifulSoup(html, "html.parser")
 
+    # Create calendar data that differs from the table
+    calendar_data = [
+        {
+            "round": 1,
+            "grand_prix": {
+                "text": "Monaco Grand Prix",
+                "url": "/wiki/Monaco_Grand_Prix",
+            },
+            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
+            "race_date": "May 1",
+        },
+    ]
+
     # Parse with different calendar data (should return the table)
-    result = parser.parse(soup, season_year=2020, calendar_data=sample_calendar_data)
+    result = parser.parse(soup, season_year=2020, calendar_data=calendar_data)
 
     assert len(result) == 1
     assert result[0]["grand_prix"]["text"] == "Belgian Grand Prix"
@@ -152,7 +159,6 @@ def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar(
 
 def test_cancelled_rounds_returns_empty_when_two_tables_and_second_matches_calendar(
     parser,
-    sample_calendar_data,
 ) -> None:
     """When section has two matching tables and the second matches calendar, return empty.
 
@@ -201,7 +207,19 @@ def test_cancelled_rounds_returns_empty_when_two_tables_and_second_matches_calen
     """
     soup = BeautifulSoup(html, "html.parser")
 
-    result = parser.parse(soup, season_year=1950, calendar_data=sample_calendar_data)
+    calendar_data = [
+        {
+            "round": 1,
+            "grand_prix": {
+                "text": "Monaco Grand Prix",
+                "url": "/wiki/Monaco_Grand_Prix",
+            },
+            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
+            "race_date": "May 1",
+        },
+    ]
+
+    result = parser.parse(soup, season_year=1950, calendar_data=calendar_data)
 
     assert result == []
 
@@ -223,10 +241,7 @@ def test_cancelled_rounds_returns_empty_when_no_table_found(parser) -> None:
     assert result == []
 
 
-def test_cancelled_rounds_ignores_results_table_from_next_section(
-    parser,
-    sample_calendar_data,
-) -> None:
+def test_cancelled_rounds_ignores_results_table_from_next_section(parser) -> None:
     """Tables from sections after Calendar are not picked up as cancelled rounds.
 
     Regression test: ``find_all_next`` was used to find tables, so results tables
@@ -275,16 +290,25 @@ def test_cancelled_rounds_ignores_results_table_from_next_section(
     """
     soup = BeautifulSoup(html, "html.parser")
 
-    result = parser.parse(soup, season_year=1950, calendar_data=sample_calendar_data)
+    calendar_data = [
+        {
+            "round": 1,
+            "grand_prix": {
+                "text": "Monaco Grand Prix",
+                "url": "/wiki/Monaco_Grand_Prix",
+            },
+            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
+            "race_date": "May 1",
+        },
+    ]
+
+    result = parser.parse(soup, season_year=1950, calendar_data=calendar_data)
 
     # Results table from Grands_Prix section must not pollute cancelled_rounds
     assert result == []
 
 
-def test_cancelled_rounds_finds_table_in_modern_wikipedia_h2_wrapper(
-    parser,
-    sample_calendar_data,
-) -> None:
+def test_cancelled_rounds_finds_table_in_modern_wikipedia_h2_wrapper(parser) -> None:
     """Modern Wikipedia wraps headings in <div class="mw-heading">.
 
     When the id is placed directly on the <h2> (not on an inner span), and the
@@ -343,7 +367,19 @@ def test_cancelled_rounds_finds_table_in_modern_wikipedia_h2_wrapper(
     """
     soup = BeautifulSoup(html, "html.parser")
 
-    result = parser.parse(soup, season_year=1955, calendar_data=sample_calendar_data)
+    calendar_data = [
+        {
+            "round": 1,
+            "grand_prix": {
+                "text": "Monaco Grand Prix",
+                "url": "/wiki/Monaco_Grand_Prix",
+            },
+            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
+            "race_date": "May 1",
+        },
+    ]
+
+    result = parser.parse(soup, season_year=1955, calendar_data=calendar_data)
 
     assert len(result) == 1
     assert result[0]["grand_prix"]["text"] == "French Grand Prix"

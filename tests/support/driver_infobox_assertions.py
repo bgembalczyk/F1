@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import Any
-
 from bs4 import BeautifulSoup
 
 from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
@@ -34,15 +32,3 @@ def assert_car_number_with_present() -> None:
     assert result[1]["number"] == SECOND_NUMBER
     assert result[1]["years"]["start"] == SECOND_START_YEAR
     assert result[1]["years"]["end"] is None
-
-
-def assert_career_parsed(scraper: Any, html: str) -> list[Any]:
-    """Parses HTML infobox and asserts that career sections exist."""
-    soup = BeautifulSoup(html, "html.parser")
-    table = soup.find("table")
-    result = scraper.parse(table)
-
-    assert len(result) == 1
-    assert "career" in result[0]
-    assert len(result[0]["career"]) > 0
-    return result

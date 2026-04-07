@@ -2,41 +2,18 @@ from typing import Any
 from typing import Protocol
 
 
-"""Mixin for applying table parser to generic structured elements."""
-
-from typing import Any
-from typing import Protocol
-
-
-class _HasTableParser(Protocol):
+class SupportsTableParser(Protocol):
     _table_parser: Any
 
 
-class ApplyForElementsMixin:
-    """Mixin to apply a table parser to elements within a structured payload."""
-
-    def apply_table_parser(self: _HasTableParser, payload: dict[str, Any]) -> None:
-        """Recursively applies the table parser to nested dictionaries."""
-        self._apply_for_elements(payload.get("elements", []))
-        for value in payload.values():
-            if isinstance(value, dict):
-                self.apply_table_parser(value)
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        self.apply_table_parser(item)
-
-    def _apply_for_elements(
-        self: _HasTableParser,
-        elements: list[dict[str, Any]],
-    ) -> None:
-        """Applies the table parser to a list of elements."""
+class ApplyForElementsMixin(SupportsTableParser):
+    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
         for element in elements:
             if element.get("kind") != "table":
                 continue
-            table_data = element.get("data")
-            if not isinstance(table_data, dict):
+            data = element.get("data")
+            if not isinstance(data, dict):
                 continue
-            parsed_data = self._table_parser.parse(table_data)
-            if parsed_data is not None:
-                element["data"] = parsed_data
+            parsed = self._table_parser.parse(data)
+            if parsed is not None:
+                element["data"] = parsed

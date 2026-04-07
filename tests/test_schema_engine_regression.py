@@ -1,11 +1,11 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
 
 from validation.issue import IssueMessageFormatter
 from validation.issue import ValidationIssue
-from validation.issue import LegacyValidationIssueAdapter
 from validation.record_validation import validate_record
 from validation.schema_rules import build_domain_rules
 from validation.schemas import NestedSchema
@@ -15,7 +15,13 @@ INVALID_TEAM_VALUE = 7
 
 
 def _legacy_extract_missing_key(error: str) -> str | None:
-    return LegacyValidationIssueAdapter.extract_missing_key(error)
+    if error.startswith("Missing key: "):
+        return error.replace("Missing key: ", "", 1).strip() or None
+    if error.startswith("Null value for: "):
+        return error.replace("Null value for: ", "", 1).strip() or None
+    if error.endswith(" is missing"):
+        return error[: -len(" is missing")].strip() or None
+    return None
 
 
 def _legacy_extract_type_key(error: str) -> str | None:
@@ -162,24 +168,27 @@ def _legacy_custom_validator_errors(
     return errors
 
 
-class LegacyNestedRule:
-    def __init__(self, schema: RecordSchema):
+class LegacyDomainRule:
+    def __init__(
+        self,
+        schema: RecordSchema,
+        validator_func: Callable[
+            [Mapping[str, Any], RecordSchema],
+            list[ValidationIssue],
+        ],
+    ):
         self.schema = schema
+        self.validator_func = validator_func
 
     def __call__(self, record: Mapping[str, Any]) -> list[ValidationIssue]:
-        return _legacy_nested_errors(record, self.schema)
-
-
-class LegacyCustomRule:
-    def __init__(self, schema: RecordSchema):
-        self.schema = schema
-
-    def __call__(self, record: Mapping[str, Any]) -> list[ValidationIssue]:
-        return _legacy_custom_validator_errors(record, self.schema)
+        return self.validator_func(record, self.schema)
 
 
 def _legacy_build_domain_rules(schema: RecordSchema):
-    return [LegacyNestedRule(schema), LegacyCustomRule(schema)]
+    return [
+        LegacyDomainRule(schema, _legacy_nested_errors),
+        LegacyDomainRule(schema, _legacy_custom_validator_errors),
+    ]
 
 
 def _sample_schema() -> RecordSchema:

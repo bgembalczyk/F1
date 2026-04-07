@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.scraper import DriverInfoboxParser
-from tests.support.driver_infobox_assertions import assert_career_parsed
 
 EXPECTED_NATIONALITY_COUNT = 1
 EXPECTED_TITLES_IN_LIST = 3
@@ -57,7 +56,13 @@ def test_nationality_with_link(scraper):
         </td></tr>
     </table>
     """
-    result = assert_career_parsed(scraper, html)
+    soup = BeautifulSoup(html, "html.parser")
+    table = soup.find("table")
+    result = scraper.parse(table)
+
+    assert len(result) == 1
+    assert "career" in result[0]
+    assert len(result[0]["career"]) > 0
 
     # Find the "Nationality" row
     nationality_row = None
@@ -100,7 +105,12 @@ def test_nationality_without_link(scraper):
         <td class="infobox-data">American or Italian</td></tr>
     </table>
     """
-    result = assert_career_parsed(scraper, html)
+    soup = BeautifulSoup(html, "html.parser")
+    table = soup.find("table")
+    result = scraper.parse(table)
+
+    assert len(result) == 1
+    assert "career" in result[0]
 
     # Find the "Nationality" row
     nationality_row = None

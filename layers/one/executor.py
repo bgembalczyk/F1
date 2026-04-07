@@ -18,10 +18,8 @@ if TYPE_CHECKING:
     from layers.seed.registry.entries import SeedRegistryEntry
     from scrapers.base.run_config import RunConfig
 
-from layers.base.executor import BaseExecutor
 
-
-class LayerOneExecutor(BaseExecutor):
+class LayerOneExecutor:
     def __init__(
         self,
         *,
@@ -97,7 +95,7 @@ class LayerOneExecutor(BaseExecutor):
         self._validate_seed_registry(self._seed_registry)
         runner_map = self._runners()
         run_id = self._resolve_run_id(run_config)
-        trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id, layer=1)
+        trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id)
         summary: dict[str, list[str]] = {"success": [], "skip": [], "fail": []}
         output_paths: list[str] = []
         return run_id, trace_writer, summary, output_paths, runner_map
@@ -321,6 +319,25 @@ class LayerOneExecutor(BaseExecutor):
                 "trace_path": str(trace_writer.trace_path),
             },
         )
+
+    def _build_trace_writer(
+        self,
+        *,
+        run_config: RunConfig,
+        run_id: str,
+    ) -> RunTraceWriter:
+        debug_root = (
+            Path(run_config.debug_dir)
+            if run_config.debug_dir
+            else Path(run_config.output_dir)
+        )
+        trace_path = debug_root / "traces" / f"layer1_{run_id}.jsonl"
+        timestamp_provider = (
+            (lambda: run_config.fixed_timestamp)
+            if run_config.fixed_timestamp is not None
+            else None
+        )
+        return RunTraceWriter(trace_path, timestamp_provider=timestamp_provider)
 
     def _resolve_run_id(self, run_config: RunConfig) -> str:
         if run_config.fixed_run_id:

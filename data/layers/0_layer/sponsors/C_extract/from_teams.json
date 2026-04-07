@@ -1,10 +1,8 @@
 [
   "+1",
-  "24",
   "3D Systems",
   "A French, British and Scottish flag in honour of the constructor ( Matra ), team ( Matra International ) and driver ( Jackie Stewart ) respectively ( Jackie Stewart 's Matra MS10 car).",
   "A Storia",
-  "A-GAS",
   "AB Dynamics",
   "ABMTM",
   "ACI",
@@ -28,6 +26,7 @@
   "Agip",
   "Aguilar Oil",
   "Air Press",
+  "Air Sicilia",
   "Alaska Coffee Roasting",
   "Albini & Fontanot",
   "Aleph",
@@ -71,6 +70,7 @@
   "BBS",
   "BFI",
   "BMS Group",
+  "BP",
   "BRUMS",
   "Banco Portugues do Brasil S.A.",
   "Barbados Tourism",
@@ -142,7 +142,7 @@
   "Caribu",
   "Carlo Colusci",
   "Carrara",
-  "Carta Blanca",
+  "Carrera",
   "Cartesiano Hotels",
   "Carvico",
   "Cast",
@@ -183,9 +183,10 @@
   "Copec",
   "Copy Braun",
   "Corinthian Re",
+  "Corona",
   "Corona.",
   "CorpoNove",
-  "CosmoGas",
+  "Correios",
   "Cossack Mens Toiletries",
   "Cougar",
   "Credit Suisse",
@@ -247,6 +248,7 @@
   "Eurojersey SpA",
   "Eurojersey",
   "Euromik",
+  "European Aviation",
   "Everdome",
   "F.A.T. International",
   "FXTM",
@@ -285,6 +287,7 @@
   "FreioFast",
   "Frezia",
   "Frizerga",
+  "FxPro",
   "G de Z Capital",
   "GSI",
   "GUAM",
@@ -318,6 +321,7 @@
   "Healthy",
   "Helvetica",
   "Hesketh Finance",
+  "Hewlett Packard",
   "Hexagon of Highgate",
   "Heyco Werkzeuge",
   "Hi-Line Car Stripes",
@@ -329,13 +333,11 @@
   "Hoxsin",
   "Hudson",
   "Huski Chocolate",
-  "Hutchison",
   "Hype Energy",
   "I.A.N.",
   "I.M.I. Bergamo",
   "IBF Formularios",
   "ICM",
-  "IDEC",
   "IS-ME-DIN",
   "ISM Group of Companies",
   "ITC Ageco",
@@ -347,7 +349,7 @@
   "Igol Lubrifiants",
   "Igol Lubrificants",
   "Industrie Regione Marche",
-  "Instaforex",
+  "Infinitum",
   "Intercond",
   "Intercosmo",
   "Interflora",
@@ -369,6 +371,7 @@
   "Joker",
   "Jolly Club",
   "Jula Boats Sweden",
+  "KH-7",
   "Kaiser",
   "Kamikawa Clinic",
   "Kanyan Capital",
@@ -378,6 +381,7 @@
   "Kepner Tregoe",
   "Kidland",
   "Koni",
+  "Korean Air",
   "Kremlyovskaya Vodka",
   "Kärnten",
   "LB Icon",
@@ -411,6 +415,7 @@
   "Lpr",
   "Lucky Strike",
   "Lusfina",
+  "Lycra",
   "M505",
   "MIG Bank",
   "MIG Investments",
@@ -460,6 +465,7 @@
   "Minardi",
   "Mingya",
   "Miti SpA",
+  "Mitsui",
   "Mokador",
   "Molveno Oem",
   "Momo",
@@ -478,12 +484,16 @@
   "Nabholz",
   "Nardi Borelli",
   "National Organs",
+  "New Man",
   "Newsweek",
+  "Nikon",
   "Nokia Data",
   "Nolan",
   "None",
   "North Pole",
   "Norton",
+  "Novell",
+  "O.Z. Wheels",
   "OIIR",
   "OMB",
   "OMR Automotive",
@@ -495,7 +505,6 @@
   "Orange",
   "Orizzonte Piemonte",
   "Osama",
-  "Oxigen Investment",
   "P'tit Lou",
   "PACA",
   "PC Suria",
@@ -507,10 +516,12 @@
   "Paolo Fiore",
   "Pastiglie SMOG Tabletter",
   "Paul Mitchell",
+  "Pepsi",
   "Perar",
   "Personal",
   "Petronas",
   "Phenix",
+  "Philips Car Stereo",
   "Pikenz",
   "Piolanti & Figli",
   "Pioneer",
@@ -528,6 +539,7 @@
   "Rafta",
   "Rainbow Jeanswear",
   "RapidAPI",
+  "Ravenol",
   "Real Love",
   "Rebellion",
   "Red Bull Mobile",
@@ -548,7 +560,6 @@
   "Richard Oaten Racing",
   "Riello",
   "Rifle",
-  "Ring Automotive",
   "Rizla+",
   "RoT Electronics",
   "Robopac",
@@ -562,6 +573,7 @@
   "Roshfrans",
   "Rotary Watches",
   "Rover Coal",
+  "Ruffles",
   "SAG '80",
   "SAICO",
   "SAS Global Communications",
@@ -574,6 +586,8 @@
   "SWS",
   "SYDEXPO",
   "Sachs",
+  "Safra",
+  "Sage ERP X3",
   "Saima Avandero",
   "Sal Cisne",
   "Sanpi",
@@ -619,6 +633,7 @@
   "Suzuki GB",
   "Swedish flag",
   "Swiss Fibertec",
+  "Swissquote Bank",
   "Synthèse Universelle",
   "T&J Vestor",
   "T-Minus",
@@ -633,6 +648,7 @@
   "Tecno Ferrari",
   "TecnoFerrari",
   "Ted Lapidus",
+  "Teleglobe",
   "Tennen",
   "Texas",
   "The Roastery at Bella Barista",
@@ -645,9 +661,11 @@
   "Towa",
   "Track & Field",
   "Transeuropa",
+  "Truphone",
   "UPS Direct",
   "USAG Tools",
   "Uliveto",
+  "Unipart",
   "Upsynth",
   "Uralchem",
   "Urbis",
@@ -665,6 +683,7 @@
   "Ville-Maerie",
   "Ville-Marie",
   "Virginiana",
+  "Visit Ireland",
   "Visit Spain",
   "VoIP Unlimited",
   "Vonhaucke",
@@ -677,7 +696,6 @@
   "White",
   "Wilux",
   "WyndyMilla",
-  "Würth",
   "XMTrading",
   "XP Parcel Express",
   "XTC",
@@ -1036,10 +1054,6 @@
     "url": "https://en.wikipedia.org/wiki/Agip"
   },
   {
-    "text": "Air Sicilia",
-    "url": "https://en.wikipedia.org/wiki/Air_Sicilia"
-  },
-  {
     "text": "AirAsia",
     "url": "https://en.wikipedia.org/wiki/AirAsia"
   },
@@ -1126,16 +1140,15 @@
     "url": "https://en.wikipedia.org/wiki/Antar_(company)"
   },
   {
-    "text": "Apan777",
-    "url": "https://ja.wikipedia.org/wiki/%E5%96%84%E9%83%BD"
-  },
-  {
     "text": "Applicon",
     "url": "https://en.wikipedia.org/wiki/Applicon"
   },
   {
     "text": "Arisco",
     "url": "https://pt.wikipedia.org/wiki/Arisco"
+  },
+  {
+    "text": "Arisco"
   },
   {
     "text": "Asiatech",
@@ -1330,18 +1343,6 @@
     "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
   },
   {
-    "text": "Beta Tools",
-    "url": "https://it.wikipedia.org/wiki/Beta_Utensili"
-  },
-  {
-    "text": "Beta Utensili",
-    "url": "https://it.wikipedia.org/wiki/Beta_Utensili"
-  },
-  {
-    "text": "Beta",
-    "url": "https://it.wikipedia.org/wiki/Beta_Utensili"
-  },
-  {
     "text": "Betsafe",
     "url": "https://en.wikipedia.org/wiki/Betsson"
   },
@@ -1404,6 +1405,9 @@
   {
     "text": "Brastemp",
     "url": "https://pt.wikipedia.org/wiki/Brastemp"
+  },
+  {
+    "text": "Brastemp"
   },
   {
     "text": "Braun",
@@ -1662,14 +1666,6 @@
     "url": "https://en.wikipedia.org/wiki/Copersucar"
   },
   {
-    "text": "Corona",
-    "url": "https://en.wikipedia.org/wiki/Corona_(beer)"
-  },
-  {
-    "text": "Correios",
-    "url": "https://en.wikipedia.org/wiki/Correios"
-  },
-  {
     "text": "Cosworth",
     "url": "https://en.wikipedia.org/wiki/Cosworth"
   },
@@ -1749,10 +1745,6 @@
     "url": "https://en.wikipedia.org/wiki/De_Carbon"
   },
   {
-    "text": "De' Longhi",
-    "url": "https://en.wikipedia.org/wiki/De%27_Longhi"
-  },
-  {
     "text": "De'Longhi",
     "url": "https://en.wikipedia.org/wiki/De%27Longhi"
   },
@@ -1824,9 +1816,6 @@
     "url": "https://en.wikipedia.org/wiki/E-Z_Wider"
   },
   {
-    "text": "EBBON-DACS"
-  },
-  {
     "text": "EMC Corporation",
     "url": "https://en.wikipedia.org/wiki/EMC_Corporation"
   },
@@ -1849,6 +1838,9 @@
   {
     "text": "Eagle Star Insurance",
     "url": "https://en.wikipedia.org/wiki/Eagle_Star_Insurance"
+  },
+  {
+    "text": "Ebbon-Dacs"
   },
   {
     "text": "Edelweiss",
@@ -2035,8 +2027,7 @@
     "url": "https://en.wikipedia.org/wiki/Flying_Tigers_Airlines"
   },
   {
-    "text": "Fogo de Chao",
-    "url": "https://en.wikipedia.org/wiki/Fogo_de_Ch%C3%A3o"
+    "text": "Fogo de Chao"
   },
   {
     "text": "Fondmetal",
@@ -2269,10 +2260,6 @@
     "url": "https://en.wikipedia.org/wiki/Daniel_Hechter"
   },
   {
-    "text": "Hello!",
-    "url": "https://en.wikipedia.org/wiki/Hello!_(magazine)"
-  },
-  {
     "text": "Henri Lloyd",
     "url": "https://en.wikipedia.org/wiki/Henri_Lloyd"
   },
@@ -2283,10 +2270,6 @@
   {
     "text": "Hewlett Packard Enterprise",
     "url": "https://en.wikipedia.org/wiki/Hewlett_Packard_Enterprise"
-  },
-  {
-    "text": "Hewlett Packard",
-    "url": "https://en.wikipedia.org/wiki/Hewlett_Packard"
   },
   {
     "text": "Hewlett-Packard",
@@ -2418,7 +2401,11 @@
   },
   {
     "text": "Infinitum",
-    "url": "https://es.wikipedia.org/wiki/Infinitum"
+    "url": "https://en.wikipedia.org/wiki/Telcel"
+  },
+  {
+    "text": "Infinitum",
+    "url": "https://en.wikipedia.org/wiki/Telmex"
   },
   {
     "text": "Intel",
@@ -2485,10 +2472,6 @@
   {
     "text": "KFC",
     "url": "https://en.wikipedia.org/wiki/KFC"
-  },
-  {
-    "text": "KH-7",
-    "url": "https://es.wikipedia.org/wiki/KH_Lloreda"
   },
   {
     "text": "KKK Turbos",
@@ -2582,10 +2565,6 @@
     "url": "https://en.wikipedia.org/wiki/Lada"
   },
   {
-    "text": "Lagardère",
-    "url": "https://en.wikipedia.org/wiki/Lagard%C3%A8re_Group"
-  },
-  {
     "text": "Lagostina",
     "url": "https://en.wikipedia.org/wiki/Lagostina"
   },
@@ -2608,10 +2587,6 @@
   {
     "text": "Lear",
     "url": "https://en.wikipedia.org/wiki/Lear_Corporation"
-  },
-  {
-    "text": "Learndirect",
-    "url": "https://en.wikipedia.org/wiki/Learndirect"
   },
   {
     "text": "LeasePlan",
@@ -2911,10 +2886,6 @@
   },
   {
     "text": "Mitsui",
-    "url": "https://en.wikipedia.org/wiki/Mitsui"
-  },
-  {
-    "text": "Mitsui",
     "url": "https://en.wikipedia.org/wiki/Mitsui_Sumitomo_Insurance_Co."
   },
   {
@@ -2975,6 +2946,9 @@
     "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
   },
   {
+    "text": "Mugen"
+  },
+  {
     "text": "Musashi",
     "url": "https://en.wikipedia.org/wiki/Post_Holdings"
   },
@@ -3031,8 +3005,7 @@
     "url": "https://en.wikipedia.org/wiki/NetApp"
   },
   {
-    "text": "New Man",
-    "url": "https://fr.wikipedia.org/wiki/New_Man"
+    "text": "New Man"
   },
   {
     "text": "Newsweek",
@@ -3041,10 +3014,6 @@
   {
     "text": "Nichibutsu",
     "url": "https://en.wikipedia.org/wiki/Nichibutsu"
-  },
-  {
-    "text": "Nikon",
-    "url": "https://en.wikipedia.org/wiki/Nikon"
   },
   {
     "text": "Nippon Shinpan",
@@ -3074,20 +3043,12 @@
     "text": "Norris Industries"
   },
   {
-    "text": "Novell",
-    "url": "https://en.wikipedia.org/wiki/Novell"
-  },
-  {
     "text": "Nubank",
     "url": "https://en.wikipedia.org/wiki/Nubank"
   },
   {
     "text": "Nuvei",
     "url": "https://en.wikipedia.org/wiki/Nuvei"
-  },
-  {
-    "text": "O.Z. Wheels",
-    "url": "https://en.wikipedia.org/wiki/OZ_Wheels"
   },
   {
     "text": "OC Oerlikon",
@@ -3174,8 +3135,7 @@
     "url": "https://es.wikipedia.org/wiki/Panamerican_Sports_Network"
   },
   {
-    "text": "PTT Lubricants",
-    "url": "https://en.wikipedia.org/wiki/PTT_Public_Company_Limited"
+    "text": "PTT Lubricants"
   },
   {
     "text": "PURAC"
@@ -3195,6 +3155,9 @@
   {
     "text": "Parmalat",
     "url": "https://en.wikipedia.org/wiki/Parmalat"
+  },
+  {
+    "text": "Parmalat"
   },
   {
     "text": "Parnelli Jones Enterprises",
@@ -3231,10 +3194,6 @@
     "url": "https://en.wikipedia.org/wiki/Pepsi"
   },
   {
-    "text": "Pepsi",
-    "url": "https://en.wikipedia.org/wiki/Pepsi"
-  },
-  {
     "text": "Petrobras",
     "url": "https://en.wikipedia.org/wiki/Petrobras"
   },
@@ -3248,10 +3207,6 @@
   },
   {
     "text": "Phard"
-  },
-  {
-    "text": "Philips Car Stereo",
-    "url": "https://en.wikipedia.org/wiki/Philips"
   },
   {
     "text": "Philips Car Systems",
@@ -3406,7 +3361,7 @@
   },
   {
     "text": "RTL",
-    "url": "https://en.wikipedia.org/wiki/RTL_Television"
+    "url": "https://en.wikipedia.org/wiki/RTL_Group"
   },
   {
     "text": "RTL",
@@ -3437,10 +3392,6 @@
   {
     "text": "Ratiopharm",
     "url": "https://en.wikipedia.org/wiki/Ratiopharm"
-  },
-  {
-    "text": "Ravenol",
-    "url": "https://de.wikipedia.org/wiki/Ravenol"
   },
   {
     "text": "Ray-Ban",
@@ -3495,6 +3446,10 @@
     "url": "https://en.wikipedia.org/wiki/Rescale"
   },
   {
+    "text": "Resta",
+    "url": "https://en.wikipedia.org/wiki/Resta"
+  },
+  {
     "text": "Rexona/Sure/Degree",
     "url": "https://en.wikipedia.org/wiki/Rexona"
   },
@@ -3517,10 +3472,6 @@
   {
     "text": "Richard Mille",
     "url": "https://en.wikipedia.org/wiki/Richard_Mille"
-  },
-  {
-    "text": "Rifle",
-    "url": "https://it.wikipedia.org/wiki/Rifle"
   },
   {
     "text": "Rizla+",
@@ -3557,6 +3508,10 @@
   {
     "text": "Russell Athletic",
     "url": "https://en.wikipedia.org/wiki/Russell_Athletic"
+  },
+  {
+    "text": "S.Oliver",
+    "url": "https://en.wikipedia.org/wiki/S.Oliver"
   },
   {
     "text": "S.S. United",
@@ -3599,16 +3554,8 @@
     "url": "https://en.wikipedia.org/wiki/Banco_Safra"
   },
   {
-    "text": "Safra",
-    "url": "https://en.wikipedia.org/wiki/Safra_Group"
-  },
-  {
     "text": "Safran",
     "url": "https://en.wikipedia.org/wiki/Safran"
-  },
-  {
-    "text": "Sage ERP X3",
-    "url": "https://en.wikipedia.org/wiki/Sage_X3"
   },
   {
     "text": "Sahara",
@@ -3867,10 +3814,6 @@
     "url": "https://en.wikipedia.org/wiki/Spyker_Cars"
   },
   {
-    "text": "St. Tropez",
-    "url": "https://en.wikipedia.org/wiki/St._Tropez_(self-tan_brand)"
-  },
-  {
     "text": "Stake",
     "url": "https://en.wikipedia.org/wiki/Stake.com"
   },
@@ -3929,10 +3872,6 @@
   {
     "text": "Suzuki",
     "url": "https://en.wikipedia.org/wiki/Suzuki"
-  },
-  {
-    "text": "Swissquote Bank",
-    "url": "https://en.wikipedia.org/wiki/Swissquote"
   },
   {
     "text": "Symantec",
@@ -4025,10 +3964,6 @@
   {
     "text": "Telefónica",
     "url": "https://en.wikipedia.org/wiki/Telef%C3%B3nica"
-  },
-  {
-    "text": "Teleglobe",
-    "url": "https://en.wikipedia.org/wiki/Teleglobe"
   },
   {
     "text": "Telmex",
@@ -4131,10 +4066,6 @@
   {
     "text": "Trina Solar",
     "url": "https://en.wikipedia.org/wiki/Trina_Solar"
-  },
-  {
-    "text": "Truphone",
-    "url": "https://en.wikipedia.org/wiki/Truphone"
   },
   {
     "text": "Trussardi",
@@ -4249,6 +4180,10 @@
     "url": "https://en.wikipedia.org/wiki/Villiger_Sons"
   },
   {
+    "text": "Virgin Group",
+    "url": "https://en.wikipedia.org/wiki/Virgin_Group"
+  },
+  {
     "text": "Virgin",
     "url": "https://en.wikipedia.org/wiki/Virgin_Group"
   },
@@ -4312,16 +4247,11 @@
     "url": "https://en.wikipedia.org/wiki/Wintershall"
   },
   {
-    "text": "Wirth Research",
-    "url": "https://en.wikipedia.org/wiki/Wirth_Research"
-  },
-  {
     "text": "Woolmark",
     "url": "https://en.wikipedia.org/wiki/Woolmark"
   },
   {
-    "text": "World Food Programme by ALJ",
-    "url": "https://en.wikipedia.org/wiki/Abdul_Latif_Jameel"
+    "text": "World Food Programme by ALJ"
   },
   {
     "text": "Würth",
@@ -4411,10 +4341,6 @@
   },
   {
     "text": "or Villiger-Kiel"
-  },
-  {
-    "text": "s.Oliver",
-    "url": "https://en.wikipedia.org/wiki/S.Oliver"
   },
   {
     "text": "Česká pojišt'ovna",

@@ -602,7 +602,7 @@
     ]
   },
   {
-    "background": "#CEFBC1",
+    "background": "#FBCEB1",
     "circuits": 1,
     "country": [
       {
@@ -610,7 +610,7 @@
         "url": "https://en.wikipedia.org/wiki/Bahrain"
       }
     ],
-    "race_status": "past",
+    "race_status": "active",
     "race_title": {
       "text": "Bahrain Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Bahrain_Grand_Prix"
@@ -1818,7 +1818,7 @@
       "text": "Chinese Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
     },
-    "total": 19,
+    "total": 18,
     "years_held": [
       {
         "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
@@ -1891,10 +1891,6 @@
       {
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
         "year": 2025
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
-        "year": 2026
       }
     ]
   },
@@ -3443,7 +3439,7 @@
       "text": "Japanese Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
     },
-    "total": 40,
+    "total": 39,
     "years_held": [
       {
         "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season",
@@ -3600,10 +3596,6 @@
       {
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
         "year": 2025
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
-        "year": 2026
       }
     ]
   },
@@ -4680,7 +4672,7 @@
     ]
   },
   {
-    "background": "#CEFBC1",
+    "background": "#FBCEB1",
     "circuits": 1,
     "country": [
       {
@@ -4688,7 +4680,7 @@
         "url": "https://en.wikipedia.org/wiki/Saudi_Arabia"
       }
     ],
-    "race_status": "past",
+    "race_status": "active",
     "race_title": {
       "text": "Saudi Arabian Grand Prix",
       "url": "https://en.wikipedia.org/wiki/Saudi_Arabian_Grand_Prix"

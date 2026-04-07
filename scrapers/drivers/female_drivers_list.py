@@ -21,7 +21,6 @@ from scrapers.drivers.constants import FEMALE_DRIVER_TEAMS_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVERS_HEADERS
 from scrapers.drivers.constants import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVERS_SECTION_ID
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
@@ -69,7 +68,7 @@ class FemaleDriversTableParser(WikiTableBaseParser):
         )
 
 
-class OfficialDriversSubSectionParser(SubSectionParser, ApplyForElementsMixin):
+class OfficialDriversSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = FemaleDriversTableParser()
@@ -81,8 +80,24 @@ class OfficialDriversSubSectionParser(SubSectionParser, ApplyForElementsMixin):
         context=None,
     ) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        self._apply_table_parser_to_sections(parsed, "sub_sub_sections")
+        self._apply_female_drivers_table_parser(parsed)
         return parsed
+
+    def _apply_female_drivers_table_parser(self, payload: dict[str, Any]) -> None:
+        for section in payload.get("sub_sub_sections", []):
+            self._apply_for_elements(section.get("elements", []))
+            self._apply_female_drivers_table_parser(section)
+
+    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            parsed = self._table_parser.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
 
 
 class DriversSectionParser(SectionParser):

@@ -31,11 +31,11 @@ from scrapers.drivers.constants import DRIVER_RACE_STARTS_HEADER
 from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
 from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
-from scrapers.drivers.helpers.parsers import DriverOrderedTableParser
+from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 
 
-class DriversListTableParser(DriverOrderedTableParser):
+class DriversListTableParser(WikiTableBaseParser):
     table_type = "drivers_list"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -57,6 +57,25 @@ class DriversListTableParser(DriverOrderedTableParser):
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         required_headers = set(DRIVERS_LIST_HEADERS)
         return required_headers.issubset(set(headers))
+
+    def map_columns(self, headers: list[str]) -> dict[str, str]:
+        mapped_headers = [
+            header for header in headers if header in self._column_mapping
+        ]
+        driver_headers = [
+            header
+            for header in mapped_headers
+            if self._column_mapping[header] == "driver"
+        ]
+        other_headers = [
+            header
+            for header in mapped_headers
+            if self._column_mapping[header] != "driver"
+        ]
+        return {
+            header: self._column_mapping[header]
+            for header in [*driver_headers, *other_headers]
+        }
 
 
 TABLE_SCHEMA = TableSchemaDSL(

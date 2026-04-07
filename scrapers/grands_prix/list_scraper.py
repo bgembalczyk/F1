@@ -14,7 +14,6 @@ from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
@@ -66,15 +65,31 @@ TABLE_SCHEMA = TableSchemaDSL(
 )
 
 
-class ByRaceTitleSubSectionParser(SubSectionParser, ApplyForElementsMixin):
+class ByRaceTitleSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = GrandsPrixTableParser()
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        self._apply_table_parser_to_sections(parsed, "sub_sub_sections")
+        self._apply_table_parser(parsed)
         return parsed
+
+    def _apply_table_parser(self, payload: dict[str, Any]) -> None:
+        for section in payload.get("sub_sub_sections", []):
+            self._apply_for_elements(section.get("elements", []))
+            self._apply_table_parser(section)
+
+    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            parsed = self._table_parser.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
 
 
 class RacesSectionParser(SectionParser):
