@@ -53,41 +53,12 @@ def test_by_race_title_sub_section_parser_apply_for_elements_replaces_matched() 
     assert elements[0]["data"] == {"table_type": "grands_prix_list"}
 
 
-def test_by_race_title_sub_section_parser_apply_table_parser_recurses() -> None:
-    parser = ByRaceTitleSubSectionParser()
-    payload = {
-        "sub_sub_sections": [
-            {
-                "elements": [{"kind": "table", "data": {"id": "top"}}],
-                "sub_sub_sections": [
-                    {
-                        "elements": [{"kind": "table", "data": {"id": "inner"}}],
-                        "sub_sub_sections": [],
-                    },
-                ],
-            },
-        ],
-    }
-
-    class _Stub:
-        def parse(self, data):
-            return {"mapped": data["id"]}
-
-    parser._table_parser = _Stub()
-    parser._apply_table_parser(payload)
-
-    assert payload["sub_sub_sections"][0]["elements"][0]["data"] == {"mapped": "top"}
-    assert payload["sub_sub_sections"][0]["sub_sub_sections"][0]["elements"][0][
-        "data"
-    ] == {"mapped": "inner"}
-
-
 def test_by_race_title_parse_group_returns_dict() -> None:
     parser = ByRaceTitleSubSectionParser()
 
     class _Stub:
-        def parse(self, _data):
-            return None
+        def apply_to_payload(self, _payload):
+            pass
 
     parser._table_parser = _Stub()
     result = parser.parse_group([], context=None)

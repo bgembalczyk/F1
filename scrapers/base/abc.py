@@ -12,7 +12,6 @@ from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
-from scrapers.base.helpers.http import resolve_http_policy
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
@@ -371,7 +370,7 @@ class ABCScraper(ABC):
         return normalize_url(self.url, href)
 
     def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
-        return resolve_http_policy(options)
+        return options.resolve_http_policy()
 
     # ---------- Error handling ----------
 

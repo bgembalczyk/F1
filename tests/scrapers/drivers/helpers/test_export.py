@@ -25,15 +25,16 @@ def test_export_complete_drivers_uses_grouping_export(
                 {"driver": {"text": "Ayrton Senna"}},
             ]
 
-    def _fake_export(scraper, data, output_dir: Path, grouper):
-        calls["scraper"] = scraper
-        calls["data"] = data
-        calls["output_dir"] = output_dir
-        calls["group_m"] = grouper(data[0])
-        calls["group_a"] = grouper(data[1])
+    class _ExportServiceStub:
+        def export_grouped_json(self, scraper, data, output_dir: Path, grouper):
+            calls["scraper"] = scraper
+            calls["data"] = data
+            calls["output_dir"] = output_dir
+            calls["group_m"] = grouper(data[0])
+            calls["group_a"] = grouper(data[1])
 
     monkeypatch.setattr(export_mod, "CompleteDriverDataExtractor", _ScraperStub)
-    monkeypatch.setattr(export_mod, "export_grouped_json", _fake_export)
+    monkeypatch.setattr(export_mod, "ResultExportService", _ExportServiceStub)
 
     output_dir = tmp_path / "drivers"
 

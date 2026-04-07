@@ -1,5 +1,5 @@
-from scrapers.base.table.columns.types import EnumMarksMixin
-from scrapers.base.table.columns.types import NameStatusColumn
+from scrapers.base.table.columns.types.enum_marks import EnumMarksMixin
+from scrapers.base.table.columns.types.name_status import NameStatusColumn
 
 
 class EngineManufacturerNameStatusColumn(NameStatusColumn):

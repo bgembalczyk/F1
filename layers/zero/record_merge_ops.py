@@ -11,6 +11,9 @@ if TYPE_CHECKING:
 
 from layers.zero.merge_types import DriverSeriesStats
 
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
 
 def merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
     merged = list(existing)
@@ -85,11 +88,49 @@ class MergeModel(Protocol):
 T = TypeVar("T", bound=MergeModel)
 
 
-def _handle_new_record(
+def _process_new_model(
     model: MergeModel,
-    key: str,
     merged_records: list[object],
     key_to_index: dict[str, int],
+    key: str,
+) -> None:
+    index = len(merged_records)
+    key_to_index[key] = index
+    merged_records.append(model.to_dict())
+    if hasattr(model, "aliases"):
+        for alias in model.aliases():
+            key_to_index[alias] = index
+
+
+def _process_existing_model(
+    model: MergeModel,
+    existing: object,
+    merged_records: list[object],
+    key_to_index: dict[str, int],
+    index: int,
+    model_cls: type[T],
+    merge_func: Callable[[object, object], object],
+) -> None:
+    existing_model = model_cls.from_object(existing)
+    if existing_model is None:
+        return
+    merged_record = merge_func(existing_model.to_dict(), model.to_dict())
+    merged_records[index] = merged_record
+    if hasattr(model, "aliases"):
+        merged_model = model_cls.from_object(merged_record)
+        if merged_model is not None:
+            for alias in merged_model.aliases():
+                key_to_index[alias] = index
+
+
+T = TypeVar("T", bound=MergeModel)
+
+
+def _handle_new_record(
+    model: MergeModel,
+    merged_records: list[object],
+    key_to_index: dict[str, int],
+    key: str,
 ) -> None:
     index = len(merged_records)
     key_to_index[key] = index
@@ -120,7 +161,7 @@ def merge_duplicate_records(
 
         index = key_to_index.get(key)
         if index is None:
-            _handle_new_record(model, key, merged_records, key_to_index)
+            _handle_new_record(model, merged_records, key_to_index, key)
             continue
 
         existing = merged_records[index]

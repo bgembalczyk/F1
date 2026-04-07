@@ -1,5 +1,12 @@
-# ruff: noqa: E501, PLR2004
-"""Tests for adapter.py covering lines 46, 53, 65-69, 72-74, 116, 123, 127-137, 165."""
+from tests.support.dependency_stubs import _ensure_bs4_stub
+from tests.support.dependency_stubs import _ensure_certifi_stub
+from tests.support.dependency_stubs import _ensure_pandas_stub
+from tests.support.dependency_stubs import _ensure_requests_stub
+
+_ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
+_ensure_certifi_stub()
+_ensure_pandas_stub()
+_ensure_requests_stub()
 
 from scrapers.wiki.parsers.sections.adapter import _extract_sections
 from scrapers.wiki.parsers.sections.adapter import _iter_sections

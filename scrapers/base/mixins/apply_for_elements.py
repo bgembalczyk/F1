@@ -1,7 +1,7 @@
-"""Mixin for applying table parser to generic structured elements."""
-
 from typing import Any
 from typing import Protocol
+
+"""Mixin for applying table parser to generic structured elements."""
 
 
 class _HasTableParser(Protocol):
@@ -23,15 +23,16 @@ class ApplyForElementsMixin:
                         self.apply_table_parser(item)
 
     def _apply_for_elements(
-        self: _HasTableParser, elements: list[dict[str, Any]]
+        self: _HasTableParser,
+        elements: list[dict[str, Any]],
     ) -> None:
         """Applies the table parser to a list of elements."""
         for element in elements:
             if element.get("kind") != "table":
                 continue
-            data = element.get("data")
-            if not isinstance(data, dict):
+            table_data = element.get("data")
+            if not isinstance(table_data, dict):
                 continue
-            parsed = self._table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
+            parsed_data = self._table_parser.parse(table_data)
+            if parsed_data is not None:
+                element["data"] = parsed_data
