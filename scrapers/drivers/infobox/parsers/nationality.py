@@ -9,6 +9,19 @@ from bs4 import Tag
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
+_HAS_YEARS_RE = re.compile(r"\(\s*\d{4}")
+_BR_SPLIT_RE = re.compile(r"<br\s*/?>", flags=re.IGNORECASE)
+_YEAR_PAREN_RE = re.compile(r"\s*\([^)]*\d{4}[^)]*\)")
+_YEAR_PATTERNS_RE = re.compile(r"\(([^)]*\d{4}[^)]*)\)")
+_YEAR_RANGE_RE = re.compile(r"(\d{4})\s*[--]\s*(\d{4})")
+_YEAR_RE = re.compile(r"\b(\d{4})\b")
+_JUST_REF_MARKER_RE = re.compile(r"^\[\d+\]$")
+_OR_SPLIT_RE = re.compile(r"\s+or\s+", flags=re.IGNORECASE)
+_REF_MARKER_RE = re.compile(r"\[\d+\]")
+YEAR_PATTERNS_RE = re.compile(r"\(([^)]*\d{4}[^)]*)\)")
+YEAR_RANGE_RE = re.compile(r"(\d{4})\s*[--]\s*(\d{4})")
+YEAR_RE = re.compile(r"\b(\d{4})\b")
+
 
 class NationalityParser:
     """Handles parsing of nationality information with optional year ranges."""
@@ -38,7 +51,7 @@ class NationalityParser:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
 
         # Check if there are year references (indicating nationality changed by season)
-        has_years = re.search(r"\(\s*\d{4}", text)
+        has_years = _HAS_YEARS_RE.search(text)
 
         if has_years:
             return self._parse_nationality_with_years(cell)
@@ -57,7 +70,7 @@ class NationalityParser:
             List of dicts with 'nationality' and 'years' keys.
         """
         html = str(cell)
-        parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
+        parts = _BR_SPLIT_RE.split(html)
 
         nationalities = []
 
@@ -68,11 +81,7 @@ class NationalityParser:
             part_soup = BeautifulSoup(part_html, "html.parser")
             part_text = clean_infobox_text(part_soup.get_text(" ", strip=True)) or ""
 
-            nationality_name = re.sub(
-                r"\s*\([^)]*\d{4}[^)]*\)",
-                "",
-                part_text,
-            ).strip()
+            nationality_name = _YEAR_PAREN_RE.sub("", part_text).strip()
 
             years = self._extract_years_from_text(part_text)
 
@@ -85,8 +94,12 @@ class NationalityParser:
 
         return nationalities or []
 
-    @staticmethod
-    def _extract_years_from_text(text: str) -> list[int]:
+    YEAR_PATTERNS_RE = re.compile(r"\(([^)]*\d{4}[^)]*)\)")
+    YEAR_RANGE_RE = re.compile(r"(\d{4})\s*[--]\s*(\d{4})")
+    YEAR_RE = re.compile(r"\b(\d{4})\b")
+
+    @classmethod
+    def _extract_years_from_text(cls, text: str) -> list[int]:
         """Extract all years (including ranges) from parenthesised patterns in text.
 
         Args:
@@ -95,23 +108,20 @@ class NationalityParser:
         Returns:
             Deduplicated list of integer years found in the text.
         """
-        years: list[int] = []
-        year_patterns = re.findall(r"\(([^)]*\d{4}[^)]*)\)", text)
+        years_dict: dict[int, None] = {}
+        year_patterns = cls.YEAR_PATTERNS_RE.findall(text)
 
         for year_pattern in year_patterns:
-            for range_match in re.finditer(r"(\d{4})\s*[--]\s*(\d{4})", year_pattern):
+            for range_match in cls.YEAR_RANGE_RE.finditer(year_pattern):
                 start = int(range_match.group(1))
                 end = int(range_match.group(2))
                 for year in range(start, end + 1):
-                    if year not in years:
-                        years.append(year)
+                    years_dict[year] = None
 
-            for year_match in re.finditer(r"\b(\d{4})\b", year_pattern):
-                year = int(year_match.group(1))
-                if year not in years:
-                    years.append(year)
+            for year_match in cls.YEAR_RE.finditer(year_pattern):
+                years_dict[int(year_match.group(1))] = None
 
-        return years
+        return list(years_dict.keys())
 
     def _parse_nationality_simple(
         self,
@@ -153,7 +163,7 @@ class NationalityParser:
             link
             for link in links
             if (link.get("text") or "").strip()
-            and not re.match(r"^\[\d+\]$", (link.get("text") or "").strip())
+            and not _JUST_REF_MARKER_RE.match((link.get("text") or "").strip())
         ]
 
     @staticmethod
@@ -166,11 +176,11 @@ class NationalityParser:
         Returns:
             List of nationality strings with reference markers removed.
         """
-        parts = re.split(r"\s+or\s+", text, flags=re.IGNORECASE)
+        parts = _OR_SPLIT_RE.split(text)
         nationalities = []
 
         for raw_part in parts:
-            cleaned_part = re.sub(r"\[\d+\]", "", raw_part).strip()
+            cleaned_part = _REF_MARKER_RE.sub("", raw_part).strip()
             if cleaned_part:
                 nationalities.append(cleaned_part)
 

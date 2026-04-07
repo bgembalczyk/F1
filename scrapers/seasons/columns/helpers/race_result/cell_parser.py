@@ -1,7 +1,8 @@
 import re
 from typing import Any
 
-from bs4 import BeautifulSoup
+from bs4 import NavigableString
+from bs4 import Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text import strip_marks
@@ -22,8 +23,26 @@ class RaceResultCellParser:
         cell = ctx.cell
         if cell is None:
             return (ctx.clean_text or "").strip()
-        fragment = self._prepare_cell_fragment(cell)
-        return clean_wiki_text(fragment.get_text(" ", strip=True))
+
+        parts: list[str] = []
+        self._extract_text_excluding_hidden(cell, parts)
+        return clean_wiki_text(" ".join(parts))
+
+    @staticmethod
+    def _extract_text_excluding_hidden(node: Any, parts: list[str]) -> None:
+        if isinstance(node, Tag):
+            if node.name == "sup":
+                return
+            if node.name == "span" and node.has_attr("style"):
+                style = "".join(node.get("style", "").split())
+                if "position:absolute" in style:
+                    return
+            for child in node.children:
+                RaceResultCellParser._extract_text_excluding_hidden(child, parts)
+        elif type(node) is NavigableString:
+            text = str(node).strip()
+            if text:
+                parts.append(text)
 
     def parse_superscripts(
         self,
@@ -61,17 +80,6 @@ class RaceResultCellParser:
         return [
             self._parse_result_part(part) for part in self._split_result_parts(text)
         ]
-
-    @staticmethod
-    def _prepare_cell_fragment(cell: Any) -> BeautifulSoup:
-        fragment = BeautifulSoup(str(cell), "html.parser")
-        for span in fragment.find_all("span", style=True):
-            style = "".join(span.get("style", "").split())
-            if "position:absolute" in style:
-                span.decompose()
-        for sup in fragment.find_all("sup"):
-            sup.decompose()
-        return fragment
 
     @staticmethod
     def _empty_superscript_result() -> SuperscriptParseResult:

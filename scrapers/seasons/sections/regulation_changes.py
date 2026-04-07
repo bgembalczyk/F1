@@ -15,9 +15,9 @@ class SeasonRegulationChangesSectionParser:
         records = self._extract_list_items(section_fragment)
         if not records:
             records = [
-                {"text": p.get_text(" ", strip=True)}
+                {"text": text}
                 for p in section_fragment.find_all("p")
-                if p.get_text(" ", strip=True)
+                if (text := p.get_text(" ", strip=True))
             ]
         return build_section_parse_result(
             section_id="regulation_changes",
@@ -31,14 +31,14 @@ class SeasonRegulationChangesSectionParser:
     @staticmethod
     def _extract_list_items(section_fragment: BeautifulSoup) -> list[dict[str, str]]:
         records = [
-            {"text": li.get_text(" ", strip=True)}
+            {"text": text}
             for li in section_fragment.select("ul li")
-            if li.get_text(" ", strip=True)
+            if (text := li.get_text(" ", strip=True))
         ]
         if records:
             return records
         return [
-            {"text": li.get_text(" ", strip=True)}
+            {"text": text}
             for li in section_fragment.find_all("li")
-            if li.get_text(" ", strip=True)
+            if (text := li.get_text(" ", strip=True))
         ]
