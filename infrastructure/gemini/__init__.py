@@ -13,9 +13,9 @@ from infrastructure.gemini.model_state import ModelState
 __all__ = [
     "DEFAULT_MODELS",
     "DEFAULT_TIMEOUT",
-    "GeminiClient",
     "ModelConfig",
     "ModelState",
+    "GeminiClient",
 ]
 
 
