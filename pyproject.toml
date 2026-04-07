@@ -86,6 +86,7 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "scripts/ci/*" = ["S603"]
 "scripts/ci/enforce_structural_quality.py" = ["N802"]
+"tests/**/*.py" = ["SLF001"]
 "tests/test_adr_enforcement_policy_integration.py" = ["S603"]
 "tests/test_check_scripts_smoke.py" = ["S603"]
 "tests/test_coverage_wave_report.py" = ["S603", "SLF001"]
