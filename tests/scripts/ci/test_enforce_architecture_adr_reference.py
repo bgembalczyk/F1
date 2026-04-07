@@ -1,10 +1,7 @@
 from __future__ import annotations
 
 import sys
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    import pytest
+import pytest
 
 from scripts.ci import enforce_architecture_adr_reference as gate
 
@@ -89,11 +86,9 @@ def test_cli_invalid_argument_prints_stderr(
             "b",
             "--bad",
         ]
-        try:
+        with pytest.raises(SystemExit) as exc:
             gate.main()
-            raise AssertionError("expected SystemExit")
-        except SystemExit as exc:
-            assert exc.code == 2  # noqa: PLR2004
+        assert exc.value.code == 2  # noqa: PLR2004
     finally:
         sys.argv = old_argv
 
