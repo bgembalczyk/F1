@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.scraper import DriverInfoboxParser
+from tests.support.driver_infobox_assertions import assert_career_parsed
 
 EXPANDED_YEAR_VALUES = [1981, 1982, 1984, 1985, 1986]
 EXPECTED_WINS = 7
@@ -59,13 +60,7 @@ def test_best_finish_no_links(scraper):
         <td class="infobox-data">1st in 1957</td></tr>
     </table>
     """
-    soup = BeautifulSoup(html, "html.parser")
-    table = soup.find("table")
-    result = scraper.parse(table)
-
-    assert len(result) == 1
-    assert "career" in result[0]
-    assert len(result[0]["career"]) > 0
+    result = assert_career_parsed(scraper, html)
 
     # Find the "Best finish" row
     for row in result[0]["career"][0]["rows"]:
@@ -130,13 +125,7 @@ def test_nationality_with_or(scraper):
         <td class="infobox-data">American or Italian</td></tr>
     </table>
     """
-    soup = BeautifulSoup(html, "html.parser")
-    table = soup.find("table")
-    result = scraper.parse(table)
-
-    assert len(result) == 1
-    assert "career" in result[0]
-    assert len(result[0]["career"]) > 0
+    result = assert_career_parsed(scraper, html)
 
     # Find the "Nationality" row
     for row in result[0]["career"][0]["rows"]:
@@ -207,13 +196,7 @@ def test_full_data_table_top_tens(scraper):
         </td></tr>
     </table>
     """
-    soup = BeautifulSoup(html, "html.parser")
-    table = soup.find("table")
-    result = scraper.parse(table)
-
-    assert len(result) == 1
-    assert "career" in result[0]
-    assert len(result[0]["career"]) > 0
+    result = assert_career_parsed(scraper, html)
 
     # Find the full_data row with stats
     for row in result[0]["career"][0]["rows"]:
