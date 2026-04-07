@@ -47,55 +47,36 @@ def test_json_lines_formatter_includes_extra_fields() -> None:
     assert parsed["domain"] == "races"
 
 
-def test_configure_logging_verbose_sets_info_level() -> None:
-    # Lines 44-57
-    root = logging.getLogger()
-    original_handlers = list(root.handlers)
-    original_level = root.level
+class TestConfigureLogging:
+    def setup_method(self) -> None:
+        self.root = logging.getLogger()
+        self.original_handlers = list(self.root.handlers)
+        self.original_level = self.root.level
+        self.root.handlers.clear()
 
-    try:
+    def teardown_method(self) -> None:
+        self.root.handlers.clear()
+        self.root.handlers.extend(self.original_handlers)
+        self.root.setLevel(self.original_level)
+
+    def test_configure_logging_verbose_sets_info_level(self) -> None:
+        # Lines 44-57
         # Remove existing handlers to test fresh setup
-        root.handlers.clear()
         configure_logging(verbose=True)
-        assert root.level == logging.INFO
-    finally:
-        root.handlers.clear()
-        root.handlers.extend(original_handlers)
-        root.setLevel(original_level)
+        assert self.root.level == logging.INFO
 
-
-def test_configure_logging_trace_sets_debug_level() -> None:
-    root = logging.getLogger()
-    original_handlers = list(root.handlers)
-    original_level = root.level
-
-    try:
-        root.handlers.clear()
+    def test_configure_logging_trace_sets_debug_level(self) -> None:
         configure_logging(trace=True)
-        assert root.level == logging.DEBUG
-    finally:
-        root.handlers.clear()
-        root.handlers.extend(original_handlers)
-        root.setLevel(original_level)
+        assert self.root.level == logging.DEBUG
 
-
-def test_configure_logging_with_existing_handlers_updates_them() -> None:
-    root = logging.getLogger()
-    original_handlers = list(root.handlers)
-    original_level = root.level
-
-    try:
+    def test_configure_logging_with_existing_handlers_updates_them(self) -> None:
         # Add a handler first
         handler = logging.StreamHandler()
-        root.addHandler(handler)
+        self.root.addHandler(handler)
         configure_logging(verbose=True)
-        assert root.level == logging.INFO
+        assert self.root.level == logging.INFO
         # Handler should be updated
-        assert isinstance(root.handlers[-1].formatter, JsonLinesFormatter)
-    finally:
-        root.handlers.clear()
-        root.handlers.extend(original_handlers)
-        root.setLevel(original_level)
+        assert isinstance(self.root.handlers[-1].formatter, JsonLinesFormatter)
 
 
 def test_build_execution_context_returns_full_dict() -> None:
