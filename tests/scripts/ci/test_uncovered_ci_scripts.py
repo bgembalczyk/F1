@@ -11,6 +11,7 @@ from unittest.mock import patch
 
 import pytest
 
+from scripts import check_di_antipatterns as di
 from scripts.ci import check_duplicate_default_configs as dedup
 from scripts.ci import check_terminology_consistency as tc
 from scripts.ci import enforce_function_complexity as efc
@@ -24,7 +25,6 @@ from scripts.ci.duplicate_report import DuplicateRecord
 from scripts.ci.duplicate_report import MarkdownRenderer
 from scripts.ci.reporting import build_ci_parser
 from scripts.ci.reporting import line_range
-from scripts import check_di_antipatterns as di
 from validation.issue import ValidationIssue
 from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
