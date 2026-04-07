@@ -13,6 +13,7 @@ from scrapers.points.constants import SHORTENED_RACE_EXPECTED_HEADERS
 from scrapers.points.constants import SPRINT_POSITIONS
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
+from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
@@ -246,7 +247,7 @@ def _build_expected_header_lookup(expected_headers: list[str]) -> dict[str, str]
     }
 
 
-class SprintRacesSubSubSectionParser(SubSubSectionParser):
+class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = SprintPointsTableParser()
@@ -261,29 +262,8 @@ class SprintRacesSubSubSectionParser(SubSubSectionParser):
         self.apply_table_parser(parsed)
         return parsed
 
-    def apply_table_parser(self, payload: dict[str, Any]) -> None:
-        self._apply_for_elements(payload.get("elements", []))
-        for value in payload.values():
-            if isinstance(value, dict):
-                self.apply_table_parser(value)
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        self.apply_table_parser(item)
 
-    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self._table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
-
-
-class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
+class ShortenedRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = ShortenedRacesPointsTableParser()
@@ -295,27 +275,6 @@ class ShortenedRacesSubSubSectionParser(SubSubSectionParser):
         parsed = super().parse_group(elements, context=context)
         self.apply_table_parser(parsed)
         return parsed
-
-    def apply_table_parser(self, payload: dict[str, Any]) -> None:
-        self._apply_for_elements(payload.get("elements", []))
-        for value in payload.values():
-            if isinstance(value, dict):
-                self.apply_table_parser(value)
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        self.apply_table_parser(item)
-
-    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self._table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
 
 
 class _SpecialCasesSubSubSectionRouter(SubSubSectionParser):
@@ -342,7 +301,7 @@ class SpecialCasesSubSectionParser(SubSectionParser):
         self.child_parser = _SpecialCasesSubSubSectionRouter()
 
 
-class PointsScoringSystemsSectionParser(SectionParser):
+class PointsScoringSystemsSectionParser(ApplyForElementsMixin, SectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = SpecialCasesSubSectionParser()
@@ -365,24 +324,3 @@ class PointsScoringSystemsSectionParser(SectionParser):
         parsed = super().parse_group(elements, context=context)
         self.apply_table_parser(parsed)
         return parsed
-
-    def apply_table_parser(self, payload: dict[str, Any]) -> None:
-        self._apply_for_elements(payload.get("elements", []))
-        for value in payload.values():
-            if isinstance(value, dict):
-                self.apply_table_parser(value)
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        self.apply_table_parser(item)
-
-    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self._table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
