@@ -2,8 +2,7 @@
 import pytest
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.races.columns.restart_status import RestartStatusColumn
-from scrapers.races.helpers.restart_status import restart_status
+from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
 
 
 def _ctx(clean_text: str | None) -> ColumnContext:
@@ -34,26 +33,29 @@ def _ctx(clean_text: str | None) -> ColumnContext:
     ],
 )
 def test_restart_status_known_codes(text, expected_code, expected_description) -> None:
-    result = restart_status(_ctx(text))
+    col = RestartStatusColumn()
+    result = col.parse(_ctx(text))
     assert result is not None
     assert result["code"] == expected_code
     assert result["description"] == expected_description
 
 
 def test_restart_status_unknown_code_returns_none_description() -> None:
-    result = restart_status(_ctx("X"))
+    col = RestartStatusColumn()
+    result = col.parse(_ctx("X"))
     assert result is not None
     assert result["code"] == "X"
     assert result["description"] is None
 
 
 def test_restart_status_empty_text_returns_none() -> None:
-    assert restart_status(_ctx("")) is None
-    assert restart_status(_ctx(None)) is None
-    assert restart_status(_ctx("   ")) is None
+    col = RestartStatusColumn()
+    assert col.parse(_ctx("")) is None
+    assert col.parse(_ctx(None)) is None
+    assert col.parse(_ctx("   ")) is None
 
 
-def test_restart_status_column_delegates_to_helper() -> None:
+def test_restart_status_column() -> None:
     col = RestartStatusColumn()
     ctx = _ctx("Y")
     result = col.parse(ctx)

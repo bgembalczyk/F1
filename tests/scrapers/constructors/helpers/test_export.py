@@ -47,12 +47,15 @@ def test_export_complete_constructors_calls_fetch_and_export() -> None:
             "scrapers.constructors.helpers.export.CompleteConstructorsDataExtractor",
         ) as mock_cls,
         patch(
-            "scrapers.constructors.helpers.export.export_grouped_json",
-        ) as mock_export,
+            "scrapers.constructors.helpers.export.ResultExportService",
+        ) as mock_export_service_cls,
     ):
         mock_scraper = MagicMock()
         mock_scraper.fetch.return_value = [{"constructor": {"text": "Ferrari"}}]
         mock_cls.return_value = mock_scraper
+
+        mock_export_service = MagicMock()
+        mock_export_service_cls.return_value = mock_export_service
 
         from scrapers.constructors.helpers.export import export_complete_constructors
 
@@ -61,4 +64,10 @@ def test_export_complete_constructors_calls_fetch_and_export() -> None:
 
         mock_opts.assert_called_once_with(None, include_urls=False)
         mock_scraper.fetch.assert_called_once()
-        mock_export.assert_called_once()
+        mock_export_service_cls.assert_called_once()
+        mock_export_service.export_grouped_json.assert_called_once_with(
+            mock_scraper,
+            [{"constructor": {"text": "Ferrari"}}],
+            output_dir,
+            constructor_name_initial,
+        )

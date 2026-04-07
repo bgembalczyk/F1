@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.export.export_helpers import export_grouped_json
+from scrapers.base.services.result_export_service import ResultExportService
 
 
 class _StubLogger:
@@ -35,7 +35,7 @@ def test_export_grouped_json_writes_files_and_uses_other_fallback(
             return ""
         return name[0].upper()
 
-    export_grouped_json(scraper, data, tmp_path, key_fn)
+    ResultExportService().export_grouped_json(scraper, data, tmp_path, key_fn)
 
     assert (tmp_path / "A.json").exists()
     assert (tmp_path / "B.json").exists()

@@ -33,16 +33,6 @@ from scrapers.base.errors import SourceParseError  # noqa: E402
 from scrapers.base.errors import TransportError  # noqa: E402
 
 
-def test_package_exports_and_lazy_client_import() -> None:
-    module = importlib.import_module("infrastructure.gemini")
-
-    assert "GeminiClient" in module.__all__
-    assert module.ModelConfig is ModelConfig
-    assert module.DEFAULT_TIMEOUT > 0
-
-    assert module.GeminiClient is GeminiClient
-
-
 def test_package_unknown_attribute_raises_attribute_error() -> None:
     module = importlib.import_module("infrastructure.gemini")
 

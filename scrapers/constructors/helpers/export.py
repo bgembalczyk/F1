@@ -2,8 +2,8 @@ import re
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.export.export_helpers import export_grouped_json
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.services.result_export_service import ResultExportService
 from scrapers.constructors.complete_scraper import CompleteConstructorsDataExtractor
 
 
@@ -40,4 +40,9 @@ def export_complete_constructors(
     options = init_scraper_options(None, include_urls=include_urls)
     scraper = CompleteConstructorsDataExtractor(options=options)
     data = scraper.fetch()
-    export_grouped_json(scraper, data, output_dir, constructor_name_initial)
+    ResultExportService().export_grouped_json(
+        scraper,
+        data,
+        output_dir,
+        constructor_name_initial,
+    )

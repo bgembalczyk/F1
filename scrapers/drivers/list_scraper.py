@@ -9,8 +9,8 @@ from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import build_name_status_fragment
-from scrapers.base.table.columns.types import SeasonsColumn
-from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
@@ -31,11 +31,11 @@ from scrapers.drivers.constants import DRIVER_RACE_STARTS_HEADER
 from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
 from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
+from scrapers.drivers.helpers.parsers import DriverOrderedTableParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 
 
-class DriversListTableParser(WikiTableBaseParser):
+class DriversListTableParser(DriverOrderedTableParser):
     table_type = "drivers_list"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -57,25 +57,6 @@ class DriversListTableParser(WikiTableBaseParser):
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         required_headers = set(DRIVERS_LIST_HEADERS)
         return required_headers.issubset(set(headers))
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        mapped_headers = [
-            header for header in headers if header in self._column_mapping
-        ]
-        driver_headers = [
-            header
-            for header in mapped_headers
-            if self._column_mapping[header] == "driver"
-        ]
-        other_headers = [
-            header
-            for header in mapped_headers
-            if self._column_mapping[header] != "driver"
-        ]
-        return {
-            header: self._column_mapping[header]
-            for header in [*driver_headers, *other_headers]
-        }
 
 
 TABLE_SCHEMA = TableSchemaDSL(
