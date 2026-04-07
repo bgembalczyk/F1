@@ -88,7 +88,7 @@ class MergeModel(Protocol):
 T = TypeVar("T", bound=MergeModel)
 
 
-def _process_new_model(
+def process_new_model(
     model: MergeModel,
     merged_records: list[object],
     key_to_index: dict[str, int],
@@ -102,7 +102,7 @@ def _process_new_model(
             key_to_index[alias] = index
 
 
-def _process_existing_model(
+def process_existing_model(
     model: MergeModel,
     existing: object,
     merged_records: list[object],
@@ -126,7 +126,7 @@ def _process_existing_model(
 T = TypeVar("T", bound=MergeModel)
 
 
-def _handle_new_record(
+def handle_new_record(
     model: MergeModel,
     merged_records: list[object],
     key_to_index: dict[str, int],
@@ -161,7 +161,7 @@ def merge_duplicate_records(
 
         index = key_to_index.get(key)
         if index is None:
-            _handle_new_record(model, merged_records, key_to_index, key)
+            handle_new_record(model, merged_records, key_to_index, key)
             continue
 
         existing = merged_records[index]
@@ -179,3 +179,14 @@ def merge_duplicate_records(
                     key_to_index[alias] = index
 
     return merged_records
+
+
+__all__ = [
+    "merge_list_values",
+    "merge_driver_values",
+    "merge_driver_dict_values",
+    "process_new_model",
+    "process_existing_model",
+    "handle_new_record",
+    "merge_duplicate_records",
+]
