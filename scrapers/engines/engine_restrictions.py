@@ -23,6 +23,7 @@ from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from scrapers.base.mixins import ApplyForElementsMixin
 
 
 class EngineRestrictionsTableParser(WikiTableBaseParser):
@@ -79,7 +80,7 @@ TABLE_SCHEMA = TableSchemaDSL(
 )
 
 
-class EngineSubSectionParser(SubSectionParser):
+class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = EngineRestrictionsTableParser()
@@ -94,6 +95,12 @@ class EngineSubSectionParser(SubSectionParser):
         for section in parsed.get("sub_sub_sections", []):
             self._table_parser.apply_to_payload(section)
         return parsed
+
+    def _apply_engine_restrictions_table_parser(self, payload: dict[str, Any]) -> None:
+        for section in payload.get("sub_sub_sections", []):
+            self._apply_for_elements(section.get("elements", []))
+            self._apply_engine_restrictions_table_parser(section)
+
 
 
 class CurrentRulesSectionParser(SectionParser):
