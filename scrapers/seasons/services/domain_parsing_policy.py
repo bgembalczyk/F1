@@ -13,6 +13,7 @@ from scrapers.seasons.parsers.constants import TESTING_VENUES_YEARS
 
 
 class TestingVenuesLayout(str, Enum):
+    __test__ = False
     STANDARD = "standard"
     SWAPPED_CIRCUIT_EVENT = "swapped_circuit_event"
 
