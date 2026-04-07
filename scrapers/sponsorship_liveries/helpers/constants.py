@@ -18,6 +18,9 @@ POSSESSIVE_PAREN_RE = re.compile(r"\([^)]*'s[^)]*\)\s*$")
 # Regex for possessive colour-note suffixes with driver names.
 POSSESSIVE_COLOUR_RE = re.compile(r"^(.*?)\s*\(([^)']*)'s[^)]*\)\s*$")
 
+# Regex to remove whitespace and dashes from string remainders.
+REMAINDER_CLEANUP_RE = re.compile(r"[\s\-—]")
+
 
 season_headers = {
     "year",
