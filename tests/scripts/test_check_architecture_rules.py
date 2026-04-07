@@ -19,7 +19,7 @@ def _rules_stub() -> SimpleNamespace:
         ENTRYPOINT_DOMAINS=("drivers",),
         REQUIRED_LAYERS_BY_DOMAIN={"drivers": ("sections", "app")},
         FORBIDDEN_IMPORTS_BY_LAYER={"sections": ("app",), "app": ()},
-        infer_layer=lambda path, domain=None: "sections"
+        infer_layer=lambda path, _domain=None: "sections"
         if "sections" in path.parts
         else "app",
         resolve_import_targets=lambda _path: ["scrapers.drivers.app.shared"],

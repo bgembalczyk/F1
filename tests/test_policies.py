@@ -58,14 +58,14 @@ def test_composite_hook_exposes_hooks_property() -> None:
 # MirrorConstructorsJobHook - lines 73-74 (ValueError)
 def test_mirror_constructors_hook_raises_when_no_mirror_service() -> None:
     with pytest.raises(ValueError, match="requires `mirror` service"):
-        MirrorConstructorsJobHook(should_mirror_predicate=lambda job: True)
+        MirrorConstructorsJobHook(should_mirror_predicate=lambda _job: True)
 
 
 def test_mirror_constructors_hook_skips_when_predicate_false() -> None:
     mirror = MagicMock()
     hook = MirrorConstructorsJobHook(
         mirror=mirror,
-        should_mirror_predicate=lambda job: False,
+        should_mirror_predicate=lambda _job: False,
     )
     hook.after_job(
         base_wiki_dir=Path("/wiki"),
@@ -79,7 +79,7 @@ def test_mirror_constructors_hook_calls_mirror_when_predicate_true() -> None:
     mirror = MagicMock()
     hook = MirrorConstructorsJobHook(
         mirror=mirror,
-        should_mirror_predicate=lambda job: True,
+        should_mirror_predicate=lambda _job: True,
     )
     hook.after_job(
         base_wiki_dir=Path("/wiki"),
@@ -93,7 +93,7 @@ def test_mirror_constructors_hook_calls_mirror_when_predicate_true() -> None:
 def test_mirror_to_domain_skips_when_predicate_false(tmp_path: Path) -> None:
     hook = MirrorToDomainByFilenameJobHook(
         target_domain="constructors",
-        should_mirror_predicate=lambda job: False,
+        should_mirror_predicate=lambda _job: False,
     )
     hook.after_job(
         base_wiki_dir=tmp_path,
@@ -112,7 +112,7 @@ def test_mirror_to_domain_copies_file_to_target_domain(tmp_path: Path) -> None:
 
     hook = MirrorToDomainByFilenameJobHook(
         target_domain="constructors",
-        should_mirror_predicate=lambda job: True,
+        should_mirror_predicate=lambda _job: True,
     )
     hook.after_job(
         base_wiki_dir=tmp_path,
@@ -134,7 +134,7 @@ def test_mirror_to_domain_skips_copy_when_source_equals_target(tmp_path: Path) -
 
     hook = MirrorToDomainByFilenameJobHook(
         target_domain="drivers",
-        should_mirror_predicate=lambda job: True,
+        should_mirror_predicate=lambda _job: True,
     )
     # Should not raise even when target == source
     hook.after_job(

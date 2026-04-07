@@ -24,7 +24,7 @@ def _make_scraper(
     with patch.object(
         RedFlaggedRacesBaseScraper,
         "__init__",
-        lambda self, **kwargs: None,
+        lambda _self, **_kwargs: None,
     ):
         s = _Concrete.__new__(_Concrete)
         s.__init__()
