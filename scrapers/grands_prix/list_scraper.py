@@ -72,24 +72,8 @@ class ByRaceTitleSubSectionParser(SubSectionParser):
 
     def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        self._apply_table_parser(parsed)
+        self._table_parser.apply_to_payload(parsed)
         return parsed
-
-    def _apply_table_parser(self, payload: dict[str, Any]) -> None:
-        for section in payload.get("sub_sub_sections", []):
-            self._apply_for_elements(section.get("elements", []))
-            self._apply_table_parser(section)
-
-    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self._table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
 
 
 class RacesSectionParser(SectionParser):
