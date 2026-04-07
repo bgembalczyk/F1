@@ -78,7 +78,7 @@ def test_cli_ignores_unknown_arguments_for_backward_compatibility() -> None:
         Path(__file__).resolve().parents[2] / "scripts" / "check_domain_terminology.py"
     )
 
-    proc = subprocess.run(
+    proc = subprocess.run(  # noqa: S603 - controlled test command
         [sys.executable, str(script_path), "--unknown-option"],
         capture_output=True,
         text=True,

@@ -142,7 +142,7 @@ def test_cli_invalid_argument_reports_stderr() -> None:
         Path(__file__).resolve().parents[2] / "scripts" / "check_architecture_rules.py"
     )
 
-    proc = subprocess.run(
+    proc = subprocess.run(  # noqa: S603 - controlled test command
         [sys.executable, str(script_path), "--bad-flag"],
         capture_output=True,
         text=True,
