@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import os
-import subprocess
 import sys
 from typing import TYPE_CHECKING
 
@@ -78,20 +76,27 @@ def test_main_outputs_error_when_reference_missing(
     assert "Dotknięte ścieżki" in out
 
 
-def test_cli_invalid_argument_prints_stderr() -> None:
-    proc = subprocess.run(  # - controlled test command
-        [
-            sys.executable,
-            "-m",
-            "scripts.ci.enforce_architecture_adr_reference",
+def test_cli_invalid_argument_prints_stderr(
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    old_argv = sys.argv
+    try:
+        sys.argv = [
+            "prog",
+            "--base-sha",
+            "a",
+            "--head-sha",
+            "b",
             "--bad",
-        ],
-        capture_output=True,
-        text=True,
-        check=False,
-        env=dict(os.environ),
-    )
+        ]
+        try:
+            gate.main()
+            raise AssertionError("expected SystemExit")
+        except SystemExit as exc:
+            assert exc.code == 2  # noqa: PLR2004
+    finally:
+        sys.argv = old_argv
 
-    assert proc.returncode == 2  # noqa: PLR2004
-    assert "usage:" in proc.stderr
-    assert "unrecognized arguments" in proc.stderr
+    err = capsys.readouterr().err
+    assert "usage:" in err
+    assert "unrecognized arguments" in err
