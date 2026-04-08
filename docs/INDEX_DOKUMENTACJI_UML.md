@@ -11,6 +11,7 @@
 3. **[uml_proposed_class_structure.puml](uml_proposed_class_structure.puml)** - Proponowana uporządkowana struktura klas
 4. **[uml_wiki_parser_hierarchy.puml](uml_wiki_parser_hierarchy.puml)** - Hierarchia klas WikiScrapera i WikiParserów
 5. **[uml_future_dataset_pipeline.puml](uml_future_dataset_pipeline.puml)** - Docelowa wizja iteracyjnego pipeline warstw 0/1 (Wikipedia → kolejne checkpointy → ML-ready)
+6. **[uml_all_classes.puml](uml_all_classes.puml)** - Diagram wszystkich klas projektu (746 klas, 19 pakietów, relacje dziedziczenia)
 
 ### Dokumentacja README
 1. **[UML_DIAGRAMS_README.md](UML_DIAGRAMS_README.md)** - Kompleksowa dokumentacja w języku angielskim
