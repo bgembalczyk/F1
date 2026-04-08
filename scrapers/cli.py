@@ -21,5 +21,3 @@ MODULE_DEFINITIONS: dict[str, ModuleDefinition] = {
     domain: ModuleDefinition(module_path=module_path)
     for domain, module_path in get_domain_entrypoint_scraper_metadata().items()
 }
-
-__all__ = ["MODULE_DEFINITIONS", "ModuleDefinition"]

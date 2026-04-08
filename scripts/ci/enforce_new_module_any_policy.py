@@ -8,40 +8,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROLLOUT_PREFIXES = (
-    "layers/",
-    "validation/",
-    "infrastructure/http_client/",
-)
+ROLLOUT_PREFIXES = ()
 
 # Tymczasowa lista wyjątków (legacy debt) — utrzymywana jawnie podczas rolloutu.
-ANY_EXCEPTION_MODULES = {
-    "layers/application.py",
-    "layers/one/executor.py",
-    "layers/orchestration/runners/function_export.py",
-    "layers/orchestration/runners/grand_prix.py",
-    "layers/seed/data_classes.py",
-    "layers/seed/registry/constants.py",
-    "layers/seed/registry/entries.py",
-    "layers/seed/registry/helpers.py",
-    "layers/zero/executor.py",
-    "layers/zero/merge.py",
-    "validation/composite_validator.py",
-    "validation/record_factory_validator.py",
-    "validation/rules.py",
-    "validation/schema_engine.py",
-    "validation/schema_rules.py",
-    "validation/schemas.py",
-    "validation/validator_base.py",
-    "infrastructure/http_client/clients/base.py",
-    "infrastructure/http_client/clients/urllib_http.py",
-    "infrastructure/http_client/components/request_executor.py",
-    "infrastructure/http_client/interfaces/http_client_protocol.py",
-    "infrastructure/http_client/policies/default_retry.py",
-    "infrastructure/http_client/policies/retry.py",
-    "infrastructure/http_client/requests_shim/http_error.py",
-    "infrastructure/http_client/requests_shim/session.py",
-}
+ANY_EXCEPTION_MODULES = {}
 
 JUSTIFICATION_MARKER = "ANY-JUSTIFIED:"
 ANY_PATTERN = re.compile(r"\bAny\b")

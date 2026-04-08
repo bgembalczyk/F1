@@ -1,1 +1,0 @@
-"""Domain-level utility helpers."""

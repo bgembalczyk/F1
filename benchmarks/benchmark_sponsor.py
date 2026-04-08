@@ -1,6 +1,7 @@
 import json
 import re
 import timeit
+from pathlib import Path
 
 
 def original(base_text, links):
@@ -52,5 +53,5 @@ def run_orig():
 baseline_time = timeit.timeit(run_orig, number=100000)
 print(f"BASELINE_TIME: {baseline_time}")
 
-with open("benchmark_results.json", "w") as f:
+with Path("benchmark_results.json").open("w") as f:
     json.dump({"baseline": baseline_time}, f)

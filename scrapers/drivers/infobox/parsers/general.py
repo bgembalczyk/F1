@@ -5,13 +5,12 @@ from bs4 import Tag
 
 from models.records.link import LinkRecord
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.helpers.parsing import parse_relations
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.infobox.schema import InfoboxSchema
 from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
-
-RELATIONS_PARENTHETICAL_PATTERN = re.compile(r"\s*\(([^)]+)\)")
 
 
 class InfoboxGeneralParser:
@@ -212,20 +211,4 @@ class InfoboxGeneralParser:
     def _parse_relations(self, cell: Tag) -> list[dict[str, Any]]:
         links = self._link_extractor.extract_links(cell)
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        entries: list[dict[str, Any]] = []
-        matches = list(RELATIONS_PARENTHETICAL_PATTERN.finditer(text))
-
-        for link in links:
-            relation = None
-            t = link.get("text") or ""
-            if t:
-                for match in matches:
-                    start_idx = match.start()
-                    if start_idx >= len(t):
-                        if text[start_idx - len(t) : start_idx] == t:
-                            relation = match.group(1).strip()
-                            break
-            elif matches:
-                relation = matches[0].group(1).strip()
-            entries.append({"person": link, "relation": relation})
-        return entries
+        return parse_relations(links, text)

@@ -189,9 +189,9 @@ class ResultsParsingHelpers:
         Parse entrant/team segment from table cell.
 
         Args:
-            segment: HTML tag containing entrant information
-            link_lookup: Pre-built lookup of entrant names to links
-            base_url: Base URL for resolving relative links
+            :param segment: HTML tag containing entrant information
+            :param _link_lookup: Pre-built lookup of entrant names to links
+            :param base_url: Base URL for resolving relative links
 
         Returns:
             Dictionary with entrant data including name and title_sponsors list

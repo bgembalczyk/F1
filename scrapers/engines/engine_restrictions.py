@@ -5,11 +5,12 @@ from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.source_catalog import ENGINE_REGULATIONS
-from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.columns.types import RangeColumn
-from scrapers.base.table.columns.types import SeasonsColumn
-from scrapers.base.table.columns.types import UnitColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types.range import RangeColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
@@ -79,7 +80,7 @@ TABLE_SCHEMA = TableSchemaDSL(
 )
 
 
-class EngineSubSectionParser(SubSectionParser):
+class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = EngineRestrictionsTableParser()
@@ -91,24 +92,14 @@ class EngineSubSectionParser(SubSectionParser):
         context=None,
     ) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
-        self._apply_engine_restrictions_table_parser(parsed)
+        for section in parsed.get("sub_sub_sections", []):
+            self._table_parser.apply_to_payload(section)
         return parsed
 
     def _apply_engine_restrictions_table_parser(self, payload: dict[str, Any]) -> None:
         for section in payload.get("sub_sub_sections", []):
             self._apply_for_elements(section.get("elements", []))
             self._apply_engine_restrictions_table_parser(section)
-
-    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self._table_parser.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
 
 
 class CurrentRulesSectionParser(SectionParser):

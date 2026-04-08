@@ -1,6 +1,7 @@
 import json
 import re
 import timeit
+from pathlib import Path
 
 REMAINDER_CLEANUP_RE = re.compile(r"[\s\-—]")
 
@@ -54,7 +55,7 @@ def run_opt():
 opt_time = timeit.timeit(run_opt, number=100000)
 print(f"OPTIMIZED_TIME: {opt_time}")
 
-with open("benchmark_results.json") as f:
+with Path("benchmark_results.json").open() as f:
     results = json.load(f)
 
 baseline = results["baseline"]
@@ -68,5 +69,5 @@ print(f"Improvement: {improvement:.4f}s ({pct_improvement:.2f}%) faster")
 results["optimized"] = opt_time
 results["pct_improvement"] = pct_improvement
 
-with open("benchmark_results.json", "w") as f:
+with Path("benchmark_results.json").open("w") as f:
     json.dump(results, f)

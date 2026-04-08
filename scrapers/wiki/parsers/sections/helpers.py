@@ -1,3 +1,5 @@
+from difflib import SequenceMatcher
+
 from bs4 import Tag
 
 from scrapers.base.helpers.transform_micro_ops import merge_unique_preserve_order
@@ -114,6 +116,10 @@ def profile_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
         )
 
     return aliases
+
+
+def best_fuzzy_ratio(text: str, target_texts: set[str]) -> float:
+    return max(SequenceMatcher(None, text, value).ratio() for value in target_texts)
 
 
 def profile_entry_aliases(

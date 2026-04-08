@@ -2,9 +2,7 @@ from collections.abc import Mapping
 
 from infrastructure.http_client.clients.base import BaseHttpClient
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.interfaces.http_response_protocol import (
-    HttpResponseProtocol,
-)
+from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from infrastructure.http_client.requests_shim.session import Session
