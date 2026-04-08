@@ -11,9 +11,6 @@ if TYPE_CHECKING:
 
 from layers.zero.merge_types import DriverSeriesStats
 
-if TYPE_CHECKING:
-    from collections.abc import Callable
-
 
 def merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
     merged = list(existing)
@@ -73,12 +70,6 @@ def merge_driver_values(existing: object, incoming: object) -> object:
     if existing in (None, "", []):
         return incoming
     return existing
-
-
-from collections.abc import Callable
-from typing import Any
-from typing import Protocol
-from typing import TypeVar
 
 
 class MergeModel(Protocol):
@@ -144,7 +135,6 @@ def _handle_new_record(
             key_to_index[alias] = index
 
 
-# ruff: noqa: C901
 def merge_duplicate_records(
     records: list[object],
     model_cls: type[T],

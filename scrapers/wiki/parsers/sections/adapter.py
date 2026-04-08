@@ -57,6 +57,7 @@ def _extract_sections(article: SectionTree | None) -> list[SectionTree]:
 
 def _profile_score(
     profile: Any,
+    *,
     exact_id: bool = False,
     exact_text: bool = False,
 ) -> float:
@@ -87,7 +88,9 @@ def _find_match(
         canonical = profile.canonical_for(target)
         if canonical:
             target = canonical
-        min_fuzzy_score = getattr(profile.priorities, "fuzzy_threshold", min_fuzzy_score)
+        min_fuzzy_score = getattr(
+            profile.priorities, "fuzzy_threshold", min_fuzzy_score,
+        )
 
     target_ids, target_texts = _expand_targets(target, aliases, domain=domain)
     fuzzy_candidates: list[SectionTreeMatch] = []

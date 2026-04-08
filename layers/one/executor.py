@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import inspect
-from pathlib import Path
 from typing import TYPE_CHECKING
 from uuid import uuid4
 
@@ -12,6 +11,7 @@ from scrapers.base.logging import get_logger
 
 if TYPE_CHECKING:
     from collections.abc import Callable
+    from pathlib import Path
 
     from layers.orchestration.protocols import LayerOneRunnerProtocol
     from layers.orchestration.types import SeedName
@@ -97,7 +97,9 @@ class LayerOneExecutor(BaseExecutor):
         self._validate_seed_registry(self._seed_registry)
         runner_map = self._runners()
         run_id = self._resolve_run_id(run_config)
-        trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id, layer=1)
+        trace_writer = self._build_trace_writer(
+            run_config=run_config, run_id=run_id, layer=1,
+        )
         summary: dict[str, list[str]] = {"success": [], "skip": [], "fail": []}
         output_paths: list[str] = []
         return run_id, trace_writer, summary, output_paths, runner_map

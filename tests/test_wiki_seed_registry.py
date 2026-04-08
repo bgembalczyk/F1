@@ -5,6 +5,7 @@ from dataclasses import asdict
 import pytest
 
 from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
+from layers.seed.registry.constants import WIKI_SEED_REGISTRY
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from layers.seed.registry.helpers import validate_list_job_registry

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from pathlib import Path
 from typing import TYPE_CHECKING
 from uuid import uuid4
 
@@ -10,7 +9,6 @@ from layers.zero.policies import MirrorConstructorsJobHook
 from layers.zero.policies import NullLayerZeroJobHook
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 from scrapers.base.errors import normalize_pipeline_error
-from scrapers.base.logging import RunTraceWriter
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.base.run_config import RunConfig
@@ -19,6 +17,7 @@ from scrapers.base.runner import ScraperRunner
 if TYPE_CHECKING:
     from collections.abc import Callable
     from collections.abc import Mapping
+    from pathlib import Path
 
     from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
     from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
@@ -114,7 +113,9 @@ class LayerZeroExecutor(BaseExecutor):
         self._validate_list_registry(self._list_job_registry)
         config_factories = self._resolve_config_factory()
         run_id = self._resolve_run_id(run_config)
-        trace_writer = self._build_trace_writer(run_config=run_config, run_id=run_id, layer=0)
+        trace_writer = self._build_trace_writer(
+            run_config=run_config, run_id=run_id, layer=0,
+        )
         summary: dict[str, list[str]] = {"success": [], "skip": [], "fail": []}
         output_paths: list[str] = []
 

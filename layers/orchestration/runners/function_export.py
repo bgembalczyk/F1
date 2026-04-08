@@ -5,13 +5,13 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 from layers.orchestration.runners.layer_job import LayerJobRunner
-from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.errors import normalize_pipeline_error
 
 if TYPE_CHECKING:
     from pathlib import Path
 
     from layers.orchestration.runners.metadata import RunnerMetadata
+    from layers.seed.registry.entries import SeedRegistryEntry
     from scrapers.base.run_config import RunConfig
 
 ExportCallable = Callable[..., None]

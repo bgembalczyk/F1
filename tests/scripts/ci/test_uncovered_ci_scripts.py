@@ -1,10 +1,12 @@
-# ruff: noqa: E501, PLR2004
+# ruff: noqa: PLR2004
 from __future__ import annotations
 
 import ast
 import subprocess
 import sys
+from contextlib import contextmanager
 from pathlib import Path
+from typing import TYPE_CHECKING
 from typing import Any
 from unittest.mock import MagicMock
 from unittest.mock import patch
@@ -30,8 +32,8 @@ from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
 
-from contextlib import contextmanager
-from typing import Iterator
+if TYPE_CHECKING:
+    from collections.abc import Iterator
 
 @contextmanager
 def mock_git_worktree() -> Iterator[None]:
@@ -719,7 +721,7 @@ def test_run_mypy_success_output() -> None:
         "scripts.ci.mypy_regression_gate.subprocess.run",
         return_value=FakeResult(),
     ):
-        errors, output = mypy_gate._run_mypy(Path())
+        errors, _output = mypy_gate._run_mypy(Path())
     assert errors == 0
 
 
@@ -733,7 +735,7 @@ def test_run_mypy_with_error_count() -> None:
         "scripts.ci.mypy_regression_gate.subprocess.run",
         return_value=FakeResult(),
     ):
-        errors, output = mypy_gate._run_mypy(Path())
+        errors, _output = mypy_gate._run_mypy(Path())
     assert errors == 5
 
 
@@ -747,7 +749,7 @@ def test_run_mypy_no_match_returns_large_number() -> None:
         "scripts.ci.mypy_regression_gate.subprocess.run",
         return_value=FakeResult(),
     ):
-        errors, output = mypy_gate._run_mypy(Path())
+        errors, _output = mypy_gate._run_mypy(Path())
     assert errors == 10**9
 
 
