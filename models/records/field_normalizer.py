@@ -4,11 +4,12 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import cast
 
-from models.domain_utils.normalization import normalize_link_item
-from models.domain_utils.normalization import normalize_link_items
+from models.domain_utils.field_normalization.links import normalize_link_item
+from models.domain_utils.field_normalization.links import normalize_link_items
 from models.domain_utils.normalization import normalize_season_items
 from models.validation.helpers import validate_status
 from models.validation.utils import coerce_number
+from models.value_objects.link_utils import validate_link
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord
@@ -41,7 +42,11 @@ class FieldNormalizer:
     def normalize_link(value: Any, field_name: str) -> LinkRecord | None:
         return cast(
             "LinkRecord | None",
-            normalize_link_item(value, field_name=field_name),
+            normalize_link_item(
+                value,
+                field_name=field_name,
+                validate_payload=validate_link,
+            ),
         )
 
     @staticmethod
@@ -49,7 +54,11 @@ class FieldNormalizer:
         items = value if isinstance(value, list) else [value]
         return cast(
             "list[LinkRecord]",
-            normalize_link_items(items, field_name=field_name),
+            normalize_link_items(
+                items,
+                field_name=field_name,
+                validate_payload=validate_link,
+            ),
         )
 
     @staticmethod

@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.domain_utils.normalization import normalize_link_items
+from models.domain_utils.field_normalization.links import normalize_link_items
 from models.domain_utils.normalization import (
     normalize_season_items as core_normalize_season_items,
 )
@@ -10,6 +10,7 @@ from models.validation.base import ValidatedModel
 from models.validation.helpers import normalize_range_value
 from models.validation.helpers import normalize_unit_value
 from models.value_objects.link import Link
+from models.value_objects.link_utils import validate_link
 from models.value_objects.season_ref import SeasonRef
 
 
@@ -31,6 +32,7 @@ class EngineRestriction(ValidatedModel):
             for item in normalize_link_items(
                 self.type_of_engine,
                 field_name="type_of_engine",
+                validate_payload=validate_link,
             )
         ]
         self.size = normalize_unit_value(self.size, "size")
