@@ -14,6 +14,45 @@ from layers.zero.merge_types import DriverRecordModel
 from layers.zero.merge_types import EngineRecordModel
 from layers.zero.merge_types import LinkValue
 from layers.zero.merge_types import RaceRecordModel
+from layers.zero.record_merge_ops import (
+    merge_driver_dict_values as _merge_driver_dict_values_impl,
+)
+from layers.zero.record_merge_ops import (
+    merge_driver_values as _merge_driver_values_impl,
+)
+from layers.zero.record_merge_ops import (
+    merge_duplicate_records as _merge_duplicate_records,
+)
+from layers.zero.record_merge_ops import merge_list_values as _merge_list_values_impl
+from layers.zero.record_merge_ops import merge_values as _merge_values_impl
+from layers.zero.source_routing import iter_mergeable_domain_dirs as _iter_domain_dirs
+from layers.zero.source_routing import load_domain_records as _load_records
+from layers.zero.source_routing import (
+    write_merged_domain_records as _write_merged_records,
+)
+from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
+from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import ENGINES_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import FORMULA_ONE_SERIES
+from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import RED_FLAG_FIELDS
+from scrapers.wiki.sources_registry import DRIVER_FATALITIES_SOURCE
+from scrapers.wiki.sources_registry import DRIVERS_SOURCE
+from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE
+from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import FEMALE_DRIVERS_SOURCE
+from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_ENGINES_SOURCE
+from scrapers.wiki.sources_registry import PRIVATEER_TEAMS_SOURCE
+from scrapers.wiki.sources_registry import RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.sources_registry import RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE
+from scrapers.wiki.sources_registry import SPONSORSHIP_LIVERIES_SOURCE
+from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.sources_registry import get_source_by_seed_name
+from scrapers.wiki.sources_registry import resolve_list_filename
+from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 from layers.zero.source_routing import iter_mergeable_domain_dirs
 from layers.zero.source_routing import load_domain_records
 from layers.zero.source_routing import write_merged_domain_records
@@ -665,6 +704,30 @@ def _expand_season_records(
         payload_fields = {payload_key: transformed}
 
     return [{"season": season, **payload_fields} for season in seasons]
+
+
+def _merge_driver_values(existing: object, incoming: object) -> object:
+    return _merge_driver_values_impl(existing, incoming)
+
+
+def _merge_driver_dict_values(
+    existing: dict[str, object],
+    incoming: dict[str, object],
+) -> dict[str, object]:
+    return _merge_driver_dict_values_impl(existing, incoming)
+
+
+def _merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
+    return _merge_list_values_impl(existing, incoming)
+
+
+def _merge_values(existing: object, incoming: object) -> object:
+    return _merge_values_impl(existing, incoming)
+
+
+def _merge_duplicate_drivers(records: list[object]) -> list[object]:
+    """Aktywna, gdy domena to `drivers`."""
+    return _merge_duplicate_records(records, DriverRecordModel, _merge_driver_values)
 
 
 configure_domain_postprocessors(DOMAIN_PIPELINE_CONFIGS, DomainPipelineConfig)

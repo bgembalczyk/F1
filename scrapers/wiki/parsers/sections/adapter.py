@@ -55,25 +55,6 @@ def _extract_sections(article: SectionTree | None) -> list[SectionTree]:
     return []
 
 
-def _profile_score(
-    profile: Any,
-    exact_id: bool = False,
-    exact_text: bool = False,
-) -> float:
-    if not profile:
-        if exact_id:
-            return 3.0
-        if exact_text:
-            return 2.0
-        return 1.0
-
-    if exact_id:
-        return profile.priorities.exact_id_score
-    if exact_text:
-        return profile.priorities.exact_text_score
-    return profile.priorities.fuzzy_base_score
-
-
 def _find_match(
     sections: list[SectionTree],
     target: str,
@@ -106,7 +87,7 @@ def _find_match(
             return SectionTreeMatch(
                 section=section,
                 strategy="exact_id",
-                score=_profile_score(profile, exact_id=True),
+                score=profile.priorities.get_score(exact_id=True) if profile else 3.0,
             )
 
         section_text = normalize_section_text(section_name)
@@ -114,7 +95,7 @@ def _find_match(
             return SectionTreeMatch(
                 section=section,
                 strategy="exact_text",
-                score=_profile_score(profile, exact_text=True),
+                score=profile.priorities.get_score(exact_text=True) if profile else 2.0,
             )
 
         if not target_texts:
@@ -122,7 +103,7 @@ def _find_match(
 
         ratio = best_fuzzy_ratio(section_text, target_texts)
         if ratio >= min_fuzzy_score:
-            base_score = _profile_score(profile)
+            base_score = profile.priorities.get_score() if profile else 1.0
             fuzzy_candidates.append(
                 SectionTreeMatch(
                     section=section,

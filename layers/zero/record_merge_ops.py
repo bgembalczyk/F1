@@ -75,6 +75,10 @@ def merge_driver_values(existing: object, incoming: object) -> object:
     return existing
 
 
+from collections.abc import Callable
+from typing import Any
+from typing import Protocol
+from typing import TypeVar
 
 
 
@@ -179,14 +183,3 @@ def merge_duplicate_records(
                     key_to_index[alias] = index
 
     return merged_records
-
-
-__all__ = [
-    "merge_list_values",
-    "merge_driver_values",
-    "merge_driver_dict_values",
-    "process_new_model",
-    "process_existing_model",
-    "handle_new_record",
-    "merge_duplicate_records",
-]

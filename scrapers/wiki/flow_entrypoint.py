@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from layers.composition import create_default_wiki_pipeline_application
 from layers.path_resolver import DEFAULT_PATH_RESOLVER
 
 
