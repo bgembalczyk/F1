@@ -10,16 +10,16 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-def _write_json(path: Path, payload: object) -> None:
+def write_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload), encoding="utf-8")
 
 
-def _b_merge_path(base: Path, domain: str) -> Path:
+def b_merge_path(base: Path, domain: str) -> Path:
     return base / "layers" / "0_layer" / domain / "B_merge"
 
 
-def _c_extract_path(base: Path, domain: str) -> Path:
+def c_extract_path(base: Path, domain: str) -> Path:
     return base / "layers" / "0_layer" / domain / "C_extract"
 
 
@@ -27,11 +27,11 @@ class TestCopiesBMergeFiles:
     def test_copies_b_merge_files_to_c_extract(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [{"circuit": {"text": "Monza"}}]
-        _write_json(_b_merge_path(base, "circuits") / "circuits.json", payload)
+        write_json(b_merge_path(base, "circuits") / "circuits.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        copied = _c_extract_path(base, "circuits") / "circuits.json"
+        copied = c_extract_path(base, "circuits") / "circuits.json"
         assert copied.exists()
         assert json.loads(copied.read_text(encoding="utf-8")) == payload
 
@@ -44,7 +44,7 @@ class TestCopiesBMergeFiles:
 
         extract_layer_zero_phase_c(base)
 
-        assert not _c_extract_path(base, "circuits").exists()
+        assert not c_extract_path(base, "circuits").exists()
 
 
 class TestExtractFromChassisConstructors:
@@ -59,15 +59,15 @@ class TestExtractFromChassisConstructors:
                 ],
             },
         ]
-        _write_json(
-            _b_merge_path(base, "chassis_constructors") / "chassis_constructors.json",
+        write_json(
+            b_merge_path(base, "chassis_constructors") / "chassis_constructors.json",
             payload,
         )
 
         extract_layer_zero_phase_c(base)
 
         countries_file = (
-            _c_extract_path(base, "countries") / "from_chassis_constructors.json"
+                c_extract_path(base, "countries") / "from_chassis_constructors.json"
         )
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
@@ -86,15 +86,15 @@ class TestExtractFromChassisConstructors:
                 "licensed_in": germany,
             },
         ]
-        _write_json(
-            _b_merge_path(base, "chassis_constructors") / "chassis_constructors.json",
+        write_json(
+            b_merge_path(base, "chassis_constructors") / "chassis_constructors.json",
             payload,
         )
 
         extract_layer_zero_phase_c(base)
 
         countries_file = (
-            _c_extract_path(base, "countries") / "from_chassis_constructors.json"
+                c_extract_path(base, "countries") / "from_chassis_constructors.json"
         )
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 1
@@ -131,16 +131,16 @@ class TestExtractFromCircuits:
                 },
             },
         ]
-        _write_json(_b_merge_path(base, "circuits") / "circuits.json", payload)
+        write_json(b_merge_path(base, "circuits") / "circuits.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        countries_file = _c_extract_path(base, "countries") / "from_circuits.json"
+        countries_file = c_extract_path(base, "countries") / "from_circuits.json"
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 2
 
-        locations_file = _c_extract_path(base, "locations") / "from_circuits.json"
+        locations_file = c_extract_path(base, "locations") / "from_circuits.json"
         assert locations_file.exists()
         locations = json.loads(locations_file.read_text(encoding="utf-8"))
         assert len(locations) == 2
@@ -182,28 +182,28 @@ class TestExtractFromConstructors:
                 },
             },
         ]
-        _write_json(
-            _b_merge_path(base, "constructors") / "constructors.json",
+        write_json(
+            b_merge_path(base, "constructors") / "constructors.json",
             payload,
         )
 
         extract_layer_zero_phase_c(base)
 
-        engines_file = _c_extract_path(base, "engines") / "from_constructors.json"
+        engines_file = c_extract_path(base, "engines") / "from_constructors.json"
         assert engines_file.exists()
         engines = json.loads(engines_file.read_text(encoding="utf-8"))
         assert len(engines) == 1
         mercedes = {"text": "Mercedes", "url": "https://en.wikipedia.org/wiki/Mercedes"}
         assert mercedes in engines
 
-        teams_file = _c_extract_path(base, "teams") / "from_constructors.json"
+        teams_file = c_extract_path(base, "teams") / "from_constructors.json"
         assert teams_file.exists()
         teams = json.loads(teams_file.read_text(encoding="utf-8"))
         assert len(teams) == 1
         toleman = {"text": "Toleman", "url": "https://en.wikipedia.org/wiki/Toleman"}
         assert toleman in teams
 
-        countries_file = _c_extract_path(base, "countries") / "from_constructors.json"
+        countries_file = c_extract_path(base, "countries") / "from_constructors.json"
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 2
@@ -222,11 +222,11 @@ class TestExtractFromDrivers:
             {"driver": {"text": "Ayrton Senna"}, "nationality": "Brazil"},
             {"driver": {"text": "Michael Schumacher"}, "nationality": "Germany"},
         ]
-        _write_json(_b_merge_path(base, "drivers") / "drivers.json", payload)
+        write_json(b_merge_path(base, "drivers") / "drivers.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        countries_file = _c_extract_path(base, "countries") / "from_drivers.json"
+        countries_file = c_extract_path(base, "countries") / "from_drivers.json"
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert "Brazil" in countries
@@ -235,11 +235,11 @@ class TestExtractFromDrivers:
     def test_skips_records_without_nationality(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [{"driver": {"text": "Unknown"}}]
-        _write_json(_b_merge_path(base, "drivers") / "drivers.json", payload)
+        write_json(b_merge_path(base, "drivers") / "drivers.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        countries_file = _c_extract_path(base, "countries") / "from_drivers.json"
+        countries_file = c_extract_path(base, "countries") / "from_drivers.json"
         assert not countries_file.exists()
 
 
@@ -261,11 +261,11 @@ class TestExtractFromEngines:
                 },
             },
         ]
-        _write_json(_b_merge_path(base, "engines") / "engines.json", payload)
+        write_json(b_merge_path(base, "engines") / "engines.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        countries_file = _c_extract_path(base, "countries") / "from_engines.json"
+        countries_file = c_extract_path(base, "countries") / "from_engines.json"
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 1
@@ -301,11 +301,11 @@ class TestExtractFromRaces:
                 },
             },
         ]
-        _write_json(_b_merge_path(base, "races") / "races.json", payload)
+        write_json(b_merge_path(base, "races") / "races.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        drivers_file = _c_extract_path(base, "drivers") / "from_races.json"
+        drivers_file = c_extract_path(base, "drivers") / "from_races.json"
         assert drivers_file.exists()
         drivers = json.loads(drivers_file.read_text(encoding="utf-8"))
         driver_texts = [d["text"] for d in drivers if isinstance(d, dict)]
@@ -326,11 +326,11 @@ class TestExtractFromRaces:
                 },
             },
         ]
-        _write_json(_b_merge_path(base, "races") / "races.json", payload)
+        write_json(b_merge_path(base, "races") / "races.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        drivers_file = _c_extract_path(base, "drivers") / "from_races.json"
+        drivers_file = c_extract_path(base, "drivers") / "from_races.json"
         assert drivers_file.exists()
         drivers = json.loads(drivers_file.read_text(encoding="utf-8"))
         assert len(drivers) == 1
@@ -345,11 +345,11 @@ class TestCrossDomainFromFilesNormalization:
             {"driver": {"text": "Driver B"}, "nationality": "Argentina"},
             {"driver": {"text": "Driver C"}, "nationality": "Brazil"},
         ]
-        _write_json(_b_merge_path(base, "drivers") / "drivers.json", payload)
+        write_json(b_merge_path(base, "drivers") / "drivers.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        countries_file = _c_extract_path(base, "countries") / "from_drivers.json"
+        countries_file = c_extract_path(base, "countries") / "from_drivers.json"
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert countries == ["Argentina", "Brazil"]
 
@@ -389,11 +389,11 @@ class TestCrossDomainFromFilesNormalization:
                 },
             },
         ]
-        _write_json(_b_merge_path(base, "races") / "races.json", payload)
+        write_json(b_merge_path(base, "races") / "races.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        drivers_file = _c_extract_path(base, "drivers") / "from_races.json"
+        drivers_file = c_extract_path(base, "drivers") / "from_races.json"
         drivers = json.loads(drivers_file.read_text(encoding="utf-8"))
         assert drivers == [
             {"text": "Clay Regazzoni", "url": "https://example.com/cr"},
@@ -420,17 +420,17 @@ class TestExtractFromSeasons:
                 "constructors_champion": [vanwall],
             },
         ]
-        _write_json(_b_merge_path(base, "seasons") / "seasons.json", payload)
+        write_json(b_merge_path(base, "seasons") / "seasons.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        tyre_file = _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
+        tyre_file = c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
         assert tyre_file.exists()
         tyres = json.loads(tyre_file.read_text(encoding="utf-8"))
         assert pirelli in tyres
         assert dunlop in tyres
 
-        constructors_file = _c_extract_path(base, "constructors") / "from_seasons.json"
+        constructors_file = c_extract_path(base, "constructors") / "from_seasons.json"
         assert constructors_file.exists()
         constructors = json.loads(constructors_file.read_text(encoding="utf-8"))
         assert vanwall in constructors
@@ -442,11 +442,11 @@ class TestExtractFromSeasons:
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company",
         }
         payload = [{"season": {"year": 1975}, "tyre_manufacturers": goodyear}]
-        _write_json(_b_merge_path(base, "seasons") / "seasons.json", payload)
+        write_json(b_merge_path(base, "seasons") / "seasons.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        tyre_file = _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
+        tyre_file = c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
         tyres = json.loads(tyre_file.read_text(encoding="utf-8"))
         assert len(tyres) == 1
         assert goodyear in tyres
@@ -454,15 +454,15 @@ class TestExtractFromSeasons:
     def test_skips_records_without_tyre_or_champion(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [{"season": {"year": 1950}}]
-        _write_json(_b_merge_path(base, "seasons") / "seasons.json", payload)
+        write_json(b_merge_path(base, "seasons") / "seasons.json", payload)
 
         extract_layer_zero_phase_c(base)
 
         assert not (
-            _c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
+                c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
         ).exists()
         assert not (
-            _c_extract_path(base, "constructors") / "from_seasons.json"
+                c_extract_path(base, "constructors") / "from_seasons.json"
         ).exists()
 
 
@@ -497,29 +497,29 @@ class TestExtractFromTeams:
                 },
             },
         ]
-        _write_json(_b_merge_path(base, "teams") / "teams.json", payload)
+        write_json(b_merge_path(base, "teams") / "teams.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        colors_file = _c_extract_path(base, "colors") / "from_teams.json"
+        colors_file = c_extract_path(base, "colors") / "from_teams.json"
         assert colors_file.exists()
         colors = json.loads(colors_file.read_text(encoding="utf-8"))
         assert "White" in colors
         assert "Blue" in colors
         assert "Red" in colors
 
-        sponsors_file = _c_extract_path(base, "sponsors") / "from_teams.json"
+        sponsors_file = c_extract_path(base, "sponsors") / "from_teams.json"
         assert sponsors_file.exists()
         sponsors = json.loads(sponsors_file.read_text(encoding="utf-8"))
         assert "None" in sponsors
         assert elf in sponsors
 
-        teams_file = _c_extract_path(base, "teams") / "from_teams.json"
+        teams_file = c_extract_path(base, "teams") / "from_teams.json"
         assert teams_file.exists()
         teams = json.loads(teams_file.read_text(encoding="utf-8"))
         assert toleman in teams
 
-        countries_file = _c_extract_path(base, "countries") / "from_teams.json"
+        countries_file = c_extract_path(base, "countries") / "from_teams.json"
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert uk in countries
@@ -548,15 +548,15 @@ class TestExtractFromTeams:
                 },
             },
         ]
-        _write_json(_b_merge_path(base, "teams") / "teams.json", payload)
+        write_json(b_merge_path(base, "teams") / "teams.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        colors_file = _c_extract_path(base, "colors") / "from_teams.json"
+        colors_file = c_extract_path(base, "colors") / "from_teams.json"
         colors = json.loads(colors_file.read_text(encoding="utf-8"))
         assert colors == ["White"]
 
-        sponsors_file = _c_extract_path(base, "sponsors") / "from_teams.json"
+        sponsors_file = c_extract_path(base, "sponsors") / "from_teams.json"
         sponsors = json.loads(sponsors_file.read_text(encoding="utf-8"))
         assert sponsors == ["Jolly Club"]
 
@@ -578,11 +578,11 @@ class TestExtractFromTeams:
                 },
             },
         ]
-        _write_json(_b_merge_path(base, "teams") / "teams.json", payload)
+        write_json(b_merge_path(base, "teams") / "teams.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        sponsors_file = _c_extract_path(base, "sponsors") / "from_teams.json"
+        sponsors_file = c_extract_path(base, "sponsors") / "from_teams.json"
         assert sponsors_file.exists()
         sponsors = json.loads(sponsors_file.read_text(encoding="utf-8"))
         assert "ATS Wheels" in sponsors
@@ -590,9 +590,9 @@ class TestExtractFromTeams:
     def test_skips_team_without_formula_one(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [{"team": "Privateer", "racing_series": {}}]
-        _write_json(_b_merge_path(base, "teams") / "teams.json", payload)
+        write_json(b_merge_path(base, "teams") / "teams.json", payload)
 
         extract_layer_zero_phase_c(base)
 
-        assert not (_c_extract_path(base, "colors") / "from_teams.json").exists()
-        assert not (_c_extract_path(base, "sponsors") / "from_teams.json").exists()
+        assert not (c_extract_path(base, "colors") / "from_teams.json").exists()
+        assert not (c_extract_path(base, "sponsors") / "from_teams.json").exists()

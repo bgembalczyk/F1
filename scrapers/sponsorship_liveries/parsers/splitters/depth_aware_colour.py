@@ -52,3 +52,6 @@ class DepthAwareColourSplitter:
         part = "".join(self._current).strip()
         if part:
             self._parts.append(part)
+
+
+__all__ = ["DepthAwareColourSplitter"]

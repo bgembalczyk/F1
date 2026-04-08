@@ -6,23 +6,15 @@ from bs4 import Tag
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.base.single_wiki_article.section_selection_strategy import (
-    WikipediaSectionByIdSelectionStrategy,
-)
+from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
 from scrapers.base.source_catalog import ENGINES_LIST
-from scrapers.base.table.builders import EntityColumnSpec
-from scrapers.base.table.builders import build_base_stats_columns
-from scrapers.base.table.builders import build_columns
-from scrapers.base.table.builders import build_entity_metadata_columns
-from scrapers.base.table.builders import build_name_status_fragment
+from scrapers.base.table import builders
 from scrapers.base.table.columns.types.column_factory import FloatColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.engines.columns.manufacturer_name_status import (
-    EngineManufacturerNameStatusColumn,
-)
+from scrapers.engines.columns.manufacturer_name_status import EngineManufacturerNameStatusColumn
 from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
@@ -57,22 +49,22 @@ class EngineManufacturersTableParser(WikiTableBaseParser):
 
 
 TABLE_SCHEMA = TableSchemaDSL(
-    columns=build_columns(
-        build_name_status_fragment(
+    columns=builders.build_columns(
+        builders.build_name_status_fragment(
             header="Manufacturer",
             output_key="engine_constructor",
             column_type=EngineManufacturerNameStatusColumn(),
         ),
-        build_entity_metadata_columns(
+        builders.build_entity_metadata_columns(
             [
-                EntityColumnSpec(
+                builders.EntityColumnSpec(
                     "Engines built in",
                     "engines_built_in",
                     LinksListColumn(),
                 ),
             ],
         ),
-        build_base_stats_columns(column_overrides={"points": FloatColumn()}),
+        builders.build_base_stats_columns(column_overrides={"points": FloatColumn()}),
     ),
 )
 

@@ -188,3 +188,6 @@ class RaceResultCellParser:
                 sprint_position = int(token)
 
         return sprint_position, pole_position, fastest_lap
+
+
+__all__ = ["RaceResultCellParser"]

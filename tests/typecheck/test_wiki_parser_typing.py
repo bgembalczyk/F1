@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import cast
 
+from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
+
 
 def test_wiki_parser_typing_contracts() -> None:
     """Runtime no-op; typing assertions are validated by mypy/pyright."""
@@ -16,9 +18,6 @@ if TYPE_CHECKING:
     from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
     from scrapers.wiki.parsers.elements.table import TableParser
     from scrapers.wiki.parsers.header import HeaderParser
-    from scrapers.wiki.parsers.sections.sub_sub_sub_section import (
-        SubSubSubSectionParser,
-    )
     from scrapers.wiki.parsers.types import HeaderParsedData
     from scrapers.wiki.parsers.types import ParagraphParsedData
     from scrapers.wiki.parsers.types import TableParsedData

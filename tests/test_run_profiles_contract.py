@@ -16,7 +16,7 @@ if TYPE_CHECKING:
     from scrapers.base.run_config import RunConfig
 
 
-class _LayerExecutorSpy:
+class LayerExecutorSpy:
     def __init__(self) -> None:
         self.captured_configs: list[RunConfig] = []
 

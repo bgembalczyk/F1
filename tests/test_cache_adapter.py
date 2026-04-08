@@ -2,7 +2,7 @@ from infrastructure.http_client.caching.file import FileCache
 from scrapers.base.source_adapter import SourceAdapter
 
 
-class _StubAdapter(SourceAdapter):
+class StubAdapter(SourceAdapter):
     def __init__(self) -> None:
         self.calls: list[str] = []
 
@@ -15,7 +15,7 @@ class _StubAdapter(SourceAdapter):
         return f"payload-{url}"
 
 
-class _StubHttpClient:
+class StubHttpClient:
     def __init__(self) -> None:
         self.calls: list[str] = []
 

@@ -4,7 +4,7 @@ import warnings
 import pytest
 
 from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
-from scrapers.base.format.pandas_formatter import _validate_dataframe_columns
+from scrapers.base.format.pandas_formatter import validate_dataframe_columns
 
 
 def test_validate_dataframe_columns_raises_for_object_without_columns() -> None:
@@ -13,7 +13,7 @@ def test_validate_dataframe_columns_raises_for_object_without_columns() -> None:
         pass
 
     with pytest.raises(AttributeError, match="columns"):
-        _validate_dataframe_columns(_NoCols())
+        validate_dataframe_columns(_NoCols())
 
 
 def test_validate_dataframe_columns_passes_for_object_with_columns() -> None:
@@ -21,7 +21,7 @@ def test_validate_dataframe_columns_passes_for_object_with_columns() -> None:
         columns = ["a", "b"]
 
     # Should not raise
-    _validate_dataframe_columns(_WithCols())
+    validate_dataframe_columns(_WithCols())
 
 
 def test_pandas_formatter_returns_dataframe_when_pandas_available() -> None:

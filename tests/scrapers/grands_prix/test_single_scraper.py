@@ -7,11 +7,11 @@ from bs4 import BeautifulSoup
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
 
-def _soup_without_grand_prix_markers() -> BeautifulSoup:
+def soup_without_grand_prix_markers() -> BeautifulSoup:
     return BeautifulSoup("<html><body><p>Some page</p></body></html>", "html.parser")
 
 
-def _soup_with_grand_prix_markers() -> BeautifulSoup:
+def soup_with_grand_prix_markers() -> BeautifulSoup:
     # has a navbox link matching the grand prix template
     html = """
     <html><body>
@@ -21,7 +21,7 @@ def _soup_with_grand_prix_markers() -> BeautifulSoup:
     return BeautifulSoup(html, "html.parser")
 
 
-def _make_scraper() -> F1SingleGrandPrixScraper:
+def make_scraper() -> F1SingleGrandPrixScraper:
     from scrapers.base.options import ScraperOptions
 
     options = MagicMock(spec=ScraperOptions)
@@ -33,7 +33,7 @@ def _make_scraper() -> F1SingleGrandPrixScraper:
 
 
 def test_parse_returns_empty_list_for_non_grand_prix_article() -> None:
-    scraper = _make_scraper()
+    scraper = make_scraper()
     scraper.url = "https://en.wikipedia.org/wiki/SomePage"
     scraper.include_urls = False
     scraper.normalize_empty_values = False
@@ -42,13 +42,13 @@ def test_parse_returns_empty_list_for_non_grand_prix_article() -> None:
         "scrapers.grands_prix.single_scraper.is_grand_prix_article",
         return_value=False,
     ):
-        result = scraper.parse(_soup_without_grand_prix_markers())
+        result = scraper.parse(soup_without_grand_prix_markers())
 
     assert result == []
 
 
 def test_assemble_record_returns_empty_by_year_when_parse_empty() -> None:
-    scraper = _make_scraper()
+    scraper = make_scraper()
     scraper.url = "https://en.wikipedia.org/wiki/SomePage"
     scraper.include_urls = False
     scraper.normalize_empty_values = False
@@ -65,7 +65,7 @@ def test_assemble_record_returns_empty_by_year_when_parse_empty() -> None:
 
 
 def test_assemble_record_returns_first_item_from_parse() -> None:
-    scraper = _make_scraper()
+    scraper = make_scraper()
     scraper.url = "https://en.wikipedia.org/wiki/BritishGP"
     scraper.include_urls = False
     scraper.normalize_empty_values = False

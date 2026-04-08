@@ -54,3 +54,6 @@ class MultiColumn(BaseColumn):
                 header_link=ctx.header_link,
             )
             col.apply(subctx, record)
+
+
+__all__ = ["MultiColumn"]

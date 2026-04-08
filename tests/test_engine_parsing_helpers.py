@@ -10,13 +10,13 @@ from scrapers.base.table.columns.types.engine import EngineColumn
 BASE_URL = "https://en.wikipedia.org"
 
 
-def _parse_segment(html: str) -> dict:
+def parse_segment(html: str) -> dict:
     """Parse engine data from a <td> HTML string."""
     segment = BeautifulSoup(html, "html.parser").find("td")
     return EngineParsingHelpers.parse_segment(segment, {}, BASE_URL)
 
 
-def _parse_ColumnSpec(html: str) -> dict:
+def parse_ColumnSpec(html: str) -> dict:
     """Parse engine data via EngineColumn (includes background-class detection)."""
     cell = BeautifulSoup(html, "html.parser").find("td")
     ctx = ColumnContext(
@@ -32,7 +32,7 @@ def _parse_ColumnSpec(html: str) -> dict:
     return EngineColumn().parse(ctx)
 
 
-def _parse_any(html: str) -> dict:
+def parse_any(html: str) -> dict:
     """Parse engine data via EngineColumn from any cell tag (<td> or <th>)."""
     cell = BeautifulSoup(html, "html.parser").find()
     ctx = ColumnContext(
@@ -82,7 +82,7 @@ class TestFirstLinkIsType:
             '<a href="/wiki/Inline-four_engine">L4</a> '
             '<a href="/wiki/Supercharger">s</a></td>'
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["model"]["text"] == "Speluzzi"
         assert result["model"]["url"] is None
 
@@ -92,7 +92,7 @@ class TestFirstLinkIsType:
             '<a href="/wiki/Inline-four_engine">L4</a> '
             '<a href="/wiki/Supercharger">s</a></td>'
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["displacement_l"] == 1.5
 
     def test_speluzzi_type(self) -> None:
@@ -101,7 +101,7 @@ class TestFirstLinkIsType:
             '<a href="/wiki/Inline-four_engine">L4</a> '
             '<a href="/wiki/Supercharger">s</a></td>'
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["type"] == "L4"
         assert result["layout"] == "L"
         assert result["cylinders"] == 4
@@ -112,7 +112,7 @@ class TestFirstLinkIsType:
             '<a href="/wiki/Inline-four_engine">L4</a> '
             '<a href="/wiki/Supercharger">s</a></td>'
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result.get("supercharged") is True
 
 
@@ -124,7 +124,7 @@ class TestFirstLinkIsType:
 class TestEmbeddedTypeInLinkText:
     def test_climax_fpf_model_text(self) -> None:
         html = '<td><a href="/wiki/Coventry_Climax#FPF">Climax FPF 2.0 L4</a></td>'
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["model"]["text"] == "Climax FPF"
         assert (
             result["model"]["url"]
@@ -133,14 +133,14 @@ class TestEmbeddedTypeInLinkText:
 
     def test_climax_fpf_type(self) -> None:
         html = '<td><a href="/wiki/Coventry_Climax#FPF">Climax FPF 2.0 L4</a></td>'
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["type"] == "L4"
         assert result["layout"] == "L"
         assert result["cylinders"] == 4
 
     def test_climax_fwmv_v8(self) -> None:
         html = '<td><a href="/wiki/Coventry_Climax#FWMV">Climax FWMV 1.5 V8</a></td>'
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["model"]["text"] == "Climax FWMV"
         assert result["type"] == "V8"
         assert result["layout"] == "V"
@@ -148,7 +148,7 @@ class TestEmbeddedTypeInLinkText:
 
     def test_renault_rs26_v8(self) -> None:
         html = '<td><a href="/wiki/Renault_RS_engine">Renault RS26 2.4 V8</a></td>'
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["model"]["text"] == "Renault RS26"
         assert result["displacement_l"] == 2.4
         assert result["type"] == "V8"
@@ -169,7 +169,7 @@ class TestEmbeddedTypeInSecondaryLink:
             '<a href="/wiki/Repco-Brabham_V8#RB620">620 3.0 V8</a>'
             "</td>"
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["model"]["text"] == "Repco 620"
         assert (
             result["model"]["url"] == "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
@@ -193,7 +193,7 @@ class TestGasTurbine:
             '<a href="/wiki/Gas_turbine">tbn</a>'
             "</td>"
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["model"]["text"] == "Pratt & Whitney STN76"
         assert result.get("gas_turbine") is True
         assert "tbn" not in result["model"]["text"]
@@ -207,7 +207,7 @@ class TestGasTurbine:
 class TestF2Background:
     def test_climax_fpf_f2_class(self) -> None:
         html = '<td style="background:#ffcccc;"><a href="/wiki/Coventry_Climax#FPF">Climax FPF 1.5 L4</a></td>'
-        result = _parse_ColumnSpec(html)
+        result = parse_ColumnSpec(html)
         assert result["class"] == "F2"
         assert result["model"]["text"] == "Climax FPF"
         assert result["type"] == "L4"
@@ -219,7 +219,7 @@ class TestF2Background:
             '<a href="/wiki/Flat-4">F4</a>'
             "</td>"
         )
-        result = _parse_ColumnSpec(html)
+        result = parse_ColumnSpec(html)
         assert result["class"] == "F2"
         assert result["model"]["text"] == "Porsche 547/3"
         assert result["type"] == "F4"
@@ -241,7 +241,7 @@ class TestRegression:
             '<a href="/wiki/Supercharger">s</a>'
             "</td>"
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["model"]["text"] == "Alfa Romeo 158"
         assert result["displacement_l"] == 1.5
         assert result["type"] == "L8"
@@ -251,7 +251,7 @@ class TestRegression:
 
     def test_ford_cosworth_dfv_v8_single_link(self) -> None:
         html = '<td><a href="/wiki/Ford_Cosworth_DFV">Ford Cosworth DFV 3.0 V8</a></td>'
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["model"]["text"] == "Ford Cosworth DFV"
         assert result["displacement_l"] == 3.0
         assert result["type"] == "V8"
@@ -276,7 +276,7 @@ class TestIsF2BackgroundShorthand:
             '<a href="/wiki/Straight-4">L4</a>'
             "</td>"
         )
-        result = _parse_ColumnSpec(html)
+        result = parse_ColumnSpec(html)
         assert result["class"] == "F2"
         assert result["type"] == "L4"
 
@@ -294,7 +294,7 @@ class TestTypeWithModifierSuffix:
             '<a href="/wiki/Inline-four_engine">L4t</a>'
             "</td>"
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result["type"] == "L4"
         assert result["layout"] == "L"
         assert result["cylinders"] == 4
@@ -306,7 +306,7 @@ class TestTypeWithModifierSuffix:
             '<a href="/wiki/Inline-four_engine">L4t</a>'
             "</td>"
         )
-        result = _parse_segment(html)
+        result = parse_segment(html)
         assert result.get("turbocharged") is True
 
 
@@ -323,7 +323,7 @@ class TestVerboseEngineTypeNames:
             '<a href="/wiki/Straight-4">Straight-4</a>'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["type"] == "L4"
         assert result["layout"] == "L"
         assert result["cylinders"] == 4
@@ -335,7 +335,7 @@ class TestVerboseEngineTypeNames:
             '<a href="/wiki/Straight-4">Straight-4</a>'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["model"]["text"] == "Climax"
 
     def test_flat4_link_sets_type(self) -> None:
@@ -345,7 +345,7 @@ class TestVerboseEngineTypeNames:
             '<a href="/wiki/Flat-4">Flat-4</a>'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["type"] == "F4"
         assert result["layout"] == "F"
         assert result["cylinders"] == 4
@@ -357,7 +357,7 @@ class TestVerboseEngineTypeNames:
             '<a href="/wiki/Flat-4">Flat-4</a>'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["model"]["text"] == "Porsche"
 
     def test_alta_straight4(self) -> None:
@@ -367,7 +367,7 @@ class TestVerboseEngineTypeNames:
             '<a href="/wiki/Straight-4">Straight-4</a>'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["model"]["text"] == "Alta"
         assert result["type"] == "L4"
 
@@ -378,7 +378,7 @@ class TestVerboseEngineTypeNames:
             '<a href="/wiki/Straight-4">Straight-4</a>'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["model"]["text"] == "Hart"
         assert result["type"] == "L4"
 
@@ -393,7 +393,7 @@ class TestEngineTypeFromPlainText:
         html = (
             '<th nowrap=""><a href="/wiki/Jaguar_V12_engine">Jaguar</a> 7.4L V12</th>'
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["type"] == "V12"
         assert result["layout"] == "V"
         assert result["cylinders"] == 12
@@ -405,7 +405,7 @@ class TestEngineTypeFromPlainText:
             '<a href="/wiki/Gibson_Technology">Gibson</a> GK428 4.2 L V8'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["type"] == "V8"
         assert result["layout"] == "V"
         assert result["cylinders"] == 8
@@ -417,7 +417,7 @@ class TestEngineTypeFromPlainText:
             '(<a href="/wiki/Judd_(engine)">Judd</a>) 3.6\xa0L V8'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["type"] == "V8"
         assert result["layout"] == "V"
         assert result["cylinders"] == 8
@@ -439,7 +439,7 @@ class TestDieselFuelType:
             '(<a href="/wiki/Diesel_engine">Diesel</a>)'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["fuel_type"] == "diesel"
         assert result.get("turbocharged") is True
         assert result["type"] == "V12"
@@ -452,7 +452,7 @@ class TestDieselFuelType:
             '(<a href="/wiki/Diesel_engine">Diesel</a>)'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert not isinstance(result, list), "Should not create array for (Diesel) note"
 
     def test_audi_br_diesel_fuel_type(self) -> None:
@@ -463,7 +463,7 @@ class TestDieselFuelType:
             '(<a href="/wiki/Diesel_engine">Diesel</a>)'
             "</th>"
         )
-        result = _parse_any(html)
+        result = parse_any(html)
         assert result["fuel_type"] == "diesel"
         assert result.get("turbocharged") is True
         assert result["type"] == "V12"

@@ -6,3 +6,6 @@ class ResultRuleContext:
     season_year: int | None
     background: str | None
     footnotes: list[str]
+
+
+__all__ = ["ResultRuleContext"]

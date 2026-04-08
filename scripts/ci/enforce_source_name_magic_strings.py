@@ -18,7 +18,7 @@ ALLOWED_FILES = {
 }
 
 
-def _is_allowed(file_path: str, line: str) -> bool:
+def is_allowed(file_path: str, line: str) -> bool:
     if file_path in ALLOWED_FILES:
         return True
     if any(file_path.startswith(prefix) for prefix in ALLOWED_PATHS):
@@ -40,13 +40,13 @@ def main(argv: list[str]) -> int:
     args = parse_args(argv)
     changed_files = [f for f in split_csv(args.changed_files) if f.endswith(".py")]
     if not changed_files:
-        return _skip("Brak zmienionych plików Python; magic-string gate pominięty.")
+        return skip("Brak zmienionych plików Python; magic-string gate pominięty.")
 
     added_lines_map = build_added_lines_map(args.base_sha, args.head_sha, changed_files)
     if not added_lines_map:
-        return _skip("Brak diffu dodanych linii; magic-string gate pominięty.")
+        return skip("Brak diffu dodanych linii; magic-string gate pominięty.")
 
-    violations = _collect_violations(changed_files, added_lines_map)
+    violations = collect_violations(changed_files, added_lines_map)
 
     if not violations:
         print("Brak nowych magic stringów źródeł: OK")
@@ -58,22 +58,22 @@ def main(argv: list[str]) -> int:
     return 1
 
 
-def _skip(message: str) -> int:
+def skip(message: str) -> int:
     print(message)
     return 0
 
 
-def _collect_violations(
+def collect_violations(
     changed_files: list[str],
     added_lines_map: dict[str, set[int]],
 ) -> list[str]:
     violations: list[str] = []
     for file_path in changed_files:
-        violations.extend(_collect_file_violations(file_path, added_lines_map))
+        violations.extend(collect_file_violations(file_path, added_lines_map))
     return violations
 
 
-def _collect_file_violations(
+def collect_file_violations(
     file_path: str,
     added_lines_map: dict[str, set[int]],
 ) -> list[str]:
@@ -86,7 +86,7 @@ def _collect_file_violations(
         if line_no <= 0 or line_no > len(file_lines):
             continue
         line = file_lines[line_no - 1]
-        if not SOURCE_LITERAL_RE.search(line) or _is_allowed(file_path, line):
+        if not SOURCE_LITERAL_RE.search(line) or is_allowed(file_path, line):
             continue
         violations.append(f"{file_path}:{line_no} -> {line.strip()}")
     return violations

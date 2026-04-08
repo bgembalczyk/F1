@@ -13,11 +13,11 @@ from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 
 
-class _FakeScraper:
+class FakeScraper:
     pass
 
 
-class _FakeConfigFactory(LayerZeroRunConfigFactoryProtocol):
+class FakeConfigFactory(LayerZeroRunConfigFactoryProtocol):
     def __init__(self, scraper_kwargs: dict[str, object]) -> None:
         self._scraper_kwargs = scraper_kwargs
 
@@ -25,7 +25,7 @@ class _FakeConfigFactory(LayerZeroRunConfigFactoryProtocol):
         return self._scraper_kwargs
 
 
-class _MergeService(LayerZeroMergeServiceProtocol):
+class MergeService(LayerZeroMergeServiceProtocol):
     def __init__(self) -> None:
         self.calls: list[Path] = []
 
@@ -33,7 +33,7 @@ class _MergeService(LayerZeroMergeServiceProtocol):
         self.calls.append(base_wiki_dir)
 
 
-class _Hook:
+class Hook:
     def __init__(self) -> None:
         self.calls: list[tuple[Path, str, Path]] = []
 
@@ -47,19 +47,19 @@ class _Hook:
         self.calls.append((base_wiki_dir, job.seed_name, l0_raw_json_path))
 
 
-def _job(*, seed_name: str = "drivers") -> ListJobRegistryEntry:
+def job(*, seed_name: str = "drivers") -> ListJobRegistryEntry:
     return ListJobRegistryEntry(
         seed_name=seed_name,
         wikipedia_url="https://example.com",
         output_category="drivers",
-        list_scraper_cls=_FakeScraper,
+        list_scraper_cls=FakeScraper,
         json_output_path="raw/drivers/f1_drivers_{year}.json",
         legacy_json_output_path="drivers/f1_drivers_{year}.json",
         csv_output_path="drivers/f1_drivers.csv",
     )
 
 
-def _executor(
+def executor_func(
     *,
     run_config_factory_map_builder=None,
     default_config_factory=None,
@@ -67,21 +67,21 @@ def _executor(
     job_hook=None,
 ) -> LayerZeroExecutor:
     return LayerZeroExecutor(
-        list_job_registry=(_job(),),
+        list_job_registry=(job(),),
         validate_list_registry=lambda _registry: None,
         run_config_factory_map_builder=(
             run_config_factory_map_builder if run_config_factory_map_builder else dict
         ),
         default_config_factory=(
-            default_config_factory if default_config_factory else _FakeConfigFactory({})
+            default_config_factory if default_config_factory else FakeConfigFactory({})
         ),
-        merge_service=(merge_service if merge_service else _MergeService()),
+        merge_service=(merge_service if merge_service else MergeService()),
         job_hook=(job_hook if job_hook else NullLayerZeroJobHook()),
         year_provider=lambda: 2026,
     )
 
 
-def _build_default_and_local_run_config(
+def build_default_and_local_run_config(
     *,
     output_dir: Path,
     debug_dir: Path,
@@ -105,7 +105,7 @@ def _build_default_and_local_run_config(
 
 def test_resolve_config_factory_uses_builder_result() -> None:
     expected = {"drivers": object()}
-    executor = _executor(run_config_factory_map_builder=lambda: expected)
+    executor = executor_func(run_config_factory_map_builder=lambda: expected)
 
     resolved = executor._resolve_config_factory()
 
@@ -124,9 +124,9 @@ def test_protocol_contracts_are_met_by_production_implementations() -> None:
 
 
 def test_build_local_run_config_uses_seed_specific_factory(tmp_path: Path) -> None:
-    seed_job = _job(seed_name="drivers")
-    executor = _executor(
-        default_config_factory=_FakeConfigFactory({"from": "default"}),
+    seed_job = job(seed_name="drivers")
+    executor = executor_func(
+        default_config_factory=FakeConfigFactory({"from": "default"}),
     )
 
     local_run_config = executor._build_local_run_config(
@@ -136,7 +136,7 @@ def test_build_local_run_config_uses_seed_specific_factory(tmp_path: Path) -> No
             debug_dir=tmp_path / "debug",
         ),
         job=seed_job,
-        config_factories={"drivers": _FakeConfigFactory({"domain": "drivers"})},
+        config_factories={"drivers": FakeConfigFactory({"domain": "drivers"})},
     )
 
     assert local_run_config.scraper_kwargs == {"domain": "drivers"}
@@ -160,9 +160,9 @@ def test_run_single_job_passes_local_run_config_when_kwargs_present(
         )
 
     ScraperRunner.run_and_export = _capture_call
-    executor = _executor()
+    executor = executor_func()
 
-    default_run_config, local_run_config = _build_default_and_local_run_config(
+    default_run_config, local_run_config = build_default_and_local_run_config(
         output_dir=tmp_path,
         debug_dir=tmp_path / "debug",
         local_scraper_kwargs={"x": 1},
@@ -172,12 +172,12 @@ def test_run_single_job_passes_local_run_config_when_kwargs_present(
         json_path = executor._run_single_job(
             run_config=default_run_config,
             local_run_config=local_run_config,
-            job=_job(),
+            job=job(),
         )
     finally:
         ScraperRunner.run_and_export = original_method
 
-    assert calls[0]["scraper_cls"] is _FakeScraper
+    assert calls[0]["scraper_cls"] is FakeScraper
     assert calls[0]["json_path"] == Path(
         "layers/0_layer/drivers/A_scrape/f1_drivers_2026.json",
     )
@@ -195,9 +195,9 @@ def test_run_single_job_passes_global_run_config_when_local_kwargs_missing(
         calls.append(self._run_config)
 
     ScraperRunner.run_and_export = _capture_call
-    executor = _executor()
+    executor = executor_func()
 
-    default_run_config, local_run_config = _build_default_and_local_run_config(
+    default_run_config, local_run_config = build_default_and_local_run_config(
         output_dir=tmp_path,
         debug_dir=tmp_path / "debug",
     )
@@ -206,7 +206,7 @@ def test_run_single_job_passes_global_run_config_when_local_kwargs_missing(
         executor._run_single_job(
             run_config=default_run_config,
             local_run_config=local_run_config,
-            job=_job(),
+            job=job(),
         )
     finally:
         ScraperRunner.run_and_export = original_method
@@ -215,12 +215,12 @@ def test_run_single_job_passes_global_run_config_when_local_kwargs_missing(
 
 
 def test_maybe_mirror_constructors_delegates_to_hook(tmp_path: Path) -> None:
-    hook = _Hook()
-    executor = _executor(job_hook=hook)
+    hook = Hook()
+    executor = executor_func(job_hook=hook)
 
     executor._maybe_mirror_constructors(
         base_wiki_dir=tmp_path / "wiki",
-        job=_job(seed_name="constructors"),
+        job=job(seed_name="constructors"),
         l0_raw_json_path=Path(
             "layers/0_layer/constructors/A_scrape/f1_constructors_2026.json",
         ),
@@ -236,8 +236,8 @@ def test_maybe_mirror_constructors_delegates_to_hook(tmp_path: Path) -> None:
 
 
 def test_finalize_merge_calls_merge_service(tmp_path: Path) -> None:
-    merge_service = _MergeService()
-    executor = _executor(merge_service=merge_service)
+    merge_service = MergeService()
+    executor = executor_func(merge_service=merge_service)
 
     executor._finalize_merge(tmp_path / "wiki")
 
@@ -245,7 +245,7 @@ def test_finalize_merge_calls_merge_service(tmp_path: Path) -> None:
 
 
 def test_run_orchestrates_steps_in_order(tmp_path: Path) -> None:
-    executor = _executor()
+    executor = executor_func()
     order: list[str] = []
 
     executor._resolve_config_factory = lambda: order.append("resolve") or {}
@@ -285,18 +285,18 @@ def test_iter_jobs_sorts_registry_in_deterministic_mode(tmp_path: Path) -> None:
         seed_name="constructors",
         wikipedia_url="https://example.com",
         output_category="constructors",
-        list_scraper_cls=_FakeScraper,
+        list_scraper_cls=FakeScraper,
         json_output_path="raw/constructors/f1_constructors_{year}.json",
         legacy_json_output_path="constructors/f1_constructors_{year}.json",
         csv_output_path="constructors/f1_constructors.csv",
     )
-    drivers_job = _job(seed_name="drivers")
+    drivers_job = job(seed_name="drivers")
     executor = LayerZeroExecutor(
         list_job_registry=(drivers_job, constructors_job),
         validate_list_registry=lambda _registry: None,
         run_config_factory_map_builder=dict,
-        default_config_factory=_FakeConfigFactory({}),
-        merge_service=_MergeService(),
+        default_config_factory=FakeConfigFactory({}),
+        merge_service=MergeService(),
         job_hook=NullLayerZeroJobHook(),
         year_provider=lambda: 2026,
     )
@@ -311,7 +311,7 @@ def test_iter_jobs_sorts_registry_in_deterministic_mode(tmp_path: Path) -> None:
 def test_resolve_run_id_returns_fixed_value_in_deterministic_mode(
     tmp_path: Path,
 ) -> None:
-    executor = _executor()
+    executor = executor_func()
 
     run_id = executor._resolve_run_id(
         RunConfig(output_dir=tmp_path, deterministic_mode=True),
@@ -336,12 +336,12 @@ def test_mirror_constructors_job_hook_runs_only_for_matching_job(
 
     hook.after_job(
         base_wiki_dir=tmp_path / "wiki",
-        job=_job(seed_name="drivers"),
+        job=job(seed_name="drivers"),
         l0_raw_json_path=Path("layers/0_layer/drivers/A_scrape/f1_drivers_2026.json"),
     )
     hook.after_job(
         base_wiki_dir=tmp_path / "wiki",
-        job=_job(seed_name="constructors_current"),
+        job=job(seed_name="constructors_current"),
         l0_raw_json_path=Path(
             "layers/0_layer/constructors/A_scrape/f1_constructors_2026.json",
         ),

@@ -4,15 +4,15 @@ import argparse
 import importlib.util
 from pathlib import Path
 
-_BOOTSTRAP_PATH = Path(__file__).resolve().parents[1] / "lib" / "bootstrap.py"
-_BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
+BOOTSTRAP_PATH = Path(__file__).resolve().parents[1] / "lib" / "bootstrap.py"
+BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
     "_scripts_bootstrap",
-    _BOOTSTRAP_PATH,
+    BOOTSTRAP_PATH,
 )
-assert _BOOTSTRAP_SPEC
-assert _BOOTSTRAP_SPEC.loader
-_BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
-_BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
+assert BOOTSTRAP_SPEC
+assert BOOTSTRAP_SPEC.loader
+_BOOTSTRAP_MODULE = importlib.util.module_from_spec(BOOTSTRAP_SPEC)
+BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 from scrapers.deprecation_catalog import get_deprecated_module_migrations  # noqa: E402
@@ -22,7 +22,7 @@ BEGIN_MARKER = "<!-- BEGIN AUTO-GENERATED: command-migration-map -->"
 END_MARKER = "<!-- END AUTO-GENERATED: command-migration-map -->"
 
 
-def _command_migration_map() -> list[tuple[str, str]]:
+def command_migration_map() -> list[tuple[str, str]]:
     rows = [("python main.py", "from scrapers import run_wiki_flow; run_wiki_flow()")]
     for module_path, replacement_module_path in get_deprecated_module_migrations():
         rows.append(
@@ -44,12 +44,12 @@ def build_generated_section() -> str:
     lines.append("- z `python -m scrapers.<domain>.list_scraper`")
     lines.append("- na `python -m scrapers.<domain>.entrypoint`")
     lines.append("")
-    for module_command, canonical_command in _command_migration_map():
+    for module_command, canonical_command in command_migration_map():
         lines.append(f"- `{module_command}` -> `{canonical_command}`")
     return "\n".join(lines).rstrip() + "\n"
 
 
-def _replace_between_markers(document: str, generated: str) -> str:
+def replace_between_markers(document: str, generated: str) -> str:
     if BEGIN_MARKER not in document or END_MARKER not in document:
         msg = (
             "Nie znaleziono markerów sekcji auto-generowanej. "
@@ -84,7 +84,7 @@ def main() -> int:
 
     current = DOC_PATH.read_text(encoding="utf-8")
     generated = build_generated_section()
-    updated = _replace_between_markers(current, generated)
+    updated = replace_between_markers(current, generated)
 
     if args.check:
         if current != updated:

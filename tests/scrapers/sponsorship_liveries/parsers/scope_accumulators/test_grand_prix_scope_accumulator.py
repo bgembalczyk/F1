@@ -1,9 +1,7 @@
 # ruff: noqa: E501, PLR2004
 """Tests for GrandPrixScopeAccumulator covering lines 13, 15, 18."""
 
-from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import (
-    GrandPrixScopeAccumulator,
-)
+from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import GrandPrixScopeAccumulator
 
 
 class TestBuildScope:

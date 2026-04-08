@@ -22,6 +22,3 @@ class SectionExtractionServiceProtocol(Protocol[SectionOutputT_co]):
     """Contract for section extraction services in domain pipelines."""
 
     def extract(self, soup: BeautifulSoup) -> SectionOutputT_co: ...
-
-
-RecordAssembler = RecordAssemblerProtocol

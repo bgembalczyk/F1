@@ -10,23 +10,23 @@ def mapper() -> GrandPrixByYearRecordMapper:
     return GrandPrixByYearRecordMapper()
 
 
-def _link(text: str) -> dict:
+def link(text: str) -> dict:
     return {"text": text, "url": None}
 
 
-def _not_held_record() -> dict:
+def not_held_record() -> dict:
     return {
-        "driver": [_link("Not held")],
-        "chassis_constructor": _link("Not held"),
-        "engine_constructor": _link("Not held"),
-        "location": {"circuit": _link("Not held"), "layout": None},
+        "driver": [link("Not held")],
+        "chassis_constructor": link("Not held"),
+        "engine_constructor": link("Not held"),
+        "location": {"circuit": link("Not held"), "layout": None},
     }
 
 
 def test_map_returns_none_for_not_held_by_driver_text(
     mapper: GrandPrixByYearRecordMapper,
 ) -> None:
-    record = _not_held_record()
+    record = not_held_record()
     result = mapper.map(record)
     assert result is None
 
@@ -35,10 +35,10 @@ def test_map_returns_dict_for_normal_record(
     mapper: GrandPrixByYearRecordMapper,
 ) -> None:
     record = {
-        "driver": [_link("Lewis Hamilton")],
-        "chassis_constructor": _link("Mercedes"),
-        "engine_constructor": _link("Mercedes"),
-        "location": {"circuit": _link("Silverstone"), "layout": None},
+        "driver": [link("Lewis Hamilton")],
+        "chassis_constructor": link("Mercedes"),
+        "engine_constructor": link("Mercedes"),
+        "location": {"circuit": link("Silverstone"), "layout": None},
     }
     result = mapper.map(record)
     assert result is not None
@@ -55,10 +55,10 @@ def test_is_not_held_returns_false_when_texts_differ(
     mapper: GrandPrixByYearRecordMapper,
 ) -> None:
     record = {
-        "driver": [_link("Not held")],
-        "chassis_constructor": _link("Not held"),
-        "engine_constructor": _link("SomethingElse"),
-        "location": {"circuit": _link("Not held"), "layout": None},
+        "driver": [link("Not held")],
+        "chassis_constructor": link("Not held"),
+        "engine_constructor": link("SomethingElse"),
+        "location": {"circuit": link("Not held"), "layout": None},
     }
     result = mapper.map(record)
     assert result is not None
@@ -67,16 +67,16 @@ def test_is_not_held_returns_false_when_texts_differ(
 def test_is_not_held_returns_false_when_missing_fields(
     mapper: GrandPrixByYearRecordMapper,
 ) -> None:
-    result = mapper.map({"driver": [_link("Not held")]})
+    result = mapper.map({"driver": [link("Not held")]})
     assert result is not None
 
 
 def test_not_held_detected_via_report_text(mapper: GrandPrixByYearRecordMapper) -> None:
-    record = _not_held_record()
-    record["driver"] = [_link("ABC")]
-    record["chassis_constructor"] = _link("ABC")
-    record["engine_constructor"] = _link("ABC")
-    record["location"]["circuit"] = _link("ABC")
+    record = not_held_record()
+    record["driver"] = [link("ABC")]
+    record["chassis_constructor"] = link("ABC")
+    record["engine_constructor"] = link("ABC")
+    record["location"]["circuit"] = link("ABC")
     record["report"] = "Not held due to war"
     result = mapper.map(record)
     assert result is None
@@ -85,11 +85,11 @@ def test_not_held_detected_via_report_text(mapper: GrandPrixByYearRecordMapper) 
 def test_not_held_detected_via_layout_cancelled(
     mapper: GrandPrixByYearRecordMapper,
 ) -> None:
-    record = _not_held_record()
-    record["driver"] = [_link("XYZ")]
-    record["chassis_constructor"] = _link("XYZ")
-    record["engine_constructor"] = _link("XYZ")
-    record["location"]["circuit"] = _link("XYZ")
+    record = not_held_record()
+    record["driver"] = [link("XYZ")]
+    record["chassis_constructor"] = link("XYZ")
+    record["engine_constructor"] = link("XYZ")
+    record["location"]["circuit"] = link("XYZ")
     record["location"]["layout"] = "Cancelled due to war"
     result = mapper.map(record)
     assert result is None
@@ -104,10 +104,10 @@ def test_list_text_returns_none_for_empty_list(
 def test_list_text_returns_none_for_mismatched_items(
     mapper: GrandPrixByYearRecordMapper,
 ) -> None:
-    assert mapper._list_text([_link("A"), _link("B")]) is None
+    assert mapper._list_text([link("A"), link("B")]) is None
 
 
 def test_list_text_returns_text_for_all_same(
     mapper: GrandPrixByYearRecordMapper,
 ) -> None:
-    assert mapper._list_text([_link("Same"), _link("Same")]) == "Same"
+    assert mapper._list_text([link("Same"), link("Same")]) == "Same"

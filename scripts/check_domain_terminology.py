@@ -32,7 +32,7 @@ ALLOWED_FORBIDDEN_USAGE_PATHS: set[Path] = {
 }
 
 
-def _token_pattern(term: str) -> re.Pattern[str]:
+def token_pattern(term: str) -> re.Pattern[str]:
     return re.compile(rf"(?<![a-zA-Z0-9_]){re.escape(term)}(?![a-zA-Z0-9_])")
 
 
@@ -45,7 +45,7 @@ def run_check() -> list[str]:
     if not forbidden_map:
         return [f"no forbidden terms configured in: {GLOSSARY_PATH}"]
 
-    patterns = {term: _token_pattern(term) for term in forbidden_map}
+    patterns = {term: token_pattern(term) for term in forbidden_map}
     errors: list[str] = []
 
     for source_dir in SOURCE_DIRS:

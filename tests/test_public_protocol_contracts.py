@@ -2,13 +2,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from infrastructure.http_client.interfaces.http_client_protocol import (
-    HttpClientProtocol,
-)
+from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
 from infrastructure.http_client.interfaces.http_client_protocol import JsonValue
-from infrastructure.http_client.interfaces.http_response_protocol import (
-    HttpResponseProtocol,
-)
+from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from models.serializers import SerializerProtocol
@@ -21,17 +17,17 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class _StubSoupParser:
+class StubSoupParser:
     def parse(self, soup: BeautifulSoup) -> dict[str, str]:
         return {"title": soup.title.get_text(strip=True) if soup.title else ""}
 
 
-class _StubSerializer:
+class StubSerializer:
     def serialize(self, value: Mapping[str, object]) -> dict[str, object]:
         return dict(value)
 
 
-class _StubTextCache:
+class StubTextCache:
     def __init__(self) -> None:
         self._storage: dict[str, str] = {}
 
@@ -42,7 +38,7 @@ class _StubTextCache:
         self._storage[url] = text
 
 
-class _StubResponse:
+class StubResponse:
     def __init__(self, *, text: str = "", status_code: int = 200) -> None:
         self.text = text
         self.status_code = status_code
@@ -55,7 +51,7 @@ class _StubResponse:
         return {"ok": True}
 
 
-class _StubSession:
+class StubSession:
     headers: Mapping[str, str] = {}
 
     def get(
@@ -65,14 +61,14 @@ class _StubSession:
         timeout: int | None = None,
     ) -> HttpResponseProtocol:
         _ = (url, headers, timeout)
-        return _StubResponse(text="{}")
+        return StubResponse(text="{}")
 
 
-class _StubHttpClient:
+class StubHttpClient:
     session: SessionProtocol
 
     def __init__(self) -> None:
-        self.session = _StubSession()
+        self.session = StubSession()
 
     def get(
         self,
@@ -82,7 +78,7 @@ class _StubHttpClient:
         timeout: int | None = None,
     ) -> HttpResponseProtocol:
         _ = (url, headers, timeout)
-        return _StubResponse(text='{"ok": true}')
+        return StubResponse(text='{"ok": true}')
 
     def get_text(
         self,
@@ -106,22 +102,22 @@ class _StubHttpClient:
 
 
 def test_parser_protocol_contract() -> None:
-    assert isinstance(_StubSoupParser(), SoupParser)
+    assert isinstance(StubSoupParser(), SoupParser)
 
 
 def test_serializer_protocol_contract() -> None:
-    assert isinstance(_StubSerializer(), SerializerProtocol)
+    assert isinstance(StubSerializer(), SerializerProtocol)
 
 
 def test_text_cache_protocol_contract() -> None:
-    cache = _StubTextCache()
+    cache = StubTextCache()
     cache.set("a", "b")
     assert cache.get("a") == "b"
     assert isinstance(cache, TextCacheProtocol)
 
 
 def test_http_protocol_contracts() -> None:
-    client = _StubHttpClient()
+    client = StubHttpClient()
     assert isinstance(client.session, SessionProtocol)
     assert isinstance(client.get("https://example.com"), HttpResponseProtocol)
     assert isinstance(client, HttpClientProtocol)

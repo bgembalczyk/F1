@@ -7,7 +7,7 @@ PACKAGE_ROOTS: tuple[str, ...] = ("scrapers", "layers")
 MAX_IMPORT_PATH_SEGMENTS = 7
 
 
-def _iter_import_modules(py_file: Path) -> list[tuple[str, int]]:
+def iter_import_modules(py_file: Path) -> list[tuple[str, int]]:
     tree = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
     imports: list[tuple[str, int]] = []
 
@@ -27,7 +27,7 @@ def test_scrapers_and_layers_import_depth_budget() -> None:
 
     for root in PACKAGE_ROOTS:
         for py_file in Path(root).rglob("*.py"):
-            for imported_module, line_no in _iter_import_modules(py_file):
+            for imported_module, line_no in iter_import_modules(py_file):
                 if not imported_module.startswith(PACKAGE_ROOTS):
                     continue
 

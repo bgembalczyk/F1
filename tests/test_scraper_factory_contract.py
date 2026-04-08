@@ -30,12 +30,12 @@ class LegacyRunIdOnlyScraper:
         return []
 
 
-class _OptionsOnlyBase:
+class OptionsOnlyBase:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
 
-class KwargsPassthroughOptionsScraper(_OptionsOnlyBase):
+class KwargsPassthroughOptionsScraper(OptionsOnlyBase):
     def __init__(self, **kwargs) -> None:
         self.kwargs = kwargs
         super().__init__(**kwargs)
@@ -102,7 +102,7 @@ def test_factory_does_not_inject_run_id_for_kwargs_passthrough_options_scraper()
     assert scraper.options.run_id == "run-id-from-factory"
 
 
-class _AlwaysAdapter:
+class AlwaysAdapter:
     def __init__(self, marker: object) -> None:
         self._marker = marker
 
@@ -121,7 +121,7 @@ class CustomChainScraper:
 
 def test_factory_uses_injected_adapters() -> None:
     marker = object()
-    factory = ScraperFactory(adapters=(_AlwaysAdapter(marker),))
+    factory = ScraperFactory(adapters=(AlwaysAdapter(marker),))
 
     scraper = factory.create(
         scraper_cls=CustomChainScraper,

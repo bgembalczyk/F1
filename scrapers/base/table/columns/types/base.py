@@ -29,3 +29,6 @@ class BaseColumn(ABC):
         if ctx.model_fields is not None and ctx.key not in ctx.model_fields:
             return
         record[ctx.key] = value
+
+
+__all__ = ["BaseColumn"]

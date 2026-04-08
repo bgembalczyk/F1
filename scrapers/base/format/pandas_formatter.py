@@ -8,7 +8,7 @@ if TYPE_CHECKING:
     from scrapers.base.results import ScrapeResult
 
 
-def _validate_dataframe_columns(dataframe: Any) -> None:
+def validate_dataframe_columns(dataframe: Any) -> None:
     if not hasattr(dataframe, "columns"):
         msg = "Pandas DataFrame stub does not expose 'columns'."
         raise AttributeError(msg)
@@ -23,7 +23,7 @@ class PandasDataFrameFormatter:
             import pandas as pd
 
             dataframe = pd.DataFrame(data)
-            _validate_dataframe_columns(dataframe)
+            validate_dataframe_columns(dataframe)
         except (ImportError, AttributeError):
             warnings.warn("Pandas nie jest zainstalowane", RuntimeWarning, stacklevel=2)
             return data

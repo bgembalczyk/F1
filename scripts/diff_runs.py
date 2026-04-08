@@ -8,26 +8,26 @@ from pathlib import Path
 from typing import Any
 
 
-def _read_text(path: Path) -> str:
+def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def _canonical_json(payload: Any) -> str:
+def canonical_json(payload: Any) -> str:
     return json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
 
 
-def _canonicalize(path: Path) -> str:
+def canonicalize(path: Path) -> str:
     if path.suffix == ".json":
-        return _canonical_json(json.loads(_read_text(path)))
+        return canonical_json(json.loads(read_text(path)))
     if path.suffix == ".jsonl":
         rows = [
-            json.loads(line) for line in _read_text(path).splitlines() if line.strip()
+            json.loads(line) for line in read_text(path).splitlines() if line.strip()
         ]
-        return _canonical_json(rows)
-    return _read_text(path)
+        return canonical_json(rows)
+    return read_text(path)
 
 
-def _collect_files(base: Path) -> dict[Path, Path]:
+def collect_files(base: Path) -> dict[Path, Path]:
     if base.is_file():
         return {Path(base.name): base}
     return {
@@ -37,8 +37,8 @@ def _collect_files(base: Path) -> dict[Path, Path]:
 
 
 def diff_runs(left: Path, right: Path) -> int:
-    left_files = _collect_files(left)
-    right_files = _collect_files(right)
+    left_files = collect_files(left)
+    right_files = collect_files(right)
     all_rel_paths = sorted(set(left_files) | set(right_files))
 
     changed = False
@@ -54,8 +54,8 @@ def diff_runs(left: Path, right: Path) -> int:
             changed = True
             continue
 
-        left_text = _canonicalize(left_path)
-        right_text = _canonicalize(right_path)
+        left_text = canonicalize(left_path)
+        right_text = canonicalize(right_path)
         if left_text == right_text:
             continue
         changed = True

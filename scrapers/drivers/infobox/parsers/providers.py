@@ -76,3 +76,11 @@ class DefaultDriverInfoboxParserProvider:
             career_parser=career_parser,
             section_discovery=self._section_discovery,
         )
+
+
+__all__ = [
+    "InfoboxSectionDiscovery",
+    "DriverInfoboxParserBundle",
+    "DriverInfoboxParserProvider",
+    "DefaultDriverInfoboxParserProvider",
+]

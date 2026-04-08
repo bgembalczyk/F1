@@ -2,9 +2,7 @@ from dataclasses import asdict
 from dataclasses import is_dataclass
 from typing import Any
 
-from models.domain_utils.normalization import (
-    normalize_season_items as core_normalize_season_items,
-)
+from models.domain_utils.normalization import normalize_season_items
 from models.value_objects.link import Link
 from models.value_objects.link_utils import validate_link as _validate_link
 from models.value_objects.season_ref import SeasonRef
@@ -37,7 +35,6 @@ def validate_links(
     *,
     field_name: str,
 ) -> list[dict[str, Any]]:
-    _ = field_name
     return [item.to_dict() for item in normalize_link_list(items)]
 
 
@@ -53,4 +50,4 @@ def validate_link(
 def validate_seasons(
     items: list[SeasonRef | dict[str, Any] | None] | None,
 ) -> list[dict[str, Any]]:
-    return [season.to_dict() for season in core_normalize_season_items(items)]
+    return [season.to_dict() for season in normalize_season_items(items)]

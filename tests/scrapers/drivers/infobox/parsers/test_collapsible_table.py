@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from scrapers.drivers.infobox.parsers.collapsible_table import CollapsibleTableParser
 
 
-class _Delegate:
+class Delegate:
     @staticmethod
     def parse_active_years(_cell):
         return [1960, 1961]
@@ -21,13 +21,13 @@ class _Delegate:
         return cell.get_text(" ", strip=True)
 
 
-def _parse_table(html: str):
+def parse_table(html: str):
     table = BeautifulSoup(html, "html.parser").find("table")
-    return CollapsibleTableParser(_Delegate()).parse_collapsible_career_table(table)
+    return CollapsibleTableParser(Delegate()).parse_collapsible_career_table(table)
 
 
 def test_collapsible_table_parser_parses_label_rows_and_numeric_values() -> None:
-    result = _parse_table(
+    result = parse_table(
         """
         <table class="mw-collapsible">
           <tr><th>Motorcycle career</th></tr>
@@ -49,7 +49,7 @@ def test_collapsible_table_parser_parses_label_rows_and_numeric_values() -> None
 def test_collapsible_table_parser_parses_nested_table_and_returns_none_for_empty() -> (
     None
 ):
-    with_nested = _parse_table(
+    with_nested = parse_table(
         """
         <table class="mw-collapsible">
           <tr><th>Stats</th></tr>
@@ -67,7 +67,7 @@ def test_collapsible_table_parser_parses_nested_table_and_returns_none_for_empty
     assert with_nested is not None
     assert with_nested["rows"][0] == {"label": "Wins", "value": 4}
 
-    empty = _parse_table(
+    empty = parse_table(
         "<table class='mw-collapsible'><tr><th>Only title</th></tr></table>",
     )
     assert empty is None

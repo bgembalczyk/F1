@@ -39,3 +39,6 @@ class FatalAccidentRule:
     @staticmethod
     def _is_during_race_fatality(status: str, marks: list[str]) -> bool:
         return status.startswith("ret") and ("†" in marks or "‡" in marks)
+
+
+__all__ = ["FatalAccidentRule"]

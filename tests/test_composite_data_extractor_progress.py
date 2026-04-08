@@ -13,18 +13,18 @@ if TYPE_CHECKING:
     from collections.abc import Iterable
 
 
-class _SingleScraperStub:
+class SingleScraperStub:
     def extract_by_url(self, url: str) -> list[dict[str, str]]:
         return [{"fetched_from": url}]
 
 
-class _DemoCompositeExtractor(CompositeDataExtractor):
+class DemoCompositeExtractor(CompositeDataExtractor):
     url = "https://example.com"
 
     def build_children(self) -> CompositeDataExtractorChildren:
         return CompositeDataExtractorChildren(
             list_scraper=object(),
-            single_scraper=_SingleScraperStub(),
+            single_scraper=SingleScraperStub(),
             records_adapter=IterableSourceAdapter(
                 lambda: [
                     {"name": "A", "detail_url": "https://example.com/a"},
@@ -37,7 +37,7 @@ class _DemoCompositeExtractor(CompositeDataExtractor):
         return str(record.get("detail_url"))
 
 
-class _PassThroughProgress:
+class PassThroughProgress:
     def wrap(
         self,
         iterable: Iterable[dict[str, Any]],
@@ -53,8 +53,8 @@ def test_composite_extractor_returns_same_records_with_default_and_noop_progress
 ):
     options = ScraperOptions()
 
-    default_progress_records = _DemoCompositeExtractor(options=options).fetch()
-    no_progress_records = _DemoCompositeExtractor(
+    default_progress_records = DemoCompositeExtractor(options=options).fetch()
+    no_progress_records = DemoCompositeExtractor(
         options=options,
         progress=NoOpProgressAdapter(),
     ).fetch()
@@ -64,9 +64,9 @@ def test_composite_extractor_returns_same_records_with_default_and_noop_progress
 
 def test_composite_extractor_accepts_injected_progress_strategy() -> None:
     options = ScraperOptions()
-    extractor = _DemoCompositeExtractor(
+    extractor = DemoCompositeExtractor(
         options=options,
-        progress=_PassThroughProgress(),
+        progress=PassThroughProgress(),
     )
 
     records = extractor.fetch()

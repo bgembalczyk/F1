@@ -10,9 +10,7 @@ from bs4 import Tag
 from scrapers.base.helpers.text import strip_marks
 from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.source_catalog import RED_FLAGGED_RACES
-from scrapers.base.transformers.failed_to_make_restart import (
-    FailedToMakeRestartTransformer,
-)
+from scrapers.base.transformers.failed_to_make_restart import FailedToMakeRestartTransformer
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
@@ -23,8 +21,8 @@ from scrapers.wiki.scraper import WikiScraper
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
 
-_WIKIPEDIA_BASE_URL = "https://en.wikipedia.org"
-_RESTART_STATUS_MAP = {
+WIKIPEDIA_BASE_URL = "https://en.wikipedia.org"
+RESTART_STATUS_MAP = {
     "N": "race_was_not_restarted",
     "Y": "race_was_restarted_over_original_distance",
     "R": "race_was_resumed_to_complete_original_distance",
@@ -36,7 +34,7 @@ def _build_full_url(url: str | None) -> str | None:
     if url is None:
         return None
     if isinstance(url, str) and url.startswith("/"):
-        return _WIKIPEDIA_BASE_URL + url
+        return WIKIPEDIA_BASE_URL + url
     return url
 
 
@@ -198,7 +196,7 @@ class WorldChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
                 code = text[0].upper() if text else ""
                 mapped[key] = {
                     "code": code,
-                    "description": _RESTART_STATUS_MAP.get(code),
+                    "description": RESTART_STATUS_MAP.get(code),
                 }
                 if background:
                     mapped["background"] = background
@@ -290,7 +288,7 @@ class NonChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
                 code = text[0].upper() if text else ""
                 mapped[key] = {
                     "code": code,
-                    "description": _RESTART_STATUS_MAP.get(code),
+                    "description": RESTART_STATUS_MAP.get(code),
                 }
             elif key == "winner":
                 mapped[key] = _map_winner_cell(text, links)

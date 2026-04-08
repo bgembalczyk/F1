@@ -5,11 +5,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import TypeVar
 
-from scrapers.base.constants.patterns import ANGLE_RE
-from scrapers.base.constants.patterns import CONFIG_TYPE_RE
-from scrapers.base.constants.patterns import MAX_CYLINDERS_RE
-from scrapers.base.constants.patterns import RANGE_RE
-from scrapers.base.constants.patterns import RELATIONS_PARENTHETICAL_PATTERN
+from scrapers.base.constants import patterns
 
 if TYPE_CHECKING:
     from scrapers.base.table.columns.context import ColumnContext
@@ -103,7 +99,7 @@ def parse_configuration(ctx: "ColumnContext") -> dict[str, Any] | None:
         return None
 
     max_cylinders = None
-    max_cylinders_match = MAX_CYLINDERS_RE.search(text)
+    max_cylinders_match = patterns.MAX_CYLINDERS_RE.search(text)
     if max_cylinders_match:
         max_cylinders = int(max_cylinders_match.group("value"))
 
@@ -112,15 +108,15 @@ def parse_configuration(ctx: "ColumnContext") -> dict[str, Any] | None:
     extras = parts[1:] if len(parts) > 1 else []
 
     angle = None
-    angle_match = ANGLE_RE.search(base_text)
+    angle_match = patterns.ANGLE_RE.search(base_text)
     if angle_match:
         angle = {
             "value": parse_numeric_value(angle_match.group("value")),
             "unit": "deg",
         }
-        base_text = ANGLE_RE.sub("", base_text).strip()
+        base_text = patterns.ANGLE_RE.sub("", base_text).strip()
 
-    type_match = CONFIG_TYPE_RE.search(base_text)
+    type_match = patterns.CONFIG_TYPE_RE.search(base_text)
     config_type = type_match.group(1) if type_match else None
     if max_cylinders is None and config_type:
         digits_match = re.search(r"\d+", config_type)
@@ -137,7 +133,7 @@ def parse_configuration(ctx: "ColumnContext") -> dict[str, Any] | None:
 
 
 def parse_numeric_range(text: str) -> dict[str, Any] | None:
-    match = RANGE_RE.search(text)
+    match = patterns.RANGE_RE.search(text)
     if not match:
         return None
     return {
@@ -243,7 +239,7 @@ def parse_fuel_limit_per_race(ctx) -> dict[str, Any]:
 
 def parse_relations(links: list[dict[str, Any]], text: str) -> list[dict[str, Any]]:
     entries: list[dict[str, Any]] = []
-    matches = list(RELATIONS_PARENTHETICAL_PATTERN.finditer(text))
+    matches = list(patterns.RELATIONS_PARENTHETICAL_PATTERN.finditer(text))
 
     for link in links:
         relation = None

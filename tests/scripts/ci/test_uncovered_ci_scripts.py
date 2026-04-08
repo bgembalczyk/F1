@@ -20,11 +20,7 @@ from scripts.ci import enforce_function_complexity as efc
 from scripts.ci import enforce_new_module_any_policy as any_policy
 from scripts.ci import generate_architecture_spec_doc as gen_doc
 from scripts.ci import mypy_regression_gate as mypy_gate
-from scripts.ci.duplicate_report import DuplicateFileMeta
-from scripts.ci.duplicate_report import DuplicateFilter
-from scripts.ci.duplicate_report import DuplicateNormalizer
-from scripts.ci.duplicate_report import DuplicateRecord
-from scripts.ci.duplicate_report import MarkdownRenderer
+from scripts.ci import duplicate_report as duplicate
 from scripts.ci.reporting import build_ci_parser
 from scripts.ci.reporting import line_range
 from validation.issue import ValidationIssue
@@ -103,7 +99,7 @@ def test_build_ci_parser_returns_parser_with_all_args() -> None:
 
 class TestDuplicateNormalizer:
     def test_normalize_basic(self) -> None:
-        normalizer = DuplicateNormalizer()
+        normalizer = duplicate.DuplicateNormalizer()
         item = {
             "firstFile": {"name": "foo.py", "start": 1, "end": 5},
             "secondFile": {"name": "bar.py", "start": 10, "end": 20},
@@ -116,7 +112,7 @@ class TestDuplicateNormalizer:
         assert record.fragment == "code"
 
     def test_normalize_uses_path_fallback(self) -> None:
-        normalizer = DuplicateNormalizer()
+        normalizer = duplicate.DuplicateNormalizer()
         item = {
             "firstFile": {"path": "a.py", "startLoc": 2, "endLoc": 8},
             "secondFile": {"path": "b.py"},
@@ -128,7 +124,7 @@ class TestDuplicateNormalizer:
         assert record.second.start == 0
 
     def test_as_int_handles_various_types(self) -> None:
-        norm = DuplicateNormalizer()
+        norm = duplicate.DuplicateNormalizer()
         assert norm._as_int(value=True) == 1
         assert norm._as_int(value=False) == 0
         assert norm._as_int(3) == 3
@@ -138,13 +134,13 @@ class TestDuplicateNormalizer:
         assert norm._as_int(None) == 0
 
     def test_normalize_empty_item(self) -> None:
-        norm = DuplicateNormalizer()
+        norm = duplicate.DuplicateNormalizer()
         record = norm.normalize({})
         assert record.first.name == "<unknown>"
         assert record.fragment == ""
 
     def test_as_mapping_non_mapping(self) -> None:
-        norm = DuplicateNormalizer()
+        norm = duplicate.DuplicateNormalizer()
         assert norm._as_mapping("string") == {}
         assert norm._as_mapping(42) == {}
         assert norm._as_mapping({"a": 1}) == {"a": 1}
@@ -159,15 +155,15 @@ class TestDuplicateFilter:
         name2: str,
         s2: int,
         e2: int,
-    ) -> DuplicateRecord:
-        return DuplicateRecord(
-            first=DuplicateFileMeta(name=name1, start=s1, end=e1),
-            second=DuplicateFileMeta(name=name2, start=s2, end=e2),
+    ) -> duplicate.DuplicateRecord:
+        return duplicate.DuplicateRecord(
+            first=duplicate.DuplicateFileMeta(name=name1, start=s1, end=e1),
+            second=duplicate.DuplicateFileMeta(name=name2, start=s2, end=e2),
             fragment="",
         )
 
     def test_filter_returns_all_when_no_added_lines(self) -> None:
-        filt = DuplicateFilter()
+        filt = duplicate.DuplicateFilter()
         records = [self._make_record("a.py", 1, 5, "b.py", 1, 5)]
         with patch(
             "scripts.ci.duplicate_report.build_added_lines_map",
@@ -177,7 +173,7 @@ class TestDuplicateFilter:
         assert result == records
 
     def test_filter_keeps_record_with_added_line_in_range(self) -> None:
-        filt = DuplicateFilter()
+        filt = duplicate.DuplicateFilter()
         records = [self._make_record("a.py", 1, 5, "b.py", 10, 20)]
         with patch(
             "scripts.ci.duplicate_report.build_added_lines_map",
@@ -187,7 +183,7 @@ class TestDuplicateFilter:
         assert len(result) == 1
 
     def test_filter_excludes_record_without_overlap(self) -> None:
-        filt = DuplicateFilter()
+        filt = duplicate.DuplicateFilter()
         records = [self._make_record("a.py", 1, 5, "b.py", 1, 5)]
         with patch(
             "scripts.ci.duplicate_report.build_added_lines_map",
@@ -197,7 +193,7 @@ class TestDuplicateFilter:
         assert result == []
 
     def test_filter_skips_record_with_invalid_meta(self) -> None:
-        filt = DuplicateFilter()
+        filt = duplicate.DuplicateFilter()
         records = [self._make_record("", 0, 0, "", 0, 0)]
         with patch(
             "scripts.ci.duplicate_report.build_added_lines_map",
@@ -209,16 +205,16 @@ class TestDuplicateFilter:
 
 class TestMarkdownRenderer:
     def test_render_no_duplicates(self) -> None:
-        renderer = MarkdownRenderer()
+        renderer = duplicate.MarkdownRenderer()
         md = renderer.render([], warn_threshold=5, fail_threshold=10)
         assert "✅ Brak nowych duplikatów" in md
 
     def test_render_warn_status(self) -> None:
-        renderer = MarkdownRenderer()
+        renderer = duplicate.MarkdownRenderer()
         records = [
-            DuplicateRecord(
-                first=DuplicateFileMeta("a.py", 1, 5),
-                second=DuplicateFileMeta("b.py", 10, 15),
+            duplicate.DuplicateRecord(
+                first=duplicate.DuplicateFileMeta("a.py", 1, 5),
+                second=duplicate.DuplicateFileMeta("b.py", 10, 15),
                 fragment="code here",
             ),
         ]
@@ -228,11 +224,11 @@ class TestMarkdownRenderer:
         assert "L1-L5" in md
 
     def test_render_fail_status(self) -> None:
-        renderer = MarkdownRenderer()
+        renderer = duplicate.MarkdownRenderer()
         records = [
-            DuplicateRecord(
-                first=DuplicateFileMeta("a.py", 1, 5),
-                second=DuplicateFileMeta("b.py", 10, 15),
+            duplicate.DuplicateRecord(
+                first=duplicate.DuplicateFileMeta("a.py", 1, 5),
+                second=duplicate.DuplicateFileMeta("b.py", 10, 15),
                 fragment="",
             ),
         ] * 3
@@ -240,11 +236,11 @@ class TestMarkdownRenderer:
         assert "❌" in md
 
     def test_render_fragment_with_snippet(self) -> None:
-        renderer = MarkdownRenderer()
+        renderer = duplicate.MarkdownRenderer()
         records = [
-            DuplicateRecord(
-                first=DuplicateFileMeta("a.py", 0, 0),
-                second=DuplicateFileMeta("b.py", 0, 0),
+            duplicate.DuplicateRecord(
+                first=duplicate.DuplicateFileMeta("a.py", 0, 0),
+                second=duplicate.DuplicateFileMeta("b.py", 0, 0),
                 fragment="line1\nline2",
             ),
         ]
@@ -253,9 +249,9 @@ class TestMarkdownRenderer:
         assert "line1" in md
 
     def test_line_range_no_start_end(self) -> None:
-        renderer = MarkdownRenderer()
-        assert renderer._line_range(DuplicateFileMeta("f.py", 0, 0)) == "line ?"
-        assert renderer._line_range(DuplicateFileMeta("f.py", 1, 5)) == "L1-L5"
+        renderer = duplicate.MarkdownRenderer()
+        assert renderer._line_range(duplicate.DuplicateFileMeta("f.py", 0, 0)) == "line ?"
+        assert renderer._line_range(duplicate.DuplicateFileMeta("f.py", 1, 5)) == "L1-L5"
 
 
 # ---------------------------------------------------------------------------
@@ -379,14 +375,14 @@ def test_terminology_main_ok(
 def test_dedup_ast_to_python_dict_valid() -> None:
     node = ast.parse('{"a": 1}', mode="eval").body
     assert isinstance(node, ast.Dict)
-    result = dedup._ast_to_python_dict(node)
+    result = dedup.ast_to_python_dict(node)
     assert result == {"a": 1}
 
 
 def test_dedup_extract_string_key() -> None:
     node = ast.Constant(value="hello")
-    assert dedup._extract_string_key(node) == "hello"
-    assert dedup._extract_string_key(ast.Constant(value=42)) is None
+    assert dedup.extract_string_key(node) == "hello"
+    assert dedup.extract_string_key(ast.Constant(value=42)) is None
 
 
 def test_dedup_main_missing_file(
@@ -447,17 +443,17 @@ def build_layer_zero_run_config_factory_map():
 
 def test_dedup_extract_scraper_kwargs_not_call() -> None:
     node = ast.Constant(value="not a call")
-    assert dedup._extract_scraper_kwargs_dict(node) is None
+    assert dedup.extract_scraper_kwargs_dict(node) is None
 
 
 def test_dedup_extract_scraper_kwargs_wrong_name() -> None:
     tree = ast.parse("OtherFactory(scraper_kwargs={'x': 1})", mode="eval").body
-    assert dedup._extract_scraper_kwargs_dict(tree) is None
+    assert dedup.extract_scraper_kwargs_dict(tree) is None
 
 
 def test_dedup_extract_scraper_kwargs_no_kwarg() -> None:
     tree = ast.parse("StaticScraperKwargsFactory(other={'x': 1})", mode="eval").body
-    assert dedup._extract_scraper_kwargs_dict(tree) is None
+    assert dedup.extract_scraper_kwargs_dict(tree) is None
 
 
 # ---------------------------------------------------------------------------
@@ -570,8 +566,8 @@ def test_evaluate_file_syntax_error(tmp_path: Path) -> None:
 def test_function_overlaps_added_lines() -> None:
     node = ast.parse("def f():\n    pass\n").body[0]
     assert isinstance(node, ast.FunctionDef)
-    assert efc._function_overlaps_added_lines(node, {1})
-    assert not efc._function_overlaps_added_lines(node, {99})
+    assert efc.function_overlaps_added_lines(node, {1})
+    assert not efc.function_overlaps_added_lines(node, {99})
 
 
 # ---------------------------------------------------------------------------
@@ -582,25 +578,25 @@ def test_function_overlaps_added_lines() -> None:
 def test_scan_file_no_any(tmp_path: Path) -> None:
     f = tmp_path / "clean.py"
     f.write_text("x: int = 1\n", encoding="utf-8")
-    assert any_policy._scan_file(f) == []
+    assert any_policy.scan_file(f) == []
 
 
 def test_scan_file_any_with_justification(tmp_path: Path) -> None:
     f = tmp_path / "justified.py"
     f.write_text("x: Any  # ANY-JUSTIFIED: legacy\n", encoding="utf-8")
-    assert any_policy._scan_file(f) == []
+    assert any_policy.scan_file(f) == []
 
 
 def test_scan_file_any_with_preceding_justification(tmp_path: Path) -> None:
     f = tmp_path / "preceding.py"
     f.write_text("# ANY-JUSTIFIED: reason\nx: Any\n", encoding="utf-8")
-    assert any_policy._scan_file(f) == []
+    assert any_policy.scan_file(f) == []
 
 
 def test_scan_file_any_violation(tmp_path: Path) -> None:
     f = tmp_path / "bad.py"
     f.write_text("x: Any\n", encoding="utf-8")
-    violations = any_policy._scan_file(f)
+    violations = any_policy.scan_file(f)
     assert len(violations) == 1
     assert "Any" in violations[0]
 
@@ -611,7 +607,7 @@ def test_new_python_files_git_error(monkeypatch: pytest.MonkeyPatch) -> None:
 
     monkeypatch.setattr(any_policy, "_git", mock_git)
     with pytest.raises(subprocess.CalledProcessError):
-        any_policy._new_python_files("base", "head")
+        any_policy.new_python_files("base", "head")
 
 
 def test_new_python_files_filters_exceptions(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -619,7 +615,7 @@ def test_new_python_files_filters_exceptions(monkeypatch: pytest.MonkeyPatch) ->
         return "layers/application.py\nlayers/new_module.py\n"
 
     monkeypatch.setattr(any_policy, "_git", mock_git)
-    result = any_policy._new_python_files("base", "head")
+    result = any_policy.new_python_files("base", "head")
     assert "layers/application.py" not in result
     assert "layers/new_module.py" in result
 
@@ -631,7 +627,7 @@ def test_new_python_files_filters_non_rollout_prefix(
         return "scripts/something.py\n"
 
     monkeypatch.setattr(any_policy, "_git", mock_git)
-    result = any_policy._new_python_files("base", "head")
+    result = any_policy.new_python_files("base", "head")
     assert result == []
 
 

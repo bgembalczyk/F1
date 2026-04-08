@@ -11,7 +11,7 @@ from layers.seed.registry.helpers import validate_list_job_registry
 from layers.seed.registry.helpers import validate_seed_registry
 
 
-def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
+def seed_registry_validation_negative_cases() -> tuple[object, ...]:
     return (
         pytest.param(
             lambda: (
@@ -61,7 +61,7 @@ def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
     )
 
 
-def _list_registry_validation_negative_cases() -> tuple[object, ...]:
+def list_registry_validation_negative_cases() -> tuple[object, ...]:
     return (
         pytest.param(
             lambda: (
@@ -111,16 +111,16 @@ def _list_registry_validation_negative_cases() -> tuple[object, ...]:
     )
 
 
-def _registry_validation_negative_cases() -> tuple[object, ...]:
+def registry_validation_negative_cases() -> tuple[object, ...]:
     return (
-        *_seed_registry_validation_negative_cases(),
-        *_list_registry_validation_negative_cases(),
+        *seed_registry_validation_negative_cases(),
+        *list_registry_validation_negative_cases(),
     )
 
 
 @pytest.mark.parametrize(
     ("registry_factory", "validator", "expected_message"),
-    _registry_validation_negative_cases(),
+    registry_validation_negative_cases(),
 )
 def test_registry_validation_negative_cases(
     registry_factory,

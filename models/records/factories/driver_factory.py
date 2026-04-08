@@ -5,9 +5,7 @@ from typing import cast
 from models.mappers.field_aliases import FIELD_ALIASES
 from models.records.base_factory import BaseRecordFactory
 from models.records.driver import DriverRecord
-from models.records.factories.drivers_championships_factory import (
-    DriversChampionshipsRecordFactory,
-)
+from models.records.factories.drivers_championships_factory import DriversChampionshipsRecordFactory
 from models.records.factories.registry import register_factory
 
 

@@ -8,15 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
-    DoublePointsRoundRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
-    HalfPointsRoundRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
-    RoundRuleContext,
-)
+from scrapers.seasons.columns.helpers.race_result.rules import round_rules as rules
 
 ABU_DHABI_DOUBLE_POINTS_YEAR = 2014
 
@@ -27,21 +19,21 @@ ABU_DHABI_DOUBLE_POINTS_YEAR = 2014
 
 @pytest.mark.unit()
 def test_round_package_exports_double_points_round_rule() -> None:
-    assert DoublePointsRoundRule is not None
-    instance = DoublePointsRoundRule()
+    assert rules.DoublePointsRoundRule is not None
+    instance = rules.DoublePointsRoundRule()
     assert hasattr(instance, "apply")
 
 
 @pytest.mark.unit()
 def test_round_package_exports_half_points_round_rule() -> None:
-    assert HalfPointsRoundRule is not None
-    instance = HalfPointsRoundRule()
+    assert rules.HalfPointsRoundRule is not None
+    instance = rules.HalfPointsRoundRule()
     assert hasattr(instance, "apply")
 
 
 @pytest.mark.unit()
 def test_round_package_exports_round_rule_context() -> None:
-    ctx = RoundRuleContext(
+    ctx = rules.RoundRuleContext(
         season_year=ABU_DHABI_DOUBLE_POINTS_YEAR,
         marks=["‡"],
         header_text="Abu Dhabi",
@@ -57,7 +49,7 @@ def test_round_package_exports_round_rule_context() -> None:
 
 @pytest.mark.unit()
 def test_context_alias_module_exports_round_rule_context() -> None:
-    ctx = RoundRuleContext(
+    ctx = rules.RoundRuleContext(
         season_year=None,
         marks=[],
         header_text="test",
@@ -68,11 +60,11 @@ def test_context_alias_module_exports_round_rule_context() -> None:
 
 @pytest.mark.unit()
 def test_double_points_alias_module_exports_double_points_rule() -> None:
-    rule = DoublePointsRoundRule()
+    rule = rules.DoublePointsRoundRule()
     assert hasattr(rule, "apply")
 
 
 @pytest.mark.unit()
 def test_half_points_alias_module_exports_half_points_rule() -> None:
-    rule = HalfPointsRoundRule()
+    rule = rules.HalfPointsRoundRule()
     assert hasattr(rule, "apply")

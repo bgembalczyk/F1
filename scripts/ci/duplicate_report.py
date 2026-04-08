@@ -9,11 +9,7 @@ from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.io_utils import append_output_vars
 from scripts.ci.io_utils import read_json_file
 from scripts.ci.io_utils import write_text_file
-from scripts.ci.reporting import CiStatus
-from scripts.ci.reporting import build_ci_parser
-from scripts.ci.reporting import exit_code_for_status
-from scripts.ci.reporting import resolve_status
-from scripts.ci.reporting import split_csv
+from scripts.ci import reporting
 
 
 @dataclass(frozen=True)
@@ -121,13 +117,13 @@ class MarkdownRenderer:
         fail_threshold: int,
     ) -> str:
         count = len(duplicates)
-        status_type = resolve_status(count, warn_threshold, fail_threshold)
-        if status_type == CiStatus.fail:
+        status_type = reporting.resolve_status(count, warn_threshold, fail_threshold)
+        if status_type == reporting.CiStatus.fail:
             status = (
                 f"❌ Wykryto **{count}** nowych duplikatów "
                 f"(próg blokujący: {fail_threshold})."
             )
-        elif status_type == CiStatus.warn:
+        elif status_type == reporting.CiStatus.warn:
             status = (
                 f"⚠️ Wykryto **{count}** nowych duplikatów "
                 f"(próg ostrzegawczy: {warn_threshold})."
@@ -168,7 +164,7 @@ class MarkdownRenderer:
 
 
 def main() -> int:
-    parser = build_ci_parser("Generate duplicate report for changed files in PR.")
+    parser = reporting.build_ci_parser("Generate duplicate report for changed files in PR.")
     args = parser.parse_args()
 
     normalizer = DuplicateNormalizer()
@@ -183,7 +179,7 @@ def main() -> int:
         if isinstance(item, Mapping)
     ]
 
-    changed_files = split_csv(args.changed_files)
+    changed_files = reporting.split_csv(args.changed_files)
     new_duplicates = duplicate_filter.filter_new_duplicates(
         duplicates,
         args.base_sha,
@@ -199,7 +195,7 @@ def main() -> int:
     )
     write_text_file(Path(args.output_md), markdown)
 
-    status = resolve_status(count, args.warn_threshold, args.fail_threshold)
+    status = reporting.resolve_status(count, args.warn_threshold, args.fail_threshold)
     append_output_vars(
         Path(args.github_output),
         {
@@ -208,7 +204,7 @@ def main() -> int:
         },
     )
 
-    return exit_code_for_status(status)
+    return reporting.exit_code_for_status(status)
 
 
 if __name__ == "__main__":

@@ -1,14 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from typing import Any
-
-from models.domain_utils.field_normalization.aliases import (
-    expand_alias_variants as _expand_alias_variants,
-)
-
-if TYPE_CHECKING:
-    from collections.abc import Callable
 
 
 def pop_list_field(record: dict[str, Any], key: str) -> list[Any]:
@@ -35,11 +27,3 @@ def merge_unique_preserve_order(*iterables: list[Any]) -> list[Any]:
             merged.append(item)
     return merged
 
-
-def expand_alias_variants(
-    values: set[str],
-    *,
-    text_normalizer: Callable[[str], str],
-) -> tuple[set[str], set[str]]:
-    """Build normalized section-text and id variants from alias values."""
-    return _expand_alias_variants(values, text_normalizer=text_normalizer)

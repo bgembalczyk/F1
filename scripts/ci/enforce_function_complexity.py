@@ -9,7 +9,7 @@ from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.reporting import split_csv
 
 
-class _ComplexityVisitor(ast.NodeVisitor):
+class ComplexityVisitor(ast.NodeVisitor):
     CONTROL_NODES = (
         ast.If,
         ast.For,
@@ -51,7 +51,7 @@ class _ComplexityVisitor(ast.NodeVisitor):
             self._depth -= 1
 
 
-def _iter_functions(tree: ast.AST) -> list[ast.FunctionDef | ast.AsyncFunctionDef]:
+def iter_functions(tree: ast.AST) -> list[ast.FunctionDef | ast.AsyncFunctionDef]:
     return [
         node
         for node in ast.walk(tree)
@@ -59,7 +59,7 @@ def _iter_functions(tree: ast.AST) -> list[ast.FunctionDef | ast.AsyncFunctionDe
     ]
 
 
-def _function_overlaps_added_lines(
+def function_overlaps_added_lines(
     node: ast.FunctionDef | ast.AsyncFunctionDef,
     added_lines: set[int],
 ) -> bool:
@@ -67,7 +67,7 @@ def _function_overlaps_added_lines(
     return any(line in added_lines for line in range(node.lineno, end_lineno + 1))
 
 
-def _function_length(node: ast.FunctionDef | ast.AsyncFunctionDef) -> int:
+def function_length(node: ast.FunctionDef | ast.AsyncFunctionDef) -> int:
     end_lineno = getattr(node, "end_lineno", node.lineno)
     return max(1, end_lineno - node.lineno + 1)
 
@@ -91,12 +91,12 @@ def evaluate_file(
         return []
 
     violations: list[str] = []
-    for function in _iter_functions(tree):
-        if not _function_overlaps_added_lines(function, added_lines):
+    for function in iter_functions(tree):
+        if not function_overlaps_added_lines(function, added_lines):
             continue
 
-        length = _function_length(function)
-        visitor = _ComplexityVisitor()
+        length = function_length(function)
+        visitor = ComplexityVisitor()
         visitor.visit(function)
 
         if length > max_function_lines:

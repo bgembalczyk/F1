@@ -5,15 +5,15 @@ import importlib.util
 import sys
 from pathlib import Path
 
-_BOOTSTRAP_PATH = Path(__file__).resolve().parent / "lib" / "bootstrap.py"
-_BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
+BOOTSTRAP_PATH = Path(__file__).resolve().parent / "lib" / "bootstrap.py"
+BOOTSTRAP_SPEC = importlib.util.spec_from_file_location(
     "_scripts_bootstrap",
-    _BOOTSTRAP_PATH,
+    BOOTSTRAP_PATH,
 )
-assert _BOOTSTRAP_SPEC
-assert _BOOTSTRAP_SPEC.loader
-_BOOTSTRAP_MODULE = importlib.util.module_from_spec(_BOOTSTRAP_SPEC)
-_BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
+assert BOOTSTRAP_SPEC
+assert BOOTSTRAP_SPEC.loader
+_BOOTSTRAP_MODULE = importlib.util.module_from_spec(BOOTSTRAP_SPEC)
+BOOTSTRAP_SPEC.loader.exec_module(_BOOTSTRAP_MODULE)
 
 REPO_ROOT = _BOOTSTRAP_MODULE.ensure_repo_root_on_sys_path()
 
@@ -34,7 +34,7 @@ HOOK_BASE_CLASSES = {
 }
 
 
-def _base_name(base: ast.expr) -> str | None:
+def base_name(base: ast.expr) -> str | None:
     if isinstance(base, ast.Name):
         return base.id
     if isinstance(base, ast.Attribute):
@@ -42,7 +42,7 @@ def _base_name(base: ast.expr) -> str | None:
     return None
 
 
-def _is_hook_alias(method_name: str) -> bool:
+def is_hook_alias(method_name: str) -> bool:
     payload_alias = (
         "payload" in method_name
         and any(token in method_name for token in ("infobox", "tables", "sections"))
@@ -54,7 +54,7 @@ def _is_hook_alias(method_name: str) -> bool:
     return payload_alias or assemble_alias
 
 
-def _has_allow_comment(source_lines: list[str], lineno: int) -> bool:
+def has_allow_comment(source_lines: list[str], lineno: int) -> bool:
     start = max(0, lineno - 3)
     window = source_lines[start:lineno]
     return any("hook-name-allow:" in line for line in window)
@@ -70,16 +70,16 @@ def lint_path(path: Path) -> list[str]:
         if not isinstance(node, ast.ClassDef):
             continue
 
-        base_names = {_base_name(base) for base in node.bases}
+        base_names = {base_name(base) for base in node.bases}
         if not base_names.intersection(HOOK_BASE_CLASSES):
             continue
 
         for method in node.body:
             if not isinstance(method, ast.FunctionDef):
                 continue
-            if not _is_hook_alias(method.name):
+            if not is_hook_alias(method.name):
                 continue
-            if _has_allow_comment(source_lines, method.lineno):
+            if has_allow_comment(source_lines, method.lineno):
                 continue
             errors.append(
                 f"{path}:{method.lineno} "

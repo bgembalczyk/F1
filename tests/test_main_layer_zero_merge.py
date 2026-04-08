@@ -3,8 +3,8 @@ import json
 from pathlib import Path
 
 from layers.zero.merge import merge_layer_zero_raw_outputs
-from tests.support.main_layer_zero_merge_helpers import _assert_merged_outputs
-from tests.support.main_layer_zero_merge_helpers import _seed_layer_zero_raw_data
+from tests.support.main_layer_zero_merge_helpers import assert_merged_outputs
+from tests.support.main_layer_zero_merge_helpers import seed_layer_zero_raw_data
 
 
 def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
@@ -12,7 +12,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
 ) -> None:
     base_wiki_dir = tmp_path / "data" / "wiki"
 
-    _seed_layer_zero_raw_data(base_wiki_dir)
+    seed_layer_zero_raw_data(base_wiki_dir)
 
     merge_layer_zero_raw_outputs(base_wiki_dir)
 
@@ -100,7 +100,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         ),
     )
 
-    _assert_merged_outputs(
+    assert_merged_outputs(
         circuits_merged=circuits_merged,
         constructors_merged=constructors_merged,
         drivers_merged=drivers_merged,

@@ -9,7 +9,7 @@ from typing import Any
 SCRAPER_DOMAIN_PARTS = 3
 
 
-def _load_architecture_rules() -> Any:
+def load_architecture_rules() -> Any:
     repo_root = Path(__file__).resolve().parents[1]
     if str(repo_root) not in sys.path:
         sys.path.insert(0, str(repo_root))
@@ -19,7 +19,7 @@ def _load_architecture_rules() -> Any:
     return rules
 
 
-def _iter_layer_files(
+def iter_layer_files(
     domain_dir: Path,
     domain: str,
     rules: Any,
@@ -32,7 +32,7 @@ def _iter_layer_files(
     return collected
 
 
-def _detect_relevant_domains(
+def detect_relevant_domains(
     changed_files: list[Path],
     *,
     domains: tuple[str, ...],
@@ -49,7 +49,7 @@ def _detect_relevant_domains(
     return selected
 
 
-def _check_required_layout(
+def check_required_layout(
     root: Path,
     domains: tuple[str, ...],
     rules: Any,
@@ -66,7 +66,7 @@ def _check_required_layout(
             violations.append(f"Missing facade entrypoint in domain: {domain}")
 
         available_layers = {
-            layer for _, layer in _iter_layer_files(domain_dir, domain, rules)
+            layer for _, layer in iter_layer_files(domain_dir, domain, rules)
         }
         missing_layers = set(rules.REQUIRED_LAYERS_BY_DOMAIN[domain]) - available_layers
         if missing_layers:
@@ -76,7 +76,7 @@ def _check_required_layout(
     return violations
 
 
-def _check_layer_boundaries(
+def check_layer_boundaries(
     root: Path,
     domains: tuple[str, ...],
     rules: Any,
@@ -87,7 +87,7 @@ def _check_layer_boundaries(
         if not domain_dir.exists():
             continue
 
-        for py_file, layer in _iter_layer_files(domain_dir, domain, rules):
+        for py_file, layer in iter_layer_files(domain_dir, domain, rules):
             targets = rules.resolve_import_targets(py_file)
             forbidden = rules.FORBIDDEN_IMPORTS_BY_LAYER[layer]
             for forbidden_target in forbidden:
@@ -103,7 +103,7 @@ def _check_layer_boundaries(
     return violations
 
 
-def _check_cross_domain_imports(
+def check_cross_domain_imports(
     root: Path,
     domains: tuple[str, ...],
     rules: Any,
@@ -122,7 +122,7 @@ def _check_cross_domain_imports(
     return violations
 
 
-def _check_sections_single_scraper_boundary(
+def check_sections_single_scraper_boundary(
     root: Path,
     domains: tuple[str, ...],
     rules: Any,
@@ -154,11 +154,11 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    rules = _load_architecture_rules()
+    rules = load_architecture_rules()
 
     root = Path("scrapers")
     changed_files = [Path(path) for path in args.paths if path.endswith(".py")]
-    relevant_domains = _detect_relevant_domains(
+    relevant_domains = detect_relevant_domains(
         changed_files,
         domains=rules.DOMAINS,
     )
@@ -175,10 +175,10 @@ def main() -> int:
         all_domains = rules.DOMAINS
 
     errors = [
-        *_check_required_layout(root, full_domains, rules),
-        *_check_layer_boundaries(root, full_domains, rules),
-        *_check_sections_single_scraper_boundary(root, full_domains, rules),
-        *_check_cross_domain_imports(root, all_domains, rules),
+        *check_required_layout(root, full_domains, rules),
+        *check_layer_boundaries(root, full_domains, rules),
+        *check_sections_single_scraper_boundary(root, full_domains, rules),
+        *check_cross_domain_imports(root, all_domains, rules),
     ]
 
     if errors:

@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from scrapers.seasons.parsers.free_practice import SeasonFreePracticeParser
 
 
-class _StubFreePracticeTableParser:
+class StubFreePracticeTableParser:
     def __init__(
         self,
         responses: list[list[dict[str, Any]]] | None = None,
@@ -28,7 +28,7 @@ class _StubFreePracticeTableParser:
 
 def test_parse_normalizes_rows_and_filters_source_footer_records() -> None:
     parser = SeasonFreePracticeParser(
-        _StubFreePracticeTableParser(
+        StubFreePracticeTableParser(
             responses=[
                 [
                     {
@@ -67,7 +67,7 @@ def test_parse_normalizes_rows_and_filters_source_footer_records() -> None:
 
 
 def test_parse_falls_back_to_second_table_shape_when_first_is_empty() -> None:
-    table_parser = _StubFreePracticeTableParser(
+    table_parser = StubFreePracticeTableParser(
         responses=[
             [],
             [
@@ -105,7 +105,7 @@ def test_parse_falls_back_to_second_table_shape_when_first_is_empty() -> None:
 
 def test_parse_falls_back_to_practice_drivers_column_variant() -> None:
     parser = SeasonFreePracticeParser(
-        _StubFreePracticeTableParser(
+        StubFreePracticeTableParser(
             responses=[
                 [],
                 [],
@@ -139,7 +139,7 @@ def test_parse_falls_back_to_practice_drivers_column_variant() -> None:
 
 def test_parse_propagates_table_parser_errors() -> None:
     parser = SeasonFreePracticeParser(
-        _StubFreePracticeTableParser(error=RuntimeError("table parse failed")),
+        StubFreePracticeTableParser(error=RuntimeError("table parse failed")),
     )
 
     with pytest.raises(RuntimeError, match="table parse failed"):

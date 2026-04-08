@@ -13,12 +13,7 @@ from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
-from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
+from scrapers.constructors import constants
 
 
 class BaseConstructorListScraper(
@@ -53,15 +48,15 @@ class BaseConstructorListScraper(
         """Build common constructor metadata columns."""
         return build_entity_metadata_columns(
             [
-                EntityColumnSpec(CONSTRUCTOR_NAME_HEADER, "constructor", AutoColumn()),
-                EntityColumnSpec(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+                EntityColumnSpec(constants.CONSTRUCTOR_NAME_HEADER, "constructor", AutoColumn()),
+                EntityColumnSpec(constants.CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
                 EntityColumnSpec(
-                    CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
+                    constants.CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
                     "total_entries",
                     IntColumn(),
                 ),
-                EntityColumnSpec(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
-                EntityColumnSpec(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
+                EntityColumnSpec(constants.CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
+                EntityColumnSpec(constants.CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
             ],
         )
 
@@ -69,7 +64,7 @@ class BaseConstructorListScraper(
     def build_licensed_in_column_spec() -> ColumnSpec:
         """Build the licensed_in column definition."""
         return ColumnSpec(
-            CONSTRUCTOR_LICENSED_IN_HEADER,
+            constants.CONSTRUCTOR_LICENSED_IN_HEADER,
             "licensed_in",
             LinksListColumn(),
         )
@@ -104,3 +99,6 @@ class BaseConstructorListScraper(
         options = options or ScraperOptions()
         options.normalize_empty_values = False
         super().__init__(options=options, config=config)
+
+
+__all__ = ["BaseConstructorListScraper"]

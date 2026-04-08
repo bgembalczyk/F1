@@ -7,7 +7,7 @@ from scrapers.wiki.parsers.constants import HEADING_CLASS
 from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 from scrapers.wiki.parsers.sections.detection import make_stable_section_id
-from scrapers.wiki.parsers.sections.helpers import _split_into_parts
+from scrapers.wiki.parsers.sections.helpers import split_into_parts
 from scrapers.wiki.parsers.sections.section import SectionParser
 
 
@@ -28,7 +28,7 @@ class ContentTextParser(WikiParser):
         html_metadata: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         tags = [c for c in element.children if isinstance(c, Tag)]
-        parts = _split_into_parts(tags, HEADING_CLASS)
+        parts = split_into_parts(tags, HEADING_CLASS)
         root_context = SectionExtractionContext(
             page_title=page_title,
             page_url=page_url,

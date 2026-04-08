@@ -12,12 +12,8 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.drivers.sections.constants import UNKNOWN_VALUE
-from scrapers.drivers.sections.driver_results_schema_factory import (
-    DriverResultsSchemaFactory,
-)
-from scrapers.drivers.sections.driver_results_table_classifier import (
-    DriverResultsTableClassifier,
-)
+from scrapers.drivers.sections.driver_results_schema_factory import DriverResultsSchemaFactory
+from scrapers.drivers.sections.driver_results_table_classifier import DriverResultsTableClassifier
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions

@@ -7,12 +7,7 @@ from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
-from scrapers.drivers.sections.constants import CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY
-from scrapers.drivers.sections.constants import CAREER_HIGHLIGHTS_HEADER_TO_KEY
-from scrapers.drivers.sections.constants import CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY
-from scrapers.drivers.sections.constants import CAREER_SUMMARY_HEADER_TO_KEY
-from scrapers.drivers.sections.constants import COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY
-from scrapers.drivers.sections.constants import COMPLETE_RESULTS_HEADER_TO_KEY
+from scrapers.drivers.sections import constants
 
 if TYPE_CHECKING:
     from scrapers.base.table.columns.types.base import BaseColumn
@@ -25,18 +20,18 @@ class DriverResultsSchemaFactory:
     def build(self, *, table_type: str, headers: list[str]) -> TableSchemaDSL:
         if table_type == "career_highlights":
             return self._build_from_maps(
-                header_to_key=CAREER_HIGHLIGHTS_HEADER_TO_KEY,
-                column_factory_by_key=CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY,
+                header_to_key=constants.CAREER_HIGHLIGHTS_HEADER_TO_KEY,
+                column_factory_by_key=constants.CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY,
             )
         if table_type == "career_summary":
             return self._build_from_maps(
-                header_to_key=CAREER_SUMMARY_HEADER_TO_KEY,
-                column_factory_by_key=CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY,
+                header_to_key=constants.CAREER_SUMMARY_HEADER_TO_KEY,
+                column_factory_by_key=constants.CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY,
             )
         if table_type == "complete_results":
             schema_columns = self._build_from_maps(
-                header_to_key=COMPLETE_RESULTS_HEADER_TO_KEY,
-                column_factory_by_key=COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
+                header_to_key=constants.COMPLETE_RESULTS_HEADER_TO_KEY,
+                column_factory_by_key=constants.COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
             ).columns
             schema_columns.extend(
                 ColumnSpec(header, header, self._unknown(RoundColumn()))
@@ -66,3 +61,6 @@ class DriverResultsSchemaFactory:
 
     def _unknown(self, base_column: BaseColumn) -> UnknownValueColumn:
         return UnknownValueColumn(base_column, unknown_value=self._unknown_value)
+
+
+__all__ = ["DriverResultsSchemaFactory"]

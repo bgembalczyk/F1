@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 # ---------------------------------------------------------------------------
 
 
-def _make_inputs(**kwargs: Any) -> ecq.GateInputs:
+def make_inputs(**kwargs: Any) -> ecq.GateInputs:
     defaults: dict[str, Any] = {
         "global_coverage": 90.0,
         "current_file_coverages": {},
@@ -220,19 +220,19 @@ def test_validate_progressive_threshold_invalid_types() -> None:
 
 @pytest.mark.unit()
 def test_evaluate_global_threshold_passes_when_above_threshold() -> None:
-    inputs = _make_inputs(global_coverage=86.0, current_threshold=85.0)
+    inputs = make_inputs(global_coverage=86.0, current_threshold=85.0)
     assert ecq._evaluate_global_threshold(inputs) == []
 
 
 @pytest.mark.unit()
 def test_evaluate_global_threshold_passes_at_exact_threshold() -> None:
-    inputs = _make_inputs(global_coverage=85.0, current_threshold=85.0)
+    inputs = make_inputs(global_coverage=85.0, current_threshold=85.0)
     assert ecq._evaluate_global_threshold(inputs) == []
 
 
 @pytest.mark.unit()
 def test_evaluate_global_threshold_fails_when_below() -> None:
-    inputs = _make_inputs(global_coverage=76.15, current_threshold=85.0)
+    inputs = make_inputs(global_coverage=76.15, current_threshold=85.0)
     violations = ecq._evaluate_global_threshold(inputs)
     assert len(violations) == 1
     assert "76.15" in violations[0].message
@@ -246,7 +246,7 @@ def test_evaluate_global_threshold_fails_when_below() -> None:
 
 @pytest.mark.unit()
 def test_evaluate_changed_files_no_violations_when_no_regression() -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         changed_files={"src/module.py"},
         current_file_coverages={"src/module.py": 90.0},
         baseline_file_coverages={"src/module.py": 85.0},
@@ -256,7 +256,7 @@ def test_evaluate_changed_files_no_violations_when_no_regression() -> None:
 
 @pytest.mark.unit()
 def test_evaluate_changed_files_regression_detected() -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         changed_files={"src/module.py"},
         current_file_coverages={"src/module.py": 80.0},
         baseline_file_coverages={"src/module.py": 90.0},
@@ -269,7 +269,7 @@ def test_evaluate_changed_files_regression_detected() -> None:
 
 @pytest.mark.unit()
 def test_evaluate_changed_files_skips_non_python() -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         changed_files={"README.md", "data.json"},
         current_file_coverages={},
         baseline_file_coverages={},
@@ -279,7 +279,7 @@ def test_evaluate_changed_files_skips_non_python() -> None:
 
 @pytest.mark.unit()
 def test_evaluate_changed_files_skips_if_no_baseline() -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         changed_files={"src/new_file.py"},
         current_file_coverages={"src/new_file.py": 50.0},
         baseline_file_coverages={},
@@ -289,7 +289,7 @@ def test_evaluate_changed_files_skips_if_no_baseline() -> None:
 
 @pytest.mark.unit()
 def test_evaluate_changed_files_legacy_improvement_required() -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         changed_files={"src/legacy.py"},
         current_file_coverages={"src/legacy.py": 60.1},
         baseline_file_coverages={"src/legacy.py": 60.0},
@@ -304,7 +304,7 @@ def test_evaluate_changed_files_legacy_improvement_required() -> None:
 
 @pytest.mark.unit()
 def test_evaluate_changed_files_legacy_improvement_sufficient() -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         changed_files={"src/legacy.py"},
         current_file_coverages={"src/legacy.py": 61.0},
         baseline_file_coverages={"src/legacy.py": 60.0},
@@ -317,7 +317,7 @@ def test_evaluate_changed_files_legacy_improvement_sufficient() -> None:
 
 @pytest.mark.unit()
 def test_evaluate_changed_files_skips_missing_from_current() -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         changed_files={"src/module.py"},
         current_file_coverages={},
         baseline_file_coverages={"src/module.py": 80.0},
@@ -332,7 +332,7 @@ def test_evaluate_changed_files_skips_missing_from_current() -> None:
 
 @pytest.mark.unit()
 def test_format_and_print_result_ok(capsys: pytest.CaptureFixture[str]) -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         global_coverage=90.0,
         current_sprint=1,
         current_threshold=85.0,
@@ -345,7 +345,7 @@ def test_format_and_print_result_ok(capsys: pytest.CaptureFixture[str]) -> None:
 
 @pytest.mark.unit()
 def test_format_and_print_result_failed(capsys: pytest.CaptureFixture[str]) -> None:
-    inputs = _make_inputs(
+    inputs = make_inputs(
         global_coverage=70.0,
         current_sprint=1,
         current_threshold=85.0,

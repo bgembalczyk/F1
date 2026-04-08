@@ -18,3 +18,6 @@ class RestartStatusColumn(BackgroundMixin, BaseColumn):
             "S": "race_was_restarted_or_resumed_without_completing_original_distance",
         }
         return {"code": code, "description": mapping.get(code)}
+
+
+__all__ = ["RestartStatusColumn"]

@@ -6,7 +6,7 @@ from unittest.mock import MagicMock
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
-def _make_classifier(query_return=None, raise_exc=None):
+def make_classifier(query_return=None, raise_exc=None):
     client = MagicMock()
     if raise_exc is not None:
         client.query.side_effect = raise_exc
@@ -23,7 +23,7 @@ class TestClassifySuccessPath:
             "engine_constructor": [],
             "grand_prix": [],
         }
-        classifier = _make_classifier(query_return=raw)
+        classifier = make_classifier(query_return=raw)
         result = classifier.classify(
             paren_content="Senna",
             team_name="McLaren",
@@ -52,7 +52,7 @@ class TestClassifySuccessPath:
         assert "Year" in call_args or "Sponsor" in call_args
 
     def test_classify_returns_empty_result_on_exception(self):
-        classifier = _make_classifier(raise_exc=RuntimeError("API failure"))
+        classifier = make_classifier(raise_exc=RuntimeError("API failure"))
         result = classifier.classify(
             paren_content="boom",
             team_name="Lotus",

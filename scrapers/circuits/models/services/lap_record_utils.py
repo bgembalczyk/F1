@@ -177,3 +177,14 @@ def build_lap_record_key(
     }
 
     return tuple(parts[name] for name in key_order)
+
+
+__all__ = [
+    "extract_year_from_event",
+    "extract_year",
+    "normalize_lap_record_entity",
+    "parse_lap_record_time_from_record",
+    "has_meaningful_value",
+    "select_best_field_with_url",
+    "build_lap_record_key",
+]

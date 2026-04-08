@@ -59,3 +59,6 @@ class TimeColumn(BaseColumn):
 
         # nie udało się sparsować - zwracamy tylko tekst
         return NormalizedTime(text=text, seconds=None)
+
+
+__all__ = ["TimeColumn"]

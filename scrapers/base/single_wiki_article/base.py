@@ -12,9 +12,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
 from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
-from scrapers.base.single_wiki_article.section_selection_strategy import (
-    SectionSelectionStrategy,
-)
+from scrapers.base.single_wiki_article.section_selection_strategy import SectionSelectionStrategy
 from scrapers.wiki.scraper import WikiScraper
 
 

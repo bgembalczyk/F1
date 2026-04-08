@@ -5,17 +5,11 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.base.adapters.row_background import HtmlRowBackgroundColorAdapter
-from scrapers.seasons.columns.helpers.race_result.background_mapper import (
-    RaceResultBackgroundMapper,
-)
+from scrapers.seasons.columns.helpers.race_result.background_mapper import RaceResultBackgroundMapper
 from scrapers.seasons.columns.helpers.race_result.helpers import append_note
+from scrapers.seasons.columns.helpers.race_result.rules import FatalAccidentRule
+from scrapers.seasons.columns.helpers.race_result.rules import MarkBasedEligibilityRule
 from scrapers.seasons.columns.helpers.race_result.rules.context import ResultRuleContext
-from scrapers.seasons.columns.helpers.race_result.rules.fatal_accident import (
-    FatalAccidentRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.mark_based_eligibility import (
-    MarkBasedEligibilityRule,
-)
 from scrapers.seasons.helpers import season_filename
 
 # ---------------------------------------------------------------------------

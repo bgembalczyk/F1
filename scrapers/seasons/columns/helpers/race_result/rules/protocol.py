@@ -6,3 +6,6 @@ from scrapers.seasons.columns.helpers.race_result.rules.context import ResultRul
 
 class ResultRule(Protocol):
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None: ...
+
+
+__all__ = ["ResultRule"]

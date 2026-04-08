@@ -5,18 +5,12 @@ import warnings
 
 import pytest
 
-from scrapers.wiki.sources_registry import WikiSourceDefinition
-from scrapers.wiki.sources_registry import ensure_unique_or_raise
-from scrapers.wiki.sources_registry import validate_canonical_source
-from scrapers.wiki.sources_registry import get_source_by_list_filename
-from scrapers.wiki.sources_registry import get_source_by_seed_name
-from scrapers.wiki.sources_registry import get_source_by_source_name
-from scrapers.wiki.sources_registry import resolve_list_filename
+from scrapers.wiki import sources_registry as registry
 
 
 class TestWikiSourceDefinitionProperties:
     def test_output_category_alias(self):
-        source = WikiSourceDefinition(
+        source = registry.WikiSourceDefinition(
             domain="drivers",
             seed_name="drivers",
             source_name="drivers",
@@ -25,7 +19,7 @@ class TestWikiSourceDefinitionProperties:
         assert source.output_category == "drivers"
 
     def test_list_filename_alias(self):
-        source = WikiSourceDefinition(
+        source = registry.WikiSourceDefinition(
             domain="drivers",
             seed_name="drivers",
             source_name="drivers",
@@ -38,7 +32,7 @@ class TestResolveListFilename:
     def test_legacy_filename_emits_warning(self):
         with warnings.catch_warnings(record=True) as caught:
             warnings.simplefilter("always", DeprecationWarning)
-            result = resolve_list_filename(
+            result = registry.resolve_list_filename(
                 "f1_engine_manufacturers_indianapolis_only.json",
                 warn=True,
             )
@@ -46,13 +40,13 @@ class TestResolveListFilename:
         assert any(item.category is DeprecationWarning for item in caught)
 
     def test_canonical_filename_passes_through(self):
-        result = resolve_list_filename("f1_drivers.json", warn=True)
+        result = registry.resolve_list_filename("f1_drivers.json", warn=True)
         assert result == "f1_drivers.json"
 
     def test_no_warn_does_not_emit(self):
         with warnings.catch_warnings(record=True) as caught:
             warnings.simplefilter("always", DeprecationWarning)
-            result = resolve_list_filename(
+            result = registry.resolve_list_filename(
                 "f1_engine_manufacturers_indianapolis_only.json",
                 warn=False,
             )
@@ -62,17 +56,17 @@ class TestResolveListFilename:
 
 class TestGetSourceByListFilename:
     def test_resolves_canonical_filename(self):
-        source = get_source_by_list_filename("f1_drivers.json", warn=False)
+        source = registry.get_source_by_list_filename("f1_drivers.json", warn=False)
         assert source.seed_name == "drivers"
 
     def test_raises_key_error_for_unknown_filename(self):
         with pytest.raises(KeyError, match="Unknown wiki source list filename"):
-            get_source_by_list_filename("nonexistent_file.json", warn=False)
+            registry.get_source_by_list_filename("nonexistent_file.json", warn=False)
 
     def test_resolves_legacy_filename_with_warning(self):
         with warnings.catch_warnings(record=True) as caught:
             warnings.simplefilter("always", DeprecationWarning)
-            source = get_source_by_list_filename(
+            source = registry.get_source_by_list_filename(
                 "f1_engine_manufacturers_indianapolis_only.json",
                 warn=True,
             )
@@ -83,37 +77,37 @@ class TestGetSourceByListFilename:
 class TestGetSourceBySeedName:
     def test_raises_key_error_for_unknown_seed(self):
         with pytest.raises(KeyError, match="Unknown wiki source seed_name"):
-            get_source_by_seed_name("nonexistent_seed", warn=False)
+            registry.get_source_by_seed_name("nonexistent_seed", warn=False)
 
 
 class TestGetSourceBySourceName:
     def test_raises_key_error_for_unknown_source_name(self):
         with pytest.raises(KeyError, match="Unknown wiki source source_name"):
-            get_source_by_source_name("nonexistent_source_name")
+            registry.get_source_by_source_name("nonexistent_source_name")
 
 
 class TestEnsureUniqueOrRaise:
     def test_adds_to_seen_when_not_present(self):
         seen: set[str] = set()
-        ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
+        registry.ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
         assert "drivers" in seen
 
     def test_raises_when_already_present(self):
         seen = {"drivers"}
         with pytest.raises(ValueError, match="dup"):
-            ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
+            registry.ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
 
 
 class TestValidateCanonicalSource:
     def test_raises_for_empty_domain(self):
-        source = WikiSourceDefinition(
+        source = registry.WikiSourceDefinition(
             domain="",
             seed_name="test_seed",
             source_name="test_source",
             output_file="test.json",
         )
         with pytest.raises(ValueError, match="Empty domain"):
-            validate_canonical_source(
+            registry.validate_canonical_source(
                 source=source,
                 seen_seed_names=set(),
                 seen_source_names=set(),
@@ -121,14 +115,14 @@ class TestValidateCanonicalSource:
             )
 
     def test_raises_for_whitespace_domain(self):
-        source = WikiSourceDefinition(
+        source = registry.WikiSourceDefinition(
             domain="   ",
             seed_name="test_seed",
             source_name="test_source",
             output_file="test.json",
         )
         with pytest.raises(ValueError, match="Empty domain"):
-            validate_canonical_source(
+            registry.validate_canonical_source(
                 source=source,
                 seen_seed_names=set(),
                 seen_source_names=set(),
@@ -136,14 +130,14 @@ class TestValidateCanonicalSource:
             )
 
     def test_raises_for_duplicate_seed_name(self):
-        source = WikiSourceDefinition(
+        source = registry.WikiSourceDefinition(
             domain="drivers",
             seed_name="drivers",
             source_name="drivers_alt",
             output_file="drivers_alt.json",
         )
         with pytest.raises(ValueError, match="Duplicate canonical seed_name"):
-            validate_canonical_source(
+            registry.validate_canonical_source(
                 source=source,
                 seen_seed_names={"drivers"},
                 seen_source_names=set(),
@@ -151,14 +145,14 @@ class TestValidateCanonicalSource:
             )
 
     def test_raises_for_duplicate_source_name(self):
-        source = WikiSourceDefinition(
+        source = registry.WikiSourceDefinition(
             domain="drivers",
             seed_name="drivers_new",
             source_name="drivers_existing",
             output_file="drivers_new.json",
         )
         with pytest.raises(ValueError, match="Duplicate canonical source_name"):
-            validate_canonical_source(
+            registry.validate_canonical_source(
                 source=source,
                 seen_seed_names=set(),
                 seen_source_names={"drivers_existing"},
@@ -166,14 +160,14 @@ class TestValidateCanonicalSource:
             )
 
     def test_raises_for_duplicate_output_file(self):
-        source = WikiSourceDefinition(
+        source = registry.WikiSourceDefinition(
             domain="drivers",
             seed_name="drivers_new",
             source_name="drivers_new",
             output_file="f1_drivers.json",
         )
         with pytest.raises(ValueError, match="Duplicate canonical list_filename"):
-            validate_canonical_source(
+            registry.validate_canonical_source(
                 source=source,
                 seen_seed_names=set(),
                 seen_source_names=set(),
@@ -182,14 +176,14 @@ class TestValidateCanonicalSource:
 
     def test_raises_when_source_name_conflicts_with_seed_name(self):
         # source_name != seed_name but source_name is already in seen_seed_names
-        source = WikiSourceDefinition(
+        source = registry.WikiSourceDefinition(
             domain="drivers",
             seed_name="drivers_new",
             source_name="existing_seed",
             output_file="drivers_new.json",
         )
         with pytest.raises(ValueError, match="naming conflict"):
-            validate_canonical_source(
+            registry.validate_canonical_source(
                 source=source,
                 seen_seed_names={"existing_seed"},
                 seen_source_names=set(),

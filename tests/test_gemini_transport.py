@@ -7,7 +7,7 @@ import pytest
 from infrastructure.gemini.transport import GeminiTransport
 
 
-class _DummyResponse:
+class DummyResponse:
     def __init__(self, body: str) -> None:
         self._body = body.encode("utf-8")
 
@@ -21,7 +21,7 @@ class _DummyResponse:
         return None
 
 
-def _transport() -> GeminiTransport:
+def transport_func() -> GeminiTransport:
     return GeminiTransport(
         api_key="test-key",
         timeout=5,
@@ -30,10 +30,10 @@ def _transport() -> GeminiTransport:
 
 
 def test_generate_returns_decoded_response(monkeypatch: pytest.MonkeyPatch) -> None:
-    transport = _transport()
+    transport = transport_func()
 
     def fake_urlopen(*_args, **_kwargs):
-        return _DummyResponse('{"candidates": []}')
+        return DummyResponse('{"candidates": []}')
 
     monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
 
@@ -47,7 +47,7 @@ def test_generate_returns_decoded_response(monkeypatch: pytest.MonkeyPatch) -> N
 
 
 def test_generate_wraps_http_error(monkeypatch: pytest.MonkeyPatch) -> None:
-    transport = _transport()
+    transport = transport_func()
 
     def fake_urlopen(*_args, **_kwargs):
         raise urllib.error.HTTPError(
@@ -65,10 +65,10 @@ def test_generate_wraps_http_error(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 def test_generate_raises_for_invalid_json(monkeypatch: pytest.MonkeyPatch) -> None:
-    transport = _transport()
+    transport = transport_func()
 
     def fake_urlopen(*_args, **_kwargs):
-        return _DummyResponse("not-json")
+        return DummyResponse("not-json")
 
     monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
 

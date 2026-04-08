@@ -7,31 +7,31 @@ from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.helpers.wiki import is_reference_link
 
 
-def _tag(html: str):
+def tag_func(html: str):
     soup = BeautifulSoup(html, "html.parser")
     return soup.find("a")
 
 
 def test_reference_link_via_cite_note():
-    tag = _tag('<a href="#cite_note-1">[1]</a>')
+    tag = tag_func('<a href="#cite_note-1">[1]</a>')
 
     assert is_reference_link(tag)
 
 
 def test_reference_link_via_class():
-    tag = _tag('<a href="/wiki/Test" class="reference">[ref]</a>')
+    tag = tag_func('<a href="/wiki/Test" class="reference">[ref]</a>')
 
     assert is_reference_link(tag)
 
 
 def test_local_anchor_without_text_is_reference_even_when_allowed():
-    tag = _tag('<a href="#section"></a>')
+    tag = tag_func('<a href="#section"></a>')
 
     assert is_reference_link(tag, allow_local_anchors=True)
 
 
 def test_local_anchor_with_text_respects_allow_local_anchors():
-    tag = _tag('<a href="#section">Section</a>')
+    tag = tag_func('<a href="#section">Section</a>')
 
     assert not is_reference_link(tag, allow_local_anchors=True)
     assert is_reference_link(tag, allow_local_anchors=False)
@@ -45,13 +45,13 @@ def test_local_anchor_with_text_respects_allow_local_anchors():
     ],
 )
 def test_local_anchor_with_text_allows_toggle(allow_local_anchors, expected):
-    tag = _tag('<a href="#section">Section</a>')
+    tag = tag_func('<a href="#section">Section</a>')
 
     assert is_reference_link(tag, allow_local_anchors=allow_local_anchors) is expected
 
 
 def test_regular_link_is_not_reference():
-    tag = _tag('<a href="/wiki/Example">Example</a>')
+    tag = tag_func('<a href="/wiki/Example">Example</a>')
 
     assert not is_reference_link(tag)
 

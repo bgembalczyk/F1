@@ -11,8 +11,8 @@ from scrapers.wiki.component_metadata import build_component_metadata
 from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
 from scrapers.wiki.discovery import DiscoveredComponent
 from scrapers.wiki.discovery import DiscoveredRunnerProtocol
-from scrapers.wiki.discovery import _clear_component_metadata_cache
-from scrapers.wiki.discovery import _discover_components_in_module
+from scrapers.wiki.discovery import clear_component_metadata_cache
+from scrapers.wiki.discovery import discover_components_in_module
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 
@@ -37,8 +37,8 @@ def test_discovery_does_not_mutate_imported_class_metadata() -> None:
 
     raw_before = _ListScraper.COMPONENT_METADATA
 
-    _clear_component_metadata_cache()
-    discovered = _discover_components_in_module(module)
+    clear_component_metadata_cache()
+    discovered = discover_components_in_module(module)
 
     assert len(discovered) == 1
     assert isinstance(discovered[0].metadata, ComponentMetadata)
@@ -69,7 +69,7 @@ def test_discovery_validates_list_scraper_contract() -> None:
     module.BrokenListScraper = _BrokenListScraper
 
     with pytest.raises(TypeError, match="must expose CONFIG.url"):
-        _discover_components_in_module(module)
+        discover_components_in_module(module)
 
 
 def test_build_layer_one_runner_map_discovered_returns_runner_contract(

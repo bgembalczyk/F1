@@ -7,3 +7,6 @@ from scrapers.base.table.columns.types.base import BaseColumn
 class TextColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         return ctx.clean_text or None
+
+
+__all__ = ["TextColumn"]

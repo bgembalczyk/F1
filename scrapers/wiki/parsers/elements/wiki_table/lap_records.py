@@ -19,3 +19,6 @@ class LapRecordsWikiTableParser(MappedWikiTableParser):
         "Year": "year",
         "Series": "series",
     }
+
+
+__all__ = ["LapRecordsWikiTableParser"]

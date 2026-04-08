@@ -11,16 +11,10 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scrapers.races.red_flagged_races_scraper.combined import (
-    NonChampionshipsRacesSubSectionParser,
-)
+from scrapers.races.red_flagged_races_scraper.combined import NonChampionshipsRacesSubSectionParser
 from scrapers.races.red_flagged_races_scraper.combined import RedFlaggedRacesScraper
-from scrapers.races.red_flagged_races_scraper.combined import (
-    RedFlaggedRacesSectionParser,
-)
-from scrapers.races.red_flagged_races_scraper.combined import (
-    WorldChampionshipsRacesTableParser,
-)
+from scrapers.races.red_flagged_races_scraper.combined import RedFlaggedRacesSectionParser
+from scrapers.races.red_flagged_races_scraper.combined import WorldChampionshipsRacesTableParser
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))

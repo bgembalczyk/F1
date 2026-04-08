@@ -103,6 +103,3 @@ class TyreManufacturersScraper(F1TableScraper):
         parser = ManufacturersSectionParser()
         self.section_parser = parser
         self.body_content_parser.content_text_parser.section_parser = parser
-
-
-TyreManufacturersBySeasonScraper = TyreManufacturersScraper

@@ -44,7 +44,7 @@ def test_build_generated_section_ends_with_newline() -> None:
 @pytest.mark.unit()
 def test_replace_between_markers_replaces_section() -> None:
     doc = f"Before\n{gcm.BEGIN_MARKER}\nOld content\n{gcm.END_MARKER}\nAfter"
-    result = gcm._replace_between_markers(doc, "New content\n")
+    result = gcm.replace_between_markers(doc, "New content\n")
     assert "Old content" not in result
     assert "New content" in result
     assert "Before" in result
@@ -55,13 +55,13 @@ def test_replace_between_markers_replaces_section() -> None:
 def test_replace_between_markers_raises_on_missing_markers() -> None:
     doc = "No markers here"
     with pytest.raises(ValueError, match="markery"):
-        gcm._replace_between_markers(doc, "replacement")
+        gcm.replace_between_markers(doc, "replacement")
 
 
 @pytest.mark.unit()
 def test_replace_between_markers_preserves_markers() -> None:
     doc = f"A\n{gcm.BEGIN_MARKER}\nX\n{gcm.END_MARKER}\nB"
-    result = gcm._replace_between_markers(doc, "Y\n")
+    result = gcm.replace_between_markers(doc, "Y\n")
     assert gcm.BEGIN_MARKER in result
     assert gcm.END_MARKER in result
 

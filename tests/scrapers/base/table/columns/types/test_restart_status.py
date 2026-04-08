@@ -5,7 +5,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
 
 
-def _ctx(clean_text: str | None) -> ColumnContext:
+def ctx(clean_text: str | None) -> ColumnContext:
     return ColumnContext(
         header="R",
         key="restart_status",
@@ -34,7 +34,7 @@ def _ctx(clean_text: str | None) -> ColumnContext:
 )
 def test_restart_status_known_codes(text, expected_code, expected_description) -> None:
     col = RestartStatusColumn()
-    result = col.parse(_ctx(text))
+    result = col.parse(ctx(text))
     assert result is not None
     assert result["code"] == expected_code
     assert result["description"] == expected_description
@@ -42,7 +42,7 @@ def test_restart_status_known_codes(text, expected_code, expected_description) -
 
 def test_restart_status_unknown_code_returns_none_description() -> None:
     col = RestartStatusColumn()
-    result = col.parse(_ctx("X"))
+    result = col.parse(ctx("X"))
     assert result is not None
     assert result["code"] == "X"
     assert result["description"] is None
@@ -50,15 +50,15 @@ def test_restart_status_unknown_code_returns_none_description() -> None:
 
 def test_restart_status_empty_text_returns_none() -> None:
     col = RestartStatusColumn()
-    assert col.parse(_ctx("")) is None
-    assert col.parse(_ctx(None)) is None
-    assert col.parse(_ctx("   ")) is None
+    assert col.parse(ctx("")) is None
+    assert col.parse(ctx(None)) is None
+    assert col.parse(ctx("   ")) is None
 
 
 def test_restart_status_column() -> None:
     col = RestartStatusColumn()
-    ctx = _ctx("Y")
-    result = col.parse(ctx)
+    context = ctx("Y")
+    result = col.parse(context)
     assert result == {
         "code": "Y",
         "description": "race_was_restarted_over_original_distance",
@@ -67,4 +67,4 @@ def test_restart_status_column() -> None:
 
 def test_restart_status_column_empty_returns_none() -> None:
     col = RestartStatusColumn()
-    assert col.parse(_ctx("")) is None
+    assert col.parse(ctx("")) is None

@@ -9,7 +9,7 @@ from layers.zero.policies import NullLayerZeroJobHook
 from scrapers.base.run_config import RunConfig
 
 
-class _LayerExecutorStub(LayerExecutorProtocol):
+class LayerExecutorStub(LayerExecutorProtocol):
     def __init__(self) -> None:
         self.calls: list[tuple[RunConfig, Path]] = []
 
@@ -17,7 +17,7 @@ class _LayerExecutorStub(LayerExecutorProtocol):
         self.calls.append((run_config, base_wiki_dir))
 
 
-class _MergeServiceStub:
+class MergeServiceStub:
     def merge(self, _base_wiki_dir: Path) -> None:
         return
 
@@ -50,14 +50,14 @@ def test_pipeline_executor_protocol_is_implemented_by_production_executors() -> 
 def test_run_layer_zero_uses_private_run_config_builder(tmp_path: Path) -> None:
     base_wiki_dir = tmp_path / "wiki"
     base_debug_dir = tmp_path / "debug"
-    layer_zero_executor = _LayerExecutorStub()
-    layer_one_executor = _LayerExecutorStub()
+    layer_zero_executor = LayerExecutorStub()
+    layer_one_executor = LayerExecutorStub()
     app = WikiPipelineApplication(
         base_wiki_dir=base_wiki_dir,
         base_debug_dir=base_debug_dir,
         layer_zero_executor=layer_zero_executor,
         layer_one_executor=layer_one_executor,
-        layer_zero_merge_service=_MergeServiceStub(),
+        layer_zero_merge_service=MergeServiceStub(),
     )
 
     app.run_layer_zero()
@@ -72,14 +72,14 @@ def test_run_layer_zero_uses_private_run_config_builder(tmp_path: Path) -> None:
 def test_run_layer_one_uses_private_run_config_builder(tmp_path: Path) -> None:
     base_wiki_dir = tmp_path / "wiki"
     base_debug_dir = tmp_path / "debug"
-    layer_zero_executor = _LayerExecutorStub()
-    layer_one_executor = _LayerExecutorStub()
+    layer_zero_executor = LayerExecutorStub()
+    layer_one_executor = LayerExecutorStub()
     app = WikiPipelineApplication(
         base_wiki_dir=base_wiki_dir,
         base_debug_dir=base_debug_dir,
         layer_zero_executor=layer_zero_executor,
         layer_one_executor=layer_one_executor,
-        layer_zero_merge_service=_MergeServiceStub(),
+        layer_zero_merge_service=MergeServiceStub(),
     )
 
     app.run_layer_one()

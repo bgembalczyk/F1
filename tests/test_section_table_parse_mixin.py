@@ -5,7 +5,7 @@ from scrapers.base.mixins.section_table_parse import DeclarativeSectionTablePars
 from scrapers.base.mixins.section_table_parse import SectionTableParseMixin
 
 
-class _BaseScraper:
+class BaseScraper:
     def __init__(self, section_id="Section"):
         self.config = SimpleNamespace(section_id=section_id)
         self.include_urls = False
@@ -15,12 +15,12 @@ class _BaseScraper:
         return ["fallback"]
 
 
-class _Scraper(SectionTableParseMixin, _BaseScraper):
+class Scraper(SectionTableParseMixin, BaseScraper):
     pass
 
 
 def test_parse_section_or_fallback_uses_legacy_flow_when_no_section_id():
-    scraper = _Scraper(section_id=None)
+    scraper = Scraper(section_id=None)
 
     records = scraper.parse_section_or_fallback(
         object(),
@@ -31,7 +31,7 @@ def test_parse_section_or_fallback_uses_legacy_flow_when_no_section_id():
     assert records == ["fallback"]
 
 
-class _DeclarativeScraper(DeclarativeSectionTableParseMixin, _BaseScraper):
+class DeclarativeScraper(DeclarativeSectionTableParseMixin, BaseScraper):
     domain = "constructors"
     section_label = "Current constructors"
 

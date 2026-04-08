@@ -6,7 +6,7 @@ import subprocess
 from dataclasses import dataclass
 from typing import Any
 
-_HUNK_RE = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@")
+HUNK_RE = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@")
 GIT_BIN = shutil.which("git") or "git"
 
 
@@ -16,7 +16,7 @@ class GitCommandResult:
     stdout: str
 
 
-def _run_git_and_capture_stdout(args: list[str]) -> GitCommandResult:
+def run_git_and_capture_stdout(args: list[str]) -> GitCommandResult:
     # nosec B603 -- zaufane wywołanie lokalnego `git`
     proc = subprocess.run(
         [GIT_BIN, *args],
@@ -27,7 +27,7 @@ def _run_git_and_capture_stdout(args: list[str]) -> GitCommandResult:
     return GitCommandResult(returncode=proc.returncode, stdout=proc.stdout or "")
 
 
-def _as_int(value: Any) -> int:
+def as_int(value: Any) -> int:
     try:
         return int(value)
     except (TypeError, ValueError):
@@ -48,12 +48,12 @@ def parse_added_lines_from_unified_diff(diff_text: str) -> dict[str, set[int]]:
         if not raw_line.startswith("@@") or not current_file:
             continue
 
-        match = _HUNK_RE.match(raw_line)
+        match = HUNK_RE.match(raw_line)
         if not match:
             continue
 
-        start = _as_int(match.group(1))
-        count = _as_int(match.group(2) or 1)
+        start = as_int(match.group(1))
+        count = as_int(match.group(2) or 1)
         if count <= 0:
             continue
 
@@ -83,7 +83,7 @@ def list_changed_files(base_sha: str, head_sha: str) -> list[str]:
     if not base_sha or not head_sha:
         return []
 
-    result = _run_git_and_capture_stdout(
+    result = run_git_and_capture_stdout(
         [
             "diff",
             "--name-only",
@@ -102,7 +102,7 @@ def collect_commit_messages(base_sha: str, head_sha: str) -> str:
     if not base_sha or not head_sha:
         return ""
 
-    result = _run_git_and_capture_stdout(
+    result = run_git_and_capture_stdout(
         ["log", "--format=%B", f"{base_sha}..{head_sha}"],
     )
     if result.returncode != 0:
@@ -121,7 +121,7 @@ def get_unified_diff(
     if not changed_files:
         return GitCommandResult(returncode=0, stdout="")
 
-    return _run_git_and_capture_stdout(
+    return run_git_and_capture_stdout(
         [
             "diff",
             "--unified=0",

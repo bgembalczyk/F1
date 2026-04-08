@@ -1,9 +1,5 @@
-from validation.record_factory_validator import (
-    ModelValidateRecordFactoryValidatorAdapter,
-)
-from validation.record_factory_validator import (
-    ValidateMethodRecordFactoryValidatorAdapter,
-)
+from validation.record_factory_validator import ModelValidateRecordFactoryValidatorAdapter
+from validation.record_factory_validator import ValidateMethodRecordFactoryValidatorAdapter
 from validation.record_factory_validator import ValidateRecordFactoryValidatorAdapter
 from validation.record_factory_validator import adapt_record_factory_validator
 from validation.validator_base import RecordValidator

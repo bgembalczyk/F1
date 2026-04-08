@@ -28,3 +28,6 @@ class PipelineRecord:
             msg = "PipelineRecord input must be a mapping"
             raise TypeError(msg)
         return cls(dict(record))
+
+
+__all__ = ["PipelineRecord"]

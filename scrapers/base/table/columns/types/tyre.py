@@ -31,3 +31,6 @@ class TyreColumn(BaseColumn):
             full_name = TYRE_NAME_BY_CODE.get(code)
             tyres.append({"text": full_name or token, "url": None})
         return tyres or None
+
+
+__all__ = ["TyreColumn"]

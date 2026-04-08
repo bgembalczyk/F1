@@ -16,9 +16,7 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.link_lookup import (
-    build_link_lookup as build_shared_link_lookup,
-)
+from scrapers.base.table.columns.helpers.link_lookup import build_link_lookup
 
 
 class DriverParsingHelpers:
@@ -30,21 +28,6 @@ class DriverParsingHelpers:
     - Parsing driver segments with metadata
     - Extracting driver information from complex cells
     """
-
-    @staticmethod
-    def build_link_lookup(
-        links: list[LinkRecord],
-    ) -> dict[str, list[LinkRecord]]:
-        """
-        Build lookup dictionary mapping driver names to their link records.
-
-        Args:
-            links: List of link records with 'text' and 'url' keys
-
-        Returns:
-            Dictionary mapping lowercase driver names to lists of matching links
-        """
-        return build_shared_link_lookup(links)
 
     @staticmethod
     def parse_segment(
@@ -101,7 +84,7 @@ class DriverParsingHelpers:
         if not ctx.links:
             return None
 
-        link_lookup = DriverParsingHelpers.build_link_lookup(ctx.links)
+        link_lookup = build_link_lookup(ctx.links)
 
         if not ctx.cell:
             if ctx.links:

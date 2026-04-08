@@ -12,3 +12,6 @@ class F2EligibilityRule:
         if "1" in context.footnotes:
             result["points_eligible"] = False
             append_note(result, "ineligible_f2")
+
+
+__all__ = ["F2EligibilityRule"]

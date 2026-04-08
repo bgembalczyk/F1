@@ -9,13 +9,13 @@ import pytest
 
 
 def ensure_optional_deps(*, require_bs4: bool, bs4_skip_reason: str) -> None:
-    _ensure_requests_stub()
-    _ensure_certifi_stub()
-    _ensure_pandas_stub()
-    _ensure_bs4_stub(require_bs4=require_bs4, bs4_skip_reason=bs4_skip_reason)
+    ensure_requests_stub()
+    ensure_certifi_stub()
+    ensure_pandas_stub()
+    ensure_bs4_stub(require_bs4=require_bs4, bs4_skip_reason=bs4_skip_reason)
 
 
-def _module_exists(module_name: str) -> bool:
+def module_exists(module_name: str) -> bool:
     try:
         return importlib.util.find_spec(module_name) is not None
     except ValueError:
@@ -23,8 +23,8 @@ def _module_exists(module_name: str) -> bool:
         return False
 
 
-def _ensure_requests_stub() -> None:
-    if _module_exists("requests"):
+def ensure_requests_stub() -> None:
+    if module_exists("requests"):
         return
     requests_stub = types.ModuleType("requests")
 
@@ -41,15 +41,15 @@ def _ensure_requests_stub() -> None:
     sys.modules["requests"] = requests_stub
 
 
-def _ensure_certifi_stub() -> None:
-    if _module_exists("certifi"):
+def ensure_certifi_stub() -> None:
+    if module_exists("certifi"):
         return
     certifi_stub = types.ModuleType("certifi")
     certifi_stub.where = lambda: ""
     sys.modules["certifi"] = certifi_stub
 
 
-class _StubRow:
+class StubRow:
     def __init__(self, row):
         self._row = row if isinstance(row, dict) else {}
 
@@ -57,15 +57,15 @@ class _StubRow:
         return dict(self._row)
 
 
-class _StubILoc:
+class StubILoc:
     def __init__(self, rows):
         self._rows = rows
 
     def __getitem__(self, index):
-        return _StubRow(self._rows[index])
+        return StubRow(self._rows[index])
 
 
-class _StubDataFrame:
+class StubDataFrame:
     def __init__(self, data=None, *_args, **_kwargs):
         self._rows = data if isinstance(data, list) else []
         first_row = self._rows[0] if self._rows else {}
@@ -73,20 +73,20 @@ class _StubDataFrame:
 
     @property
     def iloc(self):
-        return _StubILoc(self._rows)
+        return StubILoc(self._rows)
 
 
-def _ensure_pandas_stub() -> None:
-    if _module_exists("pandas"):
+def ensure_pandas_stub() -> None:
+    if module_exists("pandas"):
         return
     pandas_stub = types.ModuleType("pandas")
     pandas_stub.__spec__ = importlib.machinery.ModuleSpec("pandas", loader=None)
-    pandas_stub.DataFrame = _StubDataFrame
+    pandas_stub.DataFrame = StubDataFrame
     sys.modules["pandas"] = pandas_stub
 
 
-def _ensure_bs4_stub(*, require_bs4: bool, bs4_skip_reason: str) -> None:
-    if _module_exists("bs4"):
+def ensure_bs4_stub(*, require_bs4: bool, bs4_skip_reason: str) -> None:
+    if module_exists("bs4"):
         return
     if require_bs4:
         pytest.skip(bs4_skip_reason, allow_module_level=True)

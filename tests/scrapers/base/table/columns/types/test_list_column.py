@@ -3,7 +3,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.list import ListColumn
 
 
-def _ctx(clean_text: str | None) -> ColumnContext:
+def ctx(clean_text: str | None) -> ColumnContext:
     return ColumnContext(
         header="Items",
         key="items",
@@ -16,23 +16,23 @@ def _ctx(clean_text: str | None) -> ColumnContext:
 
 
 def test_list_column_empty_text_returns_empty_list() -> None:
-    assert ListColumn().parse(_ctx("")) == []
+    assert ListColumn().parse(ctx("")) == []
 
 
 def test_list_column_none_text_returns_empty_list() -> None:
-    assert ListColumn().parse(_ctx(None)) == []
+    assert ListColumn().parse(ctx(None)) == []
 
 
 def test_list_column_single_item() -> None:
-    result = ListColumn().parse(_ctx("Ferrari"))
+    result = ListColumn().parse(ctx("Ferrari"))
     assert result == ["Ferrari"]
 
 
 def test_list_column_comma_separated() -> None:
-    result = ListColumn().parse(_ctx("Ferrari, McLaren"))
+    result = ListColumn().parse(ctx("Ferrari, McLaren"))
     assert result == ["Ferrari", "McLaren"]
 
 
 def test_list_column_semicolon_separated() -> None:
-    result = ListColumn().parse(_ctx("A; B; C"))
+    result = ListColumn().parse(ctx("A; B; C"))
     assert result == ["A", "B", "C"]

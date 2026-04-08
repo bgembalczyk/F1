@@ -4,7 +4,7 @@ from scrapers.base.errors import ScraperParseError
 from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
 
 
-class _StubHandler:
+class StubHandler:
     def __init__(self, *, should_handle: bool) -> None:
         self.should_handle = should_handle
         self.last_wrapped_url = None
@@ -19,9 +19,9 @@ class _StubHandler:
         return self.should_handle
 
 
-class _ParserHarness(SafeParserMixin):
+class ParserHarness(SafeParserMixin):
     def __init__(self, *, should_handle: bool, url_provider=None) -> None:
-        self.error_handler = _StubHandler(should_handle=should_handle)
+        self.error_handler = StubHandler(should_handle=should_handle)
         self._url_provider = url_provider
 
     def parse(self, fn, *args, **kwargs):
@@ -29,7 +29,7 @@ class _ParserHarness(SafeParserMixin):
 
 
 def test_safe_parse_returns_empty_result_without_degradation() -> None:
-    parser = _ParserHarness(
+    parser = ParserHarness(
         should_handle=True,
         url_provider=lambda: "https://example.com",
     )
@@ -41,7 +41,7 @@ def test_safe_parse_returns_empty_result_without_degradation() -> None:
 
 
 def test_safe_parse_wraps_exception_and_degrades_to_none_on_soft_handle() -> None:
-    parser = _ParserHarness(
+    parser = ParserHarness(
         should_handle=True,
         url_provider=lambda: "https://example.com",
     )
@@ -54,7 +54,7 @@ def test_safe_parse_wraps_exception_and_degrades_to_none_on_soft_handle() -> Non
 
 
 def test_safe_parse_rethrows_wrapped_error_when_soft_handling_disabled() -> None:
-    parser = _ParserHarness(should_handle=False, url_provider=None)
+    parser = ParserHarness(should_handle=False, url_provider=None)
 
     with pytest.raises(ScraperParseError) as exc_info:
         parser.parse(lambda: (_ for _ in ()).throw(ValueError("bad normalizer")))
@@ -64,7 +64,7 @@ def test_safe_parse_rethrows_wrapped_error_when_soft_handling_disabled() -> None
 
 
 def test_safe_parse_rethrows_original_scraper_error_when_already_wrapped() -> None:
-    parser = _ParserHarness(
+    parser = ParserHarness(
         should_handle=False,
         url_provider=lambda: "https://example.com",
     )

@@ -3,9 +3,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.seasons.columns.helpers.constants import SPRINT_POINTS_START_YEAR
-from scrapers.seasons.columns.helpers.race_result.cell_parser import (
-    RaceResultCellParser,
-)
+from scrapers.seasons.columns.helpers.race_result.cell_parser import RaceResultCellParser
 
 HIDDEN_SPAN_CELL_HTML = (
     "<td><span style='position: absolute; left:-9999px'>ghost</span> "

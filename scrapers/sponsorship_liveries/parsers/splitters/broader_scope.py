@@ -103,3 +103,6 @@ class BroaderScopeSplitter:
             for s in (record.get("season") or [])
             if isinstance(s, dict) and s.get("year") in years
         ]
+
+
+__all__ = ["BroaderScopeSplitter"]

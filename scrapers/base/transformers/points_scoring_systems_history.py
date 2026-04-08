@@ -34,3 +34,8 @@ class PointsScoringSystemsHistoryTransformer(RecordTransformer):
                 merged.append(record)
 
         return merged
+
+
+__all__ = [
+    "PointsScoringSystemsHistoryTransformer",
+]

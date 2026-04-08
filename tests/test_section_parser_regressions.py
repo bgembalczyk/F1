@@ -4,7 +4,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.table.columns.types.seasons import _LAST_YEAR_FORMULA_ONE_SEASON
+from scrapers.base.table.columns.types.seasons import LAST_YEAR_FORMULA_ONE_SEASON
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.constructors_list import ConstructorsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
@@ -28,7 +28,7 @@ class FixtureFetcher:
         return self._html
 
 
-def _fixture_html(name: str) -> str:
+def fixture_html(name: str) -> str:
     path = Path("tests/fixtures/section_parsers") / name
     return path.read_text(encoding="utf-8")
 
@@ -55,7 +55,7 @@ def test_former_constructors_section_parser_handles_defunct_alias() -> None:
     ConstructorsListScraper._PARSE_SCOPE_CACHE.clear()
     scraper = ConstructorsListScraper(
         options=ScraperOptions(
-            fetcher=FixtureFetcher(_fixture_html("former_constructors_alias.html")),
+            fetcher=FixtureFetcher(fixture_html("former_constructors_alias.html")),
             include_urls=True,
         ),
         export_scope="former",
@@ -69,7 +69,7 @@ def test_former_constructors_section_parser_handles_defunct_alias() -> None:
     def _season_url(year: int) -> str:
         suffix = (
             "Formula_One_season"
-            if year <= _LAST_YEAR_FORMULA_ONE_SEASON
+            if year <= LAST_YEAR_FORMULA_ONE_SEASON
             else "Formula_One_World_Championship"
         )
         return f"https://en.wikipedia.org/wiki/{year}_{suffix}"

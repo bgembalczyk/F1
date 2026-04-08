@@ -11,11 +11,7 @@ from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import DRIVERS_FATALITIES
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns import types as col
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
@@ -24,18 +20,7 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
-from scrapers.drivers.constants import FATALITIES_AGE_HEADER
-from scrapers.drivers.constants import FATALITIES_CAR_HEADER
-from scrapers.drivers.constants import FATALITIES_CIRCUIT_HEADER
-from scrapers.drivers.constants import FATALITIES_DATE_HEADER
-from scrapers.drivers.constants import FATALITIES_DRIVER_HEADER
-from scrapers.drivers.constants import FATALITIES_EVENT_HEADER
-from scrapers.drivers.constants import FATALITIES_HEADERS
-from scrapers.drivers.constants import FATALITIES_REF_HEADER
-from scrapers.drivers.constants import FATALITIES_SECTION_ID
-from scrapers.drivers.constants import FATALITIES_SESSION_HEADER
-from scrapers.drivers.constants import MARK_F2_CATEGORY
-from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
+from scrapers.drivers import constants
 from scrapers.drivers.helpers.parsers import DriverOrderedTableParser
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.parsers.sections.section import SectionParser
@@ -49,16 +34,16 @@ class FatalitiesTableParser(DriverOrderedTableParser):
     missing_columns_policy = "require_core_fatalities_columns"
     extra_columns_policy = "ignore"
 
-    _required_headers = frozenset(FATALITIES_HEADERS)
+    _required_headers = frozenset(constants.FATALITIES_HEADERS)
     _column_mapping = {
-        FATALITIES_DRIVER_HEADER: "driver",
-        FATALITIES_DATE_HEADER: "date",
-        FATALITIES_AGE_HEADER: "age",
-        FATALITIES_EVENT_HEADER: "event",
-        FATALITIES_CIRCUIT_HEADER: "circuit",
-        FATALITIES_CAR_HEADER: "car",
-        FATALITIES_SESSION_HEADER: "session",
-        FATALITIES_REF_HEADER: "ref",
+        constants.FATALITIES_DRIVER_HEADER: "driver",
+        constants.FATALITIES_DATE_HEADER: "date",
+        constants.FATALITIES_AGE_HEADER: "age",
+        constants.FATALITIES_EVENT_HEADER: "event",
+        constants.FATALITIES_CIRCUIT_HEADER: "circuit",
+        constants.FATALITIES_CAR_HEADER: "car",
+        constants.FATALITIES_SESSION_HEADER: "session",
+        constants.FATALITIES_REF_HEADER: "ref",
     }
 
     def matches(self, headers: list[str], _table_data: dict[str, object]) -> bool:
@@ -109,18 +94,18 @@ class F1FatalitiesListScraper(F1TableScraper):
 
     CONFIG = build_scraper_config(
         url=DRIVERS_FATALITIES.url(),
-        section_id=FATALITIES_SECTION_ID,
-        expected_headers=FATALITIES_HEADERS,
+        section_id=constants.FATALITIES_SECTION_ID,
+        expected_headers=constants.FATALITIES_HEADERS,
         schema=TableSchemaDSL(
             columns=[
-                ColumnSpec(FATALITIES_DRIVER_HEADER, "driver", UrlColumn()),
-                ColumnSpec(FATALITIES_DATE_HEADER, "date", FatalityDateColumn()),
-                ColumnSpec(FATALITIES_AGE_HEADER, "age", IntColumn()),
-                ColumnSpec(FATALITIES_EVENT_HEADER, "event", FatalityEventColumn()),
-                ColumnSpec(FATALITIES_CIRCUIT_HEADER, "circuit", UrlColumn()),
-                ColumnSpec(FATALITIES_CAR_HEADER, "car", UrlColumn()),
-                ColumnSpec(FATALITIES_SESSION_HEADER, "session", TextColumn()),
-                ColumnSpec(FATALITIES_REF_HEADER, "ref", SkipColumn()),
+                ColumnSpec(constants.FATALITIES_DRIVER_HEADER, "driver", col.UrlColumn()),
+                ColumnSpec(constants.FATALITIES_DATE_HEADER, "date", FatalityDateColumn()),
+                ColumnSpec(constants.FATALITIES_AGE_HEADER, "age", col.IntColumn()),
+                ColumnSpec(constants.FATALITIES_EVENT_HEADER, "event", FatalityEventColumn()),
+                ColumnSpec(constants.FATALITIES_CIRCUIT_HEADER, "circuit", col.UrlColumn()),
+                ColumnSpec(constants.FATALITIES_CAR_HEADER, "car", col.UrlColumn()),
+                ColumnSpec(constants.FATALITIES_SESSION_HEADER, "session", col.TextColumn()),
+                ColumnSpec(constants.FATALITIES_REF_HEADER, "ref", col.SkipColumn()),
             ],
         ),
         record_factory=RECORD_FACTORIES.builders("fatality"),
@@ -142,15 +127,15 @@ class F1FatalitiesListScraper(F1TableScraper):
     # Kept here for backward compatibility if they are used elsewhere
     @staticmethod
     def _parse_date(ctx: ColumnContext) -> str | None:
-        return parse_date_with_category_marker(ctx, MARK_F2_CATEGORY)
+        return parse_date_with_category_marker(ctx, constants.MARK_F2_CATEGORY)
 
     @staticmethod
     def _parse_formula_category(ctx: ColumnContext) -> str | None:
-        return parse_formula_category(ctx, MARK_F2_CATEGORY)
+        return parse_formula_category(ctx, constants.MARK_F2_CATEGORY)
 
     @staticmethod
     def _parse_event(ctx: ColumnContext) -> Any:
-        championship = MARK_NON_CHAMPIONSHIP_EVENT not in (ctx.raw_text or "")
-        auto_value = AutoColumn().parse(ctx)
+        championship = constants.MARK_NON_CHAMPIONSHIP_EVENT not in (ctx.raw_text or "")
+        auto_value = col.AutoColumn().parse(ctx)
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}

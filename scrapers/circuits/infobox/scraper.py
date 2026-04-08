@@ -11,9 +11,7 @@ from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.base.types import ExportableRecord
 from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
-from scrapers.circuits.infobox.services.additional_info import (
-    CircuitAdditionalInfoParser,
-)
+from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser

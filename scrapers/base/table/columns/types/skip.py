@@ -7,3 +7,6 @@ from scrapers.base.table.columns.types.base import BaseColumn
 class SkipColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         return ctx.skip_sentinel
+
+
+__all__ = ["SkipColumn"]

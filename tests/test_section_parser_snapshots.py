@@ -9,13 +9,13 @@ from tests._section_parser_fixture_pattern import SNAPSHOT_CASES_BY_DOMAIN
 from tests._section_parser_fixture_pattern import iter_snapshot_cases
 
 
-def _parse_sections(html: str) -> list[dict]:
+def parse_sections(html: str) -> list[dict]:
     soup = BeautifulSoup(html, "html.parser")
     parsed = ContentTextParser().parse(soup.find("div", id="mw-content-text"))
     return parsed["sections"]
 
 
-def _snapshot_payload(sections: list[dict]) -> list[dict]:
+def snapshot_payload(sections: list[dict]) -> list[dict]:
     payload = []
     for section in sections:
         payload.append(
@@ -40,7 +40,7 @@ def _snapshot_payload(sections: list[dict]) -> list[dict]:
     ids=lambda case: f"{case.domain}-{case.variant}",
 )
 def test_snapshot_section_parser_contract_per_domain(fixture) -> None:
-    snapshot = _snapshot_payload(_parse_sections(fixture.html))
+    snapshot = snapshot_payload(parse_sections(fixture.html))
 
     assert snapshot[1]["section_id"] == fixture.expected_section_id
     assert fixture.expected_kind in snapshot[1]["kinds"]

@@ -4,7 +4,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 
 
-def _ctx(
+def ctx(
     *,
     clean_text: str | None,
     links: list[dict[str, str | None]],
@@ -23,14 +23,14 @@ def _ctx(
 def test_parse_location_returns_none_for_empty_text_and_links() -> None:
     column = LocationColumn()
 
-    assert column.parse(_ctx(clean_text="", links=[])) is None
+    assert column.parse(ctx(clean_text="", links=[])) is None
 
 
 def test_parse_location_with_link_and_layout_suffix() -> None:
     column = LocationColumn()
 
     parsed = column.parse(
-        _ctx(
+        ctx(
             clean_text="Silverstone Circuit (Grand Prix layout)",
             links=[{"text": "Silverstone Circuit", "url": "/wiki/Silverstone_Circuit"}],
         ),
@@ -48,6 +48,6 @@ def test_parse_location_with_link_and_layout_suffix() -> None:
 def test_parse_location_without_links_uses_clean_text_as_circuit() -> None:
     column = LocationColumn()
 
-    parsed = column.parse(_ctx(clean_text="Monaco", links=[]))
+    parsed = column.parse(ctx(clean_text="Monaco", links=[]))
 
     assert parsed == {"circuit": {"text": "Monaco", "url": None}}

@@ -2,9 +2,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.circuits.infobox.services.additional_info import (
-    CircuitAdditionalInfoParser,
-)
+from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser

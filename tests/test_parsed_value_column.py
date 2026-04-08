@@ -10,7 +10,7 @@ from tests.support.compat_stubs import ensure_bs4_stub
 ensure_bs4_stub()
 
 
-def _ctx(clean_text: str) -> ColumnContext:
+def ctx(clean_text: str) -> ColumnContext:
     return ColumnContext(
         header="header",
         key="value",
@@ -26,22 +26,22 @@ def test_parsed_value_column_parses_numbers_from_default_map():
     int_column = ParsedValueColumn(int)
     float_column = ParsedValueColumn(float)
 
-    assert int_column.parse(_ctx("1,234")) == 1234
-    assert float_column.parse(_ctx("405.5 pts")) == 405.5
+    assert int_column.parse(ctx("1,234")) == 1234
+    assert float_column.parse(ctx("405.5 pts")) == 405.5
 
 
 def test_parsed_value_column_respects_custom_parser_for_type():
     column = ParsedValueColumn(list, parser=lambda text: text.split(","))
 
-    assert column.parse(_ctx("a,b,c")) == ["a", "b", "c"]
+    assert column.parse(ctx("a,b,c")) == ["a", "b", "c"]
 
 
 def test_date_and_time_columns_return_normalized_value_objects():
     date_column = DateColumn()
     time_column = TimeColumn()
 
-    date_value = date_column.parse(_ctx("7 June 2019"))
-    time_value = time_column.parse(_ctx("1:23.456"))
+    date_value = date_column.parse(ctx("7 June 2019"))
+    time_value = time_column.parse(ctx("1:23.456"))
 
     assert isinstance(date_value, NormalizedDate)
     assert date_value.to_dict() == {"text": "7 June 2019", "iso": "2019-06-07"}

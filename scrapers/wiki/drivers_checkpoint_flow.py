@@ -9,13 +9,7 @@ from time import perf_counter
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.orchestration.lifecycle import STAGE_EXPORT
-from scrapers.base.orchestration.lifecycle import STAGE_INGEST
-from scrapers.base.orchestration.lifecycle import STAGE_MERGE
-from scrapers.base.orchestration.lifecycle import STAGE_NORMALIZE
-from scrapers.base.orchestration.lifecycle import STAGE_VALIDATE
-from scrapers.base.orchestration.lifecycle import StageCheckpointDumper
-from scrapers.base.orchestration.lifecycle import StageEnvelope
+from scrapers.base.orchestration import lifecycle
 from scrapers.base.orchestration.models import AuditEntry
 from scrapers.wiki.base_flow import BaseOrchestrationFlow
 
@@ -40,7 +34,7 @@ class DriversCheckpointFlow(BaseOrchestrationFlow):
         self._layer1_output_file = layer1_output_file
         self._registry_file = registry_file
         self._detail_fetcher = detail_fetcher or (lambda url: {"url": url})
-        self._dumper = StageCheckpointDumper(
+        self._dumper = lifecycle.StageCheckpointDumper(
             checkpoints_dir=checkpoint_file.parent,
             enabled_domains=checkpoint_dump_domains or set(),
         )
@@ -49,34 +43,34 @@ class DriversCheckpointFlow(BaseOrchestrationFlow):
         raw_records = self._read_records(self._source_file)
         started = perf_counter()
 
-        ingest_payload = StageEnvelope(
+        ingest_payload = lifecycle.StageEnvelope(
             domain="drivers",
-            stage=STAGE_INGEST,
+            stage=lifecycle.STAGE_INGEST,
             records=raw_records,
             metadata={"input_source": str(self._source_file)},
         )
         self._dumper.dump(ingest_payload)
 
         normalized = [self._normalize_seed_row(row) for row in ingest_payload.records]
-        normalize_payload = StageEnvelope(
+        normalize_payload = lifecycle.StageEnvelope(
             domain="drivers",
-            stage=STAGE_NORMALIZE,
+            stage=lifecycle.STAGE_NORMALIZE,
             records=[row for row in normalized if row],
             metadata=ingest_payload.metadata,
         )
         self._dumper.dump(normalize_payload)
 
-        merged_payload = StageEnvelope(
+        merged_payload = lifecycle.StageEnvelope(
             domain="drivers",
-            stage=STAGE_MERGE,
+            stage=lifecycle.STAGE_MERGE,
             records=self._deduplicate_by_url(normalize_payload.records),
             metadata=normalize_payload.metadata,
         )
         self._dumper.dump(merged_payload)
 
-        validate_payload = StageEnvelope(
+        validate_payload = lifecycle.StageEnvelope(
             domain="drivers",
-            stage=STAGE_VALIDATE,
+            stage=lifecycle.STAGE_VALIDATE,
             records=[row for row in merged_payload.records if row.get("url")],
             metadata=merged_payload.metadata,
         )
@@ -116,25 +110,25 @@ class DriversCheckpointFlow(BaseOrchestrationFlow):
         existing_urls = {row.get("url") for row in output_payload.get("records", [])}
         started = perf_counter()
 
-        ingest_payload = StageEnvelope(
+        ingest_payload = lifecycle.StageEnvelope(
             domain="drivers",
-            stage=STAGE_INGEST,
+            stage=lifecycle.STAGE_INGEST,
             records=checkpoint_records,
             metadata={"input_source": str(self._checkpoint_file)},
         )
         self._dumper.dump(ingest_payload)
 
-        normalize_payload = StageEnvelope(
+        normalize_payload = lifecycle.StageEnvelope(
             domain="drivers",
-            stage=STAGE_NORMALIZE,
+            stage=lifecycle.STAGE_NORMALIZE,
             records=[self._normalize_seed_row(row) for row in ingest_payload.records],
             metadata=ingest_payload.metadata,
         )
         self._dumper.dump(normalize_payload)
 
-        merge_payload = StageEnvelope(
+        merge_payload = lifecycle.StageEnvelope(
             domain="drivers",
-            stage=STAGE_MERGE,
+            stage=lifecycle.STAGE_MERGE,
             records=[
                 row
                 for row in self._deduplicate_by_url(normalize_payload.records)
@@ -144,9 +138,9 @@ class DriversCheckpointFlow(BaseOrchestrationFlow):
         )
         self._dumper.dump(merge_payload)
 
-        validate_payload = StageEnvelope(
+        validate_payload = lifecycle.StageEnvelope(
             domain="drivers",
-            stage=STAGE_VALIDATE,
+            stage=lifecycle.STAGE_VALIDATE,
             records=[
                 row for row in merge_payload.records if isinstance(row.get("url"), str)
             ],
@@ -178,9 +172,9 @@ class DriversCheckpointFlow(BaseOrchestrationFlow):
         )
 
         self._dumper.dump(
-            StageEnvelope(
+            lifecycle.StageEnvelope(
                 domain="drivers",
-                stage=STAGE_EXPORT,
+                stage=lifecycle.STAGE_EXPORT,
                 records=final_records,
                 metadata={"output_target": str(self._layer1_output_file)},
             ),

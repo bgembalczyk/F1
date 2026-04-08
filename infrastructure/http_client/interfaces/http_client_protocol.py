@@ -45,3 +45,6 @@ class HttpClientProtocol(Protocol):
     ) -> JsonValue:
         """Zwraca JSON (dict/list/etc.) parsując treść odpowiedzi jako JSON."""
         ...
+
+
+__all__ = ["HttpClientProtocol"]

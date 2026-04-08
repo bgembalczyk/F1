@@ -5,9 +5,7 @@ from typing import TYPE_CHECKING
 from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
 from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
-from scrapers.base.single_wiki_article.section_adapter import (
-    SingleWikiArticleSectionAdapterBase,
-)
+from scrapers.base.single_wiki_article.section_adapter import SingleWikiArticleSectionAdapterBase
 from scrapers.drivers.composition import DriverScraperCompositionFactory
 from scrapers.drivers.composition import DriverScraperDependencies
 

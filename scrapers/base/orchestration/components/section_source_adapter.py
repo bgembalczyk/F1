@@ -104,3 +104,6 @@ class SectionSourceAdapter:
             if isinstance(records, list):
                 return [item for item in records if isinstance(item, dict)]
         return []
+
+
+__all__ = ["SectionSourceAdapter"]

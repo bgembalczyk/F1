@@ -7,18 +7,7 @@ from scrapers.base.helpers.text_normalization import match_driver_loose
 from scrapers.base.helpers.text_normalization import match_vehicle_prefix
 from scrapers.base.helpers.time import normalize_time_value
 from scrapers.base.helpers.time import parse_time_seconds_from_text
-from scrapers.circuits.models.services.lap_record_utils import build_lap_record_key
-from scrapers.circuits.models.services.lap_record_utils import extract_year
-from scrapers.circuits.models.services.lap_record_utils import extract_year_from_event
-from scrapers.circuits.models.services.lap_record_utils import (
-    normalize_lap_record_entity,
-)
-from scrapers.circuits.models.services.lap_record_utils import (
-    parse_lap_record_time_from_record,
-)
-from scrapers.circuits.models.services.lap_record_utils import (
-    select_best_field_with_url,
-)
+from scrapers.circuits.models.services import lap_record_utils as utils
 
 
 def normalize_entity_value(value: Any) -> dict[str, Any] | None:
@@ -76,7 +65,7 @@ def normalize_lap_record(record: dict[str, Any]) -> dict[str, Any]:
     record.pop("class_", None)
 
     normalize_time_value(record)
-    time_seconds = parse_lap_record_time_from_record(record)
+    time_seconds = utils.parse_lap_record_time_from_record(record)
     if time_seconds is not None:
         record["time"] = float(time_seconds)
     record.pop("time_seconds", None)
@@ -91,10 +80,10 @@ def build_core_key(rec: dict[str, Any]) -> tuple | None:
     Klucz „rdzeniowy" do łączenia rekordów nawet jeśli brakuje time.
     (driver_text, vehicle_text, year)
     """
-    driver_txt = normalize_lap_record_entity(rec.get("driver"))
+    driver_txt = utils.normalize_lap_record_entity(rec.get("driver"))
     vehicle_obj = rec.get("vehicle") or rec.get("car")
-    vehicle_txt = normalize_lap_record_entity(vehicle_obj)
-    year = extract_year(rec)
+    vehicle_txt = utils.normalize_lap_record_entity(vehicle_obj)
+    year = utils.extract_year(rec)
 
     if not driver_txt or not vehicle_txt or not year:
         return None
@@ -111,15 +100,15 @@ def is_record_subset(
     Używamy tylko do bezpiecznego fallback-merge.
     """
     for key, small_value in small.items():
-        if _is_empty_or_missing_value(key, small_value, big):
+        if is_empty_or_missing_value(key, small_value, big):
             continue
         big_value = big.get(key)
-        if not _are_subset_values_compatible(key, small_value, big_value):
+        if not are_subset_values_compatible(key, small_value, big_value):
             return False
     return True
 
 
-def _is_empty_or_missing_value(
+def is_empty_or_missing_value(
     key: str,
     small_value: Any,
     big: dict[str, Any],
@@ -127,19 +116,19 @@ def _is_empty_or_missing_value(
     return small_value is None or key not in big or big.get(key) is None
 
 
-def _are_subset_values_compatible(key: str, small_value: Any, big_value: Any) -> bool:
+def are_subset_values_compatible(key: str, small_value: Any, big_value: Any) -> bool:
     if key == "time":
-        return _same_time_value(small_value, big_value)
+        return same_time_value(small_value, big_value)
     if key == "driver":
         return match_driver_loose(small_value, big_value)
     if key in ("vehicle", "car"):
         return match_vehicle_prefix(small_value, big_value, min_len=6)
     if isinstance(small_value, dict) and isinstance(big_value, dict):
-        return _same_dict_text_value(small_value, big_value)
+        return same_dict_text_value(small_value, big_value)
     return small_value == big_value
 
 
-def _same_time_value(small_value: Any, big_value: Any) -> bool:
+def same_time_value(small_value: Any, big_value: Any) -> bool:
     small_time = parse_time_seconds_from_text(small_value)
     big_time = parse_time_seconds_from_text(big_value)
     if small_time is None or big_time is None:
@@ -147,7 +136,7 @@ def _same_time_value(small_value: Any, big_value: Any) -> bool:
     return round(float(small_time), 6) == round(float(big_time), 6)
 
 
-def _same_dict_text_value(
+def same_dict_text_value(
     small_value: dict[str, Any],
     big_value: dict[str, Any],
 ) -> bool:
@@ -276,29 +265,29 @@ def merge_two_records(
     """Scala dwa rekordy w jeden, preferując bogatsze dane."""
     merged: dict[str, Any] = dict(base)
 
-    _merge_best_entity(
+    merge_best_entity(
         merged,
         base,
         extra,
         target_key="driver",
         source_keys=("driver",),
     )
-    _merge_best_entity(
+    merge_best_entity(
         merged,
         base,
         extra,
         target_key="vehicle",
         source_keys=("vehicle", "car"),
     )
-    _merge_time(merged, base, extra)
-    _merge_date_or_year(merged, base, extra)
-    _merge_series(merged, base, extra)
-    _fill_missing_fields_from_extra(merged, extra)
+    merge_time(merged, base, extra)
+    merge_date_or_year(merged, base, extra)
+    merge_series(merged, base, extra)
+    fill_missing_fields_from_extra(merged, extra)
 
     return merged
 
 
-def _merge_best_entity(
+def merge_best_entity(
     merged: dict[str, Any],
     base: dict[str, Any],
     extra: dict[str, Any],
@@ -306,15 +295,15 @@ def _merge_best_entity(
     target_key: str,
     source_keys: tuple[str, ...],
 ) -> None:
-    base_value = _first_present_value(base, source_keys)
-    extra_value = _first_present_value(extra, source_keys)
+    base_value = first_present_value(base, source_keys)
+    extra_value = first_present_value(extra, source_keys)
     if isinstance(base_value, dict) and base_value.get("url"):
         merged[target_key] = base_value
     elif extra_value is not None:
         merged[target_key] = extra_value
 
 
-def _first_present_value(record: dict[str, Any], keys: tuple[str, ...]) -> Any:
+def first_present_value(record: dict[str, Any], keys: tuple[str, ...]) -> Any:
     for key in keys:
         value = record.get(key)
         if value is not None:
@@ -322,27 +311,27 @@ def _first_present_value(record: dict[str, Any], keys: tuple[str, ...]) -> Any:
     return None
 
 
-def _merge_time(
+def merge_time(
     merged: dict[str, Any],
     base: dict[str, Any],
     extra: dict[str, Any],
 ) -> None:
-    parsed_time = parse_lap_record_time_from_record(base)
+    parsed_time = utils.parse_lap_record_time_from_record(base)
     if parsed_time is None:
-        parsed_time = parse_lap_record_time_from_record(extra)
+        parsed_time = utils.parse_lap_record_time_from_record(extra)
     if parsed_time is not None:
         merged["time"] = float(parsed_time)
     merged.pop("time_seconds", None)
 
 
-def _merge_date_or_year(
+def merge_date_or_year(
     merged: dict[str, Any],
     base: dict[str, Any],
     extra: dict[str, Any],
 ) -> None:
     best_date, best_year = select_best_date_year([base, extra])
     if best_year is None:
-        best_year = extract_year_from_event(base) or extract_year_from_event(extra)
+        best_year = utils.extract_year_from_event(base) or utils.extract_year_from_event(extra)
 
     if best_date is not None:
         merged["date"] = best_date
@@ -351,7 +340,7 @@ def _merge_date_or_year(
         merged["year"] = best_year
 
 
-def _merge_series(
+def merge_series(
     merged: dict[str, Any],
     base: dict[str, Any],
     extra: dict[str, Any],
@@ -364,7 +353,7 @@ def _merge_series(
     merged.pop("class_", None)
 
 
-def _fill_missing_fields_from_extra(
+def fill_missing_fields_from_extra(
     merged: dict[str, Any],
     extra: dict[str, Any],
 ) -> None:
@@ -381,41 +370,41 @@ def merge_record_group(
     """Scal grupę rekordów do jednego."""
     merged = collect_other_fields(records)
 
-    _set_group_best_entities(merged, records)
-    _set_group_best_time(merged, records)
-    _set_group_best_date_or_year(merged, records)
-    _set_group_best_series(merged, records)
+    set_group_best_entities(merged, records)
+    set_group_best_time(merged, records)
+    set_group_best_date_or_year(merged, records)
+    set_group_best_series(merged, records)
 
     return merged
 
 
-def _set_group_best_entities(
+def set_group_best_entities(
     merged: dict[str, Any],
     records: list[dict[str, Any]],
 ) -> None:
-    best_driver = select_best_field_with_url(records, "driver")
-    best_vehicle = select_best_field_with_url(records, "vehicle", "car")
+    best_driver = utils.select_best_field_with_url(records, "driver")
+    best_vehicle = utils.select_best_field_with_url(records, "vehicle", "car")
     if best_driver is not None:
         merged["driver"] = best_driver
     if best_vehicle is not None:
         merged["vehicle"] = best_vehicle
 
 
-def _set_group_best_time(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
+def set_group_best_time(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
     for record in records:
-        parsed_time = parse_lap_record_time_from_record(record)
+        parsed_time = utils.parse_lap_record_time_from_record(record)
         if parsed_time is not None:
             merged["time"] = float(parsed_time)
             return
 
 
-def _set_group_best_date_or_year(
+def set_group_best_date_or_year(
     merged: dict[str, Any],
     records: list[dict[str, Any]],
 ) -> None:
     best_date, best_year = select_best_date_year(records)
     if best_year is None:
-        best_year = _find_first_event_year(records)
+        best_year = find_first_event_year(records)
 
     if best_date is not None:
         merged["date"] = best_date
@@ -423,15 +412,15 @@ def _set_group_best_date_or_year(
         merged["year"] = best_year
 
 
-def _find_first_event_year(records: list[dict[str, Any]]) -> int | None:
+def find_first_event_year(records: list[dict[str, Any]]) -> int | None:
     for record in records:
-        year = extract_year_from_event(record)
+        year = utils.extract_year_from_event(record)
         if year:
             return year
     return None
 
 
-def _set_group_best_series(
+def set_group_best_series(
     merged: dict[str, Any],
     records: list[dict[str, Any]],
 ) -> None:
@@ -440,7 +429,7 @@ def _set_group_best_series(
         merged["series"] = best_series
 
 
-def _stage_a_partition_by_record_key(
+def stage_a_partition_by_record_key(
     records: list[dict[str, Any]],
 ) -> tuple[dict[tuple, list[dict[str, Any]]], list[dict[str, Any]]]:
     """
@@ -451,7 +440,7 @@ def _stage_a_partition_by_record_key(
     leftovers: list[dict[str, Any]] = []
 
     for rec in records:
-        k = build_lap_record_key(rec, year_extractor=extract_year)
+        k = utils.build_lap_record_key(rec, year_extractor=utils.extract_year)
         if k is None:
             leftovers.append(rec)
         else:
@@ -460,7 +449,7 @@ def _stage_a_partition_by_record_key(
     return key_buckets, leftovers
 
 
-def _stage_b_merge_by_core_key(
+def stage_b_merge_by_core_key(
     merged_main: list[dict[str, Any]],
     leftovers: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -486,11 +475,11 @@ def _stage_b_merge_by_core_key(
             still_left.append(rec)
             continue
 
-        rec_t = parse_lap_record_time_from_record(rec)
+        rec_t = utils.parse_lap_record_time_from_record(rec)
         chosen_idx = None
         if rec_t is not None:
             for idx in cand_ids:
-                tgt_t = parse_lap_record_time_from_record(merged_main[idx])
+                tgt_t = utils.parse_lap_record_time_from_record(merged_main[idx])
                 if tgt_t is not None and round(float(tgt_t), 6) == round(
                     float(rec_t),
                     6,
@@ -506,7 +495,7 @@ def _stage_b_merge_by_core_key(
     return merged_main, still_left
 
 
-def _stage_c_merge_by_driver_time(
+def stage_c_merge_by_driver_time(
     merged_main: list[dict[str, Any]],
     still_left: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -516,15 +505,15 @@ def _stage_c_merge_by_driver_time(
     """
     index_dt: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        d = normalize_lap_record_entity(rec.get("driver"))
-        t = parse_lap_record_time_from_record(rec)
+        d = utils.normalize_lap_record_entity(rec.get("driver"))
+        t = utils.parse_lap_record_time_from_record(rec)
         if d and t is not None:
             index_dt.setdefault((d, round(float(t), 6)), []).append(i)
 
     final_left: list[dict[str, Any]] = []
     for rec in still_left:
-        d = normalize_lap_record_entity(rec.get("driver"))
-        t = parse_lap_record_time_from_record(rec)
+        d = utils.normalize_lap_record_entity(rec.get("driver"))
+        t = utils.parse_lap_record_time_from_record(rec)
         if not d or t is None:
             final_left.append(rec)
             continue
@@ -550,7 +539,7 @@ def _stage_c_merge_by_driver_time(
     return merged_main, final_left
 
 
-def _stage_d_fallback_merge_by_time_and_driver(
+def stage_d_fallback_merge_by_time_and_driver(
     merged_main: list[dict[str, Any]],
     final_left: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -560,14 +549,14 @@ def _stage_d_fallback_merge_by_time_and_driver(
     """
     time_index: dict[float, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        t = parse_lap_record_time_from_record(rec)
+        t = utils.parse_lap_record_time_from_record(rec)
         if t is None:
             continue
         time_index.setdefault(round(float(t), 6), []).append(i)
 
     last_left: list[dict[str, Any]] = []
     for rec in final_left:
-        t = parse_lap_record_time_from_record(rec)
+        t = utils.parse_lap_record_time_from_record(rec)
         if t is None:
             last_left.append(rec)
             continue
@@ -606,17 +595,17 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
     - D: fallback merge po (time) z walidacją - ostatnia szansa.
     """
     # Etap A: Partycjonowanie po record_key
-    key_buckets, leftovers = _stage_a_partition_by_record_key(records)
+    key_buckets, leftovers = stage_a_partition_by_record_key(records)
     merged_main = [merge_record_group(rs) for rs in key_buckets.values()]
 
     # Etap B: Merge po core_key
-    merged_main, still_left = _stage_b_merge_by_core_key(merged_main, leftovers)
+    merged_main, still_left = stage_b_merge_by_core_key(merged_main, leftovers)
 
     # Etap C: Merge po (driver+time) z prefixem vehicle
-    merged_main, final_left = _stage_c_merge_by_driver_time(merged_main, still_left)
+    merged_main, final_left = stage_c_merge_by_driver_time(merged_main, still_left)
 
     # Etap D: Fallback merge po (time) z walidacją
-    merged_main, last_left = _stage_d_fallback_merge_by_time_and_driver(
+    merged_main, last_left = stage_d_fallback_merge_by_time_and_driver(
         merged_main,
         final_left,
     )

@@ -8,13 +8,7 @@ from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
-from scrapers.circuits.helpers.constants import DETAILS_MIN_SCORE_WITHOUT_COMMA
-from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_2
-from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_3
-from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_4
-from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_FEW
-from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_MANY
-from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_MEDIUM
+from scrapers.circuits.helpers import constants
 from scrapers.circuits.helpers.layout import layout_from_spanning_header
 from scrapers.circuits.helpers.logger import logger
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
@@ -54,19 +48,19 @@ def score_details_candidate(s: str) -> int:
     parts = split_delimited_text(s, pattern=r",")
     score = 0
 
-    if len(parts) >= DETAILS_PARTS_COUNT_MANY:
-        score += DETAILS_PARTS_BONUS_4
-    elif len(parts) == DETAILS_PARTS_COUNT_MEDIUM:
-        score += DETAILS_PARTS_BONUS_3
-    elif len(parts) == DETAILS_PARTS_COUNT_FEW:
-        score += DETAILS_PARTS_BONUS_2
+    if len(parts) >= constants.DETAILS_PARTS_COUNT_MANY:
+        score += constants.DETAILS_PARTS_BONUS_4
+    elif len(parts) == constants.DETAILS_PARTS_COUNT_MEDIUM:
+        score += constants.DETAILS_PARTS_BONUS_3
+    elif len(parts) == constants.DETAILS_PARTS_COUNT_FEW:
+        score += constants.DETAILS_PARTS_BONUS_2
     else:
         score -= 2
 
     if any(re.fullmatch(r"\d{4}", p) for p in parts):
         score += 5
 
-    if "," not in s and score < DETAILS_MIN_SCORE_WITHOUT_COMMA:
+    if "," not in s and score < constants.DETAILS_MIN_SCORE_WITHOUT_COMMA:
         score -= 3
 
     return score

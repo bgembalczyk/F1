@@ -18,7 +18,7 @@ ANY_PATTERN = re.compile(r"\bAny\b")
 GIT_BIN = shutil.which("git") or "git"
 
 
-def _git(*args: str) -> str:
+def git(*args: str) -> str:
     # nosec B603 -- zaufane wywołanie lokalnego `git` z argumentami z kodu
     res = subprocess.run(
         [GIT_BIN, *args],
@@ -29,8 +29,8 @@ def _git(*args: str) -> str:
     return res.stdout
 
 
-def _new_python_files(base_sha: str, head_sha: str) -> list[str]:
-    output = _git(
+def new_python_files(base_sha: str, head_sha: str) -> list[str]:
+    output = git(
         "diff",
         "--name-only",
         "--diff-filter=A",
@@ -47,7 +47,7 @@ def _new_python_files(base_sha: str, head_sha: str) -> list[str]:
     ]
 
 
-def _scan_file(path: Path) -> list[str]:
+def scan_file(path: Path) -> list[str]:
     violations: list[str] = []
     lines = path.read_text(encoding="utf-8").splitlines()
     for idx, line in enumerate(lines, start=1):
@@ -73,14 +73,14 @@ def main() -> int:
     parser.add_argument("--head-sha", required=True)
     args = parser.parse_args()
 
-    new_files = _new_python_files(args.base_sha, args.head_sha)
+    new_files = new_python_files(args.base_sha, args.head_sha)
     if not new_files:
         print("Brak nowych modułów Python w scope rolloutu typingu.")
         return 0
 
     violations: list[str] = []
     for rel_path in new_files:
-        violations.extend(_scan_file(Path(rel_path)))
+        violations.extend(scan_file(Path(rel_path)))
 
     if violations:
         print("Znaleziono naruszenia polityki Any dla nowych modułów:")

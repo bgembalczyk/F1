@@ -4,7 +4,7 @@ from typing import Any
 from scrapers.base.services.result_export_service import ResultExportService
 
 
-class _StubLogger:
+class StubLogger:
     def __init__(self) -> None:
         self.messages: list[tuple[str, int]] = []
 
@@ -12,9 +12,9 @@ class _StubLogger:
         self.messages.append((msg, count))
 
 
-class _StubScraper:
+class StubScraper:
     def __init__(self) -> None:
-        self.logger = _StubLogger()
+        self.logger = StubLogger()
         self.url = "https://example.com"
         self.exporter = None
 
@@ -22,7 +22,7 @@ class _StubScraper:
 def test_export_grouped_json_writes_files_and_uses_other_fallback(
     tmp_path: Path,
 ) -> None:
-    scraper = _StubScraper()
+    scraper = StubScraper()
     data: list[dict[str, Any]] = [
         {"name": "Alpha"},
         {"name": ""},

@@ -30,3 +30,6 @@ class DateColumn(BaseColumn):
 
         parsed = parse_date_text(text)
         return NormalizedDate(text=parsed.raw, iso=parsed.iso)
+
+
+__all__ = ["DateColumn"]

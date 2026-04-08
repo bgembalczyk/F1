@@ -37,7 +37,7 @@ def html_links_and_no_links_record() -> tuple[str, str]:
     )
 
 
-def _ctx_from_html(html: str) -> ColumnContext:
+def ctx_from_html(html: str) -> ColumnContext:
     cell = BeautifulSoup(html, "html.parser").find("td")
     links = [
         {"text": a.get_text(strip=True), "url": f"{BASE_URL}{a.get('href')}"}
@@ -127,7 +127,7 @@ def test_parse_result_part_status_map_and_fallback(
 def test_parse_superscripts_returns_expected_tuple_structure(
     html_valid_record: str,
 ) -> None:
-    ctx = _ctx_from_html(html_valid_record)
+    ctx = ctx_from_html(html_valid_record)
 
     reference_number, has_dagger, has_asterisk = (
         ResultsParsingHelpers.parse_superscripts(
@@ -144,7 +144,7 @@ def test_parse_superscripts_returns_expected_tuple_structure(
 def test_parse_superscripts_fallback_for_missing_cell(
     html_incomplete_record: str,
 ) -> None:
-    ctx = _ctx_from_html(html_incomplete_record)
+    ctx = ctx_from_html(html_incomplete_record)
     ctx.cell = None
 
     assert ResultsParsingHelpers.parse_superscripts(ctx) == (None, False, False)

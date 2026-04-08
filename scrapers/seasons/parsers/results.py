@@ -3,12 +3,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.constants import DOMAIN_SECTION_ALIASES
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.constructor import ConstructorColumn
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.tyre import TyreColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns import types as col
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -30,21 +25,21 @@ class SeasonResultsParser:
         ]
         schema = TableSchemaDSL(
             columns=[
-                ColumnSpec("Round", "round", IntColumn()),
-                ColumnSpec("Grand Prix", "grand_prix", UrlColumn()),
-                ColumnSpec("Race", "grand_prix", UrlColumn()),
-                ColumnSpec("Pole position", "pole_position", DriverColumn()),
-                ColumnSpec("Pole Position", "pole_position", DriverColumn()),
-                ColumnSpec("Fastest lap", "fastest_lap", DriverListColumn()),
-                ColumnSpec("Winning driver", "winning_driver", DriverColumn()),
+                ColumnSpec("Round", "round", col.IntColumn()),
+                ColumnSpec("Grand Prix", "grand_prix", col.UrlColumn()),
+                ColumnSpec("Race", "grand_prix", col.UrlColumn()),
+                ColumnSpec("Pole position", "pole_position", col.DriverColumn()),
+                ColumnSpec("Pole Position", "pole_position", col.DriverColumn()),
+                ColumnSpec("Fastest lap", "fastest_lap", col.DriverListColumn()),
+                ColumnSpec("Winning driver", "winning_driver", col.DriverColumn()),
                 ColumnSpec(
                     "Winning constructor",
                     "winning_constructor",
-                    ConstructorColumn(),
+                    col.ConstructorColumn(),
                 ),
-                ColumnSpec("Constructor", "winning_constructor", ConstructorColumn()),
-                ColumnSpec("Report", "report", UrlColumn()),
-                ColumnSpec("Tyre", "tyre", TyreColumn()),
+                ColumnSpec("Constructor", "winning_constructor", col.ConstructorColumn()),
+                ColumnSpec("Report", "report", col.UrlColumn()),
+                ColumnSpec("Tyre", "tyre", col.TyreColumn()),
             ],
         )
 

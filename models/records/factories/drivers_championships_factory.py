@@ -41,3 +41,6 @@ class DriversChampionshipsRecordFactory(BaseRecordFactory):
             )
         payload["count"] = payload.get("count") or 0
         return cast("DriversChampionshipsRecord", payload)
+
+
+__all__ = ["DriversChampionshipsRecordFactory",]

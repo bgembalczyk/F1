@@ -9,9 +9,7 @@ from scrapers.wiki.parsers.sections.detection import find_section_heading
 from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
 from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 from scrapers.wiki.parsers.sections.section_profiles_config import SectionDomainConfig
-from scrapers.wiki.parsers.sections.section_profiles_config import (
-    validate_section_profiles_config,
-)
+from scrapers.wiki.parsers.sections.section_profiles_config import validate_section_profiles_config
 
 
 def test_section_profiles_define_expected_domains_and_contract_shape() -> None:

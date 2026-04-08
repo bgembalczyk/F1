@@ -3,6 +3,8 @@ from collections.abc import Mapping
 from typing import Any
 
 from models.records.constants import WIKI_SEASON_URL
+from models.value_objects.link import Link
+from models.value_objects.link_utils import validate_link
 from models.value_objects.season_ref import SeasonRef
 
 

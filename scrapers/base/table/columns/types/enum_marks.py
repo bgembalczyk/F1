@@ -33,3 +33,6 @@ class EnumMarksMixin(BaseColumn):
             if mark in text:
                 return value
         return self.default
+
+
+__all__ = ["EnumMarksMixin"]

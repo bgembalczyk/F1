@@ -3,21 +3,21 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.constructors.constructors_list import _PrivateerTeamsListParser
-from scrapers.constructors.constructors_list import _PrivateerTeamsSectionParser
+from scrapers.constructors.constructors_list import PrivateerTeamsListParser
+from scrapers.constructors.constructors_list import PrivateerTeamsSectionParser
 
 
-def _li(html: str) -> Tag:
+def li(html: str) -> Tag:
     return BeautifulSoup(f"<ul>{html}</ul>", "html.parser").find("li")
 
 
-def _ul(html: str) -> Tag:
+def ul(html: str) -> Tag:
     return BeautifulSoup(html, "html.parser").find("ul")
 
 
 class TestPrivateerTeamsListParser:
     def test_parse_returns_items_from_li_elements(self) -> None:
-        parser = _PrivateerTeamsListParser()
+        parser = PrivateerTeamsListParser()
         ul = BeautifulSoup(
             '<ul><li><a href="/wiki/Williams">Williams</a> (1950-1960)</li></ul>',
             "html.parser",
@@ -29,14 +29,14 @@ class TestPrivateerTeamsListParser:
 
     def test_parse_item_returns_none_without_anchor(self) -> None:
         li = BeautifulSoup("<li>No link here</li>", "html.parser").find("li")
-        result = _PrivateerTeamsListParser._parse_item(li)
+        result = PrivateerTeamsListParser._parse_item(li)
         assert result is None
 
     def test_parse_item_returns_none_for_empty_team_name(self) -> None:
         li = BeautifulSoup('<li><a href="/wiki/Team"></a></li>', "html.parser").find(
             "li",
         )
-        result = _PrivateerTeamsListParser._parse_item(li)
+        result = PrivateerTeamsListParser._parse_item(li)
         assert result is None
 
     def test_parse_item_includes_href_as_team_url(self) -> None:
@@ -44,7 +44,7 @@ class TestPrivateerTeamsListParser:
             '<li><a href="/wiki/Ferrari">Ferrari</a></li>',
             "html.parser",
         ).find("li")
-        result = _PrivateerTeamsListParser._parse_item(li)
+        result = PrivateerTeamsListParser._parse_item(li)
         assert result is not None
         assert result["team_url"] == "/wiki/Ferrari"
 
@@ -53,7 +53,7 @@ class TestPrivateerTeamsListParser:
             '<li><span class="flagicon">🇮🇹</span><a href="/wiki/Ferrari">Ferrari</a></li>',
             "html.parser",
         ).find("li")
-        result = _PrivateerTeamsListParser._parse_item(li)
+        result = PrivateerTeamsListParser._parse_item(li)
         assert result is not None
         assert result["team"] == "Ferrari"
 
@@ -62,7 +62,7 @@ class TestPrivateerTeamsListParser:
             '<li><a href="/wiki/Williams">Williams</a> (1950-1960)</li>',
             "html.parser",
         ).find("li")
-        result = _PrivateerTeamsListParser._parse_item(li)
+        result = PrivateerTeamsListParser._parse_item(li)
         assert result is not None
         assert "seasons" in result
 
@@ -71,14 +71,14 @@ class TestPrivateerTeamsListParser:
             '<li><a href="/wiki/Williams">Williams</a></li>',
             "html.parser",
         ).find("li")
-        result = _PrivateerTeamsListParser._parse_item(li)
+        result = PrivateerTeamsListParser._parse_item(li)
         assert result is not None
         assert "seasons" not in result
 
 
 class TestPrivateerTeamsSectionParser:
     def test_parse_ul_element_directly(self) -> None:
-        parser = _PrivateerTeamsSectionParser()
+        parser = PrivateerTeamsSectionParser()
         ul = BeautifulSoup(
             '<ul><li><a href="/wiki/Williams">Williams</a></li></ul>',
             "html.parser",
@@ -87,7 +87,7 @@ class TestPrivateerTeamsSectionParser:
         assert "items" in result
 
     def test_parse_div_with_nested_ul(self) -> None:
-        parser = _PrivateerTeamsSectionParser()
+        parser = PrivateerTeamsSectionParser()
         div = BeautifulSoup(
             '<div><ul><li><a href="/wiki/Ferrari">Ferrari</a></li></ul></div>',
             "html.parser",
@@ -97,12 +97,12 @@ class TestPrivateerTeamsSectionParser:
         assert len(result["items"]) == 1
 
     def test_parse_group_returns_empty_items_without_list(self) -> None:
-        parser = _PrivateerTeamsSectionParser()
+        parser = PrivateerTeamsSectionParser()
         result = parser.parse_group([])
         assert result == {"items": []}
 
     def test_parse_group_finds_ul_in_elements(self) -> None:
-        parser = _PrivateerTeamsSectionParser()
+        parser = PrivateerTeamsSectionParser()
         ul = BeautifulSoup(
             '<ul><li><a href="/wiki/McLaren">McLaren</a></li></ul>',
             "html.parser",

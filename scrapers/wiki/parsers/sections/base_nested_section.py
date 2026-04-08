@@ -8,7 +8,7 @@ from bs4 import Tag
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 from scrapers.wiki.parsers.sections.detection import make_stable_section_id
-from scrapers.wiki.parsers.sections.helpers import _split_into_parts
+from scrapers.wiki.parsers.sections.helpers import split_into_parts
 
 
 class NestedChildParser(Protocol):
@@ -43,7 +43,7 @@ class BaseNestedSectionParser(WikiParser[dict[str, Any]]):
     ) -> dict[str, Any]:
         section_context = context or SectionExtractionContext()
         tags = [c for c in elements if isinstance(c, Tag)]
-        parts = _split_into_parts(tags, self.heading_class)
+        parts = split_into_parts(tags, self.heading_class)
         sub_sections: list[dict[str, Any]] = []
 
         for name, anchor, group_elements in parts:

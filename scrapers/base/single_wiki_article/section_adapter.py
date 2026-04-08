@@ -10,3 +10,6 @@ class SingleWikiArticleSectionAdapterBase(
     ABC,
 ):
     """Wariant dla scraperów opartych o ``SectionAdapter``."""
+
+
+__all__ = ["SingleWikiArticleSectionAdapterBase"]

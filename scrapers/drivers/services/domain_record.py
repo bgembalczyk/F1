@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 if TYPE_CHECKING:
-    from scrapers.base.contracts import RecordAssembler
+    from scrapers.base.contracts import RecordAssemblerProtocol
 
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.postprocess.assembler import DriverRecordDTO
@@ -14,7 +14,7 @@ class DomainRecordService:
     def __init__(
         self,
         *,
-        assembler: RecordAssembler[DriverRecordDTO] | None = None,
+        assembler: RecordAssemblerProtocol[DriverRecordDTO] | None = None,
     ) -> None:
         self._assembler = assembler or DriverRecordAssembler()
 

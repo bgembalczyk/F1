@@ -9,7 +9,7 @@ from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
 from scrapers.races.red_flagged_races_scraper.base import RedFlaggedRacesBaseScraper
 
 
-def _make_scraper(
+def make_scraper(
     *,
     section_id: str | None = "Test_section",
     alternative_section_ids: list[str] | None = None,
@@ -71,12 +71,12 @@ def test_build_common_red_flag_columns_restart_status_column() -> None:
 
 
 def test_resolved_alternative_section_ids_no_section_id_returns_empty() -> None:
-    s = _make_scraper(section_id=None)
+    s = make_scraper(section_id=None)
     assert s._resolved_alternative_section_ids() == []
 
 
 def test_resolved_alternative_section_ids_returns_list_of_strings() -> None:
-    s = _make_scraper(
+    s = make_scraper(
         section_id="World_Championship_races",
         alternative_section_ids=["Championship_races"],
     )
@@ -88,7 +88,7 @@ def test_resolved_alternative_section_ids_returns_list_of_strings() -> None:
 
 
 def test_resolved_alternative_section_ids_no_alternatives_returns_list() -> None:
-    s = _make_scraper(section_id="Some_section", alternative_section_ids=[])
+    s = make_scraper(section_id="Some_section", alternative_section_ids=[])
     alts = s._resolved_alternative_section_ids()
     assert isinstance(alts, list)
 
@@ -99,7 +99,7 @@ def test_resolved_alternative_section_ids_no_alternatives_returns_list() -> None
 
 
 def test_find_table_with_fallbacks_no_table_returns_none_pair() -> None:
-    s = _make_scraper()
+    s = make_scraper()
     soup = BeautifulSoup("<html><body></body></html>", "html.parser")
     table, parser = s._find_table_with_fallbacks(soup)
     assert table is None
@@ -107,7 +107,7 @@ def test_find_table_with_fallbacks_no_table_returns_none_pair() -> None:
 
 
 def test_find_table_with_fallbacks_finds_table_in_document() -> None:
-    s = _make_scraper(section_id=None, expected_headers=["Year"])
+    s = make_scraper(section_id=None, expected_headers=["Year"])
     html = """
     <html><body>
     <table class="wikitable">
@@ -128,7 +128,7 @@ def test_find_table_with_fallbacks_finds_table_in_document() -> None:
 
 
 def test_log_toc_diagnostics_no_section_id_does_not_raise() -> None:
-    s = _make_scraper(section_id=None)
+    s = make_scraper(section_id=None)
     soup = BeautifulSoup("<html></html>", "html.parser")
     s._log_toc_diagnostics(soup)  # should not raise
 
@@ -136,7 +136,7 @@ def test_log_toc_diagnostics_no_section_id_does_not_raise() -> None:
 def test_log_toc_diagnostics_with_matching_toc_entry_logs_warning(caplog) -> None:
     import logging
 
-    s = _make_scraper(section_id="Test_section")
+    s = make_scraper(section_id="Test_section")
     html = '<div id="toc-Test_section">TOC item</div>'
     soup = BeautifulSoup(html, "html.parser")
 
@@ -149,7 +149,7 @@ def test_log_toc_diagnostics_with_matching_toc_entry_logs_warning(caplog) -> Non
 def test_log_toc_diagnostics_no_toc_entry_no_warning(caplog) -> None:
     import logging
 
-    s = _make_scraper(section_id="Test_section")
+    s = make_scraper(section_id="Test_section")
     soup = BeautifulSoup("<html></html>", "html.parser")
 
     with caplog.at_level(logging.WARNING):
@@ -164,7 +164,7 @@ def test_log_toc_diagnostics_no_toc_entry_no_warning(caplog) -> None:
 
 
 def test_build_table_not_found_error_returns_string() -> None:
-    s = _make_scraper(section_id="Test_section")
+    s = make_scraper(section_id="Test_section")
     soup = BeautifulSoup("<html><body></body></html>", "html.parser")
     result = s._build_table_not_found_error(soup)
     assert isinstance(result, str)
@@ -172,7 +172,7 @@ def test_build_table_not_found_error_returns_string() -> None:
 
 
 def test_build_table_not_found_error_includes_table_count() -> None:
-    s = _make_scraper(section_id="Test_section")
+    s = make_scraper(section_id="Test_section")
     html = '<table class="wikitable"><tr><th>Year</th></tr></table>'
     soup = BeautifulSoup(html, "html.parser")
     result = s._build_table_not_found_error(soup)
@@ -180,7 +180,7 @@ def test_build_table_not_found_error_includes_table_count() -> None:
 
 
 def test_build_table_not_found_error_no_section_id() -> None:
-    s = _make_scraper(section_id=None)
+    s = make_scraper(section_id=None)
     soup = BeautifulSoup("<html></html>", "html.parser")
     result = s._build_table_not_found_error(soup)
     assert isinstance(result, str)

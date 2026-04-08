@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 DEPRECATED_SINCE = "2026-01-01"
-REMOVE_AFTER = "2026-12-31"
+REMOVE_AFTER = "2026-04-07"
 
 
 @dataclass(frozen=True)

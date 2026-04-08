@@ -4,3 +4,6 @@ from scrapers.base.table.columns.types.constructor_part import ConstructorPartCo
 
 class ConstructorColumn(BaseConstructorColumn):
     part_parser_cls = ConstructorPartColumn
+
+
+__all__ = ["ConstructorColumn"]

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.column_factory import IntColumn
@@ -13,13 +14,7 @@ from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.columns.first_place import FirstPlaceColumn
-from scrapers.points.constants import HISTORICAL_POSITIONS
-from scrapers.points.constants import POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER
-from scrapers.points.constants import POINTS_DRIVERS_CHAMPIONSHIP_HEADER
-from scrapers.points.constants import POINTS_FASTEST_LAP_HEADER
-from scrapers.points.constants import POINTS_NOTES_HEADER
-from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
-from scrapers.points.constants import POINTS_SEASONS_HEADER
+from scrapers.points import constants
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
@@ -32,7 +27,7 @@ def build_points_scoring_systems_history_config(
     return build_scraper_config(
         url=BasePointsScraper.BASE_URL,
         section_id="Points_scoring_systems",
-        expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
+        expected_headers=constants.POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
         schema=TableSchemaDSL(columns=columns),
         record_factory=MappingRecordFactory(),
     )
@@ -40,16 +35,16 @@ def build_points_scoring_systems_history_config(
 
 def build_points_scoring_systems_history_columns() -> list[ColumnSpec]:
     schema_columns: list[ColumnSpec] = [
-        ColumnSpec(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        ColumnSpec(SHARED_SEASONS_HEADER, "seasons", SeasonsColumn()),
     ]
-    for index, position in enumerate(HISTORICAL_POSITIONS):
+    for index, position in enumerate(constants.HISTORICAL_POSITIONS):
         column_instance = FirstPlaceColumn() if index == 0 else IntColumn()
         schema_columns.append(ColumnSpec(position, position.lower(), column_instance))
     schema_columns.extend(
         [
-            ColumnSpec(POINTS_FASTEST_LAP_HEADER, "fastest_lap", IntColumn()),
+            ColumnSpec(constants.POINTS_FASTEST_LAP_HEADER, "fastest_lap", IntColumn()),
             ColumnSpec(
-                POINTS_DRIVERS_CHAMPIONSHIP_HEADER,
+                constants.POINTS_DRIVERS_CHAMPIONSHIP_HEADER,
                 "drivers_championship",
                 AutoColumn(),
             ),
@@ -59,7 +54,7 @@ def build_points_scoring_systems_history_columns() -> list[ColumnSpec]:
                 AutoColumn(),
             ),
             ColumnSpec(
-                POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER,
+                constants.POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER,
                 "constructors_championship",
                 AutoColumn(),
             ),
@@ -68,7 +63,7 @@ def build_points_scoring_systems_history_columns() -> list[ColumnSpec]:
                 "constructors_championship",
                 AutoColumn(),
             ),
-            ColumnSpec(POINTS_NOTES_HEADER, "notes", SkipColumn()),
+            ColumnSpec(constants.POINTS_NOTES_HEADER, "notes", SkipColumn()),
         ],
     )
     return schema_columns

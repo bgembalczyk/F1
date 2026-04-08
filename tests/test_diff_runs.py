@@ -22,7 +22,7 @@ EXPECTED_JSONL_ITEM_COUNT = 2
 def test_read_text_returns_file_contents(tmp_path: Path) -> None:
     f = tmp_path / "sample.txt"
     f.write_text("hello world", encoding="utf-8")
-    assert dr._read_text(f) == "hello world"
+    assert dr.read_text(f) == "hello world"
 
 
 # ---------------------------------------------------------------------------
@@ -32,14 +32,14 @@ def test_read_text_returns_file_contents(tmp_path: Path) -> None:
 
 @pytest.mark.unit()
 def test_canonical_json_sorts_keys() -> None:
-    result = dr._canonical_json({"b": 2, "a": 1})
+    result = dr.canonical_json({"b": 2, "a": 1})
     parsed = json.loads(result)
     assert list(parsed.keys()) == sorted(parsed.keys())
 
 
 @pytest.mark.unit()
 def test_canonical_json_ends_with_newline() -> None:
-    result = dr._canonical_json({})
+    result = dr.canonical_json({})
     assert result.endswith("\n")
 
 
@@ -52,7 +52,7 @@ def test_canonical_json_ends_with_newline() -> None:
 def test_canonicalize_json_file(tmp_path: Path) -> None:
     f = tmp_path / "data.json"
     f.write_text('{"b": 2, "a": 1}', encoding="utf-8")
-    result = dr._canonicalize(f)
+    result = dr.canonicalize(f)
     parsed = json.loads(result)
     assert parsed["a"] == 1
     assert parsed["b"] == EXPECTED_JSON_KEYS_COUNT
@@ -62,7 +62,7 @@ def test_canonicalize_json_file(tmp_path: Path) -> None:
 def test_canonicalize_jsonl_file(tmp_path: Path) -> None:
     f = tmp_path / "data.jsonl"
     f.write_text('{"b": 2}\n{"a": 1}\n', encoding="utf-8")
-    result = dr._canonicalize(f)
+    result = dr.canonicalize(f)
     parsed = json.loads(result)
     assert isinstance(parsed, list)
     assert len(parsed) == EXPECTED_JSONL_ITEM_COUNT
@@ -72,7 +72,7 @@ def test_canonicalize_jsonl_file(tmp_path: Path) -> None:
 def test_canonicalize_text_file(tmp_path: Path) -> None:
     f = tmp_path / "data.txt"
     f.write_text("raw content", encoding="utf-8")
-    assert dr._canonicalize(f) == "raw content"
+    assert dr.canonicalize(f) == "raw content"
 
 
 # ---------------------------------------------------------------------------
@@ -84,7 +84,7 @@ def test_canonicalize_text_file(tmp_path: Path) -> None:
 def test_collect_files_from_single_file(tmp_path: Path) -> None:
     f = tmp_path / "file.txt"
     f.write_text("x", encoding="utf-8")
-    result = dr._collect_files(f)
+    result = dr.collect_files(f)
     assert Path("file.txt") in result
     assert result[Path("file.txt")] == f
 
@@ -93,7 +93,7 @@ def test_collect_files_from_single_file(tmp_path: Path) -> None:
 def test_collect_files_from_directory(tmp_path: Path) -> None:
     (tmp_path / "a.txt").write_text("a", encoding="utf-8")
     (tmp_path / "b.txt").write_text("b", encoding="utf-8")
-    result = dr._collect_files(tmp_path)
+    result = dr.collect_files(tmp_path)
     assert Path("a.txt") in result
     assert Path("b.txt") in result
 

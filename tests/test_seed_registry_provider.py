@@ -8,23 +8,23 @@ from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.discovery import DiscoveredComponent
 
 
-class _ConfigA:
+class ConfigA:
     url = "https://example.test/a"
 
 
-class _ConfigB:
+class ConfigB:
     url = "https://example.test/b"
 
 
-class _ListScraperA:
-    CONFIG = _ConfigA
+class ListScraperA:
+    CONFIG = ConfigA
 
 
-class _ListScraperB:
-    CONFIG = _ConfigB
+class ListScraperB:
+    CONFIG = ConfigB
 
 
-def _component(*, seed_name: str, cls: type[object]) -> DiscoveredComponent:
+def component(*, seed_name: str, cls: type[object]) -> DiscoveredComponent:
     metadata = ComponentMetadata.build_layer_one_list_scraper(
         domain=seed_name,
         seed_name=seed_name,
@@ -61,8 +61,8 @@ def test_build_discovered_seed_registry_is_deterministic(monkeypatch) -> None:
         helpers,
         "discover_layer_one_seed_components",
         lambda: {
-            "seed_b": _component(seed_name="seed_b", cls=_ListScraperB),
-            "seed_a": _component(seed_name="seed_a", cls=_ListScraperA),
+            "seed_b": component(seed_name="seed_b", cls=ListScraperB),
+            "seed_a": component(seed_name="seed_a", cls=ListScraperA),
         },
     )
 

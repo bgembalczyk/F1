@@ -5,7 +5,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 
 
-def _ctx(
+def ctx(
     raw: str,
     clean: str | None = None,
     *,
@@ -27,7 +27,7 @@ def _ctx(
 def test_apply_writes_both_keys_when_model_fields_is_none() -> None:
     col = FatalityDateColumn()
     record: dict = {}
-    col.apply(_ctx("2 May 1994"), record)
+    col.apply(ctx("2 May 1994"), record)
     assert "date" in record
     assert "formula_category" in record
 
@@ -35,7 +35,7 @@ def test_apply_writes_both_keys_when_model_fields_is_none() -> None:
 def test_apply_filters_keys_not_in_model_fields() -> None:
     col = FatalityDateColumn()
     record: dict = {}
-    col.apply(_ctx("2 May 1994", model_fields={"date"}), record)
+    col.apply(ctx("2 May 1994", model_fields={"date"}), record)
     assert "date" in record
     assert "formula_category" not in record
 
@@ -43,7 +43,7 @@ def test_apply_filters_keys_not_in_model_fields() -> None:
 def test_apply_allows_all_keys_when_all_are_in_model_fields() -> None:
     col = FatalityDateColumn()
     record: dict = {}
-    col.apply(_ctx("2 May 1994", model_fields={"date", "formula_category"}), record)
+    col.apply(ctx("2 May 1994", model_fields={"date", "formula_category"}), record)
     assert "date" in record
     assert "formula_category" in record
 
@@ -51,12 +51,12 @@ def test_apply_allows_all_keys_when_all_are_in_model_fields() -> None:
 def test_apply_detects_f2_marker() -> None:
     col = FatalityDateColumn()
     record: dict = {}
-    col.apply(_ctx("2 May 1994#"), record)
+    col.apply(ctx("2 May 1994#"), record)
     assert record["formula_category"] == "F2"
 
 
 def test_apply_defaults_to_f1_when_no_marker() -> None:
     col = FatalityDateColumn()
     record: dict = {}
-    col.apply(_ctx("2 May 1994"), record)
+    col.apply(ctx("2 May 1994"), record)
     assert record["formula_category"] == "F1"

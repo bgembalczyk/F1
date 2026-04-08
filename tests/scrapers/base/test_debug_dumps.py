@@ -10,7 +10,7 @@ from scrapers.base.debug_dumps import write_table_pipeline_dump
 from scrapers.base.extractors.infobox import InfoboxExtractor
 
 
-class _FailingParser:
+class FailingParser:
     def parse(self, _soup):
         msg = "boom"
         raise ValueError(msg)
@@ -19,7 +19,7 @@ class _FailingParser:
         return soup.find("table", class_="infobox")
 
 
-class _PassThroughMapper:
+class PassThroughMapper:
     def map(self, raw):
         return raw
 
@@ -30,8 +30,8 @@ def test_debug_enabled_generates_infobox_dump_on_extract_failure(tmp_path) -> No
         "html.parser",
     )
     extractor = InfoboxExtractor(
-        parser=_FailingParser(),
-        mapper=_PassThroughMapper(),
+        parser=FailingParser(),
+        mapper=PassThroughMapper(),
         debug_dir=tmp_path,
         run_id="run-123",
         url="https://example.com/wiki/Test",
@@ -53,8 +53,8 @@ def test_debug_disabled_does_not_generate_infobox_dump_on_extract_failure(
         "html.parser",
     )
     extractor = InfoboxExtractor(
-        parser=_FailingParser(),
-        mapper=_PassThroughMapper(),
+        parser=FailingParser(),
+        mapper=PassThroughMapper(),
         debug_dir=None,
     )
 

@@ -3,13 +3,7 @@ from __future__ import annotations
 import pytest
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.range import RangeColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.time_range import TimeRangeColumn
-from scrapers.base.table.columns.types.tyre import TyreColumn
-from scrapers.base.table.columns.types.unit import UnitColumn
+from scrapers.base.table.columns import types as col
 from scrapers.base.table.dsl.column import ColumnRef
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.serialization import column_ref_payload
@@ -18,7 +12,7 @@ from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.schema import TableSchemaBuilder
 
 
-def _ctx(text: str | None, *, links: list[dict] | None = None) -> ColumnContext:
+def ctx(text: str | None, *, links: list[dict] | None = None) -> ColumnContext:
     clean_text = "" if text is None else text
     return ColumnContext(
         header="Header",
@@ -35,13 +29,13 @@ def _ctx(text: str | None, *, links: list[dict] | None = None) -> ColumnContext:
 
 
 def test_range_column_parse_success_with_shared_suffix() -> None:
-    column = RangeColumn(
-        lower_column=UnitColumn(unit="kg"),
-        upper_column=UnitColumn(unit="kg"),
+    column = col.RangeColumn(
+        lower_column=col.UnitColumn(unit="kg"),
+        upper_column=col.UnitColumn(unit="kg"),
         shared_suffix="kg",
     )
 
-    parsed = column.parse(_ctx("100-110"))
+    parsed = column.parse(ctx("100-110"))
 
     assert parsed == {
         "min": {"value": 100.0, "unit": "kg"},
@@ -50,20 +44,20 @@ def test_range_column_parse_success_with_shared_suffix() -> None:
 
 
 def test_range_column_parse_fail_when_underlying_parser_fails() -> None:
-    column = RangeColumn(
-        lower_column=UnitColumn(unit="kg"),
-        upper_column=UnitColumn(unit="kg"),
+    column = col.RangeColumn(
+        lower_column=col.UnitColumn(unit="kg"),
+        upper_column=col.UnitColumn(unit="kg"),
     )
 
-    parsed = column.parse(_ctx("abc-def"))
+    parsed = column.parse(ctx("abc-def"))
 
     assert parsed == {"min": None, "max": None}
 
 
 def test_range_column_edge_case_single_value_applies_to_both_bounds() -> None:
-    column = RangeColumn(lower_column=IntColumn(), upper_column=IntColumn())
+    column = col.RangeColumn(lower_column=col.IntColumn(), upper_column=col.IntColumn())
 
-    parsed = column.parse(_ctx("42"))
+    parsed = column.parse(ctx("42"))
 
     assert parsed == {"min": 42, "max": 42}
 
@@ -72,19 +66,19 @@ def test_range_column_edge_case_single_value_applies_to_both_bounds() -> None:
 
 
 def test_time_range_column_parse_success() -> None:
-    parsed = TimeRangeColumn().parse(_ctx("9:00am - 1:30pm"))
+    parsed = col.TimeRangeColumn().parse(ctx("9:00am - 1:30pm"))
 
     assert parsed == {"start": "09:00", "end": "13:30"}
 
 
 def test_time_range_column_parse_fail_invalid_time_token() -> None:
-    parsed = TimeRangeColumn().parse(_ctx("9am-1:00pm"))
+    parsed = col.TimeRangeColumn().parse(ctx("9am-1:00pm"))
 
     assert parsed is None
 
 
 def test_time_range_column_edge_case_empty_input() -> None:
-    parsed = TimeRangeColumn().parse(_ctx(""))
+    parsed = col.TimeRangeColumn().parse(ctx(""))
 
     assert parsed is None
 
@@ -93,7 +87,7 @@ def test_time_range_column_edge_case_empty_input() -> None:
 
 
 def test_tyre_column_parse_success_from_text_tokens() -> None:
-    parsed = TyreColumn().parse(_ctx("M/P"))
+    parsed = col.TyreColumn().parse(ctx("M/P"))
 
     assert parsed == [
         {"text": "Michelin", "url": None},
@@ -102,14 +96,14 @@ def test_tyre_column_parse_success_from_text_tokens() -> None:
 
 
 def test_tyre_column_parse_fail_no_tokens() -> None:
-    parsed = TyreColumn().parse(_ctx("   / ,  "))
+    parsed = col.TyreColumn().parse(ctx("   / ,  "))
 
     assert parsed is None
 
 
 def test_tyre_column_edge_case_links_take_precedence_and_strip_marks() -> None:
-    parsed = TyreColumn().parse(
-        _ctx(
+    parsed = col.TyreColumn().parse(
+        ctx(
             "S",
             links=[
                 {
@@ -127,19 +121,19 @@ def test_tyre_column_edge_case_links_take_precedence_and_strip_marks() -> None:
 
 
 def test_unit_column_parse_success_with_explicit_unit() -> None:
-    parsed = UnitColumn(unit="kg").parse(_ctx("1,234 kg"))
+    parsed = col.UnitColumn(unit="kg").parse(ctx("1,234 kg"))
 
     assert parsed == {"value": 1234.0, "unit": "kg"}
 
 
 def test_unit_column_parse_fail_missing_expected_unit() -> None:
-    parsed = UnitColumn(unit="kg").parse(_ctx("1234 lb"))
+    parsed = col.UnitColumn(unit="kg").parse(ctx("1234 lb"))
 
     assert parsed is None
 
 
 def test_unit_column_edge_case_partial_range_uses_first_value() -> None:
-    parsed = UnitColumn(unit="kg").parse(_ctx("100- kg"))
+    parsed = col.UnitColumn(unit="kg").parse(ctx("100- kg"))
 
     assert parsed == {"value": 100.0, "unit": "kg"}
 
@@ -148,7 +142,7 @@ def test_unit_column_edge_case_partial_range_uses_first_value() -> None:
 
 
 def test_seasons_column_builds_urls_using_split_era_rules_without_links() -> None:
-    parsed = SeasonsColumn().parse(_ctx("1979, 1981"))
+    parsed = col.SeasonsColumn().parse(ctx("1979, 1981"))
 
     assert parsed == [
         {
@@ -163,8 +157,8 @@ def test_seasons_column_builds_urls_using_split_era_rules_without_links() -> Non
 
 
 def test_seasons_column_derived_urls_respect_boundary_when_range_crosses_1980() -> None:
-    parsed = SeasonsColumn().parse(
-        _ctx(
+    parsed = col.SeasonsColumn().parse(
+        ctx(
             "1979-1981",
             links=[
                 {
@@ -209,7 +203,7 @@ def test_column_ref_payload_supports_column_instance_and_column_ref() -> None:
     instance_spec = ColumnSpec(
         header="Weight",
         key="weight",
-        column=UnitColumn(unit="kg"),
+        column=col.UnitColumn(unit="kg"),
     )
     ref_spec = ColumnSpec(
         header="Name",
@@ -237,21 +231,21 @@ def test_column_ref_payload_supports_column_instance_and_column_ref() -> None:
 def test_table_schema_builder_build_success() -> None:
     schema = (
         TableSchemaBuilder()
-        .map("Team", "team", TextColumn())
-        .map("Weight", "weight", UnitColumn(unit="kg"))
+        .map("Team", "team", col.TextColumn())
+        .map("Weight", "weight", col.UnitColumn(unit="kg"))
         .build()
     )
 
     assert schema.column_map == {"Team": "team", "Weight": "weight"}
-    assert isinstance(schema.columns["team"], TextColumn)
-    assert isinstance(schema.columns["weight"], UnitColumn)
+    assert isinstance(schema.columns["team"], col.TextColumn)
+    assert isinstance(schema.columns["weight"], col.UnitColumn)
 
 
 @pytest.mark.parametrize(
     ("header", "key", "column", "error_type"),
     [
-        ("", "k", TextColumn(), TypeError),
-        ("H", "", TextColumn(), ValueError),
+        ("", "k", col.TextColumn(), TypeError),
+        ("H", "", col.TextColumn(), ValueError),
         ("H", "k", object(), TypeError),
     ],
 )

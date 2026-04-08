@@ -6,13 +6,9 @@ import pytest
 from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.components.header_resolver import HeaderResolver
 from infrastructure.http_client.components.request_executor import RequestExecutor
-from infrastructure.http_client.components.response_cache_service import (
-    ResponseCacheService,
-)
+from infrastructure.http_client.components.response_cache_service import ResponseCacheService
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.factories.default_http_policy_factory import (
-    DefaultHttpPolicyFactory,
-)
+from infrastructure.http_client.factories import DefaultHttpPolicyFactory
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 
 
@@ -21,7 +17,7 @@ class DummyRequestError(Exception):
 
 
 @dataclass
-class _DummyResponse:
+class DummyResponse:
     status_code: int
     text: str = ""
 
@@ -31,7 +27,7 @@ class _DummyResponse:
             raise DummyRequestError(msg)
 
 
-class _RetryOnServerErrorPolicy:
+class RetryOnServerErrorPolicy:
     @property
     def max_retries(self) -> int:
         return 1
@@ -45,7 +41,7 @@ class _RetryOnServerErrorPolicy:
         return 0.0
 
 
-class _NoopRateLimiter:
+class NoopRateLimiter:
     def __init__(self) -> None:
         self.calls: list[str] = []
 
@@ -53,7 +49,7 @@ class _NoopRateLimiter:
         self.calls.append(url)
 
 
-class _NeverRetryPolicy:
+class NeverRetryPolicy:
     @property
     def max_retries(self) -> int:
         return 0
@@ -66,7 +62,7 @@ class _NeverRetryPolicy:
         return 0.0
 
 
-class _LegacyPositionalRetryPolicy:
+class LegacyPositionalRetryPolicy:
     @property
     def max_retries(self) -> int:
         return 0
@@ -79,7 +75,7 @@ class _LegacyPositionalRetryPolicy:
         return 0.0
 
 
-class _MemoryCache:
+class MemoryCache:
     def __init__(self) -> None:
         self.storage: dict[str, str] = {}
 
@@ -99,7 +95,7 @@ def test_header_resolver_merges_default_and_request_headers() -> None:
 
 
 def test_response_cache_service_reads_and_writes_cache() -> None:
-    cache = _MemoryCache()
+    cache = MemoryCache()
     service = ResponseCacheService(cache=cache)
     calls = {"count": 0}
 
@@ -116,8 +112,8 @@ def test_response_cache_service_reads_and_writes_cache() -> None:
 
 
 def test_request_executor_retries_after_retryable_status() -> None:
-    rate_limiter = _NoopRateLimiter()
-    policy = _RetryOnServerErrorPolicy()
+    rate_limiter = NoopRateLimiter()
+    policy = RetryOnServerErrorPolicy()
     executor = RequestExecutor(retry_policy=policy, rate_limiter=rate_limiter)
 
     calls = {"count": 0}
@@ -126,8 +122,8 @@ def test_request_executor_retries_after_retryable_status() -> None:
         _ = (url, headers, timeout)
         calls["count"] += 1
         if calls["count"] == 1:
-            return _DummyResponse(status_code=500)
-        return _DummyResponse(status_code=200, text="ok")
+            return DummyResponse(status_code=500)
+        return DummyResponse(status_code=200, text="ok")
 
     response = executor.execute(
         url="https://en.wikipedia.org/wiki/F1",
@@ -143,8 +139,8 @@ def test_request_executor_retries_after_retryable_status() -> None:
 
 
 def test_request_executor_raises_after_exhausted_retryable_exceptions() -> None:
-    rate_limiter = _NoopRateLimiter()
-    policy = _RetryOnServerErrorPolicy()
+    rate_limiter = NoopRateLimiter()
+    policy = RetryOnServerErrorPolicy()
     executor = RequestExecutor(retry_policy=policy, rate_limiter=rate_limiter)
 
     def request_func(url: str, *, headers: dict[str, str], timeout: int):
@@ -170,15 +166,15 @@ def test_request_executor_raises_after_exhausted_retryable_exceptions() -> None:
 
 
 def test_request_executor_supports_legacy_positional_retry_signature() -> None:
-    rate_limiter = _NoopRateLimiter()
-    policy = _LegacyPositionalRetryPolicy()
+    rate_limiter = NoopRateLimiter()
+    policy = LegacyPositionalRetryPolicy()
     executor = RequestExecutor(retry_policy=policy, rate_limiter=rate_limiter)
 
     response = executor.execute(
         url="https://en.wikipedia.org/wiki/F1",
         headers={"X": "1"},
         timeout=3,
-        request_func=lambda *_args, **_kwargs: _DummyResponse(status_code=200),
+        request_func=lambda *_args, **_kwargs: DummyResponse(status_code=200),
         request_exception_cls=DummyRequestError,
     )
 
@@ -187,8 +183,8 @@ def test_request_executor_supports_legacy_positional_retry_signature() -> None:
 
 
 def test_request_executor_fails_for_none_response_without_retry() -> None:
-    rate_limiter = _NoopRateLimiter()
-    policy = _NeverRetryPolicy()
+    rate_limiter = NoopRateLimiter()
+    policy = NeverRetryPolicy()
     executor = RequestExecutor(retry_policy=policy, rate_limiter=rate_limiter)
 
     with pytest.raises(AttributeError):
@@ -217,7 +213,7 @@ def test_default_http_policy_factory_builds_default_components(tmp_path) -> None
 
 def test_default_http_policy_factory_respects_user_overrides(tmp_path) -> None:
     custom_retry = DefaultRetryPolicy(retries=5, backoff_seconds=0.0)
-    custom_rate_limiter = _NoopRateLimiter()
+    custom_rate_limiter = NoopRateLimiter()
     custom_cache = FileCache(cache_dir=tmp_path, ttl_seconds=60)
 
     config = HttpClientConfig(

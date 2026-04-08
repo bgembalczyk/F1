@@ -15,9 +15,7 @@ from scrapers.seasons.parsers.entry_merger import EntryMerger
 from scrapers.seasons.parsers.free_practice import SeasonFreePracticeParser
 from scrapers.seasons.parsers.jim_clark_trophy import JimClarkTrophyParser
 from scrapers.seasons.parsers.non_championship import SeasonNonChampionshipParser
-from scrapers.seasons.parsers.regional_championship import (
-    SeasonRegionalChampionshipParser,
-)
+from scrapers.seasons.parsers.regional_championship import SeasonRegionalChampionshipParser
 from scrapers.seasons.parsers.results import SeasonResultsParser
 from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser

@@ -3,18 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.constructor import ConstructorColumn
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.engine import EngineColumn
-from scrapers.base.table.columns.types.entrant import EntrantColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.tyre import TyreColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns import types as col
 from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
 from scrapers.base.table.headers_shared import POINTS_HEADER
 from scrapers.base.table.headers_shared import POINTS_HEADER_TO_KEY
@@ -46,11 +35,11 @@ CAREER_HIGHLIGHTS_HEADER_TO_KEY = {
 }
 
 CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY: dict[str, Callable[[], Any]] = {
-    "season": IntColumn,
-    "series": UrlColumn,
-    "position": PositionColumn,
-    "team": EntrantColumn,
-    "car": UrlColumn,
+    "season": col.IntColumn,
+    "series": col.UrlColumn,
+    "position": col.PositionColumn,
+    "team": col.EntrantColumn,
+    "car": col.UrlColumn,
 }
 
 CAREER_SUMMARY_HEADER_TO_KEY = {
@@ -68,15 +57,15 @@ CAREER_SUMMARY_HEADER_TO_KEY = {
 }
 
 CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY: dict[str, Callable[[], Any]] = {
-    "season": IntColumn,
+    "season": col.IntColumn,
     "series": SeriesColumn,
-    "position": TextColumn,
-    "team": EntrantColumn,
-    "races": IntColumn,
-    "wins": IntColumn,
-    "poles": IntColumn,
-    "fastest_laps": IntColumn,
-    "podiums": IntColumn,
+    "position": col.TextColumn,
+    "team": col.EntrantColumn,
+    "races": col.IntColumn,
+    "wins": col.IntColumn,
+    "poles": col.IntColumn,
+    "fastest_laps": col.IntColumn,
+    "podiums": col.IntColumn,
     "points": PointsOrTextColumn,
 }
 
@@ -117,35 +106,35 @@ COMPLETE_RESULTS_HEADER_TO_KEY = {
 }
 
 COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY: dict[str, Callable[[], Any]] = {
-    "year": AutoColumn,
-    "team": EntrantColumn,
-    "co_drivers": DriverListColumn,
-    "car": AutoColumn,
-    "class": AutoColumn,
-    "laps": IntColumn,
-    "pos": PositionColumn,
-    "class_pos": PositionColumn,
-    "entrant": EntrantColumn,
-    "chassis": lambda: LinksListColumn(text_for_missing_url=True),
-    "engine": EngineColumn,
-    "wdc": PositionColumn,
+    "year": col.AutoColumn,
+    "team": col.EntrantColumn,
+    "co_drivers": col.DriverListColumn,
+    "car": col.AutoColumn,
+    "class": col.AutoColumn,
+    "laps": col.IntColumn,
+    "pos": col.PositionColumn,
+    "class_pos": col.PositionColumn,
+    "entrant": col.EntrantColumn,
+    "chassis": lambda: col.LinksListColumn(text_for_missing_url=True),
+    "engine": col.EngineColumn,
+    "wdc": col.PositionColumn,
     "points": PointsOrTextColumn,
-    "rank": PositionColumn,
-    "dc": PositionColumn,
-    "qualifying": PositionColumn,
-    "quali_race": PositionColumn,
-    "main_race": PositionColumn,
-    "tyres": TyreColumn,
-    "no": IntColumn,
-    "start": PositionColumn,
-    "finish": PositionColumn,
-    "stages_won": IntColumn,
-    "make": ConstructorColumn,
-    "manufacturer": ConstructorColumn,
-    "ngnc": PositionColumn,
-    "qh": PositionColumn,
-    "f": PositionColumn,
-    "ref": SkipColumn,
+    "rank": col.PositionColumn,
+    "dc": col.PositionColumn,
+    "qualifying": col.PositionColumn,
+    "quali_race": col.PositionColumn,
+    "main_race": col.PositionColumn,
+    "tyres": col.TyreColumn,
+    "no": col.IntColumn,
+    "start": col.PositionColumn,
+    "finish": col.PositionColumn,
+    "stages_won": col.IntColumn,
+    "make": col.ConstructorColumn,
+    "manufacturer": col.ConstructorColumn,
+    "ngnc": col.PositionColumn,
+    "qh": col.PositionColumn,
+    "f": col.PositionColumn,
+    "ref": col.SkipColumn,
 }
 
 

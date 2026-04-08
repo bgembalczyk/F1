@@ -21,7 +21,7 @@ class SectionContractFixture:
     expected_metadata: dict[str, Any]
 
 
-def _content_text_fixture(
+def content_text_fixture(
     *,
     h2_id: str,
     h2_text: str,
@@ -39,12 +39,12 @@ def _content_text_fixture(
     """
 
 
-def _snapshot_cases_drivers() -> tuple[SectionFixture, SectionFixture]:
+def snapshot_cases_drivers() -> tuple[SectionFixture, SectionFixture]:
     return (
         SectionFixture(
             domain="drivers",
             variant="minimal",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Career",
                 h2_text="Career",
                 h3_id="Formula_One",
@@ -57,7 +57,7 @@ def _snapshot_cases_drivers() -> tuple[SectionFixture, SectionFixture]:
         SectionFixture(
             domain="drivers",
             variant="edge",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Career_results",
                 h2_text="Career results",
                 h3_id="Racing_record",
@@ -73,12 +73,12 @@ def _snapshot_cases_drivers() -> tuple[SectionFixture, SectionFixture]:
     )
 
 
-def _snapshot_cases_constructors() -> tuple[SectionFixture, SectionFixture]:
+def snapshot_cases_constructors() -> tuple[SectionFixture, SectionFixture]:
     return (
         SectionFixture(
             domain="constructors",
             variant="minimal",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Results",
                 h2_text="Results",
                 h3_id="Championship_results",
@@ -94,7 +94,7 @@ def _snapshot_cases_constructors() -> tuple[SectionFixture, SectionFixture]:
         SectionFixture(
             domain="constructors",
             variant="edge",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Constructors_for_the_current_season",
                 h2_text="Constructors for the current season",
                 h3_id="Entries",
@@ -107,12 +107,12 @@ def _snapshot_cases_constructors() -> tuple[SectionFixture, SectionFixture]:
     )
 
 
-def _snapshot_cases_circuits() -> tuple[SectionFixture, SectionFixture]:
+def snapshot_cases_circuits() -> tuple[SectionFixture, SectionFixture]:
     return (
         SectionFixture(
             domain="circuits",
             variant="minimal",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Layout",
                 h2_text="Layout",
                 h3_id="Current",
@@ -125,7 +125,7 @@ def _snapshot_cases_circuits() -> tuple[SectionFixture, SectionFixture]:
         SectionFixture(
             domain="circuits",
             variant="edge",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Formula_One_circuits",
                 h2_text="Formula One circuits",
                 h3_id="List",
@@ -141,12 +141,12 @@ def _snapshot_cases_circuits() -> tuple[SectionFixture, SectionFixture]:
     )
 
 
-def _snapshot_cases_seasons() -> tuple[SectionFixture, SectionFixture]:
+def snapshot_cases_seasons() -> tuple[SectionFixture, SectionFixture]:
     return (
         SectionFixture(
             domain="seasons",
             variant="minimal",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Grands_Prix",
                 h2_text="Grands Prix",
                 h3_id="Rounds",
@@ -159,7 +159,7 @@ def _snapshot_cases_seasons() -> tuple[SectionFixture, SectionFixture]:
         SectionFixture(
             domain="seasons",
             variant="edge",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Results_and_standings",
                 h2_text="Results and standings",
                 h3_id="Race_results",
@@ -172,12 +172,12 @@ def _snapshot_cases_seasons() -> tuple[SectionFixture, SectionFixture]:
     )
 
 
-def _snapshot_cases_grands_prix() -> tuple[SectionFixture, SectionFixture]:
+def snapshot_cases_grands_prix() -> tuple[SectionFixture, SectionFixture]:
     return (
         SectionFixture(
             domain="grands_prix",
             variant="minimal",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Race",
                 h2_text="Race",
                 h3_id="Classification",
@@ -190,7 +190,7 @@ def _snapshot_cases_grands_prix() -> tuple[SectionFixture, SectionFixture]:
         SectionFixture(
             domain="grands_prix",
             variant="edge",
-            html=_content_text_fixture(
+            html=content_text_fixture(
                 h2_id="Race",
                 h2_text="Race",
                 h3_id="Fastest_lap",
@@ -207,11 +207,11 @@ def _snapshot_cases_grands_prix() -> tuple[SectionFixture, SectionFixture]:
 
 
 SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
-    "drivers": _snapshot_cases_drivers(),
-    "constructors": _snapshot_cases_constructors(),
-    "circuits": _snapshot_cases_circuits(),
-    "seasons": _snapshot_cases_seasons(),
-    "grands_prix": _snapshot_cases_grands_prix(),
+    "drivers": snapshot_cases_drivers(),
+    "constructors": snapshot_cases_constructors(),
+    "circuits": snapshot_cases_circuits(),
+    "seasons": snapshot_cases_seasons(),
+    "grands_prix": snapshot_cases_grands_prix(),
 }
 
 

@@ -12,11 +12,7 @@ from scripts.ci.git_diff import parse_added_lines_from_unified_diff
 from scripts.ci.io_utils import append_output_vars
 from scripts.ci.io_utils import read_json_file
 from scripts.ci.io_utils import write_text_file
-from scripts.ci.reporting import CiStatus
-from scripts.ci.reporting import exit_code_for_status
-from scripts.ci.reporting import line_range
-from scripts.ci.reporting import resolve_status
-from scripts.ci.reporting import split_csv
+from scripts.ci import reporting
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -124,11 +120,11 @@ def test_read_json_file_missing_returns_empty_dict(tmp_path: Path) -> None:
 
 
 def test_reporting_helpers() -> None:
-    assert split_csv("a,b,,c") == ["a", "b", "c"]
-    assert line_range({"start": 1, "end": 3}) == "L1-L3"
-    assert resolve_status(0, warn_threshold=1, fail_threshold=2) == CiStatus.ok
-    assert resolve_status(1, warn_threshold=1, fail_threshold=2) == CiStatus.warn
-    assert resolve_status(2, warn_threshold=1, fail_threshold=2) == CiStatus.fail
-    assert exit_code_for_status(CiStatus.ok) == 0
-    assert exit_code_for_status(CiStatus.warn) == 0
-    assert exit_code_for_status(CiStatus.fail) == 1
+    assert reporting.split_csv("a,b,,c") == ["a", "b", "c"]
+    assert reporting.line_range({"start": 1, "end": 3}) == "L1-L3"
+    assert reporting.resolve_status(0, warn_threshold=1, fail_threshold=2) == reporting.CiStatus.ok
+    assert reporting.resolve_status(1, warn_threshold=1, fail_threshold=2) == reporting.CiStatus.warn
+    assert reporting.resolve_status(2, warn_threshold=1, fail_threshold=2) == reporting.CiStatus.fail
+    assert reporting.exit_code_for_status(reporting.CiStatus.ok) == 0
+    assert reporting.exit_code_for_status(reporting.CiStatus.warn) == 0
+    assert reporting.exit_code_for_status(reporting.CiStatus.fail) == 1

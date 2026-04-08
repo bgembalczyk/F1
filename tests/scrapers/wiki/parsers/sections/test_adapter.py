@@ -1,12 +1,12 @@
-from tests.support.dependency_stubs import _ensure_bs4_stub
-from tests.support.dependency_stubs import _ensure_certifi_stub
-from tests.support.dependency_stubs import _ensure_pandas_stub
-from tests.support.dependency_stubs import _ensure_requests_stub
+from tests.support.dependency_stubs import ensure_bs4_stub
+from tests.support.dependency_stubs import ensure_certifi_stub
+from tests.support.dependency_stubs import ensure_pandas_stub
+from tests.support.dependency_stubs import ensure_requests_stub
 
-_ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
-_ensure_certifi_stub()
-_ensure_pandas_stub()
-_ensure_requests_stub()
+ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
+ensure_certifi_stub()
+ensure_pandas_stub()
+ensure_requests_stub()
 
 from scrapers.wiki.parsers.sections.adapter import _extract_sections
 from scrapers.wiki.parsers.sections.adapter import _iter_sections

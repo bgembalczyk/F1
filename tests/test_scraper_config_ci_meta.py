@@ -6,13 +6,13 @@ from pathlib import Path
 SCRAPERS_ROOT = Path("scrapers")
 
 
-def _iter_scraper_python_files() -> list[Path]:
+def iter_scraper_python_files() -> list[Path]:
     return sorted(
         path for path in SCRAPERS_ROOT.rglob("*.py") if "__pycache__" not in path.parts
     )
 
 
-def _class_config_uses_direct_scraper_config(source: str) -> list[str]:
+def class_config_uses_direct_scraper_config(source: str) -> list[str]:
     tree = ast.parse(source)
     offenders: list[str] = []
 
@@ -44,9 +44,9 @@ def _class_config_uses_direct_scraper_config(source: str) -> list[str]:
 def test_ci_meta_requires_build_scraper_config_for_class_config() -> None:
     offenders: list[str] = []
 
-    for path in _iter_scraper_python_files():
+    for path in iter_scraper_python_files():
         source = path.read_text(encoding="utf-8")
-        classes = _class_config_uses_direct_scraper_config(source)
+        classes = class_config_uses_direct_scraper_config(source)
         offenders.extend(f"{path}:{class_name}" for class_name in classes)
 
     assert not offenders, (
@@ -58,7 +58,7 @@ def test_ci_meta_requires_build_scraper_config_for_class_config() -> None:
 def test_ci_meta_forbids_deprecated_build_scraper_config_alias() -> None:
     offenders: list[str] = []
 
-    for path in _iter_scraper_python_files():
+    for path in iter_scraper_python_files():
         source = path.read_text(encoding="utf-8")
         if "from scrapers.base.table.builders import build_scraper_config" in source:
             offenders.append(str(path))

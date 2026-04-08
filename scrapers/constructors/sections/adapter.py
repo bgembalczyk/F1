@@ -1,12 +1,8 @@
 from __future__ import annotations
 
 from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.constructors.sections.championship_results import (
-    ConstructorChampionshipResultsSectionParser,
-)
-from scrapers.constructors.sections.complete_f1_results import (
-    ConstructorCompleteF1ResultsSectionParser,
-)
+from scrapers.constructors.sections.championship_results import ConstructorChampionshipResultsSectionParser
+from scrapers.constructors.sections.complete_f1_results import ConstructorCompleteF1ResultsSectionParser
 from scrapers.constructors.sections.history import ConstructorHistorySectionParser
 from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 

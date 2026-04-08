@@ -7,3 +7,6 @@ class SuperscriptParseResult:
     pole_position: bool
     fastest_lap: bool
     footnotes: list[str]
+
+
+__all__ = ["SuperscriptParseResult"]

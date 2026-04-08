@@ -8,9 +8,7 @@ from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.base.sections.section_id_resolver import MissingSectionError
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
 from scrapers.base.single_wiki_article.base import SingleWikiArticleScraperBase
-from scrapers.base.single_wiki_article.section_selection_strategy import (
-    WikipediaSectionByIdSelectionStrategy,
-)
+from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
 from scrapers.grands_prix.helpers.sections import is_grand_prix_article
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 

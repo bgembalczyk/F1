@@ -7,13 +7,13 @@ from scripts.check_di_antipatterns import DI_ADR_THRESHOLD
 from scripts.check_di_antipatterns import run_check
 
 
-def _write(path: Path, content: str) -> Path:
+def write(path: Path, content: str) -> Path:
     path.write_text(content, encoding="utf-8")
     return path
 
 
 def test_detects_service_creation_inside_business_method(tmp_path: Path) -> None:
-    source = _write(
+    source = write(
         tmp_path / "sample.py",
         """
 class DriverPipeline:
@@ -33,7 +33,7 @@ class DriverPipeline:
 
 
 def test_skips_creation_in_constructor_and_factory_methods(tmp_path: Path) -> None:
-    source = _write(
+    source = write(
         tmp_path / "sample.py",
         """
 class DriverPipeline:
@@ -51,7 +51,7 @@ class DriverPipeline:
 
 
 def test_allows_explicit_suppression_comment(tmp_path: Path) -> None:
-    source = _write(
+    source = write(
         tmp_path / "sample.py",
         """
 class DriverPipeline:
@@ -68,7 +68,7 @@ class DriverPipeline:
 
 
 def test_detects_parser_creation_inside_business_method(tmp_path: Path) -> None:
-    source = _write(
+    source = write(
         tmp_path / "sample_parser.py",
         """
 class DriverPipeline:
@@ -85,7 +85,7 @@ class DriverPipeline:
 
 
 def test_detects_hidden_import_inside_business_method(tmp_path: Path) -> None:
-    source = _write(
+    source = write(
         tmp_path / "sample_import.py",
         """
 class DriverPipeline:

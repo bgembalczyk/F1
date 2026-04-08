@@ -6,13 +6,13 @@ from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
 from scrapers.seasons.services.domain_parsing_policy import TestingVenuesLayout
 
 
-def _policy_with_layout(layout):
+def policy_with_layout(layout):
     policy = MagicMock(spec=DomainParsingPolicy)
     policy.resolve_testing_venues_layout.return_value = layout
     return policy
 
 
-def _table_parser_returning(records):
+def table_parser_returning(records):
     tp = MagicMock()
     tp.parse_table.return_value = records
     return tp
@@ -20,8 +20,8 @@ def _table_parser_returning(records):
 
 def test_parse_returns_empty_when_layout_is_none() -> None:
     parser = TestingVenuesParser(
-        table_parser=_table_parser_returning([]),
-        policy=_policy_with_layout(None),
+        table_parser=table_parser_returning([]),
+        policy=policy_with_layout(None),
     )
     result = parser.parse(MagicMock(), season_year=2023)
     assert result == []
@@ -29,10 +29,10 @@ def test_parse_returns_empty_when_layout_is_none() -> None:
 
 def test_parse_calls_parse_2011_for_swapped_layout() -> None:
     records = [{"test": 1, "circuit": {"text": "X"}, "event": "Y"}]
-    tp = _table_parser_returning(records)
+    tp = table_parser_returning(records)
     parser = TestingVenuesParser(
         table_parser=tp,
-        policy=_policy_with_layout(TestingVenuesLayout.SWAPPED_CIRCUIT_EVENT),
+        policy=policy_with_layout(TestingVenuesLayout.SWAPPED_CIRCUIT_EVENT),
     )
     soup = MagicMock()
     result = parser.parse(soup, season_year=2011)
@@ -44,10 +44,10 @@ def test_parse_calls_parse_2009_for_standard_layout() -> None:
     records = [
         {"test": 1, "event": "Pre-season", "circuit": {"text": "C"}, "dates": None},
     ]
-    tp = _table_parser_returning(records)
+    tp = table_parser_returning(records)
     parser = TestingVenuesParser(
         table_parser=tp,
-        policy=_policy_with_layout(TestingVenuesLayout.STANDARD),
+        policy=policy_with_layout(TestingVenuesLayout.STANDARD),
     )
     soup = MagicMock()
     result = parser.parse(soup, season_year=2009)
@@ -59,10 +59,10 @@ def test_parse_2011_swaps_circuit_and_event_fields() -> None:
     records = [
         {"test": 1, "circuit": "CircuitField", "event": {"text": "EventField"}},
     ]
-    tp = _table_parser_returning(records)
+    tp = table_parser_returning(records)
     parser = TestingVenuesParser(
         table_parser=tp,
-        policy=_policy_with_layout(TestingVenuesLayout.SWAPPED_CIRCUIT_EVENT),
+        policy=policy_with_layout(TestingVenuesLayout.SWAPPED_CIRCUIT_EVENT),
     )
     soup = MagicMock()
     result = parser.parse(soup, season_year=2011)
@@ -72,10 +72,10 @@ def test_parse_2011_swaps_circuit_and_event_fields() -> None:
 
 
 def test_parse_2009_passes_correct_section_ids() -> None:
-    tp = _table_parser_returning([])
+    tp = table_parser_returning([])
     parser = TestingVenuesParser(
         table_parser=tp,
-        policy=_policy_with_layout(TestingVenuesLayout.STANDARD),
+        policy=policy_with_layout(TestingVenuesLayout.STANDARD),
     )
     soup = MagicMock()
     parser.parse(soup, season_year=2009)

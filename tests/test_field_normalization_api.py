@@ -14,7 +14,7 @@ from models.domain_utils.field_normalization.stats import is_driver_stats_table
 from models.domain_utils.field_normalization.stats import normalize_stats_headers
 
 
-def _validate_link(payload, *, field_name: str):
+def validate_link(payload, *, field_name: str):
     _ = field_name
     if payload is None:
         return {"text": "", "url": None}
@@ -80,7 +80,7 @@ def test_link_helpers_normalize_and_filter_empty_payloads() -> None:
     assert normalize_link_item(
         {"text": " Driver ", "url": "https://example.com"},
         field_name="driver",
-        validate_payload=_validate_link,
+        validate_payload=validate_link,
     ) == {"text": "Driver", "url": "https://example.com"}
 
     assert normalize_link_items(
@@ -91,7 +91,7 @@ def test_link_helpers_normalize_and_filter_empty_payloads() -> None:
             "   ",
         ],
         field_name="entries",
-        validate_payload=_validate_link,
+        validate_payload=validate_link,
     ) == [
         {"text": "Driver", "url": None},
         {"text": "Team", "url": None},
@@ -103,4 +103,4 @@ def test_normalize_link_item_rejects_unsupported_type() -> None:
         ValueError,
         match="musi być linkiem, słownikiem lub tekstem",
     ):
-        normalize_link_item(123, field_name="driver", validate_payload=_validate_link)
+        normalize_link_item(123, field_name="driver", validate_payload=validate_link)

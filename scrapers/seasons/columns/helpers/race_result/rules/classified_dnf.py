@@ -8,7 +8,7 @@ from scrapers.seasons.columns.helpers.race_result.helpers import append_note
 from scrapers.seasons.columns.helpers.race_result.rules.context import ResultRuleContext
 
 
-class ClassifiedDnfRule:
+class ClassifiedDNFRule:
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
         if self._is_classified_dnf(result, context):
             append_note(result, CLASSIFIED_DNF_NOTE)
@@ -24,3 +24,6 @@ class ClassifiedDnfRule:
             and context.background in CLASSIFIED_DNF_BACKGROUNDS
             and isinstance(position, int)
         )
+
+
+__all__ = ["ClassifiedDNFRule"]

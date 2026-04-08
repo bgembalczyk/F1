@@ -12,12 +12,8 @@ from infrastructure.http_client.caching.file import FileCache
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.interfaces.http_client_protocol import (
-    HttpClientProtocol,
-)
-from infrastructure.http_client.interfaces.http_response_protocol import (
-    HttpResponseProtocol,
-)
+from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
+from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
 from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from infrastructure.http_client.requests_shim.http_error import HTTPError
@@ -29,7 +25,7 @@ from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
 
 
-class _StubHandler(BaseHTTPRequestHandler):
+class StubHandler(BaseHTTPRequestHandler):
     retry_count = 0
     delay_seconds = 0.0
     last_header = ""
@@ -83,18 +79,18 @@ class _StubHandler(BaseHTTPRequestHandler):
 
 @pytest.fixture(scope="module")
 def http_server():
-    server = ThreadingHTTPServer(("localhost", 0), _StubHandler)
+    server = ThreadingHTTPServer(("localhost", 0), StubHandler)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     base_url = f"http://{server.server_address[0]}:{server.server_address[1]}"
 
-    yield base_url, _StubHandler
+    yield base_url, StubHandler
 
     server.shutdown()
     thread.join()
 
 
-def _client_with_config(client_cls, **config_kwargs):
+def client_with_config(client_cls, **config_kwargs):
     """
     Helper: buduje klienta przez HttpClientConfig (nowy styl),
     ale zostawia testom możliwość podania dowolnych pól configu.
@@ -106,7 +102,7 @@ def _client_with_config(client_cls, **config_kwargs):
 CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
     (
         "urllib",
-        lambda **kwargs: _client_with_config(
+        lambda **kwargs: client_with_config(
             UrllibHttpClient,
             backoff_seconds=0.01,
             **kwargs,
@@ -211,14 +207,14 @@ def test_default_retry_policy_for_statuses():
     )
 
 
-class _DummyHttpClient:
+class DummyHttpClient:
     def get_text(self, url: str, *, timeout: int | None = None) -> str:
         return f"{url}::{timeout}"
 
 
 def test_http_policy_shared_between_scraper_options_and_fetchers():
     policy = HttpPolicy(timeout=5, retries=1, cache=None)
-    http_client = _DummyHttpClient()
+    http_client = DummyHttpClient()
 
     options = ScraperOptions()
     options.http.policy = policy

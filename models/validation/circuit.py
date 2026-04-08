@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
+from models.domain_utils.normalization import normalize_link_items
+from models.domain_utils.normalization import normalize_season_items
 from models.domain_utils.field_normalization.links import normalize_link_items
 from models.domain_utils.normalization import (
     normalize_season_items as core_normalize_season_items,
@@ -77,4 +79,4 @@ class Circuit(ValidatedModel):
         ]
 
         # --- seasons: koercja do SeasonRef + filtr None ---
-        self.seasons = list(core_normalize_season_items(self.seasons))
+        self.seasons = list(normalize_season_items(self.seasons))

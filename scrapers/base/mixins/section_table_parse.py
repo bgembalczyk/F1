@@ -5,9 +5,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.single_wiki_article.section_selection_strategy import (
-    WikipediaSectionByIdSelectionStrategy,
-)
+from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
 
 
 class SectionTableParseMixin:

@@ -6,9 +6,7 @@ from typing import Any
 from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
 from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
-from scrapers.base.single_wiki_article.section_adapter import (
-    SingleWikiArticleSectionAdapterBase,
-)
+from scrapers.base.single_wiki_article.section_adapter import SingleWikiArticleSectionAdapterBase
 from scrapers.seasons.composition import SeasonScraperCompositionFactory
 from scrapers.seasons.composition import SeasonScraperDependencies
 from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO

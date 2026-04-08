@@ -9,7 +9,7 @@ from tests.support.imports_analyzer import parse_imports
 MIN_IMPORT_PARTS = 3
 
 
-def _iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
+def iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
     violations: list[str] = []
 
     for parsed_import in parse_imports(py_file):

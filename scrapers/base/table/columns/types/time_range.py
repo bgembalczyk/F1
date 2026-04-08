@@ -59,3 +59,6 @@ class TimeRangeColumn(BaseColumn):
                 hours += noon_hour
 
         return f"{hours:02d}:{minutes}"
+
+
+__all__ = ["TimeRangeColumn"]

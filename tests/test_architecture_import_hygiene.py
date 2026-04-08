@@ -12,7 +12,7 @@ ARCHITECTURE_TEST_FILES = (
 )
 
 
-def _module_import_keys(tree: ast.Module) -> list[tuple[str, int]]:
+def module_import_keys(tree: ast.Module) -> list[tuple[str, int]]:
     keys: list[tuple[str, int]] = []
     for node in tree.body:
         if isinstance(node, ast.Import):
@@ -35,7 +35,7 @@ def _module_import_keys(tree: ast.Module) -> list[tuple[str, int]]:
     return keys
 
 
-def _imported_names(tree: ast.Module) -> dict[str, int]:
+def imported_names(tree: ast.Module) -> dict[str, int]:
     imported: dict[str, int] = {}
     for node in tree.body:
         if isinstance(node, ast.Import):
@@ -49,8 +49,8 @@ def _imported_names(tree: ast.Module) -> dict[str, int]:
     return imported
 
 
-def _reassigned_imports(tree: ast.Module) -> list[tuple[str, int, int]]:
-    imported = _imported_names(tree)
+def reassigned_imports(tree: ast.Module) -> list[tuple[str, int, int]]:
+    imported = imported_names(tree)
     reassignments: list[tuple[str, int, int]] = []
 
     for node in tree.body:
@@ -78,7 +78,7 @@ def test_architecture_tests_have_no_duplicate_import_statements() -> None:
         tree = ast.parse(test_file.read_text(encoding="utf-8"), filename=str(test_file))
         grouped: dict[str, list[int]] = defaultdict(list)
 
-        for key, lineno in _module_import_keys(tree):
+        for key, lineno in module_import_keys(tree):
             grouped[key].append(lineno)
 
         file_duplicates = [
@@ -95,7 +95,7 @@ def test_architecture_tests_do_not_reassign_imported_names() -> None:
 
     for test_file in ARCHITECTURE_TEST_FILES:
         tree = ast.parse(test_file.read_text(encoding="utf-8"), filename=str(test_file))
-        reassignments = _reassigned_imports(tree)
+        reassignments = reassigned_imports(tree)
         if reassignments:
             violations[str(test_file)] = reassignments
 

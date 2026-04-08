@@ -28,3 +28,6 @@ class SeasonRegulationChangesSectionParser(ExtractListItemsMixin):
             source="wikipedia",
             extras={"kind": "text"},
         )
+
+
+__all__ = ["SeasonRegulationChangesSectionParser"]

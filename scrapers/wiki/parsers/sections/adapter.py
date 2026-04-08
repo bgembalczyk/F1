@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.helpers.transform_micro_ops import expand_alias_variants
+from models.domain_utils.field_normalization.aliases import expand_alias_variants
 from scrapers.wiki.parsers.sections.data_classes import SectionTree
 from scrapers.wiki.parsers.sections.data_classes import SectionTreeMatch
 from scrapers.wiki.parsers.sections.helpers import best_fuzzy_ratio

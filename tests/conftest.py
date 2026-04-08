@@ -10,7 +10,7 @@ FAST_PROFILE_EXCLUDE_PATTERNS: tuple[str, ...] = (
     "/tests/contract/test_minimal_fetch_contract.py",
 )
 
-_MARKER_BY_PATTERN: tuple[tuple[str, str], ...] = (
+MARKER_BY_PATTERN: tuple[tuple[str, str], ...] = (
     # Legacy compatibility suites kept outside unit/contract/architecture profile.
     ("/contract/test_dsl_contract", "integration"),
     ("/contract/test_minimal_fetch_contract", "integration"),
@@ -90,7 +90,7 @@ def marker_for_path(path: str) -> str:
         return "unit"
 
     path_with_leading_slash = f"/{normalized}"
-    for pattern, marker in _MARKER_BY_PATTERN:
+    for pattern, marker in MARKER_BY_PATTERN:
         if pattern in normalized or pattern in path_with_leading_slash:
             return marker
 

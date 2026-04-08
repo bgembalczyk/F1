@@ -10,7 +10,7 @@ from layers.zero.merge_service import LayerZeroMergeService
 from scrapers.base.run_config import RunConfig
 
 
-class _FakeScraper:
+class FakeScraper:
     pass
 
 
@@ -23,7 +23,7 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
         seed_name="drivers",
         wikipedia_url="https://example.com",
         output_category="drivers",
-        list_scraper_cls=_FakeScraper,
+        list_scraper_cls=FakeScraper,
         default_output_path="raw/drivers/seeds/drivers.json",
         legacy_output_path="drivers/drivers.json",
     )
@@ -31,7 +31,7 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
         seed_name="unsupported",
         wikipedia_url="https://example.com",
         output_category="unsupported",
-        list_scraper_cls=_FakeScraper,
+        list_scraper_cls=FakeScraper,
         default_output_path="raw/unsupported/seeds/unsupported.json",
         legacy_output_path="unsupported/unsupported.json",
     )

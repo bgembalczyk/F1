@@ -10,34 +10,34 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-def _write_json(path: Path, payload: object) -> None:
+def write_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload), encoding="utf-8")
 
 
-def _c_extract_path(base: Path, domain: str) -> Path:
+def c_extract_path(base: Path, domain: str) -> Path:
     return base / "layers" / "0_layer" / domain / "C_extract"
 
 
-def _d_merge_path(base: Path, domain: str) -> Path:
+def d_merge_path(base: Path, domain: str) -> Path:
     return base / "layers" / "0_layer" / domain / "D_merge"
 
 
 class TestMergeLayerZeroPhaseD:
     def test_merges_multiple_c_extract_files_into_d_merge(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
-        _write_json(
-            _c_extract_path(base, "countries") / "from_circuits.json",
+        write_json(
+            c_extract_path(base, "countries") / "from_circuits.json",
             [{"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"}],
         )
-        _write_json(
-            _c_extract_path(base, "countries") / "from_drivers.json",
+        write_json(
+            c_extract_path(base, "countries") / "from_drivers.json",
             ["Italy", "Germany"],
         )
 
         merge_layer_zero_phase_d(base)
 
-        d_merge_file = _d_merge_path(base, "countries") / "countries.json"
+        d_merge_file = d_merge_path(base, "countries") / "countries.json"
         assert d_merge_file.exists()
         result = json.loads(d_merge_file.read_text(encoding="utf-8"))
         assert len(result) == 3
@@ -45,19 +45,19 @@ class TestMergeLayerZeroPhaseD:
     def test_deduplicates_by_url(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
         italy = {"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"}
-        _write_json(
-            _c_extract_path(base, "countries") / "a.json",
+        write_json(
+            c_extract_path(base, "countries") / "a.json",
             [italy],
         )
-        _write_json(
-            _c_extract_path(base, "countries") / "b.json",
+        write_json(
+            c_extract_path(base, "countries") / "b.json",
             [italy, {"text": "France", "url": "https://en.wikipedia.org/wiki/France"}],
         )
 
         merge_layer_zero_phase_d(base)
 
         result = json.loads(
-            (_d_merge_path(base, "countries") / "countries.json").read_text(
+            (d_merge_path(base, "countries") / "countries.json").read_text(
                 encoding="utf-8",
             ),
         )
@@ -65,15 +65,15 @@ class TestMergeLayerZeroPhaseD:
 
     def test_deduplicates_strings(self, tmp_path: Path) -> None:
         base = tmp_path / "data" / "wiki"
-        _write_json(
-            _c_extract_path(base, "countries") / "from_drivers.json",
+        write_json(
+            c_extract_path(base, "countries") / "from_drivers.json",
             ["Italy", "Germany", "Italy"],
         )
 
         merge_layer_zero_phase_d(base)
 
         result = json.loads(
-            (_d_merge_path(base, "countries") / "countries.json").read_text(
+            (d_merge_path(base, "countries") / "countries.json").read_text(
                 encoding="utf-8",
             ),
         )
@@ -88,7 +88,7 @@ class TestMergeLayerZeroPhaseD:
 
         merge_layer_zero_phase_d(base)
 
-        assert not _d_merge_path(base, "circuits").exists()
+        assert not d_merge_path(base, "circuits").exists()
 
     def test_produces_d_merge_for_existing_domain_with_single_file(
         self,
@@ -96,11 +96,11 @@ class TestMergeLayerZeroPhaseD:
     ) -> None:
         base = tmp_path / "data" / "wiki"
         payload = [{"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza"}]
-        _write_json(_c_extract_path(base, "locations") / "from_circuits.json", payload)
+        write_json(c_extract_path(base, "locations") / "from_circuits.json", payload)
 
         merge_layer_zero_phase_d(base)
 
-        d_merge_file = _d_merge_path(base, "locations") / "locations.json"
+        d_merge_file = d_merge_path(base, "locations") / "locations.json"
         assert d_merge_file.exists()
         result = json.loads(d_merge_file.read_text(encoding="utf-8"))
         assert result == payload
@@ -110,8 +110,8 @@ class TestMergeLayerZeroPhaseD:
         tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
-        _write_json(
-            _c_extract_path(base, "countries") / "from_mixed.json",
+        write_json(
+            c_extract_path(base, "countries") / "from_mixed.json",
             [
                 {"text": "Poland", "url": "https://example.com/pl"},
                 "Argentina",
@@ -122,7 +122,7 @@ class TestMergeLayerZeroPhaseD:
         merge_layer_zero_phase_d(base)
 
         result = json.loads(
-            (_d_merge_path(base, "countries") / "countries.json").read_text(
+            (d_merge_path(base, "countries") / "countries.json").read_text(
                 encoding="utf-8",
             ),
         )
@@ -137,8 +137,8 @@ class TestMergeLayerZeroPhaseD:
         tmp_path: Path,
     ) -> None:
         base = tmp_path / "data" / "wiki"
-        _write_json(
-            _c_extract_path(base, "sponsors") / "from_mixed.json",
+        write_json(
+            c_extract_path(base, "sponsors") / "from_mixed.json",
             [
                 {"text": "Zeta", "url": "https://example.com/z"},
                 "Alpha",
@@ -149,7 +149,7 @@ class TestMergeLayerZeroPhaseD:
         merge_layer_zero_phase_d(base)
 
         result = json.loads(
-            (_d_merge_path(base, "sponsors") / "sponsors.json").read_text(
+            (d_merge_path(base, "sponsors") / "sponsors.json").read_text(
                 encoding="utf-8",
             ),
         )

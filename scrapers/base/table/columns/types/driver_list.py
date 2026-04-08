@@ -26,3 +26,6 @@ class DriverListColumn(BaseColumn):
                 return [{"text": text, "url": None}]
 
         return []
+
+
+__all__ = ["DriverListColumn"]

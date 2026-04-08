@@ -14,7 +14,7 @@ from scripts.ci.architecture_spec import ARCHITECTURE_SPEC  # noqa: E402
 DEFAULT_OUTPUT = Path("docs/architecture/ARCHITECTURE_SPEC.md")
 
 
-def _render_layout_section() -> str:
+def render_layout_section() -> str:
     lines: list[str] = [
         "## layout",
         "",
@@ -39,7 +39,7 @@ def _render_layout_section() -> str:
     return "\n".join(lines)
 
 
-def _render_rules_section() -> str:
+def render_rules_section() -> str:
     lines: list[str] = ["## rules", "", "### Forbidden imports by layer", ""]
     for layer in ARCHITECTURE_SPEC.layers:
         forbidden = ARCHITECTURE_SPEC.forbidden_imports_by_layer[layer]
@@ -55,7 +55,7 @@ def _render_rules_section() -> str:
     return "\n".join(lines)
 
 
-def _render_deprecation_map_section() -> str:
+def render_deprecation_map_section() -> str:
     lines: list[str] = [
         "## deprecation map",
         "",
@@ -92,11 +92,11 @@ def render_markdown() -> str:
         "",
         "Generated from `scripts/ci/architecture_spec.py`. Do not edit manually.",
         "",
-        _render_layout_section(),
+        render_layout_section(),
         "",
-        _render_rules_section(),
+        render_rules_section(),
         "",
-        _render_deprecation_map_section(),
+        render_deprecation_map_section(),
         "",
     ]
     return "\n".join(sections)

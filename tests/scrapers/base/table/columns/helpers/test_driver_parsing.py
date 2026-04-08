@@ -32,7 +32,7 @@ def html_links_and_no_links_record() -> tuple[str, str]:
     )
 
 
-def _ctx_from_html(html: str) -> ColumnContext:
+def ctx_from_html(html: str) -> ColumnContext:
     cell = BeautifulSoup(html, "html.parser").find("td")
     links = [
         {"text": a.get_text(strip=True), "url": f"{BASE_URL}{a.get('href')}"}
@@ -53,7 +53,7 @@ def _ctx_from_html(html: str) -> ColumnContext:
 def test_extract_from_context_returns_first_link_when_cell_missing(
     html_valid_record: str,
 ) -> None:
-    ctx = _ctx_from_html(html_valid_record)
+    ctx = ctx_from_html(html_valid_record)
     ctx.cell = None
 
     parsed = DriverParsingHelpers.extract_from_context(ctx, BASE_URL)
@@ -107,7 +107,7 @@ def test_parse_segment_fallback_returns_segment_link_when_lookup_misses_alias(
 def test_extract_from_context_returns_none_for_incomplete_record(
     html_incomplete_record: str,
 ) -> None:
-    ctx = _ctx_from_html(html_incomplete_record)
+    ctx = ctx_from_html(html_incomplete_record)
 
     assert DriverParsingHelpers.extract_from_context(ctx, BASE_URL) is None
 
@@ -116,8 +116,8 @@ def test_links_and_no_links_fixture_paths(
     html_links_and_no_links_record: tuple[str, str],
 ) -> None:
     html_with_links, html_without_links = html_links_and_no_links_record
-    ctx_with = _ctx_from_html(html_with_links)
-    ctx_without = _ctx_from_html(html_without_links)
+    ctx_with = ctx_from_html(html_with_links)
+    ctx_without = ctx_from_html(html_without_links)
 
     parsed_with = DriverParsingHelpers.extract_from_context(ctx_with, BASE_URL)
     parsed_without = DriverParsingHelpers.extract_from_context(ctx_without, BASE_URL)

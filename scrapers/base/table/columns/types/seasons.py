@@ -11,11 +11,11 @@ from scrapers.base.table.columns.types.base import BaseColumn
 if TYPE_CHECKING:
     from scrapers.base.table.columns.context import ColumnContext
 
-_YEAR_PATTERN = re.compile(r"^\d{4}$")
-_YEAR_IN_URL_PATTERN = re.compile(r"(?<!\d)\d{4}(?!\d)")
+YEAR_PATTERN = re.compile(r"^\d{4}$")
+YEAR_IN_URL_PATTERN = re.compile(r"(?<!\d)\d{4}(?!\d)")
 
 
-_LAST_YEAR_FORMULA_ONE_SEASON = 1980
+LAST_YEAR_FORMULA_ONE_SEASON = 1980
 
 
 class SeasonsColumn(BaseColumn):
@@ -28,7 +28,7 @@ class SeasonsColumn(BaseColumn):
         for link in ctx.links:
             text = (link.get("text") or "").strip()
             url = link.get("url") or ""
-            if _YEAR_PATTERN.match(text) and url:
+            if YEAR_PATTERN.match(text) and url:
                 url_by_year[text] = url
 
         result = []
@@ -43,7 +43,7 @@ class SeasonsColumn(BaseColumn):
     @staticmethod
     def _derive_url(year: str, url_by_year: dict[str, str]) -> str | None:
         for linked_year, linked_url in url_by_year.items():
-            match = _YEAR_IN_URL_PATTERN.search(linked_url)
+            match = YEAR_IN_URL_PATTERN.search(linked_url)
             if match and match.group() == linked_year:
                 if "/wiki/" in linked_url:
                     base = linked_url.split("/wiki/", 1)[0]
@@ -59,7 +59,10 @@ class SeasonsColumn(BaseColumn):
     def _season_page_title(year: str) -> str:
         season_type = (
             "Formula_One_season"
-            if int(year) <= _LAST_YEAR_FORMULA_ONE_SEASON
+            if int(year) <= LAST_YEAR_FORMULA_ONE_SEASON
             else "Formula_One_World_Championship"
         )
         return f"{year}_{season_type}"
+
+
+__all__ = ["SeasonsColumn"]

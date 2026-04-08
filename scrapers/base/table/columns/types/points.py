@@ -23,3 +23,6 @@ class PointsColumn(BaseColumn):
             }
 
         return ResultsParsingHelpers.parse_points_value(text)
+
+
+__all__ = ["PointsColumn"]

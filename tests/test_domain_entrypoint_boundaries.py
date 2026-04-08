@@ -10,7 +10,7 @@ from tests.architecture.rules import infer_layer
 from tests.architecture.rules import resolve_import_targets
 
 
-def _iter_layer_files(domain_dir: Path, domain: str) -> list[tuple[Path, str]]:
+def iter_layer_files(domain_dir: Path, domain: str) -> list[tuple[Path, str]]:
     collected: list[tuple[Path, str]] = []
     for py_file in domain_dir.rglob("*.py"):
         layer = infer_layer(py_file, domain=domain)
@@ -28,7 +28,7 @@ def test_domains_have_required_layout_and_facade_entrypoint() -> None:
             domain_dir / "entrypoint.py"
         ).exists(), f"Missing facade entrypoint in domain: {domain}"
 
-        available_layers = {layer for _, layer in _iter_layer_files(domain_dir, domain)}
+        available_layers = {layer for _, layer in iter_layer_files(domain_dir, domain)}
         required_layers = set(REQUIRED_LAYERS_BY_DOMAIN[domain])
         missing_layers = required_layers - available_layers
         assert (
@@ -40,7 +40,7 @@ def test_layer_import_boundaries_are_not_violated() -> None:
     root = Path("scrapers")
     for domain in ENTRYPOINT_DOMAINS:
         domain_dir = root / domain
-        for py_file, layer in _iter_layer_files(domain_dir, domain):
+        for py_file, layer in iter_layer_files(domain_dir, domain):
             targets = resolve_import_targets(py_file)
             forbidden = FORBIDDEN_IMPORTS_BY_LAYER[layer]
             for forbidden_target in forbidden:

@@ -23,7 +23,7 @@ EXPECTED_EXECUTED = 8
 EXPECTED_MISS = 2
 
 
-def _create_test_coverage_db(tmp_path: Path) -> Path:
+def create_test_coverage_db(tmp_path: Path) -> Path:
     """Create a minimal .coverage SQLite database for testing."""
     db_path = tmp_path / ".coverage"
     conn = sqlite3.connect(db_path)
@@ -74,7 +74,7 @@ def test_coverage_wave_report_generates_outputs(tmp_path: Path) -> None:
     python_executable = Path(sys.executable).resolve()
     assert python_executable.exists()
 
-    coverage_db = _create_test_coverage_db(tmp_path)
+    coverage_db = create_test_coverage_db(tmp_path)
 
     out_json = tmp_path / "coverage_top.json"
     out_md = tmp_path / "coverage_top.md"
@@ -126,13 +126,13 @@ def test_coverage_wave_report_generates_outputs(tmp_path: Path) -> None:
 @pytest.mark.unit()
 def test_normalize_path_strips_root_prefix() -> None:
     path = cwr.ROOT_PREFIX + "scrapers/foo.py"
-    assert cwr._normalize_path(path) == "scrapers/foo.py"
+    assert cwr.normalize_path(path) == "scrapers/foo.py"
 
 
 @pytest.mark.unit()
 def test_normalize_path_leaves_non_root_paths_unchanged() -> None:
-    assert cwr._normalize_path("scrapers/foo.py") == "scrapers/foo.py"
-    assert cwr._normalize_path("/other/path.py") == "/other/path.py"
+    assert cwr.normalize_path("scrapers/foo.py") == "scrapers/foo.py"
+    assert cwr.normalize_path("/other/path.py") == "/other/path.py"
 
 
 # ---------------------------------------------------------------------------
@@ -140,7 +140,7 @@ def test_normalize_path_leaves_non_root_paths_unchanged() -> None:
 # ---------------------------------------------------------------------------
 
 
-def _make_db_with_entries(
+def make_db_with_entries(
     tmp_path: Path,
     entries: list[tuple[str, bytes]],
 ) -> Path:
@@ -176,8 +176,8 @@ def _make_db_with_entries(
 @pytest.mark.unit()
 def test_load_executed_lines_decodes_numbits(tmp_path: Path) -> None:
     # byte 0b00000001 => line 1 covered
-    db = _make_db_with_entries(tmp_path, [("src/foo.py", bytes([0x01]))])
-    result = cwr._load_executed_lines(db)
+    db = make_db_with_entries(tmp_path, [("src/foo.py", bytes([0x01]))])
+    result = cwr.load_executed_lines(db)
     assert "src/foo.py" in result
     assert 1 in result["src/foo.py"]
 
@@ -185,23 +185,23 @@ def test_load_executed_lines_decodes_numbits(tmp_path: Path) -> None:
 @pytest.mark.unit()
 def test_load_executed_lines_multiple_bytes(tmp_path: Path) -> None:
     # byte 0xFF (bits 0-7 set) => lines 1-8 covered
-    db = _make_db_with_entries(tmp_path, [("src/bar.py", bytes([0xFF]))])
-    result = cwr._load_executed_lines(db)
+    db = make_db_with_entries(tmp_path, [("src/bar.py", bytes([0xFF]))])
+    result = cwr.load_executed_lines(db)
     assert result["src/bar.py"] == set(range(1, 9))
 
 
 @pytest.mark.unit()
 def test_load_executed_lines_normalizes_root_prefix(tmp_path: Path) -> None:
     abs_path = cwr.ROOT_PREFIX + "scrapers/some.py"
-    db = _make_db_with_entries(tmp_path, [(abs_path, bytes([0x01]))])
-    result = cwr._load_executed_lines(db)
+    db = make_db_with_entries(tmp_path, [(abs_path, bytes([0x01]))])
+    result = cwr.load_executed_lines(db)
     assert "scrapers/some.py" in result
 
 
 @pytest.mark.unit()
 def test_load_executed_lines_empty_db(tmp_path: Path) -> None:
-    db = _make_db_with_entries(tmp_path, [])
-    result = cwr._load_executed_lines(db)
+    db = make_db_with_entries(tmp_path, [])
+    result = cwr.load_executed_lines(db)
     assert result == {}
 
 
@@ -214,7 +214,7 @@ def test_load_executed_lines_empty_db(tmp_path: Path) -> None:
 def test_statement_lines_finds_statements(tmp_path: Path) -> None:
     py_file = tmp_path / "sample.py"
     py_file.write_text("x = 1\ny = 2\n", encoding="utf-8")
-    lines = cwr._statement_lines(py_file)
+    lines = cwr.statement_lines(py_file)
     assert 1 in lines
     assert SECOND_STATEMENT_LINE in lines
 
@@ -223,7 +223,7 @@ def test_statement_lines_finds_statements(tmp_path: Path) -> None:
 def test_statement_lines_empty_file(tmp_path: Path) -> None:
     py_file = tmp_path / "empty.py"
     py_file.write_text("", encoding="utf-8")
-    lines = cwr._statement_lines(py_file)
+    lines = cwr.statement_lines(py_file)
     assert lines == set()
 
 
@@ -237,28 +237,28 @@ def test_collect_misses_skips_file_with_no_statements(tmp_path: Path) -> None:
     py_file = tmp_path / "empty.py"
     py_file.write_text("", encoding="utf-8")
     executed = {"empty.py": {1}}
-    result = cwr._collect_misses(tmp_path, executed)
+    result = cwr.collect_misses(tmp_path, executed)
     assert result == []
 
 
 @pytest.mark.unit()
 def test_collect_misses_skips_non_python(tmp_path: Path) -> None:
     executed = {"README.md": {1, 2}}
-    result = cwr._collect_misses(tmp_path, executed)
+    result = cwr.collect_misses(tmp_path, executed)
     assert result == []
 
 
 @pytest.mark.unit()
 def test_collect_misses_skips_test_files(tmp_path: Path) -> None:
     executed = {"tests/test_foo.py": {1}}
-    result = cwr._collect_misses(tmp_path, executed)
+    result = cwr.collect_misses(tmp_path, executed)
     assert result == []
 
 
 @pytest.mark.unit()
 def test_collect_misses_skips_missing_file(tmp_path: Path) -> None:
     executed = {"nonexistent.py": {1}}
-    result = cwr._collect_misses(tmp_path, executed)
+    result = cwr.collect_misses(tmp_path, executed)
     assert result == []
 
 
@@ -268,7 +268,7 @@ def test_collect_misses_counts_correctly(tmp_path: Path) -> None:
     py_file.write_text("a = 1\nb = 2\nc = 3\n", encoding="utf-8")
     # Only line 1 executed
     executed = {"mod.py": {1}}
-    result = cwr._collect_misses(tmp_path, executed)
+    result = cwr.collect_misses(tmp_path, executed)
     assert len(result) == 1
     row = result[0]
     assert row.path == "mod.py"
@@ -283,7 +283,7 @@ def test_collect_misses_sorted_by_miss_descending(tmp_path: Path) -> None:
     py_b = tmp_path / "b.py"
     py_b.write_text("x = 1\n", encoding="utf-8")  # 1 stmt, 0 executed
     executed = {"a.py": set(), "b.py": set()}
-    result = cwr._collect_misses(tmp_path, executed)
+    result = cwr.collect_misses(tmp_path, executed)
     # a.py has more misses, so should come first
     assert result[0].path == "a.py"
     assert result[1].path == "b.py"
@@ -296,55 +296,55 @@ def test_collect_misses_sorted_by_miss_descending(tmp_path: Path) -> None:
 
 @pytest.mark.unit()
 def test_wave_for_path_wave1_parser_high_miss() -> None:
-    assert cwr._wave_for_path("scrapers/foo/parsers/bar.py", 50) == cwr.WAVE1
+    assert cwr.wave_for_path("scrapers/foo/parsers/bar.py", 50) == cwr.WAVE1
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave1_helper_high_miss() -> None:
-    assert cwr._wave_for_path("scrapers/helpers/thing.py", 40) == cwr.WAVE1
+    assert cwr.wave_for_path("scrapers/helpers/thing.py", 40) == cwr.WAVE1
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave1_scripts_ci() -> None:
-    assert cwr._wave_for_path("scripts/ci/my_script.py", 50) == cwr.WAVE1
+    assert cwr.wave_for_path("scripts/ci/my_script.py", 50) == cwr.WAVE1
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave2_domain_service_medium_miss() -> None:
-    assert cwr._wave_for_path("scrapers/domain/service.py", 25) == cwr.WAVE2
+    assert cwr.wave_for_path("scrapers/domain/service.py", 25) == cwr.WAVE2
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave2_services_directory() -> None:
-    assert cwr._wave_for_path("scrapers/seasons/services/foo.py", 30) == cwr.WAVE2
+    assert cwr.wave_for_path("scrapers/seasons/services/foo.py", 30) == cwr.WAVE2
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave3_any_other_file() -> None:
-    assert cwr._wave_for_path("scrapers/foo/bar.py", 5) == cwr.WAVE3
+    assert cwr.wave_for_path("scrapers/foo/bar.py", 5) == cwr.WAVE3
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave4_zero_misses() -> None:
-    assert cwr._wave_for_path("scrapers/foo/bar.py", 0) == cwr.WAVE4
+    assert cwr.wave_for_path("scrapers/foo/bar.py", 0) == cwr.WAVE4
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave1_requires_min_miss() -> None:
     # miss < WAVE1_MIN_MISS but is a parser -> WAVE3, not WAVE1
-    assert cwr._wave_for_path("scrapers/parsers/bar.py", 39) == cwr.WAVE3
+    assert cwr.wave_for_path("scrapers/parsers/bar.py", 39) == cwr.WAVE3
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave2_miss_too_low() -> None:
     # miss < WAVE2_MIN_MISS for domain service -> WAVE3
-    assert cwr._wave_for_path("scrapers/domain/service.py", 19) == cwr.WAVE3
+    assert cwr.wave_for_path("scrapers/domain/service.py", 19) == cwr.WAVE3
 
 
 @pytest.mark.unit()
 def test_wave_for_path_wave2_miss_too_high() -> None:
     # miss > WAVE2_MAX_MISS for domain service (no parser/helper) -> WAVE3
-    assert cwr._wave_for_path("scrapers/domain/service.py", 40) == cwr.WAVE3
+    assert cwr.wave_for_path("scrapers/domain/service.py", 40) == cwr.WAVE3
 
 
 # ---------------------------------------------------------------------------
@@ -355,7 +355,7 @@ def test_wave_for_path_wave2_miss_too_high() -> None:
 @pytest.mark.unit()
 def test_to_dict_computes_coverage_percentage() -> None:
     fm = cwr.FileMiss(path="src/foo.py", statements=10, executed=8, miss=2)
-    result = cwr._to_dict(fm)
+    result = cwr.to_dict(fm)
     assert result["coverage"] == EXPECTED_COVERAGE_PERCENT
     assert result["path"] == "src/foo.py"
     assert result["statements"] == EXPECTED_STATEMENTS
@@ -371,7 +371,7 @@ def test_to_dict_computes_coverage_percentage() -> None:
 
 @pytest.mark.unit()
 def test_render_top_md_empty() -> None:
-    result = cwr._render_top_md([])
+    result = cwr.render_top_md([])
     assert "# Top remaining misses" in result
     assert "| # |" in result
 
@@ -381,7 +381,7 @@ def test_render_top_md_with_entry() -> None:
     items = [
         {"path": "src/foo.py", "miss": 5, "coverage": 75.0, "wave": cwr.WAVE3},
     ]
-    result = cwr._render_top_md(items)
+    result = cwr.render_top_md(items)
     assert "src/foo.py" in result
     assert "75.0%" in result
 
@@ -393,7 +393,7 @@ def test_render_top_md_with_entry() -> None:
 
 @pytest.mark.unit()
 def test_render_backlog_md_empty() -> None:
-    result = cwr._render_backlog_md([])
+    result = cwr.render_backlog_md([])
     assert "# Coverage backlog" in result
     assert "Brak plików w top N." in result
 
@@ -403,7 +403,7 @@ def test_render_backlog_md_with_wave1_item() -> None:
     items = [
         {"path": "scripts/ci/foo.py", "miss": 50, "coverage": 40.0, "wave": cwr.WAVE1},
     ]
-    result = cwr._render_backlog_md(items)
+    result = cwr.render_backlog_md(items)
     assert "scripts/ci/foo.py" in result
     assert cwr.WAVE1 in result
 
@@ -418,7 +418,7 @@ def test_main_creates_output_files(tmp_path: Path) -> None:
     py_file = tmp_path / "mod.py"
     py_file.write_text("x = 1\ny = 2\n", encoding="utf-8")
 
-    db = _make_db_with_entries(
+    db = make_db_with_entries(
         tmp_path,
         [(str(py_file), bytes([0x01]))],  # line 1 covered only
     )

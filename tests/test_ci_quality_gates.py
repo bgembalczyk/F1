@@ -103,7 +103,7 @@ def test_no_new_prints_gate_allows_scripts_and_blocks_other_paths(
     )
 
     assert exit_code == 1
-    assert enforce_no_new_prints._is_allowed("scripts/example.py")
+    assert enforce_no_new_prints.is_allowed("scripts/example.py")
 
 
 def test_duplicate_default_config_detection_finds_same_kwargs_for_two_seeds() -> None:
@@ -116,7 +116,7 @@ def build_layer_zero_run_config_factory_map():
     }
 """
     tree = ast.parse(source)
-    duplicates = check_duplicate_default_configs._extract_static_kwargs_duplicates(tree)
+    duplicates = check_duplicate_default_configs.extract_static_kwargs_duplicates(tree)
 
     assert len(duplicates) == 1
     seeds = next(iter(duplicates.values()))
@@ -330,7 +330,7 @@ def process(x):
     return x
 """
     tree = ast.parse(code)
-    names = enforce_structural_quality._collect_overload_names(tree)
+    names = enforce_structural_quality.collect_overload_names(tree)
     assert "process" in names
 
 
@@ -345,7 +345,7 @@ import typing
 def do_thing(x: int) -> int: ...
 """
     tree = ast.parse(code)
-    names = enforce_structural_quality._collect_overload_names(tree)
+    names = enforce_structural_quality.collect_overload_names(tree)
     assert "do_thing" in names
 
 
@@ -360,7 +360,7 @@ def test_collect_call_counts_handles_attribute_calls() -> None:
 
     code = "obj.method()\nobj.other()\nobj.method()\n"
     tree = ast.parse(code)
-    counts = enforce_structural_quality._collect_call_counts(tree)
+    counts = enforce_structural_quality.collect_call_counts(tree)
     assert counts.get("method", 0) == EXPECTED_METHOD_CALL_COUNT
     assert counts.get("other", 0) == 1
 
@@ -538,14 +538,14 @@ def test_evaluate_file_detects_long_async_functions(tmp_path: Path) -> None:
 def test_should_skip_returns_true_for_venv() -> None:
     from pathlib import Path
 
-    assert enforce_structural_quality._should_skip(Path(".venv/lib/site.py"))
+    assert enforce_structural_quality.should_skip(Path(".venv/lib/site.py"))
 
 
 @pytest.mark.unit()
 def test_should_skip_returns_false_for_regular_path() -> None:
     from pathlib import Path
 
-    assert not enforce_structural_quality._should_skip(Path("scrapers/foo/bar.py"))
+    assert not enforce_structural_quality.should_skip(Path("scrapers/foo/bar.py"))
 
 
 # ---------------------------------------------------------------------------
@@ -555,7 +555,7 @@ def test_should_skip_returns_false_for_regular_path() -> None:
 
 @pytest.mark.unit()
 def test_iter_python_files_filters_by_extension() -> None:
-    result = enforce_structural_quality._iter_python_files(
+    result = enforce_structural_quality.iter_python_files(
         ["src/foo.py", "src/bar.txt", "README.md"],
     )
     assert len(result) == 1
@@ -569,7 +569,7 @@ def test_iter_python_files_empty_list_returns_disk_files(
 ) -> None:
     (tmp_path / "mod.py").write_text("x = 1\n", encoding="utf-8")
     monkeypatch.chdir(tmp_path)
-    result = enforce_structural_quality._iter_python_files([])
+    result = enforce_structural_quality.iter_python_files([])
     # Should find the py file (excluding venv etc.)
     assert len(result) >= 1
 

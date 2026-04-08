@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 if TYPE_CHECKING:
-    from scrapers.base.contracts import RecordAssembler
+    from scrapers.base.contracts import RecordAssemblerProtocol
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.options import ScraperOptions
@@ -20,7 +20,7 @@ class DomainRecordService:
     def __init__(
         self,
         *,
-        assembler: RecordAssembler[CircuitRecordDTO] | None = None,
+        assembler: RecordAssemblerProtocol[CircuitRecordDTO] | None = None,
         article_tables_parser: ArticleTablesParser | None = None,
     ) -> None:
         self._assembler = assembler or CircuitRecordAssembler()

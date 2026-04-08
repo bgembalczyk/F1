@@ -3,9 +3,7 @@ from typing import Any
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.table.columns.helpers.constructor_parsing import (
-    ConstructorParsingHelpers,
-)
+from scrapers.base.table.columns.helpers.constructor_parsing import ConstructorParsingHelpers
 from scrapers.base.table.columns.types.func import FuncColumn
 
 if TYPE_CHECKING:

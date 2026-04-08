@@ -49,7 +49,7 @@ def test_iter_added_python_lines_skips_non_python_files(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    result = guards._iter_added_python_lines({"README.md": {1}})
+    result = guards.iter_added_python_lines({"README.md": {1}})
     assert result == []
 
 
@@ -59,7 +59,7 @@ def test_iter_added_python_lines_skips_missing_file(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    result = guards._iter_added_python_lines({"nonexistent.py": {1}})
+    result = guards.iter_added_python_lines({"nonexistent.py": {1}})
     assert result == []
 
 
@@ -71,7 +71,7 @@ def test_iter_added_python_lines_returns_line_tuples(
     py_file = tmp_path / "module.py"
     py_file.write_text("line1\nline2\nline3\n", encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    result = guards._iter_added_python_lines({"module.py": {1, 3}})
+    result = guards.iter_added_python_lines({"module.py": {1, 3}})
     assert len(result) == EXPECTED_ADDED_LINES_COUNT
     paths = [r[0] for r in result]
     lines = [r[1] for r in result]
@@ -88,7 +88,7 @@ def test_iter_added_python_lines_skips_out_of_bounds_lines(
     py_file = tmp_path / "mod.py"
     py_file.write_text("x = 1\n", encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    result = guards._iter_added_python_lines({"mod.py": {100}})
+    result = guards.iter_added_python_lines({"mod.py": {100}})
     assert result == []
 
 
@@ -105,7 +105,7 @@ def test_check_new_prints_detects_print_call(
     py_file = tmp_path / "mod.py"
     py_file.write_text("print('hello')\n", encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    violations = guards._check_new_prints({"mod.py": {1}})
+    violations = guards.check_new_prints({"mod.py": {1}})
     assert len(violations) == 1
     assert "print" in violations[0].message.lower()
 
@@ -118,7 +118,7 @@ def test_check_new_prints_allows_non_print_lines(
     py_file = tmp_path / "mod.py"
     py_file.write_text("x = 1\n", encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    violations = guards._check_new_prints({"mod.py": {1}})
+    violations = guards.check_new_prints({"mod.py": {1}})
     assert violations == []
 
 
@@ -141,7 +141,7 @@ def test_check_critical_defaults_duplication_detects_duplicate_literal(
     py_file = tmp_path / "mod.py"
     py_file.write_text(f'X = "{literal}"\n', encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    violations = guards._check_critical_defaults_duplication({"mod.py": {1}})
+    violations = guards.check_critical_defaults_duplication({"mod.py": {1}})
     assert len(violations) >= 1
 
 
@@ -161,7 +161,7 @@ def test_check_critical_defaults_skips_central_defaults_file(
     central.write_text(f'X = "{literal}"\n', encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
     monkeypatch.setattr(guards, "CENTRAL_DEFAULTS_FILE", central)
-    violations = guards._check_critical_defaults_duplication({"central.py": {1}})
+    violations = guards.check_critical_defaults_duplication({"central.py": {1}})
     # The central file itself should be skipped
     assert violations == []
 
@@ -177,7 +177,7 @@ def test_iter_python_asts_skips_non_python(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    result = guards._iter_python_asts({"README.md": {1}})
+    result = guards.iter_python_asts({"README.md": {1}})
     assert result == []
 
 
@@ -187,7 +187,7 @@ def test_iter_python_asts_skips_missing_files(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    result = guards._iter_python_asts({"missing.py": {1}})
+    result = guards.iter_python_asts({"missing.py": {1}})
     assert result == []
 
 
@@ -199,7 +199,7 @@ def test_iter_python_asts_skips_syntax_errors(
     py_file = tmp_path / "bad.py"
     py_file.write_text("def broken(:\n", encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    result = guards._iter_python_asts({"bad.py": {1}})
+    result = guards.iter_python_asts({"bad.py": {1}})
     assert result == []
 
 
@@ -211,7 +211,7 @@ def test_iter_python_asts_returns_ast_tuple(
     py_file = tmp_path / "mod.py"
     py_file.write_text("x = 1\n", encoding="utf-8")
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
-    result = guards._iter_python_asts({"mod.py": {1}})
+    result = guards.iter_python_asts({"mod.py": {1}})
     assert len(result) == 1
     rel_path, source, tree, added_set = result[0]
     assert rel_path == "mod.py"
@@ -226,7 +226,7 @@ def test_iter_python_asts_returns_ast_tuple(
 @pytest.mark.unit()
 def test_is_unjustified_broad_exception_returns_false_for_non_handler() -> None:
     node = ast.parse("x = 1").body[0]
-    assert not guards._is_unjustified_broad_exception(node, {1}, ["x = 1"])
+    assert not guards.is_unjustified_broad_exception(node, {1}, ["x = 1"])
 
 
 @pytest.mark.unit()
@@ -236,7 +236,7 @@ def test_is_unjustified_broad_exception_returns_false_for_non_added_line() -> No
     for node in ast.walk(tree):
         if isinstance(node, ast.ExceptHandler):
             # line 3, but we say only line 1 was added
-            assert not guards._is_unjustified_broad_exception(
+            assert not guards.is_unjustified_broad_exception(
                 node,
                 {1},
                 code.splitlines(),
@@ -250,7 +250,7 @@ def test_is_unjustified_broad_exception_returns_false_for_specific_exception() -
     tree = ast.parse(code)
     for node in ast.walk(tree):
         if isinstance(node, ast.ExceptHandler):
-            assert not guards._is_unjustified_broad_exception(
+            assert not guards.is_unjustified_broad_exception(
                 node,
                 {3},
                 code.splitlines(),
@@ -267,7 +267,7 @@ def test_is_unjustified_broad_exception_returns_false_for_specific_exception() -
 def test_extract_target_tuple_from_simple_assignment() -> None:
     code = "MY_TUPLE = ('a', 'b', 'c')\n"
     tree = ast.parse(code)
-    result = guards._extract_target_tuple(tree.body[0], "MY_TUPLE")
+    result = guards.extract_target_tuple(tree.body[0], "MY_TUPLE")
     assert result is not None
     assert isinstance(result, ast.Tuple)
 
@@ -276,7 +276,7 @@ def test_extract_target_tuple_from_simple_assignment() -> None:
 def test_extract_target_tuple_returns_none_for_wrong_symbol() -> None:
     code = "MY_TUPLE = ('a', 'b')\n"
     tree = ast.parse(code)
-    result = guards._extract_target_tuple(tree.body[0], "OTHER")
+    result = guards.extract_target_tuple(tree.body[0], "OTHER")
     assert result is None
 
 
@@ -284,7 +284,7 @@ def test_extract_target_tuple_returns_none_for_wrong_symbol() -> None:
 def test_extract_target_tuple_from_ann_assign() -> None:
     code = "MY_TUPLE: tuple[str, ...] = ('a', 'b')\n"
     tree = ast.parse(code)
-    result = guards._extract_target_tuple(tree.body[0], "MY_TUPLE")
+    result = guards.extract_target_tuple(tree.body[0], "MY_TUPLE")
     assert result is not None
 
 
@@ -292,7 +292,7 @@ def test_extract_target_tuple_from_ann_assign() -> None:
 def test_extract_target_tuple_multiple_targets_returns_none() -> None:
     code = "a = b = ('x',)\n"
     tree = ast.parse(code)
-    result = guards._extract_target_tuple(tree.body[0], "a")
+    result = guards.extract_target_tuple(tree.body[0], "a")
     assert result is None
 
 
@@ -306,7 +306,7 @@ def test_extract_runner_map_keys_returns_dict_string_keys(tmp_path: Path) -> Non
     code = "def build_map():\n    return {'key1': 1, 'key2': 2}\n"
     py_file = tmp_path / "registry.py"
     py_file.write_text(code, encoding="utf-8")
-    result = guards._extract_runner_map_keys(py_file, "build_map")
+    result = guards.extract_runner_map_keys(py_file, "build_map")
     assert set(result) == {"key1", "key2"}
 
 
@@ -317,7 +317,7 @@ def test_extract_runner_map_keys_returns_empty_for_missing_function(
     code = "x = 1\n"
     py_file = tmp_path / "registry.py"
     py_file.write_text(code, encoding="utf-8")
-    result = guards._extract_runner_map_keys(py_file, "missing_function")
+    result = guards.extract_runner_map_keys(py_file, "missing_function")
     assert result == ()
 
 
@@ -328,7 +328,7 @@ def test_extract_runner_map_keys_returns_empty_for_non_dict_return(
     code = "def build_map():\n    return []\n"
     py_file = tmp_path / "registry.py"
     py_file.write_text(code, encoding="utf-8")
-    result = guards._extract_runner_map_keys(py_file, "build_map")
+    result = guards.extract_runner_map_keys(py_file, "build_map")
     assert result == ()
 
 
@@ -339,7 +339,7 @@ def test_extract_runner_map_keys_handles_non_return_statements(
     code = "def build_map():\n    x = 1\n    return {'k': 1}\n"
     py_file = tmp_path / "registry.py"
     py_file.write_text(code, encoding="utf-8")
-    result = guards._extract_runner_map_keys(py_file, "build_map")
+    result = guards.extract_runner_map_keys(py_file, "build_map")
     assert result == ("k",)
 
 
@@ -359,7 +359,7 @@ def test_broad_exception_requires_justification_annotation(
     )
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
 
-    violations = guards._check_broad_exceptions_with_justification({"sample.py": {3}})
+    violations = guards.check_broad_exceptions_with_justification({"sample.py": {3}})
 
     assert len(violations) == 1
     assert "justified-exception" in violations[0].message
@@ -378,13 +378,13 @@ def test_broad_exception_with_marker_is_allowed(
     )
     monkeypatch.setattr(guards, "REPO_ROOT", tmp_path)
 
-    violations = guards._check_broad_exceptions_with_justification({"sample.py": {3}})
+    violations = guards.check_broad_exceptions_with_justification({"sample.py": {3}})
 
     assert violations == []
 
 
 def test_registry_implementation_drift_check_passes_for_current_repo() -> None:
-    assert guards._check_registry_implementation_drift() == []
+    assert guards.check_registry_implementation_drift() == []
 
 
 @pytest.mark.unit()
@@ -396,7 +396,7 @@ def test_check_registry_drift_returns_violation_when_registries_empty(
     empty_file.write_text("x = 1\n", encoding="utf-8")
     monkeypatch.setattr(guards, "SEED_REGISTRY_FILE", empty_file)
     monkeypatch.setattr(guards, "RUNNER_REGISTRY_FILE", empty_file)
-    violations = guards._check_registry_implementation_drift()
+    violations = guards.check_registry_implementation_drift()
     assert len(violations) >= 1
     assert any("sparsować" in v.message for v in violations)
 
@@ -411,7 +411,7 @@ def test_extract_string_tuple_assignment_finds_tuple(tmp_path: Path) -> None:
     code = "MY_TUPLE = ('alpha', 'beta')\n"
     py_file = tmp_path / "constants.py"
     py_file.write_text(code, encoding="utf-8")
-    result = guards._extract_string_tuple_assignment(py_file, "MY_TUPLE")
+    result = guards.extract_string_tuple_assignment(py_file, "MY_TUPLE")
     assert set(result) == {"alpha", "beta"}
 
 
@@ -421,7 +421,7 @@ def test_extract_string_tuple_assignment_returns_empty_for_missing(
 ) -> None:
     py_file = tmp_path / "constants.py"
     py_file.write_text("x = 1\n", encoding="utf-8")
-    result = guards._extract_string_tuple_assignment(py_file, "MY_TUPLE")
+    result = guards.extract_string_tuple_assignment(py_file, "MY_TUPLE")
     assert result == ()
 
 

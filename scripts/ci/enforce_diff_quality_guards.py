@@ -43,7 +43,7 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def _iter_added_python_lines(
+def iter_added_python_lines(
     added_lines_map: dict[str, set[int]],
 ) -> list[tuple[str, int, str]]:
     records: list[tuple[str, int, str]] = []
@@ -62,9 +62,9 @@ def _iter_added_python_lines(
     return records
 
 
-def _check_new_prints(added_lines_map: dict[str, set[int]]) -> list[Violation]:
+def check_new_prints(added_lines_map: dict[str, set[int]]) -> list[Violation]:
     violations: list[Violation] = []
-    for rel_path, line_no, line in _iter_added_python_lines(added_lines_map):
+    for rel_path, line_no, line in iter_added_python_lines(added_lines_map):
         stripped = line.strip()
         if stripped.startswith("print("):
             violations.append(
@@ -77,11 +77,11 @@ def _check_new_prints(added_lines_map: dict[str, set[int]]) -> list[Violation]:
     return violations
 
 
-def _check_critical_defaults_duplication(
+def check_critical_defaults_duplication(
     added_lines_map: dict[str, set[int]],
 ) -> list[Violation]:
     violations: list[Violation] = []
-    for rel_path, line_no, line in _iter_added_python_lines(added_lines_map):
+    for rel_path, line_no, line in iter_added_python_lines(added_lines_map):
         if (REPO_ROOT / rel_path).resolve() == CENTRAL_DEFAULTS_FILE.resolve():
             continue
         lowered = line.lower()
@@ -101,14 +101,14 @@ def _check_critical_defaults_duplication(
     return violations
 
 
-def _check_broad_exceptions_with_justification(
+def check_broad_exceptions_with_justification(
     added_lines_map: dict[str, set[int]],
 ) -> list[Violation]:
     violations: list[Violation] = []
-    for rel_path, source, tree, added_set in _iter_python_asts(added_lines_map):
+    for rel_path, source, tree, added_set in iter_python_asts(added_lines_map):
         source_lines = source.splitlines()
         for node in ast.walk(tree):
-            if not _is_unjustified_broad_exception(node, added_set, source_lines):
+            if not is_unjustified_broad_exception(node, added_set, source_lines):
                 continue
             violations.append(
                 Violation(
@@ -123,17 +123,17 @@ def _check_broad_exceptions_with_justification(
     return violations
 
 
-def _extract_string_tuple_assignment(path: Path, symbol: str) -> tuple[str, ...]:
+def extract_string_tuple_assignment(path: Path, symbol: str) -> tuple[str, ...]:
     source = path.read_text(encoding="utf-8")
     tree = ast.parse(source)
     for node in tree.body:
-        tuple_node = _extract_target_tuple(node, symbol)
+        tuple_node = extract_target_tuple(node, symbol)
         if tuple_node is not None:
-            return _tuple_string_values(tuple_node)
+            return tuple_string_values(tuple_node)
     return ()
 
 
-def _iter_python_asts(
+def iter_python_asts(
     added_lines_map: dict[str, set[int]],
 ) -> list[tuple[str, str, ast.AST, set[int]]]:
     records: list[tuple[str, str, ast.AST, set[int]]] = []
@@ -152,7 +152,7 @@ def _iter_python_asts(
     return records
 
 
-def _is_unjustified_broad_exception(
+def is_unjustified_broad_exception(
     node: ast.AST,
     added_set: set[int],
     source_lines: list[str],
@@ -167,7 +167,7 @@ def _is_unjustified_broad_exception(
     return JUSTIFIED_EXCEPTION_MARKER not in handler_line
 
 
-def _extract_target_tuple(node: ast.stmt, symbol: str) -> ast.Tuple | None:
+def extract_target_tuple(node: ast.stmt, symbol: str) -> ast.Tuple | None:
     if isinstance(node, ast.Assign):
         if len(node.targets) != 1:
             return None
@@ -192,7 +192,7 @@ def _extract_target_tuple(node: ast.stmt, symbol: str) -> ast.Tuple | None:
     return None
 
 
-def _tuple_string_values(tuple_node: ast.Tuple) -> tuple[str, ...]:
+def tuple_string_values(tuple_node: ast.Tuple) -> tuple[str, ...]:
     values = [
         elt.value
         for elt in tuple_node.elts
@@ -201,7 +201,7 @@ def _tuple_string_values(tuple_node: ast.Tuple) -> tuple[str, ...]:
     return tuple(values)
 
 
-def _extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
+def extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
     source = path.read_text(encoding="utf-8")
     tree = ast.parse(source)
     for node in tree.body:
@@ -222,15 +222,15 @@ def _extract_runner_map_keys(path: Path, function_name: str) -> tuple[str, ...]:
     return ()
 
 
-def _check_registry_implementation_drift() -> list[Violation]:
+def check_registry_implementation_drift() -> list[Violation]:
     registry_order = set(
-        _extract_string_tuple_assignment(
+        extract_string_tuple_assignment(
             SEED_REGISTRY_FILE,
             "_LAYER_ONE_SEED_REGISTRY_ORDER",
         ),
     )
     explicit_runner_keys = set(
-        _extract_runner_map_keys(
+        extract_runner_map_keys(
             RUNNER_REGISTRY_FILE,
             "_build_explicit_layer_one_runner_map",
         ),
@@ -279,10 +279,10 @@ def main(argv: Sequence[str]) -> int:
     added_lines_map = build_added_lines_map(args.base_sha, args.head_sha, changed_files)
 
     violations = [
-        *_check_new_prints(added_lines_map),
-        *_check_critical_defaults_duplication(added_lines_map),
-        *_check_broad_exceptions_with_justification(added_lines_map),
-        *_check_registry_implementation_drift(),
+        *check_new_prints(added_lines_map),
+        *check_critical_defaults_duplication(added_lines_map),
+        *check_broad_exceptions_with_justification(added_lines_map),
+        *check_registry_implementation_drift(),
     ]
 
     if violations:

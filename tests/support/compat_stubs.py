@@ -8,17 +8,17 @@ import types
 def ensure_bs4_stub() -> None:
     if "bs4" in sys.modules:
         return
-    sys.modules["bs4"] = _build_bs4_stub_module()
+    sys.modules["bs4"] = build_bs4_stub_module()
 
 
-def _build_bs4_stub_module() -> types.ModuleType:
+def build_bs4_stub_module() -> types.ModuleType:
     bs4_stub = types.ModuleType("bs4")
-    bs4_stub.Tag = _StubTag
-    bs4_stub.BeautifulSoup = _StubBeautifulSoup
+    bs4_stub.Tag = StubTag
+    bs4_stub.BeautifulSoup = StubBeautifulSoup
     return bs4_stub
 
 
-class _StubTag:
+class StubTag:
     def __init__(self, attrs=None, text: str = ""):
         self.attrs = attrs or {}
         self.text = text
@@ -40,21 +40,21 @@ class _StubTag:
         return [self.text]
 
 
-class _StubBeautifulSoup:
+class StubBeautifulSoup:
     def __init__(self, html: str, *_):
         self.html = html
 
     def find(self, name: str | None = None, *_, **__):
         if name == "a":
             return self._parse_a(self.html)
-        return _StubTag()
+        return StubTag()
 
     def find_all(self, *_, **__):
         return []
 
-    def _parse_a(self, html: str) -> _StubTag:
+    def _parse_a(self, html: str) -> StubTag:
         attrs = self._parse_anchor_attrs(html)
-        return _StubTag(attrs, self._parse_anchor_text(html))
+        return StubTag(attrs, self._parse_anchor_text(html))
 
     @staticmethod
     def _parse_anchor_attrs(html: str) -> dict[str, object]:

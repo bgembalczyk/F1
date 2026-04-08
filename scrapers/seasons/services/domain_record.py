@@ -9,14 +9,14 @@ from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 
 if TYPE_CHECKING:
-    from scrapers.base.contracts import RecordAssembler
+    from scrapers.base.contracts import RecordAssemblerProtocol
 
 
 class DomainRecordService:
     def __init__(
         self,
         *,
-        assembler: RecordAssembler[SeasonRecordSections] | None = None,
+        assembler: RecordAssemblerProtocol[SeasonRecordSections] | None = None,
     ) -> None:
         self._assembler = assembler or SeasonRecordAssembler()
 

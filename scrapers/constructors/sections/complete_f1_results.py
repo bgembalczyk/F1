@@ -9,3 +9,6 @@ class ConstructorCompleteF1ResultsSectionParser(ConstructorTablesSectionParser):
             section_id="complete_formula_one_results",
             section_label="Complete F1 results",
         )
+
+
+__all__ = ["ConstructorCompleteF1ResultsSectionParser"]

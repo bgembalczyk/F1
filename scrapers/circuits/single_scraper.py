@@ -6,12 +6,8 @@ from typing import Any
 from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
 from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
-from scrapers.base.single_wiki_article.section_adapter import (
-    SingleWikiArticleSectionAdapterBase,
-)
-from scrapers.base.single_wiki_article.section_selection_strategy import (
-    WikipediaSectionByIdSelectionStrategy,
-)
+from scrapers.base.single_wiki_article.section_adapter import SingleWikiArticleSectionAdapterBase
+from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
 from scrapers.circuits.composition import CircuitScraperCompositionFactory
 from scrapers.circuits.composition import CircuitScraperDependencies
 from scrapers.circuits.helpers.sections import is_circuit_like_article

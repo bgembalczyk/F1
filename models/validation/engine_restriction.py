@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
+from models.domain_utils.normalization import normalize_link_items
+from models.domain_utils.normalization import normalize_season_items
 from models.domain_utils.field_normalization.links import normalize_link_items
 from models.domain_utils.normalization import (
     normalize_season_items as core_normalize_season_items,
@@ -26,7 +28,7 @@ class EngineRestriction(ValidatedModel):
     power_output: dict[str, Any] | None = None
 
     def validate(self) -> None:
-        self.year = list(core_normalize_season_items(self.year))
+        self.year = list(normalize_season_items(self.year))
         self.type_of_engine = [
             Link.from_dict(item)
             for item in normalize_link_items(

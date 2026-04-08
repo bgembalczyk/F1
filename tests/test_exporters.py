@@ -10,7 +10,7 @@ from scrapers.base.services.result_export_service import ResultExportService
 EXPECTED_TWO_RECORDS = 2
 
 
-def _read_header(path):
+def read_header(path):
     with path.open(newline="", encoding="utf-8") as handle:
         reader = csv.reader(handle)
         for row in reader:
@@ -20,7 +20,7 @@ def _read_header(path):
     return []
 
 
-def _read_metadata(path):
+def read_metadata(path):
     with path.open(encoding="utf-8") as handle:
         line = handle.readline().strip()
     if not line.startswith("# meta: "):
@@ -36,9 +36,9 @@ def test_to_csv_union_fieldnames_preserves_order(tmp_path):
 
     ResultExportService().to_csv(result, output, include_metadata=True)
 
-    metadata = _read_metadata(output)
+    metadata = read_metadata(output)
     assert metadata["records_count"] == EXPECTED_TWO_RECORDS
-    assert _read_header(output) == ["b", "a", "c"]
+    assert read_header(output) == ["b", "a", "c"]
 
 
 def test_to_csv_first_row_fieldnames_preserves_order(tmp_path):
@@ -53,9 +53,9 @@ def test_to_csv_first_row_fieldnames_preserves_order(tmp_path):
         include_metadata=True,
     )
 
-    metadata = _read_metadata(output)
+    metadata = read_metadata(output)
     assert metadata["records_count"] == EXPECTED_TWO_RECORDS
-    assert _read_header(output) == ["b", "a"]
+    assert read_header(output) == ["b", "a"]
 
 
 def test_to_json_includes_metadata_from_result(tmp_path):
@@ -142,7 +142,7 @@ def test_to_csv_excludes_metadata_by_default(tmp_path):
     assert "Max" in lines[2]
 
 
-class _SpyExporter:
+class SpyExporter:
     def __init__(self) -> None:
         self.csv_calls = []
         self.json_calls = []
@@ -154,7 +154,7 @@ class _SpyExporter:
         self.csv_calls.append((result, path, fieldnames, include_metadata))
 
 
-class _SpyFieldnamesStrategy:
+class SpyFieldnamesStrategy:
     def __init__(self) -> None:
         self.calls = []
 
@@ -163,7 +163,7 @@ class _SpyFieldnamesStrategy:
         return ["driver", "wins"]
 
 
-class _SpyDataFrameFormatter:
+class SpyDataFrameFormatter:
     def __init__(self) -> None:
         self.calls = []
 
@@ -173,12 +173,12 @@ class _SpyDataFrameFormatter:
 
 
 def test_to_csv_uses_injected_fieldnames_strategy_without_monkeypatching(tmp_path):
-    spy_exporter = _SpyExporter()
-    spy_strategy = _SpyFieldnamesStrategy()
+    spy_exporter = SpyExporter()
+    spy_strategy = SpyFieldnamesStrategy()
     service = ExportService(
         exporter=spy_exporter,
         fieldnames_strategy=spy_strategy,
-        dataframe_formatter=_SpyDataFrameFormatter(),
+        dataframe_formatter=SpyDataFrameFormatter(),
     )
     result = ScrapeResult(
         data=[{"driver": "Max", "wins": 54}],
@@ -195,10 +195,10 @@ def test_to_csv_uses_injected_fieldnames_strategy_without_monkeypatching(tmp_pat
 
 
 def test_to_dataframe_uses_injected_formatter_without_monkeypatching():
-    spy_formatter = _SpyDataFrameFormatter()
+    spy_formatter = SpyDataFrameFormatter()
     service = ExportService(
-        exporter=_SpyExporter(),
-        fieldnames_strategy=_SpyFieldnamesStrategy(),
+        exporter=SpyExporter(),
+        fieldnames_strategy=SpyFieldnamesStrategy(),
         dataframe_formatter=spy_formatter,
     )
     result = ScrapeResult(

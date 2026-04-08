@@ -21,13 +21,6 @@ pytestmark = pytest.mark.contract
 # ---- scrapers/base/contracts.py ----
 
 
-def test_base_contracts_export_expected_protocols() -> None:
-    """contract/static: module exports key protocol symbols."""
-    assert hasattr(base_contracts, "RecordAssemblerProtocol")
-    assert hasattr(base_contracts, "SectionExtractionServiceProtocol")
-    assert base_contracts.RecordAssembler is base_contracts.RecordAssemblerProtocol
-
-
 def test_record_assembler_protocol_signature_is_stable() -> None:
     """contract/static: assembler protocol has a single payload argument."""
     signature = inspect.signature(base_contracts.RecordAssemblerProtocol.assemble)
@@ -113,7 +106,7 @@ def test_detect_relevant_domains_uses_scrapers_prefix() -> None:
         Path("tests/test_something.py"),
     ]
 
-    detected = architecture_rules._detect_relevant_domains(
+    detected = architecture_rules.detect_relevant_domains(
         changed,
         domains=("seasons", "circuits", "drivers"),
     )
@@ -136,7 +129,7 @@ def test_check_required_layout_reports_missing_entrypoint_and_layers(
         lambda _path, domain: "app" if domain == "seasons" else "unknown"
     )
 
-    violations = architecture_rules._check_required_layout(root, ("seasons",), rules)
+    violations = architecture_rules.check_required_layout(root, ("seasons",), rules)
 
     assert any("Missing facade entrypoint in domain: seasons" in v for v in violations)
     assert any("Missing layer modules for seasons" in v for v in violations)
@@ -200,7 +193,7 @@ def test_architecture_main_parses_paths_from_argv(
 
 def test_token_pattern_matches_whole_tokens_only() -> None:
     """contract/static: forbidden-term regex avoids substring matches."""
-    pattern = domain_terminology._token_pattern("constructor")
+    pattern = domain_terminology.token_pattern("constructor")
 
     assert pattern.search("constructor standings")
     assert not pattern.search("constructors standings")

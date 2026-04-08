@@ -2,7 +2,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.constructors.columns.constructor import ConstructorColumn
 
 
-def _ctx_with_links(links: list[dict]) -> ColumnContext:
+def ctx_with_links(links: list[dict]) -> ColumnContext:
     return ColumnContext(
         header="Constructor",
         key="constructor",
@@ -22,7 +22,7 @@ def test_constructor_column_single_link_duplicates_engine() -> None:
         "text": "Mercedes",
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
     }
-    result = column.parse(_ctx_with_links([link]))
+    result = column.parse(ctx_with_links([link]))
 
     assert result["chassis_constructor"] == link
     assert result["engine_constructor"] == link
@@ -36,7 +36,7 @@ def test_constructor_column_two_links_distinct() -> None:
         "text": "Honda",
         "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One",
     }
-    result = column.parse(_ctx_with_links([chassis_link, engine_link]))
+    result = column.parse(ctx_with_links([chassis_link, engine_link]))
 
     assert result["chassis_constructor"] == chassis_link
     assert result["engine_constructor"] == engine_link

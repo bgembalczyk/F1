@@ -5,7 +5,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 
 
-def _ctx(
+def ctx(
     html: str,
     links: list[dict] | None = None,
     clean_text: str | None = None,
@@ -26,13 +26,13 @@ def _ctx(
 
 def test_calendar_circuit_no_links_with_text_returns_circuit_dict() -> None:
     col = CalendarCircuitColumn()
-    result = col.parse(_ctx("Silverstone Circuit", links=[]))
+    result = col.parse(ctx("Silverstone Circuit", links=[]))
     assert result == {"circuit": {"text": "Silverstone Circuit", "url": None}}
 
 
 def test_calendar_circuit_no_links_no_text_returns_none() -> None:
     col = CalendarCircuitColumn()
-    result = col.parse(_ctx("", links=[], clean_text=""))
+    result = col.parse(ctx("", links=[], clean_text=""))
     assert result is None
 
 
@@ -44,7 +44,7 @@ def test_calendar_circuit_one_link_returns_circuit_only() -> None:
         },
     ]
     col = CalendarCircuitColumn()
-    result = col.parse(_ctx("<a>Silverstone</a>", links=links))
+    result = col.parse(ctx("<a>Silverstone</a>", links=links))
     assert "circuit" in result
     assert "location" not in result
     assert result["circuit"]["text"] == "Silverstone"
@@ -62,6 +62,6 @@ def test_calendar_circuit_two_links_returns_circuit_and_location() -> None:
         },
     ]
     col = CalendarCircuitColumn()
-    result = col.parse(_ctx("<a>Silverstone</a> <a>Northamptonshire</a>", links=links))
+    result = col.parse(ctx("<a>Silverstone</a> <a>Northamptonshire</a>", links=links))
     assert result["circuit"]["text"] == "Silverstone"
     assert result["location"]["text"] == "Northamptonshire"

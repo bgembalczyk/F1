@@ -9,23 +9,21 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.service import BaseSectionExtractionService
-from scrapers.base.single_wiki_article.section_by_id import (
-    SingleWikiArticleSectionByIdBase,
-)
+from scrapers.base.single_wiki_article.section_by_id import SingleWikiArticleSectionByIdBase
 
-_single_wiki_base = pytest.importorskip("scrapers.base.single_wiki_article.base")
-_single_wiki_dto = pytest.importorskip("scrapers.base.single_wiki_article.dto")
-SingleWikiArticleScraperBase = _single_wiki_base.SingleWikiArticleScraperBase
-InfoboxPayloadDTO = _single_wiki_dto.InfoboxPayloadDTO
-SectionsPayloadDTO = _single_wiki_dto.SectionsPayloadDTO
-TablesPayloadDTO = _single_wiki_dto.TablesPayloadDTO
+single_wiki_base = pytest.importorskip("scrapers.base.single_wiki_article.base")
+single_wiki_dto = pytest.importorskip("scrapers.base.single_wiki_article.dto")
+SingleWikiArticleScraperBase = single_wiki_base.SingleWikiArticleScraperBase
+InfoboxPayloadDTO = single_wiki_dto.InfoboxPayloadDTO
+SectionsPayloadDTO = single_wiki_dto.SectionsPayloadDTO
+TablesPayloadDTO = single_wiki_dto.TablesPayloadDTO
 
 if TYPE_CHECKING:
     from scrapers.base.sections.adapter import SectionAdapterEntry
     from scrapers.base.sections.interface import SectionParseResult
 
 
-class _SectionAdapterContract(Protocol):
+class SectionAdapterContract(Protocol):
     def parse_sections(
         self,
         *,
@@ -35,11 +33,11 @@ class _SectionAdapterContract(Protocol):
     ) -> list[SectionParseResult]: ...
 
 
-class _SectionServiceContract(Protocol):
+class SectionServiceContract(Protocol):
     def build_entries(self) -> list[SectionAdapterEntry]: ...
 
 
-class _ContractSingleScraper(SingleWikiArticleScraperBase):
+class ContractSingleScraper(SingleWikiArticleScraperBase):
     url = "https://example.com"
 
     def __init__(self) -> None:
@@ -93,7 +91,7 @@ class _ContractSingleScraper(SingleWikiArticleScraperBase):
 
 
 @dataclass
-class _AdapterStub(_SectionAdapterContract):
+class AdapterStub(SectionAdapterContract):
     sections: list[SectionParseResult]
 
     def parse_sections(
@@ -109,9 +107,9 @@ class _AdapterStub(_SectionAdapterContract):
         return self.sections
 
 
-class _SectionServiceContractStub(
+class SectionServiceContractStub(
     BaseSectionExtractionService,
-    _SectionServiceContract,
+    SectionServiceContract,
 ):
     domain = "unit-test"
 
@@ -120,7 +118,7 @@ class _SectionServiceContractStub(
 
 
 def test_single_wiki_article_scraper_base_pipeline_contract() -> None:
-    scraper = _ContractSingleScraper()
+    scraper = ContractSingleScraper()
     result = scraper.parse(BeautifulSoup("<div></div>", "html.parser"))
 
     assert result == [
@@ -142,7 +140,7 @@ def test_single_wiki_article_scraper_base_pipeline_contract() -> None:
 
 
 def test_base_section_service_contract_requires_optional_dependencies() -> None:
-    service = _SectionServiceContractStub(adapter=_AdapterStub(sections=[]))
+    service = SectionServiceContractStub(adapter=AdapterStub(sections=[]))
     with pytest.raises(ValueError, match="requires ScraperOptions"):
         service.require_options()
 

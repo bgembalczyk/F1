@@ -50,3 +50,6 @@ class BoolColumn(BaseColumn):
                     type(exc).__name__,
                 )
             return self.default
+
+
+__all__ = ["BoolColumn"]

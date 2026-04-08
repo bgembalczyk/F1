@@ -19,14 +19,14 @@ from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.header import HeaderParser
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
-from scrapers.wiki.parsers.sections.helpers import _split_into_parts
+from scrapers.wiki.parsers.sections.helpers import split_into_parts
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
 
 
-class _StubElementParser:
+class StubElementParser:
     def __init__(self, payload: dict[str, str]) -> None:
         self.payload = payload
 
@@ -34,7 +34,7 @@ class _StubElementParser:
         return self.payload
 
 
-def _with_overridden_element_parsers(**overrides) -> WikiElementParsers:
+def with_overridden_element_parsers(**overrides) -> WikiElementParsers:
     defaults = build_default_wiki_element_parsers()
     return WikiElementParsers(
         infobox_parser=overrides.get("infobox_parser", defaults.infobox_parser),
@@ -65,17 +65,17 @@ def test_wiki_parser_is_abstract():
 # ---------------------------------------------------------------------------
 
 
-def _make_soup(html: str) -> BeautifulSoup:
+def make_soup(html: str) -> BeautifulSoup:
     return BeautifulSoup(html, "html.parser")
 
 
 def test_split_into_parts_no_headings():
     html = "<div><p>A</p><p>B</p></div>"
-    soup = _make_soup(html)
+    soup = make_soup(html)
     from bs4 import Tag
 
     tags = [c for c in soup.find("div").children if isinstance(c, Tag)]
-    parts = _split_into_parts(tags, "mw-heading2")
+    parts = split_into_parts(tags, "mw-heading2")
     assert len(parts) == 1
     assert parts[0][0] == "(Top)"
     assert parts[0][1] is None
@@ -92,11 +92,11 @@ def test_split_into_parts_with_headings():
       <p>Content 2</p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     from bs4 import Tag
 
     tags = [c for c in soup.find("div").children if isinstance(c, Tag)]
-    parts = _split_into_parts(tags, "mw-heading2")
+    parts = split_into_parts(tags, "mw-heading2")
     assert len(parts) == 3
     assert parts[0][0] == "(Top)"
     assert parts[1][0] == "Sec1"
@@ -115,7 +115,7 @@ def test_header_parser_extracts_title():
       <h1 class="mw-page-title-main">Lewis Hamilton</h1>
     </header>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = HeaderParser()
     header_el = soup.find("header")
     result = parser.parse(header_el)
@@ -139,7 +139,7 @@ def test_category_links_parser():
       </div>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = CategoryLinksParser()
     result = parser.parse(soup.find("div", id="catlinks"))
     assert "categories" in result
@@ -159,7 +159,7 @@ def test_infobox_parser():
       <tr><th>Nationality</th><td>British</td></tr>
     </table>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = InfoboxParser()
     result = parser.parse(soup.find("table"))
     assert result["title"] == "Test Article"
@@ -169,7 +169,7 @@ def test_infobox_parser():
 
 def test_paragraph_parser():
     html = "<p>Hello World</p>"
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = ParagraphParser()
     result = parser.parse(soup.find("p"))
     assert result["text"] == "Hello World"
@@ -182,7 +182,7 @@ def test_figure_parser():
       <figcaption>A caption</figcaption>
     </figure>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = FigureParser()
     result = parser.parse(soup.find("figure"))
     assert result["caption"] == "A caption"
@@ -191,7 +191,7 @@ def test_figure_parser():
 
 def test_list_parser():
     html = "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>"
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = ListParser()
     result = parser.parse(soup.find("ul"))
     assert result["items"] == ["Item 1", "Item 2", "Item 3"]
@@ -204,7 +204,7 @@ def test_table_parser():
       <tr><td>Hamilton</td><td>2020</td></tr>
     </table>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = TableParser()
     result = parser.parse(soup.find("table"))
     assert result["headers"] == ["Name", "Year"]
@@ -233,7 +233,7 @@ def test_table_parser_handles_multirow_headers_and_blank_th() -> None:
       </tr>
     </table>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = TableParser()
 
     result = parser.parse(soup.find("table"))
@@ -271,7 +271,7 @@ def test_table_parser_handles_rowspan_and_colspan_with_stable_mapping() -> None:
       </tr>
     </table>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = TableParser()
 
     result = parser.parse(soup.find("table"))
@@ -312,7 +312,7 @@ def test_table_parser_uses_custom_html_table_parser() -> None:
       <tr><td>Hamilton</td><td>2020</td></tr>
     </table>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     stub_parser = _StubHtmlTableParser()
     parser = TableParser(table_parser=stub_parser)
 
@@ -342,7 +342,7 @@ def test_table_parser_rowspan_cell_is_cleaned_after_expansion_regression() -> No
       </tr>
     </table>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = TableParser()
 
     result = parser.parse(soup.find("table"))
@@ -368,7 +368,7 @@ def test_table_parser_colspan_cells_remain_cleaned_regression() -> None:
       </tr>
     </table>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = TableParser()
 
     result = parser.parse(soup.find("table"))
@@ -387,7 +387,7 @@ def test_navbox_parser():
       <a href="/wiki/Topic2">Topic 2</a>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = NavBoxParser()
     result = parser.parse(soup.find("div"))
     assert result["title"] == "Navigation"
@@ -403,7 +403,7 @@ def test_references_wrap_parser():
       </ol>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = ReferencesWrapParser()
     result = parser.parse(soup.find("div"))
     assert len(result["references"]) == 2
@@ -421,7 +421,7 @@ def test_sub_sub_sub_section_parser():
       <ul><li>Item A</li></ul>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSubSubSectionParser()
     result = parser.parse(soup.find("div"))
     assert "elements" in result
@@ -433,7 +433,7 @@ def test_sub_sub_sub_section_parser():
 
 def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() -> None:
     html = '<table class="infobox wikitable"><tr><td>Cell</td></tr></table>'
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSubSubSectionParser()
 
     result = parser._parse_element(
@@ -448,7 +448,7 @@ def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() ->
 
 def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions():
     html = "<blockquote>Domain specific note</blockquote>"
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSubSubSectionParser()
     blockquote = soup.find("blockquote")
 
@@ -481,7 +481,7 @@ def test_wiki_element_parser_mixin_default_registry_matches_expected_types() -> 
       <div class="foo references-wrap bar"><ol><li>Ref</li></ol></div>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSubSubSectionParser()
     root = soup.find("div")
 
@@ -510,7 +510,7 @@ def test_wiki_element_parser_mixin_flattens_nested_div_children() -> None:
       </div>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSubSubSectionParser()
     root = soup.find("div")
 
@@ -530,7 +530,7 @@ def test_wiki_element_parser_mixin_ignores_empty_wrapper_paragraph() -> None:
       </p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSubSubSectionParser()
     root = soup.find("div")
 
@@ -543,10 +543,10 @@ def test_wiki_element_parser_mixin_ignores_empty_wrapper_paragraph() -> None:
 
 
 def test_wiki_element_parser_mixin_allows_stubbed_paragraph_parser() -> None:
-    soup = _make_soup("<p>Injected paragraph parser</p>")
+    soup = make_soup("<p>Injected paragraph parser</p>")
     parser = SubSubSubSectionParser(
-        element_parsers=_with_overridden_element_parsers(
-            paragraph_parser=_StubElementParser({"stub": "paragraph"}),
+        element_parsers=with_overridden_element_parsers(
+            paragraph_parser=StubElementParser({"stub": "paragraph"}),
         ),
     )
 
@@ -561,10 +561,10 @@ def test_wiki_element_parser_mixin_allows_stubbed_paragraph_parser() -> None:
 
 
 def test_wiki_element_parser_mixin_allows_stubbed_wikitable_parser() -> None:
-    soup = _make_soup('<table class="wikitable"><tr><td>row</td></tr></table>')
+    soup = make_soup('<table class="wikitable"><tr><td>row</td></tr></table>')
     parser = SubSubSubSectionParser(
-        element_parsers=_with_overridden_element_parsers(
-            table_parser=_StubElementParser({"stub": "table"}),
+        element_parsers=with_overridden_element_parsers(
+            table_parser=StubElementParser({"stub": "table"}),
         ),
     )
 
@@ -588,7 +588,7 @@ def test_sub_sub_section_parser_divides_into_sub_sub_sub_sections():
       <p>Content 5-2</p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSubSectionParser()
     result = parser.parse(soup.find("div"))
     assert "sub_sub_sub_sections" in result
@@ -606,7 +606,7 @@ def test_sub_section_parser_divides_into_sub_sub_sections():
       <p>Content</p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSectionParser()
     result = parser.parse(soup.find("div"))
     assert "sub_sub_sections" in result
@@ -623,7 +623,7 @@ def test_section_parser_divides_into_sub_sections():
       <p>Sub A content</p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SectionParser()
     result = parser.parse(soup.find("div"))
     assert "sub_sections" in result
@@ -641,7 +641,7 @@ def test_sub_sub_section_parser_snapshot_structure_regression() -> None:
       <p>Content 5-1</p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSubSectionParser()
 
     assert parser.parse(soup.find("div")) == {
@@ -688,7 +688,7 @@ def test_sub_section_parser_snapshot_structure_regression() -> None:
       <p>Content 5-1</p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SubSectionParser()
     result = parser.parse(soup.find("div"))
 
@@ -716,7 +716,7 @@ def test_section_parser_snapshot_structure_regression() -> None:
       <p>Content 5-1</p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = SectionParser()
     result = parser.parse(soup.find("div"))
 
@@ -750,7 +750,7 @@ def test_content_text_parser_divides_into_sections():
       <p>Career content</p>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = ContentTextParser()
     result = parser.parse(soup.find("div"))
     sections = result["sections"]
@@ -781,7 +781,7 @@ def test_body_content_parser():
       </div>
     </div>
     """
-    soup = _make_soup(html)
+    soup = make_soup(html)
     parser = BodyContentParser()
     result = parser.parse(soup.find("div", id="bodyContent"))
     assert result["content_text"] is not None

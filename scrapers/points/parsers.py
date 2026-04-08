@@ -6,13 +6,7 @@ from typing import Any
 from models.services.season_service import parse_seasons
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.points.constants import HISTORICAL_POSITIONS
-from scrapers.points.constants import POINTS_NOTES_HEADER
-from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
-from scrapers.points.constants import ROLE_PATTERN
-from scrapers.points.constants import SHORTENED_RACE_EXPECTED_HEADERS
-from scrapers.points.constants import SPRINT_POSITIONS
-from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
+from scrapers.points import constants
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
@@ -21,7 +15,7 @@ from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
 # Position keys for the points history table (excluding "1st" which is
 # handled separately)
 _HISTORY_POSITION_KEYS_WITH_FASTEST_LAP: frozenset[str] = frozenset(
-    pos.lower() for pos in HISTORICAL_POSITIONS[1:]
+    pos.lower() for pos in constants.HISTORICAL_POSITIONS[1:]
 ) | {"fastest_lap"}
 
 
@@ -63,7 +57,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
         normalized_headers = {self._normalize_header(header) for header in headers}
         return all(
             bool(self._candidate_headers(expected) & normalized_headers)
-            for expected in POINTS_SCORING_HISTORY_EXPECTED_HEADERS
+            for expected in constants.POINTS_SCORING_HISTORY_EXPECTED_HEADERS
         )
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
@@ -74,7 +68,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
                 column_map[header] = "drivers_championship"
             elif normalized in self._candidate_headers("Towards WCC"):
                 column_map[header] = "constructors_championship"
-            elif normalized == self._normalize_header(POINTS_NOTES_HEADER):
+            elif normalized == self._normalize_header(constants.POINTS_NOTES_HEADER):
                 pass  # skip the Notes column
             else:
                 column_map[header] = header.lower().replace(" ", "_")
@@ -101,7 +95,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
                 if int_val is None:
                     transformed[key] = None
                 else:
-                    role_match = ROLE_PATTERN.search(text)
+                    role_match = constants.ROLE_PATTERN.search(text)
                     if role_match:
                         role = (
                             "driver"
@@ -118,13 +112,13 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
         return transformed
 
 
-_SPRINT_DISQUALIFYING_HEADERS: frozenset[str] = frozenset(
+SPRINT_DISQUALIFYING_HEADERS: frozenset[str] = frozenset(
     re.sub(r"[^a-z0-9]+", "", h.lower())
     for h in ("9th", "10th", "Fastest lap", "Race length completed")
 )
 
-_SPRINT_POSITION_KEYS: frozenset[str] = frozenset(
-    pos.lower() for pos in SPRINT_POSITIONS
+SPRINT_POSITION_KEYS: frozenset[str] = frozenset(
+    pos.lower() for pos in constants.SPRINT_POSITIONS
 )
 
 
@@ -134,22 +128,22 @@ class SprintPointsTableParser(WikiTableBaseParser):
     extra_columns_policy = "ignore"
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        normalized_headers = {_normalize_header(header) for header in headers}
+        normalized_headers = {normalize_header(header) for header in headers}
         expected = {
-            _normalize_header(header) for header in SPRINT_QUALIFYING_EXPECTED_HEADERS
+            normalize_header(header) for header in constants.SPRINT_QUALIFYING_EXPECTED_HEADERS
         }
-        if _SPRINT_DISQUALIFYING_HEADERS & normalized_headers:
+        if SPRINT_DISQUALIFYING_HEADERS & normalized_headers:
             return False
         return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        expected_lookup = _build_expected_header_lookup(
-            SPRINT_QUALIFYING_EXPECTED_HEADERS,
+        expected_lookup = build_expected_header_lookup(
+            constants.SPRINT_QUALIFYING_EXPECTED_HEADERS,
         )
         return {
             header: expected_lookup.get(
-                _normalize_header(header),
-                _normalize_column_name(header),
+                normalize_header(header),
+                normalize_column_name(header),
             )
             for header in headers
         }
@@ -170,7 +164,7 @@ class SprintPointsTableParser(WikiTableBaseParser):
             text = value.get("text", "") if isinstance(value, dict) else (value if isinstance(value, str) else "")
             if key == "seasons":
                 transformed[key] = [s.to_dict() for s in parse_seasons(text)]
-            elif key in _SPRINT_POSITION_KEYS:
+            elif key in SPRINT_POSITION_KEYS:
                 transformed[key] = parse_int_from_text(text)
             else:
                 transformed[key] = value
@@ -183,20 +177,20 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
     extra_columns_policy = "ignore"
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        normalized_headers = {_normalize_header(header) for header in headers}
+        normalized_headers = {normalize_header(header) for header in headers}
         expected = {
-            _normalize_header(header) for header in SHORTENED_RACE_EXPECTED_HEADERS
+            normalize_header(header) for header in constants.SHORTENED_RACE_EXPECTED_HEADERS
         }
         return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        expected_lookup = _build_expected_header_lookup(
-            SHORTENED_RACE_EXPECTED_HEADERS,
+        expected_lookup = build_expected_header_lookup(
+            constants.SHORTENED_RACE_EXPECTED_HEADERS,
         )
         return {
             header: expected_lookup.get(
-                _normalize_header(header),
-                _normalize_column_name(header),
+                normalize_header(header),
+                normalize_column_name(header),
             )
             for header in headers
         }
@@ -234,17 +228,17 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
         ]
 
 
-def _normalize_header(header: str) -> str:
+def normalize_header(header: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", header.lower())
 
 
-def _normalize_column_name(header: str) -> str:
+def normalize_column_name(header: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", header.lower()).strip("_")
 
 
-def _build_expected_header_lookup(expected_headers: list[str]) -> dict[str, str]:
+def build_expected_header_lookup(expected_headers: list[str]) -> dict[str, str]:
     return {
-        _normalize_header(header): _normalize_column_name(header)
+        normalize_header(header): normalize_column_name(header)
         for header in expected_headers
     }
 
@@ -279,7 +273,7 @@ class ShortenedRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionPars
         return parsed
 
 
-class _SpecialCasesSubSubSectionRouter(SubSubSectionParser):
+class SpecialCasesSubSubSectionRouter(SubSubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.sprint_parser = SprintRacesSubSubSectionParser()
@@ -300,7 +294,7 @@ class _SpecialCasesSubSubSectionRouter(SubSubSectionParser):
 class SpecialCasesSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self.child_parser = _SpecialCasesSubSubSectionRouter()
+        self.child_parser = SpecialCasesSubSubSectionRouter()
 
 
 class PointsScoringSystemsSectionParser(ApplyForElementsMixin, SectionParser):

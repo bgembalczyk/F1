@@ -9,3 +9,6 @@ class ConstructorChampionshipResultsSectionParser(ConstructorTablesSectionParser
             section_id="championship_results",
             section_label="Championship results",
         )
+
+
+__all__ = ["ConstructorChampionshipResultsSectionParser"]

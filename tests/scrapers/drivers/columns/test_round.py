@@ -4,7 +4,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.drivers.columns.round import RoundColumn
 
 
-def _ctx(html: str, *, links: list[dict] | None = None) -> ColumnContext:
+def ctx(html: str, *, links: list[dict] | None = None) -> ColumnContext:
     cell = BeautifulSoup(f"<td>{html}</td>", "html.parser").find("td")
     text = cell.get_text(" ", strip=True)
     return ColumnContext(
@@ -21,7 +21,7 @@ def _ctx(html: str, *, links: list[dict] | None = None) -> ColumnContext:
 
 def test_round_column_parses_numeric_result_and_flags() -> None:
     column = RoundColumn()
-    result = column.parse(_ctx("<strong>1</strong>"))
+    result = column.parse(ctx("<strong>1</strong>"))
 
     assert result["code"] == "1"
     assert result["result"] == 1
@@ -31,7 +31,7 @@ def test_round_column_parses_numeric_result_and_flags() -> None:
 
 def test_round_column_uses_fallback_code_and_text_result() -> None:
     column = RoundColumn()
-    result = column.parse(_ctx("Monaco DNS"))
+    result = column.parse(ctx("Monaco DNS"))
 
     assert result["round"] is None
     assert result["code"] == "Monaco DNS"
@@ -40,4 +40,4 @@ def test_round_column_uses_fallback_code_and_text_result() -> None:
 
 def test_round_column_returns_none_without_tokens() -> None:
     column = RoundColumn()
-    assert column.parse(_ctx(" ")) is None
+    assert column.parse(ctx(" ")) is None

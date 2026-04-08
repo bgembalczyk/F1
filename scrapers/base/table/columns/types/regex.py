@@ -52,3 +52,6 @@ class RegexColumn(BaseColumn):
             return self.cast(s)
         except (ValueError, TypeError):
             return self.default
+
+
+__all__ = ["RegexColumn"]

@@ -11,12 +11,7 @@ Follows SOLID principles:
 """
 
 from models.records.link import LinkRecord
-from scrapers.base.table.columns.helpers.constants import AFTER_DISPLACEMENT_TYPE_RE
-from scrapers.base.table.columns.helpers.constants import EXACT_TYPE_RE
-from scrapers.base.table.columns.helpers.constants import FUEL_TYPE_URLS
-from scrapers.base.table.columns.helpers.constants import MODIFIER_ONLY_URLS
-from scrapers.base.table.columns.helpers.constants import TYPE_WITH_MODIFIER_RE
-from scrapers.base.table.columns.helpers.constants import VERBOSE_TYPE_MAP
+from scrapers.base.table.columns.helpers import constants
 
 
 class EngineLinkHelpers:
@@ -42,7 +37,7 @@ class EngineLinkHelpers:
 
         for link in links:
             url = (link.get("url") or "").lower()
-            for url_key, ftype in FUEL_TYPE_URLS.items():
+            for url_key, ftype in constants.FUEL_TYPE_URLS.items():
                 if url_key in url:
                     fuel_type = ftype
             supercharged = (
@@ -69,7 +64,7 @@ class EngineLinkHelpers:
             return None
         all_link_urls = [(link.get("url") or "").lower() for link in links]
         if not all(
-            any(mod in url for mod in MODIFIER_ONLY_URLS) for url in all_link_urls
+            any(mod in url for mod in constants.MODIFIER_ONLY_URLS) for url in all_link_urls
         ):
             return None
 
@@ -100,13 +95,13 @@ class EngineLinkHelpers:
         are set to ``(None, "")`` when the first link *is* the type token so
         that it is not used as the model URL.
         """
-        if first_link_text and EXACT_TYPE_RE.match(first_link_text):
+        if first_link_text and constants.EXACT_TYPE_RE.match(first_link_text):
             special_tokens.add(first_link_text)
             return first_link_text, None, ""
 
         type_str: str | None = None
         if first_link_text:
-            m = AFTER_DISPLACEMENT_TYPE_RE.search(first_link_text)
+            m = constants.AFTER_DISPLACEMENT_TYPE_RE.search(first_link_text)
             if m:
                 type_str = m.group(1)
         return type_str, first_link, first_link_text
@@ -122,19 +117,19 @@ class EngineLinkHelpers:
         (e.g. ``"L4t"``), and verbose names (e.g. ``"Straight-4"``).
         Side-effects: adds *link_text* to *special_tokens* when a type is found.
         """
-        if EXACT_TYPE_RE.match(link_text):
+        if constants.EXACT_TYPE_RE.match(link_text):
             special_tokens.add(link_text)
             return link_text
 
-        m_mod = TYPE_WITH_MODIFIER_RE.match(link_text)
+        m_mod = constants.TYPE_WITH_MODIFIER_RE.match(link_text)
         if m_mod:
             special_tokens.add(link_text)
             return link_text  # modifier stripping happens in caller
 
         verbose_key = link_text.lower()
-        if verbose_key in VERBOSE_TYPE_MAP:
+        if verbose_key in constants.VERBOSE_TYPE_MAP:
             special_tokens.add(link_text)
-            return VERBOSE_TYPE_MAP[verbose_key]
+            return constants.VERBOSE_TYPE_MAP[verbose_key]
 
         return None
 
@@ -155,7 +150,7 @@ class EngineLinkHelpers:
         if extracted_type is not None:
             return extracted_type
 
-        m_type = AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
+        m_type = constants.AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
         if m_type:
             return m_type.group(1)
         return None
@@ -171,7 +166,7 @@ class EngineLinkHelpers:
         if type_str is None:
             return None, supercharged, turbocharged
 
-        m_mod = TYPE_WITH_MODIFIER_RE.match(type_str)
+        m_mod = constants.TYPE_WITH_MODIFIER_RE.match(type_str)
         if not m_mod:
             return type_str, supercharged, turbocharged
 
@@ -204,7 +199,7 @@ class EngineLinkHelpers:
             gas_turbine = True
             special_tokens.add(link_text)
         if fuel_type is None:
-            for url_key, ftype in FUEL_TYPE_URLS.items():
+            for url_key, ftype in constants.FUEL_TYPE_URLS.items():
                 if url_key in url:
                     fuel_type = ftype
                     special_tokens.add(link_text)

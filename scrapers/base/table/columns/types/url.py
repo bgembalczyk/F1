@@ -21,3 +21,6 @@ class UrlColumn(BaseColumn):
 
         normalized = normalize_links(ctx.links)
         return normalized[0] if normalized else None
+
+
+__all__ = ["UrlColumn"]

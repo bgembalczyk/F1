@@ -3,9 +3,7 @@ from typing import Any
 
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
-from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import (
-    GrandPrixScopeAccumulator,
-)
+from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import GrandPrixScopeAccumulator
 
 
 class GrandPrixScopeParser:

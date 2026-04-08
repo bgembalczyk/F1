@@ -12,3 +12,6 @@ class StarMarkNoteRule:
         marks = result.get("marks") or []
         if "*" in marks and context.background == "Other classified position":
             append_note(result, self._note)
+
+
+__all__ = ["StarMarkNoteRule"]

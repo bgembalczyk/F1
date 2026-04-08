@@ -16,3 +16,6 @@ class PositionColumn(BaseColumn):
         if parsed is not None:
             return parsed
         return text
+
+
+__all__ = ["PositionColumn"]

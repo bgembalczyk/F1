@@ -5,7 +5,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.entrant import EntrantColumn
 
 
-def _ctx_with_cell(html: str, *, links: list[dict] | None = None) -> ColumnContext:
+def ctx_with_cell(html: str, *, links: list[dict] | None = None) -> ColumnContext:
     cell = BeautifulSoup(f"<th>{html}</th>", "html.parser").find("th")
     raw_text = cell.get_text(" ", strip=True)
     return ColumnContext(
@@ -26,7 +26,7 @@ def test_entrant_br_inside_link_produces_single_entry() -> None:
         "Scuderia SSS<br>Republica di Venezia</a>"
     )
     column = EntrantColumn()
-    result = column.parse(_ctx_with_cell(html))
+    result = column.parse(ctx_with_cell(html))
 
     assert len(result) == 1
     assert result[0]["name"] == "Scuderia SSS Republica di Venezia"
@@ -45,7 +45,7 @@ def test_entrant_br_outside_link_produces_two_entries() -> None:
         '<a href="/wiki/Team_B" title="Team B">Team B</a>'
     )
     column = EntrantColumn()
-    result = column.parse(_ctx_with_cell(html))
+    result = column.parse(ctx_with_cell(html))
 
     assert len(result) == 2
     assert result[0]["name"] == "Team A"

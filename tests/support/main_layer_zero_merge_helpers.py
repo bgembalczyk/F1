@@ -7,7 +7,7 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-def _team_text(record: dict[str, object]) -> str:
+def team_text(record: dict[str, object]) -> str:
     team = record.get("team")
     if isinstance(team, dict):
         value = team.get("text")
@@ -15,24 +15,24 @@ def _team_text(record: dict[str, object]) -> str:
     return team if isinstance(team, str) else ""
 
 
-def _write_json(path: Path, payload: object) -> None:
+def write_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload), encoding="utf-8")
 
 
-def _seed_domain_raw(
+def seed_domain_raw(
     base_wiki_dir: Path,
     domain: str,
     files_payloads: list[tuple[str, object]],
 ) -> None:
     for filename, payload in files_payloads:
-        _write_json(
+        write_json(
             base_wiki_dir / "layers" / "0_layer" / domain / "A_scrape" / filename,
             payload,
         )
 
 
-def _circuits_raw_payloads() -> list[tuple[str, object]]:
+def circuits_raw_payloads() -> list[tuple[str, object]]:
     return [
         (
             "a.json",
@@ -48,7 +48,7 @@ def _circuits_raw_payloads() -> list[tuple[str, object]]:
     ]
 
 
-def _constructors_raw_payloads() -> list[tuple[str, object]]:
+def constructors_raw_payloads() -> list[tuple[str, object]]:
     return [
         (
             "a.json",
@@ -92,7 +92,7 @@ AMATI_RACE_ENTRIES = 3
 BOB_ANDERSON_RACE_ENTRIES = 29
 
 
-def _drivers_raw_payloads() -> list[tuple[str, object]]:
+def drivers_raw_payloads() -> list[tuple[str, object]]:
     return [
         (
             "female_drivers.json",
@@ -178,7 +178,7 @@ def _drivers_raw_payloads() -> list[tuple[str, object]]:
     ]
 
 
-def _races_raw_payloads() -> list[tuple[str, object]]:
+def races_raw_payloads() -> list[tuple[str, object]]:
     return [
         (
             "f1_red_flagged_world_championship_races.json",
@@ -206,7 +206,7 @@ def _races_raw_payloads() -> list[tuple[str, object]]:
     ]
 
 
-def _engines_raw_payloads() -> list[tuple[str, object]]:
+def engines_raw_payloads() -> list[tuple[str, object]]:
     return [
         (
             "f1_engine_manufacturers.json",
@@ -225,7 +225,7 @@ def _engines_raw_payloads() -> list[tuple[str, object]]:
     ]
 
 
-def _grands_prix_raw_payloads() -> list[tuple[str, object]]:
+def grands_prix_raw_payloads() -> list[tuple[str, object]]:
     return [
         (
             "a.json",
@@ -234,7 +234,7 @@ def _grands_prix_raw_payloads() -> list[tuple[str, object]]:
     ]
 
 
-def _teams_raw_payloads() -> list[tuple[str, object]]:
+def teams_raw_payloads() -> list[tuple[str, object]]:
     return [
         (
             "f1_sponsorship_liveries.json",
@@ -442,7 +442,7 @@ def _teams_raw_payloads() -> list[tuple[str, object]]:
     ]
 
 
-def _season_raw_payloads() -> list[tuple[str, object]]:
+def season_raw_payloads() -> list[tuple[str, object]]:
     return [
         (
             "f1_tyre_manufacturers_by_season.json",
@@ -451,32 +451,32 @@ def _season_raw_payloads() -> list[tuple[str, object]]:
     ]
 
 
-def _seasons_raw_payloads() -> list[tuple[str, object]]:
+def seasons_raw_payloads() -> list[tuple[str, object]]:
     return [("a.json", [{"season": 2026}, {"season": 1950}, {"season": 2005}])]
 
 
-def _layer_zero_seed_data() -> tuple[tuple[str, list[tuple[str, object]]], ...]:
+def layer_zero_seed_data() -> tuple[tuple[str, list[tuple[str, object]]], ...]:
     return (
-        ("circuits", _circuits_raw_payloads()),
-        ("constructors", _constructors_raw_payloads()),
-        ("drivers", _drivers_raw_payloads()),
-        ("races", _races_raw_payloads()),
-        ("engines", _engines_raw_payloads()),
-        ("grands_prix", _grands_prix_raw_payloads()),
-        ("teams", _teams_raw_payloads()),
+        ("circuits", circuits_raw_payloads()),
+        ("constructors", constructors_raw_payloads()),
+        ("drivers", drivers_raw_payloads()),
+        ("races", races_raw_payloads()),
+        ("engines", engines_raw_payloads()),
+        ("grands_prix", grands_prix_raw_payloads()),
+        ("teams", teams_raw_payloads()),
         ("rules", [("a.json", [{"rule": "X"}])]),
         ("points", [("a.json", [{"points": "X"}])]),
-        ("season", _season_raw_payloads()),
-        ("seasons", _seasons_raw_payloads()),
+        ("season", season_raw_payloads()),
+        ("seasons", seasons_raw_payloads()),
     )
 
 
-def _seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
-    for domain, files_payloads in _layer_zero_seed_data():
-        _seed_domain_raw(base_wiki_dir, domain, files_payloads)
+def seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
+    for domain, files_payloads in layer_zero_seed_data():
+        seed_domain_raw(base_wiki_dir, domain, files_payloads)
 
 
-def _driver_record_by_name(
+def driver_record_by_name(
     drivers_merged: list[dict[str, object]],
     driver_name: str,
 ) -> dict[str, object]:
@@ -485,21 +485,21 @@ def _driver_record_by_name(
     )
 
 
-def _driver_record_by_url(
+def driver_record_by_url(
     drivers_merged: list[dict[str, object]],
     driver_url: str,
 ) -> dict[str, object]:
     return next(item for item in drivers_merged if item["driver"]["url"] == driver_url)
 
 
-def _team_record_by_name(
+def team_record_by_name(
     teams_merged: list[dict[str, object]],
     team_name: str,
 ) -> dict[str, object]:
-    return next(item for item in teams_merged if _team_text(item) == team_name)
+    return next(item for item in teams_merged if team_text(item) == team_name)
 
 
-def _assert_circuits_output(circuits_merged: list[dict[str, object]]) -> None:
+def assert_circuits_output(circuits_merged: list[dict[str, object]]) -> None:
     assert circuits_merged == [
         {
             "circuit": "Monza",
@@ -514,7 +514,7 @@ def _assert_circuits_output(circuits_merged: list[dict[str, object]]) -> None:
     ]
 
 
-def _assert_constructors_output(constructors_merged: list[dict[str, object]]) -> None:
+def assert_constructors_output(constructors_merged: list[dict[str, object]]) -> None:
     assert constructors_merged == [
         {
             "constructor": "Ferrari",
@@ -558,8 +558,8 @@ def _assert_constructors_output(constructors_merged: list[dict[str, object]]) ->
     ]
 
 
-def _assert_drivers_output(drivers_merged: list[dict[str, object]]) -> None:
-    female_driver = _driver_record_by_name(drivers_merged, "Maria")
+def assert_drivers_output(drivers_merged: list[dict[str, object]]) -> None:
+    female_driver = driver_record_by_name(drivers_merged, "Maria")
     assert female_driver == {
         "driver": {"text": "Maria", "url": "https://example.com/maria"},
         "gender": "female",
@@ -572,7 +572,7 @@ def _assert_drivers_output(drivers_merged: list[dict[str, object]]) -> None:
         "Max Verstappen",
     )
 
-    fatality_driver = _driver_record_by_name(drivers_merged, "X")
+    fatality_driver = driver_record_by_name(drivers_merged, "X")
     assert fatality_driver["death"] == {
         "date": "2000-01-01",
         "age": 28,
@@ -584,7 +584,7 @@ def _assert_drivers_output(drivers_merged: list[dict[str, object]]) -> None:
         },
     }
 
-    amati_driver = _driver_record_by_url(
+    amati_driver = driver_record_by_url(
         drivers_merged,
         GIOVANNA_AMATI_URL,
     )
@@ -596,7 +596,7 @@ def _assert_drivers_output(drivers_merged: list[dict[str, object]]) -> None:
         {"text": "Brabham", "url": "https://en.wikipedia.org/wiki/Brabham"},
     ]
 
-    bob_anderson = _driver_record_by_url(
+    bob_anderson = driver_record_by_url(
         drivers_merged,
         BOB_ANDERSON_URL,
     )
@@ -604,7 +604,7 @@ def _assert_drivers_output(drivers_merged: list[dict[str, object]]) -> None:
     assert bob_anderson["race_entries"] == BOB_ANDERSON_RACE_ENTRIES
 
 
-def _assert_races_output(races_merged: list[dict[str, object]]) -> None:
+def assert_races_output(races_merged: list[dict[str, object]]) -> None:
     world_race = next(item for item in races_merged if "grand_prix" in item)
     assert world_race["championship"] is True
     assert world_race["red_flag"] == {
@@ -623,7 +623,7 @@ def _assert_races_output(races_merged: list[dict[str, object]]) -> None:
     assert "incident" not in non_champ_race
 
 
-def _assert_engines_output(engines_merged: list[dict[str, object]]) -> None:
+def assert_engines_output(engines_merged: list[dict[str, object]]) -> None:
     assert engines_merged == [
         {
             "engine_constructor": "Ferrari",
@@ -647,7 +647,7 @@ def _assert_engines_output(engines_merged: list[dict[str, object]]) -> None:
     ]
 
 
-def _assert_grands_prix_output(grands_prix_merged: list[dict[str, object]]) -> None:
+def assert_grands_prix_output(grands_prix_merged: list[dict[str, object]]) -> None:
     assert grands_prix_merged == [
         {
             "grand_prix": "Italian",
@@ -661,15 +661,15 @@ def _assert_grands_prix_output(grands_prix_merged: list[dict[str, object]]) -> N
     ]
 
 
-def _assert_teams_output(teams_merged: list[dict[str, object]]) -> None:
-    ferrari_team = _team_record_by_name(teams_merged, "Ferrari")
+def assert_teams_output(teams_merged: list[dict[str, object]]) -> None:
+    ferrari_team = team_record_by_name(teams_merged, "Ferrari")
     assert ferrari_team["racing_series"] == {
         "formula_one": {
             "liveries": ["Marlboro"],
         },
     }
 
-    rob_walker_team = _team_record_by_name(teams_merged, "Rob Walker")
+    rob_walker_team = team_record_by_name(teams_merged, "Rob Walker")
     assert rob_walker_team["racing_series"] == {
         "formula_one": {
             "seasons": ["1950"],
@@ -677,7 +677,7 @@ def _assert_teams_output(teams_merged: list[dict[str, object]]) -> None:
         },
     }
 
-    team_x = _team_record_by_name(teams_merged, "Team X")
+    team_x = team_record_by_name(teams_merged, "Team X")
     assert team_x["team"] == {"text": "Team X", "url": "https://example.com/team-x"}
     assert team_x["racing_series"] == {
         "formula_one": {
@@ -687,7 +687,7 @@ def _assert_teams_output(teams_merged: list[dict[str, object]]) -> None:
         },
     }
 
-    cadillac_team = _team_record_by_name(teams_merged, "Cadillac")
+    cadillac_team = team_record_by_name(teams_merged, "Cadillac")
     assert cadillac_team["racing_series"] == {
         "formula_one": {
             "constructor": {
@@ -705,7 +705,7 @@ def _assert_teams_output(teams_merged: list[dict[str, object]]) -> None:
         },
     }
 
-    audi_team = _team_record_by_name(teams_merged, "Audi")
+    audi_team = team_record_by_name(teams_merged, "Audi")
     assert audi_team["team"] == {
         "text": "Audi",
         "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
@@ -717,7 +717,7 @@ def _assert_teams_output(teams_merged: list[dict[str, object]]) -> None:
         },
     }
 
-    racing_bulls = _team_record_by_name(teams_merged, "Racing Bulls")
+    racing_bulls = team_record_by_name(teams_merged, "Racing Bulls")
     assert racing_bulls["racing_series"] == {
         "formula_one": {
             "seasons": [
@@ -748,7 +748,7 @@ def _assert_teams_output(teams_merged: list[dict[str, object]]) -> None:
         },
     }
 
-    aston_martin = _team_record_by_name(teams_merged, "Aston Martin")
+    aston_martin = team_record_by_name(teams_merged, "Aston Martin")
     assert aston_martin["racing_series"] == {
         "formula_one": {
             "seasons": [
@@ -767,7 +767,7 @@ def _assert_teams_output(teams_merged: list[dict[str, object]]) -> None:
     }
 
 
-def _assert_seasons_outputs(
+def assert_seasons_outputs(
     seasons_merged: list[dict[str, object]],
     season_merged: list[dict[str, object]],
 ) -> None:
@@ -775,7 +775,7 @@ def _assert_seasons_outputs(
     assert season_merged == [{"season": 1950, "tyre_manufacturers": ["Pirelli"]}]
 
 
-def _assert_missing_outputs(base_wiki_dir: Path) -> None:
+def assert_missing_outputs(base_wiki_dir: Path) -> None:
     assert not (
         base_wiki_dir / "layers" / "0_layer" / "rules" / "B_merge" / "rules.json"
     ).exists()
@@ -784,7 +784,7 @@ def _assert_missing_outputs(base_wiki_dir: Path) -> None:
     ).exists()
 
 
-def _assert_merged_outputs(
+def assert_merged_outputs(
     *,
     circuits_merged: list[dict[str, object]],
     constructors_merged: list[dict[str, object]],
@@ -797,12 +797,12 @@ def _assert_merged_outputs(
     season_merged: list[dict[str, object]],
     base_wiki_dir: Path,
 ) -> None:
-    _assert_circuits_output(circuits_merged)
-    _assert_constructors_output(constructors_merged)
-    _assert_drivers_output(drivers_merged)
-    _assert_races_output(races_merged)
-    _assert_engines_output(engines_merged)
-    _assert_grands_prix_output(grands_prix_merged)
-    _assert_teams_output(teams_merged)
-    _assert_seasons_outputs(seasons_merged, season_merged)
-    _assert_missing_outputs(base_wiki_dir)
+    assert_circuits_output(circuits_merged)
+    assert_constructors_output(constructors_merged)
+    assert_drivers_output(drivers_merged)
+    assert_races_output(races_merged)
+    assert_engines_output(engines_merged)
+    assert_grands_prix_output(grands_prix_merged)
+    assert_teams_output(teams_merged)
+    assert_seasons_outputs(seasons_merged, season_merged)
+    assert_missing_outputs(base_wiki_dir)

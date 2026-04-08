@@ -31,19 +31,19 @@ class DiscoveredComponent:
     metadata: ComponentMetadata
 
 
-_COMPONENT_METADATA_CACHE: dict[tuple[str, str], ComponentMetadata | None] = {}
+COMPONENT_METADATA_CACHE: dict[tuple[str, str], ComponentMetadata | None] = {}
 
 
-def _repo_root() -> Path:
+def repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
-def _path_to_module(path: Path) -> str:
-    rel = path.relative_to(_repo_root()).with_suffix("")
+def path_to_module(path: Path) -> str:
+    rel = path.relative_to(repo_root()).with_suffix("")
     return ".".join(rel.parts)
 
 
-def _iter_discovery_module_paths(root: Path) -> set[Path]:
+def iter_discovery_module_paths(root: Path) -> set[Path]:
     module_paths: set[Path] = set()
     module_paths.update(root.glob("scrapers/*/entrypoint.py"))
     module_paths.update(root.glob("scrapers/*/list/*.py"))
@@ -51,55 +51,55 @@ def _iter_discovery_module_paths(root: Path) -> set[Path]:
     return module_paths
 
 
-def _iter_discovery_module_names() -> tuple[str, ...]:
-    root = _repo_root()
-    module_paths = _iter_discovery_module_paths(root)
+def iter_discovery_module_names() -> tuple[str, ...]:
+    root = repo_root()
+    module_paths = iter_discovery_module_paths(root)
     return tuple(
-        sorted(_path_to_module(path) for path in module_paths if path.is_file()),
+        sorted(path_to_module(path) for path in module_paths if path.is_file()),
     )
 
 
-def _read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
+def read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
     cache_key = (candidate.__module__, candidate.__qualname__)
-    cached = _COMPONENT_METADATA_CACHE.get(cache_key)
+    cached = COMPONENT_METADATA_CACHE.get(cache_key)
     if cached is not None:
         return cached
 
-    if cache_key in _COMPONENT_METADATA_CACHE:
+    if cache_key in COMPONENT_METADATA_CACHE:
         return None
 
     raw = getattr(candidate, COMPONENT_METADATA_ATTR, None)
     if raw is None:
-        _COMPONENT_METADATA_CACHE[cache_key] = None
+        COMPONENT_METADATA_CACHE[cache_key] = None
         return None
     metadata = parse_component_metadata(raw)
-    _COMPONENT_METADATA_CACHE[cache_key] = metadata
+    COMPONENT_METADATA_CACHE[cache_key] = metadata
     return metadata
 
 
-def _clear_component_metadata_cache() -> None:
-    _COMPONENT_METADATA_CACHE.clear()
+def clear_component_metadata_cache() -> None:
+    COMPONENT_METADATA_CACHE.clear()
 
 
 def discover_components() -> tuple[DiscoveredComponent, ...]:
     discovered: list[DiscoveredComponent] = []
-    for module_name in _iter_discovery_module_names():
+    for module_name in iter_discovery_module_names():
         module = importlib.import_module(module_name)
-        discovered.extend(_discover_components_in_module(module))
+        discovered.extend(discover_components_in_module(module))
     return tuple(discovered)
 
 
-def _discover_components_in_module(module: ModuleType) -> list[DiscoveredComponent]:
+def discover_components_in_module(module: ModuleType) -> list[DiscoveredComponent]:
     result: list[DiscoveredComponent] = []
     seen: set[type[Any]] = set()
 
     for _, candidate in inspect.getmembers(module, inspect.isclass):
-        metadata = _read_component_metadata(candidate)
+        metadata = read_component_metadata(candidate)
         if metadata is None:
             continue
         result.append(
             DiscoveredComponent(
-                cls=_coerce_discovered_component_class(candidate, metadata=metadata),
+                cls=coerce_discovered_component_class(candidate, metadata=metadata),
                 metadata=metadata,
             ),
         )
@@ -107,11 +107,11 @@ def _discover_components_in_module(module: ModuleType) -> list[DiscoveredCompone
 
     list_scraper_cls = getattr(module, "LIST_SCRAPER_CLASS", None)
     if inspect.isclass(list_scraper_cls) and list_scraper_cls not in seen:
-        metadata = _read_component_metadata(list_scraper_cls)
+        metadata = read_component_metadata(list_scraper_cls)
         if metadata is not None:
             result.append(
                 DiscoveredComponent(
-                    cls=_coerce_discovered_component_class(
+                    cls=coerce_discovered_component_class(
                         list_scraper_cls,
                         metadata=metadata,
                     ),
@@ -122,7 +122,7 @@ def _discover_components_in_module(module: ModuleType) -> list[DiscoveredCompone
     return result
 
 
-def _coerce_discovered_component_class(
+def coerce_discovered_component_class(
     candidate: Any,
     *,
     metadata: ComponentMetadata,

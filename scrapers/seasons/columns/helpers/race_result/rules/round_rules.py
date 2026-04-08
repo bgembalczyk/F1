@@ -35,3 +35,11 @@ class DoublePointsRoundRule:
         ):
             return {"note": "double_points", "points_multiplier": 2.0}
         return None
+
+
+__all__ = [
+    "RoundRule",
+    "RoundRuleContext",
+    "HalfPointsRoundRule",
+    "DoublePointsRoundRule"
+]

@@ -4,7 +4,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
 
 
-def _ctx(html: str, clean_text: str) -> ColumnContext:
+def ctx(html: str, clean_text: str) -> ColumnContext:
     cell = BeautifulSoup(f"<td>{html}</td>", "html.parser").find("td")
     return ColumnContext(
         header="Points",
@@ -20,15 +20,15 @@ def _ctx(html: str, clean_text: str) -> ColumnContext:
 
 def test_points_or_text_column_returns_numeric_points() -> None:
     column = PointsOrTextColumn()
-    assert column.parse(_ctx("42", "42")) == 42.0  # noqa: PLR2004
+    assert column.parse(ctx("42", "42")) == 42.0  # noqa: PLR2004
 
 
 def test_points_or_text_column_returns_text_when_not_numeric() -> None:
     column = PointsOrTextColumn()
-    assert column.parse(_ctx("Shared drive", "Shared drive")) == "Shared drive"
+    assert column.parse(ctx("Shared drive", "Shared drive")) == "Shared drive"
 
 
 def test_points_or_text_column_returns_none_for_dash_and_empty() -> None:
     column = PointsOrTextColumn()
-    assert column.parse(_ctx("-", "-")) is None
-    assert column.parse(_ctx("", "")) is None
+    assert column.parse(ctx("-", "-")) is None
+    assert column.parse(ctx("", "")) is None

@@ -6,7 +6,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 
 
-def _ctx(html: str | None, links: list[dict] | None = None) -> ColumnContext:
+def ctx(html: str | None, links: list[dict] | None = None) -> ColumnContext:
     cell = BeautifulSoup(html, "html.parser").find("td") if html else None
     return ColumnContext(
         header="Race drivers",
@@ -22,12 +22,12 @@ def _ctx(html: str | None, links: list[dict] | None = None) -> ColumnContext:
 def test_parse_returns_empty_list_when_cell_is_none() -> None:
     column = DriversWithRoundsColumn()
 
-    assert column.parse(_ctx(None)) == []
+    assert column.parse(ctx(None)) == []
 
 
 def test_parse_extracts_drivers_from_br_segments_and_prefers_lookup_links() -> None:
     column = DriversWithRoundsColumn()
-    ctx = _ctx(
+    context = ctx(
         "<td>"
         '<a href="/wiki/Driver_A">Driver A</a>'
         "<br/>"
@@ -39,7 +39,7 @@ def test_parse_extracts_drivers_from_br_segments_and_prefers_lookup_links() -> N
         ],
     )
 
-    assert column.parse(ctx) == [
+    assert column.parse(context) == [
         {"text": "Driver A", "url": "https://example.test/driver-a"},
         {"text": "Driver B", "url": "https://example.test/driver-b"},
     ]
@@ -47,9 +47,9 @@ def test_parse_extracts_drivers_from_br_segments_and_prefers_lookup_links() -> N
 
 def test_parse_skips_segments_without_links() -> None:
     column = DriversWithRoundsColumn()
-    ctx = _ctx('<td>Unknown<br/><a href="/wiki/Driver_C">Driver C</a></td>')
+    context = ctx('<td>Unknown<br/><a href="/wiki/Driver_C">Driver C</a></td>')
 
     # Only valid linked segments are returned.
-    assert column.parse(ctx) == [
+    assert column.parse(context) == [
         {"text": "Driver C", "url": "https://en.wikipedia.org/wiki/Driver_C"},
     ]

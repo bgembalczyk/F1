@@ -55,3 +55,8 @@ class SponsorScopeHandler:
                 if SponsorshipRecordText.extract_year_params(params):
                     return True
         return False
+
+
+__all__ = [
+    "SponsorScopeHandler",
+]

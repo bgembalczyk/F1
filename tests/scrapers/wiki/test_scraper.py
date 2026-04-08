@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from scrapers.wiki.scraper import WikiScraper
 
 
-def _make_minimal_soup(
+def make_minimal_soup(
     *,
     with_header: bool = False,
     with_body: bool = False,
@@ -65,7 +65,7 @@ class TestWikiScraperParseSoup:
     def test_parse_soup_with_header_sets_header(self):
         scraper = WikiScraper()
         scraper.url = "https://en.wikipedia.org/wiki/Test"
-        soup = _make_minimal_soup(with_header=True)
+        soup = make_minimal_soup(with_header=True)
         result = scraper._parse_soup(soup)
         assert len(result) == 1
         # header_parser.parse is called when find_header returns something
@@ -74,7 +74,7 @@ class TestWikiScraperParseSoup:
     def test_parse_soup_with_body_sets_body_content(self):
         scraper = WikiScraper()
         scraper.url = "https://en.wikipedia.org/wiki/Test"
-        soup = _make_minimal_soup(with_body=True)
+        soup = make_minimal_soup(with_body=True)
         result = scraper._parse_soup(soup)
         assert len(result) == 1
 

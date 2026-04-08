@@ -79,3 +79,8 @@ def create_suffix_checker(*markers: str) -> Callable[[ColumnContext], bool]:
     """
 
     return lambda ctx: (ctx.raw_text or "").strip().endswith(markers)
+
+
+__all__ = [
+    "NameStatusColumn",
+]

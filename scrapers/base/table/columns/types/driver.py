@@ -37,3 +37,6 @@ class DriverColumn(BaseColumn):
                 return {"text": txt, "url": None}
 
         return None
+
+
+__all__ = ["DriverColumn"]

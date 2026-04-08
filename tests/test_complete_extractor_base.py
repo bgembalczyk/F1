@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 EXPECTED_LIST_SCRAPER_COUNT = 2
 
 
-class _FakeListScraperA:
+class FakeListScraperA:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
@@ -24,7 +24,7 @@ class _FakeListScraperA:
         return [{"item": "a"}]
 
 
-class _FakeListScraperB:
+class FakeListScraperB:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
@@ -32,7 +32,7 @@ class _FakeListScraperB:
         return [{"item": "b"}]
 
 
-class _FakeSingleScraper:
+class FakeSingleScraper:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
@@ -40,7 +40,7 @@ class _FakeSingleScraper:
         return [{"url": url}]
 
 
-class _FailingListScraper:
+class FailingListScraper:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
@@ -49,7 +49,7 @@ class _FailingListScraper:
         raise TypeError(msg)
 
 
-class _FailingSingleScraper:
+class FailingSingleScraper:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
@@ -58,7 +58,7 @@ class _FailingSingleScraper:
         raise TypeError(msg)
 
 
-class _DetailListScraper:
+class DetailListScraper:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
@@ -66,7 +66,7 @@ class _DetailListScraper:
         return [{"fallback_url": "https://example.com/wiki/Item"}]
 
 
-class _RecoverableFailingSingleScraper:
+class RecoverableFailingSingleScraper:
     def __init__(self, *, options: ScraperOptions) -> None:
         self.options = options
 
@@ -75,7 +75,7 @@ class _RecoverableFailingSingleScraper:
         raise RequestError(msg)
 
 
-def _custom_record_assembler(
+def custom_record_assembler(
     record: dict[str, object],
     details: dict[str, object] | None,
 ) -> dict[str, object]:
@@ -85,65 +85,65 @@ def _custom_record_assembler(
     }
 
 
-class _ConfiguredExtractor(CompleteExtractorBase):
+class ConfiguredExtractor(CompleteExtractorBase):
     url = "https://example.com"
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_classes=(_FakeListScraperA, _FakeListScraperB),
-        single_scraper_cls=_FakeSingleScraper,
+        list_scraper_classes=(FakeListScraperA, FakeListScraperB),
+        single_scraper_cls=FakeSingleScraper,
         detail_url_field_paths=("primary.url", "fallback_url"),
         filter_redlinks=True,
-        record_assembler=_custom_record_assembler,
+        record_assembler=custom_record_assembler,
     )
 
 
-class _LegacySingleListExtractor(CompleteExtractorBase):
+class LegacySingleListExtractor(CompleteExtractorBase):
     url = "https://example.com"
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_cls=_FakeListScraperA,
-        single_scraper_cls=_FakeSingleScraper,
+        list_scraper_cls=FakeListScraperA,
+        single_scraper_cls=FakeSingleScraper,
         detail_url_field_path="primary.url",
     )
 
 
-class _LegacyMultiListExtractor(CompleteExtractorBase):
+class LegacyMultiListExtractor(CompleteExtractorBase):
     url = "https://example.com"
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_clses=(_FakeListScraperA, _FakeListScraperB),
-        single_scraper_cls=_FakeSingleScraper,
+        list_scraper_clses=(FakeListScraperA, FakeListScraperB),
+        single_scraper_cls=FakeSingleScraper,
         detail_url_field_paths=("fallback_url",),
         detail_url_field_path="primary.url",
     )
 
 
-class _ProgrammerListErrorExtractor(CompleteExtractorBase):
+class ProgrammerListErrorExtractor(CompleteExtractorBase):
     url = "https://example.com"
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_classes=(_FailingListScraper,),
-        single_scraper_cls=_FakeSingleScraper,
+        list_scraper_classes=(FailingListScraper,),
+        single_scraper_cls=FakeSingleScraper,
         detail_url_field_paths=("fallback_url",),
     )
 
 
-class _ProgrammerSingleErrorExtractor(CompleteExtractorBase):
+class ProgrammerSingleErrorExtractor(CompleteExtractorBase):
     url = "https://example.com"
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_classes=(_DetailListScraper,),
-        single_scraper_cls=_FailingSingleScraper,
+        list_scraper_classes=(DetailListScraper,),
+        single_scraper_cls=FailingSingleScraper,
         detail_url_field_paths=("fallback_url",),
     )
 
 
-class _RecoverableSingleErrorExtractor(CompleteExtractorBase):
+class RecoverableSingleErrorExtractor(CompleteExtractorBase):
     url = "https://example.com"
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_classes=(_FakeListScraperA,),
-        single_scraper_cls=_RecoverableFailingSingleScraper,
+        list_scraper_classes=(FakeListScraperA,),
+        single_scraper_cls=RecoverableFailingSingleScraper,
         detail_url_field_paths=("fallback_url",),
     )
 
 
 def test_build_children_uses_configured_multiple_list_scrapers() -> None:
-    extractor = _ConfiguredExtractor()
+    extractor = ConfiguredExtractor()
 
     assert isinstance(extractor.records_adapter, MultiIterableSourceAdapter)
     assert isinstance(extractor.list_scraper, list)
@@ -154,7 +154,7 @@ def test_build_children_uses_configured_multiple_list_scrapers() -> None:
 
 
 def test_extract_detail_url_uses_fallbacks_and_ignores_redlinks() -> None:
-    extractor = _ConfiguredExtractor()
+    extractor = ConfiguredExtractor()
 
     assert (
         extractor.extract_detail_url(
@@ -170,7 +170,7 @@ def test_extract_detail_url_uses_fallbacks_and_ignores_redlinks() -> None:
 
 
 def test_assemble_record_uses_custom_assembler() -> None:
-    extractor = _ConfiguredExtractor()
+    extractor = ConfiguredExtractor()
 
     assert extractor.assemble_record(
         {"name": "Example"},
@@ -182,19 +182,19 @@ def test_assemble_record_uses_custom_assembler() -> None:
 
 
 def test_config_normalization_supports_legacy_single_list_fields() -> None:
-    extractor = _LegacySingleListExtractor()
+    extractor = LegacySingleListExtractor()
 
-    assert extractor.DOMAIN_CONFIG.list_scraper_classes == (_FakeListScraperA,)
+    assert extractor.DOMAIN_CONFIG.list_scraper_classes == (FakeListScraperA,)
     assert extractor.DOMAIN_CONFIG.detail_url_field_paths == ("primary.url",)
     assert extractor.records_adapter.get() == [{"item": "a"}]
 
 
 def test_config_normalization_supports_legacy_multi_list_fields() -> None:
-    extractor = _LegacyMultiListExtractor()
+    extractor = LegacyMultiListExtractor()
 
     assert extractor.DOMAIN_CONFIG.list_scraper_classes == (
-        _FakeListScraperA,
-        _FakeListScraperB,
+        FakeListScraperA,
+        FakeListScraperB,
     )
     assert extractor.DOMAIN_CONFIG.detail_url_field_paths == (
         "primary.url",
@@ -205,21 +205,21 @@ def test_config_normalization_supports_legacy_multi_list_fields() -> None:
 
 
 def test_fetch_propagates_programmer_error_from_list_scraper() -> None:
-    extractor = _ProgrammerListErrorExtractor()
+    extractor = ProgrammerListErrorExtractor()
 
     with pytest.raises(TypeError, match="programmer bug in list scraper"):
         extractor.fetch()
 
 
 def test_fetch_propagates_programmer_error_from_single_scraper() -> None:
-    extractor = _ProgrammerSingleErrorExtractor()
+    extractor = ProgrammerSingleErrorExtractor()
 
     with pytest.raises(TypeError, match="programmer bug in single scraper"):
         extractor.fetch()
 
 
 def test_fetch_soft_skips_recoverable_single_scraper_errors() -> None:
-    extractor = _RecoverableSingleErrorExtractor()
+    extractor = RecoverableSingleErrorExtractor()
     result = extractor.fetch()
 
     assert result == [{"item": "a", "details": None}]

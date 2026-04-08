@@ -2,9 +2,7 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.domain_utils.normalization import (
-    normalize_season_items as core_normalize_season_items,
-)
+from models.domain_utils.normalization import normalize_season_items
 from models.validation.base import ValidatedModel
 from models.validation.helpers import normalize_unit_list
 from models.validation.helpers import normalize_unit_value
@@ -24,7 +22,7 @@ class EngineRegulation(ValidatedModel):
     fuel_composition: dict[str, Any] | None = None
 
     def validate(self) -> None:
-        self.seasons = list(core_normalize_season_items(self.seasons))
+        self.seasons = list(normalize_season_items(self.seasons))
         self.operating_principle = normalize_text(self.operating_principle)
         self.maximum_displacement = self._normalize_displacement(
             self.maximum_displacement,

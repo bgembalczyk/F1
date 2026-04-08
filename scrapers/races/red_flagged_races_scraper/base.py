@@ -9,18 +9,12 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.columns import types as col
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers.failed_to_make_restart import (
-    FailedToMakeRestartTransformer,
-)
 from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
+from scrapers.base.transformers.failed_to_make_restart import FailedToMakeRestartTransformer
 
 logger = logging.getLogger(__name__)
 
@@ -56,27 +50,27 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             List of column definitions common to all red-flagged race tables.
         """
         return [
-            ColumnSpec("Year", "season", IntColumn()),
+            ColumnSpec("Year", "season", col.IntColumn()),
             ColumnSpec(
                 race_name_header,
                 race_name_header.lower().replace(" ", "_"),
                 None,
             ),  # Will be set by caller
-            ColumnSpec("Lap", "lap", IntColumn()),
+            ColumnSpec("Lap", "lap", col.IntColumn()),
             ColumnSpec("R", "restart_status", RestartStatusColumn()),
-            ColumnSpec("Winner", "winner", DriverColumn()),
-            ColumnSpec("Incident that prompted red flag", "incident", TextColumn()),
+            ColumnSpec("Winner", "winner", col.DriverColumn()),
+            ColumnSpec("Incident that prompted red flag", "incident", col.TextColumn()),
             ColumnSpec(
                 "Failed to make the restart - Drivers",
                 "failed_to_make_restart_drivers",
-                DriverListColumn(),
+                col.DriverListColumn(),
             ),
             ColumnSpec(
                 "Failed to make the restart - Reason",
                 "failed_to_make_restart_reason",
-                TextColumn(),
+                col.TextColumn(),
             ),
-            ColumnSpec("Ref.", "ref", SkipColumn()),
+            ColumnSpec("Ref.", "ref", col.SkipColumn()),
         ]
 
     def __init__(

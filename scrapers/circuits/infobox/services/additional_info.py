@@ -47,3 +47,6 @@ class CircuitAdditionalInfoParser(CircuitEntityParser):
             additional[key] = info
 
         return additional or None
+
+
+__all__ = ["CircuitAdditionalInfoParser"]

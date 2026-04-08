@@ -23,3 +23,6 @@ class RaceResultsTableParser(MappedWikiTableParser):
         "Report": "report",
         "Tyre": "tyre",
     }
+
+
+__all__ = ["RaceResultsTableParser"]

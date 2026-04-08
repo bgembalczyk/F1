@@ -16,3 +16,6 @@ class GrandPrixScopeAccumulator:
         if self.entries:
             return {"type": "only", "grand_prix": self.entries}
         return None
+
+
+__all__ = ["GrandPrixScopeAccumulator"]

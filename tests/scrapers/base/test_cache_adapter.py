@@ -4,7 +4,7 @@ from scrapers.base.cache_adapter import CacheAdapter
 from scrapers.base.source_adapter import SourceAdapter
 
 
-class _StubSourceAdapter(SourceAdapter):
+class StubSourceAdapter(SourceAdapter):
     def __init__(self) -> None:
         self.calls = 0
 
@@ -17,7 +17,7 @@ class _StubSourceAdapter(SourceAdapter):
         return f"fresh:{url}:{self.calls}"
 
 
-class _MemoryCache:
+class MemoryCache:
     def __init__(self) -> None:
         self.store: dict[str, str] = {}
         self.get_calls = 0
@@ -32,21 +32,21 @@ class _MemoryCache:
         self.store[key] = value
 
 
-class _ReadErrorCache(_MemoryCache):
+class ReadErrorCache(MemoryCache):
     def get(self, _key: str) -> str | None:
         msg = "cache read failed"
         raise OSError(msg)
 
 
-class _WriteErrorCache(_MemoryCache):
+class WriteErrorCache(MemoryCache):
     def set(self, _key: str, _value: str) -> None:
         msg = "cache write failed"
         raise OSError(msg)
 
 
 def test_cache_adapter_cache_miss_fetches_from_source_and_populates_cache() -> None:
-    source = _StubSourceAdapter()
-    cache = _MemoryCache()
+    source = StubSourceAdapter()
+    cache = MemoryCache()
     adapter = CacheAdapter(source_adapter=source, cache_adapter=cache)
 
     result = adapter.get("https://example.com/a")
@@ -57,8 +57,8 @@ def test_cache_adapter_cache_miss_fetches_from_source_and_populates_cache() -> N
 
 
 def test_cache_adapter_cache_hit_uses_cached_value_without_hitting_source() -> None:
-    source = _StubSourceAdapter()
-    cache = _MemoryCache()
+    source = StubSourceAdapter()
+    cache = MemoryCache()
     cache.store["https://example.com/a"] = "cached-value"
     adapter = CacheAdapter(source_adapter=source, cache_adapter=cache)
 
@@ -69,8 +69,8 @@ def test_cache_adapter_cache_hit_uses_cached_value_without_hitting_source() -> N
 
 
 def test_cache_adapter_refreshes_value_after_cache_eviction() -> None:
-    source = _StubSourceAdapter()
-    cache = _MemoryCache()
+    source = StubSourceAdapter()
+    cache = MemoryCache()
     adapter = CacheAdapter(source_adapter=source, cache_adapter=cache)
 
     first = adapter.get("https://example.com/a")
@@ -82,24 +82,24 @@ def test_cache_adapter_refreshes_value_after_cache_eviction() -> None:
 
 
 def test_cache_adapter_propagates_cache_read_error() -> None:
-    source = _StubSourceAdapter()
-    adapter = CacheAdapter(source_adapter=source, cache_adapter=_ReadErrorCache())
+    source = StubSourceAdapter()
+    adapter = CacheAdapter(source_adapter=source, cache_adapter=ReadErrorCache())
 
     with pytest.raises(OSError, match="cache read failed"):
         adapter.get("https://example.com/a")
 
 
 def test_cache_adapter_propagates_cache_write_error() -> None:
-    source = _StubSourceAdapter()
-    adapter = CacheAdapter(source_adapter=source, cache_adapter=_WriteErrorCache())
+    source = StubSourceAdapter()
+    adapter = CacheAdapter(source_adapter=source, cache_adapter=WriteErrorCache())
 
     with pytest.raises(OSError, match="cache write failed"):
         adapter.get("https://example.com/a")
 
 
 def test_cache_adapter_metadata_includes_cache_backend() -> None:
-    source = _StubSourceAdapter()
-    cache = _MemoryCache()
+    source = StubSourceAdapter()
+    cache = MemoryCache()
     adapter = CacheAdapter(source_adapter=source, cache_adapter=cache)
 
     metadata = adapter.metadata

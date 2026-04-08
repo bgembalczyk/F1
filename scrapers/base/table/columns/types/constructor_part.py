@@ -11,3 +11,6 @@ class ConstructorPartColumn(BaseColumn):
 
     def parse(self, ctx: ColumnContext):
         return ConstructorParsingHelpers.extract_part(ctx, self.index)
+
+
+__all__ = ["ConstructorPartColumn"]

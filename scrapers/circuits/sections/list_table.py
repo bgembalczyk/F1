@@ -1,23 +1,9 @@
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
+from scrapers.base.table.columns import types as col
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
-from scrapers.circuits.constants import CIRCUIT_COUNTRY_HEADER
-from scrapers.circuits.constants import CIRCUIT_DIRECTION_HEADER
-from scrapers.circuits.constants import CIRCUIT_GRANDS_PRIX_HEADER
-from scrapers.circuits.constants import CIRCUIT_GRANDS_PRIX_HELD_HEADER
-from scrapers.circuits.constants import CIRCUIT_LAST_LENGTH_USED_HEADER
-from scrapers.circuits.constants import CIRCUIT_LOCATION_HEADER
-from scrapers.circuits.constants import CIRCUIT_MAP_HEADER
-from scrapers.circuits.constants import CIRCUIT_NAME_HEADER
-from scrapers.circuits.constants import CIRCUIT_SEASONS_HEADER
-from scrapers.circuits.constants import CIRCUIT_TURNS_HEADER
-from scrapers.circuits.constants import CIRCUIT_TYPE_HEADER
+from scrapers.circuits import constants
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 
 
@@ -49,24 +35,24 @@ class CircuitsListTableParser(WikiTableBaseParser):
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
-        ColumnSpec(CIRCUIT_NAME_HEADER, "circuit", CircuitNameStatusColumn()),
-        ColumnSpec(CIRCUIT_MAP_HEADER, "map", SkipColumn()),
-        ColumnSpec(CIRCUIT_TYPE_HEADER, "type", AutoColumn()),
-        ColumnSpec(CIRCUIT_DIRECTION_HEADER, "direction", AutoColumn()),
-        ColumnSpec(CIRCUIT_LOCATION_HEADER, "location", AutoColumn()),
-        ColumnSpec(CIRCUIT_COUNTRY_HEADER, "country", AutoColumn()),
+        ColumnSpec(constants.CIRCUIT_NAME_HEADER, "circuit", CircuitNameStatusColumn()),
+        ColumnSpec(constants.CIRCUIT_MAP_HEADER, "map", col.SkipColumn()),
+        ColumnSpec(constants.CIRCUIT_TYPE_HEADER, "type", col.AutoColumn()),
+        ColumnSpec(constants.CIRCUIT_DIRECTION_HEADER, "direction", col.AutoColumn()),
+        ColumnSpec(constants.CIRCUIT_LOCATION_HEADER, "location", col.AutoColumn()),
+        ColumnSpec(constants.CIRCUIT_COUNTRY_HEADER, "country", col.AutoColumn()),
         ColumnSpec(
-            CIRCUIT_LAST_LENGTH_USED_HEADER,
+            constants.CIRCUIT_LAST_LENGTH_USED_HEADER,
             "last_length_used_km",
             LastLengthUsedColumn(),
         ),
-        ColumnSpec(CIRCUIT_TURNS_HEADER, "turns", IntColumn()),
-        ColumnSpec(CIRCUIT_GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn()),
-        ColumnSpec(CIRCUIT_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        ColumnSpec(constants.CIRCUIT_TURNS_HEADER, "turns", col.IntColumn()),
+        ColumnSpec(constants.CIRCUIT_GRANDS_PRIX_HEADER, "grands_prix", col.LinksListColumn()),
+        ColumnSpec(constants.CIRCUIT_SEASONS_HEADER, "seasons", col.SeasonsColumn()),
         ColumnSpec(
-            CIRCUIT_GRANDS_PRIX_HELD_HEADER,
+            constants.CIRCUIT_GRANDS_PRIX_HELD_HEADER,
             "grands_prix_held",
-            IntColumn(),
+            col.IntColumn(),
         ),
     ],
 )

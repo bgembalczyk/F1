@@ -45,3 +45,6 @@ class SeasonRegionalChampionshipParser:
                 ],
             ),
         )
+
+
+__all__ = ["SeasonRegionalChampionshipParser"]

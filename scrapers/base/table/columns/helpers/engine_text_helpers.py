@@ -13,11 +13,7 @@ Follows SOLID principles:
 import re
 
 from scrapers.base.helpers.parsing import parse_float_from_text
-from scrapers.base.table.columns.helpers.constants import CC_TO_L_THRESHOLD
-from scrapers.base.table.columns.helpers.constants import DISPLACEMENT_RE
-from scrapers.base.table.columns.helpers.constants import FORMULA_CLASS_TYPE_CODES
-from scrapers.base.table.columns.helpers.constants import PLAIN_TEXT_TYPE_RE
-from scrapers.base.table.columns.helpers.constants import TYPE_WITH_MODIFIER_RE
+from scrapers.base.table.columns.helpers import constants
 
 
 class EngineTextHelpers:
@@ -53,7 +49,7 @@ class EngineTextHelpers:
         if match:
             value = parse_float_from_text(match.group(1))
             if "cc" in text.lower() or "cm" in text.lower():
-                if value and value > CC_TO_L_THRESHOLD:
+                if value and value > constants.CC_TO_L_THRESHOLD:
                     value = value / 1000
             return value
         # Fallback: bare decimal number (e.g. "3.0 V8")
@@ -65,7 +61,7 @@ class EngineTextHelpers:
     @staticmethod
     def _trim_text_before_displacement(text: str) -> str:
         """Return text prefix that appears before displacement tokens."""
-        disp_match = DISPLACEMENT_RE.search(text)
+        disp_match = constants.DISPLACEMENT_RE.search(text)
         if not disp_match:
             return text
         return text[: disp_match.start()].strip() or text
@@ -93,7 +89,7 @@ class EngineTextHelpers:
         special_tokens: set[str] | None,
     ) -> str:
         """Extract model suffix from text following first link text."""
-        disp_match = DISPLACEMENT_RE.search(after_link)
+        disp_match = constants.DISPLACEMENT_RE.search(after_link)
         if disp_match:
             return after_link[: disp_match.start()].strip()
 
@@ -170,14 +166,14 @@ class EngineTextHelpers:
         if type_str is not None:
             return type_str, turbocharged, supercharged
 
-        m_plain = PLAIN_TEXT_TYPE_RE.search(text)
+        m_plain = constants.PLAIN_TEXT_TYPE_RE.search(text)
         if not m_plain:
             return None, turbocharged, supercharged
 
         candidate = m_plain.group(1)
-        if candidate.upper() in FORMULA_CLASS_TYPE_CODES:
+        if candidate.upper() in constants.FORMULA_CLASS_TYPE_CODES:
             return None, turbocharged, supercharged
-        m_mod = TYPE_WITH_MODIFIER_RE.match(candidate)
+        m_mod = constants.TYPE_WITH_MODIFIER_RE.match(candidate)
         if m_mod:
             modifier = m_mod.group(2).lower()
             if modifier == "t":

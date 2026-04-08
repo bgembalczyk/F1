@@ -7,7 +7,7 @@ import pytest
 from scripts.ci import validate_pr_template
 
 
-def _complete_pr_body(*, field_value: str = "tak") -> str:
+def complete_pr_body(*, field_value: str = "tak") -> str:
     checks = "\n".join(
         f"- [x] **{label}**: ok" for label in validate_pr_template.REQUIRED_CHECKBOXES
     )
@@ -65,7 +65,7 @@ def test_main_success_and_error_paths(monkeypatch: pytest.MonkeyPatch, capsys) -
             "--head-sha",
             "b",
             "--pr-body",
-            _complete_pr_body(),
+            complete_pr_body(),
         ],
     )
     monkeypatch.setattr(
@@ -87,7 +87,7 @@ def test_main_success_and_error_paths(monkeypatch: pytest.MonkeyPatch, capsys) -
             "--head-sha",
             "b",
             "--pr-body",
-            _complete_pr_body(field_value="nie dotyczy"),
+            complete_pr_body(field_value="nie dotyczy"),
         ],
     )
     monkeypatch.setattr(

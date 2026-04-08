@@ -2,7 +2,7 @@
 from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
 
 
-class _DoubleValueTransformer:
+class DoubleValueTransformer:
     """Doubles every numeric value in record."""
 
     def __call__(self, record):

@@ -9,16 +9,8 @@ from time import perf_counter
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.orchestration.components.section_source_adapter import (
-    SectionSourceAdapter,
-)
-from scrapers.base.orchestration.lifecycle import STAGE_EXPORT
-from scrapers.base.orchestration.lifecycle import STAGE_INGEST
-from scrapers.base.orchestration.lifecycle import STAGE_MERGE
-from scrapers.base.orchestration.lifecycle import STAGE_NORMALIZE
-from scrapers.base.orchestration.lifecycle import STAGE_VALIDATE
-from scrapers.base.orchestration.lifecycle import StageCheckpointDumper
-from scrapers.base.orchestration.lifecycle import StageEnvelope
+from scrapers.base.orchestration.components.section_source_adapter import SectionSourceAdapter
+from scrapers.base.orchestration import lifecycle
 from scrapers.base.orchestration.models import AuditEntry
 from scrapers.base.orchestration.models import StepDeclaration
 from scrapers.wiki.base_flow import BaseOrchestrationFlow
@@ -48,7 +40,7 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
         self._detail_fetchers = detail_fetchers
         self._source_adapter = SectionSourceAdapter(base_dir=base_dir)
         self._checkpoints_dir = base_dir / "checkpoints"
-        self._dumper = StageCheckpointDumper(
+        self._dumper = lifecycle.StageCheckpointDumper(
             checkpoints_dir=self._checkpoints_dir,
             enabled_domains=checkpoint_dump_domains or set(),
         )
@@ -91,9 +83,9 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             outputs[domain] = str(l1_path)
             audit_entries.append(l1_audit)
             self._dumper.dump(
-                StageEnvelope(
+                lifecycle.StageEnvelope(
                     domain=domain,
-                    stage=STAGE_EXPORT,
+                    stage=lifecycle.STAGE_EXPORT,
                     records=l1_records,
                     metadata={"output_target": str(l1_path)},
                 ),
@@ -114,9 +106,9 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
         resolved = self._source_adapter.resolve(step, domain)
         started = perf_counter()
 
-        ingest_payload = StageEnvelope(
+        ingest_payload = lifecycle.StageEnvelope(
             domain=domain,
-            stage=STAGE_INGEST,
+            stage=lifecycle.STAGE_INGEST,
             records=resolved.records,
             metadata={"input_source": str(resolved.source_path)},
         )
@@ -125,25 +117,25 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
         normalized = [
             self._normalize_seed_row(domain, row) for row in ingest_payload.records
         ]
-        normalize_payload = StageEnvelope(
+        normalize_payload = lifecycle.StageEnvelope(
             domain=domain,
-            stage=STAGE_NORMALIZE,
+            stage=lifecycle.STAGE_NORMALIZE,
             records=[row for row in normalized if row.get("url")],
             metadata=ingest_payload.metadata,
         )
         self._dumper.dump(normalize_payload)
 
-        merged_payload = StageEnvelope(
+        merged_payload = lifecycle.StageEnvelope(
             domain=domain,
-            stage=STAGE_MERGE,
+            stage=lifecycle.STAGE_MERGE,
             records=self._deduplicate_by_url(normalize_payload.records),
             metadata=normalize_payload.metadata,
         )
         self._dumper.dump(merged_payload)
 
-        validate_payload = StageEnvelope(
+        validate_payload = lifecycle.StageEnvelope(
             domain=domain,
-            stage=STAGE_VALIDATE,
+            stage=lifecycle.STAGE_VALIDATE,
             records=[row for row in merged_payload.records if row.get("url")],
             metadata=merged_payload.metadata,
         )
@@ -179,17 +171,17 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
         resolved = self._source_adapter.resolve(step, domain)
         started = perf_counter()
 
-        ingest_payload = StageEnvelope(
+        ingest_payload = lifecycle.StageEnvelope(
             domain=domain,
-            stage=STAGE_INGEST,
+            stage=lifecycle.STAGE_INGEST,
             records=resolved.records,
             metadata={"input_source": str(resolved.source_path)},
         )
         self._dumper.dump(ingest_payload)
 
-        normalize_payload = StageEnvelope(
+        normalize_payload = lifecycle.StageEnvelope(
             domain=domain,
-            stage=STAGE_NORMALIZE,
+            stage=lifecycle.STAGE_NORMALIZE,
             records=[
                 self._normalize_seed_row(domain, row) for row in ingest_payload.records
             ],
@@ -197,9 +189,9 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
         )
         self._dumper.dump(normalize_payload)
 
-        merge_payload = StageEnvelope(
+        merge_payload = lifecycle.StageEnvelope(
             domain=domain,
-            stage=STAGE_MERGE,
+            stage=lifecycle.STAGE_MERGE,
             records=self._deduplicate_by_url(normalize_payload.records),
             metadata=normalize_payload.metadata,
         )
@@ -214,9 +206,9 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             if record.get("url")
         ]
 
-        validate_payload = StageEnvelope(
+        validate_payload = lifecycle.StageEnvelope(
             domain=domain,
-            stage=STAGE_VALIDATE,
+            stage=lifecycle.STAGE_VALIDATE,
             records=[record for record in layer1_records if record.get("url")],
             metadata=merge_payload.metadata,
         )

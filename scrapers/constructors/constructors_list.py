@@ -13,9 +13,7 @@ from models.services.season_service import parse_seasons
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.results import ScrapeResult
-from scrapers.base.single_wiki_article.section_selection_strategy import (
-    WikipediaSectionByIdSelectionStrategy,
-)
+from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
 from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_metric_columns
@@ -23,30 +21,10 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.constructors.base_constructor_list_scraper import (
-    BaseConstructorListScraper,
-)
+from scrapers.constructors.base_constructor_list_scraper import BaseConstructorListScraper
 from scrapers.constructors.columns.constructor_name import ConstructorNameColumn
 from scrapers.constructors.config_factory import build_constructor_list_config
-from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_FASTEST_LAPS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_PODIUMS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_POINTS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_POLES_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_RACES_ENTERED_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_RACES_STARTED_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
-from scrapers.constructors.constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADERS
-from scrapers.constructors.constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
+from scrapers.constructors import constants
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
 from scrapers.wiki.parsers.elements.list import ListParser
@@ -60,7 +38,7 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 
-class _PrivateerTeamsListParser(ListParser):
+class PrivateerTeamsListParser(ListParser):
     def parse(self, element: Tag) -> dict[str, list[dict[str, Any]]]:
         items: list[dict[str, Any]] = []
         for li in element.find_all("li", recursive=False):
@@ -97,10 +75,10 @@ class _PrivateerTeamsListParser(ListParser):
         return record
 
 
-class _PrivateerTeamsSectionParser(_WikiSectionParser):
+class PrivateerTeamsSectionParser(_WikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._list_parser = _PrivateerTeamsListParser()
+        self._list_parser = PrivateerTeamsListParser()
 
     def parse(self, element: Tag, *_args: Any, **_kwargs: Any) -> dict[str, Any]:
         if element.name in {"ul", "ol"}:
@@ -137,15 +115,15 @@ class ConstructorsListScraper(F1ListScraper):
     _FORMER_SECTION_LABEL = "Former constructors"
     _PRIVATEER_SECTION_ID = "Privateer_teams"
     _CURRENT_SCHEMA_COLUMNS = BaseConstructorListScraper.build_schema_columns(
-        [ColumnSpec(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
-        [ColumnSpec(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
-        [ColumnSpec(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
+        [ColumnSpec(constants.CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
+        [ColumnSpec(constants.CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
+        [ColumnSpec(constants.CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
         BaseConstructorListScraper.build_common_stats_columns(),
-        [ColumnSpec(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
+        [ColumnSpec(constants.CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
         BaseConstructorListScraper.build_common_metadata_columns(),
         [
             ColumnSpec(
-                CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
+                constants.CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
                 "antecedent_teams",
                 LinksListColumn(),
             ),
@@ -153,51 +131,51 @@ class ConstructorsListScraper(F1ListScraper):
     )
     _CURRENT_CONFIG = build_constructor_list_config(
         section_id=_CURRENT_SECTION_ID,
-        expected_headers=CONSTRUCTORS_CURRENT_EXPECTED_HEADERS,
+        expected_headers=constants.CONSTRUCTORS_CURRENT_EXPECTED_HEADERS,
         columns=_CURRENT_SCHEMA_COLUMNS,
     )
     _FORMER_CONFIG = build_constructor_list_config(
         section_id=_FORMER_SECTION_ID,
-        expected_headers=CONSTRUCTORS_FORMER_EXPECTED_HEADERS,
+        expected_headers=constants.CONSTRUCTORS_FORMER_EXPECTED_HEADERS,
         columns=BaseConstructorListScraper.build_schema_columns(
             [
                 ColumnSpec(
-                    CONSTRUCTOR_NAME_HEADER,
+                    constants.CONSTRUCTOR_NAME_HEADER,
                     "constructor",
                     ConstructorNameColumn(),
                 ),
-                ColumnSpec(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+                ColumnSpec(constants.CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
                 ColumnSpec(
-                    CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
+                    constants.CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
                     "total_entries",
                     IntColumn(),
                 ),
-                ColumnSpec(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
-                ColumnSpec(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
+                ColumnSpec(constants.CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
+                ColumnSpec(constants.CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
             ],
             [BaseConstructorListScraper.build_licensed_in_column_spec()],
             build_metric_columns(
                 [
-                    MetricColumnSpec(CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),
+                    MetricColumnSpec(constants.CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),
                     MetricColumnSpec(
-                        CONSTRUCTOR_RACES_ENTERED_HEADER,
+                        constants.CONSTRUCTOR_RACES_ENTERED_HEADER,
                         "races_entered",
                         "races_entered",
                     ),
                     MetricColumnSpec(
-                        CONSTRUCTOR_RACES_STARTED_HEADER,
+                        constants.CONSTRUCTOR_RACES_STARTED_HEADER,
                         "races_started",
                         "races_started",
                     ),
-                    MetricColumnSpec(CONSTRUCTOR_WINS_HEADER, "wins", "wins"),
-                    MetricColumnSpec(CONSTRUCTOR_POINTS_HEADER, "points", "points"),
-                    MetricColumnSpec(CONSTRUCTOR_POLES_HEADER, "poles", "poles"),
+                    MetricColumnSpec(constants.CONSTRUCTOR_WINS_HEADER, "wins", "wins"),
+                    MetricColumnSpec(constants.CONSTRUCTOR_POINTS_HEADER, "points", "points"),
+                    MetricColumnSpec(constants.CONSTRUCTOR_POLES_HEADER, "poles", "poles"),
                     MetricColumnSpec(
-                        CONSTRUCTOR_FASTEST_LAPS_HEADER,
+                        constants.CONSTRUCTOR_FASTEST_LAPS_HEADER,
                         "fastest_laps",
                         "fastest_laps",
                     ),
-                    MetricColumnSpec(CONSTRUCTOR_PODIUMS_HEADER, "podiums", "podiums"),
+                    MetricColumnSpec(constants.CONSTRUCTOR_PODIUMS_HEADER, "podiums", "podiums"),
                 ],
             ),
         ),
@@ -362,7 +340,7 @@ class ConstructorsListScraper(F1ListScraper):
         if privateer_section is None:
             return []
         logger.warning("ConstructorsListScraper: privateer section found.")
-        privateer_parser = _PrivateerTeamsSectionParser()
+        privateer_parser = PrivateerTeamsSectionParser()
         privateer_records = privateer_parser.parse(privateer_section).get("items", [])
         self._normalize_privateer_urls(privateer_records)
         self._split_export_records[

@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.helpers.transform_micro_ops import expand_alias_variants
+from models.domain_utils.field_normalization.aliases import expand_alias_variants
 from scrapers.base.sections.aliases import builtin_aliases_for_target
 from scrapers.wiki.parsers.constants import HEADING_TAGS
 from scrapers.wiki.parsers.sections.data_classes import SectionMatch

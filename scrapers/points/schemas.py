@@ -1,44 +1,35 @@
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.columns import types as col
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.points.constants import HISTORICAL_POSITIONS
-from scrapers.points.constants import POINTS_FASTEST_LAP_HEADER
-from scrapers.points.constants import POINTS_NOTES_HEADER
-from scrapers.points.constants import POINTS_RACE_LENGTH_COMPLETED_HEADER
-from scrapers.points.constants import POINTS_SEASONS_HEADER
-from scrapers.points.constants import SPRINT_POSITIONS
+from scrapers.points import constants
 
 
 def build_shortened_race_points_schema() -> TableSchemaDSL:
     columns = [
-        ColumnSpec(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        ColumnSpec(constants.POINTS_SEASONS_HEADER, "seasons", col.SeasonsColumn()),
         ColumnSpec(
-            POINTS_RACE_LENGTH_COMPLETED_HEADER,
+            constants.POINTS_RACE_LENGTH_COMPLETED_HEADER,
             "race_length_completed",
-            TextColumn(),
+            col.TextColumn(),
         ),
     ]
     columns += [
-        ColumnSpec(position, position.lower(), AutoColumn())
-        for position in HISTORICAL_POSITIONS
+        ColumnSpec(position, position.lower(), col.AutoColumn())
+        for position in constants.HISTORICAL_POSITIONS
     ]
     columns.extend(
         [
-            ColumnSpec(POINTS_FASTEST_LAP_HEADER, "fastest_lap", AutoColumn()),
-            ColumnSpec(POINTS_NOTES_HEADER, "notes", SkipColumn()),
+            ColumnSpec(constants.POINTS_FASTEST_LAP_HEADER, "fastest_lap", col.AutoColumn()),
+            ColumnSpec(constants.POINTS_NOTES_HEADER, "notes", col.SkipColumn()),
         ],
     )
     return TableSchemaDSL(columns=columns)
 
 
 def build_sprint_qualifying_schema() -> TableSchemaDSL:
-    columns = [ColumnSpec(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn())]
+    columns = [ColumnSpec(constants.POINTS_SEASONS_HEADER, "seasons", col.SeasonsColumn())]
     columns += [
-        ColumnSpec(position, position.lower(), IntColumn())
-        for position in SPRINT_POSITIONS
+        ColumnSpec(position, position.lower(), col.IntColumn())
+        for position in constants.SPRINT_POSITIONS
     ]
     return TableSchemaDSL(columns=columns)

@@ -6,43 +6,10 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constants import MARKS_RE
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.seasons.columns.helpers.constants import BACKGROUND_TO_RESULT
-from scrapers.seasons.columns.helpers.race_result.background_mapper import (
-    RaceResultBackgroundMapper,
-)
-from scrapers.seasons.columns.helpers.race_result.cell_parser import (
-    RaceResultCellParser,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.classified_dnf import (
-    ClassifiedDnfRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.context import ResultRuleContext
-from scrapers.seasons.columns.helpers.race_result.rules.f2_eligibility import (
-    F2EligibilityRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.fatal_accident import (
-    FatalAccidentRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.mark_based_eligibility import (
-    MarkBasedEligibilityRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.protocol import ResultRule
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
-    DoublePointsRoundRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
-    HalfPointsRoundRule,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import RoundRule
-from scrapers.seasons.columns.helpers.race_result.rules.round_rules import (
-    RoundRuleContext,
-)
-from scrapers.seasons.columns.helpers.race_result.rules.shared import SharedDriveRule
-from scrapers.seasons.columns.helpers.race_result.rules.star_mark_note import (
-    StarMarkNoteRule,
-)
-from scrapers.seasons.columns.helpers.race_result.superscript import (
-    SuperscriptParseResult,
-)
+from scrapers.seasons.columns.helpers.race_result.background_mapper import RaceResultBackgroundMapper
+from scrapers.seasons.columns.helpers.race_result.cell_parser import RaceResultCellParser
+from scrapers.seasons.columns.helpers.race_result import rules
+from scrapers.seasons.columns.helpers.race_result.superscript import SuperscriptParseResult
 
 
 class RaceResultColumn(BaseColumn):
@@ -51,26 +18,26 @@ class RaceResultColumn(BaseColumn):
         *,
         season_year: int | None = None,
         star_mark_note: str | None = None,
-        result_rules: list[ResultRule] | None = None,
-        round_rules: list[RoundRule] | None = None,
+        result_rules: list[rules.ResultRule] | None = None,
+        round_rules: list[rules.RoundRule] | None = None,
     ) -> None:
         self._season_year = season_year
         self._cell_parser = RaceResultCellParser()
         self._background_mapper = RaceResultBackgroundMapper(BACKGROUND_TO_RESULT)
 
-        default_result_rules: list[ResultRule] = [
-            ClassifiedDnfRule(),
-            MarkBasedEligibilityRule(),
-            SharedDriveRule(),
-            FatalAccidentRule(),
-            F2EligibilityRule(),
+        default_result_rules: list[rules.ResultRule] = [
+            rules.ClassifiedDNFRule(),
+            rules.MarkBasedEligibilityRule(),
+            rules.SharedDriveRule(),
+            rules.FatalAccidentRule(),
+            rules.F2EligibilityRule(),
         ]
         if star_mark_note:
-            default_result_rules.append(StarMarkNoteRule(star_mark_note))
+            default_result_rules.append(rules.StarMarkNoteRule(star_mark_note))
         self._result_rules = result_rules or default_result_rules
         self._round_rules = round_rules or [
-            DoublePointsRoundRule(),
-            HalfPointsRoundRule(),
+            rules.DoublePointsRoundRule(),
+            rules.HalfPointsRoundRule(),
         ]
 
     def parse(self, ctx: ColumnContext) -> Any:
@@ -153,7 +120,7 @@ class RaceResultColumn(BaseColumn):
         background: str | None,
         footnotes: list[str],
     ) -> None:
-        context = ResultRuleContext(
+        context = rules.ResultRuleContext(
             season_year=self._season_year,
             background=background,
             footnotes=footnotes,
@@ -221,7 +188,7 @@ class RaceResultColumn(BaseColumn):
         if not marks:
             return None
 
-        context = RoundRuleContext(
+        context = rules.RoundRuleContext(
             season_year=self._season_year,
             marks=marks,
             header_text=strip_marks(ctx.header).strip(),

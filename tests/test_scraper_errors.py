@@ -5,15 +5,16 @@ from pathlib import Path
 
 import pytest
 
-from tests.support.dependency_stubs import _ensure_bs4_stub
-from tests.support.dependency_stubs import _ensure_certifi_stub
-from tests.support.dependency_stubs import _ensure_pandas_stub
-from tests.support.dependency_stubs import _ensure_requests_stub
+from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
+from tests.support.dependency_stubs import ensure_bs4_stub
+from tests.support.dependency_stubs import ensure_certifi_stub
+from tests.support.dependency_stubs import ensure_pandas_stub
+from tests.support.dependency_stubs import ensure_requests_stub
 
-_ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
-_ensure_certifi_stub()
-_ensure_pandas_stub()
-_ensure_requests_stub()
+ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
+ensure_certifi_stub()
+ensure_pandas_stub()
+ensure_requests_stub()
 
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.abc import ABCScraper
@@ -33,9 +34,6 @@ from scrapers.base.errors_report import write_error_summary_by_code
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.circuits.infobox.services.additional_info import (
-    CircuitAdditionalInfoParser,
-)
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser
@@ -45,15 +43,15 @@ from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
-from tests.support.dependency_stubs import _ensure_bs4_stub
-from tests.support.dependency_stubs import _ensure_certifi_stub
-from tests.support.dependency_stubs import _ensure_pandas_stub
-from tests.support.dependency_stubs import _ensure_requests_stub
+from tests.support.dependency_stubs import ensure_bs4_stub
+from tests.support.dependency_stubs import ensure_certifi_stub
+from tests.support.dependency_stubs import ensure_pandas_stub
+from tests.support.dependency_stubs import ensure_requests_stub
 
-_ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
-_ensure_certifi_stub()
-_ensure_pandas_stub()
-_ensure_requests_stub()
+ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
+ensure_certifi_stub()
+ensure_pandas_stub()
+ensure_requests_stub()
 
 RETRY_ATTEMPTS = 2
 

@@ -9,7 +9,7 @@ from scripts.ci.structural_quality_exceptions import MAX_FUNCTION_LINES_EXCEPTIO
 from scripts.ci.structural_quality_exceptions import REDUNDANT_ALIAS_EXCEPTIONS
 
 
-def _collect_overload_names(tree: ast.AST) -> frozenset[str]:
+def collect_overload_names(tree: ast.AST) -> frozenset[str]:
     """Return names of all functions that have at least one ``@overload`` variant."""
     names: set[str] = set()
     for node in ast.walk(tree):
@@ -25,7 +25,7 @@ def _collect_overload_names(tree: ast.AST) -> frozenset[str]:
     return frozenset(names)
 
 
-def _collect_call_counts(tree: ast.AST) -> dict[str, int]:
+def collect_call_counts(tree: ast.AST) -> dict[str, int]:
     """Return how many times each call target name is used in a file."""
     call_counts: dict[str, int] = {}
     for node in ast.walk(tree):
@@ -207,17 +207,17 @@ class StructuralVisitor(ast.NodeVisitor):
         self._class_has_bases_stack.pop()
 
 
-def _should_skip(path: Path) -> bool:
+def should_skip(path: Path) -> bool:
     ignored_parts = {".venv", ".git", "__pycache__", "data", "tests"}
     return any(part in ignored_parts for part in path.parts)
 
 
-def _iter_python_files(paths: list[str]) -> list[Path]:
+def iter_python_files(paths: list[str]) -> list[Path]:
     if paths:
         return [Path(item) for item in paths if item.endswith(".py")]
 
     all_files = Path().rglob("*.py")
-    return [path for path in all_files if not _should_skip(path)]
+    return [path for path in all_files if not should_skip(path)]
 
 
 def evaluate_file(
@@ -244,8 +244,8 @@ def evaluate_file(
 
     visitor = StructuralVisitor(
         file_path=path.as_posix(),
-        overload_names=_collect_overload_names(tree),
-        call_counts=_collect_call_counts(tree),
+        overload_names=collect_overload_names(tree),
+        call_counts=collect_call_counts(tree),
     )
     visitor.max_function_lines = max_function_lines
     visitor.max_class_lines = max_class_lines
@@ -284,8 +284,8 @@ def main(argv: list[str]) -> int:
     args = parse_args(argv)
     files = [
         path
-        for path in _iter_python_files(args.files)
-        if path.exists() and not _should_skip(path)
+        for path in iter_python_files(args.files)
+        if path.exists() and not should_skip(path)
     ]
 
     if not files:

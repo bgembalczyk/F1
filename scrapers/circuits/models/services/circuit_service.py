@@ -8,13 +8,7 @@ from models.services.helpers import prune_empty
 from scrapers.circuits.models.services.constants import TOP_LEVEL_KEYS
 from scrapers.circuits.models.services.lap_record_merging import merge_race_lap_records
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
-from scrapers.circuits.models.services.normalization import extract_circuit_location
-from scrapers.circuits.models.services.normalization import extract_circuit_names
-from scrapers.circuits.models.services.normalization import extract_circuit_url
-from scrapers.circuits.models.services.normalization import extract_fia_grade
-from scrapers.circuits.models.services.normalization import extract_history_events
-from scrapers.circuits.models.services.normalization import extract_infobox_layouts
-from scrapers.circuits.models.services.normalization import merge_tables_into_layouts
+from scrapers.circuits.models.services import normalization as norm
 
 
 @dataclass(frozen=True)
@@ -51,21 +45,21 @@ class CircuitService:
         details = raw.get("details")
         infobox, normalized = CircuitService._extract_infobox_data(details)
 
-        out["name"] = extract_circuit_names(raw, infobox, normalized)
-        out["url"] = extract_circuit_url(raw, details)
+        out["name"] = norm.extract_circuit_names(raw, infobox, normalized)
+        out["url"] = norm.extract_circuit_url(raw, details)
         CircuitService._copy_top_level_fields(raw, out)
-        out["location"] = extract_circuit_location(raw, normalized)
+        out["location"] = norm.extract_circuit_location(raw, normalized)
 
-        fia_grade = extract_fia_grade(normalized)
-        history_events = extract_history_events(normalized)
+        fia_grade = norm.extract_fia_grade(normalized)
+        history_events = norm.extract_history_events(normalized)
         if fia_grade is not None:
             out["fia_grade"] = fia_grade
         if history_events is not None:
             out["history"] = history_events
 
-        layouts = extract_infobox_layouts(infobox)
+        layouts = norm.extract_infobox_layouts(infobox)
         tables = (details.get("tables") if isinstance(details, dict) else None) or []
-        merge_tables_into_layouts(tables, layouts)
+        norm.merge_tables_into_layouts(tables, layouts)
 
         if layouts:
             out["layouts"] = layouts

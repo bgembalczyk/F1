@@ -4,7 +4,7 @@
 from scrapers.tyres.list_scraper import TyreManufacturersBySeasonSubSectionParser
 
 
-def _make_table_element(data: dict | None = None, kind: str = "table") -> dict:
+def make_table_element(data: dict | None = None, kind: str = "table") -> dict:
     return {"kind": kind, "data": data if data is not None else {}}
 
 

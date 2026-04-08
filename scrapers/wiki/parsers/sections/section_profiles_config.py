@@ -121,3 +121,10 @@ def validate_section_profiles_config(
             raise ValueError(
                 msg,
             )
+
+
+__all__ = [
+    "SectionDomainConfig",
+    "SECTION_PROFILES_CONFIG",
+    "validate_section_profiles_config",
+]

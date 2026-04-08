@@ -82,3 +82,6 @@ class RangeColumn(BaseColumn):
             return text.strip()
 
         return f"{text.strip()} {suffix}".strip()
+
+
+__all__ = ["RangeColumn"]

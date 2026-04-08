@@ -3,16 +3,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import (
-    PipelineRecord,
-)
+from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import PipelineRecord
+from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import RecordSplitStrategy
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
-
-    from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import (
-        RecordSplitStrategy,
-    )
 
 
 class RecordSplitPipeline:
@@ -36,3 +31,6 @@ class RecordSplitPipeline:
                 )
             records = next_records
         return records
+
+
+__all__ = ["RecordSplitPipeline"]

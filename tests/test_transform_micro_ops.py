@@ -1,4 +1,4 @@
-from scrapers.base.helpers.transform_micro_ops import expand_alias_variants
+from models.domain_utils.field_normalization.aliases import expand_alias_variants
 from scrapers.base.helpers.transform_micro_ops import merge_unique_preserve_order
 from scrapers.base.helpers.transform_micro_ops import pop_list_field
 

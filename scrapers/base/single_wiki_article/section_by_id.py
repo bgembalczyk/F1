@@ -1,9 +1,7 @@
 from abc import ABC
 
 from scrapers.base.single_wiki_article.base import SingleWikiArticleScraperBase
-from scrapers.base.single_wiki_article.section_selection_strategy import (
-    WikipediaSectionByIdSelectionStrategy,
-)
+from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
 
 
 class SingleWikiArticleSectionByIdBase(SingleWikiArticleScraperBase, ABC):
@@ -15,3 +13,6 @@ class SingleWikiArticleSectionByIdBase(SingleWikiArticleScraperBase, ABC):
             WikipediaSectionByIdSelectionStrategy(),
         )
         super().__init__(*args, **kwargs)
+
+
+__all__ = ["SingleWikiArticleSectionByIdBase"]

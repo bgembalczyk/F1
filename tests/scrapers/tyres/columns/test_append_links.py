@@ -4,7 +4,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.tyres.columns.append_links import AppendLinksColumn
 
 
-def _ctx(
+def ctx(
     *,
     key: str = "manufacturers",
     model_fields: set[str] | None = None,
@@ -25,7 +25,7 @@ def test_apply_appends_links_to_existing_record_list() -> None:
     column = AppendLinksColumn()
     record = {"manufacturers": [{"text": "Dunlop", "url": "u"}]}
 
-    column.apply(_ctx(), record)
+    column.apply(ctx(), record)
 
     assert len(record["manufacturers"]) == 2  # noqa: PLR2004
     assert record["manufacturers"][1]["text"] == "Pirelli"
@@ -34,10 +34,10 @@ def test_apply_appends_links_to_existing_record_list() -> None:
 def test_apply_skips_when_value_is_skip_sentinel(monkeypatch) -> None:
     column = AppendLinksColumn()
     record: dict[str, list[dict[str, str | None]]] = {}
-    ctx = _ctx()
+    context = ctx()
     monkeypatch.setattr(column, "parse", lambda _ctx: _ctx.skip_sentinel)
 
-    column.apply(ctx, record)
+    column.apply(context, record)
 
     assert record == {}
 
@@ -46,6 +46,6 @@ def test_apply_skips_when_key_not_in_model_fields() -> None:
     column = AppendLinksColumn()
     record: dict[str, list[dict[str, str | None]]] = {}
 
-    column.apply(_ctx(model_fields={"wins"}), record)
+    column.apply(ctx(model_fields={"wins"}), record)
 
     assert record == {}

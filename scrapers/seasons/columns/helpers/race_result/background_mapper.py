@@ -26,3 +26,6 @@ class RaceResultBackgroundMapper:
         if len(value) == SHORT_HEX_COLOR_LENGTH:
             return "".join(char * 2 for char in value)
         return value
+
+
+__all__ = ["RaceResultBackgroundMapper"]

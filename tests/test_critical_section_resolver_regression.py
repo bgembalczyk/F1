@@ -8,7 +8,7 @@ from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.wiki.parsers.sections.detection import find_section_heading
 
 
-def _fixture(name: str) -> BeautifulSoup:
+def fixture(name: str) -> BeautifulSoup:
     html = (Path("tests/fixtures/section_parsers") / name).read_text(encoding="utf-8")
     return BeautifulSoup(html, "html.parser")
 
@@ -25,7 +25,7 @@ def test_each_critical_section_has_non_empty_fallback_and_resolves_alias_fixture
     }
 
     for domain, fixture_name in fixtures.items():
-        soup = _fixture(fixture_name)
+        soup = fixture(fixture_name)
         for critical in DOMAIN_SECTION_RESOLVER_CONFIG[domain]:
             assert critical.alternative_section_ids, f"Critical section without aliases: domain={domain} section={critical.section_id}"
 

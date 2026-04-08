@@ -7,11 +7,11 @@ from scrapers.base.table.columns.types.constructor_base import BaseConstructorCo
 from scrapers.base.table.columns.types.constructor_part import ConstructorPartColumn
 
 
-class _ContractConstructorColumn(BaseConstructorColumn):
+class ContractConstructorColumn(BaseConstructorColumn):
     part_parser_cls = ConstructorPartColumn
 
 
-def _ctx(
+def ctx(
     *,
     clean_text: str,
     links: list[dict[str, str | None]] | None = None,
@@ -32,8 +32,8 @@ def _ctx(
 
 
 def test_constructor_base_parses_single_line_text_without_links() -> None:
-    parsed = _ContractConstructorColumn().parse(
-        _ctx(clean_text="Ferrari - Renault"),
+    parsed = ContractConstructorColumn().parse(
+        ctx(clean_text="Ferrari - Renault"),
     )
 
     assert parsed == {
@@ -43,8 +43,8 @@ def test_constructor_base_parses_single_line_text_without_links() -> None:
 
 
 def test_constructor_base_parses_multiline_cell_into_list() -> None:
-    parsed = _ContractConstructorColumn().parse(
-        _ctx(
+    parsed = ContractConstructorColumn().parse(
+        ctx(
             clean_text="Ferrari - Renault McLaren - Mercedes",
             html=(
                 "<a href='/wiki/Ferrari'>Ferrari</a>"
@@ -75,14 +75,14 @@ def test_constructor_base_parses_multiline_cell_into_list() -> None:
 
 
 def test_constructor_base_returns_none_for_empty_values() -> None:
-    parsed = _ContractConstructorColumn().parse(_ctx(clean_text=""))
+    parsed = ContractConstructorColumn().parse(ctx(clean_text=""))
 
     assert parsed is None
 
 
 def test_constructor_base_preserves_duplicate_links() -> None:
-    parsed = _ContractConstructorColumn().parse(
-        _ctx(
+    parsed = ContractConstructorColumn().parse(
+        ctx(
             clean_text="Ferrari - Ferrari",
             links=[
                 {"text": "Ferrari", "url": "/wiki/Ferrari"},
@@ -98,8 +98,8 @@ def test_constructor_base_preserves_duplicate_links() -> None:
 
 
 def test_constructor_base_supports_nonstandard_separator_with_links() -> None:
-    parsed = _ContractConstructorColumn().parse(
-        _ctx(
+    parsed = ContractConstructorColumn().parse(
+        ctx(
             clean_text="Ferrari / Renault",
             links=[
                 {"text": "Ferrari", "url": "/wiki/Ferrari"},
@@ -115,8 +115,8 @@ def test_constructor_base_supports_nonstandard_separator_with_links() -> None:
 
 
 def test_constructor_base_is_idempotent_for_same_context() -> None:
-    column = _ContractConstructorColumn()
-    ctx = _ctx(
+    column = ContractConstructorColumn()
+    context = ctx(
         clean_text="Ferrari - Renault",
         links=[
             {"text": "Ferrari", "url": "/wiki/Ferrari"},
@@ -124,7 +124,7 @@ def test_constructor_base_is_idempotent_for_same_context() -> None:
         ],
     )
 
-    first = column.parse(ctx)
-    second = column.parse(ctx)
+    first = column.parse(context)
+    second = column.parse(context)
 
     assert first == second

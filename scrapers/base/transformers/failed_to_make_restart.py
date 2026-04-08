@@ -14,3 +14,8 @@ class FailedToMakeRestartTransformer(RecordTransformer):
                 "reason": reason,
             }
         return records
+
+
+__all__ = [
+    "FailedToMakeRestartTransformer",
+]

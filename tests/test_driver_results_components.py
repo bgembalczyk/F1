@@ -3,12 +3,8 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.sections.driver_results_schema_factory import (
-    DriverResultsSchemaFactory,
-)
-from scrapers.drivers.sections.driver_results_table_classifier import (
-    DriverResultsTableClassifier,
-)
+from scrapers.drivers.sections.driver_results_schema_factory import DriverResultsSchemaFactory
+from scrapers.drivers.sections.driver_results_table_classifier import DriverResultsTableClassifier
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 
 

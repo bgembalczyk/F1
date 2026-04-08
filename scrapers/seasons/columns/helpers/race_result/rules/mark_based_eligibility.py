@@ -16,3 +16,6 @@ class MarkBasedEligibilityRule:
         if "‡" in marks and isinstance(position, int):
             result["points_eligible"] = False
             append_note(result, "no_points_awarded")
+
+
+__all__ = ["MarkBasedEligibilityRule"]

@@ -15,7 +15,7 @@ from validation.schemas import RecordSchema
 INVALID_TEAM_VALUE = 7
 
 
-def _legacy_coerce_issue(error: ValidationIssue | str) -> ValidationIssue:
+def legacy_coerce_issue(error: ValidationIssue | str) -> ValidationIssue:
     if isinstance(error, ValidationIssue):
         return error
     message = str(error)
@@ -29,21 +29,21 @@ def _legacy_coerce_issue(error: ValidationIssue | str) -> ValidationIssue:
     return ValidationIssue.custom(message)
 
 
-def _legacy_prefix_errors(
+def legacy_prefix_errors(
     errors: list[ValidationIssue],
     prefix: str,
 ) -> list[ValidationIssue]:
     return [error.with_prefix(prefix) for error in errors]
 
 
-def _legacy_validate_nested_schema(
+def legacy_validate_nested_schema(
     record: Mapping[str, Any],
     nested_schema: RecordSchema,
 ) -> list[ValidationIssue]:
-    return _legacy_validate_schema(record, nested_schema)
+    return legacy_validate_schema(record, nested_schema)
 
 
-def _legacy_validate_nested_value(
+def legacy_validate_nested_value(
     key: str,
     value: Any,
     nested_schema: NestedSchema,
@@ -60,8 +60,8 @@ def _legacy_validate_nested_value(
                 )
                 continue
             errors.extend(
-                _legacy_prefix_errors(
-                    _legacy_validate_nested_schema(item, nested_schema.schema),
+                legacy_prefix_errors(
+                    legacy_validate_nested_schema(item, nested_schema.schema),
                     f"{key}[{index}]",
                 ),
             )
@@ -70,26 +70,26 @@ def _legacy_validate_nested_value(
     if not isinstance(value, Mapping):
         return [ValidationIssue.custom(f"{key} must be a mapping")]
 
-    return _legacy_prefix_errors(
-        _legacy_validate_nested_schema(value, nested_schema.schema),
+    return legacy_prefix_errors(
+        legacy_validate_nested_schema(value, nested_schema.schema),
         key,
     )
 
 
-def _legacy_validate_schema(
+def legacy_validate_schema(
     record: Mapping[str, Any],
     schema: RecordSchema,
 ) -> list[ValidationIssue]:
     errors: list[ValidationIssue] = []
     allow_none = set(schema.allow_none)
-    errors.extend(_legacy_missing_required_errors(record, schema))
-    errors.extend(_legacy_type_errors(record, schema, allow_none))
-    errors.extend(_legacy_nested_errors(record, schema))
-    errors.extend(_legacy_custom_validator_errors(record, schema))
+    errors.extend(legacy_missing_required_errors(record, schema))
+    errors.extend(legacy_type_errors(record, schema, allow_none))
+    errors.extend(legacy_nested_errors(record, schema))
+    errors.extend(legacy_custom_validator_errors(record, schema))
     return [IssueMessageFormatter.render(e) for e in errors]
 
 
-def _legacy_missing_required_errors(
+def legacy_missing_required_errors(
     record: Mapping[str, Any],
     schema: RecordSchema,
 ) -> list[ValidationIssue]:
@@ -98,7 +98,7 @@ def _legacy_missing_required_errors(
     ]
 
 
-def _legacy_type_errors(
+def legacy_type_errors(
     record: Mapping[str, Any],
     schema: RecordSchema,
     allow_none: set[str],
@@ -125,7 +125,7 @@ def _legacy_type_errors(
     return errors
 
 
-def _legacy_nested_errors(
+def legacy_nested_errors(
     record: Mapping[str, Any],
     schema: RecordSchema,
 ) -> list[ValidationIssue]:
@@ -136,17 +136,17 @@ def _legacy_nested_errors(
         value = record[key]
         if value is None:
             continue
-        errors.extend(_legacy_validate_nested_value(key, value, nested_schema))
+        errors.extend(legacy_validate_nested_value(key, value, nested_schema))
     return errors
 
 
-def _legacy_custom_validator_errors(
+def legacy_custom_validator_errors(
     record: Mapping[str, Any],
     schema: RecordSchema,
 ) -> list[ValidationIssue]:
     errors: list[ValidationIssue] = []
     for validator in schema.custom_validators:
-        errors.extend(_legacy_coerce_issue(error) for error in validator(record))
+        errors.extend(legacy_coerce_issue(error) for error in validator(record))
     return errors
 
 
@@ -155,7 +155,7 @@ class LegacyNestedRule:
         self.schema = schema
 
     def __call__(self, record: Mapping[str, Any]) -> list[ValidationIssue]:
-        return _legacy_nested_errors(record, self.schema)
+        return legacy_nested_errors(record, self.schema)
 
 
 class LegacyCustomRule:
@@ -163,14 +163,14 @@ class LegacyCustomRule:
         self.schema = schema
 
     def __call__(self, record: Mapping[str, Any]) -> list[ValidationIssue]:
-        return _legacy_custom_validator_errors(record, self.schema)
+        return legacy_custom_validator_errors(record, self.schema)
 
 
-def _legacy_build_domain_rules(schema: RecordSchema):
+def legacy_build_domain_rules(schema: RecordSchema):
     return [LegacyNestedRule(schema), LegacyCustomRule(schema)]
 
 
-def _sample_schema() -> RecordSchema:
+def sample_schema() -> RecordSchema:
     season_schema = RecordSchema(required=("year",), types={"year": int})
     profile_schema = RecordSchema(required=("country",), types={"country": str})
 
@@ -194,7 +194,7 @@ def _sample_schema() -> RecordSchema:
 
 
 def test_validate_schema_matches_legacy_behavior() -> None:
-    schema = _sample_schema()
+    schema = sample_schema()
     record = {
         "name": 123,
         "status": None,
@@ -203,14 +203,14 @@ def test_validate_schema_matches_legacy_behavior() -> None:
         "team": INVALID_TEAM_VALUE,
     }
 
-    expected = _legacy_validate_schema(record, schema)
+    expected = legacy_validate_schema(record, schema)
     actual = validate_record(record, schema)
 
     assert actual == expected
 
 
 def test_build_domain_rules_matches_legacy_behavior() -> None:
-    schema = _sample_schema()
+    schema = sample_schema()
     record = {
         "name": "Driver",
         "status": None,
@@ -220,7 +220,7 @@ def test_build_domain_rules_matches_legacy_behavior() -> None:
     }
 
     legacy_errors: list[ValidationIssue] = []
-    for rule in _legacy_build_domain_rules(schema):
+    for rule in legacy_build_domain_rules(schema):
         legacy_errors.extend(rule(record))
 
     new_errors: list[ValidationIssue] = []

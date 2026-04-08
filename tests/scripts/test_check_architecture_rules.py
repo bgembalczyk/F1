@@ -9,7 +9,7 @@ import pytest
 from scripts import check_architecture_rules
 
 
-def _rules_stub() -> SimpleNamespace:
+def rules_stub() -> SimpleNamespace:
     def _infer_layer(path: Path, *, domain: str | None = None) -> str:
         _ = domain
         return "sections" if "sections" in path.parts else "app"
@@ -41,25 +41,25 @@ def test_checks_cover_required_layout_boundaries_and_cross_domain(
     (domain / "sections" / "feature.py").write_text("pass\n", encoding="utf-8")
     (domain / "app" / "feature.py").write_text("pass\n", encoding="utf-8")
 
-    rules = _rules_stub()
+    rules = rules_stub()
 
-    required_errors = check_architecture_rules._check_required_layout(
+    required_errors = check_architecture_rules.check_required_layout(
         root,
         ("drivers",),
         rules,
     )
-    boundary_errors = check_architecture_rules._check_layer_boundaries(
+    boundary_errors = check_architecture_rules.check_layer_boundaries(
         root,
         ("drivers",),
         rules,
     )
-    _check_ss = check_architecture_rules._check_sections_single_scraper_boundary
+    _check_ss = check_architecture_rules.check_sections_single_scraper_boundary
     section_errors = _check_ss(
         root,
         ("drivers",),
         rules,
     )
-    cross_errors = check_architecture_rules._check_cross_domain_imports(
+    cross_errors = check_architecture_rules.check_cross_domain_imports(
         root,
         ("drivers",),
         rules,
@@ -72,7 +72,7 @@ def test_checks_cover_required_layout_boundaries_and_cross_domain(
 
 
 def test_detect_relevant_domains_accepts_only_scrapers_python_paths() -> None:
-    detected = check_architecture_rules._detect_relevant_domains(
+    detected = check_architecture_rules.detect_relevant_domains(
         [
             Path("scrapers/drivers/entrypoint.py"),
             Path("scrapers/unknown/file.py"),
@@ -89,7 +89,7 @@ def test_main_returns_failure_and_success_with_expected_stdout(
     capsys: pytest.CaptureFixture[str],
 ) -> None:
     monkeypatch.setattr(sys, "argv", ["check_architecture_rules.py"])
-    rules = _rules_stub()
+    rules = rules_stub()
     monkeypatch.setattr(
         check_architecture_rules,
         "_load_architecture_rules",

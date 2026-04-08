@@ -2,13 +2,11 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
 from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
 from scrapers.engines.columns.fuel_flow_rate import FuelFlowRateColumn
-from scrapers.engines.columns.fuel_injection_pressure_limit import (
-    FuelInjectionPressureLimitColumn,
-)
+from scrapers.engines.columns.fuel_injection_pressure_limit import FuelInjectionPressureLimitColumn
 from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
 
 
-def _ctx(raw_text: str, *, clean_text: str | None = None) -> ColumnContext:
+def ctx(raw_text: str, *, clean_text: str | None = None) -> ColumnContext:
     return ColumnContext(
         header="Header",
         key="key",
@@ -23,7 +21,7 @@ def _ctx(raw_text: str, *, clean_text: str | None = None) -> ColumnContext:
 
 def test_engine_configuration_column_parse() -> None:
     column = EngineConfigurationColumn()
-    parsed = column.parse(_ctx("90° V8 + supercharger"))
+    parsed = column.parse(ctx("90° V8 + supercharger"))
 
     assert parsed == {
         "text": "90° V8 + supercharger",
@@ -36,7 +34,7 @@ def test_engine_configuration_column_parse() -> None:
 
 def test_fuel_limit_per_race_column_parse() -> None:
     column = FuelLimitPerRaceColumn()
-    parsed = column.parse(_ctx("Approx. 100-110 kg (90-100 L)"))
+    parsed = column.parse(ctx("Approx. 100-110 kg (90-100 L)"))
 
     assert parsed == {
         "has_limit": True,
@@ -54,7 +52,7 @@ def test_fuel_limit_per_race_column_parse() -> None:
 
 def test_fuel_flow_rate_column_parse() -> None:
     column = FuelFlowRateColumn()
-    parsed = column.parse(_ctx("100 kg/h above 10,500 RPM"))
+    parsed = column.parse(ctx("100 kg/h above 10,500 RPM"))
 
     assert parsed == {
         "rate": {"value": 100.0, "unit": "kg/h"},
@@ -64,13 +62,13 @@ def test_fuel_flow_rate_column_parse() -> None:
 
 def test_fuel_injection_pressure_limit_column_parse() -> None:
     column = FuelInjectionPressureLimitColumn()
-    parsed = column.parse(_ctx("500 bar"))
+    parsed = column.parse(ctx("500 bar"))
 
     assert parsed == {"limit": {"value": 500.0, "unit": "bar"}}
 
 
 def test_engine_rpm_limit_column_parse() -> None:
     column = EngineRpmLimitColumn()
-    parsed = column.parse(_ctx("15,000"))
+    parsed = column.parse(ctx("15,000"))
 
     assert parsed == {"limit": {"min": 15000.0, "max": 15000.0}}

@@ -7,7 +7,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.seasons.columns.race_result import RaceResultColumn
 
 
-def _ctx(
+def ctx(
     cell_html: str,
     *,
     header: str = "R1",
@@ -44,7 +44,7 @@ def test_parse_supports_multiple_result_table_formats(
     cell_html: str,
     expected_positions: list[int],
 ) -> None:
-    parsed = RaceResultColumn(season_year=1960).parse(_ctx(cell_html))
+    parsed = RaceResultColumn(season_year=1960).parse(ctx(cell_html))
 
     assert parsed is not None
     assert [item["position"] for item in parsed["results"]] == expected_positions
@@ -52,7 +52,7 @@ def test_parse_supports_multiple_result_table_formats(
 
 def test_parse_attaches_round_link_and_marks_pole_and_fastest_lap() -> None:
     parsed = RaceResultColumn(season_year=2023).parse(
-        _ctx(
+        ctx(
             '<td style="background:#ffffbf"><b><i>1</i></b></td>',
             header_link={
                 "text": "Bahrain Grand Prix",
@@ -69,7 +69,7 @@ def test_parse_attaches_round_link_and_marks_pole_and_fastest_lap() -> None:
 
 
 def test_parse_promotes_single_result_with_sprint_position_to_scalar_payload() -> None:
-    parsed = RaceResultColumn(season_year=2023).parse(_ctx("<td>5<sup>2</sup></td>"))
+    parsed = RaceResultColumn(season_year=2023).parse(ctx("<td>5<sup>2</sup></td>"))
 
     assert parsed is not None
     assert isinstance(parsed["results"], dict)
@@ -84,7 +84,7 @@ def test_parse_promotes_single_result_with_sprint_position_to_scalar_payload() -
 
 def test_parse_adds_half_points_round_note_for_marked_header() -> None:
     parsed = RaceResultColumn(season_year=1975).parse(
-        _ctx(
+        ctx(
             "<td>2</td>",
             header="Spanish Grand Prix*",
             header_link={
@@ -100,7 +100,7 @@ def test_parse_adds_half_points_round_note_for_marked_header() -> None:
 
 def test_parse_adds_double_points_round_note_for_2014_abu_dhabi() -> None:
     parsed = RaceResultColumn(season_year=2014).parse(
-        _ctx(
+        ctx(
             "<td>1</td>",
             header="Abu Dhabi‡",
             header_link={
@@ -115,7 +115,7 @@ def test_parse_adds_double_points_round_note_for_2014_abu_dhabi() -> None:
 
 
 def test_parse_marks_shared_drive_and_share_count_when_two_results_present() -> None:
-    parsed = RaceResultColumn(season_year=1957).parse(_ctx("<td>1† / 2†</td>"))
+    parsed = RaceResultColumn(season_year=1957).parse(ctx("<td>1† / 2†</td>"))
 
     assert parsed is not None
     assert parsed["results"][0]["shared_drive"] is True
@@ -130,22 +130,22 @@ def test_parse_marks_shared_drive_and_share_count_when_two_results_present() -> 
 
 @pytest.mark.parametrize("status", ["DNS", "DNF", "DSQ"])
 def test_parse_preserves_status_codes(status: str) -> None:
-    parsed = RaceResultColumn(season_year=1970).parse(_ctx(f"<td>{status}</td>"))
+    parsed = RaceResultColumn(season_year=1970).parse(ctx(f"<td>{status}</td>"))
 
     assert parsed is not None
     assert parsed["results"][0]["position"] == status
 
 
 def test_parse_returns_none_for_empty_result_cell() -> None:
-    assert RaceResultColumn(season_year=1970).parse(_ctx("<td> </td>")) is None
+    assert RaceResultColumn(season_year=1970).parse(ctx("<td> </td>")) is None
 
 
 def test_parse_returns_none_for_only_missing_markers_without_background() -> None:
-    assert RaceResultColumn(season_year=1970).parse(_ctx("<td>- / --</td>")) is None
+    assert RaceResultColumn(season_year=1970).parse(ctx("<td>- / --</td>")) is None
 
 
 def test_parse_keeps_tie_like_text_position() -> None:
-    parsed = RaceResultColumn(season_year=1970).parse(_ctx("<td>T1</td>"))
+    parsed = RaceResultColumn(season_year=1970).parse(ctx("<td>T1</td>"))
 
     assert parsed is not None
     assert parsed["results"][0]["position"] == "T1"
@@ -153,7 +153,7 @@ def test_parse_keeps_tie_like_text_position() -> None:
 
 def test_parse_translates_nc_with_other_classified_background() -> None:
     parsed = RaceResultColumn(season_year=1970).parse(
-        _ctx('<td style="background:#cfcfff">NC</td>'),
+        ctx('<td style="background:#cfcfff">NC</td>'),
     )
 
     assert parsed is not None

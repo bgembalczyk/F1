@@ -11,7 +11,7 @@ from unittest.mock import Mock
 import pytest
 
 
-def _install_scrapers_pkg_stub() -> None:
+def install_scrapers_pkg_stub() -> None:
     if "scrapers" in sys.modules:
         return
     pkg = types.ModuleType("scrapers")
@@ -19,7 +19,7 @@ def _install_scrapers_pkg_stub() -> None:
     sys.modules["scrapers"] = pkg
 
 
-_install_scrapers_pkg_stub()
+install_scrapers_pkg_stub()
 
 from infrastructure.gemini.cache import GeminiCache  # noqa: E402
 from infrastructure.gemini.cache_service import GeminiCacheService  # noqa: E402
@@ -180,7 +180,7 @@ def test_client_call_api_maps_empty_response_to_source_parse_error(
         )
 
 
-class _DummyResponse:
+class DummyResponse:
     def __init__(self, body: str) -> None:
         self._body = body.encode("utf-8")
 
@@ -194,7 +194,7 @@ class _DummyResponse:
         return None
 
 
-def _transport() -> GeminiTransport:
+def transport_func() -> GeminiTransport:
     return GeminiTransport(
         api_key="test-key",
         timeout=3,
@@ -203,11 +203,11 @@ def _transport() -> GeminiTransport:
 
 
 def test_transport_success_and_error_mapping(monkeypatch: pytest.MonkeyPatch) -> None:
-    transport = _transport()
+    transport = transport_func()
 
     monkeypatch.setattr(
         "urllib.request.urlopen",
-        lambda *_args, **_kwargs: _DummyResponse('{"candidates": []}'),
+        lambda *_args, **_kwargs: DummyResponse('{"candidates": []}'),
     )
     assert transport.generate(
         "p",
@@ -242,7 +242,7 @@ def test_transport_success_and_error_mapping(monkeypatch: pytest.MonkeyPatch) ->
 def test_transport_rejects_non_https_and_invalid_json(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    transport = _transport()
+    transport = transport_func()
 
     monkeypatch.setattr(
         "infrastructure.gemini.transport.API_URL_TEMPLATE",
@@ -257,7 +257,7 @@ def test_transport_rejects_non_https_and_invalid_json(
     )
     monkeypatch.setattr(
         "urllib.request.urlopen",
-        lambda *_a, **_k: _DummyResponse("not-json"),
+        lambda *_a, **_k: DummyResponse("not-json"),
     )
     with pytest.raises(TransportError, match="niepoprawny JSON"):
         transport.generate("p", model="m", response_mime_type="application/json")

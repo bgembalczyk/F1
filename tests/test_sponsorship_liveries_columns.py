@@ -7,12 +7,10 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
 from scrapers.sponsorship_liveries.parsers.section import SponsorshipSectionParser
-from scrapers.sponsorship_liveries.parsers.splitters.record.facade import (
-    SponsorshipRecordSplitter,
-)
+from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
 
 
-def _ctx(
+def ctx(
     raw_text: str,
     *,
     clean_text: str | None = None,
@@ -126,11 +124,11 @@ def test_season_column_car_keyword_sets_car_field() -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="Matra",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
     col.apply(
-        _ctx(
+        ctx(
             "1968 (Matra MS9 car)",
             links=[
                 {
@@ -160,11 +158,11 @@ def test_season_column_no_car_keyword_sets_driver_field() -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="McLaren",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
     col.apply(
-        _ctx(
+        ctx(
             "1976 (James Hunt)",
             links=[
                 {
@@ -187,7 +185,7 @@ def test_season_column_no_classifier_skips_paren_fields() -> None:
     col = SponsorshipSeasonsColumn()
     record: dict = {}
     col.apply(
-        _ctx(
+        ctx(
             "1968 (Matra MS9 car)",
             links=[
                 {"text": "Matra MS9", "url": "https://en.wikipedia.org/wiki/Matra_MS9"},
@@ -213,11 +211,11 @@ def test_season_column_gemini_sets_grand_prix_scope() -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="Ferrari",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
     col.apply(
-        _ctx(
+        ctx(
             "2004 (only Chinese GP)",
             links=[
                 {
@@ -252,10 +250,10 @@ def test_season_column_gemini_grand_prix_fallback_to_text_when_no_links() -> Non
     }
     col = SponsorshipSeasonsColumn(
         team_name="Ferrari",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
-    col.apply(_ctx("2004 (only Monaco GP)"), record)
+    col.apply(ctx("2004 (only Monaco GP)"), record)
 
     assert record.get("_season_scoped_gp") is True
     assert record["grand_prix_scope"]["grand_prix"] == [{"text": "Monaco Grand Prix"}]
@@ -273,10 +271,10 @@ def test_season_column_gemini_empty_classification_sets_no_extra_fields() -> Non
     }
     col = SponsorshipSeasonsColumn(
         team_name="Coloni",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
-    col.apply(_ctx("1990 (never raced)"), record)
+    col.apply(ctx("1990 (never raced)"), record)
 
     assert "paren_classification" not in record
     assert "driver" not in record
@@ -321,7 +319,7 @@ def test_comma_between_separate_sponsors_still_splits() -> None:
 # ── Gemini-based paren classifier ────────────────────────────────────────────
 
 
-def _make_classifier(classification: dict):
+def make_classifier(classification: dict):
     """Create a mock ParenClassifier that always returns *classification*."""
     classifier = MagicMock()
     classifier.classify.return_value = classification
@@ -338,10 +336,10 @@ def test_gemini_classifier_called_for_paren() -> None:
         "time_period": [],
         "other": [],
     }
-    classifier = _make_classifier(classification)
+    classifier = make_classifier(classification)
     col = SponsorshipSeasonsColumn(team_name="Scuderia Italia", classifier=classifier)
     record: dict = {}
-    col.apply(_ctx("1988 (Dallara F188)"), record)
+    col.apply(ctx("1988 (Dallara F188)"), record)
 
     classifier.classify.assert_called_once()
     call_kwargs = classifier.classify.call_args.kwargs
@@ -362,10 +360,10 @@ def test_gemini_classification_stored_in_record() -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="Scuderia Italia",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
-    col.apply(_ctx("1988 (Dallara F188)"), record)
+    col.apply(ctx("1988 (Dallara F188)"), record)
 
     assert "paren_classification" not in record
     assert record["car"] == [{"text": "Dallara F188"}]
@@ -373,10 +371,10 @@ def test_gemini_classification_stored_in_record() -> None:
 
 def test_no_gemini_call_without_paren() -> None:
     """When there is no parenthetical, the classifier is never called."""
-    classifier = _make_classifier({})
+    classifier = make_classifier({})
     col = SponsorshipSeasonsColumn(team_name="Team A", classifier=classifier)
     record: dict = {}
-    col.apply(_ctx("1988"), record)
+    col.apply(ctx("1988"), record)
 
     classifier.classify.assert_not_called()
     assert "paren_classification" not in record
@@ -386,7 +384,7 @@ def test_no_gemini_call_without_classifier() -> None:
     """When no classifier is configured, no 'paren_classification' key is added."""
     col = SponsorshipSeasonsColumn()
     record: dict = {}
-    col.apply(_ctx("1988 (Dallara F188)"), record)
+    col.apply(ctx("1988 (Dallara F188)"), record)
 
     assert "paren_classification" not in record
 
@@ -402,14 +400,14 @@ def test_gemini_table_headers_forwarded() -> None:
         "time_period": [],
         "other": [],
     }
-    classifier = _make_classifier(classification)
+    classifier = make_classifier(classification)
     col = SponsorshipSeasonsColumn(
         team_name="Coloni",
         classifier=classifier,
         table_headers=headers,
     )
     record: dict = {}
-    col.apply(_ctx("1990 (with Subaru power)"), record)
+    col.apply(ctx("1990 (with Subaru power)"), record)
 
     call_kwargs = classifier.classify.call_args.kwargs
     assert call_kwargs["headers"] == headers
@@ -427,11 +425,11 @@ def test_season_column_engine_constructor_sets_engine_field() -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="Coloni",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
     col.apply(
-        _ctx(
+        ctx(
             "1990 (with Subaru power)",
             links=[
                 {
@@ -463,10 +461,10 @@ def test_season_column_engine_constructor_text_only_fallback() -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="Coloni",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
-    col.apply(_ctx("1990 (with Subaru power)"), record)
+    col.apply(ctx("1990 (with Subaru power)"), record)
 
     assert record["engine"] == [{"text": "Subaru"}]
 
@@ -483,11 +481,11 @@ def test_season_column_logs_applied_rule_with_source(caplog) -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="Coloni",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
     with caplog.at_level("INFO"):
-        col.apply(_ctx("1990 (with Subaru power)"), record)
+        col.apply(ctx("1990 (with Subaru power)"), record)
 
     assert "Applied rule 'engine_constructors' in domain 'entity'" in caplog.text
     assert "for source 'https://en.wikipedia.org'" in caplog.text
@@ -505,11 +503,11 @@ def test_hallucination_values_not_in_cell_text_are_ignored() -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="Coloni",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
     # Neither "Coloni C3B" nor "Ford" appear in the cell text.
-    col.apply(_ctx("1990 (without Subaru power)"), record)
+    col.apply(ctx("1990 (without Subaru power)"), record)
 
     assert "car" not in record
     assert "engine" not in record
@@ -529,11 +527,11 @@ def test_hallucination_only_matching_values_kept() -> None:
     }
     col = SponsorshipSeasonsColumn(
         team_name="Coloni",
-        classifier=_make_classifier(classification),
+        classifier=make_classifier(classification),
     )
     record: dict = {}
     # "Subaru" is in the cell text but "Ford" is not.
-    col.apply(_ctx("1990 (with Subaru power)"), record)
+    col.apply(ctx("1990 (with Subaru power)"), record)
 
     assert "engine" in record
     assert record["engine"] == [{"text": "Subaru"}]
@@ -550,7 +548,7 @@ def test_gemini_classifier_exception_does_not_propagate() -> None:
 
     col = SponsorshipSeasonsColumn(team_name="Coloni", classifier=classifier)
     record: dict = {}
-    col.apply(_ctx("1990 (with Subaru power)"), record)
+    col.apply(ctx("1990 (with Subaru power)"), record)
 
     # Season should still be parsed correctly.
     assert "key" in record

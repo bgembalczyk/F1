@@ -5,7 +5,7 @@ from layers.facade import WikiPipelineFacade
 EXPECTED_SCENARIO_RUNS = 2
 
 
-class _LayerExecutorSpy:
+class LayerExecutorSpy:
     def __init__(self) -> None:
         self.calls: list[tuple[object, Path]] = []
 
@@ -13,7 +13,7 @@ class _LayerExecutorSpy:
         self.calls.append((run_config, base_wiki_dir))
 
 
-class _MergeSpy:
+class MergeSpy:
     def __init__(self) -> None:
         self.calls: list[Path] = []
 
@@ -22,9 +22,9 @@ class _MergeSpy:
 
 
 def test_wiki_pipeline_facade_routes_common_scenarios(tmp_path: Path) -> None:
-    layer_zero = _LayerExecutorSpy()
-    layer_one = _LayerExecutorSpy()
-    merge = _MergeSpy()
+    layer_zero = LayerExecutorSpy()
+    layer_one = LayerExecutorSpy()
+    merge = MergeSpy()
     facade = WikiPipelineFacade(
         base_wiki_dir=tmp_path / "wiki",
         base_debug_dir=tmp_path / "debug",

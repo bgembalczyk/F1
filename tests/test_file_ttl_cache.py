@@ -16,7 +16,7 @@ from infrastructure.http_client.caching.file import FileCache
 CACHE_TEST_VALUE = 123
 
 
-class _IntAdapter(FileTtlCacheAdapter[int]):
+class IntAdapter(FileTtlCacheAdapter[int]):
     extension = ".txt"
 
     def serialize(self, value: int) -> str:
@@ -30,7 +30,7 @@ def test_file_ttl_cache_roundtrip(tmp_path: Path) -> None:
     cache = FileTtlCache[int](
         cache_dir=tmp_path / "cache",
         ttl_seconds=60,
-        adapter=_IntAdapter(),
+        adapter=IntAdapter(),
     )
 
     cache.set("key-1", CACHE_TEST_VALUE)
@@ -42,7 +42,7 @@ def test_file_ttl_cache_ttl_expired(tmp_path: Path) -> None:
     cache = FileTtlCache[int](
         cache_dir=tmp_path / "cache",
         ttl_seconds=1,
-        adapter=_IntAdapter(),
+        adapter=IntAdapter(),
     )
 
     cache.set("key-1", CACHE_TEST_VALUE)
@@ -57,7 +57,7 @@ def test_file_ttl_cache_zero_ttl_disables_reads(tmp_path: Path) -> None:
     cache = FileTtlCache[int](
         cache_dir=tmp_path / "cache",
         ttl_seconds=0,
-        adapter=_IntAdapter(),
+        adapter=IntAdapter(),
     )
 
     cache.set("key-1", CACHE_TEST_VALUE)
@@ -69,7 +69,7 @@ def test_file_ttl_cache_bad_payload_returns_none(tmp_path: Path) -> None:
     cache = FileTtlCache[int](
         cache_dir=tmp_path / "cache",
         ttl_seconds=60,
-        adapter=_IntAdapter(),
+        adapter=IntAdapter(),
     )
 
     digest = sha256(b"bad-key").hexdigest()

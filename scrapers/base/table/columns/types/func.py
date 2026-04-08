@@ -15,3 +15,6 @@ class FuncColumn(BaseColumn):
 
     def parse(self, ctx: ColumnContext) -> Any:
         return self.func(ctx)
+
+
+__all__ = ["FuncColumn"]

@@ -21,3 +21,6 @@ class BackgroundMixin:
             bg = extract_background(ctx.cell)
             if bg is not None:
                 record["background"] = bg
+
+
+__all__ = ["BackgroundMixin"]

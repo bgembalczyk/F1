@@ -39,7 +39,7 @@ def html_links_and_no_links_record() -> tuple[str, str]:
     return with_links, without_links
 
 
-def _ctx_from_html(html: str) -> ColumnContext:
+def ctx_from_html(html: str) -> ColumnContext:
     cell = BeautifulSoup(html, "html.parser").find("td")
     links = [
         {"text": a.get_text(strip=True), "url": f"{BASE_URL}{a.get('href')}"}
@@ -60,7 +60,7 @@ def _ctx_from_html(html: str) -> ColumnContext:
 def test_split_lines_builds_two_contexts_with_expected_structure(
     html_valid_record: str,
 ) -> None:
-    ctx = _ctx_from_html(html_valid_record)
+    ctx = ctx_from_html(html_valid_record)
 
     line_contexts = ConstructorParsingHelpers.split_lines(ctx)
 
@@ -80,7 +80,7 @@ def test_split_lines_builds_two_contexts_with_expected_structure(
 def test_extract_part_falls_back_to_hyphen_split_when_no_links(
     html_alias_or_text_record: str,
 ) -> None:
-    ctx = _ctx_from_html(html_alias_or_text_record)
+    ctx = ctx_from_html(html_alias_or_text_record)
 
     left = ConstructorParsingHelpers.extract_part(ctx, 0)
     right = ConstructorParsingHelpers.extract_part(ctx, 1)
@@ -92,7 +92,7 @@ def test_extract_part_falls_back_to_hyphen_split_when_no_links(
 
 
 def test_extract_part_single_link_duplicates_engine_branch() -> None:
-    ctx = _ctx_from_html('<td><a href="/wiki/Ferrari">Ferrari</a></td>')
+    ctx = ctx_from_html('<td><a href="/wiki/Ferrari">Ferrari</a></td>')
 
     chassis = ConstructorParsingHelpers.extract_part(ctx, 0)
     engine = ConstructorParsingHelpers.extract_part(ctx, 1)
@@ -116,7 +116,7 @@ def test_extract_part_handles_incomplete_or_out_of_range(
     html_links_and_no_links_record: tuple[str, str],
 ) -> None:
     _, no_links_html = html_links_and_no_links_record
-    ctx = _ctx_from_html(no_links_html)
+    ctx = ctx_from_html(no_links_html)
 
     parsed = ConstructorParsingHelpers.extract_part(ctx, record_index)
 
@@ -126,7 +126,7 @@ def test_extract_part_handles_incomplete_or_out_of_range(
 def test_find_hyphen_split_index_detects_split_with_two_plus_links_before_hyphen() -> (
     None
 ):
-    ctx = _ctx_from_html(
+    ctx = ctx_from_html(
         '<td><a href="/wiki/BRM">BRM</a> <a href="/wiki/P160">P160</a> - '
         '<a href="/wiki/Ford_Motor_Company">Ford</a></td>',
     )

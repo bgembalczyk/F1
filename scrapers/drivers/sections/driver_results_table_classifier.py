@@ -18,3 +18,6 @@ class DriverResultsTableClassifier:
         if COMPLETE_RESULTS_REQUIRED_HEADER in header_set:
             return "complete_results"
         return None
+
+
+__all__ = ["DriverResultsTableClassifier"]

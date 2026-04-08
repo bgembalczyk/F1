@@ -144,3 +144,6 @@ class WikipediaSectionByIdSelectionStrategy(SectionSelectionStrategy):
             return None
 
         return BeautifulSoup(html, "html.parser")
+
+
+__all__ = ["WikipediaSectionByIdSelectionStrategy", "SectionSelectionStrategy"]

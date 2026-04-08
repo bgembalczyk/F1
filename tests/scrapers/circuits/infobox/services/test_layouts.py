@@ -11,7 +11,7 @@ from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
-def _make_parser() -> CircuitLayoutsParser:
+def make_parser() -> CircuitLayoutsParser:
     infobox_scraper = MagicMock()
     text_utils = InfoboxTextUtils()
     lap_record_parser = CircuitLapRecordParser()
@@ -26,7 +26,7 @@ def _make_parser() -> CircuitLayoutsParser:
 
 @pytest.fixture()
 def parser() -> CircuitLayoutsParser:
-    return _make_parser()
+    return make_parser()
 
 
 # ---------------------------------------------------------------------------

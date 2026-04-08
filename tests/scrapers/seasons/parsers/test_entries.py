@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from scrapers.seasons.parsers.entries import SeasonEntriesParser
 
 
-class _FakePolicy:
+class FakePolicy:
     def resolve_engine_config(self, _season_year: int | None):
         return None
 
@@ -13,7 +13,7 @@ class _FakePolicy:
         return season_year is not None and season_year < 2007  # noqa: PLR2004
 
 
-class _FakeTableParser:
+class FakeTableParser:
     def __init__(self, records: list[dict]):
         self.records = records
 
@@ -21,7 +21,7 @@ class _FakeTableParser:
         return list(self.records)
 
 
-class _FakeMerger:
+class FakeMerger:
     def merge_entries(self, records: list[dict]):
         return records
 
@@ -30,7 +30,7 @@ def test_entries_parser_normalizes_single_number_for_multiple_drivers_pre_2007()
     None
 ):
     parser = SeasonEntriesParser(
-        table_parser=_FakeTableParser(
+        table_parser=FakeTableParser(
             [
                 {
                     "constructor": {"text": "Team"},
@@ -39,8 +39,8 @@ def test_entries_parser_normalizes_single_number_for_multiple_drivers_pre_2007()
                 },
             ],
         ),
-        entry_merger=_FakeMerger(),
-        policy=_FakePolicy(),
+        entry_merger=FakeMerger(),
+        policy=FakePolicy(),
     )
 
     parsed = parser.parse(BeautifulSoup("<html></html>", "html.parser"), 2006)
@@ -50,7 +50,7 @@ def test_entries_parser_normalizes_single_number_for_multiple_drivers_pre_2007()
 
 def test_entries_parser_does_not_normalize_when_multiple_numbers_present() -> None:
     parser = SeasonEntriesParser(
-        table_parser=_FakeTableParser(
+        table_parser=FakeTableParser(
             [
                 {
                     "no": ["44", "77"],
@@ -58,8 +58,8 @@ def test_entries_parser_does_not_normalize_when_multiple_numbers_present() -> No
                 },
             ],
         ),
-        entry_merger=_FakeMerger(),
-        policy=_FakePolicy(),
+        entry_merger=FakeMerger(),
+        policy=FakePolicy(),
     )
 
     parsed = parser.parse(BeautifulSoup("<html></html>", "html.parser"), 2006)

@@ -3,15 +3,14 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.transformers.points_scoring_systems_history import PointsScoringSystemsHistoryTransformer
+
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
 from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.transformers.points_scoring_systems_history import (
-    PointsScoringSystemsHistoryTransformer,
-)
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.config_factory import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS

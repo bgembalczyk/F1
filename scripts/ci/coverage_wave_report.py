@@ -28,7 +28,7 @@ class FileMiss:
     miss: int
 
 
-def _parse_args() -> argparse.Namespace:
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Generate a coverage wave report and top remaining misses from "
@@ -50,13 +50,13 @@ def _parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def _normalize_path(raw_path: str) -> str:
+def normalize_path(raw_path: str) -> str:
     if raw_path.startswith(ROOT_PREFIX):
         return raw_path.removeprefix(ROOT_PREFIX)
     return raw_path
 
 
-def _load_executed_lines(coverage_db: Path) -> dict[str, set[int]]:
+def load_executed_lines(coverage_db: Path) -> dict[str, set[int]]:
     conn = sqlite3.connect(coverage_db)
     try:
         rows = conn.execute(
@@ -68,7 +68,7 @@ def _load_executed_lines(coverage_db: Path) -> dict[str, set[int]]:
         )
         per_file: dict[str, set[int]] = {}
         for raw_path, numbits in rows:
-            norm = _normalize_path(raw_path)
+            norm = normalize_path(raw_path)
             line_set = per_file.setdefault(norm, set())
             for index, byte in enumerate(numbits):
                 for bit in range(8):
@@ -79,7 +79,7 @@ def _load_executed_lines(coverage_db: Path) -> dict[str, set[int]]:
         conn.close()
 
 
-def _statement_lines(path: Path) -> set[int]:
+def statement_lines(path: Path) -> set[int]:
     source = path.read_text(encoding="utf-8")
     tree = ast.parse(source)
     statements: set[int] = set()
@@ -92,7 +92,7 @@ def _statement_lines(path: Path) -> set[int]:
     return statements
 
 
-def _collect_misses(repo_root: Path, executed: dict[str, set[int]]) -> list[FileMiss]:
+def collect_misses(repo_root: Path, executed: dict[str, set[int]]) -> list[FileMiss]:
     rows: list[FileMiss] = []
     for rel_path, executed_lines in executed.items():
         if not rel_path.endswith(".py"):
@@ -102,7 +102,7 @@ def _collect_misses(repo_root: Path, executed: dict[str, set[int]]) -> list[File
         full_path = repo_root / rel_path
         if not full_path.exists():
             continue
-        stmt_lines = _statement_lines(full_path)
+        stmt_lines = statement_lines(full_path)
         if not stmt_lines:
             continue
         executed_stmt_count = len(stmt_lines & executed_lines)
@@ -119,7 +119,7 @@ def _collect_misses(repo_root: Path, executed: dict[str, set[int]]) -> list[File
     return rows
 
 
-def _wave_for_path(path: str, miss: int) -> str:
+def wave_for_path(path: str, miss: int) -> str:
     low = path.lower()
     if miss >= WAVE1_MIN_MISS and (
         "parser" in low or "helper" in low or low.startswith("scripts/ci/")
@@ -134,18 +134,18 @@ def _wave_for_path(path: str, miss: int) -> str:
     return WAVE4
 
 
-def _to_dict(file_miss: FileMiss) -> dict[str, object]:
+def to_dict(file_miss: FileMiss) -> dict[str, object]:
     return {
         "path": file_miss.path,
         "statements": file_miss.statements,
         "executed": file_miss.executed,
         "miss": file_miss.miss,
         "coverage": round(100 * file_miss.executed / file_miss.statements, 2),
-        "wave": _wave_for_path(file_miss.path, file_miss.miss),
+        "wave": wave_for_path(file_miss.path, file_miss.miss),
     }
 
 
-def _render_top_md(top: list[dict[str, object]]) -> str:
+def render_top_md(top: list[dict[str, object]]) -> str:
     lines = [
         "# Top remaining misses",
         "",
@@ -162,7 +162,7 @@ def _render_top_md(top: list[dict[str, object]]) -> str:
     return "\n".join(lines)
 
 
-def _render_backlog_md(top: list[dict[str, object]]) -> str:
+def render_backlog_md(top: list[dict[str, object]]) -> str:
     grouped: dict[str, list[dict[str, object]]] = {
         WAVE1: [],
         WAVE2: [],
@@ -210,11 +210,11 @@ def _render_backlog_md(top: list[dict[str, object]]) -> str:
 
 
 def main() -> int:
-    args = _parse_args()
+    args = parse_args()
     repo_root = Path(args.repo_root).resolve()
-    executed = _load_executed_lines(Path(args.coverage_db))
-    misses = _collect_misses(repo_root, executed)
-    top_rows = [_to_dict(row) for row in misses[: args.top] if row.miss > 0]
+    executed = load_executed_lines(Path(args.coverage_db))
+    misses = collect_misses(repo_root, executed)
+    top_rows = [to_dict(row) for row in misses[: args.top] if row.miss > 0]
 
     json_out = Path(args.json_out)
     json_out.parent.mkdir(parents=True, exist_ok=True)
@@ -225,11 +225,11 @@ def main() -> int:
 
     md_out = Path(args.md_out)
     md_out.parent.mkdir(parents=True, exist_ok=True)
-    md_out.write_text(_render_top_md(top_rows), encoding="utf-8")
+    md_out.write_text(render_top_md(top_rows), encoding="utf-8")
 
     backlog_out = Path(args.backlog_out)
     backlog_out.parent.mkdir(parents=True, exist_ok=True)
-    backlog_out.write_text(_render_backlog_md(top_rows), encoding="utf-8")
+    backlog_out.write_text(render_backlog_md(top_rows), encoding="utf-8")
     return 0
 
 

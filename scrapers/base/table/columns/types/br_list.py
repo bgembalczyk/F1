@@ -21,3 +21,6 @@ class BrListColumn(BaseColumn):
             if text:
                 items.append(text)
         return items
+
+
+__all__ = ["BrListColumn"]

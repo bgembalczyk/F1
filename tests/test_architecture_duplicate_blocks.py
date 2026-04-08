@@ -8,7 +8,7 @@ from pathlib import Path
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 
 
-def _entrypoint_module_paths() -> tuple[Path, ...]:
+def entrypoint_module_paths() -> tuple[Path, ...]:
     return tuple(
         Path("scrapers") / domain / "entrypoint.py"
         for domain in sorted(get_domain_entrypoint_scraper_metadata())
@@ -56,7 +56,7 @@ ALLOWED_SIMILAR_CONFIG_BLOCKS: dict[frozenset[str], str] = {
 }
 
 
-def _ast_expr_to_str(node: ast.AST | None) -> str:
+def ast_expr_to_str(node: ast.AST | None) -> str:
     if node is None:
         return "<missing>"
     if hasattr(ast, "unparse"):
@@ -64,15 +64,15 @@ def _ast_expr_to_str(node: ast.AST | None) -> str:
     return ast.dump(node, include_attributes=False)
 
 
-def _callee_name(node: ast.AST) -> str:
+def callee_name(node: ast.AST) -> str:
     if isinstance(node, ast.Name):
         return node.id
     if isinstance(node, ast.Attribute):
-        return f"{_callee_name(node.value)}.{node.attr}"
-    return _ast_expr_to_str(node)
+        return f"{callee_name(node.value)}.{node.attr}"
+    return ast_expr_to_str(node)
 
 
-def _domain_name_from_path(path: Path) -> str:
+def domain_name_from_path(path: Path) -> str:
     try:
         idx = path.parts.index("scrapers")
     except ValueError:
@@ -82,15 +82,15 @@ def _domain_name_from_path(path: Path) -> str:
     return path.parts[idx + 1]
 
 
-def _semantic_signature_from_assign(
+def semantic_signature_from_assign(
     path: Path,
     node: ast.Assign,
 ) -> ConfigBlockSemantics:
     value = node.value
-    domain_name = _domain_name_from_path(path)
+    domain_name = domain_name_from_path(path)
 
     if not isinstance(value, ast.Call):
-        raw = _ast_expr_to_str(value)
+        raw = ast_expr_to_str(value)
         return ConfigBlockSemantics(
             path=str(path),
             lineno=node.lineno,
@@ -105,12 +105,12 @@ def _semantic_signature_from_assign(
 
     kwargs = {kw.arg: kw.value for kw in value.keywords if kw.arg}
 
-    url_source = _ast_expr_to_str(kwargs.get("url"))
+    url_source = ast_expr_to_str(kwargs.get("url"))
     parser_node = kwargs.get("schema") or kwargs.get("columns")
-    parser_source = _ast_expr_to_str(parser_node)
-    record_factory_source = _ast_expr_to_str(kwargs.get("record_factory"))
-    section_source = _ast_expr_to_str(kwargs.get("section_id"))
-    callee = _callee_name(value.func)
+    parser_source = ast_expr_to_str(parser_node)
+    record_factory_source = ast_expr_to_str(kwargs.get("record_factory"))
+    section_source = ast_expr_to_str(kwargs.get("section_id"))
+    callee = callee_name(value.func)
 
     return ConfigBlockSemantics(
         path=str(path),
@@ -125,7 +125,7 @@ def _semantic_signature_from_assign(
     )
 
 
-def _collect_semantic_config_blocks() -> list[ConfigBlockSemantics]:
+def collect_semantic_config_blocks() -> list[ConfigBlockSemantics]:
     blocks: list[ConfigBlockSemantics] = []
 
     for py_file in Path("scrapers").rglob("*.py"):
@@ -138,12 +138,12 @@ def _collect_semantic_config_blocks() -> list[ConfigBlockSemantics]:
                 for target in node.targets
             ):
                 continue
-            blocks.append(_semantic_signature_from_assign(py_file, node))
+            blocks.append(semantic_signature_from_assign(py_file, node))
 
     return blocks
 
 
-def _iter_non_whitelisted_duplicate_groups(
+def iter_non_whitelisted_duplicate_groups(
     blocks: list[ConfigBlockSemantics],
 ) -> list[list[ConfigBlockSemantics]]:
     grouped: dict[tuple[str, str, str, str, str], list[ConfigBlockSemantics]] = (
@@ -165,7 +165,7 @@ def _iter_non_whitelisted_duplicate_groups(
     return non_whitelisted
 
 
-def _suggest_extraction_target(group: list[ConfigBlockSemantics]) -> str:
+def suggest_extraction_target(group: list[ConfigBlockSemantics]) -> str:
     domains = sorted({item.domain_name for item in group})
     if len(domains) == 1:
         return (
@@ -180,7 +180,7 @@ def _suggest_extraction_target(group: list[ConfigBlockSemantics]) -> str:
     )
 
 
-def _build_duplicate_report(groups: list[list[ConfigBlockSemantics]]) -> str:
+def build_duplicate_report(groups: list[list[ConfigBlockSemantics]]) -> str:
     lines = [
         "Wykryto semantycznie podobne bloki CONFIG (potencjalny copy-paste).",
         "Raport: co i gdzie wydzielić:",
@@ -195,7 +195,7 @@ def _build_duplicate_report(groups: list[list[ConfigBlockSemantics]]) -> str:
                 f"   miejsca: {locations}",
                 f"   parser={first.parser_source}",
                 f"   record_factory={first.record_factory_source}",
-                f"   rekomendacja: {_suggest_extraction_target(group)}",
+                f"   rekomendacja: {suggest_extraction_target(group)}",
             ],
         )
 
@@ -203,10 +203,10 @@ def _build_duplicate_report(groups: list[list[ConfigBlockSemantics]]) -> str:
 
 
 def test_no_duplicate_config_blocks() -> None:
-    blocks = _collect_semantic_config_blocks()
-    offenders = _iter_non_whitelisted_duplicate_groups(blocks)
+    blocks = collect_semantic_config_blocks()
+    offenders = iter_non_whitelisted_duplicate_groups(blocks)
 
-    assert not offenders, _build_duplicate_report(offenders)
+    assert not offenders, build_duplicate_report(offenders)
 
 
 def test_duplicate_config_blocks_whitelist_has_justification() -> None:
@@ -218,7 +218,7 @@ def test_duplicate_config_blocks_whitelist_has_justification() -> None:
 
 
 def test_domain_entrypoints_use_shared_factory_builders() -> None:
-    for py_file in _entrypoint_module_paths():
+    for py_file in entrypoint_module_paths():
         source = py_file.read_text(encoding="utf-8")
         tree = ast.parse(source, filename=str(py_file))
 

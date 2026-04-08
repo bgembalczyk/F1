@@ -7,7 +7,7 @@ from scrapers.wiki.parsers.sections.detection import find_section_heading
 from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 
-def _fixture(name: str) -> BeautifulSoup:
+def fixture(name: str) -> BeautifulSoup:
     html = (Path("tests/fixtures/section_parsers") / name).read_text(encoding="utf-8")
     return BeautifulSoup(html, "html.parser")
 
@@ -22,7 +22,7 @@ def test_critical_section_alias_snapshots_cover_all_target_domains() -> None:
     }
 
     for domain, fixture_name in fixtures.items():
-        soup = _fixture(fixture_name)
+        soup = fixture(fixture_name)
         sections = DOMAIN_SECTION_RESOLVER_CONFIG[domain]
 
         matched = 0

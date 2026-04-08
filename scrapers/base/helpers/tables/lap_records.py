@@ -8,11 +8,7 @@ from bs4 import Tag
 from scrapers.base.factory.record_factory import MappingRecordFactory
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.date import DateColumn
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.time import TimeColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns import types as col
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
@@ -29,14 +25,14 @@ class LapRecordsTableScraper(F1TableScraper):
     """
 
     schema_columns = [
-        ColumnSpec("Category", "category", AutoColumn()),
-        ColumnSpec("Class", "class_", AutoColumn()),
-        ColumnSpec("Driver", "driver", DriverColumn()),
-        ColumnSpec("Driver/Rider", "driver_rider", DriverColumn()),
-        ColumnSpec("Vehicle", "vehicle", AutoColumn()),
-        ColumnSpec("Event", "event", UrlColumn()),
-        ColumnSpec("Time", "time", TimeColumn()),
-        ColumnSpec("Date", "date", DateColumn()),
+        ColumnSpec("Category", "category", col.AutoColumn()),
+        ColumnSpec("Class", "class_", col.AutoColumn()),
+        ColumnSpec("Driver", "driver", col.DriverColumn()),
+        ColumnSpec("Driver/Rider", "driver_rider", col.DriverColumn()),
+        ColumnSpec("Vehicle", "vehicle", col.AutoColumn()),
+        ColumnSpec("Event", "event", col.UrlColumn()),
+        ColumnSpec("Time", "time", col.TimeColumn()),
+        ColumnSpec("Date", "date", col.DateColumn()),
     ]
 
     CONFIG = build_scraper_config(

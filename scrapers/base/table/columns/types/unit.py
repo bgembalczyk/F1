@@ -62,3 +62,6 @@ class UnitColumn(BaseColumn):
             return self.value_type(cleaned)
         except (TypeError, ValueError):
             return None
+
+
+__all__ = ["UnitColumn"]

@@ -6,7 +6,7 @@ from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
 
 
-class _DummyListScraper(F1ListScraper):
+class DummyListScraper(F1ListScraper):
     url = "https://example.com/wiki/List"
     section_id = "Drivers"
     record_key = "driver"
@@ -17,7 +17,7 @@ def _soup(html: str) -> BeautifulSoup:
 
 
 def test_list_scraper_parses_section_list_fixture() -> None:
-    scraper = _DummyListScraper(options=ScraperOptions(include_urls=True))
+    scraper = DummyListScraper(options=ScraperOptions(include_urls=True))
     soup = _soup(
         """
         <h2><span id="Drivers">Drivers</span></h2>
@@ -37,7 +37,7 @@ def test_list_scraper_parses_section_list_fixture() -> None:
 
 
 def test_list_scraper_skips_blank_item_and_handles_missing_link_cell() -> None:
-    scraper = _DummyListScraper(options=ScraperOptions(include_urls=True))
+    scraper = DummyListScraper(options=ScraperOptions(include_urls=True))
     soup = _soup(
         """
         <h2><span id="Drivers">Drivers</span></h2>
@@ -54,7 +54,7 @@ def test_list_scraper_skips_blank_item_and_handles_missing_link_cell() -> None:
 
 
 def test_list_scraper_raises_when_section_list_is_missing() -> None:
-    scraper = _DummyListScraper(options=ScraperOptions(include_urls=False))
+    scraper = DummyListScraper(options=ScraperOptions(include_urls=False))
     soup = _soup('<h2><span id="Drivers">Drivers</span></h2><p>No list here.</p>')
 
     with pytest.raises(ScraperNotFoundError, match="Nie znaleziono listy w sekcji"):

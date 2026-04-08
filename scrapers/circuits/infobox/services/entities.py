@@ -3,9 +3,7 @@ from typing import Any
 
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
-from scrapers.circuits.infobox.services.additional_info import (
-    CircuitAdditionalInfoParser,
-)
+from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
 from scrapers.circuits.infobox.services.constants import IGNORED_TOP_LEVEL_KEYS
 from scrapers.circuits.infobox.services.constants import used_keys
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
