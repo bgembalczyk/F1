@@ -13,3 +13,6 @@ def apply_transformers(
 ) -> list[ExportRecord]:
     pipeline = TransformersPipeline(transformers, logger=logger)
     return pipeline.apply(records)
+
+
+__all__ = ["apply_transformers"]

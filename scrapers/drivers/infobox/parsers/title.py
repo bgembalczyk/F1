@@ -228,3 +228,6 @@ class InfoboxTitlesParser:
             if event_index <= year_index < next_event_index:
                 associated_years.append(year_link)
         return associated_years
+
+
+__all__ = ["InfoboxTitlesParser"]

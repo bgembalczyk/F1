@@ -11,3 +11,6 @@ if TYPE_CHECKING:
 
 class SeasonSectionParser(Protocol):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
+
+
+__all__ = ["SeasonSectionParser"]

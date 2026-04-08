@@ -6,10 +6,10 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constants import MARKS_RE
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.seasons.columns.helpers.constants import BACKGROUND_TO_RESULT
-from scrapers.seasons.columns.helpers.race_result.background_mapper import RaceResultBackgroundMapper
-from scrapers.seasons.columns.helpers.race_result.cell_parser import RaceResultCellParser
+from scrapers.seasons.columns.helpers.race_result import RaceResultBackgroundMapper
+from scrapers.seasons.columns.helpers.race_result import RaceResultCellParser
+from scrapers.seasons.columns.helpers.race_result import SuperscriptParseResult
 from scrapers.seasons.columns.helpers.race_result import rules
-from scrapers.seasons.columns.helpers.race_result.superscript import SuperscriptParseResult
 
 
 class RaceResultColumn(BaseColumn):

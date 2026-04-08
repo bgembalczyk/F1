@@ -73,3 +73,12 @@ def adapt_record_factory_validator(
         return ValidateMethodRecordFactoryValidatorAdapter(validator=validate)
 
     return None
+
+
+__all__ = [
+    "RecordFactoryValidatorProtocol",
+    "ModelValidateRecordFactoryValidatorAdapter",
+    "ValidateRecordFactoryValidatorAdapter",
+    "ValidateMethodRecordFactoryValidatorAdapter",
+    "adapt_record_factory_validator",
+]

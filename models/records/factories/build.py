@@ -94,9 +94,18 @@ def build_record(record_type: RecordType | str, record: Mapping[str, Any]) -> An
     return RECORD_BUILDERS.build(normalize_record_type(record_type), record)
 
 
-def _build_convenience(record_type: RecordType) -> Callable[[Mapping[str, Any]], Any]:
+def build_convenience(record_type: RecordType) -> Callable[[Mapping[str, Any]], Any]:
     return partial(build_record, record_type)
 
 
 for _record_type in RecordType:
-    globals()[f"build_{_record_type.value}_record"] = _build_convenience(_record_type)
+    globals()[f"build_{_record_type.value}_record"] = build_convenience(_record_type)
+
+
+__all__ = [
+    "RecordType",
+    "normalize_record_type",
+    "RecordBuilders",
+    "build_record",
+    "build_convenience",
+]

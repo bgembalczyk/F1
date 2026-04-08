@@ -64,7 +64,8 @@ class EngineLinkHelpers:
             return None
         all_link_urls = [(link.get("url") or "").lower() for link in links]
         if not all(
-            any(mod in url for mod in constants.MODIFIER_ONLY_URLS) for url in all_link_urls
+            any(mod in url for mod in constants.MODIFIER_ONLY_URLS)
+            for url in all_link_urls
         ):
             return None
 
@@ -250,3 +251,8 @@ class EngineLinkHelpers:
             )
 
         return type_str, supercharged, turbocharged, gas_turbine, fuel_type
+
+
+__all__ = [
+    "EngineLinkHelpers",
+]

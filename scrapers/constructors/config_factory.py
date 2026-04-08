@@ -27,3 +27,8 @@ def build_constructor_list_config(
         columns=columns,
         record_factory=RECORD_FACTORIES.builders("constructor"),
     )
+
+
+__all__ = [
+    "build_constructor_list_config",
+]

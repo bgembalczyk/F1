@@ -78,3 +78,12 @@ class ValidationPipeline:
         for stage in self.stages:
             violations.extend(stage.validate(record))
         return ValidationResult.from_violations(violations)
+
+
+__all__ = [
+    "ValidationResult",
+    "StageValidator",
+    "FunctionalValidator",
+    "ValidationStage",
+    "ValidationPipeline",
+]

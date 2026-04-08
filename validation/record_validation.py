@@ -21,11 +21,11 @@ def validate_record(
 ) -> list[ValidationIssue]:
     normalized = SchemaValidationEngine.coerce_schema(schema)
     errors: list[ValidationIssue] = []
-    errors.extend(_require_keys(record, normalized.required))
+    errors.extend(require_keys(record, normalized.required))
     allow_none = set(normalized.allow_none)
     for key, expected_types in normalized.types.items():
         errors.extend(
-            _require_type(
+            require_type(
                 record,
                 key,
                 expected_types,
@@ -38,7 +38,7 @@ def validate_record(
         value = record[key]
         if value is None:
             continue
-        errors.extend(_validate_nested_value(key, value, nested_schema))
+        errors.extend(validate_nested_value(key, value, nested_schema))
     for validator in normalized.custom_validators:
         errors.extend(
             SchemaValidationEngine.coerce_issue(error) for error in validator(record)
@@ -46,7 +46,7 @@ def validate_record(
     return SchemaValidationEngine.render_issues(errors)
 
 
-def _validate_nested_value(
+def validate_nested_value(
     key: str,
     value: Any,
     nested_schema: NestedSchema,
@@ -59,14 +59,14 @@ def _validate_nested_value(
     )
 
 
-def _require_keys(
+def require_keys(
     record: Mapping[str, Any],
     keys: tuple[str, ...],
 ) -> list[ValidationIssue]:
     return [ValidationIssue.missing(key) for key in keys if key not in record]
 
 
-def _require_type(
+def require_type(
     record: Mapping[str, Any],
     key: str,
     expected_types: type | tuple[type, ...],
@@ -97,3 +97,11 @@ def _require_type(
             type(value).__name__,
         ),
     ]
+
+
+__all__ = [
+    "validate_record",
+    "validate_nested_value",
+    "require_keys",
+    "require_type",
+]

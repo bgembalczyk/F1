@@ -105,3 +105,6 @@ class SeasonEntriesParser:
                 record["no"] = [primary_number for _ in range(len(drivers))]
 
         return records
+
+
+__all__ = ["SeasonEntriesParser"]

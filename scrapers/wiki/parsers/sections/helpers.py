@@ -3,13 +3,9 @@ from difflib import SequenceMatcher
 from bs4 import Tag
 
 from scrapers.base.helpers.transform_micro_ops import merge_unique_preserve_order
+from scrapers.wiki.parsers import sections
 from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
 from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
-from scrapers.wiki.parsers.sections.constants import TOP_SECTION_NAME
-from scrapers.wiki.parsers.sections.data_classes import SectionProfile
-from scrapers.wiki.parsers.sections.normalization import normalize_section_text
-from scrapers.wiki.parsers.sections.section_profiles_config import SECTION_PROFILES_CONFIG
-from scrapers.wiki.parsers.sections.section_profiles_config import validate_section_profiles_config
 
 
 def split_into_parts(
@@ -18,7 +14,7 @@ def split_into_parts(
 ) -> list[tuple[str, str | None, list[Tag]]]:
     """Dzieli listę elementów na części według nagłówków danego poziomu."""
     parts: list[tuple[str, str | None, list[Tag]]] = []
-    current_name: str = TOP_SECTION_NAME
+    current_name: str = sections.TOP_SECTION_NAME
     current_anchor: str | None = None
     current_elements: list[Tag] = []
 
@@ -33,7 +29,7 @@ def split_into_parts(
             current_name = (
                 heading_tag.get_text(" ", strip=True)
                 if heading_tag
-                else TOP_SECTION_NAME
+                else sections.TOP_SECTION_NAME
             )
             current_elements = []
         else:
@@ -62,8 +58,8 @@ def build_domain_profile(
     domain: str,
     canonical_sections: frozenset[str],
     domain_aliases: dict[str, frozenset[str]],
-) -> SectionProfile:
-    return SectionProfile(
+) -> sections.SectionProfile:
+    return sections.SectionProfile(
         domain=domain,
         canonical_section_ids=frozenset(canonical_sections),
         heading_aliases=build_profile_aliases(
@@ -74,22 +70,22 @@ def build_domain_profile(
     )
 
 
-def build_profiles() -> dict[str, SectionProfile]:
-    validate_section_profiles_config(SECTION_PROFILES_CONFIG)
+def build_profiles() -> dict[str, sections.SectionProfile]:
+    sections.validate_section_profiles_config(sections.SECTION_PROFILES_CONFIG)
     return {
         domain: build_domain_profile(
             domain=domain,
             canonical_sections=config.canonical_sections,
             domain_aliases=dict(config.heading_aliases),
         )
-        for domain, config in SECTION_PROFILES_CONFIG.items()
+        for domain, config in sections.SECTION_PROFILES_CONFIG.items()
     }
 
 
 DOMAIN_SECTION_PROFILES = build_profiles()
 
 
-def get_section_profile(domain: str | None) -> SectionProfile | None:
+def get_section_profile(domain: str | None) -> sections.SectionProfile | None:
     if not domain:
         return None
     return DOMAIN_SECTION_PROFILES.get(domain)
@@ -100,7 +96,7 @@ def profile_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
     if not profile:
         return set()
 
-    normalized_target = normalize_section_text(target)
+    normalized_target = sections.normalize_section_text(target)
     aliases = set(profile.aliases_for(normalized_target))
 
     if domain == "constructors" and CURRENT_CONSTRUCTORS_ID.match(normalized_target):
@@ -130,9 +126,23 @@ def profile_entry_aliases(
     filtered: list[str] = []
     seen: set[str] = set()
     for value in merged:
-        normalized = normalize_section_text(value)
+        normalized = sections.normalize_section_text(value)
         if not normalized or normalized in seen:
             continue
         seen.add(normalized)
         filtered.append(value)
     return tuple(filtered)
+
+
+__all__ = [
+    "split_into_parts",
+    "copy_common_aliases",
+    "build_profile_aliases",
+    "build_domain_profile",
+    "build_profiles",
+    "get_section_profile",
+    "profile_aliases_for_target",
+    "best_fuzzy_ratio",
+    "profile_entry_aliases",
+    "DOMAIN_SECTION_PROFILES",
+]

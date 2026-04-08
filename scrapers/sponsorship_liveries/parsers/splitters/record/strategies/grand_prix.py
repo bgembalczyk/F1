@@ -3,8 +3,8 @@ from typing import Any
 from scrapers.sponsorship_liveries.helpers.constants import COLOUR_KEYS
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_KEYS
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
-from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import ColourScopeHandler
-from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import PipelineRecord
+from scrapers.sponsorship_liveries.parsers.scope_handlers import ColourScopeHandler
+from scrapers.sponsorship_liveries.parsers.splitters.record import PipelineRecord
 
 
 class GrandPrixSplitStrategy:
@@ -359,3 +359,6 @@ class GrandPrixSplitStrategy:
             if key in base_colours:
                 other_record[key] = base_colours[key]
         return other_record
+
+
+__all__ = ["GrandPrixSplitStrategy"]

@@ -18,3 +18,10 @@ class TablesPayloadDTO:
 @dataclass(frozen=True)
 class SectionsPayloadDTO:
     data: Any = field(default_factory=list)
+
+
+__all__ = [
+    "InfoboxPayloadDTO",
+    "TablesPayloadDTO",
+    "SectionsPayloadDTO",
+]

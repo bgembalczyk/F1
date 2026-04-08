@@ -2,9 +2,9 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
-from scrapers.sponsorship_liveries.parsers.team_liveries import TeamLiveriesSectionParser
-from scrapers.sponsorship_liveries.parsers.team_liveries import TeamLiveriesTableParser
+from scrapers.sponsorship_liveries.parsers import SponsorshipRecordSplitter
+from scrapers.sponsorship_liveries.parsers import TeamLiveriesSectionParser
+from scrapers.sponsorship_liveries.parsers import TeamLiveriesTableParser
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 
 SAMPLE_SEASON_YEAR = 2020

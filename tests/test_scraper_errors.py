@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.circuits.infobox.services import CircuitAdditionalInfoParser
 from tests.support.dependency_stubs import ensure_bs4_stub
 from tests.support.dependency_stubs import ensure_certifi_stub
 from tests.support.dependency_stubs import ensure_pandas_stub
@@ -16,13 +16,10 @@ ensure_certifi_stub()
 ensure_pandas_stub()
 ensure_requests_stub()
 
+# ruff: noqa: E402
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
-# ruff: noqa: E402
-from infrastructure.http_client.requests_shim.request_error import RequestError  # noqa: E402
-from scrapers.base.abc import ABCScraper  # noqa: E402
-from scrapers.base.error_handler import ErrorHandler  # noqa: E402
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ErrorBehavior
 from scrapers.base.errors import ScraperNetworkError

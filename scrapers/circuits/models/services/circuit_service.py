@@ -5,10 +5,10 @@ from typing import Any
 
 from models.services.helpers import normalize_date_value
 from models.services.helpers import prune_empty
+from scrapers.circuits.models.services import normalization as norm
 from scrapers.circuits.models.services.constants import TOP_LEVEL_KEYS
 from scrapers.circuits.models.services.lap_record_merging import merge_race_lap_records
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
-from scrapers.circuits.models.services import normalization as norm
 
 
 @dataclass(frozen=True)
@@ -72,3 +72,6 @@ class CircuitService:
             drop_empty_dicts=False,
             drop_url_none=True,
         )
+
+
+__all__ = ["CircuitService"]

@@ -41,5 +41,5 @@ __all__ = [
     "RoundRule",
     "RoundRuleContext",
     "HalfPointsRoundRule",
-    "DoublePointsRoundRule"
+    "DoublePointsRoundRule",
 ]

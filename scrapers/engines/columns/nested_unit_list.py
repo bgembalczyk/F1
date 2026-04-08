@@ -52,3 +52,6 @@ class NestedUnitListColumn(BaseColumn):
         value = self.parse(ctx)
         container = record.setdefault(ctx.key, {})
         container[self.subkey] = value
+
+
+__all__ = ["NestedUnitListColumn"]

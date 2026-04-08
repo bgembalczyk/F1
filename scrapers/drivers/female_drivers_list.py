@@ -9,8 +9,8 @@ from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
 from scrapers.drivers import constants
+from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
@@ -44,16 +44,36 @@ class FemaleDriversTableParser(WikiTableBaseParser):
     def build_schema() -> TableSchemaDSL:
         return TableSchemaDSL(
             columns=[
-                ColumnSpec(constants.FEMALE_DRIVERS_INDEX_HEADER, "_skip", col.SkipColumn()),
-                ColumnSpec(constants.FEMALE_DRIVER_NAME_HEADER, "driver", col.UrlColumn()),
-                ColumnSpec(constants.FEMALE_DRIVER_SEASONS_HEADER, "seasons", col.SeasonsColumn()),
-                ColumnSpec(constants.FEMALE_DRIVER_TEAMS_HEADER, "teams", col.LinksListColumn()),
+                ColumnSpec(
+                    constants.FEMALE_DRIVERS_INDEX_HEADER,
+                    "_skip",
+                    col.SkipColumn(),
+                ),
+                ColumnSpec(
+                    constants.FEMALE_DRIVER_NAME_HEADER,
+                    "driver",
+                    col.UrlColumn(),
+                ),
+                ColumnSpec(
+                    constants.FEMALE_DRIVER_SEASONS_HEADER,
+                    "seasons",
+                    col.SeasonsColumn(),
+                ),
+                ColumnSpec(
+                    constants.FEMALE_DRIVER_TEAMS_HEADER,
+                    "teams",
+                    col.LinksListColumn(),
+                ),
                 ColumnSpec(
                     constants.FEMALE_DRIVER_ENTRIES_STARTS_HEADER,
                     "entries_starts",
                     EntriesStartsColumn(),
                 ),
-                ColumnSpec(constants.FEMALE_DRIVER_POINTS_HEADER, "points", col.PointsColumn()),
+                ColumnSpec(
+                    constants.FEMALE_DRIVER_POINTS_HEADER,
+                    "points",
+                    col.PointsColumn(),
+                ),
             ],
         )
 

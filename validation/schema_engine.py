@@ -128,3 +128,6 @@ class SchemaValidationEngine:
         if isinstance(nested_schema, RecordSchema):
             return schema_validator(record, nested_schema)
         return [cls.coerce_issue(error) for error in nested_schema(record)]
+
+
+__all__ = ["SchemaValidationEngine"]

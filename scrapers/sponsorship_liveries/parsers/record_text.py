@@ -105,3 +105,6 @@ class SponsorshipRecordText:
         cleaned = decade_re.sub("", cleaned)
         cleaned = re.sub(r"\(\s*\)", "", cleaned)
         return clean_wiki_text(cleaned)
+
+
+__all__ = ["SponsorshipRecordText"]

@@ -10,16 +10,8 @@ from scrapers.base.infobox.scraper import parse_infobox_from_soup
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.base.types import ExportableRecord
+from scrapers.circuits.infobox import services
 from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
-from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
-from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
-from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
-from scrapers.circuits.infobox.services.geo import CircuitGeoParser
-from scrapers.circuits.infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
-from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
-from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
@@ -53,15 +45,15 @@ class F1CircuitInfoboxParser(InfoboxParser):
         )
 
         # --- Serwisy ---
-        self.text_utils = InfoboxTextUtils()
-        self.geo_parser = CircuitGeoParser()
-        self.history_parser = CircuitHistoryParser()
-        self.specs_parser = CircuitSpecsParser()
-        self.lap_record_parser = CircuitLapRecordParser()
-        self.entity_parser = CircuitEntityParser()
-        self.additional_info_parser = CircuitAdditionalInfoParser()
+        self.text_utils = services.InfoboxTextUtils()
+        self.geo_parser = services.CircuitGeoParser()
+        self.history_parser = services.CircuitHistoryParser()
+        self.specs_parser = services.CircuitSpecsParser()
+        self.lap_record_parser = services.CircuitLapRecordParser()
+        self.entity_parser = services.CircuitEntityParser()
+        self.additional_info_parser = services.CircuitAdditionalInfoParser()
 
-        self.entities_parser = CircuitEntitiesParser(
+        self.entities_parser = services.CircuitEntitiesParser(
             text_utils=self.text_utils,
             geo_parser=self.geo_parser,
             history_parser=self.history_parser,
@@ -73,7 +65,7 @@ class F1CircuitInfoboxParser(InfoboxParser):
             url_provider=lambda: self.url,
         )
 
-        self.layouts_parser = CircuitLayoutsParser(
+        self.layouts_parser = services.CircuitLayoutsParser(
             infobox_scraper=self.infobox_scraper,
             text_utils=self.text_utils,
             lap_record_parser=self.lap_record_parser,

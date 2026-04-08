@@ -2,17 +2,9 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
-from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
-from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
-from scrapers.circuits.infobox.services.geo import CircuitGeoParser
-from scrapers.circuits.infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
-from scrapers.circuits.infobox.services.lap_record import extract_time
-from scrapers.circuits.infobox.services.lap_record import select_details_paren
-from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
-from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from scrapers.circuits.helpers.lap_record import extract_time
+from scrapers.circuits.helpers.lap_record import select_details_paren
+from scrapers.circuits.infobox import services
 
 LAYOUT_YEARS = "2020-"
 EXPECTED_LENGTH_KM = 5.0
@@ -20,7 +12,7 @@ EXPECTED_TURNS = 10
 
 
 def test_circuit_geo_parser_location_and_coordinates() -> None:
-    parser = CircuitGeoParser()
+    parser = services.CircuitGeoParser()
     row = {
         "text": "Paris, France",
         "links": [
@@ -51,14 +43,14 @@ def test_circuit_geo_parser_location_and_coordinates() -> None:
 
 
 def test_circuit_history_parser_former_names() -> None:
-    parser = CircuitHistoryParser()
+    parser = services.CircuitHistoryParser()
     row = {"text": "Old Name (1959-1979)"}
     names = parser._parse_former_names(row)
     assert names == [{"name": "Old Name", "periods": [{"from": "1959", "to": "1979"}]}]
 
 
 def test_circuit_specs_parser_surface_and_banking() -> None:
-    parser = CircuitSpecsParser()
+    parser = services.CircuitSpecsParser()
     surface = parser._parse_surface({"text": "Asphalt (since 2020)"})
     assert surface == {
         "values": ["Asphalt"],
@@ -71,7 +63,7 @@ def test_circuit_specs_parser_surface_and_banking() -> None:
 
 
 def test_circuit_lap_record_parser_basic() -> None:
-    parser = CircuitLapRecordParser()
+    parser = services.CircuitLapRecordParser()
     row = {
         "text": "1:20.123 (John Doe, Fast Car, 2023, Formula One)",
         "links": [
@@ -118,10 +110,10 @@ def test_select_details_paren() -> None:
 
 def test_circuit_layouts_parser_basic() -> None:
     infobox_scraper = WikipediaInfoboxScraper()
-    text_utils = InfoboxTextUtils()
-    lap_record_parser = CircuitLapRecordParser()
-    specs_parser = CircuitSpecsParser()
-    parser = CircuitLayoutsParser(
+    text_utils = services.InfoboxTextUtils()
+    lap_record_parser = services.CircuitLapRecordParser()
+    specs_parser = services.CircuitSpecsParser()
+    parser = services.CircuitLayoutsParser(
         infobox_scraper=infobox_scraper,
         text_utils=text_utils,
         lap_record_parser=lap_record_parser,
@@ -156,15 +148,15 @@ def test_circuit_layouts_parser_basic() -> None:
 
 
 def test_circuit_entities_parser_default_layout() -> None:
-    text_utils = InfoboxTextUtils()
-    geo_parser = CircuitGeoParser()
-    history_parser = CircuitHistoryParser()
-    specs_parser = CircuitSpecsParser()
-    lap_record_parser = CircuitLapRecordParser()
-    entity_parser = CircuitEntityParser()
-    additional_info_parser = CircuitAdditionalInfoParser()
+    text_utils = services.InfoboxTextUtils()
+    geo_parser = services.CircuitGeoParser()
+    history_parser = services.CircuitHistoryParser()
+    specs_parser = services.CircuitSpecsParser()
+    lap_record_parser = services.CircuitLapRecordParser()
+    entity_parser = services.CircuitEntityParser()
+    additional_info_parser = services.CircuitAdditionalInfoParser()
 
-    parser = CircuitEntitiesParser(
+    parser = services.CircuitEntitiesParser(
         text_utils=text_utils,
         geo_parser=geo_parser,
         history_parser=history_parser,
@@ -235,7 +227,7 @@ def test_circuit_entities_parser_default_layout() -> None:
 
 
 def test_entity_parser_multiple_links_language_marker() -> None:
-    parser = CircuitEntityParser()
+    parser = services.CircuitEntityParser()
     row = {
         "text": "Example [it]",
         "links": [
@@ -250,7 +242,7 @@ def test_entity_parser_multiple_links_language_marker() -> None:
 
 
 def test_entity_parser_single_link_with_multiple_parts() -> None:
-    parser = CircuitEntityParser()
+    parser = services.CircuitEntityParser()
     row = {
         "text": "A, B and C",
         "links": [{"text": "B", "url": "https://en.wikipedia.org/wiki/B"}],
@@ -264,7 +256,7 @@ def test_entity_parser_single_link_with_multiple_parts() -> None:
 
 
 def test_entity_parser_redlink_url_none() -> None:
-    parser = CircuitEntityParser()
+    parser = services.CircuitEntityParser()
     row = {
         "text": "Red Page",
         "links": [

@@ -1,4 +1,4 @@
-from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
+from infrastructure.http_client.interfaces import HttpClientProtocol
 from infrastructure.http_client.policies.http import HttpPolicy
 from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.source_adapter import SourceAdapter

@@ -51,3 +51,6 @@ class InfoboxSectionCollector:
                     current["rows"].append({"full_data_cell": full_data})
 
         return sections
+
+
+__all__ = ["InfoboxSectionCollector"]

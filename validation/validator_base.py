@@ -217,3 +217,8 @@ class RecordValidator(ABC):
     @staticmethod
     def _coerce_schema(schema: RecordSchema | Mapping[str, Any]) -> RecordSchema:
         return SchemaValidationEngine.coerce_schema(schema)
+
+
+__all__ = [
+    "RecordValidator",
+]

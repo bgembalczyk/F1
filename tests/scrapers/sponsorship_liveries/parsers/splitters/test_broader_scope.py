@@ -1,4 +1,4 @@
-from scrapers.sponsorship_liveries.parsers.splitters.broader_scope import BroaderScopeSplitter
+from scrapers.sponsorship_liveries.parsers.splitters import BroaderScopeSplitter
 
 
 def test_split_removes_marker_and_splits_overlapping_scope_snapshot() -> None:

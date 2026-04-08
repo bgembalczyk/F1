@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from infrastructure.http_client.interfaces.http_client_protocol import HttpClientProtocol
-from infrastructure.http_client.interfaces.http_client_protocol import JsonValue
-from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
-from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
+from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.interfaces import HttpResponseProtocol
+from infrastructure.http_client.interfaces import JsonValue
+from infrastructure.http_client.interfaces import SessionProtocol
 from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from models.serializers import SerializerProtocol
 from scrapers.base.errors import ScraperParseError

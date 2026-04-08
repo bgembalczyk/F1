@@ -27,3 +27,6 @@ class SeasonRecordFactory(BaseRecordFactory):
         if payload.get("year") is not None and not payload.get("url"):
             payload["url"] = WIKI_SEASON_URL.format(year=payload["year"])
         return cast("SeasonRecord", payload)
+
+
+__all__ = ["SeasonRecordFactory"]

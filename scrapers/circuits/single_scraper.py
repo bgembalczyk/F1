@@ -3,11 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
-from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
-from scrapers.base.single_wiki_article.section_adapter import SingleWikiArticleSectionAdapterBase
-from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
+from scrapers.base import single_wiki_article as article
 from scrapers.circuits.composition import CircuitScraperCompositionFactory
 from scrapers.circuits.composition import CircuitScraperDependencies
 from scrapers.circuits.helpers.sections import is_circuit_like_article
@@ -18,7 +14,7 @@ if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
 
 
-class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
+class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
     def __init__(
         self,
         *,
@@ -28,7 +24,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     ) -> None:
         super().__init__(
             options=options,
-            section_selection_strategy=WikipediaSectionByIdSelectionStrategy(
+            section_selection_strategy=article.WikipediaSectionByIdSelectionStrategy(
                 domain="circuits",
             ),
         )
@@ -62,13 +58,13 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
         return self._select_section(soup, self._section_fragment)
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
-        return InfoboxPayloadDTO(
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> article.InfoboxPayloadDTO:
+        return article.InfoboxPayloadDTO(
             self._infobox_service.extract(soup, url=self.url).primary_record,
         )
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
-        return TablesPayloadDTO(
+    def _build_tables_payload(self, soup: BeautifulSoup) -> article.TablesPayloadDTO:
+        return article.TablesPayloadDTO(
             self._domain_record_service.collect_lap_record_rows(
                 soup=soup,
                 url=self.url,
@@ -79,21 +75,24 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
             ),
         )
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
+    def _build_sections_payload(
+        self,
+        soup: BeautifulSoup,
+    ) -> article.SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(
             adapter=self,
             options=self._options,
             url=self.url,
         )
-        return SectionsPayloadDTO(sections_service.extract(soup))
+        return article.SectionsPayloadDTO(sections_service.extract(soup))
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: InfoboxPayloadDTO,
-        tables_payload: TablesPayloadDTO,
-        sections_payload: SectionsPayloadDTO,
+        infobox_payload: article.InfoboxPayloadDTO,
+        tables_payload: article.TablesPayloadDTO,
+        sections_payload: article.SectionsPayloadDTO,
     ) -> dict[str, Any]:
         details_record = self.parse_details(soup)
         if details_record is not None:

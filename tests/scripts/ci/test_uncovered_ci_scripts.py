@@ -16,11 +16,11 @@ import pytest
 from scripts import check_di_antipatterns as di
 from scripts.ci import check_duplicate_default_configs as dedup
 from scripts.ci import check_terminology_consistency as tc
+from scripts.ci import duplicate_report as duplicate
 from scripts.ci import enforce_function_complexity as efc
 from scripts.ci import enforce_new_module_any_policy as any_policy
 from scripts.ci import generate_architecture_spec_doc as gen_doc
 from scripts.ci import mypy_regression_gate as mypy_gate
-from scripts.ci import duplicate_report as duplicate
 from scripts.ci.reporting import build_ci_parser
 from scripts.ci.reporting import line_range
 from validation.issue import ValidationIssue
@@ -250,8 +250,12 @@ class TestMarkdownRenderer:
 
     def test_line_range_no_start_end(self) -> None:
         renderer = duplicate.MarkdownRenderer()
-        assert renderer._line_range(duplicate.DuplicateFileMeta("f.py", 0, 0)) == "line ?"
-        assert renderer._line_range(duplicate.DuplicateFileMeta("f.py", 1, 5)) == "L1-L5"
+        assert (
+            renderer._line_range(duplicate.DuplicateFileMeta("f.py", 0, 0)) == "line ?"
+        )
+        assert (
+            renderer._line_range(duplicate.DuplicateFileMeta("f.py", 1, 5)) == "L1-L5"
+        )
 
 
 # ---------------------------------------------------------------------------

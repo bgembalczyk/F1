@@ -88,3 +88,22 @@ MATERIAL_PATTERNS = {
     "Steel": ("steel",),
     "Graywacke": ("graywacke",),
 }
+
+
+__all__ = [
+    "MIN_CAPACITY_VALUES_FOR_SEATING",
+    "MIN_COORD_PARTS",
+    "MIN_DETAILS_FOR_DRIVER",
+    "MIN_DETAILS_FOR_CAR",
+    "MIN_DETAILS_FOR_YEAR",
+    "MIN_DETAILS_FOR_SERIES",
+    "LANG_PAREN_ANYWHERE_RE",
+    "LANG_PAREN_TAIL_RE",
+    "ENTITY_PARTS_RE",
+    "LOCATION_STOPWORDS",
+    "MONTHS",
+    "symbol_map",
+    "used_keys",
+    "IGNORED_TOP_LEVEL_KEYS",
+    "MATERIAL_PATTERNS",
+]

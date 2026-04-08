@@ -40,4 +40,5 @@ class SharedDriveRule:
             <= SHARED_DRIVE_POINTS_END_YEAR
         )
 
+
 __all__ = ["SharedDriveRule"]

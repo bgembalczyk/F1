@@ -6,7 +6,7 @@ from pathlib import Path
 from scrapers.base.orchestration.models import AuditEntry
 from scrapers.base.orchestration.models import ResolvedInput
 from scrapers.base.orchestration.models import StepDeclaration
-from tests.support.step_orchestrator_assertions import assert_section_source_adapter_falls_back_to_raw
+from tests.support import assert_section_source_adapter_falls_back_to_raw
 
 
 class FakeInputResolver:

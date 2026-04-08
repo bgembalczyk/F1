@@ -54,3 +54,6 @@ class RaceEventParser:
             return [{"text": text, "url": None}]
 
         return []
+
+
+__all__ = ["RaceEventParser"]

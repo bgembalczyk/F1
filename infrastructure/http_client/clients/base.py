@@ -7,14 +7,14 @@ from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
 
-from infrastructure.http_client.components.header_resolver import HeaderResolver
-from infrastructure.http_client.components.request_executor import RequestExecutor
-from infrastructure.http_client.components.response_cache_service import ResponseCacheService
+from infrastructure.http_client.components import HeaderResolver
+from infrastructure.http_client.components import RequestExecutor
+from infrastructure.http_client.components import ResponseCacheService
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.factories import DefaultHttpPolicyFactory
-from infrastructure.http_client.interfaces.http_client_protocol import JsonValue
-from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
-from infrastructure.http_client.interfaces.session_protocol import SessionProtocol
+from infrastructure.http_client.interfaces import HttpResponseProtocol
+from infrastructure.http_client.interfaces import JsonValue
+from infrastructure.http_client.interfaces import SessionProtocol
 
 
 class BaseHttpClient(ABC):

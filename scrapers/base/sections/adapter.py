@@ -7,7 +7,7 @@ from typing import Any
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
 from scrapers.base.sections.serializer import coerce_section_parse_result
 from scrapers.base.sections.serializer import serialize_section_result
-from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
+from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 if TYPE_CHECKING:

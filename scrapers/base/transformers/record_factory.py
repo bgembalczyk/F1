@@ -53,3 +53,6 @@ class RecordFactoryTransformer(RecordTransformer):
             self._apply_factory_with_fallback(record) for record in records
         )
         return transformed
+
+
+__all__ = ["RecordFactoryTransformer"]

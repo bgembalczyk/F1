@@ -139,3 +139,6 @@ class InfoboxCellParser:
         </table>
         """
         return self._collapsible_table_parser.parse_collapsible_career_table(table)
+
+
+__all__ = ["InfoboxCellParser"]

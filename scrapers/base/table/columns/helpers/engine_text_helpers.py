@@ -204,3 +204,8 @@ class EngineTextHelpers:
         if match:
             return match.group(1).upper(), int(match.group(2))
         return None, None
+
+
+__all__ = [
+    "EngineTextHelpers",
+]

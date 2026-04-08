@@ -207,3 +207,6 @@ class EngineParsingHelpers:
         if fuel_type is not None:
             result["fuel_type"] = fuel_type
         return result
+
+
+__all__ = ["EngineParsingHelpers"]

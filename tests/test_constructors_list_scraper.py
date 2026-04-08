@@ -2,7 +2,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
+from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 from scrapers.constructors.constructors_list import ConstructorsListScraper
 
 

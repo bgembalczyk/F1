@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.transformers.points_scoring_systems_history import PointsScoringSystemsHistoryTransformer
+from scrapers.base.transformers import PointsScoringSystemsHistoryTransformer
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

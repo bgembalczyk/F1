@@ -24,3 +24,8 @@ class RetryPolicy(ABC):
     @abstractmethod
     def backoff_seconds(self, attempt: int) -> float:
         """Ile sekund odczekać przed retry."""
+
+
+__all__ = [
+    "RetryPolicy",
+]

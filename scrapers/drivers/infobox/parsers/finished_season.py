@@ -55,3 +55,6 @@ class FinishedSeasonParser:
                 result["points"] = float(points_str)
 
         return result
+
+
+__all__ = ["FinishedSeasonParser"]

@@ -106,3 +106,8 @@ class SeasonParser:
         # Valid season-like text must have at least one 4-digit year
         # 2-digit suffixes alone (like "20") are not sufficient
         return has_four_digit_year
+
+
+__all__ = [
+    "SeasonParser",
+]

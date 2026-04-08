@@ -8,21 +8,21 @@ ensure_certifi_stub()
 ensure_pandas_stub()
 ensure_requests_stub()
 
-from scrapers.wiki.parsers.sections.adapter import _extract_sections
-from scrapers.wiki.parsers.sections.adapter import _iter_sections
 from scrapers.wiki.parsers.sections.adapter import collect_section_elements
+from scrapers.wiki.parsers.sections.adapter import extract_sections
 from scrapers.wiki.parsers.sections.adapter import find_section_tree
+from scrapers.wiki.parsers.sections.adapter import iter_sections
 
 
 class TestExtractSections:
     def test_non_dict_returns_empty(self):
-        assert _extract_sections(None) == []
-        assert _extract_sections("string") == []  # type: ignore[arg-type]
-        assert _extract_sections(123) == []  # type: ignore[arg-type]
+        assert extract_sections(None) == []
+        assert extract_sections("string") == []  # type: ignore[arg-type]
+        assert extract_sections(123) == []  # type: ignore[arg-type]
 
     def test_dict_with_sections_key(self):
         article = {"sections": [{"name": "Results"}]}
-        result = _extract_sections(article)
+        result = extract_sections(article)
         assert len(result) == 1
         assert result[0]["name"] == "Results"
 
@@ -32,33 +32,33 @@ class TestExtractSections:
                 "sections": [{"name": "Standings"}],
             },
         }
-        result = _extract_sections(article)
+        result = extract_sections(article)
         assert len(result) == 1
         assert result[0]["name"] == "Standings"
 
     def test_empty_dict_returns_empty(self):
-        assert _extract_sections({}) == []
+        assert extract_sections({}) == []
 
     def test_sections_not_a_list_falls_through(self):
         article = {"sections": "not a list"}
-        result = _extract_sections(article)
+        result = extract_sections(article)
         assert result == []
 
     def test_content_text_sections_not_a_list_returns_empty(self):
         article = {"content_text": {"sections": "not a list"}}
-        result = _extract_sections(article)
+        result = extract_sections(article)
         assert result == []
 
 
 class TestIterSections:
     def test_yields_flat_sections(self):
         sections = [{"name": "A"}, {"name": "B"}]
-        result = list(_iter_sections(sections))
+        result = list(iter_sections(sections))
         assert len(result) == 2
 
     def test_yields_nested_sub_sections(self):
         sections = [{"name": "Parent", "sub_sections": [{"name": "Child"}]}]
-        result = list(_iter_sections(sections))
+        result = list(iter_sections(sections))
         assert len(result) == 2
         names = [s["name"] for s in result]
         assert "Parent" in names
@@ -73,14 +73,14 @@ class TestIterSections:
                 ],
             },
         ]
-        result = list(_iter_sections(sections))
+        result = list(iter_sections(sections))
         names = [s["name"] for s in result]
         assert "Level1" in names
         assert "Level2" in names
         assert "Level3" in names
 
     def test_handles_empty_list(self):
-        assert list(_iter_sections([])) == []
+        assert list(iter_sections([])) == []
 
 
 class TestFindSectionTree:

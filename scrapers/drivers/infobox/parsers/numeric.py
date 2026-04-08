@@ -82,3 +82,6 @@ class NumericParser:
         entries = values[0] if values else None
         starts = values[1] if len(values) > 1 else None
         return {"entries": entries, "starts": starts}
+
+
+__all__ = ["NumericParser"]

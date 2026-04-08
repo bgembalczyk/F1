@@ -67,7 +67,7 @@ class TestExtractFromChassisConstructors:
         extract_layer_zero_phase_c(base)
 
         countries_file = (
-                c_extract_path(base, "countries") / "from_chassis_constructors.json"
+            c_extract_path(base, "countries") / "from_chassis_constructors.json"
         )
         assert countries_file.exists()
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
@@ -94,7 +94,7 @@ class TestExtractFromChassisConstructors:
         extract_layer_zero_phase_c(base)
 
         countries_file = (
-                c_extract_path(base, "countries") / "from_chassis_constructors.json"
+            c_extract_path(base, "countries") / "from_chassis_constructors.json"
         )
         countries = json.loads(countries_file.read_text(encoding="utf-8"))
         assert len(countries) == 1
@@ -459,11 +459,9 @@ class TestExtractFromSeasons:
         extract_layer_zero_phase_c(base)
 
         assert not (
-                c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
+            c_extract_path(base, "tyre_manufacturers") / "from_seasons.json"
         ).exists()
-        assert not (
-                c_extract_path(base, "constructors") / "from_seasons.json"
-        ).exists()
+        assert not (c_extract_path(base, "constructors") / "from_seasons.json").exists()
 
 
 class TestExtractFromTeams:

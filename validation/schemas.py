@@ -25,3 +25,6 @@ class RecordSchema:
     custom_validators: Sequence[
         Callable[[Mapping[str, Any]], Sequence[ValidationIssue | str]]
     ] = ()
+
+
+__all__ = ["RecordSchema", "NestedSchema"]

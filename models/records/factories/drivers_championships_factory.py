@@ -43,4 +43,4 @@ class DriversChampionshipsRecordFactory(BaseRecordFactory):
         return cast("DriversChampionshipsRecord", payload)
 
 
-__all__ = ["DriversChampionshipsRecordFactory",]
+__all__ = ["DriversChampionshipsRecordFactory"]

@@ -31,3 +31,6 @@ class TransformersPipeline:
                 len(transformed),
             )
         return transformed
+
+
+__all__ = ["TransformersPipeline"]

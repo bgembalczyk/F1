@@ -9,8 +9,8 @@ from time import perf_counter
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.orchestration.components.section_source_adapter import SectionSourceAdapter
 from scrapers.base.orchestration import lifecycle
+from scrapers.base.orchestration.components import SectionSourceAdapter
 from scrapers.base.orchestration.models import AuditEntry
 from scrapers.base.orchestration.models import StepDeclaration
 from scrapers.wiki.base_flow import BaseOrchestrationFlow

@@ -27,3 +27,8 @@ class CarRecordFactory(BaseRecordFactory):
         else:
             payload.pop("formula_category", None)
         return cast("CarRecord", payload)
+
+
+__all__ = [
+    "CarRecordFactory",
+]

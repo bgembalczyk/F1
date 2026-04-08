@@ -177,3 +177,6 @@ class SeasonFreePracticeParser:
             normalized.append(record)
 
         return normalized
+
+
+__all__ = ["SeasonFreePracticeParser"]

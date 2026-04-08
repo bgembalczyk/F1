@@ -48,3 +48,8 @@ class CircuitRecordFactory(BaseRecordFactory):
             },
         )
         return cast("CircuitRecord", payload)
+
+
+__all__ = [
+    "CircuitRecordFactory",
+]

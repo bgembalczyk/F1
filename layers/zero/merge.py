@@ -25,34 +25,6 @@ from layers.zero.record_merge_ops import (
 )
 from layers.zero.record_merge_ops import merge_list_values as _merge_list_values_impl
 from layers.zero.record_merge_ops import merge_values as _merge_values_impl
-from layers.zero.source_routing import iter_mergeable_domain_dirs as _iter_domain_dirs
-from layers.zero.source_routing import load_domain_records as _load_records
-from layers.zero.source_routing import (
-    write_merged_domain_records as _write_merged_records,
-)
-from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
-from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
-from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
-from scrapers.wiki.constants import ENGINES_FORMULA_ONE_FIELDS
-from scrapers.wiki.constants import FORMULA_ONE_SERIES
-from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
-from scrapers.wiki.constants import RED_FLAG_FIELDS
-from scrapers.wiki.sources_registry import DRIVER_FATALITIES_SOURCE
-from scrapers.wiki.sources_registry import DRIVERS_SOURCE
-from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE
-from scrapers.wiki.sources_registry import ENGINE_MANUFACTURERS_SOURCE
-from scrapers.wiki.sources_registry import FEMALE_DRIVERS_SOURCE
-from scrapers.wiki.sources_registry import FORMER_CONSTRUCTORS_SOURCE
-from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
-from scrapers.wiki.sources_registry import INDIANAPOLIS_ONLY_ENGINES_SOURCE
-from scrapers.wiki.sources_registry import PRIVATEER_TEAMS_SOURCE
-from scrapers.wiki.sources_registry import RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE
-from scrapers.wiki.sources_registry import RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE
-from scrapers.wiki.sources_registry import SPONSORSHIP_LIVERIES_SOURCE
-from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
-from scrapers.wiki.sources_registry import get_source_by_seed_name
-from scrapers.wiki.sources_registry import resolve_list_filename
-from scrapers.wiki.sources_registry import validate_sources_registry_consistency
 from layers.zero.source_routing import iter_mergeable_domain_dirs
 from layers.zero.source_routing import load_domain_records
 from layers.zero.source_routing import write_merged_domain_records
@@ -108,7 +80,9 @@ def _sort_key_with_presence(value: object) -> tuple[int, str]:
 
 
 def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
-    return {key: value for key, value in record.items() if key in constants.RED_FLAG_FIELDS}
+    return {
+        key: value for key, value in record.items() if key in constants.RED_FLAG_FIELDS
+    }
 
 
 def _pop_red_flag_fields(record: dict[str, object]) -> None:
@@ -322,7 +296,10 @@ def _transform_constructor_domain(
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    constructor_domains = constants.CHASSIS_CONSTRUCTOR_DOMAINS | {"constructor", "chassis"}
+    constructor_domains = constants.CHASSIS_CONSTRUCTOR_DOMAINS | {
+        "constructor",
+        "chassis",
+    }
     if domain not in constructor_domains:
         return transformed
 
@@ -485,7 +462,10 @@ def _transform_grands_prix_domain(
     transformed: dict[str, object],
 ) -> dict[str, object]:
     if domain == "grands_prix":
-        _move_fields_to_formula_one(transformed, constants.GRANDS_PRIX_FORMULA_ONE_FIELDS)
+        _move_fields_to_formula_one(
+            transformed,
+            constants.GRANDS_PRIX_FORMULA_ONE_FIELDS,
+        )
     return transformed
 
 
@@ -498,7 +478,10 @@ def _transform_teams_domain(
         return transformed
     if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
         transformed = _transform_teams_from_current_constructors(transformed)
-    if source_name == sources_registry.SPONSORSHIP_LIVERIES_SOURCE and "liveries" in transformed:
+    if (
+        source_name == sources_registry.SPONSORSHIP_LIVERIES_SOURCE
+        and "liveries" in transformed
+    ):
         transformed["racing_series"] = _build_racing_series(
             {"liveries": transformed.pop("liveries")},
         )

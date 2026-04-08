@@ -10,9 +10,9 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.table import TableParser
-from scrapers.wiki.parsers.elements.wiki_table.lap_records import LapRecordsWikiTableParser
-from scrapers.wiki.parsers.elements.wiki_table.race_results import RaceResultsTableParser
-from scrapers.wiki.parsers.elements.wiki_table.standings import StandingsTableParser
+from scrapers.wiki.parsers.elements.wiki_table import LapRecordsWikiTableParser
+from scrapers.wiki.parsers.elements.wiki_table import RaceResultsTableParser
+from scrapers.wiki.parsers.elements.wiki_table import StandingsTableParser
 
 if TYPE_CHECKING:
     from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser

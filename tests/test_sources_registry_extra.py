@@ -89,13 +89,21 @@ class TestGetSourceBySourceName:
 class TestEnsureUniqueOrRaise:
     def test_adds_to_seen_when_not_present(self):
         seen: set[str] = set()
-        registry.ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
+        registry.ensure_unique_or_raise(
+            value="drivers",
+            seen=seen,
+            duplicate_message="dup",
+        )
         assert "drivers" in seen
 
     def test_raises_when_already_present(self):
         seen = {"drivers"}
         with pytest.raises(ValueError, match="dup"):
-            registry.ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
+            registry.ensure_unique_or_raise(
+                value="drivers",
+                seen=seen,
+                duplicate_message="dup",
+            )
 
 
 class TestValidateCanonicalSource:

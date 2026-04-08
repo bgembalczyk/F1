@@ -43,3 +43,6 @@ class FatalityRecordFactory(BaseRecordFactory):
             payload["car"] = self.normalizer.normalize_link(car, "car")
 
         return cast("FatalityRecord", payload)
+
+
+__all__ = ["FatalityRecordFactory"]

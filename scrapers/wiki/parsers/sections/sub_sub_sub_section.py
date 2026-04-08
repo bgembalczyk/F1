@@ -46,3 +46,5 @@ class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
             "elements": self.parse_elements(tags, section_context=section_context),
         }
 
+
+__all__ = ["SubSubSubSectionParser"]

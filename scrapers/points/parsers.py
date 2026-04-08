@@ -87,7 +87,11 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
     def _apply_schema_transforms(row: dict[str, Any]) -> dict[str, Any]:
         transformed: dict[str, Any] = {}
         for key, value in row.items():
-            text = value.get("text", "") if isinstance(value, dict) else (value if isinstance(value, str) else "")
+            text = (
+                value.get("text", "")
+                if isinstance(value, dict)
+                else (value if isinstance(value, str) else "")
+            )
             if key == "seasons":
                 transformed[key] = [s.to_dict() for s in parse_seasons(text)]
             elif key == "1st":
@@ -130,7 +134,8 @@ class SprintPointsTableParser(WikiTableBaseParser):
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         normalized_headers = {normalize_header(header) for header in headers}
         expected = {
-            normalize_header(header) for header in constants.SPRINT_QUALIFYING_EXPECTED_HEADERS
+            normalize_header(header)
+            for header in constants.SPRINT_QUALIFYING_EXPECTED_HEADERS
         }
         if SPRINT_DISQUALIFYING_HEADERS & normalized_headers:
             return False
@@ -161,7 +166,11 @@ class SprintPointsTableParser(WikiTableBaseParser):
     def _apply_schema_transforms(row: dict[str, Any]) -> dict[str, Any]:
         transformed: dict[str, Any] = {}
         for key, value in row.items():
-            text = value.get("text", "") if isinstance(value, dict) else (value if isinstance(value, str) else "")
+            text = (
+                value.get("text", "")
+                if isinstance(value, dict)
+                else (value if isinstance(value, str) else "")
+            )
             if key == "seasons":
                 transformed[key] = [s.to_dict() for s in parse_seasons(text)]
             elif key in SPRINT_POSITION_KEYS:
@@ -179,7 +188,8 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         normalized_headers = {normalize_header(header) for header in headers}
         expected = {
-            normalize_header(header) for header in constants.SHORTENED_RACE_EXPECTED_HEADERS
+            normalize_header(header)
+            for header in constants.SHORTENED_RACE_EXPECTED_HEADERS
         }
         return expected.issubset(normalized_headers)
 

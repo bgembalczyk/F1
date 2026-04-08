@@ -2,7 +2,7 @@ from collections.abc import Mapping
 from typing import Protocol
 from typing import runtime_checkable
 
-from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
+from infrastructure.http_client.interfaces import HttpResponseProtocol
 
 
 @runtime_checkable
@@ -19,3 +19,6 @@ class SessionProtocol(Protocol):
     ) -> HttpResponseProtocol:
         """Wykonuje żądanie GET i zwraca odpowiedź zgodną z protokołem."""
         ...
+
+
+__all__ = ["SessionProtocol"]

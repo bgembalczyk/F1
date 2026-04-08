@@ -177,3 +177,6 @@ class SeasonTableParser:
             if record:
                 records.append(record)
         return records
+
+
+__all__ = ["SeasonTableParser"]

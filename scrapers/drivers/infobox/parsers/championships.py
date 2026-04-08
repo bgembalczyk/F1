@@ -1,6 +1,5 @@
 """Helper class for parsing championships and class wins from infobox cells."""
 
-import re
 from typing import Any
 
 from bs4 import Tag
@@ -9,10 +8,9 @@ from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.year_extraction import YEAR_RE
 from scrapers.base.helpers.year_extraction import YearExtractor
+from scrapers.drivers.infobox.parsers.constants import COUNT_RE
+from scrapers.drivers.infobox.parsers.constants import PAREN_RE
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
-
-COUNT_RE = re.compile(r"^(\d+)")
-PAREN_RE = re.compile(r"\(([^)]+)\)")
 
 
 class ChampionshipsParser:
@@ -111,3 +109,8 @@ class ChampionshipsParser:
                     wins.append({"year": year, "url": year_to_url.get(year)})
 
         return {"count": count, "wins": wins}
+
+
+__all__ = [
+    "ChampionshipsParser",
+]

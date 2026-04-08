@@ -19,7 +19,11 @@ def build_shortened_race_points_schema() -> TableSchemaDSL:
     ]
     columns.extend(
         [
-            ColumnSpec(constants.POINTS_FASTEST_LAP_HEADER, "fastest_lap", col.AutoColumn()),
+            ColumnSpec(
+                constants.POINTS_FASTEST_LAP_HEADER,
+                "fastest_lap",
+                col.AutoColumn(),
+            ),
             ColumnSpec(constants.POINTS_NOTES_HEADER, "notes", col.SkipColumn()),
         ],
     )
@@ -27,7 +31,9 @@ def build_shortened_race_points_schema() -> TableSchemaDSL:
 
 
 def build_sprint_qualifying_schema() -> TableSchemaDSL:
-    columns = [ColumnSpec(constants.POINTS_SEASONS_HEADER, "seasons", col.SeasonsColumn())]
+    columns = [
+        ColumnSpec(constants.POINTS_SEASONS_HEADER, "seasons", col.SeasonsColumn()),
+    ]
     columns += [
         ColumnSpec(position, position.lower(), col.IntColumn())
         for position in constants.SPRINT_POSITIONS

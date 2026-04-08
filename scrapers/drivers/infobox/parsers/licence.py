@@ -202,3 +202,6 @@ class LicenceParser:
                 return False
 
         return False
+
+
+__all__ = ["LicenceParser"]

@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
 from scrapers.constructors.sections.history import ConstructorHistorySectionParser
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
-from scrapers.seasons.sections.regulation_changes import SeasonRegulationChangesSectionParser
+from scrapers.seasons.sections import SeasonRegulationChangesSectionParser
 
 CONTRACT_KEYS = ("section_id", "section_label", "records", "metadata")
 

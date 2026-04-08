@@ -290,3 +290,6 @@ class EntryMerger:
         if isinstance(value, str):
             return list(parse_rounds(value).values)
         return []
+
+
+__all__ = ["EntryMerger"]

@@ -42,3 +42,6 @@ class NormalizeLinksTransformer(RecordTransformer):
                 )
             normalized_records.append(updated)
         return normalized_records
+
+
+__all__ = ["NormalizeLinksTransformer"]

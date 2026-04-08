@@ -3,26 +3,11 @@ from typing import Any
 
 from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
+from scrapers.drivers.infobox.parsers.constants import ACTIVE_YEARS_LABELS
+from scrapers.drivers.infobox.parsers.constants import INT_CELL_LABELS
+from scrapers.drivers.infobox.parsers.constants import RACE_EVENT_LABELS
+from scrapers.drivers.infobox.parsers.constants import TEAM_LABELS
 from scrapers.drivers.infobox.parsers.numeric import NumericParser
-
-ACTIVE_YEARS_LABELS = {"Active years", "Years active", "Years"}
-TEAM_LABELS = {"Teams", "Former teams"}
-INT_CELL_LABELS = {
-    "Wins",
-    "Podiums",
-    "Pole positions",
-    "Poles",
-    "Fastest laps",
-    "Starts",
-}
-RACE_EVENT_LABELS = {
-    "First race",
-    "Last race",
-    "First win",
-    "Last win",
-    "First entry",
-    "Last entry",
-}
 
 
 def parser_mappings(
@@ -65,3 +50,10 @@ def parser_for_label(
     if parser is not None:
         return parser
     return cell_parser.parse_cell
+
+
+__all__ = [
+    "parser_mappings",
+    "parser_for_label",
+    "match_label_parser",
+]

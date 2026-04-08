@@ -7,20 +7,7 @@ from typing import TYPE_CHECKING
 from models.value_objects.common_terms import SeasonYear
 from models.value_objects.common_terms import WikiUrl
 from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
-from scrapers.seasons.parsers.calendar import SeasonCalendarParser
-from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
-from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser
-from scrapers.seasons.parsers.entries import SeasonEntriesParser
-from scrapers.seasons.parsers.entry_merger import EntryMerger
-from scrapers.seasons.parsers.free_practice import SeasonFreePracticeParser
-from scrapers.seasons.parsers.jim_clark_trophy import JimClarkTrophyParser
-from scrapers.seasons.parsers.non_championship import SeasonNonChampionshipParser
-from scrapers.seasons.parsers.regional_championship import SeasonRegionalChampionshipParser
-from scrapers.seasons.parsers.results import SeasonResultsParser
-from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
-from scrapers.seasons.parsers.standings import SeasonStandingsParser
-from scrapers.seasons.parsers.table import SeasonTableParser
-from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
+from scrapers.seasons import parsers
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.sections.calendar import SeasonCalendarSectionParser
 from scrapers.seasons.sections.results import SeasonResultsSectionParser
@@ -73,16 +60,16 @@ class SeasonSectionParserBinding:
 
 @dataclass(frozen=True)
 class SeasonParserSet:
-    table_parser: SeasonTableParser
-    entries_parser: SeasonEntriesParser
-    free_practice_parser: SeasonFreePracticeParser
-    cancelled_rounds_parser: CancelledRoundsParser
-    testing_venues_parser: TestingVenuesParser
-    non_championship_parser: SeasonNonChampionshipParser
-    scoring_system_parser: SeasonScoringSystemParser
-    jim_clark_trophy_parser: JimClarkTrophyParser
-    colin_chapman_trophy_parser: ColinChapmanTrophyParser
-    regional_parser: SeasonRegionalChampionshipParser
+    table_parser: parsers.SeasonTableParser
+    entries_parser: parsers.SeasonEntriesParser
+    free_practice_parser: parsers.SeasonFreePracticeParser
+    cancelled_rounds_parser: parsers.CancelledRoundsParser
+    testing_venues_parser: parsers.TestingVenuesParser
+    non_championship_parser: parsers.SeasonNonChampionshipParser
+    scoring_system_parser: parsers.SeasonScoringSystemParser
+    jim_clark_trophy_parser: parsers.JimClarkTrophyParser
+    colin_chapman_trophy_parser: parsers.ColinChapmanTrophyParser
+    regional_parser: parsers.SeasonRegionalChampionshipParser
     section_parsers: tuple[SeasonSectionParserBinding, ...]
 
 
@@ -99,42 +86,42 @@ class SeasonParserSetBuilder:
         self._policy = policy or DomainParsingPolicy()
 
     def build(self, *, url: str, season_year: int | None) -> SeasonParserSet:
-        table_parser = SeasonTableParser(
+        table_parser = parsers.SeasonTableParser(
             options=self._options,
             include_urls=self._include_urls,
             url=url,
         )
-        standings_parser = SeasonStandingsParser(table_parser)
+        standings_parser = parsers.SeasonStandingsParser(table_parser)
         return SeasonParserSet(
             table_parser=table_parser,
-            entries_parser=SeasonEntriesParser(
+            entries_parser=parsers.SeasonEntriesParser(
                 table_parser,
-                EntryMerger(),
+                parsers.EntryMerger(),
                 policy=self._policy,
             ),
-            free_practice_parser=SeasonFreePracticeParser(table_parser),
-            cancelled_rounds_parser=CancelledRoundsParser(table_parser),
-            testing_venues_parser=TestingVenuesParser(
+            free_practice_parser=parsers.SeasonFreePracticeParser(table_parser),
+            cancelled_rounds_parser=parsers.CancelledRoundsParser(table_parser),
+            testing_venues_parser=parsers.TestingVenuesParser(
                 table_parser,
                 policy=self._policy,
             ),
-            non_championship_parser=SeasonNonChampionshipParser(table_parser),
-            scoring_system_parser=SeasonScoringSystemParser(table_parser),
-            jim_clark_trophy_parser=JimClarkTrophyParser(table_parser),
-            colin_chapman_trophy_parser=ColinChapmanTrophyParser(table_parser),
-            regional_parser=SeasonRegionalChampionshipParser(table_parser),
+            non_championship_parser=parsers.SeasonNonChampionshipParser(table_parser),
+            scoring_system_parser=parsers.SeasonScoringSystemParser(table_parser),
+            jim_clark_trophy_parser=parsers.JimClarkTrophyParser(table_parser),
+            colin_chapman_trophy_parser=parsers.ColinChapmanTrophyParser(table_parser),
+            regional_parser=parsers.SeasonRegionalChampionshipParser(table_parser),
             section_parsers=(
                 SeasonSectionParserBinding(
                     field_name="calendar",
                     parser=SeasonCalendarSectionParser(
-                        SeasonCalendarParser(table_parser),
+                        parsers.SeasonCalendarParser(table_parser),
                         season_year,
                     ),
                 ),
                 SeasonSectionParserBinding(
                     field_name="results",
                     parser=SeasonResultsSectionParser(
-                        SeasonResultsParser(table_parser),
+                        parsers.SeasonResultsParser(table_parser),
                     ),
                 ),
                 SeasonSectionParserBinding(
@@ -250,7 +237,7 @@ class SeasonSectionPipeline:
         self._season_year: int | None = None
 
     @property
-    def table_parser(self) -> SeasonTableParser | None:
+    def table_parser(self) -> parsers.SeasonTableParser | None:
         if self._parser_set is None:
             return None
         return self._parser_set.table_parser

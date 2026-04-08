@@ -1,23 +1,13 @@
 """Helper class for parsing nationality from infobox cells."""
 
-import re
 from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.drivers.infobox.parsers import constants
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
-
-HAS_YEARS_RE = re.compile(r"\(\s*\d{4}")
-BR_SPLIT_RE = re.compile(r"<br\s*/?>", flags=re.IGNORECASE)
-YEAR_PAREN_RE = re.compile(r"\s*\([^)]*\d{4}[^)]*\)")
-YEAR_PATTERNS_RE = re.compile(r"\(([^)]*\d{4}[^)]*)\)")
-YEAR_RANGE_RE = re.compile(r"(\d{4})\s*[--]\s*(\d{4})")
-YEAR_RE = re.compile(r"\b(\d{4})\b")
-JUST_REF_MARKER_RE = re.compile(r"^\[\d+\]$")
-OR_SPLIT_RE = re.compile(r"\s+or\s+", flags=re.IGNORECASE)
-REF_MARKER_RE = re.compile(r"\[\d+\]")
 
 
 class NationalityParser:
@@ -48,7 +38,7 @@ class NationalityParser:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
 
         # Check if there are year references (indicating nationality changed by season)
-        has_years = HAS_YEARS_RE.search(text)
+        has_years = constants.HAS_YEARS_RE.search(text)
 
         if has_years:
             return self._parse_nationality_with_years(cell)
@@ -67,7 +57,7 @@ class NationalityParser:
             List of dicts with 'nationality' and 'years' keys.
         """
         html = str(cell)
-        parts = BR_SPLIT_RE.split(html)
+        parts = constants.BR_SPLIT_RE.split(html)
 
         nationalities = []
 
@@ -78,7 +68,7 @@ class NationalityParser:
             part_soup = BeautifulSoup(part_html, "html.parser")
             part_text = clean_infobox_text(part_soup.get_text(" ", strip=True)) or ""
 
-            nationality_name = YEAR_PAREN_RE.sub("", part_text).strip()
+            nationality_name = constants.YEAR_PAREN_RE.sub("", part_text).strip()
 
             years = self._extract_years_from_text(part_text)
 
@@ -91,10 +81,6 @@ class NationalityParser:
 
         return nationalities or []
 
-    YEAR_PATTERNS_RE = re.compile(r"\(([^)]*\d{4}[^)]*)\)")
-    YEAR_RANGE_RE = re.compile(r"(\d{4})\s*[--]\s*(\d{4})")
-    YEAR_RE = re.compile(r"\b(\d{4})\b")
-
     @classmethod
     def _extract_years_from_text(cls, text: str) -> list[int]:
         """Extract all years (including ranges) from parenthesised patterns in text.
@@ -106,16 +92,16 @@ class NationalityParser:
             Deduplicated list of integer years found in the text.
         """
         years_dict: dict[int, None] = {}
-        year_patterns = cls.YEAR_PATTERNS_RE.findall(text)
+        year_patterns = constants.YEAR_PATTERNS_RE.findall(text)
 
         for year_pattern in year_patterns:
-            for range_match in cls.YEAR_RANGE_RE.finditer(year_pattern):
+            for range_match in constants.YEAR_RANGE_RE_NAT.finditer(year_pattern):
                 start = int(range_match.group(1))
                 end = int(range_match.group(2))
                 for year in range(start, end + 1):
                     years_dict[year] = None
 
-            for year_match in cls.YEAR_RE.finditer(year_pattern):
+            for year_match in constants.YEAR_RE.finditer(year_pattern):
                 years_dict[int(year_match.group(1))] = None
 
         return list(years_dict.keys())
@@ -160,7 +146,7 @@ class NationalityParser:
             link
             for link in links
             if (link.get("text") or "").strip()
-            and not JUST_REF_MARKER_RE.match((link.get("text") or "").strip())
+            and not constants.JUST_REF_MARKER_RE.match((link.get("text") or "").strip())
         ]
 
     @staticmethod
@@ -173,12 +159,17 @@ class NationalityParser:
         Returns:
             List of nationality strings with reference markers removed.
         """
-        parts = OR_SPLIT_RE.split(text)
+        parts = constants.OR_SPLIT_RE.split(text)
         nationalities = []
 
         for raw_part in parts:
-            cleaned_part = REF_MARKER_RE.sub("", raw_part).strip()
+            cleaned_part = constants.REF_MARKER_RE.sub("", raw_part).strip()
             if cleaned_part:
                 nationalities.append(cleaned_part)
 
         return nationalities if len(nationalities) > 1 else (nationalities or [])
+
+
+__all__ = [
+    "NationalityParser",
+]

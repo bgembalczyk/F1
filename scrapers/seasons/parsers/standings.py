@@ -233,3 +233,6 @@ class SeasonStandingsParser:
         for round_data in merged.values():
             if isinstance(round_data, dict) and "results" in round_data:
                 SeasonStandingsParser._remove_round_level_attributes(round_data)
+
+
+__all__ = ["SeasonStandingsParser"]

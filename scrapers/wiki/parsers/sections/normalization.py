@@ -18,3 +18,6 @@ def normalize_section_text(value: str | None) -> str:
     cleaned = clean_wiki_text(with_spaces)
     # 3) Ujednolicamy wielkość liter i obcinamy białe znaki dla stabilnych porównań.
     return cleaned.lower().strip()
+
+
+__all__ = ["normalize_section_text"]

@@ -45,3 +45,6 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
 
     def get_detail_url(self, record: dict[str, object]) -> str | None:
         return self._get_constructor_url(record)
+
+
+__all__ = ["CompleteConstructorsDataExtractor"]

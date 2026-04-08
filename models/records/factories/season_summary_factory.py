@@ -27,3 +27,6 @@ class SeasonSummaryRecordFactory(BaseRecordFactory):
             },
         )
         return cast("SeasonSummaryRecord", payload)
+
+
+__all__ = ["SeasonSummaryRecordFactory"]

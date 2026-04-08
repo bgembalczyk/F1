@@ -9,7 +9,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.service import BaseSectionExtractionService
-from scrapers.base.single_wiki_article.section_by_id import SingleWikiArticleSectionByIdBase
+from scrapers.base.single_wiki_article import SingleWikiArticleSectionByIdBase
 
 single_wiki_base = pytest.importorskip("scrapers.base.single_wiki_article.base")
 single_wiki_dto = pytest.importorskip("scrapers.base.single_wiki_article.dto")

@@ -1,11 +1,7 @@
-from validation.record_factory_validator import ModelValidateRecordFactoryValidatorAdapter
-from validation.record_factory_validator import ValidateMethodRecordFactoryValidatorAdapter
-from validation.record_factory_validator import ValidateRecordFactoryValidatorAdapter
-from validation.record_factory_validator import adapt_record_factory_validator
-from validation.validator_base import RecordValidator
+import validation
 
 
-class DummyValidator(RecordValidator):
+class DummyValidator(validation.RecordValidator):
     def validate(self, _record):  # type: ignore[override]
         return []
 
@@ -16,9 +12,9 @@ def test_adapt_record_factory_validator_supports_model_validate() -> None:
         def model_validate(_record):
             return object()
 
-    adapter = adapt_record_factory_validator(Factory)
+    adapter = validation.adapt_record_factory_validator(Factory)
 
-    assert isinstance(adapter, ModelValidateRecordFactoryValidatorAdapter)
+    assert isinstance(adapter, validation.ModelValidateRecordFactoryValidatorAdapter)
 
 
 def test_adapt_record_factory_validator_supports_validate_record() -> None:
@@ -27,9 +23,9 @@ def test_adapt_record_factory_validator_supports_validate_record() -> None:
         def validate_record(_record):
             return ["Missing key: name"]
 
-    adapter = adapt_record_factory_validator(Factory)
+    adapter = validation.adapt_record_factory_validator(Factory)
 
-    assert isinstance(adapter, ValidateRecordFactoryValidatorAdapter)
+    assert isinstance(adapter, validation.ValidateRecordFactoryValidatorAdapter)
 
 
 def test_adapt_record_factory_validator_supports_validate() -> None:
@@ -37,9 +33,9 @@ def test_adapt_record_factory_validator_supports_validate() -> None:
         def validate(self):
             return None
 
-    adapter = adapt_record_factory_validator(Factory())
+    adapter = validation.adapt_record_factory_validator(Factory())
 
-    assert isinstance(adapter, ValidateMethodRecordFactoryValidatorAdapter)
+    assert isinstance(adapter, validation.ValidateMethodRecordFactoryValidatorAdapter)
 
 
 def test_validate_record_factory_coerces_errors_from_adapter() -> None:
@@ -49,7 +45,7 @@ def test_validate_record_factory_coerces_errors_from_adapter() -> None:
             return ["Missing key: name"]
 
     validator = DummyValidator(
-        record_factory_validator=adapt_record_factory_validator(Factory),
+        record_factory_validator=validation.adapt_record_factory_validator(Factory),
     )
 
     errors = validator.validate_record_factory({"driver": "Max"})
@@ -67,7 +63,7 @@ def test_validate_record_factory_handles_exceptions_in_one_place() -> None:
             raise ValueError(msg)
 
     validator = DummyValidator(
-        record_factory_validator=adapt_record_factory_validator(Factory),
+        record_factory_validator=validation.adapt_record_factory_validator(Factory),
     )
 
     errors = validator.validate_record_factory({})

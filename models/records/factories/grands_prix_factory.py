@@ -35,3 +35,6 @@ class GrandsPrixRecordFactory(BaseRecordFactory):
             },
         )
         return cast("GrandsPrixRecord", payload)
+
+
+__all__ = ["GrandsPrixRecordFactory"]

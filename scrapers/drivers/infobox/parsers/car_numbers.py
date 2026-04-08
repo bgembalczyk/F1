@@ -7,16 +7,11 @@ from bs4 import Tag
 
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.drivers.infobox.parsers.constants import CAR_NUMBER_PATTERN_RE
 from scrapers.drivers.infobox.parsers.constants import MIN_VALID_CAR_NUMBER_YEAR
+from scrapers.drivers.infobox.parsers.constants import MIN_YEAR_TOKENS_FOR_RANGE
+from scrapers.drivers.infobox.parsers.constants import YEAR_TOKEN_RE
 from scrapers.drivers.infobox.parsers.year import YearParser
-
-MIN_YEAR_TOKENS_FOR_RANGE = 2
-
-CAR_NUMBER_PATTERN_RE = re.compile(
-    r"(?<!\d)(?P<prefix>No\.?|#|№)?\s*(?P<number>\d+)\s*(?:\((?P<years>[^)]+)\))?",
-    re.IGNORECASE,
-)
-YEAR_TOKEN_RE = re.compile(r"\b\d{4}\b")
 
 
 class CarNumbersParser:
@@ -67,3 +62,8 @@ class CarNumbersParser:
                 years = parsed
             entries.append({"number": number, "years": years})
         return entries
+
+
+__all__ = [
+    "CarNumbersParser",
+]

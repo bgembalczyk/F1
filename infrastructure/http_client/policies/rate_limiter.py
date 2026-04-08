@@ -8,3 +8,8 @@ class RateLimiter(ABC):
     @abstractmethod
     def wait(self, url: str) -> None:
         """Wymusza opóźnienie przed wykonaniem requestu."""
+
+
+__all__ = [
+    "RateLimiter",
+]

@@ -103,3 +103,6 @@ class CompositeRecordValidator(RecordValidator):
         rule_name = getattr(rule, "rule_name", type(rule).__name__)
         rule_params = dict(getattr(rule, "rule_params", {}))
         return {"name": rule_name, "params": rule_params}
+
+
+__all__ = ["CompositeRecordValidator"]

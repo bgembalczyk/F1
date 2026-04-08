@@ -134,3 +134,6 @@ class InfoboxTextUtils:
             drop_none=True,
             drop_empty_dicts=True,
         )
+
+
+__all__ = ["InfoboxTextUtils"]

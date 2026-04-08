@@ -79,7 +79,10 @@ def test_normalize_lap_record_entity_plain() -> None:
 
 
 def test_normalize_lap_record_entity_dict() -> None:
-    assert utils.normalize_lap_record_entity({"text": "Lewis Hamilton"}) == "lewis hamilton"
+    assert (
+        utils.normalize_lap_record_entity({"text": "Lewis Hamilton"})
+        == "lewis hamilton"
+    )
 
 
 def test_normalize_lap_record_entity_with_sanitizer() -> None:
@@ -251,6 +254,9 @@ def test_build_lap_record_key_custom_key_order() -> None:
         "year": "2019",
         "time": 83.456,
     }
-    key = utils.build_lap_record_key(rec, key_order=("year", "driver", "vehicle", "time"))
+    key = utils.build_lap_record_key(
+        rec,
+        key_order=("year", "driver", "vehicle", "time"),
+    )
     assert key is not None
     assert key[0] == "2019"

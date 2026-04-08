@@ -3,15 +3,7 @@ from typing import Any
 
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
-from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
-from scrapers.circuits.infobox.services.constants import IGNORED_TOP_LEVEL_KEYS
-from scrapers.circuits.infobox.services.constants import used_keys
-from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
-from scrapers.circuits.infobox.services.geo import CircuitGeoParser
-from scrapers.circuits.infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
-from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from scrapers.circuits.infobox import services
 from scrapers.circuits.models.services.lap_record_merging import merge_two_records
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 
@@ -24,13 +16,13 @@ class CircuitEntitiesParser(SafeParserMixin):
     def __init__(
         self,
         *,
-        text_utils: InfoboxTextUtils,
-        geo_parser: CircuitGeoParser,
-        history_parser: CircuitHistoryParser,
-        specs_parser: CircuitSpecsParser,
-        lap_record_parser: CircuitLapRecordParser,
-        entity_parser: CircuitEntityParser,
-        additional_info_parser: CircuitAdditionalInfoParser,
+        text_utils: services.InfoboxTextUtils,
+        geo_parser: services.CircuitGeoParser,
+        history_parser: services.CircuitHistoryParser,
+        specs_parser: services.CircuitSpecsParser,
+        lap_record_parser: services.CircuitLapRecordParser,
+        entity_parser: services.CircuitEntityParser,
+        additional_info_parser: services.CircuitAdditionalInfoParser,
         error_handler: ErrorHandler | None = None,
         url_provider: Callable[[], str | None] | None = None,
     ) -> None:
@@ -86,7 +78,7 @@ class CircuitEntitiesParser(SafeParserMixin):
 
         extra_fields = self.additional_info_parser.collect_additional_info(
             rows,
-            used_keys,
+            services.used_keys,
         )
         if extra_fields:
             normalized["additional_info"] = extra_fields
@@ -197,7 +189,7 @@ class CircuitEntitiesParser(SafeParserMixin):
         """Przygotowuje słownik wynikowy, usuwając zbędne klucze."""
         result: dict[str, Any] = dict(raw or {})
         result.pop("rows", None)
-        for key in IGNORED_TOP_LEVEL_KEYS:
+        for key in services.IGNORED_TOP_LEVEL_KEYS:
             result.pop(key, None)
         return result
 
@@ -232,3 +224,6 @@ class CircuitEntitiesParser(SafeParserMixin):
         self._merge_normalized_into_result(result, normalized)
 
         return self.text_utils.prune_nulls(result)
+
+
+__all__ = ["CircuitEntitiesParser"]

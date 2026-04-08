@@ -105,3 +105,6 @@ class WikiTableBaseParser(ABC):
             if key:
                 mapped[key] = value
         return mapped
+
+
+__all__ = ["WikiTableBaseParser"]

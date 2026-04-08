@@ -1,7 +1,7 @@
 """Record splitter focused tests for sponsorship liveries."""
 
 from scrapers.base.helpers.text_normalization import split_delimited_text
-from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.sponsorship_liveries.parsers import SponsorshipRecordSplitter
 
 THREE_RECORDS = 3
 TWO_RECORDS = 2

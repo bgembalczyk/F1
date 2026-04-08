@@ -26,3 +26,6 @@ class SeasonCalendarSectionParser:
             source="wikipedia",
             extras={"season_year": self._season_year, "kind": "table"},
         )
+
+
+__all__ = ["SeasonCalendarSectionParser"]

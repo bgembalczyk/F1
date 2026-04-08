@@ -8,3 +8,6 @@ from scrapers.base.table.columns.types.base import BaseColumn
 class FuelFlowRateColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> dict[str, Any] | None:
         return parse_fuel_flow_rate(ctx)
+
+
+__all__ = ["FuelFlowRateColumn"]

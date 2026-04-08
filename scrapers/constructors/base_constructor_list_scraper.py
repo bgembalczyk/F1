@@ -48,15 +48,31 @@ class BaseConstructorListScraper(
         """Build common constructor metadata columns."""
         return build_entity_metadata_columns(
             [
-                EntityColumnSpec(constants.CONSTRUCTOR_NAME_HEADER, "constructor", AutoColumn()),
-                EntityColumnSpec(constants.CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+                EntityColumnSpec(
+                    constants.CONSTRUCTOR_NAME_HEADER,
+                    "constructor",
+                    AutoColumn(),
+                ),
+                EntityColumnSpec(
+                    constants.CONSTRUCTOR_DRIVERS_HEADER,
+                    "drivers",
+                    IntColumn(),
+                ),
                 EntityColumnSpec(
                     constants.CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
                     "total_entries",
                     IntColumn(),
                 ),
-                EntityColumnSpec(constants.CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
-                EntityColumnSpec(constants.CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
+                EntityColumnSpec(
+                    constants.CONSTRUCTOR_WCC_HEADER,
+                    "wcc_titles",
+                    IntColumn(),
+                ),
+                EntityColumnSpec(
+                    constants.CONSTRUCTOR_WDC_HEADER,
+                    "wdc_titles",
+                    IntColumn(),
+                ),
             ],
         )
 

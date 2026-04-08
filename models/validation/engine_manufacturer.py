@@ -2,12 +2,9 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
+from models.domain_utils.field_normalization.links import normalize_link_items
 from models.domain_utils.normalization import normalize_link_items
 from models.domain_utils.normalization import normalize_season_items
-from models.domain_utils.field_normalization.links import normalize_link_items
-from models.domain_utils.normalization import (
-    normalize_season_items as core_normalize_season_items,
-)
 from models.records.engine_manufacturer import ENGINE_MANUFACTURER_SCHEMA
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_MANUFACTURER_STATUSES

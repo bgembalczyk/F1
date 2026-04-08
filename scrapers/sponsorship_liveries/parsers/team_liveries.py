@@ -95,4 +95,4 @@ class TeamLiveriesSectionParser(SectionParser):
             return None
 
 
-__all__ = ["TeamLiveriesSectionParser", "TeamLiveriesSectionParser"]
+__all__ = ["TeamLiveriesTableParser", "TeamLiveriesSectionParser"]

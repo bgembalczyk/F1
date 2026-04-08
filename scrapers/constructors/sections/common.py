@@ -26,3 +26,6 @@ class ConstructorTablesSectionParser:
                 source="wikipedia",
             ),
         )
+
+
+__all__ = ["ConstructorTablesSectionParser"]

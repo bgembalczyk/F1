@@ -42,3 +42,6 @@ class InfoboxCareerParser:
             )
             return {"collapsible_career": career_stats} if career_stats else None
         return {"full_data": self._cell_parser.parse_full_data(row["full_data_cell"])}
+
+
+__all__ = ["InfoboxCareerParser"]

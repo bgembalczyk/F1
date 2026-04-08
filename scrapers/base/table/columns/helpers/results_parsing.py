@@ -281,3 +281,6 @@ class ResultsParsingHelpers:
         if not text:
             return False
         return bool(re.search(r"\b(19|20)\d{2}\b", text))
+
+
+__all__ = ["ResultsParsingHelpers"]

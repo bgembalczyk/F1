@@ -20,3 +20,8 @@ def expand_hex_shorthand(color: str) -> str:
     if CSS_3DIGIT_HEX_RE.match(color):
         return "#" + "".join(c * 2 for c in color[1:])
     return color
+
+
+__all__ = [
+    "expand_hex_shorthand",
+]

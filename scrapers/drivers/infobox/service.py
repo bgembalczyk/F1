@@ -30,3 +30,6 @@ class DriverInfoboxExtractionService(BaseInfoboxExtractionService[Tag]):
             run_id=self._options.run_id,
             url=url,
         )
+
+
+__all__ = ["DriverInfoboxExtractionService"]

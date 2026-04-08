@@ -23,3 +23,6 @@ class ShortenedRacePointsTransformer(RecordTransformer):
             )
 
         return grouped
+
+
+__all__ = ["ShortenedRacePointsTransformer"]

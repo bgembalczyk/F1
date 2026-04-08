@@ -2,29 +2,31 @@ from typing import Any
 
 from scrapers.sponsorship_liveries.helpers.constants import COLOUR_KEYS
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_KEYS
+from scrapers.sponsorship_liveries.parsers import splitters
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
-from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import ColourScopeHandler
-from scrapers.sponsorship_liveries.parsers.scope_handlers.sponsor import SponsorScopeHandler
-from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import PipelineRecord
-from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import SplitRule
-from scrapers.sponsorship_liveries.parsers.splitters.record.rules import HasMultipleSeasonsRule
-from scrapers.sponsorship_liveries.parsers.splitters.record.rules import HasYearSpecificColoursRule
-from scrapers.sponsorship_liveries.parsers.splitters.record.rules import HasYearSpecificSponsorsRule
+from scrapers.sponsorship_liveries.parsers.scope_handlers import ColourScopeHandler
+from scrapers.sponsorship_liveries.parsers.scope_handlers import SponsorScopeHandler
 
 
 class SeasonSplitStrategy:
     def __init__(
         self,
         *,
-        multiple_seasons_rule: SplitRule | None = None,
-        year_sponsors_rule: SplitRule | None = None,
-        year_colours_rule: SplitRule | None = None,
+        multiple_seasons_rule: splitters.SplitRule | None = None,
+        year_sponsors_rule: splitters.SplitRule | None = None,
+        year_colours_rule: splitters.SplitRule | None = None,
     ):
-        self._multiple_seasons_rule = multiple_seasons_rule or HasMultipleSeasonsRule()
-        self._year_sponsors_rule = year_sponsors_rule or HasYearSpecificSponsorsRule()
-        self._year_colours_rule = year_colours_rule or HasYearSpecificColoursRule()
+        self._multiple_seasons_rule = (
+            multiple_seasons_rule or splitters.HasMultipleSeasonsRule()
+        )
+        self._year_sponsors_rule = (
+            year_sponsors_rule or splitters.HasYearSpecificSponsorsRule()
+        )
+        self._year_colours_rule = (
+            year_colours_rule or splitters.HasYearSpecificColoursRule()
+        )
 
-    def apply(self, record: PipelineRecord) -> list[PipelineRecord]:
+    def apply(self, record: splitters.PipelineRecord) -> list[splitters.PipelineRecord]:
         raw_record = record.payload
         if not self._multiple_seasons_rule.should_apply(record):
             return [record]
@@ -39,7 +41,7 @@ class SeasonSplitStrategy:
                 return self._split_record_by_colour_scopes(record, season_entries)
             return [record]
 
-        split_records: list[PipelineRecord] = []
+        split_records: list[splitters.PipelineRecord] = []
         for season_entry in season_entries:
             year = season_entry["year"]
             new_record = {**raw_record, "season": [season_entry]}
@@ -55,7 +57,7 @@ class SeasonSplitStrategy:
                         raw_record[key],
                         year,
                     )
-            split_records.append(PipelineRecord.from_input(new_record))
+            split_records.append(splitters.PipelineRecord.from_input(new_record))
 
         return split_records
 
@@ -71,9 +73,9 @@ class SeasonSplitStrategy:
 
     @staticmethod
     def _split_record_by_colour_scopes(
-        record: PipelineRecord,
+        record: splitters.PipelineRecord,
         season_entries: list[dict[str, Any]],
-    ) -> list[PipelineRecord]:
+    ) -> list[splitters.PipelineRecord]:
         colour_year_sets = SeasonSplitStrategy._extract_colour_year_sets(record)
         if not colour_year_sets:
             return [record]
@@ -93,7 +95,7 @@ class SeasonSplitStrategy:
         return split_records
 
     @staticmethod
-    def _extract_colour_year_sets(record: PipelineRecord) -> list[set[int]]:
+    def _extract_colour_year_sets(record: splitters.PipelineRecord) -> list[set[int]]:
         colour_year_sets: list[set[int]] = []
         for key in COLOUR_KEYS:
             colours = record.payload.get(key)
@@ -109,10 +111,10 @@ class SeasonSplitStrategy:
 
     @staticmethod
     def _build_base_colour_scoped_records(
-        record: PipelineRecord,
+        record: splitters.PipelineRecord,
         season_entries: list[dict[str, Any]],
         colour_year_sets: list[set[int]],
-    ) -> list[PipelineRecord]:
+    ) -> list[splitters.PipelineRecord]:
         raw_record = record.payload
         all_years = set().union(*colour_year_sets)
         base_seasons = [
@@ -127,16 +129,16 @@ class SeasonSplitStrategy:
                 base_record[key] = ColourScopeHandler.remove_year_specific_colours(
                     raw_record[key],
                 )
-        return [PipelineRecord.from_input(base_record)]
+        return [splitters.PipelineRecord.from_input(base_record)]
 
     @staticmethod
     def _build_year_scoped_colour_records(
-        record: PipelineRecord,
+        record: splitters.PipelineRecord,
         season_entries: list[dict[str, Any]],
         colour_year_sets: list[set[int]],
-    ) -> list[PipelineRecord]:
+    ) -> list[splitters.PipelineRecord]:
         raw_record = record.payload
-        scoped_records: list[PipelineRecord] = []
+        scoped_records: list[splitters.PipelineRecord] = []
         for years in SeasonSplitStrategy._unique_year_sets(colour_year_sets):
             scoped_seasons = [
                 season for season in season_entries if season["year"] in years
@@ -150,7 +152,7 @@ class SeasonSplitStrategy:
                         raw_record[key],
                         years,
                     )
-            scoped_records.append(PipelineRecord.from_input(scoped_record))
+            scoped_records.append(splitters.PipelineRecord.from_input(scoped_record))
         return scoped_records
 
     @staticmethod
@@ -162,4 +164,4 @@ class SeasonSplitStrategy:
         return unique_year_sets
 
 
-__all__ = ["SeasonSplitStrategy",]
+__all__ = ["SeasonSplitStrategy"]

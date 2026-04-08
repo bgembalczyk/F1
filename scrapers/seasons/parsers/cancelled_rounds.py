@@ -178,3 +178,8 @@ class CancelledRoundsParser:
         if isinstance(circuit_inner, dict):
             return str(circuit_inner.get("text", ""))
         return str(circuit_inner)
+
+
+__all__ = [
+    "CancelledRoundsParser",
+]

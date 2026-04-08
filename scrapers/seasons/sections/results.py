@@ -25,3 +25,6 @@ class SeasonResultsSectionParser:
             source="wikipedia",
             extras={"kind": "table"},
         )
+
+
+__all__ = ["SeasonResultsSectionParser"]

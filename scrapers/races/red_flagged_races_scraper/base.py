@@ -10,11 +10,11 @@ from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.base.table.columns import types as col
+from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
-from scrapers.base.transformers.failed_to_make_restart import FailedToMakeRestartTransformer
+from scrapers.base.transformers import FailedToMakeRestartTransformer
 
 logger = logging.getLogger(__name__)
 

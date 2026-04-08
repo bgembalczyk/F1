@@ -12,9 +12,9 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+from scrapers.points import constants
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.columns.first_place import FirstPlaceColumn
-from scrapers.points import constants
 
 if TYPE_CHECKING:
     from collections.abc import Sequence

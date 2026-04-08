@@ -331,7 +331,9 @@ def merge_date_or_year(
 ) -> None:
     best_date, best_year = select_best_date_year([base, extra])
     if best_year is None:
-        best_year = utils.extract_year_from_event(base) or utils.extract_year_from_event(extra)
+        best_year = utils.extract_year_from_event(
+            base,
+        ) or utils.extract_year_from_event(extra)
 
     if best_date is not None:
         merged["date"] = best_date
@@ -611,3 +613,32 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
     )
 
     return merged_main + last_left
+
+
+__all__ = [
+    "normalize_entity_value",
+    "normalize_lap_record",
+    "build_core_key",
+    "is_record_subset",
+    "is_empty_or_missing_value",
+    "are_subset_values_compatible",
+    "same_time_value",
+    "same_dict_text_value",
+    "select_best_date_year",
+    "series_candidate",
+    "select_best_series",
+    "collect_other_fields",
+    "merge_two_records",
+    "merge_best_entity",
+    "first_present_value",
+    "merge_time",
+    "merge_date_or_year",
+    "merge_series",
+    "fill_missing_fields_from_extra",
+    "merge_record_group",
+    "stage_a_partition_by_record_key",
+    "stage_b_merge_by_core_key",
+    "stage_c_merge_by_driver_time",
+    "stage_d_fallback_merge_by_time_and_driver",
+    "merge_race_lap_records",
+]

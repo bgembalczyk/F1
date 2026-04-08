@@ -37,7 +37,11 @@ class SeasonResultsParser:
                     "winning_constructor",
                     col.ConstructorColumn(),
                 ),
-                ColumnSpec("Constructor", "winning_constructor", col.ConstructorColumn()),
+                ColumnSpec(
+                    "Constructor",
+                    "winning_constructor",
+                    col.ConstructorColumn(),
+                ),
                 ColumnSpec("Report", "report", col.UrlColumn()),
                 ColumnSpec("Tyre", "tyre", col.TyreColumn()),
             ],
@@ -90,3 +94,6 @@ class SeasonResultsParser:
             if rows:
                 return rows
         return []
+
+
+__all__ = ["SeasonResultsParser"]

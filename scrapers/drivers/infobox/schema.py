@@ -16,3 +16,6 @@ DRIVER_GENERAL_SCHEMA = InfoboxSchemaDSL(
         InfoboxFieldSpec("cause_of_death", ("Cause of death",), parser="text"),
     ],
 ).build()
+
+
+__all__ = ["DRIVER_GENERAL_SCHEMA"]

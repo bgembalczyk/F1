@@ -107,3 +107,6 @@ class RequestExecutor:
             )
         except TypeError:
             return self._retry_policy.should_retry(response, exception, attempt)
+
+
+__all__ = ["RequestExecutor"]

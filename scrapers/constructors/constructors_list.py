@@ -13,7 +13,7 @@ from models.services.season_service import parse_seasons
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.results import ScrapeResult
-from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
+from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.builders import MetricColumnSpec
 from scrapers.base.table.builders import build_metric_columns
@@ -21,14 +21,14 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.constructors.base_constructor_list_scraper import BaseConstructorListScraper
+from scrapers.constructors import BaseConstructorListScraper
+from scrapers.constructors import constants
 from scrapers.constructors.columns.constructor_name import ConstructorNameColumn
 from scrapers.constructors.config_factory import build_constructor_list_config
-from scrapers.constructors import constants
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
 from scrapers.wiki.parsers.elements.list import ListParser
-from scrapers.wiki.parsers.sections.section import SectionParser as _WikiSectionParser
+from scrapers.wiki.parsers.sections.section import SectionParser
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
@@ -75,7 +75,7 @@ class PrivateerTeamsListParser(ListParser):
         return record
 
 
-class PrivateerTeamsSectionParser(_WikiSectionParser):
+class PrivateerTeamsSectionParser(SectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._list_parser = PrivateerTeamsListParser()
@@ -116,8 +116,20 @@ class ConstructorsListScraper(F1ListScraper):
     _PRIVATEER_SECTION_ID = "Privateer_teams"
     _CURRENT_SCHEMA_COLUMNS = BaseConstructorListScraper.build_schema_columns(
         [ColumnSpec(constants.CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
-        [ColumnSpec(constants.CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
-        [ColumnSpec(constants.CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
+        [
+            ColumnSpec(
+                constants.CONSTRUCTOR_LICENSED_IN_HEADER,
+                "licensed_in",
+                AutoColumn(),
+            ),
+        ],
+        [
+            ColumnSpec(
+                constants.CONSTRUCTOR_BASED_IN_HEADER,
+                "based_in",
+                LinksListColumn(),
+            ),
+        ],
         BaseConstructorListScraper.build_common_stats_columns(),
         [ColumnSpec(constants.CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
         BaseConstructorListScraper.build_common_metadata_columns(),
@@ -144,7 +156,11 @@ class ConstructorsListScraper(F1ListScraper):
                     "constructor",
                     ConstructorNameColumn(),
                 ),
-                ColumnSpec(constants.CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+                ColumnSpec(
+                    constants.CONSTRUCTOR_DRIVERS_HEADER,
+                    "drivers",
+                    IntColumn(),
+                ),
                 ColumnSpec(
                     constants.CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
                     "total_entries",
@@ -156,7 +172,11 @@ class ConstructorsListScraper(F1ListScraper):
             [BaseConstructorListScraper.build_licensed_in_column_spec()],
             build_metric_columns(
                 [
-                    MetricColumnSpec(constants.CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),
+                    MetricColumnSpec(
+                        constants.CONSTRUCTOR_SEASONS_HEADER,
+                        "seasons",
+                        "seasons",
+                    ),
                     MetricColumnSpec(
                         constants.CONSTRUCTOR_RACES_ENTERED_HEADER,
                         "races_entered",
@@ -168,14 +188,26 @@ class ConstructorsListScraper(F1ListScraper):
                         "races_started",
                     ),
                     MetricColumnSpec(constants.CONSTRUCTOR_WINS_HEADER, "wins", "wins"),
-                    MetricColumnSpec(constants.CONSTRUCTOR_POINTS_HEADER, "points", "points"),
-                    MetricColumnSpec(constants.CONSTRUCTOR_POLES_HEADER, "poles", "poles"),
+                    MetricColumnSpec(
+                        constants.CONSTRUCTOR_POINTS_HEADER,
+                        "points",
+                        "points",
+                    ),
+                    MetricColumnSpec(
+                        constants.CONSTRUCTOR_POLES_HEADER,
+                        "poles",
+                        "poles",
+                    ),
                     MetricColumnSpec(
                         constants.CONSTRUCTOR_FASTEST_LAPS_HEADER,
                         "fastest_laps",
                         "fastest_laps",
                     ),
-                    MetricColumnSpec(constants.CONSTRUCTOR_PODIUMS_HEADER, "podiums", "podiums"),
+                    MetricColumnSpec(
+                        constants.CONSTRUCTOR_PODIUMS_HEADER,
+                        "podiums",
+                        "podiums",
+                    ),
                 ],
             ),
         ),
@@ -488,3 +520,10 @@ class ConstructorsListScraper(F1ListScraper):
         return output_path.with_name(
             f"{output_path.stem}_{parser_kind}{output_path.suffix}",
         )
+
+
+__all__ = [
+    "PrivateerTeamsSectionParser",
+    "PrivateerTeamsListParser",
+    "ConstructorsListScraper",
+]

@@ -43,3 +43,6 @@ class SeasonCalendarParser:
             expected_headers=["Round", "Grand Prix", "Circuit", "Date"],
             schema=schema,
         )
+
+
+__all__ = ["SeasonCalendarParser"]

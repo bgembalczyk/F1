@@ -17,4 +17,7 @@ class FatalitiesCarTransformer(RecordTransformer):
                     "url": None,
                     "formula_category": formula_category,
                 }
-        return records  # type: ignore[return-value]
+        return records
+
+
+__all__ = ["FatalitiesCarTransformer"]

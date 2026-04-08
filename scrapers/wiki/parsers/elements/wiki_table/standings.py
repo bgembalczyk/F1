@@ -24,3 +24,6 @@ class StandingsTableParser(MappedWikiTableParser):
         "No": "no",
         "Car no.": "no",
     }
+
+
+__all__ = ["StandingsTableParser"]

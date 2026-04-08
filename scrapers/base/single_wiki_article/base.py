@@ -9,10 +9,10 @@ from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
-from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
-from scrapers.base.single_wiki_article.section_selection_strategy import SectionSelectionStrategy
+from scrapers.base.single_wiki_article import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article import SectionSelectionStrategy
+from scrapers.base.single_wiki_article import SectionsPayloadDTO
+from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -177,3 +177,8 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
         """Compose final domain record from template-method payload hooks."""
+
+
+__all__ = [
+    "SingleWikiArticleScraperBase",
+]

@@ -76,10 +76,6 @@ def merge_driver_values(existing: object, incoming: object) -> object:
 
 
 from collections.abc import Callable
-from typing import Any
-from typing import Protocol
-from typing import TypeVar
-
 
 
 class MergeModel(Protocol):

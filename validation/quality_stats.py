@@ -31,3 +31,6 @@ class QualityStats:
                 continue
             if issue.code == "type" and issue.field:
                 self.types[issue.field] = self.types.get(issue.field, 0) + 1
+
+
+__all__ = ["QualityStats"]

@@ -23,3 +23,6 @@ class SeasonScoringSystemParser:
             ),
             default_column=IntColumn(),
         )
+
+
+__all__ = ["SeasonScoringSystemParser"]

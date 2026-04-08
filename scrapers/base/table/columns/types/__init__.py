@@ -34,13 +34,12 @@ from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 
-
 __all__ = [
-    'AutoColumn',
-    'BackgroundMixin',
-    'BaseColumn',
-    'BoolColumn',
-    'BrListColumn',
+    "AutoColumn",
+    "BackgroundMixin",
+    "BaseColumn",
+    "BoolColumn",
+    "BrListColumn",
     "ColumnFactory",
     "FloatColumn",
     "IntColumn",

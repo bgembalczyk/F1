@@ -32,3 +32,6 @@ class SpecialDriverRecordFactory(BaseRecordFactory):
             },
         )
         return cast("SpecialDriverRecord", payload)
+
+
+__all__ = ["SpecialDriverRecordFactory"]

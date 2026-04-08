@@ -16,15 +16,15 @@ if TYPE_CHECKING:
     from validation.schemas import RecordSchema
 
 
-def _coerce_schema(schema: RecordSchema | Mapping[str, Any]) -> RecordSchema:
+def coerce_schema(schema: RecordSchema | Mapping[str, Any]) -> RecordSchema:
     return SchemaValidationEngine.coerce_schema(schema)
 
 
-def _coerce_issue(error: ValidationIssue | str) -> ValidationIssue:
+def coerce_issue(error: ValidationIssue | str) -> ValidationIssue:
     return SchemaValidationEngine.coerce_issue(error)
 
 
-def _schema_validator(
+def schema_validator(
     record: Mapping[str, Any],
     schema: RecordSchema | Mapping[str, Any],
 ) -> list[ValidationIssue]:
@@ -34,7 +34,7 @@ def _schema_validator(
 def build_domain_rules(
     schema: RecordSchema | Mapping[str, Any],
 ) -> list[ValidationRule]:
-    normalized = _coerce_schema(schema)
+    normalized = coerce_schema(schema)
 
     def _nested_rule(record: Mapping[str, Any]) -> list[ValidationIssue]:
         errors: list[ValidationIssue] = []
@@ -49,7 +49,7 @@ def build_domain_rules(
                     key,
                     value,
                     nested_schema,
-                    _schema_validator,
+                    schema_validator,
                 ),
             )
         return errors
@@ -57,7 +57,15 @@ def build_domain_rules(
     def _custom_rule(record: Mapping[str, Any]) -> list[ValidationIssue]:
         errors: list[ValidationIssue] = []
         for validator in normalized.custom_validators:
-            errors.extend(_coerce_issue(error) for error in validator(record))
+            errors.extend(coerce_issue(error) for error in validator(record))
         return errors
 
     return [_nested_rule, _custom_rule]
+
+
+__all__ = [
+    "build_domain_rules",
+    "coerce_schema",
+    "coerce_issue",
+    "schema_validator",
+]

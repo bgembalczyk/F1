@@ -15,3 +15,6 @@ def build_link_lookup(links: list[LinkRecord]) -> dict[str, list[LinkRecord]]:
             lookup[key] = []
         lookup[key].append(link)
     return lookup
+
+
+__all__ = ["build_link_lookup"]

@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from collections.abc import Iterable
 
 
-def _expand_targets(
+def expand_targets(
     target: str,
     aliases: Iterable[str],
     *,
@@ -32,16 +32,16 @@ def _expand_targets(
     return expand_alias_variants(values, text_normalizer=normalize_section_text)
 
 
-def _iter_sections(sections: list[SectionTree]) -> Iterable[SectionTree]:
+def iter_sections(sections: list[SectionTree]) -> Iterable[SectionTree]:
     for section in sections:
         yield section
         for key in ("sub_sections", "sub_sub_sections", "sub_sub_sub_sections"):
             children = section.get(key) or []
             if isinstance(children, list):
-                yield from _iter_sections(children)
+                yield from iter_sections(children)
 
 
-def _extract_sections(article: SectionTree | None) -> list[SectionTree]:
+def extract_sections(article: SectionTree | None) -> list[SectionTree]:
     if not isinstance(article, dict):
         return []
 
@@ -55,7 +55,7 @@ def _extract_sections(article: SectionTree | None) -> list[SectionTree]:
     return []
 
 
-def _find_match(
+def find_match(
     sections: list[SectionTree],
     target: str,
     aliases: Iterable[str],
@@ -74,10 +74,10 @@ def _find_match(
             min_fuzzy_score,
         )
 
-    target_ids, target_texts = _expand_targets(target, aliases, domain=domain)
+    target_ids, target_texts = expand_targets(target, aliases, domain=domain)
     fuzzy_candidates: list[SectionTreeMatch] = []
 
-    for section in _iter_sections(sections):
+    for section in iter_sections(sections):
         section_name = str(section.get("name", ""))
         section_id = str(
             section.get("section_id")
@@ -130,11 +130,11 @@ def find_section_tree(
     Supports matching by exact id-like name, aliases and fuzzy text score.
     Returns section subtree with nested sections/elements unchanged.
     """
-    sections = _extract_sections(article)
+    sections = extract_sections(article)
     if not sections:
         return None
 
-    match = _find_match(
+    match = find_match(
         sections,
         target,
         aliases or set(),
@@ -154,9 +154,19 @@ def collect_section_elements(
 
     found: list[dict[str, Any]] = [
         item
-        for node in _iter_sections([section])
+        for node in iter_sections([section])
         for item in node.get("elements", [])
         if item.get("kind") == element_type or item.get("type") == element_type
     ]
 
     return found
+
+
+__all__ = [
+    "expand_targets",
+    "iter_sections",
+    "extract_sections",
+    "find_match",
+    "find_section_tree",
+    "collect_section_elements",
+]

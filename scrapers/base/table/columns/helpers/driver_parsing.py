@@ -136,3 +136,8 @@ class DriverParsingHelpers:
             if len(parts) > 1:
                 text = parts[1]
         return text.strip()
+
+
+__all__ = [
+    "DriverParsingHelpers",
+]

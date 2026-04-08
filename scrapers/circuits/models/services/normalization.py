@@ -68,31 +68,31 @@ def loc_sort_key(item: tuple[str, Any]) -> int:
     return int(match.group(1)) if match else 0
 
 
-def _add_places_from_raw_location(
+def add_places_from_raw_location(
     location_raw: Any,
     places: list[dict[str, Any]],
     seen_places: set[str],
 ) -> None:
     if isinstance(location_raw, dict):
-        if _add_places_from_raw_dict(location_raw, places, seen_places):
+        if add_places_from_raw_dict(location_raw, places, seen_places):
             return
 
     if isinstance(location_raw, list):
-        _add_places_from_raw_list(location_raw, places, seen_places)
+        add_places_from_raw_list(location_raw, places, seen_places)
         return
 
     if isinstance(location_raw, str):
         add_place(location_raw, None, places, seen_places)
 
 
-def _add_places_from_raw_dict(
+def add_places_from_raw_dict(
     location_raw: dict[str, Any],
     places: list[dict[str, Any]],
     seen_places: set[str],
 ) -> bool:
     raw_places = location_raw.get("places")
     if isinstance(raw_places, list):
-        _add_places_from_raw_list(raw_places, places, seen_places)
+        add_places_from_raw_list(raw_places, places, seen_places)
         return True
 
     if "text" in location_raw:
@@ -111,7 +111,7 @@ def _add_places_from_raw_dict(
     return False
 
 
-def _add_places_from_raw_list(
+def add_places_from_raw_list(
     raw_places: list[Any],
     places: list[dict[str, Any]],
     seen_places: set[str],
@@ -123,7 +123,7 @@ def _add_places_from_raw_list(
             add_place(place, None, places, seen_places)
 
 
-def _extract_coordinates_and_loc_norm(
+def extract_coordinates_and_loc_norm(
     normalized: dict[str, Any],
 ) -> tuple[Any, dict[str, Any] | None]:
     if not normalized:
@@ -136,7 +136,7 @@ def _extract_coordinates_and_loc_norm(
     return coordinates, loc_norm if isinstance(loc_norm, dict) else None
 
 
-def _add_places_from_loc_norm(
+def add_places_from_loc_norm(
     loc_norm: dict[str, Any] | None,
     places: list[dict[str, Any]],
     seen_places: set[str],
@@ -165,9 +165,9 @@ def extract_circuit_location(
     places: list[dict[str, Any]] = []
     seen_places: set[str] = set()
 
-    _add_places_from_raw_location(raw.get("location"), places, seen_places)
-    coordinates, loc_norm = _extract_coordinates_and_loc_norm(normalized)
-    _add_places_from_loc_norm(loc_norm, places, seen_places)
+    add_places_from_raw_location(raw.get("location"), places, seen_places)
+    coordinates, loc_norm = extract_coordinates_and_loc_norm(normalized)
+    add_places_from_loc_norm(loc_norm, places, seen_places)
 
     country = raw.get("country")
     if isinstance(country, dict):
@@ -285,3 +285,23 @@ def merge_tables_into_layouts(
         if target_layout is not None:
             existing = target_layout.setdefault("race_lap_records", [])
             existing.extend(records)
+
+
+__all__ = [
+    "extract_circuit_names",
+    "extract_circuit_url",
+    "add_place",
+    "loc_sort_key",
+    "add_places_from_raw_location",
+    "add_places_from_raw_dict",
+    "add_places_from_raw_list",
+    "extract_coordinates_and_loc_norm",
+    "add_places_from_loc_norm",
+    "extract_circuit_location",
+    "extract_fia_grade",
+    "extract_history_events",
+    "extract_infobox_layouts",
+    "parse_table_layout_info",
+    "find_layout_for_table",
+    "merge_tables_into_layouts",
+]

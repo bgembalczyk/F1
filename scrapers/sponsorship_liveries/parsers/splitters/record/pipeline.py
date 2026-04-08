@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import PipelineRecord
-from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import RecordSplitStrategy
+from scrapers.sponsorship_liveries.parsers.splitters.record import PipelineRecord
+from scrapers.sponsorship_liveries.parsers.splitters.record import RecordSplitStrategy
 
 if TYPE_CHECKING:
     from collections.abc import Mapping

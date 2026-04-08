@@ -135,3 +135,6 @@ class CircuitLayoutsParser(SafeParserMixin):
         name = match.group(1).strip()
         years = match.group(2).strip() if match.group(2) else None
         return name, years
+
+
+__all__ = ["CircuitLayoutsParser"]

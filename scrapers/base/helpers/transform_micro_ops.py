@@ -26,4 +26,3 @@ def merge_unique_preserve_order(*iterables: list[Any]) -> list[Any]:
             seen.add(item)
             merged.append(item)
     return merged
-

@@ -27,3 +27,6 @@ class RecordTransformer(ABC):
     @abstractmethod
     def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
         raise NotImplementedError
+
+
+__all__ = ["RecordTransformer"]

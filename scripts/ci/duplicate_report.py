@@ -5,11 +5,11 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
 
+from scripts.ci import reporting
 from scripts.ci.git_diff import build_added_lines_map
 from scripts.ci.io_utils import append_output_vars
 from scripts.ci.io_utils import read_json_file
 from scripts.ci.io_utils import write_text_file
-from scripts.ci import reporting
 
 
 @dataclass(frozen=True)
@@ -164,7 +164,9 @@ class MarkdownRenderer:
 
 
 def main() -> int:
-    parser = reporting.build_ci_parser("Generate duplicate report for changed files in PR.")
+    parser = reporting.build_ci_parser(
+        "Generate duplicate report for changed files in PR.",
+    )
     args = parser.parse_args()
 
     normalizer = DuplicateNormalizer()

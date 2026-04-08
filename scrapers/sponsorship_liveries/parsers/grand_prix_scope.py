@@ -2,8 +2,8 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
-from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import GrandPrixScopeAccumulator
+from scrapers.sponsorship_liveries.parsers import GrandPrixScopeAccumulator
+from scrapers.sponsorship_liveries.parsers import SponsorshipRecordText
 
 
 class GrandPrixScopeParser:
@@ -139,3 +139,6 @@ class GrandPrixScopeParser:
                 end.get("url"),
             )
         return ("other",)
+
+
+__all__ = ["GrandPrixScopeParser"]

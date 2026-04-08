@@ -109,3 +109,6 @@ class CircuitTextProcessing(InfoboxTextUtils):
 
     def _choose_richer_entity(self, a: Any, b: Any) -> Any:
         return choose_richer_entity(a, b)
+
+
+__all__ = ["CircuitTextProcessing"]

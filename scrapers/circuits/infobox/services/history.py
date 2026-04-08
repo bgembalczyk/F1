@@ -177,3 +177,6 @@ class CircuitHistoryParser(InfoboxTextUtils):
             "events": events or None,
             "former_names": self._parse_former_names(rows.get("former_names")),
         }
+
+
+__all__ = ["CircuitHistoryParser"]

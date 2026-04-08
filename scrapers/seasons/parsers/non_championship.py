@@ -43,3 +43,6 @@ class SeasonNonChampionshipParser:
                 ],
             ),
         )
+
+
+__all__ = ["SeasonNonChampionshipParser"]

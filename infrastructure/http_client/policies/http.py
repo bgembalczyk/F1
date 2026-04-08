@@ -18,3 +18,6 @@ class HttpPolicy:
         if self.retries < 0:
             msg = "retries must be >= 0"
             raise ValueError(msg)
+
+
+__all__ = ["HttpPolicy"]

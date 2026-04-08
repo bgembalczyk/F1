@@ -10,17 +10,17 @@ from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import DRIVERS_FATALITIES
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns import types as col
+from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
+from scrapers.drivers import constants
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
-from scrapers.drivers import constants
 from scrapers.drivers.helpers.parsers import DriverOrderedTableParser
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.parsers.sections.section import SectionParser
@@ -98,13 +98,33 @@ class F1FatalitiesListScraper(F1TableScraper):
         expected_headers=constants.FATALITIES_HEADERS,
         schema=TableSchemaDSL(
             columns=[
-                ColumnSpec(constants.FATALITIES_DRIVER_HEADER, "driver", col.UrlColumn()),
-                ColumnSpec(constants.FATALITIES_DATE_HEADER, "date", FatalityDateColumn()),
+                ColumnSpec(
+                    constants.FATALITIES_DRIVER_HEADER,
+                    "driver",
+                    col.UrlColumn(),
+                ),
+                ColumnSpec(
+                    constants.FATALITIES_DATE_HEADER,
+                    "date",
+                    FatalityDateColumn(),
+                ),
                 ColumnSpec(constants.FATALITIES_AGE_HEADER, "age", col.IntColumn()),
-                ColumnSpec(constants.FATALITIES_EVENT_HEADER, "event", FatalityEventColumn()),
-                ColumnSpec(constants.FATALITIES_CIRCUIT_HEADER, "circuit", col.UrlColumn()),
+                ColumnSpec(
+                    constants.FATALITIES_EVENT_HEADER,
+                    "event",
+                    FatalityEventColumn(),
+                ),
+                ColumnSpec(
+                    constants.FATALITIES_CIRCUIT_HEADER,
+                    "circuit",
+                    col.UrlColumn(),
+                ),
                 ColumnSpec(constants.FATALITIES_CAR_HEADER, "car", col.UrlColumn()),
-                ColumnSpec(constants.FATALITIES_SESSION_HEADER, "session", col.TextColumn()),
+                ColumnSpec(
+                    constants.FATALITIES_SESSION_HEADER,
+                    "session",
+                    col.TextColumn(),
+                ),
                 ColumnSpec(constants.FATALITIES_REF_HEADER, "ref", col.SkipColumn()),
             ],
         ),

@@ -11,9 +11,9 @@ from scrapers.wiki.component_metadata import build_component_metadata
 from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
 from scrapers.wiki.discovery import DiscoveredComponent
 from scrapers.wiki.discovery import DiscoveredRunnerProtocol
+from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 from scrapers.wiki.discovery import clear_component_metadata_cache
 from scrapers.wiki.discovery import discover_components_in_module
-from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 
 def test_discovery_does_not_mutate_imported_class_metadata() -> None:

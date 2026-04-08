@@ -99,3 +99,13 @@ class SectionExtractionContext:
             html_metadata=self.html_metadata,
             section_id=section_id,
         )
+
+
+__all__ = [
+    "SectionTree",
+    "SectionTreeMatch",
+    "SectionMatch",
+    "SectionMatchPriorities",
+    "SectionExtractionContext",
+    "SectionProfile",
+]

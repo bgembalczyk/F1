@@ -46,3 +46,6 @@ class SponsorPartsParser:
         part = "".join(self._current).strip()
         if part:
             self._parts.append((part, separator))
+
+
+__all__ = ["SponsorPartsParser"]

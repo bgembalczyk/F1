@@ -44,3 +44,8 @@ class EngineManufacturerRecordFactory(BaseRecordFactory):
             },
         )
         return cast("EngineManufacturerRecord", payload)
+
+
+__all__ = [
+    "EngineManufacturerRecordFactory",
+]

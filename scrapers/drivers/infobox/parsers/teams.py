@@ -42,3 +42,6 @@ class TeamsParser:
             return self._link_extractor.extract_links(cell)
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return split_delimited_text(text, pattern=r",")
+
+
+__all__ = ["TeamsParser"]

@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from typing import TYPE_CHECKING
 
-from scrapers.base.orchestration.components.section_source_adapter import SectionSourceAdapter
+from scrapers.base.orchestration.components import SectionSourceAdapter
 from scrapers.base.orchestration.models import StepDeclaration
 
 if TYPE_CHECKING:
@@ -22,3 +22,6 @@ def assert_section_source_adapter_falls_back_to_raw(tmp_path: Path) -> None:
 
     assert resolved.source_path == source
     assert resolved.records == [{"driver": {"url": "x"}}]
+
+
+__all__ = ["assert_section_source_adapter_falls_back_to_raw"]

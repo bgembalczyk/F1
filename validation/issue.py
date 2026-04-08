@@ -143,3 +143,10 @@ class LegacyValidationIssueAdapter:
             field = message.split(" must be ", 1)[0].strip() or None
             return ValidationIssue(code="type", field=field, message=message)
         return ValidationIssue.custom(message)
+
+
+__all__ = [
+    "LegacyValidationIssueAdapter",
+    "IssueMessageFormatter",
+    "ValidationIssue",
+]

@@ -1,14 +1,11 @@
 """Helper class for parsing year-related information from infobox cells."""
 
-import re
-
 from models.domain_utils.years import parse_year_range as parse_domain_year_range
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.constants import MIN_RANGE_YEARS
-
-YEAR_RE = re.compile(r"\b(\d{4})\b")
-OPEN_ENDED_RE = re.compile(r"\b(\d{4})\s*[-\u2013]\s*(?:present)?$")
+from scrapers.drivers.infobox.parsers.constants import OPEN_ENDED_RE
+from scrapers.drivers.infobox.parsers.constants import YEAR_RE
 
 
 class YearParser:
@@ -61,3 +58,8 @@ class YearParser:
             years["end"] = int(all_years[0])
 
         return years
+
+
+__all__ = [
+    "YearParser",
+]

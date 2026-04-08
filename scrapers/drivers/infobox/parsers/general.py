@@ -212,3 +212,8 @@ class InfoboxGeneralParser:
         links = self._link_extractor.extract_links(cell)
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return parse_relations(links, text)
+
+
+__all__ = [
+    "InfoboxGeneralParser",
+]

@@ -11,3 +11,6 @@ class TextCacheProtocol(Protocol):
 
     def set(self, url: str, text: str) -> None:
         """Zapisuje tekst do cache."""
+
+
+__all__ = ["TextCacheProtocol"]

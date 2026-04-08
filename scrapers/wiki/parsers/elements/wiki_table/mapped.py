@@ -15,3 +15,6 @@ class MappedWikiTableParser(WikiTableBaseParser):
             for header in headers
             if header in self.column_mapping
         }
+
+
+__all__ = ["MappedWikiTableParser"]

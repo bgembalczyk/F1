@@ -94,3 +94,6 @@ class CollapsibleTableParser:
             return None
         table_data = TableParser.parse_nested_table(nested_table)
         return {"table": table_data}
+
+
+__all__ = ["CollapsibleTableParser"]

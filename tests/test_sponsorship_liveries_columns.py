@@ -6,8 +6,8 @@ from unittest.mock import MagicMock
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
-from scrapers.sponsorship_liveries.parsers.section import SponsorshipSectionParser
-from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.sponsorship_liveries.parsers import SponsorshipRecordSplitter
+from scrapers.sponsorship_liveries.parsers import SponsorshipSectionParser
 
 
 def ctx(

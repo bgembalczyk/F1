@@ -54,14 +54,14 @@ def make_stable_section_id(
     return text_slug
 
 
-def _headline_text(heading: Tag) -> str:
+def headline_text(heading: Tag) -> str:
     span = heading.find("span", class_="mw-headline")
     if isinstance(span, Tag):
         return span.get_text(" ", strip=True)
     return heading.get_text(" ", strip=True)
 
 
-def _collect_heading_ids(heading: Tag) -> set[str]:
+def collect_heading_ids(heading: Tag) -> set[str]:
     ids: set[str] = set()
     heading_id = heading.get("id")
     if isinstance(heading_id, str) and heading_id.strip():
@@ -77,12 +77,12 @@ def _collect_heading_ids(heading: Tag) -> set[str]:
     return ids
 
 
-def _expand_target_values(target: str, aliases: set[str]) -> tuple[set[str], set[str]]:
+def expand_target_values(target: str, aliases: set[str]) -> tuple[set[str], set[str]]:
     values = {target, *aliases}
     return expand_alias_variants(values, text_normalizer=normalize_section_text)
 
 
-def _resolve_aliases(
+def resolve_aliases(
     target: str,
     *,
     aliases: Mapping[str, set[str]] | None,
@@ -118,13 +118,13 @@ def find_section_heading(
             target = canonical
         min_fuzzy_score = profile.priorities.fuzzy_threshold
 
-    resolved_aliases = _resolve_aliases(
+    resolved_aliases = resolve_aliases(
         target,
         aliases=aliases,
         domain_aliases=domain_aliases,
         domain=domain,
     )
-    _, target_texts = _expand_target_values(target, resolved_aliases)
+    _, target_texts = expand_target_values(target, resolved_aliases)
     target_lookup_keys = {
         normalize_section_lookup_key(value)
         for value in {target, *resolved_aliases}
@@ -136,7 +136,7 @@ def find_section_heading(
     for heading in soup.find_all(HEADING_TAGS):
         heading_ids = {
             normalize_section_lookup_key(value)
-            for value in _collect_heading_ids(heading)
+            for value in collect_heading_ids(heading)
         }
         if heading_ids & target_lookup_keys:
             return SectionMatch(
@@ -145,7 +145,7 @@ def find_section_heading(
                 score=profile.priorities.get_score(exact_id=True) if profile else 3.0,
             )
 
-        heading_text = normalize_section_text(_headline_text(heading))
+        heading_text = normalize_section_text(headline_text(heading))
         if normalize_section_lookup_key(heading_text) in target_lookup_keys:
             return SectionMatch(
                 heading=heading,
@@ -168,3 +168,15 @@ def find_section_heading(
         return None
 
     return max(fuzzy_candidates, key=lambda match: match.score)
+
+
+__all__ = [
+    "normalize_section_slug",
+    "normalize_section_lookup_key",
+    "make_stable_section_id",
+    "headline_text",
+    "collect_heading_ids",
+    "expand_target_values",
+    "resolve_aliases",
+    "find_section_heading",
+]

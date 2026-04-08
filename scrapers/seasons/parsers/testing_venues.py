@@ -103,3 +103,6 @@ class TestingVenuesParser:
             expected_headers=["Test", "Event", "Circuit", "Dates"],
             schema=schema,
         )
+
+
+__all__ = ["TestingVenuesParser"]

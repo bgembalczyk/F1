@@ -40,7 +40,7 @@ def register_factory(record_type: str | None = None):
     return decorator
 
 
-def _import_factory_modules() -> list[object]:
+def import_factory_modules() -> list[object]:
     package = import_module("models.records.factories")
     imported_modules: list[object] = []
     for module_info in iter_modules(package.__path__):
@@ -51,9 +51,9 @@ def _import_factory_modules() -> list[object]:
     return imported_modules
 
 
-def _collect_registered_factory_classes() -> list[type[BaseRecordFactory]]:
+def collect_registered_factory_classes() -> list[type[BaseRecordFactory]]:
     factory_classes: list[type[BaseRecordFactory]] = []
-    for module in _import_factory_modules():
+    for module in import_factory_modules():
         for candidate in vars(module).values():
             if not isclass(candidate):
                 continue
@@ -65,7 +65,7 @@ def _collect_registered_factory_classes() -> list[type[BaseRecordFactory]]:
     return factory_classes
 
 
-def _validate_factory_classes(factory_classes: list[type[BaseRecordFactory]]) -> None:
+def validate_factory_classes(factory_classes: list[type[BaseRecordFactory]]) -> None:
     record_types = [factory_class.record_type for factory_class in factory_classes]
     duplicate_keys = sorted(
         record_type for record_type, count in Counter(record_types).items() if count > 1
@@ -97,8 +97,8 @@ def get_factory(
 def build_factory_registry(
     normalizer: FieldNormalizer | None = None,
 ) -> dict[str, BaseRecordFactory]:
-    factory_classes = _collect_registered_factory_classes()
-    _validate_factory_classes(factory_classes)
+    factory_classes = collect_registered_factory_classes()
+    validate_factory_classes(factory_classes)
 
     shared_normalizer = normalizer or FieldNormalizer()
     return {
@@ -120,3 +120,14 @@ class FactoryRegistryProvider:
 
 
 FACTORY_REGISTRY_PROVIDER: Final[FactoryRegistryProvider] = FactoryRegistryProvider()
+
+__all__ = [
+    "FactoryRegistryError",
+    "FactoryRegistryProvider",
+    "register_factory",
+    "import_factory_modules",
+    "collect_registered_factory_classes",
+    "validate_factory_classes",
+    "get_factory",
+    "build_factory_registry",
+]

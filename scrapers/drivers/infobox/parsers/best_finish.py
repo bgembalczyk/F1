@@ -296,3 +296,6 @@ class BestFinishParser:
                     return years
 
         return None
+
+
+__all__ = ["BestFinishParser"]

@@ -107,3 +107,6 @@ class TableParser:
         if not rows or len(rows[0]) < EXPECTED_STATS_COLUMNS:
             return {}
         return extract_driver_stats_row(rows[0], headers)
+
+
+__all__ = ["TableParser"]

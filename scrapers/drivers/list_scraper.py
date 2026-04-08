@@ -15,9 +15,9 @@ from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
-from scrapers.base.transformers.drivers_championships import DriversChampionshipsTransformer
-from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
+from scrapers.base.transformers import DriversChampionshipsTransformer
 from scrapers.drivers import constants
+from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
 from scrapers.drivers.helpers.parsers import DriverOrderedTableParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 
@@ -85,7 +85,11 @@ TABLE_SCHEMA = TableSchemaDSL(
                     "pole_positions",
                     "poles",
                 ),
-                MetricColumnSpec(constants.DRIVER_RACE_WINS_HEADER, "race_wins", "wins"),
+                MetricColumnSpec(
+                    constants.DRIVER_RACE_WINS_HEADER,
+                    "race_wins",
+                    "wins",
+                ),
                 MetricColumnSpec(constants.DRIVER_PODIUMS_HEADER, "podiums", "podiums"),
                 MetricColumnSpec(
                     constants.DRIVER_FASTEST_LAPS_HEADER,

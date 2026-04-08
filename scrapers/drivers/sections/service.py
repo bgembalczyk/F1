@@ -62,3 +62,8 @@ class DriverSectionExtractionService(BaseSectionExtractionService):
         section_meta["section_id"] = canonical_section_id
         metadata["section_metadata"] = section_meta
         return metadata
+
+
+__all__ = [
+    "DriverSectionExtractionService",
+]

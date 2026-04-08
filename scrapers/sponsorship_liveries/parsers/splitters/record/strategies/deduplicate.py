@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline_record import PipelineRecord
+from scrapers.sponsorship_liveries.parsers.splitters.record import PipelineRecord
 
 
 class DeduplicateRecordStrategy:
@@ -35,4 +35,4 @@ class DeduplicateRecordStrategy:
         return ("scalar", str(value))
 
 
-__all__ = ["DeduplicateRecordStrategy",]
+__all__ = ["DeduplicateRecordStrategy"]

@@ -6,7 +6,7 @@ from bs4 import Tag
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.base.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
+from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 from scrapers.base.source_catalog import ENGINES_LIST
 from scrapers.base.table import builders
 from scrapers.base.table.columns.types.column_factory import FloatColumn
@@ -14,7 +14,7 @@ from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.engines.columns.manufacturer_name_status import EngineManufacturerNameStatusColumn
+from scrapers.engines.columns import EngineManufacturerNameStatusColumn
 from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser

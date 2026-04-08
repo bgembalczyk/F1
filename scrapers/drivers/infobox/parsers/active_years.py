@@ -49,3 +49,6 @@ class ActiveYearsParser:
         return [
             {"year": year, "url": year_to_link.get(year)} for year in sorted(years_set)
         ]
+
+
+__all__ = ["ActiveYearsParser"]

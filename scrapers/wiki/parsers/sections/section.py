@@ -13,3 +13,6 @@ class SectionParser(BaseNestedSectionParser):
         element_parsers: WikiElementParsers | None = None,
     ) -> None:
         super().__init__(child_parser=SubSectionParser(element_parsers=element_parsers))
+
+
+__all__ = ["SectionParser"]

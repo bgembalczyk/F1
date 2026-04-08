@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import pytest
 
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns import types as col
+from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.dsl.column import ColumnRef
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.serialization import column_ref_payload

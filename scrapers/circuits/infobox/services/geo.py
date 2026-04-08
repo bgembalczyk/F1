@@ -182,3 +182,6 @@ class CircuitGeoParser(InfoboxTextUtils):
             result["acres"] = to_float(acres_match.group(1))
         if ha_match:
             result["hectares"] = to_float(ha_match.group(1))
+
+
+__all__ = ["CircuitGeoParser"]

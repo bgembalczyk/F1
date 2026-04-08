@@ -113,3 +113,6 @@ class CircuitEntityParser(CircuitTextProcessing):
         if links:
             return links[0].get("url") or text or None
         return text or None
+
+
+__all__ = ["CircuitEntityParser"]

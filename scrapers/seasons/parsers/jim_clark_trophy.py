@@ -34,3 +34,6 @@ class JimClarkTrophyParser:
             star_mark_note="insufficient_events_to_be_eligible",
             include_car_no_column=False,
         )
+
+
+__all__ = ["JimClarkTrophyParser"]

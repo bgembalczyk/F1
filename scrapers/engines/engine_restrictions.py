@@ -15,10 +15,10 @@ from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
-from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
-from scrapers.engines.columns.fuel_flow_rate import FuelFlowRateColumn
-from scrapers.engines.columns.fuel_injection_pressure_limit import FuelInjectionPressureLimitColumn
-from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
+from scrapers.engines.columns import EngineRpmLimitColumn
+from scrapers.engines.columns import FuelFlowRateColumn
+from scrapers.engines.columns import FuelInjectionPressureLimitColumn
+from scrapers.engines.columns import FuelLimitPerRaceColumn
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser

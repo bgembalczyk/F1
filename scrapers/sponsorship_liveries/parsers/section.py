@@ -19,8 +19,8 @@ from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
 from scrapers.sponsorship_liveries.helpers.constants import season_headers
-from scrapers.sponsorship_liveries.parsers.splitters.broader_scope import BroaderScopeSplitter
-from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.sponsorship_liveries.parsers import BroaderScopeSplitter
+from scrapers.sponsorship_liveries.parsers import SponsorshipRecordSplitter
 from scrapers.wiki.parsers.elements.table import TableParser
 
 if TYPE_CHECKING:
@@ -394,3 +394,9 @@ class SponsorshipSectionParser:
         except RuntimeError:
             return None
         return {"team": team, "liveries": liveries}
+
+
+__all__ = [
+    "SponsorshipTableParser",
+    "SponsorshipSectionParser",
+]

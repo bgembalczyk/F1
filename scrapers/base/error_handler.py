@@ -3,8 +3,8 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import TypeVar
 
-from scrapers.base.error_codes import resolve_error_code
 from scrapers.base import errors
+from scrapers.base.error_codes import resolve_error_code
 from scrapers.base.errors_report import ErrorReport
 from scrapers.base.errors_report import write_error_report
 from scrapers.base.errors_report import write_error_summary_by_code

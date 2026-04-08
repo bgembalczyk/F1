@@ -193,3 +193,6 @@ class CircuitSpecsParser(InfoboxTextUtils):
     # Backward-compatible alias kept for older tests/call-sites.
     def _parse_banking(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
         return self.parse_banking(row)
+
+
+__all__ = ["CircuitSpecsParser"]

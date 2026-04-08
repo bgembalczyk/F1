@@ -5,8 +5,8 @@ from typing import Any
 
 from models.mappers.field_aliases import FIELD_ALIASES
 from models.mappers.field_aliases import apply_field_aliases
-from models.records.factories.drivers_championships_factory import DriversChampionshipsRecordFactory
-from models.records.factories.helpers import normalize_optional_link_list_or_link_or_string
+from models.records.factories import DriversChampionshipsRecordFactory
+from models.records.factories import normalize_optional_link_list_or_link_or_string
 from models.records.factories.helpers import normalize_optional_link_or_string
 from models.records.field_normalizer import FieldNormalizer
 

@@ -12,3 +12,6 @@ class HeaderResolver:
         if headers:
             merged_headers.update(headers)
         return merged_headers
+
+
+__all__ = ["HeaderResolver"]

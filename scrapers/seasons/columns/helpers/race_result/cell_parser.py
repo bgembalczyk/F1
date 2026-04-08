@@ -11,9 +11,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constants import MARKS_RE
 from scrapers.base.table.columns.helpers.constants import SPLIT_RESULTS_RE
 from scrapers.seasons.columns.helpers.constants import SPRINT_POINTS_START_YEAR
-from scrapers.seasons.columns.helpers.race_result.superscript import (
-    SuperscriptParseResult,
-)
+from scrapers.seasons.columns.helpers.race_result import SuperscriptParseResult
 
 FOOTNOTE_RE = re.compile(r"\d+")
 LETTER_RE = re.compile(r"[A-Za-z]")

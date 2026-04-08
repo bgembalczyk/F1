@@ -6,8 +6,8 @@ from typing import cast
 
 from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.base.sections.service import BaseSectionExtractionService
-from scrapers.seasons.sections.mid_season_changes import SeasonMidSeasonChangesSectionParser
-from scrapers.seasons.sections.regulation_changes import SeasonRegulationChangesSectionParser
+from scrapers.seasons.sections import SeasonMidSeasonChangesSectionParser
+from scrapers.seasons.sections import SeasonRegulationChangesSectionParser
 from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 if TYPE_CHECKING:
@@ -53,3 +53,6 @@ class SeasonTextSectionExtractionService(BaseSectionExtractionService):
             "Regulation_changes": reg_changes,
             "Mid-season_changes": mid_changes,
         }
+
+
+__all__ = ["SeasonTextSectionExtractionService"]

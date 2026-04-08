@@ -14,3 +14,6 @@ class ConstructorSectionExtractionService(BaseSectionExtractionService):
 
     def build_entries(self) -> list[SectionAdapterEntry]:
         return constructor_section_entries()
+
+
+__all__ = ["ConstructorSectionExtractionService"]

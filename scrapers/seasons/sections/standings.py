@@ -42,3 +42,9 @@ class SeasonConstructorsStandingsSectionParser:
             source="wikipedia",
             extras={"kind": "table"},
         )
+
+
+__all__ = [
+    "SeasonConstructorsStandingsSectionParser",
+    "SeasonDriversStandingsSectionParser",
+]

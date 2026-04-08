@@ -75,3 +75,6 @@ class ConstructorScraperCompositionFactory:
             sections_service_factory=sections_service_factory,
             domain_record_service=domain_record_service,
         )
+
+
+__all__ = ["ConstructorScraperCompositionFactory", "ConstructorScraperDependencies"]

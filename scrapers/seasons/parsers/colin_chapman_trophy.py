@@ -37,3 +37,6 @@ class ColinChapmanTrophyParser:
         )
         # Apply the same merging logic as constructors standings
         return SeasonStandingsParser.merge_duplicate_constructors(records)
+
+
+__all__ = ["ColinChapmanTrophyParser"]

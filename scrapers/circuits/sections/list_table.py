@@ -1,9 +1,9 @@
 from scrapers.base.table.columns import types as col
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+from scrapers.circuits import constants
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
-from scrapers.circuits import constants
 from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 
 
@@ -47,7 +47,11 @@ TABLE_SCHEMA = TableSchemaDSL(
             LastLengthUsedColumn(),
         ),
         ColumnSpec(constants.CIRCUIT_TURNS_HEADER, "turns", col.IntColumn()),
-        ColumnSpec(constants.CIRCUIT_GRANDS_PRIX_HEADER, "grands_prix", col.LinksListColumn()),
+        ColumnSpec(
+            constants.CIRCUIT_GRANDS_PRIX_HEADER,
+            "grands_prix",
+            col.LinksListColumn(),
+        ),
         ColumnSpec(constants.CIRCUIT_SEASONS_HEADER, "seasons", col.SeasonsColumn()),
         ColumnSpec(
             constants.CIRCUIT_GRANDS_PRIX_HELD_HEADER,
