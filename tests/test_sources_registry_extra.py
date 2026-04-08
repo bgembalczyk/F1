@@ -6,8 +6,8 @@ import warnings
 import pytest
 
 from scrapers.wiki.sources_registry import WikiSourceDefinition
-from scrapers.wiki.sources_registry import _ensure_unique_or_raise
-from scrapers.wiki.sources_registry import _validate_canonical_source
+from scrapers.wiki.sources_registry import ensure_unique_or_raise
+from scrapers.wiki.sources_registry import validate_canonical_source
 from scrapers.wiki.sources_registry import get_source_by_list_filename
 from scrapers.wiki.sources_registry import get_source_by_seed_name
 from scrapers.wiki.sources_registry import get_source_by_source_name
@@ -95,13 +95,13 @@ class TestGetSourceBySourceName:
 class TestEnsureUniqueOrRaise:
     def test_adds_to_seen_when_not_present(self):
         seen: set[str] = set()
-        _ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
+        ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
         assert "drivers" in seen
 
     def test_raises_when_already_present(self):
         seen = {"drivers"}
         with pytest.raises(ValueError, match="dup"):
-            _ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
+            ensure_unique_or_raise(value="drivers", seen=seen, duplicate_message="dup")
 
 
 class TestValidateCanonicalSource:
@@ -113,7 +113,7 @@ class TestValidateCanonicalSource:
             output_file="test.json",
         )
         with pytest.raises(ValueError, match="Empty domain"):
-            _validate_canonical_source(
+            validate_canonical_source(
                 source=source,
                 seen_seed_names=set(),
                 seen_source_names=set(),
@@ -128,7 +128,7 @@ class TestValidateCanonicalSource:
             output_file="test.json",
         )
         with pytest.raises(ValueError, match="Empty domain"):
-            _validate_canonical_source(
+            validate_canonical_source(
                 source=source,
                 seen_seed_names=set(),
                 seen_source_names=set(),
@@ -143,7 +143,7 @@ class TestValidateCanonicalSource:
             output_file="drivers_alt.json",
         )
         with pytest.raises(ValueError, match="Duplicate canonical seed_name"):
-            _validate_canonical_source(
+            validate_canonical_source(
                 source=source,
                 seen_seed_names={"drivers"},
                 seen_source_names=set(),
@@ -158,7 +158,7 @@ class TestValidateCanonicalSource:
             output_file="drivers_new.json",
         )
         with pytest.raises(ValueError, match="Duplicate canonical source_name"):
-            _validate_canonical_source(
+            validate_canonical_source(
                 source=source,
                 seen_seed_names=set(),
                 seen_source_names={"drivers_existing"},
@@ -173,7 +173,7 @@ class TestValidateCanonicalSource:
             output_file="f1_drivers.json",
         )
         with pytest.raises(ValueError, match="Duplicate canonical list_filename"):
-            _validate_canonical_source(
+            validate_canonical_source(
                 source=source,
                 seen_seed_names=set(),
                 seen_source_names=set(),
@@ -189,7 +189,7 @@ class TestValidateCanonicalSource:
             output_file="drivers_new.json",
         )
         with pytest.raises(ValueError, match="naming conflict"):
-            _validate_canonical_source(
+            validate_canonical_source(
                 source=source,
                 seen_seed_names={"existing_seed"},
                 seen_source_names=set(),
@@ -212,7 +212,7 @@ class TestValidateLegacySeedAliases:
             {"drivers": object(), "drivers_current": object()},
         )
         with pytest.raises(ValueError, match="Legacy seed alias conflicts"):
-            reg._validate_legacy_seed_aliases()
+            reg.validate_legacy_seed_aliases()
 
     def test_raises_when_canonical_target_missing(self, monkeypatch):
         import scrapers.wiki.sources_registry as reg
@@ -228,7 +228,7 @@ class TestValidateLegacySeedAliases:
             {"drivers": object()},
         )
         with pytest.raises(ValueError, match="Legacy seed alias points to missing"):
-            reg._validate_legacy_seed_aliases()
+            reg.validate_legacy_seed_aliases()
 
 
 class TestValidateLegacyFilenameAliases:
@@ -246,7 +246,7 @@ class TestValidateLegacyFilenameAliases:
             {"f1_drivers.json": object(), "f1_drivers_new.json": object()},
         )
         with pytest.raises(ValueError, match="Legacy list filename alias conflicts"):
-            reg._validate_legacy_filename_aliases()
+            reg.validate_legacy_filename_aliases()
 
     def test_raises_when_canonical_target_missing(self, monkeypatch):
         import scrapers.wiki.sources_registry as reg
@@ -262,4 +262,4 @@ class TestValidateLegacyFilenameAliases:
             {"f1_drivers.json": object()},
         )
         with pytest.raises(ValueError, match="Legacy filename alias points to missing"):
-            reg._validate_legacy_filename_aliases()
+            reg.validate_legacy_filename_aliases()

@@ -4,7 +4,7 @@ import re
 from typing import TYPE_CHECKING
 from typing import Any
 
-from models.services import parse_seasons
+from models.services.season_service import parse_seasons
 from models.value_objects.season_ref import SeasonRef
 from scrapers.base.table.columns.types.base import BaseColumn
 

@@ -194,7 +194,7 @@ SPONSORSHIP_LIVERIES_SOURCE = SOURCE_BY_SEED_NAME["sponsorship_liveries"].list_f
 PRIVATEER_TEAMS_SOURCE = SOURCE_BY_SEED_NAME["constructors_privateer"].list_filename
 
 
-def _emit_deprecation_warning(kind: str, legacy: str, canonical: str) -> None:
+def emit_deprecation_warning(kind: str, legacy: str, canonical: str) -> None:
     message = (
         f"Legacy {kind} alias '{legacy}' is deprecated and "
         "will be removed in a future release; "
@@ -211,14 +211,14 @@ def _emit_deprecation_warning(kind: str, legacy: str, canonical: str) -> None:
 def resolve_seed_name(seed_name: str, *, warn: bool = True) -> str:
     canonical = LEGACY_SEED_NAME_ALIASES.get(seed_name, seed_name)
     if canonical != seed_name and warn:
-        _emit_deprecation_warning("seed_name", seed_name, canonical)
+        emit_deprecation_warning("seed_name", seed_name, canonical)
     return canonical
 
 
 def resolve_list_filename(list_filename: str, *, warn: bool = True) -> str:
     canonical = LEGACY_LIST_FILENAME_ALIASES.get(list_filename, list_filename)
     if canonical != list_filename and warn:
-        _emit_deprecation_warning("list filename", list_filename, canonical)
+        emit_deprecation_warning("list filename", list_filename, canonical)
     return canonical
 
 
@@ -262,18 +262,18 @@ def validate_sources_registry_consistency() -> None:
     seen_filenames: set[str] = set()
 
     for source in WIKI_SOURCE_DEFINITIONS:
-        _validate_canonical_source(
+        validate_canonical_source(
             source=source,
             seen_seed_names=seen_seed_names,
             seen_source_names=seen_source_names,
             seen_filenames=seen_filenames,
         )
 
-    _validate_legacy_seed_aliases()
-    _validate_legacy_filename_aliases()
+    validate_legacy_seed_aliases()
+    validate_legacy_filename_aliases()
 
 
-def _ensure_unique_or_raise(
+def ensure_unique_or_raise(
     *,
     value: str,
     seen: set[str],
@@ -284,7 +284,7 @@ def _ensure_unique_or_raise(
     seen.add(value)
 
 
-def _validate_canonical_source(
+def validate_canonical_source(
     *,
     source: WikiSourceDefinition,
     seen_seed_names: set[str],
@@ -294,7 +294,7 @@ def _validate_canonical_source(
     if source.domain.strip() == "":
         msg = f"Empty domain in wiki sources registry for seed: {source.seed_name}"
         raise ValueError(msg)
-    _ensure_unique_or_raise(
+    ensure_unique_or_raise(
         value=source.seed_name,
         seen=seen_seed_names,
         duplicate_message=(
@@ -302,7 +302,7 @@ def _validate_canonical_source(
             f"{source.seed_name}"
         ),
     )
-    _ensure_unique_or_raise(
+    ensure_unique_or_raise(
         value=source.source_name,
         seen=seen_source_names,
         duplicate_message=(
@@ -310,7 +310,7 @@ def _validate_canonical_source(
             f"{source.source_name}"
         ),
     )
-    _ensure_unique_or_raise(
+    ensure_unique_or_raise(
         value=source.output_file,
         seen=seen_filenames,
         duplicate_message=(
@@ -327,7 +327,7 @@ def _validate_canonical_source(
         raise ValueError(msg)
 
 
-def _validate_legacy_seed_aliases() -> None:
+def validate_legacy_seed_aliases() -> None:
     for legacy_seed_name, canonical_seed_name in LEGACY_SEED_NAME_ALIASES.items():
         if legacy_seed_name in SOURCE_BY_SEED_NAME:
             msg = (
@@ -343,7 +343,7 @@ def _validate_legacy_seed_aliases() -> None:
             raise ValueError(msg)
 
 
-def _validate_legacy_filename_aliases() -> None:
+def validate_legacy_filename_aliases() -> None:
     for legacy_filename, canonical_filename in LEGACY_LIST_FILENAME_ALIASES.items():
         if legacy_filename in SOURCE_BY_LIST_FILENAME:
             msg = (
@@ -363,31 +363,37 @@ validate_sources_registry_consistency()
 
 
 __all__ = [
-    "DRIVERS_SOURCE",
-    "DRIVER_FATALITIES_SOURCE",
-    "ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE",
-    "ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE",
-    "ENGINE_MANUFACTURERS_SOURCE",
-    "FEMALE_DRIVERS_SOURCE",
-    "FORMER_CONSTRUCTORS_SOURCE",
-    "INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE",
-    "INDIANAPOLIS_ONLY_ENGINES_SOURCE",
-    "LEGACY_LIST_FILENAME_ALIASES",
-    "LEGACY_SEED_NAME_ALIASES",
-    "PRIVATEER_TEAMS_SOURCE",
-    "RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE",
-    "RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE",
-    "SOURCE_BY_LIST_FILENAME",
+    "logger",
+    "WikiSourceDefinition",
+    "WIKI_SOURCE_DEFINITIONS",
     "SOURCE_BY_SEED_NAME",
     "SOURCE_BY_SOURCE_NAME",
-    "SPONSORSHIP_LIVERIES_SOURCE",
+    "SOURCE_BY_LIST_FILENAME",
+    "LEGACY_SEED_NAME_ALIASES",
+    "LEGACY_LIST_FILENAME_ALIASES",
+    "ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE",
+    "FORMER_CONSTRUCTORS_SOURCE",
+    "INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE",
     "TYRE_MANUFACTURERS_SOURCE",
-    "WIKI_SOURCE_DEFINITIONS",
-    "WikiSourceDefinition",
-    "get_source_by_list_filename",
-    "get_source_by_seed_name",
-    "get_source_by_source_name",
-    "resolve_list_filename",
+    "INDIANAPOLIS_ONLY_ENGINES_SOURCE",
+    "ENGINE_MANUFACTURERS_SOURCE",
+    "ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE",
+    "DRIVERS_SOURCE",
+    "FEMALE_DRIVERS_SOURCE",
+    "DRIVER_FATALITIES_SOURCE",
+    "RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE",
+    "RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE",
+    "SPONSORSHIP_LIVERIES_SOURCE",
+    "PRIVATEER_TEAMS_SOURCE",
+    "emit_deprecation_warning",
     "resolve_seed_name",
+    "resolve_list_filename",
+    "get_source_by_seed_name",
+    "get_source_by_list_filename",
+    "get_source_by_source_name",
     "validate_sources_registry_consistency",
+    "ensure_unique_or_raise",
+    "validate_canonical_source",
+    "validate_legacy_seed_aliases",
+    "validate_legacy_filename_aliases",
 ]

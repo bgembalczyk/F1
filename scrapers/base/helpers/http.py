@@ -39,23 +39,6 @@ def build_http_policy(
     )
 
 
-def resolve_http_policy(
-    options: "ScraperOptions",
-    *,
-    policy: HttpPolicy | None = None,
-) -> HttpPolicy:
-    base_policy = policy or options.http.policy
-    timeout = options.http.timeout
-    retries = options.http.retries
-    if timeout is None and retries is None:
-        return base_policy
-    return replace(
-        base_policy,
-        timeout=timeout if timeout is not None else base_policy.timeout,
-        retries=retries if retries is not None else base_policy.retries,
-    )
-
-
 def init_scraper_options(
     options: "ScraperOptions | None",
     *,

@@ -1,3 +1,4 @@
+# ruff: noqa: E402
 import json
 import sys
 from pathlib import Path
@@ -17,6 +18,10 @@ _ensure_requests_stub()
 from infrastructure.http_client.requests_shim.request_error import RequestError
 from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
+# ruff: noqa: E402
+from infrastructure.http_client.requests_shim.request_error import RequestError  # noqa: E402
+from scrapers.base.abc import ABCScraper  # noqa: E402
+from scrapers.base.error_handler import ErrorHandler  # noqa: E402
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ErrorBehavior
 from scrapers.base.errors import ScraperNetworkError
@@ -40,6 +45,15 @@ from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
+from tests.support.dependency_stubs import _ensure_bs4_stub
+from tests.support.dependency_stubs import _ensure_certifi_stub
+from tests.support.dependency_stubs import _ensure_pandas_stub
+from tests.support.dependency_stubs import _ensure_requests_stub
+
+_ensure_bs4_stub(require_bs4=False, bs4_skip_reason="")
+_ensure_certifi_stub()
+_ensure_pandas_stub()
+_ensure_requests_stub()
 
 RETRY_ATTEMPTS = 2
 

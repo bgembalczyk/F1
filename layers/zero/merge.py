@@ -53,6 +53,11 @@ from scrapers.wiki.sources_registry import TYRE_MANUFACTURERS_SOURCE
 from scrapers.wiki.sources_registry import get_source_by_seed_name
 from scrapers.wiki.sources_registry import resolve_list_filename
 from scrapers.wiki.sources_registry import validate_sources_registry_consistency
+from layers.zero.source_routing import iter_mergeable_domain_dirs
+from layers.zero.source_routing import load_domain_records
+from layers.zero.source_routing import write_merged_domain_records
+from scrapers.wiki import constants
+from scrapers.wiki import sources_registry
 
 RecordTransformHandler = Callable[
     [str, str, dict[str, object]],
@@ -103,11 +108,11 @@ def _sort_key_with_presence(value: object) -> tuple[int, str]:
 
 
 def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
-    return {key: value for key, value in record.items() if key in RED_FLAG_FIELDS}
+    return {key: value for key, value in record.items() if key in constants.RED_FLAG_FIELDS}
 
 
 def _pop_red_flag_fields(record: dict[str, object]) -> None:
-    for key in RED_FLAG_FIELDS:
+    for key in constants.RED_FLAG_FIELDS:
         record.pop(key, None)
 
 
@@ -115,7 +120,7 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
     if not isinstance(record, dict):
         return record
 
-    canonical_source_name = resolve_list_filename(source_name)
+    canonical_source_name = sources_registry.resolve_list_filename(source_name)
     transformed = dict(record)
     for handler in _resolve_record_transform_handlers(domain, canonical_source_name):
         transformed = handler(domain, canonical_source_name, transformed)
@@ -190,23 +195,23 @@ def _races_domain_handler(
 
 
 DEFAULT_SOURCE_PIPELINE = "*"
-ENGINE_REGULATIONS_SOURCE = get_source_by_seed_name(
+ENGINE_REGULATIONS_SOURCE = sources_registry.get_source_by_seed_name(
     "engines_regulations",
     warn=False,
 ).list_filename
-ENGINE_RESTRICTIONS_SOURCE = get_source_by_seed_name(
+ENGINE_RESTRICTIONS_SOURCE = sources_registry.get_source_by_seed_name(
     "engines_restrictions",
     warn=False,
 ).list_filename
-POINTS_SCORING_SYSTEM_SOURCE = get_source_by_seed_name(
+POINTS_SCORING_SYSTEM_SOURCE = sources_registry.get_source_by_seed_name(
     "points_history",
     warn=False,
 ).list_filename
-POINTS_SCORING_SYSTEM_SHORTENED_SOURCE = get_source_by_seed_name(
+POINTS_SCORING_SYSTEM_SHORTENED_SOURCE = sources_registry.get_source_by_seed_name(
     "points_shortened",
     warn=False,
 ).list_filename
-POINTS_SCORING_SYSTEM_SPRINT_SOURCE = get_source_by_seed_name(
+POINTS_SCORING_SYSTEM_SPRINT_SOURCE = sources_registry.get_source_by_seed_name(
     "points_sprint",
     warn=False,
 ).list_filename
@@ -233,7 +238,7 @@ def _normalize_race_records(records: list[object]) -> list[object]:
 DOMAIN_PIPELINE_CONFIGS: dict[str, DomainPipelineConfig] = {
     "*": DomainPipelineConfig(
         transformers={
-            TYRE_MANUFACTURERS_SOURCE: (_tyre_manufacturers_handler,),
+            sources_registry.TYRE_MANUFACTURERS_SOURCE: (_tyre_manufacturers_handler,),
         },
     ),
     "constructors": DomainPipelineConfig(
@@ -270,7 +275,7 @@ DOMAIN_PIPELINE_CONFIGS: dict[str, DomainPipelineConfig] = {
     ),
 }
 
-validate_sources_registry_consistency()
+sources_registry.validate_sources_registry_consistency()
 
 
 def _resolve_record_transform_handlers(
@@ -301,7 +306,7 @@ def _transform_tyre_manufacturers(
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    if source_name != TYRE_MANUFACTURERS_SOURCE:
+    if source_name != sources_registry.TYRE_MANUFACTURERS_SOURCE:
         return transformed
 
     if "manufacturers" in transformed:
@@ -317,13 +322,13 @@ def _transform_constructor_domain(
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    constructor_domains = CHASSIS_CONSTRUCTOR_DOMAINS | {"constructor", "chassis"}
+    constructor_domains = constants.CHASSIS_CONSTRUCTOR_DOMAINS | {"constructor", "chassis"}
     if domain not in constructor_domains:
         return transformed
 
-    if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
+    if source_name == sources_registry.INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
         return _transform_indianapolis_only_constructor(transformed)
-    if source_name == FORMER_CONSTRUCTORS_SOURCE:
+    if source_name == sources_registry.FORMER_CONSTRUCTORS_SOURCE:
         return _transform_former_constructor(domain, transformed)
     if domain in {"chassis_constructors", "chassis", "constructor"} and re.fullmatch(
         r"f1_constructors_\d{4}\.json",
@@ -331,7 +336,7 @@ def _transform_constructor_domain(
     ):
         return _transform_chassis_constructor_from_current_constructors(transformed)
 
-    constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
+    constructor_fields = set(constants.CONSTRUCTORS_FORMULA_ONE_FIELDS)
     if domain == "constructors" and re.fullmatch(
         r"f1_constructors_\d{4}\.json",
         source_name,
@@ -422,7 +427,7 @@ def _transform_former_constructor(
 def _ensure_constructor_status(transformed: dict[str, object]) -> None:
     if "racing_series" not in transformed:
         transformed["status"] = CONSTRUCTOR_STATUS_ACTIVE
-        transformed["series"] = FORMULA_ONE_SERIES.copy()
+        transformed["series"] = constants.FORMULA_ONE_SERIES.copy()
         return
 
     racing_series = transformed.get("racing_series")
@@ -439,9 +444,9 @@ def _transform_circuits_domain(
 ) -> dict[str, object]:
     if domain != "circuits":
         return transformed
-    _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
+    _move_fields_to_formula_one(transformed, constants.CIRCUITS_FORMULA_ONE_FIELDS)
     if "racing_series" not in transformed:
-        transformed["series"] = FORMULA_ONE_SERIES.copy()
+        transformed["series"] = constants.FORMULA_ONE_SERIES.copy()
     return transformed
 
 
@@ -460,8 +465,8 @@ def _transform_engines_domain(
             transformed["engine_constructor"] = transformed.pop("engine_manufacturer")
 
     if source_name in (
-        INDIANAPOLIS_ONLY_ENGINES_SOURCE,
-        ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE,
+        sources_registry.INDIANAPOLIS_ONLY_ENGINES_SOURCE,
+        sources_registry.ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE,
     ):
         transformed["racing_series"] = {
             "AAA_national_championship": [],
@@ -470,8 +475,8 @@ def _transform_engines_domain(
                 "indianapolis_only": True,
             },
         }
-    elif source_name == ENGINE_MANUFACTURERS_SOURCE:
-        _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
+    elif source_name == sources_registry.ENGINE_MANUFACTURERS_SOURCE:
+        _move_fields_to_formula_one(transformed, constants.ENGINES_FORMULA_ONE_FIELDS)
     return transformed
 
 
@@ -480,7 +485,7 @@ def _transform_grands_prix_domain(
     transformed: dict[str, object],
 ) -> dict[str, object]:
     if domain == "grands_prix":
-        _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
+        _move_fields_to_formula_one(transformed, constants.GRANDS_PRIX_FORMULA_ONE_FIELDS)
     return transformed
 
 
@@ -493,11 +498,11 @@ def _transform_teams_domain(
         return transformed
     if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
         transformed = _transform_teams_from_current_constructors(transformed)
-    if source_name == SPONSORSHIP_LIVERIES_SOURCE and "liveries" in transformed:
+    if source_name == sources_registry.SPONSORSHIP_LIVERIES_SOURCE and "liveries" in transformed:
         transformed["racing_series"] = _build_racing_series(
             {"liveries": transformed.pop("liveries")},
         )
-    if source_name == PRIVATEER_TEAMS_SOURCE:
+    if source_name == sources_registry.PRIVATEER_TEAMS_SOURCE:
         formula_one = {
             key: transformed.pop(key) for key in ("seasons",) if key in transformed
         }
@@ -549,11 +554,11 @@ def _transform_drivers_domain(
     if domain != "drivers":
         return transformed
     _normalize_driver_entry_start_fields(transformed)
-    if source_name == DRIVERS_SOURCE:
+    if source_name == sources_registry.DRIVERS_SOURCE:
         return _transform_f1_driver(transformed)
-    if source_name == FEMALE_DRIVERS_SOURCE:
+    if source_name == sources_registry.FEMALE_DRIVERS_SOURCE:
         return _transform_female_driver(transformed)
-    if source_name == DRIVER_FATALITIES_SOURCE:
+    if source_name == sources_registry.DRIVER_FATALITIES_SOURCE:
         _attach_driver_death_data(transformed)
     return transformed
 
@@ -611,9 +616,9 @@ def _transform_races_domain(
 ) -> dict[str, object]:
     if domain != "races":
         return transformed
-    if source_name == RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE:
+    if source_name == sources_registry.RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE:
         transformed["championship"] = True
-    if source_name == RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE:
+    if source_name == sources_registry.RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE:
         transformed["championship"] = False
     transformed["red_flag"] = _extract_red_flag(transformed)
     _pop_red_flag_fields(transformed)
@@ -677,7 +682,7 @@ def _expand_season_records(
         return [record]
 
     payload_key = _season_payload_key(source_name)
-    is_tyre_source = source_name == TYRE_MANUFACTURERS_SOURCE
+    is_tyre_source = source_name == sources_registry.TYRE_MANUFACTURERS_SOURCE
     if not is_tyre_source and payload_key is None:
         return [record]
 
@@ -744,8 +749,8 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
 
     resolver = PathResolver(layer_zero_root=layer_zero_dir)
 
-    for domain_dir in _iter_domain_dirs(layer_zero_dir, resolver):
-        merged_records = _load_records(
+    for domain_dir in iter_mergeable_domain_dirs(layer_zero_dir, resolver):
+        merged_records = load_domain_records(
             domain_dir,
             resolver,
             transform_records=_iter_transformed_records,
@@ -753,4 +758,4 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
         if not merged_records:
             continue
         merged_records = _post_process_domain_records(domain_dir.name, merged_records)
-        _write_merged_records(domain_dir, merged_records, resolver)
+        write_merged_domain_records(domain_dir, merged_records, resolver)

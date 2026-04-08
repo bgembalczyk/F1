@@ -1,6 +1,6 @@
 """Focused tests for `to` year-range parsing in season service."""
 
-from models.services import parse_seasons
+from models.services.season_service import parse_seasons
 
 
 def test_season_service_to_range() -> None:
