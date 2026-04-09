@@ -1,8 +1,8 @@
 from typing import Any
 
-from scrapers.seasons.columns_seasons.helpers.constants import FATAL_NOTES_START_YEAR
-from scrapers.seasons.columns_seasons.helpers.race_result.helpers import append_note
-from scrapers.seasons.columns_seasons.helpers.race_result.rules.context import ResultRuleContext
+from scrapers.columns.helpers.constants import FATAL_NOTES_START_YEAR
+from scrapers.columns.helpers.race_result.helpers import append_note
+from scrapers.columns.helpers.race_result.rules.context import ResultRuleContext
 
 
 class FatalAccidentRule:

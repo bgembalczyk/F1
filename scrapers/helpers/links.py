@@ -8,11 +8,11 @@ from bs4 import Tag
 
 from models.records.link import LinkRecord
 from models.value_objects.helpers import validate_link
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.helpers.text import strip_marks
-from scrapers.base.helpers.text_normalization import is_language_link
-from scrapers.base.helpers.wiki import is_reference_link
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
+from scrapers.helpers.text import clean_wiki_text
+from scrapers.helpers.text import strip_marks
+from scrapers.helpers.text_normalization import is_language_link
+from scrapers.helpers.wiki import is_reference_link
+from scrapers.helpers.wiki import is_wikipedia_redlink
 
 
 def empty_link_record(*, drop_empty: bool) -> LinkRecord | None:

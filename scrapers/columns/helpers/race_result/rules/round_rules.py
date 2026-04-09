@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Any
 from typing import Protocol
 
-from scrapers.seasons.columns_seasons.helpers.constants import DOUBLE_POINTS_SEASON_YEAR
+from scrapers.columns.helpers.constants import DOUBLE_POINTS_SEASON_YEAR
 
 
 @dataclass(frozen=True)

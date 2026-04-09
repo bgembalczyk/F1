@@ -5,10 +5,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import TypeVar
 
-from scrapers.base.constants import patterns
-
-if TYPE_CHECKING:
-    from scrapers.base.table.columns.context import ColumnContext
+from scrapers.constants import patterns
 
 T = TypeVar("T")
 

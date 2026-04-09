@@ -7,9 +7,9 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.helpers.constants import HEADING_AND_TABLE_TAGS
-from scrapers.base.helpers.constants import HEADING_TAGS
-from scrapers.base.sections.aliases import DOMAIN_SECTION_ALIASES
+from scrapers.helpers.constants import HEADING_AND_TABLE_TAGS
+from scrapers.helpers.constants import HEADING_TAGS
+from scrapers.sections.aliases import DOMAIN_SECTION_ALIASES
 from scrapers.wiki.parsers.sections.detection import find_section_heading
 
 

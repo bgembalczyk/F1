@@ -5,16 +5,15 @@ from typing import Any
 from bs4 import NavigableString
 from bs4 import Tag
 
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.helpers.text import strip_marks
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.constants import MARKS_RE
-from scrapers.base.table.columns.helpers.constants import SPLIT_RESULTS_RE
-from scrapers.seasons.columns_seasons.helpers.constants import SPRINT_POINTS_START_YEAR
-from scrapers.seasons.columns_seasons.helpers.race_result import SuperscriptParseResult
-
-FOOTNOTE_RE = re.compile(r"\d+")
-LETTER_RE = re.compile(r"[A-Za-z]")
+from scrapers.columns.helpers.constants import FOOTNOTE_RE
+from scrapers.columns.helpers.constants import LETTER_RE
+from scrapers.columns.helpers.constants import SPRINT_POINTS_START_YEAR
+from scrapers.columns.helpers.race_result.superscript import SuperscriptParseResult
+from scrapers.helpers.text import clean_wiki_text
+from scrapers.helpers.text import strip_marks
+from scrapers.table.columns_table.context import ColumnContext
+from scrapers.table.columns_table.helpers.constants import MARKS_RE
+from scrapers.table.columns_table.helpers.constants import SPLIT_RESULTS_RE
 
 
 class RaceResultCellParser:

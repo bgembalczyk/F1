@@ -9,7 +9,7 @@ from typing import Any
 
 from models.value_objects.date.base import DateValue
 from models.value_objects.normalized_time import NormalizedTime
-from scrapers.base.helpers import constants
+from scrapers.helpers import constants
 
 
 def extract_time_value(value: Any) -> tuple[str | None, float | None]:
@@ -148,7 +148,7 @@ def parse_date_text(text: str) -> DateValue:
 
     iso_full = constants.DATE_ISO_FULL_RE.findall(stripped)
     iso_month = constants.DATE_ISO_MONTH_RE.findall(stripped)
-    years = constants.YEAR_RE.findall(stripped)
+    years = constants.YEAR_RE_SPONSOR.findall(stripped)
 
     iso: str | list[str] | None = None
     if iso_full:

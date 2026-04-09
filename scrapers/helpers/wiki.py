@@ -3,8 +3,8 @@
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.helpers.text_normalization import is_language_link
+from scrapers.helpers.text import clean_wiki_text
+from scrapers.helpers.text_normalization import is_language_link
 
 
 def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:

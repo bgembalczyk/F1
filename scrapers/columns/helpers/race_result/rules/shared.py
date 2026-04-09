@@ -1,11 +1,11 @@
 from typing import Any
 
-from scrapers.seasons.columns_seasons.helpers.constants import SHARED_DRIVE_NO_POINTS_END_YEAR
-from scrapers.seasons.columns_seasons.helpers.constants import SHARED_DRIVE_NO_POINTS_START_YEAR
-from scrapers.seasons.columns_seasons.helpers.constants import SHARED_DRIVE_POINTS_END_YEAR
-from scrapers.seasons.columns_seasons.helpers.constants import SHARED_DRIVE_POINTS_START_YEAR
-from scrapers.seasons.columns_seasons.helpers.race_result.helpers import append_note
-from scrapers.seasons.columns_seasons.helpers.race_result.rules.context import ResultRuleContext
+from scrapers.columns.helpers.constants import SHARED_DRIVE_NO_POINTS_END_YEAR
+from scrapers.columns.helpers.constants import SHARED_DRIVE_NO_POINTS_START_YEAR
+from scrapers.columns.helpers.constants import SHARED_DRIVE_POINTS_END_YEAR
+from scrapers.columns.helpers.constants import SHARED_DRIVE_POINTS_START_YEAR
+from scrapers.columns.helpers.race_result.helpers import append_note
+from scrapers.columns.helpers.race_result.rules.context import ResultRuleContext
 
 
 class SharedDriveRule:

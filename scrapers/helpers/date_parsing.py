@@ -1,7 +1,6 @@
 """Utilities for parsing date fields with formula category markers."""
-
-from scrapers.base.helpers.time import parse_date_text
-from scrapers.base.table.columns.context import ColumnContext
+from scrapers.columns.context import ColumnContext
+from scrapers.helpers.time import parse_date_text
 
 
 def parse_date_with_category_marker(

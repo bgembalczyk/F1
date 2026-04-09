@@ -1,9 +1,9 @@
 from typing import Any
 
-from scrapers.base.helpers.common_config import ScraperCommonConfig
-from scrapers.base.options import ScraperOptions
-from scrapers.base.pipeline_profiles import apply_scraper_pipeline_bindings
-from scrapers.base.pipeline_profiles import resolve_profile_config
+from scrapers.common_config import ScraperCommonConfig
+from scrapers.options import ScraperOptions
+from scrapers.pipeline_profiles import apply_scraper_pipeline_bindings
+from scrapers.pipeline_profiles import resolve_profile_config
 
 DEFAULT_CONFIG_PROFILE = "seed_soft"
 

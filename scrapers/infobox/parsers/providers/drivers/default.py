@@ -1,0 +1,57 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Protocol
+
+from scrapers.infobox.parsers.bundles.driver import DriverInfoboxParserBundle
+from scrapers.infobox.parsers.drivers.career import InfoboxCareerParser
+from scrapers.infobox.parsers.drivers.cell import InfoboxCellParser
+from scrapers.infobox.parsers.drivers.title import InfoboxTitlesParser
+from scrapers.infobox.parsers.general import InfoboxGeneralParser
+from scrapers.infobox.parsers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.parsers.section_collector import InfoboxSectionCollector
+from scrapers.infobox.section_discovery import InfoboxSectionDiscovery
+
+
+class DefaultDriverInfoboxParserProvider:
+    def __init__(
+        self,
+        *,
+        section_discovery: InfoboxSectionDiscovery | None = None,
+    ) -> None:
+        self._section_discovery = section_discovery or InfoboxSectionCollector()
+
+    def build(
+        self,
+        *,
+        include_urls: bool,
+        wikipedia_base: str,
+        schema: object,
+        logger: object,
+    ) -> DriverInfoboxParserBundle:
+        link_extractor = InfoboxLinkExtractor(
+            include_urls=include_urls,
+            wikipedia_base=wikipedia_base,
+        )
+        cell_parser = InfoboxCellParser(
+            include_urls=include_urls,
+            link_extractor=link_extractor,
+        )
+        general_parser = InfoboxGeneralParser(
+            include_urls=include_urls,
+            link_extractor=link_extractor,
+            schema=schema,
+            logger=logger,
+        )
+        titles_parser = InfoboxTitlesParser(link_extractor)
+        career_parser = InfoboxCareerParser(cell_parser)
+        return DriverInfoboxParserBundle(
+            link_extractor=link_extractor,
+            cell_parser=cell_parser,
+            general_parser=general_parser,
+            titles_parser=titles_parser,
+            career_parser=career_parser,
+            section_discovery=self._section_discovery,
+        )
+
+

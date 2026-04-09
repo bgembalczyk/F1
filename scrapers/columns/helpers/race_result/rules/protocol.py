@@ -1,7 +1,7 @@
 from typing import Any
 from typing import Protocol
 
-from scrapers.seasons.columns_seasons.helpers.race_result.rules.context import ResultRuleContext
+from scrapers.columns.helpers.race_result.rules.context import ResultRuleContext
 
 
 class ResultRule(Protocol):

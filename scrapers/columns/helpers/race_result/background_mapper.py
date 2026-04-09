@@ -1,6 +1,6 @@
 import re
 
-from scrapers.seasons.columns_seasons.helpers.constants import SHORT_HEX_COLOR_LENGTH
+from scrapers.columns.helpers.constants import SHORT_HEX_COLOR_LENGTH
 
 
 class RaceResultBackgroundMapper:

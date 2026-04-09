@@ -5,10 +5,10 @@ from typing import Protocol
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.infobox.extraction.result import InfoboxExtractionResult
-from scrapers.base.infobox.extraction.result import ParserInputT
-from scrapers.base.options import ScraperOptions
-from scrapers.base.parsers.soup import SoupParser
+from scrapers.infobox.extraction.result import InfoboxExtractionResult
+from scrapers.infobox.extraction.result import ParserInputT
+from scrapers.options import ScraperOptions
+from scrapers.parsers.soup import SoupParser
 
 
 class InfoboxExtractor(Protocol, Generic[ParserInputT]):

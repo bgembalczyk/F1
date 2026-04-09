@@ -1,8 +1,8 @@
 from collections.abc import Sequence
 from typing import Any
 
-from scrapers.base.normalization_pipeline import NormalizationPlugin
-from scrapers.base.normalization_pipeline import normalize_value
+from scrapers.normalization_pipeline import NormalizationPlugin
+from scrapers.normalization_pipeline import normalize_value
 
 
 def normalize_auto_value(

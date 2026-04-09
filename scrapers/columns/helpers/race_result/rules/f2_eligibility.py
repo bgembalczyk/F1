@@ -1,8 +1,8 @@
 from typing import Any
 
-from scrapers.seasons.columns_seasons.helpers.constants import F2_INELIGIBLE_YEARS
-from scrapers.seasons.columns_seasons.helpers.race_result.helpers import append_note
-from scrapers.seasons.columns_seasons.helpers.race_result.rules.context import ResultRuleContext
+from scrapers.columns.helpers.constants import F2_INELIGIBLE_YEARS
+from scrapers.columns.helpers.race_result.helpers import append_note
+from scrapers.columns.helpers.race_result.rules.context import ResultRuleContext
 
 
 class F2EligibilityRule:

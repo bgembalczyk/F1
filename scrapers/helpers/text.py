@@ -5,9 +5,10 @@ from collections.abc import Callable
 
 from bs4 import Tag
 
-from scrapers.base.helpers.constants import LANG_SUFFIX_NO_PAREN_RE
-from scrapers.base.helpers.constants import LANG_SUFFIX_PAREN_RE
-from scrapers.base.helpers.constants import REF_RE
+from scrapers.helpers.constants import LANG_SUFFIX_NO_PAREN_RE
+from scrapers.helpers.constants import LANG_SUFFIX_PAREN_RE
+from scrapers.helpers.constants import REF_RE
+from scrapers.helpers.links import normalize_links
 
 
 def coerce_text(text: str | Tag | None) -> str:
@@ -132,7 +133,6 @@ def extract_links_from_cell(
 ) -> list[dict[str, str | None]]:
     """Backward-compatible helper for extracting normalized links from table cells."""
     # di-antipattern-allow: local import by design.
-    from scrapers.base.helpers.links import normalize_links
 
     return normalize_links(
         cell,

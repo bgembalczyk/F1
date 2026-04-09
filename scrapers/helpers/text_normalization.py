@@ -4,10 +4,10 @@ import re
 from typing import Any
 
 from models.services.helpers import prune_empty
-from scrapers.base.helpers.constants import LANG_CODES
-from scrapers.base.helpers.constants import NON_ALPHANUM_PATTERN
-from scrapers.base.helpers.constants import UNDERSCORE_PATTERN
-from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.helpers.constants import LANG_CODES
+from scrapers.helpers.constants import NON_ALPHANUM_PATTERN
+from scrapers.helpers.constants import UNDERSCORE_PATTERN
+from scrapers.helpers.text import clean_wiki_text
 from validation.validator_base import ExportRecord
 
 
