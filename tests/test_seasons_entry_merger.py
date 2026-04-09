@@ -1,5 +1,5 @@
 # ruff: noqa: SLF001
-from scrapers.seasons.parsers.entry_merger import EntryMerger
+from scrapers.seasons.parsers_seasons.entry_merger import EntryMerger
 
 EXPECTED_TWO_ITEMS = 2
 LEWIS_NUMBER = 44

@@ -1,5 +1,5 @@
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.engines.columns.nested_unit_list import NestedUnitListColumn
+from scrapers.engines.columns_engines.nested_unit_list import NestedUnitListColumn
 
 
 def ctx(text: str, *, model_fields=None) -> ColumnContext:

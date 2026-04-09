@@ -5,7 +5,7 @@ from pathlib import Path
 
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
-from scrapers.drivers.list_scraper import F1DriversListScraper
+from scrapers.drivers.list_scraper_drivers import F1DriversListScraper
 from tests.support.dependency_stubs import ensure_optional_deps
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]

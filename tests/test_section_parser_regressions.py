@@ -7,10 +7,10 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.seasons import LAST_YEAR_FORMULA_ONE_SEASON
 from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
 from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
-from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser
-from scrapers.seasons.parsers.results import SeasonResultsParser
-from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.constructors.constructors_sections.list_section import CurrentConstructorsSectionParser
+from scrapers.constructors.constructors_sections.list_section import FormerConstructorsSectionParser
+from scrapers.seasons.parsers_seasons.results import SeasonResultsParser
+from scrapers.seasons.parsers_seasons.table import SeasonTableParser
 from tests._section_parser_fixture_pattern import ALIAS_FIXTURES
 
 ALIAS_DOMAINS = ("constructors", "circuits", "seasons")

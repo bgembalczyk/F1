@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 """Tests for GrandPrixScopeParser covering uncovered lines."""
 
-from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
+from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.grand_prix_scope import GrandPrixScopeParser
 
 
 class TestParamsContainOnlyYearsOrGrandPrix:
@@ -82,7 +82,7 @@ class TestParseGrandPrixScope:
 
 class TestConsumesScopeParam:
     def test_year_param_is_skipped(self):
-        from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import (
+        from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.scope_accumulators.grand_prix_scope import (
             GrandPrixScopeAccumulator,
         )
 
@@ -92,7 +92,7 @@ class TestConsumesScopeParam:
         assert not acc.invalid
 
     def test_non_gp_text_marks_invalid(self):
-        from scrapers.sponsorship_liveries.parsers.scope_accumulators.grand_prix_scope import (
+        from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.scope_accumulators.grand_prix_scope import (
             GrandPrixScopeAccumulator,
         )
 

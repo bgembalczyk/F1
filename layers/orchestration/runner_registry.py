@@ -13,9 +13,9 @@ from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.circuits.circuits_helpers.export import export_complete_circuits
 from scrapers.constructors.constructors_helpers.export import export_complete_constructors
-from scrapers.drivers.helpers.export import export_complete_drivers
-from scrapers.engines.helpers.export import export_complete_engine_manufacturers
-from scrapers.seasons.helpers import export_complete_seasons
+from scrapers.drivers.drivers_helpers.export import export_complete_drivers
+from scrapers.engines.helpers_engines.export import export_complete_engine_manufacturers
+from scrapers.seasons.helpers_seasons import export_complete_seasons
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:

@@ -17,15 +17,15 @@ from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordDTO
 from scrapers.circuits.circuits_sections.service import CircuitSectionExtractionService
-from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
-from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
-from scrapers.constructors.sections.service import ConstructorSectionExtractionService
-from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
-from scrapers.drivers.postprocess.assembler import DriverRecordDTO
-from scrapers.drivers.sections.service import DriverSectionExtractionService
-from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
-from scrapers.seasons.postprocess.assembler import SeasonRecordSections
-from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
+from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordAssembler
+from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordDTO
+from scrapers.constructors.constructors_sections.service import ConstructorSectionExtractionService
+from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
+from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
+from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
+from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
+from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
+from scrapers.seasons.sections_seasons.service import SeasonTextSectionExtractionService
 
 if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol

@@ -5,7 +5,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.infobox.scraper import DriverInfoboxParser
+from scrapers.drivers.drivers_infobox.scraper import DriverInfoboxParser
 from tests.support.driver_infobox_assertions import assert_career_parsed
 
 EXPECTED_NATIONALITY_COUNT = 1

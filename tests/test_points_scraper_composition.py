@@ -1,10 +1,10 @@
 # ruff: noqa: SLF001
 from bs4 import BeautifulSoup
 
-from scrapers.points.parsers import PointsScoringSystemsSectionParser
-from scrapers.points.parsers import ShortenedRacesSubSubSectionParser
-from scrapers.points.parsers import SpecialCasesSubSectionParser
-from scrapers.points.parsers import SprintRacesSubSubSectionParser
+from scrapers.points.parsers_points import PointsScoringSystemsSectionParser
+from scrapers.points.parsers_points import ShortenedRacesSubSubSectionParser
+from scrapers.points.parsers_points import SpecialCasesSubSectionParser
+from scrapers.points.parsers_points import SprintRacesSubSubSectionParser
 from scrapers.points.points_scraper import PointsScraper
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 
@@ -105,8 +105,8 @@ def test_points_scraper_legacy_sprint_extractor_reads_sprint_races_section() -> 
 
 
 def test_sprint_parser_does_not_match_history_table() -> None:
-    from scrapers.points.constants import HISTORICAL_POSITIONS
-    from scrapers.points.parsers import SprintPointsTableParser
+    from scrapers.points.constants_points import HISTORICAL_POSITIONS
+    from scrapers.points.parsers_points import SprintPointsTableParser
 
     parser = SprintPointsTableParser()
     history_headers = [

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.grands_prix.columns.circuit_location import LocationColumn
+from scrapers.grands_prix.columns_grands_prix.circuit_location import LocationColumn
 
 
 def ctx(

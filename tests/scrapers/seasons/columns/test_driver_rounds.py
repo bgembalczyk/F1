@@ -3,7 +3,7 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
+from scrapers.seasons.columns_seasons.driver_rounds import DriversWithRoundsColumn
 
 
 def ctx(html: str | None, links: list[dict] | None = None) -> ColumnContext:

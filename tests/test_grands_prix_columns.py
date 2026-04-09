@@ -1,7 +1,7 @@
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
-from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
-from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
+from scrapers.grands_prix.columns_grands_prix.constructor_split import ConstructorSplitColumn
+from scrapers.grands_prix.columns_grands_prix.race_title_status import RaceTitleStatusColumn
 
 
 def ctx(raw_text: str, *, clean_text: str | None = None) -> ColumnContext:

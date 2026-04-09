@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from scrapers.seasons.list_scraper import SeasonsSectionParser
-from scrapers.seasons.list_scraper import SeasonsTableParser
+from scrapers.seasons.list_scraper_seasons import SeasonsSectionParser
+from scrapers.seasons.list_scraper_seasons import SeasonsTableParser
 
 
 def test_seasons_table_parser_matches_minimal_required_headers() -> None:

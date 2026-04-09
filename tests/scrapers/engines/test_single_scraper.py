@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
+from scrapers.engines.single_scraper_engines import SingleEngineManufacturerScraper
 
 
 def _soup(html: str) -> BeautifulSoup:

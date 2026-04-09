@@ -2,8 +2,8 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.seasons.parsers.results import SeasonResultsParser
-from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.seasons.parsers_seasons.results import SeasonResultsParser
+from scrapers.seasons.parsers_seasons.table import SeasonTableParser
 from scrapers.wiki.parsers.content_text import ContentTextParser
 from scrapers.wiki.parsers.sections.adapter import collect_section_elements
 from scrapers.wiki.parsers.sections.adapter import find_section_tree

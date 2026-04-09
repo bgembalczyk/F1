@@ -1,5 +1,5 @@
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.engines.columns.nested_text import NestedTextColumn
+from scrapers.engines.columns_engines.nested_text import NestedTextColumn
 
 
 def ctx(*, key: str = "fuel", clean_text: str = "Petrol", model_fields=None):

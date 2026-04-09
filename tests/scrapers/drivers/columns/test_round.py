@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.drivers.columns.round import RoundColumn
+from scrapers.drivers.drivers_columns.round import RoundColumn
 
 
 def ctx(html: str, *, links: list[dict] | None = None) -> ColumnContext:

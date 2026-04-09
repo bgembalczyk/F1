@@ -1,9 +1,9 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.seasons.parsers import constants
-from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
-from scrapers.seasons.services.domain_parsing_policy import TestingVenuesLayout
+from scrapers.seasons.parsers_seasons import constants
+from scrapers.seasons.services_seasons.domain_parsing_policy import DomainParsingPolicy
+from scrapers.seasons.services_seasons.domain_parsing_policy import TestingVenuesLayout
 
 
 @pytest.fixture()

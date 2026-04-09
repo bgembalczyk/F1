@@ -323,7 +323,7 @@ def test_parse_year_range_handles_edge_cases() -> None:
 
 
 def test_year_parser_uses_domain_range_rules() -> None:
-    from scrapers.drivers.infobox.parsers.year import YearParser
+    from scrapers.drivers.drivers_infobox.parsers.year import YearParser
 
     assert YearParser.parse_year_range("2019 onwards") == {"start": 2019, "end": None}
     assert YearParser.parse_year_range("2007—2005") == {"start": 2005, "end": 2007}

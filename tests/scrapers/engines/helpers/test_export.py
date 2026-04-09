@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from scrapers.engines.helpers import export as export_mod
+from scrapers.engines.helpers_engines import export as export_mod
 
 
 def test_manufacturer_name_initial_handles_text_dict_and_fallback() -> None:

@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 
-from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
+from scrapers.grands_prix.single_scraper_grands_prix import F1SingleGrandPrixScraper
 
 
 def soup_without_grand_prix_markers() -> BeautifulSoup:

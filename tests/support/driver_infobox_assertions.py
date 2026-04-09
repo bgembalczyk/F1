@@ -4,7 +4,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
+from scrapers.drivers.drivers_infobox.parsers.car_numbers import CarNumbersParser
 
 EXPECTED_RECORDS_COUNT = 2
 FIRST_NUMBER = 27

@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.seasons.parsers.standings import SeasonStandingsParser
+from scrapers.seasons.parsers_seasons.standings import SeasonStandingsParser
 
 
 class StubStandingsTableParser:

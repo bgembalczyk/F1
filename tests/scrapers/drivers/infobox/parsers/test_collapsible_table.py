@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.infobox.parsers.collapsible_table import CollapsibleTableParser
+from scrapers.drivers.drivers_infobox.parsers.collapsible_table import CollapsibleTableParser
 
 
 class Delegate:

@@ -4,7 +4,7 @@ from layers.orchestration.runners.grand_prix import GrandPrixRunner
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
-from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
+from scrapers.grands_prix.complete_scraper_grands_prix import F1CompleteGrandPrixDataExtractor
 
 
 def test_grand_prix_runner_uses_scraper_runner_path(tmp_path: Path) -> None:

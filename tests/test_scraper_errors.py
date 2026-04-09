@@ -39,7 +39,7 @@ from scrapers.circuits.circuits_infobox.services.lap_record import CircuitLapRec
 from scrapers.circuits.circuits_infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
-from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
+from scrapers.grands_prix.single_scraper_grands_prix import F1SingleGrandPrixScraper
 from tests.support.dependency_stubs import ensure_bs4_stub
 from tests.support.dependency_stubs import ensure_certifi_stub
 from tests.support.dependency_stubs import ensure_pandas_stub

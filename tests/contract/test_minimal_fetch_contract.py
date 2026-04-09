@@ -2,7 +2,7 @@ import pytest
 
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
-from scrapers.drivers.list_scraper import F1DriversListScraper
+from scrapers.drivers.list_scraper_drivers import F1DriversListScraper
 
 
 class StubFetcher:

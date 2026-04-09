@@ -4,12 +4,12 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
-from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
-from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
-from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
-from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
-from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
+from scrapers.drivers.drivers_infobox.parsers.car_numbers import CarNumbersParser
+from scrapers.drivers.drivers_infobox.parsers.cell import InfoboxCellParser
+from scrapers.drivers.drivers_infobox.parsers.general import InfoboxGeneralParser
+from scrapers.drivers.drivers_infobox.parsers.link_extractor import InfoboxLinkExtractor
+from scrapers.drivers.drivers_infobox.parsers.title import InfoboxTitlesParser
+from scrapers.drivers.drivers_infobox.schema import DRIVER_GENERAL_SCHEMA
 from tests.support.driver_infobox_assertions import assert_car_number_with_present
 
 

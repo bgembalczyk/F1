@@ -8,8 +8,8 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
 from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
-from scrapers.drivers.list_scraper import F1DriversListScraper
-from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
+from scrapers.drivers.list_scraper_drivers import F1DriversListScraper
+from scrapers.grands_prix.list_scraper_grands_prix import GrandsPrixListScraper
 
 
 class DummySourceAdapter:

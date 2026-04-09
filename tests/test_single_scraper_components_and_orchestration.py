@@ -8,23 +8,23 @@ from scrapers.circuits.circuits_infobox.service import CircuitInfoboxExtractionS
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordDTO
 from scrapers.constructors.constructors_infobox.service import ConstructorInfoboxExtractionService
-from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
-from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
-from scrapers.constructors.sections.service import ConstructorSectionExtractionService
-from scrapers.constructors.single_scraper import SingleConstructorScraper
-from scrapers.drivers.composition import DriverScraperCompositionFactory
-from scrapers.drivers.composition import DriverScraperDependencies
-from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
-from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
-from scrapers.drivers.postprocess.assembler import DriverRecordDTO
-from scrapers.drivers.sections.service import DriverSectionExtractionService
-from scrapers.drivers.services.domain_record import DomainRecordService
-from scrapers.drivers.single_scraper import SingleDriverScraper
-from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
-from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
-from scrapers.seasons.postprocess.assembler import SeasonRecordSections
-from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
-from scrapers.seasons.single_scraper import SingleSeasonScraper
+from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordAssembler
+from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordDTO
+from scrapers.constructors.constructors_sections.service import ConstructorSectionExtractionService
+from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
+from scrapers.drivers.composition_drivers import DriverScraperCompositionFactory
+from scrapers.drivers.composition_drivers import DriverScraperDependencies
+from scrapers.drivers.drivers_infobox.service import DriverInfoboxExtractionService
+from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
+from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
+from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
+from scrapers.drivers.drivers_services.domain_record import DomainRecordService
+from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
+from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
+from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
+from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
+from scrapers.seasons.sections_seasons.service import SeasonTextSectionExtractionService
+from scrapers.seasons.single_scraper_seasons import SingleSeasonScraper
 
 
 def _soup(html: str) -> BeautifulSoup:

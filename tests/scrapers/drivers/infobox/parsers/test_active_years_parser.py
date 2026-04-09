@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.infobox.parsers.active_years import ActiveYearsParser
+from scrapers.drivers.drivers_infobox.parsers.active_years import ActiveYearsParser
 
 
 class MockLinkExtractor:

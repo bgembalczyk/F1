@@ -7,13 +7,13 @@ from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.circuits_infobox.scraper import F1CircuitInfoboxParser
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
-from scrapers.constructors.single_scraper import SingleConstructorScraper
-from scrapers.drivers.single_scraper import SingleDriverScraper
-from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
-from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
-from scrapers.seasons.single_scraper import SingleSeasonScraper
-from scrapers.seasons.standings_scraper import F1StandingsScraper
-from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
+from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
+from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
+from scrapers.engines.single_scraper_engines import SingleEngineManufacturerScraper
+from scrapers.grands_prix.single_scraper_grands_prix import F1SingleGrandPrixScraper
+from scrapers.seasons.single_scraper_seasons import SingleSeasonScraper
+from scrapers.seasons.standings_scraper_seasons import F1StandingsScraper
+from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin

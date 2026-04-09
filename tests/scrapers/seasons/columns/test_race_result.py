@@ -4,7 +4,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.seasons.columns.race_result import RaceResultColumn
+from scrapers.seasons.columns_seasons.race_result import RaceResultColumn
 
 
 def ctx(

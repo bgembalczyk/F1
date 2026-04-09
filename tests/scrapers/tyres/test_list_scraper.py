@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from scrapers.tyres.list_scraper import ManufacturersSectionParser
-from scrapers.tyres.list_scraper import TyreManufacturersBySeasonTableParser
-from scrapers.tyres.list_scraper import TyreManufacturersScraper
+from scrapers.tyres.list_scraper_tyres import ManufacturersSectionParser
+from scrapers.tyres.list_scraper_tyres import TyreManufacturersBySeasonTableParser
+from scrapers.tyres.list_scraper_tyres import TyreManufacturersScraper
 
 
 def test_table_parser_matches_only_required_headers_subset() -> None:

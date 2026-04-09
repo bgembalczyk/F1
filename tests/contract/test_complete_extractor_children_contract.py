@@ -1,11 +1,11 @@
 import pytest
 
 from scrapers.circuits.circuits_complete_scraper import F1CompleteCircuitDataExtractor
-from scrapers.constructors.complete_scraper import CompleteConstructorsDataExtractor
-from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor
-from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerDataExtractor
-from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
-from scrapers.seasons.complete_scraper import CompleteSeasonDataExtractor
+from scrapers.constructors.constructors_complete_scraper import CompleteConstructorsDataExtractor
+from scrapers.drivers.complete_scraper_drivers import CompleteDriverDataExtractor
+from scrapers.engines.complete_scraper_engines import F1CompleteEngineManufacturerDataExtractor
+from scrapers.grands_prix.complete_scraper_grands_prix import F1CompleteGrandPrixDataExtractor
+from scrapers.seasons.complete_scraper_seasons import CompleteSeasonDataExtractor
 
 
 @pytest.mark.parametrize(

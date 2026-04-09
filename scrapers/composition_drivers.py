@@ -1,0 +1,77 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
+from scrapers.drivers.drivers_infobox.service import DriverInfoboxExtractionService
+from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
+from scrapers.drivers.drivers_services.domain_record import DomainRecordService
+
+if TYPE_CHECKING:
+    from scrapers.base.infobox.service import InfoboxExtractionService
+    from scrapers.base.options import ScraperOptions
+    from scrapers.base.sections.interface import SectionServiceFactory
+
+
+@dataclass(frozen=True, slots=True)
+class DriverScraperDependencies:
+    infobox_service: InfoboxExtractionService
+    sections_service_factory: SectionServiceFactory[DriverSectionExtractionService]
+    domain_record_service: DomainRecordService
+
+
+@dataclass(frozen=True, slots=True)
+class DriverScraperCompositionFactory:
+    """Factory budująca komplet zależności dla SingleDriverScraper."""
+
+    test_mode: bool = False
+    infobox_service: InfoboxExtractionService | None = None
+    sections_service_factory: (
+        SectionServiceFactory[DriverSectionExtractionService] | None
+    ) = None
+    domain_record_service: DomainRecordService | None = None
+
+    @classmethod
+    def for_tests(
+        cls,
+        *,
+        infobox_service: InfoboxExtractionService | None = None,
+        sections_service_factory: (
+            SectionServiceFactory[DriverSectionExtractionService] | None
+        ) = None,
+        domain_record_service: DomainRecordService | None = None,
+    ) -> DriverScraperCompositionFactory:
+        return cls(
+            test_mode=True,
+            infobox_service=infobox_service,
+            sections_service_factory=sections_service_factory,
+            domain_record_service=domain_record_service,
+        )
+
+    def build(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+    ) -> DriverScraperDependencies:
+        infobox_service = self.infobox_service
+        if infobox_service is None:
+            infobox_service = DriverInfoboxExtractionService(options=options)
+
+        sections_service_factory = self.sections_service_factory
+        if sections_service_factory is None:
+            sections_service_factory = ConfigurableSectionServiceFactory(
+                service_cls=DriverSectionExtractionService,
+                require_options=True,
+                require_url=True,
+            )
+
+        domain_record_service = self.domain_record_service
+        if domain_record_service is None:
+            domain_record_service = DomainRecordService()
+
+        return DriverScraperDependencies(
+            infobox_service=infobox_service,
+            sections_service_factory=sections_service_factory,
+            domain_record_service=domain_record_service,
+        )

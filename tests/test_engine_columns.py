@@ -1,5 +1,5 @@
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.engines import columns as col
+from scrapers.engines import columns_engines as col
 
 
 def ctx(raw_text: str, *, clean_text: str | None = None) -> ColumnContext:

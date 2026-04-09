@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import build_scraper_config
-from scrapers.seasons.standings_scraper import F1StandingsScraper
+from scrapers.seasons.standings_scraper_seasons import F1StandingsScraper
 
 
 def test_standings_scraper_replaces_tied_marker_with_previous_position() -> None:

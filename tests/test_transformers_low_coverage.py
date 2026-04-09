@@ -6,8 +6,8 @@ from scrapers.base.transformers import FailedToMakeRestartTransformer
 from scrapers.base.transformers import FatalitiesCarTransformer
 from scrapers.base.transformers import PointsScoringSystemsHistoryTransformer
 from scrapers.base.transformers import ShortenedRacePointsTransformer
-from scrapers.points.helpers.parsers import extract_first_place_role
-from scrapers.points.helpers.parsers import seasons_key
+from scrapers.points.helpers_points.parsers import extract_first_place_role
+from scrapers.points.helpers_points.parsers import seasons_key
 
 FIRST_PLACE_POINTS_1950 = 8
 FIRST_PLACE_POINTS_1960 = 9

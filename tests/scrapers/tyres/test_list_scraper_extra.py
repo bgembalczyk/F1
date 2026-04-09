@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 """Tests for TyreManufacturersBySeasonSubSectionParser covering lines 67-69, 72-74, 77-85."""
 
-from scrapers.tyres.list_scraper import TyreManufacturersBySeasonSubSectionParser
+from scrapers.tyres.list_scraper_tyres import TyreManufacturersBySeasonSubSectionParser
 
 
 def make_table_element(data: dict | None = None, kind: str = "table") -> dict:

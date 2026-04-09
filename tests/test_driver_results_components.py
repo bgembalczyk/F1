@@ -3,9 +3,9 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.sections import DriverResultsSchemaFactory
-from scrapers.drivers.sections import DriverResultsTableClassifier
-from scrapers.drivers.sections.results import DriverResultsSectionParser
+from scrapers.drivers.drivers_sections import DriverResultsSchemaFactory
+from scrapers.drivers.drivers_sections import DriverResultsTableClassifier
+from scrapers.drivers.drivers_sections.results import DriverResultsSectionParser
 
 
 def test_driver_results_table_classifier_contract() -> None:

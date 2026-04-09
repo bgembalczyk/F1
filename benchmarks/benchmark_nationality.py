@@ -1,6 +1,6 @@
 import timeit
 
-from scrapers.drivers.infobox.parsers.nationality import NationalityParser
+from scrapers.drivers.drivers_infobox.parsers.nationality import NationalityParser
 
 text = "British (1963, 1965-1968) French (1970) Italian (1980, 1982-1985)" * 100
 

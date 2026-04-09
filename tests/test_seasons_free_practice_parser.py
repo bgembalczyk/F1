@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.seasons.parsers.free_practice import SeasonFreePracticeParser
+from scrapers.seasons.parsers_seasons.free_practice import SeasonFreePracticeParser
 
 
 class StubFreePracticeTableParser:
