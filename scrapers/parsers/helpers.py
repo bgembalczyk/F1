@@ -3,11 +3,11 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.constants.patterns import UNIT_RE
-from scrapers.base.helpers.parsing import parse_numeric_value
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.parsers.unit_value import UnitValue
-from scrapers.base.table.columns.context import ColumnContext
+from models.value_objects.unit_value import UnitValue
+from scrapers.columns.context import ColumnContext
+from scrapers.constants.patterns import UNIT_RE
+from scrapers.helpers.parsing import parse_numeric_value
+from scrapers.helpers.text import clean_wiki_text
 
 EntriesStarts = tuple[int | None, int | None]
 NumericValue = float | None

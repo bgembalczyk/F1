@@ -7,12 +7,12 @@ from infrastructure.http.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http.policies.http import HttpPolicy
 from infrastructure.http.protocols import HttpClientProtocol
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
-from scrapers.base.cache_adapter import CacheAdapter
-from scrapers.base.factory.runtime.dataclass import ScraperRuntime
-from scrapers.base.factory.source_adapter_fetcher_shim import SourceAdapterFetcherShim
-from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.options import ScraperOptions
-from scrapers.base.source_adapter import SourceAdapter
+from scrapers.cache_adapter import CacheAdapter
+from scrapers.html_fetcher import HtmlFetcher
+from scrapers.options import ScraperOptions
+from scrapers.runtime.dataclass import ScraperRuntime
+from scrapers.source_adapter import SourceAdapter
+from scrapers.source_adapter_fetcher_shim import SourceAdapterFetcherShim
 
 
 class ScraperRuntimeFactory:

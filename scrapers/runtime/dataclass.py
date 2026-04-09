@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from infrastructure.http.policies.http import HttpPolicy
 from infrastructure.http.protocols import HttpClientProtocol
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
-from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.source_adapter import SourceAdapter
+from scrapers.html_fetcher import HtmlFetcher
+from scrapers.source_adapter import SourceAdapter
 
 
 @dataclass(frozen=True, slots=True)

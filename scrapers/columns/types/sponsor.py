@@ -10,9 +10,9 @@ from scrapers.columns.types.context import ColumnContext
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.url import normalize_url
-from scrapers.parsers.parsers_sponsorship_liveries.grand_prix_scope import GrandPrixScopeParser
-from scrapers.parsers.parsers_sponsorship_liveries.parts import SponsorPartsParser
-from scrapers.parsers.parsers_sponsorship_liveries.record_text import SponsorshipRecordText
+from scrapers.parsers.sponsorship_liveries.grand_prix import GrandPrixScopeParser
+from scrapers.parsers.sponsorship_liveries.parts import SponsorPartsParser
+from scrapers.parsers.sponsorship_liveries.sponsorship_record_text import SponsorshipRecordText
 
 
 class SponsorColumn(BaseColumn):
