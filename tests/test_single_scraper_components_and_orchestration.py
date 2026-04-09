@@ -4,10 +4,10 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
-from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
-from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
-from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
+from scrapers.circuits.circuits_infobox.service import CircuitInfoboxExtractionService
+from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordAssembler
+from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordDTO
+from scrapers.constructors.constructors_infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService

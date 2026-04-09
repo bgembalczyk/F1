@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from scrapers.circuits.services.domain_record import DomainRecordService
+from scrapers.circuits.circuits_services.domain_record import DomainRecordService
 
 
 @pytest.fixture()

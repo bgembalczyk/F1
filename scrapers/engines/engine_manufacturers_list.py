@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.validation.engine_manufacturer import EngineManufacturer
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.factory.protocol import RECORD_FACTORIES
 from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 from scrapers.base.source_catalog import ENGINES_LIST

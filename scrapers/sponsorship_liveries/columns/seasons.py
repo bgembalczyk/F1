@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import Optional
 
-from models.services.season_service import parse_seasons
+from models.services.season import parse_seasons
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn

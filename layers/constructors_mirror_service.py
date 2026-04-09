@@ -1,7 +1,7 @@
 from collections.abc import Callable
 from pathlib import Path
 
-from layers.path_resolver import DEFAULT_PATH_RESOLVER
+from path_resolver.base import DEFAULT_PATH_RESOLVER
 
 
 class ConstructorsMirrorService:

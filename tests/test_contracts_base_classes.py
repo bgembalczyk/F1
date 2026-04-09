@@ -5,7 +5,7 @@ import pytest
 from scrapers.base.abc import ABCScraper
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.data_extractor import BaseDataExtractor
-from scrapers.circuits.complete_scraper import F1CompleteCircuitDataExtractor
+from scrapers.circuits.circuits_complete_scraper import F1CompleteCircuitDataExtractor
 from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor
 from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerDataExtractor
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper

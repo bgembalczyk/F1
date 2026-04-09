@@ -1,5 +1,5 @@
 # ruff: noqa: E501, PLR2004
-"""Tests for RedFlaggedRacesBaseScraper (base.py methods)."""
+"""Tests for RedFlaggedRacesBaseScraper (main.py methods)."""
 
 from unittest.mock import patch
 

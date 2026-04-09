@@ -4,7 +4,7 @@ from typing import Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.helpers import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.sponsorship_liveries.parsers import TeamLiveriesSectionParser
 from scrapers.sponsorship_liveries.parsers.splitters import SponsorshipRecordSplitter

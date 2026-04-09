@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from dataclasses import field
 from pathlib import Path
 
-from scrapers.base.export.exporters import DataExporter
+from scrapers.base.exporters.data import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import default_http_policy

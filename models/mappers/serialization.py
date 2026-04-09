@@ -9,12 +9,10 @@ from typing import runtime_checkable
 from models.records.circuit_base import CircuitBaseRecord
 from models.records.circuit_complete import CircuitCompleteRecord
 from models.records.circuit_details import CircuitDetailsRecord
+from models.records.serializable_protocol import SerializableProtocol
 from models.value_objects.base import ValueObject
 
 
-@runtime_checkable
-class SerializableProtocol(Protocol):
-    def to_serializable(self) -> Any: ...
 
 
 SerializableAdapter = Callable[[Any], Any]
@@ -35,20 +33,20 @@ def clear_serializable_adapters() -> None:
     SERIALIZABLE_ADAPTERS.clear()
 
 
-def _extract_registered_adapter(value: Any) -> Any | None:
+def extract_registered_adapter(value: Any) -> Any | None:
     for model_type, adapter in SERIALIZABLE_ADAPTERS.items():
         if isinstance(value, model_type):
             return adapter(value)
     return None
 
 
-def _extract_serializable(value: Any) -> Any:
+def extract_serializable(value: Any) -> Any:
     if isinstance(value, ValueObject):
         return value.to_dict()
     if isinstance(value, SerializableProtocol):
         return value.to_serializable()
 
-    adapted = _extract_registered_adapter(value)
+    adapted = extract_registered_adapter(value)
     if adapted is not None:
         return adapted
 
@@ -58,7 +56,7 @@ def _extract_serializable(value: Any) -> Any:
 
 
 def normalize_value(value: Any) -> Any:
-    value = _extract_serializable(value)
+    value = extract_serializable(value)
 
     if value is None:
         return None
@@ -75,7 +73,7 @@ def to_dict(value: Any) -> dict[str, Any]:
     if value is None:
         return {}
 
-    normalized = normalize_value(_extract_serializable(value))
+    normalized = normalize_value(extract_serializable(value))
     if isinstance(normalized, Mapping):
         return dict(normalized)
 

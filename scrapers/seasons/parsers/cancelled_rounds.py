@@ -3,9 +3,9 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.factory.record_factory import MappingRecordFactory
+from scrapers.base.factory.protocol import MappingRecordFactory
 from scrapers.base.helpers.html_utils import find_section_tables
-from scrapers.base.helpers.table_parsing import TableParsingHelper
+from scrapers.base.helpers.table_parsing_helper import TableParsingHelper
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import ColumnSpec

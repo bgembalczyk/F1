@@ -2,9 +2,9 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.circuits.helpers.lap_record import extract_time
-from scrapers.circuits.helpers.lap_record import select_details_paren
-from scrapers.circuits.infobox import services
+from scrapers.circuits.circuits_helpers.lap_record import extract_time
+from scrapers.circuits.circuits_helpers.lap_record import select_details_paren
+from scrapers.circuits.circuits_infobox import services
 
 LAYOUT_YEARS = "2020-"
 EXPECTED_LENGTH_KM = 5.0

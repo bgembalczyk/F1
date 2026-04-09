@@ -1,4 +1,4 @@
-from scrapers.base.helpers.http import default_http_policy
+from scrapers.base.helpers.helpers import default_http_policy
 
 
 def test_default_http_policy_can_read_timeout_from_provider_env(monkeypatch) -> None:

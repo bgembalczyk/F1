@@ -9,8 +9,8 @@ from pathlib import Path
 import pytest
 
 from scrapers.base import contracts as base_contracts
-from scrapers.base.export import contracts as export_contracts
-from scrapers.circuits import schemas as circuits_schemas
+from scrapers.base.exporters import protocol as export_contracts
+from scrapers.circuits import circuits_schemas as circuits_schemas
 from scrapers.seasons.sections import contracts as season_contracts
 from scripts import check_architecture_rules as architecture_rules
 from scripts import check_domain_terminology as domain_terminology

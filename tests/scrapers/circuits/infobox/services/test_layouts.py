@@ -5,10 +5,10 @@ from unittest.mock import MagicMock
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
-from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
-from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from scrapers.circuits.circuits_infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.circuits_infobox.services.layouts import CircuitLayoutsParser
+from scrapers.circuits.circuits_infobox.services.specs import CircuitSpecsParser
+from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
 
 
 def make_parser() -> CircuitLayoutsParser:

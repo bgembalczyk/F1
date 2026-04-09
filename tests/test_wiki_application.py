@@ -2,7 +2,7 @@
 from pathlib import Path
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
-from layers.one.executor import LayerOneExecutor
+from layers.one.one import LayerOneExecutor
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from layers.zero.executor import LayerZeroExecutor

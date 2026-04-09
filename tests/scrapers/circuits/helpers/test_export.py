@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from scrapers.circuits.helpers import export as export_mod
+from scrapers.circuits.circuits_helpers import export as export_mod
 
 
 def test_circuit_name_initial_handles_missing_and_text() -> None:

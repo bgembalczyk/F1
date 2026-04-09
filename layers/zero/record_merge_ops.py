@@ -6,10 +6,12 @@ from typing import Any
 from typing import Protocol
 from typing import TypeVar
 
+from layers.protocols.merge.model import MergeModel
+from models.merge_types.driver_series_stats import DriverSeriesStats
+
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-from layers.zero.merge_types import DriverSeriesStats
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -78,11 +80,6 @@ def merge_driver_values(existing: object, incoming: object) -> object:
 from collections.abc import Callable
 
 
-class MergeModel(Protocol):
-    @classmethod
-    def from_object(cls, value: object) -> MergeModel | None: ...
-    def dedupe_key(self) -> str | None: ...
-    def to_dict(self) -> dict[str, Any]: ...
 
 
 T = TypeVar("T", bound=MergeModel)

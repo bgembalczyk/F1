@@ -4,7 +4,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.constructors.complete_scraper import CompleteConstructorsDataExtractor
-from scrapers.constructors.helpers.export import constructor_name_initial
+from scrapers.constructors.constructors_helpers.export import constructor_name_initial
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 
 

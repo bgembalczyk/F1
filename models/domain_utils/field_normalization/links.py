@@ -19,7 +19,7 @@ def normalize_link_payload(link: Mapping[str, Any] | None) -> dict[str, Any]:
     return {"text": text, "url": url}
 
 
-def _is_link_object(value: Any) -> bool:
+def is_link_object(value: Any) -> bool:
     return (
         hasattr(value, "to_dict") and hasattr(value, "text") and hasattr(value, "url")
     )
@@ -29,7 +29,7 @@ def is_empty_link(value: Any) -> bool:
     if value is None:
         return True
 
-    if _is_link_object(value):
+    if is_link_object(value):
         text = str(getattr(value, "text", "") or "").strip()
         url = getattr(value, "url", None)
     elif isinstance(value, Mapping):
@@ -51,7 +51,7 @@ def normalize_link_item(
     if isinstance(value, str):
         text = value.strip()
         normalized = {"text": text, "url": None} if text else None
-    elif _is_link_object(value):
+    elif is_link_object(value):
         normalized = value.to_dict()
     elif isinstance(value, Mapping) or value is None:
         normalized = validate_payload(value, field_name=field_name)

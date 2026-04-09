@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 from datetime import timezone
 
-from scrapers.base.export.service import ExportService
+from scrapers.base.exporters.service import ExportService
 from scrapers.base.results import ScrapeResult
 from scrapers.base.services.result_export_service import ResultExportService
 

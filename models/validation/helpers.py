@@ -1,7 +1,13 @@
 from collections.abc import Iterable
+from dataclasses import asdict
+from dataclasses import is_dataclass
 from typing import Any
+from urllib.parse import urlparse
 
-from models.validation.utils import coerce_number
+from models.domain_utils.normalization import normalize_season_items
+from models.value_objects.link import Link
+from models.value_objects.link_utils import validate_link
+from models.value_objects.season_ref import SeasonRef
 
 
 def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
@@ -86,3 +92,67 @@ def normalize_range_item(value: Any, field_name: str) -> Any:
         return normalize_unit_value(value, field_name)
     msg = f"Pole {field_name} ma nieprawidłowy typ"
     raise ValueError(msg)
+
+
+def model_to_dict(model: Any) -> dict[str, Any]:
+    if hasattr(model, "model_dump"):
+        return model.model_dump()
+    if hasattr(model, "dict"):
+        return model.dict()
+    if is_dataclass(model):
+        return asdict(model)
+    msg = f"Nieobsługiwany typ modelu: {type(model)!r}"
+    raise TypeError(msg)
+
+
+def normalize_link_list(items: list[dict[str, Any] | Link] | None) -> list[Link]:
+    normalized: list[Link] = []
+    for item in items or []:
+        raw = item.to_dict() if isinstance(item, Link) else item
+        link = validate_link(raw, field_name="links")
+        if not link.get("text") and not link.get("url"):
+            continue
+        normalized.append(Link.from_dict(link))
+    return normalized
+
+
+def validate_links(
+    items: list[dict[str, Any] | Link] | None,
+    *,
+    field_name: str,
+) -> list[dict[str, Any]]:
+    return [item.to_dict() for item in normalize_link_list(items)]
+
+
+def validate_seasons(
+    items: list[SeasonRef | dict[str, Any] | None] | None,
+) -> list[dict[str, Any]]:
+    return [season.to_dict() for season in normalize_season_items(items)]
+
+
+def is_valid_url(url: str) -> bool:
+    parsed = urlparse(url)
+    return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
+
+
+def coerce_number(
+    value: Any,
+    type_: type,
+    field_name: str,
+    *,
+    allow_none: bool = False,
+):
+    if value is None:
+        if allow_none:
+            return None
+        msg = f"Pole {field_name} jest wymagane"
+        raise ValueError(msg)
+    try:
+        number = type_(value)
+    except (TypeError, ValueError):
+        msg = f"Pole {field_name} musi być liczbą"
+        raise ValueError(msg) from None
+    if number < 0:
+        msg = f"Pole {field_name} nie może być ujemne"
+        raise ValueError(msg)
+    return number

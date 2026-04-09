@@ -5,9 +5,9 @@ import pytest
 
 from layers.path_resolver import DEFAULT_PATH_RESOLVER
 from layers.path_resolver import PathResolver
-from layers.path_resolver import _normalize_domain
-from layers.path_resolver import _normalize_output_name
-from layers.path_resolver import _normalize_relative_parts
+from layers.path_resolver import normalize_domain
+from layers.path_resolver import normalize_output_name
+from layers.path_resolver import normalize_relative_parts
 
 
 def test_default_exports_root_points_to_data_directory() -> None:
@@ -56,51 +56,51 @@ def test_d_merged_uses_explicit_filename() -> None:
 # _normalize_domain errors
 def test_normalize_domain_raises_for_empty_string() -> None:
     with pytest.raises(ValueError, match="Domain cannot be empty"):
-        _normalize_domain("")
+        normalize_domain("")
 
 
 def test_normalize_domain_raises_for_whitespace_only() -> None:
     with pytest.raises(ValueError, match="Domain cannot be empty"):
-        _normalize_domain("   ")
+        normalize_domain("   ")
 
 
 def test_normalize_domain_raises_for_path_with_slash() -> None:
     with pytest.raises(ValueError, match="single path segment"):
-        _normalize_domain("foo/bar")
+        normalize_domain("foo/bar")
 
 
 def test_normalize_domain_strips_backslash_to_slash_then_rejects() -> None:
     with pytest.raises(ValueError, match="single path segment"):
-        _normalize_domain("foo\\bar")
+        normalize_domain("foo\\bar")
 
 
 # _normalize_output_name errors
 def test_normalize_output_name_raises_for_empty_string() -> None:
     with pytest.raises(ValueError, match="Output filename cannot be empty"):
-        _normalize_output_name("   ")
+        normalize_output_name("   ")
 
 
 def test_normalize_output_name_raises_for_duplicated_extension() -> None:
     with pytest.raises(ValueError, match="duplicated extension"):
-        _normalize_output_name("file.json.json")
+        normalize_output_name("file.json.json")
 
 
 # _normalize_relative_parts errors
 def test_normalize_relative_parts_raises_when_no_parts_given() -> None:
     with pytest.raises(ValueError, match="At least one output path segment"):
-        _normalize_relative_parts()
+        normalize_relative_parts()
 
 
 def test_normalize_relative_parts_raises_for_empty_segment() -> None:
     with pytest.raises(ValueError, match="segment cannot be empty"):
-        _normalize_relative_parts("good", "   ")
+        normalize_relative_parts("good", "   ")
 
 
 def test_normalize_relative_parts_raises_for_absolute_path() -> None:
     with pytest.raises(ValueError, match="must stay relative"):
-        _normalize_relative_parts("/absolute/path")
+        normalize_relative_parts("/absolute/path")
 
 
 def test_normalize_relative_parts_raises_for_dotdot() -> None:
     with pytest.raises(ValueError, match="must stay relative"):
-        _normalize_relative_parts("../escape")
+        normalize_relative_parts("../escape")

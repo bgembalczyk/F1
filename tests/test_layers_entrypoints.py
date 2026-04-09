@@ -237,9 +237,9 @@ def test_merge_runner_maps_prefers_discovered_and_falls_back_to_explicit(
     explicit: dict[str, object],
     expected_runner: dict[str, object],
 ) -> None:
-    from layers.orchestration.runner_registry import _merge_runner_maps
+    from layers.orchestration.runner_registry import merge_runner_maps
 
-    assert _merge_runner_maps(discovered, explicit) == expected_runner
+    assert merge_runner_maps(discovered, explicit) == expected_runner
 
 
 @pytest.mark.parametrize(

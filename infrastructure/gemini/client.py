@@ -24,7 +24,7 @@ from typing import Any
 
 import certifi
 
-from config.app_config_provider import AppConfigProvider
+from config.app.provider import AppConfigProvider
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.constants import DEFAULT_MODELS
 from infrastructure.gemini.constants import DEFAULT_TIMEOUT

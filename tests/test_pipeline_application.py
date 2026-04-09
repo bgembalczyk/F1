@@ -1,11 +1,11 @@
 from pathlib import Path
 
-from layers.one.executor import LayerOneExecutor
-from layers.orchestration.protocols import LayerExecutorProtocol
+from layers.executors.one import LayerOneExecutor
+from layers.job_hooks.null_zero import NullLayerZeroJobHook
 from layers.pipeline import WikiPipelineApplication
+from layers.protocols.executor import LayerExecutorProtocol
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge_service import LayerZeroMergeService
-from layers.zero.policies import NullLayerZeroJobHook
 from scrapers.base.run_config import RunConfig
 
 

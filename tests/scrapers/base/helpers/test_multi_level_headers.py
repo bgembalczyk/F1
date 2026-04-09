@@ -1,7 +1,7 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
+from scrapers.base.helpers.multi_level_header_builder import MultiLevelHeaderBuilder
 
 
 def _table(html: str):

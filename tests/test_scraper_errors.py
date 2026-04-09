@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.circuits.infobox.services import CircuitAdditionalInfoParser
+from scrapers.circuits.circuits_infobox.services import CircuitAdditionalInfoParser
 from tests.support.dependency_stubs import ensure_bs4_stub
 from tests.support.dependency_stubs import ensure_certifi_stub
 from tests.support.dependency_stubs import ensure_pandas_stub
@@ -31,14 +31,14 @@ from scrapers.base.errors_report import write_error_summary_by_code
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
-from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
-from scrapers.circuits.infobox.services.geo import CircuitGeoParser
-from scrapers.circuits.infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
-from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.circuits.circuits_infobox.services.entities import CircuitEntitiesParser
+from scrapers.circuits.circuits_infobox.services.entity_parsing import CircuitEntityParser
+from scrapers.circuits.circuits_infobox.services.geo import CircuitGeoParser
+from scrapers.circuits.circuits_infobox.services.history import CircuitHistoryParser
+from scrapers.circuits.circuits_infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.circuits_infobox.services.specs import CircuitSpecsParser
+from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 from tests.support.dependency_stubs import ensure_bs4_stub
 from tests.support.dependency_stubs import ensure_certifi_stub

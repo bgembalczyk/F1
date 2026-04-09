@@ -9,7 +9,7 @@ from http.server import ThreadingHTTPServer
 import pytest
 
 from infrastructure.http_client.caching.file import FileCache
-from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
+from infrastructure.http_client.caching.wiki_policy import WikipediaCachePolicy
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces import HttpClientProtocol

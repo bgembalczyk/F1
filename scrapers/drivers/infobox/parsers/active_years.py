@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.base.helpers.year_extraction import YearExtractor
+from scrapers.base.helpers.year_extractor import YearExtractor
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 

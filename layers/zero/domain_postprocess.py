@@ -1,11 +1,11 @@
 import logging
 from collections.abc import Callable
 
-from layers.zero.merge_types import DriverRecordModel
-from layers.zero.merge_types import SeasonRecordModel
-from layers.zero.merge_types import TeamRecordModel
 from layers.zero.record_merge_ops import merge_duplicate_records
 from layers.zero.record_merge_ops import merge_values
+from models.merge_types.record.driver import DriverRecordModel
+from models.merge_types.record.season import SeasonRecordModel
+from models.merge_types.record.team import TeamRecordModel
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 
 DomainRecordsProcessor = Callable[[list[object]], list[object]]
@@ -14,17 +14,17 @@ logger = logging.getLogger(__name__)
 MIN_YEAR_DIGITS = 4
 
 
-def _normalized_text(value: object) -> str:
+def normalized_text(value: object) -> str:
     text_value = value.get("text", "") if isinstance(value, dict) else value or ""
     return str(text_value).strip().casefold()
 
 
-def _sort_key_with_presence(value: object) -> tuple[int, str]:
-    text = _normalized_text(value)
+def sort_key_with_presence(value: object) -> tuple[int, str]:
+    text = normalized_text(value)
     return (0, text) if text else (1, "")
 
 
-def _season_year(season: object) -> int | None:
+def season_year_func(season: object) -> int | None:
     if isinstance(season, int):
         return season
     if not isinstance(season, dict):
@@ -42,17 +42,17 @@ def _season_year(season: object) -> int | None:
     return None
 
 
-def _season_sort_key(record: object) -> tuple[int, str]:
+def season_sort_key(record: object) -> tuple[int, str]:
     if not isinstance(record, dict):
         return (1, "")
 
-    season_year = _season_year(record.get("season"))
+    season_year = season_year_func(record.get("season"))
     if season_year is not None:
         return (0, str(season_year).zfill(10))
     return (1, "")
 
 
-def _driver_sort_key(record: object) -> str:
+def driver_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
 
@@ -68,75 +68,75 @@ def _driver_sort_key(record: object) -> str:
     return name_parts[1].strip().casefold()
 
 
-def _constructor_sort_key(record: object) -> str:
+def constructor_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
     constructor = record.get("constructor")
     if isinstance(constructor, dict):
-        chassis = _normalized_text(constructor.get("chassis_constructor"))
-        engine = _normalized_text(constructor.get("engine_constructor"))
+        chassis = normalized_text(constructor.get("chassis_constructor"))
+        engine = normalized_text(constructor.get("engine_constructor"))
         if chassis or engine:
             return f"{chassis}\u0000{engine}"
-    return _normalized_text(constructor)
+    return normalized_text(constructor)
 
 
-def _chassis_constructor_sort_key(record: object) -> str:
+def chassis_constructor_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
-    return _normalized_text(record.get("chassis_constructor"))
+    return normalized_text(record.get("chassis_constructor"))
 
 
-def _circuits_sort_key(record: object) -> str:
+def circuits_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
-    return _normalized_text(record.get("circuit"))
+    return normalized_text(record.get("circuit"))
 
 
-def _team_sort_key(record: object) -> str:
+def team_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
     team_value = record.get("team")
     if team_value is not None:
-        return _normalized_text(team_value)
-    return _normalized_text(record.get("text"))
+        return normalized_text(team_value)
+    return normalized_text(record.get("text"))
 
 
-def _engine_sort_key(record: object) -> str:
+def engine_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
     engine_constructor = record.get("engine_constructor")
     if engine_constructor is not None:
-        return _normalized_text(engine_constructor)
-    return _normalized_text(record.get("manufacturer"))
+        return normalized_text(engine_constructor)
+    return normalized_text(record.get("manufacturer"))
 
 
-def _grands_prix_sort_key(record: object) -> str:
+def grands_prix_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
-    return _normalized_text(record.get("race_title"))
+    return normalized_text(record.get("race_title"))
 
 
-def _races_sort_key(record: object) -> tuple[int, str, int, str]:
+def races_sort_key(record: object) -> tuple[int, str, int, str]:
     if not isinstance(record, dict):
         return (1, "", 1, "")
 
-    season_key = _sort_key_with_presence(record.get("season"))
+    season_key = sort_key_with_presence(record.get("season"))
     grand_prix = record.get("grand_prix")
     if grand_prix is None:
         grand_prix = record.get("event")
-    grand_prix_key = _sort_key_with_presence(grand_prix)
+    grand_prix_key = sort_key_with_presence(grand_prix)
     return season_key + grand_prix_key
 
 
-def _merge_duplicate_drivers(records: list[object]) -> list[object]:
+def merge_duplicate_drivers(records: list[object]) -> list[object]:
     return merge_duplicate_records(records, DriverRecordModel, merge_values)
 
 
-def _merge_duplicate_teams(records: list[object]) -> list[object]:
+def merge_duplicate_teams(records: list[object]) -> list[object]:
     return merge_duplicate_records(records, TeamRecordModel, merge_values)
 
 
-def _season_years(value: object) -> set[int]:
+def season_years(value: object) -> set[int]:
     years: set[int] = set()
     if (season := SeasonRecordModel.from_object(value)) is not None:
         if (year := season.year()) is not None:
@@ -145,16 +145,16 @@ def _season_years(value: object) -> set[int]:
 
     if isinstance(value, list):
         for item in value:
-            years.update(_season_years(item))
+            years.update(season_years(item))
 
     return years
 
 
-def _nest_team_liveries(items: list[object]) -> list[object]:
-    return [_nest_team_liveries_in_seasons(record) for record in items]
+def nest_team_liveries(items: list[object]) -> list[object]:
+    return [nest_team_liveries_in_seasons(record) for record in items]
 
 
-def _nest_team_liveries_in_seasons(record: object) -> object:
+def nest_team_liveries_in_seasons(record: object) -> object:
     if not isinstance(record, dict):
         return record
     racing_series = record.get("racing_series")
@@ -169,7 +169,7 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
     if not isinstance(seasons, list) or not isinstance(liveries, list):
         return record
 
-    remaining_liveries = _attach_liveries_to_matching_seasons(
+    remaining_liveries = attach_liveries_to_matching_seasons(
         seasons=seasons,
         liveries=liveries,
     )
@@ -181,7 +181,7 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
     return record
 
 
-def _attach_liveries_to_matching_seasons(
+def attach_liveries_to_matching_seasons(
     *,
     seasons: list[object],
     liveries: list[object],
@@ -191,17 +191,17 @@ def _attach_liveries_to_matching_seasons(
         if not isinstance(livery, dict):
             remaining_liveries.append(livery)
             continue
-        if not _livery_matches_any_season(seasons=seasons, livery=livery):
+        if not livery_matches_any_season(seasons=seasons, livery=livery):
             remaining_liveries.append(livery)
     return remaining_liveries
 
 
-def _livery_matches_any_season(
+def livery_matches_any_season(
     *,
     seasons: list[object],
     livery: dict[str, object],
 ) -> bool:
-    livery_years = _season_years(livery.get("season"))
+    livery_years = season_years(livery.get("season"))
     livery_payload = {key: value for key, value in livery.items() if key != "season"}
     matched = False
     for season in seasons:
@@ -216,14 +216,14 @@ def _livery_matches_any_season(
     return matched
 
 
-def _merge_duplicate_seasons(items: list[object]) -> list[object]:
+def merge_duplicate_seasons(items: list[object]) -> list[object]:
     merged_records: list[object] = []
     index_by_year: dict[int, int] = {}
     for item in items:
         if not isinstance(item, dict):
             merged_records.append(item)
             continue
-        season_year = _season_year(item.get("season"))
+        season_year = season_year(item.get("season"))
         if season_year is None:
             merged_records.append(item)
             continue
@@ -241,11 +241,11 @@ def _merge_duplicate_seasons(items: list[object]) -> list[object]:
     return merged_records
 
 
-def _sort(items: list[object], sort_key: Callable[[object], object]) -> list[object]:
+def sort(items: list[object], sort_key: Callable[[object], object]) -> list[object]:
     return sorted(items, key=sort_key)
 
 
-def _records_debug_summary(records: list[object]) -> str:
+def records_debug_summary(records: list[object]) -> str:
     sample = records[0] if records else None
     sample_type = type(sample).__name__ if sample is not None else "none"
     return f"count={len(records)}, first_type={sample_type}"
@@ -257,55 +257,55 @@ def configure_domain_postprocessors(
 ) -> None:
     postprocess_steps: dict[str, tuple[tuple[str, DomainRecordsProcessor], ...]] = {
         "circuits": (
-            ("sort_circuits_by_name", lambda items: _sort(items, _circuits_sort_key)),
+            ("sort_circuits_by_name", lambda items: sort(items, circuits_sort_key)),
         ),
         "countries": (
             (
                 "sort_countries_by_text",
-                lambda items: _sort(items, _sort_key_with_presence),
+                lambda items: sort(items, sort_key_with_presence),
             ),
         ),
         "drivers": (
-            ("merge_duplicate_drivers", _merge_duplicate_drivers),
-            ("sort_drivers_by_name", lambda items: _sort(items, _driver_sort_key)),
+            ("merge_duplicate_drivers", merge_duplicate_drivers),
+            ("sort_drivers_by_name", lambda items: sort(items, driver_sort_key)),
         ),
         "teams": (
-            ("merge_duplicate_teams", _merge_duplicate_teams),
-            ("nest_team_liveries", _nest_team_liveries),
-            ("sort_teams_by_name", lambda items: _sort(items, _team_sort_key)),
+            ("merge_duplicate_teams", merge_duplicate_teams),
+            ("nest_team_liveries", nest_team_liveries),
+            ("sort_teams_by_name", lambda items: sort(items, team_sort_key)),
         ),
         "engines": (
             (
                 "sort_engines_by_manufacturer",
-                lambda items: _sort(items, _engine_sort_key),
+                lambda items: sort(items, engine_sort_key),
             ),
         ),
         "seasons": (
-            ("merge_duplicate_seasons", _merge_duplicate_seasons),
-            ("sort_seasons_by_year", lambda items: _sort(items, _season_sort_key)),
+            ("merge_duplicate_seasons", merge_duplicate_seasons),
+            ("sort_seasons_by_year", lambda items: sort(items, season_sort_key)),
         ),
         "grands_prix": (
             (
                 "sort_grands_prix_by_race_title",
-                lambda items: _sort(items, _grands_prix_sort_key),
+                lambda items: sort(items, grands_prix_sort_key),
             ),
         ),
         "races": (
             (
                 "sort_races_by_season_and_grand_prix",
-                lambda items: _sort(items, _races_sort_key),
+                lambda items: sort(items, races_sort_key),
             ),
         ),
         "sponsors": (
             (
                 "sort_sponsors_by_text",
-                lambda items: _sort(items, _sort_key_with_presence),
+                lambda items: sort(items, sort_key_with_presence),
             ),
         ),
         "chassis_constructors": (
             (
                 "sort_chassis_constructors_by_name",
-                lambda items: _sort(items, _chassis_constructor_sort_key),
+                lambda items: sort(items, chassis_constructor_sort_key),
             ),
         ),
     }
@@ -316,7 +316,7 @@ def configure_domain_postprocessors(
             (
                 (
                     "sort_constructors_by_name",
-                    lambda items: _sort(items, _constructor_sort_key),
+                    lambda items: sort(items, constructor_sort_key),
                 ),
             ),
         )
@@ -344,9 +344,9 @@ def post_process_domain_records(
     current = records
     executed_steps: list[str] = []
     for step_name, step_processor in postprocessors:
-        before_summary = _records_debug_summary(current)
+        before_summary = records_debug_summary(current)
         current = step_processor(current)
-        after_summary = _records_debug_summary(current)
+        after_summary = records_debug_summary(current)
         executed_steps.append(step_name)
         logger.debug(
             "Domain '%s' postprocess step '%s': %s -> %s",

@@ -1,6 +1,6 @@
 import pytest
 
-from scrapers.circuits.complete_scraper import F1CompleteCircuitDataExtractor
+from scrapers.circuits.circuits_complete_scraper import F1CompleteCircuitDataExtractor
 from scrapers.constructors.complete_scraper import CompleteConstructorsDataExtractor
 from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor
 from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerDataExtractor

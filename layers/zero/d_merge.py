@@ -36,8 +36,8 @@ def merge_layer_zero_phase_d(base_wiki_dir: Path) -> None:
             else:
                 all_records.append(payload)
 
-        merged_records = _dedupe_records(all_records)
-        merged_records = _sort_records_for_domain(domain_dir.name, merged_records)
+        merged_records = dedupe_records(all_records)
+        merged_records = sort_records_for_domain(domain_dir.name, merged_records)
 
         d_merge_dir = resolver.d_merge_dir(domain=domain_dir.name)
         d_merge_dir.mkdir(parents=True, exist_ok=True)
@@ -48,11 +48,11 @@ def merge_layer_zero_phase_d(base_wiki_dir: Path) -> None:
         )
 
 
-def _dedupe_records(records: list[object]) -> list[object]:
+def dedupe_records(records: list[object]) -> list[object]:
     seen: set[str] = set()
     result: list[object] = []
     for record in records:
-        key = _dedup_key(record)
+        key = dedup_key(record)
         if key in seen:
             continue
         seen.add(key)
@@ -60,7 +60,7 @@ def _dedupe_records(records: list[object]) -> list[object]:
     return result
 
 
-def _dedup_key(record: object) -> str:
+def dedup_key(record: object) -> str:
     if isinstance(record, dict):
         url = record.get("url")
         if url is not None:
@@ -72,18 +72,18 @@ def _dedup_key(record: object) -> str:
     return json.dumps(record, ensure_ascii=False)
 
 
-def _sort_records_for_domain(domain: str, records: list[object]) -> list[object]:
+def sort_records_for_domain(domain: str, records: list[object]) -> list[object]:
     if domain not in {"countries", "sponsors"}:
         return records
-    return sorted(records, key=_text_first_sort_key)
+    return sorted(records, key=text_first_sort_key)
 
 
-def _text_first_sort_key(record: object) -> tuple[int, str]:
-    normalized_text = _normalize_record_text(record)
+def text_first_sort_key(record: object) -> tuple[int, str]:
+    normalized_text = normalize_record_text(record)
     return (0, normalized_text) if normalized_text else (1, "")
 
 
-def _normalize_record_text(record: object) -> str:
+def normalize_record_text(record: object) -> str:
     if isinstance(record, str):
         return record.strip().casefold()
     if isinstance(record, dict):

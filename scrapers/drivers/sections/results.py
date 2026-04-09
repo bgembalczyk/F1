@@ -5,8 +5,8 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.factory.record_factory import MappingRecordFactory
-from scrapers.base.helpers.table_parsing import TableParsingHelper
+from scrapers.base.factory.protocol import MappingRecordFactory
+from scrapers.base.helpers.table_parsing_helper import TableParsingHelper
 from scrapers.base.sections.section_table_parser_base import SectionTableParserBase
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig

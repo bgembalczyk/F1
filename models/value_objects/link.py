@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from models.value_objects.base import ValueObject
-from models.value_objects.link_utils import validate_link
+from models.value_objects.helpers import validate_link
 
 
 @dataclass

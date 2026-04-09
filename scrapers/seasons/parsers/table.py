@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.factory.record_factory import MappingRecordFactory
+from scrapers.base.factory.protocol import MappingRecordFactory
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn

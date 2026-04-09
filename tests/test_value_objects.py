@@ -11,7 +11,7 @@ from models.value_objects.link import Link
 from models.value_objects.normalized_date import NormalizedDate
 from models.value_objects.rounds import Rounds
 from models.value_objects.season_ref import SeasonRef
-from models.value_objects.time_types import DateValue
+from models.value_objects.date import DateValue
 
 SUPPORTED_SEASON_YEAR = 2026
 EXPECTED_SEASONS_COUNT = 2

@@ -14,9 +14,9 @@ from models.records.factories.registry import FactoryRegistryProvider
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
-from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
-from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
-from scrapers.circuits.sections.service import CircuitSectionExtractionService
+from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordAssembler
+from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordDTO
+from scrapers.circuits.circuits_sections.service import CircuitSectionExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService

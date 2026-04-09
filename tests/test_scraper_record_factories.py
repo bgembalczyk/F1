@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 from scrapers.base.options import ScraperOptions
-from scrapers.circuits.list_scraper import CircuitsListScraper
+from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from tests.support.dependency_stubs import ensure_optional_deps
 

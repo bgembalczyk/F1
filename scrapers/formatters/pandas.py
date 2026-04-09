@@ -1,0 +1,31 @@
+import warnings
+from typing import TYPE_CHECKING
+from typing import Any
+
+from scrapers.base.formatters.helpers import extract_data
+
+if TYPE_CHECKING:
+    from scrapers.base.results import ScrapeResult
+
+
+def validate_dataframe_columns(dataframe: Any) -> None:
+    if not hasattr(dataframe, "columns"):
+        msg = "Pandas DataFrame stub does not expose 'columns'."
+        raise AttributeError(msg)
+
+
+class PandasDataFrameFormatter:
+    @staticmethod
+    def format(result: "ScrapeResult") -> Any:
+        data = extract_data(result)
+        try:
+            # di-antipattern-allow: optional dependency.
+            import pandas as pd
+
+            dataframe = pd.DataFrame(data)
+            validate_dataframe_columns(dataframe)
+        except (ImportError, AttributeError):
+            warnings.warn("Pandas nie jest zainstalowane", RuntimeWarning, stacklevel=2)
+            return data
+        else:
+            return dataframe

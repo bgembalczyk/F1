@@ -1,0 +1,60 @@
+import json
+import time
+from abc import ABC
+from abc import abstractmethod
+from hashlib import sha256
+from pathlib import Path
+from typing import Any
+from typing import Generic
+from typing import TypeVar
+
+from infrastructure.cache.adapter.file_ttl import FileTtlCacheAdapter
+
+T = TypeVar("T")
+
+
+
+
+
+
+
+
+class FileTtlCache(Generic[T]):
+    """Plikowy cache z TTL oparty o klucze tekstowe."""
+
+    def __init__(
+        self,
+        *,
+        cache_dir: Path | str,
+        ttl_seconds: int,
+        adapter: FileTtlCacheAdapter[T],
+    ) -> None:
+        self.cache_dir = Path(cache_dir)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self.ttl_seconds = max(0, int(ttl_seconds))
+        self._adapter = adapter
+
+    def get(self, key: str) -> T | None:
+        path = self._cache_path(key)
+        if not self._is_fresh(path):
+            return None
+        try:
+            raw_text = path.read_text(encoding="utf-8")
+            return self._adapter.deserialize(raw_text)
+        except (OSError, ValueError, json.JSONDecodeError):
+            return None
+
+    def set(self, key: str, value: T) -> None:
+        path = self._cache_path(key)
+        raw_text = self._adapter.serialize(value)
+        path.write_text(raw_text, encoding="utf-8")
+
+    def _cache_path(self, key: str) -> Path:
+        digest = sha256(key.encode("utf-8")).hexdigest()
+        return self.cache_dir / f"{digest}{self._adapter.extension}"
+
+    def _is_fresh(self, path: Path) -> bool:
+        if not path.exists() or self.ttl_seconds <= 0:
+            return False
+        age_seconds = time.time() - path.stat().st_mtime
+        return age_seconds <= self.ttl_seconds

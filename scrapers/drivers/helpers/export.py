@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.helpers import init_scraper_options
 from scrapers.base.parsers.helpers import extract_driver_text
 from scrapers.base.services.result_export_service import ResultExportService
 from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor

@@ -20,11 +20,11 @@ def extract_layer_zero_phase_c(base_wiki_dir: Path) -> None:
 
     resolver = PathResolver(layer_zero_root=layer_zero_dir)
 
-    _copy_b_merge_to_c_extract(layer_zero_dir, resolver)
-    _extract_cross_domain_references(layer_zero_dir, resolver)
+    copy_b_merge_to_c_extract(layer_zero_dir, resolver)
+    extract_cross_domain_references(layer_zero_dir, resolver)
 
 
-def _copy_b_merge_to_c_extract(layer_zero_dir: Path, resolver: PathResolver) -> None:
+def copy_b_merge_to_c_extract(layer_zero_dir: Path, resolver: PathResolver) -> None:
     for domain_dir in sorted(p for p in layer_zero_dir.iterdir() if p.is_dir()):
         merged_file = resolver.merged(domain=domain_dir.name)
         if not merged_file.exists():
@@ -34,7 +34,7 @@ def _copy_b_merge_to_c_extract(layer_zero_dir: Path, resolver: PathResolver) -> 
         shutil.copy2(merged_file, extract_dir / merged_file.name)
 
 
-def _read_b_merge(
+def read_b_merge(
     domain_dir: Path,
     resolver: PathResolver,
 ) -> list[object] | None:
@@ -45,7 +45,7 @@ def _read_b_merge(
     return data if isinstance(data, list) else None
 
 
-def _write_c_extract_file(
+def write_c_extract_file(
     target_domain: str,
     filename: str,
     values: list[object],
@@ -53,7 +53,7 @@ def _write_c_extract_file(
 ) -> None:
     if not values:
         return
-    normalized_values = _prepare_c_extract_values(values, filename=filename)
+    normalized_values = prepare_c_extract_values(values, filename=filename)
     if not normalized_values:
         return
     extract_dir = resolver.extract_dir(domain=target_domain)
@@ -65,7 +65,7 @@ def _write_c_extract_file(
     )
 
 
-def _prepare_c_extract_values(values: list[object], *, filename: str) -> list[object]:
+def prepare_c_extract_values(values: list[object], *, filename: str) -> list[object]:
     if not filename.startswith("from_"):
         return values
 
@@ -82,7 +82,7 @@ def _prepare_c_extract_values(values: list[object], *, filename: str) -> list[ob
     return [unique_by_key[key] for key in sorted(unique_by_key)]
 
 
-def _get_formula_one(record: dict[str, object]) -> dict[str, object] | None:
+def get_formula_one(record: dict[str, object]) -> dict[str, object] | None:
     racing_series = record.get("racing_series")
     if not isinstance(racing_series, dict):
         return None
@@ -92,25 +92,25 @@ def _get_formula_one(record: dict[str, object]) -> dict[str, object] | None:
     return formula_one
 
 
-def _extract_cross_domain_references(
+def extract_cross_domain_references(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    _extract_from_chassis_constructors(layer_zero_dir, resolver)
-    _extract_from_circuits(layer_zero_dir, resolver)
-    _extract_from_constructors(layer_zero_dir, resolver)
-    _extract_from_drivers(layer_zero_dir, resolver)
-    _extract_from_engines(layer_zero_dir, resolver)
-    _extract_from_races(layer_zero_dir, resolver)
-    _extract_from_seasons(layer_zero_dir, resolver)
-    _extract_from_teams(layer_zero_dir, resolver)
+    extract_from_chassis_constructors(layer_zero_dir, resolver)
+    extract_from_circuits(layer_zero_dir, resolver)
+    extract_from_constructors(layer_zero_dir, resolver)
+    extract_from_drivers(layer_zero_dir, resolver)
+    extract_from_engines(layer_zero_dir, resolver)
+    extract_from_races(layer_zero_dir, resolver)
+    extract_from_seasons(layer_zero_dir, resolver)
+    extract_from_teams(layer_zero_dir, resolver)
 
 
-def _extract_from_chassis_constructors(
+def extract_from_chassis_constructors(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    records = _read_b_merge(layer_zero_dir / "chassis_constructors", resolver)
+    records = read_b_merge(layer_zero_dir / "chassis_constructors", resolver)
     if not records:
         return
 
@@ -118,9 +118,9 @@ def _extract_from_chassis_constructors(
     for record in records:
         if not isinstance(record, dict):
             continue
-        _collect_list_or_single(countries, record.get("licensed_in"))
+        collect_list_or_single(countries, record.get("licensed_in"))
 
-    _write_c_extract_file(
+    write_c_extract_file(
         "countries",
         "from_chassis_constructors.json",
         countries,
@@ -128,11 +128,11 @@ def _extract_from_chassis_constructors(
     )
 
 
-def _extract_from_circuits(
+def extract_from_circuits(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    records = _read_b_merge(layer_zero_dir / "circuits", resolver)
+    records = read_b_merge(layer_zero_dir / "circuits", resolver)
     if not records:
         return
 
@@ -149,11 +149,11 @@ def _extract_from_circuits(
         if location is not None:
             locations.append(location)
 
-    _write_c_extract_file("countries", "from_circuits.json", countries, resolver)
-    _write_c_extract_file("locations", "from_circuits.json", locations, resolver)
+    write_c_extract_file("countries", "from_circuits.json", countries, resolver)
+    write_c_extract_file("locations", "from_circuits.json", locations, resolver)
 
 
-def _collect_list_or_single(
+def collect_list_or_single(
     target: list[object],
     value: object,
 ) -> None:
@@ -163,11 +163,11 @@ def _collect_list_or_single(
         target.append(value)
 
 
-def _extract_from_constructors(
+def extract_from_constructors(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    records = _read_b_merge(layer_zero_dir / "constructors", resolver)
+    records = read_b_merge(layer_zero_dir / "constructors", resolver)
     if not records:
         return
 
@@ -178,24 +178,24 @@ def _extract_from_constructors(
     for record in records:
         if not isinstance(record, dict):
             continue
-        _collect_list_or_single(engines, record.get("engine"))
-        formula_one = _get_formula_one(record)
+        collect_list_or_single(engines, record.get("engine"))
+        formula_one = get_formula_one(record)
         if formula_one is None:
             continue
-        _collect_list_or_single(teams, formula_one.get("antecedent_teams"))
-        _collect_list_or_single(countries, formula_one.get("based_in"))
-        _collect_list_or_single(countries, formula_one.get("licensed_in"))
+        collect_list_or_single(teams, formula_one.get("antecedent_teams"))
+        collect_list_or_single(countries, formula_one.get("based_in"))
+        collect_list_or_single(countries, formula_one.get("licensed_in"))
 
-    _write_c_extract_file("engines", "from_constructors.json", engines, resolver)
-    _write_c_extract_file("teams", "from_constructors.json", teams, resolver)
-    _write_c_extract_file("countries", "from_constructors.json", countries, resolver)
+    write_c_extract_file("engines", "from_constructors.json", engines, resolver)
+    write_c_extract_file("teams", "from_constructors.json", teams, resolver)
+    write_c_extract_file("countries", "from_constructors.json", countries, resolver)
 
 
-def _extract_from_drivers(
+def extract_from_drivers(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    records = _read_b_merge(layer_zero_dir / "drivers", resolver)
+    records = read_b_merge(layer_zero_dir / "drivers", resolver)
     if not records:
         return
 
@@ -207,14 +207,14 @@ def _extract_from_drivers(
         if nationality is not None:
             countries.append(nationality)
 
-    _write_c_extract_file("countries", "from_drivers.json", countries, resolver)
+    write_c_extract_file("countries", "from_drivers.json", countries, resolver)
 
 
-def _extract_from_engines(
+def extract_from_engines(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    records = _read_b_merge(layer_zero_dir / "engines", resolver)
+    records = read_b_merge(layer_zero_dir / "engines", resolver)
     if not records:
         return
 
@@ -222,15 +222,15 @@ def _extract_from_engines(
     for record in records:
         if not isinstance(record, dict):
             continue
-        formula_one = _get_formula_one(record)
+        formula_one = get_formula_one(record)
         if formula_one is None:
             continue
-        _collect_list_or_single(countries, formula_one.get("engines_built_in"))
+        collect_list_or_single(countries, formula_one.get("engines_built_in"))
 
-    _write_c_extract_file("countries", "from_engines.json", countries, resolver)
+    write_c_extract_file("countries", "from_engines.json", countries, resolver)
 
 
-def _collect_red_flag_drivers(
+def collect_red_flag_drivers(
     drivers: list[object],
     red_flag: dict[str, object],
 ) -> None:
@@ -242,15 +242,15 @@ def _collect_red_flag_drivers(
         return
     for entry in failed:
         if isinstance(entry, dict):
-            _collect_list_or_single(entry_drivers := [], entry.get("drivers"))
+            collect_list_or_single(entry_drivers := [], entry.get("drivers"))
             drivers.extend(entry_drivers)
 
 
-def _extract_from_races(
+def extract_from_races(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    records = _read_b_merge(layer_zero_dir / "races", resolver)
+    records = read_b_merge(layer_zero_dir / "races", resolver)
     if not records:
         return
 
@@ -260,16 +260,16 @@ def _extract_from_races(
             continue
         red_flag = record.get("red_flag")
         if isinstance(red_flag, dict):
-            _collect_red_flag_drivers(drivers, red_flag)
+            collect_red_flag_drivers(drivers, red_flag)
 
-    _write_c_extract_file("drivers", "from_races.json", drivers, resolver)
+    write_c_extract_file("drivers", "from_races.json", drivers, resolver)
 
 
-def _extract_from_seasons(
+def extract_from_seasons(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    records = _read_b_merge(layer_zero_dir / "seasons", resolver)
+    records = read_b_merge(layer_zero_dir / "seasons", resolver)
     if not records:
         return
 
@@ -279,16 +279,16 @@ def _extract_from_seasons(
     for record in records:
         if not isinstance(record, dict):
             continue
-        _collect_list_or_single(tyre_manufacturers, record.get("tyre_manufacturers"))
-        _collect_list_or_single(constructors, record.get("constructors_champion"))
+        collect_list_or_single(tyre_manufacturers, record.get("tyre_manufacturers"))
+        collect_list_or_single(constructors, record.get("constructors_champion"))
 
-    _write_c_extract_file(
+    write_c_extract_file(
         "tyre_manufacturers",
         "from_seasons.json",
         tyre_manufacturers,
         resolver,
     )
-    _write_c_extract_file(
+    write_c_extract_file(
         "constructors",
         "from_seasons.json",
         constructors,
@@ -296,11 +296,11 @@ def _extract_from_seasons(
     )
 
 
-def _extract_from_teams(
+def extract_from_teams(
     layer_zero_dir: Path,
     resolver: PathResolver,
 ) -> None:
-    records = _read_b_merge(layer_zero_dir / "teams", resolver)
+    records = read_b_merge(layer_zero_dir / "teams", resolver)
     if not records:
         return
 
@@ -312,25 +312,25 @@ def _extract_from_teams(
     for record in records:
         if not isinstance(record, dict):
             continue
-        formula_one = _get_formula_one(record)
+        formula_one = get_formula_one(record)
         if formula_one is None:
             continue
-        _collect_list_or_single(teams, formula_one.get("antecedent_teams"))
-        _collect_list_or_single(countries, formula_one.get("based_in"))
-        _collect_list_or_single(countries, formula_one.get("licensed_in"))
+        collect_list_or_single(teams, formula_one.get("antecedent_teams"))
+        collect_list_or_single(countries, formula_one.get("based_in"))
+        collect_list_or_single(countries, formula_one.get("licensed_in"))
         liveries = formula_one.get("liveries")
         if not isinstance(liveries, list):
             continue
         for livery in liveries:
-            _collect_livery_colors_and_sponsors(livery, colors, sponsors)
+            collect_livery_colors_and_sponsors(livery, colors, sponsors)
 
-    _write_c_extract_file("colors", "from_teams.json", colors, resolver)
-    _write_c_extract_file("sponsors", "from_teams.json", sponsors, resolver)
-    _write_c_extract_file("teams", "from_teams.json", teams, resolver)
-    _write_c_extract_file("countries", "from_teams.json", countries, resolver)
+    write_c_extract_file("colors", "from_teams.json", colors, resolver)
+    write_c_extract_file("sponsors", "from_teams.json", sponsors, resolver)
+    write_c_extract_file("teams", "from_teams.json", teams, resolver)
+    write_c_extract_file("countries", "from_teams.json", countries, resolver)
 
 
-def _collect_livery_colors_and_sponsors(
+def collect_livery_colors_and_sponsors(
     livery: object,
     colors: list[object],
     sponsors: list[object],
@@ -339,6 +339,6 @@ def _collect_livery_colors_and_sponsors(
         return
     for key, value in livery.items():
         if "colour" in key:
-            _collect_list_or_single(colors, value)
+            collect_list_or_single(colors, value)
         elif "sponsor" in key:
-            _collect_list_or_single(sponsors, value)
+            collect_list_or_single(sponsors, value)

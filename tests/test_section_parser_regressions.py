@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.seasons import LAST_YEAR_FORMULA_ONE_SEASON
-from scrapers.circuits.list_scraper import CircuitsListScraper
+from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
 from scrapers.constructors.constructors_list import ConstructorsListScraper
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser

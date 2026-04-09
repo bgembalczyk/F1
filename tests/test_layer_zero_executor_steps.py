@@ -1,14 +1,14 @@
 # ruff: noqa: SLF001
 from pathlib import Path
 
-from layers.orchestration.factories import DefaultLayerZeroRunConfigFactory
-from layers.orchestration.protocols import LayerZeroMergeServiceProtocol
-from layers.orchestration.protocols import LayerZeroRunConfigFactoryProtocol
-from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.job_hooks.mirror.constructors import MirrorConstructorsJobHook
+from layers.job_hooks.null_zero import NullLayerZeroJobHook
+from layers.protocols.merge.zero_service import LayerZeroMergeServiceProtocol
+from layers.seed.registry.entries.list_job import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge_service import LayerZeroMergeService
-from layers.zero.policies import MirrorConstructorsJobHook
-from layers.zero.policies import NullLayerZeroJobHook
+from layers.zero.run_config_factories.default import DefaultLayerZeroRunConfigFactory
+from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 

@@ -1,8 +1,8 @@
 from pathlib import Path
 from typing import Any
 
-from infrastructure.cache.file_ttl_cache import FileTtlCache
-from infrastructure.cache.file_ttl_cache import GeminiJsonFileCacheAdapter
+from infrastructure.cache.adapter.gemini_json_file import GeminiJsonFileCacheAdapter
+from infrastructure.cache.file_ttl import FileTtlCache
 from infrastructure.gemini.constants import ONE_YEAR_SECONDS
 
 

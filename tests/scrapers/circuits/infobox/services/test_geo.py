@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.circuits.infobox.services.geo import CircuitGeoParser
+from scrapers.circuits.circuits_infobox.services.geo import CircuitGeoParser
 
 
 @pytest.fixture()

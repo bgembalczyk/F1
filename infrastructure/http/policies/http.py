@@ -1,0 +1,23 @@
+from dataclasses import dataclass
+
+from infrastructure.http.policies.constants import DEFAULT_HTTP_RETRIES
+from infrastructure.http.policies.constants import DEFAULT_HTTP_TIMEOUT
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
+
+
+@dataclass(frozen=True)
+class HttpPolicy:
+    cache: TextCacheProtocol | None = None
+    retries: int = DEFAULT_HTTP_RETRIES
+    timeout: int = DEFAULT_HTTP_TIMEOUT
+
+    def __post_init__(self) -> None:
+        if self.timeout <= 0:
+            msg = "timeout must be greater than 0"
+            raise ValueError(msg)
+        if self.retries < 0:
+            msg = "retries must be >= 0"
+            raise ValueError(msg)
+
+
+__all__ = ["HttpPolicy"]

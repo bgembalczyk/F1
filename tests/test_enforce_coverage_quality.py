@@ -136,11 +136,11 @@ def test_load_legacy_files_returns_empty_if_missing(tmp_path: Path) -> None:
 def test_load_legacy_files_parses_file(tmp_path: Path) -> None:
     txt = tmp_path / "legacy.txt"
     txt.write_text(
-        "# comment\nsrc/module.py\n\nother/file.py\n",
+        "# comment\nsrc/module.py\n\nother/protocol.py\n",
         encoding="utf-8",
     )
     result = ecq._load_legacy_files(txt)
-    assert result == {"src/module.py", "other/file.py"}
+    assert result == {"src/module.py", "other/protocol.py"}
 
 
 # ---------------------------------------------------------------------------

@@ -66,6 +66,6 @@ def test_build_discovered_seed_registry_is_deterministic(monkeypatch) -> None:
         },
     )
 
-    registry = helpers._build_discovered_layer_one_seed_registry()
+    registry = helpers.build_discovered_layer_one_seed_registry()
 
     assert [entry.seed_name for entry in registry] == ["seed_a", "seed_b"]

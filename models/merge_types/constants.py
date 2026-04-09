@@ -1,0 +1,1 @@
+RecordDict = dict[str, object]

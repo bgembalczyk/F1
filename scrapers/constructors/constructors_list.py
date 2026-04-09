@@ -9,7 +9,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from models.services.season_service import parse_seasons
+from models.services.season import parse_seasons
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.results import ScrapeResult
@@ -23,7 +23,7 @@ from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.constructors import BaseConstructorListScraper
 from scrapers.constructors import constants
-from scrapers.constructors.columns.constructor_name import ConstructorNameColumn
+from scrapers.constructors.constructors_columns.constructor_name import ConstructorNameColumn
 from scrapers.constructors.config_factory import build_constructor_list_config
 from scrapers.constructors.sections.list_section import CurrentConstructorsSectionParser
 from scrapers.constructors.sections.list_section import FormerConstructorsSectionParser

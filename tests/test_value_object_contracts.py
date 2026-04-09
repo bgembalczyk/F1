@@ -12,7 +12,7 @@ from models.value_objects.drivers_championships import DriversChampionships
 from models.value_objects.link import Link
 from models.value_objects.normalized_date import NormalizedDate
 from models.value_objects.season_ref import SeasonRef
-from models.value_objects.time_types import DateValue
+from models.value_objects.date import DateValue
 
 if TYPE_CHECKING:
     from collections.abc import Mapping

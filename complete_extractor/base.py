@@ -9,7 +9,7 @@ from scrapers.base.composite_scraper import SingleScraperProtocol
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
-from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.helpers import init_scraper_options
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter

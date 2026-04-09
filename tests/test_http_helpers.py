@@ -1,4 +1,4 @@
-from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.helpers import init_scraper_options
 from scrapers.base.options import ScraperOptions
 
 

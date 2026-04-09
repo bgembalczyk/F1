@@ -6,8 +6,8 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.url import normalize_url
-from scrapers.base.helpers.year_extraction import YEAR_RE
-from scrapers.base.helpers.year_extraction import YearExtractor
+from scrapers.base.helpers.year_extractor import YEAR_RE
+from scrapers.base.helpers.year_extractor import YearExtractor
 from scrapers.drivers.infobox.parsers import constants
 
 

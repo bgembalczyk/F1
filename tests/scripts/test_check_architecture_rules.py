@@ -75,7 +75,7 @@ def test_detect_relevant_domains_accepts_only_scrapers_python_paths() -> None:
     detected = check_architecture_rules.detect_relevant_domains(
         [
             Path("scrapers/drivers/entrypoint.py"),
-            Path("scrapers/unknown/file.py"),
+            Path("scrapers/unknown/protocol.py"),
             Path("docs/file.md"),
         ],
         domains=("drivers", "seasons"),

@@ -5,8 +5,8 @@ import pytest
 from scrapers.base.abc import ABCScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.circuits.circuits_infobox.scraper import F1CircuitInfoboxParser
+from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 from scrapers.engines.single_scraper import SingleEngineManufacturerScraper

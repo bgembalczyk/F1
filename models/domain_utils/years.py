@@ -1,23 +1,14 @@
 import re
 from collections.abc import Iterable
 
-SHORT_YEAR_DIGITS = 2
-YEAR_PATTERN = re.compile(r"^\d{4}$")
-YEAR_RANGE_PATTERN = re.compile(
-    r"^(\d{4})\s*[\-\u2013\u2014]\s*(\d{2,4}|present)$",
-    re.IGNORECASE,
-)
-YEAR_TO_PATTERN = re.compile(r"^(\d{4})\s+to\s+(\d{2,4}|present)$", re.IGNORECASE)
-ONWARDS_PATTERN = re.compile(r"(\d{4})\s+onward(?:s)?\b", re.IGNORECASE)
-PRESENT_PATTERN = re.compile(r"\bpresent\b", re.IGNORECASE)
-
-
-NUMERIC_DASH_RANGE_PATTERN = re.compile(r"^(\d+)\s*[\-\u2013\u2014]\s*(\d+)$")
-
-EXPLICIT_RANGE_PATTERNS = (
-    re.compile(r"\b(\d{4})\s*[\-\u2013\u2014]\s*(\d{2,4}|present)\b", re.IGNORECASE),
-    re.compile(r"\b(\d{4})\s+to\s+(\d{2,4}|present)\b", re.IGNORECASE),
-)
+from models.domain_utils.constants import EXPLICIT_RANGE_PATTERNS
+from models.domain_utils.constants import NUMERIC_DASH_RANGE_PATTERN
+from models.domain_utils.constants import ONWARDS_PATTERN
+from models.domain_utils.constants import PRESENT_PATTERN
+from models.domain_utils.constants import SHORT_YEAR_DIGITS
+from models.domain_utils.constants import YEAR_PATTERN
+from models.domain_utils.constants import YEAR_RANGE_PATTERN
+from models.domain_utils.constants import YEAR_TO_PATTERN
 
 
 def parse_numeric_dash_range(text: str) -> tuple[int, int] | None:
@@ -89,30 +80,30 @@ def extract_years(text: str, *, current_year: int) -> list[int]:
 
 
 def parse_year_range(text: str | None) -> dict[str, int | None]:
-    normalized = _normalize_range_text(text)
+    normalized = normalize_range_text(text)
     if not normalized:
         return {"start": None, "end": None}
 
-    parsed_match = _parse_explicit_range_match(normalized)
+    parsed_match = parse_explicit_range_match(normalized)
     if parsed_match is not None:
         return parsed_match
 
-    return _parse_year_range_fallback(normalized)
+    return parse_year_range_fallback(normalized)
 
 
-def _normalize_range_text(text: str | None) -> str:
+def normalize_range_text(text: str | None) -> str:
     return ONWARDS_PATTERN.sub(r"\1-present", (text or "").strip())
 
 
-def _parse_explicit_range_match(text: str) -> dict[str, int | None] | None:
+def parse_explicit_range_match(text: str) -> dict[str, int | None] | None:
     for pattern in EXPLICIT_RANGE_PATTERNS:
         match = pattern.search(text)
         if match:
-            return _resolve_range_match(match)
+            return resolve_range_match(match)
     return None
 
 
-def _resolve_range_match(match: re.Match[str]) -> dict[str, int | None]:
+def resolve_range_match(match: re.Match[str]) -> dict[str, int | None]:
     start = int(match.group(1))
     end_text = match.group(2).lower()
     if end_text == "present":
@@ -123,7 +114,7 @@ def _resolve_range_match(match: re.Match[str]) -> dict[str, int | None]:
     return {"start": start, "end": end}
 
 
-def _parse_year_range_fallback(text: str) -> dict[str, int | None]:
+def parse_year_range_fallback(text: str) -> dict[str, int | None]:
     years = [int(value) for value in re.findall(r"\d{4}", text)]
     if not years:
         return {"start": None, "end": None}

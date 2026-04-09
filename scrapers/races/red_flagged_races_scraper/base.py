@@ -3,7 +3,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
+from scrapers.base.helpers.multi_level_header_builder import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.transformers import append_transformer
