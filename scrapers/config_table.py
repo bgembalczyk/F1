@@ -14,7 +14,7 @@ from scrapers.base.table.schema import TableSchema
 from scrapers.base.table.schema import TableSchemaBuilder
 
 if TYPE_CHECKING:
-    from scrapers.base.factory.protocol import RecordFactory
+    from models.records.factories.protocol import RecordBuilder
     from scrapers.base.table.dsl.column import ColumnSpec
 
 
@@ -27,7 +27,7 @@ class TableConfig:
     columns: Mapping[str, BaseColumn] = field(default_factory=dict)
     schema: TableSchema | TableSchemaBuilder | TableSchemaDSL | None = None
     table_css_class: str = "wikitable"
-    record_factory: RecordFactory | None = None
+    record_factory: RecordBuilder | None = None
     model_class: type | None = None
     default_column: BaseColumn = field(default_factory=AutoColumn)
 
@@ -88,10 +88,11 @@ class TableConfig:
 
         if (
             self.record_factory is not None
+            and not hasattr(self.record_factory, "build")
             and not hasattr(self.record_factory, "create")
             and not callable(self.record_factory)
         ):
-            msg = "TableScraperConfig.record_factory must implement RecordFactory.create()."
+            msg = "TableScraperConfig.record_factory must implement RecordBuilder.build() (or legacy create())."
             raise TypeError(msg)
 
 

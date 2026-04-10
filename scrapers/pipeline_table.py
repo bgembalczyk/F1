@@ -193,7 +193,9 @@ class TablePipeline:
             payload = {
                 key: value for key, value in payload.items() if key in self.model_fields
             }
-        if hasattr(self.record_factory, "create"):
+        if hasattr(self.record_factory, "build"):
+            created = self.record_factory.build(payload)
+        elif hasattr(self.record_factory, "create"):
             created = self.record_factory.create(payload)
         elif callable(self.record_factory):
             created = self.record_factory(**payload)
