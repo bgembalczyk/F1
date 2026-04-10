@@ -1,7 +1,16 @@
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractor
+from typing import Any
+from typing import Iterable
+
+from bs4 import BeautifulSoup
+
+from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractionStrategy
+from scrapers.infobox.extraction.result import InfoboxExtractionResult
+from scrapers.infobox.parsers.circuit import F1CircuitInfoboxParser
+from scrapers.options import ScraperOptions
+from scrapers.parsers.soup import SoupParser
 
 
-class CircuitInfoboxExtractor(InfoboxExtractor[BeautifulSoup]):
+class CircuitInfoboxExtractionStrategy(InfoboxExtractionStrategy[BeautifulSoup]):
     def find_infoboxes(self, soup: BeautifulSoup) -> Iterable[BeautifulSoup]:
         return [soup]
 

@@ -5,13 +5,15 @@ from typing import Literal
 from bs4 import BeautifulSoup
 
 from infrastructure.http.errors.base import RequestError
-from scrapers.base.debug_dumps import write_infobox_dump
-from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
-from scrapers.base.infobox.html_parser import InfoboxHtmlParser
-from scrapers.base.logging import get_logger
+from scrapers.debug_dumps import write_infobox_dump
+from scrapers.infobox.field.mapper import InfoboxFieldMapper
+from scrapers.infobox.parsers.html import InfoboxHtmlParser
+from scrapers.logging import get_logger
 
 
-class InfoboxExtractor:
+class DefaultInfoboxExtractor:
+    """Domyślna implementacja ekstraktora pojedynczego infoboxu."""
+
     def __init__(
         self,
         *,
@@ -40,7 +42,7 @@ class InfoboxExtractor:
             raise ValueError(msg)
 
     def extract(self, soup: BeautifulSoup) -> dict[str, Any]:
-        self.logger.debug("InfoboxExtractor start (run_id=%s)", self.run_id)
+        self.logger.debug("DefaultInfoboxExtractor start (run_id=%s)", self.run_id)
         mapped: dict[str, Any]
         attempts = self.retry_attempts if self.error_policy == "retry" else 1
         attempt = 0
@@ -66,7 +68,7 @@ class InfoboxExtractor:
                 raise
         rows = mapped.get("rows", {}) if isinstance(mapped, dict) else {}
         self.logger.debug(
-            "InfoboxExtractor extracted %d row(s) (run_id=%s)",
+            "DefaultInfoboxExtractor extracted %d row(s) (run_id=%s)",
             len(rows),
             self.run_id,
         )

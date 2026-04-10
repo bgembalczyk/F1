@@ -1,32 +1,29 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
-from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.infobox.service import InfoboxExtractionResult
-from scrapers.base.infobox.service import InfoboxExtractor
-from scrapers.base.infobox.service import StrategyInfoboxExtractionService
-from scrapers.circuits.circuits_infobox.scraper import F1CircuitInfoboxParser
+from scrapers.infobox.extraction.extractor.circuit import CircuitInfoboxExtractionStrategy
+from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractionStrategy
+from scrapers.infobox.extraction.service.strategy import (
+    StrategyBackedInfoboxExtractionService,
+)
 
 if TYPE_CHECKING:
-    from collections.abc import Iterable
-
-    from scrapers.base.options import ScraperOptions
-    from scrapers.base.parsers.soup import SoupParser
+    from scrapers.options import ScraperOptions
 
 
-
-
-class CircuitInfoboxExtractionService(StrategyInfoboxExtractionService[BeautifulSoup]):
+class CircuitInfoboxExtractionService(
+    StrategyBackedInfoboxExtractionService[BeautifulSoup],
+):
     def __init__(
         self,
         *,
         options: ScraperOptions | None = None,
-        extractor: InfoboxExtractor[BeautifulSoup] | None = None,
+        strategy: InfoboxExtractionStrategy[BeautifulSoup] | None = None,
     ) -> None:
         super().__init__(
-            extractor=extractor or CircuitInfoboxExtractor(),
+            strategy=strategy or CircuitInfoboxExtractionStrategy(),
             options=options,
         )

@@ -2,7 +2,7 @@ from typing import Protocol
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.infobox.extraction.result import InfoboxExtractionResult
+from scrapers.infobox.extraction.result import InfoboxExtractionResult
 
 
 class InfoboxExtractionService(Protocol):
