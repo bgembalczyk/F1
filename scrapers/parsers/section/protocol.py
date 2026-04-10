@@ -1,7 +1,6 @@
-from typing import Protocol
-from typing import runtime_checkable
+from scrapers.parsers.section.section_parser_protocol import SectionParserProtocol
 
-from bs4 import BeautifulSoup
+SectionParser = SectionParserProtocol
 
 from scrapers.family_contracts import SectionParserContract
 from scrapers.section.parse_results import SectionParseResult
@@ -18,4 +17,5 @@ class SectionParser(SectionParserContract, Protocol):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
 
 
-__all__ = ["SectionParserProtocol"]
+
+__all__ = ["SectionParser", "SectionParserProtocol"]

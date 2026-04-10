@@ -17,14 +17,17 @@ class InfoboxHtmlParser(InfoboxParser):
     def __init__(self, wikipedia_base: str | None = None) -> None:
         self.wikipedia_base = wikipedia_base or self.WIKIPEDIA_BASE
 
-    def parse(self, soup: BeautifulSoup) -> dict[str, Any]:
-        if isinstance(soup, Tag) and soup.name == "table":
-            return self._parse_infobox(soup)
-        infobox = self.find_infobox(soup)
+    def parse(self, fragment: BeautifulSoup) -> dict[str, Any]:
+        return self.parse_fragment(fragment)
+
+    def parse_fragment(self, fragment: BeautifulSoup) -> dict[str, Any]:
+        if isinstance(fragment, Tag) and fragment.name == "table":
+            return self.parse_group(fragment)
+        infobox = self.find_infobox(fragment)
         if infobox is None:
             return {"title": None, "rows": {}}
 
-        return self._parse_infobox(infobox)
+        return self.parse_group(infobox)
 
     def parse_element(self, element: Tag) -> dict[str, Any]:
         """Parsuje konkretny element tabeli infoboksa.
@@ -40,7 +43,7 @@ class InfoboxHtmlParser(InfoboxParser):
             Słownik z tytułem i wierszami infoboksa (wiersze zawierają tekst
             i linki).
         """
-        return self._parse_infobox(element)
+        return self.parse_group(element)
 
     @staticmethod
     def has_infobox_class(c) -> bool:
@@ -68,10 +71,10 @@ class InfoboxHtmlParser(InfoboxParser):
         """
         return soup.find("table", class_=InfoboxHtmlParser.has_infobox_class)
 
-    def _parse_infobox(self, table: Tag) -> dict[str, Any]:
+    def parse_group(self, table: Tag) -> dict[str, Any]:
         return self.parse_table_rows(table)
 
-    def parse_row_value(self, value: Tag) -> dict[str, Any]:
+    def parse_row(self, value: Tag) -> dict[str, Any]:
         return {
             "text": value.get_text(" ", strip=True),
             "links": self.extract_links(value),
@@ -86,3 +89,6 @@ class InfoboxHtmlParser(InfoboxParser):
             full_url=lambda href: normalize_url(self.wikipedia_base, href),
             allow_local_anchors=False,
         )
+
+
+InfoboxHtmlParser.parse_row_value = InfoboxHtmlParser.parse_row
