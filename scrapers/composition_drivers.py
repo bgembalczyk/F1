@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
 from scrapers.drivers.drivers_infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
-from scrapers.drivers.drivers_services.domain_record import DomainRecordService
+from scrapers.services.domain_record.driver import DriverDomainRecordService
 
 if TYPE_CHECKING:
     from scrapers.base.infobox.service import InfoboxExtractionService
@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class DriverScraperDependencies:
     infobox_service: InfoboxExtractionService
     sections_service_factory: SectionServiceFactory[DriverSectionExtractionService]
-    domain_record_service: DomainRecordService
+    domain_record_service: DriverDomainRecordService
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,7 +30,7 @@ class DriverScraperCompositionFactory:
     sections_service_factory: (
         SectionServiceFactory[DriverSectionExtractionService] | None
     ) = None
-    domain_record_service: DomainRecordService | None = None
+    domain_record_service: DriverDomainRecordService | None = None
 
     @classmethod
     def for_tests(
@@ -40,7 +40,7 @@ class DriverScraperCompositionFactory:
         sections_service_factory: (
             SectionServiceFactory[DriverSectionExtractionService] | None
         ) = None,
-        domain_record_service: DomainRecordService | None = None,
+        domain_record_service: DriverDomainRecordService | None = None,
     ) -> DriverScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -68,7 +68,7 @@ class DriverScraperCompositionFactory:
 
         domain_record_service = self.domain_record_service
         if domain_record_service is None:
-            domain_record_service = DomainRecordService()
+            domain_record_service = DriverDomainRecordService()
 
         return DriverScraperDependencies(
             infobox_service=infobox_service,

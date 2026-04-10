@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from scrapers.seasons.pipeline_seasons import SeasonParserSetBuilder
 from scrapers.seasons.pipeline_seasons import SeasonSectionPipeline
 from scrapers.seasons.pipeline_seasons import SeasonYearResolver
-from scrapers.seasons.services_seasons.domain_record import DomainRecordService
+from scrapers.services.domain_record.season import SeasonDomainRecordService
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 class SeasonScraperDependencies:
     season_year_resolver: SeasonYearResolver
     season_pipeline: SeasonSectionPipeline
-    domain_record_service: DomainRecordService
+    domain_record_service: SeasonDomainRecordService
 
 
 @dataclass(frozen=True, slots=True)
@@ -34,7 +34,7 @@ class SeasonScraperCompositionFactory:
     text_sections_service_factory: (
         SectionServiceFactory[SeasonTextSectionExtractionService] | None
     ) = None
-    domain_record_service: DomainRecordService | None = None
+    domain_record_service: SeasonDomainRecordService | None = None
 
     @classmethod
     def for_tests(
@@ -47,7 +47,7 @@ class SeasonScraperCompositionFactory:
         text_sections_service_factory: (
             SectionServiceFactory[SeasonTextSectionExtractionService] | None
         ) = None,
-        domain_record_service: DomainRecordService | None = None,
+        domain_record_service: SeasonDomainRecordService | None = None,
     ) -> SeasonScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -77,7 +77,7 @@ class SeasonScraperCompositionFactory:
             text_sections_service_factory=self.text_sections_service_factory,
         )
 
-        domain_record_service = self.domain_record_service or DomainRecordService()
+        domain_record_service = self.domain_record_service or SeasonDomainRecordService()
 
         return SeasonScraperDependencies(
             season_year_resolver=season_year_resolver,

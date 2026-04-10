@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -11,10 +12,19 @@ from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
 from scrapers.records.DTO.circuit import CircuitRecordDTO
 from scrapers.records.assemblers.circuit import CircuitRecordAssembler
+from scrapers.services.domain_record.base import BaseDomainRecordService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 
-class DomainRecordService:
+@dataclass(frozen=True, slots=True)
+class CircuitDomainRecordInput:
+    source_url: str
+    infobox: dict[str, Any]
+    lap_record_rows: list[dict[str, Any]]
+    sections: list[dict[str, Any]]
+
+
+class CircuitDomainRecordService(BaseDomainRecordService[CircuitDomainRecordInput]):
     def __init__(
         self,
         *,
@@ -67,19 +77,16 @@ class DomainRecordService:
 
         return all_records
 
-    def assemble_record(
-        self,
-        *,
-        source_url: str,
-        infobox: dict[str, Any],
-        lap_record_rows: list[dict[str, Any]],
-        sections: list[dict[str, Any]],
-    ) -> dict[str, Any]:
+    def assemble_record(self, payload: CircuitDomainRecordInput) -> dict[str, Any]:
         return self._assembler.assemble(
             CircuitRecordDTO(
-                url=source_url,
-                infobox=infobox,
-                lap_record_rows=lap_record_rows,
-                sections=sections,
+                url=payload.source_url,
+                infobox=payload.infobox,
+                lap_record_rows=payload.lap_record_rows,
+                sections=payload.sections,
             ),
         )
+
+
+class DomainRecordService(CircuitDomainRecordService):
+    """Compatibility alias for legacy imports."""

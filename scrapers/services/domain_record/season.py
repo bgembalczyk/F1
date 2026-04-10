@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.base.postprocess.assembler import BaseRecordAssemblerInput
+from scrapers.services.domain_record.base import BaseDomainRecordService
 from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
@@ -12,7 +14,12 @@ if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol
 
 
-class DomainRecordService:
+@dataclass(frozen=True, slots=True)
+class SeasonDomainRecordInput:
+    payload: SeasonPayloadDTO | SeasonRecordSections
+
+
+class SeasonDomainRecordService(BaseDomainRecordService[SeasonDomainRecordInput]):
     def __init__(
         self,
         *,
@@ -34,13 +41,15 @@ class DomainRecordService:
     ) -> SeasonRecordSections:
         return self.build_payload(payload).sections
 
-    def assemble_record(
-        self,
-        payload: SeasonPayloadDTO | SeasonRecordSections,
-    ) -> dict[str, Any]:
-        if isinstance(payload, SeasonRecordSections):
-            payload = SeasonPayloadDTO(
-                sections=payload,
+    def assemble_record(self, payload: SeasonDomainRecordInput) -> dict[str, Any]:
+        assembled_payload = payload.payload
+        if isinstance(assembled_payload, SeasonRecordSections):
+            assembled_payload = SeasonPayloadDTO(
+                sections=assembled_payload,
                 base=BaseRecordAssemblerInput(),
             )
-        return self._assembler.assemble(payload)
+        return self._assembler.assemble(assembled_payload)
+
+
+class DomainRecordService(SeasonDomainRecordService):
+    """Compatibility alias for legacy imports."""
