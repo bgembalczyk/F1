@@ -12,6 +12,9 @@ from scrapers.circuits.circuits_composition import CircuitScraperCompositionFact
 from scrapers.circuits.circuits_composition import CircuitScraperDependencies
 from scrapers.circuits.circuits_helpers.sections import is_circuit_like_article
 from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
+from scrapers.services.domain_record.circuit_lap_records_extraction_service import (
+    CircuitLapRecordsExtractionService,
+)
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -42,6 +45,7 @@ class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
         self._infobox_service = resolved_dependencies.infobox_service
         self._sections_service_factory = resolved_dependencies.sections_service_factory
         self._domain_record_service = resolved_dependencies.domain_record_service
+        self._lap_records_extraction_service = CircuitLapRecordsExtractionService()
 
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)
@@ -70,7 +74,7 @@ class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> article.TablesPayloadDTO:
         return article.TablesPayloadDTO(
-            self._domain_record_service.collect_lap_record_rows(
+            self._lap_records_extraction_service.collect_lap_record_rows(
                 soup=soup,
                 url=self.url,
                 include_urls=self.include_urls,
