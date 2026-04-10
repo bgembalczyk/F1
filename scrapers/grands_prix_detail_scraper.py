@@ -1,4 +1,4 @@
-"""Canonical module for grands prix detail scraping."""
+"""Deprecated compatibility module for grands prix detail scraper."""
 
 from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper as GrandsPrixDetailScraper
 

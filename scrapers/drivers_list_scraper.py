@@ -1,4 +1,4 @@
-"""Canonical module for drivers list scraping."""
+"""Deprecated compatibility module for drivers list scraper."""
 
 from scrapers.list_scraper_drivers import F1DriversListScraper as DriversListScraper
 

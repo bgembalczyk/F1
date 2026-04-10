@@ -4,32 +4,32 @@ from pathlib import Path
 
 CANONICAL_MODULE_CLASS_MATRIX = {
     "drivers": {
-        "scrapers.drivers_list_scraper": "DriversListScraper",
-        "scrapers.drivers_detail_scraper": "DriversDetailScraper",
+        "scrapers.drivers.list_scraper": "DriversListScraper",
+        "scrapers.drivers.single_scraper": "DriversDetailScraper",
         "scrapers.drivers_pipeline_service": "DriversPipelineService",
         "scrapers.drivers_factory": "DriversFactory",
     },
     "constructors": {
-        "scrapers.constructors_list_scraper": "ConstructorsListScraper",
-        "scrapers.constructors_detail_scraper": "ConstructorsDetailScraper",
+        "scrapers.constructors.list_scraper": "ConstructorsListScraper",
+        "scrapers.constructors.single_scraper": "ConstructorsDetailScraper",
         "scrapers.constructors_pipeline_service": "ConstructorsPipelineService",
         "scrapers.constructors_factory": "ConstructorsFactory",
     },
     "circuits": {
-        "scrapers.circuits_list_scraper": "CircuitsListScraper",
-        "scrapers.circuits_detail_scraper": "CircuitsDetailScraper",
+        "scrapers.circuits.list_scraper": "CircuitsListScraper",
+        "scrapers.circuits.single_scraper": "CircuitsDetailScraper",
         "scrapers.circuits_pipeline_service": "CircuitsPipelineService",
         "scrapers.circuits_factory": "CircuitsFactory",
     },
     "seasons": {
-        "scrapers.seasons_list_scraper": "SeasonsListScraper",
-        "scrapers.seasons_detail_scraper": "SeasonsDetailScraper",
+        "scrapers.seasons.list_scraper": "SeasonsListScraper",
+        "scrapers.seasons.single_scraper": "SeasonsDetailScraper",
         "scrapers.seasons_pipeline_service": "SeasonsPipelineService",
         "scrapers.seasons_factory": "SeasonsFactory",
     },
     "grands_prix": {
-        "scrapers.grands_prix_list_scraper": "GrandsPrixListScraper",
-        "scrapers.grands_prix_detail_scraper": "GrandsPrixDetailScraper",
+        "scrapers.grands_prix.list_scraper": "GrandsPrixListScraper",
+        "scrapers.grands_prix.single_scraper": "GrandsPrixDetailScraper",
         "scrapers.grands_prix_pipeline_service": "GrandsPrixPipelineService",
         "scrapers.grands_prix_factory": "GrandsPrixFactory",
     },

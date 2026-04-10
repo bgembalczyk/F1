@@ -1,4 +1,4 @@
-"""Canonical module for constructors list scraping."""
+"""Deprecated compatibility module for constructors list scraper."""
 
 from scrapers.constructors_list import ConstructorsListScraper
 
