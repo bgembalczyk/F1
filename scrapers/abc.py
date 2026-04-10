@@ -9,32 +9,27 @@ from uuid import uuid4
 
 from bs4 import BeautifulSoup
 
-from infrastructure.http_client.policies.http import HttpPolicy
-from scrapers.base.errors import ScraperError
-from scrapers.base.errors import ScraperNetworkError
-from scrapers.base.errors import ScraperParseError
-from scrapers.base.helpers.url import normalize_url
-from scrapers.base.logging import get_logger
-from scrapers.base.options import ScraperOptions
-from scrapers.base.post_processors import apply_post_processors
-from scrapers.base.records import NormalizedRecord
-from scrapers.base.records import RawRecord
-from scrapers.base.results import ScrapeResult
-from scrapers.base.scraper_components import ErrorPolicy
-from scrapers.base.scraper_components import PipelineOrchestrator
-from scrapers.base.scraper_components import QualityReportService
-from scrapers.base.scraper_components import RuntimeInitializer
-from scrapers.base.services.result_export_service import ResultExportService
-from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
-from scrapers.base.transformers.helpers import apply_transformers
+from infrastructure.http.policies.http import HttpPolicy
+from scrapers.adapters.adapter import ResultTabularAdapter
+from scrapers.component_metadata_wiki import validate_metadata_for_component_class
 from scrapers.contracts.protocols import ExportCapability
 from scrapers.contracts.protocols import FetchCapability
 from scrapers.contracts.protocols import ParseCapability
 from scrapers.contracts.protocols import ValidateCapability
+from scrapers.helpers.url import normalize_url
+from scrapers.logging import get_logger
+from scrapers.options import ScraperOptions
+from scrapers.post_processors import apply_post_processors
+from scrapers.results import ScrapeResult
+from scrapers.scraper_components import ErrorPolicy
+from scrapers.scraper_components import PipelineOrchestrator
+from scrapers.scraper_components import QualityReportService
+from scrapers.scraper_components import RuntimeInitializer
 from scrapers.services.capability_services import ExportCapabilityService
 from scrapers.services.capability_services import ReportingCapabilityService
 from scrapers.services.capability_services import ValidationCapabilityService
-from scrapers.wiki.component_metadata_wiki import validate_metadata_for_component_class
+from scrapers.services.result_export import ResultExportService
+from scrapers.transformers.helpers import apply_transformers
 from validation.validator_base import ExportRecord
 
 T = TypeVar("T")

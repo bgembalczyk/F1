@@ -2,8 +2,8 @@ import re
 from collections.abc import Iterable
 from typing import Any
 
-from models.value_objects.normalized_date import NormalizedDate
-from models.value_objects.date import DateValue
+from models.value_objects.date.base import DateValue
+from models.value_objects.date.normalized import NormalizedDate
 
 
 def split_delimited_text(text: str | None, *, pattern: str = r"[,;/]") -> list[str]:

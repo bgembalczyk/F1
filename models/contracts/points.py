@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.contracts.base import DataContract
+from models.contracts.data.base import DataContract
 from models.records.season import SeasonRecord
 
 POINTS_KEYS = {

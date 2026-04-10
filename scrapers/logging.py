@@ -7,7 +7,7 @@ from datetime import timezone
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.constants.runtime import LOGGER_NAME
+from scrapers.constants.runtime import LOGGER_NAME
 
 if TYPE_CHECKING:
     from collections.abc import Callable

@@ -1,7 +1,7 @@
-from infrastructure.http_client.interfaces import HttpClientProtocol
-from infrastructure.http_client.policies.http import HttpPolicy
-from infrastructure.http_client.policies.response_cache import TextCacheProtocol
-from scrapers.base.source_adapter import SourceAdapter
+from infrastructure.http.policies.http import HttpPolicy
+from infrastructure.http.protocols import HttpClientProtocol
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
+from scrapers.source_adapter import SourceAdapter
 
 
 class HtmlFetcher(SourceAdapter):

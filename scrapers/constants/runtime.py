@@ -1,4 +1,4 @@
-from scrapers.base.run_profiles import RunProfileName
+from scrapers.run_profiles import RunProfileName
 
 CliMainProfile = RunProfileName
 

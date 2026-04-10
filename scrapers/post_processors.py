@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 from typing import Protocol
 
-from scrapers.base.logging import get_logger
+from scrapers.logging import get_logger
 from validation.validator_base import ExportRecord
 
 

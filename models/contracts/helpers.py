@@ -2,11 +2,11 @@ import logging
 from collections.abc import Mapping
 from typing import Any
 
-from models.contracts.base import DataContract
-from models.contracts.base import RecordContract
-from models.contracts.circuit import CircuitContract
-from models.contracts.driver import DriverContract
+from models.contracts.data.base import DataContract
+from models.contracts.data.circuit import CircuitContract
+from models.contracts.data.driver import DriverContract
 from models.contracts.points import PointsContract
+from models.contracts.record import RecordContract
 
 logger = logging.getLogger(__name__)
 
