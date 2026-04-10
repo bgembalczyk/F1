@@ -4,7 +4,7 @@ from typing import cast
 
 from models.mappers.constants import FIELD_ALIASES
 from models.records.driver import DriverRecord
-from models.records.factories import DriversChampionshipsRecordFactory
+from models.records.factories.drivers_championships import DriversChampionshipsRecordFactory
 from models.records.factories.base import BaseRecordFactory
 from models.records.factories.registry.helpers import register_factory
 
