@@ -3,7 +3,7 @@ from typing import Any
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.text_normalization import split_delimited_text
-from scrapers.infobox.parsers.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
+from scrapers.infobox.parsers.text_utils.circuit.text_processing.entity import CircuitEntityParser
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord
