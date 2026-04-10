@@ -10,6 +10,9 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.constructors.constructors_composition import ConstructorScraperCompositionFactory
 from scrapers.constructors.constructors_composition import ConstructorScraperDependencies
 from scrapers.services.domain_record.constructor import ConstructorDomainRecordInput
+from scrapers.services.domain_record.constructor_table_extraction_service import (
+    ConstructorTableExtractionService,
+)
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -35,13 +38,14 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         self._infobox_service = resolved_dependencies.infobox_service
         self._sections_service_factory = resolved_dependencies.sections_service_factory
         self._domain_record_service = resolved_dependencies.domain_record_service
+        self._table_extraction_service = ConstructorTableExtractionService()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         infoboxes = list(self._infobox_service.extract(soup, url=self.url).records)
         return InfoboxPayloadDTO(infoboxes)
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
-        return TablesPayloadDTO(self._domain_record_service.extract_tables(soup))
+        return TablesPayloadDTO(self._table_extraction_service.extract_tables(soup))
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(
