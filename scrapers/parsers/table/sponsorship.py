@@ -12,11 +12,11 @@ from scrapers.columns.types.sponsor import SponsorColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.headers_table import normalize_header
 from scrapers.table_schema_dsl import TableSchemaDSL
-from scrapers.wiki.parsers.elements.table import TableParser
+from scrapers.parsers.table.wiki.table import WikiTableParser
 
 
 
-class SponsorshipTableParser(TableParser):
+class SponsorshipTableParser(WikiTableParser):
     @staticmethod
     def build_schema(seasons_col_factory: Any) -> TableSchemaDSL:
         return TableSchemaDSL(

@@ -6,8 +6,6 @@ from typing import Any
 from scrapers.paren_classifier import ParenClassifier
 from scrapers.parsers.section.sponsorship import SponsorshipSectionParser
 from scrapers.parsers.table.team_liveries import TeamLiveriesTableParser
-from scrapers.wiki.parsers.elements.table import TableParser
-from scrapers.wiki.parsers.sections.section import SectionParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -16,7 +14,7 @@ if TYPE_CHECKING:
 
 
 
-class TeamLiveriesSectionParser(SectionParser):
+class TeamLiveriesSectionParser:
     """Parser sekcji artykułu sponsorowanych malowań F1."""
 
     def __init__(
@@ -28,7 +26,6 @@ class TeamLiveriesSectionParser(SectionParser):
         splitter,
         classifier: ParenClassifier | None = None,
     ) -> None:
-        super().__init__()
         self._base_parser = SponsorshipSectionParser(
             url=url,
             include_urls=include_urls,

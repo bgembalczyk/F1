@@ -13,7 +13,7 @@ from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class TableParser(WikiParser[TableParsedData]):
+class WikiTableParser(WikiParser[TableParsedData]):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">
@@ -145,7 +145,7 @@ class TableParser(WikiParser[TableParsedData]):
         cells: Sequence[Tag],
         parser: HtmlTableParser,
     ) -> list[str]:
-        config = TableParser._cleaner_config(parser)
+        config = WikiTableParser._cleaner_config(parser)
         return [
             clean_wiki_text(
                 cell.get_text(" ", strip=True),
