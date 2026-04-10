@@ -4,6 +4,7 @@ from collections import Counter
 from collections.abc import Callable
 from dataclasses import asdict
 from dataclasses import dataclass
+from typing import Any
 from typing import TYPE_CHECKING
 from typing import TypeAlias
 from typing import cast
@@ -17,6 +18,8 @@ from bs4 import BeautifulSoup
 from models.mappers.serialization import to_dict_list
 from validation.validator_base import ExportRecord
 
+RawRecord: TypeAlias = dict[str, Any]
+NormalizedRecord: TypeAlias = dict[str, Any]
 PipelineResult: TypeAlias = (
     list[ExportRecord] | list[RawRecord] | list[NormalizedRecord]
 )
