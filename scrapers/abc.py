@@ -1,9 +1,6 @@
 import warnings
 from abc import ABC
-from collections.abc import Sequence
-from pathlib import Path
 from abc import abstractmethod
-from collections.abc import Callable
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Protocol
@@ -30,20 +27,27 @@ from scrapers.base.scraper_components import RuntimeInitializer
 from scrapers.base.services.result_export_service import ResultExportService
 from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
 from scrapers.base.transformers.helpers import apply_transformers
-from scrapers.base.validation_runner import ValidationRunner
-from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
+from scrapers.contracts.protocols import ExportCapability
+from scrapers.contracts.protocols import FetchCapability
+from scrapers.contracts.protocols import ParseCapability
+from scrapers.contracts.protocols import ValidateCapability
+from scrapers.services.capability_services import ExportCapabilityService
+from scrapers.services.capability_services import ReportingCapabilityService
+from scrapers.services.capability_services import ValidationCapabilityService
 from scrapers.wiki.component_metadata_wiki import validate_metadata_for_component_class
 from validation.validator_base import ExportRecord
 
 T = TypeVar("T")
 
 
-class ScraperLifecycleProtocol(Protocol):
-    def fetch(self) -> list[ExportRecord]: ...
-
-    def parse(self, soup: BeautifulSoup) -> list[RawRecord]: ...
-
-    def build_result(self, data: list[ExportRecord] | None = None) -> ScrapeResult: ...
+class ScraperLifecycleProtocol(
+    FetchCapability,
+    ParseCapability,
+    ValidateCapability,
+    ExportCapability,
+    Protocol,
+):
+    pass
 
 
 class ScraperLifecycleABC(ABC):
@@ -85,7 +89,7 @@ class BaseScraperCore(ScraperLifecycleABC, ABC):
 
 
 class FetchOrchestrationMixin:
-    """Fetch orchestration and runtime wiring mixin."""
+    """Fetch orchestration and runtime wiring mixin (stateless business-wise)."""
 
     def _initialize_runtime(self, options: ScraperOptions) -> None:
         runtime = RuntimeInitializer(
@@ -162,8 +166,8 @@ class FetchOrchestrationMixin:
         run_id = self._run_id or uuid4().hex
         self._run_id = run_id
         self._error_policy.set_run_id(run_id)
-        self._quality_report_service.set_run_id(run_id)
-        self.logger.debug("Scrape run %s started for url=%s", run_id, self.url)
+        self._reporting_service.set_run_context(run_id)
+        self._reporting_service.log_start(self.url)
         return run_id
 
     def _normalize_pipeline_records(
@@ -173,49 +177,67 @@ class FetchOrchestrationMixin:
         return self._record_normalizer.normalize(records)
 
 
-class ValidationMixin:
-    def _validate_validation_mode(self) -> None:
-        if self._validation_mode in {"soft", "hard"}:
-            return
-        msg = "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
-        raise ValueError(msg)
+class ABCScraper(
+    FetchOrchestrationMixin,
+    BaseScraperCore,
+):
+    """Template-method base scraper with composition for cross-cutting concerns."""
 
-    def validate_records(self, records: list[ExportRecord]) -> list[ExportRecord]:
-        if self.validator is None:
-            return records
-        return self._build_validation_runner().validate(records)
+    def __init__(self, *, options: ScraperOptions) -> None:
+        super().__init__(options=options)
+        self._quality_report_enabled = options.quality_report
+        self._debug_diff_domains = options.debug_diff_domains
+        self._debug_diff_record_ids = options.debug_diff_record_ids
+        self._initialize_runtime(options)
+        self._initialize_quality_reporting()
+        self._initialize_validation_capability()
+        self._initialize_export_capability()
+        self._validation_service.assert_mode_supported()
+        self._initialize_pipeline_orchestrator()
 
-    def _build_validation_runner(self) -> ValidationRunner:
-        return PipelineOrchestrator.build_validation_runner(
-            validator=self.validator,
-            validation_mode=self.validation_mode,
+    def _initialize_quality_reporting(self) -> None:
+        self._quality_report_service = self._create_quality_report_service()
+        self._reporting_service = ReportingCapabilityService(
+            quality_report_service=self._quality_report_service,
             logger=self.logger,
-            write_quality_report=self._write_quality_report,
-            url=getattr(self, "url", None),
+            run_id_provider=lambda: self._run_id,
         )
 
+    def _initialize_validation_capability(self) -> None:
+        self._validation_service = ValidationCapabilityService(
+            validation_mode=self.validation_mode,
+            validator=self.validator,
+            logger=self.logger,
+            url_provider=lambda: getattr(self, "url", None),
+            write_quality_report=self._write_quality_report,
+            validation_runner_factory=PipelineOrchestrator.build_validation_runner,
+        )
 
-class ExportMixin:
-    def _initialize_export_services(self) -> None:
-        self.result_export_service = self._create_result_export_service()
-        self.result_tabular_adapter = self._create_result_tabular_adapter()
+    def _initialize_export_capability(self) -> None:
+        self.result_export_service = ResultExportService()
+        self.result_tabular_adapter = ResultTabularAdapter()
+        self._export_service = ExportCapabilityService(
+            result_export_service=self.result_export_service,
+            result_tabular_adapter=self.result_tabular_adapter,
+            fetch_data=self.get_data,
+            source_url_provider=lambda: getattr(self, "url", None),
+            exporter_provider=lambda: self.exporter,
+        )
 
-    def _create_result_export_service(self) -> ResultExportService:
-        return ResultExportService()
-
-    def _create_result_tabular_adapter(self) -> ResultTabularAdapter:
-        return ResultTabularAdapter()
+    # ---------- API wysokiego poziomu ----------
 
     def get_data(self) -> list[ExportRecord]:
         if self._data is None:
             return self.fetch()
         return self._data
 
+    def validate_records(self, records: list[ExportRecord]) -> list[ExportRecord]:
+        self._validation_service.validation_mode = self.validation_mode
+        self._validation_service.validator = self.validator
+        return self._validation_service.validate_records(records)
+
     def build_result(self, data: list[ExportRecord] | None = None) -> ScrapeResult:
-        return ScrapeResult(
-            data=data if data is not None else self.get_data(),
-            source_url=getattr(self, "url", None),
-        )
+        return self._export_service.build_result(data)
 
     def to_json(
         self,
@@ -224,11 +246,8 @@ class ExportMixin:
         indent: int = 2,
         include_metadata: bool = False,
     ) -> None:
-        result = self.build_result()
-        self.result_export_service.to_json(
-            result,
+        self._export_service.to_json(
             path,
-            exporter=self.exporter,
             indent=indent,
             include_metadata=include_metadata,
         )
@@ -241,81 +260,15 @@ class ExportMixin:
         fieldnames_strategy: str = "union",
         include_metadata: bool = False,
     ) -> None:
-        result = self.build_result()
-        self.result_export_service.to_csv(
-            result,
+        self._export_service.to_csv(
             path,
-            exporter=self.exporter,
             fieldnames=fieldnames,
             fieldnames_strategy=fieldnames_strategy,
             include_metadata=include_metadata,
         )
 
     def to_dataframe(self):
-        result = self.build_result()
-        return self.result_tabular_adapter.to_dataframe(result)
-
-
-class QualityReportMixin:
-    def _initialize_quality_report_service(self) -> None:
-        self._quality_report_service = self._create_quality_report_service()
-
-    def _create_quality_report_service(self) -> QualityReportService:
-        return QualityReportService(
-            enabled=self._quality_report_enabled,
-            debug_dir=self.debug_dir,
-            run_id=self._run_id,
-            source_metadata_provider=self._source_metadata,
-            logger=self.logger,
-            validator_provider=lambda: self.validator,
-            debug_diff_domains=self._debug_diff_domains,
-            debug_diff_record_ids=self._debug_diff_record_ids,
-        )
-
-    def _write_step_quality_report(
-        self,
-        *,
-        step_name: str,
-        records: list[dict[str, object]],
-    ) -> None:
-        self._quality_report_service.write_step(step_name=step_name, records=records)
-
-    def _write_quality_report(self) -> None:
-        self._quality_report_service.write_validation_report()
-
-
-class ABCScraper(
-    ExportMixin,
-    ValidationMixin,
-    QualityReportMixin,
-    FetchOrchestrationMixin,
-    BaseScraperCore,
-):
-    """
-    Bazowa klasa dla wszystkich scraperów F1.
-
-    Odpowiada za:
-    - orkiestrację download → parse → normalize → export-records
-    - trzymanie danych w pamięci
-    - delegowanie eksportu
-    - wspólną obsługę błędów (network/parse + soft-skip)
-
-    Kontrakt:
-    - fetch() zawsze zwraca listę ExportRecord (może być pusta).
-    """
-
-    def __init__(self, *, options: ScraperOptions) -> None:
-        super().__init__(options=options)
-        self._quality_report_enabled = options.quality_report
-        self._debug_diff_domains = options.debug_diff_domains
-        self._debug_diff_record_ids = options.debug_diff_record_ids
-        self._initialize_runtime(options)
-        self._validate_validation_mode()
-        self._initialize_quality_report_service()
-        self._initialize_pipeline_orchestrator()
-        self._initialize_export_services()
-
-    # ---------- API wysokiego poziomu ----------
+        return self._export_service.to_dataframe()
 
     def _finalize_fetch(
         self,
@@ -334,14 +287,12 @@ class ABCScraper(
         return self._data
 
     def _download(self) -> str:
-        # Adapter jest jedyną “bramką” do źródła (może być CacheAdapter).
         return self.fetch_html(self.url)
 
     def fetch_html(self, url: str) -> str:
         return self.source_adapter.get(url)
 
     def _parse_soup(self, _soup: BeautifulSoup) -> list[RawRecord]:
-        """Parsowanie BS4 -> lista rekordów surowych."""
         warnings.warn(
             "ABCScraper._parse_soup() is deprecated; implement parse_records() "
             "instead.",
@@ -351,14 +302,11 @@ class ABCScraper(
         return self.parse_records(_soup)
 
     def parse_records(self, _soup: BeautifulSoup) -> list[RawRecord]:
-        """Primary extension point for parsing BeautifulSoup into raw records."""
         msg = (
             f"{self.__class__.__name__} must implement parse_records() "
             "or override parse()."
         )
-        raise NotImplementedError(
-            msg,
-        )
+        raise NotImplementedError(msg)
 
     def parse(self, soup: BeautifulSoup) -> list[RawRecord]:
         if self.parser is not None:
@@ -379,10 +327,7 @@ class ABCScraper(
         return []
 
     def parse_soup(self, soup: BeautifulSoup) -> list[RawRecord]:
-        """Public facade for parsing an already constructed BeautifulSoup document."""
         return self.parse(soup)
-
-    # ---------- Hooki: normalize/export ----------
 
     @staticmethod
     def to_export_records(records: list[NormalizedRecord]) -> list[ExportRecord]:
@@ -401,6 +346,32 @@ class ABCScraper(
         )
         return processed
 
+    def _create_quality_report_service(self) -> QualityReportService:
+        return QualityReportService(
+            enabled=self._quality_report_enabled,
+            debug_dir=self.debug_dir,
+            run_id=self._run_id,
+            source_metadata_provider=self._source_metadata,
+            logger=self.logger,
+            validator_provider=lambda: self.validator,
+            debug_diff_domains=self._debug_diff_domains,
+            debug_diff_record_ids=self._debug_diff_record_ids,
+        )
+
+    def _write_step_quality_report(
+        self,
+        *,
+        step_name: str,
+        records: list[dict[str, object]],
+    ) -> None:
+        self._reporting_service.write_step_quality_report(
+            step_name=step_name,
+            records=records,
+        )
+
+    def _write_quality_report(self) -> None:
+        self._reporting_service.write_quality_report()
+
     def _source_metadata(self) -> dict[str, object]:
         return {
             "domain": self.__module__.split(".")[1]
@@ -414,15 +385,11 @@ class ABCScraper(
     def _apply_transformers(self, records: list[ExportRecord]) -> list[ExportRecord]:
         return apply_transformers(self.transformers, records, logger=self.logger)
 
-    # ---------- Pomocnicze ----------
-
     def _full_url(self, href: str) -> str | None:
         return normalize_url(self.url, href)
 
     def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
         return options.resolve_http_policy()
-
-    # ---------- Error handling ----------
 
     def _wrap_network_error(self, exc: Exception) -> ScraperNetworkError:
         return self._error_policy.wrap_network(exc)

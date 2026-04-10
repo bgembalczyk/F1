@@ -10,6 +10,9 @@ from scrapers.grands_prix.complete_scraper_grands_prix import F1CompleteGrandPri
 
 
 class GrandPrixRunner(LayerJobRunner):
+    role = "runner"
+    domain = "grands_prix"
+    stage = "layer_one"
     COMPONENT_METADATA = build_runner_metadata("grands_prix")
 
     def run(

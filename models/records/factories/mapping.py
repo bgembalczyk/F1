@@ -1,10 +1,9 @@
-from dataclasses import dataclass
+from collections.abc import Mapping
 from typing import Any
-from typing import Mapping
-from warnings import warn
+
+from models.records.factories.compat import create_compat
 
 
-@dataclass(frozen=True, slots=True)
 class MappingRecordFactory:
     """Backward-compatible mapping factory that returns plain dictionaries."""
 
@@ -12,9 +11,4 @@ class MappingRecordFactory:
         return {**record}
 
     def create(self, payload: Mapping[str, Any]) -> dict[str, Any]:
-        warn(
-            "MappingRecordFactory.create(payload) is deprecated; use build(record).",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.build(payload)
+        return create_compat(payload, self.build)

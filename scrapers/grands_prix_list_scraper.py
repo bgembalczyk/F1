@@ -1,12 +1,5 @@
 """Canonical module for grands prix list scraping."""
 
-from scrapers.list_scraper_grands_prix import (
-    GrandsPrixListScraper as LegacyGrandsPrixListScraper,
-)
+from scrapers.list_scraper_grands_prix import GrandsPrixListScraper
 
-
-class GrandsPrixListScraper(LegacyGrandsPrixListScraper):
-    """Canonical class alias aligned with module naming standard."""
-
-
-__all__ = ["GrandsPrixListScraper", "LegacyGrandsPrixListScraper"]
+__all__ = ["GrandsPrixListScraper"]

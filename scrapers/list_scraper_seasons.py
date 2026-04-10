@@ -1,5 +1,10 @@
 """DEPRECATED ENTRYPOINT: use scrapers.seasons.entrypoint.run_list_scraper."""
 
+import warnings
+
+warnings.warn("list_scraper_seasons is deprecated; use scrapers.seasons_list_scraper.", DeprecationWarning, stacklevel=2)
+
+
 from typing import Any
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES

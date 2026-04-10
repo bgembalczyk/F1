@@ -1,0 +1,6 @@
+{
+  "stage": "D",
+  "description": "Cleanup wave start for legacy wrappers, aliases and dead classes.",
+  "next_step": "D-001",
+  "source": "step_registry"
+}

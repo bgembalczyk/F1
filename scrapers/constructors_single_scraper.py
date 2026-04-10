@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import warnings
+
+warnings.warn("constructors_single_scraper is deprecated; use scrapers.constructors_detail_scraper.", DeprecationWarning, stacklevel=2)
+
 from typing import TYPE_CHECKING
 from typing import Any
 

@@ -1,8 +1,8 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
+from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.models.services.circuit_service import CircuitService
-from scrapers.circuits_detail_scraper import CircuitsDetailScraper
+from scrapers.circuits.single_scraper import CircuitsDetailScraper
 from scrapers.wiki.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.wiki.component_metadata_wiki import build_component_metadata
 

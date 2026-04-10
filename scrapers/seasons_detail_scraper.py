@@ -1,10 +1,5 @@
-"""Canonical module for seasons detail scraping."""
+"""Deprecated compatibility module for seasons detail scraper."""
 
-from scrapers.single_scraper_seasons import SingleSeasonScraper
+from scrapers.single_scraper_seasons import SingleSeasonScraper as SeasonsDetailScraper
 
-
-class SeasonsDetailScraper(SingleSeasonScraper):
-    """Canonical class alias aligned with module naming standard."""
-
-
-__all__ = ["SeasonsDetailScraper", "SingleSeasonScraper"]
+__all__ = ["SeasonsDetailScraper"]

@@ -31,3 +31,6 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScrape
 
     section_label = "Circuits"
     section_parser_class = CircuitsListSectionParser
+
+
+__all__ = ["CircuitsListScraper"]

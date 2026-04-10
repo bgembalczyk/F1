@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import warnings
+
+warnings.warn("single_scraper_seasons is deprecated; use scrapers.seasons_detail_scraper.", DeprecationWarning, stacklevel=2)
+
 from typing import TYPE_CHECKING
 from typing import Any
 

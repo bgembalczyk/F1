@@ -72,16 +72,18 @@ def test_circuit_details_and_complete_records() -> None:
     assert CircuitBaseRecord.__optional_keys__ == {"url"}
     assert CircuitDetailsRecord.__required_keys__ == {"infobox", "tables"}
     assert CircuitDetailsRecord.__optional_keys__ >= {"url"}
-    assert CircuitCompleteRecord.__optional_keys__ >= {
+    assert CircuitCompleteRecord.__required_keys__ == {
         "name",
-        "url",
         "circuit_status",
-        "type",
-        "direction",
         "grands_prix",
         "seasons",
-        "grands_prix_held",
         "location",
+    }
+    assert CircuitCompleteRecord.__optional_keys__ >= {
+        "url",
+        "type",
+        "direction",
+        "grands_prix_held",
         "fia_grade",
         "history",
         "layouts",
@@ -95,7 +97,8 @@ def test_validate_circuit_base_in_details_and_complete() -> None:
     complete_errors = validate_circuit_complete_record({"url": None})
 
     assert "Null value for: url" in details_errors
-    assert complete_errors == []
+    assert "Missing key: name" in complete_errors
+    assert "Missing key: circuit_status" in complete_errors
 
 
 def test_circuit_serialization_supports_details_and_complete() -> None:

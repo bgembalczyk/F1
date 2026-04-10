@@ -1,0 +1,8 @@
+{
+  "step_id": "B-001",
+  "layer": "L1",
+  "domain": "drivers",
+  "checkpoint_type": "complete_output",
+  "next_step": "B-002",
+  "source": "step_registry"
+}

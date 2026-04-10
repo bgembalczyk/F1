@@ -1,4 +1,10 @@
-"""Backward-compatible aliases for diagnostics-related mixins."""
+"""Backward-compatible aliases for diagnostics-related mixins.
+
+Hard rules for all mixins in scraper architecture:
+- mixin never stores business state,
+- mixin behavior cannot depend on MRO ordering,
+- lifecycle orchestration belongs to composed services.
+"""
 
 from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
 

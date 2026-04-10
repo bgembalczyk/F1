@@ -4,12 +4,15 @@ from scrapers.section.selection_strategy.wikipedia_by_id import (
     WikipediaSectionByIdSelectionStrategy,
 )
 from scrapers.single_wiki_article.single_article_domain_scraper_base import (
-    SingleArticleDomainScraperBase,
+    DomainArticleScraperBase,
+)
+from scrapers.single_wiki_article.single_article_section_aware_mixin import (
+    SectionAwareMixin,
 )
 
 
-class SingleArticleSectionByIdBase(SingleArticleDomainScraperBase, ABC):
-    """Baza używająca strategii sekcji po identyfikatorze."""
+class SectionByIdScraperBase(SectionAwareMixin, DomainArticleScraperBase, ABC):
+    """Base for article scrapers using section-id selection strategy."""
 
     def __init__(self, *args, **kwargs) -> None:
         kwargs.setdefault(
@@ -19,11 +22,12 @@ class SingleArticleSectionByIdBase(SingleArticleDomainScraperBase, ABC):
         super().__init__(*args, **kwargs)
 
 
-class SingleWikiArticleSectionByIdBase(SingleArticleSectionByIdBase):
-    """Backward-compatible alias for legacy naming."""
+SingleArticleSectionByIdBase = SectionByIdScraperBase
+SingleWikiArticleSectionByIdBase = SectionByIdScraperBase
 
 
 __all__ = [
+    "SectionByIdScraperBase",
     "SingleArticleSectionByIdBase",
     "SingleWikiArticleSectionByIdBase",
 ]
