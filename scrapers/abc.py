@@ -1,5 +1,7 @@
 import warnings
 from abc import ABC
+from collections.abc import Sequence
+from pathlib import Path
 from abc import abstractmethod
 from collections.abc import Callable
 from collections.abc import Sequence
@@ -29,6 +31,7 @@ from scrapers.base.services.result_export_service import ResultExportService
 from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.validation_runner import ValidationRunner
+from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
 from scrapers.wiki.component_metadata_wiki import validate_metadata_for_component_class
 from validation.validator_base import ExportRecord
 
@@ -429,61 +432,3 @@ class ABCScraper(
 
     def _handle_scraper_error(self, error: ScraperError) -> bool:
         return self._error_policy.handle(error)
-
-    # ---------- Wspólne narzędzie do error handling ----------
-    # Używane poza fetch(), np. w mixinach/infobox.
-
-    def run_with_error_handling(
-        self,
-        fetch_fn: Callable[[], str],
-        parse_fn: Callable[[BeautifulSoup], T],
-    ) -> T | None:
-        html = self._run_fetch_stage(fetch_fn)
-        if html is None:
-            return None
-        return self._run_parse_stage(parse_fn, html)
-
-    def _run_fetch_stage(self, fetch_fn: Callable[[], str]) -> str | None:
-        try:
-            return fetch_fn()
-        except Exception as exc:  # noqa: BLE001
-            return self._handle_stage_error(
-                exc=exc,
-                error=self._network_stage_error(exc),
-            )
-
-    def _run_parse_stage(
-        self,
-        parse_fn: Callable[[BeautifulSoup], T],
-        html: str,
-    ) -> T | None:
-        try:
-            soup = BeautifulSoup(html, "html.parser")
-            return parse_fn(soup)
-        except Exception as exc:  # noqa: BLE001
-            return self._handle_stage_error(
-                exc=exc,
-                error=self._parse_stage_error(exc),
-            )
-
-    def _network_stage_error(self, exc: Exception) -> ScraperError:
-        if isinstance(exc, ScraperError):
-            return exc
-        return self._wrap_network_error(exc)
-
-    def _parse_stage_error(self, exc: Exception) -> ScraperError:
-        if isinstance(exc, ScraperError):
-            return exc
-        return self._wrap_parse_error(exc)
-
-    def _handle_stage_error(
-        self,
-        *,
-        exc: Exception,
-        error: ScraperError,
-    ) -> None:
-        if self._handle_scraper_error(error):
-            return
-        if error is exc:
-            raise exc
-        raise error from exc
