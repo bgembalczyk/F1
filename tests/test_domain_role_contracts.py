@@ -7,25 +7,31 @@ from typing import Any
 
 import pytest
 from bs4 import BeautifulSoup
-
-from models.records.base_factory import RecordFactoryProtocol
-from models.records.factories import registry as factory_registry_module
-from models.records.factories.registry import FactoryRegistryProvider
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordDTO
 from scrapers.circuits.circuits_sections.service import CircuitSectionExtractionService
-from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordAssembler
-from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordDTO
-from scrapers.constructors.constructors_sections.service import ConstructorSectionExtractionService
+from scrapers.constructors.constructors_postprocess.assembler import (
+    ConstructorRecordAssembler,
+)
+from scrapers.constructors.constructors_postprocess.assembler import (
+    ConstructorRecordDTO,
+)
+from scrapers.constructors.constructors_sections.service import (
+    ConstructorSectionExtractionService,
+)
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
 from scrapers.seasons.sections_seasons.service import SeasonTextSectionExtractionService
+
+from models.records.base_factory import RecordBuilderProtocol
+from models.records.factories import registry as factory_registry_module
+from models.records.factories.registry import FactoryRegistryProvider
 
 if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol
@@ -307,7 +313,7 @@ def test_domain_required_protocols_contract(domain: str) -> None:
     }
     assert callable(getattr(contract["assembler"], "assemble", None))
     assert callable(getattr(contract["section_service"], "extract", None))
-    assert isinstance(factory, RecordFactoryProtocol)
+    assert isinstance(factory, RecordBuilderProtocol)
     assert factory.record_type == contract["record_factory_type"]
     assert callable(factory.build)
 
@@ -317,6 +323,6 @@ def test_record_factory_contract_for_each_registered_implementation(
     record_type: str,
 ) -> None:
     factory = FACTORY_REGISTRY[record_type]
-    assert isinstance(factory, RecordFactoryProtocol)
+    assert isinstance(factory, RecordBuilderProtocol)
     assert factory.record_type == record_type
     assert callable(factory.build)
