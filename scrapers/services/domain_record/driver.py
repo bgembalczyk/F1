@@ -1,3 +1,7 @@
-from scrapers.services.domain_record.driver_pipeline_service import DriverPipelineService as DomainRecordService
+from scrapers.services.domain_record.driver_pipeline_service import DriverDomainRecordInput
+from scrapers.services.domain_record.driver_pipeline_service import DriverPipelineService
 
-__all__ = ["DomainRecordService"]
+DomainRecordService = DriverPipelineService
+DriverDomainRecordService = DriverPipelineService
+
+__all__ = ["DomainRecordService", "DriverDomainRecordService", "DriverDomainRecordInput"]

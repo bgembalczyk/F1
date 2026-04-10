@@ -18,7 +18,7 @@ from scrapers.drivers.drivers_infobox.service import DriverInfoboxExtractionServ
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
-from scrapers.drivers.drivers_services.domain_record import DomainRecordService
+from scrapers.services.domain_record.driver import DomainRecordService
 from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
 from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler

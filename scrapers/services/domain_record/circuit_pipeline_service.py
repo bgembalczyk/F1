@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -17,7 +18,17 @@ if TYPE_CHECKING:
     from scrapers.contracts import RecordAssemblerProtocol
 
 
-class CircuitPipelineService(BaseAssemblerPipelineService[CircuitRecordDTO]):
+@dataclass(frozen=True, slots=True)
+class CircuitDomainRecordInput:
+    source_url: str
+    infobox: dict[str, Any]
+    lap_record_rows: list[dict[str, Any]]
+    sections: list[dict[str, Any]]
+
+
+class CircuitPipelineService(
+    BaseAssemblerPipelineService[CircuitDomainRecordInput, CircuitRecordDTO],
+):
     required_fields = ("source_url", "infobox", "lap_record_rows", "sections")
 
     def __init__(
@@ -67,30 +78,32 @@ class CircuitPipelineService(BaseAssemblerPipelineService[CircuitRecordDTO]):
 
         return all_records
 
-    def _build_payload(self, source: dict[str, Any]) -> CircuitRecordDTO:
+    def _validate_input(self, input_dto: CircuitDomainRecordInput) -> None:
+        self.validate_required(
+            {
+                "source_url": input_dto.source_url,
+                "infobox": input_dto.infobox,
+                "lap_record_rows": input_dto.lap_record_rows,
+                "sections": input_dto.sections,
+            },
+            self.required_fields,
+        )
+
+    def build_payload(self, input_dto: CircuitDomainRecordInput) -> CircuitRecordDTO:
         return CircuitRecordDTO(
-            url=str(source["source_url"]),
+            url=input_dto.source_url,
+            infobox=dict(input_dto.infobox),
+            lap_record_rows=list(input_dto.lap_record_rows),
+            sections=list(input_dto.sections),
+        )
+
+    def assemble(self, payload: CircuitRecordDTO) -> dict[str, Any]:
+        return self._assembler.assemble(payload)
+
+    def _compat_input_from_source(self, source: dict[str, Any]) -> CircuitDomainRecordInput:
+        return CircuitDomainRecordInput(
+            source_url=str(source["source_url"]),
             infobox=dict(source["infobox"]),
             lap_record_rows=list(source["lap_record_rows"]),
             sections=list(source["sections"]),
-        )
-
-    def _assemble(self, payload: CircuitRecordDTO) -> dict[str, Any]:
-        return self._assembler.assemble(payload)
-
-    def assemble_record(
-        self,
-        *,
-        source_url: str,
-        infobox: dict[str, Any],
-        lap_record_rows: list[dict[str, Any]],
-        sections: list[dict[str, Any]],
-    ) -> dict[str, Any]:
-        return self.run(
-            {
-                "source_url": source_url,
-                "infobox": infobox,
-                "lap_record_rows": lap_record_rows,
-                "sections": sections,
-            },
         )
