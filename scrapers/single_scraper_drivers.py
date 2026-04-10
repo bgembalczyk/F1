@@ -8,6 +8,7 @@ from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBas
 from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.drivers.composition_drivers import DriverScraperCompositionFactory
 from scrapers.drivers.composition_drivers import DriverScraperDependencies
+from scrapers.services.domain_record.driver import DriverDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -57,7 +58,9 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
     ) -> dict[str, object]:
         _ = soup, tables_payload
         return self._domain_record_service.assemble_record(
-            url=self.url,
-            infobox=infobox_payload.data,
-            career_results=sections_payload.data,
+            DriverDomainRecordInput(
+                url=self.url,
+                infobox=infobox_payload.data,
+                career_results=sections_payload.data,
+            ),
         )

@@ -9,7 +9,7 @@ from scrapers.base.table.builders import build_columns
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
@@ -126,7 +126,7 @@ class SeasonsListScraper(SeedListTableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+        config: TableScraperConfig | None = None,
     ) -> None:
         super().__init__(options=options, config=config)
         parser = SeasonsSectionParser()

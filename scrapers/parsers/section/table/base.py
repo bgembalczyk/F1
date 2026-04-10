@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
-from scrapers.config_table import ScraperConfig
+from scrapers.config_table import TableScraperConfig
 from scrapers.parser_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.parse_results import SectionParseResult
@@ -21,7 +21,7 @@ class TableSectionParser:
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         section_id: SectionId | str,
         section_label: EntityName | str,
         domain: str,
@@ -45,7 +45,7 @@ class TableSectionParser:
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         # di-antipattern-allow: section parser builds table parser per parse invocation.
-        parser = HtmlTableParser(
+        table_transport_parser = HtmlTableParser(
             section_id=None,
             expected_headers=self._config.expected_headers,
             table_css_class=self._config.table_css_class,
@@ -57,7 +57,7 @@ class TableSectionParser:
             include_urls=self._include_urls,
             normalize_empty_values=self._normalize_empty_values,
         )
-        records = pipeline.parse_rows(parser.parse(section_fragment))
+        records = pipeline.parse_rows(table_transport_parser.parse(section_fragment))
 
         return build_section_parse_result(
             section_id=self._section_id,

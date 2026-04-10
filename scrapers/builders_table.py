@@ -10,7 +10,7 @@ from scrapers.base.table.dsl.column import ColumnSpec
 
 if TYPE_CHECKING:
     from scrapers.base.table.columns.types.base import BaseColumn
-    from scrapers.base.table.config import ScraperConfig
+    from scrapers.base.table.config import ScraperConfig as TableScraperConfig
     from scrapers.base.table.dsl.table_schema import TableSchemaDSL
     from scrapers.base.table.schema import TableSchema
     from scrapers.base.table.schema import TableSchemaBuilder
@@ -114,7 +114,7 @@ def build_scraper_config(
     table_css_class: str = "wikitable",
     record_factory=None,
     model_class: type | None = None,
-) -> ScraperConfig:
+) -> TableScraperConfig:
     """Deprecated compatibility wrapper for legacy imports."""
     from scrapers.base.table.config import build_scraper_config as _build_scraper_config
 

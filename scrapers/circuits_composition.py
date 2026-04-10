@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
 from scrapers.circuits.circuits_infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.circuits_sections.service import CircuitSectionExtractionService
-from scrapers.circuits.circuits_services.domain_record import DomainRecordService
+from scrapers.services.domain_record.circuit import CircuitDomainRecordService
 
 if TYPE_CHECKING:
     from scrapers.base.infobox.service import InfoboxExtractionService
@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class CircuitScraperDependencies:
     infobox_service: InfoboxExtractionService
     sections_service_factory: SectionServiceFactory[CircuitSectionExtractionService]
-    domain_record_service: DomainRecordService
+    domain_record_service: CircuitDomainRecordService
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,7 +30,7 @@ class CircuitScraperCompositionFactory:
     sections_service_factory: (
         SectionServiceFactory[CircuitSectionExtractionService] | None
     ) = None
-    domain_record_service: DomainRecordService | None = None
+    domain_record_service: CircuitDomainRecordService | None = None
 
     @classmethod
     def for_tests(
@@ -40,7 +40,7 @@ class CircuitScraperCompositionFactory:
         sections_service_factory: (
             SectionServiceFactory[CircuitSectionExtractionService] | None
         ) = None,
-        domain_record_service: DomainRecordService | None = None,
+        domain_record_service: CircuitDomainRecordService | None = None,
     ) -> CircuitScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -68,7 +68,7 @@ class CircuitScraperCompositionFactory:
 
         domain_record_service = self.domain_record_service
         if domain_record_service is None:
-            domain_record_service = DomainRecordService()
+            domain_record_service = CircuitDomainRecordService()
 
         return CircuitScraperDependencies(
             infobox_service=infobox_service,

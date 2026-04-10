@@ -10,7 +10,7 @@ from scrapers.base.parsers.soup import SoupParser
 
 
 @dataclass(frozen=True)
-class ScraperConfig:
+class RuntimeScraperConfig:
     include_urls: bool = True
     exporter: DataExporter | None = None
     fetcher: HtmlFetcher | None = None
@@ -45,3 +45,7 @@ class DataPaths:
         if legacy.exists():
             return legacy
         return self.raw / category / filename
+
+
+# Backward-compatible alias. Prefer RuntimeScraperConfig in new code.
+ScraperConfig = RuntimeScraperConfig

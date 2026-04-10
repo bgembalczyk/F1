@@ -7,6 +7,7 @@ from scrapers.base import single_wiki_article as article
 from scrapers.circuits.circuits_composition import CircuitScraperCompositionFactory
 from scrapers.circuits.circuits_composition import CircuitScraperDependencies
 from scrapers.circuits.circuits_helpers.sections import is_circuit_like_article
+from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -100,10 +101,12 @@ class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
             return {"url": self._original_url or self.url, **record}
 
         return self._domain_record_service.assemble_record(
-            source_url=self._original_url or self.url,
-            infobox=infobox_payload.data,
-            lap_record_rows=tables_payload.data,
-            sections=sections_payload.data,
+            CircuitDomainRecordInput(
+                source_url=self._original_url or self.url,
+                infobox=infobox_payload.data,
+                lap_record_rows=tables_payload.data,
+                sections=sections_payload.data,
+            ),
         )
 
     def parse_details(self, soup: BeautifulSoup) -> dict[str, Any] | None:

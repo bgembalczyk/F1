@@ -8,7 +8,7 @@ from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.points import PointsColumn
 from scrapers.columns.types.position import PositionColumn
 from scrapers.columns.types.race_result import RaceResultColumn
-from scrapers.config_table import ScraperConfig
+from scrapers.config_table import TableScraperConfig
 from scrapers.options import ScraperOptions
 from scrapers.parser_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
@@ -65,7 +65,7 @@ class SeasonTableParser:
             # Handle "Car<br>no." which becomes "Car no." after text extraction
             schema_columns.append(ColumnSpec("Car no.", "no", IntColumn()))
         for section_id in section_ids:
-            config = ScraperConfig(
+            config = TableScraperConfig(
                 url=self.url,
                 section_id=section_id,
                 expected_headers=[subject_header],
@@ -95,7 +95,7 @@ class SeasonTableParser:
         default_column: Any | None = None,
     ) -> list[dict[str, Any]]:
         for section_id in section_ids:
-            config = ScraperConfig(
+            config = TableScraperConfig(
                 url=self.url,
                 section_id=section_id,
                 expected_headers=expected_headers,
@@ -151,7 +151,7 @@ class SeasonTableParser:
         ):
             return []
 
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self.url,
             section_id="adapter_section",
             expected_headers=expected_headers,

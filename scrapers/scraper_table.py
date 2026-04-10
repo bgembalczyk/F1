@@ -10,7 +10,7 @@ from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
@@ -32,7 +32,7 @@ class F1TableScraper(WikiScraper, ABC):
                          (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
     """
 
-    CONFIG: ScraperConfig | None = None
+    CONFIG: TableScraperConfig | None = None
     options_domain: str | None = None
     options_profile: str | None = None
 
@@ -43,7 +43,7 @@ class F1TableScraper(WikiScraper, ABC):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+        config: TableScraperConfig | None = None,
     ) -> None:
         if options is None:
             if self.options_profile is None:
@@ -98,11 +98,11 @@ class F1TableScraper(WikiScraper, ABC):
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         return options
 
-    def _build_config_from_class_attrs(self) -> ScraperConfig | None:
+    def _build_config_from_class_attrs(self) -> TableScraperConfig | None:
         url = getattr(self, "url", None)
         if not isinstance(url, str) or not url.strip():
             return None
-        return ScraperConfig(
+        return TableScraperConfig(
             url=url,
             section_id=getattr(self, "section_id", None),
             expected_headers=getattr(self, "expected_headers", None),

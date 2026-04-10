@@ -8,7 +8,7 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.column_factory import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
@@ -23,7 +23,7 @@ if TYPE_CHECKING:
 def build_points_scoring_systems_history_config(
     *,
     columns: Sequence[ColumnSpec],
-) -> ScraperConfig:
+) -> TableScraperConfig:
     return build_scraper_config(
         url=BasePointsScraper.BASE_URL,
         section_id="Points_scoring_systems",

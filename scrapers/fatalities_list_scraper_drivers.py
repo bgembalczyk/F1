@@ -12,7 +12,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import DRIVERS_FATALITIES
 from scrapers.base.table.columns import types as col
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
@@ -135,7 +135,7 @@ class F1FatalitiesListScraper(F1TableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+        config: TableScraperConfig | None = None,
     ) -> None:
         super().__init__(
             options=append_transformer(options, FatalitiesCarTransformer()),

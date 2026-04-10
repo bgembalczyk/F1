@@ -7,7 +7,7 @@ from bs4 import Tag
 
 from models.records.factories.mapping import MappingRecordFactory
 from scrapers.columns.types.sponsorship_seasons import SponsorshipSeasonsColumn
-from scrapers.config_table import ScraperConfig
+from scrapers.config_table import TableScraperConfig
 from scrapers.headers_table import normalize_header
 from scrapers.helpers.constants import season_headers
 from scrapers.helpers.text import clean_wiki_text
@@ -48,7 +48,7 @@ class SponsorshipSectionParser:
                 table_headers=table_headers,
             )
 
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self._url,
             schema=SponsorshipTableParser.build_schema(_seasons_col),
             record_factory=MappingRecordFactory(),
