@@ -4,7 +4,7 @@ from collections.abc import Sequence
 
 from bs4 import Tag
 
-from scrapers.base.helpers.tables.header import is_repeated_header_row
+from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.text import clean_wiki_text
 
 

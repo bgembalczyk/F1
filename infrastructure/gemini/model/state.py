@@ -2,7 +2,7 @@ from collections import deque
 
 from infrastructure.gemini.constants import RPD_WINDOW
 from infrastructure.gemini.constants import RPM_WINDOW
-from infrastructure.gemini.model_config import ModelConfig
+from infrastructure.gemini.model.config import ModelConfig
 
 
 class ModelState:

@@ -6,16 +6,8 @@ from typing import cast
 
 from infrastructure.http.policies.http import HttpPolicy
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
-from scrapers.base.cache_adapter import CacheAdapter
-from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.source_adapter import SourceAdapter
-
-if TYPE_CHECKING:
-    from scrapers.base.options import ScraperOptions
-
-
-
-
+from scrapers.html_fetcher import HtmlFetcher
+from scrapers.source_adapter import SourceAdapter
 
 
 class SourceAdapterFetcherShim(HtmlFetcher):

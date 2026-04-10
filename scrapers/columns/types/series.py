@@ -1,8 +1,8 @@
 from typing import Any
 
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.split_series import split_series
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
 from scrapers.helpers.links import normalize_links
 
 

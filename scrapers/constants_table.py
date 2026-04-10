@@ -1,7 +1,7 @@
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
-from scrapers.base.table.sentinels import SKIP_SENTINEL
+from scrapers.columns.factory import IntColumn
+from scrapers.columns.types.seasons import SeasonsColumn
+from scrapers.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
+from scrapers.sentinels_table import SKIP_SENTINEL
 
 HEADER_ROWS_WITH_SUBHEADERS = 2
 

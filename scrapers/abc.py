@@ -16,11 +16,16 @@ from scrapers.contracts.protocols import ExportCapability
 from scrapers.contracts.protocols import FetchCapability
 from scrapers.contracts.protocols import ParseCapability
 from scrapers.contracts.protocols import ValidateCapability
+from scrapers.errors import ScraperError
+from scrapers.errors import ScraperNetworkError
+from scrapers.errors import ScraperParseError
 from scrapers.helpers.url import normalize_url
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
 from scrapers.post_processors import apply_post_processors
 from scrapers.results import ScrapeResult
+from scrapers.runners.pipeline_runner import NormalizedRecord
+from scrapers.runners.pipeline_runner import RawRecord
 from scrapers.scraper_components import ErrorPolicy
 from scrapers.scraper_components import PipelineOrchestrator
 from scrapers.scraper_components import QualityReportService

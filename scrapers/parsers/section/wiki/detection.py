@@ -7,11 +7,11 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.domain_utils.field_normalization.aliases import expand_alias_variants
-from scrapers.parsers.section.wiki.data_classes import SectionMatch
+from scrapers.helpers.constants import HEADING_TAGS
+from scrapers.parsers.section.match.dataclass import SectionMatch
 from scrapers.parsers.section.wiki.helpers import best_fuzzy_ratio
 from scrapers.parsers.section.wiki.helpers import get_section_profile
 from scrapers.parsers.section.wiki.normalization import normalize_section_text
-from scrapers.parsers.wiki.constants import HEADING_TAGS
 from scrapers.section.aliases import builtin_aliases_for_target
 
 if TYPE_CHECKING:

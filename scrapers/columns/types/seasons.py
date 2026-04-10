@@ -5,15 +5,14 @@ from typing import Any
 
 from models.services.season import parse_seasons
 from models.value_objects.season_ref import SeasonRef
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constants import LAST_YEAR_FORMULA_ONE_SEASON
 from scrapers.columns.helpers.constants import YEAR_IN_URL_PATTERN
 from scrapers.columns.helpers.constants import YEAR_PATTERN
-from scrapers.columns.types.base import BaseColumn
 from scrapers.helpers.url import resolve_url
 from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
 
-if TYPE_CHECKING:
-    from scrapers.columns.types.context import ColumnContext
 
 
 class SeasonsColumn(BaseColumn):

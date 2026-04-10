@@ -5,8 +5,8 @@ from typing import Any
 from bs4 import NavigableString
 from bs4 import Tag
 
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.text import strip_marks

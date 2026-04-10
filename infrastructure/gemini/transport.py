@@ -6,9 +6,9 @@ import urllib.request
 from typing import Any
 
 from infrastructure.gemini.constants import API_URL_TEMPLATE
-from scrapers.base.errors import TransportError
-from scrapers.base.logging import build_execution_context
-from scrapers.base.logging import get_logger
+from scrapers.errors import TransportError
+from scrapers.logging import build_execution_context
+from scrapers.logging import get_logger
 
 
 class GeminiTransport:

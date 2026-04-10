@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from scrapers.base.abc import ABCScraper
-from scrapers.base.run_config import RunConfig
+from scrapers.abc import ABCScraper
+from scrapers.run_config import RunConfig
 
 
 @dataclass(frozen=True)

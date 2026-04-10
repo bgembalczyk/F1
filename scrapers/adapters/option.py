@@ -1,8 +1,8 @@
-from scrapers.base.abc import ABCScraper
-from scrapers.base.factory.constructor_introspection import ConstructorIntrospection
-from scrapers.base.factory.creation_context import ScraperCreationContext
-from scrapers.base.factory.run_config_options_mapper import RunConfigOptionsMapper
-from scrapers.base.options import ScraperOptions
+from scrapers.abc import ABCScraper
+from scrapers.constructor_introspection import ConstructorIntrospection
+from scrapers.creation_context import ScraperCreationContext
+from scrapers.options import ScraperOptions
+from scrapers.run_config_options_mapper import RunConfigOptionsMapper
 
 
 class OptionsScraperAdapter:

@@ -3,11 +3,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Protocol
 
-from scrapers.base.factory.legacy import LegacyScraperAdapter
-from scrapers.base.factory.option import OptionsScraperAdapter
-
-if TYPE_CHECKING:
-    from scrapers.base.factory.run_config_options_mapper import RunConfigOptionsMapper
+from scrapers.adapters.legacy import LegacyScraperAdapter
+from scrapers.adapters.option import OptionsScraperAdapter
+from scrapers.run_config_options_mapper import RunConfigOptionsMapper
 
 
 class ScraperCreationAdapter(Protocol):

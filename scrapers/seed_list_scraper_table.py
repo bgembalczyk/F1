@@ -4,20 +4,20 @@ from typing import TYPE_CHECKING
 from typing import ClassVar
 from warnings import warn
 
-from scrapers.base.table.config import ScraperConfig as TableScraperConfig
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.component_metadata_wiki import ComponentMetadata
+from scrapers.component_metadata_wiki import LIST_SCRAPER_KIND
+from scrapers.component_metadata_wiki import build_component_metadata
+from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import build_scraper_config
 from scrapers.family_contracts import ListScraperContract
-from scrapers.wiki.component_metadata_wiki import LIST_SCRAPER_KIND
-from scrapers.wiki.component_metadata_wiki import ComponentMetadata
-from scrapers.wiki.component_metadata_wiki import build_component_metadata
+from scrapers.schema_table import TableSchema
+from scrapers.schema_table import TableSchemaBuilder
+from scrapers.scraper_table import F1TableScraper
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
-    from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-    from scrapers.base.table.schema import TableSchema
-    from scrapers.base.table.schema import TableSchemaBuilder
 
 
 class SeedListTableScraper(F1TableScraper, ListScraperContract):

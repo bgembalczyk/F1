@@ -2,11 +2,11 @@ from collections.abc import Callable
 from typing import Any
 
 from infrastructure.gemini.cache import GeminiCache
-from infrastructure.gemini.model_selector import ModelSelector
-from scrapers.base.errors import PipelineError
-from scrapers.base.errors import normalize_pipeline_error
-from scrapers.base.logging import build_execution_context
-from scrapers.base.logging import get_logger
+from infrastructure.gemini.model.selector import ModelSelector
+from scrapers.errors import PipelineError
+from scrapers.errors import normalize_pipeline_error
+from scrapers.logging import build_execution_context
+from scrapers.logging import get_logger
 
 
 class GeminiOrchestrationService:
@@ -64,7 +64,7 @@ class GeminiOrchestrationService:
 
             try:
                 result = call_api(model)
-            except Exception as exc:  # noqa: BLE001
+            except Exception as exc:
                 normalize_pipeline_error(
                     exc,
                     code="gemini.call_failed",

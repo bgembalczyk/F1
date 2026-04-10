@@ -1,5 +1,5 @@
-from infrastructure.http_client.policies.response_cache import TextCacheProtocol
-from scrapers.base.source_adapter import SourceAdapter
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
+from scrapers.source_adapter import SourceAdapter
 
 
 class CacheAdapter(SourceAdapter):

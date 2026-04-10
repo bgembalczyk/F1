@@ -3,7 +3,7 @@ from abc import abstractmethod
 from pathlib import Path
 
 from layers.seed.registry.entries import SeedRegistryEntry
-from scrapers.base.run_config import RunConfig
+from scrapers.run_config import RunConfig
 
 
 class LayerJobRunner(ABC):

@@ -1,7 +1,7 @@
 from collections.abc import Mapping
 from dataclasses import dataclass
 
-from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.columns.base import BaseColumn
 
 
 @dataclass(frozen=True)

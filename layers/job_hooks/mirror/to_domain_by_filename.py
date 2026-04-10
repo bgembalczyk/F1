@@ -3,8 +3,8 @@ from typing import Callable
 
 from pathlib import Path
 
-from layers.path_resolver import DEFAULT_PATH_RESOLVER
 from layers.seed.registry.entries.list_job import ListJobRegistryEntry
+from path_resolver.base import DEFAULT_PATH_RESOLVER
 
 
 class MirrorToDomainByFilenameJobHook:

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from models.value_objects.common_terms import EntityName
+from models.entity_name import EntityName
 
 
 class MetadataBindingMixin:

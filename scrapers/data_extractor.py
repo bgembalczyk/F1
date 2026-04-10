@@ -4,15 +4,15 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from infrastructure.http_client.policies.http import HttpPolicy
-from scrapers.base.exporters.data import DataExporter
-from scrapers.base.factory.source_adapter_fetcher_shim import ScraperRuntimeFactory
-from scrapers.base.logging import get_logger
-from scrapers.base.options import ScraperOptions
-from scrapers.base.results import ScrapeResult
-from scrapers.base.services.result_export_service import ResultExportService
-from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
-from scrapers.wiki.component_metadata_wiki import validate_metadata_for_component_class
+from exporters.data import DataExporter
+from infrastructure.http.policies.http import HttpPolicy
+from scrapers.adapters.adapter import ResultTabularAdapter
+from scrapers.component_metadata_wiki import validate_metadata_for_component_class
+from scrapers.logging import get_logger
+from scrapers.options import ScraperOptions
+from scrapers.results import ScrapeResult
+from scrapers.services.result_export import ResultExportService
+from scrapers.wiring import ScraperRuntimeFactory
 
 
 class BaseDataExtractor(ABC):

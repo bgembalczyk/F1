@@ -1,9 +1,9 @@
 from typing import Any
 
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.link_lookup import build_link_lookup
 from scrapers.columns.helpers.results_parsing import ResultsParsingHelpers
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
 from scrapers.helpers.cell_splitting import split_cell_on_br
 
 

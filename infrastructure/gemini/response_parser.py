@@ -1,7 +1,7 @@
 import json
 from typing import Any
 
-from scrapers.base.errors import SourceParseError
+from scrapers.errors import SourceParseError
 
 
 class GeminiResponseParser:

@@ -9,8 +9,8 @@ from bs4 import Tag
 
 from scrapers.helpers.constants import HEADING_AND_TABLE_TAGS
 from scrapers.helpers.constants import HEADING_TAGS
-from scrapers.sections.aliases import DOMAIN_SECTION_ALIASES
-from scrapers.wiki.parsers.sections.detection import find_section_heading
+from scrapers.parsers.section.wiki.detection import find_section_heading
+from scrapers.section.aliases import DOMAIN_SECTION_ALIASES
 
 
 def find_section_elements(

@@ -7,18 +7,11 @@ from typing import TypeAlias
 from typing import TypeVar
 from typing import runtime_checkable
 
-from models.value_objects.common_terms import EntityName
-from models.value_objects.common_terms import SectionId
-from models.value_objects.common_terms import WikiUrl
-from scrapers.base.types import JsonValue
-from scrapers.base.types import PipelineRecord
+from models.entity_name import EntityName
+from models.section_id import SectionId
 from scrapers.parsers.parse_result import ParseResult
-
-if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
-
-    from scrapers.base.options import ScraperOptions
-    from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.types import JsonValue
+from scrapers.types import PipelineRecord
 
 SectionRecord: TypeAlias = PipelineRecord
 SectionMetadata: TypeAlias = dict[str, JsonValue]

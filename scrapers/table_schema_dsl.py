@@ -4,13 +4,11 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.table.dsl.column import ColumnRef
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.serialization import column_ref_payload
-from scrapers.base.table.schema import TableSchema
-
-if TYPE_CHECKING:
-    from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.ref import ColumnRef
+from scrapers.columns.spec import ColumnSpec
+from scrapers.schema_table import TableSchema
+from scrapers.serialization import column_ref_payload
 
 
 @dataclass(frozen=True)

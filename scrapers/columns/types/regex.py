@@ -2,8 +2,8 @@ import re
 from collections.abc import Callable
 from typing import Any
 
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 
 
 class RegexColumn(BaseColumn):

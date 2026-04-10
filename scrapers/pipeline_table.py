@@ -8,17 +8,14 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.headers import normalize_header
-from scrapers.base.table.parser import HtmlTableParser
-from scrapers.base.table.row import TableRow
-from scrapers.base.table.sentinels import SKIP_SENTINEL
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
+from scrapers.columns.types.auto import AutoColumn
 from scrapers.configs.public import TableConfig
 from scrapers.debug_dumps import TablePipelineDebugContext
 from scrapers.debug_dumps import write_table_pipeline_dump
 from scrapers.errors import ScraperParseError
+from scrapers.headers_table import normalize_header
 from scrapers.helpers.html_utils import find_section_elements
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
@@ -27,6 +24,9 @@ from scrapers.logging import get_logger
 from scrapers.normalization import EmptyValuePolicy
 from scrapers.normalization import normalize_record_values
 from scrapers.normalization_utils import normalize_empty
+from scrapers.parser_table import HtmlTableParser
+from scrapers.row_table import TableRow
+from scrapers.sentinels_table import SKIP_SENTINEL
 from scrapers.types import JsonValue
 from scrapers.types import PipelineRecord
 

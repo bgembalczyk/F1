@@ -8,9 +8,9 @@ from typing import TypeVar
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.errors import ScraperError
-from scrapers.base.errors import ScraperNetworkError
-from scrapers.base.errors import ScraperParseError
+from scrapers.errors import ScraperError
+from scrapers.errors import ScraperNetworkError
+from scrapers.errors import ScraperParseError
 
 T = TypeVar("T")
 

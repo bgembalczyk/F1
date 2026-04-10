@@ -3,10 +3,10 @@ from __future__ import annotations
 from dataclasses import asdict
 from typing import Any
 
-from models.value_objects.common_terms import EntityName
-from models.value_objects.common_terms import SectionId
-from scrapers.base.sections.interface import SectionParseResult
+from models.entity_name import EntityName
+from models.section_id import SectionId
 from scrapers.mixins.metadata_binding import MetadataBindingMixin
+from scrapers.section.parse_results import SectionParseResult
 
 
 class SectionMetadataBindingMixin(MetadataBindingMixin):

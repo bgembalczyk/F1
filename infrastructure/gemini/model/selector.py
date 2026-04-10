@@ -1,8 +1,8 @@
 import threading
 import time
 
-from infrastructure.gemini.model_config import ModelConfig
-from infrastructure.gemini.model_state import ModelState
+from infrastructure.gemini.model.config import ModelConfig
+from infrastructure.gemini.model.state import ModelState
 
 
 class ModelSelector:

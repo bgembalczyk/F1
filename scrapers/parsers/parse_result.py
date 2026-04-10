@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.base.types import JsonValue
+from scrapers.types import JsonValue
 
 ParsePayloadT = TypeVar("ParsePayloadT")
 

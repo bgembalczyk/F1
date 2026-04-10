@@ -6,7 +6,7 @@ core build logic.
 
 from typing import Any
 
-from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.columns.base import BaseColumn
 
 
 def serialize_value(value: Any) -> Any:

@@ -28,9 +28,9 @@ from config.app.provider import AppConfigProvider
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.constants import DEFAULT_MODELS
 from infrastructure.gemini.constants import DEFAULT_TIMEOUT
-from infrastructure.gemini.model_config import ModelConfig
-from infrastructure.gemini.model_selector import ModelSelector
-from infrastructure.gemini.model_state import ModelState  # noqa: F401
+
+from infrastructure.gemini.model.config import ModelConfig
+from infrastructure.gemini.model.selector import ModelSelector
 from infrastructure.gemini.orchestration import GeminiOrchestrationService
 from infrastructure.gemini.response_parser import GeminiResponseParser
 from infrastructure.gemini.transport import GeminiTransport

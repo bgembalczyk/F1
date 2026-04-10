@@ -1,6 +1,6 @@
 import inspect
 
-from scrapers.base.abc import ABCScraper
+from scrapers.abc import ABCScraper
 
 
 class ConstructorIntrospection:

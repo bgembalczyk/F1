@@ -19,7 +19,7 @@ import logging
 from typing import Any
 
 from infrastructure.gemini.client import GeminiClient
-from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.constants import PROMPT_TEMPLATE
+from scrapers.helpers.constants import PROMPT_TEMPLATE
 
 logger = logging.getLogger(__name__)
 

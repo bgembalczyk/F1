@@ -1,7 +1,7 @@
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constants import POINTS_WITH_TOTAL_RE
 from scrapers.columns.helpers.results_parsing import ResultsParsingHelpers
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
 from scrapers.parsers.helpers import extract_visible_text
 
 

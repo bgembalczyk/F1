@@ -1,3 +1,8 @@
+from typing import Protocol
+from typing import runtime_checkable
+
+from bs4 import BeautifulSoup
+
 from scrapers.parsers.section.section_parser_protocol import SectionParserProtocol
 
 SectionParser = SectionParserProtocol
