@@ -7,12 +7,10 @@ from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
 from typing import TypeVar
-from warnings import warn
-
-from models.records.factories.protocol import RecordBuilder
 
 from models.field_normalizer import FieldNormalizer
 from models.mappers.field_aliases import apply_field_aliases
+from models.records.factories.compat import create_compat
 from models.records.factories.helpers import normalize_optional_link_or_string
 from models.records.factories.spec import FactorySpec
 
@@ -62,7 +60,15 @@ class BaseRecordFactory(
     StatusNormalizationMixin,
     LocationNormalizationMixin,
 ):
-    """Base class for record factories with shared normalization utilities."""
+    """Base class for record builders.
+
+    How to create a new domain factory:
+    1. Subclass ``BaseRecordFactory`` in ``models/records/factories/<domain>_factory.py``.
+    2. Set ``record_type`` to the registry key for that domain.
+    3. Decorate the class with ``@register_factory()``.
+    4. Implement only ``build(record)`` as the canonical public entrypoint.
+    5. Reuse ``apply_spec`` / normalize helpers for field-level normalization.
+    """
 
     def __init__(self, normalizer: FieldNormalizer | None = None):
         self.normalizer = normalizer or FieldNormalizer()
@@ -72,13 +78,8 @@ class BaseRecordFactory(
         """Build normalized record object from source mapping."""
 
     def create(self, payload: Mapping[str, Any]) -> Any:
-        """Deprecated legacy adapter for `build(record)`."""
-        warn(
-            "RecordFactory.create(payload) is deprecated; use build(record) instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.build(payload)
+        """Deprecated compatibility adapter for ``build(record)``."""
+        return create_compat(payload, self.build)
 
     def normalize_field(
         self,
