@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -11,7 +12,16 @@ if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol
 
 
-class DriverPipelineService(BaseAssemblerPipelineService[DriverRecordDTO]):
+@dataclass(frozen=True, slots=True)
+class DriverDomainRecordInput:
+    url: str
+    infobox: dict[str, Any]
+    career_results: list[dict[str, Any]]
+
+
+class DriverPipelineService(
+    BaseAssemblerPipelineService[DriverDomainRecordInput, DriverRecordDTO],
+):
     required_fields = ("url", "infobox", "career_results")
 
     def __init__(
@@ -21,27 +31,29 @@ class DriverPipelineService(BaseAssemblerPipelineService[DriverRecordDTO]):
     ) -> None:
         self._assembler = assembler or DriverRecordAssembler()
 
-    def _build_payload(self, source: dict[str, Any]) -> DriverRecordDTO:
+    def _validate_input(self, input_dto: DriverDomainRecordInput) -> None:
+        self.validate_required(
+            {
+                "url": input_dto.url,
+                "infobox": input_dto.infobox,
+                "career_results": input_dto.career_results,
+            },
+            self.required_fields,
+        )
+
+    def build_payload(self, input_dto: DriverDomainRecordInput) -> DriverRecordDTO:
         return DriverRecordDTO(
+            url=input_dto.url,
+            infobox=dict(input_dto.infobox),
+            career_results=list(input_dto.career_results),
+        )
+
+    def assemble(self, payload: DriverRecordDTO) -> dict[str, Any]:
+        return self._assembler.assemble(payload)
+
+    def _compat_input_from_source(self, source: dict[str, Any]) -> DriverDomainRecordInput:
+        return DriverDomainRecordInput(
             url=str(source["url"]),
             infobox=dict(source["infobox"]),
             career_results=list(source["career_results"]),
-        )
-
-    def _assemble(self, payload: DriverRecordDTO) -> dict[str, Any]:
-        return self._assembler.assemble(payload)
-
-    def assemble_record(
-        self,
-        *,
-        url: str,
-        infobox: dict[str, Any],
-        career_results: list[dict[str, Any]],
-    ) -> dict[str, Any]:
-        return self.run(
-            {
-                "url": url,
-                "infobox": infobox,
-                "career_results": career_results,
-            },
         )

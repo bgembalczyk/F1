@@ -1,9 +1,15 @@
 """Base record factory with common normalization patterns."""
 
+from __future__ import annotations
+
+from abc import abstractmethod
 from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
 from typing import TypeVar
+from warnings import warn
+
+from models.records.factories.protocol import RecordBuilder
 
 from models.field_normalizer import FieldNormalizer
 from models.mappers.field_aliases import apply_field_aliases
@@ -60,6 +66,19 @@ class BaseRecordFactory(
 
     def __init__(self, normalizer: FieldNormalizer | None = None):
         self.normalizer = normalizer or FieldNormalizer()
+
+    @abstractmethod
+    def build(self, record: Mapping[str, Any]) -> Any:
+        """Build normalized record object from source mapping."""
+
+    def create(self, payload: Mapping[str, Any]) -> Any:
+        """Deprecated legacy adapter for `build(record)`."""
+        warn(
+            "RecordFactory.create(payload) is deprecated; use build(record) instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.build(payload)
 
     def normalize_field(
         self,

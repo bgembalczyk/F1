@@ -4,8 +4,8 @@ from typing import TYPE_CHECKING
 
 from bs4 import BeautifulSoup
 
-from scrapers.infobox.extraction.extractor.circuit import CircuitInfoboxExtractionStrategy
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractionStrategy
+from scrapers.infobox.extraction.extractor import CircuitInfoboxExtractor
+from scrapers.infobox.extraction.extractor import InfoboxExtractorProtocol
 from scrapers.infobox.extraction.service.strategy import (
     StrategyBackedInfoboxExtractionService,
 )
@@ -21,9 +21,9 @@ class CircuitInfoboxExtractionService(
         self,
         *,
         options: ScraperOptions | None = None,
-        strategy: InfoboxExtractionStrategy[BeautifulSoup] | None = None,
+        strategy: InfoboxExtractorProtocol[BeautifulSoup] | None = None,
     ) -> None:
         super().__init__(
-            strategy=strategy or CircuitInfoboxExtractionStrategy(),
+            strategy=strategy or CircuitInfoboxExtractor(),
             options=options,
         )
