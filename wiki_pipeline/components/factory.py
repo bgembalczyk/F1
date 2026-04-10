@@ -35,7 +35,10 @@ class WikiPipelineComponentsFactory:
         """Aktywna dla `constructors_current`."""
         list_scraper_cls = getattr(job, "list_scraper_cls", None)
         scraper_name = getattr(list_scraper_cls, "__name__", "")
-        if scraper_name == "CurrentConstructorsListScraper":
+        if scraper_name in {
+            "CurrentConstructorsListScraper",
+            "ConstructorsListScraper",
+        }:
             return True
         seed_name = getattr(job, "seed_name", "")
         return seed_name == "constructors_current"

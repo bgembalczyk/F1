@@ -5,16 +5,15 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.html_utils import find_section_elements
-from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.constants import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.row import TableRow
+from scrapers.mixins.table_row_parsing import TableRowParsingMixin
 
 logger = logging.getLogger(__name__)
 
 
-class HtmlTableParser:
+class HtmlTableParser(TableRowParsingMixin):
     """
     Parser tabel HTML, który zwraca listę wierszy jako mapowania
     nagłówków na komórki.
@@ -53,22 +52,14 @@ class HtmlTableParser:
         for tr in table.find_all("tr")[header_rows:]:
             cells = tr.find_all(["td", "th"])
 
-            if not cells or all(not c.get_text(strip=True) for c in cells):
+            if self._is_empty_row(cells):
                 continue
 
-            cleaned_cells = [
-                clean_wiki_text(
-                    c.get_text(" ", strip=True),
-                    strip_lang_suffix=self.strip_lang_suffix,
-                    strip_refs=self.strip_refs,
-                    normalize_dashes=self.normalize_dashes,
-                )
-                for c in cells
-            ]
+            cleaned_cells = self._clean_cells(cells)
             if self.is_footer_row(cells, cleaned_cells, headers):
                 logger.debug("Pomijam wiersz stopki w tabeli.")
                 continue
-            if is_repeated_header_row(cleaned_cells, headers):
+            if self._is_repeated_header_row(cleaned_cells, headers):
                 logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli.")
                 continue
 
@@ -216,17 +207,6 @@ class HtmlTableParser:
                 }
             col_index += 1
         return col_index
-
-    def _clean_cells(self, cells: Sequence[Tag]) -> list[str]:
-        return [
-            clean_wiki_text(
-                c.get_text(" ", strip=True),
-                strip_lang_suffix=self.strip_lang_suffix,
-                strip_refs=self.strip_refs,
-                normalize_dashes=self.normalize_dashes,
-            )
-            for c in cells
-        ]
 
     @staticmethod
     def _has_multirow_header(

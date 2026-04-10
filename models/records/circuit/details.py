@@ -1,12 +1,11 @@
 from typing import Any
 
-from models.records.circuit_base import CircuitBaseRecord
+from models.records.circuit.base import CircuitBaseRecord
 from validation.record_validation import validate_record
 from validation.schemas import RecordSchema
 
 
 class CircuitDetailsRecord(CircuitBaseRecord):
-    url: str
     infobox: dict[str, Any]
     tables: list[dict[str, Any]]
 

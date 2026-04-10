@@ -13,7 +13,7 @@ from scrapers.infobox.parsers.drivers.nationality import NationalityParser
 from scrapers.infobox.parsers.drivers.race_event import RaceEventParser
 from scrapers.infobox.parsers.drivers.teams import TeamsParser
 from scrapers.infobox.parsers.link_extractor import InfoboxLinkExtractor
-from scrapers.infobox.parsers.table import TableParser
+from scrapers.infobox.parsers.table import InfoboxTableParser
 
 
 class InfoboxCellParser:
@@ -47,7 +47,7 @@ class InfoboxCellParser:
         self._active_years_parser = ActiveYearsParser(link_extractor)
         self._teams_parser = TeamsParser(link_extractor, include_urls=include_urls)
         self._championships_parser = ChampionshipsParser(link_extractor)
-        self._table_parser = TableParser(link_extractor)
+        self._table_parser = InfoboxTableParser(link_extractor)
         self._race_event_parser = RaceEventParser(link_extractor)
         self._finished_season_parser = FinishedSeasonParser()
         self._licence_parser = LicenceParser(link_extractor)

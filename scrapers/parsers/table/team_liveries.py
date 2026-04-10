@@ -3,14 +3,14 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.wiki.parsers.elements.table import TableParser
+from scrapers.parsers.table.wiki.table import WikiTableParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
 
-class TeamLiveriesTableParser(TableParser):
+class TeamLiveriesTableParser(WikiTableParser):
     """Adapter tabeli sekcji zespołu do istniejącego parsera domenowego."""
 
     def __init__(self, *, section_table_parser: SponsorshipSectionParser) -> None:

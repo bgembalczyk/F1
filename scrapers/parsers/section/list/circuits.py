@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.config_table import TableScraperConfig
+from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.circuit_list import CircuitsListTableParser
 from scrapers.section.parse_results import SectionParseResult
@@ -18,7 +18,7 @@ class CircuitsListSectionParser(SectionParser):
     def __init__(
         self,
         *,
-        config: TableScraperConfig,
+        config: TableConfig,
         section_label: str | None = None,
         include_urls: bool,
         normalize_empty_values: bool,

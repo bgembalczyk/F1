@@ -3,14 +3,12 @@ from abc import ABC
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.errors import ErrorCategory
-from scrapers.errors import ScraperNotFoundError
-from scrapers.helpers.html_utils import find_section_elements
+from scrapers.mixins.section_traversal import SectionTraversalMixin
 from scrapers.types import ExportableRecord
 from scrapers.wiki.scraper_wiki import WikiScraper
 
 
-class ListScraper(WikiScraper, ABC):
+class ListScraper(SectionTraversalMixin, WikiScraper, ABC):
     """
     Scraper dla list (ul/ol) w konkretnej sekcji.
 
@@ -40,17 +38,13 @@ class ListScraper(WikiScraper, ABC):
         return items
 
     def _find_list_root(self, soup: BeautifulSoup) -> Tag:
-        candidate_lists = find_section_elements(soup, self.section_id, ["ul", "ol"])
-
-        if candidate_lists:
-            return candidate_lists[0]
-
-        if self.section_id:
-            msg = "Nie znaleziono listy w sekcji."
-            raise ScraperNotFoundError(msg, category=ErrorCategory.PARSE)
-
-        msg = "Nie znaleziono żadnej listy."
-        raise ScraperNotFoundError(msg)
+        return self._find_first_in_section(
+            soup,
+            section_id=self.section_id,
+            tags=["ul", "ol"],
+            missing_with_section_msg="Nie znaleziono listy w sekcji.",
+            missing_global_msg="Nie znaleziono żadnej listy.",
+        )
 
     def parse_item(self, li: Tag) -> ExportableRecord | None:
         """Zamienia pojedynczy <li> na słownik."""

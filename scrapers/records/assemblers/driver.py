@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from models.wiki_url import WikiUrl
-from scrapers.records.DTO.driver import DriverRecordDTO
+from scrapers.records.dto.driver import DriverRecordDTO
 from scrapers.records.infobox_record import InfoboxRecordMapper
 from scrapers.records.table_record.base import TableRecordMapper
 

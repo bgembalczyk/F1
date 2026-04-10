@@ -3,7 +3,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from models.validation.engine_regulation import EngineRegulation
-from scrapers.base.factory.protocol import MappingRecordFactory
+from models.records.factories.mapping import MappingRecordFactory
 from scrapers.base.helpers.multi_level_header_builder import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.source_catalog import ENGINE_PROGRESS

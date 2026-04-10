@@ -1,3 +1,11 @@
-from scrapers.services.domain_record.constructor_pipeline_service import ConstructorPipelineService as DomainRecordService
+from scrapers.services.domain_record.constructor_pipeline_service import ConstructorDomainRecordInput
+from scrapers.services.domain_record.constructor_pipeline_service import ConstructorPipelineService
 
-__all__ = ["DomainRecordService"]
+DomainRecordService = ConstructorPipelineService
+ConstructorDomainRecordService = ConstructorPipelineService
+
+__all__ = [
+    "DomainRecordService",
+    "ConstructorDomainRecordService",
+    "ConstructorDomainRecordInput",
+]

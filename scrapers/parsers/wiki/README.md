@@ -12,12 +12,12 @@ Ten katalog zawiera parsery odpowiedzialne za ekstrakcję treści z HTML-a Wikip
 - `ParagraphParser` – parsowanie akapitów (`<p>`).
 - `FigureParser` – parsowanie rycin (`<figure>`).
 - `ListParser` – parsowanie list (`<ul>`).
-- `TableParser` – parsowanie tabel danych (`<table class="wikitable">`).
+- `WikiTableParser` – parsowanie tabel danych (`<table class="wikitable">`).
 - `NavBoxParser` – parsowanie bloków nawigacyjnych (`<div role="navigation" class="navbox">`).
 - `ReferencesWrapParser` – parsowanie bloków odnośników (`references-wrap`).
 
 ### Parsery sekcji (`sections/`)
-- `SectionParser` (poziom 2)
+- `NestedWikiSectionParser` (poziom 2)
 - `SubSectionParser` (poziom 3)
 - `SubSubSectionParser` (poziom 4)
 - `SubSubSubSectionParser` (poziom 5)

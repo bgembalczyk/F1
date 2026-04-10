@@ -64,11 +64,20 @@ DOMAIN_PROFILE_OVERRIDES: dict[str, dict[str, ScraperCommonConfig]] = {
 }
 
 SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
+    "scrapers.drivers_list_scraper.DriversListScraper": ScraperPipelineBinding(
+        validator_factory="scrapers.drivers.validator:DriversRecordValidator",
+    ),
     "scrapers.circuits.list_scraper.CircuitsListScraper": ScraperPipelineBinding(
         validator_factory="scrapers.circuits.validator:CircuitsRecordValidator",
     ),
     "scrapers.drivers.list_scraper.F1DriversListScraper": ScraperPipelineBinding(
         validator_factory="scrapers.drivers.validator:DriversRecordValidator",
+    ),
+    "scrapers.drivers.list_scraper.DriversListScraper": ScraperPipelineBinding(
+        validator_factory="scrapers.drivers.validator:DriversRecordValidator",
+    ),
+    "scrapers.grands_prix_list_scraper.GrandsPrixListScraper": ScraperPipelineBinding(
+        validator_factory="scrapers.grands_prix.validator:GrandsPrixRecordValidator",
     ),
     "scrapers.grands_prix.list_scraper.GrandsPrixListScraper": ScraperPipelineBinding(
         validator_factory="scrapers.grands_prix.validator:GrandsPrixRecordValidator",
