@@ -2,6 +2,19 @@
 
 Migracja dla domen kluczowych: `drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`.
 
+## Canonical alias map (z `scrapers/module_naming_aliases.py`)
+
+| Stary moduł | Nowy moduł (canonical) |
+| --- | --- |
+| `scrapers.list_scraper_drivers` | `scrapers.drivers_list_scraper` |
+| `scrapers.list_scraper_seasons` | `scrapers.seasons_list_scraper` |
+| `scrapers.list_scraper_grands_prix` | `scrapers.grands_prix_list_scraper` |
+| `scrapers.single_scraper_drivers` | `scrapers.drivers_detail_scraper` |
+| `scrapers.constructors_single_scraper` | `scrapers.constructors_detail_scraper` |
+| `scrapers.circuits_single_scraper` | `scrapers.circuits_detail_scraper` |
+| `scrapers.single_scraper_seasons` | `scrapers.seasons_detail_scraper` |
+| `scrapers.single_scraper_grands_prix` | `scrapers.grands_prix_detail_scraper` |
+
 ## List scrapers
 
 - `scrapers.list_scraper_drivers.F1DriversListScraper` -> `scrapers.drivers_list_scraper.DriversListScraper`

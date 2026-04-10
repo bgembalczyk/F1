@@ -53,3 +53,28 @@ jobs:
 
       - name: Enforce scraper family inheritance contracts
         run: python scripts/ci/enforce_scraper_family_contracts.py
+
+      - name: Resolve base SHA for naming gate
+        id: naming_shas
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+            BASE_SHA="$(git rev-list --max-count=1 HEAD^)"
+          fi
+
+          echo "base_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
+          echo "head_sha=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+
+      - name: Enforce new scraper module naming convention
+        run: |
+          CHANGED_FILES="$(git diff --name-only "${{ steps.naming_shas.outputs.base_sha }}" "${{ steps.naming_shas.outputs.head_sha }}" | paste -sd ',' -)"
+          python -m scripts.ci.enforce_new_scraper_module_naming \
+            --base-sha "${{ steps.naming_shas.outputs.base_sha }}" \
+            --head-sha "${{ steps.naming_shas.outputs.head_sha }}" \
+            --changed-files "$CHANGED_FILES"
