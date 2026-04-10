@@ -10,15 +10,16 @@ from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.config import ScraperConfig as TableScraperConfig
+from scrapers.configs.public import TableConfig
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
+from scrapers.family_contracts import TableScraperContract
 from scrapers.wiki.scraper_wiki import WikiScraper
 from validation.record_factory_validator import adapt_record_factory_validator
 
 
-class F1TableScraper(WikiScraper, ABC):
+class F1TableScraper(WikiScraper, TableScraperContract, ABC):
     """
     Scraper oparty o pojedynczą tabelę 'wikitable'.
 
@@ -32,7 +33,7 @@ class F1TableScraper(WikiScraper, ABC):
                          (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
     """
 
-    CONFIG: TableScraperConfig | None = None
+    CONFIG: TableConfig | None = None
     options_domain: str | None = None
     options_profile: str | None = None
 
@@ -43,7 +44,7 @@ class F1TableScraper(WikiScraper, ABC):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: TableScraperConfig | None = None,
+        config: TableConfig | None = None,
     ) -> None:
         if options is None:
             if self.options_profile is None:
@@ -98,11 +99,11 @@ class F1TableScraper(WikiScraper, ABC):
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         return options
 
-    def _build_config_from_class_attrs(self) -> TableScraperConfig | None:
+    def _build_config_from_class_attrs(self) -> TableConfig | None:
         url = getattr(self, "url", None)
         if not isinstance(url, str) or not url.strip():
             return None
-        return TableScraperConfig(
+        return TableConfig(
             url=url,
             section_id=getattr(self, "section_id", None),
             expected_headers=getattr(self, "expected_headers", None),

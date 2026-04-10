@@ -12,7 +12,8 @@ from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
 from scrapers.engines.single_scraper_engines import SingleEngineManufacturerScraper
 from scrapers.grands_prix.single_scraper_grands_prix import F1SingleGrandPrixScraper
 from scrapers.seasons.single_scraper_seasons import SingleSeasonScraper
-from scrapers.seasons.standings_scraper_seasons import F1StandingsScraper
+from scrapers.standings_scraper_seasons import F1StandingsScraper
+from scrapers.standings_scraper_seasons import F1StandingsTableParser
 from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
 from scrapers.wiki.parsers.elements.table import TableParser
@@ -45,7 +46,8 @@ from tests.support.refactored_base_classes_utils import assert_not_issubclass_ca
         (F1SingleGrandPrixScraper, ABCScraper),
         (F1CircuitInfoboxParser, WikiInfoboxParser),
         (WikiScraper, WikiElementParserMixin),
-        (F1StandingsScraper, TableParser),
+        (F1StandingsTableParser, TableParser),
+        (F1StandingsScraper, F1TableScraper),
     ],
 )
 def test_wiki_hierarchy_issubclass_cases(child: type, parent: type) -> None:
@@ -57,8 +59,8 @@ def test_wiki_hierarchy_issubclass_cases(child: type, parent: type) -> None:
     ("child", "parent"),
     [
         (F1CircuitInfoboxParser, WikiScraper),
-        (F1StandingsScraper, WikiScraper),
-        (F1StandingsScraper, F1TableScraper),
+        (F1StandingsTableParser, WikiScraper),
+        (F1StandingsTableParser, F1TableScraper),
     ],
 )
 def test_wiki_hierarchy_not_issubclass_cases(child: type, parent: type) -> None:
@@ -94,7 +96,9 @@ def test_wiki_scraper_has_scrape_method() -> None:
     assert callable(WikiScraper.scrape)
 
 
-def test_standings_scraper_has_parse_method() -> None:
-    """F1StandingsScraper still exposes parse(element)."""
+def test_standings_scraper_has_fetch_parse_pipeline() -> None:
+    """Każdy Scraper implementuje pipeline fetch/parse."""
+    assert hasattr(F1StandingsScraper, "fetch")
+    assert callable(F1StandingsScraper.fetch)
     assert hasattr(F1StandingsScraper, "parse")
     assert callable(F1StandingsScraper.parse)

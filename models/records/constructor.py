@@ -1,22 +1,19 @@
 from typing import TypedDict
 
-from models.records.link import LINK_SCHEMA
-from models.records.link import LinkRecord
 from models.records.record_definition import RecordDefinition
-from models.records.season import SEASON_SCHEMA
-from models.records.season import SeasonRecord
+from models.records.schema_fragments import compose_schema_fragments
 from validation.record_validation import validate_record
 from validation.schemas import NestedSchema
 
 
-class ConstructorRecord(TypedDict, total=False):
-    constructor: LinkRecord
-    engine: list[LinkRecord]
-    licensed_in: str | LinkRecord | list[LinkRecord] | None
-    based_in: list[LinkRecord]
+class ConstructorSummaryRecord(TypedDict, total=False):
+    constructor: dict[str, str | None]
+    engine: list[dict[str, str | None]]
+    licensed_in: str | dict[str, str | None] | list[dict[str, str | None]] | None
+    based_in: list[dict[str, str | None]]
     team: str
     team_url: str | None
-    seasons: list[SeasonRecord]
+    seasons: list[dict[str, int | str]]
     races_entered: int | None
     races_started: int | None
     drivers: int | None
@@ -28,11 +25,16 @@ class ConstructorRecord(TypedDict, total=False):
     podiums: int | None
     wcc_titles: int | None
     wdc_titles: int | None
-    antecedent_teams: list[LinkRecord]
+    antecedent_teams: list[dict[str, str | None]]
 
 
-CONSTRUCTOR_DEFINITION = RecordDefinition(
-    name="constructor",
+ConstructorRecord = ConstructorSummaryRecord
+
+_constructor_link = compose_schema_fragments("link")["nested"]["link"]
+_constructor_seasons = compose_schema_fragments("seasons")["nested"]["seasons"]
+
+CONSTRUCTOR_SUMMARY_DEFINITION = RecordDefinition(
+    name="constructor_summary",
     required=("constructor", "engine", "based_in", "seasons", "antecedent_teams"),
     types={
         "constructor": dict,
@@ -42,15 +44,15 @@ CONSTRUCTOR_DEFINITION = RecordDefinition(
         "antecedent_teams": list,
     },
     nested={
-        "constructor": NestedSchema(LINK_SCHEMA),
-        "engine": NestedSchema(LINK_SCHEMA, is_list=True),
-        "based_in": NestedSchema(LINK_SCHEMA, is_list=True),
-        "seasons": NestedSchema(SEASON_SCHEMA, is_list=True),
-        "antecedent_teams": NestedSchema(LINK_SCHEMA, is_list=True),
+        "constructor": _constructor_link,
+        "engine": NestedSchema(_constructor_link.schema, is_list=True),
+        "based_in": NestedSchema(_constructor_link.schema, is_list=True),
+        "seasons": _constructor_seasons,
+        "antecedent_teams": NestedSchema(_constructor_link.schema, is_list=True),
     },
 )
 
-CONSTRUCTOR_SCHEMA = CONSTRUCTOR_DEFINITION.to_schema()
+CONSTRUCTOR_SCHEMA = CONSTRUCTOR_SUMMARY_DEFINITION.to_schema()
 
 
 def validate_constructor_record(record: dict[str, object]) -> list[str]:

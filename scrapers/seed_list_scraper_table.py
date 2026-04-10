@@ -7,6 +7,7 @@ from warnings import warn
 from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.family_contracts import ListScraperContract
 from scrapers.wiki.component_metadata_wiki import LIST_SCRAPER_KIND
 from scrapers.wiki.component_metadata_wiki import ComponentMetadata
 from scrapers.wiki.component_metadata_wiki import build_component_metadata
@@ -19,7 +20,7 @@ if TYPE_CHECKING:
     from scrapers.base.table.schema import TableSchemaBuilder
 
 
-class SeedListTableScraper(F1TableScraper):
+class SeedListTableScraper(F1TableScraper, ListScraperContract):
     """Wspólna baza dla scraperów seed/list opartych o tabelę."""
 
     options_profile: ClassVar[str | None] = "seed_soft"

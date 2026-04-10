@@ -4,7 +4,7 @@ from infrastructure.http_client.caching.wiki_policy import WikipediaCachePolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import default_http_policy
 from scrapers.config import DataPaths
-from scrapers.config import ScraperConfig
+from scrapers.configs.public import RuntimeConfig
 
 DEFAULT_TIMEOUT = 10
 
@@ -26,9 +26,9 @@ def test_default_http_policy_builds_wikipedia_cache():
 
 
 def test_default_scraper_config_includes_http_policy():
-    config = ScraperConfig()
+    config = RuntimeConfig()
 
-    assert isinstance(config, ScraperConfig)
+    assert isinstance(config, RuntimeConfig)
     assert config.include_urls is True
     assert isinstance(config.policy, HttpPolicy)
 

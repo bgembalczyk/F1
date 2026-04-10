@@ -47,3 +47,9 @@ jobs:
 
       - name: Domain role contracts suite
         run: pytest -q tests/test_domain_role_contracts.py
+
+      - name: Scraper family contracts suite
+        run: pytest -q tests/contract/test_scraper_family_contracts.py
+
+      - name: Enforce scraper family inheritance contracts
+        run: python scripts/ci/enforce_scraper_family_contracts.py

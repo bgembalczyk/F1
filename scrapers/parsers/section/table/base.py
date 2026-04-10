@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
-from scrapers.config_table import TableScraperConfig
+from scrapers.configs.public import TableConfig
 from scrapers.parser_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.parse_results import SectionParseResult
@@ -21,7 +21,7 @@ class TableSectionParser:
     def __init__(
         self,
         *,
-        config: TableScraperConfig,
+        config: TableConfig,
         section_id: SectionId | str,
         section_label: EntityName | str,
         domain: str,

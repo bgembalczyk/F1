@@ -1,7 +1,7 @@
 from collections.abc import Mapping
 from typing import Any
 
-from models.records.field_normalizer import FieldNormalizer
+from models.field_normalizer import FieldNormalizer
 
 
 def normalize_points(normalizer: FieldNormalizer, value: Any) -> Any:

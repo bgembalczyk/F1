@@ -6,9 +6,9 @@ from typing import Any
 from typing import Protocol
 from typing import runtime_checkable
 
-from models.records.circuit_base import CircuitBaseRecord
-from models.records.circuit_complete import CircuitCompleteRecord
-from models.records.circuit_details import CircuitDetailsRecord
+from models.records.circuit import CircuitBaseRecord
+from models.records.circuit import CircuitCompleteRecord
+from models.records.circuit import CircuitDetailsRecord
 from models.records.serializable_protocol import SerializableProtocol
 from models.value_objects.base import ValueObject
 

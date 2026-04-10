@@ -3,13 +3,13 @@ from models.mappers.field_aliases import FIELD_ALIASES
 from models.mappers.field_aliases import apply_field_aliases
 from models.mappers.serialization import to_circuit_record_dict
 from models.records.circuit import CIRCUIT_DEFINITION
+from models.records.circuit import CircuitBaseRecord
+from models.records.circuit import CircuitCompleteRecord
+from models.records.circuit import CircuitDetailsRecord
 from models.records.circuit import CircuitRecord
+from models.records.circuit import validate_circuit_complete_record
+from models.records.circuit import validate_circuit_details_record
 from models.records.circuit import validate_circuit_record
-from models.records.circuit_base import CircuitBaseRecord
-from models.records.circuit_complete import CircuitCompleteRecord
-from models.records.circuit_complete import validate_circuit_complete_record
-from models.records.circuit_details import CircuitDetailsRecord
-from models.records.circuit_details import validate_circuit_details_record
 from models.records.constructor import CONSTRUCTOR_DEFINITION
 from models.records.constructor import ConstructorRecord
 from models.records.constructor import validate_constructor_record
@@ -70,7 +70,8 @@ def test_circuit_record_structure() -> None:
 def test_circuit_details_and_complete_records() -> None:
     assert CircuitBaseRecord.__required_keys__ == set()
     assert CircuitBaseRecord.__optional_keys__ == {"url"}
-    assert CircuitDetailsRecord.__required_keys__ == {"url", "infobox", "tables"}
+    assert CircuitDetailsRecord.__required_keys__ == {"infobox", "tables"}
+    assert CircuitDetailsRecord.__optional_keys__ >= {"url"}
     assert CircuitCompleteRecord.__optional_keys__ >= {
         "name",
         "url",

@@ -3,7 +3,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from scrapers.circuits.circuits_services.domain_record import DomainRecordService
+from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
+from scrapers.services.domain_record.circuit import DomainRecordService
 
 
 @pytest.fixture()
@@ -79,10 +80,12 @@ def test_assemble_record_returns_dict() -> None:
     }
     svc = DomainRecordService(assembler=mock_assembler)
     result = svc.assemble_record(
-        source_url="https://example.com",
-        infobox={},
-        lap_record_rows=[],
-        sections=[],
+        CircuitDomainRecordInput(
+            source_url="https://example.com",
+            infobox={},
+            lap_record_rows=[],
+            sections=[],
+        ),
     )
     assert result == {"url": "https://example.com", "name": "Test"}
     mock_assembler.assemble.assert_called_once()
