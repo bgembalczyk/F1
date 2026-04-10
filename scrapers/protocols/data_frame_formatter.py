@@ -1,6 +1,14 @@
-from typing import Any
-from typing import Protocol
+from __future__ import annotations
 
+import warnings
 
-class DataFrameFormatterProtocol(Protocol):
-    def format(self, result) -> Any: ...
+from scrapers.contracts.protocols.data_frame_formatter import DataFrameFormatterProtocol
+
+warnings.warn(
+    "scrapers.protocols.data_frame_formatter is deprecated and will be removed after the transition period; "
+    "use scrapers.contracts.protocols.data_frame_formatter instead.",
+    DeprecationWarning,
+    stacklevel=2,
+)
+
+__all__ = ["DataFrameFormatterProtocol"]

@@ -14,7 +14,7 @@ from scrapers.infobox.helpers import parse_infobox_from_soup
 from scrapers.infobox.html_parser import InfoboxHtmlParser
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
-from scrapers.runtime.factory import ScraperRuntimeFactory
+from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
 
 RecoverableNetworkError = (
     RequestError,
