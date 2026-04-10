@@ -5,11 +5,12 @@ from typing import Generic
 from typing import TypeVar
 
 from bs4 import Tag
+from scrapers.base_domain_roles import Parser
 
 TWikiParsed = TypeVar("TWikiParsed")
 
 
-class WikiParser(ABC, Generic[TWikiParsed]):
+class WikiParser(Parser[Tag, TWikiParsed], ABC, Generic[TWikiParsed]):
     """Bazowa klasa dla wszystkich parserów HTML Wikipedii.
 
     Parser przetwarza konkretny fragment HTML (Tag) i zwraca
