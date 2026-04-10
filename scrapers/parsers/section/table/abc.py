@@ -35,9 +35,12 @@ class SectionTableParserBase(ABC):
             include_source_table=include_source_table,
         )
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+        return self.parse_fragment(fragment)
+
+    def parse_fragment(self, fragment: BeautifulSoup) -> SectionParseResult:
         records: list[dict[str, Any]] = []
-        for table_data in self.iter_table_data(section_fragment):
+        for table_data in self.parse_group(fragment):
             table_classification = self.classify_table(table_data)
             if table_classification is None:
                 continue
@@ -45,7 +48,7 @@ class SectionTableParserBase(ABC):
                 table_data=table_data,
                 table_classification=table_classification,
             )
-            mapped = self._map_table_result_compat(
+            mapped = self.parse_row(
                 table_data=table_data,
                 table_classification=table_classification,
                 table_pipeline=table_pipeline,
@@ -55,11 +58,11 @@ class SectionTableParserBase(ABC):
             records.append(mapped)
         return self.build_result(records)
 
-    def iter_table_data(
+    def parse_group(
         self,
-        section_fragment: BeautifulSoup,
+        fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:
-        return self._table_parser.parse(section_fragment)
+        return self._table_parser.parse(fragment)
 
     def classify_table(self, table_data: dict[str, Any]) -> Any | None:
         return table_data
@@ -84,7 +87,7 @@ class SectionTableParserBase(ABC):
     ) -> dict[str, Any] | None:
         """Transform a parsed table into a domain record (or skip with None)."""
 
-    def _map_table_result_compat(
+    def parse_row(
         self,
         *,
         table_data: dict[str, Any],

@@ -1,5 +1,8 @@
 from typing import Any
 
+from scrapers.base.constants.shared_headers import SHARED_POINTS_HEADER
+from scrapers.base.constants.shared_headers import SHARED_PODIUMS_HEADER
+from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_BASED_IN_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_DRIVERS_HEADER
@@ -14,7 +17,7 @@ from scrapers.constructors_constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_WCC_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_WDC_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_WINS_HEADER
-from scrapers.wiki.parsers.elements.wiki_table import WikiTableBaseParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
 
 class CurrentConstructorsTableParser(WikiTableBaseParser):
@@ -27,15 +30,15 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
             CONSTRUCTOR_ENGINE_HEADER.lower(),
             CONSTRUCTOR_LICENSED_IN_HEADER.lower(),
             CONSTRUCTOR_BASED_IN_HEADER.lower(),
-            CONSTRUCTOR_SEASONS_HEADER.lower(),
+            SHARED_SEASONS_HEADER.lower(),
             CONSTRUCTOR_RACES_ENTERED_HEADER.lower(),
             CONSTRUCTOR_RACES_STARTED_HEADER.lower(),
             CONSTRUCTOR_TOTAL_ENTRIES_HEADER.lower(),
             CONSTRUCTOR_WINS_HEADER.lower(),
-            CONSTRUCTOR_POINTS_HEADER.lower(),
+            SHARED_POINTS_HEADER.lower(),
             CONSTRUCTOR_POLES_HEADER.lower(),
             CONSTRUCTOR_FASTEST_LAPS_HEADER.lower(),
-            CONSTRUCTOR_PODIUMS_HEADER.lower(),
+            SHARED_PODIUMS_HEADER.lower(),
             CONSTRUCTOR_WCC_HEADER.lower(),
             CONSTRUCTOR_WDC_HEADER.lower(),
             CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER.lower(),
@@ -48,16 +51,16 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
         CONSTRUCTOR_ENGINE_HEADER: "engine",
         CONSTRUCTOR_LICENSED_IN_HEADER: "licensed_in",
         CONSTRUCTOR_BASED_IN_HEADER: "based_in",
-        CONSTRUCTOR_SEASONS_HEADER: "seasons",
+        SHARED_SEASONS_HEADER: "seasons",
         CONSTRUCTOR_RACES_ENTERED_HEADER: "races_entered",
         CONSTRUCTOR_RACES_STARTED_HEADER: "races_started",
         CONSTRUCTOR_DRIVERS_HEADER: "drivers",
         CONSTRUCTOR_TOTAL_ENTRIES_HEADER: "total_entries",
         CONSTRUCTOR_WINS_HEADER: "wins",
-        CONSTRUCTOR_POINTS_HEADER: "points",
+        SHARED_POINTS_HEADER: "points",
         CONSTRUCTOR_POLES_HEADER: "poles",
         CONSTRUCTOR_FASTEST_LAPS_HEADER: "fastest_laps",
-        CONSTRUCTOR_PODIUMS_HEADER: "podiums",
+        SHARED_PODIUMS_HEADER: "podiums",
         CONSTRUCTOR_WCC_HEADER: "wcc_titles",
         CONSTRUCTOR_WDC_HEADER: "wdc_titles",
         CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER: "antecedent_teams",
@@ -71,3 +74,44 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
             )
             for header in headers
         }
+
+    def parse_row(self, row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+        mapped = super().parse_row(row, column_map)
+        normalized = dict(mapped)
+        if "constructor" in normalized:
+            chassis = self._normalize_constructor_link(normalized.get("constructor"))
+            engine = self._normalize_constructor_link(normalized.get("engine")) or chassis
+            normalized["constructor"] = {
+                "chassis_constructor": chassis,
+                "engine_constructor": engine,
+            }
+            normalized.pop("engine", None)
+        return self._sort_record_keys(normalized)
+
+    @staticmethod
+    def _normalize_constructor_link(value: Any) -> dict[str, Any] | None:
+        if isinstance(value, list):
+            if not value:
+                return None
+            value = value[0]
+        if isinstance(value, dict):
+            text = value.get("text")
+            url = value.get("url")
+            normalized: dict[str, Any] = {}
+            if text is not None:
+                normalized["text"] = text
+            if url is not None:
+                normalized["url"] = url
+            return normalized or None
+        if isinstance(value, str):
+            return {"text": value}
+        return None
+
+    @staticmethod
+    def _sort_record_keys(record: dict[str, Any]) -> dict[str, Any]:
+        ordered: dict[str, Any] = {}
+        if "constructor" in record:
+            ordered["constructor"] = record["constructor"]
+        for key in sorted(key for key in record if key != "constructor"):
+            ordered[key] = record[key]
+        return ordered

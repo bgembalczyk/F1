@@ -12,6 +12,7 @@ from models.value_objects.common_terms import SectionId
 from models.value_objects.common_terms import WikiUrl
 from scrapers.base.types import JsonValue
 from scrapers.base.types import PipelineRecord
+from scrapers.parsers.parse_result import ParseResult
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -21,6 +22,7 @@ if TYPE_CHECKING:
 
 SectionRecord: TypeAlias = PipelineRecord
 SectionMetadata: TypeAlias = dict[str, JsonValue]
+SectionUnifiedParseResult: TypeAlias = ParseResult[list[SectionRecord]]
 
 
 @dataclass(frozen=True)
@@ -45,3 +47,11 @@ class SectionParseResult:
 
 
 
+
+
+__all__ = [
+    "SectionParseResult",
+    "SectionRecord",
+    "SectionMetadata",
+    "SectionUnifiedParseResult",
+]

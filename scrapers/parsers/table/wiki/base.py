@@ -10,7 +10,7 @@ class WikiTableBaseParser(ABC):
     missing_columns_policy: str = "skip"
     extra_columns_policy: str = "ignore"
 
-    def collect_rows(self, payload: Any) -> list[dict[str, Any]]:
+    def parse_group(self, payload: Any) -> list[dict[str, Any]]:
         """Traverse parsed payload and collect all domain rows matching this table type.
 
         The payload may be a nested dict/list structure produced by section parsers.
@@ -33,14 +33,17 @@ class WikiTableBaseParser(ABC):
             for item in node:
                 self._collect_from_node(item, rows)
 
-    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
-        headers = table_data.get("headers", [])
-        if not isinstance(headers, list) or not self.matches(headers, table_data):
+    def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+        return self.parse_fragment(fragment)
+
+    def parse_fragment(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+        headers = fragment.get("headers", [])
+        if not isinstance(headers, list) or not self.matches(headers, fragment):
             return None
 
         column_map = self.map_columns(headers)
-        normalized_rows = self._normalized_rows(table_data)
-        mapped_rows = [self._map_row(row, column_map) for row in normalized_rows]
+        normalized_rows = self._normalized_rows(fragment)
+        mapped_rows = [self.parse_row(row, column_map) for row in normalized_rows]
 
         return {
             "table_type": self.table_type,
@@ -97,14 +100,16 @@ class WikiTableBaseParser(ABC):
     def map_columns(self, headers: list[str]) -> dict[str, str]:
         """Mapuje nagłówki tabeli na pola domenowe."""
 
-    @staticmethod
-    def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+    def parse_row(self, row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
         mapped: dict[str, Any] = {}
         for header, value in row.items():
             key = column_map.get(header)
             if key:
                 mapped[key] = value
         return mapped
+
+    # Backward-compatible alias
+    collect_rows = parse_group
 
 
 __all__ = ["WikiTableBaseParser"]

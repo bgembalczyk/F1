@@ -1,12 +1,7 @@
-from typing import Any
-
-from bs4 import BeautifulSoup
-
 from scrapers.config_table import TableScraperConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
 from scrapers.parsers.section.sub.indianapolis_only import IndianapolisOnlySubSectionParser
-from scrapers.parsers.table.former_constructors import FormerConstructorsTableParser
-from scrapers.section.parse_results import SectionParseResult
+from scrapers.parsers.table.constructor.former import FormerConstructorsTableParser
 
 
 class FormerConstructorsSectionParser(ConstructorsSectionParser):
@@ -27,24 +22,16 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
         )
         self._indianapolis_sub_section_parser = IndianapolisOnlySubSectionParser()
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        result = super().parse(section_fragment)
-        for record in result.records:
-            if not isinstance(record, dict) or "constructor" not in record:
-                continue
-            record["chassis_constructor"] = record.pop("constructor")
-        return result
-
     def parse_indianapolis_only_records(
         self,
-        section_fragment: BeautifulSoup,
-    ) -> list[dict[str, Any]]:
+        section_fragment,
+    ) -> list[dict[str, dict[str, str]]]:
         parsed = self._indianapolis_sub_section_parser.parse(section_fragment)
         records = parsed.get("items", [])
         if not isinstance(records, list):
             return []
 
-        normalized_records: list[dict[str, Any]] = []
+        normalized_records: list[dict[str, dict[str, str]]] = []
         for record in records:
             if not isinstance(record, dict):
                 continue
@@ -64,17 +51,21 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
 
     @staticmethod
     def _normalize_indianapolis_constructor(
-        record: dict[str, Any],
-    ) -> dict[str, Any] | None:
+        record: dict[str, object],
+    ) -> dict[str, str] | None:
         constructor = record.get("chassis_constructor")
         if isinstance(constructor, dict):
-            return dict(constructor)
+            return {
+                key: value
+                for key, value in constructor.items()
+                if isinstance(key, str) and isinstance(value, str)
+            }
 
         constructor_name = record.get("constructor")
         if not isinstance(constructor_name, str) or not constructor_name.strip():
             return None
 
-        normalized: dict[str, Any] = {"text": constructor_name.strip()}
+        normalized: dict[str, str] = {"text": constructor_name.strip()}
         constructor_url = record.get("constructor_url")
         if isinstance(constructor_url, str) and constructor_url.strip():
             normalized["url"] = constructor_url.strip()

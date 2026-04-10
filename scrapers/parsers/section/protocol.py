@@ -1,17 +1,5 @@
-from typing import Protocol
-from typing import runtime_checkable
+from scrapers.parsers.section.section_parser_protocol import SectionParserProtocol
 
-from bs4 import BeautifulSoup
+SectionParser = SectionParserProtocol
 
-from scrapers.section.parse_results import SectionParseResult
-
-
-@runtime_checkable
-class SectionParser(Protocol):
-    """Common section parser interface.
-
-    Input: BeautifulSoup fragment scoped to a section.
-    Output: parsed records with section-level metadata.
-    """
-
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
+__all__ = ["SectionParser", "SectionParserProtocol"]
