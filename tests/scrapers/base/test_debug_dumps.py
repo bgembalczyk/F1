@@ -3,11 +3,11 @@ import re
 
 import pytest
 from bs4 import BeautifulSoup
-
 from scrapers.base.debug_dumps import TablePipelineDebugContext
 from scrapers.base.debug_dumps import write_infobox_dump
 from scrapers.base.debug_dumps import write_table_pipeline_dump
-from scrapers.base.extractors.infobox import InfoboxExtractor
+
+from scrapers.infobox.extraction.extractor import BaseInfoboxExtractor
 
 
 class FailingParser:
@@ -29,7 +29,7 @@ def test_debug_enabled_generates_infobox_dump_on_extract_failure(tmp_path) -> No
         '<table class="infobox"><tr><th>Name</th><td>Test</td></tr></table>',
         "html.parser",
     )
-    extractor = InfoboxExtractor(
+    extractor = BaseInfoboxExtractor(
         parser=FailingParser(),
         mapper=PassThroughMapper(),
         debug_dir=tmp_path,
@@ -52,7 +52,7 @@ def test_debug_disabled_does_not_generate_infobox_dump_on_extract_failure(
         '<table class="infobox"><tr><th>Name</th><td>Test</td></tr></table>',
         "html.parser",
     )
-    extractor = InfoboxExtractor(
+    extractor = BaseInfoboxExtractor(
         parser=FailingParser(),
         mapper=PassThroughMapper(),
         debug_dir=None,
