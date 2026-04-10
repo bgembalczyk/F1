@@ -5,7 +5,9 @@ from typing import Any
 import pandas as pd
 
 from scrapers.formatters.helpers import extract_data
-from scrapers.results import ScrapeResult
+
+if TYPE_CHECKING:
+    from scrapers.results import ScrapeResult
 
 
 def validate_dataframe_columns(dataframe: Any) -> None:
@@ -16,7 +18,7 @@ def validate_dataframe_columns(dataframe: Any) -> None:
 
 class PandasDataFrameFormatter:
     @staticmethod
-    def format(result: ScrapeResult) -> Any:
+    def format(result: "ScrapeResult") -> Any:
         data = extract_data(result)
         try:
 

@@ -2,19 +2,29 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from scrapers.formatters.csv import CsvFormatter
-from scrapers.formatters.json import JsonFormatter
+if TYPE_CHECKING:
+    from scrapers.formatters.csv import CsvFormatter
+    from scrapers.formatters.json import JsonFormatter
+    from scrapers.results import ScrapeResult
 
 
 class DataExporter:
     def __init__(
         self,
         *,
-        json_formatter: JsonFormatter | None = None,
-        csv_formatter: CsvFormatter | None = None,
+        json_formatter: "JsonFormatter | None" = None,
+        csv_formatter: "CsvFormatter | None" = None,
     ) -> None:
-        self._json_formatter = json_formatter or JsonFormatter()
-        self._csv_formatter = csv_formatter or CsvFormatter()
+        if json_formatter is None:
+            from scrapers.formatters.json import JsonFormatter
+
+            json_formatter = JsonFormatter()
+        if csv_formatter is None:
+            from scrapers.formatters.csv import CsvFormatter
+
+            csv_formatter = CsvFormatter()
+        self._json_formatter = json_formatter
+        self._csv_formatter = csv_formatter
 
     def to_json(
         self,
