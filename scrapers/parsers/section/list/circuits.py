@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.config_table import ScraperConfig
+from scrapers.config_table import TableScraperConfig
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.circuit_list import CircuitsListTableParser
 from scrapers.section.parse_results import SectionParseResult
@@ -18,7 +18,7 @@ class CircuitsListSectionParser(SectionParser):
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         section_label: str | None = None,
         include_urls: bool,
         normalize_empty_values: bool,
@@ -33,8 +33,9 @@ class CircuitsListSectionParser(SectionParser):
         )
 
     def _ensure_supported_table(self, section_fragment: BeautifulSoup) -> None:
+        table_mapping_parser = CircuitsListTableParser()
         parsed_tables = ArticleTablesParser(
-            specialized_parsers=[CircuitsListTableParser()],
+            specialized_parsers=[table_mapping_parser],
         ).parse(section_fragment)
         has_circuits_table = any(
             table.get("table_type") == "circuits_list" for table in parsed_tables

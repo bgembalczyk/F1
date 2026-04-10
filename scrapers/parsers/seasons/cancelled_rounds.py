@@ -8,7 +8,7 @@ from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.calendar_circuit import CalendarCircuitColumn
 from scrapers.columns.types.season_date import SeasonDateColumn
 from scrapers.columns.types.url import UrlColumn
-from scrapers.config_table import ScraperConfig
+from scrapers.config_table import TableScraperConfig
 from scrapers.helpers.html_utils import find_section_tables
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.seasons.constants import CANCELLED_ROUNDS_TABLE_INDEX
@@ -129,7 +129,7 @@ class CancelledRoundsParser:
         schema: TableSchemaDSL,
         section_id: str,
     ) -> list[dict[str, Any]]:
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self._table_parser.url,
             section_id=section_id,
             expected_headers=EXPECTED_HEADERS,
