@@ -1,8 +1,12 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
 from datetime import datetime
+from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.results import ScrapeResult
+if TYPE_CHECKING:
+    from scrapers.results import ScrapeResult
 
 
 @dataclass(frozen=True)

@@ -2,10 +2,13 @@ import csv
 import io
 import json
 from collections.abc import Sequence
+from typing import TYPE_CHECKING
 
 from exporters.metadata import ExportMetadata
 from scrapers.formatters.helpers import extract_data
-from scrapers.results import ScrapeResult
+
+if TYPE_CHECKING:
+    from scrapers.results import ScrapeResult
 
 
 class CsvFormatter:
