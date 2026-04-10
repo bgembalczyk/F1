@@ -15,8 +15,8 @@ from layers.seed.registry.entries.base import BaseRegistryEntry
 from layers.seed.registry.entries.entry import SeedRegistryEntry
 from layers.seed.registry.entries.list_job import ListJobRegistryEntry
 from layers.seed.registry.raw_specs import RawRegistrySpec
-from scrapers.constructors import ConstructorsListScraper
-from scrapers.grands_prix.list_scraper_grands_prix import GrandsPrixListScraper
+from scrapers.constructors_list_scraper import ConstructorsListScraper
+from scrapers.grands_prix_list_scraper import GrandsPrixListScraper
 from scrapers.wiki.discovery_wiki import discover_layer_one_seed_components
 from scrapers.wiki.sources_registry_wiki import get_source_by_seed_name
 from scrapers.wiki.sources_registry_wiki import resolve_seed_name
