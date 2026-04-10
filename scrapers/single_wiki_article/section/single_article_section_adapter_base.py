@@ -1,14 +1,14 @@
 from abc import ABC
 
 from scrapers.adapters.section.adapter import SectionAdapter
-from scrapers.single_wiki_article.single_article_domain_scraper_base import (
-    SingleArticleDomainScraperBase,
+from scrapers.single_wiki_article.single_article_domain_pipeline_base import (
+    SingleArticleDomainPipelineBase,
 )
 
 
 class SingleArticleSectionAdapterBase(
     SectionAdapter,
-    SingleArticleDomainScraperBase,
+    SingleArticleDomainPipelineBase,
     ABC,
 ):
     """Wariant dla scraperów opartych o ``SectionAdapter``."""

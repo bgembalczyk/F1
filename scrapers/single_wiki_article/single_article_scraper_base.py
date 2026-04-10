@@ -7,7 +7,7 @@ from typing import Any
 
 from infrastructure.helpers import init_scraper_options
 from scrapers.helpers.config_factory import build_scraper_options
-from scrapers.runtime.factory import ScraperRuntimeFactory
+from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
 from scrapers.wiki.scraper_wiki import WikiScraper
 
 if TYPE_CHECKING:

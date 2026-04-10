@@ -3,12 +3,12 @@ from abc import ABC
 from scrapers.section.selection_strategy.wikipedia_by_id import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.single_wiki_article.single_article_domain_scraper_base import (
-    SingleArticleDomainScraperBase,
+from scrapers.single_wiki_article.single_article_domain_pipeline_base import (
+    SingleArticleDomainPipelineBase,
 )
 
 
-class SingleArticleSectionByIdBase(SingleArticleDomainScraperBase, ABC):
+class SingleArticleSectionByIdBase(SingleArticleDomainPipelineBase, ABC):
     """Baza używająca strategii sekcji po identyfikatorze."""
 
     def __init__(self, *args, **kwargs) -> None:

@@ -17,6 +17,9 @@ from scrapers.single_wiki_article.section.single_article_section_by_id_base impo
 from scrapers.single_wiki_article.single_article_domain_scraper_base import (
     SingleArticleDomainScraperBase,
 )
+from scrapers.single_wiki_article.single_article_domain_pipeline_base import (
+    SingleArticleDomainPipelineBase,
+)
 from scrapers.single_wiki_article.single_article_scraper_base import (
     SingleArticleScraperBase,
 )
@@ -26,6 +29,7 @@ from scrapers.single_wiki_article.single_article_section_aware_mixin import (
 
 __all__ = [
     "SingleArticleDomainScraperBase",
+    "SingleArticleDomainPipelineBase",
     "SingleArticleScraperBase",
     "SingleArticleSectionAdapterBase",
     "SingleArticleSectionAwareMixin",
