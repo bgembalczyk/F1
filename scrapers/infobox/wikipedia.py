@@ -100,6 +100,8 @@ class WikipediaInfoboxScraper:
         if self.record_factory is None:
             return record
         try:
+            if hasattr(self.record_factory, "build"):
+                return self.record_factory.build(record)
             return self.record_factory.create(record)
         except (AttributeError, KeyError, TypeError, ValueError):
             self.logger.warning(

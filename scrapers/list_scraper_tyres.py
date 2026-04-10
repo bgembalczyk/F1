@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.base.factory.protocol import MappingRecordFactory
+from models.records.factories.mapping import MappingRecordFactory
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import TYRES
 from scrapers.base.table.columns.types.seasons import SeasonsColumn

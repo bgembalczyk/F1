@@ -3,7 +3,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.factory.protocol import RECORD_FACTORIES
+from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value

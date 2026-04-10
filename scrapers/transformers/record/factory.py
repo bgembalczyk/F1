@@ -1,7 +1,7 @@
 from collections.abc import Callable
 from typing import Any
 
-from models.records.factories.protocol2 import RecordFactory
+from models.records.factories.protocol import RecordBuilder
 from scrapers.logging import get_logger
 from scrapers.normalization_utils import EmptyValuePolicy
 from scrapers.transformers.record import RecordTransformer
@@ -13,7 +13,7 @@ FACTORY_FALLBACK_EXCEPTIONS = (TypeError, ValueError, KeyError, AttributeError)
 class RecordFactoryTransformer(RecordTransformer):
     def __init__(
         self,
-        record_factory: RecordFactory | Callable[[dict[str, Any]], Any] | type,
+        record_factory: RecordBuilder | Callable[[dict[str, Any]], Any] | type,
         *,
         fallback_on_error: bool = False,
         empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
@@ -24,6 +24,8 @@ class RecordFactoryTransformer(RecordTransformer):
         self.logger = get_logger(self.__class__.__name__)
 
     def _apply_factory(self, record: ExportRecord) -> ExportRecord | Any:
+        if hasattr(self.record_factory, "build"):
+            return self.record_factory.build(record)
         if hasattr(self.record_factory, "create"):
             return self.record_factory.create(record)
         if isinstance(self.record_factory, type):
