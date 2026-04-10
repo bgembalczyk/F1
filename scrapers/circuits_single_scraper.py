@@ -11,7 +11,7 @@ from scrapers.base import single_wiki_article as article
 from scrapers.circuits.circuits_composition import CircuitScraperCompositionFactory
 from scrapers.circuits.circuits_composition import CircuitScraperDependencies
 from scrapers.circuits.circuits_helpers.sections import is_circuit_like_article
-from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
+from scrapers.services.domain_record.circuit_adapter import CircuitDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

@@ -8,7 +8,7 @@ from scrapers.base.postprocess.assembler import BaseRecordAssemblerInput
 from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
-from scrapers.services.domain_record.base_pipeline_service import BaseFactoryScraper
+from scrapers.services.domain_record.base_adapter import BaseAssemblerPipelineService
 
 if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol

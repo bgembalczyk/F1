@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
 from scrapers.circuits.circuits_infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.circuits_sections.service import CircuitSectionExtractionService
-from scrapers.services.domain_record.circuit import CircuitDomainRecordService
+from scrapers.services.domain_record.circuit_adapter import CircuitPipelineService
 
 if TYPE_CHECKING:
     from scrapers.base.infobox.service import InfoboxExtractionService
@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class CircuitScraperDependencies:
     infobox_service: InfoboxExtractionService
     sections_service_factory: SectionServiceFactory[CircuitSectionExtractionService]
-    domain_record_service: CircuitDomainRecordService
+    domain_record_service: CircuitPipelineService
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,7 +30,7 @@ class CircuitScraperCompositionFactory:
     sections_service_factory: (
         SectionServiceFactory[CircuitSectionExtractionService] | None
     ) = None
-    domain_record_service: CircuitDomainRecordService | None = None
+    domain_record_service: CircuitPipelineService | None = None
 
     @classmethod
     def for_tests(
@@ -40,7 +40,7 @@ class CircuitScraperCompositionFactory:
         sections_service_factory: (
             SectionServiceFactory[CircuitSectionExtractionService] | None
         ) = None,
-        domain_record_service: CircuitDomainRecordService | None = None,
+        domain_record_service: CircuitPipelineService | None = None,
     ) -> CircuitScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -68,7 +68,7 @@ class CircuitScraperCompositionFactory:
 
         domain_record_service = self.domain_record_service
         if domain_record_service is None:
-            domain_record_service = CircuitDomainRecordService()
+            domain_record_service = CircuitPipelineService()
 
         return CircuitScraperDependencies(
             infobox_service=infobox_service,

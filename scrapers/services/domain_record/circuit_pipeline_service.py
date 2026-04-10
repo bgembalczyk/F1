@@ -11,8 +11,7 @@ from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
 from scrapers.records.dto.circuit import CircuitRecordDTO
 from scrapers.records.assemblers.circuit import CircuitRecordAssembler
-from scrapers.records.DTO.circuit import CircuitRecordDTO
-from scrapers.services.domain_record.base_pipeline_service import BaseFactoryScraper
+from scrapers.services.domain_record.base_adapter import BaseAssemblerPipelineService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:

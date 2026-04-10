@@ -1,0 +1,4 @@
+from scrapers.services.domain_record.constructor_pipeline_service import ConstructorDomainRecordInput
+from scrapers.services.domain_record.constructor_pipeline_service import ConstructorPipelineService
+
+__all__ = ["ConstructorPipelineService", "ConstructorDomainRecordInput"]

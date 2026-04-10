@@ -1,31 +1,13 @@
 from __future__ import annotations
 
-from typing import Any
-from typing import Generic
-from typing import TypeVar
+import warnings
 
-from scrapers.core.domain_roles import Scraper
-from scrapers.mixins.pipeline_mixins import DebugDumpMixin
-from scrapers.mixins.pipeline_mixins import RetryMixin
-from scrapers.mixins.pipeline_mixins import ValidationMixin
-from scrapers.services.domain_record.base import DomainPipelineService
+from scrapers.services.domain_record.base_adapter import BaseAssemblerPipelineService
 
-InputDTO = TypeVar("InputDTO")
-PayloadT = TypeVar("PayloadT")
+warnings.warn(
+    "Module 'base_pipeline_service' is deprecated; use 'base_adapter' instead.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-
-class BaseFactoryScraper(
-    Scraper[dict[str, Any], dict[str, Any]],
-    RetryMixin,
-    DebugDumpMixin,
-    ValidationMixin,
-    ABC,
-    Generic[PayloadT],
-):
-    """Backward-compatible alias around the canonical DomainPipelineService."""
-
-    class BaseAssemblerPipelineService(
-    DomainPipelineService[InputDTO, PayloadT, dict[str, Any]],
-    Generic[InputDTO, PayloadT],
-):
-    """Backward-compatible alias around the canonical DomainPipelineService."""
+__all__ = ["BaseAssemblerPipelineService"]
