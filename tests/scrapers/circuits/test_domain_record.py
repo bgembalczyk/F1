@@ -3,6 +3,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
+from scrapers.circuits.circuits_services.domain_record import CircuitDomainRecordInput
 from scrapers.circuits.circuits_services.domain_record import DomainRecordService
 
 
@@ -11,78 +12,58 @@ def service() -> DomainRecordService:
     return DomainRecordService()
 
 
-# ---------------------------------------------------------------------------
-# collect_lap_record_rows  (lines 53-66)
-# ---------------------------------------------------------------------------
+def _payload(**overrides):
+    base = {
+        "source_url": "https://en.wikipedia.org/wiki/Monza",
+        "soup": MagicMock(),
+        "infobox": {},
+        "sections": [],
+        "include_urls": False,
+        "fetcher": None,
+        "policy": None,
+        "debug_dir": None,
+    }
+    base.update(overrides)
+    return CircuitDomainRecordInput(**base)
 
 
-def test_collect_lap_record_rows_no_tables() -> None:
-    # When article_tables_parser returns empty list → empty result
+def test_execute_with_no_tables_returns_empty_lap_records() -> None:
     mock_parser = MagicMock()
     mock_parser.parse.return_value = []
-    svc = DomainRecordService(article_tables_parser=mock_parser)
-    result = svc.collect_lap_record_rows(
-        soup=MagicMock(),
-        url="https://en.wikipedia.org/wiki/Monza",
-        include_urls=False,
-        fetcher=None,
-        policy=None,
-        debug_dir=None,
-    )
-    assert result == []
+    mock_assembler = MagicMock()
+    mock_assembler.assemble.return_value = {"url": "https://example.com", "name": "Test"}
+
+    svc = DomainRecordService(assembler=mock_assembler, article_tables_parser=mock_parser)
+    result = svc.execute(_payload(source_url="https://example.com"))
+
+    assert result.record == {"url": "https://example.com", "name": "Test"}
+    assembled_dto = mock_assembler.assemble.call_args[0][0]
+    assert assembled_dto.lap_record_rows == []
 
 
-def test_collect_lap_record_rows_table_without_table_key() -> None:
-    # table_data missing "_table" key → skipped
+def test_execute_table_without_table_key_is_skipped() -> None:
     mock_parser = MagicMock()
     mock_parser.parse.return_value = [{"headers": [], "table_type": None}]
-    svc = DomainRecordService(article_tables_parser=mock_parser)
-    result = svc.collect_lap_record_rows(
-        soup=MagicMock(),
-        url="https://en.wikipedia.org/wiki/Monza",
-        include_urls=False,
-        fetcher=None,
-        policy=None,
-        debug_dir=None,
-    )
-    assert result == []
+    mock_assembler = MagicMock()
+    mock_assembler.assemble.return_value = {"url": "https://example.com"}
+
+    svc = DomainRecordService(assembler=mock_assembler, article_tables_parser=mock_parser)
+    result = svc.execute(_payload(source_url="https://example.com"))
+
+    assert result.record == {"url": "https://example.com"}
+    assembled_dto = mock_assembler.assemble.call_args[0][0]
+    assert assembled_dto.lap_record_rows == []
 
 
-def test_collect_lap_record_rows_non_lap_table_skipped() -> None:
-    mock_parser = MagicMock()
-    mock_table = MagicMock()
-    mock_parser.parse.return_value = [
-        {"_table": mock_table, "headers": ["Name", "Date"], "table_type": "other"},
-    ]
-    svc = DomainRecordService(article_tables_parser=mock_parser)
-    result = svc.collect_lap_record_rows(
-        soup=MagicMock(),
-        url="https://en.wikipedia.org/wiki/Monza",
-        include_urls=False,
-        fetcher=None,
-        policy=None,
-        debug_dir=None,
-    )
-    assert result == []
-
-
-# ---------------------------------------------------------------------------
-# assemble_record  (line 80)
-# ---------------------------------------------------------------------------
-
-
-def test_assemble_record_returns_dict() -> None:
+def test_execute_returns_domain_record() -> None:
     mock_assembler = MagicMock()
     mock_assembler.assemble.return_value = {
         "url": "https://example.com",
         "name": "Test",
     }
     svc = DomainRecordService(assembler=mock_assembler)
-    result = svc.assemble_record(
-        source_url="https://example.com",
-        infobox={},
-        lap_record_rows=[],
-        sections=[],
-    )
-    assert result == {"url": "https://example.com", "name": "Test"}
+
+    result = svc.execute(_payload(source_url="https://example.com"))
+
+    assert result.record == {"url": "https://example.com", "name": "Test"}
     mock_assembler.assemble.assert_called_once()

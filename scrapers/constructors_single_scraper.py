@@ -9,6 +9,7 @@ from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBas
 from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.constructors.constructors_composition import ConstructorScraperCompositionFactory
 from scrapers.constructors.constructors_composition import ConstructorScraperDependencies
+from scrapers.services.domain_record.constructor import ConstructorDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -40,7 +41,8 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         return InfoboxPayloadDTO(infoboxes)
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
-        return TablesPayloadDTO(self._domain_record_service.extract_tables(soup))
+        _ = soup
+        return TablesPayloadDTO([])
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(
@@ -58,13 +60,15 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         tables_payload: TablesPayloadDTO,
         sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
-        _ = soup
-        return self._domain_record_service.assemble_record(
-            url=self.url,
-            infoboxes=infobox_payload.data,
-            tables=tables_payload.data,
-            sections=sections_payload.data,
+        result = self._domain_record_service.execute(
+            ConstructorDomainRecordInput(
+                url=self.url,
+                soup=soup,
+                infoboxes=infobox_payload.data,
+                sections=sections_payload.data,
+            ),
         )
+        return result.record
 
 
 __all__ = ["SingleConstructorScraper"]

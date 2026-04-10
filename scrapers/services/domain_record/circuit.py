@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -11,7 +12,20 @@ from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
 from scrapers.records.DTO.circuit import CircuitRecordDTO
 from scrapers.records.assemblers.circuit import CircuitRecordAssembler
+from scrapers.services.domain_record._shared import DomainRecordResult
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+
+
+@dataclass(frozen=True, slots=True)
+class CircuitDomainRecordInput:
+    source_url: str
+    soup: Any
+    infobox: dict[str, Any]
+    sections: list[dict[str, Any]]
+    include_urls: bool
+    fetcher: Any
+    policy: Any
+    debug_dir: str | None
 
 
 class DomainRecordService:
@@ -26,28 +40,34 @@ class DomainRecordService:
             include_source_table=True,
         )
 
-    def collect_lap_record_rows(
+    def execute(self, payload: CircuitDomainRecordInput) -> DomainRecordResult:
+        return DomainRecordResult(
+            record=self._assembler.assemble(
+                CircuitRecordDTO(
+                    url=payload.source_url,
+                    infobox=payload.infobox,
+                    lap_record_rows=self._collect_lap_record_rows(payload),
+                    sections=payload.sections,
+                ),
+            ),
+        )
+
+    def _collect_lap_record_rows(
         self,
-        *,
-        soup: Any,
-        url: str,
-        include_urls: bool,
-        fetcher: Any,
-        policy: Any,
-        debug_dir: str | None,
+        payload: CircuitDomainRecordInput,
     ) -> list[dict[str, Any]]:
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
-                include_urls=include_urls,
-                fetcher=fetcher,
-                policy=policy,
-                debug_dir=debug_dir,
+                include_urls=payload.include_urls,
+                fetcher=payload.fetcher,
+                policy=payload.policy,
+                debug_dir=payload.debug_dir,
             ),
         )
-        lap_scraper.url = url
+        lap_scraper.url = payload.source_url
         all_records: list[dict[str, Any]] = []
 
-        for table_data in self._article_tables_parser.parse(soup):
+        for table_data in self._article_tables_parser.parse(payload.soup):
             table = table_data.get("_table")
             if table is None:
                 continue
@@ -66,20 +86,3 @@ class DomainRecordService:
             )
 
         return all_records
-
-    def assemble_record(
-        self,
-        *,
-        source_url: str,
-        infobox: dict[str, Any],
-        lap_record_rows: list[dict[str, Any]],
-        sections: list[dict[str, Any]],
-    ) -> dict[str, Any]:
-        return self._assembler.assemble(
-            CircuitRecordDTO(
-                url=source_url,
-                infobox=infobox,
-                lap_record_rows=lap_record_rows,
-                sections=sections,
-            ),
-        )

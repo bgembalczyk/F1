@@ -7,6 +7,7 @@ from scrapers.base import single_wiki_article as article
 from scrapers.circuits.circuits_composition import CircuitScraperCompositionFactory
 from scrapers.circuits.circuits_composition import CircuitScraperDependencies
 from scrapers.circuits.circuits_helpers.sections import is_circuit_like_article
+from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -64,16 +65,8 @@ class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
         )
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> article.TablesPayloadDTO:
-        return article.TablesPayloadDTO(
-            self._domain_record_service.collect_lap_record_rows(
-                soup=soup,
-                url=self.url,
-                include_urls=self.include_urls,
-                fetcher=self.fetcher,
-                policy=self.policy,
-                debug_dir=self.debug_dir,
-            ),
-        )
+        _ = soup
+        return article.TablesPayloadDTO([])
 
     def _build_sections_payload(
         self,
@@ -99,12 +92,20 @@ class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
             record = details_record
             return {"url": self._original_url or self.url, **record}
 
-        return self._domain_record_service.assemble_record(
-            source_url=self._original_url or self.url,
-            infobox=infobox_payload.data,
-            lap_record_rows=tables_payload.data,
-            sections=sections_payload.data,
+        _ = tables_payload
+        result = self._domain_record_service.execute(
+            CircuitDomainRecordInput(
+                source_url=self._original_url or self.url,
+                soup=soup,
+                infobox=infobox_payload.data,
+                sections=sections_payload.data,
+                include_urls=self.include_urls,
+                fetcher=self.fetcher,
+                policy=self.policy,
+                debug_dir=self.debug_dir,
+            ),
         )
+        return result.record
 
     def parse_details(self, soup: BeautifulSoup) -> dict[str, Any] | None:
         if type(self)._parse_details is F1SingleCircuitScraper._parse_details:  # noqa: SLF001
