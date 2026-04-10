@@ -9,14 +9,14 @@ from layers.runners.metadata import build_runner_metadata
 from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
 from layers.zero.run_config_factories.sponsorship_liveries import SponsorshipLiveriesRunConfigFactory
 from layers.zero.run_config_factories.static_scraper_kwargs import StaticScraperKwargsFactory
-from scrapers.base.logging import build_execution_context
-from scrapers.base.logging import get_logger
-from scrapers.circuits.circuits_helpers.export import export_complete_circuits
-from scrapers.constructors.constructors_helpers.export import export_complete_constructors
-from scrapers.drivers.drivers_helpers.export import export_complete_drivers
-from scrapers.engines.helpers_engines.export import export_complete_engine_manufacturers
-from scrapers.seasons.helpers_seasons import export_complete_seasons
-from scrapers.wiki.discovery_wiki import build_layer_one_runner_map_discovered
+from scrapers.core.logging import build_execution_context
+from scrapers.core.logging import get_logger
+from scrapers.domain.exports import export_complete_circuits
+from scrapers.domain.exports import export_complete_constructors
+from scrapers.domain.exports import export_complete_drivers
+from scrapers.domain.exports import export_complete_engine_manufacturers
+from scrapers.domain.exports import export_complete_seasons
+from scrapers.discovery_wiki import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
     from pathlib import Path
