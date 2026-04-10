@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import warnings
+
+warnings.warn("constructors_list is deprecated; use scrapers.constructors_list_scraper.", DeprecationWarning, stacklevel=2)
+
 import logging
 import re
 from copy import deepcopy

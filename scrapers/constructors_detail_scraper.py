@@ -1,10 +1,5 @@
 """Canonical module for constructors detail scraping."""
 
-from scrapers.constructors_single_scraper import SingleConstructorScraper
+from scrapers.constructors_single_scraper import SingleConstructorScraper as ConstructorsDetailScraper
 
-
-class ConstructorsDetailScraper(SingleConstructorScraper):
-    """Canonical class alias aligned with module naming standard."""
-
-
-__all__ = ["ConstructorsDetailScraper", "SingleConstructorScraper"]
+__all__ = ["ConstructorsDetailScraper"]
