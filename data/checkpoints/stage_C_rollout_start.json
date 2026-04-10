@@ -1,0 +1,6 @@
+{
+  "stage": "C",
+  "description": "Rollout start for remaining domains with auto-registry and unified URL strategy.",
+  "next_step": "C-001",
+  "source": "step_registry"
+}

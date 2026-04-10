@@ -1,0 +1,8 @@
+{
+  "step_id": "B-001",
+  "layer": "L0",
+  "domain": "drivers",
+  "checkpoint_type": "seed_input",
+  "next_step": "step_110_layer1_drivers_complete",
+  "source": "data/raw/drivers/drivers.json"
+}
