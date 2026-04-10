@@ -7,12 +7,11 @@ from uuid import uuid4
 from layers.executors.base import BaseExecutor
 from layers.job_hooks.mirror.constructors import MirrorConstructorsJobHook
 from layers.job_hooks.null_zero import NullLayerZeroJobHook
-from layers.path_resolver import format_domain_year_name
 from layers.protocols.merge.zero_service import LayerZeroMergeServiceProtocol
 from layers.protocols.zero_job_hook import LayerZeroJobHook
 from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
 from layers.zero.run_profile_paths import layer_zero_raw_paths
-from scrapers.core.errors import normalize_pipeline_error
+from path_resolver.helpers import format_domain_year_name
 from scrapers.core.logging import build_execution_context
 from scrapers.core.logging import get_logger
 from scrapers.core.run_config import RunConfig

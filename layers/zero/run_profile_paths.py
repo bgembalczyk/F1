@@ -1,10 +1,10 @@
 from pathlib import Path
 
-from layers.path_resolver import DEFAULT_PATH_RESOLVER
-from scrapers.base.run_config import RunConfig
-from scrapers.base.run_profiles import RunPathConfig
-from scrapers.base.run_profiles import RunProfileName
-from scrapers.base.run_profiles import build_run_profile
+from path_resolver.base import DEFAULT_PATH_RESOLVER
+from scrapers.run_config import RunConfig
+from scrapers.run_profiles import RunPathConfig
+from scrapers.run_profiles import RunProfileName
+from scrapers.run_profiles import build_run_profile
 
 
 def build_debug_run_config(*, base_wiki_dir: Path, base_debug_dir: Path) -> RunConfig:

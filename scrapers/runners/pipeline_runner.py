@@ -8,8 +8,6 @@ from typing import TYPE_CHECKING
 from typing import TypeAlias
 from typing import cast
 
-from scrapers.base.records import NormalizedRecord
-from scrapers.base.records import RawRecord
 
 if TYPE_CHECKING:
     from logging import Logger
@@ -17,7 +15,6 @@ if TYPE_CHECKING:
 from bs4 import BeautifulSoup
 
 from models.mappers.serialization import to_dict_list
-from scrapers.base.errors import normalize_pipeline_error
 from validation.validator_base import ExportRecord
 
 PipelineResult: TypeAlias = (
