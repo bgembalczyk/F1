@@ -14,35 +14,35 @@ class ModuleNamingAlias:
 MODULE_NAMING_ALIASES: tuple[ModuleNamingAlias, ...] = (
     ModuleNamingAlias(
         old="scrapers.list_scraper_drivers",
-        new="scrapers.drivers_list_scraper",
+        new="scrapers.drivers.list_scraper",
     ),
     ModuleNamingAlias(
         old="scrapers.list_scraper_seasons",
-        new="scrapers.seasons_list_scraper",
+        new="scrapers.seasons.list_scraper",
     ),
     ModuleNamingAlias(
         old="scrapers.list_scraper_grands_prix",
-        new="scrapers.grands_prix_list_scraper",
+        new="scrapers.grands_prix.list_scraper",
     ),
     ModuleNamingAlias(
         old="scrapers.single_scraper_drivers",
-        new="scrapers.drivers_detail_scraper",
+        new="scrapers.drivers.single_scraper",
     ),
     ModuleNamingAlias(
         old="scrapers.constructors_single_scraper",
-        new="scrapers.constructors_detail_scraper",
+        new="scrapers.constructors.single_scraper",
     ),
     ModuleNamingAlias(
         old="scrapers.circuits_single_scraper",
-        new="scrapers.circuits_detail_scraper",
+        new="scrapers.circuits.single_scraper",
     ),
     ModuleNamingAlias(
         old="scrapers.single_scraper_seasons",
-        new="scrapers.seasons_detail_scraper",
+        new="scrapers.seasons.single_scraper",
     ),
     ModuleNamingAlias(
         old="scrapers.single_scraper_grands_prix",
-        new="scrapers.grands_prix_detail_scraper",
+        new="scrapers.grands_prix.single_scraper",
     ),
 )
 

@@ -1,10 +1,13 @@
-"""Canonical module for constructors detail scraping."""
+"""Deprecated compatibility module for constructors detail scraper."""
 
-from scrapers.constructors_single_scraper import SingleConstructorScraper
+from warnings import warn
 
+from scrapers.constructors.single_scraper import ConstructorsDetailScraper
 
-class ConstructorsDetailScraper(SingleConstructorScraper):
-    """Canonical class alias aligned with module naming standard."""
+warn(
+    "scrapers.constructors_detail_scraper is deprecated; use scrapers.constructors.single_scraper",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-
-__all__ = ["ConstructorsDetailScraper", "SingleConstructorScraper"]
+__all__ = ["ConstructorsDetailScraper"]

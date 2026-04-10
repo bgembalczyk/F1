@@ -1,10 +1,13 @@
-"""Canonical module for constructors list scraping."""
+"""Deprecated compatibility module for constructors list scraper."""
 
-from scrapers.constructors_list import ConstructorsListScraper as LegacyConstructorsListScraper
+from warnings import warn
 
+from scrapers.constructors.list_scraper import ConstructorsListScraper
 
-class ConstructorsListScraper(LegacyConstructorsListScraper):
-    """Canonical class alias aligned with module naming standard."""
+warn(
+    "scrapers.constructors_list_scraper is deprecated; use scrapers.constructors.list_scraper",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-
-__all__ = ["ConstructorsListScraper", "LegacyConstructorsListScraper"]
+__all__ = ["ConstructorsListScraper"]

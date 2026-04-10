@@ -1,8 +1,8 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import BundleRecordWithDetailsStrategy
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from scrapers.seasons_list_scraper import SeasonsListScraper
-from scrapers.seasons_detail_scraper import SeasonsDetailScraper
+from scrapers.seasons.list_scraper import SeasonsListScraper
+from scrapers.seasons.single_scraper import SeasonsDetailScraper
 from scrapers.wiki.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.wiki.component_metadata_wiki import build_component_metadata
 

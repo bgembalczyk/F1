@@ -1,12 +1,13 @@
-"""Canonical module for grands prix list scraping."""
+"""Deprecated compatibility module for grands prix list scraper."""
 
-from scrapers.list_scraper_grands_prix import (
-    GrandsPrixListScraper as LegacyGrandsPrixListScraper,
+from warnings import warn
+
+from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
+
+warn(
+    "scrapers.grands_prix_list_scraper is deprecated; use scrapers.grands_prix.list_scraper",
+    DeprecationWarning,
+    stacklevel=2,
 )
 
-
-class GrandsPrixListScraper(LegacyGrandsPrixListScraper):
-    """Canonical class alias aligned with module naming standard."""
-
-
-__all__ = ["GrandsPrixListScraper", "LegacyGrandsPrixListScraper"]
+__all__ = ["GrandsPrixListScraper"]

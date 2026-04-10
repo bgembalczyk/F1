@@ -1,10 +1,13 @@
-"""Canonical module for grands prix detail scraping."""
+"""Deprecated compatibility module for grands prix detail scraper."""
 
-from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper
+from warnings import warn
 
+from scrapers.grands_prix.single_scraper import GrandsPrixDetailScraper
 
-class GrandsPrixDetailScraper(F1SingleGrandPrixScraper):
-    """Canonical class alias aligned with module naming standard."""
+warn(
+    "scrapers.grands_prix_detail_scraper is deprecated; use scrapers.grands_prix.single_scraper",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-
-__all__ = ["GrandsPrixDetailScraper", "F1SingleGrandPrixScraper"]
+__all__ = ["GrandsPrixDetailScraper"]

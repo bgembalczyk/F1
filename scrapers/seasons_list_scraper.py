@@ -1,10 +1,13 @@
-"""Canonical module for seasons list scraping."""
+"""Deprecated compatibility module for seasons list scraper."""
 
-from scrapers.list_scraper_seasons import SeasonsListScraper as LegacySeasonsListScraper
+from warnings import warn
 
+from scrapers.seasons.list_scraper import SeasonsListScraper
 
-class SeasonsListScraper(LegacySeasonsListScraper):
-    """Canonical class alias aligned with module naming standard."""
+warn(
+    "scrapers.seasons_list_scraper is deprecated; use scrapers.seasons.list_scraper",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-
-__all__ = ["SeasonsListScraper", "LegacySeasonsListScraper"]
+__all__ = ["SeasonsListScraper"]

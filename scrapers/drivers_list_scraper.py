@@ -1,10 +1,13 @@
-"""Canonical module for drivers list scraping."""
+"""Deprecated compatibility module for drivers list scraper."""
 
-from scrapers.list_scraper_drivers import F1DriversListScraper
+from warnings import warn
 
+from scrapers.drivers.list_scraper import DriversListScraper
 
-class DriversListScraper(F1DriversListScraper):
-    """Canonical class alias aligned with module naming standard."""
+warn(
+    "scrapers.drivers_list_scraper is deprecated; use scrapers.drivers.list_scraper",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-
-__all__ = ["DriversListScraper", "F1DriversListScraper"]
+__all__ = ["DriversListScraper"]
