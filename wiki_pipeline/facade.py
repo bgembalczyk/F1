@@ -13,7 +13,7 @@ if TYPE_CHECKING:
     from collections.abc import Callable
     from pathlib import Path
 
-    from scrapers.base.run_config import RunConfig
+    from scrapers.core.run_config import RunConfig
 
 
 WikiRunScenario = Literal["layer0", "layer1", "full", "merge"]

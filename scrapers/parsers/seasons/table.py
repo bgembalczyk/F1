@@ -12,7 +12,7 @@ from scrapers.config_table import TableScraperConfig
 from scrapers.options import ScraperOptions
 from scrapers.parser_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
-from scrapers.standings_scraper_seasons import F1StandingsScraper
+from scrapers.standings_scraper_seasons import F1StandingsTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
@@ -76,9 +76,13 @@ class SeasonTableParser:
                 ),
                 record_factory=MappingRecordFactory(),
             )
-            scraper = F1StandingsScraper(options=self._options, config=config)
+            parser = F1StandingsTableParser()
             try:
-                records = scraper.parse(soup)
+                records = parser.parse(
+                    soup,
+                    options=self._options,
+                    config=config,
+                )
                 if records:
                     return records
             except RuntimeError:

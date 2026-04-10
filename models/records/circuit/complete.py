@@ -1,6 +1,6 @@
 from typing import Any
 
-from models.records.circuit_base import CircuitBaseRecord
+from models.records.circuit.base import CircuitBaseRecord
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 from validation.record_validation import validate_record

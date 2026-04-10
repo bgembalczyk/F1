@@ -1,3 +1,7 @@
-from scrapers.services.domain_record.season_pipeline_service import SeasonPipelineService as DomainRecordService
+from scrapers.services.domain_record.season_pipeline_service import SeasonDomainRecordInput
+from scrapers.services.domain_record.season_pipeline_service import SeasonPipelineService
 
-__all__ = ["DomainRecordService"]
+DomainRecordService = SeasonPipelineService
+SeasonDomainRecordService = SeasonPipelineService
+
+__all__ = ["DomainRecordService", "SeasonDomainRecordService", "SeasonDomainRecordInput"]

@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING
 from uuid import uuid4
 
 from layers.executors.base import BaseExecutor
-from scrapers.base.errors import normalize_pipeline_error
-from scrapers.base.logging import RunTraceWriter
-from scrapers.base.logging import build_execution_context
-from scrapers.base.logging import get_logger
+from scrapers.core.errors import normalize_pipeline_error
+from scrapers.core.logging import RunTraceWriter
+from scrapers.core.logging import build_execution_context
+from scrapers.core.logging import get_logger
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from layers.orchestration.protocols import LayerOneRunnerProtocol
     from layers.orchestration.constants import SeedName
     from layers.seed.registry.entries import SeedRegistryEntry
-    from scrapers.base.run_config import RunConfig
+    from scrapers.core.run_config import RunConfig
 
 
 

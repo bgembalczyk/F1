@@ -94,6 +94,7 @@ ignore = [
 "tests/test_diff_runs.py" = ["SLF001"]
 "tests/test_engine_manufacturers_indianapolis_normalization.py" = ["SLF001"]
 "tests/test_generate_command_migration_map.py" = ["SLF001"]
+"tests/test_enforce_canonical_role_imports.py" = ["S603"]
 "tests/test_seasons_entry_merger.py" = ["SLF001"]
 
 [tool.ruff.lint.isort]
@@ -105,3 +106,8 @@ max-positional-args = 5
 max-branches = 12
 max-statements = 50
 max-nested-blocks = 4
+
+
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+"scrapers.base.extractors.infobox" = { msg = "Use `scrapers.infobox.extraction.extractor` public API." }
+"scrapers.extractors.infobox" = { msg = "Use `scrapers.infobox.extraction.extractor` public API." }

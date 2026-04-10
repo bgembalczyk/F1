@@ -1,4 +1,4 @@
-from scrapers.base.factory.protocol import MappingRecordFactory
+from models.records.factories.mapping import MappingRecordFactory
 
 
 def test_mapping_record_factory_is_publicly_importable() -> None:

@@ -3,7 +3,7 @@ from pathlib import Path
 from layers.protocols.executor import LayerExecutorProtocol
 from layers.protocols.merge.zero_service import LayerZeroMergeServiceProtocol
 from layers.zero.run_profile_paths import build_debug_run_config
-from scrapers.base.run_config import RunConfig
+from scrapers.core.run_config import RunConfig
 from wiki_pipeline.facade import WikiPipelineFacade
 
 
