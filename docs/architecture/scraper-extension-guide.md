@@ -6,6 +6,32 @@ Dokument opisuje **docelowy kontrakt rozszerzania scraperów**: obowiązkowe hoo
 
 ## 1. Kontrakt obowiązkowy
 
+### 1.0 Metadane rodziny klas (`FAMILY_KIND`)
+
+Każda nowa klasa scrapera/parsera objęta rodzinami CI **musi deklarować jawnie**:
+
+```python
+FAMILY_KIND = "list"  # albo: "table" | "single_article" | "section_parser"
+```
+
+Reguła jest walidowana przez `scripts/ci/enforce_scraper_family_contracts.py` na podstawie metadanych klasy i kontraktu dziedziczenia (nie po nazwie klasy).
+
+> Fallback po nazewnictwie klas działa tylko dla legacy (`*/legacy/*`, `Legacy*`) i jest oznaczony do wyłączenia po `2026-08-01`.
+
+Minimalne klasy bazowe (rooty) dla rodzin:
+
+- `list`: `SeedListTableScraper`, `F1ListScraper`, `BaseConstructorListScraper`, `ListScraper`
+- `table`: `F1TableScraper`, `BaseEngineTableScraper`, `SeedListTableScraper`
+- `single_article`: `SingleWikiArticleScraperBase`, `SingleArticleSectionAdapterBase`, `SingleWikiArticleSectionAdapterBase`, `SingleArticleSectionByIdBase`, `SingleWikiArticleSectionByIdBase`
+- `section_parser`: `SectionParser`, `BaseNestedSectionParser`
+
+Minimalne kontrakty bazowe rootów:
+
+- `list` -> `ListScraperContract`
+- `table` -> `TableScraperContract`
+- `single_article` -> `SingleArticleScraperContract`
+- `section_parser` -> `SectionParserContract`
+
 ### 1.1 List scraper (tabelaryczny)
 
 Nowy list scraper musi zachować trzy elementy kontraktu:

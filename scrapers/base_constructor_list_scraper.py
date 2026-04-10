@@ -20,6 +20,8 @@ class BaseConstructorListScraper(
     DeclarativeSectionTableParseMixin,
     SeedListTableScraper,
 ):
+    FAMILY_KIND = "list"
+
     domain = "constructors"
     output_basename = "complete_constructors"
     """

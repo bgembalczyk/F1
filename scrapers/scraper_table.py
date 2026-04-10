@@ -33,6 +33,8 @@ class F1TableScraper(WikiScraper, TableScraperContract, ABC):
                          (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
     """
 
+    FAMILY_KIND = "table"
+
     CONFIG: TableConfig | None = None
     options_domain: str | None = None
     options_profile: str | None = None

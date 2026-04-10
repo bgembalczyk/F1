@@ -13,9 +13,13 @@ class SingleArticleSectionAdapterBase(
 ):
     """Wariant dla scraperów opartych o ``SectionAdapter``."""
 
+    FAMILY_KIND = "single_article"
+
 
 class SingleWikiArticleSectionAdapterBase(SingleArticleSectionAdapterBase):
     """Backward-compatible alias for legacy naming."""
+
+    FAMILY_KIND = "single_article"
 
 
 __all__ = [

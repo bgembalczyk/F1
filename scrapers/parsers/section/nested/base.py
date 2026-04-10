@@ -11,6 +11,8 @@ from scrapers.parsers.wiki.base import WikiParser
 
 
 class BaseNestedSectionParser(WikiParser[dict[str, Any]]):
+    FAMILY_KIND = "section_parser"
+
     heading_class: str
     output_key: str
 

@@ -11,6 +11,8 @@ from scrapers.single_wiki_article.single_article_domain_scraper_base import (
 class SingleArticleSectionByIdBase(SingleArticleDomainScraperBase, ABC):
     """Baza używająca strategii sekcji po identyfikatorze."""
 
+    FAMILY_KIND = "single_article"
+
     def __init__(self, *args, **kwargs) -> None:
         kwargs.setdefault(
             "section_selection_strategy",
@@ -21,6 +23,8 @@ class SingleArticleSectionByIdBase(SingleArticleDomainScraperBase, ABC):
 
 class SingleWikiArticleSectionByIdBase(SingleArticleSectionByIdBase):
     """Backward-compatible alias for legacy naming."""
+
+    FAMILY_KIND = "single_article"
 
 
 __all__ = [

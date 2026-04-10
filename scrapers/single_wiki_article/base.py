@@ -14,6 +14,8 @@ from scrapers.wiki.scraper_wiki import WikiScraper
 
 
 class SingleWikiArticleScraperBase(WikiScraper, SingleArticleScraperContract, ABC):
+    FAMILY_KIND = "single_article"
+
     options_domain: str | None = None
     options_profile: str = "article_strict"
 

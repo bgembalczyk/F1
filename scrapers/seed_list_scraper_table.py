@@ -23,6 +23,8 @@ if TYPE_CHECKING:
 class SeedListTableScraper(F1TableScraper, ListScraperContract):
     """Wspólna baza dla scraperów seed/list opartych o tabelę."""
 
+    FAMILY_KIND = "list"
+
     options_profile: ClassVar[str | None] = "seed_soft"
     options_domain: ClassVar[str | None] = None
 
