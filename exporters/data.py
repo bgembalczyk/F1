@@ -2,11 +2,8 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from scrapers.base.formatters.csv import CsvFormatter
-from scrapers.base.formatters.json import JsonFormatter
-
-if TYPE_CHECKING:
-    from scrapers.base.results import ScrapeResult
+from scrapers.formatters.csv import CsvFormatter
+from scrapers.formatters.json import JsonFormatter
 
 
 class DataExporter:

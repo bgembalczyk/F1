@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.exporters.helpers import fieldnames_from_first_row
-from scrapers.base.exporters.helpers import fieldnames_from_union
+from exporters.helpers import fieldnames_from_first_row
+from exporters.helpers import fieldnames_from_union
 
 if TYPE_CHECKING:
     from collections.abc import Callable

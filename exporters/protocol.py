@@ -8,8 +8,6 @@ if TYPE_CHECKING:
     from collections.abc import Sequence
     from pathlib import Path
 
-    from validation.validator_base import ExportRecord
-
 
 class ExporterProtocol(Protocol):
     def to_json(

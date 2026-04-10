@@ -6,26 +6,23 @@ from dataclasses import field
 from datetime import datetime
 from datetime import timezone
 
-from scrapers.base.normalization import NormalizationRule
-from scrapers.base.normalization import RecordNormalizer
+from exporters.data import DataExporter
+from exporters.protocol import ExporterProtocol
+from exporters.service import ExportService
+from scrapers.fieldnames_strategy_selector import FieldnamesStrategySelector
+from scrapers.formatters.pandas import PandasDataFrameFormatter
+from scrapers.normalization import RecordNormalizer
+from scrapers.normalization_utils import NormalizationRule
 
 if typing.TYPE_CHECKING:
     from collections.abc import Sequence
     from pathlib import Path
 
-    from scrapers.base.exporters.protocol import ExporterProtocol
-    from scrapers.base.exporters.service import ExportService
     from validation.validator_base import ExportRecord
 
 
-def _create_export_service() -> ExportService:
-    # di-antipattern-allow: local import by design.
-    from scrapers.base.exporters.data import DataExporter
-    from scrapers.base.exporters.fieldnames_strategy_selector import FieldnamesStrategySelector
-    from scrapers.base.exporters.service import ExportService as _ExportService
-    from scrapers.base.formatters.pandas import PandasDataFrameFormatter
-
-    return _ExportService(
+def create_export_service() -> ExportService:
+    return ExportService(
         exporter=DataExporter(),
         fieldnames_strategy=FieldnamesStrategySelector(),
         dataframe_formatter=PandasDataFrameFormatter(),
@@ -37,7 +34,7 @@ class ScrapeResult:
     data: list[ExportRecord]
     source_url: str | None
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
-    export_service: ExportService = field(default_factory=_create_export_service)
+    export_service: ExportService = field(default_factory=create_export_service)
 
     def _with_normalized_data(
         self,

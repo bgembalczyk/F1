@@ -5,18 +5,18 @@ from dataclasses import replace
 from pathlib import Path
 from typing import Literal
 
-from infrastructure.http_client.interfaces import HttpClientProtocol
-from infrastructure.http_client.policies.http import HttpPolicy
-from infrastructure.http_client.policies.response_cache import TextCacheProtocol
-from scrapers.base.exporters.data import DataExporter
+from exporters.data import DataExporter
+from infrastructure.helpers import default_http_policy
+from infrastructure.http.policies.http import HttpPolicy
+from infrastructure.http.protocols import HttpClientProtocol
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
 from models.records.factories.protocol import RecordBuilder
-from scrapers.base.factory.source_adapter_fetcher_shim import ScraperRuntimeFactory
-from scrapers.base.helpers.helpers import default_http_policy
-from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.parsers.soup import SoupParser
-from scrapers.base.post_processors import RecordPostProcessor
-from scrapers.base.source_adapter import SourceAdapter
-from scrapers.base.transformers.record_transformer import RecordTransformer
+from scrapers.html_fetcher import HtmlFetcher
+from scrapers.parsers.soup import SoupParser
+from scrapers.post_processors import RecordPostProcessor
+from scrapers.source_adapter import SourceAdapter
+from scrapers.transformers.record.base import RecordTransformer
+from scrapers.wiring import ScraperRuntimeFactory
 from validation.validator_base import RecordValidator
 
 

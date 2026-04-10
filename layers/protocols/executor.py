@@ -3,7 +3,7 @@ from typing import runtime_checkable
 
 from pathlib import Path
 
-from scrapers.base.run_config import RunConfig
+from scrapers.run_config import RunConfig
 
 
 @runtime_checkable

@@ -2,10 +2,10 @@ import warnings
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.formatters.helpers import extract_data
+import pandas as pd
 
-if TYPE_CHECKING:
-    from scrapers.base.results import ScrapeResult
+from scrapers.formatters.helpers import extract_data
+from scrapers.results import ScrapeResult
 
 
 def validate_dataframe_columns(dataframe: Any) -> None:
@@ -16,11 +16,9 @@ def validate_dataframe_columns(dataframe: Any) -> None:
 
 class PandasDataFrameFormatter:
     @staticmethod
-    def format(result: "ScrapeResult") -> Any:
+    def format(result: ScrapeResult) -> Any:
         data = extract_data(result)
         try:
-            # di-antipattern-allow: optional dependency.
-            import pandas as pd
 
             dataframe = pd.DataFrame(data)
             validate_dataframe_columns(dataframe)

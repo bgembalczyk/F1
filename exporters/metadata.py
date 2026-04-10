@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
 
-from scrapers.base.results import ScrapeResult
+from scrapers.results import ScrapeResult
 
 
 @dataclass(frozen=True)

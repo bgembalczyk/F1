@@ -3,8 +3,8 @@ from dataclasses import field
 from pathlib import Path
 from typing import Any
 
-from infrastructure.http_client.policies.response_cache import TextCacheProtocol
-from scrapers.base.options import ScraperOptions
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
+from scrapers.options import ScraperOptions
 
 
 @dataclass(frozen=True)
