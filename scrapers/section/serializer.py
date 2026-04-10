@@ -6,6 +6,14 @@ from typing import Any
 from models.value_objects.common_terms import EntityName
 from models.value_objects.common_terms import SectionId
 from scrapers.base.sections.interface import SectionParseResult
+from scrapers.mixins.metadata_binding import MetadataBindingMixin
+
+
+class SectionMetadataBindingMixin(MetadataBindingMixin):
+    """Section-specific metadata binding without runtime state."""
+
+
+_SECTION_METADATA_BINDER = SectionMetadataBindingMixin()
 
 
 def build_section_metadata(
@@ -15,14 +23,12 @@ def build_section_metadata(
     heading_path: tuple[str, ...] | None = None,
     extras: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    metadata: dict[str, Any] = {
-        "parser": parser,
-        "source": source,
-        "heading_path": list(heading_path) if heading_path else [],
-    }
-    if extras:
-        metadata.update(extras)
-    return metadata
+    return _SECTION_METADATA_BINDER.build_metadata(
+        parser=parser,
+        source=source,
+        heading_path=heading_path,
+        extras=extras,
+    )
 
 
 def build_section_parse_result(
@@ -51,19 +57,11 @@ def build_section_parse_result(
 def normalize_section_metadata(
     section: SectionParseResult,
 ) -> dict[str, Any]:
-    metadata = dict(section.metadata)
-    metadata.setdefault("parser", "unknown")
-    metadata.setdefault("source", "unknown")
-    metadata.setdefault("heading_path", [])
-    metadata.setdefault(
-        "section_id",
-        str(section.section_id),
+    return _SECTION_METADATA_BINDER.bind_section_defaults(
+        metadata=dict(section.metadata),
+        section_id=str(section.section_id),
+        section_label=EntityName.from_raw(section.section_label).to_export(),
     )
-    metadata.setdefault(
-        "section_label",
-        EntityName.from_raw(section.section_label).to_export(),
-    )
-    return metadata
 
 
 def serialize_section_result(section: SectionParseResult) -> dict[str, Any]:
