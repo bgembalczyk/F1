@@ -3,7 +3,6 @@
 from collections.abc import Sequence
 
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import EntityColumnSpec
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
@@ -49,27 +48,27 @@ class BaseConstructorListScraper(
         return build_entity_metadata_columns(
             [
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_NAME_HEADER,
+                    constructors_constants.CONSTRUCTOR_NAME_HEADER,
                     "constructor",
                     AutoColumn(),
                 ),
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_DRIVERS_HEADER,
+                    constructors_constants.CONSTRUCTOR_DRIVERS_HEADER,
                     "drivers",
                     IntColumn(),
                 ),
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
+                    constructors_constants.CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
                     "total_entries",
                     IntColumn(),
                 ),
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_WCC_HEADER,
+                    constructors_constants.CONSTRUCTOR_WCC_HEADER,
                     "wcc_titles",
                     IntColumn(),
                 ),
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_WDC_HEADER,
+                    constructors_constants.CONSTRUCTOR_WDC_HEADER,
                     "wdc_titles",
                     IntColumn(),
                 ),
@@ -80,7 +79,7 @@ class BaseConstructorListScraper(
     def build_licensed_in_column_spec() -> ColumnSpec:
         """Build the licensed_in column definition."""
         return ColumnSpec(
-            constants.CONSTRUCTOR_LICENSED_IN_HEADER,
+            constructors_constants.CONSTRUCTOR_LICENSED_IN_HEADER,
             "licensed_in",
             LinksListColumn(),
         )
@@ -106,15 +105,7 @@ class BaseConstructorListScraper(
         resolved_fragments = cls.extend_schema_fragments(list(fragments))
         return build_columns(*resolved_fragments)
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config=None,
-    ) -> None:
-        options = options or ScraperOptions()
-        options.normalize_empty_values = False
-        super().__init__(options=options, config=config)
+
 
 
 __all__ = ["BaseConstructorListScraper"]

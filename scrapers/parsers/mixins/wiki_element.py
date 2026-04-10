@@ -14,6 +14,7 @@ class WikiElementParserMixin:
         self,
         *,
         element_parsers: WikiElementParsers | None = None,
+        **kwargs,
     ) -> None:
         resolved_parsers = element_parsers
         if resolved_parsers is None:
@@ -28,6 +29,7 @@ class WikiElementParserMixin:
         self.references_wrap_parser = resolved_parsers.references_wrap_parser
         self._parser_rules: list[ParserRule] = []
         self._register_default_parser_rules()
+        super().__init__(**kwargs)
 
     @staticmethod
     def _get_classes(el: Tag) -> list[str]:

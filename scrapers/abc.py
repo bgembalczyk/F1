@@ -33,7 +33,7 @@ from validation.validator_base import ExportRecord
 T = TypeVar("T")
 
 
-class ABCScraper(ABC):
+class AbstractScraper(ABC):
     """
     Bazowa klasa dla wszystkich scraperów F1.
 
@@ -68,6 +68,7 @@ class ABCScraper(ABC):
         self._data: list[ExportRecord] | None = None
         self.result_export_service = ResultExportService()
         self.result_tabular_adapter = ResultTabularAdapter()
+        super().__init__()
 
     def _initialize_runtime(self, options: ScraperOptions) -> None:
         runtime = RuntimeInitializer(
@@ -290,11 +291,11 @@ class ABCScraper(ABC):
             return self.parser.parse(soup)
 
         parse_impl = type(self).parse_records
-        if parse_impl is not ABCScraper.parse_records:
+        if parse_impl is not AbstractScraper.parse_records:
             return self.parse_records(soup)
 
         legacy_parse_impl = type(self)._parse_soup  # noqa: SLF001
-        if legacy_parse_impl is not ABCScraper._parse_soup:
+        if legacy_parse_impl is not AbstractScraper._parse_soup:
             return self._parse_soup(soup)
 
         self.logger.debug(
@@ -440,3 +441,7 @@ class ABCScraper(ABC):
         if error is exc:
             raise exc
         raise error from exc
+
+
+# Backward compatibility alias
+ABCScraper = AbstractScraper

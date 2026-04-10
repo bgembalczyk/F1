@@ -5,38 +5,26 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.extractors.table import TableExtractor
+from scrapers.base.configs.table_scraper_config_resolver import resolve_table_scraper_config
 from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
+from scrapers.base.services.table_scraper_runtime import build_table_extractor
+from scrapers.base.services.table_scraper_runtime import ensure_record_factory_validator
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
-from scrapers.wiki.scraper_wiki import WikiScraper
-from validation.record_factory_validator import adapt_record_factory_validator
+from scrapers.wiki.scraper_wiki import AbstractWikiScraper
 
 
-class F1TableScraper(WikiScraper, ABC):
-    """
-    Scraper oparty o pojedynczą tabelę 'wikitable'.
-
-    Konfiguracja przez ScraperConfig:
-
-    - section_id       - id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
-                         jeśli None - szukamy po całej stronie.
-    - expected_headers - lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
-    - column_map       - mapowanie "nagłówek z tabeli" -> "klucz w dict".
-    - columns          - mapowanie klucza/nagłówka -> BaseColumn / spec kolumny
-                         (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
-    """
+class AbstractTableScraper(AbstractWikiScraper, ABC):
+    """Template base class for wiki table scrapers."""
 
     CONFIG: TableScraperConfig | None = None
     options_domain: str | None = None
     options_profile: str | None = None
-
-    # domyślna kolumna dla pól, które nie mają przypisanej logiki
     default_column: BaseColumn = AutoColumn()
 
     def __init__(
@@ -45,6 +33,18 @@ class F1TableScraper(WikiScraper, ABC):
         options: ScraperOptions | None = None,
         config: TableScraperConfig | None = None,
     ) -> None:
+        resolved_options = self._resolve_options(options)
+        super().__init__(options=resolved_options)
+
+        resolved_config = resolve_table_scraper_config(self, config)
+        self._apply_config(resolved_config)
+        self.extractor = self.build_parser()
+        ensure_record_factory_validator(
+            validator=self.validator,
+            record_factory=self.record_factory,
+        )
+
+    def _resolve_options(self, options: ScraperOptions | None) -> ScraperOptions:
         if options is None:
             if self.options_profile is None:
                 options = ScraperOptions()
@@ -61,78 +61,37 @@ class F1TableScraper(WikiScraper, ABC):
                 options=options,
                 scraper_cls=type(self),
             )
-        options = self.extend_options(options)
+        return self.extend_options(options)
 
-        super().__init__(options=options)
-
-        resolved_config = config or self.CONFIG or self._build_config_from_class_attrs()
-        if resolved_config is None:
-            msg = "ScraperConfig must be provided for F1TableScraper."
-            raise ValueError(msg)
-
-        self.config = resolved_config
-        self.url = resolved_config.url
-        self.section_id = resolved_config.section_id
-        self.expected_headers = resolved_config.expected_headers
-        self.column_map = resolved_config.column_map
-        self.columns = resolved_config.columns
-        self.table_css_class = resolved_config.table_css_class
-        self.record_factory = resolved_config.record_factory
-        self.model_class = resolved_config.model_class
-        self.default_column = resolved_config.default_column or AutoColumn()
-        self.extractor = TableExtractor(
-            config=resolved_config,
-            include_urls=self.include_urls,
-            normalize_empty_values=options.normalize_empty_values,
-            model_fields=self._model_fields(),
-            debug_dir=options.debug_dir,
-        )
-        if (
-            self.validator is not None
-            and self.validator.record_factory_validator is None
-        ):
-            self.validator.set_record_factory_validator(
-                adapt_record_factory_validator(self.record_factory),
-            )
+    def _apply_config(self, config: TableScraperConfig) -> None:
+        self.config = config
+        self.url = config.url
+        self.section_id = config.section_id
+        self.expected_headers = config.expected_headers
+        self.column_map = config.column_map
+        self.columns = config.columns
+        self.table_css_class = config.table_css_class
+        self.record_factory = config.record_factory
+        self.model_class = config.model_class
+        self.default_column = config.default_column or AutoColumn()
 
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         return options
 
-    def _build_config_from_class_attrs(self) -> TableScraperConfig | None:
-        url = getattr(self, "url", None)
-        if not isinstance(url, str) or not url.strip():
-            return None
-        return TableScraperConfig(
-            url=url,
-            section_id=getattr(self, "section_id", None),
-            expected_headers=getattr(self, "expected_headers", None),
-            column_map=getattr(self, "column_map", {}),
-            columns=getattr(self, "columns", {}),
-            table_css_class=getattr(self, "table_css_class", "wikitable"),
-            record_factory=getattr(self, "record_factory", None),
-            model_class=getattr(self, "model_class", None),
-            default_column=getattr(self, "default_column", AutoColumn()),
+    def build_parser(self):
+        return build_table_extractor(
+            config=self.config,
+            include_urls=self.include_urls,
+            normalize_empty_values=self.normalize_empty_values,
+            model_fields=self._model_fields(),
+            debug_dir=self.debug_dir,
         )
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
-        """
-        Parsuje tabelę przez HtmlTableParser
-        (wybór tabeli + mapowanie nagłówków -> komórki).
-        """
-        # propagate scraper run-id into parsing pipeline for logs/debug artifacts
+    def parse_records(self, soup: BeautifulSoup) -> list[Any]:
         self.extractor.pipeline.set_run_id(getattr(self, "_run_id", None))
         return self.extractor.extract(soup)
 
-    def parse_soup(self, soup: BeautifulSoup) -> list[Any]:
-        return self._parse_soup(soup)
-
-    def parse_row(self, row: TableRow | dict[str, Any]) -> Any | None:
-        """
-        Dla każdej komórki:
-        - ustala nagłówek i klucz,
-        - wybiera typ kolumny z `columns`,
-        - deleguje całą logikę do handlera kolumny.
-        """
+    def build_record(self, row: TableRow | dict[str, Any]) -> Any | None:
         if isinstance(row, dict):
             headers = list(row.keys())
             cells = list(row.values())
@@ -143,6 +102,9 @@ class F1TableScraper(WikiScraper, ABC):
             header_cells=row.header_cells,
         )
 
+    def parse_row(self, row: TableRow | dict[str, Any]) -> Any | None:
+        return self.build_record(row)
+
     def _model_fields(self) -> set[str] | None:
         model_class = getattr(self, "model_class", None)
         record_factory = getattr(self, "record_factory", None)
@@ -151,7 +113,6 @@ class F1TableScraper(WikiScraper, ABC):
         if not model_class:
             return None
 
-        # Dla dataclass sprawdzamy czy to typ (klasa), nie instancja
         if isinstance(model_class, type) and is_dataclass(model_class):
             return {f.name for f in fields(model_class)}
 
@@ -170,3 +131,10 @@ class F1TableScraper(WikiScraper, ABC):
         if self.record_factory is not None:
             transformers.append(RecordFactoryTransformer(self.record_factory))
         return apply_transformers(transformers, records, logger=self.logger)
+
+
+class F1TableScraper(AbstractTableScraper):
+    """Backward-compatible concrete table scraper."""
+
+
+__all__ = ["AbstractTableScraper", "F1TableScraper"]
