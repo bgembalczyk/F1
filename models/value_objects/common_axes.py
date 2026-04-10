@@ -1,4 +1,5 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from dataclasses import field
 
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef

@@ -7,13 +7,12 @@ from bs4 import Tag
 
 from scrapers.infobox.extraction.extractor.table.all import AllInfoboxTablesExtractor
 from scrapers.infobox.extraction.service.base_orchestrator import BaseInfoboxOrchestrator
-from scrapers.infobox.html_parser import InfoboxHtmlParser
+from scrapers.infobox.parsers.html import InfoboxHtmlParser
 from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
-
 
 
 class ConstructorInfoboxOrchestrator(BaseInfoboxOrchestrator[Tag]):

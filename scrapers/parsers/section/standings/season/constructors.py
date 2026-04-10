@@ -10,8 +10,6 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-
-
 class SeasonConstructorsStandingsSectionParser:
     def __init__(self, parser: SeasonStandingsParser) -> None:
         self._parser = parser

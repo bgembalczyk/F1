@@ -2,18 +2,23 @@
 
 from collections.abc import Sequence
 
-from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
-from scrapers.base.options import ScraperOptions
-from scrapers.base.table.builders import EntityColumnSpec
-from scrapers.base.table.builders import build_base_stats_columns
-from scrapers.base.table.builders import build_columns
-from scrapers.base.table.builders import build_entity_metadata_columns
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.seed_list_scraper import SeedListTableScraper
-from scrapers.constructors import constructors_constants
+from scrapers.builders_table import EntityColumnSpec
+from scrapers.builders_table import build_base_stats_columns
+from scrapers.builders_table import build_columns
+from scrapers.builders_table import build_entity_metadata_columns
+from scrapers.columns.factory import IntColumn
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.auto import AutoColumn
+from scrapers.columns.types.links_list import LinksListColumn
+from scrapers.constructors_constants import CONSTRUCTOR_DRIVERS_HEADER
+from scrapers.constructors_constants import CONSTRUCTOR_LICENSED_IN_HEADER
+from scrapers.constructors_constants import CONSTRUCTOR_NAME_HEADER
+from scrapers.constructors_constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
+from scrapers.constructors_constants import CONSTRUCTOR_WCC_HEADER
+from scrapers.constructors_constants import CONSTRUCTOR_WDC_HEADER
+from scrapers.mixins.section_table_parse.declarative import DeclarativeSectionTableParseMixin
+from scrapers.options import ScraperOptions
+from scrapers.seed_list_scraper_table import SeedListTableScraper
 
 
 class BaseConstructorListScraper(
@@ -49,27 +54,27 @@ class BaseConstructorListScraper(
         return build_entity_metadata_columns(
             [
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_NAME_HEADER,
+                    CONSTRUCTOR_NAME_HEADER,
                     "constructor",
                     AutoColumn(),
                 ),
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_DRIVERS_HEADER,
+                    CONSTRUCTOR_DRIVERS_HEADER,
                     "drivers",
                     IntColumn(),
                 ),
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
+                    CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
                     "total_entries",
                     IntColumn(),
                 ),
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_WCC_HEADER,
+                    CONSTRUCTOR_WCC_HEADER,
                     "wcc_titles",
                     IntColumn(),
                 ),
                 EntityColumnSpec(
-                    constants.CONSTRUCTOR_WDC_HEADER,
+                    CONSTRUCTOR_WDC_HEADER,
                     "wdc_titles",
                     IntColumn(),
                 ),
@@ -80,7 +85,7 @@ class BaseConstructorListScraper(
     def build_licensed_in_column_spec() -> ColumnSpec:
         """Build the licensed_in column definition."""
         return ColumnSpec(
-            constants.CONSTRUCTOR_LICENSED_IN_HEADER,
+            CONSTRUCTOR_LICENSED_IN_HEADER,
             "licensed_in",
             LinksListColumn(),
         )

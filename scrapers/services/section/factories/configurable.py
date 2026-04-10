@@ -15,7 +15,6 @@ if TYPE_CHECKING:
 ServiceT = TypeVar("ServiceT")
 
 
-
 class ConfigurableSectionServiceFactory(
     ValidatingSectionServiceFactory[ServiceT],
     Generic[ServiceT],

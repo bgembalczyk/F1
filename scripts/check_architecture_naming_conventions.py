@@ -64,16 +64,22 @@ def validate_class_names(path: Path) -> list[str]:
         class_name = node.name
 
         if is_base_file and not class_name.endswith("Base"):
-            issues.append(f"{path}:{node.lineno}: klasa w *_base.py musi kończyć się na 'Base'")
+            issues.append(
+                f"{path}:{node.lineno}: klasa w *_base.py musi kończyć się na 'Base'"
+            )
 
         if is_mixin_context and not class_name.endswith("Mixin"):
-            issues.append(f"{path}:{node.lineno}: klasa mixin musi kończyć się na 'Mixin'")
+            issues.append(
+                f"{path}:{node.lineno}: klasa mixin musi kończyć się na 'Mixin'"
+            )
 
     return issues
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Architecture naming conventions sanity-check.")
+    parser = argparse.ArgumentParser(
+        description="Architecture naming conventions sanity-check."
+    )
     parser.add_argument("paths", nargs="*", help="Opcjonalne ścieżki do sprawdzenia")
     args = parser.parse_args()
 

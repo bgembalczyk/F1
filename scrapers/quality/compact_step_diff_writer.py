@@ -1,7 +1,7 @@
 import json
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
-from typing import Mapping
 
 from scrapers.quality.reporter import QualityReporter
 

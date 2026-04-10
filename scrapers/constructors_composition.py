@@ -3,15 +3,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
-from scrapers.constructors.constructors_infobox.service import ConstructorInfoboxExtractionService
-from scrapers.constructors.constructors_sections.service import ConstructorSectionExtractionService
-from scrapers.services.domain_record.constructor import ConstructorDomainRecordService
-
-if TYPE_CHECKING:
-    from scrapers.base.infobox.service import InfoboxExtractionService
-    from scrapers.base.options import ScraperOptions
-    from scrapers.base.sections.interface import SectionServiceFactory
+from scrapers.infobox.extraction import InfoboxExtractionService
+from scrapers.infobox.extraction.service.constructor import ConstructorInfoboxExtractionService
+from scrapers.options import ScraperOptions
+from scrapers.services.section.extraction.constructor import ConstructorSectionExtractionService
+from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
+from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
 
 
 @dataclass(frozen=True, slots=True)

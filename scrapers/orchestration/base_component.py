@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from typing import Any
-from typing import Callable
 
 from scrapers.orchestration.stages.envelope import StageEnvelope
 
@@ -52,13 +52,17 @@ class BaseComponent:
             errors=[*self.errors, *(errors or [])],
         )
 
-    def run_hooks(self, hooks: list[LifecycleHook], payload: StageEnvelope) -> StageEnvelope:
+    def run_hooks(
+        self, hooks: list[LifecycleHook], payload: StageEnvelope
+    ) -> StageEnvelope:
         current = payload
         for hook in hooks:
             current = hook(current)
         return current
 
-    def run_with_lifecycle(self, runner: Callable[[StageEnvelope], StageEnvelope], payload: StageEnvelope) -> StageEnvelope:
+    def run_with_lifecycle(
+        self, runner: Callable[[StageEnvelope], StageEnvelope], payload: StageEnvelope
+    ) -> StageEnvelope:
         prepared = self.run_hooks(self._before_hooks, payload)
         try:
             result = runner(prepared)

@@ -1,20 +1,18 @@
 from __future__ import annotations
 
-import warnings
-
-warnings.warn("circuits_single_scraper is deprecated; use scrapers.circuits_detail_scraper.", DeprecationWarning, stacklevel=2)
-
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base import single_wiki_article as article
-from scrapers.circuits.circuits_composition import CircuitScraperCompositionFactory
-from scrapers.circuits.circuits_composition import CircuitScraperDependencies
-from scrapers.circuits.circuits_helpers.sections import is_circuit_like_article
-from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
-from scrapers.services.domain_record.circuit_lap_records_extraction_service import (
-    CircuitLapRecordsExtractionService,
-)
+from scrapers.circuits_composition import CircuitScraperCompositionFactory
+from scrapers.circuits_composition import CircuitScraperDependencies
+from scrapers.dto import InfoboxPayloadDTO
+from scrapers.dto import SectionsPayloadDTO
+from scrapers.dto import TablesPayloadDTO
+from scrapers.helpers.sections import is_circuit_like_article
+from scrapers.section.selection_strategy.wikipedia_by_id import WikipediaSectionByIdSelectionStrategy
+from scrapers.services.domain_record.circuit_lap_records_extraction_service import CircuitLapRecordsExtractionService
+from scrapers.services.domain_record.circuit_pipeline_service import CircuitDomainRecordInput
+from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -22,7 +20,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
+class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     def __init__(
         self,
         *,
@@ -32,7 +30,7 @@ class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
     ) -> None:
         super().__init__(
             options=options,
-            section_selection_strategy=article.WikipediaSectionByIdSelectionStrategy(
+            section_selection_strategy=WikipediaSectionByIdSelectionStrategy(
                 domain="circuits",
             ),
         )
@@ -67,13 +65,13 @@ class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
     def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
         return self._select_section(soup, self._section_fragment)
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> article.InfoboxPayloadDTO:
-        return article.InfoboxPayloadDTO(
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
+        return InfoboxPayloadDTO(
             self._infobox_service.extract(soup, url=self.url).primary_record,
         )
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> article.TablesPayloadDTO:
-        return article.TablesPayloadDTO(
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
+        return TablesPayloadDTO(
             self._lap_records_extraction_service.collect_lap_record_rows(
                 soup=soup,
                 url=self.url,
@@ -87,21 +85,21 @@ class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
     def _build_sections_payload(
         self,
         soup: BeautifulSoup,
-    ) -> article.SectionsPayloadDTO:
+    ) -> SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(
             adapter=self,
             options=self._options,
             url=self.url,
         )
-        return article.SectionsPayloadDTO(sections_service.extract(soup))
+        return SectionsPayloadDTO(sections_service.extract(soup))
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: article.InfoboxPayloadDTO,
-        tables_payload: article.TablesPayloadDTO,
-        sections_payload: article.SectionsPayloadDTO,
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
         details_record = self.parse_details(soup)
         if details_record is not None:

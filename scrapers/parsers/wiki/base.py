@@ -5,6 +5,7 @@ from typing import Generic
 from typing import TypeVar
 
 from bs4 import Tag
+
 from scrapers.core.domain_roles import Parser
 
 TWikiParsed = TypeVar("TWikiParsed")

@@ -1,19 +1,13 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.records.dto.constructor import ConstructorRecordDTO
 from scrapers.records.assemblers.base import BaseRecordAssembler
 from scrapers.records.assemblers.base import BaseRecordAssemblerInput
-from scrapers.records.infobox_record import InfoboxRecordMapper
-from scrapers.records.section_record import SectionRecordMapper
-from scrapers.records.table_record.base import TableRecordMapper
-
-if TYPE_CHECKING:
-    from models.value_objects import WikiUrl
-
+from scrapers.records.dto.constructor import ConstructorRecordDTO
+from scrapers.records.mappers.infobox import InfoboxRecordMapper
+from scrapers.records.mappers.section import SectionRecordMapper
+from scrapers.records.mappers.table_record.base import TableRecordMapper
 
 
 class ConstructorRecordAssembler(BaseRecordAssembler):

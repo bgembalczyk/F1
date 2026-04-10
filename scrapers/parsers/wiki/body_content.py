@@ -3,10 +3,10 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.parsers.category_links import CategoryLinksParser
-from scrapers.parsers.content_text import ContentTextParser
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.element import WikiElementParsers
+from scrapers.parsers.wiki.category_links import CategoryLinksParser
+from scrapers.parsers.wiki.content_text import ContentTextParser
+from scrapers.parsers.wiki.element import WikiElementParsers
 
 
 class BodyContentParser(WikiParser[dict[str, Any]]):

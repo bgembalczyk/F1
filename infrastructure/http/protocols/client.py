@@ -1,6 +1,5 @@
 from collections.abc import Mapping
 from typing import Protocol
-from typing import TypeAlias
 from typing import runtime_checkable
 
 from infrastructure.http.protocols.response import HttpResponseProtocol

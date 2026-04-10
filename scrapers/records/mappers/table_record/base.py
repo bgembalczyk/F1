@@ -1,3 +1,9 @@
+from typing import Any
+from typing import Mapping
+
+from scrapers.records.inputs.table_record import TableRecordInput
+
+
 class TableRecordMapper:
     """Maps table rows to normalized dictionaries.
 
@@ -26,4 +32,3 @@ class TableRecordMapper:
         if isinstance(value, list):
             return [self._normalize_value(item) for item in value]
         return value
-

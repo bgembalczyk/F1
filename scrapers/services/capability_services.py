@@ -5,15 +5,14 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from scrapers.base.results import ScrapeResult
-from scrapers.base.validation_runner import ValidationRunner
+from scrapers.adapters.adapter import ResultTabularAdapter
+from scrapers.results import ScrapeResult
+from scrapers.services.result_export import ResultExportService
+from scrapers.validation_runner import ValidationRunner
 
 if TYPE_CHECKING:
     from logging import Logger
 
-    from scrapers.base.scraper_components import PipelineOrchestrator
-    from scrapers.base.services.result_export_service import ResultExportService
-    from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
     from validation.validator_base import ExportRecord
     from validation.validator_base import RecordValidator
 
@@ -151,4 +150,6 @@ class ReportingCapabilityService:
         self._quality_report_service.write_validation_report()
 
     def log_start(self, url: str) -> None:
-        self._logger.debug("Scrape run %s started for url=%s", self._run_id_provider(), url)
+        self._logger.debug(
+            "Scrape run %s started for url=%s", self._run_id_provider(), url
+        )

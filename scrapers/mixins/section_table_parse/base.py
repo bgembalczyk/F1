@@ -1,9 +1,9 @@
+from collections.abc import Callable
 from typing import Any
-from typing import Callable
 
 from bs4 import BeautifulSoup
 
-from scrapers.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
+from scrapers.section.selection_strategy.wikipedia_by_id import WikipediaSectionByIdSelectionStrategy
 
 
 class SectionTableParseMixin:

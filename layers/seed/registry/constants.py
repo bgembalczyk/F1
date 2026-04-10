@@ -1,36 +1,27 @@
-from dataclasses import dataclass
 from typing import Any
 
-from layers.seed.data_classes import RegistryValidationRule
-from layers.seed.data_classes import RegistryValidationSpec
-from layers.seed.registry.entries.entry import SeedRegistryEntry
-from layers.seed.registry.entries.list_job import ListJobRegistryEntry
+from layers.seed.registry.entries import ListJobRegistryEntry
+from layers.seed.registry.entries import SeedRegistryEntry
 from layers.seed.registry.helpers import build_list_job_registry_entry_from_spec
 from layers.seed.registry.helpers import build_raw_registry_spec
 from layers.seed.registry.helpers import build_seed_registry_entry_from_spec
 from layers.seed.registry.raw_specs import RawRegistrySpec
+from layers.seed.validation.rule import RegistryValidationRule
+from layers.seed.validation.spec import RegistryValidationSpec
 from scrapers.circuits.list_scraper import CircuitsListScraper
+from scrapers.combined_red_flagged_races import RedFlaggedRacesScraper
 from scrapers.constructors.list_scraper import ConstructorsListScraper
-from scrapers.drivers.fatalities_list_scraper_drivers import F1FatalitiesListScraper
-from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.list_scraper import DriversListScraper
-from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
-from scrapers.engines.engine_regulation import EngineRegulationScraper
-from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
+from scrapers.engine_manufacturers_list import EngineManufacturersListScraper
+from scrapers.engine_regulation import EngineRegulationScraper
+from scrapers.engine_restrictions import EngineRestrictionsScraper
+from scrapers.fatalities_list_scraper_drivers import F1FatalitiesListScraper
+from scrapers.female_drivers_list import FemaleDriversListScraper
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
-from scrapers.points.points_scraper import PointsScraper
-from scrapers.races.red_flagged_races_scraper.combined import RedFlaggedRacesScraper
+from scrapers.list_scraper_tyres import TyreManufacturersScraper
+from scrapers.points_scraper import PointsScraper
+from scrapers.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
-from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
-from scrapers.tyres.list_scraper_tyres import TyreManufacturersScraper
-from scrapers.wiki.sources_registry_wiki import get_source_by_seed_name
-from scrapers.wiki.sources_registry_wiki import resolve_seed_name
-from scrapers.wiki.sources_registry_wiki import validate_sources_registry_consistency
-
-
-
-
-
 
 LIST_SCRAPER_BY_SEED_NAME: dict[str, type[Any]] = {
     "circuits": CircuitsListScraper,
@@ -65,12 +56,7 @@ SEED_FILENAME_OVERRIDES: dict[str, str] = {
 }
 
 
-
 RAW_REGISTRY_SPEC: tuple[RawRegistrySpec, ...] = build_raw_registry_spec()
-
-
-
-
 
 
 LAYER_ONE_SEED_REGISTRY_ORDER: tuple[str, ...] = (

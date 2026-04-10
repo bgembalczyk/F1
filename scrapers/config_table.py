@@ -1,21 +1,21 @@
 from __future__ import annotations
 
+import warnings
 from collections.abc import Mapping
 from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from typing import TYPE_CHECKING
-import warnings
 
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.schema import TableSchema
-from scrapers.base.table.schema import TableSchemaBuilder
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.auto import AutoColumn
+from scrapers.schema_table import TableSchema
+from scrapers.schema_table import TableSchemaBuilder
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 if TYPE_CHECKING:
     from models.records.factories.protocol import RecordBuilder
-    from scrapers.base.table.dsl.column import ColumnSpec
 
 
 @dataclass(frozen=True)

@@ -18,7 +18,9 @@ T = TypeVar("T")
 
 
 class LinkNormalizationMixin:
-    def normalize_link_like_field(self, payload: dict[str, Any], field_name: str) -> None:
+    def normalize_link_like_field(
+        self, payload: dict[str, Any], field_name: str
+    ) -> None:
         payload[field_name] = normalize_optional_link_or_string(
             self.normalizer,
             payload.get(field_name),
@@ -50,7 +52,9 @@ class StatusNormalizationMixin:
 
 
 class LocationNormalizationMixin:
-    def normalize_location_field(self, payload: dict[str, Any], field_name: str) -> None:
+    def normalize_location_field(
+        self, payload: dict[str, Any], field_name: str
+    ) -> None:
         payload[field_name] = self.normalizer.normalize_string(payload.get(field_name))
 
 

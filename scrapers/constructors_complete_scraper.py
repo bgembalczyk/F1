@@ -1,10 +1,9 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from scrapers.core.wiki_helpers import is_wikipedia_redlink
-from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
-from scrapers.wiki.component_metadata_wiki import COMPLETE_SCRAPER_KIND
-from scrapers.wiki.component_metadata_wiki import build_component_metadata
+from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
+from scrapers.component_metadata_wiki import build_component_metadata
+from scrapers.constructors_list import ConstructorsListScraper
+from scrapers.constructors_single_scraper import SingleConstructorScraper
 
 
 class CompleteConstructorsDataExtractor(CompleteExtractorBase):

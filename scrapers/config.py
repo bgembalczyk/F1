@@ -1,13 +1,13 @@
+import warnings
 from dataclasses import dataclass
 from dataclasses import field
 from pathlib import Path
-import warnings
 
-from scrapers.base.exporters.data import DataExporter
-from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.options import HttpPolicy
-from scrapers.base.options import default_http_policy
-from scrapers.base.parsers.soup import SoupParser
+from exporters.data import DataExporter
+from infrastructure.helpers import default_http_policy
+from infrastructure.http.policies.http import HttpPolicy
+from scrapers.html_fetcher import HtmlFetcher
+from scrapers.parsers.soup import SoupParser
 
 
 @dataclass(frozen=True)

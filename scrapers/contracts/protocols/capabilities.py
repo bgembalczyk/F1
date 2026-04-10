@@ -4,8 +4,7 @@ from typing import Protocol
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.records import RawRecord
-from scrapers.base.results import ScrapeResult
+from scrapers.results import ScrapeResult
 from validation.validator_base import ExportRecord
 
 
@@ -32,7 +31,9 @@ class ExportCapability(Protocol):
 
     def build_result(self, data: list[ExportRecord] | None = None) -> ScrapeResult: ...
 
-    def to_json(self, path: str, *, indent: int = 2, include_metadata: bool = False) -> None: ...
+    def to_json(
+        self, path: str, *, indent: int = 2, include_metadata: bool = False
+    ) -> None: ...
 
     def to_csv(
         self,

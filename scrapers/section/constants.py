@@ -1,5 +1,5 @@
+from collections.abc import Callable
 from typing import Any
-from typing import Callable
 
 from scrapers.columns.factory import IntColumn
 from scrapers.columns.types.auto import AutoColumn
@@ -18,9 +18,9 @@ from scrapers.columns.types.url import UrlColumn
 from scrapers.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
 from scrapers.headers_shared import POINTS_HEADER
 from scrapers.headers_shared import POINTS_HEADER_TO_KEY
+from scrapers.parsers.section.wiki.helpers import DOMAIN_SECTION_PROFILES
 from scrapers.section.config.driver_results import DriverResultsSectionConfig
 from scrapers.section.critical import CriticalSection
-from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
 
 COMPLETE_RESULTS_REQUIRED_HEADER = "Year"
 

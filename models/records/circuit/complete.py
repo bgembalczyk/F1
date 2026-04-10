@@ -58,6 +58,4 @@ CIRCUIT_COMPLETE_SCHEMA = CIRCUIT_COMPLETE_DEFINITION.to_schema()
 
 
 def validate_circuit_complete_record(record: dict[str, object]) -> list[str]:
-    return [
-        error.message for error in validate_record(record, CIRCUIT_COMPLETE_SCHEMA)
-    ]
+    return [error.message for error in validate_record(record, CIRCUIT_COMPLETE_SCHEMA)]

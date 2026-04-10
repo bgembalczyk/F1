@@ -3,16 +3,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from scrapers.seasons.pipeline_seasons import SeasonParserSetBuilder
-from scrapers.seasons.pipeline_seasons import SeasonSectionPipeline
-from scrapers.seasons.pipeline_seasons import SeasonYearResolver
+from scrapers.domain_parsing_policy import DomainParsingPolicy
+from scrapers.options import ScraperOptions
+from scrapers.pipeline_seasons import SeasonParserSetBuilder
+from scrapers.pipeline_seasons import SeasonSectionPipeline
+from scrapers.pipeline_seasons import SeasonYearResolver
 from scrapers.services.domain_record.season import SeasonDomainRecordService
-
-if TYPE_CHECKING:
-    from scrapers.base.options import ScraperOptions
-    from scrapers.base.sections.interface import SectionServiceFactory
-    from scrapers.seasons.sections_seasons.service import SeasonTextSectionExtractionService
-    from scrapers.seasons.services_seasons.domain_parsing_policy import DomainParsingPolicy
+from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
+from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
 
 
 @dataclass(frozen=True, slots=True)
@@ -31,9 +29,7 @@ class SeasonScraperCompositionFactory:
     parser_set_builder: SeasonParserSetBuilder | None = None
     season_pipeline: SeasonSectionPipeline | None = None
     parsing_policy: DomainParsingPolicy | None = None
-    text_sections_service_factory: (
-        SectionServiceFactory[SeasonTextSectionExtractionService] | None
-    ) = None
+    text_sections_service_factory: SectionServiceFactory[SeasonTextSectionExtractionService] | None = None
     domain_record_service: SeasonDomainRecordService | None = None
 
     @classmethod
@@ -77,7 +73,9 @@ class SeasonScraperCompositionFactory:
             text_sections_service_factory=self.text_sections_service_factory,
         )
 
-        domain_record_service = self.domain_record_service or SeasonDomainRecordService()
+        domain_record_service = (
+            self.domain_record_service or SeasonDomainRecordService()
+        )
 
         return SeasonScraperDependencies(
             season_year_resolver=season_year_resolver,

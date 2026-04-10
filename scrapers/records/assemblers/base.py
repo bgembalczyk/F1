@@ -1,19 +1,12 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import TYPE_CHECKING
 from typing import Any
 
 from models.wiki_url import WikiUrl
-from scrapers.records.infobox_record import InfoboxRecordMapper
 from scrapers.records.inputs.base_assembler import BaseRecordAssemblerInput
-from scrapers.records.section_record import SectionRecordMapper
-from scrapers.records.table_record.base import TableRecordMapper
-
-if TYPE_CHECKING:
-    from collections.abc import Mapping
-
-
+from scrapers.records.mappers.infobox import InfoboxRecordMapper
+from scrapers.records.mappers.section import SectionRecordMapper
+from scrapers.records.mappers.table_record.base import TableRecordMapper
 
 
 class BaseRecordAssembler:
