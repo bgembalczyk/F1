@@ -14,10 +14,11 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.options import ScraperOptions
+    from scrapers.section.selection_strategy.base import SectionSelectionStrategy
 
 
-class SingleArticleScraperBase(WikiScraper, ABC):
-    """Baza odpowiedzialna za fetch i lifecycle pojedynczego artykułu."""
+class ArticleScraperBase(WikiScraper, ABC):
+    """Base class responsible for article fetch and parsing lifecycle."""
 
     options_domain: str | None = None
     options_profile: str = "article_strict"
@@ -27,6 +28,7 @@ class SingleArticleScraperBase(WikiScraper, ABC):
         *,
         options: ScraperOptions | None = None,
         include_urls: bool = True,
+        section_selection_strategy: SectionSelectionStrategy | None = None,
     ) -> None:
         resolved_options = init_scraper_options(options, include_urls=include_urls)
         resolved_options = build_scraper_options(
@@ -43,13 +45,22 @@ class SingleArticleScraperBase(WikiScraper, ABC):
         super().__init__(options=resolved_options)
         self.url: str = ""
         self._original_url: str | None = None
+        self._section_fragment: str | None = None
+        self.section_selection_strategy = section_selection_strategy
         self._options = resolved_options
         self.policy = self.http_policy
         self.debug_dir = resolved_options.debug_dir
 
     def extract_by_url(self, url: str) -> list[dict[str, Any]]:
         self._original_url = url
-        self.url = url
+        if self.section_selection_strategy is None:
+            self.url = url
+            self._section_fragment = None
+            return super().fetch()
+
+        base_url, fragment = self.section_selection_strategy.split_url_fragment(url)
+        self.url = base_url
+        self._section_fragment = fragment
         return super().fetch()
 
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
@@ -69,11 +80,19 @@ class SingleArticleScraperBase(WikiScraper, ABC):
         return True
 
     def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
-        return soup
+        if self.section_selection_strategy is None:
+            return soup
+        return self.section_selection_strategy.select_article_soup(
+            soup,
+            fragment=self._section_fragment,
+        )
 
     @abstractmethod
     def _build_article_record(self, soup: BeautifulSoup) -> dict[str, Any]:
         """Build final record from parsed article soup."""
 
 
-__all__ = ["SingleArticleScraperBase"]
+SingleArticleScraperBase = ArticleScraperBase
+
+
+__all__ = ["ArticleScraperBase", "SingleArticleScraperBase"]

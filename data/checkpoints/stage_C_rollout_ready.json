@@ -1,0 +1,6 @@
+{
+  "stage": "C",
+  "description": "All target domains migrated to auto-registry and URL strategy.",
+  "next_step": "D-001",
+  "source": "step_registry"
+}

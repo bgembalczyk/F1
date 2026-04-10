@@ -1,13 +1,5 @@
-"""Deprecated compatibility module for grands prix list scraper."""
+"""Canonical module for grands prix list scraping."""
 
-from warnings import warn
-
-from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
-
-warn(
-    "scrapers.grands_prix_list_scraper is deprecated; use scrapers.grands_prix.list_scraper",
-    DeprecationWarning,
-    stacklevel=2,
-)
+from scrapers.list_scraper_grands_prix import GrandsPrixListScraper
 
 __all__ = ["GrandsPrixListScraper"]

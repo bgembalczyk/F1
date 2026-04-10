@@ -1,29 +1,16 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from warnings import warn
 
-from bs4 import BeautifulSoup
-from bs4 import Tag
+from .constructor_orchestrator import ConstructorInfoboxOrchestrator
 
-from scrapers.infobox.extraction.extractor.table.all import AllInfoboxTablesExtractor
-from scrapers.infobox.extraction.service.base import BaseInfoboxExtractionService
-from scrapers.infobox.html_parser import InfoboxHtmlParser
-from scrapers.options import ScraperOptions
-from scrapers.parsers.soup import SoupParser
+warn(
+    "scrapers.infobox.extraction.service.constructor is deprecated; use "
+    "scrapers.infobox.extraction.service.constructor_orchestrator",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-if TYPE_CHECKING:
-    from collections.abc import Iterable
+ConstructorInfoboxExtractionService = ConstructorInfoboxOrchestrator
 
-
-
-class ConstructorInfoboxExtractionService(BaseInfoboxExtractionService[Tag]):
-    def __init__(self, *, options: ScraperOptions | None = None) -> None:
-        super().__init__(options=options)
-        self._infobox_locator = AllInfoboxTablesExtractor()
-
-    def find_infoboxes(self, soup: BeautifulSoup) -> Iterable[Tag]:
-        return self._infobox_locator.find_infoboxes(soup)
-
-    def build_parser(self, *, url: str) -> SoupParser:
-        _ = url
-        return InfoboxHtmlParser()
+__all__ = ["ConstructorInfoboxExtractionService", "ConstructorInfoboxOrchestrator"]

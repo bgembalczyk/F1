@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -10,7 +9,11 @@ from scrapers.columns.helpers.constants import LAST_YEAR_FORMULA_ONE_SEASON
 from scrapers.columns.helpers.constants import YEAR_IN_URL_PATTERN
 from scrapers.columns.helpers.constants import YEAR_PATTERN
 from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from scrapers.helpers.url import resolve_url
+from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
+
+if TYPE_CHECKING:
+    from scrapers.columns.types.context import ColumnContext
 
 
 class SeasonsColumn(BaseColumn):
@@ -31,7 +34,7 @@ class SeasonsColumn(BaseColumn):
             year_str = str(season.year)
             url = url_by_year.get(year_str) or self._derive_url(year_str, url_by_year)
             if url is None:
-                url = self._build_season_url(year_str)
+                url = self._build_season_url(year_str, url_by_year=url_by_year)
             result.append(SeasonRef(year=season.year, url=url).to_dict())
         return result
 
@@ -42,13 +45,27 @@ class SeasonsColumn(BaseColumn):
             if match and match.group() == linked_year:
                 if "/wiki/" in linked_url:
                     base = linked_url.split("/wiki/", 1)[0]
-                    return f"{base}/wiki/{SeasonsColumn._season_page_title(year)}"
+                    return resolve_url(
+                        base,
+                        f"/wiki/{SeasonsColumn._season_page_title(year)}",
+                        domain="seasons",
+                    )
                 return linked_url[: match.start()] + year + linked_url[match.end() :]
         return None
 
     @staticmethod
-    def _build_season_url(year: str) -> str:
-        return f"https://en.wikipedia.org/wiki/{SeasonsColumn._season_page_title(year)}"
+    def _build_season_url(year: str, *, url_by_year: dict[str, str]) -> str:
+        base_url = next(iter(url_by_year.values()), "https://en.wikipedia.org/wiki")
+        resolved = DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY.fallback_canonical_url(
+            domain="seasons",
+            base_url=base_url,
+            year=year,
+            season_page_title=SeasonsColumn._season_page_title(year),
+        )
+        return (
+            resolved
+            or f"https://en.wikipedia.org/wiki/{SeasonsColumn._season_page_title(year)}"
+        )
 
     @staticmethod
     def _season_page_title(year: str) -> str:

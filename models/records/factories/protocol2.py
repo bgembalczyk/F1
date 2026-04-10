@@ -2,12 +2,14 @@
 
 from models.records.factories.protocol import RecordBuilder
 from models.records.factories.protocol import RecordBuilderProtocol
-from models.records.factories.protocol import RecordFactory
-from models.records.factories.protocol import RecordFactoryProtocol
+
+# Deprecated compatibility aliases.
+RecordFactory = RecordBuilder
+RecordFactoryProtocol = RecordBuilderProtocol
 
 __all__ = [
     "RecordBuilder",
+    "RecordBuilderProtocol",
     "RecordFactory",
     "RecordFactoryProtocol",
-    "RecordBuilderProtocol",
 ]

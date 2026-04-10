@@ -4,20 +4,15 @@ from collections import Counter
 from importlib import import_module
 from inspect import isclass
 from pkgutil import iter_modules
-from typing import TYPE_CHECKING
-from typing import Final
 
 from models.records.factories.base import BaseRecordFactory
+from models.records.factories.protocol import RecordBuilder
 from models.records.factories.registry.constants import CRITICAL_RECORD_TYPES
 from models.records.factories.registry.constants import FACTORY_MARKER_ATTR
 from models.records.factories.registry.constants import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry.error import FactoryRegistryError
+from models.records.factories.registry.types import MutableFactoryRegistry
 from models.records.field_normalizer import FieldNormalizer
-
-
-
-
-
 
 
 def register_factory(record_type: str | None = None):
@@ -79,8 +74,8 @@ def validate_factory_classes(factory_classes: list[type[BaseRecordFactory]]) -> 
 
 def get_factory(
     record_type: str,
-    registry: dict[str, BaseRecordFactory] | None = None,
-) -> BaseRecordFactory:
+    registry: MutableFactoryRegistry | None = None,
+) -> RecordBuilder:
     factory_registry = registry or FACTORY_REGISTRY_PROVIDER.get()
     factory = factory_registry.get(record_type)
     if factory is None:
@@ -91,7 +86,7 @@ def get_factory(
 
 def build_factory_registry(
     normalizer: FieldNormalizer | None = None,
-) -> dict[str, BaseRecordFactory]:
+) -> MutableFactoryRegistry:
     factory_classes = collect_registered_factory_classes()
     validate_factory_classes(factory_classes)
 
@@ -106,10 +101,10 @@ def build_factory_registry(
 
 
 __all__ = [
-    "register_factory",
-    "import_factory_modules",
-    "collect_registered_factory_classes",
-    "validate_factory_classes",
-    "get_factory",
     "build_factory_registry",
+    "collect_registered_factory_classes",
+    "get_factory",
+    "import_factory_modules",
+    "register_factory",
+    "validate_factory_classes",
 ]

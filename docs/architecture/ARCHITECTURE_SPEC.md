@@ -59,3 +59,12 @@ Generated from `scripts/ci/architecture_spec.py`. Do not edit manually.
 | `scrapers.grands_prix.list_scraper`               | `scrapers.grands_prix.entrypoint`  | -      |
 | `scrapers.seasons.list_scraper`                   | `scrapers.seasons.entrypoint`      | -      |
 | `python main.py --mode <layer0                    | layer1                             | full>` | `python -m scrapers.cli wiki --mode <layer0|layer1|full>` | canonical launcher |
+
+## Infobox extraction module standard (2026-04)
+
+Pakiet `scrapers.infobox.extraction` został ujednolicony do modułów bazowych:
+`base.py`, `protocol.py`, `factory.py`, `registry.py`, `service.py`, `mixins.py`.
+
+- Rodzina ekstraktorów: `scrapers/infobox/extraction/extractor/*_extractor.py`.
+- Rodzina orkiestratorów: `scrapers/infobox/extraction/service/*_orchestrator.py`.
+- Moduły historyczne (`service/*.py`, `extractor/base.py`, `extractor/circuit.py`) są utrzymane jako aliasy przejściowe z `DeprecationWarning`.

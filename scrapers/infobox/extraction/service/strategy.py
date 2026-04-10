@@ -1,38 +1,19 @@
-from collections.abc import Iterable
-from typing import Any
+from __future__ import annotations
 
-from bs4 import BeautifulSoup
+from warnings import warn
 
-from scrapers.infobox.extraction.extractor import InfoboxExtractorProtocol
-from scrapers.infobox.extraction.result import InfoboxExtractionResult
-from scrapers.infobox.extraction.result import ParserInputT
-from scrapers.infobox.extraction.service.base import BaseInfoboxExtractionService
-from scrapers.options import ScraperOptions
-from scrapers.parsers.soup import SoupParser
+from .strategy_orchestrator import StrategyBackedInfoboxOrchestrator
 
+warn(
+    "scrapers.infobox.extraction.service.strategy is deprecated; use "
+    "scrapers.infobox.extraction.service.strategy_orchestrator",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-class StrategyBackedInfoboxExtractionService(
-    BaseInfoboxExtractionService[ParserInputT],
-):
-    """Adapter delegujący ekstrakcję do obiektu strategii."""
+StrategyBackedInfoboxExtractionService = StrategyBackedInfoboxOrchestrator
 
-    def __init__(
-        self,
-        *,
-        strategy: InfoboxExtractorProtocol[ParserInputT],
-        options: ScraperOptions | None = None,
-    ) -> None:
-        super().__init__(options=options)
-        self._strategy = strategy
-
-    def find_infoboxes(self, soup: BeautifulSoup) -> Iterable[ParserInputT]:
-        return self._strategy.find_infoboxes(soup)
-
-    def build_parser(self, *, url: str) -> SoupParser:
-        return self._strategy.build_parser(options=self._options, url=url)
-
-    def normalize_result(
-        self,
-        parsed_records: list[dict[str, Any]],
-    ) -> InfoboxExtractionResult:
-        return self._strategy.normalize_result(parsed_records)
+__all__ = [
+    "StrategyBackedInfoboxExtractionService",
+    "StrategyBackedInfoboxOrchestrator",
+]

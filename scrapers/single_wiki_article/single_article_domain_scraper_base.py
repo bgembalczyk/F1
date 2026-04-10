@@ -9,23 +9,14 @@ from typing import ClassVar
 from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
-from scrapers.single_wiki_article.single_article_scraper_base import (
-    SingleArticleScraperBase,
-)
-from scrapers.single_wiki_article.single_article_section_aware_mixin import (
-    SingleArticleSectionAwareMixin,
-)
+from scrapers.single_wiki_article.single_article_scraper_base import ArticleScraperBase
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class SingleArticleDomainScraperBase(
-    SingleArticleSectionAwareMixin,
-    SingleArticleScraperBase,
-    ABC,
-):
-    """Baza hooków domenowych do budowy rekordu pojedynczego artykułu."""
+class DomainArticleScraperBase(ArticleScraperBase, ABC):
+    """Base class with domain payload hooks and record assembly pipeline."""
 
     STANDARD_HOOKS: ClassVar[dict[str, str]] = {
         "_build_infobox_payload": "Build normalized infobox payload.",
@@ -82,4 +73,7 @@ class SingleArticleDomainScraperBase(
         """Compose final domain record from template-method payload hooks."""
 
 
-__all__ = ["SingleArticleDomainScraperBase"]
+SingleArticleDomainScraperBase = DomainArticleScraperBase
+
+
+__all__ = ["DomainArticleScraperBase", "SingleArticleDomainScraperBase"]

@@ -1,13 +1,5 @@
 """Deprecated compatibility module for grands prix detail scraper."""
 
-from warnings import warn
-
-from scrapers.grands_prix.single_scraper import GrandsPrixDetailScraper
-
-warn(
-    "scrapers.grands_prix_detail_scraper is deprecated; use scrapers.grands_prix.single_scraper",
-    DeprecationWarning,
-    stacklevel=2,
-)
+from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper as GrandsPrixDetailScraper
 
 __all__ = ["GrandsPrixDetailScraper"]

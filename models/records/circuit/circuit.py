@@ -8,6 +8,7 @@ from validation.schemas import NestedSchema
 
 
 class CircuitSummaryRecord(TypedDict):
+    """Summary-level, list-oriented circuit projection used in core datasets."""
     circuit: dict[str, str | None]
     circuit_status: Literal["current", "future", "former"]
     type: str | None

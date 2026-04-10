@@ -1,29 +1,16 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from warnings import warn
 
-from bs4 import BeautifulSoup
+from .circuit_orchestrator import CircuitInfoboxOrchestrator
 
-from scrapers.infobox.extraction.extractor import CircuitInfoboxExtractor
-from scrapers.infobox.extraction.extractor import InfoboxExtractorProtocol
-from scrapers.infobox.extraction.service.strategy import (
-    StrategyBackedInfoboxExtractionService,
+warn(
+    "scrapers.infobox.extraction.service.circuit is deprecated; use "
+    "scrapers.infobox.extraction.service.circuit_orchestrator",
+    DeprecationWarning,
+    stacklevel=2,
 )
 
-if TYPE_CHECKING:
-    from scrapers.options import ScraperOptions
+CircuitInfoboxExtractionService = CircuitInfoboxOrchestrator
 
-
-class CircuitInfoboxExtractionService(
-    StrategyBackedInfoboxExtractionService[BeautifulSoup],
-):
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        strategy: InfoboxExtractorProtocol[BeautifulSoup] | None = None,
-    ) -> None:
-        super().__init__(
-            strategy=strategy or CircuitInfoboxExtractor(),
-            options=options,
-        )
+__all__ = ["CircuitInfoboxExtractionService", "CircuitInfoboxOrchestrator"]
