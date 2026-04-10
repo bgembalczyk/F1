@@ -11,8 +11,8 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
 
-class InfoboxExtractor(Protocol, Generic[ParserInputT]):
-    """Strategia ekstrakcji infoboxów dla konkretnej domeny."""
+class InfoboxExtractionStrategy(Protocol, Generic[ParserInputT]):
+    """Kontrakt strategii ekstrakcji infoboxów dla konkretnej domeny."""
 
     def find_infoboxes(self, soup: BeautifulSoup) -> Iterable[ParserInputT]: ...
 
