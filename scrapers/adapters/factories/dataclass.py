@@ -1,6 +1,6 @@
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
-from typing import Callable
 
 from models.records.factories.build import RECORD_BUILDERS
 from models.records.factories.build import RecordType

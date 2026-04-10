@@ -1,10 +1,3 @@
-from scrapers.config_table import TableScraperConfig
-from typing import Any
-
-from bs4 import BeautifulSoup
-
-from models.entity_name import EntityName
-from models.section_id import SectionId
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
 from scrapers.parsers.table.constructor.current import CurrentConstructorsTableParser

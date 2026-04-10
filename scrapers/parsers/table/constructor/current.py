@@ -1,8 +1,8 @@
 from typing import Any
 
-from scrapers.base.constants.shared_headers import SHARED_POINTS_HEADER
-from scrapers.base.constants.shared_headers import SHARED_PODIUMS_HEADER
-from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
+from scrapers.constants.shared_headers import SHARED_PODIUMS_HEADER
+from scrapers.constants.shared_headers import SHARED_POINTS_HEADER
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_BASED_IN_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_DRIVERS_HEADER
@@ -75,12 +75,16 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
             for header in headers
         }
 
-    def parse_row(self, row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+    def parse_row(
+        self, row: dict[str, Any], column_map: dict[str, str]
+    ) -> dict[str, Any]:
         mapped = super().parse_row(row, column_map)
         normalized = dict(mapped)
         if "constructor" in normalized:
             chassis = self._normalize_constructor_link(normalized.get("constructor"))
-            engine = self._normalize_constructor_link(normalized.get("engine")) or chassis
+            engine = (
+                self._normalize_constructor_link(normalized.get("engine")) or chassis
+            )
             normalized["constructor"] = {
                 "chassis_constructor": chassis,
                 "engine_constructor": engine,

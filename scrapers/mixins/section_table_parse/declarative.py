@@ -1,6 +1,5 @@
 """Shared mixin for section-based table parsing with legacy fallback."""
 
-from collections.abc import Callable
 from typing import Any
 
 from bs4 import BeautifulSoup

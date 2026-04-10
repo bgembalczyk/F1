@@ -8,7 +8,7 @@ from scrapers.parsers.section.nested.wiki import NestedWikiSectionParser
 from scrapers.parsers.section.wiki.detection import make_stable_section_id
 from scrapers.parsers.section.wiki.helpers import split_into_parts
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.element import WikiElementParsers
+from scrapers.parsers.wiki.element import WikiElementParsers
 
 
 class ContentTextParser(WikiParser):
