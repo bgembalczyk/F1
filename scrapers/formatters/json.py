@@ -1,9 +1,9 @@
 import json
 from typing import Any
 
-from scrapers.base.exporters.metadata import ExportMetadata
-from scrapers.base.formatters.helpers import extract_data
-from scrapers.base.results import ScrapeResult
+from exporters.metadata import ExportMetadata
+from scrapers.formatters.helpers import extract_data
+from scrapers.results import ScrapeResult
 
 
 class JsonFormatter:

@@ -10,7 +10,9 @@ class ConstructorTableExtractionService(RetryMixin):
     """HTML adapter odpowiedzialny za ekstrakcję tabel dla konstruktorów."""
 
     def __init__(
-        self, *, article_tables_parser: ArticleTablesParser | None = None
+        self,
+        *,
+        article_tables_parser: ArticleTablesParser | None = None,
     ) -> None:
         self._article_tables_parser = article_tables_parser or ArticleTablesParser()
 

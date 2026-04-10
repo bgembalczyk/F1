@@ -151,5 +151,7 @@ class ReportingCapabilityService:
 
     def log_start(self, url: str) -> None:
         self._logger.debug(
-            "Scrape run %s started for url=%s", self._run_id_provider(), url
+            "Scrape run %s started for url=%s",
+            self._run_id_provider(),
+            url,
         )

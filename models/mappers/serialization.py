@@ -6,10 +6,10 @@ from typing import Any
 from typing import Protocol
 from typing import runtime_checkable
 
-from models.records.circuit import CircuitBaseRecord
-from models.records.circuit import CircuitCompleteRecord
-from models.records.circuit import CircuitDetailsRecord
-from models.records.serializable_protocol import SerializableProtocol
+from models.records.circuit.base import CircuitBaseRecord
+from models.records.circuit.complete import CircuitCompleteRecord
+from models.records.circuit.details import CircuitDetailsRecord
+from models.serializable_protocol import SerializableProtocol
 from models.value_objects.base import ValueObject
 
 

@@ -32,7 +32,11 @@ class ExportCapability(Protocol):
     def build_result(self, data: list[ExportRecord] | None = None) -> ScrapeResult: ...
 
     def to_json(
-        self, path: str, *, indent: int = 2, include_metadata: bool = False
+        self,
+        path: str,
+        *,
+        indent: int = 2,
+        include_metadata: bool = False,
     ) -> None: ...
 
     def to_csv(

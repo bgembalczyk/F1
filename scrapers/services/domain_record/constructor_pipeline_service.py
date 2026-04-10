@@ -4,16 +4,10 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.constructors.constructors_postprocess.assembler import (
-    ConstructorRecordAssembler,
-)
-from scrapers.constructors.constructors_postprocess.assembler import (
-    ConstructorRecordDTO,
-)
+from scrapers.records.assemblers.constructor import ConstructorRecordAssembler
+from scrapers.records.dto.constructor import ConstructorRecordDTO
 from scrapers.services.domain_record.base_pipeline_service import BaseDomainPipelineService
 
-if TYPE_CHECKING:
-    from scrapers.base.contracts import RecordAssemblerProtocol
 
 
 @dataclass(frozen=True, slots=True)

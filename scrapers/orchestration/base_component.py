@@ -53,7 +53,9 @@ class BaseComponent:
         )
 
     def run_hooks(
-        self, hooks: list[LifecycleHook], payload: StageEnvelope
+        self,
+        hooks: list[LifecycleHook],
+        payload: StageEnvelope,
     ) -> StageEnvelope:
         current = payload
         for hook in hooks:
@@ -61,7 +63,9 @@ class BaseComponent:
         return current
 
     def run_with_lifecycle(
-        self, runner: Callable[[StageEnvelope], StageEnvelope], payload: StageEnvelope
+        self,
+        runner: Callable[[StageEnvelope], StageEnvelope],
+        payload: StageEnvelope,
     ) -> StageEnvelope:
         prepared = self.run_hooks(self._before_hooks, payload)
         try:

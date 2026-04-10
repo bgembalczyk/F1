@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
 
 from scrapers.infobox.extraction import InfoboxExtractionService
 from scrapers.infobox.extraction.service.constructor import ConstructorInfoboxExtractionService

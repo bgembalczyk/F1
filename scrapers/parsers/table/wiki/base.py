@@ -101,7 +101,9 @@ class WikiTableBaseParser(ABC):
         """Mapuje nagłówki tabeli na pola domenowe."""
 
     def parse_row(
-        self, row: dict[str, Any], column_map: dict[str, str]
+        self,
+        row: dict[str, Any],
+        column_map: dict[str, str],
     ) -> dict[str, Any]:
         mapped: dict[str, Any] = {}
         for header, value in row.items():

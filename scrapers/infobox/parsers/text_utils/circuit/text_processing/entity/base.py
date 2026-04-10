@@ -1,10 +1,10 @@
 from typing import Any
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.base.helpers.wiki import clean_link_record
-from scrapers.circuits.circuits_infobox.services.constants import ENTITY_PARTS_RE
-from scrapers.circuits.circuits_infobox.services.text_processing import CircuitTextProcessing
+from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.helpers.wiki import clean_link_record
+from scrapers.infobox.parsers.constants import ENTITY_PARTS_RE
+from scrapers.infobox.parsers.text_utils.circuit.text_processing.base import CircuitTextProcessing
 
 
 class CircuitEntityParser(CircuitTextProcessing):

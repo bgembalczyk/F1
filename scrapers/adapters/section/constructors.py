@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from scrapers.sections.adapters.entry import SectionAdapterEntry
-from scrapers.sections.constructors_championship_results import ConstructorChampionshipResultsSectionParser
-from scrapers.sections.complete_f1_results_constructors import ConstructorCompleteF1ResultsSectionParser
-from scrapers.sections.history_constructors import ConstructorHistorySectionParser
-from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
+from scrapers.adapters.section.entry import SectionAdapterEntry
+from scrapers.parsers.section.table.constructor.history import ConstructorHistorySectionParser
+from scrapers.parsers.section.table.results.constructor.championship import ConstructorChampionshipResultsSectionParser
+from scrapers.parsers.section.table.results.constructor.complete_f1 import ConstructorCompleteF1ResultsSectionParser
+from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
 
 
 def constructor_section_entries() -> list[SectionAdapterEntry]:

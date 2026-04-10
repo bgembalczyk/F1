@@ -4,9 +4,9 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
-from scrapers.infobox.field_mapper import InfoboxFieldMapper
-from scrapers.infobox.helpers import parse_infobox_from_soup
+from scrapers.infobox.field.mapper import InfoboxFieldMapper
 from scrapers.infobox.parsers.circuits.entities import CircuitEntitiesParser
+from scrapers.infobox.parsers.helpers import parse_infobox_from_soup
 from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
 from scrapers.infobox.parsers.text_utils.circuit.geo import CircuitGeoParser
 from scrapers.infobox.parsers.text_utils.circuit.history import CircuitHistoryParser
@@ -15,12 +15,12 @@ from scrapers.infobox.parsers.text_utils.circuit.layouts import CircuitLayoutsPa
 from scrapers.infobox.parsers.text_utils.circuit.specs import CircuitSpecsParser
 from scrapers.infobox.parsers.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoParser
 from scrapers.infobox.parsers.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
-from scrapers.infobox.schema_circuits import CIRCUIT_INFOBOX_SCHEMA
+from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
+from scrapers.parsers.wiki.infobox import InfoboxParser
 from scrapers.types import ExportableRecord
-from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
 class CircuitInfoboxParser(InfoboxParser):

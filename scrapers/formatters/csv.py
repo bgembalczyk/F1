@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 class CsvFormatter:
     @staticmethod
     def format(
-        result: ScrapeResult,
+        result: "ScrapeResult",
         *,
         fieldnames: Sequence[str] | None = None,
         include_metadata: bool = False,

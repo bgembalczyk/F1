@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
 
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.options import ScraperOptions
@@ -29,7 +28,9 @@ class SeasonScraperCompositionFactory:
     parser_set_builder: SeasonParserSetBuilder | None = None
     season_pipeline: SeasonSectionPipeline | None = None
     parsing_policy: DomainParsingPolicy | None = None
-    text_sections_service_factory: SectionServiceFactory[SeasonTextSectionExtractionService] | None = None
+    text_sections_service_factory: (
+        SectionServiceFactory[SeasonTextSectionExtractionService] | None
+    ) = None
     domain_record_service: SeasonDomainRecordService | None = None
 
     @classmethod

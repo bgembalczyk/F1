@@ -1,26 +1,16 @@
 from __future__ import annotations
 
-import warnings
-
-warnings.warn("constructors_single_scraper is deprecated; use scrapers.constructors_detail_scraper.", DeprecationWarning, stacklevel=2)
-
-from typing import TYPE_CHECKING
 from typing import Any
+from typing import TYPE_CHECKING
 
-from scrapers.constructors.constructors_composition import (
-    ConstructorScraperCompositionFactory,
-)
-from scrapers.constructors.constructors_composition import (
-    ConstructorScraperDependencies,
-)
-from scrapers.services.domain_record.constructor import ConstructorDomainRecordInput
-from scrapers.services.domain_record.constructor_table_extraction_service import (
-    ConstructorTableExtractionService,
-)
-from scrapers.single_wiki_article import InfoboxPayloadDTO
-from scrapers.single_wiki_article import SectionsPayloadDTO
+from scrapers.constructors_composition import ConstructorScraperCompositionFactory
+from scrapers.constructors_composition import ConstructorScraperDependencies
+from scrapers.dto import InfoboxPayloadDTO
+from scrapers.dto import SectionsPayloadDTO
+from scrapers.dto import TablesPayloadDTO
+from scrapers.services.domain_record.constructor_pipeline_service import ConstructorDomainRecordInput
+from scrapers.services.domain_record.constructor_table_extraction_service import ConstructorTableExtractionService
 from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
-from scrapers.single_wiki_article import TablesPayloadDTO
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
