@@ -1,15 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
-from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
+from scrapers.records.assemblers.driver import DriverRecordAssembler
+from scrapers.records.dto.driver import DriverRecordDTO
 from scrapers.services.domain_record.base_pipeline_service import BaseDomainPipelineService
 
-if TYPE_CHECKING:
-    from scrapers.base.contracts import RecordAssemblerProtocol
 
 
 @dataclass(frozen=True, slots=True)
@@ -51,7 +48,9 @@ class DriverPipelineService(
     def assemble(self, payload: DriverRecordDTO) -> dict[str, Any]:
         return self._assembler.assemble(payload)
 
-    def _compat_input_from_source(self, source: dict[str, Any]) -> DriverDomainRecordInput:
+    def _compat_input_from_source(
+        self, source: dict[str, Any]
+    ) -> DriverDomainRecordInput:
         return DriverDomainRecordInput(
             url=str(source["url"]),
             infobox=dict(source["infobox"]),

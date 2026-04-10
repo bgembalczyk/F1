@@ -34,11 +34,11 @@ class CompleteExtractorDomainConfig:
         default_factory=AttachDetailsStrategy,
     )
     record_assembler: (
-            Callable[
-                [dict[str, Any], dict[str, Any] | None],
-                dict[str, Any],
-            ]
-            | None
+        Callable[
+            [dict[str, Any], dict[str, Any] | None],
+            dict[str, Any],
+        ]
+        | None
     ) = None
     record_postprocessor: Callable[[dict[str, Any]], dict[str, Any]] | None = None
 

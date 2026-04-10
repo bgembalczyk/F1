@@ -6,13 +6,13 @@ from scrapers.debug_dumps import write_infobox_dump
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.helpers.transformers import build_transformers
-from scrapers.infobox.html_parser import InfoboxHtmlParser
+from scrapers.infobox.parsers.html import InfoboxHtmlParser
 from scrapers.infobox.parsers.providers.drivers.default import DefaultDriverInfoboxParserProvider
 from scrapers.infobox.parsers.providers.drivers.protocol import DriverInfoboxParserProvider
-from scrapers.infobox.schema_drivers import DRIVER_GENERAL_SCHEMA
+from scrapers.infobox.schemas.driver import DRIVER_GENERAL_SCHEMA
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
-from scrapers.wiki.parsers.elements.infobox import InfoboxParser
+from scrapers.parsers.wiki.infobox import InfoboxParser
 
 
 class DriverInfoboxParser(InfoboxParser):

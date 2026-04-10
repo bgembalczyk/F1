@@ -1,12 +1,11 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Any
 
 from models.wiki_url import WikiUrl
 from scrapers.records.dto.driver import DriverRecordDTO
-from scrapers.records.infobox_record import InfoboxRecordMapper
-from scrapers.records.table_record.base import TableRecordMapper
+from scrapers.records.mappers.infobox import InfoboxRecordMapper
+from scrapers.records.mappers.table_record.base import TableRecordMapper
 
 
 class DriverRecordAssembler:

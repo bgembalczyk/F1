@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import Tag
@@ -8,12 +7,12 @@ from bs4 import Tag
 from models.records.factories.mapping import MappingRecordFactory
 from scrapers.columns.types.auto import AutoColumn
 from scrapers.configs.public import TableConfig
+from scrapers.driver_results_schema_factory import DriverResultsSchemaFactory
+from scrapers.driver_results_table_classifier import DriverResultsTableClassifier
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.table.abc import SectionTableParserBase
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.constants import UNKNOWN_VALUE
-from scrapers.section.driver_results_schema_factory import DriverResultsSchemaFactory
-from scrapers.section.driver_results_table_classifier import DriverResultsTableClassifier
 from scrapers.table_parsing_helper import TableParsingHelper
 from scrapers.table_schema_dsl import TableSchemaDSL
 

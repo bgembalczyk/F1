@@ -1,11 +1,11 @@
 """Fabryka domyślnych polityk HTTP."""
-from cache.wiki_policy import WikipediaCachePolicy
-from http.config import HttpClientConfig
-from http.policies.default_retry import DefaultRetryPolicy
-from http.policies.min_delay_rate_limiter import MinDelayRateLimiter
-from http.policies.rate_limiter import RateLimiter
-from http.policies.response_cache import TextCacheProtocol
-from http.policies.retry import RetryPolicy
+from infrastructure.cache.wiki_policy import WikipediaCachePolicy
+from infrastructure.http.config import HttpClientConfig
+from infrastructure.http.policies.retry.base import RetryPolicy
+from infrastructure.http.policies.retry.default import DefaultRetryPolicy
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
+from infrastructure.http.rate_limiter.base import RateLimiter
+from infrastructure.http.rate_limiter.min_delay import MinDelayRateLimiter
 
 
 class DefaultHttpPolicyFactory:

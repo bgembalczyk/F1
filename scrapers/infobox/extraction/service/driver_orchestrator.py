@@ -7,13 +7,12 @@ from bs4 import Tag
 
 from scrapers.infobox.extraction.extractor.table.first import FirstInfoboxTableExtractor
 from scrapers.infobox.extraction.service.base_orchestrator import BaseInfoboxOrchestrator
-from scrapers.infobox.scraper_drivers import DriverInfoboxParser
+from scrapers.infobox.parsers.driver import DriverInfoboxParser
 from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
-
 
 
 class DriverInfoboxOrchestrator(BaseInfoboxOrchestrator[Tag]):

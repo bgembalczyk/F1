@@ -76,7 +76,9 @@ class CurrentConstructorsTableParser(WikiTableBaseParser):
         }
 
     def parse_row(
-        self, row: dict[str, Any], column_map: dict[str, str]
+        self,
+        row: dict[str, Any],
+        column_map: dict[str, str],
     ) -> dict[str, Any]:
         mapped = super().parse_row(row, column_map)
         normalized = dict(mapped)
