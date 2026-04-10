@@ -1,33 +1,15 @@
-from collections.abc import Iterable
-from typing import Any
+from __future__ import annotations
 
-from bs4 import BeautifulSoup
+from warnings import warn
 
-from scrapers.infobox.extraction.result import InfoboxExtractionResult
-from scrapers.infobox.parsers.circuit import F1CircuitInfoboxParser
-from scrapers.options import ScraperOptions
-from scrapers.parsers.soup import SoupParser
+from .circuit_extractor import CircuitInfoboxExtractionStrategy
+from .circuit_extractor import CircuitInfoboxExtractor
 
-from .protocol import InfoboxExtractorProtocol
+warn(
+    "scrapers.infobox.extraction.extractor.circuit is deprecated; use "
+    "scrapers.infobox.extraction.extractor.circuit_extractor",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-
-class CircuitInfoboxExtractor(InfoboxExtractorProtocol[BeautifulSoup]):
-    def find_infoboxes(self, soup: BeautifulSoup) -> Iterable[BeautifulSoup]:
-        return [soup]
-
-    def build_parser(self, *, options: ScraperOptions, url: str) -> SoupParser:
-        return F1CircuitInfoboxParser(
-            options=options,
-            url=url,
-        )
-
-    def normalize_result(
-        self,
-        parsed_records: list[dict[str, Any]],
-    ) -> InfoboxExtractionResult:
-        return InfoboxExtractionResult(
-            records=[dict(record) for record in parsed_records],
-        )
-
-
-CircuitInfoboxExtractionStrategy = CircuitInfoboxExtractor
+__all__ = ["CircuitInfoboxExtractionStrategy", "CircuitInfoboxExtractor"]
