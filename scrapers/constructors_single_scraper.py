@@ -9,7 +9,7 @@ from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBas
 from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.constructors.constructors_composition import ConstructorScraperCompositionFactory
 from scrapers.constructors.constructors_composition import ConstructorScraperDependencies
-from scrapers.services.domain_record.constructor import ConstructorDomainRecordInput
+from scrapers.services.domain_record.constructor_adapter import ConstructorDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

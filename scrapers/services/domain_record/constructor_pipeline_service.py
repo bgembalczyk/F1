@@ -10,7 +10,7 @@ from scrapers.constructors.constructors_postprocess.assembler import (
 from scrapers.constructors.constructors_postprocess.assembler import (
     ConstructorRecordDTO,
 )
-from scrapers.services.domain_record.base_pipeline_service import BaseFactoryScraper
+from scrapers.services.domain_record.base_adapter import BaseAssemblerPipelineService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:

@@ -1,7 +1,14 @@
-from scrapers.services.domain_record.season_pipeline_service import SeasonDomainRecordInput
-from scrapers.services.domain_record.season_pipeline_service import SeasonPipelineService
+from __future__ import annotations
 
-DomainRecordService = SeasonPipelineService
-SeasonDomainRecordService = SeasonPipelineService
+import warnings
 
-__all__ = ["DomainRecordService", "SeasonDomainRecordService", "SeasonDomainRecordInput"]
+from scrapers.services.domain_record.season_adapter import SeasonDomainRecordInput
+from scrapers.services.domain_record.season_adapter import SeasonPipelineService
+
+warnings.warn(
+    "Module 'domain_record.season' is deprecated; use 'domain_record.season_adapter'.",
+    DeprecationWarning,
+    stacklevel=2,
+)
+
+__all__ = ["SeasonPipelineService", "SeasonDomainRecordInput"]

@@ -18,7 +18,7 @@ from scrapers.drivers.drivers_infobox.service import DriverInfoboxExtractionServ
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
-from scrapers.services.domain_record.driver import DomainRecordService
+from scrapers.services.domain_record.driver_adapter import DriverPipelineService
 from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
 from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
@@ -191,7 +191,7 @@ def test_orchestration_integration_single_driver_uses_injected_dependencies() ->
         dependencies=DriverScraperDependencies(
             infobox_service=_InfoboxStub(),
             sections_service_factory=_SectionsFactoryStub(),
-            domain_record_service=DomainRecordService(
+            domain_record_service=DriverPipelineService(
                 assembler=DriverRecordAssembler(),
             ),
         ),
@@ -214,7 +214,7 @@ def test_driver_composition_factory_for_tests_creates_test_mode_factory() -> Non
 
 def test_driver_composition_factory_for_tests_preserves_provided_services() -> None:
     infobox_stub = DriverInfoboxExtractionService(options=ScraperOptions())
-    domain_record_stub = DomainRecordService()
+    domain_record_stub = DriverPipelineService()
 
     factory = DriverScraperCompositionFactory.for_tests(
         infobox_service=infobox_stub,
@@ -228,7 +228,7 @@ def test_driver_composition_factory_for_tests_preserves_provided_services() -> N
 
 def test_driver_composition_factory_build_uses_provided_services() -> None:
     infobox_stub = DriverInfoboxExtractionService(options=ScraperOptions())
-    domain_record_stub = DomainRecordService()
+    domain_record_stub = DriverPipelineService()
 
     class _SectionsFactoryStub:
         def create(self, *, adapter, options=None, url=None):

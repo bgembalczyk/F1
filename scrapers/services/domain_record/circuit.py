@@ -1,7 +1,14 @@
-from scrapers.services.domain_record.circuit_pipeline_service import CircuitDomainRecordInput
-from scrapers.services.domain_record.circuit_pipeline_service import CircuitPipelineService
+from __future__ import annotations
 
-DomainRecordService = CircuitPipelineService
-CircuitDomainRecordService = CircuitPipelineService
+import warnings
 
-__all__ = ["DomainRecordService", "CircuitDomainRecordService", "CircuitDomainRecordInput"]
+from scrapers.services.domain_record.circuit_adapter import CircuitDomainRecordInput
+from scrapers.services.domain_record.circuit_adapter import CircuitPipelineService
+
+warnings.warn(
+    "Module 'domain_record.circuit' is deprecated; use 'domain_record.circuit_adapter'.",
+    DeprecationWarning,
+    stacklevel=2,
+)
+
+__all__ = ["CircuitPipelineService", "CircuitDomainRecordInput"]

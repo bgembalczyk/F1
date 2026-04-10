@@ -8,7 +8,7 @@ from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBas
 from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.drivers.composition_drivers import DriverScraperCompositionFactory
 from scrapers.drivers.composition_drivers import DriverScraperDependencies
-from scrapers.services.domain_record.driver import DriverDomainRecordInput
+from scrapers.services.domain_record.driver_adapter import DriverDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

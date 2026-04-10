@@ -3,13 +3,13 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
-from scrapers.services.domain_record.circuit import DomainRecordService
+from scrapers.services.domain_record.circuit_adapter import CircuitDomainRecordInput
+from scrapers.services.domain_record.circuit_adapter import CircuitPipelineService
 
 
 @pytest.fixture()
-def service() -> DomainRecordService:
-    return DomainRecordService()
+def service() -> CircuitPipelineService:
+    return CircuitPipelineService()
 
 
 # ---------------------------------------------------------------------------
@@ -21,7 +21,7 @@ def test_collect_lap_record_rows_no_tables() -> None:
     # When article_tables_parser returns empty list → empty result
     mock_parser = MagicMock()
     mock_parser.parse.return_value = []
-    svc = DomainRecordService(article_tables_parser=mock_parser)
+    svc = CircuitPipelineService(article_tables_parser=mock_parser)
     result = svc.collect_lap_record_rows(
         soup=MagicMock(),
         url="https://en.wikipedia.org/wiki/Monza",
@@ -37,7 +37,7 @@ def test_collect_lap_record_rows_table_without_table_key() -> None:
     # table_data missing "_table" key → skipped
     mock_parser = MagicMock()
     mock_parser.parse.return_value = [{"headers": [], "table_type": None}]
-    svc = DomainRecordService(article_tables_parser=mock_parser)
+    svc = CircuitPipelineService(article_tables_parser=mock_parser)
     result = svc.collect_lap_record_rows(
         soup=MagicMock(),
         url="https://en.wikipedia.org/wiki/Monza",
@@ -55,7 +55,7 @@ def test_collect_lap_record_rows_non_lap_table_skipped() -> None:
     mock_parser.parse.return_value = [
         {"_table": mock_table, "headers": ["Name", "Date"], "table_type": "other"},
     ]
-    svc = DomainRecordService(article_tables_parser=mock_parser)
+    svc = CircuitPipelineService(article_tables_parser=mock_parser)
     result = svc.collect_lap_record_rows(
         soup=MagicMock(),
         url="https://en.wikipedia.org/wiki/Monza",
@@ -78,7 +78,7 @@ def test_assemble_record_returns_dict() -> None:
         "url": "https://example.com",
         "name": "Test",
     }
-    svc = DomainRecordService(assembler=mock_assembler)
+    svc = CircuitPipelineService(assembler=mock_assembler)
     result = svc.assemble_record(
         CircuitDomainRecordInput(
             source_url="https://example.com",

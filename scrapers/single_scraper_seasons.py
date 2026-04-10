@@ -10,7 +10,7 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.seasons.composition_seasons import SeasonScraperCompositionFactory
 from scrapers.seasons.composition_seasons import SeasonScraperDependencies
 from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
-from scrapers.services.domain_record.season import SeasonDomainRecordInput
+from scrapers.services.domain_record.season_adapter import SeasonDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

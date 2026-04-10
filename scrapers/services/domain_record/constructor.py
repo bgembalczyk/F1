@@ -1,11 +1,14 @@
-from scrapers.services.domain_record.constructor_pipeline_service import ConstructorDomainRecordInput
-from scrapers.services.domain_record.constructor_pipeline_service import ConstructorPipelineService
+from __future__ import annotations
 
-DomainRecordService = ConstructorPipelineService
-ConstructorDomainRecordService = ConstructorPipelineService
+import warnings
 
-__all__ = [
-    "DomainRecordService",
-    "ConstructorDomainRecordService",
-    "ConstructorDomainRecordInput",
-]
+from scrapers.services.domain_record.constructor_adapter import ConstructorDomainRecordInput
+from scrapers.services.domain_record.constructor_adapter import ConstructorPipelineService
+
+warnings.warn(
+    "Module 'domain_record.constructor' is deprecated; use 'domain_record.constructor_adapter'.",
+    DeprecationWarning,
+    stacklevel=2,
+)
+
+__all__ = ["ConstructorPipelineService", "ConstructorDomainRecordInput"]
