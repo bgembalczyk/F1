@@ -8,7 +8,7 @@ from scrapers.base.helpers.helpers import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import TeamLiveriesSectionParser
 from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.splitters import SponsorshipRecordSplitter
-from scrapers.wiki.scraper import WikiScraper
+from scrapers.wiki.scraper_wiki import WikiScraper
 
 if TYPE_CHECKING:
     from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.paren_classifier import ParenClassifier

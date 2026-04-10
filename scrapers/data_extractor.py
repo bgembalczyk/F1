@@ -12,7 +12,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
 from scrapers.base.services.result_export_service import ResultExportService
 from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
-from scrapers.wiki.component_metadata import validate_metadata_for_component_class
+from scrapers.wiki.component_metadata_wiki import validate_metadata_for_component_class
 
 
 class BaseDataExtractor(ABC):

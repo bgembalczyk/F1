@@ -1,0 +1,47 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+from typing import Protocol
+from typing import TypeAlias
+from typing import TypeVar
+from typing import runtime_checkable
+
+from models.value_objects.common_terms import EntityName
+from models.value_objects.common_terms import SectionId
+from models.value_objects.common_terms import WikiUrl
+from scrapers.base.types import JsonValue
+from scrapers.base.types import PipelineRecord
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.options import ScraperOptions
+    from scrapers.base.sections.adapter import SectionAdapter
+
+SectionRecord: TypeAlias = PipelineRecord
+SectionMetadata: TypeAlias = dict[str, JsonValue]
+
+
+@dataclass(frozen=True)
+class SectionParseResult:
+    """Unified output for domain section parsers."""
+
+    section_id: SectionId
+    section_label: EntityName
+    records: list[SectionRecord]
+    metadata: SectionMetadata
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "section_id", SectionId.from_raw(self.section_id))
+        object.__setattr__(
+            self,
+            "section_label",
+            EntityName.from_raw(self.section_label),
+        )
+
+
+
+
+
+

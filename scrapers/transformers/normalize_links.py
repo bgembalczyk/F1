@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.normalization import EmptyValuePolicy
-from scrapers.base.normalization_pipeline import normalize_value
-from scrapers.base.transformers.record_transformer import RecordTransformer
+from scrapers.normalization_pipeline import normalize_value
+from scrapers.normalization_utils import EmptyValuePolicy
+from scrapers.transformers.record.base import RecordTransformer
 
 if TYPE_CHECKING:
     from validation.validator_base import ExportRecord

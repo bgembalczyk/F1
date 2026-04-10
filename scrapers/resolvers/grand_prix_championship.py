@@ -1,0 +1,30 @@
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+from adapters.row_background import HtmlRowBackgroundColorAdapter
+from scrapers.helpers.constants import BACKGROUND_MAP
+from scrapers.helpers.constants import DEFAULT_CHAMPIONSHIP
+from scrapers.helpers.constants import UNKNOWN_CHAMPIONSHIP
+
+if TYPE_CHECKING:
+    from bs4 import Tag
+
+
+class GrandPrixChampionshipResolver:
+    """Domain service mapping normalized row color to championship domain value."""
+
+    def __init__(
+        self,
+        *,
+        row_background_adapter: HtmlRowBackgroundColorAdapter | None = None,
+    ) -> None:
+        self._row_background_adapter = (
+            row_background_adapter or HtmlRowBackgroundColorAdapter()
+        )
+
+    def resolve(self, row: Tag) -> str:
+        color = self._row_background_adapter.extract(row)
+        if color is None:
+            return DEFAULT_CHAMPIONSHIP
+        return BACKGROUND_MAP.get(color, UNKNOWN_CHAMPIONSHIP)

@@ -7,7 +7,7 @@ from scrapers.errors import ErrorCategory
 from scrapers.errors import ScraperNotFoundError
 from scrapers.helpers.html_utils import find_section_elements
 from scrapers.types import ExportableRecord
-from scrapers.wiki.scraper import WikiScraper
+from scrapers.wiki.scraper_wiki import WikiScraper
 
 
 class ListScraper(WikiScraper, ABC):

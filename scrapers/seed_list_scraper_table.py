@@ -7,9 +7,9 @@ from warnings import warn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.wiki.component_metadata import LIST_SCRAPER_KIND
-from scrapers.wiki.component_metadata import ComponentMetadata
-from scrapers.wiki.component_metadata import build_component_metadata
+from scrapers.wiki.component_metadata_wiki import LIST_SCRAPER_KIND
+from scrapers.wiki.component_metadata_wiki import ComponentMetadata
+from scrapers.wiki.component_metadata_wiki import build_component_metadata
 
 if TYPE_CHECKING:
     from collections.abc import Sequence

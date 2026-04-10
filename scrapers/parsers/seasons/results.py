@@ -10,7 +10,7 @@ from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.tyre import TyreColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.parsers.seasons.table import SeasonTableParser
-from scrapers.sections.aliases import DOMAIN_SECTION_ALIASES
+from scrapers.section.aliases import DOMAIN_SECTION_ALIASES
 from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.sections.adapter import collect_section_elements

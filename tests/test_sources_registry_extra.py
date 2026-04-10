@@ -5,7 +5,7 @@ import warnings
 
 import pytest
 
-from scrapers.wiki import sources_registry as registry
+from scrapers.wiki import sources_registry_wiki as registry
 
 
 class TestWikiSourceDefinitionProperties:
@@ -201,7 +201,7 @@ class TestValidateCanonicalSource:
 
 class TestValidateLegacySeedAliases:
     def test_raises_when_alias_conflicts_with_canonical_seed(self, monkeypatch):
-        import scrapers.wiki.sources_registry as reg
+        import scrapers.wiki.sources_registry_wiki as reg
 
         monkeypatch.setattr(
             reg,
@@ -217,7 +217,7 @@ class TestValidateLegacySeedAliases:
             reg.validate_legacy_seed_aliases()
 
     def test_raises_when_canonical_target_missing(self, monkeypatch):
-        import scrapers.wiki.sources_registry as reg
+        import scrapers.wiki.sources_registry_wiki as reg
 
         monkeypatch.setattr(
             reg,
@@ -235,7 +235,7 @@ class TestValidateLegacySeedAliases:
 
 class TestValidateLegacyFilenameAliases:
     def test_raises_when_alias_conflicts_with_canonical_filename(self, monkeypatch):
-        import scrapers.wiki.sources_registry as reg
+        import scrapers.wiki.sources_registry_wiki as reg
 
         monkeypatch.setattr(
             reg,
@@ -251,7 +251,7 @@ class TestValidateLegacyFilenameAliases:
             reg.validate_legacy_filename_aliases()
 
     def test_raises_when_canonical_target_missing(self, monkeypatch):
-        import scrapers.wiki.sources_registry as reg
+        import scrapers.wiki.sources_registry_wiki as reg
 
         monkeypatch.setattr(
             reg,

@@ -13,8 +13,8 @@ from scrapers.helpers.constants import season_headers
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.paren_classifier import ParenClassifier
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.sponsorship_liveries.splitters.broader_scope import BroaderScopeSplitter
-from scrapers.parsers.sponsorship_liveries.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import BroaderScopeSplitter
+from scrapers.parsers.liveries.sponsorship.splitters.record.facade import SponsorshipRecordSplitter
 from scrapers.parsers.table.sponsorship import SponsorshipTableParser
 from scrapers.pipeline_table import TablePipeline
 
@@ -268,6 +268,5 @@ class SponsorshipSectionParser:
 
 
 __all__ = [
-    "SponsorshipTableParser",
     "SponsorshipSectionParser",
 ]

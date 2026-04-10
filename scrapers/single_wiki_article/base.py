@@ -5,15 +5,15 @@ from typing import ClassVar
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.factory.source_adapter_fetcher_shim import ScraperRuntimeFactory
-from scrapers.base.helpers.config_factory import build_scraper_options
-from scrapers.base.helpers.helpers import init_scraper_options
-from scrapers.base.options import ScraperOptions
-from scrapers.base.single_wiki_article import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article import SectionSelectionStrategy
-from scrapers.base.single_wiki_article import SectionsPayloadDTO
-from scrapers.base.single_wiki_article import TablesPayloadDTO
-from scrapers.wiki.scraper import WikiScraper
+from infrastructure.helpers import init_scraper_options
+from scrapers.dto import InfoboxPayloadDTO
+from scrapers.dto import SectionsPayloadDTO
+from scrapers.dto import TablesPayloadDTO
+from scrapers.helpers.config_factory import build_scraper_options
+from scrapers.options import ScraperOptions
+from scrapers.runtime.factory import ScraperRuntimeFactory
+from scrapers.section.selection_strategy.base import SectionSelectionStrategy
+from scrapers.wiki.scraper_wiki import WikiScraper
 
 
 class SingleWikiArticleScraperBase(WikiScraper, ABC):

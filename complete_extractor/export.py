@@ -8,7 +8,7 @@ from scrapers.complete_scraper_drivers import CompleteDriverDataExtractor
 from scrapers.complete_scraper_engines import F1CompleteEngineManufacturerDataExtractor
 from scrapers.constructors_complete_scraper import CompleteConstructorsDataExtractor
 from scrapers.parsers.helpers import extract_driver_text
-from scrapers.services.result_export_service import ResultExportService
+from scrapers.services.result_export import ResultExportService
 
 
 def manufacturer_name_initial(record: dict[str, Any]) -> str:

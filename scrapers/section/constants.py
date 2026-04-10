@@ -19,7 +19,7 @@ from scrapers.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
 from scrapers.headers_shared import POINTS_HEADER
 from scrapers.headers_shared import POINTS_HEADER_TO_KEY
 from scrapers.section.config.driver_results import DriverResultsSectionConfig
-from scrapers.section.critical_sections import CriticalSection
+from scrapers.section.critical import CriticalSection
 from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
 
 COMPLETE_RESULTS_REQUIRED_HEADER = "Year"

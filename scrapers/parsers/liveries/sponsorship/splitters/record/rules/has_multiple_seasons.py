@@ -1,0 +1,7 @@
+from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
+
+
+class HasMultipleSeasonsRule:
+    def should_apply(self, record: PipelineRecord) -> bool:
+        seasons = record.payload.get("season")
+        return isinstance(seasons, list) and len(seasons) > 1

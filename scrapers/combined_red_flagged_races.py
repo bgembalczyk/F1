@@ -16,7 +16,7 @@ from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
-from scrapers.wiki.scraper import WikiScraper
+from scrapers.wiki.scraper_wiki import WikiScraper
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions

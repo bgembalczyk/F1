@@ -1,9 +1,9 @@
 from datetime import datetime
 from datetime import timezone
 
-from scrapers.wiki.constants import SEED_RECORD_SCHEMA_VERSION
-from scrapers.wiki.seed_l0_compat import compute_seed_quality
-from scrapers.wiki.seed_l0_compat import normalize_seed_records
+from scrapers.wiki.constants_wiki import SEED_RECORD_SCHEMA_VERSION
+from scrapers.wiki.seed_l0_compat_wiki import compute_seed_quality
+from scrapers.wiki.seed_l0_compat_wiki import normalize_seed_records
 
 
 def test_normalize_seed_records_contract() -> None:

@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 
-from scrapers.base.transformers.pipeline import TransformersPipeline
-from scrapers.base.transformers.record_transformer import RecordTransformer
+from scrapers.transformers.pipeline import TransformersPipeline
+from scrapers.transformers.record.base import RecordTransformer
 from validation.validator_base import ExportRecord
 
 

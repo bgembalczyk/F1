@@ -6,7 +6,7 @@ from layers.zero.record_merge_ops import merge_values
 from models.merge_types.record.driver import DriverRecordModel
 from models.merge_types.record.season import SeasonRecordModel
 from models.merge_types.record.team import TeamRecordModel
-from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
+from scrapers.wiki.constants_wiki import CHASSIS_CONSTRUCTOR_DOMAINS
 
 DomainRecordsProcessor = Callable[[list[object]], list[object]]
 

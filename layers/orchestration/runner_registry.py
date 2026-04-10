@@ -16,7 +16,7 @@ from scrapers.constructors.constructors_helpers.export import export_complete_co
 from scrapers.drivers.drivers_helpers.export import export_complete_drivers
 from scrapers.engines.helpers_engines.export import export_complete_engine_manufacturers
 from scrapers.seasons.helpers_seasons import export_complete_seasons
-from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
+from scrapers.wiki.discovery_wiki import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
     from pathlib import Path

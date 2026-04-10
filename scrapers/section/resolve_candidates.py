@@ -1,5 +1,5 @@
-from models.value_objects.common_terms import SectionId
-from scrapers.base.sections.section_id_resolver import SectionIdResolver
+from models.section_id import SectionId
+from scrapers.section.id_resolver import SectionIdResolver
 
 
 def resolve_section_candidates(

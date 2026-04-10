@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from scrapers.sections.constants import COMMON_SECTION_ALIASES
+from scrapers.section.constants import COMMON_SECTION_ALIASES
 from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
 from scrapers.wiki.parsers.sections.helpers import profile_aliases_for_target
 from scrapers.wiki.parsers.sections.normalization import normalize_section_text

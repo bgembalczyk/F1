@@ -17,7 +17,7 @@ from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import F1Sponsor
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
-from scrapers.wiki.scraper import WikiScraper
+from scrapers.wiki.scraper_wiki import WikiScraper
 from tests.support.refactored_base_classes_utils import assert_issubclass_cases
 from tests.support.refactored_base_classes_utils import assert_not_issubclass_cases
 

@@ -14,7 +14,7 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
-from scrapers.wiki.scraper import WikiScraper
+from scrapers.wiki.scraper_wiki import WikiScraper
 from validation.record_factory_validator import adapt_record_factory_validator
 
 

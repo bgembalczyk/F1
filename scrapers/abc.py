@@ -27,7 +27,7 @@ from scrapers.base.services.result_export_service import ResultExportService
 from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.validation_runner import ValidationRunner
-from scrapers.wiki.component_metadata import validate_metadata_for_component_class
+from scrapers.wiki.component_metadata_wiki import validate_metadata_for_component_class
 from validation.validator_base import ExportRecord
 
 T = TypeVar("T")

@@ -2,7 +2,7 @@ from collections.abc import Sequence
 
 from scrapers.options import ScraperOptions
 from scrapers.transformers.normalize_links import NormalizeLinksTransformer
-from scrapers.transformers.record_transformer import RecordTransformer
+from scrapers.transformers.record import RecordTransformer
 
 
 def build_transformers(

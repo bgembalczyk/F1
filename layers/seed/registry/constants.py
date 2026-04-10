@@ -23,9 +23,9 @@ from scrapers.races.red_flagged_races_scraper.combined import RedFlaggedRacesScr
 from scrapers.seasons.list_scraper_seasons import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper_tyres import TyreManufacturersScraper
-from scrapers.wiki.sources_registry import get_source_by_seed_name
-from scrapers.wiki.sources_registry import resolve_seed_name
-from scrapers.wiki.sources_registry import validate_sources_registry_consistency
+from scrapers.wiki.sources_registry_wiki import get_source_by_seed_name
+from scrapers.wiki.sources_registry_wiki import resolve_seed_name
+from scrapers.wiki.sources_registry_wiki import validate_sources_registry_consistency
 
 
 

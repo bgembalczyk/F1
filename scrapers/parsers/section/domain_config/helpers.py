@@ -1,0 +1,126 @@
+from __future__ import annotations
+
+from collections import defaultdict
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+from scrapers.parsers.section.domain_config.dataclass import SectionDomainConfig
+from scrapers.parsers.section.wiki.normalization import normalize_section_text
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
+
+
+
+
+SECTION_PROFILES_CONFIG: Mapping[str, SectionDomainConfig] = {
+    "seasons": SectionDomainConfig(
+        canonical_sections=frozenset(
+            {
+                "regulation changes",
+                "mid-season changes",
+            },
+        ),
+        heading_aliases={
+            "regulation changes": frozenset({"rule changes"}),
+            "mid-season changes": frozenset({"driver changes"}),
+        },
+    ),
+    "drivers": SectionDomainConfig(
+        canonical_sections=frozenset(
+            {"career results", "racing record", "non-championship"},
+        ),
+        heading_aliases={
+            "career results": frozenset({"racing record", "karting record"}),
+            "racing record": frozenset({"motorsport career results"}),
+            "non-championship": frozenset(
+                {"non-championship races", "non-championship_races"},
+            ),
+        },
+    ),
+    "circuits": SectionDomainConfig(
+        canonical_sections=frozenset(
+            {"layout history", "lap records", "events", "circuits"},
+        ),
+        heading_aliases={
+            "layout history": frozenset({"history"}),
+            "events": frozenset({"races"}),
+            "lap records": frozenset({"formula one lap records"}),
+            "circuits": frozenset({"formula one circuits"}),
+        },
+    ),
+    "constructors": SectionDomainConfig(
+        canonical_sections=frozenset(
+            {
+                "history",
+                "championship results",
+                "complete formula one results",
+                "former constructors",
+            },
+        ),
+        heading_aliases={
+            "championship results": frozenset(
+                {"formula one/world championship results"},
+            ),
+            "complete formula one results": frozenset(
+                {"complete world championship results"},
+            ),
+            "former constructors": frozenset({"defunct constructors"}),
+        },
+    ),
+    "grands_prix": SectionDomainConfig(
+        canonical_sections=frozenset({"by year", "winners"}),
+        heading_aliases={},
+    ),
+}
+
+
+def validate_section_profiles_config(
+    config: Mapping[str, SectionDomainConfig],
+) -> None:
+    for domain, domain_config in config.items():
+        normalized_canonical = {
+            normalize_section_text(value) for value in domain_config.canonical_sections
+        }
+
+        invalid_canonical_keys = [
+            canonical
+            for canonical in domain_config.heading_aliases
+            if normalize_section_text(canonical) not in normalized_canonical
+        ]
+        if invalid_canonical_keys:
+            msg = (
+                "Invalid canonical ids in heading_aliases for "
+                f"domain={domain}: {sorted(invalid_canonical_keys)}"
+            )
+            raise ValueError(
+                msg,
+            )
+
+        alias_to_canonical: dict[str, set[str]] = defaultdict(set)
+        for canonical, aliases in domain_config.heading_aliases.items():
+            normalized_canonical_id = normalize_section_text(canonical)
+            for alias in aliases:
+                normalized_alias = normalize_section_text(alias)
+                if normalized_alias:
+                    alias_to_canonical[normalized_alias].add(normalized_canonical_id)
+
+        duplicated_aliases = {
+            alias: sorted(canonicals)
+            for alias, canonicals in alias_to_canonical.items()
+            if len(canonicals) > 1
+        }
+        if duplicated_aliases:
+            msg = (
+                "Duplicated aliases in section profile config for "
+                f"domain={domain}: {duplicated_aliases}"
+            )
+            raise ValueError(
+                msg,
+            )
+
+
+__all__ = [
+    "SECTION_PROFILES_CONFIG",
+    "validate_section_profiles_config",
+]

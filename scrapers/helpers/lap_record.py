@@ -1,3 +1,6 @@
+"""Funkcje pomocnicze do scalania rekordów okrążeń.
+Wspólne narzędzia do obsługi rekordów lap record."""
+
 import re
 from typing import Any
 
@@ -11,7 +14,21 @@ from scrapers.helpers.layout import layout_from_spanning_header
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.time import parse_time_seconds_from_text
 from scrapers.lap_records_table import LapRecordsTableScraper
-from scrapers.services_circuit.lap_record_merging import normalize_lap_record
+
+
+import re
+from typing import Any
+from typing import Callable
+from typing import Iterable
+from typing import Mapping
+
+from models.value_objects.date.normalized import NormalizedDate
+from scrapers.helpers.text import choose_richer_entity
+from scrapers.helpers.text_normalization import match_driver_loose
+from scrapers.helpers.text_normalization import match_vehicle_prefix
+from scrapers.helpers.text_normalization import normalize_text
+from scrapers.helpers.time import normalize_time_value
+from scrapers.helpers.time import parse_time_seconds_from_text
 
 
 def extract_time(text: str) -> float | None:
@@ -129,3 +146,780 @@ def collect_lap_records(
             all_records.append(record)
 
     return all_records
+
+def normalize_entity_value(value: Any) -> dict[str, Any] | None:
+    if value is None:
+        return None
+    if isinstance(value, dict):
+        text = (value.get("text") or value.get("name") or "").strip()
+        url = value.get("url")
+        if not text and not url:
+            return None
+        return {"text": text, "url": url}
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return None
+        return {"text": text, "url": None}
+    return None
+
+
+def normalize_lap_record(record: dict[str, Any]) -> dict[str, Any]:
+    """Normalizuje rekord okrążenia (driver/vehicle/series oraz czas)."""
+    if not record:
+        return record
+
+    if record.get("driver") is None and record.get("driver_rider") is not None:
+        record["driver"] = record.get("driver_rider")
+
+    driver = normalize_entity_value(record.get("driver"))
+    if driver is not None:
+        record["driver"] = driver
+    else:
+        record.pop("driver", None)
+
+    vehicle_value = record.get("vehicle") or record.get("car")
+    vehicle = normalize_entity_value(vehicle_value)
+    if vehicle is not None:
+        record["vehicle"] = vehicle
+    else:
+        record.pop("vehicle", None)
+    record.pop("car", None)
+
+    series_value = (
+        record.get("series")
+        or record.get("category")
+        or record.get("class")
+        or record.get("class_")
+    )
+    series = normalize_entity_value(series_value)
+    if series is not None:
+        record["series"] = series
+    else:
+        record.pop("series", None)
+    record.pop("category", None)
+    record.pop("class", None)
+    record.pop("class_", None)
+
+    normalize_time_value(record)
+    time_seconds = parse_lap_record_time_from_record(record)
+    if time_seconds is not None:
+        record["time"] = float(time_seconds)
+    record.pop("time_seconds", None)
+
+    record.pop("driver_rider", None)
+
+    return record
+
+
+def build_core_key(rec: dict[str, Any]) -> tuple | None:
+    """
+    Klucz „rdzeniowy" do łączenia rekordów nawet jeśli brakuje time.
+    (driver_text, vehicle_text, year)
+    """
+    driver_txt = normalize_lap_record_entity(rec.get("driver"))
+    vehicle_obj = rec.get("vehicle") or rec.get("car")
+    vehicle_txt = normalize_lap_record_entity(vehicle_obj)
+    year = extract_year(rec)
+
+    if not driver_txt or not vehicle_txt or not year:
+        return None
+
+    return driver_txt, vehicle_txt, year
+
+
+def is_record_subset(
+    small: dict[str, Any],
+    big: dict[str, Any],
+) -> bool:
+    """
+    True, jeśli small nie wnosi sprzecznych danych względem big.
+    Używamy tylko do bezpiecznego fallback-merge.
+    """
+    for key, small_value in small.items():
+        if is_empty_or_missing_value(key, small_value, big):
+            continue
+        big_value = big.get(key)
+        if not are_subset_values_compatible(key, small_value, big_value):
+            return False
+    return True
+
+
+def is_empty_or_missing_value(
+    key: str,
+    small_value: Any,
+    big: dict[str, Any],
+) -> bool:
+    return small_value is None or key not in big or big.get(key) is None
+
+
+def are_subset_values_compatible(key: str, small_value: Any, big_value: Any) -> bool:
+    if key == "time":
+        return same_time_value(small_value, big_value)
+    if key == "driver":
+        return match_driver_loose(small_value, big_value)
+    if key in ("vehicle", "car"):
+        return match_vehicle_prefix(small_value, big_value, min_len=6)
+    if isinstance(small_value, dict) and isinstance(big_value, dict):
+        return same_dict_text_value(small_value, big_value)
+    return small_value == big_value
+
+
+def same_time_value(small_value: Any, big_value: Any) -> bool:
+    small_time = parse_time_seconds_from_text(small_value)
+    big_time = parse_time_seconds_from_text(big_value)
+    if small_time is None or big_time is None:
+        return True
+    return round(float(small_time), 6) == round(float(big_time), 6)
+
+
+def same_dict_text_value(
+    small_value: dict[str, Any],
+    big_value: dict[str, Any],
+) -> bool:
+    small_text = (
+        (small_value.get("text") or small_value.get("name") or "").strip().lower()
+    )
+    big_text = (big_value.get("text") or big_value.get("name") or "").strip().lower()
+    return not (small_text and big_text and small_text != big_text)
+
+
+def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
+    """Wybiera najlepszą datę i rok (preferuje dokładniejszy iso)."""
+    best_date = None
+    best_year = None
+
+    for r in records:
+        if best_year is None and r.get("year") is not None:
+            best_year = r.get("year")
+
+        d = r.get("date")
+        if not d:
+            continue
+        if best_date is None:
+            best_date = d
+            continue
+
+        if isinstance(best_date, NormalizedDate):
+            iso_cur = best_date.iso or ""
+        else:
+            iso_cur = (
+                best_date.get("iso") if isinstance(best_date, dict) else ""
+            ) or ""
+
+        if isinstance(d, NormalizedDate):
+            iso_new = d.iso or ""
+        else:
+            iso_new = (d.get("iso") if isinstance(d, dict) else "") or ""
+        if len(iso_new) > len(iso_cur):
+            best_date = d
+
+    return best_date, best_year
+
+
+def series_candidate(record: dict[str, Any]) -> dict[str, Any] | None:
+    """Extrahuje kandydata serii/kategorii z rekordu."""
+    field_value = (
+        record.get("series")
+        or record.get("category")
+        or record.get("class")
+        or record.get("class_")
+    )
+    if field_value is None:
+        return None
+    if isinstance(field_value, dict):
+        return {
+            "text": (field_value.get("text") or field_value.get("name") or "").strip(),
+            "url": field_value.get("url"),
+        }
+    return {"text": str(field_value).strip(), "url": None}
+
+
+def select_best_series(records: list[dict[str, Any]]) -> dict[str, Any] | None:
+    """Wybiera najlepszą serię/kategorię (preferuje wersję z linkiem)."""
+    best = None
+    best_has_url = False
+    best_len = 0
+
+    for r in records:
+        cand = series_candidate(r)
+        if not cand:
+            continue
+
+        text = (cand.get("text") or "").strip()
+        has_url = bool(cand.get("url"))
+        text_len = len(text)
+
+        if best is None:
+            best = cand
+            best_has_url = has_url
+            best_len = text_len
+            continue
+
+        if has_url and not best_has_url:
+            best = cand
+            best_has_url = True
+            best_len = text_len
+            continue
+
+        if has_url == best_has_url and text_len > best_len:
+            best = cand
+            best_len = text_len
+
+    return best
+
+
+def collect_other_fields(records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Zbiera pozostałe pola, bez przenoszenia dubli time_seconds/category/class."""
+    ignore_keys = {
+        "driver",
+        "vehicle",
+        "car",
+        "time",
+        "time_seconds",
+        "date",
+        "year",
+        "series",
+        "category",
+        "class",
+        "class_",
+    }
+
+    merged: dict[str, Any] = {}
+    for r in records:
+        for k, v in r.items():
+            if k in ignore_keys:
+                continue
+            if k not in merged and v is not None:
+                merged[k] = v
+    return merged
+
+
+def merge_two_records(
+    base: dict[str, Any],
+    extra: dict[str, Any],
+) -> dict[str, Any]:
+    """Scala dwa rekordy w jeden, preferując bogatsze dane."""
+    merged: dict[str, Any] = dict(base)
+
+    merge_best_entity(
+        merged,
+        base,
+        extra,
+        target_key="driver",
+        source_keys=("driver",),
+    )
+    merge_best_entity(
+        merged,
+        base,
+        extra,
+        target_key="vehicle",
+        source_keys=("vehicle", "car"),
+    )
+    merge_time(merged, base, extra)
+    merge_date_or_year(merged, base, extra)
+    merge_series(merged, base, extra)
+    fill_missing_fields_from_extra(merged, extra)
+
+    return merged
+
+
+def merge_best_entity(
+    merged: dict[str, Any],
+    base: dict[str, Any],
+    extra: dict[str, Any],
+    *,
+    target_key: str,
+    source_keys: tuple[str, ...],
+) -> None:
+    base_value = first_present_value(base, source_keys)
+    extra_value = first_present_value(extra, source_keys)
+    if isinstance(base_value, dict) and base_value.get("url"):
+        merged[target_key] = base_value
+    elif extra_value is not None:
+        merged[target_key] = extra_value
+
+
+def first_present_value(record: dict[str, Any], keys: tuple[str, ...]) -> Any:
+    for key in keys:
+        value = record.get(key)
+        if value is not None:
+            return value
+    return None
+
+
+def merge_time(
+    merged: dict[str, Any],
+    base: dict[str, Any],
+    extra: dict[str, Any],
+) -> None:
+    parsed_time = parse_lap_record_time_from_record(base)
+    if parsed_time is None:
+        parsed_time = parse_lap_record_time_from_record(extra)
+    if parsed_time is not None:
+        merged["time"] = float(parsed_time)
+    merged.pop("time_seconds", None)
+
+
+def merge_date_or_year(
+    merged: dict[str, Any],
+    base: dict[str, Any],
+    extra: dict[str, Any],
+) -> None:
+    best_date, best_year = select_best_date_year([base, extra])
+    if best_year is None:
+        best_year = extract_year_from_event(
+            base,
+        ) or extract_year_from_event(extra)
+
+    if best_date is not None:
+        merged["date"] = best_date
+        merged.pop("year", None)
+    elif best_year is not None:
+        merged["year"] = best_year
+
+
+def merge_series(
+    merged: dict[str, Any],
+    base: dict[str, Any],
+    extra: dict[str, Any],
+) -> None:
+    best_series = select_best_series([base, extra])
+    if best_series is not None:
+        merged["series"] = best_series
+    merged.pop("category", None)
+    merged.pop("class", None)
+    merged.pop("class_", None)
+
+
+def fill_missing_fields_from_extra(
+    merged: dict[str, Any],
+    extra: dict[str, Any],
+) -> None:
+    for key, value in extra.items():
+        if key in {"time_seconds", "category", "class", "class_"}:
+            continue
+        if merged.get(key) is None and value is not None:
+            merged[key] = value
+
+
+def merge_record_group(
+    records: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Scal grupę rekordów do jednego."""
+    merged = collect_other_fields(records)
+
+    set_group_best_entities(merged, records)
+    set_group_best_time(merged, records)
+    set_group_best_date_or_year(merged, records)
+    set_group_best_series(merged, records)
+
+    return merged
+
+
+def set_group_best_entities(
+    merged: dict[str, Any],
+    records: list[dict[str, Any]],
+) -> None:
+    best_driver = select_best_field_with_url(records, "driver")
+    best_vehicle = select_best_field_with_url(records, "vehicle", "car")
+    if best_driver is not None:
+        merged["driver"] = best_driver
+    if best_vehicle is not None:
+        merged["vehicle"] = best_vehicle
+
+
+def set_group_best_time(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
+    for record in records:
+        parsed_time = parse_lap_record_time_from_record(record)
+        if parsed_time is not None:
+            merged["time"] = float(parsed_time)
+            return
+
+
+def set_group_best_date_or_year(
+    merged: dict[str, Any],
+    records: list[dict[str, Any]],
+) -> None:
+    best_date, best_year = select_best_date_year(records)
+    if best_year is None:
+        best_year = find_first_event_year(records)
+
+    if best_date is not None:
+        merged["date"] = best_date
+    elif best_year is not None:
+        merged["year"] = best_year
+
+
+def find_first_event_year(records: list[dict[str, Any]]) -> int | None:
+    for record in records:
+        year = extract_year_from_event(record)
+        if year:
+            return year
+    return None
+
+
+def set_group_best_series(
+    merged: dict[str, Any],
+    records: list[dict[str, Any]],
+) -> None:
+    best_series = select_best_series(records)
+    if best_series is not None:
+        merged["series"] = best_series
+
+
+def stage_a_partition_by_record_key(
+    records: list[dict[str, Any]],
+) -> tuple[dict[tuple, list[dict[str, Any]]], list[dict[str, Any]]]:
+    """
+    Etap A: Partycjonowanie rekordów po record_key (driver+vehicle+year+time).
+    Zwraca buckety matching'owe i pozostałe rekordy.
+    """
+    key_buckets: dict[tuple, list[dict[str, Any]]] = {}
+    leftovers: list[dict[str, Any]] = []
+
+    for rec in records:
+        k = build_lap_record_key(rec, year_extractor=extract_year)
+        if k is None:
+            leftovers.append(rec)
+        else:
+            key_buckets.setdefault(k, []).append(rec)
+
+    return key_buckets, leftovers
+
+
+def stage_b_merge_by_core_key(
+    merged_main: list[dict[str, Any]],
+    leftovers: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """
+    Etap B: Merge po core_key (driver+vehicle+year) - łączy rekordy nawet bez time.
+    Zwraca zaktualizowane merged_main i pozostałe rekordy.
+    """
+    core_index: dict[tuple, list[int]] = {}
+    for i, rec in enumerate(merged_main):
+        ck = build_core_key(rec)
+        if ck is not None:
+            core_index.setdefault(ck, []).append(i)
+
+    still_left: list[dict[str, Any]] = []
+    for rec in leftovers:
+        ck = build_core_key(rec)
+        if ck is None:
+            still_left.append(rec)
+            continue
+
+        cand_ids = core_index.get(ck, [])
+        if not cand_ids:
+            still_left.append(rec)
+            continue
+
+        rec_t = parse_lap_record_time_from_record(rec)
+        chosen_idx = None
+        if rec_t is not None:
+            for idx in cand_ids:
+                tgt_t = parse_lap_record_time_from_record(merged_main[idx])
+                if tgt_t is not None and round(float(tgt_t), 6) == round(
+                    float(rec_t),
+                    6,
+                ):
+                    chosen_idx = idx
+                    break
+
+        if chosen_idx is None:
+            chosen_idx = cand_ids[0]
+
+        merged_main[chosen_idx] = merge_two_records(merged_main[chosen_idx], rec)
+
+    return merged_main, still_left
+
+
+def stage_c_merge_by_driver_time(
+    merged_main: list[dict[str, Any]],
+    still_left: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """
+    Etap C: Merge po (driver+time) z prefixem vehicle - dla uciętych vehicle.
+    Zwraca zaktualizowane merged_main i pozostałe rekordy.
+    """
+    index_dt: dict[tuple, list[int]] = {}
+    for i, rec in enumerate(merged_main):
+        d = normalize_lap_record_entity(rec.get("driver"))
+        t = parse_lap_record_time_from_record(rec)
+        if d and t is not None:
+            index_dt.setdefault((d, round(float(t), 6)), []).append(i)
+
+    final_left: list[dict[str, Any]] = []
+    for rec in still_left:
+        d = normalize_lap_record_entity(rec.get("driver"))
+        t = parse_lap_record_time_from_record(rec)
+        if not d or t is None:
+            final_left.append(rec)
+            continue
+
+        cand_ids = index_dt.get((d, round(float(t), 6)), [])
+        if not cand_ids:
+            final_left.append(rec)
+            continue
+
+        v = rec.get("vehicle") or rec.get("car")
+        matched = False
+        for idx in cand_ids:
+            target = merged_main[idx]
+            tv = target.get("vehicle") or target.get("car")
+            if match_vehicle_prefix(v, tv, min_len=10):
+                merged_main[idx] = merge_two_records(target, rec)
+                matched = True
+                break
+
+        if not matched:
+            final_left.append(rec)
+
+    return merged_main, final_left
+
+
+def stage_d_fallback_merge_by_time_and_driver(
+    merged_main: list[dict[str, Any]],
+    final_left: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """
+    Etap D: Fallback merge po (time) z walidacją driver + subset - ostatnia szansa.
+    Zwraca zaktualizowane merged_main i ostatecznie pozostałe rekordy.
+    """
+    time_index: dict[float, list[int]] = {}
+    for i, rec in enumerate(merged_main):
+        t = parse_lap_record_time_from_record(rec)
+        if t is None:
+            continue
+        time_index.setdefault(round(float(t), 6), []).append(i)
+
+    last_left: list[dict[str, Any]] = []
+    for rec in final_left:
+        t = parse_lap_record_time_from_record(rec)
+        if t is None:
+            last_left.append(rec)
+            continue
+
+        cand_ids = time_index.get(round(float(t), 6), [])
+        if not cand_ids:
+            last_left.append(rec)
+            continue
+
+        matched = False
+        for idx in cand_ids:
+            target = merged_main[idx]
+
+            if match_driver_loose(
+                rec.get("driver"),
+                target.get("driver"),
+            ) and is_record_subset(rec, target):
+                merged_main[idx] = merge_two_records(target, rec)
+                matched = True
+                break
+
+        if not matched:
+            last_left.append(rec)
+
+    return merged_main, last_left
+
+
+def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """
+    Łączy duplikujące się rekordy (infobox + tabela) w jeden bogaty rekord.
+
+    Etapy:
+    - A: twardy merge po record_key (driver+vehicle+year+time).
+    - B: merge po core_key (driver+vehicle+year) - pozwala łączyć brakujące time.
+    - C: merge po (driver+time) z prefixem vehicle - dla uciętych vehicle.
+    - D: fallback merge po (time) z walidacją - ostatnia szansa.
+    """
+    # Etap A: Partycjonowanie po record_key
+    key_buckets, leftovers = stage_a_partition_by_record_key(records)
+    merged_main = [merge_record_group(rs) for rs in key_buckets.values()]
+
+    # Etap B: Merge po core_key
+    merged_main, still_left = stage_b_merge_by_core_key(merged_main, leftovers)
+
+    # Etap C: Merge po (driver+time) z prefixem vehicle
+    merged_main, final_left = stage_c_merge_by_driver_time(merged_main, still_left)
+
+    # Etap D: Fallback merge po (time) z walidacją
+    merged_main, last_left = stage_d_fallback_merge_by_time_and_driver(
+        merged_main,
+        final_left,
+    )
+
+    return merged_main + last_left
+
+
+
+
+
+def extract_year_from_event(rec: dict[str, Any]) -> str | None:
+    """
+    Fallback do ekstrakcji roku z pola event (np. "1963 Aintree 200").
+    """
+    event = rec.get("event")
+    candidates: list[str] = []
+
+    if isinstance(event, dict):
+        if event.get("text"):
+            candidates.append(str(event["text"]))
+        if event.get("url"):
+            candidates.append(str(event["url"]))
+    elif isinstance(event, str):
+        candidates.append(event)
+
+    year_re = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
+    for s in candidates:
+        m = year_re.search(s)
+        if m:
+            return m.group(1)
+
+    return None
+
+
+def extract_year(rec: dict[str, Any]) -> str | None:
+    """
+    Wspólna logika ekstrakcji roku z rekordu.
+    Próbuje kolejno: year, date (iso), event.
+    """
+    if rec.get("year") is not None:
+        return str(rec["year"])
+
+    date_obj = rec.get("date")
+    if isinstance(date_obj, dict):
+        iso = (date_obj.get("iso") or "").strip()
+        if iso:
+            return iso[:4]
+    if isinstance(date_obj, NormalizedDate):
+        iso = (date_obj.iso or "").strip()
+        if iso:
+            return iso[:4]
+
+    return extract_year_from_event(rec)
+
+
+def normalize_lap_record_entity(
+    value: Any,
+    *,
+    sanitizer: Callable[[str], str] | None = None,
+) -> str:
+    """Normalizuje tekst encji (driver/vehicle) z opcjonalnym czyszczeniem."""
+    text = normalize_text(value)
+    if not text:
+        return ""
+    if sanitizer:
+        text = sanitizer(text)
+        text = normalize_text(text)
+    return text
+
+
+def parse_lap_record_time_from_record(rec: Mapping[str, Any]) -> float | None:
+    """
+    Parsuje czas z rekordu (obsługa time_seconds/time).
+    Zwraca czas WYŁĄCZNIE jako sekundy (float) albo None.
+    Obsługuje:
+    - rec["time_seconds"] (jeśli istnieje)
+    - rec["time"] jako liczba
+    - rec["time"] jako dict {"seconds": ...}
+    - rec["time"] jako tekst: "M:SS.xxx" albo "SS.xxx"
+    - rec["time"] jako NormalizedTime
+    """
+    ts = rec.get("time_seconds")
+    if isinstance(ts, int | float):
+        return float(ts)
+
+    t = rec.get("time")
+    return parse_time_seconds_from_text(t)
+
+
+def has_meaningful_value(candidate: Any) -> bool:
+    if candidate is None:
+        return False
+    if isinstance(candidate, dict):
+        text = (candidate.get("text") or candidate.get("name") or "").strip()
+        url = candidate.get("url")
+        return bool(text or url)
+    if isinstance(candidate, str):
+        return bool(candidate.strip())
+    return True
+
+
+def select_best_field_with_url(
+    records: Iterable[Mapping[str, Any]],
+    *field_names: str,
+) -> Any:
+    """Wybiera najlepszą wartość pola (preferuje bogatszą encję)."""
+    best = None
+    for r in records:
+        value = None
+        for field_name in field_names:
+            candidate = r.get(field_name)
+            if has_meaningful_value(candidate):
+                value = candidate
+                break
+
+        if value is None:
+            continue
+        best = choose_richer_entity(best, value)
+    return best
+
+
+def build_lap_record_key(
+    rec: Mapping[str, Any],
+    *,
+    year_extractor: Callable[[Mapping[str, Any]], str | None] | None = None,
+    vehicle_getter: Callable[[Mapping[str, Any]], Any] | None = None,
+    time_extractor: Callable[[Mapping[str, Any]], float | None] | None = None,
+    driver_normalizer: Callable[[Any], str] | None = None,
+    vehicle_normalizer: Callable[[Any], str] | None = None,
+    time_key_factory: Callable[[float], Any] | None = None,
+    key_order: tuple[str, ...] = ("driver", "vehicle", "year", "time"),
+) -> tuple | None:
+    """Buduje klucz rekordu lap record z parametryzacją źródeł danych."""
+    driver_value = rec.get("driver")
+    vehicle_value = (
+        vehicle_getter(rec)
+        if vehicle_getter is not None
+        else rec.get("vehicle") or rec.get("car")
+    )
+    driver_norm = (
+        driver_normalizer(driver_value)
+        if driver_normalizer is not None
+        else normalize_lap_record_entity(driver_value)
+    )
+    vehicle_norm = (
+        vehicle_normalizer(vehicle_value)
+        if vehicle_normalizer is not None
+        else normalize_lap_record_entity(vehicle_value)
+    )
+
+    time_value = (
+        time_extractor(rec)
+        if time_extractor is not None
+        else parse_lap_record_time_from_record(rec)
+    )
+    year_value = year_extractor(rec) if year_extractor is not None else rec.get("year")
+    year_norm = str(year_value).strip() if year_value is not None else ""
+
+    if not driver_norm or not vehicle_norm or not year_norm or time_value is None:
+        return None
+
+    time_key = (
+        time_key_factory(float(time_value))
+        if time_key_factory is not None
+        else round(float(time_value), 6)
+    )
+
+    parts = {
+        "driver": driver_norm,
+        "vehicle": vehicle_norm,
+        "year": year_norm,
+        "time": time_key,
+    }
+
+    return tuple(parts[name] for name in key_order)
+
+
+

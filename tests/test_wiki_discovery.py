@@ -6,14 +6,14 @@ from typing import get_type_hints
 
 import pytest
 
-from scrapers.wiki.component_metadata import ComponentMetadata
-from scrapers.wiki.component_metadata import build_component_metadata
-from scrapers.wiki.constants import COMPONENT_METADATA_ATTR
-from scrapers.wiki.discovery import DiscoveredComponent
-from scrapers.wiki.discovery import DiscoveredRunnerProtocol
-from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
-from scrapers.wiki.discovery import clear_component_metadata_cache
-from scrapers.wiki.discovery import discover_components_in_module
+from scrapers.wiki.component_metadata_wiki import ComponentMetadata
+from scrapers.wiki.component_metadata_wiki import build_component_metadata
+from scrapers.wiki.constants_wiki import COMPONENT_METADATA_ATTR
+from scrapers.wiki.discovery_wiki import DiscoveredComponent
+from scrapers.wiki.discovery_wiki import DiscoveredRunnerProtocol
+from scrapers.wiki.discovery_wiki import build_layer_one_runner_map_discovered
+from scrapers.wiki.discovery_wiki import clear_component_metadata_cache
+from scrapers.wiki.discovery_wiki import discover_components_in_module
 
 
 def test_discovery_does_not_mutate_imported_class_metadata() -> None:
