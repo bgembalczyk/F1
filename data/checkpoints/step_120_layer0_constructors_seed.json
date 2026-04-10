@@ -1,0 +1,8 @@
+{
+  "step_id": "B-002",
+  "layer": "L0",
+  "domain": "constructors",
+  "checkpoint_type": "seed_input",
+  "next_step": "step_130_layer1_constructors_complete",
+  "source": "data/raw/constructors/constructors_current.json"
+}

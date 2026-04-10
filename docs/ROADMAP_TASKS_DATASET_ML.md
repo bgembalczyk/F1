@@ -249,3 +249,52 @@
   strategy, auto-discovery).
 - Fala 3 domyka długi strukturalne (wspólna baza extractorów, pełne strict typing, governance trendów duplikacji,
   skalowanie discovery).
+
+## Plan migracji A-D (foundation → adapters → rollout → cleanup)
+
+### Fala A (foundation)
+
+- Zakres: kontrakty ról + klasy bazowe + mixiny, bez zmiany zachowania runtime.
+- Punkt startowy: `data/checkpoints/stage_A_foundation_start.json`.
+- Punkt końcowy: `data/checkpoints/stage_A_foundation_ready.json`.
+- Wpis rejestru: `step_registry` / `A-001`.
+
+### Fala B (adapters)
+
+- Zakres: adaptery kompatybilności i przepięcie domen pilotowych (`drivers`, `constructors`).
+- Punkty startowe:
+    - `data/checkpoints/step_100_layer0_drivers_seed.json` -> `step_110_layer1_drivers_complete.json`,
+    - `data/checkpoints/step_120_layer0_constructors_seed.json` -> `step_130_layer1_constructors_complete.json`.
+- Wpisy rejestru: `step_registry` / `B-001`, `B-002`.
+
+### Fala C (rollout)
+
+- Zakres: migracja pozostałych domen, włączenie auto-registry i jednolitej strategii URL.
+- Punkt startowy: `data/checkpoints/stage_C_rollout_start.json`.
+- Punkt końcowy: `data/checkpoints/stage_C_rollout_ready.json`.
+- Wpis rejestru: `step_registry` / `C-001`.
+
+### Fala D (cleanup)
+
+- Zakres: usunięcie legacy wrapperów, aliasów i martwych klas.
+- Punkt startowy: `data/checkpoints/stage_D_cleanup_start.json`.
+- Punkt końcowy: `data/checkpoints/stage_D_cleanup_done.json`.
+- Wpis rejestru: `step_registry` / `D-001`.
+
+### Raportowanie metryk per fala (obowiązkowe)
+
+W każdej fali raportujemy:
+
+1. liczbę duplikacji,
+2. LOC w rodzinach klas,
+3. liczbę ręcznych rejestracji,
+4. zgodność kontraktów L0/L1.
+
+Rekomendowany format raportu:
+
+| Fala | Duplikacje (count) | LOC family | Ręczne rejestracje | Zgodność kontraktów L0/L1 |
+|------|---------------------|------------|---------------------|----------------------------|
+| A    |                     |            |                     |                            |
+| B    |                     |            |                     |                            |
+| C    |                     |            |                     |                            |
+| D    |                     |            |                     |                            |
