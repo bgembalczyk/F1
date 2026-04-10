@@ -14,6 +14,8 @@ class SectionParser(SectionParserContract, Protocol):
     Output: parsed records with section-level metadata.
     """
 
+    FAMILY_KIND = "section_parser"
+
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
 
 

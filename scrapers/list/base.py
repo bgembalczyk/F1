@@ -20,6 +20,7 @@ class ListScraper(SectionTraversalMixin, WikiScraper, ABC):
     - url_key     - klucz pod którym zapisywany jest pełny URL linku.
     """
 
+    FAMILY_KIND = "list"
     scraper_kind: str = "list"
 
     section_id: str | None = None
