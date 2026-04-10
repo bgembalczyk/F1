@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-
 from scrapers.list.base import ListScraper
 from scrapers.list.indianapolis_only.base import IndianapolisOnlyListScraper
 from scrapers.list.indianapolis_only.config import IndianapolisOnlyListConfig
@@ -35,5 +33,3 @@ def build_indianapolis_only_list_scraper(
         (IndianapolisOnlyListScraper,),
         namespace,
     )
-
-

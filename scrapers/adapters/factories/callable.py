@@ -1,7 +1,7 @@
+from collections.abc import Callable
+from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
-from typing import Callable
-from typing import Mapping
 
 
 @dataclass(frozen=True, slots=True)
@@ -14,5 +14,3 @@ class CallableRecordFactoryAdapter:
         if isinstance(self.factory, type):
             return self.factory(**dict(payload))
         return self.factory(dict(payload))
-
-

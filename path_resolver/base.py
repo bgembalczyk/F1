@@ -8,7 +8,6 @@ from path_resolver.helpers import normalize_output_name
 from path_resolver.helpers import normalize_relative_parts
 
 
-
 @dataclass(frozen=True)
 class PathResolver:
     layer_zero_root: Path = Path("layers/0_layer")

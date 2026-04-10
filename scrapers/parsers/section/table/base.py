@@ -15,7 +15,6 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-
 class TableSectionParser:
     """Generic section parser for single-table sections."""
 

@@ -1,12 +1,10 @@
 from __future__ import annotations
 
 from typing import Any
-from typing import Protocol
 
 from bs4 import Tag
 
 from scrapers.parsers.section.nested.child import NestedChildParser
-from scrapers.parsers.section.wiki.data_classes import SectionExtractionContext
 from scrapers.parsers.section.wiki.detection import make_stable_section_id
 from scrapers.parsers.section.wiki.helpers import split_into_parts
 from scrapers.parsers.wiki.base import WikiParser

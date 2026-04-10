@@ -64,8 +64,6 @@ class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
         self.status_extractors = status_extractors
 
 
-
-
 __all__ = [
     "NameStatusColumn",
 ]

@@ -1,7 +1,6 @@
 """Mixin for applying table parser to generic structured elements."""
 
 from typing import Any
-from typing import Protocol
 
 from scrapers.protocols.has_table_parser import HasTableParser
 

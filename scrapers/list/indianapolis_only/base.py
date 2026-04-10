@@ -1,5 +1,5 @@
-from scrapers.list.indianapolis_only.mixin import IndianapolisOnlyMixin
 from scrapers.list.base import ListScraper
+from scrapers.list.indianapolis_only.mixin import IndianapolisOnlyMixin
 
 
 class IndianapolisOnlyListScraper(IndianapolisOnlyMixin, ListScraper):

@@ -1,10 +1,6 @@
 from __future__ import annotations
 
-from typing import Any
-
 from bs4 import BeautifulSoup
-from bs4 import Tag
-
 
 
 class SectionSelectionStrategy:
@@ -31,7 +27,3 @@ class SectionSelectionStrategy:
     ) -> BeautifulSoup | None:
         _ = soup, fragment, domain
         return None
-
-
-
-

@@ -1,5 +1,4 @@
 import copy
-import re
 from typing import Any
 
 from bs4 import NavigableString
@@ -11,9 +10,6 @@ from scrapers.columns.helpers.constants import SPRINT_POINTS_START_YEAR
 from scrapers.columns.helpers.race_result.superscript import SuperscriptParseResult
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.text import strip_marks
-from scrapers.table.columns_table.context import ColumnContext
-from scrapers.table.columns_table.helpers.constants import MARKS_RE
-from scrapers.table.columns_table.helpers.constants import SPLIT_RESULTS_RE
 
 
 class RaceResultCellParser:

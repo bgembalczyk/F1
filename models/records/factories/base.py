@@ -3,20 +3,13 @@
 from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
-from typing import Protocol
-from typing import TypedDict
 from typing import TypeVar
-from typing import runtime_checkable
 
+from models.field_normalizer import FieldNormalizer
 from models.mappers.field_aliases import apply_field_aliases
 from models.records.factories.spec import FactorySpec
-from models.records.field_normalizer import FieldNormalizer
 
 T = TypeVar("T")
-
-
-
-
 
 
 class BaseRecordFactory:

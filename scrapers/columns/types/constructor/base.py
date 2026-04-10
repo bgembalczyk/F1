@@ -1,8 +1,5 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-from typing import Protocol
-
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constructor_parsing import ConstructorParsingHelpers

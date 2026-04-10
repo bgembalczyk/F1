@@ -5,9 +5,6 @@ from dataclasses import dataclass
 from dataclasses import field
 from dataclasses import fields
 from typing import Any
-from typing import Protocol
-
-
 
 
 @dataclass(slots=True)

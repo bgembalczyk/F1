@@ -1,7 +1,7 @@
+from collections.abc import Callable
+from collections.abc import Mapping
 from functools import partial
 from typing import Any
-from typing import Callable
-from typing import Mapping
 from typing import overload
 
 from models.records.factories.base import BaseRecordFactory

@@ -1,23 +1,18 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.sections.adapters.entry import SectionAdapterEntry
-from scrapers.sections.interface import SectionParseResult
-from scrapers.sections.section_id_resolver import SectionIdResolver
-from scrapers.sections.serializer import coerce_section_parse_result
-from scrapers.sections.serializer import serialize_section_result
-from scrapers.single_wiki_article.section_selection_strategy import WikipediaSectionByIdSelectionStrategy
-from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
+from scrapers.adapters.section.entry import SectionAdapterEntry
+from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
+from scrapers.section.id_resolver import SectionIdResolver
+from scrapers.section.parse_results import SectionParseResult
+from scrapers.section.selection_strategy.wikipedia_by_id import WikipediaSectionByIdSelectionStrategy
+from scrapers.section.serializer import coerce_section_parse_result
+from scrapers.section.serializer import serialize_section_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
-
-    from models.value_objects import SectionId
-
-
 
 
 class SectionAdapter:

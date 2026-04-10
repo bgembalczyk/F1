@@ -5,13 +5,12 @@ from abc import abstractmethod
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
-from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
-
 
 
 class SectionTableParserBase(ABC):

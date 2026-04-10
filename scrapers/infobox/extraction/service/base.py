@@ -1,15 +1,15 @@
 from abc import ABC
 from abc import abstractmethod
+from collections.abc import Iterable
 from typing import Any
 from typing import Generic
-from typing import Iterable
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.infobox.extraction.result import InfoboxExtractionResult
-from scrapers.base.infobox.extraction.result import ParserInputT
-from scrapers.base.options import ScraperOptions
-from scrapers.base.parsers.soup import SoupParser
+from scrapers.infobox.extraction.result import InfoboxExtractionResult
+from scrapers.infobox.extraction.result import ParserInputT
+from scrapers.options import ScraperOptions
+from scrapers.parsers.soup import SoupParser
 
 
 class BaseInfoboxExtractionService(ABC, Generic[ParserInputT]):
