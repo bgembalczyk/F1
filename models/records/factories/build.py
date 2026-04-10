@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from enum import Enum
 from functools import partial
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import overload
 
 from models.records.builders import RECORD_BUILDERS
+from models.records.type import RECORD_TYPE_ALIASES
 from models.records.type import RecordType
 
 if TYPE_CHECKING:
@@ -14,17 +14,10 @@ if TYPE_CHECKING:
     from collections.abc import Mapping
 
 
-
-
-
-
-
 def normalize_record_type(record_type: RecordType | str) -> RecordType | str:
     if isinstance(record_type, RecordType):
         return record_type
     return RECORD_TYPE_ALIASES.get(record_type, record_type)
-
-
 
 
 @overload

@@ -2,9 +2,8 @@ from collections.abc import Mapping
 from typing import Any
 from typing import cast
 
-from models.records.circuit import CircuitRecord
+from models.records.circuit.circuit import CircuitRecord
 from models.records.factories.base import BaseRecordFactory
-from models.records.factories.helpers import normalize_optional_link_or_string
 from models.records.factories.registry.helpers import register_factory
 
 
@@ -17,18 +16,9 @@ class CircuitRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "circuit_status": lambda value, field: (
-                        self.normalizer.normalize_status(
-                            value,
-                            ["current", "future", "former"],
-                            field,
-                        )
-                    ),
-                    "country": lambda value, field: normalize_optional_link_or_string(
-                        self.normalizer,
-                        value,
-                        field,
-                    ),
+                    "circuit_status": lambda value, _field: value,
+                    "country": lambda value, _field: value,
+                    "location": lambda value, _field: value,
                 },
                 "list_field_normalizers": {
                     "link": ["circuit"],
@@ -47,6 +37,13 @@ class CircuitRecordFactory(BaseRecordFactory):
                 },
             },
         )
+        self.normalize_status_field(
+            payload,
+            "circuit_status",
+            ["current", "future", "former"],
+        )
+        self.normalize_link_like_field(payload, "country")
+        self.normalize_location_field(payload, "location")
         return cast("CircuitRecord", payload)
 
 
