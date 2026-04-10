@@ -2,7 +2,9 @@ from scrapers.columns.helpers.race_result.rules.classified_dnf import Classified
 from scrapers.columns.helpers.race_result.rules.context import ResultRuleContext
 from scrapers.columns.helpers.race_result.rules.f2_eligibility import F2EligibilityRule
 from scrapers.columns.helpers.race_result.rules.fatal_accident import FatalAccidentRule
-from scrapers.columns.helpers.race_result.rules.mark_based_eligibility import MarkBasedEligibilityRule
+from scrapers.columns.helpers.race_result.rules.mark_based_eligibility import (
+    MarkBasedEligibilityRule,
+)
 from scrapers.columns.helpers.race_result.rules.protocol import ResultRule
 from scrapers.columns.helpers.race_result.rules.round_rules import DoublePointsRoundRule
 from scrapers.columns.helpers.race_result.rules.round_rules import HalfPointsRoundRule

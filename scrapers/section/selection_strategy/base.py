@@ -27,3 +27,6 @@ class SectionSelectionStrategy:
     ) -> BeautifulSoup | None:
         _ = soup, fragment, domain
         return None
+
+
+__all__ = ["SectionSelectionStrategy"]
