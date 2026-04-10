@@ -2,7 +2,7 @@ import logging
 
 from bs4 import BeautifulSoup
 
-from scrapers.config_table import TableScraperConfig
+from scrapers.configs.public import TableConfig
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.section.parse_results import SectionParseResult
@@ -16,7 +16,7 @@ class ConstructorsSectionParser(WikiSectionParser):
     def __init__(
         self,
         *,
-        config: TableScraperConfig,
+        config: TableConfig,
         section_label: str | None,
         include_urls: bool,
         normalize_empty_values: bool,

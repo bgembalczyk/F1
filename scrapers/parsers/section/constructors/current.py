@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
-from scrapers.config_table import TableScraperConfig
+from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
 from scrapers.parsers.table.current_constructors import CurrentConstructorsTableParser
 from scrapers.section.parse_results import SectionParseResult
@@ -15,7 +15,7 @@ class CurrentConstructorsSectionParser(ConstructorsSectionParser):
     def __init__(
         self,
         *,
-        config: TableScraperConfig,
+        config: TableConfig,
         section_label: str | None = None,
         include_urls: bool,
         normalize_empty_values: bool,

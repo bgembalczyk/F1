@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from scrapers.base.factory.protocol import RECORD_FACTORIES
+from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
 from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import GRANDS_PRIX_LIST

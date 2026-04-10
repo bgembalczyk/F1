@@ -5,7 +5,7 @@ from dataclasses import field
 from dataclasses import fields
 from typing import Any
 
-from scrapers.records.DTO.season import SeasonPayloadDTO
+from scrapers.records.dto.season import SeasonPayloadDTO
 from scrapers.records.assemblers.base import BaseRecordAssembler
 from scrapers.records.sections.season import SeasonRecordSections
 

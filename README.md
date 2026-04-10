@@ -21,7 +21,7 @@ Architektura opiera się o separację odpowiedzialności między warstwami techn
 - **Fetcher** — pobieranie źródeł danych,
 - **Parser** — ekstrakcja struktur z payloadów,
 - **Normalizer** — ujednolicanie formatów,
-- **Assembler** — reguły domenowe i składanie rekordów,
+- **Factory** — tworzenie modelu domenowego / rekordu eksportowego,
 - **Exporter** — zapis danych wyjściowych.
 
 Pełny opis granic warstw i relacji między komponentami:
@@ -32,7 +32,7 @@ Pełny opis granic warstw i relacji między komponentami:
 
 Najważniejsze kontrakty i interfejsy projektu:
 
-- kontrakty warstw (`Fetcher`, `Parser`, `Normalizer`, `Assembler`, `Exporter`),
+- kontrakty warstw (`Scraper`, `Extractor`, `Parser`, `Factory`),
 - kontrakt konfiguracji scraperów,
 - kontrakt parserów sekcji,
 - strategia Dependency Injection (bez zbędnych interfejsów o pojedynczej implementacji),

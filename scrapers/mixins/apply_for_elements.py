@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from scrapers.protocols.has_table_parser import HasTableParser
+from scrapers.contracts.protocols.has_table_parser import HasTableParser
 
 
 class ApplyForElementsMixin:

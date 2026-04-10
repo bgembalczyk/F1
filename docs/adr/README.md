@@ -19,6 +19,7 @@ Ten katalog przechowuje **trwałe decyzje architektoniczne** projektu.
 - [ADR-0002](0002-section-parser-contract.md): Kontrakt parserów sekcji.
 - [ADR-0003](0003-di-strategy.md): Strategia Dependency Injection.
 - [ADR-0004](0004-hook-naming-conventions.md): Zasady nazewnictwa hooków.
+- [ADR-0005](0005-domain-role-taxonomy.md): Kanoniczny słownik ról i ścieżki importów.
 
 ## Jak dodać nowy ADR
 

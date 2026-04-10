@@ -1,22 +1,19 @@
-from abc import ABC
-from abc import abstractmethod
-from typing import Any
-from typing import ClassVar
-
-from bs4 import BeautifulSoup
-
+from scrapers.single_wiki_article.single_article_domain_scraper_base import (
+    SingleArticleDomainScraperBase,
+)
 from infrastructure.helpers import init_scraper_options
 from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
+from scrapers.family_contracts import SingleArticleScraperContract
 from scrapers.helpers.config_factory import build_scraper_options
 from scrapers.options import ScraperOptions
-from scrapers.runtime.factory import ScraperRuntimeFactory
+from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
 from scrapers.section.selection_strategy.base import SectionSelectionStrategy
 from scrapers.wiki.scraper_wiki import WikiScraper
 
 
-class SingleWikiArticleScraperBase(WikiScraper, ABC):
+class SingleWikiArticleScraperBase(WikiScraper, SingleArticleScraperContract, ABC):
     options_domain: str | None = None
     options_profile: str = "article_strict"
 
@@ -179,6 +176,4 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         """Compose final domain record from template-method payload hooks."""
 
 
-__all__ = [
-    "SingleWikiArticleScraperBase",
-]
+__all__ = ["SingleWikiArticleScraperBase"]
