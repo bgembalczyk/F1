@@ -6,29 +6,26 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import TypeVar
 
-from infrastructure.http_client.requests_shim.request_error import RequestError
-from scrapers.base.error_codes import resolve_error_code
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.errors import ScraperError
-from scrapers.base.errors import ScraperNetworkError
-from scrapers.base.errors import ScraperParseError
-from scrapers.base.exporters.data import DataExporter
-from scrapers.base.factory.source_adapter_fetcher_shim import ScraperRuntimeFactory
-from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.normalization import RecordNormalizer
-from scrapers.base.pipeline_runner import ScraperPipelineRunner
-from scrapers.base.quality.reporter import CompactStepDiffWriter
-from scrapers.base.quality.reporter import QualityReporter
-from scrapers.base.validation_runner import ValidationRunner
+from exporters.data import DataExporter
+from infrastructure.http.errors.base import RequestError
+from infrastructure.http.policies.http import HttpPolicy
+from scrapers.error_codes import resolve_error_code
+from scrapers.error_handler import ErrorHandler
+from scrapers.helpers.transformers import build_transformers
+from scrapers.normalization import RecordNormalizer
+from scrapers.options import ScraperOptions
+from scrapers.quality.compact_step_diff_writer import CompactStepDiffWriter
+from scrapers.quality.reporter import QualityReporter
+from scrapers.runners import ScraperPipelineRunner
+from scrapers.runners.pipeline_runner import NormalizedRecord
+from scrapers.runners.pipeline_runner import RawRecord
+from scrapers.validation_runner import ValidationRunner
+from scrapers.wiring import ScraperRuntimeFactory
 from validation.record_factory_validator import adapt_record_factory_validator
 
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-    from infrastructure.http_client.policies.http import HttpPolicy
-    from scrapers.base.options import ScraperOptions
-    from scrapers.base.records import NormalizedRecord
-    from scrapers.base.records import RawRecord
     from validation.validator_base import ExportRecord
     from validation.validator_base import RecordValidator
 

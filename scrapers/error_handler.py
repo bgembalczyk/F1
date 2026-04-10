@@ -3,11 +3,10 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import TypeVar
 
-from scrapers.base import errors
-from scrapers.base.error_codes import resolve_error_code
-from scrapers.base.errors_report import ErrorReport
-from scrapers.base.errors_report import write_error_report
-from scrapers.base.errors_report import write_error_summary_by_code
+from scrapers.error_codes import resolve_error_code
+from scrapers.errors_report import ErrorReport
+from scrapers.errors_report import write_error_report
+from scrapers.errors_report import write_error_summary_by_code
 
 T = TypeVar("T")
 
@@ -42,8 +41,8 @@ class ErrorHandler:
         section_id: str | None = None,
         parser_name: str | None = None,
         run_id: str | None = None,
-    ) -> errors.ScraperNetworkError:
-        return errors.ScraperNetworkError(
+    ) -> ScraperNetworkError:
+        return ScraperNetworkError(
             "Błąd sieci podczas pobierania danych.",
             url=url,
             section_id=section_id,
@@ -60,8 +59,8 @@ class ErrorHandler:
         section_id: str | None = None,
         parser_name: str | None = None,
         run_id: str | None = None,
-    ) -> errors.ScraperParseError:
-        return errors.ScraperParseError(
+    ) -> ScraperParseError:
+        return ScraperParseError(
             "Błąd parsowania danych.",
             url=url,
             section_id=section_id,
@@ -78,8 +77,8 @@ class ErrorHandler:
         section_id: str | None = None,
         parser_name: str | None = None,
         run_id: str | None = None,
-    ) -> errors.ScraperValidationError:
-        return errors.ScraperValidationError(
+    ) -> ScraperValidationError:
+        return ScraperValidationError(
             "Błąd walidacji danych.",
             url=url,
             section_id=section_id,
@@ -97,8 +96,8 @@ class ErrorHandler:
         section_id: str | None = None,
         parser_name: str | None = None,
         run_id: str | None = None,
-    ) -> errors.DomainParseError:
-        return errors.DomainParseError(
+    ) -> DomainParseError:
+        return DomainParseError(
             message,
             url=url,
             section_id=section_id,
@@ -111,7 +110,7 @@ class ErrorHandler:
     def run_with_policy(
         fn: Callable[[], T],
         *,
-        wrapper: Callable[[Exception], errors.ScraperError],
+        wrapper: Callable[[Exception], ScraperError],
         catch: tuple[type[Exception], ...] = (Exception,),
     ) -> T:
         try:
@@ -144,13 +143,13 @@ class ErrorHandler:
             catch=(TypeError, ValueError),
         )
 
-    def handle(self, error: errors.ScraperError) -> bool:
+    def handle(self, error: ScraperError) -> bool:
         """
         Zwraca True jeśli błąd został obsłużony (soft-skip),
         False jeśli powinien być propagowany.
         """
         self._write_report(error)
-        if error.behavior == errors.ErrorBehavior.HARD:
+        if error.behavior == ErrorBehavior.HARD:
             return False
 
         code_definition = resolve_error_code(error.code)
@@ -167,7 +166,7 @@ class ErrorHandler:
         )
         return True
 
-    def _write_report(self, error: errors.ScraperError) -> None:
+    def _write_report(self, error: ScraperError) -> None:
         if not self._error_report_enabled or self._debug_dir is None:
             return
         report = ErrorReport.from_exception(error, run_id=self._resolve_run_id(None))

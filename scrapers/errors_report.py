@@ -6,8 +6,7 @@ from datetime import datetime
 from datetime import timezone
 from pathlib import Path
 
-from scrapers.base.error_codes import resolve_error_code
-from scrapers.base.errors import ScraperError
+from scrapers.error_codes import resolve_error_code
 
 
 @dataclass(frozen=True)
