@@ -9,10 +9,9 @@ from models.records.factories.base import BaseRecordFactory
 from models.records.factories.protocol import RecordBuilder
 from models.records.factories.registry.constants import CRITICAL_RECORD_TYPES
 from models.records.factories.registry.constants import FACTORY_MARKER_ATTR
-from models.records.factories.registry.constants import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry.error import FactoryRegistryError
 from models.records.factories.registry.types import MutableFactoryRegistry
-from models.records.field_normalizer import FieldNormalizer
+from models.field_normalizer import FieldNormalizer
 
 
 def register_factory(record_type: str | None = None):
@@ -33,9 +32,22 @@ def register_factory(record_type: str | None = None):
 def import_factory_modules() -> list[object]:
     package = import_module("models.records.factories")
     imported_modules: list[object] = []
+    skipped_modules = {
+        "base",
+        "build",
+        "compat",
+        "helpers",
+        "mapping",
+        "protocol",
+        "protocol2",
+        "spec",
+        "registry",
+        "__init__",
+    }
+
     for module_info in iter_modules(package.__path__):
         module_name = module_info.name
-        if not module_name.endswith("_factory"):
+        if module_name in skipped_modules:
             continue
         imported_modules.append(import_module(f"{package.__name__}.{module_name}"))
     return imported_modules
@@ -76,7 +88,12 @@ def get_factory(
     record_type: str,
     registry: MutableFactoryRegistry | None = None,
 ) -> RecordBuilder:
-    factory_registry = registry or FACTORY_REGISTRY_PROVIDER.get()
+    if registry is None:
+        from models.records.factories.registry.provider import FACTORY_REGISTRY_PROVIDER
+
+        factory_registry = FACTORY_REGISTRY_PROVIDER.get()
+    else:
+        factory_registry = registry
     factory = factory_registry.get(record_type)
     if factory is None:
         msg = f"Unsupported record type: {record_type}"

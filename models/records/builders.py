@@ -5,7 +5,7 @@ from typing import Any
 from typing import overload
 
 from models.records.factories.protocol import RecordBuilder
-from models.records.factories.registry.constants import FACTORY_REGISTRY_PROVIDER
+from models.records.factories.registry.provider import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry.helpers import get_factory
 from models.records.factories.registry.types import FactoryRegistry
 from models.records.type import RecordType

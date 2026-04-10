@@ -12,3 +12,6 @@ class FactoryRegistryProvider:
         if self._registry is None:
             self._registry = build_factory_registry()
         return self._registry
+
+
+FACTORY_REGISTRY_PROVIDER = FactoryRegistryProvider()
