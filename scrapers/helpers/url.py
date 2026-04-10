@@ -1,7 +1,5 @@
 """URL normalization helpers shared across scrapers."""
 
-from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
-
 URL_HELPERS_DEPRECATION_NOTE = (
     "DEPRECATED: prefer UrlResolverStrategyRegistry (migration iteration: 2026-Q2). "
     "Planned removal after one migration iteration."
@@ -15,6 +13,8 @@ def resolve_url(
     domain: str | None = None,
 ) -> str | None:
     """Resolve URL via central UrlResolverStrategyRegistry."""
+    from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
+
     return DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY.resolve_url(
         base_url=base,
         href=href,
