@@ -21,3 +21,6 @@ class HTTPError(HttpShimError):
             headers=headers,
             body=body,
         )
+
+
+__all__ = ["HTTPError"]

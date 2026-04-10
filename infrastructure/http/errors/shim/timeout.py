@@ -22,3 +22,6 @@ class HTTPTimeoutError(HttpShimError):
             headers=headers,
             body=body,
         )
+
+
+__all__ = ["HTTPTimeoutError"]

@@ -10,3 +10,6 @@ class HttpShimErrorResponseAdapter:
     def raise_for_status(self) -> None:
         """Interfejs zgodny z requests.Response; błąd jest już podniesiony."""
         return
+
+
+__all__ = ["HttpShimErrorResponseAdapter"]

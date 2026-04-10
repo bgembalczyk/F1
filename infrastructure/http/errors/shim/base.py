@@ -1,7 +1,7 @@
 from collections.abc import Mapping
 
 from infrastructure.http.errors.base import RequestError
-from infrastructure.http.errors.shim.response_adapter import HttpShimErrorResponseAdapter
+from infrastructure.http.errors.shim import HttpShimErrorResponseAdapter
 
 
 class HttpShimError(RequestError):
@@ -22,3 +22,6 @@ class HttpShimError(RequestError):
         self.headers = {str(k): str(v) for k, v in headers.items()}
         self.body = body
         self.response = HttpShimErrorResponseAdapter(self)
+
+
+__all__ = ["HttpShimError"]
