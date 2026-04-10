@@ -14,9 +14,9 @@ from bs4 import NavigableString
 from bs4 import Tag
 
 from models.records.link import LinkRecord
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constants import ENGINE_CONSTRUCTOR_INDEX
 from scrapers.columns.helpers.constants import HYPHEN_CHARS
-from scrapers.columns.types.context import ColumnContext
 from scrapers.helpers.text import clean_wiki_text
 
 

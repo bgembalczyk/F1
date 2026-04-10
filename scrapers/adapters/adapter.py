@@ -3,8 +3,8 @@ from typing import Any
 
 from scrapers.formatters.pandas import PandasDataFrameFormatter
 from scrapers.normalization_utils import NormalizationRule
+from scrapers.normalizers.result import ScrapeResultNormalizer
 from scrapers.results import ScrapeResult
-from scrapers.services.result_normalizer import ScrapeResultNormalizer
 
 
 class ResultTabularAdapter:
