@@ -6,10 +6,10 @@ from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig as TableScraperConfig
-from scrapers.wiki.parsers.elements.table import TableParser
+from scrapers.parsers.table.wiki.table import WikiTableParser
 
 
-class F1StandingsScraper(TableParser):
+class F1StandingsScraper(WikiTableParser):
     """Parser tabel klasyfikacji (standings) Formuły 1.
 
     Parsuje tabelę klasyfikacji z podanego elementu HTML (``element``),

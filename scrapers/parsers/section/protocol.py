@@ -7,7 +7,7 @@ from scrapers.section.parse_results import SectionParseResult
 
 
 @runtime_checkable
-class SectionParser(Protocol):
+class SectionParserProtocol(Protocol):
     """Common section parser interface.
 
     Input: BeautifulSoup fragment scoped to a section.
@@ -15,3 +15,6 @@ class SectionParser(Protocol):
     """
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
+
+
+__all__ = ["SectionParserProtocol"]

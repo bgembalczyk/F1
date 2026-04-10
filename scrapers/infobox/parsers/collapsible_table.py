@@ -6,7 +6,7 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.parsers.numeric import NumericParser
-from scrapers.infobox.parsers.table import TableParser
+from scrapers.infobox.parsers.table import InfoboxTableParser
 
 
 class CollapsibleTableParser:
@@ -92,7 +92,7 @@ class CollapsibleTableParser:
         nested_table = cell.find("table")
         if not nested_table:
             return None
-        table_data = TableParser.parse_nested_table(nested_table)
+        table_data = InfoboxTableParser.parse_nested_table(nested_table)
         return {"table": table_data}
 
 
