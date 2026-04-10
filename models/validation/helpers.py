@@ -1,13 +1,17 @@
+from __future__ import annotations
+
 from collections.abc import Iterable
 from dataclasses import asdict
 from dataclasses import is_dataclass
+from typing import TYPE_CHECKING
 from typing import Any
 from urllib.parse import urlparse
 
-from models.domain_utils.normalization import normalize_season_items
 from models.value_objects.helpers import validate_link
 from models.value_objects.link import Link
-from models.value_objects.season_ref import SeasonRef
+
+if TYPE_CHECKING:
+    from models.value_objects.season_ref import SeasonRef
 
 
 def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
@@ -127,6 +131,8 @@ def validate_links(
 def validate_seasons(
     items: list[SeasonRef | dict[str, Any] | None] | None,
 ) -> list[dict[str, Any]]:
+    from models.domain_utils.normalization import normalize_season_items
+
     return [season.to_dict() for season in normalize_season_items(items)]
 
 

@@ -1,8 +1,8 @@
 from typing import Any
 from typing import Mapping
+from urllib.parse import urlparse
 
 from models.domain_utils.field_normalization.links import normalize_link_payload
-from models.validation.helpers import is_valid_url
 
 
 def normalize_iso(value: Any) -> str | None:
@@ -25,6 +25,11 @@ def validate_link(link: Mapping[str, Any] | None, *, field_name: str) -> dict[st
             msg = f"Pole {field_name} zawiera nieprawidłowy URL"
             raise ValueError(msg)
     return normalized
+
+
+def is_valid_url(url: str) -> bool:
+    parsed = urlparse(url)
+    return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
 
 def normalize_seconds(value: Any) -> float | None:
     if isinstance(value, int | float):
