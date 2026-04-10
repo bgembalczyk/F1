@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import warnings
+
+warnings.warn("single_scraper_drivers is deprecated; use scrapers.drivers_detail_scraper.", DeprecationWarning, stacklevel=2)
+
 from typing import TYPE_CHECKING
 
 from scrapers.base.single_wiki_article import InfoboxPayloadDTO

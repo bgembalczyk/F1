@@ -1,10 +1,5 @@
 """Canonical module for grands prix detail scraping."""
 
-from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper
+from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper as GrandsPrixDetailScraper
 
-
-class GrandsPrixDetailScraper(F1SingleGrandPrixScraper):
-    """Canonical class alias aligned with module naming standard."""
-
-
-__all__ = ["GrandsPrixDetailScraper", "F1SingleGrandPrixScraper"]
+__all__ = ["GrandsPrixDetailScraper"]

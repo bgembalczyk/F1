@@ -1,10 +1,5 @@
 """Canonical module for drivers detail scraping."""
 
-from scrapers.single_scraper_drivers import SingleDriverScraper
+from scrapers.single_scraper_drivers import SingleDriverScraper as DriversDetailScraper
 
-
-class DriversDetailScraper(SingleDriverScraper):
-    """Canonical class alias aligned with module naming standard."""
-
-
-__all__ = ["DriversDetailScraper", "SingleDriverScraper"]
+__all__ = ["DriversDetailScraper"]
