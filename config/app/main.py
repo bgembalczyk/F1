@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
+from app_paths.base import AppPaths
 from config.app.gemini import GeminiAppConfig
 from config.app.http import HttpAppConfig
-from config.app_paths import AppPaths
 
 
 @dataclass(frozen=True)

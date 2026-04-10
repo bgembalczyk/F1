@@ -2,7 +2,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from infrastructure.cache.file.protocol import FileCache
-from infrastructure.http.policies.response_cache import TextCacheProtocol
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
 
 
 class WikipediaCachePolicy(TextCacheProtocol):

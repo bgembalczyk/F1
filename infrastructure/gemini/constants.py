@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from infrastructure.gemini.model_config import ModelConfig
+from infrastructure.gemini.model.config import ModelConfig
 
 ONE_YEAR_SECONDS = 365 * 24 * 60 * 60
 RPM_WINDOW = 60.0  # okno dla RPM w sekundach

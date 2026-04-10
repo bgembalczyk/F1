@@ -16,7 +16,7 @@ from config.app.gemini import GeminiAppConfig
 from config.app.http import HttpAppConfig
 from config.app.main import AppConfig
 from infrastructure.gemini.constants import DEFAULT_TIMEOUT
-from infrastructure.http_client.policies.constants import DEFAULT_HTTP_TIMEOUT
+from infrastructure.http.policies.constants import DEFAULT_HTTP_TIMEOUT
 
 DEFAULT_APP_MODE = "development"
 

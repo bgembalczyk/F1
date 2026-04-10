@@ -5,8 +5,8 @@ from typing import Any
 from urllib.parse import urlparse
 
 from models.domain_utils.normalization import normalize_season_items
+from models.value_objects.helpers import validate_link
 from models.value_objects.link import Link
-from models.value_objects.link_utils import validate_link
 from models.value_objects.season_ref import SeasonRef
 
 
