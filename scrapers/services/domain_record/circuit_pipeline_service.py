@@ -9,7 +9,7 @@ from scrapers.helpers.lap_record import is_lap_record_table
 from scrapers.helpers.layout import detect_layout_name
 from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
-from scrapers.records.DTO.circuit import CircuitRecordDTO
+from scrapers.records.dto.circuit import CircuitRecordDTO
 from scrapers.records.assemblers.circuit import CircuitRecordAssembler
 from scrapers.services.domain_record.base_pipeline_service import BaseAssemblerPipelineService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser

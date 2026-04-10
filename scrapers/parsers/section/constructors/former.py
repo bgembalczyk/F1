@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
-from scrapers.parsers.section.sub.indianapolis_only import IndianapolisOnlySubSectionParser
+from scrapers.parsers.section.sublevels.indianapolis_only_sub_section import IndianapolisOnlySubSectionParser
 from scrapers.parsers.table.former_constructors import FormerConstructorsTableParser
 from scrapers.section.parse_results import SectionParseResult
 
