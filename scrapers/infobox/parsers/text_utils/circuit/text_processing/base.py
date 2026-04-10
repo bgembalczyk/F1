@@ -1,10 +1,10 @@
 import re
 from typing import Any
 
-from scrapers.base.helpers.text import choose_richer_entity
-from scrapers.circuits.circuits_infobox.services.constants import LANG_PAREN_ANYWHERE_RE
-from scrapers.circuits.circuits_infobox.services.constants import LANG_PAREN_TAIL_RE
-from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.helpers.text import choose_richer_entity
+from scrapers.infobox.parsers.constants import LANG_PAREN_ANYWHERE_RE
+from scrapers.infobox.parsers.constants import LANG_PAREN_TAIL_RE
+from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
 
 
 class CircuitTextProcessing(InfoboxTextUtils):
