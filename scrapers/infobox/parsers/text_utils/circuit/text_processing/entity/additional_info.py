@@ -1,9 +1,9 @@
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.base.helpers.text_normalization import split_delimited_text
-from scrapers.circuits.circuits_infobox.services.entity_parsing import CircuitEntityParser
+from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.helpers.text_normalization import split_delimited_text
+from scrapers.infobox.parsers.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord
