@@ -1,5 +1,5 @@
 from models.records.grand_prix import GRANDS_PRIX_SCHEMA
-from scrapers.base.composite_validator import SchemaCompositeRecordValidator
+from scrapers.composite_validator import SchemaCompositeRecordValidator
 
 
 class GrandsPrixRecordValidator(SchemaCompositeRecordValidator):

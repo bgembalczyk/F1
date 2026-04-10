@@ -5,16 +5,16 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.extractors.table import TableExtractor
-from scrapers.base.helpers.config_factory import build_scraper_options
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.configs.public import TableConfig
 from scrapers.base.table.row import TableRow
-from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
+from scrapers.configs.public import TableConfig
+from scrapers.extractors.table import TableExtractor
 from scrapers.family_contracts import TableScraperContract
+from scrapers.helpers.config_factory import build_scraper_options
+from scrapers.options import ScraperOptions
+from scrapers.transformers.helpers import apply_transformers
 from scrapers.wiki.scraper_wiki import WikiScraper
 from validation.record_factory_validator import adapt_record_factory_validator
 

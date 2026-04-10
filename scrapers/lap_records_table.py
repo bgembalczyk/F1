@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.records.factories.mapping import MappingRecordFactory
-from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
 from scrapers.base.table.columns import types as col
 from scrapers.base.table.config import build_scraper_config
@@ -14,6 +13,7 @@ from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.helpers.cell_splitting import split_cell_on_br
 
 
 class LapRecordsTableScraper(F1TableScraper):

@@ -12,7 +12,7 @@ from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.options import ScraperOptions
+    from scrapers.options import ScraperOptions
 
 
 class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):

@@ -4,9 +4,9 @@ from collections.abc import Sequence
 from typing import TYPE_CHECKING
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.config import build_scraper_config
+from scrapers.source_catalog import CONSTRUCTORS_LIST
 
 if TYPE_CHECKING:
     from collections.abc import Sequence

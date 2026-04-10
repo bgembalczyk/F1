@@ -3,22 +3,24 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.errors import ScraperError
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.base.sections.section_id_resolver import MissingSectionError
 from scrapers.base.sections.section_id_resolver import SectionIdResolver
-from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
-from scrapers.base.single_wiki_article.base import SingleWikiArticleScraperBase
+from scrapers.errors import ScraperError
 from scrapers.grands_prix.helpers_grands_prix.sections import is_grand_prix_article
-from scrapers.grands_prix.sections_grands_prix.by_year import GrandPrixByYearSectionParser
+from scrapers.grands_prix.sections_grands_prix.by_year import (
+    GrandPrixByYearSectionParser,
+)
+from scrapers.single_wiki_article import WikipediaSectionByIdSelectionStrategy
+from scrapers.single_wiki_article.base import SingleWikiArticleScraperBase
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.options import ScraperOptions
     from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
     from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
     from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
+    from scrapers.options import ScraperOptions
 
 
 class F1SingleGrandPrixScraper(SingleWikiArticleScraperBase):

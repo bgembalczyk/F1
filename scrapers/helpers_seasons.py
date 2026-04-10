@@ -3,8 +3,8 @@ from pathlib import Path
 from typing import Any
 
 from scrapers.base.helpers.helpers import init_scraper_options
-from scrapers.base.results import ScrapeResult
 from scrapers.base.services.result_export_service import ResultExportService
+from scrapers.results import ScrapeResult
 from scrapers.seasons.complete_scraper_seasons import CompleteSeasonDataExtractor
 
 

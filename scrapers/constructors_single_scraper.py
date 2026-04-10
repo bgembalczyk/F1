@@ -3,18 +3,22 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.single_wiki_article import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article import SectionsPayloadDTO
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
-from scrapers.base.single_wiki_article import TablesPayloadDTO
-from scrapers.constructors.constructors_composition import ConstructorScraperCompositionFactory
-from scrapers.constructors.constructors_composition import ConstructorScraperDependencies
+from scrapers.constructors.constructors_composition import (
+    ConstructorScraperCompositionFactory,
+)
+from scrapers.constructors.constructors_composition import (
+    ConstructorScraperDependencies,
+)
 from scrapers.services.domain_record.constructor import ConstructorDomainRecordInput
+from scrapers.single_wiki_article import InfoboxPayloadDTO
+from scrapers.single_wiki_article import SectionsPayloadDTO
+from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.single_wiki_article import TablesPayloadDTO
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.options import ScraperOptions
+    from scrapers.options import ScraperOptions
 
 
 class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
