@@ -3,10 +3,9 @@ from datetime import datetime
 from datetime import timezone
 from typing import Any
 
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.circuits.circuits_infobox.services.constants import MONTHS
-from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.error_handler import ErrorHandler
+from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
 
 
 class CircuitHistoryParser(InfoboxTextUtils):

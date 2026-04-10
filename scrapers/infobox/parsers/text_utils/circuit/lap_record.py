@@ -1,16 +1,20 @@
 from typing import Any
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
-from scrapers.circuits.circuits_helpers.lap_record import extract_time
-from scrapers.circuits.circuits_helpers.lap_record import select_details_paren
-from scrapers.circuits.circuits_infobox.services.constants import MIN_DETAILS_FOR_CAR
-from scrapers.circuits.circuits_infobox.services.constants import MIN_DETAILS_FOR_DRIVER
-from scrapers.circuits.circuits_infobox.services.constants import MIN_DETAILS_FOR_SERIES
-from scrapers.circuits.circuits_infobox.services.constants import MIN_DETAILS_FOR_YEAR
-from scrapers.circuits.circuits_infobox.services.text_processing import CircuitTextProcessing
-from scrapers.circuits.models import services
+from scrapers.helpers.lap_record import build_lap_record_key
+from scrapers.helpers.lap_record import extract_time
+from scrapers.helpers.lap_record import extract_year
+from scrapers.helpers.lap_record import merge_two_records
+from scrapers.helpers.lap_record import normalize_lap_record
+from scrapers.helpers.lap_record import normalize_lap_record_entity
+from scrapers.helpers.lap_record import select_details_paren
+from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.helpers.wiki import is_wikipedia_redlink
+from scrapers.infobox.parsers.constants import MIN_DETAILS_FOR_CAR
+from scrapers.infobox.parsers.constants import MIN_DETAILS_FOR_DRIVER
+from scrapers.infobox.parsers.constants import MIN_DETAILS_FOR_SERIES
+from scrapers.infobox.parsers.constants import MIN_DETAILS_FOR_YEAR
+from scrapers.infobox.parsers.text_utils.circuit.text_processing.base import CircuitTextProcessing
 
 
 class CircuitLapRecordParser(CircuitTextProcessing):
@@ -97,7 +101,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         )
 
         record = self.prune_nulls(record) or {}
-        services.normalize_lap_record(record)
+        normalize_lap_record(record)
 
         if not any(record.get(k) for k in ("driver", "vehicle", "year", "series")):
             return {}
@@ -113,15 +117,15 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         Klucz: (driver, vehicle, year, time)
         """
         sanitizer = self._strip_lang_marker_tail_only
-        return services.build_lap_record_key(
+        return build_lap_record_key(
             rec,
-            year_extractor=services.extract_year,
+            year_extractor=extract_year,
             vehicle_getter=self._get_vehicle_field,
-            driver_normalizer=lambda value: services.normalize_lap_record_entity(
+            driver_normalizer=lambda value: normalize_lap_record_entity(
                 value,
                 sanitizer=sanitizer,
             ),
-            vehicle_normalizer=lambda value: services.normalize_lap_record_entity(
+            vehicle_normalizer=lambda value: normalize_lap_record_entity(
                 value,
                 sanitizer=sanitizer,
             ),
@@ -152,9 +156,9 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             if not existing:
                 continue
             if self._lap_record_key(existing) == cand_key:
-                services.normalize_lap_record(existing)
-                services.normalize_lap_record(candidate)
-                merged = services.merge_two_records(existing, candidate)
+                normalize_lap_record(existing)
+                normalize_lap_record(candidate)
+                merged = merge_two_records(existing, candidate)
                 records[i]["race_lap_record"] = self.prune_nulls(merged)
                 return
 

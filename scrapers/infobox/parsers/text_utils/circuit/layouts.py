@@ -5,13 +5,13 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
-from scrapers.circuits.circuits_infobox.schema import CIRCUIT_INFOBOX_SCHEMA
-from scrapers.circuits.circuits_infobox.services.lap_record import CircuitLapRecordParser
-from scrapers.circuits.circuits_infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.error_handler import ErrorHandler
+from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
+from scrapers.infobox.parsers.text_utils.circuit.lap_record import CircuitLapRecordParser
+from scrapers.infobox.parsers.text_utils.circuit.specs import CircuitSpecsParser
+from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA
+from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
+from scrapers.parsers.mixins.safe import SafeParserMixin
 
 
 class CircuitLayoutsParser(SafeParserMixin):

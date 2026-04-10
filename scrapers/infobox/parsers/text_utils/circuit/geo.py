@@ -3,11 +3,11 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from models.services.helpers import split_delimited_text
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.circuits.circuits_infobox.services.constants import LOCATION_STOPWORDS
-from scrapers.circuits.circuits_infobox.services.constants import MIN_COORD_PARTS
-from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.error_handler import ErrorHandler
+from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.infobox.parsers.constants import LOCATION_STOPWORDS
+from scrapers.infobox.parsers.constants import MIN_COORD_PARTS
+from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord

@@ -1,12 +1,12 @@
 import re
 from typing import Any
 
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.circuits.circuits_infobox.services.constants import MATERIAL_PATTERNS
-from scrapers.circuits.circuits_infobox.services.constants import MIN_CAPACITY_VALUES_FOR_SEATING
-from scrapers.circuits.circuits_infobox.services.constants import symbol_map
-from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.error_handler import ErrorHandler
+from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.infobox.parsers.constants import MATERIAL_PATTERNS
+from scrapers.infobox.parsers.constants import MIN_CAPACITY_VALUES_FOR_SEATING
+from scrapers.infobox.parsers.constants import symbol_map
+from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
 
 
 class CircuitSpecsParser(InfoboxTextUtils):
