@@ -4,8 +4,10 @@ from typing import cast
 
 from models.mappers.constants import FIELD_ALIASES
 from models.records.constructor import ConstructorRecord
-from models.records.factories import normalize_optional_link_list_or_link_or_string
 from models.records.factories.base import BaseRecordFactory
+from models.records.factories.helpers import (
+    normalize_optional_link_list_or_link_or_string,
+)
 from models.records.factories.registry.helpers import register_factory
 
 

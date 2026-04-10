@@ -10,17 +10,17 @@ from layers.seed.registry.helpers import build_raw_registry_spec
 from layers.seed.registry.helpers import build_seed_registry_entry_from_spec
 from layers.seed.registry.raw_specs import RawRegistrySpec
 from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
-from scrapers.constructors.constructors_list import ConstructorsListScraper
+from scrapers.constructors_list_scraper import ConstructorsListScraper
 from scrapers.drivers.fatalities_list_scraper_drivers import F1FatalitiesListScraper
 from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
-from scrapers.drivers.list_scraper_drivers import F1DriversListScraper
+from scrapers.drivers_list_scraper import DriversListScraper
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.engine_regulation import EngineRegulationScraper
 from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
-from scrapers.grands_prix.list_scraper_grands_prix import GrandsPrixListScraper
+from scrapers.grands_prix_list_scraper import GrandsPrixListScraper
 from scrapers.points.points_scraper import PointsScraper
 from scrapers.races.red_flagged_races_scraper.combined import RedFlaggedRacesScraper
-from scrapers.seasons.list_scraper_seasons import SeasonsListScraper
+from scrapers.seasons_list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper_tyres import TyreManufacturersScraper
 from scrapers.wiki.sources_registry_wiki import get_source_by_seed_name
@@ -38,7 +38,7 @@ LIST_SCRAPER_BY_SEED_NAME: dict[str, type[Any]] = {
     "constructors_former": ConstructorsListScraper,
     "constructors_indianapolis_only": ConstructorsListScraper,
     "constructors_privateer": ConstructorsListScraper,
-    "drivers": F1DriversListScraper,
+    "drivers": DriversListScraper,
     "drivers_female": FemaleDriversListScraper,
     "drivers_fatalities": F1FatalitiesListScraper,
     "seasons": SeasonsListScraper,

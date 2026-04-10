@@ -1,9 +1,15 @@
-from scrapers.infobox.extraction.extractor.base import DefaultInfoboxExtractor
-from scrapers.infobox.extraction.extractor.circuit import CircuitInfoboxExtractionStrategy
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractionStrategy
+from .base import BaseInfoboxExtractor
+from .base import DefaultInfoboxExtractor
+from .circuit import CircuitInfoboxExtractionStrategy
+from .circuit import CircuitInfoboxExtractor
+from .protocol import InfoboxExtractionStrategy
+from .protocol import InfoboxExtractorProtocol
 
 __all__ = [
+    "BaseInfoboxExtractor",
     "CircuitInfoboxExtractionStrategy",
+    "CircuitInfoboxExtractor",
     "DefaultInfoboxExtractor",
     "InfoboxExtractionStrategy",
+    "InfoboxExtractorProtocol",
 ]

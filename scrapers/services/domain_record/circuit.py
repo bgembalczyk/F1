@@ -1,3 +1,7 @@
-from scrapers.services.domain_record.circuit_pipeline_service import CircuitPipelineService as DomainRecordService
+from scrapers.services.domain_record.circuit_pipeline_service import CircuitDomainRecordInput
+from scrapers.services.domain_record.circuit_pipeline_service import CircuitPipelineService
 
-__all__ = ["DomainRecordService"]
+DomainRecordService = CircuitPipelineService
+CircuitDomainRecordService = CircuitPipelineService
+
+__all__ = ["DomainRecordService", "CircuitDomainRecordService", "CircuitDomainRecordInput"]

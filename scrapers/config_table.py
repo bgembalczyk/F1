@@ -5,6 +5,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from typing import TYPE_CHECKING
+import warnings
 
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -13,12 +14,12 @@ from scrapers.base.table.schema import TableSchema
 from scrapers.base.table.schema import TableSchemaBuilder
 
 if TYPE_CHECKING:
-    from scrapers.base.factory.protocol import RecordFactory
+    from models.records.factories.protocol import RecordBuilder
     from scrapers.base.table.dsl.column import ColumnSpec
 
 
 @dataclass(frozen=True)
-class TableScraperConfig:
+class TableConfig:
     url: str
     section_id: str | None = None
     expected_headers: Sequence[str] | None = None
@@ -26,7 +27,7 @@ class TableScraperConfig:
     columns: Mapping[str, BaseColumn] = field(default_factory=dict)
     schema: TableSchema | TableSchemaBuilder | TableSchemaDSL | None = None
     table_css_class: str = "wikitable"
-    record_factory: RecordFactory | None = None
+    record_factory: RecordBuilder | None = None
     model_class: type | None = None
     default_column: BaseColumn = field(default_factory=AutoColumn)
 
@@ -87,10 +88,11 @@ class TableScraperConfig:
 
         if (
             self.record_factory is not None
+            and not hasattr(self.record_factory, "build")
             and not hasattr(self.record_factory, "create")
             and not callable(self.record_factory)
         ):
-            msg = "TableScraperConfig.record_factory must implement RecordFactory.create()."
+            msg = "TableScraperConfig.record_factory must implement RecordBuilder.build() (or legacy create())."
             raise TypeError(msg)
 
 
@@ -104,7 +106,7 @@ def build_scraper_config(
     table_css_class: str = "wikitable",
     record_factory=None,
     model_class: type | None = None,
-) -> TableScraperConfig:
+) -> TableConfig:
     """Canonical builder for table-based scraper configuration."""
     if columns is None and schema is None:
         msg = "Either columns or schema must be provided."
@@ -120,7 +122,7 @@ def build_scraper_config(
         else schema
     )
 
-    return TableScraperConfig(
+    return TableConfig(
         url=url,
         section_id=section_id,
         expected_headers=expected_headers,
@@ -131,5 +133,15 @@ def build_scraper_config(
     )
 
 
-# Backward-compatible alias. Prefer TableScraperConfig in new code.
-ScraperConfig = TableScraperConfig
+TableScraperConfig = TableConfig
+
+
+def __getattr__(name: str) -> object:
+    if name == "ScraperConfig":
+        warnings.warn(
+            "scrapers.config_table.ScraperConfig is deprecated; use TableConfig.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return TableConfig
+    raise AttributeError(name)

@@ -9,7 +9,7 @@ from infrastructure.http_client.interfaces import HttpClientProtocol
 from infrastructure.http_client.policies.http import HttpPolicy
 from infrastructure.http_client.policies.response_cache import TextCacheProtocol
 from scrapers.base.exporters.data import DataExporter
-from scrapers.base.factory.protocol import RecordFactory
+from models.records.factories.protocol import RecordBuilder
 from scrapers.base.factory.source_adapter_fetcher_shim import ScraperRuntimeFactory
 from scrapers.base.helpers.helpers import default_http_policy
 from scrapers.base.html_fetcher import HtmlFetcher
@@ -55,7 +55,7 @@ class ScraperOptions:
     validation_mode: str = "soft"
     debug_dir: Path | None = None
     normalize_empty_values: bool = True
-    record_factory: RecordFactory | None = None
+    record_factory: RecordBuilder | None = None
     run_id: str | None = None
     quality_report: bool = False
     error_report: bool = False

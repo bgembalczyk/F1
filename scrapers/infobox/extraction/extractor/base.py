@@ -11,7 +11,7 @@ from scrapers.infobox.parsers.html import InfoboxHtmlParser
 from scrapers.logging import get_logger
 
 
-class DefaultInfoboxExtractor:
+class BaseInfoboxExtractor:
     """Domyślna implementacja ekstraktora pojedynczego infoboxu."""
 
     def __init__(
@@ -42,7 +42,7 @@ class DefaultInfoboxExtractor:
             raise ValueError(msg)
 
     def extract(self, soup: BeautifulSoup) -> dict[str, Any]:
-        self.logger.debug("DefaultInfoboxExtractor start (run_id=%s)", self.run_id)
+        self.logger.debug("BaseInfoboxExtractor start (run_id=%s)", self.run_id)
         mapped: dict[str, Any]
         attempts = self.retry_attempts if self.error_policy == "retry" else 1
         attempt = 0
@@ -68,7 +68,7 @@ class DefaultInfoboxExtractor:
                 raise
         rows = mapped.get("rows", {}) if isinstance(mapped, dict) else {}
         self.logger.debug(
-            "DefaultInfoboxExtractor extracted %d row(s) (run_id=%s)",
+            "BaseInfoboxExtractor extracted %d row(s) (run_id=%s)",
             len(rows),
             self.run_id,
         )
@@ -91,3 +91,6 @@ class DefaultInfoboxExtractor:
             dump_path,
             self.url,
         )
+
+
+DefaultInfoboxExtractor = BaseInfoboxExtractor
