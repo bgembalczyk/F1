@@ -17,6 +17,10 @@ class FamilyRule:
 
 
 FAMILY_RULES = {
+    "extractor": FamilyRule(
+        family="extractor",
+        required_bases=("BaseCompositeExtractor", "CompositeDataExtractor", "CompleteExtractorBase", "BaseDataExtractor"),
+    ),
     "list": FamilyRule(
         family="list",
         required_bases=("SeedListTableScraper", "F1ListScraper", "BaseConstructorListScraper"),
@@ -40,6 +44,14 @@ FAMILY_RULES = {
 }
 
 
+
+
+FORBIDDEN_CROSS_FAMILY_BASES = {
+    "extractor": {"ABCScraper", "BaseScraper", "F1TableScraper", "F1ListScraper"},
+    "list": {"BaseCompositeExtractor", "CompositeDataExtractor", "BaseDataExtractor"},
+    "table": {"BaseCompositeExtractor", "CompositeDataExtractor", "BaseDataExtractor"},
+    "single_article": {"BaseCompositeExtractor", "CompositeDataExtractor", "BaseDataExtractor"},
+}
 def _git_changed_python_files() -> list[Path]:
     merge_base_cmd = ["git", "merge-base", "origin/main", "HEAD"]
     merge_base = subprocess.run(
@@ -59,6 +71,8 @@ def _git_changed_python_files() -> list[Path]:
 def _classify(class_name: str) -> str | None:
     if class_name.endswith("SectionParser"):
         return "section_parser"
+    if class_name.endswith("Extractor"):
+        return "extractor"
     if not class_name.endswith("Scraper"):
         return None
     if "Single" in class_name:
@@ -100,6 +114,14 @@ def _validate_file(path: Path) -> list[str]:
             violations.append(
                 f"{path.relative_to(ROOT)}:{node.lineno} class {node.name} "
                 f"must inherit one of {rule.required_bases} for family={rule.family}",
+            )
+
+        forbidden = FORBIDDEN_CROSS_FAMILY_BASES.get(family, set())
+        forbidden_hit = sorted(base_names.intersection(forbidden))
+        if forbidden_hit:
+            violations.append(
+                f"{path.relative_to(ROOT)}:{node.lineno} class {node.name} "
+                f"cannot inherit cross-family bases {tuple(forbidden_hit)} for family={rule.family}",
             )
     return violations
 
