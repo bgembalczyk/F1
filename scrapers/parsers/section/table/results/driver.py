@@ -7,7 +7,7 @@ from bs4 import Tag
 
 from models.records.factories.mapping import MappingRecordFactory
 from scrapers.columns.types.auto import AutoColumn
-from scrapers.config_table import ScraperConfig
+from scrapers.config_table import TableScraperConfig
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.table.abc import SectionTableParserBase
 from scrapers.pipeline_table import TablePipeline
@@ -85,7 +85,7 @@ class DriverResultsSectionParser(SectionTableParserBase):
         return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
 
     def _build_pipeline(self, *, schema: TableSchemaDSL) -> TablePipeline:
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self._url,
             section_id=None,
             expected_headers=None,

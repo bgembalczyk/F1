@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(frozen=True)
-class ScraperConfig:
+class TableScraperConfig:
     url: str
     section_id: str | None = None
     expected_headers: Sequence[str] | None = None
@@ -45,12 +45,12 @@ class ScraperConfig:
 
     def validate(self) -> None:
         if not isinstance(self.url, str) or not self.url.strip():
-            msg = "ScraperConfig.url must be a non-empty string."
+            msg = "TableScraperConfig.url must be a non-empty string."
             raise ValueError(msg)
 
         if not isinstance(self.column_map, Mapping):
             msg = (
-                "ScraperConfig.column_map must be of type Mapping; "
+                "TableScraperConfig.column_map must be of type Mapping; "
                 f"got {type(self.column_map).__name__}."
             )
             raise TypeError(msg)
@@ -58,7 +58,7 @@ class ScraperConfig:
         for key, value in self.column_map.items():
             if not isinstance(key, str) or not isinstance(value, str):
                 msg = (
-                    "ScraperConfig.column_map must map str keys to str values; "
+                    "TableScraperConfig.column_map must map str keys to str values; "
                     f"got key type {type(key).__name__} "
                     f"and value type {type(value).__name__}."
                 )
@@ -66,7 +66,7 @@ class ScraperConfig:
 
         if not isinstance(self.columns, Mapping):
             msg = (
-                "ScraperConfig.columns must be of type Mapping; "
+                "TableScraperConfig.columns must be of type Mapping; "
                 f"got {type(self.columns).__name__}."
             )
             raise TypeError(msg)
@@ -74,13 +74,13 @@ class ScraperConfig:
         for key, value in self.columns.items():
             if not isinstance(key, str):
                 msg = (
-                    "ScraperConfig.columns must use keys of type str; "
+                    "TableScraperConfig.columns must use keys of type str; "
                     f"got {type(key).__name__}."
                 )
                 raise TypeError(msg)
             if not isinstance(value, BaseColumn):
                 msg = (
-                    "ScraperConfig.columns must map str keys to BaseColumn values; "
+                    "TableScraperConfig.columns must map str keys to BaseColumn values; "
                     f"got value type {type(value).__name__}."
                 )
                 raise TypeError(msg)
@@ -90,7 +90,7 @@ class ScraperConfig:
             and not hasattr(self.record_factory, "create")
             and not callable(self.record_factory)
         ):
-            msg = "ScraperConfig.record_factory must implement RecordFactory.create()."
+            msg = "TableScraperConfig.record_factory must implement RecordFactory.create()."
             raise TypeError(msg)
 
 
@@ -104,7 +104,7 @@ def build_scraper_config(
     table_css_class: str = "wikitable",
     record_factory=None,
     model_class: type | None = None,
-) -> ScraperConfig:
+) -> TableScraperConfig:
     """Canonical builder for table-based scraper configuration."""
     if columns is None and schema is None:
         msg = "Either columns or schema must be provided."
@@ -120,7 +120,7 @@ def build_scraper_config(
         else schema
     )
 
-    return ScraperConfig(
+    return TableScraperConfig(
         url=url,
         section_id=section_id,
         expected_headers=expected_headers,
@@ -129,3 +129,7 @@ def build_scraper_config(
         table_css_class=table_css_class,
         schema=resolved_schema,
     )
+
+
+# Backward-compatible alias. Prefer TableScraperConfig in new code.
+ScraperConfig = TableScraperConfig

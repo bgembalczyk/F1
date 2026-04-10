@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.config import ScraperConfig
+from scrapers.config_table import TableScraperConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
 from scrapers.parsers.section.sub.indianapolis_only import IndianapolisOnlySubSectionParser
 from scrapers.parsers.table.former_constructors import FormerConstructorsTableParser
@@ -13,7 +13,7 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         section_label: str | None = None,
         include_urls: bool,
         normalize_empty_values: bool,
@@ -23,7 +23,7 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
             section_label=section_label,
             include_urls=include_urls,
             normalize_empty_values=normalize_empty_values,
-            table_parser=FormerConstructorsTableParser(),
+            table_mapping_parser=FormerConstructorsTableParser(),
         )
         self._indianapolis_sub_section_parser = IndianapolisOnlySubSectionParser()
 

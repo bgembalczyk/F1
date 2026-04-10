@@ -5,7 +5,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.source_catalog import TYRES
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
@@ -97,7 +97,7 @@ class TyreManufacturersScraper(F1TableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+        config: TableScraperConfig | None = None,
     ) -> None:
         super().__init__(options=options, config=config)
         parser = ManufacturersSectionParser()

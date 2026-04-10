@@ -2,7 +2,7 @@ import logging
 
 from bs4 import BeautifulSoup
 
-from scrapers.config import ScraperConfig
+from scrapers.config_table import TableScraperConfig
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.section.parse_results import SectionParseResult
@@ -16,11 +16,11 @@ class ConstructorsSectionParser(WikiSectionParser):
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         section_label: str | None,
         include_urls: bool,
         normalize_empty_values: bool,
-        table_parser: WikiTableBaseParser,
+        table_mapping_parser: WikiTableBaseParser,
     ) -> None:
         super().__init__()
         self._include_urls = include_urls
@@ -32,8 +32,8 @@ class ConstructorsSectionParser(WikiSectionParser):
             include_urls=include_urls,
             normalize_empty_values=normalize_empty_values,
         )
-        self._table_parser = table_parser
-        self._html_table_parser = HtmlTableParser()
+        self._table_mapping_parser: WikiTableBaseParser = table_mapping_parser
+        self._table_transport_parser: HtmlTableParser = HtmlTableParser()
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         logger.warning(
@@ -48,7 +48,7 @@ class ConstructorsSectionParser(WikiSectionParser):
         )
         if table is not None:
             try:
-                rows = self._html_table_parser.parse_table(table)
+                rows = self._table_transport_parser.parse_table(table)
                 headers = rows[0].headers if rows else []
                 logger.warning(
                     "Constructors section parser '%s': first table headers=%s.",
@@ -62,7 +62,7 @@ class ConstructorsSectionParser(WikiSectionParser):
                     }
                     for row in rows
                 ]
-                self._table_parser.parse({"headers": headers, "rows": row_maps})
+                self._table_mapping_parser.parse({"headers": headers, "rows": row_maps})
             except RuntimeError:
                 logger.warning(
                     "Constructors section parser '%s': "

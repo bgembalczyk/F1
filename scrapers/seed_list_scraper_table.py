@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from typing import ClassVar
 from warnings import warn
 
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.wiki.component_metadata_wiki import LIST_SCRAPER_KIND
@@ -69,7 +69,7 @@ class SeedListTableScraper(F1TableScraper):
         table_css_class: str = "wikitable",
         record_factory=None,
         model_class: type | None = None,
-    ) -> ScraperConfig:
+    ) -> TableScraperConfig:
         warn(
             "SeedListTableScraper.build_config is deprecated; "
             "use scrapers.base.table.config.build_scraper_config.",

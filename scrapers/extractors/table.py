@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.logging import get_logger
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 
 
@@ -13,7 +13,7 @@ class TableExtractor:
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         include_urls: bool,
         normalize_empty_values: bool = True,
         model_fields: set[str] | None = None,
