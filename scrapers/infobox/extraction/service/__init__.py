@@ -1,9 +1,21 @@
 from scrapers.infobox.extraction.protocol import InfoboxExtractionService
-from scrapers.infobox.extraction.service.base_orchestrator import BaseInfoboxOrchestrator
-from scrapers.infobox.extraction.service.circuit_orchestrator import CircuitInfoboxOrchestrator
-from scrapers.infobox.extraction.service.constructor_orchestrator import ConstructorInfoboxOrchestrator
-from scrapers.infobox.extraction.service.driver_orchestrator import DriverInfoboxOrchestrator
-from scrapers.infobox.extraction.service.strategy_orchestrator import StrategyBackedInfoboxOrchestrator
+from scrapers.infobox.extraction.service.base_orchestrator import (
+    BaseInfoboxOrchestrator,
+)
+from scrapers.infobox.extraction.service.circuit_orchestrator import (
+    CircuitInfoboxOrchestrator,
+)
+from scrapers.infobox.extraction.service.constructor_orchestrator import (
+    ConstructorInfoboxOrchestrator,
+)
+from scrapers.infobox.extraction.service.driver_orchestrator import (
+    DriverInfoboxOrchestrator,
+)
+from scrapers.infobox.extraction.service.strategy_orchestrator import (
+    StrategyBackedInfoboxOrchestrator,
+)
+
+# TODO: Delete:
 
 BaseInfoboxExtractionService = BaseInfoboxOrchestrator
 CircuitInfoboxExtractionService = CircuitInfoboxOrchestrator
