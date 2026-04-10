@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Protocol
 
 from bs4 import BeautifulSoup
 
-from scrapers.results import ScrapeResult
 from validation.validator_base import ExportRecord
+
+if TYPE_CHECKING:
+    from scrapers.results import ScrapeResult
+    from validation.validator_base import RawRecord
 
 
 class FetchCapability(Protocol):
