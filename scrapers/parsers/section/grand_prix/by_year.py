@@ -11,7 +11,7 @@ from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.function.circuit_location import LocationColumn
 from scrapers.columns.types.multi.constructor_split import ConstructorSplitColumn
 from scrapers.columns.types.url import UrlColumn
-from scrapers.config_table import TableScraperConfig
+from scrapers.configs.public import TableConfig
 from scrapers.parser_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.parse_results import SectionParseResult
@@ -78,7 +78,7 @@ class GrandPrixByYearSectionParser:
                 ColumnSpec("Location", "location", LocationColumn()),
             ],
         )
-        config = TableScraperConfig(
+        config = TableConfig(
             url=self._url,
             section_id=section_id,
             expected_headers=["Year", "Driver", "Constructor", "Report"],

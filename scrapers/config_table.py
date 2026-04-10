@@ -5,6 +5,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from typing import TYPE_CHECKING
+import warnings
 
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -18,7 +19,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(frozen=True)
-class TableScraperConfig:
+class TableConfig:
     url: str
     section_id: str | None = None
     expected_headers: Sequence[str] | None = None
@@ -104,7 +105,7 @@ def build_scraper_config(
     table_css_class: str = "wikitable",
     record_factory=None,
     model_class: type | None = None,
-) -> TableScraperConfig:
+) -> TableConfig:
     """Canonical builder for table-based scraper configuration."""
     if columns is None and schema is None:
         msg = "Either columns or schema must be provided."
@@ -120,7 +121,7 @@ def build_scraper_config(
         else schema
     )
 
-    return TableScraperConfig(
+    return TableConfig(
         url=url,
         section_id=section_id,
         expected_headers=expected_headers,
@@ -131,5 +132,15 @@ def build_scraper_config(
     )
 
 
-# Backward-compatible alias. Prefer TableScraperConfig in new code.
-ScraperConfig = TableScraperConfig
+TableScraperConfig = TableConfig
+
+
+def __getattr__(name: str) -> object:
+    if name == "ScraperConfig":
+        warnings.warn(
+            "scrapers.config_table.ScraperConfig is deprecated; use TableConfig.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return TableConfig
+    raise AttributeError(name)

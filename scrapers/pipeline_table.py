@@ -22,7 +22,7 @@ from scrapers.base.normalization_utils import normalize_empty
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.config import ScraperConfig as TableScraperConfig
+from scrapers.configs.public import TableConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.row import TableRow
@@ -46,7 +46,7 @@ class TablePipeline:
     def __init__(
         self,
         *,
-        config: TableScraperConfig,
+        config: TableConfig,
         include_urls: bool,
         normalize_empty_values: bool = True,
         model_fields: set[str] | None = None,
