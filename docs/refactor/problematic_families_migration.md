@@ -119,3 +119,18 @@ Poniżej celowo tylko **importy i instancjacje**, żeby łatwo planować PR-y et
 1. `DomainRecordService` — najpierw poprawa importów w `scrapers/composition_*.py`, potem testy jednostkowe domen.
 2. `InfoboxExtractor` — ujednolicenie kontraktu (`protocol`) i implementacji (`base`), usunięcie starych import paths.
 3. `ScraperConfig` — domknięcie kanonicznego modułu `scrapers.base.table.config` + stopniowe wycięcie `scrapers.config_table` i ograniczenie `scrapers.config.ScraperConfig` do runtime.
+
+---
+
+## Checklist migracyjny (module moved / alias left / alias removed)
+
+| Moduł historyczny | Moduł kanoniczny | module moved | alias left | alias removed |
+|---|---|---|---|---|
+| `scrapers.runner` | `scrapers.runners.scraper_runner` | ✅ | ✅ (DeprecationWarning + re-export) | ⬜ |
+| `scrapers.pipeline_runner` | `scrapers.runners.pipeline_runner` | ✅ | ✅ (DeprecationWarning + re-export) | ⬜ |
+| `scrapers.domain_entrypoint` | `scrapers.entrypoints.domain_entrypoint_service` | ✅ | ✅ (DeprecationWarning + re-export) | ⬜ |
+
+Legenda:
+- `module moved` — logika przeniesiona do katalogu rolowego (`runners/`, `entrypoints/`, `services/`, `adapters/`, `core/`).
+- `alias left` — pozostawiony cienki moduł kompatybilności (re-export + ostrzeżenie).
+- `alias removed` — etap końcowy po zamknięciu migracji importów downstream.
