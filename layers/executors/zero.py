@@ -12,11 +12,11 @@ from layers.protocols.merge.zero_service import LayerZeroMergeServiceProtocol
 from layers.protocols.zero_job_hook import LayerZeroJobHook
 from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
 from layers.zero.run_profile_paths import layer_zero_raw_paths
-from scrapers.base.errors import normalize_pipeline_error
-from scrapers.base.logging import build_execution_context
-from scrapers.base.logging import get_logger
-from scrapers.base.run_config import RunConfig
-from scrapers.base.runner import ScraperRunner
+from scrapers.core.errors import normalize_pipeline_error
+from scrapers.core.logging import build_execution_context
+from scrapers.core.logging import get_logger
+from scrapers.core.run_config import RunConfig
+from scrapers.core.runner import ScraperRunner
 
 if TYPE_CHECKING:
     from collections.abc import Callable

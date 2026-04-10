@@ -1,8 +1,8 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import BundleRecordWithDetailsStrategy
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from scrapers.seasons.list_scraper_seasons import SeasonsListScraper
-from scrapers.seasons.single_scraper_seasons import SingleSeasonScraper
+from scrapers.seasons_list_scraper import SeasonsListScraper
+from scrapers.seasons_detail_scraper import SeasonsDetailScraper
 from scrapers.wiki.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.wiki.component_metadata_wiki import build_component_metadata
 
@@ -15,7 +15,7 @@ class CompleteSeasonDataExtractor(CompleteExtractorBase):
     url = SeasonsListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
         list_scraper_classes=(SeasonsListScraper,),
-        single_scraper_cls=SingleSeasonScraper,
+        single_scraper_cls=SeasonsDetailScraper,
         detail_url_field_paths=("season.url",),
         record_assembly_strategy=BundleRecordWithDetailsStrategy(
             record_field="season",

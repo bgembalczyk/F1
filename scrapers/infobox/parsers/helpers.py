@@ -1,9 +1,8 @@
-from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.infobox.extraction.extractor.base import DefaultInfoboxExtractor
+from scrapers.infobox.extraction.extractor import BaseInfoboxExtractor
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 
 
@@ -11,7 +10,7 @@ def parse_infobox_from_soup(
     infobox_scraper: WikipediaInfoboxScraper,
     soup: BeautifulSoup,
 ) -> dict[str, Any]:
-    extractor = DefaultInfoboxExtractor(
+    extractor = BaseInfoboxExtractor(
         parser=infobox_scraper.parser,
         mapper=infobox_scraper.mapper,
         logger=getattr(infobox_scraper, "logger", None),

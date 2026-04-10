@@ -116,18 +116,18 @@ def debug_profile() -> RunConfig:
 
 _DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
     "drivers": _DomainEntrypointSpec(
-        scraper_path="scrapers.drivers.list_scraper:F1DriversListScraper",
+        scraper_path="scrapers.drivers_list_scraper:DriversListScraper",
         default_output_json="drivers/f1_drivers.json",
         run_config_profile=default_profile,
     ),
     "seasons": _DomainEntrypointSpec(
-        scraper_path="scrapers.seasons.list_scraper:SeasonsListScraper",
+        scraper_path="scrapers.seasons_list_scraper:SeasonsListScraper",
         default_output_json="seasons/f1_seasons.json",
         default_output_csv="seasons/f1_seasons.csv",
         run_config_profile=default_profile,
     ),
     "grands_prix": _DomainEntrypointSpec(
-        scraper_path="scrapers.grands_prix.list_scraper:GrandsPrixListScraper",
+        scraper_path="scrapers.grands_prix_list_scraper:GrandsPrixListScraper",
         default_output_json="grands_prix/f1_grands_prix_by_title.json",
         default_output_csv="grands_prix/f1_grands_prix_by_title.csv",
         run_config_profile=default_profile,

@@ -4,11 +4,11 @@ from pathlib import Path
 
 import pytest
 from bs4 import BeautifulSoup
-
-from scrapers.base.extractors.infobox import InfoboxExtractor
 from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
+
+from scrapers.infobox.extraction.extractor import BaseInfoboxExtractor
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -55,14 +55,14 @@ def test_infobox_extractor_extracts_rows_and_logs(
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    extractor = InfoboxExtractor(run_id="run-2")
+    extractor = BaseInfoboxExtractor(run_id="run-2")
 
     with caplog.at_level(logging.DEBUG):
         record = extractor.extract(soup)
 
     assert record["title"] == "Test Circuit"
     assert record["rows"]["Country"]["text"] == "Testland"
-    assert "InfoboxExtractor extracted 1 row(s)" in caplog.text
+    assert "BaseInfoboxExtractor extracted 1 row(s)" in caplog.text
 
 
 def test_infobox_extractor_skip_policy_returns_empty_on_recoverable_error() -> None:
@@ -74,7 +74,7 @@ def test_infobox_extractor_skip_policy_returns_empty_on_recoverable_error() -> N
         def find_infobox(self, _soup):
             return None
 
-    extractor = InfoboxExtractor(parser=_Parser(), error_policy="skip")
+    extractor = BaseInfoboxExtractor(parser=_Parser(), error_policy="skip")
     soup = BeautifulSoup("<html></html>", "html.parser")
 
     assert extractor.extract(soup) == {}
@@ -89,7 +89,7 @@ def test_infobox_extractor_propagates_type_error_as_non_recoverable() -> None:
         def find_infobox(self, _soup):
             return None
 
-    extractor = InfoboxExtractor(parser=_Parser(), error_policy="skip")
+    extractor = BaseInfoboxExtractor(parser=_Parser(), error_policy="skip")
     soup = BeautifulSoup("<html></html>", "html.parser")
 
     with pytest.raises(TypeError):

@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from abc import ABC
-from abc import abstractmethod
 from typing import Any
 from typing import Generic
 from typing import TypeVar
@@ -10,7 +8,9 @@ from scrapers.core.domain_roles import Scraper
 from scrapers.mixins.pipeline_mixins import DebugDumpMixin
 from scrapers.mixins.pipeline_mixins import RetryMixin
 from scrapers.mixins.pipeline_mixins import ValidationMixin
+from scrapers.services.domain_record.base import DomainPipelineService
 
+InputDTO = TypeVar("InputDTO")
 PayloadT = TypeVar("PayloadT")
 
 
@@ -22,19 +22,10 @@ class BaseFactoryScraper(
     ABC,
     Generic[PayloadT],
 ):
-    required_fields: tuple[str, ...] = ()
+    """Backward-compatible alias around the canonical DomainPipelineService."""
 
-    @abstractmethod
-    def _build_payload(self, source: dict[str, Any]) -> PayloadT:
-        """Mapuje słownik wejściowy na DTO assemblera."""
-
-    @abstractmethod
-    def _assemble(self, payload: PayloadT) -> dict[str, Any]:
-        """Deleguje składanie do konkretnego assemblera domenowego."""
-
-    def run(self, source: dict[str, Any]) -> dict[str, Any]:
-        self.validate_required(source, self.required_fields)
-        payload = self._build_payload(source)
-        assembled = self.with_retry(lambda: self._assemble(payload))
-        self.dump_debug_payload(payload=assembled, stem=self.__class__.__name__.lower())
-        return assembled
+    class BaseAssemblerPipelineService(
+    DomainPipelineService[InputDTO, PayloadT, dict[str, Any]],
+    Generic[InputDTO, PayloadT],
+):
+    """Backward-compatible alias around the canonical DomainPipelineService."""

@@ -1,15 +1,17 @@
 from typing import Any
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig as TableScraperConfig
+from scrapers.base.table.scraper import F1TableScraper
 from scrapers.wiki.parsers.elements.table import TableParser
 
 
-class F1StandingsScraper(TableParser):
+class F1StandingsTableParser(TableParser):
     """Parser tabel klasyfikacji (standings) Formuły 1.
 
     Parsuje tabelę klasyfikacji z podanego elementu HTML (``element``),
@@ -21,22 +23,10 @@ class F1StandingsScraper(TableParser):
     HTML samodzielnie), zgodnie z hierarchią WikiElementParserów.
     """
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions,
-        config: TableScraperConfig,
-        position_key: str = "pos",
-    ) -> None:
+    def __init__(self, *, position_key: str = "pos") -> None:
         self.position_key = position_key
-        self._extractor = TableExtractor(
-            config=config,
-            include_urls=options.include_urls,
-            normalize_empty_values=options.normalize_empty_values,
-        )
 
-    def parse(self, element: Tag) -> list[dict[str, Any]]:
-        rows = self._extractor.extract(element)
+    def normalize_rows(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         previous_position = None
         for row in rows:
             pos = row.get(self.position_key)
@@ -45,3 +35,36 @@ class F1StandingsScraper(TableParser):
             elif pos is not None:
                 previous_position = pos
         return rows
+
+    def parse(
+        self,
+        element: Tag,
+        *,
+        options: ScraperOptions,
+        config: TableScraperConfig,
+    ) -> list[dict[str, Any]]:
+        extractor = TableExtractor(
+            config=config,
+            include_urls=options.include_urls,
+            normalize_empty_values=options.normalize_empty_values,
+        )
+        rows = extractor.extract(element)
+        return self.normalize_rows(rows)
+
+
+class F1StandingsScraper(F1TableScraper):
+    """Pełny scraper standings z pipeline fetch/parse."""
+
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: TableScraperConfig | None = None,
+        position_key: str = "pos",
+    ) -> None:
+        super().__init__(options=options, config=config)
+        self._table_parser = F1StandingsTableParser(position_key=position_key)
+
+    def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
+        rows = super()._parse_soup(soup)
+        return self._table_parser.normalize_rows(rows)

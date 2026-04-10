@@ -11,7 +11,7 @@ from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
 from scrapers.helpers.config_factory import build_scraper_options
 from scrapers.options import ScraperOptions
-from scrapers.runtime.factory import ScraperRuntimeFactory
+from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
 from scrapers.section.selection_strategy.base import SectionSelectionStrategy
 from scrapers.wiki.scraper_wiki import WikiScraper
 

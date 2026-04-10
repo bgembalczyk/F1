@@ -1,8 +1,8 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from complete_extractor.domain_config import ExtractDetailFieldStrategy
-from scrapers.grands_prix.list_scraper_grands_prix import GrandsPrixListScraper
-from scrapers.grands_prix.single_scraper_grands_prix import F1SingleGrandPrixScraper
+from scrapers.grands_prix_list_scraper import GrandsPrixListScraper
+from scrapers.grands_prix_detail_scraper import GrandsPrixDetailScraper
 from scrapers.wiki.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.wiki.component_metadata_wiki import build_component_metadata
 
@@ -22,7 +22,7 @@ class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
     url = GrandsPrixListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
         list_scraper_classes=(GrandsPrixListScraper,),
-        single_scraper_cls=F1SingleGrandPrixScraper,
+        single_scraper_cls=GrandsPrixDetailScraper,
         detail_url_field_paths=("race_title.url",),
         record_assembly_strategy=ExtractDetailFieldStrategy(detail_field="by_year"),
     )

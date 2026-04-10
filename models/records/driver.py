@@ -3,21 +3,18 @@ from typing_extensions import TypedDict
 
 from models.records.driver_championships import DRIVERS_CHAMPIONSHIPS_SCHEMA
 from models.records.driver_championships import DriversChampionshipsRecord
-from models.records.link import LINK_SCHEMA
-from models.records.link import LinkRecord
 from models.records.record_definition import RecordDefinition
-from models.records.season import SEASON_SCHEMA
-from models.records.season import SeasonRecord
+from models.records.schema_fragments import compose_schema_fragments
 from validation.record_validation import validate_record
 from validation.schemas import NestedSchema
 
 
-class DriverRecord(TypedDict):
-    driver: LinkRecord
+class DriverSummaryRecord(TypedDict):
+    driver: dict[str, str | None]
     is_active: bool
     is_world_champion: bool
     nationality: str | None
-    seasons_competed: list[SeasonRecord]
+    seasons_competed: list[dict[str, int | str]]
     drivers_championships: DriversChampionshipsRecord
     race_entries: NotRequired[int | None]
     race_starts: NotRequired[int | None]
@@ -28,8 +25,12 @@ class DriverRecord(TypedDict):
     points: NotRequired[str | None]
 
 
-DRIVER_DEFINITION = RecordDefinition(
-    name="driver",
+DriverRecord = DriverSummaryRecord
+
+_driver_common_fragments = compose_schema_fragments("link")
+
+DRIVER_SUMMARY_DEFINITION = RecordDefinition(
+    name="driver_summary",
     required=(
         "driver",
         "nationality",
@@ -39,7 +40,7 @@ DRIVER_DEFINITION = RecordDefinition(
         "is_world_champion",
     ),
     types={
-        "driver": dict,
+        **_driver_common_fragments["types"],
         "nationality": str,
         "seasons_competed": list,
         "drivers_championships": dict,
@@ -47,13 +48,16 @@ DRIVER_DEFINITION = RecordDefinition(
         "is_world_champion": bool,
     },
     nested={
-        "driver": NestedSchema(LINK_SCHEMA),
-        "seasons_competed": NestedSchema(SEASON_SCHEMA, is_list=True),
+        "driver": _driver_common_fragments["nested"]["link"],
+        "seasons_competed": NestedSchema(
+            schema=compose_schema_fragments("seasons")["nested"]["seasons"].schema,
+            is_list=True,
+        ),
         "drivers_championships": NestedSchema(DRIVERS_CHAMPIONSHIPS_SCHEMA),
     },
 )
 
-DRIVER_SCHEMA = DRIVER_DEFINITION.to_schema()
+DRIVER_SCHEMA = DRIVER_SUMMARY_DEFINITION.to_schema()
 
 
 def validate_driver_record(record: dict[str, object]) -> list[str]:

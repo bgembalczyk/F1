@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -13,7 +14,14 @@ if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol
 
 
-class SeasonPipelineService(BaseFactoryScraper[SeasonPayloadDTO]):
+@dataclass(frozen=True, slots=True)
+class SeasonDomainRecordInput:
+    payload: SeasonPayloadDTO | SeasonRecordSections
+
+
+class SeasonPipelineService(
+    BaseAssemblerPipelineService[SeasonDomainRecordInput, SeasonPayloadDTO],
+):
     def __init__(
         self,
         *,
@@ -21,7 +29,10 @@ class SeasonPipelineService(BaseFactoryScraper[SeasonPayloadDTO]):
     ) -> None:
         self._assembler = assembler or SeasonRecordAssembler()
 
-    def build_payload(self, payload: SeasonPayloadDTO | Any) -> SeasonPayloadDTO:
+    def build_payload(self, input_dto: SeasonDomainRecordInput) -> SeasonPayloadDTO:
+        payload = input_dto.payload
+        if isinstance(payload, SeasonRecordSections):
+            return SeasonPayloadDTO(sections=payload, base=BaseRecordAssemblerInput())
         if isinstance(payload, SeasonPayloadDTO):
             return payload
         return SeasonPayloadDTO(sections=SeasonRecordSections.empty())
@@ -38,7 +49,7 @@ class SeasonPipelineService(BaseFactoryScraper[SeasonPayloadDTO]):
             return SeasonPayloadDTO(sections=payload, base=BaseRecordAssemblerInput())
         return self.build_payload(payload)
 
-    def _assemble(self, payload: SeasonPayloadDTO) -> dict[str, Any]:
+    def assemble(self, payload: SeasonPayloadDTO) -> dict[str, Any]:
         return self._assembler.assemble(payload)
 
     def assemble_record(
@@ -46,3 +57,6 @@ class SeasonPipelineService(BaseFactoryScraper[SeasonPayloadDTO]):
         payload: SeasonPayloadDTO | SeasonRecordSections,
     ) -> dict[str, Any]:
         return self.run({"payload": payload})
+      
+    def _compat_input_from_source(self, source: dict[str, Any]) -> SeasonDomainRecordInput:
+        return SeasonDomainRecordInput(payload=source.get("payload"))

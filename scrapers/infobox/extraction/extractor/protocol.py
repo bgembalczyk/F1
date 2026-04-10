@@ -1,6 +1,6 @@
+from collections.abc import Iterable
 from typing import Any
 from typing import Generic
-from typing import Iterable
 from typing import Protocol
 
 from bs4 import BeautifulSoup
@@ -11,7 +11,7 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
 
-class InfoboxExtractionStrategy(Protocol, Generic[ParserInputT]):
+class InfoboxExtractorProtocol(Protocol, Generic[ParserInputT]):
     """Kontrakt strategii ekstrakcji infoboxów dla konkretnej domeny."""
 
     def find_infoboxes(self, soup: BeautifulSoup) -> Iterable[ParserInputT]: ...
@@ -27,3 +27,6 @@ class InfoboxExtractionStrategy(Protocol, Generic[ParserInputT]):
         self,
         parsed_records: list[dict[str, Any]],
     ) -> InfoboxExtractionResult: ...
+
+
+InfoboxExtractionStrategy = InfoboxExtractorProtocol
