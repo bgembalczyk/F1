@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from scrapers.base.sections.constants import SECTION_RESULT_KEYS
+from scrapers.section.constants import SECTION_RESULT_KEYS
 
 
 def is_legacy_section_payload(payload: dict[str, Any]) -> bool:

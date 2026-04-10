@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.sections.interface import SectionParseResult
-from scrapers.base.sections.serializer import build_section_metadata
+from scrapers.section.interface import SectionParseResult
+from scrapers.section.serializer import build_section_metadata
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:

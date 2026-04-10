@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.sections.serializer import build_section_parse_result
+from scrapers.parsers.seasons.calendar import SeasonCalendarParser
+from scrapers.sections.interface import SectionParseResult
+from scrapers.sections.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.sections.interface import SectionParseResult
-    from scrapers.seasons.parsers_seasons.calendar import SeasonCalendarParser
 
 
 class SeasonCalendarSectionParser:

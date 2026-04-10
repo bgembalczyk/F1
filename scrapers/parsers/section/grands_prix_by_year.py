@@ -3,20 +3,20 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.factory.protocol import MappingRecordFactory
-from scrapers.base.sections.interface import SectionParseResult
-from scrapers.base.sections.serializer import build_section_metadata
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.parser import HtmlTableParser
-from scrapers.base.table.pipeline import TablePipeline
-from scrapers.grands_prix.assemblers_grands_prix.by_year import GrandPrixByYearRecordAssembler
-from scrapers.grands_prix.columns_grands_prix.circuit_location import LocationColumn
-from scrapers.grands_prix.columns_grands_prix.constructor_split import ConstructorSplitColumn
+from models.records.factories.mapping import MappingRecordFactory
+from scrapers.assemblers.grands_prix_by_year_record import GrandPrixByYearRecordAssembler
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.auto import AutoColumn
+from scrapers.columns.types.driver_list import DriverListColumn
+from scrapers.columns.types.function.circuit_location import LocationColumn
+from scrapers.columns.types.multi.constructor_split import ConstructorSplitColumn
+from scrapers.columns.types.url import UrlColumn
+from scrapers.config_table import ScraperConfig
+from scrapers.parser_table import HtmlTableParser
+from scrapers.pipeline_table import TablePipeline
+from scrapers.sections.interface import SectionParseResult
+from scrapers.sections.serializer import build_section_metadata
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

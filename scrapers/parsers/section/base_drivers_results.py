@@ -3,20 +3,16 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from scrapers.base.sections.serializer import build_section_parse_result
+from scrapers.section.config.driver_results import DriverResultsSectionConfig
+from scrapers.section.interface import SectionParseResult
+from scrapers.section.results_drivers import DriverResultsSectionParser
+from scrapers.section.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.sections.interface import SectionParseResult
-    from scrapers.drivers.drivers_sections.results import DriverResultsSectionParser
 
 
-@dataclass(frozen=True)
-class DriverResultsSectionConfig:
-    section_id: str
-    section_label: str
-    header_aliases: tuple[str, ...]
 
 
 class BaseDriverResultsSectionParser:
@@ -61,5 +57,4 @@ class BaseDriverResultsSectionParser:
 
 __all__ = [
     "BaseDriverResultsSectionParser",
-    "DriverResultsSectionConfig",
 ]

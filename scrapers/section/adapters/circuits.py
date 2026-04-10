@@ -2,14 +2,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.circuits.circuits_sections.events import CircuitEventsSectionParser
-from scrapers.circuits.circuits_sections.lap_records import CircuitLapRecordsSectionParser
-from scrapers.circuits.circuits_sections.layout_history import CircuitLayoutHistorySectionParser
+from scrapers.options import ScraperOptions
+from scrapers.sections.adapters.entry import SectionAdapterEntry
+from scrapers.sections.events_circuits import CircuitEventsSectionParser
+from scrapers.sections.lap_records_circuits import CircuitLapRecordsSectionParser
+from scrapers.sections.layout_history_circuits import CircuitLayoutHistorySectionParser
 from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
-if TYPE_CHECKING:
-    from scrapers.base.options import ScraperOptions
 
 
 def circuit_section_entries(
