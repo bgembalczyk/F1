@@ -1,4 +1,4 @@
-"""Compatibility shim for domain list-scraper entrypoints."""
+"""Shared abstractions and registry for domain list-scraper entrypoints."""
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ if TYPE_CHECKING:
 class DomainEntrypointConfig:
     """Declarative configuration for a domain ``run_list_scraper`` facade."""
 
-    list_scraper_cls: type[ABCScraper] | LazyScraperClassProxy
+    list_scraper_cls: type[ABCScraper] | LazyScraperFactory
     default_output_json: str | Path
     run_config_profile: Callable[[], RunConfig]
     default_output_csv: str | Path | None = None
@@ -71,8 +71,8 @@ class CurrentYearOutputPathRenderer:
         return YearPlaceholderOutputPathRenderer(year=year).render(path)
 
 
-class LazyScraperClassProxy:
-    """Lazy wrapper that resolves a scraper class only when it is actually used."""
+class LazyScraperFactory:
+    """Lazy factory that resolves a scraper class only when it is actually used."""
 
     def __init__(self, import_path: str) -> None:
         self._import_path = import_path
@@ -90,7 +90,7 @@ class LazyScraperClassProxy:
         return getattr(self._resolve(), name)
 
     def __repr__(self) -> str:
-        return f"LazyScraperClassProxy({self._import_path!r})"
+        return f"LazyScraperFactory({self._import_path!r})"
 
 
 @dataclass(frozen=True)
@@ -116,18 +116,18 @@ def debug_profile() -> RunConfig:
 
 _DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
     "drivers": _DomainEntrypointSpec(
-        scraper_path="scrapers.drivers.list_scraper:DriversListScraper",
+        scraper_path="scrapers.drivers_list_scraper:DriversListScraper",
         default_output_json="drivers/f1_drivers.json",
         run_config_profile=default_profile,
     ),
     "seasons": _DomainEntrypointSpec(
-        scraper_path="scrapers.seasons.list_scraper:SeasonsListScraper",
+        scraper_path="scrapers.seasons_list_scraper:SeasonsListScraper",
         default_output_json="seasons/f1_seasons.json",
         default_output_csv="seasons/f1_seasons.csv",
         run_config_profile=default_profile,
     ),
     "grands_prix": _DomainEntrypointSpec(
-        scraper_path="scrapers.grands_prix.list_scraper:GrandsPrixListScraper",
+        scraper_path="scrapers.grands_prix_list_scraper:GrandsPrixListScraper",
         default_output_json="grands_prix/f1_grands_prix_by_title.json",
         default_output_csv="grands_prix/f1_grands_prix_by_title.csv",
         run_config_profile=default_profile,
@@ -169,7 +169,7 @@ def _import_target(path: str) -> object:
 @cache
 def _resolve_domain_entrypoint_config(domain: str) -> DomainEntrypointConfig:
     spec = _DOMAIN_ENTRYPOINT_SPECS[domain]
-    list_scraper_cls = LazyScraperClassProxy(spec.scraper_path)
+    list_scraper_cls = LazyScraperFactory(spec.scraper_path)
 
     return DomainEntrypointConfig(
         list_scraper_cls=list_scraper_cls,

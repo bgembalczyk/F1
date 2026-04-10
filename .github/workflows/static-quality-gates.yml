@@ -56,3 +56,6 @@ jobs:
 
       - name: Enforce scraper family inheritance contracts
         run: python scripts/ci/enforce_scraper_family_contracts.py
+
+      - name: Enforce canonical role imports and thin compatibility modules
+        run: python scripts/ci/enforce_canonical_role_imports.py
