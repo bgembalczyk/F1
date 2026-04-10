@@ -2,10 +2,10 @@ from collections.abc import Mapping
 
 from infrastructure.http.clients.base import BaseHttpClient
 from infrastructure.http.config import HttpClientConfig
+from infrastructure.http.errors.base import RequestError
 from infrastructure.http.protocols.response import HttpResponseProtocol
 from infrastructure.http.protocols.session import SessionProtocol
-from infrastructure.http.requests_shim.request_error import RequestError
-from infrastructure.http.requests_shim.session import Session
+from infrastructure.http.session import Session
 
 
 class UrllibHttpClient(BaseHttpClient):

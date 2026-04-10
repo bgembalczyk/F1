@@ -7,13 +7,13 @@ from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
 
+from infrastructure.cache.response_service import ResponseCacheService
 from infrastructure.http.config import HttpClientConfig
 from infrastructure.http.factories.default_policy import DefaultHttpPolicyFactory
 from infrastructure.http.header_resolver import HeaderResolver
 from infrastructure.http.protocols.response import HttpResponseProtocol
 from infrastructure.http.protocols.session import SessionProtocol
 from infrastructure.http.request_executor import RequestExecutor
-from infrastructure.http.response_cache_service import ResponseCacheService
 from infrastructure.http.type_alias import JsonValue
 
 

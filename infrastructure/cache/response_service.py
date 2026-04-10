@@ -2,7 +2,7 @@
 
 from collections.abc import Callable
 
-from infrastructure.http_client.policies.response_cache import TextCacheProtocol
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
 
 
 class ResponseCacheService:

@@ -1,7 +1,9 @@
 from collections.abc import Mapping
 
 from infrastructure.http.errors.base import RequestError
-from infrastructure.http.errors.shim import HttpShimErrorResponseAdapter
+from infrastructure.http.errors.shim.response_adapter import (
+    HttpShimErrorResponseAdapter,
+)
 
 
 class HttpShimError(RequestError):
