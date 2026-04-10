@@ -1,15 +1,7 @@
-"""Backward-compatible aliases for diagnostics-related mixins."""
+"""Backward-compatible import bridge for legacy pipeline mixin path."""
 
-from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
+from scrapers.mixins.compat_aliases import DebugDumpMixin
+from scrapers.mixins.compat_aliases import RetryMixin
+from scrapers.mixins.compat_aliases import ValidationMixin
 
-
-class RetryMixin(RunDiagnosticsMixin):
-    """Compatibility alias for retry behavior."""
-
-
-class DebugDumpMixin(RunDiagnosticsMixin):
-    """Compatibility alias for debug payload dump behavior."""
-
-
-class ValidationMixin(RunDiagnosticsMixin):
-    """Compatibility alias for required-field validation behavior."""
+__all__ = ["RetryMixin", "DebugDumpMixin", "ValidationMixin"]

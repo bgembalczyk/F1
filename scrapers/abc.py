@@ -1,11 +1,6 @@
 import warnings
 from abc import ABC
-from collections.abc import Sequence
-from pathlib import Path
 from abc import abstractmethod
-from collections.abc import Callable
-from collections.abc import Sequence
-from pathlib import Path
 from typing import Protocol
 from typing import TypeVar
 from uuid import uuid4
@@ -17,7 +12,6 @@ from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.helpers.url import normalize_url
-from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.base.post_processors import apply_post_processors
 from scrapers.base.records import NormalizedRecord
@@ -27,12 +21,9 @@ from scrapers.base.scraper_components import ErrorPolicy
 from scrapers.base.scraper_components import PipelineOrchestrator
 from scrapers.base.scraper_components import QualityReportService
 from scrapers.base.scraper_components import RuntimeInitializer
-from scrapers.base.services.result_export_service import ResultExportService
-from scrapers.base.services.result_tabular_adapter import ResultTabularAdapter
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.validation_runner import ValidationRunner
-from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
-from scrapers.wiki.component_metadata_wiki import validate_metadata_for_component_class
+from scrapers.runtime.base_runtime_component import BaseRuntimeComponent
 from validation.validator_base import ExportRecord
 
 T = TypeVar("T")
@@ -60,20 +51,12 @@ class ScraperLifecycleABC(ABC):
         """Build finalized scrape result with metadata."""
 
 
-class BaseScraperCore(ScraperLifecycleABC, ABC):
-    """Minimal core with lifecycle contract and minimal state."""
-
-    url: str
+class BaseScraper(BaseRuntimeComponent, ScraperLifecycleABC, ABC):
+    """Bazowy kontrakt scrapera runtime: fetch/parse/build_result."""
 
     def __init__(self, *, options: ScraperOptions) -> None:
-        validate_metadata_for_component_class(type(self))
-        self.include_urls = options.include_urls
-        self.normalize_empty_values = options.normalize_empty_values
-        self.logger = get_logger(self.__class__.__name__)
-        self._run_id: str | None = options.run_id
-        self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
+        super().__init__(options=options)
         self._validation_mode = "soft"
-        self._data: list[ExportRecord] | None = None
 
     @property
     def validation_mode(self) -> str:
@@ -196,64 +179,14 @@ class ValidationMixin:
 
 
 class ExportMixin:
-    def _initialize_export_services(self) -> None:
-        self.result_export_service = self._create_result_export_service()
-        self.result_tabular_adapter = self._create_result_tabular_adapter()
-
-    def _create_result_export_service(self) -> ResultExportService:
-        return ResultExportService()
-
-    def _create_result_tabular_adapter(self) -> ResultTabularAdapter:
-        return ResultTabularAdapter()
-
     def get_data(self) -> list[ExportRecord]:
         if self._data is None:
             return self.fetch()
         return self._data
 
     def build_result(self, data: list[ExportRecord] | None = None) -> ScrapeResult:
-        return ScrapeResult(
-            data=data if data is not None else self.get_data(),
-            source_url=getattr(self, "url", None),
-        )
-
-    def to_json(
-        self,
-        path: str | Path,
-        *,
-        indent: int = 2,
-        include_metadata: bool = False,
-    ) -> None:
-        result = self.build_result()
-        self.result_export_service.to_json(
-            result,
-            path,
-            exporter=self.exporter,
-            indent=indent,
-            include_metadata=include_metadata,
-        )
-
-    def to_csv(
-        self,
-        path: str | Path,
-        *,
-        fieldnames: Sequence[str] | None = None,
-        fieldnames_strategy: str = "union",
-        include_metadata: bool = False,
-    ) -> None:
-        result = self.build_result()
-        self.result_export_service.to_csv(
-            result,
-            path,
-            exporter=self.exporter,
-            fieldnames=fieldnames,
-            fieldnames_strategy=fieldnames_strategy,
-            include_metadata=include_metadata,
-        )
-
-    def to_dataframe(self):
-        result = self.build_result()
-        return self.result_tabular_adapter.to_dataframe(result)
+        payload = data if data is not None else self.get_data()
+        return super().build_result(payload)
 
 
 class QualityReportMixin:
@@ -289,7 +222,7 @@ class ABCScraper(
     ValidationMixin,
     QualityReportMixin,
     FetchOrchestrationMixin,
-    BaseScraperCore,
+    BaseScraper,
 ):
     """
     Bazowa klasa dla wszystkich scraperów F1.
@@ -313,7 +246,6 @@ class ABCScraper(
         self._validate_validation_mode()
         self._initialize_quality_report_service()
         self._initialize_pipeline_orchestrator()
-        self._initialize_export_services()
 
     # ---------- API wysokiego poziomu ----------
 
