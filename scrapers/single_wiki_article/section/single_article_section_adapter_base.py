@@ -2,23 +2,28 @@ from abc import ABC
 
 from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.single_wiki_article.single_article_domain_scraper_base import (
-    SingleArticleDomainScraperBase,
+    DomainArticleScraperBase,
+)
+from scrapers.single_wiki_article.single_article_section_aware_mixin import (
+    SectionAwareMixin,
 )
 
 
-class SingleArticleSectionAdapterBase(
+class SectionAdapterScraperBase(
     SectionAdapter,
-    SingleArticleDomainScraperBase,
+    SectionAwareMixin,
+    DomainArticleScraperBase,
     ABC,
 ):
-    """Wariant dla scraperów opartych o ``SectionAdapter``."""
+    """Base for article scrapers that assemble records via SectionAdapter."""
 
 
-class SingleWikiArticleSectionAdapterBase(SingleArticleSectionAdapterBase):
-    """Backward-compatible alias for legacy naming."""
+SingleArticleSectionAdapterBase = SectionAdapterScraperBase
+SingleWikiArticleSectionAdapterBase = SectionAdapterScraperBase
 
 
 __all__ = [
+    "SectionAdapterScraperBase",
     "SingleArticleSectionAdapterBase",
     "SingleWikiArticleSectionAdapterBase",
 ]

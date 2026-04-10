@@ -1,0 +1,6 @@
+{
+  "stage": "A",
+  "description": "Foundation artifacts ready without behavior change.",
+  "next_step": "B-001",
+  "source": "step_registry"
+}

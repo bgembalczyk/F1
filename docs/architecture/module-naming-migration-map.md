@@ -33,3 +33,32 @@ Migracja dla domen kluczowych: `drivers`, `constructors`, `circuits`, `seasons`,
 - `scrapers.circuits_composition.CircuitScraperCompositionFactory` -> `scrapers.circuits_factory.CircuitsFactory`
 - `scrapers.composition_seasons.SeasonScraperCompositionFactory` -> `scrapers.seasons_factory.SeasonsFactory`
 - *(new canonical factory)* -> `scrapers.grands_prix_factory.GrandsPrixFactory`
+
+
+## Infobox extraction (role families)
+
+### Canonical modules
+
+- `scrapers.infobox.extraction.base`
+- `scrapers.infobox.extraction.protocol`
+- `scrapers.infobox.extraction.factory`
+- `scrapers.infobox.extraction.registry`
+- `scrapers.infobox.extraction.service`
+- `scrapers.infobox.extraction.mixins`
+
+### Extractors (`*_extractor.py`)
+
+- `scrapers.infobox.extraction.extractor.base` -> `scrapers.infobox.extraction.extractor.base_extractor`
+- `scrapers.infobox.extraction.extractor.circuit` -> `scrapers.infobox.extraction.extractor.circuit_extractor`
+
+### Orchestrators (`*_orchestrator.py`)
+
+- `scrapers.infobox.extraction.service.base` -> `scrapers.infobox.extraction.service.base_orchestrator`
+- `scrapers.infobox.extraction.service.strategy` -> `scrapers.infobox.extraction.service.strategy_orchestrator`
+- `scrapers.infobox.extraction.service.driver` -> `scrapers.infobox.extraction.service.driver_orchestrator`
+- `scrapers.infobox.extraction.service.constructor` -> `scrapers.infobox.extraction.service.constructor_orchestrator`
+- `scrapers.infobox.extraction.service.circuit` -> `scrapers.infobox.extraction.service.circuit_orchestrator`
+
+### Transitional compatibility
+
+Legacy moduły re-eksportują klasy przez `__init__.py` i emitują `DeprecationWarning`, aby umożliwić etapową migrację importów.

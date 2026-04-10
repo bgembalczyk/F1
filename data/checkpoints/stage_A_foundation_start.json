@@ -1,0 +1,6 @@
+{
+  "stage": "A",
+  "description": "Foundation baseline before introducing role contracts, base classes and mixins.",
+  "next_step": "A-001",
+  "source": "step_registry"
+}

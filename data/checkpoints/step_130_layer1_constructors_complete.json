@@ -1,0 +1,8 @@
+{
+  "step_id": "B-002",
+  "layer": "L1",
+  "domain": "constructors",
+  "checkpoint_type": "complete_output",
+  "next_step": "C-001",
+  "source": "step_registry"
+}

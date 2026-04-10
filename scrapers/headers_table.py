@@ -1,4 +1,4 @@
-from scrapers.base.helpers.text import strip_marks
+from scrapers.helpers.text import strip_marks
 
 
 def normalize_header(header: str) -> str:

@@ -1,5 +1,5 @@
 from models.records.circuit import CIRCUIT_SCHEMA
-from scrapers.base.composite_validator import SchemaCompositeRecordValidator
+from scrapers.composite_validator import SchemaCompositeRecordValidator
 
 
 class CircuitsRecordValidator(SchemaCompositeRecordValidator):

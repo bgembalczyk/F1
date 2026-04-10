@@ -7,6 +7,10 @@ from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.paren_classifier
 
 
 class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
+    role = "run_config_factory"
+    domain = "sponsorship_liveries"
+    stage = "layer_zero"
+
     def __init__(self) -> None:
         self._logger = get_logger(self.__class__.__name__)
 

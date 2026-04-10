@@ -4,7 +4,7 @@ from typing import Any
 from models.mappers.serialization import to_dict_list
 
 if TYPE_CHECKING:
-    from scrapers.base.results import ScrapeResult
+    from scrapers.results import ScrapeResult
 
 
 def extract_data(result: "ScrapeResult | list[dict[str, Any]]") -> list[dict[str, Any]]:

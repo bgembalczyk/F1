@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from layers.orchestration.runtime_factory import RuntimeComponentFactory
 from layers.protocols.one_runner import LayerOneRunnerProtocol
 from layers.runners.layer_job.function_export import FunctionExportRunner
-from layers.runners.layer_job.grand_prix import GrandPrixRunner
 from layers.runners.metadata import build_runner_metadata
 from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
 from layers.zero.run_config_factories.sponsorship_liveries import SponsorshipLiveriesRunConfigFactory
@@ -16,7 +16,6 @@ from scrapers.domain.exports import export_complete_constructors
 from scrapers.domain.exports import export_complete_drivers
 from scrapers.domain.exports import export_complete_engine_manufacturers
 from scrapers.domain.exports import export_complete_seasons
-from scrapers.discovery_wiki import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -26,9 +25,26 @@ if TYPE_CHECKING:
 LOGGER = get_logger("RunnerRegistry")
 
 
+def _build_runtime_factory() -> RuntimeComponentFactory:
+    factory = RuntimeComponentFactory()
+    factory.discover_and_register(
+        root=repo_root(),
+        module_globs=(
+            "layers/runners/layer_job/*.py",
+            "layers/zero/run_config_factories/*.py",
+        ),
+    )
+    return factory
+
+
+def repo_root() -> Path:
+    from pathlib import Path
+
+    return Path(__file__).resolve().parents[2]
+
+
 def build_explicit_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
     return {
-        "grands_prix": GrandPrixRunner(),
         "circuits": FunctionExportRunner(
             export=export_complete_circuits,
             component_metadata=build_runner_metadata("circuits"),
@@ -48,6 +64,28 @@ def build_explicit_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtoc
     }
 
 
+def _build_explicit_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
+    return build_explicit_layer_one_runner_map()
+
+
+def build_layer_one_runner_map_discovered() -> dict[SeedName, LayerOneRunnerProtocol]:
+    factory = _build_runtime_factory()
+    return {
+        "grands_prix": factory.build(
+            role="runner",
+            domain="grands_prix",
+            stage="layer_one",
+        ),
+    }
+
+
+def build_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
+    return merge_runner_maps(
+        build_layer_one_runner_map_discovered(),
+        _build_explicit_layer_one_runner_map(),
+    )
+
+
 def merge_runner_maps(
     discovered: dict[SeedName, LayerOneRunnerProtocol],
     explicit: dict[SeedName, LayerOneRunnerProtocol],
@@ -58,18 +96,13 @@ def merge_runner_maps(
     return merged
 
 
-def build_layer_one_runner_map() -> dict[SeedName, LayerOneRunnerProtocol]:
-    explicit_runner_map = build_explicit_layer_one_runner_map()
-    discovered_runner_map = build_layer_one_runner_map_discovered()
-    return merge_runner_maps(discovered_runner_map, explicit_runner_map)
-
-
 def build_layer_zero_run_config_factory_map() -> (
     dict[
         SeedName,
         LayerZeroRunConfigFactoryProtocol,
     ]
 ):
+    factory = _build_runtime_factory()
     return {
         "constructors_current": StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "current"},
@@ -101,7 +134,11 @@ def build_layer_zero_run_config_factory_map() -> (
         "grands_prix_red_flagged_non_championship": StaticScraperKwargsFactory(
             scraper_kwargs={"export_scope": "non_championship"},
         ),
-        "sponsorship_liveries": SponsorshipLiveriesRunConfigFactory(),
+        "sponsorship_liveries": factory.build(
+            role="run_config_factory",
+            domain="sponsorship_liveries",
+            stage="layer_zero",
+        ),
     }
 
 

@@ -5,7 +5,7 @@ from collections.abc import Sequence
 from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.helpers.text import clean_wiki_text
 
 
 class TableRowParsingMixin:

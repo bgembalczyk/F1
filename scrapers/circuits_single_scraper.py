@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import warnings
+
+warnings.warn("circuits_single_scraper is deprecated; use scrapers.circuits_detail_scraper.", DeprecationWarning, stacklevel=2)
+
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -15,7 +19,7 @@ from scrapers.services.domain_record.circuit_lap_records_extraction_service impo
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.options import ScraperOptions
+    from scrapers.options import ScraperOptions
 
 
 class F1SingleCircuitScraper(article.SingleWikiArticleSectionAdapterBase):
