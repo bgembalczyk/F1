@@ -11,11 +11,25 @@ from typing import Any
 
 from scrapers.base.orchestration import lifecycle
 from scrapers.base.orchestration.models import AuditEntry
+from scrapers.orchestration.base_roles import BaseNormalizer
+from scrapers.orchestration.base_roles import UrlResolverMixin
 from scrapers.wiki.base_flow_wiki import BaseOrchestrationFlow
 
 if TYPE_CHECKING:
     from collections.abc import Callable
     from pathlib import Path
+
+
+class DriversSeedNormalizer(UrlResolverMixin, BaseNormalizer):
+    def _normalize(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
+        rows = [self.resolve_url_row(self.domain, row) for row in payload.records]
+        return self.build_envelope(
+            stage=payload.stage,
+            records=rows,
+            metadata=payload.metadata,
+            errors=payload.errors,
+        )
+
 
 
 class DriversCheckpointFlow(BaseOrchestrationFlow):
@@ -51,12 +65,16 @@ class DriversCheckpointFlow(BaseOrchestrationFlow):
         )
         self._dumper.dump(ingest_payload)
 
-        normalized = [self._normalize_seed_row(row) for row in ingest_payload.records]
+        normalize_payload = DriversSeedNormalizer(
+            domain="drivers",
+            stage=lifecycle.STAGE_NORMALIZE,
+        ).normalize(ingest_payload)
         normalize_payload = lifecycle.StageEnvelope(
             domain="drivers",
             stage=lifecycle.STAGE_NORMALIZE,
-            records=[row for row in normalized if row],
-            metadata=ingest_payload.metadata,
+            records=[row for row in normalize_payload.records if row],
+            metadata=normalize_payload.metadata,
+            errors=normalize_payload.errors,
         )
         self._dumper.dump(normalize_payload)
 
@@ -118,12 +136,10 @@ class DriversCheckpointFlow(BaseOrchestrationFlow):
         )
         self._dumper.dump(ingest_payload)
 
-        normalize_payload = lifecycle.StageEnvelope(
+        normalize_payload = DriversSeedNormalizer(
             domain="drivers",
             stage=lifecycle.STAGE_NORMALIZE,
-            records=[self._normalize_seed_row(row) for row in ingest_payload.records],
-            metadata=ingest_payload.metadata,
-        )
+        ).normalize(ingest_payload)
         self._dumper.dump(normalize_payload)
 
         merge_payload = lifecycle.StageEnvelope(

@@ -6,7 +6,7 @@ from typing import Any
 
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
-from scrapers.services.domain_record.base_pipeline_service import BaseFactoryScraper
+from scrapers.services.domain_record.base_pipeline_service import BaseDomainPipelineService
 
 if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol
@@ -20,7 +20,7 @@ class DriverDomainRecordInput:
 
 
 class DriverPipelineService(
-    BaseAssemblerPipelineService[DriverDomainRecordInput, DriverRecordDTO],
+    BaseDomainPipelineService[DriverDomainRecordInput, DriverRecordDTO],
 ):
     required_fields = ("url", "infobox", "career_results")
 

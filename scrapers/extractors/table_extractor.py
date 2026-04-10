@@ -4,10 +4,10 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.logging import get_logger
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.core.domain_roles import Extractor
+from scrapers.logging import get_logger
 
 
 class TableExtractor(Extractor[BeautifulSoup, list[dict[str, Any]]]):

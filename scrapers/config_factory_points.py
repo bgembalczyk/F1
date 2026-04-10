@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
 from models.records.factories.mapping import MappingRecordFactory
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.column_factory import IntColumn
@@ -12,7 +11,7 @@ from scrapers.base.table.config import ScraperConfig as TableScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.points import constants_points
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.columns_points.first_place import FirstPlaceColumn
 

@@ -4,10 +4,10 @@ from collections.abc import Sequence
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.table.constants import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.row import TableRow
+from scrapers.helpers.html_utils import find_section_elements
 from scrapers.mixins.table_row_parsing import TableRowParsingMixin
 
 logger = logging.getLogger(__name__)

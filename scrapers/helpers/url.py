@@ -1,46 +1,35 @@
 """URL normalization helpers shared across scrapers."""
 
-from urllib.parse import urljoin
-from urllib.parse import urlsplit
-from urllib.parse import urlunsplit
+from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
 
-from models.validation.helpers import is_valid_url
+URL_HELPERS_DEPRECATION_NOTE = (
+    "DEPRECATED: prefer UrlResolverStrategyRegistry (migration iteration: 2026-Q2). "
+    "Planned removal after one migration iteration."
+)
 
 
-def normalize_url(base: str, href: str | None) -> str | None:
-    """
-    Buduje i waliduje pełny URL na podstawie bazy i href.
+def resolve_url(
+    base: str,
+    href: str | None,
+    *,
+    domain: str | None = None,
+) -> str | None:
+    """Resolve URL via central UrlResolverStrategyRegistry."""
+    return DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY.resolve_url(
+        base_url=base,
+        href=href,
+        domain=domain,
+    )
 
-    Obsługuje przypadki:
-    - względne ścieżki (/wiki/...),
-    - schemowe URL-e (//...),
-    - absolutne URL-e (http/https).
-    """
-    href_normalized = (href or "").strip()
-    if not href_normalized:
-        return None
 
-    parsed_href = urlsplit(href_normalized)
-    if parsed_href.scheme:
-        url = href_normalized
-    elif href_normalized.startswith("//"):
-        base_scheme = urlsplit(base).scheme or "https"
-        url = f"{base_scheme}:{href_normalized}"
-    elif href_normalized.startswith("/"):
-        base_parts = urlsplit(base)
-        scheme = base_parts.scheme or "https"
-        if base_parts.netloc:
-            url = urlunsplit((scheme, base_parts.netloc, href_normalized, "", ""))
-        else:
-            url = urljoin(base, href_normalized)
-    else:
-        url = urljoin(base, href_normalized)
+def normalize_url(
+    base: str,
+    href: str | None,
+    *,
+    domain: str | None = None,
+) -> str | None:
+    """Deprecated URL helper kept for one migration iteration."""
+    return resolve_url(base, href, domain=domain)
 
-    if not is_valid_url(url):
-        return None
 
-    parsed_url = urlsplit(url)
-    if "//" in parsed_url.path:
-        return None
-
-    return url
+__all__ = ["URL_HELPERS_DEPRECATION_NOTE", "normalize_url", "resolve_url"]

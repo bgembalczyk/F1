@@ -1,19 +1,23 @@
 from __future__ import annotations
 
+import warnings
+
+warnings.warn("single_scraper_drivers is deprecated; use scrapers.drivers_detail_scraper.", DeprecationWarning, stacklevel=2)
+
 from typing import TYPE_CHECKING
 
-from scrapers.base.single_wiki_article import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article import SectionsPayloadDTO
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
-from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.drivers.composition_drivers import DriverScraperCompositionFactory
 from scrapers.drivers.composition_drivers import DriverScraperDependencies
 from scrapers.services.domain_record.driver import DriverDomainRecordInput
+from scrapers.single_wiki_article import InfoboxPayloadDTO
+from scrapers.single_wiki_article import SectionsPayloadDTO
+from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.single_wiki_article import TablesPayloadDTO
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.options import ScraperOptions
+    from scrapers.options import ScraperOptions
 
 
 class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):

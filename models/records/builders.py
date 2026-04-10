@@ -4,9 +4,10 @@ from functools import partial
 from typing import Any
 from typing import overload
 
-from models.records.factories.base import BaseRecordFactory
+from models.records.factories.protocol import RecordBuilder
 from models.records.factories.registry.constants import FACTORY_REGISTRY_PROVIDER
 from models.records.factories.registry.helpers import get_factory
+from models.records.factories.registry.types import FactoryRegistry
 from models.records.type import RecordType
 
 
@@ -15,11 +16,11 @@ class RecordBuilders:
 
     def __init__(
         self,
-        factory_registry: Mapping[str, BaseRecordFactory] | None = None,
+        factory_registry: FactoryRegistry | None = None,
     ):
         self._factory_registry = factory_registry or FACTORY_REGISTRY_PROVIDER.get()
 
-    def _factory_for(self, record_type: RecordType | str) -> BaseRecordFactory:
+    def _factory_for(self, record_type: RecordType | str) -> RecordBuilder:
         resolved_type = (
             record_type.value if isinstance(record_type, RecordType) else record_type
         )

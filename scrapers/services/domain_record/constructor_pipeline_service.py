@@ -10,8 +10,7 @@ from scrapers.constructors.constructors_postprocess.assembler import (
 from scrapers.constructors.constructors_postprocess.assembler import (
     ConstructorRecordDTO,
 )
-from scrapers.services.domain_record.base_pipeline_service import BaseFactoryScraper
-from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+from scrapers.services.domain_record.base_pipeline_service import BaseDomainPipelineService
 
 if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol
@@ -26,7 +25,7 @@ class ConstructorDomainRecordInput:
 
 
 class ConstructorPipelineService(
-    BaseAssemblerPipelineService[ConstructorDomainRecordInput, ConstructorRecordDTO],
+    BaseDomainPipelineService[ConstructorDomainRecordInput, ConstructorRecordDTO],
 ):
     required_fields = ("url", "infoboxes", "tables", "sections")
 
@@ -34,13 +33,8 @@ class ConstructorPipelineService(
         self,
         *,
         assembler: RecordAssemblerProtocol[ConstructorRecordDTO] | None = None,
-        article_tables_parser: ArticleTablesParser | None = None,
     ) -> None:
         self._assembler = assembler or ConstructorRecordAssembler()
-        self._article_tables_parser = article_tables_parser or ArticleTablesParser()
-
-    def extract_tables(self, soup: Any) -> list[dict[str, Any]]:
-        return self.with_retry(lambda: self._article_tables_parser.parse(soup))
 
     def _validate_input(self, input_dto: ConstructorDomainRecordInput) -> None:
         self.validate_required(
@@ -53,7 +47,10 @@ class ConstructorPipelineService(
             self.required_fields,
         )
 
-    def build_payload(self, input_dto: ConstructorDomainRecordInput) -> ConstructorRecordDTO:
+    def build_payload(
+        self,
+        input_dto: ConstructorDomainRecordInput,
+    ) -> ConstructorRecordDTO:
         return ConstructorRecordDTO(
             url=input_dto.url,
             infoboxes=list(input_dto.infoboxes),

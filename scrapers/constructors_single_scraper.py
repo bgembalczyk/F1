@@ -1,20 +1,31 @@
 from __future__ import annotations
 
+import warnings
+
+warnings.warn("constructors_single_scraper is deprecated; use scrapers.constructors_detail_scraper.", DeprecationWarning, stacklevel=2)
+
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.single_wiki_article import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article import SectionsPayloadDTO
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
-from scrapers.base.single_wiki_article import TablesPayloadDTO
-from scrapers.constructors.constructors_composition import ConstructorScraperCompositionFactory
-from scrapers.constructors.constructors_composition import ConstructorScraperDependencies
+from scrapers.constructors.constructors_composition import (
+    ConstructorScraperCompositionFactory,
+)
+from scrapers.constructors.constructors_composition import (
+    ConstructorScraperDependencies,
+)
 from scrapers.services.domain_record.constructor import ConstructorDomainRecordInput
+from scrapers.services.domain_record.constructor_table_extraction_service import (
+    ConstructorTableExtractionService,
+)
+from scrapers.single_wiki_article import InfoboxPayloadDTO
+from scrapers.single_wiki_article import SectionsPayloadDTO
+from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.single_wiki_article import TablesPayloadDTO
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.options import ScraperOptions
+    from scrapers.options import ScraperOptions
 
 
 class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
@@ -35,13 +46,14 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         self._infobox_service = resolved_dependencies.infobox_service
         self._sections_service_factory = resolved_dependencies.sections_service_factory
         self._domain_record_service = resolved_dependencies.domain_record_service
+        self._table_extraction_service = ConstructorTableExtractionService()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         infoboxes = list(self._infobox_service.extract(soup, url=self.url).records)
         return InfoboxPayloadDTO(infoboxes)
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
-        return TablesPayloadDTO(self._domain_record_service.extract_tables(soup))
+        return TablesPayloadDTO(self._table_extraction_service.extract_tables(soup))
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(

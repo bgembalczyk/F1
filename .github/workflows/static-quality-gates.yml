@@ -48,6 +48,9 @@ jobs:
       - name: Domain role contracts suite
         run: pytest -q tests/test_domain_role_contracts.py
 
+      - name: Orchestration component discovery suite
+        run: pytest -q tests/test_orchestration_component_discovery_ci.py
+
       - name: Scraper family contracts suite
         run: pytest -q tests/contract/test_scraper_family_contracts.py
 

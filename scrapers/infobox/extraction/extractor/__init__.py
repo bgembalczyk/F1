@@ -1,7 +1,7 @@
-from .base import BaseInfoboxExtractor
-from .base import DefaultInfoboxExtractor
-from .circuit import CircuitInfoboxExtractionStrategy
-from .circuit import CircuitInfoboxExtractor
+from .base_extractor import BaseInfoboxExtractor
+from .base_extractor import DefaultInfoboxExtractor
+from .circuit_extractor import CircuitInfoboxExtractionStrategy
+from .circuit_extractor import CircuitInfoboxExtractor
 from .protocol import InfoboxExtractionStrategy
 from .protocol import InfoboxExtractorProtocol
 

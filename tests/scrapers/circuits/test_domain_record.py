@@ -1,27 +1,17 @@
 # ruff: noqa: E501, PLR2004
 from unittest.mock import MagicMock
 
-import pytest
-
 from scrapers.services.domain_record.circuit import CircuitDomainRecordInput
 from scrapers.services.domain_record.circuit import DomainRecordService
-
-
-@pytest.fixture()
-def service() -> DomainRecordService:
-    return DomainRecordService()
-
-
-# ---------------------------------------------------------------------------
-# collect_lap_record_rows  (lines 53-66)
-# ---------------------------------------------------------------------------
+from scrapers.services.domain_record.circuit_lap_records_extraction_service import (
+    CircuitLapRecordsExtractionService,
+)
 
 
 def test_collect_lap_record_rows_no_tables() -> None:
-    # When article_tables_parser returns empty list → empty result
     mock_parser = MagicMock()
     mock_parser.parse.return_value = []
-    svc = DomainRecordService(article_tables_parser=mock_parser)
+    svc = CircuitLapRecordsExtractionService(article_tables_parser=mock_parser)
     result = svc.collect_lap_record_rows(
         soup=MagicMock(),
         url="https://en.wikipedia.org/wiki/Monza",
@@ -34,10 +24,9 @@ def test_collect_lap_record_rows_no_tables() -> None:
 
 
 def test_collect_lap_record_rows_table_without_table_key() -> None:
-    # table_data missing "_table" key → skipped
     mock_parser = MagicMock()
     mock_parser.parse.return_value = [{"headers": [], "table_type": None}]
-    svc = DomainRecordService(article_tables_parser=mock_parser)
+    svc = CircuitLapRecordsExtractionService(article_tables_parser=mock_parser)
     result = svc.collect_lap_record_rows(
         soup=MagicMock(),
         url="https://en.wikipedia.org/wiki/Monza",
@@ -55,7 +44,7 @@ def test_collect_lap_record_rows_non_lap_table_skipped() -> None:
     mock_parser.parse.return_value = [
         {"_table": mock_table, "headers": ["Name", "Date"], "table_type": "other"},
     ]
-    svc = DomainRecordService(article_tables_parser=mock_parser)
+    svc = CircuitLapRecordsExtractionService(article_tables_parser=mock_parser)
     result = svc.collect_lap_record_rows(
         soup=MagicMock(),
         url="https://en.wikipedia.org/wiki/Monza",
@@ -65,11 +54,6 @@ def test_collect_lap_record_rows_non_lap_table_skipped() -> None:
         debug_dir=None,
     )
     assert result == []
-
-
-# ---------------------------------------------------------------------------
-# assemble_record  (line 80)
-# ---------------------------------------------------------------------------
 
 
 def test_assemble_record_returns_dict() -> None:

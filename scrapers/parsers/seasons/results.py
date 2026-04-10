@@ -10,8 +10,8 @@ from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.tyre import TyreColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.parsers.seasons.table import SeasonTableParser
-from scrapers.section.aliases import DOMAIN_SECTION_ALIASES
 from scrapers.table_schema_dsl import TableSchemaDSL
+from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.sections.adapter import collect_section_elements
 from scrapers.wiki.parsers.sections.adapter import find_section_tree
@@ -80,7 +80,10 @@ class SeasonResultsParser:
 
         body_content = BodyContentParser().parse(body)
         article = body_content.get("content_text") or {}
-        aliases = DOMAIN_SECTION_ALIASES.get("seasons", {}).get("results", set())
+        aliases = DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY.section_aliases_for(
+            domain="seasons",
+            section_id="results",
+        )
         target_section = find_section_tree(
             article,
             "Results",
