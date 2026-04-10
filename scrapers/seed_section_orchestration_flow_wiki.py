@@ -13,6 +13,11 @@ from scrapers.base.orchestration import lifecycle
 from scrapers.base.orchestration.components import SectionSourceAdapter
 from scrapers.base.orchestration.models import AuditEntry
 from scrapers.base.orchestration.models import StepDeclaration
+from scrapers.orchestration.base_roles import BaseExtractor
+from scrapers.orchestration.base_roles import BaseNormalizer
+from scrapers.orchestration.base_roles import BaseOrchestrator
+from scrapers.orchestration.base_roles import QualityMetricsMixin
+from scrapers.orchestration.base_roles import UrlResolverMixin
 from scrapers.wiki.base_flow_wiki import BaseOrchestrationFlow
 
 if TYPE_CHECKING:
@@ -26,6 +31,44 @@ SUPPORTED_DOMAINS: tuple[str, ...] = (
     "seasons",
     "grands_prix",
 )
+
+MIGRATED_STAGE_DOMAINS: frozenset[str] = frozenset({"drivers", "constructors", "circuits"})
+
+
+class DomainSeedExtractor(BaseExtractor):
+    def _extract(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
+        return self.build_envelope(
+            stage=payload.stage,
+            records=payload.records,
+            metadata=payload.metadata,
+            errors=payload.errors,
+        )
+
+
+class DomainSeedNormalizer(UrlResolverMixin, BaseNormalizer):
+    def _normalize(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
+        records = [self.resolve_url_row(self.domain, row) for row in payload.records]
+        return self.build_envelope(
+            stage=payload.stage,
+            records=records,
+            metadata=payload.metadata,
+            errors=payload.errors,
+        )
+
+
+class DomainStageOrchestrator(QualityMetricsMixin, BaseOrchestrator):
+    def _execute(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
+        metrics = self.build_stage_metrics(
+            input_records=int(payload.metadata.get("input_records", len(payload.records))),
+            output_records=len(payload.records),
+            errors=payload.errors,
+        )
+        return self.build_envelope(
+            stage=payload.stage,
+            records=payload.records,
+            metadata=payload.metadata | {"stage_metrics": metrics},
+            errors=payload.errors,
+        )
 
 
 class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
@@ -110,18 +153,32 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             domain=domain,
             stage=lifecycle.STAGE_INGEST,
             records=resolved.records,
-            metadata={"input_source": str(resolved.source_path)},
+            metadata={"input_source": str(resolved.source_path), "input_records": len(resolved.records)},
         )
         self._dumper.dump(ingest_payload)
 
-        normalized = [
-            self._normalize_seed_row(domain, row) for row in ingest_payload.records
-        ]
+        if domain in MIGRATED_STAGE_DOMAINS:
+            extracted_payload = DomainSeedExtractor(domain=domain, stage=lifecycle.STAGE_INGEST).extract(ingest_payload)
+            normalize_payload = DomainSeedNormalizer(domain=domain, stage=lifecycle.STAGE_NORMALIZE).normalize(
+                extracted_payload,
+            )
+        else:
+            normalized = [
+                self._normalize_seed_row(domain, row) for row in ingest_payload.records
+            ]
+            normalize_payload = lifecycle.StageEnvelope(
+                domain=domain,
+                stage=lifecycle.STAGE_NORMALIZE,
+                records=[row for row in normalized if row.get("url")],
+                metadata=ingest_payload.metadata,
+            )
+
         normalize_payload = lifecycle.StageEnvelope(
             domain=domain,
             stage=lifecycle.STAGE_NORMALIZE,
-            records=[row for row in normalized if row.get("url")],
-            metadata=ingest_payload.metadata,
+            records=[row for row in normalize_payload.records if row.get("url")],
+            metadata=normalize_payload.metadata,
+            errors=normalize_payload.errors,
         )
         self._dumper.dump(normalize_payload)
 
@@ -130,6 +187,7 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             stage=lifecycle.STAGE_MERGE,
             records=self._deduplicate_by_url(normalize_payload.records),
             metadata=normalize_payload.metadata,
+            errors=normalize_payload.errors,
         )
         self._dumper.dump(merged_payload)
 
@@ -138,7 +196,13 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             stage=lifecycle.STAGE_VALIDATE,
             records=[row for row in merged_payload.records if row.get("url")],
             metadata=merged_payload.metadata,
+            errors=merged_payload.errors,
         )
+        if domain in MIGRATED_STAGE_DOMAINS:
+            validate_payload = DomainStageOrchestrator(
+                domain=domain,
+                stage=lifecycle.STAGE_VALIDATE,
+            ).execute(validate_payload)
         self._dumper.dump(validate_payload)
 
         duration_ms = (perf_counter() - started) * 1000.0
@@ -151,7 +215,7 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             output_path=str(self._checkpoint_path(0, "layer0", domain)),
             input_records=len(resolved.records),
             output_records=len(validate_payload.records),
-            errors=[],
+            errors=validate_payload.errors,
             duration_ms=duration_ms,
         )
         return validate_payload.records, audit
@@ -175,25 +239,32 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             domain=domain,
             stage=lifecycle.STAGE_INGEST,
             records=resolved.records,
-            metadata={"input_source": str(resolved.source_path)},
+            metadata={"input_source": str(resolved.source_path), "input_records": len(resolved.records)},
         )
         self._dumper.dump(ingest_payload)
 
-        normalize_payload = lifecycle.StageEnvelope(
-            domain=domain,
-            stage=lifecycle.STAGE_NORMALIZE,
-            records=[
-                self._normalize_seed_row(domain, row) for row in ingest_payload.records
-            ],
-            metadata=ingest_payload.metadata,
-        )
-        self._dumper.dump(normalize_payload)
+        if domain in MIGRATED_STAGE_DOMAINS:
+            normalized_payload = DomainSeedNormalizer(
+                domain=domain,
+                stage=lifecycle.STAGE_NORMALIZE,
+            ).normalize(ingest_payload)
+        else:
+            normalized_payload = lifecycle.StageEnvelope(
+                domain=domain,
+                stage=lifecycle.STAGE_NORMALIZE,
+                records=[
+                    self._normalize_seed_row(domain, row) for row in ingest_payload.records
+                ],
+                metadata=ingest_payload.metadata,
+            )
+        self._dumper.dump(normalized_payload)
 
         merge_payload = lifecycle.StageEnvelope(
             domain=domain,
             stage=lifecycle.STAGE_MERGE,
-            records=self._deduplicate_by_url(normalize_payload.records),
-            metadata=normalize_payload.metadata,
+            records=self._deduplicate_by_url(normalized_payload.records),
+            metadata=normalized_payload.metadata,
+            errors=normalized_payload.errors,
         )
         self._dumper.dump(merge_payload)
 
@@ -211,7 +282,13 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             stage=lifecycle.STAGE_VALIDATE,
             records=[record for record in layer1_records if record.get("url")],
             metadata=merge_payload.metadata,
+            errors=merge_payload.errors,
         )
+        if domain in MIGRATED_STAGE_DOMAINS:
+            validate_payload = DomainStageOrchestrator(
+                domain=domain,
+                stage=lifecycle.STAGE_VALIDATE,
+            ).execute(validate_payload)
         self._dumper.dump(validate_payload)
 
         duration_ms = (perf_counter() - started) * 1000.0
@@ -224,7 +301,7 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             output_path=str(self._checkpoint_path(1, "layer1", domain)),
             input_records=len(resolved.records),
             output_records=len(validate_payload.records),
-            errors=[],
+            errors=validate_payload.errors,
             duration_ms=duration_ms,
         )
         return validate_payload.records, audit
