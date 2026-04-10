@@ -10,6 +10,7 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.seasons.composition_seasons import SeasonScraperCompositionFactory
 from scrapers.seasons.composition_seasons import SeasonScraperDependencies
 from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
+from scrapers.services.domain_record.season import SeasonDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -71,7 +72,9 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         _ = infobox_payload
         _ = tables_payload
         payload = self._domain_record_service.build_payload(sections_payload.data)
-        return self._domain_record_service.assemble_record(payload)
+        return self._domain_record_service.assemble_record(
+            SeasonDomainRecordInput(payload=payload),
+        )
 
     def _refresh_pipeline_state(self, *, explicit_year: int | None = None) -> None:
         self.season_year = self._season_year_resolver.resolve(

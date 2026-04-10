@@ -9,6 +9,7 @@ from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBas
 from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.constructors.constructors_composition import ConstructorScraperCompositionFactory
 from scrapers.constructors.constructors_composition import ConstructorScraperDependencies
+from scrapers.services.domain_record.constructor import ConstructorDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -60,10 +61,12 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
     ) -> dict[str, Any]:
         _ = soup
         return self._domain_record_service.assemble_record(
-            url=self.url,
-            infoboxes=infobox_payload.data,
-            tables=tables_payload.data,
-            sections=sections_payload.data,
+            ConstructorDomainRecordInput(
+                url=self.url,
+                infoboxes=infobox_payload.data,
+                tables=tables_payload.data,
+                sections=sections_payload.data,
+            ),
         )
 
 

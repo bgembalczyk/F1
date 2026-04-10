@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from scrapers.base.sections.factory import ConfigurableSectionServiceFactory
 from scrapers.constructors.constructors_infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.constructors_sections.service import ConstructorSectionExtractionService
-from scrapers.constructors.constructors_services.domain_record import DomainRecordService
+from scrapers.services.domain_record.constructor import ConstructorDomainRecordService
 
 if TYPE_CHECKING:
     from scrapers.base.infobox.service import InfoboxExtractionService
@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class ConstructorScraperDependencies:
     infobox_service: InfoboxExtractionService
     sections_service_factory: SectionServiceFactory[ConstructorSectionExtractionService]
-    domain_record_service: DomainRecordService
+    domain_record_service: ConstructorDomainRecordService
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,7 +30,7 @@ class ConstructorScraperCompositionFactory:
     sections_service_factory: (
         SectionServiceFactory[ConstructorSectionExtractionService] | None
     ) = None
-    domain_record_service: DomainRecordService | None = None
+    domain_record_service: ConstructorDomainRecordService | None = None
 
     @classmethod
     def for_tests(
@@ -40,7 +40,7 @@ class ConstructorScraperCompositionFactory:
         sections_service_factory: (
             SectionServiceFactory[ConstructorSectionExtractionService] | None
         ) = None,
-        domain_record_service: DomainRecordService | None = None,
+        domain_record_service: ConstructorDomainRecordService | None = None,
     ) -> ConstructorScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -68,7 +68,7 @@ class ConstructorScraperCompositionFactory:
 
         domain_record_service = self.domain_record_service
         if domain_record_service is None:
-            domain_record_service = DomainRecordService()
+            domain_record_service = ConstructorDomainRecordService()
 
         return ConstructorScraperDependencies(
             infobox_service=infobox_service,
