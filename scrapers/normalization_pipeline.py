@@ -4,11 +4,10 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import Protocol
 
-from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.links import normalize_single_link
-from scrapers.base.helpers.text import strip_marks as strip_wiki_marks
-from scrapers.base.normalization_utils import EmptyValuePolicy
-from scrapers.base.normalization_utils import normalize_empty
+from scrapers.helpers.links import normalize_links
+from scrapers.helpers.links import normalize_single_link
+from scrapers.normalization_utils import EmptyValuePolicy
+from scrapers.normalization_utils import normalize_empty
 
 LINK_KEYS = {"text", "url"}
 
