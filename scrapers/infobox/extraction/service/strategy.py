@@ -1,9 +1,9 @@
+from collections.abc import Iterable
 from typing import Any
-from typing import Iterable
 
 from bs4 import BeautifulSoup
 
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractionStrategy
+from scrapers.infobox.extraction.extractor import InfoboxExtractorProtocol
 from scrapers.infobox.extraction.result import InfoboxExtractionResult
 from scrapers.infobox.extraction.result import ParserInputT
 from scrapers.infobox.extraction.service.base import BaseInfoboxExtractionService
@@ -11,13 +11,15 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
 
-class StrategyBackedInfoboxExtractionService(BaseInfoboxExtractionService[ParserInputT]):
+class StrategyBackedInfoboxExtractionService(
+    BaseInfoboxExtractionService[ParserInputT],
+):
     """Adapter delegujący ekstrakcję do obiektu strategii."""
 
     def __init__(
         self,
         *,
-        strategy: InfoboxExtractionStrategy[ParserInputT],
+        strategy: InfoboxExtractorProtocol[ParserInputT],
         options: ScraperOptions | None = None,
     ) -> None:
         super().__init__(options=options)

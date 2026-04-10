@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.abc import ABCScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.configs.public import TableConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
@@ -158,12 +158,12 @@ def test_scraper_sets_logger_adapter() -> None:
 
 def test_scraper_config_rejects_blank_url() -> None:
     with pytest.raises(ValueError, match="url must be a non-empty string"):
-        ScraperConfig(url=" ")
+        TableConfig(url=" ")
 
 
 def test_scraper_config_rejects_invalid_column_map() -> None:
     with pytest.raises(TypeError, match="column_map must map str keys to str values"):
-        ScraperConfig(
+        TableConfig(
             url="https://example.com",
             column_map={"Header": 123},
         )
@@ -174,14 +174,14 @@ def test_scraper_config_rejects_invalid_columns() -> None:
         TypeError,
         match="columns must map str keys to BaseColumn values",
     ):
-        ScraperConfig(
+        TableConfig(
             url="https://example.com",
             columns={"Header": "not-a-column"},
         )
 
 
 def test_table_scraper_validates_config_in_init() -> None:
-    config = object.__new__(ScraperConfig)
+    config = object.__new__(TableConfig)
     object.__setattr__(config, "url", "https://example.com")
     object.__setattr__(config, "section_id", None)
     object.__setattr__(config, "expected_headers", None)

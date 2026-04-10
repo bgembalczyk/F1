@@ -1,19 +1,15 @@
 from __future__ import annotations
 
-from scrapers.config import RuntimeScraperConfig
-from scrapers.config import RuntimeScraperConfig as LegacyRuntimeScraperConfig
-from scrapers.config_table import TableScraperConfig
-from scrapers.config_table import TableScraperConfig as LegacyTableScraperConfig
+from scrapers.configs.public import RuntimeConfig
+from scrapers.configs.public import TableConfig
 
 CONFIG_IMPORT_MIGRATIONS: dict[str, str] = {
-    "scrapers.config.ScraperConfig": "scrapers.config.RuntimeScraperConfig",
-    "scrapers.config_table.ScraperConfig": "scrapers.config_table.TableScraperConfig",
+    "scrapers.config.ScraperConfig": "scrapers.config.RuntimeConfig",
+    "scrapers.config_table.ScraperConfig": "scrapers.config_table.TableConfig",
 }
 
 __all__ = [
-    "RuntimeScraperConfig",
-    "TableScraperConfig",
-    "LegacyRuntimeScraperConfig",
-    "LegacyTableScraperConfig",
+    "RuntimeConfig",
+    "TableConfig",
     "CONFIG_IMPORT_MIGRATIONS",
 ]

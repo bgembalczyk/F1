@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.records.DTO.constructor import ConstructorRecordDTO
+from scrapers.records.dto.constructor import ConstructorRecordDTO
 from scrapers.records.assemblers.base import BaseRecordAssembler
 from scrapers.records.assemblers.base import BaseRecordAssemblerInput
 from scrapers.records.infobox_record import InfoboxRecordMapper

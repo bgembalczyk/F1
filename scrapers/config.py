@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from dataclasses import field
 from pathlib import Path
+import warnings
 
 from scrapers.base.exporters.data import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
@@ -10,7 +11,7 @@ from scrapers.base.parsers.soup import SoupParser
 
 
 @dataclass(frozen=True)
-class RuntimeScraperConfig:
+class RuntimeConfig:
     include_urls: bool = True
     exporter: DataExporter | None = None
     fetcher: HtmlFetcher | None = None
@@ -47,5 +48,15 @@ class DataPaths:
         return self.raw / category / filename
 
 
-# Backward-compatible alias. Prefer RuntimeScraperConfig in new code.
-ScraperConfig = RuntimeScraperConfig
+RuntimeScraperConfig = RuntimeConfig
+
+
+def __getattr__(name: str) -> object:
+    if name == "ScraperConfig":
+        warnings.warn(
+            "scrapers.config.ScraperConfig is deprecated; use RuntimeConfig.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return RuntimeConfig
+    raise AttributeError(name)
