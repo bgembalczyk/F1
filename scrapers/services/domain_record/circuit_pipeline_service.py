@@ -8,16 +8,16 @@ from scrapers.helpers.lap_record import is_lap_record_table
 from scrapers.helpers.layout import detect_layout_name
 from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
-from scrapers.records.DTO.circuit import CircuitRecordDTO
 from scrapers.records.assemblers.circuit import CircuitRecordAssembler
-from scrapers.services.domain_record.base_pipeline_service import BaseAssemblerPipelineService
+from scrapers.records.DTO.circuit import CircuitRecordDTO
+from scrapers.services.domain_record.base_pipeline_service import BaseFactoryScraper
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
     from scrapers.contracts import RecordAssemblerProtocol
 
 
-class CircuitPipelineService(BaseAssemblerPipelineService[CircuitRecordDTO]):
+class CircuitPipelineService(BaseFactoryScraper[CircuitRecordDTO]):
     required_fields = ("source_url", "infobox", "lap_record_rows", "sections")
 
     def __init__(
@@ -59,11 +59,16 @@ class CircuitPipelineService(BaseAssemblerPipelineService[CircuitRecordDTO]):
 
             headers = table_data["headers"]
             table_type = table_data.get("table_type")
-            if table_type != "lap_records" and not is_lap_record_table(headers, lap_scraper):
+            if table_type != "lap_records" and not is_lap_record_table(
+                headers,
+                lap_scraper,
+            ):
                 continue
 
             base_layout = detect_layout_name(table, headers)
-            all_records.extend(collect_lap_records(table, headers, base_layout, lap_scraper))
+            all_records.extend(
+                collect_lap_records(table, headers, base_layout, lap_scraper),
+            )
 
         return all_records
 

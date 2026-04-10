@@ -3,16 +3,20 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordAssembler
-from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordDTO
-from scrapers.services.domain_record.base_pipeline_service import BaseAssemblerPipelineService
+from scrapers.constructors.constructors_postprocess.assembler import (
+    ConstructorRecordAssembler,
+)
+from scrapers.constructors.constructors_postprocess.assembler import (
+    ConstructorRecordDTO,
+)
+from scrapers.services.domain_record.base_pipeline_service import BaseFactoryScraper
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol
 
 
-class ConstructorPipelineService(BaseAssemblerPipelineService[ConstructorRecordDTO]):
+class ConstructorPipelineService(BaseFactoryScraper[ConstructorRecordDTO]):
     required_fields = ("url", "infoboxes", "tables", "sections")
 
     def __init__(

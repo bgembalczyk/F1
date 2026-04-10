@@ -6,7 +6,7 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.base_domain_roles import PipelineService
+from scrapers.core.domain_roles import Scraper
 from scrapers.mixins.pipeline_mixins import DebugDumpMixin
 from scrapers.mixins.pipeline_mixins import RetryMixin
 from scrapers.mixins.pipeline_mixins import ValidationMixin
@@ -14,8 +14,8 @@ from scrapers.mixins.pipeline_mixins import ValidationMixin
 PayloadT = TypeVar("PayloadT")
 
 
-class BaseAssemblerPipelineService(
-    PipelineService[dict[str, Any], dict[str, Any]],
+class BaseFactoryScraper(
+    Scraper[dict[str, Any], dict[str, Any]],
     RetryMixin,
     DebugDumpMixin,
     ValidationMixin,
