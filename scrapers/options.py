@@ -16,7 +16,6 @@ from scrapers.parsers.soup import SoupParser
 from scrapers.post_processors import RecordPostProcessor
 from scrapers.source_adapter import SourceAdapter
 from scrapers.transformers.record.base import RecordTransformer
-from scrapers.wiring import ScraperRuntimeFactory
 from validation.validator_base import RecordValidator
 
 
@@ -127,6 +126,8 @@ class ScraperOptions:
         )
 
     def with_fetcher(self) -> HtmlFetcher:
+        from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
+
         runtime = ScraperRuntimeFactory().build(
             options=self,
             policy=self.to_http_policy(),
