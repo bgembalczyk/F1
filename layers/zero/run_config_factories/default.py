@@ -1,5 +1,5 @@
 from layers.seed.registry.entries import ListJobRegistryEntry
-from layers.zero.run_config_factories.base import LayerZeroRunConfigFactory
+from layers.zero.run_config_factories.contracts import LayerZeroRunConfigFactory
 
 
 class DefaultLayerZeroRunConfigFactory(LayerZeroRunConfigFactory):

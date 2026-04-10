@@ -1,6 +1,6 @@
 from infrastructure.gemini.client import GeminiClient
 from layers.seed.registry.entries import ListJobRegistryEntry
-from layers.zero.run_config_factories.base import LayerZeroRunConfigFactory
+from layers.zero.run_config_factories.contracts import LayerZeroRunConfigFactory
 from scrapers.base.logging import build_execution_context
 from scrapers.base.logging import get_logger
 from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.paren_classifier import ParenClassifier

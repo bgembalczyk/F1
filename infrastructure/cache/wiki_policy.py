@@ -1,7 +1,7 @@
 from pathlib import Path
 from urllib.parse import urlparse
 
-from infrastructure.cache.file.protocol import FileCache
+from infrastructure.cache.file.adapters import FileCache
 from infrastructure.http.policies.response_cache import TextCacheProtocol
 
 

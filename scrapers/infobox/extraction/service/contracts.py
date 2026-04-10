@@ -3,6 +3,7 @@ from abc import abstractmethod
 from collections.abc import Iterable
 from typing import Any
 from typing import Generic
+from typing import Protocol
 
 from bs4 import BeautifulSoup
 
@@ -12,14 +13,19 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
 
-class BaseInfoboxExtractionService(ABC, Generic[ParserInputT]):
-    """Template method dla usług ekstrakcji infoboxów.
+class InfoboxExtractionService(Protocol):
+    """Wspólne API wymagane przez scrapery domenowe."""
 
-    Podklasy lub wstrzyknięte strategie definiują:
-    - jak znaleźć infobox / infoboksy,
-    - jak zbudować parser dla pojedynczego requestu,
-    - jak znormalizować wynik do wspólnego kontraktu.
-    """
+    def extract(
+        self,
+        soup: BeautifulSoup,
+        *,
+        url: str = "",
+    ) -> InfoboxExtractionResult: ...
+
+
+class BaseInfoboxExtractionService(ABC, Generic[ParserInputT]):
+    """Template method dla usług ekstrakcji infoboxów."""
 
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         self._options = options or ScraperOptions()

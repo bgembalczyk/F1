@@ -3,7 +3,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.infobox.extraction.extractor.base import InfoboxExtractor
+from scrapers.infobox.extraction.extractor.adapters import InfoboxExtractor
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 
 

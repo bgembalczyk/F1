@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.infobox.extraction.extractor.table.all import AllInfoboxTablesExtractor
-from scrapers.infobox.extraction.service.base import BaseInfoboxExtractionService
+from scrapers.infobox.extraction.service.contracts import BaseInfoboxExtractionService
 from scrapers.infobox.html_parser import InfoboxHtmlParser
 from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser

@@ -8,7 +8,7 @@ from layers.seed.registry.entries.list_job import ListJobRegistryEntry
 from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge_service import LayerZeroMergeService
 from layers.zero.run_config_factories.default import DefaultLayerZeroRunConfigFactory
-from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
+from layers.zero.run_config_factories.contracts import LayerZeroRunConfigFactoryProtocol
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 

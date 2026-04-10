@@ -1,4 +1,4 @@
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractor
+from scrapers.infobox.extraction.extractor.contracts import InfoboxExtractor
 
 
 class CircuitInfoboxExtractor(InfoboxExtractor[BeautifulSoup]):

@@ -1,6 +1,6 @@
 from typing import cast
 
-from infrastructure.cache.file.protocol import FileCache
+from infrastructure.cache.file.adapters import FileCache
 from infrastructure.http.clients.urllib_http import UrllibHttpClient
 from infrastructure.http.config import HttpClientConfig
 from infrastructure.http.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS

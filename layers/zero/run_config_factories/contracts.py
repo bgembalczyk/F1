@@ -2,12 +2,18 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
-from typing import TYPE_CHECKING
+from typing import Protocol
+from typing import runtime_checkable
 
-from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
+from layers.seed.registry.entries import ListJobRegistryEntry
 
-if TYPE_CHECKING:
-    from layers.seed.registry.entries import ListJobRegistryEntry
+
+@runtime_checkable
+class LayerZeroRunConfigFactoryProtocol(Protocol):
+    def create_scraper_kwargs(
+        self,
+        job: ListJobRegistryEntry | None = None,
+    ) -> dict[str, object]: ...
 
 
 class LayerZeroRunConfigFactory(LayerZeroRunConfigFactoryProtocol, ABC):

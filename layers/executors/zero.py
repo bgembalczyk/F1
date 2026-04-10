@@ -10,7 +10,7 @@ from layers.job_hooks.null_zero import NullLayerZeroJobHook
 from layers.path_resolver import format_domain_year_name
 from layers.protocols.merge.zero_service import LayerZeroMergeServiceProtocol
 from layers.protocols.zero_job_hook import LayerZeroJobHook
-from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
+from layers.zero.run_config_factories.contracts import LayerZeroRunConfigFactoryProtocol
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 from scrapers.base.errors import normalize_pipeline_error
 from scrapers.base.logging import build_execution_context
