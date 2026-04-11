@@ -35,6 +35,9 @@ from scrapers.constructors_constants import CONSTRUCTOR_WDC_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_WINS_HEADER
 from scrapers.constructors_constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADERS
 from scrapers.constructors_constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
+from scrapers.constants.shared_headers import SHARED_PODIUMS_HEADER
+from scrapers.constants.shared_headers import SHARED_POINTS_HEADER
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.list.base import ListScraper
 from scrapers.parsers.list.wiki import ListParser
@@ -188,7 +191,7 @@ class ConstructorsListScraper(ListScraper):
             build_metric_columns(
                 [
                     MetricColumnSpec(
-                        CONSTRUCTOR_SEASONS_HEADER,
+                        SHARED_SEASONS_HEADER,
                         "seasons",
                         "seasons",
                     ),
@@ -204,7 +207,7 @@ class ConstructorsListScraper(ListScraper):
                     ),
                     MetricColumnSpec(CONSTRUCTOR_WINS_HEADER, "wins", "wins"),
                     MetricColumnSpec(
-                        CONSTRUCTOR_POINTS_HEADER,
+                        SHARED_POINTS_HEADER,
                         "points",
                         "points",
                     ),
@@ -219,7 +222,7 @@ class ConstructorsListScraper(ListScraper):
                         "fastest_laps",
                     ),
                     MetricColumnSpec(
-                        CONSTRUCTOR_PODIUMS_HEADER,
+                        SHARED_PODIUMS_HEADER,
                         "podiums",
                         "podiums",
                     ),

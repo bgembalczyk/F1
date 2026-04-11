@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
-from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+from scrapers.parsers.table.wiki.article import ArticleTablesParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

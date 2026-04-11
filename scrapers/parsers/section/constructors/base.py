@@ -12,7 +12,7 @@ from scrapers.section.serializer import build_section_parse_result
 logger = logging.getLogger(__name__)
 
 
-class ConstructorsSectionParser(WikiSectionParser):
+class ConstructorsSectionParser:
     def __init__(
         self,
         *,
@@ -22,7 +22,6 @@ class ConstructorsSectionParser(WikiSectionParser):
         normalize_empty_values: bool,
         table_mapping_parser: WikiTableBaseParser,
     ) -> None:
-        super().__init__()
         self._include_urls = include_urls
         self._parser = TableSectionParser(
             config=config,

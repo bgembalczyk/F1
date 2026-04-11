@@ -1,6 +1,6 @@
 import re
 
-from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 
 POINTS_RACE_LENGTH_COMPLETED_HEADER = (
     "Race length completed"  # Kryterium skróconego wyścigu.
