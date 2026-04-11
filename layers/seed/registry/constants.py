@@ -11,7 +11,7 @@ from layers.seed.validation.spec import RegistryValidationSpec
 from scrapers.circuits.list_scraper_circuits import CircuitsListScraper
 from scrapers.combined_red_flagged_races import RedFlaggedRacesScraper
 from scrapers.constructors.list_scraper_constructors import ConstructorsListScraper
-from scrapers.drivers.list_scraper import DriversListScraper
+from scrapers.drivers.list_scraper_drivers import DriversListScraper
 from scrapers.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engine_regulation import EngineRegulationScraper
 from scrapers.engine_restrictions import EngineRestrictionsScraper

@@ -5,7 +5,7 @@ from bs4 import Tag
 
 from scrapers.columns.types.position import PositionColumn
 from scrapers.config_table import TableScraperConfig
-from scrapers.extractors.table_extractor import TableExtractor
+from scrapers.extractors.table import TableExtractor
 from scrapers.options import ScraperOptions
 from scrapers.scraper_table import F1TableScraper
 
