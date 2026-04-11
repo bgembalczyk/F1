@@ -5,15 +5,15 @@ from typing import TYPE_CHECKING
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
-from scrapers.configs.public import TableConfig
 from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.input_adapters import as_soup
 from scrapers.pipeline_table import TablePipeline
-from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
-
+    from scrapers.configs.public import TableConfig
+    from scrapers.parsers.input_types import WikiParserInput
+    from scrapers.section.parse_results import SectionParseResult
 
 class TableSectionParser:
     """Generic section parser for single-table sections."""
@@ -43,7 +43,7 @@ class TableSectionParser:
     def section_label(self) -> EntityName:
         return self._section_label
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, section_fragment: WikiParserInput) -> SectionParseResult:
         # di-antipattern-allow: section parser builds table parser per parse invocation.
         table_transport_parser = HtmlTableParser(
             section_id=None,
@@ -57,7 +57,9 @@ class TableSectionParser:
             include_urls=self._include_urls,
             normalize_empty_values=self._normalize_empty_values,
         )
-        records = pipeline.parse_rows(table_transport_parser.parse(section_fragment))
+        records = pipeline.parse_rows(
+            table_transport_parser.parse(as_soup(section_fragment)),
+        )
 
         return build_section_parse_result(
             section_id=self._section_id,

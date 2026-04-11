@@ -12,7 +12,7 @@ from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.wiki.base import WikiTableParser as BaseWikiTableParser
 
 
-class WikiTableParser(BaseWikiTableParser):
+class WikiTableParser(WikiParser[Tag, TableParsedData]):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">
