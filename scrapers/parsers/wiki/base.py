@@ -1,5 +1,4 @@
 from abc import ABC
-from abc import abstractmethod
 from typing import Any
 from typing import Generic
 from typing import TypeVar
@@ -22,15 +21,11 @@ class WikiParser(
     ABC,
     Generic[TWikiInput, TWikiOutput],
 ):
-    """Bazowy kontrakt parserów Wikipedii.
+    """Bazowy kontrakt parserów Wikipedii oparty o kanoniczny `Parser`.
 
-    Każdy parser implementuje jednolity entrypoint `parse(...)` i zwraca
-    jawnie typowane dane wyjściowe.
+    Implementacje dostarczają `parse(input) -> output` z jawnie typowanym
+    wejściem i wyjściem.
     """
-
-    @abstractmethod
-    def parse(self, element: TWikiInput, *args: Any, **kwargs: Any) -> TWikiOutput:
-        """Parsuje przekazane dane wejściowe Wikipedii."""
 
 
 class WikiSectionParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
