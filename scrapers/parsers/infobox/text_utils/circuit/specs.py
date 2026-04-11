@@ -3,10 +3,10 @@ from typing import Any
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.constants import MATERIAL_PATTERNS
-from scrapers.infobox.infobox.constants import MIN_CAPACITY_VALUES_FOR_SEATING
-from scrapers.infobox.infobox.constants import symbol_map
-from scrapers.infobox.infobox.text_utils.base import InfoboxTextUtils
+from scrapers.parsers.infobox.constants import MATERIAL_PATTERNS
+from scrapers.parsers.infobox.constants import MIN_CAPACITY_VALUES_FOR_SEATING
+from scrapers.parsers.infobox.constants import symbol_map
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 
 class CircuitSpecsParser(InfoboxTextUtils):
