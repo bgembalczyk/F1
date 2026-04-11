@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from scrapers.parsers.section.table.constructor.base import ConstructorTablesSectionParser
+from scrapers.parsers.section.table.constructor import ConstructorTablesSectionParser
 
 
 class ConstructorChampionshipResultsSectionParser(ConstructorTablesSectionParser):

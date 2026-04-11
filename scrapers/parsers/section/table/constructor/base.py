@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
-from scrapers.parsers.table.wiki.article import ArticleTablesParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
