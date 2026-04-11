@@ -4,9 +4,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.section.protocol import SectionParser
-from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.roles import SectionParserABC
+from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
+from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.parsers.wiki.table import WikiTableHtmlParser
@@ -25,7 +24,9 @@ class ConstructorsSectionParser(BaseSectionParser):
         include_urls: bool,
         normalize_empty_values: bool,
         table_mapping_parser: WikiTableBaseParser,
+        toolbox: SectionParserToolbox | None = None,
     ) -> None:
+        self._toolbox = toolbox or build_default_section_toolbox()
         self._include_urls = include_urls
         self._parser = TableSectionParser(
             config=config,
@@ -36,7 +37,7 @@ class ConstructorsSectionParser(BaseSectionParser):
             normalize_empty_values=normalize_empty_values,
         )
         self._table_mapping_parser: WikiTableBaseParser = table_mapping_parser
-        self._table_element_parser = WikiTableHtmlParser()
+        self._table_element_parser = self._toolbox.element_parsers.table_parser
 
     def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         logger.warning(

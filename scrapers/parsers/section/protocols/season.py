@@ -2,14 +2,15 @@ from __future__ import annotations
 
 from abc import ABC
 
-from bs4 import BeautifulSoup
-
-from scrapers.domain_roles import Parser
-from scrapers.section.parse_results import SectionParseResult
+from scrapers.parsers.roles import SectionStructureParserABC
 
 
-class SeasonSectionParser(Parser[BeautifulSoup, SectionParseResult], ABC):
+class SeasonSectionParserABC(SectionStructureParserABC, ABC):
     """Bazowy kontrakt parsera sekcji sezonowych."""
 
 
-__all__ = ["SeasonSectionParser"]
+# Backward-compatible alias.
+SeasonSectionParser = SeasonSectionParserABC
+
+
+__all__ = ["SeasonSectionParserABC", "SeasonSectionParser"]

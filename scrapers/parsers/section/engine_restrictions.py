@@ -2,7 +2,6 @@ from typing import Any
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_restrictions import EngineRestrictionsTableParser
 
@@ -12,13 +11,13 @@ class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
         super().__init__()
         self._table_parser = EngineRestrictionsTableParser()
 
-    def parse_group(
+    def _parse_group(
         self,
         elements: list,
         *,
         context=None,
     ) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+        parsed = super()._parse_group(elements, context=context)
         for section in parsed.get("sub_sub_sections", []):
             self._table_parser.apply_to_payload(section)
         return parsed

@@ -22,13 +22,13 @@ class DriversListSectionParser(NestedWikiSectionParser):
         self._apply_drivers_table_parser(parsed)
         return parsed
 
-    def parse_group(
+    def _parse_group(
         self,
         elements: list,
         *,
         context: SectionExtractionContext | None = None,
     ) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+        parsed = super()._parse_group(elements, context=context)
         self._apply_drivers_table_parser(parsed)
         return parsed
 

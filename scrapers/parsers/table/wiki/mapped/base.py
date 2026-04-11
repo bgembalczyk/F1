@@ -1,8 +1,8 @@
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
 
-class MappedWikiTableParser(WikiTableBaseParser):
+class MappedWikiTableMapper(WikiTableBaseParser):
     """Config-only parser for wiki table domain mappings."""
 
 
-__all__ = ["MappedWikiTableParser"]
+__all__ = ["MappedWikiTableMapper"]

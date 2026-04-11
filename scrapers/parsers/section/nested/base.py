@@ -29,7 +29,7 @@ class BaseNestedSectionParser(RecursiveSectionParser):
 
     def parse(
         self,
-        element: Tag,
+        element: Tag | list[Tag],
         *,
         context: SectionExtractionContext | None = None,
     ) -> dict[str, Any]:
