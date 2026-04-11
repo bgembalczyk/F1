@@ -14,7 +14,6 @@ class ArticleTablesParserABC(ABC):
     def parse(self, element: Any) -> list[dict[str, Any]]: ...
 
 
-WikiTableDomainMapperABC = TableDomainMapperABC
 
 
-__all__ = ["ArticleTablesParserABC", "WikiTableDomainMapperABC"]
+__all__ = ["ArticleTablesParserABC"]
