@@ -31,6 +31,7 @@ from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results import
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.scoring_system import SeasonScoringSystemParser
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.testing_venues import TestingVenuesParser
+from scrapers.parsers.season_standings import SeasonStandingsParser
 from scrapers.records.sections.season import SeasonRecordSections
 from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
 from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
@@ -110,7 +111,7 @@ class SeasonParsingComponentsBuilder:
             include_urls=self._include_urls,
             url=url,
         )
-        standings_parser = SeasonStandingsService(table_parser)
+        standings_parser = SeasonStandingsParser(table_parser)
         return SeasonComponentSet(
             table_parser=table_parser,
             entries_parser=SeasonEntriesParser(
