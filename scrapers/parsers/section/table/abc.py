@@ -40,7 +40,7 @@ class SectionTableParserBase(ABC):
 
     def parse_fragment(self, fragment: WikiParserInput) -> SectionParseResult:
         records: list[dict[str, Any]] = []
-        for table_data in self.parse_group(fragment):
+        for table_data in self._collect_tables(fragment):
             table_classification = self.classify_table(table_data)
             if table_classification is None:
                 continue
