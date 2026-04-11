@@ -21,6 +21,9 @@ class NationalityParser:
         """
         self._link_extractor = link_extractor
 
+    def parse(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
+        return self.parse_nationality(cell)
+
     def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.
 

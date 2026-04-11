@@ -1,4 +1,6 @@
-from collections.abc import Callable
+from __future__ import annotations
+
+from collections.abc import Iterable
 from typing import Any
 
 from scrapers.infobox.parsers.constants import ACTIVE_YEARS_LABELS
@@ -7,53 +9,92 @@ from scrapers.infobox.parsers.constants import RACE_EVENT_LABELS
 from scrapers.infobox.parsers.constants import TEAM_LABELS
 from scrapers.infobox.parsers.drivers.car_numbers import CarNumbersParser
 from scrapers.infobox.parsers.drivers.cell import InfoboxCellParser
+from scrapers.infobox.parsers.field_parser import CallableInfoboxFieldParser
+from scrapers.infobox.parsers.field_parser import InfoboxFieldParser
 from scrapers.infobox.parsers.numeric import NumericParser
 
 
-def parser_mappings(
+class InfoboxFieldParsersRegistry:
+    def __init__(
+        self,
+        *,
+        default_parser: InfoboxFieldParser[Any, Any],
+    ) -> None:
+        self._default_parser = default_parser
+        self._parsers_by_label: dict[str, InfoboxFieldParser[Any, Any]] = {}
+
+    def register(
+        self,
+        *,
+        labels: Iterable[str],
+        parser: InfoboxFieldParser[Any, Any],
+    ) -> None:
+        for label in labels:
+            self._parsers_by_label[label] = parser
+
+    def parser_for_label(self, label: str | None) -> InfoboxFieldParser[Any, Any]:
+        if label is None:
+            return self._default_parser
+        return self._parsers_by_label.get(label, self._default_parser)
+
+
+def field_parsers_registry(
     cell_parser: InfoboxCellParser,
-) -> tuple[tuple[set[str], Callable[[Any], Any]], ...]:
-    return (
-        (ACTIVE_YEARS_LABELS, cell_parser.parse_active_years),
-        ({"Car number"}, CarNumbersParser.parse_car_numbers),
-        (TEAM_LABELS, cell_parser.parse_teams),
-        ({"Entries"}, NumericParser.parse_entries),
-        ({"Championships"}, cell_parser.parse_championships),
-        ({"Class wins"}, cell_parser.parse_class_wins),
-        (INT_CELL_LABELS, NumericParser.parse_int_cell),
-        ({"Career points"}, NumericParser.parse_float_cell),
-        ({"Best finish"}, cell_parser.parse_best_finish),
-        (RACE_EVENT_LABELS, cell_parser.parse_race_event),
-        ({"Finished last season"}, cell_parser.parse_finished_last_season),
-        ({"Racing licence"}, cell_parser.parse_racing_licence),
-        ({"Nationality"}, cell_parser.parse_nationality),
+) -> InfoboxFieldParsersRegistry:
+    registry = InfoboxFieldParsersRegistry(default_parser=cell_parser)
+    championships_parser = cell_parser.championships_field_parser
+
+    registry.register(
+        labels=ACTIVE_YEARS_LABELS, parser=cell_parser.active_years_field_parser
     )
-
-
-def match_label_parser(
-    *,
-    label: str | None,
-    cell_parser: InfoboxCellParser,
-) -> Callable[[Any], Any] | None:
-    for labels, parser in parser_mappings(cell_parser):
-        if label in labels:
-            return parser
-    return None
+    registry.register(labels={"Car number"}, parser=CarNumbersParser())
+    registry.register(labels=TEAM_LABELS, parser=cell_parser.teams_field_parser)
+    registry.register(
+        labels={"Entries"},
+        parser=CallableInfoboxFieldParser(NumericParser.parse_entries),
+    )
+    registry.register(labels={"Championships"}, parser=championships_parser)
+    registry.register(
+        labels={"Class wins"},
+        parser=CallableInfoboxFieldParser(championships_parser.parse_class_wins),
+    )
+    registry.register(
+        labels=INT_CELL_LABELS,
+        parser=CallableInfoboxFieldParser(NumericParser.parse_int_cell),
+    )
+    registry.register(
+        labels={"Career points"},
+        parser=CallableInfoboxFieldParser(NumericParser.parse_float_cell),
+    )
+    registry.register(
+        labels={"Best finish"}, parser=cell_parser.best_finish_field_parser
+    )
+    registry.register(
+        labels=RACE_EVENT_LABELS, parser=cell_parser.race_event_field_parser
+    )
+    registry.register(
+        labels={"Finished last season"},
+        parser=cell_parser.finished_last_season_field_parser,
+    )
+    registry.register(
+        labels={"Racing licence"}, parser=cell_parser.racing_licence_field_parser
+    )
+    registry.register(
+        labels={"Nationality"}, parser=cell_parser.nationality_field_parser
+    )
+    return registry
 
 
 def parser_for_label(
     *,
     label: str | None,
     cell_parser: InfoboxCellParser,
-) -> Callable[[Any], Any]:
-    parser = match_label_parser(label=label, cell_parser=cell_parser)
-    if parser is not None:
-        return parser
-    return cell_parser.parse_cell
+) -> InfoboxFieldParser[Any, Any]:
+    return field_parsers_registry(cell_parser).parser_for_label(label)
 
 
 __all__ = [
-    "parser_mappings",
+    "InfoboxFieldParsersRegistry",
+    "field_parsers_registry",
     "parser_for_label",
-    "match_label_parser",
 ]

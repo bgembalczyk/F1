@@ -7,8 +7,13 @@ from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.helpers.transformers import build_transformers
 from scrapers.infobox.parsers.html import InfoboxHtmlParser
-from scrapers.infobox.parsers.providers.drivers.default import DefaultDriverInfoboxParserProvider
-from scrapers.infobox.parsers.providers.drivers.protocol import DriverInfoboxParserProvider
+from scrapers.infobox.parsers.field_parser import InfoboxFieldParser
+from scrapers.infobox.parsers.providers.drivers.default import (
+    DefaultDriverInfoboxParserProvider,
+)
+from scrapers.infobox.parsers.providers.drivers.protocol import (
+    DriverInfoboxParserProvider,
+)
 from scrapers.infobox.schemas.driver import DRIVER_GENERAL_SCHEMA
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
@@ -43,7 +48,9 @@ class DriverInfoboxParser(InfoboxParser):
             logger=self.logger,
         )
         self._link_extractor = parser_bundle.link_extractor
-        self._cell_parser = parser_bundle.cell_parser
+        self._cell_parser: InfoboxFieldParser[Tag, dict[str, Any]] = (
+            parser_bundle.cell_parser
+        )
         self._general_parser = parser_bundle.general_parser
         self._titles_parser = parser_bundle.titles_parser
         self._career_parser = parser_bundle.career_parser

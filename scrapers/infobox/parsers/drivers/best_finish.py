@@ -23,6 +23,9 @@ class BestFinishParser:
         self._link_extractor = link_extractor
         self._season_parser = SeasonParser()
 
+    def parse(self, cell: Tag) -> dict[str, Any]:
+        return self.parse_best_finish(cell)
+
     def parse_best_finish(self, cell: Tag) -> dict[str, Any]:
         """Parse best finish field.
 

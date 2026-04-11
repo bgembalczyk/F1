@@ -20,6 +20,9 @@ class ActiveYearsParser:
         """
         self._link_extractor = link_extractor
 
+    def parse(self, cell: Tag) -> list[dict[str, Any]]:
+        return self.parse_active_years(cell)
+
     def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse active years as a list of individual seasons with links.
 

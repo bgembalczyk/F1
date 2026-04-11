@@ -24,6 +24,9 @@ class ChampionshipsParser:
         """
         self._link_extractor = link_extractor
 
+    def parse(self, cell: Tag) -> dict[str, Any]:
+        return self.parse_championships(cell)
+
     def parse_championships(self, cell: Tag) -> dict[str, Any]:
         """Parse championships count with links.
 
