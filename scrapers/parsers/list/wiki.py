@@ -5,7 +5,7 @@ from scrapers.parsers.text_cleaning import extract_text
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class ListParser(WikiParser[ListParsedData]):
+class ListParser(WikiParser[Tag, ListParsedData]):
     """Parser list nieuporządkowanych Wikipedii.
 
     Przetwarza element: <ul>

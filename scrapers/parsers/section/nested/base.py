@@ -12,7 +12,7 @@ from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class BaseNestedSectionParser(WikiParser[dict[str, Any]]):
+class BaseNestedSectionParser(WikiParser[Tag, dict[str, Any]]):
     heading_class: str
     output_key: str
 

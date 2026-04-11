@@ -5,7 +5,7 @@ from scrapers.parsers.text_cleaning import extract_text
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class ParagraphParser(WikiParser[ParagraphParsedData]):
+class ParagraphParser(WikiParser[Tag, ParagraphParsedData]):
     """Parser akapitów Wikipedii.
 
     Przetwarza element: <p>

@@ -6,7 +6,7 @@ from models.data.parsed.infobox import InfoboxParsedData
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class InfoboxParser(WikiParser[InfoboxParsedData]):
+class InfoboxParser(WikiParser[Tag, InfoboxParsedData]):
     """Parser infoboxów Wikipedii.
 
     Przetwarza tabelę: <table class="infobox vcard">

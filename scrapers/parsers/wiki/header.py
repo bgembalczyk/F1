@@ -7,7 +7,7 @@ from scrapers.parsers.constants import HEADER_TAG
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class HeaderParser(WikiParser[HeaderParsedData]):
+class HeaderParser(WikiParser[Tag, HeaderParsedData]):
     """Parser nagłówka strony Wikipedii.
 
     Przetwarza element:
