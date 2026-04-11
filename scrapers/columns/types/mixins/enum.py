@@ -27,12 +27,22 @@ class EnumMarksMixin(BaseColumn):
             self.default = default
         super().__init__(**kwargs)
 
-    def parse(self, ctx: ColumnContext) -> Any:
+    def parse_marks(
+        self,
+        ctx: ColumnContext,
+        mapping: dict[str, Any] | None = None,
+        default: Any = None,
+    ) -> Any:
+        marks_mapping = self.mapping if mapping is None else mapping
+        fallback = self.default if mapping is None else default
         text = ctx.raw_text or ""
-        for mark, value in self.mapping.items():
+        for mark, value in marks_mapping.items():
             if mark in text:
                 return value
-        return self.default
+        return fallback
+
+    def parse(self, ctx: ColumnContext) -> Any:
+        return self.parse_marks(ctx)
 
 
 __all__ = ["EnumMarksMixin"]

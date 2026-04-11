@@ -30,7 +30,7 @@ class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
     - Status indicated by suffix markers (e.g., "†", "*", "~")
 
     Inherits BackgroundMixin (adds background to record) and EnumMarksMixin
-    (provides enum marks parsing utility for subclasses).
+    (provides enum marks parsing helpers for subclasses).
 
     Subclasses define:
     - entity_key: The key for the entity name (e.g., "driver", "circuit")
