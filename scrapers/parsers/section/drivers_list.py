@@ -1,20 +1,32 @@
 from typing import Any
 
-from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParserABC
+from bs4 import BeautifulSoup
+
+from scrapers.parsers.section.nested.wiki import NestedWikiSectionParser
 from scrapers.parsers.table.drivers_list import DriversListTableParser
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 
 
-class DriversListSectionParser(BaseSectionParser):
+class DriversListSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = DriversListTableParser()
+
+    def parse(
+        self,
+        element: BeautifulSoup,
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, Any]:
+        parsed = super().parse(element, context=context)
+        self._apply_drivers_table_parser(parsed)
+        return parsed
 
     def parse_group(
         self,
         elements: list,
         *,
-        context=None,
+        context: SectionExtractionContext | None = None,
     ) -> dict[str, Any]:
         parsed = super().parse_group(elements, context=context)
         self._apply_drivers_table_parser(parsed)
