@@ -1,7 +1,7 @@
 from typing import Any
 from typing import Iterable
 
-from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
+from scrapers.parsers.infobox.protocol import InfoboxFieldParser
 
 
 class InfoboxFieldParsersRegistry:

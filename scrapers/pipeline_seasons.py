@@ -82,7 +82,7 @@ class SeasonSectionBinding:
 
 
 @dataclass(frozen=True)
-class SeasonParserSet:
+class SeasonParsingComponents:
     table_parser: SeasonTableService
     entries_parser: SeasonEntriesParser
     free_practice_parser: SeasonFreePracticeParser
@@ -94,6 +94,10 @@ class SeasonParserSet:
     colin_chapman_trophy_parser: ColinChapmanTrophyParser
     regional_parser: SeasonRegionalChampionshipParser
     section_parsers: tuple[SeasonSectionBinding, ...]
+
+
+# Backward-compatible alias.
+SeasonParserSet = SeasonParsingComponents
 
 
 class SeasonParsingComponentsBuilder:
@@ -108,7 +112,7 @@ class SeasonParsingComponentsBuilder:
         self._include_urls = include_urls
         self._policy = policy or DomainParsingPolicy()
 
-    def build(self, *, url: str, season_year: int | None) -> SeasonParserSet:
+    def build(self, *, url: str, season_year: int | None) -> SeasonParsingComponents:
         table_parser = SeasonTableService(
             options=self._options,
             include_urls=self._include_urls,

@@ -1,15 +1,12 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from bs4 import BeautifulSoup
 
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.parsers.table.wiki.contracts import ArticleTablesParserProtocol
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
-
-if TYPE_CHECKING:
-    from scrapers.parsers.input_types import WikiParserInput
 
 
 class ConstructorTablesSectionParser(SectionParser):
@@ -18,11 +15,11 @@ class ConstructorTablesSectionParser(SectionParser):
         self._section_label = section_label
         self._tables: ArticleTablesParserProtocol = ArticleTablesParser()
 
-    def parse(self, section_fragment: WikiParserInput) -> SectionParseResult:
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         return SectionParseResult(
             section_id=self._section_id,
             section_label=self._section_label,
-            records=self._tables.parse(section_fragment),
+            records=self._tables.parse(fragment),
             metadata=build_section_metadata(
                 parser=self.__class__.__name__,
                 source="wikipedia",

@@ -15,7 +15,7 @@ from scrapers.infobox.field.mapper import InfoboxFieldMapper
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
 from scrapers.parsers.infobox.helpers import parse_infobox_from_soup
-from scrapers.parsers.infobox.html import InfoboxHtmlParser
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
 
 
@@ -34,7 +34,7 @@ class WikipediaInfoboxScraper:
         *,
         options: ScraperOptions | None = None,
         fetcher: HtmlFetcher | None = None,
-        parser: InfoboxHtmlParser | None = None,
+        parser: WikiInfoboxHtmlParser | None = None,
         mapper: InfoboxFieldMapper | None = None,
         run_id: str | None = None,
     ) -> None:
@@ -46,7 +46,7 @@ class WikipediaInfoboxScraper:
         self.fetcher = runtime.fetcher
         self.timeout = runtime.policy.timeout
         self.logger = get_logger(self.__class__.__name__)
-        self.parser = parser or InfoboxHtmlParser()
+        self.parser = parser or WikiInfoboxHtmlParser()
         self.mapper = mapper or InfoboxFieldMapper(logger=self.logger)
         self.record_factory = options.record_factory
         self.debug_dir = options.debug_dir

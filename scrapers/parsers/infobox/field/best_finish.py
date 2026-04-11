@@ -8,7 +8,7 @@ from bs4 import Tag
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base import BaseInfoboxFieldParser
 from scrapers.parsers.season_classifier import SeasonClassifier
 
 

@@ -16,6 +16,9 @@ if TYPE_CHECKING:
 class CircuitGeoParser(InfoboxTextUtils):
     """Parsowanie lokalizacji, współrzędnych, powierzchni."""
 
+    def parse(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
+        return self.parse_location(row)
+
     @staticmethod
     def _split_plain_segment(segment: str) -> list[str]:
         """Dzieli segment tekstu na części rozdzielone przecinkami, ukośnikami itp."""

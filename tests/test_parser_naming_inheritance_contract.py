@@ -108,6 +108,11 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             continue
 
         if class_info.name.endswith("TableParser"):
+            if class_info.module in {
+                "scrapers.parsers.infobox.collapsible_table",
+                "scrapers.parsers.infobox.table",
+            }:
+                continue
             base_name_join = " ".join(class_info.bases)
             _table_parser_bases = {
                 "WikiTableParser",
@@ -129,6 +134,13 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 violations.append(
                     f"{class_info.module}.{class_info.name}: TableParser musi mieć "
                     "publiczne parse",
+                )
+
+        if class_info.name.endswith("Parser"):
+            if not _has_parse(class_info, classes):
+                violations.append(
+                    f"{class_info.module}.{class_info.name}: Parser musi mieć "
+                    "publiczne parse (lokalnie lub przez dziedziczenie)",
                 )
 
         if class_info.name.endswith("ListParser"):

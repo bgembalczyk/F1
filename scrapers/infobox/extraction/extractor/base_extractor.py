@@ -8,7 +8,7 @@ from infrastructure.http.errors.base import RequestError
 from scrapers.debug_dumps import write_infobox_dump
 from scrapers.infobox.field.mapper import InfoboxFieldMapper
 from scrapers.logging import get_logger
-from scrapers.parsers.infobox.html import InfoboxHtmlParser
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 
 
 class BaseInfoboxExtractor:
@@ -17,7 +17,7 @@ class BaseInfoboxExtractor:
     def __init__(
         self,
         *,
-        parser: InfoboxHtmlParser | None = None,
+        parser: WikiInfoboxHtmlParser | None = None,
         mapper: InfoboxFieldMapper | None = None,
         logger=None,
         debug_dir: str | Path | None = None,
@@ -27,7 +27,7 @@ class BaseInfoboxExtractor:
         retry_attempts: int = 1,
     ) -> None:
         self.logger = logger or get_logger(self.__class__.__name__)
-        self.parser = parser or InfoboxHtmlParser()
+        self.parser = parser or WikiInfoboxHtmlParser()
         self.mapper = mapper or InfoboxFieldMapper(logger=self.logger)
         self.debug_dir = Path(debug_dir) if debug_dir else None
         self.run_id = run_id

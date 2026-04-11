@@ -11,9 +11,9 @@ from scrapers.parsers.infobox.field.championships import ChampionshipsParser
 from scrapers.parsers.infobox.field.finished_season import FinishedSeasonParser
 from scrapers.parsers.infobox.field.licence import LicenceParser
 from scrapers.parsers.infobox.field.nationality import NationalityParser
+from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
 from scrapers.parsers.infobox.field.race_event import RaceEventParser
 from scrapers.parsers.infobox.field.teams import TeamsParser
-from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
 from scrapers.parsers.infobox.table import InfoboxTableParser
 
 

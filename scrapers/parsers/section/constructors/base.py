@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.parsers.wiki.table import WikiTableParser
@@ -35,12 +37,12 @@ class ConstructorsSectionParser(SectionParser):
         self._table_mapping_parser: WikiTableBaseParser = table_mapping_parser
         self._table_element_parser = WikiTableParser()
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         logger.warning(
             "Constructors section parser '%s': start parse.",
             self._parser.section_label,
         )
-        table = section_fragment.find("table", class_="wikitable")
+        table = fragment.find("table", class_="wikitable")
         logger.warning(
             "Constructors section parser '%s': first wikitable found=%s.",
             self._parser.section_label,
@@ -63,7 +65,7 @@ class ConstructorsSectionParser(SectionParser):
                     self._parser.section_label,
                 )
         try:
-            return self._parser.parse(section_fragment)
+            return self._parser.parse(fragment)
         except RuntimeError:
             logger.warning(
                 "Constructors section parser '%s': full section parse failed, "

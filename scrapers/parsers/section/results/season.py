@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.parsers.seasons.results import SeasonResultsParser
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -15,8 +15,8 @@ class SeasonResultsSectionParser(SectionParser):
     def __init__(self, parser: SeasonResultsParser) -> None:
         self._parser = parser
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        records = self._parser.parse(section_fragment)
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+        records = self._parser.parse(fragment)
         return build_section_parse_result(
             section_id="Results",
             section_label="Results",

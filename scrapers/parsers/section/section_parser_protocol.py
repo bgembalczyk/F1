@@ -1,15 +1,5 @@
-from typing import Protocol
-from typing import runtime_checkable
+from __future__ import annotations
 
-from bs4 import BeautifulSoup
-
-from scrapers.parsers.roles import SectionParser
-from scrapers.section.parse_results import SectionParseResult
-
-
-@runtime_checkable
-class SectionParserProtocol(SectionParser[SectionParseResult], Protocol):
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult: ...
-
+from scrapers.parsers.roles import SectionParser as SectionParserProtocol
 
 __all__ = ["SectionParserProtocol"]

@@ -64,7 +64,7 @@ Dopuszczalne metody pomocnicze:
 
 ### Reguła twarda nazewnicza
 
-**Jeśli nazwa klasy zaczyna się od `*Parser`, klasa musi implementować kontrakt parsera i nie może zawierać logiki I/O/HTTP.**
+**Jeśli nazwa klasy kończy się na `Parser`, klasa musi udostępniać publiczne `parse(...)` (bezpośrednio lub przez dziedziczenie) i nie może zawierać logiki I/O/HTTP.**
 
 Przykład:
 - ✅ `SectionParser.parse(...)` + helpery pure.
@@ -180,7 +180,7 @@ Dopuszczalne metody pomocnicze:
 
 ## Checklist egzekucji kontraktów (do CI/linterów)
 
-- [ ] Każda klasa `*Parser` implementuje `parse(...)`.
+- [ ] Każda klasa `*Parser` ma publiczne `parse(...)` (lokalnie albo odziedziczone).
 - [ ] Każda klasa `*Parser` nie wykonuje HTTP/file I/O.
 - [ ] Każdy `Fetcher` nie wykonuje normalizacji domenowej.
 - [ ] Każdy `Orchestrator` nie implementuje parserów domenowych inline.

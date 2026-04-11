@@ -1,4 +1,5 @@
 from scrapers.parsers.list.wiki import ListParser as _ListParser
+from scrapers.parsers.list_element.wiki import ListParser
 
 
 class WikiListParser(_ListParser):

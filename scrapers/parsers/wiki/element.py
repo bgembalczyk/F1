@@ -12,6 +12,13 @@ from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 from scrapers.parsers.wiki.list import WikiListParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.wiki.paragraph import WikiParagraphParser
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
+from scrapers.parsers.rules import ParserRule
+from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
+from scrapers.parsers.wiki.figure import FigureParser
+from scrapers.parsers.wiki.list import ListElementParser
+from scrapers.parsers.wiki.navbox import NavBoxParser
+from scrapers.parsers.wiki.paragraph import ParagraphParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 from scrapers.parsers.wiki.table import WikiTableParser
 
@@ -136,4 +143,22 @@ def build_wikipedia_element_registry(
                 result_type="references_wrap",
             ),
         ),
+    )
+
+
+def build_default_wiki_element_parsers() -> WikiElementParsers:
+    return WikiElementParsers(
+        infobox_parser=WikiInfoboxHtmlParser(),
+        paragraph_parser=ParagraphParser(),
+        figure_parser=FigureParser(),
+        list_parser=ListElementParser(),
+        table_parser=WikiTableHtmlParser(),
+        navbox_parser=NavBoxParser(),
+        references_wrap_parser=ReferencesWrapParser(),
+    )
+
+
+def build_default_wikipedia_element_registry() -> ElementParserRegistry:
+    return build_wikipedia_element_registry(
+        parsers=build_default_wiki_element_parsers()
     )

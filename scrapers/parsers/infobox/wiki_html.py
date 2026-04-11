@@ -92,21 +92,5 @@ class WikiInfoboxHtmlParser(WikiInfoboxElementParserBase):
         )
 
 
-WikiInfoboxHtmlParser.parse_row_value = WikiInfoboxHtmlParser.parse_row
 
-
-class InfoboxHtmlParser(WikiInfoboxHtmlParser):
-    """Deprecated alias for :class:`WikiInfoboxHtmlParser`."""
-
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
-        warnings.warn(
-            "InfoboxHtmlParser is deprecated; use WikiInfoboxHtmlParser.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        super().__init__(*args, **kwargs)
-
-
-InfoboxHtmlParser.parse_row_value = InfoboxHtmlParser.parse_row
-
-__all__ = ["WikiInfoboxHtmlParser", "InfoboxHtmlParser"]
+__all__ = ["WikiInfoboxHtmlParser"]

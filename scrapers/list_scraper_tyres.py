@@ -8,7 +8,7 @@ from scrapers.columns.types.skip import SkipColumn
 from scrapers.config_table import TableScraperConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.scraper_table import F1TableScraper
