@@ -19,6 +19,7 @@ RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
 RecordT_co = TypeVar("RecordT_co", covariant=True)
 BundleT_co = TypeVar("BundleT_co", bound="ParserBundle", covariant=True)
+SectionResultT_co = TypeVar("SectionResultT_co", covariant=True)
 
 
 @runtime_checkable
