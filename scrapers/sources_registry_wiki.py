@@ -4,7 +4,7 @@ import logging
 import warnings
 from dataclasses import dataclass
 
-from scrapers.run_profiles import LegacyCliProfileName
+from scrapers.run_profiles import RunProfileName
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +15,7 @@ class WikiSourceDefinition:
     seed_name: str
     source_name: str
     output_file: str
-    profile: LegacyCliProfileName = "list_scraper"
+    profile: RunProfileName = RunProfileName.DEFAULT
 
     @property
     def output_category(self) -> str:

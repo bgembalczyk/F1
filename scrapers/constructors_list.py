@@ -46,7 +46,6 @@ from scrapers.parsers.section.constructors.current import (
 )
 from scrapers.parsers.section.constructors.former import FormerConstructorsSectionParser
 from scrapers.parsers.roles import SectionParser
-from scrapers.parsers.wiki.list import ListParser
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.results import ScrapeResult
 from scrapers.section.selection_strategy.wikipedia_by_id import (

@@ -3,6 +3,7 @@
 Szybki przewodnik „**objaw → gdzie szukać**” dla pipeline’u danych.
 
 > Ten dokument jest podlinkowany z głównego README i z `docs/README.md` jako punkt startowy do diagnozy.
+> Zakładamy środowisko po migracji: diagnozujemy wyłącznie ścieżki kanoniczne (bez fallbacków/wrapperów kompatybilnościowych).
 
 ## 0) Top scenariusze błędów (objaw → gdzie sprawdzić → co poprawić)
 

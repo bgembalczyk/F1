@@ -35,7 +35,6 @@ def import_factory_modules() -> list[object]:
     skipped_modules = {
         "base",
         "build",
-        "compat",
         "helpers",
         "mapping",
         "protocol",
