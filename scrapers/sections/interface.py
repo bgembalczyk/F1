@@ -1,3 +1,3 @@
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 
 __all__ = ["SectionParser"]
