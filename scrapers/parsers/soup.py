@@ -1,13 +1,18 @@
-from typing import Protocol
+from __future__ import annotations
+
+from abc import ABC
+from typing import Generic
 from typing import TypeVar
-from typing import runtime_checkable
 
 from bs4 import BeautifulSoup
+
+from scrapers.domain_roles import Parser
 
 SoupParseResultT_co = TypeVar("SoupParseResultT_co", covariant=True)
 
 
-@runtime_checkable
-class SoupParser(Protocol[SoupParseResultT_co]):
-    def parse(self, soup: BeautifulSoup) -> SoupParseResultT_co:
-        """Zamienia soup na docelową strukturę danych."""
+class SoupParser(Parser[BeautifulSoup, SoupParseResultT_co], ABC, Generic[SoupParseResultT_co]):
+    """Runtime contract for parserów opartych o pełen dokument BeautifulSoup."""
+
+
+__all__ = ["SoupParser", "SoupParseResultT_co"]

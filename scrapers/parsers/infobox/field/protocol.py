@@ -1,23 +1,17 @@
 from __future__ import annotations
 
-from collections.abc import Callable
-from dataclasses import dataclass
+from abc import ABC
 from typing import Generic
-from typing import Protocol
 from typing import TypeVar
-from typing import runtime_checkable
+
+from scrapers.domain_roles import Parser
 
 Input = TypeVar("Input")
 Output = TypeVar("Output")
 
 
-@runtime_checkable
-class InfoboxFieldParser(Protocol, Generic[Input, Output]):
-    def parse(self, value: Input) -> Output: ...
+class InfoboxFieldParser(Parser[Input, Output], ABC, Generic[Input, Output]):
+    """Silny kontrakt runtime dla parserów pojedynczych pól infoboxu."""
 
 
-
-
-__all__ = [
-    "InfoboxFieldParser",
-]
+__all__ = ["InfoboxFieldParser", "Input", "Output"]
