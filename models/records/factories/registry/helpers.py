@@ -39,7 +39,6 @@ def import_factory_modules() -> list[object]:
         "helpers",
         "mapping",
         "protocol",
-        "protocol2",
         "spec",
         "registry",
         "__init__",
