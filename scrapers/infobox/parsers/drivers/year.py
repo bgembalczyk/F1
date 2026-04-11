@@ -12,6 +12,11 @@ class YearParser:
     """Handles parsing of years and year ranges."""
 
     @staticmethod
+    def parse(text: str) -> dict[str, int | None]:
+        """Unified parser entrypoint."""
+        return YearParser.parse_year_range(text)
+
+    @staticmethod
     def parse_year_range(text: str) -> dict[str, int | None]:
         """Parse year range from text."""
         normalized = clean_infobox_text(text) or ""

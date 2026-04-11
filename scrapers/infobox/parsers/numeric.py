@@ -9,8 +9,8 @@ from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
 
 
-class NumericParser:
-    """Handles parsing of numeric values (integers and floats)."""
+class NumericExtractor:
+    """Extracts numeric values (integers/floats) from infobox cells."""
 
     @staticmethod
     def parse_int_cell(cell: Tag) -> int | None:
@@ -32,7 +32,7 @@ class NumericParser:
         return ErrorHandler.run_domain_parse(
             lambda: int(match.group(0)),
             message=f"Nie udało się sparsować liczby całkowitej: {text!r}.",
-            parser_name=NumericParser.__name__,
+            parser_name=NumericExtractor.__name__,
         )
 
     @staticmethod
@@ -55,7 +55,7 @@ class NumericParser:
         return ErrorHandler.run_domain_parse(
             lambda: float(match.group(0)),
             message=f"Nie udało się sparsować liczby zmiennoprzecinkowej: {text!r}.",
-            parser_name=NumericParser.__name__,
+            parser_name=NumericExtractor.__name__,
         )
 
     @staticmethod
@@ -77,11 +77,13 @@ class NumericParser:
         values = ErrorHandler.run_domain_parse(
             lambda: parse_int_values(text),
             message=f"Nie udało się sparsować wpisów/startów: {text!r}.",
-            parser_name=NumericParser.__name__,
+            parser_name=NumericExtractor.__name__,
         )
         entries = values[0] if values else None
         starts = values[1] if len(values) > 1 else None
         return {"entries": entries, "starts": starts}
 
 
-__all__ = ["NumericParser"]
+NumericParser = NumericExtractor
+
+__all__ = ["NumericExtractor", "NumericParser"]
