@@ -7,9 +7,7 @@ from typing import Generic
 from typing import TypeVar
 
 from scrapers.domain_roles import PipelineService
-from scrapers.mixins.pipeline_mixins import DebugDumpMixin
-from scrapers.mixins.pipeline_mixins import RetryMixin
-from scrapers.mixins.pipeline_mixins import ValidationMixin
+from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
 
 InputDTO = TypeVar("InputDTO")
 PayloadDTO = TypeVar("PayloadDTO")
@@ -18,9 +16,7 @@ OutputRecord = TypeVar("OutputRecord", bound=dict[str, Any])
 
 class DomainPipelineService(
     PipelineService[InputDTO, OutputRecord],
-    RetryMixin,
-    DebugDumpMixin,
-    ValidationMixin,
+    RunDiagnosticsMixin,
     ABC,
     Generic[InputDTO, PayloadDTO, OutputRecord],
 ):

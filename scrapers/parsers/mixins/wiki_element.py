@@ -6,16 +6,16 @@ from models.data.wiki_parser import WikiParserData
 from models.payload import WikiParsedPayload
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.element import ElementParserRegistry
-from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import ElementRegistry
+from scrapers.parsers.wiki.element import WikiElementSet
 
 
 class WikiElementParsingMixin:
     def __init__(
         self,
         *,
-        element_parsers: WikiElementParsers | None = None,
-        element_registry: ElementParserRegistry | None = None,
+        element_parsers: WikiElementSet | None = None,
+        element_registry: ElementRegistry | None = None,
     ) -> None:
         resolved_parsers = element_parsers
         if resolved_parsers is None:
@@ -27,7 +27,7 @@ class WikiElementParsingMixin:
         self.list_parser = resolved_parsers.list_parser
         self.table_parser = resolved_parsers.table_parser
         self.navbox_parser = resolved_parsers.navbox_parser
-        self.references_wrap_parser = resolved_parsers.references_wrap_parser
+        self.references_parser = resolved_parsers.references_parser
         self.element_registry = element_registry
         self._parser_rules: list[ParserRule] = []
         self._register_default_parser_rules()
@@ -101,8 +101,8 @@ class WikiElementParsingMixin:
                 el.name == "div"
                 and any("references-wrap" in c for c in self._get_classes(el))
             ),
-            parser=self.references_wrap_parser.parse,
-            result_type="references_wrap",
+            parser=self.references_parser.parse,
+            result_type="references",
         )
 
     @staticmethod

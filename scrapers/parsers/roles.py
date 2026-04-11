@@ -19,7 +19,8 @@ ParsedDataT_co = TypeVar("ParsedDataT_co", covariant=True)
 RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
 RecordT_co = TypeVar("RecordT_co", covariant=True)
-BundleT_co = TypeVar("BundleT_co", bound="ParserBundle", covariant=True)
+BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
+SectionResultT_co = TypeVar("SectionResultT_co", covariant=True)
 
 
 class HtmlElementParserABC(Parser[Tag, ParsedDataT_co], ABC, Generic[ParsedDataT_co]):
@@ -57,13 +58,13 @@ class TableMapper(Protocol[TableInputT_contra, RecordT_co]):
     def map_table(self, table: TableInputT_contra) -> list[RecordT_co]: ...
 
 
-class ParserBundle(ABC):
+class ParsingBundle(ABC):
     """Kompozycja parserów i komponentów pomocniczych."""
 
 
 @runtime_checkable
-class ParserProvider(Protocol[BundleT_co]):
-    """Fabryka parserów zwracająca dedykowany ParserBundle."""
+class ParsingBundleProvider(Protocol[BundleT_co]):
+    """Fabryka parserów zwracająca dedykowany ParsingBundle."""
 
     def build(self, **kwargs: Any) -> BundleT_co: ...
 
@@ -92,7 +93,11 @@ __all__ = [
     "TableDomainMapperABC",
     "RowMapper",
     "TableMapper",
-    "ParserProvider",
-    "ParserBundle",
+    "ParsingBundleProvider",
+    "ParsingBundle",
     "SectionParseResult",
 ]
+
+# Backward-compatible aliases.
+ParserBundle = ParsingBundle
+ParserProvider = ParsingBundleProvider

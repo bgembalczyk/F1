@@ -5,6 +5,11 @@ import warnings
 from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.base import BaseSectionParser
 
+import warnings
+
+from scrapers.parsers.roles import SectionParser as SectionParser
+from scrapers.parsers.section.base import BaseSectionParser
+
 
 class SectionParser(BaseSectionParser):
     """Deprecated runtime alias. Use ``BaseSectionParser`` instead."""

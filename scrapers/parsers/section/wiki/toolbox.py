@@ -6,8 +6,8 @@ from scrapers.parsers.section.wiki.assembler import SectionAssembler
 from scrapers.parsers.section.wiki.locator import SectionLocator
 from scrapers.parsers.wiki.domain_mapper import DomainMapperABC
 from scrapers.parsers.wiki.domain_mapper import build_default_domain_mapper
-from scrapers.parsers.wiki.element import ElementParserRegistry
-from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import ElementRegistry
+from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 from scrapers.parsers.wiki.element_factory import build_default_wiki_element_parsers
 
@@ -20,8 +20,8 @@ class SectionParserToolbox:
     decyduje jakich parserów elementarnych użyć do parsowania HTML wewnątrz sekcji.
     """
 
-    element_parsers: WikiElementParsers
-    element_registry: ElementParserRegistry
+    element_parsers: WikiElementSet
+    element_registry: ElementRegistry
     section_locator: SectionLocator
     section_assembler: SectionAssembler
     domain_mapper: DomainMapperABC

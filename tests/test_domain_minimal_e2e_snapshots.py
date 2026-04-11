@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.post_processors import CommonMetadataPostProcessor
 from scrapers.base.post_processors import apply_post_processors
 from scrapers.wiki.parsers.content_text import ContentTextParser
-from scrapers.wiki.parsers.elements.infobox import InfoboxParser
+from scrapers.wiki.parsers.elements.infobox import WikiInfoboxParser
 
 FIXTURE_DIR = Path("tests/fixtures/e2e_html")
 SNAPSHOT_DIR = Path("tests/fixtures/e2e_snapshots")
@@ -49,7 +49,7 @@ def test_domain_minimal_e2e_snapshot_contract(domain: str) -> None:
 
     infobox = soup.find("table", class_=lambda c: c and "infobox" in c)
     assert infobox is not None
-    infobox_record = InfoboxParser().parse(infobox)
+    infobox_record = WikiInfoboxParser().parse(infobox)
 
     post_records = apply_post_processors(
         [

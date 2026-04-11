@@ -42,7 +42,6 @@ class WikiTableBaseParser(
             "domain_rows": mapped_rows,
         }
 
-    # Legacy adapters
     def apply_to_payload(self, payload: dict[str, Any]) -> None:
         self.transform(payload)
 
@@ -93,7 +92,6 @@ class WikiTableBaseParser(
                 mapped[key] = value
         return mapped
 
-    # Backward-compatible alias
     collect_rows = parse_group
 
 

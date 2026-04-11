@@ -2,12 +2,12 @@ from __future__ import annotations
 
 from typing import Any
 
-from scrapers.mixins.pipeline_mixins import RetryMixin
+from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.parsers.table.wiki.contracts import ArticleTablesParserABC
 
 
-class ConstructorTableExtractionService(RetryMixin):
+class ConstructorTableExtractionService(RunDiagnosticsMixin):
     """HTML adapter odpowiedzialny za ekstrakcję tabel dla konstruktorów."""
 
     def __init__(

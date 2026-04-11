@@ -116,12 +116,12 @@ def debug_profile() -> RunConfig:
 
 _DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
     "drivers": _DomainEntrypointSpec(
-        scraper_path="scrapers.drivers_list_scraper:DriversListScraper",
+        scraper_path="scrapers.list_scraper_drivers:F1DriversListScraper",
         default_output_json="drivers/f1_drivers.json",
         run_config_profile=default_profile,
     ),
     "seasons": _DomainEntrypointSpec(
-        scraper_path="scrapers.seasons_list_scraper:SeasonsListScraper",
+        scraper_path="scrapers.list_scraper_seasons:SeasonsListScraper",
         default_output_json="seasons/f1_seasons.json",
         default_output_csv="seasons/f1_seasons.csv",
         run_config_profile=default_profile,

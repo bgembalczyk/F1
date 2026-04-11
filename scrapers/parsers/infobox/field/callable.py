@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from typing import Callable
 from typing import Generic
 
-from scrapers.parsers.infobox.protocol import Input
-from scrapers.parsers.infobox.protocol import Output
+from scrapers.parsers.infobox.field.base import Input
+from scrapers.parsers.infobox.field.base import Output
 
 
 @dataclass(frozen=True)

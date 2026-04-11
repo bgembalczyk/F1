@@ -1,3 +1,6 @@
+from inspect import Parameter
+from inspect import signature
+
 from scrapers.abc import ABCScraper
 from scrapers.adapters.chain import ScraperCreationAdapter
 from scrapers.adapters.chain import default_scraper_creation_adapters
@@ -52,19 +55,35 @@ class ScraperFactory:
         context: ScraperCreationContext,
         ctor: ConstructorIntrospection,
     ) -> ABCScraper:
-        """Invoke adapter.create with compatibility for older adapter signatures."""
+        """Invoke adapter.create with compatibility for legacy signatures.
 
-        try:
-            return adapter.create(context=context, ctor=ctor)
-        except TypeError:
-            pass
+        Avoid swallowing `TypeError` raised inside adapter logic by deciding the
+        call shape from the adapter signature before invoking it.
+        """
 
-        try:
-            return adapter.create(context=context, _ctor=ctor)
-        except TypeError:
-            pass
+        create_sig = signature(adapter.create)
+        params = create_sig.parameters
 
-        try:
-            return adapter.create(context=context)
-        except TypeError:
+        has_var_kw = any(
+            param.kind == Parameter.VAR_KEYWORD for param in params.values()
+        )
+        accepts_legacy_positional = any(
+            param.kind == Parameter.VAR_POSITIONAL for param in params.values()
+        )
+        accepts_ctor = has_var_kw or "ctor" in params or "_ctor" in params
+
+        kwargs: dict[str, object] = {"context": context}
+        if accepts_ctor:
+            if has_var_kw or "ctor" in params:
+                kwargs["ctor"] = ctor
+            else:
+                kwargs["_ctor"] = ctor
+
+        if "context" in params or has_var_kw:
+            return adapter.create(**kwargs)
+
+        if accepts_legacy_positional:
             return adapter.create(context, ctor)
+
+        msg = f"Adapter {type(adapter).__name__} does not accept context parameter"
+        raise TypeError(msg)
