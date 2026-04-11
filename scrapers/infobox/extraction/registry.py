@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.infobox.extraction.extractor.circuit_extractor import CircuitInfoboxExtractor
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractorProtocol
+from scrapers.infobox.extraction.extractor.infobox_extractor import InfoboxExtractorProtocol
 from scrapers.infobox.extraction.service.circuit_orchestrator import CircuitInfoboxOrchestrator
 from scrapers.infobox.extraction.service.constructor_orchestrator import (
     ConstructorInfoboxOrchestrator,

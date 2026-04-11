@@ -4,7 +4,7 @@ from typing import Protocol
 
 from bs4 import BeautifulSoup
 
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractorProtocol
+from scrapers.infobox.extraction.extractor.infobox_extractor import InfoboxExtractorProtocol
 from scrapers.infobox.extraction.result import InfoboxExtractionResult
 
 

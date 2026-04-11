@@ -7,8 +7,7 @@ from scrapers.infobox.extraction.result import InfoboxExtractionResult
 from scrapers.infobox.parsers.circuit import F1CircuitInfoboxParser
 from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
-
-from .protocol import InfoboxExtractorProtocol
+from scrapers.protocols.infobox_extractor import InfoboxExtractorProtocol
 
 
 class CircuitInfoboxExtractor(InfoboxExtractorProtocol[BeautifulSoup]):

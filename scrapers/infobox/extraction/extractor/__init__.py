@@ -3,7 +3,7 @@ from scrapers.infobox.extraction.extractor.circuit_extractor import (
     CircuitInfoboxExtractor,
 )
 from scrapers.infobox.extraction.extractor.link import InfoboxLinkExtractor
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractorProtocol
+from scrapers.infobox.extraction.extractor.infobox_extractor import InfoboxExtractorProtocol
 
 __all__ = [
     "InfoboxLinkExtractor",

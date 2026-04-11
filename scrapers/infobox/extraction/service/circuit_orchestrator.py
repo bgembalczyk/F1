@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 from bs4 import BeautifulSoup
 
 from scrapers.infobox.extraction.extractor import CircuitInfoboxExtractor
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractorProtocol
+from scrapers.infobox.extraction.extractor.infobox_extractor import InfoboxExtractorProtocol
 from scrapers.infobox.extraction.service.strategy_orchestrator import (
     StrategyBackedInfoboxOrchestrator,
 )
