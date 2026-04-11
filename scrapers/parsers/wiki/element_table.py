@@ -9,4 +9,4 @@ class WikiTableElementParser(WikiTableHtmlParserABC, TableElementParser):
     """Wikipedia HTML element parser for `<table class=\"wikitable\">`."""
 
     def parse(self, raw: Tag) -> TableElementData:
-        return super().parse(raw)
+        return TableElementParser.parse(self, raw)

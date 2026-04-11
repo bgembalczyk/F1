@@ -122,3 +122,6 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
             result["body_content"] = self.body_content_parser.parse(body_content_el)
 
         return [result]
+
+    def parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self._parse_soup(soup)

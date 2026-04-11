@@ -164,8 +164,7 @@ class WorldChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
                 merged.append(row)
         return merged
 
-    @staticmethod
-    def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+    def parse_row(self, row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
         mapped: dict[str, Any] = {}
         for header, cell_data in row.items():
             key = column_map.get(header)
@@ -256,8 +255,7 @@ class NonChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
                 merged.append(row)
         return merged
 
-    @staticmethod
-    def _map_row(row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+    def parse_row(self, row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
         mapped: dict[str, Any] = {}
         for header, cell_data in row.items():
             key = column_map.get(header)
