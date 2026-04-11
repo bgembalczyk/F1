@@ -13,13 +13,14 @@ from scrapers.parsers.wiki.element_table import WikiTableElementParser
 
 def build_default_wiki_element_parsers() -> WikiElementSet:
     return WikiElementSet(
-        infobox_parser=WikiInfoboxParser(),
-        paragraph_parser=WikiParagraphParser(),
-        figure_parser=WikiFigureParser(),
-        list_parser=WikiListParser(),
-        table_parser=WikiTableParser(),
-        navbox_parser=WikiNavboxParser(),
-        references_wrap_parser=ReferencesWrapParser(),
+        infobox_parser=WikiInfoboxElementParser(),
+        paragraph_parser=WikiParagraphElementParser(),
+        figure_parser=WikiFigureElementParser(),
+        list_parser=WikiListElementParser(),
+        table_parser=WikiTableElementParser(),
+        navbox_parser=WikiNavboxElementParser(),
+        references_wrap_parser=WikiReferencesElementParser(),
+        references_parser=WikiReferencesElementParser(),
     )
 
 
