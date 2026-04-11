@@ -8,7 +8,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from models.records.base_factory import RecordBuilderProtocol
+from models.records.factories.protocol import RecordBuilderProtocol
 from models.records.factories import registry as factory_registry_module
 from models.records.factories.registry import FactoryRegistryProvider
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
