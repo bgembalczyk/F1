@@ -1,23 +1,9 @@
-from bs4 import Tag
-
 from models.data.parsed.paragraph import ParagraphParsedData
-from scrapers.parsers.text_cleaning import extract_text
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.html_elements.paragraph import ParagraphElementParser
 
 
-class ParagraphParser(WikiParser[Tag, ParagraphParsedData]):
-    """Parser akapitów Wikipedii.
+class ParagraphParser(ParagraphElementParser):
+    pass
 
-    Przetwarza element: <p>
-    """
 
-    def parse(self, element: Tag) -> ParagraphParsedData:
-        """Parsuje akapit HTML.
-
-        Args:
-            element: Element <p>.
-
-        Returns:
-            Słownik z tekstem akapitu.
-        """
-        return {"text": extract_text(element) or ""}
+__all__ = ["ParagraphParser", "ParagraphParsedData"]
