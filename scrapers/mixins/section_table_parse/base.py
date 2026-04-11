@@ -3,7 +3,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.section.selection_strategy.wikipedia_by_id import WikipediaSectionByIdSelectionStrategy
+from scrapers.section.selection_strategy import WikipediaSectionByIdSelectionStrategy
 
 
 class SectionTableParseMixin:

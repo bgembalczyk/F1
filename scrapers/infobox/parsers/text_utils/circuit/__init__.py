@@ -5,11 +5,15 @@ from scrapers.infobox.parsers.text_utils.circuit.lap_record import (
 )
 from scrapers.infobox.parsers.text_utils.circuit.layouts import CircuitLayoutsParser
 from scrapers.infobox.parsers.text_utils.circuit.specs import CircuitSpecsParser
-from scrapers.infobox.parsers.text_utils.circuit.text_processing import CircuitAdditionalInfoParser
+from scrapers.infobox.parsers.text_utils.circuit.text_processing import (
+    CircuitAdditionalInfoParser,
+)
 from scrapers.infobox.parsers.text_utils.circuit.text_processing import (
     CircuitEntityParser,
 )
-from scrapers.infobox.parsers.text_utils.circuit.text_processing import CircuitTextProcessing
+from scrapers.infobox.parsers.text_utils.circuit.text_processing import (
+    CircuitTextProcessing,
+)
 
 __all__ = [
     "CircuitEntityParser",
@@ -21,4 +25,3 @@ __all__ = [
     "CircuitTextProcessing",
     "CircuitAdditionalInfoParser",
 ]
-
