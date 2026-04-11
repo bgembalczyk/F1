@@ -6,6 +6,7 @@ from abc import abstractmethod
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.parsers.section.base import BaseSectionParser
 from bs4 import BeautifulSoup
 
 from scrapers.parsers.roles import SectionParser
@@ -16,7 +17,7 @@ if TYPE_CHECKING:
     from scrapers.section.parse_results import SectionParseResult
 
 
-class SectionTableParserBase(SectionParser, ABC):
+class SectionTableParserBase(BaseSectionParser, ABC):
     """Template-method base for section parsers built from one or many HTML tables."""
 
     def __init__(

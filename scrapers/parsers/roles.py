@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import warnings
 from abc import ABC
 from typing import Any
 from typing import Protocol
@@ -7,7 +8,6 @@ from typing import TypeAlias
 from typing import TypeVar
 from typing import runtime_checkable
 
-from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.domain_roles import Parser
@@ -31,10 +31,10 @@ SectionParserBase: TypeAlias = Parser[BeautifulSoup, SectionParseResult]
 
 
 @runtime_checkable
-class SectionParser(Protocol):
-    """Parser fragmentu sekcji (BeautifulSoup -> SectionParseResult)."""
+class SectionParserProtocol(Protocol[SectionResultT_co]):
+    """Typing-only parser contract for section fragments."""
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult: ...
+    def parse(self, fragment: Any) -> SectionResultT_co: ...
 
 
 @runtime_checkable
@@ -62,13 +62,24 @@ class ParserProvider(Protocol[BundleT_co]):
     def build(self, **kwargs: Any) -> BundleT_co: ...
 
 
+def __getattr__(name: str) -> Any:
+    if name == "SectionParser":
+        warnings.warn(
+            "roles.SectionParser is deprecated; use roles.SectionParserProtocol.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return SectionParserProtocol
+    raise AttributeError(name)
+
+
 __all__ = [
     "HtmlElementParser",
-    "SectionParser",
-    "SectionParserBase",
+    "SectionParserProtocol",
     "RowMapper",
     "TableMapper",
     "ParserProvider",
     "ParserBundle",
     "SectionParseResult",
+    "SectionParser",
 ]

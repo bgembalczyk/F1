@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.table.results.driver import DriverResultsSectionParser
 from scrapers.section.config.driver_results import DriverResultsSectionConfig
@@ -12,7 +13,7 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class BaseDriverResultsSectionParser(SectionParser):
+class BaseDriverResultsSectionParser(BaseSectionParser):
     def __init__(
         self,
         *,

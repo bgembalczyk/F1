@@ -1,5 +1,6 @@
 from typing import Any
 
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_regulation import EngineRegulationTableParser
@@ -32,7 +33,7 @@ class EngineRegulationSubSectionParser(SubSectionParser):
                 element["data"] = parsed
 
 
-class HistorySectionParser(SectionParser):
+class HistorySectionParser(BaseSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = EngineRegulationSubSectionParser()

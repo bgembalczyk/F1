@@ -1,6 +1,7 @@
 from typing import Any
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_restrictions import EngineRestrictionsTableParser
@@ -28,7 +29,7 @@ class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
             self._apply_engine_restrictions_table_parser(section)
 
 
-class CurrentRulesSectionParser(SectionParser):
+class CurrentRulesSectionParser(BaseSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = EngineSubSectionParser()

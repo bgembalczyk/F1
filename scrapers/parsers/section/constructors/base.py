@@ -3,6 +3,8 @@ import logging
 from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
+from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.roles import SectionParser
@@ -15,7 +17,7 @@ from scrapers.section.serializer import build_section_parse_result
 logger = logging.getLogger(__name__)
 
 
-class ConstructorsSectionParser(SectionParser):
+class ConstructorsSectionParser(BaseSectionParser):
     def __init__(
         self,
         *,

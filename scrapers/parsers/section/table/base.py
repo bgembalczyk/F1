@@ -9,6 +9,7 @@ from models.entity_name import EntityName
 from models.section_id import SectionId
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.roles import SectionParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result
@@ -18,7 +19,7 @@ if TYPE_CHECKING:
     from scrapers.section.parse_results import SectionParseResult
 
 
-class TableSectionParser(SectionParser):
+class TableSectionParser(BaseSectionParser):
     """Generic section parser for single-table sections."""
 
     def __init__(
