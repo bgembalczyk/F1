@@ -7,19 +7,14 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
 
 
 class FinishedSeasonParser(BaseInfoboxFieldParser):
     """Handles parsing of 'Finished last season' field."""
 
-    def parse(self, raw: Tag) -> dict[str, Any]:
-        return self.parse_finished_last_season(raw)
-
-    @staticmethod
-    def parse(cell: Tag) -> dict[str, Any]:
-        """Unified parser entrypoint."""
-        return FinishedSeasonParser.parse_finished_last_season(raw)
+    def parse(self, cell: Tag) -> dict[str, Any]:
+        return self.parse_finished_last_season(cell)
 
     @staticmethod
     def parse_finished_last_season(cell: Tag) -> dict[str, Any]:

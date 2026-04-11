@@ -7,7 +7,7 @@ from bs4 import Tag
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.year_extractor import YearExtractor
-from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
 
 
 class ActiveYearsParser(BaseInfoboxFieldParser):
@@ -21,7 +21,7 @@ class ActiveYearsParser(BaseInfoboxFieldParser):
         """
         self._link_extractor = link_extractor
 
-    def parse(self, raw: Tag) -> list[dict[str, Any]]:
+    def parse(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse active years as a list of individual seasons with links.
 
         Handles cases like:
@@ -35,7 +35,7 @@ class ActiveYearsParser(BaseInfoboxFieldParser):
             List of dictionaries with 'year' and 'url' keys
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        links = self._link_extractor.extract_links(raw)
+        links = self._link_extractor.extract_links(cell)
 
         # Build a map of year -> link using shared utility
         year_to_link = YearExtractor.build_year_to_url_map(links)
@@ -53,7 +53,7 @@ class ActiveYearsParser(BaseInfoboxFieldParser):
 
     def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:
         """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(raw)
+        return self.parse(cell)
 
 
 __all__ = ["ActiveYearsParser"]

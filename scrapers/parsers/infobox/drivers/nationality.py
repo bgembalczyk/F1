@@ -16,9 +16,7 @@ from scrapers.parsers.infobox.constants import YEAR_PAREN_RE
 from scrapers.parsers.infobox.constants import YEAR_PATTERNS_RE
 from scrapers.parsers.infobox.constants import YEAR_RANGE_RE_NAT
 from scrapers.parsers.infobox.constants import YEAR_RE
-from scrapers.infobox.parsers.drivers import constants
-from scrapers.infobox.parsers.drivers.link_extractor import InfoboxLinkExtractor
-from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
 
 
 class NationalityParser(BaseInfoboxFieldParser):
@@ -32,8 +30,8 @@ class NationalityParser(BaseInfoboxFieldParser):
         """
         self._link_extractor = link_extractor
 
-    def parse(self, raw: Tag) -> list[str] | list[dict[str, Any]]:
-        return self._parse_nationality(raw)
+    def parse(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
+        return self._parse_nationality(cell)
 
     def _parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.
@@ -55,12 +53,12 @@ class NationalityParser(BaseInfoboxFieldParser):
         has_years = HAS_YEARS_RE.search(text)
 
         if has_years:
-            return self._parse_nationality_with_years(raw)
-        return self._parse_nationality_simple(raw, text)
+            return self._parse_nationality_with_years(cell)
+        return self._parse_nationality_simple(cell, text)
 
     def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(raw)
+        return self.parse(cell)
 
     def _parse_nationality_with_years(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse structured nationality entries that include year information.
@@ -140,7 +138,7 @@ class NationalityParser(BaseInfoboxFieldParser):
         Returns:
             List of nationality dicts (with 'text'/'url') or plain strings.
         """
-        nationality_links = self._extract_nationality_links(raw)
+        nationality_links = self._extract_nationality_links(cell)
 
         if nationality_links:
             return [
@@ -159,7 +157,7 @@ class NationalityParser(BaseInfoboxFieldParser):
         Returns:
             List of link dicts that represent actual nationality links.
         """
-        links = self._link_extractor.extract_links(raw)
+        links = self._link_extractor.extract_links(cell)
         return [
             link
             for link in links

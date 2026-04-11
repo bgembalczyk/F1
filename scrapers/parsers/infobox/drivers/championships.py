@@ -11,7 +11,7 @@ from scrapers.parsers.infobox.constants import COUNT_RE
 from scrapers.parsers.infobox.constants import PAREN_RE
 from scrapers.parsers.infobox.constants import YEAR_RE
 from scrapers.year_extractor import YearExtractor
-from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
 
 
 class ChampionshipsParser(BaseInfoboxFieldParser):
@@ -25,8 +25,8 @@ class ChampionshipsParser(BaseInfoboxFieldParser):
         """
         self._link_extractor = link_extractor
 
-    def parse(self, raw: Tag) -> dict[str, Any]:
-        return self.parse_championships(raw)
+    def parse(self, cell: Tag) -> dict[str, Any]:
+        return self.parse_championships(cell)
 
     def parse_championships(self, cell: Tag) -> dict[str, Any]:
         """Parse championships count with links.
@@ -46,14 +46,10 @@ class ChampionshipsParser(BaseInfoboxFieldParser):
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return ErrorHandler.run_domain_parse(
-            lambda: self._parse_championships_payload(raw, text),
+            lambda: self._parse_championships_payload(cell, text),
             message=f"Nie udało się sparsować mistrzostw: {text!r}.",
             parser_name=self.__class__.__name__,
         )
-
-    def parse(self, raw: Tag) -> dict[str, Any]:
-        """Unified parser entrypoint for championship payload."""
-        return self.parse_championships(raw)
 
     def _parse_championships_payload(self, cell: Tag, text: str) -> dict[str, Any]:
         # Extract count
@@ -61,7 +57,7 @@ class ChampionshipsParser(BaseInfoboxFieldParser):
         count = int(count_match.group(1)) if count_match else 0
 
         # Extract links from parentheses - treat as simple list of links
-        championships = self._link_extractor.extract_links(raw)
+        championships = self._link_extractor.extract_links(cell)
 
         return {"count": count, "championships": championships}
 
@@ -82,7 +78,7 @@ class ChampionshipsParser(BaseInfoboxFieldParser):
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return ErrorHandler.run_domain_parse(
-            lambda: self._parse_class_wins_payload(raw, text),
+            lambda: self._parse_class_wins_payload(cell, text),
             message=f"Nie udało się sparsować zwycięstw klasowych: {text!r}.",
             parser_name=self.__class__.__name__,
         )
@@ -94,7 +90,7 @@ class ChampionshipsParser(BaseInfoboxFieldParser):
 
         # Extract year links
         wins = []
-        links = self._link_extractor.extract_links(raw)
+        links = self._link_extractor.extract_links(cell)
 
         # Build year -> url mapping using shared utility
         year_to_url = YearExtractor.build_year_to_url_map(links)
