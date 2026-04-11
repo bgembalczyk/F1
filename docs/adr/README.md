@@ -21,6 +21,7 @@ Ten katalog przechowuje **trwałe decyzje architektoniczne** projektu.
 - [ADR-0004](0004-hook-naming-conventions.md): Zasady nazewnictwa hooków.
 - [ADR-0005](0005-domain-role-taxonomy.md): Kanoniczny słownik ról i ścieżki importów.
 - [ADR-0006](0006-wiki-parser-layering.md): Warstwowanie parserów Wiki (Element → Structure → Domain Mapper).
+- [ADR-0007](0007-section-parser-canonical-api.md): Kanoniczne API parserów sekcji i sygnatura `parse(fragment)`.
 
 ## Jak dodać nowy ADR
 

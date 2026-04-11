@@ -6,12 +6,13 @@ from abc import abstractmethod
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.parsers.section.protocol import SectionParser
+from bs4 import BeautifulSoup
+
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.section.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
-    from scrapers.parsers.input_types import WikiParserInput
     from scrapers.section.parse_results import SectionParseResult
 
 
@@ -37,10 +38,10 @@ class SectionTableParserBase(SectionParser, ABC):
             include_source_table=include_source_table,
         )
 
-    def parse(self, fragment: WikiParserInput) -> SectionParseResult:
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         return self.parse_fragment(fragment)
 
-    def parse_fragment(self, fragment: WikiParserInput) -> SectionParseResult:
+    def parse_fragment(self, fragment: BeautifulSoup) -> SectionParseResult:
         records: list[dict[str, Any]] = []
         for table_data in self._collect_tables(fragment):
             table_classification = self.classify_table(table_data)
@@ -62,7 +63,7 @@ class SectionTableParserBase(SectionParser, ABC):
 
     def _collect_tables(
         self,
-        fragment: WikiParserInput,
+        fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:
         """Collect table payloads used by the section table template pipeline."""
 
@@ -70,7 +71,7 @@ class SectionTableParserBase(SectionParser, ABC):
 
     def parse_group(
         self,
-        fragment: WikiParserInput,
+        fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:
         return self._table_parser.parse(fragment)
 
