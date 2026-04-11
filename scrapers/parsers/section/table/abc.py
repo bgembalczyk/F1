@@ -60,6 +60,14 @@ class SectionTableParserBase(SectionParser, ABC):
             records.append(mapped)
         return self.build_result(records)
 
+    def _collect_tables(
+        self,
+        fragment: WikiParserInput,
+    ) -> list[dict[str, Any]]:
+        """Collect table payloads used by the section table template pipeline."""
+
+        return self.parse_group(fragment)
+
     def parse_group(
         self,
         fragment: WikiParserInput,
