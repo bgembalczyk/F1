@@ -4,12 +4,12 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
-from scrapers.parsers.seasons.constants import ENGINE_V8_YEAR
-from scrapers.parsers.seasons.constants import ENGINE_V10_END_YEAR
-from scrapers.parsers.seasons.constants import ENGINE_V10_START_YEAR
-from scrapers.parsers.seasons.constants import PRE_2007_NORMALIZATION_CUTOFF
-from scrapers.parsers.seasons.constants import TESTING_VENUES_SWAPPED_COLUMNS_YEAR
-from scrapers.parsers.seasons.constants import TESTING_VENUES_YEARS
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import ENGINE_V8_YEAR
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import ENGINE_V10_END_YEAR
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import ENGINE_V10_START_YEAR
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import PRE_2007_NORMALIZATION_CUTOFF
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import TESTING_VENUES_SWAPPED_COLUMNS_YEAR
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import TESTING_VENUES_YEARS
 
 
 class TestingVenuesLayout(str, Enum):
