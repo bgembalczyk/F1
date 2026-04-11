@@ -1,3 +1,4 @@
+
 """Helper class for parsing nested tables from infobox cells."""
 
 import re

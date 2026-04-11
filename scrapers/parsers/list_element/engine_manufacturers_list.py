@@ -1,9 +1,9 @@
 from bs4 import Tag
 
-from scrapers.parsers.wiki.list import ListParser
+from scrapers.parsers.html_elements.list import ListElementParser
 
 
-class IndianapolisOnlyListParser(ListParser):
+class IndianapolisOnlyListParser(ListElementParser):
     def parse(self, element: Tag) -> dict[str, list[dict[str, str]]]:
         items: list[dict[str, str]] = []
         for li in element.find_all("li", recursive=False):

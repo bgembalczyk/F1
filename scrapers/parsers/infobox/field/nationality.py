@@ -16,7 +16,7 @@ from scrapers.parsers.infobox.constants import YEAR_PAREN_RE
 from scrapers.parsers.infobox.constants import YEAR_PATTERNS_RE
 from scrapers.parsers.infobox.constants import YEAR_RANGE_RE_NAT
 from scrapers.parsers.infobox.constants import YEAR_RE
-from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base import BaseInfoboxFieldParser
 
 
 class NationalityParser(BaseInfoboxFieldParser):
