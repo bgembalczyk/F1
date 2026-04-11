@@ -1,17 +1,29 @@
 from __future__ import annotations
 
+from abc import ABC
+from abc import abstractmethod
 from typing import Any
 from typing import Protocol
 
 
-class WikiTableFragmentParser(Protocol):
+class TableFragmentParserProtocol(Protocol):
+    """Typing-only kontrakt parsera fragmentu tabeli."""
+
     def parse(self, raw_html_fragment: dict[str, Any]) -> dict[str, Any] | None: ...
+
+
+class AbstractTableFragmentParser(ABC):
+    """Bazowa klasa runtime dla parserów fragmentów tabel Wikipedii."""
+
+    @abstractmethod
+    def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+        """Parsuje fragment tabeli do reprezentacji domenowej."""
 
 
 class WikiTablePayloadTransformer:
     """Transforms parsed section payloads by mapping table elements to domain tables."""
 
-    def __init__(self, parser: WikiTableFragmentParser) -> None:
+    def __init__(self, parser: TableFragmentParserProtocol) -> None:
         self._parser = parser
 
     def transform(self, parsed_fragment: dict[str, Any]) -> dict[str, Any]:
@@ -61,7 +73,7 @@ class WikiTablePayloadCollector:
                 self._collect_from_node(item, rows)
 
 
-class WikiTableBaseParser:
+class WikiTableBaseParser(AbstractTableFragmentParser):
     table_type: str = "wiki_table"
     missing_columns_policy: str = "skip"
     extra_columns_policy: str = "ignore"
@@ -149,7 +161,13 @@ class WikiTableBaseParser:
     collect_rows = parse_group
 
 
+# Backward-compatible alias
+WikiTableFragmentParser = TableFragmentParserProtocol
+
+
 __all__ = [
+    "AbstractTableFragmentParser",
+    "TableFragmentParserProtocol",
     "WikiTableBaseParser",
     "WikiTableFragmentParser",
     "WikiTablePayloadCollector",

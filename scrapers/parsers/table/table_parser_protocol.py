@@ -10,8 +10,14 @@ if TYPE_CHECKING:
 
 
 @runtime_checkable
-class TableParserProtocol(Protocol):
+class TableFragmentParserProtocol(Protocol):
+    """Typing-only kontrakt parsera fragmentu tabeli."""
+
     def parse(self, fragment: WikiDictFragmentInput) -> dict[str, Any] | None: ...
 
 
-__all__ = ["TableParserProtocol"]
+# Backward-compatible alias
+TableParserProtocol = TableFragmentParserProtocol
+
+
+__all__ = ["TableFragmentParserProtocol", "TableParserProtocol"]
