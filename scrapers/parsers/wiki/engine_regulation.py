@@ -1,8 +1,8 @@
 from typing import Any
 
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_regulation import EngineRegulationTableParser
+from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 
 
 class EngineRegulationSubSectionParser(SubSectionParser):

@@ -10,6 +10,7 @@ from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_manufacturers_list import (
     EngineManufacturersTableParser,
 )
+from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 
 
 class IndianapolisOnlySubSectionParser(SubSectionParser):

@@ -4,7 +4,6 @@ from typing import TYPE_CHECKING
 
 from scrapers.parsers.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParserABC
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 

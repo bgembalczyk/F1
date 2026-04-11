@@ -85,7 +85,7 @@ def test_export_support_protocol_signatures_are_stable() -> None:
 
 def test_season_section_protocol_parse_signature_is_stable() -> None:
     """contract/static: season section parser protocol accepts fragment."""
-    signature = inspect.signature(season_contracts.SeasonSectionParser.parse)
+    signature = inspect.signature(season_contracts.SeasonSectionParserABC.parse)
     assert tuple(signature.parameters) == ("self", "section_fragment")
 
 
