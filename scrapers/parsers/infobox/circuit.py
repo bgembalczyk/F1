@@ -5,20 +5,21 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.infobox.field.mapper import InfoboxFieldMapper
-from scrapers.infobox.infobox.circuits.entities import CircuitEntitiesOrchestrator
-from scrapers.infobox.infobox.helpers import parse_infobox_from_soup
-from scrapers.infobox.infobox.text_utils.base import InfoboxTextUtils
-from scrapers.infobox.infobox.text_utils.circuit import CircuitAdditionalInfoParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitEntityParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitGeoParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitHistoryParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitLapRecordParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitLayoutsParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitSpecsParser
 from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
+from scrapers.parsers.infobox.circuits.entities import CircuitEntitiesOrchestrator
+from scrapers.parsers.infobox.helpers import parse_infobox_from_soup
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
+from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser
+from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryParser
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordParser
+from scrapers.parsers.infobox.text_utils.circuit.layouts import CircuitLayoutsParser
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import \
+    CircuitAdditionalInfoParser
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxElementParserBase
 from scrapers.types import ExportableRecord
 

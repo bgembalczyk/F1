@@ -5,9 +5,9 @@ from typing import Any
 from models.services.helpers import split_delimited_text
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.constants import LOCATION_STOPWORDS
-from scrapers.infobox.infobox.constants import MIN_COORD_PARTS
-from scrapers.infobox.infobox.text_utils.base import InfoboxTextUtils
+from scrapers.parsers.infobox.constants import LOCATION_STOPWORDS
+from scrapers.parsers.infobox.constants import MIN_COORD_PARTS
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord

@@ -5,7 +5,8 @@ from typing import Any
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.text_utils.base import InfoboxTextUtils
+from scrapers.parsers.infobox.constants import MONTHS
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 
 class CircuitHistoryParser(InfoboxTextUtils):

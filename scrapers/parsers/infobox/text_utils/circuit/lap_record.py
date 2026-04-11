@@ -10,11 +10,11 @@ from scrapers.helpers.lap_record import normalize_lap_record_entity
 from scrapers.helpers.lap_record import select_details_paren
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.wiki import is_wikipedia_redlink
-from scrapers.infobox.infobox.constants import MIN_DETAILS_FOR_CAR
-from scrapers.infobox.infobox.constants import MIN_DETAILS_FOR_DRIVER
-from scrapers.infobox.infobox.constants import MIN_DETAILS_FOR_SERIES
-from scrapers.infobox.infobox.constants import MIN_DETAILS_FOR_YEAR
-from scrapers.infobox.infobox.text_utils.circuit.text_processing.base import CircuitTextProcessing
+from scrapers.parsers.infobox.constants import MIN_DETAILS_FOR_CAR
+from scrapers.parsers.infobox.constants import MIN_DETAILS_FOR_DRIVER
+from scrapers.parsers.infobox.constants import MIN_DETAILS_FOR_SERIES
+from scrapers.parsers.infobox.constants import MIN_DETAILS_FOR_YEAR
+from scrapers.parsers.infobox.text_utils.circuit import CircuitTextProcessing
 
 
 class CircuitLapRecordParser(CircuitTextProcessing):

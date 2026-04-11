@@ -7,8 +7,8 @@ from bs4 import BeautifulSoup
 from infrastructure.http.errors.base import RequestError
 from scrapers.debug_dumps import write_infobox_dump
 from scrapers.infobox.field.mapper import InfoboxFieldMapper
-from scrapers.infobox.infobox.html import InfoboxHtmlParser
 from scrapers.logging import get_logger
+from scrapers.parsers.infobox.html import InfoboxHtmlParser
 
 
 class BaseInfoboxExtractor:

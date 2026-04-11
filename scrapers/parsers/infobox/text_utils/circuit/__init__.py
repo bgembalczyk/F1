@@ -1,19 +1,11 @@
-from scrapers.infobox.infobox.text_utils.circuit.geo import CircuitGeoParser
-from scrapers.infobox.infobox.text_utils.circuit.history import CircuitHistoryParser
-from scrapers.infobox.infobox.text_utils.circuit.lap_record import (
-    CircuitLapRecordParser,
-)
-from scrapers.infobox.infobox.text_utils.circuit.layouts import CircuitLayoutsParser
-from scrapers.infobox.infobox.text_utils.circuit.specs import CircuitSpecsParser
-from scrapers.infobox.infobox.text_utils.circuit.text_processing import (
-    CircuitAdditionalInfoParser,
-)
-from scrapers.infobox.infobox.text_utils.circuit.text_processing import (
-    CircuitEntityParser,
-)
-from scrapers.infobox.infobox.text_utils.circuit.text_processing import (
-    CircuitTextProcessing,
-)
+from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser
+from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryParser
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordParser
+from scrapers.parsers.infobox.text_utils.circuit.layouts import CircuitLayoutsParser
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.base import CircuitTextProcessing
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoParser
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
 
 __all__ = [
     "CircuitEntityParser",
@@ -25,3 +17,4 @@ __all__ = [
     "CircuitTextProcessing",
     "CircuitAdditionalInfoParser",
 ]
+

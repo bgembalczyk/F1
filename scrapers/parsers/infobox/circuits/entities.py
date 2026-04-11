@@ -4,15 +4,15 @@ from typing import Any
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.lap_record import merge_two_records
 from scrapers.helpers.lap_record import normalize_lap_record
-from scrapers.infobox.infobox.constants import IGNORED_TOP_LEVEL_KEYS
-from scrapers.infobox.infobox.constants import used_keys
-from scrapers.infobox.infobox.text_utils.base import InfoboxTextUtils
-from scrapers.infobox.infobox.text_utils.circuit import CircuitAdditionalInfoParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitEntityParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitGeoParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitHistoryParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitLapRecordParser
-from scrapers.infobox.infobox.text_utils.circuit import CircuitSpecsParser
+from scrapers.parsers.infobox.constants import IGNORED_TOP_LEVEL_KEYS
+from scrapers.parsers.infobox.constants import used_keys
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
+from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser
+from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryParser
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordParser
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoParser
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
 from scrapers.parsers.mixins.safe import SafeParsingMixin
 
 
