@@ -26,12 +26,7 @@ class WikiElementParserProtocol(Protocol):
     def parse(self, element: Tag, *args: Any, **kwargs: Any) -> dict[str, Any]: ...
 
 
-# Backward-compatible alias
-WikiElementParser = WikiElementParserProtocol
-
-
 __all__ = [
     "AbstractWikiElementParser",
-    "WikiElementParser",
     "WikiElementParserProtocol",
 ]

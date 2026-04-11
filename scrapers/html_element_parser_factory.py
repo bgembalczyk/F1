@@ -1,25 +1,26 @@
-from scrapers.adapters.html_elements import HtmlElementParserAdapterSet
-from scrapers.parsers.wiki.element_figure import WikiFigureElementParser
-from scrapers.parsers.wiki.element_infobox import WikiInfoboxElementParser
-from scrapers.parsers.wiki.element_list import WikiListElementParser
-from scrapers.parsers.wiki.element_navbox import WikiNavboxElementParser
-from scrapers.parsers.wiki.element_paragraph import WikiParagraphElementParser
-from scrapers.parsers.wiki.element_references import WikiReferencesElementParser
-from scrapers.parsers.wiki.element_table import WikiTableElementParser
+from scrapers.adapters.html_elements import HtmlElementAdapterSet
+from scrapers.parsers.html_elements.figure import FigureElementParser
+from scrapers.parsers.html_elements.infobox import InfoboxElementParser
+from scrapers.parsers.html_elements.list import ListElementParser
+from scrapers.parsers.html_elements.navbox import NavboxElementParser
+from scrapers.parsers.html_elements.paragraph import ParagraphElementParser
+from scrapers.parsers.html_elements.table import TableElementParser
+from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 
-class HtmlElementParserBuilder:
-    def build(self) -> HtmlElementParserAdapterSet:
-        return HtmlElementParserAdapterSet(
-            infobox_parser=WikiInfoboxElementParser(),
-            paragraph_parser=WikiParagraphElementParser(),
-            figure_parser=WikiFigureElementParser(),
-            list_parser=WikiListElementParser(),
-            table_parser=WikiTableElementParser(),
-            navbox_parser=WikiNavboxElementParser(),
-            references_wrap_parser=WikiReferencesElementParser(),
+class HtmlElementBuilder:
+    def build(self) -> HtmlElementAdapterSet:
+        return HtmlElementAdapterSet(
+            infobox_parser=InfoboxElementParser(),
+            paragraph_parser=ParagraphElementParser(),
+            figure_parser=FigureElementParser(),
+            list_parser=ListElementParser(),
+            table_parser=TableElementParser(),
+            navbox_parser=NavboxElementParser(),
+            references_wrap_parser=ReferencesWrapParser(),
         )
 
 
 # Backward-compatible alias
-HtmlElementParserFactory = HtmlElementParserBuilder
+HtmlElementParserFactory = HtmlElementBuilder
+HtmlElementParserBuilder = HtmlElementBuilder
