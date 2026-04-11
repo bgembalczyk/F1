@@ -17,34 +17,29 @@ from scrapers.columns.types.multi.last_length_used import LastLengthUsedColumn
 from scrapers.columns.types.multi.name_status_column import CircuitNameStatusColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.skip import SkipColumn
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
-class CircuitsListTableParser(WikiTableBaseParser):
+class CircuitsListTableParser(MappedWikiTableParser):
     """Specialized wikitable parser for the circuits list table."""
 
     table_type = "circuits_list"
     missing_columns_policy = "require_core_circuit_columns"
     extra_columns_policy = "ignore"
 
-    _required_headers = frozenset({"Circuit", "Type", "Location", "Country"})
-    _column_mapping = {
+    required_header_groups = (
+        frozenset({"Circuit"}),
+        frozenset({"Type"}),
+        frozenset({"Location"}),
+        frozenset({"Country"}),
+    )
+    column_mapping = {
         "Circuit": "circuit",
         "Type": "type",
         "Location": "location",
         "Country": "country",
     }
-
-    def matches(self, headers: list[str], _table_data: dict[str, object]) -> bool:
-        return self._required_headers.issubset(set(headers))
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        return {
-            header: self._column_mapping[header]
-            for header in headers
-            if header in self._column_mapping
-        }
 
 
 TABLE_SCHEMA = TableSchemaDSL(
