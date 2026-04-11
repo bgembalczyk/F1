@@ -4,8 +4,9 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.list_element.engine_manufacturers_list import IndianapolisOnlyListParser
+from scrapers.parsers.section.nested.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_manufacturers_list import (
     EngineManufacturersTableParser,
 )
@@ -44,7 +45,7 @@ class IndianapolisOnlySubSectionParser(SubSectionParser):
                 element["data"] = self._list_parser.parse(parsed_tag)
 
 
-class EngineManufacturersSectionParser(ApplyForElementsMixin, BaseSectionParser):
+class EngineManufacturersSectionParser(ApplyForElementsMixin, NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = IndianapolisOnlySubSectionParser()
