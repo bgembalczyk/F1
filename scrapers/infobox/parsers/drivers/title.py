@@ -6,9 +6,10 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.parsers.drivers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
 
 
-class InfoboxTitlesParser:
+class InfoboxTitlesParser(BaseInfoboxFieldParser):
     def __init__(self, link_extractor: InfoboxLinkExtractor) -> None:
         self._link_extractor = link_extractor
 
@@ -157,7 +158,7 @@ class InfoboxTitlesParser:
         if "major victories" not in text.lower():
             return []
 
-        all_links = self._link_extractor.extract_links(cell)
+        all_links = self._link_extractor.extract_links(raw)
         event_links, year_links = self._split_event_and_year_links(all_links)
         return self._group_event_links_with_years(text, event_links, year_links)
 

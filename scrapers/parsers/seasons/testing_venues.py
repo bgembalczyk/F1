@@ -13,9 +13,10 @@ from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.domain_parsing_policy import TestingVenuesLayout
 from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.table_schema_dsl import TableSchemaDSL
+from scrapers.parsers.seasons.base import BaseSeasonParser
 
 
-class TestingVenuesParser:
+class TestingVenuesParser(BaseSeasonParser):
     __test__ = False
 
     def __init__(
@@ -29,7 +30,7 @@ class TestingVenuesParser:
     def parse(
         self,
         soup: BeautifulSoup,
-        season_year: int | None,
+        season_year: int | None = None,
     ) -> list[dict[str, Any]]:
         layout = self._policy.resolve_testing_venues_layout(season_year)
         if layout is None:
@@ -41,7 +42,7 @@ class TestingVenuesParser:
     def _parse_2011(
         self,
         soup: BeautifulSoup,
-        season_year: int | None,
+        season_year: int | None = None,
     ) -> list[dict[str, Any]]:
         """
         Parses the testing table for 2011.
@@ -84,7 +85,7 @@ class TestingVenuesParser:
     def _parse_2009(
         self,
         soup: BeautifulSoup,
-        season_year: int | None,
+        season_year: int | None = None,
     ) -> list[dict[str, Any]]:
         """
         Parses the testing table for 2009.

@@ -9,16 +9,17 @@ from scrapers.columns.types.season_date import SeasonDateColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.table_schema_dsl import TableSchemaDSL
+from scrapers.parsers.seasons.base import BaseSeasonParser
 
 
-class SeasonCalendarParser:
+class SeasonCalendarParser(BaseSeasonParser):
     def __init__(self, table_parser: SeasonTableService) -> None:
         self._table_parser = table_parser
 
     def parse(
         self,
         soup: BeautifulSoup,
-        season_year: int | None,
+        season_year: int | None = None,
     ) -> list[dict[str, Any]]:
         schema_columns = [
             ColumnSpec("Round", "round", IntColumn()),

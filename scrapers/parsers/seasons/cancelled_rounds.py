@@ -18,16 +18,17 @@ from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.pipeline_table import TablePipeline
 from scrapers.table_parsing_helper import TableParsingHelper
 from scrapers.table_schema_dsl import TableSchemaDSL
+from scrapers.parsers.seasons.base import BaseSeasonParser
 
 
-class CancelledRoundsParser:
+class CancelledRoundsParser(BaseSeasonParser):
     def __init__(self, table_parser: SeasonTableService) -> None:
         self._table_parser = table_parser
 
     def parse(
         self,
         soup: BeautifulSoup,
-        season_year: int | None,
+        season_year: int | None = None,
         calendar_data: list[dict[str, Any]] | None = None,
     ) -> list[dict[str, Any]]:
         schema_columns = [

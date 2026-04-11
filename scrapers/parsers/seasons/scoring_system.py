@@ -5,15 +5,16 @@ from bs4 import BeautifulSoup
 from scrapers.columns.factory import IntColumn
 from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.text import TextColumn
+from scrapers.parsers.seasons.base import BaseSeasonParser
 from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
-class SeasonScoringSystemParser:
+class SeasonScoringSystemParser(BaseSeasonParser):
     def __init__(self, table_parser: SeasonTableService) -> None:
         self._table_parser = table_parser
 
-    def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def parse(self, soup: BeautifulSoup, season_year: int | None = None) -> list[dict[str, Any]]:
         return self._table_parser.parse_table(
             soup,
             section_ids=["Scoring_system", "Points_scoring_system"],

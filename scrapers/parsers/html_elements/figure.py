@@ -6,9 +6,9 @@ from scrapers.parsers.text_cleaning import extract_text
 
 
 class FigureElementParser(BaseHtmlElementParser[FigureElementData]):
-    def parse(self, element: Tag) -> FigureElementData:
-        caption_tag = element.find("figcaption")
-        img_tag = element.find("img")
+    def parse(self, raw: Tag) -> FigureElementData:
+        caption_tag = raw.find("figcaption")
+        img_tag = raw.find("img")
         src = img_tag.get("src") if img_tag else None
         return {
             "caption": extract_text(caption_tag),

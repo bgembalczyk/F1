@@ -10,9 +10,10 @@ from scrapers.columns.types.text import TextColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.table_schema_dsl import TableSchemaDSL
+from scrapers.parsers.seasons.base import BaseSeasonParser
 
 
-class SeasonRegionalChampionshipParser:
+class SeasonRegionalChampionshipParser(BaseSeasonParser):
     def __init__(self, table_parser: SeasonTableService) -> None:
         self._table_parser = table_parser
 
@@ -20,9 +21,11 @@ class SeasonRegionalChampionshipParser:
         self,
         soup: BeautifulSoup,
         *,
-        section_ids: list[str],
-        season_year: int | None,
+        section_ids: list[str] | None = None,
+        season_year: int | None = None,
     ) -> list[dict[str, Any]]:
+        if section_ids is None:
+            section_ids = []
         return self._table_parser.parse_table(
             soup,
             section_ids=section_ids,

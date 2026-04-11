@@ -9,9 +9,10 @@ from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.parsers.drivers.season import SeasonClassifier
 from scrapers.infobox.parsers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
 
 
-class BestFinishParser:
+class BestFinishParser(BaseInfoboxFieldParser):
     """Handles parsing of best finish information."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
@@ -23,21 +24,21 @@ class BestFinishParser:
         self._link_extractor = link_extractor
         self._season_classifier = SeasonClassifier()
 
-    def parse(self, cell: Tag) -> dict[str, Any]:
+    def parse(self, raw: Tag) -> dict[str, Any]:
         """Parse best finish field.
 
         Extracts result position and associated seasons with optional class information.
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return ErrorHandler.run_domain_parse(
-            lambda: self._parse_best_finish_payload(cell, text),
+            lambda: self._parse_best_finish_payload(raw, text),
             message=f"Nie udało się sparsować najlepszego wyniku: {text!r}.",
             parser_name=self.__class__.__name__,
         )
 
     def parse_best_finish(self, cell: Tag) -> dict[str, Any]:
         """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(cell)
+        return self.parse(raw)
 
     def _parse_best_finish_payload(self, cell: Tag, text: str) -> dict[str, Any]:
         result: dict[str, Any] = {
@@ -48,7 +49,7 @@ class BestFinishParser:
         # Extract result position
 
         # Extract season links and class information
-        links = self._link_extractor.extract_links(cell)
+        links = self._link_extractor.extract_links(raw)
         season_links = [
             link for link in links if not self._season_classifier.is_class_link(link)
         ]
@@ -98,7 +99,7 @@ class BestFinishParser:
                 season_links,
                 small_tags[0],
             )
-        return self._parse_class_per_season(cell, season_links)
+        return self._parse_class_per_season(raw, season_links)
 
     def _parse_single_class_for_all_seasons(
         self,
@@ -140,7 +141,7 @@ class BestFinishParser:
             }
 
             # Find the actual <a> tag in the cell that matches this season
-            season_tag = self._find_season_tag(cell, season_link)
+            season_tag = self._find_season_tag(raw, season_link)
 
             # Look for next <small> tag after this season tag
             if season_tag:

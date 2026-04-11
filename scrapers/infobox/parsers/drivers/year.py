@@ -6,9 +6,10 @@ from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.parsers.drivers.constants import MIN_RANGE_YEARS
 from scrapers.infobox.parsers.drivers.constants import OPEN_ENDED_RE
 from scrapers.infobox.parsers.drivers.constants import YEAR_RE
+from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
 
 
-class YearParser:
+class YearParser(BaseInfoboxFieldParser):
     """Handles parsing of years and year ranges."""
 
     @staticmethod

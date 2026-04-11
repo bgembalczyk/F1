@@ -13,12 +13,13 @@ from scrapers.parsers.table.wiki.mapped.lap_records import LapRecordsWikiTablePa
 from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTableParser
 from scrapers.parsers.table.wiki.mapped.standings import StandingsTableParser
 from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.wiki.base import WikiTableElementParserBase
+from bs4 import BeautifulSoup
 
 if TYPE_CHECKING:
     from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
-class ArticleTablesParser(WikiParser[Tag | BeautifulSoup, list[dict[str, Any]]]):
+class ArticleTablesParser(WikiTableElementParserBase):
     """Wspólny parser tabel wikitable z artykułów Wikipedii."""
 
     def __init__(
