@@ -6,17 +6,17 @@ from dataclasses import dataclass
 from bs4 import Tag
 
 from models.data.wiki_parser import WikiParserData
+from scrapers.parsers.html_elements.list import ListElementParser
 from scrapers.parsers.rules import ParserRule
+from scrapers.parsers.wiki.base import WikiListParser
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
-from scrapers.parsers.wiki.list import WikiListParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.wiki.paragraph import WikiParagraphParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.figure import FigureParser
-from scrapers.parsers.wiki.list import ListElementParser
 from scrapers.parsers.wiki.navbox import NavBoxParser
 from scrapers.parsers.wiki.paragraph import ParagraphParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
