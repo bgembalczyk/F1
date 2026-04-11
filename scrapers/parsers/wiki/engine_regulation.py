@@ -1,7 +1,7 @@
 from typing import Any
 
-from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.table.engine_regulation import EngineRegulationTableParser
+from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 
 
@@ -20,6 +20,11 @@ class EngineRegulationSubSectionParser(SubSectionParser):
             self._apply_for_elements(section.get("elements", []))
             self._apply_engine_regulation_table_parser(section)
 
+    def parse_group(self, sections: list[dict[str, Any]], *, context: Any = None) -> dict[str, Any]:
+        payload: dict[str, Any] = {"sub_sub_sections": sections}
+        self._apply_engine_regulation_table_parser(payload)
+        return payload
+
     def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
         for element in elements:
             if element.get("kind") != "table":
@@ -32,7 +37,10 @@ class EngineRegulationSubSectionParser(SubSectionParser):
                 element["data"] = parsed
 
 
-class HistorySectionParser(BaseSectionParser):
+class HistorySectionParser(BaseNestedSectionParser):
+    heading_class = "mw-heading3"
+    output_key = "sub_sections"
+
     def __init__(self) -> None:
-        super().__init__()
         self.child_parser = EngineRegulationSubSectionParser()
+        super().__init__(child_parser=self.child_parser)
