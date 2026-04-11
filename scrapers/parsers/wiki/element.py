@@ -6,11 +6,11 @@ from dataclasses import dataclass
 from bs4 import Tag
 
 from models.data.wiki_parser import WikiParserData
-from scrapers.parsers.infobox.html import WikiInfoboxHtmlParser
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.figure import FigureParser
-from scrapers.parsers.wiki.list import ListParser
+from scrapers.parsers.wiki.list import ListElementParser
 from scrapers.parsers.wiki.navbox import NavBoxParser
 from scrapers.parsers.wiki.paragraph import ParagraphParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
@@ -21,7 +21,7 @@ class WikiElementParsers:
     infobox_parser: WikiInfoboxHtmlParser
     paragraph_parser: ParagraphParser
     figure_parser: FigureParser
-    list_parser: ListParser
+    list_parser: ListElementParser
     table_parser: WikiTableHtmlParser
     navbox_parser: NavBoxParser
     references_wrap_parser: ReferencesWrapParser
@@ -144,7 +144,7 @@ def build_default_wiki_element_parsers() -> WikiElementParsers:
         infobox_parser=WikiInfoboxHtmlParser(),
         paragraph_parser=ParagraphParser(),
         figure_parser=FigureParser(),
-        list_parser=ListParser(),
+        list_parser=ListElementParser(),
         table_parser=WikiTableHtmlParser(),
         navbox_parser=NavBoxParser(),
         references_wrap_parser=ReferencesWrapParser(),

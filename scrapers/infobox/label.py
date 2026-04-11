@@ -10,10 +10,9 @@ from scrapers.parsers.infobox.constants import RACE_EVENT_LABELS
 from scrapers.parsers.infobox.constants import TEAM_LABELS
 from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
 from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
-from scrapers.parsers.infobox.field_parser import CallableInfoboxFieldParser
-from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
-from scrapers.parsers.infobox.numeric_extractor import NumericExtractor
-
+from scrapers.parsers.infobox.protocol import CallableInfoboxFieldParser
+from scrapers.parsers.infobox.protocol import InfoboxFieldParser
+from scrapers.parsers.numeric_extractor import NumericExtractor
 
 
 def field_parsers_registry(

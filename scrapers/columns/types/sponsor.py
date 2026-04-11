@@ -11,7 +11,7 @@ from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.url import normalize_url
 from scrapers.parsers.liveries.sponsorship.parts import SponsorPartsParser
-from scrapers.parsers.liveries.sponsorship.scope.grand_prix import (
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix_transformer import (
     GrandPrixScopeTransformer,
 )
 from scrapers.sponsorship_record_text import SponsorshipRecordText
