@@ -15,7 +15,7 @@ from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.text import strip_marks
 
 
-class RaceResultCellParser:
+class RaceResultCellTransformer:
     def extract_result_text(self, ctx: ColumnContext) -> str:
         cell = ctx.cell
         if cell is None:
@@ -35,7 +35,7 @@ class RaceResultCellParser:
                 if "position:absolute" in style:
                     return
             for child in node.children:
-                RaceResultCellParser._extract_text_excluding_hidden(child, parts)
+                RaceResultCellTransformer._extract_text_excluding_hidden(child, parts)
         elif type(node) is NavigableString:
             text = str(node).strip()
             if text:
@@ -186,4 +186,4 @@ class RaceResultCellParser:
         return sprint_position, pole_position, fastest_lap
 
 
-__all__ = ["RaceResultCellParser"]
+__all__ = ["RaceResultCellTransformer"]

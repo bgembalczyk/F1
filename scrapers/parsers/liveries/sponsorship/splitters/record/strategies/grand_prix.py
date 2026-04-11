@@ -2,7 +2,7 @@ from typing import Any
 
 from scrapers.helpers.constants import COLOUR_KEYS
 from scrapers.helpers.constants import SPONSOR_KEYS
-from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeParser
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeTransformer
 from scrapers.parsers.liveries.sponsorship.scope.handlers.colour import ColourScopeHandler
 from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
 
@@ -71,7 +71,7 @@ class GrandPrixSplitStrategy:
         if not isinstance(item, dict) or "params" not in item:
             return None
         params = item.get("params") or []
-        scope = GrandPrixScopeParser.parse_grand_prix_scope(params)
+        scope = GrandPrixScopeTransformer.parse_grand_prix_scope(params)
         cleaned_item = {k: v for k, v in item.items() if k != "params"}
         return scope, cleaned_item
 
@@ -179,7 +179,7 @@ class GrandPrixSplitStrategy:
                 )
                 for gp_entry in scope.get("grand_prix") or []
             ]
-        scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
+        scope_key = GrandPrixScopeTransformer.grand_prix_scope_key(scope)
         return [(scope_key, scope)]
 
     @staticmethod

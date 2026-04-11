@@ -6,7 +6,7 @@ from scrapers.columns.helpers.constants import BACKGROUND_TO_RESULT
 from scrapers.columns.helpers.constants import MARKS_RE
 from scrapers.columns.helpers.race_result import rules
 from scrapers.columns.helpers.race_result.background_mapper import RaceResultBackgroundMapper
-from scrapers.columns.helpers.race_result.cell_parser import RaceResultCellParser
+from scrapers.columns.helpers.race_result.cell_parser import RaceResultCellTransformer
 from scrapers.columns.helpers.race_result.superscript import SuperscriptParseResult
 from scrapers.columns.types.mixins.background import BackgroundMixin
 from scrapers.helpers.text import strip_marks
@@ -22,7 +22,7 @@ class RaceResultColumn(BackgroundMixin, BaseColumn):
         round_rules: list[rules.RoundRule] | None = None,
     ) -> None:
         self._season_year = season_year
-        self._cell_parser = RaceResultCellParser()
+        self._cell_parser = RaceResultCellTransformer()
         self._background_mapper = RaceResultBackgroundMapper(BACKGROUND_TO_RESULT)
 
         default_result_rules: list[rules.ResultRule] = [

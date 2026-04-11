@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.parsers.seasons.standings import SeasonStandingsParser
+from scrapers.parsers.seasons.standings import SeasonStandingsService
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 
 
 class SeasonConstructorsStandingsSectionParser:
-    def __init__(self, parser: SeasonStandingsParser) -> None:
+    def __init__(self, parser: SeasonStandingsService) -> None:
         self._parser = parser
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:

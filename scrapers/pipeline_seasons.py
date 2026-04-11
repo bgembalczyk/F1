@@ -20,7 +20,7 @@ from scrapers.parsers.seasons.non_championship import SeasonNonChampionshipParse
 from scrapers.parsers.seasons.regional_championship import SeasonRegionalChampionshipParser
 from scrapers.parsers.seasons.results import SeasonResultsParser
 from scrapers.parsers.seasons.scoring_system import SeasonScoringSystemParser
-from scrapers.parsers.seasons.standings import SeasonStandingsParser
+from scrapers.parsers.seasons.standings import SeasonStandingsService
 from scrapers.parsers.seasons.table import SeasonTableParser
 from scrapers.parsers.seasons.testing_venues import TestingVenuesParser
 from scrapers.parsers.section.protocols.season import SeasonSectionParser
@@ -103,7 +103,7 @@ class SeasonParserSetBuilder:
             include_urls=self._include_urls,
             url=url,
         )
-        standings_parser = SeasonStandingsParser(table_parser)
+        standings_parser = SeasonStandingsService(table_parser)
         return SeasonParserSet(
             table_parser=table_parser,
             entries_parser=SeasonEntriesParser(
