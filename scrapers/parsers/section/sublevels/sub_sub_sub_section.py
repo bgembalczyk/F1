@@ -31,13 +31,15 @@ class SubSubSubSectionParser(WikiElementParsingMixin, WikiParser):
 
     def parse(
         self,
-        element: Tag,
+        element: Tag | list[Tag],
         *,
         context: SectionExtractionContext | None = None,
     ) -> dict[str, Any]:
-        return self.parse_group(list(element.children), context=context)
+        if isinstance(element, Tag):
+            return self._parse_group(list(element.children), context=context)
+        return self._parse_group(element, context=context)
 
-    def parse_group(
+    def _parse_group(
         self,
         elements: list,
         *,

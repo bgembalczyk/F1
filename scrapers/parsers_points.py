@@ -265,10 +265,10 @@ class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser)
     def collect_rows(self, parsed: dict[str, Any]) -> list[dict[str, Any]]:
         return self._table_parser.collect_rows(parsed)
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         if not parsed.get("sub_sub_sub_sections"):
-            parsed = self.child_parser.parse_group(elements, context=context)
+            parsed = self.child_parser.parse(elements, context=context)
         self.apply_table_parser(parsed)
         return parsed
 
@@ -281,8 +281,8 @@ class ShortenedRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionPars
     def collect_rows(self, parsed: dict[str, Any]) -> list[dict[str, Any]]:
         return self._table_parser.collect_rows(parsed)
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         self.apply_table_parser(parsed)
         return parsed
 
@@ -293,13 +293,13 @@ class SpecialCasesSubSubSectionRouter(SubSubSectionParser):
         self.sprint_parser = SprintRacesSubSubSectionParser()
         self.shortened_parser = ShortenedRacesSubSubSectionParser()
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         section_id = getattr(context, "section_id", "") or ""
         if "sprint" in section_id.lower():
-            return self.sprint_parser.parse_group(elements, context=context)
+            return self.sprint_parser.parse(elements, context=context)
         if "shortened" in section_id.lower():
-            return self.shortened_parser.parse_group(elements, context=context)
-        parsed = super().parse_group(elements, context=context)
+            return self.shortened_parser.parse(elements, context=context)
+        parsed = super()._parse_group(elements, context=context)
         self.sprint_parser.apply_table_parser(parsed)
         self.shortened_parser.apply_table_parser(parsed)
         return parsed
@@ -330,7 +330,7 @@ class PointsScoringSystemsSectionParser(ApplyForElementsMixin, NestedWikiSection
     def collect_rows(self, parsed: dict[str, Any]) -> list[dict[str, Any]]:
         return self._table_parser.collect_rows(parsed)
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         self.apply_table_parser(parsed)
         return parsed

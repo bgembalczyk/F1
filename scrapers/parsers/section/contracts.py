@@ -19,13 +19,22 @@ class StructureParser(ABC):
         """Zestaw parserów elementów HTML używany przez parser struktury."""
 
     @abstractmethod
-    def parse_group(
+    def parse(
+        self,
+        element: Tag,
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, Any]:
+        """Publiczny entrypoint parsera struktury."""
+
+    @abstractmethod
+    def _parse_group(
         self,
         elements: list[Tag],
         *,
         context: SectionExtractionContext | None = None,
     ) -> dict[str, Any]:
-        """Parsuje grupę elementów HTML do ustrukturyzowanego słownika."""
+        """Wewnętrzny helper parsujący grupę elementów HTML."""
 
 
 __all__ = ["StructureParser"]
