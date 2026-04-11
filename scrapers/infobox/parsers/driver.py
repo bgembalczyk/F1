@@ -6,6 +6,9 @@ from scrapers.debug_dumps import write_infobox_dump
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.helpers.transformers import build_transformers
+from scrapers.infobox.parsers.html import InfoboxHtmlParser
+from scrapers.infobox.parsers.providers.drivers.default import DefaultDriverInfoboxProvider
+from scrapers.infobox.parsers.providers.drivers.protocol import DriverInfoboxProvider
 from scrapers.infobox.parsers.html import WikiInfoboxHtmlParser
 from scrapers.infobox.parsers.providers.drivers.default import DefaultDriverInfoboxParserProvider
 from scrapers.infobox.parsers.providers.drivers.protocol import DriverInfoboxParserProvider
@@ -24,7 +27,7 @@ class DriverInfoboxParser(WikiInfoboxElementParserBase):
         options: ScraperOptions | None = None,
         run_id: str | None = None,
         url: str | None = None,
-        parser_provider: DriverInfoboxParserProvider | None = None,
+        parser_provider: DriverInfoboxProvider | None = None,
     ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls
@@ -35,7 +38,7 @@ class DriverInfoboxParser(WikiInfoboxElementParserBase):
         self.url = url
         self.logger = get_logger(self.__class__.__name__)
         self.transformers = build_transformers(options.pipeline.transformers)
-        provider = parser_provider or DefaultDriverInfoboxParserProvider()
+        provider = parser_provider or DefaultDriverInfoboxProvider()
         parser_bundle = provider.build(
             include_urls=self.include_urls,
             wikipedia_base=self.wikipedia_base,
