@@ -10,6 +10,7 @@ from layers.protocols.one_runner import LayerOneRunnerProtocol
 from scrapers.core.logging import RunTraceWriter
 from scrapers.core.logging import build_execution_context
 from scrapers.core.logging import get_logger
+from scrapers.errors import normalize_pipeline_error
 
 if TYPE_CHECKING:
     from collections.abc import Callable
