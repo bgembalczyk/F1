@@ -30,9 +30,10 @@ class NationalityParser:
         self._link_extractor = link_extractor
 
     def parse(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
-        return self.parse_nationality(cell)
+        """Primary parser entrypoint for nationality cells."""
+        return self._parse_nationality(cell)
 
-    def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
+    def _parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.
 
         Handles cases like:
