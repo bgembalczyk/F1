@@ -1,5 +1,5 @@
 from models.data.parsed.infobox import InfoboxParsedData
-from scrapers.parsers.infobox.html import WikiInfoboxHtmlParser
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 
 
 class WikiInfoboxParser(WikiInfoboxHtmlParser):

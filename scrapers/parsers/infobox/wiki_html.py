@@ -7,7 +7,6 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
-from scrapers.parsers.wiki.infobox import WikiInfoboxElementParserBase
 
 
 class WikiInfoboxHtmlParser(WikiInfoboxElementParserBase):
