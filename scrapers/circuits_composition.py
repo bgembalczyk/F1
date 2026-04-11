@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from scrapers.circuit_orchestrator import CircuitInfoboxOrchestrator
 from scrapers.infobox.extraction.protocol import InfoboxExtractionService
 from scrapers.infobox.extraction.service import CircuitInfoboxExtractionService
 from scrapers.options import ScraperOptions
@@ -52,7 +53,7 @@ class CircuitScraperCompositionFactory:
     ) -> CircuitScraperDependencies:
         infobox_service = self.infobox_service
         if infobox_service is None:
-            infobox_service = CircuitInfoboxExtractionService(options=options)
+            infobox_service = CircuitInfoboxOrchestrator(options=options)
 
         sections_service_factory = self.sections_service_factory
         if sections_service_factory is None:

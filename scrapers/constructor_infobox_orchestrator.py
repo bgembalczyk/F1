@@ -5,9 +5,8 @@ from typing import TYPE_CHECKING
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.infobox.extraction.extractor.table.first import FirstInfoboxTableExtractor
-from scrapers.infobox.extraction.service.base_orchestrator import BaseInfoboxOrchestrator
-from scrapers.infobox.parsers.driver import DriverInfoboxParser
+from scrapers.infobox.extraction.extractor.table.all import AllInfoboxTablesExtractor
+from scrapers.infobox.extraction.service.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
@@ -15,20 +14,14 @@ if TYPE_CHECKING:
     from collections.abc import Iterable
 
 
-class DriverInfoboxOrchestrator(BaseInfoboxOrchestrator[Tag]):
+class ConstructorInfoboxOrchestrator(BaseInfoboxOrchestrator[Tag]):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         super().__init__(options=options)
-        self._infobox_locator = FirstInfoboxTableExtractor()
+        self._infobox_locator = AllInfoboxTablesExtractor()
 
     def find_infoboxes(self, soup: BeautifulSoup) -> Iterable[Tag]:
         return self._infobox_locator.find_infoboxes(soup)
 
     def build_parser(self, *, url: str) -> SoupParser:
-        return DriverInfoboxParser(
-            options=self._options,
-            run_id=self._options.run_id,
-            url=url,
-        )
-
-
-__all__ = ["DriverInfoboxOrchestrator"]
+        _ = url
+        return LegacyInfoboxHtmlParserAdapter()

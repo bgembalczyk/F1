@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from scrapers.infobox.extraction import InfoboxExtractionService
+from scrapers.infobox.extraction.service import ConstructorInfoboxOrchestrator
 from scrapers.infobox.extraction.service.constructor import ConstructorInfoboxExtractionService
 from scrapers.options import ScraperOptions
 from scrapers.services.section.extraction.constructor import ConstructorSectionExtractionService
@@ -52,7 +53,7 @@ class ConstructorScraperCompositionFactory:
     ) -> ConstructorScraperDependencies:
         infobox_service = self.infobox_service
         if infobox_service is None:
-            infobox_service = ConstructorInfoboxExtractionService(options=options)
+            infobox_service = ConstructorInfoboxOrchestrator(options=options)
 
         sections_service_factory = self.sections_service_factory
         if sections_service_factory is None:
