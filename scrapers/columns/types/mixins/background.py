@@ -17,10 +17,15 @@ class BackgroundMixin:
 
     def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:
         super().apply(ctx, record)  # type: ignore[misc]
-        if ctx.cell is not None:
-            bg = extract_background(ctx.cell)
-            if bg is not None:
-                record["background"] = bg
+        bg = self._extract_raw_background(ctx)
+        if bg is not None:
+            record["background"] = bg
+
+    @staticmethod
+    def _extract_raw_background(ctx: ColumnContext) -> str | None:
+        if ctx.cell is None:
+            return None
+        return extract_background(ctx.cell)
 
 
 __all__ = ["BackgroundMixin"]
