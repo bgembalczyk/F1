@@ -6,6 +6,7 @@ from models.data.wiki_parser import WikiParserData
 from models.payload import WikiParsedPayload
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
+from scrapers.parsers.wiki.element import ElementParserRegistry
 from scrapers.parsers.wiki.element import WikiElementParsers
 
 
@@ -14,6 +15,7 @@ class WikiElementParsingMixin:
         self,
         *,
         element_parsers: WikiElementParsers | None = None,
+        element_registry: ElementParserRegistry | None = None,
     ) -> None:
         resolved_parsers = element_parsers
         if resolved_parsers is None:
@@ -26,6 +28,7 @@ class WikiElementParsingMixin:
         self.table_parser = resolved_parsers.table_parser
         self.navbox_parser = resolved_parsers.navbox_parser
         self.references_wrap_parser = resolved_parsers.references_wrap_parser
+        self.element_registry = element_registry
         self._parser_rules: list[ParserRule] = []
         self._register_default_parser_rules()
 
@@ -52,6 +55,9 @@ class WikiElementParsingMixin:
         self._parser_rules.insert(index, rule)
 
     def _register_default_parser_rules(self) -> None:
+        if self.element_registry is not None:
+            self._parser_rules.extend(self.element_registry.rules)
+            return
         self.register_parser_rule(
             predicate=lambda el: el.name == "p",
             parser=self.paragraph_parser.parse,
@@ -63,7 +69,7 @@ class WikiElementParsingMixin:
             result_type="figure",
         )
         self.register_parser_rule(
-            predicate=lambda el: el.name == "ul",
+            predicate=lambda el: el.name in {"ul", "ol"},
             parser=self.list_parser.parse,
             result_type="list",
         )
