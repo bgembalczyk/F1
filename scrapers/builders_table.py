@@ -3,17 +3,11 @@ from __future__ import annotations
 from collections.abc import Iterable
 from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
-from warnings import warn
 
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.spec import ColumnSpec
-from scrapers.config_table import TableScraperConfig
 from scrapers.constants_table import BASE_STATS_COLUMNS
 from scrapers.constants_table import BASE_STATS_MAP
-from scrapers.schema_table import TableSchema
-from scrapers.schema_table import TableSchemaBuilder
-from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 @dataclass(frozen=True)
@@ -56,7 +50,6 @@ def build_metric_columns(
     *,
     column_overrides: dict[str, BaseColumn] | None = None,
 ) -> list[ColumnSpec]:
-
     column_overrides = column_overrides or {}
     return [
         ColumnSpec(
@@ -75,7 +68,6 @@ def build_base_stats_columns(
     include: Iterable[str] | None = None,
     exclude: Iterable[str] | None = None,
 ) -> list[ColumnSpec]:
-
     include_set = set(include) if include is not None else None
     exclude_set = set(exclude or [])
     key_aliases = key_aliases or {}
@@ -100,5 +92,3 @@ def build_name_status_fragment(
     column_type: BaseColumn,
 ) -> list[ColumnSpec]:
     return [ColumnSpec(header, output_key, column_type)]
-
-

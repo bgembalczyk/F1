@@ -1,7 +1,7 @@
 from models.value_objects.date.normalized import NormalizedDate
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.results_parsing import ResultsParsingHelpers
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
 from scrapers.helpers.time import parse_date_text
 
 

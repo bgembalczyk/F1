@@ -1,13 +1,13 @@
 from typing import Any
 
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constants import BACKGROUND_TO_RESULT
 from scrapers.columns.helpers.constants import MARKS_RE
 from scrapers.columns.helpers.race_result import rules
 from scrapers.columns.helpers.race_result.background_mapper import RaceResultBackgroundMapper
 from scrapers.columns.helpers.race_result.cell_parser import RaceResultCellParser
 from scrapers.columns.helpers.race_result.superscript import SuperscriptParseResult
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
 from scrapers.helpers.background import extract_background
 from scrapers.helpers.text import strip_marks
 

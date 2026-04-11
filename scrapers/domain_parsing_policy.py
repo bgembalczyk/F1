@@ -4,7 +4,12 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
-from scrapers.seasons.parsers_seasons import constants
+from scrapers.parsers.seasons.constants import ENGINE_V10_END_YEAR
+from scrapers.parsers.seasons.constants import ENGINE_V10_START_YEAR
+from scrapers.parsers.seasons.constants import ENGINE_V8_YEAR
+from scrapers.parsers.seasons.constants import PRE_2007_NORMALIZATION_CUTOFF
+from scrapers.parsers.seasons.constants import TESTING_VENUES_SWAPPED_COLUMNS_YEAR
+from scrapers.parsers.seasons.constants import TESTING_VENUES_YEARS
 
 
 class TestingVenuesLayout(str, Enum):
@@ -18,13 +23,13 @@ class DomainParsingPolicy:
     """Reguły domenowe wykorzystywane przez parsery sezonu."""
 
     def resolve_engine_config(self, season_year: int | None) -> dict[str, Any] | None:
-        if season_year == constants.ENGINE_V8_YEAR:
+        if season_year == ENGINE_V8_YEAR:
             return {"displacement_l": 2.4, "layout": "V", "cylinders": 8}
         if (
             season_year is not None
-            and constants.ENGINE_V10_START_YEAR
+            and ENGINE_V10_START_YEAR
             <= season_year
-            <= constants.ENGINE_V10_END_YEAR
+            <= ENGINE_V10_END_YEAR
         ):
             return {"displacement_l": 3.0, "layout": "V", "cylinders": 10}
         return None
@@ -32,15 +37,15 @@ class DomainParsingPolicy:
     def should_normalize_entry_numbers(self, season_year: int | None) -> bool:
         return (
             season_year is not None
-            and season_year < constants.PRE_2007_NORMALIZATION_CUTOFF
+            and season_year < PRE_2007_NORMALIZATION_CUTOFF
         )
 
     def resolve_testing_venues_layout(
         self,
         season_year: int | None,
     ) -> TestingVenuesLayout | None:
-        if season_year not in constants.TESTING_VENUES_YEARS:
+        if season_year not in TESTING_VENUES_YEARS:
             return None
-        if season_year == constants.TESTING_VENUES_SWAPPED_COLUMNS_YEAR:
+        if season_year == TESTING_VENUES_SWAPPED_COLUMNS_YEAR:
             return TestingVenuesLayout.SWAPPED_CIRCUIT_EVENT
         return TestingVenuesLayout.STANDARD

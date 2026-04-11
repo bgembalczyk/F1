@@ -3,12 +3,11 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.extractors.table import TableExtractor
-from scrapers.base.options import ScraperOptions
-from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.config import ScraperConfig as TableScraperConfig
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.wiki.parsers.elements.table import TableParser
+from scrapers.columns.types.position import PositionColumn
+from scrapers.config_table import TableScraperConfig
+from scrapers.extractors.table_extractor import TableExtractor
+from scrapers.options import ScraperOptions
+from scrapers.scraper_table import F1TableScraper
 
 
 class F1StandingsTableParser(TableParser):

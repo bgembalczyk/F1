@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from models.records.factories.mapping import MappingRecordFactory
-from scrapers.assemblers.grands_prix_by_year_record import GrandPrixByYearRecordAssembler
+from scrapers.assemblers import GrandPrixByYearRecordAssembler
 from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.auto import AutoColumn
 from scrapers.columns.types.driver_list import DriverListColumn

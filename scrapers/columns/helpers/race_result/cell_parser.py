@@ -4,8 +4,11 @@ from typing import Any
 from bs4 import NavigableString
 from bs4 import Tag
 
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constants import FOOTNOTE_RE
 from scrapers.columns.helpers.constants import LETTER_RE
+from scrapers.columns.helpers.constants import MARKS_RE
+from scrapers.columns.helpers.constants import SPLIT_RESULTS_RE
 from scrapers.columns.helpers.constants import SPRINT_POINTS_START_YEAR
 from scrapers.columns.helpers.race_result.superscript import SuperscriptParseResult
 from scrapers.helpers.text import clean_wiki_text

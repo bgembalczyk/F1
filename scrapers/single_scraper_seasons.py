@@ -2,19 +2,20 @@ from __future__ import annotations
 
 import warnings
 
+from scrapers.dto import InfoboxPayloadDTO
+from scrapers.dto import SectionsPayloadDTO
+from scrapers.dto import TablesPayloadDTO
+from scrapers.records.dto.season import SeasonPayloadDTO
+from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.wiring.composition_seasons import SeasonScraperCompositionFactory
+from scrapers.wiring.composition_seasons import SeasonScraperDependencies
+
 warnings.warn("single_scraper_seasons is deprecated; use scrapers.seasons_detail_scraper.", DeprecationWarning, stacklevel=2)
 
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.seasons.composition_seasons import SeasonScraperCompositionFactory
-from scrapers.seasons.composition_seasons import SeasonScraperDependencies
-from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
 from scrapers.services.domain_record.season import SeasonDomainRecordInput
-from scrapers.single_wiki_article import InfoboxPayloadDTO
-from scrapers.single_wiki_article import SectionsPayloadDTO
-from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
-from scrapers.single_wiki_article import TablesPayloadDTO
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

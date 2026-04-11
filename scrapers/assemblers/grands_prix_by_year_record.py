@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.mappers.mappers_grands_prix.by_year_record import GrandPrixByYearRecordMapper
-from scrapers.services.services_grands_prix.championship import GrandPrixChampionshipResolver
+from scrapers.records.mappers.grand_prix_by_year import GrandPrixByYearRecordMapper
+from scrapers.resolvers.grand_prix_championship import GrandPrixChampionshipResolver
 
 if TYPE_CHECKING:
     from bs4 import Tag
@@ -30,3 +30,6 @@ class GrandPrixByYearRecordAssembler:
             return None
         assembled["championship"] = self._championship_resolver.resolve(row)
         return assembled
+
+
+__all__ = ["GrandPrixByYearRecordAssembler"]

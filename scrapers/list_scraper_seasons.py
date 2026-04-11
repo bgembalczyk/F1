@@ -2,25 +2,26 @@
 
 import warnings
 
+from scrapers.builders_table import build_columns
+from scrapers.columns.factory import IntColumn
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.links_list import LinksListColumn
+from scrapers.columns.types.url import UrlColumn
+from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import build_scraper_config
+from scrapers.options import ScraperOptions
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.seed_list_scraper_table import SeedListTableScraper
+from scrapers.source_catalog import SEASONS_LIST
+from scrapers.table_schema_dsl import TableSchemaDSL
+
 warnings.warn("list_scraper_seasons is deprecated; use scrapers.seasons_list_scraper.", DeprecationWarning, stacklevel=2)
 
 
 from typing import Any
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.base.options import ScraperOptions
-from scrapers.base.source_catalog import SEASONS_LIST
-from scrapers.base.table.builders import build_columns
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig as TableScraperConfig
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.seed_list_scraper import SeedListTableScraper
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
 
 
 class SeasonsTableParser(WikiTableBaseParser):
