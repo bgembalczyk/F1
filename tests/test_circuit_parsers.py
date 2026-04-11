@@ -20,7 +20,7 @@ def test_circuit_geo_parser_location_and_coordinates() -> None:
             {"text": "France", "url": "https://en.wikipedia.org/wiki/France"},
         ],
     }
-    location = parser._parse_location(row)
+    location = parser.parse_location(row)
     assert location == {
         "localisation1": {
             "text": "Paris",
@@ -38,7 +38,7 @@ def test_circuit_geo_parser_location_and_coordinates() -> None:
         },
     }
 
-    coords = parser._parse_coordinates({"text": "48.8566; 2.3522"})
+    coords = parser.parse_coordinates({"text": "48.8566; 2.3522"})
     assert coords == {"lat": 48.8566, "lon": 2.3522}
 
 
@@ -51,14 +51,14 @@ def test_circuit_history_parser_former_names() -> None:
 
 def test_circuit_specs_parser_surface_and_banking() -> None:
     parser = services.CircuitSpecsParser()
-    surface = parser._parse_surface({"text": "Asphalt (since 2020)"})
+    surface = parser.parse_surface({"text": "Asphalt (since 2020)"})
     assert surface == {
         "values": ["Asphalt"],
         "text": "Asphalt (since 2020)",
         "note": "since 2020",
     }
 
-    banking = parser._parse_banking({"text": "18° (Turn 1)"})
+    banking = parser.parse_banking({"text": "18° (Turn 1)"})
     assert banking == {"value": 18.0, "unit": "deg", "note": "Turn 1"}
 
 

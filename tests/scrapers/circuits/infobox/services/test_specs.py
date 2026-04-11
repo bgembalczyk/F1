@@ -231,9 +231,3 @@ def test_parse_banking_no_value() -> None:
     assert "value" not in result
     assert result.get("note") == "steeply banked"
 
-
-def test_parse_banking_alias(parser) -> None:
-    # _parse_banking is backward-compatible alias
-    assert parser._parse_banking({"text": "33°"}) == CircuitSpecsParser.parse_banking(
-        {"text": "33°"},
-    )

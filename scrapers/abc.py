@@ -1,4 +1,3 @@
-import warnings
 from abc import ABC
 from abc import abstractmethod
 from collections.abc import Sequence
@@ -270,36 +269,11 @@ class ABCScraper(
     def to_dataframe(self):
         return self._export_service.to_dataframe()
 
-    def _finalize_fetch(
-        self,
-        run_id: str,
-        data: list[ExportRecord],
-    ) -> list[ExportRecord]:
-        """Backward-compatible alias for legacy subclasses overriding finalization."""
-        warnings.warn(
-            "ABCScraper._finalize_fetch() is deprecated; use "
-            "fetch() return path instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        self._data = data
-        self.logger.debug("Scrape run %s finished", run_id)
-        return self._data
-
     def _download(self) -> str:
         return self.fetch_html(self.url)
 
     def fetch_html(self, url: str) -> str:
         return self.source_adapter.get(url)
-
-    def _parse_soup(self, _soup: BeautifulSoup) -> list[RawRecord]:
-        warnings.warn(
-            "ABCScraper._parse_soup() is deprecated; implement parse_records() "
-            "instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.parse_records(_soup)
 
     def parse_records(self, _soup: BeautifulSoup) -> list[RawRecord]:
         msg = (
@@ -315,10 +289,6 @@ class ABCScraper(
         parse_impl = type(self).parse_records
         if parse_impl is not ABCScraper.parse_records:
             return self.parse_records(soup)
-
-        legacy_parse_impl = type(self)._parse_soup  # noqa: SLF001
-        if legacy_parse_impl is not ABCScraper._parse_soup:
-            return self._parse_soup(soup)
 
         self.logger.debug(
             "No parser/parse_records implementation for %s; returning empty list.",

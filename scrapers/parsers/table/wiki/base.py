@@ -158,6 +158,7 @@ class WikiTableBaseParser(AbstractTableFragmentParser):
 
     collect_rows = parse_group
 
+
 __all__ = [
     "AbstractTableFragmentParser",
     "TableFragmentParserProtocol",
