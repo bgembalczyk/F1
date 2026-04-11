@@ -7,10 +7,10 @@ from scrapers.columns.types.driver import DriverColumn
 from scrapers.parsers.seasons.constants import MERGED_ENTRY_BASE_KEYS
 from scrapers.parsers.seasons.constants import ROUND_LEVEL_RESULT_ATTRIBUTES
 from scrapers.parsers.seasons.table import SeasonTableParser
-from scrapers.parsers.wiki.base import WikiSectionParser
+from scrapers.parsers.wiki.base import WikiSectionParserBase
 
 
-class SeasonStandingsParser(WikiSectionParser):
+class SeasonStandingsParser(WikiSectionParserBase):
     def __init__(self, table_parser: SeasonTableParser) -> None:
         self._table_parser = table_parser
 

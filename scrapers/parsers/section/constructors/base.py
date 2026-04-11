@@ -9,7 +9,7 @@ from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
-from scrapers.parsers.wiki.table import WikiTableParser
+from scrapers.parsers.wiki.table import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -36,7 +36,7 @@ class ConstructorsSectionParser(BaseSectionParser):
             normalize_empty_values=normalize_empty_values,
         )
         self._table_mapping_parser: WikiTableBaseParser = table_mapping_parser
-        self._table_element_parser = WikiTableParser()
+        self._table_element_parser = WikiTableHtmlParser()
 
     def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         logger.warning(

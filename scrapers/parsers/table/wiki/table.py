@@ -1,4 +1,3 @@
-import warnings
 from collections.abc import Sequence
 from typing import Any
 
@@ -157,16 +156,4 @@ class WikiTableHtmlParser(WikiTableElementParserBase):
         ]
 
 
-class WikiTableParser(WikiTableHtmlParser):
-    """Deprecated alias for :class:`WikiTableHtmlParser`."""
-
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
-        warnings.warn(
-            "WikiTableParser is deprecated; use WikiTableHtmlParser.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        super().__init__(*args, **kwargs)
-
-
-__all__ = ["WikiTableHtmlParser", "WikiTableParser"]
+__all__ = ["WikiTableHtmlParser"]
