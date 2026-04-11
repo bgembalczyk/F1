@@ -50,6 +50,32 @@ def _is_mixin_context(path: Path) -> bool:
     return "mixin" in path.stem
 
 
+def _is_public_parse_method(node: ast.stmt) -> bool:
+    if not isinstance(node, ast.FunctionDef | ast.AsyncFunctionDef):
+        return False
+    return node.name == "parse"
+
+
+def _extract_base_name(base: ast.expr) -> str | None:
+    if isinstance(base, ast.Name):
+        return base.id
+    if isinstance(base, ast.Attribute):
+        return base.attr
+    if isinstance(base, ast.Subscript):
+        return _extract_base_name(base.value)
+    return None
+
+
+def _is_parser_protocol(node: ast.ClassDef) -> bool:
+    base_names = {_extract_base_name(base) for base in node.bases}
+    return "Protocol" in base_names
+
+
+def _inherits_parser_base(node: ast.ClassDef) -> bool:
+    base_names = {_extract_base_name(base) for base in node.bases}
+    return any((name or "").endswith("Parser") for name in base_names)
+
+
 def validate_class_names(path: Path) -> list[str]:
     source = path.read_text(encoding="utf-8")
     tree = ast.parse(source, filename=str(path))
@@ -72,6 +98,20 @@ def validate_class_names(path: Path) -> list[str]:
             issues.append(
                 f"{path}:{node.lineno}: klasa mixin musi kończyć się na 'Mixin'",
             )
+
+        if not class_name.endswith("Parser"):
+            continue
+
+        has_public_parse = any(_is_public_parse_method(child) for child in node.body)
+        if has_public_parse:
+            continue
+        if _is_parser_protocol(node):
+            continue
+        if _inherits_parser_base(node):
+            continue
+        issues.append(
+            f"{path}:{node.lineno}: klasa z sufiksem 'Parser' musi mieć publiczne parse(...)",
+        )
 
     return issues
 
