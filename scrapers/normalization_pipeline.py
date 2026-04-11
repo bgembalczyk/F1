@@ -6,6 +6,7 @@ from typing import Protocol
 
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.links import normalize_single_link
+from scrapers.helpers.text import strip_marks
 from scrapers.normalization_utils import EmptyValuePolicy
 from scrapers.normalization_utils import normalize_empty
 
@@ -95,7 +96,7 @@ class ValueNormalizationPipeline:
     def _normalize_text(self, value: Any) -> Any:
         if not isinstance(value, str):
             return value
-        return strip_wiki_marks(value) if self.strip_marks else value
+        return strip_marks(value) if self.strip_marks else value
 
     def _normalize_empty(self, value: Any) -> Any:
         policy = self.empty_value_policy
