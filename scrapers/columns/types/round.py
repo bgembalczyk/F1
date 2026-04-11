@@ -1,12 +1,12 @@
 from typing import Any
 
 from scrapers.columns.base import BaseColumn
+from scrapers.columns.types.mixins.background import BackgroundMixin
 from scrapers.columns.context import ColumnContext
-from scrapers.helpers.background import extract_background
 from scrapers.helpers.text import clean_wiki_text
 
 
-class RoundColumn(BaseColumn):
+class RoundColumn(BackgroundMixin, BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         cell = ctx.cell
         if cell is None:
@@ -49,7 +49,6 @@ class RoundColumn(BaseColumn):
             "round": round_link,
             "code": self._round_code(round_link, tokens),
             "result": result,
-            "background": extract_background(cell),
             "pole_position": self._has_tag(cell, ["b", "strong"]),
             "fastest_lap": self._has_tag(cell, ["i", "em"]),
             "superscript": self._superscript_text(cell),
