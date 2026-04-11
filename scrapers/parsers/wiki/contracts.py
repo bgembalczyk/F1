@@ -3,15 +3,13 @@ from __future__ import annotations
 from abc import ABC
 from abc import abstractmethod
 from typing import Any
-from typing import Protocol
-from typing import runtime_checkable
 
 from bs4 import Tag
 
-from scrapers.parsers.roles import HtmlElementParser
+from scrapers.parsers.roles import HtmlElementParserABC
 
 
-class AbstractWikiElementParser(ABC, HtmlElementParser[dict[str, Any]]):
+class AbstractWikiElementParser(ABC, HtmlElementParserABC[dict[str, Any]]):
     """Bazowy kontrakt runtime parsera pojedynczego elementu HTML Wikipedii."""
 
     @abstractmethod
@@ -19,19 +17,10 @@ class AbstractWikiElementParser(ABC, HtmlElementParser[dict[str, Any]]):
         """Parsuje pojedynczy element HTML Wikipedii do słownika danych."""
 
 
-@runtime_checkable
-class WikiElementParserProtocol(Protocol):
-    """Typing-only kontrakt parsera pojedynczego elementu HTML Wikipedii."""
-
-    def parse(self, element: Tag, *args: Any, **kwargs: Any) -> dict[str, Any]: ...
-
-
-# Backward-compatible alias
-WikiElementParser = WikiElementParserProtocol
+WikiElementParserABC = AbstractWikiElementParser
 
 
 __all__ = [
     "AbstractWikiElementParser",
-    "WikiElementParser",
-    "WikiElementParserProtocol",
+    "WikiElementParserABC",
 ]

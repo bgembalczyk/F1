@@ -4,7 +4,7 @@ from typing import Any
 
 from scrapers.mixins.pipeline_mixins import RetryMixin
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.parsers.table.wiki.contracts import ArticleTablesParserProtocol
+from scrapers.parsers.table.wiki.contracts import ArticleTablesParserABC
 
 
 class ConstructorTableExtractionService(RetryMixin):
@@ -13,7 +13,7 @@ class ConstructorTableExtractionService(RetryMixin):
     def __init__(
         self,
         *,
-        article_tables_parser: ArticleTablesParserProtocol | None = None,
+        article_tables_parser: ArticleTablesParserABC | None = None,
     ) -> None:
         self._article_tables_parser = article_tables_parser or ArticleTablesParser()
 

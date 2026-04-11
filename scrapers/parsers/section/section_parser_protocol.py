@@ -1,6 +1,10 @@
 from __future__ import annotations
 
-from scrapers.parsers.roles import SectionParser as SectionParserProtocol
+import warnings
+
+from scrapers.parsers.roles import SectionParserABC
+from scrapers.parsers.section.base import BaseSectionParser
+
 
 class LegacySectionParser(BaseSectionParser):
     """Deprecated runtime alias kept for safe migration."""
@@ -14,4 +18,4 @@ class LegacySectionParser(BaseSectionParser):
         super().__init_subclass__(**kwargs)
 
 
-__all__ = ["SectionParserProtocol", "LegacySectionParser"]
+__all__ = ["SectionParserABC", "LegacySectionParser"]

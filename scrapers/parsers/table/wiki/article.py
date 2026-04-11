@@ -11,6 +11,7 @@ from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
 from scrapers.parsers.table.wiki.mapped.lap_records import LapRecordsWikiTableParser
 from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTableParser
+from scrapers.parsers.table.wiki.contracts import ArticleTablesParserABC
 from scrapers.parsers.table.wiki.mapped.standings import StandingsTableParser
 from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.base import WikiTableElementParserBase
@@ -19,7 +20,7 @@ from bs4 import BeautifulSoup
 if TYPE_CHECKING:
     from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
-class ArticleTablesParser(WikiTableElementParserBase):
+class ArticleTablesParser(WikiTableElementParserBase, ArticleTablesParserABC):
     """Wspólny parser tabel wikitable z artykułów Wikipedii."""
 
     def __init__(

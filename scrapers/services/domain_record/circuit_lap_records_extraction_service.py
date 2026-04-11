@@ -8,7 +8,7 @@ from scrapers.helpers.layout import detect_layout_name
 from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.parsers.table.wiki.contracts import ArticleTablesParserProtocol
+from scrapers.parsers.table.wiki.contracts import ArticleTablesParserABC
 
 
 class CircuitLapRecordsExtractionService:
@@ -17,7 +17,7 @@ class CircuitLapRecordsExtractionService:
     def __init__(
         self,
         *,
-        article_tables_parser: ArticleTablesParserProtocol | None = None,
+        article_tables_parser: ArticleTablesParserABC | None = None,
     ) -> None:
         self._article_tables_parser = article_tables_parser or ArticleTablesParser(
             include_source_table=True,

@@ -2,7 +2,7 @@ from typing import Any
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParser
+from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_restrictions import EngineRestrictionsTableParser
 

@@ -7,7 +7,7 @@ from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.roles import SectionParser
+from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.parsers.wiki.table import WikiTableParser

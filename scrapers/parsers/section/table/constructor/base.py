@@ -3,9 +3,9 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParser
+from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.parsers.table.wiki.contracts import ArticleTablesParserProtocol
+from scrapers.parsers.table.wiki.contracts import ArticleTablesParserABC
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
 
@@ -14,7 +14,7 @@ class ConstructorTablesSectionParser(BaseSectionParser):
     def __init__(self, *, section_id: str, section_label: str) -> None:
         self._section_id = section_id
         self._section_label = section_label
-        self._tables: ArticleTablesParserProtocol = ArticleTablesParser()
+        self._tables: ArticleTablesParserABC = ArticleTablesParser()
 
     def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         return SectionParseResult(
