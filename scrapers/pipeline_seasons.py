@@ -21,7 +21,7 @@ from scrapers.parsers.seasons.regional_championship import SeasonRegionalChampio
 from scrapers.parsers.seasons.results import SeasonResultsParser
 from scrapers.parsers.seasons.scoring_system import SeasonScoringSystemParser
 from scrapers.parsers.seasons.standings import SeasonStandingsService
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.parsers.seasons.testing_venues import TestingVenuesParser
 from scrapers.parsers.section.protocols.season import SeasonSectionParser
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
@@ -71,8 +71,8 @@ class SeasonSectionBinding:
 
 
 @dataclass(frozen=True)
-class SeasonParsingComponents:
-    table_parser: SeasonTableParser
+class SeasonParserSet:
+    table_parser: SeasonTableService
     entries_parser: SeasonEntriesParser
     free_practice_parser: SeasonFreePracticeParser
     cancelled_rounds_parser: CancelledRoundsParser
@@ -97,8 +97,8 @@ class SeasonParsingComponentsBuilder:
         self._include_urls = include_urls
         self._policy = policy or DomainParsingPolicy()
 
-    def build(self, *, url: str, season_year: int | None) -> SeasonParsingComponents:
-        table_parser = SeasonTableParser(
+    def build(self, *, url: str, season_year: int | None) -> SeasonParserSet:
+        table_parser = SeasonTableService(
             options=self._options,
             include_urls=self._include_urls,
             url=url,
@@ -249,7 +249,7 @@ class SeasonSectionPipeline:
         self._season_year: int | None = None
 
     @property
-    def table_parser(self) -> SeasonTableParser | None:
+    def table_parser(self) -> SeasonTableService | None:
         if self._parser_set is None:
             return None
         return self._parser_set.table_parser

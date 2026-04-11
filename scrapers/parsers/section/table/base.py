@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING
 from models.entity_name import EntityName
 from models.section_id import SectionId
 from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.input_adapters import as_soup
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result
@@ -15,7 +16,7 @@ if TYPE_CHECKING:
     from scrapers.parsers.input_types import WikiParserInput
     from scrapers.section.parse_results import SectionParseResult
 
-class TableSectionParser:
+class TableSectionParser(SectionParser):
     """Generic section parser for single-table sections."""
 
     def __init__(
