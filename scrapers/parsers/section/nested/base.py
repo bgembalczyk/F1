@@ -10,7 +10,7 @@ from scrapers.parsers.section.wiki.helpers import split_into_parts
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class BaseNestedSectionParser(WikiParser[dict[str, Any]]):
+class BaseNestedSectionParser(WikiParser[Tag, dict[str, Any]]):
     heading_class: str
     output_key: str
 

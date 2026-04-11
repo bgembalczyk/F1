@@ -5,7 +5,7 @@ from scrapers.parsers.text_cleaning import extract_text
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class ReferencesWrapParser(WikiParser[ReferencesWrapParsedData]):
+class ReferencesWrapParser(WikiParser[Tag, ReferencesWrapParsedData]):
     """Parser sekcji przypisów Wikipedii.
 
     Przetwarza divy z klasą zawierającą 'references-wrap'.
