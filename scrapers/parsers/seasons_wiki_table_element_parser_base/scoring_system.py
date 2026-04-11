@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 from scrapers.columns.factory import IntColumn
 from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.text import TextColumn
-from scrapers.parsers.seasons.base import BaseSeasonParser
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

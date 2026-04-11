@@ -11,9 +11,9 @@ from scrapers.columns.types.text import TextColumn
 from scrapers.columns.types.time_range import TimeRangeColumn
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.domain_parsing_policy import TestingVenuesLayout
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
-from scrapers.parsers.seasons.base import BaseSeasonParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
 
 
 class TestingVenuesParser(BaseSeasonParser):

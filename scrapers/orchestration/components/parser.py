@@ -2,9 +2,9 @@ from scrapers.orchestration import BaseComponent
 from scrapers.orchestration.stages.envelope import StageEnvelope
 
 
-class BaseParser(BaseComponent):
-    def parse(self, payload: StageEnvelope) -> StageEnvelope:
-        return self.run_with_lifecycle(self._parse, payload)
+class BaseParsingStage(BaseComponent):
+    def run(self, payload: StageEnvelope) -> StageEnvelope:
+        return self.run_with_lifecycle(self._run, payload)
 
-    def _parse(self, payload: StageEnvelope) -> StageEnvelope:
+    def _run(self, payload: StageEnvelope) -> StageEnvelope:
         return payload

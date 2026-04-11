@@ -4,10 +4,10 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.table.wiki.circuit_list import CircuitsListTableParser
-from scrapers.parsers.table.wiki.mapped.lap_records import LapRecordsWikiTableParser
-from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTableParser
-from scrapers.parsers.table.wiki.mapped.standings import StandingsTableParser
+from scrapers.parsers.table.wiki.circuit_list import CircuitsListTableMapper
+from scrapers.parsers.table.wiki.mapped.lap_records import LapRecordsWikiTableMapper
+from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTableMapper
+from scrapers.parsers.table.wiki.mapped.standings import StandingsTableMapper
 
 CONTRACT_HTML = """
 <table class="wikitable">
@@ -42,15 +42,15 @@ CONTRACT_HTML = """
 
 
 @pytest.mark.parametrize(
-    "parser",
+    "mapper",
     [
-        StandingsTableParser(),
-        RaceResultsTableParser(),
-        LapRecordsWikiTableParser(),
-        CircuitsListTableParser(),
+        StandingsTableMapper(),
+        RaceResultsTableMapper(),
+        LapRecordsWikiTableMapper(),
+        CircuitsListTableMapper(),
     ],
 )
-def test_wiki_table_parsers_contract_keep_uniform_output_shape(parser) -> None:
+def test_wiki_table_parsers_contract_keep_uniform_output_shape(mapper) -> None:
     soup = BeautifulSoup(CONTRACT_HTML, "html.parser")
     table = soup.find("table")
     assert table is not None
@@ -70,7 +70,7 @@ def test_wiki_table_parsers_contract_keep_uniform_output_shape(parser) -> None:
             for row in rows
         ],
     }
-    parsed = parser.parse(table_data)
+    parsed = mapper.map(table_data)
 
     assert parsed is not None
     assert set(parsed.keys()) == {

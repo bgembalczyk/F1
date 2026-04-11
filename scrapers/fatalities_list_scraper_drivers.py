@@ -71,7 +71,7 @@ class DetailByDriverSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = ArticleTablesParser(
-            specialized_parsers=[FatalitiesTableParser()],
+            specialized_mappers=[FatalitiesTableParser()],
         )
 
     def parse_group(
