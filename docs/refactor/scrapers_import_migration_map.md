@@ -1,8 +1,8 @@
 # Scrapers import migration map
 
-## Transition period
+## Migration status
 
-Backward-compatible alias modules are kept to support migration. They emit `DeprecationWarning` on import.
+Okres przejściowy został zamknięty. Importy utrzymujemy wyłącznie w docelowych modułach kanonicznych.
 
 ## Old -> new imports
 

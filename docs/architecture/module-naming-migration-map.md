@@ -59,6 +59,6 @@ Migracja dla domen kluczowych: `drivers`, `constructors`, `circuits`, `seasons`,
 - `scrapers.infobox.extraction.service.constructor` -> `scrapers.infobox.extraction.service.constructor_orchestrator`
 - `scrapers.infobox.extraction.service.circuit` -> `scrapers.infobox.extraction.service.circuit_orchestrator`
 
-### Transitional compatibility
+### Status migracji
 
-Legacy moduły re-eksportują klasy przez `__init__.py` i emitują `DeprecationWarning`, aby umożliwić etapową migrację importów.
+Migracja importów jest zakończona; nowe i utrzymywane call-site'y używają wyłącznie nazw kanonicznych z mapy powyżej.
