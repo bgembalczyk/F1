@@ -3,10 +3,10 @@ import logging
 from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
-from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.wiki.table import WikiTableParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -33,7 +33,7 @@ class ConstructorsSectionParser(SectionParser):
             normalize_empty_values=normalize_empty_values,
         )
         self._table_mapping_parser: WikiTableBaseParser = table_mapping_parser
-        self._table_transport_parser: HtmlTableParser = HtmlTableParser()
+        self._table_element_parser = WikiTableParser()
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         logger.warning(
@@ -48,21 +48,14 @@ class ConstructorsSectionParser(SectionParser):
         )
         if table is not None:
             try:
-                rows = self._table_transport_parser.parse_table(table)
-                headers = rows[0].headers if rows else []
+                parsed_table = self._table_element_parser.parse(table)
+                headers = parsed_table.get("headers", [])
                 logger.warning(
                     "Constructors section parser '%s': first table headers=%s.",
                     self._parser.section_label,
                     headers,
                 )
-                row_maps = [
-                    {
-                        header: cell.get_text(" ", strip=True)
-                        for header, cell in zip(row.headers, row.cells, strict=False)
-                    }
-                    for row in rows
-                ]
-                self._table_mapping_parser.parse({"headers": headers, "rows": row_maps})
+                self._table_mapping_parser.parse(parsed_table)
             except RuntimeError:
                 logger.warning(
                     "Constructors section parser '%s': "

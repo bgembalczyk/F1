@@ -2,8 +2,11 @@ from models.data.parsed.nav_box import NavBoxParsedData
 from scrapers.parsers.html_elements.navbox import NavboxElementParser
 
 
-class NavBoxParser(NavboxElementParser):
+class WikiNavboxParser(NavboxElementParser):
     pass
 
 
-__all__ = ["NavBoxParser", "NavBoxParsedData"]
+# Backward-compatible alias.
+NavBoxParser = WikiNavboxParser
+
+__all__ = ["WikiNavboxParser", "NavBoxParser", "NavBoxParsedData"]
