@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.domain_roles import Parser
+from scrapers.parsers.input_types import WikiDictFragmentInput
 
 WikiRecord = dict[str, Any]
 WikiRecords = list[WikiRecord]
@@ -48,7 +49,11 @@ class WikiTagParser(WikiParser[Tag, TWikiOutput], ABC, Generic[TWikiOutput]):
     """Kontrakt parserów pojedynczych tagów HTML Wikipedii."""
 
 
+WikiFragmentParser = WikiParser[WikiDictFragmentInput, TWikiOutput]
+
+
 __all__ = [
+    "WikiFragmentParser",
     "WikiListParser",
     "WikiParser",
     "WikiRecord",
