@@ -4,9 +4,9 @@ from typing import Any
 
 from bs4 import Tag
 
+from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.nested.child import NestedChildParser
-from scrapers.parsers.section.nested.recursive import RecursiveSectionParser
+from scrapers.parsers.section.recursive import RecursiveSectionParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 
 

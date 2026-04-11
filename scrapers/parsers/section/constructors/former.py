@@ -1,8 +1,6 @@
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
-from scrapers.parsers.section.sublevels.indianapolis_only_sub_section import (
-    IndianapolisOnlySubSectionParser,
-)
+from scrapers.parsers.section.sublevels.indianapolis_only_sub_section import IndianapolisOnlySubSectionParser
 from scrapers.parsers.table.constructor.former import FormerConstructorsTableParser
 
 

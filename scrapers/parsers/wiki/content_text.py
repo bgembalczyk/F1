@@ -5,7 +5,7 @@ from bs4 import Tag
 
 from scrapers.parsers.constants import HEADING_CLASS
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.nested.wiki import NestedWikiSectionParser
+from scrapers.parsers.section.nested.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
