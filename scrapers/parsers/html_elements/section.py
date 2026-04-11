@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.data.parsed.html_elements import SectionElementData
-from scrapers.parsers.html_elements.base import BaseHtmlSectionParser
+from scrapers.parsers.base_html_section import BaseHtmlSectionParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
 
 
