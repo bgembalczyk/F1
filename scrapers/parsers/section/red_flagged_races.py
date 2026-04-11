@@ -5,7 +5,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.section.nested.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.section.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.section.sublevels import SubSubSubSectionParser
 from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableParser

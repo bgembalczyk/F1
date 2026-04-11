@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.section.nested.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.section.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.table.drivers_list import DriversListTableParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 

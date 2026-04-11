@@ -7,7 +7,7 @@ from scrapers.config_table import build_scraper_config
 from scrapers.mixins.section_table_parse.declarative import (
     DeclarativeSectionTableParseMixin,
 )
-from scrapers.parsers.section.list.circuits import CircuitsListSectionParser
+from scrapers.parsers.section.circuit.list import CircuitsListSectionParser
 from scrapers.parsers.table.wiki.circuit_list import TABLE_SCHEMA
 from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import CIRCUITS_LIST
