@@ -6,7 +6,4 @@ class WikiParagraphParser(ParagraphElementParser):
     pass
 
 
-# Backward-compatible alias.
-ParagraphParser = WikiParagraphParser
-
-__all__ = ["WikiParagraphParser", "ParagraphParser", "ParagraphParsedData"]
+__all__ = ["WikiParagraphParser", "ParagraphParsedData"]

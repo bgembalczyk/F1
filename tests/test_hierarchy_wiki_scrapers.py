@@ -17,7 +17,7 @@ from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import (
 )
 from scrapers.standings_scraper_seasons import F1StandingsScraper
 from scrapers.standings_scraper_seasons import F1StandingsTableParser
-from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
+from scrapers.wiki.parsers.elements.infobox import WikiInfoboxParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
 from scrapers.wiki.scraper_wiki import WikiScraper

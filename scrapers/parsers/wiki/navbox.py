@@ -6,7 +6,4 @@ class WikiNavboxParser(NavboxElementParser):
     pass
 
 
-# Backward-compatible alias.
-NavBoxParser = WikiNavboxParser
-
-__all__ = ["WikiNavboxParser", "NavBoxParser", "NavBoxParsedData"]
+__all__ = ["WikiNavboxParser", "NavBoxParsedData"]

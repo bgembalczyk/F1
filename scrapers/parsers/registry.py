@@ -121,6 +121,13 @@ def resolve_parser_name(
     )
 
 
-# Backward-compatible aliases
-ParserRegistryKey = ParsingRegistryKey
-ParserRegistryEntry = ParsingRegistryEntry
+__all__ = [
+    "DEFAULT_PARSER_REGISTRY",
+    "DomainName",
+    "ElementType",
+    "ParsingRegistryEntry",
+    "ParsingRegistryKey",
+    "REQUIRED_PRODUCTION_KEYS",
+    "resolve_parser_name",
+    "validate_parser_registry",
+]
