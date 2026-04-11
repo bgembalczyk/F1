@@ -46,9 +46,5 @@ class TeamsParser:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return split_delimited_text(text, pattern=r",")
 
-    def parse_teams(self, cell: Tag) -> list[Any]:
-        """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(cell)
-
 
 __all__ = ["TeamsParser"]
