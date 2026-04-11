@@ -9,8 +9,6 @@ class SeasonSectionParserABC(SectionStructureParserABC, ABC):
     """Bazowy kontrakt parsera sekcji sezonowych."""
 
 
-# Backward-compatible alias.
-SeasonSectionParser = SeasonSectionParserABC
 
 
-__all__ = ["SeasonSectionParserABC", "SeasonSectionParser"]
+__all__ = ["SeasonSectionParserABC"]

@@ -20,12 +20,11 @@ from scrapers.parsers.seasons_wiki_table_element_parser_base.non_championship im
 from scrapers.parsers.seasons_wiki_table_element_parser_base.regional_championship import (
     SeasonRegionalChampionshipParser,
 )
-from scrapers.parsers.section.protocols.season import SeasonSectionParserABC
+from scrapers.parsers.section.protocols.season_section_parser_abc import SeasonSectionParserABC
 from scrapers.parsers.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
 from scrapers.parsers.seasons_wiki_table_element_parser_base.scoring_system import SeasonScoringSystemParser
 from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 from scrapers.parsers.seasons_wiki_table_element_parser_base.testing_venues import TestingVenuesParser
-from scrapers.parsers.section.protocols.season import SeasonSectionParser
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
 from scrapers.parsers.section.season.calendar import SeasonCalendarSectionParser
 from scrapers.parsers.section.standings.season.constructors import (
