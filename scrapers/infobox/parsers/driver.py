@@ -6,16 +6,16 @@ from scrapers.debug_dumps import write_infobox_dump
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.helpers.transformers import build_transformers
-from scrapers.infobox.parsers.html import InfoboxHtmlParser
+from scrapers.infobox.parsers.html import WikiInfoboxHtmlParser
 from scrapers.infobox.parsers.providers.drivers.default import DefaultDriverInfoboxParserProvider
 from scrapers.infobox.parsers.providers.drivers.protocol import DriverInfoboxParserProvider
 from scrapers.infobox.schemas.driver import DRIVER_GENERAL_SCHEMA
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.infobox import InfoboxParser
+from scrapers.parsers.wiki.infobox import WikiInfoboxElementParserBase
 
 
-class DriverInfoboxParser(InfoboxParser):
+class DriverInfoboxParser(WikiInfoboxElementParserBase):
     IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(
@@ -30,7 +30,7 @@ class DriverInfoboxParser(InfoboxParser):
         self.include_urls = options.include_urls
         self.record_factory = options.record_factory
         self.debug_dir = options.debug_dir
-        self.wikipedia_base = InfoboxHtmlParser.WIKIPEDIA_BASE
+        self.wikipedia_base = WikiInfoboxHtmlParser.WIKIPEDIA_BASE
         self.run_id = run_id
         self.url = url
         self.logger = get_logger(self.__class__.__name__)

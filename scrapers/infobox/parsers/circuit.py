@@ -19,11 +19,11 @@ from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.infobox import InfoboxParser
+from scrapers.parsers.wiki.infobox import WikiInfoboxElementParserBase
 from scrapers.types import ExportableRecord
 
 
-class CircuitInfoboxParser(InfoboxParser):
+class CircuitInfoboxParser(WikiInfoboxElementParserBase):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 
     def __init__(

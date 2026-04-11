@@ -1,5 +1,6 @@
 from abc import ABC
 from abc import abstractmethod
+import warnings
 from typing import Any
 from typing import Generic
 from typing import TypeVar
@@ -36,8 +37,20 @@ class WikiSectionParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
     """Kontrakt parserów sekcji artykułów Wikipedii."""
 
 
-class WikiTableParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
+class WikiTableElementParserBase(WikiParser[BeautifulSoup, WikiRecords], ABC):
     """Kontrakt parserów tabel Wikipedii."""
+
+
+class WikiTableParser(WikiTableElementParserBase, ABC):
+    """Deprecated alias for :class:`WikiTableElementParserBase`."""
+
+    def __init_subclass__(cls, **kwargs: object) -> None:
+        warnings.warn(
+            "WikiTableParser is deprecated; use WikiTableElementParserBase.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        super().__init_subclass__(**kwargs)
 
 
 class WikiListParser(WikiParser[Tag, WikiRecords], ABC):
@@ -54,6 +67,7 @@ __all__ = [
     "WikiRecord",
     "WikiRecords",
     "WikiSectionParser",
+    "WikiTableElementParserBase",
     "WikiTableParser",
     "WikiTagParser",
 ]

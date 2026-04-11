@@ -1,4 +1,5 @@
 from typing import Any
+import warnings
 
 from bs4 import Tag
 
@@ -6,7 +7,7 @@ from models.data.parsed.infobox import InfoboxParsedData
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class InfoboxParser(WikiParser[Tag, InfoboxParsedData]):
+class WikiInfoboxElementParserBase(WikiParser[Tag, InfoboxParsedData]):
     """Parser infoboxów Wikipedii.
 
     Przetwarza tabelę: <table class="infobox vcard">
@@ -44,3 +45,18 @@ class InfoboxParser(WikiParser[Tag, InfoboxParsedData]):
 
     def parse_row_value(self, value: Tag) -> Any:
         return value.get_text(" ", strip=True)
+
+
+class InfoboxParser(WikiInfoboxElementParserBase):
+    """Deprecated alias for :class:`WikiInfoboxElementParserBase`."""
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        warnings.warn(
+            "InfoboxParser is deprecated; use WikiInfoboxElementParserBase.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        super().__init__(*args, **kwargs)
+
+
+__all__ = ["WikiInfoboxElementParserBase", "InfoboxParser"]
