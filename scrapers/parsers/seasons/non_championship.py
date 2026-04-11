@@ -8,13 +8,13 @@ from scrapers.columns.types.driver import DriverColumn
 from scrapers.columns.types.season_date import SeasonDateColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.columns.types.url import UrlColumn
-from scrapers.parsers.seasons.table import SeasonTableService
+from scrapers.parsers.seasons.table import SeasonTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.parsers.seasons.base import BaseSeasonParser
 
 
 class SeasonNonChampionshipParser(BaseSeasonParser):
-    def __init__(self, table_parser: SeasonTableService) -> None:
+    def __init__(self, table_parser: SeasonTableParser) -> None:
         self._table_parser = table_parser
 
     def parse(

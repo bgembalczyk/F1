@@ -70,3 +70,6 @@ Krótki standard dla nazw, które często były mieszane semantycznie (`helpers`
 - [ ] Dla nowych funkcji technicznych wybrano moduł celowy zamiast dokładania kolejnych symboli do istniejącego `helpers.py`.
 - [ ] Jeśli zmieniono mylącą nazwę, zachowano alias legacy + deprecację.
 - [ ] Nowe nazwy pól/argumentów/metod nie dublują informacji już zakodowanej w typie (`*_service`, `*_builder`, `*_function` tylko gdy dodają semantykę).
+- [ ] Każdy `*Parser` ma metodę `parse(...)` zgodną z kontraktem parsera.
+- [ ] Nazwa klasy odpowiada rzeczywistej roli (Parser/Extractor/Mapper/Factory/Adapter/Service).
+- [ ] Parser jest przypięty do konkretnego elementu HTML Wikipedii (sekcja/tabela/lista/infobox).

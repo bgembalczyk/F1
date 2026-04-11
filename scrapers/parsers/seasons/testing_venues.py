@@ -11,7 +11,7 @@ from scrapers.columns.types.text import TextColumn
 from scrapers.columns.types.time_range import TimeRangeColumn
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.domain_parsing_policy import TestingVenuesLayout
-from scrapers.parsers.seasons.table import SeasonTableService
+from scrapers.parsers.seasons.table import SeasonTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.parsers.seasons.base import BaseSeasonParser
 
@@ -21,7 +21,7 @@ class TestingVenuesParser(BaseSeasonParser):
 
     def __init__(
         self,
-        table_parser: SeasonTableService,
+        table_parser: SeasonTableParser,
         policy: DomainParsingPolicy,
     ) -> None:
         self._table_parser = table_parser

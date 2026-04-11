@@ -3,12 +3,12 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.columns.types.driver import DriverColumn
-from scrapers.parsers.seasons.table import SeasonTableService
+from scrapers.parsers.seasons.table import SeasonTableParser
 from scrapers.parsers.seasons.base import BaseSeasonParser
 
 
 class JimClarkTrophyParser(BaseSeasonParser):
-    def __init__(self, table_parser: SeasonTableService) -> None:
+    def __init__(self, table_parser: SeasonTableParser) -> None:
         self._table_parser = table_parser
 
     def parse(
