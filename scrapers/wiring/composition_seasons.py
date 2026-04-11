@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.options import ScraperOptions
-from scrapers.pipeline_seasons import SeasonParserSetBuilder
+from scrapers.pipeline_seasons import SeasonParsingComponentsBuilder
 from scrapers.pipeline_seasons import SeasonSectionPipeline
 from scrapers.pipeline_seasons import SeasonYearResolver
 from scrapers.services.domain_record.season import SeasonDomainRecordService
@@ -25,7 +25,7 @@ class SeasonScraperCompositionFactory:
 
     test_mode: bool = False
     season_year_resolver: SeasonYearResolver | None = None
-    parser_set_builder: SeasonParserSetBuilder | None = None
+    parser_set_builder: SeasonParsingComponentsBuilder | None = None
     season_pipeline: SeasonSectionPipeline | None = None
     parsing_policy: DomainParsingPolicy | None = None
     text_sections_service_factory: (
@@ -38,7 +38,7 @@ class SeasonScraperCompositionFactory:
         cls,
         *,
         season_year_resolver: SeasonYearResolver | None = None,
-        parser_set_builder: SeasonParserSetBuilder | None = None,
+        parser_set_builder: SeasonParsingComponentsBuilder | None = None,
         season_pipeline: SeasonSectionPipeline | None = None,
         parsing_policy: DomainParsingPolicy | None = None,
         text_sections_service_factory: (
@@ -63,7 +63,7 @@ class SeasonScraperCompositionFactory:
     ) -> SeasonScraperDependencies:
         season_year_resolver = self.season_year_resolver or SeasonYearResolver()
 
-        parser_set_builder = self.parser_set_builder or SeasonParserSetBuilder(
+        parser_set_builder = self.parser_set_builder or SeasonParsingComponentsBuilder(
             options=options,
             include_urls=(options.include_urls if options is not None else False),
             policy=self.parsing_policy,

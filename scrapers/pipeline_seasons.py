@@ -21,7 +21,7 @@ from scrapers.parsers.seasons.regional_championship import SeasonRegionalChampio
 from scrapers.parsers.seasons.results import SeasonResultsParser
 from scrapers.parsers.seasons.scoring_system import SeasonScoringSystemParser
 from scrapers.parsers.seasons.standings import SeasonStandingsService
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.parsers.seasons.testing_venues import TestingVenuesParser
 from scrapers.parsers.section.protocols.season import SeasonSectionParser
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
@@ -65,14 +65,14 @@ class SeasonYearResolver:
 
 
 @dataclass(frozen=True)
-class SeasonSectionParserBinding:
+class SeasonSectionBinding:
     field_name: str
     parser: SeasonSectionParser
 
 
 @dataclass(frozen=True)
 class SeasonParserSet:
-    table_parser: SeasonTableParser
+    table_parser: SeasonTableService
     entries_parser: SeasonEntriesParser
     free_practice_parser: SeasonFreePracticeParser
     cancelled_rounds_parser: CancelledRoundsParser
@@ -82,10 +82,10 @@ class SeasonParserSet:
     jim_clark_trophy_parser: JimClarkTrophyParser
     colin_chapman_trophy_parser: ColinChapmanTrophyParser
     regional_parser: SeasonRegionalChampionshipParser
-    section_parsers: tuple[SeasonSectionParserBinding, ...]
+    section_parsers: tuple[SeasonSectionBinding, ...]
 
 
-class SeasonParserSetBuilder:
+class SeasonParsingComponentsBuilder:
     def __init__(
         self,
         *,
@@ -98,13 +98,13 @@ class SeasonParserSetBuilder:
         self._policy = policy or DomainParsingPolicy()
 
     def build(self, *, url: str, season_year: int | None) -> SeasonParserSet:
-        table_parser = SeasonTableParser(
+        table_parser = SeasonTableService(
             options=self._options,
             include_urls=self._include_urls,
             url=url,
         )
         standings_parser = SeasonStandingsService(table_parser)
-        return SeasonParserSet(
+        return SeasonParsingComponents(
             table_parser=table_parser,
             entries_parser=SeasonEntriesParser(
                 table_parser,
@@ -123,27 +123,27 @@ class SeasonParserSetBuilder:
             colin_chapman_trophy_parser=ColinChapmanTrophyParser(table_parser),
             regional_parser=SeasonRegionalChampionshipParser(table_parser),
             section_parsers=(
-                SeasonSectionParserBinding(
+                SeasonSectionBinding(
                     field_name="calendar",
                     parser=SeasonCalendarSectionParser(
                         SeasonCalendarParser(table_parser),
                         season_year,
                     ),
                 ),
-                SeasonSectionParserBinding(
+                SeasonSectionBinding(
                     field_name="results",
                     parser=SeasonResultsSectionParser(
                         SeasonResultsParser(table_parser),
                     ),
                 ),
-                SeasonSectionParserBinding(
+                SeasonSectionBinding(
                     field_name="drivers_standings",
                     parser=SeasonDriversStandingsSectionParser(
                         standings_parser,
                         season_year,
                     ),
                 ),
-                SeasonSectionParserBinding(
+                SeasonSectionBinding(
                     field_name="constructors_standings",
                     parser=SeasonConstructorsStandingsSectionParser(
                         standings_parser,
@@ -158,7 +158,7 @@ class SeasonSectionDataCollector:
         self,
         *,
         soup: BeautifulSoup,
-        parser_set: SeasonParserSet,
+        parser_set: SeasonParsingComponents,
         season_year: int | None,
     ) -> SeasonRecordSections:
         section_records = self._collect_section_records(
@@ -213,7 +213,7 @@ class SeasonSectionDataCollector:
         self,
         *,
         soup: BeautifulSoup,
-        section_parsers: tuple[SeasonSectionParserBinding, ...],
+        section_parsers: tuple[SeasonSectionBinding, ...],
     ) -> dict[str, list[dict[str, Any]]]:
         return {
             binding.field_name: binding.parser.parse(soup).records
@@ -225,7 +225,7 @@ class SeasonSectionPipeline:
     def __init__(
         self,
         *,
-        parser_set_builder: SeasonParserSetBuilder,
+        parser_set_builder: SeasonParsingComponentsBuilder,
         section_data_collector: SeasonSectionDataCollector | None = None,
         text_sections_service_factory: (
             SectionServiceFactory[SeasonTextSectionExtractionService] | None
@@ -244,12 +244,12 @@ class SeasonSectionPipeline:
                 pass_url=False,
             )
         )
-        self._parser_set: SeasonParserSet | None = None
+        self._parser_set: SeasonParsingComponents | None = None
         self._url = ""
         self._season_year: int | None = None
 
     @property
-    def table_parser(self) -> SeasonTableParser | None:
+    def table_parser(self) -> SeasonTableService | None:
         if self._parser_set is None:
             return None
         return self._parser_set.table_parser
@@ -302,7 +302,7 @@ class SeasonSectionPipeline:
             mid_season_changes=text_records.get("mid-season_changes", []),
         )
 
-    def _require_parser_set(self) -> SeasonParserSet:
+    def _require_parser_set(self) -> SeasonParsingComponents:
         if self._parser_set is None:
             self.configure(url=self._url, season_year=self._season_year)
         if self._parser_set is None:

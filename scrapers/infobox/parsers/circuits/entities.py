@@ -16,7 +16,7 @@ from scrapers.infobox.parsers.text_utils.circuit import CircuitSpecsParser
 from scrapers.parsers.mixins.safe import SafeParsingMixin
 
 
-class CircuitEntitiesParser(SafeParsingMixin):
+class CircuitEntitiesOrchestrator(SafeParsingMixin):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
 
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
@@ -234,4 +234,6 @@ class CircuitEntitiesParser(SafeParsingMixin):
         return self.text_utils.prune_nulls(result)
 
 
-__all__ = ["CircuitEntitiesParser"]
+CircuitEntitiesParser = CircuitEntitiesOrchestrator
+
+__all__ = ["CircuitEntitiesOrchestrator", "CircuitEntitiesParser"]

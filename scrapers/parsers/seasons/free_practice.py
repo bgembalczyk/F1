@@ -10,12 +10,12 @@ from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.driver_rounds import DriversWithRoundsColumn
 from scrapers.helpers.parsing import parse_int_from_text
 from scrapers.helpers.transform_micro_ops import pop_list_field
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class SeasonFreePracticeParser:
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(self, table_parser: SeasonTableService) -> None:
         self._table_parser = table_parser
 
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:

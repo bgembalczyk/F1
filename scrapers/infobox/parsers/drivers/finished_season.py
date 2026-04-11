@@ -13,6 +13,11 @@ class FinishedSeasonParser:
     """Handles parsing of 'Finished last season' field."""
 
     @staticmethod
+    def parse(cell: Tag) -> dict[str, Any]:
+        """Unified parser entrypoint."""
+        return FinishedSeasonParser.parse_finished_last_season(cell)
+
+    @staticmethod
     def parse_finished_last_season(cell: Tag) -> dict[str, Any]:
         """Parse 'Finished last season' field.
 

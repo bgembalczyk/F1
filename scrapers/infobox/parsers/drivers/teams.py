@@ -27,7 +27,7 @@ class TeamsParser:
         self._link_extractor = link_extractor
         self._include_urls = include_urls
 
-    def parse_teams(self, cell: Tag) -> list[Any]:
+    def parse(self, cell: Tag) -> list[Any]:
         """Parse teams field.
 
         If URLs are included, returns links; otherwise returns text split by commas.
@@ -42,6 +42,10 @@ class TeamsParser:
             return self._link_extractor.extract_links(cell)
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return split_delimited_text(text, pattern=r",")
+
+    def parse_teams(self, cell: Tag) -> list[Any]:
+        """Backward-compatible wrapper around :meth:`parse`."""
+        return self.parse(cell)
 
 
 __all__ = ["TeamsParser"]
