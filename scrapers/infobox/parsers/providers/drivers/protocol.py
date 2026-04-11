@@ -1,9 +1,10 @@
 from typing import Protocol
 
-from scrapers.infobox.parsers.bundles.driver import DriverInfoboxComponents
+from scrapers.infobox.parsers.bundles.driver import DriverInfoboxParserBundle
+from scrapers.parsers.roles import ParserProvider
 
 
-class DriverInfoboxProvider(Protocol):
+class DriverInfoboxParserProvider(ParserProvider[DriverInfoboxParserBundle], Protocol):
     def build(
         self,
         *,

@@ -13,10 +13,10 @@ from scrapers.infobox.parsers.text_utils.circuit import CircuitGeoParser
 from scrapers.infobox.parsers.text_utils.circuit import CircuitHistoryParser
 from scrapers.infobox.parsers.text_utils.circuit import CircuitLapRecordParser
 from scrapers.infobox.parsers.text_utils.circuit import CircuitSpecsParser
-from scrapers.parsers.mixins.safe import SafeParserMixin
+from scrapers.parsers.mixins.safe import SafeParsingMixin
 
 
-class CircuitEntitiesOrchestrator(SafeParserMixin):
+class CircuitEntitiesOrchestrator(SafeParsingMixin):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
 
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
