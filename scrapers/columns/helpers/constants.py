@@ -22,6 +22,11 @@ ENGINE_CONSTRUCTOR_INDEX = 1
 NORMALIZE_COMMA_AND_RE = re.compile(r",\s*and\s+", flags=re.IGNORECASE)
 NORMALIZE_SPACE_AND_RE = re.compile(r"\s+and\s+", flags=re.IGNORECASE)
 NORMALIZE_START_AND_RE = re.compile(r"^\s*and\s+", flags=re.IGNORECASE)
+SPONSOR_PAREN_GROUP_RE = re.compile(r"\(([^)]+)\)")
+SPONSOR_PAREN_REMOVE_RE = re.compile(r"\s*\([^)]*\)")
+PARAM_MATCH_ONLY_ONWARD_RE = re.compile(r"\b(only|onwards?)\b", flags=re.IGNORECASE)
+PARAM_MATCH_FROM_RE = re.compile(r"^\s*from\s+", flags=re.IGNORECASE)
+REMAINDER_CLEANUP_RE = re.compile(r"[\s\-—]")
 
 YEAR_PATTERN = re.compile(r"^\d{4}$")
 YEAR_IN_URL_PATTERN = re.compile(r"(?<!\d)\d{4}(?!\d)")

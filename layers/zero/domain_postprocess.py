@@ -223,14 +223,14 @@ def merge_duplicate_seasons(items: list[object]) -> list[object]:
         if not isinstance(item, dict):
             merged_records.append(item)
             continue
-        season_year = season_year(item.get("season"))
-        if season_year is None:
+        record_year = season_year_func(item.get("season"))
+        if record_year is None:
             merged_records.append(item)
             continue
 
-        existing_index = index_by_year.get(season_year)
+        existing_index = index_by_year.get(record_year)
         if existing_index is None:
-            index_by_year[season_year] = len(merged_records)
+            index_by_year[record_year] = len(merged_records)
             merged_records.append(item)
             continue
 
