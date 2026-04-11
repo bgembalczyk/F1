@@ -10,7 +10,7 @@ from scrapers.options import ScraperOptions
 from scrapers.scraper_table import F1TableScraper
 
 
-class F1StandingsTableParser(TableParser):
+class F1StandingsTableParser:
     """Parser tabel klasyfikacji (standings) Formuły 1.
 
     Parsuje tabelę klasyfikacji z podanego elementu HTML (``element``),

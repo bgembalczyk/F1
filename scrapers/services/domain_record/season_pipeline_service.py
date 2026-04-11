@@ -1,17 +1,13 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.postprocess.assembler import BaseRecordAssemblerInput
-from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
-from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
-from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
+from scrapers.records.assemblers.seasons import SeasonRecordAssembler
+from scrapers.records.dto.season import SeasonPayloadDTO
+from scrapers.records.inputs.base_assembler import BaseRecordAssemblerInput
+from scrapers.records.sections.season import SeasonRecordSections
 from scrapers.services.domain_record.base_pipeline_service import BaseDomainPipelineService
-
-if TYPE_CHECKING:
-    from scrapers.base.contracts import RecordAssemblerProtocol
 
 
 @dataclass(frozen=True, slots=True)
@@ -25,7 +21,7 @@ class SeasonPipelineService(
     def __init__(
         self,
         *,
-        assembler: RecordAssemblerProtocol[SeasonPayloadDTO] | None = None,
+        assembler: Any | None = None,
     ) -> None:
         self._assembler = assembler or SeasonRecordAssembler()
 

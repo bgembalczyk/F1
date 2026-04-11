@@ -2,25 +2,18 @@ from collections.abc import Callable
 from functools import lru_cache
 from typing import Any
 
-from layers.seed.data_classes import RegistryValidationRule
-from layers.seed.data_classes import RegistryValidationSpec
-from layers.seed.registry.constants import EXPLICIT_LAYER_ONE_SEED_REGISTRY
-from layers.seed.registry.constants import LIST_JOB_REGISTRY_VALIDATION_SPEC
-from layers.seed.registry.constants import LIST_SCRAPER_BY_SEED_NAME
-from layers.seed.registry.constants import RAW_REGISTRY_SPEC
-from layers.seed.registry.constants import SEED_FILENAME_OVERRIDES
-from layers.seed.registry.constants import SEED_REGISTRY_VALIDATION_SPEC
-from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
 from layers.seed.registry.entries.base import BaseRegistryEntry
 from layers.seed.registry.entries.entry import SeedRegistryEntry
 from layers.seed.registry.entries.list_job import ListJobRegistryEntry
 from layers.seed.registry.raw_specs import RawRegistrySpec
+from layers.seed.validation.rule import RegistryValidationRule
+from layers.seed.validation.spec import RegistryValidationSpec
 from scrapers.constructors.list_scraper import ConstructorsListScraper
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
-from scrapers.wiki.discovery_wiki import discover_layer_one_seed_components
-from scrapers.wiki.sources_registry_wiki import get_source_by_seed_name
-from scrapers.wiki.sources_registry_wiki import resolve_seed_name
-from scrapers.wiki.sources_registry_wiki import validate_sources_registry_consistency
+from scrapers.discovery_wiki import discover_layer_one_seed_components
+from scrapers.sources_registry_wiki import get_source_by_seed_name
+from scrapers.sources_registry_wiki import resolve_seed_name
+from scrapers.sources_registry_wiki import validate_sources_registry_consistency
 
 
 def seed_entry_from_component(
@@ -62,6 +55,8 @@ def validate_registry_entry(
 
 
 def build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]:
+    from layers.seed.registry.constants import EXPLICIT_LAYER_ONE_SEED_REGISTRY
+
     discovered = discover_layer_one_seed_components()
     explicit_by_seed = {
         entry.seed_name: entry for entry in EXPLICIT_LAYER_ONE_SEED_REGISTRY
@@ -174,14 +169,21 @@ def validate_registry(
 def validate_seed_registry(
     registry: tuple[SeedRegistryEntry, ...] | None = None,
 ) -> None:
+    from layers.seed.registry.constants import SEED_REGISTRY_VALIDATION_SPEC
+
     if registry is None:
         registry = get_wiki_seed_registry()
     validate_registry(registry=registry, spec=SEED_REGISTRY_VALIDATION_SPEC)
 
 
 def validate_list_job_registry(
-    registry: tuple[ListJobRegistryEntry, ...] = WIKI_LIST_JOB_REGISTRY,
+    registry: tuple[ListJobRegistryEntry, ...] | None = None,
 ) -> None:
+    from layers.seed.registry.constants import LIST_JOB_REGISTRY_VALIDATION_SPEC
+    from layers.seed.registry.constants import WIKI_LIST_JOB_REGISTRY
+
+    if registry is None:
+        registry = WIKI_LIST_JOB_REGISTRY
     validate_registry(registry=registry, spec=LIST_JOB_REGISTRY_VALIDATION_SPEC)
 
 def resolve_wikipedia_url(list_scraper_cls: type[Any]) -> str:
@@ -256,6 +258,9 @@ def build_list_job_registry_entry_from_spec(
     )
 
 def validate_seed_name_consistency_at_startup() -> None:
+    from layers.seed.registry.constants import LIST_SCRAPER_BY_SEED_NAME
+    from layers.seed.registry.constants import SEED_FILENAME_OVERRIDES
+
     validate_sources_registry_consistency()
 
     resolved_seed_names: set[str] = set()
@@ -275,6 +280,9 @@ def validate_seed_name_consistency_at_startup() -> None:
 
 
 def build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
+    from layers.seed.registry.constants import LIST_SCRAPER_BY_SEED_NAME
+    from layers.seed.registry.constants import SEED_FILENAME_OVERRIDES
+
     validate_seed_name_consistency_at_startup()
 
     specs: list[RawRegistrySpec] = []
@@ -316,6 +324,8 @@ def build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
     return tuple(specs)
 
 def validate_registry_startup_consistency() -> None:
+    from layers.seed.registry.constants import RAW_REGISTRY_SPEC
+
     for spec in RAW_REGISTRY_SPEC:
         source = get_source_by_seed_name(spec.seed_name, warn=False)
         if spec.output_category != source.domain:
