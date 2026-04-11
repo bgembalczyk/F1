@@ -8,6 +8,7 @@ from typing import TypeAlias
 from typing import TypeVar
 from typing import runtime_checkable
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.domain_roles import Parser
@@ -81,5 +82,4 @@ __all__ = [
     "ParserProvider",
     "ParserBundle",
     "SectionParseResult",
-    "SectionParser",
 ]
