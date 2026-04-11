@@ -19,8 +19,8 @@ from models.merge_types.link_value import LinkValue
 from models.merge_types.record.driver import DriverRecordModel
 from models.merge_types.record.engine import EngineRecordModel
 from models.merge_types.record.race import RaceRecordModel
-from scrapers.wiki import constants_wiki
-from scrapers.wiki import sources_registry_wiki
+from scrapers import constants_wiki
+from scrapers import sources_registry_wiki as sources_registry
 
 RecordTransformHandler = Callable[
     [str, str, dict[str, object]],

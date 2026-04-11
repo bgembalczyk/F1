@@ -7,23 +7,21 @@ warnings.warn("single_scraper_grands_prix is deprecated; use scrapers.grands_pri
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
-from scrapers.base.sections.section_id_resolver import MissingSectionError
-from scrapers.base.sections.section_id_resolver import SectionIdResolver
+from scrapers.errors.missing_section import MissingSectionError
 from scrapers.errors import ScraperError
-from scrapers.grands_prix.helpers_grands_prix.sections import is_grand_prix_article
-from scrapers.grands_prix.sections_grands_prix.by_year import (
-    GrandPrixByYearSectionParser,
-)
+from scrapers.helpers.sections import is_grand_prix_article
+from scrapers.parsers.section.grand_prix.by_year import GrandPrixByYearSectionParser
+from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
+from scrapers.section.id_resolver import SectionIdResolver
 from scrapers.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 from scrapers.single_wiki_article.base import SingleWikiArticleScraperBase
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
-    from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
-    from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
+    from scrapers.dto import InfoboxPayloadDTO
+    from scrapers.dto import SectionsPayloadDTO
+    from scrapers.dto import TablesPayloadDTO
     from scrapers.options import ScraperOptions
 
 

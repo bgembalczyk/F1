@@ -5,14 +5,14 @@ from bs4 import NavigableString
 from bs4 import Tag
 
 from scrapers.columns.helpers import constants
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.url import normalize_url
-from scrapers.parsers.sponsorship_liveries.grand_prix import GrandPrixScopeParser
-from scrapers.parsers.sponsorship_liveries.parts import SponsorPartsParser
-from scrapers.parsers.sponsorship_liveries.sponsorship_record_text import SponsorshipRecordText
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeParser
+from scrapers.parsers.liveries.sponsorship.parts import SponsorPartsParser
+from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 
 class SponsorColumn(BaseColumn):
