@@ -8,6 +8,8 @@ from bs4 import Tag
 
 from scrapers.domain_roles import Parser
 from scrapers.parsers.input_types import WikiDictFragmentInput
+from scrapers.parsers.roles import HtmlTagParserABC
+from scrapers.parsers.roles import SoupDocumentParserABC
 
 WikiRecord = dict[str, Any]
 WikiRecords = list[WikiRecord]
@@ -28,19 +30,19 @@ class WikiParser(
     """
 
 
-class WikiSectionParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
+class WikiSectionParser(SoupDocumentParserABC[WikiRecords], ABC):
     """Kontrakt parserów sekcji artykułów Wikipedii."""
 
 
-class WikiTableElementParserBase(WikiParser[BeautifulSoup, WikiRecords], ABC):
+class WikiTableElementParserBase(SoupDocumentParserABC[WikiRecords], ABC):
     """Kontrakt parserów tabel Wikipedii."""
 
 
-class WikiListParser(WikiParser[Tag, WikiRecords], ABC):
+class WikiListParser(HtmlTagParserABC[Tag, WikiRecords], ABC):
     """Kontrakt parserów list Wikipedii (np. <ul>/<ol>)."""
 
 
-class WikiTagParser(WikiParser[Tag, TWikiOutput], ABC, Generic[TWikiOutput]):
+class WikiTagParser(HtmlTagParserABC[Tag, TWikiOutput], ABC, Generic[TWikiOutput]):
     """Kontrakt parserów pojedynczych tagów HTML Wikipedii."""
 
 

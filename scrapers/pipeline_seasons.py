@@ -20,6 +20,11 @@ from scrapers.parsers.seasons_wiki_table_element_parser_base.non_championship im
 from scrapers.parsers.seasons_wiki_table_element_parser_base.regional_championship import (
     SeasonRegionalChampionshipParser,
 )
+from scrapers.parsers.seasons.results import SeasonResultsParser
+from scrapers.parsers.seasons.scoring_system import SeasonScoringSystemParser
+from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons.testing_venues import TestingVenuesParser
+from scrapers.parsers.section.protocols.season import SeasonSectionParserABC
 from scrapers.parsers.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
 from scrapers.parsers.seasons_wiki_table_element_parser_base.scoring_system import SeasonScoringSystemParser
 from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
@@ -78,7 +83,7 @@ class SeasonYearResolver:
 @dataclass(frozen=True)
 class SeasonSectionBinding:
     field_name: str
-    parser: SeasonSectionParser
+    parser: SeasonSectionParserABC
 
 
 @dataclass(frozen=True)
