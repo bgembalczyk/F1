@@ -3,7 +3,7 @@ from __future__ import annotations
 import warnings
 
 warnings.warn(
-    "single_scraper_grands_prix is deprecated; use scrapers.grands_prix_detail_scraper.",
+    "single_scraper_grands_prix is deprecated; use scrapers.single_scraper_grands_prix.",
     DeprecationWarning,
     stacklevel=2,
 )

@@ -13,15 +13,7 @@ class RecordBuilder(Protocol):
     def build(self, record: Mapping[str, Any]) -> Any: ...
 
 
-@runtime_checkable
-class RecordFactory(Protocol):
-    """Deprecated legacy adapter kept for backwards compatibility only."""
-
-    def create(self, payload: Mapping[str, Any]) -> Any: ...
-
-
 RecordBuilderProtocol = RecordBuilder
-RecordFactoryProtocol = RecordFactory
 
 __all__ = [
     "RecordBuilder",

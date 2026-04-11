@@ -11,7 +11,7 @@ from scrapers.wiring.composition_seasons import SeasonScraperCompositionFactory
 from scrapers.wiring.composition_seasons import SeasonScraperDependencies
 
 warnings.warn(
-    "single_scraper_seasons is deprecated; use scrapers.seasons_detail_scraper.",
+    "single_scraper_seasons is deprecated; use scrapers.single_scraper_seasons.",
     DeprecationWarning,
     stacklevel=2,
 )
