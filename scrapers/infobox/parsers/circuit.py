@@ -5,7 +5,7 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.infobox.field.mapper import InfoboxFieldMapper
-from scrapers.infobox.parsers.circuits.entities import CircuitEntitiesParser
+from scrapers.infobox.parsers.circuits.entities import CircuitEntitiesOrchestrator
 from scrapers.infobox.parsers.helpers import parse_infobox_from_soup
 from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
 from scrapers.infobox.parsers.text_utils.circuit import CircuitAdditionalInfoParser
@@ -61,7 +61,7 @@ class CircuitInfoboxParser(WikiInfoboxElementParserBase):
         self.entity_parser = CircuitEntityParser()
         self.additional_info_parser = CircuitAdditionalInfoParser()
 
-        self.entities_parser = CircuitEntitiesParser(
+        self.entities_parser = CircuitEntitiesOrchestrator(
             text_utils=self.text_utils,
             geo_parser=self.geo_parser,
             history_parser=self.history_parser,

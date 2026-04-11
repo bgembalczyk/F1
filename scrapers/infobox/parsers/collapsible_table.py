@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.parsers.numeric import NumericParser
+from scrapers.infobox.parsers.numeric import NumericExtractor
 from scrapers.infobox.parsers.table import InfoboxTableParser
 
 
@@ -83,7 +83,7 @@ class CollapsibleTableParser:
         if label == "Team":
             return self._delegate.parse_teams(value_cell)
         if label in {"Starts", "Wins", "Podiums", "Points"}:
-            return NumericParser.parse_int_cell(value_cell)
+            return NumericExtractor.parse_int_cell(value_cell)
         if label in {"First race", "Last race", "First win", "Last win"}:
             return self._delegate.parse_race_event(value_cell)
         return self._delegate.parse_cell(value_cell)

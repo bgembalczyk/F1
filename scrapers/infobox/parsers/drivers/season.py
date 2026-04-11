@@ -8,8 +8,8 @@ from scrapers.infobox.parsers.drivers.constants import FOUR_DIGIT_YEAR_PATTERN
 from scrapers.infobox.parsers.drivers.constants import TWO_DIGIT_SUFFIX_PATTERN
 
 
-class SeasonParser:
-    """Handles parsing and validation of season-related information."""
+class SeasonClassifier:
+    """Classifies season-like values and validates class metadata."""
 
     def is_class_link(self, link: LinkRecord) -> bool:
         """Check if link is a class designation (e.g., LMP1) rather than a season."""
@@ -109,5 +109,8 @@ class SeasonParser:
 
 
 __all__ = [
-    "SeasonParser",
+    "SeasonClassifier",
 ]
+
+# Backward compatibility alias (deprecated naming).
+SeasonParser = SeasonClassifier
