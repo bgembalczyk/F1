@@ -8,7 +8,7 @@ from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
 
 if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
+    from scrapers.parsers.input_types import WikiParserInput
 
 
 class ConstructorTablesSectionParser:
@@ -17,7 +17,7 @@ class ConstructorTablesSectionParser:
         self._section_label = section_label
         self._tables: ArticleTablesParserProtocol = ArticleTablesParser()
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, section_fragment: WikiParserInput) -> SectionParseResult:
         return SectionParseResult(
             section_id=self._section_id,
             section_label=self._section_label,

@@ -7,7 +7,7 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.parsers.drivers.season import SeasonParser
+from scrapers.infobox.parsers.drivers.season import SeasonClassifier
 from scrapers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
@@ -21,9 +21,9 @@ class BestFinishParser:
             link_extractor: Link extractor for extracting URLs from cells
         """
         self._link_extractor = link_extractor
-        self._season_parser = SeasonParser()
+        self._season_classifier = SeasonClassifier()
 
-    def parse_best_finish(self, cell: Tag) -> dict[str, Any]:
+    def parse(self, cell: Tag) -> dict[str, Any]:
         """Parse best finish field.
 
         Extracts result position and associated seasons with optional class information.
@@ -34,6 +34,10 @@ class BestFinishParser:
             message=f"Nie udało się sparsować najlepszego wyniku: {text!r}.",
             parser_name=self.__class__.__name__,
         )
+
+    def parse_best_finish(self, cell: Tag) -> dict[str, Any]:
+        """Backward-compatible wrapper around :meth:`parse`."""
+        return self.parse(cell)
 
     def _parse_best_finish_payload(self, cell: Tag, text: str) -> dict[str, Any]:
         result: dict[str, Any] = {
@@ -46,7 +50,7 @@ class BestFinishParser:
         # Extract season links and class information
         links = self._link_extractor.extract_links(cell)
         season_links = [
-            link for link in links if not self._season_parser.is_class_link(link)
+            link for link in links if not self._season_classifier.is_class_link(link)
         ]
 
         if season_links:
@@ -106,7 +110,7 @@ class BestFinishParser:
         class_info = class_links[0] if class_links else None
 
         # Validate that class_info is actually a class, not season data
-        if not self._season_parser.is_valid_class_info(class_info, season_links):
+        if not self._season_classifier.is_valid_class_info(class_info, season_links):
             class_info = None
 
         season_data = []
@@ -267,7 +271,7 @@ class BestFinishParser:
         season_text = season_link.get("text", "")
         season_url = season_link.get("url", "")
 
-        is_valid = not self._season_parser.is_season_like_text(class_text)
+        is_valid = not self._season_classifier.is_season_like_text(class_text)
         if is_valid and (season_text == class_text or season_url == class_url):
             is_valid = False
         return class_candidate if is_valid else None

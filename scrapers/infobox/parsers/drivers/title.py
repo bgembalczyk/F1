@@ -12,6 +12,10 @@ class InfoboxTitlesParser:
     def __init__(self, link_extractor: InfoboxLinkExtractor) -> None:
         self._link_extractor = link_extractor
 
+    def parse(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Unified parser entrypoint for titles."""
+        return self.parse_titles(rows)
+
     def parse_titles(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         titles: list[dict[str, Any]] = []
         for row in rows:

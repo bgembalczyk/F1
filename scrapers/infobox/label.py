@@ -7,7 +7,7 @@ from scrapers.infobox.parsers.constants import RACE_EVENT_LABELS
 from scrapers.infobox.parsers.constants import TEAM_LABELS
 from scrapers.infobox.parsers.drivers.car_numbers import CarNumbersParser
 from scrapers.infobox.parsers.drivers.cell import InfoboxCellParser
-from scrapers.infobox.parsers.numeric import NumericParser
+from scrapers.infobox.parsers.numeric import NumericExtractor
 
 
 def parser_mappings(
@@ -17,11 +17,11 @@ def parser_mappings(
         (ACTIVE_YEARS_LABELS, cell_parser.parse_active_years),
         ({"Car number"}, CarNumbersParser.parse_car_numbers),
         (TEAM_LABELS, cell_parser.parse_teams),
-        ({"Entries"}, NumericParser.parse_entries),
+        ({"Entries"}, NumericExtractor.parse_entries),
         ({"Championships"}, cell_parser.parse_championships),
         ({"Class wins"}, cell_parser.parse_class_wins),
-        (INT_CELL_LABELS, NumericParser.parse_int_cell),
-        ({"Career points"}, NumericParser.parse_float_cell),
+        (INT_CELL_LABELS, NumericExtractor.parse_int_cell),
+        ({"Career points"}, NumericExtractor.parse_float_cell),
         ({"Best finish"}, cell_parser.parse_best_finish),
         (RACE_EVENT_LABELS, cell_parser.parse_race_event),
         ({"Finished last season"}, cell_parser.parse_finished_last_season),
