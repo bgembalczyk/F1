@@ -6,14 +6,14 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from warnings import warn
 
-from scrapers.base.table.dsl.column import ColumnSpec
-
-if TYPE_CHECKING:
-    from scrapers.base.table.columns.types.base import BaseColumn
-    from scrapers.base.table.config import ScraperConfig as TableScraperConfig
-    from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-    from scrapers.base.table.schema import TableSchema
-    from scrapers.base.table.schema import TableSchemaBuilder
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.spec import ColumnSpec
+from scrapers.config_table import TableScraperConfig
+from scrapers.constants_table import BASE_STATS_COLUMNS
+from scrapers.constants_table import BASE_STATS_MAP
+from scrapers.schema_table import TableSchema
+from scrapers.schema_table import TableSchemaBuilder
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 @dataclass(frozen=True)
@@ -56,7 +56,6 @@ def build_metric_columns(
     *,
     column_overrides: dict[str, BaseColumn] | None = None,
 ) -> list[ColumnSpec]:
-    from scrapers.base.table.constants import BASE_STATS_COLUMNS
 
     column_overrides = column_overrides or {}
     return [
@@ -76,7 +75,6 @@ def build_base_stats_columns(
     include: Iterable[str] | None = None,
     exclude: Iterable[str] | None = None,
 ) -> list[ColumnSpec]:
-    from scrapers.base.table.constants import BASE_STATS_MAP
 
     include_set = set(include) if include is not None else None
     exclude_set = set(exclude or [])
@@ -104,33 +102,3 @@ def build_name_status_fragment(
     return [ColumnSpec(header, output_key, column_type)]
 
 
-def build_scraper_config(
-    *,
-    url: str,
-    columns: Sequence[ColumnSpec] | None = None,
-    schema: TableSchema | TableSchemaBuilder | TableSchemaDSL | None = None,
-    section_id: str | None = None,
-    expected_headers: Sequence[str] | None = None,
-    table_css_class: str = "wikitable",
-    record_factory=None,
-    model_class: type | None = None,
-) -> TableScraperConfig:
-    """Deprecated compatibility wrapper for legacy imports."""
-    from scrapers.base.table.config import build_scraper_config as _build_scraper_config
-
-    warn(
-        "scrapers.base.table.builders.build_scraper_config is deprecated; "
-        "use scrapers.base.table.config.build_scraper_config.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    return _build_scraper_config(
-        url=url,
-        columns=columns,
-        schema=schema,
-        section_id=section_id,
-        expected_headers=expected_headers,
-        table_css_class=table_css_class,
-        record_factory=record_factory,
-        model_class=model_class,
-    )

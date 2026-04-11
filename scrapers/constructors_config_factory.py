@@ -4,14 +4,14 @@ from collections.abc import Sequence
 from typing import TYPE_CHECKING
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.base.table.config import ScraperConfig as TableScraperConfig
-from scrapers.base.table.config import build_scraper_config
+from scrapers.columns.spec import ColumnSpec
+from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import build_scraper_config
 from scrapers.source_catalog import CONSTRUCTORS_LIST
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
-    from scrapers.base.table.dsl.column import ColumnSpec
 
 
 def build_constructor_list_config(

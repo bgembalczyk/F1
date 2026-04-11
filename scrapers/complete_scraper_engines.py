@@ -1,9 +1,9 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
-from scrapers.engines.single_scraper_engines import SingleEngineManufacturerScraper
-from scrapers.wiki.component_metadata_wiki import COMPLETE_SCRAPER_KIND
-from scrapers.wiki.component_metadata_wiki import build_component_metadata
+from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
+from scrapers.component_metadata_wiki import build_component_metadata
+from scrapers.engine_manufacturers_list import EngineManufacturersListScraper
+from scrapers.single_scraper_engines import SingleEngineManufacturerScraper
 
 
 class F1CompleteEngineManufacturerDataExtractor(CompleteExtractorBase):

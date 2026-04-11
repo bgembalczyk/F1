@@ -1,5 +1,5 @@
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 
 
 class UnknownValueColumn(BaseColumn):

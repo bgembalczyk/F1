@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.mixins.section_traversal import SectionTraversalMixin
+from scrapers.scraper_wiki import WikiScraper
 from scrapers.types import ExportableRecord
-from scrapers.wiki.scraper_wiki import WikiScraper
 
 
 class ListScraper(SectionTraversalMixin, WikiScraper, ABC):

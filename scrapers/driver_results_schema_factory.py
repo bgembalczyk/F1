@@ -3,14 +3,17 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.drivers.drivers_columns.round import RoundColumn
-from scrapers.drivers.drivers_columns.unknown_value import UnknownValueColumn
-from scrapers.drivers.drivers_sections import constants
-
-if TYPE_CHECKING:
-    from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.round import RoundColumn
+from scrapers.columns.types.unknown_value import UnknownValueColumn
+from scrapers.section.constants import CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY
+from scrapers.section.constants import CAREER_HIGHLIGHTS_HEADER_TO_KEY
+from scrapers.section.constants import CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY
+from scrapers.section.constants import CAREER_SUMMARY_HEADER_TO_KEY
+from scrapers.section.constants import COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY
+from scrapers.section.constants import COMPLETE_RESULTS_HEADER_TO_KEY
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class DriverResultsSchemaFactory:
@@ -20,18 +23,18 @@ class DriverResultsSchemaFactory:
     def build(self, *, table_type: str, headers: list[str]) -> TableSchemaDSL:
         if table_type == "career_highlights":
             return self._build_from_maps(
-                header_to_key=constants.CAREER_HIGHLIGHTS_HEADER_TO_KEY,
-                column_factory_by_key=constants.CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY,
+                header_to_key=CAREER_HIGHLIGHTS_HEADER_TO_KEY,
+                column_factory_by_key=CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY,
             )
         if table_type == "career_summary":
             return self._build_from_maps(
-                header_to_key=constants.CAREER_SUMMARY_HEADER_TO_KEY,
-                column_factory_by_key=constants.CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY,
+                header_to_key=CAREER_SUMMARY_HEADER_TO_KEY,
+                column_factory_by_key=CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY,
             )
         if table_type == "complete_results":
             schema_columns = self._build_from_maps(
-                header_to_key=constants.COMPLETE_RESULTS_HEADER_TO_KEY,
-                column_factory_by_key=constants.COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
+                header_to_key=COMPLETE_RESULTS_HEADER_TO_KEY,
+                column_factory_by_key=COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
             ).columns
             schema_columns.extend(
                 ColumnSpec(header, header, self._unknown(RoundColumn()))

@@ -3,22 +3,26 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from models.validation.engine_manufacturer import EngineManufacturer
+from models.validation.engine.manufacturer import EngineManufacturer
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
-from scrapers.base.source_catalog import ENGINES_LIST
-from scrapers.base.table import builders
-from scrapers.base.table.columns.types.column_factory import FloatColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.engines.columns_engines import EngineManufacturerNameStatusColumn
-from scrapers.wiki.parsers.elements.list import ListParser
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from scrapers.builders_table import EntityColumnSpec
+from scrapers.builders_table import build_base_stats_columns
+from scrapers.builders_table import build_columns
+from scrapers.builders_table import build_entity_metadata_columns
+from scrapers.builders_table import build_name_status_fragment
+from scrapers.columns.factory import FloatColumn
+from scrapers.columns.types.links_list import LinksListColumn
+from scrapers.columns.types.multi.name_status_column.engine_manufacturer import EngineManufacturerNameStatusColumn
+from scrapers.config_table import build_scraper_config
+from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.parsers.list.wiki import ListParser
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.scraper_table import F1TableScraper
+from scrapers.section.selection_strategy import WikipediaSectionByIdSelectionStrategy
+from scrapers.source_catalog import ENGINES_LIST
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class EngineManufacturersTableParser(WikiTableBaseParser):
@@ -49,22 +53,22 @@ class EngineManufacturersTableParser(WikiTableBaseParser):
 
 
 TABLE_SCHEMA = TableSchemaDSL(
-    columns=builders.build_columns(
-        builders.build_name_status_fragment(
+    columns=build_columns(
+        build_name_status_fragment(
             header="Manufacturer",
             output_key="engine_constructor",
             column_type=EngineManufacturerNameStatusColumn(),
         ),
-        builders.build_entity_metadata_columns(
+        build_entity_metadata_columns(
             [
-                builders.EntityColumnSpec(
+                EntityColumnSpec(
                     "Engines built in",
                     "engines_built_in",
                     LinksListColumn(),
                 ),
             ],
         ),
-        builders.build_base_stats_columns(column_overrides={"points": FloatColumn()}),
+        build_base_stats_columns(column_overrides={"points": FloatColumn()}),
     ),
 )
 

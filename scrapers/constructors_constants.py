@@ -1,7 +1,7 @@
 from datetime import datetime
 from datetime import timezone
 
-from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 
 CONSTRUCTOR_NAME_HEADER = "Constructor"
 CONSTRUCTOR_ENGINE_HEADER = "Engine"

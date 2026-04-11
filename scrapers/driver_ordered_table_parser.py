@@ -1,4 +1,4 @@
-from scrapers.wiki.parsers.elements.wiki_table import WikiTableBaseParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
 
 class DriverOrderedTableParser(WikiTableBaseParser):

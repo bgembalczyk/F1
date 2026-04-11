@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 from scrapers.configs.public import TableConfig
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.section.table.base import TableSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
-from scrapers.wiki.parsers.elements.wiki_table import WikiTableBaseParser
 
 logger = logging.getLogger(__name__)
 
