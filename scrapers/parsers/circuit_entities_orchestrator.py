@@ -234,6 +234,5 @@ class CircuitEntitiesOrchestrator(SafeParsingMixin):
         return self.text_utils.prune_nulls(result)
 
 
-CircuitEntitiesParser = CircuitEntitiesOrchestrator
 
-__all__ = ["CircuitEntitiesOrchestrator", "CircuitEntitiesParser"]
+__all__ = ["CircuitEntitiesOrchestrator"]

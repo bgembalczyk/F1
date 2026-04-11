@@ -9,7 +9,7 @@ from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
-from scrapers.parsers.infobox.circuits.entities import CircuitEntitiesOrchestrator
+from scrapers.parsers.infobox.circuits.circuit_entities_orchestrator import CircuitEntitiesOrchestrator
 from scrapers.parsers.infobox.helpers import parse_infobox_from_soup
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser

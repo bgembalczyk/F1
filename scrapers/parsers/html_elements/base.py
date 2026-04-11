@@ -21,11 +21,3 @@ class BaseHtmlElementParser(ABC, Generic[TOutput]):
     def parse(self, element: Tag) -> TOutput: ...
 
 
-class BaseHtmlSectionParser(ABC, Generic[TOutput]):
-    """Base contract for document/section parsers.
-
-    Document/section parsers are the only parsers that can accept BeautifulSoup.
-    """
-
-    @abstractmethod
-    def parse(self, soup: BeautifulSoup) -> TOutput: ...
