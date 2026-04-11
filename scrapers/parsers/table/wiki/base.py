@@ -1,14 +1,14 @@
 from __future__ import annotations
 
-from abc import ABC
-from abc import abstractmethod
 from typing import Any
 
 
-class WikiTableBaseParser(ABC):
+class WikiTableBaseParser:
     table_type: str = "wiki_table"
     missing_columns_policy: str = "skip"
     extra_columns_policy: str = "ignore"
+    required_header_groups: tuple[frozenset[str], ...] = ()
+    column_mapping: dict[str, str] = {}
 
     def parse_group(self, payload: Any) -> list[dict[str, Any]]:
         """Traverse parsed payload and collect all domain rows matching this table type.
@@ -92,13 +92,19 @@ class WikiTableBaseParser(ABC):
 
         return []
 
-    @abstractmethod
     def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
         """Czy parser pasuje do konkretnej tabeli."""
+        del table_data
+        header_set = set(headers)
+        return all(bool(header_set & group) for group in self.required_header_groups)
 
-    @abstractmethod
     def map_columns(self, headers: list[str]) -> dict[str, str]:
         """Mapuje nagłówki tabeli na pola domenowe."""
+        return {
+            header: self.column_mapping[header]
+            for header in headers
+            if header in self.column_mapping
+        }
 
     def parse_row(
         self,
