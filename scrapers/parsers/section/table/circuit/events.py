@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from scrapers.parsers.section.table.base import SectionTableParserBase
+from scrapers.parsers.section.table.base import TableSectionParser
 
 
-class CircuitEventsSectionParser(SectionTableParserBase):
+class CircuitEventsSectionParser(TableSectionParser):
     def __init__(self) -> None:
         super().__init__(section_id="events", section_label="Events")
 
