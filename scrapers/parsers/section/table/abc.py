@@ -41,7 +41,7 @@ class SectionTableParserBase(ABC):
 
     def parse_fragment(self, fragment: BeautifulSoup) -> SectionParseResult:
         records: list[dict[str, Any]] = []
-        for table_data in self.parse_group(fragment):
+        for table_data in self._collect_tables(fragment):
             table_classification = self.classify_table(table_data)
             if table_classification is None:
                 continue
@@ -59,10 +59,7 @@ class SectionTableParserBase(ABC):
             records.append(mapped)
         return self.build_result(records)
 
-    def parse_group(
-        self,
-        fragment: BeautifulSoup,
-    ) -> list[dict[str, Any]]:
+    def _collect_tables(self, fragment: BeautifulSoup) -> list[dict[str, Any]]:
         return self._table_parser.parse(fragment)
 
     def classify_table(self, table_data: dict[str, Any]) -> Any | None:
