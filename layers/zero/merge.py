@@ -21,6 +21,13 @@ from models.merge_types.record.engine import EngineRecordModel
 from models.merge_types.record.race import RaceRecordModel
 from scrapers import constants_wiki
 from scrapers import sources_registry_wiki as sources_registry
+from scrapers.constants_wiki import CHASSIS_CONSTRUCTOR_DOMAINS
+from scrapers.constants_wiki import CIRCUITS_FORMULA_ONE_FIELDS
+from scrapers.constants_wiki import CONSTRUCTORS_FORMULA_ONE_FIELDS
+from scrapers.constants_wiki import ENGINES_FORMULA_ONE_FIELDS
+from scrapers.constants_wiki import FORMULA_ONE_SERIES
+from scrapers.constants_wiki import GRANDS_PRIX_FORMULA_ONE_FIELDS
+from scrapers.constants_wiki import RED_FLAG_FIELDS
 
 RecordTransformHandler = Callable[
     [str, str, dict[str, object]],
@@ -72,12 +79,12 @@ def sort_key_with_presence(value: object) -> tuple[int, str]:
 
 def extract_red_flag(record: dict[str, object]) -> dict[str, object]:
     return {
-        key: value for key, value in record.items() if key in constants.RED_FLAG_FIELDS
+        key: value for key, value in record.items() if key in RED_FLAG_FIELDS
     }
 
 
 def pop_red_flag_fields(record: dict[str, object]) -> None:
-    for key in constants.RED_FLAG_FIELDS:
+    for key in RED_FLAG_FIELDS:
         record.pop(key, None)
 
 
@@ -287,7 +294,7 @@ def transform_constructor_domain(
     source_name: str,
     transformed: dict[str, object],
 ) -> dict[str, object]:
-    constructor_domains = constants.CHASSIS_CONSTRUCTOR_DOMAINS | {
+    constructor_domains = CHASSIS_CONSTRUCTOR_DOMAINS | {
         "constructor",
         "chassis",
     }
@@ -304,7 +311,7 @@ def transform_constructor_domain(
     ):
         return transform_chassis_constructor_from_current_constructors(transformed)
 
-    constructor_fields = set(constants.CONSTRUCTORS_FORMULA_ONE_FIELDS)
+    constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
     if domain == "constructors" and re.fullmatch(
         r"f1_constructors_\d{4}\.json",
         source_name,
@@ -395,7 +402,7 @@ def transform_former_constructor(
 def ensure_constructor_status(transformed: dict[str, object]) -> None:
     if "racing_series" not in transformed:
         transformed["status"] = CONSTRUCTOR_STATUS_ACTIVE
-        transformed["series"] = constants.FORMULA_ONE_SERIES.copy()
+        transformed["series"] = FORMULA_ONE_SERIES.copy()
         return
 
     racing_series = transformed.get("racing_series")
@@ -412,9 +419,9 @@ def transform_circuits_domain(
 ) -> dict[str, object]:
     if domain != "circuits":
         return transformed
-    move_fields_to_formula_one(transformed, constants.CIRCUITS_FORMULA_ONE_FIELDS)
+    move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
     if "racing_series" not in transformed:
-        transformed["series"] = constants.FORMULA_ONE_SERIES.copy()
+        transformed["series"] = FORMULA_ONE_SERIES.copy()
     return transformed
 
 
@@ -444,7 +451,7 @@ def transform_engines_domain(
             },
         }
     elif source_name == sources_registry.ENGINE_MANUFACTURERS_SOURCE:
-        move_fields_to_formula_one(transformed, constants.ENGINES_FORMULA_ONE_FIELDS)
+        move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
     return transformed
 
 
@@ -455,7 +462,7 @@ def transform_grands_prix_domain(
     if domain == "grands_prix":
         move_fields_to_formula_one(
             transformed,
-            constants.GRANDS_PRIX_FORMULA_ONE_FIELDS,
+            GRANDS_PRIX_FORMULA_ONE_FIELDS,
         )
     return transformed
 
