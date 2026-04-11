@@ -1,3 +1,4 @@
+import warnings
 from collections.abc import Sequence
 from typing import Any
 
@@ -9,10 +10,10 @@ from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.wiki.base import WikiTableParser as BaseWikiTableParser
+from scrapers.parsers.wiki.base import WikiTableElementParserBase
 
 
-class WikiTableParser(BaseWikiTableParser):
+class WikiTableHtmlParser(WikiTableElementParserBase):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">
@@ -144,7 +145,7 @@ class WikiTableParser(BaseWikiTableParser):
         cells: Sequence[Tag],
         parser: HtmlTableParser,
     ) -> list[str]:
-        config = WikiTableParser._cleaner_config(parser)
+        config = WikiTableHtmlParser._cleaner_config(parser)
         return [
             clean_wiki_text(
                 cell.get_text(" ", strip=True),
@@ -154,3 +155,18 @@ class WikiTableParser(BaseWikiTableParser):
             )
             for cell in cells
         ]
+
+
+class WikiTableParser(WikiTableHtmlParser):
+    """Deprecated alias for :class:`WikiTableHtmlParser`."""
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        warnings.warn(
+            "WikiTableParser is deprecated; use WikiTableHtmlParser.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        super().__init__(*args, **kwargs)
+
+
+__all__ = ["WikiTableHtmlParser", "WikiTableParser"]

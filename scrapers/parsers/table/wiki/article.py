@@ -1,19 +1,22 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.input_adapters import as_table_fragments
+from scrapers.parsers.input_types import WikiParserInput
 from scrapers.parsers.table.wiki.mapped.lap_records import LapRecordsWikiTableParser
 from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTableParser
 from scrapers.parsers.table.wiki.mapped.standings import StandingsTableParser
-from scrapers.parsers.table.wiki.table import WikiTableParser
+from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.base import WikiParser
 
+if TYPE_CHECKING:
+    from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
 class ArticleTablesParser(WikiParser[Tag | BeautifulSoup, list[dict[str, Any]]]):
     """Wspólny parser tabel wikitable z artykułów Wikipedii."""
@@ -27,7 +30,7 @@ class ArticleTablesParser(WikiParser[Tag | BeautifulSoup, list[dict[str, Any]]])
     ) -> None:
         self.include_heading_path = include_heading_path
         self.include_source_table = include_source_table
-        self._table_parser = WikiTableParser()
+        self._table_parser = WikiTableHtmlParser()
         self._html_table_parser = HtmlTableParser()
         self._specialized_parsers = specialized_parsers or [
             StandingsTableParser(),
@@ -35,7 +38,11 @@ class ArticleTablesParser(WikiParser[Tag | BeautifulSoup, list[dict[str, Any]]])
             LapRecordsWikiTableParser(),
         ]
 
-    def parse(self, element: Tag | BeautifulSoup) -> list[dict[str, Any]]:
+    def parse(self, element: WikiParserInput) -> list[dict[str, Any]]:
+        dict_fragments = as_table_fragments(element)
+        if dict_fragments:
+            return dict_fragments
+
         tables: list[dict[str, Any]] = []
         for table in element.find_all("table", class_="wikitable"):
             parsed = self.parse_table(table)

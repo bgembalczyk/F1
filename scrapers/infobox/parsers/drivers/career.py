@@ -9,6 +9,10 @@ class InfoboxCareerParser:
     def __init__(self, cell_parser: InfoboxCellParser) -> None:
         self._cell_parser = cell_parser
 
+    def parse(self, title: str, section: dict[str, Any]) -> dict[str, Any]:
+        """Unified parser entrypoint."""
+        return self.parse_section(title, section)
+
     def parse_section(self, title: str, section: dict[str, Any]) -> dict[str, Any]:
         rows: list[dict[str, Any]] = []
         for row in section.get("rows", []):

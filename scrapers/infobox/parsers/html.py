@@ -1,3 +1,4 @@
+import warnings
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -6,10 +7,10 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
-from scrapers.parsers.wiki.infobox import InfoboxParser
+from scrapers.parsers.wiki.infobox import WikiInfoboxElementParserBase
 
 
-class InfoboxHtmlParser(InfoboxParser):
+class WikiInfoboxHtmlParser(WikiInfoboxElementParserBase):
     """Parser HTML infoboxów z Wikipedii (tytuł, wiersze, linki)."""
 
     WIKIPEDIA_BASE = "https://en.wikipedia.org"
@@ -69,7 +70,7 @@ class InfoboxHtmlParser(InfoboxParser):
         - class="infobox vcard"
         - class=["infobox", "vcard"]
         """
-        return soup.find("table", class_=InfoboxHtmlParser.has_infobox_class)
+        return soup.find("table", class_=WikiInfoboxHtmlParser.has_infobox_class)
 
     def parse_group(self, table: Tag) -> dict[str, Any]:
         return self.parse_table_rows(table)
@@ -91,4 +92,21 @@ class InfoboxHtmlParser(InfoboxParser):
         )
 
 
+WikiInfoboxHtmlParser.parse_row_value = WikiInfoboxHtmlParser.parse_row
+
+
+class InfoboxHtmlParser(WikiInfoboxHtmlParser):
+    """Deprecated alias for :class:`WikiInfoboxHtmlParser`."""
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        warnings.warn(
+            "InfoboxHtmlParser is deprecated; use WikiInfoboxHtmlParser.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        super().__init__(*args, **kwargs)
+
+
 InfoboxHtmlParser.parse_row_value = InfoboxHtmlParser.parse_row
+
+__all__ = ["WikiInfoboxHtmlParser", "InfoboxHtmlParser"]
