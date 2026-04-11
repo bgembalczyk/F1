@@ -5,8 +5,8 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.parsers.infobox.numeric_extractor import NumericExtractor
 from scrapers.parsers.infobox.table import InfoboxTableParser
+from scrapers.parsers.numeric_extractor import NumericExtractor
 
 
 class CollapsibleTableParser:
@@ -20,6 +20,9 @@ class CollapsibleTableParser:
                                  (parse_active_years, parse_teams, parse_int_cell, etc.)
         """
         self._delegate = cell_parser_delegate
+
+    def parse(self, table: Tag) -> dict[str, Any] | None:
+        return self.parse_collapsible_career_table(table)
 
     def parse_collapsible_career_table(self, table: Tag) -> dict[str, Any] | None:
         """Parse collapsible career statistics table (e.g., motorcycle racing).

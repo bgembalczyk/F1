@@ -3,7 +3,7 @@ from typing import Any
 
 from scrapers.helpers.constants import POSSESSIVE_COLOUR_RE
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.liveries.sponsorship.scope.grand_prix import (
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix_transformer import (
     GrandPrixScopeTransformer,
 )
 from scrapers.parsers.liveries.sponsorship.splitters.depth_aware_colour import (

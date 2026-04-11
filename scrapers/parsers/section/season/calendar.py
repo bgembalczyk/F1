@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 
 from scrapers.parsers.seasons.calendar import SeasonCalendarParser
 from scrapers.parsers.section.base import BaseSectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -16,8 +17,8 @@ class SeasonCalendarSectionParser(BaseSectionParser):
         self._parser = parser
         self._season_year = season_year
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        records = self._parser.parse(section_fragment, self._season_year)
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+        records = self._parser.parse(fragment, self._season_year)
         return build_section_parse_result(
             section_id="Calendar",
             section_label="Calendar",

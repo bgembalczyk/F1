@@ -1,19 +1,6 @@
 from __future__ import annotations
 
-import warnings
-from typing import Protocol
-
-from bs4 import BeautifulSoup
-
-from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.section.parse_results import SectionParseResult
-
-
-class SectionParserProtocol(Protocol):
-    """Typing-only contract for dependency injection and static checks."""
-
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
-
+from scrapers.parsers.roles import SectionParser as SectionParser
 
 class SectionParser(BaseSectionParser):
     """Deprecated runtime alias. Use ``BaseSectionParser`` instead."""

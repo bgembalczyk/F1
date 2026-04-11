@@ -2,10 +2,10 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.wiki.list import ListParser
+from scrapers.parsers.html_elements.list import ListElementParser
 
 
-class IndianapolisConstructorsListParser(ListParser):
+class IndianapolisConstructorsListParser(ListElementParser):
     def parse(self, element: Tag) -> dict[str, list[dict[str, Any]]]:
         items: list[dict[str, Any]] = []
         for li in element.find_all("li", recursive=False):

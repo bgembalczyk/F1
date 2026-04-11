@@ -6,14 +6,14 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.seasons.parsers_seasons.cancelled_rounds import CancelledRoundsParser
-from scrapers.seasons.parsers_seasons.table import SeasonTableService
+from scrapers.seasons.parsers_seasons.table import SeasonTableParser
 
 
 @pytest.fixture()
 def parser():
     """Create a CancelledRoundsParser instance for testing."""
     options = ScraperOptions()
-    table_parser = SeasonTableService(
+    table_parser = SeasonTableParser(
         options=options,
         include_urls=True,
         url="https://example.com/test",

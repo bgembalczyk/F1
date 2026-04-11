@@ -4,15 +4,16 @@ import warnings
 from abc import ABC
 from typing import Any
 from typing import Protocol
+from typing import TypeAlias
 from typing import TypeVar
 from typing import runtime_checkable
 
 from bs4 import Tag
 
+from scrapers.domain_roles import Parser
 from scrapers.section.parse_results import SectionParseResult
 
 ParsedDataT_co = TypeVar("ParsedDataT_co", covariant=True)
-SectionResultT_co = TypeVar("SectionResultT_co", covariant=True)
 RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
 RecordT_co = TypeVar("RecordT_co", covariant=True)
@@ -24,6 +25,9 @@ class HtmlElementParser(Protocol[ParsedDataT_co]):
     """Parser pojedynczego elementu HTML (Tag -> ParsedData)."""
 
     def parse(self, element: Tag) -> ParsedDataT_co: ...
+
+
+SectionParserBase: TypeAlias = Parser[BeautifulSoup, SectionParseResult]
 
 
 @runtime_checkable

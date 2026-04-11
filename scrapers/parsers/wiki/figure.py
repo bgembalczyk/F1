@@ -2,8 +2,11 @@ from models.data.parsed.figure import FigureParsedData
 from scrapers.parsers.html_elements.figure import FigureElementParser
 
 
-class FigureParser(FigureElementParser):
+class WikiFigureParser(FigureElementParser):
     pass
 
 
-__all__ = ["FigureParser", "FigureParsedData"]
+# Backward-compatible alias.
+FigureParser = WikiFigureParser
+
+__all__ = ["WikiFigureParser", "FigureParser", "FigureParsedData"]

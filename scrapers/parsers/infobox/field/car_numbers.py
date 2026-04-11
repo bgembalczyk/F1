@@ -11,7 +11,7 @@ from scrapers.parsers.infobox.constants import CAR_NUMBER_PATTERN_RE
 from scrapers.parsers.infobox.constants import MIN_VALID_CAR_NUMBER_YEAR
 from scrapers.parsers.infobox.constants import MIN_YEAR_TOKENS_FOR_RANGE
 from scrapers.parsers.infobox.constants import YEAR_TOKEN_RE
-from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base import BaseInfoboxFieldParser
 from scrapers.parsers.infobox.field.year import YearParser
 
 

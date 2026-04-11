@@ -14,6 +14,7 @@ from scrapers.columns.types.url import UrlColumn
 from scrapers.configs.public import TableConfig
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.section.base import BaseSectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
@@ -37,7 +38,7 @@ class GrandPrixByYearSectionParser(BaseSectionParser):
         self._normalize_empty_values = normalize_empty_values
         self._assembler = assembler or GrandPrixByYearRecordAssembler()
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         pipeline = self._build_pipeline(section_id=None)
         parser = HtmlTableParser(
             section_id=None,
@@ -45,7 +46,7 @@ class GrandPrixByYearSectionParser(BaseSectionParser):
             section_domain="grands_prix",
         )
         records: list[dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse(section_fragment)):
+        for row_index, row in enumerate(parser.parse(fragment)):
             parsed_record = pipeline.parse_cells(
                 row.headers,
                 row.cells,

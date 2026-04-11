@@ -11,7 +11,7 @@ from scrapers.parsers.infobox.constants import COUNT_RE
 from scrapers.parsers.infobox.constants import PAREN_RE
 from scrapers.parsers.infobox.constants import YEAR_RE
 from scrapers.year_extractor import YearExtractor
-from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base import BaseInfoboxFieldParser
 
 
 class ChampionshipsParser(BaseInfoboxFieldParser):

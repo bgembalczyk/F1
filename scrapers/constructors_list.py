@@ -40,12 +40,14 @@ from scrapers.constructors_constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADER
 from scrapers.constructors_constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.list.base import ListScraper
+from scrapers.parsers.html_elements.list import ListElementParser
 from scrapers.parsers.section.constructors.current import (
     CurrentConstructorsSectionParser,
 )
 from scrapers.parsers.section.constructors.former import FormerConstructorsSectionParser
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.wiki.list import ListParser
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.results import ScrapeResult
 from scrapers.section.selection_strategy.wikipedia_by_id import (
     WikipediaSectionByIdSelectionStrategy,
@@ -60,7 +62,7 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 
-class PrivateerTeamsListParser(ListParser):
+class PrivateerTeamsListParser(ListElementParser):
     def parse(self, element: Tag) -> dict[str, list[dict[str, Any]]]:
         items: list[dict[str, Any]] = []
         for li in element.find_all("li", recursive=False):

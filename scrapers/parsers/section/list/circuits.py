@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.base import BaseSectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.parsers.table.wiki.circuit_list import CircuitsListTableParser
@@ -31,11 +32,11 @@ class CircuitsListSectionParser(BaseSectionParser):
             normalize_empty_values=normalize_empty_values,
         )
 
-    def _ensure_supported_table(self, section_fragment: BeautifulSoup) -> None:
+    def _ensure_supported_table(self, fragment: BeautifulSoup) -> None:
         table_mapping_parser = CircuitsListTableParser()
         parsed_tables = ArticleTablesParser(
             specialized_parsers=[table_mapping_parser],
-        ).parse(section_fragment)
+        ).parse(fragment)
         has_circuits_table = any(
             table.get("table_type") == "circuits_list" for table in parsed_tables
         )
@@ -43,6 +44,6 @@ class CircuitsListSectionParser(BaseSectionParser):
             msg = "No circuits list table found in section fragment"
             raise RuntimeError(msg)
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        self._ensure_supported_table(section_fragment)
-        return self._parser.parse(section_fragment)
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+        self._ensure_supported_table(fragment)
+        return self._parser.parse(fragment)

@@ -69,14 +69,14 @@ class SectionParserContract(Protocol):
     """Minimal contract for section parser family.
 
     Required API:
-    - ``parse(section_fragment)`` returning section parse payload.
+    - ``parse(fragment)`` returning section parse payload.
 
     Extension rules:
     - parser variants may introduce extra helpers, but the ``parse`` entrypoint
       remains mandatory and should accept a soup/fragment object.
     """
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult: ...
 
 
 __all__ = [

@@ -1,6 +1,7 @@
 from typing import Any
 
 from scrapers.parsers.section.base import BaseSectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.table.drivers_list import DriversListTableParser
 
 
