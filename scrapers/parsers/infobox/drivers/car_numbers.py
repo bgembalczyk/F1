@@ -12,21 +12,13 @@ from scrapers.parsers.infobox.constants import MIN_VALID_CAR_NUMBER_YEAR
 from scrapers.parsers.infobox.constants import MIN_YEAR_TOKENS_FOR_RANGE
 from scrapers.parsers.infobox.constants import YEAR_TOKEN_RE
 from scrapers.parsers.infobox.drivers.year import YearParser
+from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
 
 
 class CarNumbersParser(BaseInfoboxFieldParser):
     """Handles parsing of car numbers with optional year ranges."""
 
-    def parse(self, raw: Tag) -> list[dict[str, Any]]:
-        return self.parse_car_numbers(raw)
-
-    @staticmethod
-    def parse(cell: Tag) -> list[dict[str, Any]]:
-        """Unified parser entrypoint."""
-        return CarNumbersParser.parse_car_numbers(raw)
-
-    @staticmethod
-    def parse_car_numbers(cell: Tag) -> list[dict[str, Any]]:
+    def parse(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse car numbers with optional year information.
 
         Handles formats like:
