@@ -106,7 +106,6 @@ class WikiTableBaseParser(AbstractTableFragmentParser):
     def collector(self) -> WikiTablePayloadCollector:
         return WikiTablePayloadCollector(self.table_type)
 
-    # Legacy adapters
     def apply_to_payload(self, payload: dict[str, Any]) -> None:
         self.transformer().transform(payload)
 

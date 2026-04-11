@@ -33,14 +33,7 @@ class RunPathName(str, Enum):
     DEBUG_DIR = "debug_dir"
 
 
-LegacyCliProfileName = Literal[
-    "list_scraper",
-    "complete_extractor",
-]
-
 RunProfileSelector = RunProfileName | Literal["default", "debug"]
-
-CliProfileSelector = RunProfileSelector | LegacyCliProfileName
 
 
 @dataclass(frozen=True)
@@ -78,34 +71,17 @@ RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
     ),
 }
 
-
-LEGACY_CLI_PROFILE_ALIASES: dict[LegacyCliProfileName, RunProfileName] = {
-    "list_scraper": RunProfileName.DEFAULT,
-    "complete_extractor": RunProfileName.DEFAULT,
-}
-
-LEGACY_CLI_PROFILE_NAMES: tuple[LegacyCliProfileName, ...] = tuple(
-    LEGACY_CLI_PROFILE_ALIASES,
-)
-
-
 @dataclass(frozen=True)
 class ProfileResolver:
-    """Normalize, validate and resolve canonical/legacy profile names."""
-
-    legacy_cli_aliases: dict[LegacyCliProfileName, RunProfileName]
+    """Normalize, validate and resolve canonical profile names."""
 
     def normalize_profile(self, profile: RunProfileSelector) -> RunProfileName:
         if isinstance(profile, RunProfileName):
             return profile
         return RunProfileName(profile)
 
-    def resolve_cli_profile(self, profile: CliProfileSelector) -> RunProfileName:
-        if isinstance(profile, RunProfileName):
-            return profile
-        if profile in self.legacy_cli_aliases:
-            return self.legacy_cli_aliases[profile]
-        return RunProfileName(profile)
+    def resolve_cli_profile(self, profile: RunProfileSelector) -> RunProfileName:
+        return self.normalize_profile(profile)
 
     def validate_supported_profile(self, profile: RunProfileName) -> RunProfileSpec:
         spec = RUN_PROFILE_SPECS.get(profile)
@@ -116,11 +92,11 @@ class ProfileResolver:
         raise ValueError(msg)
 
 
-PROFILE_RESOLVER = ProfileResolver(legacy_cli_aliases=LEGACY_CLI_PROFILE_ALIASES)
+PROFILE_RESOLVER = ProfileResolver()
 
 
-def resolve_cli_profile(profile: CliProfileSelector) -> RunProfileName:
-    """Resolve canonical and legacy CLI profile names to a run profile."""
+def resolve_cli_profile(profile: RunProfileSelector) -> RunProfileName:
+    """Resolve canonical CLI profile names to a run profile."""
     return PROFILE_RESOLVER.resolve_cli_profile(profile)
 
 
@@ -130,8 +106,8 @@ def get_run_profile_spec(profile: RunProfileSelector) -> RunProfileSpec:
     return PROFILE_RESOLVER.validate_supported_profile(normalized_profile)
 
 
-def get_cli_profile_defaults(profile: CliProfileSelector) -> tuple[bool, bool]:
-    """Return default quality/error flags for canonical or legacy CLI profiles."""
+def get_cli_profile_defaults(profile: RunProfileSelector) -> tuple[bool, bool]:
+    """Return default quality/error flags for canonical CLI profiles."""
     spec = get_run_profile_spec(resolve_cli_profile(profile))
     return spec.quality_report, spec.error_report
 

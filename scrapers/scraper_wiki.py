@@ -8,7 +8,7 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.mixins.wiki_element import WikiElementParsingMixin
 from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.wiki.body_content import BodyContentParser
-from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element_factory import build_default_wiki_element_parsers
 from scrapers.parsers.wiki.header import HeaderParser
 
@@ -47,7 +47,7 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
         options: ScraperOptions | None = None,
         header_parser: HeaderParser | None = None,
         body_content_parser: BodyContentParser | None = None,
-        element_parsers: WikiElementParsers | None = None,
+        element_parsers: WikiElementSet | None = None,
     ) -> None:
         """Inicjalizuje WikiScraper.
 

@@ -14,7 +14,7 @@ W kodzie istniały równoległe definicje kontraktu parserów sekcji (`protocol.
 - Dla parserów sekcji używamy jednej specjalizacji: `scrapers.parsers.roles.SectionParser = Parser[BeautifulSoup, SectionParseResult]`.
 - Jedyna poprawna sygnatura parsera sekcji to:
   - `parse(fragment: BeautifulSoup) -> SectionParseResult`.
-- Moduły `scrapers/parsers/section/protocol.py` i `scrapers/parsers/section/section_parser_protocol.py` pozostają tylko jako aliasy kompatybilności (deprecated wrappers).
+- Moduły `scrapers/parsers/section/protocol.py` i `scrapers/parsers/section/section_parser_protocol.py` nie są traktowane jako aktywna ścieżka wsparcia; obowiązuje import z kanonicznego kontraktu.
 - Nazewnictwo fabryk/rejestrów nie używa `parse`; API `parse` jest zarezerwowane dla parserów.
 
 ## Konsekwencje

@@ -7,7 +7,7 @@ from typing import runtime_checkable
 from bs4 import Tag
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import WikiElementSet
 
 
 @runtime_checkable
@@ -18,7 +18,7 @@ class StructureParser(Protocol):
     """
 
     @property
-    def element_parsers(self) -> WikiElementParsers: ...
+    def element_parsers(self) -> WikiElementSet: ...
 
     def parse_group(
         self,

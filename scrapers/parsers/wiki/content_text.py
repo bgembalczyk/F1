@@ -1,4 +1,5 @@
 from typing import Any
+from dataclasses import replace
 
 from bs4 import Tag
 
@@ -8,7 +9,7 @@ from scrapers.parsers.section.nested.wiki import NestedWikiSectionParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 
 
@@ -16,16 +17,20 @@ class ContentTextParser(WikiParser):
     def __init__(
         self,
         *,
-        element_parsers: WikiElementParsers | None = None,
+        element_parsers: WikiElementSet | None = None,
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
         self.toolbox = toolbox or build_default_section_toolbox()
         self.section_parser = NestedWikiSectionParser(toolbox=self.toolbox)
         if element_parsers is not None:
+            section_first_parsers = replace(
+                element_parsers,
+                section_parser=self.section_parser.parse,
+            )
             self.toolbox = SectionParserToolbox(
-                element_parsers=element_parsers,
+                element_parsers=section_first_parsers,
                 element_registry=build_wikipedia_element_registry(
-                    parsers=element_parsers,
+                    parsers=section_first_parsers,
                 ),
                 section_locator=self.toolbox.section_locator,
                 section_assembler=self.toolbox.section_assembler,

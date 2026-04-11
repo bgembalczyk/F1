@@ -4,7 +4,7 @@ from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 
 
 class WikiInfoboxParser(WikiInfoboxHtmlParser):
-    """Wiki parser for infobox tables (<table class=\"infobox\">)."""
+    """Wiki parser for infobox tables (<table class="infobox">)."""
 
 
 __all__ = [

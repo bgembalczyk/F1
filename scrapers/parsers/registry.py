@@ -119,3 +119,15 @@ def resolve_parser_name(
     raise LookupError(
         "No parser registration for " f"{domain}:{element_type}:{section_id or '-'}",
     )
+
+
+__all__ = [
+    "DEFAULT_PARSER_REGISTRY",
+    "DomainName",
+    "ElementType",
+    "ParsingRegistryEntry",
+    "ParsingRegistryKey",
+    "REQUIRED_PRODUCTION_KEYS",
+    "resolve_parser_name",
+    "validate_parser_registry",
+]

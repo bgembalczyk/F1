@@ -8,12 +8,15 @@ from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.category_links import CategoryLinksParser
 from scrapers.wiki.parsers.content_text import ContentTextParser
-from scrapers.wiki.parsers.elements.figure import FigureParser
-from scrapers.wiki.parsers.elements.infobox import InfoboxParser
+from scrapers.wiki.parsers.elements.figure import WikiFigureParser
+from scrapers.wiki.parsers.elements.infobox import WikiInfoboxParser
 from scrapers.wiki.parsers.elements.list import ListParser
+from scrapers.wiki.parsers.elements.navbox import WikiNavboxParser
+from scrapers.wiki.parsers.elements.paragraph import WikiParagraphParser
+from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
 from scrapers.wiki.parsers.elements.navbox import NavBoxParser
 from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
-from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
+from scrapers.wiki.parsers.elements.parsers import WikiElementSet
 from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
@@ -34,9 +37,9 @@ class StubElementParser:
         return self.payload
 
 
-def with_overridden_element_parsers(**overrides) -> WikiElementParsers:
+def with_overridden_element_parsers(**overrides) -> WikiElementSet:
     defaults = build_default_wiki_element_parsers()
-    return WikiElementParsers(
+    return WikiElementSet(
         infobox_parser=overrides.get("infobox_parser", defaults.infobox_parser),
         paragraph_parser=overrides.get("paragraph_parser", defaults.paragraph_parser),
         figure_parser=overrides.get("figure_parser", defaults.figure_parser),
@@ -160,7 +163,7 @@ def test_infobox_parser():
     </table>
     """
     soup = make_soup(html)
-    parser = InfoboxParser()
+    parser = WikiInfoboxParser()
     result = parser.parse(soup.find("table"))
     assert result["title"] == "Test Article"
     assert result["rows"]["Born"] == "1985"
@@ -170,7 +173,7 @@ def test_infobox_parser():
 def test_paragraph_parser():
     html = "<p>Hello World</p>"
     soup = make_soup(html)
-    parser = ParagraphParser()
+    parser = WikiParagraphParser()
     result = parser.parse(soup.find("p"))
     assert result["text"] == "Hello World"
 
@@ -183,7 +186,7 @@ def test_figure_parser():
     </figure>
     """
     soup = make_soup(html)
-    parser = FigureParser()
+    parser = WikiFigureParser()
     result = parser.parse(soup.find("figure"))
     assert result["caption"] == "A caption"
     assert result["src"] == "image.jpg"
@@ -388,7 +391,7 @@ def test_navbox_parser():
     </div>
     """
     soup = make_soup(html)
-    parser = NavBoxParser()
+    parser = WikiNavboxParser()
     result = parser.parse(soup.find("div"))
     assert result["title"] == "Navigation"
     assert len(result["links"]) == 2

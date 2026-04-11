@@ -9,7 +9,7 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.liveries.sponsorship.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
-from scrapers.parsers.liveries.team_liveries_section import TeamLiveriesSectionParser
+from scrapers.parsers.team_liveries_section import TeamLiveriesSectionParser
 from scrapers.scraper_wiki import WikiScraper
 
 if TYPE_CHECKING:

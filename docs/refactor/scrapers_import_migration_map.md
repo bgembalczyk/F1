@@ -1,20 +1,20 @@
 # Scrapers import migration map
 
-## Transition period
+## Status
 
-Backward-compatible alias modules are kept to support migration. They emit `DeprecationWarning` on import.
+Migracja importów zakończona. Nie utrzymujemy już aliasowych modułów przejściowych ani instrukcji tymczasowych.
 
-## Old -> new imports
+## Canonical imports
 
-- `scrapers.factory` -> `scrapers.wiring.factory`
-- `scrapers.runtime.factory` -> `scrapers.wiring.runtime.factory`
-- `scrapers.composition_drivers` -> `scrapers.wiring.composition_drivers`
-- `scrapers.composition_seasons` -> `scrapers.wiring.composition_seasons`
-- `scrapers.protocols_wiki` -> `scrapers.contracts.protocols_wiki`
-- `scrapers.protocols` -> `scrapers.contracts.protocols`
-- `scrapers.protocols.data_frame_formatter` -> `scrapers.contracts.protocols.data_frame_formatter`
-- `scrapers.protocols.fieldnames_strategy` -> `scrapers.contracts.protocols.fieldnames_strategy`
-- `scrapers.protocols.has_table_parser` -> `scrapers.contracts.protocols.has_table_parser`
+- `scrapers.wiring.factory`
+- `scrapers.wiring.runtime.factory`
+- `scrapers.wiring.composition_drivers`
+- `scrapers.wiring.composition_seasons`
+- `scrapers.contracts.protocols_wiki`
+- `scrapers.contracts.protocols`
+- `scrapers.contracts.protocols.data_frame_formatter`
+- `scrapers.contracts.protocols.fieldnames_strategy`
+- `scrapers.contracts.protocols.has_table_parser`
 
 ## Layering rule
 

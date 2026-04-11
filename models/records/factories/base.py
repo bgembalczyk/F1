@@ -10,7 +10,6 @@ from typing import TypeVar
 
 from models.field_normalizer import FieldNormalizer
 from models.mappers.field_aliases import apply_field_aliases
-from models.records.factories.compat import create_compat
 from models.records.factories.helpers import normalize_optional_link_or_string
 from models.records.factories.spec import FactorySpec
 
@@ -84,10 +83,6 @@ class BaseRecordFactory(
     @abstractmethod
     def build(self, record: Mapping[str, Any]) -> Any:
         """Build normalized record object from source mapping."""
-
-    def create(self, payload: Mapping[str, Any]) -> Any:
-        """Deprecated compatibility adapter for ``build(record)``."""
-        return create_compat(payload, self.build)
 
     def normalize_field(
         self,
