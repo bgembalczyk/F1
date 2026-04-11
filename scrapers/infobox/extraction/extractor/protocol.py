@@ -29,4 +29,4 @@ class InfoboxExtractorProtocol(Protocol, Generic[ParserInputT]):
     ) -> InfoboxExtractionResult: ...
 
 
-InfoboxExtractionStrategy = InfoboxExtractorProtocol
+__all__ = ["InfoboxExtractorProtocol"]

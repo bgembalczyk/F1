@@ -4,10 +4,9 @@ from typing import TYPE_CHECKING
 
 from bs4 import BeautifulSoup
 
-from scrapers.infobox.extraction.extractor import InfoboxExtractorProtocol
-from scrapers.infobox.extraction.extractor.circuit_extractor import CircuitInfoboxExtractor
-from scrapers.infobox.extraction.service.strategy import StrategyBackedInfoboxOrchestrator
-
+from scrapers.infobox.extraction.extractor import CircuitInfoboxExtractor
+from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractorProtocol
+from scrapers.infobox.extraction.service import StrategyBackedInfoboxOrchestrator
 
 if TYPE_CHECKING:
     from scrapers.options import ScraperOptions

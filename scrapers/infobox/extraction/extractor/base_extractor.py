@@ -93,4 +93,4 @@ class BaseInfoboxExtractor:
         )
 
 
-DefaultInfoboxExtractor = BaseInfoboxExtractor
+__all__ = ["BaseInfoboxExtractor"]

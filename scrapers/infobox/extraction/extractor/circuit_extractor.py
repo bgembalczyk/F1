@@ -30,4 +30,4 @@ class CircuitInfoboxExtractor(InfoboxExtractorProtocol[BeautifulSoup]):
         )
 
 
-CircuitInfoboxExtractionStrategy = CircuitInfoboxExtractor
+__all__ = ["CircuitInfoboxExtractor"]
