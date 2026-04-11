@@ -18,7 +18,6 @@ from scrapers.parsers.wiki.paragraph import WikiParagraphParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
-from scrapers.parsers.wiki.list import ListElementParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 from scrapers.parsers.wiki.table import WikiTableParser
 
