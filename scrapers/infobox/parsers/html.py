@@ -6,7 +6,7 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
-from scrapers.wiki.parsers.elements.infobox import InfoboxParser
+from scrapers.parsers.wiki.infobox import InfoboxParser
 
 
 class InfoboxHtmlParser(InfoboxParser):

@@ -3,13 +3,13 @@ from typing import Any
 
 from models.records.link import LinkRecord
 from models.services.helpers import prune_empty
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.helpers.parsing import parse_int_from_text
-from scrapers.base.helpers.parsing import parse_number_with_unit
-from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.base.helpers.text_normalization import split_delimited_text
-from scrapers.base.helpers.time import parse_date_text
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
+from models.services.helpers import split_delimited_text
+from scrapers.error_handler import ErrorHandler
+from scrapers.helpers.parsing import parse_int_from_text
+from scrapers.helpers.parsing import parse_number_with_unit
+from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.helpers.time import parse_date_text
+from scrapers.helpers.wiki import is_wikipedia_redlink
 
 
 class InfoboxTextUtils:

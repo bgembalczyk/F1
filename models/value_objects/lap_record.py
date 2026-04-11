@@ -4,8 +4,8 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.value_objects.normalized_date import NormalizedDate
-from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
+from models.value_objects.date.normalized import NormalizedDate
+from models.value_objects.normalized_time import NormalizedTime
 
 
 @dataclass

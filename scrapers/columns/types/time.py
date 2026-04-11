@@ -2,11 +2,11 @@
 from typing import Any
 
 from models.value_objects.normalized_time import NormalizedTime
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constants import RE_COLON
 from scrapers.columns.helpers.constants import RE_MINSEC
 from scrapers.columns.helpers.constants import RE_SECONDS
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
 from scrapers.helpers.time import parse_time_seconds_from_text
 
 
