@@ -9,7 +9,7 @@ from typing import Any
 from scrapers.parsers.section.base import BaseSectionParser
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.roles import SectionParser
+from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.section.serializer import build_section_parse_result
 

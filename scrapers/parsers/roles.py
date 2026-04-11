@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import warnings
 from abc import ABC
+from abc import abstractmethod
 from typing import Any
+from typing import Generic
 from typing import Protocol
-from typing import TypeAlias
 from typing import TypeVar
 from typing import runtime_checkable
 
@@ -22,21 +23,25 @@ BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
 SectionResultT_co = TypeVar("SectionResultT_co", covariant=True)
 
 
-@runtime_checkable
-class HtmlElementParser(Protocol[ParsedDataT_co]):
-    """Parser pojedynczego elementu HTML (Tag -> ParsedData)."""
+class HtmlElementParserABC(Parser[Tag, ParsedDataT_co], ABC, Generic[ParsedDataT_co]):
+    """Runtime contract for single HTML element parsers (Tag -> parsed payload)."""
 
-    def parse(self, element: Tag) -> ParsedDataT_co: ...
-
-
-SectionParserBase: TypeAlias = Parser[BeautifulSoup, SectionParseResult]
+    @abstractmethod
+    def parse(self, raw: Tag) -> ParsedDataT_co: ...
 
 
-@runtime_checkable
-class SectionParserProtocol(Protocol[SectionResultT_co]):
-    """Typing-only parser contract for section fragments."""
+class SectionParserABC(Parser[BeautifulSoup, SectionParseResult], ABC):
+    """Runtime contract for section parsers (BeautifulSoup -> SectionParseResult)."""
 
-    def parse(self, fragment: Any) -> SectionResultT_co: ...
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
+
+
+class TableDomainMapperABC(Parser[dict[str, Any], dict[str, Any] | None], ABC):
+    """Runtime contract for table-fragment domain mappers."""
+
+    @abstractmethod
+    def parse(self, raw: dict[str, Any]) -> dict[str, Any] | None: ...
 
 
 @runtime_checkable
@@ -67,17 +72,25 @@ class ParsingBundleProvider(Protocol[BundleT_co]):
 def __getattr__(name: str) -> Any:
     if name == "SectionParser":
         warnings.warn(
-            "roles.SectionParser is deprecated; use roles.SectionParserProtocol.",
+            "roles.SectionParser is deprecated; use roles.SectionParserABC.",
             DeprecationWarning,
             stacklevel=2,
         )
-        return SectionParserProtocol
+        return SectionParserABC
+    if name == "HtmlElementParser":
+        warnings.warn(
+            "roles.HtmlElementParser is deprecated; use roles.HtmlElementParserABC.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return HtmlElementParserABC
     raise AttributeError(name)
 
 
 __all__ = [
-    "HtmlElementParser",
-    "SectionParserProtocol",
+    "HtmlElementParserABC",
+    "SectionParserABC",
+    "TableDomainMapperABC",
     "RowMapper",
     "TableMapper",
     "ParsingBundleProvider",

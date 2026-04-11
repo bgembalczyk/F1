@@ -1,18 +1,10 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-from typing import Any
-from typing import Protocol
-from typing import runtime_checkable
-
-if TYPE_CHECKING:
-    from scrapers.parsers.input_types import WikiDictFragmentInput
+from scrapers.parsers.roles import TableDomainMapperABC
 
 
-@runtime_checkable
-class TableFragmentParserProtocol(Protocol):
-    """Typing-only kontrakt parsera fragmentu tabeli."""
+TableFragmentParserABC = TableDomainMapperABC
+TableParserABC = TableFragmentParserABC
 
-    def parse(self, fragment: WikiDictFragmentInput) -> dict[str, Any] | None: ...
 
-__all__ = ["TableFragmentParserProtocol"]
+__all__ = ["TableFragmentParserABC", "TableParserABC"]

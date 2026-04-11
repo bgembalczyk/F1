@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from scrapers.parsers.section.wiki.assembler import SectionAssembler
 from scrapers.parsers.section.wiki.locator import SectionLocator
-from scrapers.parsers.wiki.domain_mapper import DomainMapper
+from scrapers.parsers.wiki.domain_mapper import DomainMapperABC
 from scrapers.parsers.wiki.domain_mapper import build_default_domain_mapper
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
@@ -24,7 +24,7 @@ class SectionParserToolbox:
     element_registry: ElementRegistry
     section_locator: SectionLocator
     section_assembler: SectionAssembler
-    domain_mapper: DomainMapper
+    domain_mapper: DomainMapperABC
 
 
 def build_default_section_toolbox() -> SectionParserToolbox:

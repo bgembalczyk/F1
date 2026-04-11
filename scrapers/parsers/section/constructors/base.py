@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.base import BaseSectionParser
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.parsers.wiki.table import WikiTableParser
