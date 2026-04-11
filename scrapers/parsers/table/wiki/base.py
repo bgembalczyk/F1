@@ -25,6 +25,9 @@ class WikiTableBaseParser(
     def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         return self.parse_fragment(fragment)
 
+    def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+        return self.parse_fragment(fragment)
+
     def parse_fragment(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         headers = fragment.get("headers", [])
         if not isinstance(headers, list) or not self.matches(headers, fragment):

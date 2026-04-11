@@ -60,11 +60,11 @@ WikiParser[InputT, OutputT]
 WikiTableBaseParser   [DOMAIN MAPPER – wejście: dict, nie Tag]
   ├── DriverOrderedTableParser  (scrapers/parsers/table/base_ordered.py)
   │   └── DriversListTableParser
-  ├── MappedWikiTableParser
-  │   ├── StandingsTableParser
-  │   ├── RaceResultsTableParser
-  │   ├── LapRecordsWikiTableParser
-  │   └── CircuitsListTableParser
+  ├── MappedWikiTableMapper
+  │   ├── StandingsTableMapper
+  │   ├── RaceResultsTableMapper
+  │   ├── LapRecordsWikiTableMapper
+  │   └── CircuitsListTableMapper
   └── ... (inne parsery tabel domenowych)
 
 SectionParser [Protocol – BeautifulSoup → SectionParseResult]
@@ -104,10 +104,22 @@ Dlatego parsery w `scrapers/parsers/section/` dobierają zestaw parserów elemen
 
 ## Konwencje nazewnicze
 
+Twarde reguły:
+
+- parser HTML/tekst musi udostępniać publiczne `parse(input) -> output`,
+- mapper domenowy używa suffixu `*Mapper` i publicznego `map(...)`,
+- etap pipeline używa suffixu `*Stage` lub `*Processor` i publicznego `run(...)`.
+
+### do not use Parser suffix unless parse() is public entrypoint
+
+Suffix `Parser` jest zarezerwowany wyłącznie dla klas, których publicznym entrypointem
+jest `parse(...)`. Jeśli klasa mapuje dane domenowe po parsowaniu HTML, stosuj `*Mapper`.
+Jeśli klasa jest etapem orkiestracji pipeline, stosuj `*Stage`/`*Processor` z `run(...)`.
+
 | Suffix klasy | Wejście | Wyjście | Klasa bazowa |
 |---|---|---|---|
 | `*TableParser` (HTML) | `Tag` (`<table>`) | `dict` | `WikiTableHtmlParser` |
-| `*TableParser` (domain) | `dict` | `dict` | `WikiTableBaseParser` |
+| `*TableMapper` (domain) | `dict` | `dict` | `WikiTableBaseParser` |
 | `*ListParser` | `Tag` (`<ul>`/`<ol>`) | `dict` | `ListParser` / `WikiListParser` |
 | `*SectionParser` | `BeautifulSoup` | `SectionParseResult` | `SectionParser` (Protocol) |
 | `*SectionParser` (nested) | `Tag` | `dict` | `NestedWikiSectionParser` |

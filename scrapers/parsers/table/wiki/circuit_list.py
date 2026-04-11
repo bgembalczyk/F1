@@ -17,11 +17,11 @@ from scrapers.columns.types.multi.last_length_used import LastLengthUsedColumn
 from scrapers.columns.types.multi.name_status_column import CircuitNameStatusColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.skip import SkipColumn
-from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableParser
+from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableMapper
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
-class CircuitsListTableParser(MappedWikiTableParser):
+class CircuitsListTableMapper(MappedWikiTableMapper):
     """Specialized wikitable parser for the circuits list table."""
 
     table_type = "circuits_list"
