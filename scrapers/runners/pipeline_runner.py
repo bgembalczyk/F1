@@ -16,6 +16,7 @@ if TYPE_CHECKING:
 from bs4 import BeautifulSoup
 
 from models.mappers.serialization import to_dict_list
+from scrapers.errors import normalize_pipeline_error
 from validation.validator_base import ExportRecord
 
 RawRecord: TypeAlias = dict[str, Any]
