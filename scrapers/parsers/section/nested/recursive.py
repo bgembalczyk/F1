@@ -39,13 +39,15 @@ class RecursiveSectionParser(WikiElementParsingMixin, WikiParser):
 
     def parse(
         self,
-        element: Tag,
+        element: Tag | list[Tag],
         *,
         context: SectionExtractionContext | None = None,
     ) -> dict[str, Any]:
-        return self.parse_group(list(element.children), context=context)
+        if isinstance(element, Tag):
+            return self._parse_group(list(element.children), context=context)
+        return self._parse_group(element, context=context)
 
-    def parse_group(
+    def _parse_group(
         self,
         elements: list,
         *,
@@ -68,7 +70,7 @@ class RecursiveSectionParser(WikiElementParsingMixin, WikiParser):
                 section_id=section_id,
             )
             fragment = (
-                self.child_parser.parse_group(part.elements, context=child_context)
+                self.child_parser.parse(part.elements, context=child_context)
                 if self.child_parser is not None
                 else {
                     "elements": self.parse_elements(

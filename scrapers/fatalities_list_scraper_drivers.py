@@ -71,16 +71,16 @@ class DetailByDriverSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = ArticleTablesParser(
-            specialized_parsers=[FatalitiesTableParser()],
+            specialized_mappers=[FatalitiesTableParser()],
         )
 
-    def parse_group(
+    def _parse_group(
         self,
         elements: list,
         *,
         context=None,
     ) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+        parsed = super()._parse_group(elements, context=context)
         tags = [element for element in elements if isinstance(element, Tag)]
         section_fragment = BeautifulSoup("", "html.parser")
         for tag in tags:

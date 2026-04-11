@@ -1,7 +1,6 @@
 from typing import Any
 
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_regulation import EngineRegulationTableParser
 
@@ -11,8 +10,8 @@ class EngineRegulationSubSectionParser(SubSectionParser):
         super().__init__()
         self._table_parser = EngineRegulationTableParser()
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         self._apply_engine_regulation_table_parser(parsed)
         return parsed
 

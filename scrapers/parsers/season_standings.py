@@ -4,9 +4,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.columns.types.constructor.constructor import ConstructorColumn
 from scrapers.columns.types.driver import DriverColumn
-from scrapers.parsers.seasons.constants import MERGED_ENTRY_BASE_KEYS
-from scrapers.parsers.seasons.constants import ROUND_LEVEL_RESULT_ATTRIBUTES
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import MERGED_ENTRY_BASE_KEYS
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import ROUND_LEVEL_RESULT_ATTRIBUTES
+from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 from scrapers.parsers.wiki.base import WikiSectionParser
 
 
@@ -275,4 +275,3 @@ class SeasonStandingsService(WikiSectionParser):
                 SeasonStandingsService._remove_round_level_attributes(round_data)
 
 
-__all__ = ["SeasonStandingsService"]

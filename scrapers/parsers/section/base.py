@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from abc import ABC
+from abc import abstractmethod
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -8,16 +10,26 @@ if TYPE_CHECKING:
     from scrapers.section.parse_results import SectionParseResult
 
 
-class BaseSectionParser:
+class BaseSectionParser(ABC):
     """Canonical runtime base class for section parsers."""
 
+    @abstractmethod
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        """Parse section by delegating to ``parse_group`` when available."""
-        parse_group = getattr(self, "parse_group", None)
-        if callable(parse_group):
-            return parse_group(list(section_fragment.children))
-        msg = f"{self.__class__.__name__} must define parse() or parse_group()."
-        raise NotImplementedError(msg)
+        """Public entrypoint parsera sekcji."""
+
+    def _parse_group(self, *args: object, **kwargs: object) -> object:
+        """Wewnętrzny helper dla parserów opartych o grupowanie elementów."""
+
+        _ = args
+        _ = kwargs
+        raise NotImplementedError
+
+    def _parse_children(self, *args: object, **kwargs: object) -> object:
+        """Wewnętrzny helper dla parserów opartych o iterację po dzieciach."""
+
+        _ = args
+        _ = kwargs
+        raise NotImplementedError
 
 
 __all__ = ["BaseSectionParser"]

@@ -1,14 +1,14 @@
 from collections.abc import Mapping
 from typing import Any
 
-from scrapers.parsers.roles import RowMapper
-from scrapers.parsers.roles import TableMapper
+from scrapers.parsers.roles import GroupParsingMixin
+from scrapers.parsers.roles import RowMappingMixin
 from scrapers.records.inputs.table_record import TableRecordInput
 
 
 class TableRecordMapper(
-    RowMapper[TableRecordInput | Mapping[str, Any], dict[str, Any]],
-    TableMapper[list[Mapping[str, Any]], dict[str, Any]],
+    RowMappingMixin[TableRecordInput | Mapping[str, Any], dict[str, Any]],
+    GroupParsingMixin[list[Mapping[str, Any]], dict[str, Any]],
 ):
     """Maps table rows to normalized dictionaries.
 

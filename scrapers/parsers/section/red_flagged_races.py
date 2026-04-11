@@ -18,10 +18,10 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
         self._table_parser = NonChampionshipsRacesTableParser()
         self._fallback_element_parser = SubSubSubSectionParser()
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         if not self._contains_table_elements(parsed):
-            parsed["elements"] = self._fallback_element_parser.parse_group(
+            parsed["elements"] = self._fallback_element_parser.parse(
                 elements,
                 context=context,
             ).get("elements", [])
@@ -58,7 +58,7 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
                 if id(table) in seen_table_ids:
                     continue
                 seen_table_ids.add(id(table))
-                parsed = self._fallback_element_parser.parse_group([table]).get(
+                parsed = self._fallback_element_parser.parse([table]).get(
                     "elements",
                     [],
                 )
@@ -103,8 +103,8 @@ class RedFlaggedRacesSectionParser(NestedWikiSectionParser):
         self.child_parser = NonChampionshipsRacesSubSectionParser()
         self._world_championship_table_parser = WorldChampionshipsRacesTableParser()
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         self._world_championship_table_parser.apply_to_payload(parsed)
         return parsed
 

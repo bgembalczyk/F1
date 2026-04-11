@@ -65,7 +65,7 @@ class ContentTextParser(WikiParser):
                 section_name=part.section_label,
                 section_id=section_id,
             )
-            fragment = self.section_parser.parse_group(part.elements, context=context)
+            fragment = self.section_parser.parse(part.elements, context=context)
             sections.append(
                 self.toolbox.section_assembler.assemble(
                     section_name=part.section_label,

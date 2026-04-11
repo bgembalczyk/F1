@@ -3,8 +3,8 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.columns.types.driver import DriverColumn
-from scrapers.parsers.seasons.table import SeasonTableParser
-from scrapers.parsers.seasons.base import BaseSeasonParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
 
 
 class JimClarkTrophyParser(BaseSeasonParser):

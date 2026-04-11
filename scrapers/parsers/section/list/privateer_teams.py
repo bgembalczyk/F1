@@ -9,6 +9,7 @@ from models.services.season import parse_seasons
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.wiki.element_list import WikiListElementParser
+from scrapers.parsers.wiki.families import WikiListHtmlParserABC
 
 
 class PrivateerTeamsListParser(WikiListElementParser):
@@ -49,9 +50,9 @@ class PrivateerTeamsListParser(WikiListElementParser):
 
 
 class PrivateerTeamsSectionParser(SectionParser):
-    def __init__(self) -> None:
+    def __init__(self, *, list_parser: WikiListHtmlParserABC | None = None) -> None:
         super().__init__()
-        self._list_parser = PrivateerTeamsListParser()
+        self._list_parser = list_parser or PrivateerTeamsListParser()
 
     def parse(self, element: Tag, *_args: Any, **_kwargs: Any) -> dict[str, Any]:
         if element.name in {"ul", "ol"}:
@@ -60,9 +61,9 @@ class PrivateerTeamsSectionParser(SectionParser):
         list_root = element.find(["ul", "ol"])
         if isinstance(list_root, Tag):
             return self._list_parser.parse(list_root)
-        return self.parse_group(list(element.children), *_args, **_kwargs)
+        return self._parse_group(list(element.children), *_args, **_kwargs)
 
-    def parse_group(
+    def _parse_group(
         self,
         elements: list,
         *_args: Any,

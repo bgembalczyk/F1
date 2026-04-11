@@ -11,14 +11,14 @@ from scrapers.columns.types.url import UrlColumn
 from scrapers.config_table import TableScraperConfig
 from scrapers.helpers.html_utils import find_section_tables
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.seasons.constants import CANCELLED_ROUNDS_TABLE_INDEX
-from scrapers.parsers.seasons.constants import EXPECTED_HEADERS
-from scrapers.parsers.seasons.constants import MIN_TABLES_WITH_CANCELLED
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import CANCELLED_ROUNDS_TABLE_INDEX
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import EXPECTED_HEADERS
+from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import MIN_TABLES_WITH_CANCELLED
+from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.table_parsing_helper import TableParsingHelper
 from scrapers.table_schema_dsl import TableSchemaDSL
-from scrapers.parsers.seasons.base import BaseSeasonParser
+from scrapers.parsers.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
 
 
 class CancelledRoundsParser(BaseSeasonParser):

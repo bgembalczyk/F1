@@ -5,7 +5,6 @@ from bs4 import Tag
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.list_element.engine_manufacturers_list import IndianapolisOnlyListParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_manufacturers_list import (
@@ -18,8 +17,8 @@ class IndianapolisOnlySubSectionParser(SubSectionParser):
         super().__init__()
         self._list_parser = IndianapolisOnlyListParser()
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         self._apply_indianapolis_only_list_parser(parsed)
         return parsed
 
@@ -51,8 +50,8 @@ class EngineManufacturersSectionParser(ApplyForElementsMixin, BaseSectionParser)
         self.child_parser = IndianapolisOnlySubSectionParser()
         self._table_parser = EngineManufacturersTableParser()
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         self._apply_engine_table_parser(parsed)
         return parsed
 

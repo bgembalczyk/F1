@@ -13,13 +13,13 @@ class NestedChildParser(ABC):
     """Kontrakt parsera obsługującego zagnieżdżoną grupę elementów sekcji."""
 
     @abstractmethod
-    def parse_group(
+    def parse(
         self,
         elements: list[Tag],
         *,
         context: SectionExtractionContext | None = None,
     ) -> dict[str, Any]:
-        """Parsuje dzieci sekcji do mapy danych."""
+        """Publiczny entrypoint parsera dzieci sekcji."""
 
 
 __all__ = ["NestedChildParser"]
