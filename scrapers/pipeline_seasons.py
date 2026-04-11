@@ -22,6 +22,7 @@ from scrapers.parsers.seasons.regional_championship import (
 )
 from scrapers.parsers.seasons.results import SeasonResultsParser
 from scrapers.parsers.seasons.scoring_system import SeasonScoringSystemParser
+from scrapers.parsers.seasons.standings import SeasonStandingsService
 from scrapers.parsers.seasons.table import SeasonTableParser
 from scrapers.parsers.seasons.testing_venues import TestingVenuesParser
 from scrapers.parsers.section.protocols.season import SeasonSectionParser
