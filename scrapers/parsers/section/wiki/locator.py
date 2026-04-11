@@ -17,14 +17,18 @@ class LocatedSection:
 class SectionLocator:
     """Wyszukuje sekcje/fragmenty artykułu po poziomie nagłówka."""
 
-    def locate(self, elements: list[Tag], *, heading_class: str) -> list[LocatedSection]:
+    def locate(
+        self, elements: list[Tag], *, heading_class: str
+    ) -> list[LocatedSection]:
         return [
             LocatedSection(
                 section_label=label,
                 heading_anchor=anchor,
                 elements=group_elements,
             )
-            for label, anchor, group_elements in split_into_parts(elements, heading_class)
+            for label, anchor, group_elements in split_into_parts(
+                elements, heading_class
+            )
         ]
 
 

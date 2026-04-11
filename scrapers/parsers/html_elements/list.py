@@ -8,5 +8,7 @@ from scrapers.parsers.text_cleaning import extract_text
 class ListElementParser(BaseHtmlElementParser[ListElementData]):
     def parse(self, element: Tag) -> ListElementData:
         return {
-            "items": [extract_text(li) or "" for li in element.find_all("li", recursive=False)],
+            "items": [
+                extract_text(li) or "" for li in element.find_all("li", recursive=False)
+            ],
         }

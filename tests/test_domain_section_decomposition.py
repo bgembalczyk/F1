@@ -6,8 +6,12 @@ from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.circuits.circuits_sections.events import CircuitEventsSectionParser
-from scrapers.circuits.circuits_sections.lap_records import CircuitLapRecordsSectionParser
-from scrapers.circuits.circuits_sections.layout_history import CircuitLayoutHistorySectionParser
+from scrapers.circuits.circuits_sections.lap_records import (
+    CircuitLapRecordsSectionParser,
+)
+from scrapers.circuits.circuits_sections.layout_history import (
+    CircuitLayoutHistorySectionParser,
+)
 from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
 from scrapers.grands_prix.single_scraper_grands_prix import F1SingleGrandPrixScraper

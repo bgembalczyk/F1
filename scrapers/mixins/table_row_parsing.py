@@ -32,6 +32,7 @@ class TableRowParsingMixin:
 
     @staticmethod
     def _is_repeated_header_row(
-        cleaned_cells: Sequence[str], headers: Sequence[str]
+        cleaned_cells: Sequence[str],
+        headers: Sequence[str],
     ) -> bool:
         return is_repeated_header_row(cleaned_cells, headers)

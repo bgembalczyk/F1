@@ -2,10 +2,18 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import SponsorshipRecordSplitter
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import TeamLiveriesSectionParser
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import TeamLiveriesTableParser
-from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
+from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+    SponsorshipRecordSplitter,
+)
+from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+    TeamLiveriesSectionParser,
+)
+from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+    TeamLiveriesTableParser,
+)
+from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import (
+    F1SponsorshipLiveriesScraper,
+)
 
 SAMPLE_SEASON_YEAR = 2020
 

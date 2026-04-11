@@ -3,8 +3,10 @@ from typing import Any
 from typing import cast
 
 from models.records.event import EventRecord
-from models.records.factories.helpers import normalize_optional_link_list_or_link_or_string
 from models.records.factories.base import BaseRecordFactory
+from models.records.factories.helpers import (
+    normalize_optional_link_list_or_link_or_string,
+)
 from models.records.factories.registry.helpers import register_factory
 
 

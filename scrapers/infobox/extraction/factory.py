@@ -17,6 +17,6 @@ def build_infobox_orchestrator(
     except KeyError as exc:
         available = ", ".join(sorted(ORCHESTRATOR_REGISTRY))
         raise ValueError(
-            f"Unknown infobox domain: {domain!r}. Available: {available}"
+            f"Unknown infobox domain: {domain!r}. Available: {available}",
         ) from exc
     return orchestrator_cls(options=options, **kwargs)

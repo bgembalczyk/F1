@@ -3,7 +3,9 @@
 
 import pytest
 
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.splitters.record import PipelineRecord
+from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.splitters.record import (
+    PipelineRecord,
+)
 
 
 class TestPipelineRecordPostInit:

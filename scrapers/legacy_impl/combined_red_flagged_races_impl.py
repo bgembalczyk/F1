@@ -6,22 +6,26 @@ from bs4 import BeautifulSoup
 
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
+from scrapers.parsers.section.red_flagged_races import (
+    NonChampionshipsRacesSubSectionParser,
+)
 from scrapers.parsers.section.red_flagged_races import RedFlaggedRacesSectionParser
-from scrapers.parsers.table.red_flagged_races import BaseRedFlaggedRacesTableParser
-from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableParser
 from scrapers.parsers.table.red_flagged_races import RESTART_STATUS_MAP
 from scrapers.parsers.table.red_flagged_races import WIKIPEDIA_BASE_URL
+from scrapers.parsers.table.red_flagged_races import BaseRedFlaggedRacesTableParser
+from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableParser
 from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableParser
 from scrapers.parsers.table.red_flagged_races import build_full_url
 from scrapers.parsers.table.red_flagged_races import extract_rich_cell
 from scrapers.parsers.table.red_flagged_races import map_drivers_cell
 from scrapers.parsers.table.red_flagged_races import map_winner_cell
 from scrapers.parsers.table.red_flagged_races import try_int
-from scrapers.parsers.section.red_flagged_races import NonChampionshipsRacesSubSectionParser
 from scrapers.parsers.wiki.body_content import BodyContentParser
 from scrapers.scraper_wiki import WikiScraper
 from scrapers.source_catalog import RED_FLAGGED_RACES
-from scrapers.transformers.record.failed_to_make_restart import FailedToMakeRestartTransformer
+from scrapers.transformers.record.failed_to_make_restart import (
+    FailedToMakeRestartTransformer,
+)
 
 
 class RedFlaggedRacesScraper(WikiScraper):

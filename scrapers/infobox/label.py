@@ -45,7 +45,8 @@ def field_parsers_registry(
     championships_parser = cell_parser.championships_field_parser
 
     registry.register(
-        labels=ACTIVE_YEARS_LABELS, parser=cell_parser.active_years_field_parser
+        labels=ACTIVE_YEARS_LABELS,
+        parser=cell_parser.active_years_field_parser,
     )
     registry.register(labels={"Car number"}, parser=CarNumbersParser())
     registry.register(labels=TEAM_LABELS, parser=cell_parser.teams_field_parser)
@@ -67,20 +68,24 @@ def field_parsers_registry(
         parser=CallableInfoboxFieldParser(NumericParser.parse_float_cell),
     )
     registry.register(
-        labels={"Best finish"}, parser=cell_parser.best_finish_field_parser
+        labels={"Best finish"},
+        parser=cell_parser.best_finish_field_parser,
     )
     registry.register(
-        labels=RACE_EVENT_LABELS, parser=cell_parser.race_event_field_parser
+        labels=RACE_EVENT_LABELS,
+        parser=cell_parser.race_event_field_parser,
     )
     registry.register(
         labels={"Finished last season"},
         parser=cell_parser.finished_last_season_field_parser,
     )
     registry.register(
-        labels={"Racing licence"}, parser=cell_parser.racing_licence_field_parser
+        labels={"Racing licence"},
+        parser=cell_parser.racing_licence_field_parser,
     )
     registry.register(
-        labels={"Nationality"}, parser=cell_parser.nationality_field_parser
+        labels={"Nationality"},
+        parser=cell_parser.nationality_field_parser,
     )
     return registry
 

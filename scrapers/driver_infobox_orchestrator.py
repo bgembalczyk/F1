@@ -8,6 +8,10 @@ from bs4 import Tag
 from scrapers.infobox.extraction.extractor.table.first import FirstInfoboxTableExtractor
 from scrapers.infobox.extraction.service.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.infobox.infobox.driver import DriverInfoboxParser
+from scrapers.infobox.extraction.service.base_infobox_orchestrator import (
+    BaseInfoboxOrchestrator,
+)
+from scrapers.infobox.parsers.driver import DriverInfoboxParser
 from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 

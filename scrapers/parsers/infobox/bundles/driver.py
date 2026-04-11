@@ -1,5 +1,10 @@
 from dataclasses import dataclass
 
+from scrapers.infobox.parsers.drivers.career import InfoboxCareerParser
+from scrapers.infobox.parsers.drivers.cell import InfoboxCellParser
+from scrapers.infobox.parsers.drivers.general import InfoboxGeneralParser
+from scrapers.infobox.parsers.drivers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.parsers.drivers.title import InfoboxTitlesParser
 from scrapers.infobox.infobox.drivers.career import InfoboxCareerParser
 from scrapers.infobox.infobox.drivers.cell import InfoboxCellParser
 from scrapers.infobox.infobox.drivers.general import InfoboxGeneralParser
@@ -7,6 +12,7 @@ from scrapers.infobox.infobox.drivers.link_extractor import InfoboxLinkExtractor
 from scrapers.infobox.infobox.drivers.title import InfoboxTitlesParser
 from scrapers.parsers.roles import ParserBundle
 from scrapers.infobox.section_discovery import InfoboxSectionDiscovery
+from scrapers.parsers.roles import ParserBundle
 
 
 @dataclass(frozen=True)

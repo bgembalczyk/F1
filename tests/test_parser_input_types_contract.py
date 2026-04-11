@@ -30,11 +30,11 @@ class _ContractSectionParser(SectionTableParserBase):
 
 def test_official_parser_input_type_mapping_contract() -> None:
     assert set(INPUT_TYPE_MAP) == {"tag", "soup", "dict_fragment"}
-    assert INPUT_TYPE_TO_CANONICAL == {
+    assert {
         "tag": "soup",
         "soup": "soup",
         "dict_fragment": "dict_fragment",
-    }
+    } == INPUT_TYPE_TO_CANONICAL
 
 
 def test_parser_input_adapters_map_between_tag_soup_and_dict_fragment() -> None:

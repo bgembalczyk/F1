@@ -1,6 +1,4 @@
-from typing import TYPE_CHECKING
 from typing import Any
-from typing import Optional
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -13,8 +11,12 @@ from scrapers.helpers.constants import season_headers
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.paren_classifier import ParenClassifier
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import BroaderScopeSplitter
-from scrapers.parsers.liveries.sponsorship.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import (
+    BroaderScopeSplitter,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.facade import (
+    SponsorshipRecordSplitter,
+)
 from scrapers.parsers.table.sponsorship import SponsorshipTableParser
 from scrapers.parsers.wiki.base import WikiSectionParser
 from scrapers.pipeline_table import TablePipeline

@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import TYPE_CHECKING
 
 from scrapers.logging import RunTraceWriter
 from scrapers.run_config import RunConfig

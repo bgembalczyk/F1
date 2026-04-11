@@ -4,11 +4,16 @@ from dataclasses import dataclass
 
 from scrapers.infobox.extraction import InfoboxExtractionService
 from scrapers.infobox.extraction.service import ConstructorInfoboxOrchestrator
-from scrapers.infobox.extraction.service.constructor import ConstructorInfoboxExtractionService
 from scrapers.options import ScraperOptions
-from scrapers.services.section.extraction.constructor import ConstructorSectionExtractionService
-from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
-from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
+from scrapers.services.section.extraction.constructor import (
+    ConstructorSectionExtractionService,
+)
+from scrapers.services.section.factories.configurable import (
+    ConfigurableSectionServiceFactory,
+)
+from scrapers.services.section.factories.section_service_factory import (
+    SectionServiceFactory,
+)
 
 
 @dataclass(frozen=True, slots=True)

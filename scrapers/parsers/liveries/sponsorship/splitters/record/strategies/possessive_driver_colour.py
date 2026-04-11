@@ -1,10 +1,18 @@
 from typing import Any
 
 from scrapers.helpers.constants import COLOUR_KEYS
-from scrapers.parsers.liveries.sponsorship.scope.handlers.colour import ColourScopeHandler
-from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
-from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_rule import SplitRule
-from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_possesive_color import HasPossessiveColoursRule
+from scrapers.parsers.liveries.sponsorship.scope.handlers.colour import (
+    ColourScopeHandler,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_rule import (
+    SplitRule,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_possesive_color import (
+    HasPossessiveColoursRule,
+)
 
 
 class PossessiveDriverColourSplitStrategy:

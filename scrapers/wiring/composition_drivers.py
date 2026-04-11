@@ -7,8 +7,12 @@ from scrapers.infobox.extraction.service import DriverInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.services.domain_record.driver import DriverDomainRecordService
 from scrapers.services.section.extraction.driver import DriverSectionExtractionService
-from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
-from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
+from scrapers.services.section.factories.configurable import (
+    ConfigurableSectionServiceFactory,
+)
+from scrapers.services.section.factories.section_service_factory import (
+    SectionServiceFactory,
+)
 
 
 @dataclass(frozen=True, slots=True)

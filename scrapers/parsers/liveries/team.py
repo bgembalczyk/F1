@@ -5,8 +5,8 @@ from typing import Any
 
 from scrapers.paren_classifier import ParenClassifier
 from scrapers.parsers.section.sponsorship import SponsorshipSectionParser
-from scrapers.parsers.wiki.base import WikiSectionParser
 from scrapers.parsers.table.team_liveries import TeamLiveriesTableParser
+from scrapers.parsers.wiki.base import WikiSectionParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

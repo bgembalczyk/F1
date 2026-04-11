@@ -88,7 +88,7 @@ def validate_parser_registry(
             sorted(
                 f"{key.domain}:{key.element_type}:{key.section_id or '-'}"
                 for key in duplicates
-            )
+            ),
         )
         raise ValueError(f"Parser registry conflict for keys: {details}")
 
@@ -117,6 +117,5 @@ def resolve_parser_name(
         if entry.key == key:
             return entry.parser
     raise LookupError(
-        "No parser registration for "
-        f"{domain}:{element_type}:{section_id or '-'}"
+        "No parser registration for " f"{domain}:{element_type}:{section_id or '-'}",
     )

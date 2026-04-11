@@ -40,7 +40,8 @@ class RunDiagnosticsMixin:
         output_dir.mkdir(parents=True, exist_ok=True)
         path = output_dir / f"{stem}.json"
         path.write_text(
-            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
         )
 
     def validate_required(

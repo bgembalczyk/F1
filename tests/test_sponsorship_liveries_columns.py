@@ -4,10 +4,18 @@
 from unittest.mock import MagicMock
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.sponsorship_liveries.columns_sponsorship_liveries.seasons import SponsorshipSeasonsColumn
-from scrapers.sponsorship_liveries.columns_sponsorship_liveries.sponsor import SponsorColumn
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import SponsorshipRecordSplitter
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import SponsorshipSectionParser
+from scrapers.sponsorship_liveries.columns_sponsorship_liveries.seasons import (
+    SponsorshipSeasonsColumn,
+)
+from scrapers.sponsorship_liveries.columns_sponsorship_liveries.sponsor import (
+    SponsorColumn,
+)
+from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+    SponsorshipRecordSplitter,
+)
+from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+    SponsorshipSectionParser,
+)
 
 
 def ctx(
@@ -540,7 +548,9 @@ def test_hallucination_only_matching_values_kept() -> None:
 def test_gemini_classifier_exception_does_not_propagate() -> None:
     """If classifier.classify() raises, the column still sets the season field."""
     from infrastructure.gemini.client import GeminiClient
-    from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.paren_classifier import ParenClassifier
+    from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.paren_classifier import (
+        ParenClassifier,
+    )
 
     mock_client = MagicMock(spec=GeminiClient)
     mock_client.query.side_effect = RuntimeError("network error")

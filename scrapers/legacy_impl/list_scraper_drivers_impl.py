@@ -4,7 +4,9 @@ from scrapers.builders_table import build_columns
 from scrapers.builders_table import build_metric_columns
 from scrapers.builders_table import build_name_status_fragment
 from scrapers.columns.spec import ColumnSpec
-from scrapers.columns.types.multi.name_status_column.driver import DriverNameStatusColumn
+from scrapers.columns.types.multi.name_status_column.driver import (
+    DriverNameStatusColumn,
+)
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.config_table import build_scraper_config
@@ -25,7 +27,9 @@ from scrapers.parsers.section.drivers_list import DriversListSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import DRIVERS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL
-from scrapers.transformers.record.drivers_championships import DriversChampionshipsTransformer
+from scrapers.transformers.record.drivers_championships import (
+    DriversChampionshipsTransformer,
+)
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=build_columns(

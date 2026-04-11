@@ -17,6 +17,9 @@ from scrapers.legacy_impl.combined_red_flagged_races_impl import RedFlaggedRaces
 from scrapers.legacy_impl.engine_manufacturers_list_impl import EngineManufacturersListScraper
 from scrapers.legacy_impl.engine_regulation_impl import EngineRegulationScraper
 from scrapers.legacy_impl.engine_restrictions_impl import EngineRestrictionsScraper
+from scrapers.legacy_impl.list_scraper_drivers_impl import (
+    F1DriversListScraper as DriversListScraper,
+)
 from scrapers.list_scraper_grands_prix import GrandsPrixListScraper
 from scrapers.list_scraper_tyres import TyreManufacturersScraper
 from scrapers.points_scraper import PointsScraper

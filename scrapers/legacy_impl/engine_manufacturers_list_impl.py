@@ -11,9 +11,13 @@ from scrapers.builders_table import build_entity_metadata_columns
 from scrapers.builders_table import build_name_status_fragment
 from scrapers.columns.factory import FloatColumn
 from scrapers.columns.types.links_list import LinksListColumn
-from scrapers.columns.types.multi.name_status_column.engine_manufacturer import EngineManufacturerNameStatusColumn
+from scrapers.columns.types.multi.name_status_column.engine_manufacturer import (
+    EngineManufacturerNameStatusColumn,
+)
 from scrapers.config_table import build_scraper_config
-from scrapers.parsers.section.engine_manufacturers_list import EngineManufacturersSectionParser
+from scrapers.parsers.section.engine_manufacturers_list import (
+    EngineManufacturersSectionParser,
+)
 from scrapers.scraper_table import F1TableScraper
 from scrapers.section.selection_strategy import WikipediaSectionByIdSelectionStrategy
 from scrapers.source_catalog import ENGINES_LIST

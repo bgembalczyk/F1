@@ -16,6 +16,4 @@ def default_scraper_creation_adapters(
     *,
     mapper: RunConfigOptionsMapper,
 ) -> tuple[ScraperCreationAdapter, ...]:
-    return (
-        OptionsScraperAdapter(mapper),
-    )
+    return (OptionsScraperAdapter(mapper),)

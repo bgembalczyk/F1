@@ -7,6 +7,6 @@ warnings.warn(
     stacklevel=2,
 )
 
-from scrapers.parsers.table.base_ordered import DriverOrderedTableParser  # noqa: E402, F401
+from scrapers.parsers.table.base_ordered import DriverOrderedTableParser
 
 __all__ = ["DriverOrderedTableParser"]

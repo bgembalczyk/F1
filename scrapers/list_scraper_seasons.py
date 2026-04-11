@@ -2,8 +2,8 @@
 
 import warnings
 
-from scrapers.legacy_impl.list_scraper_seasons_impl import SeasonsListScraper
 from scrapers.legacy_impl.list_scraper_seasons_impl import TABLE_SCHEMA
+from scrapers.legacy_impl.list_scraper_seasons_impl import SeasonsListScraper
 from scrapers.parsers.section.seasons_list import SeasonsSectionParser
 from scrapers.parsers.table.seasons_list import SeasonsTableParser
 

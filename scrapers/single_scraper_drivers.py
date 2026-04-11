@@ -5,15 +5,20 @@ import warnings
 from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
-from scrapers.services.domain_record.driver_pipeline_service import DriverDomainRecordInput
+from scrapers.services.domain_record.driver_pipeline_service import (
+    DriverDomainRecordInput,
+)
 from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.wiring.composition_drivers import DriverScraperCompositionFactory
 from scrapers.wiring.composition_drivers import DriverScraperDependencies
 
-warnings.warn("single_scraper_drivers is deprecated; use scrapers.drivers_detail_scraper.", DeprecationWarning, stacklevel=2)
+warnings.warn(
+    "single_scraper_drivers is deprecated; use scrapers.drivers_detail_scraper.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 from typing import TYPE_CHECKING
-
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

@@ -2,7 +2,9 @@ import re
 from typing import Any
 
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.liveries.sponsorship.scope.accumulators.grand_prix import GrandPrixScopeAccumulator
+from scrapers.parsers.liveries.sponsorship.scope.accumulators.grand_prix import (
+    GrandPrixScopeAccumulator,
+)
 from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 

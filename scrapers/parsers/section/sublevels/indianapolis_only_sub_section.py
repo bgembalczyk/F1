@@ -2,7 +2,9 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.list.indianapolis_constructors import IndianapolisConstructorsListParser
+from scrapers.parsers.list.indianapolis_constructors import (
+    IndianapolisConstructorsListParser,
+)
 from scrapers.parsers.section.sublevels.sub_section import SubSectionParser
 
 
