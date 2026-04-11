@@ -1,19 +1,30 @@
 from typing import Any
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.base.options import ScraperOptions
-from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
-from scrapers.base.table.columns import types as col
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.drivers import constants_drivers
-from scrapers.drivers.drivers_columns.entries_starts import EntriesStartsColumn
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.entries_starts import EntriesStartsColumn
+from scrapers.columns.types.links_list import LinksListColumn
+from scrapers.columns.types.points import PointsColumn
+from scrapers.columns.types.seasons import SeasonsColumn
+from scrapers.columns.types.skip import SkipColumn
+from scrapers.columns.types.url import UrlColumn
+from scrapers.config_table import build_scraper_config
+from scrapers.constants_drivers import FEMALE_DRIVERS_HEADERS
+from scrapers.constants_drivers import FEMALE_DRIVERS_INDEX_HEADER
+from scrapers.constants_drivers import FEMALE_DRIVERS_SECTION_ID
+from scrapers.constants_drivers import FEMALE_DRIVER_ENTRIES_STARTS_HEADER
+from scrapers.constants_drivers import FEMALE_DRIVER_NAME_HEADER
+from scrapers.constants_drivers import FEMALE_DRIVER_POINTS_HEADER
+from scrapers.constants_drivers import FEMALE_DRIVER_SEASONS_HEADER
+from scrapers.constants_drivers import FEMALE_DRIVER_TEAMS_HEADER
+from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.options import ScraperOptions
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.scraper_table import F1TableScraper
+from scrapers.source_catalog import FEMALE_DRIVERS_LIST
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class FemaleDriversTableParser(WikiTableBaseParser):
@@ -22,15 +33,15 @@ class FemaleDriversTableParser(WikiTableBaseParser):
     extra_columns_policy = "ignore"
 
     _column_mapping = {
-        constants.FEMALE_DRIVER_NAME_HEADER: "driver",
-        constants.FEMALE_DRIVER_SEASONS_HEADER: "seasons",
-        constants.FEMALE_DRIVER_TEAMS_HEADER: "teams",
-        constants.FEMALE_DRIVER_ENTRIES_STARTS_HEADER: "entries_starts",
-        constants.FEMALE_DRIVER_POINTS_HEADER: "points",
+        FEMALE_DRIVER_NAME_HEADER: "driver",
+        FEMALE_DRIVER_SEASONS_HEADER: "seasons",
+        FEMALE_DRIVER_TEAMS_HEADER: "teams",
+        FEMALE_DRIVER_ENTRIES_STARTS_HEADER: "entries_starts",
+        FEMALE_DRIVER_POINTS_HEADER: "points",
     }
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        required_headers = set(constants.FEMALE_DRIVERS_HEADERS)
+        required_headers = set(FEMALE_DRIVERS_HEADERS)
         return required_headers.issubset(set(headers))
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
@@ -45,34 +56,34 @@ class FemaleDriversTableParser(WikiTableBaseParser):
         return TableSchemaDSL(
             columns=[
                 ColumnSpec(
-                    constants.FEMALE_DRIVERS_INDEX_HEADER,
+                    FEMALE_DRIVERS_INDEX_HEADER,
                     "_skip",
-                    col.SkipColumn(),
+                    SkipColumn(),
                 ),
                 ColumnSpec(
-                    constants.FEMALE_DRIVER_NAME_HEADER,
+                    FEMALE_DRIVER_NAME_HEADER,
                     "driver",
-                    col.UrlColumn(),
+                    UrlColumn(),
                 ),
                 ColumnSpec(
-                    constants.FEMALE_DRIVER_SEASONS_HEADER,
+                    FEMALE_DRIVER_SEASONS_HEADER,
                     "seasons",
-                    col.SeasonsColumn(),
+                    SeasonsColumn(),
                 ),
                 ColumnSpec(
-                    constants.FEMALE_DRIVER_TEAMS_HEADER,
+                    FEMALE_DRIVER_TEAMS_HEADER,
                     "teams",
-                    col.LinksListColumn(),
+                    LinksListColumn(),
                 ),
                 ColumnSpec(
-                    constants.FEMALE_DRIVER_ENTRIES_STARTS_HEADER,
+                    FEMALE_DRIVER_ENTRIES_STARTS_HEADER,
                     "entries_starts",
                     EntriesStartsColumn(),
                 ),
                 ColumnSpec(
-                    constants.FEMALE_DRIVER_POINTS_HEADER,
+                    FEMALE_DRIVER_POINTS_HEADER,
                     "points",
-                    col.PointsColumn(),
+                    PointsColumn(),
                 ),
             ],
         )
@@ -110,8 +121,8 @@ class FemaleDriversListScraper(F1TableScraper):
 
     CONFIG = build_scraper_config(
         url=FEMALE_DRIVERS_LIST.base_url,
-        section_id=constants.FEMALE_DRIVERS_SECTION_ID,
-        expected_headers=constants.FEMALE_DRIVERS_HEADERS,
+        section_id=FEMALE_DRIVERS_SECTION_ID,
+        expected_headers=FEMALE_DRIVERS_HEADERS,
         schema=FemaleDriversTableParser.build_schema(),
         record_factory=RECORD_FACTORIES.builders("special_driver"),
     )

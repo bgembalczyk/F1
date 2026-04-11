@@ -1,10 +1,10 @@
 from typing import Any
 
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.types.auto import AutoColumn
-from scrapers.columns.types.background_mixin import BackgroundMixin
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
-from scrapers.columns.types.enum_marks import EnumMarksMixin
+from scrapers.columns.types.mixins.background import BackgroundMixin
+from scrapers.columns.types.mixins.enum import EnumMarksMixin
 from scrapers.constants_drivers import MARK_NON_CHAMPIONSHIP_EVENT
 from scrapers.helpers.normalize import normalize_auto_value
 

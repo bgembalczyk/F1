@@ -1,7 +1,7 @@
 from typing import Any
 
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.constants_drivers import MARK_F2_CATEGORY
 from scrapers.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.helpers.date_parsing import parse_formula_category

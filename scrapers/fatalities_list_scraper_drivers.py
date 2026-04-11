@@ -4,27 +4,42 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
-from scrapers.base.helpers.date_parsing import parse_formula_category
-from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.helpers.transformers import append_transformer
-from scrapers.base.options import ScraperOptions
-from scrapers.base.source_catalog import DRIVERS_FATALITIES
-from scrapers.base.table.columns import types as col
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.config import ScraperConfig as TableScraperConfig
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
-from scrapers.drivers import constants_drivers
-from scrapers.drivers.drivers_columns.fatality_date import FatalityDateColumn
-from scrapers.drivers.drivers_columns.fatality_event import FatalityEventColumn
-from scrapers.drivers.drivers_helpers.parsers import DriverOrderedTableParser
+from scrapers.columns.context import ColumnContext
+from scrapers.columns.factory import IntColumn
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.auto import AutoColumn
+from scrapers.columns.types.fatality_date import FatalityDateColumn
+from scrapers.columns.types.fatality_event import FatalityEventColumn
+from scrapers.columns.types.skip import SkipColumn
+from scrapers.columns.types.text import TextColumn
+from scrapers.columns.types.url import UrlColumn
+from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import build_scraper_config
+from scrapers.constants_drivers import FATALITIES_AGE_HEADER
+from scrapers.constants_drivers import FATALITIES_CAR_HEADER
+from scrapers.constants_drivers import FATALITIES_CIRCUIT_HEADER
+from scrapers.constants_drivers import FATALITIES_DATE_HEADER
+from scrapers.constants_drivers import FATALITIES_DRIVER_HEADER
+from scrapers.constants_drivers import FATALITIES_EVENT_HEADER
+from scrapers.constants_drivers import FATALITIES_HEADERS
+from scrapers.constants_drivers import FATALITIES_REF_HEADER
+from scrapers.constants_drivers import FATALITIES_SECTION_ID
+from scrapers.constants_drivers import FATALITIES_SESSION_HEADER
+from scrapers.constants_drivers import MARK_F2_CATEGORY
+from scrapers.constants_drivers import MARK_NON_CHAMPIONSHIP_EVENT
+from scrapers.driver_ordered_table_parser import DriverOrderedTableParser
+from scrapers.helpers.date_parsing import parse_date_with_category_marker
+from scrapers.helpers.date_parsing import parse_formula_category
+from scrapers.helpers.normalize import normalize_auto_value
+from scrapers.helpers.transformers import append_transformer
+from scrapers.options import ScraperOptions
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from scrapers.scraper_table import F1TableScraper
+from scrapers.source_catalog import DRIVERS_FATALITIES
+from scrapers.table_schema_dsl import TableSchemaDSL
+from scrapers.transformers.record.fatalities_car import FatalitiesCarTransformer
 
 
 class FatalitiesTableParser(DriverOrderedTableParser):
@@ -34,16 +49,16 @@ class FatalitiesTableParser(DriverOrderedTableParser):
     missing_columns_policy = "require_core_fatalities_columns"
     extra_columns_policy = "ignore"
 
-    _required_headers = frozenset(constants.FATALITIES_HEADERS)
+    _required_headers = frozenset(FATALITIES_HEADERS)
     _column_mapping = {
-        constants.FATALITIES_DRIVER_HEADER: "driver",
-        constants.FATALITIES_DATE_HEADER: "date",
-        constants.FATALITIES_AGE_HEADER: "age",
-        constants.FATALITIES_EVENT_HEADER: "event",
-        constants.FATALITIES_CIRCUIT_HEADER: "circuit",
-        constants.FATALITIES_CAR_HEADER: "car",
-        constants.FATALITIES_SESSION_HEADER: "session",
-        constants.FATALITIES_REF_HEADER: "ref",
+        FATALITIES_DRIVER_HEADER: "driver",
+        FATALITIES_DATE_HEADER: "date",
+        FATALITIES_AGE_HEADER: "age",
+        FATALITIES_EVENT_HEADER: "event",
+        FATALITIES_CIRCUIT_HEADER: "circuit",
+        FATALITIES_CAR_HEADER: "car",
+        FATALITIES_SESSION_HEADER: "session",
+        FATALITIES_REF_HEADER: "ref",
     }
 
     def matches(self, headers: list[str], _table_data: dict[str, object]) -> bool:
@@ -94,38 +109,38 @@ class F1FatalitiesListScraper(F1TableScraper):
 
     CONFIG = build_scraper_config(
         url=DRIVERS_FATALITIES.url(),
-        section_id=constants.FATALITIES_SECTION_ID,
-        expected_headers=constants.FATALITIES_HEADERS,
+        section_id=FATALITIES_SECTION_ID,
+        expected_headers=FATALITIES_HEADERS,
         schema=TableSchemaDSL(
             columns=[
                 ColumnSpec(
-                    constants.FATALITIES_DRIVER_HEADER,
+                    FATALITIES_DRIVER_HEADER,
                     "driver",
-                    col.UrlColumn(),
+                    UrlColumn(),
                 ),
                 ColumnSpec(
-                    constants.FATALITIES_DATE_HEADER,
+                    FATALITIES_DATE_HEADER,
                     "date",
                     FatalityDateColumn(),
                 ),
-                ColumnSpec(constants.FATALITIES_AGE_HEADER, "age", col.IntColumn()),
+                ColumnSpec(FATALITIES_AGE_HEADER, "age", IntColumn()),
                 ColumnSpec(
-                    constants.FATALITIES_EVENT_HEADER,
+                    FATALITIES_EVENT_HEADER,
                     "event",
                     FatalityEventColumn(),
                 ),
                 ColumnSpec(
-                    constants.FATALITIES_CIRCUIT_HEADER,
+                    FATALITIES_CIRCUIT_HEADER,
                     "circuit",
-                    col.UrlColumn(),
+                    UrlColumn(),
                 ),
-                ColumnSpec(constants.FATALITIES_CAR_HEADER, "car", col.UrlColumn()),
+                ColumnSpec(FATALITIES_CAR_HEADER, "car", UrlColumn()),
                 ColumnSpec(
-                    constants.FATALITIES_SESSION_HEADER,
+                    FATALITIES_SESSION_HEADER,
                     "session",
-                    col.TextColumn(),
+                    TextColumn(),
                 ),
-                ColumnSpec(constants.FATALITIES_REF_HEADER, "ref", col.SkipColumn()),
+                ColumnSpec(FATALITIES_REF_HEADER, "ref", SkipColumn()),
             ],
         ),
         record_factory=RECORD_FACTORIES.builders("fatality"),
@@ -147,15 +162,15 @@ class F1FatalitiesListScraper(F1TableScraper):
     # Kept here for backward compatibility if they are used elsewhere
     @staticmethod
     def _parse_date(ctx: ColumnContext) -> str | None:
-        return parse_date_with_category_marker(ctx, constants.MARK_F2_CATEGORY)
+        return parse_date_with_category_marker(ctx, MARK_F2_CATEGORY)
 
     @staticmethod
     def _parse_formula_category(ctx: ColumnContext) -> str | None:
-        return parse_formula_category(ctx, constants.MARK_F2_CATEGORY)
+        return parse_formula_category(ctx, MARK_F2_CATEGORY)
 
     @staticmethod
     def _parse_event(ctx: ColumnContext) -> Any:
-        championship = constants.MARK_NON_CHAMPIONSHIP_EVENT not in (ctx.raw_text or "")
-        auto_value = col.AutoColumn().parse(ctx)
+        championship = MARK_NON_CHAMPIONSHIP_EVENT not in (ctx.raw_text or "")
+        auto_value = AutoColumn().parse(ctx)
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}

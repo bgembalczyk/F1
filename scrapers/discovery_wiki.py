@@ -8,14 +8,14 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import cast
 
-from scrapers.wiki.component_metadata_wiki import LIST_SCRAPER_KIND
-from scrapers.wiki.component_metadata_wiki import RUNNER_KIND
-from scrapers.wiki.component_metadata_wiki import ComponentMetadata
-from scrapers.wiki.component_metadata_wiki import parse_component_metadata
-from scrapers.wiki.constants_wiki import COMPONENT_METADATA_ATTR
-from scrapers.wiki.protocols_wiki import DiscoveredListScraperClassProtocol
-from scrapers.wiki.protocols_wiki import DiscoveredRunnerClassProtocol
-from scrapers.wiki.protocols_wiki import DiscoveredRunnerProtocol
+from scrapers.component_metadata_wiki import ComponentMetadata
+from scrapers.component_metadata_wiki import LIST_SCRAPER_KIND
+from scrapers.component_metadata_wiki import RUNNER_KIND
+from scrapers.component_metadata_wiki import parse_component_metadata
+from scrapers.constants_wiki import COMPONENT_METADATA_ATTR
+from scrapers.contracts.protocols_wiki import DiscoveredListScraperClassProtocol
+from scrapers.contracts.protocols_wiki import DiscoveredRunnerClassProtocol
+from scrapers.contracts.protocols_wiki import DiscoveredRunnerProtocol
 
 DiscoveredComponentClass = (
     DiscoveredRunnerClassProtocol | DiscoveredListScraperClassProtocol

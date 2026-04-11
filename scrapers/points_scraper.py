@@ -3,22 +3,22 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.transformers import PointsScoringSystemsHistoryTransformer
+from models.records.factories.mapping import MappingRecordFactory
+from scrapers.base_points_scraper import BasePointsScraper
+from scrapers.config_factory_points import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
+from scrapers.config_table import build_scraper_config
+from scrapers.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
+from scrapers.options import ScraperOptions
+from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.parsers_points import PointsScoringSystemsSectionParser
+from scrapers.parsers_points import ShortenedRacesSubSubSectionParser
+from scrapers.parsers_points import SprintRacesSubSubSectionParser
+from scrapers.schemas_points import build_sprint_qualifying_schema
+from scrapers.transformers.record.points_scoring_systems_history import PointsScoringSystemsHistoryTransformer
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.options import ScraperOptions
-from models.records.factories.mapping import MappingRecordFactory
-from scrapers.base.table.config import build_scraper_config
-from scrapers.points.base_points_scraper import BasePointsScraper
-from scrapers.points.config_factory_points import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
-from scrapers.points.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
-from scrapers.points.parsers_points import PointsScoringSystemsSectionParser
-from scrapers.points.parsers_points import ShortenedRacesSubSubSectionParser
-from scrapers.points.parsers_points import SprintRacesSubSubSectionParser
-from scrapers.points.schemas_points import build_sprint_qualifying_schema
-from scrapers.wiki.parsers.body_content import BodyContentParser
 
 
 class _SprintQualifyingPointsScraper(BasePointsScraper):

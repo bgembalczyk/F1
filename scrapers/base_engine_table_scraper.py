@@ -6,9 +6,9 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.table.parser import HtmlTableParser
-from scrapers.base.table.scraper import F1TableScraper
 from scrapers.helpers.text import clean_wiki_text
+from scrapers.parser_table import HtmlTableParser
+from scrapers.scraper_table import F1TableScraper
 
 
 class BaseEngineTableScraper(F1TableScraper, ABC):

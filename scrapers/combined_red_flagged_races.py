@@ -7,19 +7,17 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.helpers.text import strip_marks
-from scrapers.base.helpers.transformers import append_transformer
-from scrapers.base.source_catalog import RED_FLAGGED_RACES
-from scrapers.base.transformers import FailedToMakeRestartTransformer
-from scrapers.wiki.parsers.body_content import BodyContentParser
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
-from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
-from scrapers.wiki.scraper_wiki import WikiScraper
-
-if TYPE_CHECKING:
-    from scrapers.base.options import ScraperOptions
+from scrapers.helpers.text import strip_marks
+from scrapers.helpers.transformers import append_transformer
+from scrapers.options import ScraperOptions
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
+from scrapers.parsers.section.sublevels import SubSubSubSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.scraper_wiki import WikiScraper
+from scrapers.source_catalog import RED_FLAGGED_RACES
+from scrapers.transformers.record.failed_to_make_restart import FailedToMakeRestartTransformer
 
 WIKIPEDIA_BASE_URL = "https://en.wikipedia.org"
 RESTART_STATUS_MAP = {

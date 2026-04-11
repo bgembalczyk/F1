@@ -2,24 +2,24 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from models.validation.engine_regulation import EngineRegulation
 from models.records.factories.mapping import MappingRecordFactory
-from scrapers.base.helpers.multi_level_header_builder import MultiLevelHeaderBuilder
-from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.source_catalog import ENGINE_PROGRESS
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.unit import UnitColumn
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
-from scrapers.engines.columns_engines.configuration import EngineConfigurationColumn
-from scrapers.engines.columns_engines.nested_text import NestedTextColumn
-from scrapers.engines.columns_engines.nested_unit_list import NestedUnitListColumn
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from models.validation.engine.regulation import EngineRegulation
+from scrapers.base_engine_table_scraper import BaseEngineTableScraper
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.configuration import EngineConfigurationColumn
+from scrapers.columns.types.nested_text import NestedTextColumn
+from scrapers.columns.types.nested_unit_list import NestedUnitListColumn
+from scrapers.columns.types.seasons import SeasonsColumn
+from scrapers.columns.types.text import TextColumn
+from scrapers.columns.types.unit import UnitColumn
+from scrapers.config_table import build_scraper_config
+from scrapers.helpers.header import is_repeated_header_row
+from scrapers.multi_level_header_builder import MultiLevelHeaderBuilder
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.source_catalog import ENGINE_PROGRESS
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class EngineRegulationTableParser(WikiTableBaseParser):

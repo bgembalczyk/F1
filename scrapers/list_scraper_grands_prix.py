@@ -2,29 +2,30 @@
 
 import warnings
 
+from scrapers.builders_table import EntityColumnSpec
+from scrapers.builders_table import build_columns
+from scrapers.builders_table import build_entity_metadata_columns
+from scrapers.builders_table import build_name_status_fragment
+from scrapers.columns.factory import IntColumn
+from scrapers.columns.types.links_list import LinksListColumn
+from scrapers.columns.types.multi.name_status_column.race_title_status import RaceTitleStatusColumn
+from scrapers.columns.types.seasons import SeasonsColumn
+from scrapers.config_table import build_scraper_config
+from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.options import ScraperOptions
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.seed_list_scraper_table import SeedListTableScraper
+from scrapers.source_catalog import GRANDS_PRIX_LIST
+from scrapers.table_schema_dsl import TableSchemaDSL
+
 warnings.warn("list_scraper_grands_prix is deprecated; use scrapers.grands_prix_list_scraper.", DeprecationWarning, stacklevel=2)
 
 
 from typing import Any
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.base.options import ScraperOptions
-from scrapers.base.source_catalog import GRANDS_PRIX_LIST
-from scrapers.base.table.builders import EntityColumnSpec
-from scrapers.base.table.builders import build_columns
-from scrapers.base.table.builders import build_entity_metadata_columns
-from scrapers.base.table.builders import build_name_status_fragment
-from scrapers.base.table.columns.types.column_factory import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.seed_list_scraper import SeedListTableScraper
-from scrapers.grands_prix.columns_grands_prix.race_title_status import RaceTitleStatusColumn
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 
 
 class GrandsPrixTableParser(WikiTableBaseParser):

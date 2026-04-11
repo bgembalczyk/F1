@@ -1,19 +1,19 @@
 from typing import Any
 
 from models.records.factories.mapping import MappingRecordFactory
-from scrapers.base.options import ScraperOptions
-from scrapers.base.source_catalog import TYRES
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.config import ScraperConfig as TableScraperConfig
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.tyres.columns_tyes.append_links import AppendLinksColumn
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.append_links import AppendLinksColumn
+from scrapers.columns.types.seasons import SeasonsColumn
+from scrapers.columns.types.skip import SkipColumn
+from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import build_scraper_config
+from scrapers.options import ScraperOptions
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.scraper_table import F1TableScraper
+from scrapers.source_catalog import TYRES
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class TyreManufacturersBySeasonTableParser(WikiTableBaseParser):

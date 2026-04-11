@@ -1,5 +1,5 @@
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.constants_points import ROLE_PATTERN
 from scrapers.helpers.parsing import parse_int_from_text
 

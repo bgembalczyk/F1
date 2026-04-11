@@ -1,13 +1,13 @@
 import re
 from typing import Any
 
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from models.value_objects.unit_value import UnitValue
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.constants.patterns import UNIT_RE
 from scrapers.helpers.parsing import parse_numeric_value
 from scrapers.parsers.helpers import normalize_unit
 from scrapers.parsers.helpers import parse_unit_list
-from scrapers.parsers.unit_value import UnitValue
 
 
 class NestedUnitListColumn(BaseColumn):

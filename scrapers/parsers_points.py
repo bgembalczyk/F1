@@ -4,18 +4,24 @@ import re
 from typing import Any
 
 from models.services.season import parse_seasons
-from scrapers.base.helpers.parsing import parse_int_from_text
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.points import constants_points
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
-from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
+from scrapers.constants_points import HISTORICAL_POSITIONS
+from scrapers.constants_points import POINTS_NOTES_HEADER
+from scrapers.constants_points import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
+from scrapers.constants_points import ROLE_PATTERN
+from scrapers.constants_points import SHORTENED_RACE_EXPECTED_HEADERS
+from scrapers.constants_points import SPRINT_POSITIONS
+from scrapers.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
+from scrapers.helpers.parsing import parse_int_from_text
+from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
+from scrapers.parsers.section.sublevels import SubSubSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
 # Position keys for the points history table (excluding "1st" which is
 # handled separately)
 _HISTORY_POSITION_KEYS_WITH_FASTEST_LAP: frozenset[str] = frozenset(
-    pos.lower() for pos in constants.HISTORICAL_POSITIONS[1:]
+    pos.lower() for pos in HISTORICAL_POSITIONS[1:]
 ) | {"fastest_lap"}
 
 
@@ -57,7 +63,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
         normalized_headers = {self._normalize_header(header) for header in headers}
         return all(
             bool(self._candidate_headers(expected) & normalized_headers)
-            for expected in constants.POINTS_SCORING_HISTORY_EXPECTED_HEADERS
+            for expected in POINTS_SCORING_HISTORY_EXPECTED_HEADERS
         )
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
@@ -68,7 +74,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
                 column_map[header] = "drivers_championship"
             elif normalized in self._candidate_headers("Towards WCC"):
                 column_map[header] = "constructors_championship"
-            elif normalized == self._normalize_header(constants.POINTS_NOTES_HEADER):
+            elif normalized == self._normalize_header(POINTS_NOTES_HEADER):
                 pass  # skip the Notes column
             else:
                 column_map[header] = header.lower().replace(" ", "_")
@@ -99,7 +105,7 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
                 if int_val is None:
                     transformed[key] = None
                 else:
-                    role_match = constants.ROLE_PATTERN.search(text)
+                    role_match = ROLE_PATTERN.search(text)
                     if role_match:
                         role = (
                             "driver"
@@ -122,7 +128,7 @@ SPRINT_DISQUALIFYING_HEADERS: frozenset[str] = frozenset(
 )
 
 SPRINT_POSITION_KEYS: frozenset[str] = frozenset(
-    pos.lower() for pos in constants.SPRINT_POSITIONS
+    pos.lower() for pos in SPRINT_POSITIONS
 )
 
 
@@ -135,7 +141,7 @@ class SprintPointsTableParser(WikiTableBaseParser):
         normalized_headers = {normalize_header(header) for header in headers}
         expected = {
             normalize_header(header)
-            for header in constants.SPRINT_QUALIFYING_EXPECTED_HEADERS
+            for header in SPRINT_QUALIFYING_EXPECTED_HEADERS
         }
         if SPRINT_DISQUALIFYING_HEADERS & normalized_headers:
             return False
@@ -143,7 +149,7 @@ class SprintPointsTableParser(WikiTableBaseParser):
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
         expected_lookup = build_expected_header_lookup(
-            constants.SPRINT_QUALIFYING_EXPECTED_HEADERS,
+            SPRINT_QUALIFYING_EXPECTED_HEADERS,
         )
         return {
             header: expected_lookup.get(
@@ -189,13 +195,13 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
         normalized_headers = {normalize_header(header) for header in headers}
         expected = {
             normalize_header(header)
-            for header in constants.SHORTENED_RACE_EXPECTED_HEADERS
+            for header in SHORTENED_RACE_EXPECTED_HEADERS
         }
         return expected.issubset(normalized_headers)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
         expected_lookup = build_expected_header_lookup(
-            constants.SHORTENED_RACE_EXPECTED_HEADERS,
+            SHORTENED_RACE_EXPECTED_HEADERS,
         )
         return {
             header: expected_lookup.get(

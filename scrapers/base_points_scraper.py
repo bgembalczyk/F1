@@ -1,7 +1,6 @@
 """Base scraper for points scoring systems."""
-
-from scrapers.base.source_catalog import POINTS_SCORING_SYSTEMS
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.scraper_table import F1TableScraper
+from scrapers.source_catalog import POINTS_SCORING_SYSTEMS
 
 
 class BasePointsScraper(F1TableScraper):

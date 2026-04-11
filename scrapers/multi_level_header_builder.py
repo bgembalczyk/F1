@@ -2,7 +2,7 @@
 
 from bs4 import Tag
 
-from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.helpers.text import clean_wiki_text
 
 
 class MultiLevelHeaderBuilder:

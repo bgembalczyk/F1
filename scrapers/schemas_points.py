@@ -1,30 +1,38 @@
-from scrapers.base.table.columns import types as col
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.points import constants_points
+from scrapers.columns.factory import IntColumn
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.auto import AutoColumn
+from scrapers.columns.types.seasons import SeasonsColumn
+from scrapers.columns.types.skip import SkipColumn
+from scrapers.columns.types.text import TextColumn
+from scrapers.constants_points import HISTORICAL_POSITIONS
+from scrapers.constants_points import POINTS_FASTEST_LAP_HEADER
+from scrapers.constants_points import POINTS_NOTES_HEADER
+from scrapers.constants_points import POINTS_RACE_LENGTH_COMPLETED_HEADER
+from scrapers.constants_points import SPRINT_POSITIONS
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 def build_shortened_race_points_schema() -> TableSchemaDSL:
     columns = [
-        ColumnSpec(constants.POINTS_SEASONS_HEADER, "seasons", col.SeasonsColumn()),
+        ColumnSpec(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
         ColumnSpec(
-            constants.POINTS_RACE_LENGTH_COMPLETED_HEADER,
+            POINTS_RACE_LENGTH_COMPLETED_HEADER,
             "race_length_completed",
-            col.TextColumn(),
+            TextColumn(),
         ),
     ]
     columns += [
-        ColumnSpec(position, position.lower(), col.AutoColumn())
-        for position in constants.HISTORICAL_POSITIONS
+        ColumnSpec(position, position.lower(), AutoColumn())
+        for position in HISTORICAL_POSITIONS
     ]
     columns.extend(
         [
             ColumnSpec(
-                constants.POINTS_FASTEST_LAP_HEADER,
+                POINTS_FASTEST_LAP_HEADER,
                 "fastest_lap",
-                col.AutoColumn(),
+                AutoColumn(),
             ),
-            ColumnSpec(constants.POINTS_NOTES_HEADER, "notes", col.SkipColumn()),
+            ColumnSpec(POINTS_NOTES_HEADER, "notes", SkipColumn()),
         ],
     )
     return TableSchemaDSL(columns=columns)
@@ -32,10 +40,10 @@ def build_shortened_race_points_schema() -> TableSchemaDSL:
 
 def build_sprint_qualifying_schema() -> TableSchemaDSL:
     columns = [
-        ColumnSpec(constants.POINTS_SEASONS_HEADER, "seasons", col.SeasonsColumn()),
+        ColumnSpec(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
     ]
     columns += [
-        ColumnSpec(position, position.lower(), col.IntColumn())
-        for position in constants.SPRINT_POSITIONS
+        ColumnSpec(position, position.lower(), IntColumn())
+        for position in SPRINT_POSITIONS
     ]
     return TableSchemaDSL(columns=columns)

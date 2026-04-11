@@ -3,25 +3,25 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from models.validation.engine_restriction import EngineRestriction
+from models.validation.engine.estriction import EngineRestriction
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.base.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.base.source_catalog import ENGINE_REGULATIONS
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.range import RangeColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.unit import UnitColumn
-from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
-from scrapers.engines.columns_engines import EngineRpmLimitColumn
-from scrapers.engines.columns_engines import FuelFlowRateColumn
-from scrapers.engines.columns_engines import FuelInjectionPressureLimitColumn
-from scrapers.engines.columns_engines import FuelLimitPerRaceColumn
-from scrapers.wiki.parsers.elements.wiki_table.base import WikiTableBaseParser
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
+from scrapers.base_engine_table_scraper import BaseEngineTableScraper
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.engine_rpm_limit import EngineRpmLimitColumn
+from scrapers.columns.types.fuel_flow_rate import FuelFlowRateColumn
+from scrapers.columns.types.fuel_injection_pressure_limit import FuelInjectionPressureLimitColumn
+from scrapers.columns.types.fuel_limit_per_race import FuelLimitPerRaceColumn
+from scrapers.columns.types.links_list import LinksListColumn
+from scrapers.columns.types.range import RangeColumn
+from scrapers.columns.types.seasons import SeasonsColumn
+from scrapers.columns.types.unit import UnitColumn
+from scrapers.config_table import build_scraper_config
+from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.sublevels import SubSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.source_catalog import ENGINE_REGULATIONS
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class EngineRestrictionsTableParser(WikiTableBaseParser):
