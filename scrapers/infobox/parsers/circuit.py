@@ -154,3 +154,6 @@ class CircuitInfoboxParser(InfoboxParser):
                     r.decompose()
 
         return soup
+
+
+F1CircuitInfoboxParser = CircuitInfoboxParser

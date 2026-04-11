@@ -42,3 +42,15 @@ class Scraper(ABC, Generic[InputT, OutputT]):
     @abstractmethod
     def run(self, source: InputT) -> OutputT:
         """Run complete orchestration flow for a given source."""
+
+
+class PipelineService(ABC, Generic[InputT, OutputT]):
+    """Contract for domain pipeline services exposing execute/run API."""
+
+    @abstractmethod
+    def execute(self, input_dto: InputT) -> OutputT:
+        """Execute pipeline on typed input DTO."""
+
+    @abstractmethod
+    def run(self, source: InputT) -> OutputT:
+        """Compatibility entrypoint for pipeline execution."""

@@ -3,10 +3,10 @@
 import re
 from typing import Any
 
-from scrapers.base.helpers.constants import MIN_URLS_FOR_PATTERN
-from scrapers.base.helpers.constants import SHORT_YEAR_LEN
-from scrapers.base.helpers.constants import YEAR_EXT_RE
-from scrapers.base.helpers.constants import YEAR_RANGE_RE
+from scrapers.helpers.constants import MIN_URLS_FOR_PATTERN
+from scrapers.helpers.constants import SHORT_YEAR_LEN
+from scrapers.helpers.constants import YEAR_EXT_RE
+from scrapers.helpers.constants import YEAR_RANGE_RE
 
 
 class YearExtractor:

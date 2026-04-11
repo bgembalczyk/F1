@@ -3,7 +3,7 @@
 from typing import Any
 
 from scrapers.transformers.helpers import apply_transformers
-from scrapers.transformers.record_factory import RecordFactoryTransformer
+from scrapers.transformers.record.factory import RecordFactoryTransformer
 
 
 def apply_transformers_with_factory(

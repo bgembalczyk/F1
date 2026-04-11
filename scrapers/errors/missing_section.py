@@ -1,3 +1,8 @@
+from dataclasses import dataclass
+
+from scrapers.errors import DomainParseError
+
+
 @dataclass(frozen=True)
 class MissingSectionError(RuntimeError):
     domain: str
