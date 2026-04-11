@@ -9,7 +9,7 @@ from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.element import WikiElementParsers
 
 
-class WikiElementParserMixin:
+class WikiElementParsingMixin:
     def __init__(
         self,
         *,

@@ -2,11 +2,18 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import sys
 from pathlib import Path
 from typing import Any
 
 SCRAPER_DOMAIN_PARTS = 3
+PARSER_NAMING_SCOPE = (
+    Path("scrapers/infobox/parsers/providers"),
+    Path("scrapers/infobox/parsers/bundles"),
+    Path("scrapers/parsers/mixins"),
+    Path("scrapers/parsers/rules.py"),
+)
 
 
 def load_architecture_rules() -> Any:
@@ -143,6 +150,56 @@ def check_sections_single_scraper_boundary(
     return violations
 
 
+def _is_in_parser_naming_scope(path: Path) -> bool:
+    return any(
+        path == scope or scope in path.parents
+        for scope in PARSER_NAMING_SCOPE
+    )
+
+
+def check_parser_naming_contracts() -> list[str]:
+    violations: list[str] = []
+    parser_protocol_like_bases = {
+        "Protocol",
+        "Parser",
+        "SectionParser",
+        "HtmlElementParser",
+    }
+    for py_file in Path("scrapers").rglob("*.py"):
+        rel_path = py_file
+        if not _is_in_parser_naming_scope(rel_path):
+            continue
+        module = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
+        for node in module.body:
+            if not isinstance(node, ast.ClassDef):
+                continue
+            if not node.name.endswith("Parser"):
+                continue
+            has_parse = any(
+                isinstance(item, ast.FunctionDef) and item.name == "parse"
+                for item in node.body
+            )
+            base_names = {
+                base.id
+                for base in node.bases
+                if isinstance(base, ast.Name)
+            }
+            base_names |= {
+                base.attr
+                for base in node.bases
+                if isinstance(base, ast.Attribute)
+            }
+            implements_parser_contract = bool(base_names & parser_protocol_like_bases)
+            if not has_parse and not implements_parser_contract:
+                violations.append(
+                    "Parser naming violation: "
+                    f"{py_file}:{node.lineno} class {node.name} "
+                    "uses '*Parser' suffix but does not define parse(...) "
+                    "and does not inherit a parser contract.",
+                )
+    return violations
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Fast architecture boundary checks for local lint/CI.",
@@ -179,6 +236,7 @@ def main() -> int:
         *check_layer_boundaries(root, full_domains, rules),
         *check_sections_single_scraper_boundary(root, full_domains, rules),
         *check_cross_domain_imports(root, all_domains, rules),
+        *check_parser_naming_contracts(),
     ]
 
     if errors:
