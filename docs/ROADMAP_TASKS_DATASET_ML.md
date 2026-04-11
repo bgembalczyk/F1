@@ -96,6 +96,9 @@
   parserach GP.
 - [ ] Migrować kolejne parsery domenowe (constructors/circuits) na nowy interfejs sekcyjny.
 
+- [x] Zmigrować parsery z legacy modułów (`list_scraper_drivers`, `list_scraper_seasons`, `engine_*`, `combined_red_flagged_races`) do `scrapers/parsers/{list,section,table}` i zostawić cienkie wrappery delegujące.
+    - Kontekst: parsery tabel/sekcji/list zostały rozdzielone do dedykowanych katalogów, a test architektury blokuje dodawanie nowych parserów w katalogu głównym `scrapers/`.
+
 ## Strumień C — Podział projektu na wcześniej powstałe części (stabilizacja architektury)
 
 - [x] C1. Domknąć mapę odpowiedzialności modułów: `list/` (seed), `sections/` (body), `infobox/` (structured core),
@@ -133,6 +136,7 @@
 
 - [ ] D1. Wspólna baza `Complete*Extractor` dla domenowych extractorów complete (używanych w L0/L1) z kontraktem
   rozszerzeń per domena.
+    - Status po migracji parserów legacy: rozdzielenie parserów do `scrapers/parsers/*` zmniejszyło mieszanie odpowiedzialności i przygotowało grunt pod dalsze wydzielenie wspólnej bazy extractorów.
     - Metryka wejściowa: liczba zduplikowanych bloków logiki w `*complete*extractor*.py` + suma LOC extractorów
       complete (baseline z raportu duplikacji i LOC).
     - Metryka wyjściowa: spadek liczby zduplikowanych bloków o min. 40% oraz spadek LOC w extractorach complete o min.
@@ -163,6 +167,7 @@
     - Skąd bierzemy kolejne punkty startowe: priorytetowe komendy do migracji wyznaczamy z logów użycia CI/dev scripts i
       z kroków uruchamianych przez orchestrator `step_registry`.
 - [ ] D4. Automatyzacja registry factory (auto-discovery parserów/extractorów/strategii zamiast ręcznej rejestracji).
+    - Status po migracji parserów legacy: nowe moduły parserów są już ulokowane w konwencji `scrapers/parsers/{list,section,table}`, co upraszcza przyszłe reguły auto-discovery i walidację architektoniczną.
     - Metryka wejściowa: liczba ręcznych wpisów w registry/factory + liczba incydentów „zapomniano zarejestrować
       komponent”.
     - Metryka wyjściowa: min. 80% wpisów generowanych automatycznie (konwencja + metadane), 0 incydentów brakującej

@@ -20,7 +20,7 @@ class RaceEventParser:
         """
         self._link_extractor = link_extractor
 
-    def parse_race_event(self, cell: Tag) -> list[dict[str, Any]]:
+    def parse(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse race event fields like First race, Last race, First win, Last win.
 
         Returns a list of all links found in the cell.
@@ -41,6 +41,10 @@ class RaceEventParser:
             message=f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}.",
             parser_name=self.__class__.__name__,
         )
+
+    def parse_race_event(self, cell: Tag) -> list[dict[str, Any]]:
+        """Backward-compatible wrapper around :meth:`parse`."""
+        return self.parse(cell)
 
     def _parse_race_event_payload(self, cell: Tag, text: str) -> list[dict[str, Any]]:
         links = self._link_extractor.extract_links(cell)

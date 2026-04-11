@@ -1,5 +1,6 @@
 from abc import ABC
 from abc import abstractmethod
+import warnings
 from typing import Any
 from typing import Generic
 from typing import TypeVar
@@ -8,6 +9,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.domain_roles import Parser
+from scrapers.parsers.input_types import WikiDictFragmentInput
 
 WikiRecord = dict[str, Any]
 WikiRecords = list[WikiRecord]
@@ -21,23 +23,31 @@ class WikiParser(
     ABC,
     Generic[TWikiInput, TWikiOutput],
 ):
-    """Bazowy kontrakt parserów Wikipedii.
+    """Bazowy kontrakt parserów Wikipedii oparty o kanoniczny `Parser`.
 
-    Każdy parser implementuje jednolity entrypoint `parse(...)` i zwraca
-    jawnie typowane dane wyjściowe.
+    Implementacje dostarczają `parse(input) -> output` z jawnie typowanym
+    wejściem i wyjściem.
     """
-
-    @abstractmethod
-    def parse(self, element: TWikiInput, *args: Any, **kwargs: Any) -> TWikiOutput:
-        """Parsuje przekazane dane wejściowe Wikipedii."""
 
 
 class WikiSectionParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
     """Kontrakt parserów sekcji artykułów Wikipedii."""
 
 
-class WikiTableParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
+class WikiTableElementParserBase(WikiParser[BeautifulSoup, WikiRecords], ABC):
     """Kontrakt parserów tabel Wikipedii."""
+
+
+class WikiTableParser(WikiTableElementParserBase, ABC):
+    """Deprecated alias for :class:`WikiTableElementParserBase`."""
+
+    def __init_subclass__(cls, **kwargs: object) -> None:
+        warnings.warn(
+            "WikiTableParser is deprecated; use WikiTableElementParserBase.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        super().__init_subclass__(**kwargs)
 
 
 class WikiListParser(WikiParser[Tag, WikiRecords], ABC):
@@ -48,12 +58,17 @@ class WikiTagParser(WikiParser[Tag, TWikiOutput], ABC, Generic[TWikiOutput]):
     """Kontrakt parserów pojedynczych tagów HTML Wikipedii."""
 
 
+WikiFragmentParser = WikiParser[WikiDictFragmentInput, TWikiOutput]
+
+
 __all__ = [
+    "WikiFragmentParser",
     "WikiListParser",
     "WikiParser",
     "WikiRecord",
     "WikiRecords",
     "WikiSectionParser",
+    "WikiTableElementParserBase",
     "WikiTableParser",
     "WikiTagParser",
 ]
