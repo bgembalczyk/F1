@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
-from scrapers.infobox.field.parsers_registry import InfoboxFieldParsersRegistry
+from scrapers.infobox.field.parsers_registry import InfoboxFieldRegistry
 from scrapers.parsers.infobox.constants import ACTIVE_YEARS_LABELS
 from scrapers.parsers.infobox.constants import INT_CELL_LABELS
 from scrapers.parsers.infobox.constants import RACE_EVENT_LABELS
@@ -17,8 +17,8 @@ from scrapers.parsers.numeric_extractor import NumericExtractor
 
 def field_parsers_registry(
     cell_parser: InfoboxCellParser,
-) -> InfoboxFieldParsersRegistry:
-    registry = InfoboxFieldParsersRegistry(default_parser=cell_parser)
+) -> InfoboxFieldRegistry:
+    registry = InfoboxFieldRegistry(default_parser=cell_parser)
     championships_parser = cell_parser.championships_field_parser
 
     registry.register(

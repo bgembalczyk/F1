@@ -6,7 +6,7 @@ from bs4 import Tag
 from scrapers.parsers.wiki.base import WikiParser
 from scrapers.parsers.wiki.category_links import CategoryLinksParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
-from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import WikiElementSet
 
 
 class BodyContentParser(WikiParser[Tag, dict[str, Any]]):
@@ -21,7 +21,7 @@ class BodyContentParser(WikiParser[Tag, dict[str, Any]]):
     def __init__(
         self,
         *,
-        element_parsers: WikiElementParsers | None = None,
+        element_parsers: WikiElementSet | None = None,
     ) -> None:
         self.category_links_parser = CategoryLinksParser()
         self.content_text_parser = ContentTextParser(element_parsers=element_parsers)

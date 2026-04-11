@@ -4,7 +4,7 @@ from typing import Iterable
 from scrapers.parsers.infobox.protocol import InfoboxFieldParser
 
 
-class InfoboxFieldParsersRegistry:
+class InfoboxFieldRegistry:
     def __init__(
         self,
         *,
@@ -27,3 +27,6 @@ class InfoboxFieldParsersRegistry:
             return self._default_parser
         return self._parsers_by_label.get(label, self._default_parser)
 
+
+# Backward-compatible alias.
+InfoboxFieldParsersRegistry = InfoboxFieldRegistry

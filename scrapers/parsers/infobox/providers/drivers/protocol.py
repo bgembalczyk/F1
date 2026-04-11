@@ -1,10 +1,10 @@
 from typing import Protocol
 
-from scrapers.parsers.infobox.bundles.driver import DriverInfoboxParserBundle
-from scrapers.parsers.roles import ParserProvider
+from scrapers.parsers.infobox.bundles.driver import DriverInfoboxBundle
+from scrapers.parsers.roles import ParsingBundleProvider
 
 
-class DriverInfoboxParserProvider(ParserProvider[DriverInfoboxParserBundle], Protocol):
+class DriverInfoboxProvider(ParsingBundleProvider[DriverInfoboxBundle], Protocol):
     def build(
         self,
         *,
@@ -12,4 +12,8 @@ class DriverInfoboxParserProvider(ParserProvider[DriverInfoboxParserBundle], Pro
         wikipedia_base: str,
         schema: object,
         logger: object,
-    ) -> DriverInfoboxParserBundle: ...
+    ) -> DriverInfoboxBundle: ...
+
+
+# Backward-compatible alias.
+DriverInfoboxParserProvider = DriverInfoboxProvider

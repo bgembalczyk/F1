@@ -8,7 +8,7 @@ from scrapers.parsers.section.nested.wiki import NestedWikiSectionParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 
 
@@ -16,7 +16,7 @@ class ContentTextParser(WikiParser):
     def __init__(
         self,
         *,
-        element_parsers: WikiElementParsers | None = None,
+        element_parsers: WikiElementSet | None = None,
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
         self.toolbox = toolbox or build_default_section_toolbox()
