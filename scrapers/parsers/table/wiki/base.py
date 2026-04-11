@@ -1,29 +1,56 @@
 from __future__ import annotations
 
 from typing import Any
+from typing import Protocol
 
 
-class WikiTableBaseParser:
-    table_type: str = "wiki_table"
-    missing_columns_policy: str = "skip"
-    extra_columns_policy: str = "ignore"
-    required_header_groups: tuple[frozenset[str], ...] = ()
-    column_mapping: dict[str, str] = {}
+class WikiTableFragmentParser(Protocol):
+    def parse(self, raw_html_fragment: dict[str, Any]) -> dict[str, Any] | None: ...
 
-    def parse_group(self, payload: Any) -> list[dict[str, Any]]:
-        """Traverse parsed payload and collect all domain rows matching this table type.
 
-        The payload may be a nested dict/list structure produced by section parsers.
-        Every node whose ``table_type`` equals ``self.table_type`` contributes its
-        ``domain_rows`` list to the result.
-        """
+class WikiTablePayloadTransformer:
+    """Transforms parsed section payloads by mapping table elements to domain tables."""
+
+    def __init__(self, parser: WikiTableFragmentParser) -> None:
+        self._parser = parser
+
+    def transform(self, parsed_fragment: dict[str, Any]) -> dict[str, Any]:
+        self._apply_to_elements(parsed_fragment.get("elements", []))
+        for value in parsed_fragment.values():
+            if isinstance(value, dict):
+                self.transform(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        self.transform(item)
+        return parsed_fragment
+
+    def _apply_to_elements(self, elements: list[dict[str, Any]]) -> None:
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            parsed = self._parser.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
+
+
+class WikiTablePayloadCollector:
+    """Collect domain rows from nested payload trees for a concrete table type."""
+
+    def __init__(self, table_type: str) -> None:
+        self._table_type = table_type
+
+    def collect(self, payload_tree: Any) -> list[dict[str, Any]]:
         rows: list[dict[str, Any]] = []
-        self._collect_from_node(payload, rows)
+        self._collect_from_node(payload_tree, rows)
         return rows
 
     def _collect_from_node(self, node: Any, rows: list[dict[str, Any]]) -> None:
         if isinstance(node, dict):
-            if node.get("table_type") == self.table_type:
+            if node.get("table_type") == self._table_type:
                 table_rows = node.get("domain_rows", [])
                 if isinstance(table_rows, list):
                     rows.extend(row for row in table_rows if isinstance(row, dict))
@@ -32,6 +59,14 @@ class WikiTableBaseParser:
         elif isinstance(node, list):
             for item in node:
                 self._collect_from_node(item, rows)
+
+
+class WikiTableBaseParser:
+    table_type: str = "wiki_table"
+    missing_columns_policy: str = "skip"
+    extra_columns_policy: str = "ignore"
+    required_header_groups: tuple[frozenset[str], ...] = ()
+    column_mapping: dict[str, str] = {}
 
     def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         return self.parse_fragment(fragment)
@@ -53,26 +88,18 @@ class WikiTableBaseParser:
             "domain_rows": mapped_rows,
         }
 
-    def apply_to_payload(self, payload: dict[str, Any]) -> None:
-        self._apply_to_elements(payload.get("elements", []))
-        for value in payload.values():
-            if isinstance(value, dict):
-                self.apply_to_payload(value)
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        self.apply_to_payload(item)
+    def transformer(self) -> WikiTablePayloadTransformer:
+        return WikiTablePayloadTransformer(self)
 
-    def _apply_to_elements(self, elements: list[dict[str, Any]]) -> None:
-        for element in elements:
-            if element.get("kind") != "table":
-                continue
-            data = element.get("data")
-            if not isinstance(data, dict):
-                continue
-            parsed = self.parse(data)
-            if parsed is not None:
-                element["data"] = parsed
+    def collector(self) -> WikiTablePayloadCollector:
+        return WikiTablePayloadCollector(self.table_type)
+
+    # Legacy adapters
+    def apply_to_payload(self, payload: dict[str, Any]) -> None:
+        self.transformer().transform(payload)
+
+    def parse_group(self, payload: Any) -> list[dict[str, Any]]:
+        return self.collector().collect(payload)
 
     @staticmethod
     def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
@@ -122,4 +149,9 @@ class WikiTableBaseParser:
     collect_rows = parse_group
 
 
-__all__ = ["WikiTableBaseParser"]
+__all__ = [
+    "WikiTableBaseParser",
+    "WikiTableFragmentParser",
+    "WikiTablePayloadCollector",
+    "WikiTablePayloadTransformer",
+]

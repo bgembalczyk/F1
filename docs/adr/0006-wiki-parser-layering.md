@@ -33,6 +33,17 @@ Dodatkowo stabilizujemy granice przez interfejsy/kontrakty:
 - `StructureParser` (`scrapers/parsers/section/contracts.py`),
 - `WikiTableDomainMapper` i `ArticleTablesParserProtocol` (`scrapers/parsers/table/wiki/contracts.py`).
 
+
+### Tabela kontraktów parserów (canonical)
+
+| Kontrakt | Wejście HTML | Wyjście strukturalne | Odpowiedzialność parsera |
+| --- | --- | --- | --- |
+| `Parser[InputT, OutputT]` (`scrapers/domain_roles.py`) | `InputT` (np. `BeautifulSoup`, `Tag`) | `OutputT` | Kanoniczny interfejs `parse(...)` dla transformacji HTML/tekst → struktura. |
+| `WikiSectionParser` | `BeautifulSoup` sekcji/artykułu | `list[dict[str, Any]]` (`WikiRecords`) | Agregacja sekcji artykułu do rekordów o stałym kształcie. |
+| `WikiTableParser` | `BeautifulSoup` z tabelami | `list[dict[str, Any]]` (`WikiRecords`) | Ekstrakcja i normalizacja danych tabelarycznych Wiki. |
+| `WikiListParser` | `Tag` (`<ul>`/`<ol>`) | `list[dict[str, Any]]` (`WikiRecords`) | Parsowanie list do rekordów strukturalnych. |
+| `WikiTagParser[OutputT]` | pojedynczy `Tag` | `OutputT` | Parsowanie pojedynczego elementu HTML do wyspecjalizowanego DTO/struktury. |
+
 ## Granice zależności
 - Domena (np. kierowcy/sezony/konstruktorzy) **może zależeć wyłącznie od kontraktów** parserów wiki.
 - Implementacje parserów wiki **nie zależą od domeny**.

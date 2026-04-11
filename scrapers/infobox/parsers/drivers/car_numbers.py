@@ -21,6 +21,11 @@ class CarNumbersParser:
         return self.parse_car_numbers(cell)
 
     @staticmethod
+    def parse(cell: Tag) -> list[dict[str, Any]]:
+        """Unified parser entrypoint."""
+        return CarNumbersParser.parse_car_numbers(cell)
+
+    @staticmethod
     def parse_car_numbers(cell: Tag) -> list[dict[str, Any]]:
         """Parse car numbers with optional year information.
 

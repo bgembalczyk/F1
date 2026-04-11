@@ -5,8 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.parsers.section.nested.child import NestedChildParser
-from scrapers.parsers.section.wiki.detection import make_stable_section_id
-from scrapers.parsers.section.wiki.helpers import split_into_parts
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
@@ -45,28 +44,31 @@ class BaseNestedSectionParser(WikiParser[Tag, dict[str, Any]]):
     ) -> dict[str, Any]:
         section_context = context or SectionExtractionContext()
         tags = [c for c in elements if isinstance(c, Tag)]
-        parts = split_into_parts(tags, self.heading_class)
+        parts = self.toolbox.section_locator.locate(tags, heading_class=self.heading_class)
         sub_sections: list[dict[str, Any]] = []
 
-        for name, anchor, group_elements in parts:
-            section_id = make_stable_section_id(
-                heading_anchor=anchor,
-                heading_text=name,
-                breadcrumbs=section_context.breadcrumbs,
-            )
+        for part in parts:
+            section_id = self.toolbox.section_assembler.assemble(
+                section_name=part.section_label,
+                heading_anchor=part.heading_anchor,
+                context=section_context,
+                fragment={},
+            )["section_id"]
             child_context = section_context.with_section(
-                section_name=name,
+                section_name=part.section_label,
                 section_id=section_id,
             )
+            fragment = self.child_parser.parse_group(
+                part.elements,
+                context=child_context,
+            )
             sub_sections.append(
-                {
-                    "section_label": name,
-                    "section_id": section_id,
-                    **self.child_parser.parse_group(
-                        group_elements,
-                        context=child_context,
-                    ),
-                },
+                self.toolbox.section_assembler.assemble(
+                    section_name=part.section_label,
+                    heading_anchor=part.heading_anchor,
+                    context=section_context,
+                    fragment=fragment,
+                ),
             )
 
         return {self.output_key: sub_sections}

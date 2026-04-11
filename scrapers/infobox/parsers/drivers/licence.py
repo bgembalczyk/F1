@@ -37,6 +37,10 @@ class LicenceParser:
             parser_name=self.__class__.__name__,
         )
 
+    def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
+        """Backward-compatible wrapper around :meth:`parse`."""
+        return self.parse(cell)
+
     def _parse_racing_licence_payload(self, cell: Tag) -> list[dict[str, Any]]:
         licence_links = self._extract_licence_links(cell)
         if not licence_links:

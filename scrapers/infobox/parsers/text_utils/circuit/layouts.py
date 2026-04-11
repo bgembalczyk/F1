@@ -11,10 +11,10 @@ from scrapers.infobox.parsers.text_utils.circuit.lap_record import CircuitLapRec
 from scrapers.infobox.parsers.text_utils.circuit.specs import CircuitSpecsParser
 from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
-from scrapers.parsers.mixins.safe import SafeParserMixin
+from scrapers.parsers.mixins.safe import SafeParsingMixin
 
 
-class CircuitLayoutsParser(SafeParserMixin):
+class CircuitLayoutsParser(SafeParsingMixin):
     """Logika parsowania sekcji layoutów z infoboksa toru."""
 
     def __init__(

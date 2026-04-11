@@ -5,14 +5,14 @@ from typing import Any
 from bs4 import Tag
 
 from models.payload import WikiParsedPayload
-from scrapers.parsers.mixins.wiki_element import WikiElementParserMixin
+from scrapers.parsers.mixins.wiki_element import WikiElementParsingMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.base import WikiParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 
 
-class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
+class SubSubSubSectionParser(WikiElementParsingMixin, WikiParser):
     @property
     def element_parsers(self):
         return self.toolbox.element_parsers
@@ -23,9 +23,10 @@ class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
         self.toolbox = toolbox or build_default_section_toolbox()
-        WikiElementParserMixin.__init__(
+        WikiElementParsingMixin.__init__(
             self,
             element_parsers=self.toolbox.element_parsers,
+            element_registry=self.toolbox.element_registry,
         )
 
     def parse(
@@ -44,9 +45,8 @@ class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
     ) -> dict[str, list[WikiParsedPayload]]:
         section_context = context or SectionExtractionContext()
         tags = [c for c in elements if isinstance(c, Tag)]
-        return {
-            "elements": self.parse_elements(tags, section_context=section_context),
-        }
+        parsed = {"elements": self.parse_elements(tags, section_context=section_context)}
+        return self.toolbox.domain_mapper.map(parsed)
 
 
 __all__ = ["SubSubSubSectionParser"]

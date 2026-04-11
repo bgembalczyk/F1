@@ -1,20 +1,20 @@
 from __future__ import annotations
 
+import inspect
 from abc import ABC
 from abc import abstractmethod
-import inspect
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
+    from scrapers.parsers.input_types import WikiParserInput
+    from scrapers.section.parse_results import SectionParseResult
 
-
-class SectionTableParserBase(ABC):
+class SectionTableParserBase(SectionParser, ABC):
     """Template-method base for section parsers built from one or many HTML tables."""
 
     def __init__(
@@ -36,12 +36,12 @@ class SectionTableParserBase(ABC):
             include_source_table=include_source_table,
         )
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, fragment: WikiParserInput) -> SectionParseResult:
         return self.parse_fragment(fragment)
 
-    def parse_fragment(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def parse_fragment(self, fragment: WikiParserInput) -> SectionParseResult:
         records: list[dict[str, Any]] = []
-        for table_data in self.parse_group(fragment):
+        for table_data in self._collect_tables(fragment):
             table_classification = self.classify_table(table_data)
             if table_classification is None:
                 continue
@@ -61,7 +61,7 @@ class SectionTableParserBase(ABC):
 
     def parse_group(
         self,
-        fragment: BeautifulSoup,
+        fragment: WikiParserInput,
     ) -> list[dict[str, Any]]:
         return self._table_parser.parse(fragment)
 

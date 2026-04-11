@@ -45,6 +45,10 @@ class RaceEventParser:
             parser_name=self.__class__.__name__,
         )
 
+    def parse_race_event(self, cell: Tag) -> list[dict[str, Any]]:
+        """Backward-compatible wrapper around :meth:`parse`."""
+        return self.parse(cell)
+
     def _parse_race_event_payload(self, cell: Tag, text: str) -> list[dict[str, Any]]:
         links = self._link_extractor.extract_links(cell)
 

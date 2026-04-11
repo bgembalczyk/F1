@@ -2,22 +2,23 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.parsers.table.wiki.contracts import ArticleTablesParserProtocol
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
 
 if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
+    from scrapers.parsers.input_types import WikiParserInput
 
 
-class ConstructorTablesSectionParser:
+class ConstructorTablesSectionParser(SectionParser):
     def __init__(self, *, section_id: str, section_label: str) -> None:
         self._section_id = section_id
         self._section_label = section_label
         self._tables: ArticleTablesParserProtocol = ArticleTablesParser()
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, section_fragment: WikiParserInput) -> SectionParseResult:
         return SectionParseResult(
             section_id=self._section_id,
             section_label=self._section_label,

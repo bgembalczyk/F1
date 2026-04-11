@@ -5,6 +5,8 @@ from pathlib import Path
 from typing import Final
 from typing import Literal
 
+from scrapers.parsers.registry import resolve_parser_name
+
 WaveName = Literal["A", "B", "C", "D"]
 
 
@@ -16,6 +18,7 @@ class StepRegistryEntry:
     wave: WaveName
     layer: Literal["L0", "L1", "MIX"]
     domain: str
+    element_type: Literal["table", "list", "section", "infobox"]
     parser: str
     checkpoint_input: str
     checkpoint_output: str
@@ -27,6 +30,7 @@ STEP_REGISTRY: Final[tuple[StepRegistryEntry, ...]] = (
         wave="A",
         layer="MIX",
         domain="foundation",
+        element_type="section",
         parser="contracts+base_classes+mixins",
         checkpoint_input="data/checkpoints/stage_A_foundation_start.json",
         checkpoint_output="data/checkpoints/stage_A_foundation_ready.json",
@@ -36,7 +40,8 @@ STEP_REGISTRY: Final[tuple[StepRegistryEntry, ...]] = (
         wave="B",
         layer="L0",
         domain="drivers",
-        parser="drivers.seed.adapter",
+        element_type="list",
+        parser=resolve_parser_name(domain="drivers", element_type="list"),
         checkpoint_input="data/checkpoints/step_100_layer0_drivers_seed.json",
         checkpoint_output="data/checkpoints/step_110_layer1_drivers_complete.json",
     ),
@@ -45,7 +50,8 @@ STEP_REGISTRY: Final[tuple[StepRegistryEntry, ...]] = (
         wave="B",
         layer="L0",
         domain="constructors",
-        parser="constructors.seed.adapter",
+        element_type="list",
+        parser=resolve_parser_name(domain="constructors", element_type="list"),
         checkpoint_input="data/checkpoints/step_120_layer0_constructors_seed.json",
         checkpoint_output="data/checkpoints/step_130_layer1_constructors_complete.json",
     ),
@@ -54,6 +60,7 @@ STEP_REGISTRY: Final[tuple[StepRegistryEntry, ...]] = (
         wave="C",
         layer="MIX",
         domain="rollout",
+        element_type="section",
         parser="auto_registry+url_strategy",
         checkpoint_input="data/checkpoints/stage_C_rollout_start.json",
         checkpoint_output="data/checkpoints/stage_C_rollout_ready.json",
@@ -63,6 +70,7 @@ STEP_REGISTRY: Final[tuple[StepRegistryEntry, ...]] = (
         wave="D",
         layer="MIX",
         domain="cleanup",
+        element_type="section",
         parser="legacy_cleanup",
         checkpoint_input="data/checkpoints/stage_D_cleanup_start.json",
         checkpoint_output="data/checkpoints/stage_D_cleanup_done.json",

@@ -50,6 +50,10 @@ class ChampionshipsParser:
             parser_name=self.__class__.__name__,
         )
 
+    def parse(self, cell: Tag) -> dict[str, Any]:
+        """Unified parser entrypoint for championship payload."""
+        return self.parse_championships(cell)
+
     def _parse_championships_payload(self, cell: Tag, text: str) -> dict[str, Any]:
         # Extract count
         count_match = COUNT_RE.search(text)
