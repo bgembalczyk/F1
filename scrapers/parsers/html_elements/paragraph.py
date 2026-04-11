@@ -6,5 +6,5 @@ from scrapers.parsers.text_cleaning import extract_text
 
 
 class ParagraphElementParser(BaseHtmlElementParser[ParagraphElementData]):
-    def parse(self, element: Tag) -> ParagraphElementData:
-        return {"text": extract_text(element) or ""}
+    def parse(self, raw: Tag) -> ParagraphElementData:
+        return {"text": extract_text(raw) or ""}

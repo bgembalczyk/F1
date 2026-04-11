@@ -6,10 +6,12 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.infobox.parsers.drivers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 
 
-class RaceEventParser:
+class RaceEventParser(BaseInfoboxFieldParser):
     """Handles parsing of race event fields (First race, Last race, etc.)."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
@@ -20,8 +22,8 @@ class RaceEventParser:
         """
         self._link_extractor = link_extractor
 
-    def parse(self, cell: Tag) -> list[dict[str, Any]]:
-        return self.parse_race_event(cell)
+    def parse(self, raw: Tag) -> list[dict[str, Any]]:
+        return self.parse_race_event(raw)
 
     def parse_race_event(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse race event fields like First race, Last race, First win, Last win.
@@ -40,13 +42,17 @@ class RaceEventParser:
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return ErrorHandler.run_domain_parse(
-            lambda: self._parse_race_event_payload(cell, text),
+            lambda: self._parse_race_event_payload(raw, text),
             message=f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}.",
             parser_name=self.__class__.__name__,
         )
 
+    def parse_race_event(self, cell: Tag) -> list[dict[str, Any]]:
+        """Backward-compatible wrapper around :meth:`parse`."""
+        return self.parse(raw)
+
     def _parse_race_event_payload(self, cell: Tag, text: str) -> list[dict[str, Any]]:
-        links = self._link_extractor.extract_links(cell)
+        links = self._link_extractor.extract_links(raw)
 
         # If we have links, return them
         if links:

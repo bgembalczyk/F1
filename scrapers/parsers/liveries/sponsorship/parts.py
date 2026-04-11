@@ -1,4 +1,8 @@
-class SponsorPartsParser:
+from typing import Any
+
+from scrapers.domain_roles import Parser
+
+class SponsorPartsParser(Parser[str, list[tuple[str, str]]]):
     def __init__(self, text: str) -> None:
         self._text = text
         self._parts: list[tuple[str, str]] = []
@@ -6,7 +10,16 @@ class SponsorPartsParser:
         self._depth = 0
         self._after_close_paren = False
 
-    def parse(self) -> list[tuple[str, str]]:
+    def parse(self, raw: str | None = None) -> list[tuple[str, str]]:
+        if raw is not None:
+            self._text = raw
+
+        # Reset state if parse is called multiple times
+        self._parts = []
+        self._current = []
+        self._depth = 0
+        self._after_close_paren = False
+
         for char in self._text:
             self._update_depth_state(char)
             if self._try_split_on_separator(char):

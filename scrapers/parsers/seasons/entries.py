@@ -15,9 +15,10 @@ from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.parsers.seasons.entry_merger import EntryMerger
 from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.table_schema_dsl import TableSchemaDSL
+from scrapers.parsers.seasons.base import BaseSeasonParser
 
 
-class SeasonEntriesParser:
+class SeasonEntriesParser(BaseSeasonParser):
     def __init__(
         self,
         table_parser: SeasonTableService,
@@ -31,7 +32,7 @@ class SeasonEntriesParser:
     def parse(
         self,
         soup: BeautifulSoup,
-        season_year: int | None,
+        season_year: int | None = None,
     ) -> list[dict[str, Any]]:
         engine_config = self._policy.resolve_engine_config(season_year)
         engine_column = EngineColumn(global_config=engine_config)

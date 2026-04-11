@@ -7,8 +7,8 @@ from scrapers.parsers.html_elements.base import BaseHtmlElementParser
 
 
 class InfoboxElementParser(BaseHtmlElementParser[InfoboxElementData]):
-    def parse(self, element: Tag) -> InfoboxElementData:
-        return self.parse_table_rows(element)
+    def parse(self, raw: Tag) -> InfoboxElementData:
+        return self.parse_table_rows(raw)
 
     def parse_table_rows(self, table: Tag) -> InfoboxElementData:
         data: InfoboxElementData = {"title": None, "rows": {}}

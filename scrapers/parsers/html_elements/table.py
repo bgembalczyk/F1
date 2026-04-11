@@ -9,5 +9,5 @@ class TableElementParser(BaseHtmlElementParser[TableElementData]):
     def __init__(self, table_parser: WikiTableParser | None = None) -> None:
         self._table_parser = table_parser or WikiTableParser()
 
-    def parse(self, element: Tag) -> TableElementData:
-        return self._table_parser.parse(element)
+    def parse(self, raw: Tag) -> TableElementData:
+        return self._table_parser.parse(raw)

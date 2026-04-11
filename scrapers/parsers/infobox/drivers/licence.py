@@ -6,11 +6,14 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.infobox.parsers.drivers.year import YearParser
+from scrapers.infobox.parsers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.drivers.year import YearParser
 
 
-class LicenceParser:
+class LicenceParser(BaseInfoboxFieldParser):
     """Handles parsing of racing licence information."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
@@ -21,8 +24,8 @@ class LicenceParser:
         """
         self._link_extractor = link_extractor
 
-    def parse(self, cell: Tag) -> list[dict[str, Any]]:
-        return self.parse_racing_licence(cell)
+    def parse(self, raw: Tag) -> list[dict[str, Any]]:
+        return self.parse_racing_licence(raw)
 
     def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse 'Racing licence' field.
@@ -32,17 +35,17 @@ class LicenceParser:
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         return ErrorHandler.run_domain_parse(
-            lambda: self._parse_racing_licence_payload(cell),
+            lambda: self._parse_racing_licence_payload(raw),
             message=f"Nie udało się sparsować licencji wyścigowej: {text!r}.",
             parser_name=self.__class__.__name__,
         )
 
     def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
         """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(cell)
+        return self.parse(raw)
 
     def _parse_racing_licence_payload(self, cell: Tag) -> list[dict[str, Any]]:
-        licence_links = self._extract_licence_links(cell)
+        licence_links = self._extract_licence_links(raw)
         if not licence_links:
             return []
 
@@ -55,7 +58,7 @@ class LicenceParser:
                 "years": {"start": None, "end": None},
             }
 
-            licence_tag = self._find_licence_tag(cell, licence_link)
+            licence_tag = self._find_licence_tag(raw, licence_link)
             if licence_tag and year_spans:
                 licence_tag_map = self._build_licence_tag_map(
                     cell,
@@ -83,7 +86,7 @@ class LicenceParser:
         Returns:
             List of link dicts for non-file links.
         """
-        all_links = self._link_extractor.extract_links(cell)
+        all_links = self._link_extractor.extract_links(raw)
         return [
             link for link in all_links if "/file:" not in link.get("url", "").lower()
         ]

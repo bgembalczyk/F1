@@ -16,8 +16,8 @@ class SectionElementParser(BaseHtmlSectionParser[SectionElementData]):
     def __init__(self, content_text_parser: ContentTextParser | None = None) -> None:
         self._content_text_parser = content_text_parser or ContentTextParser()
 
-    def parse(self, soup: BeautifulSoup) -> SectionElementData:
-        content = self._find_content_text(soup)
+    def parse(self, raw: BeautifulSoup) -> SectionElementData:
+        content = self._find_content_text(raw)
         if content is None:
             return {"sections": []}
         parsed: dict[str, Any] = self._content_text_parser.parse(content)

@@ -16,9 +16,12 @@ from scrapers.parsers.infobox.constants import YEAR_PAREN_RE
 from scrapers.parsers.infobox.constants import YEAR_PATTERNS_RE
 from scrapers.parsers.infobox.constants import YEAR_RANGE_RE_NAT
 from scrapers.parsers.infobox.constants import YEAR_RE
+from scrapers.infobox.parsers.drivers import constants
+from scrapers.infobox.parsers.drivers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
 
 
-class NationalityParser:
+class NationalityParser(BaseInfoboxFieldParser):
     """Handles parsing of nationality information with optional year ranges."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor) -> None:
@@ -29,9 +32,8 @@ class NationalityParser:
         """
         self._link_extractor = link_extractor
 
-    def parse(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
-        """Primary parser entrypoint for nationality cells."""
-        return self._parse_nationality(cell)
+    def parse(self, raw: Tag) -> list[str] | list[dict[str, Any]]:
+        return self._parse_nationality(raw)
 
     def _parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.
@@ -53,12 +55,12 @@ class NationalityParser:
         has_years = HAS_YEARS_RE.search(text)
 
         if has_years:
-            return self._parse_nationality_with_years(cell)
-        return self._parse_nationality_simple(cell, text)
+            return self._parse_nationality_with_years(raw)
+        return self._parse_nationality_simple(raw, text)
 
     def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(cell)
+        return self.parse(raw)
 
     def _parse_nationality_with_years(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse structured nationality entries that include year information.
@@ -138,7 +140,7 @@ class NationalityParser:
         Returns:
             List of nationality dicts (with 'text'/'url') or plain strings.
         """
-        nationality_links = self._extract_nationality_links(cell)
+        nationality_links = self._extract_nationality_links(raw)
 
         if nationality_links:
             return [
@@ -157,7 +159,7 @@ class NationalityParser:
         Returns:
             List of link dicts that represent actual nationality links.
         """
-        links = self._link_extractor.extract_links(cell)
+        links = self._link_extractor.extract_links(raw)
         return [
             link
             for link in links
