@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 from copy import deepcopy
 from pathlib import Path
+from typing import Any
 from typing import TYPE_CHECKING
 
 from scrapers.base_constructor_list_scraper import BaseConstructorListScraper
@@ -38,7 +39,7 @@ from scrapers.parsers.section.constructors.current import (
     CurrentConstructorsSectionParser,
 )
 from scrapers.parsers.section.constructors.former import FormerConstructorsSectionParser
-from scrapers.parsers.roles import SectionParser
+from scrapers.parsers.section.list.privateer_teams import PrivateerTeamsSectionParser
 from scrapers.results import ScrapeResult
 from scrapers.section.selection_strategy.wikipedia_by_id import (
     WikipediaSectionByIdSelectionStrategy,
@@ -476,6 +477,5 @@ class ConstructorsListScraper(ListScraper):
 
 __all__ = [
     "PrivateerTeamsSectionParser",
-    "PrivateerTeamsListParser",
     "ConstructorsListScraper",
 ]

@@ -4,7 +4,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.mixins.wiki_element import WikiElementParsingMixin
+from scrapers.parsers.mixins.wiki.element import WikiElementParsingMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.nested.child import NestedChildParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox

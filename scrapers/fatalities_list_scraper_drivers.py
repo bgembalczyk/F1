@@ -33,7 +33,7 @@ from scrapers.helpers.date_parsing import parse_formula_category
 from scrapers.helpers.normalize import normalize_auto_value
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
-from scrapers.parsers.roles import SectionParser
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.scraper_table import F1TableScraper

@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from models.payload import WikiParsedPayload
-from scrapers.parsers.mixins.wiki_element import WikiElementParsingMixin
+from scrapers.parsers.mixins.wiki.element import WikiElementParsingMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox

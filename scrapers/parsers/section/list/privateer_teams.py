@@ -7,7 +7,7 @@ from bs4 import Tag
 
 from models.services.season import parse_seasons
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.roles import SectionParser
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.wiki.element_list import WikiListElementParser
 
 
