@@ -34,7 +34,7 @@ class AppConfigProvider:
         self._project_root = (
             project_root.resolve()
             if project_root is not None
-            else Path(__file__).resolve().parents[1]
+            else Path(__file__).resolve().parents[2]
         )
 
     def get(self) -> AppConfig:

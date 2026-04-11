@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING
 from scrapers.infobox.extraction.protocol import InfoboxExtractionService
 from scrapers.infobox.extraction.service.driver import DriverInfoboxExtractionService
 from scrapers.options import ScraperOptions
+from scrapers.services.domain_record.driver import DriverDomainRecordService
 from scrapers.services.section.extraction.driver import DriverSectionExtractionService
 from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
 from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
