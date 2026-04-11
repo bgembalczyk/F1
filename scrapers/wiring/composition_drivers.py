@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from scrapers.infobox.extraction.protocol import InfoboxExtractionService
-from scrapers.infobox.extraction.service.driver import DriverInfoboxExtractionService
+from scrapers.infobox.extraction.service import DriverInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.services.domain_record.driver import DriverDomainRecordService
 from scrapers.services.section.extraction.driver import DriverSectionExtractionService
@@ -53,7 +53,7 @@ class DriverScraperCompositionFactory:
     ) -> DriverScraperDependencies:
         infobox_service = self.infobox_service
         if infobox_service is None:
-            infobox_service = DriverInfoboxExtractionService(options=options)
+            infobox_service = DriverInfoboxOrchestrator(options=options)
 
         sections_service_factory = self.sections_service_factory
         if sections_service_factory is None:

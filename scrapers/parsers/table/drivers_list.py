@@ -12,7 +12,7 @@ from scrapers.constants_drivers import DRIVER_RACE_STARTS_HEADER
 from scrapers.constants_drivers import DRIVER_RACE_WINS_HEADER
 from scrapers.constants_drivers import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.constants_drivers import DRIVERS_LIST_HEADERS
-from scrapers.driver_ordered_table_parser import DriverOrderedTableParser
+from scrapers.parsers.table.base_ordered import DriverOrderedTableParser
 
 
 class DriversListTableParser(DriverOrderedTableParser):
