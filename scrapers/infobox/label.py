@@ -8,11 +8,11 @@ from scrapers.parsers.infobox.constants import ACTIVE_YEARS_LABELS
 from scrapers.parsers.infobox.constants import INT_CELL_LABELS
 from scrapers.parsers.infobox.constants import RACE_EVENT_LABELS
 from scrapers.parsers.infobox.constants import TEAM_LABELS
-from scrapers.parsers.infobox.drivers.car_numbers import CarNumbersParser
-from scrapers.parsers.infobox.drivers.driver_cell import InfoboxCellParser
+from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
+from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
 from scrapers.parsers.infobox.field_parser import CallableInfoboxFieldParser
 from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
-from scrapers.parsers.infobox.numeric import NumericParser
+from scrapers.parsers.infobox.numeric_extractor import NumericExtractor
 
 
 
@@ -30,7 +30,7 @@ def field_parsers_registry(
     registry.register(labels=TEAM_LABELS, parser=cell_parser.teams_field_parser)
     registry.register(
         labels={"Entries"},
-        parser=CallableInfoboxFieldParser(NumericParser.parse_entries),
+        parser=CallableInfoboxFieldParser(NumericExtractor.parse_entries),
     )
     registry.register(labels={"Championships"}, parser=championships_parser)
     registry.register(
@@ -39,11 +39,11 @@ def field_parsers_registry(
     )
     registry.register(
         labels=INT_CELL_LABELS,
-        parser=CallableInfoboxFieldParser(NumericParser.parse_int_cell),
+        parser=CallableInfoboxFieldParser(NumericExtractor.parse_int_cell),
     )
     registry.register(
         labels={"Career points"},
-        parser=CallableInfoboxFieldParser(NumericParser.parse_float_cell),
+        parser=CallableInfoboxFieldParser(NumericExtractor.parse_float_cell),
     )
     registry.register(
         labels={"Best finish"},

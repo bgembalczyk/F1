@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.parsers.infobox.numeric import NumericExtractor
+from scrapers.parsers.infobox.numeric_extractor import NumericExtractor
 from scrapers.parsers.infobox.table import InfoboxTableParser
 
 

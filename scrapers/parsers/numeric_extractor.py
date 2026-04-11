@@ -84,6 +84,5 @@ class NumericExtractor:
         return {"entries": entries, "starts": starts}
 
 
-NumericParser = NumericExtractor
 
-__all__ = ["NumericExtractor", "NumericParser"]
+__all__ = ["NumericExtractor"]
