@@ -10,9 +10,9 @@ from scrapers.infobox.parsers.helpers import parse_infobox_from_soup
 from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
 from scrapers.infobox.parsers.text_utils.circuit import CircuitAdditionalInfoParser
 from scrapers.infobox.parsers.text_utils.circuit import CircuitEntityParser
-from scrapers.infobox.parsers.text_utils.circuit import CircuitLapRecordParser
 from scrapers.infobox.parsers.text_utils.circuit import CircuitGeoParser
 from scrapers.infobox.parsers.text_utils.circuit import CircuitHistoryParser
+from scrapers.infobox.parsers.text_utils.circuit import CircuitLapRecordParser
 from scrapers.infobox.parsers.text_utils.circuit import CircuitLayoutsParser
 from scrapers.infobox.parsers.text_utils.circuit import CircuitSpecsParser
 from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA

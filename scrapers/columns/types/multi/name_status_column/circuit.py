@@ -13,3 +13,6 @@ class CircuitNameStatusColumn(NameStatusColumn):
                 ),
             },
         )
+
+
+__all__ = ["CircuitNameStatusColumn"]

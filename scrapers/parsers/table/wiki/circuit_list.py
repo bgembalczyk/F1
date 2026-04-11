@@ -14,7 +14,7 @@ from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.auto import AutoColumn
 from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.multi.last_length_used import LastLengthUsedColumn
-from scrapers.columns.types.multi.name_status_column.circuit import CircuitNameStatusColumn
+from scrapers.columns.types.multi.name_status_column import CircuitNameStatusColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.skip import SkipColumn
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser

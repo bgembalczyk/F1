@@ -30,3 +30,6 @@ class DriverNameStatusColumn(NameStatusColumn):
                 ),
             },
         )
+
+
+__all__ = ["DriverNameStatusColumn"]

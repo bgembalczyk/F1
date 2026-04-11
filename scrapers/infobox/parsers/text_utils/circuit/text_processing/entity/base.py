@@ -4,7 +4,7 @@ from models.records.link import LinkRecord
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.wiki import clean_link_record
 from scrapers.infobox.parsers.constants import ENTITY_PARTS_RE
-from scrapers.infobox.parsers.text_utils.circuit.text_processing import CircuitTextProcessing
+from scrapers.infobox.parsers.text_utils.circuit import CircuitTextProcessing
 
 
 class CircuitEntityParser(CircuitTextProcessing):

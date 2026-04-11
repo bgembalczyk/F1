@@ -13,3 +13,6 @@ class RaceTitleStatusColumn(NameStatusColumn):
                 ),
             },
         )
+
+
+__all__ = ["RaceTitleStatusColumn"]
