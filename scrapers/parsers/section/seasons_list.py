@@ -1,15 +1,26 @@
 from typing import Any
 
-from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from bs4 import BeautifulSoup
+
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.nested.wiki import NestedWikiSectionParser
 from scrapers.parsers.table.seasons_list import SeasonsTableParser
 
 
-class SeasonsSectionParser(BaseSectionParser):
+class SeasonsSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = SeasonsTableParser()
+
+    def parse(
+        self,
+        element: BeautifulSoup,
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, Any]:
+        parsed = super().parse(element, context=context)
+        self._apply_seasons_table_parser(parsed)
+        return parsed
 
     def _parse_group(
         self,
