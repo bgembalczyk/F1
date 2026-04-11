@@ -7,6 +7,8 @@ from bs4 import Tag
 from scrapers.parsers.section.nested.child import NestedChildParser
 from scrapers.parsers.section.wiki.detection import make_stable_section_id
 from scrapers.parsers.section.wiki.helpers import split_into_parts
+from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
+from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
 
 
@@ -14,8 +16,18 @@ class BaseNestedSectionParser(WikiParser[dict[str, Any]]):
     heading_class: str
     output_key: str
 
-    def __init__(self, *, child_parser: NestedChildParser) -> None:
+    def __init__(
+        self,
+        *,
+        child_parser: NestedChildParser,
+        toolbox: SectionParserToolbox | None = None,
+    ) -> None:
         self.child_parser = child_parser
+        self.toolbox = toolbox or build_default_section_toolbox()
+
+    @property
+    def element_parsers(self):
+        return self.toolbox.element_parsers
 
     def parse(
         self,

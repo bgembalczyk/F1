@@ -18,6 +18,13 @@ Ten katalog utrzymuje parsery odpowiedzialne za ekstrakcję treści z HTML-a Wik
 
 Pełna decyzja architektoniczna: `ADR-0006`.
 
+## Section-first orchestration
+
+Dla użytkownika końcowego parser sekcji jest bardziej intuicyjnym entrypointem.
+Dlatego parsery w `scrapers/parsers/section/` dobierają zestaw parserów elementarnych
+(`SectionParserToolbox`) i delegują parsing HTML do parserów elementów.
+
+
 ## Rodzina parserów elementarnych (`scrapers/parsers/wiki/`)
 
 - `header.py` – nagłówek.

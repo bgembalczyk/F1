@@ -24,6 +24,10 @@ Wprowadzamy i utrwalamy 3-warstwową hierarchię:
    - odpowiedzialność: mapowanie danych parserów wiki (w szczególności tabel) na rekordy domenowe,
    - rodzina: `scrapers/parsers/table/wiki/`.
 
+Podejście jest **section-first**: parser sekcji to główny punkt wejścia,
+a parsery elementarne są narzędziami dobieranymi przez parser sekcji
+(np. przez `SectionParserToolbox`).
+
 Dodatkowo stabilizujemy granice przez interfejsy/kontrakty:
 - `WikiElementParser` (`scrapers/parsers/wiki/contracts.py`),
 - `StructureParser` (`scrapers/parsers/section/contracts.py`),
