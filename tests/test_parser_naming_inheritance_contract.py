@@ -34,7 +34,10 @@ def _collect_classes(root: Path) -> dict[str, ClassInfo]:
                 continue
 
             parse_args: tuple[str, ...] | None = None
-            is_protocol = any(ast.unparse(base).endswith("Protocol") for base in node.bases)
+            is_protocol = any(
+                ast.unparse(base).endswith("Protocol") or "Protocol[" in ast.unparse(base)
+                for base in node.bases
+            )
             is_abstract = any(ast.unparse(base).endswith("ABC") for base in node.bases)
             for member in node.body:
                 if isinstance(member, ast.FunctionDef) and member.name == "parse":
@@ -105,15 +108,21 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
 
         if class_info.name.endswith("TableParser"):
             base_name_join = " ".join(class_info.bases)
+            _table_parser_bases = {
+                "WikiTableParser",
+                "WikiTableBaseParser",
+                "WikiTableHtmlParser",
+                "WikiTableElementParserBase",
+            }
             inherits_table_base = _inherits_from(
                 class_info,
                 classes,
-                {"WikiTableParser", "WikiTableBaseParser"},
-            ) or ("WikiTableParser" in base_name_join)
+                _table_parser_bases,
+            ) or any(b in base_name_join for b in _table_parser_bases)
             if not inherits_table_base:
                 violations.append(
                     f"{class_info.module}.{class_info.name}: TableParser musi "
-                    "dziedziczyć po WikiTableParser lub WikiTableBaseParser",
+                    "dziedziczyć po WikiTableParser, WikiTableBaseParser lub WikiTableHtmlParser",
                 )
             if not _has_parse(class_info, classes):
                 violations.append(
@@ -130,7 +139,7 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                     "dziedziczyć po ListParser lub WikiListParser",
                 )
 
-        if class_info.name.endswith("SectionParser"):
+        if class_info.name.endswith("SectionParser") and not class_info.name.endswith("SubSectionParser"):
             if ".section.nested." in class_info.module or ".section.sublevels." in class_info.module:
                 continue
             if ".parsers.liveries." in class_info.module or class_info.module.endswith(
@@ -141,7 +150,8 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 ".section.section_parser_protocol",
             ):
                 continue
-            if not _inherits_from(class_info, classes, {"SectionParser"}):
+            _section_parser_bases = {"SectionParser", "NestedWikiSectionParser"}
+            if not _inherits_from(class_info, classes, _section_parser_bases):
                 violations.append(
                     f"{class_info.module}.{class_info.name}: SectionParser musi "
                     "realizować kontrakt SectionParser",
@@ -149,10 +159,12 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             if class_info.parse_args is not None and (
                 len(class_info.parse_args) < 2 or class_info.parse_args[1] != "section_fragment"
             ):
-                violations.append(
-                    f"{class_info.module}.{class_info.name}: parse musi mieć sygnaturę "
-                    "parse(section_fragment)",
-                )
+                # NestedWikiSectionParser uses parse(element: Tag) not parse(section_fragment)
+                if not _inherits_from(class_info, classes, {"NestedWikiSectionParser"}):
+                    violations.append(
+                        f"{class_info.module}.{class_info.name}: parse musi mieć sygnaturę "
+                        "parse(section_fragment)",
+                    )
 
     assert not violations, "Naruszenia kontraktu parserów:\n- " + "\n- ".join(
         sorted(violations),

@@ -1,28 +1,12 @@
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+import warnings
 
+warnings.warn(
+    "scrapers.driver_ordered_table_parser is deprecated; "
+    "import from scrapers.parsers.table.base_ordered instead.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
-class DriverOrderedTableParser(WikiTableBaseParser):
-    """Base parser for driver tables that orders the 'driver' column first."""
+from scrapers.parsers.table.base_ordered import DriverOrderedTableParser  # noqa: E402, F401
 
-    _column_mapping: dict[str, str]
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        mapped_headers = [
-            header
-            for header in headers
-            if header in getattr(self, "_column_mapping", {})
-        ]
-        driver_headers = [
-            header
-            for header in mapped_headers
-            if self._column_mapping[header] == "driver"
-        ]
-        other_headers = [
-            header
-            for header in mapped_headers
-            if self._column_mapping[header] != "driver"
-        ]
-        return {
-            header: self._column_mapping[header]
-            for header in [*driver_headers, *other_headers]
-        }
+__all__ = ["DriverOrderedTableParser"]
