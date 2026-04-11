@@ -5,7 +5,6 @@ from bs4 import Tag
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.list_element.engine_manufacturers_list import IndianapolisOnlyListParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_manufacturers_list import (
