@@ -20,6 +20,7 @@ Ten katalog przechowuje **trwałe decyzje architektoniczne** projektu.
 - [ADR-0003](0003-di-strategy.md): Strategia Dependency Injection.
 - [ADR-0004](0004-hook-naming-conventions.md): Zasady nazewnictwa hooków.
 - [ADR-0005](0005-domain-role-taxonomy.md): Kanoniczny słownik ról i ścieżki importów.
+- [ADR-0006](0006-wiki-parser-layering.md): Warstwowanie parserów Wiki (Element → Structure → Domain Mapper).
 
 ## Jak dodać nowy ADR
 

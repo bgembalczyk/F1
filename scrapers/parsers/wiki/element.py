@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from scrapers.parsers.list.wiki import ListParser
+from scrapers.parsers.wiki.list import ListParser
 from scrapers.parsers.table.wiki.table import WikiTableParser
 from scrapers.parsers.wiki.figure import FigureParser
 from scrapers.parsers.wiki.infobox import InfoboxParser

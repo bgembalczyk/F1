@@ -15,7 +15,7 @@ from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.multi.name_status_column.engine_manufacturer import EngineManufacturerNameStatusColumn
 from scrapers.config_table import build_scraper_config
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.list.wiki import ListParser
+from scrapers.parsers.wiki.list import ListParser
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
