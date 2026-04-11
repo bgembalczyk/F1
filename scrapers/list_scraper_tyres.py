@@ -63,8 +63,8 @@ class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
         super().__init__()
         self._table_parser = TyreManufacturersBySeasonTableParser()
 
-    def parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
+        parsed = super()._parse_group(elements, context=context)
         self._table_parser.apply_to_payload(parsed)
         return parsed
 

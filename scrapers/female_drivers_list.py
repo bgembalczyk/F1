@@ -94,13 +94,13 @@ class OfficialDriversSubSectionParser(SubSectionParser, ApplyForElementsMixin):
         super().__init__()
         self._table_parser = FemaleDriversTableParser()
 
-    def parse_group(
+    def _parse_group(
         self,
         elements: list,
         *,
         context=None,
     ) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+        parsed = super()._parse_group(elements, context=context)
         self._apply_table_parser_to_sections(parsed, "sub_sub_sections")
         return parsed
 

@@ -9,7 +9,6 @@ from typing import Any
 from scrapers.parsers.section.base import BaseSectionParser
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.section.serializer import build_section_parse_result
 
@@ -68,9 +67,9 @@ class SectionTableParserBase(BaseSectionParser, ABC):
     ) -> list[dict[str, Any]]:
         """Collect table payloads used by the section table template pipeline."""
 
-        return self.parse_group(fragment)
+        return self._parse_group(fragment)
 
-    def parse_group(
+    def _parse_group(
         self,
         fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:

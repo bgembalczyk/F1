@@ -74,13 +74,13 @@ class DetailByDriverSubSectionParser(SubSectionParser):
             specialized_parsers=[FatalitiesTableParser()],
         )
 
-    def parse_group(
+    def _parse_group(
         self,
         elements: list,
         *,
         context=None,
     ) -> dict[str, Any]:
-        parsed = super().parse_group(elements, context=context)
+        parsed = super()._parse_group(elements, context=context)
         tags = [element for element in elements if isinstance(element, Tag)]
         section_fragment = BeautifulSoup("", "html.parser")
         for tag in tags:
