@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
+import inspect
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -94,21 +95,20 @@ class SectionTableParserBase(ABC):
         table_classification: Any,
         table_pipeline: Any,
     ) -> dict[str, Any] | None:
-        try:
-            return self.map_table_result(
-                _table_data=table_data,
-                table_classification=table_classification,
-                _table_pipeline=table_pipeline,
-            )
-        except TypeError as first_error:
-            try:
-                return self.map_table_result(
-                    table_data=table_data,
-                    table_classification=table_classification,
-                    table_pipeline=table_pipeline,
-                )
-            except TypeError as second_error:
-                raise first_error from second_error
+        params = inspect.signature(self.map_table_result).parameters
+        uses_legacy_names = "_table_data" in params or "_table_pipeline" in params
+
+        kwargs: dict[str, Any] = {
+            "table_classification": table_classification,
+        }
+        if uses_legacy_names:
+            kwargs["_table_data"] = table_data
+            kwargs["_table_pipeline"] = table_pipeline
+        else:
+            kwargs["table_data"] = table_data
+            kwargs["table_pipeline"] = table_pipeline
+
+        return self.map_table_result(**kwargs)
 
     def build_result(self, records: list[dict[str, Any]]) -> SectionParseResult:
         return build_section_parse_result(
