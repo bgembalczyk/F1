@@ -106,7 +106,6 @@ class WikiTableBaseParser(AbstractTableFragmentParser):
     def collector(self) -> WikiTablePayloadCollector:
         return WikiTablePayloadCollector(self.table_type)
 
-    # Legacy adapters
     def apply_to_payload(self, payload: dict[str, Any]) -> None:
         self.transformer().transform(payload)
 
@@ -157,19 +156,12 @@ class WikiTableBaseParser(AbstractTableFragmentParser):
                 mapped[key] = value
         return mapped
 
-    # Backward-compatible alias
     collect_rows = parse_group
-
-
-# Backward-compatible alias
-WikiTableFragmentParser = TableFragmentParserProtocol
-
 
 __all__ = [
     "AbstractTableFragmentParser",
     "TableFragmentParserProtocol",
     "WikiTableBaseParser",
-    "WikiTableFragmentParser",
     "WikiTablePayloadCollector",
     "WikiTablePayloadTransformer",
 ]

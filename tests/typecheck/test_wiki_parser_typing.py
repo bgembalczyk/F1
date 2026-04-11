@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from bs4 import Tag
 
     from scrapers.wiki.parsers.base import WikiParser
-    from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
+    from scrapers.wiki.parsers.elements.paragraph import WikiParagraphParser
     from scrapers.wiki.parsers.elements.table import TableParser
     from scrapers.wiki.parsers.header import HeaderParser
     from scrapers.wiki.parsers.types import HeaderParsedData
@@ -27,7 +27,7 @@ if TYPE_CHECKING:
     header_result: HeaderParsedData = header_parser.parse(cast("Tag", object()))
     header_title: str | None = header_result["title"]
 
-    paragraph_parser: WikiParser[ParagraphParsedData] = ParagraphParser()
+    paragraph_parser: WikiParser[ParagraphParsedData] = WikiParagraphParser()
     paragraph_result: ParagraphParsedData = paragraph_parser.parse(
         cast("Tag", object()),
     )
