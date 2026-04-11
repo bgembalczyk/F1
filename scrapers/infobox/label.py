@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
+from scrapers.infobox.field.parsers_registry import InfoboxFieldParsersRegistry
 from scrapers.parsers.infobox.constants import ACTIVE_YEARS_LABELS
 from scrapers.parsers.infobox.constants import INT_CELL_LABELS
 from scrapers.parsers.infobox.constants import RACE_EVENT_LABELS
@@ -13,29 +14,6 @@ from scrapers.parsers.infobox.field_parser import CallableInfoboxFieldParser
 from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
 from scrapers.parsers.infobox.numeric import NumericParser
 
-
-class InfoboxFieldParsersRegistry:
-    def __init__(
-        self,
-        *,
-        default_parser: InfoboxFieldParser[Any, Any],
-    ) -> None:
-        self._default_parser = default_parser
-        self._parsers_by_label: dict[str, InfoboxFieldParser[Any, Any]] = {}
-
-    def register(
-        self,
-        *,
-        labels: Iterable[str],
-        parser: InfoboxFieldParser[Any, Any],
-    ) -> None:
-        for label in labels:
-            self._parsers_by_label[label] = parser
-
-    def parser_for_label(self, label: str | None) -> InfoboxFieldParser[Any, Any]:
-        if label is None:
-            return self._default_parser
-        return self._parsers_by_label.get(label, self._default_parser)
 
 
 def field_parsers_registry(
@@ -99,7 +77,6 @@ def parser_for_label(
 
 
 __all__ = [
-    "InfoboxFieldParsersRegistry",
     "field_parsers_registry",
     "parser_for_label",
 ]
