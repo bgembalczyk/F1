@@ -8,7 +8,7 @@ from scrapers.parsers.html_elements.table import TableElementParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 
-class HtmlElementParserFactory:
+class HtmlElementParserBuilder:
     def build(self) -> HtmlElementParserAdapterSet:
         return HtmlElementParserAdapterSet(
             infobox_parser=InfoboxElementParser(),
@@ -19,3 +19,7 @@ class HtmlElementParserFactory:
             navbox_parser=NavboxElementParser(),
             references_wrap_parser=ReferencesWrapParser(),
         )
+
+
+# Backward-compatible alias
+HtmlElementParserFactory = HtmlElementParserBuilder

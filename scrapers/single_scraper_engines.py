@@ -6,7 +6,7 @@ from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
 from scrapers.options import ScraperOptions
-from scrapers.parsers.infobox.html import InfoboxHtmlParser
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.single_wiki_article.base import SingleWikiArticleScraperBase
 
@@ -26,7 +26,7 @@ class SingleEngineManufacturerScraper(SingleWikiArticleScraperBase):
         self.article_tables_parser = ArticleTablesParser()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
-        parser = InfoboxHtmlParser()
+        parser = WikiInfoboxHtmlParser()
         infoboxes: list[dict[str, Any]] = []
         for table in self.find_infoboxes(soup):
             parsed = parser.parse_element(table)

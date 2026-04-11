@@ -19,7 +19,7 @@ from scrapers.constants_drivers import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.constants_drivers import FEMALE_DRIVERS_SECTION_ID
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.scraper_table import F1TableScraper

@@ -9,8 +9,8 @@ from scrapers.helpers.transformers import build_transformers
 from scrapers.infobox.schemas.driver import DRIVER_GENERAL_SCHEMA
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
-from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
-from scrapers.parsers.infobox.html import WikiInfoboxHtmlParser
+from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.infobox.providers.drivers.default import DefaultDriverInfoboxProvider
 from scrapers.parsers.infobox.providers.drivers.protocol import DriverInfoboxParserProvider
 from scrapers.parsers.wiki.infobox import WikiInfoboxElementParserBase

@@ -15,7 +15,7 @@ from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.config_table import build_scraper_config
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper

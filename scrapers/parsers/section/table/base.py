@@ -3,17 +3,18 @@ from __future__ import annotations
 from dataclasses import replace
 from typing import TYPE_CHECKING
 
+from bs4 import BeautifulSoup
+
 from models.entity_name import EntityName
 from models.section_id import SectionId
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
     from scrapers.configs.public import TableConfig
-    from scrapers.parsers.input_types import WikiParserInput
     from scrapers.section.parse_results import SectionParseResult
 
 
@@ -45,7 +46,7 @@ class TableSectionParser(SectionParser):
     def section_label(self) -> EntityName:
         return self._section_label
 
-    def parse(self, section_fragment: WikiParserInput) -> SectionParseResult:
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         # di-antipattern-allow: section parser builds table parser per parse invocation.
         table_transport_parser = HtmlTableParser(
             section_id=None,
@@ -60,7 +61,7 @@ class TableSectionParser(SectionParser):
             normalize_empty_values=self._normalize_empty_values,
         )
         records = pipeline.parse_rows(
-            table_transport_parser.parse(as_soup(section_fragment)),
+            table_transport_parser.parse(as_soup(fragment)),
         )
 
         return build_section_parse_result(

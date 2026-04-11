@@ -16,15 +16,8 @@ class InfoboxFieldParser(Protocol, Generic[Input, Output]):
     def parse(self, value: Input) -> Output: ...
 
 
-@dataclass(frozen=True)
-class CallableInfoboxFieldParser(Generic[Input, Output]):
-    _parser: Callable[[Input], Output]
-
-    def parse(self, value: Input) -> Output:
-        return self._parser(value)
 
 
 __all__ = [
     "InfoboxFieldParser",
-    "CallableInfoboxFieldParser",
 ]

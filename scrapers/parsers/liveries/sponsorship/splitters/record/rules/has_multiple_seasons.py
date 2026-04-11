@@ -1,6 +1,4 @@
-from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import (
-    PipelineRecord,
-)
+from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
 
 
 class HasMultipleSeasonsRule:

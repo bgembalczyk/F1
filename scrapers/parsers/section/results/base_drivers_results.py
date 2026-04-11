@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.roles import SectionParser
 from scrapers.parsers.section.table.results.driver import DriverResultsSectionParser
 from scrapers.section.config.driver_results import DriverResultsSectionConfig
 from scrapers.section.parse_results import SectionParseResult
@@ -40,8 +40,8 @@ class BaseDriverResultsSectionParser(SectionParser):
             header_aliases=config.header_aliases,
         )
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        parsed = self._parser.parse(section_fragment)
+    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+        parsed = self._parser.parse(fragment)
         return build_section_parse_result(
             section_id=self._section_id,
             section_label=self._section_label,

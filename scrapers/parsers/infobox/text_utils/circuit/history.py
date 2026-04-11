@@ -12,6 +12,12 @@ from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 class CircuitHistoryParser(InfoboxTextUtils):
     """Parsowanie wydarzeń historycznych (Opened, Built, Broke ground, Former names)."""
 
+    def parse(
+        self,
+        rows: dict[str, dict[str, Any]],
+    ) -> dict[str, Any] | None:
+        return self.parse_history(rows)
+
     def _parse_former_names(
         self,
         row: dict[str, Any] | None,

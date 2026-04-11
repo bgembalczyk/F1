@@ -1,3 +1,4 @@
+
 """Helper class for parsing nested tables from infobox cells."""
 
 import re
@@ -23,6 +24,14 @@ class InfoboxTableParser:
             link_extractor: Link extractor for extracting URLs from cells
         """
         self._link_extractor = link_extractor
+
+    def parse(
+        self,
+        cell: Tag,
+        *,
+        include_urls: bool = False,
+    ) -> dict[str, Any]:
+        return self.parse_full_data(cell, include_urls=include_urls)
 
     def parse_full_data(
         self,

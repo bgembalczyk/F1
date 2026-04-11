@@ -37,16 +37,22 @@ Pełna decyzja architektoniczna: `ADR-0006`.
 
 ```
 BaseHtmlElementParser[T]
-  ├── ListElementParser          → ListParser (wiki wrapper)
+  ├── ListElementParser          → WikiListParser (wiki wrapper)
   ├── TableElementParser         → wraps WikiTableHtmlParser
-  ├── InfoboxElementParser       → WikiInfoboxElementParserBase
-  ├── ParagraphElementParser     → ParagraphParser (wiki wrapper)
-  ├── NavboxElementParser        → NavBoxParser (wiki wrapper)
-  └── FigureElementParser        → FigureParser (wiki wrapper)
+  ├── InfoboxElementParser       → WikiInfoboxParser
+  ├── ParagraphElementParser     → WikiParagraphParser (wiki wrapper)
+  ├── NavboxElementParser        → WikiNavboxParser (wiki wrapper)
+  └── FigureElementParser        → WikiFigureParser (wiki wrapper)
 
 WikiParser[InputT, OutputT]
-  ├── WikiTableElementParserBase → WikiTableHtmlParser (<table class="wikitable">)
-  ├── WikiInfoboxElementParserBase → WikiInfoboxHtmlParser (<table class="infobox">)
+  ├── WikiTagParser[OutputT]     → bazowy kontrakt parserów pojedynczego Tag
+  ├── WikiTableParser            (<table class="wikitable">)
+  ├── WikiInfoboxParser          (<table class="infobox">)
+  ├── WikiSectionParser          (kontener sekcji artykułu)
+  ├── WikiListParser             (<ul>/<ol>)
+  ├── WikiParagraphParser        (<p>)
+  ├── WikiNavboxParser           (<div class="navbox">)
+  ├── WikiFigureParser           (<figure>)
   ├── HeaderParser               (<header class="mw-body-header">)
   ├── ReferencesWrapParser       (<div class="references-wrap">)
   └── ContentTextParser          (div#content-text)

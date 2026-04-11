@@ -6,7 +6,7 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.base import BaseInfoboxFieldParser
 
 
 class InfoboxTitlesParser(BaseInfoboxFieldParser):
