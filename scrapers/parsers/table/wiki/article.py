@@ -1,24 +1,20 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import Tag
-from bs4 import BeautifulSoup
 
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
-from scrapers.parsers.table.wiki.mapped.lap_records import LapRecordsWikiTableParser
-from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTableParser
+from scrapers.parsers.table.wiki.mapped.lap_records import LapRecordsWikiTableMapper
+from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTableMapper
 from scrapers.parsers.table.wiki.contracts import ArticleTablesParserABC
-from scrapers.parsers.table.wiki.mapped.standings import StandingsTableParser
+from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableMapper
+from scrapers.parsers.table.wiki.mapped.standings import StandingsTableMapper
 from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.base import WikiTableElementParserBase
-
-if TYPE_CHECKING:
-    from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
 class ArticleTablesParser(WikiTableElementParserBase, ArticleTablesParserABC):
     """Wspólny parser tabel wikitable z artykułów Wikipedii."""
@@ -28,15 +24,15 @@ class ArticleTablesParser(WikiTableElementParserBase, ArticleTablesParserABC):
         *,
         include_heading_path: bool = False,
         include_source_table: bool = False,
-        specialized_parsers: list[WikiTableBaseParser] | None = None,
+        specialized_mappers: list[MappedWikiTableMapper] | None = None,
     ) -> None:
         self.include_heading_path = include_heading_path
         self.include_source_table = include_source_table
         self._html_table_parser = HtmlTableParser()
-        self._specialized_parsers = specialized_parsers or [
-            StandingsTableParser(),
-            RaceResultsTableParser(),
-            LapRecordsWikiTableParser(),
+        self._specialized_mappers = specialized_mappers or [
+            StandingsTableMapper(),
+            RaceResultsTableMapper(),
+            LapRecordsWikiTableMapper(),
         ]
 
     def parse(self, element: WikiParserInput) -> list[dict[str, Any]]:
@@ -84,8 +80,8 @@ class ArticleTablesParser(WikiTableElementParserBase, ArticleTablesParserABC):
         return parsed
 
     def _parse_specialized(self, parsed: dict[str, Any]) -> dict[str, Any]:
-        for parser in self._specialized_parsers:
-            specialized = parser.parse(parsed)
+        for mapper in self._specialized_mappers:
+            specialized = mapper.map(parsed)
             if specialized is not None:
                 return specialized
         return {"table_type": "wiki_table"}

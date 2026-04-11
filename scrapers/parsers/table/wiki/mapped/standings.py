@@ -1,10 +1,10 @@
 from scrapers.headers_shared import POINTS_ALIASES
 from scrapers.headers_shared import POINTS_HEADER
 from scrapers.headers_shared import POINTS_HEADER_TO_KEY
-from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableParser
+from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableMapper
 
 
-class StandingsTableParser(MappedWikiTableParser):
+class StandingsTableMapper(MappedWikiTableMapper):
     table_type = "standings"
     missing_columns_policy = "fail_if_missing_subject_or_points"
     extra_columns_policy = "collect_as_round_columns"
@@ -26,4 +26,4 @@ class StandingsTableParser(MappedWikiTableParser):
     }
 
 
-__all__ = ["StandingsTableParser"]
+__all__ = ["StandingsTableMapper"]
