@@ -4,7 +4,7 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.parsers.infobox.collapsible_table import CollapsibleTableParser
+from scrapers.parsers.infobox.collapsible_table import CollapsibleCareerTableExtractor
 from scrapers.parsers.infobox.field.active_years import ActiveYearsParser
 from scrapers.parsers.infobox.field.best_finish import BestFinishParser
 from scrapers.parsers.infobox.field.championships import ChampionshipsParser
@@ -14,7 +14,7 @@ from scrapers.parsers.infobox.field.nationality import NationalityParser
 from scrapers.parsers.infobox.field.race_event import RaceEventParser
 from scrapers.parsers.infobox.field.teams import TeamsParser
 from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
-from scrapers.parsers.infobox.table import InfoboxTableParser
+from scrapers.parsers.infobox.table import InfoboxNestedTableExtractor
 
 
 class InfoboxCellParser:
@@ -28,7 +28,7 @@ class InfoboxCellParser:
     - CarNumbersParser: for car numbers parsing
     - NationalityParser: for nationality parsing
     - TableParser: for nested table parsing
-    - CollapsibleTableParser: for collapsible career table parsing
+    - CollapsibleCareerTableExtractor: for collapsible career table parsing
     - RaceEventParser: for race event parsing
     - FinishedSeasonParser: for finished season parsing
     - LicenceParser: for racing licence parsing
@@ -48,12 +48,12 @@ class InfoboxCellParser:
         self._active_years_parser = ActiveYearsParser(link_extractor)
         self._teams_parser = TeamsParser(link_extractor, include_urls=include_urls)
         self._championships_parser = ChampionshipsParser(link_extractor)
-        self._table_parser = InfoboxTableParser(link_extractor)
+        self._table_parser = InfoboxNestedTableExtractor(link_extractor)
         self._race_event_parser = RaceEventParser(link_extractor)
         self._finished_season_parser = FinishedSeasonParser()
         self._licence_parser = LicenceParser(link_extractor)
         self._best_finish_parser = BestFinishParser(link_extractor)
-        self._collapsible_table_parser = CollapsibleTableParser(self)
+        self._collapsible_table_parser = CollapsibleCareerTableExtractor(self)
         self._nationality_parser = NationalityParser(link_extractor)
 
     def parse_cell(self, cell: Tag) -> dict[str, Any]:

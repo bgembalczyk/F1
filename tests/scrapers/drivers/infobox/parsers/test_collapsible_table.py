@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.drivers_infobox.parsers.collapsible_table import (
-    CollapsibleTableParser,
+from scrapers.parsers.infobox.collapsible_table import (
+    CollapsibleCareerTableExtractor,
 )
 
 
@@ -25,7 +25,7 @@ class Delegate:
 
 def parse_table(html: str):
     table = BeautifulSoup(html, "html.parser").find("table")
-    return CollapsibleTableParser(Delegate()).parse_collapsible_career_table(table)
+    return CollapsibleCareerTableExtractor(Delegate()).parse_collapsible_career_table(table)
 
 
 def test_collapsible_table_parser_parses_label_rows_and_numeric_values() -> None:

@@ -1,19 +1,19 @@
-"""Helper class for parsing collapsible career tables from infobox cells."""
+"""Helper class for extracting data from collapsible career tables in infobox cells."""
 
 from typing import Any
 
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.parsers.infobox.numeric_extractor import NumericExtractor
-from scrapers.parsers.infobox.table import InfoboxTableParser
+from scrapers.parsers.numeric_extractor import NumericExtractor
+from scrapers.parsers.infobox.table import InfoboxNestedTableExtractor
 
 
-class CollapsibleTableParser:
-    """Handles parsing of collapsible career statistics tables."""
+class CollapsibleCareerTableExtractor:
+    """Handles extraction of data from collapsible career statistics tables."""
 
     def __init__(self, cell_parser_delegate):
-        """Initialize the collapsible table parser.
+        """Initialize the extractor.
 
         Args:
             cell_parser_delegate: Delegate that provides methods for parsing cell values
@@ -92,8 +92,8 @@ class CollapsibleTableParser:
         nested_table = cell.find("table")
         if not nested_table:
             return None
-        table_data = InfoboxTableParser.parse_nested_table(nested_table)
+        table_data = InfoboxNestedTableExtractor.parse_nested_table(nested_table)
         return {"table": table_data}
 
 
-__all__ = ["CollapsibleTableParser"]
+__all__ = ["CollapsibleCareerTableExtractor"]
