@@ -10,6 +10,7 @@ from layers.seed.validation.rule import RegistryValidationRule
 from layers.seed.validation.spec import RegistryValidationSpec
 from scrapers.circuits_list_scraper import CircuitsListScraper
 from scrapers.constructors_list import ConstructorsListScraper
+from scrapers.drivers_list_scraper import DriversListScraper
 from scrapers.fatalities_list_scraper_drivers import F1FatalitiesListScraper
 from scrapers.female_drivers_list import FemaleDriversListScraper
 from scrapers.legacy_impl.combined_red_flagged_races_impl import RedFlaggedRacesScraper
