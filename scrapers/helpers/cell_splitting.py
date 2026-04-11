@@ -25,7 +25,7 @@ def split_cell_on_br(cell: Tag, *, replace_link_breaks: bool = False) -> list[Ta
     html = cell.decode_contents()
 
     if replace_link_breaks:
-        html = replace_link_breaks(html)
+        html = replace_link_breaks_in_links(html)
 
     parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
     return wrap_parts_as_spans(parts, cell)
@@ -47,7 +47,7 @@ def wrap_parts_as_spans(parts: list[str], cell: Tag) -> list[Tag]:
     return segments or [cell]
 
 
-def replace_link_breaks(html: str) -> str:
+def replace_link_breaks_in_links(html: str) -> str:
     """
     Replaces <br> tags inside <a> tags with spaces.
 
@@ -62,3 +62,8 @@ def replace_link_breaks(html: str) -> str:
         if br.find_parent("a"):
             br.replace_with(" ")
     return str(fragment)
+
+
+def replace_link_breaks(html: str) -> str:
+    """Backward-compatible alias for replacing <br> tags inside <a> tags."""
+    return replace_link_breaks_in_links(html)
