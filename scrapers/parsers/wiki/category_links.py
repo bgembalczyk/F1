@@ -5,7 +5,7 @@ from models.data.parsed.category_links import CategoryLinksParsedData
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class CategoryLinksParser(WikiParser[CategoryLinksParsedData]):
+class CategoryLinksParser(WikiParser[Tag, CategoryLinksParsedData]):
     """Parser linków do kategorii Wikipedii.
 
     Przetwarza div z id="catlinks".

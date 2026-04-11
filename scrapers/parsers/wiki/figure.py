@@ -5,7 +5,7 @@ from scrapers.parsers.text_cleaning import extract_text
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class FigureParser(WikiParser[FigureParsedData]):
+class FigureParser(WikiParser[Tag, FigureParsedData]):
     """Parser elementów graficznych Wikipedii.
 
     Przetwarza element: <figure>

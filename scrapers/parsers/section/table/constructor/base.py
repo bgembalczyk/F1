@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
+from scrapers.parsers.table.wiki.contracts import ArticleTablesParserProtocol
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
 
@@ -14,7 +15,7 @@ class ConstructorTablesSectionParser:
     def __init__(self, *, section_id: str, section_label: str) -> None:
         self._section_id = section_id
         self._section_label = section_label
-        self._tables = ArticleTablesParser()
+        self._tables: ArticleTablesParserProtocol = ArticleTablesParser()
 
     def parse(self, section_fragment: WikiParserInput) -> SectionParseResult:
         return SectionParseResult(

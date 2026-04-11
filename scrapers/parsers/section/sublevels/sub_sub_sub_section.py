@@ -8,19 +8,24 @@ from models.payload import WikiParsedPayload
 from scrapers.parsers.mixins.wiki_element import WikiElementParserMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.element import WikiElementParsers
-from scrapers.parsers.wiki.element import build_default_wiki_element_parsers
+from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
+from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 
 
 class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
+    @property
+    def element_parsers(self):
+        return self.toolbox.element_parsers
+
     def __init__(
         self,
         *,
-        element_parsers: WikiElementParsers | None = None,
+        toolbox: SectionParserToolbox | None = None,
     ) -> None:
+        self.toolbox = toolbox or build_default_section_toolbox()
         WikiElementParserMixin.__init__(
             self,
-            element_parsers=element_parsers or build_default_wiki_element_parsers(),
+            element_parsers=self.toolbox.element_parsers,
         )
 
     def parse(

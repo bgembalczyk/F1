@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.list.wiki import ListParser
+from scrapers.parsers.wiki.list import ListParser
 
 
 class IndianapolisConstructorsListParser(ListParser):

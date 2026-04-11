@@ -1,6 +1,6 @@
 from scrapers.parsers.section.nested.base import BaseNestedSectionParser
 from scrapers.parsers.section.sublevels.sub_sub_sub_section import SubSubSubSectionParser
-from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 
 
 class SubSubSectionParser(BaseNestedSectionParser):
@@ -10,10 +10,11 @@ class SubSubSectionParser(BaseNestedSectionParser):
     def __init__(
         self,
         *,
-        element_parsers: WikiElementParsers | None = None,
+        toolbox: SectionParserToolbox | None = None,
     ) -> None:
         super().__init__(
-            child_parser=SubSubSubSectionParser(element_parsers=element_parsers),
+            child_parser=SubSubSubSectionParser(toolbox=toolbox),
+            toolbox=toolbox,
         )
 
 

@@ -18,8 +18,7 @@ from scrapers.parsers.wiki.base import WikiParser
 if TYPE_CHECKING:
     from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 
-
-class ArticleTablesParser(WikiParser[WikiParserInput, list[dict[str, Any]]]):
+class ArticleTablesParser(WikiParser[Tag | BeautifulSoup, list[dict[str, Any]]]):
     """Wspólny parser tabel wikitable z artykułów Wikipedii."""
 
     def __init__(

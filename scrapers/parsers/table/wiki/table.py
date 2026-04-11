@@ -3,14 +3,13 @@ from typing import Any
 
 from bs4 import Tag
 
-from models.data.parsed.table import TableParsedData
 from scrapers.constants_table import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.helpers.background import extract_background
 from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.wiki.base import WikiTableParser as BaseWikiTableParser
 
 
 class WikiTableParser(WikiParser[Tag, TableParsedData]):

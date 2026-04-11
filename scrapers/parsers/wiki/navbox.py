@@ -5,7 +5,7 @@ from scrapers.parsers.text_cleaning import extract_text
 from scrapers.parsers.wiki.base import WikiParser
 
 
-class NavBoxParser(WikiParser[NavBoxParsedData]):
+class NavBoxParser(WikiParser[Tag, NavBoxParsedData]):
     """Parser navboxów Wikipedii.
 
     Przetwarza element: <div role="navigation" class="navbox">
