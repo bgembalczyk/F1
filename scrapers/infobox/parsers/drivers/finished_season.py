@@ -12,6 +12,9 @@ from scrapers.helpers.text_normalization import clean_infobox_text
 class FinishedSeasonParser:
     """Handles parsing of 'Finished last season' field."""
 
+    def parse(self, cell: Tag) -> dict[str, Any]:
+        return self.parse_finished_last_season(cell)
+
     @staticmethod
     def parse(cell: Tag) -> dict[str, Any]:
         """Unified parser entrypoint."""

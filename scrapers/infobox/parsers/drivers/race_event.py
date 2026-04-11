@@ -21,6 +21,9 @@ class RaceEventParser:
         self._link_extractor = link_extractor
 
     def parse(self, cell: Tag) -> list[dict[str, Any]]:
+        return self.parse_race_event(cell)
+
+    def parse_race_event(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse race event fields like First race, Last race, First win, Last win.
 
         Returns a list of all links found in the cell.

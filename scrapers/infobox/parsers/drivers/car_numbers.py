@@ -17,6 +17,9 @@ from scrapers.infobox.parsers.drivers.year import YearParser
 class CarNumbersParser:
     """Handles parsing of car numbers with optional year ranges."""
 
+    def parse(self, cell: Tag) -> list[dict[str, Any]]:
+        return self.parse_car_numbers(cell)
+
     @staticmethod
     def parse(cell: Tag) -> list[dict[str, Any]]:
         """Unified parser entrypoint."""

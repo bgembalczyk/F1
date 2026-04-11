@@ -28,6 +28,9 @@ class TeamsParser:
         self._include_urls = include_urls
 
     def parse(self, cell: Tag) -> list[Any]:
+        return self.parse_teams(cell)
+
+    def parse_teams(self, cell: Tag) -> list[Any]:
         """Parse teams field.
 
         If URLs are included, returns links; otherwise returns text split by commas.

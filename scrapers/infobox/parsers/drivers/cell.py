@@ -12,6 +12,7 @@ from scrapers.infobox.parsers.drivers.licence import LicenceParser
 from scrapers.infobox.parsers.drivers.nationality import NationalityParser
 from scrapers.infobox.parsers.drivers.race_event import RaceEventParser
 from scrapers.infobox.parsers.drivers.teams import TeamsParser
+from scrapers.infobox.parsers.field_parser import InfoboxFieldParser
 from scrapers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.infobox.parsers.table import InfoboxTableParser
 
@@ -63,8 +64,47 @@ class InfoboxCellParser:
         return payload
 
     def parse(self, cell: Tag) -> dict[str, Any]:
-        """Unified parser entrypoint for basic cell payload."""
         return self.parse_cell(cell)
+
+    @property
+    def active_years_field_parser(
+        self,
+    ) -> InfoboxFieldParser[Tag, list[dict[str, Any]]]:
+        return self._active_years_parser
+
+    @property
+    def teams_field_parser(self) -> InfoboxFieldParser[Tag, list[Any]]:
+        return self._teams_parser
+
+    @property
+    def championships_field_parser(self) -> ChampionshipsParser:
+        return self._championships_parser
+
+    @property
+    def best_finish_field_parser(self) -> InfoboxFieldParser[Tag, dict[str, Any]]:
+        return self._best_finish_parser
+
+    @property
+    def race_event_field_parser(self) -> InfoboxFieldParser[Tag, list[dict[str, Any]]]:
+        return self._race_event_parser
+
+    @property
+    def finished_last_season_field_parser(
+        self,
+    ) -> InfoboxFieldParser[Tag, dict[str, Any]]:
+        return self._finished_season_parser
+
+    @property
+    def racing_licence_field_parser(
+        self,
+    ) -> InfoboxFieldParser[Tag, list[dict[str, Any]]]:
+        return self._licence_parser
+
+    @property
+    def nationality_field_parser(
+        self,
+    ) -> InfoboxFieldParser[Tag, list[str] | list[dict[str, Any]]]:
+        return self._nationality_parser
 
     def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse active years as a list of individual seasons with links.
@@ -85,7 +125,7 @@ class InfoboxCellParser:
         - "1 (2014)" -> {count: 1, championships: [{text: "2014", url: ...}]}
         - "2 (2015, 2016)" -> {count: 2, championships: [...]}
         """
-        return self._championships_parser.parse_championships(cell)
+        return self._championships_parser.parse(cell)
 
     def parse_class_wins(self, cell: Tag) -> dict[str, Any]:
         """Parse class wins count with year and link information.
@@ -97,7 +137,7 @@ class InfoboxCellParser:
 
     def parse_best_finish(self, cell: Tag) -> dict[str, Any]:
         """Parse best finish field - delegates to BestFinishParser."""
-        return self._best_finish_parser.parse_best_finish(cell)
+        return self._best_finish_parser.parse(cell)
 
     def parse_race_event(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse race event fields (First/Last race, win, and entry).
@@ -112,7 +152,7 @@ class InfoboxCellParser:
 
         Example: "14th (62 pts)" -> {position: "14th", points: 62}
         """
-        return self._finished_season_parser.parse_finished_last_season(cell)
+        return self._finished_season_parser.parse(cell)
 
     def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse 'Racing licence' field - delegates to LicenceParser."""
