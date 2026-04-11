@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from scrapers.infobox.extraction.protocol import InfoboxExtractionService
+from scrapers.infobox.extraction.infobox_orchestrator_protocol import InfoboxOrchestratorProtocol
 from scrapers.infobox.extraction.service import DriverInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.services.domain_record.driver import DriverDomainRecordService
@@ -13,7 +13,7 @@ from scrapers.services.section.factories.section_service_factory import SectionS
 
 @dataclass(frozen=True, slots=True)
 class DriverScraperDependencies:
-    infobox_service: InfoboxExtractionService
+    infobox_service: InfoboxOrchestratorProtocol
     sections_service_factory: SectionServiceFactory[DriverSectionExtractionService]
     domain_record_service: DriverDomainRecordService
 
@@ -23,7 +23,7 @@ class DriverScraperCompositionFactory:
     """Factory budująca komplet zależności dla SingleDriverScraper."""
 
     test_mode: bool = False
-    infobox_service: InfoboxExtractionService | None = None
+    infobox_service: InfoboxOrchestratorProtocol | None = None
     sections_service_factory: (
         SectionServiceFactory[DriverSectionExtractionService] | None
     ) = None
@@ -33,7 +33,7 @@ class DriverScraperCompositionFactory:
     def for_tests(
         cls,
         *,
-        infobox_service: InfoboxExtractionService | None = None,
+        infobox_service: InfoboxOrchestratorProtocol | None = None,
         sections_service_factory: (
             SectionServiceFactory[DriverSectionExtractionService] | None
         ) = None,

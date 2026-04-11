@@ -1,0 +1,168 @@
+from typing import Any
+
+from models.records.link import LinkRecord
+from scrapers.helpers.lap_record import build_lap_record_key
+from scrapers.helpers.lap_record import extract_time
+from scrapers.helpers.lap_record import extract_year
+from scrapers.helpers.lap_record import merge_two_records
+from scrapers.helpers.lap_record import normalize_lap_record
+from scrapers.helpers.lap_record import normalize_lap_record_entity
+from scrapers.helpers.lap_record import select_details_paren
+from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.helpers.wiki import is_wikipedia_redlink
+from scrapers.infobox.infobox.constants import MIN_DETAILS_FOR_CAR
+from scrapers.infobox.infobox.constants import MIN_DETAILS_FOR_DRIVER
+from scrapers.infobox.infobox.constants import MIN_DETAILS_FOR_SERIES
+from scrapers.infobox.infobox.constants import MIN_DETAILS_FOR_YEAR
+from scrapers.infobox.infobox.text_utils.circuit.text_processing.base import CircuitTextProcessing
+
+
+class CircuitLapRecordParser(CircuitTextProcessing):
+    """Logika parsowania, porównywania i scalania lap record'ów."""
+
+    def _wrap_entity_from_links(
+        self,
+        entity_text: str | None,
+        links: list[LinkRecord],
+    ) -> dict[str, Any] | None:
+        if not entity_text:
+            return None
+
+        cleaned = self._strip_lang_markers(entity_text).strip()
+        cleaned = self._strip_lang_marker_tail_only(cleaned).strip()
+        if not cleaned:
+            return None
+
+        obj: dict[str, Any] = {"text": cleaned, "url": None}
+
+        link = self._find_link(cleaned, links) if links else None
+
+        if not link and "/" in cleaned:
+            for part in [p.strip() for p in cleaned.split("/") if p.strip()]:
+                link = self._find_link(part, links)
+                if link:
+                    break
+
+        if link:
+            url = link.get("url")
+            if url and not is_wikipedia_redlink(url) and self._is_en_wiki(url):
+                obj["url"] = url
+
+        return obj
+
+    def parse_lap_record(
+        self,
+        row: dict[str, Any] | None,
+    ) -> dict[str, Any] | None:
+        """
+        Parsuje pojedynczą komórkę "Race lap record" z infoboksa.
+        """
+        if not row:
+            return None
+
+        text = clean_infobox_text(row.get("text")) or ""
+        if not text:
+            return None
+
+        links = row.get("links") or []
+        sec = extract_time(text)
+        details = select_details_paren(text)
+
+        if not details:
+            return None
+
+        record = self.build_lap_record(details, links, sec)
+        return record or None
+
+    def build_lap_record(
+        self,
+        details: list[str],
+        links: list[LinkRecord],
+        time: float | None,
+    ) -> dict[str, Any]:
+        record: dict[str, Any] = {}
+        if time is not None:
+            record["time"] = time
+
+        driver_text = details[0] if len(details) >= MIN_DETAILS_FOR_DRIVER else None
+        car_text = details[1] if len(details) >= MIN_DETAILS_FOR_CAR else None
+        year_text = details[2] if len(details) >= MIN_DETAILS_FOR_YEAR else None
+        series_text = details[3] if len(details) >= MIN_DETAILS_FOR_SERIES else None
+
+        record.update(
+            {
+                "driver": self._wrap_entity_from_links(driver_text, links),
+                "vehicle": self._wrap_entity_from_links(car_text, links),
+                "year": year_text,
+                "series": self._wrap_entity_from_links(series_text, links)
+                if series_text
+                else None,
+            },
+        )
+
+        record = self.prune_nulls(record) or {}
+        normalize_lap_record(record)
+
+        if not any(record.get(k) for k in ("driver", "vehicle", "year", "series")):
+            return {}
+
+        return record
+
+    def _lap_record_key(
+        self,
+        rec: dict[str, Any],
+    ) -> tuple[str, str, str, float] | None:
+        """
+        Buduje klucz do identyfikacji tego samego lap record.
+        Klucz: (driver, vehicle, year, time)
+        """
+        sanitizer = self._strip_lang_marker_tail_only
+        return build_lap_record_key(
+            rec,
+            year_extractor=extract_year,
+            vehicle_getter=self._get_vehicle_field,
+            driver_normalizer=lambda value: normalize_lap_record_entity(
+                value,
+                sanitizer=sanitizer,
+            ),
+            vehicle_normalizer=lambda value: normalize_lap_record_entity(
+                value,
+                sanitizer=sanitizer,
+            ),
+        )
+
+    def same_lap_record(self, left: dict, right: dict) -> bool:
+        if not left or not right:
+            return False
+        kl = self._lap_record_key(left)
+        kr = self._lap_record_key(right)
+        return bool(kl and kr and kl == kr)
+
+    def _upsert_lap_record(
+        self,
+        candidate: dict[str, Any] | None,
+        records: list[dict[str, Any]],
+    ) -> None:
+        if not candidate:
+            return
+
+        cand_key = self._lap_record_key(candidate)
+        if cand_key is None:
+            records.append({"race_lap_record": candidate})
+            return
+
+        for i, record in enumerate(records):
+            existing = record.get("race_lap_record")
+            if not existing:
+                continue
+            if self._lap_record_key(existing) == cand_key:
+                normalize_lap_record(existing)
+                normalize_lap_record(candidate)
+                merged = merge_two_records(existing, candidate)
+                records[i]["race_lap_record"] = self.prune_nulls(merged)
+                return
+
+        records.append({"race_lap_record": candidate})
+
+
+__all__ = ["CircuitLapRecordParser"]
