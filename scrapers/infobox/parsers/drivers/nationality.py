@@ -101,7 +101,7 @@ class NationalityParser:
                 for year in range(start, end + 1):
                     years_dict[year] = None
 
-            for year_match in constants.YEAR_RE_SPONSOR.finditer(year_pattern):
+            for year_match in constants.YEAR_RE.finditer(year_pattern):
                 years_dict[int(year_match.group(1))] = None
 
         return list(years_dict.keys())
