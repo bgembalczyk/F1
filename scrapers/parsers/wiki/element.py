@@ -32,6 +32,8 @@ class WikiElementSet:
     table_parser: WikiTableParser
     navbox_parser: WikiNavboxParser
     references_wrap_parser: ReferencesWrapParser
+    references_parser: ReferencesWrapParser
+    section_parser: Callable[[Tag], WikiParserData] | None = None
 
 
 @dataclass(frozen=True)
@@ -66,7 +68,7 @@ def build_wikipedia_element_registry(
     section_parser: Callable[[Tag], WikiParserData] | None = None,
 ) -> ElementRegistry:
     section_rules: tuple[ParserRule, ...] = ()
-    if parsers.section_parser is not None:
+    if section_parser is not None:
         section_rules = (
             ParserRule(
                 predicate=lambda el: (
@@ -76,7 +78,7 @@ def build_wikipedia_element_registry(
                         for heading in ("mw-heading2", "mw-heading3", "mw-heading4")
                     )
                 ),
-                parser=parsers.section_parser,
+                parser=section_parser,
                 result_type="section",
             ),
         )
@@ -149,6 +151,7 @@ def build_default_wiki_element_parsers() -> WikiElementSet:
         table_parser=WikiTableHtmlParser(),
         navbox_parser=WikiNavboxParser(),
         references_wrap_parser=ReferencesWrapParser(),
+        references_parser=ReferencesWrapParser(),
     )
 
 
