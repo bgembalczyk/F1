@@ -11,21 +11,30 @@ Parsery są podzielone na cztery warstwy odpowiadające elementom HTML Wikipedii
    - klasa bazowa: `BaseHtmlElementParser[T]` (dla `Tag`) lub `BaseHtmlSectionParser[T]` (dla `BeautifulSoup`),
    - brak logiki domenowej ani zależności od wiki-specyficznych klas.
 
-2. **Wiki Element Parser** (`scrapers/parsers/wiki/`)
-   - odpowiedzialność: parsuje konkretny element HTML Wikipedii (`Tag`) do struktury danych,
-   - klasa bazowa: `WikiParser[Tag, OutputT]`,
-   - rodziny elementów: nagłówek (`header`), paragraf (`paragraph`), lista (`list`), tabela wikitable
-     (`table/wiki/table.py`), infobox (`infobox`), navbox (`navbox`), przypisy (`references_wrap`),
-     rysunek (`figure`).
+2. **Wiki Element Parser Families** (`scrapers/parsers/wiki/families.py`)
+   - odpowiedzialność: centralne ABC dla parserów HTML Wikipedii z jednoznacznymi typami I/O,
+   - rodziny:
+     - `WikiTableHtmlParserABC` (`Tag -> dict[str, Any]`),
+     - `WikiListHtmlParserABC` (`Tag -> dict[str, Any]`),
+     - `WikiSectionHtmlParserABC` (`BeautifulSoup -> dict[str, Any]`),
+     - `WikiInfoboxHtmlParserABC` (`Tag -> InfoboxParsedData`),
+     - `WikiNavboxHtmlParserABC` (`Tag -> NavBoxParsedData`),
+     - `WikiFigureHtmlParserABC` (`Tag -> FigureParsedData`).
+   - każdy parser elementu wiki dziedziczy po odpowiedniej rodzinie.
 
-3. **Structure Parser** (`scrapers/parsers/section/`)
+3. **Wiki Element Parser** (`scrapers/parsers/wiki/`)
+   - odpowiedzialność: konkretne implementacje parserów elementów HTML Wikipedii,
+   - implementacje rodzin: `element_table.py`, `element_list.py`, `element_section.py`,
+     `element_infobox.py`, `element_navbox.py`, `element_figure.py`.
+
+4. **Structure Parser** (`scrapers/parsers/section/`)
    - odpowiedzialność: kompozycja sekcji/podsekcji i nawigacja po nagłówkach h2–h5,
    - kontrakt: `SectionParser` (dla parserów przyjmujących `BeautifulSoup`, zwracających
      `SectionParseResult`) lub `NestedWikiSectionParser` (dla hierarchicznych parserów sekcji
      przyjmujących `Tag` i zwracających `dict`),
    - parsery sekcji dobierają zestaw parserów elementarnych przez `SectionParserToolbox`.
 
-4. **Table Domain Mapper** (`scrapers/parsers/table/wiki/`)
+5. **Table Domain Mapper** (`scrapers/parsers/table/wiki/`)
    - odpowiedzialność: mapowanie już sparsowanych danych tabelarycznych (`dict`) na rekordy domenowe,
    - klasa bazowa: `WikiTableBaseParser` (przyjmuje `dict`, zwraca `dict`),
    - **WAŻNE:** `WikiTableBaseParser` i jego podklasy NIE parsują HTML — przetwarzają dane
@@ -36,26 +45,21 @@ Pełna decyzja architektoniczna: `ADR-0006`.
 ## Diagram klas (uproszczony)
 
 ```
-BaseHtmlElementParser[T]
-  ├── ListElementParser          → WikiListParser (wiki wrapper)
-  ├── TableElementParser         → wraps WikiTableHtmlParser
-  ├── InfoboxElementParser       → WikiInfoboxParser
-  ├── ParagraphElementParser     → WikiParagraphParser (wiki wrapper)
-  ├── NavboxElementParser        → WikiNavboxParser (wiki wrapper)
-  └── FigureElementParser        → WikiFigureParser (wiki wrapper)
+Wiki*HtmlParserABC (families.py)
+  ├── WikiTableHtmlParserABC
+  ├── WikiListHtmlParserABC
+  ├── WikiSectionHtmlParserABC
+  ├── WikiInfoboxHtmlParserABC
+  ├── WikiNavboxHtmlParserABC
+  └── WikiFigureHtmlParserABC
 
-WikiParser[InputT, OutputT]
-  ├── WikiTagParser[OutputT]     → bazowy kontrakt parserów pojedynczego Tag
-  ├── WikiTableParser            (<table class="wikitable">)
-  ├── WikiInfoboxParser          (<table class="infobox">)
-  ├── WikiSectionParser          (kontener sekcji artykułu)
-  ├── WikiListParser             (<ul>/<ol>)
-  ├── WikiParagraphParser        (<p>)
-  ├── WikiNavboxParser           (<div class="navbox">)
-  ├── WikiFigureParser           (<figure>)
-  ├── HeaderParser               (<header class="mw-body-header">)
-  ├── ReferencesWrapParser       (<div class="references-wrap">)
-  └── ContentTextParser          (div#content-text)
+Concrete wiki HTML parsers
+  ├── WikiTableElementParser / WikiTableHtmlParser
+  ├── WikiListElementParser
+  ├── WikiSectionElementParser
+  ├── WikiInfoboxElementParser / WikiInfoboxParser
+  ├── WikiNavboxElementParser / WikiNavboxParser
+  └── WikiFigureElementParser / WikiFigureParser
 
 WikiTableBaseParser   [DOMAIN MAPPER – wejście: dict, nie Tag]
   ├── DriverOrderedTableParser  (scrapers/parsers/table/base_ordered.py)
@@ -79,7 +83,8 @@ NestedWikiSectionParser [Tag → dict, hierarchiczne sekcje]
 
 Dla użytkownika końcowego parser sekcji jest bardziej intuicyjnym entrypointem.
 Dlatego parsery w `scrapers/parsers/section/` dobierają zestaw parserów elementarnych
-(`SectionParserToolbox`) i delegują parsing HTML do parserów elementów.
+wyłącznie przez jawny `SectionParserToolbox` / factory i delegują parsing HTML do parserów
+rodzin wiki.
 
 
 ## Rodzina parserów elementarnych (`scrapers/parsers/wiki/`)
@@ -87,7 +92,7 @@ Dlatego parsery w `scrapers/parsers/section/` dobierają zestaw parserów elemen
 - `header.py` – nagłówek (`<header class="mw-body-header">`).
 - `paragraph.py` – paragraf (`<p>`).
 - `list.py` – lista (`<ul>` / `<ol>`).
-- `../table/wiki/table.py` – tabela wikitable (`<table class="wikitable">`).
+- `../table/wiki/table.py` – tabela wikitable (`<table class="wikitable">`, rodzina `WikiTableHtmlParserABC`).
 - `infobox.py` – infobox (`<table class="infobox">`).
 - `navbox.py` – navbox (`<div class="navbox">`).
 - `references_wrap.py` – sekcja przypisów (`<div class="references-wrap">`).
