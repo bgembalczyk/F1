@@ -1,4 +1,4 @@
-"""Helper class for parsing nested tables from infobox cells."""
+"""Helper class for extracting nested table data from infobox cells."""
 
 import re
 from typing import Any
@@ -13,11 +13,11 @@ from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.constants import EXPECTED_STATS_COLUMNS
 
 
-class InfoboxTableParser:
-    """Handles parsing of nested tables and extraction of statistics."""
+class InfoboxNestedTableExtractor:
+    """Handles extraction of nested table data and statistics."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
-        """Initialize the table parser.
+        """Initialize the extractor.
 
         Args:
             link_extractor: Link extractor for extracting URLs from cells
@@ -109,4 +109,4 @@ class InfoboxTableParser:
         return extract_driver_stats_row(rows[0], headers)
 
 
-__all__ = ["InfoboxTableParser"]
+__all__ = ["InfoboxNestedTableExtractor"]
