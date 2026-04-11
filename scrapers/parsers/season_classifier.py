@@ -111,6 +111,3 @@ class SeasonClassifier:
 __all__ = [
     "SeasonClassifier",
 ]
-
-# Backward compatibility alias (deprecated naming).
-SeasonParser = SeasonClassifier

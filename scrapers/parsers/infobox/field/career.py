@@ -4,6 +4,7 @@ from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.label import parser_for_label
 from scrapers.parsers.infobox.drivers.cell import InfoboxCellParser
 from scrapers.parsers.infobox.base_field_parser import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.drivers.driver_cell import InfoboxCellParser
 
 
 class InfoboxCareerParser(BaseInfoboxFieldParser):

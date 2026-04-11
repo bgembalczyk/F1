@@ -5,14 +5,14 @@ from bs4 import Tag
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.collapsible_table import CollapsibleTableParser
-from scrapers.parsers.infobox.drivers.active_years import ActiveYearsParser
-from scrapers.parsers.infobox.drivers.best_finish import BestFinishParser
-from scrapers.parsers.infobox.drivers.championships import ChampionshipsParser
-from scrapers.parsers.infobox.drivers.finished_season import FinishedSeasonParser
-from scrapers.parsers.infobox.drivers.licence import LicenceParser
-from scrapers.parsers.infobox.drivers.nationality import NationalityParser
-from scrapers.parsers.infobox.drivers.race_event import RaceEventParser
-from scrapers.parsers.infobox.drivers.teams import TeamsParser
+from scrapers.parsers.infobox.field.active_years import ActiveYearsParser
+from scrapers.parsers.infobox.field.best_finish import BestFinishParser
+from scrapers.parsers.infobox.field.championships import ChampionshipsParser
+from scrapers.parsers.infobox.field.finished_season import FinishedSeasonParser
+from scrapers.parsers.infobox.field.licence import LicenceParser
+from scrapers.parsers.infobox.field.nationality import NationalityParser
+from scrapers.parsers.infobox.field.race_event import RaceEventParser
+from scrapers.parsers.infobox.field.teams import TeamsParser
 from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
 from scrapers.parsers.infobox.table import InfoboxTableParser
 
