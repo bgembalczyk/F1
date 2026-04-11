@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.infobox.section_discovery import InfoboxSectionDiscovery
+from scrapers.infobox.section.discovery import InfoboxSectionDiscovery
 from scrapers.parsers.infobox.drivers.career import InfoboxCareerParser
 from scrapers.parsers.infobox.drivers.cell import InfoboxCellParser
 from scrapers.parsers.infobox.drivers.title import InfoboxTitlesParser
