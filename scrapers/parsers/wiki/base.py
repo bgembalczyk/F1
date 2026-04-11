@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.domain_roles import Parser
+from scrapers.parsers.input_types import WikiDictFragmentInput
 
 WikiRecord = dict[str, Any]
 WikiRecords = list[WikiRecord]
@@ -22,15 +23,11 @@ class WikiParser(
     ABC,
     Generic[TWikiInput, TWikiOutput],
 ):
-    """Bazowy kontrakt parserów Wikipedii.
+    """Bazowy kontrakt parserów Wikipedii oparty o kanoniczny `Parser`.
 
-    Każdy parser implementuje jednolity entrypoint `parse(...)` i zwraca
-    jawnie typowane dane wyjściowe.
+    Implementacje dostarczają `parse(input) -> output` z jawnie typowanym
+    wejściem i wyjściem.
     """
-
-    @abstractmethod
-    def parse(self, element: TWikiInput, *args: Any, **kwargs: Any) -> TWikiOutput:
-        """Parsuje przekazane dane wejściowe Wikipedii."""
 
 
 class WikiSectionParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
@@ -61,7 +58,11 @@ class WikiTagParser(WikiParser[Tag, TWikiOutput], ABC, Generic[TWikiOutput]):
     """Kontrakt parserów pojedynczych tagów HTML Wikipedii."""
 
 
+WikiFragmentParser = WikiParser[WikiDictFragmentInput, TWikiOutput]
+
+
 __all__ = [
+    "WikiFragmentParser",
     "WikiListParser",
     "WikiParser",
     "WikiRecord",

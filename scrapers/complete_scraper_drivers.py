@@ -2,8 +2,8 @@ from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.component_metadata_wiki import build_component_metadata
-from scrapers.drivers.list_scraper_drivers import DriversListScraper
-from scrapers.drivers.single_scraper_drivers import DriversDetailScraper
+from scrapers.drivers_list_scraper import DriversListScraper
+from scrapers.drivers_detail_scraper import DriversDetailScraper
 
 
 class CompleteDriverDataExtractor(CompleteExtractorBase):
