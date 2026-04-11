@@ -3,17 +3,17 @@ from typing import Any
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from infrastructure.helpers import init_scraper_options
 from infrastructure.http.errors.base import RequestError
-from scrapers.core.composite_scraper import CompositeDataExtractor
-from scrapers.core.composite_scraper import CompositeDataExtractorChildren
-from scrapers.core.composite_scraper import ListScraperProtocol
-from scrapers.core.composite_scraper import SingleScraperProtocol
-from scrapers.core.options import ScraperOptions
-from scrapers.core.source_adapter import IterableSourceAdapter
-from scrapers.core.source_adapter import MultiIterableSourceAdapter
-from scrapers.core.wiki_helpers import is_wikipedia_redlink
+from scrapers.composite_scraper import CompositeDataExtractor
+from scrapers.composite_scraper import CompositeDataExtractorChildren
+from scrapers.composite_scraper import ListScraperProtocol
+from scrapers.composite_scraper import SingleScraperProtocol
 from scrapers.errors import DomainParseError
 from scrapers.errors import ScraperNetworkError
 from scrapers.errors import ScraperParseError
+from scrapers.helpers.wiki import is_wikipedia_redlink
+from scrapers.options import ScraperOptions
+from scrapers.source_adapter import IterableSourceAdapter
+from scrapers.source_adapter import MultiIterableSourceAdapter
 
 
 class CompleteExtractorBase(CompositeDataExtractor):

@@ -1,10 +1,8 @@
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from scrapers.core.logging import RunTraceWriter
-
-if TYPE_CHECKING:
-    from scrapers.core.run_config import RunConfig
+from scrapers.logging import RunTraceWriter
+from scrapers.run_config import RunConfig
 
 
 class BaseExecutor:

@@ -1,10 +1,10 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from scrapers.circuits.list_scraper_circuits import CircuitsListScraper
-from scrapers.circuits.single_scraper_circuits import CircuitsDetailScraper
+from scrapers.circuits_list_scraper import CircuitsListScraper
 from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.component_metadata_wiki import build_component_metadata
 from scrapers.services.circuit import CircuitService
+from scrapers.single_scraper_circuits import CircuitsDetailScraper
 
 
 class F1CompleteCircuitDataExtractor(CompleteExtractorBase):

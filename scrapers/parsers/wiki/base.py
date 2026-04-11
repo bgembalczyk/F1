@@ -7,7 +7,7 @@ from typing import TypeVar
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.core.domain_roles import Parser
+from scrapers.domain_roles import Parser
 
 WikiRecord = dict[str, Any]
 WikiRecords = list[WikiRecord]
