@@ -14,7 +14,7 @@ from collections.abc import Callable
 
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
-from scrapers.columns.types.bool import BoolColumn
+from scrapers.columns.types.function.base import FuncColumn
 from scrapers.columns.types.mixins.background import BackgroundMixin
 from scrapers.columns.types.mixins.enum import EnumMarksMixin
 from scrapers.columns.types.multi.multi import MultiColumn
@@ -41,7 +41,7 @@ class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
     def __init__(
         self,
         entity_key: str,
-        status_extractors: dict[str, BaseColumn | Callable[[ColumnContext], bool]],
+        status_extractors: dict[str, BaseColumn | Callable[[ColumnContext], object]],
     ) -> None:
         """
         Initialize name+status column.
@@ -50,18 +50,30 @@ class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
             entity_key: Key for the entity name field
             status_extractors: Mapping of status field names to extractor functions
                 or BaseColumn instances.
-                Callables are automatically wrapped in BoolColumn.
+                Callables są automatycznie opakowane przez FuncColumn.
         """
         columns: dict[str, BaseColumn] = {entity_key: UrlColumn()}
         for status_key, extractor in status_extractors.items():
             if isinstance(extractor, BaseColumn):
                 columns[status_key] = extractor
             else:
-                columns[status_key] = BoolColumn(extractor)
+                columns[status_key] = FuncColumn(extractor)
 
         MultiColumn.__init__(self, columns)
         self.entity_key = entity_key
         self.status_extractors = status_extractors
+
+    def enum_status_extractor(
+        self,
+        mapping: dict[str, object],
+        *,
+        default: object = None,
+    ) -> Callable[[ColumnContext], object]:
+        return lambda ctx: self.parse_marks(
+            ctx,
+            mapping=mapping,
+            default=default,
+        )
 
 
 __all__ = [
