@@ -12,6 +12,13 @@ if TYPE_CHECKING:
 class CircuitAdditionalInfoParser(CircuitEntityParser):
     """Zbieranie dodatkowych pól (additional_info)."""
 
+    def parse(
+        self,
+        rows: dict[str, dict[str, Any]],
+        used_keys: set[str],
+    ) -> dict[str, Any] | None:
+        return self.collect_additional_info(rows, used_keys)
+
     def collect_additional_info(
         self,
         rows: dict[str, dict[str, Any]],

@@ -24,6 +24,14 @@ class InfoboxTableParser:
         """
         self._link_extractor = link_extractor
 
+    def parse(
+        self,
+        cell: Tag,
+        *,
+        include_urls: bool = False,
+    ) -> dict[str, Any]:
+        return self.parse_full_data(cell, include_urls=include_urls)
+
     def parse_full_data(
         self,
         cell: Tag,

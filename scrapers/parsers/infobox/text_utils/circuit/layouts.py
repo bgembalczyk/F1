@@ -35,6 +35,9 @@ class CircuitLayoutsParser(SafeParsingMixin):
         self.error_handler = error_handler or ErrorHandler()
         self._url_provider = url_provider
 
+    def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self.parse_layout_sections(soup)
+
     @staticmethod
     def _is_layout_header(row_header: Tag) -> bool:
         classes = row_header.get("class", [])
