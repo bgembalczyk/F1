@@ -1,4 +1,4 @@
-from scrapers.adapters.html_elements import HtmlElementParserAdapterSet
+from scrapers.adapters.html_elements import HtmlElementAdapterSet
 from scrapers.parsers.html_elements.figure import FigureElementParser
 from scrapers.parsers.html_elements.infobox import InfoboxElementParser
 from scrapers.parsers.html_elements.list import ListElementParser
@@ -8,9 +8,9 @@ from scrapers.parsers.html_elements.table import TableElementParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 
-class HtmlElementParserBuilder:
-    def build(self) -> HtmlElementParserAdapterSet:
-        return HtmlElementParserAdapterSet(
+class HtmlElementBuilder:
+    def build(self) -> HtmlElementAdapterSet:
+        return HtmlElementAdapterSet(
             infobox_parser=InfoboxElementParser(),
             paragraph_parser=ParagraphElementParser(),
             figure_parser=FigureElementParser(),
@@ -22,4 +22,5 @@ class HtmlElementParserBuilder:
 
 
 # Backward-compatible alias
-HtmlElementParserFactory = HtmlElementParserBuilder
+HtmlElementParserFactory = HtmlElementBuilder
+HtmlElementParserBuilder = HtmlElementBuilder

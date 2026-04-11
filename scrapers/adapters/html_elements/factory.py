@@ -12,7 +12,7 @@ from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 
 @dataclass(frozen=True)
-class HtmlElementParserAdapterSet:
+class HtmlElementAdapterSet:
     infobox_parser: InfoboxElementParser
     paragraph_parser: ParagraphElementParser
     figure_parser: FigureElementParser
@@ -20,3 +20,7 @@ class HtmlElementParserAdapterSet:
     table_parser: TableElementParser
     navbox_parser: NavboxElementParser
     references_wrap_parser: ReferencesWrapParser
+
+
+# Backward-compatible alias.
+HtmlElementParserAdapterSet = HtmlElementAdapterSet

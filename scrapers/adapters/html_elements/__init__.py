@@ -1,3 +1,3 @@
-from scrapers.adapters.html_elements.factory import HtmlElementParserAdapterSet
+from scrapers.adapters.html_elements.factory import HtmlElementAdapterSet
 
-__all__ = ["HtmlElementParserAdapterSet"]
+__all__ = ["HtmlElementAdapterSet"]
