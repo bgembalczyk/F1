@@ -14,6 +14,9 @@ from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.navbox import WikiNavboxParser
 from scrapers.wiki.parsers.elements.paragraph import WikiParagraphParser
 from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
+from scrapers.wiki.parsers.elements.navbox import NavBoxParser
+from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
+from scrapers.wiki.parsers.elements.parsers import WikiElementSet
 from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
@@ -34,9 +37,9 @@ class StubElementParser:
         return self.payload
 
 
-def with_overridden_element_parsers(**overrides) -> WikiElementParsers:
+def with_overridden_element_parsers(**overrides) -> WikiElementSet:
     defaults = build_default_wiki_element_parsers()
-    return WikiElementParsers(
+    return WikiElementSet(
         infobox_parser=overrides.get("infobox_parser", defaults.infobox_parser),
         paragraph_parser=overrides.get("paragraph_parser", defaults.paragraph_parser),
         figure_parser=overrides.get("figure_parser", defaults.figure_parser),

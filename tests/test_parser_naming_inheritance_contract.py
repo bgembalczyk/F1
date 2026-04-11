@@ -49,7 +49,10 @@ def _collect_classes(root: Path) -> dict[str, ClassInfo]:
             classes[key] = ClassInfo(
                 module=module,
                 name=node.name,
-                bases=tuple(ast.unparse(base).split(".")[-1] for base in node.bases),
+                bases=tuple(
+                    ast.unparse(base).split(".")[-1].split("[", 1)[0]
+                    for base in node.bases
+                ),
                 parse_args=parse_args,
                 is_protocol=is_protocol,
                 is_abstract=is_abstract,
@@ -137,6 +140,19 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 )
 
         if class_info.name.endswith("Parser"):
+            parser_contract_bases = {
+                "Parser",
+                "WikiParser",
+                "BaseSectionParser",
+                "BaseInfoboxFieldParser",
+                "AbstractTableFragmentParser",
+            }
+            if not _inherits_from(class_info, classes, parser_contract_bases):
+                violations.append(
+                    f"{class_info.module}.{class_info.name}: Parser musi "
+                    "implementować parserowe ABC (Parser/WikiParser/BaseSectionParser/"
+                    "BaseInfoboxFieldParser/AbstractTableFragmentParser)",
+                )
             if not _has_parse(class_info, classes):
                 violations.append(
                     f"{class_info.module}.{class_info.name}: Parser musi mieć "
