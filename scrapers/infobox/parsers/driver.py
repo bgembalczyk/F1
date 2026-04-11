@@ -29,7 +29,7 @@ class DriverInfoboxParser(WikiInfoboxElementParserBase):
         options: ScraperOptions | None = None,
         run_id: str | None = None,
         url: str | None = None,
-        parser_provider: DriverInfoboxProvider | None = None,
+        parser_provider: DriverInfoboxParserProvider | None = None,
     ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls

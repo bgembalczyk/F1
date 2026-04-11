@@ -13,9 +13,9 @@ from scrapers.component_metadata_wiki import RUNNER_KIND
 from scrapers.component_metadata_wiki import ComponentMetadata
 from scrapers.component_metadata_wiki import parse_component_metadata
 from scrapers.constants_wiki import COMPONENT_METADATA_ATTR
-from scrapers.contracts.protocols_wiki import DiscoveredListScraperClassProtocol
-from scrapers.contracts.protocols_wiki import DiscoveredRunnerClassProtocol
-from scrapers.contracts.protocols_wiki import DiscoveredRunnerProtocol
+from scrapers.protocols.protocols_wiki import DiscoveredListScraperClassProtocol
+from scrapers.protocols.protocols_wiki import DiscoveredRunnerClassProtocol
+from scrapers.protocols.protocols_wiki import DiscoveredRunnerProtocol
 
 DiscoveredComponentClass = (
     DiscoveredRunnerClassProtocol | DiscoveredListScraperClassProtocol

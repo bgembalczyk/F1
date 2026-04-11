@@ -6,7 +6,7 @@ from typing import Any
 
 from exporters.data import DataExporter
 from infrastructure.http.policies.http import HttpPolicy
-from scrapers.adapters.adapter import ResultTabularAdapter
+from scrapers.adapters.result_tabular import ResultTabularAdapter
 from scrapers.component_metadata_wiki import validate_metadata_for_component_class
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions

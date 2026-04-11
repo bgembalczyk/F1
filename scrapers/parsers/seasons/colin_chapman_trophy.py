@@ -3,7 +3,6 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.columns.types.constructor.constructor import ConstructorColumn
-from scrapers.parsers.seasons.standings import SeasonStandingsService
 from scrapers.parsers.seasons.table import SeasonTableService
 
 
