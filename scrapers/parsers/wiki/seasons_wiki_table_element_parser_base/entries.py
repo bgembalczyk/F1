@@ -13,9 +13,9 @@ from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.tyre import TyreColumn
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.parsers.entry_merger import EntryMerger
-from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
-from scrapers.parsers.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
 
 
 class SeasonEntriesParser(BaseSeasonParser):

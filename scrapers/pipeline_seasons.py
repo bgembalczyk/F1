@@ -10,21 +10,7 @@ from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.options import ScraperOptions
 from scrapers.parsers.entry_merger import EntryMerger
-from scrapers.parsers.seasons_wiki_table_element_parser_base.calendar import SeasonCalendarParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.cancelled_rounds import CancelledRoundsParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.colin_chapman_trophy import ColinChapmanTrophyParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.entries import SeasonEntriesParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.free_practice import SeasonFreePracticeParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.jim_clark_trophy import JimClarkTrophyParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.non_championship import SeasonNonChampionshipParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.regional_championship import (
-    SeasonRegionalChampionshipParser,
-)
-from scrapers.parsers.section.protocols.season_section_parser_abc import SeasonSectionParserABC
-from scrapers.parsers.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.scoring_system import SeasonScoringSystemParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.table import SeasonTableParser
-from scrapers.parsers.seasons_wiki_table_element_parser_base.testing_venues import TestingVenuesParser
+from scrapers.parsers.season_section_parser_abc import SeasonSectionParserABC
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
 from scrapers.parsers.section.season.calendar import SeasonCalendarSectionParser
 from scrapers.parsers.section.standings.season.constructors import (
@@ -33,16 +19,22 @@ from scrapers.parsers.section.standings.season.constructors import (
 from scrapers.parsers.section.standings.season.drivers import (
     SeasonDriversStandingsSectionParser,
 )
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.calendar import SeasonCalendarParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.cancelled_rounds import CancelledRoundsParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.colin_chapman_trophy import ColinChapmanTrophyParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.entries import SeasonEntriesParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.free_practice import SeasonFreePracticeParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.jim_clark_trophy import JimClarkTrophyParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.non_championship import SeasonNonChampionshipParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.regional_championship import SeasonRegionalChampionshipParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.scoring_system import SeasonScoringSystemParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.testing_venues import TestingVenuesParser
 from scrapers.records.sections.season import SeasonRecordSections
-from scrapers.services.section.extraction.season_text import (
-    SeasonTextSectionExtractionService,
-)
-from scrapers.services.section.factories.configurable import (
-    ConfigurableSectionServiceFactory,
-)
-from scrapers.services.section.factories.section_service_factory import (
-    SectionServiceFactory,
-)
+from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
+from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
+from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
 
 if TYPE_CHECKING:
     from typing import Any

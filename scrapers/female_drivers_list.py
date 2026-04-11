@@ -20,8 +20,8 @@ from scrapers.constants_drivers import FEMALE_DRIVERS_SECTION_ID
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.protocol import SectionParser
-from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL

@@ -6,11 +6,6 @@ from bs4 import BeautifulSoup
 
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.red_flagged_races import (
-    NonChampionshipsRacesSubSectionParser,
-)
-from scrapers.parsers.section.red_flagged_races import RedFlaggedRacesSectionParser
-from scrapers.parsers.table.red_flagged_races import RESTART_STATUS_MAP
 from scrapers.parsers.table.red_flagged_races import WIKIPEDIA_BASE_URL
 from scrapers.parsers.table.red_flagged_races import BaseRedFlaggedRacesTableParser
 from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableParser
@@ -21,6 +16,7 @@ from scrapers.parsers.table.red_flagged_races import map_drivers_cell
 from scrapers.parsers.table.red_flagged_races import map_winner_cell
 from scrapers.parsers.table.red_flagged_races import try_int
 from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.parsers.wiki.red_flagged_races import RedFlaggedRacesSectionParser
 from scrapers.scraper_wiki import WikiScraper
 from scrapers.source_catalog import RED_FLAGGED_RACES
 from scrapers.transformers.record.failed_to_make_restart import (
@@ -72,7 +68,6 @@ class RedFlaggedRacesScraper(WikiScraper):
 
 __all__ = [
     "WIKIPEDIA_BASE_URL",
-    "RESTART_STATUS_MAP",
     "build_full_url",
     "try_int",
     "extract_rich_cell",
@@ -81,7 +76,6 @@ __all__ = [
     "BaseRedFlaggedRacesTableParser",
     "WorldChampionshipsRacesTableParser",
     "NonChampionshipsRacesTableParser",
-    "NonChampionshipsRacesSubSectionParser",
     "RedFlaggedRacesSectionParser",
     "RedFlaggedRacesScraper",
 ]

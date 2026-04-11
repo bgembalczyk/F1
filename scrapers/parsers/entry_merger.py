@@ -2,7 +2,7 @@ from typing import Any
 
 from models.services.rounds import parse_rounds
 from scrapers.helpers.parsing import parse_int_from_text
-from scrapers.parsers.seasons_wiki_table_element_parser_base.constants import DRIVER_FIELDS
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import DRIVER_FIELDS
 
 
 class EntryMerger:
