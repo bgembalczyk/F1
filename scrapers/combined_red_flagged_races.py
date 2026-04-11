@@ -10,7 +10,7 @@ from bs4 import Tag
 from scrapers.helpers.text import strip_marks
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.nested.wiki import NestedWikiSectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.section.sublevels import SubSubSubSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
@@ -382,7 +382,7 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
         return headers, rows_count
 
 
-class RedFlaggedRacesSectionParser(SectionParser):
+class RedFlaggedRacesSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = NonChampionshipsRacesSubSectionParser()
