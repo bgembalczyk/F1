@@ -4,6 +4,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.config_table import TableConfig
 from scrapers.core.domain_roles import Extractor
 from scrapers.logging import get_logger
 from scrapers.pipeline_table import TablePipeline
@@ -13,7 +14,7 @@ class TableExtractor(Extractor[BeautifulSoup, list[dict[str, Any]]]):
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableConfig,
         include_urls: bool,
         normalize_empty_values: bool = True,
         model_fields: set[str] | None = None,
