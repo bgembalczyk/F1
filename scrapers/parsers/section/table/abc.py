@@ -6,6 +6,7 @@ import inspect
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
@@ -14,7 +15,7 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class SectionTableParserBase(ABC):
+class SectionTableParserBase(SectionParser, ABC):
     """Template-method base for section parsers built from one or many HTML tables."""
 
     def __init__(
@@ -36,12 +37,12 @@ class SectionTableParserBase(ABC):
             include_source_table=include_source_table,
         )
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
-        return self.parse_fragment(fragment)
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        return self.parse_fragment(section_fragment)
 
-    def parse_fragment(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def parse_fragment(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         records: list[dict[str, Any]] = []
-        for table_data in self.parse_group(fragment):
+        for table_data in self.parse_group(section_fragment):
             table_classification = self.classify_table(table_data)
             if table_classification is None:
                 continue

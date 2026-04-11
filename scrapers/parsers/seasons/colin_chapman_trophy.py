@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 
 from scrapers.columns.types.constructor.constructor import ConstructorColumn
 from scrapers.parsers.seasons.standings import SeasonStandingsService
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons.table import SeasonTableService
 
 
 class ColinChapmanTrophyParser:
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(self, table_parser: SeasonTableService) -> None:
         self._table_parser = table_parser
 
     def parse(

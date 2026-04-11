@@ -9,7 +9,7 @@ from scrapers.columns.types.driver import DriverColumn
 from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.tyre import TyreColumn
 from scrapers.columns.types.url import UrlColumn
-from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.parsers.section.wiki.adapter import collect_section_elements
 from scrapers.parsers.section.wiki.adapter import find_section_tree
 from scrapers.parsers.wiki.body_content import BodyContentParser
@@ -18,7 +18,7 @@ from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
 
 
 class SeasonResultsParser:
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(self, table_parser: SeasonTableService) -> None:
         self._table_parser = table_parser
 
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
