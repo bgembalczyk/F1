@@ -70,6 +70,23 @@
 - **Fix:**
   - Added proper exports for `RecordTransformer`, `RecordFactoryTransformer`, `apply_transformers`
 
+### 9. Unified Wiki Parser API + Compatibility Adapters
+- **Files affected:**
+  - ✅ `scrapers/parsers/wiki/base.py`
+  - ✅ `scrapers/parsers/seasons/standings.py`
+  - ✅ `scrapers/parsers/section/sponsorship.py`
+  - ✅ `scrapers/parsers/liveries/team.py`
+- **Refactoring:**
+  - Wprowadzono jednolity kontrakt `parse(...)` dla parserów wiki
+  - Dodano jawne typy I/O dla parserów sekcji/tabel/list
+  - Dodano adaptery kompatybilności w parserach z niestandardowym API
+- **Deprecations (etapowe usunięcie):**
+  - `SeasonStandingsParser.parse_drivers()` → alias do `parse(..., standings=\"drivers\")`
+  - `SeasonStandingsParser.parse_constructors()` → alias do `parse(..., standings=\"constructors\")`
+  - `SponsorshipSectionParser.parse_sections()` → alias do `parse(...)`
+  - `TeamLiveriesSectionParser.parse_sections()` → alias do `parse(...)`
+  - Aliasy oznaczone komentarzem `DEPRECATED(2026-04)`; usunąć po migracji call-site'ów.
+
 ## ⚠️ Intentionally Not Refactored
 
 ### Parse Segment Functions

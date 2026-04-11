@@ -7,13 +7,39 @@ from scrapers.columns.types.driver import DriverColumn
 from scrapers.parsers.seasons.constants import MERGED_ENTRY_BASE_KEYS
 from scrapers.parsers.seasons.constants import ROUND_LEVEL_RESULT_ATTRIBUTES
 from scrapers.parsers.seasons.table import SeasonTableParser
+from scrapers.parsers.wiki.base import WikiSectionParser
 
 
-class SeasonStandingsService:
+class SeasonStandingsParser(WikiSectionParser):
     def __init__(self, table_parser: SeasonTableParser) -> None:
         self._table_parser = table_parser
 
-    def parse_drivers(
+    def parse(
+        self,
+        soup: BeautifulSoup,
+        *,
+        standings: str = "drivers",
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]:
+        """Canonical entrypoint parsera klasyfikacji sezonu.
+
+        Args:
+            soup: Dokument Wikipedia (BeautifulSoup).
+            standings: Typ klasyfikacji (`drivers` lub `constructors`).
+            season_year: Rok sezonu (wymagany dla części tabel kierowców).
+        """
+        if standings == "drivers":
+            return self._parse_drivers(soup, season_year=season_year)
+        if standings == "constructors":
+            return self._parse_constructors(soup)
+        msg = (
+            "Unsupported standings type. "
+            "Expected 'drivers' or 'constructors', got "
+            f"{standings!r}."
+        )
+        raise ValueError(msg)
+
+    def _parse_drivers(
         self,
         soup: BeautifulSoup,
         season_year: int | None = None,
@@ -33,7 +59,7 @@ class SeasonStandingsService:
         self._apply_fastest_lap_sharing(records)
         return records
 
-    def parse_constructors(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _parse_constructors(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         records = self._parse_standings_table(
             soup,
             section_ids=[
@@ -45,6 +71,20 @@ class SeasonStandingsService:
             subject_column=ConstructorColumn(),
         )
         return self.merge_duplicate_constructors(records)
+
+    # DEPRECATED(2026-04): alias tymczasowy; używaj parse(..., standings=\"drivers\").
+    # Remove after all call-sites migrate to parse().
+    def parse_drivers(
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]:
+        return self.parse(soup, standings="drivers", season_year=season_year)
+
+    # DEPRECATED(2026-04): alias tymczasowy; używaj parse(..., standings=\"constructors\").
+    # Remove after all call-sites migrate to parse().
+    def parse_constructors(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self.parse(soup, standings="constructors")
 
     def _parse_standings_table(
         self,

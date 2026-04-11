@@ -4,27 +4,56 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.core.domain_roles import Parser
 
-TWikiParsed = TypeVar("TWikiParsed")
+WikiRecord = dict[str, Any]
+WikiRecords = list[WikiRecord]
+
+TWikiInput = TypeVar("TWikiInput")
+TWikiOutput = TypeVar("TWikiOutput")
 
 
-class WikiParser(Parser[Tag, TWikiParsed], ABC, Generic[TWikiParsed]):
-    """Bazowa klasa dla wszystkich parserów HTML Wikipedii.
+class WikiParser(
+    Parser[TWikiInput, TWikiOutput],
+    ABC,
+    Generic[TWikiInput, TWikiOutput],
+):
+    """Bazowy kontrakt parserów Wikipedii.
 
-    Parser przetwarza konkretny fragment HTML (Tag) i zwraca
-    wyekstrahowane dane w postaci słownika.
+    Każdy parser implementuje jednolity entrypoint `parse(...)` i zwraca
+    jawnie typowane dane wyjściowe.
     """
 
     @abstractmethod
-    def parse(self, element: Tag, *args: Any, **kwargs: Any) -> TWikiParsed:
-        """Parsuje przekazany element HTML.
+    def parse(self, element: TWikiInput, *args: Any, **kwargs: Any) -> TWikiOutput:
+        """Parsuje przekazane dane wejściowe Wikipedii."""
 
-        Args:
-            element: Element BeautifulSoup do sparsowania.
 
-        Returns:
-            Wyekstrahowane dane (format zależy od konkretnego parsera).
-        """
+class WikiSectionParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
+    """Kontrakt parserów sekcji artykułów Wikipedii."""
+
+
+class WikiTableParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
+    """Kontrakt parserów tabel Wikipedii."""
+
+
+class WikiListParser(WikiParser[Tag, WikiRecords], ABC):
+    """Kontrakt parserów list Wikipedii (np. <ul>/<ol>)."""
+
+
+class WikiTagParser(WikiParser[Tag, TWikiOutput], ABC, Generic[TWikiOutput]):
+    """Kontrakt parserów pojedynczych tagów HTML Wikipedii."""
+
+
+__all__ = [
+    "WikiListParser",
+    "WikiParser",
+    "WikiRecord",
+    "WikiRecords",
+    "WikiSectionParser",
+    "WikiTableParser",
+    "WikiTagParser",
+]

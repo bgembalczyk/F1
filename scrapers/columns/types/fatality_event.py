@@ -18,7 +18,7 @@ class FatalityEventColumn(EnumMarksMixin, BackgroundMixin, BaseColumn):
         self.auto_column = auto_column or AutoColumn()
 
     def parse(self, ctx: ColumnContext) -> Any:
-        championship = EnumMarksMixin.parse(self, ctx)
+        championship = self.parse_marks(ctx)
         auto_value = self.auto_column.parse(ctx)
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}

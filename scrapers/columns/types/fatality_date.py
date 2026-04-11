@@ -14,7 +14,7 @@ class FatalityDateColumn(EnumMarksMixin, BaseColumn):
     def parse(self, ctx: ColumnContext) -> dict[str, Any]:
         return {
             "date": parse_date_with_category_marker(ctx, MARK_F2_CATEGORY),
-            "formula_category": EnumMarksMixin.parse(self, ctx),
+            "formula_category": self.parse_marks(ctx),
         }
 
     def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:

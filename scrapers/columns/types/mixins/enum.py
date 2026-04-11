@@ -1,16 +1,14 @@
 from typing import Any
 
-from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
 
 
-class EnumMarksMixin(BaseColumn):
+class EnumMarksMixin:
     """
     Mixin/base dla kolumn parsujących wartości enum
     na podstawie znaków (np. *, †) w raw_text.
 
-    Może być używany jako samodzielna kolumna
-    lub jako mixin w dziedziczeniu wielokrotnym.
+    Używany wyłącznie jako mixin w dziedziczeniu wielokrotnym.
 
     mapping: znak -> wartość enum
     default: wartość gdy żaden znak nie pasuje
@@ -22,10 +20,10 @@ class EnumMarksMixin(BaseColumn):
         default: Any = None,
         **kwargs: Any,
     ) -> None:
+        del kwargs
         if mapping is not None:
             self.mapping = dict(mapping)
             self.default = default
-        super().__init__(**kwargs)
 
     def parse_marks(
         self,
@@ -40,9 +38,5 @@ class EnumMarksMixin(BaseColumn):
             if mark in text:
                 return value
         return fallback
-
-    def parse(self, ctx: ColumnContext) -> Any:
-        return self.parse_marks(ctx)
-
 
 __all__ = ["EnumMarksMixin"]

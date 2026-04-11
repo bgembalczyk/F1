@@ -16,10 +16,11 @@ from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import BroaderScopeSplitter
 from scrapers.parsers.liveries.sponsorship.splitters.record.facade import SponsorshipRecordSplitter
 from scrapers.parsers.table.sponsorship import SponsorshipTableParser
+from scrapers.parsers.wiki.base import WikiSectionParser
 from scrapers.pipeline_table import TablePipeline
 
 
-class SponsorshipSectionParser:
+class SponsorshipSectionParser(WikiSectionParser):
     def __init__(
         self,
         *,
@@ -181,7 +182,7 @@ class SponsorshipSectionParser:
         msg = f"Nie znaleziono tabeli w sekcji {section_id!r}"
         raise RuntimeError(msg)
 
-    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []
         seen_sections: set[str] = set()
         for heading, headline in self._collect_section_headings(soup):
@@ -192,6 +193,11 @@ class SponsorshipSectionParser:
             if section_record:
                 records.append(section_record)
         return records
+
+    # DEPRECATED(2026-04): alias tymczasowy; używaj parse(...).
+    # Remove after all call-sites migrate to parse().
+    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self.parse(soup)
 
     def _parse_heading(
         self,
