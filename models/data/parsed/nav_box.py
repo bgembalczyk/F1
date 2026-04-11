@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-from models.types import CategoryLinkItem
+from models.category.link_item import CategoryLinkItem
 
 
 class NavBoxParsedData(TypedDict):

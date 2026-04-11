@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-from models.types import WikiParserData
+from models.data.wiki_parser import WikiParserData
 
 
 class WikiParsedPayload(TypedDict):

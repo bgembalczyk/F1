@@ -1,8 +1,8 @@
 from bs4 import Tag
 
 from models.data.parsed.paragraph import ParagraphParsedData
+from scrapers.parsers.text_cleaning import extract_text
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.text_cleaning import extract_text
 
 
 class ParagraphParser(WikiParser[ParagraphParsedData]):

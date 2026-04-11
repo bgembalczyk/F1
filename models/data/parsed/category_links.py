@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-from models.types import CategoryGroup
+from models.category.group import CategoryGroup
 
 
 class CategoryLinksParsedData(TypedDict):

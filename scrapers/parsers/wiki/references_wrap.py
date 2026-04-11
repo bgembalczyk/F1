@@ -1,8 +1,8 @@
 from bs4 import Tag
 
 from models.data.parsed.references_wrap import ReferencesWrapParsedData
+from scrapers.parsers.text_cleaning import extract_text
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.text_cleaning import extract_text
 
 
 class ReferencesWrapParser(WikiParser[ReferencesWrapParsedData]):

@@ -6,7 +6,7 @@ from models.data.wiki_parser import WikiParserData
 from models.payload import WikiParsedPayload
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.element import WikiElementParsers
+from scrapers.parsers.wiki.element import WikiElementParsers
 
 
 class WikiElementParserMixin:

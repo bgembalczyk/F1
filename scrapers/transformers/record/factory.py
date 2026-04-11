@@ -4,7 +4,7 @@ from typing import Any
 from models.records.factories.protocol import RecordBuilder
 from scrapers.logging import get_logger
 from scrapers.normalization_utils import EmptyValuePolicy
-from scrapers.transformers.record import RecordTransformer
+from scrapers.transformers.record.base import RecordTransformer
 from validation.validator_base import ExportRecord
 
 FACTORY_FALLBACK_EXCEPTIONS = (TypeError, ValueError, KeyError, AttributeError)

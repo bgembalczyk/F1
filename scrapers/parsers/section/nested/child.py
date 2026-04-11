@@ -1,7 +1,7 @@
 from typing import Any
 from typing import Protocol
 
-from scrapers.parsers.section.wiki.data_classes import SectionExtractionContext
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 
 
 class NestedChildParser(Protocol):

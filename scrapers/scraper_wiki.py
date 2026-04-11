@@ -3,17 +3,15 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import ABCScraper
-from scrapers.base.helpers.helpers import init_scraper_options
-from scrapers.base.options import ScraperOptions
-from scrapers.wiki.parsers.body_content import BodyContentParser
-from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
-from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
-from scrapers.wiki.parsers.header import HeaderParser
-from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
-
-if TYPE_CHECKING:
-    from scrapers.wiki.parsers.sections.section import SectionParser
+from infrastructure.helpers import init_scraper_options
+from scrapers.abc import ABCScraper
+from scrapers.options import ScraperOptions
+from scrapers.parsers.mixins.wiki_element import WikiElementParserMixin
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import build_default_wiki_element_parsers
+from scrapers.parsers.wiki.header import HeaderParser
 
 
 class WikiScraper(WikiElementParserMixin, ABCScraper):

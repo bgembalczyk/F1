@@ -4,12 +4,12 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.section.wiki.data_classes import SectionExtractionContext
+from models.payload import WikiParsedPayload
+from scrapers.parsers.mixins.wiki_element import WikiElementParserMixin
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.elements.mixin import WikiElementParserMixin
-from scrapers.parsers.wiki.elements.parsers import WikiElementParsers
-from scrapers.parsers.wiki.elements.parsers import build_default_wiki_element_parsers
-from scrapers.parsers.wiki.types import WikiParsedPayload
+from scrapers.parsers.wiki.element import WikiElementParsers
+from scrapers.parsers.wiki.element import build_default_wiki_element_parsers
 
 
 class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):

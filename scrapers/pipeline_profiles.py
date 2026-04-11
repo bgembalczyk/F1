@@ -5,10 +5,8 @@ from importlib import import_module
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.helpers.common_config import ScraperCommonConfig
-
-if TYPE_CHECKING:
-    from scrapers.base.options import ScraperOptions
+from scrapers.common_config import ScraperCommonConfig
+from scrapers.options import ScraperOptions
 
 
 @dataclass(frozen=True)
