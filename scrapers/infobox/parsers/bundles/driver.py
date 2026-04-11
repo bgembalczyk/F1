@@ -9,7 +9,7 @@ from scrapers.infobox.section_discovery import InfoboxSectionDiscovery
 
 
 @dataclass(frozen=True)
-class DriverInfoboxParserBundle:
+class DriverInfoboxComponents:
     link_extractor: InfoboxLinkExtractor
     cell_parser: InfoboxCellParser
     general_parser: InfoboxGeneralParser

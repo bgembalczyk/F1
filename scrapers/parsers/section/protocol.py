@@ -3,10 +3,6 @@ from typing import runtime_checkable
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.section.section_parser_protocol import SectionParserProtocol
-
-SectionParser = SectionParserProtocol
-
 from scrapers.family_contracts import SectionParserContract
 from scrapers.section.parse_results import SectionParseResult
 
@@ -22,4 +18,4 @@ class SectionParser(SectionParserContract, Protocol):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
 
 
-__all__ = ["SectionParser", "SectionParserProtocol"]
+__all__ = ["SectionParser"]

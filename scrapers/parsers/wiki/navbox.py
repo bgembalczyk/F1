@@ -1,30 +1,9 @@
-from bs4 import Tag
-
 from models.data.parsed.nav_box import NavBoxParsedData
-from scrapers.parsers.text_cleaning import extract_text
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.html_elements.navbox import NavboxElementParser
 
 
-class NavBoxParser(WikiParser[Tag, NavBoxParsedData]):
-    """Parser navboxów Wikipedii.
+class NavBoxParser(NavboxElementParser):
+    pass
 
-    Przetwarza element: <div role="navigation" class="navbox">
-    """
 
-    def parse(self, element: Tag) -> NavBoxParsedData:
-        """Parsuje navbox HTML.
-
-        Args:
-            element: Element <div role="navigation" class="navbox">.
-
-        Returns:
-            Słownik z tytułem navboxa i linkami.
-        """
-        title_tag = element.find(class_="navbox-title")
-        title = extract_text(title_tag)
-        links = []
-        for anchor in element.find_all("a"):
-            href = anchor.get("href")
-            if isinstance(href, str):
-                links.append({"text": extract_text(anchor), "href": href})
-        return {"title": title, "links": links}
+__all__ = ["NavBoxParser", "NavBoxParsedData"]
