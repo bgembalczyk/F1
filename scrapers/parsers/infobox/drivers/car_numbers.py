@@ -7,12 +7,6 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.infobox.parsers.drivers.constants import CAR_NUMBER_PATTERN_RE
-from scrapers.infobox.parsers.drivers.constants import MIN_VALID_CAR_NUMBER_YEAR
-from scrapers.infobox.parsers.drivers.constants import MIN_YEAR_TOKENS_FOR_RANGE
-from scrapers.infobox.parsers.drivers.constants import YEAR_TOKEN_RE
-from scrapers.infobox.parsers.drivers.year import YearParser
-from scrapers.infobox.parsers.base_field_parser import BaseInfoboxFieldParser
 from scrapers.parsers.infobox.constants import CAR_NUMBER_PATTERN_RE
 from scrapers.parsers.infobox.constants import MIN_VALID_CAR_NUMBER_YEAR
 from scrapers.parsers.infobox.constants import MIN_YEAR_TOKENS_FOR_RANGE
