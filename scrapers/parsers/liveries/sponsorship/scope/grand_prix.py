@@ -6,7 +6,7 @@ from scrapers.parsers.liveries.sponsorship.scope.accumulators.grand_prix import 
 from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 
-class GrandPrixScopeParser:
+class GrandPrixScopeTransformer:
     @classmethod
     def params_contain_only_years_or_grand_prix(cls, params: list[Any]) -> bool:
         if not params:
@@ -141,4 +141,4 @@ class GrandPrixScopeParser:
         return ("other",)
 
 
-__all__ = ["GrandPrixScopeParser"]
+__all__ = ["GrandPrixScopeTransformer"]

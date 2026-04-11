@@ -9,7 +9,7 @@ from scrapers.parsers.seasons.constants import ROUND_LEVEL_RESULT_ATTRIBUTES
 from scrapers.parsers.seasons.table import SeasonTableParser
 
 
-class SeasonStandingsParser:
+class SeasonStandingsService:
     def __init__(self, table_parser: SeasonTableParser) -> None:
         self._table_parser = table_parser
 
@@ -124,7 +124,7 @@ class SeasonStandingsParser:
                 should_merge = (
                     current.get("pos") == next_record.get("pos")
                     and current.get("points") == next_record.get("points")
-                    and SeasonStandingsParser._same_constructor(
+                    and SeasonStandingsService._same_constructor(
                         current.get("constructor"),
                         next_record.get("constructor"),
                     )
@@ -137,7 +137,7 @@ class SeasonStandingsParser:
 
             if len(entries_to_merge) > 1:
                 merged.append(
-                    SeasonStandingsParser._merge_multiple_entries(entries_to_merge),
+                    SeasonStandingsService._merge_multiple_entries(entries_to_merge),
                 )
             else:
                 merged.append(current)
@@ -180,12 +180,12 @@ class SeasonStandingsParser:
             for key, value in entry.items():
                 if key in MERGED_ENTRY_BASE_KEYS:
                     continue
-                merged[key] = SeasonStandingsParser._merge_round_value(
+                merged[key] = SeasonStandingsService._merge_round_value(
                     merged.get(key),
                     value,
                 )
 
-        SeasonStandingsParser._cleanup_round_attributes(merged)
+        SeasonStandingsService._cleanup_round_attributes(merged)
         return merged
 
     @staticmethod
@@ -199,14 +199,14 @@ class SeasonStandingsParser:
         ):
             if isinstance(incoming, dict) and "results" in incoming:
                 cleaned = dict(incoming)
-                SeasonStandingsParser._remove_round_level_attributes(cleaned)
+                SeasonStandingsService._remove_round_level_attributes(cleaned)
                 return cleaned
             return incoming
 
         existing_results = existing.get("results")
         new_results = incoming.get("results")
-        existing_list = SeasonStandingsParser._as_results_list(existing_results)
-        new_list = SeasonStandingsParser._as_results_list(new_results)
+        existing_list = SeasonStandingsService._as_results_list(existing_results)
+        new_list = SeasonStandingsService._as_results_list(new_results)
         if existing_list or new_list:
             existing["results"] = existing_list + new_list
 
@@ -216,7 +216,7 @@ class SeasonStandingsParser:
             if round_key not in existing:
                 existing[round_key] = round_value
 
-        SeasonStandingsParser._remove_round_level_attributes(existing)
+        SeasonStandingsService._remove_round_level_attributes(existing)
         return existing
 
     @staticmethod
@@ -232,7 +232,7 @@ class SeasonStandingsParser:
     def _cleanup_round_attributes(merged: dict[str, Any]) -> None:
         for round_data in merged.values():
             if isinstance(round_data, dict) and "results" in round_data:
-                SeasonStandingsParser._remove_round_level_attributes(round_data)
+                SeasonStandingsService._remove_round_level_attributes(round_data)
 
 
-__all__ = ["SeasonStandingsParser"]
+__all__ = ["SeasonStandingsService"]

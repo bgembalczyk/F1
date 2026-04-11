@@ -3,7 +3,7 @@ from typing import Any
 
 from scrapers.helpers.constants import POSSESSIVE_COLOUR_RE
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeParser
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeTransformer
 from scrapers.parsers.liveries.sponsorship.splitters.depth_aware_colour import DepthAwareColourSplitter
 from scrapers.sponsorship_record_text import SponsorshipRecordText
 
@@ -108,7 +108,7 @@ class ColourScopeHandler:
             flags=re.IGNORECASE,
         ):
             return None, cleaned_colour
-        names = GrandPrixScopeParser.parse_grand_prix_names(scope_text)
+        names = GrandPrixScopeTransformer.parse_grand_prix_names(scope_text)
         scope = {
             "type": "only",
             "grand_prix": [{"text": name} for name in names],

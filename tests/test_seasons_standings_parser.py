@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.seasons.parsers_seasons.standings import SeasonStandingsParser
+from scrapers.seasons.parsers_seasons.standings import SeasonStandingsService
 
 
 class StubStandingsTableParser:
@@ -31,7 +31,7 @@ class StubStandingsTableParser:
 
 
 def test_parse_drivers_marks_ineligible_section_and_shares_fastest_lap() -> None:
-    parser = SeasonStandingsParser(
+    parser = SeasonStandingsService(
         StubStandingsTableParser(
             responses=[
                 [
@@ -60,7 +60,7 @@ def test_parse_drivers_marks_ineligible_section_and_shares_fastest_lap() -> None
 
 
 def test_parse_constructors_merges_duplicate_rows_into_one_domain_result() -> None:
-    parser = SeasonStandingsParser(
+    parser = SeasonStandingsService(
         StubStandingsTableParser(
             responses=[
                 [
@@ -104,7 +104,7 @@ def test_parse_constructors_merges_duplicate_rows_into_one_domain_result() -> No
 
 
 def test_parse_drivers_propagates_table_parser_errors() -> None:
-    parser = SeasonStandingsParser(
+    parser = SeasonStandingsService(
         StubStandingsTableParser(error=ValueError("bad table")),
     )
 
@@ -115,7 +115,7 @@ def test_parse_drivers_propagates_table_parser_errors() -> None:
 def test_parse_drivers_requests_primary_and_alias_section_ids() -> None:
     _expected_season_year = 2024
     table_parser = StubStandingsTableParser(responses=[[]])
-    parser = SeasonStandingsParser(table_parser)
+    parser = SeasonStandingsService(table_parser)
 
     parser.parse_drivers(
         BeautifulSoup("<html></html>", "html.parser"),

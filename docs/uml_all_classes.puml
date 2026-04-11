@@ -640,7 +640,7 @@ package "Scrapers / Seasons" {
     class JimClarkTrophyParser
     class MarkBasedEligibilityRule
     class RaceResultBackgroundMapper
-    class RaceResultCellParser
+    class RaceResultCellTransformer
     class RaceResultColumn
     class ResultRule
     class ResultRuleContext
@@ -671,7 +671,7 @@ package "Scrapers / Seasons" {
     class SeasonSectionParser
     class SeasonSectionParserBinding
     class SeasonSectionPipeline
-    class SeasonStandingsParser
+    class SeasonStandingsService
     class SeasonTableParser
     class SeasonTextSectionExtractionService
     class SeasonYearResolver
@@ -694,7 +694,7 @@ package "Scrapers / Sponsorship & Liveries" {
     class DepthAwareColourSplitter
     class F1SponsorshipLiveriesScraper
     class GrandPrixScopeAccumulator
-    class GrandPrixScopeParser
+    class GrandPrixScopeTransformer
     class GrandPrixSplitStrategy
     class ParenClassifier
     class PipelineRecord

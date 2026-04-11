@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.seasons.columns_seasons.helpers.constants import SPRINT_POINTS_START_YEAR
-from scrapers.seasons.columns_seasons.helpers.race_result import RaceResultCellParser
+from scrapers.seasons.columns_seasons.helpers.race_result import RaceResultCellTransformer
 
 HIDDEN_SPAN_CELL_HTML = (
     "<td><span style='position: absolute; left:-9999px'>ghost</span> "
@@ -24,13 +24,13 @@ def test_parse_results_covers_happy_path_and_weird_separators(
     raw_text: str,
     expected: list[dict],
 ) -> None:
-    parser = RaceResultCellParser()
+    parser = RaceResultCellTransformer()
 
     assert parser.parse_results(raw_text) == expected
 
 
 def test_extract_result_text_falls_back_to_clean_text_when_cell_missing() -> None:
-    parser = RaceResultCellParser()
+    parser = RaceResultCellTransformer()
     ctx = ColumnContext(
         header="Race",
         key="result",
@@ -57,7 +57,7 @@ def test_parse_superscripts_handles_rule_conflicts_and_year_priority(
     expected_sprint: int | None,
     expected_footnotes: list[str],
 ) -> None:
-    parser = RaceResultCellParser()
+    parser = RaceResultCellTransformer()
     soup = BeautifulSoup(
         "<td><b>1</b><i>fast</i><sup>1PF</sup><sup>2</sup></td>",
         "html.parser",
@@ -82,7 +82,7 @@ def test_parse_superscripts_handles_rule_conflicts_and_year_priority(
 
 
 def test_prepare_cell_fragment_strips_absolute_spans_and_superscripts() -> None:
-    parser = RaceResultCellParser()
+    parser = RaceResultCellTransformer()
     soup = BeautifulSoup(HIDDEN_SPAN_CELL_HTML, "html.parser")
     ctx = ColumnContext(
         header="Race",

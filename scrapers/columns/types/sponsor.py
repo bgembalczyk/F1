@@ -11,7 +11,7 @@ from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.url import normalize_url
 from scrapers.parsers.liveries.sponsorship.parts import SponsorPartsParser
-from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeParser
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeTransformer
 from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 
@@ -151,7 +151,7 @@ class SponsorColumn(BaseColumn):
         last = items[-1]
         trailing_scope_params = None
         if isinstance(last, dict) and last.get("params"):
-            if GrandPrixScopeParser.parse_grand_prix_scope(last["params"]):
+            if GrandPrixScopeTransformer.parse_grand_prix_scope(last["params"]):
                 trailing_scope_params = last["params"]
 
         if trailing_scope_params is None:

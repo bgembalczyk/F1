@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeParser
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeTransformer
 from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 
@@ -13,7 +13,7 @@ class SponsorScopeHandler:
         for item in sponsors:
             if isinstance(item, dict):
                 params = item.get("params") or []
-                if not GrandPrixScopeParser.params_contain_only_years_or_grand_prix(
+                if not GrandPrixScopeTransformer.params_contain_only_years_or_grand_prix(
                     params,
                 ):
                     cleaned_item = {k: v for k, v in item.items() if k != "params"}
@@ -48,7 +48,7 @@ class SponsorScopeHandler:
                 if not isinstance(item, dict):
                     continue
                 params = item.get("params") or []
-                if not GrandPrixScopeParser.params_contain_only_years_or_grand_prix(
+                if not GrandPrixScopeTransformer.params_contain_only_years_or_grand_prix(
                     params,
                 ):
                     continue
