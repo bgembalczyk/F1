@@ -13,7 +13,7 @@ from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.constants import EXPECTED_STATS_COLUMNS
 
 
-class InfoboxTableParser:
+class InfoboxTableExtractor:
     """Handles parsing of nested tables and extraction of statistics."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
@@ -109,4 +109,4 @@ class InfoboxTableParser:
         return extract_driver_stats_row(rows[0], headers)
 
 
-__all__ = ["InfoboxTableParser"]
+__all__ = ["InfoboxTableExtractor"]

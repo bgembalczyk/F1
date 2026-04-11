@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import Any
 from typing import Protocol
 
+from scrapers.parsers.wiki.base import WikiFragmentParser
+
 
 class WikiTableFragmentParser(Protocol):
     def parse(self, raw_html_fragment: dict[str, Any]) -> dict[str, Any] | None: ...
@@ -61,7 +63,7 @@ class WikiTablePayloadCollector:
                 self._collect_from_node(item, rows)
 
 
-class WikiTableBaseParser:
+class WikiTableBaseParser(WikiFragmentParser[dict[str, Any] | None]):
     table_type: str = "wiki_table"
     missing_columns_policy: str = "skip"
     extra_columns_policy: str = "ignore"

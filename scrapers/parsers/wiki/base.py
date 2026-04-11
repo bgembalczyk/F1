@@ -33,7 +33,7 @@ class WikiSectionParser(WikiParser[BeautifulSoup, WikiRecords], ABC):
     """Kontrakt parserów sekcji artykułów Wikipedii."""
 
 
-class WikiTableElementParserBase(WikiParser[BeautifulSoup, WikiRecords], ABC):
+class WikiTableElementParserBase(WikiParser[Tag, WikiRecords], ABC):
     """Kontrakt parserów tabel Wikipedii."""
 
 
