@@ -8,8 +8,8 @@ from scrapers.parsers.wiki.domain_mapper import DomainMapper
 from scrapers.parsers.wiki.domain_mapper import build_default_domain_mapper
 from scrapers.parsers.wiki.element import ElementParserRegistry
 from scrapers.parsers.wiki.element import WikiElementParsers
-from scrapers.parsers.wiki.element import build_default_wiki_element_parsers
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
+from scrapers.parsers.wiki.element_factory import build_default_wiki_element_parsers
 
 
 @dataclass(frozen=True)
