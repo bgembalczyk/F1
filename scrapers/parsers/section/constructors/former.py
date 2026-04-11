@@ -1,7 +1,3 @@
-from scrapers.config_table import TableScraperConfig
-from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
-from scrapers.parsers.section.sub.indianapolis_only import IndianapolisOnlySubSectionParser
-from scrapers.parsers.table.constructor.former import FormerConstructorsTableParser
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -9,9 +5,8 @@ from bs4 import BeautifulSoup
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
 from scrapers.parsers.section.sublevels.indianapolis_only_sub_section import IndianapolisOnlySubSectionParser
-from scrapers.parsers.table.former_constructors import FormerConstructorsTableParser
+from scrapers.parsers.table.constructor.former import FormerConstructorsTableParser
 from scrapers.section.parse_results import SectionParseResult
-
 
 class FormerConstructorsSectionParser(ConstructorsSectionParser):
     def __init__(

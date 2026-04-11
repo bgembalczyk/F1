@@ -2,10 +2,10 @@ import re
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.helpers.helpers import init_scraper_options
-from scrapers.base.services.result_export_service import ResultExportService
+from scrapers.options import ScraperOptions
+from scrapers.services.result_export import ResultExportService
 from scrapers.results import ScrapeResult
-from scrapers.seasons.complete_scraper_seasons import CompleteSeasonDataExtractor
+from scrapers.complete_scraper_seasons import CompleteSeasonDataExtractor
 
 
 def season_filename(season_info: dict[str, Any]) -> str:
@@ -25,7 +25,7 @@ def export_complete_seasons(
     output_dir: Path,
     include_urls: bool = True,
 ) -> None:
-    options = init_scraper_options(None, include_urls=include_urls)
+    options = ScraperOptions(include_urls=include_urls)
     scraper = CompleteSeasonDataExtractor(options=options)
     data = scraper.fetch()
     scraper.logger.info("Pobrano rekordów: %s", len(data))

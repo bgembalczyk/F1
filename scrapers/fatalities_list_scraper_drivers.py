@@ -22,7 +22,7 @@ from scrapers.drivers import constants_drivers
 from scrapers.drivers.drivers_columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.drivers_columns.fatality_event import FatalityEventColumn
 from scrapers.drivers.drivers_helpers.parsers import DriverOrderedTableParser
-from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 

@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_NAME_HEADER
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
