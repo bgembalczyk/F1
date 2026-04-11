@@ -3,6 +3,7 @@ from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from record_assembly_strategy.extract_detail_field import ExtractDetailFieldStrategy
 from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.component_metadata_wiki import build_component_metadata
+from scrapers.grands_prix_detail_scraper import GrandsPrixDetailScraper
 from scrapers.list_scraper_grands_prix import GrandsPrixListScraper
 
 
