@@ -13,7 +13,7 @@ from scrapers.wiring.composition_drivers import DriverScraperCompositionFactory
 from scrapers.wiring.composition_drivers import DriverScraperDependencies
 
 warnings.warn(
-    "single_scraper_drivers is deprecated; use scrapers.drivers_detail_scraper.",
+    "single_scraper_drivers is deprecated; use scrapers.single_scraper_drivers.",
     DeprecationWarning,
     stacklevel=2,
 )

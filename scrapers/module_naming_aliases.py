@@ -24,7 +24,7 @@ MODULE_NAMING_ALIASES: tuple[ModuleNamingAlias, ...] = (
     ),
     ModuleNamingAlias(
         old="scrapers.constructors_list",
-        new="scrapers.constructors_list_scraper",
+        new="scrapers.constructors_list",
     ),
     ModuleNamingAlias(
         old="scrapers.single_scraper_drivers",

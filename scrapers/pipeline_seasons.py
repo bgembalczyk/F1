@@ -96,8 +96,6 @@ class SeasonParserSet:
     section_parsers: tuple[SeasonSectionBinding, ...]
 
 
-# Backward-compatible alias.
-SeasonParserSet = SeasonParsingComponents
 
 
 class SeasonParsingComponentsBuilder:

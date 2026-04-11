@@ -7,7 +7,7 @@ from bs4 import Tag
 from models.services.helpers import split_delimited_text
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.parsers.infobox.base import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.field.base import BaseInfoboxFieldParser
 
 
 class TeamsParser(BaseInfoboxFieldParser):
