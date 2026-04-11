@@ -24,7 +24,7 @@ from scrapers.parsers.seasons.results import SeasonResultsParser
 from scrapers.parsers.seasons.scoring_system import SeasonScoringSystemParser
 from scrapers.parsers.seasons.table import SeasonTableParser
 from scrapers.parsers.seasons.testing_venues import TestingVenuesParser
-from scrapers.parsers.section.protocols.season import SeasonSectionParser
+from scrapers.parsers.section.protocols.season import SeasonSectionParserABC
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
 from scrapers.parsers.section.season.calendar import SeasonCalendarSectionParser
 from scrapers.parsers.section.standings.season.constructors import (
@@ -78,7 +78,7 @@ class SeasonYearResolver:
 @dataclass(frozen=True)
 class SeasonSectionBinding:
     field_name: str
-    parser: SeasonSectionParser
+    parser: SeasonSectionParserABC
 
 
 @dataclass(frozen=True)

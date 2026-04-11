@@ -1,15 +1,8 @@
 from __future__ import annotations
 
-from typing import Any
-from typing import Protocol
-from typing import runtime_checkable
+from scrapers.parsers.roles import InfoboxHtmlParserABC
 
-from bs4 import BeautifulSoup
+# Backward-compatible alias.
+InfoboxParserABC = InfoboxHtmlParserABC
 
-
-@runtime_checkable
-class InfoboxParserProtocol(Protocol):
-    def parse(self, fragment: BeautifulSoup) -> dict[str, Any]: ...
-
-
-__all__ = ["InfoboxParserProtocol"]
+__all__ = ["InfoboxParserABC"]

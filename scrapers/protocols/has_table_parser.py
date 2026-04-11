@@ -1,6 +1,11 @@
+from __future__ import annotations
+
+from abc import ABC
 from typing import Any
-from typing import Protocol
 
 
-class HasTableParser(Protocol):
+class HasTableParserABC(ABC):
     _table_parser: Any
+
+
+__all__ = ["HasTableParserABC"]
