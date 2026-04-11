@@ -1,10 +1,15 @@
 from collections.abc import Mapping
 from typing import Any
 
+from scrapers.parsers.roles import RowMapper
+from scrapers.parsers.roles import TableMapper
 from scrapers.records.inputs.table_record import TableRecordInput
 
 
-class TableRecordMapper:
+class TableRecordMapper(
+    RowMapper[TableRecordInput | Mapping[str, Any], dict[str, Any]],
+    TableMapper[list[Mapping[str, Any]], dict[str, Any]],
+):
     """Maps table rows to normalized dictionaries.
 
     Normalization rules:
@@ -25,6 +30,15 @@ class TableRecordMapper:
 
     def map_many(self, payloads: list[Mapping[str, Any]]) -> list[dict[str, Any]]:
         return [self.map(payload) for payload in payloads]
+
+    def map_row(
+        self,
+        row: TableRecordInput | Mapping[str, Any],
+    ) -> dict[str, Any] | None:
+        return self.map(row)
+
+    def map_table(self, table: list[Mapping[str, Any]]) -> list[dict[str, Any]]:
+        return self.map_many(table)
 
     def _normalize_value(self, value: Any) -> Any:
         if isinstance(value, Mapping):

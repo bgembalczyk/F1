@@ -21,7 +21,7 @@ class LicenceParser:
         """
         self._link_extractor = link_extractor
 
-    def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
+    def parse(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse 'Racing licence' field.
 
         Example: "FIA Gold (until 2019)" and "FIA Platinum (2020-)"
@@ -33,6 +33,10 @@ class LicenceParser:
             message=f"Nie udało się sparsować licencji wyścigowej: {text!r}.",
             parser_name=self.__class__.__name__,
         )
+
+    def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
+        """Backward-compatible wrapper around :meth:`parse`."""
+        return self.parse(cell)
 
     def _parse_racing_licence_payload(self, cell: Tag) -> list[dict[str, Any]]:
         licence_links = self._extract_licence_links(cell)

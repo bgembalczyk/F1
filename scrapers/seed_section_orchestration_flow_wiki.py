@@ -18,6 +18,8 @@ from scrapers.orchestration.base_roles import BaseNormalizer
 from scrapers.orchestration.base_roles import BaseOrchestrator
 from scrapers.orchestration.base_roles import QualityMetricsMixin
 from scrapers.orchestration.base_roles import UrlResolverMixin
+from scrapers.parsers.registry import resolve_parser_name
+from scrapers.parsers.registry import validate_parser_registry
 from scrapers.wiki.base_flow_wiki import BaseOrchestrationFlow
 
 if TYPE_CHECKING:
@@ -91,6 +93,7 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             checkpoints_dir=self._checkpoints_dir,
             enabled_domains=checkpoint_dump_domains or set(),
         )
+        validate_parser_registry()
 
     def run(self, domains: tuple[str, ...] = SUPPORTED_DOMAINS) -> dict[str, str]:
         outputs: dict[str, str] = {}
@@ -106,7 +109,7 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
                 step_id=0,
                 layer="layer0",
                 domain=domain,
-                parser="_parse_layer0_seed",
+                parser=self._resolve_layer_parser_name(domain=domain, layer="layer0"),
                 input_source=l0_audit.input_path,
                 output_target="checkpoints",
                 records=l0_records,
@@ -120,7 +123,7 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
                 step_id=1,
                 layer="layer1",
                 domain=domain,
-                parser="_parse_layer1_details",
+                parser=self._resolve_layer_parser_name(domain=domain, layer="layer1"),
                 input_source=l1_audit.input_path,
                 output_target="checkpoints",
                 records=l1_records,
@@ -320,6 +323,15 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             duration_ms=duration_ms,
         )
         return validate_payload.records, audit
+
+
+    @staticmethod
+    def _resolve_layer_parser_name(*, domain: str, layer: str) -> str:
+        element_type = "list" if layer == "layer0" else "section"
+        return resolve_parser_name(
+            domain=domain,
+            element_type=element_type,
+        )
 
     def _write_checkpoint(
         self,

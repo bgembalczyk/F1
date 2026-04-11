@@ -10,7 +10,7 @@ from scrapers.parsers.wiki.element import ElementParserRegistry
 from scrapers.parsers.wiki.element import WikiElementParsers
 
 
-class WikiElementParserMixin:
+class WikiElementParsingMixin:
     def __init__(
         self,
         *,

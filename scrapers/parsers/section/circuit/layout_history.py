@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -9,7 +10,7 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class CircuitLayoutHistorySectionParser:
+class CircuitLayoutHistorySectionParser(SectionParser):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         paragraphs = [
             p.get_text(" ", strip=True) for p in section_fragment.find_all("p")

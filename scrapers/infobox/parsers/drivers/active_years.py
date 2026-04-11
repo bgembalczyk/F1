@@ -20,7 +20,7 @@ class ActiveYearsParser:
         """
         self._link_extractor = link_extractor
 
-    def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:
+    def parse(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse active years as a list of individual seasons with links.
 
         Handles cases like:
@@ -49,6 +49,10 @@ class ActiveYearsParser:
         return [
             {"year": year, "url": year_to_link.get(year)} for year in sorted(years_set)
         ]
+
+    def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:
+        """Backward-compatible wrapper around :meth:`parse`."""
+        return self.parse(cell)
 
 
 __all__ = ["ActiveYearsParser"]

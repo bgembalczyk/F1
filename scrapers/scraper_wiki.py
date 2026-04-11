@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from infrastructure.helpers import init_scraper_options
 from scrapers.abc import ABCScraper
 from scrapers.options import ScraperOptions
-from scrapers.parsers.mixins.wiki_element import WikiElementParserMixin
+from scrapers.parsers.mixins.wiki_element import WikiElementParsingMixin
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.wiki.body_content import BodyContentParser
 from scrapers.parsers.wiki.element import WikiElementParsers
@@ -13,7 +13,7 @@ from scrapers.parsers.wiki.element import build_default_wiki_element_parsers
 from scrapers.parsers.wiki.header import HeaderParser
 
 
-class WikiScraper(WikiElementParserMixin, ABCScraper):
+class WikiScraper(WikiElementParsingMixin, ABCScraper):
     """Bazowy scraper artykułów Wikipedii.
 
     Dziedziczy z ABCScraper, zapewniając pełen pipeline:
@@ -61,7 +61,7 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
         resolved_element_parsers = (
             element_parsers or build_default_wiki_element_parsers()
         )
-        WikiElementParserMixin.__init__(
+        WikiElementParsingMixin.__init__(
             self,
             element_parsers=resolved_element_parsers,
         )

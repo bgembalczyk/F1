@@ -9,7 +9,7 @@ from scrapers.errors import ScraperError
 _T = TypeVar("_T")
 
 
-class SafeParserMixin:
+class SafeParsingMixin:
     """
     Mixin class providing safe parsing functionality.
 

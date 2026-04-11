@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.seasons.parsers_seasons.results import SeasonResultsParser
-from scrapers.seasons.parsers_seasons.table import SeasonTableParser
+from scrapers.seasons.parsers_seasons.table import SeasonTableService
 from scrapers.wiki.parsers.content_text import ContentTextParser
 from scrapers.wiki.parsers.sections.adapter import collect_section_elements
 from scrapers.wiki.parsers.sections.adapter import find_section_tree
@@ -65,7 +65,7 @@ def test_season_results_parser_uses_section_adapter_vertical_slice() -> None:
     """
     soup = BeautifulSoup(html, "html.parser")
     parser = SeasonResultsParser(
-        SeasonTableParser(
+        SeasonTableService(
             options=ScraperOptions(),
             include_urls=True,
             url="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
