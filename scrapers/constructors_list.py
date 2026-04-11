@@ -40,7 +40,7 @@ from scrapers.constructors_constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADER
 from scrapers.constructors_constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.list.base import ListScraper
-from scrapers.parsers.list.wiki import ListParser
+from scrapers.parsers.wiki.list import ListParser
 from scrapers.parsers.section.constructors.current import CurrentConstructorsSectionParser
 from scrapers.parsers.section.constructors.former import FormerConstructorsSectionParser
 from scrapers.parsers.section.protocol import SectionParser
