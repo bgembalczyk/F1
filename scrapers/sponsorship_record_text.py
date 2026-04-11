@@ -1,11 +1,11 @@
 import re
 from typing import Any
 
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.constants import decade_re
-from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.constants import year_range_abbrev_re
-from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.constants import year_range_re
-from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.constants import year_re
+from scrapers.helpers.text import clean_wiki_text
+from scrapers.helpers.constants import decade_re
+from scrapers.helpers.constants import year_range_abbrev_re
+from scrapers.helpers.constants import year_range_re
+from scrapers.helpers.constants import year_re
 
 
 class SponsorshipRecordText:

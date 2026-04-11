@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING
 from typing import Literal
 
 if TYPE_CHECKING:
-    from scrapers.base.run_config import RunConfig
+    from scrapers.run_config import RunConfig
 
 
 @dataclass(frozen=True)
@@ -55,7 +55,7 @@ class RunProfileSpec:
     error_report: bool = False
 
     def build_config(self, *, paths: RunPathConfig) -> RunConfig:
-        from scrapers.base.run_config import RunConfig
+        from scrapers.run_config import RunConfig
 
         return RunConfig(
             output_dir=getattr(paths, self.output_dir.value),

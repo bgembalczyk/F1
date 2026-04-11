@@ -9,10 +9,10 @@ from typing import Optional
 from models.services.season import parse_seasons
 from scrapers.columns.helpers.sponsorship_seasons.rule import Rule
 from scrapers.columns.helpers.sponsorship_seasons.rule_context import RuleContext
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.helpers.constants import YEAR_RE
-from scrapers.helpers.helpers_sponsorship_liveries.paren_classifier import ParenClassifier
+from scrapers.paren_classifier import ParenClassifier
 from scrapers.helpers.links import normalize_links
 
 logger = logging.getLogger(__name__)

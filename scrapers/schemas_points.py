@@ -9,12 +9,13 @@ from scrapers.constants_points import POINTS_FASTEST_LAP_HEADER
 from scrapers.constants_points import POINTS_NOTES_HEADER
 from scrapers.constants_points import POINTS_RACE_LENGTH_COMPLETED_HEADER
 from scrapers.constants_points import SPRINT_POSITIONS
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 def build_shortened_race_points_schema() -> TableSchemaDSL:
     columns = [
-        ColumnSpec(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        ColumnSpec(SHARED_SEASONS_HEADER, "seasons", SeasonsColumn()),
         ColumnSpec(
             POINTS_RACE_LENGTH_COMPLETED_HEADER,
             "race_length_completed",
@@ -40,7 +41,7 @@ def build_shortened_race_points_schema() -> TableSchemaDSL:
 
 def build_sprint_qualifying_schema() -> TableSchemaDSL:
     columns = [
-        ColumnSpec(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        ColumnSpec(SHARED_SEASONS_HEADER, "seasons", SeasonsColumn()),
     ]
     columns += [
         ColumnSpec(position, position.lower(), IntColumn())

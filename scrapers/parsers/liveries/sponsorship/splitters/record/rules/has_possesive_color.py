@@ -7,5 +7,5 @@ class HasPossessiveColoursRule:
     def should_apply(self, record: PipelineRecord) -> bool:
         return any(
             ColourScopeHandler.has_possessive_colour_groups(record.payload.get(key))
-            for key in COLOUR_KEYS,
+            for key in COLOUR_KEYS
         )

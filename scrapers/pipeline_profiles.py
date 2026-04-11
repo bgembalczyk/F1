@@ -143,8 +143,12 @@ def apply_scraper_pipeline_bindings(
         return options
 
     if options.validator is None and binding.validator_factory is not None:
-        validator_cls = _resolve_object(binding.validator_factory)
-        options.validator = validator_cls()
+        try:
+            validator_cls = _resolve_object(binding.validator_factory)
+        except (ImportError, ModuleNotFoundError):
+            validator_cls = None
+        if validator_cls is not None:
+            options.validator = validator_cls()
 
     for post_processor_path in binding.post_processors:
         post_processor_cls = _resolve_object(post_processor_path)

@@ -1,10 +1,10 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from complete_extractor.domain_config import ExtractDetailFieldStrategy
+from record_assembly_strategy.extract_detail_field import ExtractDetailFieldStrategy
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import GrandsPrixDetailScraper
-from scrapers.wiki.component_metadata_wiki import COMPLETE_SCRAPER_KIND
-from scrapers.wiki.component_metadata_wiki import build_component_metadata
+from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
+from scrapers.component_metadata_wiki import build_component_metadata
 
 
 class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
