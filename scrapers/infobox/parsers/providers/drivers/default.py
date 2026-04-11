@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from scrapers.infobox.extraction.extractor.link import InfoboxLinkExtractor
-from scrapers.infobox.parsers.bundles.driver import DriverInfoboxComponents
+from scrapers.infobox.parsers.bundles.driver import DriverInfoboxParserBundle
 from scrapers.infobox.parsers.drivers.career import InfoboxCareerParser
 from scrapers.infobox.parsers.drivers.cell import InfoboxCellParser
 from scrapers.infobox.parsers.drivers.title import InfoboxTitlesParser
@@ -25,7 +25,7 @@ class DefaultDriverInfoboxProvider:
         wikipedia_base: str,
         schema: object,
         logger: object,
-    ) -> DriverInfoboxComponents:
+    ) -> DriverInfoboxParserBundle:
         link_extractor = InfoboxLinkExtractor(
             include_urls=include_urls,
             wikipedia_base=wikipedia_base,
@@ -42,7 +42,7 @@ class DefaultDriverInfoboxProvider:
         )
         titles_parser = InfoboxTitlesParser(link_extractor)
         career_parser = InfoboxCareerParser(cell_parser)
-        return DriverInfoboxComponents(
+        return DriverInfoboxParserBundle(
             link_extractor=link_extractor,
             cell_parser=cell_parser,
             general_parser=general_parser,

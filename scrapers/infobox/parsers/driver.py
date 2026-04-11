@@ -8,16 +8,11 @@ from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.helpers.transformers import build_transformers
 from scrapers.infobox.parsers.html import InfoboxHtmlParser
 from scrapers.infobox.parsers.field_parser import InfoboxFieldParser
-from scrapers.infobox.parsers.providers.drivers.default import (
-    DefaultDriverInfoboxParserProvider,
-)
+from scrapers.infobox.parsers.html import WikiInfoboxHtmlParser
 from scrapers.infobox.parsers.providers.drivers.protocol import (
     DriverInfoboxParserProvider,
 )
 from scrapers.infobox.parsers.providers.drivers.default import DefaultDriverInfoboxProvider
-from scrapers.infobox.parsers.providers.drivers.protocol import DriverInfoboxProvider
-from scrapers.infobox.parsers.html import WikiInfoboxHtmlParser
-from scrapers.infobox.parsers.providers.drivers.default import DefaultDriverInfoboxParserProvider
 from scrapers.infobox.parsers.providers.drivers.protocol import DriverInfoboxParserProvider
 from scrapers.infobox.schemas.driver import DRIVER_GENERAL_SCHEMA
 from scrapers.logging import get_logger
