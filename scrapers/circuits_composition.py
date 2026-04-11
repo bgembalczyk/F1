@@ -4,6 +4,8 @@ from dataclasses import dataclass
 
 from scrapers.circuit_orchestrator import CircuitInfoboxOrchestrator
 from scrapers.infobox.extraction.protocol import InfoboxExtractionService
+from scrapers.infobox.extraction.infobox_orchestrator_protocol import InfoboxOrchestratorProtocol
+from scrapers.infobox.extraction.service import CircuitInfoboxOrchestratorProtocol
 from scrapers.options import ScraperOptions
 from scrapers.services.section.extraction.circuits import (
     CircuitSectionExtractionService,
@@ -18,7 +20,7 @@ from scrapers.services.section.factories.section_service_factory import (
 
 @dataclass(frozen=True, slots=True)
 class CircuitScraperDependencies:
-    infobox_service: InfoboxExtractionService
+    infobox_service: InfoboxOrchestratorProtocol
     sections_service_factory: SectionServiceFactory[CircuitSectionExtractionService]
     domain_record_service: CircuitDomainRecordService
 
@@ -28,7 +30,7 @@ class CircuitScraperCompositionFactory:
     """Factory budująca komplet zależności dla F1SingleCircuitScraper."""
 
     test_mode: bool = False
-    infobox_service: InfoboxExtractionService | None = None
+    infobox_service: InfoboxOrchestratorProtocol | None = None
     sections_service_factory: (
         SectionServiceFactory[CircuitSectionExtractionService] | None
     ) = None
@@ -38,7 +40,7 @@ class CircuitScraperCompositionFactory:
     def for_tests(
         cls,
         *,
-        infobox_service: InfoboxExtractionService | None = None,
+        infobox_service: InfoboxOrchestratorProtocol | None = None,
         sections_service_factory: (
             SectionServiceFactory[CircuitSectionExtractionService] | None
         ) = None,
