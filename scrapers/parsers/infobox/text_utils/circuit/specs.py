@@ -71,10 +71,6 @@ class CircuitSpecsParser(InfoboxTextUtils):
             result["note"] = note
         return result
 
-    # Backward-compatible alias kept for older tests/call-sites.
-    def _parse_surface(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
-        return self.parse_surface(row)
-
     @staticmethod
     def _parse_capacity(row: dict[str, Any] | None) -> dict[str, int] | None:
         """Capacity: '~125,000 (44,000 seating)' -> total / seating."""
@@ -192,10 +188,5 @@ class CircuitSpecsParser(InfoboxTextUtils):
             result["note"] = cleaned
 
         return result or None
-
-    # Backward-compatible alias kept for older tests/call-sites.
-    def _parse_banking(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
-        return self.parse_banking(row)
-
 
 __all__ = ["CircuitSpecsParser"]

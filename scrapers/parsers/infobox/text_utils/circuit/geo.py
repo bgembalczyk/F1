@@ -91,10 +91,6 @@ class CircuitGeoParser(InfoboxTextUtils):
             for idx, comp in enumerate(filtered_components, start=1)
         }
 
-    # Backward-compatible alias kept for older tests/call-sites.
-    def _parse_location(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
-        return self.parse_location(row)
-
     def parse_coordinates(
         self,
         row: dict[str, Any] | None,
@@ -103,13 +99,6 @@ class CircuitGeoParser(InfoboxTextUtils):
             return None
         text = clean_infobox_text(row.get("text")) or ""
         return self._parse_position(text)
-
-    # Backward-compatible alias kept for older tests/call-sites.
-    def _parse_coordinates(
-        self,
-        row: dict[str, Any] | None,
-    ) -> dict[str, Any] | None:
-        return self.parse_coordinates(row)
 
     @staticmethod
     def _parse_position(text: str) -> dict[str, float] | None:

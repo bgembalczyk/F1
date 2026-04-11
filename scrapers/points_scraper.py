@@ -3,33 +3,20 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from models.records.factories.mapping import MappingRecordFactory
 from scrapers.base_points_scraper import BasePointsScraper
 from scrapers.config_factory_points import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
-from scrapers.config_table import build_scraper_config
-from scrapers.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
+from scrapers.errors import ScraperParseError
 from scrapers.options import ScraperOptions
 from scrapers.parsers.wiki.body_content import BodyContentParser
 from scrapers.parsers_points import PointsScoringSystemsSectionParser
 from scrapers.parsers_points import ShortenedRacesSubSubSectionParser
 from scrapers.parsers_points import SprintRacesSubSubSectionParser
-from scrapers.schemas_points import build_sprint_qualifying_schema
 from scrapers.transformers.record.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
 )
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
-
-
-class _SprintQualifyingPointsScraper(BasePointsScraper):
-    CONFIG = build_scraper_config(
-        url=BasePointsScraper.BASE_URL,
-        section_id="Sprint_races",
-        expected_headers=SPRINT_QUALIFYING_EXPECTED_HEADERS,
-        schema=build_sprint_qualifying_schema(),
-        record_factory=MappingRecordFactory(),
-    )
 
 
 class PointsScraper(BasePointsScraper):
@@ -75,7 +62,7 @@ class PointsScraper(BasePointsScraper):
         shortened_records = self.shortened_subsection_parser.collect_rows(parsed)
         sprint_records = self.sprint_subsection_parser.collect_rows(parsed)
         if not sprint_records:
-            sprint_records = self._extract_sprint_rows_via_legacy_table_scraper(soup)
+            self._raise_missing_sprint_rows()
         if self._export_scope == "history":
             return history_records
         if self._export_scope == "shortened":
@@ -94,10 +81,9 @@ class PointsScraper(BasePointsScraper):
             },
         ]
 
-    def _extract_sprint_rows_via_legacy_table_scraper(
-        self,
-        soup: BeautifulSoup,
-    ) -> list[dict[str, Any]]:
-        legacy_scraper = _SprintQualifyingPointsScraper()
-        rows = legacy_scraper.parse_soup(soup)
-        return [row for row in rows if isinstance(row, dict)]
+    def _raise_missing_sprint_rows(self) -> None:
+        msg = (
+            "Missing sprint rows in canonical points parser output "
+            "(section_id='Sprint_races')."
+        )
+        raise ScraperParseError(msg)
