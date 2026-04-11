@@ -8,11 +8,11 @@ from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_adapters import as_tag
 from scrapers.parsers.input_types import INPUT_TYPE_MAP
 from scrapers.parsers.input_types import INPUT_TYPE_TO_CANONICAL
-from scrapers.parsers.section.table.abc import SectionTableParserBase
+from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 
 
-class _ContractSectionParser(SectionTableParserBase):
+class _ContractSectionParser(TableSectionParser):
     def __init__(self) -> None:
         super().__init__(section_id="contract", section_label="Contract")
 

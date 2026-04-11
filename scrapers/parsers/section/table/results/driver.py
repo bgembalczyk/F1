@@ -10,7 +10,7 @@ from scrapers.configs.public import TableConfig
 from scrapers.driver_results_schema_factory import DriverResultsSchemaFactory
 from scrapers.driver_results_table_classifier import DriverResultsTableClassifier
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.table.abc import SectionTableParserBase
+from scrapers.parsers.section.table.base import SectionTableParserBase
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.constants import UNKNOWN_VALUE
 from scrapers.table_parsing_helper import TableParsingHelper

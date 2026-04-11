@@ -9,7 +9,7 @@ from scrapers.helpers.lap_record import is_lap_record_table
 from scrapers.helpers.layout import detect_layout_name
 from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.table.abc import SectionTableParserBase
+from scrapers.parsers.section.table.base import SectionTableParserBase
 
 
 class CircuitLapRecordsSectionParser(SectionTableParserBase):

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from scrapers.parsers.section.table.abc import SectionTableParserBase
+from scrapers.parsers.section.table.base import SectionTableParserBase
 
 
 class CircuitEventsSectionParser(SectionTableParserBase):
