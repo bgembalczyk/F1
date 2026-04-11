@@ -15,13 +15,13 @@ Profile runtime są scentralizowane w `scrapers.base.run_profiles`:
 - `default` (domyślny)
 - `debug` (opcjonalny profil diagnostyczny)
 
-To zastępuje wcześniejsze rozdrobnienie (`strict` / `minimal` / `deprecated`) mapowane teraz do jednego zachowania domyślnego.
+To zastępuje wcześniejsze rozdrobnienie (`strict` / `minimal` / `deprecated`) i zamyka temat profili przejściowych.
 
 ## 3) Polityka redukcji opcji
 
 - Usuwamy opcje rzadko używane i duplikujące się semantycznie.
 - Każdy nowy profil musi uzasadniać różnicę względem `default`; w przeciwnym razie nie powstaje.
-- Kompatybilność terminalowa (`python -m ...`, legacy CLI wrappery) nie jest już traktowana jako kontrakt obowiązkowy.
+- Jedynym kontraktem uruchomieniowym jest aktualny interfejs CLI i entrypointy kanoniczne; nie utrzymujemy wrapperów przejściowych.
 
 ## 4) Wymuszenie YAGNI dla nowych opcji runtime
 
