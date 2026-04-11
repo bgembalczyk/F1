@@ -1,4 +1,3 @@
-from collections.abc import Callable
 from collections.abc import Iterable
 from collections.abc import Sequence
 from dataclasses import dataclass
@@ -7,10 +6,6 @@ from typing import Any
 from scrapers.helpers.text_normalization import to_snake_case
 from scrapers.infobox.schemas.field import InfoboxSchemaField
 from scrapers.logging import get_logger
-
-ParserType = Callable[[Any], Any] | str
-
-
 
 
 class InfoboxSchema:

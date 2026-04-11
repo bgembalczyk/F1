@@ -1,7 +1,9 @@
+from collections.abc import Callable
 from dataclasses import dataclass
+from typing import Any
 from typing import Sequence
 
-from scrapers.infobox.schemas.schema import ParserType
+ParserType = Callable[[Any], Any] | str
 
 
 @dataclass(frozen=True)
