@@ -13,7 +13,7 @@ from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.tyre import TyreColumn
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.parsers.seasons.entry_merger import EntryMerger
-from scrapers.parsers.seasons.table import SeasonTableService
+from scrapers.parsers.seasons.table import SeasonTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.parsers.seasons.base import BaseSeasonParser
 
@@ -21,7 +21,7 @@ from scrapers.parsers.seasons.base import BaseSeasonParser
 class SeasonEntriesParser(BaseSeasonParser):
     def __init__(
         self,
-        table_parser: SeasonTableService,
+        table_parser: SeasonTableParser,
         entry_merger: EntryMerger,
         policy: DomainParsingPolicy,
     ) -> None:
