@@ -11,7 +11,7 @@ from layers.seed.validation.spec import RegistryValidationSpec
 from scrapers.circuits_list_scraper import CircuitsListScraper
 from scrapers.combined_red_flagged_races import RedFlaggedRacesScraper
 from scrapers.constructors_list import ConstructorsListScraper
-from scrapers.drivers_list_scraper import DriversListScraper
+from scrapers.list_scraper_drivers import F1DriversListScraper
 from scrapers.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engine_regulation import EngineRegulationScraper
 from scrapers.engine_restrictions import EngineRestrictionsScraper
@@ -29,7 +29,7 @@ LIST_SCRAPER_BY_SEED_NAME: dict[str, type[Any]] = {
     "constructors_former": ConstructorsListScraper,
     "constructors_indianapolis_only": ConstructorsListScraper,
     "constructors_privateer": ConstructorsListScraper,
-    "drivers": DriversListScraper,
+    "drivers": F1DriversListScraper,
     "drivers_female": FemaleDriversListScraper,
     "drivers_fatalities": F1FatalitiesListScraper,
     "seasons": SeasonsListScraper,
