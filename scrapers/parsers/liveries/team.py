@@ -5,13 +5,14 @@ from typing import Any
 
 from scrapers.paren_classifier import ParenClassifier
 from scrapers.parsers.section.sponsorship import SponsorshipSectionParser
+from scrapers.parsers.wiki.base import WikiSectionParser
 from scrapers.parsers.table.team_liveries import TeamLiveriesTableParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class TeamLiveriesSectionParser:
+class TeamLiveriesSectionParser(WikiSectionParser):
     """Parser sekcji artykułu sponsorowanych malowań F1."""
 
     def __init__(
@@ -34,7 +35,7 @@ class TeamLiveriesSectionParser:
             section_table_parser=self._base_parser,
         )
 
-    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []
         seen_sections: set[str] = set()
         for heading, headline in self._base_parser.collect_section_headings(soup):
@@ -53,6 +54,11 @@ class TeamLiveriesSectionParser:
                 continue
             records.append({"team": team, "liveries": liveries})
         return records
+
+    # DEPRECATED(2026-04): alias tymczasowy; używaj parse(...).
+    # Remove after all call-sites migrate to parse().
+    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self.parse(soup)
 
     def _parse_single_team_section(
         self,
