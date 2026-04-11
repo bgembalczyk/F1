@@ -1,15 +1,30 @@
+from __future__ import annotations
+
+import warnings
 from typing import Protocol
-from typing import runtime_checkable
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.roles import SectionParser
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.section.parse_results import SectionParseResult
 
 
-@runtime_checkable
-class SectionParserProtocol(SectionParser[SectionParseResult], Protocol):
+class SectionParserProtocol(Protocol):
+    """Typing-only protocol for section parser collaborators."""
+
     def parse(self, fragment: BeautifulSoup) -> SectionParseResult: ...
 
 
-__all__ = ["SectionParserProtocol"]
+class LegacySectionParser(BaseSectionParser):
+    """Deprecated runtime alias kept for safe migration."""
+
+    def __init_subclass__(cls, **kwargs):
+        warnings.warn(
+            "LegacySectionParser is deprecated; inherit from BaseSectionParser instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        super().__init_subclass__(**kwargs)
+
+
+__all__ = ["SectionParserProtocol", "LegacySectionParser"]

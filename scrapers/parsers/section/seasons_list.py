@@ -1,10 +1,10 @@
 from typing import Any
 
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.table.seasons_list import SeasonsTableParser
 
 
-class SeasonsSectionParser(SectionParser):
+class SeasonsSectionParser(BaseSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = SeasonsTableParser()

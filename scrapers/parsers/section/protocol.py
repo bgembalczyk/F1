@@ -1,21 +1,30 @@
+from __future__ import annotations
+
+import warnings
 from typing import Protocol
-from typing import runtime_checkable
 
 from bs4 import BeautifulSoup
 
-from scrapers.family_contracts import SectionParserContract
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.section.parse_results import SectionParseResult
 
 
-@runtime_checkable
-class SectionParser(SectionParserContract, Protocol):
-    """Common section parser interface.
-
-    Input: BeautifulSoup fragment scoped to a section.
-    Output: parsed records with section-level metadata.
-    """
+class SectionParserProtocol(Protocol):
+    """Typing-only contract for dependency injection and static checks."""
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
 
 
-__all__ = ["SectionParser"]
+class SectionParser(BaseSectionParser):
+    """Deprecated runtime alias. Use ``BaseSectionParser`` instead."""
+
+    def __init_subclass__(cls, **kwargs):
+        warnings.warn(
+            "SectionParser is deprecated; inherit from BaseSectionParser instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        super().__init_subclass__(**kwargs)
+
+
+__all__ = ["BaseSectionParser", "SectionParserProtocol", "SectionParser"]

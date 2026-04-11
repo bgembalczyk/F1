@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.parsers.table.wiki.contracts import ArticleTablesParserProtocol
 from scrapers.section.parse_results import SectionParseResult
@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from scrapers.parsers.input_types import WikiParserInput
 
 
-class ConstructorTablesSectionParser(SectionParser):
+class ConstructorTablesSectionParser(BaseSectionParser):
     def __init__(self, *, section_id: str, section_label: str) -> None:
         self._section_id = section_id
         self._section_label = section_label

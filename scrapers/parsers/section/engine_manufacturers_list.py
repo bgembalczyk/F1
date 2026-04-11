@@ -5,7 +5,7 @@ from bs4 import Tag
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.list.engine_manufacturers_list import IndianapolisOnlyListParser
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
 from scrapers.parsers.table.engine_manufacturers_list import (
     EngineManufacturersTableParser,
@@ -44,7 +44,7 @@ class IndianapolisOnlySubSectionParser(SubSectionParser):
                 element["data"] = self._list_parser.parse(parsed_tag)
 
 
-class EngineManufacturersSectionParser(ApplyForElementsMixin, SectionParser):
+class EngineManufacturersSectionParser(ApplyForElementsMixin, BaseSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = IndianapolisOnlySubSectionParser()
