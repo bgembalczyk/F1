@@ -96,25 +96,6 @@ class ConfiguredExtractor(CompleteExtractorBase):
     )
 
 
-class LegacySingleListExtractor(CompleteExtractorBase):
-    url = "https://example.com"
-    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_cls=FakeListScraperA,
-        single_scraper_cls=FakeSingleScraper,
-        detail_url_field_path="primary.url",
-    )
-
-
-class LegacyMultiListExtractor(CompleteExtractorBase):
-    url = "https://example.com"
-    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
-        list_scraper_clses=(FakeListScraperA, FakeListScraperB),
-        single_scraper_cls=FakeSingleScraper,
-        detail_url_field_paths=("fallback_url",),
-        detail_url_field_path="primary.url",
-    )
-
-
 class ProgrammerListErrorExtractor(CompleteExtractorBase):
     url = "https://example.com"
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
@@ -181,27 +162,22 @@ def test_assemble_record_uses_custom_assembler() -> None:
     }
 
 
-def test_config_normalization_supports_legacy_single_list_fields() -> None:
-    extractor = LegacySingleListExtractor()
-
-    assert extractor.DOMAIN_CONFIG.list_scraper_classes == (FakeListScraperA,)
-    assert extractor.DOMAIN_CONFIG.detail_url_field_paths == ("primary.url",)
-    assert extractor.records_adapter.get() == [{"item": "a"}]
-
-
-def test_config_normalization_supports_legacy_multi_list_fields() -> None:
-    extractor = LegacyMultiListExtractor()
-
-    assert extractor.DOMAIN_CONFIG.list_scraper_classes == (
-        FakeListScraperA,
-        FakeListScraperB,
-    )
-    assert extractor.DOMAIN_CONFIG.detail_url_field_paths == (
-        "primary.url",
-        "fallback_url",
-    )
-    assert isinstance(extractor.records_adapter, MultiIterableSourceAdapter)
-    assert extractor.records_adapter.get() == [{"item": "a"}, {"item": "b"}]
+@pytest.mark.parametrize(
+    "legacy_field, value",
+    [
+        ("list_scraper_cls", FakeListScraperA),
+        ("list_scraper_clses", (FakeListScraperA, FakeListScraperB)),
+        ("detail_url_field_path", "primary.url"),
+    ],
+)
+def test_config_rejects_legacy_fields(legacy_field: str, value: object) -> None:
+    with pytest.raises(TypeError, match=legacy_field):
+        CompleteExtractorDomainConfig(
+            list_scraper_classes=(FakeListScraperA,),
+            single_scraper_cls=FakeSingleScraper,
+            detail_url_field_paths=("fallback_url",),
+            **{legacy_field: value},
+        )
 
 
 def test_fetch_propagates_programmer_error_from_list_scraper() -> None:
