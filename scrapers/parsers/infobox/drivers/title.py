@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.drivers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 
 
 class InfoboxTitlesParser:

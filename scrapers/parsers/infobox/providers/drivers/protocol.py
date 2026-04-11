@@ -1,6 +1,6 @@
 from typing import Protocol
 
-from scrapers.infobox.infobox.bundles.driver import DriverInfoboxParserBundle
+from scrapers.parsers.infobox.bundles.driver import DriverInfoboxParserBundle
 from scrapers.parsers.roles import ParserProvider
 
 

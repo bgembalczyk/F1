@@ -2,7 +2,7 @@ from typing import Any
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.label import parser_for_label
-from scrapers.infobox.infobox.cell import InfoboxCellParser
+from scrapers.parsers.infobox.drivers.cell import InfoboxCellParser
 
 
 class InfoboxCareerParser:

@@ -6,10 +6,10 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.drivers.constants import COUNT_RE
-from scrapers.infobox.infobox.drivers.constants import PAREN_RE
-from scrapers.infobox.infobox.drivers.constants import YEAR_RE
-from scrapers.infobox.infobox.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
+from scrapers.parsers.infobox.constants import COUNT_RE
+from scrapers.parsers.infobox.constants import PAREN_RE
+from scrapers.parsers.infobox.constants import YEAR_RE
 from scrapers.year_extractor import YearExtractor
 
 

@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 from scrapers.infobox.extraction.extractor.link import InfoboxLinkExtractor
-from scrapers.infobox.infobox.bundles.driver import DriverInfoboxParserBundle
-from scrapers.infobox.infobox.drivers.career import InfoboxCareerParser
-from scrapers.infobox.infobox.drivers.cell import InfoboxCellParser
-from scrapers.infobox.infobox.drivers.title import InfoboxTitlesParser
-from scrapers.infobox.infobox.general import InfoboxGeneralParser
 from scrapers.infobox.section.collector import InfoboxSectionCollector
 from scrapers.infobox.section.discovery import InfoboxSectionDiscovery
+from scrapers.parsers.infobox.bundles.driver import DriverInfoboxParserBundle
+from scrapers.parsers.infobox.drivers.career import InfoboxCareerParser
+from scrapers.parsers.infobox.drivers.cell import InfoboxCellParser
+from scrapers.parsers.infobox.drivers.title import InfoboxTitlesParser
+from scrapers.parsers.infobox.general import InfoboxGeneralParser
 
 
 class DefaultDriverInfoboxProvider:

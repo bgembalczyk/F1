@@ -3,15 +3,15 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
-from scrapers.infobox.infobox.constants import ACTIVE_YEARS_LABELS
-from scrapers.infobox.infobox.constants import INT_CELL_LABELS
-from scrapers.infobox.infobox.constants import RACE_EVENT_LABELS
-from scrapers.infobox.infobox.constants import TEAM_LABELS
-from scrapers.infobox.infobox.drivers.car_numbers import CarNumbersParser
-from scrapers.infobox.infobox.drivers.cell import InfoboxCellParser
-from scrapers.infobox.infobox.field_parser import CallableInfoboxFieldParser
-from scrapers.infobox.infobox.field_parser import InfoboxFieldParser
-from scrapers.infobox.infobox.numeric import NumericParser
+from scrapers.parsers.infobox.constants import ACTIVE_YEARS_LABELS
+from scrapers.parsers.infobox.constants import INT_CELL_LABELS
+from scrapers.parsers.infobox.constants import RACE_EVENT_LABELS
+from scrapers.parsers.infobox.constants import TEAM_LABELS
+from scrapers.parsers.infobox.drivers.car_numbers import CarNumbersParser
+from scrapers.parsers.infobox.drivers.cell import InfoboxCellParser
+from scrapers.parsers.infobox.field_parser import CallableInfoboxFieldParser
+from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
+from scrapers.parsers.infobox.numeric import NumericParser
 
 
 class InfoboxFieldParsersRegistry:

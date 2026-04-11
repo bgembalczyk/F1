@@ -4,8 +4,8 @@ import re
 from typing import Any
 
 from models.records.link import LinkRecord
-from scrapers.infobox.infobox.drivers.constants import FOUR_DIGIT_YEAR_PATTERN
-from scrapers.infobox.infobox.drivers.constants import TWO_DIGIT_SUFFIX_PATTERN
+from scrapers.parsers.infobox.constants import FOUR_DIGIT_YEAR_PATTERN
+from scrapers.parsers.infobox.constants import TWO_DIGIT_SUFFIX_PATTERN
 
 
 class SeasonClassifier:

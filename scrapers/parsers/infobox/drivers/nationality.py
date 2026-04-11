@@ -6,8 +6,16 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.drivers import constants
-from scrapers.infobox.infobox.drivers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
+from scrapers.parsers.infobox.constants import BR_SPLIT_RE
+from scrapers.parsers.infobox.constants import HAS_YEARS_RE
+from scrapers.parsers.infobox.constants import JUST_REF_MARKER_RE
+from scrapers.parsers.infobox.constants import OR_SPLIT_RE
+from scrapers.parsers.infobox.constants import REF_MARKER_RE
+from scrapers.parsers.infobox.constants import YEAR_PAREN_RE
+from scrapers.parsers.infobox.constants import YEAR_PATTERNS_RE
+from scrapers.parsers.infobox.constants import YEAR_RANGE_RE_NAT
+from scrapers.parsers.infobox.constants import YEAR_RE
 
 
 class NationalityParser:
@@ -41,7 +49,7 @@ class NationalityParser:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
 
         # Check if there are year references (indicating nationality changed by season)
-        has_years = constants.HAS_YEARS_RE.search(text)
+        has_years = HAS_YEARS_RE.search(text)
 
         if has_years:
             return self._parse_nationality_with_years(cell)
@@ -64,7 +72,7 @@ class NationalityParser:
             List of dicts with 'nationality' and 'years' keys.
         """
         html = str(cell)
-        parts = constants.BR_SPLIT_RE.split(html)
+        parts = BR_SPLIT_RE.split(html)
 
         nationalities = []
 
@@ -75,7 +83,7 @@ class NationalityParser:
             part_soup = BeautifulSoup(part_html, "html.parser")
             part_text = clean_infobox_text(part_soup.get_text(" ", strip=True)) or ""
 
-            nationality_name = constants.YEAR_PAREN_RE.sub("", part_text).strip()
+            nationality_name = YEAR_PAREN_RE.sub("", part_text).strip()
 
             years = self._extract_years_from_text(part_text)
 
@@ -99,16 +107,16 @@ class NationalityParser:
             Deduplicated list of integer years found in the text.
         """
         years_dict: dict[int, None] = {}
-        year_patterns = constants.YEAR_PATTERNS_RE.findall(text)
+        year_patterns = YEAR_PATTERNS_RE.findall(text)
 
         for year_pattern in year_patterns:
-            for range_match in constants.YEAR_RANGE_RE_NAT.finditer(year_pattern):
+            for range_match in YEAR_RANGE_RE_NAT.finditer(year_pattern):
                 start = int(range_match.group(1))
                 end = int(range_match.group(2))
                 for year in range(start, end + 1):
                     years_dict[year] = None
 
-            for year_match in constants.YEAR_RE.finditer(year_pattern):
+            for year_match in YEAR_RE.finditer(year_pattern):
                 years_dict[int(year_match.group(1))] = None
 
         return list(years_dict.keys())
@@ -153,7 +161,7 @@ class NationalityParser:
             link
             for link in links
             if (link.get("text") or "").strip()
-            and not constants.JUST_REF_MARKER_RE.match((link.get("text") or "").strip())
+            and not JUST_REF_MARKER_RE.match((link.get("text") or "").strip())
         ]
 
     @staticmethod
@@ -166,11 +174,11 @@ class NationalityParser:
         Returns:
             List of nationality strings with reference markers removed.
         """
-        parts = constants.OR_SPLIT_RE.split(text)
+        parts = OR_SPLIT_RE.split(text)
         nationalities = []
 
         for raw_part in parts:
-            cleaned_part = constants.REF_MARKER_RE.sub("", raw_part).strip()
+            cleaned_part = REF_MARKER_RE.sub("", raw_part).strip()
             if cleaned_part:
                 nationalities.append(cleaned_part)
 

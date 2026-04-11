@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from scrapers.infobox.extraction import InfoboxExtractionService
 from scrapers.infobox.extraction.service import ConstructorInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.services.section.extraction.constructor import (

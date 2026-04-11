@@ -7,8 +7,8 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.drivers.season import SeasonClassifier
-from scrapers.infobox.infobox.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
+from scrapers.parsers.infobox.drivers.season import SeasonClassifier
 
 
 class BestFinishParser:

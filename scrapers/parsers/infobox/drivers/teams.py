@@ -6,7 +6,7 @@ from bs4 import Tag
 
 from models.services.helpers import split_delimited_text
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.drivers.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 
 
 class TeamsParser:

@@ -6,8 +6,8 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.drivers.year import YearParser
-from scrapers.infobox.infobox.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
+from scrapers.parsers.infobox.drivers.year import YearParser
 
 
 class LicenceParser:

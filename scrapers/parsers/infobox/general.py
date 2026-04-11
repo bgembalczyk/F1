@@ -9,8 +9,8 @@ from scrapers.helpers.parsing import parse_relations
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.time import parse_date_text
 from scrapers.infobox.extraction.extractor.link import InfoboxLinkExtractor
-from scrapers.infobox.infobox.constants import DATE_PATTERN
 from scrapers.infobox.schemas.schema import InfoboxSchema
+from scrapers.parsers.infobox.constants import DATE_PATTERN
 
 
 class InfoboxGeneralParser:

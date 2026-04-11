@@ -3,18 +3,18 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.collapsible_table import CollapsibleTableParser
-from scrapers.infobox.infobox.drivers.active_years import ActiveYearsParser
-from scrapers.infobox.infobox.drivers.best_finish import BestFinishParser
-from scrapers.infobox.infobox.drivers.championships import ChampionshipsParser
-from scrapers.infobox.infobox.drivers.finished_season import FinishedSeasonParser
-from scrapers.infobox.infobox.drivers.licence import LicenceParser
-from scrapers.infobox.infobox.drivers.nationality import NationalityParser
-from scrapers.infobox.infobox.drivers.race_event import RaceEventParser
-from scrapers.infobox.infobox.drivers.teams import TeamsParser
-from scrapers.infobox.infobox.field_parser import InfoboxFieldParser
-from scrapers.infobox.infobox.link_extractor import InfoboxLinkExtractor
-from scrapers.infobox.infobox.table import InfoboxTableParser
+from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
+from scrapers.parsers.infobox.collapsible_table import CollapsibleTableParser
+from scrapers.parsers.infobox.drivers.active_years import ActiveYearsParser
+from scrapers.parsers.infobox.drivers.best_finish import BestFinishParser
+from scrapers.parsers.infobox.drivers.championships import ChampionshipsParser
+from scrapers.parsers.infobox.drivers.finished_season import FinishedSeasonParser
+from scrapers.parsers.infobox.drivers.licence import LicenceParser
+from scrapers.parsers.infobox.drivers.nationality import NationalityParser
+from scrapers.parsers.infobox.drivers.race_event import RaceEventParser
+from scrapers.parsers.infobox.drivers.teams import TeamsParser
+from scrapers.parsers.infobox.field_parser import InfoboxFieldParser
+from scrapers.parsers.infobox.table import InfoboxTableParser
 
 
 class InfoboxCellParser:

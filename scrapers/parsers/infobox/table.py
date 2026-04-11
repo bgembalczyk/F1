@@ -9,8 +9,8 @@ from models.domain_utils.field_normalization.stats import extract_driver_stats_r
 from models.domain_utils.field_normalization.stats import is_driver_stats_table
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.infobox.constants import EXPECTED_STATS_COLUMNS
-from scrapers.infobox.infobox.link_extractor import InfoboxLinkExtractor
+from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
+from scrapers.parsers.infobox.constants import EXPECTED_STATS_COLUMNS
 
 
 class InfoboxTableParser:

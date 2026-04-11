@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from scrapers.infobox.extraction.infobox_orchestrator_protocol import InfoboxOrchestratorProtocol
 from scrapers.infobox.extraction.service import DriverInfoboxOrchestrator
+from scrapers.infobox_orchestrator_protocol import InfoboxOrchestratorProtocol
 from scrapers.options import ScraperOptions
 from scrapers.services.domain_record.driver import DriverDomainRecordService
 from scrapers.services.section.extraction.driver import DriverSectionExtractionService
