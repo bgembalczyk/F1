@@ -2,9 +2,9 @@ import re
 from typing import Any
 
 from scrapers.helpers.text import choose_richer_entity
-from scrapers.infobox.infobox.constants import LANG_PAREN_ANYWHERE_RE
-from scrapers.infobox.infobox.constants import LANG_PAREN_TAIL_RE
-from scrapers.infobox.infobox.text_utils.base import InfoboxTextUtils
+from scrapers.parsers.infobox.constants import LANG_PAREN_ANYWHERE_RE
+from scrapers.parsers.infobox.constants import LANG_PAREN_TAIL_RE
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 
 class CircuitTextProcessing(InfoboxTextUtils):

@@ -15,13 +15,6 @@ from scrapers.parsers.infobox.constants import MIN_DETAILS_FOR_DRIVER
 from scrapers.parsers.infobox.constants import MIN_DETAILS_FOR_SERIES
 from scrapers.parsers.infobox.constants import MIN_DETAILS_FOR_YEAR
 from scrapers.parsers.infobox.text_utils.circuit.text_processing.base import CircuitTextProcessing
-from scrapers.infobox.parsers.constants import MIN_DETAILS_FOR_CAR
-from scrapers.infobox.parsers.constants import MIN_DETAILS_FOR_DRIVER
-from scrapers.infobox.parsers.constants import MIN_DETAILS_FOR_SERIES
-from scrapers.infobox.parsers.constants import MIN_DETAILS_FOR_YEAR
-from scrapers.infobox.parsers.text_utils.circuit.text_processing.base import (
-    CircuitTextProcessing,
-)
 
 
 class CircuitLapRecordParser(CircuitTextProcessing):
