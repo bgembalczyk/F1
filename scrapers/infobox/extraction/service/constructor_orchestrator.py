@@ -7,7 +7,7 @@ from bs4 import Tag
 
 from scrapers.infobox.extraction.extractor.table.all import AllInfoboxTablesExtractor
 from scrapers.infobox.extraction.service.base_orchestrator import BaseInfoboxOrchestrator
-from scrapers.infobox.parsers.html import InfoboxHtmlParser
+from scrapers.adapters.infobox import LegacyInfoboxHtmlParserAdapter
 from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
@@ -25,4 +25,4 @@ class ConstructorInfoboxOrchestrator(BaseInfoboxOrchestrator[Tag]):
 
     def build_parser(self, *, url: str) -> SoupParser:
         _ = url
-        return InfoboxHtmlParser()
+        return LegacyInfoboxHtmlParserAdapter()
