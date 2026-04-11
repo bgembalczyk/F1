@@ -10,6 +10,12 @@ from scrapers.parsers.infobox.text_utils.circuit import CircuitTextProcessing
 class CircuitEntityParser(CircuitTextProcessing):
     """Parsowanie linkowanych encji (architect, owner, website itp.)."""
 
+    def parse(
+        self,
+        row: dict[str, Any] | None,
+    ) -> dict[str, Any] | str | list[dict[str, Any]] | None:
+        return self.parse_linked_entity(row)
+
     def _split_entity_parts(self, text: str) -> list[str]:
         if not text:
             return []

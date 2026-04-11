@@ -20,6 +20,9 @@ from scrapers.parsers.infobox.text_utils.circuit.text_processing.base import Cir
 class CircuitLapRecordParser(CircuitTextProcessing):
     """Logika parsowania, porównywania i scalania lap record'ów."""
 
+    def parse(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
+        return self.parse_lap_record(row)
+
     def _wrap_entity_from_links(
         self,
         entity_text: str | None,

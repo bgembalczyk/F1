@@ -9,74 +9,74 @@ ElementType = Literal["table", "list", "section", "infobox"]
 
 
 @dataclass(frozen=True)
-class ParserRegistryKey:
+class ParsingRegistryKey:
     domain: DomainName
     element_type: ElementType
     section_id: str | None = None
 
 
 @dataclass(frozen=True)
-class ParserRegistryEntry:
-    key: ParserRegistryKey
+class ParsingRegistryEntry:
+    key: ParsingRegistryKey
     parser: str
 
 
-DEFAULT_PARSER_REGISTRY: Final[tuple[ParserRegistryEntry, ...]] = (
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="drivers", element_type="list"),
+DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = (
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="drivers", element_type="list"),
         parser="_parse_layer0_seed",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="drivers", element_type="section"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="drivers", element_type="section"),
         parser="_parse_layer1_details",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="constructors", element_type="list"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="constructors", element_type="list"),
         parser="_parse_layer0_seed",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="constructors", element_type="section"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="constructors", element_type="section"),
         parser="_parse_layer1_details",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="circuits", element_type="list"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="circuits", element_type="list"),
         parser="_parse_layer0_seed",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="circuits", element_type="section"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="circuits", element_type="section"),
         parser="_parse_layer1_details",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="seasons", element_type="list"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="seasons", element_type="list"),
         parser="_parse_layer0_seed",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="seasons", element_type="section"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="seasons", element_type="section"),
         parser="_parse_layer1_details",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="grands_prix", element_type="list"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="grands_prix", element_type="list"),
         parser="_parse_layer0_seed",
     ),
-    ParserRegistryEntry(
-        key=ParserRegistryKey(domain="grands_prix", element_type="section"),
+    ParsingRegistryEntry(
+        key=ParsingRegistryKey(domain="grands_prix", element_type="section"),
         parser="_parse_layer1_details",
     ),
 )
 
 
-REQUIRED_PRODUCTION_KEYS: Final[tuple[ParserRegistryKey, ...]] = tuple(
+REQUIRED_PRODUCTION_KEYS: Final[tuple[ParsingRegistryKey, ...]] = tuple(
     entry.key for entry in DEFAULT_PARSER_REGISTRY
 )
 
 
 def validate_parser_registry(
-    registry: tuple[ParserRegistryEntry, ...] = DEFAULT_PARSER_REGISTRY,
+    registry: tuple[ParsingRegistryEntry, ...] = DEFAULT_PARSER_REGISTRY,
     *,
-    required_keys: tuple[ParserRegistryKey, ...] = REQUIRED_PRODUCTION_KEYS,
+    required_keys: tuple[ParsingRegistryKey, ...] = REQUIRED_PRODUCTION_KEYS,
 ) -> None:
-    duplicates: set[ParserRegistryKey] = set()
-    seen: set[ParserRegistryKey] = set()
+    duplicates: set[ParsingRegistryKey] = set()
+    seen: set[ParsingRegistryKey] = set()
 
     for entry in registry:
         if entry.key in seen:
@@ -106,9 +106,9 @@ def resolve_parser_name(
     domain: DomainName,
     element_type: ElementType,
     section_id: str | None = None,
-    registry: tuple[ParserRegistryEntry, ...] = DEFAULT_PARSER_REGISTRY,
+    registry: tuple[ParsingRegistryEntry, ...] = DEFAULT_PARSER_REGISTRY,
 ) -> str:
-    key = ParserRegistryKey(
+    key = ParsingRegistryKey(
         domain=domain,
         element_type=element_type,
         section_id=section_id,
@@ -119,3 +119,8 @@ def resolve_parser_name(
     raise LookupError(
         "No parser registration for " f"{domain}:{element_type}:{section_id or '-'}",
     )
+
+
+# Backward-compatible aliases
+ParserRegistryKey = ParsingRegistryKey
+ParserRegistryEntry = ParsingRegistryEntry

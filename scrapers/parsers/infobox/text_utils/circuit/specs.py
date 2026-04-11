@@ -12,6 +12,9 @@ from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 class CircuitSpecsParser(InfoboxTextUtils):
     """Parsowanie parametrów technicznych toru (surface, cost, capacity, banking)."""
 
+    def parse(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
+        return self.parse_surface(row)
+
     @staticmethod
     def _norm_surface_part(surface_part: str) -> list[str]:
         """Normalizuje część powierzchni, identyfikując materiały."""
