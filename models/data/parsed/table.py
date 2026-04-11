@@ -1,6 +1,7 @@
 from typing import Any
-from typing_extensions import NotRequired
 from typing import TypedDict
+
+from typing_extensions import NotRequired
 
 
 class TableParsedData(TypedDict):

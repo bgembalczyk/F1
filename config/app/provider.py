@@ -25,10 +25,10 @@ class AppConfigProvider:
     """Dostarcza zunifikowaną konfigurację dla całej aplikacji."""
 
     def __init__(
-            self,
-            *,
-            env: dict[str, str] | None = None,
-            project_root: Path | None = None,
+        self,
+        *,
+        env: dict[str, str] | None = None,
+        project_root: Path | None = None,
     ) -> None:
         self._env = dict(env) if env is not None else dict(os.environ)
         self._project_root = (

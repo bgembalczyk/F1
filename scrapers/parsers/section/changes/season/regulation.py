@@ -10,7 +10,6 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-
 class SeasonRegulationChangesSectionParser(ExtractListItemsMixin):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         records = self._extract_list_items(section_fragment)

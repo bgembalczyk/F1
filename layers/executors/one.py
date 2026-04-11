@@ -20,7 +20,6 @@ if TYPE_CHECKING:
     from scrapers.core.run_config import RunConfig
 
 
-
 class LayerOneExecutor(BaseExecutor):
     def __init__(
         self,

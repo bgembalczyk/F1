@@ -42,7 +42,9 @@ def test_new_list_scraper_classes_must_live_in_canonical_domain_modules() -> Non
         is_canonical_module = relative in CANONICAL_DOMAIN_MODULES
 
         for node in ast.walk(tree):
-            if not isinstance(node, ast.ClassDef) or not node.name.endswith("ListScraper"):
+            if not isinstance(node, ast.ClassDef) or not node.name.endswith(
+                "ListScraper"
+            ):
                 continue
 
             marker = (relative, node.name)

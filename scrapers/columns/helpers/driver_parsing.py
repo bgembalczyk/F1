@@ -13,8 +13,8 @@ Follows SOLID principles:
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.columns.helpers.link_lookup import build_link_lookup
 from scrapers.columns.context import ColumnContext
+from scrapers.columns.helpers.link_lookup import build_link_lookup
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
 

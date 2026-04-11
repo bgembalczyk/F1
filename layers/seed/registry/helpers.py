@@ -9,8 +9,8 @@ from layers.seed.registry.raw_specs import RawRegistrySpec
 from layers.seed.validation.rule import RegistryValidationRule
 from layers.seed.validation.spec import RegistryValidationSpec
 from scrapers.constructors.list_scraper import ConstructorsListScraper
-from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.discovery_wiki import discover_layer_one_seed_components
+from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.sources_registry_wiki import get_source_by_seed_name
 from scrapers.sources_registry_wiki import resolve_seed_name
 from scrapers.sources_registry_wiki import validate_sources_registry_consistency
@@ -186,6 +186,7 @@ def validate_list_job_registry(
         registry = WIKI_LIST_JOB_REGISTRY
     validate_registry(registry=registry, spec=LIST_JOB_REGISTRY_VALIDATION_SPEC)
 
+
 def resolve_wikipedia_url(list_scraper_cls: type[Any]) -> str:
     config = getattr(list_scraper_cls, "CONFIG", None)
     if config is not None and hasattr(config, "url"):
@@ -257,6 +258,7 @@ def build_list_job_registry_entry_from_spec(
         ),
     )
 
+
 def validate_seed_name_consistency_at_startup() -> None:
     from layers.seed.registry.constants import LIST_SCRAPER_BY_SEED_NAME
     from layers.seed.registry.constants import SEED_FILENAME_OVERRIDES
@@ -322,6 +324,7 @@ def build_raw_registry_spec() -> tuple[RawRegistrySpec, ...]:
         ),
     )
     return tuple(specs)
+
 
 def validate_registry_startup_consistency() -> None:
     from layers.seed.registry.constants import RAW_REGISTRY_SPEC

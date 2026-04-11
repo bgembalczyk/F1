@@ -41,9 +41,7 @@ def _is_tracked_group_file(path: Path) -> bool:
 
 def test_no_new_scrapers_base_imports_in_tracked_groups() -> None:
     tracked_files = [
-        path
-        for path in Path("scrapers").rglob("*.py")
-        if _is_tracked_group_file(path)
+        path for path in Path("scrapers").rglob("*.py") if _is_tracked_group_file(path)
     ]
 
     violations: list[str] = []

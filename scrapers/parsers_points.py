@@ -140,8 +140,7 @@ class SprintPointsTableParser(WikiTableBaseParser):
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         normalized_headers = {normalize_header(header) for header in headers}
         expected = {
-            normalize_header(header)
-            for header in SPRINT_QUALIFYING_EXPECTED_HEADERS
+            normalize_header(header) for header in SPRINT_QUALIFYING_EXPECTED_HEADERS
         }
         if SPRINT_DISQUALIFYING_HEADERS & normalized_headers:
             return False
@@ -194,8 +193,7 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         normalized_headers = {normalize_header(header) for header in headers}
         expected = {
-            normalize_header(header)
-            for header in SHORTENED_RACE_EXPECTED_HEADERS
+            normalize_header(header) for header in SHORTENED_RACE_EXPECTED_HEADERS
         }
         return expected.issubset(normalized_headers)
 

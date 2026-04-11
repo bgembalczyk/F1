@@ -1,8 +1,8 @@
 from typing import Any
 
-from scrapers.columns.types.background_mixin import BackgroundMixin
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
+from scrapers.columns.types.mixins.background import BackgroundMixin
 
 
 class RestartStatusColumn(BackgroundMixin, BaseColumn):

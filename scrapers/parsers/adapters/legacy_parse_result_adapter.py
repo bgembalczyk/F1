@@ -50,8 +50,12 @@ class LegacyParseResultAdapter:
                 source="wikipedia",
                 extras={
                     "domain_column_map": result.get("domain_column_map", {}),
-                    "missing_columns_policy": result.get("missing_columns_policy", "skip"),
-                    "extra_columns_policy": result.get("extra_columns_policy", "ignore"),
+                    "missing_columns_policy": result.get(
+                        "missing_columns_policy", "skip"
+                    ),
+                    "extra_columns_policy": result.get(
+                        "extra_columns_policy", "ignore"
+                    ),
                 },
             ),
         )

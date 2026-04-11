@@ -6,6 +6,7 @@ from typing import runtime_checkable
 
 if False:  # pragma: no cover
     from bs4 import BeautifulSoup
+
     from scrapers.section.parse_results import SectionParseResult
 
 

@@ -33,11 +33,13 @@ def has_navbox_template_link(soup: BeautifulSoup, template_href_fragment: str) -
             return True
     return False
 
+
 def is_grand_prix_article(soup: BeautifulSoup) -> bool:
     """Sprawdza, czy artykuł wygląda na Grand Prix (BeautifulSoup -> bool)."""
     has_navbox = has_navbox_template_link(soup, GRAND_PRIX_NAVBOX_TEMPLATE)
     has_category = has_category_keyword(soup, [GRAND_PRIX_KEYWORD])
     return has_navbox or has_category
+
 
 def is_circuit_like_article(soup: BeautifulSoup) -> bool:
     """Sprawdza po kategoriach, czy artykuł wygląda na tor (BeautifulSoup -> bool)."""

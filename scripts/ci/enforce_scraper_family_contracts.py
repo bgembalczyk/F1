@@ -2,10 +2,8 @@ from __future__ import annotations
 
 import ast
 import subprocess
-import sys
 from dataclasses import dataclass
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -19,11 +17,19 @@ class FamilyRule:
 FAMILY_RULES = {
     "list": FamilyRule(
         family="list",
-        required_bases=("SeedListTableScraper", "F1ListScraper", "BaseConstructorListScraper"),
+        required_bases=(
+            "SeedListTableScraper",
+            "F1ListScraper",
+            "BaseConstructorListScraper",
+        ),
     ),
     "table": FamilyRule(
         family="table",
-        required_bases=("F1TableScraper", "BaseEngineTableScraper", "SeedListTableScraper"),
+        required_bases=(
+            "F1TableScraper",
+            "BaseEngineTableScraper",
+            "SeedListTableScraper",
+        ),
     ),
     "single_article": FamilyRule(
         family="single_article",
@@ -50,7 +56,16 @@ def _git_changed_python_files() -> list[Path]:
         check=False,
     ).stdout.strip()
     diff_from = merge_base or "HEAD~1"
-    cmd = ["git", "diff", "--name-only", "--diff-filter=AM", diff_from, "HEAD", "--", "*.py"]
+    cmd = [
+        "git",
+        "diff",
+        "--name-only",
+        "--diff-filter=AM",
+        diff_from,
+        "HEAD",
+        "--",
+        "*.py",
+    ]
     result = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, check=False)
     files = [line.strip() for line in result.stdout.splitlines() if line.strip()]
     return [ROOT / file for file in files if file.startswith("scrapers/")]

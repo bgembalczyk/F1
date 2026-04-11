@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from dataclasses import field
 from dataclasses import fields
 from typing import Any
 
-from scrapers.records.dto.season import SeasonPayloadDTO
 from scrapers.records.assemblers.base import BaseRecordAssembler
+from scrapers.records.dto.season import SeasonPayloadDTO
 from scrapers.records.sections.season import SeasonRecordSections
 
 

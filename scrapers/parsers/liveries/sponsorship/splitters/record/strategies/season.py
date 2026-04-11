@@ -20,15 +20,9 @@ class SeasonSplitStrategy:
         year_sponsors_rule: SplitRule | None = None,
         year_colours_rule: SplitRule | None = None,
     ):
-        self._multiple_seasons_rule = (
-            multiple_seasons_rule or HasMultipleSeasonsRule()
-        )
-        self._year_sponsors_rule = (
-            year_sponsors_rule or HasYearSpecificSponsorsRule()
-        )
-        self._year_colours_rule = (
-            year_colours_rule or HasYearSpecificColoursRule()
-        )
+        self._multiple_seasons_rule = multiple_seasons_rule or HasMultipleSeasonsRule()
+        self._year_sponsors_rule = year_sponsors_rule or HasYearSpecificSponsorsRule()
+        self._year_colours_rule = year_colours_rule or HasYearSpecificColoursRule()
 
     def apply(self, record: PipelineRecord) -> list[PipelineRecord]:
         raw_record = record.payload

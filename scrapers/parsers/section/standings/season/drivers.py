@@ -27,8 +27,6 @@ class SeasonDriversStandingsSectionParser:
         )
 
 
-
-
 __all__ = [
     "SeasonDriversStandingsSectionParser",
 ]

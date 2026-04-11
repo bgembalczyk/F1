@@ -29,14 +29,14 @@ class LapRecordsTableScraper(F1TableScraper):
     """
 
     schema_columns = [
-        ColumnSpec("Category", "category",AutoColumn()),
-        ColumnSpec("Class", "class_",AutoColumn()),
-        ColumnSpec("Driver", "driver",DriverColumn()),
-        ColumnSpec("Driver/Rider", "driver_rider",DriverColumn()),
-        ColumnSpec("Vehicle", "vehicle",AutoColumn()),
-        ColumnSpec("Event", "event",UrlColumn()),
-        ColumnSpec("Time", "time",TimeColumn()),
-        ColumnSpec("Date", "date",DateColumn()),
+        ColumnSpec("Category", "category", AutoColumn()),
+        ColumnSpec("Class", "class_", AutoColumn()),
+        ColumnSpec("Driver", "driver", DriverColumn()),
+        ColumnSpec("Driver/Rider", "driver_rider", DriverColumn()),
+        ColumnSpec("Vehicle", "vehicle", AutoColumn()),
+        ColumnSpec("Event", "event", UrlColumn()),
+        ColumnSpec("Time", "time", TimeColumn()),
+        ColumnSpec("Date", "date", DateColumn()),
     ]
 
     CONFIG = build_scraper_config(

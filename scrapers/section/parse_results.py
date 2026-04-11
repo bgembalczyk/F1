@@ -1,11 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
-from typing import Protocol
 from typing import TypeAlias
-from typing import TypeVar
-from typing import runtime_checkable
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
@@ -34,12 +30,6 @@ class SectionParseResult:
             "section_label",
             EntityName.from_raw(self.section_label),
         )
-
-
-
-
-
-
 
 
 __all__ = [

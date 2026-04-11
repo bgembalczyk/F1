@@ -80,7 +80,9 @@ def _collect_issues_for_file(path: Path) -> list[SchemaSemanticsIssue]:
         schema_name = node.targets[0].id
         if not _has_complete_or_full_token(schema_name):
             continue
-        if not isinstance(node.value, ast.Call) or not _is_schema_constructor(node.value):
+        if not isinstance(node.value, ast.Call) or not _is_schema_constructor(
+            node.value
+        ):
             continue
 
         required_fields = _extract_required_tuple(node.value)
@@ -105,7 +107,9 @@ def _collect_issues_for_file(path: Path) -> list[SchemaSemanticsIssue]:
 def run(root: Path) -> list[str]:
     all_issues: list[str] = []
     for file_path in sorted(root.rglob("*.py")):
-        all_issues.extend(issue.format() for issue in _collect_issues_for_file(file_path))
+        all_issues.extend(
+            issue.format() for issue in _collect_issues_for_file(file_path)
+        )
     return all_issues
 
 

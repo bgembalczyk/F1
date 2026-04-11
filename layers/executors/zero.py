@@ -14,9 +14,9 @@ from layers.zero.run_profile_paths import layer_zero_raw_paths
 from path_resolver.helpers import format_domain_year_name
 from scrapers.core.logging import build_execution_context
 from scrapers.core.logging import get_logger
-from scrapers.errors import normalize_pipeline_error
 from scrapers.core.run_config import RunConfig
 from scrapers.core.runner import ScraperRunner
+from scrapers.errors import normalize_pipeline_error
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -24,7 +24,6 @@ if TYPE_CHECKING:
 
     from layers.orchestration.constants import SeedName
     from layers.seed.registry.entries import ListJobRegistryEntry
-
 
 
 class LayerZeroExecutor(BaseExecutor):

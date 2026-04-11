@@ -4,14 +4,14 @@ from bs4 import BeautifulSoup
 from bs4 import NavigableString
 from bs4 import Tag
 
-from scrapers.columns.helpers import constants
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
+from scrapers.columns.helpers import constants
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.url import normalize_url
-from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeParser
 from scrapers.parsers.liveries.sponsorship.parts import SponsorPartsParser
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeParser
 from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 

@@ -80,7 +80,10 @@ def _is_thin_compat_statement(node: ast.stmt) -> bool:
     if isinstance(node, ast.Expr):
         return isinstance(node.value, (ast.Constant, ast.Call))
     if isinstance(node, ast.Assign):
-        return any(isinstance(target, ast.Name) and target.id == "__all__" for target in node.targets)
+        return any(
+            isinstance(target, ast.Name) and target.id == "__all__"
+            for target in node.targets
+        )
     return False
 
 
@@ -89,9 +92,7 @@ def _thin_module_errors(path: Path, tree: ast.Module) -> list[str]:
     if rel not in THIN_COMPAT_MODULES:
         return []
     violations = [
-        node.lineno
-        for node in tree.body
-        if not _is_thin_compat_statement(node)
+        node.lineno for node in tree.body if not _is_thin_compat_statement(node)
     ]
     if not violations:
         return []

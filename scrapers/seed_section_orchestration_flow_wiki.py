@@ -32,7 +32,9 @@ SUPPORTED_DOMAINS: tuple[str, ...] = (
     "grands_prix",
 )
 
-MIGRATED_STAGE_DOMAINS: frozenset[str] = frozenset({"drivers", "constructors", "circuits"})
+MIGRATED_STAGE_DOMAINS: frozenset[str] = frozenset(
+    {"drivers", "constructors", "circuits"}
+)
 
 
 class DomainSeedExtractor(BaseExtractor):
@@ -59,7 +61,9 @@ class DomainSeedNormalizer(UrlResolverMixin, BaseNormalizer):
 class DomainStageOrchestrator(QualityMetricsMixin, BaseOrchestrator):
     def _execute(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
         metrics = self.build_stage_metrics(
-            input_records=int(payload.metadata.get("input_records", len(payload.records))),
+            input_records=int(
+                payload.metadata.get("input_records", len(payload.records))
+            ),
             output_records=len(payload.records),
             errors=payload.errors,
         )
@@ -153,13 +157,20 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             domain=domain,
             stage=lifecycle.STAGE_INGEST,
             records=resolved.records,
-            metadata={"input_source": str(resolved.source_path), "input_records": len(resolved.records)},
+            metadata={
+                "input_source": str(resolved.source_path),
+                "input_records": len(resolved.records),
+            },
         )
         self._dumper.dump(ingest_payload)
 
         if domain in MIGRATED_STAGE_DOMAINS:
-            extracted_payload = DomainSeedExtractor(domain=domain, stage=lifecycle.STAGE_INGEST).extract(ingest_payload)
-            normalize_payload = DomainSeedNormalizer(domain=domain, stage=lifecycle.STAGE_NORMALIZE).normalize(
+            extracted_payload = DomainSeedExtractor(
+                domain=domain, stage=lifecycle.STAGE_INGEST
+            ).extract(ingest_payload)
+            normalize_payload = DomainSeedNormalizer(
+                domain=domain, stage=lifecycle.STAGE_NORMALIZE
+            ).normalize(
                 extracted_payload,
             )
         else:
@@ -239,7 +250,10 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             domain=domain,
             stage=lifecycle.STAGE_INGEST,
             records=resolved.records,
-            metadata={"input_source": str(resolved.source_path), "input_records": len(resolved.records)},
+            metadata={
+                "input_source": str(resolved.source_path),
+                "input_records": len(resolved.records),
+            },
         )
         self._dumper.dump(ingest_payload)
 
@@ -253,7 +267,8 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
                 domain=domain,
                 stage=lifecycle.STAGE_NORMALIZE,
                 records=[
-                    self._normalize_seed_row(domain, row) for row in ingest_payload.records
+                    self._normalize_seed_row(domain, row)
+                    for row in ingest_payload.records
                 ],
                 metadata=ingest_payload.metadata,
             )

@@ -1,6 +1,5 @@
-from typing import Protocol
-
 from pathlib import Path
+from typing import Protocol
 
 from layers.seed.registry.entries.list_job import ListJobRegistryEntry
 

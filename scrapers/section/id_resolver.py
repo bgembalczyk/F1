@@ -1,24 +1,17 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from models.section_id import SectionId
 from scrapers.errors.missing_section import MissingSectionError
+from scrapers.parsers.section.wiki.detection import find_section_heading
+from scrapers.parsers.section.wiki.detection import normalize_section_lookup_key
 from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.section.helpers import section_id_to_label
 from scrapers.section.resolution import SectionResolution
-from scrapers.parsers.section.wiki.detection import find_section_heading
-from scrapers.parsers.section.wiki.detection import normalize_section_lookup_key
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
-
-
-
-
-
-
 
 
 class SectionIdResolver:

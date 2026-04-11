@@ -4,12 +4,12 @@ from scrapers.columns.types.auto import AutoColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.skip import SkipColumn
 from scrapers.columns.types.text import TextColumn
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.constants_points import HISTORICAL_POSITIONS
 from scrapers.constants_points import POINTS_FASTEST_LAP_HEADER
 from scrapers.constants_points import POINTS_NOTES_HEADER
 from scrapers.constants_points import POINTS_RACE_LENGTH_COMPLETED_HEADER
 from scrapers.constants_points import SPRINT_POSITIONS
-from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

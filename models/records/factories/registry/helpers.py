@@ -5,13 +5,13 @@ from importlib import import_module
 from inspect import isclass
 from pkgutil import iter_modules
 
+from models.field_normalizer import FieldNormalizer
 from models.records.factories.base import BaseRecordFactory
 from models.records.factories.protocol import RecordBuilder
 from models.records.factories.registry.constants import CRITICAL_RECORD_TYPES
 from models.records.factories.registry.constants import FACTORY_MARKER_ATTR
 from models.records.factories.registry.error import FactoryRegistryError
 from models.records.factories.registry.types import MutableFactoryRegistry
-from models.field_normalizer import FieldNormalizer
 
 
 def register_factory(record_type: str | None = None):
@@ -112,9 +112,6 @@ def build_factory_registry(
         factory_class.record_type: factory_class(shared_normalizer)
         for factory_class in factory_classes
     }
-
-
-
 
 
 __all__ = [

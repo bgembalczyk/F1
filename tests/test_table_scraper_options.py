@@ -4,9 +4,9 @@ from scrapers.base.helpers.config_factory import build_config
 from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.pipeline_profiles import apply_scraper_pipeline_bindings
-from scrapers.configs.public import TableConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.circuits_list_scraper import CircuitsListScraper
+from scrapers.configs.public import TableConfig
 from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.list_scraper_drivers import F1DriversListScraper
 from scrapers.grands_prix.list_scraper_grands_prix import GrandsPrixListScraper

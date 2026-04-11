@@ -12,7 +12,9 @@ CONTRACTS_PATH = ROOT / "scrapers/family_contracts.py"
 
 
 def _load_family_contracts_module():
-    spec = importlib.util.spec_from_file_location("scrapers.family_contracts", CONTRACTS_PATH)
+    spec = importlib.util.spec_from_file_location(
+        "scrapers.family_contracts", CONTRACTS_PATH
+    )
     module = importlib.util.module_from_spec(spec)
     assert spec is not None and spec.loader is not None
     spec.loader.exec_module(module)
@@ -60,7 +62,7 @@ FAMILY_CONTRACT_CASES = [
 ]
 
 
-@pytest.mark.contract
+@pytest.mark.contract()
 def test_scraper_family_contracts_are_exposed() -> None:
     family_contracts = _load_family_contracts_module()
     exported = set(getattr(family_contracts, "__all__", ()))
@@ -72,7 +74,7 @@ def test_scraper_family_contracts_are_exposed() -> None:
     }
 
 
-@pytest.mark.contract
+@pytest.mark.contract()
 @pytest.mark.parametrize(
     ("contract_name", "required_methods", "_allowed_hooks"),
     FAMILY_CONTRACT_CASES,
@@ -88,7 +90,7 @@ def test_family_contract_methods_exist(
         assert callable(getattr(contract, method_name, None))
 
 
-@pytest.mark.contract
+@pytest.mark.contract()
 @pytest.mark.parametrize(
     ("contract_name", "_required_methods", "allowed_hooks"),
     FAMILY_CONTRACT_CASES,
@@ -107,7 +109,7 @@ def test_family_contract_docstring_defines_extension_rules(
             assert hook in doc
 
 
-@pytest.mark.contract
+@pytest.mark.contract()
 @pytest.mark.parametrize(
     ("file_path", "class_name", "required_methods"),
     [

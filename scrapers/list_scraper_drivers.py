@@ -11,7 +11,6 @@ from scrapers.columns.types.multi.name_status_column.driver import DriverNameSta
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.config_table import build_scraper_config
-from scrapers.constants_drivers import DRIVERS_LIST_HEADERS
 from scrapers.constants_drivers import DRIVER_CHAMPIONSHIPS_HEADER
 from scrapers.constants_drivers import DRIVER_FASTEST_LAPS_HEADER
 from scrapers.constants_drivers import DRIVER_NAME_HEADER
@@ -23,6 +22,7 @@ from scrapers.constants_drivers import DRIVER_RACE_ENTRIES_HEADER
 from scrapers.constants_drivers import DRIVER_RACE_STARTS_HEADER
 from scrapers.constants_drivers import DRIVER_RACE_WINS_HEADER
 from scrapers.constants_drivers import DRIVER_SEASONS_COMPETED_HEADER
+from scrapers.constants_drivers import DRIVERS_LIST_HEADERS
 from scrapers.driver_ordered_table_parser import DriverOrderedTableParser
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.protocol import SectionParser
@@ -31,7 +31,11 @@ from scrapers.source_catalog import DRIVERS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.transformers.record.drivers_championships import DriversChampionshipsTransformer
 
-warnings.warn("list_scraper_drivers is deprecated; use scrapers.drivers_list_scraper.", DeprecationWarning, stacklevel=2)
+warnings.warn(
+    "list_scraper_drivers is deprecated; use scrapers.drivers_list_scraper.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 
 from typing import Any

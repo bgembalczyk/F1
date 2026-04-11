@@ -1,9 +1,4 @@
-from typing import TYPE_CHECKING
 from typing import Any
-from typing import Optional
-
-from bs4 import BeautifulSoup
-from bs4 import Tag
 
 from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.colour import ColourListColumn
@@ -11,9 +6,8 @@ from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.sponsor import SponsorColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.headers_table import normalize_header
-from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.parsers.table.wiki.table import WikiTableParser
-
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class SponsorshipTableParser(WikiTableParser):
@@ -135,8 +129,6 @@ class SponsorshipTableParser(WikiTableParser):
                 TextColumn(),
             ),
         ]
-
-
 
 
 __all__ = [

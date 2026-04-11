@@ -22,5 +22,4 @@ class SectionParser(SectionParserContract, Protocol):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
 
 
-
 __all__ = ["SectionParser", "SectionParserProtocol"]

@@ -7,6 +7,7 @@ from scrapers.options import ScraperOptions
 
 ServiceT_co = TypeVar("ServiceT_co", covariant=True)
 
+
 class SectionServiceFactory(Protocol[ServiceT_co]):
     """Factory contract for building section services in single-article scrapers."""
 

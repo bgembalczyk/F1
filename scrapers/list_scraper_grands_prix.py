@@ -20,7 +20,11 @@ from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import GRANDS_PRIX_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL
 
-warnings.warn("list_scraper_grands_prix is deprecated; use scrapers.grands_prix_list_scraper.", DeprecationWarning, stacklevel=2)
+warnings.warn(
+    "list_scraper_grands_prix is deprecated; use scrapers.grands_prix_list_scraper.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 
 from typing import Any

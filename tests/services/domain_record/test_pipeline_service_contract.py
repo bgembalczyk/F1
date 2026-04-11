@@ -32,38 +32,45 @@ class DomainCase:
     source: dict[str, object]
 
 
-@pytest.fixture(params=[
-    DomainCase(
-        service=DriverPipelineService,
-        input_dto=DriverDomainRecordInput(url="u", infobox={}, career_results=[]),
-        source={"url": "u", "infobox": {}, "career_results": []},
-    ),
-    DomainCase(
-        service=ConstructorPipelineService,
-        input_dto=ConstructorDomainRecordInput(
-            url="u",
-            infoboxes=[],
-            tables=[],
-            sections=[],
+@pytest.fixture(
+    params=[
+        DomainCase(
+            service=DriverPipelineService,
+            input_dto=DriverDomainRecordInput(url="u", infobox={}, career_results=[]),
+            source={"url": "u", "infobox": {}, "career_results": []},
         ),
-        source={"url": "u", "infoboxes": [], "tables": [], "sections": []},
-    ),
-    DomainCase(
-        service=SeasonPipelineService,
-        input_dto=SeasonDomainRecordInput(payload=SeasonRecordSections.empty()),
-        source={"payload": SeasonRecordSections.empty()},
-    ),
-    DomainCase(
-        service=CircuitPipelineService,
-        input_dto=CircuitDomainRecordInput(
-            source_url="u",
-            infobox={},
-            lap_record_rows=[],
-            sections=[],
+        DomainCase(
+            service=ConstructorPipelineService,
+            input_dto=ConstructorDomainRecordInput(
+                url="u",
+                infoboxes=[],
+                tables=[],
+                sections=[],
+            ),
+            source={"url": "u", "infoboxes": [], "tables": [], "sections": []},
         ),
-        source={"source_url": "u", "infobox": {}, "lap_record_rows": [], "sections": []},
-    ),
-])
+        DomainCase(
+            service=SeasonPipelineService,
+            input_dto=SeasonDomainRecordInput(payload=SeasonRecordSections.empty()),
+            source={"payload": SeasonRecordSections.empty()},
+        ),
+        DomainCase(
+            service=CircuitPipelineService,
+            input_dto=CircuitDomainRecordInput(
+                source_url="u",
+                infobox={},
+                lap_record_rows=[],
+                sections=[],
+            ),
+            source={
+                "source_url": "u",
+                "infobox": {},
+                "lap_record_rows": [],
+                "sections": [],
+            },
+        ),
+    ]
+)
 def domain_case(request: pytest.FixtureRequest) -> DomainCase:
     return request.param
 

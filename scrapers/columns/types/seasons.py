@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from typing import Any
 
 from models.services.season import parse_seasons
@@ -12,7 +11,6 @@ from scrapers.columns.helpers.constants import YEAR_IN_URL_PATTERN
 from scrapers.columns.helpers.constants import YEAR_PATTERN
 from scrapers.helpers.url import resolve_url
 from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
-
 
 
 class SeasonsColumn(BaseColumn):

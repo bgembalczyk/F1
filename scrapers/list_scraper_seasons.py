@@ -16,7 +16,11 @@ from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import SEASONS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL
 
-warnings.warn("list_scraper_seasons is deprecated; use scrapers.seasons_list_scraper.", DeprecationWarning, stacklevel=2)
+warnings.warn(
+    "list_scraper_seasons is deprecated; use scrapers.seasons_list_scraper.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 
 from typing import Any

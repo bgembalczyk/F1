@@ -21,7 +21,6 @@ class PandasDataFrameFormatter:
     def format(result: "ScrapeResult") -> Any:
         data = extract_data(result)
         try:
-
             dataframe = pd.DataFrame(data)
             validate_dataframe_columns(dataframe)
         except (ImportError, AttributeError):

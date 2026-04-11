@@ -9,7 +9,6 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-
 class CircuitLayoutHistorySectionParser:
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         paragraphs = [

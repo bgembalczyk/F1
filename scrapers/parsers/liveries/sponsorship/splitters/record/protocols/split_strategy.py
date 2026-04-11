@@ -8,7 +8,3 @@ from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record impo
 class RecordSplitStrategy(Protocol):
     def apply(self, record: PipelineRecord) -> list[PipelineRecord]:
         """Split a record into zero, one, or many records."""
-
-
-
-

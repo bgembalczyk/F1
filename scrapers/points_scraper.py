@@ -20,7 +20,6 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-
 class _SprintQualifyingPointsScraper(BasePointsScraper):
     CONFIG = build_scraper_config(
         url=BasePointsScraper.BASE_URL,

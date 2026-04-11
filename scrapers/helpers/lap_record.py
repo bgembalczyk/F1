@@ -2,33 +2,27 @@
 Wspólne narzędzia do obsługi rekordów lap record."""
 
 import re
+from collections.abc import Callable
+from collections.abc import Iterable
+from collections.abc import Mapping
 from typing import Any
 
 from bs4 import Tag
 
 from models.services.helpers import split_delimited_text
-from scrapers.logger import logger
+from models.value_objects.date.normalized import NormalizedDate
 from scrapers.helpers import constants
 from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.layout import layout_from_spanning_header
-from scrapers.helpers.text import clean_wiki_text
-from scrapers.helpers.time import parse_time_seconds_from_text
-from scrapers.lap_records_table import LapRecordsTableScraper
-
-
-import re
-from typing import Any
-from typing import Callable
-from typing import Iterable
-from typing import Mapping
-
-from models.value_objects.date.normalized import NormalizedDate
 from scrapers.helpers.text import choose_richer_entity
+from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.text_normalization import match_driver_loose
 from scrapers.helpers.text_normalization import match_vehicle_prefix
 from scrapers.helpers.text_normalization import normalize_text
 from scrapers.helpers.time import normalize_time_value
 from scrapers.helpers.time import parse_time_seconds_from_text
+from scrapers.lap_records_table import LapRecordsTableScraper
+from scrapers.logger import logger
 
 
 def extract_time(text: str) -> float | None:
@@ -146,6 +140,7 @@ def collect_lap_records(
             all_records.append(record)
 
     return all_records
+
 
 def normalize_entity_value(value: Any) -> dict[str, Any] | None:
     if value is None:
@@ -752,9 +747,6 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
     return merged_main + last_left
 
 
-
-
-
 def extract_year_from_event(rec: dict[str, Any]) -> str | None:
     """
     Fallback do ekstrakcji roku z pola event (np. "1963 Aintree 200").
@@ -920,6 +912,3 @@ def build_lap_record_key(
     }
 
     return tuple(parts[name] for name in key_order)
-
-
-

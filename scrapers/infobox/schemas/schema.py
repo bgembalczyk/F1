@@ -1,6 +1,4 @@
 from collections.abc import Iterable
-from collections.abc import Sequence
-from dataclasses import dataclass
 from typing import Any
 
 from scrapers.helpers.text_normalization import to_snake_case

@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Any
-
 
 from scrapers.records.inputs.section import SectionRecordInput
 from scrapers.sections.contract_validation import validate_section_result_payload

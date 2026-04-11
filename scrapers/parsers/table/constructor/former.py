@@ -22,7 +22,9 @@ class FormerConstructorsTableParser(WikiTableBaseParser):
     def map_columns(self, headers: list[str]) -> dict[str, str]:
         return {header: header.strip().lower().replace(" ", "_") for header in headers}
 
-    def parse_row(self, row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+    def parse_row(
+        self, row: dict[str, Any], column_map: dict[str, str]
+    ) -> dict[str, Any]:
         mapped = super().parse_row(row, column_map)
         normalized = dict(mapped)
         constructor = normalized.pop("constructor", None)

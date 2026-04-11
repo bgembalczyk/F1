@@ -1,6 +1,5 @@
 import shutil
-from typing import Callable
-
+from collections.abc import Callable
 from pathlib import Path
 
 from layers.seed.registry.entries.list_job import ListJobRegistryEntry

@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from importlib import import_module
-from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.common_config import ScraperCommonConfig

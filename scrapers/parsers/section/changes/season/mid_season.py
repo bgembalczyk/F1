@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -9,7 +8,6 @@ from scrapers.section.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
-
 
 
 class SeasonMidSeasonChangesSectionParser(ExtractListItemsMixin):

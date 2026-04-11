@@ -4,11 +4,10 @@ from collections import Counter
 from collections.abc import Callable
 from dataclasses import asdict
 from dataclasses import dataclass
-from typing import Any
 from typing import TYPE_CHECKING
+from typing import Any
 from typing import TypeAlias
 from typing import cast
-
 
 if TYPE_CHECKING:
     from logging import Logger

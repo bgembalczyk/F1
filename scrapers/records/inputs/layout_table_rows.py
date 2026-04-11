@@ -11,6 +11,3 @@ class LayoutTableRowsInput:
     """
 
     rows: list[dict[str, Any]]
-
-
-

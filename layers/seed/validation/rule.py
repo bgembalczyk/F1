@@ -9,5 +9,3 @@ class RegistryValidationRule:
     extractor: Callable[[Any], str]
     expected_prefix: Callable[[Any], str]
     message: Callable[[Any], str]
-
-

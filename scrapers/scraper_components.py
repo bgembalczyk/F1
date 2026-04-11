@@ -18,9 +18,9 @@ from scrapers.normalization import RecordNormalizer
 from scrapers.options import ScraperOptions
 from scrapers.quality.compact_step_diff_writer import CompactStepDiffWriter
 from scrapers.quality.reporter import QualityReporter
-from scrapers.runners.pipeline_runner import ScraperPipelineRunner
 from scrapers.runners.pipeline_runner import NormalizedRecord
 from scrapers.runners.pipeline_runner import RawRecord
+from scrapers.runners.pipeline_runner import ScraperPipelineRunner
 from scrapers.validation_runner import ValidationRunner
 from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
 from validation.record_factory_validator import adapt_record_factory_validator

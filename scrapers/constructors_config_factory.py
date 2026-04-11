@@ -13,7 +13,6 @@ if TYPE_CHECKING:
     from collections.abc import Sequence
 
 
-
 def build_constructor_list_config(
     *,
     section_id: str,

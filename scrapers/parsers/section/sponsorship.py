@@ -27,7 +27,7 @@ class SponsorshipSectionParser:
         include_urls: bool,
         normalize_empty_values: bool,
         splitter: SponsorshipRecordSplitter,
-        classifier: Optional[ParenClassifier] = None,
+        classifier: ParenClassifier | None = None,
     ):
         self._url = url
         self._include_urls = include_urls

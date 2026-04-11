@@ -117,5 +117,3 @@ class QualityReporter:
                 return None
             values.append(str(value))
         return "::".join(values)
-
-

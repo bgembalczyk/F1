@@ -1,7 +1,6 @@
 import ast
 from pathlib import Path
 
-
 CANONICAL_MODULE_CLASS_MATRIX = {
     "drivers": {
         "scrapers.drivers.list_scraper": "DriversListScraper",
@@ -41,7 +40,10 @@ def _extract_all_names(tree: ast.AST) -> set[str]:
     for node in ast.walk(tree):
         if not isinstance(node, ast.Assign):
             continue
-        if any(not isinstance(target, ast.Name) or target.id != "__all__" for target in node.targets):
+        if any(
+            not isinstance(target, ast.Name) or target.id != "__all__"
+            for target in node.targets
+        ):
             continue
         if isinstance(node.value, (ast.List, ast.Tuple)):
             for element in node.value.elts:
@@ -75,6 +77,6 @@ def test_canonical_module_class_matrix_matches_naming_standard() -> None:
                 "docs/architecture/module-naming-standard.md"
             )
             all_names = _extract_all_names(tree)
-            assert class_name in all_names, (
-                f"'{class_name}' should be exported from '{module_path}' via __all__."
-            )
+            assert (
+                class_name in all_names
+            ), f"'{class_name}' should be exported from '{module_path}' via __all__."

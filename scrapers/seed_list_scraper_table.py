@@ -4,8 +4,8 @@ from typing import TYPE_CHECKING
 from typing import ClassVar
 from warnings import warn
 
-from scrapers.component_metadata_wiki import ComponentMetadata
 from scrapers.component_metadata_wiki import LIST_SCRAPER_KIND
+from scrapers.component_metadata_wiki import ComponentMetadata
 from scrapers.component_metadata_wiki import build_component_metadata
 from scrapers.config_table import TableScraperConfig
 from scrapers.config_table import build_scraper_config
@@ -17,7 +17,6 @@ from scrapers.table_schema_dsl import TableSchemaDSL
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
-
 
 
 class SeedListTableScraper(F1TableScraper, ListScraperContract):

@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
-from typing import Callable
 from typing import TypeVar
 
 from bs4 import BeautifulSoup
@@ -39,7 +39,9 @@ class RunDiagnosticsMixin:
         output_dir = Path(self.debug_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
         path = output_dir / f"{stem}.json"
-        path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
 
     def validate_required(
         self,

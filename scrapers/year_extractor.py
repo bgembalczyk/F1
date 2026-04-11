@@ -1,6 +1,5 @@
 """Utility for extracting years and year ranges from text."""
 
-import re
 from typing import Any
 
 from scrapers.helpers.constants import MIN_URLS_FOR_PATTERN

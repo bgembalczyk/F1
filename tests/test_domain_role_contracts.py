@@ -7,6 +7,10 @@ from typing import Any
 
 import pytest
 from bs4 import BeautifulSoup
+
+from models.records.base_factory import RecordBuilderProtocol
+from models.records.factories import registry as factory_registry_module
+from models.records.factories.registry import FactoryRegistryProvider
 from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
@@ -28,10 +32,6 @@ from scrapers.drivers.drivers_sections.service import DriverSectionExtractionSer
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
 from scrapers.seasons.sections_seasons.service import SeasonTextSectionExtractionService
-
-from models.records.base_factory import RecordBuilderProtocol
-from models.records.factories import registry as factory_registry_module
-from models.records.factories.registry import FactoryRegistryProvider
 
 if TYPE_CHECKING:
     from scrapers.base.contracts import RecordAssemblerProtocol

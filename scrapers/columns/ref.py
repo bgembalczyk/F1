@@ -1,8 +1,8 @@
 import importlib
+from collections.abc import Mapping
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
-from typing import Mapping
 
 from scrapers.columns.base import BaseColumn
 
@@ -30,4 +30,3 @@ class ColumnRef:
         class_path = f"{column.__class__.__module__}.{column.__class__.__name__}"
         kwargs = dict(getattr(column, "__dict__", {}))
         return cls(class_path=class_path, kwargs=kwargs)
-

@@ -3,7 +3,12 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
-PRODUCTION_ROOTS = (Path("layers"), Path("wiki_pipeline"), Path("complete_extractor"), Path("scrapers"))
+PRODUCTION_ROOTS = (
+    Path("layers"),
+    Path("wiki_pipeline"),
+    Path("complete_extractor"),
+    Path("scrapers"),
+)
 ALLOWED_LEGACY_ROOT = Path("scrapers/legacy")
 
 
@@ -40,4 +45,6 @@ def test_production_modules_do_not_import_scrapers_legacy() -> None:
                 violations.append(str(py_file))
                 break
 
-    assert not violations, f"Production imports from scrapers.legacy are forbidden: {violations}"
+    assert (
+        not violations
+    ), f"Production imports from scrapers.legacy are forbidden: {violations}"

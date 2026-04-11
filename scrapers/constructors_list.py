@@ -18,6 +18,9 @@ from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.auto import AutoColumn
 from scrapers.columns.types.constructor_name import ConstructorNameColumn
 from scrapers.columns.types.links_list import LinksListColumn
+from scrapers.constants.shared_headers import SHARED_PODIUMS_HEADER
+from scrapers.constants.shared_headers import SHARED_POINTS_HEADER
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.constructors_config_factory import build_constructor_list_config
 from scrapers.constructors_constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_BASED_IN_HEADER
@@ -35,9 +38,6 @@ from scrapers.constructors_constants import CONSTRUCTOR_WDC_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_WINS_HEADER
 from scrapers.constructors_constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADERS
 from scrapers.constructors_constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
-from scrapers.constants.shared_headers import SHARED_PODIUMS_HEADER
-from scrapers.constants.shared_headers import SHARED_POINTS_HEADER
-from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.list.base import ListScraper
 from scrapers.parsers.list.wiki import ListParser

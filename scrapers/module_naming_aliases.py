@@ -1,5 +1,3 @@
-
-
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -53,6 +51,7 @@ MODULE_NAMING_ALIASES: tuple[ModuleNamingAlias, ...] = (
 
 def module_naming_alias_map() -> dict[str, str]:
     return {entry.old: entry.new for entry in MODULE_NAMING_ALIASES}
+
 
 from scrapers.legacy.module_naming_compat import MODULE_NAMING_ALIASES
 from scrapers.legacy.module_naming_compat import ModuleNamingAlias

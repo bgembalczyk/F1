@@ -11,9 +11,9 @@ from scrapers.columns.types.engine import EngineColumn
 from scrapers.columns.types.entrant import EntrantColumn
 from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.tyre import TyreColumn
+from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.parsers.seasons.entry_merger import EntryMerger
 from scrapers.parsers.seasons.table import SeasonTableParser
-from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

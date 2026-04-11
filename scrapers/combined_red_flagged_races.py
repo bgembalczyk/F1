@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup

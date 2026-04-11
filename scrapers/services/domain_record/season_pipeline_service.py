@@ -42,5 +42,7 @@ class SeasonPipelineService(
     def assemble(self, payload: SeasonPayloadDTO) -> dict[str, Any]:
         return self._assembler.assemble(payload)
 
-    def _compat_input_from_source(self, source: dict[str, Any]) -> SeasonDomainRecordInput:
+    def _compat_input_from_source(
+        self, source: dict[str, Any]
+    ) -> SeasonDomainRecordInput:
         return SeasonDomainRecordInput(payload=source.get("payload"))

@@ -37,5 +37,7 @@ class MetadataBindingMixin:
         bound.setdefault("source", "unknown")
         bound.setdefault("heading_path", [])
         bound.setdefault("section_id", section_id)
-        bound.setdefault("section_label", EntityName.from_raw(section_label).to_export())
+        bound.setdefault(
+            "section_label", EntityName.from_raw(section_label).to_export()
+        )
         return bound

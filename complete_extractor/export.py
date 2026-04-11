@@ -46,6 +46,7 @@ def export_complete_engine_manufacturers(
         manufacturer_name_initial,
     )
 
+
 def circuit_name_initial(record: dict[str, Any]) -> str:
     name_data = record.get("name") or {}
     name_list = name_data.get("list") or []
@@ -78,6 +79,7 @@ def export_complete_circuits(
         output_dir,
         circuit_name_initial,
     )
+
 
 def constructor_name_initial(record: dict[str, Any]) -> str:
     constructor = record.get("constructor")
@@ -118,6 +120,7 @@ def export_complete_constructors(
         output_dir,
         constructor_name_initial,
     )
+
 
 def surname_initial(record: dict[str, Any]) -> str:
     driver_text = extract_driver_text(record)

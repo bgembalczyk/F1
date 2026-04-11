@@ -9,7 +9,6 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-
 class TeamLiveriesTableParser(WikiTableParser):
     """Adapter tabeli sekcji zespołu do istniejącego parsera domenowego."""
 
@@ -29,8 +28,6 @@ class TeamLiveriesTableParser(WikiTableParser):
             section_id=section_id,
             team=team,
         )
-
-
 
 
 __all__ = ["TeamLiveriesTableParser"]

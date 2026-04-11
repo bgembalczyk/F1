@@ -16,7 +16,7 @@ class ExportMetadata:
     records_count: int
 
     @classmethod
-    def from_result(cls, result: ScrapeResult) -> "ExportMetadata":
+    def from_result(cls, result: ScrapeResult) -> ExportMetadata:
         return cls(
             source_url=result.source_url,
             timestamp=result.timestamp,

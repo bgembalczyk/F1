@@ -3,8 +3,8 @@
 from models.services.helpers import expand_all
 from models.services.helpers import normalize_date_value
 from models.services.helpers import prune_empty
-from models.value_objects.normalized_date import NormalizedDate
 from models.value_objects.date import DateValue
+from models.value_objects.normalized_date import NormalizedDate
 
 
 # expand_all - lines 22-24

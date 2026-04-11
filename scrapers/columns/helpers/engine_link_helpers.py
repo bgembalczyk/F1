@@ -9,6 +9,7 @@ Follows SOLID principles:
 - High Cohesion: All methods work together to resolve links into engine metadata
 - Information Expert: Link parsing logic grouped with link data
 """
+
 from models.records.link import LinkRecord
 from scrapers.columns.helpers import constants
 

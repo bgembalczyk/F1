@@ -1,7 +1,7 @@
 from collections.abc import Callable
+from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Any
-from typing import Sequence
 
 ParserType = Callable[[Any], Any] | str
 

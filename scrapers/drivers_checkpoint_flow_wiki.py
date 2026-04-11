@@ -31,7 +31,6 @@ class DriversSeedNormalizer(UrlResolverMixin, BaseNormalizer):
         )
 
 
-
 class DriversCheckpointFlow(BaseOrchestrationFlow):
     def __init__(
         self,

@@ -2,13 +2,17 @@ from __future__ import annotations
 
 import warnings
 
-warnings.warn("single_scraper_grands_prix is deprecated; use scrapers.grands_prix_detail_scraper.", DeprecationWarning, stacklevel=2)
+warnings.warn(
+    "single_scraper_grands_prix is deprecated; use scrapers.grands_prix_detail_scraper.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.errors.missing_section import MissingSectionError
 from scrapers.errors import ScraperError
+from scrapers.errors.missing_section import MissingSectionError
 from scrapers.helpers.sections import is_grand_prix_article
 from scrapers.parsers.section.grand_prix.by_year import GrandPrixByYearSectionParser
 from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG

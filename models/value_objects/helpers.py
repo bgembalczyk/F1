@@ -1,5 +1,5 @@
+from collections.abc import Mapping
 from typing import Any
-from typing import Mapping
 from urllib.parse import urlparse
 
 from models.domain_utils.field_normalization.links import normalize_link_payload
@@ -17,6 +17,7 @@ def normalize_text(value: Any) -> str | None:
     text = str(value).strip()
     return text or None
 
+
 def validate_link(link: Mapping[str, Any] | None, *, field_name: str) -> dict[str, Any]:
     normalized = normalize_link_payload(link)
     url = normalized.get("url")
@@ -30,6 +31,7 @@ def validate_link(link: Mapping[str, Any] | None, *, field_name: str) -> dict[st
 def is_valid_url(url: str) -> bool:
     parsed = urlparse(url)
     return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
+
 
 def normalize_seconds(value: Any) -> float | None:
     if isinstance(value, int | float):

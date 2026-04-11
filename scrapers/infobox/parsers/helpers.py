@@ -1,5 +1,5 @@
-from typing import Any
 from typing import TYPE_CHECKING
+from typing import Any
 
 from bs4 import BeautifulSoup
 

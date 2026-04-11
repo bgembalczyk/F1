@@ -2,7 +2,6 @@ from collections.abc import Mapping
 from typing import Any
 
 
-
 def apply_field_aliases(
     record: Mapping[str, Any],
     aliases: Mapping[str, str],

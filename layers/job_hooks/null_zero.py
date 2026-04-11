@@ -12,5 +12,3 @@ class NullLayerZeroJobHook:
         l0_raw_json_path: Path,
     ) -> None:
         _ = (base_wiki_dir, job, l0_raw_json_path)
-
-

@@ -31,5 +31,7 @@ class TableRowParsingMixin:
         return not cells or all(not c.get_text(strip=True) for c in cells)
 
     @staticmethod
-    def _is_repeated_header_row(cleaned_cells: Sequence[str], headers: Sequence[str]) -> bool:
+    def _is_repeated_header_row(
+        cleaned_cells: Sequence[str], headers: Sequence[str]
+    ) -> bool:
         return is_repeated_header_row(cleaned_cells, headers)

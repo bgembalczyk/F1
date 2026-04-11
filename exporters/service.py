@@ -13,7 +13,6 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-
 class ExportService:
     def __init__(
         self,

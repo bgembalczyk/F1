@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Any
 
 from layers.seed.registry.entries.base import BaseRegistryEntry
 
@@ -8,5 +7,3 @@ from layers.seed.registry.entries.base import BaseRegistryEntry
 class SeedRegistryEntry(BaseRegistryEntry):
     default_output_path: str
     legacy_output_path: str
-
-

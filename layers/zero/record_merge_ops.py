@@ -2,8 +2,6 @@ from __future__ import annotations
 
 import json
 from typing import TYPE_CHECKING
-from typing import Any
-from typing import Protocol
 from typing import TypeVar
 
 from layers.protocols.merge.model import MergeModel
@@ -78,9 +76,6 @@ def merge_driver_values(existing: object, incoming: object) -> object:
 
 
 from collections.abc import Callable
-
-
-
 
 T = TypeVar("T", bound=MergeModel)
 

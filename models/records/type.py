@@ -1,7 +1,6 @@
 from enum import Enum
 
 
-
 class RecordType(str, Enum):
     LINK = "link"
     SEASON = "season"

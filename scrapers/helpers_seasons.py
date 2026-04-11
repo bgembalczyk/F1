@@ -2,10 +2,10 @@ import re
 from pathlib import Path
 from typing import Any
 
-from scrapers.options import ScraperOptions
-from scrapers.services.result_export import ResultExportService
-from scrapers.results import ScrapeResult
 from scrapers.complete_scraper_seasons import CompleteSeasonDataExtractor
+from scrapers.options import ScraperOptions
+from scrapers.results import ScrapeResult
+from scrapers.services.result_export import ResultExportService
 
 
 def season_filename(season_info: dict[str, Any]) -> str:

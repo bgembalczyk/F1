@@ -1,7 +1,6 @@
+from pathlib import Path
 from typing import Protocol
 from typing import runtime_checkable
-
-from pathlib import Path
 
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.run_config import RunConfig

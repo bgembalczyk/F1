@@ -28,4 +28,7 @@ def test_wikipedia_strategy_fallback_canonical_url_contract() -> None:
         season_page_title="2005_Formula_One_World_Championship",
     )
 
-    assert fallback_url == "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+    assert (
+        fallback_url
+        == "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+    )

@@ -37,7 +37,9 @@ def _has_required_constructor_args(node: ast.ClassDef) -> bool:
                 continue
             if idx < defaults_offset:
                 return True
-        for kw_arg, default in zip(item.args.kwonlyargs, item.args.kw_defaults):
+        for kw_arg, default in zip(
+            item.args.kwonlyargs, item.args.kw_defaults, strict=False
+        ):
             if kw_arg.arg in {"args", "kwargs"}:
                 continue
             if default is None:

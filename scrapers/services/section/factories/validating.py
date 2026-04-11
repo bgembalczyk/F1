@@ -37,5 +37,3 @@ class ValidatingSectionServiceFactory(Generic[ServiceT]):
         if require_url and not url:
             msg = "Article URL dependency is required for this section service."
             raise ValueError(msg)
-
-

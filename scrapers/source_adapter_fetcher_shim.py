@@ -1,9 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import TYPE_CHECKING
-from typing import cast
-
 from infrastructure.http.policies.http import HttpPolicy
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
 from scrapers.html_fetcher import HtmlFetcher

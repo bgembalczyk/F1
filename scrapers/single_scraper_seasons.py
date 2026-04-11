@@ -10,7 +10,11 @@ from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.wiring.composition_seasons import SeasonScraperCompositionFactory
 from scrapers.wiring.composition_seasons import SeasonScraperDependencies
 
-warnings.warn("single_scraper_seasons is deprecated; use scrapers.seasons_detail_scraper.", DeprecationWarning, stacklevel=2)
+warnings.warn(
+    "single_scraper_seasons is deprecated; use scrapers.seasons_detail_scraper.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 from typing import TYPE_CHECKING
 from typing import Any

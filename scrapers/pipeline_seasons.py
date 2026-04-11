@@ -39,7 +39,6 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-
 class SeasonYearResolver:
     def resolve(
         self,

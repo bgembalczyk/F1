@@ -1,22 +1,17 @@
 import logging
 import re
-from collections.abc import Callable
-from dataclasses import dataclass
-from typing import TYPE_CHECKING
 from typing import Any
-from typing import Optional
 
 from models.services.season import parse_seasons
-from scrapers.columns.helpers.sponsorship_seasons.rule import Rule
-from scrapers.columns.helpers.sponsorship_seasons.rule_context import RuleContext
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
+from scrapers.columns.helpers.sponsorship_seasons.rule import Rule
+from scrapers.columns.helpers.sponsorship_seasons.rule_context import RuleContext
 from scrapers.helpers.constants import YEAR_RE
-from scrapers.paren_classifier import ParenClassifier
 from scrapers.helpers.links import normalize_links
+from scrapers.paren_classifier import ParenClassifier
 
 logger = logging.getLogger(__name__)
-
 
 
 class SponsorshipSeasonsColumn(BaseColumn):
@@ -51,7 +46,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
         self,
         *,
         team_name: str | None = None,
-        classifier: Optional[ParenClassifier] = None,
+        classifier: ParenClassifier | None = None,
         table_headers: list[str] | None = None,
     ) -> None:
         self._team_name = team_name

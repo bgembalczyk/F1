@@ -11,7 +11,6 @@ if TYPE_CHECKING:
     from bs4 import Tag
 
 
-
 @dataclass(frozen=True)
 class ParserRule:
     predicate: Callable[[Tag], bool]

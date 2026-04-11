@@ -10,11 +10,11 @@ from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.tyre import TyreColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.parsers.seasons.table import SeasonTableParser
-from scrapers.table_schema_dsl import TableSchemaDSL
-from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
-from scrapers.parsers.wiki.body_content import BodyContentParser
 from scrapers.parsers.section.wiki.adapter import collect_section_elements
 from scrapers.parsers.section.wiki.adapter import find_section_tree
+from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.table_schema_dsl import TableSchemaDSL
+from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
 
 
 class SeasonResultsParser:

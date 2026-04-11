@@ -12,4 +12,3 @@ class RuleContext:
     engine_names: list[str]
     non_year_links: list[dict[str, Any]]
     other_links: list[dict[str, Any]]
-

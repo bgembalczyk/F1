@@ -1,22 +1,13 @@
 import json
 import time
-from abc import ABC
-from abc import abstractmethod
 from hashlib import sha256
 from pathlib import Path
-from typing import Any
 from typing import Generic
 from typing import TypeVar
 
 from infrastructure.cache.adapter.file_ttl import FileTtlCacheAdapter
 
 T = TypeVar("T")
-
-
-
-
-
-
 
 
 class FileTtlCache(Generic[T]):

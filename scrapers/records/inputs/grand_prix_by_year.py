@@ -4,7 +4,6 @@ from dataclasses import dataclass
 from typing import Any
 
 
-
 @dataclass(frozen=True)
 class GrandPrixByYearRecordInput:
     """Input contract for by-year grand prix mapper.
@@ -16,5 +15,3 @@ class GrandPrixByYearRecordInput:
     """
 
     record: dict[str, Any]
-
-

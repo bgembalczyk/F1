@@ -14,5 +14,3 @@ class TableRecordInput:
     """
 
     payload: Mapping[str, Any]
-
-

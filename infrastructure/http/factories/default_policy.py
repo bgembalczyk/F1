@@ -1,4 +1,5 @@
 """Fabryka domyślnych polityk HTTP."""
+
 from infrastructure.cache.wiki_policy import WikipediaCachePolicy
 from infrastructure.http.config import HttpClientConfig
 from infrastructure.http.policies.retry.base import RetryPolicy

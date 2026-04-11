@@ -3,17 +3,12 @@ from collections.abc import Mapping
 from dataclasses import asdict
 from dataclasses import is_dataclass
 from typing import Any
-from typing import Protocol
-from typing import runtime_checkable
 
 from models.records.circuit.base import CircuitBaseRecord
 from models.records.circuit.complete import CircuitCompleteRecord
 from models.records.circuit.details import CircuitDetailsRecord
 from models.serializable_protocol import SerializableProtocol
 from models.value_objects.base import ValueObject
-
-
-
 
 SerializableAdapter = Callable[[Any], Any]
 

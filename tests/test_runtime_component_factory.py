@@ -14,7 +14,9 @@ def test_runtime_factory_register_and_build_instance() -> None:
         source="tests.component",
     )
 
-    assert factory.build(role="runner", domain="drivers", stage="layer_one") is component
+    assert (
+        factory.build(role="runner", domain="drivers", stage="layer_one") is component
+    )
 
 
 def test_runtime_factory_rejects_duplicate_registration_for_same_source() -> None:

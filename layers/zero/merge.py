@@ -19,7 +19,6 @@ from models.merge_types.link_value import LinkValue
 from models.merge_types.record.driver import DriverRecordModel
 from models.merge_types.record.engine import EngineRecordModel
 from models.merge_types.record.race import RaceRecordModel
-from scrapers import constants_wiki
 from scrapers import sources_registry_wiki as sources_registry
 from scrapers.constants_wiki import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.constants_wiki import CIRCUITS_FORMULA_ONE_FIELDS
@@ -78,9 +77,7 @@ def sort_key_with_presence(value: object) -> tuple[int, str]:
 
 
 def extract_red_flag(record: dict[str, object]) -> dict[str, object]:
-    return {
-        key: value for key, value in record.items() if key in RED_FLAG_FIELDS
-    }
+    return {key: value for key, value in record.items() if key in RED_FLAG_FIELDS}
 
 
 def pop_red_flag_fields(record: dict[str, object]) -> None:

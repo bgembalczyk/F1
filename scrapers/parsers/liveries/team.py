@@ -11,9 +11,6 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-
-
-
 class TeamLiveriesSectionParser:
     """Parser sekcji artykułu sponsorowanych malowań F1."""
 

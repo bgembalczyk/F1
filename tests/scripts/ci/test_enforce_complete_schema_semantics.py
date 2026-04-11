@@ -5,7 +5,9 @@ from pathlib import Path
 from scripts.ci import enforce_complete_schema_semantics as gate
 
 
-def test_run_reports_complete_schema_with_sparse_required_fields(tmp_path: Path) -> None:
+def test_run_reports_complete_schema_with_sparse_required_fields(
+    tmp_path: Path,
+) -> None:
     file_path = tmp_path / "record.py"
     file_path.write_text(
         """
@@ -22,7 +24,9 @@ CIRCUIT_COMPLETE_SCHEMA = RecordSchema(required=("url",))
     assert "CIRCUIT_COMPLETE_SCHEMA" in issues[0]
 
 
-def test_run_accepts_complete_schema_with_domain_required_fields(tmp_path: Path) -> None:
+def test_run_accepts_complete_schema_with_domain_required_fields(
+    tmp_path: Path,
+) -> None:
     file_path = tmp_path / "record.py"
     file_path.write_text(
         """
