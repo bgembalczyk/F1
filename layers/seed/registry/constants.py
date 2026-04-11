@@ -8,9 +8,9 @@ from layers.seed.registry.helpers import build_seed_registry_entry_from_spec
 from layers.seed.registry.raw_specs import RawRegistrySpec
 from layers.seed.validation.rule import RegistryValidationRule
 from layers.seed.validation.spec import RegistryValidationSpec
-from scrapers.circuits.list_scraper import CircuitsListScraper
+from scrapers.circuits.list_scraper_circuits import CircuitsListScraper
 from scrapers.combined_red_flagged_races import RedFlaggedRacesScraper
-from scrapers.constructors.list_scraper import ConstructorsListScraper
+from scrapers.constructors.list_scraper_constructors import ConstructorsListScraper
 from scrapers.drivers.list_scraper import DriversListScraper
 from scrapers.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engine_regulation import EngineRegulationScraper
