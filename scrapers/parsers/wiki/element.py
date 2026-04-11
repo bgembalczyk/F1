@@ -6,40 +6,31 @@ from dataclasses import dataclass
 from bs4 import Tag
 
 from models.data.wiki_parser import WikiParserData
-from scrapers.parsers.html_elements.list import ListElementParser
 from scrapers.parsers.rules import ParserRule
-from scrapers.parsers.wiki.base import WikiListParser
-from scrapers.parsers.wiki.figure import WikiFigureParser
-from scrapers.parsers.wiki.infobox import WikiInfoboxParser
-from scrapers.parsers.wiki.navbox import WikiNavboxParser
-from scrapers.parsers.wiki.paragraph import WikiParagraphParser
-from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
-from scrapers.parsers.rules import ParserRule
-from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
-from scrapers.parsers.wiki.figure import FigureParser
-from scrapers.parsers.wiki.navbox import NavBoxParser
-from scrapers.parsers.wiki.paragraph import ParagraphParser
-from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
-from scrapers.parsers.wiki.table import WikiTableParser
+from scrapers.parsers.wiki.element_figure import WikiFigureElementParser
+from scrapers.parsers.wiki.element_infobox import WikiInfoboxElementParser
+from scrapers.parsers.wiki.element_list import WikiListElementParser
+from scrapers.parsers.wiki.element_navbox import WikiNavboxElementParser
+from scrapers.parsers.wiki.element_paragraph import WikiParagraphElementParser
+from scrapers.parsers.wiki.element_references import WikiReferencesElementParser
+from scrapers.parsers.wiki.element_table import WikiTableElementParser
 
 
 @dataclass(frozen=True)
 class WikiElementParsers:
-    infobox_parser: WikiInfoboxParser
-    paragraph_parser: WikiParagraphParser
-    figure_parser: WikiFigureParser
-    list_parser: WikiListParser
-    table_parser: WikiTableParser
-    navbox_parser: WikiNavboxParser
-    references_wrap_parser: ReferencesWrapParser
+    table_parser: WikiTableElementParser
+    list_parser: WikiListElementParser
+    section_parser: Callable[[Tag], WikiParserData] | None
+    infobox_parser: WikiInfoboxElementParser
+    paragraph_parser: WikiParagraphElementParser
+    figure_parser: WikiFigureElementParser
+    navbox_parser: WikiNavboxElementParser
+    references_parser: WikiReferencesElementParser
 
 
 @dataclass(frozen=True)
 class ElementParserRegistry:
-    """Registry parserów elementów Wikipedii.
-
-    Rejestr dobiera parser po typie elementu (tag + klasy CSS), bez logiki domenowej.
-    """
+    """Registry parserów elementów Wikipedii bez logiki domenowej."""
 
     rules: tuple[ParserRule, ...]
 
@@ -63,11 +54,9 @@ class ElementParserRegistry:
 def build_wikipedia_element_registry(
     *,
     parsers: WikiElementParsers,
-    section_parser: Callable[[Tag], WikiParserData] | None = None,
 ) -> ElementParserRegistry:
     section_rules: tuple[ParserRule, ...] = ()
-    if section_parser is not None:
-        # h2/h3/h4 + kontener - parsery sekcji/podsekcji
+    if parsers.section_parser is not None:
         section_rules = (
             ParserRule(
                 predicate=lambda el: (
@@ -77,12 +66,21 @@ def build_wikipedia_element_registry(
                         for heading in ("mw-heading2", "mw-heading3", "mw-heading4")
                     )
                 ),
-                parser=section_parser,
+                parser=parsers.section_parser,
                 result_type="section",
             ),
         )
+
     return ElementParserRegistry(
         rules=(
+            ParserRule(
+                predicate=lambda el: (
+                    el.name == "table"
+                    and "infobox" in ElementParserRegistry._get_classes(el)
+                ),
+                parser=parsers.infobox_parser.parse,
+                result_type="infobox",
+            ),
             ParserRule(
                 predicate=lambda el: (
                     el.name == "table"
@@ -96,24 +94,16 @@ def build_wikipedia_element_registry(
                 parser=parsers.list_parser.parse,
                 result_type="list",
             ),
-            ParserRule(
-                predicate=lambda el: (
-                    el.name == "table"
-                    and "infobox" in ElementParserRegistry._get_classes(el)
-                ),
-                parser=parsers.infobox_parser.parse,
-                result_type="infobox",
-            ),
             *section_rules,
-            ParserRule(
-                predicate=lambda el: el.name == "figure",
-                parser=parsers.figure_parser.parse,
-                result_type="figure",
-            ),
             ParserRule(
                 predicate=lambda el: el.name == "p",
                 parser=parsers.paragraph_parser.parse,
                 result_type="paragraph",
+            ),
+            ParserRule(
+                predicate=lambda el: el.name == "figure",
+                parser=parsers.figure_parser.parse,
+                result_type="figure",
             ),
             ParserRule(
                 predicate=lambda el: (
@@ -126,39 +116,16 @@ def build_wikipedia_element_registry(
             ParserRule(
                 predicate=lambda el: (
                     el.name == "div"
-                    and "reflist" in ElementParserRegistry._get_classes(el)
-                ),
-                parser=parsers.references_wrap_parser.parse,
-                result_type="references_wrap",
-            ),
-            ParserRule(
-                predicate=lambda el: (
-                    el.name == "div"
-                    and any(
-                        "references-wrap" in c
-                        for c in ElementParserRegistry._get_classes(el)
+                    and (
+                        "reflist" in ElementParserRegistry._get_classes(el)
+                        or any(
+                            "references-wrap" in c
+                            for c in ElementParserRegistry._get_classes(el)
+                        )
                     )
                 ),
-                parser=parsers.references_wrap_parser.parse,
-                result_type="references_wrap",
+                parser=parsers.references_parser.parse,
+                result_type="references",
             ),
         ),
-    )
-
-
-def build_default_wiki_element_parsers() -> WikiElementParsers:
-    return WikiElementParsers(
-        infobox_parser=WikiInfoboxHtmlParser(),
-        paragraph_parser=ParagraphParser(),
-        figure_parser=FigureParser(),
-        list_parser=ListElementParser(),
-        table_parser=WikiTableHtmlParser(),
-        navbox_parser=NavBoxParser(),
-        references_wrap_parser=ReferencesWrapParser(),
-    )
-
-
-def build_default_wikipedia_element_registry() -> ElementParserRegistry:
-    return build_wikipedia_element_registry(
-        parsers=build_default_wiki_element_parsers()
     )
