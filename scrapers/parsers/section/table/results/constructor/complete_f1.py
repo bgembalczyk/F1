@@ -1,6 +1,8 @@
 from __future__ import annotations
 
-from scrapers.parsers.section.table.constructor.base import ConstructorTablesSectionParser
+from scrapers.parsers.section.table.constructor.base import (
+    ConstructorTablesSectionParser,
+)
 
 
 class ConstructorCompleteF1ResultsSectionParser(ConstructorTablesSectionParser):

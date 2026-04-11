@@ -151,10 +151,7 @@ def check_sections_single_scraper_boundary(
 
 
 def _is_in_parser_naming_scope(path: Path) -> bool:
-    return any(
-        path == scope or scope in path.parents
-        for scope in PARSER_NAMING_SCOPE
-    )
+    return any(path == scope or scope in path.parents for scope in PARSER_NAMING_SCOPE)
 
 
 def check_parser_naming_contracts() -> list[str]:
@@ -179,15 +176,9 @@ def check_parser_naming_contracts() -> list[str]:
                 isinstance(item, ast.FunctionDef) and item.name == "parse"
                 for item in node.body
             )
-            base_names = {
-                base.id
-                for base in node.bases
-                if isinstance(base, ast.Name)
-            }
+            base_names = {base.id for base in node.bases if isinstance(base, ast.Name)}
             base_names |= {
-                base.attr
-                for base in node.bases
-                if isinstance(base, ast.Attribute)
+                base.attr for base in node.bases if isinstance(base, ast.Attribute)
             }
             implements_parser_contract = bool(base_names & parser_protocol_like_bases)
             if not has_parse and not implements_parser_contract:

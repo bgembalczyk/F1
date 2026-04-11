@@ -5,7 +5,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from scrapers.adapters.adapter import ResultTabularAdapter
+from scrapers.adapters.result_tabular import ResultTabularAdapter
 from scrapers.results import ScrapeResult
 from scrapers.services.result_export import ResultExportService
 from scrapers.validation_runner import ValidationRunner

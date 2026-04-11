@@ -20,16 +20,3 @@ class HtmlElementParserAdapterSet:
     table_parser: TableElementParser
     navbox_parser: NavboxElementParser
     references_wrap_parser: ReferencesWrapParser
-
-
-class HtmlElementParserFactory:
-    def build(self) -> HtmlElementParserAdapterSet:
-        return HtmlElementParserAdapterSet(
-            infobox_parser=InfoboxElementParser(),
-            paragraph_parser=ParagraphElementParser(),
-            figure_parser=FigureElementParser(),
-            list_parser=ListElementParser(),
-            table_parser=TableElementParser(),
-            navbox_parser=NavboxElementParser(),
-            references_wrap_parser=ReferencesWrapParser(),
-        )

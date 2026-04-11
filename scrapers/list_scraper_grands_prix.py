@@ -8,7 +8,9 @@ from scrapers.builders_table import build_entity_metadata_columns
 from scrapers.builders_table import build_name_status_fragment
 from scrapers.columns.factory import IntColumn
 from scrapers.columns.types.links_list import LinksListColumn
-from scrapers.columns.types.multi.name_status_column.race_title_status import RaceTitleStatusColumn
+from scrapers.columns.types.multi.name_status_column.race_title_status import (
+    RaceTitleStatusColumn,
+)
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.config_table import build_scraper_config
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin

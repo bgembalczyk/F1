@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.seasons.results import SeasonResultsParser
+from scrapers.parsers.section.protocol import SectionParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 

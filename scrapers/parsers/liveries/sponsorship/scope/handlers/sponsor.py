@@ -1,6 +1,8 @@
 from typing import Any
 
-from scrapers.parsers.liveries.sponsorship.scope.grand_prix import GrandPrixScopeTransformer
+from scrapers.parsers.liveries.sponsorship.scope.grand_prix import (
+    GrandPrixScopeTransformer,
+)
 from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 

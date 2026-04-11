@@ -7,7 +7,9 @@ from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.list.engine_manufacturers_list import IndianapolisOnlyListParser
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.section.sublevels import SubSectionParser
-from scrapers.parsers.table.engine_manufacturers_list import EngineManufacturersTableParser
+from scrapers.parsers.table.engine_manufacturers_list import (
+    EngineManufacturersTableParser,
+)
 
 
 class IndianapolisOnlySubSectionParser(SubSectionParser):

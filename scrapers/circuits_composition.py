@@ -2,17 +2,23 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from scrapers.infobox.extraction.protocol import InfoboxExtractionService
-from scrapers.infobox.extraction.service import CircuitInfoboxExtractionService
+from scrapers.circuit_orchestrator import CircuitInfoboxOrchestrator
+from scrapers.infobox_orchestrator_protocol import InfoboxOrchestratorProtocol
 from scrapers.options import ScraperOptions
-from scrapers.services.section.extraction.circuits import CircuitSectionExtractionService
-from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
-from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
+from scrapers.services.section.extraction.circuits import (
+    CircuitSectionExtractionService,
+)
+from scrapers.services.section.factories.configurable import (
+    ConfigurableSectionServiceFactory,
+)
+from scrapers.services.section.factories.section_service_factory import (
+    SectionServiceFactory,
+)
 
 
 @dataclass(frozen=True, slots=True)
 class CircuitScraperDependencies:
-    infobox_service: InfoboxExtractionService
+    infobox_service: InfoboxOrchestratorProtocol
     sections_service_factory: SectionServiceFactory[CircuitSectionExtractionService]
     domain_record_service: CircuitDomainRecordService
 
@@ -22,7 +28,7 @@ class CircuitScraperCompositionFactory:
     """Factory budująca komplet zależności dla F1SingleCircuitScraper."""
 
     test_mode: bool = False
-    infobox_service: InfoboxExtractionService | None = None
+    infobox_service: InfoboxOrchestratorProtocol | None = None
     sections_service_factory: (
         SectionServiceFactory[CircuitSectionExtractionService] | None
     ) = None
@@ -32,7 +38,7 @@ class CircuitScraperCompositionFactory:
     def for_tests(
         cls,
         *,
-        infobox_service: InfoboxExtractionService | None = None,
+        infobox_service: InfoboxOrchestratorProtocol | None = None,
         sections_service_factory: (
             SectionServiceFactory[CircuitSectionExtractionService] | None
         ) = None,
@@ -52,7 +58,7 @@ class CircuitScraperCompositionFactory:
     ) -> CircuitScraperDependencies:
         infobox_service = self.infobox_service
         if infobox_service is None:
-            infobox_service = CircuitInfoboxExtractionService(options=options)
+            infobox_service = CircuitInfoboxOrchestrator(options=options)
 
         sections_service_factory = self.sections_service_factory
         if sections_service_factory is None:

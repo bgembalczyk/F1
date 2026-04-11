@@ -4,9 +4,9 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from exporters.protocol import ExporterProtocol
-from scrapers.contracts.protocols.data_frame_formatter import DataFrameFormatterProtocol
-from scrapers.contracts.protocols.fieldnames_strategy import FieldnamesStrategyProtocol
 from scrapers.formatters.helpers import extract_data
+from scrapers.protocols.data_frame_formatter import DataFrameFormatterProtocol
+from scrapers.protocols.fieldnames_strategy import FieldnamesStrategyProtocol
 
 if TYPE_CHECKING:
     from collections.abc import Sequence

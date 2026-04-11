@@ -5,8 +5,9 @@ from typing import Any
 
 from scrapers.records.assemblers.driver import DriverRecordAssembler
 from scrapers.records.dto.driver import DriverRecordDTO
-from scrapers.services.domain_record.base_pipeline_service import BaseDomainPipelineService
-
+from scrapers.services.domain_record.base_pipeline_service import (
+    BaseDomainPipelineService,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -49,7 +50,8 @@ class DriverPipelineService(
         return self._assembler.assemble(payload)
 
     def _compat_input_from_source(
-        self, source: dict[str, Any]
+        self,
+        source: dict[str, Any],
     ) -> DriverDomainRecordInput:
         return DriverDomainRecordInput(
             url=str(source["url"]),

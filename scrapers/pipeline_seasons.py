@@ -17,21 +17,32 @@ from scrapers.parsers.seasons.entry_merger import EntryMerger
 from scrapers.parsers.seasons.free_practice import SeasonFreePracticeParser
 from scrapers.parsers.seasons.jim_clark_trophy import JimClarkTrophyParser
 from scrapers.parsers.seasons.non_championship import SeasonNonChampionshipParser
-from scrapers.parsers.seasons.regional_championship import SeasonRegionalChampionshipParser
+from scrapers.parsers.seasons.regional_championship import (
+    SeasonRegionalChampionshipParser,
+)
 from scrapers.parsers.seasons.results import SeasonResultsParser
 from scrapers.parsers.seasons.scoring_system import SeasonScoringSystemParser
-from scrapers.parsers.seasons.standings import SeasonStandingsService
 from scrapers.parsers.seasons.table import SeasonTableService
 from scrapers.parsers.seasons.testing_venues import TestingVenuesParser
 from scrapers.parsers.section.protocols.season import SeasonSectionParser
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
 from scrapers.parsers.section.season.calendar import SeasonCalendarSectionParser
-from scrapers.parsers.section.standings.season.constructors import SeasonConstructorsStandingsSectionParser
-from scrapers.parsers.section.standings.season.drivers import SeasonDriversStandingsSectionParser
+from scrapers.parsers.section.standings.season.constructors import (
+    SeasonConstructorsStandingsSectionParser,
+)
+from scrapers.parsers.section.standings.season.drivers import (
+    SeasonDriversStandingsSectionParser,
+)
 from scrapers.records.sections.season import SeasonRecordSections
-from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
-from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
-from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
+from scrapers.services.section.extraction.season_text import (
+    SeasonTextSectionExtractionService,
+)
+from scrapers.services.section.factories.configurable import (
+    ConfigurableSectionServiceFactory,
+)
+from scrapers.services.section.factories.section_service_factory import (
+    SectionServiceFactory,
+)
 
 if TYPE_CHECKING:
     from typing import Any

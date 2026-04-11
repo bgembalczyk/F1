@@ -2,8 +2,12 @@ from __future__ import annotations
 
 import warnings
 
-from scrapers.services.domain_record.driver_pipeline_service import DriverDomainRecordInput
-from scrapers.services.domain_record.driver_pipeline_service import DriverPipelineService
+from scrapers.services.domain_record.driver_pipeline_service import (
+    DriverDomainRecordInput,
+)
+from scrapers.services.domain_record.driver_pipeline_service import (
+    DriverPipelineService,
+)
 
 _DEPRECATION_MESSAGE = (
     "scrapers.services.domain_record.driver is deprecated; "
@@ -18,4 +22,8 @@ def __getattr__(name: str):
     raise AttributeError(name)
 
 
-__all__ = ["DomainRecordService", "DriverDomainRecordService", "DriverDomainRecordInput"]
+__all__ = [
+    "DomainRecordService",
+    "DriverDomainRecordService",
+    "DriverDomainRecordInput",
+]

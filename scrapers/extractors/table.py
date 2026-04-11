@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.config_table import TableConfig
-from scrapers.core.domain_roles import Extractor
+from scrapers.domain_roles import Extractor
 from scrapers.logging import get_logger
 from scrapers.pipeline_table import TablePipeline
 

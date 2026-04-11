@@ -4,25 +4,20 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from infrastructure.http.errors.base import RequestError
+from infrastructure.http.errors.recoverable_network import RecoverableNetworkError
 from scrapers.error_handler import ErrorHandler
 from scrapers.errors import ScraperError
+from scrapers.errors.recoverable_parse import RecoverableParseError
 from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.helpers.transformers import build_transformers
 from scrapers.html_fetcher import HtmlFetcher
 from scrapers.infobox.field.mapper import InfoboxFieldMapper
-from scrapers.infobox.parsers.helpers import parse_infobox_from_soup
-from scrapers.infobox.parsers.html import InfoboxHtmlParser
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
+from scrapers.parsers.infobox.helpers import parse_infobox_from_soup
+from scrapers.parsers.infobox.html import InfoboxHtmlParser
 from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
 
-RecoverableNetworkError = (
-    RequestError,
-    ConnectionError,
-    OSError,
-    TimeoutError,
-)
-RecoverableParseError = (KeyError, LookupError, ValueError)
 
 
 class WikipediaInfoboxScraper:

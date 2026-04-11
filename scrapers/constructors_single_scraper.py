@@ -8,8 +8,12 @@ from scrapers.constructors_composition import ConstructorScraperDependencies
 from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
-from scrapers.services.domain_record.constructor_pipeline_service import ConstructorDomainRecordInput
-from scrapers.services.domain_record.constructor_table_extraction_service import ConstructorTableExtractionService
+from scrapers.services.domain_record.constructor_pipeline_service import (
+    ConstructorDomainRecordInput,
+)
+from scrapers.services.domain_record.constructor_table_extraction_service import (
+    ConstructorTableExtractionService,
+)
 from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
 
 if TYPE_CHECKING:

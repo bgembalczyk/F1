@@ -5,24 +5,40 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordDTO
+from scrapers.constructors.constructors_postprocess.assembler import (
+    ConstructorRecordDTO,
+)
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
 from scrapers.records.dto.circuit import CircuitRecordDTO
 from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
-from scrapers.services.domain_record.base_pipeline_service import BaseDomainPipelineService
-from scrapers.services.domain_record.circuit_pipeline_service import CircuitDomainRecordInput
-from scrapers.services.domain_record.circuit_pipeline_service import CircuitPipelineService
+from scrapers.services.domain_record.base_pipeline_service import (
+    BaseDomainPipelineService,
+)
+from scrapers.services.domain_record.circuit_pipeline_service import (
+    CircuitDomainRecordInput,
+)
+from scrapers.services.domain_record.circuit_pipeline_service import (
+    CircuitPipelineService,
+)
 from scrapers.services.domain_record.constructor_pipeline_service import (
     ConstructorDomainRecordInput,
 )
 from scrapers.services.domain_record.constructor_pipeline_service import (
     ConstructorPipelineService,
 )
-from scrapers.services.domain_record.driver_pipeline_service import DriverDomainRecordInput
-from scrapers.services.domain_record.driver_pipeline_service import DriverPipelineService
-from scrapers.services.domain_record.season_pipeline_service import SeasonDomainRecordInput
-from scrapers.services.domain_record.season_pipeline_service import SeasonPipelineService
+from scrapers.services.domain_record.driver_pipeline_service import (
+    DriverDomainRecordInput,
+)
+from scrapers.services.domain_record.driver_pipeline_service import (
+    DriverPipelineService,
+)
+from scrapers.services.domain_record.season_pipeline_service import (
+    SeasonDomainRecordInput,
+)
+from scrapers.services.domain_record.season_pipeline_service import (
+    SeasonPipelineService,
+)
 
 
 @dataclass(frozen=True)
@@ -69,7 +85,7 @@ class DomainCase:
                 "sections": [],
             },
         ),
-    ]
+    ],
 )
 def domain_case(request: pytest.FixtureRequest) -> DomainCase:
     return request.param

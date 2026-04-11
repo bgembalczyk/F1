@@ -7,10 +7,14 @@ from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.circuits.circuits_complete_scraper import F1CompleteCircuitDataExtractor
 from scrapers.drivers.complete_scraper_drivers import CompleteDriverDataExtractor
-from scrapers.engines.complete_scraper_engines import F1CompleteEngineManufacturerDataExtractor
+from scrapers.engines.complete_scraper_engines import (
+    F1CompleteEngineManufacturerDataExtractor,
+)
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.single_scraper_engines import SingleEngineManufacturerScraper
-from scrapers.grands_prix.complete_scraper_grands_prix import F1CompleteGrandPrixDataExtractor
+from scrapers.grands_prix.complete_scraper_grands_prix import (
+    F1CompleteGrandPrixDataExtractor,
+)
 from tests.support.refactored_base_classes_utils import assert_issubclass_cases
 
 

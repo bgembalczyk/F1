@@ -24,11 +24,3 @@ class BaseHtmlElementParser(WikiTagParser[TOutput], ABC):
     def parse(self, raw: Tag) -> TOutput: ...
 
 
-class BaseHtmlSectionParser(Parser[BeautifulSoup, TOutput], ABC):
-    """Base contract for document/section parsers.
-
-    Document/section parsers are the only parsers that can accept BeautifulSoup.
-    """
-
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> TOutput: ...

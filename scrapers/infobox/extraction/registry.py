@@ -1,15 +1,14 @@
 from __future__ import annotations
 
 from bs4 import BeautifulSoup
-from bs4 import Tag
 
-from scrapers.infobox.extraction.extractor.circuit_extractor import CircuitInfoboxExtractor
-from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractorProtocol
-from scrapers.infobox.extraction.service.circuit_orchestrator import CircuitInfoboxOrchestrator
-from scrapers.infobox.extraction.service.constructor_orchestrator import (
-    ConstructorInfoboxOrchestrator,
+from scrapers.circuit_orchestrator import CircuitInfoboxOrchestrator
+from scrapers.constructor_infobox_orchestrator import ConstructorInfoboxOrchestrator
+from scrapers.driver_infobox_orchestrator import DriverInfoboxOrchestrator
+from scrapers.infobox.extraction.extractor.circuit_extractor import (
+    CircuitInfoboxExtractor,
 )
-from scrapers.infobox.extraction.service.driver_orchestrator import DriverInfoboxOrchestrator
+from scrapers.protocols.infobox_extractor import InfoboxExtractorProtocol
 
 EXTRACTOR_REGISTRY: dict[str, type[InfoboxExtractorProtocol[BeautifulSoup]]] = {
     "circuit": CircuitInfoboxExtractor,

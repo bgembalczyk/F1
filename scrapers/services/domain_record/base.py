@@ -6,7 +6,7 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.core.domain_roles import PipelineService
+from scrapers.domain_roles import PipelineService
 from scrapers.mixins.pipeline_mixins import DebugDumpMixin
 from scrapers.mixins.pipeline_mixins import RetryMixin
 from scrapers.mixins.pipeline_mixins import ValidationMixin

@@ -8,9 +8,9 @@ from layers.seed.registry.entries.list_job import ListJobRegistryEntry
 from layers.seed.registry.raw_specs import RawRegistrySpec
 from layers.seed.validation.rule import RegistryValidationRule
 from layers.seed.validation.spec import RegistryValidationSpec
-from scrapers.constructors.list_scraper_constructors import ConstructorsListScraper
+from scrapers.constructors_list import ConstructorsListScraper
 from scrapers.discovery_wiki import discover_layer_one_seed_components
-from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
+from scrapers.list_scraper_grands_prix import GrandsPrixListScraper
 from scrapers.sources_registry_wiki import get_source_by_seed_name
 from scrapers.sources_registry_wiki import resolve_seed_name
 from scrapers.sources_registry_wiki import validate_sources_registry_consistency

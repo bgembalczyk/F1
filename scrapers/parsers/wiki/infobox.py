@@ -1,9 +1,7 @@
-from typing import Any
-import warnings
-
 from bs4 import Tag
 
 from models.data.parsed.infobox import InfoboxParsedData
+from scrapers.parsers.html_elements.infobox import InfoboxElementParser
 from scrapers.parsers.wiki.base import WikiParser
 
 

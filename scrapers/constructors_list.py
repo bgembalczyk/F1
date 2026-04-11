@@ -40,12 +40,16 @@ from scrapers.constructors_constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADER
 from scrapers.constructors_constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.list.base import ListScraper
-from scrapers.parsers.wiki.list import ListParser
-from scrapers.parsers.section.constructors.current import CurrentConstructorsSectionParser
+from scrapers.parsers.section.constructors.current import (
+    CurrentConstructorsSectionParser,
+)
 from scrapers.parsers.section.constructors.former import FormerConstructorsSectionParser
 from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.wiki.list import ListParser
 from scrapers.results import ScrapeResult
-from scrapers.section.selection_strategy.wikipedia_by_id import WikipediaSectionByIdSelectionStrategy
+from scrapers.section.selection_strategy.wikipedia_by_id import (
+    WikipediaSectionByIdSelectionStrategy,
+)
 from scrapers.source_catalog import CONSTRUCTORS_LIST
 
 if TYPE_CHECKING:

@@ -6,7 +6,13 @@ from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.url import normalize_url
-from scrapers.infobox.parsers import constants
+from scrapers.parsers.infobox.constants import TWO_DIGIT_YEAR_SUFFIX
+from scrapers.parsers.infobox.constants import YEAR_FINDALL_RE
+from scrapers.parsers.infobox.constants import YEAR_OPTIONAL_RANGE_RE
+from scrapers.parsers.infobox.constants import YEAR_OPTIONAL_RANGE_WS_RE
+from scrapers.parsers.infobox.constants import YEAR_RANGE_RE
+from scrapers.parsers.infobox.constants import YEAR_RANGE_STRICT_RE
+from scrapers.parsers.infobox.constants import YEAR_RE
 from scrapers.year_extractor import YearExtractor
 
 
@@ -42,7 +48,7 @@ class InfoboxLinkExtractor:
     def extract_year_links(self, cell: Tag) -> list[LinkRecord]:
         links = [link for link in self.extract_links(cell) if self.is_year_link(link)]
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        years = constants.YEAR_FINDALL_RE.findall(text)
+        years = YEAR_FINDALL_RE.findall(text)
 
         if not years:
             return links
@@ -77,10 +83,10 @@ class InfoboxLinkExtractor:
         processed_years = set()
 
         # First, find ranges (year-year pattern)
-        for match in constants.YEAR_RANGE_RE.finditer(text):
+        for match in YEAR_RANGE_RE.finditer(text):
             start = int(match.group(1))
             end_text = match.group(2)
-            if len(end_text) == constants.TWO_DIGIT_YEAR_SUFFIX:
+            if len(end_text) == TWO_DIGIT_YEAR_SUFFIX:
                 end = (start // 100) * 100 + int(end_text)
             else:
                 end = int(end_text)
@@ -103,7 +109,7 @@ class InfoboxLinkExtractor:
             )
 
         # Then, find individual years not part of ranges
-        for match in constants.YEAR_RE.finditer(text):
+        for match in YEAR_RE.finditer(text):
             year = int(match.group(1))
             if year not in processed_years:
                 processed_years.add(year)
@@ -114,7 +120,7 @@ class InfoboxLinkExtractor:
     @staticmethod
     def is_year_link(link: LinkRecord) -> bool:
         text = link.get("text") or ""
-        if not constants.YEAR_OPTIONAL_RANGE_RE.fullmatch(text):
+        if not YEAR_OPTIONAL_RANGE_RE.fullmatch(text):
             return False
         url = (link.get("url") or "").lower()
         return not ("season" in url or "_season" in url)
@@ -150,7 +156,7 @@ class InfoboxLinkExtractor:
         return [
             link
             for link in all_links
-            if constants.YEAR_OPTIONAL_RANGE_WS_RE.fullmatch(
+            if YEAR_OPTIONAL_RANGE_WS_RE.fullmatch(
                 (link.get("text") or "").strip(),
             )
         ]
@@ -160,7 +166,7 @@ class InfoboxLinkExtractor:
         return [
             link
             for link in links
-            if constants.YEAR_RANGE_STRICT_RE.fullmatch(link.get("text") or "")
+            if YEAR_RANGE_STRICT_RE.fullmatch(link.get("text") or "")
         ]
 
     def _extract_years_from_list_items(
@@ -184,7 +190,7 @@ class InfoboxLinkExtractor:
         li_text: str,
         year_to_url: dict[int, str],
     ) -> list[dict[str, Any]]:
-        if constants.YEAR_RANGE_RE.search(li_text):
+        if YEAR_RANGE_RE.search(li_text):
             years_in_li = YearExtractor.extract_years_from_text(li_text)
             li_year_to_url = YearExtractor.interpolate_urls(years_in_li, year_to_url)
             return [
@@ -192,7 +198,7 @@ class InfoboxLinkExtractor:
                 for year in sorted(years_in_li)
             ]
 
-        year_match = constants.YEAR_RE.search(li_text)
+        year_match = YEAR_RE.search(li_text)
         if not year_match:
             return []
         year = int(year_match.group(1))

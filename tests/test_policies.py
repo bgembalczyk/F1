@@ -6,7 +6,9 @@ import pytest
 
 from layers.job_hooks.composite_zero import CompositeLayerZeroJobHook
 from layers.job_hooks.mirror.constructors import MirrorConstructorsJobHook
-from layers.job_hooks.mirror.to_domain_by_filename import MirrorToDomainByFilenameJobHook
+from layers.job_hooks.mirror.to_domain_by_filename import (
+    MirrorToDomainByFilenameJobHook,
+)
 from layers.job_hooks.null_zero import NullLayerZeroJobHook
 
 

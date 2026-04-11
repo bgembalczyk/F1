@@ -2,8 +2,12 @@ from __future__ import annotations
 
 import warnings
 
-from scrapers.services.domain_record.season_pipeline_service import SeasonDomainRecordInput
-from scrapers.services.domain_record.season_pipeline_service import SeasonPipelineService
+from scrapers.services.domain_record.season_pipeline_service import (
+    SeasonDomainRecordInput,
+)
+from scrapers.services.domain_record.season_pipeline_service import (
+    SeasonPipelineService,
+)
 
 _DEPRECATION_MESSAGE = (
     "scrapers.services.domain_record.season is deprecated; "
@@ -18,4 +22,8 @@ def __getattr__(name: str):
     raise AttributeError(name)
 
 
-__all__ = ["DomainRecordService", "SeasonDomainRecordService", "SeasonDomainRecordInput"]
+__all__ = [
+    "DomainRecordService",
+    "SeasonDomainRecordService",
+    "SeasonDomainRecordInput",
+]

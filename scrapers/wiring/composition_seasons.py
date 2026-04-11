@@ -8,8 +8,12 @@ from scrapers.pipeline_seasons import SeasonParsingComponentsBuilder
 from scrapers.pipeline_seasons import SeasonSectionPipeline
 from scrapers.pipeline_seasons import SeasonYearResolver
 from scrapers.services.domain_record.season import SeasonDomainRecordService
-from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
-from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
+from scrapers.services.section.extraction.season_text import (
+    SeasonTextSectionExtractionService,
+)
+from scrapers.services.section.factories.section_service_factory import (
+    SectionServiceFactory,
+)
 
 
 @dataclass(frozen=True, slots=True)

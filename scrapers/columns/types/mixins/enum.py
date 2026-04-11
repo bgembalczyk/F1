@@ -39,4 +39,5 @@ class EnumMarksMixin:
                 return value
         return fallback
 
+
 __all__ = ["EnumMarksMixin"]

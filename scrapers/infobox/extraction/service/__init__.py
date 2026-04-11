@@ -1,38 +1,39 @@
-from scrapers.infobox.extraction.protocol import InfoboxExtractionService
-from scrapers.infobox.extraction.service.base_orchestrator import (
-    BaseInfoboxOrchestrator,
-)
-from scrapers.infobox.extraction.service.circuit_orchestrator import (
-    CircuitInfoboxOrchestrator,
-)
-from scrapers.infobox.extraction.service.constructor_orchestrator import (
-    ConstructorInfoboxOrchestrator,
-)
-from scrapers.infobox.extraction.service.driver_orchestrator import (
-    DriverInfoboxOrchestrator,
-)
-from scrapers.infobox.extraction.service.strategy_orchestrator import (
-    StrategyBackedInfoboxOrchestrator,
-)
+from __future__ import annotations
 
-# TODO: Delete:
+from typing import TYPE_CHECKING
 
-BaseInfoboxExtractionService = BaseInfoboxOrchestrator
-CircuitInfoboxExtractionService = CircuitInfoboxOrchestrator
-ConstructorInfoboxExtractionService = ConstructorInfoboxOrchestrator
-DriverInfoboxExtractionService = DriverInfoboxOrchestrator
-StrategyBackedInfoboxExtractionService = StrategyBackedInfoboxOrchestrator
+from scrapers.infobox.extraction.result import InfoboxExtractionResult
 
-__all__ = [
-    "BaseInfoboxExtractionService",
-    "BaseInfoboxOrchestrator",
-    "CircuitInfoboxExtractionService",
-    "CircuitInfoboxOrchestrator",
-    "ConstructorInfoboxExtractionService",
-    "ConstructorInfoboxOrchestrator",
-    "DriverInfoboxExtractionService",
-    "DriverInfoboxOrchestrator",
-    "InfoboxExtractionService",
-    "StrategyBackedInfoboxExtractionService",
-    "StrategyBackedInfoboxOrchestrator",
-]
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.options import ScraperOptions
+
+
+def extract_infobox(
+    domain: str,
+    soup: BeautifulSoup,
+    *,
+    url: str = "",
+    options: ScraperOptions | None = None,
+) -> InfoboxExtractionResult:
+    from scrapers.infobox.extraction.factory import build_infobox_orchestrator
+
+    orchestrator = build_infobox_orchestrator(domain, options=options)
+    return orchestrator.extract(soup, url=url)
+
+
+def __getattr__(name: str) -> object:
+    if name == "DriverInfoboxOrchestrator":
+        from scrapers.driver_infobox_orchestrator import DriverInfoboxOrchestrator
+
+        return DriverInfoboxOrchestrator
+    if name == "ConstructorInfoboxOrchestrator":
+        from scrapers.constructor_infobox_orchestrator import ConstructorInfoboxOrchestrator
+
+        return ConstructorInfoboxOrchestrator
+    if name == "CircuitInfoboxExtractionService":
+        from scrapers.circuit_orchestrator import CircuitInfoboxOrchestrator
+
+        return CircuitInfoboxOrchestrator
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

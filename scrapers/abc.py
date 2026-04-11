@@ -10,12 +10,8 @@ from uuid import uuid4
 from bs4 import BeautifulSoup
 
 from infrastructure.http.policies.http import HttpPolicy
-from scrapers.adapters.adapter import ResultTabularAdapter
+from scrapers.adapters.result_tabular import ResultTabularAdapter
 from scrapers.component_metadata_wiki import validate_metadata_for_component_class
-from scrapers.contracts.protocols import ExportCapability
-from scrapers.contracts.protocols import FetchCapability
-from scrapers.contracts.protocols import ParseCapability
-from scrapers.contracts.protocols import ValidateCapability
 from scrapers.errors import ScraperError
 from scrapers.errors import ScraperNetworkError
 from scrapers.errors import ScraperParseError
@@ -23,6 +19,10 @@ from scrapers.helpers.url import normalize_url
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
 from scrapers.post_processors import apply_post_processors
+from scrapers.protocols.capabilities import ExportCapability
+from scrapers.protocols.capabilities import FetchCapability
+from scrapers.protocols.capabilities import ParseCapability
+from scrapers.protocols.capabilities import ValidateCapability
 from scrapers.results import ScrapeResult
 from scrapers.runners.pipeline_runner import NormalizedRecord
 from scrapers.runners.pipeline_runner import RawRecord
