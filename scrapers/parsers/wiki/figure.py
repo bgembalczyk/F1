@@ -6,7 +6,4 @@ class WikiFigureParser(FigureElementParser):
     pass
 
 
-# Backward-compatible alias.
-FigureParser = WikiFigureParser
-
-__all__ = ["WikiFigureParser", "FigureParser", "FigureParsedData"]
+__all__ = ["WikiFigureParser", "FigureParsedData"]

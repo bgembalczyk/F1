@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import Tag
+from bs4 import BeautifulSoup
 
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parser_table import HtmlTableParser
@@ -14,7 +15,6 @@ from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTablePars
 from scrapers.parsers.table.wiki.mapped.standings import StandingsTableParser
 from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.base import WikiTableElementParserBase
-from bs4 import BeautifulSoup
 
 if TYPE_CHECKING:
     from scrapers.parsers.table.wiki.base import WikiTableBaseParser
@@ -31,7 +31,6 @@ class ArticleTablesParser(WikiTableElementParserBase):
     ) -> None:
         self.include_heading_path = include_heading_path
         self.include_source_table = include_source_table
-        self._table_parser = WikiTableHtmlParser()
         self._html_table_parser = HtmlTableParser()
         self._specialized_parsers = specialized_parsers or [
             StandingsTableParser(),
@@ -53,9 +52,6 @@ class ArticleTablesParser(WikiTableElementParserBase):
 
     def parse_table(self, table: Tag) -> dict[str, Any] | None:
         headers, rows = self._parse_with_html_table_parser(table)
-        if not headers:
-            headers, rows = self._parse_with_legacy_parser(table)
-
         if not headers:
             return None
 
@@ -114,18 +110,6 @@ class ArticleTablesParser(WikiTableElementParserBase):
             parsed_rows.append(dict(zip(normalized_headers, values, strict=False)))
 
         return normalized_headers, parsed_rows
-
-    def _parse_with_legacy_parser(
-        self,
-        table: Tag,
-    ) -> tuple[list[str], list[dict[str, str]]]:
-        raw = self._table_parser.parse(table)
-        headers = self._normalize_headers(raw.get("headers", []))
-        rows: list[dict[str, str]] = []
-        for row_cells in raw.get("rows", []):
-            cells = [self._clean_text(cell) for cell in row_cells]
-            rows.append(dict(zip(headers, cells, strict=False)))
-        return headers, rows
 
     def _normalize_headers(self, headers: list[str]) -> list[str]:
         return [

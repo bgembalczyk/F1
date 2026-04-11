@@ -119,8 +119,3 @@ def resolve_parser_name(
     raise LookupError(
         "No parser registration for " f"{domain}:{element_type}:{section_id or '-'}",
     )
-
-
-# Backward-compatible aliases
-ParserRegistryKey = ParsingRegistryKey
-ParserRegistryEntry = ParsingRegistryEntry

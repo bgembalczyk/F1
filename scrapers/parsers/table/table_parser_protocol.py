@@ -15,9 +15,4 @@ class TableFragmentParserProtocol(Protocol):
 
     def parse(self, fragment: WikiDictFragmentInput) -> dict[str, Any] | None: ...
 
-
-# Backward-compatible alias
-TableParserProtocol = TableFragmentParserProtocol
-
-
-__all__ = ["TableFragmentParserProtocol", "TableParserProtocol"]
+__all__ = ["TableFragmentParserProtocol"]

@@ -7,12 +7,8 @@ class WikiInfoboxParser(WikiInfoboxHtmlParser):
     """Wiki parser for infobox tables (<table class=\"infobox\">)."""
 
 
-# Backward-compatible alias.
-InfoboxParser = WikiInfoboxParser
-
 __all__ = [
     "WikiInfoboxElementParserBase",
     "WikiInfoboxParser",
-    "InfoboxParser",
     "InfoboxParsedData",
 ]
