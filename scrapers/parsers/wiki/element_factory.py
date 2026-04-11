@@ -2,12 +2,13 @@ from scrapers.parsers.wiki.base import WikiListParser
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
-from scrapers.parsers.wiki.figure import WikiFigureParser
-from scrapers.parsers.wiki.infobox import WikiInfoboxParser
-from scrapers.parsers.wiki.navbox import WikiNavboxParser
-from scrapers.parsers.wiki.paragraph import WikiParagraphParser
-from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
-from scrapers.parsers.wiki.table import WikiTableParser
+from scrapers.parsers.wiki.element_figure import WikiFigureElementParser
+from scrapers.parsers.wiki.element_infobox import WikiInfoboxElementParser
+from scrapers.parsers.wiki.element_list import WikiListElementParser
+from scrapers.parsers.wiki.element_navbox import WikiNavboxElementParser
+from scrapers.parsers.wiki.element_paragraph import WikiParagraphElementParser
+from scrapers.parsers.wiki.element_references import WikiReferencesElementParser
+from scrapers.parsers.wiki.element_table import WikiTableElementParser
 
 
 def build_default_wiki_element_parsers() -> WikiElementSet:

@@ -62,8 +62,7 @@ def build_wikipedia_element_registry(
     section_parser: Callable[[Tag], WikiParserData] | None = None,
 ) -> ElementRegistry:
     section_rules: tuple[ParserRule, ...] = ()
-    if section_parser is not None:
-        # h2/h3/h4 + kontener - parsery sekcji/podsekcji
+    if parsers.section_parser is not None:
         section_rules = (
             ParserRule(
                 predicate=lambda el: (
@@ -73,7 +72,7 @@ def build_wikipedia_element_registry(
                         for heading in ("mw-heading2", "mw-heading3", "mw-heading4")
                     )
                 ),
-                parser=section_parser,
+                parser=parsers.section_parser,
                 result_type="section",
             ),
         )
@@ -92,6 +91,7 @@ def build_wikipedia_element_registry(
                 parser=parsers.list_parser.parse,
                 result_type="list",
             ),
+            *section_rules,
             ParserRule(
                 predicate=lambda el: (
                     el.name == "table"
@@ -100,16 +100,10 @@ def build_wikipedia_element_registry(
                 parser=parsers.infobox_parser.parse,
                 result_type="infobox",
             ),
-            *section_rules,
             ParserRule(
                 predicate=lambda el: el.name == "figure",
                 parser=parsers.figure_parser.parse,
                 result_type="figure",
-            ),
-            ParserRule(
-                predicate=lambda el: el.name == "p",
-                parser=parsers.paragraph_parser.parse,
-                result_type="paragraph",
             ),
             ParserRule(
                 predicate=lambda el: (
@@ -135,8 +129,8 @@ def build_wikipedia_element_registry(
                         for c in ElementRegistry._get_classes(el)
                     )
                 ),
-                parser=parsers.references_wrap_parser.parse,
-                result_type="references_wrap",
+                parser=parsers.references_parser.parse,
+                result_type="references",
             ),
         ),
     )

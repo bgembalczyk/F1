@@ -1,4 +1,5 @@
 from typing import Any
+from dataclasses import replace
 
 from bs4 import Tag
 
@@ -22,10 +23,14 @@ class ContentTextParser(WikiParser):
         self.toolbox = toolbox or build_default_section_toolbox()
         self.section_parser = NestedWikiSectionParser(toolbox=self.toolbox)
         if element_parsers is not None:
+            section_first_parsers = replace(
+                element_parsers,
+                section_parser=self.section_parser.parse,
+            )
             self.toolbox = SectionParserToolbox(
-                element_parsers=element_parsers,
+                element_parsers=section_first_parsers,
                 element_registry=build_wikipedia_element_registry(
-                    parsers=element_parsers,
+                    parsers=section_first_parsers,
                 ),
                 section_locator=self.toolbox.section_locator,
                 section_assembler=self.toolbox.section_assembler,
