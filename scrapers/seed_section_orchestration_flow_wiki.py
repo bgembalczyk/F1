@@ -35,7 +35,7 @@ SUPPORTED_DOMAINS: tuple[str, ...] = (
 )
 
 MIGRATED_STAGE_DOMAINS: frozenset[str] = frozenset(
-    {"drivers", "constructors", "circuits"}
+    {"drivers", "constructors", "circuits"},
 )
 
 
@@ -64,7 +64,7 @@ class DomainStageOrchestrator(QualityMetricsMixin, BaseOrchestrator):
     def _execute(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
         metrics = self.build_stage_metrics(
             input_records=int(
-                payload.metadata.get("input_records", len(payload.records))
+                payload.metadata.get("input_records", len(payload.records)),
             ),
             output_records=len(payload.records),
             errors=payload.errors,
@@ -169,10 +169,12 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
 
         if domain in MIGRATED_STAGE_DOMAINS:
             extracted_payload = DomainSeedExtractor(
-                domain=domain, stage=lifecycle.STAGE_INGEST
+                domain=domain,
+                stage=lifecycle.STAGE_INGEST,
             ).extract(ingest_payload)
             normalize_payload = DomainSeedNormalizer(
-                domain=domain, stage=lifecycle.STAGE_NORMALIZE
+                domain=domain,
+                stage=lifecycle.STAGE_NORMALIZE,
             ).normalize(
                 extracted_payload,
             )
@@ -323,7 +325,6 @@ class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):
             duration_ms=duration_ms,
         )
         return validate_payload.records, audit
-
 
     @staticmethod
     def _resolve_layer_parser_name(*, domain: str, layer: str) -> str:

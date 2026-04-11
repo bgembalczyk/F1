@@ -20,5 +20,3 @@ class HtmlElementParserAdapterSet:
     table_parser: TableElementParser
     navbox_parser: NavboxElementParser
     references_wrap_parser: ReferencesWrapParser
-
-

@@ -7,10 +7,18 @@ from scrapers.base.options import ScraperOptions
 from scrapers.circuits.circuits_infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordDTO
-from scrapers.constructors.constructors_infobox.service import ConstructorInfoboxExtractionService
-from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordAssembler
-from scrapers.constructors.constructors_postprocess.assembler import ConstructorRecordDTO
-from scrapers.constructors.constructors_sections.service import ConstructorSectionExtractionService
+from scrapers.constructors.constructors_infobox.service import (
+    ConstructorInfoboxExtractionService,
+)
+from scrapers.constructors.constructors_postprocess.assembler import (
+    ConstructorRecordAssembler,
+)
+from scrapers.constructors.constructors_postprocess.assembler import (
+    ConstructorRecordDTO,
+)
+from scrapers.constructors.constructors_sections.service import (
+    ConstructorSectionExtractionService,
+)
 from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
 from scrapers.drivers.composition_drivers import DriverScraperCompositionFactory
 from scrapers.drivers.composition_drivers import DriverScraperDependencies
@@ -18,13 +26,13 @@ from scrapers.drivers.drivers_infobox.service import DriverInfoboxExtractionServ
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
-from scrapers.services.domain_record.driver import DomainRecordService
 from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
 from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
 from scrapers.seasons.sections_seasons.service import SeasonTextSectionExtractionService
 from scrapers.seasons.single_scraper_seasons import SingleSeasonScraper
+from scrapers.services.domain_record.driver import DomainRecordService
 
 
 def _soup(html: str) -> BeautifulSoup:

@@ -81,7 +81,7 @@ def _collect_issues_for_file(path: Path) -> list[SchemaSemanticsIssue]:
         if not _has_complete_or_full_token(schema_name):
             continue
         if not isinstance(node.value, ast.Call) or not _is_schema_constructor(
-            node.value
+            node.value,
         ):
             continue
 

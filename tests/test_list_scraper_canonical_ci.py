@@ -43,7 +43,7 @@ def test_new_list_scraper_classes_must_live_in_canonical_domain_modules() -> Non
 
         for node in ast.walk(tree):
             if not isinstance(node, ast.ClassDef) or not node.name.endswith(
-                "ListScraper"
+                "ListScraper",
             ):
                 continue
 

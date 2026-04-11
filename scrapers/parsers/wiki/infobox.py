@@ -1,6 +1,3 @@
-from typing import Any
-import warnings
-
 from bs4 import Tag
 
 from models.data.parsed.infobox import InfoboxParsedData

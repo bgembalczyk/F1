@@ -5,8 +5,8 @@ from scrapers.infobox.parsers.drivers.cell import InfoboxCellParser
 from scrapers.infobox.parsers.drivers.general import InfoboxGeneralParser
 from scrapers.infobox.parsers.drivers.link_extractor import InfoboxLinkExtractor
 from scrapers.infobox.parsers.drivers.title import InfoboxTitlesParser
-from scrapers.parsers.roles import ParserBundle
 from scrapers.infobox.section_discovery import InfoboxSectionDiscovery
+from scrapers.parsers.roles import ParserBundle
 
 
 @dataclass(frozen=True)

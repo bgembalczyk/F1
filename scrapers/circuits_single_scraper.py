@@ -9,9 +9,15 @@ from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
 from scrapers.helpers.sections import is_circuit_like_article
-from scrapers.section.selection_strategy.wikipedia_by_id import WikipediaSectionByIdSelectionStrategy
-from scrapers.services.domain_record.circuit_lap_records_extraction_service import CircuitLapRecordsExtractionService
-from scrapers.services.domain_record.circuit_pipeline_service import CircuitDomainRecordInput
+from scrapers.section.selection_strategy.wikipedia_by_id import (
+    WikipediaSectionByIdSelectionStrategy,
+)
+from scrapers.services.domain_record.circuit_lap_records_extraction_service import (
+    CircuitLapRecordsExtractionService,
+)
+from scrapers.services.domain_record.circuit_pipeline_service import (
+    CircuitDomainRecordInput,
+)
 from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
 
 if TYPE_CHECKING:

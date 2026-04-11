@@ -57,7 +57,9 @@ def test_export_complete_constructors_calls_fetch_and_export() -> None:
         mock_export_service = MagicMock()
         mock_export_service_cls.return_value = mock_export_service
 
-        from scrapers.constructors.constructors_helpers.export import export_complete_constructors
+        from scrapers.constructors.constructors_helpers.export import (
+            export_complete_constructors,
+        )
 
         output_dir = Path("/fake/output")
         export_complete_constructors(output_dir=output_dir, include_urls=False)

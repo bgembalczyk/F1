@@ -14,7 +14,9 @@ from scrapers.parsers_points import PointsScoringSystemsSectionParser
 from scrapers.parsers_points import ShortenedRacesSubSubSectionParser
 from scrapers.parsers_points import SprintRacesSubSubSectionParser
 from scrapers.schemas_points import build_sprint_qualifying_schema
-from scrapers.transformers.record.points_scoring_systems_history import PointsScoringSystemsHistoryTransformer
+from scrapers.transformers.record.points_scoring_systems_history import (
+    PointsScoringSystemsHistoryTransformer,
+)
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

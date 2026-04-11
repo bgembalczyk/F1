@@ -4,11 +4,16 @@ from dataclasses import dataclass
 
 from scrapers.circuit_orchestrator import CircuitInfoboxOrchestrator
 from scrapers.infobox.extraction.protocol import InfoboxExtractionService
-from scrapers.infobox.extraction.service import CircuitInfoboxExtractionService
 from scrapers.options import ScraperOptions
-from scrapers.services.section.extraction.circuits import CircuitSectionExtractionService
-from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
-from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
+from scrapers.services.section.extraction.circuits import (
+    CircuitSectionExtractionService,
+)
+from scrapers.services.section.factories.configurable import (
+    ConfigurableSectionServiceFactory,
+)
+from scrapers.services.section.factories.section_service_factory import (
+    SectionServiceFactory,
+)
 
 
 @dataclass(frozen=True, slots=True)

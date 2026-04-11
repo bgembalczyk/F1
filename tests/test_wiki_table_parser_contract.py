@@ -9,7 +9,6 @@ from scrapers.parsers.table.wiki.mapped.lap_records import LapRecordsWikiTablePa
 from scrapers.parsers.table.wiki.mapped.race_results import RaceResultsTableParser
 from scrapers.parsers.table.wiki.mapped.standings import StandingsTableParser
 
-
 CONTRACT_HTML = """
 <table class="wikitable">
   <tr>

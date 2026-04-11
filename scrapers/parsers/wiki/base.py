@@ -1,6 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
 import warnings
+from abc import ABC
 from typing import Any
 from typing import Generic
 from typing import TypeVar

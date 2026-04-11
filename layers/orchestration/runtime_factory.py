@@ -78,7 +78,9 @@ class RuntimeComponentFactory:
         root: Path,
         module_globs: tuple[str, ...],
     ) -> None:
-        for module_name in self._iter_module_names(root=root, module_globs=module_globs):
+        for module_name in self._iter_module_names(
+            root=root, module_globs=module_globs
+        ):
             module = importlib.import_module(module_name)
             self._register_from_module(module)
 

@@ -5,8 +5,9 @@ from typing import Any
 
 from scrapers.records.assemblers.constructor import ConstructorRecordAssembler
 from scrapers.records.dto.constructor import ConstructorRecordDTO
-from scrapers.services.domain_record.base_pipeline_service import BaseDomainPipelineService
-
+from scrapers.services.domain_record.base_pipeline_service import (
+    BaseDomainPipelineService,
+)
 
 
 @dataclass(frozen=True, slots=True)

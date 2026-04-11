@@ -1,12 +1,17 @@
 # ruff: noqa: E501, PLR2004
 """Tests for GrandPrixScopeTransformer covering uncovered lines."""
 
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.grand_prix_scope import GrandPrixScopeTransformer
+from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.grand_prix_scope import (
+    GrandPrixScopeTransformer,
+)
 
 
 class TestParamsContainOnlyYearsOrGrandPrix:
     def test_empty_params_returns_true(self):
-        assert GrandPrixScopeTransformer.params_contain_only_years_or_grand_prix([]) is True
+        assert (
+            GrandPrixScopeTransformer.params_contain_only_years_or_grand_prix([])
+            is True
+        )
 
     def test_year_param_only(self):
         assert (
@@ -33,7 +38,8 @@ class TestParamsContainOnlyYearsOrGrandPrix:
     def test_mixed_year_and_gp(self):
         params = ["1988", "Monaco Grand Prix", "1990"]
         assert (
-            GrandPrixScopeTransformer.params_contain_only_years_or_grand_prix(params) is True
+            GrandPrixScopeTransformer.params_contain_only_years_or_grand_prix(params)
+            is True
         )
 
 

@@ -6,7 +6,9 @@ from bs4 import BeautifulSoup
 
 from infrastructure.helpers import init_scraper_options
 from scrapers.options import ScraperOptions
-from scrapers.parsers.liveries.sponsorship.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.parsers.liveries.sponsorship.splitters.record.facade import (
+    SponsorshipRecordSplitter,
+)
 from scrapers.parsers.liveries.team import TeamLiveriesSectionParser
 from scrapers.scraper_wiki import WikiScraper
 

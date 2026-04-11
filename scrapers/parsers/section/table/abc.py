@@ -14,6 +14,7 @@ if TYPE_CHECKING:
     from scrapers.parsers.input_types import WikiParserInput
     from scrapers.section.parse_results import SectionParseResult
 
+
 class SectionTableParserBase(SectionParser, ABC):
     """Template-method base for section parsers built from one or many HTML tables."""
 

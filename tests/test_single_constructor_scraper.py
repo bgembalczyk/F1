@@ -3,7 +3,9 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.constructors.constructors_complete_scraper import CompleteConstructorsDataExtractor
+from scrapers.constructors.constructors_complete_scraper import (
+    CompleteConstructorsDataExtractor,
+)
 from scrapers.constructors.constructors_helpers.export import constructor_name_initial
 from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
 

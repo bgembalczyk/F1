@@ -4,8 +4,8 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.section.nested.child import NestedChildParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
+from scrapers.parsers.section.nested.child import NestedChildParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
@@ -44,7 +44,9 @@ class BaseNestedSectionParser(WikiParser[Tag, dict[str, Any]]):
     ) -> dict[str, Any]:
         section_context = context or SectionExtractionContext()
         tags = [c for c in elements if isinstance(c, Tag)]
-        parts = self.toolbox.section_locator.locate(tags, heading_class=self.heading_class)
+        parts = self.toolbox.section_locator.locate(
+            tags, heading_class=self.heading_class
+        )
         sub_sections: list[dict[str, Any]] = []
 
         for part in parts:

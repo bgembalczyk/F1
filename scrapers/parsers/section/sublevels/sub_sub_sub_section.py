@@ -7,9 +7,9 @@ from bs4 import Tag
 from models.payload import WikiParsedPayload
 from scrapers.parsers.mixins.wiki_element import WikiElementParsingMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.base import WikiParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
+from scrapers.parsers.wiki.base import WikiParser
 
 
 class SubSubSubSectionParser(WikiElementParsingMixin, WikiParser):
@@ -45,7 +45,9 @@ class SubSubSubSectionParser(WikiElementParsingMixin, WikiParser):
     ) -> dict[str, list[WikiParsedPayload]]:
         section_context = context or SectionExtractionContext()
         tags = [c for c in elements if isinstance(c, Tag)]
-        parsed = {"elements": self.parse_elements(tags, section_context=section_context)}
+        parsed = {
+            "elements": self.parse_elements(tags, section_context=section_context)
+        }
         return self.toolbox.domain_mapper.map(parsed)
 
 

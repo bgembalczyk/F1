@@ -35,7 +35,8 @@ def _collect_classes(root: Path) -> dict[str, ClassInfo]:
 
             parse_args: tuple[str, ...] | None = None
             is_protocol = any(
-                ast.unparse(base).endswith("Protocol") or "Protocol[" in ast.unparse(base)
+                ast.unparse(base).endswith("Protocol")
+                or "Protocol[" in ast.unparse(base)
                 for base in node.bases
             )
             is_abstract = any(ast.unparse(base).endswith("ABC") for base in node.bases)
@@ -133,20 +134,29 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
         if class_info.name.endswith("ListParser"):
             if class_info.name == "ListParser":
                 continue
-            if not _inherits_from(class_info, classes, {"ListParser", "WikiListParser"}):
+            if not _inherits_from(
+                class_info, classes, {"ListParser", "WikiListParser"}
+            ):
                 violations.append(
                     f"{class_info.module}.{class_info.name}: ListParser musi "
                     "dziedziczyć po ListParser lub WikiListParser",
                 )
 
-        if class_info.name.endswith("SectionParser") and not class_info.name.endswith("SubSectionParser"):
-            if ".section.nested." in class_info.module or ".section.sublevels." in class_info.module:
+        if class_info.name.endswith("SectionParser") and not class_info.name.endswith(
+            "SubSectionParser"
+        ):
+            if (
+                ".section.nested." in class_info.module
+                or ".section.sublevels." in class_info.module
+            ):
                 continue
             if ".parsers.liveries." in class_info.module or class_info.module.endswith(
                 ".section.sponsorship",
             ):
                 continue
-            if class_info.module.endswith(".section.protocol") or class_info.module.endswith(
+            if class_info.module.endswith(
+                ".section.protocol"
+            ) or class_info.module.endswith(
                 ".section.section_parser_protocol",
             ):
                 continue
@@ -157,7 +167,8 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                     "realizować kontrakt SectionParser",
                 )
             if class_info.parse_args is not None and (
-                len(class_info.parse_args) < 2 or class_info.parse_args[1] != "section_fragment"
+                len(class_info.parse_args) < 2
+                or class_info.parse_args[1] != "section_fragment"
             ):
                 # NestedWikiSectionParser uses parse(element: Tag) not parse(section_fragment)
                 if not _inherits_from(class_info, classes, {"NestedWikiSectionParser"}):

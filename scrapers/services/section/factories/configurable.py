@@ -6,7 +6,9 @@ from typing import TypeVar
 
 from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.options import ScraperOptions
-from scrapers.services.section.factories.validating import ValidatingSectionServiceFactory
+from scrapers.services.section.factories.validating import (
+    ValidatingSectionServiceFactory,
+)
 
 if TYPE_CHECKING:
     from models.value_objects import WikiUrl

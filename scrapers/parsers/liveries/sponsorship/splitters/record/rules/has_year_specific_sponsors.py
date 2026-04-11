@@ -1,6 +1,10 @@
 from scrapers.helpers.constants import SPONSOR_KEYS
-from scrapers.parsers.liveries.sponsorship.scope.handlers.sponsor import SponsorScopeHandler
-from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
+from scrapers.parsers.liveries.sponsorship.scope.handlers.sponsor import (
+    SponsorScopeHandler,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
 
 
 class HasYearSpecificSponsorsRule:

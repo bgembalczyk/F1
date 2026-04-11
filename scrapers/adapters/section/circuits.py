@@ -2,9 +2,13 @@ from __future__ import annotations
 
 from scrapers.adapters.section.entry import SectionAdapterEntry
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.circuit.layout_history import CircuitLayoutHistorySectionParser
+from scrapers.parsers.section.circuit.layout_history import (
+    CircuitLayoutHistorySectionParser,
+)
 from scrapers.parsers.section.table.circuit.events import CircuitEventsSectionParser
-from scrapers.parsers.section.table.circuit.lap_records import CircuitLapRecordsSectionParser
+from scrapers.parsers.section.table.circuit.lap_records import (
+    CircuitLapRecordsSectionParser,
+)
 from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
 
 

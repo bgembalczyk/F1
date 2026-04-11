@@ -7,7 +7,9 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.infobox.parsers.text_utils.base import InfoboxTextUtils
-from scrapers.infobox.parsers.text_utils.circuit.lap_record import CircuitLapRecordParser
+from scrapers.infobox.parsers.text_utils.circuit.lap_record import (
+    CircuitLapRecordParser,
+)
 from scrapers.infobox.parsers.text_utils.circuit.specs import CircuitSpecsParser
 from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper

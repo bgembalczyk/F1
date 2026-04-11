@@ -32,10 +32,14 @@ from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.circuits_infobox.services.entities import CircuitEntitiesParser
-from scrapers.circuits.circuits_infobox.services.entity_parsing import CircuitEntityParser
+from scrapers.circuits.circuits_infobox.services.entity_parsing import (
+    CircuitEntityParser,
+)
 from scrapers.circuits.circuits_infobox.services.geo import CircuitGeoParser
 from scrapers.circuits.circuits_infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.circuits_infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.circuits_infobox.services.lap_record import (
+    CircuitLapRecordParser,
+)
 from scrapers.circuits.circuits_infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper

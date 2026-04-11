@@ -9,7 +9,9 @@ from scrapers.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.engine_rpm_limit import EngineRpmLimitColumn
 from scrapers.columns.types.fuel_flow_rate import FuelFlowRateColumn
-from scrapers.columns.types.fuel_injection_pressure_limit import FuelInjectionPressureLimitColumn
+from scrapers.columns.types.fuel_injection_pressure_limit import (
+    FuelInjectionPressureLimitColumn,
+)
 from scrapers.columns.types.fuel_limit_per_race import FuelLimitPerRaceColumn
 from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.range import RangeColumn
