@@ -6,7 +6,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.infobox.extraction.extractor import CircuitInfoboxExtractor
 from scrapers.infobox.extraction.extractor.protocol import InfoboxExtractorProtocol
-from scrapers.infobox.extraction.service import StrategyBackedInfoboxOrchestrator
+from scrapers.infobox.extraction.service.strategy_orchestrator import (
+    StrategyBackedInfoboxOrchestrator,
+)
 
 if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
