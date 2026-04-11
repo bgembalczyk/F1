@@ -8,11 +8,11 @@ from scrapers.columns.helpers.race_result import rules
 from scrapers.columns.helpers.race_result.background_mapper import RaceResultBackgroundMapper
 from scrapers.columns.helpers.race_result.cell_parser import RaceResultCellParser
 from scrapers.columns.helpers.race_result.superscript import SuperscriptParseResult
-from scrapers.helpers.background import extract_background
+from scrapers.columns.types.mixins.background import BackgroundMixin
 from scrapers.helpers.text import strip_marks
 
 
-class RaceResultColumn(BaseColumn):
+class RaceResultColumn(BackgroundMixin, BaseColumn):
     def __init__(
         self,
         *,
@@ -40,13 +40,17 @@ class RaceResultColumn(BaseColumn):
             rules.HalfPointsRoundRule(),
         ]
 
+    def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:
+        BaseColumn.apply(self, ctx, record)
+
     def parse(self, ctx: ColumnContext) -> Any:
         text = self._cell_parser.extract_result_text(ctx)
         if not text:
             return None
 
         superscript_data = self._cell_parser.parse_superscripts(ctx, self._season_year)
-        background = self._background_mapper.map(extract_background(ctx.cell))
+        raw_background = self._extract_raw_background(ctx)
+        background = self._background_mapper.map(raw_background)
         results = self._cell_parser.parse_results(text)
 
         if self._should_skip_payload(results, background):
