@@ -53,3 +53,6 @@ class SectionTableParseMixin:
             return parser.parse(section_fragment).records
         except RuntimeError:
             return super()._parse_soup(soup)
+
+
+__all__ = ["SectionTableParseMixin"]

@@ -37,3 +37,6 @@ class DeclarativeSectionTableParseMixin(SectionTableParseMixin):
             section_label=self.section_label,
             parser_factory=self._build_section_parser,
         )
+
+
+__all__ = ["DeclarativeSectionTableParseMixin"]
