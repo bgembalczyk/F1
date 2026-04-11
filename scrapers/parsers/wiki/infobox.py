@@ -1,4 +1,5 @@
 from models.data.parsed.infobox import InfoboxParsedData
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxElementParserBase
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 
 
@@ -9,4 +10,9 @@ class WikiInfoboxParser(WikiInfoboxHtmlParser):
 # Backward-compatible alias.
 InfoboxParser = WikiInfoboxParser
 
-__all__ = ["WikiInfoboxParser", "InfoboxParser", "InfoboxParsedData"]
+__all__ = [
+    "WikiInfoboxElementParserBase",
+    "WikiInfoboxParser",
+    "InfoboxParser",
+    "InfoboxParsedData",
+]
