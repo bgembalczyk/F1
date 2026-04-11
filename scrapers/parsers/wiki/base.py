@@ -30,7 +30,7 @@ class WikiParser(
     """
 
 
-class WikiSectionParser(SoupDocumentParserABC[WikiRecords], ABC):
+class WikiSectionParserBase(SoupDocumentParserABC[WikiRecords], ABC):
     """Kontrakt parserów sekcji artykułów Wikipedii."""
 
 
@@ -55,7 +55,7 @@ __all__ = [
     "WikiParser",
     "WikiRecord",
     "WikiRecords",
-    "WikiSectionParser",
+    "WikiSectionParserBase",
     "WikiTableElementParserBase",
     "WikiTagParser",
 ]

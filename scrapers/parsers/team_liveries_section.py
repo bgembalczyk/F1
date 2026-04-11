@@ -6,13 +6,13 @@ from typing import Any
 from scrapers.paren_classifier import ParenClassifier
 from scrapers.parsers.section.sponsorship import SponsorshipSectionParser
 from scrapers.parsers.table.team_liveries import TeamLiveriesTableParser
-from scrapers.parsers.wiki.base import WikiSectionParser
+from scrapers.parsers.wiki.base import WikiSectionParserBase
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class TeamLiveriesSectionParser(WikiSectionParser):
+class TeamLiveriesSectionParser(WikiSectionParserBase):
     """Parser sekcji artykułu sponsorowanych malowań F1."""
 
     def __init__(

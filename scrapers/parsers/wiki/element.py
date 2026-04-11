@@ -15,11 +15,7 @@ from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.wiki.paragraph import WikiParagraphParser
-from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
-from scrapers.parsers.rules import ParserRule
-from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
-from scrapers.parsers.wiki.table import WikiTableParser
 
 
 @dataclass(frozen=True)
@@ -28,7 +24,7 @@ class WikiElementSet:
     paragraph_parser: WikiParagraphParser
     figure_parser: WikiFigureParser
     list_parser: WikiListParser
-    table_parser: WikiTableParser
+    table_parser: WikiTableHtmlParser
     navbox_parser: WikiNavboxParser
     references_wrap_parser: ReferencesWrapParser
     references_parser: ReferencesWrapParser
