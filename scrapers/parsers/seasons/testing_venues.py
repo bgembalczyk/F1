@@ -9,9 +9,9 @@ from scrapers.columns.types.date_range import DateRangeColumn
 from scrapers.columns.types.season_date import SeasonDateColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.columns.types.time_range import TimeRangeColumn
+from scrapers.domain_parsing_policy import DomainParsingPolicy
+from scrapers.domain_parsing_policy import TestingVenuesLayout
 from scrapers.parsers.seasons.table import SeasonTableParser
-from scrapers.services.services_seasons.domain_parsing_policy import DomainParsingPolicy
-from scrapers.services.services_seasons.domain_parsing_policy import TestingVenuesLayout
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

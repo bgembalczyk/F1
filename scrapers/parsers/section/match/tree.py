@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Any
 
 SectionTree = dict[str, Any]
 

@@ -7,8 +7,8 @@ from typing import cast
 from scrapers.adapters.section.entry import SectionAdapterEntry
 from scrapers.parsers.section.changes.season.mid_season import SeasonMidSeasonChangesSectionParser
 from scrapers.parsers.section.changes.season.regulation import SeasonRegulationChangesSectionParser
+from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
 from scrapers.services.section.extraction.base import BaseSectionExtractionService
-from scrapers.wiki.parsers.sections.helpers import profile_entry_aliases
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

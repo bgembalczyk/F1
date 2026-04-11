@@ -1,8 +1,8 @@
 from typing import Any
 
+from scrapers.columns.base import BaseColumn
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constants import SEPARATOR_PATTERN
-from scrapers.columns.types.base import BaseColumn
-from scrapers.columns.types.context import ColumnContext
 from scrapers.patterns_table import TIME_12H_PATTERN
 
 
