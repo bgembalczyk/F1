@@ -10,7 +10,7 @@ from scrapers.parsers.seasons_wiki_table_element_parser_base.table import Season
 from scrapers.parsers.wiki.base import WikiSectionParser
 
 
-class SeasonStandingsParser(WikiSectionParser):
+class SeasonStandingsService(WikiSectionParser):
     def __init__(self, table_parser: SeasonTableParser) -> None:
         self._table_parser = table_parser
 
