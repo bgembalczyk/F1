@@ -203,24 +203,30 @@ class EngineManufacturersListScraper(F1TableScraper):
 
     def _extract_indianapolis_only_records(
         self,
-        payload: dict[str, Any],
+        payload: dict[str, Any] | None,
     ) -> list[dict[str, Any]]:
+        if not isinstance(payload, dict):
+            return []
         records: list[dict[str, Any]] = []
         self._visit_indianapolis_sections(payload, records)
         return records
 
     def _visit_indianapolis_sections(
         self,
-        node: dict[str, Any],
+        node: dict[str, Any] | None,
         records: list[dict[str, Any]],
     ) -> None:
+        if not isinstance(node, dict):
+            return
         for section in self._iter_sub_sections(node):
             self._visit_indianapolis_sections(section, records)
         for element in node.get("elements", []):
             records.extend(self._extract_element_records(element))
 
     @staticmethod
-    def _iter_sub_sections(node: dict[str, Any]) -> list[dict[str, Any]]:
+    def _iter_sub_sections(node: dict[str, Any] | None) -> list[dict[str, Any]]:
+        if not isinstance(node, dict):
+            return []
         sections: list[dict[str, Any]] = []
         for key in ("sub_sections", "sub_sub_sections", "sub_sub_sub_sections"):
             value = node.get(key, [])
