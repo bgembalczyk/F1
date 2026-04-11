@@ -9,9 +9,9 @@ from scrapers.errors import ScraperError
 from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.helpers.transformers import build_transformers
 from scrapers.html_fetcher import HtmlFetcher
-from scrapers.infobox.field_mapper import InfoboxFieldMapper
-from scrapers.infobox.helpers import parse_infobox_from_soup
-from scrapers.infobox.html_parser import InfoboxHtmlParser
+from scrapers.infobox.field.mapper import InfoboxFieldMapper
+from scrapers.infobox.parsers.helpers import parse_infobox_from_soup
+from scrapers.infobox.parsers.html import InfoboxHtmlParser
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
 from scrapers.wiring.runtime.factory import ScraperRuntimeFactory

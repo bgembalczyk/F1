@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from typing import Self
+from typing_extensions import Self
 
 
 class SectionId(str):

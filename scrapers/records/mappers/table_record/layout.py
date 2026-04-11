@@ -1,7 +1,6 @@
 from typing import Any
 
-from scrapers.mappers.table_record.base import TableRecordMapper
-from scrapers.table_input.table_record import LayoutTableRowsInput
+from scrapers.records.mappers.table_record.base import TableRecordMapper
 
 
 class LayoutTableRecordMapper:
@@ -18,9 +17,9 @@ class LayoutTableRecordMapper:
 
     def map(
         self,
-        payload: LayoutTableRowsInput | list[dict[str, Any]],
+        payload: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        rows = payload.rows if isinstance(payload, LayoutTableRowsInput) else payload
+        rows = payload
         grouped: dict[str, list[dict[str, Any]]] = {}
         for row in rows:
             normalized_row = self._row_mapper.map(row)
