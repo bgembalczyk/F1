@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import warnings
 from abc import ABC
 from abc import abstractmethod
 from typing import Any
@@ -20,7 +19,6 @@ RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
 RecordT_co = TypeVar("RecordT_co", covariant=True)
 BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
-SectionResultT_co = TypeVar("SectionResultT_co", covariant=True)
 
 
 class HtmlElementParserABC(Parser[Tag, ParsedDataT_co], ABC, Generic[ParsedDataT_co]):
@@ -46,15 +44,11 @@ class TableDomainMapperABC(Parser[dict[str, Any], dict[str, Any] | None], ABC):
 
 @runtime_checkable
 class RowMapper(Protocol[RowInputT_contra, RecordT_co]):
-    """Mapowanie pojedynczego wiersza tabeli do rekordu domenowego."""
-
     def map_row(self, row: RowInputT_contra) -> RecordT_co | None: ...
 
 
 @runtime_checkable
 class TableMapper(Protocol[TableInputT_contra, RecordT_co]):
-    """Mapowanie całej tabeli do rekordów domenowych."""
-
     def map_table(self, table: TableInputT_contra) -> list[RecordT_co]: ...
 
 
@@ -64,27 +58,7 @@ class ParsingBundle(ABC):
 
 @runtime_checkable
 class ParsingBundleProvider(Protocol[BundleT_co]):
-    """Fabryka parserów zwracająca dedykowany ParsingBundle."""
-
     def build(self, **kwargs: Any) -> BundleT_co: ...
-
-
-def __getattr__(name: str) -> Any:
-    if name == "SectionParser":
-        warnings.warn(
-            "roles.SectionParser is deprecated; use roles.SectionParserABC.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return SectionParserABC
-    if name == "HtmlElementParser":
-        warnings.warn(
-            "roles.HtmlElementParser is deprecated; use roles.HtmlElementParserABC.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return HtmlElementParserABC
-    raise AttributeError(name)
 
 
 __all__ = [
@@ -97,7 +71,3 @@ __all__ = [
     "ParsingBundle",
     "SectionParseResult",
 ]
-
-# Backward-compatible aliases.
-ParserBundle = ParsingBundle
-ParserProvider = ParsingBundleProvider

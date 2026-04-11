@@ -1,16 +1,15 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-from typing import Protocol
+from abc import ABC
 
+from bs4 import BeautifulSoup
+
+from scrapers.domain_roles import Parser
 from scrapers.section.parse_results import SectionParseResult
 
-if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
 
-
-class SeasonSectionParser(Protocol):
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult: ...
+class SeasonSectionParser(Parser[BeautifulSoup, SectionParseResult], ABC):
+    """Bazowy kontrakt parsera sekcji sezonowych."""
 
 
 __all__ = ["SeasonSectionParser"]

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from abc import ABC
+from abc import abstractmethod
 from typing import Any
-from typing import Protocol
-from typing import runtime_checkable
 
 from bs4 import Tag
 
@@ -10,22 +10,22 @@ from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.element import WikiElementSet
 
 
-@runtime_checkable
-class StructureParser(Protocol):
-    """Kontrakt parsera struktury sekcji/podsekcji/tabel.
-
-    Sekcja jest entrypointem domenowym i dobiera parsery elementarne HTML.
-    """
+class StructureParser(ABC):
+    """Bazowy kontrakt parsera struktury sekcji/podsekcji/tabel."""
 
     @property
-    def element_parsers(self) -> WikiElementSet: ...
+    @abstractmethod
+    def element_parsers(self) -> WikiElementSet:
+        """Zestaw parserów elementów HTML używany przez parser struktury."""
 
+    @abstractmethod
     def parse_group(
         self,
         elements: list[Tag],
         *,
         context: SectionExtractionContext | None = None,
-    ) -> dict[str, Any]: ...
+    ) -> dict[str, Any]:
+        """Parsuje grupę elementów HTML do ustrukturyzowanego słownika."""
 
 
 __all__ = ["StructureParser"]
