@@ -4,6 +4,7 @@ from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.component_metadata_wiki import build_component_metadata
 from scrapers.constructors_list import ConstructorsListScraper
 from scrapers.constructors_single_scraper import SingleConstructorScraper
+from scrapers.helpers.wiki import is_wikipedia_redlink
 
 
 class CompleteConstructorsDataExtractor(CompleteExtractorBase):
