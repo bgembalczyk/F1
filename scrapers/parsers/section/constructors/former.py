@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.former_constructors_table_mapper import FormerConstructorsTableMapper
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_section.generic_indianapolis_only import GenericIndianapolisOnlySubSectionParser
+from scrapers.parsers.section.sub_section.generic_indianapolis_only import GenericIndianapolisOnlySubSectionParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
 

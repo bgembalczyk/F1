@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.parsers.wiki.privateer_teams_list import PrivateerTeamsListParser
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
 
 

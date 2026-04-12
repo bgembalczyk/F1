@@ -2,8 +2,8 @@ from bs4 import Tag
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
-from scrapers.parsers.wiki.base_nested_section.base import BaseNestedSectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.section.sublevels.base_nested_section import BaseNestedSectionParser
+from scrapers.parsers.section.sub_section.base import SubSectionParser
 
 
 class NestedWikiSectionParser(BaseNestedSectionParser):

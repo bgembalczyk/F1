@@ -2,13 +2,13 @@ from bs4 import Tag
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
-from scrapers.parsers.wiki.base_nested_section.base import BaseNestedSectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser
+from scrapers.parsers.section.sublevels.base_nested_section import BaseNestedSectionParser
+from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 
 
-class SubSectionParser(BaseNestedSectionParser):
-    heading_class = "mw-heading4"
-    output_key = "sub_sub_sections"
+class SubSubSectionParser(BaseNestedSectionParser):
+    heading_class = "mw-heading5"
+    output_key = "sub_sub_sub_sections"
 
     def __init__(
         self,
@@ -16,7 +16,7 @@ class SubSectionParser(BaseNestedSectionParser):
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
         super().__init__(
-            child_parser=SubSubSectionParser(toolbox=toolbox),
+            child_parser=SubSubSubSectionParser(toolbox=toolbox),
             toolbox=toolbox,
         )
 
@@ -29,4 +29,4 @@ class SubSectionParser(BaseNestedSectionParser):
         return super().parse(element, context=context)
 
 
-__all__ = ["SubSectionParser"]
+__all__ = ["SubSubSectionParser"]

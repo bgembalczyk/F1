@@ -11,8 +11,10 @@ from typing import TypeAlias
 import scrapers.parsers as parsers_pkg
 from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
+from scrapers.parsers.wiki.wiki_infobox_parser_abc import WikiInfoboxParserABC
 from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
 from scrapers.parsers.wiki.wiki_section_parser_abc import WikiSectionParserABC
+from scrapers.parsers.wiki.wiki_table_parser_abc import WikiTableParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
@@ -33,12 +35,10 @@ class ParsingRegistryEntry:
 
 
 AUTO_ELEMENT_PARSER_BASES: Final[dict[ElementType, ParserBase]] = {
-    # Tables and lists are both structured-data wiki elements → WikiListParserABC.
-    "table": WikiListParserABC,
+    "table": WikiTableParserABC,
     "list": WikiListParserABC,
-    # Sections and infoboxes are structural-content wiki elements → WikiSectionParserABC.
     "section": WikiSectionParserABC,
-    "infobox": WikiSectionParserABC,
+    "infobox": WikiInfoboxParserABC,
 }
 
 DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = tuple(

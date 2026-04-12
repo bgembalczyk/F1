@@ -4,14 +4,14 @@ from bs4 import Tag
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.sprint_points_table_mapper import SprintPointsTableMapper
-from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser
+from scrapers.shortened_races_points_table_mapper import ShortenedRacesPointsTableMapper
+from scrapers.parsers.section.sub_sub_section.base import SubSubSectionParser
 
 
-class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):
+class ShortenedRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = SprintPointsTableMapper()
+        self._table_parser = ShortenedRacesPointsTableMapper()
 
     def parse(
         self,
@@ -26,7 +26,5 @@ class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser)
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
-        if not parsed.get("sub_sub_sub_sections"):
-            parsed = self.child_parser.parse(elements, context=context)
         self.apply_table_mapper(parsed)
         return parsed

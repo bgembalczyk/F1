@@ -18,7 +18,6 @@ def build_default_wiki_element_parsers() -> WikiElementSet:
         list_parser=WikiListElementParser(),
         table_parser=WikiTableElementParser(),
         navbox_parser=WikiNavboxElementParser(),
-        references_wrap_parser=WikiReferencesElementParser(),
         references_parser=WikiReferencesElementParser(),
     )
 

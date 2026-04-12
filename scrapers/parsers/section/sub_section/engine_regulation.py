@@ -5,6 +5,7 @@ from bs4 import Tag
 from scrapers.parsers.engine_regulation_table_mapper import EngineRegulationTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.section.sub_section.base import SubSectionParser
 
 
 class EngineRegulationSubSectionParser(SubSectionParser):

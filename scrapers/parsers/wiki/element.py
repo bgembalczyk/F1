@@ -29,13 +29,8 @@ class WikiElementSet:
     list_parser: ParserABC[Tag, WikiParserData]
     table_parser: ParserABC[Tag, WikiParserData]
     navbox_parser: ParserABC[Tag, WikiParserData]
-    references_wrap_parser: ParserABC[Tag, WikiParserData]
-    references_parser: ParserABC[Tag, WikiParserData] | None = None
+    references_parser: ParserABC[Tag, WikiParserData]
     section_parser: Callable[[Tag], WikiParserData] | None = None
-
-    def _effective_references_parser(self) -> ParserABC[Tag, WikiParserData]:
-        return self.references_parser if self.references_parser is not None else self.references_wrap_parser
-
 
 
 
@@ -83,7 +78,7 @@ def build_wikipedia_element_registry(
         ("list", parsers.list_parser),
         ("figure", parsers.figure_parser),
         ("navbox", parsers.navbox_parser),
-        ("references_wrap", parsers._effective_references_parser()),
+        ("references_wrap", parsers.references_parser),
     ]
     rules: list[ParserRule] = []
     for element_type, parser in named_parsers:
@@ -119,7 +114,6 @@ def build_default_wiki_element_parsers() -> WikiElementSet:
         list_parser=ListElementParser(),
         table_parser=WikiTableHtmlParser(),
         navbox_parser=WikiNavboxParser(),
-        references_wrap_parser=ReferencesWrapParser(),
         references_parser=ReferencesWrapParser(),
     )
 

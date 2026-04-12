@@ -5,6 +5,6 @@ the public wiki-section parsing API so that callers can use the stable path
 ``scrapers.parsers.section.wiki`` instead of the internal implementation paths.
 """
 
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser as SectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser as SectionParser
 
 __all__ = ["SectionParser"]

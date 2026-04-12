@@ -17,10 +17,8 @@ class SectionElementParser(WikiSectionParserABC, SectionElementParserABC[Section
     def __init__(self, content_text_parser: ContentTextParser | None = None) -> None:
         self._content_text_parser = content_text_parser or ContentTextParser()
 
-    def parse(self, raw: BeautifulSoup | Tag | list[Tag]) -> SectionElementData:
-        if isinstance(raw, list):
-            return {"sections": []}
-        soup = raw if isinstance(raw, BeautifulSoup) else BeautifulSoup(str(raw), "html.parser")
+    def parse(self, raw: BeautifulSoup) -> SectionElementData:
+        soup = raw
         content = self._find_content_text(soup)
         if content is None:
             return {"sections": []}
