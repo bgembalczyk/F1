@@ -159,3 +159,6 @@ class WikipediaInfoboxScraper:
 
     def _fetch(self, url: str) -> str:
         return self.fetcher.get_text(url, timeout=self.timeout)
+
+
+InfoboxHtmlParser = WikiInfoboxHtmlParser

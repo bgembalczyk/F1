@@ -79,7 +79,21 @@ class WikiInfoboxHtmlParser(WikiInfoboxParserABC):
         return soup.find("table", class_=WikiInfoboxHtmlParser.has_infobox_class)
 
     def parse_group(self, table: Tag) -> dict[str, Any]:
-        return self._element_parser.parse_table_rows(table)
+        data: dict[str, Any] = {"title": None, "rows": {}}
+        caption = table.find("caption")
+        if caption:
+            data["title"] = caption.get_text(" ", strip=True)
+
+        for tr in table.find_all("tr"):
+            if tr.find_parent("table") is not table:
+                continue
+            header = tr.find("th", recursive=False)
+            value = tr.find("td", recursive=False)
+            if not header or not value:
+                continue
+            key = header.get_text(" ", strip=True)
+            data["rows"][key] = self.parse_row(value)
+        return data
 
     def parse_row(self, value: Tag) -> dict[str, Any]:
         return {
