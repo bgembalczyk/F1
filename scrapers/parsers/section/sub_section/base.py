@@ -1,6 +1,3 @@
-from bs4 import Tag
-
-from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.sublevels.base_nested_section import BaseNestedSectionParser
 from scrapers.parsers.section.sub_sub_section.base import SubSubSectionParser
@@ -19,14 +16,6 @@ class SubSectionParser(BaseNestedSectionParser):
             child_parser=SubSubSectionParser(toolbox=toolbox),
             toolbox=toolbox,
         )
-
-    def parse(
-        self,
-        element: Tag | list[Tag],
-        *,
-        context: SectionExtractionContext | None = None,
-    ) -> dict[str, object]:
-        return super().parse(element, context=context)
 
 
 __all__ = ["SubSectionParser"]
