@@ -7,12 +7,12 @@ from typing import TypeVar
 
 from bs4 import Tag
 
-from scrapers.parsers.tag_parser_abc import TagParserABC
+from scrapers.parsers.infobox_parser_abc import InfoboxFieldParserABC
 
 Output = TypeVar("Output")
 
 
-class InfoboxFieldParser(TagParserABC[Output], ABC, Generic[Output]):
+class InfoboxFieldParser(InfoboxFieldParserABC, ABC, Generic[Output]):
     """Kontrakt runtime dla parserów pojedynczych pól infoboxu."""
 
     @abstractmethod

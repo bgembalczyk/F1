@@ -4,6 +4,7 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
+from scrapers.parsers.infobox_parser_abc import InfoboxCellParserABC
 from scrapers.parsers.infobox.collapsible_table import CollapsibleTableExtractor
 from scrapers.parsers.infobox.field.active_years import ActiveYearsParser
 from scrapers.parsers.infobox.field.best_finish import BestFinishParser
@@ -17,7 +18,7 @@ from scrapers.parsers.infobox.field.teams import TeamsParser
 from scrapers.parsers.infobox.table import InfoboxTableExtractor
 
 
-class InfoboxCellValueExtractor:
+class InfoboxCellValueExtractor(InfoboxCellParserABC):
     """Parser for individual infobox cells.
 
     This class delegates complex parsing tasks to specialized helper classes:
@@ -189,6 +190,3 @@ class InfoboxCellValueExtractor:
 
 
 __all__ = ["InfoboxCellValueExtractor"]
-
-# Backward-compatible alias.
-InfoboxCellParser = InfoboxCellValueExtractor
