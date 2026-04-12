@@ -1,10 +1,10 @@
 from scrapers.adapters.html_elements import HtmlElementAdapterSet
-from scrapers.parsers.html_elements.figure_element_parser import FigureElementParser
-from scrapers.parsers.html_elements.infobox_element_parser import InfoboxElementParser
-from scrapers.parsers.html_elements.list_element_parser import ListElementParser
-from scrapers.parsers.html_elements.navbox_element_parser import NavboxElementParser
-from scrapers.parsers.html_elements.paragraph_element_parser import ParagraphElementParser
-from scrapers.parsers.html_elements.table_element_parser import TableElementParser
+from scrapers.parsers.figure_element_parser import FigureElementParser
+from scrapers.parsers.infobox_element_parser import InfoboxElementParser
+from scrapers.parsers.list_element_parser import ListElementParser
+from scrapers.parsers.navbox_element_parser import NavboxElementParser
+from scrapers.parsers.paragraph_element_parser import ParagraphElementParser
+from scrapers.parsers.table_element_parser import TableElementParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.mixins.extract_list_items import ExtractListItemsMixin
-from scrapers.parsers.wiki.base_section_parser import BaseSectionParser
+from scrapers.parsers.wiki.section.base import BaseSectionParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 

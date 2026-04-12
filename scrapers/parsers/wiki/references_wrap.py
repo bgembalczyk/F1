@@ -1,7 +1,7 @@
 from bs4 import Tag
 
 from models.data.parsed.references_wrap import ReferencesWrapParsedData
-from scrapers.parsers.text_cleaning import extract_text
+from scrapers.text_cleaning import extract_text
 from scrapers.parsers.wiki.base import WikiParser
 
 

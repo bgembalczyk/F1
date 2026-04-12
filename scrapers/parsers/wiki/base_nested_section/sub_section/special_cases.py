@@ -1,5 +1,5 @@
-from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
-from scrapers.parsers.wiki.subsubsection.special_cases_router import SpecialCasesSubSubSectionRouter
+from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.special_cases_router import SpecialCasesSubSubSectionRouter
 
 
 class SpecialCasesSubSectionParser(SubSectionParser):

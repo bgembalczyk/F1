@@ -1,11 +1,11 @@
 from typing import Any
 
 from scrapers.parsers.base_red_flagged_races_table_mapper import BaseRedFlaggedRacesTableMapper
-from scrapers.parsers.red_flagged_helpers import RESTART_STATUS_MAP
-from scrapers.parsers.red_flagged_helpers import extract_rich_cell
-from scrapers.parsers.red_flagged_helpers import map_drivers_cell
-from scrapers.parsers.red_flagged_helpers import map_winner_cell
-from scrapers.parsers.red_flagged_helpers import try_int
+from scrapers.red_flagged_helpers import RESTART_STATUS_MAP
+from scrapers.red_flagged_helpers import extract_rich_cell
+from scrapers.red_flagged_helpers import map_drivers_cell
+from scrapers.red_flagged_helpers import map_winner_cell
+from scrapers.red_flagged_helpers import try_int
 
 
 class WorldChampionshipsRacesTableMapper(BaseRedFlaggedRacesTableMapper):

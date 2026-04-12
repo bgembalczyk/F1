@@ -6,7 +6,7 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.parsers.infobox.table import InfoboxTableExtractor
-from scrapers.parsers.numeric_extractor import NumericExtractor
+from scrapers.numeric_extractor import NumericExtractor
 
 
 class CollapsibleTableExtractor:

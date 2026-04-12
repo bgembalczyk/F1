@@ -4,9 +4,9 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.privateer_teams_list import PrivateerTeamsListParser
-from scrapers.parsers.wiki.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
+from scrapers.parsers.wiki.privateer_teams_list import PrivateerTeamsListParser
+from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
 
 
 class PrivateerTeamsSectionParser(NestedWikiSectionParser):

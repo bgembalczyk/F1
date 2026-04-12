@@ -1,8 +1,8 @@
 from typing import Any
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.shortened_races_points_table_mapper import ShortenedRacesPointsTableMapper
-from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_section import SubSubSectionParser
+from scrapers.shortened_races_points_table_mapper import ShortenedRacesPointsTableMapper
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser
 
 
 class ShortenedRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):

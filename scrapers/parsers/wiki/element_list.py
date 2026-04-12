@@ -2,7 +2,7 @@ from bs4 import Tag
 
 from models.data.wiki.list import WikiListData
 from scrapers.parsers.list_element_parser import ListElementParser
-from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
+from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
 
 
 class WikiListElementParser(WikiListParserABC):

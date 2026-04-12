@@ -15,9 +15,9 @@ from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.config_table import build_scraper_config
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
-from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import GRANDS_PRIX_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL

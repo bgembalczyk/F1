@@ -3,7 +3,7 @@ from bs4 import Tag
 
 from models.data.wiki.section import WikiSectionData
 from scrapers.parsers.section_element_parser import SectionElementParser
-from scrapers.parsers.wiki_section_structure_parser_abc import WikiSectionStructureParserABC
+from scrapers.parsers.wiki.wiki_section_structure_parser_abc import WikiSectionStructureParserABC
 
 
 class WikiSectionElementParser(WikiSectionStructureParserABC):

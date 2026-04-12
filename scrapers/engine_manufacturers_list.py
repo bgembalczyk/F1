@@ -15,7 +15,7 @@ from scrapers.columns.types.multi.name_status_column.engine_manufacturer import 
     EngineManufacturerNameStatusColumn,
 )
 from scrapers.config_table import build_scraper_config
-from scrapers.parsers.wiki.engine_manufacturers_indianapolis_sub_section_parser import EngineManufacturersSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.engine_manufacturers_indianapolis import EngineManufacturersIndianapolisSubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.section.selection_strategy import WikipediaSectionByIdSelectionStrategy
 from scrapers.source_catalog import ENGINES_LIST
@@ -76,7 +76,7 @@ class EngineManufacturersListScraper(F1TableScraper):
             )
             raise ValueError(msg)
         self._export_scope = export_scope
-        parser = EngineManufacturersSectionParser()
+        parser = EngineManufacturersIndianapolisSubSectionParser()
         self.section_parser = parser
         self.body_content_parser.content_text_parser.section_parser = parser
 

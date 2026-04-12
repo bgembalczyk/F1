@@ -19,9 +19,9 @@ from scrapers.constants_drivers import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.constants_drivers import FEMALE_DRIVERS_SECTION_ID
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
-from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL

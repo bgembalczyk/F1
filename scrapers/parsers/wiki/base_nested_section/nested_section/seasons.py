@@ -3,11 +3,11 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.parsers.seasons_table_mapper import SeasonsTableMapper
+from scrapers.seasons_table_mapper import SeasonsTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
-from scrapers.parsers.wiki.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
 
 
 class SeasonsSectionParser(NestedWikiSectionParser):
@@ -57,7 +57,7 @@ class SeasonsTableParser(WikiTableHtmlParser):
 
     Parses ``<table class="wikitable">`` elements from the F1 seasons list
     article and returns structured table data.  Domain-level mapping is
-    handled separately by :class:`~scrapers.parsers.seasons_table_mapper.SeasonsTableMapper`.
+    handled separately by :class:`~scrapers.seasons_table_mapper.SeasonsTableMapper`.
     """
 
     def parse(self, element: Tag) -> dict[str, Any]:  # type: ignore[override]

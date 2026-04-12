@@ -4,7 +4,7 @@ from typing import Generic
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.html_elements.base_html_element_parser import TOutput
+from scrapers.parsers.base_html_element_parser import TOutput
 
 
 class BaseHtmlSectionParser(ABC, Generic[TOutput]):

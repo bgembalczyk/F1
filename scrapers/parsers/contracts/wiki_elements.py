@@ -13,12 +13,12 @@ HtmlElementParserABC:
           └── WikiFigureParserABC
 """
 
-from scrapers.parsers.wiki_figure_parser_abc import WikiFigureParserABC
-from scrapers.parsers.wiki_infobox_parser_abc import WikiInfoboxParserABC
-from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
-from scrapers.parsers.wiki_navbox_parser_abc import WikiNavboxParserABC
-from scrapers.parsers.wiki_section_parser_abc import WikiSectionParserABC
-from scrapers.parsers.wiki_table_parser_abc import WikiTableParserABC
+from scrapers.parsers.wiki.wiki_figure_parser_abc import WikiFigureParserABC
+from scrapers.parsers.wiki.wiki_infobox_parser_abc import WikiInfoboxParserABC
+from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
+from scrapers.parsers.wiki.wiki_navbox_parser_abc import WikiNavboxParserABC
+from scrapers.parsers.wiki.wiki_section_parser_abc import WikiSectionParserABC
+from scrapers.parsers.wiki.wiki_table_parser_abc import WikiTableParserABC
 
 __all__ = [
     "WikiFigureParserABC",

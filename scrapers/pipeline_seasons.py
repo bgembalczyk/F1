@@ -10,7 +10,7 @@ from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.options import ScraperOptions
 from scrapers.parsers.entry_merger import EntryMerger
-from scrapers.parsers.season_section_parser_abc import SeasonSectionParserABC
+from scrapers.parsers.wiki.season_section_parser_abc import SeasonSectionParserABC
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
 from scrapers.parsers.section.season.calendar import SeasonCalendarSectionParser
 from scrapers.parsers.section.standings.season.constructors import (
@@ -31,7 +31,7 @@ from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results import
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.scoring_system import SeasonScoringSystemParser
 from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.testing_venues import TestingVenuesParser
-from scrapers.parsers.season_standings import SeasonStandingsParser
+from scrapers.parsers.wiki.season_standings import SeasonStandingsParser
 from scrapers.records.sections.season import SeasonRecordSections
 from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
 from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory

@@ -9,7 +9,7 @@ from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
-from scrapers.parsers.season_classifier import SeasonClassifier
+from scrapers.season_classifier import SeasonClassifier
 
 
 class BestFinishParser(InfoboxFieldParser):
