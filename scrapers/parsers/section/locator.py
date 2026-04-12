@@ -5,13 +5,7 @@ from dataclasses import dataclass
 from bs4 import Tag
 
 from scrapers.parsers.section.wiki.helpers import split_into_parts
-
-
-@dataclass(frozen=True)
-class LocatedSection:
-    section_label: str
-    heading_anchor: str | None
-    elements: list[Tag]
+from scrapers.parsers.section.wiki.located import LocatedSection
 
 
 class SectionLocator:

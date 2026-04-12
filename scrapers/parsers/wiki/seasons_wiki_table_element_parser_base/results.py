@@ -9,8 +9,8 @@ from scrapers.columns.types.driver import DriverColumn
 from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.tyre import TyreColumn
 from scrapers.columns.types.url import UrlColumn
-from scrapers.parsers.section.wiki.adapter import collect_section_elements
-from scrapers.parsers.section.wiki.adapter import find_section_tree
+from scrapers.parsers.section.wiki.adapt import collect_section_elements
+from scrapers.parsers.section.wiki.adapt import find_section_tree
 from scrapers.parsers.wiki.body_content import BodyContentAssembler
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
 from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService

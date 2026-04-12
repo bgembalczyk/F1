@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from scrapers.parsers.section.wiki.assembler import SectionAssembler
-from scrapers.parsers.section.wiki.locator import SectionLocator
+from scrapers.parsers.section.assembler import SectionAssembler
+from scrapers.parsers.section.locator import SectionLocator
 from scrapers.parsers.wiki.domain_mapper import WikiMapperRegistry
 from scrapers.parsers.wiki.domain_mapper import build_default_mapper_registry
 from scrapers.parsers.wiki.element import ElementRegistry

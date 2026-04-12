@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from dataclasses import field
 
 from scrapers.parsers.section.match.priorities import SectionMatchPriorities
-from scrapers.parsers.section.wiki.normalization import normalize_section_text
+from scrapers.parsers.section.normalization import normalize_section_text
 
 
 @dataclass(frozen=True, slots=True)

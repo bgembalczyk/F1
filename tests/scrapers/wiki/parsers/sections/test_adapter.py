@@ -8,10 +8,10 @@ ensure_certifi_stub()
 ensure_pandas_stub()
 ensure_requests_stub()
 
-from scrapers.parsers.section.wiki.adapter import collect_section_elements
-from scrapers.parsers.section.wiki.adapter import extract_sections
-from scrapers.parsers.section.wiki.adapter import find_section_tree
-from scrapers.parsers.section.wiki.adapter import iter_sections
+from scrapers.parsers.section.wiki.adapt import collect_section_elements
+from scrapers.parsers.section.wiki.adapt import extract_sections
+from scrapers.parsers.section.wiki.adapt import find_section_tree
+from scrapers.parsers.section.wiki.adapt import iter_sections
 
 
 class TestExtractSections:
