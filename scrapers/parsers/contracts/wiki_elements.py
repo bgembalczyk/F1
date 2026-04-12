@@ -12,40 +12,38 @@ from models.data.wiki.list import WikiListData
 from models.data.wiki.navbox import WikiNavboxData
 from models.data.wiki.section import WikiSectionData
 from models.data.wiki.table import WikiTableData
-from scrapers.parsers.wiki.section_nodes.figure import WikiFigureParserABC as _WikiFigureParserABC
-from scrapers.parsers.wiki.section_nodes.infobox import WikiInfoboxParserABC as _WikiInfoboxParserABC
-from scrapers.parsers.wiki.section_nodes.list import WikiListParserABC as _WikiListParserABC
-from scrapers.parsers.wiki.section_nodes.navbox import WikiNavboxParserABC as _WikiNavboxParserABC
-from scrapers.parsers.wiki.section_nodes.section import WikiSectionParserABC as _WikiSectionParserABC
-from scrapers.parsers.wiki.section_nodes.table import WikiTableParserABC as _WikiTableParserABC
+from scrapers.parsers.element_parser_abc import FigureHtmlParserABC
+from scrapers.parsers.element_parser_abc import ListHtmlParserABC
+from scrapers.parsers.element_parser_abc import NavboxHtmlParserABC
+from scrapers.parsers.element_parser_abc import SectionHtmlParserABC
 
 
-class WikiTableParserABC(_WikiTableParserABC, ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiTableData: ...
-
-
-class WikiListParserABC(_WikiListParserABC, ABC):
+class WikiListParserABC(ListHtmlParserABC[WikiListData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiListData: ...
 
 
-class WikiSectionParserABC(_WikiSectionParserABC, ABC):
+class WikiTableParserABC(WikiListParserABC, ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> WikiTableData: ...
+
+
+class WikiSectionParserABC(SectionHtmlParserABC[WikiSectionData], ABC):
     @abstractmethod
     def parse(self, raw: BeautifulSoup) -> WikiSectionData: ...
 
 
-class WikiInfoboxParserABC(_WikiInfoboxParserABC, ABC):
+class WikiInfoboxParserABC(WikiListParserABC, ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiInfoboxData: ...
 
 
-class WikiNavboxParserABC(_WikiNavboxParserABC, ABC):
+class WikiNavboxParserABC(NavboxHtmlParserABC[WikiNavboxData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiNavboxData: ...
 
 
-class WikiFigureParserABC(_WikiFigureParserABC, ABC):
+class WikiFigureParserABC(FigureHtmlParserABC[WikiFigureData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiFigureData: ...
 

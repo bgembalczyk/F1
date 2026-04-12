@@ -3,8 +3,8 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
-from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
-from scrapers.parsers.wiki.wiki_section_parser_abc import WikiSectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
 from scrapers.parsers.registry import DEFAULT_PARSER_REGISTRY
 
 

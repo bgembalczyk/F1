@@ -1,6 +1,6 @@
 from abc import ABC
 
-from scrapers.parsers.wiki.wiki_section_parser_abc import WikiSectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
 
 
 class WikiSectionStructureParserABC(WikiSectionParserABC, ABC):

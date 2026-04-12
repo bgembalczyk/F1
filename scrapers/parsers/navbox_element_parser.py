@@ -1,7 +1,7 @@
 from bs4 import Tag
 
 from models.data.parsed.html_elements import NavboxElementData
-from scrapers.parsers.wiki.wiki_navbox_parser_abc import WikiNavboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiNavboxParserABC
 from scrapers.text_cleaning import extract_text
 
 
