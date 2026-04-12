@@ -50,7 +50,6 @@ class WikiFigureElementParserABC(FigureHtmlParserABC[WikiFigureData], ABC):
     def parse(self, raw: Tag) -> WikiFigureData: ...
 
 
-# Backward-compatible aliases for legacy imports.
 WikiTableParserABC = WikiTableElementParserABC
 WikiListParserABC = WikiListElementParserABC
 WikiSectionParserABC = WikiSectionElementParserABC

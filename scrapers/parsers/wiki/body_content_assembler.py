@@ -43,7 +43,6 @@ class BodyContentAssembler(WikiParser[Tag, dict[str, Any]]):
         return BodyContentAdapter.find_body_content(soup)
 
 
-# Backward-compatible alias
 BodyContentParser = BodyContentAssembler
 
 __all__ = ["BodyContentAssembler", "BodyContentParser"]
