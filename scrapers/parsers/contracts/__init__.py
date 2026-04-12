@@ -6,6 +6,8 @@ implementation modules to stay decoupled from internal paths.
 """
 
 from scrapers.parsers.contracts.html_element_parser_abc import HtmlElementParserABC
+from scrapers.parsers.contracts.infobox_fields import InfoboxHtmlFieldParserABC
+from scrapers.parsers.contracts.infobox_fields import InfoboxRowsParserABC
 from scrapers.parsers.contracts.mapper_abc import MapperABC
 from scrapers.parsers.contracts.soup_parser_abc import HtmlTagParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiFigureParserABC
@@ -17,6 +19,8 @@ from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 
 __all__ = [
     "HtmlElementParserABC",
+    "InfoboxHtmlFieldParserABC",
+    "InfoboxRowsParserABC",
     "MapperABC",
     "HtmlTagParserABC",
     "WikiFigureParserABC",

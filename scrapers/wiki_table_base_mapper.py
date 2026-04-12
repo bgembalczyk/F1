@@ -1,7 +1,7 @@
 from abc import ABC
 from typing import Any
 
-from scrapers.parsers.group_parsing_mixin import GroupParsingMixin
+from scrapers.parsers.mixins.group import GroupParsingMixin
 from scrapers.matches_mixin import MatchesMixin
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
