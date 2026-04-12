@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC
 
-from scrapers.parsers.wiki.wiki_section_parser_abc import WikiSectionParserABC
+from scrapers.parsers.wiki.section_nodes.section import WikiSectionParserABC
 
 
 class SeasonSectionParserABC(WikiSectionParserABC, ABC):

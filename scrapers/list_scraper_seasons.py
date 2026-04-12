@@ -7,7 +7,7 @@ from scrapers.columns.types.url import UrlColumn
 from scrapers.config_table import TableScraperConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.base_nested_section.nested_section.seasons import SeasonsSectionParser
+from scrapers.parsers.section.nested_section.seasons import SeasonsSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import SEASONS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL

@@ -1,13 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
+"""Backwards-compatible alias for infobox section-node parser contract."""
 
-from bs4 import Tag
+from scrapers.parsers.wiki.section_nodes.infobox import WikiInfoboxSectionParserABC as WikiInfoboxParserABC
 
-from models.data.wiki.infobox import WikiInfoboxData
-from scrapers.parsers.element_parser_abc import InfoboxElementParserABC
-from scrapers.parsers.infobox_parser_abc import InfoboxParserABC
-
-
-class WikiInfoboxParserABC(InfoboxParserABC, InfoboxElementParserABC[WikiInfoboxData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiInfoboxData: ...
+__all__ = ["WikiInfoboxParserABC"]

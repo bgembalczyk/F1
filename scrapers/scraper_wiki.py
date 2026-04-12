@@ -6,7 +6,7 @@ from infrastructure.helpers import init_scraper_options
 from scrapers.abc import ABCScraper
 from scrapers.options import ScraperOptions
 from scrapers.parsers.mixins.wiki.element import WikiElementParsingMixin
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.body_content_assembler import BodyContentAssembler
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element_factory import build_default_wiki_element_parsers
