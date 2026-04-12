@@ -75,7 +75,6 @@ __all__ = [
     "WikiNavboxParserABC",
     "WikiNavboxHtmlParserABC",
     "WikiSectionParserABC",
-    "WikiSectionStructureParserABC",
     "WikiTableMapperSet",
     "WikiTableParserABC",
 ]

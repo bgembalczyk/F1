@@ -12,43 +12,44 @@ from bs4 import Tag
 from scrapers.domain_roles import Parser
 from scrapers.section.parse_results import SectionParseResult
 
-TIn = TypeVar("TIn")
-TOut = TypeVar("TOut")
-TElementOut = TypeVar("TElementOut")
+OutputT = TypeVar("OutputT")
 
 
-class BaseWikiParser(Parser[TIn, TOut], ABC, Generic[TIn, TOut]):
-    """Canonical parser contract: parse(input) -> output."""
+class SoupParserABC(Parser[BeautifulSoup, OutputT], ABC, Generic[OutputT]):
+    """Canonical parser contract for BeautifulSoup inputs."""
 
     @abstractmethod
-    def parse(self, raw: TIn) -> TOut: ...
+    def parse(self, raw: BeautifulSoup) -> OutputT: ...
 
 
-class ElementParser(BaseWikiParser[Tag, TElementOut], ABC, Generic[TElementOut]):
-    """Parser pojedynczego elementu HTML (bs4.Tag)."""
+class TagParserABC(Parser[Tag, OutputT], ABC, Generic[OutputT]):
+    """Canonical parser contract for single bs4.Tag inputs."""
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> OutputT: ...
 
 
-class SectionParser(BaseWikiParser[BeautifulSoup, SectionParseResult], ABC):
-    """Parser sekcji HTML (BeautifulSoup -> SectionParseResult)."""
+class SectionParserABC(SoupParserABC[SectionParseResult], ABC):
+    """Canonical parser contract for wiki sections."""
 
 
-class TableParser(BaseWikiParser[BeautifulSoup, Any], ABC):
-    """Parser tabel HTML oparty o dokument/fragment soup."""
+class TableParserABC(SoupParserABC[Any], ABC):
+    """Canonical parser contract for table-oriented soup parsing."""
 
 
-class ListParser(ElementParser[dict[str, Any]], ABC):
-    """Parser list HTML (<ul>/<ol>)."""
+class ListParserABC(TagParserABC[dict[str, Any]], ABC):
+    """Canonical parser contract for list elements (<ul>/<ol>)."""
 
 
-class InfoboxParser(ElementParser[dict[str, Any]], ABC):
-    """Parser infoboxów HTML."""
+class InfoboxParserABC(TagParserABC[dict[str, Any]], ABC):
+    """Canonical parser contract for infobox elements."""
 
 
 __all__ = [
-    "BaseWikiParser",
-    "ElementParser",
-    "InfoboxParser",
-    "ListParser",
-    "SectionParser",
-    "TableParser",
+    "InfoboxParserABC",
+    "ListParserABC",
+    "SectionParserABC",
+    "SoupParserABC",
+    "TableParserABC",
+    "TagParserABC",
 ]

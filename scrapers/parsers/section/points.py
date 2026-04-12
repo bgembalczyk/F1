@@ -23,7 +23,7 @@ class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser)
         parsed = super()._parse_group(elements, context=context)
         if not parsed.get("sub_sub_sub_sections"):
             parsed = self.child_parser.parse(elements, context=context)
-        self.apply_table_parser(parsed)
+        self.apply_table_mapper(parsed)
         return parsed
 
 
@@ -37,7 +37,7 @@ class ShortenedRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionPars
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
-        self.apply_table_parser(parsed)
+        self.apply_table_mapper(parsed)
         return parsed
 
 
@@ -54,8 +54,8 @@ class SpecialCasesSubSubSectionRouter(SubSubSectionParser):
         if "shortened" in section_id.lower():
             return self.shortened_parser.parse(elements, context=context)
         parsed = super()._parse_group(elements, context=context)
-        self.sprint_parser.apply_table_parser(parsed)
-        self.shortened_parser.apply_table_parser(parsed)
+        self.sprint_parser.apply_table_mapper(parsed)
+        self.shortened_parser.apply_table_mapper(parsed)
         return parsed
 
 
@@ -86,5 +86,5 @@ class PointsScoringSystemsSectionParser(ApplyForElementsMixin, NestedWikiSection
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
-        self.apply_table_parser(parsed)
+        self.apply_table_mapper(parsed)
         return parsed
