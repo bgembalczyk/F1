@@ -24,9 +24,8 @@ class SeasonFreePracticeParser(BaseSeasonParser):
         soup: BeautifulSoup,
         season_year: int | None = None,
     ) -> list[dict[str, Any]]:
-        records = self._table_parser.parse(
+        records = self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=["Free_practice_drivers", "Friday_drivers"],
             expected_headers=["Constructor", "No.", "Driver name", "Rounds"],
             schema=TableSchemaDSL(
@@ -44,9 +43,8 @@ class SeasonFreePracticeParser(BaseSeasonParser):
         if records:
             return self._normalize_free_practice_records(records)
 
-        records = self._table_parser.parse(
+        records = self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=["Free_practice_drivers"],
             expected_headers=["Constructor", "Driver name", "Rounds"],
             schema=TableSchemaDSL(
@@ -62,9 +60,8 @@ class SeasonFreePracticeParser(BaseSeasonParser):
         if records:
             return self._normalize_free_practice_records(records)
 
-        records = self._table_parser.parse(
+        records = self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=["Free_practice_drivers"],
             expected_headers=["Constructor", "Practice drivers"],
             schema=TableSchemaDSL(

@@ -15,9 +15,8 @@ class SeasonScoringSystemParser(BaseSeasonParser):
         self._table_parser = table_parser
 
     def parse(self, soup: BeautifulSoup, season_year: int | None = None) -> list[dict[str, Any]]:
-        return self._table_parser.parse(
+        return self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=["Scoring_system", "Points_scoring_system"],
             expected_headers=["Position", "1st", "2nd", "3rd", "4th", "5th"],
             schema=TableSchemaDSL(

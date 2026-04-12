@@ -29,9 +29,8 @@ class SeasonCalendarParser(BaseSeasonParser):
             ColumnSpec("Date", "race_date", SeasonDateColumn(year=season_year)),
         ]
         schema = TableSchemaDSL(columns=schema_columns)
-        records = self._table_parser.parse(
+        records = self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=["Calendar"],
             expected_headers=["Round", "Grand Prix", "Circuit", "Race date"],
             schema=schema,
@@ -39,9 +38,8 @@ class SeasonCalendarParser(BaseSeasonParser):
         if records:
             return records
 
-        return self._table_parser.parse(
+        return self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=["Calendar"],
             expected_headers=["Round", "Grand Prix", "Circuit", "Date"],
             schema=schema,

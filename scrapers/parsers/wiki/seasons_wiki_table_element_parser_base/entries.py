@@ -36,9 +36,8 @@ class SeasonEntriesParser(BaseSeasonParser):
     ) -> list[dict[str, Any]]:
         engine_config = self._policy.resolve_engine_config(season_year)
         engine_column = EngineColumn(global_config=engine_config)
-        records = self._table_parser.parse(
+        records = self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=[
                 "Entries",
                 "Teams_and_drivers",

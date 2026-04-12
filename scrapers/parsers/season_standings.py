@@ -82,9 +82,8 @@ class SeasonStandingsParser(WikiSectionParserBase):
         subject_column: Any,
         season_year: int | None = None,
     ) -> list[dict[str, Any]]:
-        return self._table_parser.parse(
+        return self._table_parser.standings_parser.parse(
             soup,
-            mode="standings",
             section_ids=section_ids,
             subject_header=subject_header,
             subject_key=subject_key,

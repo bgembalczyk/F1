@@ -61,9 +61,8 @@ class SeasonResultsParser(BaseSeasonParser):
         if by_adapter:
             return by_adapter
 
-        return self._table_parser.parse(
+        return self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=["Grands_Prix", "Results_and_standings"],
             expected_headers=expected_headers,
             schema=schema,
@@ -96,9 +95,8 @@ class SeasonResultsParser(BaseSeasonParser):
             return []
 
         for table in collect_section_elements(target_section, "table"):
-            rows = self._table_parser.parse(
+            rows = self._table_parser.table_payload_mapper.map(
                 table.get("data", {}),
-                mode="table_data",
                 expected_headers=expected_headers,
                 schema=schema,
             )
