@@ -1,4 +1,4 @@
-from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableMapper
+from scrapers.parsers.table.table.mapped.base import MappedWikiTableMapper
 
 
 class LapRecordsWikiTableMapper(MappedWikiTableMapper):

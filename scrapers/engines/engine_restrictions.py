@@ -1,5 +1,5 @@
 from scrapers.engine_restrictions import EngineRestrictionsScraper
-from scrapers.parsers.table.engine_restrictions import EngineRestrictionsTableParser
+from scrapers.parsers.table.engine_restrictions_wiki_table import EngineRestrictionsTableParser
 from scrapers.parsers.wiki.engine_restrictions import CurrentRulesSectionParser
 from scrapers.parsers.wiki.engine_restrictions import EngineSubSectionParser
 

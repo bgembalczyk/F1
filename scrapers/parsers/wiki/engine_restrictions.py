@@ -1,7 +1,7 @@
 from typing import Any
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.table.engine_restrictions import EngineRestrictionsTableParser
+from scrapers.parsers.table.engine_restrictions_wiki_table import EngineRestrictionsTableParser
 from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 
