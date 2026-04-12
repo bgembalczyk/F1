@@ -5,11 +5,17 @@ from typing import Any
 
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
-from scrapers.parsers.roles import TableMapperABC
+from scrapers.parsers.roles import GroupParsingMixin
+from scrapers.parsers.roles import MatchesMixin
+from scrapers.parsers.roles import RowMappingMixin
+from scrapers.parsers.roles import TableDomainMapperABC
 
 
-class WikiTableBaseMapper(
-    TableMapperABC,
+class WikiTableBaseParser(
+    TableDomainMapperABC,
+    MatchesMixin,
+    RowMappingMixin[dict[str, Any], dict[str, Any]],
+    GroupParsingMixin[Any, dict[str, Any]],
     WikiTablePayloadTransformMixin,
     WikiTablePayloadCollectMixin,
     ABC,
@@ -47,6 +53,9 @@ class WikiTableBaseMapper(
 
     def parse_group(self, payload: Any) -> list[dict[str, Any]]:
         return self.collect(payload)
+
+    def map_table(self, table: Any) -> list[dict[str, Any]]:
+        return self.parse_group(table)
 
     @staticmethod
     def _normalized_rows(table_data: dict[str, Any]) -> list[dict[str, Any]]:
@@ -91,6 +100,9 @@ class WikiTableBaseMapper(
             if key:
                 mapped[key] = value
         return mapped
+
+    def map_row(self, row: dict[str, Any]) -> dict[str, Any]:
+        return self.parse_row(row, self.map_columns(list(row.keys())))
 
     collect_rows = parse_group
 

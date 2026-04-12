@@ -13,6 +13,9 @@ from models.data.parsed.nav_box import NavBoxParsedData
 from models.data.parsed.references_wrap import ReferencesWrapParsedData
 from scrapers.parsers.roles import HtmlTagParserABC
 from scrapers.parsers.roles import HtmlElementParserABC
+from scrapers.parsers.roles import InfoboxParserABC
+from scrapers.parsers.roles import ListParserABC
+from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.roles import TableHtmlParserABC
 
 WikiTableParsedData = dict[str, Any]
@@ -30,7 +33,7 @@ class WikiListHtmlParserABC(HtmlTagParserABC[Tag, WikiListParsedData], ABC):
     def parse(self, raw: Tag) -> WikiListParsedData: ...
 
 
-class WikiSectionHtmlParserABC(ABC):
+class WikiSectionHtmlParserABC(SectionParserABC, ABC):
     @abstractmethod
     def parse(self, raw: BeautifulSoup) -> WikiSectionParsedData: ...
 
