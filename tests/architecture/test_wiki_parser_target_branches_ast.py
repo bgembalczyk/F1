@@ -6,8 +6,8 @@ from pathlib import Path
 
 TARGET_BRANCHES = {
     "ParserABC",
-    "TagParserABC",
-    "SoupParserABC",
+    "HtmlTagParserABC",
+    "HtmlSoupParserABC",
     "WikiTableParserABC",
     "WikiListParserABC",
     "WikiSectionParserABC",
