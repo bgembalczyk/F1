@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from layers.facade import WikiPipelineFacade
+from wiki_pipeline.facade import WikiPipelineFacade
 
 EXPECTED_SCENARIO_RUNS = 2
 

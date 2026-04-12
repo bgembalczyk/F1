@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from scrapers.drivers.drivers_helpers import export as export_mod
+from complete_extractor.export import export as export_mod
 
 
 def test_surname_initial_handles_fallbacks() -> None:

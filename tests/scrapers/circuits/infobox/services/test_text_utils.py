@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 
 @pytest.fixture()

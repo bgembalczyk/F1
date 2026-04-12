@@ -3,11 +3,11 @@ from pathlib import Path
 
 import pytest
 
-from layers.path_resolver import DEFAULT_PATH_RESOLVER
-from layers.path_resolver import PathResolver
-from layers.path_resolver import normalize_domain
-from layers.path_resolver import normalize_output_name
-from layers.path_resolver import normalize_relative_parts
+from path_resolver.helpers import DEFAULT_PATH_RESOLVER
+from path_resolver.helpers import PathResolver
+from path_resolver.helpers import normalize_domain
+from path_resolver.helpers import normalize_output_name
+from path_resolver.helpers import normalize_relative_parts
 
 
 def test_default_exports_root_points_to_data_directory() -> None:

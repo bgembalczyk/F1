@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 
-from infrastructure.http_client.policies.http import HttpPolicy
-from scrapers.base.html_fetcher import HtmlFetcher
+from infrastructure.http.policies.http import HttpPolicy
+from scrapers.html_fetcher import HtmlFetcher
 
 
 class StubHttpClient:

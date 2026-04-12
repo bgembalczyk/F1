@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.seasons.helpers_seasons import season_filename
+from scrapers.helpers_seasons import season_filename
 
 
 @pytest.mark.parametrize(

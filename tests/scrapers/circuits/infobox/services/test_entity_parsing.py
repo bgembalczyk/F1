@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.circuits.circuits_infobox.services.entity_parsing import (
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
     CircuitEntityParser,
 )
 

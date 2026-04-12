@@ -1,7 +1,7 @@
 import pytest
 
-from scrapers.base.cache_adapter import CacheAdapter
-from scrapers.base.source_adapter import SourceAdapter
+from scrapers.cache_adapter import CacheAdapter
+from scrapers.source_adapter import SourceAdapter
 
 
 class StubSourceAdapter(SourceAdapter):

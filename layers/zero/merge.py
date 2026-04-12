@@ -167,23 +167,23 @@ DEFAULT_SOURCE_PIPELINE = "*"
 ENGINE_REGULATIONS_SOURCE = sources_registry.get_source_by_seed_name(
     "engines_regulations",
     warn=False,
-).list_filename
+).output_file
 ENGINE_RESTRICTIONS_SOURCE = sources_registry.get_source_by_seed_name(
     "engines_restrictions",
     warn=False,
-).list_filename
+).output_file
 POINTS_SCORING_SYSTEM_SOURCE = sources_registry.get_source_by_seed_name(
     "points_history",
     warn=False,
-).list_filename
+).output_file
 POINTS_SCORING_SYSTEM_SHORTENED_SOURCE = sources_registry.get_source_by_seed_name(
     "points_shortened",
     warn=False,
-).list_filename
+).output_file
 POINTS_SCORING_SYSTEM_SPRINT_SOURCE = sources_registry.get_source_by_seed_name(
     "points_sprint",
     warn=False,
-).list_filename
+).output_file
 
 
 def normalize_engine_records(records: list[object]) -> list[object]:

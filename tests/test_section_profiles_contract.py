@@ -4,7 +4,7 @@ from __future__ import annotations
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.wiki.parsers import sections
+from scrapers.parsers.wiki import sections
 
 
 def test_section_profiles_define_expected_domains_and_contract_shape() -> None:

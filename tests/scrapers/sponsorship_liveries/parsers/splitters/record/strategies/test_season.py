@@ -1,6 +1,6 @@
 # ruff: noqa: SLF001
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import PipelineRecord
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+from scrapers.parsers.liveries.sponsorship import PipelineRecord
+from scrapers.parsers.liveries.sponsorship import (
     SeasonSplitStrategy,
 )
 

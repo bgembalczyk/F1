@@ -4,7 +4,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.driver_parsing import DriverParsingHelpers
+from scrapers.columns.helpers.driver_parsing import DriverParsingHelpers
 
 BASE_URL = "https://en.wikipedia.org"
 

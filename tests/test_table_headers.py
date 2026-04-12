@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.tables.lap_records_table import LapRecordsTableScraper
+from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.pipeline import TablePipeline

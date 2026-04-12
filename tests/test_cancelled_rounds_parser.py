@@ -5,8 +5,8 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.seasons.parsers_seasons.cancelled_rounds import CancelledRoundsParser
-from scrapers.seasons.parsers_seasons.table import SeasonTableParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.cancelled_rounds import CancelledRoundsParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 
 
 @pytest.fixture()

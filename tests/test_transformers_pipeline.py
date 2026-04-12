@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.base.helpers.transformers import build_transformers
+from scrapers.helpers.transformers import build_transformers
 from scrapers.base.transformers.normalize_links import NormalizeLinksTransformer
 from scrapers.base.transformers.pipeline import TransformersPipeline
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
