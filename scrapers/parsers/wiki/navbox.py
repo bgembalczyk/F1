@@ -13,4 +13,8 @@ class WikiNavboxParser(WikiNavboxParserABC):
         return self._parser.parse(raw)
 
 
-__all__ = ["WikiNavboxParser", "NavBoxParsedData"]
+# ``NavBoxParser`` is the canonical public name for this parser.
+NavBoxParser = WikiNavboxParser
+
+
+__all__ = ["NavBoxParser", "WikiNavboxParser", "NavBoxParsedData"]

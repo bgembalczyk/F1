@@ -2,6 +2,7 @@
 
 ``WikiTableParser`` is the canonical concrete entry-point for parsing
 ``<table class="wikitable">`` elements from Wikipedia articles.
+``TableParser`` is the stable public short-name alias.
 """
 
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
@@ -16,4 +17,8 @@ class WikiTableParser(WikiTableHtmlParser):
     """
 
 
-__all__ = ["WikiTableParser"]
+# ``TableParser`` is the canonical short public name for this parser.
+TableParser = WikiTableParser
+
+
+__all__ = ["TableParser", "WikiTableParser"]

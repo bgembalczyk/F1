@@ -26,11 +26,14 @@ class WikiElementSet:
     paragraph_parser: ParserABC[Tag, WikiParserData]
     figure_parser: ParserABC[Tag, WikiParserData]
     list_parser: ParserABC[Tag, WikiParserData]
-    table_html_parser: ParserABC[Tag, WikiParserData]
+    table_parser: ParserABC[Tag, WikiParserData]
     navbox_parser: ParserABC[Tag, WikiParserData]
     references_wrap_parser: ParserABC[Tag, WikiParserData]
-    references_parser: ParserABC[Tag, WikiParserData]
+    references_parser: ParserABC[Tag, WikiParserData] | None = None
     section_parser: Callable[[Tag], WikiParserData] | None = None
+
+    def _effective_references_parser(self) -> ParserABC[Tag, WikiParserData]:
+        return self.references_parser if self.references_parser is not None else self.references_wrap_parser
 
 
 @dataclass(frozen=True)
@@ -60,6 +63,10 @@ def build_wikipedia_element_registry(
 ) -> ElementRegistry:
     type_predicates: dict[ElementType, Callable[[Tag], bool]] = {
         "paragraph": lambda el: el.name == "p",
+        "infobox": lambda el: (
+            el.name == "table"
+            and "infobox" in ElementRegistry._get_classes(el)
+        ),
         "table": lambda el: (
             el.name == "table"
             and "wikitable" in ElementRegistry._get_classes(el)
@@ -72,15 +79,11 @@ def build_wikipedia_element_registry(
                 for heading in ("mw-heading2", "mw-heading3", "mw-heading4")
             )
         ),
-        "infobox": lambda el: (
-            el.name == "table"
-            and "infobox" in ElementRegistry._get_classes(el)
-        ),
         "figure": lambda el: el.name == "figure",
         "navbox": lambda el: (
             el.name == "div" and "navbox" in ElementRegistry._get_classes(el)
         ),
-        "references": lambda el: (
+        "references_wrap": lambda el: (
             el.name == "div"
             and (
                 "reflist" in ElementRegistry._get_classes(el)
@@ -89,19 +92,20 @@ def build_wikipedia_element_registry(
         ),
     }
 
-    parser_instances = (
-        parsers.paragraph_parser,
-        parsers.table_html_parser,
-        parsers.list_parser,
-        parsers.infobox_parser,
-        parsers.figure_parser,
-        parsers.navbox_parser,
-        parsers.references_parser,
-    )
+    # Ordered explicit mapping: (element_type, parser_instance).
+    # Priority order: infobox before table to handle tables with both classes.
+    named_parsers: list[tuple[str, ParserABC]] = [
+        ("paragraph", parsers.paragraph_parser),
+        ("infobox", parsers.infobox_parser),
+        ("table", parsers.table_parser),
+        ("list", parsers.list_parser),
+        ("figure", parsers.figure_parser),
+        ("navbox", parsers.navbox_parser),
+        ("references_wrap", parsers._effective_references_parser()),
+    ]
     rules: list[ParserRule] = []
-    for parser in parser_instances:
-        element_type = getattr(parser, "element_type", None)
-        if not isinstance(element_type, str) or element_type not in type_predicates:
+    for element_type, parser in named_parsers:
+        if element_type not in type_predicates:
             continue
         rules.append(
             ParserRule(
@@ -131,7 +135,7 @@ def build_default_wiki_element_parsers() -> WikiElementSet:
         paragraph_parser=WikiParagraphParser(),
         figure_parser=WikiFigureParser(),
         list_parser=ListElementParser(),
-        table_html_parser=WikiTableHtmlParser(),
+        table_parser=WikiTableHtmlParser(),
         navbox_parser=WikiNavboxParser(),
         references_wrap_parser=ReferencesWrapParser(),
         references_parser=ReferencesWrapParser(),
@@ -142,3 +146,15 @@ def build_default_wikipedia_element_registry() -> ElementRegistry:
     return build_wikipedia_element_registry(
         parsers=build_default_wiki_element_parsers()
     )
+
+# WikiElementParsers is the canonical public alias for WikiElementSet
+WikiElementParsers = WikiElementSet
+
+__all__ = [
+    'WikiElementParsers',
+    'WikiElementSet',
+    'ElementRegistry',
+    'build_default_wiki_element_parsers',
+    'build_default_wikipedia_element_registry',
+    'build_wikipedia_element_registry',
+]

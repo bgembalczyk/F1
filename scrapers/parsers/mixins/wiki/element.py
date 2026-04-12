@@ -28,13 +28,13 @@ class WikiElementParsingMixin:
             raise ValueError(msg)
         self.infobox_parser = resolved_parsers.infobox_parser
         self.list_parser = resolved_parsers.list_parser
-        self.table_html_parser = resolved_parsers.table_html_parser
+        self.table_parser = resolved_parsers.table_parser
         self.navbox_parser = resolved_parsers.navbox_parser
-        self.references_parser = resolved_parsers.references_parser
+        self.references_parser = resolved_parsers._effective_references_parser()
         self._paragraph_parser = resolved_parsers.paragraph_parser
         self._figure_parser = resolved_parsers.figure_parser
         self._navbox_parser = resolved_parsers.navbox_parser
-        self._references_parser = resolved_parsers.references_parser
+        self._references_parser = resolved_parsers._effective_references_parser()
         self.element_registry = element_registry
         self._parser_rules: list[ParserRule] = []
         self._register_default_parser_rules()
@@ -71,7 +71,7 @@ class WikiElementParsingMixin:
                 paragraph_parser=self._paragraph_parser,
                 figure_parser=self._figure_parser,
                 list_parser=self.list_parser,
-                table_html_parser=self.table_html_parser,
+                table_parser=self.table_parser,
                 navbox_parser=self._navbox_parser,
                 references_wrap_parser=self._references_parser,
                 references_parser=self._references_parser,

@@ -10,7 +10,7 @@ class ReferencesWrapParser(WikiParser[Tag, ReferencesWrapParsedData]):
 
     Przetwarza divy z klasą zawierającą 'references-wrap'.
     """
-    element_type = "references"
+    element_type = "references_wrap"
 
     def parse(self, element: Tag) -> ReferencesWrapParsedData:
         """Parsuje sekcję przypisów HTML.

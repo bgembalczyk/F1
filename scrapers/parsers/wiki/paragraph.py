@@ -6,4 +6,8 @@ class WikiParagraphParser(ParagraphElementParser):
     pass
 
 
-__all__ = ["WikiParagraphParser", "ParagraphParsedData"]
+# ``ParagraphParser`` is the canonical public name for this parser.
+ParagraphParser = WikiParagraphParser
+
+
+__all__ = ["ParagraphParser", "WikiParagraphParser", "ParagraphParsedData"]
