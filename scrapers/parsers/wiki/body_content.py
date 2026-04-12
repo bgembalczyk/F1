@@ -7,7 +7,7 @@ from scrapers.parsers.wiki.base import WikiParser
 from scrapers.parsers.wiki.category_links import CategoryLinksParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
 from scrapers.parsers.wiki.element import WikiElementSet
-from scrapers.parsers.wiki.extractors.body_content import BodyContentAdapter
+from scrapers.parsers.wiki.extractors.body_content_adapter import BodyContentAdapter
 
 
 class BodyContentAssembler(WikiParser[Tag, dict[str, Any]]):

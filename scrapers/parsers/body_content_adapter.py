@@ -5,11 +5,7 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-
-@dataclass(frozen=True)
-class BodyContentParts:
-    catlinks: Tag | None
-    content_text: Tag | None
+from scrapers.parsers.wiki.extractors.body_content_parts import BodyContentParts
 
 
 class BodyContentAdapter:

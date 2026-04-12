@@ -4,17 +4,8 @@ from dataclasses import dataclass
 
 from bs4 import Tag
 
-
-@dataclass(frozen=True)
-class ExtractedCategoryLink:
-    text: str
-    href: str
-
-
-@dataclass(frozen=True)
-class ExtractedCategoryGroup:
-    category: str | None
-    links: list[ExtractedCategoryLink]
+from scrapers.parsers.wiki.extractors.extracted_category_group import ExtractedCategoryGroup
+from scrapers.parsers.wiki.extractors.extracted_category_link import ExtractedCategoryLink
 
 
 class CategoryLinksExtractor:
@@ -62,8 +53,3 @@ class CategoryLinksExtractor:
         return links
 
 
-__all__ = [
-    "ExtractedCategoryLink",
-    "ExtractedCategoryGroup",
-    "CategoryLinksExtractor",
-]
