@@ -2,10 +2,10 @@ from bs4 import Tag
 
 from models.data.wiki.figure import WikiFigureData
 from scrapers.parsers.figure_element_parser import FigureElementParser
-from scrapers.parsers.wiki.wiki_figure_parser_abc import WikiFigureParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiFigureElementParserABC
 
 
-class WikiFigureElementParser(WikiFigureParserABC):
+class WikiFigureElementParser(WikiFigureElementParserABC):
     """Wikipedia HTML element parser for `<figure>` elements."""
 
     def __init__(self, parser: FigureElementParser | None = None) -> None:

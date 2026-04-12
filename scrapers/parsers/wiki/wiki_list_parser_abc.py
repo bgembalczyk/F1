@@ -1,17 +1,4 @@
-from __future__ import annotations
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListParserABC
 
-from abc import ABC
-from abc import abstractmethod
-
-from bs4 import Tag
-
-from models.data.wiki.list import WikiListData
-from scrapers.parsers.element_parser_abc import ListHtmlParserABC
-
-
-class WikiListParserABC(ListHtmlParserABC[WikiListData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiListData: ...
-
-
-__all__ = ["WikiListParserABC"]
+__all__ = ["WikiListElementParserABC", "WikiListParserABC"]

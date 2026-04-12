@@ -7,10 +7,10 @@ from bs4 import Tag
 
 from models.data.parsed.html_elements import SectionElementData
 from scrapers.parsers.wiki.content_text import ContentTextParser
-from scrapers.parsers.wiki.section_nodes.section import WikiSectionParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiSectionElementParserABC
 
 
-class SectionElementParser(WikiSectionParserABC):
+class SectionElementParser(WikiSectionElementParserABC):
     """Document parser for article sections (BeautifulSoup input only)."""
 
     def __init__(self, content_text_parser: ContentTextParser | None = None) -> None:
