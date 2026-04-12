@@ -7,7 +7,7 @@ from infrastructure.http.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http.policies.http import HttpPolicy
 from infrastructure.http.protocols import HttpClientProtocol
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
-from scrapers.cache_adapter import CacheAdapter
+from scrapers.adapters.cache_adapter import CacheAdapter
 from scrapers.html_fetcher import HtmlFetcher
 from scrapers.options import ScraperOptions
 from scrapers.runtime.dataclass import ScraperRuntime
@@ -115,7 +115,6 @@ class ScraperRuntimeFactory:
         if source_adapter is None:
             return fetcher, fetcher
         if cache_adapter is not None and not isinstance(source_adapter, HtmlFetcher):
-            # di-antipattern-allow: runtime assembly owns cache decorator creation.
             source_adapter = CacheAdapter(
                 source_adapter=source_adapter,
                 cache_adapter=cache_adapter,

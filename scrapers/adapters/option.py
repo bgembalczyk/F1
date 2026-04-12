@@ -1,8 +1,8 @@
 from scrapers.abc import ABCScraper
 from scrapers.constructor_introspection import ConstructorIntrospection
 from scrapers.creation_context import ScraperCreationContext
+from scrapers.mappers.run_config_options_mapper import RunConfigOptionsMapper
 from scrapers.options import ScraperOptions
-from scrapers.run_config_options_mapper import RunConfigOptionsMapper
 
 
 class OptionsScraperAdapter:

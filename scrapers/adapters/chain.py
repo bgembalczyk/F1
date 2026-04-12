@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Protocol
 
 from scrapers.adapters.option import OptionsScraperAdapter
-from scrapers.run_config_options_mapper import RunConfigOptionsMapper
+from scrapers.mappers.run_config_options_mapper import RunConfigOptionsMapper
 
 
 class ScraperCreationAdapter(Protocol):

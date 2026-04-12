@@ -1,8 +1,8 @@
 from collections.abc import Sequence
 
 from scrapers.options import ScraperOptions
-from scrapers.transformers.normalize_links import NormalizeLinksTransformer
 from scrapers.transformers.record.base import RecordTransformer
+from scrapers.transformers.record.normalize_links import NormalizeLinksTransformer
 
 
 def build_transformers(

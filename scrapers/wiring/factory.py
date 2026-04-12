@@ -7,8 +7,8 @@ from scrapers.adapters.chain import default_scraper_creation_adapters
 from scrapers.adapters.option import OptionsScraperAdapter
 from scrapers.constructor_introspection import ConstructorIntrospection
 from scrapers.creation_context import ScraperCreationContext
+from scrapers.mappers.run_config_options_mapper import RunConfigOptionsMapper
 from scrapers.run_config import RunConfig
-from scrapers.run_config_options_mapper import RunConfigOptionsMapper
 
 
 class ScraperFactory:

@@ -9,6 +9,7 @@ from typing import TypeVar
 from models.payload import WikiParsedPayload
 from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.contracts.classifier_abc import ClassifierABC
+from scrapers.mappers.mapper_abc import MapperABC
 
 RawPayloadT = TypeVar("RawPayloadT")
 ClassificationT = TypeVar("ClassificationT")

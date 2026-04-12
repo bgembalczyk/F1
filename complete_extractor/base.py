@@ -1,12 +1,12 @@
 from typing import Any
 
+from complete_extractor.composite_scraper import CompositeDataExtractor
+from complete_extractor.composite_scraper import CompositeDataExtractorChildren
+from complete_extractor.composite_scraper import ListScraperProtocol
+from complete_extractor.composite_scraper import SingleScraperProtocol
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from infrastructure.helpers import init_scraper_options
 from infrastructure.http.errors.base import RequestError
-from scrapers.composite_scraper import CompositeDataExtractor
-from scrapers.composite_scraper import CompositeDataExtractorChildren
-from scrapers.composite_scraper import ListScraperProtocol
-from scrapers.composite_scraper import SingleScraperProtocol
 from scrapers.errors.domain_parse import DomainParseError
 from scrapers.errors.network import ScraperNetworkError
 from scrapers.errors.parse import ScraperParseError
