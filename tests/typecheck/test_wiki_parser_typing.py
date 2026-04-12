@@ -18,10 +18,10 @@ if TYPE_CHECKING:
     from scrapers.parsers.wiki.paragraph import WikiParagraphParser
     from scrapers.parsers.wiki.table import WikiTableParser
     from scrapers.parsers.wiki.header import HeaderParser
-    from scrapers.wiki.parsers.types import HeaderParsedData
-    from scrapers.wiki.parsers.types import ParagraphParsedData
-    from scrapers.wiki.parsers.types import TableParsedData
-    from scrapers.wiki.parsers.types import WikiParsedPayload
+    from models.data.parsed.header import HeaderParsedData
+    from models.data.parsed.paragraph import ParagraphParsedData
+    from models.data.parsed.table import TableParsedData
+    from models.payload import WikiParsedPayload
 
     header_parser: WikiParser[HeaderParsedData] = HeaderParser()
     header_result: HeaderParsedData = header_parser.parse(cast("Tag", object()))

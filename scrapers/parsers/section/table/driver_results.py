@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.records.factories.mapping import MappingRecordFactory
@@ -15,6 +16,7 @@ from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
 from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.constants import UNKNOWN_VALUE
+from scrapers.section.parse_results import SectionParseResult
 from scrapers.table_parsing_helper import TableParsingHelper
 from scrapers.table_schema_dsl import TableSchemaDSL
 
@@ -78,6 +80,9 @@ class DriverResultsSectionParser(TableSectionParser):
         self._schema_factory = schema_factory or DriverResultsSchemaFactory(
             unknown_value=UNKNOWN_VALUE,
         )
+
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        return super().parse(section_fragment)
 
     def build_pipeline(
         self,

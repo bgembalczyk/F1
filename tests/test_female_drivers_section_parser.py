@@ -1,9 +1,6 @@
-from scrapers.female_drivers_list import DriversSectionParser
-from scrapers.female_drivers_list import FemaleDriversTableParser
-from scrapers.female_drivers_list import OfficialDriversSubSectionParser
-from scrapers.drivers.female_drivers_list import DriversSectionParser
-from scrapers.drivers.female_drivers_list import FemaleDriversTableMapper
-from scrapers.drivers.female_drivers_list import OfficialDriversSubSectionParser
+from scrapers.parsers.section.legacy_lists.female_drivers import DriversSectionParser
+from scrapers.parsers.section.legacy_lists.female_drivers import FemaleDriversTableMapper
+from scrapers.parsers.section.legacy_lists.female_drivers import OfficialDriversSubSectionParser
 
 
 def test_female_drivers_table_parser_maps_domain_rows() -> None:

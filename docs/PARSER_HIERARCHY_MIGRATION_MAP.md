@@ -54,7 +54,7 @@ WikiElementParsingMixin                    ← parse_elements / _parse_element (
 | Stara baza (przed migracją) | Nowa baza (po migracji) | Uwagi |
 |---|---|---|
 | `Protocol` (typing) | `ABC` (abc) | Zastąp klasą ABC z `@abstractmethod` |
-| `ElementParserABC` | `HtmlElementParserABC` | `ElementParserABC` = alias wstecznej kompatybilności |
+| `ElementParserABC` | `HtmlElementParserABC` | Alias usunięty — używaj wyłącznie `HtmlElementParserABC`. |
 | `ListElementParserABC` | `WikiListParserABC` *(dla wiki-parserów)* | Używaj wiki-ABC dla konkretnych wiki-parserów |
 | `TableElementParserABC` | `WikiTableParserABC` *(dla wiki-parserów)* | j.w. |
 | `InfoboxElementParserABC` | `WikiInfoboxParserABC` *(dla wiki-parserów)* | j.w. |
@@ -101,3 +101,17 @@ Rejestr używa wiki-specyficznych ABCs jako baz dla wpisów domenowych:
 3. **Nowe parsery HTML ogólne** — dziedzicz po `HtmlElementParserABC` lub specjalistycznym `*ElementParserABC`.
 4. **Importuj kontrakty** z `scrapers.parsers.contracts.*`, nie z modułów implementacyjnych.
 5. **Protokoły** w `scrapers/protocols/` (capabilities, data_frame_formatter itp.) pozostają jako `Protocol` — dotyczą scraper-capabilities, nie parser-contracts.
+
+
+## 6. Usunięte moduły aliasujące (re-export only)
+
+Poniższe ścieżki zostały usunięte i nie są już wspierane:
+
+- `scrapers/wiki/parsers/*` (moduły re-eksportujące parsery),
+- `scrapers/wiki/parsers/elements/*` (re-eksporty parserów elementów),
+- `scrapers/wiki/parsers/sections/*` (re-eksporty parserów sekcyjnych),
+- `scrapers/parsers/section/sublevels/{sub_section,sub_sub_section,sub_sub_sub_section}.py`.
+
+Używaj importów kanonicznych z `scrapers.parsers.contracts.*` (kontrakty) albo bezpośrednio
+z modułów implementacyjnych (`scrapers.parsers.wiki.*`, `scrapers.parsers.section.*`).
+

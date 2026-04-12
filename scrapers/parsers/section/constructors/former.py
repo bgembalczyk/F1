@@ -1,8 +1,11 @@
+from bs4 import BeautifulSoup
+
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.former_constructors_table_mapper import FormerConstructorsTableMapper
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
 from scrapers.parsers.section.sub_section.generic_indianapolis_only import GenericIndianapolisOnlySubSectionParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
+from scrapers.section.parse_results import SectionParseResult
 
 
 class FormerConstructorsSectionParser(ConstructorsSectionParser):
@@ -23,6 +26,9 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
             table_domain_mapper=FormerConstructorsTableMapper(),
         )
         self._indianapolis_sub_section_parser = GenericIndianapolisOnlySubSectionParser()
+
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        return super().parse(section_fragment)
 
     def parse_indianapolis_only_records(
         self,

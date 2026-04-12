@@ -1,6 +1,9 @@
 from typing import Any
 
+from bs4 import Tag
+
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.table.points_helpers import PointsScoringSystemsHistoryTableMapper
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.sub_section.special_cases import SpecialCasesSubSectionParser
@@ -13,6 +16,14 @@ class PointsScoringSystemsSectionParser(ApplyForElementsMixin, NestedWikiSection
         super().__init__()
         self.child_parser = SpecialCasesSubSectionParser()
         self._table_parser = PointsScoringSystemsHistoryTableMapper()
+
+    def parse(
+        self,
+        element: Tag | list[Tag],
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, object]:
+        return super().parse(element, context=context)
 
     @property
     def sprint_subsection_parser(self) -> SprintRacesSubSubSectionParser:

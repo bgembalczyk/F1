@@ -87,9 +87,6 @@ class HtmlElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
     def parse(self, raw: Tag) -> TagOut: ...
 
 
-#: Backward-compatible alias — use HtmlElementParserABC for new generic code.
-ElementParserABC = HtmlElementParserABC
-
 
 class ListElementParserABC(ListHtmlParserABC[TagOut], ABC, Generic[TagOut]):
     pass

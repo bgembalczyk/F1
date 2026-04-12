@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 from scrapers.parsers.section.assembler import SectionAssembler
 from scrapers.parsers.section.locator import SectionLocator
-from scrapers.parsers.domain_mapper_helpers import WikiMapperRegistry
-from scrapers.parsers.domain_mapper_helpers import build_default_mapper_registry
+from scrapers.domain_mapper_helpers import WikiMapperRegistry
+from scrapers.domain_mapper_helpers import build_default_mapper_registry
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
@@ -13,7 +13,7 @@ from scrapers.parsers.wiki.element_factory import build_default_wiki_element_par
 
 
 @dataclass(frozen=True)
-class SectionParserToolbox:
+class SectionParsingToolbox:
     """Narzędzia parsera sekcji: extract/parse (bez translacji domenowej)."""
 
     element_parsers: WikiElementSet
@@ -23,9 +23,9 @@ class SectionParserToolbox:
     mapper_registry: WikiMapperRegistry
 
 
-def build_default_section_toolbox() -> SectionParserToolbox:
+def build_default_section_toolbox() -> SectionParsingToolbox:
     element_parsers = build_default_wiki_element_parsers()
-    return SectionParserToolbox(
+    return SectionParsingToolbox(
         element_parsers=element_parsers,
         element_registry=build_wikipedia_element_registry(parsers=element_parsers),
         section_locator=SectionLocator(),
@@ -34,4 +34,12 @@ def build_default_section_toolbox() -> SectionParserToolbox:
     )
 
 
-__all__ = ["SectionParserToolbox", "build_default_section_toolbox"]
+# Backward-compatible alias.
+SectionParserToolbox = SectionParsingToolbox
+
+
+__all__ = [
+    "SectionParsingToolbox",
+    "SectionParserToolbox",
+    "build_default_section_toolbox",
+]

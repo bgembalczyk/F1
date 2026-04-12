@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.non_championships_races_table_mapper import NonChampionshipsRacesTableMapper
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.parsers.section.sub_section.base import SubSectionParser
 
@@ -12,6 +13,14 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
         super().__init__()
         self._table_mapper = NonChampionshipsRacesTableMapper()
         self._fallback_element_parser = SubSubSubSectionParser()
+
+    def parse(
+        self,
+        element: Tag | list[Tag],
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, object]:
+        return super().parse(element, context=context)
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)

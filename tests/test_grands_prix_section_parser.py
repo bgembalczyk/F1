@@ -1,9 +1,6 @@
-from scrapers.list_scraper_grands_prix import ByRaceTitleSubSectionParser
-from scrapers.list_scraper_grands_prix import GrandsPrixTableParser
-from scrapers.list_scraper_grands_prix import RacesSectionParser
-from scrapers.grands_prix.list_scraper_grands_prix import ByRaceTitleSubSectionParser
-from scrapers.grands_prix.list_scraper_grands_prix import GrandsPrixTableMapper
-from scrapers.grands_prix.list_scraper_grands_prix import RacesSectionParser
+from scrapers.parsers.section.legacy_lists.grands_prix import ByRaceTitleSubSectionParser
+from scrapers.parsers.section.legacy_lists.grands_prix import GrandsPrixTableMapper
+from scrapers.parsers.section.legacy_lists.grands_prix import RacesSectionParser
 
 
 def test_grands_prix_table_parser_maps_domain_rows() -> None:

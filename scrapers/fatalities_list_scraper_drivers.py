@@ -1,8 +1,5 @@
 from typing import Any
 
-from bs4 import BeautifulSoup
-from bs4 import Tag
-
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
 from scrapers.columns.context import ColumnContext
 from scrapers.columns.factory import IntColumn
@@ -32,69 +29,13 @@ from scrapers.helpers.date_parsing import parse_formula_category
 from scrapers.helpers.normalize import normalize_auto_value
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
-from scrapers.parsers.driver_ordered_table_mapper import DriverOrderedTableMapper
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.section.legacy_lists.fatalities import DetailByDriverSubSectionParser
+from scrapers.parsers.section.legacy_lists.fatalities import FatalitiesSectionParser
+from scrapers.parsers.section.legacy_lists.fatalities import FatalitiesTableMapper
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import DRIVERS_FATALITIES
 from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.transformers.record.fatalities_car import FatalitiesCarTransformer
-
-
-class FatalitiesTableMapper(DriverOrderedTableMapper):
-    """Parser wyspecjalizowany dla tabeli „Detail by driver”."""
-
-    table_type = "fatalities_detail_by_driver"
-    missing_columns_policy = "require_core_fatalities_columns"
-    extra_columns_policy = "ignore"
-
-    _required_headers = frozenset(FATALITIES_HEADERS)
-    _column_mapping = {
-        FATALITIES_DRIVER_HEADER: "driver",
-        FATALITIES_DATE_HEADER: "date",
-        FATALITIES_AGE_HEADER: "age",
-        FATALITIES_EVENT_HEADER: "event",
-        FATALITIES_CIRCUIT_HEADER: "circuit",
-        FATALITIES_CAR_HEADER: "car",
-        FATALITIES_SESSION_HEADER: "session",
-        FATALITIES_REF_HEADER: "ref",
-    }
-
-    def matches(self, headers: list[str], _table_data: dict[str, object]) -> bool:
-        return self._required_headers.issubset(set(headers))
-
-
-class DetailByDriverSubSectionParser(SubSectionParser):
-    """Parser podsekcji sekcji „Detail by driver” z tabelą ofiar."""
-
-    def __init__(self) -> None:
-        super().__init__()
-        self._table_parser = ArticleTablesParser(
-            specialized_mappers=[FatalitiesTableMapper()],
-        )
-
-    def _parse_group(
-        self,
-        elements: list,
-        *,
-        context=None,
-    ) -> dict[str, Any]:
-        parsed = super()._parse_group(elements, context=context)
-        tags = [element for element in elements if isinstance(element, Tag)]
-        section_fragment = BeautifulSoup("", "html.parser")
-        for tag in tags:
-            section_fragment.append(tag)
-        parsed["tables"] = self._table_parser.parse(section_fragment)
-        return parsed
-
-
-class FatalitiesSectionParser(NestedWikiSectionParser):
-    """Parser sekcji H3 dla listy ofiar śmiertelnych F1."""
-
-    def __init__(self) -> None:
-        super().__init__()
-        self.child_parser = DetailByDriverSubSectionParser()
 
 
 class F1FatalitiesListScraper(F1TableScraper):
@@ -158,8 +99,6 @@ class F1FatalitiesListScraper(F1TableScraper):
         )
         self.section_parser = FatalitiesSectionParser()
 
-    # Methods using shared utilities from date_parsing module
-    # Kept here for backward compatibility if they are used elsewhere
     @staticmethod
     def _parse_date(ctx: ColumnContext) -> str | None:
         return parse_date_with_category_marker(ctx, MARK_F2_CATEGORY)
@@ -174,3 +113,11 @@ class F1FatalitiesListScraper(F1TableScraper):
         auto_value = AutoColumn().parse(ctx)
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}
+
+
+__all__ = [
+    "DetailByDriverSubSectionParser",
+    "F1FatalitiesListScraper",
+    "FatalitiesSectionParser",
+    "FatalitiesTableMapper",
+]

@@ -1,6 +1,10 @@
 from typing import Any
 
+from bs4 import Tag
+
 from scrapers.parsers.engine_regulation_table_mapper import EngineRegulationTableMapper
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
+from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
 from scrapers.parsers.section.sub_section.base import SubSectionParser
 
 
@@ -8,6 +12,14 @@ class EngineRegulationSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_mapper = EngineRegulationTableMapper()
+
+    def parse(
+        self,
+        element: Tag | list[Tag],
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, object]:
+        return super().parse(element, context=context)
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
@@ -34,5 +46,4 @@ class EngineRegulationSubSectionParser(SubSectionParser):
             parsed = self._table_mapper.map(data)
             if parsed is not None:
                 element["data"] = parsed
-
 
