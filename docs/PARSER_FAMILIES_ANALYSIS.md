@@ -1,140 +1,56 @@
-# Parser Families Analysis
+# Parser Families Analysis (final)
 
-Analiza klas `*Parser` w katalogu `scrapers/parsers/` oraz poza nim.
+## Finalny, 3‑poziomowy podział kontraktów
 
----
+```text
+ParserABC[In, Out]
+├── HtmlTagParserABC[Out]
+│   ├── TableHtmlParserABC[Out]
+│   ├── ListHtmlParserABC[Out]
+│   ├── InfoboxHtmlParserABC[Out]
+│   ├── NavboxHtmlParserABC[Out]
+│   └── ParagraphHtmlParserABC[Out]
+└── HtmlSoupParserABC[Out]
+    └── SectionHtmlParserABC[Out]
+```
 
-## Tabela klas *Parser
-
-| Klasa | Moduł | Aktualna baza | Typ wejścia | Typ wyjścia | Parsuje HTML Wikipedii | Docelowa rodzina |
-|---|---|---|---|---|---|---|
-| `HtmlTableParser` | `scrapers.parsers.html_table` | `HtmlSoupParserABC` | `BeautifulSoup` | `list[dict]` | Nie (ogólny HTML) | **Table** |
-| `WikiTableParser` | `scrapers.parsers.wiki.table.__init__` | `WikiTableHtmlParser` | `Tag` | `WikiTableData` | Tak | **Table** |
-| `WikiTableBaseParser` | `scrapers.parsers.wiki.table.base` | `TableParserABC` | `dict` | `dict` | Nie (dane już sparsowane) | **Table** |
-| `WikiTableHtmlParser` | `scrapers.parsers.wiki.table.html` | `WikiTableParserABC` | `Tag` | `WikiTableData` | Tak | **Table** |
-| `F1StandingsTableParser` | `scrapers.parsers.section.standings.f1_table` | `HtmlTagParserABC` | `Tag` | `list[dict]` | Tak | **Table** |
-| `DriverOrderedTableParser` | `scrapers.parsers.table.base_ordered` | `WikiTableBaseMapper` | `dict` | `list[dict]` | Nie (mapuje dane) | **Table** |
-| `DriversListTableMapper` | `scrapers.parsers.drivers_list_table_mapper` | `DriverOrderedTableMapper` | `dict` | `list[dict]` | Nie | **Table** |
-| `WikiListParser` | `scrapers.parsers.wiki.base` | `HtmlTagParserABC` | `Tag` | `WikiRecords` | Tak (ABC) | **List** |
-| `WikiListElementParser` | `scrapers.parsers.wiki.element_list` | `WikiListParserABC` | `Tag` | `WikiListData` | Tak | **List** |
-| `ListElementParser` | `scrapers.parsers.list_element_parser` | `WikiListParserABC, ListElementParserABC` | `Tag` | `ListElementData` | Tak | **List** |
-| `IndianapolisOnlyListParser` | `scrapers.parsers.list_element.engine_manufacturers_list` | `ListElementParser` | `Tag` | `dict` | Tak | **List** |
-| `IndianapolisConstructorsListParser` | `scrapers.parsers.list_element.indianapolis_constructors` | `ListElementParser` | `Tag` | `dict` | Tak | **List** |
-| `PrivateerTeamsListParser` | `scrapers.parsers.privateer_teams_list` | `WikiListElementParser` | `Tag` | `dict` | Tak | **List** |
-| `BaseSectionParser` | `scrapers.parsers.wiki.base_section_parser` | `WikiSectionParserABC` | `BeautifulSoup` | `SectionParseResult` | Tak (ABC) | **Section** |
-| `NestedWikiSectionParser` | `scrapers.parsers.wiki.nested_wiki` | `BaseNestedSectionParser` | `Tag\|list[Tag]` | `dict` | Tak | **Section** |
-| `RecursiveSectionParser` | `scrapers.parsers.wiki.recursive` | `WikiParser` | `Tag\|list[Tag]` | `dict` | Tak (infrastruktura) | **Section** |
-| `TableSectionParser` | `scrapers.parsers.section.table.base` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section/Table** |
-| `CircuitEventsSectionParser` | `scrapers.parsers.section.table.circuit.events` | `TableSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `CircuitLapRecordsSectionParser` | `scrapers.parsers.section.table.circuit.lap_records` | `TableSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `ConstructorTablesSectionParser` | `scrapers.parsers.section.table.constructor.base` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `ConstructorHistorySectionParser` | `scrapers.parsers.section.table.constructor.history` | `ConstructorTablesSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `ConstructorChampionshipResultsSectionParser` | `scrapers.parsers.section.table.constructor.results.championship` | `ConstructorTablesSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `ConstructorCompleteF1ResultsSectionParser` | `scrapers.parsers.section.table.constructor.results.complete_f1` | `ConstructorTablesSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `DriverResultsSectionParser` | `scrapers.parsers.section.table.driver_results` | `TableSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `SeasonResultsSectionParser` | `scrapers.parsers.section.results.season` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `BaseDriverResultsSectionParser` | `scrapers.parsers.section.results.base_drivers_results` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `SeasonCalendarSectionParser` | `scrapers.parsers.section.season.calendar` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `SeasonDriversStandingsSectionParser` | `scrapers.parsers.section.standings.season.drivers` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `SeasonConstructorsStandingsSectionParser` | `scrapers.parsers.section.standings.season.constructors` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `CircuitsListSectionParser` | `scrapers.parsers.section.circuit.list` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `ConstructorsSectionParser` | `scrapers.parsers.section.constructors.base` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `GrandPrixByYearSectionParser` | `scrapers.parsers.section.grand_prix.by_year` | `BaseSectionParser` | `BeautifulSoup` | `SectionParseResult` | Tak | **Section** |
-| `HistorySectionParser` | `scrapers.parsers.wiki.engine_regulation` | `BaseNestedSectionParser` | `Tag\|list[Tag]` | `dict` | Tak | **Section** |
-| `CurrentRulesSectionParser` | `scrapers.parsers.wiki.engine_restrictions` | `BaseNestedSectionParser` | `Tag\|list[Tag]` | `dict` | Tak | **Section** |
-| `WikiInfoboxParser` | `scrapers.parsers.wiki.infobox` | `WikiInfoboxHtmlParser` | `Tag` | `dict` | Tak | **Infobox** |
-| `WikiInfoboxHtmlParser` | `scrapers.parsers.infobox.wiki_html` | `WikiInfoboxParserABC` | `BeautifulSoup` | `dict` | Tak | **Infobox** |
-| `WikiInfoboxElementParser` | `scrapers.parsers.wiki.element_infobox` | `WikiInfoboxParserABC` | `Tag` | `WikiInfoboxData` | Tak | **Infobox** |
-| `InfoboxFieldParser` | `scrapers.parsers.infobox.field.protocol` | `InfoboxFieldParserABC` | `dict` | `Any` | Nie (przetwarza dict) | **Infobox** |
-| `WikiNavboxElementParser` | `scrapers.parsers.wiki.element_navbox` | `WikiNavboxParserABC` | `Tag` | `WikiNavboxData` | Tak | **Navbox** |
-| `WikiParagraphParser` | `scrapers.parsers.wiki.paragraph` | `ParagraphElementParser` | `Tag` | `ParagraphElementData` | Tak | **Paragraph** |
-| `WikiParagraphElementParser` | `scrapers.parsers.wiki.element_paragraph` | `ParagraphElementParser` | `Tag` | `ParagraphElementData` | Tak | **Paragraph** |
-| `ParagraphElementParser` | `scrapers.parsers.paragraph_element_parser` | `BaseHtmlElementParser, ParagraphElementParserABC` | `Tag` | `ParagraphElementData` | Tak | **Paragraph** |
-| `SeasonCalendarParser` | `scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.calendar` | `BaseSeasonParser` | `BeautifulSoup` | `list[dict]` | Tak | **Table** |
-| `CancelledRoundsParser` | `scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.cancelled_rounds` | `BaseSeasonParser` | `BeautifulSoup` | `list[dict]` | Tak | **Table** |
-| `SeasonEntriesParser` | `scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.entries` | `BaseSeasonParser` | `BeautifulSoup` | `list[dict]` | Tak | **Table** |
-| `SeasonResultsParser` | `scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results` | `BaseSeasonParser` | `BeautifulSoup` | `list[dict]` | Tak | **Table** |
-| `SponsorPartsParser` | `scrapers.parsers.liveries.sponsorship.parts` | `ParserABC` | `str` | `list[tuple]` | Nie (parser tekstowy) | **Text/Utility** |
-| ~~`CircuitGeoParser`~~ → **`CircuitGeoExtractor`** | `scrapers.parsers.infobox.text_utils.circuit.geo` | `InfoboxTextUtils` | `dict` | `dict` | Nie (przetwarza dane) | **Text/Utility** |
-| ~~`CircuitHistoryParser`~~ → **`CircuitHistoryExtractor`** | `scrapers.parsers.infobox.text_utils.circuit.history` | `InfoboxTextUtils` | `dict` | `dict` | Nie | **Text/Utility** |
-| ~~`CircuitSpecsParser`~~ → **`CircuitSpecsExtractor`** | `scrapers.parsers.infobox.text_utils.circuit.specs` | `InfoboxTextUtils` | `dict` | `dict` | Nie | **Text/Utility** |
-| ~~`CircuitLapRecordParser`~~ → **`CircuitLapRecordExtractor`** | `scrapers.parsers.infobox.text_utils.circuit.lap_record` | `CircuitTextProcessing` | `dict` | `dict` | Nie | **Text/Utility** |
-| ~~`CircuitLayoutsParser`~~ → **`CircuitLayoutsExtractor`** | `scrapers.parsers.infobox.text_utils.circuit.layouts` | `SafeParsingMixin` | `list` | `list[dict]` | Nie | **Text/Utility** |
-| ~~`CircuitEntityParser`~~ → **`CircuitEntityExtractor`** | `scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base` | `CircuitTextProcessing` | `dict` | `dict` | Nie | **Text/Utility** |
-| ~~`CircuitAdditionalInfoParser`~~ → **`CircuitAdditionalInfoExtractor`** | `scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info` | `CircuitEntityExtractor` | `dict` | `dict` | Nie | **Text/Utility** |
-| `SponsorshipSectionParser` | `scrapers.parsers.wiki.sponsorship` | `WikiSectionParserBase` | `BeautifulSoup` | `list[dict]` | Tak | **Section** |
-| `TeamLiveriesSectionParser` | `scrapers.parsers.team_liveries_section` | `WikiSectionParserBase` | `BeautifulSoup` | `list[dict]` | Tak | **Section** |
+Dla kompatybilności utrzymane są aliasy (`ElementParserABC`, `*ElementParserABC`), ale nowe implementacje powinny być oparte o rodziny `*HtmlParserABC`.【F:scrapers/parsers/element_parser_abc.py†L1-L121】
 
 ---
 
-## Rodziny parserów
+## Reguły kontraktowe
 
-### Table (parsery tabel HTML)
-Klasy parsujące tabele HTML — zarówno z Wikipedii, jak i ogólne:
-- `HtmlTableParser` — ogólny parser tabel HTML (nie wiki-specyficzny)
-- `WikiTableParser`, `WikiTableHtmlParser`, `WikiTableBaseParser`
-- `F1StandingsTableParser` — parser klasyfikacji F1
-- `SeasonCalendarParser`, `CancelledRoundsParser`, `SeasonEntriesParser`, `SeasonResultsParser` i inne `Season*Parser` z `seasons_wiki_table_element_parser_base/` — parsery sezonowych tabel Wikipedii
-
-### List (parsery list HTML)
-Klasy parsujące listy `<ul>`/`<ol>`:
-- `WikiListParser` (ABC), `WikiListElementParser`
-- `ListElementParser`, `IndianapolisOnlyListParser`, `IndianapolisConstructorsListParser`
-- `PrivateerTeamsListParser`
-
-### Section (parsery sekcji artykułów)
-Klasy parsujące sekcje artykułów Wikipedii:
-- `BaseSectionParser` (kanoniczny base), `NestedWikiSectionParser`, `RecursiveSectionParser`
-- `TableSectionParser` i jego podklasy (`CircuitEventsSectionParser`, etc.)
-- `SeasonResultsSectionParser`, `SeasonCalendarSectionParser`, `SeasonDriversStandingsSectionParser`, etc.
-- `SponsorshipSectionParser`, `TeamLiveriesSectionParser` (liveries — inny interface)
-
-### Infobox (parsery infobox)
-- `WikiInfoboxParser`, `WikiInfoboxHtmlParser`, `WikiInfoboxElementParser`
-- `InfoboxFieldParser` — parser pojedynczych pól infobox (dict → Any)
-
-### Navbox (parsery navbox)
-- `WikiNavboxElementParser`
-
-### Paragraph (parsery paragrafów)
-- `WikiParagraphParser`, `WikiParagraphElementParser`, `ParagraphElementParser`
-
-### Text/Utility (pomocnicze przetwarzanie tekstu — NIE parsery HTML)
-Klasy, które przetwarzają dane w formacie `dict`/`str`, nie parsują HTML:
-- **`CircuitGeoExtractor`** (wcześniej: `CircuitGeoParser`)
-- **`CircuitHistoryExtractor`** (wcześniej: `CircuitHistoryParser`)
-- **`CircuitSpecsExtractor`** (wcześniej: `CircuitSpecsParser`)
-- **`CircuitLapRecordExtractor`** (wcześniej: `CircuitLapRecordParser`)
-- **`CircuitLayoutsExtractor`** (wcześniej: `CircuitLayoutsParser`)
-- **`CircuitEntityExtractor`** (wcześniej: `CircuitEntityParser`)
-- **`CircuitAdditionalInfoExtractor`** (wcześniej: `CircuitAdditionalInfoParser`)
-- `SponsorPartsParser` — parser tekstu (str → list[tuple]), nie HTML
+1. Klasa z sufiksem `*Parser` musi implementować publiczne `parse(...)` i realizować kontrakt parsera (`ParserABC` albo wyspecjalizowaną rodzinę HTML).【F:scrapers/parsers/parser_abc.py†L1-L16】【F:scrapers/parsers/tag_parser_abc.py†L1-L19】【F:scrapers/parsers/soup_parser_abc.py†L1-L22】
+2. Dla rodzin HTML wejściem jest HTML:
+   - `Tag` dla `Table/List/Infobox/Navbox/Paragraph`,
+   - `BeautifulSoup` (lub wejście sekcyjne kompatybilne z HTML) dla `Section`.
+3. Klasy operujące na strukturach pośrednich (`dict`, `list[dict]`) nie powinny używać sufiksu `Parser` — używamy `*Extractor` (wydobycie) lub `*Mapper` (mapowanie domenowe).
 
 ---
 
-## Klasy błędnie nazwane jako *Parser — zrealizowane renamingi
+## Parser vs Extractor vs Mapper
 
-Poniższe klasy zostały przemianowane, ponieważ nie implementowały kontraktu parserowcego
-(`ParserABC` / `WikiParser` / etc.) i nie przetwarzały HTML Wikipedii. Zamiast tego operowały
-na słownikach (`dict`) lub tekstach (`str`) będących już sparsowanymi danymi infobox.
+- **Parser**
+  - odpowiedzialność: parsowanie surowego wejścia (HTML / tekst) do ustrukturyzowanego payloadu,
+  - API: `parse(raw) -> parsed`.
 
-| Stara nazwa | Nowa nazwa | Powód |
-|---|---|---|
-| `CircuitGeoParser` | `CircuitGeoExtractor` | Dziedziczy po `InfoboxTextUtils`, wejście `dict` |
-| `CircuitHistoryParser` | `CircuitHistoryExtractor` | Dziedziczy po `InfoboxTextUtils`, wejście `dict` |
-| `CircuitSpecsParser` | `CircuitSpecsExtractor` | Dziedziczy po `InfoboxTextUtils`, wejście `dict` |
-| `CircuitLapRecordParser` | `CircuitLapRecordExtractor` | Dziedziczy po `CircuitTextProcessing`, wejście `dict` |
-| `CircuitLayoutsParser` | `CircuitLayoutsExtractor` | Dziedziczy po `SafeParsingMixin`, wejście `list` |
-| `CircuitEntityParser` | `CircuitEntityExtractor` | Dziedziczy po `CircuitTextProcessing`, wejście `dict` |
-| `CircuitAdditionalInfoParser` | `CircuitAdditionalInfoExtractor` | Dziedziczy po `CircuitEntityExtractor`, wejście `dict` |
+- **Extractor**
+  - odpowiedzialność: wydobycie informacji z *już sparsowanych* struktur pośrednich,
+  - API zwykle `extract(...)` lub domenowe metody pomocnicze,
+  - wejście: zwykle `dict` / `list[dict]` / DTO.
+
+- **Mapper**
+  - odpowiedzialność: mapowanie payloadu pośredniego na rekord domenowy,
+  - API: `map(raw) -> mapped` (ew. z dodatkowymi kontekstami).
 
 ---
 
-## Konwencja nazewnictwa
+## Rozdział `section/table/**` (parser HTML / classifier / mapper)
 
-- `*Parser` — klasa implementująca kontrakt parsera (`ParserABC` lub pochodna) z metodą `parse()`
-- `*Extractor` — klasa wyciągająca/transformująca dane z już sparsowanych struktur (dict/str)
-- `*Mapper` — klasa mapująca kolumny tabel (wiki table domain mapping)
-- `*SectionParser` — klasa parsująca sekcje artykułów Wikipedii (dziedziczy po `BaseSectionParser` lub `NestedWikiSectionParser`)
-- `*TableParser` — klasa parsująca tabele Wikipedii (dziedziczy po `WikiTableBaseMapper`, `WikiTableHtmlParser` lub `WikiTableElementParserBase`)
-- `*ListParser` — klasa parsująca listy HTML (dziedziczy po `WikiListParser` lub `WikiListParserABC`)
+W warstwie parsowania tabel sekcji zostały jawnie wydzielone trzy role:
+
+1. **Parser HTML tabel sekcji** – `SectionTablesHtmlParserABC` + domyślny `ArticleSectionTablesHtmlParser` (`BeautifulSoup -> list[dict]`).【F:scrapers/parsers/section/table/contracts.py†L1-L28】【F:scrapers/parsers/section/table/base.py†L1-L40】
+2. **Klasyfikator tabel** – `SectionTableClassifierABC` oraz implementacje domenowe (np. `DriverResultsSectionTableClassifier`, `CircuitLapRecordsTableClassifier`).【F:scrapers/parsers/section/table/contracts.py†L30-L36】【F:scrapers/parsers/section/table/driver_results.py†L1-L33】【F:scrapers/parsers/section/table/circuit/lap_records.py†L1-L37】
+3. **Mapper rekordów** – `SectionTableRecordMapperABC` oraz implementacje domenowe (np. `DriverResultsTableRecordMapper`, `CircuitEventsTableRecordMapper`, `CircuitLapRecordsTableRecordMapper`).【F:scrapers/parsers/section/table/contracts.py†L38-L51】【F:scrapers/parsers/section/table/driver_results.py†L35-L58】【F:scrapers/parsers/section/table/circuit/events.py†L1-L18】【F:scrapers/parsers/section/table/circuit/lap_records.py†L39-L67】
+
+Orkiestrację tych trzech kroków realizuje `TableSectionParser`.【F:scrapers/parsers/section/table/base.py†L68-L194】
