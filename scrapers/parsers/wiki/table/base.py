@@ -29,6 +29,9 @@ class WikiTableBaseParser(
     required_header_groups: tuple[frozenset[str], ...] = ()
     column_mapping: dict[str, str] = {}
 
+    def parse(self, raw: dict[str, Any]) -> dict[str, Any] | None:
+        return self.map(raw)
+
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         return self.map_fragment(fragment)
 
