@@ -5,8 +5,7 @@ from record_assembly_strategy.bundle_record_with_details import (
 )
 from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.component_metadata_wiki import build_component_metadata
-from scrapers.seasons.list_scraper import SeasonsListScraper
-from scrapers.seasons.single_scraper import SeasonsDetailScraper
+from scrapers.list_scraper_seasons import SeasonsListScraper
 
 
 class CompleteSeasonDataExtractor(CompleteExtractorBase):

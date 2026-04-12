@@ -48,7 +48,6 @@ class DataPaths:
         return self.raw / category / filename
 
 
-RuntimeScraperConfig = RuntimeConfig
 
 
 def __getattr__(name: str) -> object:
