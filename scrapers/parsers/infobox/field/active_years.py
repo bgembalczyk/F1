@@ -6,11 +6,11 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
+from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
 from scrapers.year_extractor import YearExtractor
 
 
-class ActiveYearsParser(InfoboxFieldParser):
+class ActiveYearsParser(HtmlInfoboxFieldParser):
     """Handles parsing of active years information."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
