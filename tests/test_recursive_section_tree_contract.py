@@ -1,8 +1,8 @@
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.section.sublevels.sub_section import SubSectionParser
-from scrapers.parsers.section.sublevels.sub_sub_section import SubSubSectionParser
-from scrapers.parsers.section.sublevels.sub_sub_sub_section import SubSubSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser
+from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
 
 
