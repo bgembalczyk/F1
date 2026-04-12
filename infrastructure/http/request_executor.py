@@ -1,5 +1,6 @@
 """Komponent wykonujący requesty HTTP z retry i backoff."""
 
+import asyncio
 import time
 from collections.abc import Callable
 from typing import Any
@@ -68,10 +69,61 @@ class RequestExecutor:
         msg = "Unreachable code"
         raise AssertionError(msg)
 
+    async def execute_async(
+        self,
+        *,
+        url: str,
+        headers: dict[str, str],
+        timeout: int,
+        request_func: Callable[..., Any],
+        request_exception_cls: type[Exception],
+    ) -> Any:
+        attempts = self._retry_policy.max_retries + 1
+
+        for attempt in range(attempts):
+            await self._rate_limiter.wait_async(url)
+
+            try:
+                response = await request_func(
+                    url,
+                    headers=headers,
+                    timeout=timeout,
+                )
+            except request_exception_cls as exc:
+                if attempt >= self._retry_policy.max_retries or not self._should_retry(
+                    response=None,
+                    exception=exc,
+                    attempt=attempt,
+                ):
+                    raise
+                await self._backoff_sleep_async(attempt)
+                continue
+
+            if self._should_retry(
+                response=response,
+                exception=None,
+                attempt=attempt,
+            ):
+                if attempt >= self._retry_policy.max_retries:
+                    response.raise_for_status()
+                await self._backoff_sleep_async(attempt)
+                continue
+
+            response.raise_for_status()
+            return response
+
+        msg = "Unreachable code"
+        raise AssertionError(msg)
+
     def _backoff_sleep(self, attempt: int) -> None:
         delay = self._retry_policy.backoff_seconds(attempt)
         if delay > 0:
             self._sleep_fn(delay)
+
+    async def _backoff_sleep_async(self, attempt: int) -> None:
+        delay = self._retry_policy.backoff_seconds(attempt)
+        if delay > 0:
+            await asyncio.sleep(delay)
 
     def _should_retry(
         self,

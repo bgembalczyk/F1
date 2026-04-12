@@ -48,6 +48,9 @@ class NoopRateLimiter:
     def wait(self, url: str) -> None:
         self.calls.append(url)
 
+    async def wait_async(self, url: str) -> None:
+        self.calls.append(url)
+
 
 class NeverRetryPolicy:
     @property
