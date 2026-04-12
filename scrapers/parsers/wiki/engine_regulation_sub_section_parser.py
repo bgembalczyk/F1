@@ -1,7 +1,6 @@
 from typing import Any
 
-from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
-from scrapers.parsers.wiki.engine_regulation_wiki_table import EngineRegulationTableMapper
+from scrapers.parsers.engine_regulation_table_mapper import EngineRegulationTableMapper
 from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
 
 
@@ -37,10 +36,3 @@ class EngineRegulationSubSectionParser(SubSectionParser):
                 element["data"] = parsed
 
 
-class HistorySectionParser(BaseNestedSectionParser):
-    heading_class = "mw-heading3"
-    output_key = "sub_sections"
-
-    def __init__(self) -> None:
-        self.child_parser = EngineRegulationSubSectionParser()
-        super().__init__(child_parser=self.child_parser)

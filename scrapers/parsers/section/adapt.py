@@ -8,7 +8,7 @@ from scrapers.parsers.section.helpers import best_fuzzy_ratio
 from scrapers.parsers.section.helpers import get_section_profile
 from scrapers.parsers.section.match.tree import SectionTree
 from scrapers.parsers.section.match.tree import SectionTreeMatch
-from scrapers.parsers.wiki.normalization import normalize_section_text
+from scrapers.parsers.wiki.wiki_normalization import normalize_section_text
 
 if TYPE_CHECKING:
     from collections.abc import Iterable

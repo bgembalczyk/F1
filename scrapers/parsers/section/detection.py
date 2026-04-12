@@ -11,7 +11,7 @@ from scrapers.helpers.constants import HEADING_TAGS
 from scrapers.parsers.section.helpers import best_fuzzy_ratio
 from scrapers.parsers.section.helpers import get_section_profile
 from scrapers.parsers.section.match.dataclass import SectionMatch
-from scrapers.parsers.wiki.normalization import normalize_section_text
+from scrapers.parsers.wiki.wiki_normalization import normalize_section_text
 from scrapers.section.aliases import builtin_aliases_for_target
 
 if TYPE_CHECKING:

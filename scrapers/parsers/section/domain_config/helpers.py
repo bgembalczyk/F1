@@ -4,7 +4,7 @@ from collections import defaultdict
 from typing import TYPE_CHECKING
 
 from scrapers.parsers.section.domain_config.dataclass import SectionDomainConfig
-from scrapers.parsers.wiki.normalization import normalize_section_text
+from scrapers.parsers.wiki.wiki_normalization import normalize_section_text
 
 if TYPE_CHECKING:
     from collections.abc import Mapping

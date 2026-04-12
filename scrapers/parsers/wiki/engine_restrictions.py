@@ -1,8 +1,7 @@
 from typing import Any
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
-from scrapers.parsers.wiki.engine_restrictions_wiki_table import EngineRestrictionsTableMapper
+from scrapers.parsers.engine_restrictions_table_mapper import EngineRestrictionsTableMapper
 from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
 
 
@@ -28,10 +27,3 @@ class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
             self._apply_engine_restrictions_table_parser(section)
 
 
-class CurrentRulesSectionParser(BaseNestedSectionParser):
-    heading_class = "mw-heading3"
-    output_key = "sub_sections"
-
-    def __init__(self) -> None:
-        self.child_parser = EngineSubSectionParser()
-        super().__init__(child_parser=self.child_parser)

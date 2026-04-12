@@ -7,7 +7,7 @@ from scrapers.parsers.section.results.base_drivers_results import (
     BaseDriverResultsSectionParser,
 )
 from scrapers.parsers.section.table.driver_results import DriverResultsSectionParser
-from scrapers.parsers.wiki.normalization import normalize_section_text
+from scrapers.parsers.wiki.wiki_normalization import normalize_section_text
 from scrapers.section.constants import SECTION_CONFIGS
 from scrapers.services.section.extraction.base import BaseSectionExtractionService
 

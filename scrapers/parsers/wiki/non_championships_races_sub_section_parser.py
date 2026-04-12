@@ -1,15 +1,10 @@
-from __future__ import annotations
-
-import json
 from typing import Any
 
 from bs4 import Tag
 
 from scrapers.parsers.non_championships_races_table_mapper import NonChampionshipsRacesTableMapper
-from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
-from scrapers.parsers.world_championships_races_table_mapper import WorldChampionshipsRacesTableMapper
 
 
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):
@@ -95,48 +90,3 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
         rows = data.get("rows", [])
         rows_count = len(rows) if isinstance(rows, list) else -1
         return headers, rows_count
-
-
-class RedFlaggedRacesSectionParser(NestedWikiSectionParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self.child_parser = NonChampionshipsRacesSubSectionParser()
-        self._world_championship_table_mapper = WorldChampionshipsRacesTableMapper()
-
-    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super()._parse_group(elements, context=context)
-        self._world_championship_table_mapper.apply_to_payload(parsed)
-        return parsed
-
-    @staticmethod
-    def collect_rows(
-        payload: dict[str, Any],
-        *,
-        table_type: str,
-    ) -> list[dict[str, Any]]:
-        rows: list[dict[str, Any]] = []
-
-        def visit(node: Any) -> None:
-            if isinstance(node, dict):
-                if node.get("table_type") == table_type:
-                    table_rows = node.get("domain_rows", [])
-                    if isinstance(table_rows, list):
-                        rows.extend(
-                            [row for row in table_rows if isinstance(row, dict)],
-                        )
-                for value in node.values():
-                    visit(value)
-            elif isinstance(node, list):
-                for item in node:
-                    visit(item)
-
-        visit(payload)
-        deduplicated: list[dict[str, Any]] = []
-        seen: set[str] = set()
-        for row in rows:
-            signature = json.dumps(row, sort_keys=True, ensure_ascii=False)
-            if signature in seen:
-                continue
-            seen.add(signature)
-            deduplicated.append(row)
-        return deduplicated

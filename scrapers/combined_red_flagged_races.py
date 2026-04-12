@@ -22,7 +22,7 @@ from scrapers.parsers.table.red_flagged_races_wiki_table import map_drivers_cell
 from scrapers.parsers.table.red_flagged_races_wiki_table import map_winner_cell
 from scrapers.parsers.table.red_flagged_races_wiki_table import try_int
 from scrapers.parsers.wiki.body_content import BodyContentAssembler
-from scrapers.parsers.wiki.red_flagged_races import RedFlaggedRacesSectionParser
+from scrapers.parsers.wiki.red_flagged_races_section_parser import RedFlaggedRacesSectionParser
 from scrapers.scraper_wiki import WikiScraper
 from scrapers.source_catalog import RED_FLAGGED_RACES
 from scrapers.transformers.record.failed_to_make_restart import (
