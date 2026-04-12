@@ -11,7 +11,7 @@ from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 class SeasonsSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = SeasonsTableMapper()
+        self._table_mapper = SeasonsTableMapper()
 
     def parse(
         self,
@@ -45,6 +45,6 @@ class SeasonsSectionParser(NestedWikiSectionParser):
             data = element.get("data")
             if not isinstance(data, dict):
                 continue
-            parsed = self._table_parser.map(data)
+            parsed = self._table_mapper.map(data)
             if parsed is not None:
                 element["data"] = parsed

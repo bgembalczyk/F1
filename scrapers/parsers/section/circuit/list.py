@@ -7,6 +7,7 @@ from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.table.article import ArticleTablesParser
 from scrapers.parsers.table.table.circuit_list import CircuitsListTableMapper
+from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
 
 if TYPE_CHECKING:
@@ -21,6 +22,8 @@ class CircuitsListSectionParser(BaseSectionParser):
         section_label: str | None = None,
         include_urls: bool,
         normalize_empty_values: bool,
+        table_html_parser: WikiTableHtmlParser | None = None,
+        table_domain_mapper: CircuitsListTableMapper | None = None,
     ) -> None:
         self._parser = TableSectionParser(
             config=config,
@@ -30,11 +33,15 @@ class CircuitsListSectionParser(BaseSectionParser):
             include_urls=include_urls,
             normalize_empty_values=normalize_empty_values,
         )
+        self._table_html_parser = table_html_parser or WikiTableHtmlParser()
+        self._table_domain_mapper = table_domain_mapper or CircuitsListTableMapper()
 
     def _ensure_supported_table(self, fragment: BeautifulSoup) -> None:
-        table_mapping_mapper = CircuitsListTableMapper()
+        first_table = fragment.find("table", class_="wikitable")
+        if first_table is not None:
+            self._table_html_parser.parse(first_table)
         parsed_tables = ArticleTablesParser(
-            specialized_mappers=[table_mapping_mapper],
+            specialized_mappers=[self._table_domain_mapper],
         ).parse(fragment)
         has_circuits_table = any(
             table.get("table_type") == "circuits_list" for table in parsed_tables

@@ -15,8 +15,7 @@ class HtmlElementBuilder:
             paragraph_parser=ParagraphElementParser(),
             figure_parser=FigureElementParser(),
             list_parser=ListElementParser(),
-            table_parser=TableElementParser(),
+            table_html_parser=TableElementParser(),
             navbox_parser=NavboxElementParser(),
             references_wrap_parser=ReferencesWrapParser(),
         )
-

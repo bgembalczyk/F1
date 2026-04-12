@@ -54,7 +54,7 @@ class EngineManufacturersSectionParser(ApplyForElementsMixin, NestedWikiSectionP
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = IndianapolisOnlySubSectionParser()
-        self._table_parser = EngineManufacturersTableMapper()
+        self._table_mapper = EngineManufacturersTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
