@@ -9,14 +9,14 @@ from scrapers.helpers.transformers import build_transformers
 from scrapers.infobox.schemas.driver import DRIVER_GENERAL_SCHEMA
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
+from scrapers.parsers.default_driver_infobox_provider import DefaultDriverInfoboxProvider
+from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
 from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
-from scrapers.parsers.infobox.providers.drivers.default import DefaultDriverInfoboxProvider
-from scrapers.parsers.infobox.providers.drivers.protocol import DriverInfoboxProviderABC
-from scrapers.parsers.wiki.infobox import WikiInfoboxElementParserBase
+from scrapers.parsers.wiki_infobox_parser_abc import WikiInfoboxParserABC
 
 
-class DriverInfoboxParser(WikiInfoboxElementParserBase):
+class DriverInfoboxParser(WikiInfoboxParserABC):
     IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(

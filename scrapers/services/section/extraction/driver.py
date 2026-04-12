@@ -5,7 +5,7 @@ from scrapers.adapters.section.entry import SectionAdapterEntry
 from scrapers.parsers.section.results.base_drivers_results import (
     BaseDriverResultsSectionParser,
 )
-from scrapers.parsers.section.table.results.driver import DriverResultsSectionParser
+from scrapers.parsers.section.table.results.driver_results import DriverResultsSectionParser
 from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
 from scrapers.parsers.section.wiki.normalization import normalize_section_text
 from scrapers.section.constants import SECTION_CONFIGS

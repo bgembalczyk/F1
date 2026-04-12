@@ -7,12 +7,9 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
-from scrapers.parsers.contracts.wiki_infobox_parser_abc import WikiInfoboxParserABC
-from scrapers.parsers.html_elements.infobox_element_parser import InfoboxElementParser
+from scrapers.parsers.infobox_element_parser import InfoboxElementParser
+from scrapers.parsers.wiki_infobox_parser_abc import WikiInfoboxParserABC
 
-
-# Backward-compatible base name used across legacy infobox parsers.
-WikiInfoboxElementParserBase = WikiInfoboxParserABC
 
 
 class WikiInfoboxHtmlParser(WikiInfoboxParserABC):
@@ -113,4 +110,4 @@ class WikiInfoboxHtmlParser(WikiInfoboxParserABC):
 
 
 
-__all__ = ["WikiInfoboxElementParserBase", "WikiInfoboxHtmlParser"]
+__all__ = ["WikiInfoboxHtmlParser"]
