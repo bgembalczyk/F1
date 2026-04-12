@@ -1,5 +1,3 @@
-from typing import Any
-
 from models.records.factories.mapping import MappingRecordFactory
 from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.append_links import AppendLinksColumn
@@ -8,41 +6,12 @@ from scrapers.columns.types.skip import SkipColumn
 from scrapers.config_table import TableScraperConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.section.legacy_lists.tyres import ManufacturersSectionParser
+from scrapers.parsers.section.legacy_lists.tyres import TyreManufacturersBySeasonSubSectionParser
+from scrapers.parsers.section.legacy_lists.tyres import TyreManufacturersBySeasonTableMapper
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import TYRES
 from scrapers.table_schema_dsl import TableSchemaDSL
-
-
-class TyreManufacturersBySeasonTableMapper(WikiTableBaseMapper):
-    table_type = "tyre_manufacturers_by_season"
-    missing_columns_policy = "ignore"
-    extra_columns_policy = "ignore"
-
-    _column_mapping = {
-        "Season": "seasons",
-        "Manufacturer 1": "manufacturers",
-        "Manufacturer 2": "manufacturers",
-        "Manufacturer 3": "manufacturers",
-        "Manufacturer 4": "manufacturers",
-        "Manufacturer 5": "manufacturers",
-        "Manufacturer 6": "manufacturers",
-        "Wins": "wins",
-    }
-
-    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        required_headers = {"Season", "Manufacturer 1", "Wins"}
-        return required_headers.issubset(set(headers))
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        return {
-            header: self._column_mapping[header]
-            for header in headers
-            if header in self._column_mapping
-        }
-
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=[
@@ -56,23 +25,6 @@ TABLE_SCHEMA = TableSchemaDSL(
         ColumnSpec("Wins", "wins", SkipColumn()),
     ],
 )
-
-
-class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self._table_mapper = TyreManufacturersBySeasonTableMapper()
-
-    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super()._parse_group(elements, context=context)
-        self._table_mapper.apply_to_payload(parsed)
-        return parsed
-
-
-class ManufacturersSectionParser(NestedWikiSectionParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self.child_parser = TyreManufacturersBySeasonSubSectionParser()
 
 
 class TyreManufacturersScraper(F1TableScraper):
@@ -103,3 +55,14 @@ class TyreManufacturersScraper(F1TableScraper):
         parser = ManufacturersSectionParser()
         self.section_parser = parser
         self.body_content_parser.content_text_parser.section_parser = parser
+
+
+TyreManufacturersBySeasonTableParser = TyreManufacturersBySeasonTableMapper
+
+__all__ = [
+    "ManufacturersSectionParser",
+    "TyreManufacturersBySeasonSubSectionParser",
+    "TyreManufacturersBySeasonTableMapper",
+    "TyreManufacturersBySeasonTableParser",
+    "TyreManufacturersScraper",
+]
