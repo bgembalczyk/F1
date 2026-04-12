@@ -5,8 +5,8 @@ from scrapers.base.options import ScraperOptions
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
 from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from scrapers.parsers.wiki.content_text import ContentTextParser
-from scrapers.parsers.section.wiki.adapt import collect_section_elements
-from scrapers.parsers.section.wiki.adapt import find_section_tree
+from scrapers.parsers.section.adapt import collect_section_elements
+from scrapers.parsers.section.adapt import find_section_tree
 
 
 def test_find_section_tree_with_multilevel_sections_and_alias() -> None:

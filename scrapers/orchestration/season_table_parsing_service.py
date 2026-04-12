@@ -11,7 +11,7 @@ from scrapers.columns.types.position import PositionColumn
 from scrapers.columns.types.race_result import RaceResultColumn
 from scrapers.config_table import TableScraperConfig
 from scrapers.options import ScraperOptions
-from scrapers.parsers.table.html_table import HtmlTableParser
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.standings_scraper_seasons import F1StandingsTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL

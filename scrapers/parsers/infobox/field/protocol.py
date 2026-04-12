@@ -36,13 +36,8 @@ class InfoboxRowsParser(
     def parse(self, rows: list[dict[str, Any]]) -> Output: ...
 
 
-# Backward-compatible alias for legacy imports.
-InfoboxFieldParser = HtmlInfoboxFieldParser
-
-
 __all__ = [
     "HtmlInfoboxFieldParser",
     "InfoboxRowsParser",
-    "InfoboxFieldParser",
     "Output",
 ]

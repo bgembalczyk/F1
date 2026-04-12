@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.table.html_table import HtmlTableParser
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.wiki.table.circuit_list_table_mapper import CircuitsListTableMapper
 from scrapers.parsers.wiki.table.mapped.lap_records_wiki_table_mapper import LapRecordsWikiTableMapper
 from scrapers.parsers.wiki.table.mapped.race_results_table_mapper import RaceResultsTableMapper

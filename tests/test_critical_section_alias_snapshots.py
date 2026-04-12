@@ -3,8 +3,8 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
-from scrapers.parsers.section.wiki.detection import find_section_heading
-from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
+from scrapers.parsers.section.detection import find_section_heading
+from scrapers.parsers.section.helpers import profile_entry_aliases
 
 
 def fixture(name: str) -> BeautifulSoup:
