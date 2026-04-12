@@ -6,7 +6,7 @@ CANONICAL_MODULE_CLASS_MATRIX = {
         "scrapers.drivers.list_scraper": "DriversListScraper",
         "scrapers.drivers.single_scraper": "DriversDetailScraper",
         "scrapers.drivers_pipeline_service": "DriversPipelineService",
-        "scrapers.drivers_factory": "DriversFactory",
+        "scrapers.drivers_factory": "DriverScraperCompositionFactory",
     },
     "constructors": {
         "scrapers.constructors.list_scraper": "ConstructorsListScraper",

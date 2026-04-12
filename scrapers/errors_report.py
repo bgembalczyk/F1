@@ -7,6 +7,7 @@ from datetime import timezone
 from pathlib import Path
 
 from scrapers.error_codes import resolve_error_code
+from scrapers.errors.base import ScraperError
 
 
 @dataclass(frozen=True)

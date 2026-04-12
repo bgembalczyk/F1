@@ -8,10 +8,22 @@ REMOVED_MODULES = (
     "scrapers.parsers.wiki.parser_families",
 )
 
+REMOVED_FILES = (
+    Path("scrapers/parsers/wiki/section_nodes/list.py"),
+    Path("scrapers/parsers/wiki/section_nodes/table.py"),
+    Path("scrapers/parsers/wiki/section_nodes/infobox.py"),
+    Path("scrapers/parsers/wiki/section_nodes/section.py"),
+    Path("scrapers/parsers/wiki/section_nodes/navbox.py"),
+    Path("scrapers/parsers/wiki/section_nodes/figure.py"),
+)
+
 REMOVED_SYMBOLS_BY_MODULE = {
     "scrapers.parsers.contracts.wiki_elements": {
         "WikiFigureHtmlParserABC",
+        "WikiInfoboxSectionParserABC",
+        "WikiListSectionParserABC",
         "WikiNavboxHtmlParserABC",
+        "WikiTableSectionParserABC",
     },
 }
 
@@ -25,6 +37,7 @@ def test_removed_wiki_contract_alias_modules_stay_deleted() -> None:
     for module_path in (
         Path("scrapers/parsers/wiki/hierarchy.py"),
         Path("scrapers/parsers/wiki/parser_families.py"),
+        *REMOVED_FILES,
     ):
         assert not module_path.exists(), f"Alias module restored: {module_path}"
 
