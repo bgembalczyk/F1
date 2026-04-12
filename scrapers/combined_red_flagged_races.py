@@ -16,9 +16,6 @@ from scrapers.parsers.table.red_flagged_races import map_drivers_cell
 from scrapers.parsers.table.red_flagged_races import map_winner_cell
 from scrapers.parsers.table.red_flagged_races import try_int
 from scrapers.parsers.table.red_flagged_races_wiki_table import WIKIPEDIA_BASE_URL
-from scrapers.parsers.table.red_flagged_races_wiki_table import BaseRedFlaggedRacesTableParser
-from scrapers.parsers.table.red_flagged_races_wiki_table import NonChampionshipsRacesTableParser
-from scrapers.parsers.table.red_flagged_races_wiki_table import WorldChampionshipsRacesTableParser
 from scrapers.parsers.table.red_flagged_races_wiki_table import build_full_url
 from scrapers.parsers.table.red_flagged_races_wiki_table import extract_rich_cell
 from scrapers.parsers.table.red_flagged_races_wiki_table import map_drivers_cell

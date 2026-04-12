@@ -1,6 +1,0 @@
-from scrapers.parsers.wiki.red_flagged_races_wiki_table import *
-
-NonChampionshipsRacesTableParser = NonChampionshipsRacesTableMapper
-WorldChampionshipsRacesTableParser = WorldChampionshipsRacesTableMapper
-
-BaseRedFlaggedRacesTableParser = BaseRedFlaggedRacesTableMapper
