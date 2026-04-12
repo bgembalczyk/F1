@@ -14,6 +14,8 @@ PARSER_NAMING_SCOPE = (
     Path("scrapers/parsers/mixins"),
     Path("scrapers/parsers/rules.py"),
 )
+PARSER_COMPAT_ALIAS = ("SectionParser", "SectionParserABC")
+PARSER_PROTOCOL_IMPORT_PREFIX = "scrapers.parsers.section"
 
 
 def load_architecture_rules() -> Any:
@@ -194,6 +196,65 @@ def check_parser_naming_contracts() -> list[str]:
     return violations
 
 
+def _matches_parser_protocol_module(module_name: str) -> bool:
+    return module_name.startswith(PARSER_PROTOCOL_IMPORT_PREFIX) and (
+        module_name == f"{PARSER_PROTOCOL_IMPORT_PREFIX}.protocol"
+        or ".protocol." in module_name
+        or module_name.endswith(".protocol")
+    )
+
+
+def check_parser_compat_imports_and_aliases() -> list[str]:
+    violations: list[str] = []
+    for py_file in Path("scrapers").rglob("*.py"):
+        module = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
+        for node in ast.walk(module):
+            if isinstance(node, ast.ImportFrom) and node.module:
+                if _matches_parser_protocol_module(node.module):
+                    violations.append(
+                        "Forbidden parser compat import: "
+                        f"{py_file}:{node.lineno} imports from '{node.module}'. "
+                        "Use canonical parser ABC modules directly.",
+                    )
+                for alias in node.names:
+                    if (
+                        alias.name == PARSER_COMPAT_ALIAS[1]
+                        and alias.asname == PARSER_COMPAT_ALIAS[0]
+                    ):
+                        violations.append(
+                            "Forbidden parser compat alias: "
+                            f"{py_file}:{node.lineno} uses "
+                            f"'{PARSER_COMPAT_ALIAS[1]} as {PARSER_COMPAT_ALIAS[0]}'.",
+                        )
+                    if alias.name == PARSER_COMPAT_ALIAS[0]:
+                        violations.append(
+                            "Forbidden parser compat import: "
+                            f"{py_file}:{node.lineno} imports '{PARSER_COMPAT_ALIAS[0]}'. "
+                            "Use SectionParserABC directly.",
+                        )
+            elif isinstance(node, ast.Import):
+                for alias in node.names:
+                    if _matches_parser_protocol_module(alias.name):
+                        violations.append(
+                            "Forbidden parser compat import: "
+                            f"{py_file}:{node.lineno} imports '{alias.name}'. "
+                            "Use canonical parser ABC modules directly.",
+                        )
+            elif isinstance(node, ast.Assign):
+                for target in node.targets:
+                    if isinstance(target, ast.Name) and target.id == PARSER_COMPAT_ALIAS[0]:
+                        if (
+                            isinstance(node.value, ast.Name)
+                            and node.value.id == PARSER_COMPAT_ALIAS[1]
+                        ):
+                            violations.append(
+                                "Forbidden parser compat alias: "
+                                f"{py_file}:{node.lineno} defines "
+                                f"'{PARSER_COMPAT_ALIAS[0]} = {PARSER_COMPAT_ALIAS[1]}'.",
+                            )
+    return violations
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Fast architecture boundary checks for local lint/CI.",
@@ -231,6 +292,7 @@ def main() -> int:
         *check_sections_single_scraper_boundary(root, full_domains, rules),
         *check_cross_domain_imports(root, all_domains, rules),
         *check_parser_naming_contracts(),
+        *check_parser_compat_imports_and_aliases(),
     ]
 
     if errors:

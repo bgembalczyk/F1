@@ -92,33 +92,33 @@ def test_main_returns_failure_and_success_with_expected_stdout(
     rules = rules_stub()
     monkeypatch.setattr(
         check_architecture_rules,
-        "_load_architecture_rules",
+        "load_architecture_rules",
         lambda: rules,
     )
     monkeypatch.setattr(
         check_architecture_rules,
-        "_detect_relevant_domains",
+        "detect_relevant_domains",
         lambda *_args, **_kwargs: set(),
     )
 
     monkeypatch.setattr(
         check_architecture_rules,
-        "_check_required_layout",
+        "check_required_layout",
         lambda *_a, **_k: ["broken"],
     )
     monkeypatch.setattr(
         check_architecture_rules,
-        "_check_layer_boundaries",
+        "check_layer_boundaries",
         lambda *_a, **_k: [],
     )
     monkeypatch.setattr(
         check_architecture_rules,
-        "_check_sections_single_scraper_boundary",
+        "check_sections_single_scraper_boundary",
         lambda *_a, **_k: [],
     )
     monkeypatch.setattr(
         check_architecture_rules,
-        "_check_cross_domain_imports",
+        "check_cross_domain_imports",
         lambda *_a, **_k: [],
     )
 
@@ -129,7 +129,7 @@ def test_main_returns_failure_and_success_with_expected_stdout(
 
     monkeypatch.setattr(
         check_architecture_rules,
-        "_check_required_layout",
+        "check_required_layout",
         lambda *_a, **_k: [],
     )
     assert check_architecture_rules.main() == 0
@@ -151,3 +151,48 @@ def test_cli_invalid_argument_reports_stderr(
     err = capsys.readouterr().err
     assert "usage:" in err
     assert "unrecognized arguments" in err
+
+
+def test_check_parser_compat_imports_and_aliases_flags_forbidden_patterns(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    scrapers_dir = tmp_path / "scrapers" / "parsers"
+    scrapers_dir.mkdir(parents=True)
+    parser_file = scrapers_dir / "example.py"
+    parser_file.write_text(
+        (
+            "from scrapers.parsers.section.protocol import SectionParser\n"
+            "from scrapers.parsers.section_parser_abc import SectionParserABC as SectionParser\n"
+            "SectionParser = SectionParserABC\n"
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.chdir(tmp_path)
+
+    violations = check_architecture_rules.check_parser_compat_imports_and_aliases()
+
+    assert len(violations) == 4
+    assert any("Forbidden parser compat import" in msg for msg in violations)
+    assert any("Forbidden parser compat alias" in msg for msg in violations)
+
+
+def test_check_parser_compat_imports_and_aliases_accepts_canonical_imports(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    scrapers_dir = tmp_path / "scrapers" / "adapters"
+    scrapers_dir.mkdir(parents=True)
+    parser_file = scrapers_dir / "entry.py"
+    parser_file.write_text(
+        (
+            "from scrapers.parsers.section_parser_abc import SectionParserABC\n"
+            "from scrapers.parsers.section_structure_parser_abc import SectionStructureParserABC\n"
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.chdir(tmp_path)
+
+    violations = check_architecture_rules.check_parser_compat_imports_and_aliases()
+
+    assert violations == []
