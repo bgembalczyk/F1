@@ -2,9 +2,9 @@
 from bs4 import BeautifulSoup
 
 from scrapers.helpers.html_utils import find_heading
-from scrapers.parsers.section.wiki.detection import find_section_heading
-from scrapers.parsers.section.wiki.detection import make_stable_section_id
-from scrapers.parsers.section.wiki.detection import normalize_section_slug
+from scrapers.parsers.section.detection import find_section_heading
+from scrapers.parsers.section.detection import make_stable_section_id
+from scrapers.parsers.section.detection import normalize_section_slug
 
 
 def test_find_section_heading_prefers_exact_id_over_text() -> None:

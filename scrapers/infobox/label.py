@@ -11,6 +11,7 @@ from scrapers.parsers.infobox.constants import TEAM_LABELS
 from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.callable import CallableInfoboxFieldParser
 from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
+from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
 from scrapers.parsers.infobox.field.base import InfoboxFieldParser
 from scrapers.numeric_extractor import NumericExtractor
 
@@ -71,7 +72,7 @@ def parser_for_label(
     *,
     label: str | None,
     cell_extractor: InfoboxCellValueExtractor,
-) -> InfoboxFieldParser[Any]:
+) -> HtmlInfoboxFieldParser[Any]:
     return field_parsers_registry(cell_extractor).parser_for_label(label)
 
 

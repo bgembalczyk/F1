@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.table.html_table import HtmlTableParser
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.scraper_table import F1TableScraper
 
 

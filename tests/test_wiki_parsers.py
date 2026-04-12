@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.helpers import split_into_parts
-from scrapers.parsers.section.wiki import SectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser as SectionParser
 from scrapers.parsers.wiki.base import WikiParser
 from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
 from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser

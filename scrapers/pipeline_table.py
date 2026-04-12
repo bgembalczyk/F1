@@ -24,7 +24,7 @@ from scrapers.logging import get_logger
 from scrapers.normalization import EmptyValuePolicy
 from scrapers.normalization import normalize_record_values
 from scrapers.normalization_utils import normalize_empty
-from scrapers.parsers.table.html_table import HtmlTableParser
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.row_table import TableRow
 from scrapers.sentinels_table import SKIP_SENTINEL
 from scrapers.types import JsonValue

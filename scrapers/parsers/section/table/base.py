@@ -14,7 +14,7 @@ from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.parsers.section.table.contracts import SectionTablesHtmlParserABC
 from scrapers.parsers.wiki.section.base import BaseSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.table.html_table import HtmlTableParser
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result
 
