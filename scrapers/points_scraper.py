@@ -11,6 +11,10 @@ from scrapers.parsers.wiki.body_content import BodyContentParser
 from scrapers.parsers.section.points import PointsScoringSystemsSectionParser
 from scrapers.parsers.section.points import ShortenedRacesSubSubSectionParser
 from scrapers.parsers.section.points import SprintRacesSubSubSectionParser
+from scrapers.parsers.wiki.body_content import BodyContentAssembler
+from scrapers.parsers_points import PointsScoringSystemsSectionParser
+from scrapers.parsers_points import ShortenedRacesSubSubSectionParser
+from scrapers.parsers_points import SprintRacesSubSubSectionParser
 from scrapers.transformers.record.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
 )
@@ -53,7 +57,7 @@ class PointsScraper(BasePointsScraper):
         )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        body_content = BodyContentParser.find_body_content(soup)
+        body_content = BodyContentAssembler.find_body_content(soup)
         parsed = self.body_content_parser.parse(body_content) if body_content else {}
         raw_history_records = self.section_parser.collect_rows(parsed)
         history_records = PointsScoringSystemsHistoryTransformer().transform(

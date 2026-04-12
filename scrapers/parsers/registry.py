@@ -3,9 +3,15 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Final
 from typing import Literal
+from typing import TypeAlias
+
+from scrapers.parsers.wiki.hierarchy import ElementParserABC
+from scrapers.parsers.wiki.hierarchy import ListElementParserABC
+from scrapers.parsers.wiki.hierarchy import SectionElementParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
+ParserBase: TypeAlias = type[ElementParserABC[object, object]]
 
 
 @dataclass(frozen=True)
@@ -18,49 +24,49 @@ class ParsingRegistryKey:
 @dataclass(frozen=True)
 class ParsingRegistryEntry:
     key: ParsingRegistryKey
-    parser: str
+    parser_base: ParserBase
 
 
 DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = (
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="drivers", element_type="list"),
-        parser="_parse_layer0_seed",
+        parser_base=ListElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="drivers", element_type="section"),
-        parser="_parse_layer1_details",
+        parser_base=SectionElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="constructors", element_type="list"),
-        parser="_parse_layer0_seed",
+        parser_base=ListElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="constructors", element_type="section"),
-        parser="_parse_layer1_details",
+        parser_base=SectionElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="circuits", element_type="list"),
-        parser="_parse_layer0_seed",
+        parser_base=ListElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="circuits", element_type="section"),
-        parser="_parse_layer1_details",
+        parser_base=SectionElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="seasons", element_type="list"),
-        parser="_parse_layer0_seed",
+        parser_base=ListElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="seasons", element_type="section"),
-        parser="_parse_layer1_details",
+        parser_base=SectionElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="grands_prix", element_type="list"),
-        parser="_parse_layer0_seed",
+        parser_base=ListElementParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="grands_prix", element_type="section"),
-        parser="_parse_layer1_details",
+        parser_base=SectionElementParserABC,
     ),
 )
 
@@ -101,13 +107,13 @@ def validate_parser_registry(
         raise ValueError(f"Missing parser registrations for keys: {details}")
 
 
-def resolve_parser_name(
+def resolve_parser_base(
     *,
     domain: DomainName,
     element_type: ElementType,
     section_id: str | None = None,
     registry: tuple[ParsingRegistryEntry, ...] = DEFAULT_PARSER_REGISTRY,
-) -> str:
+) -> ParserBase:
     key = ParsingRegistryKey(
         domain=domain,
         element_type=element_type,
@@ -115,10 +121,25 @@ def resolve_parser_name(
     )
     for entry in registry:
         if entry.key == key:
-            return entry.parser
+            return entry.parser_base
     raise LookupError(
         "No parser registration for " f"{domain}:{element_type}:{section_id or '-'}",
     )
+
+
+def resolve_parser_name(
+    *,
+    domain: DomainName,
+    element_type: ElementType,
+    section_id: str | None = None,
+    registry: tuple[ParsingRegistryEntry, ...] = DEFAULT_PARSER_REGISTRY,
+) -> str:
+    return resolve_parser_base(
+        domain=domain,
+        element_type=element_type,
+        section_id=section_id,
+        registry=registry,
+    ).__name__
 
 
 __all__ = [
@@ -128,6 +149,7 @@ __all__ = [
     "ParsingRegistryEntry",
     "ParsingRegistryKey",
     "REQUIRED_PRODUCTION_KEYS",
+    "resolve_parser_base",
     "resolve_parser_name",
     "validate_parser_registry",
 ]

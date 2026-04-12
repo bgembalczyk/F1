@@ -29,3 +29,10 @@ class GenericIndianapolisOnlySubSectionParser(SubSectionParser):
             if isinstance(candidate, Tag) and candidate.name in {"ul", "ol"}:
                 return self._list_parser.parse(candidate)
         return {"items": []}
+
+
+class IndianapolisOnlySubSectionParser(GenericIndianapolisOnlySubSectionParser):
+    """Backward-compatible alias."""
+
+
+__all__ = ["GenericIndianapolisOnlySubSectionParser", "IndianapolisOnlySubSectionParser"]

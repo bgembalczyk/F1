@@ -11,7 +11,7 @@ from scrapers.columns.types.tyre import TyreColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.parsers.section.wiki.adapter import collect_section_elements
 from scrapers.parsers.section.wiki.adapter import find_section_tree
-from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.parsers.wiki.body_content import BodyContentAssembler
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
@@ -76,11 +76,11 @@ class SeasonResultsParser(BaseSeasonParser):
         expected_headers: list[str],
         schema: TableSchemaDSL,
     ) -> list[dict[str, Any]]:
-        body = BodyContentParser.find_body_content(soup)
+        body = BodyContentAssembler.find_body_content(soup)
         if body is None:
             return []
 
-        body_content = BodyContentParser().parse(body)
+        body_content = BodyContentAssembler().parse(body)
         article = body_content.get("content_text") or {}
         aliases = DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY.section_aliases_for(
             domain="seasons",

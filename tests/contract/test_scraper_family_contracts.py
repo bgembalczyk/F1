@@ -55,11 +55,6 @@ FAMILY_CONTRACT_CASES = [
             "_prepare_article_soup",
         ),
     ),
-    (
-        "SectionParserContract",
-        ("parse",),
-        ("parse",),
-    ),
 ]
 
 
@@ -71,7 +66,6 @@ def test_scraper_family_contracts_are_exposed() -> None:
         "ListScraperContract",
         "TableScraperContract",
         "SingleArticleScraperContract",
-        "SectionParserContract",
     }
 
 

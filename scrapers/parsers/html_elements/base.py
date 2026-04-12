@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 from abc import ABC
-from abc import abstractmethod
-from typing import Generic
 from typing import TypeVar
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.parsers.base_family import ElementParser
+from scrapers.parsers.roles import HtmlElementParserABC
 
 TOutput = TypeVar("TOutput")
 
