@@ -94,9 +94,13 @@ class RowMappingMixin(ABC, Generic[RowInputT_contra, RecordT_co]):
     def map_row(self, row: RowInputT_contra) -> RecordT_co | None: ...
 
 
-class GroupParsingMixin(ABC, Generic[TableInputT_contra, RecordT_co]):
+class ParseGroupMixin(ABC, Generic[TableInputT_contra, RecordT_co]):
     @abstractmethod
-    def map_table(self, table: TableInputT_contra) -> list[RecordT_co]: ...
+    def parse_group(self, table: TableInputT_contra) -> list[RecordT_co]: ...
+
+
+class GroupParsingMixin(ParseGroupMixin[TableInputT_contra, RecordT_co], ABC):
+    """Backward-compatible alias for parse_group capability."""
 
 
 class ParsingBundle(ABC):
@@ -113,6 +117,7 @@ SoupDocumentParserABC = SoupParserABC
 
 __all__ = [
     "GroupParsingMixin",
+    "ParseGroupMixin",
     "HtmlElementParserABC",
     "HtmlTagParserABC",
     "InfoboxHtmlParserABC",
