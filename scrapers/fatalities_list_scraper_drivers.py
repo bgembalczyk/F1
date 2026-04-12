@@ -34,8 +34,8 @@ from scrapers.helpers.normalize import normalize_auto_value
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.protocol import SectionParser
-from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
+from scrapers.parsers.wiki.tables.article_tables_parser import ArticleTablesParser
+from scrapers.parsers.wiki.sections.sublevels.sub_section_parser import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import DRIVERS_FATALITIES
 from scrapers.table_schema_dsl import TableSchemaDSL

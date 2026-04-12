@@ -7,7 +7,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.element import WikiElementSet
+from scrapers.parsers.wiki.elements.registry import WikiElementSet
 
 
 class StructureParser(ABC):

@@ -13,10 +13,10 @@ from scrapers.constants_points import SPRINT_POSITIONS
 from scrapers.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.helpers.parsing import parse_int_from_text
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
-from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
-from scrapers.parsers.wiki.sublevels.sub_sub_section import SubSubSectionParser
+from scrapers.parsers.wiki.tables.base_mapper import WikiTableBaseParser
+from scrapers.parsers.wiki.sections.nested_wiki_section_parser import NestedWikiSectionParser
+from scrapers.parsers.wiki.sections.sublevels.sub_section_parser import SubSectionParser
+from scrapers.parsers.wiki.sections.sublevels.sub_sub_section_parser import SubSubSectionParser
 
 # Position keys for the points history table (excluding "1st" which is
 # handled separately)

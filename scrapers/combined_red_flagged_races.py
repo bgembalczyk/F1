@@ -16,7 +16,7 @@ from scrapers.parsers.table.red_flagged_races import map_drivers_cell
 from scrapers.parsers.table.red_flagged_races import map_winner_cell
 from scrapers.parsers.table.red_flagged_races import try_int
 from scrapers.parsers.wiki.body_content import BodyContentParser
-from scrapers.parsers.wiki.red_flagged_races import RedFlaggedRacesSectionParser
+from scrapers.parsers.wiki.sections.red_flagged_races_section_parser import RedFlaggedRacesSectionParser
 from scrapers.scraper_wiki import WikiScraper
 from scrapers.source_catalog import RED_FLAGGED_RACES
 from scrapers.transformers.record.failed_to_make_restart import (

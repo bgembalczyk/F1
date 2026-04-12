@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import Any
 
 from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
-from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.parsers.table.wiki.contracts import ArticleTablesParserABC
+from scrapers.parsers.wiki.tables.article_tables_parser import ArticleTablesParser
+from scrapers.parsers.wiki.tables.contracts import ArticleTablesParserABC
 
 
 class ConstructorTableExtractionService(RunDiagnosticsMixin):

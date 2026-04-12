@@ -23,7 +23,7 @@ from scrapers.constants_drivers import DRIVER_RACE_WINS_HEADER
 from scrapers.constants_drivers import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.constants_drivers import DRIVERS_LIST_HEADERS
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.drivers_list import DriversListSectionParser
+from scrapers.parsers.wiki.sections.drivers_list_section_parser import DriversListSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import DRIVERS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL

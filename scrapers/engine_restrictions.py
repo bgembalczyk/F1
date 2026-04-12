@@ -18,7 +18,7 @@ from scrapers.columns.types.range import RangeColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.unit import UnitColumn
 from scrapers.config_table import build_scraper_config
-from scrapers.parsers.wiki.engine_restrictions import CurrentRulesSectionParser
+from scrapers.parsers.wiki.sections.engine_restrictions_section_parser import CurrentRulesSectionParser
 from scrapers.source_catalog import ENGINE_REGULATIONS
 from scrapers.table_schema_dsl import TableSchemaDSL
 

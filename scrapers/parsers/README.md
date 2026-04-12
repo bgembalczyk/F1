@@ -1,9 +1,22 @@
-# Konwencja nazewnicza parserów
+# Konwencja parserów (final)
 
-Krótka konwencja dla nowych nazw klas:
+Finalny podział pakietów parserów wiki:
 
-- `*Protocol` – kontrakty typów (np. `SectionParserProtocol`).
-- `*Mixin` – współdzielone zachowania wielokrotnego dziedziczenia.
-- `*Base` – klasy bazowe/abstrakcyjne.
-- `*Service` – komponenty usługowe orkiestrujące logikę.
-- `*Parser` – parsery wejścia/HTML/sekcji/tabel.
+- `scrapers/parsers/html_elements/*`
+- `scrapers/parsers/wiki/elements/*`
+- `scrapers/parsers/wiki/sections/*`
+- `scrapers/parsers/wiki/infobox/*`
+- `scrapers/parsers/wiki/tables/*`
+- `scrapers/mappers/wiki_tables/*`
+
+## Nazewnictwo
+
+- `*ElementParser` – parser elementu HTML,
+- `*SectionParser` – parser sekcji/hierarchii sekcji,
+- `*Mapper` – mapper domenowy (bez parsowania HTML).
+
+## Zasada
+
+`Parser` oznacza publiczne `parse(...)`; `Mapper` oznacza publiczne `map(...)`.
+
+Dokumentacja opisuje wyłącznie model końcowy, bez warstwy legacy.

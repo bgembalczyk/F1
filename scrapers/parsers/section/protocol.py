@@ -1,12 +1,8 @@
 from __future__ import annotations
 
 from scrapers.parsers.roles import SectionParserABC
-from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 
+# Canonical section parser contract used across scrapers.
+SectionParserProtocol = SectionParserABC
 
-class SectionParser(NestedWikiSectionParser, BaseSectionParser, SectionParserABC):
-    """Backward-compatible alias for the default nested wiki section parser."""
-
-
-__all__ = ["BaseSectionParser", "SectionParserABC", "SectionParser"]
+__all__ = ["SectionParserABC", "SectionParserProtocol"]

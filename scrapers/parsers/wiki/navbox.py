@@ -1,6 +1,6 @@
 from models.data.parsed.nav_box import NavBoxParsedData
 from scrapers.parsers.html_elements.navbox import NavboxElementParser
-from scrapers.parsers.wiki.families import WikiNavboxHtmlParserABC
+from scrapers.parsers.wiki.elements.abc import WikiNavboxHtmlParserABC
 
 
 class WikiNavboxParser(WikiNavboxHtmlParserABC, NavboxElementParser):

@@ -6,8 +6,8 @@ from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.table.base import TableSectionParser
-from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.parsers.table.wiki.circuit_list import CircuitsListTableMapper
+from scrapers.parsers.wiki.tables.article_tables_parser import ArticleTablesParser
+from scrapers.mappers.wiki_tables.circuits_list_mapper import CircuitsListTableMapper
 from scrapers.section.parse_results import SectionParseResult
 
 if TYPE_CHECKING:

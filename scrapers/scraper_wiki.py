@@ -8,8 +8,8 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.mixins.wiki.element import WikiElementParsingMixin
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.wiki.body_content import BodyContentParser
-from scrapers.parsers.wiki.element import WikiElementSet
-from scrapers.parsers.wiki.element_factory import build_default_wiki_element_parsers
+from scrapers.parsers.wiki.elements.registry import WikiElementSet
+from scrapers.parsers.wiki.elements.factory import build_default_wiki_element_parsers
 from scrapers.parsers.wiki.header import HeaderParser
 
 

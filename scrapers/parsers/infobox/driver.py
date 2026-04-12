@@ -13,7 +13,7 @@ from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.infobox.providers.drivers.default import DefaultDriverInfoboxProvider
 from scrapers.parsers.infobox.providers.drivers.protocol import DriverInfoboxProvider
-from scrapers.parsers.wiki.infobox import WikiInfoboxElementParserBase
+from scrapers.parsers.wiki.infobox.infobox_parser import WikiInfoboxElementParserBase
 
 
 class DriverInfoboxParser(WikiInfoboxElementParserBase):

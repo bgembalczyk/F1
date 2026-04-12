@@ -6,10 +6,10 @@ from scrapers.parsers.section.wiki.assembler import SectionAssembler
 from scrapers.parsers.section.wiki.locator import SectionLocator
 from scrapers.parsers.wiki.domain_mapper import DomainMapperABC
 from scrapers.parsers.wiki.domain_mapper import build_default_domain_mapper
-from scrapers.parsers.wiki.element import ElementRegistry
-from scrapers.parsers.wiki.element import WikiElementSet
-from scrapers.parsers.wiki.element import build_wikipedia_element_registry
-from scrapers.parsers.wiki.element_factory import build_default_wiki_element_parsers
+from scrapers.parsers.wiki.elements.registry import ElementRegistry
+from scrapers.parsers.wiki.elements.registry import WikiElementSet
+from scrapers.parsers.wiki.elements.registry import build_wikipedia_element_registry
+from scrapers.parsers.wiki.elements.factory import build_default_wiki_element_parsers
 
 
 @dataclass(frozen=True)

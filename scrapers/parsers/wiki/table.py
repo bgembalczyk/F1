@@ -1,5 +1,5 @@
-from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
-from scrapers.parsers.wiki.families import WikiTableHtmlParserABC
+from scrapers.parsers.wiki.tables.html_table_element_parser import WikiTableHtmlParser
+from scrapers.parsers.wiki.elements.abc import WikiTableHtmlParserABC
 
 
 class WikiTableParser(WikiTableHtmlParserABC):

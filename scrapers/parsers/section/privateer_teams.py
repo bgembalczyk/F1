@@ -5,13 +5,13 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.parsers.privateer_teams_list import PrivateerTeamsListParser
-from scrapers.parsers.section.protocol import SectionParser
-from scrapers.parsers.wiki.families import WikiListHtmlParserABC
+from scrapers.parsers.wiki.sections.nested_wiki_section_parser import NestedWikiSectionParser
+from scrapers.parsers.wiki.elements.abc import WikiListHtmlParserABC
 
 
 
 
-class PrivateerTeamsSectionParser(SectionParser):
+class PrivateerTeamsSectionParser(NestedWikiSectionParser):
     def __init__(self, *, list_parser: WikiListHtmlParserABC | None = None) -> None:
         super().__init__()
         self._list_parser = list_parser or PrivateerTeamsListParser()

@@ -3,7 +3,7 @@ from typing import Any
 from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_NAME_HEADER
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.wiki.tables.base_mapper import WikiTableBaseParser
 
 
 class FormerConstructorsTableParser(WikiTableBaseParser):

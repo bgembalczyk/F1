@@ -8,8 +8,8 @@ from scrapers.parsers.list_element.engine_manufacturers_list import Indianapolis
 from scrapers.parsers.table.engine_manufacturers_list import (
     EngineManufacturersTableParser,
 )
-from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sections.nested_wiki_section_parser import NestedWikiSectionParser
+from scrapers.parsers.wiki.sections.sublevels.sub_section_parser import SubSectionParser
 
 
 class IndianapolisOnlySubSectionParser(SubSectionParser):
