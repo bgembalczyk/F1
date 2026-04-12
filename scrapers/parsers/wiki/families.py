@@ -1,14 +1,16 @@
 from __future__ import annotations
 
 from abc import ABC
-from abc import abstractmethod
 from dataclasses import dataclass
 from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from models.data.parsed.figure import FigureParsedData
 from models.data.parsed.infobox import InfoboxParsedData
+from models.data.parsed.nav_box import NavBoxParsedData
+from scrapers.parsers.roles import HtmlTagParserABC
 from scrapers.parsers.roles import MapperABC
 from scrapers.parsers.roles import InfoboxHtmlParserABC
 from scrapers.parsers.roles import ListHtmlParserABC
@@ -57,9 +59,11 @@ class WikiTableMapperSet:
 
 
 __all__ = [
+    "WikiFigureHtmlParserABC",
     "WikiInfoboxParserABC",
     "WikiListParsedData",
     "WikiListParserABC",
+    "WikiNavboxHtmlParserABC",
     "WikiSectionParsedData",
     "WikiSectionParserABC",
     "WikiSectionStructureParserABC",
