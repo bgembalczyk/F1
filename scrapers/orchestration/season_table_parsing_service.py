@@ -203,6 +203,7 @@ class SeasonTableParsingService:
         include_urls: bool,
         url: str,
     ) -> None:
+        self._options = options
         self._standings_parser = SeasonStandingsWikiTableParser(
             options=options,
             include_urls=include_urls,
@@ -218,6 +219,10 @@ class SeasonTableParsingService:
             include_urls=include_urls,
             url=url,
         )
+
+    @property
+    def options(self) -> ScraperOptions:
+        return self._options
 
     @property
     def standings_parser(self) -> SeasonStandingsWikiTableParser:
