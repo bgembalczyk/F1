@@ -10,10 +10,9 @@ from scrapers.parsers.element_parser_abc import ElementType
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.parser_abc import ParserABC
-from scrapers.parsers.rules import ParserRule
+from scrapers.parsers.wiki.element_registry import ElementParseInput
+from scrapers.parsers.wiki.element_registry import ElementParserRegistration
 from scrapers.parsers.wiki.element_registry import ElementRegistry
-from scrapers.parsers.wiki.element_set import WikiElementSet
-from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
@@ -31,7 +30,6 @@ class WikiElementSet:
     navbox_parser: ParserABC[Tag, WikiParserData]
     references_parser: ParserABC[Tag, WikiParserData]
     section_parser: Callable[[Tag], WikiParserData] | None = None
-
 
 
 def build_wikipedia_element_registry(
@@ -69,9 +67,7 @@ def build_wikipedia_element_registry(
         ),
     }
 
-    # Ordered explicit mapping: (element_type, parser_instance).
-    # Priority order: infobox before table to handle tables with both classes.
-    named_parsers: list[tuple[str, ParserABC]] = [
+    named_parsers: list[tuple[ElementType, ParserABC[Tag, WikiParserData]]] = [
         ("paragraph", parsers.paragraph_parser),
         ("infobox", parsers.infobox_parser),
         ("table", parsers.table_parser),
@@ -80,29 +76,19 @@ def build_wikipedia_element_registry(
         ("navbox", parsers.navbox_parser),
         ("references_wrap", parsers.references_parser),
     ]
-    rules: list[ParserRule] = []
-    for element_type, parser in named_parsers:
-        if element_type not in type_predicates:
-            continue
-        rules.append(
-            ParserRule(
-                predicate=type_predicates[element_type],
-                parser=parser.parse,
-                result_type=element_type,
-            ),
-        )
 
-    if parsers.section_parser is not None:
-        rules.append(
-            ParserRule(
-                predicate=type_predicates["section"],
-                parser=parsers.section_parser,
-                result_type="section",
-            ),
+    registrations = tuple(
+        ElementParserRegistration(
+            element_type=element_type,
+            parser=parser.parse,
+            parser_class=type(parser),
         )
+        for element_type, parser in named_parsers
+    )
 
     return ElementRegistry(
-        rules=tuple(rules),
+        registrations=registrations,
+        type_predicates=type_predicates,
     )
 
 
@@ -123,10 +109,13 @@ def build_default_wikipedia_element_registry() -> ElementRegistry:
         parsers=build_default_wiki_element_parsers()
     )
 
+
 # WikiElementParsers is the canonical public alias for WikiElementSet
 WikiElementParsers = WikiElementSet
 
 __all__ = [
+    "ElementParseInput",
+    "ElementParserRegistration",
     'WikiElementParsers',
     'WikiElementSet',
     'ElementRegistry',
