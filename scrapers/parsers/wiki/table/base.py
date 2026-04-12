@@ -28,8 +28,8 @@ class WikiTableBaseMapper(
     required_header_groups: tuple[frozenset[str], ...] = ()
     column_mapping: dict[str, str] = {}
 
-    def parse(self, raw: dict[str, Any]) -> dict[str, Any] | None:
-        return self.map(raw)
+    def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+        return self.map(fragment)
 
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         return self.map_fragment(fragment)

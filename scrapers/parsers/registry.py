@@ -5,13 +5,13 @@ from typing import Final
 from typing import Literal
 from typing import TypeAlias
 
-from scrapers.parsers.wiki.hierarchy import ElementParserABC
-from scrapers.parsers.wiki.hierarchy import ListElementParserABC
-from scrapers.parsers.wiki.hierarchy import SectionElementParserABC
+from scrapers.parsers.base_family import ListParserABC
+from scrapers.parsers.base_family import SectionParserABC
+from scrapers.parsers.base_family import TagParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
-ParserBase: TypeAlias = type[ElementParserABC[object, object]]
+ParserBase: TypeAlias = type[TagParserABC[object]] | type[SectionParserABC]
 
 
 @dataclass(frozen=True)
@@ -30,43 +30,43 @@ class ParsingRegistryEntry:
 DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = (
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="drivers", element_type="list"),
-        parser_base=ListElementParserABC,
+        parser_base=ListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="drivers", element_type="section"),
-        parser_base=SectionElementParserABC,
+        parser_base=SectionParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="constructors", element_type="list"),
-        parser_base=ListElementParserABC,
+        parser_base=ListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="constructors", element_type="section"),
-        parser_base=SectionElementParserABC,
+        parser_base=SectionParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="circuits", element_type="list"),
-        parser_base=ListElementParserABC,
+        parser_base=ListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="circuits", element_type="section"),
-        parser_base=SectionElementParserABC,
+        parser_base=SectionParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="seasons", element_type="list"),
-        parser_base=ListElementParserABC,
+        parser_base=ListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="seasons", element_type="section"),
-        parser_base=SectionElementParserABC,
+        parser_base=SectionParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="grands_prix", element_type="list"),
-        parser_base=ListElementParserABC,
+        parser_base=ListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="grands_prix", element_type="section"),
-        parser_base=SectionElementParserABC,
+        parser_base=SectionParserABC,
     ),
 )
 
