@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.points.columns_points.first_place import FirstPlaceColumn
+from scrapers.columns.types.first_place import FirstPlaceColumn
 
 
 def ctx(clean_text: str) -> ColumnContext:

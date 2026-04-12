@@ -2,9 +2,9 @@
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.constructors.constructors_list import ConstructorsListScraper
-from scrapers.constructors.constructors_list import PrivateerTeamsListParser
-from scrapers.constructors.constructors_list import PrivateerTeamsSectionParser
+from scrapers.constructors_list import ConstructorsListScraper
+from scrapers.constructors_list import PrivateerTeamsListParser
+from scrapers.constructors_list import PrivateerTeamsSectionParser
 
 
 def li(html: str) -> Tag:

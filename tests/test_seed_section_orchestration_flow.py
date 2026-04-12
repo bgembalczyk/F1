@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from scrapers.wiki.seed_section_orchestration_flow_wiki import (
+from scrapers.seed_section_orchestration_flow_wiki import (
     SeedSectionOrchestrationFlow,
 )
 

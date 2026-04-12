@@ -1,7 +1,7 @@
 import pytest
 
-from scrapers.base.errors import DomainParseError
-from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.errors import DomainParseError
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 
 @pytest.mark.parametrize(

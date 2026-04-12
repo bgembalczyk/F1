@@ -5,7 +5,7 @@ import warnings
 
 import pytest
 
-from scrapers.wiki import sources_registry_wiki as registry
+from scrapers import sources_registry_wiki as registry
 
 
 class TestWikiSourceDefinitionProperties:

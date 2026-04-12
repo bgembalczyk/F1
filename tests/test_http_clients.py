@@ -8,17 +8,17 @@ from http.server import ThreadingHTTPServer
 
 import pytest
 
-from infrastructure.http_client.caching.file import FileCache
-from infrastructure.http_client.caching.wiki_policy import WikipediaCachePolicy
-from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
-from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.interfaces import HttpClientProtocol
-from infrastructure.http_client.interfaces import HttpResponseProtocol
-from infrastructure.http_client.interfaces import SessionProtocol
-from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
-from infrastructure.http_client.requests_shim.http_error import HTTPError
-from infrastructure.http_client.requests_shim.http_shim_error import HttpShimError
-from infrastructure.http_client.requests_shim.response import Response
+from infrastructure.cache.file.protocol import FileCache
+from infrastructure.cache.wiki_policy import WikipediaCachePolicy
+from infrastructure.http.clients.urllib_http import UrllibHttpClient
+from infrastructure.http.config import HttpClientConfig
+from infrastructure.http.protocols.client import HttpClientProtocol
+from infrastructure.http.protocols.client import HttpResponseProtocol
+from infrastructure.http.protocols.client import SessionProtocol
+from infrastructure.http.policies.retry.default import DefaultRetryPolicy
+from infrastructure.http.errors.shim.http import HTTPError
+from infrastructure.http.errors.shim.base import HttpShimError
+from infrastructure.http.response import Response
 from infrastructure.http_client.requests_shim.session import Session
 from infrastructure.http_client.requests_shim.timeout_error import HTTPTimeoutError
 from scrapers.base.options import HttpPolicy

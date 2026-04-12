@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.services.result_export_service import ResultExportService
+from scrapers.services.result_export import ResultExportService
 
 
 class StubLogger:

@@ -3,12 +3,12 @@ import json
 
 import pytest
 
-from models.value_objects.normalized_date import NormalizedDate
-from scrapers.base.formatters.csv import CsvFormatter
-from scrapers.base.formatters.json import JsonFormatter
-from scrapers.base.formatters.pandas import PandasDataFrameFormatter
-from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
-from scrapers.base.results import ScrapeResult
+from models.value_objects.date.normalized import NormalizedDate
+from scrapers.formatters.csv import CsvFormatter
+from scrapers.formatters.json import JsonFormatter
+from scrapers.formatters.pandas import PandasDataFrameFormatter
+from models.value_objects.normalized_time import NormalizedTime
+from scrapers.results import ScrapeResult
 
 EXPECTED_TWO_RECORDS = 2
 

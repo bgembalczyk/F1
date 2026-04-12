@@ -2,8 +2,8 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.seasons.columns_seasons.helpers.constants import SPRINT_POINTS_START_YEAR
-from scrapers.seasons.columns_seasons.helpers.race_result import (
+from scrapers.columns.helpers.constants import SPRINT_POINTS_START_YEAR
+from scrapers.columns.helpers.race_result import (
     RaceResultCellTransformer,
 )
 

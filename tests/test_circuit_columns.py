@@ -1,5 +1,5 @@
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
+from scrapers.columns.types.multi.name_status_column.circuit import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
 
 EXPECTED_LAST_LENGTH_USED_KM = 3.78

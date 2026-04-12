@@ -6,7 +6,7 @@ import json
 import pytest
 
 from scrapers.base.options import ScraperOptions
-from scrapers.constructors.constructors_list import ConstructorsListScraper
+from scrapers.constructors_list import ConstructorsListScraper
 
 
 @pytest.fixture()

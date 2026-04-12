@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from scrapers.base.transformers import FailedToMakeRestartTransformer
-from scrapers.base.transformers import FatalitiesCarTransformer
-from scrapers.base.transformers import PointsScoringSystemsHistoryTransformer
-from scrapers.base.transformers import ShortenedRacePointsTransformer
-from scrapers.points.helpers_points.parsers import extract_first_place_role
-from scrapers.points.helpers_points.parsers import seasons_key
+from scrapers.transformers.record.fatalities_car import FailedToMakeRestartTransformer
+from scrapers.transformers.record.fatalities_car import FatalitiesCarTransformer
+from scrapers.transformers.record.fatalities_car import PointsScoringSystemsHistoryTransformer
+from scrapers.transformers.record.fatalities_car import ShortenedRacePointsTransformer
+from scrapers.parsers.helpers import extract_first_place_role
+from scrapers.parsers.helpers import seasons_key
 
 FIRST_PLACE_POINTS_1950 = 8
 FIRST_PLACE_POINTS_1960 = 9

@@ -24,13 +24,13 @@ install_scrapers_pkg_stub()
 from infrastructure.gemini.cache import GeminiCache  # noqa: E402
 from infrastructure.gemini.cache_service import GeminiCacheService  # noqa: E402
 from infrastructure.gemini.client import GeminiClient  # noqa: E402
-from infrastructure.gemini.model_config import ModelConfig  # noqa: E402
-from infrastructure.gemini.model_selector import ModelSelector  # noqa: E402
+from infrastructure.gemini.model.config import ModelConfig  # noqa: E402
+from infrastructure.gemini.model.selector import ModelSelector  # noqa: E402
 from infrastructure.gemini.orchestration import GeminiOrchestrationService  # noqa: E402
 from infrastructure.gemini.transport import GeminiTransport  # noqa: E402
-from scrapers.base.errors import PipelineError  # noqa: E402
-from scrapers.base.errors import SourceParseError  # noqa: E402
-from scrapers.base.errors import TransportError  # noqa: E402
+from scrapers.errors import PipelineError  # noqa: E402
+from scrapers.errors import SourceParseError  # noqa: E402
+from scrapers.errors import TransportError  # noqa: E402
 
 
 def test_package_unknown_attribute_raises_attribute_error() -> None:

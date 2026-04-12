@@ -1,6 +1,6 @@
 import pytest
 
-from scrapers.base.errors import ScraperParseError
+from scrapers.errors import ScraperParseError
 from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
 
 

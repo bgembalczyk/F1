@@ -6,8 +6,8 @@ import pytest
 
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from infrastructure.http_client.requests_shim.request_error import RequestError
-from scrapers.base.source_adapter import MultiIterableSourceAdapter
+from infrastructure.http.errors.base import RequestError
+from scrapers.source_adapter import MultiIterableSourceAdapter
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions

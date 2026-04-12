@@ -4,9 +4,9 @@ import re
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.debug_dumps import TablePipelineDebugContext
-from scrapers.base.debug_dumps import write_infobox_dump
-from scrapers.base.debug_dumps import write_table_pipeline_dump
+from scrapers.debug_dumps import TablePipelineDebugContext
+from scrapers.debug_dumps import write_infobox_dump
+from scrapers.debug_dumps import write_table_pipeline_dump
 from scrapers.infobox.extraction.extractor import BaseInfoboxExtractor
 
 

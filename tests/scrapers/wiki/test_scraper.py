@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 
-from scrapers.wiki.scraper_wiki import WikiScraper
+from scrapers.scraper_wiki import WikiScraper
 
 
 def make_minimal_soup(

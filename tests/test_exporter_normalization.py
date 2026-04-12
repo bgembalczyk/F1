@@ -1,7 +1,7 @@
 import json
 
-from scrapers.base.results import ScrapeResult
-from scrapers.base.services.result_export_service import ResultExportService
+from scrapers.results import ScrapeResult
+from scrapers.services.result_export import ResultExportService
 
 
 def test_exporter_normalizes_keys_and_drops_empty_fields(tmp_path) -> None:

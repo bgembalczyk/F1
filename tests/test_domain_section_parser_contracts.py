@@ -5,16 +5,16 @@ from dataclasses import asdict
 
 from bs4 import BeautifulSoup
 
-from scrapers.circuits.circuits_sections.layout_history import (
+from scrapers.parsers.section.circuit.layout_history import (
     CircuitLayoutHistorySectionParser,
 )
-from scrapers.constructors.constructors_sections.history import (
+from scrapers.parsers.section.table.constructor.history import (
     ConstructorHistorySectionParser,
 )
-from scrapers.grands_prix.sections_grands_prix.by_year import (
+from scrapers.parsers.section.grand_prix.by_year import (
     GrandPrixByYearSectionParser,
 )
-from scrapers.seasons.sections_seasons import SeasonRegulationChangesSectionParser
+from scrapers.parsers.section.changes.season import SeasonRegulationChangesSectionParser
 
 CONTRACT_KEYS = ("section_id", "section_label", "records", "metadata")
 

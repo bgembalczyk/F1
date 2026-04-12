@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from config.app_config_provider import AppConfigProvider
+from config.app.provider import AppConfigProvider
 
 
 def test_provider_prefers_env_api_key_over_file(tmp_path: Path) -> None:

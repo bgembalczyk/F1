@@ -2,7 +2,7 @@
 import pytest
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.position import PositionColumn
+from scrapers.columns.types.position import PositionColumn
 
 
 def ctx(clean_text: str | None) -> ColumnContext:

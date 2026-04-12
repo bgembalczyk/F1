@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from scrapers.seasons.columns_seasons.helpers.race_result.rules import (
+from scrapers.columns.helpers.race_result.rules import (
     round_rules as rules,
 )
 

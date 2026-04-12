@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.tyres.columns_tyes.append_links import AppendLinksColumn
+from scrapers.columns.types.append_links import AppendLinksColumn
 
 
 def ctx(

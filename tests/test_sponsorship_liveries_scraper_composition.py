@@ -2,16 +2,16 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+from scrapers.parsers.liveries.sponsorship import (
     SponsorshipRecordSplitter,
 )
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+from scrapers.parsers.liveries.sponsorship import (
     TeamLiveriesSectionParser,
 )
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries import (
+from scrapers.parsers.liveries.sponsorship import (
     TeamLiveriesTableParser,
 )
-from scrapers.sponsorship_liveries.scraper_sponsorship_liveries import (
+from scrapers.scraper_sponsorship_liveries import (
     F1SponsorshipLiveriesScraper,
 )
 

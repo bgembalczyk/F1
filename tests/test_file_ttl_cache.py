@@ -6,12 +6,12 @@ from typing import Any
 
 import pytest
 
-from infrastructure.cache.file_ttl import FileTtlCache
-from infrastructure.cache.file_ttl import FileTtlCacheAdapter
-from infrastructure.cache.file_ttl import GeminiJsonFileCacheAdapter
-from infrastructure.cache.file_ttl import HttpResponseFileCacheAdapter
+from infrastructure.cache.file.ttl import FileTtlCache
+from infrastructure.cache.file.ttl import FileTtlCacheAdapter
+from infrastructure.cache.file.ttl import GeminiJsonFileCacheAdapter
+from infrastructure.cache.file.ttl import HttpResponseFileCacheAdapter
 from infrastructure.gemini.cache import GeminiCache
-from infrastructure.http_client.caching.file import FileCache
+from infrastructure.cache.file.protocol import FileCache
 
 CACHE_TEST_VALUE = 123
 
