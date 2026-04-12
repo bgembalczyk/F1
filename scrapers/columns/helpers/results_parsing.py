@@ -244,8 +244,7 @@ class ResultsParsingHelpers:
         Args:
             segment: HTML tag to clean
         """
-        for ref in segment.find_all("sup"):
-            ref.decompose()
+        [ref.decompose() for ref in segment.find_all("sup")]
 
     @staticmethod
     def extract_number(text: str) -> int | None:
