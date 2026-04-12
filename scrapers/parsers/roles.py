@@ -30,15 +30,21 @@ class ParserABC(Parser[In, Out], ABC, Generic[In, Out]):
 
 
 class MapperABC(ABC, Generic[In, Out]):
+    """Canonical mapper contract (input -> output)."""
+
     @abstractmethod
-    def map(self, fragment: In) -> Out: ...
+    def map(self, raw: In) -> Out: ...
 
 
-class HtmlTagParserABC(ParserABC[TagIn, Out], ABC, Generic[TagIn, Out]):
-    """Runtime contract for single HTML tag parsers (Tag -> parsed payload)."""
+class HtmlTagParserABC(ParserABC[Tag, TagOut], ABC, Generic[TagOut]):
+    """Runtime contract for single HTML tag parsers."""
 
     @abstractmethod
     def parse(self, raw: Tag) -> TagOut: ...
+
+
+class HtmlElementParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
+    """Legacy alias for tag -> dict parser contract."""
 
 
 class SoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]):
@@ -48,12 +54,21 @@ class SoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]):
     def parse(self, raw: BeautifulSoup) -> SoupOut: ...
 
 
+class SoupDocumentParserABC(SoupParserABC[dict[str, Any]], ABC):
+    """Legacy alias for soup -> dict parser contract."""
+
+
 class SectionStructureParserABC(SoupParserABC[SectionParseResult], ABC):
     """Parser struktury sekcji (BeautifulSoup -> SectionParseResult)."""
 
-class TableHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
+
+class SectionParserABC(SectionStructureParserABC, ABC):
+    """Compatibility alias for section parsers."""
+
+
+class TableHtmlParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
     @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
 class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):
@@ -61,15 +76,8 @@ class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None: ...
 
 
-class InfoboxHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
-    """Runtime contract for infobox HTML parsers."""
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> dict[str, Any]: ...
-
-
 class InfoboxHtmlParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
-    """Parser infoboxa HTML."""
+    """Runtime contract for infobox HTML parsers."""
 
     @abstractmethod
     def parse(self, raw: Tag) -> dict[str, Any]: ...
@@ -82,11 +90,8 @@ class ListHtmlParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
     def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
-class MapperABC(ABC, Generic[In, Out]):
-    """Canonical mapper contract (input -> output)."""
-
-    @abstractmethod
-    def map(self, raw: In) -> Out: ...
+class ListParserABC(ListHtmlParserABC, ABC):
+    """Compatibility alias for list parsers."""
 
 
 class TableMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):
@@ -134,9 +139,10 @@ __all__ = [
     "ParsingBundleProviderABC",
     "RowMappingMixin",
     "SectionParseResult",
+    "SectionParserABC",
     "SectionStructureParserABC",
-    "SoupParserABC",
     "SoupDocumentParserABC",
+    "SoupParserABC",
     "TableDomainMapperABC",
     "TableHtmlParserABC",
     "TableMapperABC",

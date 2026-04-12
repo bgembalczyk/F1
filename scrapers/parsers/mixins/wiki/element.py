@@ -30,6 +30,10 @@ class WikiElementParsingMixin:
         self.table_html_parser = resolved_parsers.table_html_parser
         self.navbox_parser = resolved_parsers.navbox_parser
         self.references_parser = resolved_parsers.references_parser
+        self._paragraph_parser = resolved_parsers.paragraph_parser
+        self._figure_parser = resolved_parsers.figure_parser
+        self._navbox_parser = resolved_parsers.navbox_parser
+        self._references_parser = resolved_parsers.references_parser
         self.element_registry = element_registry
         self._parser_rules: list[ParserRule] = []
         self._register_default_parser_rules()

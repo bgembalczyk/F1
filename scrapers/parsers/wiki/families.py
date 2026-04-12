@@ -1,15 +1,16 @@
 from __future__ import annotations
 
 from abc import ABC
-from abc import abstractmethod
 from dataclasses import dataclass
 from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from models.data.parsed.figure import FigureParsedData
 from models.data.parsed.infobox import InfoboxParsedData
-from scrapers.parsers.roles import InfoboxHtmlParserABC
+from models.data.parsed.nav_box import NavBoxParsedData
+from scrapers.parsers.roles import HtmlTagParserABC
 from scrapers.parsers.roles import ListHtmlParserABC
 from scrapers.parsers.roles import MapperABC
 from scrapers.parsers.roles import TableHtmlParserABC
@@ -21,23 +22,27 @@ WikiSectionParsedData = dict[str, Any]
 
 
 class WikiTableParserABC(TableHtmlParserABC, ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiTableParsedData: ...
+    pass
 
 
 class WikiListParserABC(ListHtmlParserABC, ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiListParsedData: ...
+    pass
 
 
 class WikiSectionStructureParserABC(MapperABC[BeautifulSoup | Tag, WikiSectionParsedData], ABC):
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup | Tag) -> WikiSectionParsedData: ...
+    pass
 
 
-class WikiInfoboxParserABC(InfoboxHtmlParserABC, ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> InfoboxParsedData: ...
+class WikiInfoboxParserABC(HtmlTagParserABC[InfoboxParsedData], ABC):
+    pass
+
+
+class WikiNavboxHtmlParserABC(HtmlTagParserABC[NavBoxParsedData], ABC):
+    pass
+
+
+class WikiFigureHtmlParserABC(HtmlTagParserABC[FigureParsedData], ABC):
+    pass
 
 
 @dataclass(frozen=True)
@@ -48,9 +53,11 @@ class WikiTableMapperSet:
 
 
 __all__ = [
+    "WikiFigureHtmlParserABC",
     "WikiInfoboxParserABC",
     "WikiListParsedData",
     "WikiListParserABC",
+    "WikiNavboxHtmlParserABC",
     "WikiSectionParsedData",
     "WikiSectionStructureParserABC",
     "WikiTableMapperSet",
