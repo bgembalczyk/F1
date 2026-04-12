@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.seasons.columns_seasons.date_range import DateRangeColumn
+from scrapers.columns.types.date_range import DateRangeColumn
 
 
 def ctx(text: str | None) -> ColumnContext:

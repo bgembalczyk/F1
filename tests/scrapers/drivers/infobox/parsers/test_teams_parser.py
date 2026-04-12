@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.drivers_infobox.parsers.teams import TeamsParser
+from scrapers.parsers.infobox.field.teams import TeamsParser
 
 
 class MockLinkExtractor:

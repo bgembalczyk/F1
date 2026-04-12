@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.seasons.columns_seasons.calendar_circuit import CalendarCircuitColumn
+from scrapers.columns.types.calendar_circuit import CalendarCircuitColumn
 
 
 def ctx(

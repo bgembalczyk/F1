@@ -2,22 +2,27 @@
 
 from typing import Any
 
+from scrapers.protocols.has_table_parser import HasTableMapperABC
 from scrapers.protocols.has_table_parser import HasTableParserABC
 
 
 class ApplyForElementsMixin:
     """Mixin to apply a table parser to elements within a structured payload."""
 
-    def apply_table_parser(self: HasTableParserABC, payload: dict[str, Any]) -> None:
-        """Recursively applies the table parser to nested dictionaries."""
+    def apply_table_mapper(self: HasTableMapperABC, payload: dict[str, Any]) -> None:
+        """Recursively applies the table mapper to nested dictionaries."""
         self._apply_for_elements(payload.get("elements", []))
         for value in payload.values():
             if isinstance(value, dict):
-                self.apply_table_parser(value)
+                self.apply_table_mapper(value)
             elif isinstance(value, list):
                 for item in value:
                     if isinstance(item, dict):
-                        self.apply_table_parser(item)
+                        self.apply_table_mapper(item)
+
+    def apply_table_parser(self: HasTableParserABC, payload: dict[str, Any]) -> None:
+        """Backward-compatible alias for apply_table_mapper."""
+        self.apply_table_mapper(payload)
 
     def _apply_for_elements(
         self: HasTableParserABC,
@@ -30,6 +35,9 @@ class ApplyForElementsMixin:
             data = element.get("data")
             if not isinstance(data, dict):
                 continue
-            parsed = self._table_parser.map(data)
+            mapper = getattr(self, "_table_mapper", None)
+            if mapper is None:
+                mapper = getattr(self, "_table_parser")
+            parsed = mapper.map(data)
             if parsed is not None:
                 element["data"] = parsed

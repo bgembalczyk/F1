@@ -3,7 +3,7 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.br_list import BrListColumn
+from scrapers.columns.types.br_list import BrListColumn
 
 
 def ctx(

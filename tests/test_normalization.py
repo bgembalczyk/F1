@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from scrapers.base.normalization import RecordNormalizer
+from scrapers.normalization import RecordNormalizer
 
 
 def test_record_normalizer_normalizes_keys_and_drops_empty_fields() -> None:

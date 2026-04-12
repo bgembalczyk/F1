@@ -4,7 +4,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.columns.types.links_list import LinksListColumn
 
 
 def ctx(

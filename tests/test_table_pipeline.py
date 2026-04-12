@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 pytest.importorskip("bs4")
 
-from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 

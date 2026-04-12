@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from bs4 import BeautifulSoup
 
-from scrapers.seasons.parsers_seasons.entries import SeasonEntriesParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.entries import SeasonEntriesParser
 
 
 class FakePolicy:

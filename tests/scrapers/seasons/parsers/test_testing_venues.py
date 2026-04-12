@@ -1,9 +1,9 @@
 # ruff: noqa: E501, PLR2004
 from unittest.mock import MagicMock
 
-from scrapers.seasons.parsers_seasons.testing_venues import TestingVenuesParser
-from scrapers.seasons.services_seasons.domain_parsing_policy import DomainParsingPolicy
-from scrapers.seasons.services_seasons.domain_parsing_policy import TestingVenuesLayout
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.testing_venues import TestingVenuesParser
+from scrapers.domain_parsing_policy import DomainParsingPolicy
+from scrapers.domain_parsing_policy import TestingVenuesLayout
 
 
 def policy_with_layout(layout):

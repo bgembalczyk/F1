@@ -2,10 +2,10 @@
 import json
 import logging
 
-from scrapers.base.logging import JsonLinesFormatter
-from scrapers.base.logging import build_execution_context
-from scrapers.base.logging import configure_logging
-from scrapers.base.logging import get_logger
+from scrapers.logging import JsonLinesFormatter
+from scrapers.logging import build_execution_context
+from scrapers.logging import configure_logging
+from scrapers.logging import get_logger
 
 
 def test_json_lines_formatter_produces_valid_json() -> None:

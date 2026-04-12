@@ -3,6 +3,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base import SeasonStandingsService
 from scrapers.seasons.parsers_seasons.standings import SeasonStandingsParser
 
 

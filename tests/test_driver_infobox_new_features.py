@@ -4,7 +4,7 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.drivers_infobox.parsers.cell import InfoboxCellParser
+from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
 from scrapers.drivers.drivers_infobox.parsers.general import InfoboxGeneralParser
 from scrapers.drivers.drivers_infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.drivers_infobox.parsers.title import InfoboxTitlesParser

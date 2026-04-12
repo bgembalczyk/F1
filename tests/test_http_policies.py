@@ -1,5 +1,5 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
-from scrapers.base.factory.run_config_options_mapper import RunConfigOptionsMapper
+from scrapers.run_config_options_mapper import RunConfigOptionsMapper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.options import ScraperOptionsBuilder
 from scrapers.base.run_config import RunConfig

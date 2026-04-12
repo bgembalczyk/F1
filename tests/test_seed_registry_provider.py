@@ -4,8 +4,8 @@ from __future__ import annotations
 from types import SimpleNamespace
 
 from layers.seed.registry import helpers
-from scrapers.wiki.component_metadata_wiki import ComponentMetadata
-from scrapers.wiki.discovery_wiki import DiscoveredComponent
+from scrapers.component_metadata_wiki import ComponentMetadata
+from scrapers.discovery_wiki import DiscoveredComponent
 
 
 class ConfigA:

@@ -3,8 +3,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.domain_entrypoint import debug_profile
-from scrapers.base.domain_entrypoint import default_profile
+from scrapers.domain_entrypoint import debug_profile
+from scrapers.domain_entrypoint import default_profile
 from scrapers.base.run_profiles import RunPathName
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile

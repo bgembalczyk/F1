@@ -8,7 +8,7 @@ from scrapers.parsers.list_element.indianapolis_constructors import (
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 
 
-class IndianapolisOnlySubSectionParser(SubSectionParser):
+class GenericIndianapolisOnlySubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._list_parser = IndianapolisConstructorsListParser()

@@ -1,5 +1,5 @@
-from infrastructure.http_client.caching.file import FileCache
-from scrapers.base.source_adapter import SourceAdapter
+from infrastructure.cache.file.protocol import FileCache
+from scrapers.source_adapter import SourceAdapter
 
 
 class StubAdapter(SourceAdapter):

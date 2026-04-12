@@ -1,7 +1,7 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from models.value_objects.normalized_date import NormalizedDate
+from models.value_objects.date.normalized import NormalizedDate
 from scrapers.circuits.models.services import lap_record_utils as utils
 
 # ---------------------------------------------------------------------------

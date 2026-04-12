@@ -1,9 +1,9 @@
 # ruff: noqa: E501, PLR2004
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.sections import get_category_texts
-from scrapers.base.helpers.sections import has_category_keyword
-from scrapers.base.helpers.sections import has_navbox_template_link
+from scrapers.helpers.sections import get_category_texts
+from scrapers.helpers.sections import has_category_keyword
+from scrapers.helpers.sections import has_navbox_template_link
 
 
 def soup_with_catlinks(links: list[str]) -> BeautifulSoup:

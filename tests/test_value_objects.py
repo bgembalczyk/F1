@@ -6,10 +6,10 @@ from models.value_objects.common_terms import EntityName
 from models.value_objects.common_terms import SeasonYear
 from models.value_objects.common_terms import SectionId
 from models.value_objects.common_terms import WikiUrl
-from models.value_objects.date import DateValue
+from models.value_objects.date.base import DateValue
 from models.value_objects.drivers_championships import DriversChampionships
 from models.value_objects.link import Link
-from models.value_objects.normalized_date import NormalizedDate
+from models.value_objects.date.normalized import NormalizedDate
 from models.value_objects.rounds import Rounds
 from models.value_objects.season_ref import SeasonRef
 

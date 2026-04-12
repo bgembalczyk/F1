@@ -1,10 +1,10 @@
 # ruff: noqa: E501
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.html_utils import find_heading
-from scrapers.wiki.parsers.sections.detection import find_section_heading
-from scrapers.wiki.parsers.sections.detection import make_stable_section_id
-from scrapers.wiki.parsers.sections.detection import normalize_section_slug
+from scrapers.helpers.html_utils import find_heading
+from scrapers.parsers.section.wiki.detection import find_section_heading
+from scrapers.parsers.section.wiki.detection import make_stable_section_id
+from scrapers.parsers.section.wiki.detection import normalize_section_slug
 
 
 def test_find_section_heading_prefers_exact_id_over_text() -> None:

@@ -9,7 +9,7 @@ from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 class EngineRegulationSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = EngineRegulationTableMapper()
+        self._table_mapper = EngineRegulationTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
@@ -33,7 +33,7 @@ class EngineRegulationSubSectionParser(SubSectionParser):
             data = element.get("data")
             if not isinstance(data, dict):
                 continue
-            parsed = self._table_parser.map(data)
+            parsed = self._table_mapper.map(data)
             if parsed is not None:
                 element["data"] = parsed
 

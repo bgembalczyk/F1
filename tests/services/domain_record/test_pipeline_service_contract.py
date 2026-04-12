@@ -5,13 +5,13 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from scrapers.constructors.constructors_postprocess.assembler import (
+from scrapers.records.dto.constructor import (
     ConstructorRecordDTO,
 )
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
 from scrapers.records.dto.circuit import CircuitRecordDTO
-from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
-from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
+from scrapers.records.dto.season import SeasonPayloadDTO
+from scrapers.records.dto.season import SeasonRecordSections
 from scrapers.services.domain_record.base_pipeline_service import (
     BaseDomainPipelineService,
 )

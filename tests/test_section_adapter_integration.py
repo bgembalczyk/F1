@@ -2,11 +2,11 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.seasons.parsers_seasons.results import SeasonResultsParser
-from scrapers.seasons.parsers_seasons.table import SeasonTableParser
-from scrapers.wiki.parsers.content_text import ContentTextParser
-from scrapers.wiki.parsers.sections.adapter import collect_section_elements
-from scrapers.wiki.parsers.sections.adapter import find_section_tree
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.parsers.wiki.content_text import ContentTextParser
+from scrapers.parsers.section.wiki.adapter import collect_section_elements
+from scrapers.parsers.section.wiki.adapter import find_section_tree
 
 
 def test_find_section_tree_with_multilevel_sections_and_alias() -> None:

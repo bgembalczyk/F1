@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 from scrapers.parsers.section.wiki.assembler import SectionAssembler
 from scrapers.parsers.section.wiki.locator import SectionLocator
-from scrapers.parsers.wiki.domain_mapper import DomainMapperABC
-from scrapers.parsers.wiki.domain_mapper import build_default_domain_mapper
+from scrapers.parsers.wiki.domain_mapper import WikiMapperRegistry
+from scrapers.parsers.wiki.domain_mapper import build_default_mapper_registry
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
@@ -14,17 +14,13 @@ from scrapers.parsers.wiki.element_factory import build_default_wiki_element_par
 
 @dataclass(frozen=True)
 class SectionParserToolbox:
-    """Narzędzia dobierane przez parser sekcji.
-
-    Sekcja jest punktem wejścia dla użytkownika końcowego, więc to parser sekcji
-    decyduje jakich parserów elementarnych użyć do parsowania HTML wewnątrz sekcji.
-    """
+    """Narzędzia parsera sekcji: extract/parse (bez translacji domenowej)."""
 
     element_parsers: WikiElementSet
     element_registry: ElementRegistry
     section_locator: SectionLocator
     section_assembler: SectionAssembler
-    domain_mapper: DomainMapperABC
+    mapper_registry: WikiMapperRegistry
 
 
 def build_default_section_toolbox() -> SectionParserToolbox:
@@ -34,7 +30,7 @@ def build_default_section_toolbox() -> SectionParserToolbox:
         element_registry=build_wikipedia_element_registry(parsers=element_parsers),
         section_locator=SectionLocator(),
         section_assembler=SectionAssembler(),
-        domain_mapper=build_default_domain_mapper(),
+        mapper_registry=build_default_mapper_registry(),
     )
 
 

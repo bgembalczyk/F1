@@ -2,20 +2,20 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections.adapter import SectionAdapter
-from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
+from scrapers.adapters.section.adapter import SectionAdapter
+from scrapers.adapters.section.adapter import SectionAdapterEntry
+from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.circuits.circuits_sections.events import CircuitEventsSectionParser
 from scrapers.circuits.circuits_sections.lap_records import (
     CircuitLapRecordsSectionParser,
 )
-from scrapers.circuits.circuits_sections.layout_history import (
+from scrapers.parsers.section.circuit.layout_history import (
     CircuitLayoutHistorySectionParser,
 )
-from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
+from scrapers.constructors_single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
-from scrapers.grands_prix.single_scraper_grands_prix import F1SingleGrandPrixScraper
-from scrapers.seasons.single_scraper_seasons import SingleSeasonScraper
+from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper
+from scrapers.single_scraper_seasons import SingleSeasonScraper
 
 
 def test_constructor_sections_are_parsed_through_section_adapter() -> None:
