@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.parsers.wiki_table_base_mapper import WikiTableBaseMapper
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 
 class EngineRegulationTableMapper(WikiTableBaseMapper):

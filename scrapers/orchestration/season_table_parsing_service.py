@@ -252,6 +252,30 @@ class SeasonTableParsingService:
         self._wiki_table_parser.update_url(url)
         self._table_payload_mapper.update_url(url)
 
+    def parse_standings_table(
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_ids: list[str],
+        subject_header: str,
+        subject_key: str,
+        subject_column: Any,
+        season_year: int | None = None,
+        star_mark_note: str | None = None,
+        include_car_no_column: bool = True,
+    ) -> list[dict[str, Any]]:
+        """Parse standings table – delegates to the internal standings parser."""
+        return self._standings_parser.parse(
+            soup,
+            section_ids=section_ids,
+            subject_header=subject_header,
+            subject_key=subject_key,
+            subject_column=subject_column,
+            season_year=season_year,
+            star_mark_note=star_mark_note,
+            include_car_no_column=include_car_no_column,
+        )
+
 
 __all__ = [
     "SeasonGenericWikiTableParser",

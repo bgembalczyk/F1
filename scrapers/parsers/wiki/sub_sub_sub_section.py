@@ -10,6 +10,8 @@ from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.wiki.element import WikiElementSet
+from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 
 
 class SubSubSubSectionParser(WikiElementParsingMixin, WikiParser):
@@ -21,12 +23,20 @@ class SubSubSubSectionParser(WikiElementParsingMixin, WikiParser):
         self,
         *,
         toolbox: SectionParserToolbox | None = None,
+        element_parsers: WikiElementSet | None = None,
     ) -> None:
         self.toolbox = toolbox or build_default_section_toolbox()
+        effective_parsers = element_parsers if element_parsers is not None else self.toolbox.element_parsers
+        # Rebuild registry when element_parsers override is provided, so rules
+        # use the overridden parsers (e.g. stubs injected in tests).
+        if element_parsers is not None:
+            effective_registry = build_wikipedia_element_registry(parsers=effective_parsers)
+        else:
+            effective_registry = self.toolbox.element_registry
         WikiElementParsingMixin.__init__(
             self,
-            element_parsers=self.toolbox.element_parsers,
-            element_registry=self.toolbox.element_registry,
+            element_parsers=effective_parsers,
+            element_registry=effective_registry,
         )
 
     def parse(
@@ -38,6 +48,15 @@ class SubSubSubSectionParser(WikiElementParsingMixin, WikiParser):
         if isinstance(element, Tag):
             return self._parse_group(list(element.children), context=context)
         return self._parse_group(element, context=context)
+
+    def parse_group(
+        self,
+        elements: list,
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, list[WikiParsedPayload]]:
+        """Public interface for parsing a flat list of elements into the leaf section dict."""
+        return self._parse_group(elements, context=context)
 
     def _parse_group(
         self,

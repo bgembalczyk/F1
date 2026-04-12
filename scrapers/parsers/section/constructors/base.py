@@ -38,7 +38,7 @@ class ConstructorsSectionParser(BaseSectionParser):
             normalize_empty_values=normalize_empty_values,
         )
         self._table_html_parser = (
-            table_html_parser or self._toolbox.element_parsers.table_html_parser
+            table_html_parser or self._toolbox.element_parsers.table_parser
         )
         if table_domain_mapper is None:
             msg = "table_domain_mapper must be provided"
