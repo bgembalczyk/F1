@@ -7,11 +7,11 @@ from bs4 import Tag
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.parsers.infobox.field.base import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
 from scrapers.parsers.infobox.field.year import YearParser
 
 
-class LicenceParser(BaseInfoboxFieldParser):
+class LicenceParser(InfoboxFieldParser):
     """Handles parsing of racing licence information."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):

@@ -10,11 +10,11 @@ from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.constants import COUNT_RE
 from scrapers.parsers.infobox.constants import PAREN_RE
 from scrapers.parsers.infobox.constants import YEAR_RE
-from scrapers.parsers.infobox.field.base import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
 from scrapers.year_extractor import YearExtractor
 
 
-class ChampionshipsParser(BaseInfoboxFieldParser):
+class ChampionshipsParser(InfoboxFieldParser):
     """Handles parsing of championships and class wins information."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):

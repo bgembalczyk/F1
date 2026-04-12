@@ -6,10 +6,10 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.parsers.infobox.field.base import BaseInfoboxFieldParser
+from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
 
 
-class InfoboxTitlesParser(BaseInfoboxFieldParser):
+class InfoboxTitlesParser(InfoboxFieldParser):
     def __init__(self, link_extractor: InfoboxLinkExtractor) -> None:
         self._link_extractor = link_extractor
 

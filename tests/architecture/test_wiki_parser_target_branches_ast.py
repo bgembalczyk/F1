@@ -15,7 +15,7 @@ TARGET_BRANCHES = {
     "WikiNavboxParserABC",
     "WikiFigureParserABC",
     "WikiSectionStructureParserABC",
-    "InfoboxFieldParserABC",
+    "InfoboxFieldParser",
 }
 
 ROOTS = (
