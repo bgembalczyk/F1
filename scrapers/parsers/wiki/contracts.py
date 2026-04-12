@@ -6,10 +6,10 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.roles import HtmlTagParserABC
+from scrapers.parsers.base_family import TagParserABC
 
 
-class AbstractWikiElementParser(ABC, HtmlTagParserABC[dict[str, Any]]):
+class AbstractWikiElementParser(ABC, TagParserABC[dict[str, Any]]):
     """Bazowy kontrakt runtime parsera pojedynczego elementu HTML Wikipedii."""
 
     @abstractmethod
