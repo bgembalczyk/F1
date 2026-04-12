@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.parsers.list_element.engine_manufacturers_list import IndianapolisOnlyListParser
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.section.sub_section.base import SubSectionParser
 
 
 class EngineManufacturersIndianapolisSubSectionParser(SubSectionParser):

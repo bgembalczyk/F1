@@ -5,9 +5,9 @@ from bs4 import Tag
 
 from scrapers.seasons_table_mapper import SeasonsTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 
 
 class SeasonsSectionParser(NestedWikiSectionParser):

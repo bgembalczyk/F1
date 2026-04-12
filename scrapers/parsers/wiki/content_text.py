@@ -8,7 +8,7 @@ from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 

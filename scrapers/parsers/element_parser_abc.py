@@ -10,6 +10,7 @@ from bs4 import Tag
 
 from scrapers.parsers.constants_contracts import TagOut
 from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
+from scrapers.parsers.soup_parser_abc import HtmlSoupParserABC
 
 ElementType = Literal[
     "table",
@@ -41,13 +42,13 @@ class ListHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
     def parse(self, raw: Tag) -> TagOut: ...
 
 
-class SectionHtmlParserABC(ABC, Generic[TagOut]):
-    """Domain family: parser of HTML sections from Tag/BeautifulSoup inputs."""
+class SectionHtmlParserABC(HtmlSoupParserABC[TagOut], ABC, Generic[TagOut]):
+    """Domain family: parser of HTML sections from BeautifulSoup inputs."""
 
     element_type: ElementType = "section"
 
     @abstractmethod
-    def parse(self, raw: BeautifulSoup | Tag | list[Tag]) -> TagOut: ...
+    def parse(self, raw: BeautifulSoup) -> TagOut: ...
 
 
 class InfoboxHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
