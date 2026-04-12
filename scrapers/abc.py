@@ -20,7 +20,6 @@ from scrapers.options import ScraperOptions
 from scrapers.post_processors import apply_post_processors
 from scrapers.protocols.capabilities import ExportCapability
 from scrapers.protocols.capabilities import FetchCapability
-from scrapers.protocols.capabilities import ParseCapability
 from scrapers.protocols.capabilities import ValidateCapability
 from scrapers.results import ScrapeResult
 from scrapers.runners.pipeline_runner import NormalizedRecord
@@ -41,12 +40,11 @@ T = TypeVar("T")
 
 class ScraperLifecycleProtocol(
     FetchCapability,
-    ParseCapability,
     ValidateCapability,
     ExportCapability,
     Protocol,
 ):
-    pass
+    def parse(self, soup: BeautifulSoup) -> list[RawRecord]: ...
 
 
 class ScraperLifecycleABC(ABC):
