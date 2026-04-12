@@ -2,17 +2,19 @@ from __future__ import annotations
 
 from scrapers.parsers.wiki.seasons_list import SeasonsSectionParser
 from scrapers.parsers.wiki.seasons_list import SeasonsTableParser
+from scrapers.seasons.list_scraper_seasons import SeasonsSectionParser
+from scrapers.seasons.list_scraper_seasons import SeasonsTableMapper
 
 
 def test_seasons_table_parser_matches_minimal_required_headers() -> None:
-    parser = SeasonsTableParser()
+    parser = SeasonsTableMapper()
 
     assert parser.matches(["Season", "Races", "Winners"], {}) is True
     assert parser.matches(["Season"], {}) is False
 
 
 def test_seasons_table_parser_maps_only_supported_headers() -> None:
-    parser = SeasonsTableParser()
+    parser = SeasonsTableMapper()
 
     assert parser.map_columns(["Season", "Races", "Ignored"]) == {
         "Season": "season",

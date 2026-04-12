@@ -1,22 +1,24 @@
 # ruff: noqa: E501, PLR2004, SLF001
 from scrapers.list_scraper_grands_prix import ByRaceTitleSubSectionParser
 from scrapers.list_scraper_grands_prix import GrandsPrixTableParser
+from scrapers.grands_prix.list_scraper_grands_prix import ByRaceTitleSubSectionParser
+from scrapers.grands_prix.list_scraper_grands_prix import GrandsPrixTableMapper
 
 
 def test_grands_prix_table_parser_matches_required_headers() -> None:
-    parser = GrandsPrixTableParser()
+    parser = GrandsPrixTableMapper()
     assert parser.matches(["Race title", "Years held"], {}) is True
     assert parser.matches(["Race title", "Years held", "Extra"], {}) is True
 
 
 def test_grands_prix_table_parser_does_not_match_missing_headers() -> None:
-    parser = GrandsPrixTableParser()
+    parser = GrandsPrixTableMapper()
     assert parser.matches(["Race title"], {}) is False
     assert parser.matches([], {}) is False
 
 
 def test_grands_prix_table_parser_map_columns_filters_known() -> None:
-    parser = GrandsPrixTableParser()
+    parser = GrandsPrixTableMapper()
     result = parser.map_columns(["Race title", "Years held", "Unknown"])
     assert "Race title" in result
     assert "Years held" in result

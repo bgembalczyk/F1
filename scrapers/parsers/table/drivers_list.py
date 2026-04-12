@@ -12,10 +12,10 @@ from scrapers.constants_drivers import DRIVER_RACE_STARTS_HEADER
 from scrapers.constants_drivers import DRIVER_RACE_WINS_HEADER
 from scrapers.constants_drivers import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.constants_drivers import DRIVERS_LIST_HEADERS
-from scrapers.parsers.table.base_ordered import DriverOrderedTableParser
+from scrapers.parsers.table.base_ordered import DriverOrderedTableMapper
 
 
-class DriversListTableParser(DriverOrderedTableParser):
+class DriversListTableMapper(DriverOrderedTableMapper):
     table_type = "drivers_list"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"

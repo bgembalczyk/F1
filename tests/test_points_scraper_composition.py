@@ -84,8 +84,9 @@ def test_special_cases_router_applies_sprint_parser_without_section_hint() -> No
 def test_sprint_parser_does_not_match_history_table() -> None:
     from scrapers.points.constants_points import HISTORICAL_POSITIONS
     from scrapers.parsers_points import SprintPointsTableParser
+    from scrapers.points.parsers_points import SprintPointsTableMapper
 
-    parser = SprintPointsTableParser()
+    parser = SprintPointsTableMapper()
     history_headers = [
         "Seasons",
         *HISTORICAL_POSITIONS,

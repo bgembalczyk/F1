@@ -6,7 +6,7 @@ from infrastructure.helpers import init_scraper_options
 from scrapers.abc import ABCScraper
 from scrapers.options import ScraperOptions
 from scrapers.parsers.mixins.wiki.element import WikiElementParsingMixin
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.body_content import BodyContentParser
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element_factory import build_default_wiki_element_parsers
@@ -72,7 +72,7 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
         self.body_content_parser = body_content_parser or BodyContentParser(
             element_parsers=resolved_element_parsers,
         )
-        self.section_parser: SectionParser = (
+        self.section_parser: NestedWikiSectionParser = (
             self.body_content_parser.content_text_parser.section_parser
         )
 

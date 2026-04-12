@@ -62,7 +62,6 @@ class ScraperOptions:
     debug_diff_record_ids: set[str] | None = None
     error_policy: Literal["retry", "skip", "fail-fast"] = "fail-fast"
     error_retry_attempts: int = 1
-    # Backward-compatible aliases.
     policy: HttpPolicy | None = None
     transformers: list[RecordTransformer] | None = None
     post_processors: list[RecordPostProcessor] | None = None

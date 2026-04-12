@@ -16,7 +16,7 @@ class TestWikiSourceDefinitionProperties:
             source_name="drivers",
             output_file="f1_drivers.json",
         )
-        assert source.output_category == "drivers"
+        assert source.domain == "drivers"
 
     def test_list_filename_alias(self):
         source = registry.WikiSourceDefinition(
@@ -25,7 +25,7 @@ class TestWikiSourceDefinitionProperties:
             source_name="drivers",
             output_file="f1_drivers.json",
         )
-        assert source.list_filename == "f1_drivers.json"
+        assert source.output_file == "f1_drivers.json"
 
 
 class TestResolveListFilename:

@@ -17,15 +17,6 @@ class WikiSourceDefinition:
     output_file: str
     profile: RunProfileName = RunProfileName.DEFAULT
 
-    @property
-    def output_category(self) -> str:
-        """Backward-compatible alias for legacy naming used by older call-sites."""
-        return self.domain
-
-    @property
-    def list_filename(self) -> str:
-        """Backward-compatible alias for legacy naming used by older call-sites."""
-        return self.output_file
 
 
 WIKI_SOURCE_DEFINITIONS: tuple[WikiSourceDefinition, ...] = (
@@ -166,29 +157,29 @@ ENGINES_INDIANAPOLIS_ONLY_LEGACY_SOURCE = (
     "f1_engine_manufacturers_indianapolis_only.json"
 )
 
-FORMER_CONSTRUCTORS_SOURCE = SOURCE_BY_SEED_NAME["constructors_former"].list_filename
+FORMER_CONSTRUCTORS_SOURCE = SOURCE_BY_SEED_NAME["constructors_former"].output_file
 INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE = SOURCE_BY_SEED_NAME[
     "constructors_indianapolis_only"
-].list_filename
-TYRE_MANUFACTURERS_SOURCE = SOURCE_BY_SEED_NAME["tyres"].list_filename
+].output_file
+TYRE_MANUFACTURERS_SOURCE = SOURCE_BY_SEED_NAME["tyres"].output_file
 INDIANAPOLIS_ONLY_ENGINES_SOURCE = SOURCE_BY_SEED_NAME[
     "engines_indianapolis_only"
 ].output_file
-ENGINE_MANUFACTURERS_SOURCE = SOURCE_BY_SEED_NAME["engines_manufacturers"].list_filename
+ENGINE_MANUFACTURERS_SOURCE = SOURCE_BY_SEED_NAME["engines_manufacturers"].output_file
 ENGINE_MANUFACTURERS_INDIANAPOLIS_ONLY_SOURCE = SOURCE_BY_SEED_NAME[
     "engines_indianapolis_only"
-].list_filename
-DRIVERS_SOURCE = SOURCE_BY_SEED_NAME["drivers"].list_filename
-FEMALE_DRIVERS_SOURCE = SOURCE_BY_SEED_NAME["drivers_female"].list_filename
-DRIVER_FATALITIES_SOURCE = SOURCE_BY_SEED_NAME["drivers_fatalities"].list_filename
+].output_file
+DRIVERS_SOURCE = SOURCE_BY_SEED_NAME["drivers"].output_file
+FEMALE_DRIVERS_SOURCE = SOURCE_BY_SEED_NAME["drivers_female"].output_file
+DRIVER_FATALITIES_SOURCE = SOURCE_BY_SEED_NAME["drivers_fatalities"].output_file
 RED_FLAGGED_WORLD_CHAMPIONSHIP_SOURCE = SOURCE_BY_SEED_NAME[
     "grands_prix_red_flagged_world_championship"
-].list_filename
+].output_file
 RED_FLAGGED_NON_CHAMPIONSHIP_SOURCE = SOURCE_BY_SEED_NAME[
     "grands_prix_red_flagged_non_championship"
-].list_filename
-SPONSORSHIP_LIVERIES_SOURCE = SOURCE_BY_SEED_NAME["sponsorship_liveries"].list_filename
-PRIVATEER_TEAMS_SOURCE = SOURCE_BY_SEED_NAME["constructors_privateer"].list_filename
+].output_file
+SPONSORSHIP_LIVERIES_SOURCE = SOURCE_BY_SEED_NAME["sponsorship_liveries"].output_file
+PRIVATEER_TEAMS_SOURCE = SOURCE_BY_SEED_NAME["constructors_privateer"].output_file
 
 
 def emit_deprecation_warning(kind: str, legacy: str, canonical: str) -> None:

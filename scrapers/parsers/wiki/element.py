@@ -9,7 +9,7 @@ from models.data.wiki_parser import WikiParserData
 from scrapers.parsers.html_elements.list import ListElementParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.rules import ParserRule
-from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
+from scrapers.parsers.table.table.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.base import WikiListParser
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
@@ -155,7 +155,3 @@ def build_default_wikipedia_element_registry() -> ElementRegistry:
         parsers=build_default_wiki_element_parsers()
     )
 
-
-# Backward-compatible aliases.
-WikiElementParsers = WikiElementSet
-ElementParserRegistry = ElementRegistry

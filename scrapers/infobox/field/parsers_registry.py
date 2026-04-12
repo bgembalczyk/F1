@@ -27,6 +27,3 @@ class InfoboxFieldRegistry:
             return self._default_parser
         return self._parsers_by_label.get(label, self._default_parser)
 
-
-# Backward-compatible alias.
-InfoboxFieldParsersRegistry = InfoboxFieldRegistry

@@ -8,6 +8,12 @@ from scrapers.parsers.list_element.engine_manufacturers_list import Indianapolis
 from scrapers.parsers.table.engine_manufacturers_list import (
     EngineManufacturersTableParser,
 )
+from scrapers.parsers.table.engine_manufacturers_list import (
+    EngineManufacturersTableMapper,
+)
+from scrapers.parsers.table.engine_manufacturers_list_wiki_table import (
+    EngineManufacturersTableParser,
+)
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 
@@ -48,7 +54,7 @@ class EngineManufacturersSectionParser(ApplyForElementsMixin, NestedWikiSectionP
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = IndianapolisOnlySubSectionParser()
-        self._table_parser = EngineManufacturersTableParser()
+        self._table_parser = EngineManufacturersTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)

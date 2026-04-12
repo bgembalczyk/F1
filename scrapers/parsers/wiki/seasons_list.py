@@ -3,14 +3,15 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.table.seasons_list import SeasonsTableParser
+from scrapers.parsers.table.seasons_list import SeasonsTableMapper
+from scrapers.parsers.table.seasons_list_wiki_table import SeasonsTableParser
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 
 
 class SeasonsSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = SeasonsTableParser()
+        self._table_parser = SeasonsTableMapper()
 
     def parse(
         self,
@@ -44,6 +45,6 @@ class SeasonsSectionParser(NestedWikiSectionParser):
             data = element.get("data")
             if not isinstance(data, dict):
                 continue
-            parsed = self._table_parser.parse(data)
+            parsed = self._table_parser.map(data)
             if parsed is not None:
                 element["data"] = parsed

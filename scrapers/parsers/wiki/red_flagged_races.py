@@ -5,8 +5,10 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableParser
-from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableParser
+from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableMapper
+from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableMapper
+from scrapers.parsers.table.red_flagged_races_wiki_table import NonChampionshipsRacesTableParser
+from scrapers.parsers.table.red_flagged_races_wiki_table import WorldChampionshipsRacesTableParser
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.parsers.wiki.sublevels.sub_sub_sub_section import SubSubSubSectionParser
@@ -15,7 +17,7 @@ from scrapers.parsers.wiki.sublevels.sub_sub_sub_section import SubSubSubSection
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = NonChampionshipsRacesTableParser()
+        self._table_parser = NonChampionshipsRacesTableMapper()
         self._fallback_element_parser = SubSubSubSectionParser()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
@@ -101,7 +103,7 @@ class RedFlaggedRacesSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = NonChampionshipsRacesSubSectionParser()
-        self._world_championship_table_parser = WorldChampionshipsRacesTableParser()
+        self._world_championship_table_parser = WorldChampionshipsRacesTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)

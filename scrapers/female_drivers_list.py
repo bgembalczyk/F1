@@ -19,15 +19,18 @@ from scrapers.constants_drivers import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.constants_drivers import FEMALE_DRIVERS_SECTION_ID
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
+from scrapers.parsers.table.table.base import WikiTableBaseParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
-class FemaleDriversTableParser(WikiTableBaseParser):
+class FemaleDriversTableMapper(WikiTableBaseMapper):
     table_type = "female_drivers_list"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -92,7 +95,7 @@ class FemaleDriversTableParser(WikiTableBaseParser):
 class OfficialDriversSubSectionParser(SubSectionParser, ApplyForElementsMixin):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = FemaleDriversTableParser()
+        self._table_parser = FemaleDriversTableMapper()
 
     def _parse_group(
         self,
@@ -105,7 +108,7 @@ class OfficialDriversSubSectionParser(SubSectionParser, ApplyForElementsMixin):
         return parsed
 
 
-class DriversSectionParser(SectionParser):
+class DriversSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = OfficialDriversSubSectionParser()
@@ -123,7 +126,7 @@ class FemaleDriversListScraper(F1TableScraper):
         url=FEMALE_DRIVERS_LIST.base_url,
         section_id=FEMALE_DRIVERS_SECTION_ID,
         expected_headers=FEMALE_DRIVERS_HEADERS,
-        schema=FemaleDriversTableParser.build_schema(),
+        schema=FemaleDriversTableMapper.build_schema(),
         record_factory=RECORD_FACTORIES.builders("special_driver"),
     )
 
