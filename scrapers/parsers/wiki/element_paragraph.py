@@ -1,8 +1,8 @@
 from bs4 import Tag
 
 from models.data.parsed.html_elements import ParagraphElementData
+from scrapers.parsers.contracts.wiki_elements import WikiParagraphElementParserABC
 from scrapers.parsers.paragraph_element_parser import ParagraphElementParser
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiParagraphElementParserABC
 
 
 class WikiParagraphElementParser(WikiParagraphElementParserABC):

@@ -3,7 +3,6 @@ from bs4 import Tag
 from models.data.wiki.infobox import WikiInfoboxData
 from scrapers.parsers.infobox_element_parser import InfoboxElementParser
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementParserABC
 
 
 class WikiInfoboxElementParser(WikiInfoboxElementParserABC):

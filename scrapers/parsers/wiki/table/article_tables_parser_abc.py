@@ -4,7 +4,7 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Any
 
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiArticleParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiArticleParserABC
 
 
 class ArticleTablesParserABC(WikiArticleParserABC, ABC):
