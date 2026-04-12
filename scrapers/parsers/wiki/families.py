@@ -9,57 +9,49 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.data.parsed.figure import FigureParsedData
+from models.data.parsed.html_elements import SectionElementData
 from models.data.parsed.infobox import InfoboxParsedData
 from models.data.parsed.nav_box import NavBoxParsedData
-from scrapers.parsers.roles import HtmlTagParserABC
-from scrapers.parsers.roles import MapperABC
-from scrapers.parsers.roles import InfoboxHtmlParserABC
-from scrapers.parsers.roles import ListHtmlParserABC
-from scrapers.parsers.roles import ParserABC
-from scrapers.parsers.roles import TableHtmlParserABC
+from scrapers.parsers.base_family import InfoboxParserABC
+from scrapers.parsers.base_family import ListParserABC
+from scrapers.parsers.base_family import SectionParserABC
+from scrapers.parsers.base_family import TableParserABC
+from scrapers.parsers.base_family import TagParserABC
 from scrapers.parsers.roles import TableMapperABC
-from scrapers.parsers.wiki.hierarchy import InfoboxElementParserABC
-from scrapers.parsers.wiki.hierarchy import ListElementParserABC
-from scrapers.parsers.wiki.hierarchy import SectionElementParserABC
-from scrapers.parsers.wiki.hierarchy import TableElementParserABC
 
 WikiTableParsedData = dict[str, Any]
 WikiListParsedData = dict[str, Any]
-WikiSectionParsedData = dict[str, Any]
+WikiSectionParsedData = SectionElementData
 
 
-class WikiTableParserABC(TableElementParserABC, ABC):
+class WikiTableParserABC(TagParserABC[WikiTableParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiTableParsedData: ...
 
 
-class WikiListParserABC(ListElementParserABC, ABC):
+class WikiListParserABC(ListParserABC, ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiListParsedData: ...
 
 
-class WikiSectionStructureParserABC(SectionElementParserABC, ABC):
+class WikiSectionParserABC(SectionParserABC, ABC):
     @abstractmethod
-    def parse(self, raw: BeautifulSoup | Tag) -> WikiSectionParsedData: ...
+    def parse(self, raw: BeautifulSoup) -> WikiSectionParsedData: ...
 
 
-class WikiInfoboxParserABC(InfoboxElementParserABC, ABC):
+class WikiInfoboxParserABC(InfoboxParserABC, ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> InfoboxParsedData: ...
 
 
-class WikiNavboxHtmlParserABC(HtmlTagParserABC[NavBoxParsedData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> NavBoxParsedData: ...
-
-
-class WikiFigureHtmlParserABC(HtmlTagParserABC[FigureParsedData], ABC):
+class WikiFigureHtmlParserABC(TagParserABC[FigureParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> FigureParsedData: ...
 
 
-# Backward-compatible alias during migration.
-WikiSectionParserABC = WikiSectionStructureParserABC
+class WikiNavboxHtmlParserABC(TagParserABC[NavBoxParsedData], ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> NavBoxParsedData: ...
 
 
 @dataclass(frozen=True)
@@ -77,7 +69,6 @@ __all__ = [
     "WikiNavboxHtmlParserABC",
     "WikiSectionParsedData",
     "WikiSectionParserABC",
-    "WikiSectionStructureParserABC",
     "WikiTableMapperSet",
     "WikiTableParsedData",
     "WikiTableParserABC",

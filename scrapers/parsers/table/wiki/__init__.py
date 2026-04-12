@@ -1,3 +1,4 @@
-from .base import WikiTableBaseMapper, WikiTableBaseParser
+from .base import WikiTableBaseMapper
+from .contracts import ArticleTablesParserABC
 
-__all__ = ["WikiTableBaseParser", "WikiTableBaseMapper"]
+__all__ = ["ArticleTablesParserABC", "WikiTableBaseMapper"]

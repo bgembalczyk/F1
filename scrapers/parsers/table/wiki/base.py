@@ -1,13 +1,3 @@
-from scrapers.parsers.wiki.table.base import (
-    TableFragmentParserABC,
-    WikiTableBaseMapper,
-    WikiTableBaseParser,
-    WikiTableFragmentParser,
-)
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
-__all__ = [
-    "WikiTableBaseParser",
-    "WikiTableBaseMapper",
-    "TableFragmentParserABC",
-    "WikiTableFragmentParser",
-]
+__all__ = ["WikiTableBaseMapper"]
