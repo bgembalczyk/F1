@@ -19,7 +19,7 @@ from scrapers.parsers.wiki.paragraph import ParagraphParser
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_default_wiki_element_parsers
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
-from scrapers.parsers.wiki.table import TableParser
+from scrapers.parsers.wiki.table import WikiTableParser
 from scrapers.parsers.wiki.header import HeaderParser
 from scrapers.parsers.section.match.priorities import SectionExtractionContext
 from scrapers.parsers.section.wiki.helpers import split_into_parts
@@ -41,7 +41,7 @@ from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.parsers import WikiElementSet
 from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
-from scrapers.wiki.parsers.elements.table import TableParser
+from scrapers.wiki.parsers.elements.table import WikiTableParser
 from scrapers.wiki.parsers.header import HeaderParser
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 from scrapers.wiki.parsers.sections.helpers import split_into_parts
@@ -230,7 +230,7 @@ def test_table_parser():
     </table>
     """
     soup = make_soup(html)
-    parser = TableParser()
+    parser = WikiTableParser()
     result = parser.parse(soup.find("table"))
     assert result["headers"] == ["Name", "Year"]
     assert result["rows"] == [["Hamilton", "2020"]]
@@ -259,7 +259,7 @@ def test_table_parser_handles_multirow_headers_and_blank_th() -> None:
     </table>
     """
     soup = make_soup(html)
-    parser = TableParser()
+    parser = WikiTableParser()
 
     result = parser.parse(soup.find("table"))
 
@@ -297,7 +297,7 @@ def test_table_parser_handles_rowspan_and_colspan_with_stable_mapping() -> None:
     </table>
     """
     soup = make_soup(html)
-    parser = TableParser()
+    parser = WikiTableParser()
 
     result = parser.parse(soup.find("table"))
 
@@ -339,7 +339,7 @@ def test_table_parser_uses_custom_html_table_parser() -> None:
     """
     soup = make_soup(html)
     stub_parser = _StubHtmlTableParser()
-    parser = TableParser(table_parser=stub_parser)
+    parser = WikiTableParser(table_parser=stub_parser)
 
     result = parser.parse(soup.find("table"))
 
@@ -368,7 +368,7 @@ def test_table_parser_rowspan_cell_is_cleaned_after_expansion_regression() -> No
     </table>
     """
     soup = make_soup(html)
-    parser = TableParser()
+    parser = WikiTableParser()
 
     result = parser.parse(soup.find("table"))
 
@@ -394,7 +394,7 @@ def test_table_parser_colspan_cells_remain_cleaned_regression() -> None:
     </table>
     """
     soup = make_soup(html)
-    parser = TableParser()
+    parser = WikiTableParser()
 
     result = parser.parse(soup.find("table"))
 

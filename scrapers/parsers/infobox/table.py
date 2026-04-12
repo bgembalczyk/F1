@@ -119,6 +119,3 @@ class InfoboxTableExtractor:
 
 
 __all__ = ["InfoboxTableExtractor"]
-
-# Backward-compatible alias.
-InfoboxTableParser = InfoboxTableExtractor

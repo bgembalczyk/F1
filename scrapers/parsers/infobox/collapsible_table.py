@@ -100,6 +100,3 @@ class CollapsibleTableExtractor:
 
 
 __all__ = ["CollapsibleTableExtractor"]
-
-# Backward-compatible alias.
-CollapsibleTableParser = CollapsibleTableExtractor

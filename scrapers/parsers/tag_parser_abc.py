@@ -14,6 +14,3 @@ class HtmlTagParserABC(ParserABC[Tag, TagOut], ABC, Generic[TagOut]):
     @abstractmethod
     def parse(self, raw: Tag) -> TagOut: ...
 
-
-class TagParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    """Backward-compatible alias for HtmlTagParserABC."""

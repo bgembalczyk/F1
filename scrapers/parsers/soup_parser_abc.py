@@ -18,6 +18,3 @@ class HtmlSoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]
     def parse(self, raw: BeautifulSoup) -> SoupOut: ...
 
 
-class SoupParserABC(HtmlSoupParserABC[SoupOut], ABC, Generic[SoupOut]):
-    """Backward-compatible alias for HtmlSoupParserABC."""
-
