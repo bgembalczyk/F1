@@ -8,6 +8,10 @@ from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
+from scrapers.parsers.wiki.figure import WikiFigureParser
+from scrapers.parsers.wiki.navbox import WikiNavboxParser
+from scrapers.parsers.wiki.paragraph import WikiParagraphParser
+from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 
 class WikiElementParsingMixin:
@@ -22,8 +26,6 @@ class WikiElementParsingMixin:
             msg = "element_parsers must be provided by composition root"
             raise ValueError(msg)
         self.infobox_parser = resolved_parsers.infobox_parser
-        self.paragraph_parser = resolved_parsers.paragraph_parser
-        self.figure_parser = resolved_parsers.figure_parser
         self.list_parser = resolved_parsers.list_parser
         self.table_html_parser = resolved_parsers.table_html_parser
         self.navbox_parser = resolved_parsers.navbox_parser
@@ -60,12 +62,12 @@ class WikiElementParsingMixin:
             return
         self.register_parser_rule(
             predicate=lambda el: el.name == "p",
-            parser=self.paragraph_parser.parse,
+            parser=self._paragraph_parser.parse,
             result_type="paragraph",
         )
         self.register_parser_rule(
             predicate=lambda el: el.name == "figure",
-            parser=self.figure_parser.parse,
+            parser=self._figure_parser.parse,
             result_type="figure",
         )
         self.register_parser_rule(
@@ -93,7 +95,7 @@ class WikiElementParsingMixin:
                 and el.get("role") == "navigation"
                 and "navbox" in self._get_classes(el)
             ),
-            parser=self.navbox_parser.parse,
+            parser=self._navbox_parser.parse,
             result_type="navbox",
         )
         self.register_parser_rule(
@@ -101,7 +103,7 @@ class WikiElementParsingMixin:
                 el.name == "div"
                 and any("references-wrap" in c for c in self._get_classes(el))
             ),
-            parser=self.references_parser.parse,
+            parser=self._references_parser.parse,
             result_type="references",
         )
 

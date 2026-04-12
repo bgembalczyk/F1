@@ -118,6 +118,7 @@ WikiTableFragmentParser = TableFragmentParserABC
 WikiTableBaseMapper = WikiTableBaseParser
 
 __all__ = [
+    "WikiTableBaseParser",
     "TableFragmentParserABC",
     "WikiTableBaseMapper",
     "WikiTableBaseParser",

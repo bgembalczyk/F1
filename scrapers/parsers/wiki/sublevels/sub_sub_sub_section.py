@@ -47,10 +47,9 @@ class SubSubSubSectionParser(WikiElementParsingMixin, WikiParser):
     ) -> dict[str, list[WikiParsedPayload]]:
         section_context = context or SectionExtractionContext()
         tags = [c for c in elements if isinstance(c, Tag)]
-        parsed = {
+        return {
             "elements": self.parse_elements(tags, section_context=section_context)
         }
-        return self.toolbox.domain_mapper.map(parsed)
 
 
 __all__ = ["SubSubSubSectionParser"]
