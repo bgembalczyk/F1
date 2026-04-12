@@ -69,6 +69,9 @@ class SectionStructureParserABC(SectionParserABC, ABC):
     @abstractmethod
     def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
 
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
+
 
 class TableHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     """ABC parsera tabeli HTML."""
@@ -100,6 +103,16 @@ class MapperABC(ABC, Generic[InT, OutT]):
     @abstractmethod
     def parse(self, raw: Tag) -> dict[str, Any]: ...
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
+
+
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Canonical mapper contract (input -> output)."""
+
+    @abstractmethod
+    def map(self, raw: InT) -> OutT: ...
+
 
 class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):
     @abstractmethod
@@ -108,6 +121,9 @@ class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC
 
 class TableMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):
     """Mapper fragmentu tabeli na dane domenowe."""
+
+    @abstractmethod
+    def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None: ...
 
 
 class MatchesMixin(ABC):
@@ -145,6 +161,7 @@ __all__ = [
     "HtmlTagParserABC",
     "InfoboxHtmlParserABC",
     "ListHtmlParserABC",
+    "MapperABC",
     "MatchesMixin",
     "ParsingBundle",
     "ParsingBundleProviderABC",

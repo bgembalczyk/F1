@@ -3,10 +3,9 @@ from bs4 import Tag
 
 from scrapers.parsers.html_elements.section import SectionElementParser
 from scrapers.parsers.wiki.families import WikiSectionStructureParserABC
-from scrapers.parsers.wiki.types import WikiSectionData
 
 
-class WikiSectionElementParser(WikiSectionStructureParserABC):
+class WikiSectionElementParser(WikiSectionStructureParserABC, SectionElementParser):
     """Wikipedia HTML element parser for section containers."""
 
     def __init__(self, parser: SectionElementParser | None = None) -> None:
