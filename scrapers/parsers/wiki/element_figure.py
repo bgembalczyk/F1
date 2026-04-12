@@ -1,8 +1,8 @@
 from bs4 import Tag
 
-from scrapers.parsers.contracts.wiki_figure_parser_abc import WikiFigureParserABC
-from scrapers.parsers.html_elements.figure_element_parser import FigureElementParser
+from scrapers.parsers.figure_element_parser import FigureElementParser
 from scrapers.parsers.wiki.types import WikiFigureData
+from scrapers.parsers.wiki_figure_parser_abc import WikiFigureParserABC
 
 
 class WikiFigureElementParser(WikiFigureParserABC):

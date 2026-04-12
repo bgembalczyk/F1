@@ -1,8 +1,8 @@
 from bs4 import Tag
 
 from models.data.parsed.nav_box import NavBoxParsedData
-from scrapers.parsers.contracts.wiki_navbox_parser_abc import WikiNavboxParserABC
-from scrapers.parsers.html_elements.navbox_element_parser import NavboxElementParser
+from scrapers.parsers.navbox_element_parser import NavboxElementParser
+from scrapers.parsers.wiki_navbox_parser_abc import WikiNavboxParserABC
 
 
 class WikiNavboxParser(WikiNavboxParserABC):

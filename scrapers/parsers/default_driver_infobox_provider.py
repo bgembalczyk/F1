@@ -3,12 +3,12 @@ from __future__ import annotations
 from scrapers.infobox.extraction.extractor.link import InfoboxLinkExtractor
 from scrapers.infobox.section.collector import InfoboxSectionCollector
 from scrapers.infobox.section.discovery import InfoboxSectionDiscovery
+from scrapers.parsers.driver_infobox_bundle import DriverInfoboxBundle
+from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
 from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
-from scrapers.parsers.infobox.driver_infobox_bundle import DriverInfoboxBundle
 from scrapers.parsers.infobox.field.career import InfoboxCareerParser
 from scrapers.parsers.infobox.field.title import InfoboxTitlesParser
 from scrapers.parsers.infobox.general import InfoboxGeneralParser
-from scrapers.parsers.infobox.providers.drivers.driver_infobox_provider_abc import DriverInfoboxProviderABC
 
 
 class DefaultDriverInfoboxProvider(DriverInfoboxProviderABC):

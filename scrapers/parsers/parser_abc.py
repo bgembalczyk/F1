@@ -5,8 +5,8 @@ from abc import abstractmethod
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.parsers.contracts.constants_contracts import In
-from scrapers.parsers.contracts.constants_contracts import Out
+from scrapers.parsers.constants_contracts import In
+from scrapers.parsers.constants_contracts import Out
 
 
 class ParserABC(ABC, Generic[In, Out]):

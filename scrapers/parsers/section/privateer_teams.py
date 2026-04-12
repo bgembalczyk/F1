@@ -4,11 +4,9 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.contracts.wiki_list_parser_abc import WikiListParserABC
 from scrapers.parsers.privateer_teams_list import PrivateerTeamsListParser
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-
-
+from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
 
 
 class PrivateerTeamsSectionParser(NestedWikiSectionParser):

@@ -1,7 +1,7 @@
 from bs4 import Tag
 
 from models.data.parsed.html_elements import ParagraphElementData
-from scrapers.parsers.html_elements.base_html_element_parser import BaseHtmlElementParser
+from scrapers.parsers.base_html_element_parser import BaseHtmlElementParser
 from scrapers.parsers.text_cleaning import extract_text
 
 

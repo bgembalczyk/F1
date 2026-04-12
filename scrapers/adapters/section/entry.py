@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from models.section_id import SectionId
-from scrapers.parsers.contracts.section_structure_parser_abc import SectionStructureParserABC
+from scrapers.parsers.section_structure_parser_abc import SectionStructureParserABC
 
 
 @dataclass(frozen=True)

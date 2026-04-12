@@ -2,8 +2,8 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Generic
 
-from scrapers.parsers.contracts.constants_contracts import InT
-from scrapers.parsers.contracts.constants_contracts import OutT
+from scrapers.parsers.constants_contracts import InT
+from scrapers.parsers.constants_contracts import OutT
 
 
 class MapperABC(ABC, Generic[InT, OutT]):

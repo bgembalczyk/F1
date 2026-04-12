@@ -3,7 +3,7 @@ from abc import abstractmethod
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.contracts.parser_abc import ParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.section.parse_results import SectionParseResult
 
 

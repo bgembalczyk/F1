@@ -1,8 +1,8 @@
 from bs4 import Tag
 
-from scrapers.parsers.contracts.wiki_list_parser_abc import WikiListParserABC
-from scrapers.parsers.html_elements.list_element_parser import ListElementParser
+from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.wiki.types import WikiListData
+from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
 
 
 class WikiListElementParser(WikiListParserABC):

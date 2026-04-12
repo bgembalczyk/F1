@@ -6,9 +6,7 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.parsers.contracts.constants_contracts import BundleT_co
-
-
+from scrapers.parsers.constants_contracts import BundleT_co
 
 
 class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):

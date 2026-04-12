@@ -5,13 +5,13 @@ from typing import Any
 
 from bs4 import Tag
 
+from scrapers.parsers.group_parsing_mixin import GroupParsingMixin
+from scrapers.parsers.matches_mixin import MatchesMixin
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
-from scrapers.parsers.contracts.constants_contracts import GroupParsingMixin
-from scrapers.parsers.contracts.constants_contracts import MatchesMixin
-from scrapers.parsers.contracts.constants_contracts import RowMappingMixin
-from scrapers.parsers.contracts.constants_contracts import TableDomainMapperABC
-from scrapers.parsers.contracts.soup_parser_abc import TagParserABC
+from scrapers.parsers.row_mapping_mixin import RowMappingMixin
+from scrapers.parsers.table_domain_mapper_abc import TableDomainMapperABC
+from scrapers.parsers.tag_parser_abc import TagParserABC
 
 
 class WikiTableBaseParser(TagParserABC[dict[str, Any]], ABC):

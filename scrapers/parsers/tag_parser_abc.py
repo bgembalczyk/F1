@@ -4,8 +4,8 @@ from typing import Generic
 
 from bs4 import Tag
 
-from scrapers.parsers.contracts.parser_abc import ParserABC
-from scrapers.parsers.contracts.constants_contracts import TagOut
+from scrapers.parsers.constants_contracts import TagOut
+from scrapers.parsers.parser_abc import ParserABC
 
 
 class TagParserABC(ParserABC[Tag, TagOut], ABC, Generic[TagOut]):

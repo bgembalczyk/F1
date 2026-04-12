@@ -1,8 +1,9 @@
 from typing import Any
 
-from scrapers.parsers.contracts.parser_abc import ParserABC as Parser
+from scrapers.parsers.parser_abc import ParserABC
 
-class SponsorPartsParser(Parser[str, list[tuple[str, str]]]):
+
+class SponsorPartsParser(ParserABC[str, list[tuple[str, str]]]):
     def __init__(self, text: str) -> None:
         self._text = text
         self._parts: list[tuple[str, str]] = []

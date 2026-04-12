@@ -6,10 +6,10 @@ from typing import TypeVar
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.parsers.contracts.parser_abc import ParserABC as Parser
 from scrapers.parsers.input_types import WikiDictFragmentInput
-from scrapers.parsers.contracts.soup_parser_abc import TagParserABC
-from scrapers.parsers.contracts.soup_parser_abc import SoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
+from scrapers.parsers.soup_parser_abc import SoupParserABC
+from scrapers.parsers.tag_parser_abc import TagParserABC
 
 WikiRecord = dict[str, Any]
 WikiRecords = list[WikiRecord]
@@ -19,7 +19,7 @@ TWikiOutput = TypeVar("TWikiOutput")
 
 
 class WikiParser(
-    Parser[TWikiInput, TWikiOutput],
+    ParserABC[TWikiInput, TWikiOutput],
     ABC,
     Generic[TWikiInput, TWikiOutput],
 ):

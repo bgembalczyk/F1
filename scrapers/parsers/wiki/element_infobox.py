@@ -1,8 +1,8 @@
 from bs4 import Tag
 
-from scrapers.parsers.contracts.wiki_infobox_parser_abc import WikiInfoboxParserABC
-from scrapers.parsers.html_elements.infobox_element_parser import InfoboxElementParser
+from scrapers.parsers.infobox_element_parser import InfoboxElementParser
 from scrapers.parsers.wiki.types import WikiInfoboxData
+from scrapers.parsers.wiki_infobox_parser_abc import WikiInfoboxParserABC
 
 
 class WikiInfoboxElementParser(WikiInfoboxParserABC):

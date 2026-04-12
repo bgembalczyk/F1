@@ -4,12 +4,8 @@ from scrapers.adapters.section.entry import SectionAdapterEntry
 from scrapers.parsers.section.table.constructor.history import (
     ConstructorHistorySectionParser,
 )
-from scrapers.parsers.section.table.results.constructor.championship import (
-    ConstructorChampionshipResultsSectionParser,
-)
-from scrapers.parsers.section.table.results.constructor.complete_f1 import (
-    ConstructorCompleteF1ResultsSectionParser,
-)
+from scrapers.parsers.section.table.constructor.results.championship import ConstructorChampionshipResultsSectionParser
+from scrapers.parsers.section.table.constructor.results.complete_f1 import ConstructorCompleteF1ResultsSectionParser
 from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
 
 
