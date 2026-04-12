@@ -4,8 +4,8 @@ import ast
 from pathlib import Path
 
 CONTRACT_FILES = [
-    Path("scrapers/parsers/roles.py"),
-    Path("scrapers/parsers/wiki/families.py"),
+    Path("scrapers/parsers/contracts/mapping.py"),
+    Path("scrapers/parsers/wiki/parser_families.py"),
     Path("scrapers/parsers/wiki/domain_mapper.py"),
 ]
 

@@ -11,8 +11,8 @@ from bs4 import Tag
 from models.data.parsed.figure import FigureParsedData
 from models.data.parsed.infobox import InfoboxParsedData
 from models.data.parsed.nav_box import NavBoxParsedData
-from scrapers.parsers.roles import HtmlTagParserABC
-from scrapers.parsers.roles import TableMapperABC
+from scrapers.parsers.contracts.html import TagParserABC
+from scrapers.parsers.contracts.mapping import TableMapperABC
 from scrapers.parsers.wiki.hierarchy import InfoboxElementParserABC
 from scrapers.parsers.wiki.hierarchy import ListElementParserABC
 from scrapers.parsers.wiki.hierarchy import SectionElementParserABC
@@ -48,12 +48,12 @@ class WikiInfoboxParserABC(InfoboxElementParserABC, ABC):
     def parse(self, raw: Tag) -> InfoboxParsedData: ...
 
 
-class WikiFigureHtmlParserABC(HtmlTagParserABC[FigureParsedData], ABC):
+class WikiFigureHtmlParserABC(TagParserABC[FigureParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> FigureParsedData: ...
 
 
-class WikiNavboxHtmlParserABC(HtmlTagParserABC[NavBoxParsedData], ABC):
+class WikiNavboxHtmlParserABC(TagParserABC[NavBoxParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> NavBoxParsedData: ...
 

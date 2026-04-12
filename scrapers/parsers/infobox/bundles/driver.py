@@ -6,7 +6,7 @@ from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
 from scrapers.parsers.infobox.field.career import InfoboxCareerParser
 from scrapers.parsers.infobox.field.title import InfoboxTitlesParser
 from scrapers.parsers.infobox.general import InfoboxGeneralParser
-from scrapers.parsers.roles import ParsingBundle
+from scrapers.parsers.contracts.bundles import ParsingBundle
 
 
 @dataclass(frozen=True)
