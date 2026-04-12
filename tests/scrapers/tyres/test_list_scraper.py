@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from scrapers.list_scraper_tyres import ManufacturersSectionParser
+from scrapers.list_scraper_tyres import TyreManufacturersBySeasonTableParser
+from scrapers.list_scraper_tyres import TyreManufacturersScraper
 from scrapers.tyres.list_scraper_tyres import ManufacturersSectionParser
 from scrapers.tyres.list_scraper_tyres import TyreManufacturersBySeasonTableMapper
 from scrapers.tyres.list_scraper_tyres import TyreManufacturersScraper

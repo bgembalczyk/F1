@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.drivers.drivers_columns.points_or_text import PointsOrTextColumn
+from scrapers.columns.types.points_or_text import PointsOrTextColumn
 
 
 def ctx(html: str, clean_text: str) -> ColumnContext:

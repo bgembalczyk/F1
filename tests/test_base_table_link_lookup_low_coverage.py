@@ -1,6 +1,6 @@
 import pytest
 
-from scrapers.base.table.columns.helpers.link_lookup import build_link_lookup
+from scrapers.columns.helpers.link_lookup import build_link_lookup
 
 
 @pytest.mark.parametrize(

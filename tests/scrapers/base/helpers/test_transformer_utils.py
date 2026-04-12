@@ -1,5 +1,5 @@
 # ruff: noqa: E501, PLR2004
-from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
+from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 
 
 class DoubleValueTransformer:

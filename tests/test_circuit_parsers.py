@@ -1,7 +1,7 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.infobox.extraction.base import WikipediaInfoboxScraper
 from scrapers.circuits.circuits_helpers.lap_record import extract_time
 from scrapers.circuits.circuits_helpers.lap_record import select_details_paren
 from scrapers.circuits.circuits_infobox import services

@@ -4,7 +4,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.scope_handlers import (
+from scrapers.parsers.liveries.sponsorship.scope.handlers import (
     ColourScopeHandler,
 )
 
@@ -73,7 +73,7 @@ def test_colour_grand_prix_scope_handles_grands_prix_plural() -> None:
 
 def test_colour_list_column_br_as_separator() -> None:
     """<br> inside a colour cell is treated as a value separator."""
-    from scrapers.sponsorship_liveries.columns_sponsorship_liveries.colour import (
+    from scrapers.columns.types.colour import (
         ColourListColumn,
     )
 
@@ -98,7 +98,7 @@ def test_colour_list_column_br_as_separator() -> None:
 
 def test_colour_list_column_p_as_separator() -> None:
     """<p> boundary inside a colour cell is treated as a value separator."""
-    from scrapers.sponsorship_liveries.columns_sponsorship_liveries.colour import (
+    from scrapers.columns.types.colour import (
         ColourListColumn,
     )
 
@@ -123,7 +123,7 @@ def test_colour_list_column_p_as_separator() -> None:
 
 def test_colour_list_column_skips_parenthetical_p() -> None:
     """A <p> that consists entirely of parenthetical text is ignored."""
-    from scrapers.sponsorship_liveries.columns_sponsorship_liveries.colour import (
+    from scrapers.columns.types.colour import (
         ColourListColumn,
     )
 
@@ -156,7 +156,7 @@ def test_possessive_group_not_split_on_and() -> None:
 
 def test_possessive_group_two_drivers() -> None:
     """Full Matra case: two colour groups with possessive annotations."""
-    from scrapers.base.helpers.text_normalization import split_delimited_text
+    from scrapers.helpers.text_normalization import split_delimited_text
 
     text = "Green and White (Pescarolo's car), White and Red (Beltoise's car)"
     parts = split_delimited_text(text)

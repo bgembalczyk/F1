@@ -133,7 +133,7 @@ class FetchOrchestrationMixin:
             logger=self.logger,
             quality_report_service=self._quality_report_service,
             error_policy=self._error_policy,
-            parse_records=self.parse,
+            parse_records=self.parse_soup,
             normalize_records=self._normalize_pipeline_records,
             transform_records=self._apply_transformers,
             validate_records=self.validate_records,

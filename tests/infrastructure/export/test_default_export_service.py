@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 
 from infrastructure.export.default_export_service import build_default_export_service
-from scrapers.base.exporters.service import ExportService
+from exporters.service import ExportService
 
 
 @pytest.mark.parametrize(

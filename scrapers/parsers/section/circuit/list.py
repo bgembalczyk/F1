@@ -8,6 +8,8 @@ from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.table.article import ArticleTablesParser
 from scrapers.parsers.table.table.circuit_list import CircuitsListTableMapper
 from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
+from scrapers.parsers.wiki.table.article import ArticleTablesParser
+from scrapers.parsers.wiki.table.circuit_list import CircuitsListTableMapper
 from scrapers.section.parse_results import SectionParseResult
 
 if TYPE_CHECKING:

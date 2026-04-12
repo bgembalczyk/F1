@@ -5,7 +5,7 @@ import json
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.abc import ABCScraper
+from scrapers.abc import ABCScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.quality.reporter import QualityReporter
 

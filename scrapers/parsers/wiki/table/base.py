@@ -32,6 +32,9 @@ class WikiTableBaseMapper(
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         return self.map_fragment(fragment)
 
+    def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+        return self.map(fragment)
+
     def map_fragment(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         headers = fragment.get("headers", [])
         if not isinstance(headers, list) or not self.matches(headers, fragment):
@@ -112,9 +115,14 @@ TableFragmentParserABC = TableHtmlParserABC
 WikiTableFragmentParser = TableFragmentParserABC
 
 
+WikiTableBaseMapper = WikiTableBaseParser
+
 __all__ = [
     "TableFragmentParserABC",
     "WikiTableBaseMapper",
     "WikiTableBaseParser",
+    "WikiTableBaseParser",
+    "WikiTableBaseMapper",
+    "TableFragmentParserABC",
     "WikiTableFragmentParser",
 ]

@@ -9,10 +9,8 @@ from scrapers.config_table import TableScraperConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.parsers.section.protocol import SectionParser
-from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
-from scrapers.parsers.table.table.base import WikiTableBaseParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import TYRES

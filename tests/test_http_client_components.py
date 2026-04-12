@@ -3,13 +3,13 @@ from dataclasses import dataclass
 
 import pytest
 
-from infrastructure.http_client.caching.file import FileCache
-from infrastructure.http_client.components import HeaderResolver
-from infrastructure.http_client.components import RequestExecutor
-from infrastructure.http_client.components import ResponseCacheService
-from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.factories import DefaultHttpPolicyFactory
-from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
+from infrastructure.cache.file.protocol import FileCache
+from infrastructure.http.request_executor import HeaderResolver
+from infrastructure.http.request_executor import RequestExecutor
+from infrastructure.http.request_executor import ResponseCacheService
+from infrastructure.http.config import HttpClientConfig
+from infrastructure.http.factories.default_policy import DefaultHttpPolicyFactory
+from infrastructure.http.policies.retry.default import DefaultRetryPolicy
 
 
 class DummyRequestError(Exception):

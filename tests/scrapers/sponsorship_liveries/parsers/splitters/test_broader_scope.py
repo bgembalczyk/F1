@@ -1,4 +1,4 @@
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.splitters import (
+from scrapers.parsers.liveries.sponsorship.splitters import (
     BroaderScopeSplitter,
 )
 

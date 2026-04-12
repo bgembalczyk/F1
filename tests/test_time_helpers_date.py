@@ -1,6 +1,6 @@
-from scrapers.base.helpers.time import parse_date_iso
-from scrapers.base.helpers.time import parse_date_parts
-from scrapers.base.helpers.time import parse_date_text
+from scrapers.helpers.time import parse_date_iso
+from scrapers.helpers.time import parse_date_parts
+from scrapers.helpers.time import parse_date_text
 
 EXPECTED_YEAR = 2023
 EXPECTED_MONTH = 10

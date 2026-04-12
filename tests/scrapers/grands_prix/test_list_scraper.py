@@ -1,4 +1,6 @@
 # ruff: noqa: E501, PLR2004, SLF001
+from scrapers.list_scraper_grands_prix import ByRaceTitleSubSectionParser
+from scrapers.list_scraper_grands_prix import GrandsPrixTableParser
 from scrapers.grands_prix.list_scraper_grands_prix import ByRaceTitleSubSectionParser
 from scrapers.grands_prix.list_scraper_grands_prix import GrandsPrixTableMapper
 

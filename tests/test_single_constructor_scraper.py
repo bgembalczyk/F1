@@ -3,11 +3,11 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.constructors.constructors_complete_scraper import (
+from scrapers.constructors_complete_scraper import (
     CompleteConstructorsDataExtractor,
 )
-from scrapers.constructors.constructors_helpers.export import constructor_name_initial
-from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
+from complete_extractor.export import constructor_name_initial
+from scrapers.constructors_single_scraper import SingleConstructorScraper
 
 
 def make_soup(html: str) -> BeautifulSoup:

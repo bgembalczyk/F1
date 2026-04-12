@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from scrapers.wiki.drivers_checkpoint_flow_wiki import DriversCheckpointFlow
+from scrapers.drivers_checkpoint_flow_wiki import DriversCheckpointFlow
 
 
 def read_json(path: Path):
