@@ -14,14 +14,20 @@ class HtmlRowBackgroundColorAdapter:
     _short_hex_len = 3
 
     def extract(self, row: Tag) -> str | None:
-        for candidate in [row.get("style"), row.get("bgcolor")]:
-            color = self._extract_color(candidate)
-            if color:
-                return color
-        for cell in row.find_all(["th", "td"], recursive=False):
-            for candidate in [cell.get("style"), cell.get("bgcolor")]:
-                color = self._extract_color(candidate)
-                if color:
+        if (style := row.get("style")) and (color := self._extract_color(style)):
+            return color
+        if (bgcolor := row.get("bgcolor")) and (color := self._extract_color(bgcolor)):
+            return color
+
+        for cell in row.children:
+            if cell.name in ("th", "td"):
+                if (style := cell.get("style")) and (
+                    color := self._extract_color(style)
+                ):
+                    return color
+                if (bgcolor := cell.get("bgcolor")) and (
+                    color := self._extract_color(bgcolor)
+                ):
                     return color
         return None
 
