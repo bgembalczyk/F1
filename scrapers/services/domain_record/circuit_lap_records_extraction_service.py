@@ -8,7 +8,10 @@ from scrapers.helpers.layout import detect_layout_name
 from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
+from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
+from scrapers.parsers.wiki.table.article_tables_assembler_abc import (
+    ArticleTablesAssemblerABC,
+)
 
 
 class CircuitLapRecordsExtractionService:
@@ -17,10 +20,10 @@ class CircuitLapRecordsExtractionService:
     def __init__(
         self,
         *,
-        article_tables_parser: ArticleTablesParserABC | None = None,
+        article_tables_assembler: ArticleTablesAssemblerABC | None = None,
     ) -> None:
-        self._article_tables_parser = article_tables_parser or ArticleTablesParser(
-            include_source_table=True,
+        self._article_tables_assembler = article_tables_assembler or ArticleTablesAssembler(
+            html_parser=ArticleTablesParser(include_source_table=True),
         )
 
     def collect_lap_record_rows(
@@ -44,7 +47,7 @@ class CircuitLapRecordsExtractionService:
         lap_scraper.url = url
         all_records: list[dict[str, Any]] = []
 
-        for table_data in self._article_tables_parser.parse(soup):
+        for table_data in self._article_tables_assembler.assemble(soup):
             table = table_data.get("_table")
             if table is None:
                 continue

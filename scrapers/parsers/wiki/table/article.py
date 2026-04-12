@@ -8,12 +8,7 @@ from scrapers.helpers.text import clean_wiki_text
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
-from scrapers.parsers.lap_records_wiki_table_mapper import LapRecordsWikiTableMapper
 from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
-from scrapers.parsers.wiki.table.mapped.lap_records_wiki_table_mapper import LapRecordsWikiTableMapper
-from scrapers.parsers.wiki.table.mapped.mapped_wiki_table_mapper import MappedWikiTableMapper
-from scrapers.parsers.wiki.table.mapped.race_results_table_mapper import RaceResultsTableMapper
-from scrapers.parsers.wiki.table.mapped.standings_table_mapper import StandingsTableMapper
 from scrapers.parsers.wiki.table_element_base import WikiTableElementParserBase
 
 
@@ -25,16 +20,10 @@ class ArticleTablesParser(WikiTableElementParserBase, ArticleTablesParserABC):
         *,
         include_heading_path: bool = False,
         include_source_table: bool = False,
-        specialized_mappers: list[MappedWikiTableMapper] | None = None,
     ) -> None:
         self.include_heading_path = include_heading_path
         self.include_source_table = include_source_table
         self._html_table_parser = HtmlTableParser()
-        self._specialized_mappers = specialized_mappers or [
-            StandingsTableMapper(),
-            RaceResultsTableMapper(),
-            LapRecordsWikiTableMapper(),
-        ]
 
     def parse(self, element: WikiParserInput) -> list[dict[str, Any]]:
         dict_fragments = as_table_fragments(element)
@@ -76,16 +65,7 @@ class ArticleTablesParser(WikiTableElementParserBase, ArticleTablesParserABC):
         if self.include_source_table:
             parsed["_table"] = table
 
-        parsed.update(self._parse_specialized(parsed))
-
         return parsed
-
-    def _parse_specialized(self, parsed: dict[str, Any]) -> dict[str, Any]:
-        for mapper in self._specialized_mappers:
-            specialized = mapper.map(parsed)
-            if specialized is not None:
-                return specialized
-        return {"table_type": "wiki_table"}
 
     def _parse_with_html_table_parser(
         self,

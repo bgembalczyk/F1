@@ -18,7 +18,7 @@ from scrapers.driver_ordered_table_mapper import DriverOrderedTableMapper
 from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.sub_section.base import SubSectionParser
-from scrapers.parsers.wiki.table.article import ArticleTablesParser
+from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
 
 
 class FatalitiesTableMapper(DriverOrderedTableMapper):
@@ -43,9 +43,9 @@ class FatalitiesTableMapper(DriverOrderedTableMapper):
 
 
 class DetailByDriverSubSectionParser(SubSectionParser):
-    def __init__(self, *, table_parser: ArticleTablesParser | None = None, **kwargs: Any) -> None:
+    def __init__(self, *, table_assembler: ArticleTablesAssembler | None = None, **kwargs: Any) -> None:
         super().__init__(toolbox=kwargs.get("toolbox"))
-        self._table_parser = table_parser or ArticleTablesParser(
+        self._table_assembler = table_assembler or ArticleTablesAssembler(
             specialized_mappers=[FatalitiesTableMapper()],
         )
 
@@ -55,7 +55,7 @@ class DetailByDriverSubSectionParser(SubSectionParser):
         section_fragment = BeautifulSoup("", "html.parser")
         for tag in tags:
             section_fragment.append(tag)
-        parsed["tables"] = self._table_parser.parse(section_fragment)
+        parsed["tables"] = self._table_assembler.assemble(section_fragment)
         return parsed
 
 
