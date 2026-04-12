@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from scrapers.parsers.contracts.wiki_elements import WikiTableMapperSet
+from scrapers.parsers.contracts.wiki_table_mapper_set import WikiTableMapperSet
 
 
 class DomainMapperABC:

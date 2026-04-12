@@ -6,8 +6,8 @@ from typing import Literal
 from typing import TypeAlias
 
 from scrapers.parsers.contracts.html import TagParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
+from scrapers.parsers.contracts.wiki_list_parser_abc import WikiListParserABC
+from scrapers.parsers.contracts.wiki_section_parser_abc import WikiSectionParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]

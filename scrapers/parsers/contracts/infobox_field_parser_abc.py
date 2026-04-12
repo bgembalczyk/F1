@@ -4,8 +4,7 @@ from typing import TypeVar
 
 from bs4 import Tag
 
-from scrapers.parsers.contracts import TagParserABC
-
+from scrapers.parsers.contracts.html import TagParserABC
 
 FieldValue = TypeVar("FieldValue")
 

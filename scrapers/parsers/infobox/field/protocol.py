@@ -7,7 +7,7 @@ from typing import TypeVar
 
 from bs4 import Tag
 
-from scrapers.parsers.contracts.wiki_elements import InfoboxFieldParserABC
+from scrapers.parsers.contracts.infobox_field_parser_abc import InfoboxFieldParserABC
 
 Output = TypeVar("Output")
 

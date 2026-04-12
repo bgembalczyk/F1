@@ -4,7 +4,7 @@ from abc import abstractmethod
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.parsers.contracts import ParserABC
+from scrapers.parsers.contracts.base import ParserABC
 from scrapers.parsers.wiki.types import WikiSectionData
 
 

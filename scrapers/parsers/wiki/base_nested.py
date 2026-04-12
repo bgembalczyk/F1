@@ -4,10 +4,10 @@ from typing import Any
 
 from bs4 import Tag
 
+from scrapers.parsers.contracts.wiki_section_parser_abc import WikiSectionParserABC
 from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 

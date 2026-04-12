@@ -4,12 +4,13 @@ from abc import ABC
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 
+from scrapers.parsers.contracts.wiki_section_parser_abc import WikiSectionParserABC
+
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.section.parse_results import SectionParseResult
 
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
 
 
 class BaseSectionParser(WikiSectionParserABC):
