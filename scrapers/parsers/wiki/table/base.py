@@ -12,7 +12,7 @@ from scrapers.parsers.roles import TableDomainMapperABC
 from scrapers.parsers.roles import TableHtmlParserABC
 
 
-class WikiTableBaseParser(
+class WikiTableBaseMapper(
     TableDomainMapperABC,
     MatchesMixin,
     RowMappingMixin[dict[str, Any], dict[str, Any]],
@@ -31,6 +31,9 @@ class WikiTableBaseParser(
 
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         return self.map_fragment(fragment)
+
+    def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+        return self.map(fragment)
 
     def map_fragment(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         headers = fragment.get("headers", [])
