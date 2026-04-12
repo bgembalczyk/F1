@@ -19,6 +19,7 @@ ElementType = Literal[
     "infobox",
     "navbox",
     "references",
+    "references_wrap",
     "paragraph",
     "figure",
 ]
