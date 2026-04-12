@@ -9,7 +9,7 @@ from scrapers.parsers.wiki.element_registry import ElementRegistry
 
 
 @dataclass(frozen=True)
-class ElementParserDispatcher:
+class ElementDispatcher:
     """Single dispatcher used by section parsers to delegate element parsing."""
 
     registry: ElementRegistry
@@ -23,15 +23,15 @@ class ElementParserDispatcher:
         resolved = self.registry.resolve(parse_input)
         if resolved is None:
             return None
-        result_type, parser = resolved
+        result_type, handler = resolved
         return {
             "kind": result_type,
             "source_section_id": section_context.section_id,
             "confidence": 1.0,
             "raw_html_fragment": str(parse_input.tag),
-            "data": parser(parse_input.tag),
+            "data": handler(parse_input.tag),
             "type": result_type,
         }
 
 
-__all__ = ["ElementParserDispatcher"]
+__all__ = ["ElementDispatcher"]
