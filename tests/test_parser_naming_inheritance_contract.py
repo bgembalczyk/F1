@@ -147,35 +147,10 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 )
 
         if class_info.name.endswith("Parser"):
-            parser_contract_bases = {
-                "Parser",
-                "WikiParser",
-                "BaseSectionParser",
-                "InfoboxFieldParser",
-                "HtmlInfoboxFieldParser",
-                "InfoboxRowsParser",
-                "AbstractTableFragmentParser",
-                # Root ABC — any class tracing back to ParserABC is a valid parser
-                "ParserABC",
-                # Wiki-element ABCs (cover WikiTableParser, WikiInfoboxParser, etc.)
-                "WikiTableParserABC",
-                "WikiInfoboxParserABC",
-                "WikiListParserABC",
-                "WikiNavboxParserABC",
-                "WikiFigureParserABC",
-                "WikiSectionParserABC",
-                "WikiSectionStructureParserABC",
-                # Base classes for HTML element parsers
-                "BaseHtmlElementParser",
-                # Wiki section / table parser base contracts
-                "WikiSectionParserBase",
-                "WikiTableElementParserBase",
-            }
-            if not _inherits_from(class_info, classes, parser_contract_bases):
+            if not _inherits_from(class_info, classes, {"ParserABC"}):
                 violations.append(
                     f"{class_info.module}.{class_info.name}: Parser musi "
-                    "implementować parserowe ABC (Parser/WikiParser/BaseSectionParser/"
-                    "InfoboxFieldParser/AbstractTableFragmentParser)",
+                    "dziedziczyć po ParserABC (bezpośrednio lub pośrednio)",
                 )
             if not _has_parse(class_info, classes):
                 violations.append(

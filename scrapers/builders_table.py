@@ -8,20 +8,10 @@ from scrapers.columns.base import BaseColumn
 from scrapers.columns.spec import ColumnSpec
 from scrapers.constants_table import BASE_STATS_COLUMNS
 from scrapers.constants_table import BASE_STATS_MAP
+from scrapers.entity_column_spec import EntityColumnSpec
+from scrapers.metric_column_spec import MetricColumnSpec
 
 
-@dataclass(frozen=True)
-class MetricColumnSpec:
-    header: str
-    output_key: str
-    metric_key: str
-
-
-@dataclass(frozen=True)
-class EntityColumnSpec:
-    header: str
-    output_key: str
-    column_type: BaseColumn
 
 
 SchemaPart = ColumnSpec | Sequence[ColumnSpec]
