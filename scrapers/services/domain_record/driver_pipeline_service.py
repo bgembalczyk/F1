@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from scrapers.contracts import RecordAssemblerProtocol
 from scrapers.records.assemblers.driver import DriverRecordAssembler
 from scrapers.records.dto.driver import DriverRecordDTO
 from scrapers.services.domain_record.base_pipeline_service import (

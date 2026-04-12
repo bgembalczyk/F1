@@ -7,7 +7,6 @@ from scrapers.options import ScraperOptions
 from scrapers.pipeline_seasons import SeasonParsingComponentsBuilder
 from scrapers.pipeline_seasons import SeasonSectionPipeline
 from scrapers.pipeline_seasons import SeasonYearResolver
-from scrapers.services.domain_record.season import SeasonDomainRecordService
 from scrapers.services.section.extraction.season_text import (
     SeasonTextSectionExtractionService,
 )

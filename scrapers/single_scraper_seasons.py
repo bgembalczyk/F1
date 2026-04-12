@@ -6,6 +6,7 @@ from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
 from scrapers.records.dto.season import SeasonPayloadDTO
+from scrapers.services.domain_record.season_pipeline_service import SeasonDomainRecordInput
 from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.wiring.composition_seasons import SeasonScraperCompositionFactory
 from scrapers.wiring.composition_seasons import SeasonScraperDependencies
@@ -19,7 +20,6 @@ warnings.warn(
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.services.domain_record.season import SeasonDomainRecordInput
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

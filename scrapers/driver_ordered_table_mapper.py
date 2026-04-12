@@ -1,4 +1,4 @@
-from scrapers.parsers.wiki_table_base_mapper import WikiTableBaseMapper
+from scrapers.wiki_table_base_mapper import WikiTableBaseMapper
 
 
 class DriverOrderedTableMapper(WikiTableBaseMapper):

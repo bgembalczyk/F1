@@ -32,7 +32,6 @@ from scrapers.records.dto.season import SeasonRecordAssembler
 from scrapers.records.dto.season import SeasonRecordSections
 from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
 from scrapers.single_scraper_seasons import SingleSeasonScraper
-from scrapers.services.domain_record.driver import DomainRecordService
 
 
 def _soup(html: str) -> BeautifulSoup:
