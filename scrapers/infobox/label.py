@@ -8,7 +8,7 @@ from scrapers.parsers.infobox.constants import ACTIVE_YEARS_LABELS
 from scrapers.parsers.infobox.constants import INT_CELL_LABELS
 from scrapers.parsers.infobox.constants import RACE_EVENT_LABELS
 from scrapers.parsers.infobox.constants import TEAM_LABELS
-from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
+from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.callable import CallableInfoboxFieldParser
 from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
 from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
@@ -16,7 +16,7 @@ from scrapers.parsers.numeric_extractor import NumericExtractor
 
 
 def field_parsers_registry(
-    cell_parser: InfoboxCellParser,
+    cell_parser: InfoboxCellValueExtractor,
 ) -> InfoboxFieldRegistry:
     registry = InfoboxFieldRegistry(default_parser=cell_parser)
     championships_parser = cell_parser.championships_field_parser
@@ -70,7 +70,7 @@ def field_parsers_registry(
 def parser_for_label(
     *,
     label: str | None,
-    cell_parser: InfoboxCellParser,
+    cell_parser: InfoboxCellValueExtractor,
 ) -> InfoboxFieldParser[Any]:
     return field_parsers_registry(cell_parser).parser_for_label(label)
 

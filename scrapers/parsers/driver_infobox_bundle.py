@@ -2,19 +2,18 @@ from dataclasses import dataclass
 
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.infobox.section.discovery import InfoboxSectionDiscovery
-from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
+from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.career import InfoboxCareerParser
 from scrapers.parsers.infobox.field.title import InfoboxTitlesParser
-from scrapers.parsers.infobox.general import InfoboxGeneralParser
+from scrapers.parsers.infobox.general import InfoboxGeneralExtractor
 from scrapers.parsers.parsing_bundle import ParsingBundle
 
 
 @dataclass(frozen=True)
 class DriverInfoboxBundle(ParsingBundle):
     link_extractor: InfoboxLinkExtractor
-    cell_parser: InfoboxCellParser
-    general_parser: InfoboxGeneralParser
+    cell_parser: InfoboxCellValueExtractor
+    general_parser: InfoboxGeneralExtractor
     titles_parser: InfoboxTitlesParser
     career_parser: InfoboxCareerParser
     section_discovery: InfoboxSectionDiscovery
-

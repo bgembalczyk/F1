@@ -2,12 +2,12 @@ from typing import Any
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.label import parser_for_label
-from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
+from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
 
 
 class InfoboxCareerParser(InfoboxFieldParser):
-    def __init__(self, cell_parser: InfoboxCellParser) -> None:
+    def __init__(self, cell_parser: InfoboxCellValueExtractor) -> None:
         self._cell_parser = cell_parser
 
     def parse(self, title: str, section: dict[str, Any]) -> dict[str, Any]:

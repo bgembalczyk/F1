@@ -5,10 +5,10 @@ from scrapers.infobox.section.collector import InfoboxSectionCollector
 from scrapers.infobox.section.discovery import InfoboxSectionDiscovery
 from scrapers.parsers.driver_infobox_bundle import DriverInfoboxBundle
 from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
-from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
+from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.career import InfoboxCareerParser
 from scrapers.parsers.infobox.field.title import InfoboxTitlesParser
-from scrapers.parsers.infobox.general import InfoboxGeneralParser
+from scrapers.parsers.infobox.general import InfoboxGeneralExtractor
 
 
 class DefaultDriverInfoboxProvider(DriverInfoboxProviderABC):
@@ -31,11 +31,11 @@ class DefaultDriverInfoboxProvider(DriverInfoboxProviderABC):
             include_urls=include_urls,
             wikipedia_base=wikipedia_base,
         )
-        cell_parser = InfoboxCellParser(
+        cell_parser = InfoboxCellValueExtractor(
             include_urls=include_urls,
             link_extractor=link_extractor,
         )
-        general_parser = InfoboxGeneralParser(
+        general_parser = InfoboxGeneralExtractor(
             include_urls=include_urls,
             link_extractor=link_extractor,
             schema=schema,
