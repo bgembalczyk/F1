@@ -156,11 +156,14 @@ def _is_in_parser_naming_scope(path: Path) -> bool:
 
 def check_parser_naming_contracts() -> list[str]:
     violations: list[str] = []
-    parser_protocol_like_bases = {
-        "Protocol",
-        "Parser",
-        "SectionParser",
-        "HtmlElementParser",
+    parser_abc_bases = {
+        "ABC",
+        "ParserABC",
+        "BaseWikiParser",
+        "SectionParserABC",
+        "SectionStructureParserABC",
+        "HtmlElementParserABC",
+        "HtmlTagParserABC",
     }
     for py_file in Path("scrapers").rglob("*.py"):
         rel_path = py_file
@@ -180,13 +183,13 @@ def check_parser_naming_contracts() -> list[str]:
             base_names |= {
                 base.attr for base in node.bases if isinstance(base, ast.Attribute)
             }
-            implements_parser_contract = bool(base_names & parser_protocol_like_bases)
+            implements_parser_contract = bool(base_names & parser_abc_bases)
             if not has_parse and not implements_parser_contract:
                 violations.append(
                     "Parser naming violation: "
                     f"{py_file}:{node.lineno} class {node.name} "
                     "uses '*Parser' suffix but does not define parse(...) "
-                    "and does not inherit a parser contract.",
+                    "and does not inherit a parser ABC contract.",
                 )
     return violations
 

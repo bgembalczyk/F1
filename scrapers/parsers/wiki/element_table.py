@@ -1,12 +1,15 @@
 from bs4 import Tag
 
-from models.data.parsed.html_elements import TableElementData
 from scrapers.parsers.html_elements.table import TableElementParser
 from scrapers.parsers.wiki.families import WikiTableParserABC
+from scrapers.parsers.wiki.types import WikiTableData
 
 
-class WikiTableElementParser(WikiTableParserABC, TableElementParser):
-    """Wikipedia HTML element parser for `<table class=\"wikitable\">`."""
+class WikiTableElementParser(WikiTableParserABC):
+    """Wikipedia HTML element parser for `<table class="wikitable">`."""
 
-    def parse(self, raw: Tag) -> TableElementData:
-        return TableElementParser.parse(self, raw)
+    def __init__(self, parser: TableElementParser | None = None) -> None:
+        self._parser = parser or TableElementParser()
+
+    def parse(self, raw: Tag) -> WikiTableData:
+        return self._parser.parse(raw)

@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from abc import ABC
 
-from scrapers.parsers.roles import SectionStructureParserABC
+from scrapers.parsers.base_family import SectionParserABC
 
 
-class SeasonSectionParserABC(SectionStructureParserABC, ABC):
+class SeasonSectionParserABC(SectionParserABC, ABC):
     """Bazowy kontrakt parsera sekcji sezonowych."""
 
 

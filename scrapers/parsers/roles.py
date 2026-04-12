@@ -6,16 +6,15 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
-from bs4 import BeautifulSoup
-from bs4 import Tag
-
-from scrapers.domain_roles import Parser
-from scrapers.section.parse_results import SectionParseResult
+from scrapers.parsers.base_family import InfoboxParserABC
+from scrapers.parsers.base_family import ListParserABC
+from scrapers.parsers.base_family import SectionParserABC
+from scrapers.parsers.base_family import SoupParserABC
+from scrapers.parsers.base_family import TableParserABC
+from scrapers.parsers.base_family import TagParserABC
 
 InT = TypeVar("InT")
 OutT = TypeVar("OutT")
-TagOutT = TypeVar("TagOutT", covariant=True)
-SoupOutT = TypeVar("SoupOutT", covariant=True)
 RecordT_co = TypeVar("RecordT_co", covariant=True)
 RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
@@ -43,6 +42,13 @@ class HtmlElementParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
     def parse(self, raw: Tag) -> TagOutT: ...
 
 
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Generic mapping contract used by parser pipelines."""
+
+    @abstractmethod
+    def map(self, fragment: InT) -> OutT: ...
+
+
 class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
     """Parser dokumentu/fragmentu soup (BeautifulSoup -> payload)."""
 
@@ -58,7 +64,10 @@ class SectionParserABC(ParserABC[BeautifulSoup, SectionParseResult], ABC):
 
 
 class SectionStructureParserABC(SectionParserABC, ABC):
-    """Backward-compatible alias for section parser hierarchy."""
+    """ABC for section parser hierarchy."""
+
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
 
     @abstractmethod
     def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
@@ -85,8 +94,14 @@ class ListHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
-class ListParserABC(ListHtmlParserABC, ABC):
-    """Compatibility alias for list parsers."""
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Canonical mapper contract (input -> mapped output)."""
+
+    @abstractmethod
+    def map(self, raw: InT) -> OutT: ...
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
     @abstractmethod
     def parse(self, raw: Tag) -> dict[str, Any]: ...
@@ -121,9 +136,13 @@ class RowMappingMixin(ABC, Generic[RowInputT_contra, RecordT_co]):
     def map_row(self, row: RowInputT_contra) -> RecordT_co | None: ...
 
 
-class GroupParsingMixin(ABC, Generic[TableInputT_contra, RecordT_co]):
+class ParseGroupMixin(ABC, Generic[TableInputT_contra, RecordT_co]):
     @abstractmethod
-    def map_table(self, table: TableInputT_contra) -> list[RecordT_co]: ...
+    def parse_group(self, table: TableInputT_contra) -> list[RecordT_co]: ...
+
+
+class GroupParsingMixin(ParseGroupMixin[TableInputT_contra, RecordT_co], ABC):
+    """Backward-compatible alias for parse_group capability."""
 
 
 class ParsingBundle(ABC):
@@ -135,27 +154,22 @@ class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):
     def build(self, **kwargs: Any) -> BundleT_co: ...
 
 
-SoupDocumentParserABC = SoupParserABC
-
-
 __all__ = [
     "GroupParsingMixin",
+    "ParseGroupMixin",
     "HtmlElementParserABC",
     "HtmlTagParserABC",
     "InfoboxHtmlParserABC",
     "ListHtmlParserABC",
     "MapperABC",
     "MatchesMixin",
-    "ParserABC",
     "ParsingBundle",
     "ParsingBundleProviderABC",
     "RowMappingMixin",
-    "SectionParseResult",
     "SectionParserABC",
-    "SectionStructureParserABC",
-    "SoupDocumentParserABC",
     "SoupParserABC",
     "TableDomainMapperABC",
-    "TableHtmlParserABC",
     "TableMapperABC",
+    "TableParserABC",
+    "TagParserABC",
 ]

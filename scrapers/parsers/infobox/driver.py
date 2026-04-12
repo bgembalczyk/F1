@@ -117,7 +117,7 @@ class DriverInfoboxParser(WikiInfoboxElementParserBase):
                 continue
             if title == "Championship titles":
                 # Parse championship titles and inspect full_data for major victories
-                champ_data = self._titles_parser.parse_titles(section["rows"])
+                champ_data = self._titles_parser.parse(section["rows"])
                 parsed["championship_titles"] = champ_data
 
                 # Check for major victories in full_data cells
@@ -139,7 +139,7 @@ class DriverInfoboxParser(WikiInfoboxElementParserBase):
                             parsed["major_victories"].extend(major_vics)
                 continue
             if title == "Major victories":
-                parsed["major_victories"] = self._titles_parser.parse_titles(
+                parsed["major_victories"] = self._titles_parser.parse(
                     section["rows"],
                 )
                 continue

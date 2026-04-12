@@ -51,9 +51,5 @@ class ActiveYearsParser(BaseInfoboxFieldParser):
             {"year": year, "url": year_to_link.get(year)} for year in sorted(years_set)
         ]
 
-    def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:
-        """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(cell)
-
 
 __all__ = ["ActiveYearsParser"]
