@@ -63,5 +63,8 @@ jobs:
       - name: Enforce canonical role imports and thin compatibility modules
         run: python scripts/ci/enforce_canonical_role_imports.py
 
+      - name: Enforce no broken exports in __all__
+        run: python scripts/ci/enforce_no_broken_exports.py
+
       - name: Enforce record factory canonical contracts
         run: python scripts/ci/enforce_record_factory_contracts.py
