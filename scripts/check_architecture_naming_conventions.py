@@ -9,6 +9,35 @@ import re
 from pathlib import Path
 
 SNAKE_CASE_RE = re.compile(r"^[a-z][a-z0-9_]*$")
+PARSER_CANONICAL_PATH = Path("scrapers/parsers")
+ALLOWED_PARSER_ABC_BASES = {
+    "ParserABC",
+    "SectionParserABC",
+    "SectionStructureParserABC",
+    "WikiSectionParserABC",
+    "WikiSectionStructureParserABC",
+    "WikiListParserABC",
+    "WikiTableParserABC",
+    "WikiFigureParserABC",
+    "WikiInfoboxParserABC",
+    "WikiNavboxParserABC",
+    "TagParserABC",
+    "TableParserABC",
+    "TableElementParserABC",
+    "SectionElementParserABC",
+    "ElementParserABC",
+    "HtmlTagParserABC",
+    "HtmlElementParserABC",
+    "SoupParserABC",
+    "ArticleTablesParserABC",
+    "FigureElementParserABC",
+    "ListElementParserABC",
+    "InfoboxElementParserABC",
+    "InfoboxFieldParserABC",
+    "ReferencesElementParserABC",
+    "NavboxElementParserABC",
+    "ParagraphElementParserABC",
+}
 
 
 def iter_python_files(paths: list[str]) -> list[Path]:
@@ -66,14 +95,16 @@ def _extract_base_name(base: ast.expr) -> str | None:
     return None
 
 
-def _is_parser_protocol(node: ast.ClassDef) -> bool:
-    base_names = {_extract_base_name(base) for base in node.bases}
-    return "Protocol" in base_names
-
-
-def _inherits_parser_base(node: ast.ClassDef) -> bool:
-    base_names = {_extract_base_name(base) for base in node.bases}
-    return any((name or "").endswith("Parser") for name in base_names)
+def _inherits_allowed_parser_abc(node: ast.ClassDef) -> bool:
+    base_names = {
+        name
+        for base in node.bases
+        if (name := _extract_base_name(base))
+    }
+    return bool(
+        base_names
+        & {base for base in ALLOWED_PARSER_ABC_BASES if base.endswith("ABC")},
+    )
 
 
 def validate_class_names(path: Path) -> list[str]:
@@ -102,15 +133,16 @@ def validate_class_names(path: Path) -> list[str]:
         if not class_name.endswith("Parser"):
             continue
 
+        if path.is_relative_to(PARSER_CANONICAL_PATH) and not _inherits_allowed_parser_abc(node):
+            issues.append(
+                f"{path}:{node.lineno}: klasa '*Parser' musi dziedziczyć po dozwolonym parser ABC",
+            )
+
         has_public_parse = any(_is_public_parse_method(child) for child in node.body)
         if has_public_parse:
             continue
-        if _is_parser_protocol(node):
-            continue
-        if _inherits_parser_base(node):
-            continue
         issues.append(
-            f"{path}:{node.lineno}: klasa z sufiksem 'Parser' musi mieć publiczne parse(...)",
+            f"{path}:{node.lineno}: klasa '*Parser' bez parse(...) jest niedozwolona",
         )
 
     return issues
