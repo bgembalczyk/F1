@@ -11,7 +11,7 @@ from scrapers.parsers.wiki.hierarchy import SectionElementParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
-ParserBase: TypeAlias = type[ElementParserABC[object, object]]
+ParserBase: TypeAlias = type[ElementParserABC]
 
 
 @dataclass(frozen=True)

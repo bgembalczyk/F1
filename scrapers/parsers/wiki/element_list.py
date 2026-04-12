@@ -1,12 +1,15 @@
 from bs4 import Tag
 
-from models.data.parsed.html_elements import ListElementData
 from scrapers.parsers.html_elements.list import ListElementParser
 from scrapers.parsers.wiki.families import WikiListParserABC
+from scrapers.parsers.wiki.types import WikiListData
 
 
-class WikiListElementParser(WikiListParserABC, ListElementParser):
+class WikiListElementParser(WikiListParserABC):
     """Wikipedia HTML element parser for list elements (`ul`/`ol`)."""
 
-    def parse(self, raw: Tag) -> ListElementData:
-        return super().parse(raw)
+    def __init__(self, parser: ListElementParser | None = None) -> None:
+        self._parser = parser or ListElementParser()
+
+    def parse(self, raw: Tag) -> WikiListData:
+        return self._parser.parse(raw)
