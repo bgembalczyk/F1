@@ -9,12 +9,11 @@ from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 class CircuitEventsTableRecordMapper(SectionTableRecordMapperABC[dict[str, Any], Any]):
     def map(
         self,
-        raw: dict[str, Any],
-        *,
+        table_data: dict[str, Any],
         table_classification: dict[str, Any],
         table_pipeline: Any,
     ) -> dict[str, Any]:
-        _ = raw
+        _ = table_data
         _ = table_pipeline
         return table_classification
 

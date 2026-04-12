@@ -91,6 +91,30 @@ class DriverResultsSectionParser(TableSectionParser):
         )
         return self._build_pipeline(schema=schema)
 
+    def map_table_result(
+        self,
+        table_data: dict[str, Any],
+        table_classification: str,
+        table_pipeline: TablePipeline,
+    ) -> dict[str, Any] | None:
+        table = table_data.get("_table")
+        headers = table_data.get("headers")
+        if not isinstance(table, Tag) or not isinstance(headers, list):
+            return None
+
+        parsed: dict[str, Any] = {
+            "table_type": table_classification,
+            "headers": headers,
+            "rows": self._parse_table(table, table_pipeline),
+        }
+        heading_path = table_data.get("heading_path")
+        if heading_path is not None:
+            parsed["heading_path"] = heading_path
+        return parsed
+
+    def _parse_table(self, table: Tag, pipeline: TablePipeline) -> list[dict[str, Any]]:
+        return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
+
     def _build_pipeline(self, *, schema: TableSchemaDSL) -> TablePipeline:
         config = TableConfig(
             url=self._url,

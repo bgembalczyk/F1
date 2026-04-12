@@ -180,6 +180,30 @@ class TableSectionParser(BaseSectionParser):
         _ = table_classification
         return None
 
+    def map_table_result(
+        self,
+        table_data: dict[str, Any],
+        table_classification: Any,
+        table_pipeline: Any,
+    ) -> dict[str, Any] | None:
+        """Transform a parsed table into a domain record (or skip with None)."""
+        _ = table_data
+        _ = table_pipeline
+        raise NotImplementedError
+
+    def parse_row(
+        self,
+        *,
+        table_data: dict[str, Any],
+        table_classification: Any,
+        table_pipeline: Any,
+    ) -> dict[str, Any] | None:
+        return self.map_table_result(
+            table_data=table_data,
+            table_classification=table_classification,
+            table_pipeline=table_pipeline,
+        )
+
     def build_result(self, records: list[dict[str, Any]]) -> SectionParseResult:
         return build_section_parse_result(
             section_id=self._section_id,

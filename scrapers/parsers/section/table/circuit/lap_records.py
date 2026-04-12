@@ -45,12 +45,11 @@ class CircuitLapRecordsTableRecordMapper(
 
     def map(
         self,
-        raw: dict[str, Any],
-        *,
+        table_data: dict[str, Any],
         table_classification: tuple[Tag, list[str]],
         table_pipeline: Any,
     ) -> dict[str, Any]:
-        _ = raw
+        _ = table_data
         _ = table_pipeline
         table, headers = table_classification
         layout = detect_layout_name(table, headers)
