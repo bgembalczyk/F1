@@ -29,14 +29,14 @@ class ParserABC(Parser[InT, OutT], ABC, Generic[InT, OutT]):
     def parse(self, raw: InT) -> OutT: ...
 
 
-class HtmlTagParserABC(ParserABC[Tag, TagOut], ABC, Generic[TagOut]):
+class HtmlTagParserABC(ParserABC[Tag, TagOutT], ABC, Generic[TagOutT]):
     """Runtime contract for single HTML tag parsers (Tag -> payload)."""
 
     @abstractmethod
     def parse(self, raw: Tag) -> TagOutT: ...
 
 
-class HtmlElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
+class HtmlElementParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
     """Canonical ABC for parsers of HTML elements (single Tag input)."""
 
 
@@ -44,7 +44,7 @@ class HtmlElementParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
     """Legacy alias for tag -> dict parser contract."""
 
 
-class SoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]):
+class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
     """Parser dokumentu/fragmentu soup (BeautifulSoup -> payload)."""
 
     @abstractmethod
@@ -54,8 +54,6 @@ class SoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]):
 class SectionParserABC(ParserABC[BeautifulSoup, SectionParseResult], ABC):
     """Canonical ABC for section parsers."""
 
-class SectionParserABC(SectionStructureParserABC, ABC):
-    """Compatibility alias for section parsers."""
 
 class SectionStructureParserABC(SectionParserABC, ABC):
     """Backward-compatible alias for section parser hierarchy."""
@@ -119,7 +117,6 @@ __all__ = [
     "HtmlTagParserABC",
     "InfoboxHtmlParserABC",
     "ListHtmlParserABC",
-    "MapperABC",
     "MatchesMixin",
     "ParserABC",
     "ParsingBundle",
