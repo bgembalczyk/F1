@@ -30,6 +30,6 @@ class ApplyForElementsMixin:
             data = element.get("data")
             if not isinstance(data, dict):
                 continue
-            parsed = self._table_parser.parse(data)
+            parsed = self._table_parser.map(data)
             if parsed is not None:
                 element["data"] = parsed

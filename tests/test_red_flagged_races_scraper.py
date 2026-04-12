@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 from scrapers.races import NonChampionshipsRacesSubSectionParser
 from scrapers.races import RedFlaggedRacesScraper
 from scrapers.races import RedFlaggedRacesSectionParser
-from scrapers.races import WorldChampionshipsRacesTableParser
+from scrapers.races import WorldChampionshipsRacesTableMapper
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -147,7 +147,7 @@ class TestRedFlaggedRacesScraperRobustness:
         )
         assert isinstance(
             section_parser._world_championship_table_parser,
-            WorldChampionshipsRacesTableParser,
+            WorldChampionshipsRacesTableMapper,
         )
 
     def test_composite_world_championship_scope_produces_rich_output(self):

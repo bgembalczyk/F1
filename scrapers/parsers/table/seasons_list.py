@@ -1,9 +1,9 @@
 from typing import Any
 
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 
 
-class SeasonsTableParser(WikiTableBaseParser):
+class SeasonsTableMapper(WikiTableBaseMapper):
     table_type = "seasons_list"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"

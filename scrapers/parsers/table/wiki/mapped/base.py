@@ -1,7 +1,7 @@
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 
 
-class MappedWikiTableMapper(WikiTableBaseParser):
+class MappedWikiTableMapper(WikiTableBaseMapper):
     """Config-only parser for wiki table domain mappings."""
 
 

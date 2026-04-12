@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from scrapers.helpers.text import strip_marks
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 
 WIKIPEDIA_BASE_URL = "https://en.wikipedia.org"
 RESTART_STATUS_MAP = {
@@ -65,9 +65,9 @@ def map_drivers_cell(text: str, links: list[Any]) -> list[dict[str, Any]]:
     return []
 
 
-class BaseRedFlaggedRacesTableParser(WikiTableBaseParser):
-    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
-        result = super().parse(table_data)
+class BaseRedFlaggedRacesTableMapper(WikiTableBaseMapper):
+    def map(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().map(table_data)
         if result is None:
             return None
         result["domain_rows"] = self._merge_failed_to_restart_rows(
@@ -101,7 +101,7 @@ class BaseRedFlaggedRacesTableParser(WikiTableBaseParser):
         return merged
 
 
-class WorldChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
+class WorldChampionshipsRacesTableMapper(BaseRedFlaggedRacesTableMapper):
     table_type = "red_flagged_world_championship_races"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -147,7 +147,7 @@ class WorldChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
     def _merge_failed_to_restart_rows(
         rows: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        _key = WorldChampionshipsRacesTableParser._race_key
+        _key = WorldChampionshipsRacesTableMapper._race_key
         merged: list[dict[str, Any]] = []
         for row in rows:
             raw_drivers = row.pop("failed_to_make_restart_drivers", None)
@@ -192,7 +192,7 @@ class WorldChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
         return mapped
 
 
-class NonChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
+class NonChampionshipsRacesTableMapper(BaseRedFlaggedRacesTableMapper):
     table_type = "red_flagged_non_championship_races"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -238,7 +238,7 @@ class NonChampionshipsRacesTableParser(BaseRedFlaggedRacesTableParser):
     def _merge_failed_to_restart_rows(
         rows: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        _key = NonChampionshipsRacesTableParser._race_key
+        _key = NonChampionshipsRacesTableMapper._race_key
         merged: list[dict[str, Any]] = []
         for row in rows:
             raw_drivers = row.pop("failed_to_make_restart_drivers", None)

@@ -1,7 +1,7 @@
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 
 
-class DriverOrderedTableParser(WikiTableBaseParser):
+class DriverOrderedTableMapper(WikiTableBaseMapper):
     """Base parser for driver tables that orders the 'driver' column first."""
 
     _column_mapping: dict[str, str]
@@ -28,4 +28,4 @@ class DriverOrderedTableParser(WikiTableBaseParser):
         }
 
 
-__all__ = ["DriverOrderedTableParser"]
+__all__ = ["DriverOrderedTableMapper"]

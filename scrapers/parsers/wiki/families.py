@@ -12,13 +12,14 @@ from models.data.parsed.infobox import InfoboxParsedData
 from models.data.parsed.nav_box import NavBoxParsedData
 from models.data.parsed.references_wrap import ReferencesWrapParsedData
 from scrapers.parsers.roles import HtmlElementParserABC
+from scrapers.parsers.roles import TableHtmlParserABC
 
 WikiTableParsedData = dict[str, Any]
 WikiListParsedData = dict[str, Any]
 WikiSectionParsedData = dict[str, Any]
 
 
-class WikiTableHtmlParserABC(HtmlElementParserABC[WikiTableParsedData], ABC):
+class WikiTableHtmlParserABC(TableHtmlParserABC, ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiTableParsedData: ...
 

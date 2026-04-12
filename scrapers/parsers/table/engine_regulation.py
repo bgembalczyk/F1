@@ -1,9 +1,9 @@
 from typing import Any
 
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 
 
-class EngineRegulationTableParser(WikiTableBaseParser):
+class EngineRegulationTableMapper(WikiTableBaseMapper):
     table_type = "engine_regulation_progression"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"

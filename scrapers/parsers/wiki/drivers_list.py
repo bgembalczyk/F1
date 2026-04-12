@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.table.drivers_list import DriversListTableParser
+from scrapers.parsers.table.drivers_list import DriversListTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 
@@ -10,7 +10,7 @@ from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 class DriversListSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = DriversListTableParser()
+        self._table_parser = DriversListTableMapper()
 
     def parse(
         self,
@@ -44,6 +44,6 @@ class DriversListSectionParser(NestedWikiSectionParser):
             data = element.get("data")
             if not isinstance(data, dict):
                 continue
-            parsed = self._table_parser.parse(data)
+            parsed = self._table_parser.map(data)
             if parsed is not None:
                 element["data"] = parsed

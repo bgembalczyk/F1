@@ -1,9 +1,9 @@
 from typing import Any
 
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 
 
-class EngineManufacturersTableParser(WikiTableBaseParser):
+class EngineManufacturersTableMapper(WikiTableBaseMapper):
     table_type = "engine_manufacturers_list"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
