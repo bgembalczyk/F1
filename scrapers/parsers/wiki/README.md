@@ -29,7 +29,7 @@ Parsery są podzielone na cztery warstwy odpowiadające elementom HTML Wikipedii
 
 4. **Structure Parser** (`scrapers/parsers/section/`)
    - odpowiedzialność: kompozycja sekcji/podsekcji i nawigacja po nagłówkach h2–h5,
-   - kontrakt: `SectionParser` (dla parserów przyjmujących `BeautifulSoup`, zwracających
+   - kontrakt: `SectionParserABC` (dla parserów przyjmujących `BeautifulSoup`, zwracających
      `SectionParseResult`) lub `NestedWikiSectionParser` (dla hierarchicznych parserów sekcji
      przyjmujących `Tag` i zwracających `dict`),
    - parsery sekcji dobierają zestaw parserów elementarnych przez `SectionParserToolbox`.
@@ -71,7 +71,7 @@ WikiTableBaseParser   [DOMAIN MAPPER – wejście: dict, nie Tag]
   │   └── CircuitsListTableMapper
   └── ... (inne parsery tabel domenowych)
 
-SectionParser [Protocol – BeautifulSoup → SectionParseResult]
+SectionParserABC [ABC – BeautifulSoup → SectionParseResult]
   └── ... (konkretne parsery sekcji artykułów)
 
 NestedWikiSectionParser [Tag → dict, hierarchiczne sekcje]
@@ -104,7 +104,7 @@ rodzin wiki.
 - Parsery sekcji składają strukturę i przekazują dane niżej/wyżej, bez logiki domenowej.
 - Mappery domenowe tabel wiki (`WikiTableBaseParser`) realizują mapowanie kolumn i normalizację
   rekordów — przyjmują `dict` (dane po parsowaniu HTML), nie `Tag`.
-- Moduły domenowe korzystają z kontraktów parserów (`Protocol`), nie z odwrotnych zależności
+- Moduły domenowe korzystają z parserowych kontraktów ABC, nie z odwrotnych zależności
   parser → domena.
 
 ## Konwencje nazewnicze
@@ -126,6 +126,6 @@ Jeśli klasa jest etapem orkiestracji pipeline, stosuj `*Stage`/`*Processor` z `
 | `*TableParser` (HTML) | `Tag` (`<table>`) | `dict` | `WikiTableHtmlParser` |
 | `*TableMapper` (domain) | `dict` | `dict` | `WikiTableBaseParser` |
 | `*ListParser` | `Tag` (`<ul>`/`<ol>`) | `dict` | `ListParser` / `WikiListParser` |
-| `*SectionParser` | `BeautifulSoup` | `SectionParseResult` | `SectionParser` (Protocol) |
+| `*SectionParser` | `BeautifulSoup` | `SectionParseResult` | `SectionParserABC` |
 | `*SectionParser` (nested) | `Tag` | `dict` | `NestedWikiSectionParser` |
 | `*InfoboxParser` | `Tag` (`<table class="infobox">`) | `dict` | `WikiInfoboxElementParserBase` |
