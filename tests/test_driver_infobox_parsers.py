@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
 from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
-from scrapers.drivers.drivers_infobox.parsers.general import InfoboxGeneralParser
+from scrapers.drivers.drivers_infobox.parsers.general import InfoboxGeneralExtractor
 from scrapers.drivers.drivers_infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.drivers_infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.drivers_infobox.schema import DRIVER_GENERAL_SCHEMA
@@ -28,7 +28,7 @@ def cell_parser(link_extractor):
 
 @pytest.fixture()
 def general_parser(link_extractor):
-    return InfoboxGeneralParser(
+    return InfoboxGeneralExtractor(
         include_urls=True,
         link_extractor=link_extractor,
         schema=DRIVER_GENERAL_SCHEMA,

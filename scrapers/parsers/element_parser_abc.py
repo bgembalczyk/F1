@@ -44,37 +44,34 @@ class HtmlElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
     def parse(self, raw: Tag) -> TagOut: ...
 
 
-#: Backward-compatible alias — use HtmlElementParserABC for new code.
-ElementParserABC = HtmlElementParserABC
 
-
-class ListElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
+class ListElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "list"
 
 
-class TableElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
+class TableElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "table"
 
 
-class InfoboxElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
+class InfoboxElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "infobox"
 
 
-class SectionElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
+class SectionElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "section"
 
 
-class NavboxElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
+class NavboxElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "navbox"
 
 
-class ReferencesElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
+class ReferencesElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "references"
 
 
-class ParagraphElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
+class ParagraphElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "paragraph"
 
 
-class FigureElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
+class FigureElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "figure"

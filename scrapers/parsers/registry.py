@@ -10,13 +10,13 @@ from typing import TypeAlias
 
 import scrapers.parsers as parsers_pkg
 from scrapers.parsers.parser_abc import ParserABC
-from scrapers.parsers.tag_parser_abc import TagParserABC
+from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
 from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
 from scrapers.parsers.wiki.wiki_section_parser_abc import WikiSectionParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
-ParserBase: TypeAlias = type[TagParserABC[object]]
+ParserBase: TypeAlias = type[HtmlTagParserABC[object]]
 
 
 @dataclass(frozen=True)

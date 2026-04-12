@@ -8,14 +8,14 @@ Analiza klas `*Parser` w katalogu `scrapers/parsers/` oraz poza nim.
 
 | Klasa | Moduł | Aktualna baza | Typ wejścia | Typ wyjścia | Parsuje HTML Wikipedii | Docelowa rodzina |
 |---|---|---|---|---|---|---|
-| `HtmlTableParser` | `scrapers.parsers.html_table` | `SoupParserABC` | `BeautifulSoup` | `list[dict]` | Nie (ogólny HTML) | **Table** |
+| `HtmlTableParser` | `scrapers.parsers.html_table` | `HtmlSoupParserABC` | `BeautifulSoup` | `list[dict]` | Nie (ogólny HTML) | **Table** |
 | `WikiTableParser` | `scrapers.parsers.wiki.table.__init__` | `WikiTableHtmlParser` | `Tag` | `WikiTableData` | Tak | **Table** |
 | `WikiTableBaseParser` | `scrapers.parsers.wiki.table.base` | `TableParserABC` | `dict` | `dict` | Nie (dane już sparsowane) | **Table** |
 | `WikiTableHtmlParser` | `scrapers.parsers.wiki.table.html` | `WikiTableParserABC` | `Tag` | `WikiTableData` | Tak | **Table** |
 | `F1StandingsTableParser` | `scrapers.parsers.section.standings.f1_table` | `HtmlTagParserABC` | `Tag` | `list[dict]` | Tak | **Table** |
 | `DriverOrderedTableParser` | `scrapers.parsers.table.base_ordered` | `WikiTableBaseMapper` | `dict` | `list[dict]` | Nie (mapuje dane) | **Table** |
 | `DriversListTableMapper` | `scrapers.parsers.drivers_list_table_mapper` | `DriverOrderedTableMapper` | `dict` | `list[dict]` | Nie | **Table** |
-| `WikiListParser` | `scrapers.parsers.wiki.base` | `TagParserABC` | `Tag` | `WikiRecords` | Tak (ABC) | **List** |
+| `WikiListParser` | `scrapers.parsers.wiki.base` | `HtmlTagParserABC` | `Tag` | `WikiRecords` | Tak (ABC) | **List** |
 | `WikiListElementParser` | `scrapers.parsers.wiki.element_list` | `WikiListParserABC` | `Tag` | `WikiListData` | Tak | **List** |
 | `ListElementParser` | `scrapers.parsers.list_element_parser` | `WikiListParserABC, ListElementParserABC` | `Tag` | `ListElementData` | Tak | **List** |
 | `IndianapolisOnlyListParser` | `scrapers.parsers.list_element.engine_manufacturers_list` | `ListElementParser` | `Tag` | `dict` | Tak | **List** |

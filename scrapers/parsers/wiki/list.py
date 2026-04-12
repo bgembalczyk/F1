@@ -1,8 +1,8 @@
 from abc import ABC
 
-from scrapers.parsers.tag_parser_abc import TagParserABC
+from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
 from scrapers.parsers.wiki.base import WikiRecords
 
 
-class WikiListParser(TagParserABC[WikiRecords], ABC):
+class WikiListParser(HtmlTagParserABC[WikiRecords], ABC):
     """Kontrakt parserów list Wikipedii (np. <ul>/<ol>)."""

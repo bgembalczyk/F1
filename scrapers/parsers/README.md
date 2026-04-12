@@ -14,7 +14,6 @@ Krótka konwencja dla nowych nazw klas:
 - `HtmlTagParserABC` – parser wejścia `bs4.Tag`.
 - `HtmlSoupParserABC` – parser wejścia `BeautifulSoup`.
 - `HtmlElementParserABC` – parser elementów HTML (list/table/infobox/navbox/references/figure).
-  - `ElementParserABC` — alias wstecznej kompatybilności dla `HtmlElementParserABC`.
 - `SectionParserABC` – parser sekcji (soup-based).
 
 ## Hierarchia dziedziczenia
