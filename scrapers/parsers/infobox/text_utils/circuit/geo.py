@@ -13,7 +13,7 @@ if TYPE_CHECKING:
     from models.records.link import LinkRecord
 
 
-class CircuitGeoParser(InfoboxTextUtils):
+class CircuitGeoExtractor(InfoboxTextUtils):
     """Parsowanie lokalizacji, współrzędnych, powierzchni."""
 
     def parse(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
@@ -105,9 +105,9 @@ class CircuitGeoParser(InfoboxTextUtils):
         if not text:
             return None
         return ErrorHandler.run_domain_parse(
-            lambda: CircuitGeoParser._parse_position_payload(text),
+            lambda: CircuitGeoExtractor._parse_position_payload(text),
             message=f"Nie udało się sparsować współrzędnych: {text!r}.",
-            parser_name=CircuitGeoParser.__name__,
+            parser_name=CircuitGeoExtractor.__name__,
         )
 
     @staticmethod
@@ -150,14 +150,14 @@ class CircuitGeoParser(InfoboxTextUtils):
 
         result: dict[str, float] = {}
         ErrorHandler.run_domain_parse(
-            lambda: CircuitGeoParser._populate_area_result(
+            lambda: CircuitGeoExtractor._populate_area_result(
                 result=result,
                 acres_match=acres_match,
                 ha_match=ha_match,
                 to_float=_to_float,
             ),
             message=f"Nie udało się sparsować powierzchni: {text!r}.",
-            parser_name=CircuitGeoParser.__name__,
+            parser_name=CircuitGeoExtractor.__name__,
         )
 
         return result or None
@@ -176,4 +176,4 @@ class CircuitGeoParser(InfoboxTextUtils):
             result["hectares"] = to_float(ha_match.group(1))
 
 
-__all__ = ["CircuitGeoParser"]
+__all__ = ["CircuitGeoExtractor"]

@@ -9,7 +9,7 @@ from scrapers.parsers.infobox.constants import MONTHS
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 
-class CircuitHistoryParser(InfoboxTextUtils):
+class CircuitHistoryExtractor(InfoboxTextUtils):
     """Parsowanie wydarzeń historycznych (Opened, Built, Broke ground, Former names)."""
 
     def parse(
@@ -108,12 +108,12 @@ class CircuitHistoryParser(InfoboxTextUtils):
             return str(now_year)
 
         return ErrorHandler.run_domain_parse(
-            lambda: CircuitHistoryParser._parse_period_endpoint_value(
+            lambda: CircuitHistoryExtractor._parse_period_endpoint_value(
                 lower=lower,
                 is_start=is_start,
             ),
             message=f"Nie udało się sparsować zakresu daty: {raw!r}.",
-            parser_name=CircuitHistoryParser.__name__,
+            parser_name=CircuitHistoryExtractor.__name__,
         )
 
     @staticmethod
@@ -185,4 +185,4 @@ class CircuitHistoryParser(InfoboxTextUtils):
         }
 
 
-__all__ = ["CircuitHistoryParser"]
+__all__ = ["CircuitHistoryExtractor"]

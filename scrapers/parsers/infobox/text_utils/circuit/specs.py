@@ -9,7 +9,7 @@ from scrapers.parsers.infobox.constants import symbol_map
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 
-class CircuitSpecsParser(InfoboxTextUtils):
+class CircuitSpecsExtractor(InfoboxTextUtils):
     """Parsowanie parametrów technicznych toru (surface, cost, capacity, banking)."""
 
     def parse(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
@@ -59,7 +59,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
 
         materials: list[str] = []
         for part in parts:
-            for material in CircuitSpecsParser._norm_surface_part(part):
+            for material in CircuitSpecsExtractor._norm_surface_part(part):
                 if material not in materials:
                     materials.append(material)
 
@@ -91,7 +91,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
         vals = ErrorHandler.run_domain_parse(
             lambda: [_to_int(n) for n in numbers],
             message=f"Nie udało się sparsować pojemności: {text!r}.",
-            parser_name=CircuitSpecsParser.__name__,
+            parser_name=CircuitSpecsExtractor.__name__,
         )
         result: dict[str, int] = {"total": vals[0]}
         if len(vals) >= MIN_CAPACITY_VALUES_FOR_SEATING:
@@ -168,7 +168,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
             value = ErrorHandler.run_domain_parse(
                 lambda: float(selected_match.group(1).replace(",", ".")),
                 message=f"Nie udało się sparsować nachylenia toru: {text!r}.",
-                parser_name=CircuitSpecsParser.__name__,
+                parser_name=CircuitSpecsExtractor.__name__,
             )
         else:
             unit = None
@@ -189,4 +189,4 @@ class CircuitSpecsParser(InfoboxTextUtils):
 
         return result or None
 
-__all__ = ["CircuitSpecsParser"]
+__all__ = ["CircuitSpecsExtractor"]

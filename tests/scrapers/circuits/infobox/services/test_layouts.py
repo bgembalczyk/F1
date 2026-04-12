@@ -6,19 +6,19 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.parsers.infobox.text_utils.circuit.lap_record import (
-    CircuitLapRecordParser,
+    CircuitLapRecordExtractor,
 )
-from scrapers.parsers.infobox.text_utils.circuit.layouts import CircuitLayoutsParser
-from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
+from scrapers.parsers.infobox.text_utils.circuit.layouts import CircuitLayoutsExtractor
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 
 
-def make_parser() -> CircuitLayoutsParser:
+def make_parser() -> CircuitLayoutsExtractor:
     infobox_scraper = MagicMock()
     text_utils = InfoboxTextUtils()
-    lap_record_parser = CircuitLapRecordParser()
-    specs_parser = CircuitSpecsParser()
-    return CircuitLayoutsParser(
+    lap_record_parser = CircuitLapRecordExtractor()
+    specs_parser = CircuitSpecsExtractor()
+    return CircuitLayoutsExtractor(
         infobox_scraper=infobox_scraper,
         text_utils=text_utils,
         lap_record_parser=lap_record_parser,
@@ -27,7 +27,7 @@ def make_parser() -> CircuitLayoutsParser:
 
 
 @pytest.fixture()
-def parser() -> CircuitLayoutsParser:
+def parser() -> CircuitLayoutsExtractor:
     return make_parser()
 
 
@@ -39,19 +39,19 @@ def parser() -> CircuitLayoutsParser:
 def test_is_layout_header_true() -> None:
     html = '<th class="infobox-header" colspan="2">Layout 1</th>'
     tag = BeautifulSoup(html, "html.parser").find("th")
-    assert CircuitLayoutsParser._is_layout_header(tag) is True
+    assert CircuitLayoutsExtractor._is_layout_header(tag) is True
 
 
 def test_is_layout_header_no_colspan() -> None:
     html = '<th class="infobox-header">Layout 1</th>'
     tag = BeautifulSoup(html, "html.parser").find("th")
-    assert CircuitLayoutsParser._is_layout_header(tag) is False
+    assert CircuitLayoutsExtractor._is_layout_header(tag) is False
 
 
 def test_is_layout_header_no_class() -> None:
     html = '<th colspan="2">Layout 1</th>'
     tag = BeautifulSoup(html, "html.parser").find("th")
-    assert CircuitLayoutsParser._is_layout_header(tag) is False
+    assert CircuitLayoutsExtractor._is_layout_header(tag) is False
 
 
 # ---------------------------------------------------------------------------
@@ -128,6 +128,6 @@ def test_parse_layout_sections_no_table(parser) -> None:
     ],
 )
 def test_parse_layout_header(text, expected_name, expected_years) -> None:
-    name, years = CircuitLayoutsParser._parse_layout_header(text)
+    name, years = CircuitLayoutsExtractor._parse_layout_header(text)
     assert name == expected_name
     assert years == expected_years

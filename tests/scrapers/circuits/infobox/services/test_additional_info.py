@@ -1,12 +1,12 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.parsers.infobox.text_utils.circuit import CircuitAdditionalInfoParser
+from scrapers.parsers.infobox.text_utils.circuit import CircuitAdditionalInfoExtractor
 
 
 @pytest.fixture()
-def parser() -> CircuitAdditionalInfoParser:
-    return CircuitAdditionalInfoParser()
+def parser() -> CircuitAdditionalInfoExtractor:
+    return CircuitAdditionalInfoExtractor()
 
 
 # ---------------------------------------------------------------------------

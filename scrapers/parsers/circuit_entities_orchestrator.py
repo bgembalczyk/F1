@@ -7,12 +7,12 @@ from scrapers.helpers.lap_record import normalize_lap_record
 from scrapers.parsers.infobox.constants import IGNORED_TOP_LEVEL_KEYS
 from scrapers.parsers.infobox.constants import used_keys
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
-from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser
-from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryParser
-from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordParser
-from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoParser
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
+from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoExtractor
+from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryExtractor
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordExtractor
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoExtractor
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityExtractor
 from scrapers.parsers.mixins.safe import SafeParsingMixin
 
 
@@ -25,12 +25,12 @@ class CircuitEntitiesOrchestrator(SafeParsingMixin):
         self,
         *,
         text_utils: InfoboxTextUtils,
-        geo_parser: CircuitGeoParser,
-        history_parser: CircuitHistoryParser,
-        specs_parser: CircuitSpecsParser,
-        lap_record_parser: CircuitLapRecordParser,
-        entity_parser: CircuitEntityParser,
-        additional_info_parser: CircuitAdditionalInfoParser,
+        geo_parser: CircuitGeoExtractor,
+        history_parser: CircuitHistoryExtractor,
+        specs_parser: CircuitSpecsExtractor,
+        lap_record_parser: CircuitLapRecordExtractor,
+        entity_parser: CircuitEntityExtractor,
+        additional_info_parser: CircuitAdditionalInfoExtractor,
         error_handler: ErrorHandler | None = None,
         url_provider: Callable[[], str | None] | None = None,
     ) -> None:
