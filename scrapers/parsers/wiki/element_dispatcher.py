@@ -4,6 +4,10 @@ from dataclasses import dataclass
 
 from models.payload import WikiParsedPayload
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
+from scrapers.parsers.wiki.element_payload_factory import ElementParseResult
+from scrapers.parsers.wiki.element_payload_factory import ElementPayloadFactory
+from scrapers.parsers.wiki.element_payload_factory import PassthroughElementClassifier
+from scrapers.parsers.wiki.element_payload_factory import WikiParsedPayloadMapper
 from scrapers.parsers.wiki.element_registry import ElementParseInput
 from scrapers.parsers.wiki.element_registry import ElementRegistry
 
@@ -13,6 +17,10 @@ class ElementParserDispatcher:
     """Single dispatcher used by section parsers to delegate element parsing."""
 
     registry: ElementRegistry
+    payload_factory: ElementPayloadFactory = ElementPayloadFactory(
+        classifier=PassthroughElementClassifier(),
+        mapper=WikiParsedPayloadMapper(),
+    )
 
     def dispatch(
         self,
@@ -24,14 +32,14 @@ class ElementParserDispatcher:
         if resolved is None:
             return None
         result_type, parser = resolved
-        return {
-            "kind": result_type,
-            "source_section_id": section_context.section_id,
-            "confidence": 1.0,
-            "raw_html_fragment": str(parse_input.tag),
-            "data": parser(parse_input.tag),
-            "type": result_type,
-        }
+        parse_result = ElementParseResult(
+            element_type=result_type,
+            payload=parser(parse_input.tag),
+            raw_html_fragment=str(parse_input.tag),
+            section_id=section_context.section_id,
+            confidence=1.0,
+        )
+        return self.payload_factory.create(parse_result)
 
 
 __all__ = ["ElementParserDispatcher"]

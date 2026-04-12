@@ -11,6 +11,7 @@ from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 from scrapers.parsers.wiki.element_dispatcher import ElementParserDispatcher
+from scrapers.parsers.wiki.element_payload_factory import ElementParseResult
 
 
 class WikiElementParsingMixin:
@@ -167,18 +168,28 @@ class WikiElementParsingMixin:
             if isinstance(child, Tag)
         ]
 
-    @staticmethod
     def _build_parsed_payload(
+        self,
         *,
         el: Tag,
         rule: ParserRule,
         section_context: SectionExtractionContext,
     ) -> WikiParsedPayload:
-        return {
-            "kind": rule.result_type,
-            "source_section_id": section_context.section_id,
-            "confidence": 1.0,
-            "raw_html_fragment": str(el),
-            "data": rule.parser(el),
-            "type": rule.result_type,
-        }
+        parse_result = ElementParseResult(
+            element_type=rule.result_type,
+            payload=rule.parser(el),
+            raw_html_fragment=str(el),
+            section_id=section_context.section_id,
+            confidence=1.0,
+        )
+        payload = self.dispatcher.payload_factory.create(parse_result)
+        if payload is None:
+            return {
+                "kind": rule.result_type,
+                "source_section_id": section_context.section_id,
+                "confidence": 1.0,
+                "raw_html_fragment": str(el),
+                "data": rule.parser(el),
+                "type": rule.result_type,
+            }
+        return payload

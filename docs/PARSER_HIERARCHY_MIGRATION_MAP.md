@@ -115,3 +115,32 @@ Poniższe ścieżki zostały usunięte i nie są już wspierane:
 Używaj importów kanonicznych z `scrapers.parsers.contracts.*` (kontrakty) albo bezpośrednio
 z modułów implementacyjnych (`scrapers.parsers.wiki.*`, `scrapers.parsers.section.*`).
 
+
+## 7. Strict element pipeline (wdrożone)
+
+Parsery elementowe są teraz spięte sztywnym łańcuchem odpowiedzialności:
+
+1. `Element parser (HTML -> payload)`
+2. `Classifier (opcjonalny)`
+3. `Mapper/Factory (payload -> WikiParsedPayload / rekord domenowy)`
+
+Implementacja runtime dla wiki-elementów:
+
+- `scrapers/parsers/wiki/element_dispatcher.py` – deleguje tylko parse + uruchamia factory,
+- `scrapers/parsers/wiki/element_payload_factory.py` – classifier + mapper/factory,
+- `scrapers/parsers/wiki/element_registry.py` – wybór parsera wyłącznie po `element_type` + context (`domain`, `section_id`, `section_profile`).
+
+## 8. Rozszerzenie kontraktów sekcyjnych poza tabele
+
+Wzorzec z `scrapers/parsers/section/table/contracts.py` został rozszerzony na:
+
+- `scrapers/parsers/section/list/contracts.py`,
+- `scrapers/parsers/section/text/contracts.py`,
+- `scrapers/parsers/section/infobox/contracts.py`.
+
+Każdy moduł definiuje analogiczne role: `*HtmlParserABC`, `*ClassifierABC`, `*RecordMapperABC`.
+
+## 9. Granice parser vs domena
+
+Parsery elementowe nie zawierają reguł biznesowych domeny.
+Transformacje domenowe pozostają w mapperach/factory (`*mapper*`, `services`, `domain_*`).

@@ -32,6 +32,13 @@ class ElementParseInput:
         section_id = self.section_context.section_id
         return normalize_section_text(section_id) if section_id else None
 
+    @property
+    def section_profile(self) -> str | None:
+        if not isinstance(self.metadata, dict):
+            return None
+        raw_profile = self.metadata.get("section_profile")
+        return normalize_section_text(raw_profile) if raw_profile else None
+
 
 @dataclass(frozen=True)
 class ElementParserRegistration:
@@ -74,6 +81,7 @@ class ElementRegistry:
             element_type=element_type,
             domain=parse_input.domain,
             section_id=parse_input.section_id,
+            section_profile=parse_input.section_profile,
         )
 
     def resolve(
@@ -91,6 +99,7 @@ class ElementRegistry:
         element_type: ElementType,
         domain: str | None,
         section_id: str | None,
+        section_profile: str | None,
     ) -> ElementParserRegistration | None:
         normalized_section_id = normalize_section_text(section_id) if section_id else None
         candidates: list[tuple[int, ElementParserRegistration]] = []
@@ -101,6 +110,7 @@ class ElementRegistry:
                 registration=registration,
                 domain=domain,
                 section_id=normalized_section_id,
+                section_profile=section_profile,
             )
             if score is None:
                 continue
@@ -116,6 +126,7 @@ class ElementRegistry:
         registration: ElementParserRegistration,
         domain: str | None,
         section_id: str | None,
+        section_profile: str | None,
     ) -> int | None:
         score = 0
         if registration.domain is not None:
@@ -127,7 +138,7 @@ class ElementRegistry:
                 return None
             score += 4
         if registration.section_profile is not None:
-            if section_id != registration.section_profile:
+            if section_profile != registration.section_profile:
                 return None
             score += 2
         return score
