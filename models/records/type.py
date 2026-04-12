@@ -28,7 +28,6 @@ class RecordType(str, Enum):
 
 RECORD_TYPE_ALIASES: dict[str, str] = {
     "grand_prix": "grands_prix",
-    "grandprix": "grands_prix",
     "driver": "driver",
     "constructor": "constructor",
     "circuit": "circuit",
