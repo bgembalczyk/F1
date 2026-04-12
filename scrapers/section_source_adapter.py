@@ -2,10 +2,10 @@ import json
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.orchestration.models import OrchestrationPaths
-from scrapers.base.orchestration.models import ResolvedInput
-from scrapers.base.orchestration.models import StepDeclaration
-from scrapers.base.sections.serializer import coerce_section_parse_result
+from scrapers.orchestration.paths import OrchestrationPaths
+from scrapers.orchestration.resolved_input import ResolvedInput
+from scrapers.orchestration.step_declaration import StepDeclaration
+from scrapers.section.serializer import coerce_section_parse_result
 
 
 class SectionSourceAdapter:

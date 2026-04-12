@@ -14,6 +14,19 @@ from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
+from scrapers.parsers.parser_abc import ParserABC
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.element_parser_abc import SectionHtmlParserABC
+from scrapers.parsers.parser_abc import ParserABC
+from scrapers.parsers.wiki.element_registry import WIKI_SELECTOR_FAMILY_MAP
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
@@ -40,6 +53,13 @@ AUTO_ELEMENT_PARSER_BASES: Final[dict[ElementType, ParserBase]] = {
     "infobox": WikiInfoboxParserABC,
 }
 
+EXPECTED_HTML_FAMILY_ABCS: Final[dict[ElementType, type[ParserABC[object, object]]]] = {
+    "table": HtmlTagParserABC,
+    "list": HtmlTagParserABC,
+    "infobox": HtmlTagParserABC,
+    "section": HtmlSoupParserABC,
+}
+
 DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = tuple(
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain=domain, element_type=element_type),
@@ -62,11 +82,28 @@ def validate_parser_registry(
 ) -> None:
     duplicates: set[ParsingRegistryKey] = set()
     seen: set[ParsingRegistryKey] = set()
+    parser_base_by_element_type: dict[ElementType, ParserBase] = {}
 
     for entry in registry:
         if entry.key in seen:
             duplicates.add(entry.key)
         seen.add(entry.key)
+
+        expected_base = AUTO_ELEMENT_PARSER_BASES[entry.key.element_type]
+        if entry.parser_base is not expected_base:
+            raise ValueError(
+                "Parser registry contract mismatch for "
+                f"{entry.key.domain}:{entry.key.element_type}:{entry.key.section_id or '-'} "
+                f"(expected {expected_base.__name__}, got {entry.parser_base.__name__})"
+            )
+
+        existing = parser_base_by_element_type.get(entry.key.element_type)
+        if existing is not None and existing is not entry.parser_base:
+            raise ValueError(
+                "Inconsistent ABC family for element type "
+                f"{entry.key.element_type}: {existing.__name__} vs {entry.parser_base.__name__}"
+            )
+        parser_base_by_element_type[entry.key.element_type] = entry.parser_base
 
     if duplicates:
         details = ", ".join(
@@ -84,6 +121,25 @@ def validate_parser_registry(
             for key in missing_keys
         )
         raise ValueError(f"Missing parser registrations for keys: {details}")
+
+    expected_selector_keys = set(AUTO_ELEMENT_PARSER_BASES)
+    selector_keys = {
+        key
+        for key in WIKI_SELECTOR_FAMILY_MAP
+        if key in expected_selector_keys
+    }
+    if selector_keys != expected_selector_keys:
+        missing = sorted(expected_selector_keys - selector_keys)
+        raise ValueError(f"Missing wiki selector families for keys: {', '.join(missing)}")
+
+    for element_type, parser_base in AUTO_ELEMENT_PARSER_BASES.items():
+        expected_html_family = EXPECTED_HTML_FAMILY_ABCS[element_type]
+        if not issubclass(parser_base, expected_html_family):
+            raise ValueError(
+                "Invalid HTML/ABC family mapping for "
+                f"{element_type}: {parser_base.__name__} is not "
+                f"a subclass of {expected_html_family.__name__}"
+            )
 
 
 def resolve_parser_base(

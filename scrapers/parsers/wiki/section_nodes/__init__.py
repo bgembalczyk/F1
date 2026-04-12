@@ -20,8 +20,6 @@ __all__ = [
     "WikiInfoboxElementParserABC",
     "WikiListElementParserABC",
     "WikiSectionElementParserABC",
-    "WikiInfoboxParserABC",
-    "WikiListParserABC",
     "WikiSectionNodeParserABC",
     "WikiSectionParserABC",
     "WikiSubSectionParserABC",

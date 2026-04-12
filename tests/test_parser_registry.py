@@ -7,19 +7,18 @@ from scrapers.parsers.registry import ParsingRegistryKey
 from scrapers.parsers.registry import resolve_parser_base
 from scrapers.parsers.registry import resolve_parser_name
 from scrapers.parsers.registry import validate_parser_registry
-from scrapers.parsers.element_parser_abc import ListElementParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
 
 
 def test_validate_parser_registry_rejects_conflicts() -> None:
     duplicate_entries = (
         ParsingRegistryEntry(
             key=ParsingRegistryKey(domain="drivers", element_type="list"),
-            parser_base=ListElementParserABC,
+            parser_base=WikiListElementParserABC,
         ),
         ParsingRegistryEntry(
             key=ParsingRegistryKey(domain="drivers", element_type="list"),
-            parser_base=ListElementParserABC,
+            parser_base=WikiListElementParserABC,
         ),
     )
 
@@ -34,7 +33,7 @@ def test_validate_parser_registry_rejects_missing_required_entries() -> None:
     partial_registry = (
         ParsingRegistryEntry(
             key=ParsingRegistryKey(domain="drivers", element_type="list"),
-            parser_base=ListElementParserABC,
+            parser_base=WikiListElementParserABC,
         ),
     )
 
@@ -55,4 +54,4 @@ def test_resolve_parser_name_raises_for_unregistered_key() -> None:
 
 def test_resolve_parser_base_returns_abc() -> None:
     parser_base = resolve_parser_base(domain="drivers", element_type="list")
-    assert parser_base is WikiListParserABC
+    assert parser_base is WikiListElementParserABC

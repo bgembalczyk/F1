@@ -23,6 +23,13 @@ from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiNavboxParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiParagraphParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiFigureElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiNavboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiParagraphElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiReferencesElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 from scrapers.parsers.wiki.section.base import BaseSectionParser
 
 HtmlInputT = TypeVar("HtmlInputT", Tag, BeautifulSoup)
@@ -42,35 +49,39 @@ class WikiDelegatingHtmlParserBase(ABC, Generic[HtmlInputT, OutputT]):
         return self._delegate.parse(raw)
 
 
-class WikiTableParserBase(WikiDelegatingHtmlParserBase[Tag, WikiTableData], WikiTableParserABC, ABC):
+class WikiTableParserBase(WikiDelegatingHtmlParserBase[Tag, WikiTableData], WikiTableElementParserABC, ABC):
     pass
 
 
-class WikiListParserBase(WikiDelegatingHtmlParserBase[Tag, WikiListData], WikiListParserABC, ABC):
+class WikiListParserBase(WikiDelegatingHtmlParserBase[Tag, WikiListData], WikiListElementParserABC, ABC):
     pass
 
 
-class WikiInfoboxParserBase(WikiDelegatingHtmlParserBase[Tag, WikiInfoboxData], WikiInfoboxParserABC, ABC):
+class WikiInfoboxParserBase(WikiDelegatingHtmlParserBase[Tag, WikiInfoboxData], WikiInfoboxElementParserABC, ABC):
     pass
 
 
-class WikiNavboxParserBase(WikiDelegatingHtmlParserBase[Tag, WikiNavboxData], WikiNavboxParserABC, ABC):
+class WikiNavboxParserBase(WikiDelegatingHtmlParserBase[Tag, WikiNavboxData], WikiNavboxElementParserABC, ABC):
     pass
 
 
-class WikiFigureParserBase(WikiDelegatingHtmlParserBase[Tag, WikiFigureData], WikiFigureParserABC, ABC):
+class WikiFigureParserBase(WikiDelegatingHtmlParserBase[Tag, WikiFigureData], WikiFigureElementParserABC, ABC):
     pass
 
 
 class WikiParagraphParserBase(
     WikiDelegatingHtmlParserBase[Tag, ParagraphElementData],
-    WikiParagraphParserABC,
+    WikiParagraphElementParserABC,
     ABC,
 ):
     pass
 
 
-class WikiReferencesParserBase(WikiDelegatingHtmlParserBase[Tag, ReferencesWrapParsedData], ABC):
+class WikiReferencesParserBase(
+    WikiDelegatingHtmlParserBase[Tag, ReferencesWrapParsedData],
+    WikiReferencesElementParserABC,
+    ABC,
+):
     pass
 
 
