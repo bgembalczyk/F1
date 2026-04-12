@@ -2,12 +2,10 @@ import re
 from typing import Any
 
 from models.services.season import parse_seasons
-from scrapers.constants_points import POINTS_NOTES_HEADER
-from scrapers.constants_points import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
-from scrapers.constants_points import ROLE_PATTERN
+from scrapers.constants.constants_points import POINTS_NOTES_HEADER
+from scrapers.constants.constants_points import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
+from scrapers.constants.constants_points import ROLE_PATTERN
 from scrapers.helpers.parsing import parse_int_from_text
-from scrapers.points_constant import HISTORY_POSITION_KEYS_WITH_FASTEST_LAP
-from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.points_constant import HISTORY_POSITION_KEYS_WITH_FASTEST_LAP
 from scrapers.wiki_table_base_mapper import WikiTableBaseMapper
 

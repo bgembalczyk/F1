@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.parsers.base_red_flagged_races_table_mapper import BaseRedFlaggedRacesTableMapper
+from scrapers.mappers.base_red_flagged_races_table_mapper import BaseRedFlaggedRacesTableMapper
 from scrapers.red_flagged_helpers import RESTART_STATUS_MAP
 from scrapers.red_flagged_helpers import extract_rich_cell
 from scrapers.red_flagged_helpers import map_drivers_cell

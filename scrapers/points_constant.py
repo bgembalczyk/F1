@@ -1,7 +1,7 @@
 import re
 
-from scrapers.constants_points import HISTORICAL_POSITIONS
-from scrapers.constants_points import SPRINT_POSITIONS
+from scrapers.constants.constants_points import HISTORICAL_POSITIONS
+from scrapers.constants.constants_points import SPRINT_POSITIONS
 
 HISTORY_POSITION_KEYS_WITH_FASTEST_LAP: frozenset[str] = frozenset(
     pos.lower() for pos in HISTORICAL_POSITIONS[1:]

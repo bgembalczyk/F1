@@ -53,8 +53,5 @@ def module_naming_alias_map() -> dict[str, str]:
     return {entry.old: entry.new for entry in MODULE_NAMING_ALIASES}
 
 
-from scrapers.legacy.module_naming_compat import MODULE_NAMING_ALIASES
-from scrapers.legacy.module_naming_compat import ModuleNamingAlias
-from scrapers.legacy.module_naming_compat import module_naming_alias_map
 
 __all__ = ["MODULE_NAMING_ALIASES", "ModuleNamingAlias", "module_naming_alias_map"]

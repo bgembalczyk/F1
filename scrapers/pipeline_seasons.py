@@ -9,7 +9,6 @@ from models.wiki_url import WikiUrl
 from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.options import ScraperOptions
-from scrapers.parsers.entry_merger import EntryMerger
 from scrapers.parsers.wiki.season_section_parser_abc import SeasonSectionParserABC
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
 from scrapers.parsers.section.season.calendar import SeasonCalendarSectionParser
