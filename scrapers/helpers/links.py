@@ -48,7 +48,10 @@ def normalize_single_link(
     if isinstance(url, str) and url.startswith("/"):
         normalized = {"text": text, "url": url}
     else:
-        normalized = validate_link({"text": text, "url": url}, field_name="link")
+        try:
+            normalized = validate_link({"text": text, "url": url}, field_name="link")
+        except ValueError:
+            normalized = {"text": text, "url": None}
     if not normalized.get("text") and normalized.get("url") is None:
         return empty_link_record(drop_empty=drop_empty)
     return normalized
