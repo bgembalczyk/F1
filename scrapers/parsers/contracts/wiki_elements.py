@@ -1,58 +1,30 @@
 from __future__ import annotations
 
-from abc import ABC
-from abc import abstractmethod
-
-from bs4 import BeautifulSoup
-from bs4 import Tag
-
-from models.data.wiki.figure import WikiFigureData
-from models.data.wiki.infobox import WikiInfoboxData
-from models.data.wiki.list import WikiListData
-from models.data.wiki.navbox import WikiNavboxData
-from models.data.wiki.section import WikiSectionData
-from models.data.wiki.table import WikiTableData
-from scrapers.parsers.element_parser_abc import FigureHtmlParserABC
-from scrapers.parsers.element_parser_abc import ListHtmlParserABC
-from scrapers.parsers.element_parser_abc import NavboxHtmlParserABC
-from scrapers.parsers.element_parser_abc import SectionHtmlParserABC
-
-
-class WikiListParserABC(ListHtmlParserABC[WikiListData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiListData: ...
-
-
-class WikiTableParserABC(WikiListParserABC, ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiTableData: ...
-
-
-class WikiSectionParserABC(SectionHtmlParserABC[WikiSectionData], ABC):
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> WikiSectionData: ...
-
-
-class WikiInfoboxParserABC(WikiListParserABC, ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiInfoboxData: ...
-
-
-class WikiNavboxParserABC(NavboxHtmlParserABC[WikiNavboxData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiNavboxData: ...
-
-
-class WikiFigureParserABC(FigureHtmlParserABC[WikiFigureData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiFigureData: ...
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiFigureElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiFigureParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiNavboxElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiNavboxParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiSectionElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiSectionParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableParserABC
 
 
 __all__ = [
+    "WikiFigureElementParserABC",
     "WikiFigureParserABC",
+    "WikiInfoboxElementParserABC",
     "WikiInfoboxParserABC",
+    "WikiListElementParserABC",
     "WikiListParserABC",
+    "WikiNavboxElementParserABC",
     "WikiNavboxParserABC",
+    "WikiSectionElementParserABC",
     "WikiSectionParserABC",
+    "WikiTableElementParserABC",
     "WikiTableParserABC",
 ]

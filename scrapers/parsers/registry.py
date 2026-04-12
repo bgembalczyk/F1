@@ -10,6 +10,10 @@ from typing import TypeAlias
 
 import scrapers.parsers as parsers_pkg
 from scrapers.parsers.parser_abc import ParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiSectionElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
 from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
@@ -18,7 +22,7 @@ from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
-ParserBase: TypeAlias = type[HtmlTagParserABC[object]]
+ParserBase: TypeAlias = type[ParserABC[object, object]]
 
 
 @dataclass(frozen=True)
@@ -35,10 +39,10 @@ class ParsingRegistryEntry:
 
 
 AUTO_ELEMENT_PARSER_BASES: Final[dict[ElementType, ParserBase]] = {
-    "table": WikiTableParserABC,
-    "list": WikiListParserABC,
-    "section": WikiSectionParserABC,
-    "infobox": WikiInfoboxParserABC,
+    "table": WikiTableElementParserABC,
+    "list": WikiListElementParserABC,
+    "section": WikiSectionElementParserABC,
+    "infobox": WikiInfoboxElementParserABC,
 }
 
 DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = tuple(
