@@ -4,7 +4,7 @@ from abc import ABC
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 
-from scrapers.parsers.wiki_section_parser_abc import WikiSectionParserABC
+from scrapers.parsers.wiki.wiki_section_parser_abc import WikiSectionParserABC
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
