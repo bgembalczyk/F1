@@ -13,13 +13,13 @@ TARGET_FILES = (
 )
 
 ALLOWED_ROOTS = {
-    "WikiTableParserABC",
-    "WikiListParserABC",
-    "WikiSectionParserABC",
+    "WikiTableElementParserABC",
+    "WikiListElementParserABC",
+    "WikiSectionElementParserABC",
     "WikiSectionStructureParserABC",
-    "WikiInfoboxParserABC",
-    "WikiNavboxParserABC",
-    "WikiFigureParserABC",
+    "WikiInfoboxElementParserABC",
+    "WikiNavboxElementParserABC",
+    "WikiFigureElementParserABC",
     "WikiTableParserBase",
     "WikiListParserBase",
     "WikiSectionParserBase",

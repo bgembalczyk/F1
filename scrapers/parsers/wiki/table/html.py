@@ -9,10 +9,10 @@ from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parsers.html_table import HtmlTableParser
-from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 
 
-class WikiTableHtmlParser(WikiTableParserABC):
+class WikiTableHtmlParser(WikiTableElementParserABC):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">

@@ -7,8 +7,7 @@ from bs4 import Tag
 
 from models.data.parsed.html_elements import SectionElementData
 from scrapers.parsers.wiki.content_text import ContentTextParser
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiSectionElementParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 
 
 class SectionElementParser(WikiSectionElementParserABC):

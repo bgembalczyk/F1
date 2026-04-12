@@ -16,6 +16,12 @@ from models.data.wiki.infobox import WikiInfoboxData
 from models.data.wiki.list import WikiListData
 from models.data.wiki.navbox import WikiNavboxData
 from models.data.wiki.table import WikiTableData
+from scrapers.parsers.contracts.wiki_elements import WikiFigureElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiNavboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
+from scrapers.parsers.wiki.section.base import BaseSectionParser
 from scrapers.parsers.wiki.section.base import BaseSectionParser
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiArticleParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiFigureParserABC

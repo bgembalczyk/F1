@@ -6,11 +6,11 @@ from bs4 import Tag
 
 from scrapers.parsers.wiki.privateer_teams_list import PrivateerTeamsListParser
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
 
 
 class PrivateerTeamsSectionParser(NestedWikiSectionParser):
-    def __init__(self, *, list_parser: WikiListParserABC | None = None) -> None:
+    def __init__(self, *, list_parser: WikiListElementParserABC | None = None) -> None:
         super().__init__()
         self._list_parser = list_parser or PrivateerTeamsListParser()
 

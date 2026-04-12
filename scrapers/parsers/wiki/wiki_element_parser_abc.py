@@ -82,26 +82,15 @@ class WikiFigureElementParserABC(
     def parse(self, raw: Tag) -> WikiFigureData: ...
 
 
-WikiTableParserABC = WikiTableElementParserABC
-WikiListParserABC = WikiListElementParserABC
-WikiSectionParserABC = WikiSectionElementParserABC
-WikiInfoboxParserABC = WikiInfoboxElementParserABC
-WikiNavboxParserABC = WikiNavboxElementParserABC
-WikiFigureParserABC = WikiFigureElementParserABC
-WikiParagraphParserABC = WikiParagraphElementParserABC
-WikiArticleParserABC = WikiArticleElementParserABC
-
-
 __all__ = [
     "WikiArticleElementParserABC",
     "WikiArticleParserABC",
     "WikiFigureElementParserABC",
-    "WikiFigureParserABC",
     "WikiInfoboxElementParserABC",
-    "WikiInfoboxParserABC",
     "WikiListElementParserABC",
-    "WikiListParserABC",
     "WikiNavboxElementParserABC",
+    "WikiSectionElementParserABC",
+    "WikiTableElementParserABC",
     "WikiNavboxParserABC",
     "WikiParagraphElementParserABC",
     "WikiParagraphParserABC",
