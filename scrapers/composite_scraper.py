@@ -5,9 +5,9 @@ from typing import runtime_checkable
 
 from infrastructure.http.errors.base import RequestError
 from scrapers.data_extractor import BaseDataExtractor
-from scrapers.errors import DomainParseError
-from scrapers.errors import ScraperNetworkError
-from scrapers.errors import ScraperParseError
+from scrapers.errors.domain_parse import DomainParseError
+from scrapers.errors.network import ScraperNetworkError
+from scrapers.errors.parse import ScraperParseError
 from scrapers.progress import ProgressAdapter
 from scrapers.progress import TqdmProgressAdapter
 from scrapers.source_adapter import IterableSourceAdapter

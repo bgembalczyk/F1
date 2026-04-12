@@ -3,10 +3,9 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from infrastructure.http.errors.base import RequestError
 from infrastructure.http.errors.recoverable_network import RecoverableNetworkError
 from scrapers.error_handler import ErrorHandler
-from scrapers.errors import ScraperError
+from scrapers.errors.base import ScraperError
 from scrapers.errors.recoverable_parse import RecoverableParseError
 from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.helpers.transformers import build_transformers

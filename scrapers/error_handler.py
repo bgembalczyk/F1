@@ -4,12 +4,12 @@ from pathlib import Path
 from typing import TypeVar
 
 from scrapers.error_codes import resolve_error_code
-from scrapers.errors import DomainParseError
-from scrapers.errors import ErrorBehavior
-from scrapers.errors import ScraperError
-from scrapers.errors import ScraperNetworkError
-from scrapers.errors import ScraperParseError
-from scrapers.errors import ScraperValidationError
+from scrapers.errors.base import ScraperError
+from scrapers.errors.behavior import ErrorBehavior
+from scrapers.errors.domain_parse import DomainParseError
+from scrapers.errors.network import ScraperNetworkError
+from scrapers.errors.parse import ScraperParseError
+from scrapers.errors.validation import ScraperValidationError
 from scrapers.errors_report import ErrorReport
 from scrapers.errors_report import write_error_report
 from scrapers.errors_report import write_error_summary_by_code

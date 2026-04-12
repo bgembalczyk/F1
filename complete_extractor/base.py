@@ -7,9 +7,9 @@ from scrapers.composite_scraper import CompositeDataExtractor
 from scrapers.composite_scraper import CompositeDataExtractorChildren
 from scrapers.composite_scraper import ListScraperProtocol
 from scrapers.composite_scraper import SingleScraperProtocol
-from scrapers.errors import DomainParseError
-from scrapers.errors import ScraperNetworkError
-from scrapers.errors import ScraperParseError
+from scrapers.errors.domain_parse import DomainParseError
+from scrapers.errors.network import ScraperNetworkError
+from scrapers.errors.parse import ScraperParseError
 from scrapers.helpers.wiki import is_wikipedia_redlink
 from scrapers.options import ScraperOptions
 from scrapers.source_adapter import IterableSourceAdapter

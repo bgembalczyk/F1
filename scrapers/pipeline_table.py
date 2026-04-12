@@ -14,7 +14,7 @@ from scrapers.columns.types.auto import AutoColumn
 from scrapers.configs.public import TableConfig
 from scrapers.debug_dumps import TablePipelineDebugContext
 from scrapers.debug_dumps import write_table_pipeline_dump
-from scrapers.errors import ScraperParseError
+from scrapers.errors.parse import ScraperParseError
 from scrapers.headers_table import normalize_header
 from scrapers.helpers.html_utils import find_section_elements
 from scrapers.helpers.links import normalize_links

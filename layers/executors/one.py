@@ -7,7 +7,7 @@ from uuid import uuid4
 
 from layers.executors.base import BaseExecutor
 from layers.protocols.one_runner import LayerOneRunnerProtocol
-from scrapers.errors import normalize_pipeline_error
+from scrapers.errors.pipeline.helpers import normalize_pipeline_error
 from scrapers.logging import RunTraceWriter
 from scrapers.logging import build_execution_context
 from scrapers.logging import get_logger

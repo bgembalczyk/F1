@@ -3,8 +3,8 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.errors import ErrorCategory
-from scrapers.errors import ScraperNotFoundError
+from scrapers.errors.category import ErrorCategory
+from scrapers.errors.not_found import ScraperNotFoundError
 from scrapers.helpers.html_utils import find_section_elements
 
 

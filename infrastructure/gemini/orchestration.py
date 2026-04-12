@@ -3,8 +3,8 @@ from typing import Any
 
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.model.selector import ModelSelector
-from scrapers.errors import PipelineError
-from scrapers.errors import normalize_pipeline_error
+from scrapers.errors.pipeline.base import PipelineError
+from scrapers.errors.pipeline.helpers import normalize_pipeline_error
 from scrapers.logging import build_execution_context
 from scrapers.logging import get_logger
 

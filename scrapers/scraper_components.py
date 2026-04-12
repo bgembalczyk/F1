@@ -11,8 +11,9 @@ from infrastructure.http.errors.base import RequestError
 from infrastructure.http.policies.http import HttpPolicy
 from scrapers.error_codes import resolve_error_code
 from scrapers.error_handler import ErrorHandler
-from scrapers.errors import ScraperError
-from scrapers.errors import ScraperNetworkError
+from scrapers.errors.base import ScraperError
+from scrapers.errors.network import ScraperNetworkError
+from scrapers.errors.parse import ScraperParseError
 from scrapers.helpers.transformers import build_transformers
 from scrapers.normalization import RecordNormalizer
 from scrapers.options import ScraperOptions

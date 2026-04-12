@@ -4,7 +4,7 @@ from collections.abc import Callable
 from typing import Any
 from typing import TypeVar
 
-from scrapers.errors import ScraperError
+from scrapers.errors.base import ScraperError
 
 _T = TypeVar("_T")
 

@@ -6,7 +6,7 @@ import urllib.request
 from typing import Any
 
 from infrastructure.gemini.constants import API_URL_TEMPLATE
-from scrapers.errors import TransportError
+from scrapers.errors.pipeline.transport import TransportError
 from scrapers.logging import build_execution_context
 from scrapers.logging import get_logger
 

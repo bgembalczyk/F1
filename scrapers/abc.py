@@ -11,9 +11,9 @@ from bs4 import BeautifulSoup
 from infrastructure.http.policies.http import HttpPolicy
 from scrapers.adapters.result_tabular import ResultTabularAdapter
 from scrapers.component_metadata_wiki import validate_metadata_for_component_class
-from scrapers.errors import ScraperError
-from scrapers.errors import ScraperNetworkError
-from scrapers.errors import ScraperParseError
+from scrapers.errors.base import ScraperError
+from scrapers.errors.network import ScraperNetworkError
+from scrapers.errors.parse import ScraperParseError
 from scrapers.helpers.url import normalize_url
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions

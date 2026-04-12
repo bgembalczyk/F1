@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.error_codes import resolve_error_code
-from scrapers.errors import ScraperValidationError
+from scrapers.errors.validation import ScraperValidationError
 
 if TYPE_CHECKING:
     from collections.abc import Callable

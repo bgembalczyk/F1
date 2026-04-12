@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from collections.abc import Callable
-from pathlib import Path
 from typing import TYPE_CHECKING
 
 from layers.runners.layer_job.base import LayerJobRunner
 from layers.runners.metadata import RunnerMetadata
 from layers.seed.registry.entries import SeedRegistryEntry
-from scrapers.errors import normalize_pipeline_error
+from scrapers.errors.pipeline.helpers import normalize_pipeline_error
 from scrapers.run_config import RunConfig
 
 if TYPE_CHECKING:
