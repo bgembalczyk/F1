@@ -1,4 +1,4 @@
-from scrapers.orchestration import BaseComponent
+from scrapers.orchestration.components.base import BaseComponent
 from scrapers.orchestration.stages.envelope import StageEnvelope
 
 

@@ -8,7 +8,7 @@ from scrapers.infobox.extraction.service.base_infobox_orchestrator import Circui
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordDTO
 from scrapers.infobox.extraction.service.constructor import (
-    ConstructorInfoboxExtractionService,
+    ConstructorInfoboxOrchestrator,
 )
 from scrapers.records.dto.constructor import (
     ConstructorRecordAssembler,
@@ -94,7 +94,7 @@ def test_constructor_component_services_and_assembler() -> None:
         """,
     )
     scraper = SingleConstructorScraper()
-    infoboxes = list(ConstructorInfoboxExtractionService().extract(soup).records)
+    infoboxes = list(ConstructorInfoboxOrchestrator().extract(soup).records)
     sections = ConstructorSectionExtractionService(adapter=scraper).extract(soup)
     record = ConstructorRecordAssembler().assemble(
         ConstructorRecordDTO(

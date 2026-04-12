@@ -1,7 +1,0 @@
-from __future__ import annotations
-
-from scrapers.constructor_infobox_orchestrator import ConstructorInfoboxOrchestrator
-
-ConstructorInfoboxExtractionService = ConstructorInfoboxOrchestrator
-
-__all__ = ["ConstructorInfoboxExtractionService"]
