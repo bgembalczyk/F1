@@ -1,26 +1,21 @@
-from abc import ABC
-from abc import abstractmethod
+"""Compatibility layer for legacy section parser ABC imports.
 
-from bs4 import BeautifulSoup
+Canonical runtime bases live in:
+- ``scrapers.parsers.wiki.section.base.BaseSectionParser`` for domain section parsers,
+- ``scrapers.parsers.nested_child.NestedChildParser`` for nested section parsers.
+"""
 
-from scrapers.parsers.soup_parser_abc import HtmlSoupParserABC
-from scrapers.section.parse_results import SectionParseResult
+from scrapers.parsers.nested_child import NestedChildParser
+from scrapers.parsers.wiki.section.base import BaseSectionParser
 
+SectionParserABC = BaseSectionParser
+NestedSectionParserABC = NestedChildParser
+SubSectionParserABC = NestedChildParser
+SubSubSectionParserABC = NestedChildParser
 
-class SectionParserABC(HtmlSoupParserABC[SectionParseResult], ABC):
-    """Canonical ABC for section parsers."""
-
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
-
-
-class NestedSectionParserABC(SectionParserABC, ABC):
-    """Parser contract for nested section level."""
-
-
-class SubSectionParserABC(NestedSectionParserABC, ABC):
-    """Parser contract for subsection level."""
-
-
-class SubSubSectionParserABC(SubSectionParserABC, ABC):
-    """Parser contract for sub-subsection level."""
+__all__ = [
+    "SectionParserABC",
+    "NestedSectionParserABC",
+    "SubSectionParserABC",
+    "SubSubSectionParserABC",
+]

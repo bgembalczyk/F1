@@ -1,8 +1,7 @@
 from abc import ABC
 
-from scrapers.parsers.section_parser_abc import SectionParserABC
+from scrapers.parsers.wiki.section.base import BaseSectionParser
 
 
-class SectionStructureParserABC(SectionParserABC, ABC):
+class SectionStructureParserABC(BaseSectionParser, ABC):
     """ABC for section parser hierarchy."""
-

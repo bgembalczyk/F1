@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from scrapers.parsers.section_parser_abc import SubSectionParserABC
+from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.sub_section.base import SubSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
@@ -48,7 +48,7 @@ class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
 
 
 class ManufacturersSectionParser(NestedWikiSectionParser):
-    def __init__(self, *, child_parser: SubSectionParserABC | None = None, **kwargs: Any) -> None:
+    def __init__(self, *, child_parser: NestedChildParser | None = None, **kwargs: Any) -> None:
         toolbox = kwargs.get("toolbox")
         super().__init__(toolbox=toolbox)
         self.child_parser = child_parser or TyreManufacturersBySeasonSubSectionParser(toolbox=toolbox)
