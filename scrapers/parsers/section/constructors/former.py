@@ -1,6 +1,6 @@
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
-from scrapers.parsers.table.constructor.former import FormerConstructorsTableParser
+from scrapers.parsers.table.constructor.former import FormerConstructorsTableMapper
 from scrapers.parsers.wiki.sublevels.indianapolis_only_sub_section import IndianapolisOnlySubSectionParser
 
 
@@ -18,7 +18,7 @@ class FormerConstructorsSectionParser(ConstructorsSectionParser):
             section_label=section_label,
             include_urls=include_urls,
             normalize_empty_values=normalize_empty_values,
-            table_mapping_parser=FormerConstructorsTableParser(),
+            table_mapper=FormerConstructorsTableMapper(),
         )
         self._indianapolis_sub_section_parser = IndianapolisOnlySubSectionParser()
 

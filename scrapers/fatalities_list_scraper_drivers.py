@@ -27,7 +27,7 @@ from scrapers.constants_drivers import FATALITIES_SECTION_ID
 from scrapers.constants_drivers import FATALITIES_SESSION_HEADER
 from scrapers.constants_drivers import MARK_F2_CATEGORY
 from scrapers.constants_drivers import MARK_NON_CHAMPIONSHIP_EVENT
-from scrapers.driver_ordered_table_parser import DriverOrderedTableParser
+from scrapers.driver_ordered_table_parser import DriverOrderedTableMapper
 from scrapers.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.helpers.date_parsing import parse_formula_category
 from scrapers.helpers.normalize import normalize_auto_value
@@ -42,7 +42,7 @@ from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.transformers.record.fatalities_car import FatalitiesCarTransformer
 
 
-class FatalitiesTableParser(DriverOrderedTableParser):
+class FatalitiesTableMapper(DriverOrderedTableMapper):
     """Parser wyspecjalizowany dla tabeli „Detail by driver”."""
 
     table_type = "fatalities_detail_by_driver"
@@ -71,7 +71,7 @@ class DetailByDriverSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = ArticleTablesParser(
-            specialized_mappers=[FatalitiesTableParser()],
+            specialized_mappers=[FatalitiesTableMapper()],
         )
 
     def _parse_group(

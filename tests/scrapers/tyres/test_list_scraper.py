@@ -1,19 +1,19 @@
 from __future__ import annotations
 
 from scrapers.tyres.list_scraper_tyres import ManufacturersSectionParser
-from scrapers.tyres.list_scraper_tyres import TyreManufacturersBySeasonTableParser
+from scrapers.tyres.list_scraper_tyres import TyreManufacturersBySeasonTableMapper
 from scrapers.tyres.list_scraper_tyres import TyreManufacturersScraper
 
 
 def test_table_parser_matches_only_required_headers_subset() -> None:
-    parser = TyreManufacturersBySeasonTableParser()
+    parser = TyreManufacturersBySeasonTableMapper()
 
     assert parser.matches(["Season", "Manufacturer 1", "Wins", "Extra"], {})
     assert not parser.matches(["Season", "Manufacturer 2", "Wins"], {})
 
 
 def test_table_parser_maps_only_known_headers() -> None:
-    parser = TyreManufacturersBySeasonTableParser()
+    parser = TyreManufacturersBySeasonTableMapper()
 
     mapped = parser.map_columns(["Season", "Manufacturer 4", "Wins", "Unknown"])
 

@@ -16,6 +16,7 @@ from scrapers.config_table import build_scraper_config
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 from scrapers.parsers.table.table.base import WikiTableBaseParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper
@@ -34,7 +35,7 @@ from typing import Any
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
 
 
-class GrandsPrixTableParser(WikiTableBaseParser):
+class GrandsPrixTableMapper(WikiTableBaseMapper):
     table_type = "grands_prix_list"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -81,7 +82,7 @@ TABLE_SCHEMA = TableSchemaDSL(
 class ByRaceTitleSubSectionParser(SubSectionParser, ApplyForElementsMixin):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = GrandsPrixTableParser()
+        self._table_parser = GrandsPrixTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
