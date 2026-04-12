@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.table.html import HtmlTableParser
+from scrapers.parsers.table.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
 from scrapers.parsers.wiki.table.mapped.lap_records import LapRecordsWikiTableMapper
