@@ -1,6 +1,6 @@
 from abc import ABC
 
-from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 from scrapers.parsers.wiki.base import WikiRecords
 
 

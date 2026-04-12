@@ -16,7 +16,7 @@ class ParseGroupMixin(ABC, Generic[TableInputT_contra, RecordT_co]):
 
 
 class GroupParsingMixin(ParseGroupMixin[TableInputT_contra, RecordT_co], ABC):
-    """Backward-compatible named mixin for parse_group capability."""
+    """Named mixin for parse_group capability."""
 
 
 __all__ = ["ParseGroupMixin", "GroupParsingMixin"]

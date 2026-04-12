@@ -2,18 +2,23 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
-from typing import Generic
-from typing import TypeVar
+from typing import Any
 
-NodeInputT = TypeVar("NodeInputT")
-NodeOutputT = TypeVar("NodeOutputT")
+from bs4 import Tag
+
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 
 
-class WikiNodeParserABC(ABC, Generic[NodeInputT, NodeOutputT]):
-    """Base contract for parsers handling a single wiki HTML node category."""
+class WikiSectionNodeParserABC(ABC):
+    """Single base contract for section-node parsers."""
 
     @abstractmethod
-    def parse(self, raw: NodeInputT) -> NodeOutputT: ...
+    def parse(
+        self,
+        elements: list[Tag],
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, Any]: ...
 
 
-__all__ = ["WikiNodeParserABC"]
+__all__ = ["WikiSectionNodeParserABC"]

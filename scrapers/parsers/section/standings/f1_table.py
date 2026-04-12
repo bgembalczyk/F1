@@ -8,7 +8,7 @@ from scrapers.columns.types.position import PositionColumn
 from scrapers.config_table import TableConfig
 from scrapers.extractors.table import TableExtractor
 from scrapers.options import ScraperOptions
-from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 
 
 class F1StandingsTableParser(HtmlTagParserABC[list[dict[str, Any]]]):

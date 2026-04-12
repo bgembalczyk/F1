@@ -3,6 +3,7 @@ from bs4 import Tag
 from models.data.wiki.list import WikiListData
 from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
 
 
 class WikiListElementParser(WikiListElementParserABC):

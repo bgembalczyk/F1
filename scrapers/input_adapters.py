@@ -6,11 +6,12 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+
 if TYPE_CHECKING:
-    from scrapers.parsers.input_types import WikiDictFragmentInput
-    from scrapers.parsers.input_types import WikiParserInput
-    from scrapers.parsers.input_types import WikiSoupInput
-    from scrapers.parsers.input_types import WikiTagInput
+    from scrapers.input_types import WikiDictFragmentInput
+    from scrapers.input_types import WikiParserInput
+    from scrapers.input_types import WikiSoupInput
+    from scrapers.input_types import WikiTagInput
 
 
 def as_tag(value: WikiParserInput) -> WikiTagInput:

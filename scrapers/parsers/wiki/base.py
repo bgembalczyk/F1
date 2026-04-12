@@ -9,8 +9,8 @@ from bs4 import Tag
 from scrapers.parsers.input_types import WikiDictFragmentInput
 from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.parser_abc import ParserABC
-from scrapers.parsers.soup_parser_abc import HtmlSoupParserABC
-from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 
 WikiRecord = dict[str, Any]
 WikiRecords = list[WikiRecord]

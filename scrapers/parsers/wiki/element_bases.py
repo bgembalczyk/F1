@@ -1,9 +1,15 @@
 from __future__ import annotations
 
 from abc import ABC
+from abc import abstractmethod
+from typing import Any
+from typing import Generic
+from typing import TypeVar
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from models.data.parsed.html_elements import ParagraphElementData
 from models.data.parsed.references_wrap import ReferencesWrapParsedData
 from models.data.wiki.figure import WikiFigureData
 from models.data.wiki.infobox import WikiInfoboxData
@@ -16,25 +22,69 @@ from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiNavboxElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiArticleParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiFigureParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiNavboxParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiParagraphParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableParserABC
+
+HtmlInputT = TypeVar("HtmlInputT", Tag, BeautifulSoup)
+OutputT = TypeVar("OutputT")
 
 
-class _WikiTagDelegatingParserBase(ABC):
-    """Common helper for Wikipedia tag-based element parser wrappers."""
+class WikiDelegatingHtmlParserBase(ABC, Generic[HtmlInputT, OutputT]):
+    """Single delegating base for wiki HTML element parsers."""
 
-    @staticmethod
-    def _parse_with_delegate(delegate: object, raw: Tag):
-        return delegate.parse(raw)
+    def __init__(self, delegate: object) -> None:
+        self._delegate = delegate
+
+    @abstractmethod
+    def parse(self, raw: HtmlInputT) -> OutputT: ...
+
+    def _parse_with_delegate(self, raw: HtmlInputT) -> OutputT:
+        return self._delegate.parse(raw)
 
 
-class WikiTableParserBase(_WikiTagDelegatingParserBase, WikiTableElementParserABC, ABC):
+class WikiTableParserBase(WikiDelegatingHtmlParserBase[Tag, WikiTableData], WikiTableParserABC, ABC):
     pass
 
 
-class WikiListParserBase(_WikiTagDelegatingParserBase, WikiListElementParserABC, ABC):
+class WikiListParserBase(WikiDelegatingHtmlParserBase[Tag, WikiListData], WikiListParserABC, ABC):
     pass
 
 
-class WikiInfoboxParserBase(_WikiTagDelegatingParserBase, WikiInfoboxElementParserABC, ABC):
+class WikiInfoboxParserBase(WikiDelegatingHtmlParserBase[Tag, WikiInfoboxData], WikiInfoboxParserABC, ABC):
+    pass
+
+
+class WikiNavboxParserBase(WikiDelegatingHtmlParserBase[Tag, WikiNavboxData], WikiNavboxParserABC, ABC):
+    pass
+
+
+class WikiFigureParserBase(WikiDelegatingHtmlParserBase[Tag, WikiFigureData], WikiFigureParserABC, ABC):
+    pass
+
+
+class WikiParagraphParserBase(
+    WikiDelegatingHtmlParserBase[Tag, ParagraphElementData],
+    WikiParagraphParserABC,
+    ABC,
+):
+    pass
+
+
+class WikiReferencesParserBase(WikiDelegatingHtmlParserBase[Tag, ReferencesWrapParsedData], ABC):
+    pass
+
+
+class WikiArticleParserBase(
+    WikiDelegatingHtmlParserBase[BeautifulSoup, list[dict[str, Any]]],
+    WikiArticleParserABC,
+    ABC,
+):
     pass
 
 
@@ -42,19 +92,9 @@ class WikiSectionParserBase(BaseSectionParser, ABC):
     """Domain base for section parsers (BeautifulSoup -> SectionParseResult)."""
 
 
-class WikiNavboxParserBase(_WikiTagDelegatingParserBase, WikiNavboxElementParserABC, ABC):
-    pass
-
-
-class WikiFigureParserBase(_WikiTagDelegatingParserBase, WikiFigureElementParserABC, ABC):
-    pass
-
-
-class WikiReferencesParserBase(_WikiTagDelegatingParserBase, ABC):
-    def parse(self, raw: Tag) -> ReferencesWrapParsedData: ...
-
-
 __all__ = [
+    "WikiArticleParserBase",
+    "WikiDelegatingHtmlParserBase",
     "WikiFigureData",
     "WikiFigureParserBase",
     "WikiInfoboxData",
@@ -63,6 +103,7 @@ __all__ = [
     "WikiListParserBase",
     "WikiNavboxData",
     "WikiNavboxParserBase",
+    "WikiParagraphParserBase",
     "WikiReferencesParserBase",
     "WikiSectionParserBase",
     "WikiTableData",

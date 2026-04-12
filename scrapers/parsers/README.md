@@ -22,22 +22,22 @@ Krótka konwencja dla nowych nazw klas:
 ParserABC[In, Out]
 ├── HtmlTagParserABC[TagOut]
 │   └── HtmlElementParserABC[TagOut]        ← warstwa elementów HTML
-│       ├── ListElementParserABC
-│       ├── TableElementParserABC
-│       ├── InfoboxElementParserABC
-│       ├── SectionElementParserABC
-│       ├── NavboxElementParserABC
+│       ├── ListHtmlParserABC
+│       ├── TableHtmlParserABC
+│       ├── InfoboxHtmlParserABC
+│       ├── SectionHtmlParserABC
+│       ├── NavboxHtmlParserABC
 │       ├── ReferencesElementParserABC
-│       ├── ParagraphElementParserABC
-│       └── FigureElementParserABC
+│       ├── ParagraphHtmlParserABC
+│       └── FigureHtmlParserABC
 │
 ├── HtmlSoupParserABC[SoupOut]
 │   └── SectionParserABC
 │       └── SectionStructureParserABC
 │
 └── Wiki element ABCs (warstwa 2):
-    WikiTableParserABC  ← TableElementParserABC[WikiTableData]
-    WikiListParserABC   ← ListElementParserABC[WikiListData]
+    WikiTableParserABC  ← TableHtmlParserABC[WikiTableData]
+    WikiListParserABC   ← ListHtmlParserABC[WikiListData]
     WikiSectionParserABC
     WikiInfoboxParserABC
     WikiNavboxParserABC
