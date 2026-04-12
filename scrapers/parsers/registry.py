@@ -5,13 +5,13 @@ from typing import Final
 from typing import Literal
 from typing import TypeAlias
 
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC as ListParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC as SectionParserABC
 from scrapers.parsers.contracts.html import TagParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
-ParserBase: TypeAlias = type[TagParserABC[object]] | type[SectionParserABC]
+ParserBase: TypeAlias = type[TagParserABC[object]] | type[WikiSectionParserABC]
 
 
 @dataclass(frozen=True)
@@ -30,43 +30,43 @@ class ParsingRegistryEntry:
 DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = (
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="drivers", element_type="list"),
-        parser_base=ListParserABC,
+        parser_base=WikiListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="drivers", element_type="section"),
-        parser_base=SectionParserABC,
+        parser_base=WikiSectionParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="constructors", element_type="list"),
-        parser_base=ListParserABC,
+        parser_base=WikiListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="constructors", element_type="section"),
-        parser_base=SectionParserABC,
+        parser_base=WikiSectionParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="circuits", element_type="list"),
-        parser_base=ListParserABC,
+        parser_base=WikiListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="circuits", element_type="section"),
-        parser_base=SectionParserABC,
+        parser_base=WikiSectionParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="seasons", element_type="list"),
-        parser_base=ListParserABC,
+        parser_base=WikiListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="seasons", element_type="section"),
-        parser_base=SectionParserABC,
+        parser_base=WikiSectionParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="grands_prix", element_type="list"),
-        parser_base=ListParserABC,
+        parser_base=WikiListParserABC,
     ),
     ParsingRegistryEntry(
         key=ParsingRegistryKey(domain="grands_prix", element_type="section"),
-        parser_base=SectionParserABC,
+        parser_base=WikiSectionParserABC,
     ),
 )
 

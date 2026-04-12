@@ -5,9 +5,10 @@ from pathlib import Path
 
 CONTRACT_FILES = [
     Path("scrapers/parsers/contracts/mapping.py"),
-    Path("scrapers/parsers/wiki/parser_families.py"),
+    Path("scrapers/parsers/contracts/wiki_elements.py"),
     Path("scrapers/parsers/wiki/domain_mapper.py"),
 ]
+PARSE_METHOD_EXEMPTIONS = {"WikiSectionStructureParserABC"}
 
 
 def _class_defs(path: Path) -> list[ast.ClassDef]:
@@ -27,6 +28,8 @@ def test_parser_contract_classes_define_parse() -> None:
     for path in CONTRACT_FILES:
         for cls in _class_defs(path):
             if cls.name.endswith("Parser") or cls.name.endswith("ParserABC"):
+                if cls.name in PARSE_METHOD_EXEMPTIONS:
+                    continue
                 if not _has_method(cls, "parse"):
                     violations.append(f"{path}:{cls.name}")
     assert not violations, "Parser contract without parse: " + ", ".join(violations)

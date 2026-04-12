@@ -51,11 +51,6 @@ class WikiFigureParserABC(TagParserABC[WikiFigureData], ABC):
 class WikiSectionStructureParserABC(WikiSectionParserABC, ABC):
     """Compatibility branch for section structure parsers."""
 
-
-WikiNavboxHtmlParserABC = WikiNavboxParserABC
-WikiFigureHtmlParserABC = WikiFigureParserABC
-
-
 @dataclass(frozen=True)
 class WikiTableMapperSet:
     """Registry mapperów tabel (etap translacji parse -> domain)."""
@@ -64,11 +59,9 @@ class WikiTableMapperSet:
 
 
 __all__ = [
-    "WikiFigureHtmlParserABC",
     "WikiFigureParserABC",
     "WikiInfoboxParserABC",
     "WikiListParserABC",
-    "WikiNavboxHtmlParserABC",
     "WikiNavboxParserABC",
     "WikiSectionParserABC",
     "WikiSectionStructureParserABC",

@@ -9,10 +9,10 @@ if TYPE_CHECKING:
 
     from scrapers.section.parse_results import SectionParseResult
 
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC as SectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
 
 
-class BaseSectionParser(SectionParserABC):
+class BaseSectionParser(WikiSectionParserABC):
     """Canonical runtime base class for section parsers."""
 
     @abstractmethod
