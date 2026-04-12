@@ -3,25 +3,16 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Protocol
 
-from bs4 import BeautifulSoup
-
 from validation.validator_base import ExportRecord
 
 if TYPE_CHECKING:
     from scrapers.results import ScrapeResult
-    from validation.validator_base import RawRecord
 
 
 class FetchCapability(Protocol):
     """Capability contract for data acquisition in scraper pipeline."""
 
     def fetch(self) -> list[ExportRecord]: ...
-
-
-class ParseCapability(Protocol):
-    """Capability contract for parsing HTML into raw records."""
-
-    def parse(self, soup: BeautifulSoup) -> list[RawRecord]: ...
 
 
 class ValidateCapability(Protocol):

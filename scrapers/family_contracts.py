@@ -54,20 +54,8 @@ class SingleArticleScraperContract(Protocol):
     def _assemble_record(self, **kwargs: Any) -> dict[str, Any]: ...
 
 
-@runtime_checkable
-class SectionParserContract(Protocol):
-    """Minimal contract for section parsers.
-
-    Extension rules:
-    - Override parse to customise section parsing behaviour.
-    """
-
-    def parse(self, element: Any) -> Any: ...
-
-
 __all__ = [
     "ListScraperContract",
     "TableScraperContract",
     "SingleArticleScraperContract",
-    "SectionParserContract",
 ]
