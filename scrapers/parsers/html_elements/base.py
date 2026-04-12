@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from abc import ABC
+from abc import abstractmethod
 from typing import TypeVar
 
 from bs4 import BeautifulSoup

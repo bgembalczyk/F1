@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from abc import ABC
+from abc import abstractmethod
 from dataclasses import dataclass
 from typing import Any
 
@@ -47,8 +48,18 @@ class WikiInfoboxParserABC(InfoboxElementParserABC, ABC):
     def parse(self, raw: Tag) -> InfoboxParsedData: ...
 
 
+class WikiNavboxHtmlParserABC(HtmlTagParserABC[NavBoxParsedData], ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> NavBoxParsedData: ...
+
+
+class WikiFigureHtmlParserABC(HtmlTagParserABC[FigureParsedData], ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> FigureParsedData: ...
+
+
 # Backward-compatible alias during migration.
-WikiSectionStructureParserABC = WikiSectionParserABC
+WikiSectionParserABC = WikiSectionStructureParserABC
 
 
 @dataclass(frozen=True)
