@@ -4,12 +4,11 @@ from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.base import BaseSectionParser
+from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
-from scrapers.parsers.section.table.base import TableSectionParser
-from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
-from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
+from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
