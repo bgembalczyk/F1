@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.helpers.lap_record import collect_lap_records
@@ -12,6 +13,7 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
 from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
+from scrapers.section.parse_results import SectionParseResult
 
 
 class CircuitLapRecordsTableClassifier(SectionTableClassifierABC[tuple[Tag, list[str]]]):
@@ -74,6 +76,9 @@ class CircuitLapRecordsSectionParser(TableSectionParser):
             classifier=CircuitLapRecordsTableClassifier(options=options, url=url),
             mapper=CircuitLapRecordsTableRecordMapper(options=options, url=url),
         )
+
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        return super().parse(section_fragment)
 
     def build_result(self, records: list[dict[str, Any]]):
         flattened: list[dict[str, Any]] = []

@@ -4,6 +4,10 @@
 ``<table class="wikitable">`` elements from Wikipedia articles.
 """
 
+from typing import Any
+
+from bs4 import Tag
+
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 
 
@@ -14,6 +18,9 @@ class WikiTableParser(WikiTableHtmlParser):
     It takes a ``bs4.Tag`` (``<table>``) and returns a structured ``dict``
     with keys ``headers``, ``rows``, ``raw_rows`` and ``rich_rows``.
     """
+
+    def parse(self, element: Tag) -> dict[str, Any]:
+        return super().parse(element)
 
 
 __all__ = ["WikiTableParser"]

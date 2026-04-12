@@ -14,7 +14,11 @@ if TYPE_CHECKING:
 
 
 @dataclass(frozen=True)
-class ParserRule:
+class ParsingRule:
     predicate: Callable[[Tag], bool]
     parser: HtmlTagParserABC[WikiParserData] | Callable[[Tag], WikiParserData]
     result_type: str
+
+
+# Backward-compatible alias.
+ParserRule = ParsingRule
