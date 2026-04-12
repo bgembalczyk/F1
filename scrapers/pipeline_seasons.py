@@ -89,9 +89,6 @@ class SeasonComponentSet:
     section_parsers: tuple[SeasonSectionBinding, ...]
 
 
-# Backward-compatible alias.
-SeasonParsingComponents = SeasonComponentSet
-
 
 class SeasonParsingComponentsBuilder:
     def __init__(
@@ -166,7 +163,7 @@ class SeasonSectionDataCollector:
         self,
         *,
         soup: BeautifulSoup,
-        parser_set: SeasonParsingComponents,
+        parser_set: SeasonComponentSet,
         season_year: int | None,
     ) -> SeasonRecordSections:
         section_records = self._collect_section_records(
@@ -252,7 +249,7 @@ class SeasonSectionPipeline:
                 pass_url=False,
             )
         )
-        self._parser_set: SeasonParsingComponents | None = None
+        self._parser_set: SeasonComponentSet | None = None
         self._url = ""
         self._season_year: int | None = None
 
@@ -310,7 +307,7 @@ class SeasonSectionPipeline:
             mid_season_changes=text_records.get("mid-season_changes", []),
         )
 
-    def _require_parser_set(self) -> SeasonParsingComponents:
+    def _require_parser_set(self) -> SeasonComponentSet:
         if self._parser_set is None:
             self.configure(url=self._url, season_year=self._season_year)
         if self._parser_set is None:

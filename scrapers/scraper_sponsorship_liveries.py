@@ -52,4 +52,4 @@ class F1SponsorshipLiveriesScraper(WikiScraper):
         )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._section_parser.parse_sections(soup)
+        return self._section_parser.parse(soup)

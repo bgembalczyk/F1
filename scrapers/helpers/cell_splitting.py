@@ -63,7 +63,3 @@ def replace_link_breaks_in_links(html: str) -> str:
             br.replace_with(" ")
     return str(fragment)
 
-
-def replace_link_breaks(html: str) -> str:
-    """Backward-compatible alias for replacing <br> tags inside <a> tags."""
-    return replace_link_breaks_in_links(html)

@@ -95,6 +95,10 @@ class WikiTableBaseMapper(
     collect_rows = parse_group
 
 
+TableFragmentParserABC = TableHtmlParserABC
+WikiTableFragmentParser = TableFragmentParserABC
+
+
 __all__ = [
     "WikiTableBaseMapper",
 ]

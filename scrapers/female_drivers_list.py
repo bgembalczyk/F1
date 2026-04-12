@@ -19,6 +19,8 @@ from scrapers.constants_drivers import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.constants_drivers import FEMALE_DRIVERS_SECTION_ID
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
+from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 from scrapers.parsers.table.table.base import WikiTableBaseParser
@@ -106,7 +108,7 @@ class OfficialDriversSubSectionParser(SubSectionParser, ApplyForElementsMixin):
         return parsed
 
 
-class DriversSectionParser(SectionParser):
+class DriversSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = OfficialDriversSubSectionParser()

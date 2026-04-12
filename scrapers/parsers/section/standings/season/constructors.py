@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.season_standings import SeasonStandingsParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
@@ -17,7 +16,7 @@ class SeasonConstructorsStandingsSectionParser(BaseSectionParser):
         self._parser = parser
 
     def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
-        records = self._parser.parse_constructors(fragment)
+        records = self._parser.parse(fragment, standings="constructors")
         return build_section_parse_result(
             section_id="World_Constructors'_Championship_standings",
             section_label="Constructors standings",

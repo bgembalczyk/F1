@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.seasons.parsers_seasons.standings import SeasonStandingsService
+from scrapers.seasons.parsers_seasons.standings import SeasonStandingsParser
 
 
 class StubStandingsTableParser:
@@ -30,8 +30,8 @@ class StubStandingsTableParser:
         return []
 
 
-def test_parse_drivers_marks_ineligible_section_and_shares_fastest_lap() -> None:
-    parser = SeasonStandingsService(
+def test_parse_marks_ineligible_section_and_shares_fastest_lap_for_drivers() -> None:
+    parser = SeasonStandingsParser(
         StubStandingsTableParser(
             responses=[
                 [
@@ -49,7 +49,7 @@ def test_parse_drivers_marks_ineligible_section_and_shares_fastest_lap() -> None
         ),
     )
 
-    result = parser.parse_drivers(BeautifulSoup("<html></html>", "html.parser"))
+    result = parser.parse(BeautifulSoup("<html></html>", "html.parser"), standings="drivers")
 
     _expected_share_count = 2
     assert [row["driver"]["text"] for row in result] == ["Driver A", "Driver B"]
@@ -59,8 +59,8 @@ def test_parse_drivers_marks_ineligible_section_and_shares_fastest_lap() -> None
     assert result[0]["r1"]["fastest_lap_share_count"] == _expected_share_count
 
 
-def test_parse_constructors_merges_duplicate_rows_into_one_domain_result() -> None:
-    parser = SeasonStandingsService(
+def test_parse_merges_duplicate_rows_into_one_domain_result_for_constructors() -> None:
+    parser = SeasonStandingsParser(
         StubStandingsTableParser(
             responses=[
                 [
@@ -93,7 +93,7 @@ def test_parse_constructors_merges_duplicate_rows_into_one_domain_result() -> No
         ),
     )
 
-    result = parser.parse_constructors(BeautifulSoup("<html></html>", "html.parser"))
+    result = parser.parse(BeautifulSoup("<html></html>", "html.parser"), standings="constructors")
 
     assert len(result) == 1
     assert "no" not in result[0]
@@ -103,22 +103,23 @@ def test_parse_constructors_merges_duplicate_rows_into_one_domain_result() -> No
     assert "fastest_lap" not in result[0]["r1"]
 
 
-def test_parse_drivers_propagates_table_parser_errors() -> None:
-    parser = SeasonStandingsService(
+def test_parse_propagates_table_parser_errors_for_drivers() -> None:
+    parser = SeasonStandingsParser(
         StubStandingsTableParser(error=ValueError("bad table")),
     )
 
     with pytest.raises(ValueError, match="bad table"):
-        parser.parse_drivers(BeautifulSoup("<html></html>", "html.parser"))
+        parser.parse(BeautifulSoup("<html></html>", "html.parser"), standings="drivers")
 
 
-def test_parse_drivers_requests_primary_and_alias_section_ids() -> None:
+def test_parse_requests_primary_and_alias_section_ids_for_drivers() -> None:
     _expected_season_year = 2024
     table_parser = StubStandingsTableParser(responses=[[]])
-    parser = SeasonStandingsService(table_parser)
+    parser = SeasonStandingsParser(table_parser)
 
-    parser.parse_drivers(
+    parser.parse(
         BeautifulSoup("<html></html>", "html.parser"),
+        standings="drivers",
         season_year=_expected_season_year,
     )
 

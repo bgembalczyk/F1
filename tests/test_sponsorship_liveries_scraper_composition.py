@@ -47,7 +47,7 @@ def test_team_section_parser_splits_sections_and_uses_table_parser() -> None:
         "html.parser",
     )
 
-    parsed = parser.parse_sections(soup)
+    parsed = parser.parse(soup)
 
     assert len(parsed) == 1
     assert parsed[0]["team"] == "Team A"

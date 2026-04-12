@@ -8,6 +8,8 @@ from scrapers.columns.types.skip import SkipColumn
 from scrapers.config_table import TableScraperConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
+from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 from scrapers.parsers.table.table.base import WikiTableBaseParser
@@ -70,7 +72,7 @@ class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
         return parsed
 
 
-class ManufacturersSectionParser(SectionParser):
+class ManufacturersSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = TyreManufacturersBySeasonSubSectionParser()
