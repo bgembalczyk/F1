@@ -18,7 +18,7 @@ from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 
 
-class IndianapolisOnlySubSectionParser(SubSectionParser):
+class EngineManufacturersIndianapolisSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._list_parser = IndianapolisOnlyListParser()
@@ -53,7 +53,7 @@ class IndianapolisOnlySubSectionParser(SubSectionParser):
 class EngineManufacturersSectionParser(ApplyForElementsMixin, NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self.child_parser = IndianapolisOnlySubSectionParser()
+        self.child_parser = EngineManufacturersIndianapolisSubSectionParser()
         self._table_parser = EngineManufacturersTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
