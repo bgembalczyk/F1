@@ -12,48 +12,54 @@ from bs4 import Tag
 from scrapers.domain_roles import Parser
 from scrapers.section.parse_results import SectionParseResult
 
-In = TypeVar("In")
-Out = TypeVar("Out")
-TagOut = TypeVar("TagOut", covariant=True)
-SoupOut = TypeVar("SoupOut", covariant=True)
+InT = TypeVar("InT")
+OutT = TypeVar("OutT")
+TagOutT = TypeVar("TagOutT", covariant=True)
+SoupOutT = TypeVar("SoupOutT", covariant=True)
 RecordT_co = TypeVar("RecordT_co", covariant=True)
 RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
 BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
 
 
-class ParserABC(Parser[In, Out], ABC, Generic[In, Out]):
+class ParserABC(Parser[InT, OutT], ABC, Generic[InT, OutT]):
     """Canonical parser contract (input -> output)."""
 
     @abstractmethod
-    def parse(self, raw: In) -> Out: ...
+    def parse(self, raw: InT) -> OutT: ...
 
 
-class MapperABC(ABC, Generic[In, Out]):
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Canonical mapper contract (input -> output)."""
+
     @abstractmethod
-    def map(self, fragment: In) -> Out: ...
+    def map(self, raw: InT) -> OutT: ...
 
 
-class HtmlTagParserABC(ParserABC[TagIn, Out], ABC, Generic[TagIn, Out]):
+class HtmlTagParserABC(ParserABC[Tag, TagOutT], ABC, Generic[TagOutT]):
     """Runtime contract for single HTML tag parsers (Tag -> parsed payload)."""
 
     @abstractmethod
-    def parse(self, raw: Tag) -> TagOut: ...
+    def parse(self, raw: Tag) -> TagOutT: ...
 
 
-class SoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]):
+class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
     """Parser dokumentu/fragmentu soup (BeautifulSoup -> payload)."""
 
     @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> SoupOut: ...
+    def parse(self, raw: BeautifulSoup) -> SoupOutT: ...
 
 
 class SectionStructureParserABC(SoupParserABC[SectionParseResult], ABC):
     """Parser struktury sekcji (BeautifulSoup -> SectionParseResult)."""
 
-class TableHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
     @abstractmethod
     def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
+
+
+class TableHtmlParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
 class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):
@@ -61,15 +67,8 @@ class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None: ...
 
 
-class InfoboxHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
-    """Runtime contract for infobox HTML parsers."""
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> dict[str, Any]: ...
-
-
 class InfoboxHtmlParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
-    """Parser infoboxa HTML."""
+    """Runtime contract for infobox HTML parsers."""
 
     @abstractmethod
     def parse(self, raw: Tag) -> dict[str, Any]: ...
@@ -80,13 +79,6 @@ class ListHtmlParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
 
     @abstractmethod
     def parse(self, raw: Tag) -> dict[str, Any]: ...
-
-
-class MapperABC(ABC, Generic[In, Out]):
-    """Canonical mapper contract (input -> output)."""
-
-    @abstractmethod
-    def map(self, raw: In) -> Out: ...
 
 
 class TableMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):
@@ -120,6 +112,13 @@ class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):
     def build(self, **kwargs: Any) -> BundleT_co: ...
 
 
+# Backward-compatible aliases.
+HtmlElementParserABC = HtmlTagParserABC
+ListParserABC = ListHtmlParserABC
+SectionParserABC = SectionStructureParserABC
+SoupDocumentParserABC = SoupParserABC
+
+
 __all__ = [
     "GroupParsingMixin",
     "HtmlElementParserABC",
@@ -134,9 +133,10 @@ __all__ = [
     "ParsingBundleProviderABC",
     "RowMappingMixin",
     "SectionParseResult",
+    "SectionParserABC",
     "SectionStructureParserABC",
-    "SoupParserABC",
     "SoupDocumentParserABC",
+    "SoupParserABC",
     "TableDomainMapperABC",
     "TableHtmlParserABC",
     "TableMapperABC",
