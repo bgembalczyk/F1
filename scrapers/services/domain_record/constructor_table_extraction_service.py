@@ -3,8 +3,10 @@ from __future__ import annotations
 from typing import Any
 
 from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
-from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
+from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
+from scrapers.parsers.wiki.table.article_tables_assembler_abc import (
+    ArticleTablesAssemblerABC,
+)
 
 
 class ConstructorTableExtractionService(RunDiagnosticsMixin):
@@ -13,9 +15,9 @@ class ConstructorTableExtractionService(RunDiagnosticsMixin):
     def __init__(
         self,
         *,
-        article_tables_parser: ArticleTablesParserABC | None = None,
+        article_tables_assembler: ArticleTablesAssemblerABC | None = None,
     ) -> None:
-        self._article_tables_parser = article_tables_parser or ArticleTablesParser()
+        self._article_tables_assembler = article_tables_assembler or ArticleTablesAssembler()
 
     def extract_tables(self, soup: Any) -> list[dict[str, Any]]:
-        return self.with_retry(lambda: self._article_tables_parser.parse(soup))
+        return self.with_retry(lambda: self._article_tables_assembler.assemble(soup))

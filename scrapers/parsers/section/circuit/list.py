@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.wiki.section.base import BaseSectionParser
-from scrapers.parsers.wiki.table.article import ArticleTablesParser
+from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
 from scrapers.parsers.wiki.table.circuit_list_table_mapper import CircuitsListTableMapper
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
@@ -40,9 +40,9 @@ class CircuitsListSectionParser(BaseSectionParser):
         first_table = section_fragment.find("table", class_="wikitable")
         if first_table is not None:
             self._table_html_parser.parse(first_table)
-        parsed_tables = ArticleTablesParser(
+        parsed_tables = ArticleTablesAssembler(
             specialized_mappers=[self._table_domain_mapper],
-        ).parse(section_fragment)
+        ).assemble(section_fragment)
         has_circuits_table = any(
             table.get("table_type") == "circuits_list" for table in parsed_tables
         )
