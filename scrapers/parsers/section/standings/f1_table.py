@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.columns.types.position import PositionColumn
-from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import TableConfig
 from scrapers.extractors.table import TableExtractor
 from scrapers.options import ScraperOptions
 from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
@@ -32,7 +32,7 @@ class F1StandingsTableParser(HtmlTagParserABC[list[dict[str, Any]]]):
         raw: Tag,
         *,
         options: ScraperOptions,
-        config: TableScraperConfig,
+        config: TableConfig,
     ) -> list[dict[str, Any]]:
         extractor = TableExtractor(
             config=config,
