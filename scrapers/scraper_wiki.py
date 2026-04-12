@@ -7,7 +7,7 @@ from scrapers.abc import ABCScraper
 from scrapers.options import ScraperOptions
 from scrapers.parsers.mixins.wiki.element import WikiElementParsingMixin
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.parsers.wiki.body_content import BodyContentAssembler
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element_factory import build_default_wiki_element_parsers
 from scrapers.parsers.wiki.header import HeaderParser
@@ -22,7 +22,7 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
     Klasa ta obsługuje specyficzne dla Wikipedii parsery stron:
     - HeaderParser - przetwarza nagłówek strony
       (<header class="mw-body-header vector-page-titlebar no-font-mode-scale">)
-    - BodyContentParser - przetwarza główną treść strony
+    - BodyContentAssembler - przetwarza główną treść strony
       (<div id="bodyContent">)
 
     Pobieranie HTML odbywa się za pośrednictwem source_adapter (HtmlFetcher),
@@ -46,7 +46,7 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
         *,
         options: ScraperOptions | None = None,
         header_parser: HeaderParser | None = None,
-        body_content_parser: BodyContentParser | None = None,
+        body_content_parser: BodyContentAssembler | None = None,
         element_parsers: WikiElementSet | None = None,
     ) -> None:
         """Inicjalizuje WikiScraper.
@@ -56,7 +56,7 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
                 Domyślnie tworzy nowe ScraperOptions.
             header_parser: Parser nagłówka strony. Domyślnie tworzy nowy HeaderParser.
             body_content_parser: Parser treści strony. Domyślnie tworzy nowy
-                BodyContentParser.
+                BodyContentAssembler.
         """
         resolved_element_parsers = (
             element_parsers or build_default_wiki_element_parsers()
@@ -69,7 +69,7 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
         ABCScraper.__init__(self, options=options)
 
         self.header_parser = header_parser or HeaderParser()
-        self.body_content_parser = body_content_parser or BodyContentParser(
+        self.body_content_parser = body_content_parser or BodyContentAssembler(
             element_parsers=resolved_element_parsers,
         )
         self.section_parser: NestedWikiSectionParser = (
@@ -98,7 +98,7 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """Domyślne parsowanie strony Wikipedii.
 
-        Korzysta z HeaderParser i BodyContentParser.
+        Korzysta z HeaderParser i BodyContentAssembler.
         Podklasy (ListScrapery, SingleScrapery) nadpisują tę metodę.
 
         Args:
@@ -117,7 +117,7 @@ class WikiScraper(WikiElementParsingMixin, ABCScraper):
         if header_el is not None:
             result["header"] = self.header_parser.parse(header_el)
 
-        body_content_el = BodyContentParser.find_body_content(soup)
+        body_content_el = BodyContentAssembler.find_body_content(soup)
         if body_content_el is not None:
             result["body_content"] = self.body_content_parser.parse(body_content_el)
 

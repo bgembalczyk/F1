@@ -7,70 +7,37 @@ from scrapers.parsers.wiki.base import WikiParser
 from scrapers.parsers.wiki.category_links import CategoryLinksParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
 from scrapers.parsers.wiki.element import WikiElementSet
+from scrapers.parsers.wiki.extractors.body_content import BodyContentAdapter
 
 
-class BodyContentParser(WikiParser[Tag, dict[str, Any]]):
-    """Parser głównej treści strony Wikipedii.
-
-    Przetwarza div z id="bodyContent". Używa:
-    - CategoryLinksParser do obsługi div z id="catlinks"
-    - ContentTextParser do obsługi div z id zawierającym 'content-text'
-      i klasą zawierającą 'body-content'
-    """
+class BodyContentAssembler(WikiParser[Tag, dict[str, Any]]):
+    """Składa wynik głównej treści strony Wikipedii z dedykowanych parserów."""
 
     def __init__(
         self,
         *,
         element_parsers: WikiElementSet | None = None,
+        body_content_adapter: BodyContentAdapter | None = None,
     ) -> None:
+        self.body_content_adapter = body_content_adapter or BodyContentAdapter()
         self.category_links_parser = CategoryLinksParser()
         self.content_text_parser = ContentTextParser(element_parsers=element_parsers)
 
     def parse(self, element: Tag) -> dict[str, Any]:
-        """Parsuje główną treść strony Wikipedii.
-
-        Args:
-            element: Div z id="bodyContent".
-
-        Returns:
-            Słownik z kategoriami i treścią artykułu.
-        """
-        result: dict[str, Any] = {
-            "category_links": None,
-            "content_text": None,
-        }
-
-        catlinks = element.find("div", id="catlinks")
-        if catlinks and isinstance(catlinks, Tag):
-            result["category_links"] = self.category_links_parser.parse(catlinks)
-
-        content_text = element.find(
-            "div",
-            id=lambda x: x and "content-text" in x,
-            class_=lambda x: (
-                x and "body-content" in (x if isinstance(x, list) else x.split())
+        parts = self.body_content_adapter.adapt(element)
+        return {
+            "category_links": (
+                self.category_links_parser.parse(parts.catlinks)
+                if isinstance(parts.catlinks, Tag)
+                else None
             ),
-        )
-        if content_text is None:
-            content_text = element.find(
-                "div",
-                class_=lambda x: (
-                    x and "mw-content-ltr" in (x if isinstance(x, list) else x.split())
-                ),
-            )
-        if content_text and isinstance(content_text, Tag):
-            result["content_text"] = self.content_text_parser.parse(content_text)
-
-        return result
+            "content_text": (
+                self.content_text_parser.parse(parts.content_text)
+                if isinstance(parts.content_text, Tag)
+                else None
+            ),
+        }
 
     @staticmethod
     def find_body_content(soup: BeautifulSoup) -> Tag | None:
-        """Znajduje div z id="bodyContent" w podanym soup.
-
-        Args:
-            soup: Obiekt BeautifulSoup całej strony.
-
-        Returns:
-            Znaleziony div lub None.
-        """
-        return soup.find("div", id="bodyContent")
+        return BodyContentAdapter.find_body_content(soup)

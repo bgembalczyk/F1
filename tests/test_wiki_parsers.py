@@ -5,7 +5,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.parsers.wiki.body_content import BodyContentAssembler
 from scrapers.parsers.wiki.category_links import CategoryLinksParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
 from scrapers.parsers.wiki.figure import WikiFigureParser
@@ -28,7 +28,7 @@ from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.parsers.wiki.sublevels.sub_sub_section import SubSubSectionParser
 from scrapers.parsers.wiki.sublevels.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.wiki.parsers.base import WikiParser
-from scrapers.wiki.parsers.body_content import BodyContentParser
+from scrapers.wiki.parsers.body_content import BodyContentAssembler
 from scrapers.wiki.parsers.category_links import CategoryLinksParser
 from scrapers.wiki.parsers.content_text import ContentTextParser
 from scrapers.wiki.parsers.elements.figure import WikiFigureParser
@@ -786,7 +786,7 @@ def test_content_text_parser_divides_into_sections():
 
 
 # ---------------------------------------------------------------------------
-# BodyContentParser
+# BodyContentAssembler
 # ---------------------------------------------------------------------------
 
 
@@ -807,7 +807,7 @@ def test_body_content_parser():
     </div>
     """
     soup = make_soup(html)
-    parser = BodyContentParser()
+    parser = BodyContentAssembler()
     result = parser.parse(soup.find("div", id="bodyContent"))
     assert result["content_text"] is not None
     sections = result["content_text"]["sections"]

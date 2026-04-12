@@ -24,7 +24,7 @@ from scrapers.parsers.table.red_flagged_races_wiki_table import extract_rich_cel
 from scrapers.parsers.table.red_flagged_races_wiki_table import map_drivers_cell
 from scrapers.parsers.table.red_flagged_races_wiki_table import map_winner_cell
 from scrapers.parsers.table.red_flagged_races_wiki_table import try_int
-from scrapers.parsers.wiki.body_content import BodyContentParser
+from scrapers.parsers.wiki.body_content import BodyContentAssembler
 from scrapers.parsers.wiki.red_flagged_races import RedFlaggedRacesSectionParser
 from scrapers.scraper_wiki import WikiScraper
 from scrapers.source_catalog import RED_FLAGGED_RACES
@@ -58,7 +58,7 @@ class RedFlaggedRacesScraper(WikiScraper):
         self.body_content_parser.content_text_parser.section_parser = parser
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        body_content = BodyContentParser.find_body_content(soup)
+        body_content = BodyContentAssembler.find_body_content(soup)
         parsed = self.body_content_parser.parse(body_content) if body_content else {}
         world_records = RedFlaggedRacesSectionParser.collect_rows(
             parsed,
