@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from scrapers.errors import DomainParseError
+from scrapers.errors.domain_parse import DomainParseError
 
 
 @dataclass(frozen=True)
