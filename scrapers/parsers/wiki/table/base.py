@@ -107,5 +107,6 @@ class WikiTableBaseMapper(
 
     collect_rows = parse_group
 
-
-__all__ = ["WikiTableBaseMapper"]
+__all__ = [
+    "WikiTableBaseMapper",
+]

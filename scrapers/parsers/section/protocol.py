@@ -7,8 +7,5 @@ from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 __all__ = [
     "BaseSectionParser",
     "NestedWikiSectionParser",
-    "SectionParserABC",
-    "SectionParser",
+    "SectionStructureParserABC",
 ]
-
-SectionParser = BaseSectionParser

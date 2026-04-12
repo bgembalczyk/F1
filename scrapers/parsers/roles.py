@@ -21,7 +21,54 @@ TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
 BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
 
 
+class ParserABC(Parser[InT, OutT], ABC, Generic[InT, OutT]):
+    """Canonical parser contract (input -> output)."""
+
+    @abstractmethod
+    def parse(self, raw: InT) -> OutT: ...
+
+
+class HtmlTagParserABC(ParserABC[Tag, TagOutT], ABC, Generic[TagOutT]):
+    """Runtime contract for single HTML tag parsers (Tag -> payload)."""
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> TagOutT: ...
+
+
+class HtmlElementParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
+    """Canonical ABC for parsers of HTML elements (single Tag input)."""
+
+
+class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
+    """Parser dokumentu/fragmentu soup (BeautifulSoup -> payload)."""
+
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SoupOutT: ...
+
+
+class SectionParserABC(ParserABC[BeautifulSoup, SectionParseResult], ABC):
+    """Canonical ABC for section parsers."""
+
+
+class SectionStructureParserABC(SectionParserABC, ABC):
+    """ABC for section parser hierarchy."""
+
+
+class TableHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
+    """ABC parsera tabeli HTML."""
+
+
+class InfoboxHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
+    """ABC parsera infoboxa HTML."""
+
+
+class ListHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
+    """ABC parsera listy HTML."""
+
+
 class MapperABC(ABC, Generic[InT, OutT]):
+    """Canonical mapper contract (input -> mapped output)."""
+
     @abstractmethod
     def map(self, raw: InT) -> OutT: ...
 

@@ -34,25 +34,19 @@ class WikiListParserABC(ListParserABC, ABC):
     def parse(self, raw: Tag) -> WikiListParsedData: ...
 
 
-class WikiSectionParserABC(SectionParserABC, ABC):
+class WikiSectionParserABC(SectionElementParserABC, ABC):
     @abstractmethod
     def parse(self, raw: BeautifulSoup) -> WikiSectionParsedData: ...
 
 
-class WikiInfoboxParserABC(InfoboxParserABC, ABC):
+class WikiSectionStructureParserABC(WikiSectionParserABC, ABC):
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup | Tag) -> WikiSectionParsedData: ...
+
+
+class WikiInfoboxParserABC(InfoboxElementParserABC, ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> InfoboxParsedData: ...
-
-
-class WikiFigureHtmlParserABC(TagParserABC[FigureParsedData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> FigureParsedData: ...
-
-
-class WikiNavboxHtmlParserABC(TagParserABC[NavBoxParsedData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> NavBoxParsedData: ...
-
 
 @dataclass(frozen=True)
 class WikiTableMapperSet:
@@ -62,11 +56,9 @@ class WikiTableMapperSet:
 
 
 __all__ = [
-    "WikiFigureHtmlParserABC",
     "WikiInfoboxParserABC",
     "WikiListParsedData",
     "WikiListParserABC",
-    "WikiNavboxHtmlParserABC",
     "WikiSectionParsedData",
     "WikiSectionParserABC",
     "WikiTableMapperSet",
