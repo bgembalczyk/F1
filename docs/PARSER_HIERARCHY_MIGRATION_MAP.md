@@ -37,7 +37,8 @@ ParserABC[In, Out]
 ├── InfoboxParserABC                        ← parser całego infoboxu (Tag → dict)
 │   └── WikiInfoboxParserABC               (również InfoboxElementParserABC)
 └── InfoboxFieldParserABC                  ← parser pojedynczego pola infoboxu
-    └── InfoboxFieldParser[Output]         ← runtime base (field/protocol.py)
+    ├── HtmlInfoboxFieldParser[Output]     ← runtime base dla parserów Tag (field/base.py)
+    └── InfoboxRowsParser[Output]          ← runtime base dla parserów rows (field/base.py)
 ```
 
 ### Mixiny
@@ -114,4 +115,3 @@ Poniższe ścieżki zostały usunięte i nie są już wspierane:
 
 Używaj importów kanonicznych z `scrapers.parsers.contracts.*` (kontrakty) albo bezpośrednio
 z modułów implementacyjnych (`scrapers.parsers.wiki.*`, `scrapers.parsers.section.*`).
-
