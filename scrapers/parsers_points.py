@@ -13,8 +13,7 @@ from scrapers.constants_points import SPRINT_POSITIONS
 from scrapers.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.helpers.parsing import parse_int_from_text
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
-from scrapers.parsers.table.table.base import WikiTableBaseParser
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.parsers.wiki.sublevels.sub_sub_section import SubSubSectionParser

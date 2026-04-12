@@ -1,7 +1,7 @@
 from scrapers.headers_shared import POINTS_ALIASES
 from scrapers.headers_shared import POINTS_HEADER
 from scrapers.headers_shared import POINTS_HEADER_TO_KEY
-from scrapers.parsers.table.table.mapped.base import MappedWikiTableMapper
+from scrapers.parsers.wiki.table.mapped.base import MappedWikiTableMapper
 
 
 class StandingsTableMapper(MappedWikiTableMapper):
