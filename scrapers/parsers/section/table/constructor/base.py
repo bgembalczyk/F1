@@ -2,14 +2,14 @@ from __future__ import annotations
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
 
 
-class ConstructorTablesSectionParser(BaseSectionParser):
+class ConstructorTablesSectionParser(SectionParserBase):
     def __init__(self, *, section_id: str, section_label: str) -> None:
         self._section_id = section_id
         self._section_label = section_label

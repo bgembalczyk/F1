@@ -12,7 +12,7 @@ from scrapers.parsers.input_adapters import as_soup
 from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
 from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.parsers.section.table.contracts import SectionTablesHtmlParserABC
-from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
@@ -63,7 +63,7 @@ class IdentitySectionTableRecordMapper(SectionTableRecordMapperABC[dict[str, Any
         return table_classification
 
 
-class TableSectionParser(BaseSectionParser):
+class TableSectionParser(SectionParserBase):
     """Parser sekcji tabel z wydzielonymi rolami: HTML parser, classifier, mapper."""
 
     def __init__(
