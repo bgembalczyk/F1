@@ -72,20 +72,6 @@ class SeasonStandingsParser(WikiSectionParserBase):
         )
         return self.merge_duplicate_constructors(records)
 
-    # DEPRECATED(2026-04): alias tymczasowy; używaj parse(..., standings=\"drivers\").
-    # Remove after all call-sites migrate to parse().
-    def parse_drivers(
-        self,
-        soup: BeautifulSoup,
-        season_year: int | None = None,
-    ) -> list[dict[str, Any]]:
-        return self.parse(soup, standings="drivers", season_year=season_year)
-
-    # DEPRECATED(2026-04): alias tymczasowy; używaj parse(..., standings=\"constructors\").
-    # Remove after all call-sites migrate to parse().
-    def parse_constructors(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self.parse(soup, standings="constructors")
-
     def _parse_standings_table(
         self,
         soup: BeautifulSoup,
@@ -274,6 +260,3 @@ class SeasonStandingsParser(WikiSectionParserBase):
             if isinstance(round_data, dict) and "results" in round_data:
                 SeasonStandingsParser._remove_round_level_attributes(round_data)
 
-
-# Backward-compatible alias.
-SeasonStandingsService = SeasonStandingsParser

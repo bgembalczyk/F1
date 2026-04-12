@@ -20,7 +20,3 @@ class HtmlElementBuilder:
             references_wrap_parser=ReferencesWrapParser(),
         )
 
-
-# Backward-compatible alias
-HtmlElementParserFactory = HtmlElementBuilder
-HtmlElementParserBuilder = HtmlElementBuilder

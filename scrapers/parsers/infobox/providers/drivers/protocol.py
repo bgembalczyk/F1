@@ -14,7 +14,3 @@ class DriverInfoboxProviderABC(ParsingBundleProviderABC[DriverInfoboxBundle]):
         logger: object,
     ) -> DriverInfoboxBundle: ...
 
-
-# Backward-compatible alias.
-DriverInfoboxProvider = DriverInfoboxProviderABC
-DriverInfoboxParserProvider = DriverInfoboxProviderABC

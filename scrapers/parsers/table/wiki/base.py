@@ -5,11 +5,11 @@ from typing import Any
 
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
-from scrapers.parsers.roles import TableDomainMapperABC
+from scrapers.parsers.roles import TableHtmlParserABC
 
 
 class WikiTableBaseParser(
-    TableDomainMapperABC,
+    TableHtmlParserABC,
     WikiTablePayloadTransformMixin,
     WikiTablePayloadCollectMixin,
     ABC,
@@ -98,7 +98,7 @@ class WikiTableBaseParser(
     collect_rows = parse_group
 
 
-TableFragmentParserABC = TableDomainMapperABC
+TableFragmentParserABC = TableHtmlParserABC
 WikiTableFragmentParser = TableFragmentParserABC
 
 

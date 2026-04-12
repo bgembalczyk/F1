@@ -33,7 +33,7 @@ from scrapers.helpers.date_parsing import parse_formula_category
 from scrapers.helpers.normalize import normalize_auto_value
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
@@ -89,7 +89,7 @@ class DetailByDriverSubSectionParser(SubSectionParser):
         return parsed
 
 
-class FatalitiesSectionParser(SectionParser):
+class FatalitiesSectionParser(NestedWikiSectionParser):
     """Parser sekcji H3 dla listy ofiar śmiertelnych F1."""
 
     def __init__(self) -> None:

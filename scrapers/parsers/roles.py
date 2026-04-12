@@ -50,18 +50,6 @@ class InfoboxHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
     """Runtime contract for infobox HTML parsers."""
 
 
-class HtmlElementParserABC(HtmlTagParserABC[Tag, ParsedDataT_co], ABC, Generic[ParsedDataT_co]):
-    """Backward-compatible alias for tag-level parser contracts."""
-
-
-class SectionParserABC(SectionStructureParserABC):
-    """Backward-compatible alias for section parser contracts."""
-
-
-class TableDomainMapperABC(TableHtmlParserABC):
-    """Backward-compatible alias for table parser contracts."""
-
-
 class MatchesMixin(ABC):
     """Mixin for parser classes exposing content matching behavior."""
 
@@ -94,7 +82,6 @@ class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):
 
 __all__ = [
     "GroupParsingMixin",
-    "HtmlElementParserABC",
     "HtmlTagParserABC",
     "InfoboxHtmlParserABC",
     "MatchesMixin",
@@ -102,9 +89,7 @@ __all__ = [
     "ParsingBundleProviderABC",
     "RowMappingMixin",
     "SectionParseResult",
-    "SectionParserABC",
     "SectionStructureParserABC",
     "SoupDocumentParserABC",
-    "TableDomainMapperABC",
     "TableHtmlParserABC",
 ]

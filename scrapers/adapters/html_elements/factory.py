@@ -21,6 +21,3 @@ class HtmlElementAdapterSet:
     navbox_parser: NavboxElementParser
     references_wrap_parser: ReferencesWrapParser
 
-
-# Backward-compatible alias.
-HtmlElementParserAdapterSet = HtmlElementAdapterSet

@@ -11,19 +11,19 @@ from models.data.parsed.figure import FigureParsedData
 from models.data.parsed.infobox import InfoboxParsedData
 from models.data.parsed.nav_box import NavBoxParsedData
 from models.data.parsed.references_wrap import ReferencesWrapParsedData
-from scrapers.parsers.roles import HtmlElementParserABC
+from scrapers.parsers.roles import HtmlTagParserABC
 
 WikiTableParsedData = dict[str, Any]
 WikiListParsedData = dict[str, Any]
 WikiSectionParsedData = dict[str, Any]
 
 
-class WikiTableHtmlParserABC(HtmlElementParserABC[WikiTableParsedData], ABC):
+class WikiTableHtmlParserABC(HtmlTagParserABC[Tag, WikiTableParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiTableParsedData: ...
 
 
-class WikiListHtmlParserABC(HtmlElementParserABC[WikiListParsedData], ABC):
+class WikiListHtmlParserABC(HtmlTagParserABC[Tag, WikiListParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiListParsedData: ...
 
@@ -33,22 +33,22 @@ class WikiSectionHtmlParserABC(ABC):
     def parse(self, raw: BeautifulSoup) -> WikiSectionParsedData: ...
 
 
-class WikiInfoboxHtmlParserABC(HtmlElementParserABC[InfoboxParsedData], ABC):
+class WikiInfoboxHtmlParserABC(HtmlTagParserABC[Tag, InfoboxParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> InfoboxParsedData: ...
 
 
-class WikiNavboxHtmlParserABC(HtmlElementParserABC[NavBoxParsedData], ABC):
+class WikiNavboxHtmlParserABC(HtmlTagParserABC[Tag, NavBoxParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> NavBoxParsedData: ...
 
 
-class WikiFigureHtmlParserABC(HtmlElementParserABC[FigureParsedData], ABC):
+class WikiFigureHtmlParserABC(HtmlTagParserABC[Tag, FigureParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> FigureParsedData: ...
 
 
-class WikiReferencesHtmlParserABC(HtmlElementParserABC[ReferencesWrapParsedData], ABC):
+class WikiReferencesHtmlParserABC(HtmlTagParserABC[Tag, ReferencesWrapParsedData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> ReferencesWrapParsedData: ...
 

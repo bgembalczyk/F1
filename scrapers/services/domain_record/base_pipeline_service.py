@@ -17,12 +17,4 @@ class BaseDomainPipelineService(
     """Canonicalna baza pipeline service dla rekordów domenowych."""
 
 
-# Backward-compatible aliases (top-level only).
-BaseAssemblerPipelineService = BaseDomainPipelineService
-BaseFactoryScraper = BaseDomainPipelineService
-
-__all__ = [
-    "BaseDomainPipelineService",
-    "BaseAssemblerPipelineService",
-    "BaseFactoryScraper",
-]
+__all__ = ["BaseDomainPipelineService"]

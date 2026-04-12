@@ -55,10 +55,6 @@ class TeamLiveriesSectionParser(WikiSectionParserBase):
             records.append({"team": team, "liveries": liveries})
         return records
 
-    # DEPRECATED(2026-04): alias tymczasowy; używaj parse(...).
-    # Remove after all call-sites migrate to parse().
-    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self.parse(soup)
 
     def _parse_single_team_section(
         self,

@@ -4,7 +4,6 @@ from typing import TYPE_CHECKING
 
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.base import BaseSectionParser
-from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.parsers.table.wiki.circuit_list import CircuitsListTableMapper

@@ -15,7 +15,7 @@ from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.config_table import build_scraper_config
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.protocol import SectionParser
+from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper
@@ -89,7 +89,7 @@ class ByRaceTitleSubSectionParser(SubSectionParser, ApplyForElementsMixin):
         return parsed
 
 
-class RacesSectionParser(SectionParser):
+class RacesSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = ByRaceTitleSubSectionParser()

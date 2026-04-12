@@ -155,7 +155,3 @@ def build_default_wikipedia_element_registry() -> ElementRegistry:
         parsers=build_default_wiki_element_parsers()
     )
 
-
-# Backward-compatible aliases.
-WikiElementParsers = WikiElementSet
-ElementParserRegistry = ElementRegistry
