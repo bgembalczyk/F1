@@ -15,7 +15,20 @@ class TeamLiveriesTableParser:
     def __init__(self, *, section_table_parser: SponsorshipSectionParser) -> None:
         self._section_table_parser = section_table_parser
 
-    def parse_team_table(
+    def parse(
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_id: str,
+        team: str,
+    ) -> list[dict[str, Any]]:
+        return self._parse_team_table(
+            soup,
+            section_id=section_id,
+            team=team,
+        )
+
+    def _parse_team_table(
         self,
         soup: BeautifulSoup,
         *,

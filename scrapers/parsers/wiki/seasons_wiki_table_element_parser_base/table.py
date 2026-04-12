@@ -1,4 +1,5 @@
 from typing import Any
+from typing import Literal
 
 from bs4 import BeautifulSoup
 
@@ -39,7 +40,66 @@ class SeasonTableParser:
     def update_url(self, url: str) -> None:
         self.url = url
 
-    def parse_standings_table(
+    def parse(
+        self,
+        source: BeautifulSoup | dict[str, Any],
+        *,
+        mode: Literal["standings", "table", "table_data"],
+        section_ids: list[str] | None = None,
+        expected_headers: list[str] | None = None,
+        schema: TableSchemaDSL | None = None,
+        default_column: Any | None = None,
+        subject_header: str | None = None,
+        subject_key: str | None = None,
+        subject_column: Any | None = None,
+        season_year: int | None = None,
+        star_mark_note: str | None = None,
+        include_car_no_column: bool = True,
+    ) -> list[dict[str, Any]]:
+        if mode == "standings":
+            if not isinstance(source, BeautifulSoup):
+                raise TypeError("Season standings parser expects BeautifulSoup source.")
+            if not section_ids or subject_header is None or subject_key is None:
+                raise ValueError("Missing standings parser configuration.")
+            return self._parse_standings(
+                source,
+                section_ids=section_ids,
+                subject_header=subject_header,
+                subject_key=subject_key,
+                subject_column=subject_column,
+                season_year=season_year,
+                star_mark_note=star_mark_note,
+                include_car_no_column=include_car_no_column,
+            )
+
+        if mode == "table":
+            if not isinstance(source, BeautifulSoup):
+                raise TypeError("Season table parser expects BeautifulSoup source.")
+            if not section_ids or expected_headers is None or schema is None:
+                raise ValueError("Missing generic table parser configuration.")
+            return self._parse_table(
+                source,
+                section_ids=section_ids,
+                expected_headers=expected_headers,
+                schema=schema,
+                default_column=default_column,
+            )
+
+        if mode == "table_data":
+            if not isinstance(source, dict):
+                raise TypeError("Season table data parser expects dictionary source.")
+            if expected_headers is None or schema is None:
+                raise ValueError("Missing table-data parser configuration.")
+            return self._parse_table_data(
+                source,
+                expected_headers=expected_headers,
+                schema=schema,
+                default_column=default_column,
+            )
+
+        raise ValueError(f"Unsupported parse mode: {mode!r}")
+
+    def _parse_standings(
         self,
         soup: BeautifulSoup,
         *,
@@ -62,7 +122,6 @@ class SeasonTableParser:
             ColumnSpec("No", "no", IntColumn()),
         ]
         if include_car_no_column:
-            # Handle "Car<br>no." which becomes "Car no." after text extraction
             schema_columns.append(ColumnSpec("Car no.", "no", IntColumn()))
         for section_id in section_ids:
             config = TableScraperConfig(
@@ -89,7 +148,7 @@ class SeasonTableParser:
                 continue
         return []
 
-    def parse_table(
+    def _parse_table(
         self,
         soup: BeautifulSoup,
         *,
@@ -136,7 +195,7 @@ class SeasonTableParser:
 
         return []
 
-    def parse_table_data(
+    def _parse_table_data(
         self,
         table_data: dict[str, Any],
         *,
