@@ -7,7 +7,7 @@ from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base_section_parser import BaseSectionParser
-from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
+from scrapers.parsers.wiki_table_base_mapper import WikiTableBaseMapper
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result

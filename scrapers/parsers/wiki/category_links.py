@@ -3,7 +3,7 @@ from bs4 import Tag
 from models.category.group import CategoryGroup
 from models.data.parsed.category_links import CategoryLinksParsedData
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.extractors.category_links_extractor import CategoryLinksExtractor
+from scrapers.category_links_extractor import CategoryLinksExtractor
 
 
 class CategoryLinksParser(WikiParser[Tag, CategoryLinksParsedData]):

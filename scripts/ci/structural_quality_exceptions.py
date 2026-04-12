@@ -8,6 +8,7 @@ REDUNDANT_ALIAS_EXCEPTIONS: set[tuple[str, str]] = {
     ("infrastructure/gemini/cache_service.py", "set"),
     ("scripts/ci/adr_enforcement_policy.py", "has_adr_reference"),
     ("validation/schema_engine.py", "extract_missing_key"),
+    ("scripts/check_domain_terminology.py", "token_pattern"),
 }
 
 MAX_FUNCTION_LINES_EXCEPTIONS: dict[tuple[str, str], int] = {}

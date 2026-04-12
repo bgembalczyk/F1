@@ -8,7 +8,7 @@ from scrapers.helpers.layout import detect_layout_name
 from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
+from scrapers.parsers.wiki.article_tables_parser_abc import ArticleTablesParserABC
 
 
 class CircuitLapRecordsExtractionService:

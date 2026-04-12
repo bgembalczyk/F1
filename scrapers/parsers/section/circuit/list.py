@@ -6,7 +6,7 @@ from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.wiki.base_section_parser import BaseSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.table.circuit_list_table_mapper import CircuitsListTableMapper
+from scrapers.parsers.wiki.circuit_list_table_mapper import CircuitsListTableMapper
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
 

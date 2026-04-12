@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 from bs4 import Tag
 
-from scrapers.parsers.wiki.extractors.extracted_category_group import ExtractedCategoryGroup
-from scrapers.parsers.wiki.extractors.extracted_category_link import ExtractedCategoryLink
+from scrapers.extracted_category_group import ExtractedCategoryGroup
+from scrapers.extracted_category_link import ExtractedCategoryLink
 
 
 class CategoryLinksExtractor:

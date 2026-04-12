@@ -231,6 +231,7 @@ Runtime warning ma teraz jawny komunikat o oknie migracji:
 Repo nie utrzymuje już warstwy kompatybilności wstecznej ani deprecated-wrapperów.
 
 W praktyce oznacza to migrację:
+
 - z `python -m scrapers.<domain>.list_scraper`
 - na `python -m scrapers.<domain>.entrypoint`
 

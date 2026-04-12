@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.parsers.wiki.extractors.body_content_parts import BodyContentParts
+from scrapers.parsers.body_content_parts import BodyContentParts
 
 
 class BodyContentAdapter:

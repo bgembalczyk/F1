@@ -11,7 +11,7 @@ from scrapers.parsers.section.domain_config.helpers import (
 )
 from scrapers.parsers.section.profile import SectionProfile
 from scrapers.parsers.wiki.constants import TOP_SECTION_NAME
-from scrapers.parsers.wiki.wiki_normalization import normalize_section_text
+from scrapers.parsers.wiki_normalization import normalize_section_text
 
 
 def split_into_parts(

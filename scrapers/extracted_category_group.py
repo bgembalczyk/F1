@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from scrapers.parsers.wiki.extractors.extracted_category_link import ExtractedCategoryLink
+from scrapers.extracted_category_link import ExtractedCategoryLink
 
 
 @dataclass(frozen=True)

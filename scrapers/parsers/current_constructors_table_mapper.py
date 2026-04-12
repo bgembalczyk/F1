@@ -17,7 +17,7 @@ from scrapers.constructors_constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_WCC_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_WDC_HEADER
 from scrapers.constructors_constants import CONSTRUCTOR_WINS_HEADER
-from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
+from scrapers.parsers.wiki_table_base_mapper import WikiTableBaseMapper
 
 
 class CurrentConstructorsTableMapper(WikiTableBaseMapper):
