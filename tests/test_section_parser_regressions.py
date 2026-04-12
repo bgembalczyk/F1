@@ -14,7 +14,7 @@ from scrapers.parsers.section.constructors.base import (
     FormerConstructorsSectionParser,
 )
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from tests._section_parser_fixture_pattern import ALIAS_FIXTURES
 
 ALIAS_DOMAINS = ("constructors", "circuits", "seasons")
@@ -192,7 +192,7 @@ def test_circuits_section_parser_handles_formula_one_circuits_alias() -> None:
 def test_seasons_results_parser_handles_results_and_standings_alias() -> None:
     soup = BeautifulSoup(ALIAS_FIXTURES["seasons"], "html.parser")
     parser = SeasonResultsParser(
-        SeasonTableParser(
+        SeasonTableParsingService(
             options=ScraperOptions(),
             include_urls=True,
             url="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",

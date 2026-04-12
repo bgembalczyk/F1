@@ -8,9 +8,7 @@ from scrapers.parsers.liveries.sponsorship import (
 from scrapers.parsers.liveries.sponsorship import (
     TeamLiveriesSectionParser,
 )
-from scrapers.parsers.liveries.sponsorship import (
-    TeamLiveriesTableParser,
-)
+from scrapers.adapters.team_liveries_table_adapter import TeamLiveriesTableAdapter
 from scrapers.scraper_sponsorship_liveries import (
     F1SponsorshipLiveriesScraper,
 )
@@ -22,7 +20,7 @@ def test_sponsorship_scraper_uses_team_section_parser() -> None:
     scraper = F1SponsorshipLiveriesScraper(options=ScraperOptions())
 
     assert isinstance(scraper._section_parser, TeamLiveriesSectionParser)
-    assert isinstance(scraper._section_parser._table_parser, TeamLiveriesTableParser)
+    assert isinstance(scraper._section_parser._table_parser, TeamLiveriesTableAdapter)
 
 
 def test_team_section_parser_splits_sections_and_uses_table_parser() -> None:

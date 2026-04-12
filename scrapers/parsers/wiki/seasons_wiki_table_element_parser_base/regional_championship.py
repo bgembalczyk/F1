@@ -9,12 +9,12 @@ from scrapers.columns.types.season_date import SeasonDateColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class SeasonRegionalChampionshipParser(BaseSeasonParser):
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(self, table_parser: SeasonTableParsingService) -> None:
         self._table_parser = table_parser
 
     def parse(

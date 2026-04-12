@@ -13,13 +13,13 @@ from scrapers.parsers.section.wiki.adapter import collect_section_elements
 from scrapers.parsers.section.wiki.adapter import find_section_tree
 from scrapers.parsers.wiki.body_content import BodyContentAssembler
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from scrapers.table_schema_dsl import TableSchemaDSL
 from scrapers.url_resolver import DEFAULT_URL_RESOLVER_STRATEGY_REGISTRY
 
 
 class SeasonResultsParser(BaseSeasonParser):
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(self, table_parser: SeasonTableParsingService) -> None:
         self._table_parser = table_parser
 
     def parse(self, soup: BeautifulSoup, season_year: int | None = None) -> list[dict[str, Any]]:

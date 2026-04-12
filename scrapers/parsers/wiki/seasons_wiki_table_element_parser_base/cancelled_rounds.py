@@ -15,14 +15,14 @@ from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import Ba
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import CANCELLED_ROUNDS_TABLE_INDEX
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import EXPECTED_HEADERS
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import MIN_TABLES_WITH_CANCELLED
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from scrapers.pipeline_table import TablePipeline
 from scrapers.table_parsing_helper import TableParsingHelper
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class CancelledRoundsParser(BaseSeasonParser):
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(self, table_parser: SeasonTableParsingService) -> None:
         self._table_parser = table_parser
 
     def parse(
