@@ -16,6 +16,21 @@ PARSER_NAMING_SCOPE = (
 )
 PARSER_COMPAT_ALIAS = ("SectionParser", "SectionParserABC")
 PARSER_PROTOCOL_IMPORT_PREFIX = "scrapers.parsers.section"
+PARSER_CONTRACT_SCOPES = (
+    Path("scrapers/parsers/section"),
+    Path("scrapers/parsers/wiki/base_nested_section"),
+)
+PARSER_ABSTRACT_BASE_NAMES = {
+    "BaseSectionParser",
+    "BaseNestedSectionParser",
+    "TableSectionParser",
+    "ConstructorTablesSectionParser",
+    "ConstructorsSectionParser",
+    "NestedWikiSectionParser",
+    "SubSectionParser",
+    "SubSubSectionParser",
+    "WikiTableHtmlParser",
+}
 
 
 def load_architecture_rules() -> Any:
@@ -255,6 +270,57 @@ def check_parser_compat_imports_and_aliases() -> list[str]:
     return violations
 
 
+def _base_name(base: ast.expr) -> str:
+    if isinstance(base, ast.Name):
+        return base.id
+    if isinstance(base, ast.Attribute):
+        return base.attr
+    if isinstance(base, ast.Subscript):
+        return _base_name(base.value)
+    return ast.unparse(base)
+
+
+def _is_abc_class(node: ast.ClassDef) -> bool:
+    return "ABC" in {_base_name(base) for base in node.bases}
+
+
+def _inherits_parser_abc(node: ast.ClassDef) -> bool:
+    base_names = {_base_name(base) for base in node.bases}
+    return any(name.endswith("ParserABC") for name in base_names) or bool(
+        base_names & PARSER_ABSTRACT_BASE_NAMES,
+    )
+
+
+def check_parser_contract_enforcement() -> list[str]:
+    violations: list[str] = []
+    for scope in PARSER_CONTRACT_SCOPES:
+        for py_file in scope.rglob("*.py"):
+            module = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
+            for node in module.body:
+                if not isinstance(node, ast.ClassDef):
+                    continue
+                if not node.name.endswith("Parser"):
+                    continue
+                has_parse = any(
+                    isinstance(item, ast.FunctionDef) and item.name == "parse"
+                    for item in node.body
+                )
+                if not _inherits_parser_abc(node):
+                    violations.append(
+                        "Parser contract violation: "
+                        f"{py_file}:{node.lineno} class {node.name} "
+                        "must inherit from parser ABC hierarchy.",
+                    )
+                    continue
+                if not has_parse and not _is_abc_class(node):
+                    violations.append(
+                        "Parser contract violation: "
+                        f"{py_file}:{node.lineno} class {node.name} "
+                        "must define parse(...) or be abstract (ABC).",
+                    )
+    return violations
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Fast architecture boundary checks for local lint/CI.",
@@ -293,6 +359,7 @@ def main() -> int:
         *check_cross_domain_imports(root, all_domains, rules),
         *check_parser_naming_contracts(),
         *check_parser_compat_imports_and_aliases(),
+        *check_parser_contract_enforcement(),
     ]
 
     if errors:

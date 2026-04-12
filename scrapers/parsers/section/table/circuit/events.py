@@ -2,8 +2,11 @@ from __future__ import annotations
 
 from typing import Any
 
+from bs4 import BeautifulSoup
+
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
+from scrapers.section.parse_results import SectionParseResult
 
 
 class CircuitEventsTableRecordMapper(SectionTableRecordMapperABC[dict[str, Any], Any]):
@@ -25,3 +28,6 @@ class CircuitEventsSectionParser(TableSectionParser):
             section_label="Events",
             mapper=CircuitEventsTableRecordMapper(),
         )
+
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        return super().parse(section_fragment)

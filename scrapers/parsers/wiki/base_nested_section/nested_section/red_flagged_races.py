@@ -1,6 +1,9 @@
 import json
 from typing import Any
 
+from bs4 import Tag
+
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.base_nested_section.sub_section.non_championships_races import NonChampionshipsRacesSubSectionParser
 from scrapers.world_championships_races_table_mapper import WorldChampionshipsRacesTableMapper
@@ -11,6 +14,14 @@ class RedFlaggedRacesSectionParser(NestedWikiSectionParser):
         super().__init__()
         self.child_parser = NonChampionshipsRacesSubSectionParser()
         self._world_championship_table_mapper = WorldChampionshipsRacesTableMapper()
+
+    def parse(
+        self,
+        element: Tag | list[Tag],
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> dict[str, object]:
+        return super().parse(element, context=context)
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
