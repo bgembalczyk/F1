@@ -1,25 +1,7 @@
-from __future__ import annotations
+"""Compatibility module for table section-node parser contract."""
 
-from abc import ABC
+from scrapers.parsers.wiki.wiki_table_parser_abc import WikiTableParserABC
 
-from bs4 import Tag
-
-from models.data.wiki.table import WikiTableData
-from scrapers.parsers.element_parser_abc import TableElementParserABC
-from scrapers.parsers.wiki.section_nodes.base import WikiNodeParserABC
-from scrapers.parsers.wiki.section_nodes.section import WikiSectionParserABC
-
-
-class WikiTableSectionParserABC(
-    WikiSectionParserABC,
-    WikiNodeParserABC[Tag, WikiTableData],
-    TableElementParserABC[WikiTableData],
-    ABC,
-):
-    """Contract for table-node parsers (<table>) used inside wiki sections."""
-
+WikiTableSectionParserABC = WikiTableParserABC
 
 __all__ = ["WikiTableSectionParserABC", "WikiTableParserABC"]
-
-
-WikiTableParserABC = WikiTableSectionParserABC

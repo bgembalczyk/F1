@@ -1,117 +1,67 @@
-# Parser Hierarchy — Dependency Diagram & Migration Map
+# Parser Hierarchy Migration Map (po refaktorze)
 
-## 1. Docelowa hierarchia dziedziczenia parserów
+## 1) Kanoniczna baza kontraktów
 
-```
-ParserABC[In, Out]                          ← warstwa 0 – kontrakt bazowy
-├── HtmlTagParserABC[TagOut]                ← warstwa 1a – parser Tag (bs4)
-│   └── HtmlElementParserABC[TagOut]        ← warstwa 1b – parser elementu HTML
-│       ├── ListElementParserABC[Out]
-│       ├── TableElementParserABC[Out]
-│       ├── InfoboxElementParserABC[Out]
-│       ├── SectionElementParserABC[Out]
-│       ├── NavboxElementParserABC[Out]
-│       ├── ReferencesElementParserABC[Out]
-│       ├── ParagraphElementParserABC[Out]
-│       └── FigureElementParserABC[Out]
-│           │
-│           ├── WikiTableParserABC          ← warstwa 2 – Wiki element ABCs
-│           ├── WikiListParserABC
-│           ├── WikiSectionParserABC
-│           ├── WikiInfoboxParserABC
-│           ├── WikiNavboxParserABC
-│           └── WikiFigureParserABC
-│
-└── HtmlSoupParserABC[SoupOut]              ← warstwa 1c – parser BeautifulSoup
-    └── SectionParserABC                   ← kontrakt sekcyjny (soup-based)
-        ├── NestedSectionParserABC
-        │   ├── SubSectionParserABC
-        │   └── SubSubSectionParserABC
-        └── SectionStructureParserABC
-```
-
-### Dodatkowe gałęzie
-
-```
+```text
 ParserABC[In, Out]
-├── InfoboxParserABC                        ← parser całego infoboxu (Tag → dict)
-│   └── WikiInfoboxParserABC               (również InfoboxElementParserABC)
-└── InfoboxFieldParserABC                  ← parser pojedynczego pola infoboxu
-    └── InfoboxFieldParser[Output]         ← runtime base (field/protocol.py)
+├── HtmlTagParserABC[Out]      (bs4.Tag -> Out)
+└── HtmlSoupParserABC[Out]     (BeautifulSoup -> Out)
 ```
 
-### Mixiny
+Źródło prawdy:
+- `scrapers/parsers/parser_abc.py`
+- `scrapers/parsers/element_parser_abc.py`
 
+## 2) Rodziny HTML (element_parser_abc)
+
+```text
+HtmlTagParserABC[Out]
+├── TableHtmlParserABC[Out]
+├── ListHtmlParserABC[Out]
+├── InfoboxHtmlParserABC[Out]
+├── NavboxHtmlParserABC[Out]
+├── ParagraphHtmlParserABC[Out]
+├── FigureHtmlParserABC[Out]
+└── HtmlElementParserABC[Out]   (generyczny tag-based)
+
+HtmlSoupParserABC[Out]
+└── SectionHtmlParserABC[Out]
 ```
-SafeParsingMixin                           ← bezpieczna obsługa wyjątków (_safe_parse)
-WikiElementParsingMixin                    ← parse_elements / _parse_element (mixin orkiestratora)
-```
 
----
+Utrzymane aliasy kompatybilności (bez osobnej logiki):
+- `ListElementParserABC = ListHtmlParserABC`
+- `TableElementParserABC = TableHtmlParserABC`
+- `InfoboxElementParserABC = InfoboxHtmlParserABC`
+- `SectionElementParserABC = SectionHtmlParserABC`
+- `NavboxElementParserABC = NavboxHtmlParserABC`
+- `ParagraphElementParserABC = ParagraphHtmlParserABC`
+- `FigureElementParserABC = FigureHtmlParserABC`
 
-## 2. Mapowanie kontraktów: stara_baza → nowa_baza
+## 3) Finalne rodziny Wiki (ABC)
 
-| Stara baza (przed migracją) | Nowa baza (po migracji) | Uwagi |
-|---|---|---|
-| `Protocol` (typing) | `ABC` (abc) | Zastąp klasą ABC z `@abstractmethod` |
-| `ElementParserABC` | `HtmlElementParserABC` | Alias usunięty — używaj wyłącznie `HtmlElementParserABC`. |
-| `ListElementParserABC` | `WikiListParserABC` *(dla wiki-parserów)* | Używaj wiki-ABC dla konkretnych wiki-parserów |
-| `TableElementParserABC` | `WikiTableParserABC` *(dla wiki-parserów)* | j.w. |
-| `InfoboxElementParserABC` | `WikiInfoboxParserABC` *(dla wiki-parserów)* | j.w. |
-| `SectionElementParserABC` | `WikiSectionParserABC` *(dla wiki-parserów)* | j.w. |
-| `NavboxElementParserABC` | `WikiNavboxParserABC` *(dla wiki-parserów)* | j.w. |
-| `FigureElementParserABC` | `WikiFigureParserABC` *(dla wiki-parserów)* | j.w. |
-| `TagParserABC` | `HtmlTagParserABC` | `TagParserABC` = alias wstecznej kompatybilności |
-| `SoupParserABC` | `HtmlSoupParserABC` | `SoupParserABC` = alias wstecznej kompatybilności |
+Każda rodzina ma jeden docelowy kontrakt:
 
----
+- `WikiTableParserABC`
+- `WikiListParserABC`
+- `WikiSectionParserABC`
+- `WikiInfoboxParserABC`
+- `WikiNavboxParserABC`
+- `WikiFigureParserABC`
 
-## 3. Pakiet kontraktów (`scrapers/parsers/contracts/`)
+Lokalizacja:
+- `scrapers/parsers/wiki/wiki_*_parser_abc.py`
 
-Stabilne punkty re-eksportu — importuj **stąd**, nie z modułów implementacyjnych:
+`section_nodes/*` zostało ograniczone do warstwy kompatybilności (re-export/alias).
 
-| Moduł | Eksportuje |
-|---|---|
-| `contracts/__init__.py` | Wszystkie poniższe symbole |
-| `contracts/html_element_parser_abc.py` | `HtmlElementParserABC` |
-| `contracts/soup_parser_abc.py` | `TagParserABC` |
-| `contracts/mapper_abc.py` | `MapperABC` |
-| `contracts/wiki_section_parser_abc.py` | `WikiSectionParserABC` |
-| `contracts/wiki_elements.py` | `WikiTableParserABC`, `WikiListParserABC`, `WikiSectionParserABC`, `WikiInfoboxParserABC`, `WikiNavboxParserABC`, `WikiFigureParserABC` |
+## 4) Mapowanie selector -> rodzina parsera Wiki
 
----
+Mapa jest wymuszana przez:
+- `docs/wiki_selector_parser_map.md`
+- `scrapers/parsers/wiki/element_registry.py` (`WIKI_SELECTOR_FAMILY_MAP` + walidacja coverage)
+- `scrapers/parsers/wiki/element.py` (predykaty zgodne z mapą)
 
-## 4. Rejestr parserów domenowych (`registry.py`)
+## 5) Usunięte/ograniczone redundancje dziedziczenia
 
-Rejestr używa wiki-specyficznych ABCs jako baz dla wpisów domenowych:
-
-| Typ elementu | Baza w rejestrze | Uzasadnienie |
-|---|---|---|
-| `"table"` | `WikiListParserABC` | Tabele to ustrukturyzowane dane (jak listy) |
-| `"list"` | `WikiListParserABC` | Listy Wikipedii |
-| `"section"` | `WikiSectionParserABC` | Sekcje artykułów Wikipedii |
-| `"infobox"` | `WikiSectionParserABC` | Infoboxy to element struktury sekcji |
-
----
-
-## 5. Zasady migracji
-
-1. **Nie twórz nowych Protocol klas dla parserów** — używaj `ABC` z `@abstractmethod`.
-2. **Nowe parsery wiki** — dziedzicz po odpowiednim `Wiki*ParserABC`.
-3. **Nowe parsery HTML ogólne** — dziedzicz po `HtmlElementParserABC` lub specjalistycznym `*ElementParserABC`.
-4. **Importuj kontrakty** z `scrapers.parsers.contracts.*`, nie z modułów implementacyjnych.
-5. **Protokoły** w `scrapers/protocols/` (capabilities, data_frame_formatter itp.) pozostają jako `Protocol` — dotyczą scraper-capabilities, nie parser-contracts.
-
-
-## 6. Usunięte moduły aliasujące (re-export only)
-
-Poniższe ścieżki zostały usunięte i nie są już wspierane:
-
-- `scrapers/wiki/parsers/*` (moduły re-eksportujące parsery),
-- `scrapers/wiki/parsers/elements/*` (re-eksporty parserów elementów),
-- `scrapers/wiki/parsers/sections/*` (re-eksporty parserów sekcyjnych),
-- `scrapers/parsers/section/sublevels/{sub_section,sub_sub_section,sub_sub_sub_section}.py`.
-
-Używaj importów kanonicznych z `scrapers.parsers.contracts.*` (kontrakty) albo bezpośrednio
-z modułów implementacyjnych (`scrapers.parsers.wiki.*`, `scrapers.parsers.section.*`).
-
+- parsery elementowe (`list/table/infobox/navbox/figure/section`) dziedziczą teraz z **jednej** docelowej gałęzi Wiki ABC,
+- parsery sekcyjne legacy (np. `legacy_lists/*`) nie dublują już równolegle baz `SectionParserABC`/`SubSectionParserABC` obok klas runtime,
+- `tag_parser_abc.py` i `soup_parser_abc.py` pełnią rolę kompatybilnych re-eksportów.

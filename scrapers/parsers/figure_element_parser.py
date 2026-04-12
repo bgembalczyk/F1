@@ -1,12 +1,11 @@
 from bs4 import Tag
 
 from models.data.parsed.html_elements import FigureElementData
-from scrapers.parsers.element_parser_abc import FigureElementParserABC
 from scrapers.text_cleaning import extract_text
 from scrapers.parsers.wiki.wiki_figure_parser_abc import WikiFigureParserABC
 
 
-class FigureElementParser(WikiFigureParserABC, FigureElementParserABC[FigureElementData]):
+class FigureElementParser(WikiFigureParserABC):
     def parse(self, raw: Tag) -> FigureElementData:
         caption_tag = raw.find("figcaption")
         img_tag = raw.find("img")

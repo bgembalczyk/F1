@@ -8,9 +8,9 @@ from typing import Literal
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.parsers.constants_contracts import SoupOut
 from scrapers.parsers.constants_contracts import TagOut
-from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
-from scrapers.parsers.soup_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
 
 ElementType = Literal[
     "table",
@@ -25,97 +25,61 @@ ElementType = Literal[
 ]
 
 
-class TableHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    """Domain family: parser of HTML table-like payloads from a Tag input."""
-
-    element_type: ElementType = "table"
+class HtmlTagParserABC(ParserABC[Tag, TagOut], ABC, Generic[TagOut]):
+    """Canonical parser contract for single bs4.Tag inputs."""
 
     @abstractmethod
     def parse(self, raw: Tag) -> TagOut: ...
+
+
+class HtmlSoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]):
+    """Canonical parser contract for BeautifulSoup inputs."""
+
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SoupOut: ...
+
+
+class TableHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
+    element_type: ElementType = "table"
 
 
 class ListHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    """Domain family: parser of HTML list payloads from a Tag input."""
-
     element_type: ElementType = "list"
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> TagOut: ...
 
 
 class SectionHtmlParserABC(HtmlSoupParserABC[TagOut], ABC, Generic[TagOut]):
-    """Domain family: parser of HTML sections from BeautifulSoup inputs."""
-
     element_type: ElementType = "section"
-
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> TagOut: ...
 
 
 class InfoboxHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    """Domain family: parser of HTML infobox payloads from a Tag input."""
-
     element_type: ElementType = "infobox"
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> TagOut: ...
 
 
 class NavboxHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    """Domain family: parser of HTML navbox payloads from a Tag input."""
-
     element_type: ElementType = "navbox"
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> TagOut: ...
 
 
 class ParagraphHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    """Domain family: parser of HTML paragraph payloads from a Tag input."""
-
     element_type: ElementType = "paragraph"
 
-    @abstractmethod
-    def parse(self, raw: Tag) -> TagOut: ...
+
+class FigureHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
+    element_type: ElementType = "figure"
 
 
 class HtmlElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    """Backward-compatible generic HTML element layer for tag-based elements."""
-
     element_type: ElementType
 
-    @abstractmethod
-    def parse(self, raw: Tag) -> TagOut: ...
 
-
-
-class ListElementParserABC(ListHtmlParserABC[TagOut], ABC, Generic[TagOut]):
-    pass
-
-
-class TableElementParserABC(TableHtmlParserABC[TagOut], ABC, Generic[TagOut]):
-    pass
-
-
-class InfoboxElementParserABC(InfoboxHtmlParserABC[TagOut], ABC, Generic[TagOut]):
-    pass
-
-
-class SectionElementParserABC(SectionHtmlParserABC[TagOut], ABC, Generic[TagOut]):
-    pass
-
-
-class NavboxElementParserABC(NavboxHtmlParserABC[TagOut], ABC, Generic[TagOut]):
-    pass
+# Backward-compatible names kept for existing imports.
+ListElementParserABC = ListHtmlParserABC
+TableElementParserABC = TableHtmlParserABC
+InfoboxElementParserABC = InfoboxHtmlParserABC
+SectionElementParserABC = SectionHtmlParserABC
+NavboxElementParserABC = NavboxHtmlParserABC
+ParagraphElementParserABC = ParagraphHtmlParserABC
+FigureElementParserABC = FigureHtmlParserABC
 
 
 class ReferencesElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "references"
-
-
-class ParagraphElementParserABC(ParagraphHtmlParserABC[TagOut], ABC, Generic[TagOut]):
-    pass
-
-
-class FigureElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "figure"
