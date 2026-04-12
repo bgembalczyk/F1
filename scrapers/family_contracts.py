@@ -4,6 +4,8 @@ from typing import Any
 from typing import Protocol
 from typing import runtime_checkable
 
+from bs4 import BeautifulSoup
+
 if False:  # pragma: no cover
     from bs4 import BeautifulSoup
 
