@@ -3,12 +3,21 @@ from __future__ import annotations
 from abc import ABC
 from typing import Any
 
+from bs4 import Tag
+
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
 from scrapers.parsers.roles import GroupParsingMixin
 from scrapers.parsers.roles import MatchesMixin
 from scrapers.parsers.roles import RowMappingMixin
 from scrapers.parsers.roles import TableDomainMapperABC
+
+
+class WikiTableBaseParser(TableHtmlParserABC, ABC):
+    """Bazowa klasa parserów tabel wiki (HTML Tag -> parsed data)."""
+
+    def parse(self, raw: Tag) -> dict[str, Any]:
+        raise NotImplementedError
 
 
 class WikiTableBaseMapper(
@@ -27,9 +36,6 @@ class WikiTableBaseMapper(
     extra_columns_policy: str = "ignore"
     required_header_groups: tuple[frozenset[str], ...] = ()
     column_mapping: dict[str, str] = {}
-
-    def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
-        return self.map(fragment)
 
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         return self.map_fragment(fragment)
@@ -107,6 +113,12 @@ class WikiTableBaseMapper(
 
     collect_rows = parse_group
 
+
+TableFragmentParserABC = WikiTableBaseParser
+WikiTableFragmentParser = WikiTableBaseParser
+
+
 __all__ = [
+    "WikiTableBaseParser",
     "WikiTableBaseMapper",
 ]
