@@ -40,10 +40,6 @@ class HtmlElementParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
     """Canonical ABC for parsers of HTML elements (single Tag input)."""
 
 
-class HtmlElementParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
-    """Legacy alias for tag -> dict parser contract."""
-
-
 class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
     """Parser dokumentu/fragmentu soup (BeautifulSoup -> payload)."""
 
@@ -56,7 +52,7 @@ class SectionParserABC(ParserABC[BeautifulSoup, SectionParseResult], ABC):
 
 
 class SectionStructureParserABC(SectionParserABC, ABC):
-    """Backward-compatible alias for section parser hierarchy."""
+    """ABC for section parser hierarchy."""
 
 
 class TableHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
@@ -71,8 +67,11 @@ class ListHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     """ABC parsera listy HTML."""
 
 
-class ListParserABC(ListHtmlParserABC, ABC):
-    """Compatibility alias for list parsers."""
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Canonical mapper contract (input -> mapped output)."""
+
+    @abstractmethod
+    def map(self, raw: InT) -> OutT: ...
 
 
 class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):

@@ -22,24 +22,24 @@ def test_parse_teams_with_include_urls_returns_links() -> None:
         {"text": "McLaren", "url": "https://en.wikipedia.org/wiki/McLaren"},
     ]
     parser = TeamsParser(MockLinkExtractor(links), include_urls=True)
-    result = parser.parse_teams(cell("<a>Ferrari</a>, <a>McLaren</a>"))
+    result = parser.parse(cell("<a>Ferrari</a>, <a>McLaren</a>"))
     assert result == links
 
 
 def test_parse_teams_without_include_urls_returns_text_list() -> None:
     parser = TeamsParser(MockLinkExtractor([]), include_urls=False)
-    result = parser.parse_teams(cell("Ferrari, McLaren"))
+    result = parser.parse(cell("Ferrari, McLaren"))
     assert "Ferrari" in result
     assert "McLaren" in result
 
 
 def test_parse_teams_without_include_urls_single_team() -> None:
     parser = TeamsParser(MockLinkExtractor([]), include_urls=False)
-    result = parser.parse_teams(cell("Williams"))
+    result = parser.parse(cell("Williams"))
     assert len(result) == 1
 
 
 def test_parse_teams_without_include_urls_empty_cell_returns_empty() -> None:
     parser = TeamsParser(MockLinkExtractor([]), include_urls=False)
-    result = parser.parse_teams(cell(""))
+    result = parser.parse(cell(""))
     assert result == []

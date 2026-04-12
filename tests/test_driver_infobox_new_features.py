@@ -95,7 +95,7 @@ class TestChampionshipTitlesWithYearRanges:
         value_cell = BeautifulSoup(html_value, "html.parser").find("td")
 
         rows = [{"label_cell": label_cell, "value_cell": value_cell}]
-        result = titles_parser.parse_titles(rows)
+        result = titles_parser.parse(rows)
 
         assert len(result) == 1
         assert result[0]["title"]["text"] == "Japanese Formula Two"

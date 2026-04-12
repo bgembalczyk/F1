@@ -14,10 +14,6 @@ class FinishedSeasonParser(BaseInfoboxFieldParser):
     """Handles parsing of 'Finished last season' field."""
 
     def parse(self, cell: Tag) -> dict[str, Any]:
-        return self.parse_finished_last_season(cell)
-
-    @staticmethod
-    def parse_finished_last_season(cell: Tag) -> dict[str, Any]:
         """Parse 'Finished last season' field.
 
         Example: "14th (62 pts)" -> {position: "14th", points: 62}

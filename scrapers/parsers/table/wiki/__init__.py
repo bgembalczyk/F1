@@ -1,3 +1,3 @@
-from .base import WikiTableBaseMapper, WikiTableBaseParser
+from .base import WikiTableBaseMapper
 
-__all__ = ["WikiTableBaseParser", "WikiTableBaseMapper"]
+__all__ = ["WikiTableBaseMapper"]

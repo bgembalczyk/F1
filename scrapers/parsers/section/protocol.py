@@ -8,7 +8,4 @@ __all__ = [
     "BaseSectionParser",
     "NestedWikiSectionParser",
     "SectionStructureParserABC",
-    "SectionParser",
 ]
-
-SectionParser = BaseSectionParser
