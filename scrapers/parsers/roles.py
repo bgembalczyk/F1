@@ -29,6 +29,13 @@ class ParserABC(Parser[InT, OutT], ABC, Generic[InT, OutT]):
     def parse(self, raw: InT) -> OutT: ...
 
 
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Canonical mapper contract (payload -> mapped payload)."""
+
+    @abstractmethod
+    def map(self, fragment: InT) -> OutT: ...
+
+
 class HtmlTagParserABC(ParserABC[Tag, TagOutT], ABC, Generic[TagOutT]):
     """Runtime contract for single HTML tag parsers (Tag -> payload)."""
 
@@ -40,8 +47,7 @@ class HtmlElementParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
     """Canonical ABC for parsers of HTML elements (single Tag input)."""
 
 
-class HtmlElementParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
-    """Legacy alias for tag -> dict parser contract."""
+DictHtmlElementParserABC = HtmlElementParserABC[dict[str, Any]]
 
 
 class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
@@ -113,10 +119,12 @@ SoupDocumentParserABC = SoupParserABC
 
 __all__ = [
     "GroupParsingMixin",
+    "DictHtmlElementParserABC",
     "HtmlElementParserABC",
     "HtmlTagParserABC",
     "InfoboxHtmlParserABC",
     "ListHtmlParserABC",
+    "MapperABC",
     "MatchesMixin",
     "ParserABC",
     "ParsingBundle",
