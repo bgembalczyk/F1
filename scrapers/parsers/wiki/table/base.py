@@ -7,10 +7,10 @@ from bs4 import Tag
 
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
-from scrapers.parsers.contracts.mapping import GroupParsingMixin
-from scrapers.parsers.contracts.mapping import MatchesMixin
-from scrapers.parsers.contracts.mapping import RowMappingMixin
-from scrapers.parsers.contracts.mapping import TableDomainMapperABC
+from scrapers.parsers.contracts.constants_mapping_contracts import GroupParsingMixin
+from scrapers.parsers.contracts.constants_mapping_contracts import MatchesMixin
+from scrapers.parsers.contracts.constants_mapping_contracts import RowMappingMixin
+from scrapers.parsers.contracts.constants_mapping_contracts import TableDomainMapperABC
 from scrapers.parsers.contracts.html import TagParserABC
 
 
