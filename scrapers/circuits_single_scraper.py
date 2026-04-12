@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.circuits_composition import CircuitScraperCompositionFactory
-from scrapers.circuits_composition import CircuitScraperDependencies
+from scrapers.circuits_composition_factory import CircuitScraperCompositionFactory
+from scrapers.circuits_composition_factory import CircuitScraperDependencies
 from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO

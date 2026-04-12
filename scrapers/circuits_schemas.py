@@ -1,5 +1,5 @@
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.circuits.circuits_sections.list_table import TABLE_SCHEMA
+from scrapers.mappers.circuit_list_table_mapper import TABLE_SCHEMA
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 def build_circuits_schema() -> TableSchemaDSL:
