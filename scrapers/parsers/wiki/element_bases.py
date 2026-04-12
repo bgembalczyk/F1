@@ -15,6 +15,12 @@ from scrapers.parsers.wiki.section_nodes.infobox import WikiInfoboxParserABC
 from scrapers.parsers.wiki.section_nodes.list import WikiListParserABC
 from scrapers.parsers.wiki.wiki_navbox_parser_abc import WikiNavboxParserABC
 from scrapers.parsers.wiki.section_nodes.table import WikiTableParserABC
+from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.contracts.wiki_elements import WikiFigureParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiNavboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 from scrapers.parsers.section_parser_abc import SectionParserABC
 
 
@@ -38,7 +44,7 @@ class WikiInfoboxParserBase(_WikiTagDelegatingParserBase, WikiInfoboxParserABC, 
     pass
 
 
-class WikiSectionParserBase(SectionParserABC, ABC):
+class WikiSectionParserBase(BaseSectionParser, ABC):
     """Domain base for section parsers (BeautifulSoup -> SectionParseResult)."""
 
 

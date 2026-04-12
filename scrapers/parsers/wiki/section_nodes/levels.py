@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC
 
-from scrapers.parsers.section_parser_abc import NestedSectionParserABC
+from scrapers.parsers.nested_child import NestedChildParser
 
 
 class SubSectionLevelMixin(ABC):
@@ -13,7 +13,7 @@ class SubSubSectionLevelMixin(SubSectionLevelMixin, ABC):
     """Marker mixin for sub-subsection-level parsers (h5 scope)."""
 
 
-class WikiSubSectionParserABC(SubSectionLevelMixin, NestedSectionParserABC, ABC):
+class WikiSubSectionParserABC(SubSectionLevelMixin, NestedChildParser, ABC):
     """Contract for subsection parser nodes."""
 
 

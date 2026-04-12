@@ -1,17 +1,7 @@
-from __future__ import annotations
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiFigureElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiFigureParserABC
 
-from abc import ABC
-from abc import abstractmethod
-
-from bs4 import Tag
-
-from models.data.wiki.figure import WikiFigureData
-from scrapers.parsers.element_parser_abc import FigureHtmlParserABC
-
-
-class WikiFigureParserABC(FigureHtmlParserABC[WikiFigureData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiFigureData: ...
-
+__all__ = ["WikiFigureElementParserABC", "WikiFigureParserABC"]
+from scrapers.parsers.contracts.wiki_elements import WikiFigureParserABC
 
 __all__ = ["WikiFigureParserABC"]

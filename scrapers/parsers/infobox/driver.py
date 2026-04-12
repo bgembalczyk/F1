@@ -12,7 +12,7 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.default_driver_infobox_provider import DefaultDriverInfoboxProvider
 from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
-from scrapers.parsers.wiki.section_nodes.infobox import WikiInfoboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
 
 
 class DriverInfoboxParser(WikiInfoboxParserABC):

@@ -2,10 +2,11 @@ from bs4 import Tag
 
 from models.data.parsed.html_elements import TableElementData
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
-from scrapers.parsers.wiki.section_nodes.table import WikiTableParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 
 
-class TableElementParser(WikiTableParserABC):
+class TableElementParser(WikiTableElementParserABC):
     def __init__(self, table_parser: WikiTableHtmlParser | None = None) -> None:
         self._table_parser = table_parser or WikiTableHtmlParser()
 

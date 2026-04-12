@@ -21,6 +21,8 @@ TARGET_BRANCHES = {
     "InfoboxFieldParserABC",  # legacy name kept for compatibility with historical checks
     "InfoboxHtmlFieldParserABC",
     "InfoboxRowsParserABC",
+    "InfoboxNestedTableParserABC",
+    "InfoboxCollapsibleTableParserABC",
     "TableParserABC",         # base of WikiTableBaseParser
 }
 
@@ -72,6 +74,8 @@ def _all_parser_classes() -> dict[str, ClassInfo]:
 
 def _is_target_candidate(info: ClassInfo) -> bool:
     path_str = info.path.as_posix()
+    if "scrapers/parsers/infobox/" in path_str:
+        return True
     if "infobox/field" in path_str:
         return True
     if not info.name.startswith("Wiki"):

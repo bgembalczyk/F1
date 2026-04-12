@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any
+from typing import TypeAlias
 
 from bs4 import Tag
 
@@ -10,6 +11,8 @@ from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.base import WikiParser
+
+SectionLevelParseResult: TypeAlias = dict[str, Any]
 
 
 class RecursiveSectionParser(WikiElementParsingMixin, WikiParser):
@@ -42,17 +45,16 @@ class RecursiveSectionParser(WikiElementParsingMixin, WikiParser):
         element: Tag | list[Tag],
         *,
         context: SectionExtractionContext | None = None,
-    ) -> dict[str, Any]:
-        if isinstance(element, Tag):
-            return self._parse_group(list(element.children), context=context)
-        return self._parse_group(element, context=context)
+    ) -> SectionLevelParseResult:
+        elements = list(element.children) if isinstance(element, Tag) else element
+        return self._parse_group(elements, context=context)
 
     def _parse_group(
         self,
         elements: list,
         *,
         context: SectionExtractionContext | None = None,
-    ) -> dict[str, Any]:
+    ) -> SectionLevelParseResult:
         section_context = context or SectionExtractionContext()
         tags = [c for c in elements if isinstance(c, Tag)]
         parts = self.toolbox.section_locator.locate(tags, heading_class=self.heading_class)
@@ -69,16 +71,7 @@ class RecursiveSectionParser(WikiElementParsingMixin, WikiParser):
                 section_name=part.section_label,
                 section_id=section_id,
             )
-            fragment = (
-                self.child_parser.parse(part.elements, context=child_context)
-                if self.child_parser is not None
-                else {
-                    "elements": self.parse_elements(
-                        part.elements,
-                        section_context=child_context,
-                    )
-                }
-            )
+            fragment = self._parse_children(part.elements, context=child_context)
             sections.append(
                 self.toolbox.section_assembler.assemble(
                     section_name=part.section_label,
@@ -90,5 +83,20 @@ class RecursiveSectionParser(WikiElementParsingMixin, WikiParser):
 
         return {self.output_key: sections}
 
+    def _parse_children(
+        self,
+        elements: list[Tag],
+        *,
+        context: SectionExtractionContext,
+    ) -> SectionLevelParseResult:
+        if self.child_parser is not None:
+            return self.child_parser.parse(elements, context=context)
+        return {
+            "elements": self.parse_elements(
+                elements,
+                section_context=context,
+            ),
+        }
 
-__all__ = ["RecursiveSectionParser"]
+
+__all__ = ["RecursiveSectionParser", "SectionLevelParseResult"]

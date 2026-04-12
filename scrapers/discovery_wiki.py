@@ -12,7 +12,7 @@ from scrapers.component_metadata_wiki import LIST_SCRAPER_KIND
 from scrapers.component_metadata_wiki import RUNNER_KIND
 from scrapers.component_metadata_wiki import ComponentMetadata
 from scrapers.component_metadata_wiki import parse_component_metadata
-from scrapers.constants_wiki import COMPONENT_METADATA_ATTR
+from scrapers.constants.constants_wiki import COMPONENT_METADATA_ATTR
 from scrapers.protocols.protocols_wiki import DiscoveredListScraperClassABC
 from scrapers.protocols.protocols_wiki import DiscoveredRunnerABC
 from scrapers.protocols.protocols_wiki import DiscoveredRunnerClassABC
