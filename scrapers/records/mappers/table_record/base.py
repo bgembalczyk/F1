@@ -40,6 +40,9 @@ class TableRecordMapper(
     def map_table(self, table: list[Mapping[str, Any]]) -> list[dict[str, Any]]:
         return self.map_many(table)
 
+    def parse_group(self, table: list[Mapping[str, Any]]) -> list[dict[str, Any]]:
+        return self.map_many(table)
+
     def _normalize_value(self, value: Any) -> Any:
         if isinstance(value, Mapping):
             return {str(k).strip(): self._normalize_value(v) for k, v in value.items()}

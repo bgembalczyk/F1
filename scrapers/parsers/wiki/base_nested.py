@@ -11,7 +11,7 @@ from scrapers.parsers.wiki.families import WikiSectionParserABC
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class BaseNestedSectionParser(WikiSectionParserABC, RecursiveSectionParser):
+class BaseNestedSectionParser(RecursiveSectionParser, WikiSectionParserABC):
     heading_class: str
     output_key: str
 

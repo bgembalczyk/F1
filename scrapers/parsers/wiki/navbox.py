@@ -4,7 +4,7 @@ from models.data.parsed.nav_box import NavBoxParsedData
 from scrapers.parsers.html_elements.navbox import NavboxElementParser
 
 
-class WikiNavboxParser(WikiNavboxHtmlParserABC, NavboxElementParser):
+class WikiNavboxParser(NavboxElementParser):
     def parse(self, raw: Tag) -> NavBoxParsedData:
         return NavboxElementParser.parse(self, raw)
 

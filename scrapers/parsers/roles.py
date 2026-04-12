@@ -6,6 +6,7 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.domain_roles import Parser
@@ -15,9 +16,12 @@ from scrapers.parsers.base_family import SectionParserABC
 from scrapers.parsers.base_family import SoupParserABC
 from scrapers.parsers.base_family import TableParserABC
 from scrapers.parsers.base_family import TagParserABC
+from scrapers.section.parse_results import SectionParseResult
 
 InT = TypeVar("InT")
 OutT = TypeVar("OutT")
+TagOutT = TypeVar("TagOutT")
+SoupOutT = TypeVar("SoupOutT")
 RecordT_co = TypeVar("RecordT_co", covariant=True)
 RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
