@@ -4,51 +4,29 @@
 import pytest
 from bs4 import BeautifulSoup
 
+from scrapers.parsers.list_element_parser import ListElementParser
+from scrapers.parsers.section.extraction_context import SectionExtractionContext
+from scrapers.parsers.section.helpers import split_into_parts
+from scrapers.parsers.section.wiki import SectionParser
 from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser
 from scrapers.parsers.wiki.body_content_assembler import BodyContentAssembler
 from scrapers.parsers.wiki.category_links import CategoryLinksParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
-from scrapers.parsers.wiki.figure import WikiFigureParser
-from scrapers.parsers.wiki.infobox import WikiInfoboxParser
-from scrapers.parsers.wiki.base import ListParser
-from scrapers.parsers.wiki.navbox import WikiNavboxParser
-from scrapers.parsers.wiki.paragraph import WikiParagraphParser
 from scrapers.parsers.wiki.element import WikiElementParsers
-from scrapers.parsers.wiki.navbox import NavBoxParser
-from scrapers.parsers.wiki.paragraph import ParagraphParser
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_default_wiki_element_parsers
-from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
-from scrapers.parsers.wiki.table import WikiTableParser
+from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.header import HeaderParser
-from scrapers.parsers.section.match.priorities import SectionExtractionContext
-from scrapers.parsers.section.wiki.helpers import split_into_parts
-from scrapers.parsers.section.wiki import SectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser
+from scrapers.parsers.wiki.infobox import WikiInfoboxParser
+from scrapers.parsers.wiki.navbox import NavBoxParser
+from scrapers.parsers.wiki.navbox import WikiNavboxParser
+from scrapers.parsers.wiki.paragraph import ParagraphParser
+from scrapers.parsers.wiki.paragraph import WikiParagraphParser
+from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
-from scrapers.wiki.parsers.base import WikiParser
-from scrapers.wiki.parsers.body_content import BodyContentAssembler
-from scrapers.wiki.parsers.category_links import CategoryLinksParser
-from scrapers.wiki.parsers.content_text import ContentTextParser
-from scrapers.wiki.parsers.elements.figure import WikiFigureParser
-from scrapers.wiki.parsers.elements.infobox import WikiInfoboxParser
-from scrapers.wiki.parsers.elements.list import ListParser
-from scrapers.wiki.parsers.elements.navbox import WikiNavboxParser
-from scrapers.wiki.parsers.elements.paragraph import WikiParagraphParser
-from scrapers.wiki.parsers.elements.navbox import NavBoxParser
-from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
-from scrapers.wiki.parsers.elements.parsers import WikiElementSet
-from scrapers.wiki.parsers.elements.parsers import build_default_wiki_element_parsers
-from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
-from scrapers.wiki.parsers.elements.table import WikiTableParser
-from scrapers.wiki.parsers.header import HeaderParser
-from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
-from scrapers.wiki.parsers.sections.helpers import split_into_parts
-from scrapers.wiki.parsers.sections.section import SectionParser
-from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
-from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
-from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
+from scrapers.parsers.wiki.table import WikiTableParser
 
 
 class StubElementParser:
@@ -217,7 +195,7 @@ def test_figure_parser():
 def test_list_parser():
     html = "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>"
     soup = make_soup(html)
-    parser = ListParser()
+    parser = ListElementParser()
     result = parser.parse(soup.find("ul"))
     assert result["items"] == ["Item 1", "Item 2", "Item 3"]
 

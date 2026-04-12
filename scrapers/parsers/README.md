@@ -56,3 +56,11 @@ from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 from scrapers.parsers.contracts.html_element_parser_abc import HtmlElementParserABC
 ```
 
+
+## Kanoniczne importy (po usunięciu aliasów)
+
+- Nie używaj `ElementParserABC` — alias został usunięty.
+- Używaj `HtmlElementParserABC` oraz kontraktów z `scrapers.parsers.contracts.*`.
+- Nie używaj re-eksportów z `scrapers.wiki.parsers.*` ani `scrapers.parsers.section.sublevels.*`;
+  importuj z docelowych modułów parserów.
+
