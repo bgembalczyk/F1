@@ -129,3 +129,20 @@ Jeśli klasa jest etapem orkiestracji pipeline, stosuj `*Stage`/`*Processor` z `
 | `*SectionParser` | `BeautifulSoup`/`Tag` | `SectionParseResult` | `WikiSectionParserABC` |
 | `*SectionParser` (nested) | `Tag` | `dict` | `NestedWikiSectionParser` |
 | `*InfoboxParser` | `Tag` (`<table class="infobox">`) | `dict` | `WikiInfoboxElementParserBase` |
+
+
+## Strict pipeline parserów elementowych
+
+Dla parserów elementowych obowiązuje sztywny pipeline:
+
+1. `Element parser (HTML -> payload)`
+2. `Classifier` (opcjonalny)
+3. `Mapper/Factory (payload -> rekord transportowy/domenowy)`
+
+Dla wiki runtime realizują to:
+
+- `element_registry.py` – tylko wybór parsera po typie elementu i kontekście,
+- `element_dispatcher.py` – orkiestracja parse -> factory,
+- `element_payload_factory.py` – classifier + mapper/factory do `WikiParsedPayload`.
+
+Dzięki temu parsery `element_*` pozostają czysto syntaktyczne (HTML -> payload), bez domenowych business rules.

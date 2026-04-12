@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from scrapers.identity_domain_mapper import IdentityDomainMapper
 from scrapers.domain_mapper_abc import DomainMapperABC
+from scrapers.parsers.wiki.domain_mapper import WikiDomainMapper
 from scrapers.parsers.wiki.wiki_mapper_registry import WikiMapperRegistry
 
 
 def build_default_domain_mapper() -> DomainMapperABC:
-    return IdentityDomainMapper()
+    return WikiDomainMapper()
 
 
 def build_default_mapper_registry() -> WikiMapperRegistry:

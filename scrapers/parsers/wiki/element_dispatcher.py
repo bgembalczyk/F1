@@ -4,6 +4,10 @@ from dataclasses import dataclass
 
 from models.payload import WikiParsedPayload
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
+from scrapers.parsers.wiki.element_payload_factory import ElementParseResult
+from scrapers.parsers.wiki.element_payload_factory import ElementPayloadFactory
+from scrapers.parsers.wiki.element_payload_factory import PassthroughElementClassifier
+from scrapers.parsers.wiki.element_payload_factory import WikiParsedPayloadMapper
 from scrapers.parsers.wiki.element_registry import ElementParseInput
 from scrapers.parsers.wiki.element_registry import ElementRegistry
 
@@ -13,6 +17,10 @@ class ElementDispatcher:
     """Single dispatcher used by section parsers to delegate element parsing."""
 
     registry: ElementRegistry
+    payload_factory: ElementPayloadFactory = ElementPayloadFactory(
+        classifier=PassthroughElementClassifier(),
+        mapper=WikiParsedPayloadMapper(),
+    )
 
     def dispatch(
         self,

@@ -65,3 +65,32 @@ Mapa jest wymuszana przez:
 - parsery elementowe (`list/table/infobox/navbox/figure/section`) dziedziczą teraz z **jednej** docelowej gałęzi Wiki ABC,
 - parsery sekcyjne legacy (np. `legacy_lists/*`) nie dublują już równolegle baz `SectionParserABC`/`SubSectionParserABC` obok klas runtime,
 - `tag_parser_abc.py` i `soup_parser_abc.py` pełnią rolę kompatybilnych re-eksportów.
+
+## 7. Strict element pipeline (wdrożone)
+
+Parsery elementowe są teraz spięte sztywnym łańcuchem odpowiedzialności:
+
+1. `Element parser (HTML -> payload)`
+2. `Classifier (opcjonalny)`
+3. `Mapper/Factory (payload -> WikiParsedPayload / rekord domenowy)`
+
+Implementacja runtime dla wiki-elementów:
+
+- `scrapers/parsers/wiki/element_dispatcher.py` – deleguje tylko parse + uruchamia factory,
+- `scrapers/parsers/wiki/element_payload_factory.py` – classifier + mapper/factory,
+- `scrapers/parsers/wiki/element_registry.py` – wybór parsera wyłącznie po `element_type` + context (`domain`, `section_id`, `section_profile`).
+
+## 8. Rozszerzenie kontraktów sekcyjnych poza tabele
+
+Wzorzec z `scrapers/parsers/section/table/contracts.py` został rozszerzony na:
+
+- `scrapers/parsers/section/list/contracts.py`,
+- `scrapers/parsers/section/text/contracts.py`,
+- `scrapers/parsers/section/infobox/contracts.py`.
+
+Każdy moduł definiuje analogiczne role: `*HtmlParserABC`, `*ClassifierABC`, `*RecordMapperABC`.
+
+## 9. Granice parser vs domena
+
+Parsery elementowe nie zawierają reguł biznesowych domeny.
+Transformacje domenowe pozostają w mapperach/factory (`*mapper*`, `services`, `domain_*`).
