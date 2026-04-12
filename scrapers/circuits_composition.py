@@ -13,14 +13,14 @@ from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,
 )
 from scrapers.services.section.factories.section_service_factory import (
-    SectionServiceFactory,
+    SectionServiceFactoryABC,
 )
 
 
 @dataclass(frozen=True, slots=True)
 class CircuitScraperDependencies:
     infobox_service: InfoboxOrchestratorProtocol
-    sections_service_factory: SectionServiceFactory[CircuitSectionExtractionService]
+    sections_service_factory: SectionServiceFactoryABC[CircuitSectionExtractionService]
     domain_record_service: CircuitDomainRecordService
 
 
@@ -31,7 +31,7 @@ class CircuitScraperCompositionFactory:
     test_mode: bool = False
     infobox_service: InfoboxOrchestratorProtocol | None = None
     sections_service_factory: (
-        SectionServiceFactory[CircuitSectionExtractionService] | None
+        SectionServiceFactoryABC[CircuitSectionExtractionService] | None
     ) = None
     domain_record_service: CircuitDomainRecordService | None = None
 
@@ -41,7 +41,7 @@ class CircuitScraperCompositionFactory:
         *,
         infobox_service: InfoboxOrchestratorProtocol | None = None,
         sections_service_factory: (
-            SectionServiceFactory[CircuitSectionExtractionService] | None
+            SectionServiceFactoryABC[CircuitSectionExtractionService] | None
         ) = None,
         domain_record_service: CircuitDomainRecordService | None = None,
     ) -> CircuitScraperCompositionFactory:

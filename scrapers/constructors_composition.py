@@ -13,14 +13,14 @@ from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,
 )
 from scrapers.services.section.factories.section_service_factory import (
-    SectionServiceFactory,
+    SectionServiceFactoryABC,
 )
 
 
 @dataclass(frozen=True, slots=True)
 class ConstructorScraperDependencies:
     infobox_service: InfoboxOrchestratorProtocol
-    sections_service_factory: SectionServiceFactory[ConstructorSectionExtractionService]
+    sections_service_factory: SectionServiceFactoryABC[ConstructorSectionExtractionService]
     domain_record_service: ConstructorDomainRecordService
 
 
@@ -31,7 +31,7 @@ class ConstructorScraperCompositionFactory:
     test_mode: bool = False
     infobox_service: InfoboxOrchestratorProtocol | None = None
     sections_service_factory: (
-        SectionServiceFactory[ConstructorSectionExtractionService] | None
+        SectionServiceFactoryABC[ConstructorSectionExtractionService] | None
     ) = None
     domain_record_service: ConstructorDomainRecordService | None = None
 
@@ -41,7 +41,7 @@ class ConstructorScraperCompositionFactory:
         *,
         infobox_service: InfoboxOrchestratorProtocol | None = None,
         sections_service_factory: (
-            SectionServiceFactory[ConstructorSectionExtractionService] | None
+            SectionServiceFactoryABC[ConstructorSectionExtractionService] | None
         ) = None,
         domain_record_service: ConstructorDomainRecordService | None = None,
     ) -> ConstructorScraperCompositionFactory:

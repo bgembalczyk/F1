@@ -25,7 +25,5 @@ class SectionServiceFactoryABC(ABC, Generic[ServiceT_co]):
     ) -> ServiceT_co: ...
 
 
-# Backward-compatible alias for previous name.
-SectionServiceFactory = SectionServiceFactoryABC
 
-__all__ = ["SectionServiceFactoryABC", "SectionServiceFactory"]
+__all__ = ["SectionServiceFactoryABC"]

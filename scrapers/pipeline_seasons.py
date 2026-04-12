@@ -35,7 +35,7 @@ from scrapers.parsers.wiki.season_standings import SeasonStandingsParser
 from scrapers.records.sections.season import SeasonRecordSections
 from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
 from scrapers.services.section.factories.configurable import ConfigurableSectionServiceFactory
-from scrapers.services.section.factories.section_service_factory import SectionServiceFactory
+from scrapers.services.section.factories.section_service_factory import SectionServiceFactoryABC
 
 if TYPE_CHECKING:
     from typing import Any
@@ -233,7 +233,7 @@ class SeasonSectionPipeline:
         parser_set_builder: SeasonParsingComponentsBuilder,
         section_data_collector: SeasonSectionDataCollector | None = None,
         text_sections_service_factory: (
-            SectionServiceFactory[SeasonTextSectionExtractionService] | None
+            SectionServiceFactoryABC[SeasonTextSectionExtractionService] | None
         ) = None,
     ) -> None:
         self._parser_set_builder = parser_set_builder

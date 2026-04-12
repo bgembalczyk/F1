@@ -11,7 +11,7 @@ from scrapers.services.section.extraction.season_text import (
     SeasonTextSectionExtractionService,
 )
 from scrapers.services.section.factories.section_service_factory import (
-    SectionServiceFactory,
+    SectionServiceFactoryABC,
 )
 
 
@@ -32,7 +32,7 @@ class SeasonScraperCompositionFactory:
     season_pipeline: SeasonSectionPipeline | None = None
     parsing_policy: DomainParsingPolicy | None = None
     text_sections_service_factory: (
-        SectionServiceFactory[SeasonTextSectionExtractionService] | None
+        SectionServiceFactoryABC[SeasonTextSectionExtractionService] | None
     ) = None
     domain_record_service: SeasonDomainRecordService | None = None
 
@@ -45,7 +45,7 @@ class SeasonScraperCompositionFactory:
         season_pipeline: SeasonSectionPipeline | None = None,
         parsing_policy: DomainParsingPolicy | None = None,
         text_sections_service_factory: (
-            SectionServiceFactory[SeasonTextSectionExtractionService] | None
+            SectionServiceFactoryABC[SeasonTextSectionExtractionService] | None
         ) = None,
         domain_record_service: SeasonDomainRecordService | None = None,
     ) -> SeasonScraperCompositionFactory:

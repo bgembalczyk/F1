@@ -10,14 +10,14 @@ from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,
 )
 from scrapers.services.section.factories.section_service_factory import (
-    SectionServiceFactory,
+    SectionServiceFactoryABC,
 )
 
 
 @dataclass(frozen=True, slots=True)
 class DriverScraperDependencies:
     infobox_service: InfoboxOrchestratorProtocol
-    sections_service_factory: SectionServiceFactory[DriverSectionExtractionService]
+    sections_service_factory: SectionServiceFactoryABC[DriverSectionExtractionService]
     domain_record_service: DriverDomainRecordService
 
 
@@ -28,7 +28,7 @@ class DriverScraperCompositionFactory:
     test_mode: bool = False
     infobox_service: InfoboxOrchestratorProtocol | None = None
     sections_service_factory: (
-        SectionServiceFactory[DriverSectionExtractionService] | None
+        SectionServiceFactoryABC[DriverSectionExtractionService] | None
     ) = None
     domain_record_service: DriverDomainRecordService | None = None
 
@@ -38,7 +38,7 @@ class DriverScraperCompositionFactory:
         *,
         infobox_service: InfoboxOrchestratorProtocol | None = None,
         sections_service_factory: (
-            SectionServiceFactory[DriverSectionExtractionService] | None
+            SectionServiceFactoryABC[DriverSectionExtractionService] | None
         ) = None,
         domain_record_service: DriverDomainRecordService | None = None,
     ) -> DriverScraperCompositionFactory:
