@@ -3,6 +3,7 @@ from __future__ import annotations
 import warnings
 
 from scrapers.errors.base import ScraperError
+from scrapers.single_wiki_article import DomainArticleScraperBase
 
 warnings.warn(
     "single_scraper_grands_prix is deprecated; use scrapers.single_scraper_grands_prix.",
@@ -19,7 +20,6 @@ from scrapers.parsers.section.grand_prix.by_year import GrandPrixByYearSectionPa
 from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.section.id_resolver import SectionIdResolver
 from scrapers.single_wiki_article import WikipediaSectionByIdSelectionStrategy
-from scrapers.single_wiki_article.base import SingleWikiArticleScraperBase
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -30,7 +30,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class F1SingleGrandPrixScraper(SingleWikiArticleScraperBase):
+class F1SingleGrandPrixScraper(DomainArticleScraperBase):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         super().__init__(
             options=options,

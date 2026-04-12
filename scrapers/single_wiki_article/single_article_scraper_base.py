@@ -8,6 +8,7 @@ from typing import Any
 from infrastructure.helpers import init_scraper_options
 from scrapers.helpers.config_factory import build_scraper_options
 from scrapers.scraper_wiki import WikiScraper
+from scrapers.wiring import ScraperRuntimeFactory
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -103,7 +104,4 @@ class ArticleScraperBase(WikiScraper, ABC):
         """Build final record from parsed article soup."""
 
 
-SingleArticleScraperBase = ArticleScraperBase
-
-
-__all__ = ["ArticleScraperBase", "SingleArticleScraperBase"]
+__all__ = ["ArticleScraperBase"]

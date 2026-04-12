@@ -1,11 +1,11 @@
 # ruff: noqa: E501, PLR2004
 from unittest.mock import patch
 
-from scrapers.single_wiki_article import SingleWikiArticleSectionByIdBase
+from scrapers.single_wiki_article import SectionByIdScraperBase
 from scrapers.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 
 
-class ConcreteSectionByIdScraper(SingleWikiArticleSectionByIdBase):
+class ConcreteSectionByIdScraper(SectionByIdScraperBase):
     """Minimal concrete subclass for testing."""
 
     def _assemble_record(self, *_args, **_kwargs):
@@ -20,7 +20,7 @@ def patched_init(self, *_args, **kwargs):
 def test_section_by_id_sets_default_strategy_when_not_provided() -> None:
     # Lines 13-17: __init__ sets section_selection_strategy via setdefault
     with patch(
-        "scrapers.base.single_wiki_article.base.SingleWikiArticleScraperBase.__init__",
+        "scrapers.base.single_wiki_article.base.DomainArticleScraperBase.__init__",
         patched_init,
     ):
         scraper = ConcreteSectionByIdScraper.__new__(ConcreteSectionByIdScraper)
@@ -34,7 +34,7 @@ def test_section_by_id_sets_default_strategy_when_not_provided() -> None:
 def test_section_by_id_does_not_override_provided_strategy() -> None:
     custom_strategy = WikipediaSectionByIdSelectionStrategy(domain="engines")
     with patch(
-        "scrapers.base.single_wiki_article.base.SingleWikiArticleScraperBase.__init__",
+        "scrapers.base.single_wiki_article.base.DomainArticleScraperBase.__init__",
         patched_init,
     ):
         scraper = ConcreteSectionByIdScraper.__new__(ConcreteSectionByIdScraper)

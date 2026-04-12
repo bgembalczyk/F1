@@ -41,7 +41,6 @@ class SectionAwareMixin:
         )
 
 
-SingleArticleSectionAwareMixin = SectionAwareMixin
 
 
-__all__ = ["SectionAwareMixin", "SingleArticleSectionAwareMixin"]
+__all__ = ["SectionAwareMixin"]

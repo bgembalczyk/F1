@@ -14,7 +14,7 @@ from scrapers.services.domain_record.constructor_pipeline_service import (
 from scrapers.services.domain_record.constructor_table_extraction_service import (
     ConstructorTableExtractionService,
 )
-from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.single_wiki_article import SectionAdapterScraperBase
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -22,7 +22,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
+class SingleConstructorScraper(SectionAdapterScraperBase):
     def __init__(
         self,
         *,

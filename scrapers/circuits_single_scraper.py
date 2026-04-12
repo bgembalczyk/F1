@@ -18,7 +18,7 @@ from scrapers.services.domain_record.circuit_lap_records_extraction_service impo
 from scrapers.services.domain_record.circuit_pipeline_service import (
     CircuitDomainRecordInput,
 )
-from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.single_wiki_article import SectionAdapterScraperBase
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -26,7 +26,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
+class F1SingleCircuitScraper(SectionAdapterScraperBase):
     def __init__(
         self,
         *,

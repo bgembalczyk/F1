@@ -29,10 +29,8 @@ STANDARD_HOOK_NAMES = {
     "_assemble_record",
 }
 HOOK_BASE_CLASSES = {
-    "SingleArticleDomainScraperBase",
-    "SingleArticleSectionAdapterBase",
-    "SingleWikiArticleScraperBase",
-    "SingleWikiArticleSectionAdapterBase",
+    "DomainArticleScraperBase",
+    "SectionAdapterScraperBase",
 }
 
 

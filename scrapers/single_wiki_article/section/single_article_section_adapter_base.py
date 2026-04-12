@@ -18,12 +18,8 @@ class SectionAdapterScraperBase(
     """Base for article scrapers that assemble records via SectionAdapter."""
 
 
-SingleArticleSectionAdapterBase = SectionAdapterScraperBase
-SingleWikiArticleSectionAdapterBase = SectionAdapterScraperBase
 
 
 __all__ = [
     "SectionAdapterScraperBase",
-    "SingleArticleSectionAdapterBase",
-    "SingleWikiArticleSectionAdapterBase",
 ]

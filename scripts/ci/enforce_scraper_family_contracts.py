@@ -34,9 +34,9 @@ FAMILY_RULES = {
     "single_article": FamilyRule(
         family="single_article",
         required_bases=(
-            "SingleWikiArticleScraperBase",
-            "SingleWikiArticleSectionAdapterBase",
-            "SingleWikiArticleSectionByIdBase",
+            "DomainArticleScraperBase",
+            "SectionAdapterScraperBase",
+            "SectionByIdScraperBase",
         ),
     ),
     "section_parser": FamilyRule(

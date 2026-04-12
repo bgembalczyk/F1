@@ -12,7 +12,7 @@ def build_scraper_source(
     *,
     class_name: str = "TestScraper",
     methods: list[str],
-    base_class: str = "SingleWikiArticleScraperBase",
+    base_class: str = "DomainArticleScraperBase",
     header_comments: list[str] | None = None,
 ) -> str:
     """Build a minimal scraper source for single-wiki hook linter tests."""

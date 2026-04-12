@@ -7,7 +7,7 @@ from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
 from scrapers.records.dto.season import SeasonPayloadDTO
 from scrapers.services.domain_record.season_pipeline_service import SeasonDomainRecordInput
-from scrapers.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.single_wiki_article import SectionAdapterScraperBase
 from scrapers.wiring.composition_seasons import SeasonScraperCompositionFactory
 from scrapers.wiring.composition_seasons import SeasonScraperDependencies
 
@@ -27,7 +27,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
+class SingleSeasonScraper(SectionAdapterScraperBase):
     def __init__(
         self,
         *,

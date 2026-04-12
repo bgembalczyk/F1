@@ -73,7 +73,6 @@ class DomainArticleScraperBase(ArticleScraperBase, ABC):
         """Compose final domain record from template-method payload hooks."""
 
 
-SingleArticleDomainScraperBase = DomainArticleScraperBase
 
 
-__all__ = ["DomainArticleScraperBase", "SingleArticleDomainScraperBase"]
+__all__ = ["DomainArticleScraperBase"]
