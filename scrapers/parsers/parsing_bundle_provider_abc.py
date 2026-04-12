@@ -6,11 +6,9 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
-BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
+from scrapers.parsers.contracts.constants_contracts import BundleT_co
 
 
-class ParsingBundle(ABC):
-    """Kompozycja parserów i komponentów pomocniczych."""
 
 
 class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):
@@ -18,4 +16,3 @@ class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):
     def build(self, **kwargs: Any) -> BundleT_co: ...
 
 
-__all__ = ["BundleT_co", "ParsingBundle", "ParsingBundleProviderABC"]

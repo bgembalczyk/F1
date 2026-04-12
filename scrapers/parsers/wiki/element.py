@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from bs4 import Tag
 
 from models.data.wiki_parser import WikiParserData
-from scrapers.parsers.html_elements.list import ListElementParser
+from scrapers.parsers.html_elements.list_element_parser import ListElementParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.table.table.table import WikiTableHtmlParser

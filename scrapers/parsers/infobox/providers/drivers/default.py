@@ -3,7 +3,7 @@ from __future__ import annotations
 from scrapers.infobox.extraction.extractor.link import InfoboxLinkExtractor
 from scrapers.infobox.section.collector import InfoboxSectionCollector
 from scrapers.infobox.section.discovery import InfoboxSectionDiscovery
-from scrapers.parsers.infobox.bundles.driver import DriverInfoboxBundle
+from scrapers.parsers.infobox.bundles.driver_infobox_bundle import DriverInfoboxBundle
 from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
 from scrapers.parsers.infobox.field.career import InfoboxCareerParser
 from scrapers.parsers.infobox.field.title import InfoboxTitlesParser

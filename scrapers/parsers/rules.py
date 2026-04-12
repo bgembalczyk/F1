@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
     from bs4 import Tag
 
-    from scrapers.parsers.contracts.html import TagParserABC
+    from scrapers.parsers.contracts.soup_parser_abc import TagParserABC
 
 
 @dataclass(frozen=True)

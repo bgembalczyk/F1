@@ -13,8 +13,14 @@ RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
 
 
+SoupOut = TypeVar("SoupOut")
+TagOut = TypeVar("TagOut")
 
 
+BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
+
+In = TypeVar("In")
+Out = TypeVar("Out")
 
 
 

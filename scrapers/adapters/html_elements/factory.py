@@ -2,12 +2,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from scrapers.parsers.html_elements.figure import FigureElementParser
-from scrapers.parsers.html_elements.infobox import InfoboxElementParser
-from scrapers.parsers.html_elements.list import ListElementParser
-from scrapers.parsers.html_elements.navbox import NavboxElementParser
-from scrapers.parsers.html_elements.paragraph import ParagraphElementParser
-from scrapers.parsers.html_elements.table import TableElementParser
+from scrapers.parsers.html_elements.figure_element_parser import FigureElementParser
+from scrapers.parsers.html_elements.infobox_element_parser import InfoboxElementParser
+from scrapers.parsers.html_elements.list_element_parser import ListElementParser
+from scrapers.parsers.html_elements.navbox_element_parser import NavboxElementParser
+from scrapers.parsers.html_elements.paragraph_element_parser import ParagraphElementParser
+from scrapers.parsers.html_elements.table_element_parser import TableElementParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 

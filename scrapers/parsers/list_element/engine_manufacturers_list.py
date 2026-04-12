@@ -1,6 +1,6 @@
 from bs4 import Tag
 
-from scrapers.parsers.html_elements.list import ListElementParser
+from scrapers.parsers.html_elements.list_element_parser import ListElementParser
 
 
 class IndianapolisOnlyListParser(ListElementParser):

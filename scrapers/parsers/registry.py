@@ -5,7 +5,7 @@ from typing import Final
 from typing import Literal
 from typing import TypeAlias
 
-from scrapers.parsers.contracts.html import TagParserABC
+from scrapers.parsers.contracts.soup_parser_abc import TagParserABC
 from scrapers.parsers.contracts.wiki_list_parser_abc import WikiListParserABC
 from scrapers.parsers.contracts.wiki_section_parser_abc import WikiSectionParserABC
 

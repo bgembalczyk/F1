@@ -1,7 +1,7 @@
 from bs4 import Tag
 
 from scrapers.parsers.contracts.wiki_navbox_parser_abc import WikiNavboxParserABC
-from scrapers.parsers.html_elements.navbox import NavboxElementParser
+from scrapers.parsers.html_elements.navbox_element_parser import NavboxElementParser
 from scrapers.parsers.wiki.types import WikiNavboxData
 
 

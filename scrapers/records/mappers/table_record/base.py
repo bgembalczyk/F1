@@ -1,8 +1,8 @@
 from collections.abc import Mapping
 from typing import Any
 
-from scrapers.parsers.contracts.constants_mapping_contracts import GroupParsingMixin
-from scrapers.parsers.contracts.constants_mapping_contracts import RowMappingMixin
+from scrapers.parsers.contracts.constants_contracts import GroupParsingMixin
+from scrapers.parsers.contracts.constants_contracts import RowMappingMixin
 from scrapers.records.inputs.table_record import TableRecordInput
 
 

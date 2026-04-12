@@ -1,7 +1,7 @@
 from bs4 import Tag
 
 from scrapers.parsers.contracts.wiki_table_parser_abc import WikiTableParserABC
-from scrapers.parsers.html_elements.table import TableElementParser
+from scrapers.parsers.html_elements.table_element_parser import TableElementParser
 from scrapers.parsers.wiki.types import WikiTableData
 
 

@@ -5,8 +5,8 @@ from abc import abstractmethod
 from typing import Generic
 from typing import TypeVar
 
-In = TypeVar("In")
-Out = TypeVar("Out")
+from scrapers.parsers.contracts.constants_contracts import In
+from scrapers.parsers.contracts.constants_contracts import Out
 
 
 class ParserABC(ABC, Generic[In, Out]):
@@ -14,6 +14,3 @@ class ParserABC(ABC, Generic[In, Out]):
 
     @abstractmethod
     def parse(self, raw: In) -> Out: ...
-
-
-__all__ = ["In", "Out", "ParserABC"]

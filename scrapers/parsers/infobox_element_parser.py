@@ -3,7 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from models.data.parsed.html_elements import InfoboxElementData
-from scrapers.parsers.contracts.wiki_infobox_parser_abc import WikiInfoboxParserABC
+from scrapers.parsers.wiki_infobox_parser_abc import WikiInfoboxParserABC
 
 
 class InfoboxElementParser(WikiInfoboxParserABC):

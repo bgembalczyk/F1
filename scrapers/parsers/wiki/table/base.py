@@ -7,11 +7,11 @@ from bs4 import Tag
 
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
-from scrapers.parsers.contracts.constants_mapping_contracts import GroupParsingMixin
-from scrapers.parsers.contracts.constants_mapping_contracts import MatchesMixin
-from scrapers.parsers.contracts.constants_mapping_contracts import RowMappingMixin
-from scrapers.parsers.contracts.constants_mapping_contracts import TableDomainMapperABC
-from scrapers.parsers.contracts.html import TagParserABC
+from scrapers.parsers.contracts.constants_contracts import GroupParsingMixin
+from scrapers.parsers.contracts.constants_contracts import MatchesMixin
+from scrapers.parsers.contracts.constants_contracts import RowMappingMixin
+from scrapers.parsers.contracts.constants_contracts import TableDomainMapperABC
+from scrapers.parsers.contracts.soup_parser_abc import TagParserABC
 
 
 class WikiTableBaseParser(TagParserABC[dict[str, Any]], ABC):

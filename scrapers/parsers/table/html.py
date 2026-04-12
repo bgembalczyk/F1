@@ -8,7 +8,7 @@ from scrapers.constants_table import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.headers_table import normalize_header
 from scrapers.helpers.html_utils import find_section_elements
 from scrapers.mixins.table_row_parsing import TableRowParsingMixin
-from scrapers.parsers.contracts.html import SoupParserABC
+from scrapers.parsers.contracts.soup_parser_abc import SoupParserABC
 from scrapers.row_table import TableRow
 
 logger = logging.getLogger(__name__)

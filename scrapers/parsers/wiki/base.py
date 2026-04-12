@@ -6,10 +6,10 @@ from typing import TypeVar
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.parsers.contracts.base import ParserABC as Parser
+from scrapers.parsers.contracts.parser_abc import ParserABC as Parser
 from scrapers.parsers.input_types import WikiDictFragmentInput
-from scrapers.parsers.contracts.html import TagParserABC
-from scrapers.parsers.contracts.html import SoupParserABC
+from scrapers.parsers.contracts.soup_parser_abc import TagParserABC
+from scrapers.parsers.contracts.soup_parser_abc import SoupParserABC
 
 WikiRecord = dict[str, Any]
 WikiRecords = list[WikiRecord]
