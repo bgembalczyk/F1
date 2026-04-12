@@ -2,9 +2,9 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.non_championships_races_table_mapper import NonChampionshipsRacesTableMapper
+from scrapers.non_championships_races_table_mapper import NonChampionshipsRacesTableMapper
 from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
-from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
 
 
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):

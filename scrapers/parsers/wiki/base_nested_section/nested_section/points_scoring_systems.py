@@ -2,10 +2,10 @@ from typing import Any
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.table.points_helpers import PointsScoringSystemsHistoryTableMapper
-from scrapers.parsers.wiki.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.subsection.special_cases import SpecialCasesSubSectionParser
-from scrapers.parsers.wiki.subsubsection.shortened_races import ShortenedRacesSubSubSectionParser
-from scrapers.parsers.wiki.subsubsection.sprint_races import SprintRacesSubSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.special_cases import SpecialCasesSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.shortened_races import ShortenedRacesSubSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.sprint_races import SprintRacesSubSubSectionParser
 
 
 class PointsScoringSystemsSectionParser(ApplyForElementsMixin, NestedWikiSectionParser):

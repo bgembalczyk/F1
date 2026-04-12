@@ -3,17 +3,17 @@ from typing import Any
 from models.services.season import parse_seasons
 from scrapers.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.helpers.parsing import parse_int_from_text
-from scrapers.parsers.points_constant import SPRINT_DISQUALIFYING_HEADERS
-from scrapers.parsers.points_constant import SPRINT_POSITION_KEYS
-from scrapers.parsers.points_helpers import build_expected_header_lookup
-from scrapers.parsers.points_helpers import normalize_column_name
-from scrapers.parsers.points_helpers import normalize_header
+from scrapers.points_constant import SPRINT_DISQUALIFYING_HEADERS
+from scrapers.points_constant import SPRINT_POSITION_KEYS
+from scrapers.points_helpers import build_expected_header_lookup
+from scrapers.points_helpers import normalize_column_name
+from scrapers.points_helpers import normalize_header
 from scrapers.wiki_table_base_mapper import WikiTableBaseMapper
-from scrapers.parsers.wiki.points_constant import SPRINT_DISQUALIFYING_HEADERS
-from scrapers.parsers.wiki.points_constant import SPRINT_POSITION_KEYS
-from scrapers.parsers.wiki.points_helpers import build_expected_header_lookup
-from scrapers.parsers.wiki.points_helpers import normalize_column_name
-from scrapers.parsers.wiki.points_helpers import normalize_header
+from scrapers.points_constant import SPRINT_DISQUALIFYING_HEADERS
+from scrapers.points_constant import SPRINT_POSITION_KEYS
+from scrapers.points_helpers import build_expected_header_lookup
+from scrapers.points_helpers import normalize_column_name
+from scrapers.points_helpers import normalize_header
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 

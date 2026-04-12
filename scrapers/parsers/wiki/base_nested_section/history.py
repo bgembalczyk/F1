@@ -1,5 +1,5 @@
-from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
-from scrapers.parsers.wiki.engine_regulation_sub_section_parser import EngineRegulationSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.base import BaseNestedSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.engine_regulation import EngineRegulationSubSectionParser
 
 
 class HistorySectionParser(BaseNestedSectionParser):

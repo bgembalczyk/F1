@@ -8,7 +8,7 @@ from scrapers.parsers.registry import resolve_parser_base
 from scrapers.parsers.registry import resolve_parser_name
 from scrapers.parsers.registry import validate_parser_registry
 from scrapers.parsers.element_parser_abc import ListElementParserABC
-from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
+from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
 
 
 def test_validate_parser_registry_rejects_conflicts() -> None:

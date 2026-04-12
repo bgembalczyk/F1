@@ -1,9 +1,9 @@
 import json
 from typing import Any
 
-from scrapers.parsers.wiki.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.subsubsection.non_championships_races import NonChampionshipsRacesSubSectionParser
-from scrapers.parsers.world_championships_races_table_mapper import WorldChampionshipsRacesTableMapper
+from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.non_championships_races import NonChampionshipsRacesSubSectionParser
+from scrapers.world_championships_races_table_mapper import WorldChampionshipsRacesTableMapper
 
 
 class RedFlaggedRacesSectionParser(NestedWikiSectionParser):

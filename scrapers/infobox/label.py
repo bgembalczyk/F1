@@ -12,7 +12,7 @@ from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.callable import CallableInfoboxFieldParser
 from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
 from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
-from scrapers.parsers.numeric_extractor import NumericExtractor
+from scrapers.numeric_extractor import NumericExtractor
 
 
 def field_parsers_registry(

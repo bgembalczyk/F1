@@ -3,7 +3,7 @@ from typing import Any
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.engine_manufacturers_table_mapper import EngineManufacturersTableMapper
 from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.engine_manufacturers_indianapolis_sub_section_parser import EngineManufacturersIndianapolisSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_section.engine_manufacturers_indianapolis import EngineManufacturersIndianapolisSubSectionParser
 
 
 class EngineManufacturersSectionParser(ApplyForElementsMixin, NestedWikiSectionParser):

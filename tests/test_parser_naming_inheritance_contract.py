@@ -215,8 +215,8 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             # Liveries / sponsorship section parsers use a different (soup-based)
             # interface and are governed by their own contracts.
             if class_info.module in {
-                "scrapers.parsers.team_liveries_section",
-                "scrapers.parsers.wiki.sponsorship",
+                "scrapers.parsers.wiki.team_liveries_section",
+                "scrapers.parsers.wiki.section.sponsorship",
             }:
                 continue
             # RecursiveSectionParser is internal infrastructure for the nested-section

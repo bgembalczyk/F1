@@ -17,7 +17,7 @@ from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import (
 from scrapers.parsers.liveries.sponsorship.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
-from scrapers.parsers.sponsorship_table_schema_builder import SponsorshipTableSchemaBuilder
+from scrapers.sponsorship_table_schema_builder import SponsorshipTableSchemaBuilder
 from scrapers.parsers.wiki.section_base import WikiSectionParserBase
 from scrapers.pipeline_table import TablePipeline
 

@@ -6,7 +6,7 @@ from typing import Any
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
-from scrapers.parsers.wiki.sponsorship import SponsorshipSectionParser
+from scrapers.parsers.wiki.section.sponsorship import SponsorshipSectionParser
 
 
 class TeamLiveriesTableAdapter:

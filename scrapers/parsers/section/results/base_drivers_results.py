@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.parsers.section.table.driver_results import DriverResultsSectionParser
-from scrapers.parsers.wiki.base_section_parser import BaseSectionParser
+from scrapers.parsers.wiki.section.base import BaseSectionParser
 from scrapers.section.config.driver_results import DriverResultsSectionConfig
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result

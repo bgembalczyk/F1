@@ -19,7 +19,7 @@ from scrapers.standings_scraper_seasons import F1StandingsScraper
 from scrapers.standings_scraper_seasons import F1StandingsTableParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 from scrapers.parsers.wiki.table import TableParser
-from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_sub_section import WikiElementParserMixin
+from scrapers.parsers.wiki.sub_sub_sub_section import WikiElementParserMixin
 from scrapers.scraper_wiki import WikiScraper
 from tests.support.refactored_base_classes_utils import assert_issubclass_cases
 from tests.support.refactored_base_classes_utils import assert_not_issubclass_cases

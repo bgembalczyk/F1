@@ -1,8 +1,8 @@
 from typing import Any
 
-from scrapers.parsers.wiki.shortened_races_sub_sub_section_parser import ShortenedRacesSubSubSectionParser
-from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_section import SubSubSectionParser
-from scrapers.parsers.wiki.subsubsection.sprint_races import SprintRacesSubSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.shortened_races import ShortenedRacesSubSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser
+from scrapers.parsers.wiki.base_nested_section.sub_sub_section.sprint_races import SprintRacesSubSubSectionParser
 
 
 class SpecialCasesSubSubSectionRouter(SubSubSectionParser):
