@@ -2,8 +2,8 @@ from bs4 import Tag
 
 from models.data.parsed.html_elements import ListElementData
 from scrapers.parsers.element_parser_abc import ListElementParserABC
-from scrapers.parsers.text_cleaning import extract_text
-from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
+from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
+from scrapers.text_cleaning import extract_text
 
 
 class ListElementParser(WikiListParserABC, ListElementParserABC[ListElementData]):

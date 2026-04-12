@@ -5,9 +5,16 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text import clean_wiki_text
+from scrapers.parsers.article_tables_parser_abc import ArticleTablesParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
+from scrapers.parsers.lap_records_wiki_table_mapper import LapRecordsWikiTableMapper
+from scrapers.parsers.mapped_wiki_table_mapper import MappedWikiTableMapper
+from scrapers.parsers.race_results_table_mapper import RaceResultsTableMapper
+from scrapers.parsers.standings_table_mapper import StandingsTableMapper
+from scrapers.parsers.wiki.table_element_base import WikiTableElementParserBase
+
 from scrapers.parsers.wiki.table.mapped.lap_records_wiki_table_mapper import LapRecordsWikiTableMapper
 from scrapers.parsers.wiki.table.mapped.mapped_wiki_table_mapper import MappedWikiTableMapper
 from scrapers.parsers.wiki.table.mapped.race_results_table_mapper import RaceResultsTableMapper

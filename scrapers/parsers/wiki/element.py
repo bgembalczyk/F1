@@ -11,9 +11,10 @@ from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.rules import ParserRule
+from scrapers.parsers.wiki.element_registry import ElementRegistry
+from scrapers.parsers.wiki.element_set import WikiElementSet
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
-from scrapers.parsers.wiki.base import WikiListParser
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.wiki.paragraph import WikiParagraphParser
@@ -36,25 +37,6 @@ class WikiElementSet:
         return self.references_parser if self.references_parser is not None else self.references_wrap_parser
 
 
-@dataclass(frozen=True)
-class ElementRegistry:
-    rules: tuple[ParserRule, ...]
-
-    @staticmethod
-    def _get_classes(el: Tag) -> list[str]:
-        classes = el.get("class") or []
-        if isinstance(classes, str):
-            return classes.split()
-        return list(classes)
-
-    def resolve(
-        self,
-        element: Tag,
-    ) -> tuple[str, Callable[[Tag], WikiParserData]] | None:
-        for rule in self.rules:
-            if rule.predicate(element):
-                return rule.result_type, rule.parser
-        return None
 
 
 def build_wikipedia_element_registry(

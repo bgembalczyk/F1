@@ -11,7 +11,7 @@ from scrapers.columns.types.tyre import TyreColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.parsers.section.adapt import collect_section_elements
 from scrapers.parsers.section.adapt import find_section_tree
-from scrapers.parsers.wiki.body_content import BodyContentAssembler
+from scrapers.parsers.wiki.body_content_assembler import BodyContentAssembler
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
 from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from scrapers.table_schema_dsl import TableSchemaDSL

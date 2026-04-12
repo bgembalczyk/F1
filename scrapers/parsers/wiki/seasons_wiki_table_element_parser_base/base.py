@@ -4,7 +4,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.wiki.base import WikiTableElementParserBase
+from scrapers.parsers.wiki.table_element_base import WikiTableElementParserBase
 
 
 class BaseSeasonParser(WikiTableElementParserBase, ABC):

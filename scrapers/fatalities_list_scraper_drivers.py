@@ -32,7 +32,7 @@ from scrapers.helpers.date_parsing import parse_formula_category
 from scrapers.helpers.normalize import normalize_auto_value
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.base_ordered import DriverOrderedTableMapper
+from scrapers.parsers.wiki.driver_ordered_table_mapper import DriverOrderedTableMapper
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser

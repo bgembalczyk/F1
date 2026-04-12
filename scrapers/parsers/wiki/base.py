@@ -31,36 +31,18 @@ class WikiParser(
     """
 
 
-class WikiSectionParserBase(SoupParserABC[WikiRecords], ABC):
-    """Kontrakt parserów sekcji artykułów Wikipedii."""
 
 
-class WikiTableElementParserBase(SoupParserABC[WikiRecords], ABC):
-    """Kontrakt parserów tabel Wikipedii."""
 
 
-class WikiListParser(TagParserABC[WikiRecords], ABC):
-    """Kontrakt parserów list Wikipedii (np. <ul>/<ol>)."""
 
 
-class WikiTagParser(TagParserABC[TWikiOutput], ABC, Generic[TWikiOutput]):
-    """Kontrakt parserów pojedynczych tagów HTML Wikipedii."""
 
 
-WikiFragmentParser = WikiParser[WikiDictFragmentInput, TWikiOutput]
-
-# ``ListParser`` is the canonical concrete name for the wiki list parser.
-ListParser = ListElementParser
 
 
 __all__ = [
-    "ListParser",
-    "WikiFragmentParser",
-    "WikiListParser",
     "WikiParser",
     "WikiRecord",
     "WikiRecords",
-    "WikiSectionParserBase",
-    "WikiTableElementParserBase",
-    "WikiTagParser",
 ]

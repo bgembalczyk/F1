@@ -5,7 +5,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.parsers.wiki.base import WikiParser
-from scrapers.parsers.wiki.body_content import BodyContentAssembler
+from scrapers.parsers.wiki.body_content_assembler import BodyContentAssembler
 from scrapers.parsers.wiki.category_links import CategoryLinksParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
 from scrapers.parsers.wiki.figure import WikiFigureParser

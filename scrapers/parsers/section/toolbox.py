@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 from scrapers.parsers.section.assembler import SectionAssembler
 from scrapers.parsers.section.locator import SectionLocator
-from scrapers.parsers.wiki.domain_mapper import WikiMapperRegistry
-from scrapers.parsers.wiki.domain_mapper import build_default_mapper_registry
+from scrapers.parsers.wiki.domain_mapper_helpers import WikiMapperRegistry
+from scrapers.parsers.wiki.domain_mapper_helpers import build_default_mapper_registry
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
