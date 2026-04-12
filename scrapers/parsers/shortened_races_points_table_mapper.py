@@ -5,7 +5,7 @@ from scrapers.constants_points import SHORTENED_RACE_EXPECTED_HEADERS
 from scrapers.parsers.wiki.points_helpers import build_expected_header_lookup
 from scrapers.parsers.wiki.points_helpers import normalize_column_name
 from scrapers.parsers.wiki.points_helpers import normalize_header
-from scrapers.parsers.wiki_table_base_mapper import WikiTableBaseMapper
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 
 class ShortenedRacesPointsTableMapper(WikiTableBaseMapper):

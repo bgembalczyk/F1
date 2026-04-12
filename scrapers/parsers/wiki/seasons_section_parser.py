@@ -1,10 +1,12 @@
 from typing import Any
 
 from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from scrapers.parsers.seasons_table_mapper import SeasonsTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 
 
 class SeasonsSectionParser(NestedWikiSectionParser):
@@ -47,3 +49,18 @@ class SeasonsSectionParser(NestedWikiSectionParser):
             parsed = self._table_mapper.map(data)
             if parsed is not None:
                 element["data"] = parsed
+
+
+class SeasonsTableParser(WikiTableHtmlParser):
+    """Concrete parser for seasons list wikitable HTML.
+
+    Parses ``<table class="wikitable">`` elements from the F1 seasons list
+    article and returns structured table data.  Domain-level mapping is
+    handled separately by :class:`~scrapers.parsers.seasons_table_mapper.SeasonsTableMapper`.
+    """
+
+    def parse(self, element: Tag) -> dict[str, Any]:  # type: ignore[override]
+        return super().parse(element)
+
+
+__all__ = ["SeasonsSectionParser", "SeasonsTableParser"]
