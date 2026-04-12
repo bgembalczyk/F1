@@ -204,6 +204,8 @@ class SeasonTableParsingService:
         url: str,
     ) -> None:
         self._options = options
+        self._url = url
+        self._include_urls = include_urls
         self._standings_parser = SeasonStandingsWikiTableParser(
             options=options,
             include_urls=include_urls,
@@ -225,6 +227,14 @@ class SeasonTableParsingService:
         return self._options
 
     @property
+    def url(self) -> str:
+        return self._url
+
+    @property
+    def include_urls(self) -> bool:
+        return self._include_urls
+
+    @property
     def standings_parser(self) -> SeasonStandingsWikiTableParser:
         return self._standings_parser
 
@@ -237,6 +247,7 @@ class SeasonTableParsingService:
         return self._table_payload_mapper
 
     def update_url(self, url: str) -> None:
+        self._url = url
         self._standings_parser.update_url(url)
         self._wiki_table_parser.update_url(url)
         self._table_payload_mapper.update_url(url)
