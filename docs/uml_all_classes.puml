@@ -7,32 +7,39 @@ skinparam classAttributeIconSize 0
 hide members
 hide circle
 
-title F1 Project - Diagram wszystkich klas
+title F1 Project - Aktualny schemat dziedziczenia wszystkich klas
 
 package "Complete Extractor" {
-    class AttachDetailsStrategy
-    class BundleRecordWithDetailsStrategy
+    abstract class BaseDataExtractor
+    class CompleteConstructorsDataExtractor
+    class CompleteDriverDataExtractor
     class CompleteExtractorBase
     class CompleteExtractorDomainConfig
-    class ExtractDetailFieldStrategy
-    class RecordAssemblyStrategy
+    class CompleteSeasonDataExtractor
+    class CompositeDataExtractor
+    class CompositeDataExtractorChildren
+    class F1CompleteCircuitDataExtractor
+    class F1CompleteEngineManufacturerDataExtractor
+    class F1CompleteGrandPrixDataExtractor
+    abstract class ListScraperProtocol
+    class SchemaCompositeRecordValidator
+    abstract class SingleScraperProtocol
 }
 
 package "Config" {
     class AppConfig
     class AppConfigProvider
-    class AppPaths
     class GeminiAppConfig
     class HttpAppConfig
 }
 
 package "Infrastructure" {
-    class BaseHttpClient
+    abstract class BaseHttpClient
     class DefaultHttpPolicyFactory
     class DefaultRetryPolicy
     class FileCache
     class FileTtlCache
-    class FileTtlCacheAdapter
+    abstract class FileTtlCacheAdapter
     class GeminiCache
     class GeminiCacheService
     class GeminiClient
@@ -44,25 +51,25 @@ package "Infrastructure" {
     class HTTPTimeoutError
     class HeaderResolver
     class HttpClientConfig
-    class HttpClientProtocol
+    abstract class HttpClientProtocol
     class HttpPolicy
     class HttpResponseFileCacheAdapter
-    class HttpResponseProtocol
+    abstract class HttpResponseProtocol
     class HttpShimError
     class HttpShimErrorResponseAdapter
     class MinDelayRateLimiter
     class ModelConfig
     class ModelSelector
     class ModelState
-    class RateLimiter
+    abstract class RateLimiter
     class RequestError
     class RequestExecutor
     class Response
     class ResponseCacheService
-    class RetryPolicy
+    abstract class RetryPolicy
     class Session
-    class SessionProtocol
-    class TextCacheProtocol
+    abstract class SessionProtocol
+    abstract class TextCacheProtocol
     class UrllibHttpClient
     class WikipediaCachePolicy
 }
@@ -74,73 +81,68 @@ package "Layers" {
     class ConstructorsMirrorService
     class DefaultLayerZeroRunConfigFactory
     class DomainPipelineConfig
-    class DriverRecordModel
-    class DriverSeriesStats
-    class EngineRecordModel
     class FunctionExportRunner
     class GrandPrixRunner
-    class LayerExecutorProtocol
-    class LayerJobRunner
+    abstract class LayerExecutorProtocol
+    abstract class LayerJobRunner
     class LayerOneExecutor
-    class LayerOneRunnerProtocol
+    abstract class LayerOneRunnerProtocol
     class LayerZeroExecutor
-    class LayerZeroJobHook
+    abstract class LayerZeroJobHook
     class LayerZeroMergeService
-    class LayerZeroMergeServiceProtocol
-    class LayerZeroRunConfigFactory
-    class LayerZeroRunConfigFactoryProtocol
-    class LinkValue
+    abstract class LayerZeroMergeServiceProtocol
+    abstract class LayerZeroRunConfigFactory
+    abstract class LayerZeroRunConfigFactoryProtocol
     class ListJobRegistryEntry
-    class MergeModel
+    abstract class MergeModel
     class MirrorConstructorsJobHook
     class MirrorToDomainByFilenameJobHook
     class NullLayerZeroJobHook
-    class PathResolver
-    class RaceRecordModel
     class RawRegistrySpec
     class RegistryValidationRule
     class RegistryValidationSpec
     class RunnerMetadata
-    class SeasonRecordModel
+    class RuntimeComponentFactory
+    class RuntimeComponentKey
     class SeedRegistryEntry
     class SponsorshipLiveriesRunConfigFactory
     class StaticScraperKwargsFactory
-    class TeamRecordModel
-    class WikiPipelineApplication
-    class WikiPipelineComponents
-    class WikiPipelineComponentsFactory
-    class WikiPipelineFacade
+    class StepRegistryEntry
 }
 
 package "Models" {
     class BaseRecordFactory
     class CarRecord
     class CarRecordFactory
+    class CategoryGroup
+    class CategoryLinkItem
     class Circuit
     class CircuitBaseRecord
     class CircuitCompleteRecord
-    class CircuitContract
     class CircuitDetailsRecord
-    class CircuitRecord
     class CircuitRecordFactory
-    class ConstructorRecord
+    class CircuitSummaryRecord
     class ConstructorRecordFactory
-    class DataContract
+    class ConstructorSummaryRecord
     class DateValue
-    class DriverContract
-    class DriverRecord
     class DriverRecordFactory
+    class DriverRecordModel
+    class DriverSeriesStats
+    class DriverSummaryRecord
     class DriversChampionships
     class DriversChampionshipsRecord
     class DriversChampionshipsRecordFactory
     class EngineManufacturer
     class EngineManufacturerRecord
     class EngineManufacturerRecordFactory
+    class EngineRecordModel
     class EngineRegulation
     class EngineRestriction
     class EntityName
     class EventRecord
     class EventRecordFactory
+    class ExtractedCategoryGroup
+    class ExtractedCategoryLink
     class FactoryRegistryError
     class FactoryRegistryProvider
     class FactorySpec
@@ -149,93 +151,278 @@ package "Models" {
     class FieldNormalizer
     class GrandsPrixRecord
     class GrandsPrixRecordFactory
+    class HasLink
+    class HasLinkRecord
+    class HasLocation
+    class HasLocationRecord
+    class HasSeasons
+    class HasSeasonsRecord
+    class HasStats
+    class HasStatsRecord
+    class HasStatus
+    class HasStatusRecord
+    class LapRecord
     class Link
+    abstract class LinkNormalizationMixin
     class LinkRecord
+    class LinkValue
+    abstract class LocationNormalizationMixin
+    class MappingRecordFactory
     class NormalizedDate
+    class NormalizedTime
     class PointsContract
+    class RaceRecordModel
+    abstract class RecordBuilder
     class RecordBuilders
-    class RecordContract
+    abstract class RecordContract
     class RecordDefinition
-    class RecordFactoryProtocol
     class RecordType
     class Rounds
+    abstract class SeasonNormalizationMixin
     class SeasonRecord
     class SeasonRecordFactory
+    class SeasonRecordModel
     class SeasonRef
     class SeasonSummaryRecord
     class SeasonSummaryRecordFactory
     class SeasonYear
     class SectionId
-    class SerializableProtocol
-    class SerializerProtocol
+    abstract class SerializableProtocol
+    abstract class SerializerProtocol
     class SpecialDriverRecord
     class SpecialDriverRecordFactory
+    abstract class StatusNormalizationMixin
+    class TeamRecordModel
+    class UnitValue
     class ValidatedModel
-    class ValueObject
+    abstract class ValueObject
+    class WikiParsedPayload
     class WikiUrl
 }
 
-package "Scrapers (root)" {
-    class DataPaths
-    class DeprecatedModuleEntry
-    class ModuleDefinition
-}
-
-package "Scrapers / Base" {
-    class ABCScraper
+package "Scrapers" {
+    abstract class ABCScraper
+    class ActiveYearsParser
     class AllInfoboxTablesExtractor
-    class ApplyForElementsMixin
+    class AppendLinksColumn
+    abstract class ApplyForElementsMixin
+    abstract class ArticleHtmlParserABC
+    abstract class ArticleScraperBase
+    class ArticleSectionTablesHtmlParser
+    class ArticleTablesAssembler
+    abstract class ArticleTablesAssemblerABC
+    class ArticleTablesParser
+    abstract class ArticleTablesParserABC
     class AuditEntry
     class AutoColumn
-    class BackgroundMixin
-    class BaseColumn
+    abstract class BackgroundMixin
+    abstract class BaseColumn
+    class BaseComponent
     class BaseConstructorColumn
-    class BaseDataExtractor
-    class BaseInfoboxExtractionService
+    class BaseConstructorListScraper
+    class BaseDomainPipelineService
+    class BaseDriverResultsSectionParser
+    abstract class BaseEngineTableScraper
+    class BaseExtractor
+    abstract class BaseHtmlElementParser
+    abstract class BaseHtmlSectionParser
+    class BaseInfoboxExtractor
+    abstract class BaseInfoboxOrchestrator
+    class BaseNormalizer
+    class BaseOrchestrationFlow
+    class BaseOrchestrator
+    class BaseParsingStage
+    class BasePointsScraper
     class BaseRecordAssembler
     class BaseRecordAssemblerInput
-    class BaseSectionExtractionService
+    class BaseRedFlaggedRacesTableMapper
+    abstract class BaseScraperCore
+    abstract class BaseSeasonParser
+    abstract class BaseSectionExtractionService
+    class BaseSectionParser
+    class BestFinishParser
+    class BodyContentAdapter
+    class BodyContentAssembler
+    class BodyContentParts
     class BoolColumn
     class BrListColumn
+    class BroaderScopeSplitter
+    class ByRaceTitleSubSectionParser
     class CacheAdapter
     class CacheOptions
+    class CalendarCircuitColumn
+    class CallableInfoboxFieldParser
     class CallableRecordFactoryAdapter
+    class CancelledRoundsParser
+    class CarNumbersParser
+    class CategoryLinksExtractor
+    class CategoryLinksParser
+    class ChampionshipsParser
+    abstract class CheckpointIOWithFallbackMixin
     class CheckpointMetadata
     class CheckpointMetrics
     class CheckpointPayload
+    class CircuitAdditionalInfoExtractor
+    class CircuitDomainRecordInput
+    class CircuitEntitiesOrchestrator
+    class CircuitEntityExtractor
+    class CircuitEventsSectionParser
+    class CircuitEventsTableRecordMapper
+    class CircuitGeoExtractor
+    class CircuitHistoryExtractor
+    class CircuitInfoboxExtractor
+    class CircuitInfoboxOrchestrator
+    class CircuitInfoboxParser
+    class CircuitLapRecordExtractor
+    class CircuitLapRecordsExtractionService
+    class CircuitLapRecordsSectionParser
+    class CircuitLapRecordsTableClassifier
+    class CircuitLapRecordsTableRecordMapper
+    class CircuitLayoutHistorySectionParser
+    class CircuitLayoutsExtractor
+    class CircuitNameStatusColumn
+    class CircuitPipelineService
+    class CircuitRecordAssembler
+    class CircuitRecordDTO
+    class CircuitScraperCompositionFactory
+    class CircuitScraperDependencies
+    class CircuitSectionExtractionService
+    class CircuitService
+    class CircuitSpecsExtractor
+    class CircuitTextProcessing
+    class CircuitsDetailScraper
+    class CircuitsListScraper
+    class CircuitsListSectionParser
+    class CircuitsListTableMapper
+    class CircuitsRecordValidator
+    class ClassifiedDNFRule
+    abstract class ClassifierABC
+    class ColinChapmanTrophyParser
+    class CollapsibleTableParser
+    class ColourListColumn
+    class ColourScopeHandler
     class ColumnContext
     class ColumnFactory
     class ColumnRef
     class ColumnSpec
     class CommonMetadataPostProcessor
     class CompactStepDiffWriter
-    class CompositeDataExtractor
-    class CompositeDataExtractorChildren
+    class ComponentMetadata
     class ConfigurableSectionServiceFactory
+    class ConstructorChampionshipResultsSectionParser
+    class ConstructorColumn
+    class ConstructorCompleteF1ResultsSectionParser
+    class ConstructorDomainRecordInput
+    class ConstructorHistorySectionParser
+    class ConstructorInfoboxOrchestrator
     class ConstructorIntrospection
+    class ConstructorNameColumn
     class ConstructorParsingHelpers
     class ConstructorPartColumn
+    abstract class ConstructorPartParserABC
+    class ConstructorPipelineService
+    class ConstructorRecordAssembler
+    class ConstructorRecordDTO
+    class ConstructorScraperCompositionFactory
+    class ConstructorScraperDependencies
+    class ConstructorSectionExtractionService
+    class ConstructorSplitColumn
+    class ConstructorTableExtractionService
+    class ConstructorTablesSectionParser
+    class ConstructorsDetailScraper
+    class ConstructorsListScraper
+    class ConstructorsSectionParser
+    class ContentTextParser
     class CriticalSection
     class CsvFormatter
+    class CurrentConstructorsSectionParser
+    class CurrentConstructorsTableMapper
+    class CurrentRulesSectionParser
     class CurrentYearOutputPathRenderer
-    class DataExporter
-    class DataFrameFormatterProtocol
+    abstract class DataFrameFormatterABC
+    class DataPaths
     class DateColumn
-    class DeclarativeSectionTableParseMixin
+    class DateRangeColumn
+    abstract class DeclarativeSectionTableParseMixin
+    class DeduplicateRecordStrategy
+    class DefaultDriverInfoboxProvider
+    class DeprecatedModuleEntry
+    class DepthAwareColourSplitter
+    class DetailByDriverSubSectionParser
+    class DiscoveredComponent
+    abstract class DiscoveredListScraperClassABC
+    abstract class DiscoveredRunnerABC
+    abstract class DiscoveredRunnerClassABC
+    abstract class DomainArticleScraperBase
     class DomainEntrypointConfig
+    abstract class DomainMapperABC
     class DomainParseError
+    class DomainParsingPolicy
+    abstract class DomainPipelineService
+    class DomainSeedExtractor
+    class DomainSeedNormalizer
+    class DomainStageOrchestrator
+    class DoublePointsRoundRule
     class DriverColumn
+    class DriverDomainRecordInput
+    class DriverInfoboxBundle
+    class DriverInfoboxOrchestrator
+    class DriverInfoboxParser
+    abstract class DriverInfoboxProviderABC
     class DriverListColumn
+    class DriverNameStatusColumn
+    class DriverOrderedTableMapper
     class DriverParsingHelpers
+    class DriverPipelineService
+    class DriverRecordAssembler
+    class DriverRecordDTO
+    class DriverResultsSchemaFactory
+    class DriverResultsSectionConfig
+    class DriverResultsSectionParser
+    class DriverResultsSectionTableClassifier
+    class DriverResultsTableClassifier
+    class DriverResultsTableRecordMapper
+    class DriverScraperCompositionFactory
+    class DriverScraperDependencies
+    class DriverSectionExtractionService
     class DriversChampionshipsTransformer
+    class DriversCheckpointFlow
+    class DriversListSectionParser
+    class DriversListTableMapper
+    class DriversRecordValidator
+    class DriversSectionParser
+    class DriversSeedNormalizer
+    class DriversWithRoundsColumn
+    class ElementDispatcher
+    class ElementParseInput
+    class ElementParseResult
+    class ElementPayloadFactory
+    class ElementRegistration
+    class ElementRegistry
     class EmptyValuePolicy
     class EngineColumn
+    class EngineConfigurationColumn
     class EngineLinkHelpers
+    class EngineManufacturerNameStatusColumn
+    class EngineManufacturersIndianapolisSubSectionParser
+    class EngineManufacturersListScraper
+    class EngineManufacturersSectionParser
+    class EngineManufacturersTableMapper
     class EngineParsingHelpers
+    class EngineRegulationScraper
+    class EngineRegulationSubSectionParser
+    class EngineRegulationTableMapper
+    class EngineRestrictionsScraper
+    class EngineRestrictionsTableMapper
+    class EngineRpmLimitColumn
+    class EngineSubSectionParser
     class EngineTextHelpers
     class EntityColumnSpec
     class EntrantColumn
-    class EnumMarksMixin
+    class EntriesStartsColumn
+    class EntriesStartsPointsPostProcessor
+    class EntryMerger
+    abstract class EnumMarksMixin
     class ErrorBehavior
     class ErrorCategory
     class ErrorCodeDefinition
@@ -243,115 +430,273 @@ package "Scrapers / Base" {
     class ErrorPolicy
     class ErrorReport
     class ExecutedStep
-    class ExportMetadata
-    class ExportService
-    class ExportableRecord
-    class ExporterProtocol
-    class ExtractListItemsMixin
-    class F1ListScraper
-    class F1TableScraper
+    abstract class ExportCapability
+    class ExportCapabilityService
+    abstract class ExportableRecord
+    abstract class ExtractListItemsMixin
+    abstract class Extractor
+    class F1DriversListScraper
+    class F1FatalitiesListScraper
+    class F1SingleCircuitScraper
+    class F1SingleGrandPrixScraper
+    class F1SponsorshipLiveriesScraper
+    class F1StandingsScraper
+    class F1StandingsTableParser
+    abstract class F1TableScraper
+    class F2EligibilityRule
+    abstract class Factory
     class FailedToMakeRestartTransformer
+    class FatalAccidentRule
     class FatalitiesCarTransformer
-    class FieldnamesStrategyProtocol
+    class FatalitiesSectionParser
+    class FatalitiesTableMapper
+    class FatalityDateColumn
+    class FatalityEventColumn
+    class FemaleDriversListScraper
+    class FemaleDriversTableMapper
+    abstract class FetchCapability
+    abstract class FetchOrchestrationMixin
+    abstract class FieldnamesStrategyABC
     class FieldnamesStrategySelector
+    class FigureElementParser
+    abstract class FigureHtmlParserABC
+    class FinishedSeasonParser
     class FirstInfoboxTableExtractor
+    class FirstPlaceColumn
+    class FormerConstructorsSectionParser
+    class FormerConstructorsTableMapper
+    class FuelFlowRateColumn
+    class FuelInjectionPressureLimitColumn
+    class FuelLimitPerRaceColumn
     class FuncColumn
+    class GenericIndianapolisOnlySubSectionParser
+    class GrandPrixByYearRecordAssembler
+    class GrandPrixByYearRecordInput
+    class GrandPrixByYearRecordMapper
+    class GrandPrixByYearSectionParser
+    class GrandPrixChampionshipResolver
+    class GrandPrixScopeAccumulator
+    class GrandPrixScopeTransformer
+    class GrandPrixSplitStrategy
+    class GrandsPrixFactory
+    class GrandsPrixListScraper
+    class GrandsPrixPipelineService
+    class GrandsPrixRecordValidator
+    class GrandsPrixTableMapper
+    abstract class GroupParsingMixin
+    class HalfPointsRoundRule
+    class HasMultipleSeasonsRule
+    class HasPossessiveColoursRule
+    abstract class HasTableMapperABC
+    abstract class HasTableParserABC
+    class HasYearSpecificColoursRule
+    class HasYearSpecificSponsorsRule
+    abstract class HeaderNormalizationMixin
+    class HeaderParser
+    class HistorySectionParser
+    class HtmlElementAdapterSet
+    class HtmlElementBuilder
+    abstract class HtmlElementParserABC
     class HtmlFetcher
-    class HtmlRowBackgroundColorAdapter
+    abstract class HtmlInfoboxFieldParser
+    abstract class HtmlSoupParserABC
     class HtmlTableParser
+    abstract class HtmlTagParserABC
     class HttpOptions
+    class IdentityDomainMapper
     class IdentityOutputPathRenderer
+    class IdentitySectionTableRecordMapper
+    class IndianapolisConstructorsListParser
     class IndianapolisOnlyListConfig
+    class IndianapolisOnlyListParser
     class IndianapolisOnlyListScraper
-    class IndianapolisOnlyMixin
+    abstract class IndianapolisOnlyMixin
+    class InfoboxCareerParser
+    abstract class InfoboxCellParserABC
+    class InfoboxCellValueExtractor
+    abstract class InfoboxCollapsibleTableParserABC
+    class InfoboxElementParser
     class InfoboxExtractionResult
-    class InfoboxExtractionService
-    class InfoboxExtractor
+    abstract class InfoboxExtractorABC
     class InfoboxFieldMapper
+    class InfoboxFieldRegistry
     class InfoboxFieldSpec
-    class InfoboxHtmlParser
+    class InfoboxGeneralExtractor
+    abstract class InfoboxHtmlFieldParserABC
+    abstract class InfoboxHtmlParserABC
+    class InfoboxLinkExtractor
+    abstract class InfoboxNestedTableParserABC
+    abstract class InfoboxOrchestratorABC
+    abstract class InfoboxParserABC
     class InfoboxPayloadDTO
     class InfoboxRecordInput
     class InfoboxRecordMapper
+    abstract class InfoboxRowsParser
+    abstract class InfoboxRowsParserABC
     class InfoboxSchema
     class InfoboxSchemaDSL
     class InfoboxSchemaField
+    class InfoboxSectionCollector
+    abstract class InfoboxSectionDiscoveryABC
+    abstract class InfoboxSectionParser
+    class InfoboxTableParser
+    class InfoboxTextUtils
+    class InfoboxTitlesParser
     class IterableSourceAdapter
+    class JimClarkTrophyParser
     class JsonFormatter
     class JsonLinesFormatter
-    class LapRecord
     class LapRecordsTableScraper
+    class LapRecordsWikiTableMapper
+    class LastLengthUsedColumn
     class LayoutTableRecordMapper
     class LayoutTableRowsInput
     class LazyScraperClassProxy
-    class LegacyScraperAdapter
+    class LazyScraperFactory
+    class LicenceParser
     class LinksListColumn
     class ListColumn
-    class ListScraperProtocol
-    class MappingRecordFactory
+    class ListElementParser
+    abstract class ListHtmlParserABC
+    abstract class ListScraper
+    abstract class ListScraperConfigABC
+    abstract class ListScraperContract
+    abstract class ListSectionParser
+    class LocatedSection
+    class LocationColumn
+    class ManufacturersSectionParser
+    class MappedWikiTableMapper
+    abstract class MapperABC
+    class MarkBasedEligibilityRule
+    abstract class MatchesMixin
+    abstract class MetadataBindingMixin
     class MetricColumnSpec
     class MissingSectionError
+    class ModuleDefinition
+    class ModuleNamingAlias
     class MultiColumn
     class MultiIterableSourceAdapter
     class MultiLevelHeaderBuilder
-    class NameStatusColumn
+    abstract class NameStatusColumn
+    class NationalityParser
+    class NavboxElementParser
+    abstract class NavboxHtmlParserABC
+    abstract class NestedChildParser
+    abstract class NestedSectionHandlingMixin
+    class NestedTextColumn
+    class NestedUnitListColumn
+    class NestedWikiSectionParser
     class NoOpProgressAdapter
-    class NormalizationPlugin
+    class NonChampionshipsRacesSubSectionParser
+    class NonChampionshipsRacesTableMapper
+    abstract class NormalizationPlugin
     class NormalizeLinksTransformer
-    class NormalizedTime
+    class NumericExtractor
+    class OfficialDriversSubSectionParser
     class OptionsScraperAdapter
     class OrchestrationPaths
-    class OutputPathRenderer
+    abstract class OutputPathRenderer
     class PandasDataFrameFormatter
+    class ParagraphElementParser
+    abstract class ParagraphHtmlParserABC
+    class ParenClassifier
+    abstract class ParseGroupMixin
+    class ParseMetadata
+    class ParseResult
+    abstract class ParsedRecordsMixin
     class ParsedValueColumn
+    abstract class ParserABC
+    abstract class ParsingBundle
+    abstract class ParsingBundleProviderABC
+    class ParsingRegistryEntry
+    class ParsingRegistryKey
+    class ParsingRule
+    class PassthroughElementClassifier
+    class PassthroughSectionTableClassifier
     class PipelineError
     class PipelineIssue
     class PipelineOptions
     class PipelineOrchestrator
     class PipelineProfile
-    class PipelineStage
+    class PipelineRecord
+    abstract class PipelineService
+    abstract class PipelineStageABC
     class PipelineStep
     class PointsColumn
+    class PointsOrTextColumn
+    class PointsScoringSystemsHistoryTableMapper
     class PointsScoringSystemsHistoryTransformer
+    class PointsScoringSystemsSectionParser
+    class PointsScraper
     class PositionColumn
+    class PossessiveDriverColourSplitStrategy
+    class PrivateerTeamsListParser
+    class PrivateerTeamsSectionParser
     class ProfileResolver
-    class ProgressAdapter
+    abstract class ProgressAdapter
+    abstract class QualityMetricsMixin
     class QualityReportService
     class QualityReporter
+    class RaceEventParser
+    class RaceResultBackgroundMapper
+    class RaceResultCellTransformer
+    class RaceResultColumn
+    class RaceResultsTableMapper
+    class RaceTitleStatusColumn
+    class RacesSectionParser
     class RangeColumn
-    class RecordAssemblerProtocol
-    class RecordFactory
+    abstract class RecordAssemblerProtocol
     class RecordFactoryAdapters
     class RecordFactoryTransformer
     class RecordNormalizer
-    class RecordPostProcessor
-    class RecordTransformer
+    abstract class RecordPostProcessor
+    class RecordSplitPipeline
+    abstract class RecordSplitStrategy
+    abstract class RecordTransformer
+    class RecursiveSectionParser
+    class RedFlaggedRacesBaseScraper
+    class RedFlaggedRacesScraper
+    class RedFlaggedRacesSectionParser
+    abstract class ReferencesElementParserABC
+    class ReferencesWrapParser
     class RegexColumn
+    class ReportingCapabilityService
     class ResolvedInput
     class RestartStatusColumn
     class ResultExportService
+    abstract class ResultRule
+    class ResultRuleContext
     class ResultTabularAdapter
     class ResultsParsingHelpers
+    class RoundColumn
+    abstract class RoundRule
+    class RoundRuleContext
+    abstract class RowMappingMixin
+    class Rule
+    class RuleContext
     class RunConfig
     class RunConfigOptionsMapper
+    abstract class RunDiagnosticsMixin
     class RunPathConfig
     class RunPathName
     class RunProfileName
     class RunProfileSpec
     class RunTraceWriter
     class RuntimeComponents
+    class RuntimeConfig
     class RuntimeInitializer
-    class SafeParserMixin
-    class SchemaCompositeRecordValidator
+    abstract class SafeParsingMixin
     class ScrapeResult
     class ScrapeResultNormalizer
+    abstract class Scraper
     class ScraperCommonConfig
-    class ScraperConfig
-    class ScraperCreationAdapter
+    abstract class ScraperCreationAdapter
     class ScraperCreationContext
     class ScraperError
     class ScraperErrorPayload
     class ScraperFactory
+    abstract class ScraperLifecycleABC
+    abstract class ScraperLifecycleProtocol
     class ScraperNetworkError
     class ScraperNotFoundError
     class ScraperOptions
@@ -363,301 +708,22 @@ package "Scrapers / Base" {
     class ScraperRuntime
     class ScraperRuntimeFactory
     class ScraperValidationError
-    class SeasonsColumn
-    class SectionAdapter
-    class SectionAdapterEntry
-    class SectionExtractionServiceProtocol
-    class SectionIdResolver
-    class SectionParseResult
-    class SectionRecordInput
-    class SectionRecordMapper
-    class SectionResolution
-    class SectionSelectionStrategy
-    class SectionServiceFactory
-    class SectionSourceAdapter
-    class SectionTableParseMixin
-    class SectionTableParserBase
-    class SectionsPayloadDTO
-    class SeedListTableScraper
-    class ShortenedRacePointsTransformer
-    class SingleScraperProtocol
-    class SingleWikiArticleScraperBase
-    class SingleWikiArticleSectionAdapterBase
-    class SingleWikiArticleSectionByIdBase
-    class SkipColumn
-    class SoupParser
-    class SourceAdapter
-    class SourceParseError
-    class SourceRef
-    class StageCheckpointDumper
-    class StageEnvelope
-    class StepDeclaration
-    class StrategyInfoboxExtractionService
-    class TableExtractor
-    class TableParsingHelper
-    class TablePipeline
-    class TablePipelineDebugContext
-    class TableRecordInput
-    class TableRecordMapper
-    class TableRow
-    class TableSchema
-    class TableSchemaBuilder
-    class TableSchemaDSL
-    class TableSectionParser
-    class TablesPayloadDTO
-    class TextColumn
-    class TimeColumn
-    class TimeRangeColumn
-    class TqdmProgressAdapter
-    class TransformersPipeline
-    class TransportError
-    class TyreColumn
-    class UnitColumn
-    class UnitValue
-    class UrlColumn
-    class ValidatingSectionServiceFactory
-    class ValidationError
-    class ValidationRunner
-    class ValueNormalizationPipeline
-    class WikipediaInfoboxScraper
-    class WikipediaSectionByIdSelectionStrategy
-    class YearExtractor
-    class YearPlaceholderOutputPathRenderer
-    class _ConstructorPartParser
-    class _DomainEntrypointSpec
-    class _HasTableParser
-    class _SourceAdapterFetcherShim
-}
-
-package "Scrapers / Circuits" {
-    class CircuitAdditionalInfoParser
-    class CircuitEntitiesParser
-    class CircuitEntityParser
-    class CircuitEventsSectionParser
-    class CircuitGeoParser
-    class CircuitHistoryParser
-    class CircuitInfoboxExtractionService
-    class CircuitInfoboxExtractor
-    class CircuitLapRecordParser
-    class CircuitLapRecordsSectionParser
-    class CircuitLayoutHistorySectionParser
-    class CircuitLayoutsParser
-    class CircuitNameStatusColumn
-    class CircuitRecordAssembler
-    class CircuitRecordDTO
-    class CircuitScraperCompositionFactory
-    class CircuitScraperDependencies
-    class CircuitSectionExtractionService
-    class CircuitService
-    class CircuitSpecsParser
-    class CircuitTextProcessing
-    class CircuitsListScraper
-    class CircuitsListSectionParser
-    class CircuitsListTableParser
-    class CircuitsRecordValidator
-    class F1CircuitInfoboxParser
-    class F1CompleteCircuitDataExtractor
-    class F1SingleCircuitScraper
-    class InfoboxTextUtils
-    class LastLengthUsedColumn
-}
-
-package "Scrapers / Constructors" {
-    class BaseConstructorListScraper
-    class CompleteConstructorsDataExtractor
-    class ConstructorChampionshipResultsSectionParser
-    class ConstructorColumn
-    class ConstructorCompleteF1ResultsSectionParser
-    class ConstructorHistorySectionParser
-    class ConstructorInfoboxExtractionService
-    class ConstructorNameColumn
-    class ConstructorRecordAssembler
-    class ConstructorRecordDTO
-    class ConstructorScraperCompositionFactory
-    class ConstructorScraperDependencies
-    class ConstructorSectionExtractionService
-    class ConstructorTablesSectionParser
-    class ConstructorsListScraper
-    class ConstructorsSectionParser
-    class CurrentConstructorsSectionParser
-    class CurrentConstructorsTableParser
-    class FormerConstructorsSectionParser
-    class FormerConstructorsTableParser
-    class PrivateerTeamsListParser
-    class PrivateerTeamsSectionParser
-    class SingleConstructorScraper
-    class _IndianapolisConstructorsListParser
-}
-
-package "Scrapers / Drivers" {
-    class ActiveYearsParser
-    class BaseDriverResultsSectionParser
-    class BestFinishParser
-    class CarNumbersParser
-    class ChampionshipsParser
-    class CollapsibleTableParser
-    class CompleteDriverDataExtractor
-    class DefaultDriverInfoboxParserProvider
-    class DetailByDriverSubSectionParser
-    class DriverInfoboxExtractionService
-    class DriverInfoboxParser
-    class DriverInfoboxParserBundle
-    class DriverInfoboxParserProvider
-    class DriverNameStatusColumn
-    class DriverOrderedTableParser
-    class DriverRecordAssembler
-    class DriverRecordDTO
-    class DriverResultsSchemaFactory
-    class DriverResultsSectionConfig
-    class DriverResultsSectionParser
-    class DriverResultsTableClassifier
-    class DriverScraperCompositionFactory
-    class DriverScraperDependencies
-    class DriverSectionExtractionService
-    class DriversListSectionParser
-    class DriversListTableParser
-    class DriversRecordValidator
-    class DriversSectionParser
-    class EntriesStartsColumn
-    class EntriesStartsPointsPostProcessor
-    class F1DriversListScraper
-    class F1FatalitiesListScraper
-    class FatalitiesSectionParser
-    class FatalitiesTableParser
-    class FatalityDateColumn
-    class FatalityEventColumn
-    class FemaleDriversListScraper
-    class FemaleDriversTableParser
-    class FinishedSeasonParser
-    class InfoboxCareerParser
-    class InfoboxCellParser
-    class InfoboxGeneralParser
-    class InfoboxLinkExtractor
-    class InfoboxSectionCollector
-    class InfoboxSectionDiscovery
-    class InfoboxTitlesParser
-    class LicenceParser
-    class NationalityParser
-    class NumericParser
-    class OfficialDriversSubSectionParser
-    class PointsOrTextColumn
-    class RaceEventParser
-    class RoundColumn
-    class SeasonParser
-    class SeriesColumn
-    class SingleDriverScraper
-    class TeamsParser
-    class UnknownValueColumn
-    class YearParser
-}
-
-package "Scrapers / Engines" {
-    class BaseEngineTableScraper
-    class CurrentRulesSectionParser
-    class EngineConfigurationColumn
-    class EngineManufacturerNameStatusColumn
-    class EngineManufacturersListScraper
-    class EngineManufacturersSectionParser
-    class EngineManufacturersTableParser
-    class EngineRegulationScraper
-    class EngineRegulationSubSectionParser
-    class EngineRegulationTableParser
-    class EngineRestrictionsScraper
-    class EngineRestrictionsTableParser
-    class EngineRpmLimitColumn
-    class EngineSubSectionParser
-    class F1CompleteEngineManufacturerDataExtractor
-    class FuelFlowRateColumn
-    class FuelInjectionPressureLimitColumn
-    class FuelLimitPerRaceColumn
-    class HistorySectionParser
-    class IndianapolisOnlyListParser
-    class IndianapolisOnlySubSectionParser
-    class NestedTextColumn
-    class NestedUnitListColumn
-    class SingleEngineManufacturerScraper
-}
-
-package "Scrapers / Grands Prix" {
-    class ByRaceTitleSubSectionParser
-    class ConstructorSplitColumn
-    class F1CompleteGrandPrixDataExtractor
-    class F1SingleGrandPrixScraper
-    class GrandPrixByYearRecordAssembler
-    class GrandPrixByYearRecordInput
-    class GrandPrixByYearRecordMapper
-    class GrandPrixByYearSectionParser
-    class GrandPrixChampionshipResolver
-    class GrandsPrixListScraper
-    class GrandsPrixRecordValidator
-    class GrandsPrixTableParser
-    class LocationColumn
-    class RaceTitleStatusColumn
-    class RacesSectionParser
-}
-
-package "Scrapers / Points" {
-    class BasePointsScraper
-    class FirstPlaceColumn
-    class PointsScoringSystemsHistoryTableParser
-    class PointsScoringSystemsSectionParser
-    class PointsScraper
-    class ShortenedRacesPointsTableParser
-    class ShortenedRacesSubSubSectionParser
-    class SpecialCasesSubSectionParser
-    class SpecialCasesSubSubSectionRouter
-    class SprintPointsTableParser
-    class SprintRacesSubSubSectionParser
-    class _SprintQualifyingPointsScraper
-}
-
-package "Scrapers / Races" {
-    class BaseRedFlaggedRacesTableParser
-    class NonChampionshipsRacesSubSectionParser
-    class NonChampionshipsRacesTableParser
-    class RedFlaggedRacesBaseScraper
-    class RedFlaggedRacesScraper
-    class RedFlaggedRacesSectionParser
-    class WorldChampionshipsRacesTableParser
-}
-
-package "Scrapers / Seasons" {
-    class CalendarCircuitColumn
-    class CancelledRoundsParser
-    class ClassifiedDNFRule
-    class ColinChapmanTrophyParser
-    class CompleteSeasonDataExtractor
-    class DateRangeColumn
-    class DomainParsingPolicy
-    class DomainRecordService
-    class DoublePointsRoundRule
-    class DriversWithRoundsColumn
-    class EntryMerger
-    class F1StandingsScraper
-    class F2EligibilityRule
-    class FatalAccidentRule
-    class HalfPointsRoundRule
-    class JimClarkTrophyParser
-    class MarkBasedEligibilityRule
-    class RaceResultBackgroundMapper
-    class RaceResultCellTransformer
-    class RaceResultColumn
-    class ResultRule
-    class ResultRuleContext
-    class RoundRule
-    class RoundRuleContext
     class SeasonCalendarParser
     class SeasonCalendarSectionParser
+    class SeasonClassifier
+    class SeasonComponentSet
     class SeasonConstructorsStandingsSectionParser
     class SeasonDateColumn
+    class SeasonDomainRecordInput
     class SeasonDriversStandingsSectionParser
     class SeasonEntriesParser
     class SeasonFreePracticeParser
+    class SeasonGenericTableOrchestrator
     class SeasonMidSeasonChangesSectionParser
     class SeasonNonChampionshipParser
-    class SeasonParserSet
-    class SeasonParserSetBuilder
+    class SeasonParsingComponentsBuilder
     class SeasonPayloadDTO
+    class SeasonPipelineService
     class SeasonRecordAssembler
     class SeasonRecordSections
     class SeasonRegionalChampionshipParser
@@ -667,43 +733,93 @@ package "Scrapers / Seasons" {
     class SeasonScoringSystemParser
     class SeasonScraperCompositionFactory
     class SeasonScraperDependencies
+    class SeasonSectionBinding
     class SeasonSectionDataCollector
-    class SeasonSectionParser
-    class SeasonSectionParserBinding
+    abstract class SeasonSectionParserABC
     class SeasonSectionPipeline
+    class SeasonSplitStrategy
+    class SeasonStandingsParser
     class SeasonStandingsService
-    class SeasonTableParser
+    class SeasonStandingsTableOrchestrator
+    abstract class SeasonTableOrchestratorABC
+    class SeasonTableParsingService
+    class SeasonTablePayloadMapper
+    abstract class SeasonTablePayloadMapperABC
     class SeasonTextSectionExtractionService
     class SeasonYearResolver
+    class SeasonsColumn
     class SeasonsListScraper
     class SeasonsSectionParser
+    class SeasonsTableMapper
     class SeasonsTableParser
+    class SectionAdapter
+    class SectionAdapterEntry
+    abstract class SectionAdapterScraperBase
+    class SectionAssembler
+    abstract class SectionAwareMixin
+    abstract class SectionByIdScraperBase
+    class SectionDomainConfig
+    class SectionElementParser
+    class SectionExtractionContext
+    abstract class SectionExtractionServiceProtocol
+    abstract class SectionHtmlParserABC
+    class SectionIdResolver
+    abstract class SectionInfoboxClassifierABC
+    abstract class SectionInfoboxRecordMapperABC
+    abstract class SectionInfoboxesHtmlParserABC
+    abstract class SectionLevelMixin
+    abstract class SectionListClassifierABC
+    abstract class SectionListRecordMapperABC
+    abstract class SectionListsHtmlParserABC
+    class SectionLocator
+    class SectionMatch
+    class SectionMatchPriorities
+    abstract class SectionMetadataBindingMixin
+    class SectionParseResult
+    abstract class SectionParserBase
+    class SectionParsingToolbox
+    class SectionProfile
+    class SectionRecordInput
+    class SectionRecordMapper
+    class SectionResolution
+    class SectionSelectionStrategy
+    abstract class SectionServiceFactoryABC
+    class SectionSourceAdapter
+    abstract class SectionStructureParserABC
+    abstract class SectionTableClassifierABC
+    abstract class SectionTableParseMixin
+    abstract class SectionTableRecordMapperABC
+    abstract class SectionTablesHtmlParserABC
+    abstract class SectionTextBlocksHtmlParserABC
+    abstract class SectionTextClassifierABC
+    abstract class SectionTextRecordMapperABC
+    abstract class SectionTraversalMixin
+    class SectionTreeMatch
+    class SectionTreeNode
+    class SectionTreePayload
+    class SectionsPayloadDTO
+    class SeedListTableScraper
+    class SeedQualityReport
+    class SeedSectionOrchestrationFlow
+    class SeriesColumn
     class SharedDriveRule
+    class ShortenedRacePointsTransformer
+    class ShortenedRacesPointsTableMapper
+    class ShortenedRacesSubSubSectionParser
+    abstract class SingleArticleScraperContract
+    class SingleConstructorScraper
+    class SingleDriverScraper
+    class SingleEngineManufacturerScraper
     class SingleSeasonScraper
-    class StarMarkNoteRule
-    class SuperscriptParseResult
-    class TestingVenuesLayout
-    class TestingVenuesParser
-}
-
-package "Scrapers / Sponsorship & Liveries" {
-    class BroaderScopeSplitter
-    class ColourListColumn
-    class ColourScopeHandler
-    class DeduplicateRecordStrategy
-    class DepthAwareColourSplitter
-    class F1SponsorshipLiveriesScraper
-    class GrandPrixScopeAccumulator
-    class GrandPrixScopeTransformer
-    class GrandPrixSplitStrategy
-    class ParenClassifier
-    class PipelineRecord
-    class PossessiveDriverColourSplitStrategy
-    class RecordSplitPipeline
-    class RecordSplitStrategy
-    class Rule
-    class SeasonSplitStrategy
-    class SplitRule
+    class SkipColumn
+    abstract class SoupParser
+    abstract class SourceAdapter
+    class SourceAdapterFetcherShim
+    class SourceParseError
+    class SourceRef
+    class SpecialCasesSubSectionParser
+    class SpecialCasesSubSubSectionRouter
+    abstract class SplitRule
     class SponsorColumn
     class SponsorPartsParser
     class SponsorScopeHandler
@@ -711,79 +827,175 @@ package "Scrapers / Sponsorship & Liveries" {
     class SponsorshipRecordText
     class SponsorshipSeasonsColumn
     class SponsorshipSectionParser
-    class SponsorshipTableParser
-    class TeamLiveriesSectionParser
-    class TeamLiveriesTableParser
-    class _RuleContext
-}
-
-package "Scrapers / Tyres" {
-    class AppendLinksColumn
-    class ManufacturersSectionParser
-    class TyreManufacturersBySeasonSubSectionParser
-    class TyreManufacturersBySeasonTableParser
-    class TyreManufacturersScraper
-}
-
-package "Scrapers / Wiki" {
-    class ArticleTablesParser
-    class BaseNestedSectionParser
-    class BaseOrchestrationFlow
-    class BodyContentParser
-    class CategoryGroup
-    class CategoryLinkItem
-    class CategoryLinksParsedData
-    class CategoryLinksParser
-    class ComponentMetadata
-    class ContentTextParser
-    class DiscoveredComponent
-    class DiscoveredListScraperClassProtocol
-    class DiscoveredRunnerClassProtocol
-    class DiscoveredRunnerProtocol
-    class DriversCheckpointFlow
-    class FigureParsedData
-    class FigureParser
-    class HeaderParsedData
-    class HeaderParser
-    class InfoboxParsedData
-    class InfoboxParser
-    class LapRecordsWikiTableParser
-    class ListParsedData
-    class ListParser
-    class ListScraperConfigProtocol
-    class MappedWikiTableParser
-    class NavBoxParsedData
-    class NavBoxParser
-    class NestedChildParser
-    class ParagraphParsedData
-    class ParagraphParser
-    class ParserRule
-    class RaceResultsTableParser
-    class ReferencesWrapParsedData
-    class ReferencesWrapParser
-    class RichCellData
-    class SectionDomainConfig
-    class SectionExtractionContext
-    class SectionMatch
-    class SectionMatchPriorities
-    class SectionParser
-    class SectionProfile
-    class SectionTreeMatch
-    class SeedQualityReport
-    class SeedSectionOrchestrationFlow
-    class StandingsTableParser
+    class SponsorshipTableSchemaBuilder
+    class SprintPointsTableMapper
+    class SprintRacesSubSubSectionParser
+    class StageCheckpointDumper
+    class StageEnvelope
+    class StandingsTableMapper
+    class StarMarkNoteRule
+    class StepDeclaration
+    class StrategyBackedInfoboxOrchestrator
+    abstract class StructureParser
+    abstract class SubSectionLevelMixin
     class SubSectionParser
+    abstract class SubSubSectionLevelMixin
     class SubSubSectionParser
     class SubSubSubSectionParser
-    class TableParsedData
-    class TableParser
-    class WikiElementParserMixin
-    class WikiElementParsers
-    class WikiParsedPayload
-    class WikiParser
+    class SuperscriptParseResult
+    abstract class TableCellExtractionMixin
+    abstract class TableCellParserABC
+    class TableConfig
+    abstract class TableDomainMapperABC
+    class TableElementParser
+    class TableExtractor
+    abstract class TableHtmlParserABC
+    abstract class TableMapperABC
+    abstract class TableParserABC
+    class TableParsingHelper
+    class TablePipeline
+    class TablePipelineDebugContext
+    class TableRecordInput
+    class TableRecordMapper
+    class TableRow
+    abstract class TableRowParserABC
+    abstract class TableRowParsingMixin
+    class TableSchema
+    class TableSchemaBuilder
+    class TableSchemaDSL
+    abstract class TableScraperContract
+    class TableSectionParser
+    class TablesPayloadDTO
+    class TeamLiveriesSectionParser
+    class TeamLiveriesTableAdapter
+    class TeamsParser
+    class TestingVenuesLayout
+    class TestingVenuesParser
+    abstract class TextBlockSectionParser
+    class TextColumn
+    class TimeColumn
+    class TimeRangeColumn
+    class TqdmProgressAdapter
+    class TransformersPipeline
+    class TransportError
+    class TyreColumn
+    class TyreManufacturersBySeasonSubSectionParser
+    class TyreManufacturersBySeasonTableMapper
+    class TyreManufacturersScraper
+    class UnitColumn
+    class UnknownValueColumn
+    class UrlColumn
+    abstract class UrlResolverMixin
+    class UrlResolverStrategyRegistry
+    abstract class ValidateCapability
+    class ValidatingSectionServiceFactory
+    class ValidationCapabilityService
+    class ValidationError
+    class ValidationRunner
+    class ValueNormalizationPipeline
+    abstract class WikiArticleParserABC
+    abstract class WikiArticleParserBase
+    abstract class WikiDelegatingHtmlParserBase
+    class WikiDomainMapper
+    abstract class WikiDomainMapperABC
+    abstract class WikiElementClassifierABC
+    abstract class WikiElementParserABC
+    abstract class WikiElementParsingMixin
+    abstract class WikiElementPayloadMapperABC
+    class WikiElementSet
+    class WikiFigureElementParser
+    abstract class WikiFigureElementParserABC
+    class WikiFigureParser
+    abstract class WikiFigureParserABC
+    abstract class WikiFigureParserBase
+    class WikiInfoboxElementParser
+    abstract class WikiInfoboxElementParserABC
+    class WikiInfoboxHtmlParser
+    class WikiInfoboxParser
+    abstract class WikiInfoboxParserABC
+    abstract class WikiInfoboxParserBase
+    class WikiListElementParser
+    abstract class WikiListElementParserABC
+    abstract class WikiListParser
+    abstract class WikiListParserABC
+    abstract class WikiListParserBase
+    class WikiMapperRegistry
+    class WikiNavboxElementParser
+    abstract class WikiNavboxElementParserABC
+    class WikiNavboxParser
+    abstract class WikiNavboxParserABC
+    abstract class WikiNavboxParserBase
+    class WikiParagraphElementParser
+    abstract class WikiParagraphElementParserABC
+    class WikiParagraphParser
+    abstract class WikiParagraphParserABC
+    abstract class WikiParagraphParserBase
+    class WikiParsedPayloadMapper
+    abstract class WikiParser
+    class WikiReferencesElementParser
+    abstract class WikiReferencesElementParserABC
+    abstract class WikiReferencesParserBase
     class WikiScraper
+    class WikiSectionElementParser
+    abstract class WikiSectionElementParserABC
+    abstract class WikiSectionNodeParserABC
+    abstract class WikiSectionParserABC
+    abstract class WikiSectionParserBase
+    abstract class WikiSectionStructureParserABC
+    abstract class WikiSoupParserABC
     class WikiSourceDefinition
-    class WikiTableBaseParser
+    abstract class WikiSubSectionParserABC
+    abstract class WikiSubSubSectionParserABC
+    abstract class WikiTableBaseMapper
+    abstract class WikiTableBaseParser
+    class WikiTableElementParser
+    abstract class WikiTableElementParserABC
+    abstract class WikiTableElementParserBase
+    class WikiTableHtmlParser
+    class WikiTableMapperSet
+    class WikiTableParser
+    abstract class WikiTableParserABC
+    abstract class WikiTableParserBase
+    abstract class WikiTablePayloadCollectMixin
+    abstract class WikiTablePayloadTransformMixin
+    abstract class WikiTagParser
+    abstract class WikiTagParserABC
+    class WikipediaInfoboxScraper
+    class WikipediaSectionByIdSelectionStrategy
+    class WorldChampionshipsRacesTableMapper
+    class YearExtractor
+    class YearParser
+    class YearPlaceholderOutputPathRenderer
+    class _DomainEntrypointSpec
+}
+
+package "Adapters" {
+    class HtmlRowBackgroundColorAdapter
+}
+
+package "Exporters" {
+    class DataExporter
+    class ExportMetadata
+    class ExportService
+    abstract class ExporterProtocol
+}
+
+package "Record Assembly Strategy" {
+    class AttachDetailsStrategy
+    class BundleRecordWithDetailsStrategy
+    class ExtractDetailFieldStrategy
+    abstract class RecordAssemblyStrategy
+}
+
+package "Wiki Pipeline" {
+    class WikiPipelineApplication
+    class WikiPipelineComponents
+    class WikiPipelineComponentsFactory
+    class WikiPipelineFacade
+}
+
+package "Path Resolver" {
+    class PathResolver
 }
 
 package "Validation" {
@@ -795,309 +1007,616 @@ package "Validation" {
     class NestedSchema
     class QualityStats
     class RangeRule
-    class RecordFactoryValidatorProtocol
+    abstract class RecordFactoryValidatorProtocol
     class RecordSchema
-    class RecordValidator
+    abstract class RecordValidator
     class RequiredFieldRule
     class SchemaValidationEngine
-    class StageValidator
+    abstract class StageValidator
     class TypeRule
     class ValidateMethodRecordFactoryValidatorAdapter
     class ValidateRecordFactoryValidatorAdapter
     class ValidationIssue
     class ValidationPipeline
     class ValidationResult
-    class ValidationRuleProtocol
+    abstract class ValidationRuleProtocol
     class ValidationStage
     class ValueRange
 }
 
-' Inheritance relationships
-ABCScraper <|-- WikiScraper
-ApplyForElementsMixin <|-- ByRaceTitleSubSectionParser
-ApplyForElementsMixin <|-- EngineManufacturersSectionParser
-ApplyForElementsMixin <|-- EngineSubSectionParser
-ApplyForElementsMixin <|-- OfficialDriversSubSectionParser
-ApplyForElementsMixin <|-- PointsScoringSystemsSectionParser
-ApplyForElementsMixin <|-- ShortenedRacesSubSubSectionParser
-ApplyForElementsMixin <|-- SprintRacesSubSubSectionParser
-BackgroundMixin <|-- FatalityEventColumn
-BackgroundMixin <|-- NameStatusColumn
-BackgroundMixin <|-- RestartStatusColumn
+package "App Paths" {
+    class AppPaths
+}
+
+package "Scripts" {
+    class AdrEnforcementPolicy
+    class ArchitectureSpec
+    class CiStatus
+    class ComplexityVisitor
+    class DependencyCreationVisitor
+    class DomainSpec
+    class DuplicateFileMeta
+    class DuplicateFilter
+    class DuplicateNormalizer
+    class DuplicateRecord
+    class FamilyRule
+    class FileMiss
+    class GateInputs
+    class GitCommandResult
+    class LegacyLifecycle
+    class LegacyModuleMapping
+    class MarkdownRenderer
+    class SchemaSemanticsIssue
+    class StructuralVisitor
+    class TerminologyRule
+    class TypoRule
+    class Violation
+}
+
+' === Relacje dziedziczenia ===
+BaseScraperCore <|-- ABCScraper
+FetchOrchestrationMixin <|-- ABCScraper
+HtmlInfoboxFieldParser <|-- ActiveYearsParser
+LinksListColumn <|-- AppendLinksColumn
+HtmlSoupParserABC <|-- ArticleHtmlParserABC
+WikiScraper <|-- ArticleScraperBase
+SectionTablesHtmlParserABC <|-- ArticleSectionTablesHtmlParser
+ArticleTablesAssemblerABC <|-- ArticleTablesAssembler
+ArticleTablesParserABC <|-- ArticleTablesParser
+WikiArticleParserABC <|-- ArticleTablesParserABC
+RecordAssemblyStrategy <|-- AttachDetailsStrategy
 BaseColumn <|-- AutoColumn
 BaseColumn <|-- BaseConstructorColumn
+DeclarativeSectionTableParseMixin <|-- BaseConstructorListScraper
+SeedListTableScraper <|-- BaseConstructorListScraper
+DomainPipelineService <|-- BaseDomainPipelineService
+SectionParserBase <|-- BaseDriverResultsSectionParser
+F1TableScraper <|-- BaseEngineTableScraper
+BaseComponent <|-- BaseExtractor
+HtmlElementParserABC <|-- BaseHtmlElementParser
+InfoboxOrchestratorABC <|-- BaseInfoboxOrchestrator
+ParsedRecordsMixin <|-- BaseInfoboxOrchestrator
+BaseComponent <|-- BaseNormalizer
+BaseComponent <|-- BaseOrchestrator
+BaseComponent <|-- BaseParsingStage
+F1TableScraper <|-- BasePointsScraper
+LinkNormalizationMixin <|-- BaseRecordFactory
+LocationNormalizationMixin <|-- BaseRecordFactory
+SeasonNormalizationMixin <|-- BaseRecordFactory
+StatusNormalizationMixin <|-- BaseRecordFactory
+WikiTableBaseMapper <|-- BaseRedFlaggedRacesTableMapper
+ScraperLifecycleABC <|-- BaseScraperCore
+WikiTableElementParserBase <|-- BaseSeasonParser
+WikiSectionElementParserABC <|-- BaseSectionParser
+HtmlInfoboxFieldParser <|-- BestFinishParser
+WikiParser <|-- BodyContentAssembler
 BaseColumn <|-- BoolColumn
 BaseColumn <|-- BrListColumn
+RecordAssemblyStrategy <|-- BundleRecordWithDetailsStrategy
+ApplyForElementsMixin <|-- ByRaceTitleSubSectionParser
+SubSectionParser <|-- ByRaceTitleSubSectionParser
+SourceAdapter <|-- CacheAdapter
 BaseColumn <|-- CalendarCircuitColumn
+HtmlInfoboxFieldParser <|-- CallableInfoboxFieldParser
+BaseSeasonParser <|-- CancelledRoundsParser
+HtmlInfoboxFieldParser <|-- CarNumbersParser
+LinkRecord <|-- CarRecord
+BaseRecordFactory <|-- CarRecordFactory
+WikiParser <|-- CategoryLinksParser
+HtmlInfoboxFieldParser <|-- ChampionshipsParser
+ValidatedModel <|-- Circuit
+CircuitEntityExtractor <|-- CircuitAdditionalInfoExtractor
+CircuitBaseRecord <|-- CircuitCompleteRecord
+CircuitBaseRecord <|-- CircuitDetailsRecord
+SafeParsingMixin <|-- CircuitEntitiesOrchestrator
+CircuitTextProcessing <|-- CircuitEntityExtractor
+TableSectionParser <|-- CircuitEventsSectionParser
+SectionTableRecordMapperABC <|-- CircuitEventsTableRecordMapper
+InfoboxTextUtils <|-- CircuitGeoExtractor
+InfoboxTextUtils <|-- CircuitHistoryExtractor
+InfoboxExtractorABC <|-- CircuitInfoboxExtractor
+StrategyBackedInfoboxOrchestrator <|-- CircuitInfoboxOrchestrator
+WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
+CircuitTextProcessing <|-- CircuitLapRecordExtractor
+TableSectionParser <|-- CircuitLapRecordsSectionParser
+SectionTableClassifierABC <|-- CircuitLapRecordsTableClassifier
+SectionTableRecordMapperABC <|-- CircuitLapRecordsTableRecordMapper
+TextBlockSectionParser <|-- CircuitLayoutHistorySectionParser
+SafeParsingMixin <|-- CircuitLayoutsExtractor
+NameStatusColumn <|-- CircuitNameStatusColumn
+BaseDomainPipelineService <|-- CircuitPipelineService
+BaseRecordAssembler <|-- CircuitRecordAssembler
+BaseRecordFactory <|-- CircuitRecordFactory
+BaseSectionExtractionService <|-- CircuitSectionExtractionService
+InfoboxTextUtils <|-- CircuitSpecsExtractor
+InfoboxTextUtils <|-- CircuitTextProcessing
+F1SingleCircuitScraper <|-- CircuitsDetailScraper
+DeclarativeSectionTableParseMixin <|-- CircuitsListScraper
+SeedListTableScraper <|-- CircuitsListScraper
+ListSectionParser <|-- CircuitsListSectionParser
+MappedWikiTableMapper <|-- CircuitsListTableMapper
+SchemaCompositeRecordValidator <|-- CircuitsRecordValidator
+BaseSeasonParser <|-- ColinChapmanTrophyParser
+InfoboxCollapsibleTableParserABC <|-- CollapsibleTableParser
 BaseColumn <|-- ColourListColumn
+CompleteExtractorBase <|-- CompleteConstructorsDataExtractor
+CompleteExtractorBase <|-- CompleteDriverDataExtractor
+CompositeDataExtractor <|-- CompleteExtractorBase
+CompleteExtractorBase <|-- CompleteSeasonDataExtractor
+BaseDataExtractor <|-- CompositeDataExtractor
+RecordValidator <|-- CompositeRecordValidator
+ValidatingSectionServiceFactory <|-- ConfigurableSectionServiceFactory
+ConstructorTablesSectionParser <|-- ConstructorChampionshipResultsSectionParser
+BaseConstructorColumn <|-- ConstructorColumn
+ConstructorTablesSectionParser <|-- ConstructorCompleteF1ResultsSectionParser
+ConstructorTablesSectionParser <|-- ConstructorHistorySectionParser
+BaseInfoboxOrchestrator <|-- ConstructorInfoboxOrchestrator
 BaseColumn <|-- ConstructorNameColumn
 BaseColumn <|-- ConstructorPartColumn
+ConstructorPartParserABC <|-- ConstructorPartColumn
+BaseDomainPipelineService <|-- ConstructorPipelineService
+BaseRecordAssembler <|-- ConstructorRecordAssembler
+BaseRecordFactory <|-- ConstructorRecordFactory
+BaseSectionExtractionService <|-- ConstructorSectionExtractionService
+MultiColumn <|-- ConstructorSplitColumn
+RunDiagnosticsMixin <|-- ConstructorTableExtractionService
+SectionParserBase <|-- ConstructorTablesSectionParser
+SingleConstructorScraper <|-- ConstructorsDetailScraper
+ListScraper <|-- ConstructorsListScraper
+SectionParserBase <|-- ConstructorsSectionParser
+WikiParser <|-- ContentTextParser
+ConstructorsSectionParser <|-- CurrentConstructorsSectionParser
+WikiTableBaseMapper <|-- CurrentConstructorsTableMapper
+NestedWikiSectionParser <|-- CurrentRulesSectionParser
 BaseColumn <|-- DateColumn
 BaseColumn <|-- DateRangeColumn
+ValueObject <|-- DateValue
+SectionTableParseMixin <|-- DeclarativeSectionTableParseMixin
+RecordSplitStrategy <|-- DeduplicateRecordStrategy
+DriverInfoboxProviderABC <|-- DefaultDriverInfoboxProvider
+LayerZeroRunConfigFactory <|-- DefaultLayerZeroRunConfigFactory
+RetryPolicy <|-- DefaultRetryPolicy
+SubSectionParser <|-- DetailByDriverSubSectionParser
+ArticleScraperBase <|-- DomainArticleScraperBase
+ScraperError <|-- DomainParseError
+PipelineService <|-- DomainPipelineService
+RunDiagnosticsMixin <|-- DomainPipelineService
+BaseExtractor <|-- DomainSeedExtractor
+BaseNormalizer <|-- DomainSeedNormalizer
+UrlResolverMixin <|-- DomainSeedNormalizer
+BaseOrchestrator <|-- DomainStageOrchestrator
+QualityMetricsMixin <|-- DomainStageOrchestrator
 BaseColumn <|-- DriverColumn
+ParsingBundle <|-- DriverInfoboxBundle
+BaseInfoboxOrchestrator <|-- DriverInfoboxOrchestrator
+WikiInfoboxElementParserABC <|-- DriverInfoboxParser
+ParsingBundleProviderABC <|-- DriverInfoboxProviderABC
 BaseColumn <|-- DriverListColumn
+NameStatusColumn <|-- DriverNameStatusColumn
+WikiTableBaseMapper <|-- DriverOrderedTableMapper
+BaseDomainPipelineService <|-- DriverPipelineService
+BaseRecordFactory <|-- DriverRecordFactory
+TableSectionParser <|-- DriverResultsSectionParser
+SectionTableClassifierABC <|-- DriverResultsSectionTableClassifier
+SectionTableRecordMapperABC <|-- DriverResultsTableRecordMapper
+BaseSectionExtractionService <|-- DriverSectionExtractionService
+ValueObject <|-- DriversChampionships
+BaseRecordFactory <|-- DriversChampionshipsRecordFactory
+RecordTransformer <|-- DriversChampionshipsTransformer
+BaseOrchestrationFlow <|-- DriversCheckpointFlow
+NestedWikiSectionParser <|-- DriversListSectionParser
+DriverOrderedTableMapper <|-- DriversListTableMapper
+SchemaCompositeRecordValidator <|-- DriversRecordValidator
+NestedWikiSectionParser <|-- DriversSectionParser
+BaseNormalizer <|-- DriversSeedNormalizer
+UrlResolverMixin <|-- DriversSeedNormalizer
 BaseColumn <|-- DriversWithRoundsColumn
 BaseColumn <|-- EngineColumn
 BaseColumn <|-- EngineConfigurationColumn
+ValidatedModel <|-- EngineManufacturer
+NameStatusColumn <|-- EngineManufacturerNameStatusColumn
+BaseRecordFactory <|-- EngineManufacturerRecordFactory
+SubSectionParser <|-- EngineManufacturersIndianapolisSubSectionParser
+F1TableScraper <|-- EngineManufacturersListScraper
+ApplyForElementsMixin <|-- EngineManufacturersSectionParser
+NestedWikiSectionParser <|-- EngineManufacturersSectionParser
+WikiTableBaseMapper <|-- EngineManufacturersTableMapper
+ValidatedModel <|-- EngineRegulation
+BaseEngineTableScraper <|-- EngineRegulationScraper
+SubSectionParser <|-- EngineRegulationSubSectionParser
+WikiTableBaseMapper <|-- EngineRegulationTableMapper
+ValidatedModel <|-- EngineRestriction
+BaseEngineTableScraper <|-- EngineRestrictionsScraper
+WikiTableBaseMapper <|-- EngineRestrictionsTableMapper
 BaseColumn <|-- EngineRpmLimitColumn
+ApplyForElementsMixin <|-- EngineSubSectionParser
+SubSectionParser <|-- EngineSubSectionParser
 BaseColumn <|-- EntrantColumn
 BaseColumn <|-- EntriesStartsColumn
-BaseColumn <|-- EnumMarksMixin
+BaseRecordFactory <|-- EventRecordFactory
+RecordAssemblyStrategy <|-- ExtractDetailFieldStrategy
+CompleteExtractorBase <|-- F1CompleteCircuitDataExtractor
+CompleteExtractorBase <|-- F1CompleteEngineManufacturerDataExtractor
+CompleteExtractorBase <|-- F1CompleteGrandPrixDataExtractor
+SeedListTableScraper <|-- F1DriversListScraper
+F1TableScraper <|-- F1FatalitiesListScraper
+SectionAdapterScraperBase <|-- F1SingleCircuitScraper
+DomainArticleScraperBase <|-- F1SingleGrandPrixScraper
+WikiScraper <|-- F1SponsorshipLiveriesScraper
+F1TableScraper <|-- F1StandingsScraper
+HtmlTagParserABC <|-- F1StandingsTableParser
+TableScraperContract <|-- F1TableScraper
+WikiScraper <|-- F1TableScraper
+RecordTransformer <|-- FailedToMakeRestartTransformer
+RecordTransformer <|-- FatalitiesCarTransformer
+NestedWikiSectionParser <|-- FatalitiesSectionParser
+DriverOrderedTableMapper <|-- FatalitiesTableMapper
 BaseColumn <|-- FatalityDateColumn
+EnumMarksMixin <|-- FatalityDateColumn
+BackgroundMixin <|-- FatalityEventColumn
 BaseColumn <|-- FatalityEventColumn
+EnumMarksMixin <|-- FatalityEventColumn
+BaseRecordFactory <|-- FatalityRecordFactory
+F1TableScraper <|-- FemaleDriversListScraper
+WikiTableBaseMapper <|-- FemaleDriversTableMapper
+WikiFigureElementParserABC <|-- FigureElementParser
+HtmlTagParserABC <|-- FigureHtmlParserABC
+TextCacheProtocol <|-- FileCache
+HtmlInfoboxFieldParser <|-- FinishedSeasonParser
 BaseColumn <|-- FirstPlaceColumn
+ConstructorsSectionParser <|-- FormerConstructorsSectionParser
+WikiTableBaseMapper <|-- FormerConstructorsTableMapper
 BaseColumn <|-- FuelFlowRateColumn
 BaseColumn <|-- FuelInjectionPressureLimitColumn
 BaseColumn <|-- FuelLimitPerRaceColumn
 BaseColumn <|-- FuncColumn
-BaseColumn <|-- LinksListColumn
-BaseColumn <|-- ListColumn
-BaseColumn <|-- MultiColumn
-BaseColumn <|-- NestedTextColumn
-BaseColumn <|-- NestedUnitListColumn
-BaseColumn <|-- ParsedValueColumn
-BaseColumn <|-- PointsColumn
-BaseColumn <|-- PointsOrTextColumn
-BaseColumn <|-- PositionColumn
-BaseColumn <|-- RaceResultColumn
-BaseColumn <|-- RangeColumn
-BaseColumn <|-- RegexColumn
-BaseColumn <|-- RestartStatusColumn
-BaseColumn <|-- RoundColumn
-BaseColumn <|-- SeasonDateColumn
-BaseColumn <|-- SeasonsColumn
-BaseColumn <|-- SeriesColumn
-BaseColumn <|-- SkipColumn
-BaseColumn <|-- SponsorColumn
-BaseColumn <|-- SponsorshipSeasonsColumn
-BaseColumn <|-- TextColumn
-BaseColumn <|-- TimeColumn
-BaseColumn <|-- TimeRangeColumn
-BaseColumn <|-- TyreColumn
-BaseColumn <|-- UnitColumn
-BaseColumn <|-- UnknownValueColumn
-BaseColumn <|-- UrlColumn
-BaseDataExtractor <|-- CompositeDataExtractor
-BaseEngineTableScraper <|-- EngineRegulationScraper
-BaseEngineTableScraper <|-- EngineRestrictionsScraper
-BaseExecutor <|-- LayerOneExecutor
-BaseExecutor <|-- LayerZeroExecutor
-BaseHttpClient <|-- UrllibHttpClient
-BaseNestedSectionParser <|-- SectionParser
-BaseNestedSectionParser <|-- SubSectionParser
-BaseNestedSectionParser <|-- SubSubSectionParser
-BaseOrchestrationFlow <|-- DriversCheckpointFlow
-BaseOrchestrationFlow <|-- SeedSectionOrchestrationFlow
-BasePointsScraper <|-- PointsScraper
-BasePointsScraper <|-- _SprintQualifyingPointsScraper
-BaseRecordAssembler <|-- CircuitRecordAssembler
-BaseRecordAssembler <|-- ConstructorRecordAssembler
-BaseRecordAssembler <|-- SeasonRecordAssembler
-BaseRecordFactory <|-- CarRecordFactory
-BaseRecordFactory <|-- CircuitRecordFactory
-BaseRecordFactory <|-- ConstructorRecordFactory
-BaseRecordFactory <|-- DriverRecordFactory
-BaseRecordFactory <|-- DriversChampionshipsRecordFactory
-BaseRecordFactory <|-- EngineManufacturerRecordFactory
-BaseRecordFactory <|-- EventRecordFactory
-BaseRecordFactory <|-- FatalityRecordFactory
+LayerJobRunner <|-- FunctionExportRunner
+FileTtlCacheAdapter <|-- GeminiJsonFileCacheAdapter
+SubSectionParser <|-- GenericIndianapolisOnlySubSectionParser
+SectionParserBase <|-- GrandPrixByYearSectionParser
+LayerJobRunner <|-- GrandPrixRunner
+RecordSplitStrategy <|-- GrandPrixSplitStrategy
+SeedListTableScraper <|-- GrandsPrixListScraper
 BaseRecordFactory <|-- GrandsPrixRecordFactory
-BaseRecordFactory <|-- SeasonRecordFactory
-BaseRecordFactory <|-- SeasonSummaryRecordFactory
-BaseRecordFactory <|-- SpecialDriverRecordFactory
-BaseRedFlaggedRacesTableParser <|-- NonChampionshipsRacesTableParser
-BaseRedFlaggedRacesTableParser <|-- WorldChampionshipsRacesTableParser
-BaseRegistryEntry <|-- ListJobRegistryEntry
-BaseRegistryEntry <|-- SeedRegistryEntry
-BaseSectionExtractionService <|-- CircuitSectionExtractionService
-BaseSectionExtractionService <|-- ConstructorSectionExtractionService
-BaseSectionExtractionService <|-- DriverSectionExtractionService
-BaseSectionExtractionService <|-- SeasonTextSectionExtractionService
-CircuitBaseRecord <|-- CircuitCompleteRecord
-CircuitBaseRecord <|-- CircuitDetailsRecord
-CircuitEntityParser <|-- CircuitAdditionalInfoParser
-CircuitTextProcessing <|-- CircuitEntityParser
-CircuitTextProcessing <|-- CircuitLapRecordParser
-CompleteExtractorBase <|-- CompleteConstructorsDataExtractor
-CompleteExtractorBase <|-- CompleteDriverDataExtractor
-CompleteExtractorBase <|-- CompleteSeasonDataExtractor
-CompleteExtractorBase <|-- F1CompleteCircuitDataExtractor
-CompleteExtractorBase <|-- F1CompleteEngineManufacturerDataExtractor
-CompleteExtractorBase <|-- F1CompleteGrandPrixDataExtractor
-CompositeDataExtractor <|-- CompleteExtractorBase
-CompositeRecordValidator <|-- SchemaCompositeRecordValidator
-ConstructorTablesSectionParser <|-- ConstructorChampionshipResultsSectionParser
-ConstructorTablesSectionParser <|-- ConstructorCompleteF1ResultsSectionParser
-ConstructorTablesSectionParser <|-- ConstructorHistorySectionParser
-ConstructorsSectionParser <|-- CurrentConstructorsSectionParser
-ConstructorsSectionParser <|-- FormerConstructorsSectionParser
-DataContract <|-- CircuitContract
-DataContract <|-- DriverContract
-DataContract <|-- PointsContract
-DeclarativeSectionTableParseMixin <|-- BaseConstructorListScraper
-DeclarativeSectionTableParseMixin <|-- CircuitsListScraper
-DriverOrderedTableParser <|-- DriversListTableParser
-DriverOrderedTableParser <|-- FatalitiesTableParser
-EnumMarksMixin <|-- FatalityEventColumn
-EnumMarksMixin <|-- NameStatusColumn
-ExtractListItemsMixin <|-- SeasonMidSeasonChangesSectionParser
-ExtractListItemsMixin <|-- SeasonRegulationChangesSectionParser
-F1ListScraper <|-- ConstructorsListScraper
-F1ListScraper <|-- IndianapolisOnlyListScraper
-F1TableScraper <|-- BaseEngineTableScraper
-F1TableScraper <|-- BasePointsScraper
-F1TableScraper <|-- EngineManufacturersListScraper
-F1TableScraper <|-- F1FatalitiesListScraper
-F1TableScraper <|-- FemaleDriversListScraper
-F1TableScraper <|-- LapRecordsTableScraper
-F1TableScraper <|-- RedFlaggedRacesBaseScraper
-F1TableScraper <|-- SeedListTableScraper
-F1TableScraper <|-- TyreManufacturersScraper
-FuncColumn <|-- LocationColumn
-HtmlFetcher <|-- _SourceAdapterFetcherShim
+SchemaCompositeRecordValidator <|-- GrandsPrixRecordValidator
+WikiTableBaseMapper <|-- GrandsPrixTableMapper
+ParseGroupMixin <|-- GroupParsingMixin
 HttpShimError <|-- HTTPError
 HttpShimError <|-- HTTPTimeoutError
-IndianapolisOnlyMixin <|-- IndianapolisOnlyListScraper
-InfoboxParser <|-- DriverInfoboxParser
-InfoboxParser <|-- F1CircuitInfoboxParser
-InfoboxParser <|-- InfoboxHtmlParser
-InfoboxTextUtils <|-- CircuitGeoParser
-InfoboxTextUtils <|-- CircuitHistoryParser
-InfoboxTextUtils <|-- CircuitSpecsParser
-InfoboxTextUtils <|-- CircuitTextProcessing
-LayerJobRunner <|-- FunctionExportRunner
-LayerJobRunner <|-- GrandPrixRunner
-LayerZeroRunConfigFactory <|-- DefaultLayerZeroRunConfigFactory
-LayerZeroRunConfigFactory <|-- SponsorshipLiveriesRunConfigFactory
-LayerZeroRunConfigFactory <|-- StaticScraperKwargsFactory
-LayerZeroRunConfigFactoryProtocol <|-- LayerZeroRunConfigFactory
-LinkRecord <|-- CarRecord
-LinksListColumn <|-- AppendLinksColumn
-ListParser <|-- IndianapolisOnlyListParser
-ListParser <|-- PrivateerTeamsListParser
-ListParser <|-- _IndianapolisConstructorsListParser
-MappedWikiTableParser <|-- LapRecordsWikiTableParser
-MappedWikiTableParser <|-- RaceResultsTableParser
-MappedWikiTableParser <|-- StandingsTableParser
-MultiColumn <|-- ConstructorSplitColumn
-MultiColumn <|-- LastLengthUsedColumn
-MultiColumn <|-- NameStatusColumn
-NameStatusColumn <|-- CircuitNameStatusColumn
-NameStatusColumn <|-- DriverNameStatusColumn
-NameStatusColumn <|-- EngineManufacturerNameStatusColumn
-NameStatusColumn <|-- RaceTitleStatusColumn
-PipelineError <|-- SourceParseError
-PipelineError <|-- TransportError
-PipelineError <|-- ValidationError
-RateLimiter <|-- MinDelayRateLimiter
-RecordAssemblyStrategy <|-- AttachDetailsStrategy
-RecordAssemblyStrategy <|-- BundleRecordWithDetailsStrategy
-RecordAssemblyStrategy <|-- ExtractDetailFieldStrategy
-RecordTransformer <|-- DriversChampionshipsTransformer
-RecordTransformer <|-- FailedToMakeRestartTransformer
-RecordTransformer <|-- FatalitiesCarTransformer
-RecordTransformer <|-- NormalizeLinksTransformer
-RecordTransformer <|-- PointsScoringSystemsHistoryTransformer
-RecordTransformer <|-- RecordFactoryTransformer
-RecordTransformer <|-- ShortenedRacePointsTransformer
-RecordValidator <|-- CompositeRecordValidator
+SplitRule <|-- HasMultipleSeasonsRule
+SplitRule <|-- HasPossessiveColoursRule
+SplitRule <|-- HasYearSpecificColoursRule
+SplitRule <|-- HasYearSpecificSponsorsRule
+WikiParser <|-- HeaderParser
+NestedWikiSectionParser <|-- HistorySectionParser
+HtmlTagParserABC <|-- HtmlElementParserABC
+SourceAdapter <|-- HtmlFetcher
+InfoboxHtmlFieldParserABC <|-- HtmlInfoboxFieldParser
+ParserABC <|-- HtmlSoupParserABC
+HtmlSoupParserABC <|-- HtmlTableParser
+TableRowParsingMixin <|-- HtmlTableParser
+ParserABC <|-- HtmlTagParserABC
+FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
 RequestError <|-- HttpShimError
-RetryPolicy <|-- DefaultRetryPolicy
-SafeParserMixin <|-- CircuitEntitiesParser
-SafeParserMixin <|-- CircuitLayoutsParser
-SchemaCompositeRecordValidator <|-- CircuitsRecordValidator
-SchemaCompositeRecordValidator <|-- DriversRecordValidator
-SchemaCompositeRecordValidator <|-- GrandsPrixRecordValidator
-ScraperError <|-- DomainParseError
+DomainMapperABC <|-- IdentityDomainMapper
+SectionTableRecordMapperABC <|-- IdentitySectionTableRecordMapper
+ListElementParser <|-- IndianapolisConstructorsListParser
+ListElementParser <|-- IndianapolisOnlyListParser
+IndianapolisOnlyMixin <|-- IndianapolisOnlyListScraper
+ListScraper <|-- IndianapolisOnlyListScraper
+InfoboxRowsParser <|-- InfoboxCareerParser
+HtmlTagParserABC <|-- InfoboxCellParserABC
+InfoboxCellParserABC <|-- InfoboxCellValueExtractor
+ParserABC <|-- InfoboxCollapsibleTableParserABC
+HeaderNormalizationMixin <|-- InfoboxElementParser
+TableCellExtractionMixin <|-- InfoboxElementParser
+WikiInfoboxElementParserABC <|-- InfoboxElementParser
+HtmlTagParserABC <|-- InfoboxHtmlFieldParserABC
+HtmlTagParserABC <|-- InfoboxHtmlParserABC
+ParserABC <|-- InfoboxNestedTableParserABC
+HtmlTagParserABC <|-- InfoboxParserABC
+InfoboxRowsParserABC <|-- InfoboxRowsParser
+ParserABC <|-- InfoboxRowsParserABC
+InfoboxSectionDiscoveryABC <|-- InfoboxSectionCollector
+SectionParserBase <|-- InfoboxSectionParser
+InfoboxNestedTableParserABC <|-- InfoboxTableParser
+InfoboxRowsParser <|-- InfoboxTitlesParser
+BaseSeasonParser <|-- JimClarkTrophyParser
+F1TableScraper <|-- LapRecordsTableScraper
+MappedWikiTableMapper <|-- LapRecordsWikiTableMapper
+MultiColumn <|-- LastLengthUsedColumn
+BaseExecutor <|-- LayerOneExecutor
+BaseExecutor <|-- LayerZeroExecutor
+LayerZeroRunConfigFactoryProtocol <|-- LayerZeroRunConfigFactory
+HtmlInfoboxFieldParser <|-- LicenceParser
+ValueObject <|-- Link
+BaseColumn <|-- LinksListColumn
+BaseColumn <|-- ListColumn
+WikiListElementParserABC <|-- ListElementParser
+HtmlTagParserABC <|-- ListHtmlParserABC
+BaseRegistryEntry <|-- ListJobRegistryEntry
+SectionTraversalMixin <|-- ListScraper
+WikiScraper <|-- ListScraper
+SectionParserBase <|-- ListSectionParser
+FuncColumn <|-- LocationColumn
+NestedWikiSectionParser <|-- ManufacturersSectionParser
+WikiTableBaseMapper <|-- MappedWikiTableMapper
+RateLimiter <|-- MinDelayRateLimiter
+BaseColumn <|-- MultiColumn
+BackgroundMixin <|-- NameStatusColumn
+EnumMarksMixin <|-- NameStatusColumn
+MultiColumn <|-- NameStatusColumn
+HtmlInfoboxFieldParser <|-- NationalityParser
+WikiNavboxElementParserABC <|-- NavboxElementParser
+HtmlTagParserABC <|-- NavboxHtmlParserABC
+BaseColumn <|-- NestedTextColumn
+BaseColumn <|-- NestedUnitListColumn
+RecursiveSectionParser <|-- NestedWikiSectionParser
+SubSectionParser <|-- NonChampionshipsRacesSubSectionParser
+BaseRedFlaggedRacesTableMapper <|-- NonChampionshipsRacesTableMapper
+RecordTransformer <|-- NormalizeLinksTransformer
+ValueObject <|-- NormalizedDate
+ApplyForElementsMixin <|-- OfficialDriversSubSectionParser
+SubSectionParser <|-- OfficialDriversSubSectionParser
+BaseHtmlElementParser <|-- ParagraphElementParser
+ParagraphHtmlParserABC <|-- ParagraphElementParser
+HtmlTagParserABC <|-- ParagraphHtmlParserABC
+BaseColumn <|-- ParsedValueColumn
+WikiElementClassifierABC <|-- PassthroughElementClassifier
+SectionTableClassifierABC <|-- PassthroughSectionTableClassifier
 ScraperError <|-- PipelineError
+BaseColumn <|-- PointsColumn
+BaseColumn <|-- PointsOrTextColumn
+WikiTableBaseMapper <|-- PointsScoringSystemsHistoryTableMapper
+RecordTransformer <|-- PointsScoringSystemsHistoryTransformer
+ApplyForElementsMixin <|-- PointsScoringSystemsSectionParser
+NestedWikiSectionParser <|-- PointsScoringSystemsSectionParser
+BasePointsScraper <|-- PointsScraper
+BaseColumn <|-- PositionColumn
+RecordSplitStrategy <|-- PossessiveDriverColourSplitStrategy
+WikiListElementParser <|-- PrivateerTeamsListParser
+NestedWikiSectionParser <|-- PrivateerTeamsSectionParser
+HtmlInfoboxFieldParser <|-- RaceEventParser
+BackgroundMixin <|-- RaceResultColumn
+BaseColumn <|-- RaceResultColumn
+MappedWikiTableMapper <|-- RaceResultsTableMapper
+NameStatusColumn <|-- RaceTitleStatusColumn
+NestedWikiSectionParser <|-- RacesSectionParser
+BaseColumn <|-- RangeColumn
+RecordTransformer <|-- RecordFactoryTransformer
+NestedSectionHandlingMixin <|-- RecursiveSectionParser
+WikiElementParsingMixin <|-- RecursiveSectionParser
+WikiParser <|-- RecursiveSectionParser
+F1TableScraper <|-- RedFlaggedRacesBaseScraper
+WikiScraper <|-- RedFlaggedRacesScraper
+NestedWikiSectionParser <|-- RedFlaggedRacesSectionParser
+HtmlElementParserABC <|-- ReferencesElementParserABC
+WikiParser <|-- ReferencesWrapParser
+BaseColumn <|-- RegexColumn
+BackgroundMixin <|-- RestartStatusColumn
+BaseColumn <|-- RestartStatusColumn
+BackgroundMixin <|-- RoundColumn
+BaseColumn <|-- RoundColumn
+CompositeRecordValidator <|-- SchemaCompositeRecordValidator
+ExportCapability <|-- ScraperLifecycleProtocol
+FetchCapability <|-- ScraperLifecycleProtocol
+ValidateCapability <|-- ScraperLifecycleProtocol
 ScraperError <|-- ScraperNetworkError
 ScraperError <|-- ScraperNotFoundError
 ScraperError <|-- ScraperParseError
 ScraperError <|-- ScraperValidationError
-SectionAdapter <|-- SingleWikiArticleSectionAdapterBase
-SectionParser <|-- CircuitsListSectionParser
-SectionParser <|-- CurrentRulesSectionParser
-SectionParser <|-- DriversListSectionParser
-SectionParser <|-- DriversSectionParser
-SectionParser <|-- EngineManufacturersSectionParser
-SectionParser <|-- FatalitiesSectionParser
-SectionParser <|-- HistorySectionParser
-SectionParser <|-- ManufacturersSectionParser
-SectionParser <|-- PointsScoringSystemsSectionParser
-SectionParser <|-- RacesSectionParser
-SectionParser <|-- RedFlaggedRacesSectionParser
-SectionParser <|-- SeasonsSectionParser
-SectionParser <|-- TeamLiveriesSectionParser
-SectionSelectionStrategy <|-- WikipediaSectionByIdSelectionStrategy
-SectionTableParseMixin <|-- DeclarativeSectionTableParseMixin
-SectionTableParserBase <|-- CircuitEventsSectionParser
-SectionTableParserBase <|-- CircuitLapRecordsSectionParser
-SectionTableParserBase <|-- DriverResultsSectionParser
-SeedListTableScraper <|-- BaseConstructorListScraper
-SeedListTableScraper <|-- CircuitsListScraper
-SeedListTableScraper <|-- F1DriversListScraper
-SeedListTableScraper <|-- GrandsPrixListScraper
-SeedListTableScraper <|-- SeasonsListScraper
-SingleWikiArticleScraperBase <|-- F1SingleGrandPrixScraper
-SingleWikiArticleScraperBase <|-- SingleEngineManufacturerScraper
-SingleWikiArticleScraperBase <|-- SingleWikiArticleSectionAdapterBase
-SingleWikiArticleScraperBase <|-- SingleWikiArticleSectionByIdBase
-SingleWikiArticleSectionAdapterBase <|-- F1SingleCircuitScraper
-SingleWikiArticleSectionAdapterBase <|-- SingleConstructorScraper
-SingleWikiArticleSectionAdapterBase <|-- SingleDriverScraper
-SingleWikiArticleSectionAdapterBase <|-- SingleSeasonScraper
-SourceAdapter <|-- CacheAdapter
-SourceAdapter <|-- HtmlFetcher
-SubSectionParser <|-- ByRaceTitleSubSectionParser
-SubSectionParser <|-- DetailByDriverSubSectionParser
-SubSectionParser <|-- EngineRegulationSubSectionParser
-SubSectionParser <|-- EngineSubSectionParser
-SubSectionParser <|-- IndianapolisOnlySubSectionParser
-SubSectionParser <|-- NonChampionshipsRacesSubSectionParser
-SubSectionParser <|-- OfficialDriversSubSectionParser
-SubSectionParser <|-- SpecialCasesSubSectionParser
-SubSectionParser <|-- TyreManufacturersBySeasonSubSectionParser
-SubSubSectionParser <|-- ShortenedRacesSubSubSectionParser
-SubSubSectionParser <|-- SpecialCasesSubSubSectionRouter
-SubSubSectionParser <|-- SprintRacesSubSubSectionParser
-TableParser <|-- F1StandingsScraper
-TableParser <|-- SponsorshipTableParser
-TableParser <|-- TeamLiveriesTableParser
-TextCacheProtocol <|-- FileCache
-TextCacheProtocol <|-- WikipediaCachePolicy
-ValidatedModel <|-- Circuit
-ValidatedModel <|-- EngineManufacturer
-ValidatedModel <|-- EngineRegulation
-ValidatedModel <|-- EngineRestriction
-ValueObject <|-- DateValue
-ValueObject <|-- DriversChampionships
-ValueObject <|-- Link
-ValueObject <|-- NormalizedDate
+BaseSeasonParser <|-- SeasonCalendarParser
+TextBlockSectionParser <|-- SeasonCalendarSectionParser
+SectionParserBase <|-- SeasonConstructorsStandingsSectionParser
+BaseColumn <|-- SeasonDateColumn
+SectionParserBase <|-- SeasonDriversStandingsSectionParser
+BaseSeasonParser <|-- SeasonEntriesParser
+BaseSeasonParser <|-- SeasonFreePracticeParser
+SeasonTableOrchestratorABC <|-- SeasonGenericTableOrchestrator
+ExtractListItemsMixin <|-- SeasonMidSeasonChangesSectionParser
+ListSectionParser <|-- SeasonMidSeasonChangesSectionParser
+BaseSeasonParser <|-- SeasonNonChampionshipParser
+BaseDomainPipelineService <|-- SeasonPipelineService
+BaseRecordAssembler <|-- SeasonRecordAssembler
+BaseRecordFactory <|-- SeasonRecordFactory
 ValueObject <|-- SeasonRef
-WikiElementParserMixin <|-- SubSubSubSectionParser
-WikiElementParserMixin <|-- WikiScraper
-WikiParser <|-- ContentTextParser
-WikiParser <|-- SubSubSubSectionParser
-WikiScraper <|-- F1ListScraper
-WikiScraper <|-- F1SponsorshipLiveriesScraper
-WikiScraper <|-- F1TableScraper
-WikiScraper <|-- RedFlaggedRacesScraper
-WikiScraper <|-- SingleWikiArticleScraperBase
-WikiTableBaseParser <|-- BaseRedFlaggedRacesTableParser
-WikiTableBaseParser <|-- CircuitsListTableParser
-WikiTableBaseParser <|-- CurrentConstructorsTableParser
-WikiTableBaseParser <|-- DriverOrderedTableParser
-WikiTableBaseParser <|-- EngineManufacturersTableParser
-WikiTableBaseParser <|-- EngineRegulationTableParser
-WikiTableBaseParser <|-- EngineRestrictionsTableParser
-WikiTableBaseParser <|-- FemaleDriversTableParser
-WikiTableBaseParser <|-- FormerConstructorsTableParser
-WikiTableBaseParser <|-- GrandsPrixTableParser
-WikiTableBaseParser <|-- MappedWikiTableParser
-WikiTableBaseParser <|-- PointsScoringSystemsHistoryTableParser
-WikiTableBaseParser <|-- SeasonsTableParser
-WikiTableBaseParser <|-- ShortenedRacesPointsTableParser
-WikiTableBaseParser <|-- SprintPointsTableParser
-WikiTableBaseParser <|-- TyreManufacturersBySeasonTableParser
+BaseSeasonParser <|-- SeasonRegionalChampionshipParser
+ExtractListItemsMixin <|-- SeasonRegulationChangesSectionParser
+ListSectionParser <|-- SeasonRegulationChangesSectionParser
+BaseSeasonParser <|-- SeasonResultsParser
+SectionParserBase <|-- SeasonResultsSectionParser
+BaseSeasonParser <|-- SeasonScoringSystemParser
+WikiSectionElementParserABC <|-- SeasonSectionParserABC
+RecordSplitStrategy <|-- SeasonSplitStrategy
+WikiSectionParserBase <|-- SeasonStandingsParser
+SeasonTableOrchestratorABC <|-- SeasonStandingsTableOrchestrator
+BaseRecordFactory <|-- SeasonSummaryRecordFactory
+SeasonTablePayloadMapperABC <|-- SeasonTablePayloadMapper
+BaseSectionExtractionService <|-- SeasonTextSectionExtractionService
+BaseColumn <|-- SeasonsColumn
+SeedListTableScraper <|-- SeasonsListScraper
+NestedWikiSectionParser <|-- SeasonsSectionParser
+WikiTableBaseMapper <|-- SeasonsTableMapper
+WikiTableHtmlParser <|-- SeasonsTableParser
+DomainArticleScraperBase <|-- SectionAdapterScraperBase
+SectionAdapter <|-- SectionAdapterScraperBase
+SectionAwareMixin <|-- SectionAdapterScraperBase
+DomainArticleScraperBase <|-- SectionByIdScraperBase
+SectionAwareMixin <|-- SectionByIdScraperBase
+WikiSectionElementParserABC <|-- SectionElementParser
+HtmlSoupParserABC <|-- SectionHtmlParserABC
+ClassifierABC <|-- SectionInfoboxClassifierABC
+MapperABC <|-- SectionInfoboxRecordMapperABC
+HtmlSoupParserABC <|-- SectionInfoboxesHtmlParserABC
+ClassifierABC <|-- SectionListClassifierABC
+MapperABC <|-- SectionListRecordMapperABC
+HtmlSoupParserABC <|-- SectionListsHtmlParserABC
+MetadataBindingMixin <|-- SectionMetadataBindingMixin
+WikiSectionElementParserABC <|-- SectionParserBase
+BaseSectionParser <|-- SectionStructureParserABC
+ClassifierABC <|-- SectionTableClassifierABC
+MapperABC <|-- SectionTableRecordMapperABC
+HtmlSoupParserABC <|-- SectionTablesHtmlParserABC
+HtmlSoupParserABC <|-- SectionTextBlocksHtmlParserABC
+ClassifierABC <|-- SectionTextClassifierABC
+MapperABC <|-- SectionTextRecordMapperABC
+F1TableScraper <|-- SeedListTableScraper
+ListScraperContract <|-- SeedListTableScraper
+BaseRegistryEntry <|-- SeedRegistryEntry
+BaseOrchestrationFlow <|-- SeedSectionOrchestrationFlow
+BaseColumn <|-- SeriesColumn
+RecordTransformer <|-- ShortenedRacePointsTransformer
+WikiTableBaseMapper <|-- ShortenedRacesPointsTableMapper
+ApplyForElementsMixin <|-- ShortenedRacesSubSubSectionParser
+SubSubSectionParser <|-- ShortenedRacesSubSubSectionParser
+SectionAdapterScraperBase <|-- SingleConstructorScraper
+SectionAdapterScraperBase <|-- SingleDriverScraper
+DomainArticleScraperBase <|-- SingleEngineManufacturerScraper
+SectionAdapterScraperBase <|-- SingleSeasonScraper
+BaseColumn <|-- SkipColumn
+ParserABC <|-- SoupParser
+HtmlFetcher <|-- SourceAdapterFetcherShim
+PipelineError <|-- SourceParseError
+SubSectionParser <|-- SpecialCasesSubSectionParser
+SubSubSectionParser <|-- SpecialCasesSubSubSectionRouter
+BaseRecordFactory <|-- SpecialDriverRecordFactory
+BaseColumn <|-- SponsorColumn
+ParserABC <|-- SponsorPartsParser
+LayerZeroRunConfigFactory <|-- SponsorshipLiveriesRunConfigFactory
+BaseColumn <|-- SponsorshipSeasonsColumn
+WikiSectionParserBase <|-- SponsorshipSectionParser
+WikiTableBaseMapper <|-- SprintPointsTableMapper
+ApplyForElementsMixin <|-- SprintRacesSubSubSectionParser
+SubSubSectionParser <|-- SprintRacesSubSubSectionParser
+MappedWikiTableMapper <|-- StandingsTableMapper
+LayerZeroRunConfigFactory <|-- StaticScraperKwargsFactory
+BaseInfoboxOrchestrator <|-- StrategyBackedInfoboxOrchestrator
+SectionLevelMixin <|-- SubSectionLevelMixin
+RecursiveSectionParser <|-- SubSectionParser
+SubSectionLevelMixin <|-- SubSubSectionLevelMixin
+RecursiveSectionParser <|-- SubSubSectionParser
+RecursiveSectionParser <|-- SubSubSubSectionParser
+HtmlTagParserABC <|-- TableCellParserABC
+MapperABC <|-- TableDomainMapperABC
+WikiTableElementParserABC <|-- TableElementParser
+Extractor <|-- TableExtractor
+HtmlTagParserABC <|-- TableHtmlParserABC
+MapperABC <|-- TableMapperABC
+HtmlTagParserABC <|-- TableParserABC
+GroupParsingMixin <|-- TableRecordMapper
+RowMappingMixin <|-- TableRecordMapper
+HtmlTagParserABC <|-- TableRowParserABC
+SectionParserBase <|-- TableSectionParser
+WikiSectionParserBase <|-- TeamLiveriesSectionParser
+HtmlInfoboxFieldParser <|-- TeamsParser
+BaseSeasonParser <|-- TestingVenuesParser
+SectionParserBase <|-- TextBlockSectionParser
+BaseColumn <|-- TextColumn
+BaseColumn <|-- TimeColumn
+BaseColumn <|-- TimeRangeColumn
+PipelineError <|-- TransportError
+BaseColumn <|-- TyreColumn
+SubSectionParser <|-- TyreManufacturersBySeasonSubSectionParser
+WikiTableBaseMapper <|-- TyreManufacturersBySeasonTableMapper
+F1TableScraper <|-- TyreManufacturersScraper
+BaseColumn <|-- UnitColumn
+BaseColumn <|-- UnknownValueColumn
+BaseColumn <|-- UrlColumn
+BaseHttpClient <|-- UrllibHttpClient
+PipelineError <|-- ValidationError
+ArticleHtmlParserABC <|-- WikiArticleParserABC
+WikiSoupParserABC <|-- WikiArticleParserABC
+WikiArticleParserABC <|-- WikiArticleParserBase
+WikiDelegatingHtmlParserBase <|-- WikiArticleParserBase
+WikiDomainMapperABC <|-- WikiDomainMapper
+MapperABC <|-- WikiDomainMapperABC
+ClassifierABC <|-- WikiElementClassifierABC
+MapperABC <|-- WikiElementPayloadMapperABC
+WikiFigureElementParserABC <|-- WikiFigureElementParser
+FigureHtmlParserABC <|-- WikiFigureElementParserABC
+WikiTagParserABC <|-- WikiFigureElementParserABC
+WikiFigureElementParserABC <|-- WikiFigureParser
+WikiFigureElementParserABC <|-- WikiFigureParserABC
+WikiListParserABC <|-- WikiFigureParserABC
+WikiDelegatingHtmlParserBase <|-- WikiFigureParserBase
+WikiFigureElementParserABC <|-- WikiFigureParserBase
+WikiInfoboxParserABC <|-- WikiInfoboxElementParser
+InfoboxHtmlParserABC <|-- WikiInfoboxElementParserABC
+WikiTagParserABC <|-- WikiInfoboxElementParserABC
+WikiInfoboxElementParserABC <|-- WikiInfoboxHtmlParser
+WikiInfoboxHtmlParser <|-- WikiInfoboxParser
+WikiInfoboxElementParserABC <|-- WikiInfoboxParserABC
+WikiListParserABC <|-- WikiInfoboxParserABC
+WikiDelegatingHtmlParserBase <|-- WikiInfoboxParserBase
+WikiInfoboxElementParserABC <|-- WikiInfoboxParserBase
+WikiListParserABC <|-- WikiListElementParser
+WikiElementParserABC <|-- WikiListElementParserABC
+HtmlTagParserABC <|-- WikiListParser
+WikiListElementParserABC <|-- WikiListParserABC
+WikiDelegatingHtmlParserBase <|-- WikiListParserBase
+WikiListElementParserABC <|-- WikiListParserBase
+WikiNavboxElementParserABC <|-- WikiNavboxElementParser
+NavboxHtmlParserABC <|-- WikiNavboxElementParserABC
+WikiTagParserABC <|-- WikiNavboxElementParserABC
+WikiNavboxElementParserABC <|-- WikiNavboxParser
+WikiListParserABC <|-- WikiNavboxParserABC
+WikiNavboxElementParserABC <|-- WikiNavboxParserABC
+WikiDelegatingHtmlParserBase <|-- WikiNavboxParserBase
+WikiNavboxElementParserABC <|-- WikiNavboxParserBase
+WikiParagraphElementParserABC <|-- WikiParagraphElementParser
+ParagraphHtmlParserABC <|-- WikiParagraphElementParserABC
+WikiTagParserABC <|-- WikiParagraphElementParserABC
+ParagraphElementParser <|-- WikiParagraphParser
+WikiListParserABC <|-- WikiParagraphParserABC
+WikiParagraphElementParserABC <|-- WikiParagraphParserABC
+WikiDelegatingHtmlParserBase <|-- WikiParagraphParserBase
+WikiParagraphElementParserABC <|-- WikiParagraphParserBase
+WikiElementPayloadMapperABC <|-- WikiParsedPayloadMapper
+ParserABC <|-- WikiParser
+ReferencesWrapParser <|-- WikiReferencesElementParser
+WikiReferencesParserBase <|-- WikiReferencesElementParser
+ReferencesElementParserABC <|-- WikiReferencesElementParserABC
+WikiTagParserABC <|-- WikiReferencesElementParserABC
+WikiDelegatingHtmlParserBase <|-- WikiReferencesParserBase
+WikiReferencesElementParserABC <|-- WikiReferencesParserBase
+ABCScraper <|-- WikiScraper
+WikiElementParsingMixin <|-- WikiScraper
+WikiSectionStructureParserABC <|-- WikiSectionElementParser
+SectionHtmlParserABC <|-- WikiSectionElementParserABC
+WikiSoupParserABC <|-- WikiSectionElementParserABC
+SectionLevelMixin <|-- WikiSectionParserABC
+WikiSectionNodeParserABC <|-- WikiSectionParserABC
+BaseSectionParser <|-- WikiSectionParserBase
+WikiSectionElementParserABC <|-- WikiSectionStructureParserABC
+HtmlSoupParserABC <|-- WikiSoupParserABC
+SubSectionLevelMixin <|-- WikiSubSectionParserABC
+WikiSectionNodeParserABC <|-- WikiSubSectionParserABC
+SubSubSectionLevelMixin <|-- WikiSubSubSectionParserABC
+WikiSectionNodeParserABC <|-- WikiSubSubSectionParserABC
+GroupParsingMixin <|-- WikiTableBaseMapper
+MatchesMixin <|-- WikiTableBaseMapper
+RowMappingMixin <|-- WikiTableBaseMapper
+TableDomainMapperABC <|-- WikiTableBaseMapper
+WikiTablePayloadCollectMixin <|-- WikiTableBaseMapper
+WikiTablePayloadTransformMixin <|-- WikiTableBaseMapper
+TableParserABC <|-- WikiTableBaseParser
+WikiTableParserABC <|-- WikiTableElementParser
+TableHtmlParserABC <|-- WikiTableElementParserABC
+WikiTagParserABC <|-- WikiTableElementParserABC
+HtmlSoupParserABC <|-- WikiTableElementParserBase
+HeaderNormalizationMixin <|-- WikiTableHtmlParser
+TableCellExtractionMixin <|-- WikiTableHtmlParser
+WikiTableElementParserABC <|-- WikiTableHtmlParser
+WikiTableHtmlParser <|-- WikiTableParser
+WikiListParserABC <|-- WikiTableParserABC
+WikiTableElementParserABC <|-- WikiTableParserABC
+WikiDelegatingHtmlParserBase <|-- WikiTableParserBase
+WikiTableElementParserABC <|-- WikiTableParserBase
+HtmlTagParserABC <|-- WikiTagParser
+HtmlTagParserABC <|-- WikiTagParserABC
+TextCacheProtocol <|-- WikipediaCachePolicy
+SectionSelectionStrategy <|-- WikipediaSectionByIdSelectionStrategy
+BaseRedFlaggedRacesTableMapper <|-- WorldChampionshipsRacesTableMapper
+ParserABC <|-- YearParser
 
 @enduml
