@@ -8,6 +8,7 @@ from scrapers.parsers.registry import resolve_parser_base
 from scrapers.parsers.registry import resolve_parser_name
 from scrapers.parsers.registry import validate_parser_registry
 from scrapers.parsers.element_parser_abc import ListElementParserABC
+from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
 
 
 def test_validate_parser_registry_rejects_conflicts() -> None:
@@ -54,4 +55,4 @@ def test_resolve_parser_name_raises_for_unregistered_key() -> None:
 
 def test_resolve_parser_base_returns_abc() -> None:
     parser_base = resolve_parser_base(domain="drivers", element_type="list")
-    assert parser_base is ListElementParserABC
+    assert parser_base is WikiListParserABC

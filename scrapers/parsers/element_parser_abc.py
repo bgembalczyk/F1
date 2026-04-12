@@ -22,13 +22,30 @@ ElementType = Literal[
 ]
 
 
-class ElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    """Canonical contract for HTML element parsers (list/table/infobox/navbox/references)."""
+class HtmlElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
+    """Canonical HTML-element parsing layer.
+
+    Sits between the root ParserABC[In, Out] and the specialized Wiki ABCs:
+
+        ParserABC[In, Out]
+          └── HtmlTagParserABC[TagOut]
+                └── HtmlElementParserABC[TagOut]   ← this layer
+                      ├── WikiTableParserABC
+                      ├── WikiListParserABC
+                      ├── WikiSectionParserABC
+                      ├── WikiInfoboxParserABC
+                      ├── WikiNavboxParserABC
+                      └── WikiFigureParserABC
+    """
 
     element_type: ElementType
 
     @abstractmethod
     def parse(self, raw: Tag) -> TagOut: ...
+
+
+#: Backward-compatible alias — use HtmlElementParserABC for new code.
+ElementParserABC = HtmlElementParserABC
 
 
 class ListElementParserABC(ElementParserABC[TagOut], ABC, Generic[TagOut]):
