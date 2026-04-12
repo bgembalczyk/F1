@@ -1,4 +1,4 @@
-from models.records.circuit import CIRCUIT_SCHEMA
+from models.records.circuit.circuit import CIRCUIT_SCHEMA
 from scrapers.composite_validator import SchemaCompositeRecordValidator
 
 

@@ -2,8 +2,8 @@ from abc import ABC
 
 from pathlib import Path
 
-from scrapers.abc import ScraperLifecycleABC
 from scrapers.component_metadata_wiki import validate_metadata_for_component_class
+from scrapers.lifecycle_abc import ScraperLifecycleABC
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
 from validation.validator_base import ExportRecord

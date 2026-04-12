@@ -12,6 +12,7 @@ from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.callable import CallableInfoboxFieldParser
 from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
 from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
+from scrapers.parsers.infobox.field.base import InfoboxFieldParser
 from scrapers.numeric_extractor import NumericExtractor
 
 

@@ -8,6 +8,7 @@ from typing import TypeVar
 
 from bs4 import Tag
 
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
 
 Output = TypeVar("Output")
@@ -27,7 +28,11 @@ class InfoboxHtmlFieldParserABC(HtmlTagParserABC[Output], ABC, Generic[Output]):
     def parse(self, raw: Tag) -> Output: ...
 
 
-class InfoboxRowsParserABC(ABC, Generic[Output]):
+class InfoboxRowsParserABC(
+    ParserABC[list[dict[str, Any]], Output],
+    ABC,
+    Generic[Output],
+):
     """Parser contract for infobox field data already normalized into rows."""
 
     @abstractmethod

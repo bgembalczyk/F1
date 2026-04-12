@@ -10,7 +10,7 @@ from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.constants import COUNT_RE
 from scrapers.parsers.infobox.constants import PAREN_RE
 from scrapers.parsers.infobox.constants import YEAR_RE
-from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
+from scrapers.parsers.infobox.field.base import HtmlInfoboxFieldParser
 from scrapers.year_extractor import YearExtractor
 
 

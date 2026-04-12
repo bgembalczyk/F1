@@ -2,6 +2,7 @@ from typing import Any
 from typing import Iterable
 
 from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
+from scrapers.parsers.infobox.field.base import InfoboxFieldParser
 
 
 class InfoboxFieldRegistry:

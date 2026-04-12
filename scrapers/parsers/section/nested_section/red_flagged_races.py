@@ -4,8 +4,8 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_section.non_championships_races import NonChampionshipsRacesSubSectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.section.sub_section.non_championships_races import NonChampionshipsRacesSubSectionParser
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.sub_section.non_championships_races import NonChampionshipsRacesSubSectionParser
 from scrapers.world_championships_races_table_mapper import WorldChampionshipsRacesTableMapper

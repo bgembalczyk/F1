@@ -4,8 +4,8 @@ from typing import Any
 
 from scrapers.parsers.section_parser_abc import SectionParserABC
 from scrapers.parsers.section_parser_abc import SubSectionParserABC
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.section.sub_section.base import SubSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 

@@ -6,13 +6,11 @@ from models.data.wiki_parser import WikiParserData
 from models.payload import WikiParsedPayload
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
+from scrapers.parsers.wiki.element import ElementParseInput
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
-from scrapers.parsers.wiki.figure import WikiFigureParser
-from scrapers.parsers.wiki.navbox import WikiNavboxParser
-from scrapers.parsers.wiki.paragraph import WikiParagraphParser
-from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
+from scrapers.parsers.wiki.element_dispatcher import ElementParserDispatcher
 
 
 class WikiElementParsingMixin:
@@ -33,11 +31,20 @@ class WikiElementParsingMixin:
         self.references_parser = resolved_parsers.references_parser
         self._paragraph_parser = resolved_parsers.paragraph_parser
         self._figure_parser = resolved_parsers.figure_parser
-        self._navbox_parser = resolved_parsers.navbox_parser
-        self._references_parser = resolved_parsers.references_parser
-        self.element_registry = element_registry
+        resolved_registry = element_registry or build_wikipedia_element_registry(
+            parsers=WikiElementSet(
+                infobox_parser=self.infobox_parser,
+                paragraph_parser=self._paragraph_parser,
+                figure_parser=self._figure_parser,
+                list_parser=self.list_parser,
+                table_parser=self.table_parser,
+                navbox_parser=self.navbox_parser,
+                references_parser=self.references_parser,
+            ),
+        )
+        self.element_registry = resolved_registry
+        self.dispatcher = ElementParserDispatcher(registry=resolved_registry)
         self._parser_rules: list[ParserRule] = []
-        self._register_default_parser_rules()
 
     @staticmethod
     def _get_classes(el: Tag) -> list[str]:
@@ -60,23 +67,6 @@ class WikiElementParsingMixin:
             return
         index = max(0, min(priority, len(self._parser_rules)))
         self._parser_rules.insert(index, rule)
-
-    def _register_default_parser_rules(self) -> None:
-        if self.element_registry is not None:
-            self._parser_rules.extend(self.element_registry.rules)
-            return
-        auto_registry = build_wikipedia_element_registry(
-            parsers=WikiElementSet(
-                infobox_parser=self.infobox_parser,
-                paragraph_parser=self._paragraph_parser,
-                figure_parser=self._figure_parser,
-                list_parser=self.list_parser,
-                table_parser=self.table_parser,
-                navbox_parser=self._navbox_parser,
-                references_parser=self._references_parser,
-            ),
-        )
-        self._parser_rules.extend(auto_registry.rules)
 
     @staticmethod
     def _has_infobox_class(classes: object) -> bool:
@@ -158,7 +148,16 @@ class WikiElementParsingMixin:
                     rule=rule,
                     section_context=section_context,
                 )
-        return None
+
+        parse_input = ElementParseInput(
+            tag=el,
+            metadata=section_context.html_metadata,
+            section_context=section_context,
+        )
+        return self.dispatcher.dispatch(
+            parse_input=parse_input,
+            section_context=section_context,
+        )
 
     @staticmethod
     def _iter_direct_child_tags(element: Tag) -> list[Tag]:
@@ -181,6 +180,5 @@ class WikiElementParsingMixin:
             "confidence": 1.0,
             "raw_html_fragment": str(el),
             "data": rule.parser(el),
-            # legacy compatibility:
             "type": rule.result_type,
         }

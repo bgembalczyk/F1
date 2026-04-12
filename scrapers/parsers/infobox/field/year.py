@@ -1,4 +1,4 @@
-"""Helper class for parsing year-related information from infobox cells."""
+"""Runtime parser for year-related information from infobox cells."""
 
 from models.domain_utils.years import parse_year_range as parse_domain_year_range
 from scrapers.error_handler import ErrorHandler
@@ -6,28 +6,26 @@ from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.parsers.infobox.constants import MIN_RANGE_YEARS
 from scrapers.parsers.infobox.constants import OPEN_ENDED_RE
 from scrapers.parsers.infobox.constants import YEAR_RE
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class YearParser:
+class YearParser(ParserABC[str, dict[str, int | None]]):
     """Handles parsing of years and year ranges."""
 
-    @staticmethod
-    def parse(text: str) -> dict[str, int | None]:
+    def parse(self, text: str) -> dict[str, int | None]:
         """Unified parser entrypoint."""
-        return YearParser.parse_year_range(text)
+        return self.parse_year_range(text)
 
-    @staticmethod
-    def parse_year_range(text: str) -> dict[str, int | None]:
+    def parse_year_range(self, text: str) -> dict[str, int | None]:
         """Parse year range from text."""
         normalized = clean_infobox_text(text) or ""
         return ErrorHandler.run_domain_parse(
             lambda: parse_domain_year_range(normalized),
             message=f"Nie udało się sparsować zakresu lat: {text!r}.",
-            parser_name=YearParser.__name__,
+            parser_name=self.__class__.__name__,
         )
 
-    @staticmethod
-    def parse_licence_years(year_text: str) -> dict[str, int | None]:
+    def parse_licence_years(self, year_text: str) -> dict[str, int | None]:
         """Parse year information from licence year text.
 
         Handles formats like:

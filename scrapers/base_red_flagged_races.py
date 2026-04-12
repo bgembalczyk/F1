@@ -3,18 +3,22 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.multi_level_header_builder import MultiLevelHeaderBuilder
-from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.helpers.transformers import append_transformer
-from scrapers.base.options import ScraperOptions
-from scrapers.base.sections.resolve_candidates import resolve_section_candidates
-from scrapers.base.table.columns import types as col
-from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
-from scrapers.base.table.dsl.column import ColumnSpec
-from scrapers.base.table.parser import HtmlTableParser
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers import FailedToMakeRestartTransformer
+from scrapers.columns.factory import IntColumn
+from scrapers.columns.spec import ColumnSpec
+from scrapers.columns.types.driver import DriverColumn
+from scrapers.columns.types.driver_list import DriverListColumn
+from scrapers.columns.types.restart_status import RestartStatusColumn
+from scrapers.columns.types.skip import SkipColumn
+from scrapers.columns.types.text import TextColumn
+from scrapers.helpers.header import is_repeated_header_row
+from scrapers.helpers.text import clean_wiki_text
+from scrapers.helpers.transformers import append_transformer
+from scrapers.multi_level_header_builder import MultiLevelHeaderBuilder
+from scrapers.options import ScraperOptions
+from scrapers.parsers.html_table import HtmlTableParser
+from scrapers.scraper_table import F1TableScraper
+from scrapers.section.resolve_candidates import resolve_section_candidates
+from scrapers.transformers.record.failed_to_make_restart import FailedToMakeRestartTransformer
 
 logger = logging.getLogger(__name__)
 
@@ -50,27 +54,27 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             List of column definitions common to all red-flagged race tables.
         """
         return [
-            ColumnSpec("Year", "season", col.IntColumn()),
+            ColumnSpec("Year", "season", IntColumn()),
             ColumnSpec(
                 race_name_header,
                 race_name_header.lower().replace(" ", "_"),
                 None,
             ),  # Will be set by caller
-            ColumnSpec("Lap", "lap", col.IntColumn()),
+            ColumnSpec("Lap", "lap", IntColumn()),
             ColumnSpec("R", "restart_status", RestartStatusColumn()),
-            ColumnSpec("Winner", "winner", col.DriverColumn()),
-            ColumnSpec("Incident that prompted red flag", "incident", col.TextColumn()),
+            ColumnSpec("Winner", "winner", DriverColumn()),
+            ColumnSpec("Incident that prompted red flag", "incident", TextColumn()),
             ColumnSpec(
                 "Failed to make the restart - Drivers",
                 "failed_to_make_restart_drivers",
-                col.DriverListColumn(),
+                DriverListColumn(),
             ),
             ColumnSpec(
                 "Failed to make the restart - Reason",
                 "failed_to_make_restart_reason",
-                col.TextColumn(),
+                TextColumn(),
             ),
-            ColumnSpec("Ref.", "ref", col.SkipColumn()),
+            ColumnSpec("Ref.", "ref", SkipColumn()),
         ]
 
     def __init__(

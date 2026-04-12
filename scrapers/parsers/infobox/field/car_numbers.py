@@ -11,8 +11,10 @@ from scrapers.parsers.infobox.constants import CAR_NUMBER_PATTERN_RE
 from scrapers.parsers.infobox.constants import MIN_VALID_CAR_NUMBER_YEAR
 from scrapers.parsers.infobox.constants import MIN_YEAR_TOKENS_FOR_RANGE
 from scrapers.parsers.infobox.constants import YEAR_TOKEN_RE
-from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
+from scrapers.parsers.infobox.field.base import HtmlInfoboxFieldParser
 from scrapers.parsers.infobox.field.year import YearParser
+
+_YEAR_PARSER = YearParser()
 
 
 class CarNumbersParser(HtmlInfoboxFieldParser):
@@ -54,7 +56,7 @@ class CarNumbersParser(HtmlInfoboxFieldParser):
             years_text = match.group("years") or ""
             years = {"start": None, "end": None}
             if years_text:
-                parsed = YearParser.parse_year_range(years_text)
+                parsed = _YEAR_PARSER.parse_year_range(years_text)
                 year_tokens = YEAR_TOKEN_RE.findall(years_text)
                 if len(year_tokens) >= MIN_YEAR_TOKENS_FOR_RANGE:
                     parsed["start"] = int(year_tokens[0])

@@ -11,10 +11,10 @@ from models.data.wiki.list import WikiListData
 from models.data.wiki.navbox import WikiNavboxData
 from models.data.wiki.table import WikiTableData
 from scrapers.parsers.wiki.wiki_figure_parser_abc import WikiFigureParserABC
-from scrapers.parsers.wiki.wiki_infobox_parser_abc import WikiInfoboxParserABC
-from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
+from scrapers.parsers.wiki.section_nodes.infobox import WikiInfoboxParserABC
+from scrapers.parsers.wiki.section_nodes.list import WikiListParserABC
 from scrapers.parsers.wiki.wiki_navbox_parser_abc import WikiNavboxParserABC
-from scrapers.parsers.wiki.wiki_table_parser_abc import WikiTableParserABC
+from scrapers.parsers.wiki.section_nodes.table import WikiTableParserABC
 from scrapers.parsers.section_parser_abc import SectionParserABC
 
 
