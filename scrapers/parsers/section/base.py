@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 
     from scrapers.section.parse_results import SectionParseResult
 
-from scrapers.parsers.base_family import SectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC as SectionParserABC
 
 
 class BaseSectionParser(SectionParserABC):

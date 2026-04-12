@@ -9,13 +9,13 @@ from typing import TypeVar
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.domain_roles import Parser
-from scrapers.parsers.base_family import InfoboxParserABC
-from scrapers.parsers.base_family import ListParserABC
-from scrapers.parsers.base_family import SectionParserABC
-from scrapers.parsers.base_family import SoupParserABC
-from scrapers.parsers.base_family import TableParserABC
-from scrapers.parsers.base_family import TagParserABC
+from scrapers.parsers.contracts.base import ParserABC as Parser
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC as InfoboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC as ListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC as SectionParserABC
+from scrapers.parsers.contracts.html import SoupParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC as TableParserABC
+from scrapers.parsers.contracts.html import TagParserABC
 from scrapers.section.parse_results import SectionParseResult
 
 InT = TypeVar("InT")

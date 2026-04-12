@@ -9,7 +9,7 @@ from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parsers.table.html import HtmlTableParser
-from scrapers.parsers.wiki.families import WikiTableParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 
 
 class WikiTableHtmlParser(WikiTableParserABC):

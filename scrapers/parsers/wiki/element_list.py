@@ -1,7 +1,7 @@
 from bs4 import Tag
 
 from scrapers.parsers.html_elements.list import ListElementParser
-from scrapers.parsers.wiki.families import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
 from scrapers.parsers.wiki.types import WikiListData
 
 
