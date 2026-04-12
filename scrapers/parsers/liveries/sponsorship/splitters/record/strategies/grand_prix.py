@@ -5,9 +5,12 @@ from scrapers.helpers.constants import SPONSOR_KEYS
 from scrapers.parsers.liveries.sponsorship.scope.grand_prix_transformer import GrandPrixScopeTransformer
 from scrapers.parsers.liveries.sponsorship.scope.handlers.colour import ColourScopeHandler
 from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
+from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_strategy import (
+    RecordSplitStrategy,
+)
 
 
-class GrandPrixSplitStrategy:
+class GrandPrixSplitStrategy(RecordSplitStrategy):
     def apply(self, record: PipelineRecord) -> list[PipelineRecord]:
         raw_record = record.payload
         base_sponsors, scoped_items = self._separate_sponsors(raw_record)

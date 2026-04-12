@@ -13,6 +13,7 @@ from scrapers.domain_roles import Parser
 from scrapers.section.parse_results import SectionParseResult
 
 TagIn = TypeVar("TagIn", bound=Tag)
+In = TypeVar("In")
 Out = TypeVar("Out")
 ParsedDataT_co = TypeVar("ParsedDataT_co", covariant=True)
 RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
@@ -21,25 +22,26 @@ RecordT_co = TypeVar("RecordT_co", covariant=True)
 BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
 
 
-class HtmlTagParserABC(Parser[TagIn, Out], ABC, Generic[TagIn, Out]):
+class ParserABC(Parser[In, Out], ABC, Generic[In, Out]):
+    """Bazowy kontrakt runtime dla parserów (input -> output)."""
+
+    @abstractmethod
+    def parse(self, raw: In) -> Out: ...
+
+
+class HtmlTagParserABC(ParserABC[TagIn, Out], ABC, Generic[TagIn, Out]):
     """Runtime contract for single HTML tag parsers (Tag -> parsed payload)."""
 
-    @abstractmethod
-    def parse(self, raw: TagIn) -> Out: ...
 
-
-class SoupDocumentParserABC(Parser[BeautifulSoup, Out], ABC, Generic[Out]):
+class SoupDocumentParserABC(ParserABC[BeautifulSoup, Out], ABC, Generic[Out]):
     """Runtime contract for soup/document parsers (BeautifulSoup -> output)."""
-
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> Out: ...
 
 
 class SectionStructureParserABC(SoupDocumentParserABC[SectionParseResult], ABC):
     """Runtime contract for section structure parsers."""
 
 
-class TableHtmlParserABC(Parser[dict[str, Any], dict[str, Any] | None], ABC):
+class TableHtmlParserABC(ParserABC[dict[str, Any], dict[str, Any] | None], ABC):
     """Runtime contract for HTML table-fragment domain mappers."""
 
     @abstractmethod
@@ -48,6 +50,14 @@ class TableHtmlParserABC(Parser[dict[str, Any], dict[str, Any] | None], ABC):
 
 class InfoboxHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
     """Runtime contract for infobox HTML parsers."""
+
+
+class ListParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
+    """Runtime contract for list HTML parsers."""
+
+
+class InfoboxParserABC(InfoboxHtmlParserABC, ABC):
+    """Runtime contract for infobox parsers."""
 
 
 class HtmlElementParserABC(HtmlTagParserABC[Tag, ParsedDataT_co], ABC, Generic[ParsedDataT_co]):
@@ -60,6 +70,10 @@ class SectionParserABC(SectionStructureParserABC):
 
 class TableDomainMapperABC(TableHtmlParserABC):
     """Backward-compatible alias for table parser contracts."""
+
+
+class TableMapperABC(TableDomainMapperABC):
+    """Runtime contract for table domain mappers."""
 
 
 class MatchesMixin(ABC):
@@ -96,8 +110,11 @@ __all__ = [
     "GroupParsingMixin",
     "HtmlElementParserABC",
     "HtmlTagParserABC",
+    "InfoboxParserABC",
     "InfoboxHtmlParserABC",
+    "ListParserABC",
     "MatchesMixin",
+    "ParserABC",
     "ParsingBundle",
     "ParsingBundleProviderABC",
     "RowMappingMixin",
@@ -107,4 +124,5 @@ __all__ = [
     "SoupDocumentParserABC",
     "TableDomainMapperABC",
     "TableHtmlParserABC",
+    "TableMapperABC",
 ]

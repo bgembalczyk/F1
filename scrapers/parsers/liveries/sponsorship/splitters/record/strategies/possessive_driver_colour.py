@@ -4,10 +4,13 @@ from scrapers.helpers.constants import COLOUR_KEYS
 from scrapers.parsers.liveries.sponsorship.scope.handlers.colour import ColourScopeHandler
 from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
 from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_rule import SplitRule
+from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_strategy import (
+    RecordSplitStrategy,
+)
 from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_possesive_color import HasPossessiveColoursRule
 
 
-class PossessiveDriverColourSplitStrategy:
+class PossessiveDriverColourSplitStrategy(RecordSplitStrategy):
     def __init__(self, rule: SplitRule | None = None):
         self._rule = rule or HasPossessiveColoursRule()
 
