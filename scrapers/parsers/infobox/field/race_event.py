@@ -7,10 +7,10 @@ from bs4 import Tag
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
-from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
+from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
 
 
-class RaceEventParser(InfoboxFieldParser):
+class RaceEventParser(HtmlInfoboxFieldParser):
     """Handles parsing of race event fields (First race, Last race, etc.)."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):

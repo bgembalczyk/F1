@@ -3,24 +3,24 @@ from typing import Any
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.label import parser_for_label
 from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
-from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
+from scrapers.parsers.infobox.field.protocol import InfoboxRowsParser
 
 
-class InfoboxCareerParser(InfoboxFieldParser):
+class InfoboxCareerParser(InfoboxRowsParser[list[dict[str, Any]]]):
     def __init__(self, cell_extractor: InfoboxCellValueExtractor) -> None:
         self._cell_extractor = cell_extractor
 
-    def parse(self, title: str, section: dict[str, Any]) -> dict[str, Any]:
-        """Unified parser entrypoint."""
-        return self.parse_section(title, section)
-
-    def parse_section(self, title: str, section: dict[str, Any]) -> dict[str, Any]:
-        rows: list[dict[str, Any]] = []
-        for row in section.get("rows", []):
+    def parse(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        parsed_rows: list[dict[str, Any]] = []
+        for row in rows:
             parsed = self._parse_row(row)
             if parsed is not None:
-                rows.append(parsed)
-        return {"title": title, "rows": rows}
+                parsed_rows.append(parsed)
+        return parsed_rows
+
+    def parse_section(self, title: str, section: dict[str, Any]) -> dict[str, Any]:
+        rows = section.get("rows", [])
+        return {"title": title, "rows": self.parse(rows)}
 
     def _parse_row(self, row: dict[str, Any]) -> dict[str, Any] | None:
         if "label_cell" in row and "value_cell" in row:
