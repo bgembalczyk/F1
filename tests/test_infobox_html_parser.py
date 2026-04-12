@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from scrapers.base.infobox.html_parser import InfoboxHtmlParser
+from scrapers.infobox.wikipedia import InfoboxHtmlParser
 
 
 def test_parser_extracts_title_rows_and_links():

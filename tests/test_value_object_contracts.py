@@ -8,10 +8,10 @@ from typing import ClassVar
 import pytest
 
 from models.value_objects.base import ValueObject
-from models.value_objects.date import DateValue
+from models.value_objects.date.base import DateValue
 from models.value_objects.drivers_championships import DriversChampionships
 from models.value_objects.link import Link
-from models.value_objects.normalized_date import NormalizedDate
+from models.value_objects.date.normalized import NormalizedDate
 from models.value_objects.season_ref import SeasonRef
 
 if TYPE_CHECKING:

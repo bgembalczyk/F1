@@ -1,3 +1,5 @@
+from scrapers.parsers_points import PointsScoringSystemsHistoryTableParser
+from scrapers.parsers_points import ShortenedRacesPointsTableParser
 from scrapers.points.parsers_points import PointsScoringSystemsHistoryTableMapper
 from scrapers.points.parsers_points import ShortenedRacesPointsTableMapper
 

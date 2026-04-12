@@ -7,8 +7,9 @@ from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.section.table.base import TableSectionParser
+from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
 from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
-from scrapers.parsers.table.table.base import WikiTableBaseParser
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -23,7 +24,8 @@ class ConstructorsSectionParser(BaseSectionParser):
         section_label: str | None,
         include_urls: bool,
         normalize_empty_values: bool,
-        table_mapper: WikiTableBaseMapper,
+        table_html_parser: WikiTableHtmlParser | None = None,
+        table_domain_mapper: WikiTableBaseMapper | None = None,
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
         self._toolbox = toolbox or build_default_section_toolbox()
@@ -36,8 +38,13 @@ class ConstructorsSectionParser(BaseSectionParser):
             include_urls=include_urls,
             normalize_empty_values=normalize_empty_values,
         )
-        self._table_mapper: WikiTableBaseMapper = table_mapper
-        self._table_element_parser = self._toolbox.element_parsers.table_parser
+        self._table_html_parser = (
+            table_html_parser or self._toolbox.element_parsers.table_html_parser
+        )
+        if table_domain_mapper is None:
+            msg = "table_domain_mapper must be provided"
+            raise ValueError(msg)
+        self._table_domain_mapper = table_domain_mapper
 
     def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
         logger.warning(
@@ -52,14 +59,14 @@ class ConstructorsSectionParser(BaseSectionParser):
         )
         if table is not None:
             try:
-                parsed_table = self._table_element_parser.parse(table)
+                parsed_table = self._table_html_parser.parse(table)
                 headers = parsed_table.get("headers", [])
                 logger.warning(
                     "Constructors section parser '%s': first table headers=%s.",
                     self._parser.section_label,
                     headers,
                 )
-                self._table_mapper.map(parsed_table)
+                self._table_domain_mapper.map(parsed_table)
             except RuntimeError:
                 logger.warning(
                     "Constructors section parser '%s': "

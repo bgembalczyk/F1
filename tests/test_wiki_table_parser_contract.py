@@ -4,10 +4,10 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.parser_table import HtmlTableParser
-from scrapers.parsers.table.table.circuit_list import CircuitsListTableMapper
-from scrapers.parsers.table.table.mapped.lap_records import LapRecordsWikiTableMapper
-from scrapers.parsers.table.table.mapped.race_results import RaceResultsTableMapper
-from scrapers.parsers.table.table.mapped.standings import StandingsTableMapper
+from scrapers.parsers.wiki.table.circuit_list import CircuitsListTableMapper
+from scrapers.parsers.wiki.table.mapped.lap_records import LapRecordsWikiTableMapper
+from scrapers.parsers.wiki.table.mapped.race_results import RaceResultsTableMapper
+from scrapers.parsers.wiki.table.mapped.standings import StandingsTableMapper
 
 CONTRACT_HTML = """
 <table class="wikitable">

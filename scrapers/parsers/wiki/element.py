@@ -10,6 +10,8 @@ from scrapers.parsers.html_elements.list import ListElementParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.table.table.table import WikiTableHtmlParser
+from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
+from scrapers.parsers.wiki.base import WikiListParser
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.wiki.paragraph import WikiParagraphParser
@@ -18,9 +20,14 @@ from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 @dataclass(frozen=True)
 class WikiElementSet:
-    table_parser: WikiTableHtmlParser
-    list_parser: ListElementParser
-    infobox_parser: WikiInfoboxHtmlParser
+    infobox_parser: WikiInfoboxParser
+    paragraph_parser: WikiParagraphParser
+    figure_parser: WikiFigureParser
+    list_parser: WikiListParser
+    table_html_parser: WikiTableHtmlParser
+    navbox_parser: WikiNavboxParser
+    references_wrap_parser: ReferencesWrapParser
+    references_parser: ReferencesWrapParser
     section_parser: Callable[[Tag], WikiParserData] | None = None
 
 
@@ -81,7 +88,7 @@ def build_wikipedia_element_registry(
                     el.name == "table"
                     and "wikitable" in ElementRegistry._get_classes(el)
                 ),
-                parser=parsers.table_parser.parse,
+                parser=parsers.table_html_parser.parse,
                 result_type="table",
             ),
             ParserRule(
@@ -132,9 +139,14 @@ def build_default_wiki_element_parsers() -> WikiElementSet:
     return WikiElementSet(
         infobox_parser=WikiInfoboxHtmlParser(),
         list_parser=ListElementParser(),
-        table_parser=WikiTableHtmlParser(),
+        table_html_parser=WikiTableHtmlParser(),
+        navbox_parser=WikiNavboxParser(),
+        references_wrap_parser=ReferencesWrapParser(),
+        references_parser=ReferencesWrapParser(),
     )
 
 
 def build_default_wikipedia_element_registry() -> ElementRegistry:
-    return build_wikipedia_element_registry(parsers=build_default_wiki_element_parsers())
+    return build_wikipedia_element_registry(
+        parsers=build_default_wiki_element_parsers()
+    )

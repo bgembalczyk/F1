@@ -3,8 +3,8 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.constructor_base import BaseConstructorColumn
-from scrapers.base.table.columns.types.constructor_part import ConstructorPartColumn
+from scrapers.columns.types.constructor.base import BaseConstructorColumn
+from scrapers.columns.types.constructor.part import ConstructorPartColumn
 
 
 class ContractConstructorColumn(BaseConstructorColumn):

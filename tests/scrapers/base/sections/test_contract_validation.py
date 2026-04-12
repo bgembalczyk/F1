@@ -1,7 +1,7 @@
 import pytest
 
-from scrapers.base.sections.contract_validation import is_legacy_section_payload
-from scrapers.base.sections.contract_validation import validate_section_result_payload
+from scrapers.section.contract_validation import is_legacy_section_payload
+from scrapers.section.contract_validation import validate_section_result_payload
 
 
 def valid_payload() -> dict[str, object]:

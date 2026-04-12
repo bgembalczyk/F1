@@ -1,18 +1,18 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.normalize import normalize_auto_value
+from scrapers.helpers.links import normalize_links
+from scrapers.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text import extract_links_from_cell
 from scrapers.base.helpers.text import strip_marks
-from scrapers.base.helpers.text_normalization import is_language_link
-from scrapers.base.helpers.text_normalization import split_delimited_text
-from scrapers.base.helpers.time import parse_time_seconds_from_text
-from scrapers.base.helpers.time import parse_time_text
-from scrapers.base.helpers.url import normalize_url
-from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
-from scrapers.base.normalization_pipeline import normalize_value
+from scrapers.helpers.text_normalization import is_language_link
+from scrapers.helpers.text_normalization import split_delimited_text
+from scrapers.helpers.time import parse_time_seconds_from_text
+from scrapers.helpers.time import parse_time_text
+from scrapers.helpers.url import normalize_url
+from models.value_objects.normalized_time import NormalizedTime
+from scrapers.normalization_pipeline import normalize_value
 
 TIME_IN_SECONDS = 12.5
 

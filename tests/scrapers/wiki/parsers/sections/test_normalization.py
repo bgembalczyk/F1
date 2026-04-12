@@ -3,7 +3,7 @@
 
 import pytest
 
-from scrapers.wiki.parsers.sections.normalization import normalize_section_text
+from scrapers.parsers.section.wiki.normalization import normalize_section_text
 
 
 class TestNormalizeSectionText:

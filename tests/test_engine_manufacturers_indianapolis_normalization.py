@@ -338,16 +338,16 @@ def test_visit_indianapolis_sections_collects_records_from_elements() -> None:
 
 
 # ---------------------------------------------------------------------------
-# IndianapolisOnlySubSectionParser
+# EngineManufacturersIndianapolisSubSectionParser
 # ---------------------------------------------------------------------------
 
 
 def test_indianapolis_only_sub_section_parser_handles_non_list_elements() -> None:
     from scrapers.engines.engine_manufacturers_list import (
-        IndianapolisOnlySubSectionParser,
+        EngineManufacturersIndianapolisSubSectionParser,
     )
 
-    parser = IndianapolisOnlySubSectionParser()
+    parser = EngineManufacturersIndianapolisSubSectionParser()
     payload = {
         "elements": [
             {"kind": "table", "raw_html_fragment": "<table></table>"},
@@ -360,10 +360,10 @@ def test_indianapolis_only_sub_section_parser_handles_non_list_elements() -> Non
 
 def test_indianapolis_only_sub_section_parser_processes_list_elements() -> None:
     from scrapers.engines.engine_manufacturers_list import (
-        IndianapolisOnlySubSectionParser,
+        EngineManufacturersIndianapolisSubSectionParser,
     )
 
-    parser = IndianapolisOnlySubSectionParser()
+    parser = EngineManufacturersIndianapolisSubSectionParser()
     payload = {
         "elements": [
             {
@@ -382,10 +382,10 @@ def test_indianapolis_only_sub_section_parser_processes_list_elements() -> None:
 
 def test_indianapolis_only_sub_section_parser_processes_nested_dicts() -> None:
     from scrapers.engines.engine_manufacturers_list import (
-        IndianapolisOnlySubSectionParser,
+        EngineManufacturersIndianapolisSubSectionParser,
     )
 
-    parser = IndianapolisOnlySubSectionParser()
+    parser = EngineManufacturersIndianapolisSubSectionParser()
     payload = {
         "child": {
             "elements": [
@@ -403,10 +403,10 @@ def test_indianapolis_only_sub_section_parser_processes_nested_dicts() -> None:
 
 def test_indianapolis_only_sub_section_parser_processes_nested_lists() -> None:
     from scrapers.engines.engine_manufacturers_list import (
-        IndianapolisOnlySubSectionParser,
+        EngineManufacturersIndianapolisSubSectionParser,
     )
 
-    parser = IndianapolisOnlySubSectionParser()
+    parser = EngineManufacturersIndianapolisSubSectionParser()
     payload = {
         "items": [
             {

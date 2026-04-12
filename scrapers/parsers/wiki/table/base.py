@@ -8,11 +8,12 @@ from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloa
 from scrapers.parsers.roles import GroupParsingMixin
 from scrapers.parsers.roles import MatchesMixin
 from scrapers.parsers.roles import RowMappingMixin
-from scrapers.parsers.roles import TableMapperABC
+from scrapers.parsers.roles import TableDomainMapperABC
+from scrapers.parsers.roles import TableHtmlParserABC
 
 
-class WikiTableBaseParser(
-    TableMapperABC,
+class WikiTableBaseMapper(
+    TableDomainMapperABC,
     MatchesMixin,
     RowMappingMixin[dict[str, Any], dict[str, Any]],
     GroupParsingMixin[Any, dict[str, Any]],
@@ -30,6 +31,9 @@ class WikiTableBaseParser(
 
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         return self.map_fragment(fragment)
+
+    def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+        return self.map(fragment)
 
     def map_fragment(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         headers = fragment.get("headers", [])
@@ -76,13 +80,11 @@ class WikiTableBaseParser(
         return []
 
     def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
-        """Czy parser pasuje do konkretnej tabeli."""
         del table_data
         header_set = set(headers)
         return all(bool(header_set & group) for group in self.required_header_groups)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        """Mapuje nagłówki tabeli na pola domenowe."""
         return {
             header: self.column_mapping[header]
             for header in headers
@@ -107,8 +109,21 @@ class WikiTableBaseParser(
     collect_rows = parse_group
 
 
+# Backward-compatible aliases for staged migration.
+WikiTableBaseParser = WikiTableBaseMapper
+TableFragmentParserABC = TableHtmlParserABC
+WikiTableFragmentParser = TableFragmentParserABC
 
+
+WikiTableBaseMapper = WikiTableBaseParser
 
 __all__ = [
     "WikiTableBaseParser",
+    "TableFragmentParserABC",
+    "WikiTableBaseMapper",
+    "WikiTableBaseParser",
+    "WikiTableBaseParser",
+    "WikiTableBaseMapper",
+    "TableFragmentParserABC",
+    "WikiTableFragmentParser",
 ]

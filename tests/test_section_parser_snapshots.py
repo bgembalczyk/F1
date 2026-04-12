@@ -4,7 +4,7 @@ from __future__ import annotations
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.wiki.parsers.content_text import ContentTextParser
+from scrapers.parsers.wiki.content_text import ContentTextParser
 from tests._section_parser_fixture_pattern import SNAPSHOT_CASES_BY_DOMAIN
 from tests._section_parser_fixture_pattern import iter_snapshot_cases
 

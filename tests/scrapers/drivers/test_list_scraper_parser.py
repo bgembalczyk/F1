@@ -1,5 +1,5 @@
 # ruff: noqa: E501, PLR2004, SLF001
-from scrapers.drivers.constants_drivers import DRIVERS_LIST_HEADERS
+from scrapers.constants_drivers import DRIVERS_LIST_HEADERS
 from scrapers.drivers.list_scraper_drivers import DriversListSectionParser
 from scrapers.drivers.list_scraper_drivers import DriversListTableMapper
 

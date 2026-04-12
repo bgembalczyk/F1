@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.post_processors import CommonMetadataPostProcessor
 from scrapers.base.post_processors import apply_post_processors
-from scrapers.wiki.parsers.content_text import ContentTextParser
-from scrapers.wiki.parsers.elements.infobox import WikiInfoboxParser
+from scrapers.parsers.wiki.content_text import ContentTextParser
+from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 
 FIXTURE_DIR = Path("tests/fixtures/e2e_html")
 SNAPSHOT_DIR = Path("tests/fixtures/e2e_snapshots")

@@ -1,6 +1,6 @@
-from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
-from scrapers.base.infobox.schema import InfoboxSchema
-from scrapers.base.infobox.schema import InfoboxSchemaField
+from scrapers.infobox.field.mapper import InfoboxFieldMapper
+from scrapers.infobox.schemas.schema import InfoboxSchema
+from scrapers.infobox.schemas.schema import InfoboxSchemaField
 
 
 def test_mapper_returns_raw_payload():

@@ -1,3 +1,6 @@
+from scrapers.female_drivers_list import DriversSectionParser
+from scrapers.female_drivers_list import FemaleDriversTableParser
+from scrapers.female_drivers_list import OfficialDriversSubSectionParser
 from scrapers.drivers.female_drivers_list import DriversSectionParser
 from scrapers.drivers.female_drivers_list import FemaleDriversTableMapper
 from scrapers.drivers.female_drivers_list import OfficialDriversSubSectionParser

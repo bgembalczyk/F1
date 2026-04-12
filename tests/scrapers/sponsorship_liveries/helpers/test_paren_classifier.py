@@ -3,7 +3,7 @@
 
 from unittest.mock import MagicMock
 
-from scrapers.sponsorship_liveries.helpers_sponsorship_liveries.paren_classifier import (
+from scrapers.paren_classifier import (
     ParenClassifier,
 )
 

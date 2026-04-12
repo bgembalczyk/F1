@@ -1,8 +1,8 @@
-from scrapers.base.infobox.dsl import InfoboxSchemaDSL
-from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+from scrapers.infobox.schemas.dsl import InfoboxSchemaDSL
+from scrapers.columns.types.parsed_value import ParsedValueColumn
+from scrapers.columns.types.seasons import SeasonsColumn
+from scrapers.columns.types.text import TextColumn
+from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:
@@ -12,7 +12,7 @@ def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:
                 "header": "Season",
                 "key": "season",
                 "column": {
-                    "class_path": ("scrapers.seasons.columns.seasons.SeasonsColumn"),
+                    "class_path": ("scrapers.columns.types.seasons.SeasonsColumn"),
                     "kwargs": {},
                 },
             },
@@ -20,7 +20,7 @@ def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:
                 "header": "Races",
                 "key": "races",
                 "column": {
-                    "class_path": "scrapers.base.table.columns.types.int.IntColumn",
+                    "class_path": "scrapers.columns.factory.IntColumn",
                     "kwargs": {},
                 },
             },
@@ -41,7 +41,7 @@ def test_table_schema_dsl_handles_header_specific_columns() -> None:
                 "header": "Foo",
                 "key": "shared",
                 "column": {
-                    "class_path": "scrapers.base.table.columns.types.int.IntColumn",
+                    "class_path": "scrapers.columns.factory.IntColumn",
                     "kwargs": {},
                 },
             },
@@ -49,7 +49,7 @@ def test_table_schema_dsl_handles_header_specific_columns() -> None:
                 "header": "Bar",
                 "key": "shared",
                 "column": {
-                    "class_path": "scrapers.base.table.columns.types.text.TextColumn",
+                    "class_path": "scrapers.columns.types.text.TextColumn",
                     "kwargs": {},
                 },
             },

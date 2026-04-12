@@ -1,10 +1,10 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.html_utils import find_section_elements
-from scrapers.base.helpers.parsing import parse_float_from_text
-from scrapers.base.helpers.parsing import parse_int_from_text
-from scrapers.base.helpers.wiki import is_reference_link
+from scrapers.helpers.html_utils import find_section_elements
+from scrapers.helpers.parsing import parse_float_from_text
+from scrapers.helpers.parsing import parse_int_from_text
+from scrapers.helpers.wiki import is_reference_link
 
 
 def tag_func(html: str):
