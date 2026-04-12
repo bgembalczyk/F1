@@ -2,7 +2,7 @@ import re
 
 import pytest
 
-from models.validation.engine_regulation import EngineRegulation
+from models.validation.engine.regulation import EngineRegulation
 from models.validation.engine_restriction import EngineRestriction
 from models.validation.helpers import normalize_range_item
 from models.validation.helpers import normalize_range_value

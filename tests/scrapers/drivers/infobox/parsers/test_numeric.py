@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.drivers_infobox.parsers.numeric import NumericParser
+from scrapers.parsers.numeric_extractor import NumericExtractor as NumericParser
 
 
 def cell(text: str):

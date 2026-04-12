@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.circuits.circuits_infobox.services import CircuitAdditionalInfoParser
+from scrapers.parsers.infobox.text_utils.circuit import CircuitAdditionalInfoParser
 from tests.support.dependency_stubs import ensure_bs4_stub
 from tests.support.dependency_stubs import ensure_certifi_stub
 from tests.support.dependency_stubs import ensure_pandas_stub
@@ -17,33 +17,33 @@ ensure_pandas_stub()
 ensure_requests_stub()
 
 # ruff: noqa: E402
-from infrastructure.http_client.requests_shim.request_error import RequestError
-from scrapers.base.abc import ABCScraper
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.errors import DomainParseError
-from scrapers.base.errors import ErrorBehavior
-from scrapers.base.errors import ScraperNetworkError
-from scrapers.base.errors import ScraperNotFoundError
-from scrapers.base.errors import ScraperParseError
-from scrapers.base.errors_report import ErrorReport
-from scrapers.base.errors_report import write_error_report
-from scrapers.base.errors_report import write_error_summary_by_code
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.base.list.scraper import F1ListScraper
+from infrastructure.http.errors.base import RequestError
+from scrapers.abc import ABCScraper
+from scrapers.error_handler import ErrorHandler
+from scrapers.errors import DomainParseError
+from scrapers.errors import ErrorBehavior
+from scrapers.errors import ScraperNetworkError
+from scrapers.errors import ScraperNotFoundError
+from scrapers.errors import ScraperParseError
+from scrapers.errors_report import ErrorReport
+from scrapers.errors_report import write_error_report
+from scrapers.errors_report import write_error_summary_by_code
+from scrapers.infobox.extraction.base import WikipediaInfoboxScraper
+from scrapers.list.base import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.circuits.circuits_infobox.services.entities import CircuitEntitiesParser
-from scrapers.circuits.circuits_infobox.services.entity_parsing import (
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntitiesParser
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
     CircuitEntityParser,
 )
-from scrapers.circuits.circuits_infobox.services.geo import CircuitGeoParser
-from scrapers.circuits.circuits_infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.circuits_infobox.services.lap_record import (
+from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser
+from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryParser
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import (
     CircuitLapRecordParser,
 )
-from scrapers.circuits.circuits_infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.circuits_infobox.services.text_utils import InfoboxTextUtils
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
-from scrapers.grands_prix.single_scraper_grands_prix import F1SingleGrandPrixScraper
+from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper
 from tests.support.dependency_stubs import ensure_bs4_stub
 from tests.support.dependency_stubs import ensure_certifi_stub
 from tests.support.dependency_stubs import ensure_pandas_stub

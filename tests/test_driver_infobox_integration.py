@@ -5,7 +5,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.drivers_infobox.scraper import DriverInfoboxParser
+from scrapers.parsers.infobox.driver import DriverInfoboxParser
 from tests.support.driver_infobox_assertions import assert_career_parsed
 
 EXPANDED_YEAR_VALUES = [1981, 1982, 1984, 1985, 1986]

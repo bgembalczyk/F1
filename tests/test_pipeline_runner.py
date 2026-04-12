@@ -4,7 +4,7 @@ from contextlib import suppress
 from logging import getLogger
 from typing import TYPE_CHECKING
 
-from scrapers.base.pipeline_runner import ScraperPipelineRunner
+from scrapers.runners.pipeline_runner import ScraperPipelineRunner
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

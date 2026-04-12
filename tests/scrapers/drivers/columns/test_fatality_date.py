@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.drivers.drivers_columns.fatality_date import FatalityDateColumn
+from scrapers.columns.types.fatality_date import FatalityDateColumn
 
 
 def ctx(

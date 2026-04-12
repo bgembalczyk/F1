@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from scrapers.constructors.constructors_helpers.export import constructor_name_initial
+from complete_extractor.export import constructor_name_initial
 
 
 @pytest.mark.parametrize(
@@ -57,7 +57,7 @@ def test_export_complete_constructors_calls_fetch_and_export() -> None:
         mock_export_service = MagicMock()
         mock_export_service_cls.return_value = mock_export_service
 
-        from scrapers.constructors.constructors_helpers.export import (
+        from complete_extractor.export import (
             export_complete_constructors,
         )
 

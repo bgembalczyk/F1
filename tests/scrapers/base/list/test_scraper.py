@@ -1,8 +1,8 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.errors import ScraperNotFoundError
-from scrapers.base.list.scraper import F1ListScraper
+from scrapers.errors import ScraperNotFoundError
+from scrapers.list.base import F1ListScraper
 from scrapers.base.options import ScraperOptions
 
 

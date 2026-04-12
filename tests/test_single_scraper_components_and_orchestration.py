@@ -4,34 +4,34 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.circuits.circuits_infobox.service import CircuitInfoboxExtractionService
+from scrapers.infobox.extraction.service.base_infobox_orchestrator import CircuitInfoboxExtractionService
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.circuits_postprocess.assembler import CircuitRecordDTO
-from scrapers.constructors.constructors_infobox.service import (
+from scrapers.infobox.extraction.service.constructor import (
     ConstructorInfoboxExtractionService,
 )
-from scrapers.constructors.constructors_postprocess.assembler import (
+from scrapers.records.dto.constructor import (
     ConstructorRecordAssembler,
 )
-from scrapers.constructors.constructors_postprocess.assembler import (
+from scrapers.records.dto.constructor import (
     ConstructorRecordDTO,
 )
-from scrapers.constructors.constructors_sections.service import (
+from scrapers.services.section.extraction.constructor import (
     ConstructorSectionExtractionService,
 )
-from scrapers.constructors.constructors_single_scraper import SingleConstructorScraper
-from scrapers.drivers.composition_drivers import DriverScraperCompositionFactory
-from scrapers.drivers.composition_drivers import DriverScraperDependencies
+from scrapers.constructors_single_scraper import SingleConstructorScraper
+from scrapers.wiring.composition_drivers import DriverScraperCompositionFactory
+from scrapers.wiring.composition_drivers import DriverScraperDependencies
 from scrapers.drivers.drivers_infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.drivers_sections.service import DriverSectionExtractionService
 from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
-from scrapers.seasons.postprocess_seasons.assembler import SeasonPayloadDTO
-from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordAssembler
-from scrapers.seasons.postprocess_seasons.assembler import SeasonRecordSections
-from scrapers.seasons.sections_seasons.service import SeasonTextSectionExtractionService
-from scrapers.seasons.single_scraper_seasons import SingleSeasonScraper
+from scrapers.records.dto.season import SeasonPayloadDTO
+from scrapers.records.dto.season import SeasonRecordAssembler
+from scrapers.records.dto.season import SeasonRecordSections
+from scrapers.services.section.extraction.season_text import SeasonTextSectionExtractionService
+from scrapers.single_scraper_seasons import SingleSeasonScraper
 from scrapers.services.domain_record.driver import DomainRecordService
 
 

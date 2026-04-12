@@ -1,8 +1,8 @@
 # ruff: noqa: ARG002, ARG005, EM101, N801, SLF001, TRY003
 from types import SimpleNamespace
 
-from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
-from scrapers.base.mixins.section_table_parse import SectionTableParseMixin
+from scrapers.mixins.section_table_parse import DeclarativeSectionTableParseMixin
+from scrapers.mixins.section_table_parse import SectionTableParseMixin
 
 
 class BaseScraper:

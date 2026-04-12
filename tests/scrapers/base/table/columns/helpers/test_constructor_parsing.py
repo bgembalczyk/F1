@@ -4,7 +4,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.constructor_parsing import (
+from scrapers.columns.helpers.constructor_parsing import (
     ConstructorParsingHelpers,
 )
 

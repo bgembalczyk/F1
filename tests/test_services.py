@@ -8,7 +8,7 @@ from models.services.helpers import parse_int_values
 from models.services.helpers import split_delimited_text
 from models.services.rounds import parse_rounds
 from models.services.season import parse_seasons
-from scrapers.base.exporters.data import DataExporter
+from exporters.data import DataExporter
 from scrapers.base.options import ScraperOptions
 from scrapers.base.runner import RunConfig
 from scrapers.base.runner import ScraperRunner

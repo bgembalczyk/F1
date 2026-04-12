@@ -1,6 +1,6 @@
 # ruff: noqa: E501, PLR2004
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.list import ListColumn
+from scrapers.columns.types.list import ListColumn
 
 
 def ctx(clean_text: str | None) -> ColumnContext:

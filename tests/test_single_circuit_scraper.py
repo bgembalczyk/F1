@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.tables.lap_records_table import LapRecordsTableScraper
-from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
+from scrapers.lap_records_table import LapRecordsTableScraper
+from scrapers.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 from scrapers.circuits.circuits_helpers.lap_record import is_lap_record_table
 from scrapers.circuits.circuits_helpers.layout import detect_layout_name
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper

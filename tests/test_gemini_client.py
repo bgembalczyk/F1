@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from config.app_config_provider import AppConfigProvider
+from config.app.provider import AppConfigProvider
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.client import GeminiClient
 from infrastructure.gemini.client import ModelConfig

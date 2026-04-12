@@ -1,9 +1,9 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
+from models.value_objects.normalized_time import NormalizedTime
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.time import TimeColumn
+from scrapers.columns.types.time import TimeColumn
 
 
 def ctx(clean_text: str | None) -> ColumnContext:

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from layers.path_resolver import format_domain_year_name
+from path_resolver.helpers import format_domain_year_name
 from layers.zero.run_profile_paths import layer_zero_raw_paths
 
 

@@ -1,6 +1,6 @@
 # ruff: noqa: E501, PLR2004
 
-from scrapers.wiki.parsers.sections.data_classes import SectionMatchPriorities
+from scrapers.parsers.section.match.priorities import SectionMatchPriorities
 
 
 class TestSectionMatchPriorities:

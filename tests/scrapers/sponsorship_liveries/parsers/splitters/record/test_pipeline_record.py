@@ -3,7 +3,7 @@
 
 import pytest
 
-from scrapers.sponsorship_liveries.parsers_sponsorship_liveries.splitters.record import (
+from scrapers.parsers.liveries.sponsorship.splitters.record import (
     PipelineRecord,
 )
 

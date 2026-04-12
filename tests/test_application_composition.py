@@ -1,11 +1,11 @@
 from pathlib import Path
 
-from layers.composition import create_default_wiki_pipeline_application
+from wiki_pipeline.create_default.applications import create_default_wiki_pipeline_application
 from layers.executors.one import LayerOneExecutor
 from layers.job_hooks.composite_zero import CompositeLayerZeroJobHook
 from layers.job_hooks.mirror.constructors import MirrorConstructorsJobHook
 from layers.pipeline import WikiPipelineApplication
-from layers.zero.executor import LayerZeroExecutor
+from layers.executors.zero import LayerZeroExecutor
 
 
 def test_default_application_is_wired_with_expected_components(tmp_path: Path) -> None:
