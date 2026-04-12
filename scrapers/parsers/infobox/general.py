@@ -27,7 +27,7 @@ class InfoboxGeneralExtractor:
         self._schema = schema
         self._logger = logger
 
-    def parse(self, rows: list[dict[str, Any]]) -> dict[str, Any]:
+    def extract(self, rows: list[dict[str, Any]]) -> dict[str, Any]:
         data: dict[str, Any] = {}
         present_keys: set[str] = set()
         for row in rows:
