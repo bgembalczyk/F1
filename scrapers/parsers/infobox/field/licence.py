@@ -10,6 +10,8 @@ from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
 from scrapers.parsers.infobox.field.year import YearParser
 
+_YEAR_PARSER = YearParser()
+
 
 class LicenceParser(HtmlInfoboxFieldParser):
     """Handles parsing of racing licence information."""
@@ -170,7 +172,7 @@ class LicenceParser(HtmlInfoboxFieldParser):
             )
             if not has_licence_between:
                 year_text = year_span.get_text(strip=True)
-                return YearParser.parse_licence_years(year_text)
+                return _YEAR_PARSER.parse_licence_years(year_text)
 
         return None
 
