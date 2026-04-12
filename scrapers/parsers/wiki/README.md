@@ -11,15 +11,15 @@ Parsery są podzielone na cztery warstwy odpowiadające elementom HTML Wikipedii
    - klasa bazowa: `BaseHtmlElementParser[T]` (dla `Tag`) lub `BaseHtmlSectionParser[T]` (dla `BeautifulSoup`),
    - brak logiki domenowej ani zależności od wiki-specyficznych klas.
 
-2. **Wiki Element Parser Families** (`scrapers/parsers/wiki/families.py`)
+2. **Wiki Element Parser Contracts** (`scrapers/parsers/contracts/wiki_elements.py`)
    - odpowiedzialność: centralne ABC dla parserów HTML Wikipedii z jednoznacznymi typami I/O,
    - rodziny:
-     - `WikiTableHtmlParserABC` (`Tag -> dict[str, Any]`),
-     - `WikiListHtmlParserABC` (`Tag -> dict[str, Any]`),
-     - `WikiSectionHtmlParserABC` (`BeautifulSoup -> dict[str, Any]`),
-     - `WikiInfoboxHtmlParserABC` (`Tag -> InfoboxParsedData`),
-     - `WikiNavboxHtmlParserABC` (`Tag -> NavBoxParsedData`),
-     - `WikiFigureHtmlParserABC` (`Tag -> FigureParsedData`).
+     - `WikiTableParserABC` (`Tag -> dict[str, Any]`),
+     - `WikiListParserABC` (`Tag -> dict[str, Any]`),
+     - `WikiSectionParserABC` (`BeautifulSoup/Tag -> dict[str, Any]`),
+     - `WikiInfoboxParserABC` (`Tag -> InfoboxParsedData`),
+     - `WikiNavboxParserABC` (`Tag -> NavBoxParsedData`),
+     - `WikiFigureParserABC` (`Tag -> FigureParsedData`).
    - każdy parser elementu wiki dziedziczy po odpowiedniej rodzinie.
 
 3. **Wiki Element Parser** (`scrapers/parsers/wiki/`)
@@ -29,7 +29,7 @@ Parsery są podzielone na cztery warstwy odpowiadające elementom HTML Wikipedii
 
 4. **Structure Parser** (`scrapers/parsers/section/`)
    - odpowiedzialność: kompozycja sekcji/podsekcji i nawigacja po nagłówkach h2–h5,
-   - kontrakt: `SectionParserABC` (dla parserów przyjmujących `BeautifulSoup`, zwracających
+   - kontrakt: `WikiSectionParserABC` (dla parserów przyjmujących `BeautifulSoup`/`Tag`, zwracających
      `SectionParseResult`) lub `NestedWikiSectionParser` (dla hierarchicznych parserów sekcji
      przyjmujących `Tag` i zwracających `dict`),
    - parsery sekcji dobierają zestaw parserów elementarnych przez `SectionParserToolbox`.
@@ -45,13 +45,13 @@ Pełna decyzja architektoniczna: `ADR-0006`.
 ## Diagram klas (uproszczony)
 
 ```
-Wiki*HtmlParserABC (families.py)
-  ├── WikiTableHtmlParserABC
-  ├── WikiListHtmlParserABC
-  ├── WikiSectionHtmlParserABC
-  ├── WikiInfoboxHtmlParserABC
-  ├── WikiNavboxHtmlParserABC
-  └── WikiFigureHtmlParserABC
+Wiki*ParserABC (contracts/wiki_elements.py)
+  ├── WikiTableParserABC
+  ├── WikiListParserABC
+  ├── WikiSectionParserABC
+  ├── WikiInfoboxParserABC
+  ├── WikiNavboxParserABC
+  └── WikiFigureParserABC
 
 Concrete wiki HTML parsers
   ├── WikiTableElementParser / WikiTableHtmlParser
@@ -71,7 +71,7 @@ WikiTableBaseParser   [DOMAIN MAPPER – wejście: dict, nie Tag]
   │   └── CircuitsListTableMapper
   └── ... (inne parsery tabel domenowych)
 
-SectionParserABC [ABC – BeautifulSoup → SectionParseResult]
+WikiSectionParserABC [ABC – BeautifulSoup/Tag → SectionParseResult]
   └── ... (konkretne parsery sekcji artykułów)
 
 NestedWikiSectionParser [Tag → dict, hierarchiczne sekcje]
@@ -92,7 +92,7 @@ rodzin wiki.
 - `header.py` – nagłówek (`<header class="mw-body-header">`).
 - `paragraph.py` – paragraf (`<p>`).
 - `list.py` – lista (`<ul>` / `<ol>`).
-- `../table/wiki/table.py` – tabela wikitable (`<table class="wikitable">`, rodzina `WikiTableHtmlParserABC`).
+- `../table/wiki/table.py` – tabela wikitable (`<table class="wikitable">`, rodzina `WikiTableParserABC`).
 - `infobox.py` – infobox (`<table class="infobox">`).
 - `navbox.py` – navbox (`<div class="navbox">`).
 - `references_wrap.py` – sekcja przypisów (`<div class="references-wrap">`).
@@ -126,6 +126,6 @@ Jeśli klasa jest etapem orkiestracji pipeline, stosuj `*Stage`/`*Processor` z `
 | `*TableParser` (HTML) | `Tag` (`<table>`) | `dict` | `WikiTableHtmlParser` |
 | `*TableMapper` (domain) | `dict` | `dict` | `WikiTableBaseParser` |
 | `*ListParser` | `Tag` (`<ul>`/`<ol>`) | `dict` | `ListParser` / `WikiListParser` |
-| `*SectionParser` | `BeautifulSoup` | `SectionParseResult` | `SectionParserABC` |
+| `*SectionParser` | `BeautifulSoup`/`Tag` | `SectionParseResult` | `WikiSectionParserABC` |
 | `*SectionParser` (nested) | `Tag` | `dict` | `NestedWikiSectionParser` |
 | `*InfoboxParser` | `Tag` (`<table class="infobox">`) | `dict` | `WikiInfoboxElementParserBase` |

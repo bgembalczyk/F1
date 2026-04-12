@@ -3,16 +3,16 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
 from scrapers.parsers.registry import DEFAULT_PARSER_REGISTRY
-from scrapers.parsers.wiki.hierarchy import ListElementParserABC
-from scrapers.parsers.wiki.hierarchy import SectionElementParserABC
 
 
 def test_domain_parser_registry_uses_hierarchy_bases() -> None:
     for entry in DEFAULT_PARSER_REGISTRY:
         assert issubclass(
             entry.parser_base,
-            (ListElementParserABC, SectionElementParserABC),
+            (WikiListParserABC, WikiSectionParserABC),
         )
 
 
