@@ -6,8 +6,8 @@ from typing import Generic
 
 from bs4 import Tag
 
-from scrapers.parsers.infobox.field.protocol import HtmlInfoboxFieldParser
-from scrapers.parsers.infobox.field.protocol import Output
+from scrapers.parsers.infobox.field.base import HtmlInfoboxFieldParser
+from scrapers.parsers.infobox.field.base import Output
 
 
 @dataclass(frozen=True)

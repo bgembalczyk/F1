@@ -152,6 +152,8 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 "WikiParser",
                 "BaseSectionParser",
                 "InfoboxFieldParser",
+                "HtmlInfoboxFieldParser",
+                "InfoboxRowsParser",
                 "AbstractTableFragmentParser",
                 # Root ABC — any class tracing back to ParserABC is a valid parser
                 "ParserABC",

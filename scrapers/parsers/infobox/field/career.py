@@ -3,7 +3,7 @@ from typing import Any
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.label import parser_for_label
 from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
-from scrapers.parsers.infobox.field.protocol import InfoboxRowsParser
+from scrapers.parsers.infobox.field.base import InfoboxRowsParser
 
 
 class InfoboxCareerParser(InfoboxRowsParser[list[dict[str, Any]]]):
