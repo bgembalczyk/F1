@@ -6,6 +6,9 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
+from bs4 import Tag
+
+from scrapers.domain_roles import Parser
 from scrapers.parsers.base_family import InfoboxParserABC
 from scrapers.parsers.base_family import ListParserABC
 from scrapers.parsers.base_family import SectionParserABC
