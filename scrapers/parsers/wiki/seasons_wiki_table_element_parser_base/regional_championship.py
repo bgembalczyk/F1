@@ -26,9 +26,8 @@ class SeasonRegionalChampionshipParser(BaseSeasonParser):
     ) -> list[dict[str, Any]]:
         if section_ids is None:
             section_ids = []
-        return self._table_parser.parse(
+        return self._table_parser.wiki_table_parser.parse(
             soup,
-            mode="table",
             section_ids=section_ids,
             expected_headers=[
                 "Race name",
