@@ -10,6 +10,10 @@ from bs4 import Tag
 
 from models.data.parsed.infobox import InfoboxParsedData
 from scrapers.parsers.roles import MapperABC
+from scrapers.parsers.roles import InfoboxHtmlParserABC
+from scrapers.parsers.roles import ListHtmlParserABC
+from scrapers.parsers.roles import ParserABC
+from scrapers.parsers.roles import TableHtmlParserABC
 from scrapers.parsers.roles import TableMapperABC
 from scrapers.parsers.wiki.hierarchy import InfoboxElementParserABC
 from scrapers.parsers.wiki.hierarchy import ListElementParserABC
@@ -41,6 +45,10 @@ class WikiInfoboxParserABC(InfoboxElementParserABC, ABC):
     def parse(self, raw: Tag) -> InfoboxParsedData: ...
 
 
+# Backward-compatible alias during migration.
+WikiSectionStructureParserABC = WikiSectionParserABC
+
+
 @dataclass(frozen=True)
 class WikiTableMapperSet:
     """Registry mapperów tabel (etap translacji parse -> domain)."""
@@ -53,6 +61,7 @@ __all__ = [
     "WikiListParsedData",
     "WikiListParserABC",
     "WikiSectionParsedData",
+    "WikiSectionParserABC",
     "WikiSectionStructureParserABC",
     "WikiTableMapperSet",
     "WikiTableParsedData",
