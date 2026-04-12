@@ -7,6 +7,6 @@ warnings.warn(
     stacklevel=2,
 )
 
-from scrapers.parsers.table.base_ordered import DriverOrderedTableParser
+from scrapers.parsers.table.base_ordered import DriverOrderedTableMapper
 
-__all__ = ["DriverOrderedTableParser"]
+__all__ = ["DriverOrderedTableMapper"]

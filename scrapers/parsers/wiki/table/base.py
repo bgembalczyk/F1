@@ -5,16 +5,16 @@ from typing import Any
 
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
-from scrapers.parsers.roles import TableHtmlParserABC
+from scrapers.parsers.roles import TableMapperABC
 
 
-class WikiTableBaseParser(
-    TableHtmlParserABC,
+class WikiTableBaseMapper(
+    TableMapperABC,
     WikiTablePayloadTransformMixin,
     WikiTablePayloadCollectMixin,
     ABC,
 ):
-    """Bazowa klasa runtime dla parserów fragmentów tabel Wikipedii."""
+    """Bazowa klasa runtime dla mapperów fragmentów tabel Wikipedii."""
 
     table_type: str = "wiki_table"
     missing_columns_policy: str = "skip"
@@ -22,13 +22,10 @@ class WikiTableBaseParser(
     required_header_groups: tuple[frozenset[str], ...] = ()
     column_mapping: dict[str, str] = {}
 
-    def parse(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
-        return self.parse_fragment(fragment)
-
     def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
-        return self.parse_fragment(fragment)
+        return self.map_fragment(fragment)
 
-    def parse_fragment(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
+    def map_fragment(self, fragment: dict[str, Any]) -> dict[str, Any] | None:
         headers = fragment.get("headers", [])
         if not isinstance(headers, list) or not self.matches(headers, fragment):
             return None
@@ -103,7 +100,5 @@ WikiTableFragmentParser = TableFragmentParserABC
 
 
 __all__ = [
-    "TableFragmentParserABC",
-    "WikiTableBaseParser",
-    "WikiTableFragmentParser",
+    "WikiTableBaseMapper",
 ]

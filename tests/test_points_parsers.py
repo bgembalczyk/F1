@@ -1,9 +1,9 @@
-from scrapers.points.parsers_points import PointsScoringSystemsHistoryTableParser
-from scrapers.points.parsers_points import ShortenedRacesPointsTableParser
+from scrapers.points.parsers_points import PointsScoringSystemsHistoryTableMapper
+from scrapers.points.parsers_points import ShortenedRacesPointsTableMapper
 
 
 def test_points_history_parser_accepts_championship_alias_headers() -> None:
-    parser = PointsScoringSystemsHistoryTableParser()
+    parser = PointsScoringSystemsHistoryTableMapper()
     table_data = {
         "headers": [
             "Seasons",
@@ -96,7 +96,7 @@ _YEAR_2022 = 2022
 
 
 def test_shortened_races_parser_groups_rows_by_seasons() -> None:
-    parser = ShortenedRacesPointsTableParser()
+    parser = ShortenedRacesPointsTableMapper()
     table_data = {
         "headers": _SHORTENED_HEADERS,
         "rows": [
@@ -171,7 +171,7 @@ def test_shortened_races_parser_groups_rows_by_seasons() -> None:
 
 
 def test_shortened_races_parser_produces_multiple_season_groups() -> None:
-    parser = ShortenedRacesPointsTableParser()
+    parser = ShortenedRacesPointsTableMapper()
     table_data = {
         "headers": _SHORTENED_HEADERS,
         "rows": [

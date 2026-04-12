@@ -13,6 +13,7 @@ from scrapers.constants_points import SPRINT_POSITIONS
 from scrapers.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.helpers.parsing import parse_int_from_text
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 from scrapers.parsers.table.table.base import WikiTableBaseParser
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
@@ -25,7 +26,7 @@ _HISTORY_POSITION_KEYS_WITH_FASTEST_LAP: frozenset[str] = frozenset(
 ) | {"fastest_lap"}
 
 
-class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
+class PointsScoringSystemsHistoryTableMapper(WikiTableBaseMapper):
     table_type = "points_scoring_systems_history"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -80,8 +81,8 @@ class PointsScoringSystemsHistoryTableParser(WikiTableBaseParser):
                 column_map[header] = header.lower().replace(" ", "_")
         return column_map
 
-    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
-        result = super().parse(table_data)
+    def map(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().map(table_data)
         if result is None:
             return None
         result["domain_rows"] = [
@@ -132,7 +133,7 @@ SPRINT_POSITION_KEYS: frozenset[str] = frozenset(
 )
 
 
-class SprintPointsTableParser(WikiTableBaseParser):
+class SprintPointsTableMapper(WikiTableBaseMapper):
     table_type = "points_sprint_races"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -158,8 +159,8 @@ class SprintPointsTableParser(WikiTableBaseParser):
             for header in headers
         }
 
-    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
-        result = super().parse(table_data)
+    def map(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().map(table_data)
         if result is None:
             return None
         result["domain_rows"] = [
@@ -185,7 +186,7 @@ class SprintPointsTableParser(WikiTableBaseParser):
         return transformed
 
 
-class ShortenedRacesPointsTableParser(WikiTableBaseParser):
+class ShortenedRacesPointsTableMapper(WikiTableBaseMapper):
     table_type = "points_shortened_races"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -209,8 +210,8 @@ class ShortenedRacesPointsTableParser(WikiTableBaseParser):
             for header in headers
         }
 
-    def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
-        result = super().parse(table_data)
+    def map(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        result = super().map(table_data)
         if result is None:
             return None
         result["domain_rows"] = self._group_rows_by_seasons(result["domain_rows"])
@@ -260,7 +261,7 @@ def build_expected_header_lookup(expected_headers: list[str]) -> dict[str, str]:
 class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = SprintPointsTableParser()
+        self._table_parser = SprintPointsTableMapper()
 
     def collect_rows(self, parsed: dict[str, Any]) -> list[dict[str, Any]]:
         return self._table_parser.collect_rows(parsed)
@@ -276,7 +277,7 @@ class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser)
 class ShortenedRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = ShortenedRacesPointsTableParser()
+        self._table_parser = ShortenedRacesPointsTableMapper()
 
     def collect_rows(self, parsed: dict[str, Any]) -> list[dict[str, Any]]:
         return self._table_parser.collect_rows(parsed)
@@ -315,7 +316,7 @@ class PointsScoringSystemsSectionParser(ApplyForElementsMixin, NestedWikiSection
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = SpecialCasesSubSectionParser()
-        self._table_parser = PointsScoringSystemsHistoryTableParser()
+        self._table_parser = PointsScoringSystemsHistoryTableMapper()
 
     @property
     def sprint_subsection_parser(self) -> SprintRacesSubSubSectionParser:

@@ -1,6 +1,6 @@
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
-from scrapers.parsers.table.constructor.current import CurrentConstructorsTableParser
+from scrapers.parsers.table.constructor.current import CurrentConstructorsTableMapper
 
 
 class CurrentConstructorsSectionParser(ConstructorsSectionParser):
@@ -17,5 +17,5 @@ class CurrentConstructorsSectionParser(ConstructorsSectionParser):
             section_label=section_label,
             include_urls=include_urls,
             normalize_empty_values=normalize_empty_values,
-            table_mapping_parser=CurrentConstructorsTableParser(),
+            table_mapper=CurrentConstructorsTableMapper(),
         )

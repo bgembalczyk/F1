@@ -7,6 +7,7 @@ from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox
 from scrapers.parsers.section.table.base import TableSectionParser
+from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
 from scrapers.parsers.table.table.base import WikiTableBaseParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
@@ -22,7 +23,7 @@ class ConstructorsSectionParser(BaseSectionParser):
         section_label: str | None,
         include_urls: bool,
         normalize_empty_values: bool,
-        table_mapping_parser: WikiTableBaseParser,
+        table_mapper: WikiTableBaseMapper,
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
         self._toolbox = toolbox or build_default_section_toolbox()
@@ -35,7 +36,7 @@ class ConstructorsSectionParser(BaseSectionParser):
             include_urls=include_urls,
             normalize_empty_values=normalize_empty_values,
         )
-        self._table_mapping_parser: WikiTableBaseParser = table_mapping_parser
+        self._table_mapper: WikiTableBaseMapper = table_mapper
         self._table_element_parser = self._toolbox.element_parsers.table_parser
 
     def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
@@ -58,7 +59,7 @@ class ConstructorsSectionParser(BaseSectionParser):
                     self._parser.section_label,
                     headers,
                 )
-                self._table_mapping_parser.parse(parsed_table)
+                self._table_mapper.map(parsed_table)
             except RuntimeError:
                 logger.warning(
                     "Constructors section parser '%s': "

@@ -44,35 +44,35 @@ def test_indianapolis_record_normalization_omits_url_when_include_urls_disabled(
 
 
 # ---------------------------------------------------------------------------
-# EngineManufacturersTableParser
+# EngineManufacturersTableMapper
 # ---------------------------------------------------------------------------
 
 
 def test_engine_manufacturers_table_parser_matches_valid_headers() -> None:
     from scrapers.engines.engine_manufacturers_list import (
-        EngineManufacturersTableParser,
+        EngineManufacturersTableMapper,
     )
 
-    parser = EngineManufacturersTableParser()
+    parser = EngineManufacturersTableMapper()
     headers = ["Manufacturer", "Engines built in", "Seasons", "Wins", "Points"]
     assert parser.matches(headers, {})
 
 
 def test_engine_manufacturers_table_parser_rejects_missing_required_headers() -> None:
     from scrapers.engines.engine_manufacturers_list import (
-        EngineManufacturersTableParser,
+        EngineManufacturersTableMapper,
     )
 
-    parser = EngineManufacturersTableParser()
+    parser = EngineManufacturersTableMapper()
     assert not parser.matches(["Name", "Year"], {})
 
 
 def test_engine_manufacturers_table_parser_maps_known_columns() -> None:
     from scrapers.engines.engine_manufacturers_list import (
-        EngineManufacturersTableParser,
+        EngineManufacturersTableMapper,
     )
 
-    parser = EngineManufacturersTableParser()
+    parser = EngineManufacturersTableMapper()
     result = parser.map_columns(["Manufacturer", "Wins", "Points"])
     assert result["Manufacturer"] == "engine_constructor"
     assert result["Wins"] == "wins"
