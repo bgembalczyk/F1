@@ -38,11 +38,12 @@ class CircuitLapRecordsSectionParser(TableSectionParser):
 
     def map_table_result(
         self,
-        *,
-        _table_data: dict[str, Any],
+        table_data: dict[str, Any],
         table_classification: tuple[Tag, list[str]],
-        _table_pipeline: Any,
+        table_pipeline: Any,
     ) -> dict[str, Any]:
+        _ = table_data
+        _ = table_pipeline
         table, headers = table_classification
         layout = detect_layout_name(table, headers)
         lap_scraper = self._build_lap_scraper()

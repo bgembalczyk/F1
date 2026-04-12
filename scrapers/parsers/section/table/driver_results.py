@@ -60,7 +60,6 @@ class DriverResultsSectionParser(TableSectionParser):
 
     def map_table_result(
         self,
-        *,
         table_data: dict[str, Any],
         table_classification: str,
         table_pipeline: TablePipeline,

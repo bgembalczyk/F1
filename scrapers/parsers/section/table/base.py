@@ -1,6 +1,4 @@
 from __future__ import annotations
-
-import inspect
 from dataclasses import replace
 from typing import TYPE_CHECKING
 from typing import Any
@@ -146,12 +144,13 @@ class TableSectionParser(BaseSectionParser):
 
     def map_table_result(
         self,
-        *,
-        _table_data: dict[str, Any],
+        table_data: dict[str, Any],
         table_classification: Any,
-        _table_pipeline: Any,
+        table_pipeline: Any,
     ) -> dict[str, Any] | None:
         """Transform a parsed table into a domain record (or skip with None)."""
+        _ = table_data
+        _ = table_pipeline
         raise NotImplementedError
 
     def parse_row(
@@ -161,20 +160,11 @@ class TableSectionParser(BaseSectionParser):
         table_classification: Any,
         table_pipeline: Any,
     ) -> dict[str, Any] | None:
-        params = inspect.signature(self.map_table_result).parameters
-        uses_legacy_names = "_table_data" in params or "_table_pipeline" in params
-
-        kwargs: dict[str, Any] = {
-            "table_classification": table_classification,
-        }
-        if uses_legacy_names:
-            kwargs["_table_data"] = table_data
-            kwargs["_table_pipeline"] = table_pipeline
-        else:
-            kwargs["table_data"] = table_data
-            kwargs["table_pipeline"] = table_pipeline
-
-        return self.map_table_result(**kwargs)
+        return self.map_table_result(
+            table_data=table_data,
+            table_classification=table_classification,
+            table_pipeline=table_pipeline,
+        )
 
     def build_result(self, records: list[dict[str, Any]]) -> SectionParseResult:
         return build_section_parse_result(
