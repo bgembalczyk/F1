@@ -1,6 +1,7 @@
 """Implementacje rate limiting."""
 
-import secrets
+import asyncio
+import random
 import time
 from collections.abc import Callable
 
@@ -29,9 +30,24 @@ class MinDelayRateLimiter(RateLimiter):
         elapsed = now - self._last_request_ts
         delay = self.min_delay_seconds - elapsed
         if delay > 0:
-            jitter = secrets.SystemRandom().random() * self.jitter_seconds
+            jitter = random.random() * self.jitter_seconds
+            self._last_request_ts = now + delay + jitter
             time.sleep(delay + jitter)
-        self._last_request_ts = time.monotonic()
+        else:
+            self._last_request_ts = now
+
+    async def wait_async(self, url: str) -> None:
+        if self.should_limit is not None and not self.should_limit(url):
+            return
+        now = time.monotonic()
+        elapsed = now - self._last_request_ts
+        delay = self.min_delay_seconds - elapsed
+        if delay > 0:
+            jitter = random.random() * self.jitter_seconds
+            self._last_request_ts = now + delay + jitter
+            await asyncio.sleep(delay + jitter)
+        else:
+            self._last_request_ts = now
 
 
 __all__ = [
