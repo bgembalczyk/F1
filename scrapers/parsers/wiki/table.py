@@ -1,8 +1,8 @@
 from scrapers.parsers.table.table.table import WikiTableHtmlParser
-from scrapers.parsers.wiki.families import WikiTableHtmlParserABC
+from scrapers.parsers.wiki.families import WikiTableParserABC
 
 
-class WikiTableParser(WikiTableHtmlParserABC):
+class WikiTableParser(WikiTableParserABC):
     """Wiki parser for wikitable elements (<table class=\"wikitable\">)."""
 
 

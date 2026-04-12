@@ -29,12 +29,10 @@ class ContentTextParser(WikiParser):
             )
             self.toolbox = SectionParserToolbox(
                 element_parsers=section_first_parsers,
-                element_registry=build_wikipedia_element_registry(
-                    parsers=section_first_parsers,
-                ),
+                element_registry=build_wikipedia_element_registry(parsers=section_first_parsers),
                 section_locator=self.toolbox.section_locator,
                 section_assembler=self.toolbox.section_assembler,
-                domain_mapper=self.toolbox.domain_mapper,
+                mapper_registry=self.toolbox.mapper_registry,
             )
             self.section_parser = NestedWikiSectionParser(toolbox=self.toolbox)
 
@@ -53,6 +51,8 @@ class ContentTextParser(WikiParser):
             page_url=page_url,
             html_metadata=html_metadata,
         )
+
+        # pipeline: extract section -> parse elements -> map domain
         sections: list[dict[str, Any]] = []
         for part in parts:
             section_id = self.toolbox.section_assembler.assemble(
@@ -74,4 +74,4 @@ class ContentTextParser(WikiParser):
                     fragment=fragment,
                 ),
             )
-        return self.toolbox.domain_mapper.map({"sections": sections})
+        return self.toolbox.mapper_registry.domain_mapper.map({"sections": sections})

@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
 from scrapers.parsers.table.wiki.contracts import ArticleTablesParserABC
-from scrapers.parsers.roles import SectionParserABC
+from scrapers.parsers.roles import SectionStructureParserABC
 from scrapers.parsers.table.table.article import ArticleTablesParser
 from scrapers.parsers.table.table.contracts import ArticleTablesParserABC
 from scrapers.section.parse_results import SectionParseResult

@@ -16,5 +16,5 @@ if TYPE_CHECKING:
 @dataclass(frozen=True)
 class ParserRule:
     predicate: Callable[[Tag], bool]
-    parser: HtmlTagParserABC[Tag, WikiParserData] | Callable[[Tag], WikiParserData]
+    parser: HtmlTagParserABC[WikiParserData] | Callable[[Tag], WikiParserData]
     result_type: str

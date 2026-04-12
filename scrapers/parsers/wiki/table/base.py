@@ -8,11 +8,11 @@ from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloa
 from scrapers.parsers.roles import GroupParsingMixin
 from scrapers.parsers.roles import MatchesMixin
 from scrapers.parsers.roles import RowMappingMixin
-from scrapers.parsers.roles import TableDomainMapperABC
+from scrapers.parsers.roles import TableMapperABC
 
 
 class WikiTableBaseParser(
-    TableDomainMapperABC,
+    TableMapperABC,
     MatchesMixin,
     RowMappingMixin[dict[str, Any], dict[str, Any]],
     GroupParsingMixin[Any, dict[str, Any]],
@@ -107,10 +107,8 @@ class WikiTableBaseParser(
     collect_rows = parse_group
 
 
-TableFragmentParserABC = TableHtmlParserABC
-WikiTableFragmentParser = TableFragmentParserABC
 
 
 __all__ = [
-    "WikiTableBaseMapper",
+    "WikiTableBaseParser",
 ]
