@@ -7,7 +7,7 @@ from warnings import warn
 from scrapers.component_metadata_wiki import LIST_SCRAPER_KIND
 from scrapers.component_metadata_wiki import ComponentMetadata
 from scrapers.component_metadata_wiki import build_component_metadata
-from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.family_contracts import ListScraperContract
 from scrapers.schema_table import TableSchema
@@ -69,7 +69,7 @@ class SeedListTableScraper(F1TableScraper, ListScraperContract):
         table_css_class: str = "wikitable",
         record_factory=None,
         model_class: type | None = None,
-    ) -> TableScraperConfig:
+    ) -> TableConfig:
         warn(
             "SeedListTableScraper.build_config is deprecated; "
             "use scrapers.base.table.config.build_scraper_config.",

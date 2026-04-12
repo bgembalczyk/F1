@@ -25,7 +25,7 @@ WIKI_SELECTOR_FAMILY_MAP: dict[ElementType, str] = {
 
 @dataclass(frozen=True)
 class ElementParseInput:
-    """Wspólny model wejścia parsera elementu (tag + metadata + section context)."""
+    """Wspólny model wejścia dispatchu elementu (tag + metadata + section context)."""
 
     tag: Tag
     metadata: dict[str, object] | None = None
@@ -45,12 +45,12 @@ class ElementParseInput:
 
 
 @dataclass(frozen=True)
-class ElementParserRegistration:
-    """Registry entry resolving parser by element type + domain + section context."""
+class ElementRegistration:
+    """Registry entry resolving handler by element type + domain + section context."""
 
     element_type: ElementType
-    parser: Callable[[Tag], WikiParserData]
-    parser_class: type
+    handler: Callable[[Tag], WikiParserData]
+    handler_class: type
     domain: str | None = None
     section_id: str | None = None
     section_profile: str | None = None
@@ -58,7 +58,7 @@ class ElementParserRegistration:
 
 @dataclass(frozen=True)
 class ElementRegistry:
-    registrations: tuple[ElementParserRegistration, ...]
+    registrations: tuple[ElementRegistration, ...]
     type_predicates: dict[ElementType, Callable[[Tag], bool]]
 
     @staticmethod
@@ -77,7 +77,7 @@ class ElementRegistry:
     def resolve_registration(
         self,
         parse_input: ElementParseInput,
-    ) -> ElementParserRegistration | None:
+    ) -> ElementRegistration | None:
         element_type = self.detect_element_type(parse_input.tag)
         if element_type is None:
             return None
@@ -94,7 +94,7 @@ class ElementRegistry:
         registration = self.resolve_registration(parse_input)
         if registration is None:
             return None
-        return registration.element_type, registration.parser
+        return registration.element_type, registration.handler
 
     def validate_selector_family_coverage(self) -> None:
         missing_predicates = set(WIKI_SELECTOR_FAMILY_MAP) - set(self.type_predicates)
@@ -118,9 +118,9 @@ class ElementRegistry:
         element_type: ElementType,
         domain: str | None,
         section_id: str | None,
-    ) -> ElementParserRegistration | None:
+    ) -> ElementRegistration | None:
         normalized_section_id = normalize_section_text(section_id) if section_id else None
-        candidates: list[tuple[int, ElementParserRegistration]] = []
+        candidates: list[tuple[int, ElementRegistration]] = []
         for registration in self.registrations:
             if registration.element_type != element_type:
                 continue
@@ -140,7 +140,7 @@ class ElementRegistry:
     @staticmethod
     def _match_score(
         *,
-        registration: ElementParserRegistration,
+        registration: ElementRegistration,
         domain: str | None,
         section_id: str | None,
     ) -> int | None:

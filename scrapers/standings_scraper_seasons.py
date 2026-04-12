@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import TableConfig
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.standings.f1_table import F1StandingsTableParser
 from scrapers.scraper_table import F1TableScraper
@@ -15,7 +15,7 @@ class F1StandingsScraper(F1TableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: TableScraperConfig | None = None,
+        config: TableConfig | None = None,
         position_key: str = "pos",
     ) -> None:
         super().__init__(options=options, config=config)

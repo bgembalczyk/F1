@@ -4,7 +4,7 @@ from scrapers.columns.factory import IntColumn
 from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.url import UrlColumn
-from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.nested_section.seasons import SeasonsSectionParser
@@ -49,7 +49,7 @@ class SeasonsListScraper(SeedListTableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: TableScraperConfig | None = None,
+        config: TableConfig | None = None,
     ) -> None:
         super().__init__(options=options, config=config)
         parser = SeasonsSectionParser()

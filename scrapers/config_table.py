@@ -46,12 +46,12 @@ class TableConfig:
 
     def validate(self) -> None:
         if not isinstance(self.url, str) or not self.url.strip():
-            msg = "TableScraperConfig.url must be a non-empty string."
+            msg = "TableConfig.url must be a non-empty string."
             raise ValueError(msg)
 
         if not isinstance(self.column_map, Mapping):
             msg = (
-                "TableScraperConfig.column_map must be of type Mapping; "
+                "TableConfig.column_map must be of type Mapping; "
                 f"got {type(self.column_map).__name__}."
             )
             raise TypeError(msg)
@@ -59,7 +59,7 @@ class TableConfig:
         for key, value in self.column_map.items():
             if not isinstance(key, str) or not isinstance(value, str):
                 msg = (
-                    "TableScraperConfig.column_map must map str keys to str values; "
+                    "TableConfig.column_map must map str keys to str values; "
                     f"got key type {type(key).__name__} "
                     f"and value type {type(value).__name__}."
                 )
@@ -67,7 +67,7 @@ class TableConfig:
 
         if not isinstance(self.columns, Mapping):
             msg = (
-                "TableScraperConfig.columns must be of type Mapping; "
+                "TableConfig.columns must be of type Mapping; "
                 f"got {type(self.columns).__name__}."
             )
             raise TypeError(msg)
@@ -75,13 +75,13 @@ class TableConfig:
         for key, value in self.columns.items():
             if not isinstance(key, str):
                 msg = (
-                    "TableScraperConfig.columns must use keys of type str; "
+                    "TableConfig.columns must use keys of type str; "
                     f"got {type(key).__name__}."
                 )
                 raise TypeError(msg)
             if not isinstance(value, BaseColumn):
                 msg = (
-                    "TableScraperConfig.columns must map str keys to BaseColumn values; "
+                    "TableConfig.columns must map str keys to BaseColumn values; "
                     f"got value type {type(value).__name__}."
                 )
                 raise TypeError(msg)
@@ -92,7 +92,7 @@ class TableConfig:
             and not hasattr(self.record_factory, "create")
             and not callable(self.record_factory)
         ):
-            msg = "TableScraperConfig.record_factory must implement RecordBuilder.build() (or legacy create())."
+            msg = "TableConfig.record_factory must implement RecordBuilder.build() (or legacy create())."
             raise TypeError(msg)
 
 
@@ -133,7 +133,6 @@ def build_scraper_config(
     )
 
 
-TableScraperConfig = TableConfig
 
 
 def __getattr__(name: str) -> object:

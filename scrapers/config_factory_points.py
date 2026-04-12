@@ -10,7 +10,7 @@ from scrapers.columns.types.auto import AutoColumn
 from scrapers.columns.types.first_place import FirstPlaceColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.skip import SkipColumn
-from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.constants_points import HISTORICAL_POSITIONS
@@ -28,7 +28,7 @@ if TYPE_CHECKING:
 def build_points_scoring_systems_history_config(
     *,
     columns: Sequence[ColumnSpec],
-) -> TableScraperConfig:
+) -> TableConfig:
     return build_scraper_config(
         url=BasePointsScraper.BASE_URL,
         section_id="Points_scoring_systems",

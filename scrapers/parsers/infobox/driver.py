@@ -106,7 +106,7 @@ class DriverInfoboxParser(WikiInfoboxParserABC):
 
         parsed = {
             "title": self._infobox_title(table),
-            "general": self._general_extractor.parse(general_section.get("rows", [])),
+            "general": self._general_extractor.extract(general_section.get("rows", [])),
             "championship_titles": [],
             "major_victories": [],
             "career": [],

@@ -10,7 +10,7 @@ from scrapers.columns.types.fatality_event import FatalityEventColumn
 from scrapers.columns.types.skip import SkipColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.columns.types.url import UrlColumn
-from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.constants_drivers import FATALITIES_AGE_HEADER
 from scrapers.constants_drivers import FATALITIES_CAR_HEADER
@@ -91,7 +91,7 @@ class F1FatalitiesListScraper(F1TableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: TableScraperConfig | None = None,
+        config: TableConfig | None = None,
     ) -> None:
         super().__init__(
             options=append_transformer(options, FatalitiesCarTransformer()),

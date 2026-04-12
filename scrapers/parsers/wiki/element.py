@@ -11,7 +11,7 @@ from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.element_registry import ElementParseInput
-from scrapers.parsers.wiki.element_registry import ElementParserRegistration
+from scrapers.parsers.wiki.element_registry import ElementRegistration
 from scrapers.parsers.wiki.element_registry import ElementRegistry
 from scrapers.parsers.wiki.element_registry import WIKI_SELECTOR_FAMILY_MAP
 from scrapers.parsers.wiki.figure import WikiFigureParser
@@ -86,8 +86,8 @@ def build_wikipedia_element_registry(
     registrations = [
         ElementParserRegistration(
             element_type=element_type,
-            parser=parser.parse,
-            parser_class=type(parser),
+            handler=parser.parse,
+            handler_class=type(parser),
         )
         for element_type, parser in named_parsers
     ]

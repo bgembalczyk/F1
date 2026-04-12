@@ -5,11 +5,11 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.parsers.infobox.table import InfoboxTableExtractor
+from scrapers.parsers.infobox.table import InfoboxTableParser
 from scrapers.numeric_extractor import NumericExtractor
 
 
-class CollapsibleTableExtractor:
+class CollapsibleTableParser:
     """Handles parsing of collapsible career statistics tables."""
 
     def __init__(self, cell_value_extractor_delegate):
@@ -22,9 +22,6 @@ class CollapsibleTableExtractor:
         self._delegate = cell_value_extractor_delegate
 
     def parse(self, table: Tag) -> dict[str, Any] | None:
-        return self.parse_collapsible_career_table(table)
-
-    def parse_collapsible_career_table(self, table: Tag) -> dict[str, Any] | None:
         """Parse collapsible career statistics table (e.g., motorcycle racing).
 
         Example structure:
@@ -95,8 +92,8 @@ class CollapsibleTableExtractor:
         nested_table = cell.find("table")
         if not nested_table:
             return None
-        table_data = InfoboxTableExtractor.parse_nested_table(nested_table)
+        table_data = InfoboxTableParser.parse_nested_table(nested_table)
         return {"table": table_data}
 
 
-__all__ = ["CollapsibleTableExtractor"]
+__all__ = ["CollapsibleTableParser"]

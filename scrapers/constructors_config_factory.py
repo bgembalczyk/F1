@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
 from scrapers.columns.spec import ColumnSpec
-from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.source_catalog import CONSTRUCTORS_LIST
 
@@ -18,7 +18,7 @@ def build_constructor_list_config(
     section_id: str,
     expected_headers: Sequence[str],
     columns: Sequence[ColumnSpec],
-) -> TableScraperConfig:
+) -> TableConfig:
     return build_scraper_config(
         url=CONSTRUCTORS_LIST.base_url,
         section_id=section_id,
