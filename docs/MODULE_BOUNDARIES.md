@@ -49,7 +49,24 @@ Faza przejściowa z aliasami importów została domknięta — aliasy usunięto 
 - `list/` nie importuje `sections/`, `infobox/`, `postprocess/`.
 - `sections/` nie importuje `single_scraper.py` ani żadnych wrapperów uruchomieniowych.
 
-## 2.1 Twarde reguły: brak kompatybilności wstecznej
+## 2.1 Polityka nazewnictwa ról klas (Parser / Extractor / Mapper / Normalizer)
+
+Wprowadzamy twardą politykę semantyczną suffixów klas:
+
+- `*Parser` — wyłącznie klasy implementujące kontrakt parsera:
+  - muszą dziedziczyć po dozwolonym parserowym ABC (np. `*ParserABC`),
+  - muszą definiować publiczne `parse(...)` w klasie.
+- `*Extractor` — ekstrakcja danych bez kontraktu parsera (`parse(...)` nie jest wymaganym API parserowym).
+- `*Mapper` — transformacja modelu wejściowego na model wyjściowy (`input -> output`).
+- `*Normalizer` — normalizacja wartości (standaryzacja formatów, wartości domenowych, itp.).
+
+Wymuszenie:
+
+- AST check: `scripts/check_architecture_naming_conventions.py` waliduje regułę `*Parser` (ABC + `parse(...)`).
+- CI gate: parsery dodawane poza `scrapers/parsers/` są blokowane przez
+  `scripts/ci/enforce_parser_location_gate.py` w workflow `static-quality-gates.yml`.
+
+## 2.2 Twarde reguły: brak kompatybilności wstecznej
 
 - Nie dodajemy aliasów API/importów dla starych nazw.
 - Nie dodajemy fallbacków danych (`legacy`, `compatible`, `migration`) w runtime.

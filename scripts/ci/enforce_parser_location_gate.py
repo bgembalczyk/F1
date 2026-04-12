@@ -81,9 +81,6 @@ def _added_lines(base_ref: str, path: str) -> set[int]:
 
 
 def _violations_for_file(path: str, added_lines: set[int]) -> list[str]:
-    if path.startswith(CANONICAL_PREFIX):
-        return []
-
     full_path = ROOT / path
     try:
         tree = ast.parse(full_path.read_text(encoding="utf-8"))
@@ -95,6 +92,8 @@ def _violations_for_file(path: str, added_lines: set[int]) -> list[str]:
         if not isinstance(node, ast.ClassDef):
             continue
         if not node.name.endswith("Parser"):
+            continue
+        if path.startswith(CANONICAL_PREFIX):
             continue
         if node.lineno not in added_lines:
             continue

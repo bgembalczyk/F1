@@ -57,7 +57,7 @@ jobs:
       - name: Enforce scraper family inheritance contracts
         run: python scripts/ci/enforce_scraper_family_contracts.py
 
-      - name: Enforce parser location architecture gate
+      - name: Block new parsers outside scrapers/parsers/
         run: python scripts/ci/enforce_parser_location_gate.py
 
       - name: Enforce canonical role imports and thin compatibility modules
