@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.domain_roles import Parser
+from scrapers.parsers.contracts.base import ParserABC as Parser
 
 class SponsorPartsParser(Parser[str, list[tuple[str, str]]]):
     def __init__(self, text: str) -> None:

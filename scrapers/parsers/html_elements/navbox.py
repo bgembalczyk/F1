@@ -2,7 +2,7 @@ from bs4 import Tag
 
 from models.data.parsed.html_elements import NavboxElementData
 from scrapers.parsers.text_cleaning import extract_text
-from scrapers.parsers.wiki.families import WikiNavboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiNavboxParserABC
 
 
 class NavboxElementParser(WikiNavboxParserABC):

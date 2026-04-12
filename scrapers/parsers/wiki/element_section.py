@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.parsers.html_elements.section import SectionElementParser
-from scrapers.parsers.wiki.families import WikiSectionStructureParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionStructureParserABC
 
 
 class WikiSectionElementParser(WikiSectionStructureParserABC, SectionElementParser):

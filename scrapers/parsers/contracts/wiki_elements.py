@@ -3,11 +3,13 @@ from __future__ import annotations
 from abc import ABC
 from abc import abstractmethod
 from dataclasses import dataclass
+from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from typing import Any
+from scrapers.parsers.contracts.base import ParserABC
+from scrapers.parsers.contracts.html import TagParserABC
 from scrapers.parsers.wiki.types import WikiFigureData
 from scrapers.parsers.wiki.types import WikiInfoboxData
 from scrapers.parsers.wiki.types import WikiListData
@@ -16,45 +18,40 @@ from scrapers.parsers.wiki.types import WikiSectionData
 from scrapers.parsers.wiki.types import WikiTableData
 
 
-class WikiElementParserABC(ABC):
-    """Wspólny pionowy kontrakt parserów elementów wiki."""
-
-
-class WikiTableParserABC(WikiElementParserABC, ABC):
+class WikiTableParserABC(TagParserABC[WikiTableData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiTableData: ...
 
 
-class WikiListParserABC(WikiElementParserABC, ABC):
+class WikiListParserABC(TagParserABC[WikiListData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiListData: ...
 
 
-class WikiSectionParserABC(WikiElementParserABC, ABC):
+class WikiSectionParserABC(ParserABC[BeautifulSoup | Tag | list[Tag], WikiSectionData], ABC):
     @abstractmethod
     def parse(self, raw: BeautifulSoup | Tag | list[Tag]) -> WikiSectionData: ...
 
 
-class WikiInfoboxParserABC(WikiElementParserABC, ABC):
+class WikiInfoboxParserABC(TagParserABC[WikiInfoboxData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiInfoboxData: ...
 
 
-class WikiNavboxParserABC(WikiElementParserABC, ABC):
+class WikiNavboxParserABC(TagParserABC[WikiNavboxData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiNavboxData: ...
 
 
-class WikiFigureParserABC(WikiElementParserABC, ABC):
+class WikiFigureParserABC(TagParserABC[WikiFigureData], ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> WikiFigureData: ...
 
 
 class WikiSectionStructureParserABC(WikiSectionParserABC, ABC):
-    """Backward-compatible alias branch for section structure parsers."""
+    """Compatibility branch for section structure parsers."""
 
 
-# Backward-compatible aliases
 WikiNavboxHtmlParserABC = WikiNavboxParserABC
 WikiFigureHtmlParserABC = WikiFigureParserABC
 
@@ -67,14 +64,14 @@ class WikiTableMapperSet:
 
 
 __all__ = [
-    "WikiElementParserABC",
-    "WikiFigureParserABC",
     "WikiFigureHtmlParserABC",
+    "WikiFigureParserABC",
     "WikiInfoboxParserABC",
     "WikiListParserABC",
-    "WikiNavboxParserABC",
     "WikiNavboxHtmlParserABC",
+    "WikiNavboxParserABC",
     "WikiSectionParserABC",
+    "WikiSectionStructureParserABC",
     "WikiTableMapperSet",
     "WikiTableParserABC",
 ]

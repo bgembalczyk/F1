@@ -6,7 +6,7 @@ from bs4 import Tag
 
 from scrapers.parsers.privateer_teams_list import PrivateerTeamsListParser
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.wiki.families import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
 
 
 

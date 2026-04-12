@@ -20,14 +20,6 @@ class Extractor(ABC, Generic[InputT, OutputT]):
         """Compose raw source inputs into extraction-ready payload."""
 
 
-class Parser(ABC, Generic[InputT, OutputT]):
-    """Contract for HTML/text to structured technical data transformation."""
-
-    @abstractmethod
-    def parse(self, raw: InputT) -> OutputT:
-        """Transform raw HTML/text into structured representation."""
-
-
 class Factory(ABC, Generic[PayloadT, RecordT]):
     """Contract for building the canonical domain model/record."""
 

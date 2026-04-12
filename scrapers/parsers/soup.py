@@ -6,7 +6,7 @@ from typing import TypeVar
 
 from bs4 import BeautifulSoup
 
-from scrapers.domain_roles import Parser
+from scrapers.parsers.contracts.base import ParserABC as Parser
 
 SoupParseResultT_co = TypeVar("SoupParseResultT_co", covariant=True)
 

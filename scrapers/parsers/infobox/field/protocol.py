@@ -4,7 +4,7 @@ from abc import ABC
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.domain_roles import Parser
+from scrapers.parsers.contracts.base import ParserABC as Parser
 
 Input = TypeVar("Input")
 Output = TypeVar("Output")

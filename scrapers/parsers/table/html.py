@@ -8,13 +8,13 @@ from scrapers.constants_table import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.headers_table import normalize_header
 from scrapers.helpers.html_utils import find_section_elements
 from scrapers.mixins.table_row_parsing import TableRowParsingMixin
-from scrapers.parsers.base_family import TableParserABC
+from scrapers.parsers.contracts.html import SoupParserABC
 from scrapers.row_table import TableRow
 
 logger = logging.getLogger(__name__)
 
 
-class HtmlTableParser(TableRowParsingMixin, TableParserABC):
+class HtmlTableParser(TableRowParsingMixin, SoupParserABC[list[TableRow]]):
     """
     Parser tabel HTML, który zwraca listę wierszy jako mapowania
     nagłówków na komórki.
