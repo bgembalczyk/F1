@@ -13,6 +13,7 @@ from .mapping import TableMapperABC
 from .sections import SectionParserABC
 from .sections import SectionStructureParserABC
 from .wiki_elements import WikiFigureParserABC
+from .wiki_elements import InfoboxFieldParserABC
 from .wiki_elements import WikiInfoboxParserABC
 from .wiki_elements import WikiListParserABC
 from .wiki_elements import WikiNavboxParserABC
@@ -36,6 +37,7 @@ __all__ = [
     "TableDomainMapperABC",
     "TableMapperABC",
     "TagParserABC",
+    "InfoboxFieldParserABC",
     "WikiFigureParserABC",
     "WikiInfoboxParserABC",
     "WikiListParserABC",

@@ -69,11 +69,11 @@ class InfoboxCellParser:
     @property
     def active_years_field_parser(
         self,
-    ) -> InfoboxFieldParser[Tag, list[dict[str, Any]]]:
+    ) -> InfoboxFieldParser[list[dict[str, Any]]]:
         return self._active_years_parser
 
     @property
-    def teams_field_parser(self) -> InfoboxFieldParser[Tag, list[Any]]:
+    def teams_field_parser(self) -> InfoboxFieldParser[list[Any]]:
         return self._teams_parser
 
     @property
@@ -81,29 +81,29 @@ class InfoboxCellParser:
         return self._championships_parser
 
     @property
-    def best_finish_field_parser(self) -> InfoboxFieldParser[Tag, dict[str, Any]]:
+    def best_finish_field_parser(self) -> InfoboxFieldParser[dict[str, Any]]:
         return self._best_finish_parser
 
     @property
-    def race_event_field_parser(self) -> InfoboxFieldParser[Tag, list[dict[str, Any]]]:
+    def race_event_field_parser(self) -> InfoboxFieldParser[list[dict[str, Any]]]:
         return self._race_event_parser
 
     @property
     def finished_last_season_field_parser(
         self,
-    ) -> InfoboxFieldParser[Tag, dict[str, Any]]:
+    ) -> InfoboxFieldParser[dict[str, Any]]:
         return self._finished_season_parser
 
     @property
     def racing_licence_field_parser(
         self,
-    ) -> InfoboxFieldParser[Tag, list[dict[str, Any]]]:
+    ) -> InfoboxFieldParser[list[dict[str, Any]]]:
         return self._licence_parser
 
     @property
     def nationality_field_parser(
         self,
-    ) -> InfoboxFieldParser[Tag, list[str] | list[dict[str, Any]]]:
+    ) -> InfoboxFieldParser[list[str] | list[dict[str, Any]]]:
         return self._nationality_parser
 
     def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:

@@ -7,20 +7,22 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
 from scrapers.parsers.html_elements.infobox import InfoboxElementParser
 
 
 # Backward-compatible base name used across legacy infobox parsers.
-WikiInfoboxElementParserBase = InfoboxElementParser
+WikiInfoboxElementParserBase = WikiInfoboxParserABC
 
 
-class WikiInfoboxHtmlParser(WikiInfoboxElementParserBase):
+class WikiInfoboxHtmlParser(WikiInfoboxParserABC):
     """Parser HTML infoboxów z Wikipedii (tytuł, wiersze, linki)."""
 
     WIKIPEDIA_BASE = "https://en.wikipedia.org"
 
     def __init__(self, wikipedia_base: str | None = None) -> None:
         self.wikipedia_base = wikipedia_base or self.WIKIPEDIA_BASE
+        self._element_parser = InfoboxElementParser()
 
     def parse(self, fragment: BeautifulSoup) -> dict[str, Any]:
         return self.parse_fragment(fragment)
@@ -77,7 +79,7 @@ class WikiInfoboxHtmlParser(WikiInfoboxElementParserBase):
         return soup.find("table", class_=WikiInfoboxHtmlParser.has_infobox_class)
 
     def parse_group(self, table: Tag) -> dict[str, Any]:
-        return self.parse_table_rows(table)
+        return self._element_parser.parse_table_rows(table)
 
     def parse_row(self, value: Tag) -> dict[str, Any]:
         return {

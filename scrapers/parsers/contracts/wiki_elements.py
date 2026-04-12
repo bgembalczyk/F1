@@ -4,6 +4,7 @@ from abc import ABC
 from abc import abstractmethod
 from dataclasses import dataclass
 from typing import Any
+from typing import TypeVar
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -16,6 +17,8 @@ from scrapers.parsers.wiki.types import WikiListData
 from scrapers.parsers.wiki.types import WikiNavboxData
 from scrapers.parsers.wiki.types import WikiSectionData
 from scrapers.parsers.wiki.types import WikiTableData
+
+FieldValue = TypeVar("FieldValue")
 
 
 class WikiTableParserABC(TagParserABC[WikiTableData], ABC):
@@ -48,6 +51,11 @@ class WikiFigureParserABC(TagParserABC[WikiFigureData], ABC):
     def parse(self, raw: Tag) -> WikiFigureData: ...
 
 
+class InfoboxFieldParserABC(TagParserABC[FieldValue], ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> FieldValue: ...
+
+
 class WikiSectionStructureParserABC(WikiSectionParserABC, ABC):
     """Compatibility branch for section structure parsers."""
 
@@ -67,4 +75,6 @@ __all__ = [
     "WikiSectionStructureParserABC",
     "WikiTableMapperSet",
     "WikiTableParserABC",
+    "InfoboxFieldParserABC",
+    "FieldValue",
 ]
