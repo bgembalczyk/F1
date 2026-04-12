@@ -11,7 +11,7 @@ from bs4 import Tag
 from models.data.parsed.infobox import InfoboxParsedData
 from scrapers.parsers.roles import InfoboxHtmlParserABC
 from scrapers.parsers.roles import ListHtmlParserABC
-from scrapers.parsers.roles import MapperABC
+from scrapers.parsers.roles import ParserABC
 from scrapers.parsers.roles import TableHtmlParserABC
 from scrapers.parsers.roles import TableMapperABC
 
@@ -30,7 +30,7 @@ class WikiListParserABC(ListHtmlParserABC, ABC):
     def parse(self, raw: Tag) -> WikiListParsedData: ...
 
 
-class WikiSectionStructureParserABC(MapperABC[BeautifulSoup | Tag, WikiSectionParsedData], ABC):
+class WikiSectionParserABC(ParserABC[BeautifulSoup | Tag, WikiSectionParsedData], ABC):
     @abstractmethod
     def parse(self, raw: BeautifulSoup | Tag) -> WikiSectionParsedData: ...
 
@@ -38,6 +38,10 @@ class WikiSectionStructureParserABC(MapperABC[BeautifulSoup | Tag, WikiSectionPa
 class WikiInfoboxParserABC(InfoboxHtmlParserABC, ABC):
     @abstractmethod
     def parse(self, raw: Tag) -> InfoboxParsedData: ...
+
+
+# Backward-compatible alias during migration.
+WikiSectionStructureParserABC = WikiSectionParserABC
 
 
 @dataclass(frozen=True)
@@ -52,6 +56,7 @@ __all__ = [
     "WikiListParsedData",
     "WikiListParserABC",
     "WikiSectionParsedData",
+    "WikiSectionParserABC",
     "WikiSectionStructureParserABC",
     "WikiTableMapperSet",
     "WikiTableParsedData",

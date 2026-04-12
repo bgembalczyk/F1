@@ -1,26 +1,12 @@
 from __future__ import annotations
 
 from abc import ABC
-from abc import abstractmethod
-from typing import Generic
 from typing import TypeVar
 
-from bs4 import BeautifulSoup
-from bs4 import Tag
-
-from scrapers.parsers.wiki.base import WikiTagParser
-from scrapers.domain_roles import Parser
+from scrapers.parsers.roles import HtmlElementParserABC
 
 TOutput = TypeVar("TOutput")
 
 
-class BaseHtmlElementParser(WikiTagParser[TOutput], ABC):
-    """Base contract for single HTML element parsers.
-
-    Single element parsers must accept a bs4.Tag.
-    """
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> TOutput: ...
-
-
+class BaseHtmlElementParser(HtmlElementParserABC[TOutput], ABC):
+    """Base contract for single HTML element parsers."""
