@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.parsers.infobox.text_utils.circuit import CircuitAdditionalInfoParser
+from scrapers.parsers.infobox.text_utils.circuit import CircuitAdditionalInfoExtractor
 from tests.support.dependency_stubs import ensure_bs4_stub
 from tests.support.dependency_stubs import ensure_certifi_stub
 from tests.support.dependency_stubs import ensure_pandas_stub
@@ -33,14 +33,14 @@ from scrapers.list.base import F1ListScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntitiesParser
 from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
-    CircuitEntityParser,
+    CircuitEntityExtractor,
 )
-from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser
-from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryParser
+from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoExtractor
+from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryExtractor
 from scrapers.parsers.infobox.text_utils.circuit.lap_record import (
-    CircuitLapRecordParser,
+    CircuitLapRecordExtractor,
 )
-from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
 from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper
@@ -314,12 +314,12 @@ def test_circuit_entities_parser_skips_domain_parse_errors():
     handler = ErrorHandler()
     parser = CircuitEntitiesParser(
         text_utils=InfoboxTextUtils(),
-        geo_parser=CircuitGeoParser(),
-        history_parser=CircuitHistoryParser(),
-        specs_parser=CircuitSpecsParser(),
-        lap_record_parser=CircuitLapRecordParser(),
-        entity_parser=CircuitEntityParser(),
-        additional_info_parser=CircuitAdditionalInfoParser(),
+        geo_parser=CircuitGeoExtractor(),
+        history_parser=CircuitHistoryExtractor(),
+        specs_parser=CircuitSpecsExtractor(),
+        lap_record_parser=CircuitLapRecordExtractor(),
+        entity_parser=CircuitEntityExtractor(),
+        additional_info_parser=CircuitAdditionalInfoExtractor(),
         error_handler=handler,
         url_provider=lambda: "https://example.com/wiki/Test",
     )

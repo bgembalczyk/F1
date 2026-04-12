@@ -9,12 +9,12 @@ from scrapers.error_handler import ErrorHandler
 from scrapers.infobox.schemas.circuit import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
-from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordParser
-from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordExtractor
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
 from scrapers.parsers.mixins.safe import SafeParsingMixin
 
 
-class CircuitLayoutsParser(SafeParsingMixin):
+class CircuitLayoutsExtractor(SafeParsingMixin):
     """Logika parsowania sekcji layoutów z infoboksa toru."""
 
     def __init__(
@@ -22,8 +22,8 @@ class CircuitLayoutsParser(SafeParsingMixin):
         *,
         infobox_scraper: WikipediaInfoboxScraper,
         text_utils: InfoboxTextUtils,
-        lap_record_parser: CircuitLapRecordParser,
-        specs_parser: CircuitSpecsParser,
+        lap_record_parser: CircuitLapRecordExtractor,
+        specs_parser: CircuitSpecsExtractor,
         error_handler: ErrorHandler | None = None,
         url_provider: Callable[[], str | None] | None = None,
     ) -> None:
@@ -140,4 +140,4 @@ class CircuitLayoutsParser(SafeParsingMixin):
         return name, years
 
 
-__all__ = ["CircuitLayoutsParser"]
+__all__ = ["CircuitLayoutsExtractor"]

@@ -15,8 +15,8 @@ class SeasonConstructorsStandingsSectionParser(BaseSectionParser):
     def __init__(self, parser: SeasonStandingsParser) -> None:
         self._parser = parser
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
-        records = self._parser.parse(fragment, standings="constructors")
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        records = self._parser.parse(section_fragment, standings="constructors")
         return build_section_parse_result(
             section_id="World_Constructors'_Championship_standings",
             section_label="Constructors standings",

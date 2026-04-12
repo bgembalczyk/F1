@@ -1,12 +1,12 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser
+from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoExtractor
 
 
 @pytest.fixture()
-def parser() -> CircuitGeoParser:
-    return CircuitGeoParser()
+def parser() -> CircuitGeoExtractor:
+    return CircuitGeoExtractor()
 
 
 # ---------------------------------------------------------------------------
@@ -15,19 +15,19 @@ def parser() -> CircuitGeoParser:
 
 
 def test_split_plain_segment_basic() -> None:
-    result = CircuitGeoParser._split_plain_segment("Italy, Rome")
+    result = CircuitGeoExtractor._split_plain_segment("Italy, Rome")
     assert "Italy" in result
     assert "Rome" in result
 
 
 def test_split_plain_segment_stopwords_removed() -> None:
-    result = CircuitGeoParser._split_plain_segment("Italy and France")
+    result = CircuitGeoExtractor._split_plain_segment("Italy and France")
     assert "and" not in result
     assert "&" not in result
 
 
 def test_split_plain_segment_empty() -> None:
-    assert CircuitGeoParser._split_plain_segment("") == []
+    assert CircuitGeoExtractor._split_plain_segment("") == []
 
 
 # ---------------------------------------------------------------------------
@@ -111,18 +111,18 @@ def test_parse_coordinates_empty_text(parser) -> None:
     ],
 )
 def test_parse_position_payload(text, expected_lat, expected_lon) -> None:
-    result = CircuitGeoParser._parse_position_payload(text)
+    result = CircuitGeoExtractor._parse_position_payload(text)
     assert result is not None
     assert result["lat"] == pytest.approx(expected_lat, rel=1e-4)
     assert result["lon"] == pytest.approx(expected_lon, rel=1e-4)
 
 
 def test_parse_position_payload_empty() -> None:
-    assert CircuitGeoParser._parse_position_payload("") is None
+    assert CircuitGeoExtractor._parse_position_payload("") is None
 
 
 def test_parse_position_payload_no_coords() -> None:
-    assert CircuitGeoParser._parse_position_payload("no coords here") is None
+    assert CircuitGeoExtractor._parse_position_payload("no coords here") is None
 
 
 # ---------------------------------------------------------------------------
@@ -131,35 +131,35 @@ def test_parse_position_payload_no_coords() -> None:
 
 
 def test_parse_area_none() -> None:
-    assert CircuitGeoParser._parse_area(None) is None
+    assert CircuitGeoExtractor._parse_area(None) is None
 
 
 def test_parse_area_empty_text() -> None:
-    assert CircuitGeoParser._parse_area({"text": ""}) is None
+    assert CircuitGeoExtractor._parse_area({"text": ""}) is None
 
 
 def test_parse_area_acres_and_ha() -> None:
-    result = CircuitGeoParser._parse_area({"text": "277 acres (112 ha)"})
+    result = CircuitGeoExtractor._parse_area({"text": "277 acres (112 ha)"})
     assert result is not None
     assert result["acres"] == pytest.approx(277.0)
     assert result["hectares"] == pytest.approx(112.0)
 
 
 def test_parse_area_only_ha() -> None:
-    result = CircuitGeoParser._parse_area({"text": "112 ha"})
+    result = CircuitGeoExtractor._parse_area({"text": "112 ha"})
     assert result is not None
     assert result["hectares"] == pytest.approx(112.0)
     assert "acres" not in result
 
 
 def test_parse_area_only_acres() -> None:
-    result = CircuitGeoParser._parse_area({"text": "277 acres"})
+    result = CircuitGeoExtractor._parse_area({"text": "277 acres"})
     assert result is not None
     assert result["acres"] == pytest.approx(277.0)
 
 
 def test_parse_area_no_units_returns_none() -> None:
-    assert CircuitGeoParser._parse_area({"text": "no area here"}) is None
+    assert CircuitGeoExtractor._parse_area({"text": "no area here"}) is None
 
 
 # ---------------------------------------------------------------------------
@@ -169,12 +169,12 @@ def test_parse_area_no_units_returns_none() -> None:
 
 def test_filter_components_removes_stopwords() -> None:
     comps = [{"text": "and"}, {"text": "Italy"}]
-    result = CircuitGeoParser._filter_components(comps)
+    result = CircuitGeoExtractor._filter_components(comps)
     assert len(result) == 1
     assert result[0]["text"] == "Italy"
 
 
 def test_filter_components_removes_empty() -> None:
     comps = [{"text": ""}, {"text": "Italy"}]
-    result = CircuitGeoParser._filter_components(comps)
+    result = CircuitGeoExtractor._filter_components(comps)
     assert len(result) == 1

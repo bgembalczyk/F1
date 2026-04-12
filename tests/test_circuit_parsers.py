@@ -12,7 +12,7 @@ EXPECTED_TURNS = 10
 
 
 def test_circuit_geo_parser_location_and_coordinates() -> None:
-    parser = services.CircuitGeoParser()
+    parser = services.CircuitGeoExtractor()
     row = {
         "text": "Paris, France",
         "links": [
@@ -43,14 +43,14 @@ def test_circuit_geo_parser_location_and_coordinates() -> None:
 
 
 def test_circuit_history_parser_former_names() -> None:
-    parser = services.CircuitHistoryParser()
+    parser = services.CircuitHistoryExtractor()
     row = {"text": "Old Name (1959-1979)"}
     names = parser._parse_former_names(row)
     assert names == [{"name": "Old Name", "periods": [{"from": "1959", "to": "1979"}]}]
 
 
 def test_circuit_specs_parser_surface_and_banking() -> None:
-    parser = services.CircuitSpecsParser()
+    parser = services.CircuitSpecsExtractor()
     surface = parser.parse_surface({"text": "Asphalt (since 2020)"})
     assert surface == {
         "values": ["Asphalt"],
@@ -63,7 +63,7 @@ def test_circuit_specs_parser_surface_and_banking() -> None:
 
 
 def test_circuit_lap_record_parser_basic() -> None:
-    parser = services.CircuitLapRecordParser()
+    parser = services.CircuitLapRecordExtractor()
     row = {
         "text": "1:20.123 (John Doe, Fast Car, 2023, Formula One)",
         "links": [
@@ -111,9 +111,9 @@ def test_select_details_paren() -> None:
 def test_circuit_layouts_parser_basic() -> None:
     infobox_scraper = WikipediaInfoboxScraper()
     text_utils = services.InfoboxTextUtils()
-    lap_record_parser = services.CircuitLapRecordParser()
-    specs_parser = services.CircuitSpecsParser()
-    parser = services.CircuitLayoutsParser(
+    lap_record_parser = services.CircuitLapRecordExtractor()
+    specs_parser = services.CircuitSpecsExtractor()
+    parser = services.CircuitLayoutsExtractor(
         infobox_scraper=infobox_scraper,
         text_utils=text_utils,
         lap_record_parser=lap_record_parser,
@@ -149,12 +149,12 @@ def test_circuit_layouts_parser_basic() -> None:
 
 def test_circuit_entities_parser_default_layout() -> None:
     text_utils = services.InfoboxTextUtils()
-    geo_parser = services.CircuitGeoParser()
-    history_parser = services.CircuitHistoryParser()
-    specs_parser = services.CircuitSpecsParser()
-    lap_record_parser = services.CircuitLapRecordParser()
-    entity_parser = services.CircuitEntityParser()
-    additional_info_parser = services.CircuitAdditionalInfoParser()
+    geo_parser = services.CircuitGeoExtractor()
+    history_parser = services.CircuitHistoryExtractor()
+    specs_parser = services.CircuitSpecsExtractor()
+    lap_record_parser = services.CircuitLapRecordExtractor()
+    entity_parser = services.CircuitEntityExtractor()
+    additional_info_parser = services.CircuitAdditionalInfoExtractor()
 
     parser = services.CircuitEntitiesParser(
         text_utils=text_utils,
@@ -227,7 +227,7 @@ def test_circuit_entities_parser_default_layout() -> None:
 
 
 def test_entity_parser_multiple_links_language_marker() -> None:
-    parser = services.CircuitEntityParser()
+    parser = services.CircuitEntityExtractor()
     row = {
         "text": "Example [it]",
         "links": [
@@ -242,7 +242,7 @@ def test_entity_parser_multiple_links_language_marker() -> None:
 
 
 def test_entity_parser_single_link_with_multiple_parts() -> None:
-    parser = services.CircuitEntityParser()
+    parser = services.CircuitEntityExtractor()
     row = {
         "text": "A, B and C",
         "links": [{"text": "B", "url": "https://en.wikipedia.org/wiki/B"}],
@@ -256,7 +256,7 @@ def test_entity_parser_single_link_with_multiple_parts() -> None:
 
 
 def test_entity_parser_redlink_url_none() -> None:
-    parser = services.CircuitEntityParser()
+    parser = services.CircuitEntityExtractor()
     row = {
         "text": "Red Page",
         "links": [

@@ -37,7 +37,7 @@ class GrandPrixByYearSectionParser(BaseSectionParser):
         self._normalize_empty_values = normalize_empty_values
         self._assembler = assembler or GrandPrixByYearRecordAssembler()
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         pipeline = self._build_pipeline(section_id=None)
         parser = HtmlTableParser(
             section_id=None,
@@ -45,7 +45,7 @@ class GrandPrixByYearSectionParser(BaseSectionParser):
             section_domain="grands_prix",
         )
         records: list[dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse(fragment)):
+        for row_index, row in enumerate(parser.parse(section_fragment)):
             parsed_record = pipeline.parse_cells(
                 row.headers,
                 row.cells,

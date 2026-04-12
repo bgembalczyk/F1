@@ -7,7 +7,7 @@ from scrapers.parsers.infobox.constants import ENTITY_PARTS_RE
 from scrapers.parsers.infobox.text_utils.circuit import CircuitTextProcessing
 
 
-class CircuitEntityParser(CircuitTextProcessing):
+class CircuitEntityExtractor(CircuitTextProcessing):
     """Parsowanie linkowanych encji (architect, owner, website itp.)."""
 
     def parse(
@@ -121,4 +121,4 @@ class CircuitEntityParser(CircuitTextProcessing):
         return text or None
 
 
-__all__ = ["CircuitEntityParser"]
+__all__ = ["CircuitEntityExtractor"]

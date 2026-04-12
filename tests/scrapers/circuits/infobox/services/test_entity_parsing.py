@@ -2,13 +2,13 @@
 import pytest
 
 from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
-    CircuitEntityParser,
+    CircuitEntityExtractor,
 )
 
 
 @pytest.fixture()
-def parser() -> CircuitEntityParser:
-    return CircuitEntityParser()
+def parser() -> CircuitEntityExtractor:
+    return CircuitEntityExtractor()
 
 
 # ---------------------------------------------------------------------------
@@ -106,18 +106,18 @@ def test_build_from_multiple_links_empty_links_fallback(parser) -> None:
 
 
 def test_build_without_links_single_part() -> None:
-    result = CircuitEntityParser._build_without_links(["Monza"])
+    result = CircuitEntityExtractor._build_without_links(["Monza"])
     assert result == "Monza"
 
 
 def test_build_without_links_multiple_parts() -> None:
-    result = CircuitEntityParser._build_without_links(["Monza", "Spa"])
+    result = CircuitEntityExtractor._build_without_links(["Monza", "Spa"])
     assert isinstance(result, list)
     assert len(result) == 2
 
 
 def test_build_without_links_empty() -> None:
-    assert CircuitEntityParser._build_without_links([]) is None
+    assert CircuitEntityExtractor._build_without_links([]) is None
 
 
 # ---------------------------------------------------------------------------
@@ -184,15 +184,15 @@ def test_parse_linked_entity_with_link(parser) -> None:
 
 
 def test_parse_website_none() -> None:
-    assert CircuitEntityParser._parse_website(None) is None
+    assert CircuitEntityExtractor._parse_website(None) is None
 
 
 def test_parse_website_text_only() -> None:
-    result = CircuitEntityParser._parse_website({"text": "www.monza.it", "links": []})
+    result = CircuitEntityExtractor._parse_website({"text": "www.monza.it", "links": []})
     assert result == "www.monza.it"
 
 
 def test_parse_website_with_link() -> None:
     links = [{"text": "Website", "url": "https://www.monza.it"}]
-    result = CircuitEntityParser._parse_website({"text": "Website", "links": links})
+    result = CircuitEntityExtractor._parse_website({"text": "Website", "links": links})
     assert result == "https://www.monza.it"

@@ -36,20 +36,20 @@ class CircuitsListSectionParser(BaseSectionParser):
         self._table_html_parser = table_html_parser or WikiTableHtmlParser()
         self._table_domain_mapper = table_domain_mapper or CircuitsListTableMapper()
 
-    def _ensure_supported_table(self, fragment: BeautifulSoup) -> None:
-        first_table = fragment.find("table", class_="wikitable")
+    def _ensure_supported_table(self, section_fragment: BeautifulSoup) -> None:
+        first_table = section_fragment.find("table", class_="wikitable")
         if first_table is not None:
             self._table_html_parser.parse(first_table)
         parsed_tables = ArticleTablesParser(
             specialized_mappers=[self._table_domain_mapper],
-        ).parse(fragment)
+        ).parse(section_fragment)
         has_circuits_table = any(
             table.get("table_type") == "circuits_list" for table in parsed_tables
         )
         if not has_circuits_table:
-            msg = "No circuits list table found in section fragment"
+            msg = "No circuits list table found in section section_fragment"
             raise RuntimeError(msg)
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
-        self._ensure_supported_table(fragment)
-        return self._parser.parse(fragment)
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        self._ensure_supported_table(section_fragment)
+        return self._parser.parse(section_fragment)

@@ -2,13 +2,13 @@
 import pytest
 
 from scrapers.parsers.infobox.text_utils.circuit.lap_record import (
-    CircuitLapRecordParser,
+    CircuitLapRecordExtractor,
 )
 
 
 @pytest.fixture()
-def parser() -> CircuitLapRecordParser:
-    return CircuitLapRecordParser()
+def parser() -> CircuitLapRecordExtractor:
+    return CircuitLapRecordExtractor()
 
 
 # ---------------------------------------------------------------------------

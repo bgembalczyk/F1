@@ -3,13 +3,13 @@ from typing import Any
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.text_normalization import split_delimited_text
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityExtractor
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord
 
 
-class CircuitAdditionalInfoParser(CircuitEntityParser):
+class CircuitAdditionalInfoExtractor(CircuitEntityExtractor):
     """Zbieranie dodatkowych pól (additional_info)."""
 
     def parse(
@@ -56,4 +56,4 @@ class CircuitAdditionalInfoParser(CircuitEntityParser):
         return additional or None
 
 
-__all__ = ["CircuitAdditionalInfoParser"]
+__all__ = ["CircuitAdditionalInfoExtractor"]

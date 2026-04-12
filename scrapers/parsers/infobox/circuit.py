@@ -12,13 +12,13 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.circuit_entities_orchestrator import CircuitEntitiesOrchestrator
 from scrapers.parsers.infobox.helpers import parse_infobox_from_soup
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
-from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoParser
-from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryParser
-from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordParser
-from scrapers.parsers.infobox.text_utils.circuit.layouts import CircuitLayoutsParser
-from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsParser
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoParser
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityParser
+from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoExtractor
+from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryExtractor
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordExtractor
+from scrapers.parsers.infobox.text_utils.circuit.layouts import CircuitLayoutsExtractor
+from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoExtractor
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityExtractor
 from scrapers.parsers.wiki_infobox_parser_abc import WikiInfoboxParserABC
 from scrapers.types import ExportableRecord
 
@@ -54,12 +54,12 @@ class CircuitInfoboxParser(WikiInfoboxParserABC):
 
         # --- Serwisy ---
         self.text_utils = InfoboxTextUtils()
-        self.geo_parser = CircuitGeoParser()
-        self.history_parser = CircuitHistoryParser()
-        self.specs_parser = CircuitSpecsParser()
-        self.lap_record_parser = CircuitLapRecordParser()
-        self.entity_parser = CircuitEntityParser()
-        self.additional_info_parser = CircuitAdditionalInfoParser()
+        self.geo_parser = CircuitGeoExtractor()
+        self.history_parser = CircuitHistoryExtractor()
+        self.specs_parser = CircuitSpecsExtractor()
+        self.lap_record_parser = CircuitLapRecordExtractor()
+        self.entity_parser = CircuitEntityExtractor()
+        self.additional_info_parser = CircuitAdditionalInfoExtractor()
 
         self.entities_parser = CircuitEntitiesOrchestrator(
             text_utils=self.text_utils,
@@ -73,7 +73,7 @@ class CircuitInfoboxParser(WikiInfoboxParserABC):
             url_provider=lambda: self.url,
         )
 
-        self.layouts_parser = CircuitLayoutsParser(
+        self.layouts_parser = CircuitLayoutsExtractor(
             infobox_scraper=self.infobox_scraper,
             text_utils=self.text_utils,
             lap_record_parser=self.lap_record_parser,

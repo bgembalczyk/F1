@@ -45,12 +45,12 @@ class ConstructorsSectionParser(BaseSectionParser):
             raise ValueError(msg)
         self._table_domain_mapper = table_domain_mapper
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         logger.warning(
             "Constructors section parser '%s': start parse.",
             self._parser.section_label,
         )
-        table = fragment.find("table", class_="wikitable")
+        table = section_fragment.find("table", class_="wikitable")
         logger.warning(
             "Constructors section parser '%s': first wikitable found=%s.",
             self._parser.section_label,
@@ -73,7 +73,7 @@ class ConstructorsSectionParser(BaseSectionParser):
                     self._parser.section_label,
                 )
         try:
-            return self._parser.parse(fragment)
+            return self._parser.parse(section_fragment)
         except RuntimeError:
             logger.warning(
                 "Constructors section parser '%s': full section parse failed, "

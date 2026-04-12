@@ -17,7 +17,7 @@ from scrapers.parsers.infobox.constants import MIN_DETAILS_FOR_YEAR
 from scrapers.parsers.infobox.text_utils.circuit.text_processing.base import CircuitTextProcessing
 
 
-class CircuitLapRecordParser(CircuitTextProcessing):
+class CircuitLapRecordExtractor(CircuitTextProcessing):
     """Logika parsowania, porównywania i scalania lap record'ów."""
 
     def parse(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
@@ -168,4 +168,4 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         records.append({"race_lap_record": candidate})
 
 
-__all__ = ["CircuitLapRecordParser"]
+__all__ = ["CircuitLapRecordExtractor"]

@@ -16,6 +16,9 @@ TARGET_BRANCHES = {
     "WikiFigureParserABC",
     "WikiSectionStructureParserABC",
     "InfoboxFieldParser",
+    # ABCs that serve as direct base contracts for concrete parsers
+    "InfoboxFieldParserABC",  # base of InfoboxFieldParser itself
+    "TableParserABC",         # base of WikiTableBaseParser
 }
 
 ROOTS = (
