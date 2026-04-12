@@ -1,10 +1,15 @@
 from __future__ import annotations
 
+import importlib
+import inspect
+import pkgutil
 from dataclasses import dataclass
 from typing import Final
 from typing import Literal
 from typing import TypeAlias
 
+import scrapers.parsers as parsers_pkg
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.tag_parser_abc import TagParserABC
 from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
 from scrapers.parsers.wiki_section_parser_abc import WikiSectionParserABC
@@ -142,6 +147,41 @@ def resolve_parser_name(
     ).__name__
 
 
+def discover_registered_parser_classes() -> tuple[type[ParserABC[object, object]], ...]:
+    """Discover concrete parser classes in scrapers.parsers package.
+
+    Rule: class name ending with `Parser` must implement parser contract
+    (inherit from ParserABC) to be considered a registered parser class.
+    """
+    discovered: list[type[ParserABC[object, object]]] = []
+    for module_info in pkgutil.walk_packages(
+        parsers_pkg.__path__,
+        prefix=f"{parsers_pkg.__name__}.",
+    ):
+        try:
+            module = importlib.import_module(module_info.name)
+        except Exception:
+            continue
+        for _, class_type in inspect.getmembers(module, inspect.isclass):
+            if class_type.__module__ != module.__name__:
+                continue
+            if not class_type.__name__.endswith("Parser"):
+                continue
+            if inspect.isabstract(class_type):
+                continue
+            if not issubclass(class_type, ParserABC):
+                continue
+            discovered.append(class_type)
+    return tuple(sorted(discovered, key=lambda cls: f"{cls.__module__}.{cls.__name__}"))
+
+
+def is_parser_class_registered(class_type: type[object]) -> bool:
+    """Return True when class is detected by parser class registry discovery."""
+    if not inspect.isclass(class_type):
+        return False
+    return class_type in set(discover_registered_parser_classes())
+
+
 __all__ = [
     "DEFAULT_PARSER_REGISTRY",
     "DomainName",
@@ -149,6 +189,8 @@ __all__ = [
     "ParsingRegistryEntry",
     "ParsingRegistryKey",
     "REQUIRED_PRODUCTION_KEYS",
+    "discover_registered_parser_classes",
+    "is_parser_class_registered",
     "resolve_parser_base",
     "resolve_parser_name",
     "validate_parser_registry",

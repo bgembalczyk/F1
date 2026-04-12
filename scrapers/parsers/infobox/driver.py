@@ -11,7 +11,6 @@ from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
 from scrapers.parsers.default_driver_infobox_provider import DefaultDriverInfoboxProvider
 from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
-from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.wiki_infobox_parser_abc import WikiInfoboxParserABC
 
@@ -44,10 +43,8 @@ class DriverInfoboxParser(WikiInfoboxParserABC):
             logger=self.logger,
         )
         self._link_extractor = parser_bundle.link_extractor
-        self._cell_parser: InfoboxFieldParser[dict[str, Any]] = (
-            parser_bundle.cell_parser
-        )
-        self._general_parser = parser_bundle.general_parser
+        self._cell_extractor = parser_bundle.cell_extractor
+        self._general_extractor = parser_bundle.general_extractor
         self._titles_parser = parser_bundle.titles_parser
         self._career_parser = parser_bundle.career_parser
         self._section_collector = parser_bundle.section_discovery
@@ -104,7 +101,7 @@ class DriverInfoboxParser(WikiInfoboxParserABC):
 
         parsed = {
             "title": self._infobox_title(table),
-            "general": self._general_parser.parse(general_section.get("rows", [])),
+            "general": self._general_extractor.parse(general_section.get("rows", [])),
             "championship_titles": [],
             "major_victories": [],
             "career": [],

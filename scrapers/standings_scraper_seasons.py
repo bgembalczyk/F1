@@ -1,54 +1,11 @@
 from typing import Any
 
 from bs4 import BeautifulSoup
-from bs4 import Tag
 
-from scrapers.columns.types.position import PositionColumn
 from scrapers.config_table import TableScraperConfig
-from scrapers.extractors.table import TableExtractor
 from scrapers.options import ScraperOptions
+from scrapers.parsers.section.standings.f1_table import F1StandingsTableParser
 from scrapers.scraper_table import F1TableScraper
-
-
-class F1StandingsTableParser:
-    """Parser tabel klasyfikacji (standings) Formuły 1.
-
-    Parsuje tabelę klasyfikacji z podanego elementu HTML (``element``),
-    stosując logikę obsługi remisów (TIED): jeżeli w kolumnie pozycji
-    pojawia się wartość ``PositionColumn.TIED``, zastępuje ją poprzednią
-    zapamiętaną pozycją.
-
-    Dziedziczy po ``TableParser`` — jest wyłącznie parserem (nie pobiera
-    HTML samodzielnie), zgodnie z hierarchią WikiElementParserów.
-    """
-
-    def __init__(self, *, position_key: str = "pos") -> None:
-        self.position_key = position_key
-
-    def normalize_rows(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        previous_position = None
-        for row in rows:
-            pos = row.get(self.position_key)
-            if pos is PositionColumn.TIED:
-                row[self.position_key] = previous_position
-            elif pos is not None:
-                previous_position = pos
-        return rows
-
-    def parse(
-        self,
-        element: Tag,
-        *,
-        options: ScraperOptions,
-        config: TableScraperConfig,
-    ) -> list[dict[str, Any]]:
-        extractor = TableExtractor(
-            config=config,
-            include_urls=options.include_urls,
-            normalize_empty_values=options.normalize_empty_values,
-        )
-        rows = extractor.extract(element)
-        return self.normalize_rows(rows)
 
 
 class F1StandingsScraper(F1TableScraper):

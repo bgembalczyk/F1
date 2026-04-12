@@ -8,8 +8,12 @@ from scrapers.parsers.constants_contracts import TagOut
 from scrapers.parsers.parser_abc import ParserABC
 
 
-class TagParserABC(ParserABC[Tag, TagOut], ABC, Generic[TagOut]):
+class HtmlTagParserABC(ParserABC[Tag, TagOut], ABC, Generic[TagOut]):
     """Canonical parser contract for single bs4.Tag inputs."""
 
     @abstractmethod
     def parse(self, raw: Tag) -> TagOut: ...
+
+
+class TagParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
+    """Backward-compatible alias for HtmlTagParserABC."""

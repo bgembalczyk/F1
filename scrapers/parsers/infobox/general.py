@@ -13,7 +13,7 @@ from scrapers.infobox.schemas.schema import InfoboxSchema
 from scrapers.parsers.infobox.constants import DATE_PATTERN
 
 
-class InfoboxGeneralParser:
+class InfoboxGeneralExtractor:
     def __init__(
         self,
         *,
@@ -215,5 +215,8 @@ class InfoboxGeneralParser:
 
 
 __all__ = [
-    "InfoboxGeneralParser",
+    "InfoboxGeneralExtractor",
 ]
+
+# Backward-compatible alias.
+InfoboxGeneralParser = InfoboxGeneralExtractor

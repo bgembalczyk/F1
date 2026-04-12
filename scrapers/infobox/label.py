@@ -8,7 +8,7 @@ from scrapers.parsers.infobox.constants import ACTIVE_YEARS_LABELS
 from scrapers.parsers.infobox.constants import INT_CELL_LABELS
 from scrapers.parsers.infobox.constants import RACE_EVENT_LABELS
 from scrapers.parsers.infobox.constants import TEAM_LABELS
-from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
+from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.callable import CallableInfoboxFieldParser
 from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
 from scrapers.parsers.infobox.field.protocol import InfoboxFieldParser
@@ -16,17 +16,17 @@ from scrapers.parsers.numeric_extractor import NumericExtractor
 
 
 def field_parsers_registry(
-    cell_parser: InfoboxCellParser,
+    cell_extractor: InfoboxCellValueExtractor,
 ) -> InfoboxFieldRegistry:
-    registry = InfoboxFieldRegistry(default_parser=cell_parser)
-    championships_parser = cell_parser.championships_field_parser
+    registry = InfoboxFieldRegistry(default_parser=cell_extractor)
+    championships_parser = cell_extractor.championships_field_parser
 
     registry.register(
         labels=ACTIVE_YEARS_LABELS,
-        parser=cell_parser.active_years_field_parser,
+        parser=cell_extractor.active_years_field_parser,
     )
     registry.register(labels={"Car number"}, parser=CarNumbersParser())
-    registry.register(labels=TEAM_LABELS, parser=cell_parser.teams_field_parser)
+    registry.register(labels=TEAM_LABELS, parser=cell_extractor.teams_field_parser)
     registry.register(
         labels={"Entries"},
         parser=CallableInfoboxFieldParser(NumericExtractor.parse_entries),
@@ -46,23 +46,23 @@ def field_parsers_registry(
     )
     registry.register(
         labels={"Best finish"},
-        parser=cell_parser.best_finish_field_parser,
+        parser=cell_extractor.best_finish_field_parser,
     )
     registry.register(
         labels=RACE_EVENT_LABELS,
-        parser=cell_parser.race_event_field_parser,
+        parser=cell_extractor.race_event_field_parser,
     )
     registry.register(
         labels={"Finished last season"},
-        parser=cell_parser.finished_last_season_field_parser,
+        parser=cell_extractor.finished_last_season_field_parser,
     )
     registry.register(
         labels={"Racing licence"},
-        parser=cell_parser.racing_licence_field_parser,
+        parser=cell_extractor.racing_licence_field_parser,
     )
     registry.register(
         labels={"Nationality"},
-        parser=cell_parser.nationality_field_parser,
+        parser=cell_extractor.nationality_field_parser,
     )
     return registry
 
@@ -70,9 +70,9 @@ def field_parsers_registry(
 def parser_for_label(
     *,
     label: str | None,
-    cell_parser: InfoboxCellParser,
+    cell_extractor: InfoboxCellValueExtractor,
 ) -> InfoboxFieldParser[Any]:
-    return field_parsers_registry(cell_parser).parser_for_label(label)
+    return field_parsers_registry(cell_extractor).parser_for_label(label)
 
 
 __all__ = [
