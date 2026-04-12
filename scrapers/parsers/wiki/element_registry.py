@@ -127,7 +127,7 @@ class ElementRegistry:
         domain: str | None,
         section_id: str | None,
         section_profile: str | None,
-    ) -> ElementParserRegistration | None:
+    ) -> ElementRegistration | None:
         normalized_section_id = normalize_section_text(section_id) if section_id else None
         candidates: list[tuple[int, ElementRegistration]] = []
         for registration in self.registrations:
