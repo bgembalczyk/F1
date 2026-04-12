@@ -12,6 +12,7 @@ from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 from scrapers.parsers.wiki.element_dispatcher import ElementParserDispatcher
 from scrapers.parsers.wiki.element_payload_factory import ElementParseResult
+from scrapers.parsers.wiki.element_dispatcher import ElementDispatcher
 
 
 class WikiElementParsingMixin:
@@ -44,7 +45,7 @@ class WikiElementParsingMixin:
             ),
         )
         self.element_registry = resolved_registry
-        self.dispatcher = ElementParserDispatcher(registry=resolved_registry)
+        self.dispatcher = ElementDispatcher(registry=resolved_registry)
         self._parser_rules: list[ParserRule] = []
 
     @staticmethod

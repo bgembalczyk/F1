@@ -51,6 +51,7 @@ Przyjęta reguła:
 - klasy mapujące/tworzące rekordy mają sufiks `Mapper` albo `Factory`,
 - klasy translacyjne między kontraktami mają sufiks `Adapter`,
 - klasy use-case mają sufiks `Service`.
+- API publiczne: `Parser` udostępnia `parse(...)`, a `Extractor` udostępnia `extract(...)`.
 
 W ramach bieżącego porządkowania wykonano rename:
 - `SeasonTableService` -> `SeasonTableParser` (`scrapers/parsers/seasons/table.py`) — klasa realizuje operacje `parse_*`, więc semantycznie jest parserem.

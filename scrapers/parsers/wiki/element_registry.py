@@ -11,10 +11,21 @@ from scrapers.parsers.element_parser_abc import ElementType
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.wiki_normalization import normalize_section_text
 
+WIKI_SELECTOR_FAMILY_MAP: dict[ElementType, str] = {
+    "table": "table.wikitable",
+    "list": "ul, ol",
+    "infobox": "table.infobox",
+    "section": "div.mw-heading2|3|4",
+    "figure": "figure",
+    "paragraph": "p",
+    "navbox": "div.navbox",
+    "references_wrap": "div.reflist | div[class*='references-wrap']",
+}
+
 
 @dataclass(frozen=True)
 class ElementParseInput:
-    """Wspólny model wejścia parsera elementu (tag + metadata + section context)."""
+    """Wspólny model wejścia dispatchu elementu (tag + metadata + section context)."""
 
     tag: Tag
     metadata: dict[str, object] | None = None
@@ -41,12 +52,12 @@ class ElementParseInput:
 
 
 @dataclass(frozen=True)
-class ElementParserRegistration:
-    """Registry entry resolving parser by element type + domain + section context."""
+class ElementRegistration:
+    """Registry entry resolving handler by element type + domain + section context."""
 
     element_type: ElementType
-    parser: Callable[[Tag], WikiParserData]
-    parser_class: type
+    handler: Callable[[Tag], WikiParserData]
+    handler_class: type
     domain: str | None = None
     section_id: str | None = None
     section_profile: str | None = None
@@ -54,7 +65,7 @@ class ElementParserRegistration:
 
 @dataclass(frozen=True)
 class ElementRegistry:
-    registrations: tuple[ElementParserRegistration, ...]
+    registrations: tuple[ElementRegistration, ...]
     type_predicates: dict[ElementType, Callable[[Tag], bool]]
 
     @staticmethod
@@ -73,7 +84,7 @@ class ElementRegistry:
     def resolve_registration(
         self,
         parse_input: ElementParseInput,
-    ) -> ElementParserRegistration | None:
+    ) -> ElementRegistration | None:
         element_type = self.detect_element_type(parse_input.tag)
         if element_type is None:
             return None
@@ -91,7 +102,23 @@ class ElementRegistry:
         registration = self.resolve_registration(parse_input)
         if registration is None:
             return None
-        return registration.element_type, registration.parser
+        return registration.element_type, registration.handler
+
+    def validate_selector_family_coverage(self) -> None:
+        missing_predicates = set(WIKI_SELECTOR_FAMILY_MAP) - set(self.type_predicates)
+        if missing_predicates:
+            missing = ", ".join(sorted(missing_predicates))
+            raise ValueError(f"Missing selector predicates for families: {missing}")
+
+        registered_families = {registration.element_type for registration in self.registrations}
+        missing_registrations = {
+            family
+            for family in WIKI_SELECTOR_FAMILY_MAP
+            if family != "section" and family not in registered_families
+        }
+        if missing_registrations:
+            missing = ", ".join(sorted(missing_registrations))
+            raise ValueError(f"Missing parser registrations for families: {missing}")
 
     def _pick_best_registration(
         self,
@@ -102,7 +129,7 @@ class ElementRegistry:
         section_profile: str | None,
     ) -> ElementParserRegistration | None:
         normalized_section_id = normalize_section_text(section_id) if section_id else None
-        candidates: list[tuple[int, ElementParserRegistration]] = []
+        candidates: list[tuple[int, ElementRegistration]] = []
         for registration in self.registrations:
             if registration.element_type != element_type:
                 continue
@@ -123,7 +150,7 @@ class ElementRegistry:
     @staticmethod
     def _match_score(
         *,
-        registration: ElementParserRegistration,
+        registration: ElementRegistration,
         domain: str | None,
         section_id: str | None,
         section_profile: str | None,

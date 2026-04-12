@@ -1,16 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
-from typing import Generic
+"""Compatibility re-export for the canonical Tag parser contract."""
 
-from bs4 import Tag
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 
-from scrapers.parsers.constants_contracts import TagOut
-from scrapers.parsers.parser_abc import ParserABC
-
-
-class HtmlTagParserABC(ParserABC[Tag, TagOut], ABC, Generic[TagOut]):
-    """Canonical parser contract for single bs4.Tag inputs."""
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> TagOut: ...
-
+__all__ = ["HtmlTagParserABC"]

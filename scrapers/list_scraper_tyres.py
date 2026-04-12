@@ -3,7 +3,7 @@ from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.append_links import AppendLinksColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.skip import SkipColumn
-from scrapers.config_table import TableScraperConfig
+from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.legacy_lists.tyres import ManufacturersSectionParser
@@ -49,7 +49,7 @@ class TyreManufacturersScraper(F1TableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: TableScraperConfig | None = None,
+        config: TableConfig | None = None,
     ) -> None:
         super().__init__(options=options, config=config)
         parser = ManufacturersSectionParser()

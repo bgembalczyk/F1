@@ -5,7 +5,6 @@ from dataclasses import dataclass
 from scrapers.infobox.extraction.service import ConstructorInfoboxOrchestrator
 from scrapers.infobox_orchestrator_protocol import InfoboxOrchestratorProtocol
 from scrapers.options import ScraperOptions
-from scrapers.services.domain_record.constructor import ConstructorDomainRecordService
 from scrapers.services.section.extraction.constructor import (
     ConstructorSectionExtractionService,
 )

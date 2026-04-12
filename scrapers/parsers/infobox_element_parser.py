@@ -3,11 +3,10 @@ from typing import Any
 from bs4 import Tag
 
 from models.data.parsed.html_elements import InfoboxElementData
-from scrapers.parsers.element_parser_abc import InfoboxElementParserABC
 from scrapers.parsers.wiki.section_nodes.infobox import WikiInfoboxParserABC
 
 
-class InfoboxElementParser(WikiInfoboxParserABC, InfoboxElementParserABC[InfoboxElementData]):
+class InfoboxElementParser(WikiInfoboxParserABC):
     def parse(self, raw: Tag) -> InfoboxElementData:
         return self.parse_table_rows(raw)
 
