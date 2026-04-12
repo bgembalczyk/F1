@@ -324,6 +324,8 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _extract_params(text: str) -> tuple[str, list[str]]:
+        if "(" not in text:
+            return text.strip(), []
         params = []
         for group in constants.SPONSOR_PAREN_GROUP_RE.findall(text):
             params.extend(SponsorColumn._split_parts(group))
