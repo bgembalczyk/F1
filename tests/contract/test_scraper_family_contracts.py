@@ -114,20 +114,25 @@ def test_family_contract_docstring_defines_extension_rules(
 @pytest.mark.parametrize(
     ("file_path", "class_name", "required_methods"),
     [
-        ("scrapers/seed_list_scraper_table.py", "SeedListTableScraper", ("fetch",)),
+        ("scrapers/abc.py", "FetchOrchestrationMixin", ("fetch",)),
         (
             "scrapers/scraper_table.py",
             "F1TableScraper",
             ("parse_soup", "parse_row"),
         ),
         (
-            "scrapers/single_wiki_article/base.py",
-            "SingleWikiArticleScraperBase",
-            ("extract_by_url", "_assemble_record"),
+            "scrapers/single_wiki_article/single_article_scraper_base.py",
+            "ArticleScraperBase",
+            ("extract_by_url",),
         ),
         (
-            "scrapers/parsers/section/protocol.py",
-            "SectionParser",
+            "scrapers/single_wiki_article/single_article_domain_scraper_base.py",
+            "DomainArticleScraperBase",
+            ("_assemble_record",),
+        ),
+        (
+            "scrapers/parsers/section/base.py",
+            "BaseSectionParser",
             ("parse",),
         ),
     ],

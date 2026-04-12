@@ -2,10 +2,10 @@ import warnings
 
 import pytest
 
-from scrapers.wiki.sources_registry_wiki import get_source_by_seed_name
-from scrapers.wiki.sources_registry_wiki import get_source_by_source_name
-from scrapers.wiki.sources_registry_wiki import resolve_seed_name
-from scrapers.wiki.sources_registry_wiki import validate_sources_registry_consistency
+from scrapers.sources_registry_wiki import get_source_by_seed_name
+from scrapers.sources_registry_wiki import get_source_by_source_name
+from scrapers.sources_registry_wiki import resolve_seed_name
+from scrapers.sources_registry_wiki import validate_sources_registry_consistency
 
 
 def test_sources_registry_consistency_validation_passes_for_canonical_registry() -> (

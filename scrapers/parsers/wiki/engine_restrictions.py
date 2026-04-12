@@ -10,7 +10,7 @@ from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = EngineRestrictionsTableMapper()
+        self._table_mapper = EngineRestrictionsTableMapper()
 
     def _parse_group(
         self,
@@ -20,7 +20,7 @@ class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
     ) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
         for section in parsed.get("sub_sub_sections", []):
-            self._table_parser.apply_to_payload(section)
+            self._table_mapper.apply_to_payload(section)
         return parsed
 
     def _apply_engine_restrictions_table_parser(self, payload: dict[str, Any]) -> None:

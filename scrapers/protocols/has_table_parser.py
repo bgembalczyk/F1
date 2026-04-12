@@ -8,4 +8,8 @@ class HasTableParserABC(ABC):
     _table_parser: Any
 
 
-__all__ = ["HasTableParserABC"]
+class HasTableMapperABC(ABC):
+    _table_mapper: Any
+
+
+__all__ = ["HasTableMapperABC", "HasTableParserABC"]

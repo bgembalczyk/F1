@@ -1,4 +1,4 @@
-from scrapers.base.helpers.year_extractor import YearExtractor
+from scrapers.year_extractor import YearExtractor
 
 
 def test_extract_years_from_text_individual():

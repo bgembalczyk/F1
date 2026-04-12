@@ -9,7 +9,7 @@ from scrapers.parsers.input_adapters import as_tag
 from scrapers.parsers.input_types import INPUT_TYPE_MAP
 from scrapers.parsers.input_types import INPUT_TYPE_TO_CANONICAL
 from scrapers.parsers.section.table.base import TableSectionParser
-from scrapers.parsers.table.table.article import ArticleTablesParser
+from scrapers.parsers.wiki.table.article import ArticleTablesParser
 
 
 class _ContractSectionParser(TableSectionParser):

@@ -17,7 +17,7 @@ from scrapers.parsers.wiki.sublevels.sub_sub_sub_section import SubSubSubSection
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = NonChampionshipsRacesTableMapper()
+        self._table_mapper = NonChampionshipsRacesTableMapper()
         self._fallback_element_parser = SubSubSubSectionParser()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
@@ -32,7 +32,7 @@ class NonChampionshipsRacesSubSectionParser(SubSectionParser):
             parsed["elements"],
             self._extract_descendant_table_elements(elements),
         )
-        self._table_parser.apply_to_payload(parsed)
+        self._table_mapper.apply_to_payload(parsed)
         return parsed
 
     def _contains_table_elements(self, payload: dict[str, Any]) -> bool:
@@ -103,11 +103,11 @@ class RedFlaggedRacesSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self.child_parser = NonChampionshipsRacesSubSectionParser()
-        self._world_championship_table_parser = WorldChampionshipsRacesTableMapper()
+        self._world_championship_table_mapper = WorldChampionshipsRacesTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
-        self._world_championship_table_parser.apply_to_payload(parsed)
+        self._world_championship_table_mapper.apply_to_payload(parsed)
         return parsed
 
     @staticmethod

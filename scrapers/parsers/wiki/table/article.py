@@ -8,12 +8,12 @@ from scrapers.helpers.text import clean_wiki_text
 from scrapers.parser_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
-from scrapers.parsers.table.table.mapped.lap_records import LapRecordsWikiTableMapper
-from scrapers.parsers.table.table.mapped.race_results import RaceResultsTableMapper
-from scrapers.parsers.table.table.contracts import ArticleTablesParserABC
-from scrapers.parsers.table.table.mapped.base import MappedWikiTableMapper
-from scrapers.parsers.table.table.mapped.standings import StandingsTableMapper
-from scrapers.parsers.table.table.table import WikiTableHtmlParser
+from scrapers.parsers.wiki.table.mapped.lap_records import LapRecordsWikiTableMapper
+from scrapers.parsers.wiki.table.mapped.race_results import RaceResultsTableMapper
+from scrapers.parsers.wiki.table.contracts import ArticleTablesParserABC
+from scrapers.parsers.wiki.table.mapped.base import MappedWikiTableMapper
+from scrapers.parsers.wiki.table.mapped.standings import StandingsTableMapper
+from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.base import WikiTableElementParserBase
 
 class ArticleTablesParser(WikiTableElementParserBase, ArticleTablesParserABC):

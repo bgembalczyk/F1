@@ -1,6 +1,6 @@
 """Points scraper contract tests."""
 
-from scrapers.points.base_points_scraper import BasePointsScraper
+from scrapers.base_points_scraper import BasePointsScraper
 from tests.support.refactored_base_classes_utils import POINTS_SYSTEMS_URL
 
 

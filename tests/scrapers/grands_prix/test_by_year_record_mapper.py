@@ -1,10 +1,10 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.grands_prix.mappers_grands_prix.by_year_record import (
+from scrapers.records.mappers.grand_prix_by_year import (
     GrandPrixByYearRecordInput,
 )
-from scrapers.grands_prix.mappers_grands_prix.by_year_record import (
+from scrapers.records.mappers.grand_prix_by_year import (
     GrandPrixByYearRecordMapper,
 )
 

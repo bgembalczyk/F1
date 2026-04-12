@@ -1,8 +1,8 @@
 # ruff: noqa: E501, PLR2004
 from unittest.mock import patch
 
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionByIdBase
-from scrapers.base.single_wiki_article import WikipediaSectionByIdSelectionStrategy
+from scrapers.single_wiki_article import SingleWikiArticleSectionByIdBase
+from scrapers.single_wiki_article import WikipediaSectionByIdSelectionStrategy
 
 
 class ConcreteSectionByIdScraper(SingleWikiArticleSectionByIdBase):

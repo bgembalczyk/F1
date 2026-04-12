@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.drivers_infobox.parsers.collapsible_table import (
+from scrapers.parsers.infobox.collapsible_table import (
     CollapsibleTableParser,
 )
 

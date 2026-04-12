@@ -9,10 +9,8 @@ from scrapers.config_table import TableScraperConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.parsers.section.protocol import SectionParser
-from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
-from scrapers.parsers.table.table.base import WikiTableBaseParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import TYRES
@@ -64,11 +62,11 @@ TABLE_SCHEMA = TableSchemaDSL(
 class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = TyreManufacturersBySeasonTableMapper()
+        self._table_mapper = TyreManufacturersBySeasonTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
-        self._table_parser.apply_to_payload(parsed)
+        self._table_mapper.apply_to_payload(parsed)
         return parsed
 
 

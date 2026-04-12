@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from scrapers.base.table.columns.types.position import PositionColumn
+from scrapers.columns.types.position import PositionColumn
 from scrapers.standings_scraper_seasons import F1StandingsTableParser
 
 

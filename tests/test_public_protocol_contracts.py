@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from infrastructure.http_client.interfaces import HttpClientProtocol
-from infrastructure.http_client.interfaces import HttpResponseProtocol
-from infrastructure.http_client.interfaces import JsonValue
-from infrastructure.http_client.interfaces import SessionProtocol
-from infrastructure.http_client.policies.response_cache import TextCacheProtocol
+from infrastructure.http.protocols.client import HttpClientProtocol
+from infrastructure.http.protocols.client import HttpResponseProtocol
+from infrastructure.http.protocols.client import JsonValue
+from infrastructure.http.protocols.client import SessionProtocol
+from infrastructure.http.protocols.text_cache import TextCacheProtocol
 from models.serializers import SerializerProtocol
-from scrapers.base.errors import ScraperParseError
+from scrapers.errors import ScraperParseError
 from scrapers.base.parsers.soup import SoupParser
 
 if TYPE_CHECKING:

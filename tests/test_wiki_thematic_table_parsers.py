@@ -2,7 +2,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.table.table.article import ArticleTablesParser
+from scrapers.parsers.wiki.table.article import ArticleTablesParser
 
 
 def load_fixture() -> BeautifulSoup:

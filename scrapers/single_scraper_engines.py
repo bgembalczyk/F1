@@ -7,7 +7,7 @@ from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
 from scrapers.options import ScraperOptions
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
-from scrapers.parsers.table.table.article import ArticleTablesParser
+from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.single_wiki_article.base import SingleWikiArticleScraperBase
 
 

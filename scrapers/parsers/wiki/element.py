@@ -9,7 +9,7 @@ from models.data.wiki_parser import WikiParserData
 from scrapers.parsers.html_elements.list import ListElementParser
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.rules import ParserRule
-from scrapers.parsers.table.table.table import WikiTableHtmlParser
+from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.base import WikiListParser
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
@@ -24,7 +24,7 @@ class WikiElementSet:
     paragraph_parser: WikiParagraphParser
     figure_parser: WikiFigureParser
     list_parser: WikiListParser
-    table_parser: WikiTableHtmlParser
+    table_html_parser: WikiTableHtmlParser
     navbox_parser: WikiNavboxParser
     references_wrap_parser: ReferencesWrapParser
     references_parser: ReferencesWrapParser
@@ -84,7 +84,7 @@ def build_wikipedia_element_registry(
                     el.name == "table"
                     and "wikitable" in ElementRegistry._get_classes(el)
                 ),
-                parser=parsers.table_parser.parse,
+                parser=parsers.table_html_parser.parse,
                 result_type="table",
             ),
             ParserRule(
@@ -143,7 +143,7 @@ def build_default_wiki_element_parsers() -> WikiElementSet:
         paragraph_parser=WikiParagraphParser(),
         figure_parser=WikiFigureParser(),
         list_parser=ListElementParser(),
-        table_parser=WikiTableHtmlParser(),
+        table_html_parser=WikiTableHtmlParser(),
         navbox_parser=WikiNavboxParser(),
         references_wrap_parser=ReferencesWrapParser(),
         references_parser=ReferencesWrapParser(),
@@ -154,4 +154,3 @@ def build_default_wikipedia_element_registry() -> ElementRegistry:
     return build_wikipedia_element_registry(
         parsers=build_default_wiki_element_parsers()
     )
-
