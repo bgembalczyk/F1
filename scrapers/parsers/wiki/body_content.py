@@ -41,3 +41,9 @@ class BodyContentAssembler(WikiParser[Tag, dict[str, Any]]):
     @staticmethod
     def find_body_content(soup: BeautifulSoup) -> Tag | None:
         return BodyContentAdapter.find_body_content(soup)
+
+
+# Backward-compatible alias
+BodyContentParser = BodyContentAssembler
+
+__all__ = ["BodyContentAssembler", "BodyContentParser"]
