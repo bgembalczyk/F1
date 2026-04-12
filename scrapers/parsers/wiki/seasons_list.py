@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.table.seasons_list import SeasonsTableMapper
+from scrapers.parsers.table.seasons_list_wiki_table import SeasonsTableParser
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 
 

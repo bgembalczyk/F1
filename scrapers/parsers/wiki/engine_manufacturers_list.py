@@ -6,7 +6,13 @@ from bs4 import Tag
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.list_element.engine_manufacturers_list import IndianapolisOnlyListParser
 from scrapers.parsers.table.engine_manufacturers_list import (
+    EngineManufacturersTableParser,
+)
+from scrapers.parsers.table.engine_manufacturers_list import (
     EngineManufacturersTableMapper,
+)
+from scrapers.parsers.table.engine_manufacturers_list_wiki_table import (
+    EngineManufacturersTableParser,
 )
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser

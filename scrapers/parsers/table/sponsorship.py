@@ -9,16 +9,16 @@ from scrapers.headers_table import normalize_header
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
-class SponsorshipTableParser:
+class SponsorshipTableSchemaBuilder:
     @staticmethod
-    def build_schema(seasons_col_factory: Any) -> TableSchemaDSL:
+    def build(seasons_col_factory: Any) -> TableSchemaDSL:
         return TableSchemaDSL(
             columns=[
-                *SponsorshipTableParser._season_column_specs(seasons_col_factory),
-                *SponsorshipTableParser._driver_column_specs(),
-                *SponsorshipTableParser._colour_column_specs(),
-                *SponsorshipTableParser._sponsor_column_specs(),
-                *SponsorshipTableParser._text_column_specs(),
+                *SponsorshipTableSchemaBuilder._season_column_specs(seasons_col_factory),
+                *SponsorshipTableSchemaBuilder._driver_column_specs(),
+                *SponsorshipTableSchemaBuilder._colour_column_specs(),
+                *SponsorshipTableSchemaBuilder._sponsor_column_specs(),
+                *SponsorshipTableSchemaBuilder._text_column_specs(),
             ],
         )
 
@@ -131,5 +131,5 @@ class SponsorshipTableParser:
 
 
 __all__ = [
-    "SponsorshipTableParser",
+    "SponsorshipTableSchemaBuilder",
 ]

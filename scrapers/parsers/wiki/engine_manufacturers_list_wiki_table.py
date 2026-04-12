@@ -1,26 +1,26 @@
 from typing import Any
 
 from scrapers.parsers.table.wiki.base import WikiTableBaseMapper
+from scrapers.parsers.table.table.base import WikiTableBaseParser
 
 
-class SeasonsTableMapper(WikiTableBaseMapper):
-    table_type = "seasons_list"
+class EngineManufacturersTableMapper(WikiTableBaseMapper):
+    table_type = "engine_manufacturers_list"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
 
     _column_mapping = {
-        "Season": "season",
-        "Races": "races",
-        "Countries": "countries",
-        "First": "first",
-        "Last": "last",
-        "Drivers' Champion (team)": "drivers_champion_team",
-        "Constructors' Champion": "constructors_champion",
-        "Winners": "winners",
+        "Manufacturer": "engine_constructor",
+        "Engines built in": "engines_built_in",
+        "Seasons": "seasons",
+        "Races Entered": "races_entered",
+        "Races Started": "races_started",
+        "Wins": "wins",
+        "Points": "points",
     }
 
     def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        required_headers = {"Season", "Races"}
+        required_headers = {"Manufacturer", "Engines built in", "Seasons", "Wins"}
         return required_headers.issubset(set(headers))
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
