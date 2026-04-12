@@ -49,7 +49,10 @@ class InfoboxCellValueExtractor(InfoboxCellParserABC):
         self._active_years_parser = ActiveYearsParser(link_extractor)
         self._teams_parser = TeamsParser(link_extractor, include_urls=include_urls)
         self._championships_parser = ChampionshipsParser(link_extractor)
-        self._table_parser = InfoboxTableParser(link_extractor)
+        self._table_parser = InfoboxTableParser(
+            link_extractor,
+            include_urls=include_urls,
+        )
         self._race_event_parser = RaceEventParser(link_extractor)
         self._finished_season_parser = FinishedSeasonParser()
         self._licence_parser = LicenceParser(link_extractor)
@@ -160,10 +163,7 @@ class InfoboxCellValueExtractor(InfoboxCellParserABC):
         return self._licence_parser.parse(cell)
 
     def parse_full_data(self, cell: Tag) -> dict[str, Any]:
-        return self._table_parser.parse(
-            cell,
-            include_urls=self._include_urls,
-        )
+        return self._table_parser.parse(cell)
 
     def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.

@@ -4,6 +4,7 @@ from bs4 import Tag
 
 from models.data.parsed.html_elements import InfoboxElementData
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
 
 
 class InfoboxElementParser(WikiInfoboxElementParserABC):

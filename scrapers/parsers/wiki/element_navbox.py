@@ -3,6 +3,7 @@ from bs4 import Tag
 from models.data.wiki.navbox import WikiNavboxData
 from scrapers.parsers.navbox_element_parser import NavboxElementParser
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiNavboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiNavboxParserABC
 
 
 class WikiNavboxElementParser(WikiNavboxElementParserABC):

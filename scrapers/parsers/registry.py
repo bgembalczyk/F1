@@ -14,6 +14,11 @@ from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementPars
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiSectionElementParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
+from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
