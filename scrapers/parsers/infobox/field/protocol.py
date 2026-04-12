@@ -1,17 +1,22 @@
 from __future__ import annotations
 
 from abc import ABC
+from abc import abstractmethod
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.parsers.contracts.base import ParserABC as Parser
+from bs4 import Tag
 
-Input = TypeVar("Input")
+from scrapers.parsers.contracts.wiki_elements import InfoboxFieldParserABC
+
 Output = TypeVar("Output")
 
 
-class InfoboxFieldParser(Parser[Input, Output], ABC, Generic[Input, Output]):
+class InfoboxFieldParser(InfoboxFieldParserABC[Output], ABC, Generic[Output]):
     """Silny kontrakt runtime dla parserów pojedynczych pól infoboxu."""
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> Output: ...
 
-__all__ = ["InfoboxFieldParser", "Input", "Output"]
+
+__all__ = ["InfoboxFieldParser", "Output"]

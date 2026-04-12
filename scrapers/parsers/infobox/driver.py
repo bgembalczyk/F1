@@ -44,7 +44,7 @@ class DriverInfoboxParser(WikiInfoboxElementParserBase):
             logger=self.logger,
         )
         self._link_extractor = parser_bundle.link_extractor
-        self._cell_parser: InfoboxFieldParser[Tag, dict[str, Any]] = (
+        self._cell_parser: InfoboxFieldParser[dict[str, Any]] = (
             parser_bundle.cell_parser
         )
         self._general_parser = parser_bundle.general_parser

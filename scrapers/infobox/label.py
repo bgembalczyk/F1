@@ -71,7 +71,7 @@ def parser_for_label(
     *,
     label: str | None,
     cell_parser: InfoboxCellParser,
-) -> InfoboxFieldParser[Any, Any]:
+) -> InfoboxFieldParser[Any]:
     return field_parsers_registry(cell_parser).parser_for_label(label)
 
 
