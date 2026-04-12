@@ -12,8 +12,8 @@ from scrapers.parsers.parsing_bundle import ParsingBundle
 @dataclass(frozen=True)
 class DriverInfoboxBundle(ParsingBundle):
     link_extractor: InfoboxLinkExtractor
-    cell_parser: InfoboxCellValueExtractor
-    general_parser: InfoboxGeneralExtractor
+    cell_extractor: InfoboxCellValueExtractor
+    general_extractor: InfoboxGeneralExtractor
     titles_parser: InfoboxTitlesParser
     career_parser: InfoboxCareerParser
     section_discovery: InfoboxSectionDiscovery

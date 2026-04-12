@@ -48,12 +48,12 @@ class InfoboxCellValueExtractor:
         self._active_years_parser = ActiveYearsParser(link_extractor)
         self._teams_parser = TeamsParser(link_extractor, include_urls=include_urls)
         self._championships_parser = ChampionshipsParser(link_extractor)
-        self._table_parser = InfoboxTableExtractor(link_extractor)
+        self._table_extractor = InfoboxTableExtractor(link_extractor)
         self._race_event_parser = RaceEventParser(link_extractor)
         self._finished_season_parser = FinishedSeasonParser()
         self._licence_parser = LicenceParser(link_extractor)
         self._best_finish_parser = BestFinishParser(link_extractor)
-        self._collapsible_table_parser = CollapsibleTableExtractor(self)
+        self._collapsible_table_extractor = CollapsibleTableExtractor(self)
         self._nationality_parser = NationalityParser(link_extractor)
 
     def parse_cell(self, cell: Tag) -> dict[str, Any]:
@@ -159,7 +159,10 @@ class InfoboxCellValueExtractor:
         return self._licence_parser.parse(cell)
 
     def parse_full_data(self, cell: Tag) -> dict[str, Any]:
-        return self._table_parser.parse_full_data(cell, include_urls=self._include_urls)
+        return self._table_extractor.parse_full_data(
+            cell,
+            include_urls=self._include_urls,
+        )
 
     def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.
@@ -182,7 +185,7 @@ class InfoboxCellValueExtractor:
           ...
         </table>
         """
-        return self._collapsible_table_parser.parse_collapsible_career_table(table)
+        return self._collapsible_table_extractor.parse_collapsible_career_table(table)
 
 
 __all__ = ["InfoboxCellValueExtractor"]

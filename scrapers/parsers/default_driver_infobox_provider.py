@@ -31,22 +31,22 @@ class DefaultDriverInfoboxProvider(DriverInfoboxProviderABC):
             include_urls=include_urls,
             wikipedia_base=wikipedia_base,
         )
-        cell_parser = InfoboxCellValueExtractor(
+        cell_extractor = InfoboxCellValueExtractor(
             include_urls=include_urls,
             link_extractor=link_extractor,
         )
-        general_parser = InfoboxGeneralExtractor(
+        general_extractor = InfoboxGeneralExtractor(
             include_urls=include_urls,
             link_extractor=link_extractor,
             schema=schema,
             logger=logger,
         )
         titles_parser = InfoboxTitlesParser(link_extractor)
-        career_parser = InfoboxCareerParser(cell_parser)
+        career_parser = InfoboxCareerParser(cell_extractor)
         return DriverInfoboxBundle(
             link_extractor=link_extractor,
-            cell_parser=cell_parser,
-            general_parser=general_parser,
+            cell_extractor=cell_extractor,
+            general_extractor=general_extractor,
             titles_parser=titles_parser,
             career_parser=career_parser,
             section_discovery=self._section_discovery,
