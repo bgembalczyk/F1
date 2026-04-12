@@ -19,7 +19,7 @@ from scrapers.parsers.infobox.text_utils.circuit.layouts import CircuitLayoutsEx
 from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
 from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoExtractor
 from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityExtractor
-from scrapers.parsers.wiki.section_nodes.infobox import WikiInfoboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
 from scrapers.types import ExportableRecord
 
 
