@@ -10,7 +10,7 @@ from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 class DriversListSectionParser(NestedWikiSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = DriversListTableMapper()
+        self._table_mapper = DriversListTableMapper()
 
     def parse(
         self,
@@ -44,6 +44,6 @@ class DriversListSectionParser(NestedWikiSectionParser):
             data = element.get("data")
             if not isinstance(data, dict):
                 continue
-            parsed = self._table_parser.map(data)
+            parsed = self._table_mapper.map(data)
             if parsed is not None:
                 element["data"] = parsed

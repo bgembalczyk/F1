@@ -80,13 +80,11 @@ class WikiTableBaseMapper(
         return []
 
     def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
-        """Czy parser pasuje do konkretnej tabeli."""
         del table_data
         header_set = set(headers)
         return all(bool(header_set & group) for group in self.required_header_groups)
 
     def map_columns(self, headers: list[str]) -> dict[str, str]:
-        """Mapuje nagłówki tabeli na pola domenowe."""
         return {
             header: self.column_mapping[header]
             for header in headers
@@ -111,6 +109,8 @@ class WikiTableBaseMapper(
     collect_rows = parse_group
 
 
+# Backward-compatible aliases for staged migration.
+WikiTableBaseParser = WikiTableBaseMapper
 TableFragmentParserABC = TableHtmlParserABC
 WikiTableFragmentParser = TableFragmentParserABC
 
@@ -118,6 +118,9 @@ WikiTableFragmentParser = TableFragmentParserABC
 WikiTableBaseMapper = WikiTableBaseParser
 
 __all__ = [
+    "TableFragmentParserABC",
+    "WikiTableBaseMapper",
+    "WikiTableBaseParser",
     "WikiTableBaseParser",
     "WikiTableBaseMapper",
     "TableFragmentParserABC",

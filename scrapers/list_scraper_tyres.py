@@ -62,11 +62,11 @@ TABLE_SCHEMA = TableSchemaDSL(
 class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = TyreManufacturersBySeasonTableMapper()
+        self._table_mapper = TyreManufacturersBySeasonTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
-        self._table_parser.apply_to_payload(parsed)
+        self._table_mapper.apply_to_payload(parsed)
         return parsed
 
 

@@ -23,10 +23,13 @@ BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
 
 
 class ParserABC(Parser[In, Out], ABC, Generic[In, Out]):
-    """Bazowy kontrakt runtime dla parserów (input -> output)."""
-
     @abstractmethod
     def parse(self, raw: In) -> Out: ...
+
+
+class MapperABC(ABC, Generic[In, Out]):
+    @abstractmethod
+    def map(self, fragment: In) -> Out: ...
 
 
 class HtmlTagParserABC(ParserABC[TagIn, Out], ABC, Generic[TagIn, Out]):
@@ -42,10 +45,13 @@ class SectionStructureParserABC(SoupDocumentParserABC[SectionParseResult], ABC):
 
 
 class TableHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
-    """Runtime contract for HTML table parsers (Tag -> table fragment)."""
-
     @abstractmethod
     def parse(self, raw: Tag) -> dict[str, Any]: ...
+
+
+class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):
+    @abstractmethod
+    def map(self, fragment: dict[str, Any]) -> dict[str, Any] | None: ...
 
 
 class InfoboxHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
@@ -68,38 +74,21 @@ class SectionParserABC(SectionStructureParserABC):
     """Backward-compatible alias for section parser contracts."""
 
 
-class TableMapperABC(Parser[dict[str, Any], dict[str, Any] | None], ABC):
-    """Runtime contract for table fragment mappers (fragment -> domain mapping)."""
-
-    @abstractmethod
-    def map(self, raw: dict[str, Any]) -> dict[str, Any] | None: ...
-
-
-class TableDomainMapperABC(TableMapperABC):
-    """Backward-compatible alias for table mapper contracts."""
-
-
 class TableMapperABC(TableDomainMapperABC):
-    """Runtime contract for table domain mappers."""
+    """Backward-compatible alias for table domain mappers."""
 
 
 class MatchesMixin(ABC):
-    """Mixin for parser classes exposing content matching behavior."""
-
     @abstractmethod
-    def matches(self, raw: Any) -> bool: ...
+    def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool: ...
 
 
 class RowMappingMixin(ABC, Generic[RowInputT_contra, RecordT_co]):
-    """Mixin for row-level mapping behavior."""
-
     @abstractmethod
     def map_row(self, row: RowInputT_contra) -> RecordT_co | None: ...
 
 
 class GroupParsingMixin(ABC, Generic[TableInputT_contra, RecordT_co]):
-    """Mixin for collection/group parsing behavior."""
-
     @abstractmethod
     def map_table(self, table: TableInputT_contra) -> list[RecordT_co]: ...
 
@@ -115,10 +104,12 @@ class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):
 
 __all__ = [
     "GroupParsingMixin",
+    "HtmlElementParserABC",
     "HtmlTagParserABC",
     "InfoboxParserABC",
     "InfoboxHtmlParserABC",
     "ListParserABC",
+    "MapperABC",
     "MatchesMixin",
     "ParserABC",
     "ParsingBundle",
@@ -127,7 +118,6 @@ __all__ = [
     "SectionParseResult",
     "SectionStructureParserABC",
     "SoupDocumentParserABC",
-    "TableMapperABC",
     "TableDomainMapperABC",
     "TableHtmlParserABC",
     "TableMapperABC",

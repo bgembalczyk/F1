@@ -25,7 +25,7 @@ class WikiElementParsingMixin:
         self.paragraph_parser = resolved_parsers.paragraph_parser
         self.figure_parser = resolved_parsers.figure_parser
         self.list_parser = resolved_parsers.list_parser
-        self.table_parser = resolved_parsers.table_parser
+        self.table_html_parser = resolved_parsers.table_html_parser
         self.navbox_parser = resolved_parsers.navbox_parser
         self.references_parser = resolved_parsers.references_parser
         self.element_registry = element_registry
@@ -84,7 +84,7 @@ class WikiElementParsingMixin:
             predicate=lambda el: (
                 el.name == "table" and "wikitable" in self._get_classes(el)
             ),
-            parser=self.table_parser.parse,
+            parser=self.table_html_parser.parse,
             result_type="table",
         )
         self.register_parser_rule(
