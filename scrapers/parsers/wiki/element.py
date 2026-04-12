@@ -84,7 +84,7 @@ def build_wikipedia_element_registry(
     ]
 
     registrations = [
-        ElementParserRegistration(
+        ElementRegistration(
             element_type=element_type,
             handler=parser.parse,
             handler_class=type(parser),
@@ -93,10 +93,10 @@ def build_wikipedia_element_registry(
     ]
     if parsers.section_parser is not None:
         registrations.append(
-            ElementParserRegistration(
+            ElementRegistration(
                 element_type="section",
-                parser=parsers.section_parser,
-                parser_class=type(parsers.section_parser),
+                handler=parsers.section_parser,
+                handler_class=type(parsers.section_parser),
             )
         )
 
@@ -130,7 +130,7 @@ WikiElementParsers = WikiElementSet
 
 __all__ = [
     "ElementParseInput",
-    "ElementParserRegistration",
+    "ElementRegistration",
     "WikiElementParsers",
     "WikiElementSet",
     "ElementRegistry",

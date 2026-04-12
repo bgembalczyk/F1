@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.table.base import TableSectionParser
-from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.section.list.base import ListSectionParser
 from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
 from scrapers.parsers.wiki.table.circuit_list_table_mapper import CircuitsListTableMapper
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class CircuitsListSectionParser(BaseSectionParser):
+class CircuitsListSectionParser(ListSectionParser):
     def __init__(
         self,
         *,

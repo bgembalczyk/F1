@@ -6,7 +6,7 @@ from scrapers.configs.public import TableConfig
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
-from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
@@ -15,7 +15,7 @@ from scrapers.section.serializer import build_section_parse_result
 logger = logging.getLogger(__name__)
 
 
-class ConstructorsSectionParser(BaseSectionParser):
+class ConstructorsSectionParser(SectionParserBase):
     def __init__(
         self,
         *,

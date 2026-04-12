@@ -9,18 +9,18 @@ from time import perf_counter
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.orchestration import lifecycle
-from scrapers.base.orchestration.components import SectionSourceAdapter
-from scrapers.base.orchestration.models import AuditEntry
-from scrapers.base.orchestration.models import StepDeclaration
-from scrapers.orchestration.base_roles import BaseExtractor
-from scrapers.orchestration.base_roles import BaseNormalizer
-from scrapers.orchestration.base_roles import BaseOrchestrator
-from scrapers.orchestration.base_roles import QualityMetricsMixin
-from scrapers.orchestration.base_roles import UrlResolverMixin
+from scrapers.base_flow_wiki import BaseOrchestrationFlow
+from scrapers.orchestration.audit_entry import AuditEntry
+from scrapers.orchestration.components.extractor import BaseExtractor
+from scrapers.orchestration.components.normalizer import BaseNormalizer
+from scrapers.orchestration.components.orchestrator import BaseOrchestrator
+from scrapers.orchestration.mixins.quality_metrics import QualityMetricsMixin
+from scrapers.orchestration.mixins.url_resolver import UrlResolverMixin
+from scrapers.orchestration.stages import lifecycle
+from scrapers.orchestration.step_declaration import StepDeclaration
 from scrapers.parsers.registry import resolve_parser_name
 from scrapers.parsers.registry import validate_parser_registry
-from scrapers.wiki.base_flow_wiki import BaseOrchestrationFlow
+from scrapers.section_source_adapter import SectionSourceAdapter
 
 if TYPE_CHECKING:
     from collections.abc import Callable

@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.wiki.constants_wiki import SEED_RECORD_SCHEMA_VERSION
+from scrapers.constants.constants_wiki import SEED_RECORD_SCHEMA_VERSION
 
 if TYPE_CHECKING:
     from datetime import datetime

@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.parsers.wiki.season_standings import SeasonStandingsParser
-from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.section.base import SectionParserBase
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class SeasonConstructorsStandingsSectionParser(BaseSectionParser):
+class SeasonConstructorsStandingsSectionParser(SectionParserBase):
     def __init__(self, parser: SeasonStandingsParser) -> None:
         self._parser = parser
 

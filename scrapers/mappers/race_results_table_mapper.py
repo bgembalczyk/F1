@@ -1,4 +1,4 @@
-from scrapers.mapped_wiki_table_mapper import MappedWikiTableMapper
+from scrapers.mappers.mapped_wiki_table_mapper import MappedWikiTableMapper
 
 
 class RaceResultsTableMapper(MappedWikiTableMapper):
