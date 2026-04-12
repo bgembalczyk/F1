@@ -3,8 +3,8 @@ from abc import abstractmethod
 
 from bs4 import Tag
 
+from models.data.wiki.navbox import WikiNavboxData
 from scrapers.parsers.element_parser_abc import NavboxElementParserABC
-from scrapers.parsers.wiki.types import WikiNavboxData
 
 
 class WikiNavboxParserABC(NavboxElementParserABC[WikiNavboxData], ABC):

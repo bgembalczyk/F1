@@ -5,11 +5,11 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableMapper
-from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableMapper
+from scrapers.parsers.non_championships_races_table_mapper import NonChampionshipsRacesTableMapper
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
+from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
-from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_sub_section import SubSubSubSectionParser
+from scrapers.parsers.world_championships_races_table_mapper import WorldChampionshipsRacesTableMapper
 
 
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):

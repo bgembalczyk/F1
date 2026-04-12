@@ -1,7 +1,7 @@
 from typing import Any
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.table.points_helpers import ShortenedRacesPointsTableMapper
+from scrapers.parsers.wiki.shortened_races_points_table_mapper import ShortenedRacesPointsTableMapper
 from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_section import SubSubSectionParser
 
 

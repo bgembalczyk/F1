@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.parsers.html_elements.section_element_parser import SectionElementParser
-from scrapers.parsers.contracts.wiki_elements import WikiSectionStructureParserABC
-from scrapers.parsers.wiki.types import WikiSectionData
+from models.data.wiki.section import WikiSectionData
+from scrapers.parsers.section_element_parser import SectionElementParser
+from scrapers.parsers.wiki_section_structure_parser_abc import WikiSectionStructureParserABC
 
 
 class WikiSectionElementParser(WikiSectionStructureParserABC):

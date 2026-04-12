@@ -1,7 +1,7 @@
 from bs4 import Tag
 
+from models.data.wiki.figure import WikiFigureData
 from scrapers.parsers.figure_element_parser import FigureElementParser
-from scrapers.parsers.wiki.types import WikiFigureData
 from scrapers.parsers.wiki_figure_parser_abc import WikiFigureParserABC
 
 

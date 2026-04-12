@@ -2,9 +2,9 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.parsers.seasons_table_mapper import SeasonsTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.wiki.seasons_list_wiki_table import SeasonsTableMapper
 
 
 class SeasonsSectionParser(NestedWikiSectionParser):

@@ -10,14 +10,14 @@ from scrapers.headers_table import normalize_header
 from scrapers.helpers.constants import season_headers
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.paren_classifier import ParenClassifier
-from scrapers.parsers.table.html_table import HtmlTableParser
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import (
     BroaderScopeSplitter,
 )
 from scrapers.parsers.liveries.sponsorship.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
-from scrapers.parsers.table.sponsorship_table_schema_builder import SponsorshipTableSchemaBuilder
+from scrapers.parsers.sponsorship_table_schema_builder import SponsorshipTableSchemaBuilder
 from scrapers.parsers.wiki.base import WikiSectionParserBase
 from scrapers.pipeline_table import TablePipeline
 

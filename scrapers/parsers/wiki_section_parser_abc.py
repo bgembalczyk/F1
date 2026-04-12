@@ -4,9 +4,9 @@ from abc import abstractmethod
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from models.data.wiki.section import WikiSectionData
 from scrapers.parsers.element_parser_abc import SectionElementParserABC
 from scrapers.parsers.parser_abc import ParserABC
-from scrapers.parsers.wiki.types import WikiSectionData
 
 
 class WikiSectionParserABC(

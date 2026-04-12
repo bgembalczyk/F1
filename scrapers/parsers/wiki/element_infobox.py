@@ -1,7 +1,7 @@
 from bs4 import Tag
 
+from models.data.wiki.infobox import WikiInfoboxData
 from scrapers.parsers.infobox_element_parser import InfoboxElementParser
-from scrapers.parsers.wiki.types import WikiInfoboxData
 from scrapers.parsers.wiki_infobox_parser_abc import WikiInfoboxParserABC
 
 
