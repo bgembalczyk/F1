@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from abc import ABC
+from abc import abstractmethod
 from typing import TYPE_CHECKING
-from typing import Protocol
-from typing import runtime_checkable
 
 
 if TYPE_CHECKING:
@@ -12,16 +12,16 @@ if TYPE_CHECKING:
     from scrapers.run_config import RunConfig
 
 
-class ListScraperConfigProtocol(Protocol):
+class ListScraperConfigABC(ABC):
     url: str
 
 
-class DiscoveredListScraperClassProtocol(Protocol):
-    CONFIG: ListScraperConfigProtocol
+class DiscoveredListScraperClassABC(ABC):
+    CONFIG: ListScraperConfigABC
 
 
-@runtime_checkable
-class DiscoveredRunnerProtocol(Protocol):
+class DiscoveredRunnerABC(ABC):
+    @abstractmethod
     def run(
         self,
         seed: SeedRegistryEntry,
@@ -30,5 +30,14 @@ class DiscoveredRunnerProtocol(Protocol):
     ) -> None: ...
 
 
-class DiscoveredRunnerClassProtocol(Protocol):
-    def __call__(self) -> DiscoveredRunnerProtocol: ...
+class DiscoveredRunnerClassABC(ABC):
+    @abstractmethod
+    def __call__(self) -> DiscoveredRunnerABC: ...
+
+
+__all__ = [
+    "DiscoveredListScraperClassABC",
+    "DiscoveredRunnerABC",
+    "DiscoveredRunnerClassABC",
+    "ListScraperConfigABC",
+]

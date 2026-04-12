@@ -3,11 +3,15 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
+from scrapers.infobox.section.discovery import InfoboxSectionDiscoveryABC
 
 
-class InfoboxSectionCollector:
+class InfoboxSectionCollector(InfoboxSectionDiscoveryABC):
     @staticmethod
-    def collect(table: Tag) -> list[dict[str, Any]]:
+    def collect(table: object) -> list[dict[str, Any]]:
+        if not isinstance(table, Tag):
+            return []
+
         sections: list[dict[str, Any]] = [{"title": None, "rows": []}]
         current = sections[0]
 
