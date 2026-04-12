@@ -1,0 +1,3818 @@
+[
+  {
+    "circuit_status": "former",
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "Belgian Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 2,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "1971"
+      },
+      {
+        "event": "opened",
+        "date": "1972"
+      },
+      {
+        "event": "closed",
+        "date": "1981-06-30"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 3.724,
+        "length_mi": 2.314,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Denny Hulme",
+              "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+            },
+            "event": {
+              "text": "1974 Belgian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1974_Belgian_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 71.31,
+            "vehicle": {
+              "text": "McLaren M23",
+              "url": "https://en.wikipedia.org/wiki/McLaren_M23"
+            },
+            "year": "1974"
+          },
+          {
+            "driver": {
+              "text": "Jochen Mass",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+            },
+            "event": {
+              "text": "1973 Nivelles F2 round",
+              "url": "https://en.wikipedia.org/wiki/1973_European_Formula_Two_Championship"
+            },
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "time": 74.17,
+            "vehicle": {
+              "text": "Surtees TS15",
+              "url": "https://en.wikipedia.org/wiki/Surtees_TS15"
+            },
+            "year": "1973"
+          },
+          {
+            "driver": {
+              "text": "Graham McRae",
+              "url": "https://en.wikipedia.org/wiki/Graham_McRae"
+            },
+            "event": {
+              "text": "1972 Nivelles F5000 round",
+              "url": "https://en.wikipedia.org/wiki/1972_Rothmans_F5000_European_Championship"
+            },
+            "series": {
+              "text": "Formula 5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
+            },
+            "time": 77.0,
+            "vehicle": {
+              "text": "McRae GM1",
+              "url": "https://en.wikipedia.org/wiki/Graham_McRae#McRae_Cars"
+            },
+            "year": "1972"
+          },
+          {
+            "driver": {
+              "text": "Clemens Schickentanz"
+            },
+            "event": {
+              "text": "1973 Nivelles Euro GT round"
+            },
+            "series": {
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)"
+            },
+            "time": 88.6,
+            "vehicle": {
+              "text": "Porsche Carrera RSR",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_(classic)#Carrera_RS_&_RSR_(1973_and_1974)"
+            },
+            "year": "1973"
+          }
+        ],
+        "surface": {
+          "text": "Tarmac",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 7,
+        "years": "1972–1981"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 50.62111,
+        "lon": 4.32694
+      },
+      "places": [
+        {
+          "text": "{'text': 'Nivelles', 'url': 'https://en.wikipedia.org/wiki/Nivelles'}"
+        },
+        {
+          "text": "Nivelles",
+          "url": "https://en.wikipedia.org/wiki/Nivelles"
+        },
+        {
+          "text": "Belgium",
+          "url": "https://en.wikipedia.org/wiki/Belgium"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Nivelles-Baulers"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season",
+        "year": 1972
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season",
+        "year": 1974
+      }
+    ],
+    "type": "Race circuit",
+    "url": "https://en.wikipedia.org/wiki/Nivelles-Baulers"
+  },
+  {
+    "circuit_status": "former",
+    "direction": "Clockwise",
+    "fia_grade": 1,
+    "grands_prix": [
+      {
+        "text": "German Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+      },
+      {
+        "text": "European Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+      },
+      {
+        "text": "Luxembourg Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Luxembourg_Grand_Prix"
+      },
+      {
+        "text": "Eifel Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Eifel_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 41,
+    "layouts": [
+      {
+        "layout": "GP-Strecke",
+        "length_km": 5.148,
+        "length_mi": 3.1988,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Max Verstappen",
+              "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+            },
+            "event": {
+              "text": "2020 Eifel Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 88.139,
+            "vehicle": {
+              "text": "Red Bull Racing RB16",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB16"
+            },
+            "year": "2020"
+          },
+          {
+            "driver": {
+              "text": "Marcel Fässler",
+              "url": "https://en.wikipedia.org/wiki/Marcel_F%C3%A4ssler_(racing_driver)"
+            },
+            "event": {
+              "text": "2016 6 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2016_6_Hours_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
+            },
+            "time": 100.325,
+            "vehicle": {
+              "text": "Audi R18",
+              "url": "https://en.wikipedia.org/wiki/Audi_R18"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "Edoardo Mortara",
+              "url": "https://en.wikipedia.org/wiki/Edoardo_Mortara"
+            },
+            "event": {
+              "text": "2009 Nürburgring GP2 Series round",
+              "url": "https://en.wikipedia.org/wiki/2009_N%C3%BCrburgring_GP2_Series_round"
+            },
+            "series": {
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
+            },
+            "time": 101.119,
+            "vehicle": {
+              "text": "Dallara GP2/08",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/08"
+            },
+            "year": "2009"
+          },
+          {
+            "driver": {
+              "text": "Tom Dillmann",
+              "url": "https://en.wikipedia.org/wiki/Tom_Dillmann"
+            },
+            "event": {
+              "text": "2015 Nürburgring Formula Renault 3.5 Series round",
+              "url": "https://en.wikipedia.org/wiki/2015_Formula_Renault_3.5_Series"
+            },
+            "series": {
+              "text": "Formula Renault 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_3.5L"
+            },
+            "time": 103.306,
+            "vehicle": {
+              "text": "Dallara T12",
+              "url": "https://en.wikipedia.org/wiki/Dallara_T12"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Antônio Pizzonia",
+              "url": "https://en.wikipedia.org/wiki/Ant%C3%B4nio_Pizzonia"
+            },
+            "event": {
+              "text": "2008 Nürburgring Superleague Formula round",
+              "url": "https://en.wikipedia.org/wiki/2008_N%C3%BCrburgring_Superleague_Formula_round"
+            },
+            "series": {
+              "text": "Superleague Formula",
+              "url": "https://en.wikipedia.org/wiki/Superleague_Formula"
+            },
+            "time": 103.463,
+            "vehicle": {
+              "text": "Panoz DP09",
+              "url": "https://en.wikipedia.org/wiki/Panoz_DP09"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Facu Regalia",
+              "url": "https://en.wikipedia.org/wiki/Facu_Regalia"
+            },
+            "event": {
+              "text": "2013 Nürburgring GP3 Series round",
+              "url": "https://en.wikipedia.org/wiki/2013_N%C3%BCrburgring_GP3_Series_round"
+            },
+            "series": {
+              "text": "GP3",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
+            },
+            "time": 106.712,
+            "vehicle": {
+              "text": "Dallara GP3/13",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP3/13"
+            },
+            "year": "2013"
+          },
+          {
+            "driver": {
+              "text": "Nicolas Lapierre",
+              "url": "https://en.wikipedia.org/wiki/Nicolas_Lapierre"
+            },
+            "event": {
+              "text": "2017 6 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2017_6_Hours_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            },
+            "time": 107.794,
+            "vehicle": {
+              "text": "Alpine A470",
+              "url": "https://en.wikipedia.org/wiki/Oreca_07#Alpine_A470"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Tomáš Enge",
+              "url": "https://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Enge"
+            },
+            "event": {
+              "text": "2002 Nürburgring F3000 round",
+              "url": "https://en.wikipedia.org/wiki/2002_International_Formula_3000_Championship"
+            },
+            "series": {
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            },
+            "time": 108.597,
+            "vehicle": {
+              "text": "Lola B02/50",
+              "url": "https://en.wikipedia.org/wiki/Lola_B02/50"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Christopher Zanella",
+              "url": "https://en.wikipedia.org/wiki/Christopher_Zanella"
+            },
+            "event": {
+              "text": "2012 Nürburgring FTwo round",
+              "url": "https://en.wikipedia.org/wiki/2012_FIA_Formula_Two_Championship"
+            },
+            "series": {
+              "text": "F2 (2009-2012)",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_Two_Championship_(2009%E2%80%932012)"
+            },
+            "time": 108.844,
+            "vehicle": {
+              "text": "Williams JPH1",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_Two_Championship_(2009%E2%80%932012)#Chassis"
+            },
+            "year": "2012"
+          },
+          {
+            "driver": {
+              "text": "Nico Müller",
+              "url": "https://en.wikipedia.org/wiki/Nico_M%C3%BCller"
+            },
+            "event": {
+              "text": "2020 1st Nürburgring DTM round",
+              "url": "https://en.wikipedia.org/wiki/2020_Deutsche_Tourenwagen_Masters"
+            },
+            "series": {
+              "text": "Class 1 Touring Cars",
+              "url": "https://en.wikipedia.org/wiki/Class_1_Touring_Cars"
+            },
+            "time": 109.975,
+            "vehicle": {
+              "text": "Audi RS5 Turbo DTM 2020",
+              "url": "https://en.wikipedia.org/wiki/Audi_RS5_Turbo_DTM"
+            },
+            "year": "2020"
+          },
+          {
+            "driver": {
+              "text": "Dominik Kraihamer",
+              "url": "https://en.wikipedia.org/wiki/Dominik_Kraihamer"
+            },
+            "event": {
+              "text": "2009 Nürburgring Formula Le Mans Cup round",
+              "url": "https://en.wikipedia.org/wiki/2009_Formula_Le_Mans_Cup"
+            },
+            "series": {
+              "text": "LMPC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge"
+            },
+            "time": 112.56,
+            "vehicle": {
+              "text": "Oreca FLM09",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge#Oreca_FLM09"
+            },
+            "year": "2009"
+          },
+          {
+            "driver": {
+              "text": "Dario Capitanio"
+            },
+            "event": {
+              "text": "2015 Nürburgring Renault Sport Trophy round",
+              "url": "https://en.wikipedia.org/wiki/2015_Renault_Sport_Trophy"
+            },
+            "series": {
+              "text": "Renault Sport Trophy",
+              "url": "https://en.wikipedia.org/wiki/Renault_Sport_Trophy"
+            },
+            "time": 114.54,
+            "vehicle": {
+              "text": "Renault Sport R.S. 01",
+              "url": "https://en.wikipedia.org/wiki/Renault_Sport_R.S._01"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Victor Martins",
+              "url": "https://en.wikipedia.org/wiki/Victor_Martins"
+            },
+            "event": {
+              "text": "2020 Nürburgring Formula Renault Eurocup round",
+              "url": "https://en.wikipedia.org/wiki/2020_Formula_Renault_Eurocup"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 115.109,
+            "vehicle": {
+              "text": "Tatuus FR-19",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "year": "2020"
+          },
+          {
+            "driver": {
+              "text": "Mirko Bortolotti",
+              "url": "https://en.wikipedia.org/wiki/Mirko_Bortolotti"
+            },
+            "event": {
+              "text": "2021 3 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2021_3_Hours_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 115.832,
+            "vehicle": {
+              "text": "Lamborghini Huracán GT3 Evo",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Hurac%C3%A1n#Huracán_GT3_Evo_(2019–2022)"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Kévin Estre",
+              "url": "https://en.wikipedia.org/wiki/K%C3%A9vin_Estre"
+            },
+            "event": {
+              "text": "2017 6 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2017_6_Hours_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "LM GTE",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE"
+            },
+            "time": 115.962,
+            "vehicle": {
+              "text": "Porsche 911 RSR (2017)",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_RSR_(2017)"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Max Defourny",
+              "url": "https://en.wikipedia.org/wiki/Max_Defourny"
+            },
+            "event": {
+              "text": "2017 Nürburgring Formula Renault Eurocup round",
+              "url": "https://en.wikipedia.org/wiki/2017_Formula_Renault_Eurocup"
+            },
+            "series": {
+              "text": "Formula Renault 2.0",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_2.0"
+            },
+            "time": 116.221,
+            "vehicle": {
+              "text": "Tatuus FR2.0/13",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Alessandro Pier Guidi",
+              "url": "https://en.wikipedia.org/wiki/Alessandro_Pier_Guidi"
+            },
+            "event": {
+              "text": "2010 Nürburgring FIA GT1 round",
+              "url": "https://en.wikipedia.org/wiki/2010_FIA_GT1_N%C3%BCrburgring_round"
+            },
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            },
+            "time": 118.37,
+            "vehicle": {
+              "text": "Maserati MC12 GT1",
+              "url": "https://en.wikipedia.org/wiki/Maserati_MC12_GT1"
+            },
+            "year": "2010"
+          },
+          {
+            "driver": {
+              "text": "Giacomo Altoè",
+              "url": "https://en.wikipedia.org/wiki/Giacomo_Alto%C3%A8"
+            },
+            "event": {
+              "text": "2024 Nürburgring Ferrari Challenge Europe round",
+              "url": "https://en.wikipedia.org/wiki/2024_Ferrari_Challenge_Europe"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 118.397,
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Sven Barth",
+              "url": "https://en.wikipedia.org/wiki/Sven_Barth"
+            },
+            "event": {
+              "text": "2002 1st Nürburgring Formula Volkswagen Germany round",
+              "url": "https://en.wikipedia.org/wiki/2002_Formula_Volkswagen_Germany_season"
+            },
+            "series": {
+              "text": "Formula Volkswagen",
+              "url": "https://en.wikipedia.org/wiki/Formula_Volkswagen_Germany"
+            },
+            "time": 119.574,
+            "vehicle": {
+              "text": "Reynard Formula Volkswagen",
+              "url": "https://en.wikipedia.org/wiki/List_of_Reynard_Motorsport_cars"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Frederik Schandorff",
+              "url": "https://en.wikipedia.org/wiki/Frederik_Schandorff"
+            },
+            "event": {
+              "text": "2023 Nürburgring Lamborghini Super Trofeo Europe round",
+              "url": "https://en.wikipedia.org/wiki/2023_Lamborghini_Super_Trofeo_Europe"
+            },
+            "series": {
+              "text": "Lamborghini Super Trofeo",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Super_Trofeo"
+            },
+            "time": 119.582,
+            "vehicle": {
+              "text": "Lamborghini Huracán Super Trofeo Evo2",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Hurac%C3%A1n#Huracán_LP_620-2_Super_Trofeo_EVO2_(2022–present)"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Jonas Ried",
+              "url": "https://en.wikipedia.org/wiki/Jonas_Ried"
+            },
+            "event": {
+              "text": "2022 2nd Nürburgring ADAC Formula 4 round",
+              "url": "https://en.wikipedia.org/wiki/2022_ADAC_Formula_4_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 120.406,
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Larry ten Voorde",
+              "url": "https://en.wikipedia.org/wiki/Larry_ten_Voorde"
+            },
+            "event": {
+              "text": "2017 1st Nürburgring Porsche Carrera Cup Germany round",
+              "url": "https://en.wikipedia.org/wiki/2017_Porsche_Carrera_Cup_Germany"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 122.32,
+            "vehicle": {
+              "text": "Porsche 911 (991 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2017–2020)"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Nico Hülkenberg",
+              "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
+            },
+            "event": {
+              "text": "2005 1st Nürburgring Formula BMW ADAC Round",
+              "url": "https://en.wikipedia.org/wiki/2005_Formula_BMW_ADAC_season"
+            },
+            "series": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            },
+            "time": 124.689,
+            "vehicle": {
+              "text": "Mygale FB02",
+              "url": "https://en.wikipedia.org/wiki/Mygale_FB02"
+            },
+            "year": "2005"
+          },
+          {
+            "driver": {
+              "text": "Fabien Thuner"
+            },
+            "event": {
+              "text": "2012 Nürburgring Eurocup Mégane Trophy round",
+              "url": "https://en.wikipedia.org/wiki/2012_Eurocup_M%C3%A9gane_Trophy"
+            },
+            "series": {
+              "text": "Eurocup Mégane Trophy",
+              "url": "https://en.wikipedia.org/wiki/Eurocup_M%C3%A9gane_Trophy"
+            },
+            "time": 124.881,
+            "vehicle": {
+              "text": "Renault Mégane Renault Sport II",
+              "url": "https://en.wikipedia.org/wiki/Renault_M%C3%A9gane_RS#Mégane_Trophy"
+            },
+            "year": "2012"
+          },
+          {
+            "driver": {
+              "text": "Richie Stanaway",
+              "url": "https://en.wikipedia.org/wiki/Richie_Stanaway"
+            },
+            "event": {
+              "text": "2010 Nürburgring ADAC Formel Masters round",
+              "url": "https://en.wikipedia.org/wiki/2010_ADAC_Formel_Masters"
+            },
+            "series": {
+              "text": "ADAC Formel Masters",
+              "url": "https://en.wikipedia.org/wiki/ADAC_Formel_Masters"
+            },
+            "time": 125.246,
+            "vehicle": {
+              "text": "Dallara Formulino",
+              "url": "https://en.wikipedia.org/wiki/Dallara_Formulino"
+            },
+            "year": "2010"
+          },
+          {
+            "driver": {
+              "text": "Robert Lechner"
+            },
+            "event": {
+              "text": "2002 1st Nürburgring V8Star round",
+              "url": "https://en.wikipedia.org/wiki/2002_V8Star_Series"
+            },
+            "series": {
+              "text": "V8Star Series",
+              "url": "https://en.wikipedia.org/wiki/V8Star_Series"
+            },
+            "time": 125.497,
+            "vehicle": {
+              "text": "V8Star car",
+              "url": "https://en.wikipedia.org/wiki/V8Star_Series#Cars"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Mikel Azcona",
+              "url": "https://en.wikipedia.org/wiki/Mikel_Azcona"
+            },
+            "event": {
+              "text": "2021 Nürburgring TCR Europe round",
+              "url": "https://en.wikipedia.org/wiki/2021_TCR_Europe_Touring_Car_Series"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 127.962,
+            "vehicle": {
+              "text": "Cupra León Competición TCR",
+              "url": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n#Leon_Cup_Racer_and_Leon_TCR"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Janneau Esmeijer"
+            },
+            "event": {
+              "text": "2014 Nürburgring Formula Renault 1.6 NEC round",
+              "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_seasons#2014_Formula_Renault_1.6_NEC_season"
+            },
+            "series": {
+              "text": "Formula Renault 1.6",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_1.6L"
+            },
+            "time": 129.487,
+            "vehicle": {
+              "text": "Signatech FR 1.6",
+              "url": "https://en.wikipedia.org/wiki/Signatech"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Julien Briché",
+              "url": "https://en.wikipedia.org/wiki/Julien_Brich%C3%A9"
+            },
+            "event": {
+              "text": "2014 Nürburgring SEAT León Eurocup round",
+              "url": "https://en.wikipedia.org/wiki/2014_SEAT_Le%C3%B3n_Eurocup"
+            },
+            "series": {
+              "text": "SEAT León Supercopa",
+              "url": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n_Supercopa"
+            },
+            "time": 130.113,
+            "vehicle": {
+              "text": "SEAT León Cup Racer",
+              "url": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n#Leon_Cup_Racer_and_Leon_TCR"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Oscar Nogués",
+              "url": "https://en.wikipedia.org/wiki/Oscar_Nogu%C3%A9s"
+            },
+            "event": {
+              "text": "2014 Nürburgring Eurocup Clio round",
+              "url": "https://en.wikipedia.org/wiki/2014_Eurocup_Clio"
+            },
+            "series": {
+              "text": "Renault Clio Cup",
+              "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
+            },
+            "time": "2.19.138",
+            "vehicle": {
+              "text": "Renault Clio III RS (197)",
+              "url": "https://en.wikipedia.org/wiki/Clio_Renault_Sport#Clio_III_RS_(197)"
+            }
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 15,
+        "years": "2001–present"
+      },
+      {
+        "layout": "Sprint Circuit",
+        "length_km": 3.629,
+        "length_mi": 2.255,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Kimiya Sato",
+              "url": "https://en.wikipedia.org/wiki/Kimiya_Sato"
+            },
+            "event": {
+              "text": "2014 Nürburgring Auto GP round",
+              "url": "https://en.wikipedia.org/wiki/2014_Auto_GP_Series"
+            },
+            "series": {
+              "text": "Auto GP",
+              "url": "https://en.wikipedia.org/wiki/Auto_GP"
+            },
+            "time": 79.322,
+            "vehicle": {
+              "text": "Lola B05/52",
+              "url": "https://en.wikipedia.org/wiki/Lola_B05/52"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Felix Rosenqvist",
+              "url": "https://en.wikipedia.org/wiki/Felix_Rosenqvist"
+            },
+            "event": {
+              "text": "2015 Nürburgring Formula 3 round",
+              "url": "https://en.wikipedia.org/wiki/2015_FIA_Formula_3_European_Championship"
+            },
+            "series": {
+              "text": "Formula Three",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
+            },
+            "time": 80.866,
+            "vehicle": {
+              "text": "Dallara F315",
+              "url": "https://en.wikipedia.org/wiki/Dallara_F3_cars#F312"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Nicky Pastorelli",
+              "url": "https://en.wikipedia.org/wiki/Nicky_Pastorelli"
+            },
+            "event": {
+              "text": "2004 Nürburgring Euro F3000 round",
+              "url": "https://en.wikipedia.org/wiki/2004_Euro_Formula_3000_Series"
+            },
+            "series": {
+              "text": "Formula 3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            },
+            "time": 81.218,
+            "vehicle": {
+              "text": "Lola B99/50",
+              "url": "https://en.wikipedia.org/wiki/Lola_B99/50"
+            },
+            "year": "2004"
+          },
+          {
+            "driver": {
+              "text": "René Rast",
+              "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Rast"
+            },
+            "event": {
+              "text": "2019 Nürburgring DTM round",
+              "url": "https://en.wikipedia.org/wiki/2019_DTM_N%C3%BCrburg_round"
+            },
+            "series": {
+              "text": "Class 1 Touring Cars",
+              "url": "https://en.wikipedia.org/wiki/Class_1_Touring_Cars"
+            },
+            "time": 81.358,
+            "vehicle": {
+              "text": "Audi RS5 Turbo DTM 2019",
+              "url": "https://en.wikipedia.org/wiki/Audi_RS5_Turbo_DTM"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "René Rast",
+              "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Rast"
+            },
+            "event": {
+              "text": "2017 Nürburgring DTM round",
+              "url": "https://en.wikipedia.org/wiki/2017_Deutsche_Tourenwagen_Masters"
+            },
+            "series": {
+              "text": "DTM",
+              "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+            },
+            "time": 82.308,
+            "vehicle": {
+              "text": "Audi RS5 DTM",
+              "url": "https://en.wikipedia.org/wiki/Audi_5_Series_DTM#RS5_DTM"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "David Schumacher",
+              "url": "https://en.wikipedia.org/wiki/David_Schumacher_(racing_driver)"
+            },
+            "event": {
+              "text": "2024 Nürburgring Prototype Cup Germany round",
+              "url": "https://en.wikipedia.org/wiki/2024_Prototype_Cup_Germany"
+            },
+            "series": {
+              "text": "LMP3",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
+            },
+            "time": 85.025,
+            "vehicle": {
+              "text": "Ligier JS P320",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_P320"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Illia Mykhalchyk",
+              "url": "https://en.wikipedia.org/wiki/Illia_Mykhalchyk"
+            },
+            "event": {
+              "text": "2019 Nürburgring IDM Superbike round",
+              "url": "https://de.wikipedia.org/wiki/IDM-Saison_2019"
+            },
+            "series": {
+              "text": "Superbike",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
+            },
+            "time": 86.1,
+            "vehicle": {
+              "text": "BMW S1000RR",
+              "url": "https://en.wikipedia.org/wiki/BMW_S1000RR"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "René Rast",
+              "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Rast"
+            },
+            "event": {
+              "text": "2025 Nürburgring DTM round",
+              "url": "https://en.wikipedia.org/wiki/2025_Deutsche_Tourenwagen_Masters"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 86.309,
+            "vehicle": {
+              "text": "BMW M4 GT3 Evo",
+              "url": "https://en.wikipedia.org/wiki/BMW_M4#BMW_M4_GT3"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Frederik Vesti",
+              "url": "https://en.wikipedia.org/wiki/Frederik_Vesti"
+            },
+            "event": {
+              "text": "2018 Nürburgring ADAC Formula 4 round",
+              "url": "https://en.wikipedia.org/wiki/2018_ADAC_Formula_4_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 86.753,
+            "vehicle": {
+              "text": "Tatuus F4-T014",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "David Hart"
+            },
+            "event": {
+              "text": "2002 Nürburgring Belcar round",
+              "url": "https://en.wikipedia.org/wiki/Belcar"
+            },
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            },
+            "time": 87.97,
+            "vehicle": {
+              "text": "Chrysler Viper GTS-R",
+              "url": "https://en.wikipedia.org/wiki/Chrysler_Viper_GTS-R"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Larry ten Voorde",
+              "url": "https://en.wikipedia.org/wiki/Larry_ten_Voorde"
+            },
+            "event": {
+              "text": "2023 Nürburgring Porsche Carrera Cup Germany round",
+              "url": "https://en.wikipedia.org/wiki/2023_Porsche_Carrera_Cup_Germany"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 88.518,
+            "vehicle": {
+              "text": "Porsche 911 (992 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–2025)"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Sven Barth",
+              "url": "https://en.wikipedia.org/wiki/Sven_Barth"
+            },
+            "event": {
+              "text": "2002 2nd Nürburgring Formula Volkswagen Germany round",
+              "url": "https://en.wikipedia.org/wiki/2002_Formula_Volkswagen_Germany_season"
+            },
+            "series": {
+              "text": "Formula Volkswagen",
+              "url": "https://en.wikipedia.org/wiki/Formula_Volkswagen_Germany"
+            },
+            "time": 88.882,
+            "vehicle": {
+              "text": "Reynard Formula Volkswagen",
+              "url": "https://en.wikipedia.org/wiki/List_of_Reynard_Motorsport_cars"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Emil Bernstorff",
+              "url": "https://en.wikipedia.org/wiki/Emil_Bernstorff"
+            },
+            "event": {
+              "text": "2011 Nürburgring ADAC Formel Masters round",
+              "url": "https://en.wikipedia.org/wiki/2011_ADAC_Formel_Masters"
+            },
+            "series": {
+              "text": "ADAC Formel Masters",
+              "url": "https://en.wikipedia.org/wiki/ADAC_Formel_Masters"
+            },
+            "time": 88.999,
+            "vehicle": {
+              "text": "Dallara Formulino",
+              "url": "https://en.wikipedia.org/wiki/Dallara_Formulino"
+            },
+            "year": "2011"
+          },
+          {
+            "driver": {
+              "text": "Christian Klien",
+              "url": "https://en.wikipedia.org/wiki/Christian_Klien"
+            },
+            "event": {
+              "text": "2002 2nd Nürburgring Formula Renault 2000 Germany round",
+              "url": "https://en.wikipedia.org/wiki/2002_Formula_Renault_seasons"
+            },
+            "series": {
+              "text": "Formula Renault 2.0",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_2.0"
+            },
+            "time": 89.59,
+            "vehicle": {
+              "text": "Tatuus FR2000",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Robert Lechner"
+            },
+            "event": {
+              "text": "2003 1st Nürburgring V8Star round",
+              "url": "https://en.wikipedia.org/wiki/2003_V8Star_Series"
+            },
+            "series": {
+              "text": "V8Star Series",
+              "url": "https://en.wikipedia.org/wiki/V8Star_Series"
+            },
+            "time": 91.305,
+            "vehicle": {
+              "text": "V8Star car",
+              "url": "https://en.wikipedia.org/wiki/V8Star_Series#Cars"
+            },
+            "year": "2003"
+          },
+          {
+            "driver": {
+              "text": "Sebastian Vettel",
+              "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+            },
+            "event": {
+              "text": "2004 2nd Nürburgring Formula BMW ADAC Round",
+              "url": "https://en.wikipedia.org/wiki/2004_Formula_BMW_ADAC_season"
+            },
+            "series": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            },
+            "time": 91.641,
+            "vehicle": {
+              "text": "Mygale FB02",
+              "url": "https://en.wikipedia.org/wiki/Mygale#Racing_cars"
+            },
+            "year": "2004"
+          },
+          {
+            "driver": {
+              "text": "Marcel Lenerz"
+            },
+            "event": {
+              "text": "2022 Nürburgring ADAC GT4 Germany round",
+              "url": "https://en.wikipedia.org/wiki/2022_ADAC_GT4_Germany"
+            },
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            },
+            "time": 93.166,
+            "vehicle": {
+              "text": "Toyota GR Supra GT4",
+              "url": "https://en.wikipedia.org/wiki/Toyota_GR_Supra#GR_Supra_GT4"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Ander Vilariño",
+              "url": "https://en.wikipedia.org/wiki/Ander_Vilari%C3%B1o"
+            },
+            "event": {
+              "text": "2014 Nürburgring NASCAR Whelen Euro Series round",
+              "url": "https://en.wikipedia.org/wiki/2014_NASCAR_Whelen_Euro_Series"
+            },
+            "series": {
+              "text": "Stock car racing",
+              "url": "https://en.wikipedia.org/wiki/Stock_car_racing"
+            },
+            "time": 93.268,
+            "vehicle": {
+              "text": "Chevrolet SS NASCAR",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_SS#NASCAR"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Martin Andersen"
+            },
+            "event": {
+              "text": "2022 Nürburgring TCR Germany round",
+              "url": "https://en.wikipedia.org/wiki/2022_ADAC_TCR_Germany_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 94.825,
+            "vehicle": {
+              "text": "Honda Civic Type R TCR (FK8)",
+              "url": "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_TCR#FK7/FK8_(2017)"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Maxim Dacher"
+            },
+            "event": {
+              "text": "2025 Nürburgring NXT Gen Cup round",
+              "url": "https://en.wikipedia.org/wiki/2025_NXT_Gen_Cup_season"
+            },
+            "series": {
+              "text": "NXT Gen Cup",
+              "url": "https://en.wikipedia.org/wiki/NXT_Gen_Cup"
+            },
+            "time": 109.57,
+            "vehicle": {
+              "text": "LRT NXT1"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Norbert Kiss",
+              "url": "https://en.wikipedia.org/wiki/Norbert_Kiss"
+            },
+            "event": {
+              "text": "2025 Nürburgring ETRC round",
+              "url": "https://en.wikipedia.org/wiki/2025_European_Truck_Racing_Championship"
+            },
+            "series": {
+              "text": "Truck racing",
+              "url": "https://en.wikipedia.org/wiki/Truck_racing"
+            },
+            "time": 113.474,
+            "vehicle": {
+              "text": "MAN TGS",
+              "url": "https://en.wikipedia.org/wiki/MAN_TG-range"
+            },
+            "year": "2025"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 12,
+        "years": "2002–present"
+      },
+      {
+        "layout": "Oldtimer Circuit",
+        "length_km": 4.569,
+        "length_mi": 2.839,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Martin Stretton"
+            },
+            "event": {
+              "text": "2018 Nürburgring Oldtimer Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/FIA_Masters_Historic_Formula_One_Championship#2018_Calendar"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 96.325,
+            "vehicle": {
+              "text": "Tyrrell 012",
+              "url": "https://en.wikipedia.org/wiki/Tyrrell_012"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "Mike Cantillon"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (Aston Martin Masters Endurance Legends)"
+            },
+            "series": {
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
+            },
+            "time": 96.771,
+            "vehicle": {
+              "text": "Pescarolo 01",
+              "url": "https://en.wikipedia.org/wiki/Pescarolo_01"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Mike Newton",
+              "url": "https://en.wikipedia.org/wiki/Mike_Newton_(racing_driver)"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (Aston Martin Masters Endurance Legends)"
+            },
+            "series": {
+              "text": "LMP675",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 99.928,
+            "vehicle": {
+              "text": "MG-Lola EX257",
+              "url": "https://en.wikipedia.org/wiki/MG-Lola_EX257"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Felix Haas"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (FHR100)"
+            },
+            "series": {
+              "text": "Group 6 prototype",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Prototype-Sports_Cars_(1966_to_1971)"
+            },
+            "time": 102.599,
+            "vehicle": {
+              "text": "Lola T294",
+              "url": "https://en.wikipedia.org/wiki/Lola_T294"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Marco Werner",
+              "url": "https://en.wikipedia.org/wiki/Marco_Werner"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (FHR100)"
+            },
+            "series": {
+              "text": "Group 7",
+              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)#Group_7_two-seater_racing_cars_(1966_to_1975)"
+            },
+            "time": 103.399,
+            "vehicle": {
+              "text": "McLaren M8F",
+              "url": "https://en.wikipedia.org/wiki/McLaren_M8A#M8F"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Peter Mücke"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (Tourenwagen Classic)"
+            },
+            "series": {
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#4th_Generation_Group_5_–_\"Special_Production_Cars\"_(1976_to_1982)"
+            },
+            "time": 103.502,
+            "vehicle": {
+              "text": "Zakspeed Ford Capri Turbo",
+              "url": "https://en.wikipedia.org/wiki/Ford_Capri#Zakspeed_Ford_Capri"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Nick Tandy",
+              "url": "https://en.wikipedia.org/wiki/Nick_Tandy"
+            },
+            "event": {
+              "text": "2012 Nürburgring British GT round",
+              "url": "https://en.wikipedia.org/wiki/2012_British_GT_Championship"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 103.651,
+            "vehicle": {
+              "text": "Porsche 911 (997) GT3-R",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_R_(2010–2013)"
+            },
+            "year": "2012"
+          },
+          {
+            "driver": {
+              "text": "Joshua Dürksen",
+              "url": "https://en.wikipedia.org/wiki/Joshua_D%C3%BCrksen"
+            },
+            "event": {
+              "text": "2020 2nd Nürburgring ADAC Formula 4 round",
+              "url": "https://en.wikipedia.org/wiki/2020_ADAC_Formula_4_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 103.796,
+            "vehicle": {
+              "text": "Tatuus F4-T014",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014"
+            },
+            "year": "2020"
+          },
+          {
+            "driver": {
+              "text": "Yannik Trautwein"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (FCD RacingSeries)"
+            },
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            },
+            "time": 105.297,
+            "vehicle": {
+              "text": "Ferrari 458 Italia GT2",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_458#458_Italia_GT2"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Simon Hadfield"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (FIA Masters Historic Sports Car Championship)"
+            },
+            "series": {
+              "text": "Group 4 sports car",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)#Sports_car_racing"
+            },
+            "time": 108.333,
+            "vehicle": {
+              "text": "Lola T70 MkIIIB",
+              "url": "https://en.wikipedia.org/wiki/Lola_T70"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Rupp Stephan"
+            },
+            "event": {
+              "text": "2018 Nürburgring Oldtimer Grand Prix"
+            },
+            "series": {
+              "text": "Class 1 Touring Cars",
+              "url": "https://en.wikipedia.org/wiki/Class_1_Touring_Cars"
+            },
+            "time": 108.653,
+            "vehicle": {
+              "text": "Alfa Romeo 155 V6 TI ITC",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_155#155_V6_TI"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "Kevin Magnussen",
+              "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen"
+            },
+            "event": {
+              "text": "2008 1st Nürburgring ADAC Formel Masters round",
+              "url": "https://en.wikipedia.org/wiki/2008_ADAC_Formel_Masters"
+            },
+            "series": {
+              "text": "ADAC Formel Masters",
+              "url": "https://en.wikipedia.org/wiki/ADAC_Formel_Masters"
+            },
+            "time": 108.887,
+            "vehicle": {
+              "text": "Dallara Formulino",
+              "url": "https://en.wikipedia.org/wiki/Dallara_Formulino"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Michael Gans"
+            },
+            "event": {
+              "text": "2018 Nürburgring Oldtimer Grand Prix"
+            },
+            "series": {
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Two-Seater_Racing_Cars_(1976_to_1982)"
+            },
+            "time": 109.366,
+            "vehicle": {
+              "text": "Lola T290",
+              "url": "https://en.wikipedia.org/wiki/Lola_T290"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "Robert Moores"
+            },
+            "event": {
+              "text": "2018 Nürburgring Oldtimer Grand Prix"
+            },
+            "series": {
+              "text": "Historic Formula 3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
+            },
+            "time": 109.937,
+            "vehicle": {
+              "text": "Chevron B38",
+              "url": "https://en.wikipedia.org/wiki/Chevron_B38"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "Warren Hughes",
+              "url": "https://en.wikipedia.org/wiki/Warren_Hughes"
+            },
+            "event": {
+              "text": "2012 Nürburgring British GT round",
+              "url": "https://en.wikipedia.org/wiki/2012_British_GT_Championship"
+            },
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            },
+            "time": 112.118,
+            "vehicle": {
+              "text": "Ginetta G50",
+              "url": "https://en.wikipedia.org/wiki/Ginetta_G50"
+            },
+            "year": "2012"
+          },
+          {
+            "driver": {
+              "text": "Richard Weber"
+            },
+            "event": {
+              "text": "2017 Nürburgring Classic"
+            },
+            "series": {
+              "text": "Group A",
+              "url": "https://en.wikipedia.org/wiki/Group_A#Touring_car_racing"
+            },
+            "time": 112.996,
+            "vehicle": {
+              "text": "BMW M3 (E30) DTM",
+              "url": "https://en.wikipedia.org/wiki/BMW_M3#E30_generation_(1986–1991)"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Peter Horsman"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (Historic Grand Prix Cars bis 1965)"
+            },
+            "series": {
+              "text": "Historic GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            },
+            "time": 117.962,
+            "vehicle": {
+              "text": "Lotus 18/21",
+              "url": "https://en.wikipedia.org/wiki/Lotus_18#History"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Bradley Richard"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix (FIA Lurani Trophy)"
+            },
+            "series": {
+              "text": "Formula Junior",
+              "url": "https://en.wikipedia.org/wiki/Formula_Junior"
+            },
+            "time": 121.896,
+            "vehicle": {
+              "text": "Brabham BT2",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT2"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Nuthall William"
+            },
+            "event": {
+              "text": "2019 Nürburgring Oldtimer Grand Prix"
+            },
+            "series": {
+              "text": "Historic two-seater sports car (1960-1961)"
+            },
+            "time": 123.233,
+            "vehicle": {
+              "text": "Elva Mk VII S",
+              "url": "https://en.wikipedia.org/wiki/Elva_(car_manufacturer)#Mk_VI,_VII_and_VIII/VIIIS"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Marcus von Oeynhausen"
+            },
+            "event": {
+              "text": "2016 Nürburgring Oldtimer Grand Prix"
+            },
+            "series": {
+              "text": "Group 3 GT",
+              "url": "https://en.wikipedia.org/wiki/Group_3_(motorsport)"
+            },
+            "time": 124.563,
+            "vehicle": {
+              "text": "Jaguar E-Type",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_E-Type"
+            },
+            "year": "2016"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 12,
+        "years": "2002–present"
+      },
+      {
+        "layout": "24 Hours Circuit – Combined GP Circuit without Mercedes-Arena",
+        "length_km": 25.378,
+        "length_mi": 15.769,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Daniel Keilwitz",
+              "url": "https://en.wikipedia.org/wiki/Daniel_Keilwitz"
+            },
+            "event": {
+              "text": "2023 24 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2023_24_Hours_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 488.006,
+            "vehicle": {
+              "text": "Ferrari 296 GT3",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_GT3"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Marcel Tiemann",
+              "url": "https://en.wikipedia.org/wiki/Marcel_Tiemann"
+            },
+            "event": {
+              "text": "2009 24 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2009_24_Hours_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            },
+            "time": 516.768,
+            "vehicle": {
+              "text": "Porsche 911 (997) GT3-RSR",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_RSR_(2006–2012)"
+            },
+            "year": "2009"
+          },
+          {
+            "driver": {
+              "text": "Yvan Muller",
+              "url": "https://en.wikipedia.org/wiki/Yvan_Muller"
+            },
+            "event": {
+              "text": "2015 FIA WTCC Race of Germany",
+              "url": "https://en.wikipedia.org/wiki/2015_FIA_WTCC_Race_of_Germany"
+            },
+            "series": {
+              "text": "TC1",
+              "url": "https://en.wikipedia.org/wiki/Super_2000#Touring_cars"
+            },
+            "time": 517.384,
+            "vehicle": {
+              "text": "Citroën C-Elysée WTCC",
+              "url": "https://en.wikipedia.org/wiki/Citro%C3%ABn_C-Elys%C3%A9e#Motorsport"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Jean-Karl Vernay",
+              "url": "https://en.wikipedia.org/wiki/Jean-Karl_Vernay"
+            },
+            "event": {
+              "text": "2021 FIA WTCR Race of Germany",
+              "url": "https://en.wikipedia.org/wiki/2021_World_Touring_Car_Cup"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 533.608,
+            "vehicle": {
+              "text": "Hyundai Elantra N TCR",
+              "url": "https://en.wikipedia.org/wiki/Hyundai_Elantra_N_TCR"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Petr Fulín",
+              "url": "https://en.wikipedia.org/wiki/Petr_Ful%C3%ADn"
+            },
+            "event": {
+              "text": "2016 Nürburgring ETC round",
+              "url": "https://en.wikipedia.org/wiki/2016_European_Touring_Car_Cup"
+            },
+            "series": {
+              "text": "Super 2000",
+              "url": "https://en.wikipedia.org/wiki/Super_2000#Touring_cars"
+            },
+            "time": 559.256,
+            "vehicle": {
+              "text": "SEAT León Cup Racer",
+              "url": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n#Leon_Cup_Racer_and_Leon_TCR"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "René Rast",
+              "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Rast"
+            },
+            "event": {
+              "text": "2011 1st Nürburgring Porsche Supercup round",
+              "url": "https://en.wikipedia.org/wiki/2011_Porsche_Supercup"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 600.222,
+            "vehicle": {
+              "text": "Porsche 911 (997 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_Cup_3.8_(2009–2013)"
+            },
+            "year": "2011"
+          },
+          {
+            "driver": {
+              "text": "Niklas Mackschin",
+              "url": "https://en.wikipedia.org/wiki/Niklas_Mackschin"
+            },
+            "event": {
+              "text": "2016 Nürburgring ETC round",
+              "url": "https://en.wikipedia.org/wiki/2016_European_Touring_Car_Cup"
+            },
+            "series": {
+              "text": "Super 1600",
+              "url": "https://en.wikipedia.org/wiki/Super_1600"
+            },
+            "time": 635.657,
+            "vehicle": {
+              "text": "Ford Fiesta 1.6 16V",
+              "url": "https://en.wikipedia.org/wiki/Ford_Fiesta#Circuit_racing"
+            },
+            "year": "2016"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt/concrete",
+          "values": [
+            "Asphalt",
+            "Concrete"
+          ]
+        },
+        "turns": 170,
+        "years": "2002–present"
+      },
+      {
+        "layout": "Nordschleife",
+        "length_km": 20.832,
+        "length_mi": 12.944,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Stefan Bellof",
+              "url": "https://en.wikipedia.org/wiki/Stefan_Bellof"
+            },
+            "event": {
+              "text": "1983 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1983_1000_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "Group C",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
+            },
+            "time": 385.91,
+            "vehicle": {
+              "text": "Porsche 956",
+              "url": "https://en.wikipedia.org/wiki/Porsche_956"
+            },
+            "year": "1983"
+          },
+          {
+            "driver": {
+              "text": "Christian Danner",
+              "url": "https://en.wikipedia.org/wiki/Christian_Danner"
+            },
+            "event": {
+              "text": "1983 Eifelrennen",
+              "url": "https://en.wikipedia.org/wiki/1983_European_Formula_Two_Championship"
+            },
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "time": 388.03,
+            "vehicle": {
+              "text": "March 832",
+              "url": "https://en.wikipedia.org/wiki/March_832"
+            },
+            "year": "1983"
+          },
+          {
+            "driver": {
+              "text": "Franz Konrad",
+              "url": "https://en.wikipedia.org/wiki/Franz_Konrad_(racing_driver)"
+            },
+            "event": {
+              "text": "1983 Bitburger ADAC 1000 km Rennen F3 round",
+              "url": "https://en.wikipedia.org/wiki/1983_German_Formula_Three_Championship"
+            },
+            "series": {
+              "text": "Formula Three",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
+            },
+            "time": 439.67,
+            "vehicle": {
+              "text": "Anson SA4",
+              "url": "https://en.wikipedia.org/wiki/Anson_SA4"
+            },
+            "year": "1983"
+          },
+          {
+            "driver": {
+              "text": "Peter Zakowski",
+              "url": "https://en.wikipedia.org/wiki/Peter_Zakowski"
+            },
+            "event": {
+              "text": "2002 VLN 27. DMV-4-Stunden",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring_Endurance_Series"
+            },
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            },
+            "time": 440.098,
+            "vehicle": {
+              "text": "Dodge Viper GTS-R",
+              "url": "https://en.wikipedia.org/wiki/Dodge_Viper_GTS-R"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Harald Grohs",
+              "url": "https://en.wikipedia.org/wiki/Harald_Grohs"
+            },
+            "event": {
+              "text": "1983 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1983_1000_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "Group B",
+              "url": "https://en.wikipedia.org/wiki/Group_B"
+            },
+            "time": 444.29,
+            "vehicle": {
+              "text": "BMW M1",
+              "url": "https://en.wikipedia.org/wiki/BMW_M1"
+            },
+            "year": "1983"
+          },
+          {
+            "driver": {
+              "text": "Tom Walkinshaw",
+              "url": "https://en.wikipedia.org/wiki/Tom_Walkinshaw"
+            },
+            "event": {
+              "text": "1983 Nürburgring ETCC round",
+              "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Group A",
+              "url": "https://en.wikipedia.org/wiki/Group_A#Touring_car_racing"
+            },
+            "time": 482.44,
+            "vehicle": {
+              "text": "Jaguar XJS",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_XJS#Motorsport"
+            },
+            "year": "1983"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt/concrete",
+          "values": [
+            "Asphalt",
+            "Concrete"
+          ]
+        },
+        "turns": 154,
+        "years": "1983–present"
+      },
+      {
+        "layout": "GP-Strecke with F1 Chicane",
+        "length_km": 4.556,
+        "length_mi": 2.831,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Juan Pablo Montoya",
+              "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
+            },
+            "event": {
+              "text": "2001 European Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2001_European_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 78.354,
+            "vehicle": {
+              "text": "Williams FW23",
+              "url": "https://en.wikipedia.org/wiki/Williams_FW23"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Frank Biela",
+              "url": "https://en.wikipedia.org/wiki/Frank_Biela"
+            },
+            "event": {
+              "text": "2000 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2000_1000_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "LMP900",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 90.418,
+            "vehicle": {
+              "text": "Audi R8",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_(LMP)"
+            },
+            "year": "2000"
+          },
+          {
+            "driver": {
+              "text": "Giorgio Pantano",
+              "url": "https://en.wikipedia.org/wiki/Giorgio_Pantano"
+            },
+            "event": {
+              "text": "2001 Nürburgring F3000 round",
+              "url": "https://en.wikipedia.org/wiki/2001_International_Formula_3000_Championship"
+            },
+            "series": {
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            },
+            "time": 91.669,
+            "vehicle": {
+              "text": "Lola B99/50",
+              "url": "https://en.wikipedia.org/wiki/Lola_B99/50"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Grant Orbell"
+            },
+            "event": {
+              "text": "1999 ADAC Sportwagen Festival",
+              "url": "https://en.wikipedia.org/wiki/1999_SportsRacing_World_Cup"
+            },
+            "series": {
+              "text": "WSC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 91.794,
+            "vehicle": {
+              "text": "Lola B98/10",
+              "url": "https://en.wikipedia.org/wiki/Lola_B98/10"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Bernd Schneider",
+              "url": "https://en.wikipedia.org/wiki/Bernd_Schneider_(racing_driver)"
+            },
+            "event": {
+              "text": "1997 FIA GT Nürburgring 4 Hours",
+              "url": "https://en.wikipedia.org/wiki/1997_FIA_GT_N%C3%BCrburgring_4_Hours"
+            },
+            "series": {
+              "text": "GT1 (Prototype)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#Prototype_years_(1997–1998)"
+            },
+            "time": 93.614,
+            "vehicle": {
+              "text": "Mercedes-Benz CLK GTR",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_CLK_GTR"
+            },
+            "year": "1997"
+          },
+          {
+            "driver": {
+              "text": "Thed Björk",
+              "url": "https://en.wikipedia.org/wiki/Thed_Bj%C3%B6rk"
+            },
+            "event": {
+              "text": "2001 ADAC Sportwagen Festival",
+              "url": "https://en.wikipedia.org/wiki/2001_FIA_Sportscar_Championship_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "LMP675",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 97.813,
+            "vehicle": {
+              "text": "Lola B2K/40",
+              "url": "https://en.wikipedia.org/wiki/Lola_B2K/40"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Martin Tomczyk",
+              "url": "https://en.wikipedia.org/wiki/Martin_Tomczyk"
+            },
+            "event": {
+              "text": "2001 1st Nürburgring DTM round",
+              "url": "https://en.wikipedia.org/wiki/2001_Deutsche_Tourenwagen_Masters"
+            },
+            "series": {
+              "text": "DTM",
+              "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+            },
+            "time": 97.932,
+            "vehicle": {
+              "text": "Abt-Audi TT-R DTM 2001",
+              "url": "https://en.wikipedia.org/wiki/Abt-Audi_TT-R_DTM"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Jean-Marc Gounon",
+              "url": "https://en.wikipedia.org/wiki/Jean-Marc_Gounon"
+            },
+            "event": {
+              "text": "1996 BPR 4 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1996_BPR_4_Hours_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "GT1",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#Early_years_(1993–1996)"
+            },
+            "time": 98.27,
+            "vehicle": {
+              "text": "Ferrari F40 GTE",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_F40#Racing"
+            },
+            "year": "1996"
+          },
+          {
+            "driver": {
+              "text": "Olivier Beretta",
+              "url": "https://en.wikipedia.org/wiki/Olivier_Beretta"
+            },
+            "event": {
+              "text": "2000 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2000_1000_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            },
+            "time": 99.649,
+            "vehicle": {
+              "text": "Dodge Viper GTS-R",
+              "url": "https://en.wikipedia.org/wiki/Dodge_Viper_GTS-R"
+            },
+            "year": "2000"
+          },
+          {
+            "driver": {
+              "text": "Marc Benz",
+              "url": "https://en.wikipedia.org/wiki/Marc_Benz"
+            },
+            "event": {
+              "text": "2001 Nürburgring Formula Renault 2000 Germany round",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Northern_European_Cup#Formula_Renault_2.0_Germany"
+            },
+            "series": {
+              "text": "Formula Renault 2.0",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_2.0"
+            },
+            "time": 101.135,
+            "vehicle": {
+              "text": "Tatuus FR2000",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Olivier Beretta",
+              "url": "https://en.wikipedia.org/wiki/Olivier_Beretta"
+            },
+            "event": {
+              "text": "1997 FIA GT Nürburgring 4 Hours",
+              "url": "https://en.wikipedia.org/wiki/1997_FIA_GT_N%C3%BCrburgring_4_Hours"
+            },
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#List_of_FIA_GT1_cars"
+            },
+            "time": 102.208,
+            "vehicle": {
+              "text": "Chrysler Viper GTS-R",
+              "url": "https://en.wikipedia.org/wiki/Chrysler_Viper_GTS-R"
+            },
+            "year": "1997"
+          },
+          {
+            "driver": {
+              "text": "Sébastien Dumez"
+            },
+            "event": {
+              "text": "2001 FIA GT Nürburgring 500km",
+              "url": "https://en.wikipedia.org/wiki/2001_FIA_GT_N%C3%BCrburgring_500km"
+            },
+            "series": {
+              "text": "N-GT",
+              "url": "https://en.wikipedia.org/wiki/Group_N-GT"
+            },
+            "time": 102.208,
+            "vehicle": {
+              "text": "Porsche 911 (996) GT3-RS",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#996_GT3_RS_(2001)"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Sascha Maassen",
+              "url": "https://en.wikipedia.org/wiki/Sascha_Maassen"
+            },
+            "event": {
+              "text": "2000 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/2000_1000_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "GT",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            },
+            "time": 103.766,
+            "vehicle": {
+              "text": "Porsche 911 (996) GT3-R",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#996_GT3_R_(1999–2001)"
+            },
+            "year": "2000"
+          },
+          {
+            "driver": {
+              "text": "John Svensson"
+            },
+            "event": {
+              "text": "2001 Nürburgring Formula Chrysler Euroseries round",
+              "url": "https://en.wikipedia.org/wiki/2001_Formula_Chrysler_Euroseries"
+            },
+            "series": {
+              "text": "Formula Chrysler",
+              "url": "https://en.wikipedia.org/wiki/Formula_Chrysler_Euroseries"
+            },
+            "time": 105.114,
+            "vehicle": {
+              "text": "Reynard 2KF",
+              "url": "https://en.wikipedia.org/wiki/List_of_Reynard_Motorsport_cars"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Roland Asch",
+              "url": "https://en.wikipedia.org/wiki/Roland_Asch"
+            },
+            "event": {
+              "text": "2001 1st Nürburgring V8Star round",
+              "url": "https://en.wikipedia.org/wiki/2001_V8Star_Series"
+            },
+            "series": {
+              "text": "V8Star Series",
+              "url": "https://en.wikipedia.org/wiki/V8Star_Series"
+            },
+            "time": 105.428,
+            "vehicle": {
+              "text": "V8Star car",
+              "url": "https://en.wikipedia.org/wiki/V8Star_Series#Cars"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Timo Bernhard",
+              "url": "https://en.wikipedia.org/wiki/Timo_Bernhard"
+            },
+            "event": {
+              "text": "2000 2nd Nürburgring Porsche Carrera Cup Germany round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup_Germany"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 105.643,
+            "vehicle": {
+              "text": "Porsche 911 (996 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#996_GT3_Cup_(1998–2001)"
+            },
+            "year": "2000"
+          },
+          {
+            "driver": {
+              "text": "Hendrik Vieth"
+            },
+            "event": {
+              "text": "2001 1st Nürburgring Formula BMW ADAC Round",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW#Germany_&_Europe"
+            },
+            "series": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            },
+            "time": 106.271,
+            "vehicle": {
+              "text": "Mygale FB02",
+              "url": "https://en.wikipedia.org/wiki/Mygale_FB02"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Teo Fabi",
+              "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
+            },
+            "event": {
+              "text": "1991 430 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1991_430_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "Group C1",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
+            },
+            "time": 81.553,
+            "vehicle": {
+              "text": "Jaguar XJR-14",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_XJR-14"
+            },
+            "year": "1991"
+          },
+          {
+            "driver": {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            },
+            "event": {
+              "text": "1985 German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1985_German_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 82.806,
+            "vehicle": {
+              "text": "McLaren MP4/2B",
+              "url": "https://en.wikipedia.org/wiki/McLaren_MP4/2#1985"
+            },
+            "year": "1985"
+          },
+          {
+            "driver": {
+              "text": "Rubens Barrichello",
+              "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+            },
+            "event": {
+              "text": "1992 Nürburgring F3000 round",
+              "url": "https://en.wikipedia.org/wiki/1992_International_Formula_3000_Championship"
+            },
+            "series": {
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            },
+            "time": 86.98,
+            "vehicle": {
+              "text": "Reynard 92D",
+              "url": "https://en.wikipedia.org/wiki/Reynard_92D"
+            },
+            "year": "1992"
+          },
+          {
+            "driver": {
+              "text": "Karl Hasenbichler"
+            },
+            "event": {
+              "text": "1994 AvD New Historics präsentiert von Ferrari Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/Interserie"
+            },
+            "series": {
+              "text": "Interserie",
+              "url": "https://en.wikipedia.org/wiki/Interserie"
+            },
+            "time": 90.08,
+            "vehicle": {
+              "text": "HSB-Penske PC-18 Buick Turbo Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Penske_PC-18"
+            },
+            "year": "1994"
+          },
+          {
+            "driver": {
+              "text": "Costas Los",
+              "url": "https://en.wikipedia.org/wiki/Costas_Los"
+            },
+            "event": {
+              "text": "1988 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1988_1000_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "Group C2",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
+            },
+            "time": 93.01,
+            "vehicle": {
+              "text": "Spice SE87C",
+              "url": "https://en.wikipedia.org/wiki/Spice_SE87C"
+            },
+            "year": "1988"
+          },
+          {
+            "driver": {
+              "text": "Bernd Schneider",
+              "url": "https://en.wikipedia.org/wiki/Bernd_Schneider_(racing_driver)"
+            },
+            "event": {
+              "text": "1994 3rd Nürburgring DTM round",
+              "url": "https://en.wikipedia.org/wiki/1994_Deutsche_Tourenwagen_Meisterschaft"
+            },
+            "series": {
+              "text": "Class 1 Touring Cars",
+              "url": "https://en.wikipedia.org/wiki/Class_1_Touring_Cars"
+            },
+            "time": 97.71,
+            "vehicle": {
+              "text": "Mercedes-Benz C-Class V6",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_C-Class_(W202)"
+            },
+            "year": "1994"
+          },
+          {
+            "driver": {
+              "text": "Kevin Schwantz",
+              "url": "https://en.wikipedia.org/wiki/Kevin_Schwantz"
+            },
+            "event": {
+              "text": "1990 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1990_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 99.048,
+            "vehicle": {
+              "text": "Suzuki RGV500",
+              "url": "https://en.wikipedia.org/wiki/Suzuki_RGV500"
+            },
+            "year": "1990"
+          },
+          {
+            "driver": {
+              "text": "Troy Corser",
+              "url": "https://en.wikipedia.org/wiki/Troy_Corser"
+            },
+            "event": {
+              "text": "1999 Nürburgring World SBK round",
+              "url": "https://en.wikipedia.org/wiki/1999_N%C3%BCrburgring_Superbike_World_Championship_round"
+            },
+            "series": {
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
+            },
+            "time": 99.318,
+            "vehicle": {
+              "text": "Ducati 996 RS",
+              "url": "https://en.wikipedia.org/wiki/Ducati_996"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Florian Stoll"
+            },
+            "event": {
+              "text": "2001 1st Nürburgring Formula Volkswagen Germany round",
+              "url": "https://en.wikipedia.org/wiki/2001_Formula_Volkswagen_Germany_season"
+            },
+            "series": {
+              "text": "Formula Volkswagen",
+              "url": "https://en.wikipedia.org/wiki/Formula_Volkswagen_Germany"
+            },
+            "time": 101.049,
+            "vehicle": {
+              "text": "Reynard Formula Volkswagen",
+              "url": "https://en.wikipedia.org/wiki/List_of_Reynard_Motorsport_cars"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "John Greasley"
+            },
+            "event": {
+              "text": "1998 4 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/GTR_Euroseries#1998_season"
+            },
+            "series": {
+              "text": "GT1",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#List_of_FIA_GT1_cars"
+            },
+            "time": 102.43,
+            "vehicle": {
+              "text": "Porsche 911 GT2 Evo",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT2"
+            },
+            "year": "1998"
+          },
+          {
+            "driver": {
+              "text": "Tetsuya Harada",
+              "url": "https://en.wikipedia.org/wiki/Tetsuya_Harada"
+            },
+            "event": {
+              "text": "1997 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1997_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 100.993,
+            "vehicle": {
+              "text": "Aprilia RSV 250",
+              "url": "https://en.wikipedia.org/wiki/Aprilia_RSV_250"
+            },
+            "year": "1997"
+          },
+          {
+            "driver": {
+              "text": "Ralf Waldmann",
+              "url": "https://en.wikipedia.org/wiki/Ralf_Waldmann"
+            },
+            "event": {
+              "text": "1996 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1996_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 102.991,
+            "vehicle": {
+              "text": "Honda NSR250",
+              "url": "https://en.wikipedia.org/wiki/Honda_NSR250"
+            },
+            "year": "1996"
+          },
+          {
+            "driver": {
+              "text": "Tom Kristensen",
+              "url": "https://en.wikipedia.org/wiki/Tom_Kristensen"
+            },
+            "event": {
+              "text": "1999 1st Nürburgring STW Cup round",
+              "url": "https://en.wikipedia.org/wiki/1999_Super_Tourenwagen_Cup"
+            },
+            "series": {
+              "text": "Super Touring",
+              "url": "https://en.wikipedia.org/wiki/Super_Touring"
+            },
+            "time": 103.975,
+            "vehicle": {
+              "text": "Honda Accord",
+              "url": "https://en.wikipedia.org/wiki/Honda_Accord#Motorsport"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Timo Bernhard",
+              "url": "https://en.wikipedia.org/wiki/Timo_Bernhard"
+            },
+            "event": {
+              "text": "2001 1st Nürburgring Porsche Carrera Cup Germany round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup_Germany"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 105.322,
+            "vehicle": {
+              "text": "Porsche 911 (996 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#996_GT3_Cup_(1998–2001)"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Piergiorgio Bontempi",
+              "url": "https://en.wikipedia.org/wiki/Piergiorgio_Bontempi"
+            },
+            "event": {
+              "text": "1999 Nürburgring World SSP round",
+              "url": "https://en.wikipedia.org/wiki/1999_N%C3%BCrburgring_Superbike_World_Championship_round"
+            },
+            "series": {
+              "text": "World SSP",
+              "url": "https://en.wikipedia.org/wiki/Supersport_World_Championship"
+            },
+            "time": 105.591,
+            "vehicle": {
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Armin Hahne",
+              "url": "https://en.wikipedia.org/wiki/Armin_Hahne"
+            },
+            "event": {
+              "text": "1988 Nürburgring 500 km",
+              "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Group A",
+              "url": "https://en.wikipedia.org/wiki/Group_A#Touring_car_racing"
+            },
+            "time": 107.74,
+            "vehicle": {
+              "text": "Ford Sierra RS 500",
+              "url": "https://en.wikipedia.org/wiki/Ford_Sierra_RS_Cosworth#Touring_car_racing"
+            },
+            "year": "1988"
+          },
+          {
+            "driver": {
+              "text": "Johnny Cecotto",
+              "url": "https://en.wikipedia.org/wiki/Johnny_Cecotto"
+            },
+            "event": {
+              "text": "1993 Nürburgring ADAC GT Cup round",
+              "url": "https://en.wikipedia.org/wiki/ADAC_GT_Masters#ADAC_GT_Cup"
+            },
+            "series": {
+              "text": "Group N",
+              "url": "https://en.wikipedia.org/wiki/Group_N"
+            },
+            "time": 108.19,
+            "vehicle": {
+              "text": "BMW M3 GTR",
+              "url": "https://en.wikipedia.org/wiki/BMW_E36_M3"
+            },
+            "year": "1993"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 12,
+        "years": "1995–2001"
+      },
+      {
+        "layout": "GP-Strecke without F1 Chicane",
+        "length_km": 4.542,
+        "length_mi": 2.822,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Teo Fabi",
+              "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
+            },
+            "series": {
+              "text": "C1",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
+            },
+            "time": 81.533,
+            "vehicle": {
+              "text": "Jaguar XJR-14",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_XJR-14"
+            },
+            "year": "1991"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 12,
+        "years": "1984–2001"
+      },
+      {
+        "layout": "Nordschleife",
+        "length_km": 22.835,
+        "length_mi": 14.189,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Clay Regazzoni",
+              "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+            },
+            "event": {
+              "text": "1975 German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 426.4,
+            "vehicle": {
+              "text": "Ferrari 312T",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_312T"
+            },
+            "year": "1975"
+          },
+          {
+            "driver": {
+              "text": "Stefan Bellof",
+              "url": "https://en.wikipedia.org/wiki/Stefan_Bellof"
+            },
+            "event": {
+              "text": "1982 Eifelrennen",
+              "url": "https://en.wikipedia.org/wiki/1982_European_Formula_Two_Championship"
+            },
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "time": 426.51,
+            "vehicle": {
+              "text": "Maurer MM82",
+              "url": "https://en.wikipedia.org/wiki/Maurer_MM82"
+            },
+            "year": "1982"
+          },
+          {
+            "driver": {
+              "text": "Jean-Pierre Jarier",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
+            },
+            "event": {
+              "text": "1974 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1974_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 5 Sports Prototype",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
+            },
+            "time": 435.9,
+            "vehicle": {
+              "text": "Matra MS670C",
+              "url": "https://en.wikipedia.org/wiki/Matra-Simca_MS670#1974"
+            },
+            "year": "1974"
+          },
+          {
+            "driver": {
+              "text": "Manfred Winkelhock",
+              "url": "https://en.wikipedia.org/wiki/Manfred_Winkelhock"
+            },
+            "event": {
+              "text": "1981 Nürburgring Nordschleife DRM round",
+              "url": "https://de.wikipedia.org/wiki/Deutsche_Rennsport-Meisterschaft_1981"
+            },
+            "series": {
+              "text": "Group 5 Special Production",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#4th_Generation_Group_5_–_\"Special_Production_Cars\"_(1976_to_1982)"
+            },
+            "time": 442.42,
+            "vehicle": {
+              "text": "Ford Capri III Turbo",
+              "url": "https://en.wikipedia.org/wiki/Ford_Capri#2.8_Turbo"
+            },
+            "year": "1981"
+          },
+          {
+            "driver": {
+              "text": "Manfred Winkelhock",
+              "url": "https://en.wikipedia.org/wiki/Manfred_Winkelhock"
+            },
+            "event": {
+              "text": "1982 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1982_1000_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "Group C",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
+            },
+            "time": 443.87,
+            "vehicle": {
+              "text": "Ford C100",
+              "url": "https://en.wikipedia.org/wiki/Ford_C100"
+            },
+            "year": "1982"
+          },
+          {
+            "driver": {
+              "text": "Willi Kauhsen",
+              "url": "https://en.wikipedia.org/wiki/Willi_Kauhsen"
+            },
+            "event": {
+              "text": "1973 7. Internationales ADAC Nürburgring 300 km Rennen",
+              "url": "https://en.wikipedia.org/wiki/Interserie"
+            },
+            "series": {
+              "text": "Group 7",
+              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)#Group_7_two-seater_racing_cars_(1966_to_1975)"
+            },
+            "time": 452.8,
+            "vehicle": {
+              "text": "Porsche 917/10 Turbo",
+              "url": "https://en.wikipedia.org/wiki/Porsche_917"
+            },
+            "year": "1973"
+          },
+          {
+            "driver": {
+              "text": "Jochen Mass",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+            },
+            "event": {
+              "text": "1981 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1981_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Two-Seater_Racing_Cars_(1976_to_1982)"
+            },
+            "time": 453.53,
+            "vehicle": {
+              "text": "Porsche 908/80",
+              "url": "https://en.wikipedia.org/wiki/Porsche_908"
+            },
+            "year": "1981"
+          },
+          {
+            "driver": {
+              "text": "Hans-Joachim Stuck",
+              "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+            },
+            "event": {
+              "text": "1982 Nürburgring Nordschleife DRM round",
+              "url": "https://de.wikipedia.org/wiki/Deutsche_Rennsport-Meisterschaft_1982"
+            },
+            "series": {
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)#Sports_car_racing"
+            },
+            "time": 465.47,
+            "vehicle": {
+              "text": "BMW M1",
+              "url": "https://en.wikipedia.org/wiki/BMW_M1#Motorsport"
+            },
+            "year": "1982"
+          },
+          {
+            "driver": {
+              "text": "Hans-Joachim Stuck",
+              "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+            },
+            "event": {
+              "text": "1974 6 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1974_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 2",
+              "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
+            },
+            "time": 490.9,
+            "vehicle": {
+              "text": "BMW 3.0 CSL",
+              "url": "https://en.wikipedia.org/wiki/BMW_E9#3.0_CSL"
+            },
+            "year": "1974"
+          },
+          {
+            "driver": {
+              "text": "Marco Lucchinelli",
+              "url": "https://en.wikipedia.org/wiki/Marco_Lucchinelli"
+            },
+            "event": {
+              "text": "1980 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1980_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 502.23,
+            "vehicle": {
+              "text": "Suzuki RG 500",
+              "url": "https://en.wikipedia.org/wiki/Suzuki_RG_500"
+            },
+            "year": "1980"
+          },
+          {
+            "driver": {
+              "text": "Takazumi Katayama",
+              "url": "https://en.wikipedia.org/wiki/Takazumi_Katayama"
+            },
+            "event": {
+              "text": "1978 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "350cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 519.7,
+            "vehicle": {
+              "text": "Yamaha TZ 350",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_TZ_350"
+            },
+            "year": "1978"
+          },
+          {
+            "driver": {
+              "text": "Kork Ballington",
+              "url": "https://en.wikipedia.org/wiki/Kork_Ballington"
+            },
+            "event": {
+              "text": "1978 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 529.5,
+            "vehicle": {
+              "text": "Kawasaki KR250",
+              "url": "https://en.wikipedia.org/wiki/Kawasaki_KR250_and_KR350"
+            },
+            "year": "1978"
+          },
+          {
+            "driver": {
+              "text": "Tom Walkinshaw",
+              "url": "https://en.wikipedia.org/wiki/Tom_Walkinshaw"
+            },
+            "event": {
+              "text": "1982 6 Hours of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Group A",
+              "url": "https://en.wikipedia.org/wiki/Group_A#Touring_car_racing"
+            },
+            "time": 542.36,
+            "vehicle": {
+              "text": "Jaguar XJS",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_XJS"
+            },
+            "year": "1982"
+          },
+          {
+            "driver": {
+              "text": "Ángel Nieto",
+              "url": "https://en.wikipedia.org/wiki/%C3%81ngel_Nieto"
+            },
+            "event": {
+              "text": "1978 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 557.0,
+            "vehicle": {
+              "text": "Minarelli 125",
+              "url": "https://en.wikipedia.org/wiki/Motori_Minarelli"
+            },
+            "year": "1978"
+          },
+          {
+            "driver": {
+              "text": "Ricardo Tormo",
+              "url": "https://en.wikipedia.org/wiki/Ricardo_Tormo"
+            },
+            "event": {
+              "text": "1978 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "50cc",
+              "url": "https://en.wikipedia.org/wiki/50_cc_Grand_Prix_motorcycle_racing"
+            },
+            "time": 615.8,
+            "vehicle": {
+              "text": "Bultaco TSS 50",
+              "url": "https://en.wikipedia.org/wiki/Bultaco"
+            },
+            "year": "1978"
+          },
+          {
+            "driver": {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            },
+            "event": {
+              "text": "1969 German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 463.8,
+            "vehicle": {
+              "text": "Brabham BT26A",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT26A"
+            },
+            "year": "1969"
+          },
+          {
+            "driver": {
+              "text": "Pedro Rodríguez",
+              "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
+            },
+            "event": {
+              "text": "1970 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1970_1000_km_of_N%C3%BCrburgring"
+            },
+            "series": {
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Prototype-Sports_Cars_(1966_to_1971)"
+            },
+            "time": 470.4,
+            "vehicle": {
+              "text": "Porsche 908/03",
+              "url": "https://en.wikipedia.org/wiki/Porsche_908"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            },
+            "event": {
+              "text": "1969 Eifelrennen",
+              "url": "https://en.wikipedia.org/wiki/1969_European_Formula_Two_Championship"
+            },
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "time": 485.3,
+            "vehicle": {
+              "text": "Matra MS7",
+              "url": "https://en.wikipedia.org/wiki/Matra_MS7"
+            },
+            "year": "1969"
+          },
+          {
+            "driver": {
+              "text": "Andrea de Adamich",
+              "url": "https://en.wikipedia.org/wiki/Andrea_de_Adamich"
+            },
+            "event": {
+              "text": "1970 Nürburgring 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Group 2",
+              "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
+            },
+            "time": 568.0,
+            "vehicle": {
+              "text": "Alfa Romeo 2000 GTAm",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_105/115_Series_Coup%C3%A9s#GTAm"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Giacomo Agostini",
+              "url": "https://en.wikipedia.org/wiki/Giacomo_Agostini"
+            },
+            "event": {
+              "text": "1970 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 641.9,
+            "vehicle": {
+              "text": "MV Agusta 500 Three",
+              "url": "https://en.wikipedia.org/wiki/MV_Agusta_500_Three"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Giacomo Agostini",
+              "url": "https://en.wikipedia.org/wiki/Giacomo_Agostini"
+            },
+            "event": {
+              "text": "1970 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "350cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 663.9,
+            "vehicle": {
+              "text": "MV Agusta 350 3C",
+              "url": "https://en.wikipedia.org/wiki/MV_Agusta_350_racers#MV_Agusta_350_3C_1965–1973"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Klaus Huber"
+            },
+            "event": {
+              "text": "1970 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 684.7,
+            "vehicle": {
+              "text": "Yamaha 250 V4",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_250_V4"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "László Szabó",
+              "url": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Szab%C3%B3_(motorcyclist)"
+            },
+            "event": {
+              "text": "1970 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 736.9,
+            "vehicle": {
+              "text": "MZ RE 125",
+              "url": "https://en.wikipedia.org/wiki/MZ_Motorrad-_und_Zweiradwerk#Road_racing"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Ángel Nieto",
+              "url": "https://en.wikipedia.org/wiki/%C3%81ngel_Nieto"
+            },
+            "event": {
+              "text": "1970 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "50cc",
+              "url": "https://en.wikipedia.org/wiki/50_cc_Grand_Prix_motorcycle_racing"
+            },
+            "time": 773.3,
+            "vehicle": {
+              "text": "Derbi 50",
+              "url": "https://en.wikipedia.org/wiki/Derbi"
+            },
+            "year": "1970"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt/concrete",
+          "values": [
+            "Asphalt",
+            "Concrete"
+          ]
+        },
+        "turns": 160,
+        "years": "1971–1982"
+      },
+      {
+        "layout": "Nordschleife",
+        "length_km": 22.835,
+        "length_mi": 14.189,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 460.8,
+            "vehicle": {
+              "text": "Brabham BT26A",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT26A"
+            },
+            "year": "1969"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt/concrete",
+          "values": [
+            "Asphalt",
+            "Concrete"
+          ]
+        },
+        "turns": 160,
+        "years": "1967–1970"
+      },
+      {
+        "layout": "Nordschleife",
+        "length_km": 22.8,
+        "length_mi": 14.167,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            },
+            "event": {
+              "text": "1965 German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1965_German_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 504.1,
+            "vehicle": {
+              "text": "Lotus 33",
+              "url": "https://en.wikipedia.org/wiki/Lotus_33"
+            },
+            "year": "1965"
+          },
+          {
+            "driver": {
+              "text": "John Surtees",
+              "url": "https://en.wikipedia.org/wiki/John_Surtees"
+            },
+            "event": {
+              "text": "1966 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1966_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Sports car racing",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
+            },
+            "time": 517.0,
+            "vehicle": {
+              "text": "Ferrari 330 P4",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_P#330_P4"
+            },
+            "year": "1966"
+          },
+          {
+            "driver": {
+              "text": "John Surtees",
+              "url": "https://en.wikipedia.org/wiki/John_Surtees"
+            },
+            "event": {
+              "text": "1964 1000 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1964_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 3",
+              "url": "https://en.wikipedia.org/wiki/Group_3_(motorsport)"
+            },
+            "time": 549.0,
+            "vehicle": {
+              "text": "Ferrari 275 P",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_275_P"
+            },
+            "year": "1964"
+          },
+          {
+            "driver": {
+              "text": "Jean-Pierre Beltoise",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
+            },
+            "event": {
+              "text": "1966 German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1966_German_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "time": 569.4,
+            "vehicle": {
+              "text": "Matra MS5",
+              "url": "https://en.wikipedia.org/wiki/Matra_MS5"
+            },
+            "year": "1966"
+          },
+          {
+            "driver": {
+              "text": "Hermann Lang",
+              "url": "https://en.wikipedia.org/wiki/Hermann_Lang"
+            },
+            "event": {
+              "text": "1939 Eifelrennen",
+              "url": "https://en.wikipedia.org/wiki/1939_Grand_Prix_season#Non-championship_Grands_Prix"
+            },
+            "series": {
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            },
+            "time": 592.2,
+            "vehicle": {
+              "text": "Mercedes-Benz W154",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_W154"
+            },
+            "year": "1939"
+          },
+          {
+            "driver": {
+              "text": "Geoff Duke",
+              "url": "https://en.wikipedia.org/wiki/Geoff_Duke"
+            },
+            "event": {
+              "text": "1955 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1955_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 623.3,
+            "vehicle": {
+              "text": "Gilera Saturno"
+            },
+            "year": "1955"
+          },
+          {
+            "driver": {
+              "text": "Bill Lomas",
+              "url": "https://en.wikipedia.org/wiki/Bill_Lomas"
+            },
+            "event": {
+              "text": "1955 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1955_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "350cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 635.0,
+            "vehicle": {
+              "text": "Moto Guzzi Bialbero",
+              "url": "https://en.wikipedia.org/wiki/List_of_Moto_Guzzi_motorcycles#Racing_models"
+            },
+            "year": "1955"
+          },
+          {
+            "driver": {
+              "text": "Ragnar Eklund"
+            },
+            "event": {
+              "text": "1966 500 km of Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/1966_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 2",
+              "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
+            },
+            "time": 644.0,
+            "vehicle": {
+              "text": "Austin Mini Cooper S",
+              "url": "https://en.wikipedia.org/wiki/Mini#Mini_Cooper_and_Cooper_S:_1961–1971;_1990–2000"
+            },
+            "year": "1966"
+          },
+          {
+            "driver": {
+              "text": "Hermann Paul Müller",
+              "url": "https://en.wikipedia.org/wiki/Hermann_Paul_M%C3%BCller"
+            },
+            "event": {
+              "text": "1955 German motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1955_German_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 656.7,
+            "vehicle": {
+              "text": "NSU Rennmax G.P. 250cc",
+              "url": "https://en.wikipedia.org/wiki/NSU_Motorenwerke#NSU_motorcycles_and_scooters"
+            },
+            "year": "1955"
+          },
+          {
+            "driver": {
+              "text": "Carlo Ubbiali",
+              "url": "https://en.wikipedia.org/wiki/Carlo_Ubbiali"
+            },
+            "event": {
+              "text": "1958 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 666.6,
+            "vehicle": {
+              "text": "MV Agusta 125 Bialbero",
+              "url": "https://en.wikipedia.org/wiki/MV_Agusta_125_Bialbero"
+            },
+            "year": "1958"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 160,
+        "years": "1927–1966"
+      },
+      {
+        "layout": "Südschleife",
+        "length_km": 7.747,
+        "length_mi": 4.814,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Helmut Kelleners",
+              "url": "https://en.wikipedia.org/wiki/Helmut_Kelleners"
+            },
+            "event": {
+              "text": "1970 Internationales AvD-SCM-Rundstrecken-Rennen Aachen Nürburgring"
+            },
+            "series": {
+              "text": "Group 7",
+              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)#Group_7_two-seater_racing_cars_(1966_to_1975)"
+            },
+            "time": 158.6,
+            "vehicle": {
+              "text": "March 707",
+              "url": "https://en.wikipedia.org/wiki/March_707"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Jürgen Neuhaus"
+            },
+            "event": {
+              "text": "1971 6th International 300 km race"
+            },
+            "series": {
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#2nd_Generation_Group_5_-_\"Sports_Cars\"_(1970_to_1971)"
+            },
+            "time": 163.2,
+            "vehicle": {
+              "text": "Porsche 917 Spyder",
+              "url": "https://en.wikipedia.org/wiki/Porsche_917"
+            },
+            "year": "1971"
+          },
+          {
+            "driver": {
+              "text": "Brian Redman",
+              "url": "https://en.wikipedia.org/wiki/Brian_Redman"
+            },
+            "event": {
+              "text": "1968 Eifelrennen",
+              "url": "https://en.wikipedia.org/wiki/1968_European_Formula_Two_Championship"
+            },
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "time": 167.0,
+            "vehicle": {
+              "text": "Lola T100",
+              "url": "https://en.wikipedia.org/wiki/Lola_T100"
+            },
+            "year": "1968"
+          },
+          {
+            "driver": {
+              "text": "Paul Hawkins",
+              "url": "https://en.wikipedia.org/wiki/Paul_Hawkins_(racing_driver)"
+            },
+            "event": {
+              "text": "1968 Internationales ADAC-Eifelpokal-Rennen Nürburgring"
+            },
+            "series": {
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)#Sports_car_racing"
+            },
+            "time": 181.8,
+            "vehicle": {
+              "text": "Ford GT40",
+              "url": "https://en.wikipedia.org/wiki/Ford_GT40"
+            },
+            "year": "1968"
+          },
+          {
+            "driver": {
+              "text": "Giacomo Agostini",
+              "url": "https://en.wikipedia.org/wiki/Giacomo_Agostini"
+            },
+            "event": {
+              "text": "1968 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "350cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 186.7,
+            "vehicle": {
+              "text": "MV Agusta 350 3C",
+              "url": "https://en.wikipedia.org/wiki/MV_Agusta_350_racers#MV_Agusta_350_3C_1965–1973"
+            },
+            "year": "1968"
+          },
+          {
+            "driver": {
+              "text": "Giacomo Agostini",
+              "url": "https://en.wikipedia.org/wiki/Giacomo_Agostini"
+            },
+            "event": {
+              "text": "1968 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 188.6,
+            "vehicle": {
+              "text": "MV Agusta 500 Three",
+              "url": "https://en.wikipedia.org/wiki/MV_Agusta_500_Three"
+            },
+            "year": "1968"
+          },
+          {
+            "driver": {
+              "text": "Kurt Ahrens Jr.",
+              "url": "https://en.wikipedia.org/wiki/Kurt_Ahrens_Jr."
+            },
+            "event": {
+              "text": "1962 ADAC-Eifelpokal-Rennen"
+            },
+            "series": {
+              "text": "Formula Junior",
+              "url": "https://en.wikipedia.org/wiki/Formula_Junior"
+            },
+            "time": 192.2,
+            "vehicle": {
+              "text": "Lotus 22",
+              "url": "https://en.wikipedia.org/wiki/Lotus_22"
+            },
+            "year": "1962"
+          },
+          {
+            "driver": {
+              "text": "Bill Ivy",
+              "url": "https://en.wikipedia.org/wiki/Bill_Ivy"
+            },
+            "event": {
+              "text": "1968 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 193.4,
+            "vehicle": {
+              "text": "Yamaha 250 V4",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_250_V4"
+            },
+            "year": "1968"
+          },
+          {
+            "driver": {
+              "text": "Bill Ivy",
+              "url": "https://en.wikipedia.org/wiki/Bill_Ivy"
+            },
+            "event": {
+              "text": "1968 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 202.0,
+            "vehicle": {
+              "text": "Yamaha 125 V4",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_125_V4"
+            },
+            "year": "1968"
+          },
+          {
+            "driver": {
+              "text": "Jürgen Neuhaus"
+            },
+            "event": {
+              "text": "1967 ADAC-Hansa-Pokal-Rennen Nürburgring"
+            },
+            "series": {
+              "text": "Group 3",
+              "url": "https://en.wikipedia.org/wiki/Group_3_(motorsport)#1966_to_1969"
+            },
+            "time": 208.1,
+            "vehicle": {
+              "text": "Porsche 911 S",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_(classic)"
+            },
+            "year": "1967"
+          },
+          {
+            "driver": {
+              "text": "Hans-Georg Anscheidt",
+              "url": "https://en.wikipedia.org/wiki/Hans-Georg_Anscheidt"
+            },
+            "event": {
+              "text": "1968 German motorcycle Grand Prix"
+            },
+            "series": {
+              "text": "50cc",
+              "url": "https://en.wikipedia.org/wiki/50_cc_Grand_Prix_motorcycle_racing"
+            },
+            "time": 229.5,
+            "vehicle": {
+              "text": "Suzuki 50 GP",
+              "url": "https://en.wikipedia.org/wiki/Suzuki_50_GP_racers"
+            },
+            "year": "1968"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 27,
+        "years": "1927–1982"
+      },
+      {
+        "layout": "Gesamtstrecke",
+        "length_km": 28.265,
+        "length_mi": 17.563,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Louis Chiron",
+              "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+            },
+            "series": {
+              "text": "Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            },
+            "time": 906.1,
+            "vehicle": {
+              "text": "Bugatti Type35C",
+              "url": "https://en.wikipedia.org/wiki/Bugatti_Type_35#Type_35C"
+            },
+            "year": "1929"
+          },
+          {
+            "driver": {
+              "text": "Louis Chiron",
+              "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+            },
+            "event": {
+              "text": "1929 German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1929_German_Grand_Prix"
+            },
+            "series": {
+              "text": "Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            },
+            "time": 906.1,
+            "vehicle": {
+              "text": "Bugatti Type 35C",
+              "url": "https://en.wikipedia.org/wiki/Bugatti_Type_35"
+            },
+            "year": "1929"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 187,
+        "years": "1927–1982"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 50.33556,
+        "lon": 6.9475
+      },
+      "places": [
+        {
+          "text": "{'text': 'Nürburg', 'url': 'https://en.wikipedia.org/wiki/N%C3%BCrburg'}"
+        },
+        {
+          "text": "Nürburg",
+          "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+        },
+        {
+          "text": "Germany"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Nürburgring"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season",
+        "year": 1951
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season",
+        "year": 1952
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season",
+        "year": 1953
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season",
+        "year": 1954
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season",
+        "year": 1956
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season",
+        "year": 1957
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season",
+        "year": 1958
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season",
+        "year": 1961
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season",
+        "year": 1962
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season",
+        "year": 1963
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
+        "year": 1964
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season",
+        "year": 1965
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season",
+        "year": 1966
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season",
+        "year": 1967
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season",
+        "year": 1968
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
+        "year": 1969
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season",
+        "year": 1971
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season",
+        "year": 1972
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season",
+        "year": 1973
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season",
+        "year": 1974
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season",
+        "year": 1975
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season",
+        "year": 1976
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
+        "year": 1984
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
+        "year": 1985
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship",
+        "year": 1995
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship",
+        "year": 1996
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship",
+        "year": 1997
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship",
+        "year": 1998
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship",
+        "year": 1999
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship",
+        "year": 2000
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship",
+        "year": 2001
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship",
+        "year": 2002
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship",
+        "year": 2003
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
+        "year": 2004
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship",
+        "year": 2005
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship",
+        "year": 2006
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship",
+        "year": 2007
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
+        "year": 2009
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
+        "year": 2011
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
+        "year": 2013
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship",
+        "year": 2020
+      }
+    ],
+    "type": "Race circuit",
+    "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+  }
+]

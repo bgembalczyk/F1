@@ -1,0 +1,1382 @@
+[
+  {
+    "circuit_status": "current",
+    "direction": "Anti-clockwise",
+    "fia_grade": 1,
+    "grands_prix": [
+      {
+        "text": "Abu Dhabi Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 17,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "2007-05"
+      },
+      {
+        "event": "opened",
+        "date": "2009-10"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 5.281,
+        "length_mi": 3.281,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Kevin Magnussen",
+              "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen"
+            },
+            "event": {
+              "text": "2024 Abu Dhabi Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 85.637,
+            "vehicle": {
+              "text": "Haas VF-24",
+              "url": "https://en.wikipedia.org/wiki/Haas_VF-24"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Roy Nissany",
+              "url": "https://en.wikipedia.org/wiki/Roy_Nissany"
+            },
+            "event": {
+              "text": "2021 Abu Dhabi Formula 2 round",
+              "url": "https://en.wikipedia.org/wiki/2021_Yas_Island_Formula_2_round"
+            },
+            "series": {
+              "text": "FIA F2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2_Championship"
+            },
+            "time": 97.445,
+            "vehicle": {
+              "text": "Dallara F2 2018",
+              "url": "https://en.wikipedia.org/wiki/Dallara_F2_2018"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Tom Dillmann",
+              "url": "https://en.wikipedia.org/wiki/Tom_Dillmann"
+            },
+            "event": {
+              "text": "2024 4 Hours of Abu Dhabi Race 1",
+              "url": "https://en.wikipedia.org/wiki/2024_4_Hours_of_Abu_Dhabi"
+            },
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            },
+            "time": 100.725,
+            "vehicle": {
+              "text": "Oreca 07",
+              "url": "https://en.wikipedia.org/wiki/Oreca_07"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Laurents Hörr",
+              "url": "https://en.wikipedia.org/wiki/Laurents_H%C3%B6rr"
+            },
+            "event": {
+              "text": "2022 4 Hours of Abu Dhabi Race 2",
+              "url": "https://en.wikipedia.org/wiki/2022_4_Hours_of_Abu_Dhabi"
+            },
+            "series": {
+              "text": "LMP3",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
+            },
+            "time": 108.198,
+            "vehicle": {
+              "text": "Duqueine M30 D-08",
+              "url": "https://en.wikipedia.org/wiki/Duqueine_D-08"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Rashid Al Dhaheri",
+              "url": "https://en.wikipedia.org/wiki/Rashid_Al_Dhaheri"
+            },
+            "event": {
+              "text": "2026 1st Abu Dhabi Formula Regional Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2026_Formula_Regional_Middle_East_Trophy"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 108.779,
+            "vehicle": {
+              "text": "Tatuus T-326",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "year": "2026"
+          },
+          {
+            "driver": {
+              "text": "Maro Engel",
+              "url": "https://en.wikipedia.org/wiki/Maro_Engel"
+            },
+            "event": {
+              "text": "2023 Gulf 12 Hours",
+              "url": "https://en.wikipedia.org/wiki/2023_Gulf_12_Hours"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 111.291,
+            "vehicle": {
+              "text": "Mercedes-AMG GT3 Evo",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT3_Evo_(2020–present)"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Jack Mitchell",
+              "url": "https://en.wikipedia.org/wiki/Jack_Mitchell_(racing_driver)"
+            },
+            "event": {
+              "text": "2026 6 Hours of Abu Dhabi",
+              "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_24H_Series_Middle_East"
+            },
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT2"
+            },
+            "time": 114.182,
+            "vehicle": {
+              "text": "Ginetta G56 GT2",
+              "url": "https://en.wikipedia.org/wiki/Ginetta_G56#GT2"
+            },
+            "year": "2026"
+          },
+          {
+            "driver": {
+              "text": "Andrea Kimi Antonelli",
+              "url": "https://en.wikipedia.org/wiki/Andrea_Kimi_Antonelli"
+            },
+            "event": {
+              "text": "2022 1st Abu Dhabi Formula 4 UAE round",
+              "url": "https://en.wikipedia.org/wiki/2022_Formula_4_UAE_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 114.671,
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Alim Geshev"
+            },
+            "event": {
+              "text": "2024 Gulf Radical World Finals",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            },
+            "series": {
+              "text": "Radical Cup",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            },
+            "time": 114.84,
+            "vehicle": {
+              "text": "Radical SR3 XXR",
+              "url": "https://en.wikipedia.org/wiki/Radical_SR3#Racing_series"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Mikkel Mac",
+              "url": "https://en.wikipedia.org/wiki/Mikkel_Mac"
+            },
+            "event": {
+              "text": "2025 6 Hours of Abu Dhabi",
+              "url": "https://en.wikipedia.org/wiki/2025_6_Hours_of_Abu_Dhabi"
+            },
+            "series": {
+              "text": "Lamborghini Super Trofeo",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Super_Trofeo"
+            },
+            "time": 115.013,
+            "vehicle": {
+              "text": "Lamborghini Huracán LP 620-2 Super Trofeo Evo",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Hurac%C3%A1n#Huracán_LP_620-2_Super_Trofeo_EVO_(2019–present)"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Christian Brunsborg"
+            },
+            "event": {
+              "text": "2022 Abu Dhabi Ferrari Challenge Asia-Pacific round",
+              "url": "https://en.wikipedia.org/wiki/2021_Ferrari_Challenge_Asia-Pacific"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 116.889,
+            "vehicle": {
+              "text": "Ferrari 488 Challenge Evo",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_488#Motorsport"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Cameron McLeod",
+              "url": "https://en.wikipedia.org/wiki/Cameron_McLeod"
+            },
+            "event": {
+              "text": "2025 6 Hours of Abu Dhabi",
+              "url": "https://en.wikipedia.org/wiki/2025_6_Hours_of_Abu_Dhabi"
+            },
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            },
+            "time": 123.091,
+            "vehicle": {
+              "text": "Toyota GR Supra GT4 Evo",
+              "url": "https://en.wikipedia.org/wiki/Toyota_GR_Supra#GR_Supra_GT4"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Alexandros Annivas"
+            },
+            "event": {
+              "text": "2023 1st Abu Dhabi Gulf ProCar round",
+              "url": "https://en.wikipedia.org/wiki/UAE_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 126.197,
+            "vehicle": {
+              "text": "CUPRA León TCR",
+              "url": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n#Leon_Cup_Racer_and_Leon_TCR"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Loic Labeda"
+            },
+            "event": {
+              "text": "2026 6 Hours of Abu Dhabi",
+              "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_24H_Series_Middle_East"
+            },
+            "series": {
+              "text": "Alpine Cup",
+              "url": "https://en.wikipedia.org/wiki/Alpine_Elf_Europa_Cup"
+            },
+            "time": 127.073,
+            "vehicle": {
+              "text": "Alpine A110 Cup",
+              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#A110_Cup"
+            },
+            "year": "2026"
+          },
+          {
+            "driver": {
+              "text": "Jerzy Spinkiewicz"
+            },
+            "event": {
+              "text": "2023 2nd Abu Dhabi Renault Clio Cup Middle East round",
+              "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
+            },
+            "series": {
+              "text": "Renault Clio Cup",
+              "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
+            },
+            "time": 136.338,
+            "vehicle": {
+              "text": "Renault Clio R.S. V",
+              "url": "https://en.wikipedia.org/wiki/Clio_Renault_Sport"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Gianna (UNIMORE)"
+            },
+            "event": {
+              "text": "2024 Abu Dhabi Autonomous Racing League",
+              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Autonomous_Racing_League"
+            },
+            "series": {
+              "text": "Abu Dhabi Autonomous Racing League",
+              "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Autonomous_Racing_League"
+            },
+            "time": 139.267,
+            "vehicle": {
+              "text": "Dallara EAV24",
+              "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Autonomous_Racing_League#Technical_specifications"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Robert de Haan",
+              "url": "https://en.wikipedia.org/wiki/Robert_de_Haan"
+            },
+            "event": {
+              "text": "2026 Abu Dhabi Porsche Carrera Cup Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_Porsche_Carrera_Cup_Middle_East"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": "1.54.751",
+            "vehicle": {
+              "text": "Porsche 911 (992) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
+            }
+          }
+        ],
+        "turns": 16,
+        "years": "2021–present"
+      },
+      {
+        "layout": "Corkscrew Circuit",
+        "length_km": 4.572,
+        "length_mi": 2.841,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Rashid Al Dhaheri",
+              "url": "https://en.wikipedia.org/wiki/Rashid_Al_Dhaheri"
+            },
+            "event": {
+              "text": "2026 2nd Abu Dhabi Formula Regional Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2026_Formula_Regional_Middle_East_Trophy"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 100.48,
+            "vehicle": {
+              "text": "Tatuus T-326",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "year": "2026"
+          },
+          {
+            "driver": {
+              "text": "Emanuele Olivieri",
+              "url": "https://en.wikipedia.org/wiki/Emanuele_Olivieri"
+            },
+            "event": {
+              "text": "2025 2nd Abu Dhabi F4 Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2025_F4_Middle_East_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 106.687,
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Ian Aguilera",
+              "url": "https://en.wikipedia.org/wiki/Ian_Aguilera"
+            },
+            "event": {
+              "text": "2025 2nd Abu Dhabi Gulf Radical Cup round",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            },
+            "series": {
+              "text": "Radical Cup",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            },
+            "time": 107.668,
+            "vehicle": {
+              "text": "Radical SR3 XXR",
+              "url": "https://en.wikipedia.org/wiki/Radical_SR3#Racing_series"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Masoud Jaberian Mahmoud"
+            },
+            "event": {
+              "text": "2025 1st Abu Dhabi Gulf ProCar round",
+              "url": "https://en.wikipedia.org/wiki/UAE_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 107.707,
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Alex Giannone"
+            },
+            "event": {
+              "text": "2025 1st Abu Dhabi Gulf ProCar round",
+              "url": "https://en.wikipedia.org/wiki/UAE_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 108.655,
+            "vehicle": {
+              "text": "Porsche 911 (992) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Stanislav Novikov"
+            },
+            "event": {
+              "text": "2024 2nd Abu Dhabi Renault Clio Cup Middle East round",
+              "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
+            },
+            "series": {
+              "text": "Renault Clio Cup",
+              "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
+            },
+            "time": 126.357,
+            "vehicle": {
+              "text": "Renault Clio R.S. V",
+              "url": "https://en.wikipedia.org/wiki/Clio_Renault_Sport"
+            },
+            "year": "2024"
+          }
+        ],
+        "turns": 18,
+        "years": "2021–present"
+      },
+      {
+        "layout": "North Circuit",
+        "length_km": 3.005,
+        "length_mi": 1.867,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Hailey (TUM)"
+            },
+            "event": {
+              "text": "2025 Abu Dhabi Autonomous Racing League",
+              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Autonomous_Racing_League"
+            },
+            "series": {
+              "text": "Abu Dhabi Autonomous Racing League",
+              "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Autonomous_Racing_League"
+            },
+            "time": 58.183,
+            "vehicle": {
+              "text": "Dallara EAV24",
+              "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Autonomous_Racing_League#Technical_specifications"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Khaled Almarzouq"
+            },
+            "event": {
+              "text": "2024 1st Abu Dhabi Gulf ProCar round",
+              "url": "https://en.wikipedia.org/wiki/UAE_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 62.18,
+            "vehicle": {
+              "text": "Ferrari 488 Challenge Evo",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_488#Motorsport"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Luke Hilton"
+            },
+            "event": {
+              "text": "2024 1st Abu Dhabi Gulf Radical Cup round",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            },
+            "series": {
+              "text": "Radical Cup",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            },
+            "time": 64.194,
+            "vehicle": {
+              "text": "Radical SR3",
+              "url": "https://en.wikipedia.org/wiki/Radical_SR3"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Keith Gatehouse"
+            },
+            "event": {
+              "text": "2024 1st Abu Dhabi Gulf ProCar round",
+              "url": "https://en.wikipedia.org/wiki/UAE_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            },
+            "time": 66.277,
+            "vehicle": {
+              "text": "Mercedes-AMG GT4",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT4_(2017–present)"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Mohammed Al Hammadi"
+            },
+            "event": {
+              "text": "2023 2nd Abu Dhabi Gulf ProCar round",
+              "url": "https://en.wikipedia.org/wiki/UAE_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 66.996,
+            "vehicle": {
+              "text": "Porsche 911 (992) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#Motorsport"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "René Münnich",
+              "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_M%C3%BCnnich"
+            },
+            "event": {
+              "text": "2023 2nd Abu Dhabi Gulf ProCar round",
+              "url": "https://en.wikipedia.org/wiki/UAE_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 68.599,
+            "vehicle": {
+              "text": "Honda Civic Type R TCR (FK8)",
+              "url": "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_TCR#FK7/FK8_(2017)"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Saeed Al Sulaiti",
+              "url": "https://en.wikipedia.org/wiki/Saeed_Al_Sulaiti"
+            },
+            "event": {
+              "text": "2024 Abu Dhabi DSBK round",
+              "url": "https://en.wikipedia.org/wiki/UAE_Sportbike_Championship"
+            },
+            "series": {
+              "text": "Supersport",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            },
+            "time": 72.509,
+            "vehicle": {
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Ilya Sidorov"
+            },
+            "event": {
+              "text": "2024 1st Abu Dhabi Renault Clio Cup Middle East round",
+              "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
+            },
+            "series": {
+              "text": "Renault Clio Cup",
+              "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
+            },
+            "time": 75.411,
+            "vehicle": {
+              "text": "Renault Clio R.S. V",
+              "url": "https://en.wikipedia.org/wiki/Clio_Renault_Sport"
+            },
+            "year": "2024"
+          }
+        ],
+        "turns": 8,
+        "years": "2021–present"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 5.554,
+        "length_mi": 3.451,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 99.283,
+            "vehicle": {
+              "text": "Mercedes W10",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_F1_W10_EQ_Power%2B"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+            },
+            "event": {
+              "text": "2019 Abu Dhabi Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 99.283,
+            "vehicle": {
+              "text": "Mercedes AMG F1 W10 EQ Power+",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_F1_W10_EQ_Power%2B"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Alexander Albon",
+              "url": "https://en.wikipedia.org/wiki/Alexander_Albon"
+            },
+            "event": {
+              "text": "2017 Abu Dhabi Formula 2 round",
+              "url": "https://en.wikipedia.org/wiki/2017_Yas_Island_Formula_2_round"
+            },
+            "series": {
+              "text": "FIA F2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2_Championship"
+            },
+            "time": 110.314,
+            "vehicle": {
+              "text": "Dallara GP2/11",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/11"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Giedo van der Garde",
+              "url": "https://en.wikipedia.org/wiki/Giedo_van_der_Garde"
+            },
+            "event": {
+              "text": "2010 Abu Dhabi GP2 round",
+              "url": "https://en.wikipedia.org/wiki/2010_Yas_Marina_GP2_Series_round"
+            },
+            "series": {
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
+            },
+            "time": 110.11,
+            "vehicle": {
+              "text": "Dallara GP2/08",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/08"
+            },
+            "year": "2010"
+          },
+          {
+            "driver": {
+              "text": "Franco Colapinto",
+              "url": "https://en.wikipedia.org/wiki/Franco_Colapinto"
+            },
+            "event": {
+              "text": "2021 4 Hours of Abu Dhabi Race 2",
+              "url": "https://en.wikipedia.org/wiki/2021_4_Hours_of_Abu_Dhabi"
+            },
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            },
+            "time": 116.56,
+            "vehicle": {
+              "text": "Aurus 01",
+              "url": "https://en.wikipedia.org/wiki/Oreca_07#Aurus_01"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Marvin Kirchhöfer",
+              "url": "https://en.wikipedia.org/wiki/Marvin_Kirchh%C3%B6fer"
+            },
+            "event": {
+              "text": "2014 Abu Dhabi GP3 round",
+              "url": "https://en.wikipedia.org/wiki/2014_Yas_Marina_GP3_Series_round"
+            },
+            "series": {
+              "text": "GP3",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
+            },
+            "time": 116.888,
+            "vehicle": {
+              "text": "Dallara GP3/13",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP3/13"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Malthe Jakobsen",
+              "url": "https://en.wikipedia.org/wiki/Malthe_Jakobsen"
+            },
+            "event": {
+              "text": "2021 4 Hours of Abu Dhabi Race 1",
+              "url": "https://en.wikipedia.org/wiki/2021_4_Hours_of_Abu_Dhabi"
+            },
+            "series": {
+              "text": "LMP3",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
+            },
+            "time": 125.165,
+            "vehicle": {
+              "text": "Ligier JS P320",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_P320"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Jamie Chadwick",
+              "url": "https://en.wikipedia.org/wiki/Jamie_Chadwick"
+            },
+            "event": {
+              "text": "2020 Abu Dhabi F3 Asia round",
+              "url": "https://en.wikipedia.org/wiki/2019-20_F3_Asian_Championship"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 127.324,
+            "vehicle": {
+              "text": "Tatuus F3 T-318",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F3_T-318"
+            },
+            "year": "2020"
+          },
+          {
+            "driver": {
+              "text": "Thomas Mutsch",
+              "url": "https://en.wikipedia.org/wiki/Thomas_Mutsch"
+            },
+            "event": {
+              "text": "2010 Abu Dhabi FIA GT1 round",
+              "url": "https://en.wikipedia.org/wiki/2010_FIA_GT1_Abu_Dhabi_round"
+            },
+            "series": {
+              "text": "GT1",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1"
+            },
+            "time": 127.376,
+            "vehicle": {
+              "text": "Matech Ford GT1",
+              "url": "https://en.wikipedia.org/wiki/Ford_GT#Ford_GT_GT1"
+            },
+            "year": "2010"
+          },
+          {
+            "driver": {
+              "text": "Ben Barnicoat",
+              "url": "https://en.wikipedia.org/wiki/Ben_Barnicoat"
+            },
+            "event": {
+              "text": "2021 4 Hours of Abu Dhabi Race 2",
+              "url": "https://en.wikipedia.org/wiki/2021_4_Hours_of_Abu_Dhabi"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 128.791,
+            "vehicle": {
+              "text": "McLaren 720S GT3",
+              "url": "https://en.wikipedia.org/wiki/McLaren_720S#720S_GT3"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Felipe Drugovich",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Drugovich"
+            },
+            "event": {
+              "text": "2017 Abu Dhabi MRF Challenge round",
+              "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_MRF_Challenge_Formula_2000_Championship"
+            },
+            "series": {
+              "text": "MRF Challenge",
+              "url": "https://en.wikipedia.org/wiki/MRF_Challenge"
+            },
+            "time": 130.674,
+            "vehicle": {
+              "text": "Dallara Formulino Pro",
+              "url": "https://en.wikipedia.org/wiki/List_of_Dallara_cars"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Charles Weerts",
+              "url": "https://en.wikipedia.org/wiki/Charles_Weerts"
+            },
+            "event": {
+              "text": "2018 2nd Abu Dhabi Formula 4 UAE round",
+              "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Formula_4_UAE_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 131.046,
+            "vehicle": {
+              "text": "Tatuus F4-T014",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "Dylan Pereira",
+              "url": "https://en.wikipedia.org/wiki/Dylan_Pereira"
+            },
+            "event": {
+              "text": "2020 Abu Dhabi Porsche Sprint Challenge Middle East round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_GT3_Middle_East_Championship"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 131.371,
+            "vehicle": {
+              "text": "Porsche 911 (991 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2017–2020)"
+            },
+            "year": "2020"
+          },
+          {
+            "driver": {
+              "text": "André Couto",
+              "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Couto"
+            },
+            "event": {
+              "text": "2014 Abu Dhabi Audi R8 LMS Cup round",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_LMS_Cup#2014"
+            },
+            "series": {
+              "text": "Audi R8 LMS Cup",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_LMS_Cup"
+            },
+            "time": 132.246,
+            "vehicle": {
+              "text": "Audi R8 LMS ultra",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_(Type_42)#Audi_R8_LMS_ultra"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Philipp Baron"
+            },
+            "event": {
+              "text": "2014 Ferrari Challenge Finali Mondiali",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge#Finali_Mondiali"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 135.13,
+            "vehicle": {
+              "text": "Ferrari 458 Challenge Evo",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_458#458_Challenge"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Ange Barde"
+            },
+            "event": {
+              "text": "2013 Abu Dhabi Trofeo Maserati Corse World Series round",
+              "url": "https://en.wikipedia.org/wiki/Trofeo_Maserati#Trofeo_Worldwide"
+            },
+            "series": {
+              "text": "Trofeo Maserati",
+              "url": "https://en.wikipedia.org/wiki/Trofeo_Maserati"
+            },
+            "time": 138.823,
+            "vehicle": {
+              "text": "Maserati Trofeo",
+              "url": "https://en.wikipedia.org/wiki/Maserati_Coup%C3%A9#Maserati_Trofeo"
+            },
+            "year": "2013"
+          },
+          {
+            "driver": {
+              "text": "Olli Caldwell",
+              "url": "https://en.wikipedia.org/wiki/Olli_Caldwell"
+            },
+            "event": {
+              "text": "2018 Gulf 12 Hours",
+              "url": "https://en.wikipedia.org/wiki/2018_Gulf_12_Hours"
+            },
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            },
+            "time": 141.24,
+            "vehicle": {
+              "text": "Mercedes-AMG GT4",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT4_(2017–present)"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "Josh Files",
+              "url": "https://en.wikipedia.org/wiki/Josh_Files"
+            },
+            "event": {
+              "text": "2017 Abu Dhabi TCR Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2017_TCR_Middle_East_Series"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 141.896,
+            "vehicle": {
+              "text": "Honda Civic Type R TCR (FK2)",
+              "url": "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_TCR#FK2_(2015)"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Jamie Whincup",
+              "url": "https://en.wikipedia.org/wiki/Jamie_Whincup"
+            },
+            "event": {
+              "text": "2012 Abu Dhabi V8 Supercar round",
+              "url": "https://en.wikipedia.org/wiki/2012_Yas_Marina_Circuit_V8_Supercar_Event"
+            },
+            "series": {
+              "text": "V8 Supercars",
+              "url": "https://en.wikipedia.org/wiki/Supercars_Championship"
+            },
+            "time": "2.13.160",
+            "vehicle": {
+              "text": "Holden VE Commodore",
+              "url": "https://en.wikipedia.org/wiki/Holden_Commodore_(VE)#Motorsport"
+            }
+          },
+          {
+            "driver": {
+              "text": "Jani Hjerppe"
+            },
+            "event": {
+              "text": "2018 1st Abu Dhabi Radical Middle East Cup round",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            },
+            "series": {
+              "text": "Radical Cup",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            },
+            "time": "2.15.229",
+            "vehicle": {
+              "text": "Radical SR3",
+              "url": "https://en.wikipedia.org/wiki/Radical_SR3"
+            }
+          }
+        ],
+        "turns": 21,
+        "years": "2009–2021"
+      },
+      {
+        "layout": "Corkscrew Circuit",
+        "length_km": 4.73,
+        "length_mi": 2.939,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Jules Bianchi",
+              "url": "https://en.wikipedia.org/wiki/Jules_Bianchi"
+            },
+            "series": {
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
+            },
+            "time": 97.656,
+            "vehicle": {
+              "text": "Dallara GP2/11",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/11"
+            },
+            "year": "2011"
+          },
+          {
+            "driver": {
+              "text": "Charles Pic",
+              "url": "https://en.wikipedia.org/wiki/Charles_Pic"
+            },
+            "event": {
+              "text": "2011 Abu Dhabi GP2 Asia round",
+              "url": "https://en.wikipedia.org/wiki/2011_Yas_Marina_Circuit_GP2_Asia_Series_round"
+            },
+            "series": {
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
+            },
+            "time": 97.656,
+            "vehicle": {
+              "text": "Dallara GP2/11",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/11"
+            },
+            "year": "2011"
+          },
+          {
+            "driver": {
+              "text": "Maxime Martin",
+              "url": "https://en.wikipedia.org/wiki/Maxime_Martin"
+            },
+            "event": {
+              "text": "2011 Abu Dhabi FIA GT1 round",
+              "url": "https://en.wikipedia.org/wiki/2011_FIA_GT1_Abu_Dhabi_round"
+            },
+            "series": {
+              "text": "GT1",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1"
+            },
+            "time": 112.431,
+            "vehicle": {
+              "text": "Matech Ford GT1",
+              "url": "https://en.wikipedia.org/wiki/Ford_GT#Ford_GT_GT1"
+            },
+            "year": "2011"
+          },
+          {
+            "driver": {
+              "text": "Jehan Daruvala",
+              "url": "https://en.wikipedia.org/wiki/Jehan_Daruvala"
+            },
+            "event": {
+              "text": "2021 1st Abu Dhabi F3 Asian Championship round",
+              "url": "https://en.wikipedia.org/wiki/2021_F3_Asian_Championship"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 113.432,
+            "vehicle": {
+              "text": "Tatuus F3 T-318",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F3_T-318"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Rob Barff"
+            },
+            "event": {
+              "text": "2011 3rd Yas Marina UAE GT round"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 116.203,
+            "vehicle": {
+              "text": "Ferrari 458 Italia GT3",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_458#458_Italia_GT3"
+            },
+            "year": "2011"
+          },
+          {
+            "driver": {
+              "text": "Dilano van 't Hoff",
+              "url": "https://en.wikipedia.org/wiki/Dilano_van_%27t_Hoff"
+            },
+            "event": {
+              "text": "2021 2nd Abu Dhabi Formula 4 UAE round",
+              "url": "https://en.wikipedia.org/wiki/2021_Formula_4_UAE_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 117.198,
+            "vehicle": {
+              "text": "Tatuus F4-T014",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Jason Bargwanna",
+              "url": "https://en.wikipedia.org/wiki/Jason_Bargwanna"
+            },
+            "event": {
+              "text": "2011 Yas V8 400",
+              "url": "https://en.wikipedia.org/wiki/2011_Yas_V8_400"
+            },
+            "series": {
+              "text": "V8 Supercars",
+              "url": "https://en.wikipedia.org/wiki/Supercars_Championship"
+            },
+            "time": 117.74,
+            "vehicle": {
+              "text": "Holden VE Commodore",
+              "url": "https://en.wikipedia.org/wiki/Holden_Commodore_(VE)#Motorsport"
+            },
+            "year": "2011"
+          }
+        ],
+        "turns": 19,
+        "years": "2009–2021"
+      },
+      {
+        "layout": "North Circuit",
+        "length_km": 3.13,
+        "length_mi": 1.945,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Olli Caldwell",
+              "url": "https://en.wikipedia.org/wiki/Olli_Caldwell"
+            },
+            "event": {
+              "text": "2018 1st Abu Dhabi Formula 4 UAE round",
+              "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Formula_4_UAE_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 70.027,
+            "vehicle": {
+              "text": "Tatuus F4-T014",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "Luca Engstler",
+              "url": "https://en.wikipedia.org/wiki/Luca_Engstler"
+            },
+            "event": {
+              "text": "2018 Abu Dhabi TCR Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2018_TCR_Middle_East_Series"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 74.778,
+            "vehicle": {
+              "text": "Volkswagen Golf GTI TCR",
+              "url": "https://en.wikipedia.org/wiki/Volkswagen_Golf_Mk7#Golf_GTI"
+            },
+            "year": "2018"
+          }
+        ],
+        "turns": 10,
+        "years": "2009–2021"
+      },
+      {
+        "layout": "South Circuit",
+        "length_km": 2.36,
+        "length_mi": 1.466,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Jonathan Aberdein",
+              "url": "https://en.wikipedia.org/wiki/Jonathan_Aberdein"
+            },
+            "event": {
+              "text": "2017 2nd Abu Dhabi Formula 4 UAE round",
+              "url": "https://en.wikipedia.org/wiki/2016-17_Formula_4_UAE_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 59.572,
+            "vehicle": {
+              "text": "Tatuus F4-T014",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014"
+            },
+            "year": "2017"
+          }
+        ],
+        "turns": 12,
+        "years": "2009–2021"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 24.46722,
+        "lon": 54.60306
+      },
+      "places": [
+        {
+          "text": "{'text': 'Abu Dhabi', 'url': 'https://en.wikipedia.org/wiki/Abu_Dhabi'}"
+        },
+        {
+          "text": "Yas Island",
+          "url": "https://en.wikipedia.org/wiki/Yas_Island"
+        },
+        {
+          "text": "Abu Dhabi",
+          "url": "https://en.wikipedia.org/wiki/Abu_Dhabi"
+        },
+        {
+          "text": "UAE",
+          "url": "https://en.wikipedia.org/wiki/UAE"
+        },
+        {
+          "text": "United Arab Emirates",
+          "url": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Yas Marina Circuit"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
+        "year": 2009
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship",
+        "year": 2010
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
+        "year": 2011
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship",
+        "year": 2012
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
+        "year": 2013
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship",
+        "year": 2014
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
+        "year": 2015
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+        "year": 2016
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
+        "year": 2017
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
+        "year": 2018
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
+        "year": 2019
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship",
+        "year": 2020
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+        "year": 2021
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+        "year": 2022
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      }
+    ],
+    "type": "Race circuit",
+    "url": "https://en.wikipedia.org/wiki/Yas_Marina_Circuit"
+  }
+]

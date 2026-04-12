@@ -1,0 +1,2669 @@
+[
+  {
+    "circuit_status": "current",
+    "direction": "Clockwise",
+    "fia_grade": 1,
+    "grands_prix": [
+      {
+        "text": "Spanish Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 0,
+    "history": [
+      {
+        "event": "opened",
+        "date": "2026"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 5.416,
+        "length_mi": 3.365,
+        "turns": 22,
+        "years": "2026"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 40.46528,
+        "lon": -3.61528
+      },
+      "places": [
+        {
+          "text": "{'text': 'Barajas', 'url': 'https://en.wikipedia.org/wiki/Barajas_(Madrid)'}"
+        },
+        {
+          "text": "Barajas",
+          "url": "https://en.wikipedia.org/wiki/Barajas_(Madrid)"
+        },
+        {
+          "text": "Madrid",
+          "url": "https://en.wikipedia.org/wiki/Madrid"
+        },
+        {
+          "text": "Spain",
+          "url": "https://en.wikipedia.org/wiki/Spain"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Madring"
+      ]
+    },
+    "type": "Street circuit",
+    "url": "https://en.wikipedia.org/wiki/Madring"
+  },
+  {
+    "circuit_status": "current",
+    "direction": "Anti-clockwise",
+    "fia_grade": 1,
+    "grands_prix": [
+      {
+        "text": "Singapore Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Singapore_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 16,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "2007-08-31"
+      },
+      {
+        "event": "opened",
+        "date": "2008-08-31"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 4.927,
+        "length_mi": 3.061,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+            },
+            "event": {
+              "text": "2025 Singapore Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 93.808,
+            "vehicle": {
+              "text": "Ferrari SF-25",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_SF-25"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Doriane Pin",
+              "url": "https://en.wikipedia.org/wiki/Doriane_Pin"
+            },
+            "event": {
+              "text": "2025 Singapore F1 Academy round",
+              "url": "https://en.wikipedia.org/wiki/2025_F1_Academy_season"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 123.587,
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Dylan Pereira",
+              "url": "https://en.wikipedia.org/wiki/Dylan_Pereira"
+            },
+            "event": {
+              "text": "2025 Singapore Porsche Carrera Cup Asia round",
+              "url": "https://en.wikipedia.org/wiki/2025_Porsche_Carrera_Cup_Asia"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 123.623,
+            "vehicle": {
+              "text": "Porsche 911 (992 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–2025)"
+            },
+            "year": "2025"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 19,
+        "years": "2025–present"
+      },
+      {
+        "layout": "Revised Circuit with New Straight between Turns 15–16",
+        "length_km": 4.94,
+        "length_mi": 3.07,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Daniel Ricciardo",
+              "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
+            },
+            "event": {
+              "text": "2024 Singapore Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 94.486,
+            "vehicle": {
+              "text": "RB VCARB 01",
+              "url": "https://en.wikipedia.org/wiki/RB_VCARB_01"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Tanart Sathienthirakul",
+              "url": "https://en.wikipedia.org/wiki/Tanart_Sathienthirakul"
+            },
+            "event": {
+              "text": "2023 Singapore Thailand Super Series round"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 122.53,
+            "vehicle": {
+              "text": "Audi R8 LMS GT3 Evo II",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_(Type_4S)#R8_LMS_(GT3)"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Doriane Pin",
+              "url": "https://en.wikipedia.org/wiki/Doriane_Pin"
+            },
+            "event": {
+              "text": "2024 Singapore F1 Academy round",
+              "url": "https://en.wikipedia.org/wiki/2024_F1_Academy_season"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 124.454,
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Florian Latorre",
+              "url": "https://en.wikipedia.org/wiki/Florian_Latorre"
+            },
+            "event": {
+              "text": "2023 Singapore Porsche Carrera Cup Asia round",
+              "url": "https://en.wikipedia.org/wiki/2023_Porsche_Carrera_Cup_Asia"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 125.061,
+            "vehicle": {
+              "text": "Porsche 911 (992 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–2025)"
+            },
+            "year": "2023"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 19,
+        "years": "2023–2024"
+      },
+      {
+        "layout": "Revised Circuit with Re-profiled Turns 16–17",
+        "length_km": 5.063,
+        "length_mi": 3.146,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Kevin Magnussen",
+              "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen"
+            },
+            "event": {
+              "text": "2018 Singapore Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2018_Singapore_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 101.905,
+            "vehicle": {
+              "text": "Haas VF-18",
+              "url": "https://en.wikipedia.org/wiki/Haas_VF-18"
+            },
+            "year": "2018"
+          },
+          {
+            "driver": {
+              "text": "Alice Powell",
+              "url": "https://en.wikipedia.org/wiki/Alice_Powell"
+            },
+            "event": {
+              "text": "2022 Singapore W Series round",
+              "url": "https://en.wikipedia.org/wiki/2022_Singapore_W_Series_round"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 133.986,
+            "vehicle": {
+              "text": "Tatuus FT-60",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_FT-60"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Kantasak Kusiri"
+            },
+            "event": {
+              "text": "2022 Singapore Thailand Super Series round"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 136.137,
+            "vehicle": {
+              "text": "Mercedes-AMG GT3 Evo",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT3_Evo_(2020–present)"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Will Bamber"
+            },
+            "event": {
+              "text": "2019 Singapore Porsche Carrera Cup Asia round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 137.76,
+            "vehicle": {
+              "text": "Porsche 911 (991 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2017–2020)"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+            },
+            "event": {
+              "text": "2017 Singapore Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2017_Singapore_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 105.008,
+            "vehicle": {
+              "text": "Mercedes AMG F1 W08 EQ Power+",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_F1_W08_EQ_Power%2B"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Ho-Pin Tung",
+              "url": "https://en.wikipedia.org/wiki/Ho-Pin_Tung"
+            },
+            "event": {
+              "text": "2015 Singapore Porsche Carrera Cup Asia round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 139.235,
+            "vehicle": {
+              "text": "Porsche 911 (991 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2013–2017)"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Jean-Karl Vernay",
+              "url": "https://en.wikipedia.org/wiki/Jean-Karl_Vernay"
+            },
+            "event": {
+              "text": "2016 Singapore TCR International Series round",
+              "url": "https://en.wikipedia.org/wiki/2016_TCR_International_Series_Singapore_round"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 145.954,
+            "vehicle": {
+              "text": "Volkswagen Golf GTI TCR",
+              "url": "https://en.wikipedia.org/wiki/Volkswagen_Golf_Mk7#Golf_GTI"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "Sebastian Vettel",
+              "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+            },
+            "event": {
+              "text": "2013 Singapore Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2013_Singapore_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 108.574,
+            "vehicle": {
+              "text": "Red Bull RB9",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_RB9"
+            },
+            "year": "2013"
+          },
+          {
+            "driver": {
+              "text": "Jolyon Palmer",
+              "url": "https://en.wikipedia.org/wiki/Jolyon_Palmer"
+            },
+            "event": {
+              "text": "2013 Singapore GP2 round",
+              "url": "https://en.wikipedia.org/wiki/2013_Marina_Bay_GP2_Series_round"
+            },
+            "series": {
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
+            },
+            "time": 117.368,
+            "vehicle": {
+              "text": "Dallara GP2/11",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/11"
+            },
+            "year": "2013"
+          },
+          {
+            "driver": {
+              "text": "Earl Bamber",
+              "url": "https://en.wikipedia.org/wiki/Earl_Bamber"
+            },
+            "event": {
+              "text": "2014 Singapore Porsche Carrera Cup Asia round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 140.146,
+            "vehicle": {
+              "text": "Porsche 911 (991 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2013–2017)"
+            },
+            "year": "2014"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 23,
+        "years": "2018–2022"
+      },
+      {
+        "layout": "Revised Circuit with Re-profiled Turns 11–13",
+        "length_km": 5.065,
+        "length_mi": 3.147,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 105.008,
+            "vehicle": {
+              "text": "Mercedes W08",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_F1_W08_EQ_Power%2B"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Kimi Räikkönen",
+              "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
+            },
+            "event": {
+              "text": "2008 Singapore Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2008_Singapore_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 105.599,
+            "vehicle": {
+              "text": "Ferrari F2008",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_F2008"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Stefano Coletti",
+              "url": "https://en.wikipedia.org/wiki/Stefano_Coletti"
+            },
+            "event": {
+              "text": "2012 Singapore GP2 round",
+              "url": "https://en.wikipedia.org/wiki/2012_Marina_Bay_GP2_Series_round"
+            },
+            "series": {
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
+            },
+            "time": 123.184,
+            "vehicle": {
+              "text": "Dallara GP2/11",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/11"
+            },
+            "year": "2012"
+          },
+          {
+            "driver": {
+              "text": "Ross Jamison",
+              "url": "https://en.wikipedia.org/wiki/Ross_Jamison"
+            },
+            "event": {
+              "text": "2008 Singapore Formula BMW Pacific round",
+              "url": "https://en.wikipedia.org/wiki/JK_Racing_Asia_Series"
+            },
+            "series": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            },
+            "time": 131.139,
+            "vehicle": {
+              "text": "Mygale FB02",
+              "url": "https://en.wikipedia.org/wiki/Mygale_FB02"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Christian Menzel",
+              "url": "https://en.wikipedia.org/wiki/Christian_Menzel"
+            },
+            "event": {
+              "text": "2011 Singapore Porsche Carrera Cup Asia round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 140.975,
+            "vehicle": {
+              "text": "Porsche 911 (997 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_Cup_3.8_(2009–2013)"
+            },
+            "year": "2011"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 23,
+        "years": "2015–2017"
+      },
+      {
+        "layout": "Revised Circuit with the Singapore Sling Chicane at Turn 10 Removed",
+        "length_km": 5.061,
+        "length_mi": 3.145,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Sebastian Vettel",
+              "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 108.574,
+            "vehicle": {
+              "text": "Red Bull RB9",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_RB9"
+            },
+            "year": "2013"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 23,
+        "years": "2013–2014"
+      },
+      {
+        "layout": "Original Circuit",
+        "length_km": 5.073,
+        "length_mi": 3.152,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Kimi Räikkönen",
+              "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 105.599,
+            "vehicle": {
+              "text": "Ferrari F2008",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_F2008"
+            },
+            "year": "2008"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 23,
+        "years": "2008–2012"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 1.2915306,
+        "lon": 103.86385
+      },
+      "places": [
+        {
+          "text": "{'text': 'Marina Bay', 'url': 'https://en.wikipedia.org/wiki/Marina_Bay,_Singapore'}"
+        },
+        {
+          "text": "Downtown Core",
+          "url": "https://en.wikipedia.org/wiki/Downtown_Core"
+        },
+        {
+          "text": "Kallang",
+          "url": "https://en.wikipedia.org/wiki/Kallang"
+        },
+        {
+          "text": "Marina Bay, Singapore",
+          "url": "https://en.wikipedia.org/wiki/Marina_Bay,_Singapore"
+        },
+        {
+          "text": "Singapore",
+          "url": "https://en.wikipedia.org/wiki/Singapore"
+        }
+      ]
+    },
+    "name": {
+      "former_names": [
+        {
+          "name": "Singapore Street Circuit"
+        }
+      ],
+      "list": [
+        "Marina Bay Street Circuit"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship",
+        "year": 2008
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
+        "year": 2009
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship",
+        "year": 2010
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
+        "year": 2011
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship",
+        "year": 2012
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
+        "year": 2013
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship",
+        "year": 2014
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
+        "year": 2015
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+        "year": 2016
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
+        "year": 2017
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
+        "year": 2018
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
+        "year": 2019
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+        "year": 2022
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      }
+    ],
+    "type": "Street circuit",
+    "url": "https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit"
+  },
+  {
+    "circuit_status": "current",
+    "direction": "Anti-clockwise",
+    "fia_grade": 1,
+    "grands_prix": [
+      {
+        "text": "Miami Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Miami_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 4,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "2021"
+      },
+      {
+        "event": "broke_ground",
+        "date": "2021"
+      },
+      {
+        "event": "opened",
+        "date": "2022-05-07"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 5.412,
+        "length_mi": 3.363,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Max Verstappen",
+              "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+            },
+            "event": {
+              "text": "2023 Miami Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2023_Miami_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 89.708,
+            "vehicle": {
+              "text": "Red Bull Racing RB19",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB19"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Abbi Pulling",
+              "url": "https://en.wikipedia.org/wiki/Abbi_Pulling"
+            },
+            "event": {
+              "text": "2022 Miami W Series round",
+              "url": "https://en.wikipedia.org/wiki/2022_Miami_W_Series_round"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 116.406,
+            "vehicle": {
+              "text": "Tatuus F3 T-318",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F3_T-318"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Riley Dickinson",
+              "url": "https://en.wikipedia.org/wiki/Riley_Dickinson"
+            },
+            "event": {
+              "text": "2023 Miami Porsche Carrera Cup North America round",
+              "url": "https://en.wikipedia.org/wiki/2023_Porsche_Carrera_Cup_North_America"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 116.693,
+            "vehicle": {
+              "text": "Porsche 911 (992 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–2025)"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Bianca Bustamante",
+              "url": "https://en.wikipedia.org/wiki/Bianca_Bustamante"
+            },
+            "event": {
+              "text": "2024 Miami F1 Academy round",
+              "url": "https://en.wikipedia.org/wiki/2024_F1_Academy_season"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 119.322,
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "year": "2024"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 19,
+        "years": "2022–present"
+      },
+      {
+        "layout": "Extended Marina Loop",
+        "length_km": 4.506,
+        "length_mi": 2.8,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Massimo Perrina"
+            },
+            "event": {
+              "text": "2025 Miami Ferrari Challenge North America round",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge#Ferrari_Challenge_North_America"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 96.999,
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "year": "2025"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 19,
+        "years": "2024–present"
+      },
+      {
+        "layout": "Marina Loop",
+        "length_km": 3.927,
+        "length_mi": 2.44,
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 18,
+        "years": "2024–present"
+      },
+      {
+        "layout": "Extended MIA Loop",
+        "length_km": 2.816,
+        "length_mi": 1.75,
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 14,
+        "years": "2024–present"
+      },
+      {
+        "layout": "MIA Loop",
+        "length_km": 2.32,
+        "length_mi": 1.442,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Oliver Rowland",
+              "url": "https://en.wikipedia.org/wiki/Oliver_Rowland"
+            },
+            "event": {
+              "text": "2026 Miami ePrix",
+              "url": "https://en.wikipedia.org/wiki/2026_Miami_ePrix"
+            },
+            "series": {
+              "text": "Formula E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
+            },
+            "time": 62.316,
+            "vehicle": {
+              "text": "Nissan e-4ORCE 05",
+              "url": "https://en.wikipedia.org/wiki/Formula_E_Gen3#Gen_3_Evo"
+            },
+            "year": "2026"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 13,
+        "years": "2024–present"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 25.95806,
+        "lon": -80.23889
+      },
+      "places": [
+        {
+          "text": "{'text': 'Miami Gardens', 'url': 'https://en.wikipedia.org/wiki/Miami_Gardens,_Florida'}"
+        },
+        {
+          "text": "Hard Rock Stadium",
+          "url": "https://en.wikipedia.org/wiki/Hard_Rock_Stadium"
+        },
+        {
+          "text": "Miami Gardens, Florida",
+          "url": "https://en.wikipedia.org/wiki/Miami_Gardens,_Florida"
+        },
+        {
+          "text": "U.S."
+        },
+        {
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Miami International Autodrome"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+        "year": 2022
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      }
+    ],
+    "type": "Street circuit",
+    "url": "https://en.wikipedia.org/wiki/Miami_International_Autodrome"
+  },
+  {
+    "circuit_status": "former",
+    "direction": "Anti-clockwise",
+    "grands_prix": [
+      {
+        "text": "Spanish Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 4,
+    "history": [
+      {
+        "event": "opened",
+        "date": "1933"
+      },
+      {
+        "event": "closed",
+        "date": "1986"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Temporary Street Circuit",
+        "length_km": 3.791,
+        "length_mi": 2.356,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Ronnie Peterson",
+              "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
+            },
+            "event": {
+              "text": "1973 Spanish Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1973_Spanish_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 83.8,
+            "vehicle": {
+              "text": "Lotus 72E",
+              "url": "https://en.wikipedia.org/wiki/Lotus_72"
+            },
+            "year": "1973"
+          },
+          {
+            "driver": {
+              "text": "Hans-Joachim Stuck",
+              "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+            },
+            "event": {
+              "text": "1974 Montjuïc F2 round",
+              "url": "https://en.wikipedia.org/wiki/1974_European_Formula_Two_Championship"
+            },
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "time": 85.58,
+            "vehicle": {
+              "text": "March 742",
+              "url": "https://en.wikipedia.org/wiki/March_742"
+            },
+            "year": "1974"
+          },
+          {
+            "driver": {
+              "text": "Gérard Larrousse",
+              "url": "https://en.wikipedia.org/wiki/G%C3%A9rard_Larrousse"
+            },
+            "event": {
+              "text": "1973 Montjuïc European Sportscar Championship round",
+              "url": "https://en.wikipedia.org/wiki/European_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
+            },
+            "time": 89.8,
+            "vehicle": {
+              "text": "Lola T292",
+              "url": "https://en.wikipedia.org/wiki/Lola_T290"
+            },
+            "year": "1973"
+          },
+          {
+            "driver": {
+              "text": "Jorge de Bagration",
+              "url": "https://en.wikipedia.org/wiki/Jorge_de_Bagration"
+            },
+            "event": {
+              "text": "1969 12 Hours of Montjuïc",
+              "url": "https://en.wikipedia.org/wiki/European_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Prototype-Sports_Cars_(1966_to_1971)"
+            },
+            "time": 95.6,
+            "vehicle": {
+              "text": "Porsche 908/02",
+              "url": "https://en.wikipedia.org/wiki/Porsche_908#1969:_908/02"
+            },
+            "year": "1969"
+          },
+          {
+            "driver": {
+              "text": "Franco Uncini",
+              "url": "https://en.wikipedia.org/wiki/Franco_Uncini"
+            },
+            "event": {
+              "text": "1976 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "350cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 102.3,
+            "vehicle": {
+              "text": "Yamaha TZ 350",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_TZ_350"
+            },
+            "year": "1976"
+          },
+          {
+            "driver": {
+              "text": "Walter Villa",
+              "url": "https://en.wikipedia.org/wiki/Walter_Villa"
+            },
+            "event": {
+              "text": "1976 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 103.0,
+            "vehicle": {
+              "text": "Harley-Davidson RR250",
+              "url": "https://en.wikipedia.org/wiki/Harley-Davidson_RR250"
+            },
+            "year": "1976"
+          },
+          {
+            "driver": {
+              "text": "Pier Paolo Bianchi",
+              "url": "https://en.wikipedia.org/wiki/Pier_Paolo_Bianchi"
+            },
+            "event": {
+              "text": "1976 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 108.8,
+            "vehicle": {
+              "text": "Morbidelli 125",
+              "url": "https://en.wikipedia.org/wiki/Morbidelli"
+            },
+            "year": "1976"
+          },
+          {
+            "driver": {
+              "text": "Angelo Bergamonti",
+              "url": "https://en.wikipedia.org/wiki/Angelo_Bergamonti"
+            },
+            "event": {
+              "text": "1970 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 109.85,
+            "vehicle": {
+              "text": "MV Agusta 500 Three",
+              "url": "https://en.wikipedia.org/wiki/MV_Agusta_500_Three"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Tazio Nuvolari",
+              "url": "https://en.wikipedia.org/wiki/Tazio_Nuvolari"
+            },
+            "event": {
+              "text": "1936 Penya Rhin Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1936_Grand_Prix_season"
+            },
+            "series": {
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            },
+            "time": 116.0,
+            "vehicle": {
+              "text": "Alfa Romeo 12C-36",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_12C"
+            },
+            "year": "1936"
+          },
+          {
+            "driver": {
+              "text": "Ángel Nieto",
+              "url": "https://en.wikipedia.org/wiki/%C3%81ngel_Nieto"
+            },
+            "event": {
+              "text": "1976 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "50cc",
+              "url": "https://en.wikipedia.org/wiki/50_cc_Grand_Prix_motorcycle_racing"
+            },
+            "time": 117.0,
+            "vehicle": {
+              "text": "Bultaco TSS 50",
+              "url": "https://en.wikipedia.org/wiki/Bultaco"
+            },
+            "year": "1976"
+          }
+        ],
+        "turns": 12,
+        "years": "1933–1950, 1953–1986"
+      },
+      {
+        "layout": "Temporary Street Circuit",
+        "length_km": 4.205,
+        "length_mi": 2.613,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Umberto Masetti",
+              "url": "https://en.wikipedia.org/wiki/Umberto_Masetti"
+            },
+            "event": {
+              "text": "1952 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1952_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 153.57,
+            "vehicle": {
+              "text": "Gilera 500 Saturno \"Piuma\""
+            },
+            "year": "1952"
+          },
+          {
+            "driver": {
+              "text": "Emilio Mendogni",
+              "url": "https://en.wikipedia.org/wiki/Emilio_Mendogni"
+            },
+            "event": {
+              "text": "1952 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1952_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 159.98,
+            "vehicle": {
+              "text": "Moto Morini 125 GP",
+              "url": "https://en.wikipedia.org/wiki/Moto_Morini"
+            },
+            "year": "1952"
+          }
+        ],
+        "years": "1952"
+      },
+      {
+        "layout": "Temporary Street Circuit",
+        "length_km": 6.033,
+        "length_mi": 3.749,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Enrico Lorenzetti",
+              "url": "https://en.wikipedia.org/wiki/Enrico_Lorenzetti"
+            },
+            "event": {
+              "text": "1951 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 225.0,
+            "vehicle": {
+              "text": "Moto Guzzi 500 Bicilindrica"
+            },
+            "year": "1951"
+          },
+          {
+            "driver": {
+              "text": "Tommy Wood",
+              "url": "https://en.wikipedia.org/wiki/Tommy_Wood_(motorcyclist)"
+            },
+            "event": {
+              "text": "1951 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "350cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 227.0,
+            "vehicle": {
+              "text": "Velocette 350 GP",
+              "url": "https://en.wikipedia.org/wiki/Velocette"
+            },
+            "year": "1951"
+          },
+          {
+            "driver": {
+              "text": "Carlo Ubbiali",
+              "url": "https://en.wikipedia.org/wiki/Carlo_Ubbiali"
+            },
+            "event": {
+              "text": "1951 Spanish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 244.98,
+            "vehicle": {
+              "text": "Mondial 125SS",
+              "url": "https://en.wikipedia.org/wiki/Mondial_(motorcycle_manufacturer)"
+            },
+            "year": "1951"
+          }
+        ],
+        "years": "1951"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 41.36639,
+        "lon": 2.15167
+      },
+      "places": [
+        {
+          "text": "{'text': 'Barcelona', 'url': 'https://en.wikipedia.org/wiki/Barcelona'}"
+        },
+        {
+          "text": "Montjuïc",
+          "url": "https://en.wikipedia.org/wiki/Montju%C3%AFc"
+        },
+        {
+          "text": "Barcelona",
+          "url": "https://en.wikipedia.org/wiki/Barcelona"
+        },
+        {
+          "text": "Catalonia",
+          "url": "https://en.wikipedia.org/wiki/Catalonia"
+        },
+        {
+          "text": "Spain",
+          "url": "https://en.wikipedia.org/wiki/Spain"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Montjuïc Circuit"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
+        "year": 1969
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season",
+        "year": 1971
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season",
+        "year": 1973
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season",
+        "year": 1975
+      }
+    ],
+    "type": "Street circuit",
+    "url": "https://en.wikipedia.org/wiki/Montju%C3%AFc_Circuit"
+  },
+  {
+    "circuit_status": "former",
+    "direction": "Clockwise",
+    "fia_grade": 2,
+    "grands_prix": [
+      {
+        "text": "Canadian Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 8,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "1960"
+      },
+      {
+        "event": "opened",
+        "date": "1961-06"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Clockwise Grand Prix Circuit",
+        "length_km": 3.957,
+        "length_mi": 2.459,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Marco Werner",
+              "url": "https://en.wikipedia.org/wiki/Marco_Werner"
+            },
+            "event": {
+              "text": "2008 Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/2008_Grand_Prix_of_Mosport"
+            },
+            "series": {
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
+            },
+            "time": 65.823,
+            "vehicle": {
+              "text": "Audi R10 TDI",
+              "url": "https://en.wikipedia.org/wiki/Audi_R10_TDI"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Tom Blomqvist",
+              "url": "https://en.wikipedia.org/wiki/Tom_Blomqvist"
+            },
+            "event": {
+              "text": "2022 Chevrolet Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2022_Chevrolet_Grand_Prix"
+            },
+            "series": {
+              "text": "DPi",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype_International"
+            },
+            "time": 65.987,
+            "vehicle": {
+              "text": "Acura ARX-05",
+              "url": "https://en.wikipedia.org/wiki/Acura_ARX-05"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "David Brabham",
+              "url": "https://en.wikipedia.org/wiki/David_Brabham"
+            },
+            "event": {
+              "text": "2008 Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/2008_Grand_Prix_of_Mosport"
+            },
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            },
+            "time": 66.123,
+            "vehicle": {
+              "text": "Acura ARX-01B",
+              "url": "https://en.wikipedia.org/wiki/Acura_ARX-01B"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Alexander Sims",
+              "url": "https://en.wikipedia.org/wiki/Alexander_Sims_(racing_driver)"
+            },
+            "event": {
+              "text": "2023 Chevrolet Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2023_Chevrolet_Grand_Prix"
+            },
+            "series": {
+              "text": "LMDh",
+              "url": "https://en.wikipedia.org/wiki/LMDh"
+            },
+            "time": 67.422,
+            "vehicle": {
+              "text": "Cadillac V-Series.R",
+              "url": "https://en.wikipedia.org/wiki/Cadillac_V-Series.R"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Tom Kristensen",
+              "url": "https://en.wikipedia.org/wiki/Tom_Kristensen"
+            },
+            "event": {
+              "text": "2002 Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/2002_Grand_Prix_of_Mosport"
+            },
+            "series": {
+              "text": "LMP900",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 68.444,
+            "vehicle": {
+              "text": "Audi R8",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_(LMP)"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "James Weaver",
+              "url": "https://en.wikipedia.org/wiki/James_Weaver_(racing_driver)"
+            },
+            "event": {
+              "text": "2003 Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/2003_Grand_Prix_of_Mosport"
+            },
+            "series": {
+              "text": "LMP675",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 69.479,
+            "vehicle": {
+              "text": "Lola EX257",
+              "url": "https://en.wikipedia.org/wiki/MG-Lola_EX257"
+            },
+            "year": "2003"
+          },
+          {
+            "driver": {
+              "text": "Oswaldo Negri Jr.",
+              "url": "https://en.wikipedia.org/wiki/Oswaldo_Negri_Jr."
+            },
+            "event": {
+              "text": "2015 SportsCar Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2015_SportsCar_Grand_Prix"
+            },
+            "series": {
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
+            },
+            "time": 70.2,
+            "vehicle": {
+              "text": "Ligier JS P2",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_P2"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Colin Braun",
+              "url": "https://en.wikipedia.org/wiki/Colin_Braun"
+            },
+            "event": {
+              "text": "2013 SportsCar Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2013_SportsCar_Grand_Prix"
+            },
+            "series": {
+              "text": "LMPC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge"
+            },
+            "time": 70.962,
+            "vehicle": {
+              "text": "Oreca FLM09",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge#Oreca_FLM09"
+            },
+            "year": "2013"
+          },
+          {
+            "driver": {
+              "text": "John Edwards",
+              "url": "https://en.wikipedia.org/wiki/John_Edwards_(racing_driver)"
+            },
+            "event": {
+              "text": "2009 Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/2009_Atlantic_Championship"
+            },
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            },
+            "time": 71.541,
+            "vehicle": {
+              "text": "Swift 016.a",
+              "url": "https://en.wikipedia.org/wiki/Swift_016.a"
+            },
+            "year": "2009"
+          },
+          {
+            "driver": {
+              "text": "Al Unser Jr.",
+              "url": "https://en.wikipedia.org/wiki/Al_Unser_Jr."
+            },
+            "event": {
+              "text": "1982 Can-Am Challenge at Mosport Park",
+              "url": "https://en.wikipedia.org/wiki/1982_Can-Am_season"
+            },
+            "series": {
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
+            },
+            "time": 71.875,
+            "vehicle": {
+              "text": "Frissbee GR3",
+              "url": "https://en.wikipedia.org/wiki/Frissbee_GR3"
+            },
+            "year": "1982"
+          },
+          {
+            "driver": {
+              "text": "David Brabham",
+              "url": "https://en.wikipedia.org/wiki/David_Brabham"
+            },
+            "event": {
+              "text": "1999 Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/1999_Grand_Prix_of_Mosport"
+            },
+            "series": {
+              "text": "LMP",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 72.093,
+            "vehicle": {
+              "text": "Panoz LMP-1 Roadster-S",
+              "url": "https://en.wikipedia.org/wiki/Panoz_LMP-1_Roadster-S"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Garett Grist",
+              "url": "https://en.wikipedia.org/wiki/Garett_Grist"
+            },
+            "event": {
+              "text": "2023 Chevrolet Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2023_Chevrolet_Grand_Prix"
+            },
+            "series": {
+              "text": "LMP3",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
+            },
+            "time": 72.42,
+            "vehicle": {
+              "text": "Ligier JS P320",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_P320"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Andrea Montermini",
+              "url": "https://en.wikipedia.org/wiki/Andrea_Montermini"
+            },
+            "event": {
+              "text": "1997 Mosport Festival",
+              "url": "https://en.wikipedia.org/wiki/1997_Mosport_Festival"
+            },
+            "series": {
+              "text": "WSC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#Name_variations"
+            },
+            "time": 72.527,
+            "vehicle": {
+              "text": "Ferrari 333 SP",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_333_SP"
+            },
+            "year": "1997"
+          },
+          {
+            "driver": {
+              "text": "Hans-Joachim Stuck",
+              "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+            },
+            "event": {
+              "text": "1985 1000 km of Mosport",
+              "url": "https://en.wikipedia.org/wiki/1985_1000_km_of_Mosport"
+            },
+            "series": {
+              "text": "Group C",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
+            },
+            "time": 72.915,
+            "vehicle": {
+              "text": "Porsche 962C",
+              "url": "https://en.wikipedia.org/wiki/Porsche_962"
+            },
+            "year": "1985"
+          },
+          {
+            "driver": {
+              "text": "Mario Andretti",
+              "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+            },
+            "event": {
+              "text": "1977 Canadian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1977_Canadian_Grand_Prix"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 73.299,
+            "vehicle": {
+              "text": "Lotus 78",
+              "url": "https://en.wikipedia.org/wiki/Lotus_78"
+            },
+            "year": "1977"
+          },
+          {
+            "driver": {
+              "text": "Tomáš Enge",
+              "url": "https://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Enge"
+            },
+            "event": {
+              "text": "2006 Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/2006_Grand_Prix_of_Mosport"
+            },
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            },
+            "time": 73.867,
+            "vehicle": {
+              "text": "Aston Martin DBR9",
+              "url": "https://en.wikipedia.org/wiki/Aston_Martin_DBR9"
+            },
+            "year": "2006"
+          },
+          {
+            "driver": {
+              "text": "Earl Bamber",
+              "url": "https://en.wikipedia.org/wiki/Earl_Bamber"
+            },
+            "event": {
+              "text": "2019 Mobil 1 SportsCar Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2019_Mobil_1_SportsCar_Grand_Prix"
+            },
+            "series": {
+              "text": "LM GTE",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE"
+            },
+            "time": 74.076,
+            "vehicle": {
+              "text": "Porsche 911 RSR",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_RSR_(2017)"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Brian Redman",
+              "url": "https://en.wikipedia.org/wiki/Brian_Redman"
+            },
+            "event": {
+              "text": "1975 Labatt's Blue 5000",
+              "url": "https://en.wikipedia.org/wiki/1975_SCCA/USAC_Formula_5000_Championship"
+            },
+            "series": {
+              "text": "F5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
+            },
+            "time": 74.149,
+            "vehicle": {
+              "text": "Lola T332",
+              "url": "https://en.wikipedia.org/wiki/Lola_T332"
+            },
+            "year": "1975"
+          },
+          {
+            "driver": {
+              "text": "Nicolás Ambiado",
+              "url": "https://en.wikipedia.org/wiki/Nicol%C3%A1s_Ambiado"
+            },
+            "event": {
+              "text": "2025 Mosport Formula Regional Americas round",
+              "url": "https://en.wikipedia.org/wiki/2025_Formula_Regional_Americas_Championship"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 74.507,
+            "vehicle": {
+              "text": "Ligier JS F3",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_F3"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "George Follmer",
+              "url": "https://en.wikipedia.org/wiki/George_Follmer"
+            },
+            "event": {
+              "text": "1974 Labatt's Blue Can-Am",
+              "url": "https://en.wikipedia.org/wiki/1974_Can-Am_season"
+            },
+            "series": {
+              "text": "Group 7",
+              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)#Group_7_two-seater_racing_cars_(1966_to_1975)"
+            },
+            "time": 74.6,
+            "vehicle": {
+              "text": "Shadow DN4",
+              "url": "https://en.wikipedia.org/wiki/Shadow_DN4"
+            },
+            "year": "1974"
+          },
+          {
+            "driver": {
+              "text": "David Brabham",
+              "url": "https://en.wikipedia.org/wiki/David_Brabham"
+            },
+            "event": {
+              "text": "1998 Mosport Festival",
+              "url": "https://en.wikipedia.org/wiki/1998_Mosport_Festival"
+            },
+            "series": {
+              "text": "GT1 (Prototype)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#Prototype_years_(1997–1998)"
+            },
+            "time": 74.685,
+            "vehicle": {
+              "text": "Panoz GTR-1",
+              "url": "https://en.wikipedia.org/wiki/Panoz_GTR-1"
+            },
+            "year": "1998"
+          },
+          {
+            "driver": {
+              "text": "Daniel di Leo"
+            },
+            "event": {
+              "text": "2004 Mosport Star Mazda Championship round",
+              "url": "https://en.wikipedia.org/wiki/Indy_Pro_2000_Championship"
+            },
+            "series": {
+              "text": "Star Mazda",
+              "url": "https://en.wikipedia.org/wiki/USF_Pro_2000_Championship"
+            },
+            "time": 75.321,
+            "vehicle": {
+              "text": "Star Formula Mazda 'Pro'",
+              "url": "https://en.wikipedia.org/wiki/Star_Formula_Mazda_%27Pro%27_(car)"
+            },
+            "year": "2004"
+          },
+          {
+            "driver": {
+              "text": "Chris Dyson",
+              "url": "https://en.wikipedia.org/wiki/Chris_Dyson"
+            },
+            "event": {
+              "text": "2024 Mosport Trans-Am round"
+            },
+            "series": {
+              "text": "TA1",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series#TA"
+            },
+            "time": 75.565,
+            "vehicle": {
+              "text": "Ford Mustang Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_(sixth_generation)#Motorsport"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Alexander Sims",
+              "url": "https://en.wikipedia.org/wiki/Alexander_Sims_(racing_driver)"
+            },
+            "event": {
+              "text": "2024 Chevrolet Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2024_Chevrolet_Grand_Prix"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 75.771,
+            "vehicle": {
+              "text": "Chevrolet Corvette Z06 GT3.R",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_Z06_GT3.R"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Maxime Martin",
+              "url": "https://en.wikipedia.org/wiki/Maxime_Martin"
+            },
+            "event": {
+              "text": "2013 SportsCar Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2013_SportsCar_Grand_Prix"
+            },
+            "series": {
+              "text": "GT",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            },
+            "time": 75.907,
+            "vehicle": {
+              "text": "BMW Z4 GTE",
+              "url": "https://en.wikipedia.org/wiki/BMW_Z4_GTE"
+            },
+            "year": "2013"
+          },
+          {
+            "driver": {
+              "text": "Steve Millen",
+              "url": "https://en.wikipedia.org/wiki/Steve_Millen"
+            },
+            "event": {
+              "text": "1992 Mosport Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1992_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTS",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Supreme"
+            },
+            "time": 77.408,
+            "vehicle": {
+              "text": "Nissan 300ZX",
+              "url": "https://en.wikipedia.org/wiki/Nissan_300ZX"
+            },
+            "year": "1992"
+          },
+          {
+            "driver": {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            },
+            "event": {
+              "text": "1976 Player's 200",
+              "url": "https://en.wikipedia.org/wiki/1976_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Two-Seater_Racing_Cars_(1976_to_1982)"
+            },
+            "time": 77.66,
+            "vehicle": {
+              "text": "Porsche 936",
+              "url": "https://en.wikipedia.org/wiki/Porsche_936"
+            },
+            "year": "1976"
+          },
+          {
+            "driver": {
+              "text": "Robby Gordon",
+              "url": "https://en.wikipedia.org/wiki/Robby_Gordon"
+            },
+            "event": {
+              "text": "1990 Mosport Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1990_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTO",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Over"
+            },
+            "time": 78.396,
+            "vehicle": {
+              "text": "Mercury Cougar XR-7",
+              "url": "https://en.wikipedia.org/wiki/Mercury_Cougar#Racing"
+            },
+            "year": "1990"
+          },
+          {
+            "driver": {
+              "text": "Al Holbert",
+              "url": "https://en.wikipedia.org/wiki/Al_Holbert"
+            },
+            "event": {
+              "text": "1983 Labatt's GT 6 Hour",
+              "url": "https://en.wikipedia.org/wiki/1983_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 79.08,
+            "vehicle": {
+              "text": "March 83G",
+              "url": "https://en.wikipedia.org/wiki/March_83G"
+            },
+            "year": "1983"
+          },
+          {
+            "driver": {
+              "text": "Scott Hargrove",
+              "url": "https://en.wikipedia.org/wiki/Scott_Hargrove"
+            },
+            "event": {
+              "text": "2017 1st Mosport Porsche GT3 Cup Challenge Canada round",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT3_Cup_Challenge_Canada"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 79.78,
+            "vehicle": {
+              "text": "Porsche 911 (991 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2017–2020)"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Danny Ongais",
+              "url": "https://en.wikipedia.org/wiki/Danny_Ongais"
+            },
+            "event": {
+              "text": "1980 Molson Canadian 1000",
+              "url": "https://en.wikipedia.org/wiki/1980_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "Group 5 production cars",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#4th_Generation_Group_5_–_\"Special_Production_Cars\"_(1976_to_1982)"
+            },
+            "time": 79.96,
+            "vehicle": {
+              "text": "Porsche 935 K3/80",
+              "url": "https://en.wikipedia.org/wiki/Porsche_935"
+            },
+            "year": "1980"
+          },
+          {
+            "driver": {
+              "text": "Tyler Gonzalez",
+              "url": "https://en.wikipedia.org/wiki/Tyler_Gonzalez"
+            },
+            "event": {
+              "text": "2025 Mosport Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/2025_Trans-Am_Series"
+            },
+            "series": {
+              "text": "TA2",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series#TA2"
+            },
+            "time": 80.243,
+            "vehicle": {
+              "text": "Toyota Camry TA2",
+              "url": "https://en.wikipedia.org/wiki/Toyota_Camry"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Olivier Beretta",
+              "url": "https://en.wikipedia.org/wiki/Olivier_Beretta"
+            },
+            "event": {
+              "text": "1999 Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/1999_Grand_Prix_of_Mosport"
+            },
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#List_of_FIA_GT1_cars"
+            },
+            "time": 80.288,
+            "vehicle": {
+              "text": "Dodge Viper GTS-R",
+              "url": "https://en.wikipedia.org/wiki/Dodge_Viper_GTS-R"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Daniel Quimby"
+            },
+            "event": {
+              "text": "2024 Mosport F4 United States round",
+              "url": "https://en.wikipedia.org/wiki/2024_Formula_4_United_States_Championship"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 80.36,
+            "vehicle": {
+              "text": "Ligier JS F422",
+              "url": "https://en.wikipedia.org/wiki/Ligier_Automotive#Models"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Samuel Guerin"
+            },
+            "event": {
+              "text": "2025 Mosport CSBK round",
+              "url": "https://en.wikipedia.org/wiki/Canadian_Superbike_Championship"
+            },
+            "series": {
+              "text": "Superbike",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
+            },
+            "time": 80.652,
+            "vehicle": {
+              "text": "BMW M1000RR",
+              "url": "https://en.wikipedia.org/wiki/BMW_S1000RR#M1000RR_2021_(K_66)"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Ross Chastain",
+              "url": "https://en.wikipedia.org/wiki/Ross_Chastain"
+            },
+            "event": {
+              "text": "2019 Chevrolet Silverado 250",
+              "url": "https://en.wikipedia.org/wiki/2019_Chevrolet_Silverado_250"
+            },
+            "series": {
+              "text": "NASCAR Truck",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Craftsman_Truck_Series"
+            },
+            "time": 81.276,
+            "vehicle": {
+              "text": "Chevrolet Silverado",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Silverado#Motorsport"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Wally Dallenbach, Jr.",
+              "url": "https://en.wikipedia.org/wiki/Wally_Dallenbach,_Jr."
+            },
+            "event": {
+              "text": "1986 Budweiser 650",
+              "url": "https://en.wikipedia.org/wiki/1986_Trans-Am_Series"
+            },
+            "series": {
+              "text": "TO",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            },
+            "time": 81.965,
+            "vehicle": {
+              "text": "Chevrolet Camaro",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(third_generation)"
+            },
+            "year": "1986"
+          },
+          {
+            "driver": {
+              "text": "Tony Cicale"
+            },
+            "event": {
+              "text": "1976 Player's 200",
+              "url": "https://en.wikipedia.org/wiki/1976_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Sports 2000",
+              "url": "https://en.wikipedia.org/wiki/Sports_2000"
+            },
+            "time": 82.076,
+            "vehicle": {
+              "text": "Chevron B26",
+              "url": "https://en.wikipedia.org/wiki/Chevron_B26"
+            },
+            "year": "1976"
+          },
+          {
+            "driver": {
+              "text": "Dean Baker"
+            },
+            "event": {
+              "text": "2024 1st Mosport Sports Car Championship Canada round",
+              "url": "https://en.wikipedia.org/wiki/2024_Sports_Car_Championship_Canada"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 82.226,
+            "vehicle": {
+              "text": "Audi RS 3 LMS TCR (2021)",
+              "url": "https://en.wikipedia.org/wiki/Audi_RS_3_LMS_TCR#Audi_RS_3_LMS_TCR_(2021)"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Robin Liddell",
+              "url": "https://en.wikipedia.org/wiki/Robin_Liddell"
+            },
+            "event": {
+              "text": "2023 Canadian Tire Motorsport Park 120",
+              "url": "https://en.wikipedia.org/wiki/2023_Michelin_Pilot_Challenge"
+            },
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            },
+            "time": 82.455,
+            "vehicle": {
+              "text": "Chevrolet Camaro GT4.R",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(sixth_generation)#Motorsports"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "James Kovacic"
+            },
+            "event": {
+              "text": "2009 Mosport Formula BMW Americas round",
+              "url": "https://en.wikipedia.org/wiki/2009_Formula_BMW_Americas_season"
+            },
+            "series": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            },
+            "time": 82.458,
+            "vehicle": {
+              "text": "Mygale FB02",
+              "url": "https://en.wikipedia.org/wiki/Mygale_FB02"
+            },
+            "year": "2009"
+          },
+          {
+            "driver": {
+              "text": "Tomas Casas"
+            },
+            "event": {
+              "text": "2025 Mosport CSBK round",
+              "url": "https://en.wikipedia.org/wiki/Canadian_Superbike_Championship"
+            },
+            "series": {
+              "text": "Supersport",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            },
+            "time": 83.236,
+            "vehicle": {
+              "text": "Suzuki GSX-R750",
+              "url": "https://en.wikipedia.org/wiki/Suzuki_GSX-R750"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "John Fergus"
+            },
+            "event": {
+              "text": "1992 Mosport Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1992_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTU",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Under"
+            },
+            "time": 84.424,
+            "vehicle": {
+              "text": "Dodge Daytona",
+              "url": "https://en.wikipedia.org/wiki/Dodge_Daytona"
+            },
+            "year": "1992"
+          },
+          {
+            "driver": {
+              "text": "Bill Auberlen",
+              "url": "https://en.wikipedia.org/wiki/Bill_Auberlen"
+            },
+            "event": {
+              "text": "1998 Mosport Festival",
+              "url": "https://en.wikipedia.org/wiki/1998_Mosport_Festival"
+            },
+            "series": {
+              "text": "IMSA GT3",
+              "url": "https://en.wikipedia.org/wiki/GT3_(1998%E2%80%931999)"
+            },
+            "time": 85.486,
+            "vehicle": {
+              "text": "BMW M3 (E36)",
+              "url": "https://en.wikipedia.org/wiki/BMW_M3#E36_generation_(1992–1999)"
+            },
+            "year": "1998"
+          },
+          {
+            "driver": {
+              "text": "Jamie James"
+            },
+            "event": {
+              "text": "1990 Mosport World SBK round",
+              "url": "https://en.wikipedia.org/wiki/1990_Superbike_World_Championship"
+            },
+            "series": {
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
+            },
+            "time": 85.781,
+            "vehicle": {
+              "text": "Ducati 851 SBK",
+              "url": "https://en.wikipedia.org/wiki/Ducati_851#Racing"
+            },
+            "year": "1990"
+          },
+          {
+            "driver": {
+              "text": "Clay Young"
+            },
+            "event": {
+              "text": "1991 Nissan Grand Prix of Mosport",
+              "url": "https://en.wikipedia.org/wiki/1991_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA AAC",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#American_Challenge"
+            },
+            "time": 85.796,
+            "vehicle": {
+              "text": "Chevrolet Beretta",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Beretta"
+            },
+            "year": "1991"
+          },
+          {
+            "driver": {
+              "text": "Kenper Miller"
+            },
+            "event": {
+              "text": "1981 Molson 1000",
+              "url": "https://en.wikipedia.org/wiki/1981_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)"
+            },
+            "time": 86.397,
+            "vehicle": {
+              "text": "BMW M1",
+              "url": "https://en.wikipedia.org/wiki/BMW_M1"
+            },
+            "year": "1981"
+          },
+          {
+            "driver": {
+              "text": "Mac Clark",
+              "url": "https://en.wikipedia.org/wiki/Mac_Clark"
+            },
+            "event": {
+              "text": "2020 4th Mosport Canadian F1600 round"
+            },
+            "series": {
+              "text": "F1600",
+              "url": "https://en.wikipedia.org/wiki/Formula_Ford"
+            },
+            "time": 88.19,
+            "vehicle": {
+              "text": "Mygale SJ13",
+              "url": "https://en.wikipedia.org/wiki/Mygale#F1600_Championship_Series"
+            },
+            "year": "2020"
+          },
+          {
+            "driver": {
+              "text": "Helio Meza",
+              "url": "https://en.wikipedia.org/wiki/Helio_Meza"
+            },
+            "event": {
+              "text": "2025 Mosport Mazda MX-5 Cup round",
+              "url": "https://en.wikipedia.org/wiki/2025_Mazda_MX-5_Cup"
+            },
+            "series": {
+              "text": "Mazda MX-5 Cup",
+              "url": "https://en.wikipedia.org/wiki/Global_MX-5_Cup"
+            },
+            "time": 92.144,
+            "vehicle": {
+              "text": "Mazda MX-5 (ND)",
+              "url": "https://en.wikipedia.org/wiki/Mazda_MX-5_(ND)"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            },
+            "event": {
+              "text": "1961 Canadian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1961_Canadian_Grand_Prix"
+            },
+            "series": {
+              "text": "Sports car racing",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
+            },
+            "time": 94.2,
+            "vehicle": {
+              "text": "Lotus 19",
+              "url": "https://en.wikipedia.org/wiki/Lotus_19"
+            },
+            "year": "1961"
+          },
+          {
+            "driver": {
+              "text": "Craig Fisher"
+            },
+            "event": {
+              "text": "1969 Mosport CTCC round"
+            },
+            "series": {
+              "text": "Group 5 touring car",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#1st_Generation_Group_5_–_\"Special_Touring_Cars\"_(1966_to_1969)"
+            },
+            "time": 94.2,
+            "vehicle": {
+              "text": "Chevrolet Camaro Z28",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(first_generation)"
+            },
+            "year": "1969"
+          },
+          {
+            "driver": {
+              "text": "Mike Hailwood",
+              "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
+            },
+            "event": {
+              "text": "1967 Canadian motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 96.8,
+            "vehicle": {
+              "text": "Honda RC166"
+            },
+            "year": "1967"
+          },
+          {
+            "driver": {
+              "text": "Maurice Carter",
+              "url": "https://en.wikipedia.org/wiki/Maurice_Carter_(racing_driver)"
+            },
+            "event": {
+              "text": "1970 Can-Am Challenge Race for the Labatt's Blue Trophy"
+            },
+            "series": {
+              "text": "Group 1",
+              "url": "https://en.wikipedia.org/wiki/Group_1_(motorsport)"
+            },
+            "time": 100.1,
+            "vehicle": {
+              "text": "Chevrolet Camaro",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(first_generation)"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Mike Hailwood",
+              "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
+            },
+            "event": {
+              "text": "1967 Canadian motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 102.7,
+            "vehicle": {
+              "text": "Honda RC181",
+              "url": "https://en.wikipedia.org/wiki/Honda_RC181"
+            },
+            "year": "1967"
+          },
+          {
+            "driver": {
+              "text": "Bill Ivy",
+              "url": "https://en.wikipedia.org/wiki/Bill_Ivy"
+            },
+            "event": {
+              "text": "1967 Canadian motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 105.9,
+            "vehicle": {
+              "text": "Yamaha AS1",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_AS1"
+            },
+            "year": "1967"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 10,
+        "years": "1961–present"
+      },
+      {
+        "layout": "Driver Development Centre Advanced Course",
+        "length_km": 2.88,
+        "length_mi": 1.79,
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 20
+      },
+      {
+        "layout": "Driver Development Centre Intermediate Course",
+        "length_km": 2.2,
+        "length_mi": 1.367,
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        }
+      },
+      {
+        "layout": "Kart Complex",
+        "length_km": 1.4,
+        "length_mi": 0.87,
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 12
+      },
+      {
+        "banking": {
+          "unit": "deg",
+          "value": 6.0
+        },
+        "layout": "Speedway Oval",
+        "length_km": 0.805,
+        "length_mi": 0.5,
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "years": "1989–2013"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 44.05,
+        "lon": -78.67778
+      },
+      "places": [
+        {
+          "text": "{'text': 'Bowmanville', 'url': 'https://en.wikipedia.org/wiki/Bowmanville'}"
+        },
+        {
+          "text": "3233 Concession Road 10"
+        },
+        {
+          "text": "Clarington",
+          "url": "https://en.wikipedia.org/wiki/Clarington"
+        },
+        {
+          "text": "Ontario",
+          "url": "https://en.wikipedia.org/wiki/Ontario"
+        },
+        {
+          "text": "Canada"
+        }
+      ]
+    },
+    "name": {
+      "former_names": [
+        {
+          "name": "Mosport International Raceway",
+          "periods": [
+            {
+              "from": "1997",
+              "to": "2012-02"
+            }
+          ]
+        },
+        {
+          "name": "Mosport Park",
+          "periods": [
+            {
+              "from": "1961",
+              "to": "1996"
+            }
+          ]
+        }
+      ],
+      "list": [
+        "Mosport Park",
+        "Canadian Tire Motorsport Park"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season",
+        "year": 1967
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
+        "year": 1969
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season",
+        "year": 1971
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season",
+        "year": 1972
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season",
+        "year": 1973
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season",
+        "year": 1974
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season",
+        "year": 1976
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season",
+        "year": 1977
+      }
+    ],
+    "type": "Race circuit",
+    "url": "https://en.wikipedia.org/wiki/Canadian_Tire_Motorsport_Park"
+  }
+]

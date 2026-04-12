@@ -1,0 +1,181 @@
+[
+  {
+    "circuit_status": "former",
+    "direction": "Clockwise",
+    "fia_grade": 1,
+    "grands_prix": [
+      {
+        "text": "Japanese Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 4,
+    "history": [
+      {
+        "event": "opened",
+        "date": "1966-01"
+      },
+      {
+        "event": "closed",
+        "date": "2003-09"
+      },
+      {
+        "event": "reopened",
+        "date": "2005-04"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "4th and current configuration",
+        "length_km": 4.563,
+        "length_mi": 2.835,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Felipe Massa",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 78.426,
+            "vehicle": {
+              "text": "Ferrari F2008",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_F2008"
+            },
+            "year": "2008"
+          }
+        ],
+        "turns": 16,
+        "years": "2005–present"
+      },
+      {
+        "layout": "3rd configuration",
+        "length_km": 4.4,
+        "length_mi": 2.734,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Andrew Gilbert-Scott",
+              "url": "https://en.wikipedia.org/wiki/Andrew_Gilbert-Scott"
+            },
+            "series": {
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            },
+            "time": 77.025,
+            "vehicle": {
+              "text": "Lola T93/50",
+              "url": "https://en.wikipedia.org/wiki/Lola_Cars"
+            },
+            "year": "1994"
+          }
+        ],
+        "turns": 12,
+        "years": "September 1987–2003"
+      },
+      {
+        "layout": "2nd configuration",
+        "length_km": 4.359,
+        "length_mi": 2.709,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Jody Scheckter",
+              "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 74.3,
+            "vehicle": {
+              "text": "Wolf WR1",
+              "url": "https://en.wikipedia.org/wiki/Wolf_WR1"
+            },
+            "year": "1977"
+          }
+        ],
+        "turns": 8,
+        "years": "1975–August 1987"
+      },
+      {
+        "layout": "Original Circuit",
+        "length_km": 5.999,
+        "length_mi": 3.728,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Vern Schuppan",
+              "url": "https://en.wikipedia.org/wiki/Vern_Schuppan"
+            },
+            "series": {
+              "text": "F2000",
+              "url": "https://en.wikipedia.org/wiki/Super_Formula_Championship#Formula_2000_(1973–1977)"
+            },
+            "time": 92.57,
+            "vehicle": {
+              "text": "March 722",
+              "url": "https://en.wikipedia.org/wiki/March_722"
+            },
+            "year": "1973"
+          }
+        ],
+        "turns": 15,
+        "years": "1965–1974"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 35.37167,
+        "lon": 138.92667
+      },
+      "places": [
+        {
+          "text": "{'text': 'Oyama', 'url': 'https://en.wikipedia.org/wiki/Oyama,_Shizuoka'}"
+        },
+        {
+          "text": "Oyama",
+          "url": "https://en.wikipedia.org/wiki/Oyama,_Shizuoka"
+        },
+        {
+          "text": "Suntō District",
+          "url": "https://en.wikipedia.org/wiki/Sunt%C5%8D_District,_Shizuoka"
+        },
+        {
+          "text": "Shizuoka",
+          "url": "https://en.wikipedia.org/wiki/Shizuoka_Prefecture"
+        },
+        {
+          "text": "Japan"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Fuji Speedway"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season",
+        "year": 1976
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season",
+        "year": 1977
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship",
+        "year": 2007
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship",
+        "year": 2008
+      }
+    ],
+    "type": "Race circuit",
+    "url": "https://en.wikipedia.org/wiki/Fuji_Speedway"
+  }
+]

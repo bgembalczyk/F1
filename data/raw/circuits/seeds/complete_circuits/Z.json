@@ -1,0 +1,38 @@
+[
+  {
+    "circuit_status": "former",
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "Austrian Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 1,
+    "location": {
+      "coordinates": null,
+      "places": [
+        {
+          "text": "{'text': 'Zeltweg', 'url': 'https://en.wikipedia.org/wiki/Zeltweg'}"
+        },
+        {
+          "text": "Austria",
+          "url": "https://en.wikipedia.org/wiki/Austria"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Zeltweg Airfield"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
+        "year": 1964
+      }
+    ],
+    "type": "Road circuit",
+    "url": "https://en.wikipedia.org/wiki/Zeltweg_Air_Base#Motorsports"
+  }
+]

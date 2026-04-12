@@ -1,0 +1,1901 @@
+[
+  {
+    "circuit_status": "current",
+    "direction": "Anti-clockwise",
+    "fia_grade": 1,
+    "grands_prix": [
+      {
+        "text": "Las Vegas Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Las_Vegas_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 3,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "2022-03"
+      },
+      {
+        "event": "opened",
+        "date": "2023-11-16"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 6.201,
+        "length_mi": 3.853,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Max Verstappen",
+              "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+            },
+            "event": {
+              "text": "2025 Las Vegas Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 93.365,
+            "vehicle": {
+              "text": "Red Bull Racing RB21",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB21"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Michael Verhagen"
+            },
+            "event": {
+              "text": "2024 Las Vegas Ferrari Challenge North America round",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge#Ferrari_Challenge_North_America"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 114.677,
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Chloe Chambers",
+              "url": "https://en.wikipedia.org/wiki/Chloe_Chambers"
+            },
+            "event": {
+              "text": "2025 Las Vegas F1 Academy round",
+              "url": "https://en.wikipedia.org/wiki/2025_F1_Academy_season"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 126.623,
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "year": "2025"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 17,
+        "years": "2023–present"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 36.10995,
+        "lon": -115.16217
+      },
+      "places": [
+        {
+          "text": "{'text': 'Paradise', 'url': 'https://en.wikipedia.org/wiki/Paradise,_Nevada'}"
+        },
+        {
+          "text": "Paradise, Nevada",
+          "url": "https://en.wikipedia.org/wiki/Paradise,_Nevada"
+        },
+        {
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Las Vegas Strip Circuit"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      }
+    ],
+    "type": "Street circuit",
+    "url": "https://en.wikipedia.org/wiki/Las_Vegas_Strip_Circuit"
+  },
+  {
+    "circuit_status": "former",
+    "direction": "Clockwise",
+    "fia_grade": 2,
+    "grands_prix": [
+      {
+        "text": "United States Grand Prix West",
+        "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix_West"
+      }
+    ],
+    "grands_prix_held": 8,
+    "history": [
+      {
+        "event": "opened",
+        "date": "1975-09-28"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 3.167,
+        "length_mi": 1.968,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Álex Palou",
+              "url": "https://en.wikipedia.org/wiki/%C3%81lex_Palou"
+            },
+            "event": {
+              "text": "2022 Acura Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2022_Acura_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "IndyCar",
+              "url": "https://en.wikipedia.org/wiki/IndyCar_Series"
+            },
+            "time": 67.2359,
+            "vehicle": {
+              "text": "Dallara DW12",
+              "url": "https://en.wikipedia.org/wiki/Dallara_DW12#IR–18_Universal_Aero_Kit_(UAK-18)_(2018–2027)"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Sébastien Bourdais",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Bourdais"
+            },
+            "event": {
+              "text": "2006 Toyota Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2006_Toyota_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "Champ Car",
+              "url": "https://en.wikipedia.org/wiki/Champ_Car_World_Series"
+            },
+            "time": 67.931,
+            "vehicle": {
+              "text": "Lola B02/00",
+              "url": "https://en.wikipedia.org/wiki/Lola_B02/00"
+            },
+            "year": "2006"
+          },
+          {
+            "driver": {
+              "text": "Bruno Junqueira",
+              "url": "https://en.wikipedia.org/wiki/Bruno_Junqueira"
+            },
+            "event": {
+              "text": "2002 Toyota Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2002_Toyota_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
+            },
+            "time": 68.981,
+            "vehicle": {
+              "text": "Lola B02/00",
+              "url": "https://en.wikipedia.org/wiki/Lola_B02/00"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Sébastien Bourdais",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Bourdais"
+            },
+            "event": {
+              "text": "2022 Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2022_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "DPi",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype_International"
+            },
+            "time": 70.317,
+            "vehicle": {
+              "text": "Cadillac DPi-V.R",
+              "url": "https://en.wikipedia.org/wiki/Cadillac_DPi-V.R"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Connor De Phillippi",
+              "url": "https://en.wikipedia.org/wiki/Connor_De_Phillippi"
+            },
+            "event": {
+              "text": "2023 Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2023_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "LMDh",
+              "url": "https://en.wikipedia.org/wiki/LMDh"
+            },
+            "time": 71.503,
+            "vehicle": {
+              "text": "BMW M Hybrid V8",
+              "url": "https://en.wikipedia.org/wiki/BMW_M_Hybrid_V8"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Patrick Long",
+              "url": "https://en.wikipedia.org/wiki/Patrick_Long"
+            },
+            "event": {
+              "text": "2008 American Le Mans Series at Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2008_American_Le_Mans_Series_at_Long_Beach"
+            },
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            },
+            "time": 72.383,
+            "vehicle": {
+              "text": "Porsche RS Spyder EVO",
+              "url": "https://en.wikipedia.org/wiki/Porsche_RS_Spyder"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Marco Werner",
+              "url": "https://en.wikipedia.org/wiki/Marco_Werner"
+            },
+            "event": {
+              "text": "2008 American Le Mans Series at Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2008_American_Le_Mans_Series_at_Long_Beach"
+            },
+            "series": {
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
+            },
+            "time": 72.599,
+            "vehicle": {
+              "text": "Audi R10 TDI",
+              "url": "https://en.wikipedia.org/wiki/Audi_R10_TDI"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Félix Serrallés",
+              "url": "https://en.wikipedia.org/wiki/F%C3%A9lix_Serrall%C3%A9s"
+            },
+            "event": {
+              "text": "2015 Long Beach 100",
+              "url": "https://en.wikipedia.org/wiki/2015_Indy_Lights"
+            },
+            "series": {
+              "text": "Indy Lights",
+              "url": "https://en.wikipedia.org/wiki/Indy_NXT"
+            },
+            "time": 72.9009,
+            "vehicle": {
+              "text": "Dallara IL-15",
+              "url": "https://en.wikipedia.org/wiki/Dallara_IL-15"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Ross Gunn",
+              "url": "https://en.wikipedia.org/wiki/Ross_Gunn_(racing_driver)"
+            },
+            "event": {
+              "text": "2025 Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2025_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "LMH",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+            },
+            "time": 74.479,
+            "vehicle": {
+              "text": "Aston Martin Valkyrie",
+              "url": "https://en.wikipedia.org/wiki/Aston_Martin_Valkyrie_AMR-LMH"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Dane Cameron",
+              "url": "https://en.wikipedia.org/wiki/Dane_Cameron"
+            },
+            "event": {
+              "text": "2016 BUBBA Burger Sports Car Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2016_IMSA_SportsCar_Championship"
+            },
+            "series": {
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
+            },
+            "time": 75.279,
+            "vehicle": {
+              "text": "Corvette Daytona Prototype",
+              "url": "https://en.wikipedia.org/wiki/Corvette_Daytona_Prototype"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "Richard Philippe",
+              "url": "https://en.wikipedia.org/wiki/Richard_Philippe"
+            },
+            "event": {
+              "text": "2006 Long Beach Formula Atlantic round",
+              "url": "https://en.wikipedia.org/wiki/2006_Atlantic_Championship"
+            },
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            },
+            "time": 76.058,
+            "vehicle": {
+              "text": "Swift 016.a",
+              "url": "https://en.wikipedia.org/wiki/Swift_016.a"
+            },
+            "year": "2006"
+          },
+          {
+            "driver": {
+              "text": "Oliver Gavin",
+              "url": "https://en.wikipedia.org/wiki/Oliver_Gavin"
+            },
+            "event": {
+              "text": "2019 BUBBA Burger Sports Car Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2019_BUBBA_Burger_Sports_Car_Grand_Prix"
+            },
+            "series": {
+              "text": "LM GTE",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE"
+            },
+            "time": 77.215,
+            "vehicle": {
+              "text": "Chevrolet Corvette C7.R",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_C7.R"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Kyle Marcelli",
+              "url": "https://en.wikipedia.org/wiki/Kyle_Marcelli"
+            },
+            "event": {
+              "text": "2016 BUBBA Burger Sports Car Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2016_IMSA_SportsCar_Championship"
+            },
+            "series": {
+              "text": "LMPC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge"
+            },
+            "time": 77.244,
+            "vehicle": {
+              "text": "Oreca FLM09",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge#Oreca_FLM09"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "Oliver Gavin",
+              "url": "https://en.wikipedia.org/wiki/Oliver_Gavin"
+            },
+            "event": {
+              "text": "2008 American Le Mans Series at Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2008_American_Le_Mans_Series_at_Long_Beach"
+            },
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            },
+            "time": 77.415,
+            "vehicle": {
+              "text": "Chevrolet Corvette C6.R",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_C6.R"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Raffaele Marciello",
+              "url": "https://en.wikipedia.org/wiki/Raffaele_Marciello"
+            },
+            "event": {
+              "text": "2022 Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2022_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 78.617,
+            "vehicle": {
+              "text": "Mercedes-AMG GT3 Evo",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT3_Evo_(2020–present)"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Oliver Gavin",
+              "url": "https://en.wikipedia.org/wiki/Oliver_Gavin"
+            },
+            "event": {
+              "text": "2013 American Le Mans Series at Long Beach",
+              "url": "https://en.wikipedia.org/wiki/2013_American_Le_Mans_Series_at_Long_Beach"
+            },
+            "series": {
+              "text": "GT",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            },
+            "time": 79.511,
+            "vehicle": {
+              "text": "Chevrolet Corvette C6.R",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_C6.R"
+            },
+            "year": "2013"
+          },
+          {
+            "driver": {
+              "text": "Kay van Berlo",
+              "url": "https://en.wikipedia.org/wiki/Kay_van_Berlo"
+            },
+            "event": {
+              "text": "2022 Long Beach Porsche Carrera Cup North America round",
+              "url": "https://en.wikipedia.org/wiki/2022_Porsche_Carrera_Cup_North_America"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 79.66,
+            "vehicle": {
+              "text": "Porsche 911 (992 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–2025)"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Aaron Farhadi"
+            },
+            "event": {
+              "text": "2024 Long Beach GT America round",
+              "url": "https://en.wikipedia.org/wiki/2024_GT_America_Series"
+            },
+            "series": {
+              "text": "SRO GT2",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT2"
+            },
+            "time": 81.216,
+            "vehicle": {
+              "text": "Lamborghini Huracán Super Trofeo GT2",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Hurac%C3%A1n#Huracán_Super_Trofeo_GT2_(2021–present)"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Paul Gentilozzi",
+              "url": "https://en.wikipedia.org/wiki/Paul_Gentilozzi"
+            },
+            "event": {
+              "text": "2003 Long Beach Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/2003_Trans-Am_Series"
+            },
+            "series": {
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            },
+            "time": 82.03,
+            "vehicle": {
+              "text": "Jaguar XKR",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_XK_(X100)"
+            },
+            "year": "2003"
+          },
+          {
+            "driver": {
+              "text": "Craig Bennett"
+            },
+            "event": {
+              "text": "2019 Historic IMSA GTO/Trans-Am Invitational"
+            },
+            "series": {
+              "text": "IMSA GTO",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Over"
+            },
+            "time": 84.448,
+            "vehicle": {
+              "text": "Nissan 300ZX Turbo",
+              "url": "https://en.wikipedia.org/wiki/Nissan_300ZX#Motorsports"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Isaac Sherman"
+            },
+            "event": {
+              "text": "2024 Long Beach GT America round",
+              "url": "https://en.wikipedia.org/wiki/2024_GT_America_Series"
+            },
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            },
+            "time": 85.773,
+            "vehicle": {
+              "text": "Porsche 718 Cayman GT4 RS Clubsport",
+              "url": "https://en.wikipedia.org/wiki/Porsche_718_Boxster_and_Cayman_(982)#718_Cayman_GT4_RS_Clubsport"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Matthew Brabham",
+              "url": "https://en.wikipedia.org/wiki/Matthew_Brabham"
+            },
+            "event": {
+              "text": "2019 Long Beach SST round",
+              "url": "https://en.wikipedia.org/wiki/2019_Stadium_Super_Trucks"
+            },
+            "series": {
+              "text": "Stadium Super Trucks",
+              "url": "https://en.wikipedia.org/wiki/Stadium_Super_Trucks"
+            },
+            "time": 104.939,
+            "vehicle": {
+              "text": "Stadium Super Truck",
+              "url": "https://en.wikipedia.org/wiki/Stadium_Super_Trucks#Trucks"
+            },
+            "year": "2019"
+          }
+        ],
+        "turns": 11,
+        "years": "2000–present"
+      },
+      {
+        "layout": "Formula E Circuit",
+        "length_km": 2.131,
+        "length_mi": 1.324,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Sébastien Buemi",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Buemi"
+            },
+            "event": {
+              "text": "2016 Long Beach ePrix",
+              "url": "https://en.wikipedia.org/wiki/2016_Long_Beach_ePrix"
+            },
+            "series": {
+              "text": "Formula E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
+            },
+            "time": 57.938,
+            "vehicle": {
+              "text": "Renault Z.E 15",
+              "url": "https://en.wikipedia.org/wiki/Spark-Renault_SRT_01E"
+            },
+            "year": "2016"
+          }
+        ],
+        "turns": 7,
+        "years": "2015–2016"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 2.935,
+        "length_mi": 1.824,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Juan Pablo Montoya",
+              "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
+            },
+            "event": {
+              "text": "1999 Toyota Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/1999_Toyota_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
+            },
+            "time": 62.779,
+            "vehicle": {
+              "text": "Reynard 99I",
+              "url": "https://en.wikipedia.org/wiki/Reynard_99I"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Felipe Giaffone",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Giaffone"
+            },
+            "event": {
+              "text": "1999 Long Beach Indy Lights round",
+              "url": "https://en.wikipedia.org/wiki/1999_Indy_Lights_season"
+            },
+            "series": {
+              "text": "Indy Lights",
+              "url": "https://en.wikipedia.org/wiki/Indy_NXT"
+            },
+            "time": 68.623,
+            "vehicle": {
+              "text": "Lola T97/20",
+              "url": "https://en.wikipedia.org/wiki/Lola_T97/20"
+            },
+            "year": "1999"
+          }
+        ],
+        "turns": 13,
+        "years": "1999"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 2.552,
+        "length_mi": 1.586,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Bobby Rahal",
+              "url": "https://en.wikipedia.org/wiki/Bobby_Rahal"
+            },
+            "event": {
+              "text": "1998 Toyota Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/1998_Toyota_Grand_Prix_of_Long_Beach"
+            },
+            "series": {
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
+            },
+            "time": 51.333,
+            "vehicle": {
+              "text": "Reynard 98I",
+              "url": "https://en.wikipedia.org/wiki/Reynard_98I"
+            },
+            "year": "1998"
+          },
+          {
+            "driver": {
+              "text": "Cristiano da Matta",
+              "url": "https://en.wikipedia.org/wiki/Cristiano_da_Matta"
+            },
+            "event": {
+              "text": "1997 Long Beach Indy Lights round",
+              "url": "https://en.wikipedia.org/wiki/1997_Indy_Lights_season"
+            },
+            "series": {
+              "text": "Indy Lights",
+              "url": "https://en.wikipedia.org/wiki/Indy_NXT"
+            },
+            "time": 57.19,
+            "vehicle": {
+              "text": "Lola T97/20",
+              "url": "https://en.wikipedia.org/wiki/Lola_T97/20"
+            },
+            "year": "1997"
+          },
+          {
+            "driver": {
+              "text": "Jacques Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+            },
+            "event": {
+              "text": "1993 Long Beach Formula Atlantic round",
+              "url": "https://en.wikipedia.org/wiki/1993_Atlantic_Championship"
+            },
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            },
+            "time": 60.249,
+            "vehicle": {
+              "text": "Ralt RT40",
+              "url": "https://en.wikipedia.org/wiki/Ralt#Later_Formula_Atlantic_variants"
+            },
+            "year": "1993"
+          },
+          {
+            "driver": {
+              "text": "Tommy Kendall",
+              "url": "https://en.wikipedia.org/wiki/Tommy_Kendall"
+            },
+            "event": {
+              "text": "1996 Long Beach Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/1996_Trans-Am_Series"
+            },
+            "series": {
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            },
+            "time": 60.775,
+            "vehicle": {
+              "text": "Ford Mustang Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang#Circuit_racing"
+            },
+            "year": "1996"
+          },
+          {
+            "driver": {
+              "text": "Neil Crompton",
+              "url": "https://en.wikipedia.org/wiki/Neil_Crompton"
+            },
+            "event": {
+              "text": "1997 Long Beach NATCC round",
+              "url": "https://en.wikipedia.org/wiki/1997_North_American_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "Super Touring",
+              "url": "https://en.wikipedia.org/wiki/Super_Touring"
+            },
+            "time": 66.731,
+            "vehicle": {
+              "text": "Honda Accord",
+              "url": "https://en.wikipedia.org/wiki/Honda_Accord#Motorsport"
+            },
+            "year": "1997"
+          },
+          {
+            "driver": {
+              "text": "Randy Pobst",
+              "url": "https://en.wikipedia.org/wiki/Randy_Pobst"
+            },
+            "event": {
+              "text": "1995 Long Beach IMSA Supercar round",
+              "url": "https://en.wikipedia.org/wiki/1995_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA Supercar",
+              "url": "https://en.wikipedia.org/wiki/IMSA#IMSA_Bridgestone_Supercar_Championship"
+            },
+            "time": 70.248,
+            "vehicle": {
+              "text": "BMW M5",
+              "url": "https://en.wikipedia.org/wiki/BMW_M5#E34_M5_(1988–1995)"
+            },
+            "year": "1995"
+          }
+        ],
+        "turns": 9,
+        "years": "1992–1998"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 2.687,
+        "length_mi": 1.67,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Mario Andretti",
+              "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+            },
+            "event": {
+              "text": "1985 Long Beach Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1985_CART_PPG_Indy_Car_World_Series"
+            },
+            "series": {
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
+            },
+            "time": 68.5563,
+            "vehicle": {
+              "text": "Lola T900",
+              "url": "https://en.wikipedia.org/wiki/Lola_T900"
+            },
+            "year": "1985"
+          },
+          {
+            "driver": {
+              "text": "Jimmy Vasser",
+              "url": "https://en.wikipedia.org/wiki/Jimmy_Vasser"
+            },
+            "event": {
+              "text": "1991 Long Beach Formula Atlantic round",
+              "url": "https://en.wikipedia.org/wiki/1991_Atlantic_Championship"
+            },
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            },
+            "time": 73.482,
+            "vehicle": {
+              "text": "Swift DB4",
+              "url": "https://en.wikipedia.org/wiki/Swift_DB4"
+            },
+            "year": "1991"
+          },
+          {
+            "driver": {
+              "text": "Pete Halsmer",
+              "url": "https://en.wikipedia.org/wiki/Pete_Halsmer"
+            },
+            "event": {
+              "text": "1991 IMSA Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/1991_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTO",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Over"
+            },
+            "time": 75.172,
+            "vehicle": {
+              "text": "Mazda RX-7",
+              "url": "https://en.wikipedia.org/wiki/Mazda_RX-7"
+            },
+            "year": "1991"
+          },
+          {
+            "driver": {
+              "text": "Scott Pruett",
+              "url": "https://en.wikipedia.org/wiki/Scott_Pruett"
+            },
+            "event": {
+              "text": "1988 Long Beach Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/1988_Trans-Am_Series"
+            },
+            "series": {
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            },
+            "time": 77.772,
+            "vehicle": {
+              "text": "Merkur XR4Ti",
+              "url": "https://en.wikipedia.org/wiki/Merkur_XR4Ti#Motorsport"
+            },
+            "year": "1988"
+          },
+          {
+            "driver": {
+              "text": "Stu Hayner"
+            },
+            "event": {
+              "text": "1990 IMSA Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/1990_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTU",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Under"
+            },
+            "time": 80.478,
+            "vehicle": {
+              "text": "Dodge Daytona",
+              "url": "https://en.wikipedia.org/wiki/Dodge_Daytona"
+            },
+            "year": "1990"
+          },
+          {
+            "driver": {
+              "text": "J. D. Smith"
+            },
+            "event": {
+              "text": "1991 IMSA Grand Prix of Long Beach",
+              "url": "https://en.wikipedia.org/wiki/1991_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA AAC",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#American_Challenge"
+            },
+            "time": 83.02,
+            "vehicle": {
+              "text": "Chevrolet Camaro",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro"
+            },
+            "year": "1991"
+          }
+        ],
+        "turns": 13,
+        "years": "1984–1991"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 3.275,
+        "length_mi": 2.035,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 88.33,
+            "vehicle": {
+              "text": "McLaren MP41C",
+              "url": "https://en.wikipedia.org/wiki/McLaren_MP4/1"
+            },
+            "year": "1983"
+          },
+          {
+            "driver": {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            },
+            "event": {
+              "text": "1983 United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1983_United_States_Grand_Prix_West"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 88.33,
+            "vehicle": {
+              "text": "McLaren MP4/1 C"
+            },
+            "year": "1983"
+          }
+        ],
+        "turns": 18,
+        "years": "1983"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 3.428,
+        "length_mi": 2.13,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            },
+            "event": {
+              "text": "1982 United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 90.831,
+            "vehicle": {
+              "text": "McLaren MP4B",
+              "url": "https://en.wikipedia.org/wiki/McLaren_MP4/1"
+            },
+            "year": "1982"
+          },
+          {
+            "driver": {
+              "text": "Geoff Brabham",
+              "url": "https://en.wikipedia.org/wiki/Geoff_Brabham"
+            },
+            "event": {
+              "text": "1982 Long Beach Formula Atlantic round",
+              "url": "https://en.wikipedia.org/wiki/Atlantic_Championship"
+            },
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            },
+            "time": 97.621,
+            "vehicle": {
+              "text": "Ralt RT4",
+              "url": "https://en.wikipedia.org/wiki/Ralt_RT4"
+            },
+            "year": "1982"
+          }
+        ],
+        "turns": 14,
+        "years": "1982"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 3.251,
+        "length_mi": 2.02,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+            },
+            "event": {
+              "text": "1980 United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1980_United_States_Grand_Prix_West"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 79.83,
+            "vehicle": {
+              "text": "Brabham BT49",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT49"
+            },
+            "year": "1980"
+          },
+          {
+            "driver": {
+              "text": "Tony Brise",
+              "url": "https://en.wikipedia.org/wiki/Tony_Brise"
+            },
+            "event": {
+              "text": "1975 Long Beach Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1975_Long_Beach_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula 5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
+            },
+            "time": 79.905,
+            "vehicle": {
+              "text": "Lola T332",
+              "url": "https://en.wikipedia.org/wiki/Lola_T332"
+            },
+            "year": "1975"
+          },
+          {
+            "driver": {
+              "text": "Geoff Brabham",
+              "url": "https://en.wikipedia.org/wiki/Geoff_Brabham"
+            },
+            "event": {
+              "text": "1981 Long Beach Formula Atlantic round",
+              "url": "https://en.wikipedia.org/wiki/Atlantic_Championship"
+            },
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            },
+            "time": 87.232,
+            "vehicle": {
+              "text": "Ralt RT4",
+              "url": "https://en.wikipedia.org/wiki/Ralt_RT4"
+            },
+            "year": "1981"
+          }
+        ],
+        "turns": 13,
+        "years": "1975–1981"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 33.766389,
+        "lon": -118.192778
+      },
+      "places": [
+        {
+          "text": "{'text': 'Long Beach', 'url': 'https://en.wikipedia.org/wiki/Long_Beach,_California'}"
+        },
+        {
+          "text": "Long Beach",
+          "url": "https://en.wikipedia.org/wiki/Long_Beach,_California"
+        },
+        {
+          "text": "California",
+          "url": "https://en.wikipedia.org/wiki/California"
+        },
+        {
+          "text": "USA"
+        },
+        {
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Long Beach Street Circuit"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season",
+        "year": 1976
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season",
+        "year": 1977
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season",
+        "year": 1978
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season",
+        "year": 1979
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season",
+        "year": 1980
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
+        "year": 1981
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
+        "year": 1982
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship",
+        "year": 1983
+      }
+    ],
+    "type": "Street circuit",
+    "url": "https://en.wikipedia.org/wiki/Long_Beach_Street_Circuit"
+  },
+  {
+    "circuit_status": "current",
+    "direction": "Clockwise",
+    "fia_grade": 1,
+    "grands_prix": [
+      {
+        "text": "Qatar Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Qatar_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 4,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "2003"
+      },
+      {
+        "event": "opened",
+        "date": "2004-09-30"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 5.419,
+        "length_mi": 3.367,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Lando Norris",
+              "url": "https://en.wikipedia.org/wiki/Lando_Norris"
+            },
+            "event": {
+              "text": "2024 Qatar Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 82.384,
+            "vehicle": {
+              "text": "McLaren MCL38",
+              "url": "https://en.wikipedia.org/wiki/McLaren_MCL38"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Oliver Bearman",
+              "url": "https://en.wikipedia.org/wiki/Oliver_Bearman"
+            },
+            "event": {
+              "text": "2024 Lusail Formula 2 round",
+              "url": "https://en.wikipedia.org/wiki/2024_Lusail_Formula_2_round"
+            },
+            "series": {
+              "text": "FIA F2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2_Championship"
+            },
+            "time": 97.997,
+            "vehicle": {
+              "text": "Dallara F2 2024",
+              "url": "https://en.wikipedia.org/wiki/Dallara_F2_2024"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Matt Campbell",
+              "url": "https://en.wikipedia.org/wiki/Matt_Campbell_(racing_driver)"
+            },
+            "event": {
+              "text": "2024 Qatar 1812 km",
+              "url": "https://en.wikipedia.org/wiki/2024_Qatar_1812_km"
+            },
+            "series": {
+              "text": "LMDh",
+              "url": "https://en.wikipedia.org/wiki/LMDh"
+            },
+            "time": 99.748,
+            "vehicle": {
+              "text": "Porsche 963",
+              "url": "https://en.wikipedia.org/wiki/Porsche_963"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Alessandro Pier Guidi",
+              "url": "https://en.wikipedia.org/wiki/Alessandro_Pier_Guidi"
+            },
+            "event": {
+              "text": "2025 Qatar 1812 km",
+              "url": "https://en.wikipedia.org/wiki/2025_Qatar_1812_km"
+            },
+            "series": {
+              "text": "LMH",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+            },
+            "time": 101.259,
+            "vehicle": {
+              "text": "Ferrari 499P",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_499P"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Emanuele Olivieri",
+              "url": "https://en.wikipedia.org/wiki/Emanuele_Olivieri"
+            },
+            "event": {
+              "text": "2026 Lusail Formula Regional Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2026_Formula_Regional_Middle_East_Trophy"
+            },
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            },
+            "time": 108.18,
+            "vehicle": {
+              "text": "Tatuus T-326",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "year": "2026"
+          },
+          {
+            "driver": {
+              "text": "Marc Márquez",
+              "url": "https://en.wikipedia.org/wiki/Marc_M%C3%A1rquez"
+            },
+            "event": {
+              "text": "2025 Qatar motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2025_Qatar_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
+            },
+            "time": 112.561,
+            "vehicle": {
+              "text": "Ducati Desmosedici GP25",
+              "url": "https://en.wikipedia.org/wiki/Ducati_Desmosedici"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Alessio Rovera",
+              "url": "https://en.wikipedia.org/wiki/Alessio_Rovera"
+            },
+            "event": {
+              "text": "2024 Qatar 1812 km",
+              "url": "https://en.wikipedia.org/wiki/2024_Qatar_1812_km"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 113.529,
+            "vehicle": {
+              "text": "Ferrari 296 GT3",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_GT3"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Doriane Pin",
+              "url": "https://en.wikipedia.org/wiki/Doriane_Pin"
+            },
+            "event": {
+              "text": "2024 Lusail F1 Academy round",
+              "url": "https://en.wikipedia.org/wiki/2024_F1_Academy_season"
+            },
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            },
+            "time": 114.996,
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Fouad Alghanim"
+            },
+            "event": {
+              "text": "2026 Ferrari Challenge Middle East Prologue"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 116.741,
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "year": "2026"
+          },
+          {
+            "driver": {
+              "text": "Sam Lowes",
+              "url": "https://en.wikipedia.org/wiki/Sam_Lowes"
+            },
+            "event": {
+              "text": "2023 Qatar motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2023_Qatar_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "Moto2",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto2_class"
+            },
+            "time": 117.366,
+            "vehicle": {
+              "text": "Kalex Moto2",
+              "url": "https://en.wikipedia.org/wiki/Kalex"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Caleb Sumich"
+            },
+            "event": {
+              "text": "2025 Lusail Porsche Carrera Cup Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_Porsche_Carrera_Cup_Middle_East"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 118.024,
+            "vehicle": {
+              "text": "Porsche 911 (992 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–2025)"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "David Munoz Rodriguez"
+            },
+            "event": {
+              "text": "2025 1st Lusail QSTK 600 round"
+            },
+            "series": {
+              "text": "Supersport",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            },
+            "time": 122.617,
+            "vehicle": {
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Tatsuki Suzuki",
+              "url": "https://en.wikipedia.org/wiki/Tatsuki_Suzuki"
+            },
+            "event": {
+              "text": "2024 Qatar motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2024_Qatar_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "Moto3",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto3_class"
+            },
+            "time": 123.135,
+            "vehicle": {
+              "text": "Husqvarna FR250GP",
+              "url": "https://en.wikipedia.org/wiki/KTM_RC250GP#Husqvarna_FR250GP"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Nolann Macary"
+            },
+            "event": {
+              "text": "2026 1st Lusail QSSP 300 round"
+            },
+            "series": {
+              "text": "Supersport 300",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            },
+            "time": 136.725,
+            "vehicle": {
+              "text": "Kawasaki Ninja 300",
+              "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_300"
+            },
+            "year": "2026"
+          },
+          {
+            "driver": {
+              "text": "Ghanim Al Madheed"
+            },
+            "event": {
+              "text": "2024 5th Lusail QTCC round"
+            },
+            "series": {
+              "text": "Touring car racing",
+              "url": "https://en.wikipedia.org/wiki/Touring_car_racing"
+            },
+            "time": 139.36,
+            "vehicle": {
+              "text": "Lotus Elise",
+              "url": "https://en.wikipedia.org/wiki/Lotus_Elise"
+            },
+            "year": "2024"
+          }
+        ],
+        "turns": 16,
+        "years": "2023–present"
+      },
+      {
+        "layout": "Short Circuit",
+        "length_km": 3.701,
+        "length_mi": 2.3,
+        "turns": 11,
+        "years": "2023–present"
+      },
+      {
+        "layout": "Club Circuit",
+        "length_km": 2.446,
+        "length_mi": 1.52,
+        "turns": 12,
+        "years": "2023–present"
+      },
+      {
+        "layout": "Original Grand Prix Circuit",
+        "length_km": 5.38,
+        "length_mi": 3.343,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Max Verstappen",
+              "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+            },
+            "event": {
+              "text": "2021 Qatar Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 83.196,
+            "vehicle": {
+              "text": "Red Bull Racing RB16B",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB16#2021"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Davide Rigon",
+              "url": "https://en.wikipedia.org/wiki/Davide_Rigon"
+            },
+            "event": {
+              "text": "2009 Qatar GP2 Asia Series round",
+              "url": "https://en.wikipedia.org/wiki/2009_Qatar_GP2_Asia_Series_round"
+            },
+            "series": {
+              "text": "GP2 Asia",
+              "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
+            },
+            "time": 98.699,
+            "vehicle": {
+              "text": "Dallara GP2/05",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/05"
+            },
+            "year": "2009"
+          },
+          {
+            "driver": {
+              "text": "Pierluigi Martini",
+              "url": "https://en.wikipedia.org/wiki/Pierluigi_Martini"
+            },
+            "event": {
+              "text": "2006 Losail Grand Prix Masters",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_Masters#2006"
+            },
+            "series": {
+              "text": "GP Masters",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_Masters"
+            },
+            "time": 109.116,
+            "vehicle": {
+              "text": "Delta Motorsport GP Masters car"
+            },
+            "year": "2006"
+          },
+          {
+            "driver": {
+              "text": "Enea Bastianini",
+              "url": "https://en.wikipedia.org/wiki/Enea_Bastianini"
+            },
+            "event": {
+              "text": "2022 Qatar motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2022_Qatar_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
+            },
+            "time": 114.338,
+            "vehicle": {
+              "text": "Ducati Desmosedici GP21",
+              "url": "https://en.wikipedia.org/wiki/Ducati_Desmosedici"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Jonathan Rea",
+              "url": "https://en.wikipedia.org/wiki/Jonathan_Rea"
+            },
+            "event": {
+              "text": "2019 Lusail World SBK round",
+              "url": "https://en.wikipedia.org/wiki/2019_Superbike_World_Championship"
+            },
+            "series": {
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
+            },
+            "time": 116.687,
+            "vehicle": {
+              "text": "Kawasaki Ninja ZX-10RR",
+              "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_ZX-10R"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Thomas Lüthi",
+              "url": "https://en.wikipedia.org/wiki/Thomas_L%C3%BCthi"
+            },
+            "event": {
+              "text": "2019 Qatar motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2019_Qatar_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "Moto2",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto2_class"
+            },
+            "time": 118.711,
+            "vehicle": {
+              "text": "Kalex Moto2",
+              "url": "https://en.wikipedia.org/wiki/Kalex"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Alex Debón",
+              "url": "https://en.wikipedia.org/wiki/Alex_Deb%C3%B3n"
+            },
+            "event": {
+              "text": "2008 Qatar motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2008_Qatar_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 119.379,
+            "vehicle": {
+              "text": "Aprilia RSV 250",
+              "url": "https://en.wikipedia.org/wiki/Aprilia_RSV_250"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Toby Sowery",
+              "url": "https://en.wikipedia.org/wiki/Toby_Sowery"
+            },
+            "event": {
+              "text": "2014 Lusail MRF Challenge round",
+              "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_MRF_Challenge_Formula_2000_Championship"
+            },
+            "series": {
+              "text": "MRF Challenge",
+              "url": "https://en.wikipedia.org/wiki/MRF_Challenge"
+            },
+            "time": 119.519,
+            "vehicle": {
+              "text": "Dallara Formulino Pro",
+              "url": "https://en.wikipedia.org/wiki/List_of_Dallara_cars"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Clemens Schmid",
+              "url": "https://en.wikipedia.org/wiki/Clemens_Schmid"
+            },
+            "event": {
+              "text": "2015 2nd Lusail Porsche GT3 Middle East Championship round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Sprint_Challenge_Middle_East"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 120.322,
+            "vehicle": {
+              "text": "Porsche 911 (991 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2013–2017)"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "José María López",
+              "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_L%C3%B3pez"
+            },
+            "event": {
+              "text": "2015 FIA WTCC Race of Qatar",
+              "url": "https://en.wikipedia.org/wiki/2015_World_Touring_Car_Championship"
+            },
+            "series": {
+              "text": "TC1",
+              "url": "https://en.wikipedia.org/wiki/Super_2000#Touring_cars"
+            },
+            "time": 121.628,
+            "vehicle": {
+              "text": "Citroën C-Elysée WTCC",
+              "url": "https://en.wikipedia.org/wiki/Citro%C3%ABn_C-Elys%C3%A9e#Motorsport"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Kenan Sofuoğlu",
+              "url": "https://en.wikipedia.org/wiki/Kenan_Sofuo%C4%9Flu"
+            },
+            "event": {
+              "text": "2017 Lusail World SSP round",
+              "url": "https://en.wikipedia.org/wiki/2017_Supersport_World_Championship"
+            },
+            "series": {
+              "text": "World SSP",
+              "url": "https://en.wikipedia.org/wiki/Supersport_World_Championship"
+            },
+            "time": 121.832,
+            "vehicle": {
+              "text": "Kawasaki Ninja ZX-6R",
+              "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_ZX-6R"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Vitantonio Liuzzi",
+              "url": "https://en.wikipedia.org/wiki/Vitantonio_Liuzzi"
+            },
+            "event": {
+              "text": "2009 Lusail Speedcar Series round",
+              "url": "https://en.wikipedia.org/wiki/2009_Qatar_Speedcar_Series_round"
+            },
+            "series": {
+              "text": "Stock car racing",
+              "url": "https://en.wikipedia.org/wiki/Stock_car_racing"
+            },
+            "time": 124.508,
+            "vehicle": {
+              "text": "Speedcar V8",
+              "url": "https://en.wikipedia.org/wiki/Speedcar_Series#Technical_and_sporting_regulations"
+            },
+            "year": "2009"
+          },
+          {
+            "driver": {
+              "text": "Romano Fenati",
+              "url": "https://en.wikipedia.org/wiki/Romano_Fenati"
+            },
+            "event": {
+              "text": "2019 Qatar motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2019_Qatar_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "Moto3",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto3_class"
+            },
+            "time": 125.403,
+            "vehicle": {
+              "text": "Honda NSF250RW",
+              "url": "https://en.wikipedia.org/wiki/Honda_NSF250R"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Scott Redding",
+              "url": "https://en.wikipedia.org/wiki/Scott_Redding"
+            },
+            "event": {
+              "text": "2008 Qatar motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2008_Qatar_motorcycle_Grand_Prix"
+            },
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            },
+            "time": 125.695,
+            "vehicle": {
+              "text": "Aprilia RS125R",
+              "url": "https://en.wikipedia.org/wiki/Aprilia_RS125R"
+            },
+            "year": "2008"
+          },
+          {
+            "driver": {
+              "text": "Ana Carrasco",
+              "url": "https://en.wikipedia.org/wiki/Ana_Carrasco"
+            },
+            "event": {
+              "text": "2019 Lusail Supersport 300 round",
+              "url": "https://en.wikipedia.org/wiki/2019_Supersport_300_World_Championship"
+            },
+            "series": {
+              "text": "Supersport 300",
+              "url": "https://en.wikipedia.org/wiki/Supersport_300_World_Championship"
+            },
+            "time": 133.798,
+            "vehicle": {
+              "text": "Kawasaki Ninja 400",
+              "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_400"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Kasma Daniel Kasmayudin",
+              "url": "https://en.wikipedia.org/wiki/Kasma_Daniel_Kasmayudin"
+            },
+            "event": {
+              "text": "2015 Lusail ARRC round",
+              "url": "https://en.wikipedia.org/wiki/Asia_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "Asia Productions 250",
+              "url": "https://en.wikipedia.org/wiki/Asia_Road_Racing_Championship"
+            },
+            "time": 144.177,
+            "vehicle": {
+              "text": "Yamaha YZF-R25",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R25"
+            },
+            "year": "2015"
+          },
+          {
+            "driver": {
+              "text": "Ferlando Herdian"
+            },
+            "event": {
+              "text": "2014 Lusail ARRC round",
+              "url": "https://en.wikipedia.org/wiki/Asia_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "Asia Underbone 130",
+              "url": "https://en.wikipedia.org/wiki/Asia_Road_Racing_Championship"
+            },
+            "time": 151.934,
+            "vehicle": {
+              "text": "Yamaha T-150",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_T-150"
+            },
+            "year": "2014"
+          }
+        ],
+        "turns": 16,
+        "years": "2004–2022"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 25.49,
+        "lon": 51.45417
+      },
+      "places": [
+        {
+          "text": "{'text': 'Lusail', 'url': 'https://en.wikipedia.org/wiki/Lusail'}"
+        },
+        {
+          "text": "Lusail",
+          "url": "https://en.wikipedia.org/wiki/Lusail"
+        },
+        {
+          "text": "Al Daayen",
+          "url": "https://en.wikipedia.org/wiki/Al_Daayen"
+        },
+        {
+          "text": "Qatar",
+          "url": "https://en.wikipedia.org/wiki/Qatar"
+        }
+      ]
+    },
+    "name": {
+      "list": [
+        "Lusail International Circuit"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+        "year": 2021
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+        "year": 2023
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        "year": 2024
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+        "year": 2025
+      }
+    ],
+    "type": "Race circuit",
+    "url": "https://en.wikipedia.org/wiki/Lusail_International_Circuit"
+  }
+]

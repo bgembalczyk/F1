@@ -1,0 +1,2183 @@
+[
+  {
+    "circuit_status": "former",
+    "direction": "Clockwise",
+    "fia_grade": 2,
+    "grands_prix": [
+      {
+        "text": "United States Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+      }
+    ],
+    "grands_prix_held": 20,
+    "history": [
+      {
+        "event": "opened",
+        "date": "1956"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 5.552,
+        "length_mi": 3.45,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Sébastien Bourdais",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Bourdais"
+            },
+            "event": {
+              "text": "2017 IndyCar Grand Prix at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2017_IndyCar_Grand_Prix_at_The_Glen"
+            },
+            "series": {
+              "text": "IndyCar",
+              "url": "https://en.wikipedia.org/wiki/IndyCar_Series"
+            },
+            "time": 83.9166,
+            "vehicle": {
+              "text": "Dallara DW12",
+              "url": "https://en.wikipedia.org/wiki/Dallara_DW12"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Olivier Pla",
+              "url": "https://en.wikipedia.org/wiki/Olivier_Pla"
+            },
+            "event": {
+              "text": "2019 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2019_6_Hours_of_The_Glen"
+            },
+            "series": {
+              "text": "DPi",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype_International"
+            },
+            "time": 89.657,
+            "vehicle": {
+              "text": "Mazda RT24-P",
+              "url": "https://en.wikipedia.org/wiki/Mazda_RT24-P"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Giedo van der Garde",
+              "url": "https://en.wikipedia.org/wiki/Giedo_van_der_Garde"
+            },
+            "event": {
+              "text": "2022 Sahlen's Six Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2022_Sahlen%27s_Six_Hours_of_The_Glen"
+            },
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            },
+            "time": 92.444,
+            "vehicle": {
+              "text": "Oreca 07",
+              "url": "https://en.wikipedia.org/wiki/Oreca_07"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Jack Aitken",
+              "url": "https://en.wikipedia.org/wiki/Jack_Aitken"
+            },
+            "event": {
+              "text": "2023 Sahlen's Six Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2023_Sahlen%27s_Six_Hours_of_The_Glen"
+            },
+            "series": {
+              "text": "LMDh",
+              "url": "https://en.wikipedia.org/wiki/LMDh"
+            },
+            "time": 93.028,
+            "vehicle": {
+              "text": "Cadillac V-Series.R",
+              "url": "https://en.wikipedia.org/wiki/Cadillac_V-Series.R"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Dean Stoneman",
+              "url": "https://en.wikipedia.org/wiki/Dean_Stoneman"
+            },
+            "event": {
+              "text": "2016 Watkins Glen Indy Lights round",
+              "url": "https://en.wikipedia.org/wiki/2016_Indy_Lights"
+            },
+            "series": {
+              "text": "Indy Lights",
+              "url": "https://en.wikipedia.org/wiki/Indy_NXT"
+            },
+            "time": 93.6921,
+            "vehicle": {
+              "text": "Dallara IL-15",
+              "url": "https://en.wikipedia.org/wiki/Dallara_IL-15"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "Olivier Pla",
+              "url": "https://en.wikipedia.org/wiki/Olivier_Pla"
+            },
+            "event": {
+              "text": "2016 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2016_IMSA_SportsCar_Championship"
+            },
+            "series": {
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
+            },
+            "time": 94.515,
+            "vehicle": {
+              "text": "Ligier JS P2",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_P2"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "Roman De Angelis",
+              "url": "https://en.wikipedia.org/wiki/Roman_De_Angelis"
+            },
+            "event": {
+              "text": "2025 Sahlen's Six Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2025_Sahlen%27s_Six_Hours_of_The_Glen"
+            },
+            "series": {
+              "text": "LMH",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+            },
+            "time": 96.31,
+            "vehicle": {
+              "text": "Aston Martin Valkyrie AMR-LMH",
+              "url": "https://en.wikipedia.org/wiki/Aston_Martin_Valkyrie_AMR-LMH"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Renger van der Zande",
+              "url": "https://en.wikipedia.org/wiki/Renger_van_der_Zande"
+            },
+            "event": {
+              "text": "2016 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2016_IMSA_SportsCar_Championship"
+            },
+            "series": {
+              "text": "LMPC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge"
+            },
+            "time": 97.3,
+            "vehicle": {
+              "text": "Oreca FLM09",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge#Oreca_FLM09"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "Juan Manuel Fangio II",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio_II"
+            },
+            "event": {
+              "text": "1993 Fay's Drugs Weekend at the Glen",
+              "url": "https://en.wikipedia.org/wiki/1993_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 99.011,
+            "vehicle": {
+              "text": "Eagle MkIII",
+              "url": "https://en.wikipedia.org/wiki/Eagle_MkIII"
+            },
+            "year": "1993"
+          },
+          {
+            "driver": {
+              "text": "Oliver Gavin",
+              "url": "https://en.wikipedia.org/wiki/Oliver_Gavin"
+            },
+            "event": {
+              "text": "2000 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2000_Grand_American_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "LMP900",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 99.2,
+            "vehicle": {
+              "text": "Lola B2K/10",
+              "url": "https://en.wikipedia.org/wiki/Lola_B2K/10"
+            },
+            "year": "2000"
+          },
+          {
+            "driver": {
+              "text": "Didier Theys",
+              "url": "https://en.wikipedia.org/wiki/Didier_Theys"
+            },
+            "event": {
+              "text": "2001 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2001_Grand_American_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "WSC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 99.617,
+            "vehicle": {
+              "text": "Ferrari 333 SP",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_333_SP"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Colin Braun",
+              "url": "https://en.wikipedia.org/wiki/Colin_Braun"
+            },
+            "event": {
+              "text": "2021 WeatherTech 240 at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2021_WeatherTech_240_at_The_Glen"
+            },
+            "series": {
+              "text": "LMP3",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
+            },
+            "time": 99.967,
+            "vehicle": {
+              "text": "Ligier JS P320",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_P320"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Jimmy Simpson",
+              "url": "https://en.wikipedia.org/wiki/Jimmy_Simpson_(racing_driver)"
+            },
+            "event": {
+              "text": "2014 Watkins Glen Atlantic Championship round",
+              "url": "https://en.wikipedia.org/wiki/2014_Atlantic_Championship"
+            },
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            },
+            "time": 100.634,
+            "vehicle": {
+              "text": "Swift 016.a",
+              "url": "https://en.wikipedia.org/wiki/Swift_016.a"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Joey Hand",
+              "url": "https://en.wikipedia.org/wiki/Joey_Hand"
+            },
+            "event": {
+              "text": "2016 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2016_6_Hours_of_The_Glen"
+            },
+            "series": {
+              "text": "LM GTE",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE"
+            },
+            "time": 101.141,
+            "vehicle": {
+              "text": "Ford GT",
+              "url": "https://en.wikipedia.org/wiki/Ford_GT#Ford_GT_LM_GTE-Pro_by_Ford_Chip_Ganassi_Racing"
+            },
+            "year": "2016"
+          },
+          {
+            "driver": {
+              "text": "Victor Franzoni",
+              "url": "https://en.wikipedia.org/wiki/Victor_Franzoni"
+            },
+            "event": {
+              "text": "2017 Watkins Glen Pro Mazda round",
+              "url": "https://en.wikipedia.org/wiki/2017_Pro_Mazda_Championship"
+            },
+            "series": {
+              "text": "Pro Mazda",
+              "url": "https://en.wikipedia.org/wiki/USF_Pro_2000_Championship"
+            },
+            "time": 103.573,
+            "vehicle": {
+              "text": "Star Formula Mazda 'Pro'",
+              "url": "https://en.wikipedia.org/wiki/Star_Formula_Mazda_%27Pro%27_(car)"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Thierry Boutsen",
+              "url": "https://en.wikipedia.org/wiki/Thierry_Boutsen"
+            },
+            "event": {
+              "text": "1998 Six Hours at the Glen",
+              "url": "https://en.wikipedia.org/wiki/1998_Six_Hours_at_the_Glen"
+            },
+            "series": {
+              "text": "GT1 (Prototype)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#Prototype_years_(1997–1998)"
+            },
+            "time": 103.58,
+            "vehicle": {
+              "text": "Porsche 911 GT1 Evo",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT1"
+            },
+            "year": "1998"
+          },
+          {
+            "driver": {
+              "text": "Álvaro Parente",
+              "url": "https://en.wikipedia.org/wiki/%C3%81lvaro_Parente"
+            },
+            "event": {
+              "text": "2019 Watkins Glen GT World Challenge America round",
+              "url": "https://en.wikipedia.org/wiki/2019_Blancpain_GT_World_Challenge_America"
+            },
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            },
+            "time": 104.286,
+            "vehicle": {
+              "text": "Bentley Continental GT3",
+              "url": "https://en.wikipedia.org/wiki/Bentley_Continental_GT#Continental_GT3_(2018–2021)"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Justin Marks",
+              "url": "https://en.wikipedia.org/wiki/Justin_Marks"
+            },
+            "event": {
+              "text": "2023 Watkins Glen Trans-Am round"
+            },
+            "series": {
+              "text": "TA1",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series#TA"
+            },
+            "time": 104.842,
+            "vehicle": {
+              "text": "Chevrolet Camaro Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(sixth_generation)#Motorsports"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Ralf Kelleners",
+              "url": "https://en.wikipedia.org/wiki/Ralf_Kelleners"
+            },
+            "event": {
+              "text": "2002 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2002_Rolex_Sports_Car_Series"
+            },
+            "series": {
+              "text": "LMP675",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 105.46,
+            "vehicle": {
+              "text": "Lola B2K/40",
+              "url": "https://en.wikipedia.org/wiki/Lola_B2K/40"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Loris Spinelli",
+              "url": "https://en.wikipedia.org/wiki/Loris_Spinelli"
+            },
+            "event": {
+              "text": "2021 Watkins Glen Lamborghini Super Trofeo North America round",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Super_Trofeo#Super_Trofeo_North_America"
+            },
+            "series": {
+              "text": "Lamborghini Super Trofeo",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Super_Trofeo"
+            },
+            "time": 105.672,
+            "vehicle": {
+              "text": "Lamborghini Huracán Super Trofeo Evo",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Hurac%C3%A1n#Huracán_LP_620-2_Super_Trofeo_EVO_(2019–present)"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Massimo Perrina"
+            },
+            "event": {
+              "text": "2025 Watkins Glen Ferrari Challenge North America round"
+            },
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            },
+            "time": 106.639,
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Rinus VeeKay",
+              "url": "https://en.wikipedia.org/wiki/Rinus_VeeKay"
+            },
+            "event": {
+              "text": "2017 Watkins Glen US F2000 round",
+              "url": "https://en.wikipedia.org/wiki/2017_U.S._F2000_National_Championship"
+            },
+            "series": {
+              "text": "US F2000",
+              "url": "https://en.wikipedia.org/wiki/USF2000_Championship"
+            },
+            "time": 106.785,
+            "vehicle": {
+              "text": "Tatuus USF-17",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014#USF2000_and_Pro_Mazda"
+            },
+            "year": "2017"
+          },
+          {
+            "driver": {
+              "text": "Jean-Philippe Belloc",
+              "url": "https://en.wikipedia.org/wiki/Jean-Philippe_Belloc"
+            },
+            "event": {
+              "text": "1999 FIA GT Watkins Glen 3 Hours",
+              "url": "https://en.wikipedia.org/wiki/1999_FIA_GT_Watkins_Glen_3_Hours"
+            },
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#List_of_FIA_GT1_cars"
+            },
+            "time": 107.717,
+            "vehicle": {
+              "text": "Chrysler Viper GTS-R",
+              "url": "https://en.wikipedia.org/wiki/Chrysler_Viper_GTS-R"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Parker Johnstone",
+              "url": "https://en.wikipedia.org/wiki/Parker_Johnstone"
+            },
+            "event": {
+              "text": "1993 Fay's Drugs Weekend at the Glen",
+              "url": "https://en.wikipedia.org/wiki/1993_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP Lights",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 108.3,
+            "vehicle": {
+              "text": "Spice SE90P",
+              "url": "https://en.wikipedia.org/wiki/Spice_SE90P"
+            },
+            "year": "1993"
+          },
+          {
+            "driver": {
+              "text": "Kay van Berlo",
+              "url": "https://en.wikipedia.org/wiki/Kay_van_Berlo"
+            },
+            "event": {
+              "text": "2021 Watkins Glen Porsche Carrera Cup North America round",
+              "url": "https://en.wikipedia.org/wiki/2021_Porsche_Carrera_Cup_North_America"
+            },
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "time": 108.619,
+            "vehicle": {
+              "text": "Porsche 911 (992 I) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–2025)"
+            },
+            "year": "2021"
+          },
+          {
+            "driver": {
+              "text": "Darin Brassfield",
+              "url": "https://en.wikipedia.org/wiki/Darin_Brassfield"
+            },
+            "event": {
+              "text": "1993 Fay's Drugs Weekend at the Glen",
+              "url": "https://en.wikipedia.org/wiki/1993_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTS",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Supreme"
+            },
+            "time": 108.833,
+            "vehicle": {
+              "text": "Oldsmobile Cutlass",
+              "url": "https://en.wikipedia.org/wiki/Oldsmobile_Cutlass"
+            },
+            "year": "1993"
+          },
+          {
+            "driver": {
+              "text": "Steve Marshall"
+            },
+            "event": {
+              "text": "1998 Six Hours at the Glen",
+              "url": "https://en.wikipedia.org/wiki/1998_Six_Hours_at_the_Glen"
+            },
+            "series": {
+              "text": "GT3 (1998-1999)",
+              "url": "https://en.wikipedia.org/wiki/GT3_(1998%E2%80%931999)"
+            },
+            "time": 109.073,
+            "vehicle": {
+              "text": "Porsche 911 Carrera RSR",
+              "url": "https://en.wikipedia.org/wiki/Porsche_993"
+            },
+            "year": "1998"
+          },
+          {
+            "driver": {
+              "text": "Chris Bingham",
+              "url": "https://en.wikipedia.org/wiki/Chris_Bingham"
+            },
+            "event": {
+              "text": "2001 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2001_Grand_American_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000-2009)"
+            },
+            "time": 110.423,
+            "vehicle": {
+              "text": "Saleen S7-R",
+              "url": "https://en.wikipedia.org/wiki/Saleen_S7#S7-R"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Irv Hoerr",
+              "url": "https://en.wikipedia.org/wiki/Irv_Hoerr"
+            },
+            "event": {
+              "text": "2000 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2000_Grand_American_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "American GT",
+              "url": "https://en.wikipedia.org/wiki/Rolex_Sports_Car_Series"
+            },
+            "time": 110.7,
+            "vehicle": {
+              "text": "Chevrolet Camaro",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro"
+            },
+            "year": "2000"
+          },
+          {
+            "driver": {
+              "text": "John O'Steen"
+            },
+            "event": {
+              "text": "1999 FIA GT Watkins Glen 3 Hours",
+              "url": "https://en.wikipedia.org/wiki/1999_FIA_GT_Watkins_Glen_3_Hours"
+            },
+            "series": {
+              "text": "N-GT",
+              "url": "https://en.wikipedia.org/wiki/Group_N-GT"
+            },
+            "time": 111.317,
+            "vehicle": {
+              "text": "Porsche 911 GT2",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT2"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Thomas Merrill",
+              "url": "https://en.wikipedia.org/wiki/Thomas_Merrill_(racing_driver)"
+            },
+            "event": {
+              "text": "2024 Watkins Glen Trans-Am round"
+            },
+            "series": {
+              "text": "TA2",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series#TA2"
+            },
+            "time": 111.387,
+            "vehicle": {
+              "text": "Ford Mustang Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_(sixth_generation)#Motorsport"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Nilton Rossoni",
+              "url": "https://en.wikipedia.org/wiki/Nilton_Rossoni"
+            },
+            "event": {
+              "text": "1999 Watkins Glen Barber Pro round",
+              "url": "https://en.wikipedia.org/wiki/1999_Barber_Dodge_Pro_Series"
+            },
+            "series": {
+              "text": "Barber Pro",
+              "url": "https://en.wikipedia.org/wiki/Barber_Pro_Series"
+            },
+            "time": 111.53,
+            "vehicle": {
+              "text": "Reynard 98E",
+              "url": "https://en.wikipedia.org/wiki/List_of_Reynard_Motorsport_cars"
+            },
+            "year": "1999"
+          },
+          {
+            "driver": {
+              "text": "Cort Wagner"
+            },
+            "event": {
+              "text": "2000 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2000_Grand_American_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "GTO",
+              "url": "https://en.wikipedia.org/wiki/Rolex_Sports_Car_Series"
+            },
+            "time": 111.8,
+            "vehicle": {
+              "text": "Porsche 911 (996) GT2",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT2#Motorsports"
+            },
+            "year": "2000"
+          },
+          {
+            "driver": {
+              "text": "Tim Minor"
+            },
+            "event": {
+              "text": "2014 Watkins Glen F2000 Championship round",
+              "url": "https://en.wikipedia.org/wiki/2014_F2000_Championship_Series"
+            },
+            "series": {
+              "text": "F2000 Championship",
+              "url": "https://en.wikipedia.org/wiki/F2000_Championship_Series"
+            },
+            "time": 112.195,
+            "vehicle": {
+              "text": "Citation F2000"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "David Murry",
+              "url": "https://en.wikipedia.org/wiki/David_Murry"
+            },
+            "event": {
+              "text": "2000 6 Hours of The Glen",
+              "url": "https://en.wikipedia.org/wiki/2000_Grand_American_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "GTU",
+              "url": "https://en.wikipedia.org/wiki/Rolex_Sports_Car_Series"
+            },
+            "time": 114.0,
+            "vehicle": {
+              "text": "Porsche 911 (996) GT3-R",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#996_GT3_R_(1999–2001)"
+            },
+            "year": "2000"
+          },
+          {
+            "driver": {
+              "text": "Devin Jones",
+              "url": "https://en.wikipedia.org/wiki/Devin_Jones"
+            },
+            "event": {
+              "text": "2019 Tioga Downs Casino Resort 240 at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2019_Michelin_Pilot_Challenge"
+            },
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            },
+            "time": 114.077,
+            "vehicle": {
+              "text": "BMW M4 GT4",
+              "url": "https://en.wikipedia.org/wiki/BMW_M4#BMW_M4_GT4"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Ryan Eversley",
+              "url": "https://en.wikipedia.org/wiki/Ryan_Eversley"
+            },
+            "event": {
+              "text": "2023 Watkins Glen International 120",
+              "url": "https://en.wikipedia.org/wiki/2023_Michelin_Pilot_Challenge"
+            },
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            },
+            "time": 116.114,
+            "vehicle": {
+              "text": "Honda Civic Type R TCR (FL5)",
+              "url": "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_TCR#FL5_(2023)"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Brian DeVries"
+            },
+            "event": {
+              "text": "1994 The Glen Continental",
+              "url": "https://en.wikipedia.org/wiki/1994_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTO",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Over"
+            },
+            "time": 117.1,
+            "vehicle": {
+              "text": "Oldsmobile Cutlass",
+              "url": "https://en.wikipedia.org/wiki/Oldsmobile_Cutlass"
+            },
+            "year": "1994"
+          },
+          {
+            "driver": {
+              "text": "Garth Rickards",
+              "url": "https://en.wikipedia.org/wiki/Garth_Rickards"
+            },
+            "event": {
+              "text": "2014 Watkins Glen F1600 Championship round",
+              "url": "https://en.wikipedia.org/wiki/2014_F1600_Championship_Series"
+            },
+            "series": {
+              "text": "F1600 Championship",
+              "url": "https://en.wikipedia.org/wiki/F1600_Championship_Series"
+            },
+            "time": 117.184,
+            "vehicle": {
+              "text": "Mygale SJ 2012",
+              "url": "https://en.wikipedia.org/wiki/Mygale#Racing_cars"
+            },
+            "year": "2014"
+          },
+          {
+            "driver": {
+              "text": "Tyler Maxson",
+              "url": "https://en.wikipedia.org/wiki/Tyler_Maxson"
+            },
+            "event": {
+              "text": "2024 Watkins Glen Mustang Challenge round",
+              "url": "https://en.wikipedia.org/wiki/2024_IMSA_Ford_Mustang_Challenge"
+            },
+            "series": {
+              "text": "Mustang Challenge",
+              "url": "https://en.wikipedia.org/wiki/IMSA_Ford_Mustang_Challenge"
+            },
+            "time": 121.074,
+            "vehicle": {
+              "text": "Ford Mustang Dark Horse R",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_(seventh_generation)#Dark_Horse_R"
+            },
+            "year": "2024"
+          },
+          {
+            "driver": {
+              "text": "Butch Leitzinger",
+              "url": "https://en.wikipedia.org/wiki/Butch_Leitzinger"
+            },
+            "event": {
+              "text": "1993 Fay's Drugs Weekend at the Glen",
+              "url": "https://en.wikipedia.org/wiki/1993_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTU",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Under"
+            },
+            "time": 121.42,
+            "vehicle": {
+              "text": "Nissan 240SX",
+              "url": "https://en.wikipedia.org/wiki/Nissan_240SX"
+            },
+            "year": "1993"
+          },
+          {
+            "driver": {
+              "text": "Matthew Dirks"
+            },
+            "event": {
+              "text": "2022 Watkins Glen Mazda MX-5 Cup round",
+              "url": "https://en.wikipedia.org/wiki/2022_Mazda_MX-5_Cup"
+            },
+            "series": {
+              "text": "Mazda MX-5 Cup",
+              "url": "https://en.wikipedia.org/wiki/Global_MX-5_Cup"
+            },
+            "time": 129.086,
+            "vehicle": {
+              "text": "Mazda MX-5 (ND)",
+              "url": "https://en.wikipedia.org/wiki/Mazda_MX-5_(ND)"
+            },
+            "year": "2022"
+          },
+          {
+            "driver": {
+              "text": "Hans-Joachim Stuck",
+              "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+            },
+            "event": {
+              "text": "1993 Fay's Drugs Weekend at the Glen",
+              "url": "https://en.wikipedia.org/wiki/IMSA_Supercar_Championship"
+            },
+            "series": {
+              "text": "IMSA Supercar",
+              "url": "https://en.wikipedia.org/wiki/IMSA_Supercar_Championship"
+            },
+            "time": 132.099,
+            "vehicle": {
+              "text": "Porsche 911 Turbo (964)",
+              "url": "https://en.wikipedia.org/wiki/Porsche_964#Turbo"
+            },
+            "year": "1993"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt and concrete",
+          "values": [
+            "Asphalt",
+            "Concrete"
+          ]
+        },
+        "turns": 11,
+        "years": "with Inner Loop Chicane) (1992–present"
+      },
+      {
+        "layout": "Short Circuit",
+        "length_km": 3.943,
+        "length_mi": 2.45,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Davy Jones",
+              "url": "https://en.wikipedia.org/wiki/Davy_Jones_(racing_driver)"
+            },
+            "event": {
+              "text": "1992 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1992_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 59.92,
+            "vehicle": {
+              "text": "Jaguar XJR-14",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_XJR-14"
+            },
+            "year": "1992"
+          },
+          {
+            "driver": {
+              "text": "Didier Theys",
+              "url": "https://en.wikipedia.org/wiki/Didier_Theys"
+            },
+            "event": {
+              "text": "2002 Bully Hill Vineyards 250",
+              "url": "https://en.wikipedia.org/wiki/2002_Rolex_Sports_Car_Series"
+            },
+            "series": {
+              "text": "LMP900",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 63.676,
+            "vehicle": {
+              "text": "Dallara SP1",
+              "url": "https://en.wikipedia.org/wiki/Dallara_SP1"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Scott Pruett",
+              "url": "https://en.wikipedia.org/wiki/Scott_Pruett"
+            },
+            "event": {
+              "text": "2010 Crown Royal 200 at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2010_Rolex_Sports_Car_Series"
+            },
+            "series": {
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
+            },
+            "time": 65.349,
+            "vehicle": {
+              "text": "Riley MkXX",
+              "url": "https://en.wikipedia.org/wiki/Riley_MkXI"
+            },
+            "year": "2010"
+          },
+          {
+            "driver": {
+              "text": "Bruno St. Jacques"
+            },
+            "event": {
+              "text": "2001 Bully Hill Vineyards 250",
+              "url": "https://en.wikipedia.org/wiki/2001_Grand_American_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "LMP675",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            },
+            "time": 68.499,
+            "vehicle": {
+              "text": "Lola B2K/40",
+              "url": "https://en.wikipedia.org/wiki/Lola_B2K/40"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Parker Johnstone",
+              "url": "https://en.wikipedia.org/wiki/Parker_Johnstone"
+            },
+            "event": {
+              "text": "1992 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1992_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP Lights",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 69.02,
+            "vehicle": {
+              "text": "Spice SE91P",
+              "url": "https://en.wikipedia.org/wiki/Spice_SE91P"
+            },
+            "year": "1992"
+          },
+          {
+            "driver": {
+              "text": "Martin Truex Jr.",
+              "url": "https://en.wikipedia.org/wiki/Martin_Truex_Jr."
+            },
+            "event": {
+              "text": "2019 Go Bowling at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2019_Go_Bowling_at_The_Glen"
+            },
+            "series": {
+              "text": "NASCAR Cup",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Cup_Series"
+            },
+            "time": 70.54,
+            "vehicle": {
+              "text": "Toyota Camry",
+              "url": "https://en.wikipedia.org/wiki/Toyota_Camry"
+            },
+            "year": "2019"
+          },
+          {
+            "driver": {
+              "text": "Ron Johnson"
+            },
+            "event": {
+              "text": "2001 Bully Hill Vineyards 250",
+              "url": "https://en.wikipedia.org/wiki/2001_Grand_American_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            },
+            "time": 70.939,
+            "vehicle": {
+              "text": "Saleen S7-R",
+              "url": "https://en.wikipedia.org/wiki/Saleen_S7#S7R"
+            },
+            "year": "2001"
+          },
+          {
+            "driver": {
+              "text": "Paul Edwards"
+            },
+            "event": {
+              "text": "2010 Crown Royal 200 at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2010_Rolex_Sports_Car_Series"
+            },
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            },
+            "time": 71.478,
+            "vehicle": {
+              "text": "Chevrolet Corvette C6.R",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_C6.R"
+            },
+            "year": "2010"
+          },
+          {
+            "driver": {
+              "text": "Justin Allgaier",
+              "url": "https://en.wikipedia.org/wiki/Justin_Allgaier"
+            },
+            "event": {
+              "text": "2023 Shriners Children's 200 at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2023_Shriners_Children%27s_200_at_The_Glen"
+            },
+            "series": {
+              "text": "NASCAR Xfinity",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Xfinity_Series"
+            },
+            "time": 71.83,
+            "vehicle": {
+              "text": "Chevrolet Camaro SS",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(sixth_generation)#Motorsports"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Chris Bingham",
+              "url": "https://en.wikipedia.org/wiki/Chris_Bingham"
+            },
+            "event": {
+              "text": "2002 Bully Hill Vineyards 250",
+              "url": "https://en.wikipedia.org/wiki/2002_Rolex_Sports_Car_Series"
+            },
+            "series": {
+              "text": "American GT",
+              "url": "https://en.wikipedia.org/wiki/Rolex_Sports_Car_Series"
+            },
+            "time": 71.899,
+            "vehicle": {
+              "text": "Chevrolet Corvette",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Corvette"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Andrés Pérez de Lara",
+              "url": "https://en.wikipedia.org/wiki/Andr%C3%A9s_P%C3%A9rez_de_Lara"
+            },
+            "event": {
+              "text": "2025 Mission 176 at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2025_Mission_176_at_The_Glen"
+            },
+            "series": {
+              "text": "NASCAR Truck",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Truck_Series"
+            },
+            "time": 72.761,
+            "vehicle": {
+              "text": "Chevrolet Silverado RST",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Silverado#Motorsport"
+            },
+            "year": "2025"
+          },
+          {
+            "driver": {
+              "text": "Connor Zilisch",
+              "url": "https://en.wikipedia.org/wiki/Connor_Zilisch"
+            },
+            "event": {
+              "text": "2023 General Tire 100 at The Glen",
+              "url": "https://en.wikipedia.org/wiki/2023_General_Tire_100_at_The_Glen"
+            },
+            "series": {
+              "text": "ARCA Menards",
+              "url": "https://en.wikipedia.org/wiki/ARCA_Menards_Series"
+            },
+            "time": 73.435,
+            "vehicle": {
+              "text": "Chevrolet Camaro SS",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(sixth_generation)#NASCAR"
+            },
+            "year": "2023"
+          },
+          {
+            "driver": {
+              "text": "Bill Auberlen",
+              "url": "https://en.wikipedia.org/wiki/Bill_Auberlen"
+            },
+            "event": {
+              "text": "2002 Bully Hill Vineyards 250",
+              "url": "https://en.wikipedia.org/wiki/2002_Rolex_Sports_Car_Series"
+            },
+            "series": {
+              "text": "GT",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            },
+            "time": 73.541,
+            "vehicle": {
+              "text": "Ferrari 360 GT",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_360#360_GT"
+            },
+            "year": "2002"
+          },
+          {
+            "driver": {
+              "text": "Shawn Hendricks"
+            },
+            "event": {
+              "text": "1994 Glen Continental",
+              "url": "https://en.wikipedia.org/wiki/IMSA_Supercar_Championship"
+            },
+            "series": {
+              "text": "IMSA Supercar",
+              "url": "https://en.wikipedia.org/wiki/IMSA_Supercar_Championship"
+            },
+            "time": 83.651,
+            "vehicle": {
+              "text": "Nissan 300ZX",
+              "url": "https://en.wikipedia.org/wiki/Nissan_300ZX#Motorsports"
+            },
+            "year": "1994"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 7,
+        "years": "with Inner Loop Chicane) (1992–present"
+      },
+      {
+        "layout": "Short Circuit",
+        "length_km": 3.907,
+        "length_mi": 2.428,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Davy Jones",
+              "url": "https://en.wikipedia.org/wiki/Davy_Jones_(racing_driver)"
+            },
+            "event": {
+              "text": "1991 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1991_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 59.92,
+            "vehicle": {
+              "text": "Jaguar XJR-16",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_XJR-16"
+            },
+            "year": "1991"
+          },
+          {
+            "driver": {
+              "text": "Parker Johnstone",
+              "url": "https://en.wikipedia.org/wiki/Parker_Johnstone"
+            },
+            "event": {
+              "text": "1991 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1991_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP Lights",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 67.06,
+            "vehicle": {
+              "text": "Spice SE90P",
+              "url": "https://en.wikipedia.org/wiki/Spice_SE90P"
+            },
+            "year": "1991"
+          },
+          {
+            "driver": {
+              "text": "Hurley Haywood",
+              "url": "https://en.wikipedia.org/wiki/Hurley_Haywood"
+            },
+            "event": {
+              "text": "1991 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/IMSA_Supercar_Championship"
+            },
+            "series": {
+              "text": "IMSA Supercar",
+              "url": "https://en.wikipedia.org/wiki/IMSA_Supercar_Championship"
+            },
+            "time": 81.35,
+            "vehicle": {
+              "text": "Porsche 911 Turbo (964)",
+              "url": "https://en.wikipedia.org/wiki/Porsche_964#Turbo"
+            },
+            "year": "1991"
+          },
+          {
+            "driver": {
+              "text": "Denny Hulme",
+              "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+            },
+            "event": {
+              "text": "1971 Watkins Glen Can-Am round",
+              "url": "https://en.wikipedia.org/wiki/1971_Can-Am_season"
+            },
+            "series": {
+              "text": "Group 7 ( Can-Am )"
+            },
+            "time": 66.083,
+            "vehicle": {
+              "text": "McLaren M8F",
+              "url": "https://en.wikipedia.org/wiki/McLaren_M8A#M8F"
+            },
+            "year": "1971"
+          },
+          {
+            "driver": {
+              "text": "Derek Bell",
+              "url": "https://en.wikipedia.org/wiki/Derek_Bell_(racing_driver)"
+            },
+            "event": {
+              "text": "1971 Watkins Glen 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/1971_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#2nd_Generation_Group_5_-_\"Sports_Cars\"_(1970_to_1971)"
+            },
+            "time": 68.297,
+            "vehicle": {
+              "text": "Porsche 917K",
+              "url": "https://en.wikipedia.org/wiki/Porsche_917#1971"
+            },
+            "year": "1971"
+          },
+          {
+            "driver": {
+              "text": "George Follmer",
+              "url": "https://en.wikipedia.org/wiki/George_Follmer"
+            },
+            "event": {
+              "text": "1971 Watkins Glen Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/1971_Trans-American_Sedan_Championship"
+            },
+            "series": {
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            },
+            "time": 78.196,
+            "vehicle": {
+              "text": "Ford Mustang Boss 302",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_Boss_302"
+            },
+            "year": "1971"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 8,
+        "years": "with Esses Chicane) (1979–1991"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 5.435,
+        "length_mi": 3.377,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Chip Robinson",
+              "url": "https://en.wikipedia.org/wiki/Chip_Robinson"
+            },
+            "event": {
+              "text": "1990 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1990_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 95.6,
+            "vehicle": {
+              "text": "Nissan NPT-90",
+              "url": "https://en.wikipedia.org/wiki/Nissan_NPT-90"
+            },
+            "year": "1990"
+          },
+          {
+            "driver": {
+              "text": "Mark Donohue",
+              "url": "https://en.wikipedia.org/wiki/Mark_Donohue"
+            },
+            "event": {
+              "text": "1973 Watkins Glen Can-Am round",
+              "url": "https://en.wikipedia.org/wiki/1973_Can-Am_season"
+            },
+            "series": {
+              "text": "Group 7",
+              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)"
+            },
+            "time": 99.571,
+            "vehicle": {
+              "text": "Porsche 917/30 TC",
+              "url": "https://en.wikipedia.org/wiki/Porsche_917#1972–1973_Can-Am"
+            },
+            "year": "1973"
+          },
+          {
+            "driver": {
+              "text": "Carlos Pace",
+              "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
+            },
+            "event": {
+              "text": "1974 United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1974_United_States_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 100.608,
+            "vehicle": {
+              "text": "Brabham BT44",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT44"
+            },
+            "year": "1974"
+          },
+          {
+            "driver": {
+              "text": "Mario Andretti",
+              "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+            },
+            "event": {
+              "text": "1974 Watkins Glen F5000 round",
+              "url": "https://en.wikipedia.org/wiki/1974_SCCA/USAC_Formula_5000_Championship"
+            },
+            "series": {
+              "text": "F5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
+            },
+            "time": 101.406,
+            "vehicle": {
+              "text": "Lola T332",
+              "url": "https://en.wikipedia.org/wiki/Lola_T332"
+            },
+            "year": "1974"
+          },
+          {
+            "driver": {
+              "text": "François Cevert",
+              "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Cevert"
+            },
+            "event": {
+              "text": "1973 Watkins Glen 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/1973_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
+            },
+            "time": 103.847,
+            "vehicle": {
+              "text": "Matra-Simca MS670B",
+              "url": "https://en.wikipedia.org/wiki/Matra-Simca_MS670#1973"
+            },
+            "year": "1973"
+          },
+          {
+            "driver": {
+              "text": "Ruggero Melgrati"
+            },
+            "event": {
+              "text": "1990 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1990_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP Lights",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 105.1,
+            "vehicle": {
+              "text": "Spice SE89P",
+              "url": "https://en.wikipedia.org/wiki/Spice_SE89P"
+            },
+            "year": "1990"
+          },
+          {
+            "driver": {
+              "text": "Hans-Joachim Stuck",
+              "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+            },
+            "event": {
+              "text": "1990 Kodak Copier 500",
+              "url": "https://en.wikipedia.org/wiki/1989_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTO",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Over"
+            },
+            "time": 107.15,
+            "vehicle": {
+              "text": "Audi 90 Quattro",
+              "url": "https://en.wikipedia.org/wiki/Audi_90"
+            },
+            "year": "1990"
+          },
+          {
+            "driver": {
+              "text": "Bob Leitzinger"
+            },
+            "event": {
+              "text": "1990 Kodak Copier 500",
+              "url": "https://en.wikipedia.org/wiki/1989_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTU",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Under"
+            },
+            "time": 116.05,
+            "vehicle": {
+              "text": "Nissan 240SX",
+              "url": "https://en.wikipedia.org/wiki/Nissan_240SX"
+            },
+            "year": "1990"
+          },
+          {
+            "driver": {
+              "text": "Ray Kong"
+            },
+            "event": {
+              "text": "1991 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1991_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA AAC",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_Championship"
+            },
+            "time": 116.55,
+            "vehicle": {
+              "text": "Oldsmobile Cutlass",
+              "url": "https://en.wikipedia.org/wiki/Oldsmobile_Cutlass"
+            },
+            "year": "1991"
+          },
+          {
+            "driver": {
+              "text": "Peter Gregg",
+              "url": "https://en.wikipedia.org/wiki/Peter_Gregg_(racing_driver)"
+            },
+            "event": {
+              "text": "1974 Watkins Glen Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/1974_Trans-Am_Series"
+            },
+            "series": {
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            },
+            "time": 118.3,
+            "vehicle": {
+              "text": "Porsche Carrera RSR",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_RSR"
+            },
+            "year": "1974"
+          },
+          {
+            "driver": {
+              "text": "Alan Jones",
+              "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
+            },
+            "event": {
+              "text": "1980 United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1980_United_States_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 94.068,
+            "vehicle": {
+              "text": "Williams FW07B",
+              "url": "https://en.wikipedia.org/wiki/Williams_FW07B"
+            },
+            "year": "1980"
+          },
+          {
+            "driver": {
+              "text": "Mario Andretti",
+              "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+            },
+            "event": {
+              "text": "1975 Watkins Glen F5000 round",
+              "url": "https://en.wikipedia.org/wiki/1975_SCCA/USAC_Formula_5000_Championship"
+            },
+            "series": {
+              "text": "F5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
+            },
+            "time": 99.021,
+            "vehicle": {
+              "text": "Lola T332",
+              "url": "https://en.wikipedia.org/wiki/Lola_T332"
+            },
+            "year": "1975"
+          },
+          {
+            "driver": {
+              "text": "Klaus Ludwig",
+              "url": "https://en.wikipedia.org/wiki/Klaus_Ludwig"
+            },
+            "event": {
+              "text": "1985 Serengeti Drivers New York 500",
+              "url": "https://en.wikipedia.org/wiki/1985_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 100.26,
+            "vehicle": {
+              "text": "Ford Mustang Probe",
+              "url": "https://en.wikipedia.org/wiki/Ford_Probe_GTP"
+            },
+            "year": "1985"
+          },
+          {
+            "driver": {
+              "text": "Geoff Brabham",
+              "url": "https://en.wikipedia.org/wiki/Geoff_Brabham"
+            },
+            "event": {
+              "text": "1981 Watkins Glen Can-Am round",
+              "url": "https://en.wikipedia.org/wiki/1981_Can-Am_season"
+            },
+            "series": {
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
+            },
+            "time": 100.746,
+            "vehicle": {
+              "text": "Lola T530",
+              "url": "https://en.wikipedia.org/wiki/Lola_T530"
+            },
+            "year": "1981"
+          },
+          {
+            "driver": {
+              "text": "Gérard Larrousse",
+              "url": "https://en.wikipedia.org/wiki/G%C3%A9rard_Larrousse"
+            },
+            "event": {
+              "text": "1975 Watkins Glen 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/1975_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Prototype-Sports_Cars_(1966_to_1971)"
+            },
+            "time": 105.956,
+            "vehicle": {
+              "text": "Alpine-Renault A442 Turbo",
+              "url": "https://en.wikipedia.org/wiki/Renault_Alpine_A442"
+            },
+            "year": "1975"
+          },
+          {
+            "driver": {
+              "text": "Peter Moodie"
+            },
+            "event": {
+              "text": "1984 Watkins Glen SCCA Formula Super Vee round",
+              "url": "https://en.wikipedia.org/wiki/SCCA_Formula_Super_Vee"
+            },
+            "series": {
+              "text": "Formula Super Vee",
+              "url": "https://en.wikipedia.org/wiki/Formula_Super_Vee"
+            },
+            "time": 108.293,
+            "vehicle": {
+              "text": "Ralt RT5",
+              "url": "https://en.wikipedia.org/wiki/Ralt_RT5"
+            },
+            "year": "1984"
+          },
+          {
+            "driver": {
+              "text": "Gary Gove"
+            },
+            "event": {
+              "text": "1980 Watkins Glen Can-Am round",
+              "url": "https://en.wikipedia.org/wiki/1980_Can-Am_season"
+            },
+            "series": {
+              "text": "Sports 2000",
+              "url": "https://en.wikipedia.org/wiki/Sports_2000"
+            },
+            "time": 110.83,
+            "vehicle": {
+              "text": "Ralt RT2",
+              "url": "https://en.wikipedia.org/wiki/Ralt_RT2"
+            },
+            "year": "1980"
+          },
+          {
+            "driver": {
+              "text": "Darin Brassfield",
+              "url": "https://en.wikipedia.org/wiki/Darin_Brassfield"
+            },
+            "event": {
+              "text": "1985 Serengeti Drivers New York 500",
+              "url": "https://en.wikipedia.org/wiki/1985_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTO",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Over"
+            },
+            "time": 111.38,
+            "vehicle": {
+              "text": "Ford Thunderbird",
+              "url": "https://en.wikipedia.org/wiki/Ford_Thunderbird"
+            },
+            "year": "1985"
+          },
+          {
+            "driver": {
+              "text": "Bill Alsup",
+              "url": "https://en.wikipedia.org/wiki/Bill_Alsup"
+            },
+            "event": {
+              "text": "1985 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1985_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTP Lights",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
+            },
+            "time": 112.4,
+            "vehicle": {
+              "text": "Royale RP40",
+              "url": "https://en.wikipedia.org/wiki/Royale_RP40"
+            },
+            "year": "1985"
+          },
+          {
+            "driver": {
+              "text": "John Paul Jr.",
+              "url": "https://en.wikipedia.org/wiki/John_Paul_Jr._(racing_driver)"
+            },
+            "event": {
+              "text": "1981 Watkins Glen 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/1981_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#4th_Generation_Group_5_–_\"Special_Production_Cars\"_(1976_to_1982)"
+            },
+            "time": 112.831,
+            "vehicle": {
+              "text": "Porsche 935 JLP-3",
+              "url": "https://en.wikipedia.org/wiki/Porsche_935"
+            },
+            "year": "1981"
+          },
+          {
+            "driver": {
+              "text": "Wally Dallenbach Jr.",
+              "url": "https://en.wikipedia.org/wiki/Wally_Dallenbach_Jr."
+            },
+            "event": {
+              "text": "1984 Watkins Glen Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/1984_Trans-Am_Series"
+            },
+            "series": {
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            },
+            "time": 114.402,
+            "vehicle": {
+              "text": "Chevrolet Camaro",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(third_generation)"
+            },
+            "year": "1984"
+          },
+          {
+            "driver": {
+              "text": "Elliot Forbes-Robinson",
+              "url": "https://en.wikipedia.org/wiki/Elliot_Forbes-Robinson"
+            },
+            "event": {
+              "text": "1985 Camel Continental",
+              "url": "https://en.wikipedia.org/wiki/1985_IMSA_GT_Championship"
+            },
+            "series": {
+              "text": "IMSA GTU",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Under"
+            },
+            "time": 120.37,
+            "vehicle": {
+              "text": "Porsche 924 Carrera",
+              "url": "https://en.wikipedia.org/wiki/Porsche_924"
+            },
+            "year": "1985"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 11,
+        "years": "1971–1974, 1986–1991"
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "length_km": 5.435,
+        "length_mi": 3.377,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Alan Jones",
+              "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
+            },
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 94.068,
+            "vehicle": {
+              "text": "Williams FW07B",
+              "url": "https://en.wikipedia.org/wiki/Williams_FW07B"
+            },
+            "year": "1980"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 11,
+        "years": "with Esses Chicane) (1975–1985"
+      },
+      {
+        "layout": "Sports Car Circuit",
+        "length_km": 3.911,
+        "length_mi": 2.43,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Denny Hulme",
+              "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+            },
+            "series": {
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
+            },
+            "time": 66.083,
+            "vehicle": {
+              "text": "McLaren M8F",
+              "url": "https://en.wikipedia.org/wiki/McLaren_M8A#M8F"
+            },
+            "year": "1971"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 7,
+        "years": "1971"
+      },
+      {
+        "layout": "Original Grand Prix Circuit",
+        "length_km": 3.782,
+        "length_mi": 2.35,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Denny Hulme",
+              "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+            },
+            "event": {
+              "text": "1969 Watkins Glen Can-Am round",
+              "url": "https://en.wikipedia.org/wiki/1969_Can-Am_season"
+            },
+            "series": {
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
+            },
+            "time": 62.6,
+            "vehicle": {
+              "text": "McLaren M8B",
+              "url": "https://en.wikipedia.org/wiki/McLaren_M8A#M8B"
+            },
+            "year": "1969"
+          },
+          {
+            "driver": {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            },
+            "event": {
+              "text": "1970 United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+            },
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 62.74,
+            "vehicle": {
+              "text": "Ferrari 312B",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_312B"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Pedro Rodríguez",
+              "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
+            },
+            "event": {
+              "text": "1970 Watkins Glen 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/1970_Watkins_Glen_6_Hours"
+            },
+            "series": {
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#2nd_Generation_Group_5_-_\"Sports_Cars\"_(1970_to_1971)"
+            },
+            "time": 64.9,
+            "vehicle": {
+              "text": "Porsche 917K",
+              "url": "https://en.wikipedia.org/wiki/Porsche_917#1970"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Vic Elford",
+              "url": "https://en.wikipedia.org/wiki/Vic_Elford"
+            },
+            "event": {
+              "text": "1969 Watkins Glen 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/1969_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Prototype-Sports_Cars_(1966_to_1971)"
+            },
+            "time": 69.13,
+            "vehicle": {
+              "text": "Porsche 908/02",
+              "url": "https://en.wikipedia.org/wiki/Porsche_908#908/02_(1969)"
+            },
+            "year": "1969"
+          },
+          {
+            "driver": {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            },
+            "event": {
+              "text": "1968 Watkins Glen 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/1968_World_Sportscar_Championship"
+            },
+            "series": {
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)#Sports_car_racing"
+            },
+            "time": 71.1,
+            "vehicle": {
+              "text": "Ford GT40",
+              "url": "https://en.wikipedia.org/wiki/Ford_GT40"
+            },
+            "year": "1968"
+          },
+          {
+            "driver": {
+              "text": "Parnelli Jones",
+              "url": "https://en.wikipedia.org/wiki/Parnelli_Jones"
+            },
+            "event": {
+              "text": "1970 Watkins Glen Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/1970_Trans-American_Sedan_Championship"
+            },
+            "series": {
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            },
+            "time": 74.65,
+            "vehicle": {
+              "text": "Ford Mustang Boss 302",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_Boss_302"
+            },
+            "year": "1970"
+          },
+          {
+            "driver": {
+              "text": "Ken Miles",
+              "url": "https://en.wikipedia.org/wiki/Ken_Miles"
+            },
+            "event": {
+              "text": "1964 Watkins Glen Sports Car Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1964_United_States_Road_Racing_Championship"
+            },
+            "series": {
+              "text": "Group 3",
+              "url": "https://en.wikipedia.org/wiki/Group_3_(motorsport)"
+            },
+            "time": 84.8,
+            "vehicle": {
+              "text": "Shelby Cobra",
+              "url": "https://en.wikipedia.org/wiki/Shelby_Cobra"
+            },
+            "year": "1964"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt",
+          "values": [
+            "Asphalt"
+          ]
+        },
+        "turns": 8,
+        "years": "1956–1970"
+      },
+      {
+        "layout": "Second Public Road Course",
+        "length_km": 7.403,
+        "length_mi": 4.6,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Bill Spear"
+            },
+            "event": {
+              "text": "1954 Watkins Glen Grand Prix"
+            },
+            "series": {
+              "text": "Sports car",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
+            },
+            "time": 190.8,
+            "vehicle": {
+              "text": "Ferrari 375 MM",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_375_MM"
+            },
+            "year": "1954"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt, cobbles, concrete, wood, dirt, steel",
+          "values": [
+            "Asphalt",
+            "Cobblestones",
+            "Concrete",
+            "Wood",
+            "Dirt",
+            "Steel"
+          ]
+        },
+        "years": "1953–1955"
+      },
+      {
+        "layout": "Original Public Road Course",
+        "length_km": 10.622,
+        "length_mi": 6.6,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Phil Walters",
+              "url": "https://en.wikipedia.org/wiki/Phil_Walters"
+            },
+            "event": {
+              "text": "1950 Watkins Glen Grand Prix"
+            },
+            "series": {
+              "text": "Formula Libre",
+              "url": "https://en.wikipedia.org/wiki/Formula_Libre"
+            },
+            "time": 313.5,
+            "vehicle": {
+              "text": "Healey-Cadillac Special",
+              "url": "https://en.wikipedia.org/wiki/Healey_Silverstone#Healey-Cadillac_Special"
+            },
+            "year": "1950"
+          }
+        ],
+        "surface": {
+          "text": "Asphalt, cobbles, concrete, wood, dirt, steel",
+          "values": [
+            "Asphalt",
+            "Cobblestones",
+            "Concrete",
+            "Wood",
+            "Dirt",
+            "Steel"
+          ]
+        },
+        "turns": 28,
+        "years": "1948–1952"
+      }
+    ],
+    "location": {
+      "coordinates": {
+        "lat": 42.337,
+        "lon": -76.927
+      },
+      "places": [
+        {
+          "text": "{'text': 'Watkins Glen', 'url': 'https://en.wikipedia.org/wiki/Watkins_Glen,_New_York'}"
+        },
+        {
+          "text": "Watkins Glen, New York",
+          "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+        },
+        {
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        }
+      ]
+    },
+    "name": {
+      "former_names": [
+        {
+          "name": "Watkins Glen International Raceway",
+          "periods": [
+            {
+              "from": "1982",
+              "to": "2005"
+            }
+          ]
+        },
+        {
+          "name": "Watkins Glen Grand Prix Circuit",
+          "periods": [
+            {
+              "from": "1948",
+              "to": "1981"
+            }
+          ]
+        }
+      ],
+      "list": [
+        "Watkins Glen International"
+      ]
+    },
+    "seasons": [
+      {
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season",
+        "year": 1961
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season",
+        "year": 1962
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season",
+        "year": 1963
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
+        "year": 1964
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season",
+        "year": 1965
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season",
+        "year": 1966
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season",
+        "year": 1967
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season",
+        "year": 1968
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
+        "year": 1969
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season",
+        "year": 1970
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season",
+        "year": 1971
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season",
+        "year": 1972
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season",
+        "year": 1973
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season",
+        "year": 1974
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season",
+        "year": 1975
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season",
+        "year": 1976
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season",
+        "year": 1977
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season",
+        "year": 1978
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season",
+        "year": 1979
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season",
+        "year": 1980
+      }
+    ],
+    "type": "Race circuit",
+    "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+  }
+]
