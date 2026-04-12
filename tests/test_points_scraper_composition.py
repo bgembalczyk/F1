@@ -3,10 +3,10 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.errors import ScraperParseError
-from scrapers.parsers_points import PointsScoringSystemsSectionParser
-from scrapers.parsers_points import ShortenedRacesSubSubSectionParser
-from scrapers.parsers_points import SpecialCasesSubSectionParser
-from scrapers.parsers_points import SprintRacesSubSubSectionParser
+from scrapers.parsers.section.points import PointsScoringSystemsSectionParser
+from scrapers.parsers.section.points import ShortenedRacesSubSubSectionParser
+from scrapers.parsers.section.points import SpecialCasesSubSectionParser
+from scrapers.parsers.section.points import SprintRacesSubSubSectionParser
 from scrapers.scraper_table import PointsScraper
 from scrapers.parsers.section.match.priorities import SectionExtractionContext
 
@@ -82,9 +82,8 @@ def test_special_cases_router_applies_sprint_parser_without_section_hint() -> No
 
 
 def test_sprint_parser_does_not_match_history_table() -> None:
-    from scrapers.points.constants_points import HISTORICAL_POSITIONS
-    from scrapers.parsers_points import SprintPointsTableParser
-    from scrapers.points.parsers_points import SprintPointsTableMapper
+    from scrapers.constants_points import HISTORICAL_POSITIONS
+    from scrapers.parsers.table.points import SprintPointsTableMapper
 
     parser = SprintPointsTableMapper()
     history_headers = [

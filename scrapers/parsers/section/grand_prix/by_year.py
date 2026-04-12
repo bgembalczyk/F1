@@ -12,7 +12,7 @@ from scrapers.columns.types.function.circuit_location import LocationColumn
 from scrapers.columns.types.multi.constructor_split import ConstructorSplitColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.configs.public import TableConfig
-from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.table.html import HtmlTableParser
 from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.parse_results import SectionParseResult

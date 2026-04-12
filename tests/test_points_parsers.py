@@ -1,7 +1,5 @@
-from scrapers.parsers_points import PointsScoringSystemsHistoryTableParser
-from scrapers.parsers_points import ShortenedRacesPointsTableParser
-from scrapers.points.parsers_points import PointsScoringSystemsHistoryTableMapper
-from scrapers.points.parsers_points import ShortenedRacesPointsTableMapper
+from scrapers.parsers.table.points import PointsScoringSystemsHistoryTableMapper
+from scrapers.parsers.table.points import ShortenedRacesPointsTableMapper
 
 
 def test_points_history_parser_accepts_championship_alias_headers() -> None:

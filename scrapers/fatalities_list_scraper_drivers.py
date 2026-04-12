@@ -27,7 +27,7 @@ from scrapers.constants_drivers import FATALITIES_SECTION_ID
 from scrapers.constants_drivers import FATALITIES_SESSION_HEADER
 from scrapers.constants_drivers import MARK_F2_CATEGORY
 from scrapers.constants_drivers import MARK_NON_CHAMPIONSHIP_EVENT
-from scrapers.driver_ordered_table_parser import DriverOrderedTableMapper
+from scrapers.parsers.table.base_ordered import DriverOrderedTableMapper
 from scrapers.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.helpers.date_parsing import parse_formula_category
 from scrapers.helpers.normalize import normalize_auto_value

@@ -4,7 +4,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.table.html import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
 
 
