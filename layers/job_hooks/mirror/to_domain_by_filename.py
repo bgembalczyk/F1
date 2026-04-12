@@ -12,9 +12,11 @@ class MirrorToDomainByFilenameJobHook:
         *,
         target_domain: str,
         should_mirror_predicate: Callable[[ListJobRegistryEntry], bool],
+        allowed_filenames: tuple[str, ...] | None = None,
     ) -> None:
         self._target_domain = target_domain
         self._should_mirror_predicate = should_mirror_predicate
+        self._allowed_filenames = allowed_filenames
 
     def after_job(
         self,
@@ -27,6 +29,12 @@ class MirrorToDomainByFilenameJobHook:
             return
 
         source_json_path = base_wiki_dir / l0_raw_json_path
+        if (
+            self._allowed_filenames is not None
+            and source_json_path.name not in self._allowed_filenames
+        ):
+            return
+
         target_rel_path = DEFAULT_PATH_RESOLVER.raw(
             domain=self._target_domain,
             filename=source_json_path.name,

@@ -91,6 +91,46 @@ def test_mirror_constructors_hook_calls_mirror_when_predicate_true() -> None:
     mirror.mirror.assert_called_once_with(Path("/wiki"), Path("/wiki/raw.json"))
 
 
+def test_mirror_to_domain_by_filename_job_hook_filters_by_filename(
+    tmp_path: Path,
+) -> None:
+    source_dir = tmp_path / "layers" / "0_layer" / "drivers" / "A_scrape"
+    source_dir.mkdir(parents=True)
+    allowed_file = source_dir / "allowed.json"
+    allowed_file.write_text('{"key": "allowed"}')
+    ignored_file = source_dir / "ignored.json"
+    ignored_file.write_text('{"key": "ignored"}')
+
+    hook = MirrorToDomainByFilenameJobHook(
+        target_domain="constructors",
+        should_mirror_predicate=lambda _job: True,
+        allowed_filenames=("allowed.json",),
+    )
+
+    # Should copy allowed.json
+    hook.after_job(
+        base_wiki_dir=tmp_path,
+        job=make_job(),
+        l0_raw_json_path=Path("layers/0_layer/drivers/A_scrape/allowed.json"),
+    )
+    target_allowed = (
+        tmp_path / "layers" / "0_layer" / "constructors" / "A_scrape" / "allowed.json"
+    )
+    assert target_allowed.exists()
+    assert target_allowed.read_text() == '{"key": "allowed"}'
+
+    # Should skip ignored.json
+    hook.after_job(
+        base_wiki_dir=tmp_path,
+        job=make_job(),
+        l0_raw_json_path=Path("layers/0_layer/drivers/A_scrape/ignored.json"),
+    )
+    target_ignored = (
+        tmp_path / "layers" / "0_layer" / "constructors" / "A_scrape" / "ignored.json"
+    )
+    assert not target_ignored.exists()
+
+
 # MirrorToDomainByFilenameJobHook - lines 108-120
 def test_mirror_to_domain_skips_when_predicate_false(tmp_path: Path) -> None:
     hook = MirrorToDomainByFilenameJobHook(
