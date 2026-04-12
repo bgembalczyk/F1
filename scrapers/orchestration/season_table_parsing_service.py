@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from abc import ABC
+from abc import abstractmethod
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -17,7 +20,7 @@ from scrapers.standings_scraper_seasons import F1StandingsTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
-class SeasonWikiTableParserABC(ABC):
+class SeasonTableOrchestratorABC(ABC):
     def __init__(
         self,
         *,
@@ -33,7 +36,7 @@ class SeasonWikiTableParserABC(ABC):
         self._url = url
 
 
-class SeasonStandingsWikiTableParser(SeasonWikiTableParserABC):
+class SeasonStandingsTableOrchestrator(SeasonTableOrchestratorABC):
     def parse(
         self,
         soup: BeautifulSoup,
@@ -84,7 +87,7 @@ class SeasonStandingsWikiTableParser(SeasonWikiTableParserABC):
         return []
 
 
-class SeasonGenericWikiTableParser(SeasonWikiTableParserABC):
+class SeasonGenericTableOrchestrator(SeasonTableOrchestratorABC):
     def parse(
         self,
         soup: BeautifulSoup,
@@ -133,7 +136,22 @@ class SeasonGenericWikiTableParser(SeasonWikiTableParserABC):
         return []
 
 
-class SeasonTablePayloadMapper:
+class SeasonTablePayloadMapperABC(ABC):
+    @abstractmethod
+    def update_url(self, url: str) -> None: ...
+
+    @abstractmethod
+    def map(
+        self,
+        table_data: dict[str, Any],
+        *,
+        expected_headers: list[str],
+        schema: TableSchemaDSL,
+        default_column: Any | None = None,
+    ) -> list[dict[str, Any]]: ...
+
+
+class SeasonTablePayloadMapper(SeasonTablePayloadMapperABC):
     def __init__(
         self,
         *,
@@ -206,12 +224,12 @@ class SeasonTableParsingService:
         self._options = options
         self._url = url
         self._include_urls = include_urls
-        self._standings_parser = SeasonStandingsWikiTableParser(
+        self._standings_orchestrator = SeasonStandingsTableOrchestrator(
             options=options,
             include_urls=include_urls,
             url=url,
         )
-        self._wiki_table_parser = SeasonGenericWikiTableParser(
+        self._wiki_table_orchestrator = SeasonGenericTableOrchestrator(
             options=options,
             include_urls=include_urls,
             url=url,
@@ -235,12 +253,12 @@ class SeasonTableParsingService:
         return self._include_urls
 
     @property
-    def standings_parser(self) -> SeasonStandingsWikiTableParser:
-        return self._standings_parser
+    def standings_orchestrator(self) -> SeasonStandingsTableOrchestrator:
+        return self._standings_orchestrator
 
     @property
-    def wiki_table_parser(self) -> SeasonGenericWikiTableParser:
-        return self._wiki_table_parser
+    def wiki_table_orchestrator(self) -> SeasonGenericTableOrchestrator:
+        return self._wiki_table_orchestrator
 
     @property
     def table_payload_mapper(self) -> SeasonTablePayloadMapper:
@@ -248,8 +266,8 @@ class SeasonTableParsingService:
 
     def update_url(self, url: str) -> None:
         self._url = url
-        self._standings_parser.update_url(url)
-        self._wiki_table_parser.update_url(url)
+        self._standings_orchestrator.update_url(url)
+        self._wiki_table_orchestrator.update_url(url)
         self._table_payload_mapper.update_url(url)
 
     def parse_standings_table(
@@ -264,8 +282,7 @@ class SeasonTableParsingService:
         star_mark_note: str | None = None,
         include_car_no_column: bool = True,
     ) -> list[dict[str, Any]]:
-        """Parse standings table – delegates to the internal standings parser."""
-        return self._standings_parser.parse(
+        return self._standings_orchestrator.parse(
             soup,
             section_ids=section_ids,
             subject_header=subject_header,
@@ -278,9 +295,10 @@ class SeasonTableParsingService:
 
 
 __all__ = [
-    "SeasonGenericWikiTableParser",
-    "SeasonStandingsWikiTableParser",
+    "SeasonGenericTableOrchestrator",
+    "SeasonStandingsTableOrchestrator",
+    "SeasonTableOrchestratorABC",
     "SeasonTableParsingService",
     "SeasonTablePayloadMapper",
-    "SeasonWikiTableParserABC",
+    "SeasonTablePayloadMapperABC",
 ]

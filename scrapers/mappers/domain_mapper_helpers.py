@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from scrapers.domain_mapper_abc import DomainMapperABC
+from scrapers.mappers.domain_mapper_abc import DomainMapperABC
 from scrapers.parsers.wiki.domain_mapper import WikiDomainMapper
 from scrapers.parsers.wiki.wiki_mapper_registry import WikiMapperRegistry
 

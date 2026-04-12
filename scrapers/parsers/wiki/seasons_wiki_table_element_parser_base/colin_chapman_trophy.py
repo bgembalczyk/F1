@@ -27,7 +27,7 @@ class ColinChapmanTrophyParser(BaseSeasonParser):
         "entire championship"
         """
 
-        records = self._table_parser.standings_parser.parse(
+        records = self._table_parser.standings_orchestrator.parse(
             soup,
             section_ids=["Colin_Chapman_Trophy"],
             subject_header="Constructor",

@@ -61,7 +61,7 @@ class SeasonResultsParser(BaseSeasonParser):
         if by_adapter:
             return by_adapter
 
-        return self._table_parser.wiki_table_parser.parse(
+        return self._table_parser.wiki_table_orchestrator.parse(
             soup,
             section_ids=["Grands_Prix", "Results_and_standings"],
             expected_headers=expected_headers,

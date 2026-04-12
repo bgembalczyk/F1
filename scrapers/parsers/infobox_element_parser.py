@@ -4,9 +4,15 @@ from bs4 import Tag
 
 from models.data.parsed.html_elements import InfoboxElementData
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
+from scrapers.parsers.wiki.parser_mixins import HeaderNormalizationMixin
+from scrapers.parsers.wiki.parser_mixins import TableCellExtractionMixin
 
 
-class InfoboxElementParser(WikiInfoboxElementParserABC):
+class InfoboxElementParser(
+    TableCellExtractionMixin,
+    HeaderNormalizationMixin,
+    WikiInfoboxElementParserABC,
+):
     def parse(self, raw: Tag) -> InfoboxElementData:
         return self.parse_table_rows(raw)
 
@@ -19,11 +25,11 @@ class InfoboxElementParser(WikiInfoboxElementParserABC):
         for tr in table.find_all("tr"):
             if tr.find_parent("table") is not table:
                 continue
-            header = tr.find("th", recursive=False)
-            value = tr.find("td", recursive=False)
-            if not header or not value:
+            cells = self.extract_row_cells(tr)
+            if len(cells) < 2:
                 continue
-            key = header.get_text(" ", strip=True)
+            header, value = cells[0], cells[1]
+            key = self.normalize_header(header.get_text(" ", strip=True))
             data["rows"][key] = self.parse_row_value(value)
         return data
 

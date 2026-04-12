@@ -2,7 +2,7 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Any
 
-from scrapers.mapper_abc import MapperABC
+from scrapers.mappers.mapper_abc import MapperABC
 
 
 class TableMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):

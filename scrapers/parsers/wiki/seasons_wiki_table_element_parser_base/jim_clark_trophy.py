@@ -25,7 +25,7 @@ class JimClarkTrophyParser(BaseSeasonParser):
         "to be eligible for points"
         """
 
-        return self._table_parser.standings_parser.parse(
+        return self._table_parser.standings_orchestrator.parse(
             soup,
             section_ids=["Jim_Clark_Trophy"],
             subject_header="Driver",

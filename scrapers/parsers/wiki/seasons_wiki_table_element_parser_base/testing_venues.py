@@ -68,7 +68,7 @@ class TestingVenuesParser(BaseSeasonParser):
         ]
         schema = TableSchemaDSL(columns=schema_columns)
 
-        records = self._table_parser.wiki_table_parser.parse(
+        records = self._table_parser.wiki_table_orchestrator.parse(
             soup,
             section_ids=["Testing_venues_and_dates"],
             expected_headers=["Test", "Circuit", "Event"],
@@ -98,7 +98,7 @@ class TestingVenuesParser(BaseSeasonParser):
         ]
         schema = TableSchemaDSL(columns=schema_columns)
 
-        return self._table_parser.wiki_table_parser.parse(
+        return self._table_parser.wiki_table_orchestrator.parse(
             soup,
             section_ids=["Testing_venues_and_dates"],
             expected_headers=["Test", "Event", "Circuit", "Dates"],

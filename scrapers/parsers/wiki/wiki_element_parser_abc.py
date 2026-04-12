@@ -2,102 +2,154 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
-from typing import Any
+from typing import Generic
+from typing import Literal
+from typing import TypeVar
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.data.parsed.html_elements import ParagraphElementData
+from models.data.parsed.references_wrap import ReferencesWrapParsedData
 from models.data.wiki.figure import WikiFigureData
 from models.data.wiki.infobox import WikiInfoboxData
 from models.data.wiki.list import WikiListData
 from models.data.wiki.navbox import WikiNavboxData
 from models.data.wiki.section import WikiSectionData
 from models.data.wiki.table import WikiTableData
-from scrapers.parsers.element_parser_abc import ArticleHtmlParserABC
-from scrapers.parsers.element_parser_abc import FigureHtmlParserABC
-from scrapers.parsers.element_parser_abc import InfoboxHtmlParserABC
-from scrapers.parsers.element_parser_abc import ListHtmlParserABC
-from scrapers.parsers.element_parser_abc import NavboxHtmlParserABC
-from scrapers.parsers.element_parser_abc import ParagraphHtmlParserABC
-from scrapers.parsers.element_parser_abc import SectionHtmlParserABC
-from scrapers.parsers.element_parser_abc import TableHtmlParserABC
 
-class WikiTagDomainParserABC(ABC):
-    """Wiki-domain parser contract for bs4.Tag inputs."""
+TagT = TypeVar("TagT", bound=Tag)
+SoupT = TypeVar("SoupT", bound=BeautifulSoup)
+PayloadT = TypeVar("PayloadT")
+
+WikiElementType = Literal[
+    "table",
+    "list",
+    "section",
+    "infobox",
+    "navbox",
+    "figure",
+    "paragraph",
+    "references_wrap",
+    "article",
+]
+
+
+class WikiElementParserABC(ABC, Generic[TagT, PayloadT]):
+    """Canonical wiki parser contract for single HTML elements."""
+
+    element_type: WikiElementType
 
     @abstractmethod
-    def parse(self, raw: Tag) -> Any: ...
+    def parse(self, raw: TagT) -> PayloadT: ...
 
 
-class WikiSoupDomainParserABC(ABC):
-    """Wiki-domain parser contract for BeautifulSoup inputs."""
+class WikiDocumentParserABC(ABC, Generic[SoupT, PayloadT]):
+    """Canonical wiki parser contract for soup/document inputs."""
+
+    element_type: WikiElementType
 
     @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> Any: ...
+    def parse(self, raw: SoupT) -> PayloadT: ...
 
 
-class WikiTableElementParserABC(
-    WikiTagDomainParserABC,
-    TableHtmlParserABC[WikiTableData],
+class WikiTableElementParserABC(WikiElementParserABC[Tag, WikiTableData], ABC):
+    element_type: WikiElementType = "table"
+
+
+class WikiListElementParserABC(WikiElementParserABC[Tag, WikiListData], ABC):
+    element_type: WikiElementType = "list"
+
+
+class WikiInfoboxElementParserABC(WikiElementParserABC[Tag, WikiInfoboxData], ABC):
+    element_type: WikiElementType = "infobox"
+
+
+class WikiNavboxElementParserABC(WikiElementParserABC[Tag, WikiNavboxData], ABC):
+    element_type: WikiElementType = "navbox"
+
+
+class WikiFigureElementParserABC(WikiElementParserABC[Tag, WikiFigureData], ABC):
+    element_type: WikiElementType = "figure"
+
+
+class WikiParagraphElementParserABC(
+    WikiElementParserABC[Tag, ParagraphElementData],
     ABC,
 ):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiTableData: ...
+    element_type: WikiElementType = "paragraph"
 
 
-class WikiListElementParserABC(
-    WikiTagDomainParserABC,
-    ListHtmlParserABC[WikiListData],
+class WikiReferencesElementParserABC(
+    WikiElementParserABC[Tag, ReferencesWrapParsedData],
     ABC,
 ):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiListData: ...
+    element_type: WikiElementType = "references_wrap"
 
 
-class WikiInfoboxElementParserABC(
-    WikiTagDomainParserABC,
-    InfoboxHtmlParserABC[WikiInfoboxData],
+class WikiSectionElementParserABC(
+    WikiDocumentParserABC[BeautifulSoup, WikiSectionData],
     ABC,
 ):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiInfoboxData: ...
+    element_type: WikiElementType = "section"
 
 
-class WikiNavboxElementParserABC(
-    WikiTagDomainParserABC,
-    NavboxHtmlParserABC[WikiNavboxData],
+class WikiArticleParserABC(
+    WikiDocumentParserABC[BeautifulSoup, list[dict[str, object]]],
     ABC,
 ):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiNavboxData: ...
+    element_type: WikiElementType = "article"
 
 
-class WikiFigureElementParserABC(
-    WikiTagDomainParserABC,
-    FigureHtmlParserABC[WikiFigureData],
-    ABC,
-):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiFigureData: ...
+class WikiListParserABC(WikiListElementParserABC, ABC):
+    """Domain base for tag-based list-like wiki parsers."""
+
+
+class WikiTableParserABC(WikiTableElementParserABC, WikiListParserABC, ABC):
+    """Domain-named table parser base (list-like contract branch)."""
+
+
+class WikiInfoboxParserABC(WikiInfoboxElementParserABC, WikiListParserABC, ABC):
+    """Domain-named infobox parser base (list-like contract branch)."""
+
+
+class WikiNavboxParserABC(WikiNavboxElementParserABC, WikiListParserABC, ABC):
+    """Domain-named navbox parser base (list-like contract branch)."""
+
+
+class WikiFigureParserABC(WikiFigureElementParserABC, WikiListParserABC, ABC):
+    """Domain-named figure parser base (list-like contract branch)."""
+
+
+class WikiParagraphParserABC(WikiParagraphElementParserABC, WikiListParserABC, ABC):
+    """Domain-named paragraph parser base (list-like contract branch)."""
+
+
+class WikiSectionParserABC(WikiSectionElementParserABC, ABC):
+    """Domain-named alias for wiki section/document parsers."""
 
 
 __all__ = [
-    "WikiArticleElementParserABC",
+    "PayloadT",
+    "SoupT",
+    "TagT",
     "WikiArticleParserABC",
+    "WikiDocumentParserABC",
+    "WikiElementParserABC",
+    "WikiElementType",
     "WikiFigureElementParserABC",
+    "WikiFigureParserABC",
     "WikiInfoboxElementParserABC",
+    "WikiInfoboxParserABC",
     "WikiListElementParserABC",
+    "WikiListParserABC",
     "WikiNavboxElementParserABC",
-    "WikiSectionElementParserABC",
-    "WikiTableElementParserABC",
     "WikiNavboxParserABC",
     "WikiParagraphElementParserABC",
     "WikiParagraphParserABC",
+    "WikiReferencesElementParserABC",
     "WikiSectionElementParserABC",
     "WikiSectionParserABC",
-    "WikiSoupDomainParserABC",
     "WikiTableElementParserABC",
     "WikiTableParserABC",
-    "WikiTagDomainParserABC",
 ]

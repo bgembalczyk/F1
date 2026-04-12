@@ -10,9 +10,15 @@ from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
+from scrapers.parsers.wiki.parser_mixins import HeaderNormalizationMixin
+from scrapers.parsers.wiki.parser_mixins import TableCellExtractionMixin
 
 
-class WikiTableHtmlParser(WikiTableElementParserABC):
+class WikiTableHtmlParser(
+    TableCellExtractionMixin,
+    HeaderNormalizationMixin,
+    WikiTableElementParserABC,
+):
     """Parser tabel wikitable Wikipedii.
 
     Przetwarza tabelę: <table class="wikitable">
@@ -39,6 +45,7 @@ class WikiTableHtmlParser(WikiTableElementParserABC):
             i for i, header in enumerate(full_headers) if header.strip()
         ]
         headers = [full_headers[i] for i in included_indexes]
+        normalized_headers = self.normalize_headers(headers)
 
         rows: list[list[str]] = []
         raw_rows: list[dict[str, str]] = []
@@ -68,7 +75,7 @@ class WikiTableHtmlParser(WikiTableElementParserABC):
                 for idx in included_indexes
             ]
             rows.append(normalized_row)
-            raw_rows.append(dict(zip(headers, normalized_row, strict=False)))
+            raw_rows.append(dict(zip(normalized_headers, normalized_row, strict=False)))
 
             rich_row: dict[str, Any] = {}
             for col_idx, (header, text) in enumerate(
