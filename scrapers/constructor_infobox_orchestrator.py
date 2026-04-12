@@ -5,10 +5,8 @@ from typing import TYPE_CHECKING
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.infobox.extraction.extractor.table.all import AllInfoboxTablesExtractor
-from scrapers.infobox.extraction.service.base_infobox_orchestrator import (
-    BaseInfoboxOrchestrator,
-)
 from scrapers.options import ScraperOptions
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.soup import SoupParser
