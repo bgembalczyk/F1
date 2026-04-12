@@ -1,4 +1,4 @@
-from scrapers.parsers.table.wiki.table import WikiTableHtmlParser
+from scrapers.parsers.table.table.table import WikiTableHtmlParser
 from scrapers.parsers.wiki.families import WikiTableHtmlParserABC
 
 

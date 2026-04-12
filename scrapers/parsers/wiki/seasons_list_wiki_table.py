@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.table.base import WikiTableBaseParser
 
 
 class SeasonsTableParser(WikiTableBaseParser):

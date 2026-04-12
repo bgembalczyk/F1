@@ -22,8 +22,9 @@ class SeasonNonChampionshipParser(BaseSeasonParser):
         soup: BeautifulSoup,
         season_year: int | None = None,
     ) -> list[dict[str, Any]]:
-        return self._table_parser.parse_table(
+        return self._table_parser.parse(
             soup,
+            mode="table",
             section_ids=["Non-championship_races", "Non-championship_race"],
             expected_headers=[
                 "Race name",

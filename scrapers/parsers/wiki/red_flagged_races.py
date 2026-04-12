@@ -5,8 +5,8 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableParser
-from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableParser
+from scrapers.parsers.table.red_flagged_races_wiki_table import NonChampionshipsRacesTableParser
+from scrapers.parsers.table.red_flagged_races_wiki_table import WorldChampionshipsRacesTableParser
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.parsers.wiki.sublevels.sub_sub_sub_section import SubSubSubSectionParser
