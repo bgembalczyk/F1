@@ -3,12 +3,12 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.infobox.extraction.result import InfoboxExtractionResult
 from scrapers.infobox.extraction.result import ParserInputT
 from scrapers.options import ScraperOptions
+from scrapers.orchestration.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.parsers.soup import SoupParser
-from scrapers.protocols.infobox_extractor import InfoboxExtractorProtocol
+from scrapers.protocols.infobox_extractor import InfoboxExtractorABC
 
 
 class StrategyBackedInfoboxOrchestrator(
@@ -19,7 +19,7 @@ class StrategyBackedInfoboxOrchestrator(
     def __init__(
         self,
         *,
-        strategy: InfoboxExtractorProtocol[ParserInputT],
+        strategy: InfoboxExtractorABC[ParserInputT],
         options: ScraperOptions | None = None,
     ) -> None:
         super().__init__(options=options)

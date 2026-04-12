@@ -8,9 +8,9 @@ from scrapers.driver_infobox_orchestrator import DriverInfoboxOrchestrator
 from scrapers.infobox.extraction.extractor.circuit_extractor import (
     CircuitInfoboxExtractor,
 )
-from scrapers.protocols.infobox_extractor import InfoboxExtractorProtocol
+from scrapers.protocols.infobox_extractor import InfoboxExtractorABC
 
-EXTRACTOR_REGISTRY: dict[str, type[InfoboxExtractorProtocol[BeautifulSoup]]] = {
+EXTRACTOR_REGISTRY: dict[str, type[InfoboxExtractorABC[BeautifulSoup]]] = {
     "circuit": CircuitInfoboxExtractor,
 }
 

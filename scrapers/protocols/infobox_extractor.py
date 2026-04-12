@@ -12,7 +12,7 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
 
-class InfoboxExtractorProtocol(ABC, Generic[ParserInputT]):
+class InfoboxExtractorABC(ABC, Generic[ParserInputT]):
     """Kontrakt strategii ekstrakcji infoboxów dla konkretnej domeny."""
 
     @abstractmethod
@@ -33,4 +33,4 @@ class InfoboxExtractorProtocol(ABC, Generic[ParserInputT]):
     ) -> InfoboxExtractionResult: ...
 
 
-__all__ = ["InfoboxExtractorProtocol"]
+__all__ = ["InfoboxExtractorABC"]

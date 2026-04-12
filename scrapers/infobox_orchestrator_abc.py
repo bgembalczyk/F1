@@ -1,15 +1,17 @@
 from __future__ import annotations
 
-from typing import Protocol
+from abc import ABC
+from abc import abstractmethod
 
 from bs4 import BeautifulSoup
 
 from scrapers.infobox.extraction.result import InfoboxExtractionResult
 
 
-class InfoboxOrchestratorProtocol(Protocol):
+class InfoboxOrchestratorABC(ABC):
     """Common API required by domain scrapers."""
 
+    @abstractmethod
     def extract(
         self,
         soup: BeautifulSoup,
@@ -18,7 +20,4 @@ class InfoboxOrchestratorProtocol(Protocol):
     ) -> InfoboxExtractionResult: ...
 
 
-
-__all__ = [
-    "InfoboxOrchestratorProtocol",
-]
+__all__ = ["InfoboxOrchestratorABC"]

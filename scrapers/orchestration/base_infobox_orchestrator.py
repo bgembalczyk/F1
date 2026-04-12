@@ -11,11 +11,17 @@ from bs4 import BeautifulSoup
 from scrapers.infobox.extraction.mixins import ParsedRecordsMixin
 from scrapers.infobox.extraction.result import InfoboxExtractionResult
 from scrapers.infobox.extraction.result import ParserInputT
+from scrapers.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.options import ScraperOptions
 from scrapers.parsers.soup import SoupParser
 
 
-class BaseInfoboxOrchestrator(ABC, Generic[ParserInputT], ParsedRecordsMixin):
+class BaseInfoboxOrchestrator(
+    InfoboxOrchestratorABC,
+    ABC,
+    Generic[ParserInputT],
+    ParsedRecordsMixin,
+):
     """Template-method orchestrator for infobox extraction domains."""
 
     def __init__(self, *, options: ScraperOptions | None = None) -> None:

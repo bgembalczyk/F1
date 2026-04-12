@@ -5,9 +5,9 @@ from typing import TYPE_CHECKING
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.infobox.extraction.extractor.table.first import FirstInfoboxTableExtractor
 from scrapers.options import ScraperOptions
+from scrapers.orchestration.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.parsers.infobox.driver import DriverInfoboxParser
 from scrapers.parsers.soup import SoupParser
 
