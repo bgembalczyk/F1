@@ -6,10 +6,11 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.parsers.infobox.table import InfoboxTableParser
+from scrapers.parsers.infobox_parser_abc import InfoboxCollapsibleTableParserABC
 from scrapers.numeric_extractor import NumericExtractor
 
 
-class CollapsibleTableParser:
+class CollapsibleTableParser(InfoboxCollapsibleTableParserABC):
     """Handles parsing of collapsible career statistics tables."""
 
     def __init__(self, cell_value_extractor_delegate):
@@ -92,7 +93,7 @@ class CollapsibleTableParser:
         nested_table = cell.find("table")
         if not nested_table:
             return None
-        table_data = InfoboxTableParser.parse_nested_table(nested_table)
+        table_data = InfoboxTableParser._parse_nested_table(nested_table)
         return {"table": table_data}
 
 
