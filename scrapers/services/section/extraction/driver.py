@@ -2,12 +2,12 @@ from __future__ import annotations
 
 from models.section_id import SectionId
 from scrapers.adapters.section.entry import SectionAdapterEntry
+from scrapers.parsers.section.helpers import profile_entry_aliases
 from scrapers.parsers.section.results.base_drivers_results import (
     BaseDriverResultsSectionParser,
 )
 from scrapers.parsers.section.table.driver_results import DriverResultsSectionParser
-from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
-from scrapers.parsers.section.wiki.normalization import normalize_section_text
+from scrapers.parsers.wiki.normalization import normalize_section_text
 from scrapers.section.constants import SECTION_CONFIGS
 from scrapers.services.section.extraction.base import BaseSectionExtractionService
 

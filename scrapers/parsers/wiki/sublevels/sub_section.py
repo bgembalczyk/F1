@@ -1,4 +1,4 @@
-from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
+from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
 from scrapers.parsers.wiki.sublevels.sub_sub_section import SubSubSectionParser
 

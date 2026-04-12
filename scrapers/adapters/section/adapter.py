@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.adapters.section.entry import SectionAdapterEntry
-from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
+from scrapers.parsers.section.helpers import profile_entry_aliases
 from scrapers.section.id_resolver import SectionIdResolver
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.selection_strategy import WikipediaSectionByIdSelectionStrategy

@@ -39,7 +39,7 @@ from scrapers.parsers.section.constructors.current import (
     CurrentConstructorsSectionParser,
 )
 from scrapers.parsers.section.constructors.former import FormerConstructorsSectionParser
-from scrapers.parsers.section.privateer_teams_section_parser import PrivateerTeamsSectionParser
+from scrapers.parsers.wiki.privateer_teams_section_parser import PrivateerTeamsSectionParser
 from scrapers.results import ScrapeResult
 from scrapers.section.selection_strategy.wikipedia_by_id import (
     WikipediaSectionByIdSelectionStrategy,

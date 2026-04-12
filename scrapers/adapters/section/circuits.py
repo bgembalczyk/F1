@@ -5,11 +5,11 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.section.circuit.layout_history import (
     CircuitLayoutHistorySectionParser,
 )
+from scrapers.parsers.section.helpers import profile_entry_aliases
 from scrapers.parsers.section.table.circuit.events import CircuitEventsSectionParser
 from scrapers.parsers.section.table.circuit.lap_records import (
     CircuitLapRecordsSectionParser,
 )
-from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
 
 
 def circuit_section_entries(

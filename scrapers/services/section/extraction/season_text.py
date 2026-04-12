@@ -11,7 +11,7 @@ from scrapers.parsers.section.changes.season.mid_season import (
 from scrapers.parsers.section.changes.season.regulation import (
     SeasonRegulationChangesSectionParser,
 )
-from scrapers.parsers.section.wiki.helpers import profile_entry_aliases
+from scrapers.parsers.section.helpers import profile_entry_aliases
 from scrapers.services.section.extraction.base import BaseSectionExtractionService
 
 if TYPE_CHECKING:

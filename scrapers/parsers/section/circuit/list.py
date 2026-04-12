@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.configs.public import TableConfig
-from scrapers.parsers.section.base_section_parser import BaseSectionParser
 from scrapers.parsers.section.table.base import TableSectionParser
+from scrapers.parsers.wiki.base_section_parser import BaseSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.parsers.wiki.table.circuit_list import CircuitsListTableMapper
 from scrapers.parsers.wiki.table.table import WikiTableHtmlParser

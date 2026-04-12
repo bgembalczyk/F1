@@ -7,10 +7,10 @@ from scrapers.base_points_scraper import BasePointsScraper
 from scrapers.config_factory_points import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
 from scrapers.errors.parse import ScraperParseError
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.points import PointsScoringSystemsSectionParser
-from scrapers.parsers.section.points import ShortenedRacesSubSubSectionParser
-from scrapers.parsers.section.points import SprintRacesSubSubSectionParser
 from scrapers.parsers.wiki.body_content import BodyContentAssembler
+from scrapers.parsers.wiki.points_scoring_systems_section_parserr import PointsScoringSystemsSectionParser
+from scrapers.parsers.wiki.shortened_races_sub_sub_section_parser import ShortenedRacesSubSubSectionParser
+from scrapers.parsers.wiki.sprint_races_sub_sub_section_parser import SprintRacesSubSubSectionParser
 from scrapers.transformers.record.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
 )

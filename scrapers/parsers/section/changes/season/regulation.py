@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.mixins.extract_list_items import ExtractListItemsMixin
-from scrapers.parsers.section.base_section_parser import BaseSectionParser
+from scrapers.parsers.wiki.base_section_parser import BaseSectionParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -17,7 +17,7 @@ class SeasonRegulationChangesSectionParser(ExtractListItemsMixin, BaseSectionPar
         if not records:
             records = [
                 {"text": text}
-                for p in fragment.find_all("p")
+                for p in section_fragment.find_all("p")
                 if (text := p.get_text(" ", strip=True))
             ]
         return build_section_parse_result(

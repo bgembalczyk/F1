@@ -11,7 +11,7 @@ from models.entity_name import EntityName
 from models.section_id import SectionId
 from scrapers.parsers.table.html import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
-from scrapers.parsers.section.base_section_parser import BaseSectionParser
+from scrapers.parsers.wiki.base_section_parser import BaseSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result

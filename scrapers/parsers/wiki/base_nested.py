@@ -6,7 +6,7 @@ from bs4 import Tag
 
 from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
+from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki_section_parser_abc import WikiSectionParserABC
 
