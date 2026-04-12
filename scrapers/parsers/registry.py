@@ -9,6 +9,11 @@ from typing import Literal
 from typing import TypeAlias
 
 import scrapers.parsers as parsers_pkg
+from scrapers.parsers.parser_abc import ParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
@@ -42,10 +47,10 @@ class ParsingRegistryEntry:
 
 
 AUTO_ELEMENT_PARSER_BASES: Final[dict[ElementType, ParserBase]] = {
-    "table": WikiTableElementParserABC,
-    "list": WikiListElementParserABC,
-    "section": SectionHtmlParserABC,
-    "infobox": WikiInfoboxElementParserABC,
+    "table": WikiTableParserABC,
+    "list": WikiListParserABC,
+    "section": WikiSectionParserABC,
+    "infobox": WikiInfoboxParserABC,
 }
 
 EXPECTED_HTML_FAMILY_ABCS: Final[dict[ElementType, type[ParserABC[object, object]]]] = {

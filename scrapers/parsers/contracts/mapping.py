@@ -7,17 +7,15 @@ from typing import Generic
 from typing import TypeVar
 
 from models.payload import WikiParsedPayload
-from scrapers.mapper_abc import MapperABC
+from scrapers.mappers.mapper_abc import MapperABC
+from scrapers.parsers.contracts.classifier_abc import ClassifierABC
 
 RawPayloadT = TypeVar("RawPayloadT")
 ClassificationT = TypeVar("ClassificationT")
 
 
-class WikiElementClassifierABC(ABC, Generic[RawPayloadT, ClassificationT]):
+class WikiElementClassifierABC(ClassifierABC[RawPayloadT, ClassificationT], ABC, Generic[RawPayloadT, ClassificationT]):
     """Optional classifier stage used between HTML parser and payload mapper."""
-
-    @abstractmethod
-    def classify(self, raw: RawPayloadT) -> ClassificationT | None: ...
 
 
 class WikiElementPayloadMapperABC(

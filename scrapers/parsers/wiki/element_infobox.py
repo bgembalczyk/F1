@@ -2,10 +2,10 @@ from bs4 import Tag
 
 from models.data.wiki.infobox import WikiInfoboxData
 from scrapers.parsers.infobox_element_parser import InfoboxElementParser
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 
-
-class WikiInfoboxElementParser(WikiInfoboxElementParserABC):
+class WikiInfoboxElementParser(WikiInfoboxParserABC):
     """Wikipedia HTML element parser for infobox tables."""
 
     def __init__(self, parser: InfoboxElementParser | None = None) -> None:

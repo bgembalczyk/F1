@@ -8,7 +8,8 @@ from typing import TypeVar
 
 from bs4 import BeautifulSoup
 
-from scrapers.mapper_abc import MapperABC
+from scrapers.mappers.mapper_abc import MapperABC
+from scrapers.parsers.contracts.classifier_abc import ClassifierABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 
 TextSectionPayload = dict[str, Any]
@@ -25,7 +26,7 @@ class SectionTextBlocksHtmlParserABC(HtmlSoupParserABC[list[TextSectionPayload]]
     def parse(self, raw: BeautifulSoup) -> list[TextSectionPayload]: ...
 
 
-class SectionTextClassifierABC(ABC, Generic[ClassificationT]):
+class SectionTextClassifierABC(ClassifierABC[TextSectionPayload, ClassificationT], ABC, Generic[ClassificationT]):
     """Optional classifier for parsed section text payload."""
 
     @abstractmethod

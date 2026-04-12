@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Any
 
-from scrapers.domain_mapper_abc import DomainMapperABC
+from scrapers.mappers.domain_mapper_abc import DomainMapperABC
 
 
 @dataclass(frozen=True)
