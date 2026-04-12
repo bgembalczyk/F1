@@ -64,7 +64,7 @@ class TeamLiveriesSectionParser(WikiSectionParserBase):
         team: str,
     ) -> list[dict[str, Any]] | None:
         try:
-            return self._table_parser.parse_team_table(
+            return self._table_parser.parse(
                 soup,
                 section_id=section_id,
                 team=team,

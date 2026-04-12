@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.parsers.table.engine_regulation import EngineRegulationTableParser
+from scrapers.parsers.table.engine_regulation_wiki_table import EngineRegulationTableParser
 from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 

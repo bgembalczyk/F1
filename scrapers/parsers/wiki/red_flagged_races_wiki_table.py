@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from scrapers.helpers.text import strip_marks
-from scrapers.parsers.table.wiki.base import WikiTableBaseParser
+from scrapers.parsers.table.table.base import WikiTableBaseParser
 
 WIKIPEDIA_BASE_URL = "https://en.wikipedia.org"
 RESTART_STATUS_MAP = {

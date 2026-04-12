@@ -17,7 +17,7 @@ from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import (
 from scrapers.parsers.liveries.sponsorship.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
-from scrapers.parsers.table.sponsorship import SponsorshipTableParser
+from scrapers.parsers.table.sponsorship import SponsorshipTableSchemaBuilder
 from scrapers.parsers.wiki.base import WikiSectionParserBase
 from scrapers.pipeline_table import TablePipeline
 
@@ -53,7 +53,7 @@ class SponsorshipSectionParser(WikiSectionParserBase):
 
         config = TableConfig(
             url=self._url,
-            schema=SponsorshipTableParser.build_schema(_seasons_col),
+            schema=SponsorshipTableSchemaBuilder.build(_seasons_col),
             record_factory=MappingRecordFactory(),
         )
         return TablePipeline(
