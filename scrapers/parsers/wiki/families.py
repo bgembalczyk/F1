@@ -3,65 +3,78 @@ from __future__ import annotations
 from abc import ABC
 from abc import abstractmethod
 from dataclasses import dataclass
-from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from models.data.parsed.figure import FigureParsedData
-from models.data.parsed.html_elements import SectionElementData
-from models.data.parsed.infobox import InfoboxParsedData
-from models.data.parsed.nav_box import NavBoxParsedData
-from scrapers.parsers.base_family import InfoboxParserABC
-from scrapers.parsers.base_family import ListParserABC
-from scrapers.parsers.base_family import SectionParserABC
-from scrapers.parsers.base_family import TableParserABC
-from scrapers.parsers.base_family import TagParserABC
-from scrapers.parsers.roles import TableMapperABC
-
-WikiTableParsedData = dict[str, Any]
-WikiListParsedData = dict[str, Any]
-WikiSectionParsedData = SectionElementData
+from typing import Any
+from scrapers.parsers.wiki.types import WikiFigureData
+from scrapers.parsers.wiki.types import WikiInfoboxData
+from scrapers.parsers.wiki.types import WikiListData
+from scrapers.parsers.wiki.types import WikiNavboxData
+from scrapers.parsers.wiki.types import WikiSectionData
+from scrapers.parsers.wiki.types import WikiTableData
 
 
-class WikiTableParserABC(TagParserABC[WikiTableParsedData], ABC):
+class WikiElementParserABC(ABC):
+    """Wspólny pionowy kontrakt parserów elementów wiki."""
+
+
+class WikiTableParserABC(WikiElementParserABC, ABC):
     @abstractmethod
-    def parse(self, raw: Tag) -> WikiTableParsedData: ...
+    def parse(self, raw: Tag) -> WikiTableData: ...
 
 
-class WikiListParserABC(ListParserABC, ABC):
+class WikiListParserABC(WikiElementParserABC, ABC):
     @abstractmethod
-    def parse(self, raw: Tag) -> WikiListParsedData: ...
+    def parse(self, raw: Tag) -> WikiListData: ...
 
 
-class WikiSectionParserABC(SectionElementParserABC, ABC):
+class WikiSectionParserABC(WikiElementParserABC, ABC):
     @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> WikiSectionParsedData: ...
+    def parse(self, raw: BeautifulSoup | Tag | list[Tag]) -> WikiSectionData: ...
+
+
+class WikiInfoboxParserABC(WikiElementParserABC, ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> WikiInfoboxData: ...
+
+
+class WikiNavboxParserABC(WikiElementParserABC, ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> WikiNavboxData: ...
+
+
+class WikiFigureParserABC(WikiElementParserABC, ABC):
+    @abstractmethod
+    def parse(self, raw: Tag) -> WikiFigureData: ...
 
 
 class WikiSectionStructureParserABC(WikiSectionParserABC, ABC):
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup | Tag) -> WikiSectionParsedData: ...
+    """Backward-compatible alias branch for section structure parsers."""
 
 
-class WikiInfoboxParserABC(InfoboxElementParserABC, ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> InfoboxParsedData: ...
+# Backward-compatible aliases
+WikiNavboxHtmlParserABC = WikiNavboxParserABC
+WikiFigureHtmlParserABC = WikiFigureParserABC
+
 
 @dataclass(frozen=True)
 class WikiTableMapperSet:
     """Registry mapperów tabel (etap translacji parse -> domain)."""
 
-    table_mapper: TableMapperABC | None = None
+    table_mapper: Any = None
 
 
 __all__ = [
+    "WikiElementParserABC",
+    "WikiFigureParserABC",
+    "WikiFigureHtmlParserABC",
     "WikiInfoboxParserABC",
-    "WikiListParsedData",
     "WikiListParserABC",
-    "WikiSectionParsedData",
+    "WikiNavboxParserABC",
+    "WikiNavboxHtmlParserABC",
     "WikiSectionParserABC",
     "WikiTableMapperSet",
-    "WikiTableParsedData",
     "WikiTableParserABC",
 ]

@@ -38,6 +38,16 @@ class HtmlTagParserABC(ParserABC[Tag, TagOutT], ABC, Generic[TagOutT]):
 class HtmlElementParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
     """Canonical ABC for parsers of HTML elements (single Tag input)."""
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> TagOutT: ...
+
+
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Generic mapping contract used by parser pipelines."""
+
+    @abstractmethod
+    def map(self, fragment: InT) -> OutT: ...
+
 
 class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
     """Parser dokumentu/fragmentu soup (BeautifulSoup -> payload)."""
@@ -49,21 +59,36 @@ class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
 class SectionParserABC(ParserABC[BeautifulSoup, SectionParseResult], ABC):
     """Canonical ABC for section parsers."""
 
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
+
 
 class SectionStructureParserABC(SectionParserABC, ABC):
     """ABC for section parser hierarchy."""
+
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
 
 
 class TableHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     """ABC parsera tabeli HTML."""
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
+
 
 class InfoboxHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     """ABC parsera infoboxa HTML."""
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
+
 
 class ListHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     """ABC parsera listy HTML."""
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
 class MapperABC(ABC, Generic[InT, OutT]):
@@ -71,6 +96,9 @@ class MapperABC(ABC, Generic[InT, OutT]):
 
     @abstractmethod
     def map(self, raw: InT) -> OutT: ...
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
 class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):

@@ -7,10 +7,11 @@ from bs4 import Tag
 from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
+from scrapers.parsers.wiki.families import WikiSectionParserABC
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class BaseNestedSectionParser(RecursiveSectionParser):
+class BaseNestedSectionParser(WikiSectionParserABC, RecursiveSectionParser):
     heading_class: str
     output_key: str
 
