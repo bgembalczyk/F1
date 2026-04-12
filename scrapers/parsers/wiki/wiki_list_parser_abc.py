@@ -1,12 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
+"""Backwards-compatible alias for list section-node parser contract."""
 
-from bs4 import Tag
+from scrapers.parsers.wiki.section_nodes.list import WikiListSectionParserABC as WikiListParserABC
 
-from models.data.wiki.list import WikiListData
-from scrapers.parsers.element_parser_abc import ListElementParserABC
-
-
-class WikiListParserABC(ListElementParserABC[WikiListData], ABC):
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiListData: ...
+__all__ = ["WikiListParserABC"]

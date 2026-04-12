@@ -1,9 +1,9 @@
-"""Re-exports of section-tree adapter utilities at scrapers.parsers.section.wiki.adapt path."""
+"""Compatibility re-export for section tree adapters."""
 
-from scrapers.parsers.section.adapt import collect_section_elements
-from scrapers.parsers.section.adapt import extract_sections
-from scrapers.parsers.section.adapt import find_section_tree
-from scrapers.parsers.section.adapt import iter_sections
+from scrapers.parsers.wiki.section_nodes.adapt import collect_section_elements
+from scrapers.parsers.wiki.section_nodes.adapt import extract_sections
+from scrapers.parsers.wiki.section_nodes.adapt import find_section_tree
+from scrapers.parsers.wiki.section_nodes.adapt import iter_sections
 
 __all__ = [
     "collect_section_elements",

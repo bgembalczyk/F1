@@ -1,8 +1,8 @@
-"""Re-exports of section helpers at scrapers.parsers.section.wiki.helpers path."""
+"""Compatibility re-export for section profile helpers."""
 
-from scrapers.parsers.section.helpers import DOMAIN_SECTION_PROFILES
-from scrapers.parsers.section.helpers import profile_entry_aliases
-from scrapers.parsers.section.helpers import split_into_parts
+from scrapers.parsers.wiki.section_nodes.helpers import DOMAIN_SECTION_PROFILES
+from scrapers.parsers.wiki.section_nodes.helpers import profile_entry_aliases
+from scrapers.parsers.wiki.section_nodes.helpers import split_into_parts
 
 __all__ = [
     "DOMAIN_SECTION_PROFILES",

@@ -17,8 +17,8 @@ from scrapers.constants_drivers import FATALITIES_SESSION_HEADER
 from scrapers.driver_ordered_table_mapper import DriverOrderedTableMapper
 from scrapers.parsers.section_parser_abc import SectionParserABC
 from scrapers.parsers.section_parser_abc import SubSectionParserABC
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.section.sub_section.base import SubSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 
 

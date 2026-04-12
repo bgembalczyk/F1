@@ -1,17 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
+"""Backwards-compatible alias for the canonical section parser contract."""
 
-from bs4 import BeautifulSoup
+from scrapers.parsers.wiki.section_nodes.section import WikiSectionParserABC
 
-from models.data.wiki.section import WikiSectionData
-from scrapers.parsers.element_parser_abc import SectionElementParserABC
-from scrapers.parsers.parser_abc import ParserABC
-
-
-class WikiSectionParserABC(
-    SectionElementParserABC[WikiSectionData],
-    ParserABC[BeautifulSoup, WikiSectionData],
-    ABC,
-):
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> WikiSectionData: ...
+__all__ = ["WikiSectionParserABC"]

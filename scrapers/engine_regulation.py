@@ -15,7 +15,7 @@ from scrapers.columns.types.unit import UnitColumn
 from scrapers.config_table import build_scraper_config
 from scrapers.helpers.header import is_repeated_header_row
 from scrapers.multi_level_header_builder import MultiLevelHeaderBuilder
-from scrapers.parsers.wiki.base_nested_section.history import HistorySectionParser
+from scrapers.parsers.section.history import HistorySectionParser
 from scrapers.source_catalog import ENGINE_PROGRESS
 from scrapers.table_schema_dsl import TableSchemaDSL
 
