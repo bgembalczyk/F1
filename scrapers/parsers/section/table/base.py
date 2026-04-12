@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
-from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.table.html import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
 from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser

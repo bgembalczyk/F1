@@ -10,7 +10,7 @@ from scrapers.headers_table import normalize_header
 from scrapers.helpers.constants import season_headers
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.paren_classifier import ParenClassifier
-from scrapers.parser_table import HtmlTableParser
+from scrapers.parsers.table.html import HtmlTableParser
 from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import (
     BroaderScopeSplitter,
 )
