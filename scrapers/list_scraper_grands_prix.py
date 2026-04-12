@@ -1,7 +1,10 @@
 """DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
 
+from __future__ import annotations
+
 import warnings
 
+from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
 from scrapers.builders_table import EntityColumnSpec
 from scrapers.builders_table import build_columns
 from scrapers.builders_table import build_entity_metadata_columns
@@ -13,11 +16,10 @@ from scrapers.columns.types.multi.name_status_column.race_title_status import (
 )
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.config_table import build_scraper_config
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
-from scrapers.parsers.wiki.base_nested_section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
+from scrapers.parsers.section.legacy_lists.grands_prix import ByRaceTitleSubSectionParser
+from scrapers.parsers.section.legacy_lists.grands_prix import GrandsPrixTableMapper
+from scrapers.parsers.section.legacy_lists.grands_prix import RacesSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import GRANDS_PRIX_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL
@@ -27,37 +29,6 @@ warnings.warn(
     DeprecationWarning,
     stacklevel=2,
 )
-
-
-from typing import Any
-
-from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-
-
-class GrandsPrixTableMapper(WikiTableBaseMapper):
-    table_type = "grands_prix_list"
-    missing_columns_policy = "ignore"
-    extra_columns_policy = "ignore"
-
-    _column_mapping = {
-        "Race title": "race_title",
-        "Country": "country",
-        "Years held": "years_held",
-        "Circuits": "circuits",
-        "Total": "total",
-    }
-
-    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        required_headers = {"Race title", "Years held"}
-        return required_headers.issubset(set(headers))
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        return {
-            header: self._column_mapping[header]
-            for header in headers
-            if header in self._column_mapping
-        }
-
 
 TABLE_SCHEMA = TableSchemaDSL(
     columns=build_columns(
@@ -78,23 +49,6 @@ TABLE_SCHEMA = TableSchemaDSL(
 )
 
 
-class ByRaceTitleSubSectionParser(SubSectionParser, ApplyForElementsMixin):
-    def __init__(self) -> None:
-        super().__init__()
-        self._table_parser = GrandsPrixTableMapper()
-
-    def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
-        parsed = super()._parse_group(elements, context=context)
-        self._apply_table_parser_to_sections(parsed, "sub_sub_sections")
-        return parsed
-
-
-class RacesSectionParser(NestedWikiSectionParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self.child_parser = ByRaceTitleSubSectionParser()
-
-
 class GrandsPrixListScraper(SeedListTableScraper):
     domain = "grands_prix"
     output_basename = "f1_grands_prix_extended.json"
@@ -108,7 +62,6 @@ class GrandsPrixListScraper(SeedListTableScraper):
     CONFIG = build_scraper_config(
         url=GRANDS_PRIX_LIST.base_url,
         section_id=GRANDS_PRIX_LIST.section_id,
-        # podzbiór nagłówków - do znalezienia właściwej tabeli
         expected_headers=[
             "Race title",
             "Years held",
@@ -122,3 +75,14 @@ class GrandsPrixListScraper(SeedListTableScraper):
         parser = RacesSectionParser()
         self.section_parser = parser
         self.body_content_parser.content_text_parser.section_parser = parser
+
+
+GrandsPrixTableParser = GrandsPrixTableMapper
+
+__all__ = [
+    "ByRaceTitleSubSectionParser",
+    "GrandsPrixListScraper",
+    "GrandsPrixTableMapper",
+    "GrandsPrixTableParser",
+    "RacesSectionParser",
+]
