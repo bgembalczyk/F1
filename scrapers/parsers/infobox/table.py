@@ -12,30 +12,26 @@ from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.constants import EXPECTED_STATS_COLUMNS
+from scrapers.parsers.infobox_parser_abc import InfoboxNestedTableParserABC
 
 
-class InfoboxTableParser:
+class InfoboxTableParser(InfoboxNestedTableParserABC):
     """Handles parsing of nested tables and extraction of statistics."""
 
-    def __init__(self, link_extractor: InfoboxLinkExtractor):
+    def __init__(self, link_extractor: InfoboxLinkExtractor, *, include_urls: bool):
         """Initialize the table parser.
 
         Args:
             link_extractor: Link extractor for extracting URLs from cells
         """
         self._link_extractor = link_extractor
+        self._include_urls = include_urls
 
-    def parse(
-        self,
-        cell: Tag,
-        *,
-        include_urls: bool,
-    ) -> dict[str, Any]:
+    def parse(self, cell: Tag) -> dict[str, Any]:
         """Parse full data including nested tables and structured information.
 
         Args:
             cell: BeautifulSoup Tag representing the cell
-            include_urls: Whether to include URL information
 
         Returns:
             Dictionary with parsed data (text, links, and optional table info)
@@ -44,14 +40,14 @@ class InfoboxTableParser:
 
         nested_table = cell.find("table")
         if nested_table:
-            table_data = self.parse_nested_table(nested_table)
+            table_data = self._parse_nested_table(nested_table)
             # Check if this is a Wins/Podiums/Poles table or Wins/Top tens/Poles table
             if self._is_stats_table(table_data):
                 # Extract the values directly and return only stats
                 return self._extract_stats_from_table(table_data)
             # For other tables, include full metadata
             payload: dict[str, Any] = {"text": text}
-            if include_urls:
+            if self._include_urls:
                 payload["links"] = self._link_extractor.extract_links(cell)
             payload["table"] = table_data
             return payload
@@ -65,12 +61,12 @@ class InfoboxTableParser:
 
         # Default: return text and links
         payload: dict[str, Any] = {"text": text}
-        if include_urls:
+        if self._include_urls:
             payload["links"] = self._link_extractor.extract_links(cell)
         return payload
 
     @staticmethod
-    def parse_nested_table(table: Tag) -> dict[str, Any]:
+    def _parse_nested_table(table: Tag) -> dict[str, Any]:
         """Parse a nested HTML table into structured data.
 
         Args:
