@@ -87,6 +87,18 @@ class ArticleScraperBase(WikiScraper, ABC):
             fragment=self._section_fragment,
         )
 
+    def extract_section_by_id(
+        self,
+        soup: BeautifulSoup,
+        section_id: str,
+        *,
+        domain: str | None = None,
+    ) -> BeautifulSoup | None:
+        strategy = getattr(self, "section_selection_strategy", None)
+        if strategy is None:
+            return None
+        return strategy.extract_section_by_id(soup, section_id, domain=domain)
+
     @abstractmethod
     def _build_article_record(self, soup: BeautifulSoup) -> dict[str, Any]:
         """Build final record from parsed article soup."""
