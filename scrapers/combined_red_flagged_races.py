@@ -6,6 +6,15 @@ from bs4 import BeautifulSoup
 
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
+from scrapers.parsers.table.red_flagged_races import WIKIPEDIA_BASE_URL
+from scrapers.parsers.table.red_flagged_races import BaseRedFlaggedRacesTableMapper
+from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableMapper
+from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableMapper
+from scrapers.parsers.table.red_flagged_races import build_full_url
+from scrapers.parsers.table.red_flagged_races import extract_rich_cell
+from scrapers.parsers.table.red_flagged_races import map_drivers_cell
+from scrapers.parsers.table.red_flagged_races import map_winner_cell
+from scrapers.parsers.table.red_flagged_races import try_int
 from scrapers.parsers.table.red_flagged_races_wiki_table import WIKIPEDIA_BASE_URL
 from scrapers.parsers.table.red_flagged_races_wiki_table import BaseRedFlaggedRacesTableParser
 from scrapers.parsers.table.red_flagged_races_wiki_table import NonChampionshipsRacesTableParser
@@ -73,9 +82,9 @@ __all__ = [
     "extract_rich_cell",
     "map_winner_cell",
     "map_drivers_cell",
-    "BaseRedFlaggedRacesTableParser",
-    "WorldChampionshipsRacesTableParser",
-    "NonChampionshipsRacesTableParser",
+    "BaseRedFlaggedRacesTableMapper",
+    "WorldChampionshipsRacesTableMapper",
+    "NonChampionshipsRacesTableMapper",
     "RedFlaggedRacesSectionParser",
     "RedFlaggedRacesScraper",
 ]

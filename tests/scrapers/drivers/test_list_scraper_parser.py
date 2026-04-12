@@ -1,21 +1,21 @@
 # ruff: noqa: E501, PLR2004, SLF001
 from scrapers.drivers.constants_drivers import DRIVERS_LIST_HEADERS
 from scrapers.drivers.list_scraper_drivers import DriversListSectionParser
-from scrapers.drivers.list_scraper_drivers import DriversListTableParser
+from scrapers.drivers.list_scraper_drivers import DriversListTableMapper
 
 
 def test_drivers_list_table_parser_matches_when_all_required_headers_present() -> None:
-    parser = DriversListTableParser()
+    parser = DriversListTableMapper()
     assert parser.matches(list(DRIVERS_LIST_HEADERS), {}) is True
 
 
 def test_drivers_list_table_parser_does_not_match_with_missing_headers() -> None:
-    parser = DriversListTableParser()
+    parser = DriversListTableMapper()
     assert parser.matches(["Driver name"], {}) is False
 
 
 def test_drivers_list_table_parser_matches_with_extra_headers() -> None:
-    parser = DriversListTableParser()
+    parser = DriversListTableMapper()
     headers = [*list(DRIVERS_LIST_HEADERS), "Extra column"]
     assert parser.matches(headers, {}) is True
 

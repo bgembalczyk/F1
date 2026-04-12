@@ -4,7 +4,6 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Any
 
-from scrapers.parsers.roles import TableDomainMapperABC
 
 
 class ArticleTablesParserABC(ABC):

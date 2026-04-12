@@ -1,3 +1,3 @@
-from scrapers.parsers.season_standings import SeasonStandingsParser, SeasonStandingsService
+from scrapers.parsers.season_standings import SeasonStandingsParser
 
-__all__ = ["SeasonStandingsParser", "SeasonStandingsService"]
+__all__ = ["SeasonStandingsParser"]

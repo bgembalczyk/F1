@@ -2,7 +2,7 @@
 
 
 from scrapers.engines.engine_regulation import EngineRegulationSubSectionParser
-from scrapers.engines.engine_regulation import EngineRegulationTableParser
+from scrapers.engines.engine_regulation import EngineRegulationTableMapper
 
 
 def test_engine_regulation_apply_for_elements_covers_all_guards() -> None:
@@ -54,12 +54,12 @@ def test_engine_regulation_apply_parser_recurses_nested_sections() -> None:
 
 
 def test_engine_regulation_table_parser_matches_required_headers() -> None:
-    parser = EngineRegulationTableParser()
+    parser = EngineRegulationTableMapper()
     assert parser.matches(["Years", "Operating principle", "Configuration"], {}) is True
 
 
 def test_engine_regulation_table_parser_does_not_match_missing_headers() -> None:
-    parser = EngineRegulationTableParser()
+    parser = EngineRegulationTableMapper()
     assert parser.matches(["Years", "Operating principle"], {}) is False
     assert parser.matches([], {}) is False
 

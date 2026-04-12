@@ -1,10 +1,10 @@
 from scrapers.engines.engine_regulation import EngineRegulationSubSectionParser
-from scrapers.engines.engine_regulation import EngineRegulationTableParser
+from scrapers.engines.engine_regulation import EngineRegulationTableMapper
 from scrapers.engines.engine_regulation import HistorySectionParser
 
 
 def test_engine_regulation_table_parser_maps_domain_rows() -> None:
-    parser = EngineRegulationTableParser()
+    parser = EngineRegulationTableMapper()
     parsed = parser.parse(
         {
             "headers": [

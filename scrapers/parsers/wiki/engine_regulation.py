@@ -1,5 +1,6 @@
 from typing import Any
 
+from scrapers.parsers.table.engine_regulation import EngineRegulationTableMapper
 from scrapers.parsers.table.engine_regulation_wiki_table import EngineRegulationTableParser
 from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
@@ -8,7 +9,7 @@ from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 class EngineRegulationSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_parser = EngineRegulationTableParser()
+        self._table_parser = EngineRegulationTableMapper()
 
     def _parse_group(self, elements: list, *, context=None) -> dict[str, Any]:
         parsed = super()._parse_group(elements, context=context)
@@ -32,7 +33,7 @@ class EngineRegulationSubSectionParser(SubSectionParser):
             data = element.get("data")
             if not isinstance(data, dict):
                 continue
-            parsed = self._table_parser.parse(data)
+            parsed = self._table_parser.map(data)
             if parsed is not None:
                 element["data"] = parsed
 

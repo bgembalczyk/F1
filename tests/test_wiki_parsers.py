@@ -13,7 +13,6 @@ from scrapers.wiki.parsers.elements.infobox import WikiInfoboxParser
 from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.navbox import WikiNavboxParser
 from scrapers.wiki.parsers.elements.paragraph import WikiParagraphParser
-from scrapers.wiki.parsers.elements.parsers import WikiElementParsers
 from scrapers.wiki.parsers.elements.navbox import NavBoxParser
 from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.parsers import WikiElementSet

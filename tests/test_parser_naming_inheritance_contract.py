@@ -118,7 +118,7 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 continue
             base_name_join = " ".join(class_info.bases)
             _table_parser_bases = {
-                "WikiTableBaseParser",
+                "WikiTableBaseMapper",
                 "WikiTableHtmlParser",
                 "WikiTableElementParserBase",
             }
@@ -130,7 +130,7 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             if not inherits_table_base:
                 violations.append(
                     f"{class_info.module}.{class_info.name}: TableParser musi "
-                    "dziedziczyć po WikiTableBaseParser, WikiTableHtmlParser "
+                    "dziedziczyć po WikiTableBaseMapper, WikiTableHtmlParser "
                     "lub WikiTableElementParserBase",
                 )
             if not _has_parse(class_info, classes):

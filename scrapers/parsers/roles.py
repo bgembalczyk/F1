@@ -41,11 +41,11 @@ class SectionStructureParserABC(SoupDocumentParserABC[SectionParseResult], ABC):
     """Runtime contract for section structure parsers."""
 
 
-class TableHtmlParserABC(ParserABC[dict[str, Any], dict[str, Any] | None], ABC):
-    """Runtime contract for HTML table-fragment domain mappers."""
+class TableHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
+    """Runtime contract for HTML table parsers (Tag -> table fragment)."""
 
     @abstractmethod
-    def parse(self, raw: dict[str, Any]) -> dict[str, Any] | None: ...
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
 class InfoboxHtmlParserABC(HtmlTagParserABC[Tag, dict[str, Any]], ABC):
@@ -68,8 +68,15 @@ class SectionParserABC(SectionStructureParserABC):
     """Backward-compatible alias for section parser contracts."""
 
 
-class TableDomainMapperABC(TableHtmlParserABC):
-    """Backward-compatible alias for table parser contracts."""
+class TableMapperABC(Parser[dict[str, Any], dict[str, Any] | None], ABC):
+    """Runtime contract for table fragment mappers (fragment -> domain mapping)."""
+
+    @abstractmethod
+    def map(self, raw: dict[str, Any]) -> dict[str, Any] | None: ...
+
+
+class TableDomainMapperABC(TableMapperABC):
+    """Backward-compatible alias for table mapper contracts."""
 
 
 class TableMapperABC(TableDomainMapperABC):
@@ -108,7 +115,6 @@ class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):
 
 __all__ = [
     "GroupParsingMixin",
-    "HtmlElementParserABC",
     "HtmlTagParserABC",
     "InfoboxParserABC",
     "InfoboxHtmlParserABC",
@@ -119,9 +125,9 @@ __all__ = [
     "ParsingBundleProviderABC",
     "RowMappingMixin",
     "SectionParseResult",
-    "SectionParserABC",
     "SectionStructureParserABC",
     "SoupDocumentParserABC",
+    "TableMapperABC",
     "TableDomainMapperABC",
     "TableHtmlParserABC",
     "TableMapperABC",

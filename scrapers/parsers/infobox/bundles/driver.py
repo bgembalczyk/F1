@@ -18,6 +18,3 @@ class DriverInfoboxBundle(ParsingBundle):
     career_parser: InfoboxCareerParser
     section_discovery: InfoboxSectionDiscovery
 
-
-# Backward-compatible alias.
-DriverInfoboxParserBundle = DriverInfoboxBundle

@@ -43,7 +43,6 @@ PIPELINE_PROFILES: dict[str, PipelineProfile] = {
     ),
 }
 
-# Backward-compatible aliases.
 PIPELINE_PROFILE_ALIASES: dict[str, str] = {
     "soft_seed": "seed_soft",
     "strict_seed": "seed_strict",

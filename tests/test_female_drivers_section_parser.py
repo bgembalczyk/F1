@@ -1,10 +1,10 @@
 from scrapers.drivers.female_drivers_list import DriversSectionParser
-from scrapers.drivers.female_drivers_list import FemaleDriversTableParser
+from scrapers.drivers.female_drivers_list import FemaleDriversTableMapper
 from scrapers.drivers.female_drivers_list import OfficialDriversSubSectionParser
 
 
 def test_female_drivers_table_parser_maps_domain_rows() -> None:
-    parser = FemaleDriversTableParser()
+    parser = FemaleDriversTableMapper()
     parsed = parser.parse(
         {
             "headers": [
