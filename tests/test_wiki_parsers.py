@@ -24,9 +24,9 @@ from scrapers.parsers.wiki.header import HeaderParser
 from scrapers.parsers.section.match.priorities import SectionExtractionContext
 from scrapers.parsers.section.wiki.helpers import split_into_parts
 from scrapers.parsers.section.wiki import SectionParser
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
-from scrapers.parsers.wiki.sublevels.sub_sub_section import SubSubSectionParser
-from scrapers.parsers.wiki.sublevels.sub_sub_sub_section import SubSubSubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_section import SubSubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.body_content import BodyContentAssembler
 from scrapers.wiki.parsers.category_links import CategoryLinksParser

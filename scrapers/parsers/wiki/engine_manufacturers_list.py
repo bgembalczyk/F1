@@ -9,7 +9,7 @@ from scrapers.parsers.table.engine_manufacturers_list import (
     EngineManufacturersTableMapper,
 )
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
 
 
 class EngineManufacturersIndianapolisSubSectionParser(SubSectionParser):

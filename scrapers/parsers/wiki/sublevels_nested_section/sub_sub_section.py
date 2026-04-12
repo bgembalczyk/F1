@@ -1,6 +1,6 @@
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
-from scrapers.parsers.wiki.sublevels.sub_sub_sub_section import SubSubSubSectionParser
+from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 
 
 class SubSubSectionParser(BaseNestedSectionParser):

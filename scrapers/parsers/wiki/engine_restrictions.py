@@ -3,7 +3,7 @@ from typing import Any
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
 from scrapers.parsers.wiki.engine_restrictions_wiki_table import EngineRestrictionsTableMapper
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
 
 
 class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):

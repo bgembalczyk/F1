@@ -4,7 +4,7 @@ from typing import Any
 
 from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.table.contracts import ArticleTablesParserABC
+from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
 
 
 class ConstructorTableExtractionService(RunDiagnosticsMixin):

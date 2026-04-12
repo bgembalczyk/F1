@@ -5,15 +5,14 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.table.html_table import HtmlTableParser
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
-from scrapers.parsers.wiki.table.mapped.lap_records import LapRecordsWikiTableMapper
-from scrapers.parsers.wiki.table.mapped.race_results import RaceResultsTableMapper
-from scrapers.parsers.wiki.table.contracts import ArticleTablesParserABC
-from scrapers.parsers.wiki.table.mapped.base import MappedWikiTableMapper
-from scrapers.parsers.wiki.table.mapped.standings import StandingsTableMapper
-from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
+from scrapers.parsers.lap_records_wiki_table_mapper import LapRecordsWikiTableMapper
+from scrapers.parsers.mapped_wiki_table_mapper import MappedWikiTableMapper
+from scrapers.parsers.race_results_table_mapper import RaceResultsTableMapper
+from scrapers.parsers.standings_table_mapper import StandingsTableMapper
+from scrapers.parsers.wiki.article_tables_parser_abc import ArticleTablesParserABC
 from scrapers.parsers.wiki.base import WikiTableElementParserBase
 
 class ArticleTablesParser(WikiTableElementParserBase, ArticleTablesParserABC):

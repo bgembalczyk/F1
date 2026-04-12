@@ -2,7 +2,7 @@ from typing import Any
 
 from scrapers.parsers.wiki.base_nested import BaseNestedSectionParser
 from scrapers.parsers.wiki.engine_regulation_wiki_table import EngineRegulationTableMapper
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
 
 
 class EngineRegulationSubSectionParser(SubSectionParser):

@@ -12,7 +12,7 @@ from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
-from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
+from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.parsers.wiki.base import WikiListParser
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser

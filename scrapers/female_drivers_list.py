@@ -21,7 +21,7 @@ from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.table_schema_dsl import TableSchemaDSL

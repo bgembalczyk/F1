@@ -1,8 +1,8 @@
 from scrapers.configs.public import TableConfig
 from scrapers.parsers.former_constructors_table_mapper import FormerConstructorsTableMapper
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
-from scrapers.parsers.wiki.sublevels.indianapolis_only_sub_section import GenericIndianapolisOnlySubSectionParser
-from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
+from scrapers.parsers.wiki.sublevels_nested_section.indianapolis_only_sub_section import GenericIndianapolisOnlySubSectionParser
+from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 
 
 class FormerConstructorsSectionParser(ConstructorsSectionParser):

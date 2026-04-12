@@ -35,7 +35,7 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.wiki.base_ordered import DriverOrderedTableMapper
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import DRIVERS_FATALITIES
 from scrapers.table_schema_dsl import TableSchemaDSL

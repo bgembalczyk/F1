@@ -8,8 +8,8 @@ from bs4 import Tag
 from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableMapper
 from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableMapper
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
-from scrapers.parsers.wiki.sublevels.sub_sub_sub_section import SubSubSubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_sub_section import SubSubSubSectionParser
 
 
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):

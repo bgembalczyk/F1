@@ -5,7 +5,7 @@ from bs4 import Tag
 from scrapers.parsers.list_element.indianapolis_constructors import (
     IndianapolisConstructorsListParser,
 )
-from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_section import SubSectionParser
 
 
 class GenericIndianapolisOnlySubSectionParser(SubSectionParser):

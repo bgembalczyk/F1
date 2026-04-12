@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.parsers.wiki.base_section_parser import BaseSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.table.contracts import ArticleTablesParserABC
+from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_metadata
 

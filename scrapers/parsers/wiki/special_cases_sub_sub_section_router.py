@@ -2,7 +2,7 @@ from typing import Any
 
 from scrapers.parsers.wiki.shortened_races_sub_sub_section_parser import ShortenedRacesSubSubSectionParser
 from scrapers.parsers.wiki.sprint_races_sub_sub_section_parser import SprintRacesSubSubSectionParser
-from scrapers.parsers.wiki.sublevels.sub_sub_section import SubSubSectionParser
+from scrapers.parsers.wiki.sublevels_nested_section.sub_sub_section import SubSubSectionParser
 
 
 class SpecialCasesSubSubSectionRouter(SubSubSectionParser):
