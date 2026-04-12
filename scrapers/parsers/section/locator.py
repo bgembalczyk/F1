@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 from bs4 import Tag
 
-from scrapers.parsers.section.wiki.helpers import split_into_parts
-from scrapers.parsers.section.wiki.located import LocatedSection
+from scrapers.parsers.section.helpers import split_into_parts
+from scrapers.parsers.section.located import LocatedSection
 
 
 class SectionLocator:
@@ -26,4 +26,4 @@ class SectionLocator:
         ]
 
 
-__all__ = ["LocatedSection", "SectionLocator"]
+__all__ = ["SectionLocator"]

@@ -3,8 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from scrapers.parsers.section.detection import make_stable_section_id
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.wiki.detection import make_stable_section_id
 
 
 @dataclass(frozen=True)

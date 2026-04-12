@@ -3,7 +3,7 @@ import logging
 from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
-from scrapers.parsers.section.base import BaseSectionParser
+from scrapers.parsers.section.base_section_parser import BaseSectionParser
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.section.wiki.toolbox import SectionParserToolbox
 from scrapers.parsers.section.wiki.toolbox import build_default_section_toolbox

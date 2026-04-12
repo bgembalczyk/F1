@@ -5,13 +5,13 @@ from bs4 import Tag
 from scrapers.helpers.transform_micro_ops import merge_unique_preserve_order
 from scrapers.parsers.constants import BASE_COMMON_ALIASES
 from scrapers.parsers.constants import CURRENT_CONSTRUCTORS_ID
+from scrapers.parsers.section.constants import TOP_SECTION_NAME
 from scrapers.parsers.section.domain_config.helpers import SECTION_PROFILES_CONFIG
 from scrapers.parsers.section.domain_config.helpers import (
     validate_section_profiles_config,
 )
 from scrapers.parsers.section.profile import SectionProfile
-from scrapers.parsers.section.wiki.constants import TOP_SECTION_NAME
-from scrapers.parsers.section.wiki.normalization import normalize_section_text
+from scrapers.parsers.wiki.normalization import normalize_section_text
 
 
 def split_into_parts(

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.section.base import BaseSectionParser
+from scrapers.parsers.section.base_section_parser import BaseSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.parsers.wiki.table.contracts import ArticleTablesParserABC
 from scrapers.section.parse_results import SectionParseResult
