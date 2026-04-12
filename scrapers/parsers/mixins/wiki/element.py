@@ -8,6 +8,7 @@ from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
+from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.wiki.paragraph import WikiParagraphParser
@@ -64,52 +65,19 @@ class WikiElementParsingMixin:
         if self.element_registry is not None:
             self._parser_rules.extend(self.element_registry.rules)
             return
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "p",
-            parser=self._paragraph_parser.parse,
-            result_type="paragraph",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: el.name == "figure",
-            parser=self._figure_parser.parse,
-            result_type="figure",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: el.name in {"ul", "ol"},
-            parser=self.list_parser.parse,
-            result_type="list",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: (
-                el.name == "table" and "infobox" in self._get_classes(el)
+        auto_registry = build_wikipedia_element_registry(
+            parsers=WikiElementSet(
+                infobox_parser=self.infobox_parser,
+                paragraph_parser=self._paragraph_parser,
+                figure_parser=self._figure_parser,
+                list_parser=self.list_parser,
+                table_html_parser=self.table_html_parser,
+                navbox_parser=self._navbox_parser,
+                references_wrap_parser=self._references_parser,
+                references_parser=self._references_parser,
             ),
-            parser=self.infobox_parser.parse,
-            result_type="infobox",
         )
-        self.register_parser_rule(
-            predicate=lambda el: (
-                el.name == "table" and "wikitable" in self._get_classes(el)
-            ),
-            parser=self.table_html_parser.parse,
-            result_type="table",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: (
-                el.name == "div"
-                and el.get("role") == "navigation"
-                and "navbox" in self._get_classes(el)
-            ),
-            parser=self._navbox_parser.parse,
-            result_type="navbox",
-        )
-        self.register_parser_rule(
-            predicate=lambda el: (
-                el.name == "div"
-                and any("references-wrap" in c for c in self._get_classes(el))
-            ),
-            parser=self._references_parser.parse,
-            result_type="references",
-        )
+        self._parser_rules.extend(auto_registry.rules)
 
     @staticmethod
     def _has_infobox_class(classes: object) -> bool:

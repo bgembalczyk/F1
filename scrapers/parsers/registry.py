@@ -9,14 +9,16 @@ from typing import Literal
 from typing import TypeAlias
 
 import scrapers.parsers as parsers_pkg
+from scrapers.parsers.element_parser_abc import InfoboxElementParserABC
+from scrapers.parsers.element_parser_abc import ListElementParserABC
+from scrapers.parsers.element_parser_abc import SectionElementParserABC
+from scrapers.parsers.element_parser_abc import TableElementParserABC
 from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.tag_parser_abc import TagParserABC
-from scrapers.parsers.wiki_list_parser_abc import WikiListParserABC
-from scrapers.parsers.wiki_section_parser_abc import WikiSectionParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
-ParserBase: TypeAlias = type[TagParserABC[object]] | type[WikiSectionParserABC]
+ParserBase: TypeAlias = type[TagParserABC[object]]
 
 
 @dataclass(frozen=True)
@@ -32,47 +34,20 @@ class ParsingRegistryEntry:
     parser_base: ParserBase
 
 
-DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = (
+AUTO_ELEMENT_PARSER_BASES: Final[dict[ElementType, ParserBase]] = {
+    "table": TableElementParserABC,
+    "list": ListElementParserABC,
+    "section": SectionElementParserABC,
+    "infobox": InfoboxElementParserABC,
+}
+
+DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = tuple(
     ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="drivers", element_type="list"),
-        parser_base=WikiListParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="drivers", element_type="section"),
-        parser_base=WikiSectionParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="constructors", element_type="list"),
-        parser_base=WikiListParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="constructors", element_type="section"),
-        parser_base=WikiSectionParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="circuits", element_type="list"),
-        parser_base=WikiListParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="circuits", element_type="section"),
-        parser_base=WikiSectionParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="seasons", element_type="list"),
-        parser_base=WikiListParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="seasons", element_type="section"),
-        parser_base=WikiSectionParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="grands_prix", element_type="list"),
-        parser_base=WikiListParserABC,
-    ),
-    ParsingRegistryEntry(
-        key=ParsingRegistryKey(domain="grands_prix", element_type="section"),
-        parser_base=WikiSectionParserABC,
-    ),
+        key=ParsingRegistryKey(domain=domain, element_type=element_type),
+        parser_base=parser_base,
+    )
+    for domain in ("drivers", "constructors", "circuits", "seasons", "grands_prix")
+    for element_type, parser_base in AUTO_ELEMENT_PARSER_BASES.items()
 )
 
 

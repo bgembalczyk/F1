@@ -6,8 +6,10 @@ from dataclasses import dataclass
 from bs4 import Tag
 
 from models.data.wiki_parser import WikiParserData
+from scrapers.parsers.element_parser_abc import ElementType
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.list_element_parser import ListElementParser
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.rules import ParserRule
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 from scrapers.parsers.wiki.table.table import WikiTableHtmlParser
@@ -20,14 +22,14 @@ from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 
 @dataclass(frozen=True)
 class WikiElementSet:
-    infobox_parser: WikiInfoboxParser
-    paragraph_parser: WikiParagraphParser
-    figure_parser: WikiFigureParser
-    list_parser: WikiListParser
-    table_html_parser: WikiTableHtmlParser
-    navbox_parser: WikiNavboxParser
-    references_wrap_parser: ReferencesWrapParser
-    references_parser: ReferencesWrapParser
+    infobox_parser: ParserABC[Tag, WikiParserData]
+    paragraph_parser: ParserABC[Tag, WikiParserData]
+    figure_parser: ParserABC[Tag, WikiParserData]
+    list_parser: ParserABC[Tag, WikiParserData]
+    table_html_parser: ParserABC[Tag, WikiParserData]
+    navbox_parser: ParserABC[Tag, WikiParserData]
+    references_wrap_parser: ParserABC[Tag, WikiParserData]
+    references_parser: ParserABC[Tag, WikiParserData]
     section_parser: Callable[[Tag], WikiParserData] | None = None
 
 
@@ -56,88 +58,78 @@ def build_wikipedia_element_registry(
     *,
     parsers: WikiElementSet,
 ) -> ElementRegistry:
-    paragraph_parser = WikiParagraphParser()
-    figure_parser = WikiFigureParser()
-    navbox_parser = WikiNavboxParser()
-    references_parser = ReferencesWrapParser()
+    type_predicates: dict[ElementType, Callable[[Tag], bool]] = {
+        "paragraph": lambda el: el.name == "p",
+        "table": lambda el: (
+            el.name == "table"
+            and "wikitable" in ElementRegistry._get_classes(el)
+        ),
+        "list": lambda el: el.name in {"ul", "ol"},
+        "section": lambda el: (
+            el.name == "div"
+            and any(
+                heading in ElementRegistry._get_classes(el)
+                for heading in ("mw-heading2", "mw-heading3", "mw-heading4")
+            )
+        ),
+        "infobox": lambda el: (
+            el.name == "table"
+            and "infobox" in ElementRegistry._get_classes(el)
+        ),
+        "figure": lambda el: el.name == "figure",
+        "navbox": lambda el: (
+            el.name == "div" and "navbox" in ElementRegistry._get_classes(el)
+        ),
+        "references": lambda el: (
+            el.name == "div"
+            and (
+                "reflist" in ElementRegistry._get_classes(el)
+                or any("references-wrap" in c for c in ElementRegistry._get_classes(el))
+            )
+        ),
+    }
 
-    section_rules: tuple[ParserRule, ...] = ()
-    if parsers.section_parser is not None:
-        section_rules = (
+    parser_instances = (
+        parsers.paragraph_parser,
+        parsers.table_html_parser,
+        parsers.list_parser,
+        parsers.infobox_parser,
+        parsers.figure_parser,
+        parsers.navbox_parser,
+        parsers.references_parser,
+    )
+    rules: list[ParserRule] = []
+    for parser in parser_instances:
+        element_type = getattr(parser, "element_type", None)
+        if not isinstance(element_type, str) or element_type not in type_predicates:
+            continue
+        rules.append(
             ParserRule(
-                predicate=lambda el: (
-                    el.name == "div"
-                    and any(
-                        heading in ElementRegistry._get_classes(el)
-                        for heading in ("mw-heading2", "mw-heading3", "mw-heading4")
-                    )
-                ),
+                predicate=type_predicates[element_type],
+                parser=parser.parse,
+                result_type=element_type,
+            ),
+        )
+
+    if parsers.section_parser is not None:
+        rules.append(
+            ParserRule(
+                predicate=type_predicates["section"],
                 parser=parsers.section_parser,
                 result_type="section",
             ),
         )
+
     return ElementRegistry(
-        rules=(
-            ParserRule(
-                predicate=lambda el: el.name == "p",
-                parser=paragraph_parser.parse,
-                result_type="paragraph",
-            ),
-            ParserRule(
-                predicate=lambda el: (
-                    el.name == "table"
-                    and "wikitable" in ElementRegistry._get_classes(el)
-                ),
-                parser=parsers.table_html_parser.parse,
-                result_type="table",
-            ),
-            ParserRule(
-                predicate=lambda el: el.name in {"ul", "ol"},
-                parser=parsers.list_parser.parse,
-                result_type="list",
-            ),
-            *section_rules,
-            ParserRule(
-                predicate=lambda el: (
-                    el.name == "table"
-                    and "infobox" in ElementRegistry._get_classes(el)
-                ),
-                parser=parsers.infobox_parser.parse,
-                result_type="infobox",
-            ),
-            ParserRule(
-                predicate=lambda el: el.name == "figure",
-                parser=figure_parser.parse,
-                result_type="figure",
-            ),
-            ParserRule(
-                predicate=lambda el: (
-                    el.name == "div" and "navbox" in ElementRegistry._get_classes(el)
-                ),
-                parser=navbox_parser.parse,
-                result_type="navbox",
-            ),
-            ParserRule(
-                predicate=lambda el: (
-                    el.name == "div"
-                    and (
-                        "reflist" in ElementRegistry._get_classes(el)
-                        or any(
-                            "references-wrap" in c
-                            for c in ElementRegistry._get_classes(el)
-                        )
-                    )
-                ),
-                parser=references_parser.parse,
-                result_type="references",
-            ),
-        ),
+        rules=tuple(rules),
     )
 
 
 def build_default_wiki_element_parsers() -> WikiElementSet:
     return WikiElementSet(
         infobox_parser=WikiInfoboxHtmlParser(),
+        paragraph_parser=WikiParagraphParser(),
+        figure_parser=WikiFigureParser(),
         list_parser=ListElementParser(),
         table_html_parser=WikiTableHtmlParser(),
         navbox_parser=WikiNavboxParser(),

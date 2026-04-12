@@ -10,11 +10,11 @@ from scrapers.parsers.matches_mixin import MatchesMixin
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
 from scrapers.parsers.row_mapping_mixin import RowMappingMixin
+from scrapers.parsers.table_parser_abc import TableParserABC
 from scrapers.parsers.table_domain_mapper_abc import TableDomainMapperABC
-from scrapers.parsers.tag_parser_abc import TagParserABC
 
 
-class WikiTableBaseParser(TagParserABC[dict[str, Any]], ABC):
+class WikiTableBaseParser(TableParserABC, ABC):
     """Bazowa klasa parserów tabel wiki (HTML Tag -> parsed data)."""
 
     def parse(self, raw: Tag) -> dict[str, Any]:
@@ -115,7 +115,7 @@ class WikiTableBaseMapper(
     collect_rows = parse_group
 
 
-TableFragmentParserABC = WikiTableBaseParser
+TableFragmentParserABC = TableParserABC
 WikiTableFragmentParser = WikiTableBaseParser
 
 
