@@ -7,7 +7,7 @@ from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
 from scrapers.options import ScraperOptions
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
-from scrapers.parsers.wiki.table.article import ArticleTablesParser
+from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
 from scrapers.single_wiki_article import DomainArticleScraperBase
 
 
@@ -23,7 +23,7 @@ class SingleEngineManufacturerScraper(DomainArticleScraperBase):
         options: ScraperOptions | None = None,
     ) -> None:
         super().__init__(options=options)
-        self.article_tables_parser = ArticleTablesParser()
+        self.article_tables_assembler = ArticleTablesAssembler()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         parser = WikiInfoboxHtmlParser()
@@ -35,7 +35,7 @@ class SingleEngineManufacturerScraper(DomainArticleScraperBase):
         return InfoboxPayloadDTO(infoboxes)
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
-        return TablesPayloadDTO(self.article_tables_parser.parse(soup))
+        return TablesPayloadDTO(self.article_tables_assembler.assemble(soup))
 
     def _assemble_record(
         self,

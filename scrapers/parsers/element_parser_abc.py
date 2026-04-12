@@ -76,15 +76,5 @@ class HtmlElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType
 
 
-# Backward-compatible names kept for existing imports.
-ListElementParserABC = ListHtmlParserABC
-TableElementParserABC = TableHtmlParserABC
-InfoboxElementParserABC = InfoboxHtmlParserABC
-SectionElementParserABC = SectionHtmlParserABC
-NavboxElementParserABC = NavboxHtmlParserABC
-ParagraphElementParserABC = ParagraphHtmlParserABC
-FigureElementParserABC = FigureHtmlParserABC
-
-
 class ReferencesElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "references"

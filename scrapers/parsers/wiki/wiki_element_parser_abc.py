@@ -82,36 +82,6 @@ class WikiFigureElementParserABC(
     def parse(self, raw: Tag) -> WikiFigureData: ...
 
 
-class WikiParagraphElementParserABC(
-    WikiTagDomainParserABC,
-    ParagraphHtmlParserABC[ParagraphElementData],
-    ABC,
-):
-    @abstractmethod
-    def parse(self, raw: Tag) -> ParagraphElementData: ...
-
-
-class WikiSectionElementParserABC(
-    WikiSoupDomainParserABC,
-    SectionHtmlParserABC[WikiSectionData],
-    ABC,
-):
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> WikiSectionData: ...
-
-
-class WikiArticleElementParserABC(
-    WikiSoupDomainParserABC,
-    ArticleHtmlParserABC[list[dict[str, Any]]],
-    ABC,
-):
-    """Wiki article-level parser contract (BeautifulSoup -> records)."""
-
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> list[dict[str, Any]]: ...
-
-
-# Backward-compatible aliases for legacy imports.
 WikiTableParserABC = WikiTableElementParserABC
 WikiListParserABC = WikiListElementParserABC
 WikiSectionParserABC = WikiSectionElementParserABC

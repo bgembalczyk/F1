@@ -9,7 +9,7 @@ from typing import TypeVar
 from bs4 import BeautifulSoup
 
 from scrapers.mapper_abc import MapperABC
-from scrapers.parsers.soup_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 
 ListPayload = dict[str, Any]
 ListRecord = dict[str, Any]

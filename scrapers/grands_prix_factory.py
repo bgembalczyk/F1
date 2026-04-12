@@ -2,8 +2,7 @@
 
 from dataclasses import dataclass
 
-from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
-from scrapers.grands_prix.single_scraper import GrandsPrixDetailScraper
+from scrapers.list_scraper_grands_prix import GrandsPrixListScraper
 
 
 @dataclass(frozen=True)

@@ -5,10 +5,10 @@ from __future__ import annotations
 import warnings
 
 from scrapers.adapters.factories.dataclass import RECORD_FACTORIES
-from scrapers.builders_table import EntityColumnSpec
 from scrapers.builders_table import build_columns
 from scrapers.builders_table import build_entity_metadata_columns
 from scrapers.builders_table import build_name_status_fragment
+from scrapers.columns.entity_column_spec import EntityColumnSpec
 from scrapers.columns.factory import IntColumn
 from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.multi.name_status_column.race_title_status import (
