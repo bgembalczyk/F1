@@ -24,19 +24,24 @@ from scrapers.helpers.time import parse_time_seconds_from_text
 from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.logger import logger
 
+TIME_MATCH_RE = re.compile(r"^\s*(\d+:\d{2}(?:\.\d+)?)\b")
+TIME_SEARCH_RE = re.compile(r"\b(\d+:\d{2}(?:\.\d+)?)\b")
+YEAR_MATCH_RE = re.compile(r"\d{4}")
+PARENS_RE = re.compile(r"\(([^)]*)\)")
+
 
 def extract_time(text: str) -> float | None:
     if not text:
         return None
 
     head = text.split("(", 1)[0].strip()
-    time_match = re.match(r"^\s*(\d+:\d{2}(?:\.\d+)?)\b", head)
+    time_match = TIME_MATCH_RE.match(head)
     time_str = time_match.group(1) if time_match else None
 
     sec = parse_time_seconds_from_text(time_str) if time_str else None
 
     if sec is None:
-        m = re.search(r"\b(\d+:\d{2}(?:\.\d+)?)\b", text)
+        m = TIME_SEARCH_RE.search(text)
         if m:
             sec = parse_time_seconds_from_text(m.group(1))
 
@@ -68,7 +73,7 @@ def score_details_candidate(s: str) -> int:
     else:
         score -= 2
 
-    if any(re.fullmatch(r"\d{4}", p) for p in parts):
+    if any(YEAR_MATCH_RE.fullmatch(p) for p in parts):
         score += 5
 
     if "," not in s and score < constants.DETAILS_MIN_SCORE_WITHOUT_COMMA:
@@ -78,7 +83,7 @@ def score_details_candidate(s: str) -> int:
 
 
 def select_details_paren(text: str) -> list[str]:
-    parens = re.findall(r"\(([^)]*)\)", text or "")
+    parens = PARENS_RE.findall(text or "")
     if not parens:
         return []
 
@@ -762,9 +767,8 @@ def extract_year_from_event(rec: dict[str, Any]) -> str | None:
     elif isinstance(event, str):
         candidates.append(event)
 
-    year_re = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
     for s in candidates:
-        m = year_re.search(s)
+        m = constants.YEAR_RE.search(s)
         if m:
             return m.group(1)
 
