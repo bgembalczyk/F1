@@ -14,14 +14,14 @@ from scrapers.columns.types.tyre import TyreColumn
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.parsers.entry_merger import EntryMerger
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
 class SeasonEntriesParser(BaseSeasonParser):
     def __init__(
         self,
-        table_parser: SeasonTableParser,
+        table_parser: SeasonTableParsingService,
         entry_merger: EntryMerger,
         policy: DomainParsingPolicy,
     ) -> None:

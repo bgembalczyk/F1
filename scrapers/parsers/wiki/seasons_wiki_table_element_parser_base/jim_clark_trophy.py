@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 
 from scrapers.columns.types.driver import DriverColumn
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.table import SeasonTableParser
+from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 
 
 class JimClarkTrophyParser(BaseSeasonParser):
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(self, table_parser: SeasonTableParsingService) -> None:
         self._table_parser = table_parser
 
     def parse(

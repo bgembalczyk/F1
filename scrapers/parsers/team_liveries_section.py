@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.paren_classifier import ParenClassifier
-from scrapers.parsers.table.team_liveries import TeamLiveriesTableParser
+from scrapers.adapters.team_liveries_table_adapter import TeamLiveriesTableAdapter
 from scrapers.parsers.wiki.base import WikiSectionParserBase
 from scrapers.parsers.wiki.sponsorship import SponsorshipSectionParser
 
@@ -31,7 +31,7 @@ class TeamLiveriesSectionParser(WikiSectionParserBase):
             splitter=splitter,
             classifier=classifier,
         )
-        self._table_parser = TeamLiveriesTableParser(
+        self._table_parser = TeamLiveriesTableAdapter(
             section_table_parser=self._base_parser,
         )
 

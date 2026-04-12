@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 from scrapers.parsers.wiki.sponsorship import SponsorshipSectionParser
 
 
-class TeamLiveriesTableParser:
+class TeamLiveriesTableAdapter:
     """Adapter tabeli sekcji zespołu do istniejącego parsera domenowego."""
 
     def __init__(self, *, section_table_parser: SponsorshipSectionParser) -> None:
@@ -42,4 +42,4 @@ class TeamLiveriesTableParser:
         )
 
 
-__all__ = ["TeamLiveriesTableParser"]
+__all__ = ["TeamLiveriesTableAdapter"]

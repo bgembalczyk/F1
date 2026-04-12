@@ -17,7 +17,7 @@ from scrapers.standings_scraper_seasons import F1StandingsTableParser
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
-class SeasonTableParser:
+class SeasonTableParsingService:
     def __init__(
         self,
         *,
@@ -242,4 +242,4 @@ class SeasonTableParser:
         return records
 
 
-__all__ = ["SeasonTableParser"]
+__all__ = ["SeasonTableParsingService"]
