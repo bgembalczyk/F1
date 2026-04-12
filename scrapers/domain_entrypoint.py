@@ -10,15 +10,15 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Protocol
 
-from scrapers.base.run_profiles import RunProfileName
-from scrapers.base.run_profiles import build_run_profile
-from scrapers.base.runner import ScraperRunner
+from scrapers.abc import ABCScraper
+from scrapers.run_config import RunConfig
+from scrapers.run_profiles import RunProfileName
+from scrapers.run_profiles import build_run_profile
+from scrapers.runners import ScraperRunner
 
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-    from scrapers.base.abc import ABCScraper
-    from scrapers.base.run_config import RunConfig
 
 
 @dataclass(frozen=True)

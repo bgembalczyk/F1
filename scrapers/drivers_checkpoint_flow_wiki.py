@@ -9,11 +9,11 @@ from time import perf_counter
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.orchestration import lifecycle
-from scrapers.base.orchestration.models import AuditEntry
-from scrapers.orchestration.base_roles import BaseNormalizer
-from scrapers.orchestration.base_roles import UrlResolverMixin
-from scrapers.wiki.base_flow_wiki import BaseOrchestrationFlow
+from scrapers.base_flow_wiki import BaseOrchestrationFlow
+from scrapers.orchestration.audit_entry import AuditEntry
+from scrapers.orchestration.components.normalizer import BaseNormalizer
+from scrapers.orchestration.mixins.url_resolver import UrlResolverMixin
+from scrapers.orchestration.stages import lifecycle
 
 if TYPE_CHECKING:
     from collections.abc import Callable
