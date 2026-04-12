@@ -7,7 +7,7 @@ from scrapers.parsers.section.base import BaseSectionParser
 from scrapers.parsers.roles import SectionParserABC
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.table.wiki.article import ArticleTablesParser
-from scrapers.parsers.table.wiki.circuit_list import CircuitsListTableMapper
+from scrapers.parsers.table.wiki.circuit_list import CircuitsListTableParser
 from scrapers.section.parse_results import SectionParseResult
 
 if TYPE_CHECKING:
@@ -33,9 +33,9 @@ class CircuitsListSectionParser(BaseSectionParser):
         )
 
     def _ensure_supported_table(self, fragment: BeautifulSoup) -> None:
-        table_mapping_mapper = CircuitsListTableMapper()
+        table_mapping_parser = CircuitsListTableParser()
         parsed_tables = ArticleTablesParser(
-            specialized_mappers=[table_mapping_mapper],
+            specialized_parsers=[table_mapping_parser],
         ).parse(fragment)
         has_circuits_table = any(
             table.get("table_type") == "circuits_list" for table in parsed_tables

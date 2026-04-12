@@ -34,7 +34,7 @@ Parsery są podzielone na cztery warstwy odpowiadające elementom HTML Wikipedii
      przyjmujących `Tag` i zwracających `dict`),
    - parsery sekcji dobierają zestaw parserów elementarnych przez `SectionParserToolbox`.
 
-5. **Table Domain Mapper** (`scrapers/parsers/table/wiki/`)
+5. **Table Domain Parser** (`scrapers/parsers/table/wiki/`)
    - odpowiedzialność: mapowanie już sparsowanych danych tabelarycznych (`dict`) na rekordy domenowe,
    - klasa bazowa: `WikiTableBaseParser` (przyjmuje `dict`, zwraca `dict`),
    - **WAŻNE:** `WikiTableBaseParser` i jego podklasy NIE parsują HTML — przetwarzają dane
@@ -61,14 +61,14 @@ Concrete wiki HTML parsers
   ├── WikiNavboxElementParser / WikiNavboxParser
   └── WikiFigureElementParser / WikiFigureParser
 
-WikiTableBaseParser   [DOMAIN MAPPER – wejście: dict, nie Tag]
+WikiTableBaseParser   [DOMAIN PARSER – wejście: dict, nie Tag]
   ├── DriverOrderedTableParser  (scrapers/parsers/table/base_ordered.py)
   │   └── DriversListTableParser
-  ├── MappedWikiTableMapper
-  │   ├── StandingsTableMapper
-  │   ├── RaceResultsTableMapper
-  │   ├── LapRecordsWikiTableMapper
-  │   └── CircuitsListTableMapper
+  ├── MappedWikiTableParser
+  │   ├── StandingsTableParser
+  │   ├── RaceResultsTableParser
+  │   ├── LapRecordsWikiTableParser
+  │   └── CircuitsListTableParser
   └── ... (inne parsery tabel domenowych)
 
 SectionParser [Protocol – BeautifulSoup → SectionParseResult]
@@ -102,7 +102,7 @@ rodzin wiki.
 
 - Parsery elementarne nie mapują bezpośrednio na rekordy domenowe.
 - Parsery sekcji składają strukturę i przekazują dane niżej/wyżej, bez logiki domenowej.
-- Mappery domenowe tabel wiki (`WikiTableBaseParser`) realizują mapowanie kolumn i normalizację
+- Parsery domenowe tabel wiki (`WikiTableBaseParser`) realizują mapowanie kolumn i normalizację
   rekordów — przyjmują `dict` (dane po parsowaniu HTML), nie `Tag`.
 - Moduły domenowe korzystają z kontraktów parserów (`Protocol`), nie z odwrotnych zależności
   parser → domena.
@@ -124,7 +124,7 @@ Jeśli klasa jest etapem orkiestracji pipeline, stosuj `*Stage`/`*Processor` z `
 | Suffix klasy | Wejście | Wyjście | Klasa bazowa |
 |---|---|---|---|
 | `*TableParser` (HTML) | `Tag` (`<table>`) | `dict` | `WikiTableHtmlParser` |
-| `*TableMapper` (domain) | `dict` | `dict` | `WikiTableBaseParser` |
+| `*TableParser` (domain) | `dict` | `dict` | `WikiTableBaseParser` |
 | `*ListParser` | `Tag` (`<ul>`/`<ol>`) | `dict` | `ListParser` / `WikiListParser` |
 | `*SectionParser` | `BeautifulSoup` | `SectionParseResult` | `SectionParser` (Protocol) |
 | `*SectionParser` (nested) | `Tag` | `dict` | `NestedWikiSectionParser` |

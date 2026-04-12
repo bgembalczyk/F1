@@ -1,7 +1,7 @@
-from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableMapper
+from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableParser
 
 
-class RaceResultsTableMapper(MappedWikiTableMapper):
+class RaceResultsTableParser(MappedWikiTableParser):
     table_type = "race_results"
     missing_columns_policy = "require_round_and_winner"
     extra_columns_policy = "ignore"
@@ -25,4 +25,4 @@ class RaceResultsTableMapper(MappedWikiTableMapper):
     }
 
 
-__all__ = ["RaceResultsTableMapper"]
+__all__ = ["RaceResultsTableParser"]

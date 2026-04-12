@@ -1,7 +1,7 @@
-from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableMapper
+from scrapers.parsers.table.wiki.mapped.base import MappedWikiTableParser
 
 
-class LapRecordsWikiTableMapper(MappedWikiTableMapper):
+class LapRecordsWikiTableParser(MappedWikiTableParser):
     table_type = "lap_records"
     missing_columns_policy = "require_time_and_driver"
     extra_columns_policy = "ignore"
@@ -21,4 +21,4 @@ class LapRecordsWikiTableMapper(MappedWikiTableMapper):
     }
 
 
-__all__ = ["LapRecordsWikiTableMapper"]
+__all__ = ["LapRecordsWikiTableParser"]
