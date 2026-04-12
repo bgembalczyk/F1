@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from dataclasses import replace
 from typing import TYPE_CHECKING
 from typing import Any
@@ -7,10 +8,13 @@ from bs4 import BeautifulSoup
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
-from scrapers.parsers.table.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
+from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
+from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
+from scrapers.parsers.section.table.contracts import SectionTablesHtmlParserABC
 from scrapers.parsers.wiki.section.base import BaseSectionParser
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
+from scrapers.parsers.table.html_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result
 
@@ -19,8 +23,48 @@ if TYPE_CHECKING:
     from scrapers.section.parse_results import SectionParseResult
 
 
+class ArticleSectionTablesHtmlParser(SectionTablesHtmlParserABC):
+    """Domyślny parser HTML tabel sekcji oparty o ArticleTablesParser."""
+
+    def __init__(
+        self,
+        *,
+        include_heading_path: bool = False,
+        include_source_table: bool = False,
+    ) -> None:
+        self._parser = ArticleTablesParser(
+            include_heading_path=include_heading_path,
+            include_source_table=include_source_table,
+        )
+
+    def parse(self, raw: BeautifulSoup) -> list[dict[str, Any]]:
+        return self._parser.parse(raw)
+
+
+class PassthroughSectionTableClassifier(SectionTableClassifierABC[dict[str, Any]]):
+    """Domyślny klasyfikator: zwraca niezmodyfikowany payload tabeli."""
+
+    def classify(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        return table_data
+
+
+class IdentitySectionTableRecordMapper(SectionTableRecordMapperABC[dict[str, Any], Any]):
+    """Domyślny mapper: zwraca wynik klasyfikacji."""
+
+    def map(
+        self,
+        raw: dict[str, Any],
+        *,
+        table_classification: dict[str, Any],
+        table_pipeline: Any,
+    ) -> dict[str, Any] | None:
+        _ = raw
+        _ = table_pipeline
+        return table_classification
+
+
 class TableSectionParser(BaseSectionParser):
-    """Merged section parser supporting both single-table configured sections and template-method multiple HTML tables."""
+    """Parser sekcji tabel z wydzielonymi rolami: HTML parser, classifier, mapper."""
 
     def __init__(
         self,
@@ -35,13 +79,12 @@ class TableSectionParser(BaseSectionParser):
         metadata_extras: dict[str, Any] | None = None,
         include_heading_path: bool = False,
         include_source_table: bool = False,
+        html_parser: SectionTablesHtmlParserABC | None = None,
+        classifier: SectionTableClassifierABC[Any] | None = None,
+        mapper: SectionTableRecordMapperABC[Any, Any] | None = None,
     ) -> None:
-        if config is not None:
-            self._section_id = SectionId.from_raw(section_id)
-            self._section_label = EntityName.from_raw(section_label)
-        else:
-            self._section_id = SectionId.from_raw(section_id)
-            self._section_label = EntityName.from_raw(section_label)
+        self._section_id = SectionId.from_raw(section_id)
+        self._section_label = EntityName.from_raw(section_label)
         self._domain = domain
         self._config = config
         self._include_urls = include_urls
@@ -51,10 +94,12 @@ class TableSectionParser(BaseSectionParser):
         if domain != "wikipedia":
             self._metadata_extras["domain"] = domain
 
-        self._table_parser = ArticleTablesParser(
+        self._html_parser = html_parser or ArticleSectionTablesHtmlParser(
             include_heading_path=include_heading_path,
             include_source_table=include_source_table,
         )
+        self._classifier = classifier or PassthroughSectionTableClassifier()
+        self._record_mapper = mapper or IdentitySectionTableRecordMapper()
 
     @property
     def section_id(self) -> SectionId:
@@ -70,7 +115,6 @@ class TableSectionParser(BaseSectionParser):
         return self.parse_fragment(section_fragment)
 
     def _parse_with_config(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        # di-antipattern-allow: section parser builds table parser per parse invocation.
         table_transport_parser = HtmlTableParser(
             section_id=None,
             expected_headers=self._config.expected_headers,
@@ -83,9 +127,7 @@ class TableSectionParser(BaseSectionParser):
             include_urls=self._include_urls,
             normalize_empty_values=self._normalize_empty_values,
         )
-        records = pipeline.parse_rows(
-            table_transport_parser.parse(as_soup(section_fragment)),
-        )
+        records = pipeline.parse_rows(table_transport_parser.parse(as_soup(section_fragment)))
 
         return build_section_parse_result(
             section_id=self._section_id,
@@ -99,15 +141,15 @@ class TableSectionParser(BaseSectionParser):
     def parse_fragment(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         records: list[dict[str, Any]] = []
         for table_data in self._collect_tables(section_fragment):
-            table_classification = self.classify_table(table_data)
+            table_classification = self._classifier.classify(table_data)
             if table_classification is None:
                 continue
             table_pipeline = self.build_pipeline(
                 table_data=table_data,
                 table_classification=table_classification,
             )
-            mapped = self.parse_row(
-                table_data=table_data,
+            mapped = self._record_mapper.map(
+                table_data,
                 table_classification=table_classification,
                 table_pipeline=table_pipeline,
             )
@@ -120,17 +162,13 @@ class TableSectionParser(BaseSectionParser):
         self,
         section_fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:
-        """Collect table payloads used by the section table template pipeline."""
         return self._parse_group(section_fragment)
 
     def _parse_group(
         self,
         section_fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:
-        return self._table_parser.parse(section_fragment)
-
-    def classify_table(self, table_data: dict[str, Any]) -> Any | None:
-        return table_data
+        return self._html_parser.parse(section_fragment)
 
     def build_pipeline(
         self,

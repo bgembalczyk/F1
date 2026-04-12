@@ -52,7 +52,7 @@ class DriverInfoboxParser(WikiInfoboxParserABC):
     def parse(self, element: Tag) -> list[Any]:
         self.logger.debug("Infobox parse start (run_id=%s)", self.run_id)
         rows_count = len(element.find_all("tr"))
-        sections = self._section_collector.collect(element)
+        sections = self._extract_sections_from_html(element)
         total_rows = sum(len(section.get("rows", [])) for section in sections)
         self.logger.debug(
             "Infobox detected %d row(s) and %d section(s) (run_id=%s)",
@@ -92,11 +92,16 @@ class DriverInfoboxParser(WikiInfoboxParserABC):
             self.logger,
         )
 
+    def _extract_sections_from_html(self, table: Tag) -> list[dict[str, Any]]:
+        """Stage 1: extract normalized section rows from infobox HTML."""
+        return self._section_collector.collect(table)
+
     def _parse_infobox_with_sections(
         self,
         table: Tag,
         sections: list[dict[str, Any]],
     ) -> dict[str, Any]:
+        """Stage 2: parse structured infobox rows into domain payload."""
         general_section = sections[0] if sections else {"rows": []}
 
         parsed = {

@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
     from scrapers.parsers.wiki.base import WikiParser
     from scrapers.parsers.wiki.paragraph import WikiParagraphParser
-    from scrapers.parsers.wiki.table import TableParser
+    from scrapers.parsers.wiki.table import WikiTableParser
     from scrapers.parsers.wiki.header import HeaderParser
     from scrapers.wiki.parsers.types import HeaderParsedData
     from scrapers.wiki.parsers.types import ParagraphParsedData
@@ -33,7 +33,7 @@ if TYPE_CHECKING:
     )
     paragraph_text: str = paragraph_result["text"]
 
-    table_parser: WikiParser[TableParsedData] = TableParser()
+    table_parser: WikiParser[TableParsedData] = WikiTableParser()
     table_result: TableParsedData = table_parser.parse(cast("Tag", object()))
     table_headers: list[str] = table_result["headers"]
 
