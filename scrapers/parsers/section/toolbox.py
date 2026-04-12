@@ -34,7 +34,6 @@ def build_default_section_toolbox() -> SectionParsingToolbox:
     )
 
 
-# Backward-compatible alias.
 SectionParserToolbox = SectionParsingToolbox
 
 
