@@ -7,14 +7,14 @@ from bs4 import Tag
 
 from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
 from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
-from scrapers.parsers.roles import GroupParsingMixin
-from scrapers.parsers.roles import MatchesMixin
-from scrapers.parsers.roles import RowMappingMixin
-from scrapers.parsers.roles import TableDomainMapperABC
-from scrapers.parsers.roles import TableHtmlParserABC
+from scrapers.parsers.contracts.mapping import GroupParsingMixin
+from scrapers.parsers.contracts.mapping import MatchesMixin
+from scrapers.parsers.contracts.mapping import RowMappingMixin
+from scrapers.parsers.contracts.mapping import TableDomainMapperABC
+from scrapers.parsers.contracts.html import TagParserABC
 
 
-class WikiTableBaseParser(TableHtmlParserABC, ABC):
+class WikiTableBaseParser(TagParserABC[dict[str, Any]], ABC):
     """Bazowa klasa parserów tabel wiki (HTML Tag -> parsed data)."""
 
     def parse(self, raw: Tag) -> dict[str, Any]:

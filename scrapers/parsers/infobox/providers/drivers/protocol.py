@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from scrapers.parsers.infobox.bundles.driver import DriverInfoboxBundle
-from scrapers.parsers.roles import ParsingBundleProviderABC
+from scrapers.parsers.contracts.bundles import ParsingBundleProviderABC
 
 
 class DriverInfoboxProviderABC(ParsingBundleProviderABC[DriverInfoboxBundle]):
