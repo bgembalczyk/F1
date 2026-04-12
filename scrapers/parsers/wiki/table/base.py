@@ -11,7 +11,6 @@ from scrapers.parsers.roles import GroupParsingMixin
 from scrapers.parsers.roles import MatchesMixin
 from scrapers.parsers.roles import RowMappingMixin
 from scrapers.parsers.roles import TableDomainMapperABC
-from scrapers.parsers.roles import TableHtmlParserABC
 
 
 class WikiTableBaseParser(TableHtmlParserABC, ABC):
@@ -122,6 +121,4 @@ WikiTableFragmentParser = WikiTableBaseParser
 __all__ = [
     "WikiTableBaseParser",
     "WikiTableBaseMapper",
-    "TableFragmentParserABC",
-    "WikiTableFragmentParser",
 ]

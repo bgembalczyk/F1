@@ -23,9 +23,6 @@ class LicenceParser(BaseInfoboxFieldParser):
         self._link_extractor = link_extractor
 
     def parse(self, cell: Tag) -> list[dict[str, Any]]:
-        return self.parse_racing_licence(cell)
-
-    def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse 'Racing licence' field.
 
         Example: "FIA Gold (until 2019)" and "FIA Platinum (2020-)"

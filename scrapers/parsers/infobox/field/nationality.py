@@ -31,9 +31,6 @@ class NationalityParser(BaseInfoboxFieldParser):
         self._link_extractor = link_extractor
 
     def parse(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
-        return self._parse_nationality(cell)
-
-    def _parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.
 
         Handles cases like:
@@ -55,10 +52,6 @@ class NationalityParser(BaseInfoboxFieldParser):
         if has_years:
             return self._parse_nationality_with_years(cell)
         return self._parse_nationality_simple(cell, text)
-
-    def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
-        """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(cell)
 
     def _parse_nationality_with_years(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse structured nationality entries that include year information.

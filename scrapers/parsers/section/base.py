@@ -9,10 +9,10 @@ if TYPE_CHECKING:
 
     from scrapers.section.parse_results import SectionParseResult
 
-from scrapers.parsers.base_family import SectionParser
+from scrapers.parsers.base_family import SectionParserABC
 
 
-class BaseSectionParser(SectionParser):
+class BaseSectionParser(SectionParserABC):
     """Canonical runtime base class for section parsers."""
 
     @abstractmethod

@@ -17,7 +17,6 @@ from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.options import ScraperOptions
 from scrapers.parsers.wiki.nested_wiki import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
-from scrapers.parsers.section.protocol import SectionParser
 from scrapers.parsers.wiki.sublevels.sub_section import SubSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper
 from scrapers.source_catalog import GRANDS_PRIX_LIST
