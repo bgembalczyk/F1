@@ -10,15 +10,11 @@ from typing import TypeAlias
 
 import scrapers.parsers as parsers_pkg
 from scrapers.parsers.parser_abc import ParserABC
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementParserABC
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiSectionElementParserABC
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
 from scrapers.parsers.tag_parser_abc import HtmlTagParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]

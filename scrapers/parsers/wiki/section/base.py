@@ -4,7 +4,7 @@ from abc import ABC
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 
 
-class BaseSectionParser(WikiSectionParserABC):
+class BaseSectionParser(WikiSectionElementParserABC):
     """Canonical runtime base class for section parsers."""
 
     @abstractmethod

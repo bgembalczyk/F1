@@ -1,3 +1,3 @@
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
 
-__all__ = ["WikiListParserABC"]
+__all__ = ["WikiListElementParserABC"]

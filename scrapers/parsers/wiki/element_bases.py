@@ -10,18 +10,12 @@ from models.data.wiki.infobox import WikiInfoboxData
 from models.data.wiki.list import WikiListData
 from models.data.wiki.navbox import WikiNavboxData
 from models.data.wiki.table import WikiTableData
-from scrapers.parsers.wiki.wiki_figure_parser_abc import WikiFigureParserABC
-from scrapers.parsers.wiki.section_nodes.infobox import WikiInfoboxParserABC
-from scrapers.parsers.wiki.section_nodes.list import WikiListParserABC
-from scrapers.parsers.wiki.wiki_navbox_parser_abc import WikiNavboxParserABC
-from scrapers.parsers.wiki.section_nodes.table import WikiTableParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiFigureElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiNavboxElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 from scrapers.parsers.wiki.section.base import BaseSectionParser
-from scrapers.parsers.contracts.wiki_elements import WikiFigureParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiNavboxParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
-from scrapers.parsers.section_parser_abc import SectionParserABC
 
 
 class _WikiTagDelegatingParserBase(ABC):
@@ -32,15 +26,15 @@ class _WikiTagDelegatingParserBase(ABC):
         return delegate.parse(raw)
 
 
-class WikiTableParserBase(_WikiTagDelegatingParserBase, WikiTableParserABC, ABC):
+class WikiTableParserBase(_WikiTagDelegatingParserBase, WikiTableElementParserABC, ABC):
     pass
 
 
-class WikiListParserBase(_WikiTagDelegatingParserBase, WikiListParserABC, ABC):
+class WikiListParserBase(_WikiTagDelegatingParserBase, WikiListElementParserABC, ABC):
     pass
 
 
-class WikiInfoboxParserBase(_WikiTagDelegatingParserBase, WikiInfoboxParserABC, ABC):
+class WikiInfoboxParserBase(_WikiTagDelegatingParserBase, WikiInfoboxElementParserABC, ABC):
     pass
 
 
@@ -48,12 +42,11 @@ class WikiSectionParserBase(BaseSectionParser, ABC):
     """Domain base for section parsers (BeautifulSoup -> SectionParseResult)."""
 
 
-
-class WikiNavboxParserBase(_WikiTagDelegatingParserBase, WikiNavboxParserABC, ABC):
+class WikiNavboxParserBase(_WikiTagDelegatingParserBase, WikiNavboxElementParserABC, ABC):
     pass
 
 
-class WikiFigureParserBase(_WikiTagDelegatingParserBase, WikiFigureParserABC, ABC):
+class WikiFigureParserBase(_WikiTagDelegatingParserBase, WikiFigureElementParserABC, ABC):
     pass
 
 

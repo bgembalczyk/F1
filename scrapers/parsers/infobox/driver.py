@@ -12,10 +12,10 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.default_driver_infobox_provider import DefaultDriverInfoboxProvider
 from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 
 
-class DriverInfoboxParser(WikiInfoboxParserABC):
+class DriverInfoboxParser(WikiInfoboxElementParserABC):
     IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(

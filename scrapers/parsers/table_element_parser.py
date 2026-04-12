@@ -2,8 +2,7 @@ from bs4 import Tag
 
 from models.data.parsed.html_elements import TableElementData
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 
 
 class TableElementParser(WikiTableElementParserABC):

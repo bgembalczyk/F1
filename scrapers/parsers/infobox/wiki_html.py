@@ -8,11 +8,11 @@ from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
 from scrapers.parsers.infobox_element_parser import InfoboxElementParser
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 
 
 
-class WikiInfoboxHtmlParser(WikiInfoboxParserABC):
+class WikiInfoboxHtmlParser(WikiInfoboxElementParserABC):
     """Parser HTML infoboxów z Wikipedii (tytuł, wiersze, linki)."""
 
     WIKIPEDIA_BASE = "https://en.wikipedia.org"
