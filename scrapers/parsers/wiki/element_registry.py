@@ -11,6 +11,17 @@ from scrapers.parsers.element_parser_abc import ElementType
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.wiki_normalization import normalize_section_text
 
+WIKI_SELECTOR_FAMILY_MAP: dict[ElementType, str] = {
+    "table": "table.wikitable",
+    "list": "ul, ol",
+    "infobox": "table.infobox",
+    "section": "div.mw-heading2|3|4",
+    "figure": "figure",
+    "paragraph": "p",
+    "navbox": "div.navbox",
+    "references_wrap": "div.reflist | div[class*='references-wrap']",
+}
+
 
 @dataclass(frozen=True)
 class ElementParseInput:
@@ -84,6 +95,22 @@ class ElementRegistry:
         if registration is None:
             return None
         return registration.element_type, registration.handler
+
+    def validate_selector_family_coverage(self) -> None:
+        missing_predicates = set(WIKI_SELECTOR_FAMILY_MAP) - set(self.type_predicates)
+        if missing_predicates:
+            missing = ", ".join(sorted(missing_predicates))
+            raise ValueError(f"Missing selector predicates for families: {missing}")
+
+        registered_families = {registration.element_type for registration in self.registrations}
+        missing_registrations = {
+            family
+            for family in WIKI_SELECTOR_FAMILY_MAP
+            if family != "section" and family not in registered_families
+        }
+        if missing_registrations:
+            missing = ", ".join(sorted(missing_registrations))
+            raise ValueError(f"Missing parser registrations for families: {missing}")
 
     def _pick_best_registration(
         self,

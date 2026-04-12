@@ -1,20 +1,5 @@
-from __future__ import annotations
+"""Compatibility re-export for the canonical BeautifulSoup parser contract."""
 
-from abc import ABC
-from abc import abstractmethod
-from typing import Generic
-from typing import TypeVar
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 
-from bs4 import BeautifulSoup
-
-from scrapers.parsers.constants_contracts import SoupOut
-from scrapers.parsers.parser_abc import ParserABC
-
-
-class HtmlSoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]):
-    """Canonical parser contract for BeautifulSoup inputs."""
-
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> SoupOut: ...
-
-
+__all__ = ["HtmlSoupParserABC"]

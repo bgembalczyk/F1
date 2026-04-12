@@ -1,25 +1,7 @@
-from __future__ import annotations
+"""Compatibility module for list section-node parser contract."""
 
-from abc import ABC
+from scrapers.parsers.wiki.wiki_list_parser_abc import WikiListParserABC
 
-from bs4 import Tag
-
-from models.data.wiki.list import WikiListData
-from scrapers.parsers.element_parser_abc import ListElementParserABC
-from scrapers.parsers.wiki.section_nodes.base import WikiNodeParserABC
-from scrapers.parsers.wiki.section_nodes.section import WikiSectionParserABC
-
-
-class WikiListSectionParserABC(
-    WikiSectionParserABC,
-    WikiNodeParserABC[Tag, WikiListData],
-    ListElementParserABC[WikiListData],
-    ABC,
-):
-    """Contract for list-node parsers (<ul>/<ol>) used inside wiki sections."""
-
+WikiListSectionParserABC = WikiListParserABC
 
 __all__ = ["WikiListSectionParserABC", "WikiListParserABC"]
-
-
-WikiListParserABC = WikiListSectionParserABC
