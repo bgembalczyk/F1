@@ -16,9 +16,9 @@ class SeasonDriversStandingsSectionParser(BaseSectionParser):
         self._parser = parser
         self._season_year = season_year
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         records = self._parser.parse(
-            fragment,
+            section_fragment,
             standings="drivers",
             season_year=self._season_year,
         )

@@ -66,12 +66,12 @@ class TableSectionParser(BaseSectionParser):
     def section_label(self) -> EntityName:
         return self._section_label
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         if self._config is not None:
-            return self._parse_with_config(fragment)
-        return self.parse_fragment(fragment)
+            return self._parse_with_config(section_fragment)
+        return self.parse_fragment(section_fragment)
 
-    def _parse_with_config(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def _parse_with_config(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         # di-antipattern-allow: section parser builds table parser per parse invocation.
         table_transport_parser = HtmlTableParser(
             section_id=None,
@@ -86,7 +86,7 @@ class TableSectionParser(BaseSectionParser):
             normalize_empty_values=self._normalize_empty_values,
         )
         records = pipeline.parse_rows(
-            table_transport_parser.parse(as_soup(fragment)),
+            table_transport_parser.parse(as_soup(section_fragment)),
         )
 
         return build_section_parse_result(
@@ -98,9 +98,9 @@ class TableSectionParser(BaseSectionParser):
             extras=self._metadata_extras,
         )
 
-    def parse_fragment(self, fragment: BeautifulSoup) -> SectionParseResult:
+    def parse_fragment(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         records: list[dict[str, Any]] = []
-        for table_data in self._collect_tables(fragment):
+        for table_data in self._collect_tables(section_fragment):
             table_classification = self.classify_table(table_data)
             if table_classification is None:
                 continue
@@ -120,16 +120,16 @@ class TableSectionParser(BaseSectionParser):
 
     def _collect_tables(
         self,
-        fragment: BeautifulSoup,
+        section_fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:
         """Collect table payloads used by the section table template pipeline."""
-        return self._parse_group(fragment)
+        return self._parse_group(section_fragment)
 
     def _parse_group(
         self,
-        fragment: BeautifulSoup,
+        section_fragment: BeautifulSoup,
     ) -> list[dict[str, Any]]:
-        return self._table_parser.parse(fragment)
+        return self._table_parser.parse(section_fragment)
 
     def classify_table(self, table_data: dict[str, Any]) -> Any | None:
         return table_data

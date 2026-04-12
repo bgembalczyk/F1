@@ -15,8 +15,8 @@ class SeasonResultsSectionParser(BaseSectionParser):
     def __init__(self, parser: SeasonResultsParser) -> None:
         self._parser = parser
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
-        records = self._parser.parse(fragment)
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        records = self._parser.parse(section_fragment)
         return build_section_parse_result(
             section_id="Results",
             section_label="Results",

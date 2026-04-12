@@ -40,8 +40,8 @@ class BaseDriverResultsSectionParser(BaseSectionParser):
             header_aliases=config.header_aliases,
         )
 
-    def parse(self, fragment: BeautifulSoup) -> SectionParseResult:
-        parsed = self._parser.parse(fragment)
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
+        parsed = self._parser.parse(section_fragment)
         return build_section_parse_result(
             section_id=self._section_id,
             section_label=self._section_label,
