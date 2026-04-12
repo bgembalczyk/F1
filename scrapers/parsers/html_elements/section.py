@@ -6,18 +6,21 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.data.parsed.html_elements import SectionElementData
-from scrapers.parsers.base_html_section import BaseHtmlSectionParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
+from scrapers.parsers.wiki.families import WikiSectionParserABC
 
 
-class SectionElementParser(BaseHtmlSectionParser[SectionElementData]):
+class SectionElementParser(WikiSectionParserABC):
     """Document parser for article sections (BeautifulSoup input only)."""
 
     def __init__(self, content_text_parser: ContentTextParser | None = None) -> None:
         self._content_text_parser = content_text_parser or ContentTextParser()
 
-    def parse(self, raw: BeautifulSoup) -> SectionElementData:
-        content = self._find_content_text(raw)
+    def parse(self, raw: BeautifulSoup | Tag | list[Tag]) -> SectionElementData:
+        if isinstance(raw, list):
+            return {"sections": []}
+        soup = raw if isinstance(raw, BeautifulSoup) else BeautifulSoup(str(raw), "html.parser")
+        content = self._find_content_text(soup)
         if content is None:
             return {"sections": []}
         parsed: dict[str, Any] = self._content_text_parser.parse(content)

@@ -36,10 +36,6 @@ class BestFinishParser(BaseInfoboxFieldParser):
             parser_name=self.__class__.__name__,
         )
 
-    def parse_best_finish(self, cell: Tag) -> dict[str, Any]:
-        """Backward-compatible wrapper around :meth:`parse`."""
-        return self.parse(cell)
-
     def _parse_best_finish_payload(self, cell: Tag, text: str) -> dict[str, Any]:
         result: dict[str, Any] = {
             "result": self._extract_result_position(text),

@@ -31,8 +31,4 @@ class GenericIndianapolisOnlySubSectionParser(SubSectionParser):
         return {"items": []}
 
 
-class IndianapolisOnlySubSectionParser(GenericIndianapolisOnlySubSectionParser):
-    """Backward-compatible alias."""
-
-
-__all__ = ["GenericIndianapolisOnlySubSectionParser", "IndianapolisOnlySubSectionParser"]
+__all__ = ["GenericIndianapolisOnlySubSectionParser"]

@@ -16,7 +16,6 @@ __all__ = [
     "NestedWikiSectionParser",
     "SectionParserABC",
     "SectionStructureParserABC",
-    "SectionParser",
 ]
 
 # Backward-compatible alias. Prefer SectionParserABC in new code.

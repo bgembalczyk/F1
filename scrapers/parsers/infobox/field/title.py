@@ -14,10 +14,7 @@ class InfoboxTitlesParser(BaseInfoboxFieldParser):
         self._link_extractor = link_extractor
 
     def parse(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        """Unified parser entrypoint for titles."""
-        return self.parse_titles(rows)
-
-    def parse_titles(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Parse championship titles rows."""
         titles: list[dict[str, Any]] = []
         for row in rows:
             label_cell = row.get("label_cell")

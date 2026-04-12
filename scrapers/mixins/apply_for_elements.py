@@ -20,10 +20,6 @@ class ApplyForElementsMixin:
                     if isinstance(item, dict):
                         self.apply_table_mapper(item)
 
-    def apply_table_parser(self: HasTableParserABC, payload: dict[str, Any]) -> None:
-        """Backward-compatible alias for apply_table_mapper."""
-        self.apply_table_mapper(payload)
-
     def _apply_for_elements(
         self: HasTableParserABC,
         elements: list[dict[str, Any]],

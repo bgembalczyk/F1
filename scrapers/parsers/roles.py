@@ -6,16 +6,15 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
-from bs4 import BeautifulSoup
-from bs4 import Tag
-
-from scrapers.domain_roles import Parser
-from scrapers.section.parse_results import SectionParseResult
+from scrapers.parsers.base_family import InfoboxParserABC
+from scrapers.parsers.base_family import ListParserABC
+from scrapers.parsers.base_family import SectionParserABC
+from scrapers.parsers.base_family import SoupParserABC
+from scrapers.parsers.base_family import TableParserABC
+from scrapers.parsers.base_family import TagParserABC
 
 InT = TypeVar("InT")
 OutT = TypeVar("OutT")
-TagOutT = TypeVar("TagOutT", covariant=True)
-SoupOutT = TypeVar("SoupOutT", covariant=True)
 RecordT_co = TypeVar("RecordT_co", covariant=True)
 RowInputT_contra = TypeVar("RowInputT_contra", contravariant=True)
 TableInputT_contra = TypeVar("TableInputT_contra", contravariant=True)
@@ -39,9 +38,15 @@ class HtmlTagParserABC(ParserABC[Tag, TagOutT], ABC, Generic[TagOutT]):
 class HtmlElementParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
     """Canonical ABC for parsers of HTML elements (single Tag input)."""
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> TagOutT: ...
 
-class HtmlElementParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
-    """Legacy alias for tag -> dict parser contract."""
+
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Generic mapping contract used by parser pipelines."""
+
+    @abstractmethod
+    def map(self, fragment: InT) -> OutT: ...
 
 
 class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
@@ -54,25 +59,46 @@ class SoupParserABC(ParserABC[BeautifulSoup, SoupOutT], ABC, Generic[SoupOutT]):
 class SectionParserABC(ParserABC[BeautifulSoup, SectionParseResult], ABC):
     """Canonical ABC for section parsers."""
 
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
+
 
 class SectionStructureParserABC(SectionParserABC, ABC):
-    """Backward-compatible alias for section parser hierarchy."""
+    """ABC for section parser hierarchy."""
+
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> SectionParseResult: ...
 
 
 class TableHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     """ABC parsera tabeli HTML."""
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
+
 
 class InfoboxHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     """ABC parsera infoboxa HTML."""
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
 class ListHtmlParserABC(HtmlElementParserABC[dict[str, Any]], ABC):
     """ABC parsera listy HTML."""
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
-class ListParserABC(ListHtmlParserABC, ABC):
-    """Compatibility alias for list parsers."""
+
+class MapperABC(ABC, Generic[InT, OutT]):
+    """Canonical mapper contract (input -> mapped output)."""
+
+    @abstractmethod
+    def map(self, raw: InT) -> OutT: ...
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
 class TableDomainMapperABC(MapperABC[dict[str, Any], dict[str, Any] | None], ABC):
@@ -112,9 +138,6 @@ class ParsingBundleProviderABC(ABC, Generic[BundleT_co]):
     def build(self, **kwargs: Any) -> BundleT_co: ...
 
 
-SoupDocumentParserABC = SoupParserABC
-
-
 __all__ = [
     "GroupParsingMixin",
     "ParseGroupMixin",
@@ -123,16 +146,13 @@ __all__ = [
     "InfoboxHtmlParserABC",
     "ListHtmlParserABC",
     "MatchesMixin",
-    "ParserABC",
     "ParsingBundle",
     "ParsingBundleProviderABC",
     "RowMappingMixin",
-    "SectionParseResult",
     "SectionParserABC",
-    "SectionStructureParserABC",
-    "SoupDocumentParserABC",
     "SoupParserABC",
     "TableDomainMapperABC",
-    "TableHtmlParserABC",
     "TableMapperABC",
+    "TableParserABC",
+    "TagParserABC",
 ]
