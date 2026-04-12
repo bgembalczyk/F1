@@ -10,6 +10,7 @@ from scrapers.infobox.extraction.service.base_infobox_orchestrator import (
     BaseInfoboxOrchestrator,
 )
 from scrapers.options import ScraperOptions
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.soup import SoupParser
 
 if TYPE_CHECKING:
@@ -26,4 +27,4 @@ class ConstructorInfoboxOrchestrator(BaseInfoboxOrchestrator[Tag]):
 
     def build_parser(self, *, url: str) -> SoupParser:
         _ = url
-        return LegacyInfoboxHtmlParserAdapter()
+        return WikiInfoboxHtmlParser()
