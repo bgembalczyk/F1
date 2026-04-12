@@ -22,6 +22,7 @@ ElementType = Literal[
     "references_wrap",
     "paragraph",
     "figure",
+    "article",
 ]
 
 
@@ -65,6 +66,10 @@ class ParagraphHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
 
 class FigureHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
     element_type: ElementType = "figure"
+
+
+class ArticleHtmlParserABC(HtmlSoupParserABC[TagOut], ABC, Generic[TagOut]):
+    element_type: ElementType = "article"
 
 
 class HtmlElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
