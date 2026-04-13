@@ -162,11 +162,11 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             if not _inherits_from(
                 class_info,
                 classes,
-                {"ListParser", "WikiListParser", "WikiListElementParserABC"},
+                {"ListParser", "WikiListElementParserABC"},
             ):
                 violations.append(
                     f"{class_info.module}.{class_info.name}: ListParser musi "
-                    "dziedziczyć po ListParser, WikiListParser lub WikiListElementParserABC",
+                    "dziedziczyć po ListParser lub WikiListElementParserABC",
                 )
 
         if class_info.name.endswith("SectionParser") and not class_info.name.endswith(

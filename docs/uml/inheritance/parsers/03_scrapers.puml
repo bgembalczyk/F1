@@ -44,7 +44,6 @@ abstract class IndianapolisOnlyMixin
 class IndianapolisOnlyListScraper
 class LapRecordsTableScraper
 class ListScraper
-class ManufacturersSectionParser
 class NestedWikiSectionParser
 abstract class NestedSectionHandlingMixin
 class NonChampionshipsRacesSubSectionParser
@@ -64,7 +63,6 @@ class SectionAdapter
 abstract class SectionAdapterScraperBase
 abstract class SectionAwareMixin
 abstract class SectionByIdScraperBase
-class SectionTraversalMixin
 class SeedListTableScraper
 class ShortenedRacesSubSubSectionParser
 class SingleConstructorScraper
@@ -119,7 +117,6 @@ NestedWikiSectionParser <|-- HistorySectionParser
 IndianapolisOnlyMixin <|-- IndianapolisOnlyListScraper
 ListScraper <|-- IndianapolisOnlyListScraper
 F1TableScraper <|-- LapRecordsTableScraper
-SectionTraversalMixin <|-- ListScraper
 WikiScraper <|-- ListScraper
 NestedWikiSectionParser <|-- ManufacturersSectionParser
 NestedSectionHandlingMixin <|-- RecursiveSectionParser

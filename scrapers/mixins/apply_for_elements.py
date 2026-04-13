@@ -1,15 +1,24 @@
 """Mixin for applying table parser to generic structured elements."""
 
 from typing import Any
+from typing import Protocol
+from typing import runtime_checkable
 
-from scrapers.protocols.has_table_parser import HasTableMapperABC
-from scrapers.protocols.has_table_parser import HasTableParserABC
+
+@runtime_checkable
+class _HasTableParser(Protocol):
+    _table_parser: Any
+
+
+@runtime_checkable
+class _HasTableMapper(Protocol):
+    _table_mapper: Any
 
 
 class ApplyForElementsMixin:
     """Mixin to apply a table parser to elements within a structured payload."""
 
-    def apply_table_mapper(self: HasTableMapperABC, payload: dict[str, Any]) -> None:
+    def apply_table_mapper(self: _HasTableMapper, payload: dict[str, Any]) -> None:
         """Recursively applies the table mapper to nested dictionaries."""
         self._apply_for_elements(payload.get("elements", []))
         for value in payload.values():
@@ -21,7 +30,7 @@ class ApplyForElementsMixin:
                         self.apply_table_mapper(item)
 
     def _apply_for_elements(
-        self: HasTableParserABC,
+        self: _HasTableParser,
         elements: list[dict[str, Any]],
     ) -> None:
         """Applies the table parser to a list of elements."""

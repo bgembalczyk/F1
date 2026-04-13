@@ -3,10 +3,10 @@ from typing import Any
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.label import parser_for_label
 from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
-from scrapers.parsers.infobox.field.base import InfoboxRowsParser
+from scrapers.parsers.contracts.infobox_fields import InfoboxRowsParserABC
 
 
-class InfoboxCareerParser(InfoboxRowsParser[list[dict[str, Any]]]):
+class InfoboxCareerParser(InfoboxRowsParserABC[list[dict[str, Any]]]):
     def __init__(self, cell_extractor: InfoboxCellValueExtractor) -> None:
         self._cell_extractor = cell_extractor
 

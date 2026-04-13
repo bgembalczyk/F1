@@ -12,18 +12,13 @@ class CarNumbersParser
 class CategoryLinksParser
 class ChampionshipsParser
 class FinishedSeasonParser
-abstract class HasTableMapperABC
-abstract class HasTableParserABC
 abstract class HtmlTagParserABC
-class HtmlInfoboxFieldParser
 class IndianapolisConstructorsListParser
 class IndianapolisOnlyListParser
 abstract class IndianapolisOnlyMixin
 class InfoboxCareerParser
-abstract class InfoboxCellParserABC
 class InfoboxCellValueExtractor
 abstract class InfoboxHtmlFieldParserABC
-class InfoboxRowsParser
 abstract class InfoboxRowsParserABC
 class InfoboxTitlesParser
 class LicenceParser
@@ -35,37 +30,27 @@ abstract class ParserABC
 class RaceEventParser
 class ReferencesWrapParser
 class SectionAssembler
-abstract class SectionTraversalMixin
 class SponsorPartsParser
-abstract class StructureParser
 class TeamsParser
-class WikiListElementParser
-class WikiListParser
-abstract class WikiTagParser
+abstract class WikiListElementParserABC
 class YearParser
 
-HtmlInfoboxFieldParser <|-- ActiveYearsParser
-HtmlInfoboxFieldParser <|-- BestFinishParser
-HtmlInfoboxFieldParser <|-- CallableInfoboxFieldParser
-HtmlInfoboxFieldParser <|-- CarNumbersParser
-HtmlInfoboxFieldParser <|-- ChampionshipsParser
-HtmlInfoboxFieldParser <|-- FinishedSeasonParser
-InfoboxHtmlFieldParserABC <|-- HtmlInfoboxFieldParser
-ListElementParser <|-- IndianapolisConstructorsListParser
-ListElementParser <|-- IndianapolisOnlyListParser
-InfoboxRowsParser <|-- InfoboxCareerParser
-InfoboxCellParserABC <|-- InfoboxCellValueExtractor
-InfoboxRowsParserABC <|-- InfoboxRowsParser
-InfoboxRowsParser <|-- InfoboxTitlesParser
-HtmlInfoboxFieldParser <|-- LicenceParser
-HtmlInfoboxFieldParser <|-- NationalityParser
-HtmlInfoboxFieldParser <|-- RaceEventParser
-HtmlInfoboxFieldParser <|-- TeamsParser
-WikiListElementParser <|-- PrivateerTeamsListParser
+InfoboxHtmlFieldParserABC <|-- ActiveYearsParser
+InfoboxHtmlFieldParserABC <|-- BestFinishParser
+InfoboxHtmlFieldParserABC <|-- CallableInfoboxFieldParser
+InfoboxHtmlFieldParserABC <|-- CarNumbersParser
+InfoboxHtmlFieldParserABC <|-- ChampionshipsParser
+InfoboxHtmlFieldParserABC <|-- FinishedSeasonParser
+HtmlTagParserABC <|-- InfoboxCellValueExtractor
+InfoboxRowsParserABC <|-- InfoboxCareerParser
+InfoboxRowsParserABC <|-- InfoboxTitlesParser
+InfoboxHtmlFieldParserABC <|-- LicenceParser
+InfoboxHtmlFieldParserABC <|-- NationalityParser
+InfoboxHtmlFieldParserABC <|-- RaceEventParser
+InfoboxHtmlFieldParserABC <|-- TeamsParser
+WikiListElementParserABC <|-- PrivateerTeamsListParser
 ParserABC <|-- ReferencesWrapParser
 ParserABC <|-- SponsorPartsParser
-HtmlTagParserABC <|-- WikiListParser
-HtmlTagParserABC <|-- WikiTagParser
 ParserABC <|-- YearParser
 
 @enduml

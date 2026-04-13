@@ -21,7 +21,7 @@ class WikiFigureParser
 class WikiInfoboxElementParser
 abstract class WikiInfoboxElementParserABC
 class WikiInfoboxHtmlParser
-class WikiListElementParser
+class ListElementParser
 abstract class WikiListElementParserABC
 class WikiNavboxElementParser
 abstract class WikiNavboxElementParserABC
@@ -37,13 +37,13 @@ WikiInfoboxElementParserABC <|-- DriverInfoboxParser
 WikiFigureElementParserABC <|-- FigureElementParser
 WikiInfoboxElementParserABC <|-- InfoboxElementParser
 WikiListElementParserABC <|-- ListElementParser
+WikiListElementParserABC <|-- ListElementParser
 WikiNavboxElementParserABC <|-- NavboxElementParser
 HtmlSoupParserABC <|-- SectionElementParser
 WikiFigureElementParserABC <|-- WikiFigureElementParser
 WikiFigureElementParserABC <|-- WikiFigureParser
 WikiInfoboxElementParserABC <|-- WikiInfoboxElementParser
 WikiInfoboxElementParserABC <|-- WikiInfoboxHtmlParser
-WikiListElementParserABC <|-- WikiListElementParser
 WikiNavboxElementParserABC <|-- WikiNavboxElementParser
 WikiNavboxElementParserABC <|-- WikiNavboxParser
 WikiParagraphElementParserABC <|-- WikiParagraphElementParser

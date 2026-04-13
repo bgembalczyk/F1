@@ -201,7 +201,6 @@ P01_EXCLUDE = {
     # → p07 (misc / infobox field parsers)
     "InfoboxHtmlFieldParserABC",
     "InfoboxRowsParserABC",
-    "InfoboxCellParserABC",
 }
 p01 = {
     c
@@ -364,9 +363,6 @@ p07 |= component_of("ArticleTablesAssembler")
 # Add standalone parser contracts/ABCs not connected to the ParserABC hierarchy
 for _extra in (
     "NestedChildParser",
-    "StructureParser",
-    "HasTableParserABC",
-    "HasTableMapperABC",
     "SectionAssembler",
 ):
     p07 |= component_of(_extra)
