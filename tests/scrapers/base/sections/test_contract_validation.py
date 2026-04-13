@@ -2,15 +2,7 @@ import pytest
 
 from scrapers.section.contract_validation import is_legacy_section_payload
 from scrapers.section.contract_validation import validate_section_result_payload
-
-
-def valid_payload() -> dict[str, object]:
-    return {
-        "section_id": "career_results",
-        "section_label": "Career results",
-        "records": [],
-        "metadata": {},
-    }
+from tests.scrapers.base.sections.helpers import valid_payload
 
 
 def test_is_legacy_section_payload_detects_legacy_keys() -> None:

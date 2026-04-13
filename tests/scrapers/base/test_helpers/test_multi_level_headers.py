@@ -1,18 +1,12 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.multi_level_header_builder import MultiLevelHeaderBuilder
-
-
-def _table(html: str):
-    soup = BeautifulSoup(html, "html.parser")
-    table = soup.find("table")
-    assert table is not None
-    return table
+from scrapers.multi_level_header_builder import MultiLevelHeaderBuilder
+from tests.scrapers.base.test_helpers.helpers import table_func
 
 
 def test_build_headers_for_two_level_header_fixture() -> None:
-    table = _table(
+    table = table_func(
         """
         <table class="wikitable">
           <tr><th>Driver</th><th colspan="2">Results</th></tr>
@@ -30,7 +24,7 @@ def test_build_headers_for_two_level_header_fixture() -> None:
 
 
 def test_build_headers_missing_second_row_cell_falls_back_to_parent_header() -> None:
-    table = _table(
+    table = table_func(
         """
         <table>
           <tr><th colspan="3">Points</th></tr>
@@ -46,7 +40,7 @@ def test_build_headers_missing_second_row_cell_falls_back_to_parent_header() -> 
 
 
 def test_build_headers_with_nonstandard_colspan_or_invalid_value() -> None:
-    table = _table(
+    table = table_func(
         """
         <table>
           <tr><th>Season</th><th colspan="x">Stats</th><th colspan="3">Team</th></tr>
@@ -68,7 +62,7 @@ def test_build_headers_with_nonstandard_colspan_or_invalid_value() -> None:
 
 
 def test_build_headers_raises_when_no_header_rows_found() -> None:
-    table = _table(
+    table = table_func(
         """
         <table>
           <tr><td>A</td><td>B</td></tr>

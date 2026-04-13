@@ -1,23 +1,9 @@
 # ruff: noqa: E501, PLR2004
 from unittest.mock import patch
 
-from scrapers.single_wiki_article import SectionByIdScraperBase
 from scrapers.single_wiki_article import WikipediaSectionByIdSelectionStrategy
-from scrapers.single_wiki_article.single_article_section_aware_mixin import (
-    SectionAwareMixin,
-)
-
-
-class ConcreteSectionByIdScraper(SectionByIdScraperBase):
-    """Minimal concrete subclass for testing."""
-
-    def _assemble_record(self, *_args, **_kwargs):
-        return {}
-
-
-def patched_article_init(self, *_args, **kwargs):
-    """Replace ArticleScraperBase.__init__ to avoid HTTP setup."""
-    pass
+from tests.scrapers.base.dummy_classes import ConcreteSectionByIdScraper
+from tests.scrapers.base.test_helpers import patched_article_init
 
 
 def test_section_by_id_sets_default_strategy_when_not_provided() -> None:

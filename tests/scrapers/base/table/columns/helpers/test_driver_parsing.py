@@ -3,57 +3,15 @@ from __future__ import annotations
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.columns.helpers.driver_parsing import DriverParsingHelpers
-
-BASE_URL = "https://en.wikipedia.org"
-
-
-@pytest.fixture()
-def html_valid_record() -> str:
-    return '<td><a href="/wiki/Lewis_Hamilton">Lewis Hamilton</a></td>'
-
-
-@pytest.fixture()
-def html_incomplete_record() -> str:
-    return "<td>Unknown driver</td>"
-
-
-@pytest.fixture()
-def html_alias_or_text_record() -> str:
-    return '<td><a href="/wiki/Lewis_Hamilton">Sir Lewis Hamilton</a></td>'
-
-
-@pytest.fixture()
-def html_links_and_no_links_record() -> tuple[str, str]:
-    return (
-        '<td><a href="/wiki/Max_Verstappen">Max Verstappen</a></td>',
-        "<td>Reserve entry</td>",
-    )
-
-
-def ctx_from_html(html: str) -> ColumnContext:
-    cell = BeautifulSoup(html, "html.parser").find("td")
-    links = [
-        {"text": a.get_text(strip=True), "url": f"{BASE_URL}{a.get('href')}"}
-        for a in cell.find_all("a")
-    ]
-    text = cell.get_text(" ", strip=True)
-    return ColumnContext(
-        header="Driver",
-        key="driver",
-        raw_text=text,
-        clean_text=text,
-        links=links,
-        cell=cell,
-        base_url=BASE_URL,
-    )
+from tests.scrapers.base.table.columns.helpers.helpers import BASE_URL
+from tests.scrapers.base.table.columns.helpers.helpers import ctx_from_html_driver
 
 
 def test_extract_from_context_returns_first_link_when_cell_missing(
-    html_valid_record: str,
+    html_valid_record_driver: str,
 ) -> None:
-    ctx = ctx_from_html(html_valid_record)
+    ctx = ctx_from_html_driver(html_valid_record_driver)
     ctx.cell = None
 
     parsed = DriverParsingHelpers.extract_from_context(ctx, BASE_URL)
@@ -84,9 +42,9 @@ def test_strip_rounds_and_number_removes_both_prefixes() -> None:
 
 
 def test_parse_segment_fallback_returns_segment_link_when_lookup_misses_alias(
-    html_alias_or_text_record: str,
+    html_alias_or_text_record_driver: str,
 ) -> None:
-    segment = BeautifulSoup(html_alias_or_text_record, "html.parser").find("td")
+    segment = BeautifulSoup(html_alias_or_text_record_driver, "html.parser").find("td")
 
     parsed = DriverParsingHelpers.parse_segment(
         segment,
@@ -105,19 +63,19 @@ def test_parse_segment_fallback_returns_segment_link_when_lookup_misses_alias(
 
 
 def test_extract_from_context_returns_none_for_incomplete_record(
-    html_incomplete_record: str,
+    html_incomplete_record_driver: str,
 ) -> None:
-    ctx = ctx_from_html(html_incomplete_record)
+    ctx = ctx_from_html_driver(html_incomplete_record_driver)
 
     assert DriverParsingHelpers.extract_from_context(ctx, BASE_URL) is None
 
 
 def test_links_and_no_links_fixture_paths(
-    html_links_and_no_links_record: tuple[str, str],
+    html_links_and_no_links_record_driver: tuple[str, str],
 ) -> None:
-    html_with_links, html_without_links = html_links_and_no_links_record
-    ctx_with = ctx_from_html(html_with_links)
-    ctx_without = ctx_from_html(html_without_links)
+    html_with_links, html_without_links = html_links_and_no_links_record_driver
+    ctx_with = ctx_from_html_driver(html_with_links)
+    ctx_without = ctx_from_html_driver(html_without_links)
 
     parsed_with = DriverParsingHelpers.extract_from_context(ctx_with, BASE_URL)
     parsed_without = DriverParsingHelpers.extract_from_context(ctx_without, BASE_URL)

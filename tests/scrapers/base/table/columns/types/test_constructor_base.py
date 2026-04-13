@@ -2,38 +2,13 @@ from __future__ import annotations
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.columns.types.constructor.base import BaseConstructorColumn
-from scrapers.columns.types.constructor.part import ConstructorPartColumn
-
-
-class ContractConstructorColumn(BaseConstructorColumn):
-    part_parser_cls = ConstructorPartColumn
-
-
-def ctx(
-    *,
-    clean_text: str,
-    links: list[dict[str, str | None]] | None = None,
-    html: str | None = None,
-) -> ColumnContext:
-    cell = None
-    if html is not None:
-        cell = BeautifulSoup(f"<td>{html}</td>", "html.parser").find("td")
-    return ColumnContext(
-        header="Constructor",
-        key="constructor",
-        raw_text=clean_text,
-        clean_text=clean_text,
-        links=links or [],
-        cell=cell,
-        base_url="https://en.wikipedia.org",
-    )
+from tests.scrapers.base.table.columns.types.dummy_classes import ContractConstructorColumn
+from tests.scrapers.base.table.columns.types.helpers import ctx_constructor
 
 
 def test_constructor_base_parses_single_line_text_without_links() -> None:
     parsed = ContractConstructorColumn().parse(
-        ctx(clean_text="Ferrari - Renault"),
+        ctx_constructor(clean_text="Ferrari - Renault"),
     )
 
     assert parsed == {
@@ -44,7 +19,7 @@ def test_constructor_base_parses_single_line_text_without_links() -> None:
 
 def test_constructor_base_parses_multiline_cell_into_list() -> None:
     parsed = ContractConstructorColumn().parse(
-        ctx(
+        ctx_constructor(
             clean_text="Ferrari - Renault McLaren - Mercedes",
             html=(
                 "<a href='/wiki/Ferrari'>Ferrari</a>"
@@ -75,14 +50,14 @@ def test_constructor_base_parses_multiline_cell_into_list() -> None:
 
 
 def test_constructor_base_returns_none_for_empty_values() -> None:
-    parsed = ContractConstructorColumn().parse(ctx(clean_text=""))
+    parsed = ContractConstructorColumn().parse(ctx_constructor(clean_text=""))
 
     assert parsed is None
 
 
 def test_constructor_base_preserves_duplicate_links() -> None:
     parsed = ContractConstructorColumn().parse(
-        ctx(
+        ctx_constructor(
             clean_text="Ferrari - Ferrari",
             links=[
                 {"text": "Ferrari", "url": "/wiki/Ferrari"},
@@ -99,7 +74,7 @@ def test_constructor_base_preserves_duplicate_links() -> None:
 
 def test_constructor_base_supports_nonstandard_separator_with_links() -> None:
     parsed = ContractConstructorColumn().parse(
-        ctx(
+        ctx_constructor(
             clean_text="Ferrari / Renault",
             links=[
                 {"text": "Ferrari", "url": "/wiki/Ferrari"},
@@ -116,7 +91,7 @@ def test_constructor_base_supports_nonstandard_separator_with_links() -> None:
 
 def test_constructor_base_is_idempotent_for_same_context() -> None:
     column = ContractConstructorColumn()
-    context = ctx(
+    context = ctx_constructor(
         clean_text="Ferrari - Renault",
         links=[
             {"text": "Ferrari", "url": "/wiki/Ferrari"},

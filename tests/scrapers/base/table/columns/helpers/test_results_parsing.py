@@ -5,54 +5,10 @@ import math
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.columns.helpers.results_parsing import ResultsParsingHelpers
+from tests.scrapers.base.table.columns.helpers.helpers import BASE_URL
+from tests.scrapers.base.table.columns.helpers.helpers import ctx_from_html_results
 
-BASE_URL = "https://en.wikipedia.org"
-
-
-@pytest.fixture()
-def html_valid_record() -> str:
-    return (
-        '<td><a href="/wiki/Scuderia_Ferrari">Scuderia Ferrari</a>'
-        "<sup>12</sup><sup>†</sup><sup>*</sup></td>"
-    )
-
-
-@pytest.fixture()
-def html_incomplete_record() -> str:
-    return "<td></td>"
-
-
-@pytest.fixture()
-def html_alias_or_text_record() -> str:
-    return "<td>half points awarded</td>"
-
-
-@pytest.fixture()
-def html_links_and_no_links_record() -> tuple[str, str]:
-    return (
-        '<td><a href="/wiki/Team_Lotus">Team Lotus</a></td>',
-        "<td>No sponsors listed</td>",
-    )
-
-
-def ctx_from_html(html: str) -> ColumnContext:
-    cell = BeautifulSoup(html, "html.parser").find("td")
-    links = [
-        {"text": a.get_text(strip=True), "url": f"{BASE_URL}{a.get('href')}"}
-        for a in cell.find_all("a")
-    ]
-    text = cell.get_text(" ", strip=True)
-    return ColumnContext(
-        header="Results",
-        key="results",
-        raw_text=text,
-        clean_text=text,
-        links=links,
-        cell=cell,
-        base_url=BASE_URL,
-    )
 
 
 @pytest.mark.parametrize(
@@ -127,7 +83,7 @@ def test_parse_result_part_status_map_and_fallback(
 def test_parse_superscripts_returns_expected_tuple_structure(
     html_valid_record: str,
 ) -> None:
-    ctx = ctx_from_html(html_valid_record)
+    ctx = ctx_from_html_results(html_valid_record)
 
     reference_number, has_dagger, has_asterisk = (
         ResultsParsingHelpers.parse_superscripts(
@@ -144,7 +100,7 @@ def test_parse_superscripts_returns_expected_tuple_structure(
 def test_parse_superscripts_fallback_for_missing_cell(
     html_incomplete_record: str,
 ) -> None:
-    ctx = ctx_from_html(html_incomplete_record)
+    ctx = ctx_from_html_results(html_incomplete_record)
     ctx.cell = None
 
     assert ResultsParsingHelpers.parse_superscripts(ctx) == (None, False, False)

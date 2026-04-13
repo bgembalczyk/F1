@@ -4,7 +4,7 @@ import ast
 from dataclasses import dataclass
 from pathlib import Path
 
-from tests.architecture.class_info import ClassInfo
+from tests.architecture.dummy_classes import ClassInfo
 from tests.architecture.helpers import all_parser_classes
 from tests.architecture.helpers import descends_from_target
 from tests.architecture.helpers import has_parse_in_hierarchy

@@ -2,31 +2,9 @@
 
 from infrastructure.http.policies.http import HttpPolicy
 from scrapers.html_fetcher import HtmlFetcher
-
-
-class StubHttpClient:
-    def __init__(self, response: str = "page content") -> None:
-        self._response = response
-        self.calls: list[tuple[str, int | None]] = []
-
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
-        self.calls.append((url, timeout))
-        return self._response
-
-
-class MemoryCache:
-    def __init__(self) -> None:
-        self.store: dict[str, str] = {}
-
-    def get(self, key: str) -> str | None:
-        return self.store.get(key)
-
-    def set(self, key: str, value: str) -> None:
-        self.store[key] = value
-
-
-def make_policy() -> HttpPolicy:
-    return HttpPolicy(retries=0, timeout=10)
+from tests.scrapers.base.dummy_classes import MemoryCache
+from tests.scrapers.base.dummy_classes import StubHttpClient
+from tests.scrapers.base.helpers import make_policy
 
 
 def test_html_fetcher_metadata_returns_copy() -> None:

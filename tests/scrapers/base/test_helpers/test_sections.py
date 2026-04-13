@@ -4,16 +4,8 @@ from bs4 import BeautifulSoup
 from scrapers.helpers.sections import get_category_texts
 from scrapers.helpers.sections import has_category_keyword
 from scrapers.helpers.sections import has_navbox_template_link
-
-
-def soup_with_catlinks(links: list[str]) -> BeautifulSoup:
-    li_items = "".join(f'<li><a href="/wiki/{t}">{t}</a></li>' for t in links)
-    html = f'<div id="mw-normal-catlinks"><ul>{li_items}</ul></div>'
-    return BeautifulSoup(html, "html.parser")
-
-
-def soup_no_catlinks() -> BeautifulSoup:
-    return BeautifulSoup("<div>no cats here</div>", "html.parser")
+from tests.scrapers.base.test_helpers.helpers import soup_no_catlinks
+from tests.scrapers.base.test_helpers.helpers import soup_with_catlinks
 
 
 def test_get_category_texts_returns_empty_when_no_catlinks() -> None:

@@ -1,20 +1,8 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.restart_status import RestartStatusColumn
-
-
-def ctx(clean_text: str | None) -> ColumnContext:
-    return ColumnContext(
-        header="R",
-        key="restart_status",
-        raw_text=clean_text,
-        clean_text=clean_text,
-        links=[],
-        cell=None,
-        base_url="https://en.wikipedia.org",
-    )
+from scrapers.columns.types.restart_status import RestartStatusColumn
+from tests.scrapers.base.table.columns.types.helpers import ctx_restart
 
 
 @pytest.mark.parametrize(
@@ -34,7 +22,7 @@ def ctx(clean_text: str | None) -> ColumnContext:
 )
 def test_restart_status_known_codes(text, expected_code, expected_description) -> None:
     col = RestartStatusColumn()
-    result = col.parse(ctx(text))
+    result = col.parse(ctx_restart(text))
     assert result is not None
     assert result["code"] == expected_code
     assert result["description"] == expected_description
@@ -42,7 +30,7 @@ def test_restart_status_known_codes(text, expected_code, expected_description) -
 
 def test_restart_status_unknown_code_returns_none_description() -> None:
     col = RestartStatusColumn()
-    result = col.parse(ctx("X"))
+    result = col.parse(ctx_restart("X"))
     assert result is not None
     assert result["code"] == "X"
     assert result["description"] is None
@@ -50,14 +38,14 @@ def test_restart_status_unknown_code_returns_none_description() -> None:
 
 def test_restart_status_empty_text_returns_none() -> None:
     col = RestartStatusColumn()
-    assert col.parse(ctx("")) is None
-    assert col.parse(ctx(None)) is None
-    assert col.parse(ctx("   ")) is None
+    assert col.parse(ctx_restart("")) is None
+    assert col.parse(ctx_restart(None)) is None
+    assert col.parse(ctx_restart("   ")) is None
 
 
 def test_restart_status_column() -> None:
     col = RestartStatusColumn()
-    context = ctx("Y")
+    context = ctx_restart("Y")
     result = col.parse(context)
     assert result == {
         "code": "Y",
@@ -67,4 +55,4 @@ def test_restart_status_column() -> None:
 
 def test_restart_status_column_empty_returns_none() -> None:
     col = RestartStatusColumn()
-    assert col.parse(ctx("")) is None
+    assert col.parse(ctx_restart("")) is None

@@ -8,20 +8,8 @@ from scrapers.debug_dumps import TablePipelineDebugContext
 from scrapers.debug_dumps import write_infobox_dump
 from scrapers.debug_dumps import write_table_pipeline_dump
 from scrapers.infobox.extraction.extractor import BaseInfoboxExtractor
-
-
-class FailingParser:
-    def parse(self, _soup):
-        msg = "boom"
-        raise ValueError(msg)
-
-    def find_infobox(self, soup):
-        return soup.find("table", class_="infobox")
-
-
-class PassThroughMapper:
-    def map(self, raw):
-        return raw
+from tests.scrapers.base.dummy_classes import FailingParser
+from tests.scrapers.base.dummy_classes import PassThroughMapper
 
 
 def test_debug_enabled_generates_infobox_dump_on_extract_failure(tmp_path) -> None:

@@ -2,17 +2,6 @@
 from scrapers.helpers.transformer_utils import apply_transformers_with_factory
 
 
-class DoubleValueTransformer:
-    """Doubles every numeric value in record."""
-
-    def __call__(self, record):
-        return {k: v * 2 if isinstance(v, int) else v for k, v in record.items()}
-
-    # Satisfy RecordTransformer interface used by apply_transformers
-    def transform(self, _records):
-        return [self(r) for r in _records]
-
-
 def test_apply_transformers_with_factory_no_factory_no_transformers_returns_record() -> (
     None
 ):

@@ -2,7 +2,7 @@ import ast
 
 from pathlib import Path
 
-from tests.architecture.class_info import ClassInfo
+from tests.architecture.dummy_classes import ClassInfo
 
 TARGET_BRANCHES = {
     "ParserABC",

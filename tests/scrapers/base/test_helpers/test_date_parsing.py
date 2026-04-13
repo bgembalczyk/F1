@@ -1,20 +1,8 @@
 # ruff: noqa: E501, PLR2004
 
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.helpers.date_parsing import parse_formula_category
-
-
-def ctx(clean_text: str | None, raw_text: str | None = None) -> ColumnContext:
-    return ColumnContext(
-        header="Date",
-        key="date",
-        raw_text=raw_text if raw_text is not None else clean_text,
-        clean_text=clean_text,
-        links=[],
-        cell=None,
-        base_url="https://en.wikipedia.org",
-    )
+from tests.scrapers.base.test_helpers.helpers import ctx
 
 
 def test_parse_date_with_category_marker_empty_returns_none() -> None:

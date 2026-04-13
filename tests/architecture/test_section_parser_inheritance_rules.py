@@ -4,7 +4,7 @@ import ast
 from dataclasses import dataclass
 from pathlib import Path
 
-from tests.architecture.class_info import ClassInfo
+from tests.architecture.dummy_classes import ClassInfo
 from tests.architecture.helpers import descends_from_approved
 from tests.architecture.helpers import load_classes
 

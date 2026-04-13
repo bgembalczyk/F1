@@ -3,62 +3,17 @@ from __future__ import annotations
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.context import ColumnContext
+from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constructor_parsing import ConstructorParsingHelpers
+from tests.scrapers.base.table.columns.helpers.helpers import ctx_from_html_constructor
 
 BASE_URL = "https://en.wikipedia.org"
 
 
-@pytest.fixture()
-def html_valid_record() -> str:
-    return (
-        '<td><a href="/wiki/Ferrari">Ferrari</a><br>'
-        '<a href="/wiki/Mercedes-Benz_in_Formula_One">Mercedes</a></td>'
-    )
-
-
-@pytest.fixture()
-def html_incomplete_record() -> str:
-    return "<td>Ferrari -</td>"
-
-
-@pytest.fixture()
-def html_alias_or_text_record() -> str:
-    return "<td>Scuderia Alpha - Team Beta</td>"
-
-
-@pytest.fixture()
-def html_links_and_no_links_record() -> tuple[str, str]:
-    with_links = (
-        '<td><a href="/wiki/McLaren">McLaren</a> '
-        '<a href="/wiki/Ford_Motor_Company">Ford</a></td>'
-    )
-    without_links = "<td>Lotus - Climax</td>"
-    return with_links, without_links
-
-
-def ctx_from_html(html: str) -> ColumnContext:
-    cell = BeautifulSoup(html, "html.parser").find("td")
-    links = [
-        {"text": a.get_text(strip=True), "url": f"{BASE_URL}{a.get('href')}"}
-        for a in cell.find_all("a")
-    ]
-    text = cell.get_text(" ", strip=True)
-    return ColumnContext(
-        header="Constructor",
-        key="constructor",
-        raw_text=text,
-        clean_text=text,
-        links=links,
-        cell=cell,
-        base_url=BASE_URL,
-    )
-
-
 def test_split_lines_builds_two_contexts_with_expected_structure(
-    html_valid_record: str,
+    html_valid_record_constructor: str,
 ) -> None:
-    ctx = ctx_from_html(html_valid_record)
+    ctx = ctx_from_html_constructor(html_valid_record_constructor)
 
     line_contexts = ConstructorParsingHelpers.split_lines(ctx)
 
@@ -76,9 +31,9 @@ def test_split_lines_builds_two_contexts_with_expected_structure(
 
 
 def test_extract_part_falls_back_to_hyphen_split_when_no_links(
-    html_alias_or_text_record: str,
+    html_alias_or_text_record_constructor: str,
 ) -> None:
-    ctx = ctx_from_html(html_alias_or_text_record)
+    ctx = ctx_from_html_constructor(html_alias_or_text_record_constructor)
 
     left = ConstructorParsingHelpers.extract_part(ctx, 0)
     right = ConstructorParsingHelpers.extract_part(ctx, 1)
@@ -90,7 +45,7 @@ def test_extract_part_falls_back_to_hyphen_split_when_no_links(
 
 
 def test_extract_part_single_link_duplicates_engine_branch() -> None:
-    ctx = ctx_from_html('<td><a href="/wiki/Ferrari">Ferrari</a></td>')
+    ctx = ctx_from_html_constructor('<td><a href="/wiki/Ferrari">Ferrari</a></td>')
 
     chassis = ConstructorParsingHelpers.extract_part(ctx, 0)
     engine = ConstructorParsingHelpers.extract_part(ctx, 1)
@@ -111,10 +66,10 @@ def test_extract_part_single_link_duplicates_engine_branch() -> None:
 def test_extract_part_handles_incomplete_or_out_of_range(
     record_index: int,
     expected: dict[str, str | None] | None,
-    html_links_and_no_links_record: tuple[str, str],
+    html_links_and_no_links_record_constructor: tuple[str, str],
 ) -> None:
-    _, no_links_html = html_links_and_no_links_record
-    ctx = ctx_from_html(no_links_html)
+    _, no_links_html = html_links_and_no_links_record_constructor
+    ctx = ctx_from_html_constructor(no_links_html)
 
     parsed = ConstructorParsingHelpers.extract_part(ctx, record_index)
 
@@ -124,7 +79,7 @@ def test_extract_part_handles_incomplete_or_out_of_range(
 def test_find_hyphen_split_index_detects_split_with_two_plus_links_before_hyphen() -> (
     None
 ):
-    ctx = ctx_from_html(
+    ctx = ctx_from_html_constructor(
         '<td><a href="/wiki/BRM">BRM</a> <a href="/wiki/P160">P160</a> - '
         '<a href="/wiki/Ford_Motor_Company">Ford</a></td>',
     )
@@ -135,9 +90,9 @@ def test_find_hyphen_split_index_detects_split_with_two_plus_links_before_hyphen
 
 
 def test_extract_layout_text_returns_none_for_empty_and_link_only_values(
-    html_incomplete_record: str,
+    html_incomplete_record_constructor: str,
 ) -> None:
-    _ = html_incomplete_record
+    _ = html_incomplete_record_constructor
 
     assert ConstructorParsingHelpers.extract_layout_text("", "Ferrari") is None
     assert ConstructorParsingHelpers.extract_layout_text("Ferrari", "Ferrari") is None

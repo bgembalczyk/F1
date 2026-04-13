@@ -1,9 +1,5 @@
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-
-
-class StubApplyForElements(ApplyForElementsMixin):
-    def __init__(self, table_parser):
-        self._table_parser = table_parser
+from tests.scrapers.base.mixins.dummy_classes import StubApplyForElements
 
 
 def test_apply_table_parser_to_sections_recurses() -> None:

@@ -7,20 +7,8 @@ from pathlib import Path
 
 import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-CONTRACTS_PATH = ROOT / "scrapers/family_contracts.py"
-
-
-def _load_family_contracts_module():
-    spec = importlib.util.spec_from_file_location(
-        "scrapers.family_contracts",
-        CONTRACTS_PATH,
-    )
-    module = importlib.util.module_from_spec(spec)
-    assert spec is not None and spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
-
+from tests.contract.helpers import ROOT
+from tests.contract.helpers import load_family_contracts_module
 
 FAMILY_CONTRACT_CASES = [
     (
@@ -43,7 +31,7 @@ FAMILY_CONTRACT_CASES = [
 
 @pytest.mark.contract()
 def test_scraper_family_contracts_are_exposed() -> None:
-    family_contracts = _load_family_contracts_module()
+    family_contracts = load_family_contracts_module()
     exported = set(getattr(family_contracts, "__all__", ()))
     assert exported == {
         "SingleArticleScraperContract",
@@ -60,7 +48,7 @@ def test_family_contract_methods_exist(
     required_methods: tuple[str, ...],
     _allowed_hooks: tuple[str, ...],
 ) -> None:
-    family_contracts = _load_family_contracts_module()
+    family_contracts = load_family_contracts_module()
     contract = getattr(family_contracts, contract_name)
     for method_name in required_methods:
         assert callable(getattr(contract, method_name, None))
@@ -76,7 +64,7 @@ def test_family_contract_docstring_defines_extension_rules(
     _required_methods: tuple[str, ...],
     allowed_hooks: tuple[str, ...],
 ) -> None:
-    family_contracts = _load_family_contracts_module()
+    family_contracts = load_family_contracts_module()
     contract = getattr(family_contracts, contract_name)
     doc = inspect.getdoc(contract) or ""
     assert "Extension rules" in doc

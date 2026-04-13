@@ -1,22 +1,9 @@
 import pytest
 
-from scrapers.base.options import ScraperOptions
 from scrapers.circuits_list_scraper import CircuitsListScraper
 from scrapers.list_scraper_drivers import F1DriversListScraper
-
-
-class StubFetcher:
-    def __init__(self, html: str) -> None:
-        self.html = html
-        self.calls = 0
-
-    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
-        self.calls += 1
-        return self.html
-
-    def get(self, url: str) -> str:
-        return self.get_text(url)
-
+from scrapers.options import ScraperOptions
+from tests.contract.dummy_classes import StubFetcher
 
 pytest.importorskip("bs4")
 
