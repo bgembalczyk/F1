@@ -8,12 +8,13 @@ from bs4 import BeautifulSoup
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
 from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
 from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
-from scrapers.parsers.section.table.contracts import SectionTablesHtmlParserABC
+from scrapers.parsers.section.table.contracts import TablePayload
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result
@@ -21,25 +22,6 @@ from scrapers.section.serializer import build_section_parse_result
 if TYPE_CHECKING:
     from scrapers.configs.public import TableConfig
     from scrapers.section.parse_results import SectionParseResult
-
-
-class ArticleSectionTablesHtmlParser(SectionTablesHtmlParserABC):
-    """Domyślny parser HTML tabel sekcji oparty o ArticleTablesParser."""
-
-    def __init__(
-        self,
-        *,
-        include_heading_path: bool = False,
-        include_source_table: bool = False,
-    ) -> None:
-        self._parser = ArticleTablesParser(
-            include_heading_path=include_heading_path,
-            include_source_table=include_source_table,
-        )
-
-    def parse(self, raw: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._parser.parse(raw)
-
 
 class PassthroughSectionTableClassifier(SectionTableClassifierABC[dict[str, Any]]):
     """Domyślny klasyfikator: zwraca niezmodyfikowany payload tabeli."""
@@ -81,7 +63,7 @@ class TableSectionParser(SectionParserBase):
         metadata_extras: dict[str, Any] | None = None,
         include_heading_path: bool = False,
         include_source_table: bool = False,
-        html_parser: SectionTablesHtmlParserABC | None = None,
+        html_parser: HtmlSoupParserABC[list[TablePayload]] | None = None,
         classifier: SectionTableClassifierABC[Any] | None = None,
         mapper: SectionTableRecordMapperABC[Any, Any] | None = None,
     ) -> None:
@@ -96,7 +78,7 @@ class TableSectionParser(SectionParserBase):
         if domain != "wikipedia":
             self._metadata_extras["domain"] = domain
 
-        self._html_parser = html_parser or ArticleSectionTablesHtmlParser(
+        self._html_parser: HtmlSoupParserABC[list[TablePayload]] = html_parser or ArticleTablesParser(
             include_heading_path=include_heading_path,
             include_source_table=include_source_table,
         )

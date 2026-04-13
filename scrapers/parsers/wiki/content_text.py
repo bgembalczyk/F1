@@ -6,11 +6,11 @@ from bs4 import Tag
 from scrapers.parsers.constants import HEADING_CLASS
 from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
 class ContentTextParser(ParserABC):
@@ -21,7 +21,7 @@ class ContentTextParser(ParserABC):
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
         self.toolbox = toolbox or build_default_section_toolbox()
-        self.section_parser = NestedWikiSectionParser(toolbox=self.toolbox)
+        self.section_parser = RecursiveSectionParser(toolbox=self.toolbox)
         if element_parsers is not None:
             section_first_parsers = replace(
                 element_parsers,
@@ -36,7 +36,7 @@ class ContentTextParser(ParserABC):
                 section_assembler=self.toolbox.section_assembler,
                 mapper_registry=self.toolbox.mapper_registry,
             )
-            self.section_parser = NestedWikiSectionParser(toolbox=self.toolbox)
+            self.section_parser = RecursiveSectionParser(toolbox=self.toolbox)
 
     def parse(
         self,

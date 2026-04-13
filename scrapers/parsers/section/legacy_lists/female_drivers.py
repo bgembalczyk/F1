@@ -18,8 +18,7 @@ from scrapers.constants.constants_drivers import FEMALE_DRIVERS_HEADERS
 from scrapers.constants.constants_drivers import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.nested_child import NestedChildParser
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.table_schema_dsl import TableSchemaDSL
 
@@ -66,7 +65,10 @@ class FemaleDriversTableMapper(WikiTableBaseMapper):
         )
 
 
-class OfficialDriversSubSectionParser(ApplyForElementsMixin, SubSectionParser):
+class OfficialDriversSubSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+    heading_class = "mw-heading4"
+    output_key = "sub_sub_sections"
+
     def __init__(
         self,
         *,
@@ -82,7 +84,10 @@ class OfficialDriversSubSectionParser(ApplyForElementsMixin, SubSectionParser):
         return parsed
 
 
-class DriversSectionParser(NestedWikiSectionParser):
+class DriversSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading3"
+    output_key = "sub_sections"
+
     def __init__(
         self,
         *,
@@ -90,8 +95,8 @@ class DriversSectionParser(NestedWikiSectionParser):
         **kwargs: Any,
     ) -> None:
         toolbox = kwargs.get("toolbox")
-        super().__init__(toolbox=toolbox)
-        self.child_parser = child_parser or OfficialDriversSubSectionParser(
+        super().__init__(
+            child_parser=child_parser or OfficialDriversSubSectionParser(toolbox=toolbox),
             toolbox=toolbox,
         )
 

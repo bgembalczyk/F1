@@ -1,10 +1,13 @@
 from typing import Any
 
 from scrapers.parsers.engine_regulation_table_mapper import EngineRegulationTableMapper
-from scrapers.parsers.section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class EngineRegulationSubSectionParser(SubSectionParser):
+class EngineRegulationSubSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading4"
+    output_key = "sub_sub_sections"
+
     def __init__(self) -> None:
         super().__init__()
         self._table_mapper = EngineRegulationTableMapper()

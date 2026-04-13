@@ -1,3 +1,8 @@
+"""Backward-compatibility shim: SectionAdapterScraperBase has been removed.
+
+Subclasses should inherit directly from SectionAdapter, SectionAwareMixin, and ArticleScraperBase.
+"""
+
 from abc import ABC
 
 from scrapers.adapters.section.adapter import SectionAdapter
@@ -13,7 +18,7 @@ class SectionAdapterScraperBase(
     ArticleScraperBase,
     ABC,
 ):
-    """Base for article scrapers that assemble records via SectionAdapter."""
+    """Backward-compat alias. Inherit SectionAdapter, SectionAwareMixin, ArticleScraperBase directly."""
 
 
 __all__ = [

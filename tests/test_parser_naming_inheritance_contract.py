@@ -207,6 +207,8 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 "NestedWikiSectionParser",
                 # Canonical runtime base for section parsers
                 "SectionParserBase",
+                # RecursiveSectionParser is now the canonical base for nested-section parsers
+                "RecursiveSectionParser",
             }
             if class_info.name in _section_parser_bases:
                 continue
@@ -227,6 +229,8 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                     "NestedWikiSectionParser",
                     "SubSectionParser",
                     "SubSubSectionParser",
+                    # RecursiveSectionParser is now the canonical base for nested parsers
+                    "RecursiveSectionParser",
                 }
                 if class_info.name not in _nested_roots and not _inherits_from(
                     class_info,

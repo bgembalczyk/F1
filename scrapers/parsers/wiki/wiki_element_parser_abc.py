@@ -75,6 +75,8 @@ class WikiArticleParserABC(
     HtmlSoupParserABC[list[dict[str, Any]]],
     ABC,
 ):
+    """Backward-compat alias. Inherit HtmlSoupParserABC[list[dict[str, Any]]] directly."""
+
     element_type: WikiElementType = "article"
 
     @abstractmethod

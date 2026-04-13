@@ -5,11 +5,14 @@ from bs4 import Tag
 
 from scrapers.mappers.seasons_table_mapper import SeasonsTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 
 
-class SeasonsSectionParser(NestedWikiSectionParser):
+class SeasonsSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading3"
+    output_key = "sub_sections"
+
     def __init__(self) -> None:
         super().__init__()
         self._table_mapper = SeasonsTableMapper()

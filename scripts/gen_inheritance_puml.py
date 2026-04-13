@@ -187,6 +187,7 @@ KEEP_IN_CORE = {
 P01_EXCLUDE = {
     # → p03 (scrapers)
     "ArticleTablesParserABC",
+    "WikiArticleParserABC",
     # → p04 (domain section parsers)
     "SectionParserBase",
     "TableSectionParser",
@@ -261,7 +262,6 @@ SCRAPER_ROOTS = [
     "WikiScraper",
     "SectionAwareMixin",
     "WikiElementParsingMixin",
-    "FetchOrchestrationMixin",
 ]
 p03: set[str] = set()
 for r in SCRAPER_ROOTS:
@@ -273,8 +273,6 @@ p03 |= {
     "SectionAdapter",
     "BodyContentAssembler",
     "ArticleTablesParser",
-    "ArticleTablesParserABC",
-    "ArticleSectionTablesHtmlParser",
     "SeedListTableScraper",
 } & (main_comp | all_names)
 p03 -= p01 | p02
@@ -288,7 +286,6 @@ SECTION_ROOTS = [
     "TableSectionParser",
     "ApplyForElementsMixin",
     "ExtractListItemsMixin",
-    "NestedSectionHandlingMixin",
     "SectionTableParseMixin",
     "DeclarativeSectionTableParseMixin",
     "BaseDriverResultsSectionParser",
@@ -304,7 +301,6 @@ p04 |= {
         "SectionParser" in c
         or c.endswith("SubSectionParser")
         or c.endswith("SubSubSectionParser")
-        or c.endswith("SubSubSubSectionParser")
     )
 }
 p04 -= p01 | p02 | p03
@@ -327,7 +323,7 @@ for r in TABLE_ROOTS:
 p05 |= {
     c
     for c in main_comp
-    if "TableParser" in c and c not in ("SectionTablesHtmlParserABC",)
+    if "TableParser" in c
 }
 p05 -= p01 | p02 | p03 | p04
 write(

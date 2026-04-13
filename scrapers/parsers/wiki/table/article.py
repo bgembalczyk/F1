@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from abc import abstractmethod
 from typing import Any
 
 from bs4 import Tag
@@ -7,14 +8,16 @@ from bs4 import Tag
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.input_adapters import as_table_fragments
 from scrapers.input_types import WikiParserInput
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
-from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
 
 
-class ArticleTablesParser(ArticleTablesParserABC):
+class ArticleTablesParser(HtmlSoupParserABC[list[dict[str, Any]]]):
     """Wspólny parser tabel wikitable z artykułów Wikipedii."""
+
+    element_type = "article"
 
     def __init__(
         self,

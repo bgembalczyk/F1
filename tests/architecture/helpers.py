@@ -34,6 +34,7 @@ APPROVED_ROOT_BASES = {
     "NestedWikiSectionParser",
     "SubSectionParser",
     "SubSubSectionParser",
+    "RecursiveSectionParser",
 }
 
 GROUP_KEYWORDS: tuple[str, ...] = (

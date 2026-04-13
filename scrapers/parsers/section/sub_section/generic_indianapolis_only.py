@@ -6,11 +6,14 @@ from scrapers.parsers.list_element.indianapolis_constructors import (
     IndianapolisConstructorsListParser,
 )
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.sub_section.base import SubSectionParser
 from scrapers.parsers.section.types import SectionTreePayload
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class GenericIndianapolisOnlySubSectionParser(SubSectionParser):
+class GenericIndianapolisOnlySubSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading4"
+    output_key = "sub_sub_sections"
+
     def __init__(self) -> None:
         super().__init__()
         self._list_parser = IndianapolisConstructorsListParser()

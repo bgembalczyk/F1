@@ -4,19 +4,21 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.sub_section.non_championships_races import (
     NonChampionshipsRacesSubSectionParser,
 )
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.world_championships_races_table_mapper import (
     WorldChampionshipsRacesTableMapper,
 )
 
 
-class RedFlaggedRacesSectionParser(NestedWikiSectionParser):
+class RedFlaggedRacesSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading3"
+    output_key = "sub_sections"
+
     def __init__(self) -> None:
-        super().__init__()
-        self.child_parser = NonChampionshipsRacesSubSectionParser()
+        super().__init__(child_parser=NonChampionshipsRacesSubSectionParser())
         self._world_championship_table_mapper = WorldChampionshipsRacesTableMapper()
 
     def parse(

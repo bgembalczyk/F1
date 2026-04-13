@@ -15,7 +15,6 @@ class FinishedSeasonParser
 abstract class HtmlTagParserABC
 class IndianapolisConstructorsListParser
 class IndianapolisOnlyListParser
-abstract class IndianapolisOnlyMixin
 class InfoboxCareerParser
 class InfoboxCellValueExtractor
 abstract class InfoboxHtmlFieldParserABC

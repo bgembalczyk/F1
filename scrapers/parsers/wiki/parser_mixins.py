@@ -29,7 +29,7 @@ class TableCellExtractionMixin:
 
 
 class NestedSectionHandlingMixin:
-    """Shared helper for nested wiki section parsers."""
+    """Backward-compat shim: filter_child_tags is now in RecursiveSectionParser."""
 
     @staticmethod
     def filter_child_tags(elements: Iterable[object]) -> list[Tag]:

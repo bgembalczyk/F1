@@ -31,6 +31,7 @@ STANDARD_HOOK_NAMES = {
 HOOK_BASE_CLASSES = {
     "ArticleScraperBase",
     "SectionAdapterScraperBase",
+    "SectionAdapter",
 }
 
 
