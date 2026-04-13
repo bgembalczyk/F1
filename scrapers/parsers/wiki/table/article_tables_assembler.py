@@ -5,9 +5,6 @@ from typing import Any
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.wiki.table.article_tables_assembler_abc import (
-    ArticleTablesAssemblerABC,
-)
 from scrapers.parsers.wiki.table.mapped.lap_records_wiki_table_mapper import (
     LapRecordsWikiTableMapper,
 )
@@ -22,7 +19,7 @@ from scrapers.parsers.wiki.table.mapped.standings_table_mapper import (
 )
 
 
-class ArticleTablesAssembler(ArticleTablesAssemblerABC):
+class ArticleTablesAssembler:
     """Assembler tabel artykułu: parser HTML + mapowanie domenowe."""
 
     def __init__(

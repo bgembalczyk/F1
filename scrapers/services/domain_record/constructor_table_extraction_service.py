@@ -4,8 +4,8 @@ from typing import Any
 
 from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
 from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
-from scrapers.parsers.wiki.table.article_tables_assembler_abc import (
-    ArticleTablesAssemblerABC,
+from scrapers.parsers.wiki.table.article_tables_assembler import (
+    ArticleTablesAssembler,
 )
 
 
@@ -15,7 +15,7 @@ class ConstructorTableExtractionService(RunDiagnosticsMixin):
     def __init__(
         self,
         *,
-        article_tables_assembler: ArticleTablesAssemblerABC | None = None,
+        article_tables_assembler: ArticleTablesAssembler | None = None,
     ) -> None:
         self._article_tables_assembler = (
             article_tables_assembler or ArticleTablesAssembler()
