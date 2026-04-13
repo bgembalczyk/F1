@@ -561,10 +561,8 @@ package "Scrapers" {
     class LocatedSection
     class LocationColumn
     class ManufacturersSectionParser
-    class MappedWikiTableMapper
     abstract class MapperABC
     class MarkBasedEligibilityRule
-    abstract class MatchesMixin
     abstract class MetadataBindingMixin
     class MetricColumnSpec
     class MissingSectionError
@@ -759,13 +757,7 @@ package "Scrapers" {
     abstract class SectionExtractionServiceProtocol
     abstract class SectionHtmlParserABC
     class SectionIdResolver
-    abstract class SectionInfoboxClassifierABC
-    abstract class SectionInfoboxRecordMapperABC
-    abstract class SectionInfoboxesHtmlParserABC
     abstract class SectionLevelMixin
-    abstract class SectionListClassifierABC
-    abstract class SectionListRecordMapperABC
-    abstract class SectionListsHtmlParserABC
     class SectionLocator
     class SectionMatch
     class SectionMatchPriorities
@@ -783,11 +775,7 @@ package "Scrapers" {
     abstract class SectionStructureParserABC
     abstract class SectionTableClassifierABC
     abstract class SectionTableParseMixin
-    abstract class SectionTableRecordMapperABC
     abstract class SectionTablesHtmlParserABC
-    abstract class SectionTextBlocksHtmlParserABC
-    abstract class SectionTextClassifierABC
-    abstract class SectionTextRecordMapperABC
     abstract class SectionTraversalMixin
     class SectionTreeMatch
     class SectionTreeNode
@@ -845,7 +833,6 @@ package "Scrapers" {
     class TableElementParser
     class TableExtractor
     abstract class TableHtmlParserABC
-    abstract class TableMapperABC
     abstract class TableParserABC
     class TableParsingHelper
     class TablePipeline
@@ -890,12 +877,8 @@ package "Scrapers" {
     abstract class WikiArticleParserABC
     abstract class WikiArticleParserBase
     abstract class WikiDelegatingHtmlParserBase
-    class WikiDomainMapper
-    abstract class WikiDomainMapperABC
-    abstract class WikiElementClassifierABC
     abstract class WikiElementParserABC
     abstract class WikiElementParsingMixin
-    abstract class WikiElementPayloadMapperABC
     class WikiElementSet
     class WikiFigureElementParser
     abstract class WikiFigureElementParserABC
@@ -913,7 +896,6 @@ package "Scrapers" {
     abstract class WikiListParser
     abstract class WikiListParserABC
     abstract class WikiListParserBase
-    class WikiMapperRegistry
     class WikiNavboxElementParser
     abstract class WikiNavboxElementParserABC
     class WikiNavboxParser
@@ -941,7 +923,6 @@ package "Scrapers" {
     abstract class WikiSubSectionParserABC
     abstract class WikiSubSubSectionParserABC
     abstract class WikiTableBaseMapper
-    abstract class WikiTableBaseParser
     class WikiTableElementParser
     abstract class WikiTableElementParserABC
     abstract class WikiTableElementParserBase
@@ -950,8 +931,6 @@ package "Scrapers" {
     class WikiTableParser
     abstract class WikiTableParserABC
     abstract class WikiTableParserBase
-    abstract class WikiTablePayloadCollectMixin
-    abstract class WikiTablePayloadTransformMixin
     abstract class WikiTagParser
     abstract class WikiTagParserABC
     class WikipediaInfoboxScraper
@@ -1102,7 +1081,7 @@ CircuitBaseRecord <|-- CircuitDetailsRecord
 SafeParsingMixin <|-- CircuitEntitiesOrchestrator
 CircuitTextProcessing <|-- CircuitEntityExtractor
 TableSectionParser <|-- CircuitEventsSectionParser
-SectionTableRecordMapperABC <|-- CircuitEventsTableRecordMapper
+MapperABC <|-- CircuitEventsTableRecordMapper
 InfoboxTextUtils <|-- CircuitGeoExtractor
 InfoboxTextUtils <|-- CircuitHistoryExtractor
 InfoboxExtractorABC <|-- CircuitInfoboxExtractor
@@ -1111,7 +1090,7 @@ WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
 CircuitTextProcessing <|-- CircuitLapRecordExtractor
 TableSectionParser <|-- CircuitLapRecordsSectionParser
 SectionTableClassifierABC <|-- CircuitLapRecordsTableClassifier
-SectionTableRecordMapperABC <|-- CircuitLapRecordsTableRecordMapper
+MapperABC <|-- CircuitLapRecordsTableRecordMapper
 TextBlockSectionParser <|-- CircuitLayoutHistorySectionParser
 SafeParsingMixin <|-- CircuitLayoutsExtractor
 NameStatusColumn <|-- CircuitNameStatusColumn
@@ -1125,7 +1104,7 @@ F1SingleCircuitScraper <|-- CircuitsDetailScraper
 DeclarativeSectionTableParseMixin <|-- CircuitsListScraper
 SeedListTableScraper <|-- CircuitsListScraper
 ListSectionParser <|-- CircuitsListSectionParser
-MappedWikiTableMapper <|-- CircuitsListTableMapper
+WikiTableBaseMapper <|-- CircuitsListTableMapper
 SchemaCompositeRecordValidator <|-- CircuitsRecordValidator
 BaseSeasonParser <|-- ColinChapmanTrophyParser
 InfoboxCollapsibleTableParserABC <|-- CollapsibleTableParser
@@ -1187,7 +1166,7 @@ BaseDomainPipelineService <|-- DriverPipelineService
 BaseRecordFactory <|-- DriverRecordFactory
 TableSectionParser <|-- DriverResultsSectionParser
 SectionTableClassifierABC <|-- DriverResultsSectionTableClassifier
-SectionTableRecordMapperABC <|-- DriverResultsTableRecordMapper
+MapperABC <|-- DriverResultsTableRecordMapper
 BaseSectionExtractionService <|-- DriverSectionExtractionService
 ValueObject <|-- DriversChampionships
 BaseRecordFactory <|-- DriversChampionshipsRecordFactory
@@ -1287,7 +1266,7 @@ ParserABC <|-- HtmlTagParserABC
 FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
 RequestError <|-- HttpShimError
 DomainMapperABC <|-- IdentityDomainMapper
-SectionTableRecordMapperABC <|-- IdentitySectionTableRecordMapper
+MapperABC <|-- IdentitySectionTableRecordMapper
 ListElementParser <|-- IndianapolisConstructorsListParser
 ListElementParser <|-- IndianapolisOnlyListParser
 IndianapolisOnlyMixin <|-- IndianapolisOnlyListScraper
@@ -1311,7 +1290,7 @@ InfoboxNestedTableParserABC <|-- InfoboxTableParser
 InfoboxRowsParser <|-- InfoboxTitlesParser
 BaseSeasonParser <|-- JimClarkTrophyParser
 F1TableScraper <|-- LapRecordsTableScraper
-MappedWikiTableMapper <|-- LapRecordsWikiTableMapper
+WikiTableBaseMapper <|-- LapRecordsWikiTableMapper
 MultiColumn <|-- LastLengthUsedColumn
 BaseExecutor <|-- LayerOneExecutor
 BaseExecutor <|-- LayerZeroExecutor
@@ -1328,7 +1307,6 @@ WikiScraper <|-- ListScraper
 SectionParserBase <|-- ListSectionParser
 FuncColumn <|-- LocationColumn
 NestedWikiSectionParser <|-- ManufacturersSectionParser
-WikiTableBaseMapper <|-- MappedWikiTableMapper
 RateLimiter <|-- MinDelayRateLimiter
 BaseColumn <|-- MultiColumn
 BackgroundMixin <|-- NameStatusColumn
@@ -1350,7 +1328,7 @@ BaseHtmlElementParser <|-- ParagraphElementParser
 ParagraphHtmlParserABC <|-- ParagraphElementParser
 HtmlTagParserABC <|-- ParagraphHtmlParserABC
 BaseColumn <|-- ParsedValueColumn
-WikiElementClassifierABC <|-- PassthroughElementClassifier
+ClassifierABC <|-- PassthroughElementClassifier
 SectionTableClassifierABC <|-- PassthroughSectionTableClassifier
 ScraperError <|-- PipelineError
 BaseColumn <|-- PointsColumn
@@ -1367,7 +1345,7 @@ NestedWikiSectionParser <|-- PrivateerTeamsSectionParser
 HtmlInfoboxFieldParser <|-- RaceEventParser
 BackgroundMixin <|-- RaceResultColumn
 BaseColumn <|-- RaceResultColumn
-MappedWikiTableMapper <|-- RaceResultsTableMapper
+WikiTableBaseMapper <|-- RaceResultsTableMapper
 NameStatusColumn <|-- RaceTitleStatusColumn
 NestedWikiSectionParser <|-- RacesSectionParser
 BaseColumn <|-- RangeColumn
@@ -1433,21 +1411,11 @@ DomainArticleScraperBase <|-- SectionByIdScraperBase
 SectionAwareMixin <|-- SectionByIdScraperBase
 WikiSectionElementParserABC <|-- SectionElementParser
 HtmlSoupParserABC <|-- SectionHtmlParserABC
-ClassifierABC <|-- SectionInfoboxClassifierABC
-MapperABC <|-- SectionInfoboxRecordMapperABC
-HtmlSoupParserABC <|-- SectionInfoboxesHtmlParserABC
-ClassifierABC <|-- SectionListClassifierABC
-MapperABC <|-- SectionListRecordMapperABC
-HtmlSoupParserABC <|-- SectionListsHtmlParserABC
 MetadataBindingMixin <|-- SectionMetadataBindingMixin
 WikiSectionElementParserABC <|-- SectionParserBase
 BaseSectionParser <|-- SectionStructureParserABC
 ClassifierABC <|-- SectionTableClassifierABC
-MapperABC <|-- SectionTableRecordMapperABC
 HtmlSoupParserABC <|-- SectionTablesHtmlParserABC
-HtmlSoupParserABC <|-- SectionTextBlocksHtmlParserABC
-ClassifierABC <|-- SectionTextClassifierABC
-MapperABC <|-- SectionTextRecordMapperABC
 F1TableScraper <|-- SeedListTableScraper
 ListScraperContract <|-- SeedListTableScraper
 BaseRegistryEntry <|-- SeedRegistryEntry
@@ -1476,7 +1444,7 @@ WikiSectionParserBase <|-- SponsorshipSectionParser
 WikiTableBaseMapper <|-- SprintPointsTableMapper
 ApplyForElementsMixin <|-- SprintRacesSubSubSectionParser
 SubSubSectionParser <|-- SprintRacesSubSubSectionParser
-MappedWikiTableMapper <|-- StandingsTableMapper
+WikiTableBaseMapper <|-- StandingsTableMapper
 LayerZeroRunConfigFactory <|-- StaticScraperKwargsFactory
 BaseInfoboxOrchestrator <|-- StrategyBackedInfoboxOrchestrator
 SectionLevelMixin <|-- SubSectionLevelMixin
@@ -1489,7 +1457,6 @@ MapperABC <|-- TableDomainMapperABC
 WikiTableElementParserABC <|-- TableElementParser
 Extractor <|-- TableExtractor
 HtmlTagParserABC <|-- TableHtmlParserABC
-MapperABC <|-- TableMapperABC
 HtmlTagParserABC <|-- TableParserABC
 GroupParsingMixin <|-- TableRecordMapper
 RowMappingMixin <|-- TableRecordMapper
@@ -1516,10 +1483,6 @@ ArticleHtmlParserABC <|-- WikiArticleParserABC
 WikiSoupParserABC <|-- WikiArticleParserABC
 WikiArticleParserABC <|-- WikiArticleParserBase
 WikiDelegatingHtmlParserBase <|-- WikiArticleParserBase
-WikiDomainMapperABC <|-- WikiDomainMapper
-MapperABC <|-- WikiDomainMapperABC
-ClassifierABC <|-- WikiElementClassifierABC
-MapperABC <|-- WikiElementPayloadMapperABC
 WikiFigureElementParserABC <|-- WikiFigureElementParser
 FigureHtmlParserABC <|-- WikiFigureElementParserABC
 WikiTagParserABC <|-- WikiFigureElementParserABC
@@ -1559,7 +1522,7 @@ WikiListParserABC <|-- WikiParagraphParserABC
 WikiParagraphElementParserABC <|-- WikiParagraphParserABC
 WikiDelegatingHtmlParserBase <|-- WikiParagraphParserBase
 WikiParagraphElementParserABC <|-- WikiParagraphParserBase
-WikiElementPayloadMapperABC <|-- WikiParsedPayloadMapper
+MapperABC <|-- WikiParsedPayloadMapper
 ParserABC <|-- WikiParser
 ReferencesWrapParser <|-- WikiReferencesElementParser
 WikiReferencesParserBase <|-- WikiReferencesElementParser
@@ -1582,12 +1545,9 @@ WikiSectionNodeParserABC <|-- WikiSubSectionParserABC
 SubSubSectionLevelMixin <|-- WikiSubSubSectionParserABC
 WikiSectionNodeParserABC <|-- WikiSubSubSectionParserABC
 GroupParsingMixin <|-- WikiTableBaseMapper
-MatchesMixin <|-- WikiTableBaseMapper
+MapperABC <|-- WikiTableBaseMapper
 RowMappingMixin <|-- WikiTableBaseMapper
 TableDomainMapperABC <|-- WikiTableBaseMapper
-WikiTablePayloadCollectMixin <|-- WikiTableBaseMapper
-WikiTablePayloadTransformMixin <|-- WikiTableBaseMapper
-TableParserABC <|-- WikiTableBaseParser
 WikiTableParserABC <|-- WikiTableElementParser
 TableHtmlParserABC <|-- WikiTableElementParserABC
 WikiTagParserABC <|-- WikiTableElementParserABC

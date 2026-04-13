@@ -1,7 +1,7 @@
-from scrapers.mappers.mapped_wiki_table_mapper import MappedWikiTableMapper
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 
-class RaceResultsTableMapper(MappedWikiTableMapper):
+class RaceResultsTableMapper(WikiTableBaseMapper):
     table_type = "race_results"
     missing_columns_policy = "require_round_and_winner"
     extra_columns_policy = "ignore"

@@ -8,19 +8,11 @@ class CircuitLapRecordsTableClassifier
 abstract class ClassifierABC
 class DriverResultsSectionTableClassifier
 class PassthroughSectionTableClassifier
-abstract class SectionInfoboxClassifierABC
-abstract class SectionListClassifierABC
 abstract class SectionTableClassifierABC
-abstract class SectionTextClassifierABC
-abstract class WikiElementClassifierABC
 
 SectionTableClassifierABC <|-- CircuitLapRecordsTableClassifier
 SectionTableClassifierABC <|-- DriverResultsSectionTableClassifier
 SectionTableClassifierABC <|-- PassthroughSectionTableClassifier
-ClassifierABC <|-- SectionInfoboxClassifierABC
-ClassifierABC <|-- SectionListClassifierABC
 ClassifierABC <|-- SectionTableClassifierABC
-ClassifierABC <|-- SectionTextClassifierABC
-ClassifierABC <|-- WikiElementClassifierABC
 
 @enduml

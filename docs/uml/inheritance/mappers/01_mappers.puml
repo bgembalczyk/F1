@@ -21,42 +21,30 @@ class FormerConstructorsTableMapper
 class GrandsPrixTableMapper
 class IdentitySectionTableRecordMapper
 class LapRecordsWikiTableMapper
-class MappedWikiTableMapper
 abstract class MapperABC
-abstract class MatchesMixin
 class NonChampionshipRacesTableMapper
 abstract class ParseGroupMixin
 class PointsScoringSystemsHistoryTableMapper
 class RaceResultsTableMapper
 abstract class RowMappingMixin
 class SeasonsTableMapper
-abstract class SectionInfoboxRecordMapperABC
-abstract class SectionListRecordMapperABC
-abstract class SectionTableRecordMapperABC
-abstract class SectionTextRecordMapperABC
 class ShortenedRacesPointsTableMapper
 class SprintPointsTableMapper
 class StandingsTableMapper
 abstract class TableDomainMapperABC
-abstract class TableMapperABC
 class TableRecordMapper
 class TyreManufacturersBySeasonTableMapper
-class WikiDomainMapper
-abstract class WikiDomainMapperABC
-abstract class WikiElementPayloadMapperABC
 class WikiParsedPayloadMapper
 class WikiTableBaseMapper
-abstract class WikiTablePayloadCollectMixin
-abstract class WikiTablePayloadTransformMixin
 class WorldChampionshipsRacesTableMapper
 
 WikiTableBaseMapper <|-- BaseRedFlaggedRacesTableMapper
-SectionTableRecordMapperABC <|-- CircuitEventsTableRecordMapper
-SectionTableRecordMapperABC <|-- CircuitLapRecordsTableRecordMapper
-MappedWikiTableMapper <|-- CircuitsListTableMapper
+MapperABC <|-- CircuitEventsTableRecordMapper
+MapperABC <|-- CircuitLapRecordsTableRecordMapper
+WikiTableBaseMapper <|-- CircuitsListTableMapper
 WikiTableBaseMapper <|-- CurrentConstructorsTableMapper
 WikiTableBaseMapper <|-- DriverOrderedTableMapper
-SectionTableRecordMapperABC <|-- DriverResultsTableRecordMapper
+MapperABC <|-- DriverResultsTableRecordMapper
 DriverOrderedTableMapper <|-- DriversListTableMapper
 WikiTableBaseMapper <|-- EngineManufacturersTableMapper
 WikiTableBaseMapper <|-- EngineRegulationTableMapper
@@ -65,35 +53,24 @@ DriverOrderedTableMapper <|-- FatalitiesTableMapper
 WikiTableBaseMapper <|-- FemaleDriversTableMapper
 WikiTableBaseMapper <|-- FormerConstructorsTableMapper
 WikiTableBaseMapper <|-- GrandsPrixTableMapper
-SectionTableRecordMapperABC <|-- IdentitySectionTableRecordMapper
-MappedWikiTableMapper <|-- LapRecordsWikiTableMapper
-WikiTableBaseMapper <|-- MappedWikiTableMapper
+MapperABC <|-- IdentitySectionTableRecordMapper
+WikiTableBaseMapper <|-- LapRecordsWikiTableMapper
 BaseRedFlaggedRacesTableMapper <|-- NonChampionshipRacesTableMapper
 WikiTableBaseMapper <|-- PointsScoringSystemsHistoryTableMapper
-MappedWikiTableMapper <|-- RaceResultsTableMapper
+WikiTableBaseMapper <|-- RaceResultsTableMapper
 WikiTableBaseMapper <|-- SeasonsTableMapper
-MapperABC <|-- SectionInfoboxRecordMapperABC
-MapperABC <|-- SectionListRecordMapperABC
-MapperABC <|-- SectionTableRecordMapperABC
-MapperABC <|-- SectionTextRecordMapperABC
-WikiTableBaseMapper <|-- ShortenedRacesPointsTableMapper
+MapperABC <|-- ShortenedRacesPointsTableMapper
 WikiTableBaseMapper <|-- SprintPointsTableMapper
-MappedWikiTableMapper <|-- StandingsTableMapper
+WikiTableBaseMapper <|-- StandingsTableMapper
 MapperABC <|-- TableDomainMapperABC
-MapperABC <|-- TableMapperABC
 ParseGroupMixin <|-- TableRecordMapper
 RowMappingMixin <|-- TableRecordMapper
 WikiTableBaseMapper <|-- TyreManufacturersBySeasonTableMapper
-WikiDomainMapperABC <|-- WikiDomainMapper
-MapperABC <|-- WikiDomainMapperABC
-MapperABC <|-- WikiElementPayloadMapperABC
-WikiElementPayloadMapperABC <|-- WikiParsedPayloadMapper
-MatchesMixin <|-- WikiTableBaseMapper
+MapperABC <|-- WikiParsedPayloadMapper
+MapperABC <|-- WikiTableBaseMapper
 ParseGroupMixin <|-- WikiTableBaseMapper
 RowMappingMixin <|-- WikiTableBaseMapper
 TableDomainMapperABC <|-- WikiTableBaseMapper
-WikiTablePayloadCollectMixin <|-- WikiTableBaseMapper
-WikiTablePayloadTransformMixin <|-- WikiTableBaseMapper
 BaseRedFlaggedRacesTableMapper <|-- WorldChampionshipsRacesTableMapper
 
 @enduml

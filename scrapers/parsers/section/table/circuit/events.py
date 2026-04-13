@@ -4,12 +4,12 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.section.table.base import TableSectionParser
-from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.section.parse_results import SectionParseResult
 
 
-class CircuitEventsTableRecordMapper(SectionTableRecordMapperABC[dict[str, Any], Any]):
+class CircuitEventsTableRecordMapper(MapperABC[dict[str, Any], dict[str, Any] | None]):
     def map(
         self,
         table_data: dict[str, Any],

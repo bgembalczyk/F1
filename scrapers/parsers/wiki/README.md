@@ -36,8 +36,8 @@ Parsery są podzielone na cztery warstwy odpowiadające elementom HTML Wikipedii
 
 5. **Table Domain Mapper** (`scrapers/parsers/table/wiki/`)
    - odpowiedzialność: mapowanie już sparsowanych danych tabelarycznych (`dict`) na rekordy domenowe,
-   - klasa bazowa: `WikiTableBaseParser` (przyjmuje `dict`, zwraca `dict`),
-   - **WAŻNE:** `WikiTableBaseParser` i jego podklasy NIE parsują HTML — przetwarzają dane
+   - klasa bazowa: `WikiTableBaseMapper` (przyjmuje `dict`, zwraca `dict`),
+   - **WAŻNE:** `WikiTableBaseMapper` i jego podklasy NIE parsują HTML — przetwarzają dane
      wyjściowe parsera HTML tabeli. Są mapperami domenowymi, nie parserami HTML.
 
 Pełna decyzja architektoniczna: `ADR-0006`.
@@ -61,14 +61,13 @@ Concrete wiki HTML parsers
   ├── WikiNavboxElementParser / WikiNavboxParser
   └── WikiFigureElementParser / WikiFigureParser
 
-WikiTableBaseParser   [DOMAIN MAPPER – wejście: dict, nie Tag]
+WikiTableBaseMapper   [DOMAIN MAPPER – wejście: dict, nie Tag]
   ├── DriverOrderedTableParser  (scrapers/parsers/table/base_ordered.py)
   │   └── DriversListTableParser
-  ├── MappedWikiTableMapper
-  │   ├── StandingsTableMapper
-  │   ├── RaceResultsTableMapper
-  │   ├── LapRecordsWikiTableMapper
-  │   └── CircuitsListTableMapper
+  ├── StandingsTableMapper
+  ├── RaceResultsTableMapper
+  ├── LapRecordsWikiTableMapper
+  ├── CircuitsListTableMapper
   └── ... (inne parsery tabel domenowych)
 
 WikiSectionParserABC [ABC – BeautifulSoup/Tag → SectionParseResult]
@@ -102,7 +101,7 @@ rodzin wiki.
 
 - Parsery elementarne nie mapują bezpośrednio na rekordy domenowe.
 - Parsery sekcji składają strukturę i przekazują dane niżej/wyżej, bez logiki domenowej.
-- Mappery domenowe tabel wiki (`WikiTableBaseParser`) realizują mapowanie kolumn i normalizację
+- Mappery domenowe tabel wiki (`WikiTableBaseMapper`) realizują mapowanie kolumn i normalizację
   rekordów — przyjmują `dict` (dane po parsowaniu HTML), nie `Tag`.
 - Moduły domenowe korzystają z parserowych kontraktów ABC, nie z odwrotnych zależności
   parser → domena.
@@ -124,7 +123,7 @@ Jeśli klasa jest etapem orkiestracji pipeline, stosuj `*Stage`/`*Processor` z `
 | Suffix klasy | Wejście | Wyjście | Klasa bazowa |
 |---|---|---|---|
 | `*TableParser` (HTML) | `Tag` (`<table>`) | `dict` | `WikiTableHtmlParser` |
-| `*TableMapper` (domain) | `dict` | `dict` | `WikiTableBaseParser` |
+| `*TableMapper` (domain) | `dict` | `dict` | `WikiTableBaseMapper` |
 | `*ListParser` | `Tag` (`<ul>`/`<ol>`) | `dict` | `ListParser` / `WikiListParser` |
 | `*SectionParser` | `BeautifulSoup`/`Tag` | `SectionParseResult` | `WikiSectionParserABC` |
 | `*SectionParser` (nested) | `Tag` | `dict` | `NestedWikiSectionParser` |
