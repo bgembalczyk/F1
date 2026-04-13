@@ -10,9 +10,9 @@ from scrapers.helpers.lap_record import is_lap_record_table
 from scrapers.helpers.layout import detect_layout_name
 from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
+from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
-from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.section.parse_results import SectionParseResult
 
 
@@ -41,7 +41,7 @@ class CircuitLapRecordsTableClassifier(
 
 
 class CircuitLapRecordsTableRecordMapper(
-    SectionTableRecordMapperABC[tuple[Tag, list[str]], Any],
+    MapperABC[tuple[Tag, list[str]], dict[str, Any] | None],
 ):
     def __init__(self, *, options: ScraperOptions, url: str) -> None:
         self._options = options

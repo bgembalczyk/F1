@@ -8,7 +8,6 @@ from typing import TypeVar
 
 from bs4 import BeautifulSoup
 
-from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.contracts.classifier_abc import ClassifierABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 
@@ -16,7 +15,6 @@ TablePayload = dict[str, Any]
 TableRecord = dict[str, Any]
 
 ClassificationT = TypeVar("ClassificationT")
-PipelineT = TypeVar("PipelineT")
 
 
 class SectionTablesHtmlParserABC(HtmlSoupParserABC[list[TablePayload]], ABC):
@@ -35,20 +33,3 @@ class SectionTableClassifierABC(
 
     @abstractmethod
     def classify(self, table_data: TablePayload) -> ClassificationT | None: ...
-
-
-class SectionTableRecordMapperABC(
-    MapperABC[TablePayload, TableRecord | None],
-    ABC,
-    Generic[ClassificationT, PipelineT],
-):
-    """Mapper payloadu tabeli + klasyfikacji na rekord domenowy sekcji."""
-
-    @abstractmethod
-    def map(
-        self,
-        raw: TablePayload,
-        *,
-        table_classification: ClassificationT,
-        table_pipeline: PipelineT,
-    ) -> TableRecord | None: ...

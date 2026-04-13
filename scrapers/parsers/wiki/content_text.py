@@ -34,7 +34,6 @@ class ContentTextParser(ParserABC):
                 ),
                 section_locator=self.toolbox.section_locator,
                 section_assembler=self.toolbox.section_assembler,
-                mapper_registry=self.toolbox.mapper_registry,
             )
             self.section_parser = RecursiveSectionParser(toolbox=self.toolbox)
 
@@ -76,4 +75,4 @@ class ContentTextParser(ParserABC):
                     fragment=fragment,
                 ),
             )
-        return self.toolbox.mapper_registry.domain_mapper.map({"sections": sections})
+        return {"sections": sections}

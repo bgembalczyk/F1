@@ -11,9 +11,9 @@ from scrapers.configs.public import TableConfig
 from scrapers.driver_results_schema_factory import DriverResultsSchemaFactory
 from scrapers.driver_results_table_classifier import DriverResultsTableClassifier
 from scrapers.options import ScraperOptions
+from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
-from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.constants import UNKNOWN_VALUE
 from scrapers.section.parse_results import SectionParseResult
@@ -33,7 +33,7 @@ class DriverResultsSectionTableClassifier(SectionTableClassifierABC[str]):
         return self._classifier.classify(headers)
 
 
-class DriverResultsTableRecordMapper(SectionTableRecordMapperABC[str, TablePipeline]):
+class DriverResultsTableRecordMapper(MapperABC[dict[str, Any], dict[str, Any] | None]):
     def map(
         self,
         raw: dict[str, Any],

@@ -5,11 +5,9 @@ from typing import Any
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.parsers.wiki.table.mapped.lap_records_wiki_table_mapper import (
     LapRecordsWikiTableMapper,
-)
-from scrapers.parsers.wiki.table.mapped.mapped_wiki_table_mapper import (
-    MappedWikiTableMapper,
 )
 from scrapers.parsers.wiki.table.mapped.race_results_table_mapper import (
     RaceResultsTableMapper,
@@ -26,7 +24,7 @@ class ArticleTablesAssembler:
         self,
         *,
         html_parser: ArticleTablesParser | None = None,
-        specialized_mappers: list[MappedWikiTableMapper] | None = None,
+        specialized_mappers: list[WikiTableBaseMapper] | None = None,
     ) -> None:
         self._html_parser = html_parser or ArticleTablesParser()
         self._specialized_mappers = specialized_mappers or [

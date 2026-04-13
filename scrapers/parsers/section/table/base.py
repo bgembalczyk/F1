@@ -8,12 +8,12 @@ from bs4 import BeautifulSoup
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
+from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
 from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
-from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.parsers.section.table.contracts import TablePayload
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.pipeline_table import TablePipeline
@@ -31,7 +31,7 @@ class PassthroughSectionTableClassifier(SectionTableClassifierABC[dict[str, Any]
 
 
 class IdentitySectionTableRecordMapper(
-    SectionTableRecordMapperABC[dict[str, Any], Any],
+    MapperABC[dict[str, Any], dict[str, Any] | None],
 ):
     """Domyślny mapper: zwraca wynik klasyfikacji."""
 
@@ -65,7 +65,7 @@ class TableSectionParser(SectionParserBase):
         include_source_table: bool = False,
         html_parser: HtmlSoupParserABC[list[TablePayload]] | None = None,
         classifier: SectionTableClassifierABC[Any] | None = None,
-        mapper: SectionTableRecordMapperABC[Any, Any] | None = None,
+        mapper: Any | None = None,
     ) -> None:
         self._section_id = SectionId.from_raw(section_id)
         self._section_label = EntityName.from_raw(section_label)
