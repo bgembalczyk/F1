@@ -9,7 +9,6 @@ from scrapers.component_metadata_wiki import ComponentMetadata
 from scrapers.component_metadata_wiki import build_component_metadata
 from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
-from scrapers.family_contracts import ListScraperContract
 from scrapers.schema_table import TableSchema
 from scrapers.schema_table import TableSchemaBuilder
 from scrapers.scraper_table import F1TableScraper
@@ -19,7 +18,7 @@ if TYPE_CHECKING:
     from collections.abc import Sequence
 
 
-class SeedListTableScraper(F1TableScraper, ListScraperContract):
+class SeedListTableScraper(F1TableScraper):
     """Wspólna baza dla scraperów seed/list opartych o tabelę."""
 
     options_profile: ClassVar[str | None] = "seed_soft"

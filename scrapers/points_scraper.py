@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base_points_scraper import BasePointsScraper
 from scrapers.config_factory_points import POINTS_SCORING_SYSTEMS_HISTORY_CONFIG
 from scrapers.errors.parse import ScraperParseError
 from scrapers.options import ScraperOptions
@@ -17,6 +16,8 @@ from scrapers.parsers.section.sub_sub_section.sprint_races import (
     SprintRacesSubSubSectionParser,
 )
 from scrapers.parsers.wiki.body_content_assembler import BodyContentAssembler
+from scrapers.scraper_table import F1TableScraper
+from scrapers.source_catalog import POINTS_SCORING_SYSTEMS
 from scrapers.transformers.record.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
 )
@@ -25,10 +26,11 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class PointsScraper(BasePointsScraper):
+class PointsScraper(F1TableScraper):
     """Aggregate scraper joining all points scoring tables from one article."""
 
-    url = BasePointsScraper.BASE_URL
+    BASE_URL = POINTS_SCORING_SYSTEMS.base_url
+    url = BASE_URL
     _SUPPORTED_EXPORT_SCOPES = {"all", "history", "shortened", "sprint"}
 
     def __init__(

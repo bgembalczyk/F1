@@ -1,9 +1,9 @@
 """Points scraper contract tests."""
 
-from scrapers.base_points_scraper import BasePointsScraper
-from tests.support.refactored_base_classes_utils import POINTS_SYSTEMS_URL
+from scrapers.points_scraper import PointsScraper
+from scrapers.source_catalog import POINTS_SCORING_SYSTEMS
 
 
 def test_points_base_url_is_set() -> None:
-    """Base points scraper URL remains stable."""
-    assert BasePointsScraper.BASE_URL == POINTS_SYSTEMS_URL
+    """Points scraper URL remains stable."""
+    assert PointsScraper.BASE_URL == POINTS_SCORING_SYSTEMS.base_url
