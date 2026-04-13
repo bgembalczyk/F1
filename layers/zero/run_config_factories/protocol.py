@@ -1,9 +1,5 @@
-from typing import Protocol
-from typing import runtime_checkable
+from layers.zero.run_config_factories.base import LayerZeroRunConfigFactory
 
-from layers.seed.registry.entries import ListJobRegistryEntry
+LayerZeroRunConfigFactoryProtocol = LayerZeroRunConfigFactory
 
-
-@runtime_checkable
-class LayerZeroRunConfigFactoryProtocol(Protocol):
-    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]: ...
+__all__ = ["LayerZeroRunConfigFactoryProtocol"]

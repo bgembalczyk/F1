@@ -136,22 +136,8 @@ class SeasonGenericTableOrchestrator(SeasonTableOrchestratorABC):
         return []
 
 
-class SeasonTablePayloadMapperABC(ABC):
-    @abstractmethod
-    def update_url(self, url: str) -> None: ...
 
-    @abstractmethod
-    def map(
-        self,
-        table_data: dict[str, Any],
-        *,
-        expected_headers: list[str],
-        schema: TableSchemaDSL,
-        default_column: Any | None = None,
-    ) -> list[dict[str, Any]]: ...
-
-
-class SeasonTablePayloadMapper(SeasonTablePayloadMapperABC):
+class SeasonTablePayloadMapper:
     def __init__(
         self,
         *,
@@ -300,5 +286,4 @@ __all__ = [
     "SeasonTableOrchestratorABC",
     "SeasonTableParsingService",
     "SeasonTablePayloadMapper",
-    "SeasonTablePayloadMapperABC",
 ]

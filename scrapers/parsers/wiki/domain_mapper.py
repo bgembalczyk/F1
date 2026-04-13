@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from scrapers.parsers.contracts.mapping import WikiDomainMapperABC
+from typing import Any
 
 
-class WikiDomainMapper(WikiDomainMapperABC):
+class WikiDomainMapper:
     """Default parser/domain boundary mapper (identity transport)."""
 
     def map(self, raw: dict[str, object]) -> dict[str, object]:

@@ -13,7 +13,10 @@
   "infobox_record": {
     "title": "2024 Formula One World Championship",
     "rows": {
-      "Races": "24"
+      "Races": {
+        "text": "24",
+        "links": []
+      }
     }
   },
   "postprocess_record": {

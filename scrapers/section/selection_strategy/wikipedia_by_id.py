@@ -6,10 +6,9 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.helpers.html_utils import find_heading
-from scrapers.section.selection_strategy.base import SectionSelectionStrategy
 
 
-class WikipediaSectionByIdSelectionStrategy(SectionSelectionStrategy):
+class WikipediaSectionByIdSelectionStrategy:
     """Strategia oparta o wyszukiwanie sekcji Wikipedii po identyfikatorze."""
 
     def __init__(

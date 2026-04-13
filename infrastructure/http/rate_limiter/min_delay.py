@@ -4,10 +4,8 @@ import secrets
 import time
 from collections.abc import Callable
 
-from infrastructure.http.rate_limiter.base import RateLimiter
 
-
-class MinDelayRateLimiter(RateLimiter):
+class MinDelayRateLimiter:
     """Minimalny odstęp + jitter między requestami."""
 
     def __init__(

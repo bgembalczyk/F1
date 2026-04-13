@@ -1,21 +1,6 @@
-from abc import ABC
-from abc import abstractmethod
-from collections.abc import Sequence
-from pathlib import Path
-from typing import Any
+from complete_extractor.base import CompleteExtractorBase as BaseDataExtractor
 
-from exporters.data import DataExporter
-from infrastructure.http.policies.http import HttpPolicy
-from scrapers.adapters.result_tabular import ResultTabularAdapter
-from scrapers.component_metadata_wiki import validate_metadata_for_component_class
-from scrapers.logging import get_logger
-from scrapers.options import ScraperOptions
-from scrapers.results import ScrapeResult
-from scrapers.services.result_export import ResultExportService
-from scrapers.wiring import ScraperRuntimeFactory
-
-
-class BaseDataExtractor(ABC):
+__all__ = ["BaseDataExtractor"]
     """
     Bazowa klasa dla ekstraktorów danych, które orkiestrują wiele scraperów.
 

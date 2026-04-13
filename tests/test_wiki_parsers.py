@@ -167,8 +167,8 @@ def test_infobox_parser():
     parser = WikiInfoboxParser()
     result = parser.parse(soup.find("table"))
     assert result["title"] == "Test Article"
-    assert result["rows"]["Born"] == "1985"
-    assert result["rows"]["Nationality"] == "British"
+    assert result["rows"]["Born"]["text"] == "1985"
+    assert result["rows"]["Nationality"]["text"] == "British"
 
 
 def test_paragraph_parser():

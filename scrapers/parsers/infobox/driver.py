@@ -13,7 +13,7 @@ from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.default_driver_infobox_provider import (
     DefaultDriverInfoboxProvider,
 )
-from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
+from scrapers.parsers.default_driver_infobox_provider import DefaultDriverInfoboxProvider
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 
 
@@ -26,7 +26,7 @@ class DriverInfoboxParser(WikiInfoboxElementParserABC):
         options: ScraperOptions | None = None,
         run_id: str | None = None,
         url: str | None = None,
-        parser_provider: DriverInfoboxProviderABC | None = None,
+        parser_provider: DefaultDriverInfoboxProvider | None = None,
     ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls

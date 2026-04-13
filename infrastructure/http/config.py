@@ -7,9 +7,9 @@ from config.app.provider import AppConfigProvider
 from infrastructure.http.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http.policies.constants import DEFAULT_HTTP_RETRIES
 from infrastructure.http.policies.constants import DEFAULT_HTTP_TIMEOUT
-from infrastructure.http.policies.retry.base import RetryPolicy
+from infrastructure.http.policies.retry.default import DefaultRetryPolicy
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
-from infrastructure.http.rate_limiter.base import RateLimiter
+from infrastructure.http.rate_limiter.min_delay import MinDelayRateLimiter
 
 
 @dataclass
@@ -21,8 +21,8 @@ class HttpClientConfig:
     backoff_seconds: float = DEFAULT_HTTP_BACKOFF_SECONDS
     min_delay_seconds: float = 1.5
     jitter_seconds: float = 0.7
-    retry_policy: RetryPolicy | None = None
-    rate_limiter: RateLimiter | None = None
+    retry_policy: DefaultRetryPolicy | None = None
+    rate_limiter: MinDelayRateLimiter | None = None
     cache: TextCacheProtocol | None = None
     cache_dir: Path | str | None = None
     cache_ttl_days: int = 30

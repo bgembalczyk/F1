@@ -6,8 +6,8 @@ from collections.abc import Iterable
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
-from infrastructure.http.policies.retry.base import RetryPolicy
-from infrastructure.http.rate_limiter.base import RateLimiter
+from infrastructure.http.policies.retry.default import DefaultRetryPolicy
+from infrastructure.http.rate_limiter.min_delay import MinDelayRateLimiter
 
 
 class RequestExecutor:
@@ -16,8 +16,8 @@ class RequestExecutor:
     def __init__(
         self,
         *,
-        retry_policy: RetryPolicy,
-        rate_limiter: RateLimiter,
+        retry_policy: DefaultRetryPolicy,
+        rate_limiter: MinDelayRateLimiter,
         sleep_fn: Callable[[float], None] | None = None,
     ) -> None:
         self._retry_policy = retry_policy

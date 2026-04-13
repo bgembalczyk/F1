@@ -13,7 +13,10 @@
   "infobox_record": {
     "title": "Lewis Hamilton",
     "rows": {
-      "Nationality": "British"
+      "Nationality": {
+        "text": "British",
+        "links": []
+      }
     }
   },
   "postprocess_record": {

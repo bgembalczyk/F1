@@ -1,6 +1,4 @@
-from scrapers.parsers.contracts.mapping import WikiDomainMapperABC
 from scrapers.parsers.contracts.mapping import WikiElementClassifierABC
-from scrapers.parsers.contracts.mapping import WikiElementPayloadMapperABC
 from scrapers.parsers.contracts.wiki_elements import WikiFigureElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
@@ -13,7 +11,5 @@ __all__ = [
     "WikiListElementParserABC",
     "WikiInfoboxElementParserABC",
     "WikiFigureElementParserABC",
-    "WikiDomainMapperABC",
     "WikiElementClassifierABC",
-    "WikiElementPayloadMapperABC",
 ]

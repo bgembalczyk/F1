@@ -9,11 +9,7 @@ from scrapers.mixins.metadata_binding import MetadataBindingMixin
 from scrapers.section.parse_results import SectionParseResult
 
 
-class SectionMetadataBindingMixin(MetadataBindingMixin):
-    """Section-specific metadata binding without runtime state."""
-
-
-_SECTION_METADATA_BINDER = SectionMetadataBindingMixin()
+_SECTION_METADATA_BINDER = MetadataBindingMixin()
 
 
 def build_section_metadata(

@@ -1,40 +1,14 @@
-from dataclasses import dataclass
-from typing import Any
-from typing import Protocol
-from typing import runtime_checkable
+from complete_extractor.base import CompositeDataExtractorChildren
+from complete_extractor.base import CompleteExtractorBase as CompositeDataExtractor
+from complete_extractor.base import ListScraperProtocol
+from complete_extractor.base import SingleScraperProtocol
 
-from complete_extractor.data_extractor import BaseDataExtractor
-from infrastructure.http.errors.base import RequestError
-from scrapers.errors.domain_parse import DomainParseError
-from scrapers.errors.network import ScraperNetworkError
-from scrapers.errors.parse import ScraperParseError
-from scrapers.progress import ProgressAdapter
-from scrapers.progress import TqdmProgressAdapter
-from scrapers.source_adapter import IterableSourceAdapter
-from scrapers.source_adapter import MultiIterableSourceAdapter
-
-
-@runtime_checkable
-class ListScraperProtocol(Protocol):
-    def fetch(self) -> list[dict[str, Any]]: ...
-
-
-@runtime_checkable
-class SingleScraperProtocol(Protocol):
-    def extract_by_url(self, url: str) -> list[dict[str, Any]]: ...
-
-
-@dataclass(frozen=True)
-class CompositeDataExtractorChildren:
-    list_scraper: ListScraperProtocol | list[ListScraperProtocol]
-    single_scraper: SingleScraperProtocol
-    records_adapter: (
-        IterableSourceAdapter[dict[str, Any]]
-        | MultiIterableSourceAdapter[dict[str, Any]]
-    )
-
-
-class CompositeDataExtractor(BaseDataExtractor):
+__all__ = [
+    "CompositeDataExtractor",
+    "CompositeDataExtractorChildren",
+    "ListScraperProtocol",
+    "SingleScraperProtocol",
+]
     def __init__(
         self,
         *,

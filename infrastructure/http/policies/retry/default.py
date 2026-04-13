@@ -7,12 +7,11 @@ from typing import Any
 
 from infrastructure.http.policies.constants import SERVER_ERROR_END
 from infrastructure.http.policies.constants import SERVER_ERROR_START
-from infrastructure.http.policies.retry.base import RetryPolicy
 
 _RANDOM = SystemRandom()
 
 
-class DefaultRetryPolicy(RetryPolicy):
+class DefaultRetryPolicy:
     """Domyślna strategia retry dla błędów 429/5xx (+częsty 403 od bot-policy)."""
 
     def __init__(self, *, retries: int = 0, backoff_seconds: float = 0.5) -> None:

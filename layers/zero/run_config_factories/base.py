@@ -4,13 +4,11 @@ from abc import ABC
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 
-from layers.zero.run_config_factories.protocol import LayerZeroRunConfigFactoryProtocol
-
 if TYPE_CHECKING:
     from layers.seed.registry.entries import ListJobRegistryEntry
 
 
-class LayerZeroRunConfigFactory(LayerZeroRunConfigFactoryProtocol, ABC):
+class LayerZeroRunConfigFactory(ABC):
     @abstractmethod
     def create_scraper_kwargs(
         self,
