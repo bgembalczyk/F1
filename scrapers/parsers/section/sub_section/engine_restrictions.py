@@ -7,10 +7,13 @@ from scrapers.parsers.engine_restrictions_table_mapper import (
     EngineRestrictionsTableMapper,
 )
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class EngineSubSectionParser(ApplyForElementsMixin, SubSectionParser):
+class EngineSubSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+    heading_class = "mw-heading4"
+    output_key = "sub_sub_sections"
+
     def __init__(self) -> None:
         super().__init__()
         self._table_mapper = EngineRestrictionsTableMapper()

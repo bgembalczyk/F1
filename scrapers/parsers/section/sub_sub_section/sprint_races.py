@@ -4,11 +4,14 @@ from bs4 import Tag
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.sub_sub_section.base import SubSubSectionParser
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.sprint_points_table_mapper import SprintPointsTableMapper
 
 
-class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):
+class SprintRacesSubSubSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+    heading_class = "mw-heading5"
+    output_key = "sub_sub_sub_sections"
+
     def __init__(self) -> None:
         super().__init__()
         self._table_parser = SprintPointsTableMapper()

@@ -29,6 +29,7 @@ PARSER_ABSTRACT_BASE_NAMES = {
     "NestedWikiSectionParser",
     "SubSectionParser",
     "SubSubSectionParser",
+    "RecursiveSectionParser",
     "WikiTableHtmlParser",
 }
 

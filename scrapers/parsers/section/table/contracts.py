@@ -20,7 +20,7 @@ PipelineT = TypeVar("PipelineT")
 
 
 class SectionTablesHtmlParserABC(HtmlSoupParserABC[list[TablePayload]], ABC):
-    """HTML parser warstwy sekcji: BeautifulSoup -> lista payloadów tabel."""
+    """Backward-compat alias. Use HtmlSoupParserABC[list[TablePayload]] directly."""
 
     @abstractmethod
     def parse(self, raw: BeautifulSoup) -> list[TablePayload]: ...

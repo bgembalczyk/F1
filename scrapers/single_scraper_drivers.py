@@ -8,7 +8,11 @@ from scrapers.dto import TablesPayloadDTO
 from scrapers.services.domain_record.driver_pipeline_service import (
     DriverDomainRecordInput,
 )
-from scrapers.single_wiki_article import SectionAdapterScraperBase
+from scrapers.adapters.section.adapter import SectionAdapter
+from scrapers.single_wiki_article.single_article_scraper_base import ArticleScraperBase
+from scrapers.single_wiki_article.single_article_section_aware_mixin import (
+    SectionAwareMixin,
+)
 from scrapers.wiring.composition_drivers import DriverScraperCompositionFactory
 from scrapers.wiring.composition_drivers import DriverScraperDependencies
 
@@ -26,7 +30,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class SingleDriverScraper(SectionAdapterScraperBase):
+class SingleDriverScraper(SectionAdapter, SectionAwareMixin, ArticleScraperBase):
     def __init__(
         self,
         *,

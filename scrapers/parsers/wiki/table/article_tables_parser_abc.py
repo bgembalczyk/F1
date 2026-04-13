@@ -1,17 +1,11 @@
-from __future__ import annotations
+"""Backward-compatibility shim: ArticleTablesParserABC has been removed.
 
-from abc import ABC
-from abc import abstractmethod
-from typing import Any
+Subclasses should inherit WikiArticleParserABC directly.
+"""
 
 from scrapers.parsers.contracts.wiki_elements import WikiArticleParserABC
 
-
-class ArticleTablesParserABC(WikiArticleParserABC, ABC):
-    """Kontrakt parsera tabel całego artykułu."""
-
-    @abstractmethod
-    def parse(self, element: Any) -> list[dict[str, Any]]: ...
-
+#: Backward-compat alias.
+ArticleTablesParserABC = WikiArticleParserABC
 
 __all__ = ["ArticleTablesParserABC"]

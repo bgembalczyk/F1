@@ -14,7 +14,6 @@ class ListElementParser
 class NavboxElementParser
 class ReferencesWrapParser
 class SectionElementParser
-abstract class WikiArticleParserABC
 class WikiFigureElementParser
 abstract class WikiFigureElementParserABC
 class WikiFigureParser
@@ -31,7 +30,6 @@ abstract class WikiParagraphElementParserABC
 class WikiReferencesElementParser
 class WikiSectionElementParser
 
-HtmlSoupParserABC <|-- WikiArticleParserABC
 WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
 WikiInfoboxElementParserABC <|-- DriverInfoboxParser
 WikiFigureElementParserABC <|-- FigureElementParser

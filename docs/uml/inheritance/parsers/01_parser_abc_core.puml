@@ -12,7 +12,6 @@ abstract class InfoboxParserABC
 abstract class ParserABC
 abstract class SectionInfoboxesHtmlParserABC
 abstract class SectionListsHtmlParserABC
-abstract class SectionTablesHtmlParserABC
 abstract class SectionTextBlocksHtmlParserABC
 class SoupParser
 
@@ -23,7 +22,6 @@ ParserABC <|-- HtmlTagParserABC
 HtmlTagParserABC <|-- InfoboxParserABC
 HtmlSoupParserABC <|-- SectionInfoboxesHtmlParserABC
 HtmlSoupParserABC <|-- SectionListsHtmlParserABC
-HtmlSoupParserABC <|-- SectionTablesHtmlParserABC
 HtmlSoupParserABC <|-- SectionTextBlocksHtmlParserABC
 ParserABC <|-- SoupParser
 

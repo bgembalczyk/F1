@@ -3,8 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from scrapers.parsers.nested_child import NestedChildParser
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 
@@ -36,7 +35,10 @@ class TyreManufacturersBySeasonTableMapper(WikiTableBaseMapper):
         }
 
 
-class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
+class TyreManufacturersBySeasonSubSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading4"
+    output_key = "sub_sub_sections"
+
     def __init__(
         self,
         *,
@@ -52,7 +54,10 @@ class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
         return parsed
 
 
-class ManufacturersSectionParser(NestedWikiSectionParser):
+class ManufacturersSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading3"
+    output_key = "sub_sections"
+
     def __init__(
         self,
         *,
@@ -60,8 +65,9 @@ class ManufacturersSectionParser(NestedWikiSectionParser):
         **kwargs: Any,
     ) -> None:
         toolbox = kwargs.get("toolbox")
-        super().__init__(toolbox=toolbox)
-        self.child_parser = child_parser or TyreManufacturersBySeasonSubSectionParser(
+        super().__init__(
+            child_parser=child_parser
+            or TyreManufacturersBySeasonSubSectionParser(toolbox=toolbox),
             toolbox=toolbox,
         )
 

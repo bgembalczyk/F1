@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from typing import Any
 from typing import TypeAlias
 
@@ -11,28 +12,36 @@ from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
-from scrapers.parsers.wiki.parser_mixins import NestedSectionHandlingMixin
 
 SectionLevelParseResult: TypeAlias = dict[str, Any]
 
 
 class RecursiveSectionParser(
-    NestedSectionHandlingMixin,
     WikiElementParsingMixin,
     ParserABC,
 ):
-    """Generic recursive parser for heading levels h2-h6."""
+    """Generic recursive parser for heading levels h2-h6.
+
+    Supports a leaf mode when ``heading_class`` is ``None``: instead of
+    splitting elements by heading, it returns all child elements directly as
+    ``{"elements": [...]}``.
+    """
+
+    heading_class: str | None = "mw-heading3"
+    output_key: str = "sub_sections"
 
     def __init__(
         self,
         *,
-        heading_class: str,
-        output_key: str,
+        heading_class: str | None = None,
+        output_key: str | None = None,
         child_parser: NestedChildParser | None = None,
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
-        self.heading_class = heading_class
-        self.output_key = output_key
+        if heading_class is not None:
+            self.heading_class = heading_class
+        if output_key is not None:
+            self.output_key = output_key
         self.child_parser = child_parser
         self.toolbox = toolbox or build_default_section_toolbox()
         WikiElementParsingMixin.__init__(
@@ -45,6 +54,10 @@ class RecursiveSectionParser(
     def element_parsers(self):
         return self.toolbox.element_parsers
 
+    @staticmethod
+    def filter_child_tags(elements: Iterable[object]) -> list[Tag]:
+        return [element for element in elements if isinstance(element, Tag)]
+
     def parse(
         self,
         element: Tag | list[Tag],
@@ -52,6 +65,14 @@ class RecursiveSectionParser(
         context: SectionExtractionContext | None = None,
     ) -> SectionLevelParseResult:
         elements = list(element.children) if isinstance(element, Tag) else element
+        return self._parse_group(elements, context=context)
+
+    def parse_group(
+        self,
+        elements: list,
+        *,
+        context: SectionExtractionContext | None = None,
+    ) -> SectionLevelParseResult:
         return self._parse_group(elements, context=context)
 
     def _parse_group(
@@ -62,6 +83,10 @@ class RecursiveSectionParser(
     ) -> SectionLevelParseResult:
         section_context = context or SectionExtractionContext()
         tags = self.filter_child_tags(elements)
+
+        if self.heading_class is None:
+            return {"elements": self.parse_elements(tags, section_context=section_context)}
+
         parts = self.toolbox.section_locator.locate(
             tags,
             heading_class=self.heading_class,

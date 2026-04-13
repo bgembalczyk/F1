@@ -16,8 +16,7 @@ from scrapers.constants.constants_drivers import FATALITIES_REF_HEADER
 from scrapers.constants.constants_drivers import FATALITIES_SESSION_HEADER
 from scrapers.mappers.driver_ordered_table_mapper import DriverOrderedTableMapper
 from scrapers.parsers.nested_child import NestedChildParser
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
 
 
@@ -42,7 +41,10 @@ class FatalitiesTableMapper(DriverOrderedTableMapper):
         return self._required_headers.issubset(set(headers))
 
 
-class DetailByDriverSubSectionParser(SubSectionParser):
+class DetailByDriverSubSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading4"
+    output_key = "sub_sub_sections"
+
     def __init__(
         self,
         *,
@@ -64,7 +66,10 @@ class DetailByDriverSubSectionParser(SubSectionParser):
         return parsed
 
 
-class FatalitiesSectionParser(NestedWikiSectionParser):
+class FatalitiesSectionParser(RecursiveSectionParser):
+    heading_class = "mw-heading3"
+    output_key = "sub_sections"
+
     def __init__(
         self,
         *,
@@ -72,8 +77,8 @@ class FatalitiesSectionParser(NestedWikiSectionParser):
         **kwargs: Any,
     ) -> None:
         toolbox = kwargs.get("toolbox")
-        super().__init__(toolbox=toolbox)
-        self.child_parser = child_parser or DetailByDriverSubSectionParser(
+        super().__init__(
+            child_parser=child_parser or DetailByDriverSubSectionParser(toolbox=toolbox),
             toolbox=toolbox,
         )
 

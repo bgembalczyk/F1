@@ -26,7 +26,6 @@ abstract class ExtractListItemsMixin
 class FormerConstructorsSectionParser
 class GrandPrixByYearSectionParser
 class JimClarkTrophyParser
-abstract class NestedSectionHandlingMixin
 class SeasonCalendarParser
 class SeasonCalendarSectionParser
 class SeasonConstructorsStandingsSectionParser

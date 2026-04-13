@@ -7,7 +7,6 @@ from scrapers.mappers.points_scoring_systems_history_table_mapper import (
 )
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.sub_section.special_cases import (
     SpecialCasesSubSectionParser,
 )
@@ -17,12 +16,15 @@ from scrapers.parsers.section.sub_sub_section.shortened_races import (
 from scrapers.parsers.section.sub_sub_section.sprint_races import (
     SprintRacesSubSubSectionParser,
 )
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class PointsScoringSystemsSectionParser(ApplyForElementsMixin, NestedWikiSectionParser):
+class PointsScoringSystemsSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+    heading_class = "mw-heading3"
+    output_key = "sub_sections"
+
     def __init__(self) -> None:
-        super().__init__()
-        self.child_parser = SpecialCasesSubSectionParser()
+        super().__init__(child_parser=SpecialCasesSubSectionParser())
         self._table_parser = PointsScoringSystemsHistoryTableMapper()
 
     def parse(

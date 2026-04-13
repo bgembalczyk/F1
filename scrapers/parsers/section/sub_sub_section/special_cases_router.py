@@ -1,15 +1,18 @@
 from typing import Any
 
-from scrapers.parsers.section.sub_sub_section.base import SubSubSectionParser
 from scrapers.parsers.section.sub_sub_section.shortened_races import (
     ShortenedRacesSubSubSectionParser,
 )
 from scrapers.parsers.section.sub_sub_section.sprint_races import (
     SprintRacesSubSubSectionParser,
 )
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class SpecialCasesSubSubSectionRouter(SubSubSectionParser):
+class SpecialCasesSubSubSectionRouter(RecursiveSectionParser):
+    heading_class = "mw-heading5"
+    output_key = "sub_sub_sub_sections"
+
     def __init__(self) -> None:
         super().__init__()
         self.sprint_parser = SprintRacesSubSubSectionParser()
