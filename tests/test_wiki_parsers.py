@@ -24,7 +24,7 @@ from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.header import HeaderParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
-from scrapers.parsers.wiki.paragraph import WikiParagraphParser
+from scrapers.parsers.paragraph_element_parser import ParagraphElementParser
 from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
 from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.parsers.wiki.table import WikiTableParser
@@ -174,7 +174,7 @@ def test_infobox_parser():
 def test_paragraph_parser():
     html = "<p>Hello World</p>"
     soup = make_soup(html)
-    parser = WikiParagraphParser()
+    parser = ParagraphElementParser()
     result = parser.parse(soup.find("p"))
     assert result["text"] == "Hello World"
 
