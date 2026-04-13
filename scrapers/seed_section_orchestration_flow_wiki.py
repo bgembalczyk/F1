@@ -11,11 +11,8 @@ from typing import Any
 
 from scrapers.base_flow_wiki import BaseOrchestrationFlow
 from scrapers.orchestration.audit_entry import AuditEntry
-from scrapers.orchestration.components.extractor import BaseExtractor
+from scrapers.orchestration.components.base import BaseComponent
 from scrapers.orchestration.components.normalizer import BaseNormalizer
-from scrapers.orchestration.components.orchestrator import BaseOrchestrator
-from scrapers.orchestration.mixins.quality_metrics import QualityMetricsMixin
-from scrapers.orchestration.mixins.url_resolver import UrlResolverMixin
 from scrapers.orchestration.stages import lifecycle
 from scrapers.orchestration.step_declaration import StepDeclaration
 from scrapers.parsers.registry import resolve_parser_name
@@ -39,7 +36,10 @@ MIGRATED_STAGE_DOMAINS: frozenset[str] = frozenset(
 )
 
 
-class DomainSeedExtractor(BaseExtractor):
+class DomainSeedExtractor(BaseComponent):
+    def extract(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
+        return self.run_with_lifecycle(self._extract, payload)
+
     def _extract(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
         return self.build_envelope(
             stage=payload.stage,
@@ -49,7 +49,7 @@ class DomainSeedExtractor(BaseExtractor):
         )
 
 
-class DomainSeedNormalizer(UrlResolverMixin, BaseNormalizer):
+class DomainSeedNormalizer(BaseNormalizer):
     def _normalize(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
         records = [self.resolve_url_row(self.domain, row) for row in payload.records]
         return self.build_envelope(
@@ -60,7 +60,10 @@ class DomainSeedNormalizer(UrlResolverMixin, BaseNormalizer):
         )
 
 
-class DomainStageOrchestrator(QualityMetricsMixin, BaseOrchestrator):
+class DomainStageOrchestrator(BaseComponent):
+    def execute(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
+        return self.run_with_lifecycle(self._execute, payload)
+
     def _execute(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
         metrics = self.build_stage_metrics(
             input_records=int(
@@ -75,6 +78,19 @@ class DomainStageOrchestrator(QualityMetricsMixin, BaseOrchestrator):
             metadata=payload.metadata | {"stage_metrics": metrics},
             errors=payload.errors,
         )
+
+    def build_stage_metrics(
+        self,
+        *,
+        input_records: int,
+        output_records: int,
+        errors: list[str],
+    ) -> dict[str, Any]:
+        return {
+            "input_records": input_records,
+            "output_records": output_records,
+            "errors": len(errors),
+        }
 
 
 class SeedSectionOrchestrationFlow(BaseOrchestrationFlow):

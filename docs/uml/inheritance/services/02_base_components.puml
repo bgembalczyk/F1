@@ -5,10 +5,7 @@ hide empty members
 hide circle
 
 abstract class BaseComponent
-abstract class BaseExtractor
 abstract class BaseNormalizer
-abstract class BaseOrchestrator
-abstract class BaseParsingStage
 abstract class BaseSectionExtractionService
 class CircuitSectionExtractionService
 class ConstructorSectionExtractionService
@@ -17,24 +14,16 @@ class DomainSeedNormalizer
 class DomainStageOrchestrator
 class DriverSectionExtractionService
 class DriversSeedNormalizer
-abstract class QualityMetricsMixin
 class SeasonTextSectionExtractionService
-abstract class UrlResolverMixin
 
-BaseComponent <|-- BaseExtractor
 BaseComponent <|-- BaseNormalizer
-BaseComponent <|-- BaseOrchestrator
-BaseComponent <|-- BaseParsingStage
 BaseSectionExtractionService <|-- CircuitSectionExtractionService
 BaseSectionExtractionService <|-- ConstructorSectionExtractionService
-BaseExtractor <|-- DomainSeedExtractor
+BaseComponent <|-- DomainSeedExtractor
 BaseNormalizer <|-- DomainSeedNormalizer
-UrlResolverMixin <|-- DomainSeedNormalizer
-BaseOrchestrator <|-- DomainStageOrchestrator
-QualityMetricsMixin <|-- DomainStageOrchestrator
+BaseComponent <|-- DomainStageOrchestrator
 BaseSectionExtractionService <|-- DriverSectionExtractionService
 BaseNormalizer <|-- DriversSeedNormalizer
-UrlResolverMixin <|-- DriversSeedNormalizer
 BaseSectionExtractionService <|-- SeasonTextSectionExtractionService
 
 @enduml

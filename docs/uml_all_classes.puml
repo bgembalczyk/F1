@@ -223,15 +223,11 @@ package "Scrapers" {
     class BaseDomainPipelineService
     class BaseDriverResultsSectionParser
     abstract class BaseEngineTableScraper
-    class BaseExtractor
     abstract class BaseHtmlElementParser
-    abstract class BaseHtmlSectionParser
     class BaseInfoboxExtractor
     abstract class BaseInfoboxOrchestrator
     class BaseNormalizer
     class BaseOrchestrationFlow
-    class BaseOrchestrator
-    class BaseParsingStage
     class BasePointsScraper
     class BaseRecordAssembler
     class BaseRecordAssemblerInput
@@ -634,7 +630,6 @@ package "Scrapers" {
     class PrivateerTeamsSectionParser
     class ProfileResolver
     abstract class ProgressAdapter
-    abstract class QualityMetricsMixin
     class QualityReportService
     class QualityReporter
     class RaceEventParser
@@ -885,7 +880,6 @@ package "Scrapers" {
     class UnitColumn
     class UnknownValueColumn
     class UrlColumn
-    abstract class UrlResolverMixin
     class UrlResolverStrategyRegistry
     abstract class ValidateCapability
     class ValidatingSectionServiceFactory
@@ -1072,13 +1066,10 @@ SeedListTableScraper <|-- BaseConstructorListScraper
 DomainPipelineService <|-- BaseDomainPipelineService
 SectionParserBase <|-- BaseDriverResultsSectionParser
 F1TableScraper <|-- BaseEngineTableScraper
-BaseComponent <|-- BaseExtractor
 HtmlElementParserABC <|-- BaseHtmlElementParser
 InfoboxOrchestratorABC <|-- BaseInfoboxOrchestrator
 ParsedRecordsMixin <|-- BaseInfoboxOrchestrator
 BaseComponent <|-- BaseNormalizer
-BaseComponent <|-- BaseOrchestrator
-BaseComponent <|-- BaseParsingStage
 F1TableScraper <|-- BasePointsScraper
 LinkNormalizationMixin <|-- BaseRecordFactory
 LocationNormalizationMixin <|-- BaseRecordFactory
@@ -1181,11 +1172,9 @@ ArticleScraperBase <|-- DomainArticleScraperBase
 ScraperError <|-- DomainParseError
 PipelineService <|-- DomainPipelineService
 RunDiagnosticsMixin <|-- DomainPipelineService
-BaseExtractor <|-- DomainSeedExtractor
+BaseComponent <|-- DomainSeedExtractor
 BaseNormalizer <|-- DomainSeedNormalizer
-UrlResolverMixin <|-- DomainSeedNormalizer
-BaseOrchestrator <|-- DomainStageOrchestrator
-QualityMetricsMixin <|-- DomainStageOrchestrator
+BaseComponent <|-- DomainStageOrchestrator
 BaseColumn <|-- DriverColumn
 ParsingBundle <|-- DriverInfoboxBundle
 BaseInfoboxOrchestrator <|-- DriverInfoboxOrchestrator
@@ -1209,7 +1198,6 @@ DriverOrderedTableMapper <|-- DriversListTableMapper
 SchemaCompositeRecordValidator <|-- DriversRecordValidator
 NestedWikiSectionParser <|-- DriversSectionParser
 BaseNormalizer <|-- DriversSeedNormalizer
-UrlResolverMixin <|-- DriversSeedNormalizer
 BaseColumn <|-- DriversWithRoundsColumn
 BaseColumn <|-- EngineColumn
 BaseColumn <|-- EngineConfigurationColumn
