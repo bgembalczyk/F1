@@ -2,10 +2,10 @@ from bs4 import Tag
 
 from models.data.parsed.references_wrap import ReferencesWrapParsedData
 from scrapers.text_cleaning import extract_text
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class ReferencesWrapParser(WikiParser[Tag, ReferencesWrapParsedData]):
+class ReferencesWrapParser(ParserABC[Tag, ReferencesWrapParsedData]):
     """Parser sekcji przypisów Wikipedii.
 
     Przetwarza divy z klasą zawierającą 'references-wrap'.

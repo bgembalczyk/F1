@@ -4,10 +4,10 @@ from bs4 import Tag
 from models.data.parsed.header import HeaderParsedData
 from scrapers.parsers.constants import HEADER_CLASS
 from scrapers.parsers.constants import HEADER_TAG
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class HeaderParser(WikiParser[Tag, HeaderParsedData]):
+class HeaderParser(ParserABC[Tag, HeaderParsedData]):
     """Parser nagłówka strony Wikipedii.
 
     Przetwarza element:

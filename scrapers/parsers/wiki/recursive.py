@@ -10,13 +10,13 @@ from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.parser_mixins import NestedSectionHandlingMixin
 
 SectionLevelParseResult: TypeAlias = dict[str, Any]
 
 
-class RecursiveSectionParser(NestedSectionHandlingMixin, WikiElementParsingMixin, WikiParser):
+class RecursiveSectionParser(NestedSectionHandlingMixin, WikiElementParsingMixin, ParserABC):
     """Generic recursive parser for heading levels h2-h6."""
 
     def __init__(

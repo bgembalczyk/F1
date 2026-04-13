@@ -18,11 +18,12 @@ from scrapers.parsers.liveries.sponsorship.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
 from scrapers.sponsorship_table_schema_builder import SponsorshipTableSchemaBuilder
-from scrapers.parsers.wiki.section_base import WikiSectionParserBase
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.wiki.base import WikiRecords
 from scrapers.pipeline_table import TablePipeline
 
 
-class SponsorshipSectionParser(WikiSectionParserBase):
+class SponsorshipSectionParser(HtmlSoupParserABC[WikiRecords]):
     def __init__(
         self,
         *,

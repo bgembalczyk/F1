@@ -36,15 +36,12 @@ class SponsorPartsParser
 class TeamsParser
 class WikiListParser
 class WikiParagraphParser
-class WikiParser
 class WikiTagParser
 class YearParser
 
 ArticleTablesAssemblerABC <|-- ArticleTablesAssembler
-WikiParser <|-- CategoryLinksParser
 ListElementParser <|-- IndianapolisConstructorsListParser
 ListElementParser <|-- IndianapolisOnlyListParser
-WikiParser <|-- ReferencesWrapParser
 ParagraphElementParser <|-- WikiParagraphParser
 
 @enduml

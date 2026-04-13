@@ -4,13 +4,13 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.parsers.body_content_adapter import BodyContentAdapter
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.category_links import CategoryLinksParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
 from scrapers.parsers.wiki.element import WikiElementSet
 
 
-class BodyContentAssembler(WikiParser[Tag, dict[str, Any]]):
+class BodyContentAssembler(ParserABC[Tag, dict[str, Any]]):
     """Składa wynik głównej treści strony Wikipedii z dedykowanych parserów."""
 
     def __init__(

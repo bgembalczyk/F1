@@ -1,4 +1,4 @@
 from scrapers.parsers.nested_child import NestedChildParser
-from scrapers.parsers.wiki.section.base import BaseSectionParser
+from scrapers.parsers.section.base import SectionParserBase
 
-__all__ = ["BaseSectionParser", "NestedChildParser"]
+__all__ = ["SectionParserBase", "NestedChildParser"]

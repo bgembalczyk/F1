@@ -40,41 +40,8 @@ class HtmlSoupParserABC(ParserABC[BeautifulSoup, SoupOut], ABC, Generic[SoupOut]
     def parse(self, raw: BeautifulSoup) -> SoupOut: ...
 
 
-class TableHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "table"
-
-
-class ListHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "list"
-
-
-class SectionHtmlParserABC(HtmlSoupParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "section"
-
-
-class InfoboxHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "infobox"
-
-
-class NavboxHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "navbox"
-
-
-class ParagraphHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "paragraph"
-
-
-class FigureHtmlParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "figure"
-
-
-class ArticleHtmlParserABC(HtmlSoupParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "article"
-
-
-class HtmlElementParserABC(HtmlTagParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType
-
-
-class ReferencesElementParserABC(HtmlElementParserABC[TagOut], ABC, Generic[TagOut]):
-    element_type: ElementType = "references"
+__all__ = [
+    "ElementType",
+    "HtmlSoupParserABC",
+    "HtmlTagParserABC",
+]
