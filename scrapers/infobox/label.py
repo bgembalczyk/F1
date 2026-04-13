@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
+from scrapers.extractors.numeric_extractor import NumericExtractor
 from scrapers.infobox.field.parsers_registry import InfoboxFieldRegistry
 from scrapers.parsers.infobox.constants import ACTIVE_YEARS_LABELS
 from scrapers.parsers.infobox.constants import INT_CELL_LABELS
@@ -12,7 +13,6 @@ from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.callable import CallableInfoboxFieldParser
 from scrapers.parsers.infobox.field.car_numbers import CarNumbersParser
 from scrapers.parsers.infobox.field.base import HtmlInfoboxFieldParser
-from scrapers.numeric_extractor import NumericExtractor
 
 
 def field_parsers_registry(

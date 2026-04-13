@@ -3,8 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from scrapers.infobox.extraction.service import DriverInfoboxOrchestrator
-from scrapers.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.options import ScraperOptions
+from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.services.section.extraction.driver import DriverSectionExtractionService
 from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,

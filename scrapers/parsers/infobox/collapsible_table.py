@@ -4,10 +4,10 @@ from typing import Any
 
 from bs4 import Tag
 
+from scrapers.extractors.numeric_extractor import NumericExtractor
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.parsers.infobox.table import InfoboxTableParser
 from scrapers.parsers.infobox_parser_abc import InfoboxCollapsibleTableParserABC
-from scrapers.numeric_extractor import NumericExtractor
 
 
 class CollapsibleTableParser(InfoboxCollapsibleTableParserABC):

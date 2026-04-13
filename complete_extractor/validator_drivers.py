@@ -1,5 +1,5 @@
+from complete_extractor.composite_validator import SchemaCompositeRecordValidator
 from models.records.driver import DRIVER_SCHEMA
-from scrapers.composite_validator import SchemaCompositeRecordValidator
 
 
 class DriversRecordValidator(SchemaCompositeRecordValidator):

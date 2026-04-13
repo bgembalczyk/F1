@@ -20,13 +20,13 @@ from models.merge_types.record.driver import DriverRecordModel
 from models.merge_types.record.engine import EngineRecordModel
 from models.merge_types.record.race import RaceRecordModel
 from scrapers import sources_registry_wiki as sources_registry
-from scrapers.constants_wiki import CHASSIS_CONSTRUCTOR_DOMAINS
-from scrapers.constants_wiki import CIRCUITS_FORMULA_ONE_FIELDS
-from scrapers.constants_wiki import CONSTRUCTORS_FORMULA_ONE_FIELDS
-from scrapers.constants_wiki import ENGINES_FORMULA_ONE_FIELDS
-from scrapers.constants_wiki import FORMULA_ONE_SERIES
-from scrapers.constants_wiki import GRANDS_PRIX_FORMULA_ONE_FIELDS
-from scrapers.constants_wiki import RED_FLAG_FIELDS
+from scrapers.constants.constants_wiki import CHASSIS_CONSTRUCTOR_DOMAINS
+from scrapers.constants.constants_wiki import CIRCUITS_FORMULA_ONE_FIELDS
+from scrapers.constants.constants_wiki import CONSTRUCTORS_FORMULA_ONE_FIELDS
+from scrapers.constants.constants_wiki import ENGINES_FORMULA_ONE_FIELDS
+from scrapers.constants.constants_wiki import FORMULA_ONE_SERIES
+from scrapers.constants.constants_wiki import GRANDS_PRIX_FORMULA_ONE_FIELDS
+from scrapers.constants.constants_wiki import RED_FLAG_FIELDS
 
 RecordTransformHandler = Callable[
     [str, str, dict[str, object]],

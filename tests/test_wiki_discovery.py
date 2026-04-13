@@ -8,9 +8,8 @@ import pytest
 
 from scrapers.component_metadata_wiki import ComponentMetadata
 from scrapers.component_metadata_wiki import build_component_metadata
-from scrapers.constants_wiki import COMPONENT_METADATA_ATTR
+from scrapers.constants.constants_wiki import COMPONENT_METADATA_ATTR
 from scrapers.discovery_wiki import DiscoveredComponent
-from scrapers.discovery_wiki import DiscoveredRunnerProtocol
 from scrapers.discovery_wiki import build_layer_one_runner_map_discovered
 from scrapers.discovery_wiki import clear_component_metadata_cache
 from scrapers.discovery_wiki import discover_components_in_module

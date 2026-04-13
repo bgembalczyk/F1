@@ -3,9 +3,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from scrapers.circuit_scraper_dependencies import CircuitScraperDependencies
-from scrapers.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.options import ScraperOptions
 from scrapers.orchestration.circuit_orchestrator import CircuitInfoboxOrchestrator
+from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.services.section.extraction.circuits import (
     CircuitSectionExtractionService,
 )

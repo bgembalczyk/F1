@@ -5,16 +5,16 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.constants_drivers import FATALITIES_AGE_HEADER
-from scrapers.constants_drivers import FATALITIES_CAR_HEADER
-from scrapers.constants_drivers import FATALITIES_CIRCUIT_HEADER
-from scrapers.constants_drivers import FATALITIES_DATE_HEADER
-from scrapers.constants_drivers import FATALITIES_DRIVER_HEADER
-from scrapers.constants_drivers import FATALITIES_EVENT_HEADER
-from scrapers.constants_drivers import FATALITIES_HEADERS
-from scrapers.constants_drivers import FATALITIES_REF_HEADER
-from scrapers.constants_drivers import FATALITIES_SESSION_HEADER
-from scrapers.driver_ordered_table_mapper import DriverOrderedTableMapper
+from scrapers.constants.constants_drivers import FATALITIES_AGE_HEADER
+from scrapers.constants.constants_drivers import FATALITIES_CAR_HEADER
+from scrapers.constants.constants_drivers import FATALITIES_CIRCUIT_HEADER
+from scrapers.constants.constants_drivers import FATALITIES_DATE_HEADER
+from scrapers.constants.constants_drivers import FATALITIES_DRIVER_HEADER
+from scrapers.constants.constants_drivers import FATALITIES_EVENT_HEADER
+from scrapers.constants.constants_drivers import FATALITIES_HEADERS
+from scrapers.constants.constants_drivers import FATALITIES_REF_HEADER
+from scrapers.constants.constants_drivers import FATALITIES_SESSION_HEADER
+from scrapers.mappers.driver_ordered_table_mapper import DriverOrderedTableMapper
 from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.sub_section.base import SubSectionParser

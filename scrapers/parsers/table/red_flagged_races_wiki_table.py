@@ -1,6 +1,7 @@
 """Red-flagged races wiki-table utilities for parser table namespace."""
-
-from scrapers.non_championships_races_table_mapper import NonChampionshipsRacesTableMapper
+from scrapers.mappers.non_championships_races_table_mapper import (
+    NonChampionshipRacesTableMapper,
+)
 from scrapers.parsers.base_red_flagged_races_table_mapper import BaseRedFlaggedRacesTableMapper
 from scrapers.red_flagged_helpers import WIKIPEDIA_BASE_URL
 from scrapers.red_flagged_helpers import build_full_url
@@ -13,7 +14,7 @@ from scrapers.world_championships_races_table_mapper import WorldChampionshipsRa
 __all__ = [
     "WIKIPEDIA_BASE_URL",
     "BaseRedFlaggedRacesTableMapper",
-    "NonChampionshipsRacesTableMapper",
+    "NonChampionshipRacesTableMapper",
     "WorldChampionshipsRacesTableMapper",
     "build_full_url",
     "extract_rich_cell",

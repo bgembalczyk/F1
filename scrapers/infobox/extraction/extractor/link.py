@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from models.records.link import LinkRecord
+from scrapers.extractors.year_extractor import YearExtractor
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.helpers.url import normalize_url
@@ -13,7 +14,6 @@ from scrapers.parsers.infobox.constants import YEAR_OPTIONAL_RANGE_WS_RE
 from scrapers.parsers.infobox.constants import YEAR_RANGE_RE
 from scrapers.parsers.infobox.constants import YEAR_RANGE_STRICT_RE
 from scrapers.parsers.infobox.constants import YEAR_RE
-from scrapers.year_extractor import YearExtractor
 
 
 class InfoboxLinkExtractor:

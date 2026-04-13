@@ -1,7 +1,7 @@
 from datetime import datetime
 from datetime import timezone
 
-from scrapers.constants_wiki import SEED_RECORD_SCHEMA_VERSION
+from scrapers.constants.constants_wiki import SEED_RECORD_SCHEMA_VERSION
 from scrapers.seed_l0_compat_wiki import compute_seed_quality
 from scrapers.seed_l0_compat_wiki import normalize_seed_records
 

@@ -3,7 +3,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.constants_table import HEADER_ROWS_WITH_SUBHEADERS
+from scrapers.constants.constants_table import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.helpers.background import extract_background
 from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.links import normalize_links

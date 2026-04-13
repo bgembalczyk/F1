@@ -7,8 +7,8 @@ from bs4 import BeautifulSoup
 from scrapers.infobox.extraction.mixins import ParsedRecordsMixin
 from scrapers.infobox.extraction.result import InfoboxExtractionResult
 from scrapers.infobox.extraction.result import ParserInputT
-from scrapers.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.options import ScraperOptions
+from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.protocols.infobox_extractor import InfoboxExtractorABC
 
 

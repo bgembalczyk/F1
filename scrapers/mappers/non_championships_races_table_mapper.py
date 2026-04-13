@@ -8,7 +8,7 @@ from scrapers.red_flagged_helpers import map_winner_cell
 from scrapers.red_flagged_helpers import try_int
 
 
-class NonChampionshipsRacesTableMapper(BaseRedFlaggedRacesTableMapper):
+class NonChampionshipRacesTableMapper(BaseRedFlaggedRacesTableMapper):
     table_type = "red_flagged_non_championship_races"
     missing_columns_policy = "ignore"
     extra_columns_policy = "ignore"
@@ -54,7 +54,7 @@ class NonChampionshipsRacesTableMapper(BaseRedFlaggedRacesTableMapper):
     def _merge_failed_to_restart_rows(
         rows: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        _key = NonChampionshipsRacesTableMapper._race_key
+        _key = NonChampionshipRacesTableMapper._race_key
         merged: list[dict[str, Any]] = []
         for row in rows:
             raw_drivers = row.pop("failed_to_make_restart_drivers", None)

@@ -3,7 +3,7 @@ from typing import Any
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
 from scrapers.columns.types.mixins.enum import EnumMarksMixin
-from scrapers.constants_drivers import MARK_F2_CATEGORY
+from scrapers.constants.constants_drivers import MARK_F2_CATEGORY
 from scrapers.helpers.date_parsing import parse_date_with_category_marker
 
 

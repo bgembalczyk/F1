@@ -2,9 +2,9 @@ from typing import Any
 
 from bs4 import Tag
 
+from scrapers.mappers.points_scoring_systems_history_table_mapper import PointsScoringSystemsHistoryTableMapper
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.points_scoring_systems_history_table_mapper import PointsScoringSystemsHistoryTableMapper
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.sub_section.special_cases import SpecialCasesSubSectionParser
 from scrapers.parsers.section.sub_sub_section.shortened_races import ShortenedRacesSubSubSectionParser

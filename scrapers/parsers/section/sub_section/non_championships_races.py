@@ -2,7 +2,9 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.non_championships_races_table_mapper import NonChampionshipsRacesTableMapper
+from scrapers.mappers.non_championships_races_table_mapper import (
+    NonChampionshipRacesTableMapper,
+)
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.parsers.section.sub_section.base import SubSectionParser
@@ -11,7 +13,7 @@ from scrapers.parsers.section.sub_section.base import SubSectionParser
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):
     def __init__(self) -> None:
         super().__init__()
-        self._table_mapper = NonChampionshipsRacesTableMapper()
+        self._table_mapper = NonChampionshipRacesTableMapper()
         self._fallback_element_parser = SubSubSubSectionParser()
 
     def parse(

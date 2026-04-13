@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from scrapers.complete_scraper_seasons import CompleteSeasonDataExtractor
+from complete_extractor.complete_scraper_seasons import CompleteSeasonDataExtractor
 from scrapers.options import ScraperOptions
 from scrapers.results import ScrapeResult
 from scrapers.services.result_export import ResultExportService

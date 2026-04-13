@@ -5,14 +5,11 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 
 from scrapers.columns.base import BaseColumn
+from scrapers.columns.entity_column_spec import EntityColumnSpec
 from scrapers.columns.spec import ColumnSpec
-from scrapers.constants_table import BASE_STATS_COLUMNS
-from scrapers.constants_table import BASE_STATS_MAP
-from scrapers.entity_column_spec import EntityColumnSpec
+from scrapers.constants.constants_table import BASE_STATS_COLUMNS
+from scrapers.constants.constants_table import BASE_STATS_MAP
 from scrapers.metric_column_spec import MetricColumnSpec
-
-
-
 
 SchemaPart = ColumnSpec | Sequence[ColumnSpec]
 

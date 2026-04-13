@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from scrapers.complete_scraper_engines import F1CompleteEngineManufacturerDataExtractor
+from complete_extractor.complete_scraper_engines import F1CompleteEngineManufacturerDataExtractor
 from scrapers.options import ScraperOptions
 from scrapers.services.result_export import ResultExportService
 

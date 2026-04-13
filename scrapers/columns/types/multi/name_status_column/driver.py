@@ -1,8 +1,8 @@
 from scrapers.columns.context import ColumnContext
 from scrapers.columns.types.multi.name_status_column.base import NameStatusColumn
-from scrapers.constants_drivers import MARK_ACTIVE_DRIVER
-from scrapers.constants_drivers import MARK_ACTIVE_WORLD_CHAMPION
-from scrapers.constants_drivers import MARK_WORLD_CHAMPION
+from scrapers.constants.constants_drivers import MARK_ACTIVE_DRIVER
+from scrapers.constants.constants_drivers import MARK_ACTIVE_WORLD_CHAMPION
+from scrapers.constants.constants_drivers import MARK_WORLD_CHAMPION
 
 
 class DriverNameStatusColumn(NameStatusColumn):

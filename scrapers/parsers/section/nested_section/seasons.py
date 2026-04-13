@@ -3,9 +3,8 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.seasons_table_mapper import SeasonsTableMapper
+from scrapers.mappers.seasons_table_mapper import SeasonsTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 

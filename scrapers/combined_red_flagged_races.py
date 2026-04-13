@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
 from scrapers.parsers.table.red_flagged_races import WIKIPEDIA_BASE_URL
-from scrapers.parsers.table.red_flagged_races import NonChampionshipsRacesTableMapper
+from scrapers.parsers.table.red_flagged_races import NonChampionshipRacesTableMapper
 from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableMapper
 from scrapers.parsers.table.red_flagged_races import build_full_url
 from scrapers.parsers.table.red_flagged_races import extract_rich_cell
@@ -79,7 +79,7 @@ __all__ = [
     "map_winner_cell",
     "map_drivers_cell",
     "WorldChampionshipsRacesTableMapper",
-    "NonChampionshipsRacesTableMapper",
+    "NonChampionshipRacesTableMapper",
     "RedFlaggedRacesSectionParser",
     "RedFlaggedRacesScraper",
 ]
