@@ -8,6 +8,7 @@ class DomainParseError
 class HTTPError
 class HTTPTimeoutError
 class HttpShimError
+class MissingSectionError
 class PipelineError
 class RequestError
 class ScraperError

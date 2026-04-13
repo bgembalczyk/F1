@@ -5,11 +5,12 @@ hide empty members
 hide circle
 
 class AttachDetailsStrategy
-abstract class BaseRecordAssembler
+class BaseRecordAssembler
 class BundleRecordWithDetailsStrategy
 class CircuitRecordAssembler
 class ConstructorRecordAssembler
 class DeduplicateRecordStrategy
+class DriverRecordAssembler
 class ExtractDetailFieldStrategy
 class GrandPrixSplitStrategy
 class HasMultipleSeasonsRule
@@ -17,11 +18,11 @@ class HasPossessiveColoursRule
 class HasYearSpecificColoursRule
 class HasYearSpecificSponsorsRule
 class PossessiveDriverColourSplitStrategy
-class RecordAssemblyStrategy
-class RecordSplitStrategy
+abstract class RecordAssemblyStrategy
+abstract class RecordSplitStrategy
 class SeasonRecordAssembler
 class SeasonSplitStrategy
-class SplitRule
+abstract class SplitRule
 
 RecordAssemblyStrategy <|-- AttachDetailsStrategy
 RecordAssemblyStrategy <|-- BundleRecordWithDetailsStrategy

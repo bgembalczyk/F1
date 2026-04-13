@@ -8,26 +8,24 @@ abstract class BaseHttpClient
 class CacheAdapter
 class DefaultRetryPolicy
 class FileCache
-class FileTtlCacheAdapter
+abstract class FileTtlCacheAdapter
 class GeminiJsonFileCacheAdapter
 class HtmlFetcher
 class HttpResponseFileCacheAdapter
 class MinDelayRateLimiter
-class RateLimiter
-class RetryPolicy
-class SourceAdapter
+abstract class RateLimiter
+abstract class RetryPolicy
+abstract class SourceAdapter
 class SourceAdapterFetcherShim
 interface TextCacheProtocol
 class UrllibHttpClient
 class WikipediaCachePolicy
 
 SourceAdapter <|-- CacheAdapter
-RetryPolicy <|-- DefaultRetryPolicy
 TextCacheProtocol <|-- FileCache
 FileTtlCacheAdapter <|-- GeminiJsonFileCacheAdapter
 SourceAdapter <|-- HtmlFetcher
 FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
-RateLimiter <|-- MinDelayRateLimiter
 HtmlFetcher <|-- SourceAdapterFetcherShim
 BaseHttpClient <|-- UrllibHttpClient
 TextCacheProtocol <|-- WikipediaCachePolicy

@@ -8,13 +8,11 @@ class CircuitsRecordValidator
 class CompositeRecordValidator
 class DriversRecordValidator
 class GrandsPrixRecordValidator
-class RecordValidator
-class SchemaCompositeRecordValidator
+abstract class RecordValidator
 
-SchemaCompositeRecordValidator <|-- CircuitsRecordValidator
 RecordValidator <|-- CompositeRecordValidator
-SchemaCompositeRecordValidator <|-- DriversRecordValidator
-SchemaCompositeRecordValidator <|-- GrandsPrixRecordValidator
-CompositeRecordValidator <|-- SchemaCompositeRecordValidator
+CompositeRecordValidator <|-- CircuitsRecordValidator
+CompositeRecordValidator <|-- DriversRecordValidator
+CompositeRecordValidator <|-- GrandsPrixRecordValidator
 
 @enduml

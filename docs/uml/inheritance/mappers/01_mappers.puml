@@ -19,7 +19,6 @@ class FatalitiesTableMapper
 class FemaleDriversTableMapper
 class FormerConstructorsTableMapper
 class GrandsPrixTableMapper
-abstract class GroupParsingMixin
 class IdentitySectionTableRecordMapper
 class LapRecordsWikiTableMapper
 class MappedWikiTableMapper
@@ -66,7 +65,6 @@ DriverOrderedTableMapper <|-- FatalitiesTableMapper
 WikiTableBaseMapper <|-- FemaleDriversTableMapper
 WikiTableBaseMapper <|-- FormerConstructorsTableMapper
 WikiTableBaseMapper <|-- GrandsPrixTableMapper
-ParseGroupMixin <|-- GroupParsingMixin
 SectionTableRecordMapperABC <|-- IdentitySectionTableRecordMapper
 MappedWikiTableMapper <|-- LapRecordsWikiTableMapper
 WikiTableBaseMapper <|-- MappedWikiTableMapper
@@ -83,15 +81,15 @@ WikiTableBaseMapper <|-- SprintPointsTableMapper
 MappedWikiTableMapper <|-- StandingsTableMapper
 MapperABC <|-- TableDomainMapperABC
 MapperABC <|-- TableMapperABC
-GroupParsingMixin <|-- TableRecordMapper
+ParseGroupMixin <|-- TableRecordMapper
 RowMappingMixin <|-- TableRecordMapper
 WikiTableBaseMapper <|-- TyreManufacturersBySeasonTableMapper
 WikiDomainMapperABC <|-- WikiDomainMapper
 MapperABC <|-- WikiDomainMapperABC
 MapperABC <|-- WikiElementPayloadMapperABC
 WikiElementPayloadMapperABC <|-- WikiParsedPayloadMapper
-GroupParsingMixin <|-- WikiTableBaseMapper
 MatchesMixin <|-- WikiTableBaseMapper
+ParseGroupMixin <|-- WikiTableBaseMapper
 RowMappingMixin <|-- WikiTableBaseMapper
 TableDomainMapperABC <|-- WikiTableBaseMapper
 WikiTablePayloadCollectMixin <|-- WikiTableBaseMapper

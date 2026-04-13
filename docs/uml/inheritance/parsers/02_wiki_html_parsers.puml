@@ -7,9 +7,12 @@ hide circle
 class CircuitInfoboxParser
 class DriverInfoboxParser
 class FigureElementParser
+abstract class HtmlSoupParserABC
+abstract class HtmlTagParserABC
 class InfoboxElementParser
 class ListElementParser
 class NavboxElementParser
+class ReferencesWrapParser
 class SectionElementParser
 abstract class WikiArticleParserABC
 class WikiFigureElementParser
@@ -18,7 +21,6 @@ class WikiFigureParser
 class WikiInfoboxElementParser
 abstract class WikiInfoboxElementParserABC
 class WikiInfoboxHtmlParser
-class WikiInfoboxParser
 class WikiListElementParser
 abstract class WikiListElementParserABC
 class WikiNavboxElementParser
@@ -27,27 +29,26 @@ class WikiNavboxParser
 class WikiParagraphElementParser
 abstract class WikiParagraphElementParserABC
 class WikiReferencesElementParser
-abstract class WikiReferencesElementParserABC
 class WikiSectionElementParser
-abstract class WikiSectionElementParserABC
 
+HtmlSoupParserABC <|-- WikiArticleParserABC
 WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
 WikiInfoboxElementParserABC <|-- DriverInfoboxParser
 WikiFigureElementParserABC <|-- FigureElementParser
 WikiInfoboxElementParserABC <|-- InfoboxElementParser
 WikiListElementParserABC <|-- ListElementParser
 WikiNavboxElementParserABC <|-- NavboxElementParser
-WikiSectionElementParserABC <|-- SectionElementParser
+HtmlSoupParserABC <|-- SectionElementParser
 WikiFigureElementParserABC <|-- WikiFigureElementParser
 WikiFigureElementParserABC <|-- WikiFigureParser
 WikiInfoboxElementParserABC <|-- WikiInfoboxElementParser
 WikiInfoboxElementParserABC <|-- WikiInfoboxHtmlParser
-WikiInfoboxHtmlParser <|-- WikiInfoboxParser
 WikiListElementParserABC <|-- WikiListElementParser
 WikiNavboxElementParserABC <|-- WikiNavboxElementParser
 WikiNavboxElementParserABC <|-- WikiNavboxParser
 WikiParagraphElementParserABC <|-- WikiParagraphElementParser
-WikiReferencesElementParserABC <|-- WikiReferencesElementParser
-WikiSectionElementParserABC <|-- WikiSectionElementParser
+ReferencesWrapParser <|-- WikiReferencesElementParser
+HtmlTagParserABC <|-- WikiReferencesElementParser
+HtmlSoupParserABC <|-- WikiSectionElementParser
 
 @enduml

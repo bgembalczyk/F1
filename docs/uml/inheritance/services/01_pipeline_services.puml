@@ -5,30 +5,22 @@ hide empty members
 hide circle
 
 abstract class BaseDomainPipelineService
-class CircuitDomainRecordService
 class CircuitPipelineService
-class ConstructorDomainRecordService
 class ConstructorPipelineService
 class ConstructorTableExtractionService
 class DomainPipelineService
-class DriverDomainRecordService
 class DriverPipelineService
 class PipelineService
 abstract class RunDiagnosticsMixin
-class SeasonDomainRecordService
 class SeasonPipelineService
 
 DomainPipelineService <|-- BaseDomainPipelineService
-CircuitPipelineService <|-- CircuitDomainRecordService
+RunDiagnosticsMixin <|-- DomainPipelineService
 BaseDomainPipelineService <|-- CircuitPipelineService
-ConstructorPipelineService <|-- ConstructorDomainRecordService
 BaseDomainPipelineService <|-- ConstructorPipelineService
 RunDiagnosticsMixin <|-- ConstructorTableExtractionService
 PipelineService <|-- DomainPipelineService
-RunDiagnosticsMixin <|-- DomainPipelineService
-DriverPipelineService <|-- DriverDomainRecordService
 BaseDomainPipelineService <|-- DriverPipelineService
-SeasonPipelineService <|-- SeasonDomainRecordService
 BaseDomainPipelineService <|-- SeasonPipelineService
 
 @enduml

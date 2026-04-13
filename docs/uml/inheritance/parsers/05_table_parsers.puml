@@ -7,10 +7,13 @@ hide circle
 class CollapsibleTableParser
 class F1StandingsTableParser
 abstract class HeaderNormalizationMixin
+abstract class HtmlSoupParserABC
+abstract class HtmlTagParserABC
 class HtmlTableParser
 abstract class InfoboxCollapsibleTableParserABC
 abstract class InfoboxNestedTableParserABC
 class InfoboxTableParser
+class SeasonStandingsParser
 class SeasonsTableParser
 abstract class TableCellExtractionMixin
 abstract class TableCellParserABC
@@ -25,8 +28,11 @@ class WikiTableHtmlParser
 class WikiTableParser
 
 InfoboxCollapsibleTableParserABC <|-- CollapsibleTableParser
+HtmlTagParserABC <|-- F1StandingsTableParser
+HtmlSoupParserABC <|-- HtmlTableParser
 TableRowParsingMixin <|-- HtmlTableParser
 InfoboxNestedTableParserABC <|-- InfoboxTableParser
+HtmlSoupParserABC <|-- SeasonStandingsParser
 WikiTableHtmlParser <|-- SeasonsTableParser
 WikiTableElementParserABC <|-- TableElementParser
 TableParserABC <|-- WikiTableBaseParser
