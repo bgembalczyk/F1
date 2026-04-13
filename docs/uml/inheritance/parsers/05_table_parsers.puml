@@ -12,14 +12,8 @@ abstract class TableCellExtractionMixin
 class TableElementParser
 abstract class TableRowParsingMixin
 class WikiTableBaseParser
-class WikiTableElementParser
-class WikiTableHtmlParser
-class WikiTableParser
 
 TableRowParsingMixin <|-- HtmlTableParser
 TableCellExtractionMixin <|-- InfoboxElementParser
-WikiTableHtmlParser <|-- SeasonsTableParser
-TableCellExtractionMixin <|-- WikiTableHtmlParser
-WikiTableHtmlParser <|-- WikiTableParser
 
 @enduml

@@ -19,12 +19,6 @@ ALLOWED_ROOTS = {
     "WikiInfoboxElementParserABC",
     "WikiNavboxElementParserABC",
     "WikiFigureElementParserABC",
-    "WikiTableParserBase",
-    "WikiListParserBase",
-    "WikiSectionParserBase",
-    "WikiInfoboxParserBase",
-    "WikiNavboxParserBase",
-    "WikiFigureParserBase",
 }
 
 ALLOWED_MIXINS = {

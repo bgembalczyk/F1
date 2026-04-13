@@ -29,23 +29,14 @@ class ParagraphElementParser
 class PrivateerTeamsListParser
 class RaceEventParser
 class ReferencesWrapParser
+class SeasonStandingsParser
 class SectionElementParser
 abstract class SectionTraversalMixin
 class SponsorPartsParser
 class TeamsParser
-class WikiFigureElementParser
-class WikiFigureParser
-class WikiInfoboxElementParser
-class WikiInfoboxHtmlParser
-class WikiInfoboxParser
-class WikiListElementParser
 class WikiListParser
-class WikiNavboxElementParser
-class WikiNavboxParser
-class WikiParagraphElementParser
 class WikiParagraphParser
 class WikiParser
-class WikiSectionElementParser
 class WikiTagParser
 class YearParser
 
@@ -53,9 +44,7 @@ ArticleTablesAssemblerABC <|-- ArticleTablesAssembler
 WikiParser <|-- CategoryLinksParser
 ListElementParser <|-- IndianapolisConstructorsListParser
 ListElementParser <|-- IndianapolisOnlyListParser
-WikiListElementParser <|-- PrivateerTeamsListParser
 WikiParser <|-- ReferencesWrapParser
-WikiInfoboxHtmlParser <|-- WikiInfoboxParser
 ParagraphElementParser <|-- WikiParagraphParser
 
 @enduml

@@ -185,10 +185,7 @@ def test_check_parser_compat_imports_and_aliases_accepts_canonical_imports(
     scrapers_dir.mkdir(parents=True)
     parser_file = scrapers_dir / "entry.py"
     parser_file.write_text(
-        (
-            "from scrapers.parsers.section_parser_abc import SectionParserABC\n"
-            "from scrapers.parsers.section_structure_parser_abc import SectionStructureParserABC\n"
-        ),
+        "from scrapers.parsers.section_parser_abc import SectionParserABC\n",
         encoding="utf-8",
     )
     monkeypatch.chdir(tmp_path)

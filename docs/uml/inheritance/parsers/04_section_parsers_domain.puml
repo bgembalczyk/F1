@@ -37,7 +37,6 @@ class SeasonRegulationChangesSectionParser
 class SeasonResultsParser
 class SeasonResultsSectionParser
 class SeasonScoringSystemParser
-class SeasonStandingsParser
 abstract class SectionTableParseMixin
 class SponsorshipSectionParser
 class TeamLiveriesSectionParser

@@ -7,7 +7,6 @@ hide circle
 abstract class ArticleHtmlParserABC
 abstract class ArticleTablesParserABC
 abstract class BaseDriverResultsSectionParser
-abstract class BaseHtmlElementParser
 abstract class BaseSeasonParser
 abstract class BaseSectionParser
 class CallableInfoboxFieldParser
@@ -41,7 +40,6 @@ abstract class SectionHtmlParserABC
 abstract class SectionInfoboxesHtmlParserABC
 abstract class SectionListsHtmlParserABC
 abstract class SectionParserBase
-abstract class SectionStructureParserABC
 abstract class SectionTablesHtmlParserABC
 abstract class SectionTextBlocksHtmlParserABC
 class SoupParser
@@ -54,7 +52,6 @@ class TextBlockSectionParser
 
 HtmlSoupParserABC <|-- ArticleHtmlParserABC
 SectionParserBase <|-- BaseDriverResultsSectionParser
-HtmlElementParserABC <|-- BaseHtmlElementParser
 HtmlInfoboxFieldParser <|-- CallableInfoboxFieldParser
 InfoboxCollapsibleTableParserABC <|-- CollapsibleTableParser
 HtmlTagParserABC <|-- FigureHtmlParserABC
@@ -81,7 +78,6 @@ HtmlElementParserABC <|-- ReferencesElementParserABC
 HtmlSoupParserABC <|-- SectionHtmlParserABC
 HtmlSoupParserABC <|-- SectionInfoboxesHtmlParserABC
 HtmlSoupParserABC <|-- SectionListsHtmlParserABC
-BaseSectionParser <|-- SectionStructureParserABC
 HtmlSoupParserABC <|-- SectionTablesHtmlParserABC
 HtmlSoupParserABC <|-- SectionTextBlocksHtmlParserABC
 ParserABC <|-- SoupParser
