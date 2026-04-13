@@ -218,7 +218,7 @@ write(OUT / 'parsers/04_section_parsers_domain.puml',
       make_puml('Domain Section Parsers', sorted(p04)))
 
 # PARSERS/05 – Table parsers (within parser component)
-TABLE_ROOTS = ['TableHtmlParserABC', 'WikiTableBaseParser', 'WikiTableHtmlParser',
+TABLE_ROOTS = ['WikiTableElementParserABC', 'WikiTableBaseParser', 'WikiTableHtmlParser',
                'HtmlTableParser', 'TableCellExtractionMixin', 'TableRowParsingMixin']
 p05: set[str] = set()
 for r in TABLE_ROOTS:

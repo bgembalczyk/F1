@@ -14,7 +14,7 @@ def test_wiki_parser_typing_contracts() -> None:
 if TYPE_CHECKING:
     from bs4 import Tag
 
-    from scrapers.parsers.wiki.base import WikiParser
+    from scrapers.parsers.parser_abc import ParserABC
     from scrapers.parsers.wiki.paragraph import WikiParagraphParser
     from scrapers.parsers.wiki.table import WikiTableParser
     from scrapers.parsers.wiki.header import HeaderParser
@@ -23,17 +23,17 @@ if TYPE_CHECKING:
     from models.data.parsed.table import TableParsedData
     from models.payload import WikiParsedPayload
 
-    header_parser: WikiParser[HeaderParsedData] = HeaderParser()
+    header_parser: ParserABC[Tag, HeaderParsedData] = HeaderParser()
     header_result: HeaderParsedData = header_parser.parse(cast("Tag", object()))
     header_title: str | None = header_result["title"]
 
-    paragraph_parser: WikiParser[ParagraphParsedData] = WikiParagraphParser()
+    paragraph_parser: ParserABC[Tag, ParagraphParsedData] = WikiParagraphParser()
     paragraph_result: ParagraphParsedData = paragraph_parser.parse(
         cast("Tag", object()),
     )
     paragraph_text: str = paragraph_result["text"]
 
-    table_parser: WikiParser[TableParsedData] = WikiTableParser()
+    table_parser: ParserABC[Tag, TableParsedData] = WikiTableParser()
     table_result: TableParsedData = table_parser.parse(cast("Tag", object()))
     table_headers: list[str] = table_result["headers"]
 

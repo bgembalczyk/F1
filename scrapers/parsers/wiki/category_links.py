@@ -3,10 +3,10 @@ from bs4 import Tag
 from models.category.group import CategoryGroup
 from models.data.parsed.category_links import CategoryLinksParsedData
 from scrapers.extractors.category_links_extractor import CategoryLinksExtractor
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class CategoryLinksParser(WikiParser[Tag, CategoryLinksParsedData]):
+class CategoryLinksParser(ParserABC[Tag, CategoryLinksParsedData]):
     """Parser linków do kategorii Wikipedii (wyłącznie transformacja danych)."""
 
     def __init__(self, *, extractor: CategoryLinksExtractor | None = None) -> None:

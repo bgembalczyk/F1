@@ -200,14 +200,16 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 "scrapers.parsers.wiki.recursive",
             }:
                 continue
+            # The approved base classes themselves are self-referential in this check
+            # and should be skipped.
             _section_parser_bases = {
                 "SectionParser",
                 "NestedWikiSectionParser",
                 # Canonical runtime base for section parsers
                 "SectionParserBase",
-                # WikiParser is the root for all recursive/nested parsers
-                "WikiParser",
             }
+            if class_info.name in _section_parser_bases:
+                continue
             if not _inherits_from(class_info, classes, _section_parser_bases):
                 violations.append(
                     f"{class_info.module}.{class_info.name}: SectionParser musi "

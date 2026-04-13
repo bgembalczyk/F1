@@ -16,7 +16,6 @@ from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.element_parser_abc import HtmlTagParserABC
-from scrapers.parsers.element_parser_abc import SectionHtmlParserABC
 from scrapers.parsers.wiki.element_registry import WIKI_SELECTOR_FAMILY_MAP
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]

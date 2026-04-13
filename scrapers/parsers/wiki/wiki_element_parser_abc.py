@@ -16,15 +16,8 @@ from models.data.wiki.list import WikiListData
 from models.data.wiki.navbox import WikiNavboxData
 from models.data.wiki.section import WikiSectionData
 from models.data.wiki.table import WikiTableData
-from scrapers.parsers.element_parser_abc import ArticleHtmlParserABC
-from scrapers.parsers.element_parser_abc import FigureHtmlParserABC
-from scrapers.parsers.element_parser_abc import InfoboxHtmlParserABC
-from scrapers.parsers.element_parser_abc import ListHtmlParserABC
-from scrapers.parsers.element_parser_abc import NavboxHtmlParserABC
-from scrapers.parsers.element_parser_abc import ParagraphHtmlParserABC
-from scrapers.parsers.element_parser_abc import ReferencesElementParserABC
-from scrapers.parsers.element_parser_abc import SectionHtmlParserABC
-from scrapers.parsers.element_parser_abc import TableHtmlParserABC
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 
 WikiElementType = Literal[
     "table",
@@ -41,7 +34,7 @@ WikiElementType = Literal[
 
 
 class WikiTableElementParserABC(
-    TableHtmlParserABC[WikiTableData],
+    HtmlTagParserABC[WikiTableData],
     ABC,
 ):
     element_type: WikiElementType = "table"
@@ -51,7 +44,7 @@ class WikiTableElementParserABC(
 
 
 class WikiListElementParserABC(
-    ListHtmlParserABC[WikiListData],
+    HtmlTagParserABC[WikiListData],
     ABC,
 ):
     element_type: WikiElementType = "list"
@@ -61,28 +54,28 @@ class WikiListElementParserABC(
 
 
 class WikiInfoboxElementParserABC(
-    InfoboxHtmlParserABC[WikiInfoboxData],
+    HtmlTagParserABC[WikiInfoboxData],
     ABC,
 ):
     element_type: WikiElementType = "infobox"
 
 
 class WikiNavboxElementParserABC(
-    NavboxHtmlParserABC[WikiNavboxData],
+    HtmlTagParserABC[WikiNavboxData],
     ABC,
 ):
     element_type: WikiElementType = "navbox"
 
 
 class WikiFigureElementParserABC(
-    FigureHtmlParserABC[WikiFigureData],
+    HtmlTagParserABC[WikiFigureData],
     ABC,
 ):
     element_type: WikiElementType = "figure"
 
 
 class WikiParagraphElementParserABC(
-    ParagraphHtmlParserABC[ParagraphElementData],
+    HtmlTagParserABC[ParagraphElementData],
     ABC,
 ):
     element_type: WikiElementType = "paragraph"
@@ -92,7 +85,7 @@ class WikiParagraphElementParserABC(
 
 
 class WikiReferencesElementParserABC(
-    ReferencesElementParserABC[ReferencesWrapParsedData],
+    HtmlTagParserABC[ReferencesWrapParsedData],
     ABC,
 ):
     element_type: WikiElementType = "references"
@@ -102,7 +95,7 @@ class WikiReferencesElementParserABC(
 
 
 class WikiSectionElementParserABC(
-    SectionHtmlParserABC[WikiSectionData],
+    HtmlSoupParserABC[WikiSectionData],
     ABC,
 ):
     element_type: WikiElementType = "section"
@@ -112,7 +105,7 @@ class WikiSectionElementParserABC(
 
 
 class WikiArticleParserABC(
-    ArticleHtmlParserABC[list[dict[str, Any]]],
+    HtmlSoupParserABC[list[dict[str, Any]]],
     ABC,
 ):
     element_type: WikiElementType = "article"

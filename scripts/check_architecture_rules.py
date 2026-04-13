@@ -178,7 +178,6 @@ def check_parser_naming_contracts() -> list[str]:
         "ParserABC",
         "BaseWikiParser",
         "SectionParserABC",
-        "HtmlElementParserABC",
         "HtmlTagParserABC",
     }
     for py_file in Path("scrapers").rglob("*.py"):

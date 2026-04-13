@@ -8,7 +8,7 @@ from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.helpers import split_into_parts
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser as SectionParser
-from scrapers.parsers.wiki.base import WikiParser
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
 from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import SubSubSectionParser
 from scrapers.parsers.wiki.body_content_assembler import BodyContentAssembler
@@ -54,13 +54,13 @@ def with_overridden_element_parsers(**overrides) -> WikiElementSet:
 
 
 # ---------------------------------------------------------------------------
-# WikiParser is abstract
+# ParserABC is abstract
 # ---------------------------------------------------------------------------
 
 
-def test_wiki_parser_is_abstract():
+def test_parser_abc_is_abstract():
     with pytest.raises(TypeError):
-        WikiParser()  # type: ignore[abstract]
+        ParserABC()  # type: ignore[abstract]
 
 
 # ---------------------------------------------------------------------------
