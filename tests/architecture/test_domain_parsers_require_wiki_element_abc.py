@@ -7,7 +7,7 @@ from tests.architecture.helpers import base_name
 
 TARGET_FILES = (
     Path("scrapers/parsers/wiki/element_table.py"),
-    Path("scrapers/parsers/wiki/element_list.py"),
+    Path("scrapers/parsers/list_element_parser.py"),
     Path("scrapers/parsers/wiki/element_section.py"),
     Path("scrapers/parsers/wiki/element_infobox.py"),
     Path("scrapers/parsers/wiki/element_navbox.py"),

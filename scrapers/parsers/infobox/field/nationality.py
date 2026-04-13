@@ -16,10 +16,10 @@ from scrapers.parsers.infobox.constants import YEAR_PAREN_RE
 from scrapers.parsers.infobox.constants import YEAR_PATTERNS_RE
 from scrapers.parsers.infobox.constants import YEAR_RANGE_RE_NAT
 from scrapers.parsers.infobox.constants import YEAR_RE
-from scrapers.parsers.infobox.field.base import HtmlInfoboxFieldParser
+from scrapers.parsers.contracts.infobox_fields import InfoboxHtmlFieldParserABC
 
 
-class NationalityParser(HtmlInfoboxFieldParser):
+class NationalityParser(InfoboxHtmlFieldParserABC):
     """Handles parsing of nationality information with optional year ranges."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor) -> None:

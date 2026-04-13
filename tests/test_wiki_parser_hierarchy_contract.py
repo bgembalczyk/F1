@@ -32,8 +32,8 @@ def test_concrete_wiki_parsers_declare_expected_abc_and_parse_method() -> None:
             "WikiTableElementParserABC",
         ),
         (
-            "scrapers/parsers/wiki/element_list.py",
-            "WikiListElementParser",
+            "scrapers/parsers/list_element_parser.py",
+            "ListElementParser",
             "WikiListElementParserABC",
         ),
         (

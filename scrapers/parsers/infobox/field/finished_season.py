@@ -7,10 +7,10 @@ from bs4 import Tag
 
 from scrapers.error_handler import ErrorHandler
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.parsers.infobox.field.base import HtmlInfoboxFieldParser
+from scrapers.parsers.contracts.infobox_fields import InfoboxHtmlFieldParserABC
 
 
-class FinishedSeasonParser(HtmlInfoboxFieldParser):
+class FinishedSeasonParser(InfoboxHtmlFieldParserABC):
     """Handles parsing of 'Finished last season' field."""
 
     def parse(self, cell: Tag) -> dict[str, Any]:

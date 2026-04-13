@@ -39,13 +39,6 @@ class InfoboxRowsParserABC(
     def parse(self, rows: list[dict[str, Any]]) -> Output: ...
 
 
-class InfoboxCellParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
-    """Parser contract for a single infobox table cell."""
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> dict[str, Any]: ...
-
-
 class InfoboxNestedTableParserABC(ParserABC[Tag, dict[str, Any]], ABC):
     """Parser contract for nested tables embedded in infobox cells."""
 
@@ -61,7 +54,6 @@ class InfoboxCollapsibleTableParserABC(ParserABC[Tag, dict[str, Any] | None], AB
 
 
 __all__ = [
-    "InfoboxCellParserABC",
     "InfoboxCollapsibleTableParserABC",
     "InfoboxHtmlFieldParserABC",
     "InfoboxNestedTableParserABC",

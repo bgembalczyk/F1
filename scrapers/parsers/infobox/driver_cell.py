@@ -4,9 +4,9 @@ from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
+from scrapers.parsers.contracts.infobox_fields import InfoboxHtmlFieldParserABC
 from scrapers.parsers.infobox.collapsible_table import CollapsibleTableParser
 from scrapers.parsers.infobox.field.active_years import ActiveYearsParser
-from scrapers.parsers.infobox.field.base import HtmlInfoboxFieldParser
 from scrapers.parsers.infobox.field.best_finish import BestFinishParser
 from scrapers.parsers.infobox.field.championships import ChampionshipsParser
 from scrapers.parsers.infobox.field.finished_season import FinishedSeasonParser
@@ -15,10 +15,10 @@ from scrapers.parsers.infobox.field.nationality import NationalityParser
 from scrapers.parsers.infobox.field.race_event import RaceEventParser
 from scrapers.parsers.infobox.field.teams import TeamsParser
 from scrapers.parsers.infobox.table import InfoboxTableParser
-from scrapers.parsers.infobox_parser_abc import InfoboxCellParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 
 
-class InfoboxCellValueExtractor(InfoboxCellParserABC):
+class InfoboxCellValueExtractor(HtmlTagParserABC[dict[str, Any]]):
     """Parser for individual infobox cells.
 
     This class delegates complex parsing tasks to specialized helper classes:
@@ -73,11 +73,11 @@ class InfoboxCellValueExtractor(InfoboxCellParserABC):
     @property
     def active_years_field_parser(
         self,
-    ) -> HtmlInfoboxFieldParser[list[dict[str, Any]]]:
+    ) -> InfoboxHtmlFieldParserABC[list[dict[str, Any]]]:
         return self._active_years_parser
 
     @property
-    def teams_field_parser(self) -> HtmlInfoboxFieldParser[list[Any]]:
+    def teams_field_parser(self) -> InfoboxHtmlFieldParserABC[list[Any]]:
         return self._teams_parser
 
     @property
@@ -85,29 +85,29 @@ class InfoboxCellValueExtractor(InfoboxCellParserABC):
         return self._championships_parser
 
     @property
-    def best_finish_field_parser(self) -> HtmlInfoboxFieldParser[dict[str, Any]]:
+    def best_finish_field_parser(self) -> InfoboxHtmlFieldParserABC[dict[str, Any]]:
         return self._best_finish_parser
 
     @property
-    def race_event_field_parser(self) -> HtmlInfoboxFieldParser[list[dict[str, Any]]]:
+    def race_event_field_parser(self) -> InfoboxHtmlFieldParserABC[list[dict[str, Any]]]:
         return self._race_event_parser
 
     @property
     def finished_last_season_field_parser(
         self,
-    ) -> HtmlInfoboxFieldParser[dict[str, Any]]:
+    ) -> InfoboxHtmlFieldParserABC[dict[str, Any]]:
         return self._finished_season_parser
 
     @property
     def racing_licence_field_parser(
         self,
-    ) -> HtmlInfoboxFieldParser[list[dict[str, Any]]]:
+    ) -> InfoboxHtmlFieldParserABC[list[dict[str, Any]]]:
         return self._licence_parser
 
     @property
     def nationality_field_parser(
         self,
-    ) -> HtmlInfoboxFieldParser[list[str] | list[dict[str, Any]]]:
+    ) -> InfoboxHtmlFieldParserABC[list[str] | list[dict[str, Any]]]:
         return self._nationality_parser
 
     def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:
