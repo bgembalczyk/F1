@@ -1,8 +1,6 @@
-"""Klasa bazowa dla klientów HTTP."""
+"""Klient HTTP z pełną implementacją retry, rate-limit i cache."""
 
 import json
-from abc import ABC
-from abc import abstractmethod
 from collections.abc import Callable
 from collections.abc import Mapping
 from concurrent.futures import ThreadPoolExecutor
@@ -10,16 +8,18 @@ from typing import Any
 
 from infrastructure.cache.response_service import ResponseCacheService
 from infrastructure.http.config import HttpClientConfig
+from infrastructure.http.errors.base import RequestError
 from infrastructure.http.factories.default_policy import DefaultHttpPolicyFactory
 from infrastructure.http.header_resolver import HeaderResolver
 from infrastructure.http.protocols.response import HttpResponseProtocol
 from infrastructure.http.protocols.session import SessionProtocol
 from infrastructure.http.request_executor import RequestExecutor
+from infrastructure.http.session import Session
 from infrastructure.http.type_alias import JsonValue
 
 
-class BaseHttpClient(ABC):
-    """Wspólna klasa bazowa dla klientów HTTP."""
+class HttpClient:
+    """Klient HTTP oparty o urllib (requests_shim), zgodny z HttpClientProtocol."""
 
     DEFAULT_HEADERS: dict[str, str] = {
         "User-Agent": "F1Scrapers/1.0 contact: bartosz.gembalczyk.stud@pw.edu.pl ",
@@ -29,9 +29,9 @@ class BaseHttpClient(ABC):
     def __init__(
         self,
         *,
-        session: SessionProtocol,
-        config: HttpClientConfig,
-        request_exception_cls: type[Exception],
+        session: SessionProtocol | None = None,
+        config: HttpClientConfig | None = None,
+        request_exception_cls: type[Exception] = RequestError,
     ) -> None:
         """
         Inicjalizacja klienta HTTP.
@@ -41,18 +41,19 @@ class BaseHttpClient(ABC):
             config: Konfiguracja klienta HTTP
             request_exception_cls: Klasa wyjątku dla błędów requestów
         """
-        self.session = session
-        self.config = config
-        self.timeout = int(config.timeout)
+        resolved_config = config or HttpClientConfig()
+        self.session = session or Session()
+        self.config = resolved_config
+        self.timeout = int(resolved_config.timeout)
         self.request_exception_cls = request_exception_cls
 
-        self.retry_policy = DefaultHttpPolicyFactory.build_retry_policy(config)
-        self.rate_limiter = DefaultHttpPolicyFactory.build_rate_limiter(config)
-        self.cache = DefaultHttpPolicyFactory.build_response_cache(config)
+        self.retry_policy = DefaultHttpPolicyFactory.build_retry_policy(resolved_config)
+        self.rate_limiter = DefaultHttpPolicyFactory.build_rate_limiter(resolved_config)
+        self.cache = DefaultHttpPolicyFactory.build_response_cache(resolved_config)
 
         merged_headers = dict(self.DEFAULT_HEADERS)
-        if config.headers:
-            merged_headers.update(config.headers)
+        if resolved_config.headers:
+            merged_headers.update(resolved_config.headers)
         self.default_headers = merged_headers
 
         self.header_resolver = HeaderResolver(default_headers=self.default_headers)
@@ -80,7 +81,6 @@ class BaseHttpClient(ABC):
             request_exception_cls=self.request_exception_cls,
         )
 
-    @abstractmethod
     def get(
         self,
         url: str,
@@ -88,8 +88,13 @@ class BaseHttpClient(ABC):
         headers: Mapping[str, str] | None = None,
         timeout: int | None = None,
     ) -> HttpResponseProtocol:
-        """Pobiera URL i zwraca response."""
-        ...
+        """Wykonuje żądanie GET."""
+        return self._request_with_retries(
+            url,
+            headers=headers,
+            timeout=timeout,
+            request_func=self.session.get,
+        )
 
     def get_batch(
         self,
@@ -181,3 +186,5 @@ class BaseHttpClient(ABC):
             max_workers=max_workers,
         )
         return [json.loads(text) for text in texts]
+
+__all__ = ["HttpClient"]

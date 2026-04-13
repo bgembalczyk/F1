@@ -7,12 +7,8 @@ hide circle
 class CircuitLapRecordsTableClassifier
 abstract class ClassifierABC
 class DriverResultsSectionTableClassifier
-class PassthroughSectionTableClassifier
-abstract class SectionTableClassifierABC
 
-SectionTableClassifierABC <|-- CircuitLapRecordsTableClassifier
-SectionTableClassifierABC <|-- DriverResultsSectionTableClassifier
-SectionTableClassifierABC <|-- PassthroughSectionTableClassifier
-ClassifierABC <|-- SectionTableClassifierABC
+ClassifierABC <|-- CircuitLapRecordsTableClassifier
+ClassifierABC <|-- DriverResultsSectionTableClassifier
 
 @enduml

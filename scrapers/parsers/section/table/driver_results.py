@@ -13,7 +13,7 @@ from scrapers.driver_results_table_classifier import DriverResultsTableClassifie
 from scrapers.options import ScraperOptions
 from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.section.table.base import TableSectionParser
-from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
+from scrapers.parsers.contracts.classifier_abc import ClassifierABC
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.constants import UNKNOWN_VALUE
 from scrapers.section.parse_results import SectionParseResult
@@ -21,7 +21,7 @@ from scrapers.table_parsing_helper import TableParsingHelper
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 
-class DriverResultsSectionTableClassifier(SectionTableClassifierABC[str]):
+class DriverResultsSectionTableClassifier(ClassifierABC[dict[str, Any], str]):
     def __init__(self, classifier: DriverResultsTableClassifier | None = None) -> None:
         self._classifier = classifier or DriverResultsTableClassifier()
 

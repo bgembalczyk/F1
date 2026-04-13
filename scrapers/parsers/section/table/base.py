@@ -9,11 +9,11 @@ from bs4 import BeautifulSoup
 from models.entity_name import EntityName
 from models.section_id import SectionId
 from scrapers.mappers.mapper_abc import MapperABC
+from scrapers.parsers.contracts.classifier_abc import ClassifierABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
 from scrapers.parsers.section.base import SectionParserBase
-from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
 from scrapers.parsers.section.table.contracts import TablePayload
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.pipeline_table import TablePipeline
@@ -22,12 +22,6 @@ from scrapers.section.serializer import build_section_parse_result
 if TYPE_CHECKING:
     from scrapers.configs.public import TableConfig
     from scrapers.section.parse_results import SectionParseResult
-
-class PassthroughSectionTableClassifier(SectionTableClassifierABC[dict[str, Any]]):
-    """Domyślny klasyfikator: zwraca niezmodyfikowany payload tabeli."""
-
-    def classify(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
-        return table_data
 
 
 class IdentitySectionTableRecordMapper(
@@ -64,7 +58,7 @@ class TableSectionParser(SectionParserBase):
         include_heading_path: bool = False,
         include_source_table: bool = False,
         html_parser: HtmlSoupParserABC[list[TablePayload]] | None = None,
-        classifier: SectionTableClassifierABC[Any] | None = None,
+        classifier: ClassifierABC[TablePayload, Any] | None = None,
         mapper: Any | None = None,
     ) -> None:
         self._section_id = SectionId.from_raw(section_id)
@@ -82,7 +76,7 @@ class TableSectionParser(SectionParserBase):
             include_heading_path=include_heading_path,
             include_source_table=include_source_table,
         )
-        self._classifier = classifier or PassthroughSectionTableClassifier()
+        self._classifier: ClassifierABC[TablePayload, Any] | None = classifier
         self._record_mapper = mapper or IdentitySectionTableRecordMapper()
 
     @property
@@ -127,7 +121,11 @@ class TableSectionParser(SectionParserBase):
     def parse_fragment(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         records: list[dict[str, Any]] = []
         for table_data in self._collect_tables(section_fragment):
-            table_classification = self._classifier.classify(table_data)
+            table_classification = (
+                self._classifier.classify(table_data)
+                if self._classifier is not None
+                else table_data
+            )
             if table_classification is None:
                 continue
             table_pipeline = self.build_pipeline(

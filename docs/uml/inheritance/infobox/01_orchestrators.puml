@@ -15,18 +15,13 @@ abstract class InfoboxExtractorABC
 abstract class InfoboxOrchestratorABC
 class InfoboxSectionCollector
 abstract class ParsedRecordsMixin
-abstract class ParsingBundle
-abstract class ParsingBundleProviderABC
-class StrategyBackedInfoboxOrchestrator
 
 InfoboxOrchestratorABC <|-- BaseInfoboxOrchestrator
 ParsedRecordsMixin <|-- BaseInfoboxOrchestrator
 InfoboxExtractorABC <|-- CircuitInfoboxExtractor
-StrategyBackedInfoboxOrchestrator <|-- CircuitInfoboxOrchestrator
+InfoboxOrchestratorABC <|-- CircuitInfoboxOrchestrator
+ParsedRecordsMixin <|-- CircuitInfoboxOrchestrator
 BaseInfoboxOrchestrator <|-- ConstructorInfoboxOrchestrator
-ParsingBundle <|-- DriverInfoboxBundle
 BaseInfoboxOrchestrator <|-- DriverInfoboxOrchestrator
-InfoboxOrchestratorABC <|-- StrategyBackedInfoboxOrchestrator
-ParsedRecordsMixin <|-- StrategyBackedInfoboxOrchestrator
 
 @enduml
