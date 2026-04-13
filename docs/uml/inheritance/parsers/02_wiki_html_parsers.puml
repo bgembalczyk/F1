@@ -23,10 +23,8 @@ class WikiReferencesElementParser
 abstract class WikiReferencesElementParserABC
 class WikiSectionElementParser
 abstract class WikiSectionElementParserABC
-abstract class WikiSectionParserBase
 class WikiTableElementParser
 abstract class WikiTableElementParserABC
-abstract class WikiTableElementParserBase
 class WikiTableHtmlParser
 class WikiTableParser
 

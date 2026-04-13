@@ -17,14 +17,14 @@ class SectionParserBase(WikiSectionElementParserABC, ABC):
         """Parse a Wikipedia section fragment into the unified section DTO."""
 
     def _parse_group(self, *args: object, **kwargs: object) -> object:
-        """Internal helper for parsers based on element grouping."""
+        """Wewnętrzny helper dla parserów opartych o grupowanie elementów."""
 
         _ = args
         _ = kwargs
         raise NotImplementedError
 
     def _parse_children(self, *args: object, **kwargs: object) -> object:
-        """Internal helper for parsers based on iterating over children."""
+        """Wewnętrzny helper dla parserów opartych o iterację po dzieciach."""
 
         _ = args
         _ = kwargs
