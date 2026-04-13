@@ -34,7 +34,7 @@ FAMILY_RULES = {
     "single_article": FamilyRule(
         family="single_article",
         required_bases=(
-            "DomainArticleScraperBase",
+            "ArticleScraperBase",
             "SectionAdapterScraperBase",
             "SectionByIdScraperBase",
         ),

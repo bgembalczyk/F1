@@ -3,6 +3,9 @@ from unittest.mock import patch
 
 from scrapers.single_wiki_article import SectionByIdScraperBase
 from scrapers.single_wiki_article import WikipediaSectionByIdSelectionStrategy
+from scrapers.single_wiki_article.single_article_section_aware_mixin import (
+    SectionAwareMixin,
+)
 
 
 class ConcreteSectionByIdScraper(SectionByIdScraperBase):
@@ -12,21 +15,20 @@ class ConcreteSectionByIdScraper(SectionByIdScraperBase):
         return {}
 
 
-def patched_init(self, *_args, **kwargs):
-    """Replace super().__init__ to avoid HTTP setup."""
-    self._kwargs_received = kwargs
+def patched_article_init(self, *_args, **kwargs):
+    """Replace ArticleScraperBase.__init__ to avoid HTTP setup."""
+    pass
 
 
 def test_section_by_id_sets_default_strategy_when_not_provided() -> None:
-    # Lines 13-17: __init__ sets section_selection_strategy via setdefault
     with patch(
-        "scrapers.base.single_wiki_article.base.DomainArticleScraperBase.__init__",
-        patched_init,
+        "scrapers.single_wiki_article.single_article_scraper_base.ArticleScraperBase.__init__",
+        patched_article_init,
     ):
         scraper = ConcreteSectionByIdScraper.__new__(ConcreteSectionByIdScraper)
         ConcreteSectionByIdScraper.__init__(scraper)
         assert isinstance(
-            scraper._kwargs_received.get("section_selection_strategy"),
+            scraper.section_selection_strategy,
             WikipediaSectionByIdSelectionStrategy,
         )
 
@@ -34,12 +36,12 @@ def test_section_by_id_sets_default_strategy_when_not_provided() -> None:
 def test_section_by_id_does_not_override_provided_strategy() -> None:
     custom_strategy = WikipediaSectionByIdSelectionStrategy(domain="engines")
     with patch(
-        "scrapers.base.single_wiki_article.base.DomainArticleScraperBase.__init__",
-        patched_init,
+        "scrapers.single_wiki_article.single_article_scraper_base.ArticleScraperBase.__init__",
+        patched_article_init,
     ):
         scraper = ConcreteSectionByIdScraper.__new__(ConcreteSectionByIdScraper)
         ConcreteSectionByIdScraper.__init__(
             scraper,
             section_selection_strategy=custom_strategy,
         )
-        assert scraper._kwargs_received["section_selection_strategy"] is custom_strategy
+        assert scraper.section_selection_strategy is custom_strategy

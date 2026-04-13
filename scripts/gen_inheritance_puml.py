@@ -280,8 +280,6 @@ p03 |= {
     "WikiScraper",
     "RecursiveSectionParser",
     "SectionAdapter",
-    "SectionAdapterScraperBase",
-    "SectionByIdScraperBase",
     "BodyContentAssembler",
     "ArticleTablesParser",
     "ArticleTablesParserABC",

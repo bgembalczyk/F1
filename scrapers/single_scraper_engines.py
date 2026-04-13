@@ -8,10 +8,10 @@ from scrapers.dto import TablesPayloadDTO
 from scrapers.options import ScraperOptions
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
-from scrapers.single_wiki_article import DomainArticleScraperBase
+from scrapers.single_wiki_article import ArticleScraperBase
 
 
-class SingleEngineManufacturerScraper(DomainArticleScraperBase):
+class SingleEngineManufacturerScraper(ArticleScraperBase):
     """
     Scraper pojedynczego producenta silnika - pobiera wszystkie infoboksy
     oraz wszystkie tabele z artykułu Wikipedii.

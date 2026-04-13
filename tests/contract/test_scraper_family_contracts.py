@@ -117,12 +117,7 @@ def test_family_contract_docstring_defines_extension_rules(
         (
             "scrapers/single_wiki_article/single_article_scraper_base.py",
             "ArticleScraperBase",
-            ("extract_by_url",),
-        ),
-        (
-            "scrapers/single_wiki_article/single_article_domain_scraper_base.py",
-            "DomainArticleScraperBase",
-            ("_assemble_record",),
+            ("extract_by_url", "_assemble_record"),
         ),
         (
             "scrapers/parsers/section/base.py",
