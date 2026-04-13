@@ -265,7 +265,7 @@ write(
 
 # PARSERS/03 – Scrapers
 SCRAPER_ROOTS = [
-    "ScraperLifecycleABC",
+    "WikiScraper",
     "SectionAwareMixin",
     "WikiElementParsingMixin",
     "FetchOrchestrationMixin",
