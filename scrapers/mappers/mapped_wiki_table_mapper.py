@@ -1,4 +1,4 @@
-from scrapers.wiki_table_base_mapper import WikiTableBaseMapper
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 
 class MappedWikiTableMapper(WikiTableBaseMapper):
