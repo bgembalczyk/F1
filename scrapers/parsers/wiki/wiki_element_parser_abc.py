@@ -13,8 +13,6 @@ from models.data.wiki.figure import WikiFigureData
 from models.data.wiki.infobox import WikiInfoboxData
 from models.data.wiki.list import WikiListData
 from models.data.wiki.navbox import WikiNavboxData
-from models.data.wiki.section import WikiSectionData
-from models.data.wiki.table import WikiTableData
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 
@@ -30,16 +28,6 @@ WikiElementType = Literal[
     "figure",
     "article",
 ]
-
-
-class WikiTableElementParserABC(
-    HtmlTagParserABC[WikiTableData],
-    ABC,
-):
-    element_type: WikiElementType = "table"
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> WikiTableData: ...
 
 
 class WikiListElementParserABC(
@@ -101,5 +89,4 @@ __all__ = [
     "WikiListElementParserABC",
     "WikiNavboxElementParserABC",
     "WikiParagraphElementParserABC",
-    "WikiTableElementParserABC",
 ]

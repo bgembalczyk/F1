@@ -192,12 +192,6 @@ P01_EXCLUDE = {
     "TableSectionParser",
     "BaseSeasonParser",
     "BaseDriverResultsSectionParser",
-    # → p05 (table parsers)
-    "TableParserABC",
-    "TableCellParserABC",
-    "TableRowParserABC",
-    "InfoboxCollapsibleTableParserABC",
-    "InfoboxNestedTableParserABC",
     # → p07 (misc / infobox field parsers)
     "InfoboxHtmlFieldParserABC",
     "InfoboxRowsParserABC",
@@ -320,18 +314,11 @@ write(
 )
 
 # PARSERS/05 – Table parsers (complete self-contained hierarchy)
-# TableParserABC, WikiTableElementParserABC and their chains are excluded from p01/p02
-# via P01_EXCLUDE and the WikiTable filter, so they land here naturally.
+# WikiTable* classes are excluded from p02 via the WikiTable filter, so they land here.
 TABLE_ROOTS = [
-    "WikiTableElementParserABC",
-    "WikiTableBaseParser",
     "WikiTableHtmlParser",
     "HtmlTableParser",
     "TableCellExtractionMixin",
-    "TableRowParsingMixin",
-    "TableParserABC",
-    "TableCellParserABC",
-    "TableRowParserABC",
     "HeaderNormalizationMixin",
 ]
 p05: set[str] = set()

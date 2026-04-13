@@ -11,10 +11,10 @@ from scrapers.helpers.text import clean_wiki_text
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.infobox.extraction.extractor import InfoboxLinkExtractor
 from scrapers.parsers.infobox.constants import EXPECTED_STATS_COLUMNS
-from scrapers.parsers.infobox_parser_abc import InfoboxNestedTableParserABC
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class InfoboxTableParser(InfoboxNestedTableParserABC):
+class InfoboxTableParser(ParserABC[Tag, dict[str, Any]]):
     """Handles parsing of nested tables and extraction of statistics."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor, *, include_urls: bool):
