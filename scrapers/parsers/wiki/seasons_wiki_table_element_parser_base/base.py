@@ -4,10 +4,11 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.wiki.table_element_base import WikiTableElementParserBase
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.wiki.base import WikiRecords
 
 
-class BaseSeasonParser(WikiTableElementParserBase, ABC):
+class BaseSeasonParser(HtmlSoupParserABC[WikiRecords], ABC):
     """Base contract for season parsers, processing Wikipedia tables."""
 
     @abstractmethod

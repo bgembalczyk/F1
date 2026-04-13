@@ -7,8 +7,10 @@ from pathlib import Path
 SECTION_ROOT = Path("scrapers/parsers/section")
 
 APPROVED_ROOT_BASES = {
-    "BaseNestedSectionParser",
-    "BaseSectionParser",
+    "SectionParserBase",
+    "NestedWikiSectionParser",
+    "SubSectionParser",
+    "SubSubSectionParser",
 }
 
 ALLOWED_MIXINS = {

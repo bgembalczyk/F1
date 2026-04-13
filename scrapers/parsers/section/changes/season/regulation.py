@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.mixins.extract_list_items import ExtractListItemsMixin
-from scrapers.parsers.section.list.base import ListSectionParser
+from scrapers.parsers.section.base import SectionParserBase
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
 
@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class SeasonRegulationChangesSectionParser(ExtractListItemsMixin, ListSectionParser):
+class SeasonRegulationChangesSectionParser(ExtractListItemsMixin, SectionParserBase):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         records = self._extract_list_items(section_fragment)
         if not records:

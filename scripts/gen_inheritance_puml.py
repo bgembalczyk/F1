@@ -151,11 +151,11 @@ main_comp = component_of('ParserABC')
 p01: set[str] = set()
 p01 |= descendants('ParserABC', main_comp)
 KEEP_IN_CORE = {
-    'SoupParser', 'SectionParserBase', 'BaseSectionParser',
+    'SoupParser', 'SectionParserBase',
     'SectionParserABC',
-    'ListSectionParser', 'TableSectionParser', 'TextBlockSectionParser',
+    'TableSectionParser',
     'InfoboxRowsParser', 'CollapsibleTableParser',
-    'InfoboxTableParser', 'InfoboxSectionParser',
+    'InfoboxTableParser',
     'CallableInfoboxFieldParser', 'HtmlInfoboxFieldParser',
     'InfoboxCellValueExtractor', 'HeaderParser', 'ContentTextParser',
 }
@@ -201,11 +201,11 @@ write(OUT / 'parsers/03_scrapers.puml',
       make_puml('Scraper Hierarchy', sorted(p03)))
 
 # PARSERS/04 – Domain section parsers
-SECTION_ROOTS = ['SectionParserBase', 'BaseSectionParser', 'ListSectionParser',
-                 'TableSectionParser', 'TextBlockSectionParser',
+SECTION_ROOTS = ['SectionParserBase',
+                 'TableSectionParser',
                  'ApplyForElementsMixin', 'ExtractListItemsMixin',
                  'NestedSectionHandlingMixin', 'SectionTableParseMixin',
-                 'DeclarativeSectionTableParseMixin', 'SeasonSectionParserABC',
+                 'DeclarativeSectionTableParseMixin',
                  'BaseDriverResultsSectionParser', 'BaseSeasonParser']
 p04: set[str] = set()
 for r in SECTION_ROOTS:

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.parsers.section.text.base import TextBlockSectionParser
+from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.calendar import SeasonCalendarParser
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result
@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-class SeasonCalendarSectionParser(TextBlockSectionParser):
+class SeasonCalendarSectionParser(SectionParserBase):
     def __init__(self, parser: SeasonCalendarParser, season_year: int | None) -> None:
         self._parser = parser
         self._season_year = season_year

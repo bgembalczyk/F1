@@ -24,7 +24,7 @@ PARSER_CONTRACT_SCOPES = (
     Path("scrapers/parsers/wiki/base_nested_section"),
 )
 PARSER_ABSTRACT_BASE_NAMES = {
-    "BaseSectionParser",
+    "SectionParserBase",
     "BaseNestedSectionParser",
     "TableSectionParser",
     "ConstructorTablesSectionParser",

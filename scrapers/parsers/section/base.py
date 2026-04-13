@@ -16,5 +16,19 @@ class SectionParserBase(WikiSectionElementParserABC, ABC):
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         """Parse a Wikipedia section fragment into the unified section DTO."""
 
+    def _parse_group(self, *args: object, **kwargs: object) -> object:
+        """Internal helper for parsers based on element grouping."""
+
+        _ = args
+        _ = kwargs
+        raise NotImplementedError
+
+    def _parse_children(self, *args: object, **kwargs: object) -> object:
+        """Internal helper for parsers based on iterating over children."""
+
+        _ = args
+        _ = kwargs
+        raise NotImplementedError
+
 
 __all__ = ["SectionParserBase"]

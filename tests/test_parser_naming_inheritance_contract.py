@@ -127,7 +127,6 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             _table_parser_bases = {
                 "WikiTableBaseMapper",
                 "WikiTableHtmlParser",
-                "WikiTableElementParserBase",
             }
             inherits_table_base = _inherits_from(
                 class_info,
@@ -137,8 +136,7 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             if not inherits_table_base:
                 violations.append(
                     f"{class_info.module}.{class_info.name}: TableParser musi "
-                    "dziedziczyć po WikiTableBaseMapper, WikiTableHtmlParser "
-                    "lub WikiTableElementParserBase",
+                    "dziedziczyć po WikiTableBaseMapper lub WikiTableHtmlParser",
                 )
             if not _has_parse(class_info, classes):
                 violations.append(
@@ -205,10 +203,8 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             _section_parser_bases = {
                 "SectionParser",
                 "NestedWikiSectionParser",
-                # Canonical runtime base introduced after initial contract was written
-                "BaseSectionParser",
-                # soup-based section parsers used outside the NestedWikiSectionParser tree
-                "WikiSectionParserBase",
+                # Canonical runtime base for section parsers
+                "SectionParserBase",
                 # recursive heading-level parsers (HistorySectionParser, etc.)
                 "BaseNestedSectionParser",
                 # WikiParser is the root for all recursive/nested parsers
@@ -225,11 +221,13 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             ):
                 # NestedWikiSectionParser-style parsers accept a Tag/list[Tag] element,
                 # not a section_fragment BeautifulSoup.  Skip the signature check for
-                # any parser that descends from the nested-parser tree.
-                if not _inherits_from(
+                # the nested-parser base classes themselves and any parser that
+                # descends from the nested-parser tree.
+                _nested_roots = {"NestedWikiSectionParser", "SubSectionParser", "SubSubSectionParser"}
+                if class_info.name not in _nested_roots and not _inherits_from(
                     class_info,
                     classes,
-                    {"NestedWikiSectionParser", "BaseNestedSectionParser"},
+                    _nested_roots,
                 ):
                     violations.append(
                         f"{class_info.module}.{class_info.name}: parse musi mieć sygnaturę "
