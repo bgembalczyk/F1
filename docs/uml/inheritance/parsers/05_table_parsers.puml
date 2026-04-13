@@ -10,36 +10,27 @@ abstract class HeaderNormalizationMixin
 abstract class HtmlSoupParserABC
 abstract class HtmlTagParserABC
 class HtmlTableParser
-abstract class InfoboxCollapsibleTableParserABC
-abstract class InfoboxNestedTableParserABC
 class InfoboxTableParser
+abstract class ParserABC
 class SeasonStandingsParser
 class SeasonsTableParser
 abstract class TableCellExtractionMixin
-abstract class TableCellParserABC
 class TableElementParser
-abstract class TableParserABC
-abstract class TableRowParserABC
-abstract class TableRowParsingMixin
-class WikiTableBaseParser
 class WikiTableElementParser
-abstract class WikiTableElementParserABC
 class WikiTableHtmlParser
 class WikiTableParser
 
-InfoboxCollapsibleTableParserABC <|-- CollapsibleTableParser
+ParserABC <|-- CollapsibleTableParser
 HtmlTagParserABC <|-- F1StandingsTableParser
 HtmlSoupParserABC <|-- HtmlTableParser
-TableRowParsingMixin <|-- HtmlTableParser
-InfoboxNestedTableParserABC <|-- InfoboxTableParser
+ParserABC <|-- InfoboxTableParser
 HtmlSoupParserABC <|-- SeasonStandingsParser
 WikiTableHtmlParser <|-- SeasonsTableParser
-WikiTableElementParserABC <|-- TableElementParser
-TableParserABC <|-- WikiTableBaseParser
-WikiTableElementParserABC <|-- WikiTableElementParser
+HtmlTagParserABC <|-- TableElementParser
+HtmlTagParserABC <|-- WikiTableElementParser
 HeaderNormalizationMixin <|-- WikiTableHtmlParser
 TableCellExtractionMixin <|-- WikiTableHtmlParser
-WikiTableElementParserABC <|-- WikiTableHtmlParser
+HtmlTagParserABC <|-- WikiTableHtmlParser
 WikiTableHtmlParser <|-- WikiTableParser
 
 @enduml

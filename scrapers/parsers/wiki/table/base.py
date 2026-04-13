@@ -3,8 +3,6 @@ from __future__ import annotations
 from abc import ABC
 from typing import Any
 
-from bs4 import Tag
-
 from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.mixins.group import GroupParsingMixin
 from scrapers.parsers.mixins.wiki.table_payload.collect import (
@@ -13,15 +11,7 @@ from scrapers.parsers.mixins.wiki.table_payload.collect import (
 from scrapers.parsers.mixins.wiki.table_payload.transform import (
     WikiTablePayloadTransformMixin,
 )
-from scrapers.parsers.table_parser_abc import TableParserABC
 from scrapers.row_mapping_mixin import RowMappingMixin
-
-
-class WikiTableBaseParser(TableParserABC, ABC):
-    """Bazowa klasa parserów tabel wiki (HTML Tag -> parsed data)."""
-
-    def parse(self, raw: Tag) -> dict[str, Any]:
-        raise NotImplementedError
 
 
 class WikiTableBaseMapper(
@@ -119,5 +109,4 @@ class WikiTableBaseMapper(
 
 __all__ = [
     "WikiTableBaseMapper",
-    "WikiTableBaseParser",
 ]

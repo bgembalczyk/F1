@@ -8,7 +8,6 @@ TARGET_BRANCHES = {
     "ParserABC",
     "HtmlTagParserABC",
     "HtmlSoupParserABC",
-    "WikiTableElementParserABC",
     "WikiListElementParserABC",
     "WikiSectionElementParserABC",
     "WikiInfoboxElementParserABC",
@@ -18,9 +17,6 @@ TARGET_BRANCHES = {
     "InfoboxFieldParserABC",  # legacy name kept for compatibility with historical checks
     "InfoboxHtmlFieldParserABC",
     "InfoboxRowsParserABC",
-    "InfoboxNestedTableParserABC",
-    "InfoboxCollapsibleTableParserABC",
-    "TableParserABC",  # base of WikiTableBaseParser
 }
 
 

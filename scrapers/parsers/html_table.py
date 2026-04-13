@@ -6,19 +6,24 @@ from bs4 import Tag
 
 from scrapers.constants.constants_table import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.headers_table import normalize_header
+from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.html_utils import find_section_elements
-from scrapers.mixins.table_row_parsing import TableRowParsingMixin
+from scrapers.helpers.text import clean_wiki_text
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.row_table import TableRow
 
 logger = logging.getLogger(__name__)
 
 
-class HtmlTableParser(TableRowParsingMixin, HtmlSoupParserABC[list[TableRow]]):
+class HtmlTableParser(HtmlSoupParserABC[list[TableRow]]):
     """
     Parser tabel HTML, który zwraca listę wierszy jako mapowania
     nagłówków na komórki.
     """
+
+    strip_lang_suffix: bool = True
+    strip_refs: bool = True
+    normalize_dashes: bool = True
 
     def __init__(
         self,
@@ -40,6 +45,28 @@ class HtmlTableParser(TableRowParsingMixin, HtmlSoupParserABC[list[TableRow]]):
         self.strip_lang_suffix = strip_lang_suffix
         self.strip_refs = strip_refs
         self.normalize_dashes = normalize_dashes
+
+    def _clean_cells(self, cells: Sequence[Tag]) -> list[str]:
+        return [
+            clean_wiki_text(
+                c.get_text(" ", strip=True),
+                strip_lang_suffix=self.strip_lang_suffix,
+                strip_refs=self.strip_refs,
+                normalize_dashes=self.normalize_dashes,
+            )
+            for c in cells
+        ]
+
+    @staticmethod
+    def _is_empty_row(cells: Sequence[Tag]) -> bool:
+        return not cells or all(not c.get_text(strip=True) for c in cells)
+
+    @staticmethod
+    def _is_repeated_header_row(
+        cleaned_cells: Sequence[str],
+        headers: Sequence[str],
+    ) -> bool:
+        return is_repeated_header_row(cleaned_cells, headers)
 
     def parse(self, soup: BeautifulSoup) -> list[TableRow]:
         table = self.find_table(soup)

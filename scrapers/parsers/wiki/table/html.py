@@ -3,12 +3,13 @@ from typing import Any
 
 from bs4 import Tag
 
+from models.data.wiki.table import WikiTableData
 from scrapers.constants.constants_table import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.helpers.background import extract_background
 from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.wiki.parser_mixins import HeaderNormalizationMixin
 from scrapers.parsers.wiki.parser_mixins import TableCellExtractionMixin
@@ -17,7 +18,7 @@ from scrapers.parsers.wiki.parser_mixins import TableCellExtractionMixin
 class WikiTableHtmlParser(
     TableCellExtractionMixin,
     HeaderNormalizationMixin,
-    WikiTableElementParserABC,
+    HtmlTagParserABC[WikiTableData],
 ):
     """Parser tabel wikitable Wikipedii.
 

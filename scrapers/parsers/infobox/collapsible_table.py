@@ -7,10 +7,10 @@ from bs4 import Tag
 from scrapers.extractors.numeric_extractor import NumericExtractor
 from scrapers.helpers.text_normalization import clean_infobox_text
 from scrapers.parsers.infobox.table import InfoboxTableParser
-from scrapers.parsers.infobox_parser_abc import InfoboxCollapsibleTableParserABC
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class CollapsibleTableParser(InfoboxCollapsibleTableParserABC):
+class CollapsibleTableParser(ParserABC[Tag, dict[str, Any] | None]):
     """Handles parsing of collapsible career statistics tables."""
 
     def __init__(self, cell_value_extractor_delegate):

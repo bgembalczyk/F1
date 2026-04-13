@@ -15,7 +15,6 @@ MAX_DEPRECATED_BASE_IMPORTS_BY_FILE: dict[str, int] = {
     "scrapers/extractors/table_extractor.py": 2,
     "scrapers/helpers_seasons.py": 2,
     "scrapers/lap_records_table.py": 7,
-    "scrapers/mixins/table_row_parsing.py": 1,
     "scrapers/parser_table.py": 3,
     "scrapers/pipeline_table.py": 7,
     "scrapers/schema_table.py": 1,
