@@ -4,8 +4,8 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
 from scrapers.drivers.drivers_infobox.parsers.link_extractor import InfoboxLinkExtractor
+from scrapers.parsers.infobox.driver_cell import InfoboxCellParser
 from tests.support.driver_infobox_assertions import assert_car_number_with_present
 
 

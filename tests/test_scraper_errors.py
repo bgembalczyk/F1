@@ -19,6 +19,8 @@ ensure_requests_stub()
 # ruff: noqa: E402
 from infrastructure.http.errors.base import RequestError
 from scrapers.abc import ABCScraper
+from scrapers.base.options import ScraperOptions
+from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
 from scrapers.error_handler import ErrorHandler
 from scrapers.errors import DomainParseError
 from scrapers.errors import ErrorBehavior
@@ -30,19 +32,19 @@ from scrapers.errors_report import write_error_report
 from scrapers.errors_report import write_error_summary_by_code
 from scrapers.infobox.extraction.base import WikipediaInfoboxScraper
 from scrapers.list.base import F1ListScraper
-from scrapers.base.options import ScraperOptions
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntitiesParser
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
-    CircuitEntityExtractor,
-)
+from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoExtractor
 from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryExtractor
 from scrapers.parsers.infobox.text_utils.circuit.lap_record import (
     CircuitLapRecordExtractor,
 )
 from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
-from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
-from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
+    CircuitEntitiesParser,
+)
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
+    CircuitEntityExtractor,
+)
 from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper
 from tests.support.dependency_stubs import ensure_bs4_stub
 from tests.support.dependency_stubs import ensure_certifi_stub

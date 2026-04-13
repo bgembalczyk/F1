@@ -1,6 +1,8 @@
 from typing import Any
 
-from scrapers.mappers.base_red_flagged_races_table_mapper import BaseRedFlaggedRacesTableMapper
+from scrapers.mappers.base_red_flagged_races_table_mapper import (
+    BaseRedFlaggedRacesTableMapper,
+)
 from scrapers.red_flagged_helpers import RESTART_STATUS_MAP
 from scrapers.red_flagged_helpers import extract_rich_cell
 from scrapers.red_flagged_helpers import map_drivers_cell
@@ -71,7 +73,11 @@ class NonChampionshipRacesTableMapper(BaseRedFlaggedRacesTableMapper):
                 merged.append(row)
         return merged
 
-    def parse_row(self, row: dict[str, Any], column_map: dict[str, str]) -> dict[str, Any]:
+    def parse_row(
+        self,
+        row: dict[str, Any],
+        column_map: dict[str, str],
+    ) -> dict[str, Any]:
         mapped: dict[str, Any] = {}
         for header, cell_data in row.items():
             key = column_map.get(header)

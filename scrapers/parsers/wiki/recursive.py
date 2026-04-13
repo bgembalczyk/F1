@@ -7,16 +7,20 @@ from bs4 import Tag
 
 from scrapers.parsers.mixins.wiki.element import WikiElementParsingMixin
 from scrapers.parsers.nested_child import NestedChildParser
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
-from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.parser_mixins import NestedSectionHandlingMixin
 
 SectionLevelParseResult: TypeAlias = dict[str, Any]
 
 
-class RecursiveSectionParser(NestedSectionHandlingMixin, WikiElementParsingMixin, ParserABC):
+class RecursiveSectionParser(
+    NestedSectionHandlingMixin,
+    WikiElementParsingMixin,
+    ParserABC,
+):
     """Generic recursive parser for heading levels h2-h6."""
 
     def __init__(
@@ -58,7 +62,10 @@ class RecursiveSectionParser(NestedSectionHandlingMixin, WikiElementParsingMixin
     ) -> SectionLevelParseResult:
         section_context = context or SectionExtractionContext()
         tags = self.filter_child_tags(elements)
-        parts = self.toolbox.section_locator.locate(tags, heading_class=self.heading_class)
+        parts = self.toolbox.section_locator.locate(
+            tags,
+            heading_class=self.heading_class,
+        )
         sections: list[dict[str, Any]] = []
 
         for part in parts:

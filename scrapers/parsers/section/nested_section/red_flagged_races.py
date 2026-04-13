@@ -5,10 +5,12 @@ from bs4 import Tag
 
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.section.sub_section.non_championships_races import NonChampionshipsRacesSubSectionParser
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.section.sub_section.non_championships_races import NonChampionshipsRacesSubSectionParser
-from scrapers.world_championships_races_table_mapper import WorldChampionshipsRacesTableMapper
+from scrapers.parsers.section.sub_section.non_championships_races import (
+    NonChampionshipsRacesSubSectionParser,
+)
+from scrapers.world_championships_races_table_mapper import (
+    WorldChampionshipsRacesTableMapper,
+)
 
 
 class RedFlaggedRacesSectionParser(NestedWikiSectionParser):

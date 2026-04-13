@@ -70,5 +70,3 @@ class CircuitPipelineService(
 
 class CircuitDomainRecordService(CircuitPipelineService):
     """Compatibility alias for legacy service naming."""
-
-

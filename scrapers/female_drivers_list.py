@@ -4,8 +4,12 @@ from scrapers.constants.constants_drivers import FEMALE_DRIVERS_HEADERS
 from scrapers.constants.constants_drivers import FEMALE_DRIVERS_SECTION_ID
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.legacy_lists.female_drivers import DriversSectionParser
-from scrapers.parsers.section.legacy_lists.female_drivers import FemaleDriversTableMapper
-from scrapers.parsers.section.legacy_lists.female_drivers import OfficialDriversSubSectionParser
+from scrapers.parsers.section.legacy_lists.female_drivers import (
+    FemaleDriversTableMapper,
+)
+from scrapers.parsers.section.legacy_lists.female_drivers import (
+    OfficialDriversSubSectionParser,
+)
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import FEMALE_DRIVERS_LIST
 

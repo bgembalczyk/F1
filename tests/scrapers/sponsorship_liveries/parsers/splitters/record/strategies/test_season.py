@@ -1,8 +1,6 @@
 # ruff: noqa: SLF001
 from scrapers.parsers.liveries.sponsorship import PipelineRecord
-from scrapers.parsers.liveries.sponsorship import (
-    SeasonSplitStrategy,
-)
+from scrapers.parsers.liveries.sponsorship import SeasonSplitStrategy
 
 
 def test_apply_returns_original_for_single_season_record() -> None:

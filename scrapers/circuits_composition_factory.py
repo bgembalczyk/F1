@@ -6,17 +6,18 @@ from scrapers.circuit_scraper_dependencies import CircuitScraperDependencies
 from scrapers.options import ScraperOptions
 from scrapers.orchestration.circuit_orchestrator import CircuitInfoboxOrchestrator
 from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
+from scrapers.services.domain_record.circuit_pipeline_service import (
+    CircuitDomainRecordService,
+)
 from scrapers.services.section.extraction.circuits import (
     CircuitSectionExtractionService,
 )
 from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,
 )
-from scrapers.services.domain_record.circuit_pipeline_service import CircuitDomainRecordService
 from scrapers.services.section.factories.section_service_factory import (
     SectionServiceFactoryABC,
 )
-
 
 
 @dataclass(frozen=True, slots=True)

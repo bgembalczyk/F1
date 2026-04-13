@@ -156,6 +156,7 @@ class BaseHttpClient(ABC):
 
         Uwaga: implementacja współbieżnie ładuje wiele adresów ułatwiając unikanie problemu N+1.
         """
+
         def _get_text_single(url: str) -> str:
             return self.get_text(url, headers=headers, timeout=timeout)
 
@@ -173,5 +174,10 @@ class BaseHttpClient(ABC):
         """
         Parsuje listę odpowiedzi JSON.
         """
-        texts = self.get_text_batch(urls, headers=headers, timeout=timeout, max_workers=max_workers)
+        texts = self.get_text_batch(
+            urls,
+            headers=headers,
+            timeout=timeout,
+            max_workers=max_workers,
+        )
         return [json.loads(text) for text in texts]

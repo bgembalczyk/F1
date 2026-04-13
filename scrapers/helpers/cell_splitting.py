@@ -62,4 +62,3 @@ def replace_link_breaks_in_links(html: str) -> str:
         if br.find_parent("a"):
             br.replace_with(" ")
     return str(fragment)
-

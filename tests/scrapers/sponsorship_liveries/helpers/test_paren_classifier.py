@@ -3,9 +3,7 @@
 
 from unittest.mock import MagicMock
 
-from scrapers.paren_classifier import (
-    ParenClassifier,
-)
+from scrapers.paren_classifier import ParenClassifier
 
 
 def make_classifier(query_return=None, raise_exc=None):

@@ -2,9 +2,7 @@
 import json
 from pathlib import Path
 
-from scrapers.seed_section_orchestration_flow_wiki import (
-    SeedSectionOrchestrationFlow,
-)
+from scrapers.seed_section_orchestration_flow_wiki import SeedSectionOrchestrationFlow
 
 
 def _read_json(path: Path):

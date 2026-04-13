@@ -1,11 +1,13 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-
 from bs4 import Tag
 
-from scrapers.parsers.wiki.extractors.extracted_category_group import ExtractedCategoryGroup
-from scrapers.parsers.wiki.extractors.extracted_category_link import ExtractedCategoryLink
+from scrapers.parsers.wiki.extractors.extracted_category_group import (
+    ExtractedCategoryGroup,
+)
+from scrapers.parsers.wiki.extractors.extracted_category_link import (
+    ExtractedCategoryLink,
+)
 
 
 class CategoryLinksExtractor:
@@ -34,7 +36,11 @@ class CategoryLinksExtractor:
         return category_anchor.get_text(" ", strip=True) or None
 
     @staticmethod
-    def _extract_links(container: Tag, *, skip_first: bool = False) -> list[ExtractedCategoryLink]:
+    def _extract_links(
+        container: Tag,
+        *,
+        skip_first: bool = False,
+    ) -> list[ExtractedCategoryLink]:
         anchors = container.find_all("a")
         if skip_first:
             anchors = anchors[1:]
@@ -51,5 +57,3 @@ class CategoryLinksExtractor:
                 ),
             )
         return links
-
-

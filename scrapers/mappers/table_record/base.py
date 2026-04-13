@@ -2,8 +2,8 @@ from collections.abc import Mapping
 from typing import Any
 
 from scrapers.parsers.mixins.group import GroupParsingMixin
-from scrapers.row_mapping_mixin import RowMappingMixin
 from scrapers.records.inputs.table_record import TableRecordInput
+from scrapers.row_mapping_mixin import RowMappingMixin
 
 
 class TableRecordMapper(

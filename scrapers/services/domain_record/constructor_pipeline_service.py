@@ -70,5 +70,3 @@ class ConstructorPipelineService(
 
 class ConstructorDomainRecordService(ConstructorPipelineService):
     """Compatibility alias for legacy service naming."""
-
-

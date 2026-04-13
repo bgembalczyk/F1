@@ -5,9 +5,9 @@ from pathlib import Path
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.extractors.table import TableExtractor
-from scrapers.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.columns.types.auto import AutoColumn
+from scrapers.extractors.table import TableExtractor
 from scrapers.infobox.extraction.extractor import BaseInfoboxExtractor
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]

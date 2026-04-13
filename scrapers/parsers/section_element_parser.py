@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.data.parsed.html_elements import SectionElementData
-from scrapers.parsers.wiki.content_text import ContentTextParser
 from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
+from scrapers.parsers.wiki.content_text import ContentTextParser
 
 
 class SectionElementParser(WikiSectionElementParserABC):

@@ -19,7 +19,12 @@ class EngineRegulationSubSectionParser(SubSectionParser):
             self._apply_for_elements(section.get("elements", []))
             self._apply_engine_regulation_table_parser(section)
 
-    def parse_group(self, sections: list[dict[str, Any]], *, context: Any = None) -> dict[str, Any]:
+    def parse_group(
+        self,
+        sections: list[dict[str, Any]],
+        *,
+        context: Any = None,
+    ) -> dict[str, Any]:
         payload: dict[str, Any] = {"sub_sub_sections": sections}
         self._apply_engine_regulation_table_parser(payload)
         return payload

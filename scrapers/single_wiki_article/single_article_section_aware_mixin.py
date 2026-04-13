@@ -41,6 +41,4 @@ class SectionAwareMixin:
         )
 
 
-
-
 __all__ = ["SectionAwareMixin"]

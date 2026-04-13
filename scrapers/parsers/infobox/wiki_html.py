@@ -1,4 +1,3 @@
-import warnings
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -7,9 +6,8 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
-from scrapers.parsers.infobox_element_parser import InfoboxElementParser
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
-
+from scrapers.parsers.infobox_element_parser import InfoboxElementParser
 
 
 class WikiInfoboxHtmlParser(WikiInfoboxElementParserABC):
@@ -107,7 +105,6 @@ class WikiInfoboxHtmlParser(WikiInfoboxElementParserABC):
             full_url=lambda href: normalize_url(self.wikipedia_base, href),
             allow_local_anchors=False,
         )
-
 
 
 __all__ = ["WikiInfoboxHtmlParser"]

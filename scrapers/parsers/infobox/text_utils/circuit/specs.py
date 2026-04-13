@@ -189,4 +189,5 @@ class CircuitSpecsExtractor(InfoboxTextUtils):
 
         return result or None
 
+
 __all__ = ["CircuitSpecsExtractor"]

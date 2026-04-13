@@ -4,12 +4,12 @@ from dataclasses import dataclass
 import pytest
 
 from infrastructure.cache.file.protocol import FileCache
-from infrastructure.http.request_executor import HeaderResolver
-from infrastructure.http.request_executor import RequestExecutor
-from infrastructure.http.request_executor import ResponseCacheService
 from infrastructure.http.config import HttpClientConfig
 from infrastructure.http.factories.default_policy import DefaultHttpPolicyFactory
 from infrastructure.http.policies.retry.default import DefaultRetryPolicy
+from infrastructure.http.request_executor import HeaderResolver
+from infrastructure.http.request_executor import RequestExecutor
+from infrastructure.http.request_executor import ResponseCacheService
 
 
 class DummyRequestError(Exception):

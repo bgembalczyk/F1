@@ -10,9 +10,8 @@ from scrapers.parsers.wiki.element import ElementParseInput
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
-from scrapers.parsers.wiki.element_dispatcher import ElementParserDispatcher
-from scrapers.parsers.wiki.element_payload_factory import ElementParseResult
 from scrapers.parsers.wiki.element_dispatcher import ElementDispatcher
+from scrapers.parsers.wiki.element_payload_factory import ElementParseResult
 
 
 class WikiElementParsingMixin:

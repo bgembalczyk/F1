@@ -3,10 +3,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.composite_scraper import CompositeDataExtractor
-from scrapers.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.progress import NoOpProgressAdapter
+from scrapers.composite_scraper import CompositeDataExtractor
+from scrapers.composite_scraper import CompositeDataExtractorChildren
 from scrapers.source_adapter import IterableSourceAdapter
 
 if TYPE_CHECKING:

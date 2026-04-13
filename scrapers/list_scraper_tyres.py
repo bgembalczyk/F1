@@ -7,8 +7,12 @@ from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
 from scrapers.parsers.section.legacy_lists.tyres import ManufacturersSectionParser
-from scrapers.parsers.section.legacy_lists.tyres import TyreManufacturersBySeasonSubSectionParser
-from scrapers.parsers.section.legacy_lists.tyres import TyreManufacturersBySeasonTableMapper
+from scrapers.parsers.section.legacy_lists.tyres import (
+    TyreManufacturersBySeasonSubSectionParser,
+)
+from scrapers.parsers.section.legacy_lists.tyres import (
+    TyreManufacturersBySeasonTableMapper,
+)
 from scrapers.scraper_table import F1TableScraper
 from scrapers.source_catalog import TYRES
 from scrapers.table_schema_dsl import TableSchemaDSL

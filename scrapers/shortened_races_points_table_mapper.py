@@ -2,10 +2,10 @@ from typing import Any
 
 from models.services.season import parse_seasons
 from scrapers.constants.constants_points import SHORTENED_RACE_EXPECTED_HEADERS
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.points_helpers import build_expected_header_lookup
 from scrapers.points_helpers import normalize_column_name
 from scrapers.points_helpers import normalize_header
-from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 
 class ShortenedRacesPointsTableMapper(WikiTableBaseMapper):
@@ -63,4 +63,3 @@ class ShortenedRacesPointsTableMapper(WikiTableBaseMapper):
             }
             for seasons_text in order
         ]
-

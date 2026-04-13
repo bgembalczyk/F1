@@ -90,7 +90,6 @@ class BaseConstructorListScraper(
             LinksListColumn(),
         )
 
-
     @classmethod
     def extend_schema_fragments(
         cls,

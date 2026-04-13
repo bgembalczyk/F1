@@ -28,7 +28,9 @@ def _looks_like_compat_module(path: Path) -> bool:
     lowered_parts = [part.lower() for part in path.parts]
     stem = path.stem.lower()
     token_in_stem = any(token in stem for token in ("compat", "shim", "alias"))
-    token_in_parts = any(part in {"compat", "shim", "aliases"} for part in lowered_parts)
+    token_in_parts = any(
+        part in {"compat", "shim", "aliases"} for part in lowered_parts
+    )
     return token_in_stem or token_in_parts
 
 

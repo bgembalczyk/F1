@@ -1,6 +1,8 @@
 from typing import Any
 
-from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
+from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
 from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_strategy import (
     RecordSplitStrategy,
 )

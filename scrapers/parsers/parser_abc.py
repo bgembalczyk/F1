@@ -3,7 +3,6 @@ from __future__ import annotations
 from abc import ABC
 from abc import abstractmethod
 from typing import Generic
-from typing import TypeVar
 
 from scrapers.parsers.constants_contracts import In
 from scrapers.parsers.constants_contracts import Out

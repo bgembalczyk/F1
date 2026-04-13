@@ -8,9 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from scrapers.columns.helpers.race_result.rules import (
-    round_rules as rules,
-)
+from scrapers.columns.helpers.race_result.rules import round_rules as rules
 
 ABU_DHABI_DOUBLE_POINTS_YEAR = 2014
 

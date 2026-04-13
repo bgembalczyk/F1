@@ -4,7 +4,6 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 if TYPE_CHECKING:
-    from scrapers.infobox.extraction.extractor import BaseInfoboxExtractor
     from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 
 

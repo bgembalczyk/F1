@@ -9,9 +9,9 @@ class SectionTreeNode(TypedDict, total=False):
     section_label: str
     heading_anchor: str
     elements: list[dict[str, Any]]
-    sub_sections: list["SectionTreeNode"]
-    sub_sub_sections: list["SectionTreeNode"]
-    sub_sub_sub_sections: list["SectionTreeNode"]
+    sub_sections: list[SectionTreeNode]
+    sub_sub_sections: list[SectionTreeNode]
+    sub_sub_sub_sections: list[SectionTreeNode]
 
 
 class SectionTreePayload(TypedDict, total=False):

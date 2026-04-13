@@ -105,4 +105,3 @@ class PointsScoringSystemsHistoryTableMapper(WikiTableBaseMapper):
             else:
                 transformed[key] = value
         return transformed
-

@@ -22,7 +22,7 @@ TARGET_BRANCHES = {
     "InfoboxRowsParserABC",
     "InfoboxNestedTableParserABC",
     "InfoboxCollapsibleTableParserABC",
-    "TableParserABC",         # base of WikiTableBaseParser
+    "TableParserABC",  # base of WikiTableBaseParser
 }
 
 ROOTS = (
@@ -54,7 +54,9 @@ def _all_parser_classes() -> dict[str, ClassInfo]:
         for path in sorted(root.rglob("*.py")):
             tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
             for node in tree.body:
-                if not isinstance(node, ast.ClassDef) or not node.name.endswith("Parser"):
+                if not isinstance(node, ast.ClassDef) or not node.name.endswith(
+                    "Parser",
+                ):
                     continue
                 bases = tuple(_base_name(base) for base in node.bases)
                 has_parse = any(
@@ -142,10 +144,12 @@ def test_wiki_parser_classes_follow_target_branches_and_parse_contract() -> None
             continue
         if not _descends_from_target(name, classes):
             violations.append(
-                f"{info.path}:{info.lineno} {name} does not inherit from target parser branches"
+                f"{info.path}:{info.lineno} {name} does not inherit from target parser branches",
             )
             continue
         if not _has_parse_in_hierarchy(name, classes):
-            violations.append(f"{info.path}:{info.lineno} {name} has no parse in hierarchy")
+            violations.append(
+                f"{info.path}:{info.lineno} {name} has no parse in hierarchy",
+            )
 
     assert not violations, "\\n".join(violations)

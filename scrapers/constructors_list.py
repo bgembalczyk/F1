@@ -3,8 +3,8 @@ from __future__ import annotations
 import logging
 from copy import deepcopy
 from pathlib import Path
-from typing import Any
 from typing import TYPE_CHECKING
+from typing import Any
 
 from scrapers.base_constructor_list_scraper import BaseConstructorListScraper
 from scrapers.builders_table import MetricColumnSpec
@@ -14,9 +14,9 @@ from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.auto import AutoColumn
 from scrapers.columns.types.constructor_name import ConstructorNameColumn
 from scrapers.columns.types.links_list import LinksListColumn
-from scrapers.constants.constructors_constants import CONSTRUCTORS_CURRENT_EXPECTED_HEADERS
-from scrapers.constants.constructors_constants import CONSTRUCTORS_FORMER_EXPECTED_HEADERS
-from scrapers.constants.constructors_constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
+from scrapers.constants.constructors_constants import (
+    CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
+)
 from scrapers.constants.constructors_constants import CONSTRUCTOR_BASED_IN_HEADER
 from scrapers.constants.constructors_constants import CONSTRUCTOR_DRIVERS_HEADER
 from scrapers.constants.constructors_constants import CONSTRUCTOR_ENGINE_HEADER
@@ -30,6 +30,12 @@ from scrapers.constants.constructors_constants import CONSTRUCTOR_TOTAL_ENTRIES_
 from scrapers.constants.constructors_constants import CONSTRUCTOR_WCC_HEADER
 from scrapers.constants.constructors_constants import CONSTRUCTOR_WDC_HEADER
 from scrapers.constants.constructors_constants import CONSTRUCTOR_WINS_HEADER
+from scrapers.constants.constructors_constants import (
+    CONSTRUCTORS_CURRENT_EXPECTED_HEADERS,
+)
+from scrapers.constants.constructors_constants import (
+    CONSTRUCTORS_FORMER_EXPECTED_HEADERS,
+)
 from scrapers.constants.shared_headers import SHARED_PODIUMS_HEADER
 from scrapers.constants.shared_headers import SHARED_POINTS_HEADER
 from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
@@ -39,7 +45,9 @@ from scrapers.parsers.section.constructors.current import (
     CurrentConstructorsSectionParser,
 )
 from scrapers.parsers.section.constructors.former import FormerConstructorsSectionParser
-from scrapers.parsers.section.nested_section.privateer_teams import PrivateerTeamsSectionParser
+from scrapers.parsers.section.nested_section.privateer_teams import (
+    PrivateerTeamsSectionParser,
+)
 from scrapers.results import ScrapeResult
 from scrapers.section.selection_strategy.wikipedia_by_id import (
     WikipediaSectionByIdSelectionStrategy,

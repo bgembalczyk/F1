@@ -29,7 +29,9 @@ from scrapers.helpers.date_parsing import parse_formula_category
 from scrapers.helpers.normalize import normalize_auto_value
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.legacy_lists.fatalities import DetailByDriverSubSectionParser
+from scrapers.parsers.section.legacy_lists.fatalities import (
+    DetailByDriverSubSectionParser,
+)
 from scrapers.parsers.section.legacy_lists.fatalities import FatalitiesSectionParser
 from scrapers.parsers.section.legacy_lists.fatalities import FatalitiesTableMapper
 from scrapers.scraper_table import F1TableScraper

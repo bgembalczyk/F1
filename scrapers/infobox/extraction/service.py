@@ -25,15 +25,21 @@ def extract_infobox(
 
 def __getattr__(name: str) -> object:
     if name == "DriverInfoboxOrchestrator":
-        from scrapers.orchestration.driver_infobox_orchestrator import DriverInfoboxOrchestrator
+        from scrapers.orchestration.driver_infobox_orchestrator import (
+            DriverInfoboxOrchestrator,
+        )
 
         return DriverInfoboxOrchestrator
     if name == "ConstructorInfoboxOrchestrator":
-        from scrapers.orchestration.constructor_infobox_orchestrator import ConstructorInfoboxOrchestrator
+        from scrapers.orchestration.constructor_infobox_orchestrator import (
+            ConstructorInfoboxOrchestrator,
+        )
 
         return ConstructorInfoboxOrchestrator
     if name == "CircuitInfoboxExtractionService":
-        from scrapers.orchestration.circuit_orchestrator import CircuitInfoboxOrchestrator
+        from scrapers.orchestration.circuit_orchestrator import (
+            CircuitInfoboxOrchestrator,
+        )
 
         return CircuitInfoboxOrchestrator
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

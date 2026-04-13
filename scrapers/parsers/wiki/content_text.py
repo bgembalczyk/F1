@@ -1,14 +1,14 @@
-from typing import Any
 from dataclasses import replace
+from typing import Any
 
 from bs4 import Tag
 
 from scrapers.parsers.constants import HEADING_CLASS
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
+from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.section.toolbox import SectionParserToolbox
 from scrapers.parsers.section.toolbox import build_default_section_toolbox
-from scrapers.parsers.parser_abc import ParserABC
-from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
 
@@ -29,7 +29,9 @@ class ContentTextParser(ParserABC):
             )
             self.toolbox = SectionParserToolbox(
                 element_parsers=section_first_parsers,
-                element_registry=build_wikipedia_element_registry(parsers=section_first_parsers),
+                element_registry=build_wikipedia_element_registry(
+                    parsers=section_first_parsers,
+                ),
                 section_locator=self.toolbox.section_locator,
                 section_assembler=self.toolbox.section_assembler,
                 mapper_registry=self.toolbox.mapper_registry,

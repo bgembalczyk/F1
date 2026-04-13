@@ -14,4 +14,3 @@ def test_parser_registry_discovery_tracks_concrete_parsers_only() -> None:
 
     # Helper/extractor classes should not be treated as parser contract classes.
     assert not is_parser_class_registered(InfoboxCellValueExtractor)
-

@@ -170,7 +170,7 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 )
 
         if class_info.name.endswith("SectionParser") and not class_info.name.endswith(
-            "SubSectionParser"
+            "SubSectionParser",
         ):
             if (
                 ".section.nested." in class_info.module
@@ -182,7 +182,7 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             ):
                 continue
             if class_info.module.endswith(
-                ".section.protocol"
+                ".section.protocol",
             ) or class_info.module.endswith(
                 ".section.section_parser_protocol",
             ):
@@ -223,7 +223,11 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 # not a section_fragment BeautifulSoup.  Skip the signature check for
                 # the nested-parser base classes themselves and any parser that
                 # descends from the nested-parser tree.
-                _nested_roots = {"NestedWikiSectionParser", "SubSectionParser", "SubSubSectionParser"}
+                _nested_roots = {
+                    "NestedWikiSectionParser",
+                    "SubSectionParser",
+                    "SubSubSectionParser",
+                }
                 if class_info.name not in _nested_roots and not _inherits_from(
                     class_info,
                     classes,

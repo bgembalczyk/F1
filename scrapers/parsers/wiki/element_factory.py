@@ -23,7 +23,9 @@ def build_default_wiki_element_parsers() -> WikiElementSet:
 
 
 def build_default_wikipedia_element_registry() -> ElementRegistry:
-    return build_wikipedia_element_registry(parsers=build_default_wiki_element_parsers())
+    return build_wikipedia_element_registry(
+        parsers=build_default_wiki_element_parsers(),
+    )
 
 
 __all__ = [

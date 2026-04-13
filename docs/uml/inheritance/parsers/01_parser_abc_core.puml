@@ -4,63 +4,27 @@ skinparam classAttributeIconSize 0
 hide empty members
 hide circle
 
-abstract class ArticleTablesParserABC
-abstract class BaseDriverResultsSectionParser
-abstract class BaseSeasonParser
-class CallableInfoboxFieldParser
-class CollapsibleTableParser
 class ContentTextParser
 class HeaderParser
-class HtmlInfoboxFieldParser
 abstract class HtmlSoupParserABC
 abstract class HtmlTagParserABC
-abstract class InfoboxCellParserABC
-class InfoboxCellValueExtractor
-abstract class InfoboxCollapsibleTableParserABC
-abstract class InfoboxHtmlFieldParserABC
-abstract class InfoboxNestedTableParserABC
 abstract class InfoboxParserABC
-class InfoboxRowsParser
-abstract class InfoboxRowsParserABC
-class InfoboxTableParser
 abstract class ParserABC
 abstract class SectionInfoboxesHtmlParserABC
 abstract class SectionListsHtmlParserABC
-abstract class SectionParserBase
 abstract class SectionTablesHtmlParserABC
 abstract class SectionTextBlocksHtmlParserABC
 class SoupParser
-abstract class TableCellParserABC
-abstract class TableParserABC
-abstract class TableRowParserABC
-class TableSectionParser
 
-SectionParserBase <|-- BaseDriverResultsSectionParser
-HtmlSoupParserABC <|-- BaseSeasonParser
-HtmlInfoboxFieldParser <|-- CallableInfoboxFieldParser
-InfoboxCollapsibleTableParserABC <|-- CollapsibleTableParser
 ParserABC <|-- ContentTextParser
 ParserABC <|-- HeaderParser
-InfoboxHtmlFieldParserABC <|-- HtmlInfoboxFieldParser
 ParserABC <|-- HtmlSoupParserABC
 ParserABC <|-- HtmlTagParserABC
-HtmlTagParserABC <|-- InfoboxCellParserABC
-InfoboxCellParserABC <|-- InfoboxCellValueExtractor
-ParserABC <|-- InfoboxCollapsibleTableParserABC
-HtmlTagParserABC <|-- InfoboxHtmlFieldParserABC
-ParserABC <|-- InfoboxNestedTableParserABC
 HtmlTagParserABC <|-- InfoboxParserABC
-InfoboxRowsParserABC <|-- InfoboxRowsParser
-ParserABC <|-- InfoboxRowsParserABC
-InfoboxNestedTableParserABC <|-- InfoboxTableParser
 HtmlSoupParserABC <|-- SectionInfoboxesHtmlParserABC
 HtmlSoupParserABC <|-- SectionListsHtmlParserABC
 HtmlSoupParserABC <|-- SectionTablesHtmlParserABC
 HtmlSoupParserABC <|-- SectionTextBlocksHtmlParserABC
 ParserABC <|-- SoupParser
-HtmlTagParserABC <|-- TableCellParserABC
-HtmlTagParserABC <|-- TableParserABC
-HtmlTagParserABC <|-- TableRowParserABC
-SectionParserBase <|-- TableSectionParser
 
 @enduml

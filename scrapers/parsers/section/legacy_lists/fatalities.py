@@ -43,7 +43,12 @@ class FatalitiesTableMapper(DriverOrderedTableMapper):
 
 
 class DetailByDriverSubSectionParser(SubSectionParser):
-    def __init__(self, *, table_assembler: ArticleTablesAssembler | None = None, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *,
+        table_assembler: ArticleTablesAssembler | None = None,
+        **kwargs: Any,
+    ) -> None:
         super().__init__(toolbox=kwargs.get("toolbox"))
         self._table_assembler = table_assembler or ArticleTablesAssembler(
             specialized_mappers=[FatalitiesTableMapper()],
@@ -60,10 +65,17 @@ class DetailByDriverSubSectionParser(SubSectionParser):
 
 
 class FatalitiesSectionParser(NestedWikiSectionParser):
-    def __init__(self, *, child_parser: NestedChildParser | None = None, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *,
+        child_parser: NestedChildParser | None = None,
+        **kwargs: Any,
+    ) -> None:
         toolbox = kwargs.get("toolbox")
         super().__init__(toolbox=toolbox)
-        self.child_parser = child_parser or DetailByDriverSubSectionParser(toolbox=toolbox)
+        self.child_parser = child_parser or DetailByDriverSubSectionParser(
+            toolbox=toolbox,
+        )
 
 
 __all__ = [

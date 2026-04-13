@@ -14,6 +14,3 @@ ERROR_BEHAVIOR_BY_CATEGORY: dict[ErrorCategory, ErrorBehavior] = {
     ErrorCategory.VALIDATION: ErrorBehavior.HARD,
     ErrorCategory.DOMAIN: ErrorBehavior.SOFT,
 }
-
-
-

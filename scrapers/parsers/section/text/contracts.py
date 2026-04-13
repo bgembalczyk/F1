@@ -26,14 +26,22 @@ class SectionTextBlocksHtmlParserABC(HtmlSoupParserABC[list[TextSectionPayload]]
     def parse(self, raw: BeautifulSoup) -> list[TextSectionPayload]: ...
 
 
-class SectionTextClassifierABC(ClassifierABC[TextSectionPayload, ClassificationT], ABC, Generic[ClassificationT]):
+class SectionTextClassifierABC(
+    ClassifierABC[TextSectionPayload, ClassificationT],
+    ABC,
+    Generic[ClassificationT],
+):
     """Optional classifier for parsed section text payload."""
 
     @abstractmethod
     def classify(self, text_data: TextSectionPayload) -> ClassificationT | None: ...
 
 
-class SectionTextRecordMapperABC(MapperABC[TextSectionPayload, TextSectionRecord | None], ABC, Generic[ClassificationT, PipelineT]):
+class SectionTextRecordMapperABC(
+    MapperABC[TextSectionPayload, TextSectionRecord | None],
+    ABC,
+    Generic[ClassificationT, PipelineT],
+):
     """Mapper from parsed text payload + classification into domain record."""
 
     @abstractmethod

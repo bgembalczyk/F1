@@ -10,6 +10,7 @@ from scrapers.headers_table import normalize_header
 from scrapers.helpers.constants import season_headers
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.paren_classifier import ParenClassifier
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import (
     BroaderScopeSplitter,
@@ -17,10 +18,9 @@ from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import (
 from scrapers.parsers.liveries.sponsorship.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
-from scrapers.sponsorship_table_schema_builder import SponsorshipTableSchemaBuilder
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.wiki.base import WikiRecords
 from scrapers.pipeline_table import TablePipeline
+from scrapers.sponsorship_table_schema_builder import SponsorshipTableSchemaBuilder
 
 
 class SponsorshipSectionParser(HtmlSoupParserABC[WikiRecords]):
@@ -196,7 +196,6 @@ class SponsorshipSectionParser(HtmlSoupParserABC[WikiRecords]):
             if section_record:
                 records.append(section_record)
         return records
-
 
     def _parse_heading(
         self,

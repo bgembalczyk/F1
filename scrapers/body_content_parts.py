@@ -7,4 +7,3 @@ from bs4 import Tag
 class BodyContentParts:
     catlinks: Tag | None
     content_text: Tag | None
-

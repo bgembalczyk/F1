@@ -1,12 +1,12 @@
 from pathlib import Path
 
 from layers.executors.one import LayerOneExecutor
-from layers.job_hooks.null_zero import NullLayerZeroJobHook
-from wiki_pipeline.applications import WikiPipelineApplication
-from layers.protocols.executor import LayerExecutorProtocol
 from layers.executors.zero import LayerZeroExecutor
+from layers.job_hooks.null_zero import NullLayerZeroJobHook
+from layers.protocols.executor import LayerExecutorProtocol
 from layers.zero.merge_service import LayerZeroMergeService
 from scrapers.run_config import RunConfig
+from wiki_pipeline.applications import WikiPipelineApplication
 
 
 class LayerExecutorStub(LayerExecutorProtocol):

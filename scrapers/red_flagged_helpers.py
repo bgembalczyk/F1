@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import Any
 
 from scrapers.helpers.text import strip_marks
-from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 WIKIPEDIA_BASE_URL = "https://en.wikipedia.org"
 RESTART_STATUS_MAP = {
@@ -63,7 +62,3 @@ def map_drivers_cell(text: str, links: list[Any]) -> list[dict[str, Any]]:
     if text:
         return [{"text": strip_marks(text), "url": None}]
     return []
-
-
-
-

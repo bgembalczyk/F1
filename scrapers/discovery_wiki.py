@@ -17,9 +17,7 @@ from scrapers.protocols.protocols_wiki import DiscoveredListScraperClassABC
 from scrapers.protocols.protocols_wiki import DiscoveredRunnerABC
 from scrapers.protocols.protocols_wiki import DiscoveredRunnerClassABC
 
-DiscoveredComponentClass = (
-    DiscoveredRunnerClassABC | DiscoveredListScraperClassABC
-)
+DiscoveredComponentClass = DiscoveredRunnerClassABC | DiscoveredListScraperClassABC
 
 if TYPE_CHECKING:
     from types import ModuleType

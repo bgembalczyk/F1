@@ -53,7 +53,9 @@ def test_no_imports_from_removed_wiki_contract_alias_modules() -> None:
                         violations.append(f"{path}:{node.lineno}:{alias.name}")
             if isinstance(node, ast.ImportFrom) and node.module in REMOVED_MODULES:
                 violations.append(f"{path}:{node.lineno}:{node.module}")
-    assert not violations, "Forbidden imports from removed alias modules: " + ", ".join(violations)
+    assert not violations, "Forbidden imports from removed alias modules: " + ", ".join(
+        violations,
+    )
 
 
 def test_no_imports_of_removed_wiki_contract_alias_symbols() -> None:
@@ -68,5 +70,9 @@ def test_no_imports_of_removed_wiki_contract_alias_symbols() -> None:
             removed_symbols = REMOVED_SYMBOLS_BY_MODULE[node.module]
             for alias in node.names:
                 if alias.name in removed_symbols:
-                    violations.append(f"{path}:{node.lineno}:{node.module}.{alias.name}")
-    assert not violations, "Forbidden imports of removed alias symbols: " + ", ".join(violations)
+                    violations.append(
+                        f"{path}:{node.lineno}:{node.module}.{alias.name}",
+                    )
+    assert not violations, "Forbidden imports of removed alias symbols: " + ", ".join(
+        violations,
+    )

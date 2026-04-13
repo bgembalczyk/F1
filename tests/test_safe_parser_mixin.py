@@ -1,7 +1,7 @@
 import pytest
 
-from scrapers.errors import ScraperParseError
 from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
+from scrapers.errors import ScraperParseError
 
 
 class StubHandler:

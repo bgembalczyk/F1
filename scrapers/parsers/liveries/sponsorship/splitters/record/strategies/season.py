@@ -2,16 +2,30 @@ from typing import Any
 
 from scrapers.helpers.constants import COLOUR_KEYS
 from scrapers.helpers.constants import SPONSOR_KEYS
-from scrapers.parsers.liveries.sponsorship.scope.handlers.colour import ColourScopeHandler
-from scrapers.parsers.liveries.sponsorship.scope.handlers.sponsor import SponsorScopeHandler
-from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
-from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_rule import SplitRule
+from scrapers.parsers.liveries.sponsorship.scope.handlers.colour import (
+    ColourScopeHandler,
+)
+from scrapers.parsers.liveries.sponsorship.scope.handlers.sponsor import (
+    SponsorScopeHandler,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_rule import (
+    SplitRule,
+)
 from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_strategy import (
     RecordSplitStrategy,
 )
-from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_multiple_seasons import HasMultipleSeasonsRule
-from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_year_specific_colors import HasYearSpecificColoursRule
-from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_year_specific_sponsors import HasYearSpecificSponsorsRule
+from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_multiple_seasons import (
+    HasMultipleSeasonsRule,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_year_specific_colors import (
+    HasYearSpecificColoursRule,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.rules.has_year_specific_sponsors import (
+    HasYearSpecificSponsorsRule,
+)
 from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 

@@ -1,13 +1,9 @@
 from __future__ import annotations
 
 import re
-from typing import Any
-
 
 # Position keys for the points history table (excluding "1st" which is
 # handled separately)
-
-
 
 
 def normalize_header(header: str) -> str:
@@ -23,5 +19,3 @@ def build_expected_header_lookup(expected_headers: list[str]) -> dict[str, str]:
         normalize_header(header): normalize_column_name(header)
         for header in expected_headers
     }
-
-

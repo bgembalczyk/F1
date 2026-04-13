@@ -3,9 +3,9 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.parsers.section.detection import find_section_heading
+from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 
 
 def fixture(name: str) -> BeautifulSoup:

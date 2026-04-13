@@ -5,13 +5,15 @@ from dataclasses import dataclass
 from scrapers.infobox.extraction.service import ConstructorInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
+from scrapers.services.domain_record.constructor_pipeline_service import (
+    ConstructorDomainRecordService,
+)
 from scrapers.services.section.extraction.constructor import (
     ConstructorSectionExtractionService,
 )
 from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,
 )
-from scrapers.services.domain_record.constructor_pipeline_service import ConstructorDomainRecordService
 from scrapers.services.section.factories.section_service_factory import (
     SectionServiceFactoryABC,
 )
@@ -20,7 +22,9 @@ from scrapers.services.section.factories.section_service_factory import (
 @dataclass(frozen=True, slots=True)
 class ConstructorScraperDependencies:
     infobox_service: InfoboxOrchestratorABC
-    sections_service_factory: SectionServiceFactoryABC[ConstructorSectionExtractionService]
+    sections_service_factory: SectionServiceFactoryABC[
+        ConstructorSectionExtractionService
+    ]
     domain_record_service: ConstructorDomainRecordService
 
 

@@ -1,5 +1,7 @@
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.section.sub_section.engine_regulation import EngineRegulationSubSectionParser
+from scrapers.parsers.section.sub_section.engine_regulation import (
+    EngineRegulationSubSectionParser,
+)
 
 
 class HistorySectionParser(NestedWikiSectionParser):

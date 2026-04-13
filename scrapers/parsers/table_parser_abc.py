@@ -28,4 +28,3 @@ class TableCellParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
 
     @abstractmethod
     def parse(self, raw: Tag) -> dict[str, Any]: ...
-

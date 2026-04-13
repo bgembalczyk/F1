@@ -6,9 +6,9 @@ from bs4 import BeautifulSoup
 
 pytest.importorskip("bs4")
 
-from scrapers.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.columns.types.auto import AutoColumn
 
 
 def test_table_pipeline_parses_rows_and_filters_repeated_headers():

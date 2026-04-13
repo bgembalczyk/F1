@@ -74,7 +74,10 @@ def _extract_all_symbols(tree: ast.Module) -> list[str] | None:
     for node in tree.body:
         if not isinstance(node, ast.Assign):
             continue
-        if not any(isinstance(target, ast.Name) and target.id == "__all__" for target in node.targets):
+        if not any(
+            isinstance(target, ast.Name) and target.id == "__all__"
+            for target in node.targets
+        ):
             continue
         if not isinstance(node.value, (ast.List, ast.Tuple, ast.Set)):
             return None
@@ -102,7 +105,9 @@ def _check_file(path: Path) -> list[str]:
     errors: list[str] = []
     for symbol in exported:
         if symbol not in defined:
-            errors.append(f"{path} broken export in __all__: '{symbol}' is not defined/imported")
+            errors.append(
+                f"{path} broken export in __all__: '{symbol}' is not defined/imported",
+            )
     return errors
 
 

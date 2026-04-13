@@ -12,13 +12,13 @@ from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.skip import SkipColumn
 from scrapers.config_table import TableConfig
 from scrapers.config_table import build_scraper_config
-from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.constants.constants_points import HISTORICAL_POSITIONS
 from scrapers.constants.constants_points import POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER
 from scrapers.constants.constants_points import POINTS_DRIVERS_CHAMPIONSHIP_HEADER
 from scrapers.constants.constants_points import POINTS_FASTEST_LAP_HEADER
 from scrapers.constants.constants_points import POINTS_NOTES_HEADER
 from scrapers.constants.constants_points import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
+from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 if TYPE_CHECKING:

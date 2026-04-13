@@ -1,17 +1,11 @@
 # ruff: noqa: SLF001
 from bs4 import BeautifulSoup
 
-from scrapers.base.options import ScraperOptions
-from scrapers.parsers.liveries.sponsorship import (
-    SponsorshipRecordSplitter,
-)
-from scrapers.parsers.liveries.sponsorship import (
-    TeamLiveriesSectionParser,
-)
 from scrapers.adapters.team_liveries_table_adapter import TeamLiveriesTableAdapter
-from scrapers.scraper_sponsorship_liveries import (
-    F1SponsorshipLiveriesScraper,
-)
+from scrapers.base.options import ScraperOptions
+from scrapers.parsers.liveries.sponsorship import SponsorshipRecordSplitter
+from scrapers.parsers.liveries.sponsorship import TeamLiveriesSectionParser
+from scrapers.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
 
 SAMPLE_SEASON_YEAR = 2020
 

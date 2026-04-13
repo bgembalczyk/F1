@@ -1,5 +1,3 @@
-from typing import Any
-
 from scrapers.parsers.parser_abc import ParserABC
 
 

@@ -1,7 +1,9 @@
 from abc import ABC
 from abc import abstractmethod
 
-from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
+from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
 
 
 class SplitRule(ABC):

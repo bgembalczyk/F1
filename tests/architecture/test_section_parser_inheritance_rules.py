@@ -46,8 +46,7 @@ def _load_classes() -> dict[str, ClassInfo]:
             if not isinstance(node, ast.ClassDef):
                 continue
             if not (
-                node.name.endswith("SectionParser")
-                or node.name in APPROVED_ROOT_BASES
+                node.name.endswith("SectionParser") or node.name in APPROVED_ROOT_BASES
             ):
                 continue
             classes[node.name] = ClassInfo(

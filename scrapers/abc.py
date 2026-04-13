@@ -29,12 +29,6 @@ from validation.validator_base import ExportRecord
 T = TypeVar("T")
 
 
-
-
-
-
-
-
 class ABCScraper(
     FetchOrchestrationMixin,
     BaseScraperCore,

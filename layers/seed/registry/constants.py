@@ -11,12 +11,12 @@ from layers.seed.validation.spec import RegistryValidationSpec
 from scrapers.circuits_list_scraper import CircuitsListScraper
 from scrapers.combined_red_flagged_races import RedFlaggedRacesScraper
 from scrapers.constructors_list import ConstructorsListScraper
-from scrapers.list_scraper_drivers import F1DriversListScraper
 from scrapers.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engine_regulation import EngineRegulationScraper
 from scrapers.engine_restrictions import EngineRestrictionsScraper
 from scrapers.fatalities_list_scraper_drivers import F1FatalitiesListScraper
 from scrapers.female_drivers_list import FemaleDriversListScraper
+from scrapers.list_scraper_drivers import F1DriversListScraper
 from scrapers.list_scraper_grands_prix import GrandsPrixListScraper
 from scrapers.list_scraper_tyres import TyreManufacturersScraper
 from scrapers.points_scraper import PointsScraper

@@ -17,7 +17,9 @@ from scrapers.columns.types.multi.name_status_column.race_title_status import (
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.config_table import build_scraper_config
 from scrapers.options import ScraperOptions
-from scrapers.parsers.section.legacy_lists.grands_prix import ByRaceTitleSubSectionParser
+from scrapers.parsers.section.legacy_lists.grands_prix import (
+    ByRaceTitleSubSectionParser,
+)
 from scrapers.parsers.section.legacy_lists.grands_prix import GrandsPrixTableMapper
 from scrapers.parsers.section.legacy_lists.grands_prix import RacesSectionParser
 from scrapers.seed_list_scraper_table import SeedListTableScraper

@@ -1,7 +1,9 @@
 from bs4 import BeautifulSoup
 
 from scrapers.configs.public import TableConfig
-from scrapers.parsers.current_constructors_table_mapper import CurrentConstructorsTableMapper
+from scrapers.parsers.current_constructors_table_mapper import (
+    CurrentConstructorsTableMapper,
+)
 from scrapers.parsers.section.constructors.base import ConstructorsSectionParser
 from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult

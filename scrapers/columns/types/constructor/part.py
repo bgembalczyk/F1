@@ -1,7 +1,7 @@
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
-from scrapers.columns.helpers.constructor_part_parser import ConstructorPartParserABC
 from scrapers.columns.helpers.constructor_parsing import ConstructorParsingHelpers
+from scrapers.columns.helpers.constructor_part_parser import ConstructorPartParserABC
 
 
 class ConstructorPartColumn(BaseColumn, ConstructorPartParserABC):

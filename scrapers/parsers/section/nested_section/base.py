@@ -6,8 +6,8 @@ from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.sub_section.base import SubSectionParser
 from scrapers.parsers.section.toolbox import SectionParserToolbox
-from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.section.types import SectionTreePayload
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
 class NestedWikiSectionParser(RecursiveSectionParser):

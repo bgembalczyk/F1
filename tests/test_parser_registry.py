@@ -49,7 +49,11 @@ def test_validate_parser_registry_rejects_missing_required_entries() -> None:
 
 def test_resolve_parser_name_raises_for_unregistered_key() -> None:
     with pytest.raises(LookupError, match="No parser registration"):
-        resolve_parser_name(domain="drivers", element_type="infobox", section_id="details")
+        resolve_parser_name(
+            domain="drivers",
+            element_type="infobox",
+            section_id="details",
+        )
 
 
 def test_resolve_parser_base_returns_abc() -> None:

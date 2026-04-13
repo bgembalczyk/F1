@@ -3,12 +3,12 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.errors import ScraperParseError
+from scrapers.parsers.section.match.priorities import SectionExtractionContext
 from scrapers.parsers.section.points import PointsScoringSystemsSectionParser
 from scrapers.parsers.section.points import ShortenedRacesSubSubSectionParser
 from scrapers.parsers.section.points import SpecialCasesSubSectionParser
 from scrapers.parsers.section.points import SprintRacesSubSubSectionParser
 from scrapers.scraper_table import PointsScraper
-from scrapers.parsers.section.match.priorities import SectionExtractionContext
 
 SPRINT_START_YEAR = 2021
 SPRINT_FIRST_PLACE_POINTS = 8

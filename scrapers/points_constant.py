@@ -8,7 +8,6 @@ HISTORY_POSITION_KEYS_WITH_FASTEST_LAP: frozenset[str] = frozenset(
 ) | {"fastest_lap"}
 
 
-
 SPRINT_DISQUALIFYING_HEADERS: frozenset[str] = frozenset(
     re.sub(r"[^a-z0-9]+", "", h.lower())
     for h in ("9th", "10th", "Fastest lap", "Race length completed")

@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-
 from bs4 import Tag
 
 from scrapers.parsers.section.helpers import split_into_parts
@@ -12,7 +10,10 @@ class SectionLocator:
     """Wyszukuje sekcje/fragmenty artykułu po poziomie nagłówka."""
 
     def locate(
-        self, elements: list[Tag], *, heading_class: str
+        self,
+        elements: list[Tag],
+        *,
+        heading_class: str,
     ) -> list[LocatedSection]:
         return [
             LocatedSection(
@@ -21,7 +22,8 @@ class SectionLocator:
                 elements=group_elements,
             )
             for label, anchor, group_elements in split_into_parts(
-                elements, heading_class
+                elements,
+                heading_class,
             )
         ]
 

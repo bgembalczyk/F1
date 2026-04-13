@@ -47,7 +47,9 @@ def test_domain_wiki_element_parsers_use_element_abcs_and_optional_mixins() -> N
                 )
 
             disallowed_mixins = [
-                base for base in bases if base.endswith("Mixin") and base not in ALLOWED_MIXINS
+                base
+                for base in bases
+                if base.endswith("Mixin") and base not in ALLOWED_MIXINS
             ]
             if disallowed_mixins:
                 violations.append(

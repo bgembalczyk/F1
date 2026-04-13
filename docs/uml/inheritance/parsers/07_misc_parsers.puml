@@ -8,40 +8,58 @@ class ActiveYearsParser
 class ArticleTablesAssembler
 abstract class ArticleTablesAssemblerABC
 class BestFinishParser
+class CallableInfoboxFieldParser
 class CarNumbersParser
 class CategoryLinksParser
 class ChampionshipsParser
-class CircuitInfoboxParser
-class DriverInfoboxParser
-class FigureElementParser
 class FinishedSeasonParser
-abstract class HeaderNormalizationMixin
+abstract class HasTableMapperABC
+abstract class HasTableParserABC
+class HtmlInfoboxFieldParser
 class IndianapolisConstructorsListParser
 class IndianapolisOnlyListParser
 abstract class IndianapolisOnlyMixin
 class InfoboxCareerParser
+abstract class InfoboxCellParserABC
+class InfoboxCellValueExtractor
+abstract class InfoboxHtmlFieldParserABC
+class InfoboxRowsParser
+abstract class InfoboxRowsParserABC
 class InfoboxTitlesParser
 class LicenceParser
-class ListElementParser
 class NationalityParser
-class NavboxElementParser
+class NestedChildParser
 class ParagraphElementParser
 class PrivateerTeamsListParser
 class RaceEventParser
 class ReferencesWrapParser
 class SeasonStandingsParser
-class SectionElementParser
+class SectionAssembler
 abstract class SectionTraversalMixin
 class SponsorPartsParser
+class StructureParser
 class TeamsParser
 class WikiListParser
 class WikiParagraphParser
 class WikiTagParser
 class YearParser
 
+HtmlInfoboxFieldParser <|-- ActiveYearsParser
 ArticleTablesAssemblerABC <|-- ArticleTablesAssembler
-ListElementParser <|-- IndianapolisConstructorsListParser
-ListElementParser <|-- IndianapolisOnlyListParser
+HtmlInfoboxFieldParser <|-- BestFinishParser
+HtmlInfoboxFieldParser <|-- CallableInfoboxFieldParser
+HtmlInfoboxFieldParser <|-- CarNumbersParser
+HtmlInfoboxFieldParser <|-- ChampionshipsParser
+HtmlInfoboxFieldParser <|-- FinishedSeasonParser
+InfoboxHtmlFieldParserABC <|-- HtmlInfoboxFieldParser
+InfoboxRowsParser <|-- InfoboxCareerParser
+InfoboxCellParserABC <|-- InfoboxCellValueExtractor
+InfoboxRowsParserABC <|-- InfoboxRowsParser
+InfoboxRowsParser <|-- InfoboxTitlesParser
+HtmlInfoboxFieldParser <|-- LicenceParser
+HtmlInfoboxFieldParser <|-- NationalityParser
+HtmlInfoboxFieldParser <|-- RaceEventParser
+HtmlInfoboxFieldParser <|-- TeamsParser
 ParagraphElementParser <|-- WikiParagraphParser
 
 @enduml

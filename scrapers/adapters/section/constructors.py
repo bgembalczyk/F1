@@ -5,8 +5,12 @@ from scrapers.parsers.section.helpers import profile_entry_aliases
 from scrapers.parsers.section.table.constructor.history import (
     ConstructorHistorySectionParser,
 )
-from scrapers.parsers.section.table.constructor.results.championship import ConstructorChampionshipResultsSectionParser
-from scrapers.parsers.section.table.constructor.results.complete_f1 import ConstructorCompleteF1ResultsSectionParser
+from scrapers.parsers.section.table.constructor.results.championship import (
+    ConstructorChampionshipResultsSectionParser,
+)
+from scrapers.parsers.section.table.constructor.results.complete_f1 import (
+    ConstructorCompleteF1ResultsSectionParser,
+)
 
 
 def constructor_section_entries() -> list[SectionAdapterEntry]:

@@ -6,8 +6,8 @@ from scrapers.mappers.non_championships_races_table_mapper import (
     NonChampionshipRacesTableMapper,
 )
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.parsers.section.sub_section.base import SubSectionParser
+from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 
 
 class NonChampionshipsRacesSubSectionParser(SubSectionParser):

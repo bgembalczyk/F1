@@ -84,5 +84,4 @@ class NumericExtractor:
         return {"entries": entries, "starts": starts}
 
 
-
 __all__ = ["NumericExtractor"]

@@ -1,12 +1,8 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.records.mappers.grand_prix_by_year import (
-    GrandPrixByYearRecordInput,
-)
-from scrapers.records.mappers.grand_prix_by_year import (
-    GrandPrixByYearRecordMapper,
-)
+from scrapers.records.mappers.grand_prix_by_year import GrandPrixByYearRecordInput
+from scrapers.records.mappers.grand_prix_by_year import GrandPrixByYearRecordMapper
 
 
 @pytest.fixture()

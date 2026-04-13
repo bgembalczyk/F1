@@ -9,4 +9,3 @@ class ValidationError(PipelineError):
     code: str = "validation.error"
     domain: str = "validation"
     category: ErrorCategory = ErrorCategory.VALIDATION
-

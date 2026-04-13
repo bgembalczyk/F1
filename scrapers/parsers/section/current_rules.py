@@ -1,5 +1,7 @@
 from scrapers.parsers.section.nested_section.base import NestedWikiSectionParser
-from scrapers.parsers.section.sub_section.engine_restrictions import EngineSubSectionParser
+from scrapers.parsers.section.sub_section.engine_restrictions import (
+    EngineSubSectionParser,
+)
 
 
 class CurrentRulesSectionParser(NestedWikiSectionParser):

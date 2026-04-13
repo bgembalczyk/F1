@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 from collections.abc import Sequence
-from dataclasses import dataclass
 
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.entity_column_spec import EntityColumnSpec

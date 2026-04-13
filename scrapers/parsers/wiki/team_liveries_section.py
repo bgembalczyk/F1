@@ -3,11 +3,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.paren_classifier import ParenClassifier
 from scrapers.adapters.team_liveries_table_adapter import TeamLiveriesTableAdapter
-from scrapers.parsers.wiki.section.sponsorship import SponsorshipSectionParser
+from scrapers.paren_classifier import ParenClassifier
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.wiki.base import WikiRecords
+from scrapers.parsers.wiki.section.sponsorship import SponsorshipSectionParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -55,7 +55,6 @@ class TeamLiveriesSectionParser(HtmlSoupParserABC[WikiRecords]):
                 continue
             records.append({"team": team, "liveries": liveries})
         return records
-
 
     def _parse_single_team_section(
         self,

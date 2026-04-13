@@ -9,9 +9,7 @@ CONTRACTS_DIR = Path("scrapers/parsers/contracts")
 
 def _contract_module_paths() -> list[Path]:
     return sorted(
-        path
-        for path in CONTRACTS_DIR.glob("*.py")
-        if path.name != "__init__.py"
+        path for path in CONTRACTS_DIR.glob("*.py") if path.name != "__init__.py"
     )
 
 

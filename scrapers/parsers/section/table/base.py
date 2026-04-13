@@ -8,13 +8,13 @@ from bs4 import BeautifulSoup
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
+from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
 from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.parsers.section.table.contracts import SectionTablesHtmlParserABC
-from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
-from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result
 
@@ -48,7 +48,9 @@ class PassthroughSectionTableClassifier(SectionTableClassifierABC[dict[str, Any]
         return table_data
 
 
-class IdentitySectionTableRecordMapper(SectionTableRecordMapperABC[dict[str, Any], Any]):
+class IdentitySectionTableRecordMapper(
+    SectionTableRecordMapperABC[dict[str, Any], Any],
+):
     """Domyślny mapper: zwraca wynik klasyfikacji."""
 
     def map(
@@ -127,7 +129,9 @@ class TableSectionParser(SectionParserBase):
             include_urls=self._include_urls,
             normalize_empty_values=self._normalize_empty_values,
         )
-        records = pipeline.parse_rows(table_transport_parser.parse(as_soup(section_fragment)))
+        records = pipeline.parse_rows(
+            table_transport_parser.parse(as_soup(section_fragment)),
+        )
 
         return build_section_parse_result(
             section_id=self._section_id,

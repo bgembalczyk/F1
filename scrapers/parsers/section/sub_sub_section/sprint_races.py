@@ -4,8 +4,8 @@ from bs4 import Tag
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.sprint_points_table_mapper import SprintPointsTableMapper
 from scrapers.parsers.section.sub_sub_section.base import SubSubSectionParser
+from scrapers.sprint_points_table_mapper import SprintPointsTableMapper
 
 
 class SprintRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):

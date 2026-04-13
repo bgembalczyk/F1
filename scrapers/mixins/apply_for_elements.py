@@ -33,7 +33,7 @@ class ApplyForElementsMixin:
                 continue
             mapper = getattr(self, "_table_mapper", None)
             if mapper is None:
-                mapper = getattr(self, "_table_parser")
+                mapper = self._table_parser
             parsed = mapper.map(data)
             if parsed is not None:
                 element["data"] = parsed

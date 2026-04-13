@@ -1,19 +1,19 @@
 # ruff: noqa: E501, PLR2004
 from bs4 import BeautifulSoup
 
-from scrapers.base.options import ScraperOptions
 from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.adapters.section.adapter import SectionAdapterEntry
-from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
+from scrapers.base.options import ScraperOptions
 from scrapers.circuits.circuits_sections.events import CircuitEventsSectionParser
 from scrapers.circuits.circuits_sections.lap_records import (
     CircuitLapRecordsSectionParser,
 )
+from scrapers.constructors_single_scraper import SingleConstructorScraper
+from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
 from scrapers.parsers.section.circuit.layout_history import (
     CircuitLayoutHistorySectionParser,
 )
-from scrapers.constructors_single_scraper import SingleConstructorScraper
-from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
+from scrapers.section.constants import DOMAIN_SECTION_RESOLVER_CONFIG
 from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper
 from scrapers.single_scraper_seasons import SingleSeasonScraper
 

@@ -5,11 +5,11 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.helpers.transformers import build_transformers
 from scrapers.base.transformers.normalize_links import NormalizeLinksTransformer
 from scrapers.base.transformers.pipeline import TransformersPipeline
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
 from scrapers.base.transformers.record_transformer import RecordTransformer
+from scrapers.helpers.transformers import build_transformers
 from validation.validator_base import ExportRecord
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]

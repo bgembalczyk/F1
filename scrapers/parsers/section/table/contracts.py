@@ -26,14 +26,22 @@ class SectionTablesHtmlParserABC(HtmlSoupParserABC[list[TablePayload]], ABC):
     def parse(self, raw: BeautifulSoup) -> list[TablePayload]: ...
 
 
-class SectionTableClassifierABC(ClassifierABC[TablePayload, ClassificationT], ABC, Generic[ClassificationT]):
+class SectionTableClassifierABC(
+    ClassifierABC[TablePayload, ClassificationT],
+    ABC,
+    Generic[ClassificationT],
+):
     """Klasyfikator payloadu tabeli sekcji."""
 
     @abstractmethod
     def classify(self, table_data: TablePayload) -> ClassificationT | None: ...
 
 
-class SectionTableRecordMapperABC(MapperABC[TablePayload, TableRecord | None], ABC, Generic[ClassificationT, PipelineT]):
+class SectionTableRecordMapperABC(
+    MapperABC[TablePayload, TableRecord | None],
+    ABC,
+    Generic[ClassificationT, PipelineT],
+):
     """Mapper payloadu tabeli + klasyfikacji na rekord domenowy sekcji."""
 
     @abstractmethod

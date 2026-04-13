@@ -4,11 +4,17 @@ from bs4 import BeautifulSoup
 
 from scrapers.columns.types.constructor.constructor import ConstructorColumn
 from scrapers.columns.types.driver import DriverColumn
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import MERGED_ENTRY_BASE_KEYS
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import ROUND_LEVEL_RESULT_ATTRIBUTES
-from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
+from scrapers.orchestration.season_table_parsing_service import (
+    SeasonTableParsingService,
+)
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.wiki.base import WikiRecords
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import (
+    MERGED_ENTRY_BASE_KEYS,
+)
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import (
+    ROUND_LEVEL_RESULT_ATTRIBUTES,
+)
 
 
 class SeasonStandingsParser(HtmlSoupParserABC[WikiRecords]):
@@ -260,4 +266,3 @@ class SeasonStandingsParser(HtmlSoupParserABC[WikiRecords]):
         for round_data in merged.values():
             if isinstance(round_data, dict) and "results" in round_data:
                 SeasonStandingsParser._remove_round_level_attributes(round_data)
-

@@ -33,7 +33,9 @@ def test_no_typing_protocols_in_parser_layers() -> None:
                             )
 
                 if isinstance(node, ast.ClassDef):
-                    protocol_bases = [base for base in node.bases if _is_protocol_base(base)]
+                    protocol_bases = [
+                        base for base in node.bases if _is_protocol_base(base)
+                    ]
                     if protocol_bases:
                         violations.append(
                             f"{py_file}:{node.lineno} {node.name} cannot inherit from Protocol",

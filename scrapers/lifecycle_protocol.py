@@ -15,4 +15,3 @@ class ScraperLifecycleProtocol(
     Protocol,
 ):
     def parse(self, soup: BeautifulSoup) -> list[RawRecord]: ...
-

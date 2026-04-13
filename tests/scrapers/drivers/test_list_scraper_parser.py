@@ -1,7 +1,9 @@
 # ruff: noqa: E501, PLR2004, SLF001
 from scrapers.constants.constants_drivers import DRIVERS_LIST_HEADERS
 from scrapers.mappers.drivers_list_table_mapper import DriversListTableMapper
-from scrapers.parsers.section.nested_section.drivers_list import DriversListSectionParser
+from scrapers.parsers.section.nested_section.drivers_list import (
+    DriversListSectionParser,
+)
 
 
 def test_drivers_list_table_parser_matches_when_all_required_headers_present() -> None:

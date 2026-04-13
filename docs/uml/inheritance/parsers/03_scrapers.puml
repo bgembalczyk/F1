@@ -8,6 +8,7 @@ abstract class ABCScraper
 abstract class ArticleScraperBase
 class ArticleSectionTablesHtmlParser
 class ArticleTablesParser
+abstract class ArticleTablesParserABC
 abstract class BaseConstructorListScraper
 abstract class BaseEngineTableScraper
 abstract class BasePointsScraper
@@ -86,6 +87,7 @@ class WikiScraper
 BaseScraperCore <|-- ABCScraper
 FetchOrchestrationMixin <|-- ABCScraper
 WikiScraper <|-- ArticleScraperBase
+ArticleTablesParserABC <|-- ArticleTablesParser
 SeedListTableScraper <|-- BaseConstructorListScraper
 F1TableScraper <|-- BaseEngineTableScraper
 F1TableScraper <|-- BasePointsScraper

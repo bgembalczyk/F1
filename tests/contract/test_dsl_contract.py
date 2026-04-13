@@ -1,7 +1,7 @@
-from scrapers.infobox.schemas.dsl import InfoboxSchemaDSL
 from scrapers.columns.types.parsed_value import ParsedValueColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.text import TextColumn
+from scrapers.infobox.schemas.dsl import InfoboxSchemaDSL
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

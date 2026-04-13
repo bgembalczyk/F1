@@ -4,16 +4,36 @@ skinparam classAttributeIconSize 0
 hide empty members
 hide circle
 
+class CollapsibleTableParser
 class F1StandingsTableParser
+abstract class HeaderNormalizationMixin
 class HtmlTableParser
-class InfoboxElementParser
+abstract class InfoboxCollapsibleTableParserABC
+abstract class InfoboxNestedTableParserABC
+class InfoboxTableParser
 class SeasonsTableParser
 abstract class TableCellExtractionMixin
+abstract class TableCellParserABC
 class TableElementParser
+abstract class TableParserABC
+abstract class TableRowParserABC
 abstract class TableRowParsingMixin
 class WikiTableBaseParser
+class WikiTableElementParser
+abstract class WikiTableElementParserABC
+class WikiTableHtmlParser
+class WikiTableParser
 
+InfoboxCollapsibleTableParserABC <|-- CollapsibleTableParser
 TableRowParsingMixin <|-- HtmlTableParser
-TableCellExtractionMixin <|-- InfoboxElementParser
+InfoboxNestedTableParserABC <|-- InfoboxTableParser
+WikiTableHtmlParser <|-- SeasonsTableParser
+WikiTableElementParserABC <|-- TableElementParser
+TableParserABC <|-- WikiTableBaseParser
+WikiTableElementParserABC <|-- WikiTableElementParser
+HeaderNormalizationMixin <|-- WikiTableHtmlParser
+TableCellExtractionMixin <|-- WikiTableHtmlParser
+WikiTableElementParserABC <|-- WikiTableHtmlParser
+WikiTableHtmlParser <|-- WikiTableParser
 
 @enduml

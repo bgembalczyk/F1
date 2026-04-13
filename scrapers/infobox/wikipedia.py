@@ -18,7 +18,6 @@ from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.wiring.runtime.factory import ScraperRuntimeFactory
 
 
-
 class WikipediaInfoboxScraper:
     """
     Scraper infoboksów z artykułów Wikipedii.

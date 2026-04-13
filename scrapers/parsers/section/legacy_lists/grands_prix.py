@@ -35,7 +35,12 @@ class GrandsPrixTableMapper(WikiTableBaseMapper):
 
 
 class ByRaceTitleSubSectionParser(ApplyForElementsMixin, SubSectionParser):
-    def __init__(self, *, table_mapper: WikiTableBaseMapper | None = None, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *,
+        table_mapper: WikiTableBaseMapper | None = None,
+        **kwargs: Any,
+    ) -> None:
         super().__init__(toolbox=kwargs.get("toolbox"))
         self._table_parser = table_mapper or GrandsPrixTableMapper()
 
@@ -46,7 +51,12 @@ class ByRaceTitleSubSectionParser(ApplyForElementsMixin, SubSectionParser):
 
 
 class RacesSectionParser(NestedWikiSectionParser):
-    def __init__(self, *, child_parser: NestedChildParser | None = None, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *,
+        child_parser: NestedChildParser | None = None,
+        **kwargs: Any,
+    ) -> None:
         toolbox = kwargs.get("toolbox")
         super().__init__(toolbox=toolbox)
         self.child_parser = child_parser or ByRaceTitleSubSectionParser(toolbox=toolbox)
