@@ -1,0 +1,164 @@
+@startuml
+title Scraper Hierarchy
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class ABCScraper
+abstract class ArticleScraperBase
+class ArticleSectionTablesHtmlParser
+class ArticleTablesParser
+abstract class BaseConstructorListScraper
+abstract class BaseEngineTableScraper
+abstract class BasePointsScraper
+abstract class BaseScraperCore
+class BodyContentAssembler
+class ByRaceTitleSubSectionParser
+class CircuitsDetailScraper
+class CircuitsListScraper
+class ConstructorsDetailScraper
+class ConstructorsListScraper
+class CurrentRulesSectionParser
+class DetailByDriverSubSectionParser
+abstract class DomainArticleScraperBase
+class DriversListSectionParser
+class DriversSectionParser
+class EngineManufacturersIndianapolisSubSectionParser
+class EngineManufacturersListScraper
+class EngineManufacturersSectionParser
+class EngineRegulationScraper
+class EngineRegulationSubSectionParser
+class EngineRestrictionsScraper
+class EngineSubSectionParser
+class F1DriversListScraper
+class F1FatalitiesListScraper
+class F1SingleCircuitScraper
+class F1SingleGrandPrixScraper
+class F1SponsorshipLiveriesScraper
+class F1StandingsScraper
+class F1TableScraper
+class FatalitiesSectionParser
+class FemaleDriversListScraper
+abstract class FetchOrchestrationMixin
+class GenericIndianapolisOnlySubSectionParser
+class GrandsPrixListScraper
+class HistorySectionParser
+class IndianapolisOnlyListScraper
+class LapRecordsTableScraper
+class ListScraper
+interface ListScraperContract
+class ManufacturersSectionParser
+class NestedWikiSectionParser
+class NonChampionshipsRacesSubSectionParser
+class OfficialDriversSubSectionParser
+class PointsScoringSystemsSectionParser
+class PointsScraper
+class PrivateerTeamsSectionParser
+class RacesSectionParser
+class RecursiveSectionParser
+class RedFlaggedRacesBaseScraper
+class RedFlaggedRacesScraper
+class RedFlaggedRacesSectionParser
+abstract class ScraperLifecycleABC
+class SeasonsListScraper
+class SeasonsSectionParser
+class SectionAdapter
+abstract class SectionAdapterScraperBase
+abstract class SectionAwareMixin
+abstract class SectionByIdScraperBase
+class SeedListTableScraper
+class ShortenedRacesSubSubSectionParser
+class SingleConstructorScraper
+class SingleDriverScraper
+class SingleEngineManufacturerScraper
+class SingleSeasonScraper
+class SpecialCasesSubSectionParser
+class SpecialCasesSubSubSectionRouter
+class SprintRacesSubSubSectionParser
+class SubSectionParser
+class SubSubSectionParser
+class SubSubSubSectionParser
+interface TableScraperContract
+class TyreManufacturersBySeasonSubSectionParser
+class TyreManufacturersScraper
+abstract class WikiElementParsingMixin
+class WikiScraper
+
+BaseScraperCore <|-- ABCScraper
+FetchOrchestrationMixin <|-- ABCScraper
+WikiScraper <|-- ArticleScraperBase
+SeedListTableScraper <|-- BaseConstructorListScraper
+F1TableScraper <|-- BaseEngineTableScraper
+F1TableScraper <|-- BasePointsScraper
+ScraperLifecycleABC <|-- BaseScraperCore
+SubSectionParser <|-- ByRaceTitleSubSectionParser
+F1SingleCircuitScraper <|-- CircuitsDetailScraper
+SeedListTableScraper <|-- CircuitsListScraper
+SingleConstructorScraper <|-- ConstructorsDetailScraper
+ListScraper <|-- ConstructorsListScraper
+NestedWikiSectionParser <|-- CurrentRulesSectionParser
+SubSectionParser <|-- DetailByDriverSubSectionParser
+ArticleScraperBase <|-- DomainArticleScraperBase
+NestedWikiSectionParser <|-- DriversListSectionParser
+NestedWikiSectionParser <|-- DriversSectionParser
+SubSectionParser <|-- EngineManufacturersIndianapolisSubSectionParser
+F1TableScraper <|-- EngineManufacturersListScraper
+NestedWikiSectionParser <|-- EngineManufacturersSectionParser
+BaseEngineTableScraper <|-- EngineRegulationScraper
+SubSectionParser <|-- EngineRegulationSubSectionParser
+BaseEngineTableScraper <|-- EngineRestrictionsScraper
+SubSectionParser <|-- EngineSubSectionParser
+SeedListTableScraper <|-- F1DriversListScraper
+F1TableScraper <|-- F1FatalitiesListScraper
+SectionAdapterScraperBase <|-- F1SingleCircuitScraper
+DomainArticleScraperBase <|-- F1SingleGrandPrixScraper
+WikiScraper <|-- F1SponsorshipLiveriesScraper
+F1TableScraper <|-- F1StandingsScraper
+TableScraperContract <|-- F1TableScraper
+WikiScraper <|-- F1TableScraper
+NestedWikiSectionParser <|-- FatalitiesSectionParser
+F1TableScraper <|-- FemaleDriversListScraper
+SubSectionParser <|-- GenericIndianapolisOnlySubSectionParser
+SeedListTableScraper <|-- GrandsPrixListScraper
+NestedWikiSectionParser <|-- HistorySectionParser
+ListScraper <|-- IndianapolisOnlyListScraper
+F1TableScraper <|-- LapRecordsTableScraper
+WikiScraper <|-- ListScraper
+NestedWikiSectionParser <|-- ManufacturersSectionParser
+RecursiveSectionParser <|-- NestedWikiSectionParser
+SubSectionParser <|-- NonChampionshipsRacesSubSectionParser
+SubSectionParser <|-- OfficialDriversSubSectionParser
+NestedWikiSectionParser <|-- PointsScoringSystemsSectionParser
+BasePointsScraper <|-- PointsScraper
+NestedWikiSectionParser <|-- PrivateerTeamsSectionParser
+NestedWikiSectionParser <|-- RacesSectionParser
+WikiElementParsingMixin <|-- RecursiveSectionParser
+F1TableScraper <|-- RedFlaggedRacesBaseScraper
+WikiScraper <|-- RedFlaggedRacesScraper
+NestedWikiSectionParser <|-- RedFlaggedRacesSectionParser
+SeedListTableScraper <|-- SeasonsListScraper
+NestedWikiSectionParser <|-- SeasonsSectionParser
+DomainArticleScraperBase <|-- SectionAdapterScraperBase
+SectionAdapter <|-- SectionAdapterScraperBase
+SectionAwareMixin <|-- SectionAdapterScraperBase
+DomainArticleScraperBase <|-- SectionByIdScraperBase
+SectionAwareMixin <|-- SectionByIdScraperBase
+F1TableScraper <|-- SeedListTableScraper
+ListScraperContract <|-- SeedListTableScraper
+SubSubSectionParser <|-- ShortenedRacesSubSubSectionParser
+SectionAdapterScraperBase <|-- SingleConstructorScraper
+SectionAdapterScraperBase <|-- SingleDriverScraper
+DomainArticleScraperBase <|-- SingleEngineManufacturerScraper
+SectionAdapterScraperBase <|-- SingleSeasonScraper
+SubSectionParser <|-- SpecialCasesSubSectionParser
+SubSubSectionParser <|-- SpecialCasesSubSubSectionRouter
+SubSubSectionParser <|-- SprintRacesSubSubSectionParser
+RecursiveSectionParser <|-- SubSectionParser
+RecursiveSectionParser <|-- SubSubSectionParser
+RecursiveSectionParser <|-- SubSubSubSectionParser
+SubSectionParser <|-- TyreManufacturersBySeasonSubSectionParser
+F1TableScraper <|-- TyreManufacturersScraper
+ABCScraper <|-- WikiScraper
+WikiElementParsingMixin <|-- WikiScraper
+
+@enduml

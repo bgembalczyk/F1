@@ -1,0 +1,37 @@
+@startuml
+title Infobox Orchestrators & Providers
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseInfoboxOrchestrator
+class CircuitInfoboxExtractor
+class CircuitInfoboxOrchestrator
+class ConstructorInfoboxOrchestrator
+class DefaultDriverInfoboxProvider
+class DriverInfoboxBundle
+class DriverInfoboxOrchestrator
+abstract class DriverInfoboxProviderABC
+abstract class InfoboxExtractorABC
+abstract class InfoboxOrchestratorABC
+class InfoboxSectionCollector
+abstract class InfoboxSectionDiscoveryABC
+abstract class ParsedRecordsMixin
+class ParsingBundle
+abstract class ParsingBundleProviderABC
+class StrategyBackedInfoboxOrchestrator
+
+InfoboxOrchestratorABC <|-- BaseInfoboxOrchestrator
+ParsedRecordsMixin <|-- BaseInfoboxOrchestrator
+InfoboxExtractorABC <|-- CircuitInfoboxExtractor
+StrategyBackedInfoboxOrchestrator <|-- CircuitInfoboxOrchestrator
+BaseInfoboxOrchestrator <|-- ConstructorInfoboxOrchestrator
+DriverInfoboxProviderABC <|-- DefaultDriverInfoboxProvider
+ParsingBundle <|-- DriverInfoboxBundle
+BaseInfoboxOrchestrator <|-- DriverInfoboxOrchestrator
+ParsingBundleProviderABC <|-- DriverInfoboxProviderABC
+InfoboxSectionDiscoveryABC <|-- InfoboxSectionCollector
+InfoboxOrchestratorABC <|-- StrategyBackedInfoboxOrchestrator
+ParsedRecordsMixin <|-- StrategyBackedInfoboxOrchestrator
+
+@enduml

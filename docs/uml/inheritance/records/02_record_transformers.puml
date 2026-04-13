@@ -1,0 +1,24 @@
+@startuml
+title Record Transformers
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class DriversChampionshipsTransformer
+class FailedToMakeRestartTransformer
+class FatalitiesCarTransformer
+class NormalizeLinksTransformer
+class PointsScoringSystemsHistoryTransformer
+class RecordFactoryTransformer
+class RecordTransformer
+class ShortenedRacePointsTransformer
+
+RecordTransformer <|-- DriversChampionshipsTransformer
+RecordTransformer <|-- FailedToMakeRestartTransformer
+RecordTransformer <|-- FatalitiesCarTransformer
+RecordTransformer <|-- NormalizeLinksTransformer
+RecordTransformer <|-- PointsScoringSystemsHistoryTransformer
+RecordTransformer <|-- RecordFactoryTransformer
+RecordTransformer <|-- ShortenedRacePointsTransformer
+
+@enduml

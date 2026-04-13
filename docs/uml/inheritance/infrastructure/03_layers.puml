@@ -1,0 +1,41 @@
+@startuml
+title Layers, Executors & Job Runners
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseExecutor
+abstract class BaseOrchestrationFlow
+abstract class BaseRegistryEntry
+class DefaultLayerZeroRunConfigFactory
+class DriversCheckpointFlow
+class FunctionExportRunner
+class GrandPrixRunner
+class LayerJobRunner
+class LayerOneExecutor
+class LayerZeroExecutor
+class LayerZeroRunConfigFactory
+interface LayerZeroRunConfigFactoryProtocol
+class ListJobRegistryEntry
+abstract class MetadataBindingMixin
+abstract class SectionMetadataBindingMixin
+class SeedRegistryEntry
+class SeedSectionOrchestrationFlow
+class SponsorshipLiveriesRunConfigFactory
+class StaticScraperKwargsFactory
+
+LayerZeroRunConfigFactory <|-- DefaultLayerZeroRunConfigFactory
+BaseOrchestrationFlow <|-- DriversCheckpointFlow
+LayerJobRunner <|-- FunctionExportRunner
+LayerJobRunner <|-- GrandPrixRunner
+BaseExecutor <|-- LayerOneExecutor
+BaseExecutor <|-- LayerZeroExecutor
+LayerZeroRunConfigFactoryProtocol <|-- LayerZeroRunConfigFactory
+BaseRegistryEntry <|-- ListJobRegistryEntry
+MetadataBindingMixin <|-- SectionMetadataBindingMixin
+BaseRegistryEntry <|-- SeedRegistryEntry
+BaseOrchestrationFlow <|-- SeedSectionOrchestrationFlow
+LayerZeroRunConfigFactory <|-- SponsorshipLiveriesRunConfigFactory
+LayerZeroRunConfigFactory <|-- StaticScraperKwargsFactory
+
+@enduml

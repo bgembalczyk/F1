@@ -1,0 +1,95 @@
+@startuml
+title Parser ABC – Core Contracts & HTML Layer
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class ArticleHtmlParserABC
+abstract class ArticleTablesParserABC
+abstract class BaseDriverResultsSectionParser
+abstract class BaseHtmlElementParser
+abstract class BaseSeasonParser
+abstract class BaseSectionParser
+class CallableInfoboxFieldParser
+class CollapsibleTableParser
+class ContentTextParser
+abstract class FigureHtmlParserABC
+class HeaderParser
+abstract class HtmlElementParserABC
+class HtmlInfoboxFieldParser
+abstract class HtmlSoupParserABC
+abstract class HtmlTagParserABC
+abstract class InfoboxCellParserABC
+class InfoboxCellValueExtractor
+abstract class InfoboxCollapsibleTableParserABC
+abstract class InfoboxHtmlFieldParserABC
+abstract class InfoboxHtmlParserABC
+abstract class InfoboxNestedTableParserABC
+abstract class InfoboxParserABC
+class InfoboxRowsParser
+abstract class InfoboxRowsParserABC
+class InfoboxSectionParser
+class InfoboxTableParser
+abstract class ListHtmlParserABC
+class ListSectionParser
+abstract class NavboxHtmlParserABC
+abstract class ParagraphHtmlParserABC
+abstract class ParserABC
+abstract class ReferencesElementParserABC
+abstract class SeasonSectionParserABC
+abstract class SectionHtmlParserABC
+abstract class SectionInfoboxesHtmlParserABC
+abstract class SectionListsHtmlParserABC
+abstract class SectionParserBase
+abstract class SectionStructureParserABC
+abstract class SectionTablesHtmlParserABC
+abstract class SectionTextBlocksHtmlParserABC
+class SoupParser
+abstract class TableCellParserABC
+abstract class TableHtmlParserABC
+abstract class TableParserABC
+abstract class TableRowParserABC
+class TableSectionParser
+class TextBlockSectionParser
+
+HtmlSoupParserABC <|-- ArticleHtmlParserABC
+SectionParserBase <|-- BaseDriverResultsSectionParser
+HtmlElementParserABC <|-- BaseHtmlElementParser
+HtmlInfoboxFieldParser <|-- CallableInfoboxFieldParser
+InfoboxCollapsibleTableParserABC <|-- CollapsibleTableParser
+HtmlTagParserABC <|-- FigureHtmlParserABC
+HtmlTagParserABC <|-- HtmlElementParserABC
+InfoboxHtmlFieldParserABC <|-- HtmlInfoboxFieldParser
+ParserABC <|-- HtmlSoupParserABC
+ParserABC <|-- HtmlTagParserABC
+HtmlTagParserABC <|-- InfoboxCellParserABC
+InfoboxCellParserABC <|-- InfoboxCellValueExtractor
+ParserABC <|-- InfoboxCollapsibleTableParserABC
+HtmlTagParserABC <|-- InfoboxHtmlFieldParserABC
+HtmlTagParserABC <|-- InfoboxHtmlParserABC
+ParserABC <|-- InfoboxNestedTableParserABC
+HtmlTagParserABC <|-- InfoboxParserABC
+InfoboxRowsParserABC <|-- InfoboxRowsParser
+ParserABC <|-- InfoboxRowsParserABC
+SectionParserBase <|-- InfoboxSectionParser
+InfoboxNestedTableParserABC <|-- InfoboxTableParser
+HtmlTagParserABC <|-- ListHtmlParserABC
+SectionParserBase <|-- ListSectionParser
+HtmlTagParserABC <|-- NavboxHtmlParserABC
+HtmlTagParserABC <|-- ParagraphHtmlParserABC
+HtmlElementParserABC <|-- ReferencesElementParserABC
+HtmlSoupParserABC <|-- SectionHtmlParserABC
+HtmlSoupParserABC <|-- SectionInfoboxesHtmlParserABC
+HtmlSoupParserABC <|-- SectionListsHtmlParserABC
+BaseSectionParser <|-- SectionStructureParserABC
+HtmlSoupParserABC <|-- SectionTablesHtmlParserABC
+HtmlSoupParserABC <|-- SectionTextBlocksHtmlParserABC
+ParserABC <|-- SoupParser
+HtmlTagParserABC <|-- TableCellParserABC
+HtmlTagParserABC <|-- TableHtmlParserABC
+HtmlTagParserABC <|-- TableParserABC
+HtmlTagParserABC <|-- TableRowParserABC
+SectionParserBase <|-- TableSectionParser
+SectionParserBase <|-- TextBlockSectionParser
+
+@enduml

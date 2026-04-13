@@ -1,0 +1,28 @@
+@startuml
+title Classifier Hierarchy (ClassifierABC)
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class CircuitLapRecordsTableClassifier
+abstract class ClassifierABC
+class DriverResultsSectionTableClassifier
+class PassthroughElementClassifier
+class PassthroughSectionTableClassifier
+abstract class SectionInfoboxClassifierABC
+abstract class SectionListClassifierABC
+abstract class SectionTableClassifierABC
+abstract class SectionTextClassifierABC
+abstract class WikiElementClassifierABC
+
+SectionTableClassifierABC <|-- CircuitLapRecordsTableClassifier
+SectionTableClassifierABC <|-- DriverResultsSectionTableClassifier
+WikiElementClassifierABC <|-- PassthroughElementClassifier
+SectionTableClassifierABC <|-- PassthroughSectionTableClassifier
+ClassifierABC <|-- SectionInfoboxClassifierABC
+ClassifierABC <|-- SectionListClassifierABC
+ClassifierABC <|-- SectionTableClassifierABC
+ClassifierABC <|-- SectionTextClassifierABC
+ClassifierABC <|-- WikiElementClassifierABC
+
+@enduml

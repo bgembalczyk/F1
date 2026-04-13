@@ -1,0 +1,24 @@
+@startuml
+title Wiki Section Node Parsers
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class SectionLevelMixin
+abstract class SubSectionLevelMixin
+abstract class SubSubSectionLevelMixin
+abstract class WikiSectionNodeParserABC
+abstract class WikiSectionParserABC
+abstract class WikiSubSectionParserABC
+abstract class WikiSubSubSectionParserABC
+
+SectionLevelMixin <|-- SubSectionLevelMixin
+SubSectionLevelMixin <|-- SubSubSectionLevelMixin
+SectionLevelMixin <|-- WikiSectionParserABC
+WikiSectionNodeParserABC <|-- WikiSectionParserABC
+SubSectionLevelMixin <|-- WikiSubSectionParserABC
+WikiSectionNodeParserABC <|-- WikiSubSectionParserABC
+SubSubSectionLevelMixin <|-- WikiSubSubSectionParserABC
+WikiSectionNodeParserABC <|-- WikiSubSubSectionParserABC
+
+@enduml
