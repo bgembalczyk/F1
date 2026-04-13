@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
+from typing import Any
 from typing import Generic
 from typing import Literal
 from typing import TypeVar
@@ -31,6 +32,21 @@ from scrapers.parsers.element_parser_abc import TableHtmlParserABC
 
 TagOutT = TypeVar("TagOutT")
 SoupOutT = TypeVar("SoupOutT")
+TagT = TypeVar("TagT", bound=Tag)
+PayloadT = TypeVar("PayloadT")
+
+WikiElementType = Literal[
+    "table",
+    "list",
+    "section",
+    "infobox",
+    "navbox",
+    "references",
+    "references_wrap",
+    "paragraph",
+    "figure",
+    "article",
+]
 
 
 class WikiTagParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
@@ -39,8 +55,13 @@ class WikiTagParserABC(HtmlTagParserABC[TagOutT], ABC, Generic[TagOutT]):
     @abstractmethod
     def parse(self, raw: Tag) -> TagOutT: ...
 
+
 class WikiElementParserABC(ABC, Generic[TagT, PayloadT]):
     """Canonical wiki parser contract for single HTML elements."""
+
+    @abstractmethod
+    def parse(self, raw: TagT) -> PayloadT: ...
+
 
 class WikiSoupParserABC(HtmlSoupParserABC[SoupOutT], ABC, Generic[SoupOutT]):
     """Unified wiki parser contract for BeautifulSoup inputs."""
@@ -54,23 +75,21 @@ class WikiTableElementParserABC(
     TableHtmlParserABC[WikiTableData],
     ABC,
 ):
-    @abstractmethod
-    def parse(self, raw: SoupT) -> PayloadT: ...
-
-
-class WikiTableElementParserABC(WikiElementParserABC[Tag, WikiTableData], ABC):
     element_type: WikiElementType = "table"
 
+    @abstractmethod
+    def parse(self, raw: Tag) -> WikiTableData: ...
 
-class WikiListElementParserABC(WikiElementParserABC[Tag, WikiListData], ABC):
-    element_type: WikiElementType = "list"
 
 class WikiListElementParserABC(
     WikiTagParserABC[WikiListData],
     ListHtmlParserABC[WikiListData],
     ABC,
 ):
-    element_type: WikiElementType = "paragraph"
+    element_type: WikiElementType = "list"
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> WikiListData: ...
 
 
 class WikiInfoboxElementParserABC(
@@ -78,7 +97,7 @@ class WikiInfoboxElementParserABC(
     InfoboxHtmlParserABC[WikiInfoboxData],
     ABC,
 ):
-    element_type: WikiElementType = "references_wrap"
+    element_type: WikiElementType = "infobox"
 
 
 class WikiNavboxElementParserABC(
@@ -86,7 +105,7 @@ class WikiNavboxElementParserABC(
     NavboxHtmlParserABC[WikiNavboxData],
     ABC,
 ):
-    element_type: WikiElementType = "section"
+    element_type: WikiElementType = "navbox"
 
 
 class WikiFigureElementParserABC(
@@ -94,7 +113,55 @@ class WikiFigureElementParserABC(
     FigureHtmlParserABC[WikiFigureData],
     ABC,
 ):
+    element_type: WikiElementType = "figure"
+
+
+class WikiParagraphElementParserABC(
+    WikiTagParserABC[ParagraphElementData],
+    ParagraphHtmlParserABC[ParagraphElementData],
+    ABC,
+):
+    element_type: WikiElementType = "paragraph"
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> ParagraphElementData: ...
+
+
+class WikiReferencesElementParserABC(
+    WikiTagParserABC[ReferencesWrapParsedData],
+    ReferencesElementParserABC[ReferencesWrapParsedData],
+    ABC,
+):
+    element_type: WikiElementType = "references"
+
+    @abstractmethod
+    def parse(self, raw: Tag) -> ReferencesWrapParsedData: ...
+
+
+class WikiSectionElementParserABC(
+    WikiSoupParserABC[WikiSectionData],
+    SectionHtmlParserABC[WikiSectionData],
+    ABC,
+):
+    element_type: WikiElementType = "section"
+
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> WikiSectionData: ...
+
+
+class WikiArticleParserABC(
+    WikiSoupParserABC[list[dict[str, Any]]],
+    ArticleHtmlParserABC[list[dict[str, Any]]],
+    ABC,
+):
     element_type: WikiElementType = "article"
+
+    @abstractmethod
+    def parse(self, raw: BeautifulSoup) -> list[dict[str, Any]]: ...
+
+
+class WikiDocumentParserABC(WikiSectionElementParserABC, ABC):
+    """Backward-compatible alias used across contracts."""
 
 
 class WikiListParserABC(WikiListElementParserABC, ABC):
@@ -123,42 +190,6 @@ class WikiParagraphParserABC(WikiParagraphElementParserABC, WikiListParserABC, A
 
 class WikiSectionParserABC(WikiSectionElementParserABC, ABC):
     """Domain-named alias for wiki section/document parsers."""
-
-
-class WikiParagraphElementParserABC(
-    WikiTagParserABC[ParagraphElementData],
-    ParagraphHtmlParserABC[ParagraphElementData],
-    ABC,
-):
-    @abstractmethod
-    def parse(self, raw: Tag) -> ParagraphElementData: ...
-
-
-class WikiReferencesElementParserABC(
-    WikiTagParserABC[ReferencesWrapParsedData],
-    ReferencesElementParserABC[ReferencesWrapParsedData],
-    ABC,
-):
-    @abstractmethod
-    def parse(self, raw: Tag) -> ReferencesWrapParsedData: ...
-
-
-class WikiSectionElementParserABC(
-    WikiSoupParserABC[WikiSectionData],
-    SectionHtmlParserABC[WikiSectionData],
-    ABC,
-):
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> WikiSectionData: ...
-
-
-class WikiArticleParserABC(
-    WikiSoupParserABC[list[dict[str, Any]]],
-    ArticleHtmlParserABC[list[dict[str, Any]]],
-    ABC,
-):
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> list[dict[str, Any]]: ...
 
 
 __all__ = [

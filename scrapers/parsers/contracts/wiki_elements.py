@@ -10,6 +10,7 @@ from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiNavboxElementParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiNavboxParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiParagraphElementParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiParagraphParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiReferencesElementParserABC
@@ -34,6 +35,7 @@ __all__ = [
     "WikiListElementParserABC",
     "WikiListParserABC",
     "WikiNavboxElementParserABC",
+    "WikiNavboxParserABC",
     "WikiParagraphElementParserABC",
     "WikiParagraphParserABC",
     "WikiReferencesElementParserABC",

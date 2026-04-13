@@ -6,6 +6,7 @@ from record_assembly_strategy.bundle_record_with_details import (
 from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.component_metadata_wiki import build_component_metadata
 from scrapers.list_scraper_seasons import SeasonsListScraper
+from scrapers.single_scraper_seasons import SingleSeasonScraper
 
 
 class CompleteSeasonDataExtractor(CompleteExtractorBase):
@@ -16,7 +17,7 @@ class CompleteSeasonDataExtractor(CompleteExtractorBase):
     url = SeasonsListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
         list_scraper_classes=(SeasonsListScraper,),
-        single_scraper_cls=SeasonsDetailScraper,
+        single_scraper_cls=SingleSeasonScraper,
         detail_url_field_paths=("season.url",),
         record_assembly_strategy=BundleRecordWithDetailsStrategy(
             record_field="season",

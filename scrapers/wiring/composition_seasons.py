@@ -10,6 +10,7 @@ from scrapers.pipeline_seasons import SeasonYearResolver
 from scrapers.services.section.extraction.season_text import (
     SeasonTextSectionExtractionService,
 )
+from scrapers.services.domain_record.season_pipeline_service import SeasonDomainRecordService
 from scrapers.services.section.factories.section_service_factory import (
     SectionServiceFactoryABC,
 )

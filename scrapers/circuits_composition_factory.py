@@ -12,6 +12,7 @@ from scrapers.services.section.extraction.circuits import (
 from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,
 )
+from scrapers.services.domain_record.circuit_pipeline_service import CircuitDomainRecordService
 from scrapers.services.section.factories.section_service_factory import (
     SectionServiceFactoryABC,
 )
