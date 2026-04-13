@@ -8,7 +8,7 @@ from scrapers.pipeline_seasons import SeasonParsingComponentsBuilder
 from scrapers.pipeline_seasons import SeasonSectionPipeline
 from scrapers.pipeline_seasons import SeasonYearResolver
 from scrapers.services.domain_record.season_pipeline_service import (
-    SeasonDomainRecordService,
+    SeasonPipelineService,
 )
 from scrapers.services.section.extraction.season_text import (
     SeasonTextSectionExtractionService,
@@ -22,7 +22,7 @@ from scrapers.services.section.factories.section_service_factory import (
 class SeasonScraperDependencies:
     season_year_resolver: SeasonYearResolver
     season_pipeline: SeasonSectionPipeline
-    domain_record_service: SeasonDomainRecordService
+    domain_record_service: SeasonPipelineService
 
 
 @dataclass(frozen=True, slots=True)
@@ -37,7 +37,7 @@ class SeasonScraperCompositionFactory:
     text_sections_service_factory: (
         SectionServiceFactoryABC[SeasonTextSectionExtractionService] | None
     ) = None
-    domain_record_service: SeasonDomainRecordService | None = None
+    domain_record_service: SeasonPipelineService | None = None
 
     @classmethod
     def for_tests(
@@ -50,7 +50,7 @@ class SeasonScraperCompositionFactory:
         text_sections_service_factory: (
             SectionServiceFactoryABC[SeasonTextSectionExtractionService] | None
         ) = None,
-        domain_record_service: SeasonDomainRecordService | None = None,
+        domain_record_service: SeasonPipelineService | None = None,
     ) -> SeasonScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -81,7 +81,7 @@ class SeasonScraperCompositionFactory:
         )
 
         domain_record_service = (
-            self.domain_record_service or SeasonDomainRecordService()
+            self.domain_record_service or SeasonPipelineService()
         )
 
         return SeasonScraperDependencies(

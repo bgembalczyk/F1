@@ -67,6 +67,3 @@ class CircuitPipelineService(
             sections=list(source["sections"]),
         )
 
-
-class CircuitDomainRecordService(CircuitPipelineService):
-    """Compatibility alias for legacy service naming."""

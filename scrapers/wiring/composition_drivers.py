@@ -6,7 +6,7 @@ from scrapers.infobox.extraction.service import DriverInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.services.domain_record.driver_pipeline_service import (
-    DriverDomainRecordService,
+    DriverPipelineService,
 )
 from scrapers.services.section.extraction.driver import DriverSectionExtractionService
 from scrapers.services.section.factories.configurable import (
@@ -21,7 +21,7 @@ from scrapers.services.section.factories.section_service_factory import (
 class DriverScraperDependencies:
     infobox_service: InfoboxOrchestratorABC
     sections_service_factory: SectionServiceFactoryABC[DriverSectionExtractionService]
-    domain_record_service: DriverDomainRecordService
+    domain_record_service: DriverPipelineService
 
 
 @dataclass(frozen=True, slots=True)
@@ -33,7 +33,7 @@ class DriverScraperCompositionFactory:
     sections_service_factory: (
         SectionServiceFactoryABC[DriverSectionExtractionService] | None
     ) = None
-    domain_record_service: DriverDomainRecordService | None = None
+    domain_record_service: DriverPipelineService | None = None
 
     @classmethod
     def for_tests(
@@ -43,7 +43,7 @@ class DriverScraperCompositionFactory:
         sections_service_factory: (
             SectionServiceFactoryABC[DriverSectionExtractionService] | None
         ) = None,
-        domain_record_service: DriverDomainRecordService | None = None,
+        domain_record_service: DriverPipelineService | None = None,
     ) -> DriverScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -71,7 +71,7 @@ class DriverScraperCompositionFactory:
 
         domain_record_service = self.domain_record_service
         if domain_record_service is None:
-            domain_record_service = DriverDomainRecordService()
+            domain_record_service = DriverPipelineService()
 
         return DriverScraperDependencies(
             infobox_service=infobox_service,

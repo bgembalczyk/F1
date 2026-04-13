@@ -67,6 +67,3 @@ class ConstructorPipelineService(
             sections=list(source["sections"]),
         )
 
-
-class ConstructorDomainRecordService(ConstructorPipelineService):
-    """Compatibility alias for legacy service naming."""

@@ -7,7 +7,7 @@ from scrapers.options import ScraperOptions
 from scrapers.orchestration.circuit_orchestrator import CircuitInfoboxOrchestrator
 from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.services.domain_record.circuit_pipeline_service import (
-    CircuitDomainRecordService,
+    CircuitPipelineService,
 )
 from scrapers.services.section.extraction.circuits import (
     CircuitSectionExtractionService,
@@ -29,8 +29,7 @@ class CircuitScraperCompositionFactory:
     sections_service_factory: (
         SectionServiceFactoryABC[CircuitSectionExtractionService] | None
     ) = None
-    domain_record_service: CircuitDomainRecordService | None = None
-
+    domain_record_service: CircuitPipelineService | None = None
     @classmethod
     def for_tests(
         cls,
@@ -39,7 +38,7 @@ class CircuitScraperCompositionFactory:
         sections_service_factory: (
             SectionServiceFactoryABC[CircuitSectionExtractionService] | None
         ) = None,
-        domain_record_service: CircuitDomainRecordService | None = None,
+        domain_record_service: CircuitPipelineService | None = None,
     ) -> CircuitScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -67,7 +66,7 @@ class CircuitScraperCompositionFactory:
 
         domain_record_service = self.domain_record_service
         if domain_record_service is None:
-            domain_record_service = CircuitDomainRecordService()
+            domain_record_service = CircuitPipelineService()
 
         return CircuitScraperDependencies(
             infobox_service=infobox_service,
