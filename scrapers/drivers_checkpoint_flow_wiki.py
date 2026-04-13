@@ -12,7 +12,6 @@ from typing import Any
 from scrapers.base_flow_wiki import BaseOrchestrationFlow
 from scrapers.orchestration.audit_entry import AuditEntry
 from scrapers.orchestration.components.normalizer import BaseNormalizer
-from scrapers.orchestration.mixins.url_resolver import UrlResolverMixin
 from scrapers.orchestration.stages import lifecycle
 
 if TYPE_CHECKING:
@@ -20,7 +19,7 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-class DriversSeedNormalizer(UrlResolverMixin, BaseNormalizer):
+class DriversSeedNormalizer(BaseNormalizer):
     def _normalize(self, payload: lifecycle.StageEnvelope) -> lifecycle.StageEnvelope:
         rows = [self.resolve_url_row(self.domain, row) for row in payload.records]
         return self.build_envelope(
