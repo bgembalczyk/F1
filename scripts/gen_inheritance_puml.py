@@ -170,8 +170,7 @@ write(OUT / 'parsers/01_parser_abc_core.puml',
 # PARSERS/02 – Wiki HTML parsers
 p02: set[str] = set()
 p02 |= {c for c in main_comp if c.startswith('Wiki') and
-        (c.endswith('ABC') or c.endswith('Base') or
-         c in ('WikiArticleParserABC',))}
+        (c.endswith('ABC') or c.endswith('Base'))}
 # add concrete wiki parsers reachable from ABC/Base classes already in p02
 changed = True
 while changed:
