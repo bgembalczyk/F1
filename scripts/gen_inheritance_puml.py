@@ -239,6 +239,11 @@ covered_main = p01 | p02 | p03 | p04 | p05 | p06
 p07 = main_comp - covered_main
 # Also add ArticleTablesAssembler/ABC (their own small component)
 p07 |= component_of('ArticleTablesAssemblerABC')
+# Add standalone parser contracts/ABCs not connected to the ParserABC hierarchy
+for _extra in ('NestedChildParser', 'StructureParser',
+               'HasTableParserABC', 'HasTableMapperABC',
+               'SectionAssembler'):
+    p07 |= component_of(_extra)
 write(OUT / 'parsers/07_misc_parsers.puml',
       make_puml('Miscellaneous Parser Utilities', sorted(p07)))
 

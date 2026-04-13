@@ -15,6 +15,8 @@ class CircuitInfoboxParser
 class DriverInfoboxParser
 class FigureElementParser
 class FinishedSeasonParser
+abstract class HasTableMapperABC
+abstract class HasTableParserABC
 abstract class HeaderNormalizationMixin
 class IndianapolisConstructorsListParser
 class IndianapolisOnlyListParser
@@ -25,14 +27,17 @@ class LicenceParser
 class ListElementParser
 class NationalityParser
 class NavboxElementParser
+class NestedChildParser
 class ParagraphElementParser
 class PrivateerTeamsListParser
 class RaceEventParser
 class ReferencesWrapParser
 class SeasonStandingsParser
+class SectionAssembler
 class SectionElementParser
 abstract class SectionTraversalMixin
 class SponsorPartsParser
+class StructureParser
 class TeamsParser
 class WikiListParser
 class WikiParagraphParser
