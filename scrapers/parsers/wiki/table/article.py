@@ -18,7 +18,6 @@ from scrapers.parsers.wiki.table.mapped.standings_table_mapper import StandingsT
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
 from scrapers.parsers.wiki.table.article_tables_parser_abc import ArticleTablesParserABC
-from scrapers.parsers.wiki.table_element_base import WikiTableElementParserBase
 
 
 class ArticleTablesParser(ArticleTablesParserABC):

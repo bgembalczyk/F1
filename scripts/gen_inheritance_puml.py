@@ -150,10 +150,9 @@ main_comp = component_of('ParserABC')
 # PARSERS/01 – Abstract contracts & HTML element layer
 p01: set[str] = set()
 p01 |= descendants('ParserABC', main_comp)
-p01 -= descendants('WikiDelegatingHtmlParserBase', main_comp)
 KEEP_IN_CORE = {
     'SoupParser', 'SectionParserBase', 'BaseSectionParser',
-    'SectionParserABC', 'SectionStructureParserABC',
+    'SectionParserABC',
     'ListSectionParser', 'TableSectionParser', 'TextBlockSectionParser',
     'InfoboxRowsParser', 'CollapsibleTableParser',
     'InfoboxTableParser', 'InfoboxSectionParser',
@@ -169,15 +168,21 @@ write(OUT / 'parsers/01_parser_abc_core.puml',
       make_puml('Parser ABC – Core Contracts & HTML Layer', sorted(p01)))
 
 # PARSERS/02 – Wiki HTML parsers
-p02 = descendants('WikiDelegatingHtmlParserBase', main_comp)
-for cls in list(main_comp):
-    if cls.startswith('Wiki') and ('Parser' in cls or 'Scraper' in cls):
-        for parent in par.get(cls, set()):
-            if parent in p02:
-                p02.add(cls)
+p02: set[str] = set()
 p02 |= {c for c in main_comp if c.startswith('Wiki') and
         (c.endswith('ABC') or c.endswith('Base') or
          c in ('WikiArticleParserABC',))}
+# add concrete wiki parsers reachable from ABC/Base classes already in p02
+changed = True
+while changed:
+    changed = False
+    for cls in list(main_comp):
+        if cls in p02:
+            continue
+        if cls.startswith('Wiki') and ('Parser' in cls or 'Scraper' in cls):
+            if any(parent in p02 for parent in par.get(cls, set())):
+                p02.add(cls)
+                changed = True
 write(OUT / 'parsers/02_wiki_html_parsers.puml',
       make_puml('Wiki HTML Parser Hierarchy', sorted(p02)))
 

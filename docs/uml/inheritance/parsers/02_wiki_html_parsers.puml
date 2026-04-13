@@ -5,43 +5,44 @@ hide empty members
 hide circle
 
 abstract class WikiArticleParserABC
-abstract class WikiArticleParserBase
-abstract class WikiDelegatingHtmlParserBase
+class WikiFigureElementParser
 abstract class WikiFigureElementParserABC
-abstract class WikiFigureParserBase
+class WikiFigureParser
+class WikiInfoboxElementParser
 abstract class WikiInfoboxElementParserABC
-abstract class WikiInfoboxParserBase
+class WikiInfoboxHtmlParser
+class WikiInfoboxParser
+class WikiListElementParser
 abstract class WikiListElementParserABC
-abstract class WikiListParserBase
+class WikiNavboxElementParser
 abstract class WikiNavboxElementParserABC
-abstract class WikiNavboxParserBase
+class WikiNavboxParser
+class WikiParagraphElementParser
 abstract class WikiParagraphElementParserABC
-abstract class WikiParagraphParserBase
 class WikiReferencesElementParser
 abstract class WikiReferencesElementParserABC
-abstract class WikiReferencesParserBase
+class WikiSectionElementParser
 abstract class WikiSectionElementParserABC
 abstract class WikiSectionParserBase
+class WikiTableElementParser
 abstract class WikiTableElementParserABC
 abstract class WikiTableElementParserBase
-abstract class WikiTableParserBase
+class WikiTableHtmlParser
+class WikiTableParser
 
-WikiArticleParserABC <|-- WikiArticleParserBase
-WikiDelegatingHtmlParserBase <|-- WikiArticleParserBase
-WikiDelegatingHtmlParserBase <|-- WikiFigureParserBase
-WikiFigureElementParserABC <|-- WikiFigureParserBase
-WikiDelegatingHtmlParserBase <|-- WikiInfoboxParserBase
-WikiInfoboxElementParserABC <|-- WikiInfoboxParserBase
-WikiDelegatingHtmlParserBase <|-- WikiListParserBase
-WikiListElementParserABC <|-- WikiListParserBase
-WikiDelegatingHtmlParserBase <|-- WikiNavboxParserBase
-WikiNavboxElementParserABC <|-- WikiNavboxParserBase
-WikiDelegatingHtmlParserBase <|-- WikiParagraphParserBase
-WikiParagraphElementParserABC <|-- WikiParagraphParserBase
-WikiReferencesParserBase <|-- WikiReferencesElementParser
-WikiDelegatingHtmlParserBase <|-- WikiReferencesParserBase
-WikiReferencesElementParserABC <|-- WikiReferencesParserBase
-WikiDelegatingHtmlParserBase <|-- WikiTableParserBase
-WikiTableElementParserABC <|-- WikiTableParserBase
+WikiFigureElementParserABC <|-- WikiFigureElementParser
+WikiFigureElementParserABC <|-- WikiFigureParser
+WikiInfoboxElementParserABC <|-- WikiInfoboxElementParser
+WikiInfoboxElementParserABC <|-- WikiInfoboxHtmlParser
+WikiInfoboxHtmlParser <|-- WikiInfoboxParser
+WikiListElementParserABC <|-- WikiListElementParser
+WikiNavboxElementParserABC <|-- WikiNavboxElementParser
+WikiNavboxElementParserABC <|-- WikiNavboxParser
+WikiParagraphElementParserABC <|-- WikiParagraphElementParser
+WikiReferencesElementParserABC <|-- WikiReferencesElementParser
+WikiSectionElementParserABC <|-- WikiSectionElementParser
+WikiTableElementParserABC <|-- WikiTableElementParser
+WikiTableElementParserABC <|-- WikiTableHtmlParser
+WikiTableHtmlParser <|-- WikiTableParser
 
 @enduml

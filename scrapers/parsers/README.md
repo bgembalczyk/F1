@@ -33,7 +33,6 @@ ParserABC[In, Out]
 │
 ├── HtmlSoupParserABC[SoupOut]
 │   └── SectionParserABC
-│       └── SectionStructureParserABC
 │
 └── Wiki element ABCs (warstwa 2):
     WikiTableParserABC  ← TableHtmlParserABC[WikiTableData]
