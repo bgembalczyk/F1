@@ -205,8 +205,6 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 "NestedWikiSectionParser",
                 # Canonical runtime base for section parsers
                 "SectionParserBase",
-                # recursive heading-level parsers (HistorySectionParser, etc.)
-                "BaseNestedSectionParser",
                 # WikiParser is the root for all recursive/nested parsers
                 "WikiParser",
             }
