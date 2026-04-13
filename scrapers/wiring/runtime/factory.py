@@ -1,7 +1,7 @@
 from typing import cast
 
 from infrastructure.cache.file.protocol import FileCache
-from infrastructure.http.clients.urllib_http import UrllibHttpClient
+from infrastructure.http.clients.base import HttpClient
 from infrastructure.http.config import HttpClientConfig
 from infrastructure.http.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http.policies.http import HttpPolicy
@@ -179,7 +179,7 @@ class ScraperRuntimeFactory:
         return cast(
             "HttpClientProtocol",
             # di-antipattern-allow: runtime factory is the DI composition root.
-            UrllibHttpClient(config=client_config),
+            HttpClient(config=client_config),
         )
 
     @staticmethod

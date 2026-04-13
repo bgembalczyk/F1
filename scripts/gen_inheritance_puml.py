@@ -460,9 +460,7 @@ write(
         sorted(
             component_of("InfoboxOrchestratorABC")
             | component_of("InfoboxSectionDiscoveryABC")
-            | component_of("InfoboxExtractorABC")
-            | component_of("ParsingBundleProviderABC")
-            | component_of("ParsingBundle"),
+            | component_of("InfoboxExtractorABC"),
         ),
     ),
 )
@@ -491,12 +489,10 @@ write(
     make_puml(
         "HTTP Client, Cache & Rate Limiter",
         sorted(
-            component_of("BaseHttpClient")
-            | component_of("RetryPolicy")
+            component_of("HttpClient")
             | component_of("FileTtlCacheAdapter")
             | component_of("TextCacheProtocol")
-            | component_of("SourceAdapter")
-            | component_of("RateLimiter"),
+            | component_of("SourceAdapter"),
         ),
     ),
 )

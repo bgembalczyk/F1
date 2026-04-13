@@ -4,21 +4,18 @@ skinparam classAttributeIconSize 0
 hide empty members
 hide circle
 
-abstract class BaseHttpClient
 class CacheAdapter
 class DefaultRetryPolicy
 class FileCache
 abstract class FileTtlCacheAdapter
 class GeminiJsonFileCacheAdapter
 class HtmlFetcher
+class HttpClient
 class HttpResponseFileCacheAdapter
 class MinDelayRateLimiter
-abstract class RateLimiter
-abstract class RetryPolicy
 abstract class SourceAdapter
 class SourceAdapterFetcherShim
 interface TextCacheProtocol
-class UrllibHttpClient
 class WikipediaCachePolicy
 
 SourceAdapter <|-- CacheAdapter
@@ -27,7 +24,6 @@ FileTtlCacheAdapter <|-- GeminiJsonFileCacheAdapter
 SourceAdapter <|-- HtmlFetcher
 FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
 HtmlFetcher <|-- SourceAdapterFetcherShim
-BaseHttpClient <|-- UrllibHttpClient
 TextCacheProtocol <|-- WikipediaCachePolicy
 
 @enduml

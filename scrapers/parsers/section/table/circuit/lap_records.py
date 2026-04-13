@@ -12,12 +12,12 @@ from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.options import ScraperOptions
 from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.section.table.base import TableSectionParser
-from scrapers.parsers.section.table.contracts import SectionTableClassifierABC
+from scrapers.parsers.contracts.classifier_abc import ClassifierABC
 from scrapers.section.parse_results import SectionParseResult
 
 
 class CircuitLapRecordsTableClassifier(
-    SectionTableClassifierABC[tuple[Tag, list[str]]],
+    ClassifierABC[dict[str, Any], tuple[Tag, list[str]]],
 ):
     def __init__(self, *, options: ScraperOptions, url: str) -> None:
         self._options = options

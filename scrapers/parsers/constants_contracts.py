@@ -13,8 +13,6 @@ SoupOut = TypeVar("SoupOut")
 TagOut = TypeVar("TagOut")
 
 
-BundleT_co = TypeVar("BundleT_co", bound="ParsingBundle", covariant=True)
-
 In = TypeVar("In")
 Out = TypeVar("Out")
 
