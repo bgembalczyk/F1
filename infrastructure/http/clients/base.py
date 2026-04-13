@@ -5,6 +5,7 @@ from abc import ABC
 from abc import abstractmethod
 from collections.abc import Callable
 from collections.abc import Mapping
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
 from infrastructure.cache.response_service import ResponseCacheService
@@ -90,6 +91,22 @@ class BaseHttpClient(ABC):
         """Pobiera URL i zwraca response."""
         ...
 
+    def get_batch(
+        self,
+        urls: list[str],
+        *,
+        headers: Mapping[str, str] | None = None,
+        timeout: int | None = None,
+        max_workers: int = 10,
+    ) -> list[HttpResponseProtocol]:
+        """Pobiera wiele URLi współbieżnie i zwraca responses."""
+
+        def _get_single(url: str) -> HttpResponseProtocol:
+            return self.get(url, headers=headers, timeout=timeout)
+
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            return list(pool.map(_get_single, urls))
+
     def get_text(
         self,
         url: str,
@@ -125,3 +142,36 @@ class BaseHttpClient(ABC):
         """
         payload = self.get_text(url, headers=headers, timeout=timeout)
         return json.loads(payload)
+
+    def get_text_batch(
+        self,
+        urls: list[str],
+        *,
+        headers: Mapping[str, str] | None = None,
+        timeout: int | None = None,
+        max_workers: int = 10,
+    ) -> list[str]:
+        """
+        Zwraca response.text współbieżnie z obsługą cache.
+
+        Uwaga: implementacja współbieżnie ładuje wiele adresów ułatwiając unikanie problemu N+1.
+        """
+        def _get_text_single(url: str) -> str:
+            return self.get_text(url, headers=headers, timeout=timeout)
+
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            return list(pool.map(_get_text_single, urls))
+
+    def get_json_batch(
+        self,
+        urls: list[str],
+        *,
+        headers: Mapping[str, str] | None = None,
+        timeout: int | None = None,
+        max_workers: int = 10,
+    ) -> list[JsonValue]:
+        """
+        Parsuje listę odpowiedzi JSON.
+        """
+        texts = self.get_text_batch(urls, headers=headers, timeout=timeout, max_workers=max_workers)
+        return [json.loads(text) for text in texts]

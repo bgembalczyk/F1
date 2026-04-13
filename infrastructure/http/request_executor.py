@@ -2,6 +2,8 @@
 
 import time
 from collections.abc import Callable
+from collections.abc import Iterable
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
 from infrastructure.http.policies.retry.base import RetryPolicy
@@ -67,6 +69,32 @@ class RequestExecutor:
 
         msg = "Unreachable code"
         raise AssertionError(msg)
+
+    def execute_batch(
+        self,
+        *,
+        urls: Iterable[str],
+        headers: dict[str, str],
+        timeout: int,
+        request_func: Callable[..., Any],
+        request_exception_cls: type[Exception],
+        max_workers: int = 10,
+    ) -> list[Any]:
+        """
+        Wykonuje wiele requestów w sposób współbieżny (batch).
+        Pomaga to uniknąć problemu N+1 zapytań dla zapytań sekwencyjnych.
+        """
+        def _execute_single(url: str) -> Any:
+            return self.execute(
+                url=url,
+                headers=headers,
+                timeout=timeout,
+                request_func=request_func,
+                request_exception_cls=request_exception_cls,
+            )
+
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            return list(pool.map(_execute_single, urls))
 
     def _backoff_sleep(self, attempt: int) -> None:
         delay = self._retry_policy.backoff_seconds(attempt)
