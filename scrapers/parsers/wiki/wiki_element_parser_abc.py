@@ -83,16 +83,6 @@ class WikiParagraphElementParserABC(
     def parse(self, raw: Tag) -> ParagraphElementData: ...
 
 
-class WikiSectionElementParserABC(
-    HtmlSoupParserABC[WikiSectionData],
-    ABC,
-):
-    element_type: WikiElementType = "section"
-
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> WikiSectionData: ...
-
-
 class WikiArticleParserABC(
     HtmlSoupParserABC[list[dict[str, Any]]],
     ABC,
@@ -111,6 +101,5 @@ __all__ = [
     "WikiListElementParserABC",
     "WikiNavboxElementParserABC",
     "WikiParagraphElementParserABC",
-    "WikiSectionElementParserABC",
     "WikiTableElementParserABC",
 ]
