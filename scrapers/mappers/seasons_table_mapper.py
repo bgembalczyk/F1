@@ -1,7 +1,6 @@
 from typing import Any
 
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
-from scrapers.wiki_table_base_mapper import WikiTableBaseMapper
 
 
 class SeasonsTableMapper(WikiTableBaseMapper):
