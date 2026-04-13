@@ -13,6 +13,18 @@
 5. **[uml_future_dataset_pipeline.puml](uml_future_dataset_pipeline.puml)** - Docelowa wizja iteracyjnego pipeline warstw 0/1 (Wikipedia → kolejne checkpointy → ML-ready)
 6. **[uml_all_classes.puml](uml_all_classes.puml)** - Diagram wszystkich klas projektu (746 klas, 19 pakietów, relacje dziedziczenia)
 
+### Diagramy dziedziczenia (podzielone na rodziny klas)
+7. **[uml/inheritance/](uml/inheritance/)** – 24 pliki `.puml` z hierarchiami dziedziczenia wszystkich klas projektu, pogrupowane według rodziny. Pokrycie: 579/579 klas (100%). Opis struktury: [uml/inheritance/README.md](uml/inheritance/README.md)
+   - `parsers/` – parsery (7 plików: kontrakty ABC, wiki HTML, scrapery, sekcje domenowe, tabele)
+   - `columns/` – hierarchia BaseColumn (66 klas)
+   - `mappers/` – hierarchia MapperABC (46 klas)
+   - `records/` – fabryki, transformatory, walidatory, strategie, modele domenowe
+   - `services/` – serwisy pipeline'u i komponenty bazowe
+   - `components/` – klasyfikatory i kompletne ekstraktory
+   - `infobox/` – orkiestratory infoboxów i utils
+   - `infrastructure/` – błędy, HTTP, cache, warstwy
+   - `misc/` – małe, izolowane hierarchie
+
 ### Dokumentacja README
 1. **[UML_DIAGRAMS_README.md](UML_DIAGRAMS_README.md)** - Kompleksowa dokumentacja w języku angielskim
 2. **[UML_DIAGRAMS_README_PL.md](UML_DIAGRAMS_README_PL.md)** - Kompleksowa dokumentacja w języku polskim

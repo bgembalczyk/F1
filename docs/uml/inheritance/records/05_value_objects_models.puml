@@ -1,0 +1,44 @@
+@startuml
+title Value Objects & Domain Models
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class CarRecord
+class Circuit
+class CircuitBaseRecord
+class CircuitCompleteRecord
+interface CircuitContract
+class CircuitDetailsRecord
+interface DataContract
+class DateValue
+interface DriverContract
+class DriversChampionships
+class EngineManufacturer
+class EngineRegulation
+class EngineRestriction
+class Link
+class LinkRecord
+class NormalizedDate
+interface PointsContract
+class SeasonRef
+class ValidatedModel
+class ValueObject
+
+LinkRecord <|-- CarRecord
+ValidatedModel <|-- Circuit
+CircuitBaseRecord <|-- CircuitCompleteRecord
+DataContract <|-- CircuitContract
+CircuitBaseRecord <|-- CircuitDetailsRecord
+ValueObject <|-- DateValue
+DataContract <|-- DriverContract
+ValueObject <|-- DriversChampionships
+ValidatedModel <|-- EngineManufacturer
+ValidatedModel <|-- EngineRegulation
+ValidatedModel <|-- EngineRestriction
+ValueObject <|-- Link
+ValueObject <|-- NormalizedDate
+DataContract <|-- PointsContract
+ValueObject <|-- SeasonRef
+
+@enduml

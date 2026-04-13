@@ -1,0 +1,35 @@
+@startuml
+title HTTP Client, Cache & Rate Limiter
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseHttpClient
+class CacheAdapter
+class DefaultRetryPolicy
+class FileCache
+class FileTtlCacheAdapter
+class GeminiJsonFileCacheAdapter
+class HtmlFetcher
+class HttpResponseFileCacheAdapter
+class MinDelayRateLimiter
+class RateLimiter
+class RetryPolicy
+class SourceAdapter
+class SourceAdapterFetcherShim
+interface TextCacheProtocol
+class UrllibHttpClient
+class WikipediaCachePolicy
+
+SourceAdapter <|-- CacheAdapter
+RetryPolicy <|-- DefaultRetryPolicy
+TextCacheProtocol <|-- FileCache
+FileTtlCacheAdapter <|-- GeminiJsonFileCacheAdapter
+SourceAdapter <|-- HtmlFetcher
+FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
+RateLimiter <|-- MinDelayRateLimiter
+HtmlFetcher <|-- SourceAdapterFetcherShim
+BaseHttpClient <|-- UrllibHttpClient
+TextCacheProtocol <|-- WikipediaCachePolicy
+
+@enduml

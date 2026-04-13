@@ -1,0 +1,41 @@
+@startuml
+title Miscellaneous Small Hierarchies
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class CircuitEntitiesOrchestrator
+class CircuitLayoutsExtractor
+class ConfigurableSectionServiceFactory
+abstract class DomainMapperABC
+class ExportCapability
+class Extractor
+class FetchCapability
+class IdentityDomainMapper
+abstract class SafeParsingMixin
+interface ScraperLifecycleProtocol
+class SeasonGenericTableOrchestrator
+class SeasonStandingsTableOrchestrator
+abstract class SeasonTableOrchestratorABC
+class SeasonTablePayloadMapper
+abstract class SeasonTablePayloadMapperABC
+class SectionSelectionStrategy
+class TableExtractor
+class ValidateCapability
+class ValidatingSectionServiceFactory
+class WikipediaSectionByIdSelectionStrategy
+
+SafeParsingMixin <|-- CircuitEntitiesOrchestrator
+SafeParsingMixin <|-- CircuitLayoutsExtractor
+ValidatingSectionServiceFactory <|-- ConfigurableSectionServiceFactory
+DomainMapperABC <|-- IdentityDomainMapper
+ExportCapability <|-- ScraperLifecycleProtocol
+FetchCapability <|-- ScraperLifecycleProtocol
+ValidateCapability <|-- ScraperLifecycleProtocol
+SeasonTableOrchestratorABC <|-- SeasonGenericTableOrchestrator
+SeasonTableOrchestratorABC <|-- SeasonStandingsTableOrchestrator
+SeasonTablePayloadMapperABC <|-- SeasonTablePayloadMapper
+Extractor <|-- TableExtractor
+SectionSelectionStrategy <|-- WikipediaSectionByIdSelectionStrategy
+
+@enduml

@@ -1,0 +1,61 @@
+@startuml
+title Miscellaneous Parser Utilities
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class ActiveYearsParser
+class ArticleTablesAssembler
+abstract class ArticleTablesAssemblerABC
+class BestFinishParser
+class CarNumbersParser
+class CategoryLinksParser
+class ChampionshipsParser
+class CircuitInfoboxParser
+class DriverInfoboxParser
+class FigureElementParser
+class FinishedSeasonParser
+abstract class HeaderNormalizationMixin
+class IndianapolisConstructorsListParser
+class IndianapolisOnlyListParser
+abstract class IndianapolisOnlyMixin
+class InfoboxCareerParser
+class InfoboxTitlesParser
+class LicenceParser
+class ListElementParser
+class NationalityParser
+class NavboxElementParser
+class ParagraphElementParser
+class PrivateerTeamsListParser
+class RaceEventParser
+class ReferencesWrapParser
+class SectionElementParser
+abstract class SectionTraversalMixin
+class SponsorPartsParser
+class TeamsParser
+class WikiFigureElementParser
+class WikiFigureParser
+class WikiInfoboxElementParser
+class WikiInfoboxHtmlParser
+class WikiInfoboxParser
+class WikiListElementParser
+class WikiListParser
+class WikiNavboxElementParser
+class WikiNavboxParser
+class WikiParagraphElementParser
+class WikiParagraphParser
+class WikiParser
+class WikiSectionElementParser
+class WikiTagParser
+class YearParser
+
+ArticleTablesAssemblerABC <|-- ArticleTablesAssembler
+WikiParser <|-- CategoryLinksParser
+ListElementParser <|-- IndianapolisConstructorsListParser
+ListElementParser <|-- IndianapolisOnlyListParser
+WikiListElementParser <|-- PrivateerTeamsListParser
+WikiParser <|-- ReferencesWrapParser
+WikiInfoboxHtmlParser <|-- WikiInfoboxParser
+ParagraphElementParser <|-- WikiParagraphParser
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+title Complete Data Extractors
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseDataExtractor
+class CompleteConstructorsDataExtractor
+class CompleteDriverDataExtractor
+abstract class CompleteExtractorBase
+class CompleteSeasonDataExtractor
+class CompositeDataExtractor
+class F1CompleteCircuitDataExtractor
+class F1CompleteEngineManufacturerDataExtractor
+class F1CompleteGrandPrixDataExtractor
+
+CompleteExtractorBase <|-- CompleteConstructorsDataExtractor
+CompleteExtractorBase <|-- CompleteDriverDataExtractor
+CompositeDataExtractor <|-- CompleteExtractorBase
+CompleteExtractorBase <|-- CompleteSeasonDataExtractor
+BaseDataExtractor <|-- CompositeDataExtractor
+CompleteExtractorBase <|-- F1CompleteCircuitDataExtractor
+CompleteExtractorBase <|-- F1CompleteEngineManufacturerDataExtractor
+CompleteExtractorBase <|-- F1CompleteGrandPrixDataExtractor
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+title Record Split & Assembly Strategies
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class AttachDetailsStrategy
+abstract class BaseRecordAssembler
+class BundleRecordWithDetailsStrategy
+class CircuitRecordAssembler
+class ConstructorRecordAssembler
+class DeduplicateRecordStrategy
+class ExtractDetailFieldStrategy
+class GrandPrixSplitStrategy
+class HasMultipleSeasonsRule
+class HasPossessiveColoursRule
+class HasYearSpecificColoursRule
+class HasYearSpecificSponsorsRule
+class PossessiveDriverColourSplitStrategy
+class RecordAssemblyStrategy
+class RecordSplitStrategy
+class SeasonRecordAssembler
+class SeasonSplitStrategy
+class SplitRule
+
+RecordAssemblyStrategy <|-- AttachDetailsStrategy
+RecordAssemblyStrategy <|-- BundleRecordWithDetailsStrategy
+BaseRecordAssembler <|-- CircuitRecordAssembler
+BaseRecordAssembler <|-- ConstructorRecordAssembler
+RecordSplitStrategy <|-- DeduplicateRecordStrategy
+RecordAssemblyStrategy <|-- ExtractDetailFieldStrategy
+RecordSplitStrategy <|-- GrandPrixSplitStrategy
+SplitRule <|-- HasMultipleSeasonsRule
+SplitRule <|-- HasPossessiveColoursRule
+SplitRule <|-- HasYearSpecificColoursRule
+SplitRule <|-- HasYearSpecificSponsorsRule
+RecordSplitStrategy <|-- PossessiveDriverColourSplitStrategy
+BaseRecordAssembler <|-- SeasonRecordAssembler
+RecordSplitStrategy <|-- SeasonSplitStrategy
+
+@enduml

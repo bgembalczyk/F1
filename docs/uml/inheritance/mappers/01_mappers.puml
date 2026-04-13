@@ -1,0 +1,101 @@
+@startuml
+title Mapper Hierarchy (MapperABC)
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseRedFlaggedRacesTableMapper
+class CircuitEventsTableRecordMapper
+class CircuitLapRecordsTableRecordMapper
+class CircuitsListTableMapper
+class CurrentConstructorsTableMapper
+class DriverOrderedTableMapper
+class DriverResultsTableRecordMapper
+class DriversListTableMapper
+class EngineManufacturersTableMapper
+class EngineRegulationTableMapper
+class EngineRestrictionsTableMapper
+class FatalitiesTableMapper
+class FemaleDriversTableMapper
+class FormerConstructorsTableMapper
+class GrandsPrixTableMapper
+abstract class GroupParsingMixin
+class IdentitySectionTableRecordMapper
+class LapRecordsWikiTableMapper
+class MappedWikiTableMapper
+abstract class MapperABC
+abstract class MatchesMixin
+class NonChampionshipsRacesTableMapper
+abstract class ParseGroupMixin
+class PointsScoringSystemsHistoryTableMapper
+class RaceResultsTableMapper
+abstract class RowMappingMixin
+class SeasonsTableMapper
+abstract class SectionInfoboxRecordMapperABC
+abstract class SectionListRecordMapperABC
+abstract class SectionTableRecordMapperABC
+abstract class SectionTextRecordMapperABC
+class ShortenedRacesPointsTableMapper
+class SprintPointsTableMapper
+class StandingsTableMapper
+abstract class TableDomainMapperABC
+abstract class TableMapperABC
+class TableRecordMapper
+class TyreManufacturersBySeasonTableMapper
+class WikiDomainMapper
+abstract class WikiDomainMapperABC
+abstract class WikiElementPayloadMapperABC
+class WikiParsedPayloadMapper
+class WikiTableBaseMapper
+abstract class WikiTablePayloadCollectMixin
+abstract class WikiTablePayloadTransformMixin
+class WorldChampionshipsRacesTableMapper
+
+WikiTableBaseMapper <|-- BaseRedFlaggedRacesTableMapper
+SectionTableRecordMapperABC <|-- CircuitEventsTableRecordMapper
+SectionTableRecordMapperABC <|-- CircuitLapRecordsTableRecordMapper
+MappedWikiTableMapper <|-- CircuitsListTableMapper
+WikiTableBaseMapper <|-- CurrentConstructorsTableMapper
+WikiTableBaseMapper <|-- DriverOrderedTableMapper
+SectionTableRecordMapperABC <|-- DriverResultsTableRecordMapper
+DriverOrderedTableMapper <|-- DriversListTableMapper
+WikiTableBaseMapper <|-- EngineManufacturersTableMapper
+WikiTableBaseMapper <|-- EngineRegulationTableMapper
+WikiTableBaseMapper <|-- EngineRestrictionsTableMapper
+DriverOrderedTableMapper <|-- FatalitiesTableMapper
+WikiTableBaseMapper <|-- FemaleDriversTableMapper
+WikiTableBaseMapper <|-- FormerConstructorsTableMapper
+WikiTableBaseMapper <|-- GrandsPrixTableMapper
+ParseGroupMixin <|-- GroupParsingMixin
+SectionTableRecordMapperABC <|-- IdentitySectionTableRecordMapper
+MappedWikiTableMapper <|-- LapRecordsWikiTableMapper
+WikiTableBaseMapper <|-- MappedWikiTableMapper
+BaseRedFlaggedRacesTableMapper <|-- NonChampionshipsRacesTableMapper
+WikiTableBaseMapper <|-- PointsScoringSystemsHistoryTableMapper
+MappedWikiTableMapper <|-- RaceResultsTableMapper
+WikiTableBaseMapper <|-- SeasonsTableMapper
+MapperABC <|-- SectionInfoboxRecordMapperABC
+MapperABC <|-- SectionListRecordMapperABC
+MapperABC <|-- SectionTableRecordMapperABC
+MapperABC <|-- SectionTextRecordMapperABC
+WikiTableBaseMapper <|-- ShortenedRacesPointsTableMapper
+WikiTableBaseMapper <|-- SprintPointsTableMapper
+MappedWikiTableMapper <|-- StandingsTableMapper
+MapperABC <|-- TableDomainMapperABC
+MapperABC <|-- TableMapperABC
+GroupParsingMixin <|-- TableRecordMapper
+RowMappingMixin <|-- TableRecordMapper
+WikiTableBaseMapper <|-- TyreManufacturersBySeasonTableMapper
+WikiDomainMapperABC <|-- WikiDomainMapper
+MapperABC <|-- WikiDomainMapperABC
+MapperABC <|-- WikiElementPayloadMapperABC
+WikiElementPayloadMapperABC <|-- WikiParsedPayloadMapper
+GroupParsingMixin <|-- WikiTableBaseMapper
+MatchesMixin <|-- WikiTableBaseMapper
+RowMappingMixin <|-- WikiTableBaseMapper
+TableDomainMapperABC <|-- WikiTableBaseMapper
+WikiTablePayloadCollectMixin <|-- WikiTableBaseMapper
+WikiTablePayloadTransformMixin <|-- WikiTableBaseMapper
+BaseRedFlaggedRacesTableMapper <|-- WorldChampionshipsRacesTableMapper
+
+@enduml
