@@ -17,7 +17,7 @@ class ColourListColumn
 class ConstructorColumn
 class ConstructorNameColumn
 class ConstructorPartColumn
-abstract class ConstructorPartParserABC
+class ConstructorPartParser
 class ConstructorSplitColumn
 class DateColumn
 class DateRangeColumn
@@ -82,7 +82,7 @@ BaseColumn <|-- ColourListColumn
 BaseConstructorColumn <|-- ConstructorColumn
 BaseColumn <|-- ConstructorNameColumn
 BaseColumn <|-- ConstructorPartColumn
-ConstructorPartParserABC <|-- ConstructorPartColumn
+ConstructorPartParser <|-- ConstructorPartColumn
 MultiColumn <|-- ConstructorSplitColumn
 BaseColumn <|-- DateColumn
 BaseColumn <|-- DateRangeColumn

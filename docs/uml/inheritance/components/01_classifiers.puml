@@ -7,7 +7,6 @@ hide circle
 class CircuitLapRecordsTableClassifier
 abstract class ClassifierABC
 class DriverResultsSectionTableClassifier
-class PassthroughElementClassifier
 class PassthroughSectionTableClassifier
 abstract class SectionInfoboxClassifierABC
 abstract class SectionListClassifierABC
@@ -17,7 +16,6 @@ abstract class WikiElementClassifierABC
 
 SectionTableClassifierABC <|-- CircuitLapRecordsTableClassifier
 SectionTableClassifierABC <|-- DriverResultsSectionTableClassifier
-WikiElementClassifierABC <|-- PassthroughElementClassifier
 SectionTableClassifierABC <|-- PassthroughSectionTableClassifier
 ClassifierABC <|-- SectionInfoboxClassifierABC
 ClassifierABC <|-- SectionListClassifierABC

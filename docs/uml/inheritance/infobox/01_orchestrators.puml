@@ -11,13 +11,11 @@ class ConstructorInfoboxOrchestrator
 class DefaultDriverInfoboxProvider
 class DriverInfoboxBundle
 class DriverInfoboxOrchestrator
-abstract class DriverInfoboxProviderABC
 abstract class InfoboxExtractorABC
 abstract class InfoboxOrchestratorABC
 class InfoboxSectionCollector
-abstract class InfoboxSectionDiscoveryABC
 abstract class ParsedRecordsMixin
-class ParsingBundle
+abstract class ParsingBundle
 abstract class ParsingBundleProviderABC
 class StrategyBackedInfoboxOrchestrator
 
@@ -26,11 +24,8 @@ ParsedRecordsMixin <|-- BaseInfoboxOrchestrator
 InfoboxExtractorABC <|-- CircuitInfoboxExtractor
 StrategyBackedInfoboxOrchestrator <|-- CircuitInfoboxOrchestrator
 BaseInfoboxOrchestrator <|-- ConstructorInfoboxOrchestrator
-DriverInfoboxProviderABC <|-- DefaultDriverInfoboxProvider
 ParsingBundle <|-- DriverInfoboxBundle
 BaseInfoboxOrchestrator <|-- DriverInfoboxOrchestrator
-ParsingBundleProviderABC <|-- DriverInfoboxProviderABC
-InfoboxSectionDiscoveryABC <|-- InfoboxSectionCollector
 InfoboxOrchestratorABC <|-- StrategyBackedInfoboxOrchestrator
 ParsedRecordsMixin <|-- StrategyBackedInfoboxOrchestrator
 

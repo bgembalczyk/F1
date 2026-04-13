@@ -7,6 +7,7 @@ hide circle
 abstract class ApplyForElementsMixin
 abstract class BaseDriverResultsSectionParser
 abstract class BaseSeasonParser
+abstract class HtmlSoupParserABC
 class CancelledRoundsParser
 class CircuitEventsSectionParser
 class CircuitLapRecordsSectionParser
@@ -81,5 +82,7 @@ SectionParserBase <|-- SeasonResultsSectionParser
 BaseSeasonParser <|-- SeasonScoringSystemParser
 SectionParserBase <|-- TableSectionParser
 BaseSeasonParser <|-- TestingVenuesParser
+HtmlSoupParserABC <|-- SponsorshipSectionParser
+HtmlSoupParserABC <|-- TeamLiveriesSectionParser
 
 @enduml

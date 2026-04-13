@@ -10,7 +10,7 @@ class FatalitiesCarTransformer
 class NormalizeLinksTransformer
 class PointsScoringSystemsHistoryTransformer
 class RecordFactoryTransformer
-class RecordTransformer
+abstract class RecordTransformer
 class ShortenedRacePointsTransformer
 
 RecordTransformer <|-- DriversChampionshipsTransformer

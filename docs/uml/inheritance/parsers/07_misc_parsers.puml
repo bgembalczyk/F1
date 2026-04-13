@@ -6,7 +6,6 @@ hide circle
 
 class ActiveYearsParser
 class ArticleTablesAssembler
-abstract class ArticleTablesAssemblerABC
 class BestFinishParser
 class CallableInfoboxFieldParser
 class CarNumbersParser
@@ -15,6 +14,7 @@ class ChampionshipsParser
 class FinishedSeasonParser
 abstract class HasTableMapperABC
 abstract class HasTableParserABC
+abstract class HtmlTagParserABC
 class HtmlInfoboxFieldParser
 class IndianapolisConstructorsListParser
 class IndianapolisOnlyListParser
@@ -28,30 +28,31 @@ abstract class InfoboxRowsParserABC
 class InfoboxTitlesParser
 class LicenceParser
 class NationalityParser
-class NestedChildParser
+abstract class NestedChildParser
 class ParagraphElementParser
 class PrivateerTeamsListParser
+abstract class ParserABC
 class RaceEventParser
 class ReferencesWrapParser
-class SeasonStandingsParser
 class SectionAssembler
 abstract class SectionTraversalMixin
 class SponsorPartsParser
-class StructureParser
+abstract class StructureParser
 class TeamsParser
+class WikiListElementParser
 class WikiListParser
-class WikiParagraphParser
-class WikiTagParser
+abstract class WikiTagParser
 class YearParser
 
 HtmlInfoboxFieldParser <|-- ActiveYearsParser
-ArticleTablesAssemblerABC <|-- ArticleTablesAssembler
 HtmlInfoboxFieldParser <|-- BestFinishParser
 HtmlInfoboxFieldParser <|-- CallableInfoboxFieldParser
 HtmlInfoboxFieldParser <|-- CarNumbersParser
 HtmlInfoboxFieldParser <|-- ChampionshipsParser
 HtmlInfoboxFieldParser <|-- FinishedSeasonParser
 InfoboxHtmlFieldParserABC <|-- HtmlInfoboxFieldParser
+ListElementParser <|-- IndianapolisConstructorsListParser
+ListElementParser <|-- IndianapolisOnlyListParser
 InfoboxRowsParser <|-- InfoboxCareerParser
 InfoboxCellParserABC <|-- InfoboxCellValueExtractor
 InfoboxRowsParserABC <|-- InfoboxRowsParser
@@ -60,6 +61,11 @@ HtmlInfoboxFieldParser <|-- LicenceParser
 HtmlInfoboxFieldParser <|-- NationalityParser
 HtmlInfoboxFieldParser <|-- RaceEventParser
 HtmlInfoboxFieldParser <|-- TeamsParser
-ParagraphElementParser <|-- WikiParagraphParser
+WikiListElementParser <|-- PrivateerTeamsListParser
+ParserABC <|-- ReferencesWrapParser
+ParserABC <|-- SponsorPartsParser
+HtmlTagParserABC <|-- WikiListParser
+HtmlTagParserABC <|-- WikiTagParser
+ParserABC <|-- YearParser
 
 @enduml
