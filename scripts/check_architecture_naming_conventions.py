@@ -44,35 +44,35 @@ def validate_file_name(path: Path) -> list[str]:
     return issues
 
 
-def _is_mixin_context(path: Path) -> bool:
+def is_mixin_context_func(path: Path) -> bool:
     if "mixins" in path.parts:
         return True
     return "mixin" in path.stem
 
 
-def _is_public_parse_method(node: ast.stmt) -> bool:
+def is_public_parse_method(node: ast.stmt) -> bool:
     if not isinstance(node, ast.FunctionDef | ast.AsyncFunctionDef):
         return False
     return node.name == "parse"
 
 
-def _extract_base_name(base: ast.expr) -> str | None:
+def extract_base_name(base: ast.expr) -> str | None:
     if isinstance(base, ast.Name):
         return base.id
     if isinstance(base, ast.Attribute):
         return base.attr
     if isinstance(base, ast.Subscript):
-        return _extract_base_name(base.value)
+        return extract_base_name(base.value)
     return None
 
 
-def _is_parser_protocol(node: ast.ClassDef) -> bool:
-    base_names = {_extract_base_name(base) for base in node.bases}
+def is_parser_protocol(node: ast.ClassDef) -> bool:
+    base_names = {extract_base_name(base) for base in node.bases}
     return "Protocol" in base_names
 
 
-def _inherits_parser_base(node: ast.ClassDef) -> bool:
-    base_names = {_extract_base_name(base) for base in node.bases}
+def inherits_parser_base(node: ast.ClassDef) -> bool:
+    base_names = {extract_base_name(base) for base in node.bases}
     return any((name or "").endswith("Parser") for name in base_names)
 
 
@@ -82,7 +82,7 @@ def validate_class_names(path: Path) -> list[str]:
 
     issues: list[str] = []
     is_base_file = path.stem.endswith("_base")
-    is_mixin_context = _is_mixin_context(path)
+    is_mixin_context = is_mixin_context_func(path)
 
     for node in tree.body:
         if not isinstance(node, ast.ClassDef):
@@ -102,12 +102,12 @@ def validate_class_names(path: Path) -> list[str]:
         if not class_name.endswith("Parser"):
             continue
 
-        has_public_parse = any(_is_public_parse_method(child) for child in node.body)
+        has_public_parse = any(is_public_parse_method(child) for child in node.body)
         if has_public_parse:
             continue
-        if _is_parser_protocol(node):
+        if is_parser_protocol(node):
             continue
-        if _inherits_parser_base(node):
+        if inherits_parser_base(node):
             continue
         issues.append(
             f"{path}:{node.lineno}: klasa z sufiksem 'Parser' musi mieć publiczne parse(...)",

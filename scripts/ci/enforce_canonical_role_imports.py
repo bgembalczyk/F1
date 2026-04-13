@@ -19,7 +19,7 @@ THIN_COMPAT_MODULES = {
 }
 
 
-def _iter_python_files(root: Path) -> list[Path]:
+def iter_python_files(root: Path) -> list[Path]:
     return [
         path
         for path in root.rglob("*.py")
@@ -27,7 +27,7 @@ def _iter_python_files(root: Path) -> list[Path]:
     ]
 
 
-def _forbidden_module_errors(path: Path, node: ast.ImportFrom) -> list[str]:
+def forbidden_module_errors(path: Path, node: ast.ImportFrom) -> list[str]:
     if not node.module or node.module not in FORBIDDEN_MODULES:
         return []
     return [
@@ -36,7 +36,7 @@ def _forbidden_module_errors(path: Path, node: ast.ImportFrom) -> list[str]:
     ]
 
 
-def _forbidden_symbol_errors(path: Path, node: ast.ImportFrom) -> list[str]:
+def forbidden_symbol_errors(path: Path, node: ast.ImportFrom) -> list[str]:
     if node.module != CANONICAL_MODULE:
         return []
     return [
@@ -47,7 +47,7 @@ def _forbidden_symbol_errors(path: Path, node: ast.ImportFrom) -> list[str]:
     ]
 
 
-def _forbidden_import_errors(path: Path, node: ast.Import) -> list[str]:
+def forbidden_import_errors(path: Path, node: ast.Import) -> list[str]:
     errors: list[str] = []
     for alias in node.names:
         if alias.name in FORBIDDEN_MODULES:
@@ -63,7 +63,7 @@ def _forbidden_import_errors(path: Path, node: ast.Import) -> list[str]:
     return errors
 
 
-def _canonical_role_errors(path: Path, node: ast.ImportFrom) -> list[str]:
+def canonical_role_errors(path: Path, node: ast.ImportFrom) -> list[str]:
     if not node.module:
         return []
     if node.module not in CANONICAL_ROLE_IMPORTS:
@@ -74,7 +74,7 @@ def _canonical_role_errors(path: Path, node: ast.ImportFrom) -> list[str]:
     ]
 
 
-def _is_thin_compat_statement(node: ast.stmt) -> bool:
+def is_thin_compat_statement(node: ast.stmt) -> bool:
     if isinstance(node, (ast.Import, ast.ImportFrom)):
         return True
     if isinstance(node, ast.Expr):
@@ -87,12 +87,12 @@ def _is_thin_compat_statement(node: ast.stmt) -> bool:
     return False
 
 
-def _thin_module_errors(path: Path, tree: ast.Module) -> list[str]:
+def thin_module_errors(path: Path, tree: ast.Module) -> list[str]:
     rel = Path(path.as_posix())
     if rel not in THIN_COMPAT_MODULES:
         return []
     violations = [
-        node.lineno for node in tree.body if not _is_thin_compat_statement(node)
+        node.lineno for node in tree.body if not is_thin_compat_statement(node)
     ]
     if not violations:
         return []
@@ -103,7 +103,7 @@ def _thin_module_errors(path: Path, tree: ast.Module) -> list[str]:
     ]
 
 
-def _check_file(path: Path) -> list[str]:
+def check_file(path: Path) -> list[str]:
     try:
         tree = ast.parse(path.read_text(encoding="utf-8"))
     except SyntaxError:
@@ -112,21 +112,21 @@ def _check_file(path: Path) -> list[str]:
     errors: list[str] = []
     for node in ast.walk(tree):
         if isinstance(node, ast.ImportFrom):
-            errors.extend(_forbidden_module_errors(path, node))
-            errors.extend(_forbidden_symbol_errors(path, node))
-            errors.extend(_canonical_role_errors(path, node))
+            errors.extend(forbidden_module_errors(path, node))
+            errors.extend(forbidden_symbol_errors(path, node))
+            errors.extend(canonical_role_errors(path, node))
             continue
         if isinstance(node, ast.Import):
-            errors.extend(_forbidden_import_errors(path, node))
-    errors.extend(_thin_module_errors(path, tree))
+            errors.extend(forbidden_import_errors(path, node))
+    errors.extend(thin_module_errors(path, tree))
     return errors
 
 
 def main() -> int:
     errors = [
         error
-        for py_file in _iter_python_files(Path())
-        for error in _check_file(py_file)
+        for py_file in iter_python_files(Path())
+        for error in check_file(py_file)
     ]
 
     if errors:

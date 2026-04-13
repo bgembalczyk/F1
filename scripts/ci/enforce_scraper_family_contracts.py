@@ -46,7 +46,7 @@ FAMILY_RULES = {
 }
 
 
-def _git_changed_python_files() -> list[Path]:
+def git_changed_python_files() -> list[Path]:
     merge_base_cmd = ["git", "merge-base", "origin/main", "HEAD"]
     merge_base = subprocess.run(
         merge_base_cmd,
@@ -71,7 +71,7 @@ def _git_changed_python_files() -> list[Path]:
     return [ROOT / file for file in files if file.startswith("scrapers/")]
 
 
-def _classify(class_name: str) -> str | None:
+def classify(class_name: str) -> str | None:
     if class_name.endswith("SectionParser"):
         return "section_parser"
     if not class_name.endswith("Scraper"):
@@ -85,7 +85,7 @@ def _classify(class_name: str) -> str | None:
     return None
 
 
-def _base_names(class_def: ast.ClassDef) -> set[str]:
+def base_names(class_def: ast.ClassDef) -> set[str]:
     names: set[str] = set()
     for base in class_def.bases:
         text = ast.unparse(base)
@@ -93,7 +93,7 @@ def _base_names(class_def: ast.ClassDef) -> set[str]:
     return names
 
 
-def _validate_file(path: Path) -> list[str]:
+def validate_file(path: Path) -> list[str]:
     source = path.read_text(encoding="utf-8")
     try:
         tree = ast.parse(source)
@@ -105,12 +105,12 @@ def _validate_file(path: Path) -> list[str]:
         if not isinstance(node, ast.ClassDef):
             continue
 
-        family = _classify(node.name)
+        family = classify(node.name)
         if family is None:
             continue
 
         rule = FAMILY_RULES[family]
-        base_names = _base_names(node)
+        base_names = base_names(node)
         if not base_names.intersection(set(rule.required_bases)):
             violations.append(
                 f"{path.relative_to(ROOT)}:{node.lineno} class {node.name} "
@@ -120,10 +120,10 @@ def _validate_file(path: Path) -> list[str]:
 
 
 def main() -> int:
-    changed_files = _git_changed_python_files()
+    changed_files = git_changed_python_files()
     violations: list[str] = []
     for file_path in changed_files:
-        violations.extend(_validate_file(file_path))
+        violations.extend(validate_file(file_path))
 
     if violations:
         print("::error::Scraper family contract violations detected:")

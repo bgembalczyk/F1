@@ -112,12 +112,12 @@ class DependencyCreationVisitor(ast.NodeVisitor):
         class_name = self._class_stack[-1] if self._class_stack else "<module>"
         method_name = self._method_stack[-1] if self._method_stack else "<module>"
 
-        dependency_name = _called_name(node.func)
+        dependency_name = called_name(node.func)
         if (
             dependency_name
-            and _looks_like_dependency_creation(dependency_name)
-            and _is_business_method(method_name)
-            and not _has_allow_comment(self.source_lines, node.lineno)
+            and looks_like_dependency_creation(dependency_name)
+            and is_business_method(method_name)
+            and not has_allow_comment(self.source_lines, node.lineno)
         ):
             self.violations.append(
                 Violation(
@@ -162,13 +162,13 @@ class DependencyCreationVisitor(ast.NodeVisitor):
         if not self._method_stack:
             return False
         method_name = self._method_stack[-1]
-        return _is_business_method(method_name) and not _has_allow_comment(
+        return is_business_method(method_name) and not has_allow_comment(
             self.source_lines,
             lineno,
         )
 
 
-def _called_name(func: ast.expr) -> str | None:
+def called_name(func: ast.expr) -> str | None:
     if isinstance(func, ast.Name):
         return func.id
     if isinstance(func, ast.Attribute):
@@ -176,18 +176,18 @@ def _called_name(func: ast.expr) -> str | None:
     return None
 
 
-def _looks_like_dependency_creation(called_name: str) -> bool:
+def looks_like_dependency_creation(called_name: str) -> bool:
     if called_name.lower() == called_name:
         return False
     return any(called_name.endswith(suffix) for suffix in DI_SUSPECT_SUFFIXES)
 
 
-def _is_business_method(method_name: str) -> bool:
+def is_business_method(method_name: str) -> bool:
     lowered = method_name.lower()
     return not any(pattern in lowered for pattern in ALLOWED_FACTORY_METHOD_PATTERNS)
 
 
-def _has_allow_comment(source_lines: list[str], lineno: int) -> bool:
+def has_allow_comment(source_lines: list[str], lineno: int) -> bool:
     start = max(0, lineno - 3)
     return any(ALLOW_COMMENT in line for line in source_lines[start:lineno])
 
@@ -213,7 +213,7 @@ def run_check_messages(paths: list[Path] | None = None) -> list[str]:
     return [v.format_message(REPO_ROOT) for v in run_check(paths)]
 
 
-def _validate_adr_reference_for_major_changes(
+def validate_adr_reference_for_major_changes(
     violations: list[Violation],
     adr_reference_text: str,
     threshold: int,
@@ -262,7 +262,7 @@ def main(argv: list[str] | None = None) -> int:
         violations = run_check(resolved_paths)
         messages = [v.format_message(REPO_ROOT) for v in violations]
         messages.extend(
-            _validate_adr_reference_for_major_changes(
+            validate_adr_reference_for_major_changes(
                 violations=violations,
                 adr_reference_text=adr_reference_text,
                 threshold=adr_required_violation_threshold,

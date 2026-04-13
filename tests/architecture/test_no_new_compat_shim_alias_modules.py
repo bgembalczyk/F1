@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from tests.architecture.helpers import looks_like_compat_module
+
 # ADR-0008: infrastructure-only exceptions.
 ADR_INFRA_EXCEPTIONS = {
     "infrastructure/http/type_alias.py",
@@ -24,15 +26,6 @@ LEGACY_BASELINE_ALLOWLIST = {
 }
 
 
-def _looks_like_compat_module(path: Path) -> bool:
-    lowered_parts = [part.lower() for part in path.parts]
-    stem = path.stem.lower()
-    token_in_stem = any(token in stem for token in ("compat", "shim", "alias"))
-    token_in_parts = any(
-        part in {"compat", "shim", "aliases"} for part in lowered_parts
-    )
-    return token_in_stem or token_in_parts
-
 
 def test_no_new_compat_shim_alias_modules_outside_adr_exceptions() -> None:
     roots = ("scrapers", "models", "layers", "infrastructure")
@@ -41,7 +34,7 @@ def test_no_new_compat_shim_alias_modules_outside_adr_exceptions() -> None:
         path.as_posix()
         for root in roots
         for path in Path(root).rglob("*.py")
-        if _looks_like_compat_module(path)
+        if looks_like_compat_module(path)
     }
 
     unknown = sorted(discovered - ADR_INFRA_EXCEPTIONS - LEGACY_BASELINE_ALLOWLIST)

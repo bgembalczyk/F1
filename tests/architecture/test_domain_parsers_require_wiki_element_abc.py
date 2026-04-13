@@ -3,6 +3,8 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
+from tests.architecture.helpers import base_name
+
 TARGET_FILES = (
     Path("scrapers/parsers/wiki/element_table.py"),
     Path("scrapers/parsers/wiki/element_list.py"),
@@ -27,11 +29,6 @@ ALLOWED_MIXINS = {
 }
 
 
-def _base_name(base: ast.expr) -> str:
-    text = ast.unparse(base).split("[", 1)[0]
-    return text.split(".")[-1]
-
-
 def test_domain_wiki_element_parsers_use_element_abcs_and_optional_mixins() -> None:
     violations: list[str] = []
 
@@ -40,7 +37,7 @@ def test_domain_wiki_element_parsers_use_element_abcs_and_optional_mixins() -> N
         for node in tree.body:
             if not isinstance(node, ast.ClassDef) or not node.name.endswith("Parser"):
                 continue
-            bases = tuple(_base_name(base) for base in node.bases)
+            bases = tuple(base_name(base) for base in node.bases)
             if not any(base in ALLOWED_ROOTS for base in bases):
                 violations.append(
                     f"{file_path}:{node.lineno} {node.name} musi dziedziczyć po Wiki*ParserABC/Wiki*ParserBase",

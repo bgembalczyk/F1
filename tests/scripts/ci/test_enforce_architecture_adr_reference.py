@@ -52,7 +52,7 @@ def test_has_adr_reference_uses_custom_checker_when_available(
 
     monkeypatch.setattr(gate, "DEFAULT_ADR_ENFORCEMENT_POLICY", Policy())
 
-    assert gate._has_adr_reference("without marker")
+    assert gate.has_adr_reference("without marker")
 
 
 def test_main_outputs_error_when_reference_missing(

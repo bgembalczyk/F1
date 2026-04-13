@@ -13,7 +13,7 @@ SUMMARY_PATTERN = re.compile(r"Found\s+(\d+)\s+errors?")
 GIT_BIN = shutil.which("git") or "git"
 
 
-def _run_mypy(repo_dir: Path) -> tuple[int, str]:
+def run_mypy(repo_dir: Path) -> tuple[int, str]:
     # nosec B603 -- uruchomienie zaufanego `python -m mypy`
     proc = subprocess.run(
         [sys.executable, "-m", "mypy", "--config-file", "mypy.ini"],
@@ -31,7 +31,7 @@ def _run_mypy(repo_dir: Path) -> tuple[int, str]:
     return 10**9, output.strip()
 
 
-def _git(*args: str) -> None:
+def git(*args: str) -> None:
     # nosec B603 -- zaufane wywołanie lokalnego `git`
     subprocess.run(
         [GIT_BIN, *args],
@@ -59,9 +59,9 @@ def main() -> int:
 
     with tempfile.TemporaryDirectory(prefix="mypy-base-") as temp_dir:
         base_worktree = Path(temp_dir) / "base"
-        _git("worktree", "add", "--detach", str(base_worktree), args.base_sha)
+        git("worktree", "add", "--detach", str(base_worktree), args.base_sha)
         try:
-            base_errors, base_output = _run_mypy(base_worktree)
+            base_errors, base_output = run_mypy(base_worktree)
         finally:
             # nosec B603 -- zaufane wywołanie lokalnego `git worktree remove`
             subprocess.run(
@@ -71,7 +71,7 @@ def main() -> int:
                 text=True,
             )
 
-    head_errors, head_output = _run_mypy(repo_root)
+    head_errors, head_output = run_mypy(repo_root)
 
     print(f"Mypy errors (base {args.base_sha[:7]}): {base_errors}")
     print(f"Mypy errors (head {args.head_sha[:7]}): {head_errors}")

@@ -51,20 +51,20 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def _load_json(path: Path) -> dict[str, object]:
+def load_json(path: Path) -> dict[str, object]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _to_percent(raw_rate: float) -> float:
+def to_percent(raw_rate: float) -> float:
     return round(raw_rate * 100.0, 2)
 
 
-def _parse_coverage(coverage_xml: Path) -> tuple[float, dict[str, float]]:
+def parse_coverage(coverage_xml: Path) -> tuple[float, dict[str, float]]:
     tree = parse_xml(coverage_xml)
     root = tree.getroot()
 
     global_rate = float(root.attrib.get("line-rate", "0"))
-    global_percent = _to_percent(global_rate)
+    global_percent = to_percent(global_rate)
 
     file_coverages: dict[str, float] = {}
     for class_el in root.findall(".//class"):
@@ -73,18 +73,18 @@ def _parse_coverage(coverage_xml: Path) -> tuple[float, dict[str, float]]:
             continue
         normalized = Path(filename).as_posix()
         line_rate = float(class_el.attrib.get("line-rate", "0"))
-        file_coverages[normalized] = _to_percent(line_rate)
+        file_coverages[normalized] = to_percent(line_rate)
 
     return global_percent, file_coverages
 
 
-def _git_changed_files(base_sha: str, head_sha: str) -> set[str]:
+def git_changed_files(base_sha: str, head_sha: str) -> set[str]:
     cmd = ["git", "diff", "--name-only", "--diff-filter=AMR", base_sha, head_sha]
     out = subprocess.check_output(cmd, cwd=REPO_ROOT, text=True)
     return {line.strip() for line in out.splitlines() if line.strip()}
 
 
-def _load_legacy_files(path: Path) -> set[str]:
+def load_legacy_files(path: Path) -> set[str]:
     if not path.exists():
         return set()
     return {
@@ -94,7 +94,7 @@ def _load_legacy_files(path: Path) -> set[str]:
     }
 
 
-def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation]:
+def validate_progressive_threshold(policy: dict[str, object]) -> list[Violation]:
     violations: list[Violation] = []
     thresholds = policy.get("global_threshold_path")
     if not isinstance(thresholds, list) or not thresholds:
@@ -139,18 +139,18 @@ def _validate_progressive_threshold(policy: dict[str, object]) -> list[Violation
     return violations
 
 
-def _load_gate_inputs(args: argparse.Namespace) -> GateInputs:
+def load_gate_inputs(args: argparse.Namespace) -> GateInputs:
     coverage_xml = REPO_ROOT / args.coverage_xml
     baseline_json = REPO_ROOT / args.baseline
     policy_json = REPO_ROOT / args.policy
     legacy_files_txt = REPO_ROOT / args.legacy_files
 
-    policy = _load_json(policy_json)
-    baseline = _load_json(baseline_json)
+    policy = load_json(policy_json)
+    baseline = load_json(baseline_json)
 
-    global_coverage, current_file_coverages = _parse_coverage(coverage_xml)
-    changed_files = _git_changed_files(args.base_sha, args.head_sha)
-    legacy_files = _load_legacy_files(legacy_files_txt)
+    global_coverage, current_file_coverages = parse_coverage(coverage_xml)
+    changed_files = git_changed_files(args.base_sha, args.head_sha)
+    legacy_files = load_legacy_files(legacy_files_txt)
 
     threshold_path = [float(value) for value in policy["global_threshold_path"]]
     current_sprint = int(policy["current_sprint"])
@@ -175,7 +175,7 @@ def _load_gate_inputs(args: argparse.Namespace) -> GateInputs:
     )
 
 
-def _evaluate_global_threshold(inputs: GateInputs) -> list[Violation]:
+def evaluate_global_threshold(inputs: GateInputs) -> list[Violation]:
     if inputs.global_coverage >= inputs.current_threshold:
         return []
     return [
@@ -186,7 +186,7 @@ def _evaluate_global_threshold(inputs: GateInputs) -> list[Violation]:
     ]
 
 
-def _evaluate_changed_files(inputs: GateInputs) -> list[Violation]:
+def evaluate_changed_files(inputs: GateInputs) -> list[Violation]:
     violations: list[Violation] = []
 
     for changed_file in sorted(inputs.changed_files):
@@ -224,7 +224,7 @@ def _evaluate_changed_files(inputs: GateInputs) -> list[Violation]:
     return violations
 
 
-def _format_and_print_result(inputs: GateInputs, violations: list[Violation]) -> int:
+def format_and_print_result(inputs: GateInputs, violations: list[Violation]) -> int:
     if violations:
         print("Coverage quality gate: FAILED")
         for violation in violations:
@@ -241,14 +241,14 @@ def _format_and_print_result(inputs: GateInputs, violations: list[Violation]) ->
 
 def main() -> int:
     args = parse_args()
-    inputs = _load_gate_inputs(args)
+    inputs = load_gate_inputs(args)
 
-    policy = _load_json(REPO_ROOT / args.policy)
-    violations = _validate_progressive_threshold(policy)
-    violations.extend(_evaluate_global_threshold(inputs))
-    violations.extend(_evaluate_changed_files(inputs))
+    policy = load_json(REPO_ROOT / args.policy)
+    violations = validate_progressive_threshold(policy)
+    violations.extend(evaluate_global_threshold(inputs))
+    violations.extend(evaluate_changed_files(inputs))
 
-    return _format_and_print_result(inputs, violations)
+    return format_and_print_result(inputs, violations)
 
 
 if __name__ == "__main__":

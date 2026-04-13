@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from tests.architecture.helpers import is_tracked_group_file
+
 MAX_DEPRECATED_BASE_IMPORTS_BY_FILE: dict[str, int] = {
     "scrapers/base_engine_table_scraper.py": 2,
     "scrapers/builders_table.py": 11,
@@ -26,22 +28,12 @@ MAX_DEPRECATED_BASE_IMPORTS_BY_FILE: dict[str, int] = {
     "scrapers/wiring/factory.py": 6,
 }
 
-GROUP_KEYWORDS: tuple[str, ...] = (
-    "table",
-    "single",
-    "factory",
-    "helper",
-    "validator",
-)
 
-
-def _is_tracked_group_file(path: Path) -> bool:
-    return any(keyword in path.name for keyword in GROUP_KEYWORDS)
 
 
 def test_no_new_scrapers_base_imports_in_tracked_groups() -> None:
     tracked_files = [
-        path for path in Path("scrapers").rglob("*.py") if _is_tracked_group_file(path)
+        path for path in Path("scrapers").rglob("*.py") if is_tracked_group_file(path)
     ]
 
     violations: list[str] = []

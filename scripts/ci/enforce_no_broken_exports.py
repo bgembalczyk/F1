@@ -9,7 +9,7 @@ SKIP_PARTS = {".git", ".venv", "venv", "__pycache__"}
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def _merge_base() -> str:
+def merge_base() -> str:
     result = subprocess.run(
         ["git", "merge-base", "origin/main", "HEAD"],
         cwd=ROOT,
@@ -20,7 +20,7 @@ def _merge_base() -> str:
     return result.stdout.strip() or "HEAD~1"
 
 
-def _iter_changed_python_files(base_ref: str) -> list[Path]:
+def iter_changed_python_files(base_ref: str) -> list[Path]:
     result = subprocess.run(
         [
             "git",
@@ -44,7 +44,7 @@ def _iter_changed_python_files(base_ref: str) -> list[Path]:
     ]
 
 
-def _defined_names(tree: ast.Module) -> set[str]:
+def defined_names(tree: ast.Module) -> set[str]:
     names: set[str] = set()
     for node in tree.body:
         if isinstance(node, (ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef)):
@@ -70,7 +70,7 @@ def _defined_names(tree: ast.Module) -> set[str]:
     return names
 
 
-def _extract_all_symbols(tree: ast.Module) -> list[str] | None:
+def extract_all_symbols(tree: ast.Module) -> list[str] | None:
     for node in tree.body:
         if not isinstance(node, ast.Assign):
             continue
@@ -91,17 +91,17 @@ def _extract_all_symbols(tree: ast.Module) -> list[str] | None:
     return None
 
 
-def _check_file(path: Path) -> list[str]:
+def check_file(path: Path) -> list[str]:
     try:
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
     except SyntaxError as exc:
         return [f"{path}:{exc.lineno} syntax error blocks export analysis"]
 
-    exported = _extract_all_symbols(tree)
+    exported = extract_all_symbols(tree)
     if exported is None:
         return []
 
-    defined = _defined_names(tree)
+    defined = defined_names(tree)
     errors: list[str] = []
     for symbol in exported:
         if symbol not in defined:
@@ -112,11 +112,11 @@ def _check_file(path: Path) -> list[str]:
 
 
 def main() -> int:
-    base_ref = _merge_base()
+    base_ref = merge_base()
     errors = [
         error
-        for py_file in _iter_changed_python_files(base_ref)
-        for error in _check_file(py_file)
+        for py_file in iter_changed_python_files(base_ref)
+        for error in check_file(py_file)
     ]
     if errors:
         print("[enforce_no_broken_exports] ERROR")

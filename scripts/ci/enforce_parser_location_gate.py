@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CANONICAL_PREFIX = "scrapers/parsers/"
 
 
-def _merge_base() -> str:
+def merge_base() -> str:
     result = subprocess.run(
         ["git", "merge-base", "origin/main", "HEAD"],
         cwd=ROOT,
@@ -20,7 +20,7 @@ def _merge_base() -> str:
     return result.stdout.strip() or "HEAD~1"
 
 
-def _changed_python_files(base_ref: str) -> list[str]:
+def changed_python_files(base_ref: str) -> list[str]:
     result = subprocess.run(
         [
             "git",
@@ -40,7 +40,7 @@ def _changed_python_files(base_ref: str) -> list[str]:
     return [line.strip() for line in result.stdout.splitlines() if line.strip()]
 
 
-def _added_lines(base_ref: str, path: str) -> set[int]:
+def added_lines(base_ref: str, path: str) -> set[int]:
     result = subprocess.run(
         ["git", "diff", "--unified=0", base_ref, "HEAD", "--", path],
         cwd=ROOT,
@@ -80,7 +80,7 @@ def _added_lines(base_ref: str, path: str) -> set[int]:
     return added
 
 
-def _violations_for_file(path: str, added_lines: set[int]) -> list[str]:
+def violations_for_file(path: str, added_lines: set[int]) -> list[str]:
     if path.startswith(CANONICAL_PREFIX):
         return []
 
@@ -105,15 +105,15 @@ def _violations_for_file(path: str, added_lines: set[int]) -> list[str]:
 
 
 def main() -> int:
-    base_ref = _merge_base()
-    changed = _changed_python_files(base_ref)
+    base_ref = merge_base()
+    changed = changed_python_files(base_ref)
     violations: list[str] = []
 
     for path in changed:
-        lines = _added_lines(base_ref, path)
+        lines = added_lines(base_ref, path)
         if not lines:
             continue
-        violations.extend(_violations_for_file(path, lines))
+        violations.extend(violations_for_file(path, lines))
 
     if violations:
         print("::error::Parser location gate failed:")

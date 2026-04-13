@@ -9,10 +9,6 @@ TARGET_ROOTS = (
 )
 
 
-def _is_protocol_base(base: ast.expr) -> bool:
-    text = ast.unparse(base).split("[", 1)[0]
-    return text.endswith("Protocol")
-
 
 def test_no_typing_protocols_in_parser_layers() -> None:
     violations: list[str] = []
@@ -34,7 +30,7 @@ def test_no_typing_protocols_in_parser_layers() -> None:
 
                 if isinstance(node, ast.ClassDef):
                     protocol_bases = [
-                        base for base in node.bases if _is_protocol_base(base)
+                        base for base in node.bases if is_protocol_base(base)
                     ]
                     if protocol_bases:
                         violations.append(

@@ -15,7 +15,7 @@ FORBIDDEN_FROM_IMPORTS = {
 FORBIDDEN_BASE_FACTORY_SYMBOLS = {"RecordBuilderProtocol", "RecordFactoryProtocol"}
 
 
-def _iter_python_files(root: Path) -> list[Path]:
+def iter_python_files(root: Path) -> list[Path]:
     return [
         path
         for path in root.rglob("*.py")
@@ -23,7 +23,7 @@ def _iter_python_files(root: Path) -> list[Path]:
     ]
 
 
-def _forbidden_import_errors(path: Path, node: ast.Import) -> list[str]:
+def forbidden_import_errors(path: Path, node: ast.Import) -> list[str]:
     errors: list[str] = []
     for alias in node.names:
         if alias.name in FORBIDDEN_MODULE_IMPORTS:
@@ -33,7 +33,7 @@ def _forbidden_import_errors(path: Path, node: ast.Import) -> list[str]:
     return errors
 
 
-def _forbidden_import_from_errors(path: Path, node: ast.ImportFrom) -> list[str]:
+def forbidden_import_from_errors(path: Path, node: ast.ImportFrom) -> list[str]:
     if not node.module:
         return []
 
@@ -58,7 +58,7 @@ def _forbidden_import_from_errors(path: Path, node: ast.ImportFrom) -> list[str]
     return []
 
 
-def _forbidden_create_method_errors(path: Path, tree: ast.Module) -> list[str]:
+def forbidden_create_method_errors(path: Path, tree: ast.Module) -> list[str]:
     normalized = path.as_posix()
     if not normalized.startswith("models/records/factories/"):
         return []
@@ -73,7 +73,7 @@ def _forbidden_create_method_errors(path: Path, tree: ast.Module) -> list[str]:
     return errors
 
 
-def _check_file(path: Path) -> list[str]:
+def check_file(path: Path) -> list[str]:
     try:
         tree = ast.parse(path.read_text(encoding="utf-8"))
     except SyntaxError:
@@ -82,19 +82,19 @@ def _check_file(path: Path) -> list[str]:
     errors: list[str] = []
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
-            errors.extend(_forbidden_import_errors(path, node))
+            errors.extend(forbidden_import_errors(path, node))
         if isinstance(node, ast.ImportFrom):
-            errors.extend(_forbidden_import_from_errors(path, node))
+            errors.extend(forbidden_import_from_errors(path, node))
 
-    errors.extend(_forbidden_create_method_errors(path, tree))
+    errors.extend(forbidden_create_method_errors(path, tree))
     return errors
 
 
 def main() -> int:
     errors = [
         error
-        for py_file in _iter_python_files(Path())
-        for error in _check_file(py_file)
+        for py_file in iter_python_files(Path())
+        for error in check_file(py_file)
     ]
 
     if errors:

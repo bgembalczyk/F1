@@ -720,7 +720,7 @@ def test_run_mypy_success_output() -> None:
         "scripts.ci.mypy_regression_gate.subprocess.run",
         return_value=FakeResult(),
     ):
-        errors, output = mypy_gate._run_mypy(Path())
+        errors, output = mypy_gate.run_mypy(Path())
     assert errors == 0
 
 
@@ -734,7 +734,7 @@ def test_run_mypy_with_error_count() -> None:
         "scripts.ci.mypy_regression_gate.subprocess.run",
         return_value=FakeResult(),
     ):
-        errors, output = mypy_gate._run_mypy(Path())
+        errors, output = mypy_gate.run_mypy(Path())
     assert errors == 5
 
 
@@ -748,7 +748,7 @@ def test_run_mypy_no_match_returns_large_number() -> None:
         "scripts.ci.mypy_regression_gate.subprocess.run",
         return_value=FakeResult(),
     ):
-        errors, output = mypy_gate._run_mypy(Path())
+        errors, output = mypy_gate.run_mypy(Path())
     assert errors == 10**9
 
 
@@ -834,50 +834,50 @@ def test_violation_format_message_import(tmp_path: Path) -> None:
 def test_called_name_attribute() -> None:
     node = ast.parse("obj.method()", mode="eval").body
     assert isinstance(node, ast.Call)
-    assert di._called_name(node.func) == "method"
+    assert di.called_name(node.func) == "method"
 
 
 def test_called_name_name() -> None:
     node = ast.parse("MyService()", mode="eval").body
     assert isinstance(node, ast.Call)
-    assert di._called_name(node.func) == "MyService"
+    assert di.called_name(node.func) == "MyService"
 
 
 def test_called_name_other() -> None:
     node = ast.parse("obj[0]()", mode="eval").body
     assert isinstance(node, ast.Call)
-    assert di._called_name(node.func) is None
+    assert di.called_name(node.func) is None
 
 
 def test_looks_like_dependency_creation_true() -> None:
-    assert di._looks_like_dependency_creation("HttpClient") is True
-    assert di._looks_like_dependency_creation("SomeService") is True
+    assert di.looks_like_dependency_creation("HttpClient") is True
+    assert di.looks_like_dependency_creation("SomeService") is True
 
 
 def test_looks_like_dependency_creation_false() -> None:
-    assert di._looks_like_dependency_creation("lowercase") is False
-    assert di._looks_like_dependency_creation("NotSuffixed") is False
+    assert di.looks_like_dependency_creation("lowercase") is False
+    assert di.looks_like_dependency_creation("NotSuffixed") is False
 
 
 def test_is_business_method_true() -> None:
-    assert di._is_business_method("process_data") is True
-    assert di._is_business_method("run") is True
+    assert di.is_business_method("process_data") is True
+    assert di.is_business_method("run") is True
 
 
 def test_is_business_method_false() -> None:
-    assert di._is_business_method("__init__") is False
-    assert di._is_business_method("build") is False
-    assert di._is_business_method("factory_method") is False
+    assert di.is_business_method("__init__") is False
+    assert di.is_business_method("build") is False
+    assert di.is_business_method("factory_method") is False
 
 
 def test_has_allow_comment() -> None:
     lines = ["# di-antipattern-allow: reason", "x = SomeClient()"]
-    assert di._has_allow_comment(lines, 2) is True
+    assert di.has_allow_comment(lines, 2) is True
 
 
 def test_has_allow_comment_false() -> None:
     lines = ["x = SomeClient()"]
-    assert di._has_allow_comment(lines, 1) is False
+    assert di.has_allow_comment(lines, 1) is False
 
 
 def test_lint_path_detects_di_violation(tmp_path: Path) -> None:
@@ -913,7 +913,7 @@ class Builder:
 @pytest.mark.usefixtures("tmp_path")
 def test_validate_adr_reference_no_trigger() -> None:
     violations: list[di.Violation] = []
-    result = di._validate_adr_reference_for_major_changes(violations, "", 5)
+    result = di.validate_adr_reference_for_major_changes(violations, "", 5)
     assert result == []
 
 
@@ -927,7 +927,7 @@ def test_validate_adr_reference_with_adr_text() -> None:
             dependency_name="SomeClient",
         ),
     ] * 6
-    result = di._validate_adr_reference_for_major_changes(
+    result = di.validate_adr_reference_for_major_changes(
         violations,
         "ADR-0042 changes",
         5,
@@ -945,7 +945,7 @@ def test_validate_adr_reference_missing() -> None:
             dependency_name="SomeClient",
         ),
     ] * 6
-    result = di._validate_adr_reference_for_major_changes(
+    result = di.validate_adr_reference_for_major_changes(
         violations,
         "no reference here",
         5,

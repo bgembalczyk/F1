@@ -40,12 +40,12 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def _has_complete_or_full_token(name: str) -> bool:
+def has_complete_or_full_token(name: str) -> bool:
     upper = name.upper()
     return any(token in upper for token in SUGGESTIVE_TOKENS)
 
 
-def _extract_required_tuple(call: ast.Call) -> tuple[str, ...]:
+def extract_required_tuple(call: ast.Call) -> tuple[str, ...]:
     for keyword in call.keywords:
         if keyword.arg != "required":
             continue
@@ -59,7 +59,7 @@ def _extract_required_tuple(call: ast.Call) -> tuple[str, ...]:
     return ()
 
 
-def _is_schema_constructor(call: ast.Call) -> bool:
+def is_schema_constructor(call: ast.Call) -> bool:
     func = call.func
     if isinstance(func, ast.Name):
         return func.id in {"RecordSchema", "RecordDefinition"}
@@ -68,7 +68,7 @@ def _is_schema_constructor(call: ast.Call) -> bool:
     return False
 
 
-def _collect_issues_for_file(path: Path) -> list[SchemaSemanticsIssue]:
+def collect_issues_for_file(path: Path) -> list[SchemaSemanticsIssue]:
     tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
     issues: list[SchemaSemanticsIssue] = []
 
@@ -78,14 +78,14 @@ def _collect_issues_for_file(path: Path) -> list[SchemaSemanticsIssue]:
         if len(node.targets) != 1 or not isinstance(node.targets[0], ast.Name):
             continue
         schema_name = node.targets[0].id
-        if not _has_complete_or_full_token(schema_name):
+        if not has_complete_or_full_token(schema_name):
             continue
-        if not isinstance(node.value, ast.Call) or not _is_schema_constructor(
+        if not isinstance(node.value, ast.Call) or not is_schema_constructor(
             node.value,
         ):
             continue
 
-        required_fields = _extract_required_tuple(node.value)
+        required_fields = extract_required_tuple(node.value)
         domain_required = tuple(
             field for field in required_fields if field not in NON_DOMAIN_FIELDS
         )
@@ -108,7 +108,7 @@ def run(root: Path) -> list[str]:
     all_issues: list[str] = []
     for file_path in sorted(root.rglob("*.py")):
         all_issues.extend(
-            issue.format() for issue in _collect_issues_for_file(file_path)
+            issue.format() for issue in collect_issues_for_file(file_path)
         )
     return all_issues
 

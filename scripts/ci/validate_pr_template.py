@@ -99,13 +99,13 @@ def main() -> int:
         return 1
 
     field_values = extract_architecture_fields(pr_body)
-    errors = _collect_template_errors(pr_body, field_values)
+    errors = collect_template_errors(pr_body, field_values)
 
     changed_files = list_changed_files(args.base_sha, args.head_sha)
     requires_detailed_impact = touches_scrapers_base(changed_files)
 
     if requires_detailed_impact:
-        errors.extend(_validate_detailed_architecture_impact(field_values))
+        errors.extend(validate_detailed_architecture_impact(field_values))
 
     if errors:
         for err in errors:
@@ -116,18 +116,18 @@ def main() -> int:
     return 0
 
 
-def _collect_template_errors(
+def collect_template_errors(
     pr_body: str,
     field_values: dict[str, str],
 ) -> list[str]:
     errors: list[str] = []
-    errors.extend(_missing_headings(pr_body))
-    errors.extend(_unchecked_checkboxes(pr_body))
-    errors.extend(_missing_architecture_fields(field_values))
+    errors.extend(missing_headings(pr_body))
+    errors.extend(unchecked_checkboxes(pr_body))
+    errors.extend(missing_architecture_fields(field_values))
     return errors
 
 
-def _missing_headings(pr_body: str) -> list[str]:
+def missing_headings(pr_body: str) -> list[str]:
     return [
         f"Brak sekcji: {heading}"
         for heading in REQUIRED_HEADINGS
@@ -135,7 +135,7 @@ def _missing_headings(pr_body: str) -> list[str]:
     ]
 
 
-def _unchecked_checkboxes(pr_body: str) -> list[str]:
+def unchecked_checkboxes(pr_body: str) -> list[str]:
     return [
         f"Checklista niepotwierdzona: {checkbox}"
         for checkbox in REQUIRED_CHECKBOXES
@@ -143,7 +143,7 @@ def _unchecked_checkboxes(pr_body: str) -> list[str]:
     ]
 
 
-def _missing_architecture_fields(field_values: dict[str, str]) -> list[str]:
+def missing_architecture_fields(field_values: dict[str, str]) -> list[str]:
     return [
         f"Brak wartości pola: {field}"
         for field, value in field_values.items()
@@ -151,7 +151,7 @@ def _missing_architecture_fields(field_values: dict[str, str]) -> list[str]:
     ]
 
 
-def _validate_detailed_architecture_impact(field_values: dict[str, str]) -> list[str]:
+def validate_detailed_architecture_impact(field_values: dict[str, str]) -> list[str]:
     errors: list[str] = []
     for field, raw_value in field_values.items():
         normalized = normalize_field_value(raw_value)

@@ -33,7 +33,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def _rev_parse(ref: str) -> str:
+def rev_parse(ref: str) -> str:
     result = subprocess.run(
         ["git", "rev-parse", ref],  # noqa: S607
         check=False,
@@ -46,7 +46,7 @@ def _rev_parse(ref: str) -> str:
 
 
 def resolve_sha_pair(base_sha: str, head_sha: str) -> tuple[str, str]:
-    resolved_head = head_sha or os.getenv("GITHUB_SHA", "") or _rev_parse("HEAD")
+    resolved_head = head_sha or os.getenv("GITHUB_SHA", "") or rev_parse("HEAD")
     if base_sha:
         return base_sha, resolved_head
 
@@ -84,7 +84,7 @@ def has_non_cosmetic_changes(base_sha: str, head_sha: str, files: list[str]) -> 
     return False
 
 
-def _has_adr_reference(text: str) -> bool:
+def has_adr_reference(text: str) -> bool:
     custom_checker = getattr(DEFAULT_ADR_ENFORCEMENT_POLICY, "has_adr_reference", None)
     if callable(custom_checker):
         return bool(custom_checker(text))
@@ -130,7 +130,7 @@ def main() -> int:
         ],
     )
 
-    if _has_adr_reference(combined_text):
+    if has_adr_reference(combined_text):
         print("Referencja ADR-XXXX znaleziona. Gate ADR zaliczony.")
         return 0
 

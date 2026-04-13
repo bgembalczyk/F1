@@ -167,7 +167,7 @@ def check_sections_single_scraper_boundary(
     return violations
 
 
-def _is_in_parser_naming_scope(path: Path) -> bool:
+def is_in_parser_naming_scope(path: Path) -> bool:
     return any(path == scope or scope in path.parents for scope in PARSER_NAMING_SCOPE)
 
 
@@ -182,7 +182,7 @@ def check_parser_naming_contracts() -> list[str]:
     }
     for py_file in Path("scrapers").rglob("*.py"):
         rel_path = py_file
-        if not _is_in_parser_naming_scope(rel_path):
+        if not is_in_parser_naming_scope(rel_path):
             continue
         module = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
         for node in module.body:
@@ -209,7 +209,7 @@ def check_parser_naming_contracts() -> list[str]:
     return violations
 
 
-def _matches_parser_protocol_module(module_name: str) -> bool:
+def matches_parser_protocol_module(module_name: str) -> bool:
     return module_name.startswith(PARSER_PROTOCOL_IMPORT_PREFIX) and (
         module_name == f"{PARSER_PROTOCOL_IMPORT_PREFIX}.protocol"
         or ".protocol." in module_name
@@ -223,7 +223,7 @@ def check_parser_compat_imports_and_aliases() -> list[str]:
         module = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
         for node in ast.walk(module):
             if isinstance(node, ast.ImportFrom) and node.module:
-                if _matches_parser_protocol_module(node.module):
+                if matches_parser_protocol_module(node.module):
                     violations.append(
                         "Forbidden parser compat import: "
                         f"{py_file}:{node.lineno} imports from '{node.module}'. "
@@ -247,7 +247,7 @@ def check_parser_compat_imports_and_aliases() -> list[str]:
                         )
             elif isinstance(node, ast.Import):
                 for alias in node.names:
-                    if _matches_parser_protocol_module(alias.name):
+                    if matches_parser_protocol_module(alias.name):
                         violations.append(
                             "Forbidden parser compat import: "
                             f"{py_file}:{node.lineno} imports '{alias.name}'. "
@@ -271,22 +271,22 @@ def check_parser_compat_imports_and_aliases() -> list[str]:
     return violations
 
 
-def _base_name(base: ast.expr) -> str:
+def base_name(base: ast.expr) -> str:
     if isinstance(base, ast.Name):
         return base.id
     if isinstance(base, ast.Attribute):
         return base.attr
     if isinstance(base, ast.Subscript):
-        return _base_name(base.value)
+        return base_name(base.value)
     return ast.unparse(base)
 
 
-def _is_abc_class(node: ast.ClassDef) -> bool:
-    return "ABC" in {_base_name(base) for base in node.bases}
+def is_abc_class(node: ast.ClassDef) -> bool:
+    return "ABC" in {base_name(base) for base in node.bases}
 
 
-def _inherits_parser_abc(node: ast.ClassDef) -> bool:
-    base_names = {_base_name(base) for base in node.bases}
+def inherits_parser_abc(node: ast.ClassDef) -> bool:
+    base_names = {base_name(base) for base in node.bases}
     return any(name.endswith("ParserABC") for name in base_names) or bool(
         base_names & PARSER_ABSTRACT_BASE_NAMES,
     )
@@ -309,14 +309,14 @@ def check_parser_contract_enforcement() -> list[str]:
                     isinstance(item, ast.FunctionDef) and item.name == "parse"
                     for item in node.body
                 )
-                if not _inherits_parser_abc(node):
+                if not inherits_parser_abc(node):
                     violations.append(
                         "Parser contract violation: "
                         f"{py_file}:{node.lineno} class {node.name} "
                         "must inherit from parser ABC hierarchy.",
                     )
                     continue
-                if not has_parse and not _is_abc_class(node):
+                if not has_parse and not is_abc_class(node):
                     violations.append(
                         "Parser contract violation: "
                         f"{py_file}:{node.lineno} class {node.name} "

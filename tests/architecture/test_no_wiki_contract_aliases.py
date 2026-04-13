@@ -3,6 +3,8 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
+from tests.architecture.helpers import python_files
+
 REMOVED_MODULES = (
     "scrapers.parsers.wiki.hierarchy",
     "scrapers.parsers.wiki.parser_families",
@@ -28,11 +30,6 @@ REMOVED_SYMBOLS_BY_MODULE = {
 }
 
 
-def _python_files() -> list[Path]:
-    roots = ("scrapers", "tests")
-    return [path for root in roots for path in Path(root).rglob("*.py")]
-
-
 def test_removed_wiki_contract_alias_modules_stay_deleted() -> None:
     for module_path in (
         Path("scrapers/parsers/wiki/hierarchy.py"),
@@ -44,7 +41,7 @@ def test_removed_wiki_contract_alias_modules_stay_deleted() -> None:
 
 def test_no_imports_from_removed_wiki_contract_alias_modules() -> None:
     violations: list[str] = []
-    for path in _python_files():
+    for path in python_files():
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
             if isinstance(node, ast.Import):
@@ -60,7 +57,7 @@ def test_no_imports_from_removed_wiki_contract_alias_modules() -> None:
 
 def test_no_imports_of_removed_wiki_contract_alias_symbols() -> None:
     violations: list[str] = []
-    for path in _python_files():
+    for path in python_files():
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
             if not isinstance(node, ast.ImportFrom):
