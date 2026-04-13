@@ -49,3 +49,9 @@ class SeasonPipelineService(
         source: dict[str, Any],
     ) -> SeasonDomainRecordInput:
         return SeasonDomainRecordInput(payload=source.get("payload"))
+
+
+class SeasonDomainRecordService(SeasonPipelineService):
+    """Compatibility alias for legacy service naming."""
+
+

@@ -66,3 +66,9 @@ class CircuitPipelineService(
             lap_record_rows=list(source["lap_record_rows"]),
             sections=list(source["sections"]),
         )
+
+
+class CircuitDomainRecordService(CircuitPipelineService):
+    """Compatibility alias for legacy service naming."""
+
+

@@ -9,6 +9,7 @@ from scrapers.services.section.extraction.driver import DriverSectionExtractionS
 from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,
 )
+from scrapers.services.domain_record.driver_pipeline_service import DriverDomainRecordService
 from scrapers.services.section.factories.section_service_factory import (
     SectionServiceFactoryABC,
 )

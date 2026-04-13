@@ -4,7 +4,7 @@ from typing import Protocol
 from typing import runtime_checkable
 
 from infrastructure.http.errors.base import RequestError
-from scrapers.data_extractor import BaseDataExtractor
+from complete_extractor.data_extractor import BaseDataExtractor
 from scrapers.errors.domain_parse import DomainParseError
 from scrapers.errors.network import ScraperNetworkError
 from scrapers.errors.parse import ScraperParseError

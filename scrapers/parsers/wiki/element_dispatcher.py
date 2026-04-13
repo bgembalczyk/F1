@@ -42,4 +42,6 @@ class ElementDispatcher:
         }
 
 
-__all__ = ["ElementDispatcher"]
+ElementParserDispatcher = ElementDispatcher
+
+__all__ = ["ElementDispatcher", "ElementParserDispatcher"]

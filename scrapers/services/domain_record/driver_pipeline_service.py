@@ -59,3 +59,9 @@ class DriverPipelineService(
             infobox=dict(source["infobox"]),
             career_results=list(source["career_results"]),
         )
+
+
+class DriverDomainRecordService(DriverPipelineService):
+    """Compatibility alias for legacy service naming."""
+
+

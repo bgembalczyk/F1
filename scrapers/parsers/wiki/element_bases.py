@@ -39,13 +39,16 @@ OutputT = TypeVar("OutputT")
 class WikiDelegatingHtmlParserBase(ABC, Generic[HtmlInputT, OutputT]):
     """Single delegating base for wiki HTML element parsers."""
 
-    def __init__(self, delegate: object) -> None:
+    def __init__(self, delegate: object | None = None) -> None:
         self._delegate = delegate
 
     @abstractmethod
     def parse(self, raw: HtmlInputT) -> OutputT: ...
 
     def _parse_with_delegate(self, raw: HtmlInputT) -> OutputT:
+        if self._delegate is None:
+            msg = "Delegate parser is required for delegated parsing."
+            raise RuntimeError(msg)
         return self._delegate.parse(raw)
 
 
