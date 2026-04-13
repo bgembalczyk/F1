@@ -15,7 +15,7 @@ TARGET_FILES = (
 ALLOWED_ROOTS = {
     "WikiTableElementParserABC",
     "WikiListElementParserABC",
-    "WikiSectionElementParserABC",
+    "HtmlSoupParserABC",
     "WikiInfoboxElementParserABC",
     "WikiNavboxElementParserABC",
     "WikiFigureElementParserABC",

@@ -11,7 +11,6 @@ from typing import TypeAlias
 import scrapers.parsers as parsers_pkg
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.element_parser_abc import HtmlTagParserABC
@@ -39,7 +38,7 @@ class ParsingRegistryEntry:
 AUTO_ELEMENT_PARSER_BASES: Final[dict[ElementType, ParserBase]] = {
     "table": WikiTableElementParserABC,
     "list": WikiListElementParserABC,
-    "section": WikiSectionElementParserABC,
+    "section": HtmlSoupParserABC,
     "infobox": WikiInfoboxElementParserABC,
 }
 

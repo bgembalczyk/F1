@@ -1,11 +1,11 @@
 from bs4 import BeautifulSoup
 
 from models.data.wiki.section import WikiSectionData
-from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.section_element_parser import SectionElementParser
 
 
-class WikiSectionElementParser(WikiSectionElementParserABC):
+class WikiSectionElementParser(HtmlSoupParserABC[WikiSectionData]):
     """Wikipedia HTML element parser for section containers."""
 
     def __init__(self, parser: SectionElementParser | None = None) -> None:
