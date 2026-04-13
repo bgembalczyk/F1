@@ -6,7 +6,6 @@ from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementPars
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiNavboxElementParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiParagraphElementParserABC
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiReferencesElementParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiSectionElementParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
 
@@ -17,7 +16,6 @@ __all__ = [
     "WikiListElementParserABC",
     "WikiNavboxElementParserABC",
     "WikiParagraphElementParserABC",
-    "WikiReferencesElementParserABC",
     "WikiSectionElementParserABC",
     "WikiTableElementParserABC",
 ]

@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.data.parsed.html_elements import ParagraphElementData
-from models.data.parsed.references_wrap import ReferencesWrapParsedData
 from models.data.wiki.figure import WikiFigureData
 from models.data.wiki.infobox import WikiInfoboxData
 from models.data.wiki.list import WikiListData
@@ -84,16 +83,6 @@ class WikiParagraphElementParserABC(
     def parse(self, raw: Tag) -> ParagraphElementData: ...
 
 
-class WikiReferencesElementParserABC(
-    HtmlTagParserABC[ReferencesWrapParsedData],
-    ABC,
-):
-    element_type: WikiElementType = "references"
-
-    @abstractmethod
-    def parse(self, raw: Tag) -> ReferencesWrapParsedData: ...
-
-
 class WikiSectionElementParserABC(
     HtmlSoupParserABC[WikiSectionData],
     ABC,
@@ -122,7 +111,6 @@ __all__ = [
     "WikiListElementParserABC",
     "WikiNavboxElementParserABC",
     "WikiParagraphElementParserABC",
-    "WikiReferencesElementParserABC",
     "WikiSectionElementParserABC",
     "WikiTableElementParserABC",
 ]
