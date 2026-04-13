@@ -14,7 +14,7 @@ from scrapers.runtime.dataclass import ScraperRuntime
 from scrapers.source_adapter import SourceAdapter
 
 
-class _SourceAdapterFetcherShim(HtmlFetcher):
+class SourceAdapterFetcherShim(HtmlFetcher):
     """Adapter exposing SourceAdapter as HtmlFetcher for legacy option wiring."""
 
     def __init__(self, source_adapter: SourceAdapter) -> None:
@@ -126,7 +126,7 @@ class ScraperRuntimeFactory:
             fetcher = source_adapter
         if fetcher is None and source_adapter is not None:
             # Backward compatibility: allow runtime with injected source adapter only.
-            fetcher = _SourceAdapterFetcherShim(source_adapter)
+            fetcher = SourceAdapterFetcherShim(source_adapter)
         if fetcher is None:
             msg = "Could not build scraper runtime: missing fetcher/source_adapter"
             raise ValueError(msg)
