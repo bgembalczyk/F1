@@ -46,7 +46,7 @@ docs/uml/inheritance/
 
 | Pliki | Łączna liczba klas w grafie | Klas w diagramach |
 |-------|-----------------------------|-------------------|
-| 24    | 579                         | 579 (100%)        |
+| 24    | 568                         | 568 (100%)        |
 
 ## Jak przeglądać
 

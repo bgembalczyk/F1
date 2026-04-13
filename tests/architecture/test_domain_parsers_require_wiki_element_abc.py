@@ -16,7 +16,6 @@ ALLOWED_ROOTS = {
     "WikiTableElementParserABC",
     "WikiListElementParserABC",
     "WikiSectionElementParserABC",
-    "WikiSectionStructureParserABC",
     "WikiInfoboxElementParserABC",
     "WikiNavboxElementParserABC",
     "WikiFigureElementParserABC",

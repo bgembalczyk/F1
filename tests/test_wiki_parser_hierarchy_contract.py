@@ -3,29 +3,36 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.registry import DEFAULT_PARSER_REGISTRY
 
 
 def test_domain_parser_registry_uses_hierarchy_bases() -> None:
+    _element_abcs = (
+        WikiListElementParserABC,
+        WikiSectionElementParserABC,
+        WikiTableElementParserABC,
+        WikiInfoboxElementParserABC,
+    )
     for entry in DEFAULT_PARSER_REGISTRY:
-        assert issubclass(
-            entry.parser_base,
-            (WikiListParserABC, WikiSectionParserABC),
+        assert issubclass(entry.parser_base, _element_abcs), (
+            f"{entry.parser_base} not a subclass of any element ABC"
         )
 
 
 def test_concrete_wiki_parsers_declare_expected_abc_and_parse_method() -> None:
     expected = (
-        ("scrapers/parsers/wiki/element_table.py", "WikiTableElementParser", "WikiTableParserABC"),
-        ("scrapers/parsers/wiki/element_list.py", "WikiListElementParser", "WikiListParserABC"),
+        ("scrapers/parsers/wiki/element_table.py", "WikiTableElementParser", "WikiTableElementParserABC"),
+        ("scrapers/parsers/wiki/element_list.py", "WikiListElementParser", "WikiListElementParserABC"),
         (
             "scrapers/parsers/wiki/element_section.py",
             "WikiSectionElementParser",
-            "WikiSectionStructureParserABC",
+            "WikiSectionElementParserABC",
         ),
-        ("scrapers/parsers/wiki/element_infobox.py", "WikiInfoboxElementParser", "WikiInfoboxParserABC"),
+        ("scrapers/parsers/wiki/element_infobox.py", "WikiInfoboxElementParser", "WikiInfoboxElementParserABC"),
     )
 
     for file_path, parser_name, expected_base in expected:
