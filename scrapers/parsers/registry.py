@@ -10,23 +10,14 @@ from typing import TypeAlias
 
 import scrapers.parsers as parsers_pkg
 from scrapers.parsers.parser_abc import ParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiListParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiTableParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
-from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 from scrapers.parsers.element_parser_abc import SectionHtmlParserABC
-from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.element_registry import WIKI_SELECTOR_FAMILY_MAP
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiInfoboxElementParserABC
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiListElementParserABC
-from scrapers.parsers.wiki.wiki_element_parser_abc import WikiTableElementParserABC
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
 ElementType = Literal["table", "list", "section", "infobox"]
@@ -47,10 +38,10 @@ class ParsingRegistryEntry:
 
 
 AUTO_ELEMENT_PARSER_BASES: Final[dict[ElementType, ParserBase]] = {
-    "table": WikiTableParserABC,
-    "list": WikiListParserABC,
-    "section": WikiSectionParserABC,
-    "infobox": WikiInfoboxParserABC,
+    "table": WikiTableElementParserABC,
+    "list": WikiListElementParserABC,
+    "section": WikiSectionElementParserABC,
+    "infobox": WikiInfoboxElementParserABC,
 }
 
 EXPECTED_HTML_FAMILY_ABCS: Final[dict[ElementType, type[ParserABC[object, object]]]] = {

@@ -16,7 +16,6 @@ class BodyContentAssembler
 class ByRaceTitleSubSectionParser
 class CircuitsDetailScraper
 class CircuitsListScraper
-class ConstructorsDetailScraper
 class ConstructorsListScraper
 class CurrentRulesSectionParser
 class DetailByDriverSubSectionParser
@@ -94,7 +93,6 @@ ScraperLifecycleABC <|-- BaseScraperCore
 SubSectionParser <|-- ByRaceTitleSubSectionParser
 F1SingleCircuitScraper <|-- CircuitsDetailScraper
 SeedListTableScraper <|-- CircuitsListScraper
-SingleConstructorScraper <|-- ConstructorsDetailScraper
 ListScraper <|-- ConstructorsListScraper
 NestedWikiSectionParser <|-- CurrentRulesSectionParser
 SubSectionParser <|-- DetailByDriverSubSectionParser

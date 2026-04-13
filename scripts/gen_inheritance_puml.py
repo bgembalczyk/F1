@@ -159,7 +159,6 @@ KEEP_IN_CORE = {
     'InfoboxTableParser', 'InfoboxSectionParser',
     'CallableInfoboxFieldParser', 'HtmlInfoboxFieldParser',
     'InfoboxCellValueExtractor', 'HeaderParser', 'ContentTextParser',
-    'WikiSoupParserABC',
 }
 p01 = {c for c in p01 if (
     (c.endswith('ABC') or c.endswith('Base') or c.startswith('Base')
@@ -178,7 +177,7 @@ for cls in list(main_comp):
                 p02.add(cls)
 p02 |= {c for c in main_comp if c.startswith('Wiki') and
         (c.endswith('ABC') or c.endswith('Base') or
-         c in ('WikiDocumentParserABC', 'WikiArticleParserABC'))}
+         c in ('WikiArticleParserABC',))}
 write(OUT / 'parsers/02_wiki_html_parsers.puml',
       make_puml('Wiki HTML Parser Hierarchy', sorted(p02)))
 

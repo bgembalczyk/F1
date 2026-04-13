@@ -25,7 +25,7 @@ class LapRecordsWikiTableMapper
 class MappedWikiTableMapper
 abstract class MapperABC
 abstract class MatchesMixin
-class NonChampionshipsRacesTableMapper
+class NonChampionshipRacesTableMapper
 abstract class ParseGroupMixin
 class PointsScoringSystemsHistoryTableMapper
 class RaceResultsTableMapper
@@ -70,7 +70,7 @@ ParseGroupMixin <|-- GroupParsingMixin
 SectionTableRecordMapperABC <|-- IdentitySectionTableRecordMapper
 MappedWikiTableMapper <|-- LapRecordsWikiTableMapper
 WikiTableBaseMapper <|-- MappedWikiTableMapper
-BaseRedFlaggedRacesTableMapper <|-- NonChampionshipsRacesTableMapper
+BaseRedFlaggedRacesTableMapper <|-- NonChampionshipRacesTableMapper
 WikiTableBaseMapper <|-- PointsScoringSystemsHistoryTableMapper
 MappedWikiTableMapper <|-- RaceResultsTableMapper
 WikiTableBaseMapper <|-- SeasonsTableMapper

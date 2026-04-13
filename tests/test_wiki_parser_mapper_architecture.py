@@ -8,7 +8,7 @@ CONTRACT_FILES = [
     Path("scrapers/parsers/contracts/wiki_elements.py"),
     Path("scrapers/parsers/wiki/domain_mapper.py"),
 ]
-PARSE_METHOD_EXEMPTIONS = {"WikiSectionStructureParserABC"}
+PARSE_METHOD_EXEMPTIONS: set[str] = set()
 
 
 def _class_defs(path: Path) -> list[ast.ClassDef]:
