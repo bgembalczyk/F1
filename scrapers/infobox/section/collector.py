@@ -3,10 +3,9 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.helpers.text_normalization import clean_infobox_text
-from scrapers.infobox.section.discovery import InfoboxSectionDiscoveryABC
 
 
-class InfoboxSectionCollector(InfoboxSectionDiscoveryABC):
+class InfoboxSectionCollector:
     @staticmethod
     def collect(table: object) -> list[dict[str, Any]]:
         if not isinstance(table, Tag):

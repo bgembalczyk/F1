@@ -265,9 +265,7 @@ write(
 
 # PARSERS/03 – Scrapers
 SCRAPER_ROOTS = [
-    "ScraperLifecycleABC",
-    "ListScraperContract",
-    "TableScraperContract",
+    "WikiScraper",
     "SectionAwareMixin",
     "WikiElementParsingMixin",
     "FetchOrchestrationMixin",
@@ -280,8 +278,6 @@ p03 |= {
     "WikiScraper",
     "RecursiveSectionParser",
     "SectionAdapter",
-    "SectionAdapterScraperBase",
-    "SectionByIdScraperBase",
     "BodyContentAssembler",
     "ArticleTablesParser",
     "ArticleTablesParserABC",
@@ -364,7 +360,7 @@ write(
 covered_main = p01 | p02 | p03 | p04 | p05 | p06
 p07 = main_comp - covered_main
 # Also add ArticleTablesAssembler/ABC (their own small component)
-p07 |= component_of("ArticleTablesAssemblerABC")
+p07 |= component_of("ArticleTablesAssembler")
 # Add standalone parser contracts/ABCs not connected to the ParserABC hierarchy
 for _extra in (
     "NestedChildParser",

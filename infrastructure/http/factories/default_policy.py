@@ -2,10 +2,8 @@
 
 from infrastructure.cache.wiki_policy import WikipediaCachePolicy
 from infrastructure.http.config import HttpClientConfig
-from infrastructure.http.policies.retry.base import RetryPolicy
 from infrastructure.http.policies.retry.default import DefaultRetryPolicy
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
-from infrastructure.http.rate_limiter.base import RateLimiter
 from infrastructure.http.rate_limiter.min_delay import MinDelayRateLimiter
 
 
@@ -13,7 +11,7 @@ class DefaultHttpPolicyFactory:
     """Buduje retry/rate-limit/cache policy na bazie konfiguracji klienta."""
 
     @staticmethod
-    def build_retry_policy(config: HttpClientConfig) -> RetryPolicy:
+    def build_retry_policy(config: HttpClientConfig) -> DefaultRetryPolicy:
         if config.retry_policy is not None:
             return config.retry_policy
         return DefaultRetryPolicy(
@@ -22,7 +20,7 @@ class DefaultHttpPolicyFactory:
         )
 
     @staticmethod
-    def build_rate_limiter(config: HttpClientConfig) -> RateLimiter:
+    def build_rate_limiter(config: HttpClientConfig) -> MinDelayRateLimiter:
         if config.rate_limiter is not None:
             return config.rate_limiter
         return MinDelayRateLimiter(

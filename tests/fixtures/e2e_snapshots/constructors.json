@@ -13,7 +13,10 @@
   "infobox_record": {
     "title": "Ferrari",
     "rows": {
-      "Base": "Maranello"
+      "Base": {
+        "text": "Maranello",
+        "links": []
+      }
     }
   },
   "postprocess_record": {

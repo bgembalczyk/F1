@@ -13,7 +13,10 @@
   "infobox_record": {
     "title": "Bahrain Grand Prix",
     "rows": {
-      "First held": "2004"
+      "First held": {
+        "text": "2004",
+        "links": []
+      }
     }
   },
   "postprocess_record": {

@@ -6,9 +6,6 @@ from typing import TypeVar
 
 from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.options import ScraperOptions
-from scrapers.services.section.factories.validating import (
-    ValidatingSectionServiceFactory,
-)
 
 if TYPE_CHECKING:
     from models.value_objects import WikiUrl
@@ -17,10 +14,7 @@ if TYPE_CHECKING:
 ServiceT = TypeVar("ServiceT")
 
 
-class ConfigurableSectionServiceFactory(
-    ValidatingSectionServiceFactory[ServiceT],
-    Generic[ServiceT],
-):
+class ConfigurableSectionServiceFactory(Generic[ServiceT]):
     """Generic section-service factory replacing per-domain pass-through wrappers."""
 
     def __init__(
@@ -37,6 +31,27 @@ class ConfigurableSectionServiceFactory(
         self._require_url = require_url
         self._pass_options = pass_options
         self._pass_url = pass_url
+
+    def _validate_dependencies(
+        self,
+        *,
+        adapter: SectionAdapter,
+        options: ScraperOptions | None,
+        url: WikiUrl | str | None,
+        require_options: bool,
+        require_url: bool,
+    ) -> None:
+        if adapter is None:
+            msg = "SectionAdapter dependency is required."
+            raise ValueError(msg)
+
+        if require_options and options is None:
+            msg = "ScraperOptions dependency is required for this section service."
+            raise ValueError(msg)
+
+        if require_url and not url:
+            msg = "Article URL dependency is required for this section service."
+            raise ValueError(msg)
 
     def create(
         self,

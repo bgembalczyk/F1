@@ -24,23 +24,6 @@ def _load_family_contracts_module():
 
 FAMILY_CONTRACT_CASES = [
     (
-        "ListScraperContract",
-        ("fetch",),
-        (
-            "fetch",
-            "_parse_soup",
-        ),
-    ),
-    (
-        "TableScraperContract",
-        ("parse_soup", "parse_row"),
-        (
-            "parse_soup",
-            "parse_row",
-            "_parse_soup",
-        ),
-    ),
-    (
         "SingleArticleScraperContract",
         ("extract_by_url", "_assemble_record"),
         (
@@ -63,8 +46,6 @@ def test_scraper_family_contracts_are_exposed() -> None:
     family_contracts = _load_family_contracts_module()
     exported = set(getattr(family_contracts, "__all__", ()))
     assert exported == {
-        "ListScraperContract",
-        "TableScraperContract",
         "SingleArticleScraperContract",
     }
 
@@ -117,12 +98,7 @@ def test_family_contract_docstring_defines_extension_rules(
         (
             "scrapers/single_wiki_article/single_article_scraper_base.py",
             "ArticleScraperBase",
-            ("extract_by_url",),
-        ),
-        (
-            "scrapers/single_wiki_article/single_article_domain_scraper_base.py",
-            "DomainArticleScraperBase",
-            ("_assemble_record",),
+            ("extract_by_url", "_assemble_record"),
         ),
         (
             "scrapers/parsers/section/base.py",

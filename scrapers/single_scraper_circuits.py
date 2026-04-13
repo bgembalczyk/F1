@@ -1,10 +1,7 @@
-"""Canonical circuits single scraper module."""
+"""Backward-compatibility shim. Use F1SingleCircuitScraper from circuits_single_scraper."""
 
 from scrapers.circuits_single_scraper import F1SingleCircuitScraper
 
-
-class CircuitsDetailScraper(F1SingleCircuitScraper):
-    """Canonical circuits detail scraper."""
-
+CircuitsDetailScraper = F1SingleCircuitScraper
 
 __all__ = ["CircuitsDetailScraper"]

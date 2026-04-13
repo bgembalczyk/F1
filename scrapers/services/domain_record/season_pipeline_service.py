@@ -50,6 +50,3 @@ class SeasonPipelineService(
     ) -> SeasonDomainRecordInput:
         return SeasonDomainRecordInput(payload=source.get("payload"))
 
-
-class SeasonDomainRecordService(SeasonPipelineService):
-    """Compatibility alias for legacy service naming."""

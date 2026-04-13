@@ -4,8 +4,12 @@ from abc import ABC
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 from typing import Any
+from typing import ClassVar
 
 from infrastructure.helpers import init_scraper_options
+from scrapers.dto import InfoboxPayloadDTO
+from scrapers.dto import SectionsPayloadDTO
+from scrapers.dto import TablesPayloadDTO
 from scrapers.helpers.config_factory import build_scraper_options
 from scrapers.scraper_wiki import WikiScraper
 from scrapers.wiring import ScraperRuntimeFactory
@@ -18,10 +22,17 @@ if TYPE_CHECKING:
 
 
 class ArticleScraperBase(WikiScraper, ABC):
-    """Base class responsible for article fetch and parsing lifecycle."""
+    """Base class responsible for article fetch, parsing, and record assembly lifecycle."""
 
     options_domain: str | None = None
     options_profile: str = "article_strict"
+
+    STANDARD_HOOKS: ClassVar[dict[str, str]] = {
+        "_build_infobox_payload": "Build normalized infobox payload.",
+        "_build_tables_payload": "Build normalized table payload.",
+        "_build_sections_payload": "Build normalized section payload.",
+        "_assemble_record": "Compose final domain record from payload hooks.",
+    }
 
     def __init__(
         self,
@@ -99,9 +110,52 @@ class ArticleScraperBase(WikiScraper, ABC):
             return None
         return strategy.extract_section_by_id(soup, section_id, domain=domain)
 
-    @abstractmethod
     def _build_article_record(self, soup: BeautifulSoup) -> dict[str, Any]:
-        """Build final record from parsed article soup."""
+        return self._run_record_pipeline(soup)
+
+    def _run_record_pipeline(self, soup: BeautifulSoup) -> dict[str, Any]:
+        self._before_payload_build(soup)
+        record = self._assemble_record(
+            soup=soup,
+            infobox_payload=self._build_infobox_payload(soup),
+            tables_payload=self._build_tables_payload(soup),
+            sections_payload=self._build_sections_payload(soup),
+        )
+        return self._after_record_assembled(record, soup)
+
+    def _before_payload_build(self, soup: BeautifulSoup) -> None:
+        _ = soup
+
+    def _after_record_assembled(
+        self,
+        record: dict[str, Any],
+        soup: BeautifulSoup,
+    ) -> dict[str, Any]:
+        _ = soup
+        return record
+
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
+        _ = soup
+        return InfoboxPayloadDTO()
+
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
+        _ = soup
+        return TablesPayloadDTO()
+
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
+        _ = soup
+        return SectionsPayloadDTO()
+
+    @abstractmethod
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
+    ) -> dict[str, Any]:
+        """Compose final domain record from template-method payload hooks."""
 
 
 __all__ = ["ArticleScraperBase"]

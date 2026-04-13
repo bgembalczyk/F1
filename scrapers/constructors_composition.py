@@ -6,7 +6,7 @@ from scrapers.infobox.extraction.service import ConstructorInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.services.domain_record.constructor_pipeline_service import (
-    ConstructorDomainRecordService,
+    ConstructorPipelineService,
 )
 from scrapers.services.section.extraction.constructor import (
     ConstructorSectionExtractionService,
@@ -25,7 +25,7 @@ class ConstructorScraperDependencies:
     sections_service_factory: SectionServiceFactoryABC[
         ConstructorSectionExtractionService
     ]
-    domain_record_service: ConstructorDomainRecordService
+    domain_record_service: ConstructorPipelineService
 
 
 @dataclass(frozen=True, slots=True)
@@ -37,7 +37,7 @@ class ConstructorScraperCompositionFactory:
     sections_service_factory: (
         SectionServiceFactoryABC[ConstructorSectionExtractionService] | None
     ) = None
-    domain_record_service: ConstructorDomainRecordService | None = None
+    domain_record_service: ConstructorPipelineService | None = None
 
     @classmethod
     def for_tests(
@@ -47,7 +47,7 @@ class ConstructorScraperCompositionFactory:
         sections_service_factory: (
             SectionServiceFactoryABC[ConstructorSectionExtractionService] | None
         ) = None,
-        domain_record_service: ConstructorDomainRecordService | None = None,
+        domain_record_service: ConstructorPipelineService | None = None,
     ) -> ConstructorScraperCompositionFactory:
         return cls(
             test_mode=True,
@@ -75,7 +75,7 @@ class ConstructorScraperCompositionFactory:
 
         domain_record_service = self.domain_record_service
         if domain_record_service is None:
-            domain_record_service = ConstructorDomainRecordService()
+            domain_record_service = ConstructorPipelineService()
 
         return ConstructorScraperDependencies(
             infobox_service=infobox_service,

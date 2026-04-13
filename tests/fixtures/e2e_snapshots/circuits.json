@@ -13,7 +13,10 @@
   "infobox_record": {
     "title": "Monza Circuit",
     "rows": {
-      "Location": "Monza, Italy"
+      "Location": {
+        "text": "Monza, Italy",
+        "links": []
+      }
     }
   },
   "postprocess_record": {

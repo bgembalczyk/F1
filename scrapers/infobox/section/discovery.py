@@ -1,11 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
-from typing import Any
+from scrapers.infobox.section.collector import InfoboxSectionCollector
 
-
-class InfoboxSectionDiscoveryABC(ABC):
-    @abstractmethod
-    def collect(self, table: object) -> list[dict[str, Any]]: ...
-
+InfoboxSectionDiscoveryABC = InfoboxSectionCollector
 
 __all__ = ["InfoboxSectionDiscoveryABC"]

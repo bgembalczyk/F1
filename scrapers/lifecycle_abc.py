@@ -1,22 +1,7 @@
-from abc import ABC
-from abc import abstractmethod
+"""Backward-compatibility shim: ScraperLifecycleABC merged into WikiScraper."""
 
-from bs4 import BeautifulSoup
+from scrapers.scraper_wiki import WikiScraper
 
-from scrapers.results import ScrapeResult
-from scrapers.runners.pipeline_runner import RawRecord
-from validation.validator_base import ExportRecord
+ScraperLifecycleABC = WikiScraper
 
-
-class ScraperLifecycleABC(ABC):
-    @abstractmethod
-    def fetch(self) -> list[ExportRecord]:
-        """Execute fetch lifecycle and return exportable records."""
-
-    @abstractmethod
-    def parse(self, soup: BeautifulSoup) -> list[RawRecord]:
-        """Parse BeautifulSoup document into raw records."""
-
-    @abstractmethod
-    def build_result(self, data: list[ExportRecord] | None = None) -> ScrapeResult:
-        """Build finalized scrape result with metadata."""
+__all__ = ["ScraperLifecycleABC"]

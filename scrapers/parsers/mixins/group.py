@@ -15,8 +15,6 @@ class ParseGroupMixin(ABC, Generic[TableInputT_contra, RecordT_co]):
     def parse_group(self, table: TableInputT_contra) -> list[RecordT_co]: ...
 
 
-class GroupParsingMixin(ParseGroupMixin[TableInputT_contra, RecordT_co], ABC):
-    """Named mixin for parse_group capability."""
-
+GroupParsingMixin = ParseGroupMixin
 
 __all__ = ["ParseGroupMixin", "GroupParsingMixin"]

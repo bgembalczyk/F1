@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from models.records.factories.mapping import MappingRecordFactory
-from scrapers.base_points_scraper import BasePointsScraper
 from scrapers.columns.factory import IntColumn
 from scrapers.columns.spec import ColumnSpec
 from scrapers.columns.types.auto import AutoColumn
@@ -19,6 +18,7 @@ from scrapers.constants.constants_points import POINTS_FASTEST_LAP_HEADER
 from scrapers.constants.constants_points import POINTS_NOTES_HEADER
 from scrapers.constants.constants_points import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
 from scrapers.constants.shared_headers import SHARED_SEASONS_HEADER
+from scrapers.source_catalog import POINTS_SCORING_SYSTEMS
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 if TYPE_CHECKING:
@@ -30,7 +30,7 @@ def build_points_scoring_systems_history_config(
     columns: Sequence[ColumnSpec],
 ) -> TableConfig:
     return build_scraper_config(
-        url=BasePointsScraper.BASE_URL,
+        url=POINTS_SCORING_SYSTEMS.base_url,
         section_id="Points_scoring_systems",
         expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
         schema=TableSchemaDSL(columns=columns),

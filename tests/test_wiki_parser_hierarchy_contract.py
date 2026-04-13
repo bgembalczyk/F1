@@ -5,15 +5,15 @@ from pathlib import Path
 
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
+from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.registry import DEFAULT_PARSER_REGISTRY
 
 
 def test_domain_parser_registry_uses_hierarchy_bases() -> None:
     _element_abcs = (
         WikiListElementParserABC,
-        WikiSectionElementParserABC,
+        HtmlSoupParserABC,
         WikiTableElementParserABC,
         WikiInfoboxElementParserABC,
     )
@@ -39,7 +39,7 @@ def test_concrete_wiki_parsers_declare_expected_abc_and_parse_method() -> None:
         (
             "scrapers/parsers/wiki/element_section.py",
             "WikiSectionElementParser",
-            "WikiSectionElementParserABC",
+            "HtmlSoupParserABC",
         ),
         (
             "scrapers/parsers/wiki/element_infobox.py",
@@ -55,10 +55,13 @@ def test_concrete_wiki_parsers_declare_expected_abc_and_parse_method() -> None:
             for node in module.body
             if isinstance(node, ast.ClassDef) and node.name == parser_name
         )
-        base_names = [
-            getattr(base, "id", getattr(base, "attr", ""))
-            for base in parser_class.bases
-        ]
+
+        def _extract_base_name(base: ast.expr) -> str:
+            text = ast.unparse(base)
+            text = text.split("[", 1)[0]
+            return text.split(".")[-1]
+
+        base_names = [_extract_base_name(base) for base in parser_class.bases]
         assert expected_base in base_names
         assert any(
             isinstance(node, ast.FunctionDef) and node.name == "parse"

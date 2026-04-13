@@ -9,7 +9,6 @@ from scrapers.columns.base import BaseColumn
 from scrapers.columns.types.auto import AutoColumn
 from scrapers.configs.public import TableConfig
 from scrapers.extractors.table import TableExtractor
-from scrapers.family_contracts import TableScraperContract
 from scrapers.helpers.config_factory import build_scraper_options
 from scrapers.options import ScraperOptions
 from scrapers.row_table import TableRow
@@ -19,7 +18,7 @@ from scrapers.transformers.record.factory import RecordFactoryTransformer
 from validation.record_factory_validator import adapt_record_factory_validator
 
 
-class F1TableScraper(WikiScraper, TableScraperContract, ABC):
+class F1TableScraper(WikiScraper, ABC):
     """
     Scraper oparty o pojedynczą tabelę 'wikitable'.
 

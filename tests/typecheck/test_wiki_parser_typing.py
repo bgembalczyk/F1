@@ -20,14 +20,14 @@ if TYPE_CHECKING:
     from models.payload import WikiParsedPayload
     from scrapers.parsers.parser_abc import ParserABC
     from scrapers.parsers.wiki.header import HeaderParser
-    from scrapers.parsers.wiki.paragraph import WikiParagraphParser
+    from scrapers.parsers.paragraph_element_parser import ParagraphElementParser
     from scrapers.parsers.wiki.table import WikiTableParser
 
     header_parser: ParserABC[Tag, HeaderParsedData] = HeaderParser()
     header_result: HeaderParsedData = header_parser.parse(cast("Tag", object()))
     header_title: str | None = header_result["title"]
 
-    paragraph_parser: ParserABC[Tag, ParagraphParsedData] = WikiParagraphParser()
+    paragraph_parser: ParserABC[Tag, ParagraphParsedData] = ParagraphElementParser()
     paragraph_result: ParagraphParsedData = paragraph_parser.parse(
         cast("Tag", object()),
     )

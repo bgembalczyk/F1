@@ -16,7 +16,6 @@ CANONICAL_MODULE_CLASS_MATRIX = {
     },
     "circuits": {
         "scrapers.circuits.list_scraper": "CircuitsListScraper",
-        "scrapers.circuits.single_scraper": "CircuitsDetailScraper",
         "scrapers.circuits_pipeline_service": "CircuitsPipelineService",
         "scrapers.circuits_factory": "CircuitsFactory",
     },

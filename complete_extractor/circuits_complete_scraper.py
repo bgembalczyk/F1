@@ -4,7 +4,7 @@ from scrapers.circuits_list_scraper import CircuitsListScraper
 from scrapers.component_metadata_wiki import COMPLETE_SCRAPER_KIND
 from scrapers.component_metadata_wiki import build_component_metadata
 from scrapers.services.circuit import CircuitService
-from scrapers.single_scraper_circuits import CircuitsDetailScraper
+from scrapers.circuits_single_scraper import F1SingleCircuitScraper
 
 
 class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
@@ -24,7 +24,7 @@ class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
     url = CircuitsListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
         list_scraper_classes=(CircuitsListScraper,),
-        single_scraper_cls=CircuitsDetailScraper,
+        single_scraper_cls=F1SingleCircuitScraper,
         detail_url_field_paths=("circuit.url",),
         record_postprocessor=CircuitService.normalize_record,
     )

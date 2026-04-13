@@ -60,6 +60,3 @@ class DriverPipelineService(
             career_results=list(source["career_results"]),
         )
 
-
-class DriverDomainRecordService(DriverPipelineService):
-    """Compatibility alias for legacy service naming."""

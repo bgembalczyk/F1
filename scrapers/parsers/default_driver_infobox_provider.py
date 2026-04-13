@@ -2,20 +2,18 @@ from __future__ import annotations
 
 from scrapers.infobox.extraction.extractor.link import InfoboxLinkExtractor
 from scrapers.infobox.section.collector import InfoboxSectionCollector
-from scrapers.infobox.section.discovery import InfoboxSectionDiscoveryABC
 from scrapers.parsers.driver_infobox_bundle import DriverInfoboxBundle
-from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
 from scrapers.parsers.infobox.driver_cell import InfoboxCellValueExtractor
 from scrapers.parsers.infobox.field.career import InfoboxCareerParser
 from scrapers.parsers.infobox.field.title import InfoboxTitlesParser
 from scrapers.parsers.infobox.general import InfoboxGeneralExtractor
 
 
-class DefaultDriverInfoboxProvider(DriverInfoboxProviderABC):
+class DefaultDriverInfoboxProvider:
     def __init__(
         self,
         *,
-        section_discovery: InfoboxSectionDiscoveryABC | None = None,
+        section_discovery: InfoboxSectionCollector | None = None,
     ) -> None:
         self._section_discovery = section_discovery or InfoboxSectionCollector()
 

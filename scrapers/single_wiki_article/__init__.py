@@ -21,6 +21,5 @@ __all__ = [
     "SectionAdapterScraperBase",
     "SectionAwareMixin",
     "SectionByIdScraperBase",
-    "SectionAdapterScraperBase",
     "WikipediaSectionByIdSelectionStrategy",
 ]

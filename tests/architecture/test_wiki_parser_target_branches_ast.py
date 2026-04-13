@@ -10,7 +10,6 @@ TARGET_BRANCHES = {
     "HtmlSoupParserABC",
     "WikiTableElementParserABC",
     "WikiListElementParserABC",
-    "WikiSectionElementParserABC",
     "WikiInfoboxElementParserABC",
     "WikiNavboxElementParserABC",
     "WikiFigureElementParserABC",

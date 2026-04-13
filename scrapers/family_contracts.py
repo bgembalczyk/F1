@@ -4,37 +4,6 @@ from typing import Any
 from typing import Protocol
 from typing import runtime_checkable
 
-from bs4 import BeautifulSoup
-
-if False:  # pragma: no cover
-    from bs4 import BeautifulSoup
-
-
-@runtime_checkable
-class ListScraperContract(Protocol):
-    """Minimal contract for list/seed scrapers.
-
-    Extension rules:
-    - Override _parse_soup to customise HTML→records parsing.
-    """
-
-    def fetch(self) -> list[dict[str, Any]]: ...
-
-
-@runtime_checkable
-class TableScraperContract(Protocol):
-    """Minimal contract for table-based scrapers.
-
-    Extension rules:
-    - Override parse_soup to customise soup→records parsing.
-    - Override parse_row to customise row→record mapping.
-    - Override _parse_soup for lower-level soup access.
-    """
-
-    def parse_soup(self, soup: BeautifulSoup) -> list[Any]: ...
-
-    def parse_row(self, row: Any) -> Any | None: ...
-
 
 @runtime_checkable
 class SingleArticleScraperContract(Protocol):
@@ -57,7 +26,5 @@ class SingleArticleScraperContract(Protocol):
 
 
 __all__ = [
-    "ListScraperContract",
-    "TableScraperContract",
     "SingleArticleScraperContract",
 ]

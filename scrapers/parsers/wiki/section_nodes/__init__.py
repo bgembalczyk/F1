@@ -1,6 +1,5 @@
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 from scrapers.parsers.wiki.section_nodes.base import WikiSectionNodeParserABC
 from scrapers.parsers.wiki.section_nodes.levels import SectionLevelMixin
@@ -16,7 +15,6 @@ __all__ = [
     "SubSubSectionLevelMixin",
     "WikiInfoboxElementParserABC",
     "WikiListElementParserABC",
-    "WikiSectionElementParserABC",
     "WikiSectionNodeParserABC",
     "WikiSectionParserABC",
     "WikiSubSectionParserABC",

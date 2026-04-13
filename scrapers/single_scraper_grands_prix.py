@@ -3,7 +3,7 @@ from __future__ import annotations
 import warnings
 
 from scrapers.errors.base import ScraperError
-from scrapers.single_wiki_article import DomainArticleScraperBase
+from scrapers.single_wiki_article import ArticleScraperBase
 
 warnings.warn(
     "single_scraper_grands_prix is deprecated; use scrapers.single_scraper_grands_prix.",
@@ -30,7 +30,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class F1SingleGrandPrixScraper(DomainArticleScraperBase):
+class F1SingleGrandPrixScraper(ArticleScraperBase):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         super().__init__(
             options=options,
