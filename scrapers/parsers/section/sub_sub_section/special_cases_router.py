@@ -1,8 +1,12 @@
 from typing import Any
 
-from scrapers.parsers.section.sub_sub_section.shortened_races import ShortenedRacesSubSubSectionParser
 from scrapers.parsers.section.sub_sub_section.base import SubSubSectionParser
-from scrapers.parsers.section.sub_sub_section.sprint_races import SprintRacesSubSubSectionParser
+from scrapers.parsers.section.sub_sub_section.shortened_races import (
+    ShortenedRacesSubSubSectionParser,
+)
+from scrapers.parsers.section.sub_sub_section.sprint_races import (
+    SprintRacesSubSubSectionParser,
+)
 
 
 class SpecialCasesSubSubSectionRouter(SubSubSectionParser):
@@ -21,4 +25,3 @@ class SpecialCasesSubSubSectionRouter(SubSubSectionParser):
         self.sprint_parser.apply_table_mapper(parsed)
         self.shortened_parser.apply_table_mapper(parsed)
         return parsed
-

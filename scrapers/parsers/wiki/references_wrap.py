@@ -1,8 +1,8 @@
 from bs4 import Tag
 
 from models.data.parsed.references_wrap import ReferencesWrapParsedData
-from scrapers.text_cleaning import extract_text
 from scrapers.parsers.parser_abc import ParserABC
+from scrapers.text_cleaning import extract_text
 
 
 class ReferencesWrapParser(ParserABC[Tag, ReferencesWrapParsedData]):
@@ -10,6 +10,7 @@ class ReferencesWrapParser(ParserABC[Tag, ReferencesWrapParsedData]):
 
     Przetwarza divy z klasą zawierającą 'references-wrap'.
     """
+
     element_type = "references_wrap"
 
     def parse(self, element: Tag) -> ReferencesWrapParsedData:

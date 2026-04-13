@@ -10,10 +10,10 @@ from scrapers.parsers.element_parser_abc import ElementType
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.parser_abc import ParserABC
+from scrapers.parsers.wiki.element_registry import WIKI_SELECTOR_FAMILY_MAP
 from scrapers.parsers.wiki.element_registry import ElementParseInput
 from scrapers.parsers.wiki.element_registry import ElementRegistration
 from scrapers.parsers.wiki.element_registry import ElementRegistry
-from scrapers.parsers.wiki.element_registry import WIKI_SELECTOR_FAMILY_MAP
 from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.wiki.paragraph import WikiParagraphParser
@@ -37,12 +37,10 @@ def _build_wiki_selector_predicates() -> dict[ElementType, Callable[[Tag], bool]
     return {
         "paragraph": lambda el: el.name == "p",
         "infobox": lambda el: (
-            el.name == "table"
-            and "infobox" in ElementRegistry._get_classes(el)
+            el.name == "table" and "infobox" in ElementRegistry._get_classes(el)
         ),
         "table": lambda el: (
-            el.name == "table"
-            and "wikitable" in ElementRegistry._get_classes(el)
+            el.name == "table" and "wikitable" in ElementRegistry._get_classes(el)
         ),
         "list": lambda el: el.name in {"ul", "ol"},
         "section": lambda el: (
@@ -71,7 +69,9 @@ def build_wikipedia_element_registry(
     parsers: WikiElementSet,
 ) -> ElementRegistry:
     type_predicates = _build_wiki_selector_predicates()
-    assert set(type_predicates) == set(WIKI_SELECTOR_FAMILY_MAP), "Selector map mismatch"
+    assert set(type_predicates) == set(
+        WIKI_SELECTOR_FAMILY_MAP,
+    ), "Selector map mismatch"
 
     named_parsers: list[tuple[ElementType, ParserABC[Tag, WikiParserData]]] = [
         ("paragraph", parsers.paragraph_parser),
@@ -97,7 +97,7 @@ def build_wikipedia_element_registry(
                 element_type="section",
                 handler=parsers.section_parser,
                 handler_class=type(parsers.section_parser),
-            )
+            ),
         )
 
     registry = ElementRegistry(
@@ -122,7 +122,7 @@ def build_default_wiki_element_parsers() -> WikiElementSet:
 
 def build_default_wikipedia_element_registry() -> ElementRegistry:
     return build_wikipedia_element_registry(
-        parsers=build_default_wiki_element_parsers()
+        parsers=build_default_wiki_element_parsers(),
     )
 
 

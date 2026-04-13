@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
@@ -33,7 +31,8 @@ class BodyContentAdapter:
             id=lambda value: value and "content-text" in value,
             class_=lambda value: (
                 value
-                and "body-content" in (value if isinstance(value, list) else value.split())
+                and "body-content"
+                in (value if isinstance(value, list) else value.split())
             ),
         )
         if content_text is None:
@@ -41,7 +40,8 @@ class BodyContentAdapter:
                 "div",
                 class_=lambda value: (
                     value
-                    and "mw-content-ltr" in (value if isinstance(value, list) else value.split())
+                    and "mw-content-ltr"
+                    in (value if isinstance(value, list) else value.split())
                 ),
             )
         return content_text if isinstance(content_text, Tag) else None

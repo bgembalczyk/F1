@@ -7,4 +7,3 @@ class WikiTableMapperSet:
     """Registry mapperów tabel (etap translacji parse -> domain)."""
 
     table_mapper: Any = None
-

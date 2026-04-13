@@ -12,9 +12,13 @@ from scrapers.columns.types.entrant import EntrantColumn
 from scrapers.columns.types.links_list import LinksListColumn
 from scrapers.columns.types.tyre import TyreColumn
 from scrapers.domain_parsing_policy import DomainParsingPolicy
+from scrapers.orchestration.season_table_parsing_service import (
+    SeasonTableParsingService,
+)
 from scrapers.parsers.entry_merger import EntryMerger
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
-from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import (
+    BaseSeasonParser,
+)
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

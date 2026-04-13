@@ -25,5 +25,4 @@ class SectionServiceFactoryABC(ABC, Generic[ServiceT_co]):
     ) -> ServiceT_co: ...
 
 
-
 __all__ = ["SectionServiceFactoryABC"]

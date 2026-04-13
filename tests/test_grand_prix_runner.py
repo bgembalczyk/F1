@@ -1,6 +1,8 @@
 from pathlib import Path
 
-from complete_extractor.complete_scraper_grands_prix import F1CompleteGrandPrixDataExtractor
+from complete_extractor.complete_scraper_grands_prix import (
+    F1CompleteGrandPrixDataExtractor,
+)
 from layers.runners.layer_job.grand_prix import GrandPrixRunner
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.run_config import RunConfig

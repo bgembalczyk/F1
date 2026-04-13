@@ -81,4 +81,3 @@ class ScraperError(RuntimeError):
             self.category,
             ErrorBehavior.HARD if self.critical else ErrorBehavior.SOFT,
         )
-

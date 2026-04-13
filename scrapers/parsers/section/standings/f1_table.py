@@ -44,4 +44,3 @@ class F1StandingsTableParser(HtmlTagParserABC[list[dict[str, Any]]]):
 
 
 __all__ = ["F1StandingsTableParser"]
-

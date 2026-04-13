@@ -4,9 +4,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.parsers.liveries.sponsorship.scope.handlers import (
-    ColourScopeHandler,
-)
+from scrapers.parsers.liveries.sponsorship.scope.handlers import ColourScopeHandler
 
 
 def test_split_or_colours_splits_on_and() -> None:
@@ -73,9 +71,7 @@ def test_colour_grand_prix_scope_handles_grands_prix_plural() -> None:
 
 def test_colour_list_column_br_as_separator() -> None:
     """<br> inside a colour cell is treated as a value separator."""
-    from scrapers.columns.types.colour import (
-        ColourListColumn,
-    )
+    from scrapers.columns.types.colour import ColourListColumn
 
     col = ColourListColumn()
     cell = BeautifulSoup("<td>White<br>Dark Blue and White</td>", "html.parser").find(
@@ -98,9 +94,7 @@ def test_colour_list_column_br_as_separator() -> None:
 
 def test_colour_list_column_p_as_separator() -> None:
     """<p> boundary inside a colour cell is treated as a value separator."""
-    from scrapers.columns.types.colour import (
-        ColourListColumn,
-    )
+    from scrapers.columns.types.colour import ColourListColumn
 
     col = ColourListColumn()
     cell = BeautifulSoup(
@@ -123,9 +117,7 @@ def test_colour_list_column_p_as_separator() -> None:
 
 def test_colour_list_column_skips_parenthetical_p() -> None:
     """A <p> that consists entirely of parenthetical text is ignored."""
-    from scrapers.columns.types.colour import (
-        ColourListColumn,
-    )
+    from scrapers.columns.types.colour import ColourListColumn
 
     col = ColourListColumn()
     html = (

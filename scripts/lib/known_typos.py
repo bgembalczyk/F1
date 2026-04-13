@@ -37,9 +37,7 @@ def build_default_rules(project_root: Path) -> tuple[TypoRule, ...]:
             disallowed_import="scrapers.wiki.contants",
         ),
         TypoRule(
-            target_packages=(
-                project_root / "scrapers",
-            ),
+            target_packages=(project_root / "scrapers",),
             expected_module_name="section_source_adapter.py",
             disallowed_typo_name="section_soruce_adapter.py",
             disallowed_import=(

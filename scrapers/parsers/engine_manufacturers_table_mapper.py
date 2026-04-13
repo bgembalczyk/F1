@@ -1,5 +1,7 @@
 """Compatibility shim."""
 
-from scrapers.mappers.engine_manufacturers_table_mapper import EngineManufacturersTableMapper
+from scrapers.mappers.engine_manufacturers_table_mapper import (
+    EngineManufacturersTableMapper,
+)
 
-__all__=["EngineManufacturersTableMapper"]
+__all__ = ["EngineManufacturersTableMapper"]

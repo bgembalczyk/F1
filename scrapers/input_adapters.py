@@ -6,7 +6,6 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-
 if TYPE_CHECKING:
     from scrapers.input_types import WikiDictFragmentInput
     from scrapers.input_types import WikiParserInput

@@ -4,9 +4,9 @@ from dataclasses import asdict
 
 from bs4 import BeautifulSoup
 
-from scrapers.section.parse_results import SectionParseResult
-from scrapers.parsers.section.table.base import TableSectionParser
 from scrapers.configs.public import TableConfig
+from scrapers.parsers.section.table.base import TableSectionParser
+from scrapers.section.parse_results import SectionParseResult
 from tests._section_parser_fixture_pattern import SectionContractFixture
 from tests._section_parser_fixture_pattern import assert_section_contract_template
 

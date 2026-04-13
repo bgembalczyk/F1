@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.parsers.section.table.driver_results import DriverResultsSectionParser
 from scrapers.parsers.section.base import SectionParserBase
+from scrapers.parsers.section.table.driver_results import DriverResultsSectionParser
 from scrapers.section.config.driver_results import DriverResultsSectionConfig
 from scrapers.section.parse_results import SectionParseResult
 from scrapers.section.serializer import build_section_parse_result

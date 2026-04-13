@@ -18,7 +18,6 @@ class WikiSourceDefinition:
     profile: RunProfileName = RunProfileName.DEFAULT
 
 
-
 WIKI_SOURCE_DEFINITIONS: tuple[WikiSourceDefinition, ...] = (
     WikiSourceDefinition("circuits", "circuits", "circuits", "f1_circuits.json"),
     WikiSourceDefinition(

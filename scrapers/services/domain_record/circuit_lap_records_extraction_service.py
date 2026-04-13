@@ -22,8 +22,11 @@ class CircuitLapRecordsExtractionService:
         *,
         article_tables_assembler: ArticleTablesAssemblerABC | None = None,
     ) -> None:
-        self._article_tables_assembler = article_tables_assembler or ArticleTablesAssembler(
-            html_parser=ArticleTablesParser(include_source_table=True),
+        self._article_tables_assembler = (
+            article_tables_assembler
+            or ArticleTablesAssembler(
+                html_parser=ArticleTablesParser(include_source_table=True),
+            )
         )
 
     def collect_lap_record_rows(

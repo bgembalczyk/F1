@@ -2,6 +2,8 @@ import pytest
 from bs4 import BeautifulSoup
 
 from models.value_objects.date.normalized import NormalizedDate
+from models.value_objects.lap_record import LapRecord
+from models.value_objects.normalized_time import NormalizedTime
 from scrapers.base.helpers.text import choose_richer_entity
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text import coerce_text
@@ -19,8 +21,6 @@ from scrapers.helpers.text_normalization import normalize_record_keys
 from scrapers.helpers.text_normalization import normalize_text
 from scrapers.helpers.text_normalization import split_delimited_text
 from scrapers.helpers.text_normalization import to_snake_case
-from models.value_objects.lap_record import LapRecord
-from models.value_objects.normalized_time import NormalizedTime
 
 
 @pytest.mark.parametrize(

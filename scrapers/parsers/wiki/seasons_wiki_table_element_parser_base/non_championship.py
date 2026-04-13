@@ -8,8 +8,12 @@ from scrapers.columns.types.driver import DriverColumn
 from scrapers.columns.types.season_date import SeasonDateColumn
 from scrapers.columns.types.text import TextColumn
 from scrapers.columns.types.url import UrlColumn
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
-from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
+from scrapers.orchestration.season_table_parsing_service import (
+    SeasonTableParsingService,
+)
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import (
+    BaseSeasonParser,
+)
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

@@ -5,11 +5,13 @@ from dataclasses import dataclass
 from scrapers.infobox.extraction.service import DriverInfoboxOrchestrator
 from scrapers.options import ScraperOptions
 from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
+from scrapers.services.domain_record.driver_pipeline_service import (
+    DriverDomainRecordService,
+)
 from scrapers.services.section.extraction.driver import DriverSectionExtractionService
 from scrapers.services.section.factories.configurable import (
     ConfigurableSectionServiceFactory,
 )
-from scrapers.services.domain_record.driver_pipeline_service import DriverDomainRecordService
 from scrapers.services.section.factories.section_service_factory import (
     SectionServiceFactoryABC,
 )

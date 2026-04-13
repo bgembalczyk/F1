@@ -9,10 +9,12 @@ from scrapers.helpers.transformers import build_transformers
 from scrapers.infobox.schemas.driver import DRIVER_GENERAL_SCHEMA
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
-from scrapers.parsers.default_driver_infobox_provider import DefaultDriverInfoboxProvider
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
+from scrapers.parsers.default_driver_infobox_provider import (
+    DefaultDriverInfoboxProvider,
+)
 from scrapers.parsers.driver_infobox_provider_abc import DriverInfoboxProviderABC
 from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 
 
 class DriverInfoboxParser(WikiInfoboxElementParserABC):

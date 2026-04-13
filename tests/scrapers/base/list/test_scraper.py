@@ -1,9 +1,9 @@
 import pytest
 from bs4 import BeautifulSoup
 
+from scrapers.base.options import ScraperOptions
 from scrapers.errors import ScraperNotFoundError
 from scrapers.list.base import F1ListScraper
-from scrapers.base.options import ScraperOptions
 
 
 class DummyListScraper(F1ListScraper):

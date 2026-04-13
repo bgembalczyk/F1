@@ -9,10 +9,16 @@ from scrapers.parsers.infobox.constants import used_keys
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoExtractor
 from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryExtractor
-from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordExtractor
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import (
+    CircuitLapRecordExtractor,
+)
 from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoExtractor
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityExtractor
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import (
+    CircuitAdditionalInfoExtractor,
+)
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
+    CircuitEntityExtractor,
+)
 from scrapers.parsers.mixins.safe import SafeParsingMixin
 
 
@@ -232,7 +238,6 @@ class CircuitEntitiesOrchestrator(SafeParsingMixin):
         self._merge_normalized_into_result(result, normalized)
 
         return self.text_utils.prune_nulls(result)
-
 
 
 __all__ = ["CircuitEntitiesOrchestrator"]

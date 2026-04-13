@@ -1,5 +1,5 @@
+from collections.abc import Iterable
 from typing import Any
-from typing import Iterable
 
 from scrapers.parsers.infobox.field.base import HtmlInfoboxFieldParser
 

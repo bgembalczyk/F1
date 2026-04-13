@@ -3,8 +3,8 @@ from typing import Any
 from typing import Protocol
 from typing import runtime_checkable
 
-from infrastructure.http.errors.base import RequestError
 from complete_extractor.data_extractor import BaseDataExtractor
+from infrastructure.http.errors.base import RequestError
 from scrapers.errors.domain_parse import DomainParseError
 from scrapers.errors.network import ScraperNetworkError
 from scrapers.errors.parse import ScraperParseError

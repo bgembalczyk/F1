@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 from scrapers.parsers.wiki.section.sponsorship import SponsorshipSectionParser

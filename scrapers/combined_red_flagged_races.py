@@ -6,6 +6,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.helpers.transformers import append_transformer
 from scrapers.options import ScraperOptions
+from scrapers.parsers.section.nested_section.red_flagged_races import (
+    RedFlaggedRacesSectionParser,
+)
 from scrapers.parsers.table.red_flagged_races import WIKIPEDIA_BASE_URL
 from scrapers.parsers.table.red_flagged_races import NonChampionshipRacesTableMapper
 from scrapers.parsers.table.red_flagged_races import WorldChampionshipsRacesTableMapper
@@ -21,7 +24,6 @@ from scrapers.parsers.table.red_flagged_races_wiki_table import map_drivers_cell
 from scrapers.parsers.table.red_flagged_races_wiki_table import map_winner_cell
 from scrapers.parsers.table.red_flagged_races_wiki_table import try_int
 from scrapers.parsers.wiki.body_content_assembler import BodyContentAssembler
-from scrapers.parsers.section.nested_section.red_flagged_races import RedFlaggedRacesSectionParser
 from scrapers.scraper_wiki import WikiScraper
 from scrapers.source_catalog import RED_FLAGGED_RACES
 from scrapers.transformers.record.failed_to_make_restart import (

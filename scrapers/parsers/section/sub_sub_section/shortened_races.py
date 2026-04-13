@@ -4,8 +4,8 @@ from bs4 import Tag
 
 from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.shortened_races_points_table_mapper import ShortenedRacesPointsTableMapper
 from scrapers.parsers.section.sub_sub_section.base import SubSubSectionParser
+from scrapers.shortened_races_points_table_mapper import ShortenedRacesPointsTableMapper
 
 
 class ShortenedRacesSubSubSectionParser(ApplyForElementsMixin, SubSubSectionParser):

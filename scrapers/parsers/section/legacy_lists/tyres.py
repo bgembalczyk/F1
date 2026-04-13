@@ -37,7 +37,12 @@ class TyreManufacturersBySeasonTableMapper(WikiTableBaseMapper):
 
 
 class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
-    def __init__(self, *, table_mapper: WikiTableBaseMapper | None = None, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *,
+        table_mapper: WikiTableBaseMapper | None = None,
+        **kwargs: Any,
+    ) -> None:
         super().__init__(toolbox=kwargs.get("toolbox"))
         self._table_mapper = table_mapper or TyreManufacturersBySeasonTableMapper()
 
@@ -48,10 +53,17 @@ class TyreManufacturersBySeasonSubSectionParser(SubSectionParser):
 
 
 class ManufacturersSectionParser(NestedWikiSectionParser):
-    def __init__(self, *, child_parser: NestedChildParser | None = None, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *,
+        child_parser: NestedChildParser | None = None,
+        **kwargs: Any,
+    ) -> None:
         toolbox = kwargs.get("toolbox")
         super().__init__(toolbox=toolbox)
-        self.child_parser = child_parser or TyreManufacturersBySeasonSubSectionParser(toolbox=toolbox)
+        self.child_parser = child_parser or TyreManufacturersBySeasonSubSectionParser(
+            toolbox=toolbox,
+        )
 
 
 __all__ = [

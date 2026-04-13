@@ -9,13 +9,13 @@ from typing import Literal
 from typing import TypeAlias
 
 import scrapers.parsers as parsers_pkg
-from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.element_registry import WIKI_SELECTOR_FAMILY_MAP
 
 DomainName = Literal["drivers", "constructors", "circuits", "seasons", "grands_prix"]
@@ -84,14 +84,14 @@ def validate_parser_registry(
             raise ValueError(
                 "Parser registry contract mismatch for "
                 f"{entry.key.domain}:{entry.key.element_type}:{entry.key.section_id or '-'} "
-                f"(expected {expected_base.__name__}, got {entry.parser_base.__name__})"
+                f"(expected {expected_base.__name__}, got {entry.parser_base.__name__})",
             )
 
         existing = parser_base_by_element_type.get(entry.key.element_type)
         if existing is not None and existing is not entry.parser_base:
             raise ValueError(
                 "Inconsistent ABC family for element type "
-                f"{entry.key.element_type}: {existing.__name__} vs {entry.parser_base.__name__}"
+                f"{entry.key.element_type}: {existing.__name__} vs {entry.parser_base.__name__}",
             )
         parser_base_by_element_type[entry.key.element_type] = entry.parser_base
 
@@ -114,13 +114,13 @@ def validate_parser_registry(
 
     expected_selector_keys = set(AUTO_ELEMENT_PARSER_BASES)
     selector_keys = {
-        key
-        for key in WIKI_SELECTOR_FAMILY_MAP
-        if key in expected_selector_keys
+        key for key in WIKI_SELECTOR_FAMILY_MAP if key in expected_selector_keys
     }
     if selector_keys != expected_selector_keys:
         missing = sorted(expected_selector_keys - selector_keys)
-        raise ValueError(f"Missing wiki selector families for keys: {', '.join(missing)}")
+        raise ValueError(
+            f"Missing wiki selector families for keys: {', '.join(missing)}",
+        )
 
     for element_type, parser_base in AUTO_ELEMENT_PARSER_BASES.items():
         expected_html_family = EXPECTED_HTML_FAMILY_ABCS[element_type]
@@ -128,7 +128,7 @@ def validate_parser_registry(
             raise ValueError(
                 "Invalid HTML/ABC family mapping for "
                 f"{element_type}: {parser_base.__name__} is not "
-                f"a subclass of {expected_html_family.__name__}"
+                f"a subclass of {expected_html_family.__name__}",
             )
 
 

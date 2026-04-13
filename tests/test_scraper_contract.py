@@ -9,10 +9,10 @@ from bs4 import BeautifulSoup
 
 from scrapers.abc import ABCScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.columns.types.auto import AutoColumn
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.circuits_list_scraper import CircuitsListScraper
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
+from scrapers.circuits_list_scraper import CircuitsListScraper
+from scrapers.columns.types.auto import AutoColumn
 from scrapers.configs.public import TableConfig
 from tests.support.dependency_stubs import ensure_optional_deps
 

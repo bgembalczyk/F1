@@ -1,11 +1,13 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.columns.types.points import PointsColumn
-from scrapers.columns.types.multi.name_status_column.driver import DriverNameStatusColumn
 from scrapers.columns.types.entries_starts import EntriesStartsColumn
 from scrapers.columns.types.fatality_date import FatalityDateColumn
 from scrapers.columns.types.fatality_event import FatalityEventColumn
+from scrapers.columns.types.multi.name_status_column.driver import (
+    DriverNameStatusColumn,
+)
+from scrapers.columns.types.points import PointsColumn
 
 EXPECTED_ENTRIES = 12
 EXPECTED_STARTS = 10

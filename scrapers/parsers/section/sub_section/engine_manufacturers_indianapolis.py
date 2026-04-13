@@ -3,8 +3,10 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.parsers.list_element.engine_manufacturers_list import (
+    IndianapolisOnlyListParser,
+)
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.list_element.engine_manufacturers_list import IndianapolisOnlyListParser
 from scrapers.parsers.section.sub_section.base import SubSectionParser
 
 
@@ -46,4 +48,3 @@ class EngineManufacturersIndianapolisSubSectionParser(SubSectionParser):
             parsed_tag = BeautifulSoup(raw_html, "html.parser").find(["ul", "ol"])
             if isinstance(parsed_tag, Tag):
                 element["data"] = self._list_parser.parse(parsed_tag)
-

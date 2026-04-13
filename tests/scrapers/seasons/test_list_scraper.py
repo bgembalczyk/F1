@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from scrapers.parsers.wiki.base_nested_section.nested_section.seasons import SeasonsSectionParser
-from scrapers.parsers.wiki.base_nested_section.nested_section.seasons import SeasonsTableParser
+from scrapers.parsers.wiki.base_nested_section.nested_section.seasons import (
+    SeasonsSectionParser,
+)
 from scrapers.seasons.list_scraper_seasons import SeasonsSectionParser
 from scrapers.seasons.list_scraper_seasons import SeasonsTableMapper
 

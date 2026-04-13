@@ -3,9 +3,9 @@ from pathlib import Path
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.executors.one import LayerOneExecutor
+from layers.executors.zero import LayerZeroExecutor
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
-from layers.executors.zero import LayerZeroExecutor
 from layers.zero.merge_service import LayerZeroMergeService
 from scrapers.run_config import RunConfig
 

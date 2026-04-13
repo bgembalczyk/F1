@@ -3,24 +3,22 @@
 import pytest
 
 from scrapers.abc import ABCScraper
-from scrapers.list.base import F1ListScraper
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.parsers.infobox.circuit import F1CircuitInfoboxParser
 from scrapers.circuits.circuits_single_scraper import F1SingleCircuitScraper
 from scrapers.constructors_single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper_drivers import SingleDriverScraper
 from scrapers.engines.single_scraper_engines import SingleEngineManufacturerScraper
+from scrapers.list.base import F1ListScraper
+from scrapers.parsers.infobox.circuit import F1CircuitInfoboxParser
+from scrapers.parsers.wiki.infobox import WikiInfoboxParser
+from scrapers.parsers.wiki.sub_sub_sub_section import WikiElementParserMixin
+from scrapers.parsers.wiki.table import WikiTableParser
+from scrapers.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
+from scrapers.scraper_wiki import WikiScraper
 from scrapers.single_scraper_grands_prix import F1SingleGrandPrixScraper
 from scrapers.single_scraper_seasons import SingleSeasonScraper
-from scrapers.scraper_sponsorship_liveries import (
-    F1SponsorshipLiveriesScraper,
-)
 from scrapers.standings_scraper_seasons import F1StandingsScraper
 from scrapers.standings_scraper_seasons import F1StandingsTableParser
-from scrapers.parsers.wiki.infobox import WikiInfoboxParser
-from scrapers.parsers.wiki.table import WikiTableParser
-from scrapers.parsers.wiki.sub_sub_sub_section import WikiElementParserMixin
-from scrapers.scraper_wiki import WikiScraper
 from tests.support.refactored_base_classes_utils import assert_issubclass_cases
 from tests.support.refactored_base_classes_utils import assert_not_issubclass_cases
 

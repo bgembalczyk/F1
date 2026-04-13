@@ -188,7 +188,9 @@ def test_parse_website_none() -> None:
 
 
 def test_parse_website_text_only() -> None:
-    result = CircuitEntityExtractor._parse_website({"text": "www.monza.it", "links": []})
+    result = CircuitEntityExtractor._parse_website(
+        {"text": "www.monza.it", "links": []},
+    )
     assert result == "www.monza.it"
 
 

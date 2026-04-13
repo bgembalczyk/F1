@@ -4,17 +4,17 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.columns.types.seasons import LAST_YEAR_FORMULA_ONE_SEASON
 from scrapers.circuits_list_scraper import CircuitsListScraper
+from scrapers.columns.types.seasons import LAST_YEAR_FORMULA_ONE_SEASON
 from scrapers.constructors_list import ConstructorsListScraper
-from scrapers.parsers.section.constructors.base import (
-    CurrentConstructorsSectionParser,
+from scrapers.orchestration.season_table_parsing_service import (
+    SeasonTableParsingService,
 )
-from scrapers.parsers.section.constructors.base import (
-    FormerConstructorsSectionParser,
+from scrapers.parsers.section.constructors.base import CurrentConstructorsSectionParser
+from scrapers.parsers.section.constructors.base import FormerConstructorsSectionParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results import (
+    SeasonResultsParser,
 )
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.results import SeasonResultsParser
-from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
 from tests._section_parser_fixture_pattern import ALIAS_FIXTURES
 
 ALIAS_DOMAINS = ("constructors", "circuits", "seasons")

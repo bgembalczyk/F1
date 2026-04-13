@@ -1,5 +1,4 @@
 from abc import ABC
-
 from pathlib import Path
 
 from scrapers.component_metadata_wiki import validate_metadata_for_component_class

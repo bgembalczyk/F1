@@ -20,6 +20,7 @@ class SectionMatchPriorities:
             return self.exact_text_score
         return self.fuzzy_base_score
 
+
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 
-__all__ = ['SectionExtractionContext', 'SectionMatchPriorities']
+__all__ = ["SectionExtractionContext", "SectionMatchPriorities"]

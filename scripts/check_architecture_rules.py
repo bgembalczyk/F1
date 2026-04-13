@@ -255,7 +255,10 @@ def check_parser_compat_imports_and_aliases() -> list[str]:
                         )
             elif isinstance(node, ast.Assign):
                 for target in node.targets:
-                    if isinstance(target, ast.Name) and target.id == PARSER_COMPAT_ALIAS[0]:
+                    if (
+                        isinstance(target, ast.Name)
+                        and target.id == PARSER_COMPAT_ALIAS[0]
+                    ):
                         if (
                             isinstance(node.value, ast.Name)
                             and node.value.id == PARSER_COMPAT_ALIAS[1]
@@ -293,7 +296,10 @@ def check_parser_contract_enforcement() -> list[str]:
     violations: list[str] = []
     for scope in PARSER_CONTRACT_SCOPES:
         for py_file in scope.rglob("*.py"):
-            module = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
+            module = ast.parse(
+                py_file.read_text(encoding="utf-8"),
+                filename=str(py_file),
+            )
             for node in module.body:
                 if not isinstance(node, ast.ClassDef):
                     continue

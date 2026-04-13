@@ -84,6 +84,7 @@ class RequestExecutor:
         Wykonuje wiele requestów w sposób współbieżny (batch).
         Pomaga to uniknąć problemu N+1 zapytań dla zapytań sekwencyjnych.
         """
+
         def _execute_single(url: str) -> Any:
             return self.execute(
                 url=url,

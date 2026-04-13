@@ -22,4 +22,7 @@ def test_parse_entries_with_missing_start_value() -> None:
         "entries": 120,
         "starts": 95,
     }
-    assert NumericExtractor.parse_entries(cell("120")) == {"entries": 120, "starts": None}
+    assert NumericExtractor.parse_entries(cell("120")) == {
+        "entries": 120,
+        "starts": None,
+    }

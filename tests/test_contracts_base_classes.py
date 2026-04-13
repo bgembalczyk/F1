@@ -4,8 +4,12 @@ import pytest
 
 from complete_extractor.circuits_complete_scraper import F1CompleteCircuitDataExtractor
 from complete_extractor.complete_scraper_drivers import CompleteDriverDataExtractor
-from complete_extractor.complete_scraper_engines import F1CompleteEngineManufacturerDataExtractor
-from complete_extractor.complete_scraper_grands_prix import F1CompleteGrandPrixDataExtractor
+from complete_extractor.complete_scraper_engines import (
+    F1CompleteEngineManufacturerDataExtractor,
+)
+from complete_extractor.complete_scraper_grands_prix import (
+    F1CompleteGrandPrixDataExtractor,
+)
 from complete_extractor.composite_scraper import CompositeDataExtractor
 from complete_extractor.data_extractor import BaseDataExtractor
 from scrapers.abc import ABCScraper

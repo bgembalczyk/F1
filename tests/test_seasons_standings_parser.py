@@ -3,7 +3,6 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base import SeasonStandingsService
 from scrapers.seasons.parsers_seasons.standings import SeasonStandingsParser
 
 
@@ -50,7 +49,10 @@ def test_parse_marks_ineligible_section_and_shares_fastest_lap_for_drivers() -> 
         ),
     )
 
-    result = parser.parse(BeautifulSoup("<html></html>", "html.parser"), standings="drivers")
+    result = parser.parse(
+        BeautifulSoup("<html></html>", "html.parser"),
+        standings="drivers",
+    )
 
     _expected_share_count = 2
     assert [row["driver"]["text"] for row in result] == ["Driver A", "Driver B"]
@@ -94,7 +96,10 @@ def test_parse_merges_duplicate_rows_into_one_domain_result_for_constructors() -
         ),
     )
 
-    result = parser.parse(BeautifulSoup("<html></html>", "html.parser"), standings="constructors")
+    result = parser.parse(
+        BeautifulSoup("<html></html>", "html.parser"),
+        standings="constructors",
+    )
 
     assert len(result) == 1
     assert "no" not in result[0]

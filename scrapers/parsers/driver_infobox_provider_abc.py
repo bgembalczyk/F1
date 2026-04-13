@@ -13,4 +13,3 @@ class DriverInfoboxProviderABC(ParsingBundleProviderABC[DriverInfoboxBundle]):
         schema: object,
         logger: object,
     ) -> DriverInfoboxBundle: ...
-

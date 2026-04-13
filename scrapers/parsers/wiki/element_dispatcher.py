@@ -4,7 +4,6 @@ from dataclasses import dataclass
 
 from models.payload import WikiParsedPayload
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.wiki.element_payload_factory import ElementParseResult
 from scrapers.parsers.wiki.element_payload_factory import ElementPayloadFactory
 from scrapers.parsers.wiki.element_payload_factory import PassthroughElementClassifier
 from scrapers.parsers.wiki.element_payload_factory import WikiParsedPayloadMapper

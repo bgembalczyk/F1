@@ -10,16 +10,22 @@ from scrapers.infobox.wikipedia import WikipediaInfoboxScraper
 from scrapers.logging import get_logger
 from scrapers.options import ScraperOptions
 from scrapers.parsers.circuit_entities_orchestrator import CircuitEntitiesOrchestrator
+from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
 from scrapers.parsers.infobox.helpers import parse_infobox_from_soup
 from scrapers.parsers.infobox.text_utils.base import InfoboxTextUtils
 from scrapers.parsers.infobox.text_utils.circuit.geo import CircuitGeoExtractor
 from scrapers.parsers.infobox.text_utils.circuit.history import CircuitHistoryExtractor
-from scrapers.parsers.infobox.text_utils.circuit.lap_record import CircuitLapRecordExtractor
+from scrapers.parsers.infobox.text_utils.circuit.lap_record import (
+    CircuitLapRecordExtractor,
+)
 from scrapers.parsers.infobox.text_utils.circuit.layouts import CircuitLayoutsExtractor
 from scrapers.parsers.infobox.text_utils.circuit.specs import CircuitSpecsExtractor
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import CircuitAdditionalInfoExtractor
-from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import CircuitEntityExtractor
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.additional_info import (
+    CircuitAdditionalInfoExtractor,
+)
+from scrapers.parsers.infobox.text_utils.circuit.text_processing.entity.base import (
+    CircuitEntityExtractor,
+)
 from scrapers.types import ExportableRecord
 
 

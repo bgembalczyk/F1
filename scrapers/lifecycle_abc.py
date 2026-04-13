@@ -20,4 +20,3 @@ class ScraperLifecycleABC(ABC):
     @abstractmethod
     def build_result(self, data: list[ExportRecord] | None = None) -> ScrapeResult:
         """Build finalized scrape result with metadata."""
-

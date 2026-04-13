@@ -26,14 +26,22 @@ class SectionInfoboxesHtmlParserABC(HtmlSoupParserABC[list[InfoboxPayload]], ABC
     def parse(self, raw: BeautifulSoup) -> list[InfoboxPayload]: ...
 
 
-class SectionInfoboxClassifierABC(ClassifierABC[InfoboxPayload, ClassificationT], ABC, Generic[ClassificationT]):
+class SectionInfoboxClassifierABC(
+    ClassifierABC[InfoboxPayload, ClassificationT],
+    ABC,
+    Generic[ClassificationT],
+):
     """Optional classifier for infobox payloads."""
 
     @abstractmethod
     def classify(self, infobox_data: InfoboxPayload) -> ClassificationT | None: ...
 
 
-class SectionInfoboxRecordMapperABC(MapperABC[InfoboxPayload, InfoboxRecord | None], ABC, Generic[ClassificationT, PipelineT]):
+class SectionInfoboxRecordMapperABC(
+    MapperABC[InfoboxPayload, InfoboxRecord | None],
+    ABC,
+    Generic[ClassificationT, PipelineT],
+):
     """Mapper from parsed infobox payload + classification into domain record."""
 
     @abstractmethod

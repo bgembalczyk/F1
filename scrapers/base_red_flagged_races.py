@@ -18,7 +18,9 @@ from scrapers.options import ScraperOptions
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.scraper_table import F1TableScraper
 from scrapers.section.resolve_candidates import resolve_section_candidates
-from scrapers.transformers.record.failed_to_make_restart import FailedToMakeRestartTransformer
+from scrapers.transformers.record.failed_to_make_restart import (
+    FailedToMakeRestartTransformer,
+)
 
 logger = logging.getLogger(__name__)
 

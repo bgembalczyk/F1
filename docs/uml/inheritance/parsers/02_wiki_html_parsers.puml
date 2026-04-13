@@ -4,6 +4,13 @@ skinparam classAttributeIconSize 0
 hide empty members
 hide circle
 
+class CircuitInfoboxParser
+class DriverInfoboxParser
+class FigureElementParser
+class InfoboxElementParser
+class ListElementParser
+class NavboxElementParser
+class SectionElementParser
 abstract class WikiArticleParserABC
 class WikiFigureElementParser
 abstract class WikiFigureElementParserABC
@@ -23,11 +30,14 @@ class WikiReferencesElementParser
 abstract class WikiReferencesElementParserABC
 class WikiSectionElementParser
 abstract class WikiSectionElementParserABC
-class WikiTableElementParser
-abstract class WikiTableElementParserABC
-class WikiTableHtmlParser
-class WikiTableParser
 
+WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
+WikiInfoboxElementParserABC <|-- DriverInfoboxParser
+WikiFigureElementParserABC <|-- FigureElementParser
+WikiInfoboxElementParserABC <|-- InfoboxElementParser
+WikiListElementParserABC <|-- ListElementParser
+WikiNavboxElementParserABC <|-- NavboxElementParser
+WikiSectionElementParserABC <|-- SectionElementParser
 WikiFigureElementParserABC <|-- WikiFigureElementParser
 WikiFigureElementParserABC <|-- WikiFigureParser
 WikiInfoboxElementParserABC <|-- WikiInfoboxElementParser
@@ -39,8 +49,5 @@ WikiNavboxElementParserABC <|-- WikiNavboxParser
 WikiParagraphElementParserABC <|-- WikiParagraphElementParser
 WikiReferencesElementParserABC <|-- WikiReferencesElementParser
 WikiSectionElementParserABC <|-- WikiSectionElementParser
-WikiTableElementParserABC <|-- WikiTableElementParser
-WikiTableElementParserABC <|-- WikiTableHtmlParser
-WikiTableHtmlParser <|-- WikiTableParser
 
 @enduml

@@ -15,7 +15,6 @@ FORBIDDEN_FROM_IMPORTS = {
 FORBIDDEN_BASE_FACTORY_SYMBOLS = {"RecordBuilderProtocol", "RecordFactoryProtocol"}
 
 
-
 def _iter_python_files(root: Path) -> list[Path]:
     return [
         path
@@ -45,7 +44,9 @@ def _forbidden_import_from_errors(path: Path, node: ast.ImportFrom) -> list[str]
 
     if node.module == "models.records.base_factory":
         forbidden_symbols = [
-            alias.name for alias in node.names if alias.name in FORBIDDEN_BASE_FACTORY_SYMBOLS
+            alias.name
+            for alias in node.names
+            if alias.name in FORBIDDEN_BASE_FACTORY_SYMBOLS
         ]
         return [
             f"{path}:{node.lineno} forbidden symbol '{symbol}' from "

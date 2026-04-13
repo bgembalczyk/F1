@@ -10,8 +10,12 @@ from scrapers.columns.types.driver_list import DriverListColumn
 from scrapers.columns.types.driver_rounds import DriversWithRoundsColumn
 from scrapers.helpers.parsing import parse_int_from_text
 from scrapers.helpers.transform_micro_ops import pop_list_field
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
-from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
+from scrapers.orchestration.season_table_parsing_service import (
+    SeasonTableParsingService,
+)
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import (
+    BaseSeasonParser,
+)
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

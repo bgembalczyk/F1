@@ -1,5 +1,9 @@
-from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import PipelineRecord
-from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_rule import SplitRule
+from scrapers.parsers.liveries.sponsorship.splitters.record.pipeline_record import (
+    PipelineRecord,
+)
+from scrapers.parsers.liveries.sponsorship.splitters.record.protocols.split_rule import (
+    SplitRule,
+)
 
 
 class HasMultipleSeasonsRule(SplitRule):

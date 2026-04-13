@@ -52,11 +52,15 @@ def test_no_mapper_in_parser_field() -> None:
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
             if isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name):
-                if node.target.id.endswith("_parser") and "Mapper" in ast.unparse(node.annotation):
+                if node.target.id.endswith("_parser") and "Mapper" in ast.unparse(
+                    node.annotation,
+                ):
                     violations.append(f"{path}:{node.target.id}")
             if isinstance(node, ast.Assign):
                 names = [t.id for t in node.targets if isinstance(t, ast.Name)]
                 for name in names:
                     if name.endswith("_parser") and "Mapper" in ast.unparse(node.value):
                         violations.append(f"{path}:{name}")
-    assert not violations, "Mapper assigned to *_parser fields: " + ", ".join(violations)
+    assert not violations, "Mapper assigned to *_parser fields: " + ", ".join(
+        violations,
+    )

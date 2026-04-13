@@ -7,8 +7,12 @@ from bs4 import Tag
 
 from scrapers.matches_mixin import MatchesMixin
 from scrapers.parsers.mixins.group import GroupParsingMixin
-from scrapers.parsers.mixins.wiki.table_payload.collect import WikiTablePayloadCollectMixin
-from scrapers.parsers.mixins.wiki.table_payload.transform import WikiTablePayloadTransformMixin
+from scrapers.parsers.mixins.wiki.table_payload.collect import (
+    WikiTablePayloadCollectMixin,
+)
+from scrapers.parsers.mixins.wiki.table_payload.transform import (
+    WikiTablePayloadTransformMixin,
+)
 from scrapers.parsers.table_parser_abc import TableParserABC
 from scrapers.row_mapping_mixin import RowMappingMixin
 from scrapers.table_domain_mapper_abc import TableDomainMapperABC

@@ -1,9 +1,7 @@
 # ruff: noqa: E501, PLR2004
 """Tests for SponsorshipRecordText covering uncovered lines."""
 
-from scrapers.sponsorship_record_text import (
-    SponsorshipRecordText,
-)
+from scrapers.sponsorship_record_text import SponsorshipRecordText
 
 
 class TestExpandYearRange:

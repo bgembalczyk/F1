@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
 from dataclasses import field
-from typing import Callable
 
 from bs4 import Tag
 
@@ -29,7 +29,9 @@ class ElementParseInput:
 
     tag: Tag
     metadata: dict[str, object] | None = None
-    section_context: SectionExtractionContext = field(default_factory=SectionExtractionContext)
+    section_context: SectionExtractionContext = field(
+        default_factory=SectionExtractionContext,
+    )
 
     @property
     def domain(self) -> str | None:
@@ -110,7 +112,9 @@ class ElementRegistry:
             missing = ", ".join(sorted(missing_predicates))
             raise ValueError(f"Missing selector predicates for families: {missing}")
 
-        registered_families = {registration.element_type for registration in self.registrations}
+        registered_families = {
+            registration.element_type for registration in self.registrations
+        }
         missing_registrations = {
             family
             for family in WIKI_SELECTOR_FAMILY_MAP
@@ -128,7 +132,9 @@ class ElementRegistry:
         section_id: str | None,
         section_profile: str | None,
     ) -> ElementRegistration | None:
-        normalized_section_id = normalize_section_text(section_id) if section_id else None
+        normalized_section_id = (
+            normalize_section_text(section_id) if section_id else None
+        )
         candidates: list[tuple[int, ElementRegistration]] = []
         for registration in self.registrations:
             if registration.element_type != element_type:

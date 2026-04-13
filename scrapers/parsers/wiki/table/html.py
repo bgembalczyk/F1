@@ -8,8 +8,8 @@ from scrapers.helpers.background import extract_background
 from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.contracts.wiki_elements import WikiTableElementParserABC
+from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.wiki.parser_mixins import HeaderNormalizationMixin
 from scrapers.parsers.wiki.parser_mixins import TableCellExtractionMixin
 

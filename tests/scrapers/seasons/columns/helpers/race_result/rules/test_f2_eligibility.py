@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 from scrapers.columns.helpers.race_result.rules import F2EligibilityRule
-from scrapers.columns.helpers.race_result.rules.context import (
-    ResultRuleContext,
-)
+from scrapers.columns.helpers.race_result.rules.context import ResultRuleContext
 
 
 def test_f2_eligibility_marks_driver_ineligible_in_f2_year_with_footnote_1() -> None:

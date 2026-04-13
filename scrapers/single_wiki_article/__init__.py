@@ -4,9 +4,6 @@ from scrapers.section.selection_strategy.wikipedia_by_id import (
 from scrapers.single_wiki_article.section.single_article_section_adapter_base import (
     SectionAdapterScraperBase,
 )
-from scrapers.single_wiki_article.section.single_article_section_adapter_base import (
-    SectionAdapterScraperBase,
-)
 from scrapers.single_wiki_article.section.single_article_section_by_id_base import (
     SectionByIdScraperBase,
 )

@@ -8,8 +8,8 @@ from infrastructure.http.protocols.client import JsonValue
 from infrastructure.http.protocols.client import SessionProtocol
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
 from models.serializers import SerializerProtocol
-from scrapers.errors import ScraperParseError
 from scrapers.base.parsers.soup import SoupParser
+from scrapers.errors import ScraperParseError
 
 if TYPE_CHECKING:
     from collections.abc import Mapping

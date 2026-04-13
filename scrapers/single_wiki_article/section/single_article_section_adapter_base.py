@@ -18,8 +18,6 @@ class SectionAdapterScraperBase(
     """Base for article scrapers that assemble records via SectionAdapter."""
 
 
-
-
 __all__ = [
     "SectionAdapterScraperBase",
 ]

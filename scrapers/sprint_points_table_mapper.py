@@ -3,12 +3,12 @@ from typing import Any
 from models.services.season import parse_seasons
 from scrapers.constants.constants_points import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.helpers.parsing import parse_int_from_text
+from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.points_constant import SPRINT_DISQUALIFYING_HEADERS
 from scrapers.points_constant import SPRINT_POSITION_KEYS
 from scrapers.points_helpers import build_expected_header_lookup
 from scrapers.points_helpers import normalize_column_name
 from scrapers.points_helpers import normalize_header
-from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
 
 class SprintPointsTableMapper(WikiTableBaseMapper):
@@ -62,4 +62,3 @@ class SprintPointsTableMapper(WikiTableBaseMapper):
             else:
                 transformed[key] = value
         return transformed
-

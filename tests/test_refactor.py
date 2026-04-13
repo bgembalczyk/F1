@@ -4,9 +4,7 @@ from unittest.mock import MagicMock
 # Mock bs4
 sys.modules["bs4"] = MagicMock()
 
-from scrapers.columns.types.sponsor import (
-    SponsorColumn,
-)
+from scrapers.columns.types.sponsor import SponsorColumn
 
 links = [{"text": "Sponsor A"}, {"text": "Sponsor D —"}]
 best = SponsorColumn._find_matching_link("Sponsor D — ", links)

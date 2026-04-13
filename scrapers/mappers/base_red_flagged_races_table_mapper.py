@@ -37,4 +37,3 @@ class BaseRedFlaggedRacesTableMapper(WikiTableBaseMapper):
                 row["failed_to_make_restart"] = [entry] if entry is not None else []
                 merged.append(row)
         return merged
-

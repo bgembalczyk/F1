@@ -60,7 +60,9 @@ def _has_concrete_parse_provider(parser_type: type) -> bool:
 
 def test_non_abc_parsers_are_instantiable_and_parse_capable() -> None:
     targets = _discover_contract_targets()
-    qualified_names = {f"{module}.{parser_type.__name__}" for module, parser_type in targets}
+    qualified_names = {
+        f"{module}.{parser_type.__name__}" for module, parser_type in targets
+    }
 
     assert "scrapers.parsers.wiki.table.WikiTableParser" in qualified_names
 

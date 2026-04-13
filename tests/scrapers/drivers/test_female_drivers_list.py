@@ -1,5 +1,7 @@
 # ruff: noqa: E501, PLR2004, SLF001
-from scrapers.parsers.section.legacy_lists.female_drivers import OfficialDriversSubSectionParser
+from scrapers.parsers.section.legacy_lists.female_drivers import (
+    OfficialDriversSubSectionParser,
+)
 
 
 def test_official_drivers_sub_section_parser_apply_for_elements_skips_non_table() -> (

@@ -1,8 +1,8 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 from dataclasses import dataclass
 
-from scrapers.results import ScrapeResult
 from scrapers.base.services.result_normalizer import ScrapeResultNormalizer
+from scrapers.results import ScrapeResult
 
 
 def test_scrape_result_normalizes_mixed_data() -> None:

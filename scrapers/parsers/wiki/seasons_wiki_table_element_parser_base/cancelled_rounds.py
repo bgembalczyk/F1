@@ -10,12 +10,22 @@ from scrapers.columns.types.season_date import SeasonDateColumn
 from scrapers.columns.types.url import UrlColumn
 from scrapers.config_table import TableConfig
 from scrapers.helpers.html_utils import find_section_tables
+from scrapers.orchestration.season_table_parsing_service import (
+    SeasonTableParsingService,
+)
 from scrapers.parsers.html_table import HtmlTableParser
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import CANCELLED_ROUNDS_TABLE_INDEX
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import EXPECTED_HEADERS
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import MIN_TABLES_WITH_CANCELLED
-from scrapers.orchestration.season_table_parsing_service import SeasonTableParsingService
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import (
+    BaseSeasonParser,
+)
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import (
+    CANCELLED_ROUNDS_TABLE_INDEX,
+)
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import (
+    EXPECTED_HEADERS,
+)
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.constants import (
+    MIN_TABLES_WITH_CANCELLED,
+)
 from scrapers.pipeline_table import TablePipeline
 from scrapers.table_parsing_helper import TableParsingHelper
 from scrapers.table_schema_dsl import TableSchemaDSL

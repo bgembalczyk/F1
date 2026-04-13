@@ -14,7 +14,9 @@ class SponsorshipTableSchemaBuilder:
     def build(seasons_col_factory: Any) -> TableSchemaDSL:
         return TableSchemaDSL(
             columns=[
-                *SponsorshipTableSchemaBuilder._season_column_specs(seasons_col_factory),
+                *SponsorshipTableSchemaBuilder._season_column_specs(
+                    seasons_col_factory,
+                ),
                 *SponsorshipTableSchemaBuilder._driver_column_specs(),
                 *SponsorshipTableSchemaBuilder._colour_column_specs(),
                 *SponsorshipTableSchemaBuilder._sponsor_column_specs(),

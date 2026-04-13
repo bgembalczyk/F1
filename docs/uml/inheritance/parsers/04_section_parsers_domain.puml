@@ -5,6 +5,8 @@ hide empty members
 hide circle
 
 abstract class ApplyForElementsMixin
+abstract class BaseDriverResultsSectionParser
+abstract class BaseSeasonParser
 class CancelledRoundsParser
 class CircuitEventsSectionParser
 class CircuitLapRecordsSectionParser
@@ -37,18 +39,47 @@ class SeasonRegulationChangesSectionParser
 class SeasonResultsParser
 class SeasonResultsSectionParser
 class SeasonScoringSystemParser
+abstract class SectionParserBase
 abstract class SectionTableParseMixin
 class SponsorshipSectionParser
+class TableSectionParser
 class TeamLiveriesSectionParser
 class TestingVenuesParser
 
+SectionParserBase <|-- BaseDriverResultsSectionParser
+BaseSeasonParser <|-- CancelledRoundsParser
+TableSectionParser <|-- CircuitEventsSectionParser
+TableSectionParser <|-- CircuitLapRecordsSectionParser
+SectionParserBase <|-- CircuitLayoutHistorySectionParser
+SectionParserBase <|-- CircuitsListSectionParser
+BaseSeasonParser <|-- ColinChapmanTrophyParser
 ConstructorTablesSectionParser <|-- ConstructorChampionshipResultsSectionParser
 ConstructorTablesSectionParser <|-- ConstructorCompleteF1ResultsSectionParser
 ConstructorTablesSectionParser <|-- ConstructorHistorySectionParser
+SectionParserBase <|-- ConstructorTablesSectionParser
+SectionParserBase <|-- ConstructorsSectionParser
 ConstructorsSectionParser <|-- CurrentConstructorsSectionParser
 SectionTableParseMixin <|-- DeclarativeSectionTableParseMixin
+TableSectionParser <|-- DriverResultsSectionParser
 ConstructorsSectionParser <|-- FormerConstructorsSectionParser
+SectionParserBase <|-- GrandPrixByYearSectionParser
+BaseSeasonParser <|-- JimClarkTrophyParser
+BaseSeasonParser <|-- SeasonCalendarParser
+SectionParserBase <|-- SeasonCalendarSectionParser
+SectionParserBase <|-- SeasonConstructorsStandingsSectionParser
+SectionParserBase <|-- SeasonDriversStandingsSectionParser
+BaseSeasonParser <|-- SeasonEntriesParser
+BaseSeasonParser <|-- SeasonFreePracticeParser
 ExtractListItemsMixin <|-- SeasonMidSeasonChangesSectionParser
+SectionParserBase <|-- SeasonMidSeasonChangesSectionParser
+BaseSeasonParser <|-- SeasonNonChampionshipParser
+BaseSeasonParser <|-- SeasonRegionalChampionshipParser
 ExtractListItemsMixin <|-- SeasonRegulationChangesSectionParser
+SectionParserBase <|-- SeasonRegulationChangesSectionParser
+BaseSeasonParser <|-- SeasonResultsParser
+SectionParserBase <|-- SeasonResultsSectionParser
+BaseSeasonParser <|-- SeasonScoringSystemParser
+SectionParserBase <|-- TableSectionParser
+BaseSeasonParser <|-- TestingVenuesParser
 
 @enduml

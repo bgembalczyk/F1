@@ -71,6 +71,7 @@ RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
     ),
 }
 
+
 @dataclass(frozen=True)
 class ProfileResolver:
     """Normalize, validate and resolve canonical profile names."""

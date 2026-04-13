@@ -230,4 +230,3 @@ def test_parse_banking_no_value() -> None:
     assert result is not None
     assert "value" not in result
     assert result.get("note") == "steeply banked"
-

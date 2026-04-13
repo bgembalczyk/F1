@@ -5,11 +5,11 @@ from bs4 import Tag
 from models.payload import WikiParsedPayload
 from scrapers.parsers.mixins.wiki.element import WikiElementParsingMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
-from scrapers.parsers.section.toolbox import build_default_section_toolbox
-from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.section.toolbox import SectionParserToolbox
+from scrapers.parsers.section.toolbox import build_default_section_toolbox
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
 class SubSubSubSectionParser(RecursiveSectionParser):
@@ -32,7 +32,9 @@ class SubSubSubSectionParser(RecursiveSectionParser):
             WikiElementParsingMixin.__init__(
                 self,
                 element_parsers=element_parsers,
-                element_registry=build_wikipedia_element_registry(parsers=element_parsers),
+                element_registry=build_wikipedia_element_registry(
+                    parsers=element_parsers,
+                ),
             )
 
     def _parse_group(

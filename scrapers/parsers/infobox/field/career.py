@@ -46,7 +46,9 @@ class InfoboxCareerParser(InfoboxRowsParser[list[dict[str, Any]]]):
                 row["collapsible_table"],
             )
             return {"collapsible_career": career_stats} if career_stats else None
-        return {"full_data": self._cell_extractor.parse_full_data(row["full_data_cell"])}
+        return {
+            "full_data": self._cell_extractor.parse_full_data(row["full_data_cell"]),
+        }
 
 
 __all__ = ["InfoboxCareerParser"]

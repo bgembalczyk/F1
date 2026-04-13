@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
 
-from scrapers.lap_records_table import LapRecordsTableScraper
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.lap_records_table import LapRecordsTableScraper
 
 
 def test_normalize_header_consistent_between_pipeline_and_lap_records() -> None:

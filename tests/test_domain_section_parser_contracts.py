@@ -7,16 +7,14 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
+from scrapers.parsers.section.changes.season import SeasonRegulationChangesSectionParser
 from scrapers.parsers.section.circuit.layout_history import (
     CircuitLayoutHistorySectionParser,
 )
+from scrapers.parsers.section.grand_prix.by_year import GrandPrixByYearSectionParser
 from scrapers.parsers.section.table.constructor.history import (
     ConstructorHistorySectionParser,
 )
-from scrapers.parsers.section.grand_prix.by_year import (
-    GrandPrixByYearSectionParser,
-)
-from scrapers.parsers.section.changes.season import SeasonRegulationChangesSectionParser
 
 CONTRACT_KEYS = ("section_id", "section_label", "records", "metadata")
 PARSER_CONTRACT_SCOPES = (
@@ -91,7 +89,9 @@ def test_section_parsers_define_explicit_parse_or_are_abstract() -> None:
         for path in sorted(scope.rglob("*.py")):
             module = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
             for node in module.body:
-                if not isinstance(node, ast.ClassDef) or not node.name.endswith("Parser"):
+                if not isinstance(node, ast.ClassDef) or not node.name.endswith(
+                    "Parser",
+                ):
                     continue
                 base_names = {_base_name(base) for base in node.bases}
                 has_parse = any(
@@ -111,4 +111,6 @@ def test_section_parsers_define_explicit_parse_or_are_abstract() -> None:
                     violations.append(
                         f"{path}:{node.name} has no parse() and is not ABC",
                     )
-    assert not violations, "Section parser contract violations: " + ", ".join(violations)
+    assert not violations, "Section parser contract violations: " + ", ".join(
+        violations,
+    )

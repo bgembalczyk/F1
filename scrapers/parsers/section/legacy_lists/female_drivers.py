@@ -56,14 +56,23 @@ class FemaleDriversTableMapper(WikiTableBaseMapper):
                 ColumnSpec(FEMALE_DRIVER_NAME_HEADER, "driver", UrlColumn()),
                 ColumnSpec(FEMALE_DRIVER_SEASONS_HEADER, "seasons", SeasonsColumn()),
                 ColumnSpec(FEMALE_DRIVER_TEAMS_HEADER, "teams", LinksListColumn()),
-                ColumnSpec(FEMALE_DRIVER_ENTRIES_STARTS_HEADER, "entries_starts", EntriesStartsColumn()),
+                ColumnSpec(
+                    FEMALE_DRIVER_ENTRIES_STARTS_HEADER,
+                    "entries_starts",
+                    EntriesStartsColumn(),
+                ),
                 ColumnSpec(FEMALE_DRIVER_POINTS_HEADER, "points", PointsColumn()),
             ],
         )
 
 
 class OfficialDriversSubSectionParser(ApplyForElementsMixin, SubSectionParser):
-    def __init__(self, *, table_mapper: WikiTableBaseMapper | None = None, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *,
+        table_mapper: WikiTableBaseMapper | None = None,
+        **kwargs: Any,
+    ) -> None:
         super().__init__(toolbox=kwargs.get("toolbox"))
         self._table_parser = table_mapper or FemaleDriversTableMapper()
 
@@ -74,10 +83,17 @@ class OfficialDriversSubSectionParser(ApplyForElementsMixin, SubSectionParser):
 
 
 class DriversSectionParser(NestedWikiSectionParser):
-    def __init__(self, *, child_parser: NestedChildParser | None = None, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *,
+        child_parser: NestedChildParser | None = None,
+        **kwargs: Any,
+    ) -> None:
         toolbox = kwargs.get("toolbox")
         super().__init__(toolbox=toolbox)
-        self.child_parser = child_parser or OfficialDriversSubSectionParser(toolbox=toolbox)
+        self.child_parser = child_parser or OfficialDriversSubSectionParser(
+            toolbox=toolbox,
+        )
 
 
 __all__ = [

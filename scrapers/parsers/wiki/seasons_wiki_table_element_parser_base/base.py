@@ -12,6 +12,11 @@ class BaseSeasonParser(HtmlSoupParserABC[WikiRecords], ABC):
     """Base contract for season parsers, processing Wikipedia tables."""
 
     @abstractmethod
-    def parse(self, soup: BeautifulSoup, season_year: int | None = None) -> list[dict[str, Any]]: ...
+    def parse(
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]: ...
+
 
 __all__ = ["BaseSeasonParser"]

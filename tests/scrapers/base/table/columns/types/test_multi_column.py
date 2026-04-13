@@ -1,8 +1,8 @@
 # ruff: noqa: E501, PLR2004
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.sentinels import SKIP_SENTINEL
 from scrapers.columns.types.multi.multi import MultiColumn
 from scrapers.columns.types.text import TextColumn
-from scrapers.base.table.sentinels import SKIP_SENTINEL
 
 
 def context(clean_text: str | None, raw_text: str | None = None) -> ColumnContext:

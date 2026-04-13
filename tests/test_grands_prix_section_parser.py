@@ -1,4 +1,6 @@
-from scrapers.parsers.section.legacy_lists.grands_prix import ByRaceTitleSubSectionParser
+from scrapers.parsers.section.legacy_lists.grands_prix import (
+    ByRaceTitleSubSectionParser,
+)
 from scrapers.parsers.section.legacy_lists.grands_prix import GrandsPrixTableMapper
 from scrapers.parsers.section.legacy_lists.grands_prix import RacesSectionParser
 

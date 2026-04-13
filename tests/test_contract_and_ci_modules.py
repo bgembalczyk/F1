@@ -8,8 +8,8 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.base import contracts as base_contracts
 from exporters import protocol as export_contracts
+from scrapers.base import contracts as base_contracts
 from scrapers.circuits import circuits_schemas as circuits_schemas
 from scrapers.parsers.contracts.wiki_elements import WikiSectionElementParserABC
 from scripts import check_architecture_rules as architecture_rules

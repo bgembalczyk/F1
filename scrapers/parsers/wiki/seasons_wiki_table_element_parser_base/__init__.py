@@ -11,7 +11,9 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import BaseSeasonParser
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base.base import (
+    BaseSeasonParser,
+)
 
 
 class SeasonStandingsService:

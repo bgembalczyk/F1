@@ -9,5 +9,3 @@ class TransportError(PipelineError):
     code: str = "transport.error"
     domain: str = "network"
     category: ErrorCategory = ErrorCategory.NETWORK
-
-

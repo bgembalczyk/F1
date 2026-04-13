@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from path_resolver.helpers import format_domain_year_name
 from layers.zero.run_profile_paths import layer_zero_raw_paths
+from path_resolver.helpers import format_domain_year_name
 
 
 def test_layer_zero_raw_paths_returns_json_path_only_when_csv_missing() -> None:

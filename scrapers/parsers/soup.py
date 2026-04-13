@@ -11,7 +11,11 @@ from scrapers.parsers.parser_abc import ParserABC
 SoupParseResultT_co = TypeVar("SoupParseResultT_co", covariant=True)
 
 
-class SoupParser(ParserABC[BeautifulSoup, SoupParseResultT_co], ABC, Generic[SoupParseResultT_co]):
+class SoupParser(
+    ParserABC[BeautifulSoup, SoupParseResultT_co],
+    ABC,
+    Generic[SoupParseResultT_co],
+):
     """Runtime contract for parserów opartych o pełen dokument BeautifulSoup."""
 
 

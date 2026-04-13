@@ -17,7 +17,9 @@ class ConstructorTableExtractionService(RunDiagnosticsMixin):
         *,
         article_tables_assembler: ArticleTablesAssemblerABC | None = None,
     ) -> None:
-        self._article_tables_assembler = article_tables_assembler or ArticleTablesAssembler()
+        self._article_tables_assembler = (
+            article_tables_assembler or ArticleTablesAssembler()
+        )
 
     def extract_tables(self, soup: Any) -> list[dict[str, Any]]:
         return self.with_retry(lambda: self._article_tables_assembler.assemble(soup))

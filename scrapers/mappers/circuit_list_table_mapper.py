@@ -17,7 +17,9 @@ from scrapers.columns.types.multi.last_length_used import LastLengthUsedColumn
 from scrapers.columns.types.multi.name_status_column import CircuitNameStatusColumn
 from scrapers.columns.types.seasons import SeasonsColumn
 from scrapers.columns.types.skip import SkipColumn
-from scrapers.parsers.wiki.table.mapped.mapped_wiki_table_mapper import MappedWikiTableMapper
+from scrapers.parsers.wiki.table.mapped.mapped_wiki_table_mapper import (
+    MappedWikiTableMapper,
+)
 from scrapers.table_schema_dsl import TableSchemaDSL
 
 

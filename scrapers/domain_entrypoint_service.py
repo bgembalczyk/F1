@@ -20,7 +20,6 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 
-
 @dataclass(frozen=True)
 class DomainEntrypointConfig:
     """Declarative configuration for a domain ``run_list_scraper`` facade."""

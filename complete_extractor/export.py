@@ -4,8 +4,12 @@ from typing import Any
 
 from complete_extractor.circuits_complete_scraper import F1CompleteCircuitDataExtractor
 from complete_extractor.complete_scraper_drivers import CompleteDriverDataExtractor
-from complete_extractor.complete_scraper_engines import F1CompleteEngineManufacturerDataExtractor
-from complete_extractor.constructors_complete_scraper import CompleteConstructorsDataExtractor
+from complete_extractor.complete_scraper_engines import (
+    F1CompleteEngineManufacturerDataExtractor,
+)
+from complete_extractor.constructors_complete_scraper import (
+    CompleteConstructorsDataExtractor,
+)
 from infrastructure.helpers import init_scraper_options
 from scrapers.parsers.helpers import extract_driver_text
 from scrapers.services.result_export import ResultExportService

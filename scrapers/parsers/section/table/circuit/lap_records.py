@@ -16,7 +16,9 @@ from scrapers.parsers.section.table.contracts import SectionTableRecordMapperABC
 from scrapers.section.parse_results import SectionParseResult
 
 
-class CircuitLapRecordsTableClassifier(SectionTableClassifierABC[tuple[Tag, list[str]]]):
+class CircuitLapRecordsTableClassifier(
+    SectionTableClassifierABC[tuple[Tag, list[str]]],
+):
     def __init__(self, *, options: ScraperOptions, url: str) -> None:
         self._options = options
         self._url = url

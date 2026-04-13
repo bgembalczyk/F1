@@ -1,9 +1,9 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base import constants
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.domain_parsing_policy import TestingVenuesLayout
+from scrapers.parsers.wiki.seasons_wiki_table_element_parser_base import constants
 
 
 @pytest.fixture()
