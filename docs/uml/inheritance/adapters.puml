@@ -5,21 +5,19 @@ hide empty members
 
 
 abstract class SourceAdapter
-abstract class FileTtlCacheAdapter
+abstract class CacheAdapter
 
 class HtmlFetcher
-class CacheAdapter
 class SourceAdapterFetcherShim
-class GeminiJsonFileCacheAdapter
 class HttpResponseFileCacheAdapter
+class GeminiJsonFileCacheAdapter
 
 
-SourceAdapter <|-- CacheAdapter
 SourceAdapter <|-- HtmlFetcher
 
-FileTtlCacheAdapter <|-- GeminiJsonFileCacheAdapter
-FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
-
 HtmlFetcher <|-- SourceAdapterFetcherShim
+
+CacheAdapter <|-- HttpResponseFileCacheAdapter
+CacheAdapter <|-- GeminiJsonFileCacheAdapter
 
 @enduml

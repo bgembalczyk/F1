@@ -488,7 +488,7 @@ write(
         "HTTP Client, Cache & Rate Limiter",
         sorted(
             component_of("HttpClient")
-            | component_of("FileTtlCacheAdapter")
+            | component_of("CacheAdapter")
             | component_of("TextCacheProtocol")
             | component_of("SourceAdapter"),
         ),

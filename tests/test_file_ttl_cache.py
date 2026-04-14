@@ -7,8 +7,8 @@ from typing import Any
 import pytest
 
 from infrastructure.cache.file.protocol import FileCache
+from infrastructure.cache.file.ttl import CacheAdapter
 from infrastructure.cache.file.ttl import FileTtlCache
-from infrastructure.cache.file.ttl import FileTtlCacheAdapter
 from infrastructure.cache.file.ttl import GeminiJsonFileCacheAdapter
 from infrastructure.cache.file.ttl import HttpResponseFileCacheAdapter
 from infrastructure.gemini.cache import GeminiCache
@@ -16,7 +16,7 @@ from infrastructure.gemini.cache import GeminiCache
 CACHE_TEST_VALUE = 123
 
 
-class IntAdapter(FileTtlCacheAdapter[int]):
+class IntAdapter(CacheAdapter[int]):
     extension = ".txt"
 
     def serialize(self, value: int) -> str:

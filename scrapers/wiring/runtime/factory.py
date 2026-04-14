@@ -7,11 +7,37 @@ from infrastructure.http.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http.policies.http import HttpPolicy
 from infrastructure.http.protocols import HttpClientProtocol
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
-from scrapers.adapters.cache_adapter import CacheAdapter
 from scrapers.html_fetcher import HtmlFetcher
 from scrapers.options import ScraperOptions
 from scrapers.runtime.dataclass import ScraperRuntime
 from scrapers.source_adapter import SourceAdapter
+
+
+class _CachingSourceAdapter(SourceAdapter):
+    """Cache'ujący adapter źródła oparty o interfejs cache."""
+
+    def __init__(
+        self,
+        *,
+        source_adapter: SourceAdapter,
+        cache_adapter: TextCacheProtocol,
+    ) -> None:
+        self._source_adapter = source_adapter
+        self._cache = cache_adapter
+
+    @property
+    def metadata(self) -> dict[str, object]:
+        metadata = dict(getattr(self._source_adapter, "metadata", {}))
+        metadata["cache"] = self._cache
+        return metadata
+
+    def get(self, url: str) -> str:
+        cached = self._cache.get(url)
+        if cached is not None:
+            return cached
+        text = self._source_adapter.get(url)
+        self._cache.set(url, text)
+        return text
 
 
 class SourceAdapterFetcherShim(HtmlFetcher):
@@ -135,7 +161,7 @@ class ScraperRuntimeFactory:
         if source_adapter is None:
             return fetcher, fetcher
         if cache_adapter is not None and not isinstance(source_adapter, HtmlFetcher):
-            source_adapter = CacheAdapter(
+            source_adapter = _CachingSourceAdapter(
                 source_adapter=source_adapter,
                 cache_adapter=cache_adapter,
             )

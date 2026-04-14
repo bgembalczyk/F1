@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from infrastructure.cache.adapter.http_response_file import HttpResponseFileCacheAdapter
 from infrastructure.cache.file.ttl import FileTtlCache
+from infrastructure.cache.file.ttl import HttpResponseFileCacheAdapter
 from infrastructure.http.protocols.text_cache import TextCacheProtocol
 
 
