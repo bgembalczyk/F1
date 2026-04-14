@@ -1,0 +1,114 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+
+abstract class WikiElementParsingMixin
+
+abstract class ArticleScraperBase
+abstract class WikiElementParsingMixin
+abstract class WikiScraper
+abstract class F1TableScraper
+abstract class SectionByIdScraperBase
+abstract class BaseEngineTableScraper
+abstract class SectionAwareMixin
+abstract class BaseConstructorListScraper
+abstract class DeclarativeSectionTableParseMixin
+
+
+class F1SponsorshipLiveriesScraper
+class ListScraper
+class RedFlaggedRacesScraper
+
+class F1SingleCircuitScraper
+class F1SingleGrandPrixScraper
+class SingleConstructorScraper
+class SingleDriverScraper
+class SingleEngineManufacturerScraper
+class SingleSeasonScraper
+
+class EngineManufacturersListScraper
+class F1FatalitiesListScraper
+class F1StandingsScraper
+class FemaleDriversListScraper
+class LapRecordsTableScraper
+class PointsScraper
+class RedFlaggedRacesBaseScraper
+class SeedListTableScraper
+class TyreManufacturersScraper
+
+class ConstructorsListScraper
+class IndianapolisOnlyListScraper
+
+class SectionAdapter
+
+class EngineRegulationScraper
+class EngineRestrictionsScraper
+
+class CircuitsListScraper
+class F1DriversListScraper
+class GrandsPrixListScraper
+class SeasonsListScraper
+
+
+
+WikiElementParsingMixin <|-- WikiScraper
+
+WikiScraper <|-- ArticleScraperBase
+WikiScraper <|-- F1SponsorshipLiveriesScraper
+WikiScraper <|-- F1TableScraper
+WikiScraper <|-- ListScraper
+WikiScraper <|-- RedFlaggedRacesScraper
+
+ArticleScraperBase <|-- F1SingleCircuitScraper
+ArticleScraperBase <|-- F1SingleGrandPrixScraper
+ArticleScraperBase <|-- SectionByIdScraperBase
+ArticleScraperBase <|-- SingleConstructorScraper
+ArticleScraperBase <|-- SingleDriverScraper
+ArticleScraperBase <|-- SingleEngineManufacturerScraper
+ArticleScraperBase <|-- SingleSeasonScraper
+
+F1TableScraper <|-- BaseEngineTableScraper
+F1TableScraper <|-- EngineManufacturersListScraper
+F1TableScraper <|-- F1FatalitiesListScraper
+F1TableScraper <|-- F1StandingsScraper
+F1TableScraper <|-- FemaleDriversListScraper
+F1TableScraper <|-- LapRecordsTableScraper
+F1TableScraper <|-- PointsScraper
+F1TableScraper <|-- RedFlaggedRacesBaseScraper
+F1TableScraper <|-- SeedListTableScraper
+F1TableScraper <|-- TyreManufacturersScraper
+
+ListScraper <|-- ConstructorsListScraper
+ListScraper <|-- IndianapolisOnlyListScraper
+
+SectionAdapter <|-- F1SingleCircuitScraper
+SectionAdapter <|-- SingleConstructorScraper
+SectionAdapter <|-- SingleDriverScraper
+SectionAdapter <|-- SingleSeasonScraper
+
+SectionAwareMixin <|-- F1SingleCircuitScraper
+SectionAwareMixin <|-- SectionByIdScraperBase
+SectionAwareMixin <|-- SingleConstructorScraper
+SectionAwareMixin <|-- SingleDriverScraper
+SectionAwareMixin <|-- SingleSeasonScraper
+
+BaseEngineTableScraper <|-- EngineRegulationScraper
+BaseEngineTableScraper <|-- EngineRestrictionsScraper
+
+SeedListTableScraper <|-- BaseConstructorListScraper
+SeedListTableScraper <|-- CircuitsListScraper
+SeedListTableScraper <|-- F1DriversListScraper
+SeedListTableScraper <|-- GrandsPrixListScraper
+SeedListTableScraper <|-- SeasonsListScraper
+
+DeclarativeSectionTableParseMixin <|-- BaseConstructorListScraper
+DeclarativeSectionTableParseMixin <|-- CircuitsListScraper
+
+
+
+
+
+@enduml
