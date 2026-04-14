@@ -26,11 +26,3 @@ class TableCellExtractionMixin:
             for cell in row.find_all(["td", "th"], recursive=False)
             if isinstance(cell, Tag)
         ]
-
-
-class NestedSectionHandlingMixin:
-    """Backward-compat shim: filter_child_tags is now in RecursiveSectionParser."""
-
-    @staticmethod
-    def filter_child_tags(elements: Iterable[object]) -> list[Tag]:
-        return [element for element in elements if isinstance(element, Tag)]

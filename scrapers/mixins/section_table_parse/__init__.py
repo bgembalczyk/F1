@@ -1,7 +1,8 @@
-from scrapers.mixins.section_table_parse.base import SectionTableParseMixin
 from scrapers.mixins.section_table_parse.declarative import (
     DeclarativeSectionTableParseMixin,
 )
+
+SectionTableParseMixin = DeclarativeSectionTableParseMixin
 
 __all__ = [
     "SectionTableParseMixin",

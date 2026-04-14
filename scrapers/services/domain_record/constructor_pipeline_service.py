@@ -6,9 +6,7 @@ from typing import Any
 from scrapers.contracts import RecordAssemblerProtocol
 from scrapers.records.assemblers.constructor import ConstructorRecordAssembler
 from scrapers.records.dto.constructor import ConstructorRecordDTO
-from scrapers.services.domain_record.base_pipeline_service import (
-    BaseDomainPipelineService,
-)
+from scrapers.services.domain_record.base import DomainPipelineService
 
 
 @dataclass(frozen=True, slots=True)
@@ -20,7 +18,7 @@ class ConstructorDomainRecordInput:
 
 
 class ConstructorPipelineService(
-    BaseDomainPipelineService[ConstructorDomainRecordInput, ConstructorRecordDTO],
+    DomainPipelineService[ConstructorDomainRecordInput, ConstructorRecordDTO, dict[str, Any]],
 ):
     required_fields = ("url", "infoboxes", "tables", "sections")
 

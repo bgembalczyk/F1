@@ -6,9 +6,7 @@ from typing import Any
 from scrapers.contracts import RecordAssemblerProtocol
 from scrapers.records.assemblers.driver import DriverRecordAssembler
 from scrapers.records.dto.driver import DriverRecordDTO
-from scrapers.services.domain_record.base_pipeline_service import (
-    BaseDomainPipelineService,
-)
+from scrapers.services.domain_record.base import DomainPipelineService
 
 
 @dataclass(frozen=True, slots=True)
@@ -19,7 +17,7 @@ class DriverDomainRecordInput:
 
 
 class DriverPipelineService(
-    BaseDomainPipelineService[DriverDomainRecordInput, DriverRecordDTO],
+    DomainPipelineService[DriverDomainRecordInput, DriverRecordDTO, dict[str, Any]],
 ):
     required_fields = ("url", "infobox", "career_results")
 

@@ -9,12 +9,6 @@ from scrapers.services.domain_record.base import DomainPipelineService
 InputDTO = TypeVar("InputDTO")
 PayloadT = TypeVar("PayloadT")
 
-
-class BaseDomainPipelineService(
-    DomainPipelineService[InputDTO, PayloadT, dict[str, Any]],
-    Generic[InputDTO, PayloadT],
-):
-    """Canonicalna baza pipeline service dla rekordów domenowych."""
-
+BaseDomainPipelineService = DomainPipelineService
 
 __all__ = ["BaseDomainPipelineService"]

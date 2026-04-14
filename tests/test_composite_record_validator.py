@@ -1,10 +1,12 @@
-from validation.composite_validator import CompositeRecordValidator
+from validation.validator_base import RecordValidator
 from validation.issue import ValidationIssue
 from validation.rules import RangeRule
 from validation.rules import RequiredFieldRule
 from validation.rules import TypeRule
 from validation.rules import ValueRange
 from validation.rules import build_common_rules
+
+CompositeRecordValidator = RecordValidator
 
 
 def test_composite_record_validator_combines_common_and_domain_rules() -> None:

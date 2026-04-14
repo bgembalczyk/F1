@@ -5,7 +5,7 @@ from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.navbox_element_parser import NavboxElementParser
 from scrapers.parsers.paragraph_element_parser import ParagraphElementParser
 from scrapers.parsers.table_element_parser import TableElementParser
-from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
+from scrapers.parsers.wiki.element_references import WikiReferencesElementParser
 
 
 class HtmlElementBuilder:
@@ -17,5 +17,5 @@ class HtmlElementBuilder:
             list_parser=ListElementParser(),
             table_html_parser=TableElementParser(),
             navbox_parser=NavboxElementParser(),
-            references_wrap_parser=ReferencesWrapParser(),
+            references_wrap_parser=WikiReferencesElementParser(),
         )

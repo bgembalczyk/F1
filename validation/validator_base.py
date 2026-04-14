@@ -1,8 +1,6 @@
-"""Abstract base class for record validators."""
+"""Base class for record validators."""
 
 import json
-from abc import ABC
-from abc import abstractmethod
 from collections.abc import Callable
 from collections.abc import Mapping
 from collections.abc import Sequence
@@ -11,10 +9,14 @@ from typing import Any
 from typing import TypeAlias
 
 from validation.issue import ValidationIssue
+from validation.pipeline import FunctionalValidator
+from validation.pipeline import ValidationPipeline
 from validation.pipeline import ValidationResult
+from validation.pipeline import ValidationStage
 from validation.quality_stats import QualityStats
 from validation.record_factory_validator import RecordFactoryValidatorProtocol
 from validation.record_validation import validate_record
+from validation.rules import ValidationRule
 from validation.schema_engine import SchemaValidationEngine
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
@@ -22,24 +24,87 @@ from validation.schemas import RecordSchema
 ExportRecord: TypeAlias = dict[str, Any]
 
 
-class RecordValidator(ABC):
+class RecordValidator:
     def __init__(
         self,
+        *,
         record_factory_validator: RecordFactoryValidatorProtocol | None = None,
+        common_rules: Sequence[ValidationRule] = (),
+        domain_rules: Sequence[ValidationRule] = (),
     ) -> None:
         self.record_factory_validator = record_factory_validator
         self._stats = QualityStats()
+        self._common_rules = tuple(common_rules)
+        self._domain_rules = tuple(domain_rules)
+        self._pipeline = ValidationPipeline(
+            stages=(
+                ValidationStage(
+                    name="schema",
+                    validators=tuple(
+                        FunctionalValidator(
+                            name=getattr(rule, "rule_name", type(rule).__name__),
+                            handler=self._build_rule_handler(rule),
+                        )
+                        for rule in self._common_rules
+                    ),
+                ),
+                ValidationStage(
+                    name="business_rules",
+                    validators=tuple(
+                        FunctionalValidator(
+                            name=getattr(rule, "rule_name", type(rule).__name__),
+                            handler=self._build_rule_handler(rule),
+                        )
+                        for rule in self._domain_rules
+                    ),
+                ),
+                ValidationStage(
+                    name="completeness",
+                    validators=(
+                        FunctionalValidator(
+                            name="record_factory",
+                            handler=self.validate_record_factory,
+                        ),
+                    ),
+                ),
+            ),
+        )
 
-    @abstractmethod
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        raise NotImplementedError
+        result = self.validate_result(record)
+        self.record_validation_result(result.violations)
+        return [*result.violations]
 
     def validate_result(self, record: ExportRecord) -> ValidationResult:
-        schema_issues = self.validate(record)
-        record_factory_issues = self.validate_record_factory(record)
-        return ValidationResult.from_violations(
-            [*schema_issues, *record_factory_issues],
+        return self._pipeline.validate(record)
+
+    def with_rules(self, *rules: ValidationRule) -> RecordValidator:
+        if not rules:
+            return self
+        return RecordValidator(
+            common_rules=self._common_rules,
+            domain_rules=(*self._domain_rules, *rules),
+            record_factory_validator=self.record_factory_validator,
         )
+
+    def describe_rules(self) -> dict[str, list[dict[str, Any]]]:
+        return {
+            "common_rules": [self._describe_rule(rule) for rule in self._common_rules],
+            "domain_rules": [self._describe_rule(rule) for rule in self._domain_rules],
+        }
+
+    def _build_rule_handler(self, rule: ValidationRule):
+        def _handler(record: Mapping[str, Any]) -> list[ValidationIssue]:
+            result = rule(record)
+            return [self._coerce_issue(error) for error in result]
+
+        return _handler
+
+    @staticmethod
+    def _describe_rule(rule: ValidationRule) -> dict[str, Any]:
+        rule_name = getattr(rule, "rule_name", type(rule).__name__)
+        rule_params = dict(getattr(rule, "rule_params", {}))
+        return {"name": rule_name, "params": rule_params}
 
     def set_record_factory_validator(
         self,

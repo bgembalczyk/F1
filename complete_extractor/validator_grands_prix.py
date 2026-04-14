@@ -1,11 +1,10 @@
 from models.records.grand_prix import GRANDS_PRIX_SCHEMA
-from validation.composite_validator import CompositeRecordValidator
 from validation.rules import build_common_rules
 from validation.schema_rules import build_domain_rules
 from validation.validator_base import RecordValidator
 
 
-class GrandsPrixRecordValidator(CompositeRecordValidator):
+class GrandsPrixRecordValidator(RecordValidator):
     def __init__(self, record_factory_validator=None) -> None:
         normalized = RecordValidator._coerce_schema(GRANDS_PRIX_SCHEMA)  # noqa: SLF001
         super().__init__(
