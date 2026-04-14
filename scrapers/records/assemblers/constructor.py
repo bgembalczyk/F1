@@ -7,7 +7,6 @@ from scrapers.records.assemblers.base import BaseRecordAssemblerInput
 from scrapers.records.dto.constructor import ConstructorRecordDTO
 from scrapers.records.mappers.infobox import InfoboxRecordMapper
 from scrapers.records.mappers.section import SectionRecordMapper
-from scrapers.records.mappers.table_record.base import TableRecordMapper
 
 
 class ConstructorRecordAssembler(BaseRecordAssembler):
@@ -15,12 +14,10 @@ class ConstructorRecordAssembler(BaseRecordAssembler):
         self,
         *,
         infobox_mapper: InfoboxRecordMapper | None = None,
-        table_mapper: TableRecordMapper | None = None,
         section_mapper: SectionRecordMapper | None = None,
     ) -> None:
         super().__init__(
             infobox_mapper=infobox_mapper,
-            table_mapper=table_mapper,
             section_mapper=section_mapper,
         )
 

@@ -13,6 +13,7 @@ from scrapers.columns.types.points import PointsColumn
 from scrapers.columns.types.position import PositionColumn
 from scrapers.columns.types.race_result import RaceResultColumn
 from scrapers.config_table import TableConfig
+from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.options import ScraperOptions
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.pipeline_table import TablePipeline
@@ -137,7 +138,7 @@ class SeasonGenericTableOrchestrator(SeasonTableOrchestratorABC):
 
 
 
-class SeasonTablePayloadMapper:
+class SeasonTablePayloadMapper(MapperABC[dict[str, Any], list[dict[str, Any]]]):
     def __init__(
         self,
         *,
