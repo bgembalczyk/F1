@@ -5,10 +5,7 @@ hide empty members
 
 
 
-abstract class WikiElementParsingMixin
-
 abstract class ArticleScraperBase
-abstract class WikiElementParsingMixin
 abstract class WikiScraper
 abstract class F1TableScraper
 abstract class SectionByIdScraperBase
@@ -53,8 +50,6 @@ class GrandsPrixListScraper
 class SeasonsListScraper
 
 
-
-WikiElementParsingMixin <|-- WikiScraper
 
 WikiScraper <|-- ArticleScraperBase
 WikiScraper <|-- F1SponsorshipLiveriesScraper

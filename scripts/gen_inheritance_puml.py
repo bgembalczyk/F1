@@ -261,7 +261,6 @@ write(
 SCRAPER_ROOTS = [
     "WikiScraper",
     "SectionAwareMixin",
-    "WikiElementParsingMixin",
 ]
 p03: set[str] = set()
 for r in SCRAPER_ROOTS:
