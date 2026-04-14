@@ -1,0 +1,45 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class BaseRecordFactory
+abstract class LayerZeroRunConfigFactory
+
+class CarRecordFactory
+class CircuitRecordFactory
+class ConstructorRecordFactory
+class DriverRecordFactory
+class DriversChampionshipsRecordFactory
+class EngineManufacturerRecordFactory
+class EventRecordFactory
+class FatalityRecordFactory
+class GrandsPrixRecordFactory
+class SeasonRecordFactory
+class SeasonSummaryRecordFactory
+class SpecialDriverRecordFactory
+
+class DefaultLayerZeroRunConfigFactory
+class SponsorshipLiveriesRunConfigFactory
+class StaticScraperKwargsFactory
+
+
+LayerZeroRunConfigFactory <|-- DefaultLayerZeroRunConfigFactory
+LayerZeroRunConfigFactory <|-- SponsorshipLiveriesRunConfigFactory
+LayerZeroRunConfigFactory <|-- StaticScraperKwargsFactory
+
+BaseRecordFactory <|-- CarRecordFactory
+BaseRecordFactory <|-- CircuitRecordFactory
+BaseRecordFactory <|-- ConstructorRecordFactory
+BaseRecordFactory <|-- DriverRecordFactory
+BaseRecordFactory <|-- DriversChampionshipsRecordFactory
+BaseRecordFactory <|-- EngineManufacturerRecordFactory
+BaseRecordFactory <|-- EventRecordFactory
+BaseRecordFactory <|-- FatalityRecordFactory
+BaseRecordFactory <|-- GrandsPrixRecordFactory
+BaseRecordFactory <|-- SeasonRecordFactory
+BaseRecordFactory <|-- SeasonSummaryRecordFactory
+BaseRecordFactory <|-- SpecialDriverRecordFactory
+
+@enduml

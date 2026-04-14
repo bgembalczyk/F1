@@ -1,0 +1,29 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class RecordAssemblyStrategy
+abstract class RecordSplitStrategy
+
+class AttachDetailsStrategy
+class BundleRecordWithDetailsStrategy
+class ExtractDetailFieldStrategy
+
+class DeduplicateRecordStrategy
+class GrandPrixSplitStrategy
+class PossessiveDriverColourSplitStrategy
+class SeasonSplitStrategy
+
+
+RecordSplitStrategy <|-- DeduplicateRecordStrategy
+RecordSplitStrategy <|-- GrandPrixSplitStrategy
+RecordSplitStrategy <|-- PossessiveDriverColourSplitStrategy
+RecordSplitStrategy <|-- SeasonSplitStrategy
+
+RecordAssemblyStrategy <|-- AttachDetailsStrategy
+RecordAssemblyStrategy <|-- BundleRecordWithDetailsStrategy
+RecordAssemblyStrategy <|-- ExtractDetailFieldStrategy
+
+@enduml

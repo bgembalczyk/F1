@@ -3,9 +3,12 @@
 hide circle
 hide empty members
 
-abstract class BackgroundMixin
 abstract class BaseColumn
 abstract class BaseConstructorColumn
+
+abstract class BackgroundMixin
+abstract class EnumMarksMixin
+
 
 class FatalityEventColumn
 class NameStatusColumn

@@ -1,0 +1,39 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class BaseSectionExtractionService
+abstract class RunDiagnosticsMixin
+
+
+class CircuitSectionExtractionService
+class ConstructorSectionExtractionService
+class DriverSectionExtractionService
+class SeasonTextSectionExtractionService
+
+class PipelineService
+class DomainPipelineService
+class ConstructorTableExtractionService
+class CircuitPipelineService
+class ConstructorPipelineService
+class DriverPipelineService
+class SeasonPipelineService
+
+
+PipelineService <|-- DomainPipelineService
+
+RunDiagnosticsMixin <|-- ConstructorTableExtractionService
+RunDiagnosticsMixin <|-- DomainPipelineService
+
+DomainPipelineService <|-- CircuitPipelineService
+DomainPipelineService <|-- ConstructorPipelineService
+DomainPipelineService <|-- DriverPipelineService
+DomainPipelineService <|-- SeasonPipelineService
+BaseSectionExtractionService <|-- CircuitSectionExtractionService
+BaseSectionExtractionService <|-- ConstructorSectionExtractionService
+BaseSectionExtractionService <|-- DriverSectionExtractionService
+BaseSectionExtractionService <|-- SeasonTextSectionExtractionService
+
+@enduml

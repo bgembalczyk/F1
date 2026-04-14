@@ -1,0 +1,25 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class SourceAdapter
+abstract class FileTtlCacheAdapter
+
+class HtmlFetcher
+class CacheAdapter
+class SourceAdapterFetcherShim
+class GeminiJsonFileCacheAdapter
+class HttpResponseFileCacheAdapter
+
+SourceAdapter <|-- CacheAdapter
+SourceAdapter <|-- HtmlFetcher
+
+HtmlFetcher <|-- SourceAdapterFetcherShim
+
+FileTtlCacheAdapter <|-- GeminiJsonFileCacheAdapter
+FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
+
+
+@enduml

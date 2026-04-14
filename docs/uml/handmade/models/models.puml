@@ -1,0 +1,49 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+interface DataContract
+interface CircuitContract
+interface DriverContract
+interface PointsContract
+
+class ValidatedModel
+class Circuit
+class EngineManufacturer
+class EngineRegulation
+class EngineRestriction
+class ValueObject
+class DateValue
+class DriversChampionships
+class Link
+class NormalizedDate
+class SeasonRef
+class CircuitBaseRecord
+class CircuitCompleteRecord
+class CircuitDetailsRecord
+class LinkRecord
+class CarRecord
+
+
+DataContract <|-- CircuitContract
+DataContract <|-- DriverContract
+DataContract <|-- PointsContract
+
+ValidatedModel <|-- Circuit
+ValidatedModel <|-- EngineManufacturer
+ValidatedModel <|-- EngineRegulation
+ValidatedModel <|-- EngineRestriction
+
+ValueObject <|-- DateValue
+ValueObject <|-- DriversChampionships
+ValueObject <|-- Link
+ValueObject <|-- NormalizedDate
+ValueObject <|-- SeasonRef
+
+CircuitBaseRecord <|-- CircuitCompleteRecord
+CircuitBaseRecord <|-- CircuitDetailsRecord
+LinkRecord <|-- CarRecord
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+class RequestError
+class HttpShimError
+class HTTPError
+class HTTPTimeoutError
+class ScraperError
+class DomainParseError
+class PipelineError
+class ScraperNetworkError
+class ScraperNotFoundError
+class ScraperParseError
+class ScraperValidationError
+class SourceParseError
+class TransportError
+class ValidationError
+
+RequestError <|-- HttpShimError
+
+HttpShimError <|-- HTTPError
+HttpShimError <|-- HTTPTimeoutError
+
+ScraperError <|-- DomainParseError
+ScraperError <|-- PipelineError
+ScraperError <|-- ScraperNetworkError
+ScraperError <|-- ScraperNotFoundError
+ScraperError <|-- ScraperParseError
+ScraperError <|-- ScraperValidationError
+
+PipelineError <|-- SourceParseError
+PipelineError <|-- TransportError
+PipelineError <|-- ValidationError
+@enduml

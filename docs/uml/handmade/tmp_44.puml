@@ -4,7 +4,6 @@ hide circle
 hide empty members
 
 abstract class ApplyForElementsMixin
-abstract class EnumMarksMixin
 abstract class NestedChildParser
 
 class ArticleTablesAssembler
