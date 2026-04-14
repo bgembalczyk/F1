@@ -522,8 +522,6 @@ package "Scrapers" {
     abstract class InfoboxHtmlParserABC
     class InfoboxLinkExtractor
     abstract class InfoboxNestedTableParserABC
-    abstract class InfoboxOrchestratorABC
-    abstract class InfoboxParserABC
     class InfoboxPayloadDTO
     class InfoboxRecordInput
     class InfoboxRecordMapper
@@ -597,7 +595,6 @@ package "Scrapers" {
     abstract class ParseGroupMixin
     class ParseMetadata
     class ParseResult
-    abstract class ParsedRecordsMixin
     class ParsedValueColumn
     abstract class ParserABC
     abstract class ParsingBundle
@@ -818,7 +815,6 @@ package "Scrapers" {
     class StandingsTableMapper
     class StarMarkNoteRule
     class StepDeclaration
-    class StrategyBackedInfoboxOrchestrator
     abstract class StructureParser
     abstract class SubSectionLevelMixin
     class SubSectionParser
@@ -1046,8 +1042,6 @@ DomainPipelineService <|-- BaseDomainPipelineService
 SectionParserBase <|-- BaseDriverResultsSectionParser
 F1TableScraper <|-- BaseEngineTableScraper
 HtmlElementParserABC <|-- BaseHtmlElementParser
-InfoboxOrchestratorABC <|-- BaseInfoboxOrchestrator
-ParsedRecordsMixin <|-- BaseInfoboxOrchestrator
 BaseComponent <|-- BaseNormalizer
 F1TableScraper <|-- BasePointsScraper
 LinkNormalizationMixin <|-- BaseRecordFactory
@@ -1085,7 +1079,7 @@ MapperABC <|-- CircuitEventsTableRecordMapper
 InfoboxTextUtils <|-- CircuitGeoExtractor
 InfoboxTextUtils <|-- CircuitHistoryExtractor
 InfoboxExtractorABC <|-- CircuitInfoboxExtractor
-StrategyBackedInfoboxOrchestrator <|-- CircuitInfoboxOrchestrator
+BaseInfoboxOrchestrator <|-- CircuitInfoboxOrchestrator
 WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
 CircuitTextProcessing <|-- CircuitLapRecordExtractor
 TableSectionParser <|-- CircuitLapRecordsSectionParser
@@ -1446,7 +1440,6 @@ ApplyForElementsMixin <|-- SprintRacesSubSubSectionParser
 SubSubSectionParser <|-- SprintRacesSubSubSectionParser
 WikiTableBaseMapper <|-- StandingsTableMapper
 LayerZeroRunConfigFactory <|-- StaticScraperKwargsFactory
-BaseInfoboxOrchestrator <|-- StrategyBackedInfoboxOrchestrator
 SectionLevelMixin <|-- SubSectionLevelMixin
 RecursiveSectionParser <|-- SubSectionParser
 SubSectionLevelMixin <|-- SubSubSectionLevelMixin

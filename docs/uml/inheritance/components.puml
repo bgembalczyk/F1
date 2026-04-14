@@ -5,13 +5,11 @@ hide empty members
 
 abstract class InfoboxExtractorABC
 abstract class SeasonTableOrchestratorABC
-abstract class InfoboxOrchestratorABC
 abstract class BaseComponent
 
 abstract class BaseInfoboxOrchestrator
 abstract class BaseNormalizer
 
-abstract class ParsedRecordsMixin
 abstract class SafeParsingMixin
 
 
@@ -50,9 +48,6 @@ BaseComponent <|-- BaseNormalizer
 BaseComponent <|-- DomainSeedExtractor
 BaseComponent <|-- DomainStageOrchestrator
 
-InfoboxOrchestratorABC <|-- BaseInfoboxOrchestrator
-InfoboxOrchestratorABC <|-- CircuitInfoboxOrchestrator
-
 SeasonTableOrchestratorABC <|-- SeasonGenericTableOrchestrator
 SeasonTableOrchestratorABC <|-- SeasonStandingsTableOrchestrator
 
@@ -67,6 +62,7 @@ BaseNormalizer <|-- DriversSeedNormalizer
 
 BaseInfoboxOrchestrator <|-- ConstructorInfoboxOrchestrator
 BaseInfoboxOrchestrator <|-- DriverInfoboxOrchestrator
+BaseInfoboxOrchestrator <|-- CircuitInfoboxOrchestrator
 
 
 CircuitEntityExtractor <|-- CircuitAdditionalInfoExtractor
@@ -74,8 +70,5 @@ CircuitEntityExtractor <|-- CircuitAdditionalInfoExtractor
 
 SafeParsingMixin <|-- CircuitEntitiesOrchestrator
 SafeParsingMixin <|-- CircuitLayoutsExtractor
-
-ParsedRecordsMixin <|-- BaseInfoboxOrchestrator
-ParsedRecordsMixin <|-- CircuitInfoboxOrchestrator
 
 @enduml

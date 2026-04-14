@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
+from scrapers.orchestration.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.services.domain_record.circuit_pipeline_service import (
     CircuitPipelineService,
 )
@@ -14,6 +14,6 @@ from scrapers.services.section.factories.section_service_factory import (
 
 @dataclass(frozen=True, slots=True)
 class CircuitScraperDependencies:
-    infobox_service: InfoboxOrchestratorABC
+    infobox_service: BaseInfoboxOrchestrator
     sections_service_factory: SectionServiceFactoryABC[CircuitSectionExtractionService]
     domain_record_service: CircuitPipelineService
