@@ -1,5 +1,5 @@
-"""Compatibility package for legacy table_record mapper imports."""
+"""Re-export hub for table record mappers."""
 
-from scrapers.mappers.table_record.base import TableRecordMapper
+from scrapers.mappers.table_record.layout import LayoutTableRecordMapper
 
-__all__ = ["TableRecordMapper"]
+__all__ = ["LayoutTableRecordMapper"]

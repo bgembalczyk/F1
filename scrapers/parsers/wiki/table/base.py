@@ -4,14 +4,10 @@ from abc import ABC
 from typing import Any
 
 from scrapers.mappers.mapper_abc import MapperABC
-from scrapers.parsers.mixins.group import GroupParsingMixin
-from scrapers.row_mapping_mixin import RowMappingMixin
 
 
 class WikiTableBaseMapper(
     MapperABC[dict[str, Any], dict[str, Any] | None],
-    RowMappingMixin[dict[str, Any], dict[str, Any]],
-    GroupParsingMixin[Any, dict[str, Any]],
     ABC,
 ):
     """Bazowa klasa runtime dla mapperów fragmentów tabel Wikipedii."""

@@ -1,19 +1,15 @@
+from collections.abc import Mapping
 from typing import Any
-
-from scrapers.records.mappers.table_record.base import TableRecordMapper
 
 
 class LayoutTableRecordMapper:
     """Groups flat table rows into layout -> records structure.
 
     Normalization rules:
-    - each row is first normalized with TableRecordMapper,
+    - each row is first normalized (keys stringified and stripped),
     - rows without non-empty layout string are ignored,
     - `layout` field is removed from grouped record entries.
     """
-
-    def __init__(self, *, row_mapper: TableRecordMapper | None = None) -> None:
-        self._row_mapper = row_mapper or TableRecordMapper()
 
     def map(
         self,
@@ -22,7 +18,7 @@ class LayoutTableRecordMapper:
         rows = payload
         grouped: dict[str, list[dict[str, Any]]] = {}
         for row in rows:
-            normalized_row = self._row_mapper.map(row)
+            normalized_row = self._normalize_row(row)
             layout_name = normalized_row.get("layout")
             if not isinstance(layout_name, str) or not layout_name.strip():
                 continue
@@ -34,3 +30,21 @@ class LayoutTableRecordMapper:
             {"layout": name, "lap_records": records}
             for name, records in grouped.items()
         ]
+
+    @staticmethod
+    def _normalize_row(row: Mapping[str, Any]) -> dict[str, Any]:
+        return {
+            str(key).strip(): LayoutTableRecordMapper._normalize_value(value)
+            for key, value in row.items()
+        }
+
+    @staticmethod
+    def _normalize_value(value: Any) -> Any:
+        if isinstance(value, Mapping):
+            return {
+                str(k).strip(): LayoutTableRecordMapper._normalize_value(v)
+                for k, v in value.items()
+            }
+        if isinstance(value, list):
+            return [LayoutTableRecordMapper._normalize_value(item) for item in value]
+        return value

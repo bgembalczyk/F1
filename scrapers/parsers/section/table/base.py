@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 
 from models.entity_name import EntityName
 from models.section_id import SectionId
-from scrapers.mappers.mapper_abc import MapperABC
 from scrapers.parsers.contracts.classifier_abc import ClassifierABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.html_table import HtmlTableParser
@@ -21,23 +20,6 @@ from scrapers.section.serializer import build_section_parse_result
 if TYPE_CHECKING:
     from scrapers.configs.public import TableConfig
     from scrapers.section.parse_results import SectionParseResult
-
-
-class IdentitySectionTableRecordMapper(
-    MapperABC[dict[str, Any], dict[str, Any] | None],
-):
-    """Domyślny mapper: zwraca wynik klasyfikacji."""
-
-    def map(
-        self,
-        raw: dict[str, Any],
-        *,
-        table_classification: dict[str, Any],
-        table_pipeline: Any,
-    ) -> dict[str, Any] | None:
-        _ = raw
-        _ = table_pipeline
-        return table_classification
 
 
 class TableSectionParser(SectionParserBase):
@@ -76,7 +58,7 @@ class TableSectionParser(SectionParserBase):
             include_source_table=include_source_table,
         )
         self._classifier: ClassifierABC[TablePayload, Any] | None = classifier
-        self._record_mapper = mapper or IdentitySectionTableRecordMapper()
+        self._record_mapper: Any | None = mapper
 
     @property
     def section_id(self) -> SectionId:
@@ -131,11 +113,14 @@ class TableSectionParser(SectionParserBase):
                 table_data=table_data,
                 table_classification=table_classification,
             )
-            mapped = self._record_mapper.map(
-                table_data,
-                table_classification=table_classification,
-                table_pipeline=table_pipeline,
-            )
+            if self._record_mapper is not None:
+                mapped = self._record_mapper.map(
+                    table_data,
+                    table_classification=table_classification,
+                    table_pipeline=table_pipeline,
+                )
+            else:
+                mapped = table_classification
             if mapped is None:
                 continue
             records.append(mapped)
