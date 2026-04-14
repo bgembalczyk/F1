@@ -1,15 +1,22 @@
 from typing import Any
 
-from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
 from scrapers.columns.types.auto import AutoColumn
-from scrapers.columns.types.mixins.background import BackgroundMixin
-from scrapers.columns.types.mixins.enum import EnumMarksMixin
+from scrapers.columns.types.background_column import BackgroundColumn
+from scrapers.columns.types.enum_marks_column import EnumMarksColumn
 from scrapers.constants.constants_drivers import MARK_NON_CHAMPIONSHIP_EVENT
 from scrapers.helpers.normalize import normalize_auto_value
 
 
-class FatalityEventColumn(EnumMarksMixin, BackgroundMixin, BaseColumn):
+class FatalityEventColumn(EnumMarksColumn, BackgroundColumn):
+    """
+    Column for fatality event parsing with background color and championship mark.
+
+    MRO: FatalityEventColumn → EnumMarksColumn → BackgroundColumn → BaseColumn.
+    BackgroundColumn.apply() is inherited (EnumMarksColumn has no apply()), and
+    it calls super().apply() → BaseColumn.apply(), appending the background key
+    after the main value is stored.
+    """
     def __init__(self, auto_column: AutoColumn | None = None) -> None:
         super().__init__(
             mapping={MARK_NON_CHAMPIONSHIP_EVENT: False},

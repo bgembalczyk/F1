@@ -1,13 +1,12 @@
 from typing import Any
 
-from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
-from scrapers.columns.types.mixins.enum import EnumMarksMixin
+from scrapers.columns.types.enum_marks_column import EnumMarksColumn
 from scrapers.constants.constants_drivers import MARK_F2_CATEGORY
 from scrapers.helpers.date_parsing import parse_date_with_category_marker
 
 
-class FatalityDateColumn(EnumMarksMixin, BaseColumn):
+class FatalityDateColumn(EnumMarksColumn):
     def __init__(self) -> None:
         super().__init__(mapping={MARK_F2_CATEGORY: "F2"}, default="F1")
 

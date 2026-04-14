@@ -1,11 +1,10 @@
 from typing import Any
 
-from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
-from scrapers.columns.types.mixins.background import BackgroundMixin
+from scrapers.columns.types.background_column import BackgroundColumn
 
 
-class RestartStatusColumn(BackgroundMixin, BaseColumn):
+class RestartStatusColumn(BackgroundColumn):
     def parse(self, ctx: ColumnContext) -> dict[str, Any] | None:
         text = (ctx.clean_text or "").strip()
         if not text:

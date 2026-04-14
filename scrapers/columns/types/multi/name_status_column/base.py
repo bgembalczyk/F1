@@ -14,14 +14,14 @@ from collections.abc import Callable
 
 from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
+from scrapers.columns.types.background_column import BackgroundColumn
+from scrapers.columns.types.enum_marks_column import EnumMarksColumn
 from scrapers.columns.types.function.base import FuncColumn
-from scrapers.columns.types.mixins.background import BackgroundMixin
-from scrapers.columns.types.mixins.enum import EnumMarksMixin
 from scrapers.columns.types.multi.multi import MultiColumn
 from scrapers.columns.types.url import UrlColumn
 
 
-class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
+class NameStatusColumn(BackgroundColumn, MultiColumn, EnumMarksColumn, ABC):
     """
     Base class for columns that parse entity name with status markers.
 
@@ -29,8 +29,13 @@ class NameStatusColumn(BackgroundMixin, MultiColumn, EnumMarksMixin, ABC):
     - Entity name with URL (e.g., "Lewis Hamilton", "Monaco")
     - Status indicated by suffix markers (e.g., "†", "*", "~")
 
-    Inherits BackgroundMixin (adds background to record) and EnumMarksMixin
-    (provides enum marks parsing helpers for subclasses).
+    Inherits BackgroundColumn (adds background to record), MultiColumn (writes
+    multiple keys to the record) and EnumMarksColumn (provides enum marks
+    parsing helpers for subclasses).
+
+    MRO: NameStatusColumn → BackgroundColumn → MultiColumn → EnumMarksColumn → BaseColumn.
+    BackgroundColumn.apply() calls super().apply() which resolves to MultiColumn.apply(),
+    ensuring all sub-columns are written before the background key is appended.
 
     Subclasses define:
     - entity_key: The key for the entity name (e.g., "driver", "circuit")
