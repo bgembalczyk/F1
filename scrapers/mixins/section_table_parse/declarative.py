@@ -9,7 +9,11 @@ from scrapers.section.selection_strategy import WikipediaSectionByIdSelectionStr
 
 
 class DeclarativeSectionTableParseMixin:
-    """Declarative section parsing based on domain/label/parser class attributes."""
+    """Declarative section parsing based on domain/label/parser class attributes.
+
+    Absorbs the functionality of the removed ``SectionTableParseMixin``, including
+    the ``parse_section_or_fallback`` method and the legacy HTML fallback behavior.
+    """
 
     domain: str | None = None
     section_label: str | None = None

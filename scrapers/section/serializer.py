@@ -18,7 +18,7 @@ def build_section_metadata(
     metadata: dict[str, Any] = {
         "parser": parser,
         "source": source,
-        "heading_path": list(heading_path) if heading_path else [],
+        "heading_path": [] if heading_path is None else list(heading_path),
     }
     if extras:
         metadata.update(extras)
