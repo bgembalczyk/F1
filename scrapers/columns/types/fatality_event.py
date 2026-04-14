@@ -9,6 +9,14 @@ from scrapers.helpers.normalize import normalize_auto_value
 
 
 class FatalityEventColumn(EnumMarksColumn, BackgroundColumn):
+    """
+    Column for fatality event parsing with background color and championship mark.
+
+    MRO: FatalityEventColumn → EnumMarksColumn → BackgroundColumn → BaseColumn.
+    BackgroundColumn.apply() is inherited (EnumMarksColumn has no apply()), and
+    it calls super().apply() → BaseColumn.apply(), appending the background key
+    after the main value is stored.
+    """
     def __init__(self, auto_column: AutoColumn | None = None) -> None:
         super().__init__(
             mapping={MARK_NON_CHAMPIONSHIP_EVENT: False},

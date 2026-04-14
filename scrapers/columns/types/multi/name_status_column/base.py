@@ -29,8 +29,13 @@ class NameStatusColumn(BackgroundColumn, MultiColumn, EnumMarksColumn, ABC):
     - Entity name with URL (e.g., "Lewis Hamilton", "Monaco")
     - Status indicated by suffix markers (e.g., "†", "*", "~")
 
-    Inherits BackgroundColumn (adds background to record) and EnumMarksColumn
-    (provides enum marks parsing helpers for subclasses).
+    Inherits BackgroundColumn (adds background to record), MultiColumn (writes
+    multiple keys to the record) and EnumMarksColumn (provides enum marks
+    parsing helpers for subclasses).
+
+    MRO: NameStatusColumn → BackgroundColumn → MultiColumn → EnumMarksColumn → BaseColumn.
+    BackgroundColumn.apply() calls super().apply() which resolves to MultiColumn.apply(),
+    ensuring all sub-columns are written before the background key is appended.
 
     Subclasses define:
     - entity_key: The key for the entity name (e.g., "driver", "circuit")
