@@ -456,7 +456,7 @@ write(
     make_puml(
         "Infobox Orchestrators & Providers",
         sorted(
-            component_of("InfoboxOrchestratorABC")
+            component_of("BaseInfoboxOrchestrator")
             | component_of("InfoboxSectionDiscoveryABC")
             | component_of("InfoboxExtractorABC"),
         ),

@@ -8,20 +8,13 @@ from typing import Generic
 
 from bs4 import BeautifulSoup
 
-from scrapers.infobox.extraction.mixins import ParsedRecordsMixin
 from scrapers.infobox.extraction.result import InfoboxExtractionResult
 from scrapers.infobox.extraction.result import ParserInputT
 from scrapers.options import ScraperOptions
-from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
 from scrapers.parsers.soup import SoupParser
 
 
-class BaseInfoboxOrchestrator(
-    InfoboxOrchestratorABC,
-    ABC,
-    Generic[ParserInputT],
-    ParsedRecordsMixin,
-):
+class BaseInfoboxOrchestrator(ABC, Generic[ParserInputT]):
     """Template-method orchestrator for infobox extraction domains."""
 
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
@@ -54,3 +47,14 @@ class BaseInfoboxOrchestrator(
         parsed_records: list[dict[str, Any]],
     ) -> InfoboxExtractionResult:
         return InfoboxExtractionResult(records=parsed_records)
+
+    @staticmethod
+    def coerce_records(raw_result: Any) -> list[dict[str, Any]]:
+        if raw_result is None:
+            return []
+        if isinstance(raw_result, dict):
+            return [raw_result]
+        if isinstance(raw_result, list):
+            return [record for record in raw_result if isinstance(record, dict)]
+        msg = f"Unsupported infobox parser result: {type(raw_result)!r}"
+        raise TypeError(msg)

@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from scrapers.infobox.extraction.service import ConstructorInfoboxOrchestrator
 from scrapers.options import ScraperOptions
-from scrapers.orchestration.infobox_orchestrator_abc import InfoboxOrchestratorABC
+from scrapers.orchestration.base_infobox_orchestrator import BaseInfoboxOrchestrator
 from scrapers.services.domain_record.constructor_pipeline_service import (
     ConstructorPipelineService,
 )
@@ -21,7 +21,7 @@ from scrapers.services.section.factories.section_service_factory import (
 
 @dataclass(frozen=True, slots=True)
 class ConstructorScraperDependencies:
-    infobox_service: InfoboxOrchestratorABC
+    infobox_service: BaseInfoboxOrchestrator
     sections_service_factory: SectionServiceFactoryABC[
         ConstructorSectionExtractionService
     ]
@@ -33,7 +33,7 @@ class ConstructorScraperCompositionFactory:
     """Factory budująca komplet zależności dla SingleConstructorScraper."""
 
     test_mode: bool = False
-    infobox_service: InfoboxOrchestratorABC | None = None
+    infobox_service: BaseInfoboxOrchestrator | None = None
     sections_service_factory: (
         SectionServiceFactoryABC[ConstructorSectionExtractionService] | None
     ) = None
@@ -43,7 +43,7 @@ class ConstructorScraperCompositionFactory:
     def for_tests(
         cls,
         *,
-        infobox_service: InfoboxOrchestratorABC | None = None,
+        infobox_service: BaseInfoboxOrchestrator | None = None,
         sections_service_factory: (
             SectionServiceFactoryABC[ConstructorSectionExtractionService] | None
         ) = None,
