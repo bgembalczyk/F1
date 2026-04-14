@@ -3,13 +3,14 @@ from __future__ import annotations
 from typing import Any
 
 from models.wiki_url import WikiUrl
+from scrapers.assemblers.assembler_abc import AssemblerABC
 from scrapers.records.inputs.base_assembler import BaseRecordAssemblerInput
 from scrapers.records.mappers.infobox import InfoboxRecordMapper
 from scrapers.records.mappers.section import SectionRecordMapper
 from scrapers.records.mappers.table_record.base import TableRecordMapper
 
 
-class BaseRecordAssembler:
+class BaseRecordAssembler(AssemblerABC):
     def __init__(
         self,
         *,
