@@ -4,15 +4,20 @@ hide circle
 hide empty members
 
 abstract class Exception
+
 abstract class RuntimeError
 
+
 class RequestError
+
+class ScraperError
 class HttpShimError
+
+class PipelineError
+
 class HTTPError
 class HTTPTimeoutError
-class ScraperError
 class DomainParseError
-class PipelineError
 class ScraperNetworkError
 class ScraperNotFoundError
 class ScraperParseError
@@ -26,10 +31,12 @@ class MissingSectionError
 Exception <|-- RuntimeError
 Exception <|-- RequestError
 
+
 RuntimeError <|-- ScraperError
 RuntimeError <|-- MissingSectionError
 
 RequestError <|-- HttpShimError
+
 
 HttpShimError <|-- HTTPError
 HttpShimError <|-- HTTPTimeoutError
@@ -41,7 +48,9 @@ ScraperError <|-- ScraperNotFoundError
 ScraperError <|-- ScraperParseError
 ScraperError <|-- ScraperValidationError
 
+
 PipelineError <|-- SourceParseError
 PipelineError <|-- TransportError
 PipelineError <|-- ValidationError
+
 @enduml

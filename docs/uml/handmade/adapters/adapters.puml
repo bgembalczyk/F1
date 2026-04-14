@@ -13,13 +13,13 @@ class SourceAdapterFetcherShim
 class GeminiJsonFileCacheAdapter
 class HttpResponseFileCacheAdapter
 
+
 SourceAdapter <|-- CacheAdapter
 SourceAdapter <|-- HtmlFetcher
-
-HtmlFetcher <|-- SourceAdapterFetcherShim
 
 FileTtlCacheAdapter <|-- GeminiJsonFileCacheAdapter
 FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
 
+HtmlFetcher <|-- SourceAdapterFetcherShim
 
 @enduml
