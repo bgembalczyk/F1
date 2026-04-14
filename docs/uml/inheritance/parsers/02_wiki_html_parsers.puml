@@ -12,7 +12,6 @@ abstract class HtmlTagParserABC
 class InfoboxElementParser
 class ListElementParser
 class NavboxElementParser
-class ReferencesWrapParser
 class SectionElementParser
 class WikiFigureElementParser
 abstract class WikiFigureElementParserABC
@@ -20,13 +19,9 @@ class WikiFigureParser
 class WikiInfoboxElementParser
 abstract class WikiInfoboxElementParserABC
 class WikiInfoboxHtmlParser
-class ListElementParser
-abstract class WikiListElementParserABC
 class WikiNavboxElementParser
-abstract class WikiNavboxElementParserABC
 class WikiNavboxParser
 class WikiParagraphElementParser
-abstract class WikiParagraphElementParserABC
 class WikiReferencesElementParser
 class WikiSectionElementParser
 
@@ -34,18 +29,16 @@ WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
 WikiInfoboxElementParserABC <|-- DriverInfoboxParser
 WikiFigureElementParserABC <|-- FigureElementParser
 WikiInfoboxElementParserABC <|-- InfoboxElementParser
-WikiListElementParserABC <|-- ListElementParser
-WikiListElementParserABC <|-- ListElementParser
-WikiNavboxElementParserABC <|-- NavboxElementParser
+HtmlTagParserABC <|-- ListElementParser
+HtmlTagParserABC <|-- NavboxElementParser
 HtmlSoupParserABC <|-- SectionElementParser
 WikiFigureElementParserABC <|-- WikiFigureElementParser
 WikiFigureElementParserABC <|-- WikiFigureParser
 WikiInfoboxElementParserABC <|-- WikiInfoboxElementParser
 WikiInfoboxElementParserABC <|-- WikiInfoboxHtmlParser
-WikiNavboxElementParserABC <|-- WikiNavboxElementParser
-WikiNavboxElementParserABC <|-- WikiNavboxParser
-WikiParagraphElementParserABC <|-- WikiParagraphElementParser
-ReferencesWrapParser <|-- WikiReferencesElementParser
+HtmlTagParserABC <|-- WikiNavboxElementParser
+HtmlTagParserABC <|-- WikiNavboxParser
+HtmlTagParserABC <|-- WikiParagraphElementParser
 HtmlTagParserABC <|-- WikiReferencesElementParser
 HtmlSoupParserABC <|-- WikiSectionElementParser
 

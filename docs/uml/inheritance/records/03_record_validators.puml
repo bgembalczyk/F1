@@ -5,14 +5,12 @@ hide empty members
 hide circle
 
 class CircuitsRecordValidator
-class CompositeRecordValidator
 class DriversRecordValidator
 class GrandsPrixRecordValidator
-abstract class RecordValidator
+class RecordValidator
 
-RecordValidator <|-- CompositeRecordValidator
-CompositeRecordValidator <|-- CircuitsRecordValidator
-CompositeRecordValidator <|-- DriversRecordValidator
-CompositeRecordValidator <|-- GrandsPrixRecordValidator
+RecordValidator <|-- CircuitsRecordValidator
+RecordValidator <|-- DriversRecordValidator
+RecordValidator <|-- GrandsPrixRecordValidator
 
 @enduml

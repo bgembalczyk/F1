@@ -5,10 +5,13 @@ from bs4 import Tag
 
 from models.services.season import parse_seasons
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiElementType
 
 
-class PrivateerTeamsListParser(WikiListElementParserABC):
+class PrivateerTeamsListParser(HtmlTagParserABC[dict[str, list[dict[str, Any]]]]):
+    element_type: WikiElementType = "list"
+
     def parse(self, element: Tag) -> dict[str, list[dict[str, Any]]]:
         items: list[dict[str, Any]] = []
         for li in element.find_all("li", recursive=False):

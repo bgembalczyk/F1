@@ -12,14 +12,6 @@ PayloadT = TypeVar("PayloadT")
 RecordT = TypeVar("RecordT", bound=dict[str, Any])
 
 
-class Extractor(ABC, Generic[InputT, OutputT]):
-    """Contract for composing data from one or many source payloads."""
-
-    @abstractmethod
-    def extract(self, source: InputT) -> OutputT:
-        """Compose raw source inputs into extraction-ready payload."""
-
-
 class Factory(ABC, Generic[PayloadT, RecordT]):
     """Contract for building the canonical domain model/record."""
 

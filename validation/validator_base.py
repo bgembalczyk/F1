@@ -1,5 +1,7 @@
 """Base class for record validators."""
 
+from __future__ import annotations
+
 import json
 from collections.abc import Callable
 from collections.abc import Mapping

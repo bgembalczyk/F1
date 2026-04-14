@@ -40,7 +40,6 @@ class SeasonResultsParser
 class SeasonResultsSectionParser
 class SeasonScoringSystemParser
 abstract class SectionParserBase
-abstract class SectionTableParseMixin
 class SponsorshipSectionParser
 class TableSectionParser
 class TeamLiveriesSectionParser
@@ -59,7 +58,7 @@ ConstructorTablesSectionParser <|-- ConstructorHistorySectionParser
 SectionParserBase <|-- ConstructorTablesSectionParser
 SectionParserBase <|-- ConstructorsSectionParser
 ConstructorsSectionParser <|-- CurrentConstructorsSectionParser
-SectionTableParseMixin <|-- DeclarativeSectionTableParseMixin
+DeclarativeSectionTableParseMixin <|-- BaseConstructorListScraper
 TableSectionParser <|-- DriverResultsSectionParser
 ConstructorsSectionParser <|-- FormerConstructorsSectionParser
 SectionParserBase <|-- GrandPrixByYearSectionParser

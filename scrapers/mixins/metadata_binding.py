@@ -1,44 +1,6 @@
-from __future__ import annotations
+# MetadataBindingMixin removed. Functions inlined into scrapers.section.serializer.
+# This file is kept for backward compatibility only.
+from scrapers.section.serializer import bind_section_defaults
+from scrapers.section.serializer import build_section_metadata
 
-from typing import Any
-
-from models.entity_name import EntityName
-
-
-class MetadataBindingMixin:
-    """Metadata composition/binding helpers for section payload serialization."""
-
-    @staticmethod
-    def build_metadata(
-        *,
-        parser: str,
-        source: str,
-        heading_path: tuple[str, ...] | None = None,
-        extras: dict[str, Any] | None = None,
-    ) -> dict[str, Any]:
-        metadata: dict[str, Any] = {
-            "parser": parser,
-            "source": source,
-            "heading_path": list(heading_path) if heading_path else [],
-        }
-        if extras:
-            metadata.update(extras)
-        return metadata
-
-    @staticmethod
-    def bind_section_defaults(
-        *,
-        metadata: dict[str, Any],
-        section_id: str,
-        section_label: str,
-    ) -> dict[str, Any]:
-        bound = dict(metadata)
-        bound.setdefault("parser", "unknown")
-        bound.setdefault("source", "unknown")
-        bound.setdefault("heading_path", [])
-        bound.setdefault("section_id", section_id)
-        bound.setdefault(
-            "section_label",
-            EntityName.from_raw(section_label).to_export(),
-        )
-        return bound
+__all__ = ["bind_section_defaults", "build_section_metadata"]

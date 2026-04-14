@@ -27,11 +27,10 @@ class ParagraphElementParser
 class PrivateerTeamsListParser
 abstract class ParserABC
 class RaceEventParser
-class ReferencesWrapParser
 class SectionAssembler
 class SponsorPartsParser
 class TeamsParser
-abstract class WikiListElementParserABC
+class WikiReferencesElementParser
 class YearParser
 
 InfoboxHtmlFieldParserABC <|-- ActiveYearsParser
@@ -47,8 +46,8 @@ InfoboxHtmlFieldParserABC <|-- LicenceParser
 InfoboxHtmlFieldParserABC <|-- NationalityParser
 InfoboxHtmlFieldParserABC <|-- RaceEventParser
 InfoboxHtmlFieldParserABC <|-- TeamsParser
-WikiListElementParserABC <|-- PrivateerTeamsListParser
-ParserABC <|-- ReferencesWrapParser
+HtmlTagParserABC <|-- PrivateerTeamsListParser
+HtmlTagParserABC <|-- WikiReferencesElementParser
 ParserABC <|-- SponsorPartsParser
 ParserABC <|-- YearParser
 

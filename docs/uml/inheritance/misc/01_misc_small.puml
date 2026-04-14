@@ -7,27 +7,16 @@ hide circle
 class CircuitEntitiesOrchestrator
 class CircuitLayoutsExtractor
 class ConfigurableSectionServiceFactory
-abstract class DomainMapperABC
-class ExportCapability
-abstract class Extractor
-class FetchCapability
-class IdentityDomainMapper
 abstract class SafeParsingMixin
-interface ScraperLifecycleProtocol
 class SeasonGenericTableOrchestrator
 class SeasonStandingsTableOrchestrator
 abstract class SeasonTableOrchestratorABC
 class SeasonTablePayloadMapper
 class TableExtractor
-class ValidateCapability
-class ValidatingSectionServiceFactory
 class WikipediaSectionByIdSelectionStrategy
 
 SafeParsingMixin <|-- CircuitEntitiesOrchestrator
 SafeParsingMixin <|-- CircuitLayoutsExtractor
-ExportCapability <|-- ScraperLifecycleProtocol
-FetchCapability <|-- ScraperLifecycleProtocol
-ValidateCapability <|-- ScraperLifecycleProtocol
 SeasonTableOrchestratorABC <|-- SeasonGenericTableOrchestrator
 SeasonTableOrchestratorABC <|-- SeasonStandingsTableOrchestrator
 
