@@ -44,7 +44,6 @@ from tests.support.refactored_base_classes_utils import assert_not_issubclass_ca
         (SingleEngineManufacturerScraper, ABCScraper),
         (F1SingleGrandPrixScraper, ABCScraper),
         (F1CircuitInfoboxParser, WikiInfoboxParser),
-        (WikiScraper, WikiElementParserMixin),
         (F1StandingsTableParser, WikiTableParser),
         (F1StandingsScraper, F1TableScraper),
     ],
@@ -75,18 +74,12 @@ def test_wiki_scraper_has_wiki_parsers() -> None:
     assert hasattr(scraper, "section_parser")
 
 
-def test_wiki_scraper_has_element_parsers_from_mixin() -> None:
-    """WikiScraper exposes parser attributes from WikiElementParserMixin."""
+def test_wiki_scraper_has_element_parsers() -> None:
+    """WikiScraper exposes element parser attributes."""
     scraper = WikiScraper()
     assert hasattr(scraper, "table_parser")
     assert hasattr(scraper, "infobox_parser")
     assert hasattr(scraper, "list_parser")
-    assert hasattr(scraper, "paragraph_parser")
-
-
-def test_wiki_element_parser_mixin_is_part_of_wiki_scraper_api() -> None:
-    """WikiScraper keeps WikiElementParserMixin in its public MRO."""
-    assert WikiElementParserMixin in WikiScraper.__mro__
 
 
 def test_wiki_scraper_has_scrape_method() -> None:

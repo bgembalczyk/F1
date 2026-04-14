@@ -23,7 +23,6 @@ ALLOWED_ROOTS = {
 
 ALLOWED_MIXINS = {
     "SafeParsingMixin",
-    "WikiElementParsingMixin",
 }
 
 

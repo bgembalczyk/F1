@@ -35,7 +35,6 @@ abstract class WikiSubSubSectionParserABC
 
 abstract class NestedChildParser
 abstract class ApplyForElementsMixin
-abstract class WikiElementParsingMixin
 
 
 class CancelledRoundsParser
@@ -195,7 +194,6 @@ ListElementParser <|-- IndianapolisOnlyListParser
 ListElementParser <|-- IndianapolisConstructorsListParser
 
 ParserABC <|-- RecursiveSectionParser
-WikiElementParsingMixin <|-- RecursiveSectionParser
 
 
 RecursiveSectionParser <|-- ByRaceTitleSubSectionParser
