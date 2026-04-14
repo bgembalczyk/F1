@@ -11,7 +11,7 @@ from typing import TypeVar
 T = TypeVar("T")
 
 
-class FileTtlCacheAdapter(Generic[T], ABC):
+class CacheAdapter(Generic[T], ABC):
     """Abstrakcyjna baza adapterów serializacji wartości cache do/z tekstu."""
 
     extension: str
@@ -25,7 +25,7 @@ class FileTtlCacheAdapter(Generic[T], ABC):
         """Deserializuje tekst do docelowego typu."""
 
 
-class HttpResponseFileCacheAdapter(FileTtlCacheAdapter[str]):
+class HttpResponseFileCacheAdapter(CacheAdapter[str]):
     """Adapter cache dla tekstowej odpowiedzi HTTP."""
 
     extension = ".html"
@@ -37,7 +37,7 @@ class HttpResponseFileCacheAdapter(FileTtlCacheAdapter[str]):
         return raw_text
 
 
-class GeminiJsonFileCacheAdapter(FileTtlCacheAdapter[dict[str, Any]]):
+class GeminiJsonFileCacheAdapter(CacheAdapter[dict[str, Any]]):
     """Adapter cache dla odpowiedzi Gemini (JSON)."""
 
     extension = ".json"
@@ -68,7 +68,7 @@ class FileTtlCache(Generic[T]):
         *,
         cache_dir: Path | str,
         ttl_seconds: int,
-        adapter: FileTtlCacheAdapter[T],
+        adapter: CacheAdapter[T],
     ) -> None:
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
