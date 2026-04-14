@@ -1,0 +1,33 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class BaseSeasonParser
+
+class CancelledRoundsParser
+class ColinChapmanTrophyParser
+class JimClarkTrophyParser
+class SeasonCalendarParser
+class SeasonEntriesParser
+class SeasonFreePracticeParser
+class SeasonNonChampionshipParser
+class SeasonRegionalChampionshipParser
+class SeasonResultsParser
+class SeasonScoringSystemParser
+class TestingVenuesParser
+
+
+BaseSeasonParser <|-- CancelledRoundsParser
+BaseSeasonParser <|-- ColinChapmanTrophyParser
+BaseSeasonParser <|-- JimClarkTrophyParser
+BaseSeasonParser <|-- SeasonCalendarParser
+BaseSeasonParser <|-- SeasonEntriesParser
+BaseSeasonParser <|-- SeasonFreePracticeParser
+BaseSeasonParser <|-- SeasonNonChampionshipParser
+BaseSeasonParser <|-- SeasonRegionalChampionshipParser
+BaseSeasonParser <|-- SeasonResultsParser
+BaseSeasonParser <|-- SeasonScoringSystemParser
+BaseSeasonParser <|-- TestingVenuesParser
+
+@enduml

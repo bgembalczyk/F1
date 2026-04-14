@@ -1,0 +1,17 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+class RequestError
+class HttpShimError
+class HTTPError
+class HTTPTimeoutError
+
+RequestError <|-- HttpShimError
+
+HttpShimError <|-- HTTPError
+HttpShimError <|-- HTTPTimeoutError
+
+@enduml

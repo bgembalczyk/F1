@@ -1,0 +1,17 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+class RecordValidator
+class CircuitsRecordValidator
+class DriversRecordValidator
+class GrandsPrixRecordValidator
+
+
+RecordValidator <|-- CircuitsRecordValidator
+RecordValidator <|-- DriversRecordValidator
+RecordValidator <|-- GrandsPrixRecordValidator
+
+@enduml

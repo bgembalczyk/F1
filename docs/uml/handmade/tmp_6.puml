@@ -1,0 +1,16 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class BaseOrchestrationFlow
+
+class DriversCheckpointFlow
+class SeedSectionOrchestrationFlow
+
+
+BaseOrchestrationFlow <|-- DriversCheckpointFlow
+BaseOrchestrationFlow <|-- SeedSectionOrchestrationFlow
+
+@enduml

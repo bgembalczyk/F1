@@ -1,0 +1,154 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class BackgroundMixin
+abstract class BaseColumn
+abstract class BaseConstructorColumn
+
+class FatalityEventColumn
+class NameStatusColumn
+class AppendLinksColumn
+class AutoColumn
+class BoolColumn
+class BrListColumn
+class CalendarCircuitColumn
+class CircuitNameStatusColumn
+class ColourListColumn
+class ConstructorColumn
+class ConstructorNameColumn
+class ConstructorPartColumn
+class ConstructorSplitColumn
+class DateColumn
+class DateRangeColumn
+class DriverColumn
+class DriverListColumn
+class DriverNameStatusColumn
+class DriversWithRoundsColumn
+class EngineColumn
+class EngineConfigurationColumn
+class EngineManufacturerNameStatusColumn
+class EngineRpmLimitColumn
+class EntrantColumn
+class EntriesStartsColumn
+class FatalityDateColumn
+class FirstPlaceColumn
+class FuelFlowRateColumn
+class FuelInjectionPressureLimitColumn
+class FuelLimitPerRaceColumn
+class FuncColumn
+class LastLengthUsedColumn
+class LinksListColumn
+class ListColumn
+class LocationColumn
+class MultiColumn
+class NestedTextColumn
+class NestedUnitListColumn
+class ParsedValueColumn
+class PointsColumn
+class PointsOrTextColumn
+class PositionColumn
+class RaceResultColumn
+class RaceTitleStatusColumn
+class RangeColumn
+class RegexColumn
+class RestartStatusColumn
+class RoundColumn
+class SeasonDateColumn
+class SeasonsColumn
+class SeriesColumn
+class SkipColumn
+class SponsorColumn
+class SponsorshipSeasonsColumn
+class TextColumn
+class TimeColumn
+class TimeRangeColumn
+class TyreColumn
+class UnitColumn
+class UnknownValueColumn
+class UrlColumn
+
+class ConstructorPartParser
+
+
+BaseColumn <|-- AutoColumn
+BaseColumn <|-- BaseConstructorColumn
+BaseColumn <|-- BoolColumn
+BaseColumn <|-- BrListColumn
+BaseColumn <|-- CalendarCircuitColumn
+BaseColumn <|-- ColourListColumn
+BaseColumn <|-- ConstructorNameColumn
+BaseColumn <|-- ConstructorPartColumn
+BaseColumn <|-- DateColumn
+BaseColumn <|-- DateRangeColumn
+BaseColumn <|-- DriverColumn
+BaseColumn <|-- DriverListColumn
+BaseColumn <|-- DriversWithRoundsColumn
+BaseColumn <|-- EngineColumn
+BaseColumn <|-- EngineConfigurationColumn
+BaseColumn <|-- EngineRpmLimitColumn
+BaseColumn <|-- EntrantColumn
+BaseColumn <|-- EntriesStartsColumn
+BaseColumn <|-- FatalityDateColumn
+BaseColumn <|-- FatalityEventColumn
+BaseColumn <|-- FirstPlaceColumn
+BaseColumn <|-- FuelFlowRateColumn
+BaseColumn <|-- FuelInjectionPressureLimitColumn
+BaseColumn <|-- FuelLimitPerRaceColumn
+BaseColumn <|-- FuncColumn
+BaseColumn <|-- LinksListColumn
+BaseColumn <|-- ListColumn
+BaseColumn <|-- MultiColumn
+BaseColumn <|-- NestedTextColumn
+BaseColumn <|-- NestedUnitListColumn
+BaseColumn <|-- ParsedValueColumn
+BaseColumn <|-- PointsColumn
+BaseColumn <|-- PointsOrTextColumn
+BaseColumn <|-- PositionColumn
+BaseColumn <|-- RaceResultColumn
+BaseColumn <|-- RangeColumn
+BaseColumn <|-- RegexColumn
+BaseColumn <|-- RestartStatusColumn
+BaseColumn <|-- RoundColumn
+BaseColumn <|-- SeasonDateColumn
+BaseColumn <|-- SeasonsColumn
+BaseColumn <|-- SeriesColumn
+BaseColumn <|-- SkipColumn
+BaseColumn <|-- SponsorColumn
+BaseColumn <|-- SponsorshipSeasonsColumn
+BaseColumn <|-- TextColumn
+BaseColumn <|-- TimeColumn
+BaseColumn <|-- TimeRangeColumn
+BaseColumn <|-- TyreColumn
+BaseColumn <|-- UnitColumn
+BaseColumn <|-- UnknownValueColumn
+BaseColumn <|-- UrlColumn
+
+BaseConstructorColumn <|-- ConstructorColumn
+ConstructorPartParser <|-- ConstructorPartColumn
+
+FuncColumn <|-- LocationColumn
+
+LinksListColumn <|-- AppendLinksColumn
+
+MultiColumn <|-- ConstructorSplitColumn
+MultiColumn <|-- LastLengthUsedColumn
+MultiColumn <|-- NameStatusColumn
+
+NameStatusColumn <|-- CircuitNameStatusColumn
+NameStatusColumn <|-- DriverNameStatusColumn
+NameStatusColumn <|-- EngineManufacturerNameStatusColumn
+NameStatusColumn <|-- RaceTitleStatusColumn
+
+BackgroundMixin <|-- FatalityEventColumn
+BackgroundMixin <|-- NameStatusColumn
+BackgroundMixin <|-- RaceResultColumn
+BackgroundMixin <|-- RestartStatusColumn
+BackgroundMixin <|-- RoundColumn
+
+EnumMarksMixin <|-- FatalityDateColumn
+EnumMarksMixin <|-- FatalityEventColumn
+EnumMarksMixin <|-- NameStatusColumn
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class LayerJobRunner
+
+class FunctionExportRunner
+class GrandPrixRunner
+
+
+LayerJobRunner <|-- FunctionExportRunner
+LayerJobRunner <|-- GrandPrixRunner
+
+@enduml

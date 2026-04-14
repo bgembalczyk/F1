@@ -1,0 +1,20 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class SourceAdapter
+
+class HtmlFetcher
+class CacheAdapter
+class SourceAdapterFetcherShim
+
+
+SourceAdapter <|-- CacheAdapter
+SourceAdapter <|-- HtmlFetcher
+
+HtmlFetcher <|-- SourceAdapterFetcherShim
+
+
+@enduml

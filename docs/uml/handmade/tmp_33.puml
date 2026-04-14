@@ -1,0 +1,25 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class RecordTransformer
+
+class DriversChampionshipsTransformer
+class FailedToMakeRestartTransformer
+class FatalitiesCarTransformer
+class NormalizeLinksTransformer
+class PointsScoringSystemsHistoryTransformer
+class RecordFactoryTransformer
+class ShortenedRacePointsTransformer
+
+
+RecordTransformer <|-- DriversChampionshipsTransformer
+RecordTransformer <|-- FailedToMakeRestartTransformer
+RecordTransformer <|-- FatalitiesCarTransformer
+RecordTransformer <|-- NormalizeLinksTransformer
+RecordTransformer <|-- PointsScoringSystemsHistoryTransformer
+RecordTransformer <|-- RecordFactoryTransformer
+RecordTransformer <|-- ShortenedRacePointsTransformer
+
+@enduml

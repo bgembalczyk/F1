@@ -1,0 +1,15 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+class BaseRegistryEntry
+class ListJobRegistryEntry
+class SeedRegistryEntry
+
+
+BaseRegistryEntry <|-- ListJobRegistryEntry
+BaseRegistryEntry <|-- SeedRegistryEntry
+
+@enduml

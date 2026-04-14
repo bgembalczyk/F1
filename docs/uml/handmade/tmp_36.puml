@@ -1,0 +1,16 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class SeasonTableOrchestratorABC
+
+class SeasonGenericTableOrchestrator
+class SeasonStandingsTableOrchestrator
+
+
+SeasonTableOrchestratorABC <|-- SeasonGenericTableOrchestrator
+SeasonTableOrchestratorABC <|-- SeasonStandingsTableOrchestrator
+
+@enduml

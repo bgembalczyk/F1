@@ -1,0 +1,25 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class CompleteExtractorBase
+
+class CompleteConstructorsDataExtractor
+class CompleteDriverDataExtractor
+class CompleteSeasonDataExtractor
+class F1CompleteCircuitDataExtractor
+class F1CompleteEngineManufacturerDataExtractor
+class F1CompleteGrandPrixDataExtractor
+
+
+CompleteExtractorBase <|-- CompleteConstructorsDataExtractor
+CompleteExtractorBase <|-- CompleteDriverDataExtractor
+CompleteExtractorBase <|-- CompleteSeasonDataExtractor
+CompleteExtractorBase <|-- F1CompleteCircuitDataExtractor
+CompleteExtractorBase <|-- F1CompleteEngineManufacturerDataExtractor
+CompleteExtractorBase <|-- F1CompleteGrandPrixDataExtractor
+
+
+@enduml

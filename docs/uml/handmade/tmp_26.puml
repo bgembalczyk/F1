@@ -1,0 +1,15 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class InfoboxRowsParserABC
+
+class InfoboxCareerParser
+class InfoboxTitlesParser
+
+
+InfoboxRowsParserABC <|-- InfoboxCareerParser
+InfoboxRowsParserABC <|-- InfoboxTitlesParser
+
+@enduml

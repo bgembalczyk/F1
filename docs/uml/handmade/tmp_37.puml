@@ -1,0 +1,28 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class SectionLevelMixin
+abstract class SubSectionLevelMixin
+abstract class SubSubSectionLevelMixin
+abstract class WikiSectionNodeParserABC
+abstract class WikiSectionParserABC
+abstract class WikiSubSectionParserABC
+abstract class WikiSubSubSectionParserABC
+
+
+WikiSectionNodeParserABC <|-- WikiSectionParserABC
+WikiSectionNodeParserABC <|-- WikiSubSectionParserABC
+WikiSectionNodeParserABC <|-- WikiSubSubSectionParserABC
+
+SectionLevelMixin <|-- SubSectionLevelMixin
+SectionLevelMixin <|-- WikiSectionParserABC
+
+SubSectionLevelMixin <|-- SubSubSectionLevelMixin
+SubSectionLevelMixin <|-- WikiSubSectionParserABC
+
+SubSubSectionLevelMixin <|-- WikiSubSubSectionParserABC
+
+@enduml

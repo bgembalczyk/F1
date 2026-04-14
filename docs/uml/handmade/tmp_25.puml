@@ -1,0 +1,32 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class InfoboxHtmlFieldParserABC
+
+class ActiveYearsParser
+class BestFinishParser
+class CallableInfoboxFieldParser
+class CarNumbersParser
+class ChampionshipsParser
+class FinishedSeasonParser
+class LicenceParser
+class NationalityParser
+class RaceEventParser
+class TeamsParser
+
+
+InfoboxHtmlFieldParserABC <|-- ActiveYearsParser
+InfoboxHtmlFieldParserABC <|-- BestFinishParser
+InfoboxHtmlFieldParserABC <|-- CallableInfoboxFieldParser
+InfoboxHtmlFieldParserABC <|-- CarNumbersParser
+InfoboxHtmlFieldParserABC <|-- ChampionshipsParser
+InfoboxHtmlFieldParserABC <|-- FinishedSeasonParser
+InfoboxHtmlFieldParserABC <|-- LicenceParser
+InfoboxHtmlFieldParserABC <|-- NationalityParser
+InfoboxHtmlFieldParserABC <|-- RaceEventParser
+InfoboxHtmlFieldParserABC <|-- TeamsParser
+
+@enduml

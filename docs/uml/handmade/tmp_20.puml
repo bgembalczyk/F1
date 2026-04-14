@@ -1,0 +1,17 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class FileTtlCacheAdapter
+
+class GeminiJsonFileCacheAdapter
+class HttpResponseFileCacheAdapter
+
+
+FileTtlCacheAdapter <|-- GeminiJsonFileCacheAdapter
+FileTtlCacheAdapter <|-- HttpResponseFileCacheAdapter
+
+
+@enduml

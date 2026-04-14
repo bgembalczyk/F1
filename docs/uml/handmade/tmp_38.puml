@@ -1,0 +1,19 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class SplitRule
+
+class HasMultipleSeasonsRule
+class HasPossessiveColoursRule
+class HasYearSpecificColoursRule
+class HasYearSpecificSponsorsRule
+
+
+SplitRule <|-- HasMultipleSeasonsRule
+SplitRule <|-- HasPossessiveColoursRule
+SplitRule <|-- HasYearSpecificColoursRule
+SplitRule <|-- HasYearSpecificSponsorsRule
+
+@enduml

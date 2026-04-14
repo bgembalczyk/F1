@@ -1,0 +1,16 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class SafeParsingMixin
+
+class CircuitEntitiesOrchestrator
+class CircuitLayoutsExtractor
+
+
+SafeParsingMixin <|-- CircuitEntitiesOrchestrator
+SafeParsingMixin <|-- CircuitLayoutsExtractor
+
+@enduml

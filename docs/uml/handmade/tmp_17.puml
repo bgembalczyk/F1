@@ -1,0 +1,63 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class SectionParserBase
+abstract class BaseDriverResultsSectionParser
+abstract class ExtractListItemsMixin
+
+class ConstructorsSectionParser
+class CircuitLayoutHistorySectionParser
+class CircuitsListSectionParser
+class ConstructorTablesSectionParser
+class GrandPrixByYearSectionParser
+class SeasonCalendarSectionParser
+class SeasonConstructorsStandingsSectionParser
+class SeasonDriversStandingsSectionParser
+class SeasonMidSeasonChangesSectionParser
+class SeasonRegulationChangesSectionParser
+class SeasonResultsSectionParser
+class TableSectionParser
+
+class CurrentConstructorsSectionParser
+class FormerConstructorsSectionParser
+class ConstructorChampionshipResultsSectionParser
+class ConstructorCompleteF1ResultsSectionParser
+class ConstructorHistorySectionParser
+
+class CircuitEventsSectionParser
+class CircuitLapRecordsSectionParser
+class DriverResultsSectionParser
+
+
+SectionParserBase <|-- BaseDriverResultsSectionParser
+SectionParserBase <|-- CircuitLayoutHistorySectionParser
+SectionParserBase <|-- CircuitsListSectionParser
+SectionParserBase <|-- ConstructorsSectionParser
+SectionParserBase <|-- ConstructorTablesSectionParser
+SectionParserBase <|-- GrandPrixByYearSectionParser
+SectionParserBase <|-- SeasonCalendarSectionParser
+SectionParserBase <|-- SeasonConstructorsStandingsSectionParser
+SectionParserBase <|-- SeasonDriversStandingsSectionParser
+SectionParserBase <|-- SeasonMidSeasonChangesSectionParser
+SectionParserBase <|-- SeasonRegulationChangesSectionParser
+SectionParserBase <|-- SeasonResultsSectionParser
+SectionParserBase <|-- TableSectionParser
+
+ExtractListItemsMixin <|-- SeasonMidSeasonChangesSectionParser
+ExtractListItemsMixin <|-- SeasonRegulationChangesSectionParser
+
+ConstructorsSectionParser <|-- CurrentConstructorsSectionParser
+ConstructorsSectionParser <|-- FormerConstructorsSectionParser
+
+ConstructorTablesSectionParser <|-- ConstructorChampionshipResultsSectionParser
+ConstructorTablesSectionParser <|-- ConstructorCompleteF1ResultsSectionParser
+ConstructorTablesSectionParser <|-- ConstructorHistorySectionParser
+
+TableSectionParser <|-- CircuitEventsSectionParser
+TableSectionParser <|-- CircuitLapRecordsSectionParser
+TableSectionParser <|-- DriverResultsSectionParser
+
+@enduml

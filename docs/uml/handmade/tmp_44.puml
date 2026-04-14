@@ -1,0 +1,30 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class ApplyForElementsMixin
+abstract class EnumMarksMixin
+abstract class NestedChildParser
+
+class ArticleTablesAssembler
+class BodyContentAssembler
+class CategoryLinksParser
+class ConfigurableSectionServiceFactory
+class DefaultDriverInfoboxProvider
+class DefaultRetryPolicy
+class DriverInfoboxBundle
+class DriverRecordAssembler
+class HttpClient
+class IndianapolisConstructorsListParser
+class IndianapolisOnlyListParser
+class InfoboxSectionCollector
+class MinDelayRateLimiter
+class MissingSectionError
+class ParagraphElementParser
+class SeasonTablePayloadMapper
+class SectionAssembler
+class TableExtractor
+class WikipediaSectionByIdSelectionStrategy
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+interface DataContract
+interface CircuitContract
+interface DriverContract
+interface PointsContract
+
+
+DataContract <|-- CircuitContract
+DataContract <|-- DriverContract
+DataContract <|-- PointsContract
+
+
+@enduml

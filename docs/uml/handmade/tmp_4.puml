@@ -1,0 +1,16 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class BaseExecutor
+
+class LayerOneExecutor
+class LayerZeroExecutor
+
+
+BaseExecutor <|-- LayerOneExecutor
+BaseExecutor <|-- LayerZeroExecutor
+
+@enduml

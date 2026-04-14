@@ -1,0 +1,30 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class RunDiagnosticsMixin
+
+class PipelineService
+class DomainPipelineService
+class ConstructorTableExtractionService
+class CircuitPipelineService
+class ConstructorPipelineService
+class DriverPipelineService
+class SeasonPipelineService
+
+
+PipelineService <|-- DomainPipelineService
+
+RunDiagnosticsMixin <|-- ConstructorTableExtractionService
+RunDiagnosticsMixin <|-- DomainPipelineService
+
+DomainPipelineService <|-- CircuitPipelineService
+DomainPipelineService <|-- ConstructorPipelineService
+DomainPipelineService <|-- DriverPipelineService
+DomainPipelineService <|-- SeasonPipelineService
+
+
+
+@enduml

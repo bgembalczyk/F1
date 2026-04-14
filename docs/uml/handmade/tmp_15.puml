@@ -1,0 +1,16 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class ClassifierABC
+
+class CircuitLapRecordsTableClassifier
+class DriverResultsSectionTableClassifier
+
+
+ClassifierABC <|-- CircuitLapRecordsTableClassifier
+ClassifierABC <|-- DriverResultsSectionTableClassifier
+
+@enduml

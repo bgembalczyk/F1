@@ -1,0 +1,13 @@
+@startuml
+
+hide circle
+hide empty members
+
+class CircuitBaseRecord
+class CircuitCompleteRecord
+class CircuitDetailsRecord
+
+CircuitBaseRecord <|-- CircuitCompleteRecord
+CircuitBaseRecord <|-- CircuitDetailsRecord
+
+@enduml

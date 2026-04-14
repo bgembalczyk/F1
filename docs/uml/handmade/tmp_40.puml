@@ -1,0 +1,17 @@
+@startuml
+
+hide circle
+hide empty members
+
+class ValidatedModel
+class Circuit
+class EngineManufacturer
+class EngineRegulation
+class EngineRestriction
+
+ValidatedModel <|-- Circuit
+ValidatedModel <|-- EngineManufacturer
+ValidatedModel <|-- EngineRegulation
+ValidatedModel <|-- EngineRestriction
+
+@enduml

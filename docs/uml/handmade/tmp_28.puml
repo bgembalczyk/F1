@@ -1,0 +1,17 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class LayerZeroRunConfigFactory
+
+class DefaultLayerZeroRunConfigFactory
+class SponsorshipLiveriesRunConfigFactory
+class StaticScraperKwargsFactory
+
+
+LayerZeroRunConfigFactory <|-- DefaultLayerZeroRunConfigFactory
+LayerZeroRunConfigFactory <|-- SponsorshipLiveriesRunConfigFactory
+LayerZeroRunConfigFactory <|-- StaticScraperKwargsFactory
+
+@enduml

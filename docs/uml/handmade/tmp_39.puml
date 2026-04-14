@@ -1,0 +1,16 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+interface TextCacheProtocol
+
+class FileCache
+class WikipediaCachePolicy
+
+
+TextCacheProtocol <|-- FileCache
+TextCacheProtocol <|-- WikipediaCachePolicy
+
+@enduml
