@@ -1,11 +1,10 @@
 from models.records.circuit.circuit import CIRCUIT_SCHEMA
-from validation.composite_validator import CompositeRecordValidator
 from validation.rules import build_common_rules
 from validation.schema_rules import build_domain_rules
 from validation.validator_base import RecordValidator
 
 
-class CircuitsRecordValidator(CompositeRecordValidator):
+class CircuitsRecordValidator(RecordValidator):
     def __init__(self, record_factory_validator=None) -> None:
         normalized = RecordValidator._coerce_schema(CIRCUIT_SCHEMA)  # noqa: SLF001
         super().__init__(

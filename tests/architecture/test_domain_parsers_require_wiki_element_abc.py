@@ -16,11 +16,9 @@ TARGET_FILES = (
 
 ALLOWED_ROOTS = {
     "HtmlTagParserABC",
-    "WikiListElementParserABC",
-    "HtmlSoupParserABC",
     "WikiInfoboxElementParserABC",
-    "WikiNavboxElementParserABC",
     "WikiFigureElementParserABC",
+    "HtmlSoupParserABC",
 }
 
 ALLOWED_MIXINS = {

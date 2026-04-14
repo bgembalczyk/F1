@@ -2,7 +2,6 @@
 from types import SimpleNamespace
 
 from scrapers.mixins.section_table_parse import DeclarativeSectionTableParseMixin
-from scrapers.mixins.section_table_parse import SectionTableParseMixin
 
 
 class BaseScraper:
@@ -15,7 +14,7 @@ class BaseScraper:
         return ["fallback"]
 
 
-class Scraper(SectionTableParseMixin, BaseScraper):
+class Scraper(DeclarativeSectionTableParseMixin, BaseScraper):
     pass
 
 

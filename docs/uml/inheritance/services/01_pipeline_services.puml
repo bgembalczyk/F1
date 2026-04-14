@@ -4,7 +4,6 @@ skinparam classAttributeIconSize 0
 hide empty members
 hide circle
 
-abstract class BaseDomainPipelineService
 class CircuitPipelineService
 class ConstructorPipelineService
 class ConstructorTableExtractionService
@@ -14,13 +13,12 @@ class PipelineService
 abstract class RunDiagnosticsMixin
 class SeasonPipelineService
 
-DomainPipelineService <|-- BaseDomainPipelineService
 RunDiagnosticsMixin <|-- DomainPipelineService
-BaseDomainPipelineService <|-- CircuitPipelineService
-BaseDomainPipelineService <|-- ConstructorPipelineService
 RunDiagnosticsMixin <|-- ConstructorTableExtractionService
 PipelineService <|-- DomainPipelineService
-BaseDomainPipelineService <|-- DriverPipelineService
-BaseDomainPipelineService <|-- SeasonPipelineService
+DomainPipelineService <|-- CircuitPipelineService
+DomainPipelineService <|-- ConstructorPipelineService
+DomainPipelineService <|-- DriverPipelineService
+DomainPipelineService <|-- SeasonPipelineService
 
 @enduml

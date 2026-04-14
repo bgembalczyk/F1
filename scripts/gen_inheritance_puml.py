@@ -286,7 +286,6 @@ SECTION_ROOTS = [
     "TableSectionParser",
     "ApplyForElementsMixin",
     "ExtractListItemsMixin",
-    "SectionTableParseMixin",
     "DeclarativeSectionTableParseMixin",
     "BaseDriverResultsSectionParser",
     "BaseSeasonParser",
@@ -506,8 +505,7 @@ write(
             | component_of("BaseOrchestrationFlow")
             | component_of("LayerZeroRunConfigFactoryProtocol")
             | component_of("LayerJobRunner")
-            | component_of("BaseRegistryEntry")
-            | component_of("MetadataBindingMixin"),
+            | component_of("BaseRegistryEntry"),
         ),
     ),
 )

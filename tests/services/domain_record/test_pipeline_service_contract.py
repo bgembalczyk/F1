@@ -5,14 +5,12 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from scrapers.drivers.drivers_postprocess.assembler import DriverRecordDTO
 from scrapers.records.dto.circuit import CircuitRecordDTO
 from scrapers.records.dto.constructor import ConstructorRecordDTO
+from scrapers.records.dto.driver import DriverRecordDTO
 from scrapers.records.dto.season import SeasonPayloadDTO
 from scrapers.records.dto.season import SeasonRecordSections
-from scrapers.services.domain_record.base_pipeline_service import (
-    BaseDomainPipelineService,
-)
+from scrapers.services.domain_record.base import DomainPipelineService
 from scrapers.services.domain_record.circuit_pipeline_service import (
     CircuitDomainRecordInput,
 )
@@ -41,7 +39,7 @@ from scrapers.services.domain_record.season_pipeline_service import (
 
 @dataclass(frozen=True)
 class DomainCase:
-    service: type[BaseDomainPipelineService]
+    service: type[DomainPipelineService]
     input_dto: object
     source: dict[str, object]
 
@@ -89,7 +87,7 @@ def domain_case(request: pytest.FixtureRequest) -> DomainCase:
     return request.param
 
 
-def _make_service(service_cls: type[BaseDomainPipelineService]):
+def _make_service(service_cls: type[DomainPipelineService]):
     assembler = MagicMock()
     assembler.assemble.return_value = {"ok": True}
     return service_cls(assembler=assembler), assembler
@@ -97,7 +95,7 @@ def _make_service(service_cls: type[BaseDomainPipelineService]):
 
 def test_domain_services_share_common_base_contract(domain_case: DomainCase) -> None:
     service, _ = _make_service(domain_case.service)
-    assert isinstance(service, BaseDomainPipelineService)
+    assert isinstance(service, DomainPipelineService)
     assert callable(service.build_payload)
     assert callable(service.assemble)
     assert callable(service._compat_input_from_source)

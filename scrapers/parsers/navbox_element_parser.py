@@ -1,11 +1,14 @@
 from bs4 import Tag
 
 from models.data.parsed.html_elements import NavboxElementData
-from scrapers.parsers.contracts.wiki_elements import WikiNavboxElementParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.wiki.wiki_element_parser_abc import WikiElementType
 from scrapers.text_cleaning import extract_text
 
 
-class NavboxElementParser(WikiNavboxElementParserABC):
+class NavboxElementParser(HtmlTagParserABC[NavboxElementData]):
+    element_type: WikiElementType = "navbox"
+
     def parse(self, raw: Tag) -> NavboxElementData:
         title_tag = raw.find(class_="navbox-title")
         links: list[dict[str, str | None]] = []

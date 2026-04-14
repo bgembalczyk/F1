@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from bs4 import Tag
 
-from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
+from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.types import SectionTreePayload
 from scrapers.parsers.wiki.privateer_teams_list import PrivateerTeamsListParser
@@ -13,7 +13,7 @@ class PrivateerTeamsSectionParser(RecursiveSectionParser):
     heading_class = "mw-heading3"
     output_key = "sub_sections"
 
-    def __init__(self, *, list_parser: WikiListElementParserABC | None = None) -> None:
+    def __init__(self, *, list_parser: HtmlTagParserABC | None = None) -> None:
         super().__init__()
         self._list_parser = list_parser or PrivateerTeamsListParser()
 

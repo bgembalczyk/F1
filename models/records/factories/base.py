@@ -16,57 +16,7 @@ from models.records.factories.spec import FactorySpec
 T = TypeVar("T")
 
 
-class LinkNormalizationMixin:
-    def normalize_link_like_field(
-        self,
-        payload: dict[str, Any],
-        field_name: str,
-    ) -> None:
-        payload[field_name] = normalize_optional_link_or_string(
-            self.normalizer,
-            payload.get(field_name),
-            field_name,
-        )
-
-
-class SeasonNormalizationMixin:
-    def normalize_season_like_field(
-        self,
-        payload: dict[str, Any],
-        field_name: str,
-    ) -> None:
-        payload[field_name] = self.normalizer.normalize_seasons(payload.get(field_name))
-
-
-class StatusNormalizationMixin:
-    def normalize_status_field(
-        self,
-        payload: dict[str, Any],
-        field_name: str,
-        allowed: list[str],
-    ) -> None:
-        payload[field_name] = self.normalizer.normalize_status(
-            payload.get(field_name),
-            allowed,
-            field_name,
-        )
-
-
-class LocationNormalizationMixin:
-    def normalize_location_field(
-        self,
-        payload: dict[str, Any],
-        field_name: str,
-    ) -> None:
-        payload[field_name] = self.normalizer.normalize_string(payload.get(field_name))
-
-
-class BaseRecordFactory(
-    LinkNormalizationMixin,
-    SeasonNormalizationMixin,
-    StatusNormalizationMixin,
-    LocationNormalizationMixin,
-):
+class BaseRecordFactory:
     """Base class for record builders.
 
     How to create a new domain factory:
@@ -83,6 +33,43 @@ class BaseRecordFactory(
     @abstractmethod
     def build(self, record: Mapping[str, Any]) -> Any:
         """Build normalized record object from source mapping."""
+
+    def normalize_link_like_field(
+        self,
+        payload: dict[str, Any],
+        field_name: str,
+    ) -> None:
+        payload[field_name] = normalize_optional_link_or_string(
+            self.normalizer,
+            payload.get(field_name),
+            field_name,
+        )
+
+    def normalize_season_like_field(
+        self,
+        payload: dict[str, Any],
+        field_name: str,
+    ) -> None:
+        payload[field_name] = self.normalizer.normalize_seasons(payload.get(field_name))
+
+    def normalize_status_field(
+        self,
+        payload: dict[str, Any],
+        field_name: str,
+        allowed: list[str],
+    ) -> None:
+        payload[field_name] = self.normalizer.normalize_status(
+            payload.get(field_name),
+            allowed,
+            field_name,
+        )
+
+    def normalize_location_field(
+        self,
+        payload: dict[str, Any],
+        field_name: str,
+    ) -> None:
+        payload[field_name] = self.normalizer.normalize_string(payload.get(field_name))
 
     def normalize_field(
         self,

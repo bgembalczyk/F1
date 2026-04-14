@@ -7,9 +7,7 @@ from scrapers.records.assemblers.seasons import SeasonRecordAssembler
 from scrapers.records.dto.season import SeasonPayloadDTO
 from scrapers.records.inputs.base_assembler import BaseRecordAssemblerInput
 from scrapers.records.sections.season import SeasonRecordSections
-from scrapers.services.domain_record.base_pipeline_service import (
-    BaseDomainPipelineService,
-)
+from scrapers.services.domain_record.base import DomainPipelineService
 
 
 @dataclass(frozen=True, slots=True)
@@ -18,7 +16,7 @@ class SeasonDomainRecordInput:
 
 
 class SeasonPipelineService(
-    BaseDomainPipelineService[SeasonDomainRecordInput, SeasonPayloadDTO],
+    DomainPipelineService[SeasonDomainRecordInput, SeasonPayloadDTO, dict[str, Any]],
 ):
     def __init__(
         self,

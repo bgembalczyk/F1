@@ -16,7 +16,6 @@ class LayerOneExecutor
 class LayerZeroExecutor
 abstract class LayerZeroRunConfigFactory
 class ListJobRegistryEntry
-abstract class MetadataBindingMixin
 class SeedRegistryEntry
 class SeedSectionOrchestrationFlow
 class SponsorshipLiveriesRunConfigFactory

@@ -6,9 +6,7 @@ from typing import Any
 
 from scrapers.records.assemblers.circuit import CircuitRecordAssembler
 from scrapers.records.dto.circuit import CircuitRecordDTO
-from scrapers.services.domain_record.base_pipeline_service import (
-    BaseDomainPipelineService,
-)
+from scrapers.services.domain_record.base import DomainPipelineService
 
 if TYPE_CHECKING:
     from scrapers.contracts import RecordAssemblerProtocol
@@ -23,7 +21,7 @@ class CircuitDomainRecordInput:
 
 
 class CircuitPipelineService(
-    BaseDomainPipelineService[CircuitDomainRecordInput, CircuitRecordDTO],
+    DomainPipelineService[CircuitDomainRecordInput, CircuitRecordDTO, dict[str, Any]],
 ):
     required_fields = ("source_url", "infobox", "lap_record_rows", "sections")
 

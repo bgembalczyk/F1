@@ -4,7 +4,6 @@ import ast
 from pathlib import Path
 
 from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
-from scrapers.parsers.contracts.wiki_elements import WikiListElementParserABC
 from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 from scrapers.parsers.registry import DEFAULT_PARSER_REGISTRY
@@ -12,9 +11,8 @@ from scrapers.parsers.registry import DEFAULT_PARSER_REGISTRY
 
 def test_domain_parser_registry_uses_hierarchy_bases() -> None:
     _element_abcs = (
-        WikiListElementParserABC,
-        HtmlSoupParserABC,
         HtmlTagParserABC,
+        HtmlSoupParserABC,
         WikiInfoboxElementParserABC,
     )
     for entry in DEFAULT_PARSER_REGISTRY:
@@ -34,7 +32,7 @@ def test_concrete_wiki_parsers_declare_expected_abc_and_parse_method() -> None:
         (
             "scrapers/parsers/list_element_parser.py",
             "ListElementParser",
-            "WikiListElementParserABC",
+            "HtmlTagParserABC",
         ),
         (
             "scrapers/parsers/wiki/element_section.py",

@@ -1,4 +1,3 @@
-from validation.composite_validator import CompositeRecordValidator
 from validation.issue import IssueMessageFormatter
 from validation.issue import LegacyValidationIssueAdapter
 from validation.issue import ValidationIssue
@@ -38,7 +37,6 @@ from validation.schemas import RecordSchema
 from validation.validator_base import RecordValidator
 
 __all__ = [
-    "CompositeRecordValidator",
     "LegacyValidationIssueAdapter",
     "IssueMessageFormatter",
     "ValidationIssue",
