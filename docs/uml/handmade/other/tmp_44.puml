@@ -1,0 +1,15 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class ApplyForElementsMixin
+
+class DefaultDriverInfoboxProvider
+class DefaultRetryPolicy
+class DriverInfoboxBundle
+class HttpClient
+class InfoboxSectionCollector
+class MinDelayRateLimiter
+
+@enduml

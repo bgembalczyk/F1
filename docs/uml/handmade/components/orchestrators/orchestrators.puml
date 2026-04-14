@@ -12,7 +12,6 @@ abstract class ParsedRecordsMixin
 class SeasonGenericTableOrchestrator
 class SeasonStandingsTableOrchestrator
 
-
 class CircuitInfoboxOrchestrator
 class ConstructorInfoboxOrchestrator
 class DriverInfoboxOrchestrator

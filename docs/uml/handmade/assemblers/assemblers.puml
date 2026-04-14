@@ -1,0 +1,21 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+class BaseRecordAssembler
+class CircuitRecordAssembler
+class ConstructorRecordAssembler
+class SeasonRecordAssembler
+class SectionAssembler
+class DriverRecordAssembler
+class ArticleTablesAssembler
+class BodyContentAssembler
+
+
+BaseRecordAssembler <|-- CircuitRecordAssembler
+BaseRecordAssembler <|-- ConstructorRecordAssembler
+BaseRecordAssembler <|-- SeasonRecordAssembler
+
+@enduml

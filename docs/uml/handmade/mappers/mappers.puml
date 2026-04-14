@@ -1,0 +1,89 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+abstract class BaseRedFlaggedRacesTableMapper
+abstract class MapperABC
+abstract class TableDomainMapperABC
+
+abstract class ParseGroupMixin
+abstract class RowMappingMixin
+
+
+class WikiParsedPayloadMapper
+class TableRecordMapper
+
+class CircuitEventsTableRecordMapper
+class CircuitLapRecordsTableRecordMapper
+class DriverResultsTableRecordMapper
+class IdentitySectionTableRecordMapper
+class ShortenedRacesPointsTableMapper
+
+class WikiTableBaseMapper
+class CircuitsListTableMapper
+class CurrentConstructorsTableMapper
+class DriverOrderedTableMapper
+class EngineManufacturersTableMapper
+class EngineRegulationTableMapper
+class EngineRestrictionsTableMapper
+class FemaleDriversTableMapper
+class FormerConstructorsTableMapper
+class GrandsPrixTableMapper
+class LapRecordsWikiTableMapper
+class PointsScoringSystemsHistoryTableMapper
+class RaceResultsTableMapper
+class SeasonsTableMapper
+class SprintPointsTableMapper
+class StandingsTableMapper
+class TyreManufacturersBySeasonTableMapper
+class NonChampionshipRacesTableMapper
+class WorldChampionshipsRacesTableMapper
+class DriversListTableMapper
+class FatalitiesTableMapper
+
+class SeasonTablePayloadMapper
+
+MapperABC <|-- CircuitEventsTableRecordMapper
+MapperABC <|-- CircuitLapRecordsTableRecordMapper
+MapperABC <|-- DriverResultsTableRecordMapper
+MapperABC <|-- IdentitySectionTableRecordMapper
+MapperABC <|-- ShortenedRacesPointsTableMapper
+MapperABC <|-- TableDomainMapperABC
+MapperABC <|-- WikiParsedPayloadMapper
+MapperABC <|-- WikiTableBaseMapper
+
+TableDomainMapperABC <|-- WikiTableBaseMapper
+
+ParseGroupMixin <|-- TableRecordMapper
+ParseGroupMixin <|-- WikiTableBaseMapper
+
+RowMappingMixin <|-- TableRecordMapper
+RowMappingMixin <|-- WikiTableBaseMapper
+
+WikiTableBaseMapper <|-- BaseRedFlaggedRacesTableMapper
+WikiTableBaseMapper <|-- CircuitsListTableMapper
+WikiTableBaseMapper <|-- CurrentConstructorsTableMapper
+WikiTableBaseMapper <|-- DriverOrderedTableMapper
+WikiTableBaseMapper <|-- EngineManufacturersTableMapper
+WikiTableBaseMapper <|-- EngineRegulationTableMapper
+WikiTableBaseMapper <|-- EngineRestrictionsTableMapper
+WikiTableBaseMapper <|-- FemaleDriversTableMapper
+WikiTableBaseMapper <|-- FormerConstructorsTableMapper
+WikiTableBaseMapper <|-- GrandsPrixTableMapper
+WikiTableBaseMapper <|-- LapRecordsWikiTableMapper
+WikiTableBaseMapper <|-- PointsScoringSystemsHistoryTableMapper
+WikiTableBaseMapper <|-- RaceResultsTableMapper
+WikiTableBaseMapper <|-- SeasonsTableMapper
+WikiTableBaseMapper <|-- SprintPointsTableMapper
+WikiTableBaseMapper <|-- StandingsTableMapper
+WikiTableBaseMapper <|-- TyreManufacturersBySeasonTableMapper
+
+BaseRedFlaggedRacesTableMapper <|-- NonChampionshipRacesTableMapper
+BaseRedFlaggedRacesTableMapper <|-- WorldChampionshipsRacesTableMapper
+
+DriverOrderedTableMapper <|-- DriversListTableMapper
+DriverOrderedTableMapper <|-- FatalitiesTableMapper
+
+@enduml

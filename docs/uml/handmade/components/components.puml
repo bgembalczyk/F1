@@ -1,0 +1,79 @@
+@startuml
+
+hide circle
+hide empty members
+
+abstract class InfoboxExtractorABC
+
+abstract class SeasonTableOrchestratorABC
+abstract class BaseInfoboxOrchestrator
+abstract class InfoboxOrchestratorABC
+abstract class ParsedRecordsMixin
+
+abstract class BaseComponent
+abstract class BaseNormalizer
+
+abstract class SafeParsingMixin
+
+
+class CircuitInfoboxExtractor
+class TableExtractor
+
+class SeasonGenericTableOrchestrator
+class SeasonStandingsTableOrchestrator
+
+class CircuitInfoboxOrchestrator
+class ConstructorInfoboxOrchestrator
+class DriverInfoboxOrchestrator
+
+class DomainSeedExtractor
+class DomainStageOrchestrator
+class DomainSeedNormalizer
+class DriversSeedNormalizer
+
+class CircuitTextProcessing
+class CircuitEntityExtractor
+class InfoboxTextUtils
+class CircuitGeoExtractor
+class CircuitHistoryExtractor
+class CircuitSpecsExtractor
+class CircuitLapRecordExtractor
+class CircuitAdditionalInfoExtractor
+
+class CircuitEntitiesOrchestrator
+class CircuitLayoutsExtractor
+
+
+SafeParsingMixin <|-- CircuitEntitiesOrchestrator
+SafeParsingMixin <|-- CircuitLayoutsExtractor
+
+InfoboxTextUtils <|-- CircuitGeoExtractor
+InfoboxTextUtils <|-- CircuitHistoryExtractor
+InfoboxTextUtils <|-- CircuitSpecsExtractor
+InfoboxTextUtils <|-- CircuitTextProcessing
+
+CircuitTextProcessing <|-- CircuitEntityExtractor
+CircuitTextProcessing <|-- CircuitLapRecordExtractor
+
+CircuitEntityExtractor <|-- CircuitAdditionalInfoExtractor
+
+BaseComponent <|-- BaseNormalizer
+BaseComponent <|-- DomainSeedExtractor
+BaseComponent <|-- DomainStageOrchestrator
+
+BaseNormalizer <|-- DomainSeedNormalizer
+BaseNormalizer <|-- DriversSeedNormalizer
+
+InfoboxOrchestratorABC <|-- BaseInfoboxOrchestrator
+InfoboxOrchestratorABC <|-- CircuitInfoboxOrchestrator
+
+ParsedRecordsMixin <|-- BaseInfoboxOrchestrator
+ParsedRecordsMixin <|-- CircuitInfoboxOrchestrator
+
+BaseInfoboxOrchestrator <|-- ConstructorInfoboxOrchestrator
+BaseInfoboxOrchestrator <|-- DriverInfoboxOrchestrator
+SeasonTableOrchestratorABC <|-- SeasonGenericTableOrchestrator
+SeasonTableOrchestratorABC <|-- SeasonStandingsTableOrchestrator
+InfoboxExtractorABC <|-- CircuitInfoboxExtractor
+
+@enduml

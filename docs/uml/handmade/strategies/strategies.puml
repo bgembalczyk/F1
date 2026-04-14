@@ -15,6 +15,7 @@ class DeduplicateRecordStrategy
 class GrandPrixSplitStrategy
 class PossessiveDriverColourSplitStrategy
 class SeasonSplitStrategy
+class WikipediaSectionByIdSelectionStrategy
 
 
 RecordSplitStrategy <|-- DeduplicateRecordStrategy

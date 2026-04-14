@@ -18,6 +18,8 @@ class ScraperValidationError
 class SourceParseError
 class TransportError
 class ValidationError
+class MissingSectionError
+
 
 RequestError <|-- HttpShimError
 

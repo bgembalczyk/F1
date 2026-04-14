@@ -24,6 +24,8 @@ class DefaultLayerZeroRunConfigFactory
 class SponsorshipLiveriesRunConfigFactory
 class StaticScraperKwargsFactory
 
+class ConfigurableSectionServiceFactory
+
 
 LayerZeroRunConfigFactory <|-- DefaultLayerZeroRunConfigFactory
 LayerZeroRunConfigFactory <|-- SponsorshipLiveriesRunConfigFactory

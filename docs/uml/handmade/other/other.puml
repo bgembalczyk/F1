@@ -1,0 +1,25 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+interface TextCacheProtocol
+
+abstract class ApplyForElementsMixin
+
+class DefaultDriverInfoboxProvider
+class DefaultRetryPolicy
+class DriverInfoboxBundle
+class HttpClient
+class InfoboxSectionCollector
+class MinDelayRateLimiter
+
+class FileCache
+class WikipediaCachePolicy
+
+
+TextCacheProtocol <|-- FileCache
+TextCacheProtocol <|-- WikipediaCachePolicy
+
+@enduml
