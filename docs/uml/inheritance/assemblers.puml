@@ -4,6 +4,8 @@ hide circle
 hide empty members
 
 
+abstract class AssemblerABC
+
 class BaseRecordAssembler
 class CircuitRecordAssembler
 class ConstructorRecordAssembler
@@ -14,8 +16,13 @@ class DriverRecordAssembler
 class ArticleTablesAssembler
 
 
+AssemblerABC <|-- BaseRecordAssembler
+AssemblerABC <|-- SectionAssembler
+AssemblerABC <|-- ArticleTablesAssembler
+
 BaseRecordAssembler <|-- CircuitRecordAssembler
 BaseRecordAssembler <|-- ConstructorRecordAssembler
 BaseRecordAssembler <|-- SeasonRecordAssembler
+BaseRecordAssembler <|-- DriverRecordAssembler
 
 @enduml

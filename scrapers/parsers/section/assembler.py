@@ -3,12 +3,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from scrapers.assemblers.assembler_abc import AssemblerABC
 from scrapers.parsers.section.detection import make_stable_section_id
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 
 
 @dataclass(frozen=True)
-class SectionAssembler:
+class SectionAssembler(AssemblerABC):
     """Składa wynik sekcji z ujednoliconymi metadanymi."""
 
     def assemble(
