@@ -1,12 +1,11 @@
 from typing import Any
 
-from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
-from scrapers.columns.types.mixins.background import BackgroundMixin
+from scrapers.columns.types.background_column import BackgroundColumn
 from scrapers.helpers.text import clean_wiki_text
 
 
-class RoundColumn(BackgroundMixin, BaseColumn):
+class RoundColumn(BackgroundColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         cell = ctx.cell
         if cell is None:

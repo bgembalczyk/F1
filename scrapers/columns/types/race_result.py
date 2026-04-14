@@ -1,6 +1,5 @@
 from typing import Any
 
-from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
 from scrapers.columns.helpers.constants import BACKGROUND_TO_RESULT
 from scrapers.columns.helpers.constants import MARKS_RE
@@ -10,11 +9,11 @@ from scrapers.columns.helpers.race_result.background_mapper import (
 )
 from scrapers.columns.helpers.race_result.cell_parser import RaceResultCellTransformer
 from scrapers.columns.helpers.race_result.superscript import SuperscriptParseResult
-from scrapers.columns.types.mixins.background import BackgroundMixin
+from scrapers.columns.types.background_column import BackgroundColumn
 from scrapers.helpers.text import strip_marks
 
 
-class RaceResultColumn(BackgroundMixin, BaseColumn):
+class RaceResultColumn(BackgroundColumn):
     def __init__(
         self,
         *,

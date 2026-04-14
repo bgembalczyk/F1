@@ -1,12 +1,13 @@
 from typing import Any
 
+from scrapers.columns.base import BaseColumn
 from scrapers.columns.context import ColumnContext
 from scrapers.helpers.background import extract_background
 
 
-class BackgroundMixin:
+class BackgroundColumn(BaseColumn):
     """
-    Mixin dodający ekstrakcję koloru tła komórki do wyniku kolumny.
+    Abstrakcyjna kolumna bazowa dla kolumn, które ekstrahują kolor tła komórki.
 
     Nadpisuje metodę apply() tak, aby po normalnym wykonaniu super().apply()
     dopisywał do rekordu klucz "background"
@@ -16,7 +17,7 @@ class BackgroundMixin:
     """
 
     def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:
-        super().apply(ctx, record)  # type: ignore[misc]
+        super().apply(ctx, record)
         bg = self._extract_raw_background(ctx)
         if bg is not None:
             record["background"] = bg
@@ -28,4 +29,4 @@ class BackgroundMixin:
         return extract_background(ctx.cell)
 
 
-__all__ = ["BackgroundMixin"]
+__all__ = ["BackgroundColumn"]

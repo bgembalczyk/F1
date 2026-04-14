@@ -6,8 +6,8 @@ hide empty members
 abstract class BaseColumn
 abstract class BaseConstructorColumn
 
-abstract class BackgroundMixin
-abstract class EnumMarksMixin
+abstract class BackgroundColumn
+abstract class EnumMarksColumn
 
 
 class FatalityEventColumn
@@ -76,7 +76,7 @@ class ConstructorPartParser
 
 
 BaseColumn <|-- AutoColumn
-BaseColumn <|-- BaseConstructorColumn
+BaseColumn <|-- BackgroundColumn
 BaseColumn <|-- BoolColumn
 BaseColumn <|-- BrListColumn
 BaseColumn <|-- CalendarCircuitColumn
@@ -93,9 +93,7 @@ BaseColumn <|-- EngineConfigurationColumn
 BaseColumn <|-- EngineRpmLimitColumn
 BaseColumn <|-- EntrantColumn
 BaseColumn <|-- EntriesStartsColumn
-BaseColumn <|-- FatalityDateColumn
-BaseColumn <|-- FatalityEventColumn
-BaseColumn <|-- FirstPlaceColumn
+BaseColumn <|-- EnumMarksColumn
 BaseColumn <|-- FuelFlowRateColumn
 BaseColumn <|-- FuelInjectionPressureLimitColumn
 BaseColumn <|-- FuelLimitPerRaceColumn
@@ -109,11 +107,8 @@ BaseColumn <|-- ParsedValueColumn
 BaseColumn <|-- PointsColumn
 BaseColumn <|-- PointsOrTextColumn
 BaseColumn <|-- PositionColumn
-BaseColumn <|-- RaceResultColumn
 BaseColumn <|-- RangeColumn
 BaseColumn <|-- RegexColumn
-BaseColumn <|-- RestartStatusColumn
-BaseColumn <|-- RoundColumn
 BaseColumn <|-- SeasonDateColumn
 BaseColumn <|-- SeasonsColumn
 BaseColumn <|-- SeriesColumn
@@ -127,6 +122,8 @@ BaseColumn <|-- TyreColumn
 BaseColumn <|-- UnitColumn
 BaseColumn <|-- UnknownValueColumn
 BaseColumn <|-- UrlColumn
+BaseColumn <|-- BaseConstructorColumn
+BaseColumn <|-- FirstPlaceColumn
 
 BaseConstructorColumn <|-- ConstructorColumn
 ConstructorPartParser <|-- ConstructorPartColumn
@@ -137,21 +134,22 @@ LinksListColumn <|-- AppendLinksColumn
 
 MultiColumn <|-- ConstructorSplitColumn
 MultiColumn <|-- LastLengthUsedColumn
+
+BackgroundColumn <|-- RaceResultColumn
+BackgroundColumn <|-- RestartStatusColumn
+BackgroundColumn <|-- RoundColumn
+BackgroundColumn <|-- FatalityEventColumn
+BackgroundColumn <|-- NameStatusColumn
+
+EnumMarksColumn <|-- FatalityDateColumn
+EnumMarksColumn <|-- FatalityEventColumn
+EnumMarksColumn <|-- NameStatusColumn
+
 MultiColumn <|-- NameStatusColumn
 
 NameStatusColumn <|-- CircuitNameStatusColumn
 NameStatusColumn <|-- DriverNameStatusColumn
 NameStatusColumn <|-- EngineManufacturerNameStatusColumn
 NameStatusColumn <|-- RaceTitleStatusColumn
-
-BackgroundMixin <|-- FatalityEventColumn
-BackgroundMixin <|-- NameStatusColumn
-BackgroundMixin <|-- RaceResultColumn
-BackgroundMixin <|-- RestartStatusColumn
-BackgroundMixin <|-- RoundColumn
-
-EnumMarksMixin <|-- FatalityDateColumn
-EnumMarksMixin <|-- FatalityEventColumn
-EnumMarksMixin <|-- NameStatusColumn
 
 @enduml
