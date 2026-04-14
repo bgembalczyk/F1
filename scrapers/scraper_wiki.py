@@ -135,15 +135,7 @@ class WikiScraper:
         self._paragraph_parser = resolved_element_parsers.paragraph_parser
         self._figure_parser = resolved_element_parsers.figure_parser
         resolved_registry = build_wikipedia_element_registry(
-            parsers=WikiElementSet(
-                infobox_parser=self.infobox_parser,
-                paragraph_parser=self._paragraph_parser,
-                figure_parser=self._figure_parser,
-                list_parser=self.list_parser,
-                table_parser=self.table_parser,
-                navbox_parser=self.navbox_parser,
-                references_parser=self.references_parser,
-            ),
+            parsers=resolved_element_parsers,
         )
         self.element_registry: ElementRegistry = resolved_registry
         self.dispatcher = ElementDispatcher(registry=resolved_registry)
