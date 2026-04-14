@@ -34,6 +34,8 @@ abstract class WikiSubSectionParserABC
 abstract class WikiSubSubSectionParserABC
 
 abstract class NestedChildParser
+abstract class ApplyForElementsMixin
+abstract class WikiElementParsingMixin
 
 
 class CancelledRoundsParser
@@ -129,6 +131,59 @@ class IndianapolisConstructorsListParser
 class IndianapolisOnlyListParser
 class CategoryLinksParser
 
+class BodyContentAssembler
+
+class SprintRacesSubSubSectionParser
+class ShortenedRacesSubSubSectionParser
+class EngineSubSectionParser
+class PointsScoringSystemsSectionParser
+class EngineManufacturersSectionParser
+class ByRaceTitleSubSectionParser
+class OfficialDriversSubSectionParser
+
+class RecursiveSectionParser
+
+
+HtmlTagParserABC <|-- ParagraphElementParser
+
+HtmlTagParserABC <|-- WikiFigureElementParserABC
+
+ParserABC <|-- InfoboxRowsParserABC
+
+HtmlTagParserABC <|-- InfoboxHtmlFieldParserABC
+
+HtmlSoupParserABC <|-- SectionParserBase
+
+HtmlTagParserABC <|-- WikiInfoboxElementParserABC
+
+HeaderNormalizationMixin <|-- InfoboxElementParser
+TableCellExtractionMixin <|-- InfoboxElementParser
+
+HtmlSoupParserABC <|-- BaseSeasonParser
+
+ParserABC <|-- CategoryLinksParser
+
+ListElementParser <|-- IndianapolisOnlyListParser
+ListElementParser <|-- IndianapolisConstructorsListParser
+
+ParserABC <|-- RecursiveSectionParser
+WikiElementParsingMixin <|-- RecursiveSectionParser
+
+RecursiveSectionParser <|-- SprintRacesSubSubSectionParser
+RecursiveSectionParser <|-- ShortenedRacesSubSubSectionParser
+RecursiveSectionParser <|-- EngineSubSectionParser
+RecursiveSectionParser <|-- PointsScoringSystemsSectionParser
+RecursiveSectionParser <|-- EngineManufacturersSectionParser
+RecursiveSectionParser <|-- ByRaceTitleSubSectionParser
+RecursiveSectionParser <|-- OfficialDriversSubSectionParser
+
+ApplyForElementsMixin <|-- SprintRacesSubSubSectionParser
+ApplyForElementsMixin <|-- ShortenedRacesSubSubSectionParser
+ApplyForElementsMixin <|-- EngineSubSectionParser
+ApplyForElementsMixin <|-- PointsScoringSystemsSectionParser
+ApplyForElementsMixin <|-- EngineManufacturersSectionParser
+ApplyForElementsMixin <|-- ByRaceTitleSubSectionParser
+ApplyForElementsMixin <|-- OfficialDriversSubSectionParser
 
 WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
 WikiInfoboxElementParserABC <|-- DriverInfoboxParser
@@ -175,6 +230,7 @@ ParserABC <|-- InfoboxTableParser
 ParserABC <|-- SoupParser
 ParserABC <|-- SponsorPartsParser
 ParserABC <|-- YearParser
+ParserABC <|-- BodyContentAssembler
 
 HtmlSoupParserABC <|-- ArticleTablesParser
 HtmlSoupParserABC <|-- HtmlTableParser

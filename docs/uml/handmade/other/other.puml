@@ -6,7 +6,6 @@ hide empty members
 
 interface TextCacheProtocol
 
-abstract class ApplyForElementsMixin
 
 class DefaultDriverInfoboxProvider
 class DefaultRetryPolicy

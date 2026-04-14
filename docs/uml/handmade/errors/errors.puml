@@ -3,6 +3,8 @@
 hide circle
 hide empty members
 
+abstract class Exception
+abstract class RuntimeError
 
 class RequestError
 class HttpShimError
@@ -20,6 +22,12 @@ class TransportError
 class ValidationError
 class MissingSectionError
 
+
+Exception <|-- RuntimeError
+Exception <|-- RequestError
+
+RuntimeError <|-- ScraperError
+RuntimeError <|-- MissingSectionError
 
 RequestError <|-- HttpShimError
 
