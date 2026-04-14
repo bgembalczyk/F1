@@ -1,13 +1,63 @@
 import json
 import time
+from abc import ABC
+from abc import abstractmethod
 from hashlib import sha256
 from pathlib import Path
+from typing import Any
 from typing import Generic
 from typing import TypeVar
 
-from infrastructure.cache.adapter.file_ttl import FileTtlCacheAdapter
-
 T = TypeVar("T")
+
+
+class FileTtlCacheAdapter(Generic[T], ABC):
+    """Abstrakcyjna baza adapterów serializacji wartości cache do/z tekstu."""
+
+    extension: str
+
+    @abstractmethod
+    def serialize(self, value: T) -> str:
+        """Serializuje wartość do postaci tekstowej."""
+
+    @abstractmethod
+    def deserialize(self, raw_text: str) -> T:
+        """Deserializuje tekst do docelowego typu."""
+
+
+class HttpResponseFileCacheAdapter(FileTtlCacheAdapter[str]):
+    """Adapter cache dla tekstowej odpowiedzi HTTP."""
+
+    extension = ".html"
+
+    def serialize(self, value: str) -> str:
+        return value
+
+    def deserialize(self, raw_text: str) -> str:
+        return raw_text
+
+
+class GeminiJsonFileCacheAdapter(FileTtlCacheAdapter[dict[str, Any]]):
+    """Adapter cache dla odpowiedzi Gemini (JSON)."""
+
+    extension = ".json"
+
+    def serialize(self, value: dict[str, Any]) -> str:
+        if not isinstance(value, dict):
+            msg = "Gemini cache payload must be a dictionary."
+            raise TypeError(msg)
+        try:
+            return json.dumps(value, ensure_ascii=False)
+        except (TypeError, ValueError) as exc:
+            msg = "Gemini cache payload must be JSON serializable."
+            raise TypeError(msg) from exc
+
+    def deserialize(self, raw_text: str) -> dict[str, Any]:
+        parsed = json.loads(raw_text)
+        if not isinstance(parsed, dict):
+            msg = "Gemini cache payload must be a JSON object."
+            raise TypeError(msg)
+        return parsed
 
 
 class FileTtlCache(Generic[T]):
