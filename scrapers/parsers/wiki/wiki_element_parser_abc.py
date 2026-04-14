@@ -41,20 +41,7 @@ class WikiFigureElementParserABC(
     element_type: WikiElementType = "figure"
 
 
-class WikiArticleParserABC(
-    HtmlSoupParserABC[list[dict[str, Any]]],
-    ABC,
-):
-    """Backward-compat alias. Inherit HtmlSoupParserABC[list[dict[str, Any]]] directly."""
-
-    element_type: WikiElementType = "article"
-
-    @abstractmethod
-    def parse(self, raw: BeautifulSoup) -> list[dict[str, Any]]: ...
-
-
 __all__ = [
-    "WikiArticleParserABC",
     "WikiElementType",
     "WikiFigureElementParserABC",
     "WikiInfoboxElementParserABC",

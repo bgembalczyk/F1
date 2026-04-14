@@ -1,9 +1,7 @@
 # ruff: noqa: E501, PLR2004
 import pytest
 
-from scrapers.parsers.infobox.text_utils.circuit.text_processing import (
-    CircuitTextProcessing,
-)
+from scrapers.parsers.infobox.text_utils.circuit import CircuitTextProcessing
 
 
 @pytest.fixture()

@@ -14,7 +14,6 @@ from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
 from scrapers.parsers.section.base import SectionParserBase
-from scrapers.parsers.section.table.contracts import TablePayload
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.pipeline_table import TablePipeline
 from scrapers.section.serializer import build_section_parse_result

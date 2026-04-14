@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import cast
 
-from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 
 
 def test_wiki_parser_typing_contracts() -> None:

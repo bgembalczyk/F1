@@ -11,7 +11,6 @@ from scrapers.engines.single_scraper_engines import SingleEngineManufacturerScra
 from scrapers.list.base import F1ListScraper
 from scrapers.parsers.infobox.circuit import F1CircuitInfoboxParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
-from scrapers.parsers.wiki.sub_sub_sub_section import WikiElementParserMixin
 from scrapers.parsers.wiki.table import WikiTableParser
 from scrapers.scraper_sponsorship_liveries import F1SponsorshipLiveriesScraper
 from scrapers.scraper_wiki import WikiScraper

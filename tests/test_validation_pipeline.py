@@ -1,4 +1,4 @@
-from validation.composite_validator import CompositeRecordValidator
+from validation import RecordValidator
 from validation.issue import ValidationIssue
 from validation.pipeline import FunctionalValidator
 from validation.pipeline import ValidationPipeline
@@ -41,7 +41,7 @@ def test_composite_validator_uses_schema_business_and_completeness_stages() -> N
     def business_rule(_record):
         return [ValidationIssue.custom("rule failed", code="domain")]
 
-    validator = CompositeRecordValidator(
+    validator = RecordValidator(
         common_rules=(),
         domain_rules=(business_rule,),
         record_factory_validator=StubRecordFactoryValidator(),

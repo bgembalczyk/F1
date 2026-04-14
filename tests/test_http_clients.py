@@ -10,7 +10,6 @@ import pytest
 
 from infrastructure.cache.file.protocol import FileCache
 from infrastructure.cache.wiki_policy import WikipediaCachePolicy
-from infrastructure.http.clients.urllib_http import UrllibHttpClient
 from infrastructure.http.config import HttpClientConfig
 from infrastructure.http.errors.shim.base import HttpShimError
 from infrastructure.http.errors.shim.http import HTTPError

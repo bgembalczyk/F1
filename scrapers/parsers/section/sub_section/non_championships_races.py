@@ -7,7 +7,6 @@ from scrapers.mappers.non_championships_races_table_mapper import (
 )
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
-from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 
 
 class NonChampionshipsRacesSubSectionParser(RecursiveSectionParser):
@@ -17,7 +16,7 @@ class NonChampionshipsRacesSubSectionParser(RecursiveSectionParser):
     def __init__(self) -> None:
         super().__init__()
         self._table_mapper = NonChampionshipRacesTableMapper()
-        self._fallback_element_parser = SubSubSubSectionParser()
+        self._fallback_element_parser = None
 
     def parse(
         self,

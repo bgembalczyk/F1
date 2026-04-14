@@ -8,13 +8,6 @@ from scrapers.parsers.list_element_parser import ListElementParser
 from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.section.helpers import split_into_parts
-from scrapers.parsers.section.nested_section.base import (
-    NestedWikiSectionParser as SectionParser,
-)
-from scrapers.parsers.wiki.base_nested_section.sub_section.base import SubSectionParser
-from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import (
-    SubSubSectionParser,
-)
 from scrapers.parsers.wiki.body_content_assembler import BodyContentAssembler
 from scrapers.parsers.wiki.category_links import CategoryLinksParser
 from scrapers.parsers.wiki.content_text import ContentTextParser
@@ -25,8 +18,6 @@ from scrapers.parsers.wiki.header import HeaderParser
 from scrapers.parsers.wiki.infobox import WikiInfoboxParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.paragraph_element_parser import ParagraphElementParser
-from scrapers.parsers.wiki.references_wrap import ReferencesWrapParser
-from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 from scrapers.parsers.wiki.table import WikiTableParser
 
 

@@ -5,8 +5,8 @@ from typing import Any
 
 from scrapers.base.options import ScraperOptions
 from scrapers.base.progress import NoOpProgressAdapter
-from scrapers.composite_scraper import CompositeDataExtractor
-from scrapers.composite_scraper import CompositeDataExtractorChildren
+from scrapers.composite_scraper import CompleteExtractorBase
+from scrapers.composite_scraper import CompleteExtractorBaseChildren
 from scrapers.source_adapter import IterableSourceAdapter
 
 if TYPE_CHECKING:
@@ -18,11 +18,11 @@ class SingleScraperStub:
         return [{"fetched_from": url}]
 
 
-class DemoCompositeExtractor(CompositeDataExtractor):
+class DemoCompositeExtractor(CompleteExtractorBase):
     url = "https://example.com"
 
-    def build_children(self) -> CompositeDataExtractorChildren:
-        return CompositeDataExtractorChildren(
+    def build_children(self) -> CompleteExtractorBaseChildren:
+        return CompleteExtractorBaseChildren(
             list_scraper=object(),
             single_scraper=SingleScraperStub(),
             records_adapter=IterableSourceAdapter(

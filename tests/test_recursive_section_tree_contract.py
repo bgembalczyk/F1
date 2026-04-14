@@ -5,7 +5,6 @@ from scrapers.parsers.wiki.base_nested_section.sub_sub_section.base import (
     SubSubSectionParser,
 )
 from scrapers.parsers.wiki.content_text import ContentTextParser
-from scrapers.parsers.wiki.sub_sub_sub_section import SubSubSubSectionParser
 
 
 def _soup(html: str) -> BeautifulSoup:

@@ -10,7 +10,7 @@ from complete_extractor.complete_scraper_engines import (
 from complete_extractor.complete_scraper_grands_prix import (
     F1CompleteGrandPrixDataExtractor,
 )
-from complete_extractor.composite_scraper import CompositeDataExtractor
+from complete_extractor.composite_scraper import CompleteExtractorBase
 from complete_extractor.data_extractor import BaseDataExtractor
 from scrapers.abc import ABCScraper
 from scrapers.single_scraper_engines import SingleEngineManufacturerScraper
@@ -20,11 +20,11 @@ from tests.support.refactored_base_classes_utils import assert_issubclass_cases
 @pytest.mark.parametrize(
     ("child", "parent"),
     [
-        (F1CompleteCircuitDataExtractor, CompositeDataExtractor),
-        (F1CompleteGrandPrixDataExtractor, CompositeDataExtractor),
-        (CompleteDriverDataExtractor, CompositeDataExtractor),
-        (F1CompleteEngineManufacturerDataExtractor, CompositeDataExtractor),
-        (CompositeDataExtractor, BaseDataExtractor),
+        (F1CompleteCircuitDataExtractor, CompleteExtractorBase),
+        (F1CompleteGrandPrixDataExtractor, CompleteExtractorBase),
+        (CompleteDriverDataExtractor, CompleteExtractorBase),
+        (F1CompleteEngineManufacturerDataExtractor, CompleteExtractorBase),
+        (CompleteExtractorBase, BaseDataExtractor),
         (SingleEngineManufacturerScraper, ABCScraper),
     ],
 )
@@ -43,7 +43,7 @@ def test_engine_manufacturer_complete_url() -> None:
 
 def test_composite_data_extractor_does_not_inherit_abc_scraper() -> None:
     """Composite extractor is not a web scraper."""
-    assert not issubclass(CompositeDataExtractor, ABCScraper)
+    assert not issubclass(CompleteExtractorBase, ABCScraper)
 
 
 def test_single_engine_manufacturer_has_extract_by_url_method() -> None:
