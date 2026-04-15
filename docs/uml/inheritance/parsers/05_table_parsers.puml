@@ -1,0 +1,20 @@
+@startuml
+title Table Parser Hierarchy
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class CollapsibleTableParser
+class F1StandingsTableParser
+abstract class HeaderNormalizationMixin
+class HtmlTableParser
+class InfoboxTableParser
+class SeasonsTableParser
+abstract class TableCellExtractionMixin
+class WikiTableParser
+
+WikiTableParser <|-- SeasonsTableParser
+HeaderNormalizationMixin <|-- WikiTableParser
+TableCellExtractionMixin <|-- WikiTableParser
+
+@enduml

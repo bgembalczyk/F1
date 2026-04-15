@@ -10,31 +10,12 @@ abstract class BaseDriverResultsSectionParser
 abstract class ExtractListItemsMixin
 
 abstract class ParserABC
-abstract class HtmlTagParserABC
-abstract class HtmlSoupParserABC
 abstract class HeaderNormalizationMixin
-abstract class SectionInfoboxesHtmlParserABC
-abstract class SectionListsHtmlParserABC
-abstract class SectionTextBlocksHtmlParserABC
-abstract class InfoboxParserABC
 abstract class TableCellExtractionMixin
 
+abstract class InfoboxFieldParserABC
 abstract class InfoboxHtmlFieldParserABC
 abstract class InfoboxRowsParserABC
-abstract class WikiFigureElementParserABC
-abstract class WikiInfoboxElementParserABC
-
-abstract class SectionLevelMixin
-abstract class SubSectionLevelMixin
-abstract class SubSubSectionLevelMixin
-
-abstract class WikiSectionNodeParserABC
-abstract class WikiSectionParserABC
-abstract class WikiSubSectionParserABC
-abstract class WikiSubSubSectionParserABC
-
-abstract class NestedChildParser
-abstract class ApplyForElementsMixin
 
 
 class CancelledRoundsParser
@@ -72,34 +53,26 @@ class CircuitEventsSectionParser
 class CircuitLapRecordsSectionParser
 class DriverResultsSectionParser
 
-class WikiTableHtmlParser
 class CollapsibleTableParser
 class ContentTextParser
-class HeaderParser
 class InfoboxTableParser
-class SoupParser
 class SponsorPartsParser
 class YearParser
 class ArticleTablesParser
 class HtmlTableParser
 class SeasonStandingsParser
-class SectionElementParser
 class SponsorshipSectionParser
 class TeamLiveriesSectionParser
-class WikiSectionElementParser
 class F1StandingsTableParser
 class InfoboxCellValueExtractor
 class ListElementParser
 class NavboxElementParser
 class PrivateerTeamsListParser
-class TableElementParser
-class WikiNavboxElementParser
-class WikiNavboxParser
-class WikiParagraphElementParser
 class WikiReferencesElementParser
-class WikiTableElementParser
 class SeasonsTableParser
 class WikiTableParser
+class FigureElementParser
+class ParagraphElementParser
 
 class ActiveYearsParser
 class BestFinishParser
@@ -115,33 +88,15 @@ class TeamsParser
 class InfoboxCareerParser
 class InfoboxTitlesParser
 
-class FigureElementParser
-class WikiFigureElementParser
-class WikiFigureParser
-
 class CircuitInfoboxParser
 class DriverInfoboxParser
-class InfoboxElementParser
-class WikiInfoboxElementParser
 class WikiInfoboxHtmlParser
 
-class ParagraphElementParser
 class IndianapolisConstructorsListParser
 class IndianapolisOnlyListParser
 class CategoryLinksParser
 
 class BodyContentAssembler
-
-class SprintRacesSubSubSectionParser
-class ShortenedRacesSubSubSectionParser
-class EngineSubSectionParser
-class PointsScoringSystemsSectionParser
-class EngineManufacturersSectionParser
-class ByRaceTitleSubSectionParser
-class OfficialDriversSubSectionParser
-
-class RecursiveSectionParser
-
 
 class RecursiveSectionParser
 class ByRaceTitleSubSectionParser
@@ -171,30 +126,41 @@ class SprintRacesSubSubSectionParser
 class TyreManufacturersBySeasonSubSectionParser
 
 
-HtmlTagParserABC <|-- ParagraphElementParser
-
-HtmlTagParserABC <|-- WikiFigureElementParserABC
-
-ParserABC <|-- InfoboxRowsParserABC
-
-HtmlTagParserABC <|-- InfoboxHtmlFieldParserABC
-
-HtmlSoupParserABC <|-- SectionParserBase
-
-HtmlTagParserABC <|-- WikiInfoboxElementParserABC
-
-HeaderNormalizationMixin <|-- InfoboxElementParser
-TableCellExtractionMixin <|-- InfoboxElementParser
-
-HtmlSoupParserABC <|-- BaseSeasonParser
-
+ParserABC <|-- SectionParserBase
+ParserABC <|-- BaseSeasonParser
 ParserABC <|-- CategoryLinksParser
+ParserABC <|-- RecursiveSectionParser
+ParserABC <|-- CollapsibleTableParser
+ParserABC <|-- ContentTextParser
+ParserABC <|-- InfoboxTableParser
+ParserABC <|-- SponsorPartsParser
+ParserABC <|-- YearParser
+ParserABC <|-- BodyContentAssembler
+ParserABC <|-- ArticleTablesParser
+ParserABC <|-- HtmlTableParser
+ParserABC <|-- SeasonStandingsParser
+ParserABC <|-- SponsorshipSectionParser
+ParserABC <|-- TeamLiveriesSectionParser
+ParserABC <|-- F1StandingsTableParser
+ParserABC <|-- InfoboxCellValueExtractor
+ParserABC <|-- ListElementParser
+ParserABC <|-- NavboxElementParser
+ParserABC <|-- PrivateerTeamsListParser
+ParserABC <|-- WikiReferencesElementParser
+ParserABC <|-- WikiTableParser
+ParserABC <|-- FigureElementParser
+ParserABC <|-- ParagraphElementParser
+ParserABC <|-- WikiInfoboxHtmlParser
+ParserABC <|-- InfoboxRowsParserABC
+ParserABC <|-- InfoboxHtmlFieldParserABC
+
+HeaderNormalizationMixin <|-- WikiTableParser
+TableCellExtractionMixin <|-- WikiTableParser
+
+WikiTableParser <|-- SeasonsTableParser
 
 ListElementParser <|-- IndianapolisOnlyListParser
 ListElementParser <|-- IndianapolisConstructorsListParser
-
-ParserABC <|-- RecursiveSectionParser
-
 
 RecursiveSectionParser <|-- ByRaceTitleSubSectionParser
 RecursiveSectionParser <|-- CurrentRulesSectionParser
@@ -222,35 +188,8 @@ RecursiveSectionParser <|-- SpecialCasesSubSubSectionRouter
 RecursiveSectionParser <|-- SprintRacesSubSubSectionParser
 RecursiveSectionParser <|-- TyreManufacturersBySeasonSubSectionParser
 
-ApplyForElementsMixin <|-- SprintRacesSubSubSectionParser
-ApplyForElementsMixin <|-- ShortenedRacesSubSubSectionParser
-ApplyForElementsMixin <|-- EngineSubSectionParser
-ApplyForElementsMixin <|-- PointsScoringSystemsSectionParser
-ApplyForElementsMixin <|-- EngineManufacturersSectionParser
-ApplyForElementsMixin <|-- ByRaceTitleSubSectionParser
-ApplyForElementsMixin <|-- OfficialDriversSubSectionParser
-
-WikiInfoboxElementParserABC <|-- CircuitInfoboxParser
-WikiInfoboxElementParserABC <|-- DriverInfoboxParser
-WikiInfoboxElementParserABC <|-- InfoboxElementParser
-WikiInfoboxElementParserABC <|-- WikiInfoboxElementParser
-WikiInfoboxElementParserABC <|-- WikiInfoboxHtmlParser
-
-WikiFigureElementParserABC <|-- FigureElementParser
-WikiFigureElementParserABC <|-- WikiFigureElementParser
-WikiFigureElementParserABC <|-- WikiFigureParser
-
-WikiSectionNodeParserABC <|-- WikiSectionParserABC
-WikiSectionNodeParserABC <|-- WikiSubSectionParserABC
-WikiSectionNodeParserABC <|-- WikiSubSubSectionParserABC
-
-SectionLevelMixin <|-- SubSectionLevelMixin
-SectionLevelMixin <|-- WikiSectionParserABC
-
-SubSectionLevelMixin <|-- SubSubSectionLevelMixin
-SubSectionLevelMixin <|-- WikiSubSectionParserABC
-
-SubSubSectionLevelMixin <|-- WikiSubSubSectionParserABC
+WikiInfoboxHtmlParser <|-- CircuitInfoboxParser
+WikiInfoboxHtmlParser <|-- DriverInfoboxParser
 
 InfoboxRowsParserABC <|-- InfoboxCareerParser
 InfoboxRowsParserABC <|-- InfoboxTitlesParser
@@ -265,48 +204,6 @@ InfoboxHtmlFieldParserABC <|-- LicenceParser
 InfoboxHtmlFieldParserABC <|-- NationalityParser
 InfoboxHtmlFieldParserABC <|-- RaceEventParser
 InfoboxHtmlFieldParserABC <|-- TeamsParser
-
-ParserABC <|-- CollapsibleTableParser
-ParserABC <|-- ContentTextParser
-ParserABC <|-- HeaderParser
-ParserABC <|-- HtmlSoupParserABC
-ParserABC <|-- HtmlTagParserABC
-ParserABC <|-- InfoboxTableParser
-ParserABC <|-- SoupParser
-ParserABC <|-- SponsorPartsParser
-ParserABC <|-- YearParser
-ParserABC <|-- BodyContentAssembler
-
-HtmlSoupParserABC <|-- ArticleTablesParser
-HtmlSoupParserABC <|-- HtmlTableParser
-HtmlSoupParserABC <|-- SeasonStandingsParser
-HtmlSoupParserABC <|-- SectionElementParser
-HtmlSoupParserABC <|-- SectionInfoboxesHtmlParserABC
-HtmlSoupParserABC <|-- SectionListsHtmlParserABC
-HtmlSoupParserABC <|-- SectionTextBlocksHtmlParserABC
-HtmlSoupParserABC <|-- SponsorshipSectionParser
-HtmlSoupParserABC <|-- TeamLiveriesSectionParser
-HtmlSoupParserABC <|-- WikiSectionElementParser
-
-HtmlTagParserABC <|-- F1StandingsTableParser
-HtmlTagParserABC <|-- InfoboxCellValueExtractor
-HtmlTagParserABC <|-- InfoboxParserABC
-HtmlTagParserABC <|-- ListElementParser
-HtmlTagParserABC <|-- NavboxElementParser
-HtmlTagParserABC <|-- PrivateerTeamsListParser
-HtmlTagParserABC <|-- TableElementParser
-HtmlTagParserABC <|-- WikiNavboxElementParser
-HtmlTagParserABC <|-- WikiNavboxParser
-HtmlTagParserABC <|-- WikiParagraphElementParser
-HtmlTagParserABC <|-- WikiReferencesElementParser
-HtmlTagParserABC <|-- WikiTableElementParser
-HtmlTagParserABC <|-- WikiTableHtmlParser
-
-HeaderNormalizationMixin <|-- WikiTableHtmlParser
-TableCellExtractionMixin <|-- WikiTableHtmlParser
-
-WikiTableHtmlParser <|-- SeasonsTableParser
-WikiTableHtmlParser <|-- WikiTableParser
 
 SectionParserBase <|-- BaseDriverResultsSectionParser
 SectionParserBase <|-- CircuitLayoutHistorySectionParser

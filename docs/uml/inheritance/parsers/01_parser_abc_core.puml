@@ -1,0 +1,18 @@
+@startuml
+title Parser ABC – Core Contracts & HTML Layer
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class ContentTextParser
+class HeaderParser
+abstract class InfoboxParserABC
+abstract class ParserABC
+class SoupParser
+
+ParserABC <|-- ContentTextParser
+ParserABC <|-- HeaderParser
+ParserABC <|-- InfoboxParserABC
+ParserABC <|-- SoupParser
+
+@enduml

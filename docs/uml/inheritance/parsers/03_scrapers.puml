@@ -1,0 +1,14 @@
+@startuml
+title Scraper Hierarchy
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class ArticleTablesParser
+class BodyContentAssembler
+class RecursiveSectionParser
+class SeedListTableScraper
+class WikiScraper
+
+
+@enduml

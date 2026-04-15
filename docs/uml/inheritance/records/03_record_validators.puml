@@ -1,0 +1,16 @@
+@startuml
+title Record Validators
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class CircuitsRecordValidator
+class DriversRecordValidator
+class GrandsPrixRecordValidator
+class RecordValidator
+
+RecordValidator <|-- CircuitsRecordValidator
+RecordValidator <|-- DriversRecordValidator
+RecordValidator <|-- GrandsPrixRecordValidator
+
+@enduml
