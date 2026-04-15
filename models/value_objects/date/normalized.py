@@ -2,13 +2,13 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
 
-from models.value_objects.base import ValueObject
+from models.domain_model import DomainModel
 from models.value_objects.helpers import normalize_iso
 from models.value_objects.helpers import normalize_text
 
 
 @dataclass(frozen=True)
-class NormalizedDate(ValueObject):
+class NormalizedDate(DomainModel):
     text: str | None = None
     iso: str | None = None
 

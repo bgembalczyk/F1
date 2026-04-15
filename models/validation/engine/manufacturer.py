@@ -5,7 +5,7 @@ from typing import Any
 from models.domain_utils.field_normalization.links import normalize_link_items
 from models.domain_utils.normalization import normalize_season_items
 from models.records.engine_manufacturer import ENGINE_MANUFACTURER_SCHEMA
-from models.validation.base import ValidatedModel
+from models.domain_model import DomainModel
 from models.validation.constants import ALLOWED_MANUFACTURER_STATUSES
 from models.validation.helpers import coerce_number
 from models.validation.helpers import validate_status
@@ -15,7 +15,7 @@ from models.value_objects.season_ref import SeasonRef
 
 
 @dataclass
-class EngineManufacturer(ValidatedModel):
+class EngineManufacturer(DomainModel):
     __schema__ = ENGINE_MANUFACTURER_SCHEMA
     manufacturer: Link | dict[str, Any]
     manufacturer_status: str

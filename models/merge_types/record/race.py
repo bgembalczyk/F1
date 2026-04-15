@@ -2,11 +2,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from models.domain_model import DomainModel
+
 from models.merge_types.constants import RecordDict
 
 
 @dataclass(slots=True)
-class RaceRecordModel:
+class RaceRecordModel(DomainModel):
     raw: RecordDict
 
     @classmethod

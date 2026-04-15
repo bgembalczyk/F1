@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.contracts.data.base import DataContract
+from models.domain_model import DomainModel
 from models.records.season import SeasonRecord
 
 POINTS_KEYS = {
@@ -26,7 +26,8 @@ POINTS_KEYS = {
 
 
 @dataclass(slots=True)
-class PointsContract(DataContract):
+class PointsContract(DomainModel):
+    _extra: dict = field(default_factory=dict, init=False, repr=False)
     seasons: list[SeasonRecord] = field(default_factory=list)
 
     @classmethod
@@ -39,4 +40,4 @@ class PointsContract(DataContract):
     def from_record(cls, record: Mapping[str, Any]) -> "PointsContract":
         payload = dict(record)
         payload.setdefault("seasons", [])
-        return DataContract.from_record.__func__(cls, payload)
+        return DomainModel.from_record.__func__(cls, payload)  # type: ignore[attr-defined]

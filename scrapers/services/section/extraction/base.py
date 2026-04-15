@@ -9,7 +9,6 @@ from typing import Any
 from models.entity_name import EntityName
 from models.section_id import SectionId
 from models.wiki_url import WikiUrl
-from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.adapters.section.entry import SectionAdapterEntry
 from scrapers.options import ScraperOptions
 from scrapers.section.parse_results import SectionParseResult
@@ -18,6 +17,10 @@ from scrapers.section.serializer import serialize_section_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
+
+    from scrapers.single_wiki_article.single_article_scraper_base import (
+        ArticleScraperBase,
+    )
 
 
 logger = logging.getLogger(__name__)
@@ -31,7 +34,7 @@ class BaseSectionExtractionService(ABC):
     def __init__(
         self,
         *,
-        adapter: SectionAdapter,
+        adapter: ArticleScraperBase,
         options: ScraperOptions | None = None,
         url: WikiUrl | str | None = None,
     ) -> None:

@@ -6,7 +6,6 @@ from typing import Any
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.domain_roles import PipelineService
 from scrapers.mixins.run_diagnostics import RunDiagnosticsMixin
 
 InputDTO = TypeVar("InputDTO")
@@ -15,7 +14,6 @@ OutputRecord = TypeVar("OutputRecord", bound=dict[str, Any])
 
 
 class DomainPipelineService(
-    PipelineService[InputDTO, OutputRecord],
     RunDiagnosticsMixin,
     ABC,
     Generic[InputDTO, PayloadDTO, OutputRecord],
@@ -42,6 +40,7 @@ class DomainPipelineService(
         """Hook walidacyjny dla konkretnych domen."""
 
     def execute(self, input_dto: InputDTO) -> OutputRecord:
+        """Execute pipeline on typed input DTO."""
         self._validate_input(input_dto)
         payload = self.build_payload(input_dto)
         assembled = self.with_retry(lambda: self.assemble(payload))
@@ -52,4 +51,5 @@ class DomainPipelineService(
         return self.execute(payload)
 
     def run(self, source: dict[str, Any]) -> OutputRecord:
+        """Compatibility entrypoint for pipeline execution."""
         return self.execute(self._compat_input_from_source(source))

@@ -4,7 +4,7 @@ from typing import Any
 
 from models.domain_utils.field_normalization.links import normalize_link_items
 from models.domain_utils.normalization import normalize_season_items
-from models.validation.base import ValidatedModel
+from models.domain_model import DomainModel
 from models.validation.helpers import normalize_range_value
 from models.validation.helpers import normalize_unit_value
 from models.value_objects.link import Link
@@ -13,7 +13,7 @@ from models.value_objects.season_ref import SeasonRef
 
 
 @dataclass
-class EngineRestriction(ValidatedModel):
+class EngineRestriction(DomainModel):
     year: list[SeasonRef | dict[str, Any]] = field(default_factory=list)
     size: dict[str, Any] | None = None
     type_of_engine: list[Link | dict[str, Any]] = field(default_factory=list)

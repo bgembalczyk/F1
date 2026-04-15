@@ -3,13 +3,14 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.contracts.data.base import DataContract
+from models.domain_model import DomainModel
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 
 
 @dataclass(slots=True)
-class CircuitContract(DataContract):
+class CircuitContract(DomainModel):
+    _extra: dict = field(default_factory=dict, init=False, repr=False)
     circuit: LinkRecord | None = None
     circuit_status: str | None = None
     type: str | None = None
@@ -32,4 +33,4 @@ class CircuitContract(DataContract):
         payload = dict(record)
         payload.setdefault("grands_prix", [])
         payload.setdefault("seasons", [])
-        return DataContract.from_record.__func__(cls, payload)
+        return DomainModel.from_record.__func__(cls, payload)  # type: ignore[attr-defined]

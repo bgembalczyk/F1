@@ -16,13 +16,11 @@ from scrapers.constants.constructors_constants import CONSTRUCTOR_NAME_HEADER
 from scrapers.constants.constructors_constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
 from scrapers.constants.constructors_constants import CONSTRUCTOR_WCC_HEADER
 from scrapers.constants.constructors_constants import CONSTRUCTOR_WDC_HEADER
-from scrapers.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.options import ScraperOptions
 from scrapers.seed_list_scraper_table import SeedListTableScraper
 
 
 class BaseConstructorListScraper(
-    DeclarativeSectionTableParseMixin,
     SeedListTableScraper,
 ):
     domain = "constructors"

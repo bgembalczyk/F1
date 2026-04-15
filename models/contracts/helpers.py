@@ -2,15 +2,14 @@ import logging
 from collections.abc import Mapping
 from typing import Any
 
-from models.contracts.data.base import DataContract
 from models.contracts.data.circuit import CircuitContract
 from models.contracts.data.driver import DriverContract
 from models.contracts.points import PointsContract
-from models.contracts.record import RecordContract
+from models.domain_model import DomainModel
 
 logger = logging.getLogger(__name__)
 
-CONTRACT_REGISTRY: tuple[type[RecordContract], ...] = (
+CONTRACT_REGISTRY: tuple[type[DomainModel], ...] = (
     DriverContract,
     CircuitContract,
     PointsContract,
@@ -19,7 +18,7 @@ CONTRACT_REGISTRY: tuple[type[RecordContract], ...] = (
 
 def resolve_record_contract(
     record: Mapping[str, Any],
-) -> type[RecordContract] | None:
+) -> type[DomainModel] | None:
     matches = [
         contract for contract in CONTRACT_REGISTRY if contract.can_handle(record)
     ]
@@ -38,7 +37,7 @@ def resolve_record_contract(
 
 def map_record_to_contract(
     record: Mapping[str, Any],
-) -> DataContract | Mapping[str, Any]:
+) -> DomainModel | Mapping[str, Any]:
     resolved_contract = resolve_record_contract(record)
     if resolved_contract is None:
         logger.debug(

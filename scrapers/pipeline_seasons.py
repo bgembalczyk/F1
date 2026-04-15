@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 from models.season_year import SeasonYear
 from models.wiki_url import WikiUrl
-from scrapers.adapters.section.adapter import SectionAdapter
+from scrapers.single_wiki_article.single_article_scraper_base import ArticleScraperBase
 from scrapers.domain_parsing_policy import DomainParsingPolicy
 from scrapers.entry_merger import EntryMerger
 from scrapers.options import ScraperOptions
@@ -300,7 +300,7 @@ class SeasonSectionPipeline:
         self,
         *,
         soup: BeautifulSoup,
-        adapter: SectionAdapter,
+        adapter: ArticleScraperBase,
     ) -> SeasonRecordSections:
         parser_set = self._require_parser_set()
         text_records = self._text_sections_service_factory.create(
