@@ -2,11 +2,11 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
 
-from models.value_objects.base import ValueObject
+from models.domain_model import DomainModel
 
 
 @dataclass(frozen=True)
-class DateValue(ValueObject):
+class DateValue(DomainModel):
     iso: str | list[str] | None = None
     year: int | None = None
     month: int | None = None

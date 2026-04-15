@@ -1,36 +1,34 @@
 # ruff: noqa: ARG002, ARG005, EM101, N801, SLF001, TRY003
 from types import SimpleNamespace
+from unittest.mock import patch
 
-from scrapers.mixins.section_table_parse import DeclarativeSectionTableParseMixin
-
-
-class BaseScraper:
-    def __init__(self, section_id="Section"):
-        self.config = SimpleNamespace(section_id=section_id)
-        self.include_urls = False
-        self.normalize_empty_values = True
-
-    def _parse_soup(self, soup):
-        return ["fallback"]
+from scrapers.scraper_table import F1TableScraper
+from scrapers.seed_list_scraper_table import SeedListTableScraper
 
 
-class Scraper(DeclarativeSectionTableParseMixin, BaseScraper):
-    pass
+def _make_scraper(section_id="Section"):
+    """Build a minimal SeedListTableScraper instance bypassing full init."""
+    scraper = object.__new__(SeedListTableScraper)
+    scraper.config = SimpleNamespace(section_id=section_id)
+    scraper.include_urls = False
+    scraper.normalize_empty_values = True
+    return scraper
 
 
 def test_parse_section_or_fallback_uses_legacy_flow_when_no_section_id():
-    scraper = Scraper(section_id=None)
+    scraper = _make_scraper(section_id=None)
 
-    records = scraper.parse_section_or_fallback(
-        object(),
-        domain="circuits",
-        parser_factory=lambda: object(),
-    )
+    with patch.object(F1TableScraper, "_parse_soup", return_value=["fallback"]):
+        records = scraper.parse_section_or_fallback(
+            object(),
+            domain="circuits",
+            parser_factory=lambda: object(),
+        )
 
     assert records == ["fallback"]
 
 
-class DeclarativeScraper(DeclarativeSectionTableParseMixin, BaseScraper):
+class DeclarativeScraper(SeedListTableScraper):
     domain = "constructors"
     section_label = "Current constructors"
 

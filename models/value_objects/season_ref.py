@@ -6,14 +6,14 @@ from typing import Any
 
 from models.validation.helpers import coerce_number
 from models.validation.helpers import is_valid_url
-from models.value_objects.base import ValueObject
+from models.domain_model import DomainModel
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
 
 
 @dataclass
-class SeasonRef(ValueObject):
+class SeasonRef(DomainModel):
     year: int
     url: str | None = None
 

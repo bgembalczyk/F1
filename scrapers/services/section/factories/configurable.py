@@ -4,11 +4,14 @@ from typing import TYPE_CHECKING
 from typing import Generic
 from typing import TypeVar
 
-from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.options import ScraperOptions
 
 if TYPE_CHECKING:
     from models.value_objects import WikiUrl
+
+    from scrapers.single_wiki_article.single_article_scraper_base import (
+        ArticleScraperBase,
+    )
 
 
 ServiceT = TypeVar("ServiceT")
@@ -35,14 +38,14 @@ class ConfigurableSectionServiceFactory(Generic[ServiceT]):
     def _validate_dependencies(
         self,
         *,
-        adapter: SectionAdapter,
+        adapter: ArticleScraperBase,
         options: ScraperOptions | None,
         url: WikiUrl | str | None,
         require_options: bool,
         require_url: bool,
     ) -> None:
         if adapter is None:
-            msg = "SectionAdapter dependency is required."
+            msg = "ArticleScraperBase dependency is required."
             raise ValueError(msg)
 
         if require_options and options is None:
@@ -56,7 +59,7 @@ class ConfigurableSectionServiceFactory(Generic[ServiceT]):
     def create(
         self,
         *,
-        adapter: SectionAdapter,
+        adapter: ArticleScraperBase,
         options: ScraperOptions | None = None,
         url: WikiUrl | str | None = None,
     ) -> ServiceT:

@@ -10,9 +10,7 @@ abstract class WikiScraper
 abstract class F1TableScraper
 abstract class SectionByIdScraperBase
 abstract class BaseEngineTableScraper
-abstract class SectionAwareMixin
 abstract class BaseConstructorListScraper
-abstract class DeclarativeSectionTableParseMixin
 
 
 class F1SponsorshipLiveriesScraper
@@ -38,8 +36,6 @@ class TyreManufacturersScraper
 
 class ConstructorsListScraper
 class IndianapolisOnlyListScraper
-
-class SectionAdapter
 
 class EngineRegulationScraper
 class EngineRestrictionsScraper
@@ -79,17 +75,6 @@ F1TableScraper <|-- TyreManufacturersScraper
 ListScraper <|-- ConstructorsListScraper
 ListScraper <|-- IndianapolisOnlyListScraper
 
-SectionAdapter <|-- F1SingleCircuitScraper
-SectionAdapter <|-- SingleConstructorScraper
-SectionAdapter <|-- SingleDriverScraper
-SectionAdapter <|-- SingleSeasonScraper
-
-SectionAwareMixin <|-- F1SingleCircuitScraper
-SectionAwareMixin <|-- SectionByIdScraperBase
-SectionAwareMixin <|-- SingleConstructorScraper
-SectionAwareMixin <|-- SingleDriverScraper
-SectionAwareMixin <|-- SingleSeasonScraper
-
 BaseEngineTableScraper <|-- EngineRegulationScraper
 BaseEngineTableScraper <|-- EngineRestrictionsScraper
 
@@ -99,11 +84,9 @@ SeedListTableScraper <|-- F1DriversListScraper
 SeedListTableScraper <|-- GrandsPrixListScraper
 SeedListTableScraper <|-- SeasonsListScraper
 
-DeclarativeSectionTableParseMixin <|-- BaseConstructorListScraper
-DeclarativeSectionTableParseMixin <|-- CircuitsListScraper
-
-
-
-
+SectionByIdScraperBase <|-- F1SingleCircuitScraper
+SectionByIdScraperBase <|-- SingleConstructorScraper
+SectionByIdScraperBase <|-- SingleDriverScraper
+SectionByIdScraperBase <|-- SingleSeasonScraper
 
 @enduml

@@ -14,10 +14,7 @@ from scrapers.services.domain_record.constructor_pipeline_service import (
 from scrapers.services.domain_record.constructor_table_extraction_service import (
     ConstructorTableExtractionService,
 )
-from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.single_wiki_article.single_article_scraper_base import ArticleScraperBase
-from scrapers.single_wiki_article.single_article_section_aware_mixin import (
-    SectionAwareMixin,
 )
 
 if TYPE_CHECKING:
@@ -26,7 +23,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class SingleConstructorScraper(SectionAdapter, SectionAwareMixin, ArticleScraperBase):
+class SingleConstructorScraper(ArticleScraperBase):
     def __init__(
         self,
         *,

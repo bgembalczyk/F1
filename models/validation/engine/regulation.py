@@ -3,7 +3,7 @@ from dataclasses import field
 from typing import Any
 
 from models.domain_utils.normalization import normalize_season_items
-from models.validation.base import ValidatedModel
+from models.domain_model import DomainModel
 from models.validation.helpers import coerce_number
 from models.validation.helpers import normalize_unit_list
 from models.validation.helpers import normalize_unit_value
@@ -12,7 +12,7 @@ from models.value_objects.season_ref import SeasonRef
 
 
 @dataclass
-class EngineRegulation(ValidatedModel):
+class EngineRegulation(DomainModel):
     seasons: list[SeasonRef | dict[str, Any]] = field(default_factory=list)
     operating_principle: str | None = None
     maximum_displacement: dict[str, Any] | None = None

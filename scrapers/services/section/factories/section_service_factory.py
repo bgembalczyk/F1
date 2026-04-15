@@ -6,8 +6,9 @@ from typing import Generic
 from typing import TypeVar
 
 from models.wiki_url import WikiUrl
-from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.options import ScraperOptions
+
+from scrapers.single_wiki_article.single_article_scraper_base import ArticleScraperBase
 
 ServiceT_co = TypeVar("ServiceT_co", covariant=True)
 
@@ -19,7 +20,7 @@ class SectionServiceFactoryABC(ABC, Generic[ServiceT_co]):
     def create(
         self,
         *,
-        adapter: SectionAdapter,
+        adapter: ArticleScraperBase,
         options: ScraperOptions | None = None,
         url: WikiUrl | str | None = None,
     ) -> ServiceT_co: ...

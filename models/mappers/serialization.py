@@ -4,11 +4,11 @@ from dataclasses import asdict
 from dataclasses import is_dataclass
 from typing import Any
 
+from models.domain_model import DomainModel
 from models.records.circuit.base import CircuitBaseRecord
 from models.records.circuit.complete import CircuitCompleteRecord
 from models.records.circuit.details import CircuitDetailsRecord
 from models.serializable_protocol import SerializableProtocol
-from models.value_objects.base import ValueObject
 
 SerializableAdapter = Callable[[Any], Any]
 
@@ -36,7 +36,7 @@ def extract_registered_adapter(value: Any) -> Any | None:
 
 
 def extract_serializable(value: Any) -> Any:
-    if isinstance(value, ValueObject):
+    if isinstance(value, DomainModel):
         return value.to_dict()
     if isinstance(value, SerializableProtocol):
         return value.to_serializable()

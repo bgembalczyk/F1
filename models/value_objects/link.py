@@ -2,12 +2,12 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
 
-from models.value_objects.base import ValueObject
+from models.domain_model import DomainModel
 from models.value_objects.helpers import validate_link
 
 
 @dataclass
-class Link(ValueObject):
+class Link(DomainModel):
     text: str = ""
     url: str | None = None
 

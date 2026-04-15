@@ -13,7 +13,6 @@ class ConstructorSectionExtractionService
 class DriverSectionExtractionService
 class SeasonTextSectionExtractionService
 
-class PipelineService
 class DomainPipelineService
 class ConstructorTableExtractionService
 class CircuitPipelineService
@@ -21,8 +20,6 @@ class ConstructorPipelineService
 class DriverPipelineService
 class SeasonPipelineService
 
-
-PipelineService <|-- DomainPipelineService
 
 RunDiagnosticsMixin <|-- ConstructorTableExtractionService
 RunDiagnosticsMixin <|-- DomainPipelineService

@@ -7,11 +7,18 @@ from typing import Any
 from typing import ClassVar
 
 from infrastructure.helpers import init_scraper_options
+from scrapers.adapters.section.entry import SectionAdapterEntry
 from scrapers.dto import InfoboxPayloadDTO
 from scrapers.dto import SectionsPayloadDTO
 from scrapers.dto import TablesPayloadDTO
 from scrapers.helpers.config_factory import build_scraper_options
+from scrapers.parsers.section.helpers import profile_entry_aliases
 from scrapers.scraper_wiki import WikiScraper
+from scrapers.section.id_resolver import SectionIdResolver
+from scrapers.section.parse_results import SectionParseResult
+from scrapers.section.selection_strategy import WikipediaSectionByIdSelectionStrategy
+from scrapers.section.serializer import coerce_section_parse_result
+from scrapers.section.serializer import serialize_section_result
 from scrapers.wiring import ScraperRuntimeFactory
 
 if TYPE_CHECKING:
@@ -22,7 +29,11 @@ if TYPE_CHECKING:
 
 
 class ArticleScraperBase(WikiScraper, ABC):
-    """Base class responsible for article fetch, parsing, and record assembly lifecycle."""
+    """Base class responsible for article fetch, parsing, and record assembly lifecycle.
+
+    Includes section-selection helpers (formerly SectionAwareMixin) and
+    section-parsing utilities (formerly SectionAdapter).
+    """
 
     options_domain: str | None = None
     options_profile: str = "article_strict"
@@ -109,6 +120,83 @@ class ArticleScraperBase(WikiScraper, ABC):
         if strategy is None:
             return None
         return strategy.extract_section_by_id(soup, section_id, domain=domain)
+
+    # ------------------------------------------------------------------
+    # Section parsing helpers (formerly SectionAdapter)
+    # ------------------------------------------------------------------
+
+    @classmethod
+    def _extract_section_from_heading(cls, heading_match) -> BeautifulSoup | None:
+        return WikipediaSectionByIdSelectionStrategy.extract_section_by_heading(
+            heading_match.heading,
+        )
+
+    def parse_sections(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[SectionParseResult]:
+        parsed: list[SectionParseResult] = []
+        resolver = SectionIdResolver(domain=domain)
+        for entry in entries:
+            canonical_section_id = str(entry.section_id).strip()
+            export_section_id = (
+                (
+                    entry.section_id.to_export()
+                    if hasattr(entry.section_id, "to_export")
+                    else canonical_section_id
+                )
+                .strip()
+                .lower()
+            )
+            entry_aliases = profile_entry_aliases(
+                domain,
+                canonical_section_id,
+                *entry.aliases,
+            )
+            resolution = resolver.resolve_heading(
+                soup=soup,
+                section_id=canonical_section_id,
+                alternative_section_ids=entry_aliases,
+                aliases={
+                    canonical_section_id: set(entry_aliases),
+                },
+            )
+            if resolution.heading_match is None:
+                continue
+
+            section_fragment = self._extract_section_from_heading(
+                resolution.heading_match,
+            )
+            if section_fragment is None:
+                continue
+            parsed.append(
+                coerce_section_parse_result(
+                    entry.parser.parse(section_fragment),
+                    default_section_id=export_section_id,
+                    default_section_label=export_section_id.replace("_", " "),
+                    parser=entry.parser.__class__.__name__,
+                ),
+            )
+        return parsed
+
+    def assemble_section_dicts(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[dict[str, Any]]:
+        return [
+            serialize_section_result(result)
+            for result in self.parse_sections(soup=soup, domain=domain, entries=entries)
+        ]
+
+    # ------------------------------------------------------------------
+    # Article record building
+    # ------------------------------------------------------------------
 
     def _build_article_record(self, soup: BeautifulSoup) -> dict[str, Any]:
         return self._run_record_pipeline(soup)

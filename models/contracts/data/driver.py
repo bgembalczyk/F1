@@ -3,14 +3,15 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.contracts.data.base import DataContract
+from models.domain_model import DomainModel
 from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 
 
 @dataclass(slots=True)
-class DriverContract(DataContract):
+class DriverContract(DomainModel):
+    _extra: dict = field(default_factory=dict, init=False, repr=False)
     driver: LinkRecord | None = None
     is_active: bool = False
     is_world_champion: bool = False
@@ -38,4 +39,6 @@ class DriverContract(DataContract):
         payload = dict(record)
         payload.setdefault("seasons_competed", [])
         payload.setdefault("drivers_championships", {"count": 0, "seasons": []})
-        return DataContract.from_record.__func__(cls, payload)
+        # super() cannot be used in classmethods of @dataclass(slots=True) classes
+        # because the decorator rebuilds the class and invalidates __class__ cell.
+        return DomainModel.from_record.__func__(cls, payload)  # type: ignore[attr-defined]

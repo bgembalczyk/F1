@@ -4,17 +4,14 @@ hide circle
 hide empty members
 
 
-interface DataContract
-interface CircuitContract
-interface DriverContract
-interface PointsContract
-
-class ValidatedModel
+class DomainModel
+class CircuitContract
+class DriverContract
+class PointsContract
 class Circuit
 class EngineManufacturer
 class EngineRegulation
 class EngineRestriction
-class ValueObject
 class DateValue
 class DriversChampionships
 class Link
@@ -25,22 +22,33 @@ class CircuitCompleteRecord
 class CircuitDetailsRecord
 class LinkRecord
 class CarRecord
+class DriverRecordModel
+class EngineRecordModel
+class RaceRecordModel
+class SeasonRecordModel
+class TeamRecordModel
 
 
-DataContract <|-- CircuitContract
-DataContract <|-- DriverContract
-DataContract <|-- PointsContract
+DomainModel <|-- CircuitContract
+DomainModel <|-- DriverContract
+DomainModel <|-- PointsContract
 
-ValidatedModel <|-- Circuit
-ValidatedModel <|-- EngineManufacturer
-ValidatedModel <|-- EngineRegulation
-ValidatedModel <|-- EngineRestriction
+DomainModel <|-- Circuit
+DomainModel <|-- EngineManufacturer
+DomainModel <|-- EngineRegulation
+DomainModel <|-- EngineRestriction
 
-ValueObject <|-- DateValue
-ValueObject <|-- DriversChampionships
-ValueObject <|-- Link
-ValueObject <|-- NormalizedDate
-ValueObject <|-- SeasonRef
+DomainModel <|-- DateValue
+DomainModel <|-- DriversChampionships
+DomainModel <|-- Link
+DomainModel <|-- NormalizedDate
+DomainModel <|-- SeasonRef
+
+DomainModel <|-- DriverRecordModel
+DomainModel <|-- EngineRecordModel
+DomainModel <|-- RaceRecordModel
+DomainModel <|-- SeasonRecordModel
+DomainModel <|-- TeamRecordModel
 
 CircuitBaseRecord <|-- CircuitCompleteRecord
 CircuitBaseRecord <|-- CircuitDetailsRecord

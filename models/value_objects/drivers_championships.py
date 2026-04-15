@@ -4,12 +4,12 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from models.value_objects.base import ValueObject
+from models.domain_model import DomainModel
 from models.value_objects.season_ref import SeasonRef
 
 
 @dataclass
-class DriversChampionships(ValueObject):
+class DriversChampionships(DomainModel):
     count: int = 0
     seasons: list[SeasonRef] = field(default_factory=list)
 

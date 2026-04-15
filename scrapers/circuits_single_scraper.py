@@ -18,10 +18,7 @@ from scrapers.services.domain_record.circuit_lap_records_extraction_service impo
 from scrapers.services.domain_record.circuit_pipeline_service import (
     CircuitDomainRecordInput,
 )
-from scrapers.adapters.section.adapter import SectionAdapter
 from scrapers.single_wiki_article.single_article_scraper_base import ArticleScraperBase
-from scrapers.single_wiki_article.single_article_section_aware_mixin import (
-    SectionAwareMixin,
 )
 
 if TYPE_CHECKING:
@@ -30,7 +27,7 @@ if TYPE_CHECKING:
     from scrapers.options import ScraperOptions
 
 
-class F1SingleCircuitScraper(SectionAdapter, SectionAwareMixin, ArticleScraperBase):
+class F1SingleCircuitScraper(ArticleScraperBase):
     def __init__(
         self,
         *,

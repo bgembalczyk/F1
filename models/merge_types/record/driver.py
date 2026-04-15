@@ -2,13 +2,15 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from models.domain_model import DomainModel
+
 from models.merge_types.constants import RecordDict
 from models.merge_types.driver_series_stats import DriverSeriesStats
 from models.merge_types.link_value import LinkValue
 
 
 @dataclass(slots=True)
-class DriverRecordModel:
+class DriverRecordModel(DomainModel):
     raw: RecordDict
 
     @classmethod
