@@ -3,6 +3,7 @@ from __future__ import annotations
 from abc import abstractmethod
 from typing import Any
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.helpers.text import clean_wiki_text
