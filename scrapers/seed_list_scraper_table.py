@@ -131,6 +131,8 @@ class SeedListTableScraper(F1TableScraper):
         )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
+        # When domain is not set the subclass hasn't opted in to section-based
+        # parsing, so fall back to the standard F1TableScraper table extraction.
         if self.domain is None:
             return super()._parse_soup(soup)
 

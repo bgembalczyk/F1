@@ -39,4 +39,6 @@ class DriverContract(DomainModel):
         payload = dict(record)
         payload.setdefault("seasons_competed", [])
         payload.setdefault("drivers_championships", {"count": 0, "seasons": []})
+        # super() cannot be used in classmethods of @dataclass(slots=True) classes
+        # because the decorator rebuilds the class and invalidates __class__ cell.
         return DomainModel.from_record.__func__(cls, payload)  # type: ignore[attr-defined]

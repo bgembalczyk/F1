@@ -28,7 +28,7 @@ def test_parse_section_or_fallback_uses_legacy_flow_when_no_section_id():
     assert records == ["fallback"]
 
 
-class _DeclarativeScraper(SeedListTableScraper):
+class DeclarativeScraper(SeedListTableScraper):
     domain = "constructors"
     section_label = "Current constructors"
 

@@ -8,8 +8,6 @@ from __future__ import annotations
 from collections.abc import Iterator
 from collections.abc import Mapping
 from collections.abc import MutableMapping
-from dataclasses import asdict
-from dataclasses import field
 from dataclasses import fields
 from dataclasses import is_dataclass
 from typing import TYPE_CHECKING
@@ -122,29 +120,32 @@ class DomainModel(MutableMapping[str, Any]):
     # Serialisation (formerly to_dict from ValueObject / DataContract)
     # ------------------------------------------------------------------
 
+    def _extract_field_names(self) -> set[str]:
+        """Return dataclass field names eligible for serialization."""
+        if not is_dataclass(self):
+            return set()
+        result: set[str] = {f.name for f in fields(self) if f.init}  # type: ignore[arg-type]
+        result.discard("_extra")
+        return result
+
     def to_dict(self) -> dict[str, Any]:
         """Return a plain-dict representation of this model."""
-        if is_dataclass(self):
-            field_names: set[str] = {f.name for f in fields(self) if f.init}  # type: ignore[arg-type]
-            field_names.discard("_extra")
-            result = {name: getattr(self, name) for name in field_names}
-            extra: dict[str, Any] = getattr(self, "_extra", {})
-            if extra:
-                result.update(extra)
-            return result
-        msg = f"Nieobsługiwany DomainModel: {type(self)!r}"
-        raise TypeError(msg)
+        if not is_dataclass(self):
+            msg = f"Nieobsługiwany DomainModel: {type(self)!r}"
+            raise TypeError(msg)
+        field_names = self._extract_field_names()
+        result = {name: getattr(self, name) for name in field_names}
+        extra: dict[str, Any] = getattr(self, "_extra", {})
+        if extra:
+            result.update(extra)
+        return result
 
     # ------------------------------------------------------------------
     # MutableMapping implementation (formerly DataContract)
     # ------------------------------------------------------------------
 
     def _field_names(self) -> set[str]:
-        if not is_dataclass(self):
-            return set()
-        result: set[str] = {f.name for f in fields(self) if f.init}  # type: ignore[arg-type]
-        result.discard("_extra")
-        return result
+        return self._extract_field_names()
 
     def __getitem__(self, key: str) -> Any:
         if key in self._field_names():

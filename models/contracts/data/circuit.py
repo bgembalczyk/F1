@@ -33,4 +33,6 @@ class CircuitContract(DomainModel):
         payload = dict(record)
         payload.setdefault("grands_prix", [])
         payload.setdefault("seasons", [])
+        # super() cannot be used in classmethods of @dataclass(slots=True) classes
+        # because the decorator rebuilds the class and invalidates __class__ cell.
         return DomainModel.from_record.__func__(cls, payload)  # type: ignore[attr-defined]
