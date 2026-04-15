@@ -11,7 +11,7 @@ import pytest
 from exporters import protocol as export_contracts
 from scrapers.base import contracts as base_contracts
 from scrapers.circuits import circuits_schemas as circuits_schemas
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.section.base import SectionParserBase
 from scripts import check_architecture_rules as architecture_rules
 from scripts import check_domain_terminology as domain_terminology
 
@@ -85,7 +85,7 @@ def test_export_support_protocol_signatures_are_stable() -> None:
 
 def test_season_section_protocol_parse_signature_is_stable() -> None:
     """contract/static: season section parser protocol accepts fragment."""
-    signature = inspect.signature(HtmlSoupParserABC.parse)
+    signature = inspect.signature(SectionParserBase.parse)
     assert tuple(signature.parameters) == ("self", "raw")
 
 

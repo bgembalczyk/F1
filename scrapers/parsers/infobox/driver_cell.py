@@ -15,10 +15,10 @@ from scrapers.parsers.infobox.field.nationality import NationalityParser
 from scrapers.parsers.infobox.field.race_event import RaceEventParser
 from scrapers.parsers.infobox.field.teams import TeamsParser
 from scrapers.parsers.infobox.table import InfoboxTableParser
-from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class InfoboxCellValueExtractor(HtmlTagParserABC[dict[str, Any]]):
+class InfoboxCellValueExtractor(ParserABC[Tag, dict[str, Any]]):
     """Parser for individual infobox cells.
 
     This class delegates complex parsing tasks to specialized helper classes:

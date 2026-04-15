@@ -9,7 +9,6 @@ from tests.architecture.helpers import descends_from_approved
 from tests.architecture.helpers import load_classes
 
 ALLOWED_MIXINS = {
-    "ApplyForElementsMixin",
     "ExtractListItemsMixin",
 }
 

@@ -2,13 +2,12 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.sprint_points_table_mapper import SprintPointsTableMapper
 
 
-class SprintRacesSubSubSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+class SprintRacesSubSubSectionParser(RecursiveSectionParser):
     heading_class = "mw-heading5"
     output_key = "sub_sub_sub_sections"
 

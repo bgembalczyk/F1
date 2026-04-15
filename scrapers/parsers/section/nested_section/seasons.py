@@ -6,7 +6,7 @@ from bs4 import Tag
 from scrapers.mappers.seasons_table_mapper import SeasonsTableMapper
 from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
-from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
+from scrapers.parsers.wiki.table import WikiTableParser
 
 
 class SeasonsSectionParser(RecursiveSectionParser):
@@ -54,7 +54,7 @@ class SeasonsSectionParser(RecursiveSectionParser):
                 element["data"] = parsed
 
 
-class SeasonsTableParser(WikiTableHtmlParser):
+class SeasonsTableParser(WikiTableParser):
     """Concrete parser for seasons list wikitable HTML.
 
     Parses ``<table class="wikitable">`` elements from the F1 seasons list

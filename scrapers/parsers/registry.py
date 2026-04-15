@@ -9,9 +9,7 @@ from typing import Literal
 from typing import TypeAlias
 
 import scrapers.parsers as parsers_pkg
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
-from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
 from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.element_registry import WIKI_SELECTOR_FAMILY_MAP
 
@@ -34,17 +32,17 @@ class ParsingRegistryEntry:
 
 
 AUTO_ELEMENT_PARSER_BASES: Final[dict[ElementType, ParserBase]] = {
-    "table": HtmlTagParserABC,
-    "list": HtmlTagParserABC,
-    "section": HtmlSoupParserABC,
-    "infobox": WikiInfoboxElementParserABC,
+    "table": ParserABC,
+    "list": ParserABC,
+    "section": ParserABC,
+    "infobox": WikiInfoboxHtmlParser,
 }
 
 EXPECTED_HTML_FAMILY_ABCS: Final[dict[ElementType, type[ParserABC[object, object]]]] = {
-    "table": HtmlTagParserABC,
-    "list": HtmlTagParserABC,
-    "infobox": HtmlTagParserABC,
-    "section": HtmlSoupParserABC,
+    "table": ParserABC,
+    "list": ParserABC,
+    "infobox": ParserABC,
+    "section": ParserABC,
 }
 
 DEFAULT_PARSER_REGISTRY: Final[tuple[ParsingRegistryEntry, ...]] = tuple(

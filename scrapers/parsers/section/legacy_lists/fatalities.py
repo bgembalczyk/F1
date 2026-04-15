@@ -15,7 +15,6 @@ from scrapers.constants.constants_drivers import FATALITIES_HEADERS
 from scrapers.constants.constants_drivers import FATALITIES_REF_HEADER
 from scrapers.constants.constants_drivers import FATALITIES_SESSION_HEADER
 from scrapers.mappers.driver_ordered_table_mapper import DriverOrderedTableMapper
-from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAssembler
 
@@ -73,7 +72,7 @@ class FatalitiesSectionParser(RecursiveSectionParser):
     def __init__(
         self,
         *,
-        child_parser: NestedChildParser | None = None,
+        child_parser: RecursiveSectionParser | None = None,
         **kwargs: Any,
     ) -> None:
         toolbox = kwargs.get("toolbox")

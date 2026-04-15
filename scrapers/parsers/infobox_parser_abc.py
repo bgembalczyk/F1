@@ -8,20 +8,19 @@ from typing import TypeVar
 
 from bs4 import Tag
 
-from scrapers.parsers.element_parser_abc import HtmlTagParserABC
 from scrapers.parsers.parser_abc import ParserABC
 
 Output = TypeVar("Output")
 
 
-class InfoboxParserABC(HtmlTagParserABC[dict[str, Any]], ABC):
+class InfoboxParserABC(ParserABC[Tag, dict[str, Any]], ABC):
     """Coordinator parser contract for the whole infobox."""
 
     @abstractmethod
     def parse(self, raw: Tag) -> dict[str, Any]: ...
 
 
-class InfoboxHtmlFieldParserABC(HtmlTagParserABC[Output], ABC, Generic[Output]):
+class InfoboxHtmlFieldParserABC(ParserABC[Tag, Output], ABC, Generic[Output]):
     """Parser contract for a single infobox field parsed directly from HTML Tag."""
 
     @abstractmethod

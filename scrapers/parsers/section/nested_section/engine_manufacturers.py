@@ -1,6 +1,5 @@
 from typing import Any
 
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.engine_manufacturers_table_mapper import (
     EngineManufacturersTableMapper,
 )
@@ -10,7 +9,7 @@ from scrapers.parsers.section.sub_section.engine_manufacturers_indianapolis impo
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class EngineManufacturersSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+class EngineManufacturersSectionParser(RecursiveSectionParser):
     heading_class = "mw-heading3"
     output_key = "sub_sections"
 

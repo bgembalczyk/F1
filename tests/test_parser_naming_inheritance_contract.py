@@ -121,12 +121,16 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
                 # F1StandingsTableParser is a domain-specific standings parser
                 # that operates on raw Tag input, not a wiki table mapper.
                 "scrapers.parsers.section.standings.f1_table",
+                # WikiTableParser IS the canonical table implementation
+                "scrapers.parsers.wiki.table",
+                "scrapers.parsers.wiki.table.__init__",
             }:
                 continue
             base_name_join = " ".join(class_info.bases)
             _table_parser_bases = {
                 "WikiTableBaseMapper",
                 "WikiTableHtmlParser",
+                "WikiTableParser",
             }
             inherits_table_base = _inherits_from(
                 class_info,
@@ -162,11 +166,11 @@ def test_parser_name_to_inheritance_and_interface_contract() -> None:
             if not _inherits_from(
                 class_info,
                 classes,
-                {"ListParser", "HtmlTagParserABC"},
+                {"ListParser", "ParserABC"},
             ):
                 violations.append(
                     f"{class_info.module}.{class_info.name}: ListParser musi "
-                    "dziedziczyć po ListParser lub HtmlTagParserABC",
+                    "dziedziczyć po ListParser lub ParserABC",
                 )
 
         if class_info.name.endswith("SectionParser") and not class_info.name.endswith(

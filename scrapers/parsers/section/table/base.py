@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from models.entity_name import EntityName
 from models.section_id import SectionId
 from scrapers.parsers.contracts.classifier_abc import ClassifierABC
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_soup
 from scrapers.parsers.section.base import SectionParserBase
@@ -38,7 +38,7 @@ class TableSectionParser(SectionParserBase):
         metadata_extras: dict[str, Any] | None = None,
         include_heading_path: bool = False,
         include_source_table: bool = False,
-        html_parser: HtmlSoupParserABC[list[TablePayload]] | None = None,
+        html_parser: ParserABC[BeautifulSoup, list[TablePayload]] | None = None,
         classifier: ClassifierABC[TablePayload, Any] | None = None,
         mapper: Any | None = None,
     ) -> None:
@@ -53,7 +53,7 @@ class TableSectionParser(SectionParserBase):
         if domain != "wikipedia":
             self._metadata_extras["domain"] = domain
 
-        self._html_parser: HtmlSoupParserABC[list[TablePayload]] = html_parser or ArticleTablesParser(
+        self._html_parser: ParserABC[BeautifulSoup, list[TablePayload]] = html_parser or ArticleTablesParser(
             include_heading_path=include_heading_path,
             include_source_table=include_source_table,
         )

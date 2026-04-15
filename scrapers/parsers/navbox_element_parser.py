@@ -1,12 +1,12 @@
 from bs4 import Tag
 
 from models.data.parsed.html_elements import NavboxElementData
-from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.wiki.wiki_element_parser_abc import WikiElementType
 from scrapers.text_cleaning import extract_text
 
 
-class NavboxElementParser(HtmlTagParserABC[NavboxElementData]):
+class NavboxElementParser(ParserABC[Tag, NavboxElementData]):
     element_type: WikiElementType = "navbox"
 
     def parse(self, raw: Tag) -> NavboxElementData:

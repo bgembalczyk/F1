@@ -1,8 +1,7 @@
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
+from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class StubApplyForElements(ApplyForElementsMixin):
+class StubApplyForElements(RecursiveSectionParser):
     def __init__(self, table_parser):
+        super().__init__()
         self._table_parser = table_parser
-
-

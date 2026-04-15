@@ -8,13 +8,13 @@ from bs4 import Tag
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.input_adapters import as_table_fragments
 from scrapers.input_types import WikiParserInput
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.input_adapters import as_table_fragments
 from scrapers.parsers.input_types import WikiParserInput
 
 
-class ArticleTablesParser(HtmlSoupParserABC[list[dict[str, Any]]]):
+class ArticleTablesParser(ParserABC[BeautifulSoup, list[dict[str, Any]]]):
     """Wspólny parser tabel wikitable z artykułów Wikipedii."""
 
     element_type = "article"

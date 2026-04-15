@@ -2,8 +2,6 @@ from __future__ import annotations
 
 from typing import Any
 
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
@@ -33,7 +31,7 @@ class GrandsPrixTableMapper(WikiTableBaseMapper):
         }
 
 
-class ByRaceTitleSubSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+class ByRaceTitleSubSectionParser(RecursiveSectionParser):
     heading_class = "mw-heading4"
     output_key = "sub_sub_sections"
 
@@ -59,7 +57,7 @@ class RacesSectionParser(RecursiveSectionParser):
     def __init__(
         self,
         *,
-        child_parser: NestedChildParser | None = None,
+        child_parser: RecursiveSectionParser | None = None,
         **kwargs: Any,
     ) -> None:
         toolbox = kwargs.get("toolbox")
