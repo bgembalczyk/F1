@@ -1,0 +1,17 @@
+@startuml
+title Value Objects & Domain Models
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class CarRecord
+class CircuitBaseRecord
+class CircuitCompleteRecord
+class CircuitDetailsRecord
+class LinkRecord
+
+LinkRecord <|-- CarRecord
+CircuitBaseRecord <|-- CircuitCompleteRecord
+CircuitBaseRecord <|-- CircuitDetailsRecord
+
+@enduml

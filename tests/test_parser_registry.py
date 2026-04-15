@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.registry import ParsingRegistryEntry
 from scrapers.parsers.registry import ParsingRegistryKey
 from scrapers.parsers.registry import resolve_parser_base
@@ -14,11 +14,11 @@ def test_validate_parser_registry_rejects_conflicts() -> None:
     duplicate_entries = (
         ParsingRegistryEntry(
             key=ParsingRegistryKey(domain="drivers", element_type="list"),
-            parser_base=HtmlTagParserABC,
+            parser_base=ParserABC,
         ),
         ParsingRegistryEntry(
             key=ParsingRegistryKey(domain="drivers", element_type="list"),
-            parser_base=HtmlTagParserABC,
+            parser_base=ParserABC,
         ),
     )
 
@@ -33,7 +33,7 @@ def test_validate_parser_registry_rejects_missing_required_entries() -> None:
     partial_registry = (
         ParsingRegistryEntry(
             key=ParsingRegistryKey(domain="drivers", element_type="list"),
-            parser_base=HtmlTagParserABC,
+            parser_base=ParserABC,
         ),
     )
 
@@ -58,4 +58,4 @@ def test_resolve_parser_name_raises_for_unregistered_key() -> None:
 
 def test_resolve_parser_base_returns_abc() -> None:
     parser_base = resolve_parser_base(domain="drivers", element_type="list")
-    assert parser_base is HtmlTagParserABC
+    assert parser_base is ParserABC

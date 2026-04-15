@@ -6,21 +6,19 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.helpers.links import normalize_links
 from scrapers.helpers.url import normalize_url
-from scrapers.parsers.contracts.wiki_elements import WikiInfoboxElementParserABC
-from scrapers.parsers.infobox_element_parser import InfoboxElementParser
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class WikiInfoboxHtmlParser(WikiInfoboxElementParserABC):
+class WikiInfoboxHtmlParser(ParserABC[Tag, dict[str, Any]]):
     """Parser HTML infoboxów z Wikipedii (tytuł, wiersze, linki)."""
 
     WIKIPEDIA_BASE = "https://en.wikipedia.org"
 
     def __init__(self, wikipedia_base: str | None = None) -> None:
         self.wikipedia_base = wikipedia_base or self.WIKIPEDIA_BASE
-        self._element_parser = InfoboxElementParser()
 
-    def parse(self, fragment: BeautifulSoup) -> dict[str, Any]:
-        return self.parse_fragment(fragment)
+    def parse(self, raw: Tag | BeautifulSoup) -> dict[str, Any]:
+        return self.parse_fragment(raw)
 
     def parse_fragment(self, fragment: BeautifulSoup) -> dict[str, Any]:
         if isinstance(fragment, Tag) and fragment.name == "table":

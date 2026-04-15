@@ -10,7 +10,7 @@ from scrapers.headers_table import normalize_header
 from scrapers.helpers.constants import season_headers
 from scrapers.helpers.text import clean_wiki_text
 from scrapers.paren_classifier import ParenClassifier
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.html_table import HtmlTableParser
 from scrapers.parsers.liveries.sponsorship.splitters.broader_scope import (
     BroaderScopeSplitter,
@@ -23,7 +23,7 @@ from scrapers.pipeline_table import TablePipeline
 from scrapers.sponsorship_table_schema_builder import SponsorshipTableSchemaBuilder
 
 
-class SponsorshipSectionParser(HtmlSoupParserABC[WikiRecords]):
+class SponsorshipSectionParser(ParserABC[BeautifulSoup, WikiRecords]):
     def __init__(
         self,
         *,

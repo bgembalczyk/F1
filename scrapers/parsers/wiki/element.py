@@ -18,7 +18,7 @@ from scrapers.parsers.wiki.figure import WikiFigureParser
 from scrapers.parsers.wiki.navbox import WikiNavboxParser
 from scrapers.parsers.paragraph_element_parser import ParagraphElementParser
 from scrapers.parsers.wiki.element_references import WikiReferencesElementParser
-from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
+from scrapers.parsers.wiki.table import WikiTableHtmlParser
 
 
 @dataclass(frozen=True)

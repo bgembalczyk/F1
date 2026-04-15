@@ -4,7 +4,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.section.base import SectionParserBase
 from scrapers.parsers.wiki.table.article import ArticleTablesParser
 from scrapers.section.parse_results import SectionParseResult
@@ -15,7 +15,7 @@ class ConstructorTablesSectionParser(SectionParserBase):
     def __init__(self, *, section_id: str, section_label: str) -> None:
         self._section_id = section_id
         self._section_label = section_label
-        self._tables: HtmlSoupParserABC[list[dict[str, Any]]] = ArticleTablesParser()
+        self._tables: ParserABC[BeautifulSoup, list[dict[str, Any]]] = ArticleTablesParser()
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         return SectionParseResult(

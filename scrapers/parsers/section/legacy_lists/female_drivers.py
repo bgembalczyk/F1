@@ -16,8 +16,6 @@ from scrapers.constants.constants_drivers import FEMALE_DRIVER_SEASONS_HEADER
 from scrapers.constants.constants_drivers import FEMALE_DRIVER_TEAMS_HEADER
 from scrapers.constants.constants_drivers import FEMALE_DRIVERS_HEADERS
 from scrapers.constants.constants_drivers import FEMALE_DRIVERS_INDEX_HEADER
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
-from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 from scrapers.table_schema_dsl import TableSchemaDSL
@@ -65,7 +63,7 @@ class FemaleDriversTableMapper(WikiTableBaseMapper):
         )
 
 
-class OfficialDriversSubSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+class OfficialDriversSubSectionParser(RecursiveSectionParser):
     heading_class = "mw-heading4"
     output_key = "sub_sub_sections"
 
@@ -91,7 +89,7 @@ class DriversSectionParser(RecursiveSectionParser):
     def __init__(
         self,
         *,
-        child_parser: NestedChildParser | None = None,
+        child_parser: RecursiveSectionParser | None = None,
         **kwargs: Any,
     ) -> None:
         toolbox = kwargs.get("toolbox")

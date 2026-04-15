@@ -1,0 +1,104 @@
+@startuml
+title Domain Section Parsers
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseDriverResultsSectionParser
+abstract class BaseSeasonParser
+class ByRaceTitleSubSectionParser
+class CancelledRoundsParser
+class CircuitEventsSectionParser
+class CircuitLapRecordsSectionParser
+class CircuitLayoutHistorySectionParser
+class CircuitsListSectionParser
+class ColinChapmanTrophyParser
+class ConstructorChampionshipResultsSectionParser
+class ConstructorCompleteF1ResultsSectionParser
+class ConstructorHistorySectionParser
+class ConstructorTablesSectionParser
+class ConstructorsSectionParser
+class CurrentConstructorsSectionParser
+class CurrentRulesSectionParser
+class DetailByDriverSubSectionParser
+class DriverResultsSectionParser
+class DriversListSectionParser
+class DriversSectionParser
+class EngineManufacturersIndianapolisSubSectionParser
+class EngineManufacturersSectionParser
+class EngineRegulationSubSectionParser
+class EngineSubSectionParser
+abstract class ExtractListItemsMixin
+class FatalitiesSectionParser
+class FormerConstructorsSectionParser
+class GenericIndianapolisOnlySubSectionParser
+class GrandPrixByYearSectionParser
+class HistorySectionParser
+class JimClarkTrophyParser
+class ManufacturersSectionParser
+class NonChampionshipsRacesSubSectionParser
+class OfficialDriversSubSectionParser
+class PointsScoringSystemsSectionParser
+class PrivateerTeamsSectionParser
+class RacesSectionParser
+class RedFlaggedRacesSectionParser
+class SeasonCalendarParser
+class SeasonCalendarSectionParser
+class SeasonConstructorsStandingsSectionParser
+class SeasonDriversStandingsSectionParser
+class SeasonEntriesParser
+class SeasonFreePracticeParser
+class SeasonMidSeasonChangesSectionParser
+class SeasonNonChampionshipParser
+class SeasonRegionalChampionshipParser
+class SeasonRegulationChangesSectionParser
+class SeasonResultsParser
+class SeasonResultsSectionParser
+class SeasonScoringSystemParser
+class SeasonsSectionParser
+abstract class SectionParserBase
+class ShortenedRacesSubSubSectionParser
+class SpecialCasesSubSectionParser
+class SponsorshipSectionParser
+class SprintRacesSubSubSectionParser
+class TableSectionParser
+class TeamLiveriesSectionParser
+class TestingVenuesParser
+class TyreManufacturersBySeasonSubSectionParser
+
+SectionParserBase <|-- BaseDriverResultsSectionParser
+BaseSeasonParser <|-- CancelledRoundsParser
+TableSectionParser <|-- CircuitEventsSectionParser
+TableSectionParser <|-- CircuitLapRecordsSectionParser
+SectionParserBase <|-- CircuitLayoutHistorySectionParser
+SectionParserBase <|-- CircuitsListSectionParser
+BaseSeasonParser <|-- ColinChapmanTrophyParser
+ConstructorTablesSectionParser <|-- ConstructorChampionshipResultsSectionParser
+ConstructorTablesSectionParser <|-- ConstructorCompleteF1ResultsSectionParser
+ConstructorTablesSectionParser <|-- ConstructorHistorySectionParser
+SectionParserBase <|-- ConstructorTablesSectionParser
+SectionParserBase <|-- ConstructorsSectionParser
+ConstructorsSectionParser <|-- CurrentConstructorsSectionParser
+TableSectionParser <|-- DriverResultsSectionParser
+ConstructorsSectionParser <|-- FormerConstructorsSectionParser
+SectionParserBase <|-- GrandPrixByYearSectionParser
+BaseSeasonParser <|-- JimClarkTrophyParser
+BaseSeasonParser <|-- SeasonCalendarParser
+SectionParserBase <|-- SeasonCalendarSectionParser
+SectionParserBase <|-- SeasonConstructorsStandingsSectionParser
+SectionParserBase <|-- SeasonDriversStandingsSectionParser
+BaseSeasonParser <|-- SeasonEntriesParser
+BaseSeasonParser <|-- SeasonFreePracticeParser
+ExtractListItemsMixin <|-- SeasonMidSeasonChangesSectionParser
+SectionParserBase <|-- SeasonMidSeasonChangesSectionParser
+BaseSeasonParser <|-- SeasonNonChampionshipParser
+BaseSeasonParser <|-- SeasonRegionalChampionshipParser
+ExtractListItemsMixin <|-- SeasonRegulationChangesSectionParser
+SectionParserBase <|-- SeasonRegulationChangesSectionParser
+BaseSeasonParser <|-- SeasonResultsParser
+SectionParserBase <|-- SeasonResultsSectionParser
+BaseSeasonParser <|-- SeasonScoringSystemParser
+SectionParserBase <|-- TableSectionParser
+BaseSeasonParser <|-- TestingVenuesParser
+
+@enduml

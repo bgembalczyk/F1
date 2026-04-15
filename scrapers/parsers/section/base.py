@@ -5,11 +5,11 @@ from abc import abstractmethod
 
 from bs4 import BeautifulSoup
 
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.section.parse_results import SectionParseResult
 
 
-class SectionParserBase(HtmlSoupParserABC[SectionParseResult], ABC):
+class SectionParserBase(ParserABC[BeautifulSoup, SectionParseResult], ABC):
     """Canonical implementation base for section parsers."""
 
     @abstractmethod

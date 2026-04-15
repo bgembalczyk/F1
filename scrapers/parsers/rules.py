@@ -10,13 +10,13 @@ if TYPE_CHECKING:
 
     from bs4 import Tag
 
-    from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+    from scrapers.parsers.parser_abc import ParserABC
 
 
 @dataclass(frozen=True)
 class ParsingRule:
     predicate: Callable[[Tag], bool]
-    parser: HtmlTagParserABC[WikiParserData] | Callable[[Tag], WikiParserData]
+    parser: ParserABC[Tag, WikiParserData] | Callable[[Tag], WikiParserData]
     result_type: str
 
 

@@ -9,7 +9,7 @@ from scrapers.parsers.wiki.table.article_tables_assembler import ArticleTablesAs
 from scrapers.parsers.wiki.table.circuit_list_table_mapper import (
     CircuitsListTableMapper,
 )
-from scrapers.parsers.wiki.table.html import WikiTableHtmlParser
+from scrapers.parsers.wiki.table import WikiTableHtmlParser
 from scrapers.section.parse_results import SectionParseResult
 
 if TYPE_CHECKING:

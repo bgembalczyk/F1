@@ -2,7 +2,6 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from scrapers.parsers.engine_restrictions_table_mapper import (
     EngineRestrictionsTableMapper,
 )
@@ -10,7 +9,7 @@ from scrapers.parsers.section.extraction_context import SectionExtractionContext
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 
 
-class EngineSubSectionParser(ApplyForElementsMixin, RecursiveSectionParser):
+class EngineSubSectionParser(RecursiveSectionParser):
     heading_class = "mw-heading4"
     output_key = "sub_sub_sections"
 

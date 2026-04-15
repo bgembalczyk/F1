@@ -6,11 +6,6 @@ from tests.architecture.dummy_classes import ClassInfo
 
 TARGET_BRANCHES = {
     "ParserABC",
-    "HtmlTagParserABC",
-    "HtmlSoupParserABC",
-    "WikiSectionElementParserABC",
-    "WikiInfoboxElementParserABC",
-    "WikiFigureElementParserABC",
     # ABCs that serve as direct base contracts for concrete parsers
     "InfoboxFieldParserABC",  # legacy name kept for compatibility with historical checks
     "InfoboxHtmlFieldParserABC",

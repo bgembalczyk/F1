@@ -22,7 +22,7 @@ if TYPE_CHECKING:
 
     from models.data.wiki_parser import WikiParserData
     from models.payload import WikiParsedPayload
-    from scrapers.parsers.nested_child import NestedChildParser
+
 
 SectionLevelParseResult: TypeAlias = dict[str, Any]
 
@@ -43,7 +43,7 @@ class RecursiveSectionParser(ParserABC):
         *,
         heading_class: str | None = None,
         output_key: str | None = None,
-        child_parser: NestedChildParser | None = None,
+        child_parser: RecursiveSectionParser | None = None,
         toolbox: SectionParserToolbox | None = None,
     ) -> None:
         if heading_class is not None:
@@ -296,6 +296,44 @@ class RecursiveSectionParser(ParserABC):
                 "type": rule.result_type,
             }
         return payload
+
+    def apply_table_mapper(self, payload: dict[str, Any]) -> None:
+        """Recursively applies the table mapper to nested dictionaries."""
+        self._apply_for_elements(payload.get("elements", []))
+        for value in payload.values():
+            if isinstance(value, dict):
+                self.apply_table_mapper(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        self.apply_table_mapper(item)
+
+    def _apply_for_elements(self, elements: list[dict[str, Any]]) -> None:
+        """Applies the table parser to a list of elements."""
+        for element in elements:
+            if element.get("kind") != "table":
+                continue
+            data = element.get("data")
+            if not isinstance(data, dict):
+                continue
+            mapper = getattr(self, "_table_mapper", None)
+            if mapper is None:
+                mapper = getattr(self, "_table_parser", None)
+            if mapper is None:
+                continue
+            if hasattr(mapper, "map"):
+                parsed = mapper.map(data)
+            else:
+                parsed = mapper.parse(data)
+            if parsed is not None:
+                element["data"] = parsed
+
+    def _apply_table_parser_to_sections(self, payload: dict[str, Any], key: str) -> None:
+        """Applies table parser to elements in sections recursively."""
+        for section in payload.get(key, []):
+            if isinstance(section, dict):
+                self._apply_for_elements(section.get("elements", []))
+                self._apply_table_parser_to_sections(section, key)
 
 
 __all__ = ["RecursiveSectionParser", "SectionLevelParseResult"]

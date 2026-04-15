@@ -9,13 +9,13 @@ from scrapers.headers_table import normalize_header
 from scrapers.helpers.header import is_repeated_header_row
 from scrapers.helpers.html_utils import find_section_elements
 from scrapers.helpers.text import clean_wiki_text
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.row_table import TableRow
 
 logger = logging.getLogger(__name__)
 
 
-class HtmlTableParser(HtmlSoupParserABC[list[TableRow]]):
+class HtmlTableParser(ParserABC[BeautifulSoup, list[TableRow]]):
     """
     Parser tabel HTML, który zwraca listę wierszy jako mapowania
     nagłówków na komórki.

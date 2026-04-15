@@ -13,7 +13,7 @@ from scrapers.options import ScraperOptions
 from scrapers.orchestration.season_table_parsing_service import (
     SeasonTableParsingService,
 )
-from scrapers.parsers.element_parser_abc import HtmlSoupParserABC
+from scrapers.parsers.parser_abc import ParserABC
 from scrapers.parsers.section.results.season import SeasonResultsSectionParser
 from scrapers.parsers.section.season.calendar import SeasonCalendarSectionParser
 from scrapers.parsers.section.standings.season.constructors import (
@@ -101,7 +101,7 @@ class SeasonYearResolver:
 @dataclass(frozen=True)
 class SeasonSectionBinding:
     field_name: str
-    parser: HtmlSoupParserABC
+    parser: ParserABC
 
 
 @dataclass(frozen=True)

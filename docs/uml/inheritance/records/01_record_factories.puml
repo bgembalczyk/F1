@@ -1,0 +1,34 @@
+@startuml
+title Record Factories
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseRecordFactory
+class CarRecordFactory
+class CircuitRecordFactory
+class ConstructorRecordFactory
+class DriverRecordFactory
+class DriversChampionshipsRecordFactory
+class EngineManufacturerRecordFactory
+class EventRecordFactory
+class FatalityRecordFactory
+class GrandsPrixRecordFactory
+class SeasonRecordFactory
+class SeasonSummaryRecordFactory
+class SpecialDriverRecordFactory
+
+BaseRecordFactory <|-- CarRecordFactory
+BaseRecordFactory <|-- CircuitRecordFactory
+BaseRecordFactory <|-- ConstructorRecordFactory
+BaseRecordFactory <|-- DriverRecordFactory
+BaseRecordFactory <|-- DriversChampionshipsRecordFactory
+BaseRecordFactory <|-- EngineManufacturerRecordFactory
+BaseRecordFactory <|-- EventRecordFactory
+BaseRecordFactory <|-- FatalityRecordFactory
+BaseRecordFactory <|-- GrandsPrixRecordFactory
+BaseRecordFactory <|-- SeasonRecordFactory
+BaseRecordFactory <|-- SeasonSummaryRecordFactory
+BaseRecordFactory <|-- SpecialDriverRecordFactory
+
+@enduml

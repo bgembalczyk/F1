@@ -1,23 +1,23 @@
 from scrapers.parsers.wiki.element import ElementRegistry
 from scrapers.parsers.wiki.element import WikiElementSet
 from scrapers.parsers.wiki.element import build_wikipedia_element_registry
-from scrapers.parsers.wiki.element_figure import WikiFigureElementParser
-from scrapers.parsers.wiki.element_infobox import WikiInfoboxElementParser
-from scrapers.parsers.wiki.element_navbox import WikiNavboxElementParser
-from scrapers.parsers.wiki.element_paragraph import WikiParagraphElementParser
+from scrapers.parsers.figure_element_parser import FigureElementParser
+from scrapers.parsers.infobox.wiki_html import WikiInfoboxHtmlParser
+from scrapers.parsers.navbox_element_parser import NavboxElementParser
+from scrapers.parsers.paragraph_element_parser import ParagraphElementParser
+from scrapers.parsers.wiki.table import WikiTableParser
 from scrapers.parsers.wiki.element_references import WikiReferencesElementParser
-from scrapers.parsers.wiki.element_table import WikiTableElementParser
 from scrapers.parsers.list_element_parser import ListElementParser
 
 
 def build_default_wiki_element_parsers() -> WikiElementSet:
     return WikiElementSet(
-        infobox_parser=WikiInfoboxElementParser(),
-        paragraph_parser=WikiParagraphElementParser(),
-        figure_parser=WikiFigureElementParser(),
+        infobox_parser=WikiInfoboxHtmlParser(),
+        paragraph_parser=ParagraphElementParser(),
+        figure_parser=FigureElementParser(),
         list_parser=ListElementParser(),
-        table_parser=WikiTableElementParser(),
-        navbox_parser=WikiNavboxElementParser(),
+        table_parser=WikiTableParser(),
+        navbox_parser=NavboxElementParser(),
         references_parser=WikiReferencesElementParser(),
     )
 

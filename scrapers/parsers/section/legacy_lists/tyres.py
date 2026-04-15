@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import Any
 
-from scrapers.parsers.nested_child import NestedChildParser
 from scrapers.parsers.wiki.recursive import RecursiveSectionParser
 from scrapers.parsers.wiki.table.base import WikiTableBaseMapper
 
@@ -61,7 +60,7 @@ class ManufacturersSectionParser(RecursiveSectionParser):
     def __init__(
         self,
         *,
-        child_parser: NestedChildParser | None = None,
+        child_parser: RecursiveSectionParser | None = None,
         **kwargs: Any,
     ) -> None:
         toolbox = kwargs.get("toolbox")

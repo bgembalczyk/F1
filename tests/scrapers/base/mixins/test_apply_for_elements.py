@@ -1,4 +1,3 @@
-from scrapers.mixins.apply_for_elements import ApplyForElementsMixin
 from tests.scrapers.base.mixins.dummy_classes import StubApplyForElements
 
 

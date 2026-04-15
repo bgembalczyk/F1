@@ -1,0 +1,19 @@
+@startuml
+title Infobox Orchestrators & Providers
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseInfoboxOrchestrator
+class CircuitInfoboxExtractor
+class CircuitInfoboxOrchestrator
+class ConstructorInfoboxOrchestrator
+class DriverInfoboxOrchestrator
+abstract class InfoboxExtractorABC
+
+InfoboxExtractorABC <|-- CircuitInfoboxExtractor
+BaseInfoboxOrchestrator <|-- CircuitInfoboxOrchestrator
+BaseInfoboxOrchestrator <|-- ConstructorInfoboxOrchestrator
+BaseInfoboxOrchestrator <|-- DriverInfoboxOrchestrator
+
+@enduml

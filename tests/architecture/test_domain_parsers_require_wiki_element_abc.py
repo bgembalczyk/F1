@@ -6,23 +6,20 @@ from pathlib import Path
 from tests.architecture.helpers import base_name
 
 TARGET_FILES = (
-    Path("scrapers/parsers/wiki/element_table.py"),
     Path("scrapers/parsers/list_element_parser.py"),
-    Path("scrapers/parsers/wiki/element_section.py"),
-    Path("scrapers/parsers/wiki/element_infobox.py"),
-    Path("scrapers/parsers/wiki/element_navbox.py"),
-    Path("scrapers/parsers/wiki/element_figure.py"),
+    Path("scrapers/parsers/wiki/element_references.py"),
+    Path("scrapers/parsers/infobox/wiki_html.py"),
+    Path("scrapers/parsers/wiki/table/__init__.py"),
 )
 
 ALLOWED_ROOTS = {
-    "HtmlTagParserABC",
-    "WikiInfoboxElementParserABC",
-    "WikiFigureElementParserABC",
-    "HtmlSoupParserABC",
+    "ParserABC",
 }
 
 ALLOWED_MIXINS = {
     "SafeParsingMixin",
+    "TableCellExtractionMixin",
+    "HeaderNormalizationMixin",
 }
 
 
@@ -37,7 +34,7 @@ def test_domain_wiki_element_parsers_use_element_abcs_and_optional_mixins() -> N
             bases = tuple(base_name(base) for base in node.bases)
             if not any(base in ALLOWED_ROOTS for base in bases):
                 violations.append(
-                    f"{file_path}:{node.lineno} {node.name} musi dziedziczyć po Wiki*ParserABC/Wiki*ParserBase",
+                    f"{file_path}:{node.lineno} {node.name} musi dziedziczyc po ParserABC",
                 )
 
             disallowed_mixins = [
@@ -47,7 +44,8 @@ def test_domain_wiki_element_parsers_use_element_abcs_and_optional_mixins() -> N
             ]
             if disallowed_mixins:
                 violations.append(
-                    f"{file_path}:{node.lineno} {node.name} ma niedozwolone mixiny: {', '.join(disallowed_mixins)}",
+                    f"{file_path}:{node.lineno} {node.name} ma niedozwolone mixiny: "
+                    + ", ".join(disallowed_mixins),
                 )
 
     assert not violations, "\n".join(violations)

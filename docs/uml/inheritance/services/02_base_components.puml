@@ -1,0 +1,29 @@
+@startuml
+title Base Components & Section Extraction Services
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+abstract class BaseComponent
+abstract class BaseNormalizer
+abstract class BaseSectionExtractionService
+class CircuitSectionExtractionService
+class ConstructorSectionExtractionService
+class DomainSeedExtractor
+class DomainSeedNormalizer
+class DomainStageOrchestrator
+class DriverSectionExtractionService
+class DriversSeedNormalizer
+class SeasonTextSectionExtractionService
+
+BaseComponent <|-- BaseNormalizer
+BaseSectionExtractionService <|-- CircuitSectionExtractionService
+BaseSectionExtractionService <|-- ConstructorSectionExtractionService
+BaseComponent <|-- DomainSeedExtractor
+BaseNormalizer <|-- DomainSeedNormalizer
+BaseComponent <|-- DomainStageOrchestrator
+BaseSectionExtractionService <|-- DriverSectionExtractionService
+BaseNormalizer <|-- DriversSeedNormalizer
+BaseSectionExtractionService <|-- SeasonTextSectionExtractionService
+
+@enduml

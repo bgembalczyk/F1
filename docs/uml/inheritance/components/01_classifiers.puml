@@ -1,0 +1,14 @@
+@startuml
+title Classifier Hierarchy (ClassifierABC)
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+class CircuitLapRecordsTableClassifier
+abstract class ClassifierABC
+class DriverResultsSectionTableClassifier
+
+ClassifierABC <|-- CircuitLapRecordsTableClassifier
+ClassifierABC <|-- DriverResultsSectionTableClassifier
+
+@enduml

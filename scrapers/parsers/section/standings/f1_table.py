@@ -8,10 +8,10 @@ from scrapers.columns.types.position import PositionColumn
 from scrapers.config_table import TableConfig
 from scrapers.extractors.table import TableExtractor
 from scrapers.options import ScraperOptions
-from scrapers.parsers.element_parser_abc import HtmlTagParserABC
+from scrapers.parsers.parser_abc import ParserABC
 
 
-class F1StandingsTableParser(HtmlTagParserABC[list[dict[str, Any]]]):
+class F1StandingsTableParser(ParserABC[Tag, list[dict[str, Any]]]):
     """Parser tabel klasyfikacji (standings) Formuły 1."""
 
     def __init__(self, *, position_key: str = "pos") -> None:
