@@ -12,3 +12,4 @@ __pycache__/
 
 # Generated test artifacts
 artifacts/
+.venv/
