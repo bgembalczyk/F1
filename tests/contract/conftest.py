@@ -17,3 +17,15 @@ ensure_optional_deps(require_bs4=False, bs4_skip_reason="")
 def minimal_fetch_html() -> str:
     fixture_path = Path(__file__).parent / "fixtures" / "minimal_fetch.html"
     return fixture_path.read_text(encoding="utf-8")
+
+
+@pytest.fixture()
+def wiki_layout_old_html() -> str:
+    fixture_path = Path(__file__).parent / "fixtures" / "wiki_layout_old.html"
+    return fixture_path.read_text(encoding="utf-8")
+
+
+@pytest.fixture()
+def wiki_layout_new_html() -> str:
+    fixture_path = Path(__file__).parent / "fixtures" / "wiki_layout_new.html"
+    return fixture_path.read_text(encoding="utf-8")
